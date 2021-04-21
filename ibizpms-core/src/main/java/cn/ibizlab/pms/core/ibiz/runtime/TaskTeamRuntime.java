@@ -94,8 +94,9 @@ public class TaskTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
 
     @Override
     public Page<TaskTeam> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        TaskTeamSearchContext searchContext = (TaskTeamSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return taskteamService.searchDefault((TaskTeamSearchContext) iSearchContextBase);
+            return taskteamService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class TaskTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     @Override
     public TaskTeam selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<TaskTeam> domains = taskteamService.searchDefault((TaskTeamSearchContext) iSearchContextBase);
+        TaskTeamSearchContext searchContext = (TaskTeamSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<TaskTeam> domains = taskteamService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class TaskTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
 
     @Override
     public List<TaskTeam> select(ISearchContextBase iSearchContextBase) {
-        return taskteamService.searchDefault((TaskTeamSearchContext) iSearchContextBase).getContent();
+        TaskTeamSearchContext searchContext = (TaskTeamSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return taskteamService.searchDefault(searchContext).getContent();
     }
 
     @Override

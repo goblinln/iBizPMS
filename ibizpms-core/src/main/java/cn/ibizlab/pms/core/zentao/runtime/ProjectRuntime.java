@@ -94,8 +94,49 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public Page<Project> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        ProjectSearchContext searchContext = (ProjectSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("BugProject"))
+            return projectService.searchBugProject(searchContext);    
+        if (iPSDEDataSet.getName().equals("CurDefaultQuery"))
+            return projectService.searchCurDefaultQuery(searchContext);    
+        if (iPSDEDataSet.getName().equals("CurPlanProject"))
+            return projectService.searchCurPlanProject(searchContext);    
+        if (iPSDEDataSet.getName().equals("CurProduct"))
+            return projectService.searchCurProduct(searchContext);    
+        if (iPSDEDataSet.getName().equals("CurUser"))
+            return projectService.searchCurUser(searchContext);    
+        if (iPSDEDataSet.getName().equals("CurUserSa"))
+            return projectService.searchCurUserSa(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return projectService.searchDefault((ProjectSearchContext) iSearchContextBase);
+            return projectService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("DeveloperQuery"))
+            return projectService.searchDeveloperQuery(searchContext);    
+        if (iPSDEDataSet.getName().equals("ESBulk"))
+            return projectService.searchESBulk(searchContext);    
+        if (iPSDEDataSet.getName().equals("InvolvedProject"))
+            return projectService.searchInvolvedProject(searchContext);    
+        if (iPSDEDataSet.getName().equals("InvolvedProject_StoryTaskBug"))
+            return projectService.searchInvolvedProject_StoryTaskBug(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyProject"))
+            return projectService.searchMyProject(searchContext);    
+        if (iPSDEDataSet.getName().equals("OpenByQuery"))
+            return projectService.searchOpenByQuery(searchContext);    
+        if (iPSDEDataSet.getName().equals("OpenQuery"))
+            return projectService.searchOpenQuery(searchContext);    
+        if (iPSDEDataSet.getName().equals("PMQuery"))
+            return projectService.searchPMQuery(searchContext);    
+        if (iPSDEDataSet.getName().equals("POQuery"))
+            return projectService.searchPOQuery(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectTeam"))
+            return projectService.searchProjectTeam(searchContext);    
+        if (iPSDEDataSet.getName().equals("QDQuery"))
+            return projectService.searchQDQuery(searchContext);    
+        if (iPSDEDataSet.getName().equals("RDQuery"))
+            return projectService.searchRDQuery(searchContext);    
+        if (iPSDEDataSet.getName().equals("StoryProject"))
+            return projectService.searchStoryProject(searchContext);    
+        if (iPSDEDataSet.getName().equals("UnDoneProject"))
+            return projectService.searchUnDoneProject(searchContext);    
         return null;
     }
 
@@ -108,7 +149,9 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public Project selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Project> domains = projectService.searchDefault((ProjectSearchContext) iSearchContextBase);
+        ProjectSearchContext searchContext = (ProjectSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Project> domains = projectService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +159,9 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public List<Project> select(ISearchContextBase iSearchContextBase) {
-        return projectService.searchDefault((ProjectSearchContext) iSearchContextBase).getContent();
+        ProjectSearchContext searchContext = (ProjectSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return projectService.searchDefault(searchContext).getContent();
     }
 
     @Override

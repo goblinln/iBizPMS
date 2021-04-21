@@ -94,8 +94,19 @@ public class TestModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
 
     @Override
     public Page<TestModule> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        TestModuleSearchContext searchContext = (TestModuleSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("BYPATH"))
+            return testmoduleService.searchByPath(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return testmoduleService.searchDefault((TestModuleSearchContext) iSearchContextBase);
+            return testmoduleService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("ParentModule"))
+            return testmoduleService.searchParentModule(searchContext);    
+        if (iPSDEDataSet.getName().equals("ROOT"))
+            return testmoduleService.searchRoot(searchContext);    
+        if (iPSDEDataSet.getName().equals("Root_NoBranch"))
+            return testmoduleService.searchRoot_NoBranch(searchContext);    
+        if (iPSDEDataSet.getName().equals("TestModule"))
+            return testmoduleService.searchTestModule(searchContext);    
         return null;
     }
 
@@ -108,7 +119,9 @@ public class TestModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     @Override
     public TestModule selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<TestModule> domains = testmoduleService.searchDefault((TestModuleSearchContext) iSearchContextBase);
+        TestModuleSearchContext searchContext = (TestModuleSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<TestModule> domains = testmoduleService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +129,9 @@ public class TestModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
 
     @Override
     public List<TestModule> select(ISearchContextBase iSearchContextBase) {
-        return testmoduleService.searchDefault((TestModuleSearchContext) iSearchContextBase).getContent();
+        TestModuleSearchContext searchContext = (TestModuleSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return testmoduleService.searchDefault(searchContext).getContent();
     }
 
     @Override

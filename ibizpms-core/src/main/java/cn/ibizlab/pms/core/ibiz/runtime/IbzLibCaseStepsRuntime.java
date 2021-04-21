@@ -94,8 +94,9 @@ public class IbzLibCaseStepsRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
 
     @Override
     public Page<IbzLibCaseSteps> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        IbzLibCaseStepsSearchContext searchContext = (IbzLibCaseStepsSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return ibzlibcasestepsService.searchDefault((IbzLibCaseStepsSearchContext) iSearchContextBase);
+            return ibzlibcasestepsService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class IbzLibCaseStepsRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
     @Override
     public IbzLibCaseSteps selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<IbzLibCaseSteps> domains = ibzlibcasestepsService.searchDefault((IbzLibCaseStepsSearchContext) iSearchContextBase);
+        IbzLibCaseStepsSearchContext searchContext = (IbzLibCaseStepsSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<IbzLibCaseSteps> domains = ibzlibcasestepsService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class IbzLibCaseStepsRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
 
     @Override
     public List<IbzLibCaseSteps> select(ISearchContextBase iSearchContextBase) {
-        return ibzlibcasestepsService.searchDefault((IbzLibCaseStepsSearchContext) iSearchContextBase).getContent();
+        IbzLibCaseStepsSearchContext searchContext = (IbzLibCaseStepsSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return ibzlibcasestepsService.searchDefault(searchContext).getContent();
     }
 
     @Override

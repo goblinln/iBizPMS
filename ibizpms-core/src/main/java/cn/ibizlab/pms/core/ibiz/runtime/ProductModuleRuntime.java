@@ -94,8 +94,19 @@ public class ProductModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemData
 
     @Override
     public Page<ProductModule> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        ProductModuleSearchContext searchContext = (ProductModuleSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("BYPATH"))
+            return productmoduleService.searchByPath(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return productmoduleService.searchDefault((ProductModuleSearchContext) iSearchContextBase);
+            return productmoduleService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("ParentModule"))
+            return productmoduleService.searchParentModule(searchContext);    
+        if (iPSDEDataSet.getName().equals("ROOT"))
+            return productmoduleService.searchRoot(searchContext);    
+        if (iPSDEDataSet.getName().equals("Root_NoBranch"))
+            return productmoduleService.searchRoot_NoBranch(searchContext);    
+        if (iPSDEDataSet.getName().equals("StoryModule"))
+            return productmoduleService.searchStoryModule(searchContext);    
         return null;
     }
 
@@ -108,7 +119,9 @@ public class ProductModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemData
     @Override
     public ProductModule selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<ProductModule> domains = productmoduleService.searchDefault((ProductModuleSearchContext) iSearchContextBase);
+        ProductModuleSearchContext searchContext = (ProductModuleSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<ProductModule> domains = productmoduleService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +129,9 @@ public class ProductModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemData
 
     @Override
     public List<ProductModule> select(ISearchContextBase iSearchContextBase) {
-        return productmoduleService.searchDefault((ProductModuleSearchContext) iSearchContextBase).getContent();
+        ProductModuleSearchContext searchContext = (ProductModuleSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return productmoduleService.searchDefault(searchContext).getContent();
     }
 
     @Override

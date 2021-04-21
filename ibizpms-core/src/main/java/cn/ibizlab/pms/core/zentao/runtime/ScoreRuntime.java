@@ -94,8 +94,9 @@ public class ScoreRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
 
     @Override
     public Page<Score> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        ScoreSearchContext searchContext = (ScoreSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return scoreService.searchDefault((ScoreSearchContext) iSearchContextBase);
+            return scoreService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class ScoreRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     @Override
     public Score selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Score> domains = scoreService.searchDefault((ScoreSearchContext) iSearchContextBase);
+        ScoreSearchContext searchContext = (ScoreSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Score> domains = scoreService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class ScoreRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
 
     @Override
     public List<Score> select(ISearchContextBase iSearchContextBase) {
-        return scoreService.searchDefault((ScoreSearchContext) iSearchContextBase).getContent();
+        ScoreSearchContext searchContext = (ScoreSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return scoreService.searchDefault(searchContext).getContent();
     }
 
     @Override

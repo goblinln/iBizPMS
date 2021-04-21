@@ -94,8 +94,27 @@ public class ProductPlanRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
 
     @Override
     public Page<ProductPlan> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        ProductPlanSearchContext searchContext = (ProductPlanSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("ChildPlan"))
+            return productplanService.searchChildPlan(searchContext);    
+        if (iPSDEDataSet.getName().equals("CurProductPlan"))
+            return productplanService.searchCurProductPlan(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return productplanService.searchDefault((ProductPlanSearchContext) iSearchContextBase);
+            return productplanService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("DefaultParent"))
+            return productplanService.searchDefaultParent(searchContext);    
+        if (iPSDEDataSet.getName().equals("PlanCodeList"))
+            return productplanService.searchPlanCodeList(searchContext);    
+        if (iPSDEDataSet.getName().equals("PlanTasks"))
+            return productplanService.searchPlanTasks(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectApp"))
+            return productplanService.searchProjectApp(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectPlan"))
+            return productplanService.searchProjectPlan(searchContext);    
+        if (iPSDEDataSet.getName().equals("RootPlan"))
+            return productplanService.searchRootPlan(searchContext);    
+        if (iPSDEDataSet.getName().equals("TaskPlan"))
+            return productplanService.searchTaskPlan(searchContext);    
         return null;
     }
 
@@ -108,7 +127,9 @@ public class ProductPlanRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     @Override
     public ProductPlan selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<ProductPlan> domains = productplanService.searchDefault((ProductPlanSearchContext) iSearchContextBase);
+        ProductPlanSearchContext searchContext = (ProductPlanSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<ProductPlan> domains = productplanService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +137,9 @@ public class ProductPlanRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
 
     @Override
     public List<ProductPlan> select(ISearchContextBase iSearchContextBase) {
-        return productplanService.searchDefault((ProductPlanSearchContext) iSearchContextBase).getContent();
+        ProductPlanSearchContext searchContext = (ProductPlanSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return productplanService.searchDefault(searchContext).getContent();
     }
 
     @Override

@@ -94,8 +94,11 @@ public class DocContentRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
 
     @Override
     public Page<DocContent> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        DocContentSearchContext searchContext = (DocContentSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("CurVersion"))
+            return doccontentService.searchCurVersion(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return doccontentService.searchDefault((DocContentSearchContext) iSearchContextBase);
+            return doccontentService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +111,9 @@ public class DocContentRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     @Override
     public DocContent selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<DocContent> domains = doccontentService.searchDefault((DocContentSearchContext) iSearchContextBase);
+        DocContentSearchContext searchContext = (DocContentSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<DocContent> domains = doccontentService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +121,9 @@ public class DocContentRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
 
     @Override
     public List<DocContent> select(ISearchContextBase iSearchContextBase) {
-        return doccontentService.searchDefault((DocContentSearchContext) iSearchContextBase).getContent();
+        DocContentSearchContext searchContext = (DocContentSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return doccontentService.searchDefault(searchContext).getContent();
     }
 
     @Override

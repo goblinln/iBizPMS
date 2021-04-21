@@ -94,8 +94,9 @@ public class ImMessageRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public Page<ImMessage> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        ImMessageSearchContext searchContext = (ImMessageSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return immessageService.searchDefault((ImMessageSearchContext) iSearchContextBase);
+            return immessageService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class ImMessageRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     @Override
     public ImMessage selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<ImMessage> domains = immessageService.searchDefault((ImMessageSearchContext) iSearchContextBase);
+        ImMessageSearchContext searchContext = (ImMessageSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<ImMessage> domains = immessageService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class ImMessageRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public List<ImMessage> select(ISearchContextBase iSearchContextBase) {
-        return immessageService.searchDefault((ImMessageSearchContext) iSearchContextBase).getContent();
+        ImMessageSearchContext searchContext = (ImMessageSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return immessageService.searchDefault(searchContext).getContent();
     }
 
     @Override

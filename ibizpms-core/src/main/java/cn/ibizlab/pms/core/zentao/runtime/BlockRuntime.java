@@ -94,8 +94,9 @@ public class BlockRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
 
     @Override
     public Page<Block> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        BlockSearchContext searchContext = (BlockSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return blockService.searchDefault((BlockSearchContext) iSearchContextBase);
+            return blockService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class BlockRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     @Override
     public Block selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Block> domains = blockService.searchDefault((BlockSearchContext) iSearchContextBase);
+        BlockSearchContext searchContext = (BlockSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Block> domains = blockService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class BlockRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
 
     @Override
     public List<Block> select(ISearchContextBase iSearchContextBase) {
-        return blockService.searchDefault((BlockSearchContext) iSearchContextBase).getContent();
+        BlockSearchContext searchContext = (BlockSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return blockService.searchDefault(searchContext).getContent();
     }
 
     @Override

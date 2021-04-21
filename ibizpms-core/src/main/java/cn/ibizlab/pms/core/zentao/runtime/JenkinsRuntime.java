@@ -94,8 +94,9 @@ public class JenkinsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public Page<Jenkins> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        JenkinsSearchContext searchContext = (JenkinsSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return jenkinsService.searchDefault((JenkinsSearchContext) iSearchContextBase);
+            return jenkinsService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class JenkinsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public Jenkins selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Jenkins> domains = jenkinsService.searchDefault((JenkinsSearchContext) iSearchContextBase);
+        JenkinsSearchContext searchContext = (JenkinsSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Jenkins> domains = jenkinsService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class JenkinsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public List<Jenkins> select(ISearchContextBase iSearchContextBase) {
-        return jenkinsService.searchDefault((JenkinsSearchContext) iSearchContextBase).getContent();
+        JenkinsSearchContext searchContext = (JenkinsSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return jenkinsService.searchDefault(searchContext).getContent();
     }
 
     @Override

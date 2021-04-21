@@ -94,8 +94,15 @@ public class UserYearWorkStatsRuntime extends cn.ibizlab.pms.core.runtime.System
 
     @Override
     public Page<UserYearWorkStats> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        UserYearWorkStatsSearchContext searchContext = (UserYearWorkStatsSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return useryearworkstatsService.searchDefault((UserYearWorkStatsSearchContext) iSearchContextBase);
+            return useryearworkstatsService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("MonthFinishTaskAndBug"))
+            return useryearworkstatsService.searchMonthFinishTaskAndBug(searchContext);    
+        if (iPSDEDataSet.getName().equals("MonthOpenedBugAndCase"))
+            return useryearworkstatsService.searchMonthOpenedBugAndCase(searchContext);    
+        if (iPSDEDataSet.getName().equals("MonthOpenedStory"))
+            return useryearworkstatsService.searchMonthOpenedStory(searchContext);    
         return null;
     }
 
@@ -108,7 +115,9 @@ public class UserYearWorkStatsRuntime extends cn.ibizlab.pms.core.runtime.System
     @Override
     public UserYearWorkStats selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<UserYearWorkStats> domains = useryearworkstatsService.searchDefault((UserYearWorkStatsSearchContext) iSearchContextBase);
+        UserYearWorkStatsSearchContext searchContext = (UserYearWorkStatsSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<UserYearWorkStats> domains = useryearworkstatsService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +125,9 @@ public class UserYearWorkStatsRuntime extends cn.ibizlab.pms.core.runtime.System
 
     @Override
     public List<UserYearWorkStats> select(ISearchContextBase iSearchContextBase) {
-        return useryearworkstatsService.searchDefault((UserYearWorkStatsSearchContext) iSearchContextBase).getContent();
+        UserYearWorkStatsSearchContext searchContext = (UserYearWorkStatsSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return useryearworkstatsService.searchDefault(searchContext).getContent();
     }
 
     @Override

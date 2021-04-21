@@ -94,8 +94,25 @@ public class BugStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
 
     @Override
     public Page<BugStats> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        BugStatsSearchContext searchContext = (BugStatsSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("BugCountInResolution"))
+            return bugstatsService.searchBugCountInResolution(searchContext);    
+        if (iPSDEDataSet.getName().equals("BugResolvedBy"))
+            return bugstatsService.searchBugResolvedBy(searchContext);    
+        if (iPSDEDataSet.getName().equals("BugResolvedGird"))
+            return bugstatsService.searchBugResolvedGird(searchContext);    
+        if (iPSDEDataSet.getName().equals("BugassignedTo"))
+            return bugstatsService.searchBugassignedTo(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return bugstatsService.searchDefault((BugStatsSearchContext) iSearchContextBase);
+            return bugstatsService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProductBugResolutionStats"))
+            return bugstatsService.searchProductBugResolutionStats(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProductBugStatusSum"))
+            return bugstatsService.searchProductBugStatusSum(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProductCreateBug"))
+            return bugstatsService.searchProductCreateBug(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectBugStatusCount"))
+            return bugstatsService.searchProjectBugStatusCount(searchContext);    
         return null;
     }
 
@@ -108,7 +125,9 @@ public class BugStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     @Override
     public BugStats selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<BugStats> domains = bugstatsService.searchDefault((BugStatsSearchContext) iSearchContextBase);
+        BugStatsSearchContext searchContext = (BugStatsSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<BugStats> domains = bugstatsService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +135,9 @@ public class BugStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
 
     @Override
     public List<BugStats> select(ISearchContextBase iSearchContextBase) {
-        return bugstatsService.searchDefault((BugStatsSearchContext) iSearchContextBase).getContent();
+        BugStatsSearchContext searchContext = (BugStatsSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return bugstatsService.searchDefault(searchContext).getContent();
     }
 
     @Override

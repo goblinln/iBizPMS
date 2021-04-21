@@ -94,8 +94,9 @@ public class ImQueueRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public Page<ImQueue> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        ImQueueSearchContext searchContext = (ImQueueSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return imqueueService.searchDefault((ImQueueSearchContext) iSearchContextBase);
+            return imqueueService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class ImQueueRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public ImQueue selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<ImQueue> domains = imqueueService.searchDefault((ImQueueSearchContext) iSearchContextBase);
+        ImQueueSearchContext searchContext = (ImQueueSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<ImQueue> domains = imqueueService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class ImQueueRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public List<ImQueue> select(ISearchContextBase iSearchContextBase) {
-        return imqueueService.searchDefault((ImQueueSearchContext) iSearchContextBase).getContent();
+        ImQueueSearchContext searchContext = (ImQueueSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return imqueueService.searchDefault(searchContext).getContent();
     }
 
     @Override

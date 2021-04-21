@@ -94,8 +94,9 @@ public class StoryStageRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
 
     @Override
     public Page<StoryStage> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        StoryStageSearchContext searchContext = (StoryStageSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return storystageService.searchDefault((StoryStageSearchContext) iSearchContextBase);
+            return storystageService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class StoryStageRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     @Override
     public StoryStage selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<StoryStage> domains = storystageService.searchDefault((StoryStageSearchContext) iSearchContextBase);
+        StoryStageSearchContext searchContext = (StoryStageSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<StoryStage> domains = storystageService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class StoryStageRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
 
     @Override
     public List<StoryStage> select(ISearchContextBase iSearchContextBase) {
-        return storystageService.searchDefault((StoryStageSearchContext) iSearchContextBase).getContent();
+        StoryStageSearchContext searchContext = (StoryStageSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return storystageService.searchDefault(searchContext).getContent();
     }
 
     @Override

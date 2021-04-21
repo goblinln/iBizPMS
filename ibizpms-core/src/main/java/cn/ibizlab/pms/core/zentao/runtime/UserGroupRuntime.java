@@ -94,8 +94,9 @@ public class UserGroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public Page<UserGroup> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        UserGroupSearchContext searchContext = (UserGroupSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return usergroupService.searchDefault((UserGroupSearchContext) iSearchContextBase);
+            return usergroupService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class UserGroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     @Override
     public UserGroup selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<UserGroup> domains = usergroupService.searchDefault((UserGroupSearchContext) iSearchContextBase);
+        UserGroupSearchContext searchContext = (UserGroupSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<UserGroup> domains = usergroupService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class UserGroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public List<UserGroup> select(ISearchContextBase iSearchContextBase) {
-        return usergroupService.searchDefault((UserGroupSearchContext) iSearchContextBase).getContent();
+        UserGroupSearchContext searchContext = (UserGroupSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return usergroupService.searchDefault(searchContext).getContent();
     }
 
     @Override

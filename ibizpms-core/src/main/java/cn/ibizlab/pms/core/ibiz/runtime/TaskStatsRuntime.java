@@ -94,8 +94,13 @@ public class TaskStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public Page<TaskStats> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        TaskStatsSearchContext searchContext = (TaskStatsSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return taskstatsService.searchDefault((TaskStatsSearchContext) iSearchContextBase);
+            return taskstatsService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("TaskFinishHuiZong"))
+            return taskstatsService.searchTaskFinishHuiZong(searchContext);    
+        if (iPSDEDataSet.getName().equals("UserFinishTaskSum"))
+            return taskstatsService.searchUserFinishTaskSum(searchContext);    
         return null;
     }
 
@@ -108,7 +113,9 @@ public class TaskStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     @Override
     public TaskStats selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<TaskStats> domains = taskstatsService.searchDefault((TaskStatsSearchContext) iSearchContextBase);
+        TaskStatsSearchContext searchContext = (TaskStatsSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<TaskStats> domains = taskstatsService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +123,9 @@ public class TaskStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public List<TaskStats> select(ISearchContextBase iSearchContextBase) {
-        return taskstatsService.searchDefault((TaskStatsSearchContext) iSearchContextBase).getContent();
+        TaskStatsSearchContext searchContext = (TaskStatsSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return taskstatsService.searchDefault(searchContext).getContent();
     }
 
     @Override

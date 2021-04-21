@@ -94,8 +94,61 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
 
     @Override
     public Page<Story> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        StorySearchContext searchContext = (StorySearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("AssignedToMyStory"))
+            return storyService.searchAssignedToMyStory(searchContext);    
+        if (iPSDEDataSet.getName().equals("AssignedToMyStoryCalendar"))
+            return storyService.searchAssignedToMyStoryCalendar(searchContext);    
+        if (iPSDEDataSet.getName().equals("BugStory"))
+            return storyService.searchBugStory(searchContext);    
+        if (iPSDEDataSet.getName().equals("buildLinkCompletedStories"))
+            return storyService.searchBuildLinkCompletedStories(searchContext);    
+        if (iPSDEDataSet.getName().equals("BuildLinkableStories"))
+            return storyService.searchBuildLinkableStories(searchContext);    
+        if (iPSDEDataSet.getName().equals("BuildStories"))
+            return storyService.searchBuildStories(searchContext);    
+        if (iPSDEDataSet.getName().equals("ByModule"))
+            return storyService.searchByModule(searchContext);    
+        if (iPSDEDataSet.getName().equals("CaseStory"))
+            return storyService.searchCaseStory(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return storyService.searchDefault((StorySearchContext) iSearchContextBase);
+            return storyService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("ESBulk"))
+            return storyService.searchESBulk(searchContext);    
+        if (iPSDEDataSet.getName().equals("GetProductStories"))
+            return storyService.searchGetProductStories(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyAgentStory"))
+            return storyService.searchMyAgentStory(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyCurOpenedStory"))
+            return storyService.searchMyCurOpenedStory(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyFavorites"))
+            return storyService.searchMyFavorites(searchContext);    
+        if (iPSDEDataSet.getName().equals("NotCurPlanLinkStory"))
+            return storyService.searchNotCurPlanLinkStory(searchContext);    
+        if (iPSDEDataSet.getName().equals("ParentDefault"))
+            return storyService.searchParentDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("ParentDefaultQ"))
+            return storyService.searchParentDefaultQ(searchContext);    
+        if (iPSDEDataSet.getName().equals("projectLinkStory"))
+            return storyService.searchProjectLinkStory(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectStories"))
+            return storyService.searchProjectStories(searchContext);    
+        if (iPSDEDataSet.getName().equals("ReleaseLinkableStories"))
+            return storyService.searchReleaseLinkableStories(searchContext);    
+        if (iPSDEDataSet.getName().equals("ReleaseStories"))
+            return storyService.searchReleaseStories(searchContext);    
+        if (iPSDEDataSet.getName().equals("ReportStories"))
+            return storyService.searchReportStories(searchContext);    
+        if (iPSDEDataSet.getName().equals("StoryChild"))
+            return storyService.searchStoryChild(searchContext);    
+        if (iPSDEDataSet.getName().equals("StoryRelated"))
+            return storyService.searchStoryRelated(searchContext);    
+        if (iPSDEDataSet.getName().equals("SubStory"))
+            return storyService.searchSubStory(searchContext);    
+        if (iPSDEDataSet.getName().equals("TaskRelatedStory"))
+            return storyService.searchTaskRelatedStory(searchContext);    
+        if (iPSDEDataSet.getName().equals("VIEW"))
+            return storyService.searchView(searchContext);    
         return null;
     }
 
@@ -108,7 +161,9 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     @Override
     public Story selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Story> domains = storyService.searchDefault((StorySearchContext) iSearchContextBase);
+        StorySearchContext searchContext = (StorySearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Story> domains = storyService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +171,9 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
 
     @Override
     public List<Story> select(ISearchContextBase iSearchContextBase) {
-        return storyService.searchDefault((StorySearchContext) iSearchContextBase).getContent();
+        StorySearchContext searchContext = (StorySearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return storyService.searchDefault(searchContext).getContent();
     }
 
     @Override

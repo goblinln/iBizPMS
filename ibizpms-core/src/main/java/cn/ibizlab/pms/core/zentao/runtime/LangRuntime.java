@@ -94,8 +94,9 @@ public class LangRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public Page<Lang> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        LangSearchContext searchContext = (LangSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return langService.searchDefault((LangSearchContext) iSearchContextBase);
+            return langService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class LangRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     @Override
     public Lang selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Lang> domains = langService.searchDefault((LangSearchContext) iSearchContextBase);
+        LangSearchContext searchContext = (LangSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Lang> domains = langService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class LangRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public List<Lang> select(ISearchContextBase iSearchContextBase) {
-        return langService.searchDefault((LangSearchContext) iSearchContextBase).getContent();
+        LangSearchContext searchContext = (LangSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return langService.searchDefault(searchContext).getContent();
     }
 
     @Override

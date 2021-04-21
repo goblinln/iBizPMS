@@ -94,8 +94,9 @@ public class UserViewRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
 
     @Override
     public Page<UserView> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        UserViewSearchContext searchContext = (UserViewSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return userviewService.searchDefault((UserViewSearchContext) iSearchContextBase);
+            return userviewService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class UserViewRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     @Override
     public UserView selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<UserView> domains = userviewService.searchDefault((UserViewSearchContext) iSearchContextBase);
+        UserViewSearchContext searchContext = (UserViewSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<UserView> domains = userviewService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class UserViewRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
 
     @Override
     public List<UserView> select(ISearchContextBase iSearchContextBase) {
-        return userviewService.searchDefault((UserViewSearchContext) iSearchContextBase).getContent();
+        UserViewSearchContext searchContext = (UserViewSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return userviewService.searchDefault(searchContext).getContent();
     }
 
     @Override

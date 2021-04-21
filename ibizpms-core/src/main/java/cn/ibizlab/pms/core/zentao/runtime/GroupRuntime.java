@@ -94,8 +94,9 @@ public class GroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
 
     @Override
     public Page<Group> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        GroupSearchContext searchContext = (GroupSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return groupService.searchDefault((GroupSearchContext) iSearchContextBase);
+            return groupService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class GroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     @Override
     public Group selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Group> domains = groupService.searchDefault((GroupSearchContext) iSearchContextBase);
+        GroupSearchContext searchContext = (GroupSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Group> domains = groupService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class GroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
 
     @Override
     public List<Group> select(ISearchContextBase iSearchContextBase) {
-        return groupService.searchDefault((GroupSearchContext) iSearchContextBase).getContent();
+        GroupSearchContext searchContext = (GroupSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return groupService.searchDefault(searchContext).getContent();
     }
 
     @Override

@@ -94,8 +94,11 @@ public class BurnRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public Page<Burn> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        BurnSearchContext searchContext = (BurnSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return burnService.searchDefault((BurnSearchContext) iSearchContextBase);
+            return burnService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("ESTIMATEANDLEFT"))
+            return burnService.searchESTIMATEANDLEFT(searchContext);    
         return null;
     }
 
@@ -108,7 +111,9 @@ public class BurnRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     @Override
     public Burn selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Burn> domains = burnService.searchDefault((BurnSearchContext) iSearchContextBase);
+        BurnSearchContext searchContext = (BurnSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Burn> domains = burnService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +121,9 @@ public class BurnRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public List<Burn> select(ISearchContextBase iSearchContextBase) {
-        return burnService.searchDefault((BurnSearchContext) iSearchContextBase).getContent();
+        BurnSearchContext searchContext = (BurnSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return burnService.searchDefault(searchContext).getContent();
     }
 
     @Override

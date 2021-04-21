@@ -94,8 +94,11 @@ public class EmpLoyeeloadRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public Page<EmpLoyeeload> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        EmpLoyeeloadSearchContext searchContext = (EmpLoyeeloadSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return employeeloadService.searchDefault((EmpLoyeeloadSearchContext) iSearchContextBase);
+            return employeeloadService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("GETWOERKLOAD"))
+            return employeeloadService.searchGETWOERKLOAD(searchContext);    
         return null;
     }
 
@@ -108,7 +111,9 @@ public class EmpLoyeeloadRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     @Override
     public EmpLoyeeload selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<EmpLoyeeload> domains = employeeloadService.searchDefault((EmpLoyeeloadSearchContext) iSearchContextBase);
+        EmpLoyeeloadSearchContext searchContext = (EmpLoyeeloadSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<EmpLoyeeload> domains = employeeloadService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +121,9 @@ public class EmpLoyeeloadRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public List<EmpLoyeeload> select(ISearchContextBase iSearchContextBase) {
-        return employeeloadService.searchDefault((EmpLoyeeloadSearchContext) iSearchContextBase).getContent();
+        EmpLoyeeloadSearchContext searchContext = (EmpLoyeeloadSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return employeeloadService.searchDefault(searchContext).getContent();
     }
 
     @Override

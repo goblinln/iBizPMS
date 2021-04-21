@@ -94,8 +94,9 @@ public class UserQueryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public Page<UserQuery> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        UserQuerySearchContext searchContext = (UserQuerySearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return userqueryService.searchDefault((UserQuerySearchContext) iSearchContextBase);
+            return userqueryService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class UserQueryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     @Override
     public UserQuery selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<UserQuery> domains = userqueryService.searchDefault((UserQuerySearchContext) iSearchContextBase);
+        UserQuerySearchContext searchContext = (UserQuerySearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<UserQuery> domains = userqueryService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class UserQueryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public List<UserQuery> select(ISearchContextBase iSearchContextBase) {
-        return userqueryService.searchDefault((UserQuerySearchContext) iSearchContextBase).getContent();
+        UserQuerySearchContext searchContext = (UserQuerySearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return userqueryService.searchDefault(searchContext).getContent();
     }
 
     @Override

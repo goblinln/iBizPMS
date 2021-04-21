@@ -94,8 +94,9 @@ public class EffortRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
 
     @Override
     public Page<Effort> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        EffortSearchContext searchContext = (EffortSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return effortService.searchDefault((EffortSearchContext) iSearchContextBase);
+            return effortService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class EffortRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     @Override
     public Effort selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Effort> domains = effortService.searchDefault((EffortSearchContext) iSearchContextBase);
+        EffortSearchContext searchContext = (EffortSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Effort> domains = effortService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class EffortRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
 
     @Override
     public List<Effort> select(ISearchContextBase iSearchContextBase) {
-        return effortService.searchDefault((EffortSearchContext) iSearchContextBase).getContent();
+        EffortSearchContext searchContext = (EffortSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return effortService.searchDefault(searchContext).getContent();
     }
 
     @Override

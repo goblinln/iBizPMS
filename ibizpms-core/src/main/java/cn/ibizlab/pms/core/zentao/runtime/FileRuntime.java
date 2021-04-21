@@ -94,8 +94,17 @@ public class FileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public Page<File> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        FileSearchContext searchContext = (FileSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return fileService.searchDefault((FileSearchContext) iSearchContextBase);
+            return fileService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("DocLibFile"))
+            return fileService.searchDocLibFile(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProductDocLibFile"))
+            return fileService.searchProductDocLibFile(searchContext);    
+        if (iPSDEDataSet.getName().equals("Type"))
+            return fileService.searchType(searchContext);    
+        if (iPSDEDataSet.getName().equals("TypeNotBySrfparentkey"))
+            return fileService.searchTypeNotBySrfparentkey(searchContext);    
         return null;
     }
 
@@ -108,7 +117,9 @@ public class FileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     @Override
     public File selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<File> domains = fileService.searchDefault((FileSearchContext) iSearchContextBase);
+        FileSearchContext searchContext = (FileSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<File> domains = fileService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +127,9 @@ public class FileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public List<File> select(ISearchContextBase iSearchContextBase) {
-        return fileService.searchDefault((FileSearchContext) iSearchContextBase).getContent();
+        FileSearchContext searchContext = (FileSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return fileService.searchDefault(searchContext).getContent();
     }
 
     @Override

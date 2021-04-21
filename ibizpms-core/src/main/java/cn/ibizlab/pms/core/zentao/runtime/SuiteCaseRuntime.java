@@ -94,8 +94,9 @@ public class SuiteCaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public Page<SuiteCase> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        SuiteCaseSearchContext searchContext = (SuiteCaseSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return suitecaseService.searchDefault((SuiteCaseSearchContext) iSearchContextBase);
+            return suitecaseService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class SuiteCaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     @Override
     public SuiteCase selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<SuiteCase> domains = suitecaseService.searchDefault((SuiteCaseSearchContext) iSearchContextBase);
+        SuiteCaseSearchContext searchContext = (SuiteCaseSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<SuiteCase> domains = suitecaseService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class SuiteCaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public List<SuiteCase> select(ISearchContextBase iSearchContextBase) {
-        return suitecaseService.searchDefault((SuiteCaseSearchContext) iSearchContextBase).getContent();
+        SuiteCaseSearchContext searchContext = (SuiteCaseSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return suitecaseService.searchDefault(searchContext).getContent();
     }
 
     @Override

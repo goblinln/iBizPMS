@@ -94,8 +94,9 @@ public class EntryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
 
     @Override
     public Page<Entry> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        EntrySearchContext searchContext = (EntrySearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return entryService.searchDefault((EntrySearchContext) iSearchContextBase);
+            return entryService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class EntryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     @Override
     public Entry selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Entry> domains = entryService.searchDefault((EntrySearchContext) iSearchContextBase);
+        EntrySearchContext searchContext = (EntrySearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Entry> domains = entryService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class EntryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
 
     @Override
     public List<Entry> select(ISearchContextBase iSearchContextBase) {
-        return entryService.searchDefault((EntrySearchContext) iSearchContextBase).getContent();
+        EntrySearchContext searchContext = (EntrySearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return entryService.searchDefault(searchContext).getContent();
     }
 
     @Override

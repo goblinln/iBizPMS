@@ -94,8 +94,71 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
 
     @Override
     public Page<Bug> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        BugSearchContext searchContext = (BugSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("AssignedToMyBug"))
+            return bugService.searchAssignedToMyBug(searchContext);    
+        if (iPSDEDataSet.getName().equals("AssignedToMyBugPc"))
+            return bugService.searchAssignedToMyBugPc(searchContext);    
+        if (iPSDEDataSet.getName().equals("BugsByBuild"))
+            return bugService.searchBugsByBuild(searchContext);    
+        if (iPSDEDataSet.getName().equals("BuildBugs"))
+            return bugService.searchBuildBugs(searchContext);    
+        if (iPSDEDataSet.getName().equals("buildLinkResolvedBugs"))
+            return bugService.searchBuildLinkResolvedBugs(searchContext);    
+        if (iPSDEDataSet.getName().equals("BuildOpenBugs"))
+            return bugService.searchBuildOpenBugs(searchContext);    
+        if (iPSDEDataSet.getName().equals("BuildProduceBug"))
+            return bugService.searchBuildProduceBug(searchContext);    
+        if (iPSDEDataSet.getName().equals("BuildProduceBugModule"))
+            return bugService.searchBuildProduceBugModule(searchContext);    
+        if (iPSDEDataSet.getName().equals("BuildProduceBugModule_Project"))
+            return bugService.searchBuildProduceBugModule_Project(searchContext);    
+        if (iPSDEDataSet.getName().equals("BuildProduceBugOpenedBy"))
+            return bugService.searchBuildProduceBugOpenedBy(searchContext);    
+        if (iPSDEDataSet.getName().equals("BuildProduceBugOpenedBy_Project"))
+            return bugService.searchBuildProduceBugOpenedBy_Project(searchContext);    
+        if (iPSDEDataSet.getName().equals("BuildProduceBugRES"))
+            return bugService.searchBuildProduceBugRES(searchContext);    
+        if (iPSDEDataSet.getName().equals("BuildProduceBugRESOLVEDBY"))
+            return bugService.searchBuildProduceBugRESOLVEDBY(searchContext);    
+        if (iPSDEDataSet.getName().equals("BuildProduceBugRESOLVEDBY_Project"))
+            return bugService.searchBuildProduceBugRESOLVEDBY_Project(searchContext);    
+        if (iPSDEDataSet.getName().equals("BuildProduceBugResolution_Project"))
+            return bugService.searchBuildProduceBugResolution_Project(searchContext);    
+        if (iPSDEDataSet.getName().equals("BuildProduceBugSeverity_Project"))
+            return bugService.searchBuildProduceBugSeverity_Project(searchContext);    
+        if (iPSDEDataSet.getName().equals("BuildProduceBugStatus_Project"))
+            return bugService.searchBuildProduceBugStatus_Project(searchContext);    
+        if (iPSDEDataSet.getName().equals("BuildProduceBugType_Project"))
+            return bugService.searchBuildProduceBugType_Project(searchContext);    
+        if (iPSDEDataSet.getName().equals("CurUserResolve"))
+            return bugService.searchCurUserResolve(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return bugService.searchDefault((BugSearchContext) iSearchContextBase);
+            return bugService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("ESBulk"))
+            return bugService.searchESBulk(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyAgentBug"))
+            return bugService.searchMyAgentBug(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyCurOpenedBug"))
+            return bugService.searchMyCurOpenedBug(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyFavorites"))
+            return bugService.searchMyFavorites(searchContext);    
+        if (iPSDEDataSet.getName().equals("NotCurPlanLinkBug"))
+            return bugService.searchNotCurPlanLinkBug(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectBugs"))
+            return bugService.searchProjectBugs(searchContext);    
+        if (iPSDEDataSet.getName().equals("ReleaseBugs"))
+            return bugService.searchReleaseBugs(searchContext);    
+        if (iPSDEDataSet.getName().equals("ReleaseLeftBugs"))
+            return bugService.searchReleaseLeftBugs(searchContext);    
+        if (iPSDEDataSet.getName().equals("ReleaseLinkableLeftBug"))
+            return bugService.searchReleaseLinkableLeftBug(searchContext);    
+        if (iPSDEDataSet.getName().equals("ReleaseLinkableResolvedBug"))
+            return bugService.searchReleaseLinkableResolvedBug(searchContext);    
+        if (iPSDEDataSet.getName().equals("ReportBugs"))
+            return bugService.searchReportBugs(searchContext);    
+        if (iPSDEDataSet.getName().equals("TaskBug"))
+            return bugService.searchTaskRelatedBug(searchContext);    
         return null;
     }
 
@@ -108,7 +171,9 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
     @Override
     public Bug selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Bug> domains = bugService.searchDefault((BugSearchContext) iSearchContextBase);
+        BugSearchContext searchContext = (BugSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Bug> domains = bugService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +181,9 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
 
     @Override
     public List<Bug> select(ISearchContextBase iSearchContextBase) {
-        return bugService.searchDefault((BugSearchContext) iSearchContextBase).getContent();
+        BugSearchContext searchContext = (BugSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return bugService.searchDefault(searchContext).getContent();
     }
 
     @Override

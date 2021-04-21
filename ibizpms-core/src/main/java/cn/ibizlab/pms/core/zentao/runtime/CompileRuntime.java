@@ -94,8 +94,9 @@ public class CompileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public Page<Compile> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        CompileSearchContext searchContext = (CompileSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return compileService.searchDefault((CompileSearchContext) iSearchContextBase);
+            return compileService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class CompileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public Compile selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Compile> domains = compileService.searchDefault((CompileSearchContext) iSearchContextBase);
+        CompileSearchContext searchContext = (CompileSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Compile> domains = compileService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class CompileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public List<Compile> select(ISearchContextBase iSearchContextBase) {
-        return compileService.searchDefault((CompileSearchContext) iSearchContextBase).getContent();
+        CompileSearchContext searchContext = (CompileSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return compileService.searchDefault(searchContext).getContent();
     }
 
     @Override

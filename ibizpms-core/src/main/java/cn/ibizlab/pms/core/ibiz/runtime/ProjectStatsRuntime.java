@@ -94,8 +94,29 @@ public class ProjectStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public Page<ProjectStats> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        ProjectStatsSearchContext searchContext = (ProjectStatsSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return projectstatsService.searchDefault((ProjectStatsSearchContext) iSearchContextBase);
+            return projectstatsService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("NOOpenProduct"))
+            return projectstatsService.searchNoOpenProduct(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectBugType"))
+            return projectstatsService.searchProjectBugType(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectInputStats"))
+            return projectstatsService.searchProjectInputStats(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectProgress"))
+            return projectstatsService.searchProjectProgress(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectQuality"))
+            return projectstatsService.searchProjectQuality(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectStoryStageStats"))
+            return projectstatsService.searchProjectStoryStageStats(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectStoryStatusStats"))
+            return projectstatsService.searchProjectStoryStatusStats(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectTaskCountByTaskStatus"))
+            return projectstatsService.searchProjectTaskCountByTaskStatus(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectTaskCountByType"))
+            return projectstatsService.searchProjectTaskCountByType(searchContext);    
+        if (iPSDEDataSet.getName().equals("TASKTIME"))
+            return projectstatsService.searchTaskTime(searchContext);    
         return null;
     }
 
@@ -108,7 +129,9 @@ public class ProjectStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     @Override
     public ProjectStats selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<ProjectStats> domains = projectstatsService.searchDefault((ProjectStatsSearchContext) iSearchContextBase);
+        ProjectStatsSearchContext searchContext = (ProjectStatsSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<ProjectStats> domains = projectstatsService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +139,9 @@ public class ProjectStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public List<ProjectStats> select(ISearchContextBase iSearchContextBase) {
-        return projectstatsService.searchDefault((ProjectStatsSearchContext) iSearchContextBase).getContent();
+        ProjectStatsSearchContext searchContext = (ProjectStatsSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return projectstatsService.searchDefault(searchContext).getContent();
     }
 
     @Override

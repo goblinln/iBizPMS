@@ -94,8 +94,11 @@ public class TestTaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
 
     @Override
     public Page<TestTask> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        TestTaskSearchContext searchContext = (TestTaskSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return testtaskService.searchDefault((TestTaskSearchContext) iSearchContextBase);
+            return testtaskService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyTestTaskPc"))
+            return testtaskService.searchMyTestTaskPc(searchContext);    
         return null;
     }
 
@@ -108,7 +111,9 @@ public class TestTaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     @Override
     public TestTask selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<TestTask> domains = testtaskService.searchDefault((TestTaskSearchContext) iSearchContextBase);
+        TestTaskSearchContext searchContext = (TestTaskSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<TestTask> domains = testtaskService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +121,9 @@ public class TestTaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
 
     @Override
     public List<TestTask> select(ISearchContextBase iSearchContextBase) {
-        return testtaskService.searchDefault((TestTaskSearchContext) iSearchContextBase).getContent();
+        TestTaskSearchContext searchContext = (TestTaskSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return testtaskService.searchDefault(searchContext).getContent();
     }
 
     @Override

@@ -94,8 +94,13 @@ public class TaskEstimateStatsRuntime extends cn.ibizlab.pms.core.runtime.System
 
     @Override
     public Page<TaskEstimateStats> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        TaskEstimateStatsSearchContext searchContext = (TaskEstimateStatsSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("ActionMonth"))
+            return taskestimatestatsService.searchActionMonth(searchContext);    
+        if (iPSDEDataSet.getName().equals("ActionYear"))
+            return taskestimatestatsService.searchActionYear(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return taskestimatestatsService.searchDefault((TaskEstimateStatsSearchContext) iSearchContextBase);
+            return taskestimatestatsService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +113,9 @@ public class TaskEstimateStatsRuntime extends cn.ibizlab.pms.core.runtime.System
     @Override
     public TaskEstimateStats selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<TaskEstimateStats> domains = taskestimatestatsService.searchDefault((TaskEstimateStatsSearchContext) iSearchContextBase);
+        TaskEstimateStatsSearchContext searchContext = (TaskEstimateStatsSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<TaskEstimateStats> domains = taskestimatestatsService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +123,9 @@ public class TaskEstimateStatsRuntime extends cn.ibizlab.pms.core.runtime.System
 
     @Override
     public List<TaskEstimateStats> select(ISearchContextBase iSearchContextBase) {
-        return taskestimatestatsService.searchDefault((TaskEstimateStatsSearchContext) iSearchContextBase).getContent();
+        TaskEstimateStatsSearchContext searchContext = (TaskEstimateStatsSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return taskestimatestatsService.searchDefault(searchContext).getContent();
     }
 
     @Override

@@ -94,8 +94,15 @@ public class IbzproProductUserTaskRuntime extends cn.ibizlab.pms.core.runtime.Sy
 
     @Override
     public Page<IbzproProductUserTask> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        IbzproProductUserTaskSearchContext searchContext = (IbzproProductUserTaskSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return ibzproproductusertaskService.searchDefault((IbzproProductUserTaskSearchContext) iSearchContextBase);
+            return ibzproproductusertaskService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProductDailyUserTaskStats"))
+            return ibzproproductusertaskService.searchProductDailyUserTaskStats(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProductMonthlyUserTaskStats"))
+            return ibzproproductusertaskService.searchProductMonthlyUserTaskStats(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProductWeeklyUserTaskStats"))
+            return ibzproproductusertaskService.searchProductWeeklyUserTaskStats(searchContext);    
         return null;
     }
 
@@ -108,7 +115,9 @@ public class IbzproProductUserTaskRuntime extends cn.ibizlab.pms.core.runtime.Sy
     @Override
     public IbzproProductUserTask selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchDefault((IbzproProductUserTaskSearchContext) iSearchContextBase);
+        IbzproProductUserTaskSearchContext searchContext = (IbzproProductUserTaskSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +125,9 @@ public class IbzproProductUserTaskRuntime extends cn.ibizlab.pms.core.runtime.Sy
 
     @Override
     public List<IbzproProductUserTask> select(ISearchContextBase iSearchContextBase) {
-        return ibzproproductusertaskService.searchDefault((IbzproProductUserTaskSearchContext) iSearchContextBase).getContent();
+        IbzproProductUserTaskSearchContext searchContext = (IbzproProductUserTaskSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return ibzproproductusertaskService.searchDefault(searchContext).getContent();
     }
 
     @Override

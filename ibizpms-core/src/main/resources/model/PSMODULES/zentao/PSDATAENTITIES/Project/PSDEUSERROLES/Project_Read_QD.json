@@ -1,0 +1,10 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_QD.json",
+  "name" : "项目查看（测试负责人）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "QDQuery"
+  },
+  "roleTag" : "Project_Read_QD",
+  "userDRAction" : "READ"
+}

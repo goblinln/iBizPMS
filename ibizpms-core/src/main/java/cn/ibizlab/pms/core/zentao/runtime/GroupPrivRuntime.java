@@ -94,8 +94,9 @@ public class GroupPrivRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public Page<GroupPriv> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        GroupPrivSearchContext searchContext = (GroupPrivSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return groupprivService.searchDefault((GroupPrivSearchContext) iSearchContextBase);
+            return groupprivService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class GroupPrivRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     @Override
     public GroupPriv selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<GroupPriv> domains = groupprivService.searchDefault((GroupPrivSearchContext) iSearchContextBase);
+        GroupPrivSearchContext searchContext = (GroupPrivSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<GroupPriv> domains = groupprivService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class GroupPrivRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public List<GroupPriv> select(ISearchContextBase iSearchContextBase) {
-        return groupprivService.searchDefault((GroupPrivSearchContext) iSearchContextBase).getContent();
+        GroupPrivSearchContext searchContext = (GroupPrivSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return groupprivService.searchDefault(searchContext).getContent();
     }
 
     @Override

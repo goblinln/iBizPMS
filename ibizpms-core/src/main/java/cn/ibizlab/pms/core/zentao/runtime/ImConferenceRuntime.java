@@ -94,8 +94,9 @@ public class ImConferenceRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public Page<ImConference> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        ImConferenceSearchContext searchContext = (ImConferenceSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return imconferenceService.searchDefault((ImConferenceSearchContext) iSearchContextBase);
+            return imconferenceService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class ImConferenceRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     @Override
     public ImConference selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<ImConference> domains = imconferenceService.searchDefault((ImConferenceSearchContext) iSearchContextBase);
+        ImConferenceSearchContext searchContext = (ImConferenceSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<ImConference> domains = imconferenceService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class ImConferenceRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public List<ImConference> select(ISearchContextBase iSearchContextBase) {
-        return imconferenceService.searchDefault((ImConferenceSearchContext) iSearchContextBase).getContent();
+        ImConferenceSearchContext searchContext = (ImConferenceSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return imconferenceService.searchDefault(searchContext).getContent();
     }
 
     @Override

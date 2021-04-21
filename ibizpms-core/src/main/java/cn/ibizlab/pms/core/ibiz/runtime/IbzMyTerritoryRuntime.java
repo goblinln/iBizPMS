@@ -94,8 +94,19 @@ public class IbzMyTerritoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
 
     @Override
     public Page<IbzMyTerritory> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        IbzMyTerritorySearchContext searchContext = (IbzMyTerritorySearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return ibzmyterritoryService.searchDefault((IbzMyTerritorySearchContext) iSearchContextBase);
+            return ibzmyterritoryService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyWork"))
+            return ibzmyterritoryService.searchMyWork(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyWorkMob"))
+            return ibzmyterritoryService.searchMyWorkMob(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyWorkPm"))
+            return ibzmyterritoryService.searchMyWorkPm(searchContext);    
+        if (iPSDEDataSet.getName().equals("PersonInfo"))
+            return ibzmyterritoryService.searchPersonInfo(searchContext);    
+        if (iPSDEDataSet.getName().equals("welcome"))
+            return ibzmyterritoryService.searchWelcome(searchContext);    
         return null;
     }
 
@@ -108,7 +119,9 @@ public class IbzMyTerritoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
     @Override
     public IbzMyTerritory selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<IbzMyTerritory> domains = ibzmyterritoryService.searchDefault((IbzMyTerritorySearchContext) iSearchContextBase);
+        IbzMyTerritorySearchContext searchContext = (IbzMyTerritorySearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<IbzMyTerritory> domains = ibzmyterritoryService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +129,9 @@ public class IbzMyTerritoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
 
     @Override
     public List<IbzMyTerritory> select(ISearchContextBase iSearchContextBase) {
-        return ibzmyterritoryService.searchDefault((IbzMyTerritorySearchContext) iSearchContextBase).getContent();
+        IbzMyTerritorySearchContext searchContext = (IbzMyTerritorySearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return ibzmyterritoryService.searchDefault(searchContext).getContent();
     }
 
     @Override

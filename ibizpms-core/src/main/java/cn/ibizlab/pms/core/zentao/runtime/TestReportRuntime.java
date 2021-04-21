@@ -94,8 +94,9 @@ public class TestReportRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
 
     @Override
     public Page<TestReport> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        TestReportSearchContext searchContext = (TestReportSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return testreportService.searchDefault((TestReportSearchContext) iSearchContextBase);
+            return testreportService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class TestReportRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     @Override
     public TestReport selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<TestReport> domains = testreportService.searchDefault((TestReportSearchContext) iSearchContextBase);
+        TestReportSearchContext searchContext = (TestReportSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<TestReport> domains = testreportService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class TestReportRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
 
     @Override
     public List<TestReport> select(ISearchContextBase iSearchContextBase) {
-        return testreportService.searchDefault((TestReportSearchContext) iSearchContextBase).getContent();
+        TestReportSearchContext searchContext = (TestReportSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return testreportService.searchDefault(searchContext).getContent();
     }
 
     @Override

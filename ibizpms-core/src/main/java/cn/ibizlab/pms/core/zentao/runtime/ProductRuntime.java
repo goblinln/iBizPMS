@@ -94,8 +94,35 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public Page<Product> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        ProductSearchContext searchContext = (ProductSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("AllList"))
+            return productService.searchAllList(searchContext);    
+        if (iPSDEDataSet.getName().equals("AllProduct"))
+            return productService.searchAllProduct(searchContext);    
+        if (iPSDEDataSet.getName().equals("CheckNameOrCode"))
+            return productService.searchCheckNameOrCode(searchContext);    
+        if (iPSDEDataSet.getName().equals("CurDefault"))
+            return productService.searchCurDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("CURPROJECT"))
+            return productService.searchCurProject(searchContext);    
+        if (iPSDEDataSet.getName().equals("CurUer"))
+            return productService.searchCurUer(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return productService.searchDefault((ProductSearchContext) iSearchContextBase);
+            return productService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("DeveloperQuery"))
+            return productService.searchDeveloperQuery(searchContext);    
+        if (iPSDEDataSet.getName().equals("ESBulk"))
+            return productService.searchESBulk(searchContext);    
+        if (iPSDEDataSet.getName().equals("OpenQuery"))
+            return productService.searchOpenQuery(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProductManagerQuery"))
+            return productService.searchProductManagerQuery(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProductPM"))
+            return productService.searchProductPM(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProductTeam"))
+            return productService.searchProductTeam(searchContext);    
+        if (iPSDEDataSet.getName().equals("StoryCURPROJECT"))
+            return productService.searchStoryCurProject(searchContext);    
         return null;
     }
 
@@ -108,7 +135,9 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public Product selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Product> domains = productService.searchDefault((ProductSearchContext) iSearchContextBase);
+        ProductSearchContext searchContext = (ProductSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Product> domains = productService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +145,9 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public List<Product> select(ISearchContextBase iSearchContextBase) {
-        return productService.searchDefault((ProductSearchContext) iSearchContextBase).getContent();
+        ProductSearchContext searchContext = (ProductSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return productService.searchDefault(searchContext).getContent();
     }
 
     @Override

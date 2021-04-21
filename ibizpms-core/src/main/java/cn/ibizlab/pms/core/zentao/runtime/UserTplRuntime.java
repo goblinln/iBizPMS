@@ -94,8 +94,11 @@ public class UserTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public Page<UserTpl> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        UserTplSearchContext searchContext = (UserTplSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return usertplService.searchDefault((UserTplSearchContext) iSearchContextBase);
+            return usertplService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyUserTpl"))
+            return usertplService.searchMyUserTpl(searchContext);    
         return null;
     }
 
@@ -108,7 +111,9 @@ public class UserTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public UserTpl selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<UserTpl> domains = usertplService.searchDefault((UserTplSearchContext) iSearchContextBase);
+        UserTplSearchContext searchContext = (UserTplSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<UserTpl> domains = usertplService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +121,9 @@ public class UserTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public List<UserTpl> select(ISearchContextBase iSearchContextBase) {
-        return usertplService.searchDefault((UserTplSearchContext) iSearchContextBase).getContent();
+        UserTplSearchContext searchContext = (UserTplSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return usertplService.searchDefault(searchContext).getContent();
     }
 
     @Override

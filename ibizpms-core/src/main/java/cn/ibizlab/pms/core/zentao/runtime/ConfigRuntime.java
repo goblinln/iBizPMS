@@ -94,8 +94,9 @@ public class ConfigRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
 
     @Override
     public Page<Config> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        ConfigSearchContext searchContext = (ConfigSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return configService.searchDefault((ConfigSearchContext) iSearchContextBase);
+            return configService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class ConfigRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     @Override
     public Config selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Config> domains = configService.searchDefault((ConfigSearchContext) iSearchContextBase);
+        ConfigSearchContext searchContext = (ConfigSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Config> domains = configService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class ConfigRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
 
     @Override
     public List<Config> select(ISearchContextBase iSearchContextBase) {
-        return configService.searchDefault((ConfigSearchContext) iSearchContextBase).getContent();
+        ConfigSearchContext searchContext = (ConfigSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return configService.searchDefault(searchContext).getContent();
     }
 
     @Override

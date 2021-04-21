@@ -94,8 +94,9 @@ public class IbiLoginRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
 
     @Override
     public Page<IbiLogin> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        IbiLoginSearchContext searchContext = (IbiLoginSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return ibiloginService.searchDefault((IbiLoginSearchContext) iSearchContextBase);
+            return ibiloginService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class IbiLoginRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     @Override
     public IbiLogin selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<IbiLogin> domains = ibiloginService.searchDefault((IbiLoginSearchContext) iSearchContextBase);
+        IbiLoginSearchContext searchContext = (IbiLoginSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<IbiLogin> domains = ibiloginService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class IbiLoginRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
 
     @Override
     public List<IbiLogin> select(ISearchContextBase iSearchContextBase) {
-        return ibiloginService.searchDefault((IbiLoginSearchContext) iSearchContextBase).getContent();
+        IbiLoginSearchContext searchContext = (IbiLoginSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return ibiloginService.searchDefault(searchContext).getContent();
     }
 
     @Override

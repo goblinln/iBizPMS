@@ -94,8 +94,9 @@ public class TaskMsgRecordRuntime extends cn.ibizlab.pms.core.runtime.SystemData
 
     @Override
     public Page<TaskMsgRecord> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        TaskMsgRecordSearchContext searchContext = (TaskMsgRecordSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return taskmsgrecordService.searchDefault((TaskMsgRecordSearchContext) iSearchContextBase);
+            return taskmsgrecordService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class TaskMsgRecordRuntime extends cn.ibizlab.pms.core.runtime.SystemData
     @Override
     public TaskMsgRecord selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<TaskMsgRecord> domains = taskmsgrecordService.searchDefault((TaskMsgRecordSearchContext) iSearchContextBase);
+        TaskMsgRecordSearchContext searchContext = (TaskMsgRecordSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<TaskMsgRecord> domains = taskmsgrecordService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class TaskMsgRecordRuntime extends cn.ibizlab.pms.core.runtime.SystemData
 
     @Override
     public List<TaskMsgRecord> select(ISearchContextBase iSearchContextBase) {
-        return taskmsgrecordService.searchDefault((TaskMsgRecordSearchContext) iSearchContextBase).getContent();
+        TaskMsgRecordSearchContext searchContext = (TaskMsgRecordSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return taskmsgrecordService.searchDefault(searchContext).getContent();
     }
 
     @Override

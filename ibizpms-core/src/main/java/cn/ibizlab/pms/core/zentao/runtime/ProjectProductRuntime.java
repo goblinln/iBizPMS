@@ -94,8 +94,11 @@ public class ProjectProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
 
     @Override
     public Page<ProjectProduct> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        ProjectProductSearchContext searchContext = (ProjectProductSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return projectproductService.searchDefault((ProjectProductSearchContext) iSearchContextBase);
+            return projectproductService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("RelationPlan"))
+            return projectproductService.searchRelationPlan(searchContext);    
         return null;
     }
 
@@ -108,7 +111,9 @@ public class ProjectProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
     @Override
     public ProjectProduct selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<ProjectProduct> domains = projectproductService.searchDefault((ProjectProductSearchContext) iSearchContextBase);
+        ProjectProductSearchContext searchContext = (ProjectProductSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<ProjectProduct> domains = projectproductService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +121,9 @@ public class ProjectProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
 
     @Override
     public List<ProjectProduct> select(ISearchContextBase iSearchContextBase) {
-        return projectproductService.searchDefault((ProjectProductSearchContext) iSearchContextBase).getContent();
+        ProjectProductSearchContext searchContext = (ProjectProductSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return projectproductService.searchDefault(searchContext).getContent();
     }
 
     @Override

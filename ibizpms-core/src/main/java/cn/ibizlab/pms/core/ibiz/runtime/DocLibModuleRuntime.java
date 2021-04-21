@@ -94,8 +94,27 @@ public class DocLibModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public Page<DocLibModule> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        DocLibModuleSearchContext searchContext = (DocLibModuleSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("AllDocLibModule_Custom"))
+            return doclibmoduleService.searchAllDocLibModule_Custom(searchContext);    
+        if (iPSDEDataSet.getName().equals("AllDoclibModule"))
+            return doclibmoduleService.searchAllDoclibModule(searchContext);    
+        if (iPSDEDataSet.getName().equals("ChildModuleByParent"))
+            return doclibmoduleService.searchChildModuleByParent(searchContext);    
+        if (iPSDEDataSet.getName().equals("ChildModuleByRealParent"))
+            return doclibmoduleService.searchChildModuleByRealParent(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return doclibmoduleService.searchDefault((DocLibModuleSearchContext) iSearchContextBase);
+            return doclibmoduleService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyFavourites"))
+            return doclibmoduleService.searchMyFavourites(searchContext);    
+        if (iPSDEDataSet.getName().equals("ParentModule"))
+            return doclibmoduleService.searchParentModule(searchContext);    
+        if (iPSDEDataSet.getName().equals("RootModuleMuLu"))
+            return doclibmoduleService.searchRootModuleMuLu(searchContext);    
+        if (iPSDEDataSet.getName().equals("RootModuleMuLuByRoot"))
+            return doclibmoduleService.searchRootModuleMuLuByRoot(searchContext);    
+        if (iPSDEDataSet.getName().equals("RootModuleMuLuBysrfparentkey"))
+            return doclibmoduleService.searchRootModuleMuLuBysrfparentkey(searchContext);    
         return null;
     }
 
@@ -108,7 +127,9 @@ public class DocLibModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     @Override
     public DocLibModule selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<DocLibModule> domains = doclibmoduleService.searchDefault((DocLibModuleSearchContext) iSearchContextBase);
+        DocLibModuleSearchContext searchContext = (DocLibModuleSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<DocLibModule> domains = doclibmoduleService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +137,9 @@ public class DocLibModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public List<DocLibModule> select(ISearchContextBase iSearchContextBase) {
-        return doclibmoduleService.searchDefault((DocLibModuleSearchContext) iSearchContextBase).getContent();
+        DocLibModuleSearchContext searchContext = (DocLibModuleSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return doclibmoduleService.searchDefault(searchContext).getContent();
     }
 
     @Override

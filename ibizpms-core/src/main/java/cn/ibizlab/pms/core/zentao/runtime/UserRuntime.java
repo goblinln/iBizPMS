@@ -94,8 +94,21 @@ public class UserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public Page<User> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        UserSearchContext searchContext = (UserSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("BugUser"))
+            return userService.searchBugUser(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return userService.searchDefault((UserSearchContext) iSearchContextBase);
+            return userService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("getByCommiter"))
+            return userService.searchGetByCommiter(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectTeamM"))
+            return userService.searchProjectTeamM(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectTeamUser"))
+            return userService.searchProjectTeamUser(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectTeamUserTask"))
+            return userService.searchProjectTeamUserTask(searchContext);    
+        if (iPSDEDataSet.getName().equals("TASKTEAM"))
+            return userService.searchTaskTeam(searchContext);    
         return null;
     }
 
@@ -108,7 +121,9 @@ public class UserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     @Override
     public User selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<User> domains = userService.searchDefault((UserSearchContext) iSearchContextBase);
+        UserSearchContext searchContext = (UserSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<User> domains = userService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +131,9 @@ public class UserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public List<User> select(ISearchContextBase iSearchContextBase) {
-        return userService.searchDefault((UserSearchContext) iSearchContextBase).getContent();
+        UserSearchContext searchContext = (UserSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return userService.searchDefault(searchContext).getContent();
     }
 
     @Override

@@ -94,8 +94,9 @@ public class IbzTopRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
 
     @Override
     public Page<IbzTop> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        IbzTopSearchContext searchContext = (IbzTopSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return ibztopService.searchDefault((IbzTopSearchContext) iSearchContextBase);
+            return ibztopService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class IbzTopRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     @Override
     public IbzTop selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<IbzTop> domains = ibztopService.searchDefault((IbzTopSearchContext) iSearchContextBase);
+        IbzTopSearchContext searchContext = (IbzTopSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<IbzTop> domains = ibztopService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class IbzTopRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
 
     @Override
     public List<IbzTop> select(ISearchContextBase iSearchContextBase) {
-        return ibztopService.searchDefault((IbzTopSearchContext) iSearchContextBase).getContent();
+        IbzTopSearchContext searchContext = (IbzTopSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return ibztopService.searchDefault(searchContext).getContent();
     }
 
     @Override

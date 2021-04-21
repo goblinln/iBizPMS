@@ -94,8 +94,9 @@ public class SysUpdateFeaturesRuntime extends cn.ibizlab.pms.core.runtime.System
 
     @Override
     public Page<SysUpdateFeatures> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        SysUpdateFeaturesSearchContext searchContext = (SysUpdateFeaturesSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return sysupdatefeaturesService.searchDefault((SysUpdateFeaturesSearchContext) iSearchContextBase);
+            return sysupdatefeaturesService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class SysUpdateFeaturesRuntime extends cn.ibizlab.pms.core.runtime.System
     @Override
     public SysUpdateFeatures selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<SysUpdateFeatures> domains = sysupdatefeaturesService.searchDefault((SysUpdateFeaturesSearchContext) iSearchContextBase);
+        SysUpdateFeaturesSearchContext searchContext = (SysUpdateFeaturesSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<SysUpdateFeatures> domains = sysupdatefeaturesService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class SysUpdateFeaturesRuntime extends cn.ibizlab.pms.core.runtime.System
 
     @Override
     public List<SysUpdateFeatures> select(ISearchContextBase iSearchContextBase) {
-        return sysupdatefeaturesService.searchDefault((SysUpdateFeaturesSearchContext) iSearchContextBase).getContent();
+        SysUpdateFeaturesSearchContext searchContext = (SysUpdateFeaturesSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return sysupdatefeaturesService.searchDefault(searchContext).getContent();
     }
 
     @Override

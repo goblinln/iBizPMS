@@ -94,8 +94,11 @@ public class ReleaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public Page<Release> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        ReleaseSearchContext searchContext = (ReleaseSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return releaseService.searchDefault((ReleaseSearchContext) iSearchContextBase);
+            return releaseService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("ReportRelease"))
+            return releaseService.searchReportRelease(searchContext);    
         return null;
     }
 
@@ -108,7 +111,9 @@ public class ReleaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public Release selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Release> domains = releaseService.searchDefault((ReleaseSearchContext) iSearchContextBase);
+        ReleaseSearchContext searchContext = (ReleaseSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Release> domains = releaseService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +121,9 @@ public class ReleaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public List<Release> select(ISearchContextBase iSearchContextBase) {
-        return releaseService.searchDefault((ReleaseSearchContext) iSearchContextBase).getContent();
+        ReleaseSearchContext searchContext = (ReleaseSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return releaseService.searchDefault(searchContext).getContent();
     }
 
     @Override

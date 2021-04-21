@@ -94,8 +94,11 @@ public class DeptRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public Page<Dept> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        DeptSearchContext searchContext = (DeptSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return deptService.searchDefault((DeptSearchContext) iSearchContextBase);
+            return deptService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("ROOT"))
+            return deptService.searchRoot(searchContext);    
         return null;
     }
 
@@ -108,7 +111,9 @@ public class DeptRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     @Override
     public Dept selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Dept> domains = deptService.searchDefault((DeptSearchContext) iSearchContextBase);
+        DeptSearchContext searchContext = (DeptSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Dept> domains = deptService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +121,9 @@ public class DeptRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public List<Dept> select(ISearchContextBase iSearchContextBase) {
-        return deptService.searchDefault((DeptSearchContext) iSearchContextBase).getContent();
+        DeptSearchContext searchContext = (DeptSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return deptService.searchDefault(searchContext).getContent();
     }
 
     @Override

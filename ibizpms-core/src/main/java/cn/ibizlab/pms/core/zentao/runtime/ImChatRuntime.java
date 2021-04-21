@@ -94,8 +94,9 @@ public class ImChatRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
 
     @Override
     public Page<ImChat> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        ImChatSearchContext searchContext = (ImChatSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return imchatService.searchDefault((ImChatSearchContext) iSearchContextBase);
+            return imchatService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class ImChatRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     @Override
     public ImChat selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<ImChat> domains = imchatService.searchDefault((ImChatSearchContext) iSearchContextBase);
+        ImChatSearchContext searchContext = (ImChatSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<ImChat> domains = imchatService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class ImChatRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
 
     @Override
     public List<ImChat> select(ISearchContextBase iSearchContextBase) {
-        return imchatService.searchDefault((ImChatSearchContext) iSearchContextBase).getContent();
+        ImChatSearchContext searchContext = (ImChatSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return imchatService.searchDefault(searchContext).getContent();
     }
 
     @Override

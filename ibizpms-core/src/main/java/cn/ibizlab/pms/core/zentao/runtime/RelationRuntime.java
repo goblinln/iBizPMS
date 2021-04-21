@@ -94,8 +94,9 @@ public class RelationRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
 
     @Override
     public Page<Relation> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        RelationSearchContext searchContext = (RelationSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return relationService.searchDefault((RelationSearchContext) iSearchContextBase);
+            return relationService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class RelationRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     @Override
     public Relation selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Relation> domains = relationService.searchDefault((RelationSearchContext) iSearchContextBase);
+        RelationSearchContext searchContext = (RelationSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Relation> domains = relationService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class RelationRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
 
     @Override
     public List<Relation> select(ISearchContextBase iSearchContextBase) {
-        return relationService.searchDefault((RelationSearchContext) iSearchContextBase).getContent();
+        RelationSearchContext searchContext = (RelationSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return relationService.searchDefault(searchContext).getContent();
     }
 
     @Override

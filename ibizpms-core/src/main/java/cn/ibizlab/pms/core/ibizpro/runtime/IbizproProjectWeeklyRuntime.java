@@ -94,8 +94,9 @@ public class IbizproProjectWeeklyRuntime extends cn.ibizlab.pms.core.runtime.Sys
 
     @Override
     public Page<IbizproProjectWeekly> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        IbizproProjectWeeklySearchContext searchContext = (IbizproProjectWeeklySearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return ibizproprojectweeklyService.searchDefault((IbizproProjectWeeklySearchContext) iSearchContextBase);
+            return ibizproprojectweeklyService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class IbizproProjectWeeklyRuntime extends cn.ibizlab.pms.core.runtime.Sys
     @Override
     public IbizproProjectWeekly selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<IbizproProjectWeekly> domains = ibizproprojectweeklyService.searchDefault((IbizproProjectWeeklySearchContext) iSearchContextBase);
+        IbizproProjectWeeklySearchContext searchContext = (IbizproProjectWeeklySearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<IbizproProjectWeekly> domains = ibizproprojectweeklyService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class IbizproProjectWeeklyRuntime extends cn.ibizlab.pms.core.runtime.Sys
 
     @Override
     public List<IbizproProjectWeekly> select(ISearchContextBase iSearchContextBase) {
-        return ibizproprojectweeklyService.searchDefault((IbizproProjectWeeklySearchContext) iSearchContextBase).getContent();
+        IbizproProjectWeeklySearchContext searchContext = (IbizproProjectWeeklySearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return ibizproprojectweeklyService.searchDefault(searchContext).getContent();
     }
 
     @Override

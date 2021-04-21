@@ -94,8 +94,11 @@ public class CaseStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public Page<CaseStats> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        CaseStatsSearchContext searchContext = (CaseStatsSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return casestatsService.searchDefault((CaseStatsSearchContext) iSearchContextBase);
+            return casestatsService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("TestCaseStats"))
+            return casestatsService.searchTestCaseStats(searchContext);    
         return null;
     }
 
@@ -108,7 +111,9 @@ public class CaseStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     @Override
     public CaseStats selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<CaseStats> domains = casestatsService.searchDefault((CaseStatsSearchContext) iSearchContextBase);
+        CaseStatsSearchContext searchContext = (CaseStatsSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<CaseStats> domains = casestatsService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +121,9 @@ public class CaseStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public List<CaseStats> select(ISearchContextBase iSearchContextBase) {
-        return casestatsService.searchDefault((CaseStatsSearchContext) iSearchContextBase).getContent();
+        CaseStatsSearchContext searchContext = (CaseStatsSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return casestatsService.searchDefault(searchContext).getContent();
     }
 
     @Override

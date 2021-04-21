@@ -94,8 +94,21 @@ public class ModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
 
     @Override
     public Page<Module> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        ModuleSearchContext searchContext = (ModuleSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("BugModule"))
+            return moduleService.searchBugModule(searchContext);    
+        if (iPSDEDataSet.getName().equals("BugModuleCodeList"))
+            return moduleService.searchBugModuleCodeList(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return moduleService.searchDefault((ModuleSearchContext) iSearchContextBase);
+            return moduleService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("DocModule"))
+            return moduleService.searchDocModule(searchContext);    
+        if (iPSDEDataSet.getName().equals("Line"))
+            return moduleService.searchLine(searchContext);    
+        if (iPSDEDataSet.getName().equals("StoryModule"))
+            return moduleService.searchStoryModule(searchContext);    
+        if (iPSDEDataSet.getName().equals("TaskModule"))
+            return moduleService.searchTaskModule(searchContext);    
         return null;
     }
 
@@ -108,7 +121,9 @@ public class ModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     @Override
     public Module selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Module> domains = moduleService.searchDefault((ModuleSearchContext) iSearchContextBase);
+        ModuleSearchContext searchContext = (ModuleSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Module> domains = moduleService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +131,9 @@ public class ModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
 
     @Override
     public List<Module> select(ISearchContextBase iSearchContextBase) {
-        return moduleService.searchDefault((ModuleSearchContext) iSearchContextBase).getContent();
+        ModuleSearchContext searchContext = (ModuleSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return moduleService.searchDefault(searchContext).getContent();
     }
 
     @Override

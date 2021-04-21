@@ -94,8 +94,19 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
 
     @Override
     public Page<Build> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        BuildSearchContext searchContext = (BuildSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("BugProductBuild"))
+            return buildService.searchBugProductBuild(searchContext);    
+        if (iPSDEDataSet.getName().equals("CurProduct"))
+            return buildService.searchCurProduct(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return buildService.searchDefault((BuildSearchContext) iSearchContextBase);
+            return buildService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("TestBuild"))
+            return buildService.searchTestBuild(searchContext);    
+        if (iPSDEDataSet.getName().equals("TestRounds"))
+            return buildService.searchTestRounds(searchContext);    
+        if (iPSDEDataSet.getName().equals("UpdateLog"))
+            return buildService.searchUpdateLog(searchContext);    
         return null;
     }
 
@@ -108,7 +119,9 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     @Override
     public Build selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Build> domains = buildService.searchDefault((BuildSearchContext) iSearchContextBase);
+        BuildSearchContext searchContext = (BuildSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Build> domains = buildService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +129,9 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
 
     @Override
     public List<Build> select(ISearchContextBase iSearchContextBase) {
-        return buildService.searchDefault((BuildSearchContext) iSearchContextBase).getContent();
+        BuildSearchContext searchContext = (BuildSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return buildService.searchDefault(searchContext).getContent();
     }
 
     @Override

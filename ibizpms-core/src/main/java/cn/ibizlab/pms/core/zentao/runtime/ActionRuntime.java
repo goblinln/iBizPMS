@@ -94,8 +94,21 @@ public class ActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
 
     @Override
     public Page<Action> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        ActionSearchContext searchContext = (ActionSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return actionService.searchDefault((ActionSearchContext) iSearchContextBase);
+            return actionService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("MobType"))
+            return actionService.searchMobType(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyTrends"))
+            return actionService.searchMyTrends(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProductTrends"))
+            return actionService.searchProductTrends(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectTrends"))
+            return actionService.searchProjectTrends(searchContext);    
+        if (iPSDEDataSet.getName().equals("QueryUserYEAR"))
+            return actionService.searchQueryUserYEAR(searchContext);    
+        if (iPSDEDataSet.getName().equals("Type"))
+            return actionService.searchType(searchContext);    
         return null;
     }
 
@@ -108,7 +121,9 @@ public class ActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     @Override
     public Action selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Action> domains = actionService.searchDefault((ActionSearchContext) iSearchContextBase);
+        ActionSearchContext searchContext = (ActionSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Action> domains = actionService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +131,9 @@ public class ActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
 
     @Override
     public List<Action> select(ISearchContextBase iSearchContextBase) {
-        return actionService.searchDefault((ActionSearchContext) iSearchContextBase).getContent();
+        ActionSearchContext searchContext = (ActionSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return actionService.searchDefault(searchContext).getContent();
     }
 
     @Override

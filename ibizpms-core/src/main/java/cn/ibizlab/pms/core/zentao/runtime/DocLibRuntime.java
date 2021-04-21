@@ -94,8 +94,25 @@ public class DocLibRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
 
     @Override
     public Page<DocLib> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        DocLibSearchContext searchContext = (DocLibSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("ByCustom"))
+            return doclibService.searchByCustom(searchContext);    
+        if (iPSDEDataSet.getName().equals("ByProduct"))
+            return doclibService.searchByProduct(searchContext);    
+        if (iPSDEDataSet.getName().equals("ByProductNotFiles"))
+            return doclibService.searchByProductNotFiles(searchContext);    
+        if (iPSDEDataSet.getName().equals("ByProject"))
+            return doclibService.searchByProject(searchContext);    
+        if (iPSDEDataSet.getName().equals("ByProjectNotFiles"))
+            return doclibService.searchByProjectNotFiles(searchContext);    
+        if (iPSDEDataSet.getName().equals("CurDocLib"))
+            return doclibService.searchCurDocLib(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return doclibService.searchDefault((DocLibSearchContext) iSearchContextBase);
+            return doclibService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyFavourites"))
+            return doclibService.searchMyFavourites(searchContext);    
+        if (iPSDEDataSet.getName().equals("RootModuleMuLu"))
+            return doclibService.searchRootModuleMuLu(searchContext);    
         return null;
     }
 
@@ -108,7 +125,9 @@ public class DocLibRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     @Override
     public DocLib selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<DocLib> domains = doclibService.searchDefault((DocLibSearchContext) iSearchContextBase);
+        DocLibSearchContext searchContext = (DocLibSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<DocLib> domains = doclibService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +135,9 @@ public class DocLibRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
 
     @Override
     public List<DocLib> select(ISearchContextBase iSearchContextBase) {
-        return doclibService.searchDefault((DocLibSearchContext) iSearchContextBase).getContent();
+        DocLibSearchContext searchContext = (DocLibSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return doclibService.searchDefault(searchContext).getContent();
     }
 
     @Override

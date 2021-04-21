@@ -94,8 +94,15 @@ public class TodoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public Page<Todo> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        TodoSearchContext searchContext = (TodoSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return todoService.searchDefault((TodoSearchContext) iSearchContextBase);
+            return todoService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyTodo"))
+            return todoService.searchMyTodo(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyTodoPc"))
+            return todoService.searchMyTodoPc(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyUpcoming"))
+            return todoService.searchMyUpcoming(searchContext);    
         return null;
     }
 
@@ -108,7 +115,9 @@ public class TodoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     @Override
     public Todo selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Todo> domains = todoService.searchDefault((TodoSearchContext) iSearchContextBase);
+        TodoSearchContext searchContext = (TodoSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Todo> domains = todoService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +125,9 @@ public class TodoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public List<Todo> select(ISearchContextBase iSearchContextBase) {
-        return todoService.searchDefault((TodoSearchContext) iSearchContextBase).getContent();
+        TodoSearchContext searchContext = (TodoSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return todoService.searchDefault(searchContext).getContent();
     }
 
     @Override

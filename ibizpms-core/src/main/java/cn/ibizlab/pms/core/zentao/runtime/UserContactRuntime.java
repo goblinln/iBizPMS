@@ -94,8 +94,13 @@ public class UserContactRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
 
     @Override
     public Page<UserContact> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        UserContactSearchContext searchContext = (UserContactSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("CurUSERCONTACT"))
+            return usercontactService.searchCurUSERCONTACT(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return usercontactService.searchDefault((UserContactSearchContext) iSearchContextBase);
+            return usercontactService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyUSERCONTACT"))
+            return usercontactService.searchMyUSERCONTACT(searchContext);    
         return null;
     }
 
@@ -108,7 +113,9 @@ public class UserContactRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     @Override
     public UserContact selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<UserContact> domains = usercontactService.searchDefault((UserContactSearchContext) iSearchContextBase);
+        UserContactSearchContext searchContext = (UserContactSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<UserContact> domains = usercontactService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +123,9 @@ public class UserContactRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
 
     @Override
     public List<UserContact> select(ISearchContextBase iSearchContextBase) {
-        return usercontactService.searchDefault((UserContactSearchContext) iSearchContextBase).getContent();
+        UserContactSearchContext searchContext = (UserContactSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return usercontactService.searchDefault(searchContext).getContent();
     }
 
     @Override

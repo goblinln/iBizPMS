@@ -94,8 +94,21 @@ public class ProjectModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemData
 
     @Override
     public Page<ProjectModule> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        ProjectModuleSearchContext searchContext = (ProjectModuleSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("BYPATH"))
+            return projectmoduleService.searchByPath(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return projectmoduleService.searchDefault((ProjectModuleSearchContext) iSearchContextBase);
+            return projectmoduleService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("ParentModule"))
+            return projectmoduleService.searchParentModule(searchContext);    
+        if (iPSDEDataSet.getName().equals("ROOT"))
+            return projectmoduleService.searchRoot(searchContext);    
+        if (iPSDEDataSet.getName().equals("Root_NoBranch"))
+            return projectmoduleService.searchRoot_NoBranch(searchContext);    
+        if (iPSDEDataSet.getName().equals("ROOT_TASK"))
+            return projectmoduleService.searchRoot_Task(searchContext);    
+        if (iPSDEDataSet.getName().equals("TaskModules"))
+            return projectmoduleService.searchTaskModules(searchContext);    
         return null;
     }
 
@@ -108,7 +121,9 @@ public class ProjectModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemData
     @Override
     public ProjectModule selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<ProjectModule> domains = projectmoduleService.searchDefault((ProjectModuleSearchContext) iSearchContextBase);
+        ProjectModuleSearchContext searchContext = (ProjectModuleSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<ProjectModule> domains = projectmoduleService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +131,9 @@ public class ProjectModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemData
 
     @Override
     public List<ProjectModule> select(ISearchContextBase iSearchContextBase) {
-        return projectmoduleService.searchDefault((ProjectModuleSearchContext) iSearchContextBase).getContent();
+        ProjectModuleSearchContext searchContext = (ProjectModuleSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return projectmoduleService.searchDefault(searchContext).getContent();
     }
 
     @Override

@@ -94,8 +94,9 @@ public class DynaDashboardRuntime extends cn.ibizlab.pms.core.runtime.SystemData
 
     @Override
     public Page<DynaDashboard> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        DynaDashboardSearchContext searchContext = (DynaDashboardSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return dynadashboardService.searchDefault((DynaDashboardSearchContext) iSearchContextBase);
+            return dynadashboardService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class DynaDashboardRuntime extends cn.ibizlab.pms.core.runtime.SystemData
     @Override
     public DynaDashboard selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<DynaDashboard> domains = dynadashboardService.searchDefault((DynaDashboardSearchContext) iSearchContextBase);
+        DynaDashboardSearchContext searchContext = (DynaDashboardSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<DynaDashboard> domains = dynadashboardService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class DynaDashboardRuntime extends cn.ibizlab.pms.core.runtime.SystemData
 
     @Override
     public List<DynaDashboard> select(ISearchContextBase iSearchContextBase) {
-        return dynadashboardService.searchDefault((DynaDashboardSearchContext) iSearchContextBase).getContent();
+        DynaDashboardSearchContext searchContext = (DynaDashboardSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return dynadashboardService.searchDefault(searchContext).getContent();
     }
 
     @Override

@@ -94,8 +94,11 @@ public class IbzPlanTempletRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
 
     @Override
     public Page<IbzPlanTemplet> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        IbzPlanTempletSearchContext searchContext = (IbzPlanTempletSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("CurUserTemplet"))
+            return ibzplantempletService.searchCurUserTemplet(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return ibzplantempletService.searchDefault((IbzPlanTempletSearchContext) iSearchContextBase);
+            return ibzplantempletService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +111,9 @@ public class IbzPlanTempletRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
     @Override
     public IbzPlanTemplet selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<IbzPlanTemplet> domains = ibzplantempletService.searchDefault((IbzPlanTempletSearchContext) iSearchContextBase);
+        IbzPlanTempletSearchContext searchContext = (IbzPlanTempletSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<IbzPlanTemplet> domains = ibzplantempletService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +121,9 @@ public class IbzPlanTempletRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
 
     @Override
     public List<IbzPlanTemplet> select(ISearchContextBase iSearchContextBase) {
-        return ibzplantempletService.searchDefault((IbzPlanTempletSearchContext) iSearchContextBase).getContent();
+        IbzPlanTempletSearchContext searchContext = (IbzPlanTempletSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return ibzplantempletService.searchDefault(searchContext).getContent();
     }
 
     @Override

@@ -94,8 +94,9 @@ public class JobRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
 
     @Override
     public Page<Job> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        JobSearchContext searchContext = (JobSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return jobService.searchDefault((JobSearchContext) iSearchContextBase);
+            return jobService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class JobRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
     @Override
     public Job selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Job> domains = jobService.searchDefault((JobSearchContext) iSearchContextBase);
+        JobSearchContext searchContext = (JobSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Job> domains = jobService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class JobRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
 
     @Override
     public List<Job> select(ISearchContextBase iSearchContextBase) {
-        return jobService.searchDefault((JobSearchContext) iSearchContextBase).getContent();
+        JobSearchContext searchContext = (JobSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return jobService.searchDefault(searchContext).getContent();
     }
 
     @Override

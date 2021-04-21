@@ -94,8 +94,9 @@ public class TeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public Page<Team> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        TeamSearchContext searchContext = (TeamSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return teamService.searchDefault((TeamSearchContext) iSearchContextBase);
+            return teamService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class TeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     @Override
     public Team selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Team> domains = teamService.searchDefault((TeamSearchContext) iSearchContextBase);
+        TeamSearchContext searchContext = (TeamSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Team> domains = teamService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class TeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public List<Team> select(ISearchContextBase iSearchContextBase) {
-        return teamService.searchDefault((TeamSearchContext) iSearchContextBase).getContent();
+        TeamSearchContext searchContext = (TeamSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return teamService.searchDefault(searchContext).getContent();
     }
 
     @Override

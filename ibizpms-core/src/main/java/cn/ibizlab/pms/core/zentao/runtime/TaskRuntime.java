@@ -94,8 +94,83 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public Page<Task> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        TaskSearchContext searchContext = (TaskSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("AssignedToMyTask"))
+            return taskService.searchAssignedToMyTask(searchContext);    
+        if (iPSDEDataSet.getName().equals("AssignedToMyTaskPc"))
+            return taskService.searchAssignedToMyTaskPc(searchContext);    
+        if (iPSDEDataSet.getName().equals("BugTask"))
+            return taskService.searchBugTask(searchContext);    
+        if (iPSDEDataSet.getName().equals("ByModule"))
+            return taskService.searchByModule(searchContext);    
+        if (iPSDEDataSet.getName().equals("ChildDefault"))
+            return taskService.searchChildDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("ChildTask"))
+            return taskService.searchChildTask(searchContext);    
+        if (iPSDEDataSet.getName().equals("ChildTaskTree"))
+            return taskService.searchChildTaskTree(searchContext);    
+        if (iPSDEDataSet.getName().equals("CurFinishTask"))
+            return taskService.searchCurFinishTask(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return taskService.searchDefault((TaskSearchContext) iSearchContextBase);
+            return taskService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("DefaultRow"))
+            return taskService.searchDefaultRow(searchContext);    
+        if (iPSDEDataSet.getName().equals("ESBulk"))
+            return taskService.searchESBulk(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyAgentTask"))
+            return taskService.searchMyAgentTask(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyAllTask"))
+            return taskService.searchMyAllTask(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyCompleteTask"))
+            return taskService.searchMyCompleteTask(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyCompleteTaskMobDaily"))
+            return taskService.searchMyCompleteTaskMobDaily(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyCompleteTaskMobMonthly"))
+            return taskService.searchMyCompleteTaskMobMonthly(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyCompleteTaskMonthlyZS"))
+            return taskService.searchMyCompleteTaskMonthlyZS(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyCompleteTaskZS"))
+            return taskService.searchMyCompleteTaskZS(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyFavorites"))
+            return taskService.searchMyFavorites(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyPlansTaskMobMonthly"))
+            return taskService.searchMyPlansTaskMobMonthly(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyTomorrowPlanTask"))
+            return taskService.searchMyTomorrowPlanTask(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyTomorrowPlanTaskMobDaily"))
+            return taskService.searchMyTomorrowPlanTaskMobDaily(searchContext);    
+        if (iPSDEDataSet.getName().equals("NextWeekCompleteTaskMobZS"))
+            return taskService.searchNextWeekCompleteTaskMobZS(searchContext);    
+        if (iPSDEDataSet.getName().equals("NextWeekCompleteTaskZS"))
+            return taskService.searchNextWeekCompleteTaskZS(searchContext);    
+        if (iPSDEDataSet.getName().equals("NextWeekPlanCompleteTask"))
+            return taskService.searchNextWeekPlanCompleteTask(searchContext);    
+        if (iPSDEDataSet.getName().equals("PlanTask"))
+            return taskService.searchPlanTask(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectAppTask"))
+            return taskService.searchProjectAppTask(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectTask"))
+            return taskService.searchProjectTask(searchContext);    
+        if (iPSDEDataSet.getName().equals("RootTask"))
+            return taskService.searchRootTask(searchContext);    
+        if (iPSDEDataSet.getName().equals("TaskLinkPlan"))
+            return taskService.searchTaskLinkPlan(searchContext);    
+        if (iPSDEDataSet.getName().equals("ThisMonthCompleteTaskChoice"))
+            return taskService.searchThisMonthCompleteTaskChoice(searchContext);    
+        if (iPSDEDataSet.getName().equals("ThisWeekCompleteTask"))
+            return taskService.searchThisWeekCompleteTask(searchContext);    
+        if (iPSDEDataSet.getName().equals("ThisWeekCompleteTaskChoice"))
+            return taskService.searchThisWeekCompleteTaskChoice(searchContext);    
+        if (iPSDEDataSet.getName().equals("ThisWeekCompleteTaskMobZS"))
+            return taskService.searchThisWeekCompleteTaskMobZS(searchContext);    
+        if (iPSDEDataSet.getName().equals("ThisWeekCompleteTaskZS"))
+            return taskService.searchThisWeekCompleteTaskZS(searchContext);    
+        if (iPSDEDataSet.getName().equals("TodoListTask"))
+            return taskService.searchTodoListTask(searchContext);    
+        if (iPSDEDataSet.getName().equals("TypeGroup"))
+            return taskService.searchTypeGroup(searchContext);    
+        if (iPSDEDataSet.getName().equals("TypeGroupPlan"))
+            return taskService.searchTypeGroupPlan(searchContext);    
         return null;
     }
 
@@ -108,7 +183,9 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     @Override
     public Task selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Task> domains = taskService.searchDefault((TaskSearchContext) iSearchContextBase);
+        TaskSearchContext searchContext = (TaskSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Task> domains = taskService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +193,9 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public List<Task> select(ISearchContextBase iSearchContextBase) {
-        return taskService.searchDefault((TaskSearchContext) iSearchContextBase).getContent();
+        TaskSearchContext searchContext = (TaskSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return taskService.searchDefault(searchContext).getContent();
     }
 
     @Override

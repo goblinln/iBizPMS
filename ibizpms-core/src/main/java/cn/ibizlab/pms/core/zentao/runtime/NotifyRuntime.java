@@ -94,8 +94,9 @@ public class NotifyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
 
     @Override
     public Page<Notify> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        NotifySearchContext searchContext = (NotifySearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return notifyService.searchDefault((NotifySearchContext) iSearchContextBase);
+            return notifyService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class NotifyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     @Override
     public Notify selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Notify> domains = notifyService.searchDefault((NotifySearchContext) iSearchContextBase);
+        NotifySearchContext searchContext = (NotifySearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Notify> domains = notifyService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class NotifyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
 
     @Override
     public List<Notify> select(ISearchContextBase iSearchContextBase) {
-        return notifyService.searchDefault((NotifySearchContext) iSearchContextBase).getContent();
+        NotifySearchContext searchContext = (NotifySearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return notifyService.searchDefault(searchContext).getContent();
     }
 
     @Override

@@ -94,8 +94,9 @@ public class RepoHistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
 
     @Override
     public Page<RepoHistory> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        RepoHistorySearchContext searchContext = (RepoHistorySearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return repohistoryService.searchDefault((RepoHistorySearchContext) iSearchContextBase);
+            return repohistoryService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class RepoHistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     @Override
     public RepoHistory selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<RepoHistory> domains = repohistoryService.searchDefault((RepoHistorySearchContext) iSearchContextBase);
+        RepoHistorySearchContext searchContext = (RepoHistorySearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<RepoHistory> domains = repohistoryService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class RepoHistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
 
     @Override
     public List<RepoHistory> select(ISearchContextBase iSearchContextBase) {
-        return repohistoryService.searchDefault((RepoHistorySearchContext) iSearchContextBase).getContent();
+        RepoHistorySearchContext searchContext = (RepoHistorySearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return repohistoryService.searchDefault(searchContext).getContent();
     }
 
     @Override

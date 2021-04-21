@@ -94,8 +94,15 @@ public class ProjectTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
 
     @Override
     public Page<ProjectTeam> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        ProjectTeamSearchContext searchContext = (ProjectTeamSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return projectteamService.searchDefault((ProjectTeamSearchContext) iSearchContextBase);
+            return projectteamService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectTeamPm"))
+            return projectteamService.searchProjectTeamPm(searchContext);    
+        if (iPSDEDataSet.getName().equals("RowEditDefault"))
+            return projectteamService.searchRowEditDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("TaskCntEstimateConsumedLeft"))
+            return projectteamService.searchTaskCntEstimateConsumedLeft(searchContext);    
         return null;
     }
 
@@ -108,7 +115,9 @@ public class ProjectTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     @Override
     public ProjectTeam selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<ProjectTeam> domains = projectteamService.searchDefault((ProjectTeamSearchContext) iSearchContextBase);
+        ProjectTeamSearchContext searchContext = (ProjectTeamSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<ProjectTeam> domains = projectteamService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +125,9 @@ public class ProjectTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
 
     @Override
     public List<ProjectTeam> select(ISearchContextBase iSearchContextBase) {
-        return projectteamService.searchDefault((ProjectTeamSearchContext) iSearchContextBase).getContent();
+        ProjectTeamSearchContext searchContext = (ProjectTeamSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return projectteamService.searchDefault(searchContext).getContent();
     }
 
     @Override

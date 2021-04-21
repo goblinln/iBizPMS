@@ -94,8 +94,13 @@ public class IbizproIndexRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public Page<IbizproIndex> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        IbizproIndexSearchContext searchContext = (IbizproIndexSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return ibizproindexService.searchDefault((IbizproIndexSearchContext) iSearchContextBase);
+            return ibizproindexService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("ESquery"))
+            return ibizproindexService.searchESquery(searchContext);    
+        if (iPSDEDataSet.getName().equals("IndexDER"))
+            return ibizproindexService.searchIndexDER(searchContext);    
         return null;
     }
 
@@ -108,7 +113,9 @@ public class IbizproIndexRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     @Override
     public IbizproIndex selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<IbizproIndex> domains = ibizproindexService.searchDefault((IbizproIndexSearchContext) iSearchContextBase);
+        IbizproIndexSearchContext searchContext = (IbizproIndexSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<IbizproIndex> domains = ibizproindexService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +123,9 @@ public class IbizproIndexRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public List<IbizproIndex> select(ISearchContextBase iSearchContextBase) {
-        return ibizproindexService.searchDefault((IbizproIndexSearchContext) iSearchContextBase).getContent();
+        IbizproIndexSearchContext searchContext = (IbizproIndexSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return ibizproindexService.searchDefault(searchContext).getContent();
     }
 
     @Override

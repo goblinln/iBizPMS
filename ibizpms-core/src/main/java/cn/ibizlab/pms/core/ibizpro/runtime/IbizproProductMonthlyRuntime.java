@@ -94,8 +94,9 @@ public class IbizproProductMonthlyRuntime extends cn.ibizlab.pms.core.runtime.Sy
 
     @Override
     public Page<IbizproProductMonthly> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        IbizproProductMonthlySearchContext searchContext = (IbizproProductMonthlySearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return ibizproproductmonthlyService.searchDefault((IbizproProductMonthlySearchContext) iSearchContextBase);
+            return ibizproproductmonthlyService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class IbizproProductMonthlyRuntime extends cn.ibizlab.pms.core.runtime.Sy
     @Override
     public IbizproProductMonthly selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<IbizproProductMonthly> domains = ibizproproductmonthlyService.searchDefault((IbizproProductMonthlySearchContext) iSearchContextBase);
+        IbizproProductMonthlySearchContext searchContext = (IbizproProductMonthlySearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<IbizproProductMonthly> domains = ibizproproductmonthlyService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class IbizproProductMonthlyRuntime extends cn.ibizlab.pms.core.runtime.Sy
 
     @Override
     public List<IbizproProductMonthly> select(ISearchContextBase iSearchContextBase) {
-        return ibizproproductmonthlyService.searchDefault((IbizproProductMonthlySearchContext) iSearchContextBase).getContent();
+        IbizproProductMonthlySearchContext searchContext = (IbizproProductMonthlySearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return ibizproproductmonthlyService.searchDefault(searchContext).getContent();
     }
 
     @Override

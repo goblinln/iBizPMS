@@ -94,8 +94,15 @@ public class IbzReportlyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
 
     @Override
     public Page<IbzReportly> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        IbzReportlySearchContext searchContext = (IbzReportlySearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return ibzreportlyService.searchDefault((IbzReportlySearchContext) iSearchContextBase);
+            return ibzreportlyService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyAllReportly"))
+            return ibzreportlyService.searchMyAllReportly(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyReceived"))
+            return ibzreportlyService.searchMyReceived(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyReportlyMob"))
+            return ibzreportlyService.searchMyReportlyMob(searchContext);    
         return null;
     }
 
@@ -108,7 +115,9 @@ public class IbzReportlyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     @Override
     public IbzReportly selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<IbzReportly> domains = ibzreportlyService.searchDefault((IbzReportlySearchContext) iSearchContextBase);
+        IbzReportlySearchContext searchContext = (IbzReportlySearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<IbzReportly> domains = ibzreportlyService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +125,9 @@ public class IbzReportlyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
 
     @Override
     public List<IbzReportly> select(ISearchContextBase iSearchContextBase) {
-        return ibzreportlyService.searchDefault((IbzReportlySearchContext) iSearchContextBase).getContent();
+        IbzReportlySearchContext searchContext = (IbzReportlySearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return ibzreportlyService.searchDefault(searchContext).getContent();
     }
 
     @Override

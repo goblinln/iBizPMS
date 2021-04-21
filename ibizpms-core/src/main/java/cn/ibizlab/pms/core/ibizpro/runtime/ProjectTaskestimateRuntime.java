@@ -94,8 +94,11 @@ public class ProjectTaskestimateRuntime extends cn.ibizlab.pms.core.runtime.Syst
 
     @Override
     public Page<ProjectTaskestimate> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        ProjectTaskestimateSearchContext searchContext = (ProjectTaskestimateSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("AccountDetail"))
+            return projecttaskestimateService.searchAccountDetail(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return projecttaskestimateService.searchDefault((ProjectTaskestimateSearchContext) iSearchContextBase);
+            return projecttaskestimateService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +111,9 @@ public class ProjectTaskestimateRuntime extends cn.ibizlab.pms.core.runtime.Syst
     @Override
     public ProjectTaskestimate selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<ProjectTaskestimate> domains = projecttaskestimateService.searchDefault((ProjectTaskestimateSearchContext) iSearchContextBase);
+        ProjectTaskestimateSearchContext searchContext = (ProjectTaskestimateSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<ProjectTaskestimate> domains = projecttaskestimateService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +121,9 @@ public class ProjectTaskestimateRuntime extends cn.ibizlab.pms.core.runtime.Syst
 
     @Override
     public List<ProjectTaskestimate> select(ISearchContextBase iSearchContextBase) {
-        return projecttaskestimateService.searchDefault((ProjectTaskestimateSearchContext) iSearchContextBase).getContent();
+        ProjectTaskestimateSearchContext searchContext = (ProjectTaskestimateSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return projecttaskestimateService.searchDefault(searchContext).getContent();
     }
 
     @Override

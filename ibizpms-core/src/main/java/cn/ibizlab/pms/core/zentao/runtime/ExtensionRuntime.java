@@ -94,8 +94,9 @@ public class ExtensionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public Page<Extension> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        ExtensionSearchContext searchContext = (ExtensionSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return extensionService.searchDefault((ExtensionSearchContext) iSearchContextBase);
+            return extensionService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class ExtensionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     @Override
     public Extension selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Extension> domains = extensionService.searchDefault((ExtensionSearchContext) iSearchContextBase);
+        ExtensionSearchContext searchContext = (ExtensionSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Extension> domains = extensionService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class ExtensionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public List<Extension> select(ISearchContextBase iSearchContextBase) {
-        return extensionService.searchDefault((ExtensionSearchContext) iSearchContextBase).getContent();
+        ExtensionSearchContext searchContext = (ExtensionSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return extensionService.searchDefault(searchContext).getContent();
     }
 
     @Override

@@ -94,8 +94,17 @@ public class ProductStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public Page<ProductStats> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        ProductStatsSearchContext searchContext = (ProductStatsSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return productstatsService.searchDefault((ProductStatsSearchContext) iSearchContextBase);
+            return productstatsService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("NoOpenProduct"))
+            return productstatsService.searchNoOpenProduct(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProdctQuantiGird"))
+            return productstatsService.searchProdctQuantiGird(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProductInputTable"))
+            return productstatsService.searchProductInputTable(searchContext);    
+        if (iPSDEDataSet.getName().equals("Productcompletionstatistics"))
+            return productstatsService.searchProductcompletionstatistics(searchContext);    
         return null;
     }
 
@@ -108,7 +117,9 @@ public class ProductStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     @Override
     public ProductStats selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<ProductStats> domains = productstatsService.searchDefault((ProductStatsSearchContext) iSearchContextBase);
+        ProductStatsSearchContext searchContext = (ProductStatsSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<ProductStats> domains = productstatsService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +127,9 @@ public class ProductStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public List<ProductStats> select(ISearchContextBase iSearchContextBase) {
-        return productstatsService.searchDefault((ProductStatsSearchContext) iSearchContextBase).getContent();
+        ProductStatsSearchContext searchContext = (ProductStatsSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return productstatsService.searchDefault(searchContext).getContent();
     }
 
     @Override

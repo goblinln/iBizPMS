@@ -94,8 +94,9 @@ public class CompanyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public Page<Company> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        CompanySearchContext searchContext = (CompanySearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return companyService.searchDefault((CompanySearchContext) iSearchContextBase);
+            return companyService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class CompanyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public Company selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Company> domains = companyService.searchDefault((CompanySearchContext) iSearchContextBase);
+        CompanySearchContext searchContext = (CompanySearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Company> domains = companyService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class CompanyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public List<Company> select(ISearchContextBase iSearchContextBase) {
-        return companyService.searchDefault((CompanySearchContext) iSearchContextBase).getContent();
+        CompanySearchContext searchContext = (CompanySearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return companyService.searchDefault(searchContext).getContent();
     }
 
     @Override

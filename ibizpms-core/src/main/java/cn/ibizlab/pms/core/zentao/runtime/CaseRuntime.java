@@ -94,8 +94,51 @@ public class CaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public Page<Case> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        CaseSearchContext searchContext = (CaseSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("BatchNew"))
+            return caseService.searchBatchNew(searchContext);    
+        if (iPSDEDataSet.getName().equals("CurOpenedCase"))
+            return caseService.searchCurOpenedCase(searchContext);    
+        if (iPSDEDataSet.getName().equals("CurSuite"))
+            return caseService.searchCurSuite(searchContext);    
+        if (iPSDEDataSet.getName().equals("CurTestTask"))
+            return caseService.searchCurTestTask(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return caseService.searchDefault((CaseSearchContext) iSearchContextBase);
+            return caseService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("ESBulk"))
+            return caseService.searchESBulk(searchContext);    
+        if (iPSDEDataSet.getName().equals("ModuleRePortCase"))
+            return caseService.searchModuleRePortCase(searchContext);    
+        if (iPSDEDataSet.getName().equals("ModuleRePortCaseEntry"))
+            return caseService.searchModuleRePortCaseEntry(searchContext);    
+        if (iPSDEDataSet.getName().equals("ModuleRePortCase_Project"))
+            return caseService.searchModuleRePortCase_Project(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyFavorite"))
+            return caseService.searchMyFavorites(searchContext);    
+        if (iPSDEDataSet.getName().equals("NotCurTestSuite"))
+            return caseService.searchNotCurTestSuite(searchContext);    
+        if (iPSDEDataSet.getName().equals("NotCurTestTask"))
+            return caseService.searchNotCurTestTask(searchContext);    
+        if (iPSDEDataSet.getName().equals("NotCurTestTaskProject"))
+            return caseService.searchNotCurTestTaskProject(searchContext);    
+        if (iPSDEDataSet.getName().equals("RePortCase"))
+            return caseService.searchRePortCase(searchContext);    
+        if (iPSDEDataSet.getName().equals("RePortCaseEntry"))
+            return caseService.searchRePortCaseEntry(searchContext);    
+        if (iPSDEDataSet.getName().equals("RePortCase_Project"))
+            return caseService.searchRePortCase_Project(searchContext);    
+        if (iPSDEDataSet.getName().equals("RunERRePortCase"))
+            return caseService.searchRunERRePortCase(searchContext);    
+        if (iPSDEDataSet.getName().equals("RunERRePortCaseEntry"))
+            return caseService.searchRunERRePortCaseEntry(searchContext);    
+        if (iPSDEDataSet.getName().equals("RunERRePortCase_Project"))
+            return caseService.searchRunERRePortCase_Project(searchContext);    
+        if (iPSDEDataSet.getName().equals("RunRePortCase"))
+            return caseService.searchRunRePortCase(searchContext);    
+        if (iPSDEDataSet.getName().equals("RunRePortCaseEntry"))
+            return caseService.searchRunRePortCaseEntry(searchContext);    
+        if (iPSDEDataSet.getName().equals("RunRePortCase_Project"))
+            return caseService.searchRunRePortCase_Project(searchContext);    
         return null;
     }
 
@@ -108,7 +151,9 @@ public class CaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     @Override
     public Case selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Case> domains = caseService.searchDefault((CaseSearchContext) iSearchContextBase);
+        CaseSearchContext searchContext = (CaseSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Case> domains = caseService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +161,9 @@ public class CaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public List<Case> select(ISearchContextBase iSearchContextBase) {
-        return caseService.searchDefault((CaseSearchContext) iSearchContextBase).getContent();
+        CaseSearchContext searchContext = (CaseSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return caseService.searchDefault(searchContext).getContent();
     }
 
     @Override

@@ -94,8 +94,15 @@ public class PRODUCTTEAMRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
 
     @Override
     public Page<PRODUCTTEAM> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        PRODUCTTEAMSearchContext searchContext = (PRODUCTTEAMSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return productteamService.searchDefault((PRODUCTTEAMSearchContext) iSearchContextBase);
+            return productteamService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProductTeamInfo"))
+            return productteamService.searchProductTeamInfo(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectApp"))
+            return productteamService.searchProjectApp(searchContext);    
+        if (iPSDEDataSet.getName().equals("RowEditDefaultProductTeam"))
+            return productteamService.searchRowEditDefaultProductTeam(searchContext);    
         return null;
     }
 
@@ -108,7 +115,9 @@ public class PRODUCTTEAMRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     @Override
     public PRODUCTTEAM selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<PRODUCTTEAM> domains = productteamService.searchDefault((PRODUCTTEAMSearchContext) iSearchContextBase);
+        PRODUCTTEAMSearchContext searchContext = (PRODUCTTEAMSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<PRODUCTTEAM> domains = productteamService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +125,9 @@ public class PRODUCTTEAMRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
 
     @Override
     public List<PRODUCTTEAM> select(ISearchContextBase iSearchContextBase) {
-        return productteamService.searchDefault((PRODUCTTEAMSearchContext) iSearchContextBase).getContent();
+        PRODUCTTEAMSearchContext searchContext = (PRODUCTTEAMSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return productteamService.searchDefault(searchContext).getContent();
     }
 
     @Override

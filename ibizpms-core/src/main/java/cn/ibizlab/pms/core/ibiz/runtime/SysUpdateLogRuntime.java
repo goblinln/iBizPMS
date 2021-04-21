@@ -94,8 +94,9 @@ public class SysUpdateLogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public Page<SysUpdateLog> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        SysUpdateLogSearchContext searchContext = (SysUpdateLogSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return sysupdatelogService.searchDefault((SysUpdateLogSearchContext) iSearchContextBase);
+            return sysupdatelogService.searchDefault(searchContext);    
         return null;
     }
 
@@ -108,7 +109,9 @@ public class SysUpdateLogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     @Override
     public SysUpdateLog selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<SysUpdateLog> domains = sysupdatelogService.searchDefault((SysUpdateLogSearchContext) iSearchContextBase);
+        SysUpdateLogSearchContext searchContext = (SysUpdateLogSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<SysUpdateLog> domains = sysupdatelogService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +119,9 @@ public class SysUpdateLogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public List<SysUpdateLog> select(ISearchContextBase iSearchContextBase) {
-        return sysupdatelogService.searchDefault((SysUpdateLogSearchContext) iSearchContextBase).getContent();
+        SysUpdateLogSearchContext searchContext = (SysUpdateLogSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return sysupdatelogService.searchDefault(searchContext).getContent();
     }
 
     @Override

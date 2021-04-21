@@ -94,8 +94,11 @@ public class IbzLibModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public Page<IbzLibModule> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        IbzLibModuleSearchContext searchContext = (IbzLibModuleSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return ibzlibmoduleService.searchDefault((IbzLibModuleSearchContext) iSearchContextBase);
+            return ibzlibmoduleService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("Root_NoBranch"))
+            return ibzlibmoduleService.searchRoot_NoBranch(searchContext);    
         return null;
     }
 
@@ -108,7 +111,9 @@ public class IbzLibModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     @Override
     public IbzLibModule selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<IbzLibModule> domains = ibzlibmoduleService.searchDefault((IbzLibModuleSearchContext) iSearchContextBase);
+        IbzLibModuleSearchContext searchContext = (IbzLibModuleSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<IbzLibModule> domains = ibzlibmoduleService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +121,9 @@ public class IbzLibModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public List<IbzLibModule> select(ISearchContextBase iSearchContextBase) {
-        return ibzlibmoduleService.searchDefault((IbzLibModuleSearchContext) iSearchContextBase).getContent();
+        IbzLibModuleSearchContext searchContext = (IbzLibModuleSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return ibzlibmoduleService.searchDefault(searchContext).getContent();
     }
 
     @Override

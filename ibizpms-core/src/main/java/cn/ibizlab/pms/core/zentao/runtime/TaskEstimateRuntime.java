@@ -94,8 +94,21 @@ public class TaskEstimateRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public Page<TaskEstimate> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        TaskEstimateSearchContext searchContext = (TaskEstimateSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("ActionMonth"))
+            return taskestimateService.searchActionMonth(searchContext);    
+        if (iPSDEDataSet.getName().equals("ActionYear"))
+            return taskestimateService.searchActionYear(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return taskestimateService.searchDefault((TaskEstimateSearchContext) iSearchContextBase);
+            return taskestimateService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("DEFAULT1"))
+            return taskestimateService.searchDefaults(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectActionMonth"))
+            return taskestimateService.searchProjectActionMonth(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectActionYear"))
+            return taskestimateService.searchProjectActionYear(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProjectTaskEstimate"))
+            return taskestimateService.searchProjectTaskEstimate(searchContext);    
         return null;
     }
 
@@ -108,7 +121,9 @@ public class TaskEstimateRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     @Override
     public TaskEstimate selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<TaskEstimate> domains = taskestimateService.searchDefault((TaskEstimateSearchContext) iSearchContextBase);
+        TaskEstimateSearchContext searchContext = (TaskEstimateSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<TaskEstimate> domains = taskestimateService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +131,9 @@ public class TaskEstimateRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public List<TaskEstimate> select(ISearchContextBase iSearchContextBase) {
-        return taskestimateService.searchDefault((TaskEstimateSearchContext) iSearchContextBase).getContent();
+        TaskEstimateSearchContext searchContext = (TaskEstimateSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return taskestimateService.searchDefault(searchContext).getContent();
     }
 
     @Override

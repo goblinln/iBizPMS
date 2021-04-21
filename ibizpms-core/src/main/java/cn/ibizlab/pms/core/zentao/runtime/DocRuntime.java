@@ -94,8 +94,29 @@ public class DocRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
 
     @Override
     public Page<Doc> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
+        DocSearchContext searchContext = (DocSearchContext) iSearchContextBase;
+        if (iPSDEDataSet.getName().equals("ChildDocLibDoc"))
+            return docService.searchChildDocLibDoc(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
-            return docService.searchDefault((DocSearchContext) iSearchContextBase);
+            return docService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("DocLibAndDoc"))
+            return docService.searchDocLibAndDoc(searchContext);    
+        if (iPSDEDataSet.getName().equals("DocLibDoc"))
+            return docService.searchDocLibDoc(searchContext);    
+        if (iPSDEDataSet.getName().equals("DocModuleDoc"))
+            return docService.searchDocModuleDoc(searchContext);    
+        if (iPSDEDataSet.getName().equals("DocStatus"))
+            return docService.searchDocStatus(searchContext);    
+        if (iPSDEDataSet.getName().equals("ModuleDocChild"))
+            return docService.searchModuleDocChild(searchContext);    
+        if (iPSDEDataSet.getName().equals("MYFAVOURITE"))
+            return docService.searchMyFavourite(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyFavouritesOnlyDoc"))
+            return docService.searchMyFavouritesOnlyDoc(searchContext);    
+        if (iPSDEDataSet.getName().equals("NotRootDoc"))
+            return docService.searchNotRootDoc(searchContext);    
+        if (iPSDEDataSet.getName().equals("RootDoc"))
+            return docService.searchRootDoc(searchContext);    
         return null;
     }
 
@@ -108,7 +129,9 @@ public class DocRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
     @Override
     public Doc selectOne(ISearchContextBase iSearchContextBase) {
         //单条数据查询，多条数数据时 返回第一条
-        Page<Doc> domains = docService.searchDefault((DocSearchContext) iSearchContextBase);
+        DocSearchContext searchContext = (DocSearchContext) iSearchContextBase;
+        searchContext.setSize(1);
+        Page<Doc> domains = docService.searchDefault(searchContext);
         if (domains.getTotalElements() == 0)
             return null;
         return domains.getContent().get(0);
@@ -116,7 +139,9 @@ public class DocRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
 
     @Override
     public List<Doc> select(ISearchContextBase iSearchContextBase) {
-        return docService.searchDefault((DocSearchContext) iSearchContextBase).getContent();
+        DocSearchContext searchContext = (DocSearchContext) iSearchContextBase;
+        searchContext.setSize(Integer.MAX_VALUE);
+        return docService.searchDefault(searchContext).getContent();
     }
 
     @Override
