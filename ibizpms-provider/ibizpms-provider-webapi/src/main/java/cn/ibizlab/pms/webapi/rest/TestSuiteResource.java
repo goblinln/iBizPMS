@@ -238,7 +238,7 @@ public class TestSuiteResource {
     }
 
     @VersionCheck(entity = "testsuite" , versionfield = "lastediteddate")
-    @PreAuthorize("@TestSuiteRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'UPDATE')")
     @ApiOperation(value = "根据产品更新测试套件", tags = {"测试套件" },  notes = "根据产品更新测试套件")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testsuites/{testsuite_id}")
     public ResponseEntity<TestSuiteDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
@@ -277,7 +277,7 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TestSuiteRuntime.quickTest('READ')")
+    @PreAuthorize("@TestSuiteRuntime.test(#testsuite_id,'READ')")
     @ApiOperation(value = "根据产品获取测试套件", tags = {"测试套件" },  notes = "根据产品获取测试套件")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testsuites/{testsuite_id}")
     public ResponseEntity<TestSuiteDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id) {

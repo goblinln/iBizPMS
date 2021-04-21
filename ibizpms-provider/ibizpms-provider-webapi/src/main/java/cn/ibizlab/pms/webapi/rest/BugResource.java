@@ -1312,7 +1312,7 @@ public class BugResource {
     }
 
     @VersionCheck(entity = "bug" , versionfield = "lastediteddate")
-    @PreAuthorize("@BugRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@BugRuntime.test(#bug_id,'UPDATE')")
     @ApiOperation(value = "根据产品更新Bug", tags = {"Bug" },  notes = "根据产品更新Bug")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/bugs/{bug_id}")
     public ResponseEntity<BugDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -1351,7 +1351,7 @@ public class BugResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
+    @PreAuthorize("@BugRuntime.test(#bug_id,'READ')")
     @ApiOperation(value = "根据产品获取Bug", tags = {"Bug" },  notes = "根据产品获取Bug")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/bugs/{bug_id}")
     public ResponseEntity<BugDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id) {
@@ -1747,7 +1747,7 @@ public class BugResource {
         boolean result = bugService.unlinkBugBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@BugRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@BugRuntime.test(#bug_id,'UPDATE')")
     @ApiOperation(value = "根据产品Bug", tags = {"Bug" },  notes = "根据产品Bug")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/bugs/{bug_id}/updatestoryversion")
     public ResponseEntity<BugDTO> updateStoryVersionByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -2582,7 +2582,7 @@ public class BugResource {
     }
 
     @VersionCheck(entity = "bug" , versionfield = "lastediteddate")
-    @PreAuthorize("@BugRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@BugRuntime.test(#bug_id,'UPDATE')")
     @ApiOperation(value = "根据需求更新Bug", tags = {"Bug" },  notes = "根据需求更新Bug")
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/bugs/{bug_id}")
     public ResponseEntity<BugDTO> updateByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -2621,7 +2621,7 @@ public class BugResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
+    @PreAuthorize("@BugRuntime.test(#bug_id,'READ')")
     @ApiOperation(value = "根据需求获取Bug", tags = {"Bug" },  notes = "根据需求获取Bug")
 	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/bugs/{bug_id}")
     public ResponseEntity<BugDTO> getByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id) {
@@ -3017,7 +3017,7 @@ public class BugResource {
         boolean result = bugService.unlinkBugBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@BugRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@BugRuntime.test(#bug_id,'UPDATE')")
     @ApiOperation(value = "根据需求Bug", tags = {"Bug" },  notes = "根据需求Bug")
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/bugs/{bug_id}/updatestoryversion")
     public ResponseEntity<BugDTO> updateStoryVersionByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -3852,7 +3852,7 @@ public class BugResource {
     }
 
     @VersionCheck(entity = "bug" , versionfield = "lastediteddate")
-    @PreAuthorize("@BugRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@BugRuntime.test(#bug_id,'UPDATE')")
     @ApiOperation(value = "根据项目更新Bug", tags = {"Bug" },  notes = "根据项目更新Bug")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/bugs/{bug_id}")
     public ResponseEntity<BugDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -3891,7 +3891,7 @@ public class BugResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
+    @PreAuthorize("@BugRuntime.test(#bug_id,'READ')")
     @ApiOperation(value = "根据项目获取Bug", tags = {"Bug" },  notes = "根据项目获取Bug")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/bugs/{bug_id}")
     public ResponseEntity<BugDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id) {
@@ -4287,7 +4287,7 @@ public class BugResource {
         boolean result = bugService.unlinkBugBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@BugRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@BugRuntime.test(#bug_id,'UPDATE')")
     @ApiOperation(value = "根据项目Bug", tags = {"Bug" },  notes = "根据项目Bug")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/bugs/{bug_id}/updatestoryversion")
     public ResponseEntity<BugDTO> updateStoryVersionByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -5122,7 +5122,7 @@ public class BugResource {
     }
 
     @VersionCheck(entity = "bug" , versionfield = "lastediteddate")
-    @PreAuthorize("@BugRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@BugRuntime.test(#bug_id,'UPDATE')")
     @ApiOperation(value = "根据产品需求更新Bug", tags = {"Bug" },  notes = "根据产品需求更新Bug")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/bugs/{bug_id}")
     public ResponseEntity<BugDTO> updateByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -5161,7 +5161,7 @@ public class BugResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@BugRuntime.quickTest('READ')")
+    @PreAuthorize("@BugRuntime.test(#bug_id,'READ')")
     @ApiOperation(value = "根据产品需求获取Bug", tags = {"Bug" },  notes = "根据产品需求获取Bug")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/bugs/{bug_id}")
     public ResponseEntity<BugDTO> getByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id) {
@@ -5557,7 +5557,7 @@ public class BugResource {
         boolean result = bugService.unlinkBugBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@BugRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@BugRuntime.test(#bug_id,'UPDATE')")
     @ApiOperation(value = "根据产品需求Bug", tags = {"Bug" },  notes = "根据产品需求Bug")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/bugs/{bug_id}/updatestoryversion")
     public ResponseEntity<BugDTO> updateStoryVersionByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {

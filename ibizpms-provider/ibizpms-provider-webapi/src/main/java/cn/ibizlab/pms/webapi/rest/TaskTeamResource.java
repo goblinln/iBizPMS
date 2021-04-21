@@ -75,7 +75,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'UPDATE')")
     @ApiOperation(value = "根据任务更新任务团队", tags = {"任务团队" },  notes = "根据任务更新任务团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> updateByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id, @RequestBody TaskTeamDTO taskteamdto) {
@@ -114,7 +114,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('READ')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'READ')")
     @ApiOperation(value = "根据任务获取任务团队", tags = {"任务团队" },  notes = "根据任务获取任务团队")
 	@RequestMapping(method = RequestMethod.GET, value = "/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> getByTask(@PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
@@ -205,7 +205,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'UPDATE')")
     @ApiOperation(value = "根据任务模块任务更新任务团队", tags = {"任务团队" },  notes = "根据任务模块任务更新任务团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> updateByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id, @RequestBody TaskTeamDTO taskteamdto) {
@@ -244,7 +244,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('READ')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'READ')")
     @ApiOperation(value = "根据任务模块任务获取任务团队", tags = {"任务团队" },  notes = "根据任务模块任务获取任务团队")
 	@RequestMapping(method = RequestMethod.GET, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> getByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
@@ -335,7 +335,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'UPDATE')")
     @ApiOperation(value = "根据产品计划任务更新任务团队", tags = {"任务团队" },  notes = "根据产品计划任务更新任务团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> updateByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id, @RequestBody TaskTeamDTO taskteamdto) {
@@ -374,7 +374,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('READ')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'READ')")
     @ApiOperation(value = "根据产品计划任务获取任务团队", tags = {"任务团队" },  notes = "根据产品计划任务获取任务团队")
 	@RequestMapping(method = RequestMethod.GET, value = "/productplans/{productplan_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> getByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
@@ -465,7 +465,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'UPDATE')")
     @ApiOperation(value = "根据需求任务更新任务团队", tags = {"任务团队" },  notes = "根据需求任务更新任务团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> updateByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id, @RequestBody TaskTeamDTO taskteamdto) {
@@ -504,7 +504,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('READ')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'READ')")
     @ApiOperation(value = "根据需求任务获取任务团队", tags = {"任务团队" },  notes = "根据需求任务获取任务团队")
 	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> getByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
@@ -595,7 +595,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'UPDATE')")
     @ApiOperation(value = "根据项目任务更新任务团队", tags = {"任务团队" },  notes = "根据项目任务更新任务团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> updateByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id, @RequestBody TaskTeamDTO taskteamdto) {
@@ -634,7 +634,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('READ')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'READ')")
     @ApiOperation(value = "根据项目任务获取任务团队", tags = {"任务团队" },  notes = "根据项目任务获取任务团队")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> getByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
@@ -725,7 +725,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'UPDATE')")
     @ApiOperation(value = "根据产品产品计划任务更新任务团队", tags = {"任务团队" },  notes = "根据产品产品计划任务更新任务团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> updateByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id, @RequestBody TaskTeamDTO taskteamdto) {
@@ -764,7 +764,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('READ')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'READ')")
     @ApiOperation(value = "根据产品产品计划任务获取任务团队", tags = {"任务团队" },  notes = "根据产品产品计划任务获取任务团队")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> getByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
@@ -855,7 +855,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'UPDATE')")
     @ApiOperation(value = "根据产品需求任务更新任务团队", tags = {"任务团队" },  notes = "根据产品需求任务更新任务团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> updateByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id, @RequestBody TaskTeamDTO taskteamdto) {
@@ -894,7 +894,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('READ')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'READ')")
     @ApiOperation(value = "根据产品需求任务获取任务团队", tags = {"任务团队" },  notes = "根据产品需求任务获取任务团队")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> getByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
@@ -985,7 +985,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'UPDATE')")
     @ApiOperation(value = "根据项目任务模块任务更新任务团队", tags = {"任务团队" },  notes = "根据项目任务模块任务更新任务团队")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> updateByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id, @RequestBody TaskTeamDTO taskteamdto) {
@@ -1024,7 +1024,7 @@ public class TaskTeamResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TaskTeamRuntime.quickTest('READ')")
+    @PreAuthorize("@TaskTeamRuntime.test(#taskteam_id,'READ')")
     @ApiOperation(value = "根据项目任务模块任务获取任务团队", tags = {"任务团队" },  notes = "根据项目任务模块任务获取任务团队")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/taskteams/{taskteam_id}")
     public ResponseEntity<TaskTeamDTO> getByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("taskteam_id") Long taskteam_id) {
