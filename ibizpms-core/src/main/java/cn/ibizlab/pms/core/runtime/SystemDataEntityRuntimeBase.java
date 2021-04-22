@@ -410,8 +410,10 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             return;
         if(testUnires(action))
             return ;
+        //系统默认能力
         Consumer<QueryWrapper> defaultAuthorityConditions = genDefaultConditions(context, action);
         String curSystemId = curUser.getSrfsystemid();
+        //运行时分配能力
         List<GrantedAuthority> authorities;
         if(StringUtils.isEmpty(curSystemId)){
             authorities= curUser.getAuthorities().stream()
@@ -426,47 +428,39 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                     && (DataAccessActions.READ.equals(action) || ((UAADEAuthority) f).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
                     .collect(Collectors.toList());
         }
-        boolean hasCondition = false;
-        for (GrantedAuthority authority : authorities) {
-            UAADEAuthority uaadeAuthority = (UAADEAuthority) authority;
-            //未设置权限 忽略
-            if ((StringUtils.isBlank(this.getOrgIdField()) || uaadeAuthority.getEnableorgdr() == null || uaadeAuthority.getEnableorgdr() == 0 || (uaadeAuthority.getEnableorgdr() == 1 && (uaadeAuthority.getOrgdr() == null || uaadeAuthority.getOrgdr() == 0)))
-                    && (StringUtils.isBlank(this.getDeptIdField()) || uaadeAuthority.getEnabledeptdr() != null || uaadeAuthority.getEnabledeptdr() == 0 || (uaadeAuthority.getEnabledeptdr() == 1 && (uaadeAuthority.getDeptdr() == null || uaadeAuthority.getDeptdr() == 0)))
-                    && (StringUtils.isBlank(uaadeAuthority.getBscope()))
-            ) {
-
-            } else {
-                hasCondition = true;
-                break;
-            }
-        }
         Consumer<QueryWrapper> authorityConditions = authorityCondition -> {
             for (GrantedAuthority authority : authorities) {
                 UAADEAuthority uaadeAuthority = (UAADEAuthority) authority;
-                //未设置权限 忽略
+                //未设置权限能力范围 拒绝操作
                 if ((StringUtils.isBlank(this.getOrgIdField()) || uaadeAuthority.getEnableorgdr() == null || uaadeAuthority.getEnableorgdr() == 0 || (uaadeAuthority.getEnableorgdr() == 1 && (uaadeAuthority.getOrgdr() == null || uaadeAuthority.getOrgdr() == 0)))
                         && (StringUtils.isBlank(this.getDeptIdField()) || uaadeAuthority.getEnabledeptdr() != null || uaadeAuthority.getEnabledeptdr() == 0 || (uaadeAuthority.getEnabledeptdr() == 1 && (uaadeAuthority.getDeptdr() == null || uaadeAuthority.getDeptdr() == 0)))
                         && (StringUtils.isBlank(uaadeAuthority.getBscope()))
                 ) {
-                    continue;
-                }
-                Consumer<QueryWrapper> dataCondition = genDataCondition(uaadeAuthority);
-                if (dataCondition != null)
+                    Consumer<QueryWrapper> denyDataCondition = dataCondition -> {
+                        dataCondition.apply("1 = 1");
+                    };
+                    authorityCondition.or(denyDataCondition);
+                } else {
+                    Consumer<QueryWrapper> dataCondition = genAuthorityConditions(uaadeAuthority, action);
                     authorityCondition.or(dataCondition);
+                }
             }
         };
-        if (defaultAuthorityConditions != null){
-            if(hasCondition){
+        
+        if (defaultAuthorityConditions != null) {
+            if (authorities.size() > 0) {
                 Consumer<QueryWrapper> or = orCondition -> {
                     orCondition.or(defaultAuthorityConditions);
                     orCondition.or(authorityConditions);
                 };
                 context.getSelectCond().and(or);
-            }else{
+            } else {
                 context.getSelectCond().and(defaultAuthorityConditions);
             }
-        }else if(hasCondition){
-            context.getSelectCond().and(authorityConditions);
+        } else {
+            if (authorities.size() > 0) {
+                context.getSelectCond().and(authorityConditions);
+            }
         }
     }
 
@@ -500,27 +494,20 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         return authorityConditions;
     }
 
-    protected Consumer<QueryWrapper> genDataCondition(UAADEAuthority uaadeAuthority) {
-        if (StringUtils.isNotBlank(uaadeAuthority.getBscope())) {
-            Consumer<QueryWrapper> dataConditions = dataCondition -> {
-                dataCondition.nested(ScopeUtils.parse(uaadeAuthority.getBscope()));
-                dataCondition.and(genOrgDeptCondition(uaadeAuthority));
-            };
-            return dataConditions;
-        } else {
-            return genOrgDeptCondition(uaadeAuthority);
-        }
-
-    }
-
-    protected Consumer<QueryWrapper> genOrgDeptCondition(UAADEAuthority uaadeAuthority) {
+    /**
+     * 加载运行时能力
+     * @param uaadeAuthority
+     * @param action
+     * @return
+     */
+    protected Consumer<QueryWrapper> genAuthorityConditions(UAADEAuthority uaadeAuthority, String action) {
         AuthenticationUser curUser = AuthenticationUser.getAuthenticationUser();
         Map<String, Set<String>> userInfo = curUser.getOrgInfo();
         Set<String> orgParent = userInfo.get("parentorg");
         Set<String> orgChild = userInfo.get("suborg");
         Set<String> orgDeptParent = userInfo.get("parentdept");
         Set<String> orgDeptChild = userInfo.get("subdept");
-        Consumer<QueryWrapper> orgConditions = orgCondition -> {
+        Consumer<QueryWrapper> authorityConditions = authorityCondition -> {
             //组织范围
             if (uaadeAuthority.getEnableorgdr() != null && uaadeAuthority.getEnableorgdr() == 1
                     && uaadeAuthority.getOrgdr() != null && uaadeAuthority.getOrgdr() > 0) {
@@ -529,7 +516,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                     Consumer<QueryWrapper> org = orgQw -> {
                         orgQw.eq(this.getOrgIdField(), curUser.getOrgid());
                     };
-                    orgCondition.or(org);
+                    authorityCondition.or(org);
                 }
                 //上级机构
                 if (StringUtils.isNotBlank(this.getOrgIdField()) && (DataRanges.ORG_PARENT & uaadeAuthority.getOrgdr()) > 0) {
@@ -537,7 +524,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                         Consumer<QueryWrapper> org = orgQw -> {
                             orgQw.in(this.getOrgIdField(), orgParent);
                         };
-                        orgCondition.or(org);
+                        authorityCondition.or(org);
                     }
                 }
                 //下级机构
@@ -546,7 +533,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                         Consumer<QueryWrapper> org = orgQw -> {
                             orgQw.in(this.getOrgIdField(), orgChild);
                         };
-                        orgCondition.or(org);
+                        authorityCondition.or(org);
                     }
                 }
                 //无值
@@ -554,7 +541,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                     Consumer<QueryWrapper> org = orgQw -> {
                         orgQw.isNull(this.getOrgIdField());
                     };
-                    orgCondition.or(org);
+                    authorityCondition.or(org);
                 }
             }
 
@@ -566,7 +553,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                     Consumer<QueryWrapper> dept = deptQw -> {
                         deptQw.eq(this.getDeptIdField(), curUser.getOrgid());
                     };
-                    orgCondition.or(dept);
+                    authorityCondition.or(dept);
                 }
                 //上级
                 if (StringUtils.isNotBlank(this.getDeptIdField()) && (DataRanges.SECTOR_PARENT & uaadeAuthority.getDeptdr()) > 0) {
@@ -574,7 +561,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                         Consumer<QueryWrapper> dept = deptQw -> {
                             deptQw.in(this.getDeptIdField(), orgDeptParent);
                         };
-                        orgCondition.or(dept);
+                        authorityCondition.or(dept);
                     }
                 }
                 //下级
@@ -583,7 +570,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                         Consumer<QueryWrapper> dept = deptQw -> {
                             deptQw.in(this.getDeptIdField(), orgDeptChild);
                         };
-                        orgCondition.or(dept);
+                        authorityCondition.or(dept);
                     }
                 }
                 //无值
@@ -591,11 +578,24 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                     Consumer<QueryWrapper> dept = deptQw -> {
                         deptQw.isNull(this.getDeptIdField());
                     };
-                    orgCondition.or(dept);
+                    authorityCondition.or(dept);
                 }
             }
+
+            //自定义条件
+            if (StringUtils.isNotBlank(uaadeAuthority.getBscope())) {
+                authorityCondition.or(ScopeUtils.parse(uaadeAuthority.getBscope()));
+            }
+
+
+            //操作判断
+            List<Map<String, String>> deActions = uaadeAuthority.getDeAction().stream().filter(deaction -> deaction.containsKey(action) && StringUtils.isNotBlank(deaction.get(action)))
+                    .collect(Collectors.toList());
+            if (deActions.size() > 0) {
+                authorityCondition.and(ScopeUtils.parse(uaadeAuthority.getBscope()));
+            }
         };
-        return orgConditions;
+        return authorityConditions;
     }
 
     public boolean isRtmodel() {
