@@ -10,6 +10,7 @@
     "name" : "TASKTYPE",
     "codeName" : "Tasktype"
   },
+  "scriptCode" : "var multiple = entity.get(\"multiple\");\nvar parent = entity.get(\"parent\");\nvar tasktype = \"40\";\nif(multiple === null || multiple == 0) {\n\tif(parent == -1) {\n\t\ttasktype = \"20\";\n\t}else if(parent == 0) {\n\t\ttasktype = \"30\";\n\t}\n}else {\n\ttasktype = \"10\";\n}\nreturn tasktype;",
   "customCode" : true,
   "enableBackend" : true,
   "enableFront" : false
