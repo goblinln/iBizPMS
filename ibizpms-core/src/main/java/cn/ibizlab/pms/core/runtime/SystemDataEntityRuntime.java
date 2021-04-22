@@ -5,6 +5,7 @@ import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
 import net.ibizsys.model.dataentity.der.IPSDER1N;
 import net.ibizsys.model.dataentity.der.IPSDERBase;
+import net.ibizsys.runtime.IDynaInstRuntime;
 import net.ibizsys.runtime.dataentity.der.DERTypes;
 import net.ibizsys.runtime.util.IEntityBase;
 import org.apache.commons.lang3.StringUtils;
@@ -25,7 +26,7 @@ public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBas
     }
 
     @Override
-    protected void translateEntityAfterProceed(Object arg0, Object objRet, String strActionName, IPSDEAction iPSDEAction, IPSDataEntity iPSDataEntity, Object joinPoint) throws Throwable {
+    protected void translateEntityAfterProceed(Object arg0, Object objRet, String strActionName, IPSDEAction iPSDEAction, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object joinPoint) throws Throwable {
         IEntityBase iEntityBase = null;
         //更替参数
         if (objRet != null && objRet instanceof IEntityBase) {
@@ -38,7 +39,7 @@ public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBas
             resetEntityInvalidFKey(iEntityBase, strActionName, iPSDEAction, iPSDataEntity, joinPoint);
         }
 
-        super.translateEntityAfterProceed(arg0, objRet, strActionName, iPSDEAction, iPSDataEntity, joinPoint);
+        super.translateEntityAfterProceed(arg0, objRet, strActionName, iPSDEAction, iPSDataEntity, iDynaInstRuntime, joinPoint);
     }
 
     /**
