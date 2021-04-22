@@ -284,14 +284,14 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
     }
 
     /**
-     * 渲染左侧布局菜单样式
+     * 渲染分页导航菜单样式
      *
      * @return {*} 
      * @memberof AppDefaultIndexViewLayout
      */
-    public renderContentTabexpLeft() {
+    public renderContentTabexpView() {
         return (
-            <div class='view-container' style={{ margin: '0 12px' }}>
+            <div class='view-container view-default tabexp-container' style={{ margin: '0 12px', height: 'calc(100% - 65px)' }}>
                 {this.$slots.default}
             </div>
         );
@@ -318,10 +318,13 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                     viewparams={this.viewparams}
                     viewName={this.viewInstance.codeName.toLowerCase()}
                     viewTitle={this.viewInstance.title} />
-                { (Object.is(this.viewInstance?.mainMenuAlign, "LEFT") || !this.viewInstance?.mainMenuAlign) ? this.renderContentLeft() : null}
-                { Object.is(this.viewInstance?.mainMenuAlign, "TOP") ? this.renderContentTop() : null}
-                { Object.is(this.viewInstance?.mainMenuAlign, "CENTER") ? this.renderContentMiddle() : null}
-                { Object.is(this.viewInstance?.mainMenuAlign, "TABEXP_LEFT") ? this.renderContentTabexpLeft() : null}
+                 { (Object.is(this.viewInstance.mainMenuAlign, "LEFT") || !this.viewInstance.mainMenuAlign) ? this.renderContentLeft() : null}
+                { Object.is(this.viewInstance.mainMenuAlign, "TOP") ? this.renderContentTop() : null}
+                { Object.is(this.viewInstance.mainMenuAlign, "CENTER") ? this.renderContentMiddle() : null}
+                { Object.is(this.viewInstance.mainMenuAlign, 'TABEXP_LEFT') ? this.renderContentTabexpView() : null}
+                { Object.is(this.viewInstance.mainMenuAlign, 'TABEXP_TOP') ? this.renderContentTabexpView() : null}
+                { Object.is(this.viewInstance.mainMenuAlign, 'TABEXP_RIGHT') ? this.renderContentTabexpView() : null}
+                { Object.is(this.viewInstance.mainMenuAlign, 'TABEXP_BOTTOM') ? this.renderContentTabexpView() : null}
             </div>
         );
     }

@@ -114,6 +114,7 @@ export class EditViewEngine extends ViewEngine {
         const newdata: boolean = !Object.is(arg.srfuf, '1');
         this.calcToolbarItemState(newdata);
         this.calcToolbarItemAuthState(this.transformData(arg));
+        this.readTask(arg);
     }
 
     /**
@@ -217,6 +218,21 @@ export class EditViewEngine extends ViewEngine {
             }
             if (this.view.$route) {
                 this.view.$route.meta.info = info;
+            }
+        }
+    }
+
+    /**
+     * 将抄送任务标记为已读
+     * 
+     * @param data 业务数据
+     * @memberof EditViewEngine                
+     */
+    public readTask(data: any) {
+        if (Object.is(this.view?.viewparams?.srfwf, "cc")) {
+            if (this.view.readTask && this.view.readTask instanceof Function) {
+                Object.assign(data, { taskId: this.view.viewparams.srftaskid });
+                this.view.readTask(data);
             }
         }
     }

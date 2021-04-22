@@ -4906,6 +4906,10 @@
       "enableFront" : true
     } ],
     "codeName" : "Progressrate",
+    "getComputePSDEFLogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEFLOGICS/ComputeProgressrate.json"
+    },
     "dEFType" : 2,
     "dataType" : "TEXT",
     "importOrder" : 1000,
@@ -5688,6 +5692,17 @@
     "logicSubType" : "DEFIELD",
     "name" : "计算延期",
     "scriptCode" : "return '延期100';",
+    "customCode" : true,
+    "enableBackend" : true,
+    "enableFront" : false
+  }, {
+    "codeName" : "ComputeProgressrate",
+    "defaultParamName" : "DEFAULT",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEFLOGICS/ComputeProgressrate.json",
+    "logicName" : "计算进度",
+    "logicSubType" : "DEFIELD",
+    "name" : "计算进度",
+    "scriptCode" : "if(entity.get(\"consumed\") == null || \"0\".equals(entity.get(\"consumed\")) )  {\n      return \"0\";\n}else (entity.get(\"left\") == null || \"0\".equals(entity.get(\"left\")) )  {\n      return \"100\";\n}else {\n      return String.valueOf(Double.parseDouble(entity.get(\"consumed\").toString())/(Double.parseDouble(entity.get(\"consumed\").toString()) + Double.parseDouble(entity.get(\"left\").toString())) * 100);\n}",
     "customCode" : true,
     "enableBackend" : true,
     "enableFront" : false

@@ -1,6 +1,6 @@
 
 import { DynamicInstanceConfig, IPSAppDataEntity, IPSAppDERedirectView, IPSAppDEView, IPSAppView, IPSAppViewRef } from "@ibiz/dynamic-model-api";
-import { AppServiceBase, GetModelService, Util, ViewTool } from "ibiz-core";
+import { GetModelService, Util, ViewTool } from "ibiz-core";
 import { MainViewBase } from "./mainview-base";
 
 /**
@@ -39,7 +39,7 @@ export class DeRedirectViewBase extends MainViewBase {
   public async executeRedirectLogic() {
     let tempContext: any = Util.deepCopy(this.context);
     let tempViewParams: any = Util.deepCopy(this.viewparams);
-    this.appUIService.getRDAppView(this.context[this.appDeCodeName.toLowerCase()], this.viewInstance?.enableWorkflow).then(async (result: any) => {
+    this.appUIService.getRDAppView(this.context[this.appDeCodeName.toLowerCase()], { enableWorkflow: this.viewInstance?.enableWorkflow }).then(async (result: any) => {
       if (!result) {
         return;
       }

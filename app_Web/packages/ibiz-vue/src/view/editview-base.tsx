@@ -1,7 +1,8 @@
 import { Subject } from 'rxjs';
 import { DataPanelEngine, EditViewEngine, ModelTool, ViewState } from 'ibiz-core';
 import { MainViewBase } from './mainview-base';
-import { IPSAppDataEntity, IPSAppDEEditView, IPSAppDEField, IPSDEForm } from '@ibiz/dynamic-model-api';
+import { IPSAppDEEditView, IPSDEForm } from '@ibiz/dynamic-model-api';
+import { AppCenterService } from 'ibiz-vue';
 
 /**
  * 编辑视图基类
@@ -144,7 +145,7 @@ export class EditViewBase extends MainViewBase {
     /**
      * 渲染视图标题头信息表单部件
      * 
-     * @memberof AppDefaultEditView
+     * @memberof EditViewBase
      */
      public renderDataPanelInfo() {
         if (!this.dataPanelInstance) {
@@ -157,7 +158,7 @@ export class EditViewBase extends MainViewBase {
     /**
      * 渲染视图主体内容区
      * 
-     * @memberof AppDefaultEditView
+     * @memberof EditViewBase
      */
     public renderMainContent() {
         if (!this.editFormInstance) {
@@ -165,6 +166,24 @@ export class EditViewBase extends MainViewBase {
         }
         let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.editFormInstance);
         return this.$createElement(targetCtrlName, { slot: 'default', props: targetCtrlParam, ref: this.editFormInstance?.name, on: targetCtrlEvent });
+    }
+
+    /**
+     * 将抄送任务标记为已读
+     * 
+     * @param data 业务数据
+     * @memberof EditViewBase                
+     */
+     public readTask(data: any) {
+        this.appEntityService.ReadTask(this.context, data).then((response:any) =>{
+            if (!response || response.status !== 200) {
+                console.warn("将抄送任务标记为已读失败");
+                return;
+            }
+            AppCenterService.notifyMessage({ name: this.appDeCodeName, action: 'appRefresh', data: data });
+        }).catch((error: any) => {
+            console.warn("将抄送任务标记为已读失败");
+        })
     }
 
 }

@@ -59,7 +59,8 @@ export class WFDynaEditViewBase extends MainViewBase {
     public wfAddiFeatureRef: any = {
         "reassign": { featureTag: "REASSIGN", action: "TransFerTask" },
         "addstepbefore": { featureTag: "ADDSTEPBEFORE", action: "BeforeSign" },
-        "sendback": { featureTag: "SENDBACK", action: "SendBack" }
+        "sendback": { featureTag: "SENDBACK", action: "SendBack" },
+        "sendcopy": { featureTag: "SENDCOPY", action: "sendCopy" }
     };
 
     /**

@@ -746,8 +746,10 @@ export class GridControlBase extends MDControlBase {
                 let dynainstParam: DynamicInstanceConfig = this.modelService?.getDynaInsConfig();
                 Object.assign(tempViewParams, { srfinsttag: dynainstParam.instTag, srfinsttag2: dynainstParam.instTag2 });
                 delete tempViewParams.srfdynainstid;
-            } else {
-                Object.assign(tempViewParams, { srfinsttag: "__srfstdinst__" });
+            }else{
+                if(!tempViewParams.hasOwnProperty("srfinsttag")){
+                    Object.assign(tempViewParams,{srfinsttag:"__srfstdinst__"});
+                }
             }
         }else{
             if(tempViewParams.hasOwnProperty("srfwf")){
@@ -1062,8 +1064,10 @@ export class GridControlBase extends MDControlBase {
                 let dynainstParam: DynamicInstanceConfig = this.modelService?.getDynaInsConfig();
                 Object.assign(tempViewParams, { srfinsttag: dynainstParam.instTag, srfinsttag2: dynainstParam.instTag2 });
                 delete tempViewParams.srfdynainstid;
-            } else {
-                Object.assign(tempViewParams, { srfinsttag: "__srfstdinst__" });
+            }else{
+                if(!tempViewParams.hasOwnProperty("srfinsttag")){
+                    Object.assign(tempViewParams,{srfinsttag:"__srfstdinst__"});
+                }
             }
         }else{
             if(tempViewParams.hasOwnProperty("srfwf")){
