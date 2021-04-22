@@ -544,14 +544,20 @@ export class ViewBase extends Vue {
             return;
         }
         this.model = { dataInfo: '' };
-        if (view?.appDataEntity) {
-            this.model.srfCaption = `entities.${view?.appDataEntity?.codeName?.toLowerCase()}.views.${view.getPSDEViewCodeName?.toLowerCase()}.caption`;
-            this.model.srfTitle = `entities.${view?.appDataEntity?.codeName?.toLowerCase()}.views.${view.getPSDEViewCodeName?.toLowerCase()}.title`;
-            this.model.srfSubTitle = `entities.${view?.appDataEntity?.codeName?.toLowerCase()}.views.${view.getPSDEViewCodeName?.toLowerCase()}.subtitle`;
-        } else {
-            this.model.srfCaption = `app.views.${view.codeName?.toLowerCase()}.caption`;
-            this.model.srfTitle = `app.views.${view.codeName?.toLowerCase()}.title`;
-            this.model.srfSubTitle = `app.views.${view.codeName?.toLowerCase()}.subtitle`;
+        if(this.context && this.context.srfdynainstid){
+            this.model.srfCaption = this.viewInstance.caption;
+            this.model.srfTitle = this.viewInstance.title;
+            this.model.srfSubTitle = this.viewInstance.subCaption;
+        }else{
+            if (view?.appDataEntity) {
+                this.model.srfCaption = `entities.${view?.appDataEntity?.codeName?.toLowerCase()}.views.${view.getPSDEViewCodeName?.toLowerCase()}.caption`;
+                this.model.srfTitle = `entities.${view?.appDataEntity?.codeName?.toLowerCase()}.views.${view.getPSDEViewCodeName?.toLowerCase()}.title`;
+                this.model.srfSubTitle = `entities.${view?.appDataEntity?.codeName?.toLowerCase()}.views.${view.getPSDEViewCodeName?.toLowerCase()}.subtitle`;
+            } else {
+                this.model.srfCaption = `app.views.${view.codeName?.toLowerCase()}.caption`;
+                this.model.srfTitle = `app.views.${view.codeName?.toLowerCase()}.title`;
+                this.model.srfSubTitle = `app.views.${view.codeName?.toLowerCase()}.subtitle`;
+            }
         }
     }
 

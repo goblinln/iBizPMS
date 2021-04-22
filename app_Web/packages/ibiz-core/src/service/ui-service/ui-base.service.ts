@@ -321,7 +321,7 @@ export class UIServiceBase {
         let bDataInWF: boolean = false;
         let bWFMode: any = false;
         // 计算数据模式
-        if (enableWorkflowParam && enableWorkflowParam.srfwf && (this.InWorkflowArray.indexOf(enableWorkflowParam.srfwf) !== -1)) {
+        if ((enableWorkflowParam && enableWorkflowParam.srfwf && (this.InWorkflowArray.indexOf(enableWorkflowParam.srfwf) !== -1)) || (enableWorkflowParam && enableWorkflowParam.enableWorkflow)) {
             bDataInWF = true;
         }
         let strPDTViewParam: string = await this.getDESDDEViewPDTParam(curData, bDataInWF, bWFMode);

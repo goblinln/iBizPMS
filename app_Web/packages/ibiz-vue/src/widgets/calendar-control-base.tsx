@@ -514,7 +514,7 @@ export class CalendarControlBase extends MDControlBase{
                 successCallback(filterEvents);
             }
             // 刷新日历的大小（仅fullcalendar组件使用）
-            if(!Object.is(this.calendarType, 'TIMELINE')){
+            if(!Object.is(_this.calendarType,"TIMELINE") && !this.ctrlParams){
                 let appCalendar: any = _this.$refs[this.controlInstance?.codeName];
                 let api = appCalendar.getApi();
                 if (api) {

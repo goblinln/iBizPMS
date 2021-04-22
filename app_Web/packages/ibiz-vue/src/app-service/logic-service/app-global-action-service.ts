@@ -533,7 +533,9 @@ export class AppGlobalService {
                         key: Util.createUUID(),
                         props: {
                             value: localdata,
-                            placeholder: "请选择流程版本..."
+                            placeholder: "请选择流程版本...",
+                            transfer: true,
+                            transferClassName: "start-workflow-select-wraper"
                         },
                         on: {
                             'on-change': ($event: any) => {
@@ -555,14 +557,13 @@ export class AppGlobalService {
                 }).then((action: string) => {
                     if (Object.is(action, 'confirm') && localdata && Object.keys(localdata).length > 0) {
                         let targetItem: any = targetData.find((item: any) => {
-                            return item.value === localdata;
+                            return item.definitionkey === localdata.processDefinitionKey;
                         })
                         openStartView(targetItem, localdata);
                     }
                 })
             } else {
                 localdata = { processDefinitionKey: targetData[0]['definitionkey'] };
-                // todo 模拟
                 targetData[0]['process-view'] = "WFSTART@1";
                 openStartView(targetData[0], localdata);
             }

@@ -1,5 +1,5 @@
-import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { Util } from 'ibiz-core';
+import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { AppMenuControlBase } from '../../../widgets';
 
 /**
@@ -80,27 +80,75 @@ export class AppmenuBase extends AppMenuControlBase {
      * @type {number}
      * @memberof AppmenuBase
      */
-    public split: number = 0.15
+    public split: number = 0.15;
 
     /**
-     * 左侧应用菜单树属性
+     * 配置左侧分页菜单默认选项
      *
-     * @type {*} **对象
+     * @return {*}
      * @memberof AppmenuBase
      */
-    public defaultProps: any = {
-        children: 'getPSAppMenuItems',
-        label: 'caption'
+     public defaultMuneOption(menus: any[]): any {
+        return menus[0].getPSAppMenuItems[0];
     }
-
+    /**
+     * 顶部菜单项选中
+     *
+     * @param {string} item
+     * @memberof AppmenuBase
+     */
+     public topMenuSelected(item: string) {
+        this.menus.forEach(menu1 => {
+            if (menu1?.name == item) {
+                return this.menuTreeClick(menu1);
+            } else {
+                menu1.getPSAppMenuItems.forEach((menu2: any) => {
+                    if (menu2?.name == item) {
+                        return this.menuTreeClick(menu2);
+                    }
+                });
+            }
+        });
+    }
     /**
      * 加载菜单的默认点击
      *
      * @memberof AppmenuBase
      */
-    public defaultMenuSelect(): void {
-        if (this.menus && this.menus[0].getPSAppMenuItems && this.menuTreeClick) {
-            this.menuTreeClick(this.menus[0].getPSAppMenuItems[0]);
+     public defaultMenuSelect(): void {
+         //分页导航菜单的默认点击
+        if(Object.is(this.staticProps.mode, ("TABEXP_LEFT"||'TABEXP_TOP'||'TABEXP_RIGHT'||'TABEXP_BOTTOM'))){
+            return this.menuTreeClick(this.defaultMuneOption(this.menus))
+        }
+
+        if (!this.isDefaultPage || this.isBlankMode) {
+            return;
+        }
+        const appFuncs: Array<any> = this.service.getAllFuncs();
+        if (this.$route && this.$route.matched && this.$route.matched.length == 2) { // 存在二级路由
+            const [{ }, matched] = this.$route.matched;
+            const appfunc: any = appFuncs.find((_appfunc: any) => Object.is(_appfunc.routepath, matched.path) && Object.is(_appfunc.appfunctype, 'APPVIEW'));
+            if (appfunc) {
+                this.computeMenuSelect(this.menus, appfunc.appfunctag);
+            }
+            return;
+        } else if (this.defPSAppView && Object.keys(this.defPSAppView).length > 0) { // 存在默认视图
+            const appfunc: any = appFuncs.find((_appfunc: any) => Object.is(_appfunc.routepath, this.defPSAppView.routepath) && Object.is(_appfunc.appfunctype, 'APPVIEW'));
+            if (appfunc) {
+                this.computeMenuSelect(this.menus, appfunc.appfunctag);
+            }
+            const viewparam: any = {};
+            const path: string = this.$viewTool.buildUpRoutePath(this.$route, {}, this.defPSAppView.deResParameters, this.defPSAppView.parameters, [], viewparam);
+            this.$router.push(path);
+            return;
+        }
+        this.computeMenuSelect(this.menus, '');
+        let item = this.compute(this.menus, this.defaultActive);
+        if (Object.keys(item).length === 0) {
+            return;
+        }
+        if(!item.hidden){
+            this.click(item);
         }
     }
 
@@ -322,20 +370,26 @@ export class AppmenuBase extends AppMenuControlBase {
      * @memberof AppmenuBase
      */
     public renderMenuTree() {
-        return this.$createElement('el-tree', {
-            props: {
-                'current-node-key': this.menus[0]?.getPSAppMenuItems[0]?.name,
-                data: this.menus,
-                props: this.defaultProps,
-                ref: 'eltree',
-                'default-expand-all': true,
-                'render-content': this.menuTreeload,
-                'node-key': 'name'
-            },
-            on: {
-                'node-click': ((e: any) => this.menuTreeClick(e))
-            }
-        })
+        if (this.menus && this.menus.length > 0) {
+            const defaultMuneOption:any = this.defaultMuneOption(this.menus).name
+            return this.$createElement('el-tree', {
+                props: {
+                    'current-node-key': defaultMuneOption,
+                    data: this.menus,
+                    props: {
+                        children: 'getPSAppMenuItems',
+                        label: 'caption'
+                    },
+                    ref: 'eltree',
+                    'default-expand-all': true,
+                    'render-content': this.menuTreeload,
+                    'node-key': 'name'
+                },
+                on: {
+                    'node-click': ((e: any) => this.menuTreeClick(e))
+                }
+            })
+        }
     }
 
     /**
@@ -343,17 +397,31 @@ export class AppmenuBase extends AppMenuControlBase {
      *
      * @memberof AppmenuBase
      */
-    public renderLeftContent() {
-        return [
-            <div slot="left" style={{ height: '100%', padding: '6px 0' }}>
-                <div style={{ height: '100%' }}>
-                    {this.renderMenuTree()}
+    public renderContent() {
+        if(this.split == 0.85){
+            return [
+                <div slot="right" style={{ height: '100%', padding: '6px 0' }}>
+                    <div style={{ height: '100%' }}>
+                        {this.renderMenuTree()}
+                    </div>
+                </div>,
+                <div slot="left">
+                    {this.renderRightView ? this.renderRightView : null}
                 </div>
-            </div>,
-            <div slot="right">
-                {this.renderRightView ? this.renderRightView : null}
-            </div>
-        ];
+            ];
+        }else {
+            return [
+                <div slot="left" style={{ height: '100%', padding: '6px 0' }}>
+                    <div style={{ height: '100%' }}>
+                        {this.renderMenuTree()}
+                    </div>
+                </div>,
+                <div slot="right">
+                    {this.renderRightView ? this.renderRightView : null}
+                </div>
+            ];
+        }
+        
     }
 
     /**
@@ -367,13 +435,117 @@ export class AppmenuBase extends AppMenuControlBase {
             <split
                 class={[`app-tree-exp-bar`, this.renderOptions?.controlClassNames]}
                 v-model={this.split}
-                style={{ height: 'calc(100vh - 115px)' }}>
-                {this.renderLeftContent()}
+                style={{ height: '100%' }}>
+                {this.renderContent()}
 
             </split>
         )
     }
-
+       /**
+     * 绘制右侧分页菜单
+     *
+     * @return {*}
+     * @memberof AppmenuBase
+     */
+        public renderTableRightMenu() {
+            this.split = 0.85;
+            return (
+                <split
+                    class={[`app-tree-exp-bar`, this.renderOptions?.controlClassNames]}
+                    v-model={this.split}
+                    style={{ height: 'calc(100%)' }}
+                >
+                    {this.renderContent()}
+                </split>
+            );
+        }
+    
+        /**
+         * 绘制顶部分页菜单
+         *
+         * @return {*}
+         * @memberof AppmenuBase
+         */
+        public renderTableTopMenu() {
+            const defaultMuneOption:any = this.defaultMuneOption(this.menus).name
+            return (
+                <div style='height:100%'>
+                    <el-menu
+                        mode='horizontal'
+                        default-active={defaultMuneOption}
+                        on-select={(e: any) => this.topMenuSelected(e)}
+                    >
+                        {this.menus.map((item, index) =>
+                            item.getPSAppMenuItems && item.getPSAppMenuItems.length > 0 ? (
+                                item.getPSAppMenuItems.getPSAppMenuItems &&
+                                item.getPSAppMenuItems.getPSAppMenuItems.length > 0 ? (
+                                    <el-submenu index={item.getPSAppMenuItems?.name}>
+                                        <template slot='title'>{item.getPSAppMenuItems.caption}</template>
+                                        {item.getPSAppMenuItems.getPSAppMenuItems.map((item2: any) => (
+                                            <el-menu-item index={item2?.name}>{item2.caption}</el-menu-item>
+                                        ))}
+                                    </el-submenu>
+                                ) : (
+                                    <el-submenu index={item?.name}>
+                                        <template slot='title'>{item.caption}</template>
+                                        {item.getPSAppMenuItems.map((item1: any) => (
+                                            <el-menu-item index={item1?.name}>{item1.caption}</el-menu-item>
+                                        ))}
+                                    </el-submenu>
+                                )
+                            ) : (
+                                <el-menu-item index={item?.name}>{item.caption}</el-menu-item>
+                            ),
+                        )}
+                    </el-menu>
+                    <div style='height:calc(100% - 61px)'>{this.renderRightView ? this.renderRightView : null}</div>
+                </div>
+            );
+        }
+        /**
+         * 绘制底部分页菜单
+         *
+         * @return {*}
+         * @memberof AppmenuBase
+         */
+        public renderTableBottomMenu() {
+            const defaultMuneOption:any = this.defaultMuneOption(this.menus).name
+            return (
+                <div style='height:100%'>
+                    <div style='height:calc(100% - 61px)'>{this.renderRightView ? this.renderRightView : null}</div>
+                    <div class='bottom-view'>
+                        <el-menu
+                            mode='horizontal'
+                            default-active={defaultMuneOption}
+                            on-select={(e: any) => this.topMenuSelected(e)}
+                        >
+                            {this.menus.map((item, index) =>
+                                item.getPSAppMenuItems && item.getPSAppMenuItems.length > 0 ? (
+                                    item.getPSAppMenuItems.getPSAppMenuItems &&
+                                    item.getPSAppMenuItems.getPSAppMenuItems.length > 0 ? (
+                                        <el-submenu index={item.getPSAppMenuItems?.name}>
+                                            <template slot='title'>{item.getPSAppMenuItems.caption}</template>
+                                            {item.getPSAppMenuItems.getPSAppMenuItems.map((item2: any) => (
+                                                <el-menu-item index={item2?.name}>{item2.caption}</el-menu-item>
+                                            ))}
+                                        </el-submenu>
+                                    ) : (
+                                        <el-submenu index={item?.name}>
+                                            <template slot='title'>{item.caption}</template>
+                                            {item.getPSAppMenuItems.map((item1: any) => (
+                                                <el-menu-item index={item1?.name}>{item1.caption}</el-menu-item>
+                                            ))}
+                                        </el-submenu>
+                                    )
+                                ) : (
+                                    <el-menu-item index={item?.name}>{item.caption}</el-menu-item>
+                                ),
+                            )}
+                        </el-menu>
+                    </div>
+                </div>
+            );
+        }
     /**
      * 绘制应用菜单
      *
@@ -386,16 +558,16 @@ export class AppmenuBase extends AppMenuControlBase {
             return (<div>
                 {this.renderMiddleMenu()}
             </div>)
-        } else if (this.staticProps && this.staticProps.mode && Object.is(this.staticProps.mode, "TABEXP_LEFT")) {
-            return (<div>
-                {this.renderTableLeftMenu()}
-            </div>)
+        } else  if (this.staticProps && this.staticProps.mode && Object.is(this.staticProps.mode, 'TABEXP_LEFT')) {
+            return <div>{this.renderTableLeftMenu()}</div>;
+        } else if (this.staticProps && this.staticProps.mode && Object.is(this.staticProps.mode, 'TABEXP_TOP')) {
+            return <div>{this.renderTableTopMenu()}</div>;
+        } else if (this.staticProps && this.staticProps.mode && Object.is(this.staticProps.mode, 'TABEXP_RIGHT')) {
+            return <div>{this.renderTableRightMenu()}</div>;
+        } else if (this.staticProps && this.staticProps.mode && Object.is(this.staticProps.mode, 'TABEXP_BOTTOM')) {
+            return <div>{this.renderTableBottomMenu()}</div>;
         } else {
-            return (
-                <div class={{ ...controlClassNames, 'app-app-menu': true }}>
-                    {this.renderAppMenu()}
-                </div>
-            );
+            return <div class={{ ...controlClassNames, 'app-app-menu': true }}>{this.renderAppMenu()}</div>;
         }
     }
 }

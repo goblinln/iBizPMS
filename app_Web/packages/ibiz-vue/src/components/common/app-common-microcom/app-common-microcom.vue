@@ -343,7 +343,10 @@ export default class AppCommonMicrocom extends Vue {
             }
         }
         for(let key in item) {
-            this.$emit('formitemvaluechange', { name: key, value: item[key] });
+            // 抛出当前表单项与值项
+            if (Object.is(key, this.name) || Object.is(key, this.valueitem)) {
+                this.$emit('formitemvaluechange', { name: key, value: item[key] });
+            }
         }
     }
 }

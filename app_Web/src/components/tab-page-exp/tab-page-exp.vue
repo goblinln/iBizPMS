@@ -230,12 +230,12 @@ export default class TabPageExp extends Vue {
    */
   public setCurPageCaption(opts: any) {
     const { caption, title, info } = opts;
-    if (
-      this.$route.meta &&
-      !Object.is(this.$t(this.$route.meta.caption), caption)
-    ) {
-      return;
-    }
+    // if (
+    //   this.$route.meta &&
+    //   !Object.is(this.$t(this.$route.meta.caption), caption)
+    // ) {
+    //   return;
+    // }
     this.$store.commit("setCurPageCaption", {
       route: this.$route,
       caption: title,
