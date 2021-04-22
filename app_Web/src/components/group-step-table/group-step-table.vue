@@ -65,6 +65,14 @@ import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 export default class GroupStepTable extends Vue {
 
     /**
+     * 代码表服务
+     * 
+     * @type {*}
+     * @memberof GroupStepTable
+     */
+    @Prop() codeListService: any;
+
+    /**
      * 列集合
      * 
      * @type {*}
@@ -120,32 +128,20 @@ export default class GroupStepTable extends Vue {
      */
     public refreshSelect: boolean = true;
 
-    @Watch('data')
-    public watchData(newVal: any[], oldVal: any[]) {
-        this.refreshSelect = false;
-        this.$nextTick(() => {
-            this.refreshSelect = true;
-        })
-    }
-
     /**
      * 获取分组项集合
      * 
      * @type {string}
      * @memberof GroupStepTable
      */
-    get groupItems() {
-        let items: any[] = [];
-        if(this.groupfield && this.cols) {
-            const col: any = this.cols.find((col: any) => Object.is(col.name, this.groupfield));
-            if(col && col.codelistId) {
-                let codelist: any = this.$store.getters.getCodeList(col.codelistId);
-                if(codelist) {
-                    return codelist.items;
-                }
-            }
-        }
-        return items;
+    public groupItems: any[] = [];
+
+    @Watch('data')
+    public watchData(newVal: any[], oldVal: any[]) {
+        this.refreshSelect = false;
+        this.$nextTick(() => {
+            this.refreshSelect = true;
+        })
     }
 
     /**
@@ -187,10 +183,10 @@ export default class GroupStepTable extends Vue {
      * 
      * @memberof GroupStepTable
      */
-    public gridItemCodelist(item: any,col: any){
+    public async gridItemCodelist(item: any,col: any){
         let gridItem = item[col.name];
         if(col.codelistId){
-            let codelist: any = this.$store.getters.getCodeList(col.codelistId);
+            let codelist = await this.codeListService.getStaticItems(col.codelistId);
             if(codelist){
                 const data = codelist.items.find((code:any) => Object.is(code.value, item[col.name]));
                 if(data){
@@ -259,6 +255,26 @@ export default class GroupStepTable extends Vue {
      */
     public onDraggable($event: any) {
         this.$forceUpdate();
+    }
+
+    /**
+     * 生命周期
+     * 
+     * @memberof GroupStepTable
+     */
+    public mounted(){
+        if(this.groupfield && this.cols) {
+            const col: any = this.cols.find((col: any) => Object.is(col.name, this.groupfield));
+            if(col && col.codelistId) {
+                this.codeListService.getStaticItems(col.codelistId)
+                .then((response: any) => {
+                  let codelist = response
+                  if(codelist) {
+                      this.groupItems = codelist;
+                  }
+                });
+            }
+        }
     }
 
     /**
