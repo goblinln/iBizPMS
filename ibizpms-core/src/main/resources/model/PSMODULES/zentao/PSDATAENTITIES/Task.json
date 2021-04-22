@@ -5700,7 +5700,7 @@
     "logicName" : "计算进度",
     "logicSubType" : "DEFIELD",
     "name" : "计算进度",
-    "scriptCode" : "var consumed = entity.get(\"consumed\");\nvar left = entity.get(\"left\");\nvar progressrate = \"0\";\nif(consumed === null || consumed == 0 ) {\n\tprogressrate = \"0\";\n}else ifleft  === null || left == 0) {\n\tprogressrate = \"100\";\n}else {\n\tprogressrate = (consumed /(consumed  + left) ).toFixed(2) * 100;\n}\nreturn progressrate;",
+    "scriptCode" : "var consumed = entity.get(\"consumed\");\nvar left = entity.get(\"left\");\nvar progressrate = \"0\";\nif(consumed === null || consumed == 0 ) {\n\tprogressrate = \"0\";\n}else if(left  === null || left == 0) {\n\tprogressrate = \"100\";\n}else {\n\tprogressrate = (consumed /(consumed  + left) ).toFixed(2) * 100;\n}\nreturn progressrate;",
     "customCode" : true,
     "enableBackend" : true,
     "enableFront" : false
@@ -15155,6 +15155,7 @@
     "id" : "ZTProject__UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain.json",
     "name" : "任务维护",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -15189,6 +15190,7 @@
     "roleTag" : "Task_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Read.json",
     "name" : "任务查看",
     "getPSDEUserRoleOPPrivs" : [ {

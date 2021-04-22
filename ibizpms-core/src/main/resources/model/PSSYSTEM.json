@@ -1524,7 +1524,13 @@
   } ],
   "getAllPSSysTranslators" : [ {
     "modelref" : true,
+    "path" : "PSSYSTRANSLATORS/BuildValueTranslator.json"
+  }, {
+    "modelref" : true,
     "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSTRANSLATORS/BranchValueTranslator.json"
   } ],
   "getAllPSSysUniReses" : [ {
     "name" : "通用创建",

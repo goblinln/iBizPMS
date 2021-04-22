@@ -1792,6 +1792,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Maintain.json",
     "name" : "文档库维护",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -1826,6 +1827,7 @@
     "roleTag" : "DocLib_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Manage.json",
     "name" : "文档库管理",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -1839,6 +1841,7 @@
     "roleTag" : "DocLib_Manage",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Read.json",
     "name" : "文档库查看",
     "getPSDEUserRoleOPPrivs" : [ {

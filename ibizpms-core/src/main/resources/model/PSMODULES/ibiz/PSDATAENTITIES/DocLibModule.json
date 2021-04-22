@@ -1930,6 +1930,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Maintain.json",
     "name" : "文档模块维护",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -1964,6 +1965,7 @@
     "roleTag" : "DocLibModule_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Manage.json",
     "name" : "文档模块管理",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -1977,6 +1979,7 @@
     "roleTag" : "DocLibModule_Manage",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Read.json",
     "name" : "文档模块查看",
     "getPSDEUserRoleOPPrivs" : [ {

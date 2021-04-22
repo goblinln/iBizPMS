@@ -7035,6 +7035,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Maintain.json",
     "name" : "BUG维护",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -7069,6 +7070,7 @@
     "roleTag" : "Bug_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Read.json",
     "name" : "BUG查看",
     "getPSDEUserRoleOPPrivs" : [ {

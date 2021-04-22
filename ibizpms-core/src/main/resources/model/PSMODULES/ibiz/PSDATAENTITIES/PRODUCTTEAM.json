@@ -1233,6 +1233,7 @@
     "roleTag" : "ProductTeam_Manage",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEUSERROLES/ProductTeam_Read.json",
     "name" : "产品团队查看",
     "getPSDEUserRoleOPPrivs" : [ {

@@ -103,7 +103,7 @@
 
 
     <!--输出实体[ZT_BUG]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_bug-4-5">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_bug-6-5">
         <createTable tableName="zt_bug">
                 <column name="SEVERITY" remarks="" type="INT">
                 </column>
@@ -571,7 +571,7 @@
 
 
     <!--输出实体[ZT_DOC]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_doc-1-18">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_doc-3-18">
         <createTable tableName="zt_doc">
                 <column name="GROUPS" remarks="" type="VARCHAR(255)">
                 </column>
@@ -655,7 +655,7 @@
 
 
     <!--输出实体[ZT_DOCLIB]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_doclib-1-20">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_doclib-4-20">
         <createTable tableName="zt_doclib">
                 <column name="TYPE" remarks="" type="VARCHAR(30)">
                 </column>
@@ -697,7 +697,7 @@
 
 
     <!--输出实体[IBZ_DOCLIBMODULE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibz_doclibmodule-1-21">
+    <changeSet author="a_A_23e8aa361" id="tab-ibz_doclibmodule-4-21">
         <createTable tableName="zt_module">
                 <column name="GRADE" remarks="" type="INT">
                 </column>
@@ -2228,7 +2228,7 @@
 
 
     <!--输出实体[IBZ_PRODUCTTEAM]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibz_productteam-1-81">
+    <changeSet author="a_A_23e8aa361" id="tab-ibz_productteam-2-81">
         <createTable tableName="zt_team">
                 <column name="TEAMSTATUS" remarks="" type="VARCHAR(100)">
                 </column>

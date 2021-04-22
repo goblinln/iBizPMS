@@ -1523,6 +1523,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEUSERROLES/ProductModule_Maintain.json",
     "name" : "需求模块维护",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -1557,6 +1558,7 @@
     "roleTag" : "ProductModule_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEUSERROLES/ProductModule_Manage.json",
     "name" : "需求模块管理",
     "getPSDEUserRoleOPPrivs" : [ {
