@@ -106,7 +106,7 @@ public class DELogicExecutor {
      */
     private boolean isNeedLoad(Resource bpmn, IDynaInstRuntime runtime) throws IOException {
         String bpmnId = DigestUtils.md5DigestAsHex(bpmn.getURL().toString().getBytes());
-        if (!StringUtils.isEmpty(bpmnId) && !ObjectUtils.isEmpty(runtime.getLoadedTime())) {
+        if (runtime != null && !StringUtils.isEmpty(bpmnId) && !ObjectUtils.isEmpty(runtime.getLoadedTime())) {
             DELogic logic = deLogicMap.get(bpmnId);
             if (logic != null && !ObjectUtils.isEmpty(logic.getLoadedTime())) {
                 return !(logic.getLoadedTime() == runtime.getLoadedTime());
