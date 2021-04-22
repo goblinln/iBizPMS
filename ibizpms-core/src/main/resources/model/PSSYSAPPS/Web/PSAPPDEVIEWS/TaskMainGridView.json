@@ -402,8 +402,8 @@
     "logicName" : "主表格",
     "minorSortDir" : "ASC",
     "getMinorSortPSAppDEField" : {
-      "name" : "STATUSORDER",
-      "codeName" : "Statusorder"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -689,7 +689,7 @@
         "name" : "fetch",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FetchProjectTask"
+          "id" : "FetchCurProjectTaskQuery"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

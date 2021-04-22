@@ -111,6 +111,8 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return taskService.searchChildTaskTree(searchContext);    
         if (iPSDEDataSet.getName().equals("CurFinishTask"))
             return taskService.searchCurFinishTask(searchContext);    
+        if (iPSDEDataSet.getName().equals("CurProjectTaskQuery"))
+            return taskService.searchCurProjectTaskQuery(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
             return taskService.searchDefault(searchContext);    
         if (iPSDEDataSet.getName().equals("DefaultRow"))
@@ -509,6 +511,9 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         }
         else if (action.equals("searchCurFinishTask")) {
             return aroundDataSet("CurFinishTask", point);
+        }
+        else if (action.equals("searchCurProjectTaskQuery")) {
+            return aroundDataSet("CurProjectTaskQuery", point);
         }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);

@@ -238,7 +238,6 @@ export default class TextFileUpload extends Vue {
       if(this.queryParam) {
         queryParam = this.$util.computedNavData(JSON.parse(this.data),this.context,this.viewparams,JSON.parse(this.queryParam));
       }
-      let file = new File(["default.docx"],"default.docx",{type: 'application/msword'})
       if (this.url) {
         this.$http.get(this.url,queryParam).then((response: any) => {
             if (response && response.status !== 200) {
@@ -246,12 +245,14 @@ export default class TextFileUpload extends Vue {
             }
             if (response.data.length > 0) {
               this.customUploadFile(response.data[0]);
+            }else {
+              this.customUploadFile({});
             }
         }).catch((response: any)=> {
-          this.customUploadFile({file});
+          this.customUploadFile({});
         })
       }else {
-          this.customUploadFile({file});
+          this.customUploadFile({});
       }
     }
 
@@ -320,21 +321,6 @@ export default class TextFileUpload extends Vue {
     public iframeUrl: any = '';
 
     /**
-     * 新建文件
-     *
-     * @memberof DiskFileUpload
-     */
-    public newFile() {
-        let url: string = '';
-        this.$http.get(url).then((response: any) => {
-            if (response && response.status !== 200) {
-                return;
-            }
-            this.ownerid = response.data.ownerid;
-        })
-    }
-
-    /**
      * 编辑文件
      *
      * @memberof DiskFileUpload
@@ -389,7 +375,10 @@ export default class TextFileUpload extends Vue {
      *
      * @memberof DiskFileUpload
      */
-    public getOwnerid() {
+    public getOwnerid($event?: any) {
+        if ($event && $event.disdocid) {
+            return typeof $event.disdocid == "string" ? $event.disdocid : JSON.stringify($event.disdocid);
+        }
         return typeof this.ownerid == "string" ? this.ownerid : JSON.stringify(this.ownerid);
     }
 
@@ -427,7 +416,7 @@ export default class TextFileUpload extends Vue {
             if (Object.is($event.type, 'save')) {
                 // 批量更新文件表中的ownerid
                 if (this.isUpdateBatch == true && this.uploadFileList.length > 0) {
-                    this.updateFileBatch(this.uploadFileList);
+                    this.updateFileBatch(this.uploadFileList,$event);
                 }
             }
         });
@@ -473,8 +462,14 @@ export default class TextFileUpload extends Vue {
         let fileParam = JSON.parse(this.fileParam)
         // 上传的文件
         let _this: any = this;
-        let fileName = param[fileParam.name]?param[fileParam.name] + ".docx":"模板文件.docx";
-        let file = new File([param[fileParam.id]],fileName,{type: 'application/msword'})
+        let fileName = param[fileParam.name]?param[fileParam.name] + ".wps":"模板文件.wps";
+        let fileText = param[fileParam.id]?param[fileParam.id]:"暂无内容";
+        let file = new File([fileText],fileName,{type: 'application/kswps'});
+        let data = JSON.parse(this.data);
+        if (Object.is(data.srfuf, '0')) {
+          this.uploadFileList.push(file);
+          return;
+        }
         // formData传参
         let formData = new FormData();
         formData.append('file', file);
@@ -672,29 +667,30 @@ export default class TextFileUpload extends Vue {
      *
      * @memberof DiskFileUpload
      */
-    public updateFileBatch(files: any) {
+    public updateFileBatch(files: any,$event: any) {
         let _this: any = this;
         // 拼接url
-        const updateUrl = '/net-disk/files/' + this.getFolder() + '?ownertype=' + this.getOwnertype() + "&ownerid=" + this.getOwnerid();
-        // requestBody参数
-        let requestBody = [];
-        if (files) {
-            requestBody = files;
-        }
-        // 发送post请求
-        this.$http.post(updateUrl, requestBody, {
-            headers: {
-                "Content-Type": "application/json;charset=UTF-8"
-            },
-            timeout: 2000
-        }).then((response: any) => {
-            if (!response || response.status != 200) {
-                Message.error(_this.$t('components.diskFileUpload.updateFailure') + '!');
-                return;
+        let data = JSON.parse(this.data);
+        if (Object.is(data.srfuf, '1')) {
+            const updateUrl = '/net-disk/upload/' + this.getFolder() + '?ownertype=' + this.getOwnertype() + "&ownerid=" + this.getOwnerid($event.data);
+            // requestBody参数
+            let formData = new FormData();
+            if (files) {
+                files.forEach((item: any) => {
+                  formData.append('file', item);
+                });
             }
-        }).catch((error: any) => {
-            Message.error(_this.$t('components.diskFileUpload.updateFailure') + ':' + error);
-        });
+            // 发送post请求
+            this.$http.post(updateUrl, formData, {timeout: 2000}).then((response: any) => {
+                if (!response || response.status != 200) {
+                    Message.error(_this.$t('components.diskFileUpload.updateFailure') + '!');
+                    return;
+                }
+            }).catch((error: any) => {
+                Message.error(_this.$t('components.diskFileUpload.updateFailure') + ':' + error);
+            });
+        }
+        
     }
 }
 </script>

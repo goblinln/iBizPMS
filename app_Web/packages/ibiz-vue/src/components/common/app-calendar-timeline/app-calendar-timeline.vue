@@ -344,7 +344,7 @@ export default class AppClaendarTimeline extends Vue{
      * @type Date
      * @memberof AppClaendarTimeline
      */
-    public selectedGotoDate: any = this.currentTime;
+    public selectedGotoDate: any = new Date();
 
     /**
      * 当天时间
@@ -852,6 +852,7 @@ export default class AppClaendarTimeline extends Vue{
      */
     public confirmJump() {
         this.currentTime = this.selectedGotoDate;
+        this.partitionTime();
     }
 
     /**

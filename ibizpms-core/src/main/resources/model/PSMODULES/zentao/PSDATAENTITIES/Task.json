@@ -590,6 +590,20 @@
         "name" : "查询条件"
       } ]
     } ],
+    "codeName" : "CurProjectTaskQuery",
+    "logicName" : "当前项目任务",
+    "name" : "CurProjectTaskQuery",
+    "customCode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
@@ -1201,6 +1215,17 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "CurFinishTask"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true,
+    "enableTempData" : true
+  }, {
+    "codeName" : "CurProjectTaskQuery",
+    "logicName" : "当前项目任务",
+    "name" : "CurProjectTaskQuery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "CurProjectTaskQuery"
     } ],
     "enableBackend" : true,
     "enableFront" : true,
@@ -3687,6 +3712,10 @@
       "enableFront" : true
     } ],
     "codeName" : "Delay",
+    "getComputePSDEFLogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEFLOGICS/ComputeDelay.json"
+    },
     "dEFType" : 2,
     "dataType" : "TEXT",
     "importOrder" : 1000,
@@ -5652,6 +5681,33 @@
     "linkDEField" : true
   } ],
   "getAllPSDELogics" : [ {
+    "codeName" : "ComputeDelay",
+    "defaultParamName" : "Default",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEFLOGICS/ComputeDelay.json",
+    "logicName" : "计算延期",
+    "logicSubType" : "DEFIELD",
+    "name" : "计算延期",
+    "getPSDELogicNodes" : [ {
+      "codeName" : "Begin",
+      "logicNodeType" : "BEGIN",
+      "name" : "开始",
+      "parallelOutput" : true
+    } ],
+    "getPSDELogicParams" : [ {
+      "codeName" : "Default",
+      "name" : "传入变量",
+      "default" : true,
+      "envParam" : false,
+      "lastParam" : false,
+      "sessionParam" : false
+    } ],
+    "getStartPSDELogicNode" : {
+      "modelref" : true,
+      "id" : "Begin"
+    },
+    "enableBackend" : true,
+    "enableFront" : false
+  }, {
     "codeName" : "GetUserConcat",
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/GetUserConcat.json",
