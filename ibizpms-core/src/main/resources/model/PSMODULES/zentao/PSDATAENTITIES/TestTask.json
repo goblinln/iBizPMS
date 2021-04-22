@@ -163,7 +163,12 @@
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`owner` = #{srf.sessioncontext.srfloginname} \n\tand t1.`deleted` = '0'",
+        "name" : "查询条件"
+      } ]
     } ],
     "codeName" : "MyTestTaskPc",
     "logicName" : "我的测试单",
