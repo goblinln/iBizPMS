@@ -1,7 +1,7 @@
 {
   "codeName" : "ComputeDelay",
   "dEFLogicMode" : "COMPUTE",
-  "defaultParamName" : "Default",
+  "defaultParamName" : "DEFAULT",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEFLOGICS/ComputeDelay.json",
   "logicName" : "计算延期",
   "logicSubType" : "DEFIELD",
@@ -10,24 +10,8 @@
     "name" : "DELAY",
     "codeName" : "Delay"
   },
-  "getPSDELogicNodes" : [ {
-    "codeName" : "Begin",
-    "logicNodeType" : "BEGIN",
-    "name" : "开始",
-    "parallelOutput" : true
-  } ],
-  "getPSDELogicParams" : [ {
-    "codeName" : "Default",
-    "name" : "传入变量",
-    "default" : true,
-    "envParam" : false,
-    "lastParam" : false,
-    "sessionParam" : false
-  } ],
-  "getStartPSDELogicNode" : {
-    "modelref" : true,
-    "id" : "Begin"
-  },
+  "scriptCode" : "return '延期100';",
+  "customCode" : true,
   "enableBackend" : true,
   "enableFront" : false
 }
