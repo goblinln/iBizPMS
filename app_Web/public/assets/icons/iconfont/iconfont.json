@@ -1,0 +1,16 @@
+{
+  "id": "1866280",
+  "name": "Studio模板图标",
+  "font_family": "iconfont",
+  "css_prefix_text": "studio-icon-",
+  "description": "Studio模板专增图标",
+  "glyphs": [
+    {
+      "icon_id": "212786",
+      "name": "subnets ",
+      "font_class": "subnets",
+      "unicode": "ea43",
+      "unicode_decimal": 59971
+    }
+  ]
+}
