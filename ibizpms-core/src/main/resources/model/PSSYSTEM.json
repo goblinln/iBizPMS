@@ -1527,6 +1527,9 @@
     "path" : "PSSYSTRANSLATORS/BuildValueTranslator.json"
   }, {
     "modelref" : true,
+    "path" : "PSSYSTRANSLATORS/ModulePathValueTranslator.json"
+  }, {
+    "modelref" : true,
     "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
   }, {
     "modelref" : true,

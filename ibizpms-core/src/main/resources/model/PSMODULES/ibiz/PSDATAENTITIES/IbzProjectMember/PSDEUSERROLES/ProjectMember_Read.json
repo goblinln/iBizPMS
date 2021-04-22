@@ -1,4 +1,5 @@
 {
+  "customCond" : "[ (1, '=', 1) ]",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/ProjectMember_Read.json",
   "name" : "项目相关成员查看",
   "getPSDEUserRoleOPPrivs" : [ {

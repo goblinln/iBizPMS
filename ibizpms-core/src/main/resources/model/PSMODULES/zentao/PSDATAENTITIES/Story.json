@@ -8296,6 +8296,7 @@
     "roleTag" : "Story_Manage",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Read.json",
     "name" : "需求查看",
     "getPSDEUserRoleOPPrivs" : [ {

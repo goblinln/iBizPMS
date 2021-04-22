@@ -1778,6 +1778,7 @@
     "roleTag" : "Build_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEUSERROLES/Build_Read.json",
     "name" : "版本查看",
     "getPSDEUserRoleOPPrivs" : [ {

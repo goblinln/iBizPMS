@@ -2340,6 +2340,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Maintain.json",
     "name" : "待办维护",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -2374,6 +2375,7 @@
     "roleTag" : "Todo_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Manage.json",
     "name" : "待办管理",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -2387,6 +2389,7 @@
     "roleTag" : "Todo_Manage",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Read.json",
     "name" : "待办查看",
     "getPSDEUserRoleOPPrivs" : [ {

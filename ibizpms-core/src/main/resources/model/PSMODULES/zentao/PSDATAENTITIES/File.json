@@ -1020,6 +1020,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEUSERROLES/File_Maintain.json",
     "name" : "文件维护",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -1054,6 +1055,7 @@
     "roleTag" : "File_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEUSERROLES/File_Read.json",
     "name" : "文件查看",
     "getPSDEUserRoleOPPrivs" : [ {

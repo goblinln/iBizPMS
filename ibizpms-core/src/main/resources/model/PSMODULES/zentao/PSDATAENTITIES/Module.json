@@ -1282,6 +1282,7 @@
     "roleTag" : "Module_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEUSERROLES/Module_Read.json",
     "name" : "Module查看",
     "getPSDEUserRoleOPPrivs" : [ {

@@ -931,6 +931,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam/PSDEUSERROLES/TaskTeam_Maintain.json",
     "name" : "任务团队维护",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -965,6 +966,7 @@
     "roleTag" : "TaskTeam_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam/PSDEUSERROLES/TaskTeam_Read.json",
     "name" : "任务团队查看",
     "getPSDEUserRoleOPPrivs" : [ {

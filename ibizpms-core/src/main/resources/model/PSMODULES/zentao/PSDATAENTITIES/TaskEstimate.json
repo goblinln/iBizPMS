@@ -1744,6 +1744,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEUSERROLES/TaskEstimate_Maintain.json",
     "name" : "任务预计维护",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -1778,6 +1779,7 @@
     "roleTag" : "TaskEstimate_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEUSERROLES/TaskEstimate_Manage.json",
     "name" : "任务预计管理",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -1791,6 +1793,7 @@
     "roleTag" : "TaskEstimate_Manage",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEUSERROLES/TaskEstimate_Read.json",
     "name" : "任务预计查看",
     "getPSDEUserRoleOPPrivs" : [ {

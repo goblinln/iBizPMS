@@ -1,4 +1,5 @@
 {
+  "customCond" : "[ (1, '=', 1) ]",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEUSERROLES/TaskEstimate_Read.json",
   "name" : "任务预计查看",
   "getPSDEUserRoleOPPrivs" : [ {

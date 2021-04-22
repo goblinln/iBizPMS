@@ -2061,6 +2061,7 @@
     "roleTag" : "TestTask_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEUSERROLES/TestTask_Read.json",
     "name" : "测试单查看",
     "getPSDEUserRoleOPPrivs" : [ {

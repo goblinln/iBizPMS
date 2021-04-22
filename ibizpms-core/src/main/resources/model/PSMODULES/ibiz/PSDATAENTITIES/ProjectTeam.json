@@ -1412,6 +1412,7 @@
     "roleTag" : "ProjectTeam_Manage",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEUSERROLES/ProjectTeam_Read.json",
     "name" : "项目团队查看",
     "getPSDEUserRoleOPPrivs" : [ {

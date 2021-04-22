@@ -1,4 +1,5 @@
 {
+  "customCond" : "[ (1, '=', 1) ]",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam/PSDEUSERROLES/TaskTeam_Maintain.json",
   "name" : "任务团队维护",
   "getPSDEUserRoleOPPrivs" : [ {

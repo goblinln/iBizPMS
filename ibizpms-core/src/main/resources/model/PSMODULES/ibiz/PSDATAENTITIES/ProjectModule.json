@@ -1473,6 +1473,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEUSERROLES/ProjectModule_Maintain.json",
     "name" : "任务模块维护",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -1507,6 +1508,7 @@
     "roleTag" : "ProjectModule_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEUSERROLES/ProjectModule_Manage.json",
     "name" : "任务模块管理",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -1520,6 +1522,7 @@
     "roleTag" : "ProjectModule_Manage",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEUSERROLES/ProjectModule_Read.json",
     "name" : "任务模块查看",
     "getPSDEUserRoleOPPrivs" : [ {

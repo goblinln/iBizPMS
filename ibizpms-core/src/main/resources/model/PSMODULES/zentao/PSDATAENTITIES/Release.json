@@ -1913,6 +1913,7 @@
     "roleTag" : "Release_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEUSERROLES/Release_Read.json",
     "name" : "产品发布查看",
     "getPSDEUserRoleOPPrivs" : [ {
