@@ -70,6 +70,7 @@ import AppMenuItem from './common/app-menu-item/app-menu-item.vue'
 import AppFullScren from './common/app-full-scren/app-full-scren.vue'
 import AppLockScren from './common/app-lock-scren/app-lock-scren.vue'
 import ActionTimeline from './common/action-timeline/action-timeline.vue'
+import ExtendActionTimeline from './common/extend-action-timeline/extend-action-timeline.vue'
 import CronEditor from './common/cron-editor/cron-editor.vue'
 import AppMessagePopover from './common/app-message-popover/app-message-popover.vue'
 import AppPanelField from './common/app-panel-field/app-panel-field.vue'
@@ -312,6 +313,7 @@ export const ComponentsRegister = {
         v.component('app-update-password', UpdatePwd);
         v.component('app-menu-item', AppMenuItem);
         v.component('action-timeline', ActionTimeline);
+        v.component('extend-action-timeline', ExtendActionTimeline);
         v.component('cron-editor', CronEditor);
         v.component('app-message-popover', AppMessagePopover);
         v.component('disk-file-upload', DiskFileUpload);

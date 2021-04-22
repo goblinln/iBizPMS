@@ -215,8 +215,8 @@ export class PortletControlBase extends MainControlBase {
     public refresh(args?: any) {
         const { portletType } = this.controlInstance;
         let controls = this.controlInstance?.getPSControls();
-        let portletAppView = (this.controlInstance as IPSDBAppViewPortletPart)?.getPortletPSAppView();
         if (portletType == "VIEW") {
+            let portletAppView = (this.controlInstance as IPSDBAppViewPortletPart)?.getPortletPSAppView();
             this.viewState.next({ tag: portletAppView?.name, action: 'refresh', data: args });
         }
         if (portletType == "CHART" || portletType == "LIST") {

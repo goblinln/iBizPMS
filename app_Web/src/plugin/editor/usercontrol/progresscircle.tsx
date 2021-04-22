@@ -69,5 +69,4 @@ export class PROGRESSCIRCLE extends EditorBase {
       ></ibiz-studio-progress-vue>
       }
 
-
 }

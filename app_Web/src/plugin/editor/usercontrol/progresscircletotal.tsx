@@ -69,5 +69,4 @@ export class PROGRESSCIRCLETOTAL extends EditorBase {
     ></circle-progress>
     }
 
-
 }

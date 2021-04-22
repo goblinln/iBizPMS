@@ -44,5 +44,4 @@ export class Extend extends EditorBase {
         })
     }
 
-
 }

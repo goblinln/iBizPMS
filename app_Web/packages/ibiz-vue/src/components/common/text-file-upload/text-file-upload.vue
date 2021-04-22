@@ -76,6 +76,14 @@ export default class TextFileUpload extends Vue {
     @Prop() public viewparams!: any;
 
     /**
+     * 视图参数
+     *
+     * @type {*}
+     * @memberof DiskFileUpload
+     */
+    @Prop() public filekey!: string;
+
+    /**
      * 当前表单对象
      *
      * @type {*}
@@ -377,7 +385,7 @@ export default class TextFileUpload extends Vue {
      */
     public getOwnerid($event?: any) {
         if ($event && $event.disdocid) {
-            return typeof $event.disdocid == "string" ? $event.disdocid : JSON.stringify($event.disdocid);
+            return typeof $event[this.filekey] == "string" ? $event[this.filekey] : JSON.stringify($event[this.filekey]);
         }
         return typeof this.ownerid == "string" ? this.ownerid : JSON.stringify(this.ownerid);
     }
@@ -670,8 +678,7 @@ export default class TextFileUpload extends Vue {
     public updateFileBatch(files: any,$event: any) {
         let _this: any = this;
         // 拼接url
-        let data = JSON.parse(this.data);
-        if (Object.is(data.srfuf, '1')) {
+        if (Object.is($event.type,"save")) {
             const updateUrl = '/net-disk/upload/' + this.getFolder() + '?ownertype=' + this.getOwnertype() + "&ownerid=" + this.getOwnerid($event.data);
             // requestBody参数
             let formData = new FormData();

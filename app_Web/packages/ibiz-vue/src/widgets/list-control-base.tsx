@@ -601,6 +601,7 @@ export class ListControlBase extends MDControlBase {
         this.initToolAction();
         this.minorSortPSDEF = this.controlInstance.getMinorSortPSAppDEField()?.codeName;
         this.minorSortDir = this.controlInstance.minorSortDir;
+        this.limit = this.controlInstance?.pagingSize || this.limit;
     }
 
     /**

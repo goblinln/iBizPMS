@@ -40,5 +40,4 @@ export class COLORPICKER extends EditorBase {
         })
     }
 
-
 }

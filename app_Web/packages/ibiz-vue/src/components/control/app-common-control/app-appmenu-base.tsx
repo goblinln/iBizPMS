@@ -89,7 +89,7 @@ export class AppmenuBase extends AppMenuControlBase {
      * @memberof AppmenuBase
      */
      public defaultMuneOption(menus: any[]): any {
-        return menus[0].getPSAppMenuItems[0];
+        return menus[0]?.getPSAppMenuItems?.[0];
     }
     /**
      * 顶部菜单项选中
@@ -371,7 +371,7 @@ export class AppmenuBase extends AppMenuControlBase {
      */
     public renderMenuTree() {
         if (this.menus && this.menus.length > 0) {
-            const defaultMuneOption:any = this.defaultMuneOption(this.menus).name
+            const defaultMuneOption:any = this.defaultMuneOption(this.menus)?.name;
             return this.$createElement('el-tree', {
                 props: {
                     'current-node-key': defaultMuneOption,
@@ -382,6 +382,7 @@ export class AppmenuBase extends AppMenuControlBase {
                     },
                     ref: 'eltree',
                     'default-expand-all': true,
+                    'highlight-current': true,
                     'render-content': this.menuTreeload,
                     'node-key': 'name'
                 },
@@ -467,7 +468,7 @@ export class AppmenuBase extends AppMenuControlBase {
          * @memberof AppmenuBase
          */
         public renderTableTopMenu() {
-            const defaultMuneOption:any = this.defaultMuneOption(this.menus).name
+            const defaultMuneOption:any = this.defaultMuneOption(this.menus)?.name;
             return (
                 <div style='height:100%'>
                     <el-menu
@@ -509,7 +510,7 @@ export class AppmenuBase extends AppMenuControlBase {
          * @memberof AppmenuBase
          */
         public renderTableBottomMenu() {
-            const defaultMuneOption:any = this.defaultMuneOption(this.menus).name
+            const defaultMuneOption:any = this.defaultMuneOption(this.menus)?.name
             return (
                 <div style='height:100%'>
                     <div style='height:calc(100% - 61px)'>{this.renderRightView ? this.renderRightView : null}</div>

@@ -57,5 +57,4 @@ export class PROGRESSLINE extends EditorBase {
         progress={this.contextData[this.progress]}
     ></ibiz-studio-progress-vue>
     }
-
 }

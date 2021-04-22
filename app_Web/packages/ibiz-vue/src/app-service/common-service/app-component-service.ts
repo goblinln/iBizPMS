@@ -310,6 +310,7 @@ export class AppComponentService {
         this.editorMap.set("HTMLEDITOR_INFO", "html-container");
         this.editorMap.set("TEXTAREA_WFAPPROVAL", "app-wf-approval");
         this.editorMap.set("TEXTAREA_WFAPPROVALTIMELINE", "action-timeline");
+        this.editorMap.set("TEXTAREA_WFAPPROVALEXTENDTIMELINE", "extend-action-timeline");
         this.editorMap.set("SPAN_AFTERTIME", "app-after-time");
         this.editorMap.set("SPAN_ADDRESSPICKUP", "app-span");
         this.editorMap.set("SPAN_COLORSPAN", "app-color-span");

@@ -27,5 +27,4 @@ export class INFO extends EditorBase {
             style: this.customStyle
         })
     }
-
 }

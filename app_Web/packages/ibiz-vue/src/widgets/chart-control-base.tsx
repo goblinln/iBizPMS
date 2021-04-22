@@ -9,13 +9,16 @@ import {
     ChartPieSeries,
     ChartBarSeries,
     ChartRadarSeries,
-    GetModelService,
-    AppModelService,
 } from 'ibiz-core';
 import {
-    IPSChartAxis,
     IPSChartCoordinateSystemCartesian2D,
+    IPSChartGridXAxis,
+    IPSChartSeriesCSCartesian2DEncode,
+    IPSChartSeriesCSNoneEncode,
+    IPSChartXAxis,
+    IPSChartYAxis,
     IPSDEChart,
+    IPSDEChartGrid,
     IPSDEChartSeries, IPSDEChartTitle
 } from "@ibiz/dynamic-model-api";
 /**
@@ -73,11 +76,11 @@ export class ChartControlBase extends MDControlBase {
      * @memberof ChartControlBase
      */
     public async initSeriesModel() {
-        if (!this.cachePSChartDataSets) {
+        if (!this.controlInstance.getPSDEChartSerieses()) {
             return;
         }
-        for (let index = 0; index < this.cachePSChartDataSets?.length; index++) {
-            const series: IPSDEChartSeries = this.cachePSChartDataSets[index]?._data;
+        for (let index = 0; index < (this.controlInstance.getPSDEChartSerieses() as any)?.length; index++) {
+            const series: IPSDEChartSeries = (this.controlInstance.getPSDEChartSerieses() as any)[index];
             if (series) {
                 this.initChartSeries(await this.getSeriesModelParam(series), series);
             }
@@ -96,15 +99,15 @@ export class ChartControlBase extends MDControlBase {
             categorField: series.catalogField?.toLowerCase(),
             valueField: series.valueField?.toLowerCase(),
             seriesValues: [],
-            seriesIndex: series.index,
+            seriesIndex: series.index | 0,
             data: [],
             seriesMap: {},
             categorCodeList: {
-                type: series.getCatalogPSCodeList?._data?.codeListType,
-                tag: series.getCatalogPSCodeList?._data.codeName, emptycode: 'empty',
-                emptytext: series.getCatalogPSCodeList?._data?.emptyText
+                type: series.getCatalogPSCodeList()?.codeListType,
+                tag: series.getCatalogPSCodeList()?.codeName, emptycode: 'empty',
+                emptytext: series.getCatalogPSCodeList()?.emptyText
             },
-            dataSetFields: series.dataSetFields,
+            dataSetFields: this.getDataSetFields(series),
             ecxObject: {
                 label: {
                     show: true,
@@ -128,12 +131,12 @@ export class ChartControlBase extends MDControlBase {
                     },
                 },
             },
-            seriesCodeList: series.getSeriesPSCodeList ? {
-                type: series.getSeriesPSCodeList?._data?.codeListType,
-                tag: series.getSeriesPSCodeList?._data.codeName, emptycode: 'empty',
-                emptytext: series.getSeriesPSCodeList?._data?.emptyText
+            seriesCodeList: series.getSeriesPSCodeList() ? {
+                type: series.getSeriesPSCodeList()?.codeListType,
+                tag: series.getSeriesPSCodeList()?.codeName, emptycode: 'empty',
+                emptytext: series.getSeriesPSCodeList()?.emptyText
             } : null,
-            seriesNameField: series?.seriesField?.toLowerCase(),
+            seriesNameField: series.seriesField?.toLowerCase(),
             ecObject: {},
             seriesTemp: {
                 type: series.eChartsType,
@@ -162,15 +165,42 @@ export class ChartControlBase extends MDControlBase {
     }
 
     /**
+     * 临时获取seriesDataSetField 模型
+     */
+    public getDataSetFields(series: any) {
+        const seriesData: any = [];
+        const dataSet = (this.controlInstance as any).getPSChartDataSets()?.find((item: any) => {
+            return item.id === series?.M?.getPSChartDataSet?.id || null
+        }) || null;
+        if (!dataSet && !dataSet.getPSChartDataSetFields()) {
+            return null
+        }
+        for (let index = 0; index < dataSet.getPSChartDataSetFields()?.length; index++) {
+            const dataFile: any = dataSet.getPSChartDataSetFields()[index];
+            const data: any = {}
+            if (dataFile.getPSCodeList()) {
+                const codelist = dataFile.getPSCodeList();
+                Object.assign(data, { codelist: codelist });
+            }
+            data['isGroupField'] = dataFile.groupField;
+            data['name'] = dataFile.name?.toLowerCase();
+            data['groupMode'] = dataFile.groupMode ? dataFile.groupMode : "";
+            seriesData.push(data);
+        }
+        return seriesData
+
+    }
+
+    /**
      * 处理用户自定义参数
      *
      * @memberof ChartControlBase
      */
     public fillUserParam(param: any, opts: any, tag: string) {
-        if (!param?.M?.getUserParam && !param.getUserParam) {
+        if (!param.userParams) {
             return;
         }
-        const userParam = param?.M?.getUserParam || param.getUserParam;
+        const userParam = param.userParams;
         switch (tag) {
             case 'ECX':
                 if (userParam['ECX.label']) {
@@ -328,21 +358,21 @@ export class ChartControlBase extends MDControlBase {
         });
         // 填充xAxis
         const xAxis: any = [];
-        //  todo  缺失getPSChartXAxises
-        this.controlInstance.M?.getPSChartXAxises?.forEach((_xAxis: IPSChartAxis) => {
+        //  todo  缺失getPSChartXAxises接口
+        (this.controlInstance as any).getPSChartXAxises()?.forEach((_xAxis: IPSChartXAxis) => {
             xAxis.push(this.fillAxis(_xAxis));
         });
         // 填充yAxis
         const yAxis: any = [];
-        //  todo  缺失getPSChartYAxises
-        this.controlInstance.M?.getPSChartYAxises?.forEach((_yAxis: IPSChartAxis) => {
+        //  todo  缺失getPSChartYAxises接口
+        (this.controlInstance as any).getPSChartYAxises()?.forEach((_yAxis: IPSChartYAxis) => {
             yAxis.push(this.fillAxis(_yAxis));
 
         });
         // 填充grid
         const grid: any = [];
-        //  todo  缺失getPSChartGrids
-        this.controlInstance.M?.getPSChartGrids?.forEach((_grid: any) => {
+        //  todo  缺失getPSChartGrids接口
+        (this.controlInstance as any).getPSChartGrids()?.forEach((_grid: IPSDEChartGrid) => {
             grid.push({
                 ..._grid.baseOptionJOString ? (new Function("return {" + _grid.baseOptionJOString + '}'))() : {}
             })
@@ -395,13 +425,13 @@ export class ChartControlBase extends MDControlBase {
         switch (series.eChartsType) {
             case 'line':
             case 'bar':
-                const cSCartesian2DEncode = series.M.getPSChartSeriesEncode;
-                encode.x = this.arrayToLowerCase(cSCartesian2DEncode.x)
-                encode.y = this.arrayToLowerCase(cSCartesian2DEncode.y)
+                const cSCartesian2DEncode = series.getPSChartSeriesEncode() as IPSChartSeriesCSCartesian2DEncode;
+                encode.x = this.arrayToLowerCase(cSCartesian2DEncode.getX())
+                encode.y = this.arrayToLowerCase(cSCartesian2DEncode.getY())
                 break;
             case 'pie':
             case 'funnel':
-                const CSNoneEncode = series.M.getPSChartSeriesEncode
+                const CSNoneEncode = series.getPSChartSeriesEncode() as IPSChartSeriesCSNoneEncode;
                 encode.itemName = CSNoneEncode.category?.toLowerCase();
                 encode.value = CSNoneEncode.value?.toLowerCase();
                 break;
@@ -447,10 +477,10 @@ export class ChartControlBase extends MDControlBase {
     /**
      * 填充 axis
      */
-    public fillAxis(axis: any): any {
+    public fillAxis(axis: IPSChartGridXAxis): any {
         const _axis: any = {
             // todo  缺失index
-            gridIndex: (axis as any).index,
+            gridIndex: axis.index,
             position: axis.position,
             type: axis.eChartsType,
             name: axis.caption,
@@ -1386,20 +1416,14 @@ export class ChartControlBase extends MDControlBase {
     public getCodeList(codeListObject: any): Promise<any> {
         return new Promise((resolve: any, reject: any) => {
             if (codeListObject.codeName && Object.is(codeListObject.codeListType, 'STATIC')) {
-                //  代码表服务拿不到
-                // this.codeListService
-                //     .getStaticItems(codeListObject.codeName)
-                //     .then((res: any) => {
-                //         resolve(res);
-                //     })
-                //     .catch((error: any) => {
-                //         console.log(`----${codeListObject.codeName}----代码表不存在`);
-                //     });
-                const value:any = [];
-                codeListObject.getPSCodeItems()?.forEach((item:any) => {
-                    value.push(item._data);
-                });
-                resolve(value);
+                this.codeListService
+                    .getStaticItems(codeListObject.codeName)
+                    .then((res: any) => {
+                        resolve(res);
+                    })
+                    .catch((error: any) => {
+                        console.log(`----${codeListObject.codeName}----代码表不存在`);
+                    });
             } else if (codeListObject.codeName && Object.is(codeListObject.codeListType, 'DYNAMIC')) {
                 this.codeListService
                     .getItems(codeListObject.codeName)
@@ -1422,7 +1446,6 @@ export class ChartControlBase extends MDControlBase {
         await super.ctrlModelInit();
         this.service = new AppChartService(this.controlInstance);
         await this.service.loaded(this.controlInstance);
-        await this.fillModel()
         this.initChartParams();
     }
 
@@ -1447,59 +1470,6 @@ export class ChartControlBase extends MDControlBase {
                     }
                 },
             );
-        }
-    }
-
-    /**
-    * 缓存getPSDEChartSerieses 
-    *
-    * @memberof ChartControlBase
-    */
-    public cachePSChartDataSets!: any;
-
-    /**
-     * 填充模型
-     */
-    public async fillModel() {
-        const appModelService: AppModelService = await GetModelService(this.context);
-        // 构造catalogPSCodeList属性
-        this.cachePSChartDataSets = Util.deepCopy(this.controlInstance?.getPSDEChartSerieses());
-        if (this.cachePSChartDataSets && (this.controlInstance.getPSDEChartSerieses() as any)?.length > 0) {
-            for (let index = 0; index < this.cachePSChartDataSets?.length; index++) {
-                const series: any = this.cachePSChartDataSets[index]?._data
-                if (series?.getCatalogPSCodeList?.path) {
-                    const res = await appModelService.getPSAppCodeList(series.getCatalogPSCodeList.path);
-                    Object.assign(series.getCatalogPSCodeList, res)
-                }
-                // 构造dataSetFields属性
-                if (this.controlInstance.M?.getPSChartDataSets?.length > 0 && series.getPSChartDataSet) {
-                    const dataSet = this.controlInstance.M?.getPSChartDataSets.find((item: any) => {
-                        return item.id === series?.getPSChartDataSet?.id;
-                    });
-                    for (let index = 0; index < dataSet.getPSChartDataSetFields?.length; index++) {
-                        const dataFile: any = dataSet.getPSChartDataSetFields[index];
-                        if (dataFile?.getPSCodeList?.path) {
-                            const res: any = await appModelService.getPSAppCodeList(dataFile.getPSCodeList.path);
-                            if (res) {
-                                res.tag = res.codeName
-                                Object.assign(dataFile, { codelist: res });
-                            }
-                        }
-                        dataFile['isGroupField'] = dataFile.groupField;
-                        dataFile['name'] = dataFile.name?.toLowerCase();
-                        dataFile['groupMode'] = dataFile.groupMode ? dataFile.groupMode : "";
-                    }
-                    series.id = series.name;
-                    Object.assign(series, { dataSetFields: dataSet.getPSChartDataSetFields })
-                }
-                if (series.getSeriesPSCodeList && series.getSeriesPSCodeList.modelref && series.getSeriesPSCodeList.path) {
-                    const res: any = await appModelService.getPSAppCodeList(series.getSeriesPSCodeList.path);
-                    if (res) {
-                        res.tag = res.codeName
-                        Object.assign(series, { getSeriesPSCodeList: res });
-                    }
-                }
-            }
         }
     }
 

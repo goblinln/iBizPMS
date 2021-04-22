@@ -1,3 +1,4 @@
+import { ModelTool } from 'ibiz-core';
 import { Vue, Component, Prop, Inject } from 'vue-property-decorator';
 import { VueLifeCycleProcessing } from '../../../decorators';
 import { EditorBase } from '../editor-base/editor-base';
@@ -113,7 +114,8 @@ export default class UploadEditor extends EditorBase {
      * 
      * @memberof UploadEditor
      */
-    public renderDiskUpload(){
+     public renderDiskUpload(){
+      let filekey = ModelTool.getAppEntityKeyField(this.containerCtrl?.getPSAppDataEntity())?.codeName?.toLowerCase() || '';
         return this.$createElement(this.editorComponentName,{
             props: {
                 formItemName: this.editorInstance.name,
@@ -124,7 +126,8 @@ export default class UploadEditor extends EditorBase {
                 data: JSON.stringify(this.contextData),
                 folder:this.containerCtrl?.getPSAppDataEntity()?.codeName?.toLowerCase() || '',
                 ownertype:this.editorInstance.name,
-                ownerid:this.contextData.srfkey,
+                ownerid:this.contextData[filekey],
+                filekey:filekey,
                 ...this.customProps,
             },
             on: { formitemvaluechange: this.editorChange },

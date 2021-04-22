@@ -70,5 +70,4 @@ export class RowEditExtend extends EditorBase {
             style: this.customStyle,
         });
     }
-
 }
