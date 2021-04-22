@@ -7,7 +7,9 @@ import net.ibizsys.runtime.util.IEntityBase;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.util.ObjectUtils;
 
-public class ZeroTranslator extends SysTranslatorRuntimeBase {
+public class ModulePathValueTranslator extends SysTranslatorRuntimeBase {
+
+    private final static String STRVAL = "/";
 
     /**
      * @param objValue                需要转换的值
@@ -28,13 +30,14 @@ public class ZeroTranslator extends SysTranslatorRuntimeBase {
             }
         }
 //        if (bIn) {
-//            if (ObjectUtils.isEmpty(objValue)) {
+//            if (!ObjectUtils.isEmpty(objValue) && STRVAL.equals(String.valueOf(objValue))) {
 //                return 0;
 //            }
 //        } else {
 //            if (!ObjectUtils.isEmpty(objValue)) {
-//                if (NumberUtils.isDigits(String.valueOf(objValue)) && Integer.parseInt(String.valueOf(objValue)) == 0)
-//                    return null;
+//                if (NumberUtils.isDigits(String.valueOf(objValue)) && Integer.parseInt(String.valueOf(objValue)) == 0) {
+//                    return STRVAL;
+//                }
 //            }
 //        }
         return objValue;
