@@ -2075,11 +2075,16 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_MODULE_MODULE.json"
     },
+    "getPSSysTranslator" : {
+      "modelref" : true,
+      "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
     "stdDataType" : 1,
+    "translatorMode" : "TRANSLATE2",
     "valueFormat" : "%1$s",
     "linkDEField" : true
   } ],

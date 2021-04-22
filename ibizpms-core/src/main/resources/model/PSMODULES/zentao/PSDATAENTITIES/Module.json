@@ -373,8 +373,13 @@
     "length" : 8,
     "logicName" : "所属根",
     "name" : "ROOT",
+    "getPSSysTranslator" : {
+      "modelref" : true,
+      "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
+    },
     "stdDataType" : 25,
     "stringLength" : 8,
+    "translatorMode" : "TRANSLATE2",
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
@@ -1180,11 +1185,16 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDERS/DER1N_ZT_MODULE_ZT_BRANCH_BRANCH.json"
     },
+    "getPSSysTranslator" : {
+      "modelref" : true,
+      "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
     "stdDataType" : 1,
+    "translatorMode" : "TRANSLATE2",
     "valueFormat" : "%1$s",
     "linkDEField" : true
   }, {
@@ -1223,11 +1233,16 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDERS/DER1N__ZT_MODULE__ZT_MODULE__PARENT.json"
     },
+    "getPSSysTranslator" : {
+      "modelref" : true,
+      "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
     "stdDataType" : 1,
+    "translatorMode" : "TRANSLATE2",
     "valueFormat" : "%1$s",
     "linkDEField" : true
   } ],

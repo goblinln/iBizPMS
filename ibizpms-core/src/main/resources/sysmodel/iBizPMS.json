@@ -45272,7 +45272,7 @@
     "physical_field":0,
     "data_type":"VARCHAR",
     "data_length":200,
-    "expression":"( SELECT case when count( t.`id` ) > 0 then 1 else 0 end FROM `zt_team` t WHERE t.`type` = 'task' AND t.`root` = t1.`id` )",
+    "expression":"( SELECT count( t.`id` ) FROM `zt_team` t WHERE t.`type` = 'task' AND t.`root` = t1.`id` )",
     "key_field":0,
     "show_order":1000,
     "major_field":0

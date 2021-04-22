@@ -1,0 +1,16 @@
+{
+  "codeName" : "ComputeTaskType",
+  "dEFLogicMode" : "COMPUTE",
+  "defaultParamName" : "DEFAULT",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEFLOGICS/ComputeTaskType.json",
+  "logicName" : "计算任务类型",
+  "logicSubType" : "DEFIELD",
+  "name" : "计算任务类型",
+  "getPSDEField" : {
+    "name" : "TASKTYPE",
+    "codeName" : "Tasktype"
+  },
+  "customCode" : true,
+  "enableBackend" : true,
+  "enableFront" : false
+}

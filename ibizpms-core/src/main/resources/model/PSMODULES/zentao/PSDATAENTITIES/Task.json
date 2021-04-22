@@ -3335,6 +3335,10 @@
       "enableFront" : true
     } ],
     "codeName" : "Multiple",
+    "getComputePSDEFLogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEFLOGICS/ComputeMultiple.json"
+    },
     "dEFType" : 2,
     "dataType" : "TEXT",
     "importOrder" : 1000,
@@ -4741,6 +4745,10 @@
       "enableFront" : true
     } ],
     "codeName" : "Tasktype",
+    "getComputePSDEFLogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEFLOGICS/ComputeTaskType.json"
+    },
     "dEFType" : 2,
     "dEMSFieldMode" : "STATE3",
     "dataType" : "SSCODELIST",
@@ -5447,11 +5455,16 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_PROJECT_PROJECT.json"
     },
+    "getPSSysTranslator" : {
+      "modelref" : true,
+      "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
     "stdDataType" : 1,
+    "translatorMode" : "TRANSLATE2",
     "valueFormat" : "%1$s",
     "linkDEField" : true
   }, {
@@ -5536,11 +5549,16 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_IBZ_PROJECTMODULE_MODULE.json"
     },
+    "getPSSysTranslator" : {
+      "modelref" : true,
+      "path" : "PSSYSTRANSLATORS/ModulePathValueTranslator.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
     "stdDataType" : 1,
+    "translatorMode" : "TRANSLATE2",
     "valueFormat" : "%1$s",
     "linkDEField" : true
   }, {
@@ -5582,11 +5600,16 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_STORY_STORY.json"
     },
+    "getPSSysTranslator" : {
+      "modelref" : true,
+      "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
     "stdDataType" : 1,
+    "translatorMode" : "TRANSLATE2",
     "valueFormat" : "%1$s",
     "linkDEField" : true
   }, {
@@ -5628,11 +5651,16 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N__ZT_TASK__ZT_TASK__PARENT.json"
     },
+    "getPSSysTranslator" : {
+      "modelref" : true,
+      "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
     "stdDataType" : 1,
+    "translatorMode" : "TRANSLATE2",
     "valueFormat" : "%1$s",
     "linkDEField" : true
   }, {
@@ -5674,11 +5702,16 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDERS/DER1N_ZT_TASK_ZT_BUG_FROMBUG.json"
     },
+    "getPSSysTranslator" : {
+      "modelref" : true,
+      "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
     "stdDataType" : 1,
+    "translatorMode" : "TRANSLATE2",
     "valueFormat" : "%1$s",
     "linkDEField" : true
   } ],
@@ -5694,6 +5727,17 @@
     "enableBackend" : true,
     "enableFront" : false
   }, {
+    "codeName" : "ComputeMultiple",
+    "defaultParamName" : "DEFAULT",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEFLOGICS/ComputeMultiple.json",
+    "logicName" : "计算多任务标识",
+    "logicSubType" : "DEFIELD",
+    "name" : "计算多任务标识",
+    "scriptCode" : "var multiple = entity.get(\"multiple\");\nif(multiple === null || multiple == 0) {\n\tmultiple = 0;\n}else {\n\tmultiple = 1;\n}\nreturn multiple;",
+    "customCode" : true,
+    "enableBackend" : true,
+    "enableFront" : false
+  }, {
     "codeName" : "ComputeProgressrate",
     "defaultParamName" : "DEFAULT",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEFLOGICS/ComputeProgressrate.json",
@@ -5701,6 +5745,16 @@
     "logicSubType" : "DEFIELD",
     "name" : "计算进度",
     "scriptCode" : "var consumed = entity.get(\"consumed\");\nvar left = entity.get(\"left\");\nvar progressrate = \"0\";\nif(consumed === null || consumed == 0 ) {\n\tprogressrate = \"0\";\n}else if(left  === null || left == 0) {\n\tprogressrate = \"100\";\n}else {\n\tprogressrate = (consumed /(consumed  + left) ).toFixed(2) * 100;\n}\nreturn progressrate;",
+    "customCode" : true,
+    "enableBackend" : true,
+    "enableFront" : false
+  }, {
+    "codeName" : "ComputeTaskType",
+    "defaultParamName" : "DEFAULT",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEFLOGICS/ComputeTaskType.json",
+    "logicName" : "计算任务类型",
+    "logicSubType" : "DEFIELD",
+    "name" : "计算任务类型",
     "customCode" : true,
     "enableBackend" : true,
     "enableFront" : false

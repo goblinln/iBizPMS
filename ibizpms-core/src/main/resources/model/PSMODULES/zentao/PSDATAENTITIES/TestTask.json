@@ -1569,11 +1569,16 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDERS/DER1N_ZT_TESTTASK_ZT_PROJECT_PROJECT.json"
     },
+    "getPSSysTranslator" : {
+      "modelref" : true,
+      "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
+    },
     "getRelatedPSDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
     "stdDataType" : 1,
+    "translatorMode" : "TRANSLATE2",
     "valueFormat" : "%1$s",
     "linkDEField" : true
   } ],
