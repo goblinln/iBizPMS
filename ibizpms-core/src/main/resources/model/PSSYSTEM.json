@@ -1116,6 +1116,9 @@
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSystem.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProTranslator.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBzDoc.json"
   }, {
     "modelref" : true,
@@ -3367,6 +3370,9 @@
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSystem.json"
+    }, {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProTranslator.json"
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproIndex.json"
