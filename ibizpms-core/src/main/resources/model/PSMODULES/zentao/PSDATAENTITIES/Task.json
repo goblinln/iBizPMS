@@ -5700,7 +5700,7 @@
     "logicName" : "计算进度",
     "logicSubType" : "DEFIELD",
     "name" : "计算进度",
-    "scriptCode" : "if(entity.get(\"consumed\") == null || \"0\".equals(entity.get(\"consumed\")) )  {\n      return \"0\";\n}else (entity.get(\"left\") == null || \"0\".equals(entity.get(\"left\")) )  {\n      return \"100\";\n}else {\n      return String.valueOf(Double.parseDouble(entity.get(\"consumed\").toString())/(Double.parseDouble(entity.get(\"consumed\").toString()) + Double.parseDouble(entity.get(\"left\").toString())) * 100);\n}",
+    "scriptCode" : "var consumed = entity.get(\"consumed\");\nvar left = entity.get(\"left\");\nvar progressrate = \"0\";\nif(consumed === null || consumed == 0 ) {\n\tprogressrate = \"0\";\n}else ifleft  === null || left == 0) {\n\tprogressrate = \"100\";\n}else {\n\tprogressrate = (consumed /(consumed  + left) ).toFixed(2) * 100;\n}\nreturn progressrate;",
     "customCode" : true,
     "enableBackend" : true,
     "enableFront" : false
