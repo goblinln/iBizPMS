@@ -1,0 +1,6 @@
+{
+  "codeName" : "ZeroTranslator",
+  "dynaModelFilePath" : "PSSYSTRANSLATORS/ZeroTranslator.json",
+  "name" : "0值转换",
+  "translatorType" : "USER"
+}

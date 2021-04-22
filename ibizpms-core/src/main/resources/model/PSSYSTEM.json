@@ -1522,6 +1522,10 @@
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTodoSeq.json"
   } ],
+  "getAllPSSysTranslators" : [ {
+    "modelref" : true,
+    "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
+  } ],
   "getAllPSSysUniReses" : [ {
     "name" : "通用创建",
     "resCode" : "UNIVERSALCREATE",
