@@ -3,7 +3,6 @@
     "actionMode" : "CREATE",
     "actionType" : "BUILTIN",
     "getAfterPSDEActionLogics" : [ {
-      "actionLogicType" : 1,
       "attachMode" : "AFTER",
       "name" : "附加逻辑",
       "getPSDELogic" : {
@@ -24,7 +23,6 @@
     "actionMode" : "UPDATE",
     "actionType" : "BUILTIN",
     "getAfterPSDEActionLogics" : [ {
-      "actionLogicType" : 1,
       "attachMode" : "AFTER",
       "name" : "附加逻辑",
       "getPSDELogic" : {
@@ -1572,6 +1570,7 @@
     "roleTag" : "ProductModule_Manage",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEUSERROLES/ProductModule_Read.json",
     "name" : "需求模块查看",
     "getPSDEUserRoleOPPrivs" : [ {

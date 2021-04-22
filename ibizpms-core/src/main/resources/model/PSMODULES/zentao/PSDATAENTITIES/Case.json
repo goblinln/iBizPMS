@@ -10694,6 +10694,7 @@
     "roleTag" : "Case_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_Read.json",
     "name" : "用例查看",
     "getPSDEUserRoleOPPrivs" : [ {

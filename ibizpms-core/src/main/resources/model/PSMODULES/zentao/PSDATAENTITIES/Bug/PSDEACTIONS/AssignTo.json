@@ -2,7 +2,6 @@
   "actionMode" : "UNKNOWN",
   "actionType" : "USERCUSTOM",
   "getAfterPSDEActionLogics" : [ {
-    "actionLogicType" : 1,
     "attachMode" : "AFTER",
     "name" : "附加逻辑",
     "getPSDELogic" : {
@@ -13,7 +12,6 @@
     "ignoreException" : false,
     "internalLogic" : true
   }, {
-    "actionLogicType" : 1,
     "attachMode" : "AFTER",
     "name" : "附加逻辑",
     "getPSDELogic" : {

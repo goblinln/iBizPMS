@@ -27,6 +27,10 @@ import cn.ibizlab.pms.core.ibizpro.domain.IBZProSequence;
 @Data
 public class IBZProSequenceSearchContext extends QueryWrapperContext<IBZProSequence> {
 
+	private Long n_curseq_eq;//[当前序列号]
+	public void setN_curseq_eq(Long n_curseq_eq) {
+        this.n_curseq_eq = n_curseq_eq;
+    }
 	private String n_ibzpro_sequencename_eq;//[业务序列表名称]
 	public void setN_ibzpro_sequencename_eq(String n_ibzpro_sequencename_eq) {
         this.n_ibzpro_sequencename_eq = n_ibzpro_sequencename_eq;

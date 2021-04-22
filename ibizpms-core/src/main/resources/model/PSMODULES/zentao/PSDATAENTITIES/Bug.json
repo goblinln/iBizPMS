@@ -3,7 +3,6 @@
     "actionMode" : "CREATE",
     "actionType" : "BUILTIN",
     "getAfterPSDEActionLogics" : [ {
-      "actionLogicType" : 1,
       "attachMode" : "AFTER",
       "name" : "附加逻辑",
       "getPSDELogic" : {
@@ -37,7 +36,6 @@
     "actionMode" : "DELETE",
     "actionType" : "BUILTIN",
     "getAfterPSDEActionLogics" : [ {
-      "actionLogicType" : 1,
       "attachMode" : "AFTER",
       "name" : "附加逻辑",
       "getPSDELogic" : {
@@ -69,7 +67,6 @@
     "actionMode" : "GETDRAFT",
     "actionType" : "BUILTIN",
     "getAfterPSDEActionLogics" : [ {
-      "actionLogicType" : 1,
       "attachMode" : "AFTER",
       "name" : "附加逻辑",
       "getPSDELogic" : {
@@ -90,7 +87,6 @@
     "actionMode" : "UNKNOWN",
     "actionType" : "USERCUSTOM",
     "getAfterPSDEActionLogics" : [ {
-      "actionLogicType" : 1,
       "attachMode" : "AFTER",
       "name" : "附加逻辑",
       "getPSDELogic" : {
@@ -110,7 +106,6 @@
     "actionMode" : "UNKNOWN",
     "actionType" : "USERCUSTOM",
     "getAfterPSDEActionLogics" : [ {
-      "actionLogicType" : 1,
       "attachMode" : "AFTER",
       "name" : "附加逻辑",
       "getPSDELogic" : {
@@ -121,7 +116,6 @@
       "ignoreException" : false,
       "internalLogic" : true
     }, {
-      "actionLogicType" : 1,
       "attachMode" : "AFTER",
       "name" : "附加逻辑",
       "getPSDELogic" : {
@@ -203,7 +197,6 @@
     "actionMode" : "UNKNOWN",
     "actionType" : "USERCUSTOM",
     "getAfterPSDEActionLogics" : [ {
-      "actionLogicType" : 1,
       "attachMode" : "AFTER",
       "name" : "附加逻辑",
       "getPSDELogic" : {
@@ -223,7 +216,6 @@
     "actionMode" : "UNKNOWN",
     "actionType" : "USERCUSTOM",
     "getAfterPSDEActionLogics" : [ {
-      "actionLogicType" : 1,
       "attachMode" : "AFTER",
       "name" : "附加逻辑",
       "getPSDELogic" : {
@@ -302,7 +294,6 @@
     "actionMode" : "UNKNOWN",
     "actionType" : "USERCUSTOM",
     "getAfterPSDEActionLogics" : [ {
-      "actionLogicType" : 1,
       "attachMode" : "AFTER",
       "name" : "附加逻辑",
       "getPSDELogic" : {
@@ -352,7 +343,6 @@
     "actionMode" : "UNKNOWN",
     "actionType" : "USERCUSTOM",
     "getAfterPSDEActionLogics" : [ {
-      "actionLogicType" : 1,
       "attachMode" : "AFTER",
       "name" : "附加逻辑",
       "getPSDELogic" : {

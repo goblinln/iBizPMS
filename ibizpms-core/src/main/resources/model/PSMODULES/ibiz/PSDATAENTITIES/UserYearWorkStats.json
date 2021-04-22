@@ -89,7 +89,6 @@
     "actionMode" : "READ",
     "actionType" : "USERCUSTOM",
     "getAfterPSDEActionLogics" : [ {
-      "actionLogicType" : 1,
       "attachMode" : "AFTER",
       "name" : "附加逻辑",
       "getPSDELogic" : {
@@ -116,7 +115,6 @@
     "actionMode" : "UPDATE",
     "actionType" : "USERCUSTOM",
     "getAfterPSDEActionLogics" : [ {
-      "actionLogicType" : 1,
       "attachMode" : "AFTER",
       "name" : "附加逻辑",
       "getPSDELogic" : {

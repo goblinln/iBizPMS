@@ -1,4 +1,5 @@
 {
+  "customCond" : "[ (1, '=', 1) ]",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEUSERROLES/ProductModule_Read.json",
   "name" : "需求模块查看",
   "getPSDEUserRoleOPPrivs" : [ {
