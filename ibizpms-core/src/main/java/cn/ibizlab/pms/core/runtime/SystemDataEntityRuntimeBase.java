@@ -437,7 +437,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                         && (StringUtils.isBlank(uaadeAuthority.getBscope()))
                 ) {
                     Consumer<QueryWrapper> denyDataCondition = dataCondition -> {
-                        dataCondition.apply("1 = 1");
+                        dataCondition.apply("1 <> 1");
                     };
                     authorityCondition.or(denyDataCondition);
                 } else {

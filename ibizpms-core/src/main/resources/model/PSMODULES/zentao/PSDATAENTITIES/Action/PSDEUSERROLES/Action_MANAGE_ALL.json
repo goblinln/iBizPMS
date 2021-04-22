@@ -1,4 +1,5 @@
 {
+  "customCond" : "[ (1, '=', 1) ]",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_MANAGE_ALL.json",
   "name" : "系统日志添加备注（全部数据）",
   "getPSDEUserRoleOPPrivs" : [ {
