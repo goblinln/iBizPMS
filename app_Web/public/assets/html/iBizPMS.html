@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>README</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+:root { --side-bar-bg-color: #fafafa; --control-text-color: #777; }
+html { font-size: 16px; }
+body { font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(51, 51, 51); line-height: 1.6; }
+#write { max-width: 860px; margin: 0px auto; padding: 30px 30px 100px; }
+#write > ul:first-child, #write > ol:first-child { margin-top: 30px; }
+a { color: rgb(65, 131, 196); }
+h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1rem; margin-bottom: 1rem; font-weight: bold; line-height: 1.4; cursor: text; }
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor { text-decoration: none; }
+h1 tt, h1 code { font-size: inherit; }
+h2 tt, h2 code { font-size: inherit; }
+h3 tt, h3 code { font-size: inherit; }
+h4 tt, h4 code { font-size: inherit; }
+h5 tt, h5 code { font-size: inherit; }
+h6 tt, h6 code { font-size: inherit; }
+h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+h3 { font-size: 1.5em; line-height: 1.43; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1em; }
+h6 { font-size: 1em; color: rgb(119, 119, 119); }
+p, blockquote, ul, ol, dl, table { margin: 0.8em 0px; }
+li > ol, li > ul { margin: 0px; }
+hr { height: 2px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; overflow: hidden; box-sizing: content-box; }
+li p.first { display: inline-block; }
+ul, ol { padding-left: 30px; }
+ul:first-child, ol:first-child { margin-top: 0px; }
+ul:last-child, ol:last-child { margin-bottom: 0px; }
+blockquote { border-left: 4px solid rgb(223, 226, 229); padding: 0px 15px; color: rgb(119, 119, 119); }
+blockquote blockquote { padding-right: 0px; }
+table { padding: 0px; word-break: initial; }
+table tr { border-top: 1px solid rgb(223, 226, 229); margin: 0px; padding: 0px; }
+table tr:nth-child(2n), thead { background-color: rgb(248, 248, 248); }
+table tr th { font-weight: bold; border-width: 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: rgb(223, 226, 229); border-right-color: rgb(223, 226, 229); border-left-color: rgb(223, 226, 229); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; margin: 0px; padding: 6px 13px; }
+table tr td { border: 1px solid rgb(223, 226, 229); margin: 0px; padding: 6px 13px; }
+table tr th:first-child, table tr td:first-child { margin-top: 0px; }
+table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
+.CodeMirror-lines { padding-left: 4px; }
+.code-tooltip { box-shadow: rgba(0, 28, 36, 0.3) 0px 1px 1px 0px; border-top: 1px solid rgb(238, 242, 242); }
+.md-fences, code, tt { border: 1px solid rgb(231, 234, 237); background-color: rgb(248, 248, 248); border-radius: 3px; padding: 2px 4px 0px; font-size: 0.9em; }
+code { background-color: rgb(243, 244, 244); padding: 0px 2px; }
+.md-fences { margin-bottom: 15px; margin-top: 15px; padding-top: 8px; padding-bottom: 6px; }
+.md-task-list-item > input { margin-left: -1.3em; }
+@media print {
+  html { font-size: 13px; }
+  table, pre { break-inside: avoid; }
+  pre { overflow-wrap: break-word; }
+}
+.md-fences { background-color: rgb(248, 248, 248); }
+#write pre.md-meta-block { padding: 1rem; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border: 0px; border-radius: 3px; color: rgb(119, 119, 119); margin-top: 0px !important; }
+.mathjax-block > .code-tooltip { bottom: 0.375rem; }
+.md-mathjax-midline { background: rgb(250, 250, 250); }
+#write > h3.md-focus::before { left: -1.5625rem; top: 0.375rem; }
+#write > h4.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h5.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h6.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+.md-image > .md-meta { border-radius: 3px; padding: 2px 0px 0px 4px; font-size: 0.9em; color: inherit; }
+.md-tag { color: rgb(167, 167, 167); opacity: 1; }
+.md-toc { margin-top: 20px; padding-bottom: 20px; }
+.sidebar-tabs { border-bottom: none; }
+#typora-quick-open { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); }
+#typora-quick-open-item { background-color: rgb(250, 250, 250); border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229) rgb(238, 238, 238); border-style: solid; border-width: 1px; }
+.on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.12); }
+header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Arial, sans-serif; }
+.file-node-content:hover .file-node-icon, .file-node-content:hover .file-node-open-state { visibility: visible; }
+.mac-seamless-mode #typora-sidebar { background-color: var(--side-bar-bg-color); }
+.md-lang { color: rgb(180, 101, 77); }
+.html-for-mac .context-menu { --item-hover-bg-color: #E6F0FE; }
+#md-notification .btn { border: 0px; }
+.dropdown-menu .divider { border-color: rgb(229, 229, 229); }
+.ty-preferences .window-content { background-color: rgb(250, 250, 250); }
+.ty-preferences .nav-group-item.active { color: white; background: rgb(153, 153, 153); }
+
+
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><h1><a name="ibizpmsibiz软件生产管理）" class="md-header-anchor"></a><span>iBizPMS（iBiz软件生产管理）</span></h1><p><span>iBizPMS（iBiz Production Management System 软件生产管理）是iBiz对于软件生产管理的思考与探索所建立的项目，是iBiz软件生产体系的重要组成部分（管理模块）。它覆盖了软件生产从开始到结束，再到新的开始，往复循环，为软件生产提供有效的管理途径以及协调各阶段内、各阶段之间的信息与资源。它可以说是整个软件生产过程的“协调者”和“管理者”。</span></p><p><span>iBizPMS集成了 </span><strong><a href=' https://www.zentao.net/ '><span>禅道</span></a></strong><span>（开源版 ）的特性与功能，在提供传统的项目管理软件的管理能力（产品、项目、质量、文档等等）的同时，通过结合各自企业或个人的生产体系，将实际生产过程以及落地的内容（软件设计，软件研发，软件测试，文档制作，生产部署，生产发布等等）管理起来，补足了传统项目管理中缺失的那一块，做到真正意义上的一体化管理。</span></p><p><span>iBizPMS采取微服务架构，将核心能力服务化，打造出软件生产管理软件中台，并与生产运行系统群（统一用户、统一认证、统一工作流等成熟软件）、商业套件系统群（OA、CRM、EAM、EHR等成熟商业软件）进行连通，实现一体化软件生态系统。</span></p><h2><a name="介绍" class="md-header-anchor"></a><span>介绍</span></h2><p><span>一、思考</span></p><p><span>在日常软件开发的过程中，由于项目管理软件的出现，使得软件过程变得清晰，与此同时不可避免的是，引入之后就需要花费更多的时间与精力，导致实际使用时，对于一些团队而言显得有些鸡肋甚至是负担，便失去了它原本的立意。</span></p><p><span>另外，传统的项目管理软件对于实际生产的过程性生产物（即开发的代码、展示效果、各阶段或者各小组之间的信息一致性等等）无法进行管理（并非单纯的关联），使得它对于真正使用者来说便有了距离感。</span></p><p><span>二、探索</span></p><p><span>iBiz希望将软件生产管理与日常生产融为一体，即在生产过程中，自然而然地为管理提供有效的管理数据支持。</span></p><p><span>iBiz以模型驱动开发，模型数据（需求数据、设计数据、开发数据、测试数据等等）存在于整个软件过程中，对于团队成员是公开透明且一致的，日常工作产生的数据已经存在于模型库里，这样便不需要成员腾出大部分时间进行软件管理数据的填写与汇报，也不会因为理解偏差没有及时发现而产生不必要返工（即时预览成果物）。</span></p><p><span>正是得益于iBiz生产体系理念，iBiz探索着逐步将希望变成可能、变成实现。</span></p><p><span>三、开始</span></p><blockquote><p><span>If I have been able to see further, it was only because I stood on the shoulders of giants. </span></p><p><span>--By Isaac Newton</span></p></blockquote><p><span>牛顿曾经说过：“站在巨人的肩膀上，你能看得更远！”。</span></p><p><span>市面上已经有很多很成熟的项目管理软件，例如国外的JIRA、国内的禅道等等。他们在项目管理上面有着丰富的经验以及见解，iBiz在结合自己软件生产理念（模型驱动）、自身开源理念、国人使用习惯等等方面的原因，决定以 </span><strong><a href=' https://www.zentao.net/ '><span>禅道</span></a></strong><span>（开源版 ） 的为基础，结合各自企业或个人的生产体系，生产出一个更为完善的软件生产管理的软件，也就是iBizPMS。</span></p><p><span>四、邀请</span></p><p><span>iBizPMS是一个刚刚起步的项目，它与其它项目有所不同的是，它是一个管理软件，它可以用于自身管理自己的软件开发过程，所以我们决定将它的“诞生”过程一同共享出来，并且诚意邀请大家一起参与进来，同时也能为iBizPMS提供宝贵的建议与意见（如何快速建立</span><a href='#快速建立issue'><span>issue</span></a><span>？），共同让iBizPMS越来越贴近于大家所需。</span></p><p><span>项目实时动态可参照</span><a href='#里程碑'><span>附录-里程碑</span></a><span>信息。</span></p><blockquote><p><span>体验iBiz的开发模式，了解iBiz的开发模式：</span></p><p><strong><a href='https://www.ibizlab.cn/'><span>iBiz开源社区</span></a></strong><span> </span></p></blockquote><h2><a name="pms系统工作流程" class="md-header-anchor"></a><span>PMS系统工作流程</span></h2><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/flow.png" referrerpolicy="no-referrer" alt="flow"></p><h2><a name="与禅道关系" class="md-header-anchor"></a><span>与禅道关系</span></h2><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/flow2_v2.png" referrerpolicy="no-referrer" alt="flow2"></p><h2><a name="与系统群关系" class="md-header-anchor"></a><span>与系统群关系</span></h2><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/flow3.png" referrerpolicy="no-referrer" alt="flow3"></p><h2><a name="增强特性" class="md-header-anchor"></a><span>增强特性</span></h2><ul><li><p><span>VSCode风格界面表现。</span></p></li><li><p><span>丰富的UI组件。</span></p></li><li><p><span>丰富的工具集。</span></p></li><li><p><span>移动端支持（独立应用、钉钉集成、企业微信集成等）。</span></p></li><li><p><span>采用中台模式，微服务架构，核心能力服务化，快速响应和迭代。</span></p></li><li><p><span>标准的Restful风格的接口，接口层次更明晰、使用更方便。</span></p></li><li><p><span>增强项目管理功能，例如引入单点认证、甘特图、日历、报表、工作流等。</span></p></li><li><p><span>支持接入生产体系（系统）数据，自动完成日常管理数据填充。</span></p></li><li><p><span>支持接入其它生产运行系统，例如统一认证、统一用户、统一权限、统一工作流等。</span></p></li><li><p><span>在保留原有禅道功能基础上，iBizPMS Plus（增强服务）提供了更强的定制化功能，使得PMS更为符合自身（企业）的需求。</span></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/ywt_v2.png" referrerpolicy="no-referrer" alt="ywt"></p></li></ul><h2><a name="开源参与" class="md-header-anchor"></a><span>开源参与</span></h2><ul><li><p><span>个人开发者也可以使用iBizPMS进行二次开发，加快完成开发任务。</span></p></li><li><p><span>欢迎各位小伙伴了解和体验iBiz的开发模式：</span><strong><a href='https://www.ibizlab.cn/'><span>iBiz开源社区</span></a></strong><span> 。</span></p></li><li><p><span>欢迎加入iBizPMS交流QQ群：1067434627</span></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/QQ.jpg" alt="QQ" style="zoom: 50%;" /></p></li></ul><h2><a name="技术框架" class="md-header-anchor"></a><span>技术框架</span></h2><p><strong><span>后台技术架构</span></strong><span>：</span><a href='http://demo.ibizlab.cn/ibizr7sfstdtempl/ibiz4jr7'><span>iBiz4j Spring R7</span></a></p><ul><li><span>核心框架：Spring Boot</span></li><li><span>持久层框架: Mybatis-plus</span></li><li><span>服务发现：Nacos</span></li><li><span>日志管理：Logback</span></li><li><span>项目管理框架: Maven</span></li></ul><p><strong><span>前端（PC端）技术架构</span></strong><span>： </span><a href='https://gitee.com/ibizr7pfstdtempl/iBiz-Vue-Studio'><span>iBiz-Vue-R7</span></a></p><ul><li><p><span>前端框架：vue.js</span></p></li><li><p><span>路由：vue-router</span></p></li><li><p><span>状态管理：vuex</span></p></li><li><p><span>国际化：vue-i18n</span></p></li><li><p><span>数据交互：axios</span></p></li><li><p><span>UI框架：element-ui, view-design</span></p></li><li><p><span>工具库：</span></p><ol start='' ><li><span>qs - BSD 3</span></li><li><span>path-to-regexp</span></li><li><span>rxjs - Apache-2.0</span></li><li><span>interactjs</span></li><li><span>moment</span></li><li><span>xlsx - Apache-2.0</span></li><li><span>file-saver</span></li></ol></li><li><p><span>图标库：font-awesome</span></p></li><li><p><span>引用组件：</span></p><ol start='' ><li><span>tinymce - LGPL-2.1</span></li><li><span>fullcalendar</span></li><li><span>echarts - Apache-2.0</span></li><li><span>ibiz-vue-lib</span></li><li><span>ibiz-gantt-elastic</span></li></ol></li></ul><p><strong><span>前端（移动端）技术架构</span></strong><span>： </span><a href='https://gitee.com/kk_ah/ibiz-vue-mobr7'><span>Vue_Mobile_R7</span></a></p><ul><li><span>前端MVVM框架：</span><code>vue.js ^2.6.11</code></li><li><span>路由：</span><code>vue-router ^3.1.5</code></li><li><span>状态管理：</span><code>vuex ^3.1.2</code></li><li><span>国际化：</span><code>vue-i18n ^8.15.5</code></li><li><span>数据交互：</span><code>axios ^0.19.2</code></li><li><span>UI框架：</span><code>@ionic/core ^5.0.5</code><span>, </span><code>vant ^2.5.4</code></li><li><span>工具库：</span><code>qs ^6.9.1</code><span>, </span><code>path-to-regexp ^6.1.0</code><span>, </span><code>rxjs ^6.5.4</code><span>,</span><code>moment ^2.24.0</code><span>,</span><code>async-validator^3.3.0</code></li><li><span>图标库：</span><code>font-awesome 4.7.0</code><span>, </span><code>ionicons ^5.0.1</code></li><li><span>引入组件： </span><code>echarts ^4.6.0</code><span>，</span><code>ibiz-mobile-components</code></li><li><span>代码风格检测：</span><code>tslint</code></li></ul><h2><a name="开发环境" class="md-header-anchor"></a><span>开发环境</span></h2><ul><li><a href=' https://www.zentao.net/download/zentaopms12.3.1-80220.html '><span>禅道 12.3.1</span></a><span> （开源版）：版本尽量保持一致，避免数据结构以及功能上存在差异</span></li><li><span>JDK</span></li><li><span>Maven</span></li><li><span>Node.js</span></li><li><span>Yarn</span></li><li><span>Vue Cli</span></li></ul><h2><a name="开源说明" class="md-header-anchor"></a><span>开源说明</span></h2><p><span>本系统100%开源，遵守MIT协议。</span></p><h2><a name="官方网站" class="md-header-anchor"></a><span>官方网站</span></h2><blockquote><p><span>待开放。</span></p></blockquote><h2><a name="文档手册" class="md-header-anchor"></a><span>文档手册</span></h2><blockquote><p><span>系统的说明文档与操作手册逐步完善中。</span></p><p><span>快速上手指南与开发手册目前内部版完成了初版，有兴趣的小伙伴可以进群找群管咨询。</span></p><p><span>部署手册可以参照iBizPMS的wiki内容。</span></p></blockquote><ul><li><span>iBizPMS介绍（待开放）</span></li><li><span>iBizPMS快速上手指南（待开放）</span></li><li><span>iBizPMS移动端快速上手指南（待开放）</span></li><li><span>iBizPMS进阶指南（待开放）</span></li><li><span>iBizPMS开发手册（待开放）</span></li><li><span>iBizPMS部署手册（待开放）</span></li><li><span>iBizPMS定制开发（待开放）</span></li></ul><h2><a name="系统地址" class="md-header-anchor"></a><span>系统地址</span></h2><p><span>演示Demo地址：</span><a href='http://pms.ibizlab.cn/' target='_blank' class='url'>http://pms.ibizlab.cn/</a></p><p><span>演示移动端地址：</span><a href='http://pms.ibizlab.cn/mob/' target='_blank' class='url'>http://pms.ibizlab.cn/mob/</a></p><p><span>演示账号/密码：gitee/gitee@123，pms_guest/guest@123</span></p><blockquote><p><span>统一认证和权限都连接了微服务，演示系统并未包含。</span></p></blockquote><h2><a name="系统展示" class="md-header-anchor"></a><span>系统展示</span></h2><h3><a name="pc端" class="md-header-anchor"></a><span>PC端</span></h3><h4><a name="产品" class="md-header-anchor"></a><span>产品</span></h4><ul><li><p><span>产品--主页</span></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show15.png" referrerpolicy="no-referrer" alt="show15"></p></li><li><p><span>产品--概况</span></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show16.png" referrerpolicy="no-referrer" alt="show16"></p></li><li><p><span>产品--路线图</span></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show17.png" referrerpolicy="no-referrer" alt="show17"></p></li></ul><h4><a name="项目" class="md-header-anchor"></a><span>项目</span></h4><ul><li><p><span>项目--主页</span></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show18.png" referrerpolicy="no-referrer" alt="show18"></p></li><li><p><span>项目--概况</span></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show19.png" referrerpolicy="no-referrer" alt="show19"></p></li><li><p><span>项目--看板</span></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show20.png" referrerpolicy="no-referrer" alt="show20"></p></li><li><p><span>项目--燃尽图</span></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show21.png" referrerpolicy="no-referrer" alt="show21"></p></li><li><p><span>项目--甘特图</span></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show22.png" referrerpolicy="no-referrer" alt="show22"></p></li></ul><h4><a name="测试" class="md-header-anchor"></a><span>测试</span></h4><ul><li><p><span>测试--主页</span></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show23.png" referrerpolicy="no-referrer" alt="show23"></p></li><li><p><span>测试--测试结果</span></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show24.png" referrerpolicy="no-referrer" alt="show24"></p></li><li><p><span>测试-测试报告</span></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show42.png" referrerpolicy="no-referrer" alt="show42"></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show43.png" referrerpolicy="no-referrer" alt="show43"></p></li></ul><h4><a name="我的地盘" class="md-header-anchor"></a><span>我的地盘</span></h4><ul><li><p><span>我的地盘--主页</span></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show25.png" referrerpolicy="no-referrer" alt="show25"></p></li></ul><h4><a name="我的收藏" class="md-header-anchor"></a><span>我的收藏</span></h4><ul><li><p><span>我的收藏--需求</span></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show30.png" referrerpolicy="no-referrer" alt="show30"></p></li></ul><h4><a name="统计报表" class="md-header-anchor"></a><span>统计报表</span></h4><ul><li><p><span>统计报表-列表</span></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show44.png" referrerpolicy="no-referrer" alt="show44"></p></li></ul><h3><a name="移动端" class="md-header-anchor"></a><span>移动端</span></h3><h4><a name="产品-n247" class="md-header-anchor"></a><span>产品</span></h4><ul><li><span>产品-产品列表</span></li></ul><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show31.png" referrerpolicy="no-referrer" alt="show31"></p><ul><li><span>产品-主页</span></li></ul><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show32.png" referrerpolicy="no-referrer" alt="show32"></p><h4><a name="项目-n256" class="md-header-anchor"></a><span>项目</span></h4><ul><li><span>项目-项目列表</span></li></ul><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show33.png" referrerpolicy="no-referrer" alt="show33"></p><ul><li><span>项目-主页</span></li></ul><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show34.png" referrerpolicy="no-referrer" alt="show34"></p><h4><a name="测试-n265" class="md-header-anchor"></a><span>测试</span></h4><ul><li><span>测试-测试列表</span></li></ul><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show35.png" referrerpolicy="no-referrer" alt="show35"></p><ul><li><span>测试-主页</span></li></ul><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show36.png" referrerpolicy="no-referrer" alt="show36"></p><h4><a name="我的地盘-n274" class="md-header-anchor"></a><span>我的地盘</span></h4><ul><li><span>我的地盘-我的待办</span></li></ul><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show37.png" referrerpolicy="no-referrer" alt="show37"></p><ul><li><span>我的地盘-自定义仪表盘</span></li></ul><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show38.png" referrerpolicy="no-referrer" alt="show38"></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show39.png" referrerpolicy="no-referrer" alt="show39"></p><ul><li><span>我的地盘-我的工作</span></li></ul><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show40.png" referrerpolicy="no-referrer" alt="show40"></p><h4><a name="设置" class="md-header-anchor"></a><span>设置</span></h4><ul><li><span>设置-首页</span></li></ul><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/show41.png" referrerpolicy="no-referrer" alt="show41"></p><h3><a name="接口" class="md-header-anchor"></a><span>接口</span></h3><ul><li><span>接口列表</span></li></ul><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/swagger1.png" referrerpolicy="no-referrer" alt="swagger1"></p><ul><li><span>产品接口</span></li></ul><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/swagger2.png" referrerpolicy="no-referrer" alt="swagger2"></p><ul><li><span>新建产品接口</span></li></ul><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/swagger3.png" referrerpolicy="no-referrer" alt="swagger3"></p><h2><a name="附录" class="md-header-anchor"></a><span>附录</span></h2><h3><a name="里程碑-n307" class="md-header-anchor"></a><span>里程碑</span></h3><figure><table><thead><tr><th><span>No.</span></th><th><span>日期</span></th><th><span>事件与版本</span></th><th><span>备注说明</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>2020-05-06</span></td><td><span>选型预研</span></td><td><span>国内外项目管理软件整理和对比</span></td></tr><tr><td><span>2</span></td><td><span>2020-05-11</span></td><td><span>禅道业务分析、技术预研</span></td><td>&nbsp;</td></tr><tr><td><span>3</span></td><td><span>2020-05-18</span></td><td><strong><span>项目启动</span></strong></td><td><span>项目正式启动</span></td></tr><tr><td><span>4</span></td><td><span>2020-05-18</span></td><td><span>禅道模型与界面整理</span></td><td><span>禅道模型整理：梳理禅道的业务数据模型以及模型关系</span><br><span>禅道界面、组件整理：梳理禅道界面表现和组件模型</span></td></tr><tr><td><span>5</span></td><td><span>2020-05-25</span></td><td><span>禅道API整理</span></td><td><span>梳理禅道API，抽象共通性</span></td></tr><tr><td><span>6</span></td><td><span>2020-06-01</span></td><td><span>V0.0.1.20200601</span></td><td><span>新增：</span><br><span>1. iBizPMS 连接禅道 API</span></td></tr><tr><td><span>7</span></td><td><span>2020-07-07</span></td><td><span>V0.0.2.20200707</span></td><td><span>新增：</span><br><span>1. 项目管理功能：产品、项目、测试功能</span></td></tr><tr><td><span>8</span></td><td><span>2020-08-03</span></td><td><span>V0.0.3.20200803</span></td><td><span>新增：</span><br><span>1. 我的地盘</span><br><span>2. 定制化首页</span><br><span>3. 集成LDAP用户（微服务iBizRuntime）</span></td></tr><tr><td><span>9</span></td><td><span>2020-08-22</span></td><td><span>V0.0.4.20200822</span></td><td><span>新增：</span><br><span>1. 统一认证（微服务iBizRuntime）</span><br><span>2. 统一用户（微服务iBizRuntime）</span><br><span>3. 统一角色权限（微服务iBizRuntime）</span><br><span>4. 移动端H5，支持我的地盘、产品、项目、测试、待办</span><br><span>5. 集成进钉钉应用</span></td></tr><tr><td><span>10</span></td><td><span>2020-08-30</span></td><td><span>V0.0.5.20200830</span></td><td><span>新增：</span><br><span>1. 我的收藏</span></td></tr><tr><td><span>10</span></td><td><span>2020-09-20</span></td><td><span>V0.0.6.20200920</span></td><td><span>新增：</span><br><span>1. 与iBiz生产系统连接：需求、代码发布、系统部署</span><br><span>2. 移动端首页定制化（个人仪表盘）</span><br><span>3. 移动端个人办公日历（任务、BUG、待办）</span><br><span>4. 移动端主题</span><br><span>5. 钉钉待办、消息集成</span></td></tr><tr><td><span>11</span></td><td><span>2020-09-30</span></td><td><span>V0.0.7.20200930</span></td><td><span>新增：</span><br><span>1. 测试报告</span><br><span>2. 统计列表（匹配禅道开源版）</span></td></tr></tbody></table></figure><blockquote><p><strong><span>10月会持续优化系统，与生产系统（日常工作数据）更紧密联系，丰富统计与报表。</span></strong></p><p><strong><span>系统文档与相关手册也在逐步完善中。</span></strong><span>、</span></p></blockquote><h3><a name="即将到来" class="md-header-anchor"></a><span>即将到来</span></h3><p><span>iBizPMS Todo：基于iBizPMS服务打造出的Plus应用系统，专注于轻量级任务管理，更高效地任务安排与相关进度管理。</span></p><p><span>iBizPMS Todo抢鲜看：</span></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/comingsoon1.png" referrerpolicy="no-referrer" alt="comingsoon1"></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/comingsoon2.png" referrerpolicy="no-referrer" alt="comingsoon2"></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/comingsoon3.png" referrerpolicy="no-referrer" alt="comingsoon3"></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/comingsoon4.png" referrerpolicy="no-referrer" alt="comingsoon4"></p><h3><a name="快速建立issue-n384" class="md-header-anchor"></a><span>快速建立issue</span></h3><p><span>在运行系统的任意一个界面上，敲下“Ctrl+F12”或者点击右下角“显示Debug栏”，便会呈现“新建issues”的操作，点击便可以快速建立issue。</span></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/issue1.png" referrerpolicy="no-referrer" alt="issue1"></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/issue2.png" referrerpolicy="no-referrer" alt="issue2"></p><h3><a name="通过mos系统实时分享我们的开发过程" class="md-header-anchor"></a><span>通过MOS系统实时分享我们的开发过程</span></h3><p><span>访问地址： </span><a href='http://mos.ibizlab.cn/mos/?#/common_mosindex/srfkeys=3A921F6B-613D-4975-ACD6-79565D82E1DE' target='_blank' class='url'>http://mos.ibizlab.cn/mos/?#/common_mosindex/srfkeys=3A921F6B-613D-4975-ACD6-79565D82E1DE</a><span> </span></p><p><span>也可以在运行系统的任意一个界面上，敲下“Ctrl+F12”或者点击右下角“显示Debug栏”，便会呈现“配置”的操作，点击便可以进入到MOS系统。</span></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/fl001.png" referrerpolicy="no-referrer" alt="fl001"></p><p><img src="https://xtemplcdn.oss-cn-shanghai.aliyuncs.com/pms/fl002.png" referrerpolicy="no-referrer" alt="fl002"></p><h3><a name="开发说明" class="md-header-anchor"></a><span>开发说明</span></h3><p><span>iBizPMS使用的是微服务架构模式，因此在项目运行中，存在一部分功能需要依赖其它系统提供的微服务能力，因此在本地开发时，在没有微服务的前提下，iBizPMS提供了单机开发模式：</span></p><p><span>只需要启动ibizpms-boot模块下DevBootApplication即可。</span></p><p><span>然而在使用本地开发模式时，相关微服务的功能也无法使用，具体微服务请参照</span><a href='#ibizpms使用到的其它系统微服务'><span>iBizPMS使用到的其它系统微服务</span></a><span>。</span></p><h3><a name="ibizpms使用到的其它系统微服务-n397" class="md-header-anchor"></a><span>iBizPMS使用到的其它系统微服务</span></h3><p><span>iBizPMS使用了 </span><a href='https://gitee.com/ibizlab'><span>埃毕致开源商业套件</span></a><span>下  </span><a href='https://gitee.com/ibizlab/ibizlab-runtime'><span>iBizRuntime（微服务运行时）</span></a><span>的相关运行支撑服务。</span></p><p><span>目前使用到的微服务有</span></p><figure><table><thead><tr><th><span>序号</span></th><th><span>微服务</span></th><th><span>说明</span></th><th><span>iBizPMS应用说明</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>ibz-uaa</span></td><td><span>统一认证授权微服务（支持第三方认证）</span></td><td><span>统一认证，角色、权限管理</span></td></tr><tr><td><span>2</span></td><td><span>ibz-ou</span></td><td><span>组织人事管理微服务</span></td><td><span>用户、组织管理</span></td></tr><tr><td><span>3</span></td><td><span>ibz-notify</span></td><td><span>通知微服务</span></td><td><span>钉钉待办与消息通知</span></td></tr></tbody></table></figure><h3><a name="感谢" class="md-header-anchor"></a><span>感谢</span></h3><p><span>最后对以下参与的小伙伴发出衷心的感谢。</span></p><p><span>@Unidentified、@Yuzuriha_Inori、@crimson777、@huwei_031588 、@nancygitee 、前端模板团队、后端模板团队、CI/CD团队</span></p></div>
+</body>
+</html>
