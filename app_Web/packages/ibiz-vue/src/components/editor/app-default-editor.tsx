@@ -214,7 +214,8 @@ export class AppDefaultEditor extends Vue {
             'NUMBER',
             "TEXTBOX_COLORPICKER",
             'TEXTAREA_WFAPPROVAL',
-            "TEXTAREA_WFAPPROVALTIMELINE"
+            "TEXTAREA_WFAPPROVALTIMELINE",
+            "TEXTAREA_WFAPPROVALEXTENDTIMELINE"
         ] ],
         ['date-picker-editor', [
             'DATEPICKEREX',

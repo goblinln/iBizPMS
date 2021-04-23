@@ -15,7 +15,9 @@ import cn.ibizlab.pms.util.security.UAADEAuthority;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
+import net.ibizsys.model.dataentity.IPSDataEntity;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
+import net.ibizsys.model.dataentity.defield.IPSOne2ManyDataDEField;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQuery;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQueryCode;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQueryCodeCond;
@@ -505,9 +507,10 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
 
             //自定义条件
             if (StringUtils.isNotBlank(uaadeAuthority.getBscope())) {
-                if(StringUtils.isNotBlank(uaadeAuthority.getSystemid())){
+                if(!uaadeAuthority.isDataset()){
                     authorityCondition.or(ScopeUtils.parse(uaadeAuthority.getBscope()));
                 }else{
+                    //直接由查询构造条件
                     Consumer<QueryWrapper> bScopeConditions = bScopeCondition -> {
                         bScopeCondition.apply(uaadeAuthority.getBscope());
                     };
@@ -604,4 +607,15 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         }
         return this.deptIdField;
     }
+
+    @Override
+    protected void translateEntityOne2ManyFieldBeforeProceed(IEntityBase arg0, IPSOne2ManyDataDEField iPSOne2ManyDataDEField, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
+        return ;
+    }
+
+    @Override
+    protected void translateEntityOne2ManyFieldAfterProceed(Object objKey, IEntityBase arg0, IPSOne2ManyDataDEField iPSOne2ManyDataDEField, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
+        return ;
+    }
+    
 }

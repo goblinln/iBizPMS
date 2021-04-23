@@ -15,6 +15,7 @@ public class UAADEAuthority extends UAAGrantedAuthority {
     private Long orgdr;
     private Long deptdr;
     private String deptbc;
+    private boolean dataset;
     private String bscope;
     private List<Map<String,String>> deAction;
 

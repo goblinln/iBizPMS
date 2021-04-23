@@ -1,57 +1,77 @@
-import { IPSAppDataEntity, IPSAppDEField, IPSAppDEMethod, IPSAppDEUIAction, IPSAppView, IPSNavigateContext, IPSNavigateParam } from "@ibiz/dynamic-model-api";
-import { ModelTool, UIActionTool, Util } from "ibiz-core";
-import { GlobalService } from "ibiz-service";
-import { AppGlobalService } from "../app-service";
+import {
+    IPSAppDataEntity,
+    IPSAppDEField,
+    IPSAppDEMethod,
+    IPSAppDEUIAction,
+    IPSAppView,
+    IPSNavigateContext,
+    IPSNavigateParam,
+} from '@ibiz/dynamic-model-api';
+import { ModelTool, UIActionTool, Util } from 'ibiz-core';
+import { GlobalService } from 'ibiz-service';
+import { AppGlobalService } from '../app-service';
 
 export class AppBackEndAction {
-
     /**
      * 模型数据
-     * 
+     *
      * @memberof AppBackEndAction
      */
-    private actionModel !:IPSAppDEUIAction;
-    
+    private actionModel!: IPSAppDEUIAction;
+
     /**
      * 初始化AppBackEndAction
-     * 
+     *
      * @memberof AppBackEndAction
      */
-    constructor(opts:any,context?: any){
+    constructor(opts: any, context?: any) {
         this.actionModel = opts;
     }
 
     /**
      * 执行界面行为
-     * 
-     * @param args 
-     * @param context 
-     * @param params 
-     * @param $event 
-     * @param xData 
-     * @param actionContext 
-     * @param srfParentDeName 
-     * 
+     *
+     * @param args
+     * @param context
+     * @param params
+     * @param $event
+     * @param xData
+     * @param actionContext
+     * @param srfParentDeName
+     *
      * @memberof AppBackEndAction
      */
-    public async execute(args: any[], context: any = {}, params: any = {}, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string, deUIService?:any){
+    public async execute(
+        args: any[],
+        context: any = {},
+        params: any = {},
+        $event?: any,
+        xData?: any,
+        actionContext?: any,
+        srfParentDeName?: string,
+        deUIService?: any,
+    ) {
         const actionTarget: string | null = this.actionModel.actionTarget;
         if (this.actionModel.enableConfirm && this.actionModel.confirmMsg) {
             let confirmResult: boolean = await new Promise((resolve: any, reject: any) => {
                 actionContext.$Modal.confirm({
                     title: '警告',
                     content: `${this.actionModel.confirmMsg}`,
-                    onOk: () => { resolve(true); },
-                    onCancel: () => { resolve(false); }
+                    onOk: () => {
+                        resolve(true);
+                    },
+                    onCancel: () => {
+                        resolve(false);
+                    },
                 });
             });
             if (!confirmResult) {
                 return;
             }
         }
-        if (Object.is(actionTarget, "SINGLEDATA")) {
+        if (Object.is(actionTarget, 'SINGLEDATA')) {
             actionContext.$Notice.error({ title: '错误', desc: '不支持单项数据' });
-        } else if (Object.is(actionTarget, "MULTIDATA")) {
+        } else if (Object.is(actionTarget, 'MULTIDATA')) {
             actionContext.$Notice.error({ title: '错误', desc: '不支持多项数据' });
         } else {
             let data: any = {};
@@ -63,19 +83,35 @@ export class AppBackEndAction {
                 args = [result.data];
             }
             const _args: any[] = Util.deepCopy(args);
-            if (this.actionModel.getPSAppDataEntity && (Object.is(actionTarget, "SINGLEKEY") || Object.is(actionTarget, "MULTIKEY"))) {
-                Object.assign(context, { [(this.actionModel.getPSAppDataEntity() as IPSAppDataEntity)?.codeName.toLowerCase()]: `%${(this.actionModel.getPSAppDataEntity() as IPSAppDataEntity)?.codeName.toLowerCase()}%` });
-                Object.assign(params, { [(ModelTool.getAppEntityKeyField(this.actionModel.getPSAppDataEntity()) as IPSAppDEField)?.codeName.toLowerCase()]: `%${(this.actionModel.getPSAppDataEntity() as IPSAppDataEntity)?.codeName.toLowerCase()}%` });
-                Object.assign(params, { [(ModelTool.getAppEntityMajorField(this.actionModel.getPSAppDataEntity()) as IPSAppDEField)?.codeName.toLowerCase()]: `%${(ModelTool.getAppEntityMajorField(this.actionModel.getPSAppDataEntity()) as IPSAppDEField)?.codeName.toLowerCase()}%` });
+            if (
+                this.actionModel.getPSAppDataEntity &&
+                (Object.is(actionTarget, 'SINGLEKEY') || Object.is(actionTarget, 'MULTIKEY'))
+            ) {
+                const entityName = this.actionModel.getPSAppDataEntity()?.codeName.toLowerCase();
+                const key = (ModelTool.getAppEntityKeyField(
+                    this.actionModel.getPSAppDataEntity(),
+                ) as IPSAppDEField)?.codeName.toLowerCase();
+                const majorKey = (ModelTool.getAppEntityMajorField(
+                    this.actionModel.getPSAppDataEntity(),
+                ) as IPSAppDEField)?.codeName.toLowerCase();
+                Object.assign(context, { [entityName!]: `%${key}%` });
+                Object.assign(params, { [key!]: `%${key}%` });
+                Object.assign(params, { [majorKey]: `%${majorKey}%` });
             }
             // 自定义导航参数优先级大于预置导航参数
-            if (this.actionModel.getPSNavigateContexts() && (this.actionModel.getPSNavigateContexts() as IPSNavigateContext[])?.length >0) {
+            if (
+                this.actionModel.getPSNavigateContexts() &&
+                (this.actionModel.getPSNavigateContexts() as IPSNavigateContext[])?.length > 0
+            ) {
                 const localContext = Util.formatNavParam(this.actionModel.getPSNavigateContexts());
-                Object.assign(context,localContext);
+                Object.assign(context, localContext);
             }
-            if (this.actionModel.getPSNavigateParams() && (this.actionModel.getPSNavigateParams() as IPSNavigateParam[]).length >0) {
+            if (
+                this.actionModel.getPSNavigateParams() &&
+                (this.actionModel.getPSNavigateParams() as IPSNavigateParam[]).length > 0
+            ) {
                 const localParam = Util.formatNavParam(this.actionModel.getPSNavigateParams());
-                Object.assign(params,localParam);
+                Object.assign(params, localParam);
             }
             if (_this.context) {
                 parentContext = _this.context;
@@ -88,14 +124,14 @@ export class AppBackEndAction {
             // 多项数据主键转换数据
             // TODO
             // if (Object.is(actionTarget, "MULTIKEY") && this.actionModel?.getPSDEAction?.actionType == 'USERCUSTOM') {
-            if (Object.is(actionTarget, "MULTIKEY")) {
+            if (Object.is(actionTarget, 'MULTIKEY')) {
                 let tempDataArray: Array<any> = [];
-                if ((_args.length > 1) && (Object.keys(data).length > 0)) {
+                if (_args.length > 1 && Object.keys(data).length > 0) {
                     for (let i = 0; i < _args.length; i++) {
                         let tempObject: any = {};
                         Object.keys(data).forEach((key: string) => {
                             Object.assign(tempObject, { [key]: data[key].split(',')[i] });
-                        })
+                        });
                         tempDataArray.push(tempObject);
                     }
                 } else {
@@ -105,8 +141,11 @@ export class AppBackEndAction {
             }
             context = Object.assign({}, actionContext.context, context);
             // 构建srfparentdename和srfparentkey
-            let parentObj: any = { srfparentdename: srfParentDeName ? srfParentDeName : null, srfparentkey: srfParentDeName ? context[srfParentDeName.toLowerCase()] : null };
-            if (!Object.is(actionTarget, "MULTIKEY")) {
+            let parentObj: any = {
+                srfparentdename: srfParentDeName ? srfParentDeName : null,
+                srfparentkey: srfParentDeName ? context[srfParentDeName.toLowerCase()] : null,
+            };
+            if (!Object.is(actionTarget, 'MULTIKEY')) {
                 Object.assign(data, parentObj);
             }
             Object.assign(context, parentObj);
@@ -116,58 +155,96 @@ export class AppBackEndAction {
             }
             const backend = () => {
                 if (this.actionModel.getPSAppDataEntity() && this.actionModel.getPSAppDEMethod()) {
-                    new GlobalService().getService((this.actionModel.getPSAppDataEntity() as IPSAppDataEntity)?.codeName).then((curService:any) =>{
-                        curService[(this.actionModel.getPSAppDEMethod() as IPSAppDEMethod)?.codeName](context, data, this.actionModel.showBusyIndicator).then((response: any) => {
-                            if (!response || response.status !== 200) {
-                                actionContext.$Notice.error({ title: '错误', desc: response.message });
-                                return;
-                            }
-                            if (this.actionModel.showBusyIndicator) {
-                                if (this.actionModel.successMsg) {
-                                    actionContext.$Notice.success({ title: '成功', desc: this.actionModel.successMsg });
-                                } else {
-                                    actionContext.$Notice.success({ title: '成功', desc: `${this.actionModel.caption}成功！` });
-                                }
-                            }
-                            if (this.actionModel.reloadData && xData && xData.refresh && xData.refresh instanceof Function) {
-                                xData.refresh(args);
-                            }
-                            if (this.actionModel.closeEditView) {
-                                actionContext.closeView(null);
-                            }
-                            // 后续界面行为
-                            if(this.actionModel.getNextPSUIAction){
-                                const { data: result } = response;
-                                let _args: any[] = [];
-                                if (Object.is(actionContext.$util.typeOf(result), 'array')) {
-                                    _args = [...result];
-                                } else if (Object.is(actionContext.$util.typeOf(result), 'object')) {
-                                    _args = [{...result}];
-                                } else {
-                                    _args = [...args];
-                                }
-                                const nextUIaction:IPSAppDEUIAction = this.actionModel.getNextPSUIAction() as IPSAppDEUIAction;
-                                if(nextUIaction.getPSAppDataEntity()){
-                                    let [tag, appDeName] = nextUIaction.id.split('@');
-                                    if(deUIService){
-                                        deUIService.excuteAction(tag,_args, context, params, $event, xData, actionContext, undefined, deUIService);
+                    new GlobalService()
+                        .getService((this.actionModel.getPSAppDataEntity() as IPSAppDataEntity)?.codeName)
+                        .then((curService: any) => {
+                            curService[(this.actionModel.getPSAppDEMethod() as IPSAppDEMethod)?.codeName](
+                                context,
+                                data,
+                                this.actionModel.showBusyIndicator,
+                            )
+                                .then((response: any) => {
+                                    if (!response || response.status !== 200) {
+                                        actionContext.$Notice.error({ title: '错误', desc: response.message });
+                                        return;
                                     }
-                                }else{
-                                    (AppGlobalService.getInstance() as any).executeGlobalAction(nextUIaction.id, _args, context, params, $event, xData, actionContext, undefined);
-                                }
-                            }
-                        }).catch((response: any) => {
-                            if (response && response.data && response.data.message) {
-                                actionContext.$Notice.error({ title: '错误', desc: response.data.message });
-                            }
-                        })
-                    })
+                                    if (this.actionModel.showBusyIndicator) {
+                                        if (this.actionModel.successMsg) {
+                                            actionContext.$Notice.success({
+                                                title: '成功',
+                                                desc: this.actionModel.successMsg,
+                                            });
+                                        } else {
+                                            actionContext.$Notice.success({
+                                                title: '成功',
+                                                desc: `${this.actionModel.caption}成功！`,
+                                            });
+                                        }
+                                    }
+                                    if (
+                                        this.actionModel.reloadData &&
+                                        xData &&
+                                        xData.refresh &&
+                                        xData.refresh instanceof Function
+                                    ) {
+                                        xData.refresh(args);
+                                    }
+                                    if (this.actionModel.closeEditView) {
+                                        actionContext.closeView(null);
+                                    }
+                                    // 后续界面行为
+                                    if (this.actionModel.getNextPSUIAction) {
+                                        const { data: result } = response;
+                                        let _args: any[] = [];
+                                        if (Object.is(actionContext.$util.typeOf(result), 'array')) {
+                                            _args = [...result];
+                                        } else if (Object.is(actionContext.$util.typeOf(result), 'object')) {
+                                            _args = [{ ...result }];
+                                        } else {
+                                            _args = [...args];
+                                        }
+                                        const nextUIaction: IPSAppDEUIAction = this.actionModel.getNextPSUIAction() as IPSAppDEUIAction;
+                                        if (nextUIaction.getPSAppDataEntity()) {
+                                            let [tag, appDeName] = nextUIaction.id.split('@');
+                                            if (deUIService) {
+                                                deUIService.excuteAction(
+                                                    tag,
+                                                    _args,
+                                                    context,
+                                                    params,
+                                                    $event,
+                                                    xData,
+                                                    actionContext,
+                                                    undefined,
+                                                    deUIService,
+                                                );
+                                            }
+                                        } else {
+                                            (AppGlobalService.getInstance() as any).executeGlobalAction(
+                                                nextUIaction.id,
+                                                _args,
+                                                context,
+                                                params,
+                                                $event,
+                                                xData,
+                                                actionContext,
+                                                undefined,
+                                            );
+                                        }
+                                    }
+                                })
+                                .catch((response: any) => {
+                                    if (response && response.data && response.data.message) {
+                                        actionContext.$Notice.error({ title: '错误', desc: response.data.message });
+                                    }
+                                });
+                        });
                 }
-            }
+            };
             if (this.actionModel.getFrontPSAppView()) {
                 const frontPSAppView: IPSAppView | null = this.actionModel.getFrontPSAppView();
                 await frontPSAppView?.fill(true);
-                if(!frontPSAppView){
+                if (!frontPSAppView) {
                     return;
                 }
                 if (frontPSAppView.openMode.indexOf('DRAWER') !== -1) {
@@ -176,7 +253,7 @@ export class AppBackEndAction {
                         height: frontPSAppView.height,
                         width: frontPSAppView.width,
                         title: frontPSAppView.title,
-                        placement: frontPSAppView.openMode
+                        placement: frontPSAppView.openMode,
                     };
                     if (frontPSAppView && frontPSAppView.modelPath) {
                         Object.assign(context, { viewpath: frontPSAppView.modelPath });
@@ -193,7 +270,7 @@ export class AppBackEndAction {
                         viewname: 'app-view-shell',
                         height: frontPSAppView.height,
                         width: frontPSAppView.width,
-                        title: frontPSAppView.title
+                        title: frontPSAppView.title,
                     };
                     const appmodal = actionContext.$appmodal.openModal(view, context, data);
                     if (frontPSAppView && frontPSAppView.modelPath) {
@@ -206,10 +283,9 @@ export class AppBackEndAction {
                         }
                     });
                 }
-            }else{
+            } else {
                 backend();
             }
         }
     }
-    
 }

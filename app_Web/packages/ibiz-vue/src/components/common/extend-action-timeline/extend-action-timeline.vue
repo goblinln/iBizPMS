@@ -41,10 +41,10 @@
                                 </div>
                                 <div class="type">
                                     <div class="dot"></div>
-                                    <span>{{ usertask.comments[usertask.comments.length-1].type }}</span>
+                                    <span>{{ usertask.comments[usertask.comments.length-1] && usertask.comments[usertask.comments.length-1].type }}</span>
                                 </div>
-                                <div class="last-time">{{ formatDate(usertask.comments[usertask.comments.length-1].time, 'MM月DD日 HH:mm:ss') }}</div>
-                                <div class="fullmessage">{{ usertask.comments[usertask.comments.length-1].fullMessage }}</div>
+                                <div class="last-time">{{ usertask.comments[usertask.comments.length-1] && formatDate(usertask.comments[usertask.comments.length-1].time, 'MM月DD日 HH:mm:ss') }}</div>
+                                <div class="fullmessage">{{ usertask.comments[usertask.comments.length-1] && usertask.comments[usertask.comments.length-1].fullMessage }}</div>
                             </div>
 
                             <div class="arrow" @click="changeExpand(usertask)">
@@ -102,6 +102,20 @@ export default class ExtendActionTimeline extends Vue {
     public initmemo: string = '';
 
     /**
+     *  子项索引初始值
+     *
+     *  @memberof ExtendActionTimeline
+     */
+    public usertasksIndex: number = 1;
+
+    /**
+     *  子项长度初始值
+     *
+     *  @memberof ExtendActionTimeline
+     */
+    public usertasksLength: number = 1;
+
+    /**
      * 应用实体名称
      *
      * @memberof ExtendActionTimeline
@@ -141,8 +155,7 @@ export default class ExtendActionTimeline extends Vue {
             });
         }
     }
-    public usertasksIndex: number = 1;
-    public usertasksLength: number = 1;
+
     /**
      * 初始化数据添加标记
      *

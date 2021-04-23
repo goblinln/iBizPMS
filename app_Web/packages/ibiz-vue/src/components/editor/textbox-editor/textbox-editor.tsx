@@ -124,7 +124,7 @@ export default class TextboxEditor extends EditorBase {
             viewparams: this.viewparams,
             appEntityCodeName: this.containerCtrl?.getPSAppDataEntity?.()?.codeName,
         }
-        if (Object.is(editorTypeStyle, 'TEXTAREA_WFAPPROVAL')) {
+        if (Object.is(editorTypeStyle, 'TEXTAREA_WFAPPROVAL') || Object.is(editorTypeStyle, 'TEXTAREA_WFAPPROVALEXTENDTIMELINE')) {
             Object.assign(param, {
                 value: this.value
             })
@@ -159,6 +159,7 @@ export default class TextboxEditor extends EditorBase {
                 return this.renderTextboxColorPicker();
             case "TEXTAREA_WFAPPROVAL":
             case "TEXTAREA_WFAPPROVALTIMELINE":
+            case "TEXTAREA_WFAPPROVALEXTENDTIMELINE":
                 return this.renderWfapproval(editorTypeStyle);
         }
     }

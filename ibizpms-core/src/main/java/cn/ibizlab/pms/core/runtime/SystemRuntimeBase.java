@@ -1,6 +1,7 @@
 package cn.ibizlab.pms.core.runtime;
 
 import cn.ibizlab.pms.util.client.IBZUAAFeignClient;
+import cn.ibizlab.pms.util.helper.QueryContextHelper;
 import lombok.extern.slf4j.Slf4j;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import cn.ibizlab.pms.util.security.UAADEAuthority;
@@ -8,6 +9,10 @@ import cn.ibizlab.pms.util.security.UAAMenuAuthority;
 import cn.ibizlab.pms.util.security.UAAUniResAuthority;
 import net.ibizsys.model.IPSDynaInstService;
 import net.ibizsys.model.IPSSystem;
+import net.ibizsys.model.dataentity.ds.IPSDEDataQuery;
+import net.ibizsys.model.dataentity.ds.IPSDEDataQueryCode;
+import net.ibizsys.model.dataentity.ds.IPSDEDataQueryCodeCond;
+import net.ibizsys.model.dataentity.ds.IPSDEDataSet;
 import net.ibizsys.model.dataentity.priv.IPSDEUserRole;
 import net.ibizsys.model.dataentity.priv.IPSDEUserRoleOPPriv;
 import net.ibizsys.model.security.IPSSysUniRes;
@@ -17,6 +22,7 @@ import net.ibizsys.model.security.IPSSysUserRoleRes;
 import net.ibizsys.runtime.IDynaInstRuntime;
 import net.ibizsys.runtime.security.DataAccessActions;
 import net.ibizsys.runtime.security.SysUserRoleDefaultModes;
+import net.ibizsys.runtime.util.DBTypes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.util.StringUtils;
@@ -83,6 +89,35 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
                         authority.setEnabledeptbc(psDEUserRole.isEnableSecBC() ? 1 : 0);
                         authority.setDeptbc(psDEUserRole.getSecBC());
                         authority.setBscope(psDEUserRole.getCustomCond());
+                        //如果有自定义查询 以结果集有限 ，替换自定义条件
+                        IPSDEDataSet psdeDataSet = psDEUserRole.getPSDEDataSet();
+                        if (psdeDataSet != null) {
+                            List<IPSDEDataQuery> psdeDataQueries = psdeDataSet.getPSDEDataQueries();
+                            if (psdeDataQueries != null) {
+                                for (IPSDEDataQuery ipsdeDataQuery : psdeDataQueries) {
+                                    List<IPSDEDataQueryCode> psdeDataQueryCodes = ipsdeDataQuery.getAllPSDEDataQueryCodes();
+                                    if (psdeDataQueryCodes != null) {
+                                        for (IPSDEDataQueryCode psdeDataQueryCode : psdeDataQueryCodes) {
+                                            if (DBTypes.MYSQL5.equals(psdeDataQueryCode.getDBType())) {
+                                                List<IPSDEDataQueryCodeCond> psdeDataQueryCodeConds = psdeDataQueryCode.getPSDEDataQueryCodeConds();
+                                                if (psdeDataQueryCodeConds != null) {
+                                                    String strBScope = "";
+                                                    for (int i = 0; i < psdeDataQueryCodeConds.size(); i++) {
+                                                        IPSDEDataQueryCodeCond psdeDataQueryCodeCond = psdeDataQueryCodeConds.get(i);
+                                                        if (i > 0)
+                                                            strBScope += " AND ";
+                                                        strBScope += QueryContextHelper.contextParamConvert(psdeDataQueryCodeCond.getCustomCond());
+                                                    }
+                                                    authority.setDataset(true);
+                                                    authority.setBscope(strBScope);
+                                                }
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                         //实体操作能力
                         List<Map<String, String>> deActions = new ArrayList<>();
                         java.util.List<IPSDEUserRoleOPPriv> psDEUserRoleOPPrivs = psDEUserRole.getPSDEUserRoleOPPrivs();
