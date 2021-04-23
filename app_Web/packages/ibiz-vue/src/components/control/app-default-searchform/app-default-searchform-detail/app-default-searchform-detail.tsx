@@ -55,7 +55,7 @@ export class AppDefaultSearchFormDetail extends Vue {
      * @type {*}
      * @memberof AppDefaultSearchFormDetail
      */    
-    @Watch('detailsInstance',{immediate: true, deep: true})
+    @Watch('detailsInstance',{immediate: true})
     detailsInstanceChange(){
       this.initDetail();
     }

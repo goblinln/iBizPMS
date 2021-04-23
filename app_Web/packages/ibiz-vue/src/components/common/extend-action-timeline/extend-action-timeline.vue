@@ -41,10 +41,10 @@
                                 </div>
                                 <div class="type">
                                     <div class="dot"></div>
-                                    <span>{{ usertask.comments[0].type }}</span>
+                                    <span>{{ usertask.comments[usertask.comments.length-1].type }}</span>
                                 </div>
-                                <div class="last-time">{{ formatDate(usertask.time, 'MM月DD日 HH:mm:ss') }}</div>
-                                <div class="fullmessage">{{ usertask.comments[0].fullMessage }}</div>
+                                <div class="last-time">{{ formatDate(usertask.comments[usertask.comments.length-1].time, 'MM月DD日 HH:mm:ss') }}</div>
+                                <div class="fullmessage">{{ usertask.comments[usertask.comments.length-1].fullMessage }}</div>
                             </div>
 
                             <div class="arrow" @click="changeExpand(usertask)">

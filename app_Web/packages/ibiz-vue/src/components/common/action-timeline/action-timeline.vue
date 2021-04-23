@@ -140,10 +140,10 @@ export default class ActionTimeline extends Vue {
      */
     public initUIStateData() {
         if(this.data && this.data.usertasks) {
-            this.data.usertasks.forEach((item: any) => {
-                item.isShow = true;
-            })
-        } 
+            for (let i in this.data.usertasks) {
+                this.data.usertasks[i].isShow = false;
+            }
+        }  
     }
 
     /**

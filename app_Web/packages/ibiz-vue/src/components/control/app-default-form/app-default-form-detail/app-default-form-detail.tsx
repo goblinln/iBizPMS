@@ -72,7 +72,7 @@ export class AppDefaultFormDetail extends Vue {
      * @type {*}
      * @memberof AppDefaultFormDetail
      */    
-    @Watch('detailsInstance',{immediate: true, deep: true})
+    @Watch('detailsInstance',{immediate: true})
     detailsInstanceChange(){
       this.initDetail();
     }

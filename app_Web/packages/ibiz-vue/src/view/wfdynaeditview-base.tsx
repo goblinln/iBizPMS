@@ -1,5 +1,5 @@
-import { IPSAppDEWFDynaEditView, IPSDEForm } from '@ibiz/dynamic-model-api';
-import { WFDynaEditViewEngine, Util, ModelTool } from 'ibiz-core';
+import { IPSAppDEWFDynaEditView, IPSAppView, IPSDEForm } from '@ibiz/dynamic-model-api';
+import { WFDynaEditViewEngine, Util, ModelTool, GetModelService, AppModelService } from 'ibiz-core';
 import { AppCenterService } from '../app-service';
 import { MainViewBase } from './mainview-base';
 
@@ -234,32 +234,36 @@ export class WFDynaEditViewBase extends MainViewBase {
         }
         const submitAction: Function = () => {
             if (linkItem && linkItem.sequenceflowview) {
-                const targetView: any = this.viewRefData.find((item: any) => {
+                const targetViewRef: any = this.viewRefData.find((item: any) => {
                     return item.name === `WFACTION@${linkItem.sequenceflowview}`;
                 })
-                if (targetView) {
+                if (targetViewRef) {
                     let tempContext: any = Util.deepCopy(_this.context);
                     Object.assign(tempContext, { [this.appDeCodeName.toLowerCase()]: datas && datas[0].srfkey });
                     let tempViewParam: any = { actionView: linkItem.sequenceflowview, actionForm: linkItem.sequenceflowform };
-                    Object.assign(tempContext, { viewpath: targetView?.getRefPSAppView?.path });
-                    const appmodal = _this.$appmodal.openModal({ viewname: 'app-view-shell', title: targetView.title, height: targetView.height, width: targetView.width }, tempContext, tempViewParam);
-                    appmodal.subscribe((result: any) => {
-                        if (!result || !Object.is(result.ret, 'OK')) {
-                            return;
-                        }
-                        let tempSubmitData: any = Util.deepCopy(datas[0]);
-                        if (result.datas && result.datas[0]) {
-                            const resultData: any = result.datas[0];
-                            if (Object.keys(resultData).length > 0) {
-                                let tempData: any = {};
-                                Object.keys(resultData).forEach((key: any) => {
-                                    if (resultData[key]) tempData[key] = resultData[key];
-                                })
-                                Object.assign(tempSubmitData, tempData);
-                            }
-                        }
-                        submit([tempSubmitData], linkItem);
-                    });
+                    Object.assign(tempContext, { viewpath: targetViewRef?.getRefPSAppView?.path });
+                    GetModelService(tempContext).then((modelService:AppModelService) =>{
+                        modelService.getPSAppView(targetViewRef?.getRefPSAppView?.path).then((viewResult:IPSAppView) =>{
+                            const appmodal = _this.$appmodal.openModal({ viewname: 'app-view-shell', title: viewResult.title, height: viewResult.height, width: viewResult.width }, tempContext, tempViewParam);
+                            appmodal.subscribe((result: any) => {
+                                if (!result || !Object.is(result.ret, 'OK')) {
+                                    return;
+                                }
+                                let tempSubmitData: any = Util.deepCopy(datas[0]);
+                                if (result.datas && result.datas[0]) {
+                                    const resultData: any = result.datas[0];
+                                    if (Object.keys(resultData).length > 0) {
+                                        let tempData: any = {};
+                                        Object.keys(resultData).forEach((key: any) => {
+                                            if (resultData[key]) tempData[key] = resultData[key];
+                                        })
+                                        Object.assign(tempSubmitData, tempData);
+                                    }
+                                }
+                                submit([tempSubmitData], linkItem);
+                            });
+                        })
+                    })
                 }
             } else {
                 submit(datas, linkItem);
@@ -284,10 +288,10 @@ export class WFDynaEditViewBase extends MainViewBase {
     public handleWFAddiFeature(linkItem: any) {
         let featureTag: string = this.wfAddiFeatureRef[linkItem?.type]?.featureTag;
         if (!featureTag) return;
-        let targetView: any = this.viewRefData.find((item: any) => {
+        let targetViewRef: any = this.viewRefData.find((item: any) => {
             return item.name === `WFUTILACTION@${featureTag}`;
         })
-        if (!targetView) {
+        if (!targetViewRef) {
             console.warn("未找到流程功能操作视图");
             return;
         }
@@ -300,25 +304,29 @@ export class WFDynaEditViewBase extends MainViewBase {
         let tempContext: any = Util.deepCopy(this.context);
         Object.assign(tempContext, { [this.appDeCodeName.toLowerCase()]: datas && datas[0].srfkey });
         let tempViewParam: any = { actionView: linkItem.sequenceflowview, actionForm: linkItem.sequenceflowform };
-        Object.assign(tempContext, { viewpath: targetView?.getRefPSAppView?.path });
-        const appmodal = this.$appmodal.openModal({ viewname: 'app-view-shell', title: targetView.title, height: targetView.height, width: targetView.width }, tempContext, tempViewParam);
-        appmodal.subscribe((result: any) => {
-            if (!result || !Object.is(result.ret, 'OK')) {
-                return;
-            }
-            let tempSubmitData: any = Util.deepCopy(datas[0]);
-            if (result.datas && result.datas[0]) {
-                const resultData: any = result.datas[0];
-                if (Object.keys(resultData).length > 0) {
-                    let tempData: any = {};
-                    Object.keys(resultData).forEach((key: any) => {
-                        if (resultData[key]) tempData[key] = resultData[key];
-                    })
-                    Object.assign(tempSubmitData, tempData);
-                }
-                this.submitWFAddiFeature(linkItem, tempSubmitData);
-            }
-        });
+        Object.assign(tempContext, { viewpath: targetViewRef?.getRefPSAppView?.path });
+        GetModelService(tempContext).then((modelService:AppModelService) =>{
+            modelService.getPSAppView(targetViewRef?.getRefPSAppView?.path).then((viewResult:IPSAppView) =>{
+                const appmodal = this.$appmodal.openModal({ viewname: 'app-view-shell', title: viewResult.title, height: viewResult.height, width: viewResult.width }, tempContext, tempViewParam);
+                appmodal.subscribe((result: any) => {
+                    if (!result || !Object.is(result.ret, 'OK')) {
+                        return;
+                    }
+                    let tempSubmitData: any = Util.deepCopy(datas[0]);
+                    if (result.datas && result.datas[0]) {
+                        const resultData: any = result.datas[0];
+                        if (Object.keys(resultData).length > 0) {
+                            let tempData: any = {};
+                            Object.keys(resultData).forEach((key: any) => {
+                                if (resultData[key]) tempData[key] = resultData[key];
+                            })
+                            Object.assign(tempSubmitData, tempData);
+                        }
+                        this.submitWFAddiFeature(linkItem, tempSubmitData);
+                    }
+                });
+            })
+        })
     }
 
     /**

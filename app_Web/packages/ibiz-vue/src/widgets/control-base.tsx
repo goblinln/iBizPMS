@@ -218,6 +218,7 @@ export class ControlBase extends Vue implements ControlInterface {
                 modelData: controlInstance,
             }
         };
+        Object.defineProperty(targetCtrlParam.staticProps, 'modelData', { enumerable: false, writable: true });
         const targetCtrlEvent: any = {
             'ctrl-event': ({ controlname, action, data }: { controlname: string, action: string, data: any }) => {
                 this.onCtrlEvent(controlname, action, data);

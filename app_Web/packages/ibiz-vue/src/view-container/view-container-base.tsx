@@ -176,12 +176,14 @@ export class ViewContainerBase extends Vue {
      * @memberof ViewContainerBase
      */
     public initViewContext(opts: any) {
-        Object.assign(this.tempViewContext, opts, {
+        let temp = {};
+        Object.defineProperty(temp, 'modeldata', { enumerable: false, writable: true });
+        Object.assign(temp, this.tempViewContext, opts, {
             viewtag: this.viewtag,
             viewcontainer: this.context,
             ...this.staticProps,
         });
-        this.viewContext = { ...this.tempViewContext };
+        this.viewContext = temp;
     }
 
     /**

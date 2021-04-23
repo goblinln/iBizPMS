@@ -490,7 +490,7 @@ export class DataViewControlBase extends MDControlBase {
             });
             return;
         }
-        const arg: any = { ...opt };
+        const arg: any = {};
         const page: any = {};
         if (this.isEnablePagingBar) {
             Object.assign(page, { page: this.curPage - 1, size: this.limit });
@@ -506,7 +506,7 @@ export class DataViewControlBase extends MDControlBase {
         Object.assign(arg, parentdata);
         let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : {};
         Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
-        Object.assign(arg, { viewparams: tempViewParams });
+        Object.assign(arg, { viewparams: tempViewParams }, opt);
         if (this.service) {
             this.ctrlBeginLoading();
             const post: Promise<any> = this.service.search(

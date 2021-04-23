@@ -1098,6 +1098,8 @@ export class ViewBase extends Vue {
                 context: this.context,
             }
         };
+        Object.defineProperty(targetCtrlParam.staticProps, 'containerInstance', { enumerable: false, writable: true });
+        Object.defineProperty(targetCtrlParam.staticProps, 'modelData', { enumerable: false, writable: true });
         let targetCtrlEvent: any = {
             'ctrl-event': ({ controlname, action, data }: { controlname: string, action: string, data: any }) => {
                 this.onCtrlEvent(controlname, action, data);

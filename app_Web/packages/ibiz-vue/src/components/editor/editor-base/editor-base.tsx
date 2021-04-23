@@ -148,7 +148,7 @@ export class EditorBase extends Vue {
      * @param {*} oldVal
      * @memberof EditorBase
      */
-    @Watch('editorInstance', { immediate: true, deep: true })
+    @Watch('editorInstance', { immediate: true})
     public onEditorInstanceChange(newVal: any, oldVal: any) {
         if (newVal && newVal != oldVal) {
             this.initEditorBase();
