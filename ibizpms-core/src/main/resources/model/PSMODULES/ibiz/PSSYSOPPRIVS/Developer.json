@@ -223,6 +223,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
     }
   }, {
+    "name" : "研发人员-IBZ_PRODUCTLIFE[产品生命周期查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEUSERROLES/IBZProductLife_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife.json"
+    }
+  }, {
     "name" : "研发人员-IBZ_PROJECTMODULE[任务模块查看]",
     "getPSDEUserRole" : {
       "modelref" : true,
