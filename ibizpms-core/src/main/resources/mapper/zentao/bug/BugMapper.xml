@@ -651,7 +651,7 @@
 
     <!--数据查询[BuildLinkResolvedBugs]-->
     <sql id="BuildLinkResolvedBugs" databaseId="mysql">
-		<![CDATA[ SELECT 	t1.`ACTIVATEDCOUNT`, 	t1.`ACTIVATEDDATE`, 	t1.`ASSIGNEDDATE`, 	t1.`ASSIGNEDTO`, 	t1.`BRANCH`, 	t1.`BROWSER`, 	t1.`CASE`, 	t1.`CASEVERSION`, 	t1.`CLOSEDBY`, 	t1.`CLOSEDDATE`, 	t1.`COLOR`, 	t1.`CONFIRMED`, 	t1.`DEADLINE`, 	t1.`DELETED`, 	t1.`DUPLICATEBUG`, 	t1.`ENTRY`, 	t1.`FOUND`, 	t1.`HARDWARE`, 	t1.`ID`, 	0 AS `ISFAVORITES`, 	t1.`KEYWORDS`, 	t1.`LASTEDITEDBY`, 	t1.`LASTEDITEDDATE`, 	t1.`LINES`, 	t1.`LINKBUG`, 	t1.`MAILTO`, 	t1.`MODULE`, 	t1.`OPENEDBUILD`, 	t1.`OPENEDBY`, 	t1.`OPENEDDATE`, 	t1.`OS`, 	t1.`PLAN`, 	t1.`PRI`, 	t1.`PRODUCT`, 	t1.`PROJECT`, 	t1.`REPO`, 	t1.`REPOTYPE`, 	t1.`RESOLUTION`, 	t1.`RESOLVEDBUILD`, (case when t1.`RESOLVEDBY` is null or t1.`RESOLVEDBY` = '' then  #{srf.sessioncontext.srfloginname} else t1.`RESOLVEDBY` end)	as `RESOLVEDBY`, 	t1.`RESOLVEDDATE`, 	t1.`RESULT`, 	t1.`SEVERITY`, 	t1.`STATUS`, 	t1.`STORY`, 	t1.`STORYVERSION`, 	t1.`SUBSTATUS`, 	t1.`TASK`, 	t1.`TESTTASK`, 	t1.`TITLE`, 	t1.`TOSTORY`, 	t1.`TOTASK`, 	t1.`TYPE`, 	t1.`V1`, 	case when t1.`status` = 'resolved' then '10' else '20' end as V2, 	( CASE WHEN t1.DEADLINE = '0000-00-00' THEN 0 ELSE datediff( t1.deadline, now( ) ) END ) AS overduebugs  FROM 	`zt_bug` t1 ]]>
+		<![CDATA[ SELECT 	t1.`ASSIGNEDTO`, 	t1.`CONFIRMED`, 	t1.`ID`, 	0 AS `ISFAVORITES`, 	t1.`OPENEDBY`, 	t1.`PRI`, 	t1.`PROJECT`, 	t1.`RESOLUTION`, 	( CASE WHEN t1.`RESOLVEDBY` IS NULL OR t1.`RESOLVEDBY` = '' THEN #{srf.sessioncontext.srfloginname} ELSE t1.`RESOLVEDBY` END ) AS `RESOLVEDBY`,	 	t1.`STATUS`,	 	t1.`TITLE` FROM `zt_bug` t1 ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
 			<![CDATA[ AND t1.DELETED = '0' ]]>

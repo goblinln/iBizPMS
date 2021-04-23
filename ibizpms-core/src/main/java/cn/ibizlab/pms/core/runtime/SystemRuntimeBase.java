@@ -2,10 +2,10 @@ package cn.ibizlab.pms.core.runtime;
 
 import cn.ibizlab.pms.util.client.IBZUAAFeignClient;
 import lombok.extern.slf4j.Slf4j;
-import com.sa.jcsc.util.security.AuthenticationUser;
-import com.sa.jcsc.util.security.UAADEAuthority;
-import com.sa.jcsc.util.security.UAAMenuAuthority;
-import com.sa.jcsc.util.security.UAAUniResAuthority;
+import cn.ibizlab.pms.util.security.AuthenticationUser;
+import cn.ibizlab.pms.util.security.UAADEAuthority;
+import cn.ibizlab.pms.util.security.UAAMenuAuthority;
+import cn.ibizlab.pms.util.security.UAAUniResAuthority;
 import net.ibizsys.model.IPSDynaInstService;
 import net.ibizsys.model.IPSSystem;
 import net.ibizsys.model.dataentity.priv.IPSDEUserRole;
