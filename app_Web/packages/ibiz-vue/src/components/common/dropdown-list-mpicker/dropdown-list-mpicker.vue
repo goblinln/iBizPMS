@@ -226,19 +226,20 @@ export default class DropDownListMpicker extends Vue {
      * @returns
      * @memberof DropDownList
      */
-    public handlePublicParams(arg: any) {
+    public handlePublicParams() {
         // 合并表单参数
-        arg.param = this.viewparams ? JSON.parse(JSON.stringify(this.viewparams)) : {};
-        arg.context = this.context ? JSON.parse(JSON.stringify(this.context)) : {};
+        let viewparams = this.viewparams ? JSON.parse(JSON.stringify(this.viewparams)) : {};
+        let context = this.context ? JSON.parse(JSON.stringify(this.context)) : {};
         // 附加参数处理
         if (this.localContext && Object.keys(this.localContext).length >0) {
-            let _context = this.$util.computedNavData(this.data,arg.context,arg.param,this.localContext);
-            Object.assign(arg.context,_context);
+            let _context = this.$util.computedNavData(this.data,context,viewparams,this.localContext);
+            Object.assign(context,_context);
         }
         if (this.localParam && Object.keys(this.localParam).length >0) {
-            let _param = this.$util.computedNavData(this.data,arg.param,arg.param,this.localParam);
-            Object.assign(arg.param,_param);
+            let _param = this.$util.computedNavData(this.data,context,viewparams,this.localParam);
+            Object.assign(viewparams,_param);
         }
+        return {context,viewparams};
     }
 
     /**
@@ -256,8 +257,9 @@ export default class DropDownListMpicker extends Vue {
      * @memberof DropDownListMpicker
      */
     public handleCodeListItems() {
+        let arg = this.handlePublicParams();
         if(this.tag && this.codelistType) {
-            this.codeListService.getDataItems({ tag: this.tag, type: this.codelistType,data: this.codeList,context:this.context,viewparam:this.viewparams }).then((codelist: any) => {
+            this.codeListService.getDataItems({ tag: this.tag, type: this.codelistType,data: this.codeList,context:arg.context,viewparam:arg.viewparams }).then((codelist: any) => {
                 this.items = codelist;
                 this.handleLevelCodeList(Util.deepCopy(this.items));
             }).catch((error: any) => {

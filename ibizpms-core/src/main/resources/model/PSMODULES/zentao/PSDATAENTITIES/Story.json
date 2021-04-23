@@ -2824,6 +2824,10 @@
       "enableFront" : true
     } ],
     "codeName" : "Ischild",
+    "getComputePSDEFLogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEFLOGICS/ComputeIschild.json"
+    },
     "dEFType" : 2,
     "dEMSFieldMode" : "STATE3",
     "dataType" : "TEXT",
@@ -4791,6 +4795,17 @@
     "linkDEField" : true
   } ],
   "getAllPSDELogics" : [ {
+    "codeName" : "ComputeIschild",
+    "defaultParamName" : "DEFAULT",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEFLOGICS/ComputeIschild.json",
+    "logicName" : "计算是否可以细分",
+    "logicSubType" : "DEFIELD",
+    "name" : "计算是否可以细分",
+    "scriptCode" : "var parent = entity.get(\"parent\");\nvar stage = entity.get(\"stage\");\nvar Ischild = '0';\nif(parent == -1 && stage == 'wait'){\n\tIschild = '1';\n}else if(parent == 0 && stage == 'wait'){\n\tIschild = '2';\n}\nreturn Ischild;",
+    "customCode" : true,
+    "enableBackend" : true,
+    "enableFront" : false
+  }, {
     "codeName" : "GetCurUserConcat",
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/GetCurUserConcat.json",

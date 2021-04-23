@@ -112,22 +112,11 @@ export class AppDashboardBase extends DashboardControlBase {
             </card>
             </div>
         }else{
+            let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(modelJson);
+            Object.assign(targetCtrlParam.dynamicProps, { ...this.dynamicProps });
+            Object.assign(targetCtrlParam.staticProps, {  ...this.staticProps });
             // 绘制门户部件（非容器）
-            let newStaticProps = { ...this.staticProps };
-            let newDynamicProps = { ...this.dynamicProps };
-            newStaticProps.modelData = modelJson;
-            return this.$createElement('app-control-shell',{
-                props: {staticProps: newStaticProps, dynamicProps: newDynamicProps},
-                ref: modelJson.name,
-                on: {
-                    'ctrl-event': ({ controlname, action, data }: { controlname: string, action: string, data: any }) => {
-                        this.onCtrlEvent(controlname, action, data);
-                    },
-                    closeView: ($event: any) => {
-                        this.closeView($event);
-                    }
-                }
-            })
+            return this.$createElement(targetCtrlName,{ props: targetCtrlParam, ref: modelJson.name, on: targetCtrlEvent })
         }
        
     }
