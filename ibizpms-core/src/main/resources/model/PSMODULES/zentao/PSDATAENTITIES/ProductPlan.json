@@ -1137,6 +1137,10 @@
       "enableFront" : true
     } ],
     "codeName" : "Beginstr",
+    "getComputePSDEFLogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEFLOGICS/ComputeBeginStr.json"
+    },
     "dEFType" : 2,
     "dataType" : "TEXT",
     "importOrder" : 1000,
@@ -2122,6 +2126,17 @@
     "linkDEField" : true
   } ],
   "getAllPSDELogics" : [ {
+    "codeName" : "ComputeBeginStr",
+    "defaultParamName" : "DEFAULT",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEFLOGICS/ComputeBeginStr.json",
+    "logicName" : "计算开始时间显示内容",
+    "logicSubType" : "DEFIELD",
+    "name" : "计算开始时间显示内容",
+    "scriptCode" : "var begin = entity.get(\"begin\");\nvar beginstr = entity.get(\"begin\");\nif(begin === \"2030-01-01\") {\n        beginstr = \"待定\";\n}\nreturn beginstr;",
+    "customCode" : true,
+    "enableBackend" : true,
+    "enableFront" : false
+  }, {
     "codeName" : "GetBedinANDEnd",
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDELOGICS/GetBedinANDEnd.json",

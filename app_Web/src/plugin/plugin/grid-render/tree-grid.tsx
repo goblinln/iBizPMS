@@ -96,7 +96,7 @@ export class AppTreeGridService extends AppGridService {
 @VueLifeCycleProcessing()
 export class TreeGrid extends AppDefaultGrid {
 
-public async ctrlModelInit() {
+	public async ctrlModelInit() {
         await super.ctrlModelInit();
         if (!(this.Environment && this.Environment.isPreviewMode)) {
             this.service = new AppTreeGridService(this.controlInstance);
@@ -182,19 +182,14 @@ public async ctrlModelInit() {
         const { row } = scope;
         if (uiactionDetails.length > 0) {
             return (
-                <div style="text-align: center;">
+                <div style="text-align: center;display: flex;">
                     {uiactionDetails.map((uiactionDetail: IPSUIActionGroupDetail, index: number) => {
                         const uiaction: IPSDEUIAction = uiactionDetail.getPSUIAction() as IPSDEUIAction;
                         if(row[uiaction.uIActionTag]?.visabled){
                             return (
-                                <tooltip transfer={true} max-width={600}>
-                                    <a class={index == 0 ? "grid-first-uiaction" : "grid-uiaction-divider"} disabled={row[uiaction.uIActionTag].disabled} style={{'display': 'block'}} on-click={($event: any) => { this.handleActionClick(row, $event, _column, uiactionDetail) }} >
+                                    <a class={index == 0 ? "grid-first-uiaction" : "grid-uiaction-divider"} title={uiaction.caption} disabled={row[uiaction.uIActionTag].disabled} style={{'display': 'block'}} on-click={($event: any) => { this.handleActionClick(row, $event, _column, uiactionDetail) }} >
                                         {uiactionDetail.showIcon ? <i class={uiaction?.getPSSysImage()?.cssClass ? uiaction?.getPSSysImage()?.cssClass : "fa fa-save"}></i> : ""}
                                     </a>
-                                    <div slot="content">
-                                        {uiaction?.caption ? uiaction.caption : ""}
-                                    </div>
-                                </tooltip>
                             )
                         }else{
                             return null;

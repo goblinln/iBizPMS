@@ -2224,6 +2224,10 @@
       "enableFront" : true
     } ],
     "codeName" : "V2",
+    "getComputePSDEFLogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEFLOGICS/ComputeV2.json"
+    },
     "dEFType" : 1,
     "dataType" : "TEXT",
     "defaultValue" : "#EMPTY",
@@ -3548,6 +3552,10 @@
       "enableFront" : true
     } ],
     "codeName" : "ResolvedBy",
+    "getComputePSDEFLogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEFLOGICS/ComputeResolvedBy.json"
+    },
     "dEFType" : 1,
     "dataType" : "SSCODELIST",
     "defaultValue" : "#EMPTY",
@@ -5294,6 +5302,28 @@
     "logicSubType" : "DEFIELD",
     "name" : "计算过期天数",
     "scriptCode" : "var Overduebugs = 0;\nvar deadline = entity.get(\"deadline\");\nvar end = Date.parse(deadline);\nif(end == Date.parse('0000-00-00')){\n\tOverduebugs = 0;\n}else{\t\t\t\n\tvar now = Date.parse(new Date());\n\tvar ms= Math.abs(end - now);\n\t Overduebugs = Math.floor(ms / (24 * 3600 * 1000));\n\t}\nreturn Overduebugs;",
+    "customCode" : true,
+    "enableBackend" : true,
+    "enableFront" : false
+  }, {
+    "codeName" : "ComputeResolvedBy",
+    "defaultParamName" : "DEFAULT",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEFLOGICS/ComputeResolvedBy.json",
+    "logicName" : "计算解决者",
+    "logicSubType" : "DEFIELD",
+    "name" : "计算解决者",
+    "scriptCode" : "var resolvedBy = entity.get(\"resolvedBy\");\nreturn (resolvedBy == null || resolvedBy == '') ? '' : resolvedBy;",
+    "customCode" : true,
+    "enableBackend" : true,
+    "enableFront" : false
+  }, {
+    "codeName" : "ComputeV2",
+    "defaultParamName" : "DEFAULT",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEFLOGICS/ComputeV2.json",
+    "logicName" : "计算V2",
+    "logicSubType" : "DEFIELD",
+    "name" : "计算V2",
+    "scriptCode" : "var status = entity.get(\"status\");\nreturn (status == 'resolved') ? '10' : '20';",
     "customCode" : true,
     "enableBackend" : true,
     "enableFront" : false

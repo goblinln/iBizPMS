@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { Subject, Subscription } from 'rxjs';
-import { IPSAppCounterRef, IPSAppView, IPSControl } from '@ibiz/dynamic-model-api';
+import { IPSAppCounterRef, IPSAppView, IPSAppDEView, IPSControl } from '@ibiz/dynamic-model-api';
 import { Util, ViewTool, AppServiceBase, ViewContext, ViewState, ModelTool, GetModelService, AppModelService, removeSessionStorage } from 'ibiz-core';
 import { CounterServiceRegister } from 'ibiz-service';
 import { AppNavHistory, ViewLoadingService } from '../app-service';
@@ -539,7 +539,7 @@ export class ViewBase extends Vue {
      * @param {*} result
      * @memberof ViewBase
      */
-    public initModel(view: any) {
+    public initModel(view: IPSAppView) {
         if (!view) {
             return;
         }
@@ -549,10 +549,10 @@ export class ViewBase extends Vue {
             this.model.srfTitle = this.viewInstance.title;
             this.model.srfSubTitle = this.viewInstance.subCaption;
         }else{
-            if (view?.appDataEntity) {
-                this.model.srfCaption = `entities.${view?.appDataEntity?.codeName?.toLowerCase()}.views.${view.getPSDEViewCodeName?.toLowerCase()}.caption`;
-                this.model.srfTitle = `entities.${view?.appDataEntity?.codeName?.toLowerCase()}.views.${view.getPSDEViewCodeName?.toLowerCase()}.title`;
-                this.model.srfSubTitle = `entities.${view?.appDataEntity?.codeName?.toLowerCase()}.views.${view.getPSDEViewCodeName?.toLowerCase()}.subtitle`;
+            if (view?.getPSAppDataEntity()) {
+                this.model.srfCaption = `entities.${ModelTool.getViewAppEntityCodeName(this.viewInstance)?.toLowerCase()}.views.${(view as IPSAppDEView).getPSDEViewCodeName()?.toLowerCase()}.caption`;
+                this.model.srfTitle = `entities.${ModelTool.getViewAppEntityCodeName(this.viewInstance)?.toLowerCase()}.views.${(view as IPSAppDEView).getPSDEViewCodeName()?.toLowerCase()}.title`;
+                this.model.srfSubTitle = `entities.${ModelTool.getViewAppEntityCodeName(this.viewInstance)?.toLowerCase()}.views.${(view as IPSAppDEView).getPSDEViewCodeName()?.toLowerCase()}.subtitle`;
             } else {
                 this.model.srfCaption = `app.views.${view.codeName?.toLowerCase()}.caption`;
                 this.model.srfTitle = `app.views.${view.codeName?.toLowerCase()}.title`;
