@@ -143,6 +143,9 @@
 		<if test="srf.n_parent_gtandeq != null ">
 			<![CDATA[ AND  t1.`PARENT` >= #{srf.n_parent_gtandeq,jdbcType=BIGINT} ]]>
         </if>
+		<if test="srf.n_parent_ltandeq != null ">
+			<![CDATA[ AND  t1.`PARENT` <= #{srf.n_parent_ltandeq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="srf.n_frombug_eq != null ">
 			<![CDATA[ AND  t1.`FROMBUG` = #{srf.n_frombug_eq,jdbcType=BIGINT} ]]>
         </if>

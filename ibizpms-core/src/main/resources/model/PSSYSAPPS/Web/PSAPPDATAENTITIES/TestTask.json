@@ -384,27 +384,11 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "子状态",
-      "name" : "SUBSTATUS",
-      "getPSAppDEField" : {
-        "name" : "SUBSTATUS",
-        "codeName" : "SubStatus"
-      },
-      "uniqueItem" : false
-    }, {
       "caption" : "结束日期",
       "name" : "END",
       "getPSAppDEField" : {
         "name" : "END",
         "codeName" : "End"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "所属项目",
-      "name" : "PROJECT",
-      "getPSAppDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
       },
       "uniqueItem" : false
     }, {
@@ -424,6 +408,14 @@
       },
       "uniqueItem" : false
     }, {
+      "caption" : "开始日期",
+      "name" : "BEGIN",
+      "getPSAppDEField" : {
+        "name" : "BEGIN",
+        "codeName" : "Begin"
+      },
+      "uniqueItem" : false
+    }, {
       "caption" : "抄送给",
       "name" : "MAILTO",
       "getPSAppDEField" : {
@@ -433,34 +425,6 @@
       "getPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "负责人",
-      "name" : "OWNER",
-      "getPSAppDEField" : {
-        "name" : "OWNER",
-        "codeName" : "Owner"
-      },
-      "getPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProductTeam.json"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "开始日期",
-      "name" : "BEGIN",
-      "getPSAppDEField" : {
-        "name" : "BEGIN",
-        "codeName" : "Begin"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "已删除",
-      "name" : "DELETED",
-      "getPSAppDEField" : {
-        "name" : "DELETED",
-        "codeName" : "Deleted"
       },
       "uniqueItem" : false
     }, {
@@ -480,11 +444,47 @@
       },
       "uniqueItem" : false
     }, {
+      "caption" : "负责人",
+      "name" : "OWNER",
+      "getPSAppDEField" : {
+        "name" : "OWNER",
+        "codeName" : "Owner"
+      },
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProductTeam.json"
+      },
+      "uniqueItem" : false
+    }, {
       "caption" : "项目",
       "name" : "PROJECTTNAME",
       "getPSAppDEField" : {
         "name" : "PROJECTTNAME",
         "codeName" : "ProjecttName"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "子状态",
+      "name" : "SUBSTATUS",
+      "getPSAppDEField" : {
+        "name" : "SUBSTATUS",
+        "codeName" : "SubStatus"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "已删除",
+      "name" : "DELETED",
+      "getPSAppDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "所属项目",
+      "name" : "PROJECT",
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
       },
       "uniqueItem" : false
     }, {
