@@ -144,6 +144,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                                                     strBScope += " AND ";
                                                 strBScope += QueryContextHelper.contextParamConvert(psdeDataQueryCodeCond.getCustomCond());
                                             }
+                                            authority.setDataset(true);
                                             authority.setBscope(strBScope);
                                         }
                                         break;
@@ -617,5 +618,5 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     protected void translateEntityOne2ManyFieldAfterProceed(Object objKey, IEntityBase arg0, IPSOne2ManyDataDEField iPSOne2ManyDataDEField, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
         return ;
     }
-    
+
 }
