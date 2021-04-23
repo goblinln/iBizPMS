@@ -10,7 +10,7 @@
     "name" : "BEGINSTR",
     "codeName" : "Beginstr"
   },
-  "scriptCode" : "var begin = entity.get(\"begin\");\nvar beginstr = entity.get(\"begin\");\nif(begin === \"2030-01-01\") {\n        beginstr = \"待定\";\n}\nreturn beginstr;",
+  "scriptCode" : "var begin = entity.get(\"begin\");\nvar beginstr = entity.get(\"begin\");\nif(begin === null){\n       beginstr = \"0000-00-00\";\n}else if(begin === \"2030-01-01\") {\n        beginstr = \"待定\";\n}\nreturn beginstr;",
   "customCode" : true,
   "enableBackend" : true,
   "enableFront" : false

@@ -10,7 +10,7 @@
     "name" : "ENDSTR",
     "codeName" : "Endstr"
   },
-  "scriptCode" : "var end = entity.get(\"end\");\nvar endstr = entity.get(\"end\");\nif(end === \"2030-01-01\") {\n        endstr = \"待定\";\n}\nreturn endstr;",
+  "scriptCode" : "var end = entity.get(\"end\");\nvar endstr = entity.get(\"end\");\nif(end === null){\n       endstr = \"0000-00-00\";\n}else\nif(end === \"2030-01-01\") {\n        endstr = \"待定\";\n}\nreturn endstr;",
   "customCode" : true,
   "enableBackend" : true,
   "enableFront" : false
