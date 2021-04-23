@@ -35,12 +35,12 @@ import cn.ibizlab.pms.core.zentao.service.ITaskService;
 import cn.ibizlab.pms.core.zentao.filter.TaskSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
 import cn.ibizlab.pms.core.zentao.runtime.TaskRuntime;
-import cn.ibizlab.pms.core.zentao.filter.TaskEstimateSearchContext;
-import cn.ibizlab.pms.core.zentao.domain.TaskEstimate;
-import cn.ibizlab.pms.core.zentao.service.ITaskEstimateService;
 import cn.ibizlab.pms.core.ibiz.filter.TaskTeamSearchContext;
 import cn.ibizlab.pms.core.ibiz.domain.TaskTeam;
 import cn.ibizlab.pms.core.ibiz.service.ITaskTeamService;
+import cn.ibizlab.pms.core.zentao.filter.TaskEstimateSearchContext;
+import cn.ibizlab.pms.core.zentao.domain.TaskEstimate;
+import cn.ibizlab.pms.core.zentao.service.ITaskEstimateService;
 
 @Slf4j
 @Api(tags = {"任务" })
@@ -59,10 +59,10 @@ public class TaskResource {
     public TaskMapping taskMapping;
 
     @Autowired
-    private ITaskEstimateService taskestimateService;
+    private ITaskTeamService taskteamService;
 
     @Autowired
-    private ITaskTeamService taskteamService;
+    private ITaskEstimateService taskestimateService;
 
     @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建任务", tags = {"任务" },  notes = "新建任务")

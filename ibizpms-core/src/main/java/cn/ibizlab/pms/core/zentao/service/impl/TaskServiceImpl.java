@@ -91,7 +91,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
             return false;
         }
         taskteamService.saveByRoot(et.getId(), et.getTaskteam());
-        taskestimateService.saveByTask(et.getId(), et.getTaskestimate());
+        taskestimateService.saveByTask(et.getId(), et.getTaskestimates());
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }
@@ -115,7 +115,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
             return false;
         }
         taskteamService.saveByRoot(et.getId(), et.getTaskteam());
-        taskestimateService.saveByTask(et.getId(), et.getTaskestimate());
+        taskestimateService.saveByTask(et.getId(), et.getTaskestimates());
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }
@@ -163,7 +163,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         }
         else {
             et.setTaskteam(taskteamService.selectByRoot(key));
-            et.setTaskestimate(taskestimateService.selectByTask(key));
+            et.setTaskestimates(taskestimateService.selectByTask(key));
         }
         return et;
     }

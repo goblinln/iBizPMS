@@ -79,6 +79,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
+        doccontentService.saveByDoc(et.getId(), et.getDocconents());
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }
@@ -101,6 +102,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
+        doccontentService.saveByDoc(et.getId(), et.getDocconents());
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }
@@ -127,6 +129,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     @Override
     @Transactional
     public boolean remove(Long key) {
+        doccontentService.removeByDoc(key) ;
         boolean result = removeById(key);
         return result ;
     }
@@ -145,6 +148,7 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+            et.setDocconents(doccontentService.selectByDoc(key));
         }
         return et;
     }

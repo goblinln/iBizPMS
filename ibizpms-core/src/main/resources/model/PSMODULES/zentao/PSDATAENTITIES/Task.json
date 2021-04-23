@@ -15509,6 +15509,7 @@
     },
     "masterOrder" : 100,
     "masterRS" : 13,
+    "minorCodeName" : "taskEstimates",
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate.json"

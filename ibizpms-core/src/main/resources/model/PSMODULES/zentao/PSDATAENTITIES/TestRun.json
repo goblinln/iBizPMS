@@ -820,7 +820,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun.json"
     },
     "masterOrder" : 100,
-    "masterRS" : 5,
+    "masterRS" : 13,
+    "minorCodeName" : "testResults",
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestResult.json"
@@ -833,7 +834,8 @@
     },
     "pickupDEFName" : "RUN",
     "removeActionType" : -1,
-    "removeOrder" : 0
+    "removeOrder" : 0,
+    "nestedRS" : true
   } ],
   "getMinorPSDERs" : [ {
     "codeName" : "ZTCase",

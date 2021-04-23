@@ -93,6 +93,8 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
+        storyspecService.saveByStory(et.getId(), et.getStoryspecs());
+        storystageService.saveByStory(et.getId(), et.getStorystages());
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }
@@ -115,6 +117,8 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
+        storyspecService.saveByStory(et.getId(), et.getStoryspecs());
+        storystageService.saveByStory(et.getId(), et.getStorystages());
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }
@@ -141,6 +145,8 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     @Override
     @Transactional
     public boolean remove(Long key) {
+        storyspecService.removeByStory(key) ;
+        storystageService.removeByStory(key) ;
         boolean result = removeById(key);
         return result ;
     }
@@ -159,6 +165,8 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+            et.setStoryspecs(storyspecService.selectByStory(key));
+            et.setStorystages(storystageService.selectByStory(key));
         }
         return et;
     }

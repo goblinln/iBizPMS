@@ -720,7 +720,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
     },
     "masterOrder" : 100,
-    "masterRS" : 5,
+    "masterRS" : 13,
+    "minorCodeName" : "docConents",
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocContent.json"
@@ -733,7 +734,8 @@
     },
     "pickupDEFName" : "DOC",
     "removeActionType" : -1,
-    "removeOrder" : 0
+    "removeOrder" : 0,
+    "nestedRS" : true
   } ],
   "name" : "ZT_DOCCONTENT",
   "saaSDCIdColumnName" : "SRFDCID",

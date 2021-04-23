@@ -275,6 +275,38 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
         this.remove(new QueryWrapper<TestResult>().eq("run",id));
     }
 
+    public ITestResultService getProxyService() {
+        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
+    }
+	@Override
+    public void saveByRun(Long id,List<TestResult> list) {
+        if(list==null)
+            return;
+        Set<Long> delIds=new HashSet<Long>();
+        List<TestResult> _update=new ArrayList<TestResult>();
+        List<TestResult> _create=new ArrayList<TestResult>();
+        for(TestResult before:selectByRun(id)){
+            delIds.add(before.getId());
+        }
+        for(TestResult sub:list) {
+            sub.setRun(id);
+            if(ObjectUtils.isEmpty(sub.getId()))
+                sub.setId((Long)sub.getDefaultKey(true));
+            if(delIds.contains(sub.getId())) {
+                delIds.remove(sub.getId());
+                _update.add(sub);
+            }
+            else
+                _create.add(sub);
+        }
+        if(_update.size()>0)
+            getProxyService().updateBatch(_update);
+        if(_create.size()>0)
+            getProxyService().createBatch(_create);
+        if(delIds.size()>0)
+            getProxyService().removeBatch(delIds);
+	}
+
 
     /**
      * 查询集合 CurTestRun
@@ -369,9 +401,6 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
     }
 
 
-    public ITestResultService getProxyService() {
-        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
-    }
     @Override
     @Transactional
     public TestResult dynamicCall(Long key, String action, TestResult et) {

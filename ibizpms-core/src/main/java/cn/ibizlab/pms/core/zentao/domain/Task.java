@@ -858,7 +858,7 @@ public class Task extends EntityMP implements Serializable {
     @JsonIgnore
     @JSONField(serialize = false)
     @TableField(exist = false)
-    private List<cn.ibizlab.pms.core.zentao.domain.TaskEstimate> taskestimate;
+    private List<cn.ibizlab.pms.core.zentao.domain.TaskEstimate> taskestimates;
 
 
     /**

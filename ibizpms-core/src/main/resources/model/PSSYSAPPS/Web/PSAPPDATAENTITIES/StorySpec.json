@@ -435,7 +435,7 @@
   "logicName" : "需求描述",
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
-    "codeName" : "StorySpecs",
+    "codeName" : "storySpecs",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,

@@ -764,6 +764,22 @@ public class Story extends EntityMP implements Serializable {
     private cn.ibizlab.pms.core.zentao.domain.Story ztparent;
 
 
+    /**
+     * 需求描述
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private List<cn.ibizlab.pms.core.zentao.domain.StorySpec> storyspecs;
+
+    /**
+     * 需求阶段
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private List<cn.ibizlab.pms.core.zentao.domain.StoryStage> storystages;
+
 
     /**
      * 设置 [指派给]

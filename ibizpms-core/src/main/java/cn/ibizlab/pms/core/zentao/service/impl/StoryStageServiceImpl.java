@@ -251,6 +251,38 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
         this.remove(new QueryWrapper<StoryStage>().eq("story",id));
     }
 
+    public IStoryStageService getProxyService() {
+        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
+    }
+	@Override
+    public void saveByStory(Long id,List<StoryStage> list) {
+        if(list==null)
+            return;
+        Set<String> delIds=new HashSet<String>();
+        List<StoryStage> _update=new ArrayList<StoryStage>();
+        List<StoryStage> _create=new ArrayList<StoryStage>();
+        for(StoryStage before:selectByStory(id)){
+            delIds.add(before.getId());
+        }
+        for(StoryStage sub:list) {
+            sub.setStory(id);
+            if(ObjectUtils.isEmpty(sub.getId()))
+                sub.setId((String)sub.getDefaultKey(true));
+            if(delIds.contains(sub.getId())) {
+                delIds.remove(sub.getId());
+                _update.add(sub);
+            }
+            else
+                _create.add(sub);
+        }
+        if(_update.size()>0)
+            getProxyService().updateBatch(_update);
+        if(_create.size()>0)
+            getProxyService().createBatch(_create);
+        if(delIds.size()>0)
+            getProxyService().removeBatch(delIds);
+	}
+
 
     /**
      * 查询集合 DEFAULT
@@ -331,9 +363,6 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     }
 
 
-    public IStoryStageService getProxyService() {
-        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
-    }
     @Override
     @Transactional
     public StoryStage dynamicCall(String key, String action, StoryStage et) {

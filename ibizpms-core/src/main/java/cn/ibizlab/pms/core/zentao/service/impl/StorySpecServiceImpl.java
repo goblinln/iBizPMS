@@ -239,6 +239,38 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
         this.remove(new QueryWrapper<StorySpec>().eq("story",id));
     }
 
+    public IStorySpecService getProxyService() {
+        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
+    }
+	@Override
+    public void saveByStory(Long id,List<StorySpec> list) {
+        if(list==null)
+            return;
+        Set<String> delIds=new HashSet<String>();
+        List<StorySpec> _update=new ArrayList<StorySpec>();
+        List<StorySpec> _create=new ArrayList<StorySpec>();
+        for(StorySpec before:selectByStory(id)){
+            delIds.add(before.getId());
+        }
+        for(StorySpec sub:list) {
+            sub.setStory(id);
+            if(ObjectUtils.isEmpty(sub.getId()))
+                sub.setId((String)sub.getDefaultKey(true));
+            if(delIds.contains(sub.getId())) {
+                delIds.remove(sub.getId());
+                _update.add(sub);
+            }
+            else
+                _create.add(sub);
+        }
+        if(_update.size()>0)
+            getProxyService().updateBatch(_update);
+        if(_create.size()>0)
+            getProxyService().createBatch(_create);
+        if(delIds.size()>0)
+            getProxyService().removeBatch(delIds);
+	}
+
 
     /**
      * 查询集合 DEFAULT
@@ -328,9 +360,6 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
     }
 
 
-    public IStorySpecService getProxyService() {
-        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
-    }
     @Override
     @Transactional
     public StorySpec dynamicCall(String key, String action, StorySpec et) {

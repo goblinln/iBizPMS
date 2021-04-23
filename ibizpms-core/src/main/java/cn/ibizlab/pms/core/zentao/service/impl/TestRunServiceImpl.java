@@ -73,6 +73,7 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
+        testresultService.saveByRun(et.getId(), et.getTestresults());
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }
@@ -95,6 +96,7 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
+        testresultService.saveByRun(et.getId(), et.getTestresults());
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }
@@ -121,6 +123,7 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
     @Override
     @Transactional
     public boolean remove(Long key) {
+        testresultService.removeByRun(key) ;
         boolean result = removeById(key);
         return result ;
     }
@@ -139,6 +142,7 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+            et.setTestresults(testresultService.selectByRun(key));
         }
         return et;
     }

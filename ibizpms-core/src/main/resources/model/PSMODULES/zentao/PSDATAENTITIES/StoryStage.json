@@ -620,7 +620,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     },
     "masterOrder" : 100,
-    "masterRS" : 5,
+    "masterRS" : 13,
+    "minorCodeName" : "storyStages",
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/StoryStage.json"
@@ -633,7 +634,8 @@
     },
     "pickupDEFName" : "STORY",
     "removeActionType" : -1,
-    "removeOrder" : 0
+    "removeOrder" : 0,
+    "nestedRS" : true
   } ],
   "name" : "ZT_STORYSTAGE",
   "saaSDCIdColumnName" : "SRFDCID",

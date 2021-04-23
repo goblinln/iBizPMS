@@ -935,7 +935,7 @@
   "logicName" : "任务预计",
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
-    "codeName" : "IBZTaskEstimates",
+    "codeName" : "taskEstimates",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,

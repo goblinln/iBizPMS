@@ -43,6 +43,7 @@ public interface IStoryStageService extends IService<StoryStage> {
     void removeByBranch(Long id);
     List<StoryStage> selectByStory(Long id);
     void removeByStory(Long id);
+    void saveByStory(Long id, List<StoryStage> list) ;
     StoryStage dynamicCall(String key, String action, StoryStage et);
     /**
      *自定义查询SQL

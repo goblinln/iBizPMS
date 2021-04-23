@@ -399,6 +399,14 @@ public class Doc extends EntityMP implements Serializable {
     private cn.ibizlab.pms.core.zentao.domain.Project ztProject;
 
 
+    /**
+     * 文档内容
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private List<cn.ibizlab.pms.core.zentao.domain.DocContent> docconents;
+
 
     /**
      * 设置 [分组]

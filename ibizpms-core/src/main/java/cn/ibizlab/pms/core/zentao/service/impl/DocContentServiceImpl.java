@@ -218,6 +218,38 @@ public class DocContentServiceImpl extends ServiceImpl<DocContentMapper, DocCont
         this.remove(new QueryWrapper<DocContent>().eq("doc",id));
     }
 
+    public IDocContentService getProxyService() {
+        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
+    }
+	@Override
+    public void saveByDoc(Long id,List<DocContent> list) {
+        if(list==null)
+            return;
+        Set<Long> delIds=new HashSet<Long>();
+        List<DocContent> _update=new ArrayList<DocContent>();
+        List<DocContent> _create=new ArrayList<DocContent>();
+        for(DocContent before:selectByDoc(id)){
+            delIds.add(before.getId());
+        }
+        for(DocContent sub:list) {
+            sub.setDoc(id);
+            if(ObjectUtils.isEmpty(sub.getId()))
+                sub.setId((Long)sub.getDefaultKey(true));
+            if(delIds.contains(sub.getId())) {
+                delIds.remove(sub.getId());
+                _update.add(sub);
+            }
+            else
+                _create.add(sub);
+        }
+        if(_update.size()>0)
+            getProxyService().updateBatch(_update);
+        if(_create.size()>0)
+            getProxyService().createBatch(_create);
+        if(delIds.size()>0)
+            getProxyService().removeBatch(delIds);
+	}
+
 
     /**
      * 查询集合 当前版本
@@ -290,9 +322,6 @@ public class DocContentServiceImpl extends ServiceImpl<DocContentMapper, DocCont
     }
 
 
-    public IDocContentService getProxyService() {
-        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
-    }
     @Override
     @Transactional
     public DocContent dynamicCall(Long key, String action, DocContent et) {

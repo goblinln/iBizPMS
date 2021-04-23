@@ -446,7 +446,7 @@
   "logicName" : "文档内容",
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
-    "codeName" : "DocContents",
+    "codeName" : "docConents",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,
