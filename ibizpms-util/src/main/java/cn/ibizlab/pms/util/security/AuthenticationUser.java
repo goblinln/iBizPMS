@@ -418,11 +418,6 @@ public class AuthenticationUser implements UserDetails, net.ibizsys.runtime.secu
 
     @Override
     public boolean testSysUniRes(String strUniResCode) {
-        List<GrantedAuthority> authorities = getAuthorities().stream()
-                .filter(f -> f instanceof UAAUniResAuthority && ((UAAUniResAuthority) f).getUnionResTag().equals(strUniResCode))
-                .collect(Collectors.toList());
-        if (authorities.size() > 0)
-            return true;
         return false;
     }
 

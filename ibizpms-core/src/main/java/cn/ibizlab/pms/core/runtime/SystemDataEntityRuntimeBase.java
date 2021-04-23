@@ -107,7 +107,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      * 加载系统默认角色
      * @throws Exception
      */
-    protected void loadDefaultDEUserRoles() throws Exception{
+    protected void loadDefaultDEUserRoles() throws Exception {
         List<IPSDEUserRole> psDEUserRoles = this.getDefaultPSDEUserRoles();
         if (psDEUserRoles != null) {
             for (IPSDEUserRole psDEUserRole : psDEUserRoles) {
@@ -115,6 +115,15 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                 if (!psDEUserRole.isDefaultMode())
                     continue;
                 UAADEAuthority authority = new UAADEAuthority();
+                authority.setName(psDEUserRole.getName());
+                authority.setEntity(this.getName());
+                authority.setEnableorgdr(psDEUserRole.isEnableOrgDR() ? 1 : 0);
+                authority.setOrgdr(psDEUserRole.getOrgDR());
+                authority.setEnabledeptdr(psDEUserRole.isEnableSecDR() ? 1 : 0);
+                authority.setDeptdr(psDEUserRole.getSecDR());
+                authority.setEnabledeptbc(psDEUserRole.isEnableSecBC() ? 1 : 0);
+                authority.setDeptbc(psDEUserRole.getSecBC());
+                //如果有自定义查询 以结果集有限 ，替换自定义条件
                 IPSDEDataSet psdeDataSet = psDEUserRole.getPSDEDataSet();
                 if (psdeDataSet != null) {
                     List<IPSDEDataQuery> psdeDataQueries = psdeDataSet.getPSDEDataQueries();
@@ -147,7 +156,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                     List<Map<String, String>> deActions = new ArrayList<>();
                     for (IPSDEUserRoleOPPriv psDEUserRoleOPPriv : psDEUserRoleOPPrivs) {
                         Map<String, String> deAction = new HashMap<>();
-                        deAction.put(psDEUserRoleOPPriv.getDataAccessAction(), "");
+                        deAction.put(psDEUserRoleOPPriv.getName(), org.apache.commons.lang3.StringUtils.isBlank(psDEUserRoleOPPriv.getCustomCond()) ? "" : psDEUserRoleOPPriv.getCustomCond());
                         deActions.add(deAction);
                     }
                     authority.setDeAction(deActions);
@@ -195,9 +204,9 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             String strSearchField = String.format("n_%s_%s", iPSDEField.getName().toLowerCase(), strCondition.toLowerCase());
             Field searchField = iSearchContextBase.getClass().getDeclaredField(strSearchField);
             searchField.setAccessible(true);
-            if(strCondition.equals(Conditions.ISNULL) || strCondition.equals(Conditions.ISNULL)){
+            if (strCondition.equals(Conditions.ISNULL) || strCondition.equals(Conditions.ISNULL)){
                 searchField.set(iSearchContextBase, "true");
-            }else{
+            } else {
                 searchField.set(iSearchContextBase, objValue);
             }
         } catch (NoSuchFieldException e) {
@@ -211,8 +220,8 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     public int checkKeyState(Object objKey) {
         QueryWrapperContext context = this.createSearchContext();
         context.getSelectCond().eq(this.getKey(), objKey);
-        List domains =this.query(this.getService(), context);
-        if(domains.size()>0)
+        List domains = this.query(this.getService(), context);
+        if (domains.size() > 0)
             return CheckKeyStates.EXIST ;
         return CheckKeyStates.NOTEXIST;
     }
@@ -237,14 +246,12 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
 
     /**
      * 判断是否含有统一资源标识
+     *
      * @param uniResTag
      * @return
      */
-    public boolean testUnires(String uniResTag){
-        //统一资源能力
-        if(this.getUserContext().testSysUniRes(uniResTag))
-            return true ;
-        return false ;
+    public boolean testUnires(String uniResTag) {
+        return ((SystemRuntime) this.getSystemRuntime()).testUniRes(uniResTag);
     }
 
     /**
@@ -254,35 +261,12 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      * @return
      */
     public boolean quickTest(String action) {
-        AuthenticationUser curUser = AuthenticationUser.getAuthenticationUser();
         if (this.getUserContext().isSuperuser())
             return true;
-        if(testUnires(action))
-            return true ;
-        String curSystemId = curUser.getSrfsystemid();
-        List<GrantedAuthority> authorities;
-        if(StringUtils.isEmpty(curSystemId)){
-            authorities= curUser.getAuthorities().stream()
-                .filter(uaadeAuthority -> uaadeAuthority instanceof UAADEAuthority
-                        && ((UAADEAuthority) uaadeAuthority).getEntity().equals(this.getName())
-                        && (DataAccessActions.READ.equals(action) || ((UAADEAuthority) uaadeAuthority).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
-                .collect(Collectors.toList());
-        }else {
-            authorities= curUser.getAuthorities().stream()
-                    .filter(uaadeAuthority -> uaadeAuthority instanceof UAADEAuthority
-                            && curSystemId.equalsIgnoreCase(((UAADEAuthority) uaadeAuthority).getSystemid())
-                            && (DataAccessActions.READ.equals(action) || ((UAADEAuthority) uaadeAuthority).getEntity().equals(this.getName()) && ((UAADEAuthority) uaadeAuthority).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
-                    .collect(Collectors.toList());
-        }
-
-        List<UAADEAuthority> defaultAuthorities = getDefaultAuthorities().stream().filter(uaadeAuthority ->
-            StringUtils.isNotBlank(uaadeAuthority.getBscope())
-                    && (DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action)))
-        ).collect(Collectors.toList());
-
-        if (authorities.size() == 0 && defaultAuthorities.size() == 0)
+        if (testUnires(action))
+            return true;
+        if (this.getUAAAuthorities(action).size() == 0)
             return false;
-
         return true;
     }
 
@@ -296,17 +280,17 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     public boolean test(Serializable key, String action) {
         if (this.getUserContext().isSuperuser())
             return true;
-        if(testUnires(action))
+        if (testUnires(action))
             return true ;
         //检查能力
-        if(!quickTest(action))
+        if (!quickTest(action))
             return false ;
 
         //检查数据范围
         QueryWrapperContext context = this.createSearchContext();
         context.getSelectCond().eq(this.getKey(), key);
         addAuthorityConditions(context, action);
-        List domains =this.query(this.getService(), context);
+        List domains = this.query(this.getService(), context);
         if (domains.size() == 0) {
             return false;
         }
@@ -338,13 +322,13 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         context.getSelectCond().in(this.getKey(), keys);
         addAuthorityConditions(context, action);
 
-        List domains =this.query(this.getService(), context);
+        List domains = this.query(this.getService(), context);
         if (domains.size() != keys.size()) {
             return false;
         }
         try {
-            for (Object domain : domains){
-                if(testDataAccessAction(domain,action)){
+            for (Object domain : domains) {
+                if (testDataAccessAction(domain, action)) {
                     return false;
                 }
             }
@@ -402,32 +386,14 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      * @param action
      */
     public void addAuthorityConditions(QueryWrapperContext context, String action) {
-        AuthenticationUser curUser = AuthenticationUser.getAuthenticationUser();
         if (this.getUserContext().isSuperuser())
             return;
-        if(testUnires(action))
-            return ;
-        //系统默认能力
-        Consumer<QueryWrapper> defaultAuthorityConditions = genDefaultConditions(context, action);
-        String curSystemId = curUser.getSrfsystemid();
-        //运行时分配能力
-        List<GrantedAuthority> authorities;
-        if(StringUtils.isEmpty(curSystemId)){
-            authorities= curUser.getAuthorities().stream()
-                .filter(f -> f instanceof UAADEAuthority 
-                    && ((UAADEAuthority) f).getEntity().equals(this.getName()) 
-                    && (DataAccessActions.READ.equals(action) || ((UAADEAuthority) f).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
-                    .collect(Collectors.toList());
-        }else {
-            authorities= curUser.getAuthorities().stream()
-                    .filter(f -> f instanceof UAADEAuthority 
-                    && curSystemId.equalsIgnoreCase(((UAADEAuthority) f).getSystemid()) &&((UAADEAuthority) f).getEntity().equals(this.getName()) 
-                    && (DataAccessActions.READ.equals(action) || ((UAADEAuthority) f).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
-                    .collect(Collectors.toList());
-        }
+        if (testUnires(action))
+            return;
+
+        List<UAADEAuthority> authorities = this.getUAAAuthorities(action);
         Consumer<QueryWrapper> authorityConditions = authorityCondition -> {
-            for (GrantedAuthority authority : authorities) {
-                UAADEAuthority uaadeAuthority = (UAADEAuthority) authority;
+            for (UAADEAuthority uaadeAuthority : authorities) {
                 //未设置权限能力范围 拒绝操作
                 if ((StringUtils.isBlank(this.getOrgIdField()) || uaadeAuthority.getEnableorgdr() == null || uaadeAuthority.getEnableorgdr() == 0 || (uaadeAuthority.getEnableorgdr() == 1 && (uaadeAuthority.getOrgdr() == null || uaadeAuthority.getOrgdr() == 0)))
                         && (StringUtils.isBlank(this.getDeptIdField()) || uaadeAuthority.getEnabledeptdr() != null || uaadeAuthority.getEnabledeptdr() == 0 || (uaadeAuthority.getEnabledeptdr() == 1 && (uaadeAuthority.getDeptdr() == null || uaadeAuthority.getDeptdr() == 0)))
@@ -443,21 +409,9 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                 }
             }
         };
-        
-        if (defaultAuthorityConditions != null) {
-            if (authorities.size() > 0) {
-                Consumer<QueryWrapper> or = orCondition -> {
-                    orCondition.or(defaultAuthorityConditions);
-                    orCondition.or(authorityConditions);
-                };
-                context.getSelectCond().and(or);
-            } else {
-                context.getSelectCond().and(defaultAuthorityConditions);
-            }
-        } else {
-            if (authorities.size() > 0) {
-                context.getSelectCond().and(authorityConditions);
-            }
+
+        if (authorities.size() > 0) {
+            context.getSelectCond().and(authorityConditions);
         }
     }
 
@@ -581,7 +535,14 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
 
             //自定义条件
             if (StringUtils.isNotBlank(uaadeAuthority.getBscope())) {
-                authorityCondition.or(ScopeUtils.parse(uaadeAuthority.getBscope()));
+                if(StringUtils.isNotBlank(uaadeAuthority.getSystemid())){
+                    authorityCondition.or(ScopeUtils.parse(uaadeAuthority.getBscope()));
+                }else{
+                    Consumer<QueryWrapper> bScopeConditions = bScopeCondition -> {
+                        bScopeCondition.apply(uaadeAuthority.getBscope());
+                    };
+                    authorityCondition.or(bScopeConditions);
+                }
             }
 
 
@@ -604,11 +565,41 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     }
 
     /**
-     * 获取默认能力
-     * @return
+     * 获取实体能力
      */
-    public List<UAADEAuthority> getDefaultAuthorities() {
-        return defaultAuthorities;
+    public List<UAADEAuthority> getUAAAuthorities(String action) {
+        List<UAADEAuthority> uaaDEAuthority = new ArrayList<>();
+        AuthenticationUser curUser = AuthenticationUser.getAuthenticationUser();
+        //实体默认能力
+        uaaDEAuthority.addAll(defaultAuthorities);
+        //系统用户能力
+        uaaDEAuthority.addAll(((SystemRuntime) this.getSystemRuntime()).getUserUAADEAuthority().stream().filter(
+                uaadeAuthority -> uaadeAuthority.getEntity().equals(this.getName())
+                        && (DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
+                .collect(Collectors.toList()));
+        //系统管理员能力
+        if (curUser.isSuperuser()) {
+            uaaDEAuthority.addAll(((SystemRuntime) this.getSystemRuntime()).getAdminUAADEAuthority().stream().filter(
+                    uaadeAuthority -> uaadeAuthority.getEntity().equals(this.getName())
+                            && (DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
+                    .collect(Collectors.toList()));
+        }
+        //运行时分配能力
+        String curSystemId = curUser.getSrfsystemid();
+        if (StringUtils.isEmpty(curSystemId)) {
+            uaaDEAuthority.addAll(curUser.getAuthorities().stream()
+                    .filter(f -> f instanceof UAADEAuthority
+                            && ((UAADEAuthority) f).getEntity().equals(this.getName())
+                            && (DataAccessActions.READ.equals(action) || ((UAADEAuthority) f).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
+                    .map(f -> (UAADEAuthority) f).collect(Collectors.toList()));
+        } else {
+            uaaDEAuthority.addAll(curUser.getAuthorities().stream()
+                    .filter(f -> f instanceof UAADEAuthority
+                            && curSystemId.equalsIgnoreCase(((UAADEAuthority) f).getSystemid()) && ((UAADEAuthority) f).getEntity().equals(this.getName())
+                            && (DataAccessActions.READ.equals(action) || ((UAADEAuthority) f).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
+                    .map(f -> (UAADEAuthority) f).collect(Collectors.toList()));
+        }
+        return uaaDEAuthority;
     }
 
     /**

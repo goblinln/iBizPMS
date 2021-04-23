@@ -41,6 +41,8 @@ public class EntityMP extends EntityBase {
     public boolean contains(String s) {
         try {
             Field field = DEFieldCacheMap.getField(this.getClass(), s);
+            if (field == null)
+                return false;
             field.setAccessible(true);
             Object value = field.get(this);
             if (value == null) {
