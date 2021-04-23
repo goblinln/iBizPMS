@@ -403,6 +403,14 @@ export abstract class TaskBase extends EntityBase implements ITask {
      * 来源Bug
      */
     frombug?: any;
+    /**
+     * 相关需求最新版本
+     */
+    storyversionnew?: any;
+    /**
+     * 需求状态
+     */
+    storystatus?: any;
 
     /**
      * 重置实体数据

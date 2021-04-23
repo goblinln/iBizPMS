@@ -778,6 +778,22 @@ public class Task extends EntityMP implements Serializable {
     @JsonProperty("frombug")
     @ApiModelProperty("来源Bug")
     private Long frombug;
+    /**
+     * 相关需求最新版本
+     */
+    @TableField(exist = false)
+    @JSONField(name = "storyversionnew")
+    @JsonProperty("storyversionnew")
+    @ApiModelProperty("相关需求最新版本")
+    private Integer storyversionnew;
+    /**
+     * 需求状态
+     */
+    @TableField(exist = false)
+    @JSONField(name = "storystatus")
+    @JsonProperty("storystatus")
+    @ApiModelProperty("需求状态")
+    private String storystatus;
 
     /**
      * 

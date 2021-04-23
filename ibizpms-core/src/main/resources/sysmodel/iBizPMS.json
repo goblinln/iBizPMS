@@ -46014,6 +46014,33 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"STORYVERSIONNEW" ,
+    "codename":"Storyversionnew",
+    "field_logic_name":"相关需求最新版本",
+    "entity_name":"ZT_TASK",
+    "field_type":"INT",
+    "nullable":1,
+    "physical_field":0,
+    "data_type":"INT",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"STORYSTATUS" ,
+    "codename":"Storystatus",
+    "field_logic_name":"需求状态",
+    "entity_name":"ZT_TASK",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":0,
+    "data_type":"VARCHAR",
+    "data_length":100,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[

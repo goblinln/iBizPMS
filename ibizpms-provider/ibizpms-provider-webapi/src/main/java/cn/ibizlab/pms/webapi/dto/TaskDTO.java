@@ -868,6 +868,25 @@ public class TaskDTO extends DTOBase implements Serializable {
     @ApiModelProperty("来源Bug")
     private Long frombug;
 
+    /**
+     * 属性 [STORYVERSIONNEW]
+     *
+     */
+    @JSONField(name = "storyversionnew")
+    @JsonProperty("storyversionnew")
+    @ApiModelProperty("相关需求最新版本")
+    private Integer storyversionnew;
+
+    /**
+     * 属性 [STORYSTATUS]
+     *
+     */
+    @JSONField(name = "storystatus")
+    @JsonProperty("storystatus")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("需求状态")
+    private String storystatus;
+
 
     /**
      * 设置 [CANCELEDBY]

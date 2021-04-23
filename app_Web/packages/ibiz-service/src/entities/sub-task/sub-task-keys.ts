@@ -86,4 +86,6 @@ export default [
     'story',
     'parent',
     'frombug',
+    'storyversionnew',
+    'storystatus',
 ];

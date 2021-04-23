@@ -90,6 +90,8 @@ function getLocaleResourceBase(){
 		'story': commonLogic.appcommonhandle("相关需求",null),
 		'parent': commonLogic.appcommonhandle("父任务",null),
 		'frombug': commonLogic.appcommonhandle("来源Bug",null),
+		'storyversionnew': commonLogic.appcommonhandle("相关需求最新版本",null),
+		'storystatus': commonLogic.appcommonhandle("需求状态",null),
 	},
 		views: {
 			'dailycompletezsgridview': {

@@ -378,4 +378,12 @@ export interface ITask extends IEntityBase {
      * 来源Bug
      */
     frombug?: any;
+    /**
+     * 相关需求最新版本
+     */
+    storyversionnew?: any;
+    /**
+     * 需求状态
+     */
+    storystatus?: any;
 }

@@ -1901,6 +1901,17 @@
     "logicName" : "来源Bug",
     "name" : "FROMBUG",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Storyversionnew",
+    "logicName" : "相关需求最新版本",
+    "name" : "STORYVERSIONNEW",
+    "stdDataType" : 9
+  }, {
+    "codeName" : "Storystatus",
+    "logicName" : "需求状态",
+    "name" : "STORYSTATUS",
+    "stdDataType" : 25,
+    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",
