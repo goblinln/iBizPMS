@@ -473,10 +473,10 @@ export default class TextFileUpload extends Vue {
         let fileName = param[fileParam.name]?param[fileParam.name] + ".wps":"模板文件.wps";
         let fileText = param[fileParam.id]?param[fileParam.id]:"暂无内容";
         let file = new File([fileText],fileName,{type: 'application/kswps'});
-        let data = JSON.parse(this.data);
         //临时修改新建文件逻辑
+        // let data = JSON.parse(this.data);
         // if (Object.is(data.srfuf, '0')) {
-        //   this.uploadFileList.push(file);
+        //   this.uploadFileList.push({file});
         //   return;
         // }
         // formData传参
@@ -495,6 +495,7 @@ export default class TextFileUpload extends Vue {
                 if (this.isCreate == true) {
                     this.isUpdateBatch = true;
                 }
+                Object.assign(response.data,{file})
                 // 保存到文件列表进行显示
                 this.uploadFileList.push(response.data);
                 // persistence=true时需要持久化表单属性
@@ -682,9 +683,11 @@ export default class TextFileUpload extends Vue {
         const updateUrl = '/net-disk/upload/' + this.getFolder() + '?ownertype=' + this.getOwnertype() + "&ownerid=" + this.getOwnerid($event.data);
         // requestBody参数
         let formData = new FormData();
-        if (files) {
+        if (files.length > 0) {
             files.forEach((item: any) => {
-              formData.append('file', item);
+              if (item.file) {
+                formData.append('file', item.file);
+              }
             });
         }
         // 发送post请求

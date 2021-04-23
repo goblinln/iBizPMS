@@ -1088,6 +1088,10 @@
       "enableFront" : true
     } ],
     "codeName" : "Duration",
+    "getComputePSDEFLogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEFLOGICS/ComputeDuration.json"
+    },
     "dEFType" : 2,
     "dataType" : "TEXT",
     "importOrder" : 1000,
@@ -1295,6 +1299,10 @@
       "enableFront" : true
     } ],
     "codeName" : "Endstr",
+    "getComputePSDEFLogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEFLOGICS/ComputeEndStr.json"
+    },
     "dEFType" : 2,
     "dataType" : "TEXT",
     "importOrder" : 1000,
@@ -2133,6 +2141,28 @@
     "logicSubType" : "DEFIELD",
     "name" : "计算开始时间显示内容",
     "scriptCode" : "var begin = entity.get(\"begin\");\nvar beginstr = entity.get(\"begin\");\nif(begin === \"2030-01-01\") {\n        beginstr = \"待定\";\n}\nreturn beginstr;",
+    "customCode" : true,
+    "enableBackend" : true,
+    "enableFront" : false
+  }, {
+    "codeName" : "ComputeDuration",
+    "defaultParamName" : "DEFAULT",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEFLOGICS/ComputeDuration.json",
+    "logicName" : "计算计划持续时间",
+    "logicSubType" : "DEFIELD",
+    "name" : "计算计划持续时间",
+    "scriptCode" : "var end = entity.get(\"end\");\nvar begin = entity.get(\"begin\");\nvar duration = 0; \nif(end !== null || begin !== null) {\n\tvar dateSpan;\n        end = Date.parse(end);\n        begin = Date.parse(begin);\n        dateSpan = end - begin;\n        dateSpan = Math.abs(dateSpan);\n        duration = Math.floor(dateSpan / (24 * 3600 * 1000));\n}\nreturn duration;",
+    "customCode" : true,
+    "enableBackend" : true,
+    "enableFront" : false
+  }, {
+    "codeName" : "ComputeEndStr",
+    "defaultParamName" : "DEFAULT",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEFLOGICS/ComputeEndStr.json",
+    "logicName" : "计算结束时间显示内容",
+    "logicSubType" : "DEFIELD",
+    "name" : "计算结束时间显示内容",
+    "scriptCode" : "var end = entity.get(\"end\");\nvar endstr = entity.get(\"end\");\nif(end === \"2030-01-01\") {\n        endstr = \"待定\";\n}\nreturn endstr;",
     "customCode" : true,
     "enableBackend" : true,
     "enableFront" : false

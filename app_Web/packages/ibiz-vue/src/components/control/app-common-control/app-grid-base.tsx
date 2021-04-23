@@ -283,7 +283,7 @@ export class AppGridBase extends GridControlBase {
         const { row, column, $index } = scope;
         if (UIActionGroupDetails.length > 0) {
             return (
-                <div style='text-align: center;'>
+                <div style='text-align: center;display: flex;'>
                     {UIActionGroupDetails.map((uiactionDetail: IPSUIActionGroupDetail, index: number) => {
                         const uiaction: IPSDEUIAction = uiactionDetail.getPSUIAction() as IPSDEUIAction;
                         const actionModel = row[uiaction.uIActionTag];
@@ -301,28 +301,26 @@ export class AppGridBase extends GridControlBase {
                         if (Util.isEmpty(actionModel) || actionModel.visabled) {
                             if (!uiactionDetail.showCaption) {
                                 return (
-                                    <tooltip transfer={true} max-width={600}>
-                                        <a
-                                            class={columnClass}
-                                            disabled={!Util.isEmpty(actionModel) && actionModel.disabled}
-                                            on-click={($event: any) => {
-                                                this.handleActionClick(row, $event, _column, uiactionDetail);
-                                            }}
-                                        >
-                                            {uiactionDetail.showIcon ? (
-                                                <i
-                                                    class={
-                                                        uiaction && uiaction.getPSSysImage()?.cssClass
-                                                            ? uiaction.getPSSysImage()?.cssClass
-                                                            : 'fa fa-save'
-                                                    }
-                                                ></i>
-                                            ) : (
-                                                ''
-                                            )}
-                                        </a>
-                                        <div slot='content'>{uiaction?.caption ? uiaction.caption : ''}</div>
-                                    </tooltip>
+                                    <a
+                                        class={columnClass}
+                                        title={uiaction.caption}
+                                        disabled={!Util.isEmpty(actionModel) && actionModel.disabled}
+                                        on-click={($event: any) => {
+                                            this.handleActionClick(row, $event, _column, uiactionDetail);
+                                        }}
+                                    >
+                                        {uiactionDetail.showIcon ? (
+                                            <i
+                                                class={
+                                                    uiaction && uiaction.getPSSysImage()?.cssClass
+                                                        ? uiaction.getPSSysImage()?.cssClass
+                                                        : 'fa fa-save'
+                                                }
+                                            ></i>
+                                        ) : (
+                                            ''
+                                        )}
+                                    </a>
                                 );
                             } else {
                                 return (
