@@ -603,6 +603,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchCurDefaultQueryExp",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurDefaultQueryExp"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchCurDefaultQueryExp"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchCurPlanProject",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -1775,6 +1791,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchCurDefaultQueryExp",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurDefaultQueryExp"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchCurDefaultQueryExp"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchCurPlanProject",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -2270,6 +2302,16 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "CurDefaultQuery"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempCurDefaultQueryExp",
+    "methodType" : "FETCHTEMP",
+    "name" : "CurDefaultQueryExp",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "CurDefaultQueryExp"
     },
     "tempDataMode" : 2,
     "builtinMethod" : false

@@ -99,6 +99,8 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             return projectService.searchBugProject(searchContext);    
         if (iPSDEDataSet.getName().equals("CurDefaultQuery"))
             return projectService.searchCurDefaultQuery(searchContext);    
+        if (iPSDEDataSet.getName().equals("CurDefaultQueryExp"))
+            return projectService.searchCurDefaultQueryExp(searchContext);    
         if (iPSDEDataSet.getName().equals("CurPlanProject"))
             return projectService.searchCurPlanProject(searchContext);    
         if (iPSDEDataSet.getName().equals("CurProduct"))
@@ -414,6 +416,9 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         }
         else if (action.equals("searchCurDefaultQuery")) {
             return aroundDataSet("CurDefaultQuery", point);
+        }
+        else if (action.equals("searchCurDefaultQueryExp")) {
+            return aroundDataSet("CurDefaultQueryExp", point);
         }
         else if (action.equals("searchCurPlanProject")) {
             return aroundDataSet("CurPlanProject", point);

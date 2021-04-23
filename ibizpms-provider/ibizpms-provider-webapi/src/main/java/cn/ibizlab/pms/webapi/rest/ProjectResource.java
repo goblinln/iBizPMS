@@ -488,6 +488,30 @@ public class ProjectResource {
 	}
 
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取默认查询（项目导航）", tags = {"项目" } ,notes = "获取默认查询（项目导航）")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurdefaultqueryexp")
+	public ResponseEntity<List<ProjectDTO>> fetchCurDefaultQueryExp(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchCurDefaultQueryExp(context) ;
+        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询默认查询（项目导航）", tags = {"项目" } ,notes = "查询默认查询（项目导航）")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/searchcurdefaultqueryexp")
+	public ResponseEntity<Page<ProjectDTO>> searchCurDefaultQueryExp(@RequestBody ProjectSearchContext context) {
+        projectRuntime.addAuthorityConditions(context,"READ");
+        Page<Project> domains = projectService.searchCurDefaultQueryExp(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前计划项目", tags = {"项目" } ,notes = "获取当前计划项目")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurplanproject")
 	public ResponseEntity<List<ProjectDTO>> fetchCurPlanProject(@RequestBody ProjectSearchContext context) {

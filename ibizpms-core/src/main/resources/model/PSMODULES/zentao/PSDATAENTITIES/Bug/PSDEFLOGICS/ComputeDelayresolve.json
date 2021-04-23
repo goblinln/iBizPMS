@@ -1,0 +1,17 @@
+{
+  "codeName" : "ComputeDelayresolve",
+  "dEFLogicMode" : "COMPUTE",
+  "defaultParamName" : "DEFAULT",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEFLOGICS/ComputeDelayresolve.json",
+  "logicName" : "计算延期解决",
+  "logicSubType" : "DEFIELD",
+  "name" : "计算延期解决",
+  "getPSDEField" : {
+    "name" : "DELAYRESOLVE",
+    "codeName" : "Delayresolve"
+  },
+  "scriptCode" : "var Delayresolve = '';\nvar deadline = entity.get(\"deadline\");\ndeadline = Date.parse(deadline);\nvar status = entity.get(\"status\");\nvar resolvedDate = entity.get(\"resolvedDate\");\nresolvedDate = Date.parse(resolvedDate);\nif(isNaN(deadline) || deadline == Date.parse('0000-00-00') || deadline == Date.parse('1970-01-01')){\n\t       Delayresolve = '';\n\t}else if(status == 'resolved' && deadline < resolvedDate){\n\t\tvar ms= Math.abs(resolvedDate - deadline);\n\t\tvar days = Math.floor(ms / (24 * 3600 * 1000));\n\t\tDelayresolve = ''+'延期'+ days +'天';\n\t}\n\t\treturn Delayresolve;",
+  "customCode" : true,
+  "enableBackend" : true,
+  "enableFront" : false
+}

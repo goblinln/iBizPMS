@@ -2927,6 +2927,10 @@
       "enableFront" : true
     } ],
     "codeName" : "Delayresolve",
+    "getComputePSDEFLogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEFLOGICS/ComputeDelayresolve.json"
+    },
     "dEFType" : 2,
     "dataType" : "TEXT",
     "importOrder" : 1000,
@@ -3441,6 +3445,10 @@
       "enableFront" : true
     } ],
     "codeName" : "Delay",
+    "getComputePSDEFLogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEFLOGICS/ComputeDelay.json"
+    },
     "dEFType" : 2,
     "dataType" : "TEXT",
     "importOrder" : 1000,
@@ -5254,6 +5262,28 @@
       "modelref" : true,
       "id" : "Begin"
     },
+    "enableBackend" : true,
+    "enableFront" : false
+  }, {
+    "codeName" : "ComputeDelay",
+    "defaultParamName" : "DEFAULT",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEFLOGICS/ComputeDelay.json",
+    "logicName" : "计算延期",
+    "logicSubType" : "DEFIELD",
+    "name" : "计算延期",
+    "scriptCode" : "var Delay = '';\n\t\t\tvar deadline = entity.get(\"deadline\");\n\t\t\tdeadline = Date.parse(deadline);\n\t\t\tvar status = entity.get(\"status\");\n\t\t\tvar status = 'active';\n\t\t\tvar now = Date.parse(new Date());\n\t\t\tif (isNaN(deadline) || deadline == Date.parse('0000-00-00') || deadline == Date.parse('1970-01-01')) {\n\t\t\t\tDelay = '';\n\t\t\t} else if (status == 'active' && deadline < now) {\n\t\t\t\tvar ms = Math.abs(now - deadline);\n\t\t\t\tvar days = Math.floor(ms / (24 * 3600 * 1000));\n\t\t\t\tDelay = '' + '延期' + days + '天';\n\t\t\t}\n\t\t\treturn Delay;",
+    "customCode" : true,
+    "enableBackend" : true,
+    "enableFront" : false
+  }, {
+    "codeName" : "ComputeDelayresolve",
+    "defaultParamName" : "DEFAULT",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEFLOGICS/ComputeDelayresolve.json",
+    "logicName" : "计算延期解决",
+    "logicSubType" : "DEFIELD",
+    "name" : "计算延期解决",
+    "scriptCode" : "var Delayresolve = '';\nvar deadline = entity.get(\"deadline\");\ndeadline = Date.parse(deadline);\nvar status = entity.get(\"status\");\nvar resolvedDate = entity.get(\"resolvedDate\");\nresolvedDate = Date.parse(resolvedDate);\nif(isNaN(deadline) || deadline == Date.parse('0000-00-00') || deadline == Date.parse('1970-01-01')){\n\t       Delayresolve = '';\n\t}else if(status == 'resolved' && deadline < resolvedDate){\n\t\tvar ms= Math.abs(resolvedDate - deadline);\n\t\tvar days = Math.floor(ms / (24 * 3600 * 1000));\n\t\tDelayresolve = ''+'延期'+ days +'天';\n\t}\n\t\treturn Delayresolve;",
+    "customCode" : true,
     "enableBackend" : true,
     "enableFront" : false
   }, {

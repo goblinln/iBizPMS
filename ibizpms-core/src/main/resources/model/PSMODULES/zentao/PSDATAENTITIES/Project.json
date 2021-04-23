@@ -394,6 +394,20 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "CurDefaultQueryExp",
+    "logicName" : "默认查询（项目导航）",
+    "name" : "CurDefaultQueryExp",
+    "customCode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
         "customCond" : "( t21.`PLAN` = ${srfwebcontext('plan','{\"defname\":\"PLAN\",\"dename\":\"ZT_PROJECTPRODUCT\"}')} )",
         "name" : "查询条件"
       }, {
@@ -658,6 +672,10 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
         "customCond" : "t1.`status` <> 'closed'",
         "name" : "查询条件"
       } ]
@@ -698,6 +716,17 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "CurDefaultQuery"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true,
+    "enableTempData" : true
+  }, {
+    "codeName" : "CurDefaultQueryExp",
+    "logicName" : "默认查询（项目导航）",
+    "name" : "CurDefaultQueryExp",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "CurDefaultQueryExp"
     } ],
     "enableBackend" : true,
     "enableFront" : true,

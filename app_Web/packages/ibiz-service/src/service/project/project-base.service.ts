@@ -77,6 +77,10 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         return this.condCache.get('curDefaultQuery');
     }
 
+    protected getCurDefaultQueryExpCond() {
+        return this.condCache.get('curDefaultQueryExp');
+    }
+
     protected getCurPlanProjectCond() {
         return this.condCache.get('curPlanProject');
     }
@@ -506,6 +510,17 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      */
     async FetchCurDefaultQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/projects/fetchcurdefaultquery`, _data);
+    }
+    /**
+     * FetchCurDefaultQueryExp
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProjectService
+     */
+    async FetchCurDefaultQueryExp(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/projects/fetchcurdefaultqueryexp`, _data);
     }
     /**
      * FetchCurPlanProject
