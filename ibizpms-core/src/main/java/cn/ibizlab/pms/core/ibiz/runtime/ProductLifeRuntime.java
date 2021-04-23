@@ -179,7 +179,8 @@ public class ProductLifeRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
                 return productlifeService.sysGet((String) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

@@ -173,7 +173,8 @@ public class ImMessagestatusRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
                 return immessagestatusService.sysGet((String) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

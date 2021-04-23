@@ -183,7 +183,8 @@ public class IbzReportRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 return ibzreportService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

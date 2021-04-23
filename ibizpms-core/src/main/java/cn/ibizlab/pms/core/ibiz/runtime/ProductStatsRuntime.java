@@ -184,7 +184,8 @@ public class ProductStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
                 return productstatsService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

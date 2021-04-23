@@ -320,7 +320,8 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 return taskService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

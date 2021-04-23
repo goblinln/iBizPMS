@@ -173,7 +173,8 @@ public class ExtensionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 return extensionService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

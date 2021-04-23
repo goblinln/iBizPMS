@@ -177,7 +177,8 @@ public class UserContactRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
                 return usercontactService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

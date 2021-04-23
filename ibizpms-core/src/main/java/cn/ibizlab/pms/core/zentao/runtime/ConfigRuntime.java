@@ -173,7 +173,8 @@ public class ConfigRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
                 return configService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

@@ -173,7 +173,8 @@ public class ImMessageRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 return immessageService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

@@ -176,7 +176,8 @@ public class IBZProSequenceRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
                 return ibzprosequenceService.sysGet((String) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

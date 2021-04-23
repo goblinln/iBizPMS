@@ -194,7 +194,8 @@ public class UserYearWorkStatsRuntime extends cn.ibizlab.pms.core.runtime.System
                 return useryearworkstatsService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

@@ -173,7 +173,8 @@ public class DynaDashboardRuntime extends cn.ibizlab.pms.core.runtime.SystemData
                 return dynadashboardService.sysGet((String) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

@@ -194,7 +194,8 @@ public class ActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
                 return actionService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

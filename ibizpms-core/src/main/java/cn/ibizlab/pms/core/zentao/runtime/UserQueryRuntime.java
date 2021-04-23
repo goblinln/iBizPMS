@@ -173,7 +173,8 @@ public class UserQueryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 return userqueryService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

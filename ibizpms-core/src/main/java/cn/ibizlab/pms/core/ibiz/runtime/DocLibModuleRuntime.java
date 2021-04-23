@@ -206,7 +206,8 @@ public class DocLibModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
                 return doclibmoduleService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

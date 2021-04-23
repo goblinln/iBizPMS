@@ -173,7 +173,8 @@ public class CompileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 return compileService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

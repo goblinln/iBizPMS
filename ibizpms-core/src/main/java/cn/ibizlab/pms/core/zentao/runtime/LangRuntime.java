@@ -173,7 +173,8 @@ public class LangRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 return langService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

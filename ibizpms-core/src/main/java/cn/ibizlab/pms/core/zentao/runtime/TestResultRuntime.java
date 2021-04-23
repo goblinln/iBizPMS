@@ -175,7 +175,8 @@ public class TestResultRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
                 return testresultService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

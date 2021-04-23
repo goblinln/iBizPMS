@@ -176,7 +176,8 @@ public class IbzproConfigRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
                 return ibzproconfigService.sysGet((String) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

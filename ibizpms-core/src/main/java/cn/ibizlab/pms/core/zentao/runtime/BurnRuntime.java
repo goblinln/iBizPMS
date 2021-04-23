@@ -178,7 +178,8 @@ public class BurnRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
                 return burnService.sysGet((String) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

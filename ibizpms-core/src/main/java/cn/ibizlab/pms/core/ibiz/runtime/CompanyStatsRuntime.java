@@ -175,7 +175,8 @@ public class CompanyStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
                 return companystatsService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

@@ -188,7 +188,8 @@ public class ModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
                 return moduleService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

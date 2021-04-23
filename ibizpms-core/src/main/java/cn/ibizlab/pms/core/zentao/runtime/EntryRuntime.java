@@ -173,7 +173,8 @@ public class EntryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
                 return entryService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

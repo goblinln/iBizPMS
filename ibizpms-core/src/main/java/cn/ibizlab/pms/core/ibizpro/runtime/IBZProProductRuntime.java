@@ -173,7 +173,8 @@ public class IBZProProductRuntime extends cn.ibizlab.pms.core.runtime.SystemData
                 return ibzproproductService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

@@ -275,13 +275,10 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                     .collect(Collectors.toList());
         }
 
-        List<UAADEAuthority> defaultAuthorities = getDefaultAuthorities().stream().filter(uaadeAuthority -> {
-            if (StringUtils.isNotBlank(uaadeAuthority.getBscope()) 
-                    && (DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action)))) {
-                return true;
-            }
-            return false;
-        }).collect(Collectors.toList());
+        List<UAADEAuthority> defaultAuthorities = getDefaultAuthorities().stream().filter(uaadeAuthority ->
+            StringUtils.isNotBlank(uaadeAuthority.getBscope())
+                    && (DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action)))
+        ).collect(Collectors.toList());
 
         if (authorities.size() == 0 && defaultAuthorities.size() == 0)
             return false;
@@ -471,7 +468,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      */
     protected Consumer<QueryWrapper> genDefaultConditions(QueryWrapperContext context, String action) {
         Consumer<QueryWrapper> authorityConditions = null;
-        List<UAADEAuthority> actionUAADEAuthority = getDefaultAuthorities().stream().filter(uaadeAuthority -> {
+        List<UAADEAuthority> defaultUAADEAuthority = getDefaultAuthorities().stream().filter(uaadeAuthority -> {
             if (StringUtils.isNotBlank(uaadeAuthority.getBscope()) 
                     && (DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action)))) {
                 return true;
@@ -479,9 +476,9 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             return false;
         }).collect(Collectors.toList());
 
-        if (actionUAADEAuthority.size() > 0) {
+        if (defaultUAADEAuthority.size() > 0) {
             authorityConditions = authorityCondition -> {
-                for (UAADEAuthority uaadeAuthority : actionUAADEAuthority) {
+                for (UAADEAuthority uaadeAuthority : defaultUAADEAuthority) {
                     if (DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))) {
                         Consumer<QueryWrapper> roleConditions = roleCondition -> {
                             roleCondition.apply(uaadeAuthority.getBscope());

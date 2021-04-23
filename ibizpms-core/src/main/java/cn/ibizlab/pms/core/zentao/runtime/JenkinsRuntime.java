@@ -173,7 +173,8 @@ public class JenkinsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 return jenkinsService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

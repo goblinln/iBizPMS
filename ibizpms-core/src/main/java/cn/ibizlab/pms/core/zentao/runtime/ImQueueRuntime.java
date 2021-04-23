@@ -173,7 +173,8 @@ public class ImQueueRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 return imqueueService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

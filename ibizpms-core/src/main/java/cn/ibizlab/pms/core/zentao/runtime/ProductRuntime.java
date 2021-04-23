@@ -220,7 +220,8 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 return productService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

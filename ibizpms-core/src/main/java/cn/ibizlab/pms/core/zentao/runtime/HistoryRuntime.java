@@ -173,7 +173,8 @@ public class HistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
                 return historyService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

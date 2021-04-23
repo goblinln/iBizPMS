@@ -173,7 +173,8 @@ public class UserViewRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
                 return userviewService.sysGet((String) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

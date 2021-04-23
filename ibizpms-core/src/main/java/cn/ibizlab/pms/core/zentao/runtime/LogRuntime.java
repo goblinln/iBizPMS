@@ -173,7 +173,8 @@ public class LogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
                 return logService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

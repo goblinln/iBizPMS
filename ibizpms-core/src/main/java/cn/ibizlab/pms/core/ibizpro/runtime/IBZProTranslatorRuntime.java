@@ -173,7 +173,8 @@ public class IBZProTranslatorRuntime extends cn.ibizlab.pms.core.runtime.SystemD
                 return ibzprotranslatorService.sysGet((String) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

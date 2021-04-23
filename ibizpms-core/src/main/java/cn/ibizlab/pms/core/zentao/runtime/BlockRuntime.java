@@ -173,7 +173,8 @@ public class BlockRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
                 return blockService.sysGet((Long) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }

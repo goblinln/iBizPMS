@@ -173,7 +173,8 @@ public class UserGroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
                 return usergroupService.sysGet((String) args[0]);
             }  else if (strActionName.equals(DEActions.SYSUPDATE)) {
                 
-            }         }
+            }             
+        }
         
         return null;
     }
