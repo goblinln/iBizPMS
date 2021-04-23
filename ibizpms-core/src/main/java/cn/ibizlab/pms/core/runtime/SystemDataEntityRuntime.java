@@ -18,7 +18,7 @@ import java.util.List;
 public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBase {
 
     @Override
-    protected void fillEntityFullInfo(IEntityBase entityBase, String strActionName, IPSDEAction iPSDEAction, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, ProceedingJoinPoint joinPoint) throws Throwable {
+    protected void fillEntityFullInfo(IEntityBase entityBase, String strActionName, IPSDEAction iPSDEAction, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, Object joinPoint) throws Throwable {
         Object objPickupValue = this.getFieldValue(entityBase, iPSDER1N.getPSPickupDEField());
         if (ObjectUtils.isEmpty(objPickupValue) || NumberUtils.toLong(String.valueOf(objPickupValue), 0L) == 0L)
             return;
