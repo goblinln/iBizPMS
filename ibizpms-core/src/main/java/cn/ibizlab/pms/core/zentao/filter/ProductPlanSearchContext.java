@@ -75,6 +75,14 @@ public class ProductPlanSearchContext extends QueryWrapperContext<ProductPlan> {
 	public void setN_parent_eq(Long n_parent_eq) {
         this.n_parent_eq = n_parent_eq;
     }
+	private Long n_parent_gtandeq;//[父计划]
+	public void setN_parent_gtandeq(Long n_parent_gtandeq) {
+        this.n_parent_gtandeq = n_parent_gtandeq;
+    }
+	private Long n_parent_ltandeq;//[父计划]
+	public void setN_parent_ltandeq(Long n_parent_ltandeq) {
+        this.n_parent_ltandeq = n_parent_ltandeq;
+    }
 	private Long n_product_eq;//[产品]
 	public void setN_product_eq(Long n_product_eq) {
         this.n_product_eq = n_product_eq;

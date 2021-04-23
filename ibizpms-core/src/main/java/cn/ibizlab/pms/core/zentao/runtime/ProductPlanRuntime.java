@@ -107,6 +107,8 @@ public class ProductPlanRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
             return productplanService.searchPlanCodeList(searchContext);    
         if (iPSDEDataSet.getName().equals("PlanTasks"))
             return productplanService.searchPlanTasks(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProductQuery"))
+            return productplanService.searchProductQuery(searchContext);    
         if (iPSDEDataSet.getName().equals("ProjectApp"))
             return productplanService.searchProjectApp(searchContext);    
         if (iPSDEDataSet.getName().equals("ProjectPlan"))
@@ -404,6 +406,9 @@ public class ProductPlanRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
         }
         else if (action.equals("searchPlanTasks")) {
             return aroundDataSet("PlanTasks", point);
+        }
+        else if (action.equals("searchProductQuery")) {
+            return aroundDataSet("ProductQuery", point);
         }
         else if (action.equals("searchProjectApp")) {
             return aroundDataSet("ProjectApp", point);

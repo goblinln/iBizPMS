@@ -78,6 +78,7 @@ public interface IProductPlanService extends IService<ProductPlan> {
     Page<ProductPlan> searchDefaultParent(ProductPlanSearchContext context);
     Page<ProductPlan> searchPlanCodeList(ProductPlanSearchContext context);
     Page<ProductPlan> searchPlanTasks(ProductPlanSearchContext context);
+    Page<ProductPlan> searchProductQuery(ProductPlanSearchContext context);
     Page<ProductPlan> searchProjectApp(ProductPlanSearchContext context);
     Page<ProductPlan> searchProjectPlan(ProductPlanSearchContext context);
     Page<ProductPlan> searchRootPlan(ProductPlanSearchContext context);

@@ -910,7 +910,7 @@ public class CaseDTO extends DTOBase implements Serializable {
      */
     @JsonProperty("ibzcasesteps")
     @JSONField(name = "ibzcasesteps")
-	private List<IBZCaseStepDTO> casestep ;
+	private List<IBZCaseStepDTO> casesteps ;
 
 }
 

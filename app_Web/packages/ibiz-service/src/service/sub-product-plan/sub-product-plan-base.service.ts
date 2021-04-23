@@ -125,6 +125,10 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
         return this.condCache.get('planTasks');
     }
 
+    protected getProductQueryCond() {
+        return this.condCache.get('productQuery');
+    }
+
     protected getProjectAppCond() {
         if (!this.condCache.has('projectApp')) {
             const strCond: any[] = ['AND', ['EQ', 'PRODUCT',{ type: 'WEBCONTEXT', value: 'product'}]];
@@ -708,6 +712,23 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
         }
         if (_context.productplan && true) {
             return this.http.post(`/productplans/${_context.productplan}/subproductplans/fetchplantasks`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
+     * FetchProductQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubProductPlanService
+     */
+    async FetchProductQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchproductquery`, _data);
+        }
+        if (_context.productplan && true) {
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/fetchproductquery`, _data);
         }
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }

@@ -635,7 +635,7 @@ public class Case extends EntityMP implements Serializable {
     @JsonIgnore
     @JSONField(serialize = false)
     @TableField(exist = false)
-    private List<cn.ibizlab.pms.core.zentao.domain.CaseStep> casestep;
+    private List<cn.ibizlab.pms.core.zentao.domain.CaseStep> casesteps;
 
 
     /**

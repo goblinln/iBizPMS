@@ -331,6 +331,20 @@
         "condType" : "CUSTOM",
         "customCond" : "t1.DELETED = '0'",
         "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "ProductQuery",
+    "logicName" : "产品默认查询",
+    "name" : "ProductQuery",
+    "customCode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
         "customCond" : "( t1.`PRODUCT` = ${srfwebcontext('product','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_PRODUCTPLAN\"}')} )",
@@ -470,6 +484,16 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "PlanTasks"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "ProductQuery",
+    "logicName" : "产品默认查询",
+    "name" : "ProductQuery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProductQuery"
     } ],
     "enableBackend" : true,
     "enableFront" : true
@@ -905,6 +929,10 @@
       "enableFront" : true
     } ],
     "codeName" : "Statuss",
+    "getComputePSDEFLogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEFLOGICS/ComputeStatuss.json"
+    },
     "dEFType" : 2,
     "dEMSFieldMode" : "STATE1",
     "dataType" : "TEXT",
@@ -1039,6 +1067,10 @@
       "enableFront" : true
     } ],
     "codeName" : "Delay",
+    "getComputePSDEFLogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEFLOGICS/ComputeDelay.json"
+    },
     "dEFType" : 2,
     "dataType" : "TEXT",
     "importOrder" : 1000,
@@ -1458,6 +1490,10 @@
       "enableFront" : true
     } ],
     "codeName" : "Isexpired",
+    "getComputePSDEFLogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEFLOGICS/ComputeIsexpired.json"
+    },
     "dEFType" : 2,
     "dataType" : "YESNO",
     "importOrder" : 1000,
@@ -1722,6 +1758,10 @@
       "enableFront" : true
     } ],
     "codeName" : "Future",
+    "getComputePSDEFLogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEFLOGICS/Computefuture.json"
+    },
     "dEFType" : 2,
     "dataType" : "SSCODELIST",
     "importOrder" : 1000,
@@ -2145,6 +2185,17 @@
     "enableBackend" : true,
     "enableFront" : false
   }, {
+    "codeName" : "ComputeDelay",
+    "defaultParamName" : "DEFAULT",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEFLOGICS/ComputeDelay.json",
+    "logicName" : "计算延期",
+    "logicSubType" : "DEFIELD",
+    "name" : "计算延期",
+    "scriptCode" : "var end = entity.get(\"end\");\nvar newdate = new Date();\nvar delay = \"\"; \nif(end === null || end === \"0000-00-00\" || end === \"1970-01-01\") {\n\tdelay = \"\"; \n}else {\n\tvar dateSpan;\n\tend = Date.parse(end);\n\tdateSpan = Math.abs(dateSpan);\n\tdateSpan = Math.floor(dateSpan / (24 * 3600 * 1000));\n\tdelay = dateSpan + \"天\";\n}\nreturn delay;",
+    "customCode" : true,
+    "enableBackend" : true,
+    "enableFront" : false
+  }, {
     "codeName" : "ComputeDuration",
     "defaultParamName" : "DEFAULT",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEFLOGICS/ComputeDuration.json",
@@ -2163,6 +2214,39 @@
     "logicSubType" : "DEFIELD",
     "name" : "计算结束时间显示内容",
     "scriptCode" : "var end = entity.get(\"end\");\nvar endstr = entity.get(\"end\");\nif(end === \"2030-01-01\") {\n        endstr = \"待定\";\n}\nreturn endstr;",
+    "customCode" : true,
+    "enableBackend" : true,
+    "enableFront" : false
+  }, {
+    "codeName" : "ComputeIsexpired",
+    "defaultParamName" : "DEFAULT",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEFLOGICS/ComputeIsexpired.json",
+    "logicName" : "计算是否过期",
+    "logicSubType" : "DEFIELD",
+    "name" : "计算是否过期",
+    "scriptCode" : "var end = entity.get(\"end\");\nvar newdate = new Date();\nvar isexpired = \"1\"; \nif(end !== null) {\n\tvar dateSpan;\n\tend = Date.parse(end);\n\tif(end > newdate) {\n\t\tisexpired = \"0\";\n\t}\n}\nreturn isexpired;",
+    "customCode" : true,
+    "enableBackend" : true,
+    "enableFront" : false
+  }, {
+    "codeName" : "ComputeStatuss",
+    "defaultParamName" : "DEFAULT",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEFLOGICS/ComputeStatuss.json",
+    "logicName" : "计算真实状态",
+    "logicSubType" : "DEFIELD",
+    "name" : "计算真实状态",
+    "scriptCode" : "var parent = entity.get(\"parent\");\nvar statuss = \"normal\";\nif(parent > 0){\n\tstatuss = \"chlid\";\n}else if(parent < 0){\n\tstatuss = \"parent\";\n}\nreturn statuss;",
+    "customCode" : true,
+    "enableBackend" : true,
+    "enableFront" : false
+  }, {
+    "codeName" : "Computefuture",
+    "defaultParamName" : "DEFAULT",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEFLOGICS/Computefuture.json",
+    "logicName" : "计算待定",
+    "logicSubType" : "DEFIELD",
+    "name" : "计算待定",
+    "scriptCode" : "var begin = entity.get(\"begin\");\nvar end = entity.get(\"end\");\nvar future = \"\";\nif(begin === \"2030-01-01\" || end === \"2030-01-01\") {\n        future = \"on\";\n}\nreturn future;",
     "customCode" : true,
     "enableBackend" : true,
     "enableFront" : false

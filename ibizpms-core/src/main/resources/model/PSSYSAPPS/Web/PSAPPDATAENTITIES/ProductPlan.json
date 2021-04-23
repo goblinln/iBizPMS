@@ -532,6 +532,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchProductQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProductQuery"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchProjectApp",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -1228,6 +1244,22 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchPlanTasks"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchProductQuery",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ProductQuery"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchProductQuery"
     },
     "builtinMethod" : false
   }, {

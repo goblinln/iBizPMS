@@ -25,6 +25,7 @@ public interface ProductPlanMapper extends BaseMapper<ProductPlan> {
     Page<ProductPlan> searchDefaultParent(IPage page, @Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
     Page<ProductPlan> searchPlanCodeList(IPage page, @Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
     Page<ProductPlan> searchPlanTasks(IPage page, @Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    Page<ProductPlan> searchProductQuery(IPage page, @Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
     Page<ProductPlan> searchProjectApp(IPage page, @Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
     Page<ProductPlan> searchProjectPlan(IPage page, @Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
     Page<ProductPlan> searchRootPlan(IPage page, @Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);

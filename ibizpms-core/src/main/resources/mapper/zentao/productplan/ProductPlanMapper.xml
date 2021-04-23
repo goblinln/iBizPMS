@@ -40,6 +40,12 @@
 		<if test="srf.n_parent_eq != null ">
 			<![CDATA[ AND  t1.`PARENT` = #{srf.n_parent_eq,jdbcType=BIGINT} ]]>
         </if>
+		<if test="srf.n_parent_gtandeq != null ">
+			<![CDATA[ AND  t1.`PARENT` >= #{srf.n_parent_gtandeq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="srf.n_parent_ltandeq != null ">
+			<![CDATA[ AND  t1.`PARENT` <= #{srf.n_parent_ltandeq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="srf.n_product_eq != null ">
 			<![CDATA[ AND  t1.`PRODUCT` = #{srf.n_product_eq,jdbcType=BIGINT} ]]>
         </if>
@@ -158,6 +164,13 @@
          )t1
      </select>
 
+    <!--数据集合[ProductQuery]-->
+	 <select id="searchProductQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext"  resultMap="ProductPlanResultMap">
+         select t1.* from (
+                <include refid="ProductQuery" />
+         )t1
+     </select>
+
     <!--数据集合[ProjectApp]-->
 	 <select id="searchProjectApp"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext"  resultMap="ProductPlanResultMap">
          select t1.* from (
@@ -253,6 +266,17 @@
 			</if>
 			<if test="true">
 			<![CDATA[ AND ( ( t1.`PARENT` <= 0 ) ) ]]>
+			</if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+
+    <!--数据查询[ProductQuery]-->
+    <sql id="ProductQuery" databaseId="mysql">
+		<![CDATA[ SELECT 	t1.`BEGIN`, 	'' AS `BEGINSTR`, 	t1.`BRANCH`, 	( 	( SELECT 	count( t.id )  FROM 	zt_bug t  WHERE 	t.deleted = '0'  	AND t.product = t1.product  	AND ( 	t.plan = t1.id  	OR ( 	t.plan IN ( SELECT t2.id FROM zt_productplan t2 WHERE t2.deleted = '0' AND t2.parent = t1.id )  	)  	)  	)  	) AS `BUGCNT`, 	t1.`CREATEBY`,  '' AS `DELAY`, 	t1.`DELETED`, 	t1.`DEPT`, 	'' AS `DURATION`, 	t1.`END`, 	'' AS `ENDSTR`, 	'' AS `FUTURE`, 	t1.`ID`, 	'' AS `ISEXPIRED`, 	t1.`ORG`, 	t1.`PARENT`, 	t1.`PRODUCT`, 	t1.`STATUS`, 	'' AS `STATUSS`, 	( 		( 		SELECT 			COUNT( t.id )  		FROM 			zt_story t  		WHERE 			t.deleted = '0'  			AND t.product = t1.product  			AND ( 				t.plan = t1.id  				OR ( 					t.plan IN ( SELECT t2.id FROM zt_productplan t2 WHERE t2.parent = t1.id AND t2.deleted = '0' )  				)  			)  		)  	) AS `STORYCNT`, 	t1.`TITLE` FROM 	`zt_productplan` t1 	LEFT JOIN `zt_productplan` t11 ON t1.`PARENT` = t11.`ID` ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0' ]]>
 			</if>
 			<include refid="searchMode" />
 		</trim>

@@ -96,7 +96,7 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
-        casestepService.saveByIbizcase(et.getId(), et.getCasestep());
+        casestepService.saveByIbizcase(et.getId(), et.getCasesteps());
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }
@@ -119,7 +119,7 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
-        casestepService.saveByIbizcase(et.getId(), et.getCasestep());
+        casestepService.saveByIbizcase(et.getId(), et.getCasesteps());
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }
@@ -165,7 +165,7 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-            et.setCasestep(casestepService.selectByIbizcase(key));
+            et.setCasesteps(casestepService.selectByIbizcase(key));
         }
         return et;
     }

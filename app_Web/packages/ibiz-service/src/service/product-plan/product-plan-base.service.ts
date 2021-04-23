@@ -123,6 +123,10 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         return this.condCache.get('planTasks');
     }
 
+    protected getProductQueryCond() {
+        return this.condCache.get('productQuery');
+    }
+
     protected getProjectAppCond() {
         if (!this.condCache.has('projectApp')) {
             const strCond: any[] = ['AND', ['EQ', 'PRODUCT',{ type: 'WEBCONTEXT', value: 'product'}]];
@@ -604,6 +608,20 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
             return this.http.post(`/products/${_context.product}/productplans/fetchplantasks`, _data);
         }
         return this.http.post(`/productplans/fetchplantasks`, _data);
+    }
+    /**
+     * FetchProductQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductPlanService
+     */
+    async FetchProductQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/productplans/fetchproductquery`, _data);
+        }
+        return this.http.post(`/productplans/fetchproductquery`, _data);
     }
     /**
      * FetchProjectApp

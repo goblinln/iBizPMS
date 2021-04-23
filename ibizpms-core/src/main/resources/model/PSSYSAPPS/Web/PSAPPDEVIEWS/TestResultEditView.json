@@ -1005,7 +1005,7 @@
               "enableUpdateDataRS" : false
             }, {
               "actionRSMode" : 1,
-              "codeName" : "CaseSteps",
+              "codeName" : "caseSteps",
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
@@ -1056,7 +1056,7 @@
               "enableUpdateDataRS" : false
             }, {
               "actionRSMode" : 1,
-              "codeName" : "CaseSteps",
+              "codeName" : "caseSteps",
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
@@ -1107,7 +1107,7 @@
               "enableUpdateDataRS" : false
             }, {
               "actionRSMode" : 1,
-              "codeName" : "CaseSteps",
+              "codeName" : "caseSteps",
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
@@ -1133,7 +1133,7 @@
               "enableUpdateDataRS" : false
             } ], [ {
               "actionRSMode" : 1,
-              "codeName" : "CaseSteps",
+              "codeName" : "caseSteps",
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,

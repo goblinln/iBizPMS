@@ -1183,6 +1183,7 @@
     },
     "masterOrder" : 100,
     "masterRS" : 13,
+    "minorCodeName" : "caseSteps",
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"

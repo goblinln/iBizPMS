@@ -968,7 +968,7 @@
               "enableUpdateDataRS" : false
             }, {
               "actionRSMode" : 1,
-              "codeName" : "IBZCaseSteps",
+              "codeName" : "caseSteps",
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
@@ -1019,7 +1019,7 @@
               "enableUpdateDataRS" : false
             }, {
               "actionRSMode" : 1,
-              "codeName" : "IBZCaseSteps",
+              "codeName" : "caseSteps",
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
@@ -1070,7 +1070,7 @@
               "enableUpdateDataRS" : false
             }, {
               "actionRSMode" : 1,
-              "codeName" : "IBZCaseSteps",
+              "codeName" : "caseSteps",
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,
@@ -1096,7 +1096,7 @@
               "enableUpdateDataRS" : false
             } ], [ {
               "actionRSMode" : 1,
-              "codeName" : "IBZCaseSteps",
+              "codeName" : "caseSteps",
               "dataRSMode" : 0,
               "getMajorPSAppDataEntity" : {
                 "modelref" : true,

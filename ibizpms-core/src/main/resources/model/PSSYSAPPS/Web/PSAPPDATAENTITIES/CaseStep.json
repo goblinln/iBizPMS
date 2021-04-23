@@ -938,7 +938,7 @@
   "logicName" : "用例步骤",
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
-    "codeName" : "CaseSteps",
+    "codeName" : "caseSteps",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,

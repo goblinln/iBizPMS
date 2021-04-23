@@ -619,7 +619,7 @@
         "name" : "fetch",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FetchDefaultParent"
+          "id" : "FetchProductQuery"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
