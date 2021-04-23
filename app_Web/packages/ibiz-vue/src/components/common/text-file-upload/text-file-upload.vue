@@ -474,10 +474,11 @@ export default class TextFileUpload extends Vue {
         let fileText = param[fileParam.id]?param[fileParam.id]:"暂无内容";
         let file = new File([fileText],fileName,{type: 'application/kswps'});
         let data = JSON.parse(this.data);
-        if (Object.is(data.srfuf, '0')) {
-          this.uploadFileList.push(file);
-          return;
-        }
+        //临时修改新建文件逻辑
+        // if (Object.is(data.srfuf, '0')) {
+        //   this.uploadFileList.push(file);
+        //   return;
+        // }
         // formData传参
         let formData = new FormData();
         formData.append('file', file);
@@ -678,25 +679,23 @@ export default class TextFileUpload extends Vue {
     public updateFileBatch(files: any,$event: any) {
         let _this: any = this;
         // 拼接url
-        if (Object.is($event.type,"save")) {
-            const updateUrl = '/net-disk/upload/' + this.getFolder() + '?ownertype=' + this.getOwnertype() + "&ownerid=" + this.getOwnerid($event.data);
-            // requestBody参数
-            let formData = new FormData();
-            if (files) {
-                files.forEach((item: any) => {
-                  formData.append('file', item);
-                });
-            }
-            // 发送post请求
-            this.$http.post(updateUrl, formData, {timeout: 2000}).then((response: any) => {
-                if (!response || response.status != 200) {
-                    Message.error(_this.$t('components.diskFileUpload.updateFailure') + '!');
-                    return;
-                }
-            }).catch((error: any) => {
-                Message.error(_this.$t('components.diskFileUpload.updateFailure') + ':' + error);
+        const updateUrl = '/net-disk/upload/' + this.getFolder() + '?ownertype=' + this.getOwnertype() + "&ownerid=" + this.getOwnerid($event.data);
+        // requestBody参数
+        let formData = new FormData();
+        if (files) {
+            files.forEach((item: any) => {
+              formData.append('file', item);
             });
         }
+        // 发送post请求
+        this.$http.post(updateUrl, formData, {timeout: 2000}).then((response: any) => {
+            if (!response || response.status != 200) {
+                Message.error(_this.$t('components.diskFileUpload.updateFailure') + '!');
+                return;
+            }
+        }).catch((error: any) => {
+            Message.error(_this.$t('components.diskFileUpload.updateFailure') + ':' + error);
+        });
         
     }
 }
