@@ -416,36 +416,6 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     }
 
     /**
-     * 系统内置权限
-     * @param context
-     * @param action
-     */
-    protected Consumer<QueryWrapper> genDefaultConditions(QueryWrapperContext context, String action) {
-        Consumer<QueryWrapper> authorityConditions = null;
-        List<UAADEAuthority> defaultUAADEAuthority = getDefaultAuthorities().stream().filter(uaadeAuthority -> {
-            if (StringUtils.isNotBlank(uaadeAuthority.getBscope()) 
-                    && (DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action)))) {
-                return true;
-            }
-            return false;
-        }).collect(Collectors.toList());
-
-        if (defaultUAADEAuthority.size() > 0) {
-            authorityConditions = authorityCondition -> {
-                for (UAADEAuthority uaadeAuthority : defaultUAADEAuthority) {
-                    if (DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))) {
-                        Consumer<QueryWrapper> roleConditions = roleCondition -> {
-                            roleCondition.apply(uaadeAuthority.getBscope());
-                        };
-                        authorityCondition.or(roleConditions);
-                    }
-                }
-            };
-        }
-        return authorityConditions;
-    }
-
-    /**
      * 加载运行时能力
      * @param uaadeAuthority
      * @param action
