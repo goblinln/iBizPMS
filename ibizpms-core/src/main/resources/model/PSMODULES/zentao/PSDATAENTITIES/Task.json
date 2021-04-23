@@ -521,10 +521,6 @@
         "condType" : "CUSTOM",
         "customCond" : "t1.DELETED = '0'",
         "name" : "查询条件"
-      }, {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.`parent` = #{srf.webcontext.parent}",
-        "name" : "查询条件"
       } ]
     } ],
     "codeName" : "ChildDefault",
