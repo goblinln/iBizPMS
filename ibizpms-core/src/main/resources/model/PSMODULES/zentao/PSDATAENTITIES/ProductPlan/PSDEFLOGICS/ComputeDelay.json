@@ -10,7 +10,7 @@
     "name" : "DELAY",
     "codeName" : "Delay"
   },
-  "scriptCode" : "var end = entity.get(\"end\");\nvar newdate = new Date();\nvar delay = \"\"; \nif(end === null || end === \"0000-00-00\" || end === \"1970-01-01\") {\n\tdelay = \"\"; \n}else {\n\tvar dateSpan;\n\tend = Date.parse(end);\n\tdateSpan = Math.abs(dateSpan);\n\tdateSpan = Math.floor(dateSpan / (24 * 3600 * 1000));\n\tdelay = dateSpan + \"天\";\n}\nreturn delay;",
+  "scriptCode" : "var end = entity.get(\"end\");\nvar newdate = new Date();\nvar delay = \"\"; \nif(end === null || end === \"0000-00-00\" || end === \"1970-01-01\") {\n\tdelay = \"\"; \n}else {\n\tvar dateSpan;\n\tend = Date.parse(end);\n\tdateSpan = Math.abs(end - newdate);\n\tdateSpan = Math.floor(dateSpan / (24 * 3600 * 1000));\n\tdelay = dateSpan + \"天\";\n}\nreturn delay;",
   "customCode" : true,
   "enableBackend" : true,
   "enableFront" : false
