@@ -28,7 +28,7 @@ export class PiePlugin extends AppDefaultChart {
         }
         let chartClassName = {
             'app-data-chart': true,
-            'app-chart-empty': this.items.length <= 0,
+            'app-chart-empty': !this.chartRenderOption,
             ...this.renderOptions.controlClassNames,
         };
         return (

@@ -10,7 +10,7 @@
     "name" : "DURATION",
     "codeName" : "Duration"
   },
-  "scriptCode" : "var deadline = entity.get(\"deadline\");\nvar eststarted = entity.get(\"eststarted\");\nvar duration = 0; \n\nif(deadline !== null || eststarted !== null) {\n\tvar dateSpan;\n        \tdeadline = Date.parse(deadline);\n        \teststarted = Date.parse(eststarted);\n        \tdateSpan = deadline - eststarted;\n        \tdateSpan = Math.abs(dateSpan);\n        \tduration = Math.floor(dateSpan / (24 * 3600 * 1000));\n}\nreturn duration;",
+  "scriptCode" : "var deadline = entity.get(\"deadline\");\nvar eststarted = entity.get(\"eststarted\");\nvar duration = 0; \n\nif(deadline !== null || eststarted !== null) {\n\tvar dateSpan;\n        deadline = Date.parse(deadline);\n        eststarted = Date.parse(eststarted);\n        dateSpan = deadline - eststarted;\n        dateSpan = Math.abs(dateSpan);\n        duration = Math.floor(dateSpan / (24 * 3600 * 1000));\n}\nreturn duration;",
   "customCode" : true,
   "enableBackend" : true,
   "enableFront" : false

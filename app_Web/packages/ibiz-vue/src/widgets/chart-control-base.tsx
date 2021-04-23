@@ -204,16 +204,16 @@ export class ChartControlBase extends MDControlBase {
         switch (tag) {
             case 'ECX':
                 if (userParam['ECX.label']) {
-                    opts['label'] = userParam['ECX.label'];
+                    opts['label'] = eval("("+userParam['ECX.label']+")");
                 }
                 if (userParam['ECX.labelLine']) {
-                    opts['labelLine'] = userParam['ECX.labelLine'];
+                    opts['labelLine'] = eval("("+userParam['ECX.labelLine']+")");
                 }
                 if (userParam['ECX.itemStyle']) {
-                    opts['itemStyle'] = userParam['ECX.itemStyle'];
+                    opts['itemStyle'] = eval("("+userParam['ECX.itemStyle']+")");
                 }
                 if (userParam['ECX.emphasis']) {
-                    opts['emphasis'] = userParam['ECX.emphasis'];
+                    opts['emphasis'] = eval("("+userParam['ECX.emphasis']+")");
                 }
                 for (const key in userParam) {
                     if (Object.prototype.hasOwnProperty.call(userParam, key)) {
@@ -553,12 +553,16 @@ export class ChartControlBase extends MDControlBase {
     public drawCharts() {
         if (!this.myChart) {
             let element: any = document.getElementById(this.chartId);
-            this.myChart = init(element);
+            if (element) {
+                this.myChart = init(element);
+            }
         }
         let _chartOption = this.handleChartOPtion();
         this.chartRenderOption = { ..._chartOption };
-        this.myChart.setOption(_chartOption);
-        this.myChart.resize();
+        if (this.myChart) {
+            this.myChart.setOption(_chartOption);
+            this.myChart.resize();
+        }
     }
 
     /**
