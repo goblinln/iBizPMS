@@ -5279,7 +5279,7 @@
     "logicName" : "计算延期",
     "logicSubType" : "DEFIELD",
     "name" : "计算延期",
-    "scriptCode" : "var Delay = '';\n\t\t\tvar deadline = entity.get(\"deadline\");\n\t\t\tdeadline = Date.parse(deadline);\n\t\t\tvar status = entity.get(\"status\");\n\t\t\tvar status = 'active';\n\t\t\tvar now = Date.parse(new Date());\n\t\t\tif (isNaN(deadline) || deadline == Date.parse('0000-00-00') || deadline == Date.parse('1970-01-01')) {\n\t\t\t\tDelay = '';\n\t\t\t} else if (status == 'active' && deadline < now) {\n\t\t\t\tvar ms = Math.abs(now - deadline);\n\t\t\t\tvar days = Math.floor(ms / (24 * 3600 * 1000));\n\t\t\t\tDelay = '' + '延期' + days + '天';\n\t\t\t}\n\t\t\treturn Delay;",
+    "scriptCode" : "var Delay = '';\n\t\t\tvar deadline = entity.get(\"deadline\");\n\t\t\tdeadline = Date.parse(deadline);\n\t\t\tvar status = entity.get(\"status\");\n\t\t\tvar now = Date.parse(new Date());\n\t\t\tif (isNaN(deadline) || deadline == Date.parse('0000-00-00') || deadline == Date.parse('1970-01-01')) {\n\t\t\t\tDelay = '';\n\t\t\t} else if (status == 'active' && deadline < now) {\n\t\t\t\tvar ms = Math.abs(now - deadline);\n\t\t\t\tvar days = Math.floor(ms / (24 * 3600 * 1000));\n\t\t\t\tDelay = '' + '延期' + days + '天';\n\t\t\t}\n\t\t\treturn Delay;",
     "customCode" : true,
     "enableBackend" : true,
     "enableFront" : false
