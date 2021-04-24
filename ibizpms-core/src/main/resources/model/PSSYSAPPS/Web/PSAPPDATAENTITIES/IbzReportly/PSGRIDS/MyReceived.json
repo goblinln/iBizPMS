@@ -13,8 +13,8 @@
   "logicName" : "我收到的汇报",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
-    "name" : "IBZ_REPORTLYID",
-    "codeName" : "IbzReportlyId"
+    "name" : "DATE",
+    "codeName" : "Date"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,

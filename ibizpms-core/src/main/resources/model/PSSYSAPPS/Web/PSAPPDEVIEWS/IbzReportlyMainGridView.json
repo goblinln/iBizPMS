@@ -246,8 +246,8 @@
     "logicName" : "主表格",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
-      "name" : "IBZ_REPORTLYID",
-      "codeName" : "IbzReportlyId"
+      "name" : "DATE",
+      "codeName" : "Date"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,

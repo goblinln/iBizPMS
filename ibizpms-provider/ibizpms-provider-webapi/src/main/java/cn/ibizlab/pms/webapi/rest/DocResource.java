@@ -170,7 +170,6 @@ public class DocResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("@DocRuntime.test(#doc_id,'READ')")
     @ApiOperation(value = "行为", tags = {"文档" },  notes = "行为")
 	@RequestMapping(method = RequestMethod.PUT, value = "/docs/{doc_id}/getdocstatus")
     public ResponseEntity<DocDTO> getDocStatus(@PathVariable("doc_id") Long doc_id, @RequestBody DocDTO docdto) {
@@ -180,7 +179,6 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @PreAuthorize("@DocRuntime.test('READ')")
     @ApiOperation(value = "批量处理[行为]", tags = {"文档" },  notes = "批量处理[行为]")
 	@RequestMapping(method = RequestMethod.PUT, value = "/docs/getdocstatusbatch")
     public ResponseEntity<Boolean> getDocStatusBatch(@RequestBody List<DocDTO> docdtos) {

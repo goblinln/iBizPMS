@@ -20,3 +20,4 @@ export { HttpStatusMessage } from './http-status-message/http-status-message';
 export { StudioActionUtil } from './studio-action/StudioActionUtil';
 export { DERuleCondEngine } from './de-rule-cond/de-rule-cond-engine';
 export { ModelTool } from './util/model-tool';
+export { StringUtil } from './string-util/string-util';

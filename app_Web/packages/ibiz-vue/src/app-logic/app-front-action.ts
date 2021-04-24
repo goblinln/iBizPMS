@@ -7,7 +7,7 @@ import {
     IPSNavigateContext,
     IPSNavigateParam,
 } from '@ibiz/dynamic-model-api';
-import { ModelTool, UIActionTool, Util } from 'ibiz-core';
+import { ModelTool, StringUtil, UIActionTool, Util } from 'ibiz-core';
 import { Subject } from 'rxjs';
 import { AppGlobalService } from '../app-service';
 
@@ -115,8 +115,8 @@ export class AppFrontAction {
             Object.assign(context, parentObj);
             // 打开HTML
             if (Object.is(this.actionModel.frontProcessType, 'OPENHTMLPAGE') && this.actionModel.htmlPageUrl) {
-                console.log(context, data);
-                window.open(this.actionModel.htmlPageUrl, '_blank');
+                const url = StringUtil.fillStrData(this.actionModel.htmlPageUrl, context, data);
+                window.open(url, '_blank');
                 return null;
                 // 打开顶级视图，打开顶级视图或向导（模态）
             } else if (
