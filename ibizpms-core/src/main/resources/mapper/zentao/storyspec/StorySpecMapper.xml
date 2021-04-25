@@ -52,7 +52,7 @@
 	 <select id="selectByStory" resultMap="StorySpecResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.STORY=#{id} ]]>
+			<![CDATA[ AND t1.`STORY`=#{id} ]]>
 		</trim>
      </select>
 

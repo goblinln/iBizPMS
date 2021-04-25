@@ -76,7 +76,9 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
+                        if(!ibzlibcasestepsRuntime.isRtmodel()){
         ibzlibcasestepsService.saveByParent(et.getId(), et.getIbzlibcasesteps());
+                        }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }
@@ -99,7 +101,9 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
+                        if(!ibzlibcasestepsRuntime.isRtmodel()){
         ibzlibcasestepsService.saveByParent(et.getId(), et.getIbzlibcasesteps());
+                        }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }

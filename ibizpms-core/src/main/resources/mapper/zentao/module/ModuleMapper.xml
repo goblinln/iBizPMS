@@ -74,7 +74,7 @@
 			<if test="true">
 			<![CDATA[ AND t1.DELETED = '0' ]]>
 			</if>
-			<![CDATA[ AND T1.BRANCH=#{id} ]]>
+			<![CDATA[ AND t1.`BRANCH`=#{id} ]]>
 		</trim>
 		 )t1
      </select>
@@ -86,7 +86,7 @@
 			<if test="true">
 			<![CDATA[ AND t1.DELETED = '0' ]]>
 			</if>
-			<![CDATA[ AND T1.PARENT=#{id} ]]>
+			<![CDATA[ AND t1.`PARENT`=#{id} ]]>
 		</trim>
 		 )t1
      </select>

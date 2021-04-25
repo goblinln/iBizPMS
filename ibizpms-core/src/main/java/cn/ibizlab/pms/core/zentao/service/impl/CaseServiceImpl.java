@@ -124,7 +124,9 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
+                        if(!caseRuntime.isRtmodel()){
         casestepService.saveByIbizcase(et.getId(), et.getCasesteps());
+                        }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }

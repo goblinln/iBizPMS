@@ -88,7 +88,7 @@
 			<if test="true">
 			<![CDATA[ AND t1.DELETED = '0' ]]>
 			</if>
-			<![CDATA[ AND T1.BRANCH=#{id} ]]>
+			<![CDATA[ AND t1.`BRANCH`=#{id} ]]>
 		</trim>
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_RELEASE_ZT_BUILD_BUILD] -->
@@ -98,7 +98,7 @@
 			<if test="true">
 			<![CDATA[ AND t1.DELETED = '0' ]]>
 			</if>
-			<![CDATA[ AND T1.BUILD=#{id} ]]>
+			<![CDATA[ AND t1.`BUILD`=#{id} ]]>
 		</trim>
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_RELEASE_ZT_PRODUCT_PRODUCT] -->
@@ -108,7 +108,7 @@
 			<if test="true">
 			<![CDATA[ AND t1.DELETED = '0' ]]>
 			</if>
-			<![CDATA[ AND T1.PRODUCT=#{id} ]]>
+			<![CDATA[ AND t1.`PRODUCT`=#{id} ]]>
 		</trim>
      </select>
 

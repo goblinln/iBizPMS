@@ -80,7 +80,9 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
+                        if(!testrunRuntime.isRtmodel()){
         testresultService.saveByRun(et.getId(), et.getTestresults());
+                        }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }
@@ -103,7 +105,9 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
+                        if(!testrunRuntime.isRtmodel()){
         testresultService.saveByRun(et.getId(), et.getTestresults());
+                        }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }

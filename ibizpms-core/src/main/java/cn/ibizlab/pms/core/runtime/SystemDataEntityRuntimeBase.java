@@ -1,5 +1,6 @@
 package cn.ibizlab.pms.core.runtime;
 
+import cn.ibizlab.pms.util.domain.EntityMP;
 import cn.ibizlab.pms.util.filter.QueryWrapperContext;
 import cn.ibizlab.pms.util.filter.ScopeUtils;
 
@@ -9,6 +10,7 @@ import java.util.*;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
+import cn.ibizlab.pms.util.helper.CaseFormatMethod;
 import cn.ibizlab.pms.util.helper.QueryContextHelper;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import cn.ibizlab.pms.util.security.UAADEAuthority;
@@ -19,6 +21,7 @@ import net.ibizsys.model.dataentity.IPSDataEntity;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSOne2ManyDataDEField;
 import net.ibizsys.model.dataentity.der.IPSDER1N;
+import net.ibizsys.model.dataentity.der.IPSDERBase;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQuery;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQueryCode;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQueryCodeCond;

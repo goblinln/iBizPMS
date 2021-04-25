@@ -51,7 +51,7 @@
 	 <select id="selectByPlantempletid" resultMap="IbzPlanTempletDetailResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.PLANTEMPLETID=#{ibzplantempletid} ]]>
+			<![CDATA[ AND t1.`PLANTEMPLETID`=#{ibzplantempletid} ]]>
 		</trim>
      </select>
 

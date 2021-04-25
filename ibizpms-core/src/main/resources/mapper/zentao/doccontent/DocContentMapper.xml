@@ -47,7 +47,7 @@
 	 <select id="selectByDoc" resultMap="DocContentResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.DOC=#{id} ]]>
+			<![CDATA[ AND t1.`DOC`=#{id} ]]>
 		</trim>
      </select>
 
