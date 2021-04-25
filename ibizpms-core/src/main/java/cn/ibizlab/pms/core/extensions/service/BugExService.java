@@ -1,8 +1,17 @@
 package cn.ibizlab.pms.core.extensions.service;
 
+import cn.ibizlab.pms.core.util.ibizzentao.common.ChangeUtil;
+import cn.ibizlab.pms.core.zentao.domain.Action;
+import cn.ibizlab.pms.core.zentao.domain.File;
+import cn.ibizlab.pms.core.zentao.domain.History;
+import cn.ibizlab.pms.core.zentao.service.*;
 import cn.ibizlab.pms.core.zentao.service.impl.BugServiceImpl;
+import cn.ibizlab.pms.util.dict.StaticDict;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import lombok.extern.slf4j.Slf4j;
 import cn.ibizlab.pms.core.zentao.domain.Bug;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Primary;
@@ -16,9 +25,102 @@ import java.util.*;
 @Service("BugExService")
 public class BugExService extends BugServiceImpl {
 
+    @Autowired
+    IStoryService iStoryService;
+
+    @Autowired
+    ICaseService iCaseService;
+
+    @Autowired
+    IActionService iActionService;
+
+    @Autowired
+    IFileService iFileService;
+
+
+    @Autowired
+    IHistoryService iHistoryService;
+
+    String[] diffAttrs = {"steps"};
+
     @Override
     protected Class currentModelClass() {
         return com.baomidou.mybatisplus.core.toolkit.ReflectionKit.getSuperClassGenericType(this.getClass().getSuperclass(), 1);
+    }
+
+    @Override
+    public boolean create(Bug et) {
+        et.setStoryversion(et.getStory() != null && et.getStory() != 0 ? iStoryService.get(et.getStory()).getVersion() : 1);
+        et.setCaseversion(et.getIbizcase() != null && et.getIbizcase() != 0 ? iCaseService.get(et.getIbizcase()).getVersion() : 1);
+        String files = et.getFiles();
+        String noticeusers = et.getNoticeusers();
+        if (!super.create(et)) {
+            return false;
+        }
+
+        // 更新file
+        File file = new File();
+        file.set("files",files);
+        file.setObjectid(et.getId());
+        file.setObjecttype(StaticDict.File__object_type.BUG.getValue());
+        file.setExtra("");
+        iFileService.updateObjectID(file);
+
+        // 创建日志
+        Action action = new Action();
+        action.setObjecttype(StaticDict.Action__object_type.BUG.getValue());
+        action.setObjectid(et.getId());
+        action.setAction(StaticDict.Action__type.OPENED.getValue());
+        action.setComment("");
+        action.setExtra("");
+        iActionService.createHis(action);
+
+        // 发送消息
+        return true;
+    }
+
+    @Override
+    public boolean update(Bug et) {
+        Bug old = new Bug();
+        CachedBeanCopier.copy(this.get(et.getId()), old);
+
+        String comment = StringUtils.isNotBlank(et.getComment()) ? et.getComment() : "";
+
+        String files = et.getFiles();
+        String noticeusers = et.getNoticeusers();
+        if(!super.update(et)) {
+            return false;
+        }
+        // 更新file
+        File file = new File();
+        file.set("files",files);
+        file.setObjectid(et.getId());
+        file.setObjecttype(StaticDict.File__object_type.BUG.getValue());
+        file.setExtra("");
+        iFileService.updateObjectID(file);
+
+        List<History> changes = ChangeUtil.diff(old, et,null,null,diffAttrs);
+        if (changes.size() > 0 || StringUtils.isNotBlank(comment)) {
+
+            String strActionText = StaticDict.Action__type.EDITED.getText();
+            String strAction = StaticDict.Action__type.EDITED.getValue();
+            if (changes.size() == 0) {
+                strAction = StaticDict.Action__type.COMMENTED.getValue();
+                strActionText = StaticDict.Action__type.COMMENTED.getText();
+            }
+            // actionHelper.sendToread(et.getId(), et.getTitle(), noticeusers, et.getAssignedto(), et.getMailto(), "Bug", StaticDict.Action__object_type.BUG.getValue(), "bugs", strActionText);
+            // 创建日志
+            Action action = new Action();
+            action.setObjecttype(StaticDict.Action__object_type.BUG.getValue());
+            action.setObjectid(et.getId());
+            action.setAction(strAction);
+            action.setComment(comment);
+            action.setExtra("");
+            action.setHistorys(changes);
+            iActionService.createHis(action);
+
+        }
+        return true;
     }
 
     /**

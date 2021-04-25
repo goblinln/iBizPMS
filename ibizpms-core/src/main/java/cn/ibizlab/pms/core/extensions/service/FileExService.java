@@ -1,6 +1,8 @@
 package cn.ibizlab.pms.core.extensions.service;
 
 import cn.ibizlab.pms.core.zentao.service.impl.FileServiceImpl;
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
 import cn.ibizlab.pms.core.zentao.domain.File;
 import org.springframework.stereotype.Service;
@@ -29,7 +31,19 @@ public class FileExService extends FileServiceImpl {
     @Override
     @Transactional
     public File updateObjectID(File et) {
-        return super.updateObjectID(et);
+        if(et.get("files") != null) {
+            JSONArray jsonArray = JSONArray.parseArray(et.get("files").toString());
+            List<File> list = new ArrayList<>();
+            for (int i = 0; i < jsonArray.size(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                File file = new File();
+                file.setId(jsonObject.getLongValue("id"));
+
+                list.add(file);
+            }
+            this.updateBatch(list);
+        }
+        return et);
     }
     /**
      * [UpdateObjectIDForPmsEe:保存附件] 行为扩展
