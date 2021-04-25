@@ -290,6 +290,21 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
 
     @Override
     @Transactional
+    public Action sendMarkDone(Action et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendMarkDoneBatch(List<Action> etList) {
+        for(Action et : etList) {
+            sendMarkDone(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public Action sendTodo(Action et) {
         //自定义代码
         return et;

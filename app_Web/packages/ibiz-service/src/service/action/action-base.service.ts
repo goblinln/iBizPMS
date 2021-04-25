@@ -242,6 +242,17 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         return this.http.post(`/actions/${_context.action}/managepmsee`, _data);
     }
     /**
+     * SendMarkDone
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ActionService
+     */
+    async SendMarkDone(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/actions/${_context.action}/sendmarkdone`, _data);
+    }
+    /**
      * SendTodo
      *
      * @param {*} [_context={}]

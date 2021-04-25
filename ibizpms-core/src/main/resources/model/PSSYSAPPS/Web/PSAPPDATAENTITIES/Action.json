@@ -195,6 +195,18 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "SendMarkDone",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/SendMarkDone.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SendMarkDone"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "SendTodo",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -673,6 +685,18 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "SendMarkDone",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/SendMarkDone.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SendMarkDone"
     },
     "builtinMethod" : false
   }, {

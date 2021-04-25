@@ -195,6 +195,9 @@ public class ActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
             else if (iPSDEAction.getName().equals("Save")) {
                 return actionService.save((Action) args[0]);
             }
+            else if (iPSDEAction.getName().equals("sendMarkDone")) {
+                return actionService.sendMarkDone((Action) args[0]);
+            }
             else if (iPSDEAction.getName().equals("sendTodo")) {
                 return actionService.sendTodo((Action) args[0]);
             }
@@ -325,6 +328,9 @@ public class ActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
         }
         else if (action.equals("save")) {
             return aroundAction("Save", point);
+        }
+        else if (action.equals("sendMarkDone")) {
+            return aroundAction("sendMarkDone", point);
         }
         else if (action.equals("sendTodo")) {
             return aroundAction("sendTodo", point);

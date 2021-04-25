@@ -46,6 +46,8 @@ public interface IActionService extends IService<Action> {
     boolean managePmsEeBatch(List<Action> etList);
     boolean save(Action et);
     void saveBatch(List<Action> list);
+    Action sendMarkDone(Action et);
+    boolean sendMarkDoneBatch(List<Action> etList);
     Action sendTodo(Action et);
     boolean sendTodoBatch(List<Action> etList);
     Action sendToread(Action et);

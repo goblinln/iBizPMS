@@ -213,6 +213,23 @@ public class ActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @ApiOperation(value = "已读", tags = {"系统日志" },  notes = "已读")
+	@RequestMapping(method = RequestMethod.POST, value = "/actions/{action_id}/sendmarkdone")
+    public ResponseEntity<ActionDTO> sendMarkDone(@PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
+        Action domain = actionMapping.toDomain(actiondto);
+        domain.setId(action_id);
+        domain = actionService.sendMarkDone(domain);
+        actiondto = actionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(actiondto);
+    }
+    @ApiOperation(value = "批量处理[已读]", tags = {"系统日志" },  notes = "批量处理[已读]")
+	@RequestMapping(method = RequestMethod.POST, value = "/actions/sendmarkdonebatch")
+    public ResponseEntity<Boolean> sendMarkDoneBatch(@RequestBody List<ActionDTO> actiondtos) {
+        List<Action> domains = actionMapping.toDomain(actiondtos);
+        boolean result = actionService.sendMarkDoneBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
     @ApiOperation(value = "发送待办", tags = {"系统日志" },  notes = "发送待办")
 	@RequestMapping(method = RequestMethod.POST, value = "/actions/{action_id}/sendtodo")
     public ResponseEntity<ActionDTO> sendTodo(@PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
