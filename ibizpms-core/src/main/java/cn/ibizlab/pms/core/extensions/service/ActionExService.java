@@ -2,15 +2,17 @@ package cn.ibizlab.pms.core.extensions.service;
 
 import cn.ibizlab.pms.core.util.ibizzentao.common.Fixer;
 import cn.ibizlab.pms.core.util.ibizzentao.common.ZTDateUtil;
-import cn.ibizlab.pms.core.zentao.domain.ProjectProduct;
+import cn.ibizlab.pms.core.zentao.domain.*;
 import cn.ibizlab.pms.core.zentao.filter.ProjectProductSearchContext;
+import cn.ibizlab.pms.core.zentao.service.ICaseService;
+import cn.ibizlab.pms.core.zentao.service.IFileService;
 import cn.ibizlab.pms.core.zentao.service.IProjectProductService;
+import cn.ibizlab.pms.core.zentao.service.IStoryService;
 import cn.ibizlab.pms.core.zentao.service.impl.ActionServiceImpl;
 import cn.ibizlab.pms.util.dict.StaticDict;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import lombok.extern.slf4j.Slf4j;
-import cn.ibizlab.pms.core.zentao.domain.Action;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -59,6 +61,15 @@ public class ActionExService extends ActionServiceImpl {
     @Autowired
     IProjectProductService projectProductService;
 
+    @Autowired
+    IFileService iFileService;
+
+    @Autowired
+    IStoryService iStoryService;
+
+    @Autowired
+    ICaseService iCaseService;
+
     @Override
     public boolean create(Action et) {
         et.setComment(et.getComment() == null ? "" : et.getComment());
@@ -66,6 +77,25 @@ public class ActionExService extends ActionServiceImpl {
         String files = et.getFiles();
         this.createHis(et);
         // 保存文件
+        // 更新file
+        File file = new File();
+        file.set("files",files);
+        String extra = "0";
+        if(files != null) {
+            if (StaticDict.Action__object_type.STORY.getValue().equals(et.getObjecttype())) {
+                Story story = iStoryService.get(et.getObjectid());
+                if (story != null && story.getVersion() != null) {
+                    extra = String.valueOf(story.getVersion());
+                }
+            } else if (StaticDict.Action__object_type.CASE.getValue().equals(et.getObjecttype())) {
+                Case case1 = iCaseService.get(et.getObjectid());
+                if (case1 != null && case1.getVersion() != null) {
+                    extra = String.valueOf(case1.getVersion());
+                }
+            }
+        }
+        file.setExtra(extra);
+        iFileService.updateObjectID(file);
         return true;
     }
 
