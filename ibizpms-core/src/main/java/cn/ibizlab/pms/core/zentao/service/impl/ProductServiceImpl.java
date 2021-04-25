@@ -157,32 +157,32 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         @Override
     @Transactional
     public boolean update(Product et) {
-  			if(!productRuntime.isRtmodel()){
+  		if(!productRuntime.isRtmodel()){
             fillParentData(et);
         }
-			if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ProductHelper.class).edit(et)) {
-			  return false;
-			}
-			CachedBeanCopier.copy(get(et.getId()), et);
-  			return true;
+		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ProductHelper.class).edit(et)) {
+			 return false;
+		}
+		CachedBeanCopier.copy(get(et.getId()), et);
+  		return true;
     }
 
     @Override
     public void updateBatch(List<Product> list) {
-		if(!productRuntime.isRtmodel()){
+	if(!productRuntime.isRtmodel()){
 		  list.forEach(item->fillParentData(item));
       }
-     updateBatchById(list, batchSize);
+     	updateBatchById(list, batchSize);
     }
 	
 	@Override
     @Transactional
     public boolean sysUpdate(Product et) {
 	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ProductHelper.class).edit(et)) {
-      return false;
-     }
-     CachedBeanCopier.copy(get(et.getId()), et);
-     return true;
+		return false;
+     	}
+     	CachedBeanCopier.copy(get(et.getId()), et);
+     	return true;
    }
     @Override
     @Transactional
