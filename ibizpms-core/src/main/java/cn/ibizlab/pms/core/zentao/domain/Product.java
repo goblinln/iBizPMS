@@ -495,6 +495,24 @@ public class Product extends EntityMP implements Serializable {
     @JsonProperty("line")
     @ApiModelProperty("产品线")
     private Long line;
+    /**
+     * 归属组织名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGNAME)
+    @TableField(value = "`orgname`")
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+    /**
+     * 归属部门名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
+    @TableField(value = "`mdeptname`")
+    @JSONField(name = "mdeptname")
+    @JsonProperty("mdeptname")
+    @ApiModelProperty("归属部门名")
+    private String mdeptname;
 
     /**
      * 产品线

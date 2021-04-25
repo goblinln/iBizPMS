@@ -13,13 +13,12 @@ import {
     IPSAppUIOpenDataLogic,
     IPSAppView,
     IPSAppViewLogic,
-    IPSAppViewNavContext,
-    IPSAppViewNavParam,
     IPSAppViewRef,
     IPSDETBGroupItem,
     IPSDEToolbar,
     IPSDEToolbarItem,
     IPSNavigateContext,
+    IPSNavigateParam,
 } from '@ibiz/dynamic-model-api';
 import { AppViewLogicService } from '../app-service';
 
@@ -435,18 +434,18 @@ export class MainViewBase extends ViewBase {
                 Object.assign(tempContext, args[0]);
             }
             if (
-                openViewRef?.getPSAppViewNavContexts() &&
-                (openViewRef?.getPSAppViewNavContexts() as IPSAppViewNavContext[])?.length > 0
+                openViewRef?.getPSNavigateContexts() &&
+                (openViewRef?.getPSNavigateContexts() as IPSNavigateContext[])?.length > 0
             ) {
-                const localContext = Util.formatNavParam(openViewRef.getPSAppViewNavContexts());
+                const localContext = Util.formatNavParam(openViewRef.getPSNavigateContexts());
                 let _context: any = Util.computedNavData(fullargs[0], this.context, this.viewparams, localContext);
                 Object.assign(tempContext, _context);
             }
             if (
-                openViewRef?.getPSAppViewNavParams() &&
-                (openViewRef.getPSAppViewNavParams() as IPSAppViewNavParam[])?.length > 0
+                openViewRef?.getPSNavigateParams() &&
+                (openViewRef.getPSNavigateParams() as IPSNavigateParam[])?.length > 0
             ) {
-                const localViewParam = Util.formatNavParam(openViewRef.getPSAppViewNavParams());
+                const localViewParam = Util.formatNavParam(openViewRef.getPSNavigateParams());
                 let _param: any = Util.computedNavData(fullargs[0], this.context, this.viewparams, localViewParam);
                 Object.assign(data, _param);
             }
@@ -841,18 +840,18 @@ export class MainViewBase extends ViewBase {
                     Object.assign(tempContext, args[0]);
                 }
                 if (
-                    newviewRef.getPSAppViewNavContexts() &&
-                    (newviewRef.getPSAppViewNavContexts() as IPSAppViewNavContext[]).length > 0
+                    newviewRef.getPSNavigateContexts() &&
+                    (newviewRef.getPSNavigateContexts() as IPSNavigateContext[]).length > 0
                 ) {
-                    const localContext = Util.formatNavParam(newviewRef.getPSAppViewNavContexts());
+                    const localContext = Util.formatNavParam(newviewRef.getPSNavigateContexts());
                     let _context: any = Util.computedNavData(fullargs[0], this.context, this.viewparams, localContext);
                     Object.assign(tempContext, _context);
                 }
                 if (
-                    newviewRef.getPSAppViewNavParams() &&
-                    (newviewRef.getPSAppViewNavParams() as IPSAppViewNavParam[]).length > 0
+                    newviewRef.getPSNavigateParams() &&
+                    (newviewRef.getPSNavigateParams() as IPSNavigateParam[]).length > 0
                 ) {
-                    const localViewParam = Util.formatNavParam(newviewRef.getPSAppViewNavParams());
+                    const localViewParam = Util.formatNavParam(newviewRef.getPSNavigateParams());
                     let _param: any = Util.computedNavData(fullargs[0], this.context, this.viewparams, localViewParam);
                     Object.assign(data, _param);
                 }

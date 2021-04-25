@@ -52,4 +52,6 @@ export default [
     'activestorycnt',
     'linename',
     'line',
+    'orgname',
+    'mdeptname',
 ];

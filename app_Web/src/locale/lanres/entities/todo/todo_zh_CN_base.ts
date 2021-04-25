@@ -42,6 +42,8 @@ function getLocaleResourceBase(){
 		'story': commonLogic.appcommonhandle("待办名称",null),
 		'ibizprivate': commonLogic.appcommonhandle("私人事务",null),
 		'config': commonLogic.appcommonhandle("config",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 	},
 		views: {
 			'closeview': {

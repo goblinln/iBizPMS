@@ -17,7 +17,7 @@
 
 
     <!--输出实体[ZT_ACTION]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_action-13-2">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_action-14-2">
         <createTable tableName="zt_action">
                 <column name="EXTRA" remarks="" type="TEXT(65535)">
                 </column>
@@ -77,7 +77,7 @@
 
 
     <!--输出实体[ZT_BRANCH]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_branch-3-4">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_branch-5-4">
         <createTable tableName="zt_branch">
                 <column name="NAME" remarks="" type="VARCHAR(255)">
                 </column>
@@ -103,7 +103,7 @@
 
 
     <!--输出实体[ZT_BUG]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_bug-41-5">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_bug-54-5">
         <createTable tableName="zt_bug">
                 <column name="SEVERITY" remarks="" type="INT">
                 </column>
@@ -230,7 +230,7 @@
 
 
     <!--输出实体[ZT_BUILD]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_build-9-7">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_build-13-7">
         <createTable tableName="zt_build">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -299,7 +299,7 @@
 
 
     <!--输出实体[ZT_CASE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_case-17-9">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_case-22-9">
         <createTable tableName="zt_case">
                 <column name="LASTEDITEDDATE" remarks="" type="DATETIME">
                 </column>
@@ -881,7 +881,7 @@
 
 
     <!--输出实体[ZT_FILE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_file-5-27">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_file-6-27">
         <createTable tableName="zt_file">
                 <column name="PATHNAME" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2993,7 +2993,7 @@
 
 
     <!--输出实体[ZT_TODO]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_todo-12-121">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_todo-18-121">
         <createTable tableName="zt_todo">
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_TODO_ID"/>
@@ -3047,6 +3047,10 @@
                 <column name="PRIVATE" remarks="" type="VARCHAR(4000)">
                 </column>
                 <column name="CONFIG" remarks="" type="VARCHAR(255)">
+                </column>
+                <column name="ORGNAME" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="DEPTNAME" remarks="" type="VARCHAR(100)">
                 </column>
         </createTable>
     </changeSet>

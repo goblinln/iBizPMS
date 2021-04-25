@@ -38,4 +38,6 @@ export default [
     'story',
     'ibizprivate',
     'config',
+    'orgname',
+    'deptname',
 ];

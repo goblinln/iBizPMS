@@ -182,4 +182,12 @@ export interface ITodo extends IEntityBase {
      * config
      */
     config?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
 }

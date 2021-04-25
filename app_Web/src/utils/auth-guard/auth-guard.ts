@@ -192,8 +192,12 @@ export class AuthGuard {
             } else {
                 url = `./assets/model${strPath}`;
             }
-            let result: any = await Http.getInstance().get(url);
-            return result.data ? result.data : null;
+            try {
+                const result: any = await Http.getInstance().get(url);
+                return result.data ? result.data : null;
+            } catch (error) {
+                return null;
+            }
         });
         AppServiceBase.getInstance().setAppModelDataObject(service.app);
         AppCenterService.getInstance(router.app.$store);

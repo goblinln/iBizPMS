@@ -166,7 +166,7 @@
         "getPSAppViewNavContexts" : [ {
           "key" : "PRODUCT",
           "name" : "PRODUCT",
-          "value" : "product",
+          "value" : "PRODUCTSTATS",
           "rawValue" : false
         } ],
         "getPSControls" : [ {

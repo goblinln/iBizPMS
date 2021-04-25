@@ -228,4 +228,12 @@ export interface IProduct extends IEntityBase {
      * 产品线
      */
     line?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
+     * 归属部门名
+     */
+    mdeptname?: any;
 }

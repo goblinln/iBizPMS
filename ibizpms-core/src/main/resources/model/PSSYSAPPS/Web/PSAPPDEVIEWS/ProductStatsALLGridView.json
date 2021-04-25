@@ -104,8 +104,8 @@
       "name" : "打开数据",
       "getOpenDataPSAppView" : {
         "getPSNavigateParams" : [ {
-          "key" : "product",
-          "name" : "product",
+          "key" : "productstats",
+          "name" : "productstats",
           "value" : "PRODUCTSTATS",
           "rawValue" : false
         } ],
@@ -117,8 +117,8 @@
       },
       "getPSAppUILogicRefViews" : [ {
         "getPSNavigateParams" : [ {
-          "key" : "product",
-          "name" : "product",
+          "key" : "productstats",
+          "name" : "productstats",
           "value" : "PRODUCTSTATS",
           "rawValue" : false
         } ],
@@ -142,8 +142,8 @@
   }, {
     "name" : "EDITDATA",
     "getPSNavigateParams" : [ {
-      "key" : "product",
-      "name" : "product",
+      "key" : "productstats",
+      "name" : "productstats",
       "value" : "PRODUCTSTATS",
       "rawValue" : false
     } ],

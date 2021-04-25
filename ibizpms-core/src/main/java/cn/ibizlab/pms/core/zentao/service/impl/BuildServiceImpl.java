@@ -77,72 +77,73 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
         return pages.getRecords();
     }
 
-    	@Override
+    @Override
     @Transactional
     public boolean create(Build et) {
-  		if(!buildRuntime.isRtmodel()){
-		  
+        if(!buildRuntime.isRtmodel()){
+            fillParentData(et);
         }
-		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.BuildHelper.class).create(et)) {
-			 return false;
-		}
-		
-  		return true;
+        if(!this.retBool(this.baseMapper.insert(et))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
-	@Transactional
+    @Transactional
     public void createBatch(List<Build> list) {
-		if(!buildRuntime.isRtmodel()){
-		  
+        if(!buildRuntime.isRtmodel()){
+            list.forEach(item->fillParentData(item));
         }
-		this.saveBatch(list, batchSize);
+        this.saveBatch(list, batchSize);
     }
-    	@Override
+
+    @Override
     @Transactional
     public boolean update(Build et) {
-  		if(!buildRuntime.isRtmodel()){
-		  
+        if(!buildRuntime.isRtmodel()){
+            fillParentData(et);
         }
-		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.BuildHelper.class).edit(et)) {
-			 return false;
-		}
-		
-  		return true;
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
-	@Transactional
+    @Transactional
     public void updateBatch(List<Build> list) {
-	  if(!buildRuntime.isRtmodel()){
-		
-	  }
-		updateBatchById(list, batchSize);
+        if(!buildRuntime.isRtmodel()){
+            list.forEach(item->fillParentData(item));
+        }
+        updateBatchById(list, batchSize);
     }
-	
-	@Override
+
+    @Override
     @Transactional
     public boolean sysUpdate(Build et) {
-	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.BuildHelper.class).edit(et)) {
-		return false;
-     }
-    
-     return true;
-   }
-        @Override
-    @Transactional
-    public boolean remove(Long key) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.BuildHelper.class).delete(key);
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
-    public void removeBatch(Collection<Long> idList){
-        if (idList != null && !idList.isEmpty()) {
-            for (Long id : idList) {
-                this.remove(id);
-            }
-        }
+    @Transactional
+    public boolean remove(Long key) {
+        boolean result = removeById(key);
+        return result ;
     }
+
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        removeByIds(idList);
+    }
+
     @Override
     @Transactional
     public Build get(Long key) {
@@ -181,19 +182,19 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
     public boolean checkKey(Build et) {
         return (!ObjectUtils.isEmpty(et.getId())) && (!Objects.isNull(this.getById(et.getId())));
     }
-       @Override
+    @Override
     @Transactional
     public Build linkStory(Build et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.BuildHelper.class).linkStory(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean linkStoryBatch (List<Build> etList) {
-		 for(Build et : etList) {
-		   linkStory(et);
-		 }
-	 	 return true;
+    public boolean linkStoryBatch(List<Build> etList) {
+        for(Build et : etList) {
+            linkStory(et);
+        }
+        return true;
     }
 
     @Override
