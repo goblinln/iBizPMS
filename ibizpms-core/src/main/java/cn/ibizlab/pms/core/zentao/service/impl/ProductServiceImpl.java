@@ -134,7 +134,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         return pages.getRecords();
     }
 
-        @Override
+       @Override
     @Transactional
     public boolean create(Product et) {
   		if(!productRuntime.isRtmodel()){
@@ -148,13 +148,14 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     }
 
     @Override
+	@Transactional
     public void createBatch(List<Product> list) {
 		if(!productRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
 		this.saveBatch(list, batchSize);
     }
-        @Override
+       @Override
     @Transactional
     public boolean update(Product et) {
   		if(!productRuntime.isRtmodel()){
@@ -168,9 +169,10 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     }
 
     @Override
+	@Transactional
     public void updateBatch(List<Product> list) {
 	  if(!productRuntime.isRtmodel()){
-		list.forEach(item->fillParentData(item))
+		list.forEach(item->fillParentData(item));
 	  }
 		updateBatchById(list, batchSize);
     }
