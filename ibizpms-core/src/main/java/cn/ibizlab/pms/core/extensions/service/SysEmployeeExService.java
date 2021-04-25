@@ -8,10 +8,7 @@ import cn.ibizlab.pms.core.zentao.domain.Team;
 import cn.ibizlab.pms.core.zentao.domain.User;
 import cn.ibizlab.pms.core.zentao.domain.UserContact;
 import cn.ibizlab.pms.core.zentao.filter.UserSearchContext;
-import cn.ibizlab.pms.core.zentao.service.IProjectProductService;
-import cn.ibizlab.pms.core.zentao.service.ITaskService;
-import cn.ibizlab.pms.core.zentao.service.IUserContactService;
-import cn.ibizlab.pms.core.zentao.service.IUserService;
+import cn.ibizlab.pms.core.zentao.service.*;
 import cn.ibizlab.pms.util.dict.StaticDict;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -49,6 +46,9 @@ public class SysEmployeeExService extends SysEmployeeServiceImpl {
 
     @Autowired
     IProjectProductService projectProductService;
+
+    @Autowired
+    ITeamService iTeamService;
 
     @Override
     public Page<SysEmployee> searchDefault(SysEmployeeSearchContext context) {
@@ -195,11 +195,11 @@ public class SysEmployeeExService extends SysEmployeeServiceImpl {
         }else {
             // 任务团队
             log.info("SysEmployeeExService：SysEmployeeExService-" + params.get("id").toString());
-//            if(teamHelper.list(new QueryWrapper<Team>().eq("type", StaticDict.Team__type.TASK.getValue()).gt("`left`", 0).notIn("account", AuthenticationUser.getAuthenticationUser().getLoginname()).eq("root", params.get("id").toString())).size() == 0) {
-//                context.setN_username_in(getAccounts(StaticDict.Team__type.PROJECT.getValue(), params.get("project")));
-//            }else {
+            if(iTeamService.list(new QueryWrapper<Team>().eq("type", StaticDict.Team__type.TASK.getValue()).gt("`left`", 0).notIn("account", AuthenticationUser.getAuthenticationUser().getLoginname()).eq("root", params.get("id").toString())).size() == 0) {
+                context.setN_username_in(getAccounts(StaticDict.Team__type.PROJECT.getValue(), params.get("project")));
+         }else {
                 context.setN_username_in(getAccounts(StaticDict.Team__type.TASK.getValue(), params.get("id")));
-//            }
+            }
         }
         return this.searchDefault(context);
     }
@@ -253,8 +253,7 @@ public class SysEmployeeExService extends SysEmployeeServiceImpl {
 
     public String getAccounts(String type, Object root) {
         String accounts = "";
-//        List<Team> list = teamHelper.list(new QueryWrapper<Team>().eq("type", type).eq("root", root));
-        List<Team> list = new ArrayList<>();
+        List<Team> list = iTeamService.list(new QueryWrapper<Team>().eq("type", type).eq("root", root));
         for(Team team : list) {
             if(!"".equals(accounts)) {
                 accounts += ";";
@@ -266,8 +265,7 @@ public class SysEmployeeExService extends SysEmployeeServiceImpl {
 
     public String getAccounts(String type, Object root, String account) {
         String accounts = "";
-//        List<Team> list = teamHelper.list(new QueryWrapper<Team>().eq("type", type).eq("root", root));
-        List<Team> list = new ArrayList<>();
+        List<Team> list = iTeamService.list(new QueryWrapper<Team>().eq("type", type).eq("root", root));
         for(Team team : list) {
             if(account == null || !team.getAccount().equals(account)) {
                 if (!"".equals(accounts)) {
