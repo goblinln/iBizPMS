@@ -87,51 +87,28 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
         this.saveBatch(list, batchSize);
     }
 
-    @Override
-    @Transactional
-    public boolean update(TaskEstimate et) {
-        if(!taskestimateRuntime.isRtmodel()){
-            fillParentData(et);
-        }
-        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
-    }
+    !!!!模版产生代码错误:!!!!模版产生代码错误:----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
 
-    @Override
-    @Transactional
-    public void updateBatch(List<TaskEstimate> list) {
-        if(!taskestimateRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        updateBatchById(list, batchSize);
-    }
-
-    @Override
-    @Transactional
-    public boolean sysUpdate(TaskEstimate et) {
-        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
-    }
-
-    @Override
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #if hasMinorPSDERs gt 0  [in template "TEMPLCODE_zh_CN" at line 6, column 19]
+----
+        @Override
     @Transactional
     public boolean remove(Long key) {
-        boolean result = removeById(key);
-        return result ;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskEstimateHelper.class).delete(key);
     }
 
     @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        removeByIds(idList);
+    public void removeBatch(Collection<Long> idList){
+        if (idList != null && !idList.isEmpty()) {
+            for (Long id : idList) {
+                this.remove(id);
+            }
+        }
     }
-
     @Override
     @Transactional
     public TaskEstimate get(Long key) {

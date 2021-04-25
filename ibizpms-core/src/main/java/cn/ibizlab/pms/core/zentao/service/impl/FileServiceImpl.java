@@ -107,19 +107,20 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
         return true;
     }
 
-    @Override
+        @Override
     @Transactional
     public boolean remove(Long key) {
-        boolean result = removeById(key);
-        return result ;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.FileHelper.class).delete(key);
     }
 
     @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        removeByIds(idList);
+    public void removeBatch(Collection<Long> idList){
+        if (idList != null && !idList.isEmpty()) {
+            for (Long id : idList) {
+                this.remove(id);
+            }
+        }
     }
-
     @Override
     @Transactional
     public File get(Long key) {
@@ -215,19 +216,19 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
         }
     }
 
-    @Override
+       @Override
     @Transactional
     public File updateObjectIDForPmsEe(File et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.FileHelper.class).updateObjectIDForPmsEe(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean updateObjectIDForPmsEeBatch(List<File> etList) {
-        for(File et : etList) {
-            updateObjectIDForPmsEe(et);
-        }
-        return true;
+    public boolean updateObjectIDForPmsEeBatch (List<File> etList) {
+		 for(File et : etList) {
+		   updateObjectIDForPmsEe(et);
+		 }
+	 	 return true;
     }
 
 

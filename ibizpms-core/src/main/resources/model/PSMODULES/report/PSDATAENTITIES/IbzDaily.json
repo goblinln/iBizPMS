@@ -21,6 +21,10 @@
     "logicName" : "Update",
     "name" : "Update",
     "orderValue" : 11,
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTUpdate"
+    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -70,6 +74,10 @@
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/CreateUserDaily.json",
     "logicName" : "定时生成用户日报",
     "name" : "CreateUserDaily",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "READ",
@@ -92,6 +100,10 @@
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/HaveRead.json",
     "logicName" : "已读",
     "name" : "HaveRead",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -107,6 +119,10 @@
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/PushUserDaily.json",
     "logicName" : "定时推送待阅提醒用户日报",
     "name" : "PushUserDaily",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",

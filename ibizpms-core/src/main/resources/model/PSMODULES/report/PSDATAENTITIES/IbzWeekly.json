@@ -7,6 +7,10 @@
     "logicName" : "Create",
     "name" : "Create",
     "orderValue" : 1,
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCreate"
+    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -17,6 +21,10 @@
     "logicName" : "Update",
     "name" : "Update",
     "orderValue" : 11,
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTUpdate"
+    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -27,6 +35,10 @@
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTRemove"
+    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -62,6 +74,10 @@
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateEveryWeekReport.json",
     "logicName" : "定时生成每周周报",
     "name" : "createEveryWeekReport",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "CREATE",
@@ -84,6 +100,10 @@
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/HaveRead.json",
     "logicName" : "已读",
     "name" : "haveRead",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -99,6 +119,10 @@
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/PushUserWeekly.json",
     "logicName" : "定时推送待阅提醒用户周报提交",
     "name" : "pushUserWeekly",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -115,6 +139,10 @@
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Submit.json",
     "logicName" : "提交",
     "name" : "submit",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   } ],
   "getAllPSDEDataQueries" : [ {

@@ -38,6 +38,10 @@
     "logicName" : "Update",
     "name" : "Update",
     "orderValue" : 11,
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTUpdate"
+    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -70,6 +74,10 @@
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTRemove"
+    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {

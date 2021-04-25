@@ -62,53 +62,22 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
         return pages.getRecords();
     }
 
-    	@Override
-    @Transactional
-    public boolean create(IbzDaily et) {
-  		if(!ibzdailyRuntime.isRtmodel()){
-           fillParentData(et);
-        }
-		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzDailyHelper.class).create(et)) {
-			 return false;
-		}
-		CachedBeanCopier.copy(get(et.getId()), et);
-  		return true;
-    }
+    !!!!模版产生代码错误:!!!!模版产生代码错误:----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
 
-    @Override
-	@Transactional
-    public void createBatch(List<IbzDaily> list) {
-		if(!ibzdailyRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-		this.saveBatch(list, batchSize);
-    }
-    @Override
-    @Transactional
-    public boolean update(IbzDaily et) {
-        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibz_dailyid", et.getIbzdailyid()))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getIbzdailyid()), et);
-        return true;
-    }
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #if hasMinorPSDERs gt 0  [in template "TEMPLCODE_zh_CN" at line 6, column 19]
+----
+    !!!!模版产生代码错误:!!!!模版产生代码错误:----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
 
-    @Override
-    @Transactional
-    public void updateBatch(List<IbzDaily> list) {
-        updateBatchById(list, batchSize);
-    }
-
-    @Override
-    @Transactional
-    public boolean sysUpdate(IbzDaily et) {
-        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibz_dailyid", et.getIbzdailyid()))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getIbzdailyid()), et);
-        return true;
-    }
-
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #if hasMinorPSDERs gt 0  [in template "TEMPLCODE_zh_CN" at line 6, column 19]
+----
         @Override
     @Transactional
     public boolean remove(Long key) {
@@ -158,19 +127,19 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
     public boolean checkKey(IbzDaily et) {
         return (!ObjectUtils.isEmpty(et.getIbzdailyid())) && (!Objects.isNull(this.getById(et.getIbzdailyid())));
     }
-    @Override
+       @Override
     @Transactional
     public IbzDaily createUserDaily(IbzDaily et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzDailyHelper.class).createUserDaily(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean createUserDailyBatch(List<IbzDaily> etList) {
-        for(IbzDaily et : etList) {
-            createUserDaily(et);
-        }
-        return true;
+    public boolean createUserDailyBatch (List<IbzDaily> etList) {
+		 for(IbzDaily et : etList) {
+		   createUserDaily(et);
+		 }
+	 	 return true;
     }
 
     @Override
@@ -203,19 +172,19 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
         return true;
     }
 
-    @Override
+       @Override
     @Transactional
     public IbzDaily haveRead(IbzDaily et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzDailyHelper.class).haveRead(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean haveReadBatch(List<IbzDaily> etList) {
-        for(IbzDaily et : etList) {
-            haveRead(et);
-        }
-        return true;
+    public boolean haveReadBatch (List<IbzDaily> etList) {
+		 for(IbzDaily et : etList) {
+		   haveRead(et);
+		 }
+	 	 return true;
     }
 
     @Override
@@ -233,19 +202,19 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
         return true;
     }
 
-    @Override
+       @Override
     @Transactional
     public IbzDaily pushUserDaily(IbzDaily et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzDailyHelper.class).pushUserDaily(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean pushUserDailyBatch(List<IbzDaily> etList) {
-        for(IbzDaily et : etList) {
-            pushUserDaily(et);
-        }
-        return true;
+    public boolean pushUserDailyBatch (List<IbzDaily> etList) {
+		 for(IbzDaily et : etList) {
+		   pushUserDaily(et);
+		 }
+	 	 return true;
     }
 
     @Override

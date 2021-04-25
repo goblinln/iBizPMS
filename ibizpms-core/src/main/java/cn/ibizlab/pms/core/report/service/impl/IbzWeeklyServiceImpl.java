@@ -62,61 +62,36 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
         return pages.getRecords();
     }
 
-    @Override
-    @Transactional
-    public boolean create(IbzWeekly et) {
-        if(!this.retBool(this.baseMapper.insert(et))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getIbzweeklyid()), et);
-        return true;
-    }
+    !!!!模版产生代码错误:!!!!模版产生代码错误:----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
 
-    @Override
-    @Transactional
-    public void createBatch(List<IbzWeekly> list) {
-        this.saveBatch(list, batchSize);
-    }
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #if hasMinorPSDERs gt 0  [in template "TEMPLCODE_zh_CN" at line 6, column 19]
+----
+    !!!!模版产生代码错误:!!!!模版产生代码错误:----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
 
-    @Override
-    @Transactional
-    public boolean update(IbzWeekly et) {
-        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibz_weeklyid", et.getIbzweeklyid()))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getIbzweeklyid()), et);
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void updateBatch(List<IbzWeekly> list) {
-        updateBatchById(list, batchSize);
-    }
-
-    @Override
-    @Transactional
-    public boolean sysUpdate(IbzWeekly et) {
-        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibz_weeklyid", et.getIbzweeklyid()))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getIbzweeklyid()), et);
-        return true;
-    }
-
-    @Override
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #if hasMinorPSDERs gt 0  [in template "TEMPLCODE_zh_CN" at line 6, column 19]
+----
+        @Override
     @Transactional
     public boolean remove(Long key) {
-        boolean result = removeById(key);
-        return result ;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzWeeklyHelper.class).delete(key);
     }
 
     @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        removeByIds(idList);
+    public void removeBatch(Collection<Long> idList){
+        if (idList != null && !idList.isEmpty()) {
+            for (Long id : idList) {
+                this.remove(id);
+            }
+        }
     }
-
     @Override
     @Transactional
     public IbzWeekly get(Long key) {
@@ -152,19 +127,19 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
     public boolean checkKey(IbzWeekly et) {
         return (!ObjectUtils.isEmpty(et.getIbzweeklyid())) && (!Objects.isNull(this.getById(et.getIbzweeklyid())));
     }
-    @Override
+       @Override
     @Transactional
     public IbzWeekly createEveryWeekReport(IbzWeekly et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzWeeklyHelper.class).createEveryWeekReport(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean createEveryWeekReportBatch(List<IbzWeekly> etList) {
-        for(IbzWeekly et : etList) {
-            createEveryWeekReport(et);
-        }
-        return true;
+    public boolean createEveryWeekReportBatch (List<IbzWeekly> etList) {
+		 for(IbzWeekly et : etList) {
+		   createEveryWeekReport(et);
+		 }
+	 	 return true;
     }
 
     @Override
@@ -197,19 +172,19 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
         return true;
     }
 
-    @Override
+       @Override
     @Transactional
     public IbzWeekly haveRead(IbzWeekly et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzWeeklyHelper.class).haveRead(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean haveReadBatch(List<IbzWeekly> etList) {
-        for(IbzWeekly et : etList) {
-            haveRead(et);
-        }
-        return true;
+    public boolean haveReadBatch (List<IbzWeekly> etList) {
+		 for(IbzWeekly et : etList) {
+		   haveRead(et);
+		 }
+	 	 return true;
     }
 
     @Override
@@ -227,19 +202,19 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
         return true;
     }
 
-    @Override
+       @Override
     @Transactional
     public IbzWeekly pushUserWeekly(IbzWeekly et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzWeeklyHelper.class).pushUserWeekly(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean pushUserWeeklyBatch(List<IbzWeekly> etList) {
-        for(IbzWeekly et : etList) {
-            pushUserWeekly(et);
-        }
-        return true;
+    public boolean pushUserWeeklyBatch (List<IbzWeekly> etList) {
+		 for(IbzWeekly et : etList) {
+		   pushUserWeekly(et);
+		 }
+	 	 return true;
     }
 
     @Override
@@ -302,19 +277,19 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
         }
     }
 
-    @Override
+       @Override
     @Transactional
     public IbzWeekly submit(IbzWeekly et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzWeeklyHelper.class).submit(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean submitBatch(List<IbzWeekly> etList) {
-        for(IbzWeekly et : etList) {
-            submit(et);
-        }
-        return true;
+    public boolean submitBatch (List<IbzWeekly> etList) {
+		 for(IbzWeekly et : etList) {
+		   submit(et);
+		 }
+	 	 return true;
     }
 
 

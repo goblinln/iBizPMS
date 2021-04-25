@@ -62,58 +62,22 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
         return pages.getRecords();
     }
 
-    	@Override
-    @Transactional
-    public boolean create(IbzMonthly et) {
-  		if(!ibzmonthlyRuntime.isRtmodel()){
-           fillParentData(et);
-        }
-		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzMonthlyHelper.class).create(et)) {
-			 return false;
-		}
-		CachedBeanCopier.copy(get(et.getId()), et);
-  		return true;
-    }
+    !!!!模版产生代码错误:!!!!模版产生代码错误:----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
 
-    @Override
-	@Transactional
-    public void createBatch(List<IbzMonthly> list) {
-		if(!ibzmonthlyRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-		this.saveBatch(list, batchSize);
-    }
-    	@Override
-    @Transactional
-    public boolean update(IbzMonthly et) {
-  		if(!ibzmonthlyRuntime.isRtmodel()){
-            fillParentData(et);
-        }
-		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzMonthlyHelper.class).edit(et)) {
-			 return false;
-		}
-		CachedBeanCopier.copy(get(et.getId()), et);
-  		return true;
-    }
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #if hasMinorPSDERs gt 0  [in template "TEMPLCODE_zh_CN" at line 6, column 19]
+----
+    !!!!模版产生代码错误:!!!!模版产生代码错误:----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
 
-    @Override
-	@Transactional
-    public void updateBatch(List<IbzMonthly> list) {
-	  if(!ibzmonthlyRuntime.isRtmodel()){
-		list.forEach(item->fillParentData(item));
-	  }
-		updateBatchById(list, batchSize);
-    }
-	
-	@Override
-    @Transactional
-    public boolean sysUpdate(IbzMonthly et) {
-	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzMonthlyHelper.class).edit(et)) {
-		return false;
-     }
-     CachedBeanCopier.copy(get(et.getId()), et);
-     return true;
-   }
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #if hasMinorPSDERs gt 0  [in template "TEMPLCODE_zh_CN" at line 6, column 19]
+----
         @Override
     @Transactional
     public boolean remove(Long key) {

@@ -94,27 +94,14 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         return pages.getRecords();
     }
 
-    	@Override
-    @Transactional
-    public boolean create(Case et) {
-  		if(!caseRuntime.isRtmodel()){
-           fillParentData(et);
-        }
-		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.CaseHelper.class).create(et)) {
-			 return false;
-		}
-		CachedBeanCopier.copy(get(et.getId()), et);
-  		return true;
-    }
+    !!!!模版产生代码错误:!!!!模版产生代码错误:----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
 
-    @Override
-	@Transactional
-    public void createBatch(List<Case> list) {
-		if(!caseRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-		this.saveBatch(list, batchSize);
-    }
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #if hasMinorPSDERs gt 0  [in template "TEMPLCODE_zh_CN" at line 6, column 19]
+----
     @Override
     @Transactional
     public boolean update(Case et) {

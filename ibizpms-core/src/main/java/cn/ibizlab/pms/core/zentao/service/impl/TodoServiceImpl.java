@@ -62,61 +62,36 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
         return pages.getRecords();
     }
 
-    @Override
-    @Transactional
-    public boolean create(Todo et) {
-        if(!this.retBool(this.baseMapper.insert(et))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
-    }
+    !!!!模版产生代码错误:!!!!模版产生代码错误:----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
 
-    @Override
-    @Transactional
-    public void createBatch(List<Todo> list) {
-        this.saveBatch(list, batchSize);
-    }
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #if hasMinorPSDERs gt 0  [in template "TEMPLCODE_zh_CN" at line 6, column 19]
+----
+    !!!!模版产生代码错误:!!!!模版产生代码错误:----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
 
-    @Override
-    @Transactional
-    public boolean update(Todo et) {
-        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
-    }
-
-    @Override
-    @Transactional
-    public void updateBatch(List<Todo> list) {
-        updateBatchById(list, batchSize);
-    }
-
-    @Override
-    @Transactional
-    public boolean sysUpdate(Todo et) {
-        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
-    }
-
-    @Override
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: #if hasMinorPSDERs gt 0  [in template "TEMPLCODE_zh_CN" at line 6, column 19]
+----
+        @Override
     @Transactional
     public boolean remove(Long key) {
-        boolean result = removeById(key);
-        return result ;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TodoHelper.class).delete(key);
     }
 
     @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        removeByIds(idList);
+    public void removeBatch(Collection<Long> idList){
+        if (idList != null && !idList.isEmpty()) {
+            for (Long id : idList) {
+                this.remove(id);
+            }
+        }
     }
-
     @Override
     @Transactional
     public Todo get(Long key) {
@@ -148,53 +123,53 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
         return et;
     }
 
-    @Override
+       @Override
     @Transactional
     public Todo activate(Todo et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TodoHelper.class).activate(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean activateBatch(List<Todo> etList) {
-        for(Todo et : etList) {
-            activate(et);
-        }
-        return true;
+    public boolean activateBatch (List<Todo> etList) {
+		 for(Todo et : etList) {
+		   activate(et);
+		 }
+	 	 return true;
     }
 
-    @Override
+       @Override
     @Transactional
     public Todo assignTo(Todo et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TodoHelper.class).assignTo(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean assignToBatch(List<Todo> etList) {
-        for(Todo et : etList) {
-            assignTo(et);
-        }
-        return true;
+    public boolean assignToBatch (List<Todo> etList) {
+		 for(Todo et : etList) {
+		   assignTo(et);
+		 }
+	 	 return true;
     }
 
     @Override
     public boolean checkKey(Todo et) {
         return (!ObjectUtils.isEmpty(et.getId())) && (!Objects.isNull(this.getById(et.getId())));
     }
-    @Override
+       @Override
     @Transactional
     public Todo close(Todo et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TodoHelper.class).close(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean closeBatch(List<Todo> etList) {
-        for(Todo et : etList) {
-            close(et);
-        }
-        return true;
+    public boolean closeBatch (List<Todo> etList) {
+		 for(Todo et : etList) {
+		   close(et);
+		 }
+	 	 return true;
     }
 
     @Override
@@ -212,19 +187,19 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
         return true;
     }
 
-    @Override
+       @Override
     @Transactional
     public Todo finish(Todo et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TodoHelper.class).finish(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean finishBatch(List<Todo> etList) {
-        for(Todo et : etList) {
-            finish(et);
-        }
-        return true;
+    public boolean finishBatch (List<Todo> etList) {
+		 for(Todo et : etList) {
+		   finish(et);
+		 }
+	 	 return true;
     }
 
     @Override
