@@ -93,7 +93,7 @@ Tip: If the failing expression is known to be legally refer to something that's 
 
 ----
 FTL stack trace ("~" means nesting-related):
-	- Failed at: #if hasMinorPSDERs gt 0  [in template "TEMPLCODE_zh_CN" at line 6, column 19]
+	- Failed at: ${srfr7templcaseformat(de.getKeyPSDEF...  [in template "TEMPLCODE_zh_CN" at line 11, column 49]
 ----
         @Override
     @Transactional
