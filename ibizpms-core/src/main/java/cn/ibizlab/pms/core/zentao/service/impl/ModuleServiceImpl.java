@@ -104,51 +104,51 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
         this.saveBatch(list, batchSize);
     }
 
-    @Override
+    	@Override
     @Transactional
     public boolean update(Module et) {
-        if(!moduleRuntime.isRtmodel()){
+  		if(!moduleRuntime.isRtmodel()){
             fillParentData(et);
         }
-        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
+		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ModuleHelper.class).edit(et)) {
+			 return false;
+		}
+		CachedBeanCopier.copy(get(et.getId()), et);
+  		return true;
     }
 
     @Override
-    @Transactional
+	@Transactional
     public void updateBatch(List<Module> list) {
-        if(!moduleRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        updateBatchById(list, batchSize);
+	  if(!moduleRuntime.isRtmodel()){
+		list.forEach(item->fillParentData(item));
+	  }
+		updateBatchById(list, batchSize);
     }
-
-    @Override
+	
+	@Override
     @Transactional
     public boolean sysUpdate(Module et) {
-        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
-    }
-
-    @Override
+	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ModuleHelper.class).edit(et)) {
+		return false;
+     }
+     CachedBeanCopier.copy(get(et.getId()), et);
+     return true;
+   }
+        @Override
     @Transactional
     public boolean remove(Long key) {
-        boolean result = removeById(key);
-        return result ;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ModuleHelper.class).delete(key);
     }
 
     @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        removeByIds(idList);
+    public void removeBatch(Collection<Long> idList){
+        if (idList != null && !idList.isEmpty()) {
+            for (Long id : idList) {
+                this.remove(id);
+            }
+        }
     }
-
     @Override
     @Transactional
     public Module get(Long key) {
@@ -187,19 +187,19 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
     public boolean checkKey(Module et) {
         return (!ObjectUtils.isEmpty(et.getId())) && (!Objects.isNull(this.getById(et.getId())));
     }
-    @Override
+       @Override
     @Transactional
     public Module fix(Module et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ModuleHelper.class).fix(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean fixBatch(List<Module> etList) {
-        for(Module et : etList) {
-            fix(et);
-        }
-        return true;
+    public boolean fixBatch (List<Module> etList) {
+		 for(Module et : etList) {
+		   fix(et);
+		 }
+	 	 return true;
     }
 
     @Override

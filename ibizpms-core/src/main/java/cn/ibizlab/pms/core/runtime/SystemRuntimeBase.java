@@ -70,7 +70,6 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
 
     @Override
     public void onInit() throws Exception {
-        List<IPSSysUserRole> userRoles = this.getPSSystem().getAllPSSysUserRoles();
         IPSSystem system = this.getPSSystem();
         List<IPSSysUserRole> userRoles = system.getAllPSSysUserRoles();
         if (userRoles != null) {

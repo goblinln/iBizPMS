@@ -7,6 +7,10 @@
     "logicName" : "Create",
     "name" : "Create",
     "orderValue" : 1,
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCreate"
+    },
     "userCat" : "CAT1",
     "userTag4" : "create",
     "builtinAction" : true
@@ -409,6 +413,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Restart.json",
     "logicName" : "继续",
     "name" : "Restart",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",

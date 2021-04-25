@@ -62,22 +62,27 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
         return pages.getRecords();
     }
 
-    @Override
+    	@Override
     @Transactional
     public boolean create(IbzDaily et) {
-        if(!this.retBool(this.baseMapper.insert(et))) {
-            return false;
+  		if(!ibzdailyRuntime.isRtmodel()){
+           fillParentData(et);
         }
-        CachedBeanCopier.copy(get(et.getIbzdailyid()), et);
-        return true;
+		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzDailyHelper.class).create(et)) {
+			 return false;
+		}
+		CachedBeanCopier.copy(get(et.getId()), et);
+  		return true;
     }
 
     @Override
-    @Transactional
+	@Transactional
     public void createBatch(List<IbzDaily> list) {
-        this.saveBatch(list, batchSize);
+		if(!ibzdailyRuntime.isRtmodel()){
+            list.forEach(item->fillParentData(item));
+        }
+		this.saveBatch(list, batchSize);
     }
-
     @Override
     @Transactional
     public boolean update(IbzDaily et) {
@@ -104,19 +109,20 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
         return true;
     }
 
-    @Override
+        @Override
     @Transactional
     public boolean remove(Long key) {
-        boolean result = removeById(key);
-        return result ;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzDailyHelper.class).delete(key);
     }
 
     @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        removeByIds(idList);
+    public void removeBatch(Collection<Long> idList){
+        if (idList != null && !idList.isEmpty()) {
+            for (Long id : idList) {
+                this.remove(id);
+            }
+        }
     }
-
     @Override
     @Transactional
     public IbzDaily get(Long key) {
@@ -302,19 +308,19 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
         }
     }
 
-    @Override
+       @Override
     @Transactional
     public IbzDaily submit(IbzDaily et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzDailyHelper.class).submit(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean submitBatch(List<IbzDaily> etList) {
-        for(IbzDaily et : etList) {
-            submit(et);
-        }
-        return true;
+    public boolean submitBatch (List<IbzDaily> etList) {
+		 for(IbzDaily et : etList) {
+		   submit(et);
+		 }
+	 	 return true;
     }
 
 

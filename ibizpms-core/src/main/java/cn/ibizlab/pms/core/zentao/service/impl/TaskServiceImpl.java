@@ -88,30 +88,27 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         return pages.getRecords();
     }
 
-    @Override
+    	@Override
     @Transactional
     public boolean create(Task et) {
-        if(!taskRuntime.isRtmodel()){
-            fillParentData(et);
+  		if(!taskRuntime.isRtmodel()){
+           fillParentData(et);
         }
-        if(!this.retBool(this.baseMapper.insert(et))) {
-            return false;
-        }
-        taskteamService.saveByRoot(et.getId(), et.getTaskteam());
-        taskestimateService.saveByTask(et.getId(), et.getTaskestimates());
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
+		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).create(et)) {
+			 return false;
+		}
+		CachedBeanCopier.copy(get(et.getId()), et);
+  		return true;
     }
 
     @Override
-    @Transactional
+	@Transactional
     public void createBatch(List<Task> list) {
-        if(!taskRuntime.isRtmodel()){
+		if(!taskRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
-        this.saveBatch(list, batchSize);
+		this.saveBatch(list, batchSize);
     }
-
     	@Override
     @Transactional
     public boolean update(Task et) {
@@ -136,7 +133,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
 	
 	@Override
     @Transactional
-    public boolean sysUpdate(Product et) {
+    public boolean sysUpdate(Task et) {
 	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).edit(et)) {
 		return false;
      }
@@ -452,19 +449,19 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
 	 	 return true;
     }
 
-    @Override
+       @Override
     @Transactional
     public Task restart(Task et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).restart(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean restartBatch(List<Task> etList) {
-        for(Task et : etList) {
-            restart(et);
-        }
-        return true;
+    public boolean restartBatch (List<Task> etList) {
+		 for(Task et : etList) {
+		   restart(et);
+		 }
+	 	 return true;
     }
 
     @Override

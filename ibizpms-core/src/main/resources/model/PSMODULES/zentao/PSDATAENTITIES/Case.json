@@ -7,6 +7,10 @@
     "logicName" : "Create",
     "name" : "Create",
     "orderValue" : 1,
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCreate"
+    },
     "userCat" : "CAT1",
     "userTag4" : "create",
     "builtinAction" : true
@@ -204,6 +208,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/ConfirmChange.json",
     "logicName" : "确认用例变更",
     "name" : "confirmChange",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -277,6 +285,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/TestRunCase.json",
     "logicName" : "执行测试",
     "name" : "TestRunCase",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -304,6 +316,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkCase.json",
     "logicName" : "移除用例",
     "name" : "unlinkCase",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -323,6 +339,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkSuiteCase.json",
     "logicName" : "移除用例",
     "name" : "unlinkSuiteCase",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",

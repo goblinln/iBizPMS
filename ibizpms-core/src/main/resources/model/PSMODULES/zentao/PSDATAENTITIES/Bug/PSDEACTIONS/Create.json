@@ -19,7 +19,7 @@
   "orderValue" : 1,
   "getPSSysSFPlugin" : {
     "pluginType" : "DEACTION",
-    "pluginCode" : "ZTCommon"
+    "pluginCode" : "ZTCreate"
   },
   "userCat" : "CAT1",
   "userTag4" : "create",

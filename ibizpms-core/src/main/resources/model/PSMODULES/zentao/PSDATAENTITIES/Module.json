@@ -16,6 +16,10 @@
     "logicName" : "Update",
     "name" : "Update",
     "orderValue" : 11,
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTUpdate"
+    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -26,6 +30,10 @@
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTRemove"
+    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -61,6 +69,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEACTIONS/Fix.json",
     "logicName" : "重建模块路径",
     "name" : "Fix",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",

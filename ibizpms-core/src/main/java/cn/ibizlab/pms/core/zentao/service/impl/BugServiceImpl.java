@@ -97,21 +97,27 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         return pages.getRecords();
     }
 
-       @Override
+    	@Override
     @Transactional
-    public Bug create(Bug et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.BugHelper.class).create(et);
-    }
-	
-	@Override
-    @Transactional
-    public boolean createBatch (List<Bug> etList) {
-		 for(Bug et : etList) {
-		   create(et);
-		 }
-	 	 return true;
+    public boolean create(Bug et) {
+  		if(!bugRuntime.isRtmodel()){
+           fillParentData(et);
+        }
+		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.BugHelper.class).create(et)) {
+			 return false;
+		}
+		CachedBeanCopier.copy(get(et.getId()), et);
+  		return true;
     }
 
+    @Override
+	@Transactional
+    public void createBatch(List<Bug> list) {
+		if(!bugRuntime.isRtmodel()){
+            list.forEach(item->fillParentData(item));
+        }
+		this.saveBatch(list, batchSize);
+    }
     @Override
     @Transactional
     public boolean update(Bug et) {
