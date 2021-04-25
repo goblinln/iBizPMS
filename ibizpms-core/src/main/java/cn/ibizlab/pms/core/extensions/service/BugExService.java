@@ -8,6 +8,7 @@ import cn.ibizlab.pms.core.zentao.service.*;
 import cn.ibizlab.pms.core.zentao.service.impl.BugServiceImpl;
 import cn.ibizlab.pms.util.dict.StaticDict;
 import cn.ibizlab.pms.util.helper.CachedBeanCopier;
+import cn.ibizlab.pms.util.security.AuthenticationUser;
 import lombok.extern.slf4j.Slf4j;
 import cn.ibizlab.pms.core.zentao.domain.Bug;
 import org.apache.commons.lang3.StringUtils;
@@ -57,47 +58,100 @@ public class BugExService extends BugServiceImpl {
         if (!super.create(et)) {
             return false;
         }
-
         // 更新file
+        updateObjectID(et, files, "");
+        // 创建日志
+        createHis(et, null,  StaticDict.Action__type.OPENED.getValue(), "","");
+        // 发送待办消息
+        sendTodoOrToread(et, noticeusers, StaticDict.Action__type.OPENED.getText(), true);
+
+        return true;
+    }
+
+    /**
+     * 更新附件
+     *
+     * @param et
+     * @param files
+     * @param extra
+     */
+    private void updateObjectID(Bug et, String files, String extra){
         File file = new File();
         file.set("files",files);
         file.setObjectid(et.getId());
         file.setObjecttype(StaticDict.File__object_type.BUG.getValue());
-        file.setExtra("");
+        file.setExtra(extra);
         iFileService.updateObjectID(file);
+    }
 
-        // 创建日志
+    /**
+     * 创建历史记录
+     *
+     * @param et
+     * @param histories
+     * @param actions
+     * @param comment
+     * @param extra
+     */
+    private void createHis(Bug et, List<History> histories, String actions, String comment, String extra) {
         Action action = new Action();
         action.setObjecttype(StaticDict.Action__object_type.BUG.getValue());
         action.setObjectid(et.getId());
-        action.setAction(StaticDict.Action__type.OPENED.getValue());
-        action.setComment("");
-        action.setExtra("");
+        action.setAction(actions);
+        action.setComment(comment);
+        action.setExtra(extra);
+        action.setHistorys(histories);
         iActionService.createHis(action);
+    }
 
-        // 发送消息
-        return true;
+    /**
+     * 发送待办或者待阅消息
+     *
+     * @param et
+     * @param noticeusers
+     * @param actiontextname
+     */
+    private void sendTodoOrToread(Bug et, String noticeusers, String actiontextname, boolean todo) {
+        Action actionTodoOrToread = new Action();
+        actionTodoOrToread.setObjectid(et.getId());
+        actionTodoOrToread.set("name", et.getTitle());
+        actionTodoOrToread.set("noticeusers", noticeusers);
+        actionTodoOrToread.set("ccuser", et.getMailto());
+        actionTodoOrToread.set("touser", et.getAssignedto());
+        actionTodoOrToread.set("logicname", "Bug");
+        actionTodoOrToread.setObjecttype(StaticDict.Action__object_type.BUG.getValue());
+        actionTodoOrToread.set("path", "bugs");
+        actionTodoOrToread.set("actiontextname", actiontextname);
+        if(todo) {
+            iActionService.sendTodo(actionTodoOrToread);
+        }else {
+            iActionService.sendToread(actionTodoOrToread);
+        }
+    }
+
+    private void sendMarkDone(Bug et, String touser, String actiontextname) {
+        Action actionMarkDone = new Action();
+        actionMarkDone.setObjectid(et.getId());
+        actionMarkDone.set("name", et.getTitle());
+        actionMarkDone.set("touser", touser);
+        actionMarkDone.set("logicname", "Bug");
+        actionMarkDone.setObjecttype(StaticDict.Action__object_type.BUG.getValue());
+        actionMarkDone.set("path", "bugs");
+        actionMarkDone.set("actiontextname", actiontextname);
     }
 
     @Override
     public boolean update(Bug et) {
         Bug old = new Bug();
         CachedBeanCopier.copy(this.get(et.getId()), old);
-
         String comment = StringUtils.isNotBlank(et.getComment()) ? et.getComment() : "";
-
         String files = et.getFiles();
         String noticeusers = et.getNoticeusers();
         if(!super.update(et)) {
             return false;
         }
         // 更新file
-        File file = new File();
-        file.set("files",files);
-        file.setObjectid(et.getId());
-        file.setObjecttype(StaticDict.File__object_type.BUG.getValue());
-        file.setExtra("");
-        iFileService.updateObjectID(file);
+        updateObjectID(et, files, "");
 
         List<History> changes = ChangeUtil.diff(old, et,null,null,diffAttrs);
         if (changes.size() > 0 || StringUtils.isNotBlank(comment)) {
@@ -108,17 +162,10 @@ public class BugExService extends BugServiceImpl {
                 strAction = StaticDict.Action__type.COMMENTED.getValue();
                 strActionText = StaticDict.Action__type.COMMENTED.getText();
             }
-            // actionHelper.sendToread(et.getId(), et.getTitle(), noticeusers, et.getAssignedto(), et.getMailto(), "Bug", StaticDict.Action__object_type.BUG.getValue(), "bugs", strActionText);
+            // 发送待阅
+            sendTodoOrToread(et, noticeusers, strActionText, false);
             // 创建日志
-            Action action = new Action();
-            action.setObjecttype(StaticDict.Action__object_type.BUG.getValue());
-            action.setObjectid(et.getId());
-            action.setAction(strAction);
-            action.setComment(comment);
-            action.setExtra("");
-            action.setHistorys(changes);
-            iActionService.createHis(action);
-
+            createHis(et, changes,  strAction, comment,"");
         }
         return true;
     }
@@ -141,7 +188,28 @@ public class BugExService extends BugServiceImpl {
     @Override
     @Transactional
     public Bug assignTo(Bug et) {
-        return super.assignTo(et);
+        String comment = StringUtils.isNotBlank(et.getComment()) ? et.getComment() : "";
+        Bug old = new Bug();
+        CachedBeanCopier.copy(get(et.getId()), old);
+        if(StringUtils.isBlank(et.getAssignedto())) {
+            et.setAssignedto(AuthenticationUser.getAuthenticationUser().getUsername());
+        }
+        String files = et.getFiles();
+        String noticeusers = et.getNoticeusers();
+        super.update(et);
+
+        // 更新file
+        updateObjectID(et, files, "");
+        List<History> changes = ChangeUtil.diff(old, et);
+        if (!et.getAssignedto().equals(old.getAssignedto())){
+            // 已读
+            sendMarkDone(et, old.getAssignedto(), StaticDict.Action__type.ASSIGNED.getText());
+            // 发送待办消息
+            sendTodoOrToread(et, noticeusers, StaticDict.Action__type.ASSIGNED.getText(), true);
+        }
+        // 创建日志
+        createHis(et, changes,  StaticDict.Action__type.ASSIGNED.getValue(), comment,et.getAssignedto());
+        return et;
     }
     /**
      * [BatchUnlinkBug:批量解除关联Bug] 行为扩展

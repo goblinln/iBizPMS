@@ -1,17 +1,19 @@
 package cn.ibizlab.pms.core.extensions.service;
 
-import cn.ibizlab.pms.core.util.ibizzentao.common.Fixer;
+import cn.ibizlab.pms.core.ibizplugin.domain.IBIZProMessage;
+import cn.ibizlab.pms.core.ibizplugin.service.IIBIZProMessageService;
+import cn.ibizlab.pms.core.ou.domain.SysEmployee;
+import cn.ibizlab.pms.core.ou.filter.SysEmployeeSearchContext;
+import cn.ibizlab.pms.core.ou.service.ISysEmployeeService;
 import cn.ibizlab.pms.core.util.ibizzentao.common.ZTDateUtil;
 import cn.ibizlab.pms.core.zentao.domain.*;
 import cn.ibizlab.pms.core.zentao.filter.ProjectProductSearchContext;
-import cn.ibizlab.pms.core.zentao.service.ICaseService;
-import cn.ibizlab.pms.core.zentao.service.IFileService;
-import cn.ibizlab.pms.core.zentao.service.IProjectProductService;
-import cn.ibizlab.pms.core.zentao.service.IStoryService;
+import cn.ibizlab.pms.core.zentao.service.*;
 import cn.ibizlab.pms.core.zentao.service.impl.ActionServiceImpl;
 import cn.ibizlab.pms.util.dict.StaticDict;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -69,6 +71,18 @@ public class ActionExService extends ActionServiceImpl {
 
     @Autowired
     ICaseService iCaseService;
+
+    @Autowired
+    ITaskService iTaskService;
+
+    @Autowired
+    IBugService iBugService;
+
+    @Autowired
+    IIBIZProMessageService iibizProMessageService;
+
+    @Autowired
+    ISysEmployeeService iSysEmployeeService;
 
     @Override
     public boolean create(Action et) {
@@ -223,5 +237,255 @@ public class ActionExService extends ActionServiceImpl {
     public Action managePmsEe(Action et) {
         return super.managePmsEe(et);
     }
+
+    @Override
+    public Action sendTodo(Action et) {
+        Long id = et.getObjectid();
+        String name = "";
+        if(et.get("name") != null) {
+            name = et.get("name").toString();
+        }
+        String noticeusers = "";
+        if(et.get("noticeusers") != null) {
+            noticeusers = et.get("noticeusers").toString();
+        }
+        String touser = "";
+        if(et.get("touser") != null) {
+            touser = et.get("touser").toString();
+        }
+        String ccuser = "";
+        if(et.get("ccuser") != null) {
+            ccuser = et.get("ccuser").toString();
+        }
+        String logicname = "";
+        if(et.get("logicname") != null) {
+            logicname = et.get("logicname").toString();
+        }
+        String type = et.getObjecttype();
+        String path = "";
+        if(et.get("path") != null) {
+            path = et.get("path").toString();
+        }
+        String actiontextname = "";
+        if(et.get("actiontextname") != null) {
+            actiontextname = et.get("actiontextname").toString();
+        }
+        String noticeuserss = "";
+        if(touser != null && !"".equals(touser)) {
+            noticeuserss += touser + ",";
+        }
+        JSONObject param = new JSONObject();
+        if(noticeusers != null && !"".equals(noticeusers)) {
+            noticeuserss += noticeusers;
+        }
+        if(ccuser != null && !"".equals(ccuser) && noticeuserss.length() == 0) {
+            noticeuserss += ccuser;
+        }
+        else if(ccuser != null && !"".equals(ccuser) && noticeuserss.length() > 0) {
+            noticeuserss += "," + ccuser;
+        }
+        if(noticeuserss.length() == 0) {
+            return et;
+        }
+
+        IBIZProMessage ibizProMessage = new IBIZProMessage();
+        if (touser == null || "".equals(touser)){
+            return et;
+        }
+        ibizProMessage.setTo(touser);
+
+        ibizProMessage.setCc(noticeuserss);
+
+        ibizProMessage.setFrom(AuthenticationUser.getAuthenticationUser().getUsername());
+
+        ibizProMessage.setType(StaticDict.Message__type.TODO.getValue());
+        ibizProMessage.setIbizpromessagename(name);
+        param.put("objectid", id);
+        param.put("objecttype", type);
+        param.put("objectsourcepath", path);
+        param.put("objecttextname", logicname);
+        param.put("actiontextname", actiontextname);
+        ibizProMessage.setParam(param.toJSONString());
+        iibizProMessageService.send(ibizProMessage);
+        log.info("待办消息发送成功！");
+        return et;
+    }
+
+    @Override
+    public Action sendMarkDone(Action et) {
+        Long id = et.getObjectid();
+        String name = "";
+        if(et.get("name") != null) {
+            name = et.get("name").toString();
+        }
+        String toUser = "";
+        if(et.get("touser") != null) {
+            toUser = et.get("touser").toString();
+        }
+        String logicname = "";
+        if(et.get("logicname") != null) {
+            logicname = et.get("logicname").toString();
+        }
+        String type = et.getObjecttype();
+        String path = "";
+        if(et.get("path") != null) {
+            path = et.get("path").toString();
+        }
+        String actiontextname = "";
+        if(et.get("actiontextname") != null) {
+            actiontextname = et.get("actiontextname").toString();
+        }
+        if (toUser == null || toUser.equals("")){
+            return et;
+        }
+
+        SysEmployeeSearchContext toSearchContext = new SysEmployeeSearchContext();
+        toSearchContext.setN_username_in(toUser);
+        List<SysEmployee> toList =  iSysEmployeeService.searchDefault(toSearchContext).getContent();
+        IBIZProMessage ibizProMessage = new IBIZProMessage();
+        if(toList.size() > 0) {
+            ibizProMessage.setTo(toList.get(0).getUserid());
+        }else {
+            return  et;
+        }
+        SysEmployeeSearchContext fromSearchContext = new SysEmployeeSearchContext();
+        fromSearchContext.setN_username_in(AuthenticationUser.getAuthenticationUser().getUsername());
+        List<SysEmployee> fromList = iSysEmployeeService.searchDefault(fromSearchContext).getContent();
+        for(fromList.size() > 0) {
+            ibizProMessage.setFrom(fromList.get(0).toString());
+        }else {
+            return  et;
+        }
+
+        ibizProMessage.setIbizpromessagename(name);
+        ibizProMessage.setType("已办");
+        JSONObject param = new JSONObject();
+        param.put("objectid", id);
+        param.put("objecttype", type);
+        param.put("objectsourcepath", path);
+        param.put("objecttextname", logicname);
+        param.put("actiontextname", actiontextname);
+        ibizProMessage.setParam(param.toJSONString());
+        iibizProMessageService.markDone(ibizProMessage);
+        return et;
+    }
+
+    @Override
+    public Action sendToread(Action et) {
+        Long id = et.getObjectid();
+        String name = "";
+        if(et.get("name") != null) {
+            name = et.get("name").toString();
+        }
+        String noticeusers = "";
+        if(et.get("noticeusers") != null) {
+            noticeusers = et.get("noticeusers").toString();
+        }
+        String touser = "";
+        if(et.get("touser") != null) {
+            touser = et.get("touser").toString();
+        }
+        String ccuser = "";
+        if(et.get("ccuser") != null) {
+            ccuser = et.get("ccuser").toString();
+        }
+        String logicname = "";
+        if(et.get("logicname") != null) {
+            logicname = et.get("logicname").toString();
+        }
+        String type = et.getObjecttype();
+        String path = "";
+        if(et.get("path") != null) {
+            path = et.get("path").toString();
+        }
+        String actiontextname = "";
+        if(et.get("actiontextname") != null) {
+            actiontextname = et.get("actiontextname").toString();
+        }
+        String noticeuserss = "";
+        if(touser!= null && !"".equals(touser)) {
+            noticeuserss += touser + ",";
+        }
+        JSONObject param = new JSONObject();
+        if(noticeusers != null && !"".equals(noticeusers)) {
+            noticeuserss += noticeusers;
+        }
+        if(ccuser != null && !"".equals(ccuser) && noticeuserss.length() == 0) {
+            noticeuserss += ccuser;
+        }
+        else if(ccuser != null && !"".equals(ccuser) && noticeuserss.length() > 0) {
+            noticeuserss += "," + ccuser;
+        }
+        if(noticeuserss.length() == 0) {
+            return et;
+        }
+        IBIZProMessage ibizProMessage = new IBIZProMessage();
+
+        ibizProMessage.setCc(noticeuserss);
+
+        ibizProMessage.setFrom(AuthenticationUser.getAuthenticationUser().getUsername());
+
+        ibizProMessage.setType(StaticDict.Message__type.TOREAD.getValue());
+        ibizProMessage.setIbizpromessagename(name);
+        param.put("objectid", id);
+        param.put("objecttype", type);
+        param.put("objectsourcepath", path);
+        param.put("objecttextname", logicname);
+        param.put("actiontextname", actiontextname);
+        ibizProMessage.setParam(param.toJSONString());
+        iibizProMessageService.send(ibizProMessage);
+        log.info("待阅消息发送成功！");
+        return et;
+    }
+
+    /**
+     * @param noticeusers
+     * @param et
+     */
+    public void send(String noticeusers, Action et) {
+        if (StaticDict.Action__object_type.TASK.getValue().equals(et.getObjecttype())) {
+            Task task = iTaskService.get(et.getObjectid());
+            Action action = new Action();
+            action.setObjectid(task.getId());
+            action.set("name", task.getName());
+            action.set("noticeusers", noticeusers);
+            action.set("ccuser", task.getMailto());
+            action.set("touser", task.getAssignedto());
+            action.set("logicname", "任務");
+            action.setObjecttype(StaticDict.Action__object_type.TASK.getValue());
+            action.set("path", "tasks");
+            action.set("actiontextname", StaticDict.Action__type.COMMENTED.getText());
+            sendToread(action);
+        } else if (StaticDict.Action__object_type.STORY.getValue().equals(et.getObjecttype())) {
+            Story story = iStoryService.get(et.getObjectid());
+            Action action = new Action();
+            action.setObjectid(story.getId());
+            action.set("name", story.getTitle());
+            action.set("noticeusers", noticeusers);
+            action.set("ccuser", story.getMailto());
+            action.set("touser", story.getAssignedto());
+            action.set("logicname", "需求");
+            action.setObjecttype(StaticDict.Action__object_type.STORY.getValue());
+            action.set("path", "storys");
+            action.set("actiontextname", StaticDict.Action__type.COMMENTED.getText());
+            sendToread(action);
+        } else if (StaticDict.Action__object_type.BUG.getValue().equals(et.getObjecttype())) {
+            Bug bug = iBugService.get(et.getObjectid());
+            Action action = new Action();
+            action.setObjectid(bug.getId());
+            action.set("name", bug.getTitle());
+            action.set("noticeusers", noticeusers);
+            action.set("ccuser", bug.getMailto());
+            action.set("touser", bug.getAssignedto());
+            action.set("logicname", "Bug");
+            action.setObjecttype(StaticDict.Action__object_type.BUG.getValue());
+            action.set("path", "bugs");
+            action.set("actiontextname", StaticDict.Action__type.COMMENTED.getText());
+            sendToread(action);
+        } else {
+            log.info("其他暂不支持！");
+        }
+    }
+
 }
 
