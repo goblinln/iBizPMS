@@ -183,6 +183,9 @@ public class ActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
             else if (iPSDEAction.getName().equals("Comment")) {
                 return actionService.comment((Action) args[0]);
             }
+            else if (iPSDEAction.getName().equals("CreateHis")) {
+                return actionService.createHis((Action) args[0]);
+            }
             else if (iPSDEAction.getName().equals("editComment")) {
                 return actionService.editComment((Action) args[0]);
             }
@@ -304,6 +307,9 @@ public class ActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
         }
         else if (action.equals("comment")) {
             return aroundAction("Comment", point);
+        }
+        else if (action.equals("createHis")) {
+            return aroundAction("CreateHis", point);
         }
         else if (action.equals("editComment")) {
             return aroundAction("editComment", point);

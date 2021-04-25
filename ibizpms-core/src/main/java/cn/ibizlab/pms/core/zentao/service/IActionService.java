@@ -38,6 +38,8 @@ public interface IActionService extends IService<Action> {
     boolean checkKey(Action et);
     Action comment(Action et);
     boolean commentBatch(List<Action> etList);
+    Action createHis(Action et);
+    boolean createHisBatch(List<Action> etList);
     Action editComment(Action et);
     boolean editCommentBatch(List<Action> etList);
     Action managePmsEe(Action et);

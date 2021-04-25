@@ -22,6 +22,16 @@ public class ActionExService extends ActionServiceImpl {
     }
 
     /**
+     * [CreateHis:创建历史日志] 行为扩展
+     * @param et
+     * @return
+     */
+    @Override
+    @Transactional
+    public Action createHis(Action et) {
+        return super.createHis(et);
+    }
+    /**
      * [EditComment:编辑备注信息] 行为扩展
      * @param et
      * @return

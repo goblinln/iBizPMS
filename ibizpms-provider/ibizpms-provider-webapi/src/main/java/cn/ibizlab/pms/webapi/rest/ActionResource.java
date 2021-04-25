@@ -143,6 +143,25 @@ public class ActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(actiondto);
     }
 
+    @PreAuthorize("@ActionRuntime.test(#action_id,'CREATE')")
+    @ApiOperation(value = "创建历史日志", tags = {"系统日志" },  notes = "创建历史日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/actions/{action_id}/createhis")
+    public ResponseEntity<ActionDTO> createHis(@PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
+        Action domain = actionMapping.toDomain(actiondto);
+        domain.setId(action_id);
+        domain = actionService.createHis(domain);
+        actiondto = actionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(actiondto);
+    }
+    @PreAuthorize("@ActionRuntime.test('CREATE')")
+    @ApiOperation(value = "批量处理[创建历史日志]", tags = {"系统日志" },  notes = "批量处理[创建历史日志]")
+	@RequestMapping(method = RequestMethod.POST, value = "/actions/createhisbatch")
+    public ResponseEntity<Boolean> createHisBatch(@RequestBody List<ActionDTO> actiondtos) {
+        List<Action> domains = actionMapping.toDomain(actiondtos);
+        boolean result = actionService.createHisBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
     @PreAuthorize("@ActionRuntime.test(#action_id,'MANAGE')")
     @ApiOperation(value = "编辑备注信息", tags = {"系统日志" },  notes = "编辑备注信息")
 	@RequestMapping(method = RequestMethod.POST, value = "/actions/{action_id}/editcomment")

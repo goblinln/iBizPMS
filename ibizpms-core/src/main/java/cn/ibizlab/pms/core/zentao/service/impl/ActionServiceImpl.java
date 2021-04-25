@@ -68,58 +68,50 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
         return pages.getRecords();
     }
 
-    	@Override
+    @Override
     @Transactional
     public boolean create(Action et) {
-  		if(!actionRuntime.isRtmodel()){
-		  
+        if(!this.retBool(this.baseMapper.insert(et))) {
+            return false;
         }
-		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ActionHelper.class).create(et)) {
-			 return false;
-		}
-		
-  		return true;
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
-	@Transactional
+    @Transactional
     public void createBatch(List<Action> list) {
-		if(!actionRuntime.isRtmodel()){
-		  
+        for (Action et : list) {
+            getProxyService().save(et);
         }
-		this.saveBatch(list, batchSize);
     }
-    	@Override
+
+    @Override
     @Transactional
     public boolean update(Action et) {
-  		if(!actionRuntime.isRtmodel()){
-		  
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
         }
-		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ActionHelper.class).edit(et)) {
-			 return false;
-		}
-		
-  		return true;
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
-	@Transactional
+    @Transactional
     public void updateBatch(List<Action> list) {
-	  if(!actionRuntime.isRtmodel()){
-		
-	  }
-		updateBatchById(list, batchSize);
+        updateBatchById(list, batchSize);
     }
-	
-	@Override
+
+    @Override
     @Transactional
     public boolean sysUpdate(Action et) {
-	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ActionHelper.class).edit(et)) {
-		return false;
-     }
-    
-     return true;
-   }
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
     @Override
     @Transactional
     public boolean remove(Long key) {
@@ -183,19 +175,34 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
         return true;
     }
 
-       @Override
+    @Override
+    @Transactional
+    public Action createHis(Action et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean createHisBatch(List<Action> etList) {
+        for(Action et : etList) {
+            createHis(et);
+        }
+        return true;
+    }
+
+    @Override
     @Transactional
     public Action editComment(Action et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ActionHelper.class).editComment(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean editCommentBatch (List<Action> etList) {
-		 for(Action et : etList) {
-		   editComment(et);
-		 }
-	 	 return true;
+    public boolean editCommentBatch(List<Action> etList) {
+        for(Action et : etList) {
+            editComment(et);
+        }
+        return true;
     }
 
        @Override

@@ -209,6 +209,17 @@ export class ActionBaseService extends EntityBaseService<IAction> {
         return this.http.post(`/actions/${_context.action}/comment`, _data);
     }
     /**
+     * CreateHis
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ActionService
+     */
+    async CreateHis(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/actions/${_context.action}/createhis`, _data);
+    }
+    /**
      * EditComment
      *
      * @param {*} [_context={}]

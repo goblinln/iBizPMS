@@ -139,6 +139,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "CreateHis",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/CreateHis.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CreateHis"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "EditComment",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -553,6 +569,22 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Comment"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CreateHis",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/CreateHis.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CreateHis"
     },
     "builtinMethod" : false
   }, {
