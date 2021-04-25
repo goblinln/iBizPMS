@@ -20,6 +20,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 import java.util.Arrays;
 import java.util.List;
@@ -222,6 +223,7 @@ public class ActionHelper extends ZTBaseHelper<ActionMapper, Action> {
             iibizProMessageService.send(ibizProMessage);
             log.info("待办消息发送成功！");
         }catch (RuntimeException e) {
+            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
             log.error(e.getMessage());
             log.error("待办消息发送失败！");
         }
@@ -251,6 +253,7 @@ public class ActionHelper extends ZTBaseHelper<ActionMapper, Action> {
             ibizProMessage.setParam(param.toJSONString());
             iibizProMessageService.markDone(ibizProMessage);
         }catch (RuntimeException e){
+            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
             log.error(e.getMessage());
             log.error("已办消息发送失败！");
         }
