@@ -61,6 +61,16 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
     }
 
     @Override
+    public List<IbizproIndex> selectQueryByDefault(IbizproIndexSearchContext context) {
+        return null;
+    }
+
+    @Override
+    public List<IbizproIndex> selectQueryByView(IbizproIndexSearchContext context) {
+        return null;
+    }
+
+    @Override
     @Transactional
     public boolean create(IbizproIndex et) {
 //        if(!this.retBool(this.baseMapper.insert(et))) {
