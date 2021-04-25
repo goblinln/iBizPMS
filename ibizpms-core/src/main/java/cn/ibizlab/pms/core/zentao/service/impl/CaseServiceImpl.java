@@ -94,14 +94,27 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         return pages.getRecords();
     }
 
-    !!!!模版产生代码错误:!!!!模版产生代码错误:----
-Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
-----
+    	@Override
+    @Transactional
+    public boolean create(Case et) {
+  		if(!caseRuntime.isRtmodel()){
+		  
+        }
+		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.CaseHelper.class).create(et)) {
+			 return false;
+		}
+		
+  		return true;
+    }
 
-----
-FTL stack trace ("~" means nesting-related):
-	- Failed at: ${srfr7templcaseformat(de.getKeyPSDEF...  [in template "TEMPLCODE_zh_CN" at line 11, column 49]
-----
+    @Override
+	@Transactional
+    public void createBatch(List<Case> list) {
+		if(!caseRuntime.isRtmodel()){
+		  
+        }
+		this.saveBatch(list, batchSize);
+    }
     @Override
     @Transactional
     public boolean update(Case et) {

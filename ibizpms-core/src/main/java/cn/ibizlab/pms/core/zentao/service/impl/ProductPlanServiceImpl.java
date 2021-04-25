@@ -79,14 +79,27 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         return pages.getRecords();
     }
 
-    !!!!模版产生代码错误:!!!!模版产生代码错误:----
-Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
-----
+    	@Override
+    @Transactional
+    public boolean create(ProductPlan et) {
+  		if(!productplanRuntime.isRtmodel()){
+		  
+        }
+		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ProductPlanHelper.class).create(et)) {
+			 return false;
+		}
+		
+  		return true;
+    }
 
-----
-FTL stack trace ("~" means nesting-related):
-	- Failed at: ${srfr7templcaseformat(de.getKeyPSDEF...  [in template "TEMPLCODE_zh_CN" at line 11, column 49]
-----
+    @Override
+	@Transactional
+    public void createBatch(List<ProductPlan> list) {
+		if(!productplanRuntime.isRtmodel()){
+		  
+        }
+		this.saveBatch(list, batchSize);
+    }
     @Override
     @Transactional
     public boolean update(ProductPlan et) {

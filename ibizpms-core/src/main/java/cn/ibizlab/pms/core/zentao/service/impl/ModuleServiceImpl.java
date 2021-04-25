@@ -104,14 +104,37 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
         this.saveBatch(list, batchSize);
     }
 
-    !!!!模版产生代码错误:!!!!模版产生代码错误:----
-Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
-----
+    	@Override
+    @Transactional
+    public boolean update(Module et) {
+  		if(!moduleRuntime.isRtmodel()){
+		  
+        }
+		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ModuleHelper.class).edit(et)) {
+			 return false;
+		}
+		
+  		return true;
+    }
 
-----
-FTL stack trace ("~" means nesting-related):
-	- Failed at: ${srfr7templcaseformat(de.getKeyPSDEF...  [in template "TEMPLCODE_zh_CN" at line 11, column 49]
-----
+    @Override
+	@Transactional
+    public void updateBatch(List<Module> list) {
+	  if(!moduleRuntime.isRtmodel()){
+		
+	  }
+		updateBatchById(list, batchSize);
+    }
+	
+	@Override
+    @Transactional
+    public boolean sysUpdate(Module et) {
+	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ModuleHelper.class).edit(et)) {
+		return false;
+     }
+     CachedBeanCopier.copy(get(et.getId()), et);
+     return true;
+   }
         @Override
     @Transactional
     public boolean remove(Long key) {
