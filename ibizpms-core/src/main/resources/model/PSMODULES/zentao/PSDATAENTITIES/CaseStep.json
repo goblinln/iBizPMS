@@ -193,7 +193,6 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "customCode" : true,
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
@@ -317,6 +316,7 @@
       "columnName" : "CASESTEPID",
       "dBType" : "MYSQL5",
       "name" : "CASESTEPID",
+      "queryCodeExp" : "t1.id",
       "standardColumnName" : "`CASESTEPID`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -352,6 +352,7 @@
       "columnName" : "DEPT",
       "dBType" : "MYSQL5",
       "name" : "DEPT",
+      "queryCodeExp" : "t1.`DEPT`",
       "standardColumnName" : "`DEPT`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -540,6 +541,7 @@
       "columnName" : "CREATEBY",
       "dBType" : "MYSQL5",
       "name" : "CREATEBY",
+      "queryCodeExp" : "t1.`CREATEBY`",
       "standardColumnName" : "`CREATEBY`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -776,6 +778,7 @@
       "columnName" : "UPDATEBY",
       "dBType" : "MYSQL5",
       "name" : "UPDATEBY",
+      "queryCodeExp" : "t1.`UPDATEBY`",
       "standardColumnName" : "`UPDATEBY`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -857,6 +860,7 @@
       "columnName" : "ORG",
       "dBType" : "MYSQL5",
       "name" : "ORG",
+      "queryCodeExp" : "t1.`ORG`",
       "standardColumnName" : "`ORG`"
     } ],
     "getAllPSDEFValueRules" : [ {
