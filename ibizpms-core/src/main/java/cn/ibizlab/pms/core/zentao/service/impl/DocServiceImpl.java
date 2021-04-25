@@ -77,62 +77,58 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
         return pages.getRecords();
     }
 
-    @Override
+    	@Override
     @Transactional
     public boolean create(Doc et) {
-        if(!docRuntime.isRtmodel()){
-            fillParentData(et);
+  		if(!docRuntime.isRtmodel()){
+		  
         }
-        if(!this.retBool(this.baseMapper.insert(et))) {
-            return false;
-        }
-        doccontentService.saveByDoc(et.getId(), et.getDocconents());
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
+		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.DocHelper.class).create(et)) {
+			 return false;
+		}
+		
+  		return true;
     }
 
     @Override
-    @Transactional
+	@Transactional
     public void createBatch(List<Doc> list) {
-        if(!docRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
+		if(!docRuntime.isRtmodel()){
+		  
         }
-        this.saveBatch(list, batchSize);
+		this.saveBatch(list, batchSize);
     }
-
-    @Override
+    	@Override
     @Transactional
     public boolean update(Doc et) {
-        if(!docRuntime.isRtmodel()){
-            fillParentData(et);
+  		if(!docRuntime.isRtmodel()){
+		  
         }
-        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
-            return false;
-        }
-        doccontentService.saveByDoc(et.getId(), et.getDocconents());
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
+		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.DocHelper.class).edit(et)) {
+			 return false;
+		}
+		
+  		return true;
     }
 
     @Override
-    @Transactional
+	@Transactional
     public void updateBatch(List<Doc> list) {
-        if(!docRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        updateBatchById(list, batchSize);
+	  if(!docRuntime.isRtmodel()){
+		
+	  }
+		updateBatchById(list, batchSize);
     }
-
-    @Override
+	
+	@Override
     @Transactional
     public boolean sysUpdate(Doc et) {
-        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
-    }
-
+	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.DocHelper.class).edit(et)) {
+		return false;
+     }
+    
+     return true;
+   }
     @Override
     @Transactional
     public boolean remove(Long key) {

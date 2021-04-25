@@ -62,22 +62,27 @@ public class IbzAgentServiceImpl extends ServiceImpl<IbzAgentMapper, IbzAgent> i
         return pages.getRecords();
     }
 
-    @Override
+    	@Override
     @Transactional
     public boolean create(IbzAgent et) {
-        if(!this.retBool(this.baseMapper.insert(et))) {
-            return false;
+  		if(!ibzagentRuntime.isRtmodel()){
+		  
         }
-        CachedBeanCopier.copy(get(et.getIbzagentid()), et);
-        return true;
+		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzAgentHelper.class).create(et)) {
+			 return false;
+		}
+		
+  		return true;
     }
 
     @Override
-    @Transactional
+	@Transactional
     public void createBatch(List<IbzAgent> list) {
-        this.saveBatch(list, batchSize);
+		if(!ibzagentRuntime.isRtmodel()){
+		  
+        }
+		this.saveBatch(list, batchSize);
     }
-
     @Override
     @Transactional
     public boolean update(IbzAgent et) {

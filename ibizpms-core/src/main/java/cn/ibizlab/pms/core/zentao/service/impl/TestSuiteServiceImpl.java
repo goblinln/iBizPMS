@@ -71,61 +71,72 @@ public class TestSuiteServiceImpl extends ServiceImpl<TestSuiteMapper, TestSuite
         return pages.getRecords();
     }
 
-    @Override
+    	@Override
     @Transactional
     public boolean create(TestSuite et) {
-        if(!this.retBool(this.baseMapper.insert(et))) {
-            return false;
+  		if(!testsuiteRuntime.isRtmodel()){
+		  
         }
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
+		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TestSuiteHelper.class).create(et)) {
+			 return false;
+		}
+		
+  		return true;
     }
 
     @Override
-    @Transactional
+	@Transactional
     public void createBatch(List<TestSuite> list) {
-        this.saveBatch(list, batchSize);
+		if(!testsuiteRuntime.isRtmodel()){
+		  
+        }
+		this.saveBatch(list, batchSize);
     }
-
-    @Override
+    	@Override
     @Transactional
     public boolean update(TestSuite et) {
-        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
-            return false;
+  		if(!testsuiteRuntime.isRtmodel()){
+		  
         }
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
+		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TestSuiteHelper.class).edit(et)) {
+			 return false;
+		}
+		
+  		return true;
     }
 
     @Override
-    @Transactional
+	@Transactional
     public void updateBatch(List<TestSuite> list) {
-        updateBatchById(list, batchSize);
+	  if(!testsuiteRuntime.isRtmodel()){
+		
+	  }
+		updateBatchById(list, batchSize);
     }
-
-    @Override
+	
+	@Override
     @Transactional
     public boolean sysUpdate(TestSuite et) {
-        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
-    }
-
-    @Override
+	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TestSuiteHelper.class).edit(et)) {
+		return false;
+     }
+    
+     return true;
+   }
+        @Override
     @Transactional
     public boolean remove(Long key) {
-        boolean result = removeById(key);
-        return result ;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TestSuiteHelper.class).delete(key);
     }
 
     @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        removeByIds(idList);
+    public void removeBatch(Collection<Long> idList){
+        if (idList != null && !idList.isEmpty()) {
+            for (Long id : idList) {
+                this.remove(id);
+            }
+        }
     }
-
     @Override
     @Transactional
     public TestSuite get(Long key) {

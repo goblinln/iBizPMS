@@ -74,60 +74,58 @@ public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> impleme
         return pages.getRecords();
     }
 
-    @Override
+    	@Override
     @Transactional
     public boolean create(DocLib et) {
-        if(!doclibRuntime.isRtmodel()){
-            fillParentData(et);
+  		if(!doclibRuntime.isRtmodel()){
+		  
         }
-        if(!this.retBool(this.baseMapper.insert(et))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
+		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.DocLibHelper.class).create(et)) {
+			 return false;
+		}
+		
+  		return true;
     }
 
     @Override
-    @Transactional
+	@Transactional
     public void createBatch(List<DocLib> list) {
-        if(!doclibRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
+		if(!doclibRuntime.isRtmodel()){
+		  
         }
-        this.saveBatch(list, batchSize);
+		this.saveBatch(list, batchSize);
     }
-
-    @Override
+    	@Override
     @Transactional
     public boolean update(DocLib et) {
-        if(!doclibRuntime.isRtmodel()){
-            fillParentData(et);
+  		if(!doclibRuntime.isRtmodel()){
+		  
         }
-        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
+		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.DocLibHelper.class).edit(et)) {
+			 return false;
+		}
+		
+  		return true;
     }
 
     @Override
-    @Transactional
+	@Transactional
     public void updateBatch(List<DocLib> list) {
-        if(!doclibRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        updateBatchById(list, batchSize);
+	  if(!doclibRuntime.isRtmodel()){
+		
+	  }
+		updateBatchById(list, batchSize);
     }
-
-    @Override
+	
+	@Override
     @Transactional
     public boolean sysUpdate(DocLib et) {
-        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
-    }
-
+	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.DocLibHelper.class).edit(et)) {
+		return false;
+     }
+    
+     return true;
+   }
     @Override
     @Transactional
     public boolean remove(Long key) {
