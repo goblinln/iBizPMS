@@ -530,6 +530,12 @@
     "logicName" : "平台/分支",
     "name" : "BRANCH",
     "stdDataType" : 1
+  }, {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

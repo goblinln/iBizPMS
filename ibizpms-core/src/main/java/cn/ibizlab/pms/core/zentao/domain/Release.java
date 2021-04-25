@@ -297,6 +297,15 @@ public class Release extends EntityMP implements Serializable {
     @JsonProperty("branch")
     @ApiModelProperty("平台/分支")
     private Long branch;
+    /**
+     * 归属组织名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGNAME)
+    @TableField(value = "`ORGNAME`")
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
 
     /**
      * 

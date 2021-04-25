@@ -157,6 +157,21 @@ public class HistoryServiceImpl extends ServiceImpl<HistoryMapper, History> impl
     }
     @Override
     @Transactional
+    public History logHistory(History et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean logHistoryBatch(List<History> etList) {
+        for(History et : etList) {
+            logHistory(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean save(History et) {
         if(!saveOrUpdate(et)) {
             return false;

@@ -207,6 +207,21 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
         return res;
     }
     /**
+     * LogHistory
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof HistoryService
+     */
+    async LogHistory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.action && _context.history) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/actions/${_context.action}/histories/${_context.history}/loghistory`, _data);
+        }
+        return this.http.post(`/histories/${_context.history}/loghistory`, _data);
+    }
+    /**
      * FetchDefault
      *
      * @param {*} [_context={}]

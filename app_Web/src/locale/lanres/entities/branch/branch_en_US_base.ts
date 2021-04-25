@@ -12,6 +12,8 @@ function getLocaleResourceBase(){
 		'order': commonLogic.appcommonhandle("排序",null),
 		'org': commonLogic.appcommonhandle("归属组织",null),
 		'product': commonLogic.appcommonhandle("所属产品",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 		views: {
 			'pmgridview': {

@@ -9,4 +9,6 @@ export default [
     'title',
     'version',
     'story',
+    'orgname',
+    'deptname',
 ];

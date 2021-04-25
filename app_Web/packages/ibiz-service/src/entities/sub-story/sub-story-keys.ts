@@ -76,4 +76,6 @@ export default [
     'duplicatestory',
     'branch',
     'tobug',
+    'orgname',
+    'deptname',
 ];

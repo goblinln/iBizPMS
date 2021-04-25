@@ -36,6 +36,8 @@ public interface IHistoryService extends IService<History> {
     History sysGet(Long key);
     History getDraft(History et);
     boolean checkKey(History et);
+    History logHistory(History et);
+    boolean logHistoryBatch(List<History> etList);
     boolean save(History et);
     void saveBatch(List<History> list);
     List<History> select(HistorySearchContext context);

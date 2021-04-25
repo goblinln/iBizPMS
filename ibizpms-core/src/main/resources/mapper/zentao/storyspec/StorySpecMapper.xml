@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`CREATEBY`, t1.`DEPT`, concat(t1.`STORY`,'__',t1.`VERSION`) AS `ID`, t1.`ORG`, t1.`SPEC`, t1.`STORY`, t1.`TITLE`, t1.`UPDATEBY`, t1.`VERIFY`, t1.`VERSION` FROM `zt_storyspec` t1   ]]>
+        <![CDATA[ SELECT t1.`CREATEBY`, t1.`DEPT`, t1.`DEPTNAME`, concat(t1.`STORY`,'__',t1.`VERSION`) AS `ID`, t1.`ORG`, t1.`ORGNAME`, t1.`SPEC`, t1.`STORY`, t1.`TITLE`, t1.`UPDATEBY`, t1.`VERIFY`, t1.`VERSION` FROM `zt_storyspec` t1   ]]>
     </sql>
 
 	
@@ -75,7 +75,7 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CREATEBY`, t1.`DEPT`, concat(t1.`STORY`,'__',t1.`VERSION`) AS `ID`, t1.`ORG`, t1.`SPEC`, t1.`STORY`, t1.`TITLE`, t1.`UPDATEBY`, t1.`VERIFY`, t1.`VERSION` FROM `zt_storyspec` t1   ]]>
+		<![CDATA[ SELECT t1.`CREATEBY`, t1.`DEPT`, t1.`DEPTNAME`, concat(t1.`STORY`,'__',t1.`VERSION`) AS `ID`, t1.`ORG`, t1.`ORGNAME`, t1.`SPEC`, t1.`STORY`, t1.`TITLE`, t1.`UPDATEBY`, t1.`VERIFY`, t1.`VERSION` FROM `zt_storyspec` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>
@@ -99,7 +99,7 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CREATEBY`, t1.`DEPT`, concat(t1.`STORY`,'__',t1.`VERSION`) AS `ID`, t1.`ORG`, t1.`SPEC`, t1.`STORY`, t1.`TITLE`, t1.`UPDATEBY`, t1.`VERIFY`, t1.`VERSION` FROM `zt_storyspec` t1   ]]>
+		<![CDATA[ SELECT t1.`CREATEBY`, t1.`DEPT`, t1.`DEPTNAME`, concat(t1.`STORY`,'__',t1.`VERSION`) AS `ID`, t1.`ORG`, t1.`ORGNAME`, t1.`SPEC`, t1.`STORY`, t1.`TITLE`, t1.`UPDATEBY`, t1.`VERIFY`, t1.`VERSION` FROM `zt_storyspec` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>

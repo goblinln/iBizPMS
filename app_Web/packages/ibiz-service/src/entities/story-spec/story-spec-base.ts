@@ -73,6 +73,14 @@ export abstract class StorySpecBase extends EntityBase implements IStorySpec {
      * 需求
      */
     story?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
 
     /**
      * 重置实体数据

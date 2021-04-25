@@ -28,4 +28,6 @@ export default [
     'product',
     'build',
     'branch',
+    'orgname',
+    'deptname',
 ];

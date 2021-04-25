@@ -123,6 +123,18 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "LogHistory",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/History/PSDEACTIONS/LogHistory.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "LogHistory"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -316,6 +328,18 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "LogHistory",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/History/PSDEACTIONS/LogHistory.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "LogHistory"
     },
     "builtinMethod" : false
   }, {

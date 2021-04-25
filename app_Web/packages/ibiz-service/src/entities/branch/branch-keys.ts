@@ -8,4 +8,6 @@ export default [
     'order',
     'org',
     'product',
+    'deptname',
+    'orgname',
 ];

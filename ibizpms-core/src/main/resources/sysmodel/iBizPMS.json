@@ -32754,6 +32754,36 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"ORGNAME" ,
+    "codename":"OrgName",
+    "field_logic_name":"归属组织名",
+    "entity_name":"ZT_PRODUCTPLAN",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":100,
+    "predefined":"ORGNAME",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"DEPTNAME" ,
+    "codename":"DeptName",
+    "field_logic_name":"归属部门名",
+    "entity_name":"ZT_PRODUCTPLAN",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":100,
+    "predefined":"ORGSECTORNAME",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
@@ -39499,6 +39529,21 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"ORGNAME" ,
+    "codename":"OrgName",
+    "field_logic_name":"归属组织名",
+    "entity_name":"ZT_RELEASE",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":100,
+    "predefined":"ORGNAME",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
@@ -41378,6 +41423,36 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"ORGNAME" ,
+    "codename":"OrgName",
+    "field_logic_name":"归属组织名",
+    "entity_name":"ZT_STORY",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":100,
+    "predefined":"ORGNAME",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"DEPTNAME" ,
+    "codename":"DeptName",
+    "field_logic_name":"归属部门名",
+    "entity_name":"ZT_STORY",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":100,
+    "predefined":"ORGSECTORNAME",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
@@ -41656,6 +41731,36 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"ORGNAME" ,
+    "codename":"OrgName",
+    "field_logic_name":"归属组织名",
+    "entity_name":"ZT_STORYSPEC",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":100,
+    "predefined":"ORGNAME",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"DEPTNAME" ,
+    "codename":"DeptName",
+    "field_logic_name":"归属部门名",
+    "entity_name":"ZT_STORYSPEC",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":100,
+    "predefined":"ORGSECTORNAME",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
@@ -41827,6 +41932,36 @@
     "physical_field":1,
     "data_type":"BIGINT",
     "data_length":8,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"ORGNAME" ,
+    "codename":"OrgName",
+    "field_logic_name":"归属组织名",
+    "entity_name":"ZT_STORYSTAGE",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":100,
+    "predefined":"ORGNAME",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"DEPTNAME" ,
+    "codename":"DeptName",
+    "field_logic_name":"归属部门名",
+    "entity_name":"ZT_STORYSTAGE",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":100,
+    "predefined":"ORGSECTORNAME",
     "key_field":0,
     "show_order":1000,
     "major_field":0

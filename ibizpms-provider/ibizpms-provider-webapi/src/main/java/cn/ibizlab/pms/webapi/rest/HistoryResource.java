@@ -132,6 +132,23 @@ public class HistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(historyService.checkKey(historyMapping.toDomain(historydto)));
     }
 
+    @ApiOperation(value = "创建历史记录", tags = {"操作历史" },  notes = "创建历史记录")
+	@RequestMapping(method = RequestMethod.POST, value = "/histories/{history_id}/loghistory")
+    public ResponseEntity<HistoryDTO> logHistory(@PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
+        History domain = historyMapping.toDomain(historydto);
+        domain.setId(history_id);
+        domain = historyService.logHistory(domain);
+        historydto = historyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(historydto);
+    }
+    @ApiOperation(value = "批量处理[创建历史记录]", tags = {"操作历史" },  notes = "批量处理[创建历史记录]")
+	@RequestMapping(method = RequestMethod.POST, value = "/histories/loghistorybatch")
+    public ResponseEntity<Boolean> logHistoryBatch(@RequestBody List<HistoryDTO> historydtos) {
+        List<History> domains = historyMapping.toDomain(historydtos);
+        boolean result = historyService.logHistoryBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
     @ApiOperation(value = "保存操作历史", tags = {"操作历史" },  notes = "保存操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/histories/save")
     public ResponseEntity<HistoryDTO> save(@RequestBody HistoryDTO historydto) {
@@ -262,6 +279,23 @@ public class HistoryResource {
         return  ResponseEntity.status(HttpStatus.OK).body(historyService.checkKey(historyMapping.toDomain(historydto)));
     }
 
+    @ApiOperation(value = "根据系统日志操作历史", tags = {"操作历史" },  notes = "根据系统日志操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/actions/{action_id}/histories/{history_id}/loghistory")
+    public ResponseEntity<HistoryDTO> logHistoryByAction(@PathVariable("action_id") Long action_id, @PathVariable("history_id") Long history_id, @RequestBody HistoryDTO historydto) {
+        History domain = historyMapping.toDomain(historydto);
+        domain.setAction(action_id);
+        domain.setId(history_id);
+        domain = historyService.logHistory(domain) ;
+        historydto = historyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(historydto);
+    }
+    @ApiOperation(value = "批量处理[根据系统日志操作历史]", tags = {"操作历史" },  notes = "批量处理[根据系统日志操作历史]")
+	@RequestMapping(method = RequestMethod.POST, value = "/actions/{action_id}/histories/loghistorybatch")
+    public ResponseEntity<Boolean> logHistoryByAction(@PathVariable("action_id") Long action_id, @RequestBody List<HistoryDTO> historydtos) {
+        List<History> domains = historyMapping.toDomain(historydtos);
+        boolean result = historyService.logHistoryBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @ApiOperation(value = "根据系统日志保存操作历史", tags = {"操作历史" },  notes = "根据系统日志保存操作历史")
 	@RequestMapping(method = RequestMethod.POST, value = "/actions/{action_id}/histories/save")
     public ResponseEntity<HistoryDTO> saveByAction(@PathVariable("action_id") Long action_id, @RequestBody HistoryDTO historydto) {

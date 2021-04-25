@@ -322,6 +322,16 @@ public class ReleaseDTO extends DTOBase implements Serializable {
     @ApiModelProperty("平台/分支")
     private Long branch;
 
+    /**
+     * 属性 [ORGNAME]
+     *
+     */
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+
 
     /**
      * 设置 [STORIES]

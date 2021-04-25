@@ -48,4 +48,12 @@ export interface IStorySpec extends IEntityBase {
      * 需求
      */
     story?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
 }

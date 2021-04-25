@@ -13,6 +13,8 @@ function getLocaleResourceBase(){
 		'title': commonLogic.appcommonhandle("需求名称",null),
 		'version': commonLogic.appcommonhandle("版本号",null),
 		'story': commonLogic.appcommonhandle("需求",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 	},
 	};
 	return data;

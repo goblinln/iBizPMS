@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "LogHistory",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/History/PSDEACTIONS/LogHistory.json",
+  "logicName" : "创建历史记录",
+  "name" : "logHistory"
+}

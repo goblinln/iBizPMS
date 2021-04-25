@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`BRANCH`, t1.`CREATEBY`, t1.`DEPT`, concat(t1.`STORY`,'__',t1.`BRANCH`) AS `ID`, t1.`ORG`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STORY`, t1.`UPDATEBY` FROM `zt_storystage` t1   ]]>
+        <![CDATA[ SELECT t1.`BRANCH`, t1.`CREATEBY`, t1.`DEPT`, t1.`DEPTNAME`, concat(t1.`STORY`,'__',t1.`BRANCH`) AS `ID`, t1.`ORG`, t1.`ORGNAME`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STORY`, t1.`UPDATEBY` FROM `zt_storystage` t1   ]]>
     </sql>
 
 	
@@ -71,7 +71,7 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, t1.`CREATEBY`, t1.`DEPT`, concat(t1.`STORY`,'__',t1.`BRANCH`) AS `ID`, t1.`ORG`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STORY`, t1.`UPDATEBY` FROM `zt_storystage` t1   ]]>
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`CREATEBY`, t1.`DEPT`, t1.`DEPTNAME`, concat(t1.`STORY`,'__',t1.`BRANCH`) AS `ID`, t1.`ORG`, t1.`ORGNAME`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STORY`, t1.`UPDATEBY` FROM `zt_storystage` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>
@@ -83,7 +83,7 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, t1.`CREATEBY`, t1.`DEPT`, concat(t1.`STORY`,'__',t1.`BRANCH`) AS `ID`, t1.`ORG`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STORY`, t1.`UPDATEBY` FROM `zt_storystage` t1   ]]>
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`CREATEBY`, t1.`DEPT`, t1.`DEPTNAME`, concat(t1.`STORY`,'__',t1.`BRANCH`) AS `ID`, t1.`ORG`, t1.`ORGNAME`, t1.`STAGE`, t1.`STAGEDBY`, t1.`STORY`, t1.`UPDATEBY` FROM `zt_storystage` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>

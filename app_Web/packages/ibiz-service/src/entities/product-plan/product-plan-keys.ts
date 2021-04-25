@@ -36,4 +36,6 @@ export default [
     'branch',
     'parent',
     'product',
+    'orgname',
+    'deptname',
 ];

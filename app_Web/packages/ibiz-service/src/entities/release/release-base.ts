@@ -157,6 +157,14 @@ export abstract class ReleaseBase extends EntityBase implements IRelease {
      * 平台/分支
      */
     branch?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
 
     /**
      * 重置实体数据
