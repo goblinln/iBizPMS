@@ -137,15 +137,14 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         @Override
     @Transactional
     public boolean create(Product et) {
-  			if(!productRuntime.isRtmodel()){
-            fillParentData(et);
+  		if(!productRuntime.isRtmodel()){
+           fillParentData(et);
         }
-	  		boolean bRst = cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ProductHelper.class).create(et);
-			if(!bRst) {
-			  return false;
-			}
-			CachedBeanCopier.copy(get(et.getId()), et);
-  			return bRst;
+		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ProductHelper.class).create(et)) {
+			 return false;
+		}
+		CachedBeanCopier.copy(get(et.getId()), et);
+  		return true;
     }
 
     @Override
@@ -155,39 +154,36 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         }
 		this.saveBatch(list, batchSize);
     }
-    @Override
+        @Override
     @Transactional
     public boolean update(Product et) {
-        if(!productRuntime.isRtmodel()){
+  			if(!productRuntime.isRtmodel()){
             fillParentData(et);
         }
-        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
-            return false;
-        }
-        productteamService.saveByRoot(et.getId(), et.getProductteam());
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
+			if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ProductHelper.class).edit(et)) {
+			  return false;
+			}
+			CachedBeanCopier.copy(get(et.getId()), et);
+  			return true;
     }
 
     @Override
-    @Transactional
     public void updateBatch(List<Product> list) {
-        if(!productRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        updateBatchById(list, batchSize);
+		if(!productRuntime.isRtmodel()){
+		  list.forEach(item->fillParentData(item));
+      }
+     updateBatchById(list, batchSize);
     }
-
-    @Override
+	
+	@Override
     @Transactional
     public boolean sysUpdate(Product et) {
-        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
-    }
-
+	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ProductHelper.class).edit(et)) {
+      return false;
+     }
+     CachedBeanCopier.copy(get(et.getId()), et);
+     return true;
+   }
     @Override
     @Transactional
     public boolean remove(Long key) {
