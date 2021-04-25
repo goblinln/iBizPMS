@@ -107,7 +107,7 @@ public class IbzReportlyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     }
 
     @Override
-    public Page<IbzReportly> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<IbzReportly> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -126,8 +126,7 @@ public class IbzReportlyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     @Override
     public List<IbzReportly> select(ISearchContextBase iSearchContextBase) {
         IbzReportlySearchContext searchContext = (IbzReportlySearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return ibzreportlyService.searchDefault(searchContext).getContent();
+        return ibzreportlyService.select(searchContext);
     }
 
     @Override

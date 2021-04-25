@@ -54,21 +54,21 @@
 	 <select id="selectByIbizcase" resultMap="SuiteCaseResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.CASE=#{id} ]]>
+			<![CDATA[ AND t1.`CASE`=#{id} ]]>
 		</trim>
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_SUITECASE_ZT_PRODUCT_PRODUCT] -->
 	 <select id="selectByProduct" resultMap="SuiteCaseResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.PRODUCT=#{id} ]]>
+			<![CDATA[ AND t1.`PRODUCT`=#{id} ]]>
 		</trim>
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_SUITECASE_ZT_TESTSUITE_SUITE] -->
 	 <select id="selectBySuite" resultMap="SuiteCaseResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.SUITE=#{id} ]]>
+			<![CDATA[ AND t1.`SUITE`=#{id} ]]>
 		</trim>
      </select>
 

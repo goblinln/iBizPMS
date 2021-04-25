@@ -101,7 +101,7 @@ public class TaskTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     }
 
     @Override
-    public Page<TaskTeam> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<TaskTeam> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class TaskTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     @Override
     public List<TaskTeam> select(ISearchContextBase iSearchContextBase) {
         TaskTeamSearchContext searchContext = (TaskTeamSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return taskteamService.searchDefault(searchContext).getContent();
+        return taskteamService.select(searchContext);
     }
 
     @Override

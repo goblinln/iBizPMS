@@ -17,11 +17,24 @@ import java.util.List;
 
 public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBase {
 
+    /**
+     *  外键值处理 默认填充0，不填充父数据
+     *
+     * @param entityBase
+     * @param strActionName
+     * @param iPSDEAction
+     * @param iPSDER1N
+     * @param iPSDataEntity
+     * @param joinPoint
+     * @throws Throwable
+     */
     @Override
     protected void fillEntityFullInfo(IEntityBase entityBase, String strActionName, IPSDEAction iPSDEAction, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, Object joinPoint) throws Throwable {
         Object objPickupValue = this.getFieldValue(entityBase, iPSDER1N.getPSPickupDEField());
-        if (ObjectUtils.isEmpty(objPickupValue) || NumberUtils.toLong(String.valueOf(objPickupValue), 0L) == 0L)
+        if (ObjectUtils.isEmpty(objPickupValue) || NumberUtils.toLong(String.valueOf(objPickupValue), 0L) == 0L){
+            this.setFieldValue(entityBase, iPSDER1N.getPSPickupDEField(), 0);
             return;
+        }
         super.fillEntityFullInfo(entityBase, strActionName, iPSDEAction, iPSDER1N, iPSDataEntity, joinPoint);
     }
 

@@ -74,7 +74,7 @@
 			<if test="true">
 			<![CDATA[ AND t1.DELETED = '0' ]]>
 			</if>
-			<![CDATA[ AND T1.PARENT=#{id} ]]>
+			<![CDATA[ AND t1.`PARENT`=#{id} ]]>
 		</trim>
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT] -->
@@ -84,7 +84,7 @@
 			<if test="true">
 			<![CDATA[ AND t1.DELETED = '0' ]]>
 			</if>
-			<![CDATA[ AND T1.ROOT=#{id} ]]>
+			<![CDATA[ AND t1.`ROOT`=#{id} ]]>
 		</trim>
      </select>
 

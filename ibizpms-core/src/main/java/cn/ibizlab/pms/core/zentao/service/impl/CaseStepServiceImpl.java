@@ -76,7 +76,9 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
-        casestepService.saveByParent(et.getId(), et.getCasestep());
+        if(!casestepRuntime.isRtmodel()){
+            casestepService.saveByParent(et.getId(), et.getCasestep());
+        }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }
@@ -99,7 +101,9 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
-        casestepService.saveByParent(et.getId(), et.getCasestep());
+        if(!casestepRuntime.isRtmodel()){
+            casestepService.saveByParent(et.getId(), et.getCasestep());
+        }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }

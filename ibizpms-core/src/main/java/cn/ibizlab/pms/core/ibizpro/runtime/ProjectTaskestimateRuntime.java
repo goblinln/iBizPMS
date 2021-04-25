@@ -103,7 +103,7 @@ public class ProjectTaskestimateRuntime extends cn.ibizlab.pms.core.runtime.Syst
     }
 
     @Override
-    public Page<ProjectTaskestimate> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<ProjectTaskestimate> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -122,8 +122,7 @@ public class ProjectTaskestimateRuntime extends cn.ibizlab.pms.core.runtime.Syst
     @Override
     public List<ProjectTaskestimate> select(ISearchContextBase iSearchContextBase) {
         ProjectTaskestimateSearchContext searchContext = (ProjectTaskestimateSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return projecttaskestimateService.searchDefault(searchContext).getContent();
+        return projecttaskestimateService.select(searchContext);
     }
 
     @Override

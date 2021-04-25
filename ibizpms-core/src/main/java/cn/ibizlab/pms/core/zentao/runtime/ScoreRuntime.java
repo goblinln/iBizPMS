@@ -101,7 +101,7 @@ public class ScoreRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     }
 
     @Override
-    public Page<Score> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Score> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class ScoreRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     @Override
     public List<Score> select(ISearchContextBase iSearchContextBase) {
         ScoreSearchContext searchContext = (ScoreSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return scoreService.searchDefault(searchContext).getContent();
+        return scoreService.select(searchContext);
     }
 
     @Override

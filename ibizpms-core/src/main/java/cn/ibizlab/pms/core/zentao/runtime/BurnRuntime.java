@@ -103,7 +103,7 @@ public class BurnRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     }
 
     @Override
-    public Page<Burn> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Burn> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -122,8 +122,7 @@ public class BurnRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     @Override
     public List<Burn> select(ISearchContextBase iSearchContextBase) {
         BurnSearchContext searchContext = (BurnSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return burnService.searchDefault(searchContext).getContent();
+        return burnService.select(searchContext);
     }
 
     @Override

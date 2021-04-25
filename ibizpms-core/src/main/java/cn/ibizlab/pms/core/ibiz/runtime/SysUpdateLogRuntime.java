@@ -101,7 +101,7 @@ public class SysUpdateLogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     }
 
     @Override
-    public Page<SysUpdateLog> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<SysUpdateLog> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class SysUpdateLogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     @Override
     public List<SysUpdateLog> select(ISearchContextBase iSearchContextBase) {
         SysUpdateLogSearchContext searchContext = (SysUpdateLogSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return sysupdatelogService.searchDefault(searchContext).getContent();
+        return sysupdatelogService.select(searchContext);
     }
 
     @Override

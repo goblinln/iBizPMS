@@ -101,7 +101,7 @@ public class WebHookRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    public Page<WebHook> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<WebHook> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class WebHookRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public List<WebHook> select(ISearchContextBase iSearchContextBase) {
         WebHookSearchContext searchContext = (WebHookSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return webhookService.searchDefault(searchContext).getContent();
+        return webhookService.select(searchContext);
     }
 
     @Override

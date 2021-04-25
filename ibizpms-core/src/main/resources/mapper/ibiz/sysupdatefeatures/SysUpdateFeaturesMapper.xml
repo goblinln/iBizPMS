@@ -59,7 +59,7 @@
 	 <select id="selectBySysupdatelogid" resultMap="SysUpdateFeaturesResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.SYS_UPDATE_LOGID=#{sysupdatelogid} ]]>
+			<![CDATA[ AND t1.`SYS_UPDATE_LOGID`=#{sysupdatelogid} ]]>
 		</trim>
      </select>
 

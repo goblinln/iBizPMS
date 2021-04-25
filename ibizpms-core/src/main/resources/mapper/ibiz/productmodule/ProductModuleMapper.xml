@@ -90,7 +90,7 @@
 			<if test="true">
 			<![CDATA[ AND ( t1.`TYPE` = 'story' ) ]]>
 			</if>
-			<![CDATA[ AND T1.PARENT=#{id} ]]>
+			<![CDATA[ AND t1.`PARENT`=#{id} ]]>
 		</trim>
 		 )t1
      </select>
@@ -105,7 +105,7 @@
 			<if test="true">
 			<![CDATA[ AND ( t1.`TYPE` = 'story' ) ]]>
 			</if>
-			<![CDATA[ AND T1.ROOT=#{id} ]]>
+			<![CDATA[ AND t1.`ROOT`=#{id} ]]>
 		</trim>
 		 )t1
      </select>

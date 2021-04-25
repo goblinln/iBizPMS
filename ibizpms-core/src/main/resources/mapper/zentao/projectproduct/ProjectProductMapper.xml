@@ -81,28 +81,28 @@
 	 <select id="selectByBranch" resultMap="ProjectProductResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.BRANCH=#{id} ]]>
+			<![CDATA[ AND t1.`BRANCH`=#{id} ]]>
 		</trim>
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_PROJECTPRODUCT_ZT_PRODUCTPLAN_PLAN] -->
 	 <select id="selectByPlan" resultMap="ProjectProductResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.PLAN=#{id} ]]>
+			<![CDATA[ AND t1.`PLAN`=#{id} ]]>
 		</trim>
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_PROJECTPRODUCT_ZT_PRODUCT_PRODUCT] -->
 	 <select id="selectByProduct" resultMap="ProjectProductResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.PRODUCT=#{id} ]]>
+			<![CDATA[ AND t1.`PRODUCT`=#{id} ]]>
 		</trim>
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_PROJECTPRODUCT_ZT_PROJECT_PROJECT] -->
 	 <select id="selectByProject" resultMap="ProjectProductResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.PROJECT=#{id} ]]>
+			<![CDATA[ AND t1.`PROJECT`=#{id} ]]>
 		</trim>
      </select>
 

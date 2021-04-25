@@ -101,7 +101,7 @@ public class CompileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    public Page<Compile> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Compile> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class CompileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public List<Compile> select(ISearchContextBase iSearchContextBase) {
         CompileSearchContext searchContext = (CompileSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return compileService.searchDefault(searchContext).getContent();
+        return compileService.select(searchContext);
     }
 
     @Override

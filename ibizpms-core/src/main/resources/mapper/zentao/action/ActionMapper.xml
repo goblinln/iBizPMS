@@ -62,7 +62,7 @@
 	 <select id="selectByProject" resultMap="ActionResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.PROJECT=#{id} ]]>
+			<![CDATA[ AND t1.`PROJECT`=#{id} ]]>
 		</trim>
      </select>
 

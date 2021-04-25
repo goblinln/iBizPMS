@@ -103,7 +103,7 @@ public class BranchRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     }
 
     @Override
-    public Page<Branch> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Branch> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -122,8 +122,7 @@ public class BranchRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     @Override
     public List<Branch> select(ISearchContextBase iSearchContextBase) {
         BranchSearchContext searchContext = (BranchSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return branchService.searchDefault(searchContext).getContent();
+        return branchService.select(searchContext);
     }
 
     @Override

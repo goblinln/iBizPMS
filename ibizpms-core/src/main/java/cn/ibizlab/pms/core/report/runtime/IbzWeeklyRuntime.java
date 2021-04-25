@@ -109,7 +109,7 @@ public class IbzWeeklyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    public Page<IbzWeekly> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<IbzWeekly> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -128,8 +128,7 @@ public class IbzWeeklyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     @Override
     public List<IbzWeekly> select(ISearchContextBase iSearchContextBase) {
         IbzWeeklySearchContext searchContext = (IbzWeeklySearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return ibzweeklyService.searchDefault(searchContext).getContent();
+        return ibzweeklyService.select(searchContext);
     }
 
     @Override

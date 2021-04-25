@@ -206,7 +206,7 @@
 			<if test="true">
 			<![CDATA[ AND t1.DELETED = '0' ]]>
 			</if>
-			<![CDATA[ AND T1.MODULE=#{id} ]]>
+			<![CDATA[ AND t1.`MODULE`=#{id} ]]>
 		</trim>
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_TASK_ZT_BUG_FROMBUG] -->
@@ -216,7 +216,7 @@
 			<if test="true">
 			<![CDATA[ AND t1.DELETED = '0' ]]>
 			</if>
-			<![CDATA[ AND T1.FROMBUG=#{id} ]]>
+			<![CDATA[ AND t1.`FROMBUG`=#{id} ]]>
 		</trim>
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_TASK_ZT_PRODUCTPLAN_PLAN] -->
@@ -236,7 +236,7 @@
 			<if test="true">
 			<![CDATA[ AND t1.DELETED = '0' ]]>
 			</if>
-			<![CDATA[ AND T1.PROJECT=#{id} ]]>
+			<![CDATA[ AND t1.`PROJECT`=#{id} ]]>
 		</trim>
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_TASK_ZT_STORY_STORY] -->
@@ -246,7 +246,7 @@
 			<if test="true">
 			<![CDATA[ AND t1.DELETED = '0' ]]>
 			</if>
-			<![CDATA[ AND T1.STORY=#{id} ]]>
+			<![CDATA[ AND t1.`STORY`=#{id} ]]>
 		</trim>
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N__ZT_TASK__ZT_TASK__PARENT] -->
@@ -256,7 +256,7 @@
 			<if test="true">
 			<![CDATA[ AND t1.DELETED = '0' ]]>
 			</if>
-			<![CDATA[ AND T1.PARENT=#{id} ]]>
+			<![CDATA[ AND t1.`PARENT`=#{id} ]]>
 		</trim>
      </select>
 

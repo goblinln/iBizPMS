@@ -101,7 +101,7 @@ public class UserQueryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    public Page<UserQuery> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<UserQuery> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class UserQueryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     @Override
     public List<UserQuery> select(ISearchContextBase iSearchContextBase) {
         UserQuerySearchContext searchContext = (UserQuerySearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return userqueryService.searchDefault(searchContext).getContent();
+        return userqueryService.select(searchContext);
     }
 
     @Override

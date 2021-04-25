@@ -59,7 +59,7 @@
 	 <select id="selectByFile" resultMap="IBZProSysTplResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.FILE=#{id} ]]>
+			<![CDATA[ AND t1.`FILE`=#{id} ]]>
 		</trim>
      </select>
 

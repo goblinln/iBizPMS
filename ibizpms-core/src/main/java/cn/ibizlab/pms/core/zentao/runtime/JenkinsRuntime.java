@@ -101,7 +101,7 @@ public class JenkinsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    public Page<Jenkins> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Jenkins> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class JenkinsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public List<Jenkins> select(ISearchContextBase iSearchContextBase) {
         JenkinsSearchContext searchContext = (JenkinsSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return jenkinsService.searchDefault(searchContext).getContent();
+        return jenkinsService.select(searchContext);
     }
 
     @Override

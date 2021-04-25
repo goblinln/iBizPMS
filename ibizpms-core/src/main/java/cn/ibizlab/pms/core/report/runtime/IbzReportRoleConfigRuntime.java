@@ -101,7 +101,7 @@ public class IbzReportRoleConfigRuntime extends cn.ibizlab.pms.core.runtime.Syst
     }
 
     @Override
-    public Page<IbzReportRoleConfig> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<IbzReportRoleConfig> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class IbzReportRoleConfigRuntime extends cn.ibizlab.pms.core.runtime.Syst
     @Override
     public List<IbzReportRoleConfig> select(ISearchContextBase iSearchContextBase) {
         IbzReportRoleConfigSearchContext searchContext = (IbzReportRoleConfigSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return ibzreportroleconfigService.searchDefault(searchContext).getContent();
+        return ibzreportroleconfigService.select(searchContext);
     }
 
     @Override

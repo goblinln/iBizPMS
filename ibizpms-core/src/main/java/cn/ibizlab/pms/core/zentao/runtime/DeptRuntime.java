@@ -103,7 +103,7 @@ public class DeptRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     }
 
     @Override
-    public Page<Dept> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Dept> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -122,8 +122,7 @@ public class DeptRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     @Override
     public List<Dept> select(ISearchContextBase iSearchContextBase) {
         DeptSearchContext searchContext = (DeptSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return deptService.searchDefault(searchContext).getContent();
+        return deptService.select(searchContext);
     }
 
     @Override

@@ -105,7 +105,7 @@ public class IbzReportRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    public Page<IbzReport> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<IbzReport> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -124,8 +124,7 @@ public class IbzReportRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     @Override
     public List<IbzReport> select(ISearchContextBase iSearchContextBase) {
         IbzReportSearchContext searchContext = (IbzReportSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return ibzreportService.searchDefault(searchContext).getContent();
+        return ibzreportService.select(searchContext);
     }
 
     @Override

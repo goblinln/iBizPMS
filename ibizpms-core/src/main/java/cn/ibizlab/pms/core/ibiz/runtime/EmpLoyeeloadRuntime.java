@@ -103,7 +103,7 @@ public class EmpLoyeeloadRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     }
 
     @Override
-    public Page<EmpLoyeeload> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<EmpLoyeeload> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -122,8 +122,7 @@ public class EmpLoyeeloadRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     @Override
     public List<EmpLoyeeload> select(ISearchContextBase iSearchContextBase) {
         EmpLoyeeloadSearchContext searchContext = (EmpLoyeeloadSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return employeeloadService.searchDefault(searchContext).getContent();
+        return employeeloadService.select(searchContext);
     }
 
     @Override

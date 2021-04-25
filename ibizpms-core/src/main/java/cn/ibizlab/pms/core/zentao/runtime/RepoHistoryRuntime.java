@@ -101,7 +101,7 @@ public class RepoHistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     }
 
     @Override
-    public Page<RepoHistory> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<RepoHistory> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class RepoHistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     @Override
     public List<RepoHistory> select(ISearchContextBase iSearchContextBase) {
         RepoHistorySearchContext searchContext = (RepoHistorySearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return repohistoryService.searchDefault(searchContext).getContent();
+        return repohistoryService.select(searchContext);
     }
 
     @Override

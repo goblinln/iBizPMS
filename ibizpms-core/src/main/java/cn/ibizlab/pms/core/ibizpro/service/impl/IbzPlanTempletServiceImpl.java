@@ -71,7 +71,9 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
-        ibzplantempletdetailService.saveByPlantempletid(et.getIbzplantempletid(), et.getIbzplantempletdetail());
+        if(!ibzplantempletRuntime.isRtmodel()){
+            ibzplantempletdetailService.saveByPlantempletid(et.getIbzplantempletid(), et.getIbzplantempletdetail());
+        }
         CachedBeanCopier.copy(get(et.getIbzplantempletid()), et);
         return true;
     }
@@ -88,7 +90,9 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibz_plantempletid", et.getIbzplantempletid()))) {
             return false;
         }
-        ibzplantempletdetailService.saveByPlantempletid(et.getIbzplantempletid(), et.getIbzplantempletdetail());
+        if(!ibzplantempletRuntime.isRtmodel()){
+            ibzplantempletdetailService.saveByPlantempletid(et.getIbzplantempletid(), et.getIbzplantempletdetail());
+        }
         CachedBeanCopier.copy(get(et.getIbzplantempletid()), et);
         return true;
     }

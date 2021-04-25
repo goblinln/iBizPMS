@@ -54,21 +54,21 @@
 	 <select id="selectByProduct" resultMap="ProjectStoryResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.PRODUCT=#{id} ]]>
+			<![CDATA[ AND t1.`PRODUCT`=#{id} ]]>
 		</trim>
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_PROJECTSTORY_ZT_PROJECT_PROJECT] -->
 	 <select id="selectByProject" resultMap="ProjectStoryResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.PROJECT=#{id} ]]>
+			<![CDATA[ AND t1.`PROJECT`=#{id} ]]>
 		</trim>
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_PROJECTSTORY_ZT_STORY_STORY] -->
 	 <select id="selectByStory" resultMap="ProjectStoryResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.STORY=#{id} ]]>
+			<![CDATA[ AND t1.`STORY`=#{id} ]]>
 		</trim>
      </select>
 

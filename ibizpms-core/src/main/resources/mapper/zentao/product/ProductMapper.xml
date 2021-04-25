@@ -92,7 +92,7 @@
 			<if test="true">
 			<![CDATA[ AND t1.deleted = '0' ]]>
 			</if>
-			<![CDATA[ AND T1.LINE=#{id} ]]>
+			<![CDATA[ AND t1.`line`=#{id} ]]>
 		</trim>
 		 )t1
      </select>

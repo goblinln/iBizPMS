@@ -101,7 +101,7 @@ public class IbzFavoritesRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     }
 
     @Override
-    public Page<IbzFavorites> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<IbzFavorites> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class IbzFavoritesRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     @Override
     public List<IbzFavorites> select(ISearchContextBase iSearchContextBase) {
         IbzFavoritesSearchContext searchContext = (IbzFavoritesSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return ibzfavoritesService.searchDefault(searchContext).getContent();
+        return ibzfavoritesService.select(searchContext);
     }
 
     @Override

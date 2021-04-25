@@ -82,14 +82,14 @@
 	 <select id="selectByModule" resultMap="IbzCaseResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.MODULE=#{id} ]]>
+			<![CDATA[ AND t1.`MODULE`=#{id} ]]>
 		</trim>
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_IBZ_CASE_IBZ_LIB_LIB] -->
 	 <select id="selectByLib" resultMap="IbzCaseResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.LIB=#{id} ]]>
+			<![CDATA[ AND t1.`LIB`=#{id} ]]>
 		</trim>
      </select>
 

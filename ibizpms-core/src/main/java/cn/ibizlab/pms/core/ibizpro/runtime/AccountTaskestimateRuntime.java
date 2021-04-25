@@ -103,7 +103,7 @@ public class AccountTaskestimateRuntime extends cn.ibizlab.pms.core.runtime.Syst
     }
 
     @Override
-    public Page<AccountTaskestimate> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<AccountTaskestimate> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -122,8 +122,7 @@ public class AccountTaskestimateRuntime extends cn.ibizlab.pms.core.runtime.Syst
     @Override
     public List<AccountTaskestimate> select(ISearchContextBase iSearchContextBase) {
         AccountTaskestimateSearchContext searchContext = (AccountTaskestimateSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return accounttaskestimateService.searchDefault(searchContext).getContent();
+        return accounttaskestimateService.select(searchContext);
     }
 
     @Override

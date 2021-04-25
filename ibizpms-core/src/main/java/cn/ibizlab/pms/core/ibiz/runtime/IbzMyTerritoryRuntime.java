@@ -111,7 +111,7 @@ public class IbzMyTerritoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
     }
 
     @Override
-    public Page<IbzMyTerritory> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<IbzMyTerritory> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -130,8 +130,7 @@ public class IbzMyTerritoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
     @Override
     public List<IbzMyTerritory> select(ISearchContextBase iSearchContextBase) {
         IbzMyTerritorySearchContext searchContext = (IbzMyTerritorySearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return ibzmyterritoryService.searchDefault(searchContext).getContent();
+        return ibzmyterritoryService.select(searchContext);
     }
 
     @Override

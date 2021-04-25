@@ -101,7 +101,7 @@ public class NotifyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     }
 
     @Override
-    public Page<Notify> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Notify> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class NotifyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     @Override
     public List<Notify> select(ISearchContextBase iSearchContextBase) {
         NotifySearchContext searchContext = (NotifySearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return notifyService.searchDefault(searchContext).getContent();
+        return notifyService.select(searchContext);
     }
 
     @Override

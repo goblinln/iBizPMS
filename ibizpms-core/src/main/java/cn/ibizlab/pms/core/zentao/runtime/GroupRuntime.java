@@ -101,7 +101,7 @@ public class GroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     }
 
     @Override
-    public Page<Group> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Group> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class GroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     @Override
     public List<Group> select(ISearchContextBase iSearchContextBase) {
         GroupSearchContext searchContext = (GroupSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return groupService.searchDefault(searchContext).getContent();
+        return groupService.select(searchContext);
     }
 
     @Override

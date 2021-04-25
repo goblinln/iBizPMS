@@ -74,7 +74,7 @@
 	 <select id="selectByRoot" resultMap="PRODUCTTEAMResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.ROOT=#{id} ]]>
+			<![CDATA[ AND t1.`ROOT`=#{id} ]]>
 		</trim>
      </select>
 

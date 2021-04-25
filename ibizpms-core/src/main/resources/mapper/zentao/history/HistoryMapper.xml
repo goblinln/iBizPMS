@@ -48,7 +48,7 @@
 	 <select id="selectByAction" resultMap="HistoryResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.ACTION=#{id} ]]>
+			<![CDATA[ AND t1.`ACTION`=#{id} ]]>
 		</trim>
      </select>
 

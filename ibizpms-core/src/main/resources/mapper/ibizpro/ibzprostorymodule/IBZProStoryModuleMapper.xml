@@ -72,14 +72,14 @@
 	 <select id="selectByRoot" resultMap="IBZProStoryModuleResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.ROOT=#{id} ]]>
+			<![CDATA[ AND t1.`ROOT`=#{id} ]]>
 		</trim>
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_IBZPRO_STORYMODULE_IBZPRO_STORYMODULE_PARENT] -->
 	 <select id="selectByParent" resultMap="IBZProStoryModuleResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.PARENT=#{id} ]]>
+			<![CDATA[ AND t1.`PARENT`=#{id} ]]>
 		</trim>
      </select>
 

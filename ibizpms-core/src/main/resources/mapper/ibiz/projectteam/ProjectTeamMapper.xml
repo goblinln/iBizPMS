@@ -69,7 +69,7 @@
 			<if test="true">
 			<![CDATA[ AND ( t1.`TYPE` = 'project' ) ]]>
 			</if>
-			<![CDATA[ AND T1.ROOT=#{id} ]]>
+			<![CDATA[ AND t1.`ROOT`=#{id} ]]>
 		</trim>
      </select>
 

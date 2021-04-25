@@ -57,7 +57,7 @@
 	 <select id="selectByTask" resultMap="TaskEstimateResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.TASK=#{id} ]]>
+			<![CDATA[ AND t1.`TASK`=#{id} ]]>
 		</trim>
      </select>
 

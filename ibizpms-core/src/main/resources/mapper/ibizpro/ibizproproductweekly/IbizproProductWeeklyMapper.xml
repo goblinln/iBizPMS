@@ -58,7 +58,7 @@
 	 <select id="selectByProduct" resultMap="IbizproProductWeeklyResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.PRODUCT=#{id} ]]>
+			<![CDATA[ AND t1.`PRODUCT`=#{id} ]]>
 		</trim>
      </select>
 

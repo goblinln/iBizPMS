@@ -143,7 +143,7 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    public Page<Project> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Project> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -162,8 +162,7 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public List<Project> select(ISearchContextBase iSearchContextBase) {
         ProjectSearchContext searchContext = (ProjectSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return projectService.searchDefault(searchContext).getContent();
+        return projectService.select(searchContext);
     }
 
     @Override

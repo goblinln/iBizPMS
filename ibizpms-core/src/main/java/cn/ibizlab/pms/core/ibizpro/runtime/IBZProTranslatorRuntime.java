@@ -101,7 +101,7 @@ public class IBZProTranslatorRuntime extends cn.ibizlab.pms.core.runtime.SystemD
     }
 
     @Override
-    public Page<IBZProTranslator> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<IBZProTranslator> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class IBZProTranslatorRuntime extends cn.ibizlab.pms.core.runtime.SystemD
     @Override
     public List<IBZProTranslator> select(ISearchContextBase iSearchContextBase) {
         IBZProTranslatorSearchContext searchContext = (IBZProTranslatorSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return ibzprotranslatorService.searchDefault(searchContext).getContent();
+        return ibzprotranslatorService.select(searchContext);
     }
 
     @Override

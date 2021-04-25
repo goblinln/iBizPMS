@@ -101,7 +101,7 @@ public class IbzLibCaseStepsRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
     }
 
     @Override
-    public Page<IbzLibCaseSteps> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<IbzLibCaseSteps> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class IbzLibCaseStepsRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
     @Override
     public List<IbzLibCaseSteps> select(ISearchContextBase iSearchContextBase) {
         IbzLibCaseStepsSearchContext searchContext = (IbzLibCaseStepsSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return ibzlibcasestepsService.searchDefault(searchContext).getContent();
+        return ibzlibcasestepsService.select(searchContext);
     }
 
     @Override

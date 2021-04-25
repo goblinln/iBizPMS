@@ -117,7 +117,7 @@ public class DocLibRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     }
 
     @Override
-    public Page<DocLib> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<DocLib> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -136,8 +136,7 @@ public class DocLibRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     @Override
     public List<DocLib> select(ISearchContextBase iSearchContextBase) {
         DocLibSearchContext searchContext = (DocLibSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return doclibService.searchDefault(searchContext).getContent();
+        return doclibService.select(searchContext);
     }
 
     @Override

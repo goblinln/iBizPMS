@@ -57,14 +57,14 @@
 	 <select id="selectByProject" resultMap="BurnResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.PROJECT=#{id} ]]>
+			<![CDATA[ AND t1.`PROJECT`=#{id} ]]>
 		</trim>
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_BURN_ZT_TASK_TASK] -->
 	 <select id="selectByTask" resultMap="BurnResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.TASK=#{id} ]]>
+			<![CDATA[ AND t1.`TASK`=#{id} ]]>
 		</trim>
      </select>
 

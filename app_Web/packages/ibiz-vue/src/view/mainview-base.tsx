@@ -271,10 +271,16 @@ export class MainViewBase extends ViewBase {
      * @memberof MainViewBase
      */
     public renderCaptionInfo() {
+        let innerHTML: string = '';
+        if (this.model.dataInfo && this.viewInstance?.caption) {
+            innerHTML = this.viewInstance?.caption + '-' + this.model.dataInfo;
+        } else {
+            innerHTML = this.model.dataInfo || this.viewInstance?.caption;
+        }
         return this.$createElement('span', {
             slot: 'captionInfo',
             domProps: {
-                innerHTML: this.model.dataInfo || this.viewInstance?.caption,
+                innerHTML: innerHTML,
             },
         });
     }

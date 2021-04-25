@@ -113,7 +113,7 @@ public class UserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     }
 
     @Override
-    public Page<User> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<User> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -132,8 +132,7 @@ public class UserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     @Override
     public List<User> select(ISearchContextBase iSearchContextBase) {
         UserSearchContext searchContext = (UserSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return userService.searchDefault(searchContext).getContent();
+        return userService.select(searchContext);
     }
 
     @Override

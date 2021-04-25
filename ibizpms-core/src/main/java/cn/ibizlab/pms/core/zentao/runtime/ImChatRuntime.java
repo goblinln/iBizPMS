@@ -101,7 +101,7 @@ public class ImChatRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     }
 
     @Override
-    public Page<ImChat> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<ImChat> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class ImChatRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     @Override
     public List<ImChat> select(ISearchContextBase iSearchContextBase) {
         ImChatSearchContext searchContext = (ImChatSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return imchatService.searchDefault(searchContext).getContent();
+        return imchatService.select(searchContext);
     }
 
     @Override

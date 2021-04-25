@@ -111,7 +111,7 @@ public class TestModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     }
 
     @Override
-    public Page<TestModule> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<TestModule> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -130,8 +130,7 @@ public class TestModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     @Override
     public List<TestModule> select(ISearchContextBase iSearchContextBase) {
         TestModuleSearchContext searchContext = (TestModuleSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return testmoduleService.searchDefault(searchContext).getContent();
+        return testmoduleService.select(searchContext);
     }
 
     @Override

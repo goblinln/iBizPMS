@@ -101,7 +101,7 @@ public class ImClientRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     }
 
     @Override
-    public Page<ImClient> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<ImClient> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class ImClientRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     @Override
     public List<ImClient> select(ISearchContextBase iSearchContextBase) {
         ImClientSearchContext searchContext = (ImClientSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return imclientService.searchDefault(searchContext).getContent();
+        return imclientService.select(searchContext);
     }
 
     @Override

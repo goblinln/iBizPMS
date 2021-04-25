@@ -101,7 +101,7 @@ public class LogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
     }
 
     @Override
-    public Page<Log> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Log> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class LogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
     @Override
     public List<Log> select(ISearchContextBase iSearchContextBase) {
         LogSearchContext searchContext = (LogSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return logService.searchDefault(searchContext).getContent();
+        return logService.select(searchContext);
     }
 
     @Override

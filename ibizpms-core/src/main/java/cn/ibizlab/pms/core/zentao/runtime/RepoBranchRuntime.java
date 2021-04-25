@@ -101,7 +101,7 @@ public class RepoBranchRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     }
 
     @Override
-    public Page<RepoBranch> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<RepoBranch> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class RepoBranchRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     @Override
     public List<RepoBranch> select(ISearchContextBase iSearchContextBase) {
         RepoBranchSearchContext searchContext = (RepoBranchSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return repobranchService.searchDefault(searchContext).getContent();
+        return repobranchService.select(searchContext);
     }
 
     @Override

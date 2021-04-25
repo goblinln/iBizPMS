@@ -113,7 +113,7 @@ public class IbzDailyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     }
 
     @Override
-    public Page<IbzDaily> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<IbzDaily> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -132,8 +132,7 @@ public class IbzDailyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     @Override
     public List<IbzDaily> select(ISearchContextBase iSearchContextBase) {
         IbzDailySearchContext searchContext = (IbzDailySearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return ibzdailyService.searchDefault(searchContext).getContent();
+        return ibzdailyService.select(searchContext);
     }
 
     @Override

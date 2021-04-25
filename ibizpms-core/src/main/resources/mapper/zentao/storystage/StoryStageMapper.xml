@@ -48,14 +48,14 @@
 	 <select id="selectByBranch" resultMap="StoryStageResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.BRANCH=#{id} ]]>
+			<![CDATA[ AND t1.`BRANCH`=#{id} ]]>
 		</trim>
      </select>
 	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_STORYSTAGE_ZT_STORY_STORY] -->
 	 <select id="selectByStory" resultMap="StoryStageResultMap"  databaseId="mysql">
         <include refid="select" />
 		<trim prefix="where" prefixOverrides="and">
-			<![CDATA[ AND T1.STORY=#{id} ]]>
+			<![CDATA[ AND t1.`STORY`=#{id} ]]>
 		</trim>
      </select>
 

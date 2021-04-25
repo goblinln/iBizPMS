@@ -101,7 +101,7 @@ public class RelationRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     }
 
     @Override
-    public Page<Relation> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Relation> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class RelationRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     @Override
     public List<Relation> select(ISearchContextBase iSearchContextBase) {
         RelationSearchContext searchContext = (RelationSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return relationService.searchDefault(searchContext).getContent();
+        return relationService.select(searchContext);
     }
 
     @Override

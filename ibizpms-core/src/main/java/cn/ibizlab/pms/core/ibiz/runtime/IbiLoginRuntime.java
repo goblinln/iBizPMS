@@ -101,7 +101,7 @@ public class IbiLoginRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     }
 
     @Override
-    public Page<IbiLogin> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<IbiLogin> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class IbiLoginRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     @Override
     public List<IbiLogin> select(ISearchContextBase iSearchContextBase) {
         IbiLoginSearchContext searchContext = (IbiLoginSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return ibiloginService.searchDefault(searchContext).getContent();
+        return ibiloginService.select(searchContext);
     }
 
     @Override

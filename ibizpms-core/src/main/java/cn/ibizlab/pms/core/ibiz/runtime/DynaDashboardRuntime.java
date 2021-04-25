@@ -101,7 +101,7 @@ public class DynaDashboardRuntime extends cn.ibizlab.pms.core.runtime.SystemData
     }
 
     @Override
-    public Page<DynaDashboard> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<DynaDashboard> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class DynaDashboardRuntime extends cn.ibizlab.pms.core.runtime.SystemData
     @Override
     public List<DynaDashboard> select(ISearchContextBase iSearchContextBase) {
         DynaDashboardSearchContext searchContext = (DynaDashboardSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return dynadashboardService.searchDefault(searchContext).getContent();
+        return dynadashboardService.select(searchContext);
     }
 
     @Override
