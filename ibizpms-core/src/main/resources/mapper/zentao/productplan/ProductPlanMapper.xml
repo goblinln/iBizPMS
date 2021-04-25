@@ -15,8 +15,14 @@
             <bind name="bind_n_title_like" value="'%' + srf.n_title_like + '%'" />
             <![CDATA[ AND  t1.`TITLE` like #{bind_n_title_like,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_id_eq != null ">
+			<![CDATA[ AND  t1.`ID` = #{srf.n_id_eq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="srf.n_begin_gtandeq != null ">
 			<![CDATA[ AND  t1.`BEGIN` >= #{srf.n_begin_gtandeq,jdbcType=TIMESTAMP} ]]>
+        </if>
+		<if test="srf.n_statuss_eq != null ">
+			<![CDATA[ AND  (case when t1.parent = -1 then 'parent' when t1.parent > 0 then  'chlid' else 'normal' end) = #{srf.n_statuss_eq,jdbcType=VARCHAR} ]]>
         </if>
 		<if test="srf.n_end_ltandeq != null ">
 			<![CDATA[ AND  t1.`END` <= #{srf.n_end_ltandeq,jdbcType=TIMESTAMP} ]]>

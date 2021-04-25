@@ -1480,7 +1480,6 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "auditMode" : 0,
   "codeName" : "PSSysReqItem",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

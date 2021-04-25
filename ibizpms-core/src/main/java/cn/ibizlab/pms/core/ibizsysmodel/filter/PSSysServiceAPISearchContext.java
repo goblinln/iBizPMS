@@ -29,6 +29,8 @@ public class PSSysServiceAPISearchContext extends SearchContextBase {
 
 	private String n_predefinedtype_eq;//[平台预定义类型]
 
+	private String n_pssysserviceapiid_eq;//[系统服务接口标识]
+
 	private Integer n_lockflag_eq;//[模型锁标志]
 
 	private String n_defselectreqmethod_eq;//[默认查询请求方式]

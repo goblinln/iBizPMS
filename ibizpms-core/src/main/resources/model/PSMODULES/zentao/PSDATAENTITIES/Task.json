@@ -15426,7 +15426,6 @@
     "roleTag" : "Task_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "Task",
   "dEType" : 1,
   "dSLink" : "DEFAULT",
@@ -15472,6 +15471,10 @@
     },
     "name" : "DER1N_IBZ_TASKTEAM_ZT_TASK_ROOT",
     "orderValue" : 100,
+    "getPSOne2ManyDataDEField" : {
+      "name" : "TASKTEAMS",
+      "codeName" : "Taskteams"
+    },
     "getPSPickupDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"
@@ -15588,6 +15591,10 @@
     },
     "name" : "DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK",
     "orderValue" : 100,
+    "getPSOne2ManyDataDEField" : {
+      "name" : "IBZTASKESTIMATES",
+      "codeName" : "Ibztaskestimates"
+    },
     "getPSPickupDEField" : {
       "name" : "TASK",
       "codeName" : "Task"

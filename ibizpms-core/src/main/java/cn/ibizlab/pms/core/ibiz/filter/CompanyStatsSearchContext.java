@@ -43,6 +43,10 @@ public class CompanyStatsSearchContext extends QueryWrapperContext<CompanyStats>
 	public void setN_comment_like(String n_comment_like) {
         this.n_comment_like = n_comment_like;
     }
+	private Long n_id_eq;//[标识]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 
     /**
 	 * 启用快速搜索

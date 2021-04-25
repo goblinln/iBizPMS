@@ -23,6 +23,9 @@
 		<if test="srf.n_resolution_eq != null ">
 			<![CDATA[ AND  t1.`RESOLUTION` = #{srf.n_resolution_eq,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_isfavorites_eq != null ">
+			<![CDATA[ AND  0 = #{srf.n_isfavorites_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_closedby_eq != null ">
 			<![CDATA[ AND  t1.`CLOSEDBY` = #{srf.n_closedby_eq,jdbcType=VARCHAR} ]]>
         </if>

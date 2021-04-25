@@ -47,6 +47,10 @@ public class CaseSearchContext extends QueryWrapperContext<Case> {
 	public void setN_status_eq(String n_status_eq) {
         this.n_status_eq = n_status_eq;
     }
+	private String n_isfavorites_eq;//[是否收藏]
+	public void setN_isfavorites_eq(String n_isfavorites_eq) {
+        this.n_isfavorites_eq = n_isfavorites_eq;
+    }
 	private String n_frequency_eq;//[frequency]
 	public void setN_frequency_eq(String n_frequency_eq) {
         this.n_frequency_eq = n_frequency_eq;
@@ -74,6 +78,10 @@ public class CaseSearchContext extends QueryWrapperContext<Case> {
 	private String n_lastrunresult1_eq;//[测试用例结果]
 	public void setN_lastrunresult1_eq(String n_lastrunresult1_eq) {
         this.n_lastrunresult1_eq = n_lastrunresult1_eq;
+    }
+	private Long n_id_eq;//[用例编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
     }
 	private String n_lastrunner_eq;//[执行人]
 	public void setN_lastrunner_eq(String n_lastrunner_eq) {

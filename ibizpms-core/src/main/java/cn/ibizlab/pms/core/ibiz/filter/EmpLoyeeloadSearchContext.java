@@ -35,6 +35,10 @@ public class EmpLoyeeloadSearchContext extends QueryWrapperContext<EmpLoyeeload>
 	public void setN_dept_eq(String n_dept_eq) {
         this.n_dept_eq = n_dept_eq;
     }
+	private Long n_id_eq;//[主键]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 	private Integer n_workday_eq;//[工作日天数]
 	public void setN_workday_eq(Integer n_workday_eq) {
         this.n_workday_eq = n_workday_eq;

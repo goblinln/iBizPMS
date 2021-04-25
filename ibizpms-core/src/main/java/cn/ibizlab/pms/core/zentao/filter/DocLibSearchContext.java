@@ -35,9 +35,17 @@ public class DocLibSearchContext extends QueryWrapperContext<DocLib> {
 	public void setN_doclibtype_eq(String n_doclibtype_eq) {
         this.n_doclibtype_eq = n_doclibtype_eq;
     }
+	private String n_isfavourites_eq;//[是否收藏]
+	public void setN_isfavourites_eq(String n_isfavourites_eq) {
+        this.n_isfavourites_eq = n_isfavourites_eq;
+    }
 	private String n_acl_eq;//[权限]
 	public void setN_acl_eq(String n_acl_eq) {
         this.n_acl_eq = n_acl_eq;
+    }
+	private Long n_id_eq;//[编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
     }
 	private String n_main_eq;//[是否是主库]
 	public void setN_main_eq(String n_main_eq) {

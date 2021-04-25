@@ -11,6 +11,9 @@
 	
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_istop_eq != null ">
+			<![CDATA[ AND  '0' = #{srf.n_istop_eq,jdbcType=INTEGER} ]]>
+        </if>
 		<if test="srf.n_productclass_eq != null ">
 			<![CDATA[ AND  t1.`productclass` = #{srf.n_productclass_eq,jdbcType=VARCHAR} ]]>
         </if>

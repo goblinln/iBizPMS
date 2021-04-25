@@ -27,6 +27,8 @@ import cn.ibizlab.pms.util.filter.SearchContextBase;
 public class PSSubSysServiceAPISearchContext extends SearchContextBase {
 	private String n_pssubsysserviceapiname_like;//[外部服务接口名称]
 
+	private String n_pssubsysserviceapiid_eq;//[外部服务接口标识]
+
 	private String n_pssysserviceapiname_eq;//[系统服务接口]
 
 	private String n_pssysserviceapiname_like;//[系统服务接口]

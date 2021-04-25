@@ -55,6 +55,10 @@ public class UserSearchContext extends QueryWrapperContext<User> {
 	public void setN_gender_eq(String n_gender_eq) {
         this.n_gender_eq = n_gender_eq;
     }
+	private Long n_id_eq;//[ID]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 
     /**
 	 * 启用快速搜索

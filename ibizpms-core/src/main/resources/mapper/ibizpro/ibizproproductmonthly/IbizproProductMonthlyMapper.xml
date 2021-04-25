@@ -11,6 +11,9 @@
 	
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_ibizpro_productmonthlyid_eq != null ">
+			<![CDATA[ AND  t1.`IBIZPRO_PRODUCTMONTHLYID` = #{srf.n_ibizpro_productmonthlyid_eq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="srf.n_ibizpro_productmonthlyname_like != null ">
             <bind name="bind_n_ibizpro_productmonthlyname_like" value="'%' + srf.n_ibizpro_productmonthlyname_like + '%'" />
             <![CDATA[ AND  t1.`IBIZPRO_PRODUCTMONTHLYNAME` like #{bind_n_ibizpro_productmonthlyname_like,jdbcType=VARCHAR} ]]>

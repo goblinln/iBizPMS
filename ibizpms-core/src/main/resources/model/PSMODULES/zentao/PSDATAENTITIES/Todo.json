@@ -2431,7 +2431,6 @@
     "roleTag" : "Todo_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "Todo",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

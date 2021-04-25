@@ -15,6 +15,10 @@
   },
   "name" : "DER1N_ZT_CASESTEP_ZT_CASE_CASE",
   "orderValue" : 100,
+  "getPSOne2ManyDataDEField" : {
+    "name" : "CASESTEPS",
+    "codeName" : "CaseSteps"
+  },
   "getPSPickupDEField" : {
     "name" : "CASE",
     "codeName" : "IBizCase"

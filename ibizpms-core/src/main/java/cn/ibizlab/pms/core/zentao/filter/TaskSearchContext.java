@@ -35,6 +35,10 @@ public class TaskSearchContext extends QueryWrapperContext<Task> {
 	public void setN_config_type_eq(String n_config_type_eq) {
         this.n_config_type_eq = n_config_type_eq;
     }
+	private String n_isfavorites_eq;//[是否收藏]
+	public void setN_isfavorites_eq(String n_isfavorites_eq) {
+        this.n_isfavorites_eq = n_isfavorites_eq;
+    }
 	private String n_color_eq;//[标题颜色]
 	public void setN_color_eq(String n_color_eq) {
         this.n_color_eq = n_color_eq;
@@ -42,6 +46,10 @@ public class TaskSearchContext extends QueryWrapperContext<Task> {
 	private Long n_id_noteq;//[编号]
 	public void setN_id_noteq(Long n_id_noteq) {
         this.n_id_noteq = n_id_noteq;
+    }
+	private Long n_id_eq;//[编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
     }
 	private String n_finishedby_eq;//[由谁完成]
 	public void setN_finishedby_eq(String n_finishedby_eq) {

@@ -57,6 +57,10 @@ public class IbzDailySearchContext extends QueryWrapperContext<IbzDaily> {
 	public void setN_reportstatus_eq(String n_reportstatus_eq) {
         this.n_reportstatus_eq = n_reportstatus_eq;
     }
+	private Long n_ibz_dailyid_eq;//[日报标识]
+	public void setN_ibz_dailyid_eq(Long n_ibz_dailyid_eq) {
+        this.n_ibz_dailyid_eq = n_ibz_dailyid_eq;
+    }
 	private String n_account_eq;//[用户]
 	public void setN_account_eq(String n_account_eq) {
         this.n_account_eq = n_account_eq;

@@ -35,6 +35,10 @@ public class ProductLifeSearchContext extends QueryWrapperContext<ProductLife> {
 	public void setN_year_eq(String n_year_eq) {
         this.n_year_eq = n_year_eq;
     }
+	private String n_ibz_productlifeid_eq;//[产品生命周期标识]
+	public void setN_ibz_productlifeid_eq(String n_ibz_productlifeid_eq) {
+        this.n_ibz_productlifeid_eq = n_ibz_productlifeid_eq;
+    }
 
     /**
 	 * 启用快速搜索

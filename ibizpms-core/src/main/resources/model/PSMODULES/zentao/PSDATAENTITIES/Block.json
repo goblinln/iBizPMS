@@ -595,7 +595,6 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "auditMode" : 0,
   "codeName" : "Block",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

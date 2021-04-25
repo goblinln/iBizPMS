@@ -15,6 +15,9 @@
             <bind name="bind_n_ibz_report_role_configname_like" value="'%' + srf.n_ibz_report_role_configname_like + '%'" />
             <![CDATA[ AND  t1.`IBZ_REPORT_ROLE_CONFIGNAME` like #{bind_n_ibz_report_role_configname_like,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_ibz_report_role_configid_eq != null ">
+			<![CDATA[ AND  t1.`IBZ_REPORT_ROLE_CONFIGID` = #{srf.n_ibz_report_role_configid_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_type_eq != null ">
 			<![CDATA[ AND  t1.`TYPE` = #{srf.n_type_eq,jdbcType=VARCHAR} ]]>
         </if>

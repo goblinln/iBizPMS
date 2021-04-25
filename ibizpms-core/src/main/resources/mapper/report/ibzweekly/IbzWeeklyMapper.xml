@@ -18,6 +18,9 @@
             <bind name="bind_n_ibz_weeklyname_like" value="'%' + srf.n_ibz_weeklyname_like + '%'" />
             <![CDATA[ AND  t1.`IBZ_WEEKLYNAME` like #{bind_n_ibz_weeklyname_like,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_ibz_weeklyid_eq != null ">
+			<![CDATA[ AND  t1.`IBZ_WEEKLYID` = #{srf.n_ibz_weeklyid_eq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="srf.n_reportstatus_eq != null ">
 			<![CDATA[ AND  t1.`REPORTSTATUS` = #{srf.n_reportstatus_eq,jdbcType=VARCHAR} ]]>
         </if>

@@ -31,6 +31,10 @@ public class BlockSearchContext extends QueryWrapperContext<Block> {
 	public void setN_title_like(String n_title_like) {
         this.n_title_like = n_title_like;
     }
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 
     /**
 	 * 启用快速搜索

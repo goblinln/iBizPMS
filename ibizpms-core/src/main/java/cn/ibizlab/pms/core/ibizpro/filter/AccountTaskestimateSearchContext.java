@@ -37,6 +37,10 @@ public class AccountTaskestimateSearchContext extends QueryWrapperContext<Accoun
 	public void setN_date_eq(Timestamp n_date_eq) {
         this.n_date_eq = n_date_eq;
     }
+	private String n_id_eq;//[主键]
+	public void setN_id_eq(String n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 	private String n_year_eq;//[年]
 	public void setN_year_eq(String n_year_eq) {
         this.n_year_eq = n_year_eq;

@@ -14,6 +14,9 @@
 		<if test="srf.n_marker_eq != null ">
 			<![CDATA[ AND  t1.`MARKER` = #{srf.n_marker_eq,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_id_eq != null ">
+			<![CDATA[ AND  t1.`ID` = #{srf.n_id_eq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="srf.n_name_like != null ">
             <bind name="bind_n_name_like" value="'%' + srf.n_name_like + '%'" />
             <![CDATA[ AND  t1.`NAME` like #{bind_n_name_like,jdbcType=VARCHAR} ]]>

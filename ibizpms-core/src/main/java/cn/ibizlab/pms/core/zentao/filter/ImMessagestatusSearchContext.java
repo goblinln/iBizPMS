@@ -31,6 +31,10 @@ public class ImMessagestatusSearchContext extends QueryWrapperContext<ImMessages
 	public void setN_status_eq(String n_status_eq) {
         this.n_status_eq = n_status_eq;
     }
+	private String n_id_eq;//[虚拟主键]
+	public void setN_id_eq(String n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 
     /**
 	 * 启用快速搜索

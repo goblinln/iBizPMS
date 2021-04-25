@@ -41,6 +41,8 @@ public class PSDEFieldSearchContext extends SearchContextBase {
 
 	private String n_biztag_eq;//[业务标记]
 
+	private String n_psdefieldid_eq;//[实体属性标识]
+
 	private String n_unionkeyvalue_eq;//[联合键值]
 
 	private String n_psdefieldname_like;//[实体属性名称]

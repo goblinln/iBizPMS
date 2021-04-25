@@ -11,6 +11,9 @@
 	
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_id_eq != null ">
+			<![CDATA[ AND  concat(t1.`GROUP`,'__',t1.`MODULE`,'__',t1.`METHOD`) = #{srf.n_id_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
 		AND ${ew.sqlSegment}
 		</if>

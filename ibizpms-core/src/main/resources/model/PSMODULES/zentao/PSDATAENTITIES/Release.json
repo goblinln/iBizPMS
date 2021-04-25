@@ -1990,7 +1990,6 @@
     "roleTag" : "Release_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "Release",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

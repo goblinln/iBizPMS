@@ -11,6 +11,9 @@
 	
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_indexid_eq != null ">
+			<![CDATA[ AND  t1.`INDEXID` = #{srf.n_indexid_eq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="srf.n_indexname_like != null ">
             <bind name="bind_n_indexname_like" value="'%' + srf.n_indexname_like + '%'" />
             <![CDATA[ AND  t1.`INDEXNAME` like #{bind_n_indexname_like,jdbcType=VARCHAR} ]]>

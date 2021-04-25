@@ -67,6 +67,10 @@ public class BugStatsSearchContext extends QueryWrapperContext<BugStats> {
 	public void setN_end_ltandeq(Timestamp n_end_ltandeq) {
         this.n_end_ltandeq = n_end_ltandeq;
     }
+	private Long n_id_eq;//[标识]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 	private String n_title_like;//[名称]
 	public void setN_title_like(String n_title_like) {
         this.n_title_like = n_title_like;

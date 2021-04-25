@@ -35,6 +35,10 @@ public class ProjectModuleSearchContext extends QueryWrapperContext<ProjectModul
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;
     }
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 	private String n_rootname_eq;//[所属项目]
 	public void setN_rootname_eq(String n_rootname_eq) {
         this.n_rootname_eq = n_rootname_eq;

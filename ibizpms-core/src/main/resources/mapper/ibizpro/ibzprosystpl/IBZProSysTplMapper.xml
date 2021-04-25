@@ -11,6 +11,9 @@
 	
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_ibzpro_systplid_eq != null ">
+			<![CDATA[ AND  t1.`IBZPRO_SYSTPLID` = #{srf.n_ibzpro_systplid_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_public_eq != null ">
 			<![CDATA[ AND  t1.`PUBLIC` = #{srf.n_public_eq,jdbcType=VARCHAR} ]]>
         </if>

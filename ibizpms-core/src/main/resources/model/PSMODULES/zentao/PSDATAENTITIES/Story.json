@@ -819,7 +819,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "EXISTS(SELECT * FROM zt_projectstory t51 \n WHERE \n t1.ID = t51.STORY  AND  ( t51.`PROJECT` = ${srfdatacontext('srfparentkey','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTSTORY\"}')} ) )",
+        "customCond" : "EXISTS(SELECT * FROM zt_projectstory t51 \n WHERE \n t1.ID = t51.STORY  AND  ( t51.`PROJECT` = #{srf.sessioncontext.srfparentkey}) )",
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
@@ -8449,7 +8449,6 @@
     "roleTag" : "Story_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "Story",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

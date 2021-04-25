@@ -14,6 +14,9 @@
 		<if test="srf.n_pri_eq != null ">
 			<![CDATA[ AND  t1.`PRI` = #{srf.n_pri_eq,jdbcType=INTEGER} ]]>
         </if>
+		<if test="srf.n_id_eq != null ">
+			<![CDATA[ AND  t1.`ID` = #{srf.n_id_eq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="srf.n_status_eq != null ">
 			<![CDATA[ AND  t1.`STATUS` = #{srf.n_status_eq,jdbcType=VARCHAR} ]]>
         </if>

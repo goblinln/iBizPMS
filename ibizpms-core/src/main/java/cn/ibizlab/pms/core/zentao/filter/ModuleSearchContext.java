@@ -39,6 +39,10 @@ public class ModuleSearchContext extends QueryWrapperContext<Module> {
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;
     }
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 	private String n_parentname_eq;//[上级模块]
 	public void setN_parentname_eq(String n_parentname_eq) {
         this.n_parentname_eq = n_parentname_eq;

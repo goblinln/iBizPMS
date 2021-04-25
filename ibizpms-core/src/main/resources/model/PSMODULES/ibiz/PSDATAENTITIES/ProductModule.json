@@ -1586,7 +1586,6 @@
     "roleTag" : "ProductModule_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "ProductModule",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

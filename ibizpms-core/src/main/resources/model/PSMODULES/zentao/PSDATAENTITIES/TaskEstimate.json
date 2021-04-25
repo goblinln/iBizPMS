@@ -1820,7 +1820,6 @@
     "roleTag" : "TaskEstimate_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "TaskEstimate",
   "dEType" : 1,
   "dSLink" : "DEFAULT",
@@ -1856,6 +1855,10 @@
     },
     "name" : "DER1N_ZT_TASKESTIMATE_ZT_TASK_TASK",
     "orderValue" : 100,
+    "getPSOne2ManyDataDEField" : {
+      "name" : "IBZTASKESTIMATES",
+      "codeName" : "Ibztaskestimates"
+    },
     "getPSPickupDEField" : {
       "name" : "TASK",
       "codeName" : "Task"

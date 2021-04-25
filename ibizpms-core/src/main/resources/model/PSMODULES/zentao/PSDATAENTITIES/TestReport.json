@@ -7299,7 +7299,6 @@
     "roleTag" : "TestReport_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "TestReport",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

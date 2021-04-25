@@ -727,95 +727,6 @@
     "widthUnit" : "PX",
     "enableSort" : true,
     "hideDefault" : true
-  }, {
-    "align" : "LEFT",
-    "cLConvertMode" : "NONE",
-    "caption" : "过期天数",
-    "codeName" : "overduebugs",
-    "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "overduebugs",
-    "excelCaption" : "过期天数",
-    "name" : "overduebugs",
-    "noPrivDisplayMode" : 1,
-    "getPSAppDEField" : {
-      "name" : "OVERDUEBUGS",
-      "codeName" : "Overduebugs"
-    },
-    "width" : 100,
-    "widthUnit" : "PX",
-    "enableSort" : true
-  }, {
-    "align" : "LEFT",
-    "cLConvertMode" : "NONE",
-    "caption" : "延期",
-    "codeName" : "delay",
-    "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "delay",
-    "excelCaption" : "延期",
-    "name" : "delay",
-    "noPrivDisplayMode" : 1,
-    "getPSAppDEField" : {
-      "name" : "DELAY",
-      "codeName" : "Delay"
-    },
-    "width" : 100,
-    "widthUnit" : "PX",
-    "enableSort" : true
-  }, {
-    "align" : "LEFT",
-    "cLConvertMode" : "NONE",
-    "caption" : "延期解决",
-    "codeName" : "delayresolve",
-    "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "delayresolve",
-    "excelCaption" : "延期解决",
-    "name" : "delayresolve",
-    "noPrivDisplayMode" : 1,
-    "getPSAppDEField" : {
-      "name" : "DELAYRESOLVE",
-      "codeName" : "Delayresolve"
-    },
-    "width" : 100,
-    "widthUnit" : "PX",
-    "enableSort" : true
-  }, {
-    "align" : "LEFT",
-    "cLConvertMode" : "FRONT",
-    "caption" : "解决者",
-    "codeName" : "resolvedby",
-    "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "resolvedby",
-    "excelCaption" : "解决者",
-    "name" : "resolvedby",
-    "noPrivDisplayMode" : 1,
-    "getPSAppCodeList" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName_Gird.json"
-    },
-    "getPSAppDEField" : {
-      "name" : "RESOLVEDBY",
-      "codeName" : "ResolvedBy"
-    },
-    "width" : 100,
-    "widthUnit" : "PX",
-    "enableSort" : true
-  }, {
-    "align" : "LEFT",
-    "cLConvertMode" : "NONE",
-    "caption" : "v2",
-    "codeName" : "v2",
-    "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "v2",
-    "excelCaption" : "v2",
-    "name" : "v2",
-    "noPrivDisplayMode" : 1,
-    "getPSAppDEField" : {
-      "name" : "V2",
-      "codeName" : "V2"
-    },
-    "width" : 100,
-    "widthUnit" : "PX",
-    "enableSort" : true
   } ],
   "getPSDEGridDataItems" : [ {
     "format" : "YYYY-MM-DD",
@@ -824,13 +735,6 @@
     "getPSAppDEField" : {
       "name" : "ACTIVATEDDATE",
       "codeName" : "ActivatedDate"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "v2",
-    "getPSAppDEField" : {
-      "name" : "V2",
-      "codeName" : "V2"
     }
   }, {
     "dataType" : 1,
@@ -872,18 +776,18 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 1,
-    "name" : "duplicatebug",
-    "getPSAppDEField" : {
-      "name" : "DUPLICATEBUG",
-      "codeName" : "DuplicateBug"
-    }
-  }, {
     "dataType" : 25,
     "name" : "openedby",
     "getPSAppDEField" : {
       "name" : "OPENEDBY",
       "codeName" : "OpenedBy"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "duplicatebug",
+    "getPSAppDEField" : {
+      "name" : "DUPLICATEBUG",
+      "codeName" : "DuplicateBug"
     }
   }, {
     "dataType" : 1,
@@ -921,13 +825,6 @@
       "codeName" : "Confirmed"
     }
   }, {
-    "dataType" : 9,
-    "name" : "overduebugs",
-    "getPSAppDEField" : {
-      "name" : "OVERDUEBUGS",
-      "codeName" : "Overduebugs"
-    }
-  }, {
     "dataType" : 1,
     "name" : "repo",
     "getPSAppDEField" : {
@@ -954,13 +851,6 @@
     "getPSAppDEField" : {
       "name" : "MODULE",
       "codeName" : "Module"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "delayresolve",
-    "getPSAppDEField" : {
-      "name" : "DELAYRESOLVE",
-      "codeName" : "Delayresolve"
     }
   }, {
     "format" : "YYYY-MM-DD HH:mm:ss",
@@ -1020,13 +910,6 @@
       "codeName" : "Pri"
     }
   }, {
-    "dataType" : 1,
-    "name" : "plan",
-    "getPSAppDEField" : {
-      "name" : "PLAN",
-      "codeName" : "Plan"
-    }
-  }, {
     "format" : "YYYY-MM-DD HH:mm:ss",
     "dataType" : 5,
     "name" : "lastediteddate",
@@ -1035,18 +918,18 @@
       "codeName" : "LastEditedDate"
     }
   }, {
+    "dataType" : 1,
+    "name" : "plan",
+    "getPSAppDEField" : {
+      "name" : "PLAN",
+      "codeName" : "Plan"
+    }
+  }, {
     "dataType" : 25,
     "name" : "color",
     "getPSAppDEField" : {
       "name" : "COLOR",
       "codeName" : "Color"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "resolvedby",
-    "getPSAppDEField" : {
-      "name" : "RESOLVEDBY",
-      "codeName" : "ResolvedBy"
     }
   }, {
     "dataType" : 1,
@@ -1068,13 +951,6 @@
     "getPSAppDEField" : {
       "name" : "CASE",
       "codeName" : "IBizCase"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "delay",
-    "getPSAppDEField" : {
-      "name" : "DELAY",
-      "codeName" : "Delay"
     }
   } ],
   "getPSDEGridEditItems" : [ {

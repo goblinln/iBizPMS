@@ -31,6 +31,10 @@ public class IbiLoginSearchContext extends QueryWrapperContext<IbiLogin> {
 	public void setN_realname_like(String n_realname_like) {
         this.n_realname_like = n_realname_like;
     }
+	private Long n_id_eq;//[ID]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 
     /**
 	 * 启用快速搜索

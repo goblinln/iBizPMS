@@ -577,7 +577,6 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "auditMode" : 0,
   "codeName" : "DynaDashboard",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

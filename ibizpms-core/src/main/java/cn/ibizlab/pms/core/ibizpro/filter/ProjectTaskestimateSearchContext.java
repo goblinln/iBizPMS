@@ -49,6 +49,10 @@ public class ProjectTaskestimateSearchContext extends QueryWrapperContext<Projec
 	public void setN_year_eq(String n_year_eq) {
         this.n_year_eq = n_year_eq;
     }
+	private String n_id_eq;//[主键]
+	public void setN_id_eq(String n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 
     /**
 	 * 启用快速搜索

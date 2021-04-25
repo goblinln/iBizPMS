@@ -791,7 +791,6 @@
     "roleTag" : "ProjectMember_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "IbzProjectMember",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

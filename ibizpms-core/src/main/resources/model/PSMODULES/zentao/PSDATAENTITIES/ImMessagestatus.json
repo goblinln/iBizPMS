@@ -280,7 +280,6 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "auditMode" : 0,
   "codeName" : "ImMessagestatus",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

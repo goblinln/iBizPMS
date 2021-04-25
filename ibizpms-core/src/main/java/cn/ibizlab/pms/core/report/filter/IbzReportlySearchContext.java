@@ -31,6 +31,10 @@ public class IbzReportlySearchContext extends QueryWrapperContext<IbzReportly> {
 	public void setN_account_eq(String n_account_eq) {
         this.n_account_eq = n_account_eq;
     }
+	private Long n_ibz_reportlyid_eq;//[汇报标识]
+	public void setN_ibz_reportlyid_eq(Long n_ibz_reportlyid_eq) {
+        this.n_ibz_reportlyid_eq = n_ibz_reportlyid_eq;
+    }
 	private String n_ibz_reportlyname_like;//[汇报名称]
 	public void setN_ibz_reportlyname_like(String n_ibz_reportlyname_like) {
         this.n_ibz_reportlyname_like = n_ibz_reportlyname_like;

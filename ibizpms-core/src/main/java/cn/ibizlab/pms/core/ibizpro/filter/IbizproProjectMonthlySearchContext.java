@@ -31,6 +31,10 @@ public class IbizproProjectMonthlySearchContext extends QueryWrapperContext<Ibiz
 	public void setN_ibizpro_projectmonthlyname_like(String n_ibizpro_projectmonthlyname_like) {
         this.n_ibizpro_projectmonthlyname_like = n_ibizpro_projectmonthlyname_like;
     }
+	private String n_ibizpro_projectmonthlyid_eq;//[项目月报标识]
+	public void setN_ibizpro_projectmonthlyid_eq(String n_ibizpro_projectmonthlyid_eq) {
+        this.n_ibizpro_projectmonthlyid_eq = n_ibizpro_projectmonthlyid_eq;
+    }
 	private String n_pm_eq;//[项目负责人]
 	public void setN_pm_eq(String n_pm_eq) {
         this.n_pm_eq = n_pm_eq;

@@ -2116,7 +2116,6 @@
     "roleTag" : "TestTask_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "TestTask",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

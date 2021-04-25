@@ -2707,7 +2707,6 @@
     "roleTag" : "ProductPlan_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "ProductPlan",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

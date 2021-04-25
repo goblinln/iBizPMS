@@ -27,6 +27,10 @@ import cn.ibizlab.pms.core.ibizpro.domain.IbizproIndex;
 @Data
 public class IbizproIndexSearchContext extends QueryWrapperContext<IbizproIndex> {
 
+	private Long n_indexid_eq;//[主键]
+	public void setN_indexid_eq(Long n_indexid_eq) {
+        this.n_indexid_eq = n_indexid_eq;
+    }
 	private String n_indexname_like;//[标题[需求、任务等]]
 	public void setN_indexname_like(String n_indexname_like) {
         this.n_indexname_like = n_indexname_like;

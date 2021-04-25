@@ -1458,7 +1458,6 @@
     "roleTag" : "TestModule_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "TestModule",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

@@ -31,6 +31,10 @@ public class IbzCaseSearchContext extends QueryWrapperContext<IbzCase> {
 	public void setN_lasteditedby_eq(String n_lasteditedby_eq) {
         this.n_lasteditedby_eq = n_lasteditedby_eq;
     }
+	private Long n_id_eq;//[用例编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 	private String n_type_eq;//[用例类型]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;

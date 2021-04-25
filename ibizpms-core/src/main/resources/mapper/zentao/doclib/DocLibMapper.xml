@@ -17,8 +17,14 @@
 		<if test="srf.n_doclibtype_eq != null ">
 			<![CDATA[ AND  'doc' = #{srf.n_doclibtype_eq,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_isfavourites_eq != null ">
+			<![CDATA[ AND  ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) = #{srf.n_isfavourites_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_acl_eq != null ">
 			<![CDATA[ AND  t1.`ACL` = #{srf.n_acl_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_id_eq != null ">
+			<![CDATA[ AND  t1.`ID` = #{srf.n_id_eq,jdbcType=BIGINT} ]]>
         </if>
 		<if test="srf.n_main_eq != null ">
 			<![CDATA[ AND  t1.`MAIN` = #{srf.n_main_eq,jdbcType=VARCHAR} ]]>

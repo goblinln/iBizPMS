@@ -654,7 +654,6 @@
     "roleTag" : "Branch_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "Branch",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

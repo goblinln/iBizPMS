@@ -298,7 +298,6 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "auditMode" : 0,
   "codeName" : "SysTeam",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

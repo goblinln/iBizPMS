@@ -18,6 +18,9 @@
 		<if test="srf.n_year_eq != null ">
 			<![CDATA[ AND  t1.`YEAR` = #{srf.n_year_eq,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_ibz_productlifeid_eq != null ">
+			<![CDATA[ AND  t1.`IBZ_PRODUCTLIFEID` = #{srf.n_ibz_productlifeid_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
 		AND ${ew.sqlSegment}
 		</if>

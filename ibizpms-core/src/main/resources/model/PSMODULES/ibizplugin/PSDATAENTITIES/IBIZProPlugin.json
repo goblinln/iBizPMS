@@ -720,7 +720,6 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "auditMode" : 0,
   "codeName" : "IBIZProPlugin",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

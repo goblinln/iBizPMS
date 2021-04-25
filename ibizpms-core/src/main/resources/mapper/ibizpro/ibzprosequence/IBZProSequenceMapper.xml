@@ -11,6 +11,9 @@
 	
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_ibzpro_sequenceid_eq != null ">
+			<![CDATA[ AND  t1.`IBZPRO_SEQUENCEID` = #{srf.n_ibzpro_sequenceid_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_curseq_eq != null ">
 			<![CDATA[ AND  t1.`CURSEQ` = #{srf.n_curseq_eq,jdbcType=BIGINT} ]]>
         </if>

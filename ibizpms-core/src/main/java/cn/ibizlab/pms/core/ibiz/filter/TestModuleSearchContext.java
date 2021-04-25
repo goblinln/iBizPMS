@@ -31,6 +31,10 @@ public class TestModuleSearchContext extends QueryWrapperContext<TestModule> {
 	public void setN_branch_eq(Integer n_branch_eq) {
         this.n_branch_eq = n_branch_eq;
     }
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 	private String n_name_like;//[名称]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;

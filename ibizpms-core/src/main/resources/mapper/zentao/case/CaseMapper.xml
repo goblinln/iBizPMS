@@ -26,6 +26,9 @@
 		<if test="srf.n_status_eq != null ">
 			<![CDATA[ AND  t1.`STATUS` = #{srf.n_status_eq,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_isfavorites_eq != null ">
+			<![CDATA[ AND  0 = #{srf.n_isfavorites_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_frequency_eq != null ">
 			<![CDATA[ AND  t1.`FREQUENCY` = #{srf.n_frequency_eq,jdbcType=VARCHAR} ]]>
         </if>
@@ -44,6 +47,9 @@
         </if>
 		<if test="srf.n_lastrunresult1_eq != null ">
 			<![CDATA[ AND  (case when t1.`LASTRUNRESULT` = '' or t1.`LASTRUNRESULT` is null then 'no' else t1.`LASTRUNRESULT` end) = #{srf.n_lastrunresult1_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_id_eq != null ">
+			<![CDATA[ AND  t1.`ID` = #{srf.n_id_eq,jdbcType=BIGINT} ]]>
         </if>
 		<if test="srf.n_lastrunner_eq != null ">
 			<![CDATA[ AND  t1.`LASTRUNNER` = #{srf.n_lastrunner_eq,jdbcType=VARCHAR} ]]>

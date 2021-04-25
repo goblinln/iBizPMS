@@ -689,7 +689,6 @@
     "userDRAction" : "READ",
     "enableOrgDR" : true
   } ],
-  "auditMode" : 0,
   "codeName" : "UserTpl",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

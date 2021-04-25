@@ -15,6 +15,9 @@
             <bind name="bind_n_taskmsgrecordname_like" value="'%' + srf.n_taskmsgrecordname_like + '%'" />
             <![CDATA[ AND  t1.`TASKMSGRECORDNAME` like #{bind_n_taskmsgrecordname_like,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_taskmsgrecordid_eq != null ">
+			<![CDATA[ AND  t1.`TASKMSGRECORDID` = #{srf.n_taskmsgrecordid_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
 		AND ${ew.sqlSegment}
 		</if>

@@ -11,6 +11,9 @@
 	
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_id_eq != null ">
+			<![CDATA[ AND  t1.`ID` = #{srf.n_id_eq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="srf.n_product_eq != null ">
 			<![CDATA[ AND  t11.`PRODUCT` = #{srf.n_product_eq,jdbcType=BIGINT} ]]>
         </if>

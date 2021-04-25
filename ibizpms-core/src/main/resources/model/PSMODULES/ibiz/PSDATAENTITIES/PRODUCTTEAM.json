@@ -1247,7 +1247,6 @@
     "roleTag" : "ProductTeam_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "PRODUCTTEAM",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

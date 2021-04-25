@@ -11,6 +11,9 @@
 	
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_ibz_topid_eq != null ">
+			<![CDATA[ AND  t1.`IBZ_TOPID` = #{srf.n_ibz_topid_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_ibz_topname_like != null ">
             <bind name="bind_n_ibz_topname_like" value="'%' + srf.n_ibz_topname_like + '%'" />
             <![CDATA[ AND  t1.`IBZ_TOPNAME` like #{bind_n_ibz_topname_like,jdbcType=VARCHAR} ]]>

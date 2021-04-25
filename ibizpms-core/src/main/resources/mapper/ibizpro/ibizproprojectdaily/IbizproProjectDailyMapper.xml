@@ -18,6 +18,9 @@
 		<if test="srf.n_pm_eq != null ">
 			<![CDATA[ AND  t1.`PM` = #{srf.n_pm_eq,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_ibizpro_projectdailyid_eq != null ">
+			<![CDATA[ AND  t1.`IBIZPRO_PROJECTDAILYID` = #{srf.n_ibizpro_projectdailyid_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_projectname_eq != null ">
 			<![CDATA[ AND  t11.`NAME` = #{srf.n_projectname_eq,jdbcType=VARCHAR} ]]>
         </if>

@@ -25,6 +25,8 @@ import cn.ibizlab.pms.util.filter.SearchContextBase;
 @Slf4j
 @Data
 public class SysPostSearchContext extends SearchContextBase {
+	private String n_postid_eq;//[岗位标识]
+
 	private String n_postname_like;//[岗位名称]
 
 }

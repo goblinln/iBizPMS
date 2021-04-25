@@ -3976,7 +3976,6 @@
     "userDRAction" : "READ",
     "defaultMode" : true
   } ],
-  "auditMode" : 0,
   "codeName" : "Product",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

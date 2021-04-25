@@ -31,6 +31,8 @@ public class PSSystemDBCfgSearchContext extends SearchContextBase {
 
 	private String n_pssystemdbcfgname_like;//[系统数据库名称]
 
+	private String n_pssystemdbcfgid_eq;//[系统数据库标识]
+
 	private String n_objnamecase_eq;//[对象名称转换]
 
 	private String n_usercat_eq;//[用户分类]

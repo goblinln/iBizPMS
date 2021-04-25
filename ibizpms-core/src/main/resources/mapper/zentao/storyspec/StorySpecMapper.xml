@@ -11,6 +11,9 @@
 	
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_id_eq != null ">
+			<![CDATA[ AND  concat(t1.`STORY`,'__',t1.`VERSION`) = #{srf.n_id_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_title_like != null ">
             <bind name="bind_n_title_like" value="'%' + srf.n_title_like + '%'" />
             <![CDATA[ AND  t1.`TITLE` like #{bind_n_title_like,jdbcType=VARCHAR} ]]>

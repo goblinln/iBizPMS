@@ -1426,7 +1426,6 @@
     "roleTag" : "ProjectTeam_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "ProjectTeam",
   "dEType" : 1,
   "dSLink" : "DEFAULT",
@@ -1461,6 +1460,10 @@
     },
     "name" : "DER1N_IBZ_PROJECTTEAM_ZT_PROJECT_ROOT",
     "orderValue" : 100,
+    "getPSOne2ManyDataDEField" : {
+      "name" : "PROJECTTEAMS",
+      "codeName" : "Projectteams"
+    },
     "getPSPickupDEField" : {
       "name" : "ROOT",
       "codeName" : "Root"

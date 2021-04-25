@@ -924,7 +924,6 @@
     "roleTag" : "Team_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "Team",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

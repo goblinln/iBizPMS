@@ -792,7 +792,6 @@
     "roleTag" : "TestRun_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "TestRun",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

@@ -15,6 +15,9 @@
             <bind name="bind_n_ibzpro_configname_like" value="'%' + srf.n_ibzpro_configname_like + '%'" />
             <![CDATA[ AND  t1.`IBZPRO_CONFIGNAME` like #{bind_n_ibzpro_configname_like,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_ibzpro_configid_eq != null ">
+			<![CDATA[ AND  t1.`IBZPRO_CONFIGID` = #{srf.n_ibzpro_configid_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_type_eq != null ">
 			<![CDATA[ AND  t1.`TYPE` = #{srf.n_type_eq,jdbcType=VARCHAR} ]]>
         </if>

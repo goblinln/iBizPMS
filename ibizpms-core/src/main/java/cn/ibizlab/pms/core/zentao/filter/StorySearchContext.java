@@ -95,6 +95,10 @@ public class StorySearchContext extends QueryWrapperContext<Story> {
 	public void setN_source_eq(String n_source_eq) {
         this.n_source_eq = n_source_eq;
     }
+	private String n_ischild_eq;//[是否可以细分]
+	public void setN_ischild_eq(String n_ischild_eq) {
+        this.n_ischild_eq = n_ischild_eq;
+    }
 	private String n_closedreason_eq;//[关闭原因]
 	public void setN_closedreason_eq(String n_closedreason_eq) {
         this.n_closedreason_eq = n_closedreason_eq;
@@ -102,6 +106,10 @@ public class StorySearchContext extends QueryWrapperContext<Story> {
 	private String n_color_eq;//[标题颜色]
 	public void setN_color_eq(String n_color_eq) {
         this.n_color_eq = n_color_eq;
+    }
+	private String n_isfavorites_eq;//[是否收藏]
+	public void setN_isfavorites_eq(String n_isfavorites_eq) {
+        this.n_isfavorites_eq = n_isfavorites_eq;
     }
 	private String n_keywords_like;//[关键词]
 	public void setN_keywords_like(String n_keywords_like) {

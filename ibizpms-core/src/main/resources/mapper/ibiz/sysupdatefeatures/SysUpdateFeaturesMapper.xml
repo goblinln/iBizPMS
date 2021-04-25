@@ -18,6 +18,9 @@
 		<if test="srf.n_type_eq != null ">
 			<![CDATA[ AND  t1.`TYPE` = #{srf.n_type_eq,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_sys_update_featuresid_eq != null ">
+			<![CDATA[ AND  t1.`SYS_UPDATE_FEATURESID` = #{srf.n_sys_update_featuresid_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_sys_update_logname_eq != null ">
 			<![CDATA[ AND  t11.`SYS_UPDATE_LOGNAME` = #{srf.n_sys_update_logname_eq,jdbcType=VARCHAR} ]]>
         </if>

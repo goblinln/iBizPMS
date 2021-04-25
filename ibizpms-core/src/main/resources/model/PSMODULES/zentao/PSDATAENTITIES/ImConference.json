@@ -413,7 +413,6 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "auditMode" : 0,
   "codeName" : "ImConference",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

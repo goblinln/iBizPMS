@@ -14,6 +14,9 @@
 		<if test="srf.n_type_eq != null ">
 			<![CDATA[ AND  t1.`TYPE` = #{srf.n_type_eq,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_ibz_favoritesid_eq != null ">
+			<![CDATA[ AND  t1.`IBZ_FAVORITESID` = #{srf.n_ibz_favoritesid_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_objectid_eq != null ">
 			<![CDATA[ AND  t1.`OBJECTID` = #{srf.n_objectid_eq,jdbcType=BIGINT} ]]>
         </if>

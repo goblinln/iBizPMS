@@ -15,6 +15,9 @@
             <bind name="bind_n_id_like" value="'%' + srf.n_id_like + '%'" />
             <![CDATA[ AND  t1.`ID` like #{bind_n_id_like,jdbcType=BIGINT} ]]>
         </if>
+		<if test="srf.n_id_eq != null ">
+			<![CDATA[ AND  t1.`ID` = #{srf.n_id_eq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="srf.n_taskname_eq != null ">
 			<![CDATA[ AND  t11.`NAME` = #{srf.n_taskname_eq,jdbcType=VARCHAR} ]]>
         </if>

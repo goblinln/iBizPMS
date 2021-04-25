@@ -63,6 +63,9 @@
 		<if test="srf.n_color_eq != null ">
 			<![CDATA[ AND  t1.`COLOR` = #{srf.n_color_eq,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_isfavorites_eq != null ">
+			<![CDATA[ AND  0 = #{srf.n_isfavorites_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_keywords_like != null ">
             <bind name="bind_n_keywords_like" value="'%' + srf.n_keywords_like + '%'" />
             <![CDATA[ AND  t1.`KEYWORDS` like #{bind_n_keywords_like,jdbcType=VARCHAR} ]]>
@@ -789,10 +792,10 @@
 
     <!--数据查询[ProjectStories]-->
     <sql id="ProjectStories" databaseId="mysql">
-		<![CDATA[ SELECT 	t1.`ASSIGNEDTO`, 	t1.`ESTIMATE`, 	t1.`ID`, 	'' AS `ISCHILD`, 	'0' AS `ISFAVORITES`, 	t1.`MODULE`, 	t11.`NAME` AS `MODULENAME`, 	t1.`OPENEDBY`, 	t1.`PLAN`, 	t1.`PRI`, 	t1.`STAGE`, 	t1.`STATUS`, 	t1.`TITLE`, 	$ { srfdatacontext ( 'srfparentkey', '{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTSTORY\"}' ) } AS project  FROM 	`zt_story` t1 	LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID 	LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID 	LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID 	LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID ]]>
+		<![CDATA[ SELECT 	t1.`ASSIGNEDTO`, 	t1.`ESTIMATE`, 	t1.`ID`, 	'' AS `ISCHILD`, 	'0' AS `ISFAVORITES`, 	t1.`MODULE`, 	t11.`NAME` AS `MODULENAME`, 	t1.`OPENEDBY`, 	t1.`PLAN`, 	t1.`PRI`, 	t1.`STAGE`, 	t1.`STATUS`, 	t1.`TITLE`, 	#{srf.sessioncontext.srfparentkey} AS project  FROM 	`zt_story` t1 	LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID 	LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID 	LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID 	LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND EXISTS(SELECT * FROM zt_projectstory t51   WHERE   t1.ID = t51.STORY  AND  ( t51.`PROJECT` = #{srf.datacontext.srfparentkey} ) ) ]]>
+			<![CDATA[ AND EXISTS(SELECT * FROM zt_projectstory t51   WHERE   t1.ID = t51.STORY  AND  ( t51.`PROJECT` = #{srf.sessioncontext.srfparentkey}) ) ]]>
 			</if>
 			<if test="true">
 			<![CDATA[ AND t1.DELETED = '0' ]]>

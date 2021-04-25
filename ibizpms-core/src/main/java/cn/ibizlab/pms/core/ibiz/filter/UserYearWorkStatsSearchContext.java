@@ -27,6 +27,10 @@ import cn.ibizlab.pms.core.ibiz.domain.UserYearWorkStats;
 @Data
 public class UserYearWorkStatsSearchContext extends QueryWrapperContext<UserYearWorkStats> {
 
+	private Long n_id_eq;//[用户编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 	private String n_realname_like;//[真实用户名]
 	public void setN_realname_like(String n_realname_like) {
         this.n_realname_like = n_realname_like;

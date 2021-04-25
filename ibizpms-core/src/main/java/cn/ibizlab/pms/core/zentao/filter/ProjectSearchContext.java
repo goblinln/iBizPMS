@@ -31,6 +31,10 @@ public class ProjectSearchContext extends QueryWrapperContext<Project> {
 	public void setN_acl_eq(String n_acl_eq) {
         this.n_acl_eq = n_acl_eq;
     }
+	private Integer n_istop_eq;//[是否置顶]
+	public void setN_istop_eq(Integer n_istop_eq) {
+        this.n_istop_eq = n_istop_eq;
+    }
 	private String n_pm_eq;//[项目负责人]
 	public void setN_pm_eq(String n_pm_eq) {
         this.n_pm_eq = n_pm_eq;

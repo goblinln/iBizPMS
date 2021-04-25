@@ -1536,7 +1536,6 @@
     "roleTag" : "ProjectModule_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "ProjectModule",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

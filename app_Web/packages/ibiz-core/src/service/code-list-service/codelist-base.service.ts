@@ -199,8 +199,7 @@ export class CodeListServiceBase {
             if (CodeListServiceBase.codelistCache.get(`${tag}`)) {
                 callback(tag, CodeListServiceBase.codelistCache.get(`${tag}`));
             } else {
-                // let result:Promise<any> = this.entityService.getPredefinedCodelist(tag);
-                let result: any;
+                let result:Promise<any> = this.entityService.getPredefinedCodelist(tag);
                 CodeListServiceBase.codelistCache.set(`${tag}`, result);
                 callback(tag, result);
             }
@@ -233,7 +232,7 @@ export class CodeListServiceBase {
                 // 启用缓存
                 if (isEnableCache) {
                     const callback: Function = (context: any = {}, data: any = {}, tag: string, promise: Promise<any>) => {
-                        const callbackKey: string = `${JSON.stringify(context)}-${JSON.stringify(data)}-${tag}`;
+                        const callbackKey: string = `${tag}`;
                         promise.then((result: any) => {
                             if (result.length > 0) {
                                 CodeListServiceBase.codelistCached.set(callbackKey, { items: result });
@@ -247,7 +246,7 @@ export class CodeListServiceBase {
                         })
                     }
                     // 加载完成,从本地缓存获取
-                    const key: string = `${JSON.stringify(context)}-${JSON.stringify(data)}-${tag}`;
+                    const key: string = `${tag}`;
                     if (CodeListServiceBase.codelistCached.get(key)) {
                         let items: any = CodeListServiceBase.codelistCached.get(key).items;
                         if (items.length > 0) {

@@ -25,6 +25,8 @@ import cn.ibizlab.pms.util.filter.SearchContextBase;
 @Slf4j
 @Data
 public class SysTeamMemberSearchContext extends SearchContextBase {
+	private String n_teammemberid_eq;//[组成员标识]
+
 	private String n_teamname_eq;//[组名称]
 
 	private String n_teamname_like;//[组名称]

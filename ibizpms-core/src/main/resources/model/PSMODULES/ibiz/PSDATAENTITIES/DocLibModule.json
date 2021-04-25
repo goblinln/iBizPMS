@@ -1993,7 +1993,6 @@
     "roleTag" : "DocLibModule_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "DocLibModule",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

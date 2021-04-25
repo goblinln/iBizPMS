@@ -29,6 +29,9 @@
 		<if test="srf.n_reportstatus_eq != null ">
 			<![CDATA[ AND  t1.`REPORTSTATUS` = #{srf.n_reportstatus_eq,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_ibz_dailyid_eq != null ">
+			<![CDATA[ AND  t1.`IBZ_DAILYID` = #{srf.n_ibz_dailyid_eq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="srf.n_account_eq != null ">
 			<![CDATA[ AND  t1.`ACCOUNT` = #{srf.n_account_eq,jdbcType=VARCHAR} ]]>
         </if>

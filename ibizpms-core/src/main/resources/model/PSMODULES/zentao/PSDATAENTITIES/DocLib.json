@@ -1863,7 +1863,6 @@
     "roleTag" : "DocLib_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "DocLib",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

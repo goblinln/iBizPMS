@@ -35,6 +35,10 @@ public class IbzproProjectUserTaskSearchContext extends QueryWrapperContext<Ibzp
 	public void setN_id_like(Long n_id_like) {
         this.n_id_like = n_id_like;
     }
+	private Long n_id_eq;//[编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 
     /**
 	 * 启用快速搜索

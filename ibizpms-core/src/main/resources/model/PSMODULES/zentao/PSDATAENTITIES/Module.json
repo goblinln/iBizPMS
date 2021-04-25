@@ -1323,7 +1323,6 @@
     "roleTag" : "Module_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "Module",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

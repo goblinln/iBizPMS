@@ -1133,7 +1133,6 @@
     "roleTag" : "CaseStep_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "CaseStep",
   "dEType" : 1,
   "dSLink" : "DEFAULT",
@@ -1194,6 +1193,10 @@
     },
     "name" : "DER1N_ZT_CASESTEP_ZT_CASE_CASE",
     "orderValue" : 100,
+    "getPSOne2ManyDataDEField" : {
+      "name" : "CASESTEPS",
+      "codeName" : "CaseSteps"
+    },
     "getPSPickupDEField" : {
       "name" : "CASE",
       "codeName" : "IBizCase"

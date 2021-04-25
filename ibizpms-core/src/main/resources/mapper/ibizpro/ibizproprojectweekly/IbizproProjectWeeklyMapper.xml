@@ -15,6 +15,9 @@
             <bind name="bind_n_ibzpro_projectweeklyname_like" value="'%' + srf.n_ibzpro_projectweeklyname_like + '%'" />
             <![CDATA[ AND  t1.`IBZPRO_PROJECTWEEKLYNAME` like #{bind_n_ibzpro_projectweeklyname_like,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_ibzpro_projectweeklyid_eq != null ">
+			<![CDATA[ AND  t1.`IBZPRO_PROJECTWEEKLYID` = #{srf.n_ibzpro_projectweeklyid_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_pm_eq != null ">
 			<![CDATA[ AND  t1.`PM` = #{srf.n_pm_eq,jdbcType=VARCHAR} ]]>
         </if>

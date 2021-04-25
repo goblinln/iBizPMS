@@ -598,7 +598,6 @@
     "roleTag" : "SuiteCase_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "SuiteCase",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

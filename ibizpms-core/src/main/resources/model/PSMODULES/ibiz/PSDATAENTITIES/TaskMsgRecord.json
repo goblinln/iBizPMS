@@ -717,7 +717,6 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "auditMode" : 0,
   "codeName" : "TaskMsgRecord",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

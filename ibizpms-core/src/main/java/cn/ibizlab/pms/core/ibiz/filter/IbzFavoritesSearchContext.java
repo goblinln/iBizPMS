@@ -31,6 +31,10 @@ public class IbzFavoritesSearchContext extends QueryWrapperContext<IbzFavorites>
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;
     }
+	private String n_ibz_favoritesid_eq;//[收藏标识]
+	public void setN_ibz_favoritesid_eq(String n_ibz_favoritesid_eq) {
+        this.n_ibz_favoritesid_eq = n_ibz_favoritesid_eq;
+    }
 	private Long n_objectid_eq;//[数据对象标识]
 	public void setN_objectid_eq(Long n_objectid_eq) {
         this.n_objectid_eq = n_objectid_eq;

@@ -893,7 +893,6 @@
     "userDRAction" : "READ",
     "enableOrgDR" : true
   } ],
-  "auditMode" : 0,
   "codeName" : "TestSuite",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

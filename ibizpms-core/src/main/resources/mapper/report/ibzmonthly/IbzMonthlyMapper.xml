@@ -17,6 +17,9 @@
 		<if test="srf.n_issubmit_eq != null ">
 			<![CDATA[ AND  t1.`ISSUBMIT` = #{srf.n_issubmit_eq,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_ibz_monthlyid_eq != null ">
+			<![CDATA[ AND  t1.`IBZ_MONTHLYID` = #{srf.n_ibz_monthlyid_eq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="srf.n_account_eq != null ">
 			<![CDATA[ AND  t1.`ACCOUNT` = #{srf.n_account_eq,jdbcType=VARCHAR} ]]>
         </if>

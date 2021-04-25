@@ -31,11 +31,19 @@ public class ProductPlanSearchContext extends QueryWrapperContext<ProductPlan> {
 	public void setN_title_like(String n_title_like) {
         this.n_title_like = n_title_like;
     }
+	private Long n_id_eq;//[编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
     @JSONField(format="yyyy-MM-dd HH:mm:ss")
 	private Timestamp n_begin_gtandeq;//[开始日期]
 	public void setN_begin_gtandeq(Timestamp n_begin_gtandeq) {
         this.n_begin_gtandeq = n_begin_gtandeq;
+    }
+	private String n_statuss_eq;//[状态]
+	public void setN_statuss_eq(String n_statuss_eq) {
+        this.n_statuss_eq = n_statuss_eq;
     }
     @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
     @JSONField(format="yyyy-MM-dd HH:mm:ss")

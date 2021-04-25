@@ -27,6 +27,14 @@ import cn.ibizlab.pms.core.zentao.domain.Doc;
 @Data
 public class DocSearchContext extends QueryWrapperContext<Doc> {
 
+	private String n_docqtype_eq;//[文档查询类型]
+	public void setN_docqtype_eq(String n_docqtype_eq) {
+        this.n_docqtype_eq = n_docqtype_eq;
+    }
+	private Long n_id_eq;//[文档编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 	private String n_title_like;//[文档标题]
 	public void setN_title_like(String n_title_like) {
         this.n_title_like = n_title_like;
@@ -38,6 +46,10 @@ public class DocSearchContext extends QueryWrapperContext<Doc> {
 	private String n_acl_eq;//[权限]
 	public void setN_acl_eq(String n_acl_eq) {
         this.n_acl_eq = n_acl_eq;
+    }
+	private String n_isfavourites_eq;//[是否收藏]
+	public void setN_isfavourites_eq(String n_isfavourites_eq) {
+        this.n_isfavourites_eq = n_isfavourites_eq;
     }
 	private String n_collector_like;//[收藏者]
 	public void setN_collector_like(String n_collector_like) {

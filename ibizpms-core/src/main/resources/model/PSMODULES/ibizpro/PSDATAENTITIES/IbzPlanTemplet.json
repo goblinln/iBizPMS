@@ -759,7 +759,6 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "auditMode" : 0,
   "codeName" : "IbzPlanTemplet",
   "dEType" : 1,
   "dSLink" : "DEFAULT",
@@ -795,6 +794,10 @@
     },
     "name" : "DER1N_IBZ_PLANTEMPLETDETAIL_IBZ_PLANTEMPLET_PLANTEMPLETID",
     "orderValue" : 100,
+    "getPSOne2ManyDataDEField" : {
+      "name" : "PLANTEMPLETDETAIL",
+      "codeName" : "Plantempletdetail"
+    },
     "getPSPickupDEField" : {
       "name" : "PLANTEMPLETID",
       "codeName" : "Plantempletid"

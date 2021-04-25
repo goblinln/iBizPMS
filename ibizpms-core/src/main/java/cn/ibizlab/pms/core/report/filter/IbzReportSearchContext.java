@@ -27,6 +27,10 @@ import cn.ibizlab.pms.core.report.domain.IbzReport;
 @Data
 public class IbzReportSearchContext extends QueryWrapperContext<IbzReport> {
 
+	private Long n_ibz_dailyid_eq;//[汇报标识]
+	public void setN_ibz_dailyid_eq(Long n_ibz_dailyid_eq) {
+        this.n_ibz_dailyid_eq = n_ibz_dailyid_eq;
+    }
 	private String n_account_eq;//[用户]
 	public void setN_account_eq(String n_account_eq) {
         this.n_account_eq = n_account_eq;

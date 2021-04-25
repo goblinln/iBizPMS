@@ -35,6 +35,10 @@ public class TestReportSearchContext extends QueryWrapperContext<TestReport> {
 	public void setN_objecttype_eq(String n_objecttype_eq) {
         this.n_objecttype_eq = n_objecttype_eq;
     }
+	private Long n_id_eq;//[编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 	private String n_projectname_eq;//[所属项目]
 	public void setN_projectname_eq(String n_projectname_eq) {
         this.n_projectname_eq = n_projectname_eq;

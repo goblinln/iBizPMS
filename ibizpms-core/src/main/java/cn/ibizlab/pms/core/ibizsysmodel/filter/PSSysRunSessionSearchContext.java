@@ -27,6 +27,8 @@ import cn.ibizlab.pms.util.filter.SearchContextBase;
 public class PSSysRunSessionSearchContext extends SearchContextBase {
 	private String n_pssysrunsessionname_like;//[系统运行会话名称]
 
+	private String n_pssysrunsessionid_eq;//[系统运行会话标识]
+
 	private String n_packmode_eq;//[打包模式]
 
 	private String n_runmode_eq;//[运行模式]

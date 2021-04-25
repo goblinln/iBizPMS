@@ -1823,7 +1823,6 @@
     "roleTag" : "Build_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "Build",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

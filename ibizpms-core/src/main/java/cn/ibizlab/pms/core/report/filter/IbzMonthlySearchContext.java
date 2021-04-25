@@ -35,6 +35,10 @@ public class IbzMonthlySearchContext extends QueryWrapperContext<IbzMonthly> {
 	public void setN_issubmit_eq(String n_issubmit_eq) {
         this.n_issubmit_eq = n_issubmit_eq;
     }
+	private Long n_ibz_monthlyid_eq;//[月报标识]
+	public void setN_ibz_monthlyid_eq(Long n_ibz_monthlyid_eq) {
+        this.n_ibz_monthlyid_eq = n_ibz_monthlyid_eq;
+    }
 	private String n_account_eq;//[用户]
 	public void setN_account_eq(String n_account_eq) {
         this.n_account_eq = n_account_eq;

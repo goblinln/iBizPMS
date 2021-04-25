@@ -31,6 +31,10 @@ public class IbizproProductWeeklySearchContext extends QueryWrapperContext<Ibizp
 	public void setN_po_eq(String n_po_eq) {
         this.n_po_eq = n_po_eq;
     }
+	private Long n_ibizpro_productweeklyid_eq;//[产品周报标识]
+	public void setN_ibizpro_productweeklyid_eq(Long n_ibizpro_productweeklyid_eq) {
+        this.n_ibizpro_productweeklyid_eq = n_ibizpro_productweeklyid_eq;
+    }
 	private String n_ibizpro_productdailyname_like;//[产品周报名称]
 	public void setN_ibizpro_productdailyname_like(String n_ibizpro_productdailyname_like) {
         this.n_ibizpro_productdailyname_like = n_ibizpro_productdailyname_like;

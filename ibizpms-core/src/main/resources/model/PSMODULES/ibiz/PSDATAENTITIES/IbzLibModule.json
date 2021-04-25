@@ -1246,7 +1246,6 @@
     "roleTag" : "LibModule_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "IbzLibModule",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

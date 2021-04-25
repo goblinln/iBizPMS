@@ -31,6 +31,10 @@ public class ReleaseSearchContext extends QueryWrapperContext<Release> {
 	public void setN_marker_eq(String n_marker_eq) {
         this.n_marker_eq = n_marker_eq;
     }
+	private Long n_id_eq;//[ID]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 	private Integer n_rebuild_eq;//[重新构建]
 	public void setN_rebuild_eq(Integer n_rebuild_eq) {
         this.n_rebuild_eq = n_rebuild_eq;

@@ -682,7 +682,6 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "auditMode" : 0,
   "codeName" : "SysUpdateFeatures",
   "dEType" : 1,
   "dSLink" : "DEFAULT",
@@ -718,6 +717,10 @@
     },
     "name" : "DER1N_SYS_UPDATE_FEATURES_SYS_UPDATE_LOG_SYS_UPDATE_LOGID",
     "orderValue" : 100,
+    "getPSOne2ManyDataDEField" : {
+      "name" : "UPDATEFEATURES",
+      "codeName" : "Updatefeatures"
+    },
     "getPSPickupDEField" : {
       "name" : "SYS_UPDATE_LOGID",
       "codeName" : "SysUpdateLogId"

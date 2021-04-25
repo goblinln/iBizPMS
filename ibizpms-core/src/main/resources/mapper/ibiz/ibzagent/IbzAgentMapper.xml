@@ -14,6 +14,9 @@
 		<if test="srf.n_createmanname_eq != null ">
 			<![CDATA[ AND  t1.`CREATEMANNAME` = #{srf.n_createmanname_eq,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_ibz_agentid_eq != null ">
+			<![CDATA[ AND  t1.`IBZ_AGENTID` = #{srf.n_ibz_agentid_eq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="srf.n_ibz_agentname_like != null ">
             <bind name="bind_n_ibz_agentname_like" value="'%' + srf.n_ibz_agentname_like + '%'" />
             <![CDATA[ AND  t1.`IBZ_AGENTNAME` like #{bind_n_ibz_agentname_like,jdbcType=VARCHAR} ]]>

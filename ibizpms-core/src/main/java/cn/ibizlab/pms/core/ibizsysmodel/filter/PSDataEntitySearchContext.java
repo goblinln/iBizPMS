@@ -49,6 +49,8 @@ public class PSDataEntitySearchContext extends SearchContextBase {
 
 	private String n_psdataentityname_like;//[实体名称]
 
+	private String n_psdataentityid_eq;//[实体标识]
+
 	private String n_biztag_eq;//[预置业务功能模式]
 
 	private String n_dbtabspace_eq;//[数据库表空间]

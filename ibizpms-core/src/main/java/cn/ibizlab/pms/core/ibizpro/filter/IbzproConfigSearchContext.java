@@ -31,6 +31,10 @@ public class IbzproConfigSearchContext extends QueryWrapperContext<IbzproConfig>
 	public void setN_ibzpro_configname_like(String n_ibzpro_configname_like) {
         this.n_ibzpro_configname_like = n_ibzpro_configname_like;
     }
+	private String n_ibzpro_configid_eq;//[系统配置表标识]
+	public void setN_ibzpro_configid_eq(String n_ibzpro_configid_eq) {
+        this.n_ibzpro_configid_eq = n_ibzpro_configid_eq;
+    }
 	private String n_type_eq;//[类型]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;

@@ -1077,7 +1077,6 @@
     "roleTag" : "File_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "File",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

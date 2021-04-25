@@ -582,7 +582,6 @@
     "userDRAction" : "READ",
     "enableOrgDR" : true
   } ],
-  "auditMode" : 0,
   "codeName" : "IBZProTranslator",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

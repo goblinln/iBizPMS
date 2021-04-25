@@ -31,6 +31,10 @@ public class CaseStatsSearchContext extends QueryWrapperContext<CaseStats> {
 	public void setN_title_like(String n_title_like) {
         this.n_title_like = n_title_like;
     }
+	private Long n_id_eq;//[用例编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 	private String n_modulename_eq;//[模块名称]
 	public void setN_modulename_eq(String n_modulename_eq) {
         this.n_modulename_eq = n_modulename_eq;

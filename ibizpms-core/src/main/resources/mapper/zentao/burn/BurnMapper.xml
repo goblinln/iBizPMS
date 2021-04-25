@@ -20,6 +20,9 @@
                 #{item}
             </foreach>
         </if>
+		<if test="srf.n_id_eq != null ">
+			<![CDATA[ AND  concat(t1.`PROJECT`,'__',t1.`TASK`,'__',t1.`DATE`) = #{srf.n_id_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_project_eq != null ">
 			<![CDATA[ AND  t1.`PROJECT` = #{srf.n_project_eq,jdbcType=BIGINT} ]]>
         </if>

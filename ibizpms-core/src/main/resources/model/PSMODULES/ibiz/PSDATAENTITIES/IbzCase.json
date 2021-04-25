@@ -1489,7 +1489,6 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "auditMode" : 0,
   "codeName" : "IbzCase",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

@@ -17,6 +17,9 @@
 		<if test="srf.n_createmanname_eq != null ">
 			<![CDATA[ AND  t1.`CREATEMANNAME` = #{srf.n_createmanname_eq,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_ibz_plantempletid_eq != null ">
+			<![CDATA[ AND  t1.`IBZ_PLANTEMPLETID` = #{srf.n_ibz_plantempletid_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_ibz_plantempletname_like != null ">
             <bind name="bind_n_ibz_plantempletname_like" value="'%' + srf.n_ibz_plantempletname_like + '%'" />
             <![CDATA[ AND  t1.`IBZ_PLANTEMPLETNAME` like #{bind_n_ibz_plantempletname_like,jdbcType=VARCHAR} ]]>

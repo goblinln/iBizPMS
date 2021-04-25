@@ -742,7 +742,6 @@
     "roleTag" : "Burn_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "Burn",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

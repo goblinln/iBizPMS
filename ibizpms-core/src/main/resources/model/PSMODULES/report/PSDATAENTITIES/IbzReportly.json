@@ -1060,7 +1060,6 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "auditMode" : 0,
   "codeName" : "IbzReportly",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

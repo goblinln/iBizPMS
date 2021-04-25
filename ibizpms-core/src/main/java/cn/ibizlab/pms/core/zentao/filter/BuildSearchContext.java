@@ -43,6 +43,10 @@ public class BuildSearchContext extends QueryWrapperContext<Build> {
 	public void setN_rebuild_eq(Integer n_rebuild_eq) {
         this.n_rebuild_eq = n_rebuild_eq;
     }
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 	private String n_sqlid_eq;//[运行数据库]
 	public void setN_sqlid_eq(String n_sqlid_eq) {
         this.n_sqlid_eq = n_sqlid_eq;

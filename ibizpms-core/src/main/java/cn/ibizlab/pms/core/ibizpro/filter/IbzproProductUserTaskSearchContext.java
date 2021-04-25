@@ -31,6 +31,10 @@ public class IbzproProductUserTaskSearchContext extends QueryWrapperContext<Ibzp
 	public void setN_tasktype_eq(String n_tasktype_eq) {
         this.n_tasktype_eq = n_tasktype_eq;
     }
+	private Long n_id_eq;//[编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 
     /**
 	 * 启用快速搜索

@@ -31,6 +31,10 @@ public class ImConferenceSearchContext extends QueryWrapperContext<ImConference>
 	public void setN_status_eq(String n_status_eq) {
         this.n_status_eq = n_status_eq;
     }
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 
     /**
 	 * 启用快速搜索

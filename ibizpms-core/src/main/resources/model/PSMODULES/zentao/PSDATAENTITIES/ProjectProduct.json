@@ -749,7 +749,6 @@
     "roleTag" : "ProjectProduct_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "ProjectProduct",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

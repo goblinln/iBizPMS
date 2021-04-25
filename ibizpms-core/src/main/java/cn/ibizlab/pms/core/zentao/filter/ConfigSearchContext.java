@@ -27,6 +27,10 @@ import cn.ibizlab.pms.core.zentao.domain.Config;
 @Data
 public class ConfigSearchContext extends QueryWrapperContext<Config> {
 
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 
     /**
 	 * 启用快速搜索

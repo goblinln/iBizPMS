@@ -43,6 +43,10 @@ public class BugSearchContext extends QueryWrapperContext<Bug> {
 	public void setN_resolution_eq(String n_resolution_eq) {
         this.n_resolution_eq = n_resolution_eq;
     }
+	private String n_isfavorites_eq;//[是否收藏]
+	public void setN_isfavorites_eq(String n_isfavorites_eq) {
+        this.n_isfavorites_eq = n_isfavorites_eq;
+    }
 	private String n_closedby_eq;//[由谁关闭]
 	public void setN_closedby_eq(String n_closedby_eq) {
         this.n_closedby_eq = n_closedby_eq;

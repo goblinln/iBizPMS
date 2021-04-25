@@ -31,6 +31,10 @@ public class HistorySearchContext extends QueryWrapperContext<History> {
 	public void setN_field_leftlike(String n_field_leftlike) {
         this.n_field_leftlike = n_field_leftlike;
     }
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 	private Long n_action_eq;//[关联日志]
 	public void setN_action_eq(Long n_action_eq) {
         this.n_action_eq = n_action_eq;

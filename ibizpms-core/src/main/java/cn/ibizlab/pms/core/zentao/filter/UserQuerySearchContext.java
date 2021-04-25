@@ -27,6 +27,10 @@ import cn.ibizlab.pms.core.zentao.domain.UserQuery;
 @Data
 public class UserQuerySearchContext extends QueryWrapperContext<UserQuery> {
 
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 	private String n_shortcut_eq;//[shortcut]
 	public void setN_shortcut_eq(String n_shortcut_eq) {
         this.n_shortcut_eq = n_shortcut_eq;

@@ -1198,11 +1198,6 @@ function getLocaleResourceBase(){
 				'lastediteddate': commonLogic.appcommonhandle("修改日期",null),
 				'activateddate': commonLogic.appcommonhandle("激活日期",null),
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
-				'overduebugs': commonLogic.appcommonhandle("过期天数",null),
-				'delay': commonLogic.appcommonhandle("延期",null),
-				'delayresolve': commonLogic.appcommonhandle("延期解决",null),
-				'resolvedby': commonLogic.appcommonhandle("解决者",null),
-				'v2': commonLogic.appcommonhandle("v2",null),
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {

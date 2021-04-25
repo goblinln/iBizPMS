@@ -27,6 +27,10 @@ import cn.ibizlab.pms.core.zentao.domain.ProjectStory;
 @Data
 public class ProjectStorySearchContext extends QueryWrapperContext<ProjectStory> {
 
+	private String n_id_eq;//[虚拟主键]
+	public void setN_id_eq(String n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 	private Long n_story_eq;//[需求]
 	public void setN_story_eq(Long n_story_eq) {
         this.n_story_eq = n_story_eq;

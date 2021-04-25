@@ -349,7 +349,6 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "auditMode" : 0,
   "codeName" : "SysPost",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

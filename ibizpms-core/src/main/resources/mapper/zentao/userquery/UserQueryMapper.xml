@@ -11,6 +11,9 @@
 	
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_id_eq != null ">
+			<![CDATA[ AND  t1.`ID` = #{srf.n_id_eq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="srf.n_shortcut_eq != null ">
 			<![CDATA[ AND  t1.`SHORTCUT` = #{srf.n_shortcut_eq,jdbcType=VARCHAR} ]]>
         </if>

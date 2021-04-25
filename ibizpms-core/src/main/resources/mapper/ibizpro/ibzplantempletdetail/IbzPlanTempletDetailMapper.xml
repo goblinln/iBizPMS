@@ -14,6 +14,9 @@
 		<if test="srf.n_type_eq != null ">
 			<![CDATA[ AND  t1.`TYPE` = #{srf.n_type_eq,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_ibz_plantempletdetailid_eq != null ">
+			<![CDATA[ AND  t1.`IBZ_PLANTEMPLETDETAILID` = #{srf.n_ibz_plantempletdetailid_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_ibz_plantempletdetailname_like != null ">
             <bind name="bind_n_ibz_plantempletdetailname_like" value="'%' + srf.n_ibz_plantempletdetailname_like + '%'" />
             <![CDATA[ AND  t1.`IBZ_PLANTEMPLETDETAILNAME` like #{bind_n_ibz_plantempletdetailname_like,jdbcType=VARCHAR} ]]>

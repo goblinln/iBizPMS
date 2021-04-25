@@ -569,7 +569,6 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
-  "auditMode" : 0,
   "codeName" : "StoryStage",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

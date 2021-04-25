@@ -7252,7 +7252,6 @@
     "roleTag" : "Bug_Read",
     "userDRAction" : "READ"
   } ],
-  "auditMode" : 0,
   "codeName" : "Bug",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

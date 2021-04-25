@@ -27,6 +27,10 @@ import cn.ibizlab.pms.core.zentao.domain.RepoFiles;
 @Data
 public class RepoFilesSearchContext extends QueryWrapperContext<RepoFiles> {
 
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 	private Long n_parent_eq;//[parent]
 	public void setN_parent_eq(Long n_parent_eq) {
         this.n_parent_eq = n_parent_eq;

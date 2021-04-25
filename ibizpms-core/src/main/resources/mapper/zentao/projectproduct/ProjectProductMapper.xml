@@ -11,6 +11,9 @@
 	
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_id_eq != null ">
+			<![CDATA[ AND  concat(t1.`PROJECT`,'__',t1.`PRODUCT`) = #{srf.n_id_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_productname_eq != null ">
 			<![CDATA[ AND  t11.`name` = #{srf.n_productname_eq,jdbcType=VARCHAR} ]]>
         </if>

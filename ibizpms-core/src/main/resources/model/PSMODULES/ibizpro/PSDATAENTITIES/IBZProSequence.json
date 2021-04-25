@@ -828,7 +828,6 @@
     "userDRAction" : "READ",
     "enableOrgDR" : true
   } ],
-  "auditMode" : 0,
   "codeName" : "IBZProSequence",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

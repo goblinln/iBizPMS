@@ -27,6 +27,10 @@ import cn.ibizlab.pms.core.ibiz.domain.ProductStats;
 @Data
 public class ProductStatsSearchContext extends QueryWrapperContext<ProductStats> {
 
+	private Long n_id_eq;//[产品编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 	private String n_type_eq;//[产品类型]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;

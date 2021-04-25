@@ -27,6 +27,10 @@ import cn.ibizlab.pms.core.zentao.domain.Score;
 @Data
 public class ScoreSearchContext extends QueryWrapperContext<Score> {
 
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 
     /**
 	 * 启用快速搜索
