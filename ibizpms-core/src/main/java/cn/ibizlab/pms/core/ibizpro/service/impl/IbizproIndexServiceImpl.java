@@ -56,6 +56,11 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
     protected int batchSize = 500;
 
     @Override
+    public List<IbizproIndex> select(IbizproIndexSearchContext context) {
+        return null;
+    }
+
+    @Override
     @Transactional
     public boolean create(IbizproIndex et) {
 //        if(!this.retBool(this.baseMapper.insert(et))) {
