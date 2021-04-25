@@ -42,7 +42,7 @@ public class DEFieldDefaultValueAspect
      * @param point
      * @throws Exception
      */
-    @Before(value = "execution(* cn.ibizlab.pms.core.*.service.*.create(..))")
+    @Before(value = "execution(* cn.ibizlab.pms.core.*.service.*.create(..)) || execution(* cn.ibizlab.pms.core.util.ibizzentao.helper.*.create(..))")
     public void BeforeCreate(JoinPoint point) throws Exception {
         fillDEFieldDefaultValue(point);
     }
@@ -56,7 +56,7 @@ public class DEFieldDefaultValueAspect
      * @param point
      * @throws Exception
      */
-    @Before(value = "execution(* cn.ibizlab.pms.core.*.service.*.update(..))")
+    @Before(value = "execution(* cn.ibizlab.pms.core.*.service.*.update(..)) || execution(* cn.ibizlab.pms.core.util.ibizzentao.helper.*.edit(..))")
     public void BeforeUpdate(JoinPoint point) throws Exception {
         fillDEFieldDefaultValue(point);
     }
