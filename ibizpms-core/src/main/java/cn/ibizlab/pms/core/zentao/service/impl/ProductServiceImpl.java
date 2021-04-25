@@ -134,7 +134,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         return pages.getRecords();
     }
 
-       @Override
+      @Override
     @Transactional
     public boolean create(Product et) {
   		if(!productRuntime.isRtmodel()){
@@ -155,7 +155,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         }
 		this.saveBatch(list, batchSize);
     }
-       @Override
+      @Override
     @Transactional
     public boolean update(Product et) {
   		if(!productRuntime.isRtmodel()){
@@ -186,20 +186,20 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
      CachedBeanCopier.copy(get(et.getId()), et);
      return true;
    }
-    @Override
+        @Override
     @Transactional
     public boolean remove(Long key) {
-        productteamService.removeByRoot(key) ;
-        boolean result = removeById(key);
-        return result ;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ProductHelper.class).delete(key);
     }
 
     @Override
-    @Transactional
-    public void removeBatch(Collection<Long> idList) {
-        removeByIds(idList);
+    public void removeBatch(Collection<Long> idList){
+        if (idList != null && !idList.isEmpty()) {
+            for (Long id : idList) {
+                this.remove(id);
+            }
+        }
     }
-
     @Override
     @Transactional
     public Product get(Long key) {

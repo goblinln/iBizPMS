@@ -37,6 +37,10 @@
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTRemove"
+    },
     "userCat" : "CAT1",
     "userTag4" : "remove",
     "builtinAction" : true
