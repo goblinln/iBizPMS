@@ -18,6 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSOne2ManyDataDEField;
+import net.ibizsys.model.dataentity.der.IPSDER1N;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQuery;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQueryCode;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQueryCodeCond;
@@ -598,6 +599,26 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             this.deptIdField = this.getDeptIdFieldQueryExp();
         }
         return this.deptIdField;
+    }
+
+    @Override
+    protected void translateEntityNestedDER1NBeforeProceed(IEntityBase arg0, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
+        
+    }
+
+    @Override
+    protected void translateEntityNestedDER1NAfterProceed(Object objKey, IEntityBase arg0, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
+        
+    }
+
+    @Override
+    protected void translateEntityNestedDERsAfterProceed(IEntityBase arg0, String strActionName, IPSDEAction iPSDEAction, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
+        
+    }
+
+    @Override
+    protected void translateEntityNestedDERsBeforeProceed(IEntityBase arg0, String strActionName, IPSDEAction iPSDEAction, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
+        
     }
 
 }
