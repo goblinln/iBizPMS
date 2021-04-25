@@ -103,9 +103,9 @@
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
       "getOpenDataPSAppView" : {
-        "getPSNavigateContexts" : [ {
-          "key" : "PRODUCT",
-          "name" : "PRODUCT",
+        "getPSNavigateParams" : [ {
+          "key" : "product",
+          "name" : "product",
           "value" : "PRODUCTSTATS",
           "rawValue" : false
         } ],
@@ -116,9 +116,9 @@
         }
       },
       "getPSAppUILogicRefViews" : [ {
-        "getPSNavigateContexts" : [ {
-          "key" : "PRODUCT",
-          "name" : "PRODUCT",
+        "getPSNavigateParams" : [ {
+          "key" : "product",
+          "name" : "product",
           "value" : "PRODUCTSTATS",
           "rawValue" : false
         } ],
@@ -141,9 +141,9 @@
     }
   }, {
     "name" : "EDITDATA",
-    "getPSNavigateContexts" : [ {
-      "key" : "PRODUCT",
-      "name" : "PRODUCT",
+    "getPSNavigateParams" : [ {
+      "key" : "product",
+      "name" : "product",
       "value" : "PRODUCTSTATS",
       "rawValue" : false
     } ],
