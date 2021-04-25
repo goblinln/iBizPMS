@@ -16,5 +16,9 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Close.json",
   "logicName" : "关闭",
   "name" : "Close",
+  "getPSSysSFPlugin" : {
+    "pluginType" : "DEACTION",
+    "pluginCode" : "ZTCommon"
+  },
   "userCat" : "CAT1"
 }

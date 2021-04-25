@@ -5,5 +5,9 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/OtherUpdate.json",
   "logicName" : "其他更新",
   "name" : "OtherUpdate",
+  "getPSSysSFPlugin" : {
+    "pluginType" : "DEACTION",
+    "pluginCode" : "ZTCommon"
+  },
   "userCat" : "CAT1"
 }

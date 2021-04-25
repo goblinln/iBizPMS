@@ -387,6 +387,11 @@ public class AuthenticationUser implements UserDetails, net.ibizsys.runtime.secu
     }
 
     @Override
+    public String getRemoteaddress() {
+        return null;
+    }
+
+    @Override
     public Object getSessionParam(String strKey) {
         return this.getSessionParams().get(strKey);
     }

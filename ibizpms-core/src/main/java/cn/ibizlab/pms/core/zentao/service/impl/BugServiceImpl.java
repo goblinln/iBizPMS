@@ -97,28 +97,19 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         return pages.getRecords();
     }
 
-    @Override
+       @Override
     @Transactional
-    public boolean create(Bug et) {
-        if(!bugRuntime.isRtmodel()){
-            fillParentData(et);
-        }
-        if(!this.retBool(this.baseMapper.insert(et))) {
-            return false;
-        }
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
+    public Bug create(Bug et) {
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.BugHelper.class).create(et);
     }
-
-    @Override
+	
+	@Override
     @Transactional
-    public void createBatch(List<Bug> list) {
-        if(!bugRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
-        for (Bug et : list) {
-            getProxyService().save(et);
-        }
+    public boolean createBatch (List<Bug> etList) {
+		 for(Bug et : etList) {
+		   create(et);
+		 }
+	 	 return true;
     }
 
     @Override
@@ -217,34 +208,34 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         return true;
     }
 
-    @Override
+       @Override
     @Transactional
     public Bug assignTo(Bug et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.BugHelper.class).assignTo(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean assignToBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            assignTo(et);
-        }
-        return true;
+    public boolean assignToBatch (List<Bug> etList) {
+		 for(Bug et : etList) {
+		   assignTo(et);
+		 }
+	 	 return true;
     }
 
-    @Override
+       @Override
     @Transactional
     public Bug batchUnlinkBug(Bug et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.BugHelper.class).batchUnlinkBug(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean batchUnlinkBugBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            batchUnlinkBug(et);
-        }
-        return true;
+    public boolean batchUnlinkBugBatch (List<Bug> etList) {
+		 for(Bug et : etList) {
+		   batchUnlinkBug(et);
+		 }
+	 	 return true;
     }
 
     @Override
@@ -277,98 +268,98 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         return true;
     }
 
-    @Override
+       @Override
     @Transactional
     public Bug buildBatchUnlinkBug(Bug et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.BugHelper.class).buildBatchUnlinkBug(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean buildBatchUnlinkBugBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            buildBatchUnlinkBug(et);
-        }
-        return true;
+    public boolean buildBatchUnlinkBugBatch (List<Bug> etList) {
+		 for(Bug et : etList) {
+		   buildBatchUnlinkBug(et);
+		 }
+	 	 return true;
     }
 
-    @Override
+       @Override
     @Transactional
     public Bug buildLinkBug(Bug et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.BugHelper.class).buildLinkBug(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean buildLinkBugBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            buildLinkBug(et);
-        }
-        return true;
+    public boolean buildLinkBugBatch (List<Bug> etList) {
+		 for(Bug et : etList) {
+		   buildLinkBug(et);
+		 }
+	 	 return true;
     }
 
-    @Override
+       @Override
     @Transactional
     public Bug buildUnlinkBug(Bug et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.BugHelper.class).buildUnlinkBug(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean buildUnlinkBugBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            buildUnlinkBug(et);
-        }
-        return true;
+    public boolean buildUnlinkBugBatch (List<Bug> etList) {
+		 for(Bug et : etList) {
+		   buildUnlinkBug(et);
+		 }
+	 	 return true;
     }
 
     @Override
     public boolean checkKey(Bug et) {
         return (!ObjectUtils.isEmpty(et.getId())) && (!Objects.isNull(this.getById(et.getId())));
     }
-    @Override
+       @Override
     @Transactional
     public Bug close(Bug et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.BugHelper.class).close(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean closeBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            close(et);
-        }
-        return true;
+    public boolean closeBatch (List<Bug> etList) {
+		 for(Bug et : etList) {
+		   close(et);
+		 }
+	 	 return true;
     }
 
-    @Override
+       @Override
     @Transactional
     public Bug confirm(Bug et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.BugHelper.class).confirm(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean confirmBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            confirm(et);
-        }
-        return true;
+    public boolean confirmBatch (List<Bug> etList) {
+		 for(Bug et : etList) {
+		   confirm(et);
+		 }
+	 	 return true;
     }
 
-    @Override
+       @Override
     @Transactional
     public Bug linkBug(Bug et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.BugHelper.class).linkBug(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean linkBugBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            linkBug(et);
-        }
-        return true;
+    public boolean linkBugBatch (List<Bug> etList) {
+		 for(Bug et : etList) {
+		   linkBug(et);
+		 }
+	 	 return true;
     }
 
     @Override
@@ -386,19 +377,19 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         return true;
     }
 
-    @Override
+       @Override
     @Transactional
     public Bug releaseLinkBugbyBug(Bug et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.BugHelper.class).releaseLinkBugbyBug(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean releaseLinkBugbyBugBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            releaseLinkBugbyBug(et);
-        }
-        return true;
+    public boolean releaseLinkBugbyBugBatch (List<Bug> etList) {
+		 for(Bug et : etList) {
+		   releaseLinkBugbyBug(et);
+		 }
+	 	 return true;
     }
 
     @Override
@@ -564,34 +555,34 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         return et;
     }
 
-    @Override
+       @Override
     @Transactional
     public Bug toStory(Bug et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.BugHelper.class).toStory(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean toStoryBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            toStory(et);
-        }
-        return true;
+    public boolean toStoryBatch (List<Bug> etList) {
+		 for(Bug et : etList) {
+		   toStory(et);
+		 }
+	 	 return true;
     }
 
-    @Override
+       @Override
     @Transactional
     public Bug unlinkBug(Bug et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.BugHelper.class).unlinkBug(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean unlinkBugBatch(List<Bug> etList) {
-        for(Bug et : etList) {
-            unlinkBug(et);
-        }
-        return true;
+    public boolean unlinkBugBatch (List<Bug> etList) {
+		 for(Bug et : etList) {
+		   unlinkBug(et);
+		 }
+	 	 return true;
     }
 
     @Override

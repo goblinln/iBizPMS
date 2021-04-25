@@ -18,6 +18,10 @@
     "logicName" : "Create",
     "name" : "Create",
     "orderValue" : 1,
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1",
     "userTag4" : "create",
     "builtinAction" : true
@@ -130,6 +134,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/AssignTo.json",
     "logicName" : "指派",
     "name" : "assignTo",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -138,6 +146,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/BatchUnlinkBug.json",
     "logicName" : "批量解除关联Bug",
     "name" : "BatchUnlinkBug",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -168,6 +180,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/BuildBatchUnlinkBug.json",
     "logicName" : "版本批量解除关联Bug",
     "name" : "buildBatchUnlinkBug",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -176,6 +192,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/BuildLinkBug.json",
     "logicName" : "版本关联Bug",
     "name" : "buildLinkBug",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -184,6 +204,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/BuildUnlinkBug.json",
     "logicName" : "版本解除关联Bug",
     "name" : "buildUnlinkBug",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -211,6 +235,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Close.json",
     "logicName" : "关闭",
     "name" : "Close",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -230,6 +258,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Confirm.json",
     "logicName" : "确认",
     "name" : "Confirm",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "READ",
@@ -249,6 +281,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/LinkBug.json",
     "logicName" : "关联Bug",
     "name" : "LinkBug",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -265,6 +301,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/ReleaseLinkBugbyBug.json",
     "logicName" : "关联Bug（解决Bug）",
     "name" : "ReleaseLinkBugbyBug",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -357,6 +397,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/ToStory.json",
     "logicName" : "转需求",
     "name" : "toStory",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -365,6 +409,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/UnlinkBug.json",
     "logicName" : "解除关联Bug",
     "name" : "UnlinkBug",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UPDATE",

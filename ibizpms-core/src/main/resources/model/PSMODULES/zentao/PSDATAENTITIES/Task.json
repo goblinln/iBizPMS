@@ -40,6 +40,10 @@
     "logicName" : "Update",
     "name" : "Update",
     "orderValue" : 11,
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTUpdate"
+    },
     "userCat" : "CAT1",
     "userTag4" : "update",
     "builtinAction" : true
@@ -73,6 +77,10 @@
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTRemove"
+    },
     "userCat" : "CAT1",
     "userTag4" : "remove",
     "builtinAction" : true
@@ -187,6 +195,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json",
     "logicName" : "激活",
     "name" : "Activate",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -195,6 +207,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json",
     "logicName" : "指派/转交",
     "name" : "AssignTo",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -210,6 +226,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Cancel.json",
     "logicName" : "取消",
     "name" : "Cancel",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -226,6 +246,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Close.json",
     "logicName" : "关闭",
     "name" : "Close",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -234,6 +258,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json",
     "logicName" : "需求变更确认",
     "name" : "ConfirmStoryChange",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "CREATE",
@@ -249,6 +277,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/DeleteEstimate.json",
     "logicName" : "删除工时",
     "name" : "DeleteEstimate",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -257,6 +289,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/EditEstimate.json",
     "logicName" : "编辑工时",
     "name" : "EditEstimate",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -265,6 +301,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Finish.json",
     "logicName" : "完成",
     "name" : "Finish",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "READ",
@@ -273,6 +313,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetNextTeamUser.json",
     "logicName" : "获取下一个团队成员(完成)",
     "name" : "GetNextTeamUserFinish",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "READ",
@@ -317,6 +361,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/LinkPlan.json",
     "logicName" : "关联计划",
     "name" : "LinkPlan",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -325,6 +373,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/OtherUpdate.json",
     "logicName" : "其他更新",
     "name" : "OtherUpdate",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -333,6 +385,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Pause.json",
     "logicName" : "暂停",
     "name" : "Pause",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -341,6 +397,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordEstimate.json",
     "logicName" : "工时录入",
     "name" : "RecordEstimate",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -379,6 +439,10 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Start.json",
     "logicName" : "开始",
     "name" : "Start",
+    "getPSSysSFPlugin" : {
+      "pluginType" : "DEACTION",
+      "pluginCode" : "ZTCommon"
+    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",

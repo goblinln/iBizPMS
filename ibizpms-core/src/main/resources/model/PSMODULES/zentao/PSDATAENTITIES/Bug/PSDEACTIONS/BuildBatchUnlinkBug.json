@@ -5,5 +5,9 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/BuildBatchUnlinkBug.json",
   "logicName" : "版本批量解除关联Bug",
   "name" : "buildBatchUnlinkBug",
+  "getPSSysSFPlugin" : {
+    "pluginType" : "DEACTION",
+    "pluginCode" : "ZTCommon"
+  },
   "userCat" : "CAT1"
 }

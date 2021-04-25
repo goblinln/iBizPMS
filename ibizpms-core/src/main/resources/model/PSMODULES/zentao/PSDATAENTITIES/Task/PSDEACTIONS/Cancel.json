@@ -5,5 +5,9 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Cancel.json",
   "logicName" : "取消",
   "name" : "Cancel",
+  "getPSSysSFPlugin" : {
+    "pluginType" : "DEACTION",
+    "pluginCode" : "ZTCommon"
+  },
   "userCat" : "CAT1"
 }

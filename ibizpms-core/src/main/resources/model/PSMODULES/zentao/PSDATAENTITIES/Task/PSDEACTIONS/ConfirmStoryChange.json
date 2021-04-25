@@ -5,5 +5,9 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json",
   "logicName" : "需求变更确认",
   "name" : "ConfirmStoryChange",
+  "getPSSysSFPlugin" : {
+    "pluginType" : "DEACTION",
+    "pluginCode" : "ZTCommon"
+  },
   "userCat" : "CAT1"
 }

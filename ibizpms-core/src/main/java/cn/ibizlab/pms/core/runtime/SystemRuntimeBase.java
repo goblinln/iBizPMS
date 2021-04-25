@@ -64,7 +64,13 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
     protected List<UAAUniResAuthority> adminUAAUniResAuthority = new ArrayList<>();
 
     @PostConstruct
-    public void sysinit() throws Exception {
+    public void sysInit() throws Exception {
+        this.getPSSystem();
+    }
+
+    @Override
+    public void onInit() throws Exception {
+        List<IPSSysUserRole> userRoles = this.getPSSystem().getAllPSSysUserRoles();
         IPSSystem system = this.getPSSystem();
         List<IPSSysUserRole> userRoles = system.getAllPSSysUserRoles();
         if (userRoles != null) {

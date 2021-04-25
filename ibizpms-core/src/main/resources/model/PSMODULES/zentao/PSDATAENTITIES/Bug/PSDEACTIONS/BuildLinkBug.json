@@ -5,5 +5,9 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/BuildLinkBug.json",
   "logicName" : "版本关联Bug",
   "name" : "buildLinkBug",
+  "getPSSysSFPlugin" : {
+    "pluginType" : "DEACTION",
+    "pluginCode" : "ZTCommon"
+  },
   "userCat" : "CAT1"
 }
