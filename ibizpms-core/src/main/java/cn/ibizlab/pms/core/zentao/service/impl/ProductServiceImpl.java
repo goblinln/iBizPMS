@@ -169,10 +169,10 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
 
     @Override
     public void updateBatch(List<Product> list) {
-	if(!productRuntime.isRtmodel()){
-		  list.forEach(item->fillParentData(item));
-      }
-     	updateBatchById(list, batchSize);
+	  if(!productRuntime.isRtmodel()){
+		list.forEach(item->fillParentData(item))
+	  }
+		updateBatchById(list, batchSize);
     }
 	
 	@Override
@@ -180,9 +180,9 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     public boolean sysUpdate(Product et) {
 	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ProductHelper.class).edit(et)) {
 		return false;
-     	}
-     	CachedBeanCopier.copy(get(et.getId()), et);
-     	return true;
+     }
+     CachedBeanCopier.copy(get(et.getId()), et);
+     return true;
    }
     @Override
     @Transactional
