@@ -5,9 +5,5 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Team/PSDEACTIONS/ManagePorjectMembers.json",
   "logicName" : "项目团队管理",
   "name" : "managePorjectMembers",
-  "getPSSysSFPlugin" : {
-    "pluginType" : "DEACTION",
-    "pluginCode" : "ZTCommon"
-  },
   "userCat" : "CAT1"
 }

@@ -5,9 +5,5 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json",
   "logicName" : "指派/转交",
   "name" : "AssignTo",
-  "getPSSysSFPlugin" : {
-    "pluginType" : "DEACTION",
-    "pluginCode" : "ZTCommon"
-  },
   "userCat" : "CAT1"
 }

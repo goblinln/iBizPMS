@@ -5,9 +5,5 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/PmsEeProjectAllTaskCount.json",
   "logicName" : "项目立项任务快速分组计数器",
   "name" : "PmsEeProjectAllTaskCount",
-  "getPSSysSFPlugin" : {
-    "pluginType" : "DEACTION",
-    "pluginCode" : "ZTCommon"
-  },
   "userCat" : "CAT1"
 }

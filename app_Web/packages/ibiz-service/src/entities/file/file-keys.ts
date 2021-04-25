@@ -16,4 +16,6 @@ export default [
     'size',
     'id',
     'extra',
+    'orgname',
+    'deptname',
 ];

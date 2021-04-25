@@ -22,6 +22,8 @@ function getLocaleResourceBase(){
 		'parentname': commonLogic.appcommonhandle("上级模块",null),
 		'branch': commonLogic.appcommonhandle("平台/分支",null),
 		'parent': commonLogic.appcommonhandle("上级模块",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
+		'mdeptname': commonLogic.appcommonhandle("归属部门名",null),
 	},
 		views: {
 			'linegridview': {

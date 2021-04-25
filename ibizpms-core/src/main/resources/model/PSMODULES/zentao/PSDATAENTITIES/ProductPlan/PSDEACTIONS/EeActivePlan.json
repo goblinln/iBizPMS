@@ -5,9 +5,5 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeActivePlan.json",
   "logicName" : "EE激活计划",
   "name" : "EeActivePlan",
-  "getPSSysSFPlugin" : {
-    "pluginType" : "DEACTION",
-    "pluginCode" : "ZTCommon"
-  },
   "userCat" : "CAT1"
 }

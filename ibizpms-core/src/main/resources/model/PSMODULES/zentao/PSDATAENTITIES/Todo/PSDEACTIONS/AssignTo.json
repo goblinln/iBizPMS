@@ -5,9 +5,5 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEACTIONS/AssignTo.json",
   "logicName" : "AssignTo",
   "name" : "AssignTo",
-  "getPSSysSFPlugin" : {
-    "pluginType" : "DEACTION",
-    "pluginCode" : "ZTCommon"
-  },
   "userCat" : "CAT1"
 }

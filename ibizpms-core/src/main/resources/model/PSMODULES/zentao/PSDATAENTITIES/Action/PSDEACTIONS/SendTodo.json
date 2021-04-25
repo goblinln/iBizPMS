@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "SendTodo",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/SendTodo.json",
+  "logicName" : "发送待办",
+  "name" : "sendTodo"
+}

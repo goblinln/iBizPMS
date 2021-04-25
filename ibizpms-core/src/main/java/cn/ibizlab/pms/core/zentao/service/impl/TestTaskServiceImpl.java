@@ -77,72 +77,73 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
         return pages.getRecords();
     }
 
-    	@Override
+    @Override
     @Transactional
     public boolean create(TestTask et) {
-  		if(!testtaskRuntime.isRtmodel()){
-		  
+        if(!testtaskRuntime.isRtmodel()){
+            fillParentData(et);
         }
-		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TestTaskHelper.class).create(et)) {
-			 return false;
-		}
-		
-  		return true;
+        if(!this.retBool(this.baseMapper.insert(et))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
-	@Transactional
+    @Transactional
     public void createBatch(List<TestTask> list) {
-		if(!testtaskRuntime.isRtmodel()){
-		  
+        if(!testtaskRuntime.isRtmodel()){
+            list.forEach(item->fillParentData(item));
         }
-		this.saveBatch(list, batchSize);
+        this.saveBatch(list, batchSize);
     }
-    	@Override
+
+    @Override
     @Transactional
     public boolean update(TestTask et) {
-  		if(!testtaskRuntime.isRtmodel()){
-		  
+        if(!testtaskRuntime.isRtmodel()){
+            fillParentData(et);
         }
-		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TestTaskHelper.class).edit(et)) {
-			 return false;
-		}
-		
-  		return true;
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
-	@Transactional
+    @Transactional
     public void updateBatch(List<TestTask> list) {
-	  if(!testtaskRuntime.isRtmodel()){
-		
-	  }
-		updateBatchById(list, batchSize);
+        if(!testtaskRuntime.isRtmodel()){
+            list.forEach(item->fillParentData(item));
+        }
+        updateBatchById(list, batchSize);
     }
-	
-	@Override
+
+    @Override
     @Transactional
     public boolean sysUpdate(TestTask et) {
-	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TestTaskHelper.class).edit(et)) {
-		return false;
-     }
-    
-     return true;
-   }
-        @Override
-    @Transactional
-    public boolean remove(Long key) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TestTaskHelper.class).delete(key);
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
-    public void removeBatch(Collection<Long> idList){
-        if (idList != null && !idList.isEmpty()) {
-            for (Long id : idList) {
-                this.remove(id);
-            }
-        }
+    @Transactional
+    public boolean remove(Long key) {
+        boolean result = removeById(key);
+        return result ;
     }
+
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        removeByIds(idList);
+    }
+
     @Override
     @Transactional
     public TestTask get(Long key) {
@@ -177,68 +178,68 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
         return et;
     }
 
-       @Override
+    @Override
     @Transactional
     public TestTask activate(TestTask et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TestTaskHelper.class).activate(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean activateBatch (List<TestTask> etList) {
-		 for(TestTask et : etList) {
-		   activate(et);
-		 }
-	 	 return true;
+    public boolean activateBatch(List<TestTask> etList) {
+        for(TestTask et : etList) {
+            activate(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public TestTask block(TestTask et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TestTaskHelper.class).block(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean blockBatch (List<TestTask> etList) {
-		 for(TestTask et : etList) {
-		   block(et);
-		 }
-	 	 return true;
+    public boolean blockBatch(List<TestTask> etList) {
+        for(TestTask et : etList) {
+            block(et);
+        }
+        return true;
     }
 
     @Override
     public boolean checkKey(TestTask et) {
         return (!ObjectUtils.isEmpty(et.getId())) && (!Objects.isNull(this.getById(et.getId())));
     }
-       @Override
+    @Override
     @Transactional
     public TestTask close(TestTask et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TestTaskHelper.class).close(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean closeBatch (List<TestTask> etList) {
-		 for(TestTask et : etList) {
-		   close(et);
-		 }
-	 	 return true;
+    public boolean closeBatch(List<TestTask> etList) {
+        for(TestTask et : etList) {
+            close(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public TestTask linkCase(TestTask et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TestTaskHelper.class).linkCase(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean linkCaseBatch (List<TestTask> etList) {
-		 for(TestTask et : etList) {
-		   linkCase(et);
-		 }
-	 	 return true;
+    public boolean linkCaseBatch(List<TestTask> etList) {
+        for(TestTask et : etList) {
+            linkCase(et);
+        }
+        return true;
     }
 
     @Override
@@ -322,34 +323,34 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
         }
     }
 
-       @Override
+    @Override
     @Transactional
     public TestTask start(TestTask et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TestTaskHelper.class).start(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean startBatch (List<TestTask> etList) {
-		 for(TestTask et : etList) {
-		   start(et);
-		 }
-	 	 return true;
+    public boolean startBatch(List<TestTask> etList) {
+        for(TestTask et : etList) {
+            start(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public TestTask unlinkCase(TestTask et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TestTaskHelper.class).unlinkCase(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean unlinkCaseBatch (List<TestTask> etList) {
-		 for(TestTask et : etList) {
-		   unlinkCase(et);
-		 }
-	 	 return true;
+    public boolean unlinkCaseBatch(List<TestTask> etList) {
+        for(TestTask et : etList) {
+            unlinkCase(et);
+        }
+        return true;
     }
 
 

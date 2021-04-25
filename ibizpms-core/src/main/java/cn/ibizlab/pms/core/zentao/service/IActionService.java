@@ -46,6 +46,10 @@ public interface IActionService extends IService<Action> {
     boolean managePmsEeBatch(List<Action> etList);
     boolean save(Action et);
     void saveBatch(List<Action> list);
+    Action sendTodo(Action et);
+    boolean sendTodoBatch(List<Action> etList);
+    Action sendToread(Action et);
+    boolean sendToreadBatch(List<Action> etList);
     List<Action> select(ActionSearchContext context);
     List<Action> selectBianGengLineHistory(ActionSearchContext context);
     List<Action> selectDefault(ActionSearchContext context);
@@ -82,6 +86,8 @@ public interface IActionService extends IService<Action> {
      */
     boolean execute(String sql, Map param);
 
+    List<Action> getActionByIds(List<Long> ids);
+    List<Action> getActionByEntities(List<Action> entities);
 }
 
 

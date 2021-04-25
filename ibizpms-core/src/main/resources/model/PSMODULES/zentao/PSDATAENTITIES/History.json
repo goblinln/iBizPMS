@@ -54,13 +54,6 @@
     "builtinAction" : true
   }, {
     "actionMode" : "UNKNOWN",
-    "actionType" : "USERCUSTOM",
-    "codeName" : "LogHistory",
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/History/PSDEACTIONS/LogHistory.json",
-    "logicName" : "创建历史记录",
-    "name" : "logHistory"
-  }, {
-    "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
     "codeName" : "Save",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/History/PSDEACTIONS/Save.json",
@@ -596,6 +589,102 @@
     "translatorMode" : "TRANSLATE2",
     "valueFormat" : "%1$s",
     "linkDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "DEPTNAME",
+      "dBType" : "MYSQL5",
+      "name" : "DEPTNAME",
+      "queryCodeExp" : "t1.`DEPTNAME`",
+      "standardColumnName" : "`DEPTNAME`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "DEPTNAME",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "getPSDEField" : {
+        "name" : "DEPTNAME",
+        "codeName" : "DeptName"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "DeptName",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "归属部门名",
+    "name" : "DEPTNAME",
+    "predefinedType" : "ORGSECTORNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "ORGNAME",
+      "dBType" : "MYSQL5",
+      "name" : "ORGNAME",
+      "queryCodeExp" : "t1.`ORGNAME`",
+      "standardColumnName" : "`ORGNAME`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "ORGNAME",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "getPSDEField" : {
+        "name" : "ORGNAME",
+        "codeName" : "OrgName"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "OrgName",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "predefinedType" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",

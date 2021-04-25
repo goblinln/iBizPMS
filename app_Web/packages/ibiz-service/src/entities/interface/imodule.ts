@@ -86,4 +86,12 @@ export interface IModule extends IEntityBase {
      * 上级模块
      */
     parent?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
+     * 归属部门名
+     */
+    mdeptname?: any;
 }

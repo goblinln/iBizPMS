@@ -1210,6 +1210,7 @@
       "columnName" : "DEPTNAME",
       "dBType" : "MYSQL5",
       "name" : "DEPTNAME",
+      "queryCodeExp" : "t1.`DEPTNAME`",
       "standardColumnName" : "`DEPTNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1257,6 +1258,7 @@
       "columnName" : "ORGNAME",
       "dBType" : "MYSQL5",
       "name" : "ORGNAME",
+      "queryCodeExp" : "t1.`ORGNAME`",
       "standardColumnName" : "`ORGNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {

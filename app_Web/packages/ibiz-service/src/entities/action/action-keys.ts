@@ -23,4 +23,8 @@ export default [
     'objectid',
     'actor',
     'project',
+    'deptname',
+    'orgname',
+    'dept',
+    'org',
 ];

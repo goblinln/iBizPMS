@@ -18,4 +18,6 @@ export default [
     'parentname',
     'branch',
     'parent',
+    'orgname',
+    'mdeptname',
 ];

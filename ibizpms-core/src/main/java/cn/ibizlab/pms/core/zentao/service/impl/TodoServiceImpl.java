@@ -62,72 +62,61 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
         return pages.getRecords();
     }
 
-    	@Override
+    @Override
     @Transactional
     public boolean create(Todo et) {
-  		if(!todoRuntime.isRtmodel()){
-		  
+        if(!this.retBool(this.baseMapper.insert(et))) {
+            return false;
         }
-		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TodoHelper.class).create(et)) {
-			 return false;
-		}
-		
-  		return true;
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
-	@Transactional
+    @Transactional
     public void createBatch(List<Todo> list) {
-		if(!todoRuntime.isRtmodel()){
-		  
-        }
-		this.saveBatch(list, batchSize);
+        this.saveBatch(list, batchSize);
     }
-    	@Override
+
+    @Override
     @Transactional
     public boolean update(Todo et) {
-  		if(!todoRuntime.isRtmodel()){
-		  
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
         }
-		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TodoHelper.class).edit(et)) {
-			 return false;
-		}
-		
-  		return true;
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
-	@Transactional
+    @Transactional
     public void updateBatch(List<Todo> list) {
-	  if(!todoRuntime.isRtmodel()){
-		
-	  }
-		updateBatchById(list, batchSize);
+        updateBatchById(list, batchSize);
     }
-	
-	@Override
+
+    @Override
     @Transactional
     public boolean sysUpdate(Todo et) {
-	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TodoHelper.class).edit(et)) {
-		return false;
-     }
-    
-     return true;
-   }
-        @Override
-    @Transactional
-    public boolean remove(Long key) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TodoHelper.class).delete(key);
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
-    public void removeBatch(Collection<Long> idList){
-        if (idList != null && !idList.isEmpty()) {
-            for (Long id : idList) {
-                this.remove(id);
-            }
-        }
+    @Transactional
+    public boolean remove(Long key) {
+        boolean result = removeById(key);
+        return result ;
     }
+
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        removeByIds(idList);
+    }
+
     @Override
     @Transactional
     public Todo get(Long key) {
@@ -159,53 +148,53 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
         return et;
     }
 
-       @Override
+    @Override
     @Transactional
     public Todo activate(Todo et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TodoHelper.class).activate(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean activateBatch (List<Todo> etList) {
-		 for(Todo et : etList) {
-		   activate(et);
-		 }
-	 	 return true;
+    public boolean activateBatch(List<Todo> etList) {
+        for(Todo et : etList) {
+            activate(et);
+        }
+        return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Todo assignTo(Todo et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TodoHelper.class).assignTo(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean assignToBatch (List<Todo> etList) {
-		 for(Todo et : etList) {
-		   assignTo(et);
-		 }
-	 	 return true;
+    public boolean assignToBatch(List<Todo> etList) {
+        for(Todo et : etList) {
+            assignTo(et);
+        }
+        return true;
     }
 
     @Override
     public boolean checkKey(Todo et) {
         return (!ObjectUtils.isEmpty(et.getId())) && (!Objects.isNull(this.getById(et.getId())));
     }
-       @Override
+    @Override
     @Transactional
     public Todo close(Todo et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TodoHelper.class).close(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean closeBatch (List<Todo> etList) {
-		 for(Todo et : etList) {
-		   close(et);
-		 }
-	 	 return true;
+    public boolean closeBatch(List<Todo> etList) {
+        for(Todo et : etList) {
+            close(et);
+        }
+        return true;
     }
 
     @Override
@@ -223,19 +212,19 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
         return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Todo finish(Todo et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TodoHelper.class).finish(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean finishBatch (List<Todo> etList) {
-		 for(Todo et : etList) {
-		   finish(et);
-		 }
-	 	 return true;
+    public boolean finishBatch(List<Todo> etList) {
+        for(Todo et : etList) {
+            finish(et);
+        }
+        return true;
     }
 
     @Override

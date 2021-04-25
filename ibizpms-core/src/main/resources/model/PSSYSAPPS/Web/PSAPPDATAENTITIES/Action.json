@@ -194,6 +194,30 @@
       "id" : "Save"
     },
     "builtinMethod" : false
+  }, {
+    "codeName" : "SendTodo",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/SendTodo.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SendTodo"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "SendToread",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/SendToread.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SendToread"
+    },
+    "builtinMethod" : false
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
@@ -450,6 +474,30 @@
     "logicName" : "项目",
     "name" : "PROJECT",
     "stdDataType" : 1
+  }, {
+    "codeName" : "DeptName",
+    "logicName" : "归属部门名",
+    "name" : "DEPTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Dept",
+    "logicName" : "归属部门",
+    "name" : "DEPT",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Org",
+    "logicName" : "归属组织",
+    "name" : "ORG",
+    "stdDataType" : 25,
+    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",
@@ -625,6 +673,30 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "SendTodo",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/SendTodo.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SendTodo"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "SendToread",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/SendToread.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SendToread"
     },
     "builtinMethod" : false
   }, {

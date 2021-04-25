@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`CASE`, t1.`CREATEBY`, t1.`DEPT`, concat(t1.`SUITE`,'__',t1.`CASE`) AS `ID`, t1.`ORG`, t1.`PRODUCT`, t1.`SUITE`, t1.`UPDATEBY`, t1.`VERSION` FROM `zt_suitecase` t1   ]]>
+        <![CDATA[ SELECT t1.`CASE`, t1.`CREATEBY`, t1.`DEPT`, t1.`DEPTNAME`, concat(t1.`SUITE`,'__',t1.`CASE`) AS `ID`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t1.`SUITE`, t1.`UPDATEBY`, t1.`VERSION` FROM `zt_suitecase` t1   ]]>
     </sql>
 
 	
@@ -84,7 +84,7 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CASE`, t1.`CREATEBY`, t1.`DEPT`, concat(t1.`SUITE`,'__',t1.`CASE`) AS `ID`, t1.`ORG`, t1.`PRODUCT`, t1.`SUITE`, t1.`UPDATEBY`, t1.`VERSION` FROM `zt_suitecase` t1   ]]>
+		<![CDATA[ SELECT t1.`CASE`, t1.`CREATEBY`, t1.`DEPT`, t1.`DEPTNAME`, concat(t1.`SUITE`,'__',t1.`CASE`) AS `ID`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t1.`SUITE`, t1.`UPDATEBY`, t1.`VERSION` FROM `zt_suitecase` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>
@@ -96,7 +96,7 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CASE`, t1.`CREATEBY`, t1.`DEPT`, concat(t1.`SUITE`,'__',t1.`CASE`) AS `ID`, t1.`ORG`, t1.`PRODUCT`, t1.`SUITE`, t1.`UPDATEBY`, t1.`VERSION` FROM `zt_suitecase` t1   ]]>
+		<![CDATA[ SELECT t1.`CASE`, t1.`CREATEBY`, t1.`DEPT`, t1.`DEPTNAME`, concat(t1.`SUITE`,'__',t1.`CASE`) AS `ID`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t1.`SUITE`, t1.`UPDATEBY`, t1.`VERSION` FROM `zt_suitecase` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>

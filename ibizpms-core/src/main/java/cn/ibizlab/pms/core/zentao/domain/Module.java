@@ -213,6 +213,24 @@ public class Module extends EntityMP implements Serializable {
     @JsonProperty("parent")
     @ApiModelProperty("上级模块")
     private Long parent;
+    /**
+     * 归属组织名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGNAME)
+    @TableField(value = "`ORGNAME`")
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+    /**
+     * 归属部门名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
+    @TableField(value = "`MDEPTNAME`")
+    @JSONField(name = "mdeptname")
+    @JsonProperty("mdeptname")
+    @ApiModelProperty("归属部门名")
+    private String mdeptname;
 
     /**
      * 

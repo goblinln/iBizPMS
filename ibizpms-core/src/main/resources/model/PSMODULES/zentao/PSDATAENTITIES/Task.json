@@ -81,10 +81,6 @@
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTRemove"
-    },
     "userCat" : "CAT1",
     "userTag4" : "remove",
     "builtinAction" : true
@@ -211,10 +207,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json",
     "logicName" : "指派/转交",
     "name" : "AssignTo",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -305,10 +297,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Finish.json",
     "logicName" : "完成",
     "name" : "Finish",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "READ",
@@ -365,10 +353,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/LinkPlan.json",
     "logicName" : "关联计划",
     "name" : "LinkPlan",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -377,10 +361,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/OtherUpdate.json",
     "logicName" : "其他更新",
     "name" : "OtherUpdate",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -447,10 +427,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Start.json",
     "logicName" : "开始",
     "name" : "Start",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",

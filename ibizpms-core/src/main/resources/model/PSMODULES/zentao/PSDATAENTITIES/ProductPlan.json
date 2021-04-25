@@ -7,10 +7,6 @@
     "logicName" : "Create",
     "name" : "Create",
     "orderValue" : 1,
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCreate"
-    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -31,10 +27,6 @@
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTRemove"
-    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -84,10 +76,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/BatchUnlinkBug.json",
     "logicName" : "批量解除关联Bug",
     "name" : "BatchUnlinkBug",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -96,10 +84,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/BatchUnlinkStory.json",
     "logicName" : "批量解除关联需求",
     "name" : "BatchUnlinkStory",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -116,10 +100,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeActivePlan.json",
     "logicName" : "EE激活计划",
     "name" : "EeActivePlan",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -128,10 +108,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeCancelPlan.json",
     "logicName" : "EE取消计划",
     "name" : "EeCancelPlan",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -140,10 +116,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeClosePlan.json",
     "logicName" : "EE关闭计划",
     "name" : "EeClosePlan",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -152,10 +124,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeFinishPlan.json",
     "logicName" : "EE完成计划",
     "name" : "EeFinishPlan",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -164,10 +132,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EePausePlan.json",
     "logicName" : "EE暂停计划",
     "name" : "EePausePlan",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -176,10 +140,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeRestartPlan.json",
     "logicName" : "继续计划",
     "name" : "EeRestartPlan",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -188,10 +148,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeStartPlan.json",
     "logicName" : "EE开始计划",
     "name" : "EeStartPlan",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "READ",
@@ -225,10 +181,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkBug.json",
     "logicName" : "关联Bug",
     "name" : "LinkBug",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -237,10 +189,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkStory.json",
     "logicName" : "关联需求",
     "name" : "LinkStory",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -249,10 +197,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkTask.json",
     "logicName" : "关联任务",
     "name" : "LinkTask",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -280,10 +224,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/UnlinkBug.json",
     "logicName" : "解除关联Bug",
     "name" : "UnlinkBug",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -292,10 +232,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/UnlinkStory.json",
     "logicName" : "解除关联需求",
     "name" : "UnlinkStory",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   } ],
   "getAllPSDEDataQueries" : [ {

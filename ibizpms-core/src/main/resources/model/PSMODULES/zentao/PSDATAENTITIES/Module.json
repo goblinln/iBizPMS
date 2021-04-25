@@ -16,10 +16,6 @@
     "logicName" : "Update",
     "name" : "Update",
     "orderValue" : 11,
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTUpdate"
-    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -30,10 +26,6 @@
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTRemove"
-    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -69,10 +61,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEACTIONS/Fix.json",
     "logicName" : "重建模块路径",
     "name" : "Fix",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -1257,6 +1245,102 @@
     "translatorMode" : "TRANSLATE2",
     "valueFormat" : "%1$s",
     "linkDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "ORGNAME",
+      "dBType" : "MYSQL5",
+      "name" : "ORGNAME",
+      "queryCodeExp" : "t1.`ORGNAME`",
+      "standardColumnName" : "`ORGNAME`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "ORGNAME",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "getPSDEField" : {
+        "name" : "ORGNAME",
+        "codeName" : "OrgName"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "OrgName",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "predefinedType" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "MDEPTNAME",
+      "dBType" : "MYSQL5",
+      "name" : "MDEPTNAME",
+      "queryCodeExp" : "t1.`MDEPTNAME`",
+      "standardColumnName" : "`MDEPTNAME`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "MDEPTNAME",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "getPSDEField" : {
+        "name" : "MDEPTNAME",
+        "codeName" : "MdeptName"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "MdeptName",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "归属部门名",
+    "name" : "MDEPTNAME",
+    "predefinedType" : "ORGSECTORNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",

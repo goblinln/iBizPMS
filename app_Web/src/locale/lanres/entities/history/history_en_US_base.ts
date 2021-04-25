@@ -13,6 +13,8 @@ function getLocaleResourceBase(){
 		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'id': commonLogic.appcommonhandle("id",null),
 		'action': commonLogic.appcommonhandle("关联日志",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 		default_list: {
 			nodata:commonLogic.appcommonhandle("",null),

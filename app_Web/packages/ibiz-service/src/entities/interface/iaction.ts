@@ -112,4 +112,20 @@ export interface IAction extends IEntityBase {
      * 项目
      */
     project?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
+     * 归属组织
+     */
+    org?: any;
 }

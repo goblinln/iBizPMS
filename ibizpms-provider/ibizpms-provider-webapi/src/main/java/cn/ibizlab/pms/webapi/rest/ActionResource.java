@@ -213,6 +213,40 @@ public class ActionResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @ApiOperation(value = "发送待办", tags = {"系统日志" },  notes = "发送待办")
+	@RequestMapping(method = RequestMethod.POST, value = "/actions/{action_id}/sendtodo")
+    public ResponseEntity<ActionDTO> sendTodo(@PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
+        Action domain = actionMapping.toDomain(actiondto);
+        domain.setId(action_id);
+        domain = actionService.sendTodo(domain);
+        actiondto = actionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(actiondto);
+    }
+    @ApiOperation(value = "批量处理[发送待办]", tags = {"系统日志" },  notes = "批量处理[发送待办]")
+	@RequestMapping(method = RequestMethod.POST, value = "/actions/sendtodobatch")
+    public ResponseEntity<Boolean> sendTodoBatch(@RequestBody List<ActionDTO> actiondtos) {
+        List<Action> domains = actionMapping.toDomain(actiondtos);
+        boolean result = actionService.sendTodoBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @ApiOperation(value = "发送待阅", tags = {"系统日志" },  notes = "发送待阅")
+	@RequestMapping(method = RequestMethod.POST, value = "/actions/{action_id}/sendtoread")
+    public ResponseEntity<ActionDTO> sendToread(@PathVariable("action_id") Long action_id, @RequestBody ActionDTO actiondto) {
+        Action domain = actionMapping.toDomain(actiondto);
+        domain.setId(action_id);
+        domain = actionService.sendToread(domain);
+        actiondto = actionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(actiondto);
+    }
+    @ApiOperation(value = "批量处理[发送待阅]", tags = {"系统日志" },  notes = "批量处理[发送待阅]")
+	@RequestMapping(method = RequestMethod.POST, value = "/actions/sendtoreadbatch")
+    public ResponseEntity<Boolean> sendToreadBatch(@RequestBody List<ActionDTO> actiondtos) {
+        List<Action> domains = actionMapping.toDomain(actiondtos);
+        boolean result = actionService.sendToreadBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
     @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"系统日志" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/actions/fetchdefault")

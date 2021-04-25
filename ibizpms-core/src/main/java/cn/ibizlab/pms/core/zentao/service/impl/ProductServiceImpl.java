@@ -134,72 +134,80 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         return pages.getRecords();
     }
 
-    	@Override
+    @Override
     @Transactional
     public boolean create(Product et) {
-  		if(!productRuntime.isRtmodel()){
-		  
+        if(!productRuntime.isRtmodel()){
+            fillParentData(et);
         }
-		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ProductHelper.class).create(et)) {
-			 return false;
-		}
-		
-  		return true;
+        if(!this.retBool(this.baseMapper.insert(et))) {
+            return false;
+        }
+        if(!productRuntime.isRtmodel()){
+            productteamService.saveByRoot(et.getId(), et.getProductteam());
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
-	@Transactional
+    @Transactional
     public void createBatch(List<Product> list) {
-		if(!productRuntime.isRtmodel()){
-		  
+        if(!productRuntime.isRtmodel()){
+            list.forEach(item->fillParentData(item));
         }
-		this.saveBatch(list, batchSize);
+        this.saveBatch(list, batchSize);
     }
-    	@Override
+
+    @Override
     @Transactional
     public boolean update(Product et) {
-  		if(!productRuntime.isRtmodel()){
-		  
+        if(!productRuntime.isRtmodel()){
+            fillParentData(et);
         }
-		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ProductHelper.class).edit(et)) {
-			 return false;
-		}
-		
-  		return true;
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        if(!productRuntime.isRtmodel()){
+            productteamService.saveByRoot(et.getId(), et.getProductteam());
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
-	@Transactional
+    @Transactional
     public void updateBatch(List<Product> list) {
-	  if(!productRuntime.isRtmodel()){
-		
-	  }
-		updateBatchById(list, batchSize);
+        if(!productRuntime.isRtmodel()){
+            list.forEach(item->fillParentData(item));
+        }
+        updateBatchById(list, batchSize);
     }
-	
-	@Override
+
+    @Override
     @Transactional
     public boolean sysUpdate(Product et) {
-	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ProductHelper.class).edit(et)) {
-		return false;
-     }
-    
-     return true;
-   }
-        @Override
-    @Transactional
-    public boolean remove(Long key) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ProductHelper.class).delete(key);
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
-    public void removeBatch(Collection<Long> idList){
-        if (idList != null && !idList.isEmpty()) {
-            for (Long id : idList) {
-                this.remove(id);
-            }
-        }
+    @Transactional
+    public boolean remove(Long key) {
+        productteamService.removeByRoot(key) ;
+        boolean result = removeById(key);
+        return result ;
     }
+
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        removeByIds(idList);
+    }
+
     @Override
     @Transactional
     public Product get(Long key) {
@@ -254,19 +262,19 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     public boolean checkKey(Product et) {
         return (!ObjectUtils.isEmpty(et.getId())) && (!Objects.isNull(this.getById(et.getId())));
     }
-       @Override
+    @Override
     @Transactional
     public Product close(Product et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ProductHelper.class).close(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean closeBatch (List<Product> etList) {
-		 for(Product et : etList) {
-		   close(et);
-		 }
-	 	 return true;
+    public boolean closeBatch(List<Product> etList) {
+        for(Product et : etList) {
+            close(et);
+        }
+        return true;
     }
 
     @Override

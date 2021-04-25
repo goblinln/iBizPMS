@@ -154,9 +154,6 @@ public class HistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             else if (iPSDEAction.getName().equals("CheckKey")) {
                 return historyService.checkKey((History) args[0]);
             }
-            else if (iPSDEAction.getName().equals("logHistory")) {
-                return historyService.logHistory((History) args[0]);
-            }
             else if (iPSDEAction.getName().equals("Save")) {
                 return historyService.save((History) args[0]);
             }
@@ -269,9 +266,6 @@ public class HistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         }
         else if (action.equals("checkKey")) {
             return aroundAction("CheckKey", point);
-        }
-        else if (action.equals("logHistory")) {
-            return aroundAction("logHistory", point);
         }
         else if (action.equals("save")) {
             return aroundAction("Save", point);

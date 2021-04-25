@@ -288,6 +288,36 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
         }
     }
 
+    @Override
+    @Transactional
+    public Action sendTodo(Action et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendTodoBatch(List<Action> etList) {
+        for(Action et : etList) {
+            sendTodo(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public Action sendToread(Action et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean sendToreadBatch(List<Action> etList) {
+        for(Action et : etList) {
+            sendToread(et);
+        }
+        return true;
+    }
+
 
 	@Override
     public List<Action> selectByProject(Long id) {
@@ -421,6 +451,27 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
         return true;
     }
 
+    @Override
+    public List<Action> getActionByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<Action> getActionByEntities(List<Action> entities) {
+        List ids =new ArrayList();
+        for(Action entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public IActionService getProxyService() {

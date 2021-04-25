@@ -48,4 +48,12 @@ export interface IHistory extends IEntityBase {
      * 关联日志
      */
     action?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
 }

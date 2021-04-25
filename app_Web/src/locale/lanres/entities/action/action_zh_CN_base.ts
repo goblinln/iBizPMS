@@ -27,6 +27,10 @@ function getLocaleResourceBase(){
 		'objectid': commonLogic.appcommonhandle("对象ID",null),
 		'actor': commonLogic.appcommonhandle("操作者",null),
 		'project': commonLogic.appcommonhandle("项目",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
+		'dept': commonLogic.appcommonhandle("归属部门",null),
+		'org': commonLogic.appcommonhandle("归属组织",null),
 	},
 		views: {
 			'historylistview': {

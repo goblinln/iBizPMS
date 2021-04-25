@@ -7,10 +7,6 @@
     "logicName" : "Create",
     "name" : "Create",
     "orderValue" : 1,
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCreate"
-    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -21,10 +17,6 @@
     "logicName" : "Update",
     "name" : "Update",
     "orderValue" : 11,
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTUpdate"
-    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -35,10 +27,6 @@
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTRemove"
-    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -766,6 +754,7 @@
       "columnName" : "DEPTNAME",
       "dBType" : "MYSQL5",
       "name" : "DEPTNAME",
+      "queryCodeExp" : "t1.`DEPTNAME`",
       "standardColumnName" : "`DEPTNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -813,6 +802,7 @@
       "columnName" : "ORGNAME",
       "dBType" : "MYSQL5",
       "name" : "ORGNAME",
+      "queryCodeExp" : "t1.`ORGNAME`",
       "standardColumnName" : "`ORGNAME`"
     } ],
     "getAllPSDEFValueRules" : [ {
