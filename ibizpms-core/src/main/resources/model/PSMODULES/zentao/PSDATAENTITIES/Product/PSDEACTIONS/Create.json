@@ -6,10 +6,6 @@
   "logicName" : "Create",
   "name" : "Create",
   "orderValue" : 1,
-  "getPSSysSFPlugin" : {
-    "pluginType" : "DEACTION",
-    "pluginCode" : "ZTCreate"
-  },
   "userCat" : "CAT1",
   "userTag4" : "create",
   "builtinAction" : true
