@@ -560,19 +560,19 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         return true;
     }
 
-    @Override
+       @Override
     @Transactional
     public Task start(Task et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).start(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean startBatch(List<Task> etList) {
-        for(Task et : etList) {
-            start(et);
-        }
-        return true;
+    public boolean startBatch (List<Task> etList) {
+		 for(Task et : etList) {
+		   start(et);
+		 }
+	 	 return true;
     }
 
     @Override
