@@ -61,12 +61,12 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
     }
 
     @Override
-    public List<IbizproIndex> selectQueryByDefault(IbizproIndexSearchContext context) {
+    public List<IbizproIndex> selectDefault(IbizproIndexSearchContext context) {
         return null;
     }
 
     @Override
-    public List<IbizproIndex> selectQueryByView(IbizproIndexSearchContext context) {
+    public List<IbizproIndex> selectView(IbizproIndexSearchContext context) {
         return null;
     }
 
