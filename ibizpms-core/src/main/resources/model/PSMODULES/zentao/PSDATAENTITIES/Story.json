@@ -7,10 +7,6 @@
     "logicName" : "Create",
     "name" : "Create",
     "orderValue" : 1,
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCreate"
-    },
     "userCat" : "CAT1",
     "userTag4" : "create",
     "builtinAction" : true
@@ -164,10 +160,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchUnlinkStory.json",
     "logicName" : "计划批量解除关联需求",
     "name" : "BatchUnlinkStory",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -306,10 +298,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ImportPlanStories.json",
     "logicName" : "项目关联需求-按计划关联",
     "name" : "importPlanStories",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -330,10 +318,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectBatchUnlinkStory.json",
     "logicName" : "项目批量解除关联需求",
     "name" : "ProjectBatchUnlinkStory",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -342,10 +326,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectLinkStory.json",
     "logicName" : "项目关联需求",
     "name" : "ProjectLinkStory",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -354,10 +334,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectUnlinkStory.json",
     "logicName" : "项目解除关联需求",
     "name" : "ProjectUnlinkStory",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -396,10 +372,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ReleaseLinkStory.json",
     "logicName" : "发布关联需求",
     "name" : "ReleaseLinkStory",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -497,10 +469,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/UnlinkStory.json",
     "logicName" : "计划解除关联需求",
     "name" : "UnlinkStory",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   } ],
   "getAllPSDEDataQueries" : [ {

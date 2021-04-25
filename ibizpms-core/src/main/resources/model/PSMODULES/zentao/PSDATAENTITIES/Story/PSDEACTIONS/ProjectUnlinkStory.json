@@ -5,9 +5,5 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectUnlinkStory.json",
   "logicName" : "项目解除关联需求",
   "name" : "ProjectUnlinkStory",
-  "getPSSysSFPlugin" : {
-    "pluginType" : "DEACTION",
-    "pluginCode" : "ZTCommon"
-  },
   "userCat" : "CAT1"
 }

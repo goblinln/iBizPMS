@@ -87,51 +87,51 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
         this.saveBatch(list, batchSize);
     }
 
-    	@Override
+    @Override
     @Transactional
     public boolean update(TaskEstimate et) {
-  		if(!taskestimateRuntime.isRtmodel()){
-		  
+        if(!taskestimateRuntime.isRtmodel()){
+            fillParentData(et);
         }
-		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskEstimateHelper.class).edit(et)) {
-			 return false;
-		}
-		
-  		return true;
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
-	@Transactional
+    @Transactional
     public void updateBatch(List<TaskEstimate> list) {
-	  if(!taskestimateRuntime.isRtmodel()){
-		
-	  }
-		updateBatchById(list, batchSize);
+        if(!taskestimateRuntime.isRtmodel()){
+            list.forEach(item->fillParentData(item));
+        }
+        updateBatchById(list, batchSize);
     }
-	
-	@Override
+
+    @Override
     @Transactional
     public boolean sysUpdate(TaskEstimate et) {
-	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskEstimateHelper.class).edit(et)) {
-		return false;
-     }
-    
-     return true;
-   }
-        @Override
-    @Transactional
-    public boolean remove(Long key) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskEstimateHelper.class).delete(key);
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
-    public void removeBatch(Collection<Long> idList){
-        if (idList != null && !idList.isEmpty()) {
-            for (Long id : idList) {
-                this.remove(id);
-            }
-        }
+    @Transactional
+    public boolean remove(Long key) {
+        boolean result = removeById(key);
+        return result ;
     }
+
+    @Override
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        removeByIds(idList);
+    }
+
     @Override
     @Transactional
     public TaskEstimate get(Long key) {
