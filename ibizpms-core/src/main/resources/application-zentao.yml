@@ -1,0 +1,72 @@
+zentao:
+  url: http://172.16.180.217/zentao/
+  needretry: false
+  retrycount: 0
+  file:
+    uploadpath: ibizutilpms/ztupload
+#    downloadpath: ibizutil/ztdownload/{id}
+
+environment:
+  - TZ=Asia/Shanghai
+
+
+#API替换相关配置。
+ibiz:
+  # auth:
+    #本地用户认证：IBZZTUserService
+    #UAA认证：IBZUAAUserService
+    # service: IBZUAAUserService
+    # token:
+    # 本地ZT账户认证模式：SimpleTokenUtil
+    # UAA认证模式：UAATokenUtil
+      # util: UAATokenUtil
+  ref:
+    service:
+      uaa: ibizrt4ebsx-rt4ebsx
+      ou: ibizrt4ebsx-rt4ebsx
+      notify: ibizrt4ebsx-rt4ebsx
+  cacheLevel: L2
+  # 是否加载ES
+  es:
+    enabled: true
+    #ES服务器地址
+    server: 172.16.180.217:9200
+    bulk:
+      maxread: 10000
+  #消息推送相关
+  message:
+    # 开启消息推送
+    enabled: true
+    # 消息类型，根据Notify系统提供的参数
+    # 2（aliyun-email）,4(aliyun-sms),32(wechat-msg),64(dingtalk-msg)
+    appname: iBiz软件生产管理
+    type: 64
+    # 域名首页, 用于发送消息链接
+    # 比如:http://ibizpmsh5.ibizlab.cn
+    homepage:
+      mob: http://ibizpmsh5.ibizlab.cn
+      pc: http://ibizpmspc.ibizlab.cn
+
+spring:
+  servlet:
+    multipart:
+      # 代表文件上传最大大小
+      max-file-size: 100MB
+      # 代表文件上传最大总大小
+      max-request-size: 1024MB
+
+pms:
+  # 启动时，批量同步资源。
+  batchsync:
+    #同步用户、组织、部门资源
+    ou: false
+    #同步权限资源。
+    uaa: true
+
+  #是否跟踪数据流
+  trace: true
+
+#Log配置
+logging:
+  level:
+    cn.ibizlab.pms: debug

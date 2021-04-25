@@ -1,5 +1,5 @@
 spring:
   profiles:
-    include: sys ,nacos, web-prod
+    include: sys ,nacos, web-prod, web-zentao
   application:
     name: ibizpms-web
