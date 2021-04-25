@@ -215,7 +215,11 @@ public class DEFieldDefaultValueAspect
                         //暂未实现
                         break;
                     case NONE:
-                        et.set(fieldname, deFieldDefaultValue);
+                        if(deFieldDefaultValue.equals("#EMPTY")) {
+                            et.set(fieldname, "");
+                        }else {
+                            et.set(fieldname, deFieldDefaultValue);
+                        }
                         break;
                 }
             }
