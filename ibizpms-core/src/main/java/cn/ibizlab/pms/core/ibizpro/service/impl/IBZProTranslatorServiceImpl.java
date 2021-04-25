@@ -214,6 +214,17 @@ public class IBZProTranslatorServiceImpl extends ServiceImpl<IBZProTranslatorMap
 
 
 
+    public List<IBZProTranslator> selectQueryByDefault(IBZProTranslatorSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IBZProTranslator> selectQueryBySimple(IBZProTranslatorSearchContext context){
+        return baseMapper.selectQueryBySimple(context, context.getSelectCond());
+    }
+    public List<IBZProTranslator> selectQueryByView(IBZProTranslatorSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

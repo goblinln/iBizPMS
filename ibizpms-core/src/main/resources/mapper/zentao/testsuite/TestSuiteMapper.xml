@@ -84,6 +84,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.TestSuiteSearchContext" resultMap="TestSuiteResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[PublicTestSuite]-->
     <sql id="PublicTestSuite" databaseId="mysql">
@@ -98,6 +102,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByPublicTestSuite"  parameterType="cn.ibizlab.pms.core.zentao.filter.TestSuiteSearchContext" resultMap="TestSuiteResultMap">
+		<include refid="PublicTestSuite" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -109,6 +117,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.TestSuiteSearchContext" resultMap="TestSuiteResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

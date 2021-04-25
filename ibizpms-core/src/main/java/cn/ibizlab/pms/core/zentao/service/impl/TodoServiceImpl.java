@@ -330,6 +330,23 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
 
 
 
+    public List<Todo> selectQueryByDefault(TodoSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Todo> selectQueryByMyTodo(TodoSearchContext context){
+        return baseMapper.selectQueryByMyTodo(context, context.getSelectCond());
+    }
+    public List<Todo> selectQueryByMyTodoPc(TodoSearchContext context){
+        return baseMapper.selectQueryByMyTodoPc(context, context.getSelectCond());
+    }
+    public List<Todo> selectQueryByMyUpcoming(TodoSearchContext context){
+        return baseMapper.selectQueryByMyUpcoming(context, context.getSelectCond());
+    }
+    public List<Todo> selectQueryByView(TodoSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

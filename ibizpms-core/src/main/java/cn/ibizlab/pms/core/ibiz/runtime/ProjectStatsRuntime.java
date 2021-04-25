@@ -122,7 +122,31 @@ public class ProjectStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public List<ProjectStats> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        ProjectStatsSearchContext searchContext = (ProjectStatsSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return projectstatsService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("NOOpenProduct"))
+            return projectstatsService.selectQueryByNoOpenProduct(searchContext);
+        if (iPSDataQuery.getName().equals("ProjectBugType"))
+            return projectstatsService.selectQueryByProjectBugType(searchContext);
+        if (iPSDataQuery.getName().equals("ProjectInputStats"))
+            return projectstatsService.selectQueryByProjectInputStats(searchContext);
+        if (iPSDataQuery.getName().equals("ProjectProgress"))
+            return projectstatsService.selectQueryByProjectProgress(searchContext);
+        if (iPSDataQuery.getName().equals("ProjectQuality"))
+            return projectstatsService.selectQueryByProjectQuality(searchContext);
+        if (iPSDataQuery.getName().equals("ProjectStoryStageStats"))
+            return projectstatsService.selectQueryByProjectStoryStageStats(searchContext);
+        if (iPSDataQuery.getName().equals("ProjectStoryStatusStats"))
+            return projectstatsService.selectQueryByProjectStoryStatusStats(searchContext);
+        if (iPSDataQuery.getName().equals("ProjectTaskCountByTaskStatus"))
+            return projectstatsService.selectQueryByProjectTaskCountByTaskStatus(searchContext);
+        if (iPSDataQuery.getName().equals("ProjectTaskCountByType"))
+            return projectstatsService.selectQueryByProjectTaskCountByType(searchContext);
+        if (iPSDataQuery.getName().equals("TASKTIME"))
+            return projectstatsService.selectQueryByTaskTime(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return projectstatsService.selectQueryByView(searchContext);
         return null;
     }
 

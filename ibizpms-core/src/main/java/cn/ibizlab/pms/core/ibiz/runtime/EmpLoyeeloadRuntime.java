@@ -104,7 +104,13 @@ public class EmpLoyeeloadRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public List<EmpLoyeeload> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        EmpLoyeeloadSearchContext searchContext = (EmpLoyeeloadSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return employeeloadService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("GETWOERKLOAD"))
+            return employeeloadService.selectQueryByGETWOERKLOAD(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return employeeloadService.selectQueryByView(searchContext);
         return null;
     }
 

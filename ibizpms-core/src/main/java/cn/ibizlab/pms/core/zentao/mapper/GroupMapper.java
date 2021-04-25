@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface GroupMapper extends BaseMapper<Group> {
 
+    List<Group> selectQueryByDefault(@Param("srf") GroupSearchContext context, @Param("ew") Wrapper<Group> wrapper);
+    List<Group> selectQueryByView(@Param("srf") GroupSearchContext context, @Param("ew") Wrapper<Group> wrapper);
+
     Page<Group> searchDefault(IPage page, @Param("srf") GroupSearchContext context, @Param("ew") Wrapper<Group> wrapper);
     @Override
     Group selectById(Serializable id);

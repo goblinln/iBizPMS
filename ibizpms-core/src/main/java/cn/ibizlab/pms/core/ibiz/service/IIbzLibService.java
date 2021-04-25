@@ -39,6 +39,10 @@ public interface IIbzLibService extends IService<IbzLib> {
     boolean save(IbzLib et);
     void saveBatch(List<IbzLib> list);
     List<IbzLib> select(IbzLibSearchContext context);
+    
+    List<IbzLib> selectQueryByDefault(IbzLibSearchContext context);
+    List<IbzLib> selectQueryByView(IbzLibSearchContext context);
+
     Page<IbzLib> searchDefault(IbzLibSearchContext context);
     IbzLib dynamicCall(Long key, String action, IbzLib et);
     /**

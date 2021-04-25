@@ -19,6 +19,19 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ProductPlanMapper extends BaseMapper<ProductPlan> {
 
+    List<ProductPlan> selectQueryByChildPlan(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectQueryByDefault(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectQueryByDefaultParent(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectQueryByGetList(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectQueryByPlanCodeList(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectQueryByPlanTasks(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectQueryByProductQuery(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectQueryByProjectApp(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectQueryByProjectPlan(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectQueryByRootPlan(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectQueryByTaskPlan(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectQueryByView(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+
     Page<ProductPlan> searchChildPlan(IPage page, @Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
     Page<ProductPlan> searchCurProductPlan(IPage page, @Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
     Page<ProductPlan> searchDefault(IPage page, @Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);

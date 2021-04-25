@@ -134,7 +134,45 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public List<Product> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        ProductSearchContext searchContext = (ProductSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("AllList"))
+            return productService.selectQueryByAllList(searchContext);
+        if (iPSDataQuery.getName().equals("AllProduct"))
+            return productService.selectQueryByAllProduct(searchContext);
+        if (iPSDataQuery.getName().equals("CheckNameOrCode"))
+            return productService.selectQueryByCheckNameOrCode(searchContext);
+        if (iPSDataQuery.getName().equals("CurDefault"))
+            return productService.selectQueryByCurDefault(searchContext);
+        if (iPSDataQuery.getName().equals("CURPROJECT"))
+            return productService.selectQueryByCurProject(searchContext);
+        if (iPSDataQuery.getName().equals("CurUer"))
+            return productService.selectQueryByCurUer(searchContext);
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return productService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("DeveloperQuery"))
+            return productService.selectQueryByDeveloperQuery(searchContext);
+        if (iPSDataQuery.getName().equals("ESBulk"))
+            return productService.selectQueryByESBulk(searchContext);
+        if (iPSDataQuery.getName().equals("OpenQuery"))
+            return productService.selectQueryByOpenQuery(searchContext);
+        if (iPSDataQuery.getName().equals("POQuery"))
+            return productService.selectQueryByPOQuery(searchContext);
+        if (iPSDataQuery.getName().equals("ProductManagerQuery"))
+            return productService.selectQueryByProductManagerQuery(searchContext);
+        if (iPSDataQuery.getName().equals("ProductPM"))
+            return productService.selectQueryByProductPM(searchContext);
+        if (iPSDataQuery.getName().equals("ProductTeam"))
+            return productService.selectQueryByProductTeam(searchContext);
+        if (iPSDataQuery.getName().equals("QDQuery"))
+            return productService.selectQueryByQDQuery(searchContext);
+        if (iPSDataQuery.getName().equals("RDQuery"))
+            return productService.selectQueryByRDQuery(searchContext);
+        if (iPSDataQuery.getName().equals("SIMPLE"))
+            return productService.selectQueryBySimple(searchContext);
+        if (iPSDataQuery.getName().equals("StoryCURPROJECT"))
+            return productService.selectQueryByStoryCurProject(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return productService.selectQueryByView(searchContext);
         return null;
     }
 

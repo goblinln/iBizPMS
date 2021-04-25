@@ -102,7 +102,11 @@ public class EntryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
 
     @Override
     public List<Entry> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        EntrySearchContext searchContext = (EntrySearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return entryService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return entryService.selectQueryByView(searchContext);
         return null;
     }
 

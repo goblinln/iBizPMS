@@ -104,7 +104,13 @@ public class CaseStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public List<CaseStats> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        CaseStatsSearchContext searchContext = (CaseStatsSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return casestatsService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("TestCaseStats"))
+            return casestatsService.selectQueryByTestCaseStats(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return casestatsService.selectQueryByView(searchContext);
         return null;
     }
 

@@ -214,6 +214,14 @@ public class ExtensionServiceImpl extends ServiceImpl<ExtensionMapper, Extension
 
 
 
+    public List<Extension> selectQueryByDefault(ExtensionSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Extension> selectQueryByView(ExtensionSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

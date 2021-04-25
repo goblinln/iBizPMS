@@ -295,6 +295,32 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
     }
 
 
+    public List<ProjectModule> selectQueryByByPath(ProjectModuleSearchContext context){
+        return baseMapper.selectQueryByByPath(context, context.getSelectCond());
+    }
+    public List<ProjectModule> selectQueryByDefault(ProjectModuleSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<ProjectModule> selectQueryByParentModule(ProjectModuleSearchContext context){
+        return baseMapper.selectQueryByParentModule(context, context.getSelectCond());
+    }
+    public List<ProjectModule> selectQueryByRoot(ProjectModuleSearchContext context){
+        return baseMapper.selectQueryByRoot(context, context.getSelectCond());
+    }
+    public List<ProjectModule> selectQueryByRoot_NoBranch(ProjectModuleSearchContext context){
+        return baseMapper.selectQueryByRoot_NoBranch(context, context.getSelectCond());
+    }
+    public List<ProjectModule> selectQueryByRoot_Task(ProjectModuleSearchContext context){
+        return baseMapper.selectQueryByRoot_Task(context, context.getSelectCond());
+    }
+    public List<ProjectModule> selectQueryByTaskModules(ProjectModuleSearchContext context){
+        return baseMapper.selectQueryByTaskModules(context, context.getSelectCond());
+    }
+    public List<ProjectModule> selectQueryByView(ProjectModuleSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 BYPATH
      */

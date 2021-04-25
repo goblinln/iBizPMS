@@ -435,6 +435,20 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     }
 
 
+    public List<Release> selectQueryByDefault(ReleaseSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Release> selectQueryByGetList(ReleaseSearchContext context){
+        return baseMapper.selectQueryByGetList(context, context.getSelectCond());
+    }
+    public List<Release> selectQueryByReportRelease(ReleaseSearchContext context){
+        return baseMapper.selectQueryByReportRelease(context, context.getSelectCond());
+    }
+    public List<Release> selectQueryByView(ReleaseSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

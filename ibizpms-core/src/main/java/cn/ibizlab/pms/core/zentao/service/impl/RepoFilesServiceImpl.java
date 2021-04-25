@@ -225,6 +225,14 @@ public class RepoFilesServiceImpl extends ServiceImpl<RepoFilesMapper, RepoFiles
     }
 
 
+    public List<RepoFiles> selectQueryByDefault(RepoFilesSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<RepoFiles> selectQueryByView(RepoFilesSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

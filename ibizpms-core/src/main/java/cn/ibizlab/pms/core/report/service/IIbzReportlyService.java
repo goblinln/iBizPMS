@@ -43,6 +43,13 @@ public interface IIbzReportlyService extends IService<IbzReportly> {
     IbzReportly submit(IbzReportly et);
     boolean submitBatch(List<IbzReportly> etList);
     List<IbzReportly> select(IbzReportlySearchContext context);
+    
+    List<IbzReportly> selectQueryByDefault(IbzReportlySearchContext context);
+    List<IbzReportly> selectQueryByMyAllReportly(IbzReportlySearchContext context);
+    List<IbzReportly> selectQueryByMyReceived(IbzReportlySearchContext context);
+    List<IbzReportly> selectQueryByMyReportlyMob(IbzReportlySearchContext context);
+    List<IbzReportly> selectQueryByView(IbzReportlySearchContext context);
+
     Page<IbzReportly> searchDefault(IbzReportlySearchContext context);
     Page<IbzReportly> searchMyAllReportly(IbzReportlySearchContext context);
     Page<IbzReportly> searchMyReceived(IbzReportlySearchContext context);

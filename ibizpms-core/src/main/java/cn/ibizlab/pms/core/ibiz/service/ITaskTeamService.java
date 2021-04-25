@@ -39,6 +39,10 @@ public interface ITaskTeamService extends IService<TaskTeam> {
     boolean save(TaskTeam et);
     void saveBatch(List<TaskTeam> list);
     List<TaskTeam> select(TaskTeamSearchContext context);
+    
+    List<TaskTeam> selectQueryByDefault(TaskTeamSearchContext context);
+    List<TaskTeam> selectQueryByView(TaskTeamSearchContext context);
+
     Page<TaskTeam> searchDefault(TaskTeamSearchContext context);
     List<TaskTeam> selectByRoot(Long id);
     void removeByRoot(Long id);

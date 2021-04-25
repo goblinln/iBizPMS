@@ -233,6 +233,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByChildDocLibDoc"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+		<include refid="ChildDocLibDoc" />
+	</select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
@@ -244,6 +248,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[DocLibAndDoc]-->
     <sql id="DocLibAndDoc" databaseId="mysql">
@@ -258,6 +266,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDocLibAndDoc"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+		<include refid="DocLibAndDoc" />
+	</select>
 
     <!--数据查询[DocLibDoc]-->
     <sql id="DocLibDoc" databaseId="mysql">
@@ -272,6 +284,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDocLibDoc"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+		<include refid="DocLibDoc" />
+	</select>
 
     <!--数据查询[DocModuleDoc]-->
     <sql id="DocModuleDoc" databaseId="mysql">
@@ -286,6 +302,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDocModuleDoc"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+		<include refid="DocModuleDoc" />
+	</select>
 
     <!--数据查询[DocStatus]-->
     <sql id="DocStatus" databaseId="mysql">
@@ -294,6 +314,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDocStatus"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+		<include refid="DocStatus" />
+	</select>
 
     <!--数据查询[ModuleDocChild]-->
     <sql id="ModuleDocChild" databaseId="mysql">
@@ -308,6 +332,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByModuleDocChild"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+		<include refid="ModuleDocChild" />
+	</select>
 
     <!--数据查询[MyFavourite]-->
     <sql id="MyFavourite" databaseId="mysql">
@@ -316,6 +344,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyFavourite"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+		<include refid="MyFavourite" />
+	</select>
 
     <!--数据查询[MyFavouritesOnlyDoc]-->
     <sql id="MyFavouritesOnlyDoc" databaseId="mysql">
@@ -330,6 +362,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyFavouritesOnlyDoc"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+		<include refid="MyFavouritesOnlyDoc" />
+	</select>
 
     <!--数据查询[NotRootDoc]-->
     <sql id="NotRootDoc" databaseId="mysql">
@@ -344,6 +380,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByNotRootDoc"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+		<include refid="NotRootDoc" />
+	</select>
 
     <!--数据查询[RootDoc]-->
     <sql id="RootDoc" databaseId="mysql">
@@ -361,6 +401,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByRootDoc"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+		<include refid="RootDoc" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -372,6 +416,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

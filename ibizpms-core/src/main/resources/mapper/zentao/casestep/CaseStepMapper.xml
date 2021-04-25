@@ -124,6 +124,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByCurTest"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext" resultMap="CaseStepResultMap">
+		<include refid="CurTest" />
+	</select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
@@ -132,6 +136,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext" resultMap="CaseStepResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[Default1]-->
     <sql id="Default1" databaseId="mysql">
@@ -140,6 +148,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault1"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext" resultMap="CaseStepResultMap">
+		<include refid="Default1" />
+	</select>
 
     <!--数据查询[Mob]-->
     <sql id="Mob" databaseId="mysql">
@@ -148,6 +160,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMob"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext" resultMap="CaseStepResultMap">
+		<include refid="Mob" />
+	</select>
 
     <!--数据查询[Version]-->
     <sql id="Version" databaseId="mysql">
@@ -156,6 +172,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByVersion"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext" resultMap="CaseStepResultMap">
+		<include refid="Version" />
+	</select>
 
     <!--数据查询[Versions]-->
     <sql id="Versions" databaseId="mysql">
@@ -164,6 +184,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByVersions"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext" resultMap="CaseStepResultMap">
+		<include refid="Versions" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -172,6 +196,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext" resultMap="CaseStepResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

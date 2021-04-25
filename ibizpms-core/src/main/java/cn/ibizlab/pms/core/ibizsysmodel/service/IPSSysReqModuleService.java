@@ -37,6 +37,10 @@ public interface IPSSysReqModuleService {
     boolean checkKey(PSSysReqModule et);
     boolean save(PSSysReqModule et);
     void saveBatch(List<PSSysReqModule> list);
+    
+    List<PSSysReqModule> selectQueryByDefault(PSSysReqModuleSearchContext context);
+    List<PSSysReqModule> selectQueryByView(PSSysReqModuleSearchContext context);
+
     Page<PSSysReqModule> searchDefault(PSSysReqModuleSearchContext context);
     List<PSSysReqModule> selectByPsmoduleid(String psmoduleid);
     List<PSSysReqModule> selectByPsmoduleid(Collection<String> ids);

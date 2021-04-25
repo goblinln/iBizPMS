@@ -51,6 +51,20 @@ public interface IDocService extends IService<Doc> {
     Doc unCollect(Doc et);
     boolean unCollectBatch(List<Doc> etList);
     List<Doc> select(DocSearchContext context);
+    
+    List<Doc> selectQueryByChildDocLibDoc(DocSearchContext context);
+    List<Doc> selectQueryByDefault(DocSearchContext context);
+    List<Doc> selectQueryByDocLibAndDoc(DocSearchContext context);
+    List<Doc> selectQueryByDocLibDoc(DocSearchContext context);
+    List<Doc> selectQueryByDocModuleDoc(DocSearchContext context);
+    List<Doc> selectQueryByDocStatus(DocSearchContext context);
+    List<Doc> selectQueryByModuleDocChild(DocSearchContext context);
+    List<Doc> selectQueryByMyFavourite(DocSearchContext context);
+    List<Doc> selectQueryByMyFavouritesOnlyDoc(DocSearchContext context);
+    List<Doc> selectQueryByNotRootDoc(DocSearchContext context);
+    List<Doc> selectQueryByRootDoc(DocSearchContext context);
+    List<Doc> selectQueryByView(DocSearchContext context);
+
     Page<Doc> searchChildDocLibDoc(DocSearchContext context);
     Page<Doc> searchDefault(DocSearchContext context);
     Page<Doc> searchDocLibAndDoc(DocSearchContext context);

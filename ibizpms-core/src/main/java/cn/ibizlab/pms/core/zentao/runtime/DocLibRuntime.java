@@ -118,7 +118,27 @@ public class DocLibRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
 
     @Override
     public List<DocLib> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        DocLibSearchContext searchContext = (DocLibSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("ByCustom"))
+            return doclibService.selectQueryByByCustom(searchContext);
+        if (iPSDataQuery.getName().equals("ByProduct"))
+            return doclibService.selectQueryByByProduct(searchContext);
+        if (iPSDataQuery.getName().equals("ByProductNotFiles"))
+            return doclibService.selectQueryByByProductNotFiles(searchContext);
+        if (iPSDataQuery.getName().equals("ByProject"))
+            return doclibService.selectQueryByByProject(searchContext);
+        if (iPSDataQuery.getName().equals("ByProjectNotFiles"))
+            return doclibService.selectQueryByByProjectNotFiles(searchContext);
+        if (iPSDataQuery.getName().equals("CurDocLib"))
+            return doclibService.selectQueryByCurDocLib(searchContext);
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return doclibService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("MyFavourites"))
+            return doclibService.selectQueryByMyFavourites(searchContext);
+        if (iPSDataQuery.getName().equals("RootModuleMuLu"))
+            return doclibService.selectQueryByRootModuleMuLu(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return doclibService.selectQueryByView(searchContext);
         return null;
     }
 

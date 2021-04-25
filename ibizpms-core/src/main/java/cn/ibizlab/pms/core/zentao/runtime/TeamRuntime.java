@@ -102,7 +102,11 @@ public class TeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public List<Team> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        TeamSearchContext searchContext = (TeamSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return teamService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return teamService.selectQueryByView(searchContext);
         return null;
     }
 

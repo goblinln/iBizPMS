@@ -310,6 +310,29 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
     }
 
 
+    public List<ProductModule> selectQueryByByPath(ProductModuleSearchContext context){
+        return baseMapper.selectQueryByByPath(context, context.getSelectCond());
+    }
+    public List<ProductModule> selectQueryByDefault(ProductModuleSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<ProductModule> selectQueryByParentModule(ProductModuleSearchContext context){
+        return baseMapper.selectQueryByParentModule(context, context.getSelectCond());
+    }
+    public List<ProductModule> selectQueryByRoot(ProductModuleSearchContext context){
+        return baseMapper.selectQueryByRoot(context, context.getSelectCond());
+    }
+    public List<ProductModule> selectQueryByRoot_NoBranch(ProductModuleSearchContext context){
+        return baseMapper.selectQueryByRoot_NoBranch(context, context.getSelectCond());
+    }
+    public List<ProductModule> selectQueryByStoryModule(ProductModuleSearchContext context){
+        return baseMapper.selectQueryByStoryModule(context, context.getSelectCond());
+    }
+    public List<ProductModule> selectQueryByView(ProductModuleSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 BYPATH
      */

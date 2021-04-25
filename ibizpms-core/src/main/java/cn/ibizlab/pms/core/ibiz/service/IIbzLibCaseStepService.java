@@ -39,6 +39,10 @@ public interface IIbzLibCaseStepService extends IService<IbzLibCaseStep> {
     boolean save(IbzLibCaseStep et);
     void saveBatch(List<IbzLibCaseStep> list);
     List<IbzLibCaseStep> select(IbzLibCaseStepSearchContext context);
+    
+    List<IbzLibCaseStep> selectQueryByDefault(IbzLibCaseStepSearchContext context);
+    List<IbzLibCaseStep> selectQueryByView(IbzLibCaseStepSearchContext context);
+
     Page<IbzLibCaseStep> searchDefault(IbzLibCaseStepSearchContext context);
     IbzLibCaseStep dynamicCall(Long key, String action, IbzLibCaseStep et);
     /**

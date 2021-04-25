@@ -102,7 +102,11 @@ public class LangRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public List<Lang> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        LangSearchContext searchContext = (LangSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return langService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return langService.selectQueryByView(searchContext);
         return null;
     }
 

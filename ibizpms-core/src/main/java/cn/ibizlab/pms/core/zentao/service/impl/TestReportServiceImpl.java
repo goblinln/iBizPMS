@@ -378,6 +378,14 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
     }
 
 
+    public List<TestReport> selectQueryByDefault(TestReportSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<TestReport> selectQueryByView(TestReportSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

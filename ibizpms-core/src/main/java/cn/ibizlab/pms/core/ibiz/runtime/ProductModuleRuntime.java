@@ -112,7 +112,21 @@ public class ProductModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemData
 
     @Override
     public List<ProductModule> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        ProductModuleSearchContext searchContext = (ProductModuleSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("BYPATH"))
+            return productmoduleService.selectQueryByByPath(searchContext);
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return productmoduleService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("ParentModule"))
+            return productmoduleService.selectQueryByParentModule(searchContext);
+        if (iPSDataQuery.getName().equals("ROOT"))
+            return productmoduleService.selectQueryByRoot(searchContext);
+        if (iPSDataQuery.getName().equals("Root_NoBranch"))
+            return productmoduleService.selectQueryByRoot_NoBranch(searchContext);
+        if (iPSDataQuery.getName().equals("StoryModule"))
+            return productmoduleService.selectQueryByStoryModule(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return productmoduleService.selectQueryByView(searchContext);
         return null;
     }
 

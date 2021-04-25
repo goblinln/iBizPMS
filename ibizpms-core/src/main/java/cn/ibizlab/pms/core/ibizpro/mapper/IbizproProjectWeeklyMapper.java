@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IbizproProjectWeeklyMapper extends BaseMapper<IbizproProjectWeekly> {
 
+    List<IbizproProjectWeekly> selectQueryByDefault(@Param("srf") IbizproProjectWeeklySearchContext context, @Param("ew") Wrapper<IbizproProjectWeekly> wrapper);
+    List<IbizproProjectWeekly> selectQueryByView(@Param("srf") IbizproProjectWeeklySearchContext context, @Param("ew") Wrapper<IbizproProjectWeekly> wrapper);
+
     Page<IbizproProjectWeekly> searchDefault(IPage page, @Param("srf") IbizproProjectWeeklySearchContext context, @Param("ew") Wrapper<IbizproProjectWeekly> wrapper);
     @Override
     IbizproProjectWeekly selectById(Serializable id);

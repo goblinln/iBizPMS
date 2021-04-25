@@ -76,6 +76,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.UserYearWorkStatsSearchContext" resultMap="UserYearWorkStatsResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[MonthFinishTaskAndBug]-->
     <sql id="MonthFinishTaskAndBug" databaseId="mysql">
@@ -87,6 +91,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMonthFinishTaskAndBug"  parameterType="cn.ibizlab.pms.core.ibiz.filter.UserYearWorkStatsSearchContext" resultMap="UserYearWorkStatsResultMap">
+		<include refid="MonthFinishTaskAndBug" />
+	</select>
 
     <!--数据查询[MonthOpenedBugAndCase]-->
     <sql id="MonthOpenedBugAndCase" databaseId="mysql">
@@ -98,6 +106,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMonthOpenedBugAndCase"  parameterType="cn.ibizlab.pms.core.ibiz.filter.UserYearWorkStatsSearchContext" resultMap="UserYearWorkStatsResultMap">
+		<include refid="MonthOpenedBugAndCase" />
+	</select>
 
     <!--数据查询[MonthOpenedStory]-->
     <sql id="MonthOpenedStory" databaseId="mysql">
@@ -109,6 +121,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMonthOpenedStory"  parameterType="cn.ibizlab.pms.core.ibiz.filter.UserYearWorkStatsSearchContext" resultMap="UserYearWorkStatsResultMap">
+		<include refid="MonthOpenedStory" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -117,6 +133,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.UserYearWorkStatsSearchContext" resultMap="UserYearWorkStatsResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

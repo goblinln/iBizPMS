@@ -19,6 +19,10 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ProjectTaskestimateMapper extends BaseMapper<ProjectTaskestimate> {
 
+    List<ProjectTaskestimate> selectQueryByAccountDetail(@Param("srf") ProjectTaskestimateSearchContext context, @Param("ew") Wrapper<ProjectTaskestimate> wrapper);
+    List<ProjectTaskestimate> selectQueryByDefault(@Param("srf") ProjectTaskestimateSearchContext context, @Param("ew") Wrapper<ProjectTaskestimate> wrapper);
+    List<ProjectTaskestimate> selectQueryByView(@Param("srf") ProjectTaskestimateSearchContext context, @Param("ew") Wrapper<ProjectTaskestimate> wrapper);
+
     Page<ProjectTaskestimate> searchAccountDetail(IPage page, @Param("srf") ProjectTaskestimateSearchContext context, @Param("ew") Wrapper<ProjectTaskestimate> wrapper);
     Page<ProjectTaskestimate> searchDefault(IPage page, @Param("srf") ProjectTaskestimateSearchContext context, @Param("ew") Wrapper<ProjectTaskestimate> wrapper);
     @Override

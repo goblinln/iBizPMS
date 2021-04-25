@@ -120,7 +120,29 @@ public class DocLibModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public List<DocLibModule> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        DocLibModuleSearchContext searchContext = (DocLibModuleSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("AllDoclibModule_Custom"))
+            return doclibmoduleService.selectQueryByAllDoclibModule_Custom(searchContext);
+        if (iPSDataQuery.getName().equals("ChildModuleByParent"))
+            return doclibmoduleService.selectQueryByChildModuleByParent(searchContext);
+        if (iPSDataQuery.getName().equals("ChildModuleByRealParent"))
+            return doclibmoduleService.selectQueryByChildModuleByRealParent(searchContext);
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return doclibmoduleService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("AllDoclibModule"))
+            return doclibmoduleService.selectQueryByDefaultDoclib(searchContext);
+        if (iPSDataQuery.getName().equals("MyFavourites"))
+            return doclibmoduleService.selectQueryByMyFavourites(searchContext);
+        if (iPSDataQuery.getName().equals("ParentModule"))
+            return doclibmoduleService.selectQueryByParentModule(searchContext);
+        if (iPSDataQuery.getName().equals("RootModuleMuLu"))
+            return doclibmoduleService.selectQueryByRootModuleMuLu(searchContext);
+        if (iPSDataQuery.getName().equals("RootModuleMuLuByRoot"))
+            return doclibmoduleService.selectQueryByRootModuleMuLuByRoot(searchContext);
+        if (iPSDataQuery.getName().equals("RootModuleMuLuBysrfparentkey"))
+            return doclibmoduleService.selectQueryByRootModuleMuLuBysrfparentkey(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return doclibmoduleService.selectQueryByView(searchContext);
         return null;
     }
 

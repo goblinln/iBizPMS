@@ -534,6 +534,44 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
     }
 
 
+    public List<ProductPlan> selectQueryByChildPlan(ProductPlanSearchContext context){
+        return baseMapper.selectQueryByChildPlan(context, context.getSelectCond());
+    }
+    public List<ProductPlan> selectQueryByDefault(ProductPlanSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<ProductPlan> selectQueryByDefaultParent(ProductPlanSearchContext context){
+        return baseMapper.selectQueryByDefaultParent(context, context.getSelectCond());
+    }
+    public List<ProductPlan> selectQueryByGetList(ProductPlanSearchContext context){
+        return baseMapper.selectQueryByGetList(context, context.getSelectCond());
+    }
+    public List<ProductPlan> selectQueryByPlanCodeList(ProductPlanSearchContext context){
+        return baseMapper.selectQueryByPlanCodeList(context, context.getSelectCond());
+    }
+    public List<ProductPlan> selectQueryByPlanTasks(ProductPlanSearchContext context){
+        return baseMapper.selectQueryByPlanTasks(context, context.getSelectCond());
+    }
+    public List<ProductPlan> selectQueryByProductQuery(ProductPlanSearchContext context){
+        return baseMapper.selectQueryByProductQuery(context, context.getSelectCond());
+    }
+    public List<ProductPlan> selectQueryByProjectApp(ProductPlanSearchContext context){
+        return baseMapper.selectQueryByProjectApp(context, context.getSelectCond());
+    }
+    public List<ProductPlan> selectQueryByProjectPlan(ProductPlanSearchContext context){
+        return baseMapper.selectQueryByProjectPlan(context, context.getSelectCond());
+    }
+    public List<ProductPlan> selectQueryByRootPlan(ProductPlanSearchContext context){
+        return baseMapper.selectQueryByRootPlan(context, context.getSelectCond());
+    }
+    public List<ProductPlan> selectQueryByTaskPlan(ProductPlanSearchContext context){
+        return baseMapper.selectQueryByTaskPlan(context, context.getSelectCond());
+    }
+    public List<ProductPlan> selectQueryByView(ProductPlanSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 子计划
      */

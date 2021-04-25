@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IbizproProductMonthlyMapper extends BaseMapper<IbizproProductMonthly> {
 
+    List<IbizproProductMonthly> selectQueryByDefault(@Param("srf") IbizproProductMonthlySearchContext context, @Param("ew") Wrapper<IbizproProductMonthly> wrapper);
+    List<IbizproProductMonthly> selectQueryByView(@Param("srf") IbizproProductMonthlySearchContext context, @Param("ew") Wrapper<IbizproProductMonthly> wrapper);
+
     Page<IbizproProductMonthly> searchDefault(IPage page, @Param("srf") IbizproProductMonthlySearchContext context, @Param("ew") Wrapper<IbizproProductMonthly> wrapper);
     @Override
     IbizproProductMonthly selectById(Serializable id);

@@ -39,6 +39,10 @@ public interface IGroupPrivService extends IService<GroupPriv> {
     boolean save(GroupPriv et);
     void saveBatch(List<GroupPriv> list);
     List<GroupPriv> select(GroupPrivSearchContext context);
+    
+    List<GroupPriv> selectQueryByDefault(GroupPrivSearchContext context);
+    List<GroupPriv> selectQueryByView(GroupPrivSearchContext context);
+
     Page<GroupPriv> searchDefault(GroupPrivSearchContext context);
     GroupPriv dynamicCall(String key, String action, GroupPriv et);
     /**

@@ -102,7 +102,11 @@ public class RelationRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
 
     @Override
     public List<Relation> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        RelationSearchContext searchContext = (RelationSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return relationService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return relationService.selectQueryByView(searchContext);
         return null;
     }
 

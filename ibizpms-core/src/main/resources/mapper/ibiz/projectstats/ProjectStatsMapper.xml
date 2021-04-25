@@ -144,6 +144,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[NoOpenProduct]-->
     <sql id="NoOpenProduct" databaseId="mysql">
@@ -161,6 +165,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByNoOpenProduct"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+		<include refid="NoOpenProduct" />
+	</select>
 
     <!--数据查询[ProjectBugType]-->
     <sql id="ProjectBugType" databaseId="mysql">
@@ -169,6 +177,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectBugType"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+		<include refid="ProjectBugType" />
+	</select>
 
     <!--数据查询[ProjectInputStats]-->
     <sql id="ProjectInputStats" databaseId="mysql">
@@ -180,6 +192,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectInputStats"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+		<include refid="ProjectInputStats" />
+	</select>
 
     <!--数据查询[ProjectProgress]-->
     <sql id="ProjectProgress" databaseId="mysql">
@@ -188,6 +204,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectProgress"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+		<include refid="ProjectProgress" />
+	</select>
 
     <!--数据查询[ProjectQuality]-->
     <sql id="ProjectQuality" databaseId="mysql">
@@ -196,6 +216,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectQuality"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+		<include refid="ProjectQuality" />
+	</select>
 
     <!--数据查询[ProjectStoryStageStats]-->
     <sql id="ProjectStoryStageStats" databaseId="mysql">
@@ -204,6 +228,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectStoryStageStats"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+		<include refid="ProjectStoryStageStats" />
+	</select>
 
     <!--数据查询[ProjectStoryStatusStats]-->
     <sql id="ProjectStoryStatusStats" databaseId="mysql">
@@ -212,6 +240,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectStoryStatusStats"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+		<include refid="ProjectStoryStatusStats" />
+	</select>
 
     <!--数据查询[ProjectTaskCountByTaskStatus]-->
     <sql id="ProjectTaskCountByTaskStatus" databaseId="mysql">
@@ -220,6 +252,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectTaskCountByTaskStatus"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+		<include refid="ProjectTaskCountByTaskStatus" />
+	</select>
 
     <!--数据查询[ProjectTaskCountByType]-->
     <sql id="ProjectTaskCountByType" databaseId="mysql">
@@ -228,6 +264,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectTaskCountByType"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+		<include refid="ProjectTaskCountByType" />
+	</select>
 
     <!--数据查询[TaskTime]-->
     <sql id="TaskTime" databaseId="mysql">
@@ -236,6 +276,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByTaskTime"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+		<include refid="TaskTime" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -247,6 +291,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

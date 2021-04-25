@@ -39,6 +39,18 @@ public interface IBugStatsService extends IService<BugStats> {
     boolean save(BugStats et);
     void saveBatch(List<BugStats> list);
     List<BugStats> select(BugStatsSearchContext context);
+    
+    List<BugStats> selectQueryByBugCountInResolution(BugStatsSearchContext context);
+    List<BugStats> selectQueryByBugResolvedBy(BugStatsSearchContext context);
+    List<BugStats> selectQueryByBugResolvedGird(BugStatsSearchContext context);
+    List<BugStats> selectQueryByBugassignedTo(BugStatsSearchContext context);
+    List<BugStats> selectQueryByDefault(BugStatsSearchContext context);
+    List<BugStats> selectQueryByProductBugResolutionStats(BugStatsSearchContext context);
+    List<BugStats> selectQueryByProductBugStatusSum(BugStatsSearchContext context);
+    List<BugStats> selectQueryByProductCreateBug(BugStatsSearchContext context);
+    List<BugStats> selectQueryByProjectBugStatusCount(BugStatsSearchContext context);
+    List<BugStats> selectQueryByView(BugStatsSearchContext context);
+
     Page<BugStats> searchBugCountInResolution(BugStatsSearchContext context);
     Page<BugStats> searchBugResolvedBy(BugStatsSearchContext context);
     Page<BugStats> searchBugResolvedGird(BugStatsSearchContext context);

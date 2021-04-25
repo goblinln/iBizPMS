@@ -112,7 +112,21 @@ public class TestModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
 
     @Override
     public List<TestModule> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        TestModuleSearchContext searchContext = (TestModuleSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("BYPATH"))
+            return testmoduleService.selectQueryByByPath(searchContext);
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return testmoduleService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("ParentModule"))
+            return testmoduleService.selectQueryByParentModule(searchContext);
+        if (iPSDataQuery.getName().equals("ROOT"))
+            return testmoduleService.selectQueryByRoot(searchContext);
+        if (iPSDataQuery.getName().equals("Root_NoBranch"))
+            return testmoduleService.selectQueryByRoot_NoBranch(searchContext);
+        if (iPSDataQuery.getName().equals("TestModule"))
+            return testmoduleService.selectQueryByTestModule(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return testmoduleService.selectQueryByView(searchContext);
         return null;
     }
 

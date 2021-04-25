@@ -254,6 +254,23 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
 
 
 
+    public List<IbzReportly> selectQueryByDefault(IbzReportlySearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IbzReportly> selectQueryByMyAllReportly(IbzReportlySearchContext context){
+        return baseMapper.selectQueryByMyAllReportly(context, context.getSelectCond());
+    }
+    public List<IbzReportly> selectQueryByMyReceived(IbzReportlySearchContext context){
+        return baseMapper.selectQueryByMyReceived(context, context.getSelectCond());
+    }
+    public List<IbzReportly> selectQueryByMyReportlyMob(IbzReportlySearchContext context){
+        return baseMapper.selectQueryByMyReportlyMob(context, context.getSelectCond());
+    }
+    public List<IbzReportly> selectQueryByView(IbzReportlySearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

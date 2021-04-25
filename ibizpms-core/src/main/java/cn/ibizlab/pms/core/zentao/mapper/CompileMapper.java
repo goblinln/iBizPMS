@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface CompileMapper extends BaseMapper<Compile> {
 
+    List<Compile> selectQueryByDefault(@Param("srf") CompileSearchContext context, @Param("ew") Wrapper<Compile> wrapper);
+    List<Compile> selectQueryByView(@Param("srf") CompileSearchContext context, @Param("ew") Wrapper<Compile> wrapper);
+
     Page<Compile> searchDefault(IPage page, @Param("srf") CompileSearchContext context, @Param("ew") Wrapper<Compile> wrapper);
     @Override
     Compile selectById(Serializable id);

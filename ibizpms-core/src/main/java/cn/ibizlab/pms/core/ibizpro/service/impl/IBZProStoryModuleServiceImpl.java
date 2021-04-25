@@ -280,6 +280,14 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     }
 
 
+    public List<IBZProStoryModule> selectQueryByDefault(IBZProStoryModuleSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IBZProStoryModule> selectQueryByView(IBZProStoryModuleSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

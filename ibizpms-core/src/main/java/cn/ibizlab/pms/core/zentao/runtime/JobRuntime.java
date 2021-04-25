@@ -102,7 +102,11 @@ public class JobRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
 
     @Override
     public List<Job> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        JobSearchContext searchContext = (JobSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return jobService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return jobService.selectQueryByView(searchContext);
         return null;
     }
 

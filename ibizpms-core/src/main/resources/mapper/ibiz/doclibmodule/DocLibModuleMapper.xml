@@ -171,6 +171,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByAllDoclibModule_Custom"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+		<include refid="AllDoclibModule_Custom" />
+	</select>
 
     <!--数据查询[ChildModuleByParent]-->
     <sql id="ChildModuleByParent" databaseId="mysql">
@@ -188,6 +192,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByChildModuleByParent"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+		<include refid="ChildModuleByParent" />
+	</select>
 
     <!--数据查询[ChildModuleByRealParent]-->
     <sql id="ChildModuleByRealParent" databaseId="mysql">
@@ -205,6 +213,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByChildModuleByRealParent"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+		<include refid="ChildModuleByRealParent" />
+	</select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
@@ -216,6 +228,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[DefaultDoclib]-->
     <sql id="DefaultDoclib" databaseId="mysql">
@@ -230,6 +246,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefaultDoclib"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+		<include refid="DefaultDoclib" />
+	</select>
 
     <!--数据查询[MyFavourites]-->
     <sql id="MyFavourites" databaseId="mysql">
@@ -244,6 +264,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyFavourites"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+		<include refid="MyFavourites" />
+	</select>
 
     <!--数据查询[ParentModule]-->
     <sql id="ParentModule" databaseId="mysql">
@@ -261,6 +285,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByParentModule"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+		<include refid="ParentModule" />
+	</select>
 
     <!--数据查询[RootModuleMuLu]-->
     <sql id="RootModuleMuLu" databaseId="mysql">
@@ -275,6 +303,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByRootModuleMuLu"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+		<include refid="RootModuleMuLu" />
+	</select>
 
     <!--数据查询[RootModuleMuLuByRoot]-->
     <sql id="RootModuleMuLuByRoot" databaseId="mysql">
@@ -292,6 +324,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByRootModuleMuLuByRoot"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+		<include refid="RootModuleMuLuByRoot" />
+	</select>
 
     <!--数据查询[RootModuleMuLuBysrfparentkey]-->
     <sql id="RootModuleMuLuBysrfparentkey" databaseId="mysql">
@@ -309,6 +345,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByRootModuleMuLuBysrfparentkey"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+		<include refid="RootModuleMuLuBysrfparentkey" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -320,6 +360,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

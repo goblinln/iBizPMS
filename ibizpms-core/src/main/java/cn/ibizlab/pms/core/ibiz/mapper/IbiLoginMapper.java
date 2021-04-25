@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IbiLoginMapper extends BaseMapper<IbiLogin> {
 
+    List<IbiLogin> selectQueryByDefault(@Param("srf") IbiLoginSearchContext context, @Param("ew") Wrapper<IbiLogin> wrapper);
+    List<IbiLogin> selectQueryByView(@Param("srf") IbiLoginSearchContext context, @Param("ew") Wrapper<IbiLogin> wrapper);
+
     Page<IbiLogin> searchDefault(IPage page, @Param("srf") IbiLoginSearchContext context, @Param("ew") Wrapper<IbiLogin> wrapper);
     @Override
     IbiLogin selectById(Serializable id);

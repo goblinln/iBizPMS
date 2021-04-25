@@ -37,6 +37,10 @@ public interface IPSSysReqItemService {
     boolean checkKey(PSSysReqItem et);
     boolean save(PSSysReqItem et);
     void saveBatch(List<PSSysReqItem> list);
+    
+    List<PSSysReqItem> selectQueryByDefault(PSSysReqItemSearchContext context);
+    List<PSSysReqItem> selectQueryByView(PSSysReqItemSearchContext context);
+
     Page<PSSysReqItem> searchDefault(PSSysReqItemSearchContext context);
     List<PSSysReqItem> selectByPpssysreqitemid(String pssysreqitemid);
     void removeByPpssysreqitemid(Collection<String> ids);

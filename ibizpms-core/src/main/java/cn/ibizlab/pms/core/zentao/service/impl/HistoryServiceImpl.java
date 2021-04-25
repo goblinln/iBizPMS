@@ -226,6 +226,14 @@ public class HistoryServiceImpl extends ServiceImpl<HistoryMapper, History> impl
     }
 
 
+    public List<History> selectQueryByDefault(HistorySearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<History> selectQueryByView(HistorySearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

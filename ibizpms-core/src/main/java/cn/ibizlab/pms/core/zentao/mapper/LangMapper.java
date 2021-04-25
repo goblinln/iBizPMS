@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface LangMapper extends BaseMapper<Lang> {
 
+    List<Lang> selectQueryByDefault(@Param("srf") LangSearchContext context, @Param("ew") Wrapper<Lang> wrapper);
+    List<Lang> selectQueryByView(@Param("srf") LangSearchContext context, @Param("ew") Wrapper<Lang> wrapper);
+
     Page<Lang> searchDefault(IPage page, @Param("srf") LangSearchContext context, @Param("ew") Wrapper<Lang> wrapper);
     @Override
     Lang selectById(Serializable id);

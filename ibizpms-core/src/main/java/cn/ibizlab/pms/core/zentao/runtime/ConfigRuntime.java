@@ -102,7 +102,11 @@ public class ConfigRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
 
     @Override
     public List<Config> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        ConfigSearchContext searchContext = (ConfigSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return configService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return configService.selectQueryByView(searchContext);
         return null;
     }
 

@@ -39,6 +39,10 @@ public interface IUserViewService extends IService<UserView> {
     boolean save(UserView et);
     void saveBatch(List<UserView> list);
     List<UserView> select(UserViewSearchContext context);
+    
+    List<UserView> selectQueryByDefault(UserViewSearchContext context);
+    List<UserView> selectQueryByView(UserViewSearchContext context);
+
     Page<UserView> searchDefault(UserViewSearchContext context);
     UserView dynamicCall(String key, String action, UserView et);
     /**

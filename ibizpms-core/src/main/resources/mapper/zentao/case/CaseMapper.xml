@@ -381,6 +381,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByBatchNew"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="BatchNew" />
+	</select>
 
     <!--数据查询[CurOpenedCase]-->
     <sql id="CurOpenedCase" databaseId="mysql">
@@ -395,6 +399,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByCurOpenedCase"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="CurOpenedCase" />
+	</select>
 
     <!--数据查询[CurSuite]-->
     <sql id="CurSuite" databaseId="mysql">
@@ -409,6 +417,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByCurSuite"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="CurSuite" />
+	</select>
 
     <!--数据查询[CurTestTask]-->
     <sql id="CurTestTask" databaseId="mysql">
@@ -423,6 +435,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByCurTestTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="CurTestTask" />
+	</select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
@@ -434,6 +450,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[ESBulk]-->
     <sql id="ESBulk" databaseId="mysql">
@@ -442,6 +462,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="ESBulk" />
+	</select>
 
     <!--数据查询[ModuleRePortCase]-->
     <sql id="ModuleRePortCase" databaseId="mysql">
@@ -456,6 +480,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByModuleRePortCase"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="ModuleRePortCase" />
+	</select>
 
     <!--数据查询[ModuleRePortCaseEntry]-->
     <sql id="ModuleRePortCaseEntry" databaseId="mysql">
@@ -464,6 +492,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByModuleRePortCaseEntry"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="ModuleRePortCaseEntry" />
+	</select>
 
     <!--数据查询[ModuleRePortCase_Project]-->
     <sql id="ModuleRePortCase_Project" databaseId="mysql">
@@ -478,6 +510,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByModuleRePortCase_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="ModuleRePortCase_Project" />
+	</select>
 
     <!--数据查询[MyFavorite]-->
     <sql id="MyFavorite" databaseId="mysql">
@@ -492,6 +528,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyFavorite"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="MyFavorite" />
+	</select>
 
     <!--数据查询[NotCurTestSuite]-->
     <sql id="NotCurTestSuite" databaseId="mysql">
@@ -506,6 +546,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByNotCurTestSuite"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="NotCurTestSuite" />
+	</select>
 
     <!--数据查询[NotCurTestTask]-->
     <sql id="NotCurTestTask" databaseId="mysql">
@@ -523,6 +567,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByNotCurTestTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="NotCurTestTask" />
+	</select>
 
     <!--数据查询[NotCurTestTaskProject]-->
     <sql id="NotCurTestTaskProject" databaseId="mysql">
@@ -540,6 +588,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByNotCurTestTaskProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="NotCurTestTaskProject" />
+	</select>
 
     <!--数据查询[RePortCase]-->
     <sql id="RePortCase" databaseId="mysql">
@@ -554,6 +606,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByRePortCase"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="RePortCase" />
+	</select>
 
     <!--数据查询[RePortCaseEntry]-->
     <sql id="RePortCaseEntry" databaseId="mysql">
@@ -562,6 +618,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByRePortCaseEntry"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="RePortCaseEntry" />
+	</select>
 
     <!--数据查询[RePortCase_Project]-->
     <sql id="RePortCase_Project" databaseId="mysql">
@@ -576,6 +636,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByRePortCase_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="RePortCase_Project" />
+	</select>
 
     <!--数据查询[RunERRePortCase]-->
     <sql id="RunERRePortCase" databaseId="mysql">
@@ -590,6 +654,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByRunERRePortCase"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="RunERRePortCase" />
+	</select>
 
     <!--数据查询[RunERRePortCaseEntry]-->
     <sql id="RunERRePortCaseEntry" databaseId="mysql">
@@ -598,6 +666,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByRunERRePortCaseEntry"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="RunERRePortCaseEntry" />
+	</select>
 
     <!--数据查询[RunERRePortCase_Project]-->
     <sql id="RunERRePortCase_Project" databaseId="mysql">
@@ -612,6 +684,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByRunERRePortCase_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="RunERRePortCase_Project" />
+	</select>
 
     <!--数据查询[RunRePortCase]-->
     <sql id="RunRePortCase" databaseId="mysql">
@@ -626,6 +702,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByRunRePortCase"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="RunRePortCase" />
+	</select>
 
     <!--数据查询[RunRePortCaseEntry]-->
     <sql id="RunRePortCaseEntry" databaseId="mysql">
@@ -634,6 +714,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByRunRePortCaseEntry"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="RunRePortCaseEntry" />
+	</select>
 
     <!--数据查询[RunRePortCase_Project]-->
     <sql id="RunRePortCase_Project" databaseId="mysql">
@@ -648,6 +732,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByRunRePortCase_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="RunRePortCase_Project" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -659,6 +747,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

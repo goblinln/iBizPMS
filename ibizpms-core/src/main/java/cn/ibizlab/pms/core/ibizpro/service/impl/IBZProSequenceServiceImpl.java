@@ -229,6 +229,17 @@ public class IBZProSequenceServiceImpl extends ServiceImpl<IBZProSequenceMapper,
 
 
 
+    public List<IBZProSequence> selectQueryByDefault(IBZProSequenceSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IBZProSequence> selectQueryBySimple(IBZProSequenceSearchContext context){
+        return baseMapper.selectQueryBySimple(context, context.getSelectCond());
+    }
+    public List<IBZProSequence> selectQueryByView(IBZProSequenceSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

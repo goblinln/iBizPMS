@@ -19,6 +19,10 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface BurnMapper extends BaseMapper<Burn> {
 
+    List<Burn> selectQueryByDefault(@Param("srf") BurnSearchContext context, @Param("ew") Wrapper<Burn> wrapper);
+    List<Burn> selectQueryByESTIMATEANDLEFT(@Param("srf") BurnSearchContext context, @Param("ew") Wrapper<Burn> wrapper);
+    List<Burn> selectQueryByView(@Param("srf") BurnSearchContext context, @Param("ew") Wrapper<Burn> wrapper);
+
     Page<Burn> searchDefault(IPage page, @Param("srf") BurnSearchContext context, @Param("ew") Wrapper<Burn> wrapper);
     Page<Burn> searchESTIMATEANDLEFT(IPage page, @Param("srf") BurnSearchContext context, @Param("ew") Wrapper<Burn> wrapper);
     @Override

@@ -124,6 +124,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByBianGengLineHistory"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
+		<include refid="BianGengLineHistory" />
+	</select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
@@ -132,6 +136,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[MobType]-->
     <sql id="MobType" databaseId="mysql">
@@ -143,6 +151,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMobType"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
+		<include refid="MobType" />
+	</select>
 
     <!--数据查询[MyTrends]-->
     <sql id="MyTrends" databaseId="mysql">
@@ -154,6 +166,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyTrends"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
+		<include refid="MyTrends" />
+	</select>
 
     <!--数据查询[ProductTrends]-->
     <sql id="ProductTrends" databaseId="mysql">
@@ -165,6 +181,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProductTrends"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
+		<include refid="ProductTrends" />
+	</select>
 
     <!--数据查询[ProjectTrends]-->
     <sql id="ProjectTrends" databaseId="mysql">
@@ -176,6 +196,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectTrends"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
+		<include refid="ProjectTrends" />
+	</select>
 
     <!--数据查询[QueryUserYEAR]-->
     <sql id="QueryUserYEAR" databaseId="mysql">
@@ -187,6 +211,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByQueryUserYEAR"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
+		<include refid="QueryUserYEAR" />
+	</select>
 
     <!--数据查询[Type]-->
     <sql id="Type" databaseId="mysql">
@@ -198,6 +226,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByType"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
+		<include refid="Type" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -206,6 +238,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

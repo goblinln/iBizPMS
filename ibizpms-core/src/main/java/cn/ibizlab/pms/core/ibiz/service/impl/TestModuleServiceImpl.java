@@ -292,6 +292,29 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     }
 
 
+    public List<TestModule> selectQueryByByPath(TestModuleSearchContext context){
+        return baseMapper.selectQueryByByPath(context, context.getSelectCond());
+    }
+    public List<TestModule> selectQueryByDefault(TestModuleSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<TestModule> selectQueryByParentModule(TestModuleSearchContext context){
+        return baseMapper.selectQueryByParentModule(context, context.getSelectCond());
+    }
+    public List<TestModule> selectQueryByRoot(TestModuleSearchContext context){
+        return baseMapper.selectQueryByRoot(context, context.getSelectCond());
+    }
+    public List<TestModule> selectQueryByRoot_NoBranch(TestModuleSearchContext context){
+        return baseMapper.selectQueryByRoot_NoBranch(context, context.getSelectCond());
+    }
+    public List<TestModule> selectQueryByTestModule(TestModuleSearchContext context){
+        return baseMapper.selectQueryByTestModule(context, context.getSelectCond());
+    }
+    public List<TestModule> selectQueryByView(TestModuleSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 BYPATH
      */

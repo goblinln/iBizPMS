@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface TestRunMapper extends BaseMapper<TestRun> {
 
+    List<TestRun> selectQueryByDefault(@Param("srf") TestRunSearchContext context, @Param("ew") Wrapper<TestRun> wrapper);
+    List<TestRun> selectQueryByView(@Param("srf") TestRunSearchContext context, @Param("ew") Wrapper<TestRun> wrapper);
+
     Page<TestRun> searchDefault(IPage page, @Param("srf") TestRunSearchContext context, @Param("ew") Wrapper<TestRun> wrapper);
     @Override
     TestRun selectById(Serializable id);

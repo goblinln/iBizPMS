@@ -104,7 +104,13 @@ public class TestResultRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
 
     @Override
     public List<TestResult> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        TestResultSearchContext searchContext = (TestResultSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("CurTestRun"))
+            return testresultService.selectQueryByCurTestRun(searchContext);
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return testresultService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return testresultService.selectQueryByView(searchContext);
         return null;
     }
 

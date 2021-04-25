@@ -214,6 +214,14 @@ public class IbzProjectMemberServiceImpl extends ServiceImpl<IbzProjectMemberMap
 
 
 
+    public List<IbzProjectMember> selectQueryByDefault(IbzProjectMemberSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IbzProjectMember> selectQueryByView(IbzProjectMemberSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

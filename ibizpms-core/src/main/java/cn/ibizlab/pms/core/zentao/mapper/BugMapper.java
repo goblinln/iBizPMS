@@ -19,6 +19,40 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface BugMapper extends BaseMapper<Bug> {
 
+    List<Bug> selectQueryByAssignedToMyBug(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByAssignedToMyBugPc(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByBuildBugs(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByBuildLinkResolvedBugs(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByBuildOpenBugs(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByBuildProduceBug(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByBuildProduceBugModule(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByBuildProduceBugModule_Project(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByBuildProduceBugOpenedBy(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByBuildProduceBugOpenedBy_Project(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByBuildProduceBugRES(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByBuildProduceBugRESOLVEDBY(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByBuildProduceBugRESOLVEDBY_Project(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByBuildProduceBugResolution_Project(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByBuildProduceBugSeverity_Project(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByBuildProduceBugStatus_Project(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByBuildProduceBugType_Project(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByCurUserResolve(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByDefault(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByESBulk(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByMyAgentBug(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByMyCurOpenedBug(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByMyFavorites(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByNotCurPlanLinkBug(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByReleaseBugs(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByReleaseLeftBugs(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByReleaseLinkableLeftBug(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByReleaseLinkableResolvedBug(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByReportBugs(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryBySelectBugByBuild(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryBySelectBugsByProject(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByTaskBug(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectQueryByView(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+
     Page<Bug> searchAssignedToMyBug(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     Page<Bug> searchAssignedToMyBugPc(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     Page<Bug> searchBugsByBuild(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);

@@ -112,7 +112,21 @@ public class CaseStepRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
 
     @Override
     public List<CaseStep> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        CaseStepSearchContext searchContext = (CaseStepSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("CurTest"))
+            return casestepService.selectQueryByCurTest(searchContext);
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return casestepService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("DEFAULT1"))
+            return casestepService.selectQueryByDefault1(searchContext);
+        if (iPSDataQuery.getName().equals("Mob"))
+            return casestepService.selectQueryByMob(searchContext);
+        if (iPSDataQuery.getName().equals("Version"))
+            return casestepService.selectQueryByVersion(searchContext);
+        if (iPSDataQuery.getName().equals("Versions"))
+            return casestepService.selectQueryByVersions(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return casestepService.selectQueryByView(searchContext);
         return null;
     }
 

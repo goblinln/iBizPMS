@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface CompanyMapper extends BaseMapper<Company> {
 
+    List<Company> selectQueryByDefault(@Param("srf") CompanySearchContext context, @Param("ew") Wrapper<Company> wrapper);
+    List<Company> selectQueryByView(@Param("srf") CompanySearchContext context, @Param("ew") Wrapper<Company> wrapper);
+
     Page<Company> searchDefault(IPage page, @Param("srf") CompanySearchContext context, @Param("ew") Wrapper<Company> wrapper);
     @Override
     Company selectById(Serializable id);

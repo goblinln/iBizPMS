@@ -19,6 +19,11 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IbzReportMapper extends BaseMapper<IbzReport> {
 
+    List<IbzReport> selectQueryByAllReport(@Param("srf") IbzReportSearchContext context, @Param("ew") Wrapper<IbzReport> wrapper);
+    List<IbzReport> selectQueryByDefault(@Param("srf") IbzReportSearchContext context, @Param("ew") Wrapper<IbzReport> wrapper);
+    List<IbzReport> selectQueryByMyReAllReport(@Param("srf") IbzReportSearchContext context, @Param("ew") Wrapper<IbzReport> wrapper);
+    List<IbzReport> selectQueryByView(@Param("srf") IbzReportSearchContext context, @Param("ew") Wrapper<IbzReport> wrapper);
+
     Page<IbzReport> searchAllReport(IPage page, @Param("srf") IbzReportSearchContext context, @Param("ew") Wrapper<IbzReport> wrapper);
     Page<IbzReport> searchDefault(IPage page, @Param("srf") IbzReportSearchContext context, @Param("ew") Wrapper<IbzReport> wrapper);
     Page<IbzReport> searchMyReAllReport(IPage page, @Param("srf") IbzReportSearchContext context, @Param("ew") Wrapper<IbzReport> wrapper);

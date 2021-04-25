@@ -274,6 +274,17 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     }
 
 
+    public List<Burn> selectQueryByDefault(BurnSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Burn> selectQueryByESTIMATEANDLEFT(BurnSearchContext context){
+        return baseMapper.selectQueryByESTIMATEANDLEFT(context, context.getSelectCond());
+    }
+    public List<Burn> selectQueryByView(BurnSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

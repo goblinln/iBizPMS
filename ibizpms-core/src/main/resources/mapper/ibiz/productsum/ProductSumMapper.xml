@@ -90,6 +90,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[ProductBugcnt_QA]-->
     <sql id="ProductBugcnt_QA" databaseId="mysql">
@@ -98,6 +102,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProductBugcnt_QA"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
+		<include refid="ProductBugcnt_QA" />
+	</select>
 
     <!--数据查询[ProductCreateStory]-->
     <sql id="ProductCreateStory" databaseId="mysql">
@@ -106,6 +114,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProductCreateStory"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
+		<include refid="ProductCreateStory" />
+	</select>
 
     <!--数据查询[ProductPlancntAndStorycnt_PO]-->
     <sql id="ProductPlancntAndStorycnt_PO" databaseId="mysql">
@@ -114,6 +126,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProductPlancntAndStorycnt_PO"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
+		<include refid="ProductPlancntAndStorycnt_PO" />
+	</select>
 
     <!--数据查询[ProductStoryHoursSum]-->
     <sql id="ProductStoryHoursSum" databaseId="mysql">
@@ -122,6 +138,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProductStoryHoursSum"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
+		<include refid="ProductStoryHoursSum" />
+	</select>
 
     <!--数据查询[ProductStorySum]-->
     <sql id="ProductStorySum" databaseId="mysql">
@@ -130,6 +150,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProductStorySum"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
+		<include refid="ProductStorySum" />
+	</select>
 
     <!--数据查询[ProductSumBugType]-->
     <sql id="ProductSumBugType" databaseId="mysql">
@@ -138,6 +162,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProductSumBugType"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
+		<include refid="ProductSumBugType" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -146,6 +174,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

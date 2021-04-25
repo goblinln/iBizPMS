@@ -262,6 +262,14 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
     }
 
 
+    public List<IbizproProductWeekly> selectQueryByDefault(IbizproProductWeeklySearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IbizproProductWeekly> selectQueryByView(IbizproProductWeeklySearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

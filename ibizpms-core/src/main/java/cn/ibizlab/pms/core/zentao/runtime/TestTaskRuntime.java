@@ -104,7 +104,13 @@ public class TestTaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
 
     @Override
     public List<TestTask> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        TestTaskSearchContext searchContext = (TestTaskSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return testtaskService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("MyTestTaskPc"))
+            return testtaskService.selectQueryByMyTestTaskPc(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return testtaskService.selectQueryByView(searchContext);
         return null;
     }
 

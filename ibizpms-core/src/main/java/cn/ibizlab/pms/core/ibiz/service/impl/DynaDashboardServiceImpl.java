@@ -214,6 +214,14 @@ public class DynaDashboardServiceImpl extends ServiceImpl<DynaDashboardMapper, D
 
 
 
+    public List<DynaDashboard> selectQueryByDefault(DynaDashboardSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<DynaDashboard> selectQueryByView(DynaDashboardSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

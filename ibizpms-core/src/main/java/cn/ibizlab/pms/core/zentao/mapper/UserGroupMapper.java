@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface UserGroupMapper extends BaseMapper<UserGroup> {
 
+    List<UserGroup> selectQueryByDefault(@Param("srf") UserGroupSearchContext context, @Param("ew") Wrapper<UserGroup> wrapper);
+    List<UserGroup> selectQueryByView(@Param("srf") UserGroupSearchContext context, @Param("ew") Wrapper<UserGroup> wrapper);
+
     Page<UserGroup> searchDefault(IPage page, @Param("srf") UserGroupSearchContext context, @Param("ew") Wrapper<UserGroup> wrapper);
     @Override
     UserGroup selectById(Serializable id);

@@ -337,6 +337,41 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
     }
 
 
+    public List<DocLibModule> selectQueryByAllDoclibModule_Custom(DocLibModuleSearchContext context){
+        return baseMapper.selectQueryByAllDoclibModule_Custom(context, context.getSelectCond());
+    }
+    public List<DocLibModule> selectQueryByChildModuleByParent(DocLibModuleSearchContext context){
+        return baseMapper.selectQueryByChildModuleByParent(context, context.getSelectCond());
+    }
+    public List<DocLibModule> selectQueryByChildModuleByRealParent(DocLibModuleSearchContext context){
+        return baseMapper.selectQueryByChildModuleByRealParent(context, context.getSelectCond());
+    }
+    public List<DocLibModule> selectQueryByDefault(DocLibModuleSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<DocLibModule> selectQueryByDefaultDoclib(DocLibModuleSearchContext context){
+        return baseMapper.selectQueryByDefaultDoclib(context, context.getSelectCond());
+    }
+    public List<DocLibModule> selectQueryByMyFavourites(DocLibModuleSearchContext context){
+        return baseMapper.selectQueryByMyFavourites(context, context.getSelectCond());
+    }
+    public List<DocLibModule> selectQueryByParentModule(DocLibModuleSearchContext context){
+        return baseMapper.selectQueryByParentModule(context, context.getSelectCond());
+    }
+    public List<DocLibModule> selectQueryByRootModuleMuLu(DocLibModuleSearchContext context){
+        return baseMapper.selectQueryByRootModuleMuLu(context, context.getSelectCond());
+    }
+    public List<DocLibModule> selectQueryByRootModuleMuLuByRoot(DocLibModuleSearchContext context){
+        return baseMapper.selectQueryByRootModuleMuLuByRoot(context, context.getSelectCond());
+    }
+    public List<DocLibModule> selectQueryByRootModuleMuLuBysrfparentkey(DocLibModuleSearchContext context){
+        return baseMapper.selectQueryByRootModuleMuLuBysrfparentkey(context, context.getSelectCond());
+    }
+    public List<DocLibModule> selectQueryByView(DocLibModuleSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 自定义文档库的模块
      */

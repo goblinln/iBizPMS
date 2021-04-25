@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ScoreMapper extends BaseMapper<Score> {
 
+    List<Score> selectQueryByDefault(@Param("srf") ScoreSearchContext context, @Param("ew") Wrapper<Score> wrapper);
+    List<Score> selectQueryByView(@Param("srf") ScoreSearchContext context, @Param("ew") Wrapper<Score> wrapper);
+
     Page<Score> searchDefault(IPage page, @Param("srf") ScoreSearchContext context, @Param("ew") Wrapper<Score> wrapper);
     @Override
     Score selectById(Serializable id);

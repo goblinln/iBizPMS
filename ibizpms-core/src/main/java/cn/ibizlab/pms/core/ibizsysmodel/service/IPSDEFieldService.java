@@ -37,6 +37,10 @@ public interface IPSDEFieldService {
     boolean checkKey(PSDEField et);
     boolean save(PSDEField et);
     void saveBatch(List<PSDEField> list);
+    
+    List<PSDEField> selectQueryByDefault(PSDEFieldSearchContext context);
+    List<PSDEField> selectQueryByView(PSDEFieldSearchContext context);
+
     Page<PSDEField> searchDefault(PSDEFieldSearchContext context);
     List<PSDEField> selectByPsdeid(String psdataentityid);
     void removeByPsdeid(Collection<String> ids);

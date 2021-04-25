@@ -39,6 +39,10 @@ public interface IConfigService extends IService<Config> {
     boolean save(Config et);
     void saveBatch(List<Config> list);
     List<Config> select(ConfigSearchContext context);
+    
+    List<Config> selectQueryByDefault(ConfigSearchContext context);
+    List<Config> selectQueryByView(ConfigSearchContext context);
+
     Page<Config> searchDefault(ConfigSearchContext context);
     Config dynamicCall(Long key, String action, Config et);
     /**

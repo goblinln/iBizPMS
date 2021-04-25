@@ -102,7 +102,11 @@ public class TaskMsgRecordRuntime extends cn.ibizlab.pms.core.runtime.SystemData
 
     @Override
     public List<TaskMsgRecord> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        TaskMsgRecordSearchContext searchContext = (TaskMsgRecordSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return taskmsgrecordService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return taskmsgrecordService.selectQueryByView(searchContext);
         return null;
     }
 

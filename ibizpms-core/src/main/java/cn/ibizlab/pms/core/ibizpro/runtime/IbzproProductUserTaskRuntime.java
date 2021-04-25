@@ -108,7 +108,17 @@ public class IbzproProductUserTaskRuntime extends cn.ibizlab.pms.core.runtime.Sy
 
     @Override
     public List<IbzproProductUserTask> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        IbzproProductUserTaskSearchContext searchContext = (IbzproProductUserTaskSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return ibzproproductusertaskService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("ProductDailyUserTaskStats"))
+            return ibzproproductusertaskService.selectQueryByProductDailyUserTaskStats(searchContext);
+        if (iPSDataQuery.getName().equals("ProductMonthlyUserTaskStats"))
+            return ibzproproductusertaskService.selectQueryByProductMonthlyUserTaskStats(searchContext);
+        if (iPSDataQuery.getName().equals("ProductWeeklyUserTaskStats"))
+            return ibzproproductusertaskService.selectQueryByProductWeeklyUserTaskStats(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return ibzproproductusertaskService.selectQueryByView(searchContext);
         return null;
     }
 

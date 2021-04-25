@@ -214,6 +214,20 @@ public class UserContactServiceImpl extends ServiceImpl<UserContactMapper, UserC
 
 
 
+    public List<UserContact> selectQueryByCurUSERCONTACT(UserContactSearchContext context){
+        return baseMapper.selectQueryByCurUSERCONTACT(context, context.getSelectCond());
+    }
+    public List<UserContact> selectQueryByDefault(UserContactSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<UserContact> selectQueryByMyUSERCONTACT(UserContactSearchContext context){
+        return baseMapper.selectQueryByMyUSERCONTACT(context, context.getSelectCond());
+    }
+    public List<UserContact> selectQueryByView(UserContactSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 抄送联系人
      */

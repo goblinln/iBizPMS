@@ -214,6 +214,14 @@ public class ImClientServiceImpl extends ServiceImpl<ImClientMapper, ImClient> i
 
 
 
+    public List<ImClient> selectQueryByDefault(ImClientSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<ImClient> selectQueryByView(ImClientSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

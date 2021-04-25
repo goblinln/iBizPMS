@@ -49,6 +49,27 @@ public interface IProductService extends IService<Product> {
     boolean save(Product et);
     void saveBatch(List<Product> list);
     List<Product> select(ProductSearchContext context);
+    
+    List<Product> selectQueryByAllList(ProductSearchContext context);
+    List<Product> selectQueryByAllProduct(ProductSearchContext context);
+    List<Product> selectQueryByCheckNameOrCode(ProductSearchContext context);
+    List<Product> selectQueryByCurDefault(ProductSearchContext context);
+    List<Product> selectQueryByCurProject(ProductSearchContext context);
+    List<Product> selectQueryByCurUer(ProductSearchContext context);
+    List<Product> selectQueryByDefault(ProductSearchContext context);
+    List<Product> selectQueryByDeveloperQuery(ProductSearchContext context);
+    List<Product> selectQueryByESBulk(ProductSearchContext context);
+    List<Product> selectQueryByOpenQuery(ProductSearchContext context);
+    List<Product> selectQueryByPOQuery(ProductSearchContext context);
+    List<Product> selectQueryByProductManagerQuery(ProductSearchContext context);
+    List<Product> selectQueryByProductPM(ProductSearchContext context);
+    List<Product> selectQueryByProductTeam(ProductSearchContext context);
+    List<Product> selectQueryByQDQuery(ProductSearchContext context);
+    List<Product> selectQueryByRDQuery(ProductSearchContext context);
+    List<Product> selectQueryBySimple(ProductSearchContext context);
+    List<Product> selectQueryByStoryCurProject(ProductSearchContext context);
+    List<Product> selectQueryByView(ProductSearchContext context);
+
     Page<Product> searchAllList(ProductSearchContext context);
     Page<Product> searchAllProduct(ProductSearchContext context);
     Page<Product> searchCheckNameOrCode(ProductSearchContext context);

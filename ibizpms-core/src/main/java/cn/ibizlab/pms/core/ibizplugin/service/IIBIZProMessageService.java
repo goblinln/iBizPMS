@@ -43,6 +43,12 @@ public interface IIBIZProMessageService {
     void saveBatch(List<IBIZProMessage> list);
     IBIZProMessage send(IBIZProMessage et);
     boolean sendBatch(List<IBIZProMessage> etList);
+    
+    List<IBIZProMessage> selectQueryByDefault(IBIZProMessageSearchContext context);
+    List<IBIZProMessage> selectQueryByUserAllMessages(IBIZProMessageSearchContext context);
+    List<IBIZProMessage> selectQueryByUserUnreadMessages(IBIZProMessageSearchContext context);
+    List<IBIZProMessage> selectQueryByView(IBIZProMessageSearchContext context);
+
     Page<IBIZProMessage> searchDefault(IBIZProMessageSearchContext context);
     Page<IBIZProMessage> searchUserAllMessages(IBIZProMessageSearchContext context);
     Page<IBIZProMessage> searchUserUnreadMessages(IBIZProMessageSearchContext context);

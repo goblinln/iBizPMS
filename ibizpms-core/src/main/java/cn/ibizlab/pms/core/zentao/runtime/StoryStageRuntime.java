@@ -102,7 +102,11 @@ public class StoryStageRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
 
     @Override
     public List<StoryStage> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        StoryStageSearchContext searchContext = (StoryStageSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return storystageService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return storystageService.selectQueryByView(searchContext);
         return null;
     }
 

@@ -41,6 +41,10 @@ public interface IIbzproConfigService extends IService<IbzproConfig> {
     boolean save(IbzproConfig et);
     void saveBatch(List<IbzproConfig> list);
     List<IbzproConfig> select(IbzproConfigSearchContext context);
+    
+    List<IbzproConfig> selectQueryByDefault(IbzproConfigSearchContext context);
+    List<IbzproConfig> selectQueryByView(IbzproConfigSearchContext context);
+
     Page<IbzproConfig> searchDefault(IbzproConfigSearchContext context);
     IbzproConfig dynamicCall(String key, String action, IbzproConfig et);
     /**

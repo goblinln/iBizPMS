@@ -220,6 +220,14 @@ public class IBZProProductServiceImpl extends ServiceImpl<IBZProProductMapper, I
 
 
 
+    public List<IBZProProduct> selectQueryByDefault(IBZProProductSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IBZProProduct> selectQueryByView(IBZProProductSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

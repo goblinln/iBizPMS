@@ -482,6 +482,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByAssignedToMyStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="AssignedToMyStory" />
+	</select>
 
     <!--数据查询[AssignedToMyStoryCalendar]-->
     <sql id="AssignedToMyStoryCalendar" databaseId="mysql">
@@ -499,6 +503,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByAssignedToMyStoryCalendar"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="AssignedToMyStoryCalendar" />
+	</select>
 
     <!--数据查询[BugStory]-->
     <sql id="BugStory" databaseId="mysql">
@@ -513,6 +521,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByBugStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="BugStory" />
+	</select>
 
     <!--数据查询[BuildLinkCompletedStories]-->
     <sql id="BuildLinkCompletedStories" databaseId="mysql">
@@ -521,6 +533,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByBuildLinkCompletedStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="BuildLinkCompletedStories" />
+	</select>
 
     <!--数据查询[BuildLinkableStories]-->
     <sql id="BuildLinkableStories" databaseId="mysql">
@@ -538,6 +554,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByBuildLinkableStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="BuildLinkableStories" />
+	</select>
 
     <!--数据查询[BuildStories]-->
     <sql id="BuildStories" databaseId="mysql">
@@ -546,6 +566,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByBuildStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="BuildStories" />
+	</select>
 
     <!--数据查询[ByModule]-->
     <sql id="ByModule" databaseId="mysql">
@@ -560,6 +584,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByByModule"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="ByModule" />
+	</select>
 
     <!--数据查询[CaseStory]-->
     <sql id="CaseStory" databaseId="mysql">
@@ -568,6 +596,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByCaseStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="CaseStory" />
+	</select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
@@ -579,6 +611,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[ESBulk]-->
     <sql id="ESBulk" databaseId="mysql">
@@ -587,6 +623,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="ESBulk" />
+	</select>
 
     <!--数据查询[GetProductStories]-->
     <sql id="GetProductStories" databaseId="mysql">
@@ -601,6 +641,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByGetProductStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="GetProductStories" />
+	</select>
 
     <!--数据查询[MyAgentStory]-->
     <sql id="MyAgentStory" databaseId="mysql">
@@ -612,6 +656,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyAgentStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="MyAgentStory" />
+	</select>
 
     <!--数据查询[MyCurOpenedStory]-->
     <sql id="MyCurOpenedStory" databaseId="mysql">
@@ -626,6 +674,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyCurOpenedStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="MyCurOpenedStory" />
+	</select>
 
     <!--数据查询[MyFavorites]-->
     <sql id="MyFavorites" databaseId="mysql">
@@ -640,6 +692,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyFavorites"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="MyFavorites" />
+	</select>
 
     <!--数据查询[NotCurPlanLinkStory]-->
     <sql id="NotCurPlanLinkStory" databaseId="mysql">
@@ -663,6 +719,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByNotCurPlanLinkStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="NotCurPlanLinkStory" />
+	</select>
 
     <!--数据查询[ParentDefault]-->
     <sql id="ParentDefault" databaseId="mysql">
@@ -677,6 +737,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByParentDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="ParentDefault" />
+	</select>
 
     <!--数据查询[ParentDefaultQ]-->
     <sql id="ParentDefaultQ" databaseId="mysql">
@@ -694,6 +758,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByParentDefaultQ"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="ParentDefaultQ" />
+	</select>
 
     <!--数据查询[ProjectLinkStory]-->
     <sql id="ProjectLinkStory" databaseId="mysql">
@@ -714,6 +782,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectLinkStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="ProjectLinkStory" />
+	</select>
 
     <!--数据查询[ProjectStories]-->
     <sql id="ProjectStories" databaseId="mysql">
@@ -728,6 +800,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="ProjectStories" />
+	</select>
 
     <!--数据查询[ReleaseLinkableStories]-->
     <sql id="ReleaseLinkableStories" databaseId="mysql">
@@ -742,6 +818,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByReleaseLinkableStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="ReleaseLinkableStories" />
+	</select>
 
     <!--数据查询[ReleaseStories]-->
     <sql id="ReleaseStories" databaseId="mysql">
@@ -753,6 +833,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByReleaseStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="ReleaseStories" />
+	</select>
 
     <!--数据查询[ReportStories]-->
     <sql id="ReportStories" databaseId="mysql">
@@ -761,6 +845,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByReportStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="ReportStories" />
+	</select>
 
     <!--数据查询[StoryChild]-->
     <sql id="StoryChild" databaseId="mysql">
@@ -772,6 +860,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByStoryChild"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="StoryChild" />
+	</select>
 
     <!--数据查询[StoryRelated]-->
     <sql id="StoryRelated" databaseId="mysql">
@@ -783,6 +875,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByStoryRelated"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="StoryRelated" />
+	</select>
 
     <!--数据查询[SubStory]-->
     <sql id="SubStory" databaseId="mysql">
@@ -797,6 +893,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryBySubStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="SubStory" />
+	</select>
 
     <!--数据查询[TaskRelatedStory]-->
     <sql id="TaskRelatedStory" databaseId="mysql">
@@ -814,6 +914,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByTaskRelatedStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="TaskRelatedStory" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -825,6 +929,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

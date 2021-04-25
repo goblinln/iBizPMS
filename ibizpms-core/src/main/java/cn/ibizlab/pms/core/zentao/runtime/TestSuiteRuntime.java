@@ -104,7 +104,13 @@ public class TestSuiteRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public List<TestSuite> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        TestSuiteSearchContext searchContext = (TestSuiteSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return testsuiteService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("PublicTestSuite"))
+            return testsuiteService.selectQueryByPublicTestSuite(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return testsuiteService.selectQueryByView(searchContext);
         return null;
     }
 

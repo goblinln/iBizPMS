@@ -43,6 +43,15 @@ public interface ITestModuleService extends IService<TestModule> {
     boolean save(TestModule et);
     void saveBatch(List<TestModule> list);
     List<TestModule> select(TestModuleSearchContext context);
+    
+    List<TestModule> selectQueryByByPath(TestModuleSearchContext context);
+    List<TestModule> selectQueryByDefault(TestModuleSearchContext context);
+    List<TestModule> selectQueryByParentModule(TestModuleSearchContext context);
+    List<TestModule> selectQueryByRoot(TestModuleSearchContext context);
+    List<TestModule> selectQueryByRoot_NoBranch(TestModuleSearchContext context);
+    List<TestModule> selectQueryByTestModule(TestModuleSearchContext context);
+    List<TestModule> selectQueryByView(TestModuleSearchContext context);
+
     Page<TestModule> searchByPath(TestModuleSearchContext context);
     Page<TestModule> searchDefault(TestModuleSearchContext context);
     Page<TestModule> searchParentModule(TestModuleSearchContext context);

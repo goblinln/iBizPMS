@@ -102,7 +102,11 @@ public class IbizproProjectDailyRuntime extends cn.ibizlab.pms.core.runtime.Syst
 
     @Override
     public List<IbizproProjectDaily> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        IbizproProjectDailySearchContext searchContext = (IbizproProjectDailySearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return ibizproprojectdailyService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return ibizproprojectdailyService.selectQueryByView(searchContext);
         return null;
     }
 

@@ -19,6 +19,10 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface CompanyStatsMapper extends BaseMapper<CompanyStats> {
 
+    List<CompanyStats> selectQueryByCompanyDynamicStats(@Param("srf") CompanyStatsSearchContext context, @Param("ew") Wrapper<CompanyStats> wrapper);
+    List<CompanyStats> selectQueryByDefault(@Param("srf") CompanyStatsSearchContext context, @Param("ew") Wrapper<CompanyStats> wrapper);
+    List<CompanyStats> selectQueryByView(@Param("srf") CompanyStatsSearchContext context, @Param("ew") Wrapper<CompanyStats> wrapper);
+
     Page<CompanyStats> searchCompanyDynamicStats(IPage page, @Param("srf") CompanyStatsSearchContext context, @Param("ew") Wrapper<CompanyStats> wrapper);
     Page<CompanyStats> searchDefault(IPage page, @Param("srf") CompanyStatsSearchContext context, @Param("ew") Wrapper<CompanyStats> wrapper);
     @Override

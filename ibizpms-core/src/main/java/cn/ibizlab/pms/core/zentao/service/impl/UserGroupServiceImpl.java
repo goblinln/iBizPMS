@@ -214,6 +214,14 @@ public class UserGroupServiceImpl extends ServiceImpl<UserGroupMapper, UserGroup
 
 
 
+    public List<UserGroup> selectQueryByDefault(UserGroupSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<UserGroup> selectQueryByView(UserGroupSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

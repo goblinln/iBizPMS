@@ -214,6 +214,14 @@ public class RepoHistoryServiceImpl extends ServiceImpl<RepoHistoryMapper, RepoH
 
 
 
+    public List<RepoHistory> selectQueryByDefault(RepoHistorySearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<RepoHistory> selectQueryByView(RepoHistorySearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

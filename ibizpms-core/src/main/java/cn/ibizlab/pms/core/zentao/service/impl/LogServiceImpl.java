@@ -214,6 +214,14 @@ public class LogServiceImpl extends ServiceImpl<LogMapper, Log> implements ILogS
 
 
 
+    public List<Log> selectQueryByDefault(LogSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Log> selectQueryByView(LogSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

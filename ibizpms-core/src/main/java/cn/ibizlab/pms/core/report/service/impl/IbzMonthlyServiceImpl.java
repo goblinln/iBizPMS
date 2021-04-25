@@ -315,6 +315,32 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
 
 
 
+    public List<IbzMonthly> selectQueryByDefault(IbzMonthlySearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IbzMonthly> selectQueryByMyMonthly(IbzMonthlySearchContext context){
+        return baseMapper.selectQueryByMyMonthly(context, context.getSelectCond());
+    }
+    public List<IbzMonthly> selectQueryByMyMonthlyMob(IbzMonthlySearchContext context){
+        return baseMapper.selectQueryByMyMonthlyMob(context, context.getSelectCond());
+    }
+    public List<IbzMonthly> selectQueryByMyReceivedMonthly(IbzMonthlySearchContext context){
+        return baseMapper.selectQueryByMyReceivedMonthly(context, context.getSelectCond());
+    }
+    public List<IbzMonthly> selectQueryByMySubmitMonthly(IbzMonthlySearchContext context){
+        return baseMapper.selectQueryByMySubmitMonthly(context, context.getSelectCond());
+    }
+    public List<IbzMonthly> selectQueryByProductMonthly(IbzMonthlySearchContext context){
+        return baseMapper.selectQueryByProductMonthly(context, context.getSelectCond());
+    }
+    public List<IbzMonthly> selectQueryByProjectMonthly(IbzMonthlySearchContext context){
+        return baseMapper.selectQueryByProjectMonthly(context, context.getSelectCond());
+    }
+    public List<IbzMonthly> selectQueryByView(IbzMonthlySearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

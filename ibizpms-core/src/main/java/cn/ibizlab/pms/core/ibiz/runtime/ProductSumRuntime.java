@@ -114,7 +114,23 @@ public class ProductSumRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
 
     @Override
     public List<ProductSum> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        ProductSumSearchContext searchContext = (ProductSumSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return productsumService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("ProductBugcnt_QA"))
+            return productsumService.selectQueryByProductBugcnt_QA(searchContext);
+        if (iPSDataQuery.getName().equals("ProductCreateStory"))
+            return productsumService.selectQueryByProductCreateStory(searchContext);
+        if (iPSDataQuery.getName().equals("ProductPlancntAndStorycnt_PO"))
+            return productsumService.selectQueryByProductPlancntAndStorycnt_PO(searchContext);
+        if (iPSDataQuery.getName().equals("ProductStoryHoursSum"))
+            return productsumService.selectQueryByProductStoryHoursSum(searchContext);
+        if (iPSDataQuery.getName().equals("ProductStorySum"))
+            return productsumService.selectQueryByProductStorySum(searchContext);
+        if (iPSDataQuery.getName().equals("ProductSumBugType"))
+            return productsumService.selectQueryByProductSumBugType(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return productsumService.selectQueryByView(searchContext);
         return null;
     }
 

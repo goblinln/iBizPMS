@@ -235,6 +235,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByAllList"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+		<include refid="AllList" />
+	</select>
 
     <!--数据查询[AllProduct]-->
     <sql id="AllProduct" databaseId="mysql">
@@ -246,6 +250,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByAllProduct"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+		<include refid="AllProduct" />
+	</select>
 
     <!--数据查询[CheckNameOrCode]-->
     <sql id="CheckNameOrCode" databaseId="mysql">
@@ -254,6 +262,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByCheckNameOrCode"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+		<include refid="CheckNameOrCode" />
+	</select>
 
     <!--数据查询[CurDefault]-->
     <sql id="CurDefault" databaseId="mysql">
@@ -265,6 +277,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByCurDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+		<include refid="CurDefault" />
+	</select>
 
     <!--数据查询[CurProject]-->
     <sql id="CurProject" databaseId="mysql">
@@ -279,6 +295,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByCurProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+		<include refid="CurProject" />
+	</select>
 
     <!--数据查询[CurUer]-->
     <sql id="CurUer" databaseId="mysql">
@@ -287,6 +307,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByCurUer"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+		<include refid="CurUer" />
+	</select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
@@ -298,6 +322,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[DeveloperQuery]-->
     <sql id="DeveloperQuery" databaseId="mysql">
@@ -312,6 +340,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDeveloperQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+		<include refid="DeveloperQuery" />
+	</select>
 
     <!--数据查询[ESBulk]-->
     <sql id="ESBulk" databaseId="mysql">
@@ -320,6 +352,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+		<include refid="ESBulk" />
+	</select>
 
     <!--数据查询[OpenQuery]-->
     <sql id="OpenQuery" databaseId="mysql">
@@ -334,6 +370,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByOpenQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+		<include refid="OpenQuery" />
+	</select>
 
     <!--数据查询[POQuery]-->
     <sql id="POQuery" databaseId="mysql">
@@ -348,6 +388,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByPOQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+		<include refid="POQuery" />
+	</select>
 
     <!--数据查询[ProductManagerQuery]-->
     <sql id="ProductManagerQuery" databaseId="mysql">
@@ -362,6 +406,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProductManagerQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+		<include refid="ProductManagerQuery" />
+	</select>
 
     <!--数据查询[ProductPM]-->
     <sql id="ProductPM" databaseId="mysql">
@@ -370,6 +418,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProductPM"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+		<include refid="ProductPM" />
+	</select>
 
     <!--数据查询[ProductTeam]-->
     <sql id="ProductTeam" databaseId="mysql">
@@ -387,6 +439,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProductTeam"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+		<include refid="ProductTeam" />
+	</select>
 
     <!--数据查询[QDQuery]-->
     <sql id="QDQuery" databaseId="mysql">
@@ -401,6 +457,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByQDQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+		<include refid="QDQuery" />
+	</select>
 
     <!--数据查询[RDQuery]-->
     <sql id="RDQuery" databaseId="mysql">
@@ -415,6 +475,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByRDQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+		<include refid="RDQuery" />
+	</select>
 
     <!--数据查询[Simple]-->
     <sql id="Simple" databaseId="mysql">
@@ -426,6 +490,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryBySimple"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+		<include refid="Simple" />
+	</select>
 
     <!--数据查询[StoryCurProject]-->
     <sql id="StoryCurProject" databaseId="mysql">
@@ -440,6 +508,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByStoryCurProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+		<include refid="StoryCurProject" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -451,6 +523,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

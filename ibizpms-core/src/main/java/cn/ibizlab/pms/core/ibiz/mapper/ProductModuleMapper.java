@@ -19,6 +19,14 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ProductModuleMapper extends BaseMapper<ProductModule> {
 
+    List<ProductModule> selectQueryByByPath(@Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
+    List<ProductModule> selectQueryByDefault(@Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
+    List<ProductModule> selectQueryByParentModule(@Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
+    List<ProductModule> selectQueryByRoot(@Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
+    List<ProductModule> selectQueryByRoot_NoBranch(@Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
+    List<ProductModule> selectQueryByStoryModule(@Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
+    List<ProductModule> selectQueryByView(@Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
+
     Page<ProductModule> searchByPath(IPage page, @Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
     Page<ProductModule> searchDefault(IPage page, @Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
     Page<ProductModule> searchParentModule(IPage page, @Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);

@@ -291,6 +291,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByBugSelectableProjectList"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="BugSelectableProjectList" />
+	</select>
 
     <!--数据查询[CurDefaultQuery]-->
     <sql id="CurDefaultQuery" databaseId="mysql">
@@ -302,6 +306,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByCurDefaultQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="CurDefaultQuery" />
+	</select>
 
     <!--数据查询[CurDefaultQueryExp]-->
     <sql id="CurDefaultQueryExp" databaseId="mysql">
@@ -313,6 +321,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByCurDefaultQueryExp"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="CurDefaultQueryExp" />
+	</select>
 
     <!--数据查询[CurPlanProject]-->
     <sql id="CurPlanProject" databaseId="mysql">
@@ -327,6 +339,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByCurPlanProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="CurPlanProject" />
+	</select>
 
     <!--数据查询[CurProduct]-->
     <sql id="CurProduct" databaseId="mysql">
@@ -341,6 +357,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByCurProduct"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="CurProduct" />
+	</select>
 
     <!--数据查询[CurUser]-->
     <sql id="CurUser" databaseId="mysql">
@@ -349,6 +369,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByCurUser"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="CurUser" />
+	</select>
 
     <!--数据查询[CurUserSa]-->
     <sql id="CurUserSa" databaseId="mysql">
@@ -357,6 +381,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByCurUserSa"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="CurUserSa" />
+	</select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
@@ -368,6 +396,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[DeveloperQuery]-->
     <sql id="DeveloperQuery" databaseId="mysql">
@@ -382,6 +414,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDeveloperQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="DeveloperQuery" />
+	</select>
 
     <!--数据查询[ESBulk]-->
     <sql id="ESBulk" databaseId="mysql">
@@ -390,6 +426,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="ESBulk" />
+	</select>
 
     <!--数据查询[InvolvedProject]-->
     <sql id="InvolvedProject" databaseId="mysql">
@@ -398,6 +438,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByInvolvedProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="InvolvedProject" />
+	</select>
 
     <!--数据查询[InvolvedProjectStoryTaskBug]-->
     <sql id="InvolvedProjectStoryTaskBug" databaseId="mysql">
@@ -406,6 +450,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByInvolvedProjectStoryTaskBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="InvolvedProjectStoryTaskBug" />
+	</select>
 
     <!--数据查询[MyProject]-->
     <sql id="MyProject" databaseId="mysql">
@@ -417,6 +465,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="MyProject" />
+	</select>
 
     <!--数据查询[OpenByQuery]-->
     <sql id="OpenByQuery" databaseId="mysql">
@@ -431,6 +483,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByOpenByQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="OpenByQuery" />
+	</select>
 
     <!--数据查询[OpenQuery]-->
     <sql id="OpenQuery" databaseId="mysql">
@@ -445,6 +501,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByOpenQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="OpenQuery" />
+	</select>
 
     <!--数据查询[PMQuery]-->
     <sql id="PMQuery" databaseId="mysql">
@@ -459,6 +519,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByPMQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="PMQuery" />
+	</select>
 
     <!--数据查询[POQuery]-->
     <sql id="POQuery" databaseId="mysql">
@@ -473,6 +537,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByPOQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="POQuery" />
+	</select>
 
     <!--数据查询[ProjectTeam]-->
     <sql id="ProjectTeam" databaseId="mysql">
@@ -490,6 +558,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectTeam"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="ProjectTeam" />
+	</select>
 
     <!--数据查询[QDQuery]-->
     <sql id="QDQuery" databaseId="mysql">
@@ -504,6 +576,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByQDQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="QDQuery" />
+	</select>
 
     <!--数据查询[RDQuery]-->
     <sql id="RDQuery" databaseId="mysql">
@@ -518,6 +594,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByRDQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="RDQuery" />
+	</select>
 
     <!--数据查询[StoryProject]-->
     <sql id="StoryProject" databaseId="mysql">
@@ -529,6 +609,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByStoryProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="StoryProject" />
+	</select>
 
     <!--数据查询[UnDoneProject]-->
     <sql id="UnDoneProject" databaseId="mysql">
@@ -543,6 +627,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByUnDoneProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="UnDoneProject" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -554,6 +642,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

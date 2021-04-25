@@ -102,7 +102,11 @@ public class IbzAgentRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
 
     @Override
     public List<IbzAgent> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        IbzAgentSearchContext searchContext = (IbzAgentSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return ibzagentService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return ibzagentService.selectQueryByView(searchContext);
         return null;
     }
 

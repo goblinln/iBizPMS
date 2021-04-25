@@ -85,6 +85,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.CaseStatsSearchContext" resultMap="CaseStatsResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[TestCaseStats]-->
     <sql id="TestCaseStats" databaseId="mysql">
@@ -96,6 +100,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByTestCaseStats"  parameterType="cn.ibizlab.pms.core.ibiz.filter.CaseStatsSearchContext" resultMap="CaseStatsResultMap">
+		<include refid="TestCaseStats" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -104,6 +112,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.CaseStatsSearchContext" resultMap="CaseStatsResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

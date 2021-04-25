@@ -102,7 +102,11 @@ public class IbzReportRoleConfigRuntime extends cn.ibizlab.pms.core.runtime.Syst
 
     @Override
     public List<IbzReportRoleConfig> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        IbzReportRoleConfigSearchContext searchContext = (IbzReportRoleConfigSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return ibzreportroleconfigService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return ibzreportroleconfigService.selectQueryByView(searchContext);
         return null;
     }
 

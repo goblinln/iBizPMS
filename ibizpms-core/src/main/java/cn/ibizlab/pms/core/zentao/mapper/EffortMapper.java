@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface EffortMapper extends BaseMapper<Effort> {
 
+    List<Effort> selectQueryByDefault(@Param("srf") EffortSearchContext context, @Param("ew") Wrapper<Effort> wrapper);
+    List<Effort> selectQueryByView(@Param("srf") EffortSearchContext context, @Param("ew") Wrapper<Effort> wrapper);
+
     Page<Effort> searchDefault(IPage page, @Param("srf") EffortSearchContext context, @Param("ew") Wrapper<Effort> wrapper);
     @Override
     Effort selectById(Serializable id);

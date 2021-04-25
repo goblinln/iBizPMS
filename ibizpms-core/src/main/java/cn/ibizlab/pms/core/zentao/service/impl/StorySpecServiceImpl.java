@@ -279,6 +279,17 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
 	}
 
 
+    public List<StorySpec> selectQueryByDefault(StorySpecSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<StorySpec> selectQueryByVersion(StorySpecSearchContext context){
+        return baseMapper.selectQueryByVersion(context, context.getSelectCond());
+    }
+    public List<StorySpec> selectQueryByView(StorySpecSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

@@ -114,7 +114,25 @@ public class ActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
 
     @Override
     public List<Action> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        ActionSearchContext searchContext = (ActionSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("BianGengLineHistory"))
+            return actionService.selectQueryByBianGengLineHistory(searchContext);
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return actionService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("MobType"))
+            return actionService.selectQueryByMobType(searchContext);
+        if (iPSDataQuery.getName().equals("MyTrends"))
+            return actionService.selectQueryByMyTrends(searchContext);
+        if (iPSDataQuery.getName().equals("ProductTrends"))
+            return actionService.selectQueryByProductTrends(searchContext);
+        if (iPSDataQuery.getName().equals("ProjectTrends"))
+            return actionService.selectQueryByProjectTrends(searchContext);
+        if (iPSDataQuery.getName().equals("QueryUserYEAR"))
+            return actionService.selectQueryByQueryUserYEAR(searchContext);
+        if (iPSDataQuery.getName().equals("Type"))
+            return actionService.selectQueryByType(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return actionService.selectQueryByView(searchContext);
         return null;
     }
 

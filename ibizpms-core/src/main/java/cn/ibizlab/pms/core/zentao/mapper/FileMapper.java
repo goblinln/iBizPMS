@@ -19,6 +19,13 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface FileMapper extends BaseMapper<File> {
 
+    List<File> selectQueryByDefault(@Param("srf") FileSearchContext context, @Param("ew") Wrapper<File> wrapper);
+    List<File> selectQueryByDocLibFile(@Param("srf") FileSearchContext context, @Param("ew") Wrapper<File> wrapper);
+    List<File> selectQueryByProductDocLibFile(@Param("srf") FileSearchContext context, @Param("ew") Wrapper<File> wrapper);
+    List<File> selectQueryByType(@Param("srf") FileSearchContext context, @Param("ew") Wrapper<File> wrapper);
+    List<File> selectQueryByTypeNotBySrfparentkey(@Param("srf") FileSearchContext context, @Param("ew") Wrapper<File> wrapper);
+    List<File> selectQueryByView(@Param("srf") FileSearchContext context, @Param("ew") Wrapper<File> wrapper);
+
     Page<File> searchDefault(IPage page, @Param("srf") FileSearchContext context, @Param("ew") Wrapper<File> wrapper);
     Page<File> searchDocLibFile(IPage page, @Param("srf") FileSearchContext context, @Param("ew") Wrapper<File> wrapper);
     Page<File> searchProductDocLibFile(IPage page, @Param("srf") FileSearchContext context, @Param("ew") Wrapper<File> wrapper);

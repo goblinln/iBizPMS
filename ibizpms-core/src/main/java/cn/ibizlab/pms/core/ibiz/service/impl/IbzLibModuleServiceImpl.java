@@ -265,6 +265,17 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     }
 
 
+    public List<IbzLibModule> selectQueryByDefault(IbzLibModuleSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IbzLibModule> selectQueryByRoot_NoBranch(IbzLibModuleSearchContext context){
+        return baseMapper.selectQueryByRoot_NoBranch(context, context.getSelectCond());
+    }
+    public List<IbzLibModule> selectQueryByView(IbzLibModuleSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

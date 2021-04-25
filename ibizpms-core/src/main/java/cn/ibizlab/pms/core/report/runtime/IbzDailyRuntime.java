@@ -114,7 +114,23 @@ public class IbzDailyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
 
     @Override
     public List<IbzDaily> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        IbzDailySearchContext searchContext = (IbzDailySearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return ibzdailyService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("MyAllDaily"))
+            return ibzdailyService.selectQueryByMyAllDaily(searchContext);
+        if (iPSDataQuery.getName().equals("MyDaily"))
+            return ibzdailyService.selectQueryByMyDaily(searchContext);
+        if (iPSDataQuery.getName().equals("MyNotSubmit"))
+            return ibzdailyService.selectQueryByMyNotSubmit(searchContext);
+        if (iPSDataQuery.getName().equals("MySubmitDaily"))
+            return ibzdailyService.selectQueryByMySubmitDaily(searchContext);
+        if (iPSDataQuery.getName().equals("ProductDaily"))
+            return ibzdailyService.selectQueryByProductDaily(searchContext);
+        if (iPSDataQuery.getName().equals("ProjectDaily"))
+            return ibzdailyService.selectQueryByProjectDaily(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return ibzdailyService.selectQueryByView(searchContext);
         return null;
     }
 

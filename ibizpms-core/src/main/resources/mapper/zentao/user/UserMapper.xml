@@ -127,6 +127,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByBugUser"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
+		<include refid="BugUser" />
+	</select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
@@ -138,6 +142,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[GetByLogin]-->
     <sql id="GetByLogin" databaseId="mysql">
@@ -152,6 +160,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByGetByLogin"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
+		<include refid="GetByLogin" />
+	</select>
 
     <!--数据查询[ProjectTeamM]-->
     <sql id="ProjectTeamM" databaseId="mysql">
@@ -166,6 +178,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectTeamM"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
+		<include refid="ProjectTeamM" />
+	</select>
 
     <!--数据查询[ProjectTeamUser]-->
     <sql id="ProjectTeamUser" databaseId="mysql">
@@ -183,6 +199,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectTeamUser"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
+		<include refid="ProjectTeamUser" />
+	</select>
 
     <!--数据查询[ProjectTeamUserTask]-->
     <sql id="ProjectTeamUserTask" databaseId="mysql">
@@ -200,6 +220,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectTeamUserTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
+		<include refid="ProjectTeamUserTask" />
+	</select>
 
     <!--数据查询[TaskTeam]-->
     <sql id="TaskTeam" databaseId="mysql">
@@ -214,6 +238,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByTaskTeam"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
+		<include refid="TaskTeam" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -225,6 +253,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

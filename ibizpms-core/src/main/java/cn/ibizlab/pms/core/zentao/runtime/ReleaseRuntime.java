@@ -104,7 +104,15 @@ public class ReleaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public List<Release> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        ReleaseSearchContext searchContext = (ReleaseSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return releaseService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("GetList"))
+            return releaseService.selectQueryByGetList(searchContext);
+        if (iPSDataQuery.getName().equals("ReportRelease"))
+            return releaseService.selectQueryByReportRelease(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return releaseService.selectQueryByView(searchContext);
         return null;
     }
 

@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ImChatMapper extends BaseMapper<ImChat> {
 
+    List<ImChat> selectQueryByDefault(@Param("srf") ImChatSearchContext context, @Param("ew") Wrapper<ImChat> wrapper);
+    List<ImChat> selectQueryByView(@Param("srf") ImChatSearchContext context, @Param("ew") Wrapper<ImChat> wrapper);
+
     Page<ImChat> searchDefault(IPage page, @Param("srf") ImChatSearchContext context, @Param("ew") Wrapper<ImChat> wrapper);
     @Override
     ImChat selectById(Serializable id);

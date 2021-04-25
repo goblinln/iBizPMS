@@ -89,6 +89,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzLibModuleSearchContext" resultMap="IbzLibModuleResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[Root_NoBranch]-->
     <sql id="Root_NoBranch" databaseId="mysql">
@@ -100,6 +104,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByRoot_NoBranch"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzLibModuleSearchContext" resultMap="IbzLibModuleResultMap">
+		<include refid="Root_NoBranch" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -108,6 +116,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzLibModuleSearchContext" resultMap="IbzLibModuleResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

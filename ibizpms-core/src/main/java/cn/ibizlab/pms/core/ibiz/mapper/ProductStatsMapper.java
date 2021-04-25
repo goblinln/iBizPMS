@@ -19,6 +19,13 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ProductStatsMapper extends BaseMapper<ProductStats> {
 
+    List<ProductStats> selectQueryByDefault(@Param("srf") ProductStatsSearchContext context, @Param("ew") Wrapper<ProductStats> wrapper);
+    List<ProductStats> selectQueryByNoOpenProduct(@Param("srf") ProductStatsSearchContext context, @Param("ew") Wrapper<ProductStats> wrapper);
+    List<ProductStats> selectQueryByProdctQuantiGird(@Param("srf") ProductStatsSearchContext context, @Param("ew") Wrapper<ProductStats> wrapper);
+    List<ProductStats> selectQueryByProductInputTable(@Param("srf") ProductStatsSearchContext context, @Param("ew") Wrapper<ProductStats> wrapper);
+    List<ProductStats> selectQueryByProductcompletionstatistics(@Param("srf") ProductStatsSearchContext context, @Param("ew") Wrapper<ProductStats> wrapper);
+    List<ProductStats> selectQueryByView(@Param("srf") ProductStatsSearchContext context, @Param("ew") Wrapper<ProductStats> wrapper);
+
     Page<ProductStats> searchDefault(IPage page, @Param("srf") ProductStatsSearchContext context, @Param("ew") Wrapper<ProductStats> wrapper);
     Page<ProductStats> searchNoOpenProduct(IPage page, @Param("srf") ProductStatsSearchContext context, @Param("ew") Wrapper<ProductStats> wrapper);
     Page<ProductStats> searchProdctQuantiGird(IPage page, @Param("srf") ProductStatsSearchContext context, @Param("ew") Wrapper<ProductStats> wrapper);

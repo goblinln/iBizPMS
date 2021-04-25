@@ -48,6 +48,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.RelationSearchContext" resultMap="RelationResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -56,6 +60,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.RelationSearchContext" resultMap="RelationResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

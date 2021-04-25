@@ -214,6 +214,14 @@ public class WebHookServiceImpl extends ServiceImpl<WebHookMapper, WebHook> impl
 
 
 
+    public List<WebHook> selectQueryByDefault(WebHookSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<WebHook> selectQueryByView(WebHookSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

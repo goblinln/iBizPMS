@@ -214,6 +214,14 @@ public class GroupServiceImpl extends ServiceImpl<GroupMapper, Group> implements
 
 
 
+    public List<Group> selectQueryByDefault(GroupSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Group> selectQueryByView(GroupSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

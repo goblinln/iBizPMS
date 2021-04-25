@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IbzFavoritesMapper extends BaseMapper<IbzFavorites> {
 
+    List<IbzFavorites> selectQueryByDefault(@Param("srf") IbzFavoritesSearchContext context, @Param("ew") Wrapper<IbzFavorites> wrapper);
+    List<IbzFavorites> selectQueryByView(@Param("srf") IbzFavoritesSearchContext context, @Param("ew") Wrapper<IbzFavorites> wrapper);
+
     Page<IbzFavorites> searchDefault(IPage page, @Param("srf") IbzFavoritesSearchContext context, @Param("ew") Wrapper<IbzFavorites> wrapper);
     @Override
     IbzFavorites selectById(Serializable id);

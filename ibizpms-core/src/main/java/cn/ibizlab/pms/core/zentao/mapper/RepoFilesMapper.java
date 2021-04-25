@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface RepoFilesMapper extends BaseMapper<RepoFiles> {
 
+    List<RepoFiles> selectQueryByDefault(@Param("srf") RepoFilesSearchContext context, @Param("ew") Wrapper<RepoFiles> wrapper);
+    List<RepoFiles> selectQueryByView(@Param("srf") RepoFilesSearchContext context, @Param("ew") Wrapper<RepoFiles> wrapper);
+
     Page<RepoFiles> searchDefault(IPage page, @Param("srf") RepoFilesSearchContext context, @Param("ew") Wrapper<RepoFiles> wrapper);
     @Override
     RepoFiles selectById(Serializable id);

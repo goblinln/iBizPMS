@@ -246,6 +246,17 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     }
 
 
+    public List<Dept> selectQueryByDefault(DeptSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Dept> selectQueryByRoot(DeptSearchContext context){
+        return baseMapper.selectQueryByRoot(context, context.getSelectCond());
+    }
+    public List<Dept> selectQueryByView(DeptSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

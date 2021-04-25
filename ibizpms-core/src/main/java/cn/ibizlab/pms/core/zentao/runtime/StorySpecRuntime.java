@@ -104,7 +104,13 @@ public class StorySpecRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public List<StorySpec> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        StorySpecSearchContext searchContext = (StorySpecSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return storyspecService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("Version"))
+            return storyspecService.selectQueryByVersion(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return storyspecService.selectQueryByView(searchContext);
         return null;
     }
 

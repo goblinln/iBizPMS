@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface TaskTeamMapper extends BaseMapper<TaskTeam> {
 
+    List<TaskTeam> selectQueryByDefault(@Param("srf") TaskTeamSearchContext context, @Param("ew") Wrapper<TaskTeam> wrapper);
+    List<TaskTeam> selectQueryByView(@Param("srf") TaskTeamSearchContext context, @Param("ew") Wrapper<TaskTeam> wrapper);
+
     Page<TaskTeam> searchDefault(IPage page, @Param("srf") TaskTeamSearchContext context, @Param("ew") Wrapper<TaskTeam> wrapper);
     @Override
     TaskTeam selectById(Serializable id);

@@ -19,6 +19,12 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IbzproProductUserTaskMapper extends BaseMapper<IbzproProductUserTask> {
 
+    List<IbzproProductUserTask> selectQueryByDefault(@Param("srf") IbzproProductUserTaskSearchContext context, @Param("ew") Wrapper<IbzproProductUserTask> wrapper);
+    List<IbzproProductUserTask> selectQueryByProductDailyUserTaskStats(@Param("srf") IbzproProductUserTaskSearchContext context, @Param("ew") Wrapper<IbzproProductUserTask> wrapper);
+    List<IbzproProductUserTask> selectQueryByProductMonthlyUserTaskStats(@Param("srf") IbzproProductUserTaskSearchContext context, @Param("ew") Wrapper<IbzproProductUserTask> wrapper);
+    List<IbzproProductUserTask> selectQueryByProductWeeklyUserTaskStats(@Param("srf") IbzproProductUserTaskSearchContext context, @Param("ew") Wrapper<IbzproProductUserTask> wrapper);
+    List<IbzproProductUserTask> selectQueryByView(@Param("srf") IbzproProductUserTaskSearchContext context, @Param("ew") Wrapper<IbzproProductUserTask> wrapper);
+
     Page<IbzproProductUserTask> searchDefault(IPage page, @Param("srf") IbzproProductUserTaskSearchContext context, @Param("ew") Wrapper<IbzproProductUserTask> wrapper);
     Page<IbzproProductUserTask> searchProductDailyUserTaskStats(IPage page, @Param("srf") IbzproProductUserTaskSearchContext context, @Param("ew") Wrapper<IbzproProductUserTask> wrapper);
     Page<IbzproProductUserTask> searchProductMonthlyUserTaskStats(IPage page, @Param("srf") IbzproProductUserTaskSearchContext context, @Param("ew") Wrapper<IbzproProductUserTask> wrapper);

@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface RelationMapper extends BaseMapper<Relation> {
 
+    List<Relation> selectQueryByDefault(@Param("srf") RelationSearchContext context, @Param("ew") Wrapper<Relation> wrapper);
+    List<Relation> selectQueryByView(@Param("srf") RelationSearchContext context, @Param("ew") Wrapper<Relation> wrapper);
+
     Page<Relation> searchDefault(IPage page, @Param("srf") RelationSearchContext context, @Param("ew") Wrapper<Relation> wrapper);
     @Override
     Relation selectById(Serializable id);

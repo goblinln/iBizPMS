@@ -39,6 +39,10 @@ public interface IProjectStoryService extends IService<ProjectStory> {
     boolean save(ProjectStory et);
     void saveBatch(List<ProjectStory> list);
     List<ProjectStory> select(ProjectStorySearchContext context);
+    
+    List<ProjectStory> selectQueryByDefault(ProjectStorySearchContext context);
+    List<ProjectStory> selectQueryByView(ProjectStorySearchContext context);
+
     Page<ProjectStory> searchDefault(ProjectStorySearchContext context);
     List<ProjectStory> selectByProduct(Long id);
     void removeByProduct(Long id);

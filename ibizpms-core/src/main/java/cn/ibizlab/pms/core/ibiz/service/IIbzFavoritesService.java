@@ -39,6 +39,10 @@ public interface IIbzFavoritesService extends IService<IbzFavorites> {
     boolean save(IbzFavorites et);
     void saveBatch(List<IbzFavorites> list);
     List<IbzFavorites> select(IbzFavoritesSearchContext context);
+    
+    List<IbzFavorites> selectQueryByDefault(IbzFavoritesSearchContext context);
+    List<IbzFavorites> selectQueryByView(IbzFavoritesSearchContext context);
+
     Page<IbzFavorites> searchDefault(IbzFavoritesSearchContext context);
     IbzFavorites dynamicCall(String key, String action, IbzFavorites et);
     /**

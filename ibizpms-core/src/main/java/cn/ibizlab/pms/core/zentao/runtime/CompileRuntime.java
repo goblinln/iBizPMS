@@ -102,7 +102,11 @@ public class CompileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public List<Compile> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        CompileSearchContext searchContext = (CompileSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return compileService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return compileService.selectQueryByView(searchContext);
         return null;
     }
 

@@ -214,6 +214,14 @@ public class TaskMsgRecordServiceImpl extends ServiceImpl<TaskMsgRecordMapper, T
 
 
 
+    public List<TaskMsgRecord> selectQueryByDefault(TaskMsgRecordSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<TaskMsgRecord> selectQueryByView(TaskMsgRecordSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

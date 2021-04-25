@@ -284,6 +284,35 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
     }
 
 
+    public List<Action> selectQueryByBianGengLineHistory(ActionSearchContext context){
+        return baseMapper.selectQueryByBianGengLineHistory(context, context.getSelectCond());
+    }
+    public List<Action> selectQueryByDefault(ActionSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Action> selectQueryByMobType(ActionSearchContext context){
+        return baseMapper.selectQueryByMobType(context, context.getSelectCond());
+    }
+    public List<Action> selectQueryByMyTrends(ActionSearchContext context){
+        return baseMapper.selectQueryByMyTrends(context, context.getSelectCond());
+    }
+    public List<Action> selectQueryByProductTrends(ActionSearchContext context){
+        return baseMapper.selectQueryByProductTrends(context, context.getSelectCond());
+    }
+    public List<Action> selectQueryByProjectTrends(ActionSearchContext context){
+        return baseMapper.selectQueryByProjectTrends(context, context.getSelectCond());
+    }
+    public List<Action> selectQueryByQueryUserYEAR(ActionSearchContext context){
+        return baseMapper.selectQueryByQueryUserYEAR(context, context.getSelectCond());
+    }
+    public List<Action> selectQueryByType(ActionSearchContext context){
+        return baseMapper.selectQueryByType(context, context.getSelectCond());
+    }
+    public List<Action> selectQueryByView(ActionSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

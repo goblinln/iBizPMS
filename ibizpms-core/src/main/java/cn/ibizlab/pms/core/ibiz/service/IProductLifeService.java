@@ -39,6 +39,13 @@ public interface IProductLifeService extends IService<ProductLife> {
     boolean save(ProductLife et);
     void saveBatch(List<ProductLife> list);
     List<ProductLife> select(ProductLifeSearchContext context);
+    
+    List<ProductLife> selectQueryByDefault(ProductLifeSearchContext context);
+    List<ProductLife> selectQueryByGetRoadmap(ProductLifeSearchContext context);
+    List<ProductLife> selectQueryByGetRoadmapS(ProductLifeSearchContext context);
+    List<ProductLife> selectQueryByRoadMapYear(ProductLifeSearchContext context);
+    List<ProductLife> selectQueryByView(ProductLifeSearchContext context);
+
     Page<ProductLife> searchDefault(ProductLifeSearchContext context);
     Page<ProductLife> searchGetRoadmap(ProductLifeSearchContext context);
     Page<ProductLife> searchGetRoadmapS(ProductLifeSearchContext context);

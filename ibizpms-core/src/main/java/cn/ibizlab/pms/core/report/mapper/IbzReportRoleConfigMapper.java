@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IbzReportRoleConfigMapper extends BaseMapper<IbzReportRoleConfig> {
 
+    List<IbzReportRoleConfig> selectQueryByDefault(@Param("srf") IbzReportRoleConfigSearchContext context, @Param("ew") Wrapper<IbzReportRoleConfig> wrapper);
+    List<IbzReportRoleConfig> selectQueryByView(@Param("srf") IbzReportRoleConfigSearchContext context, @Param("ew") Wrapper<IbzReportRoleConfig> wrapper);
+
     Page<IbzReportRoleConfig> searchDefault(IPage page, @Param("srf") IbzReportRoleConfigSearchContext context, @Param("ew") Wrapper<IbzReportRoleConfig> wrapper);
     @Override
     IbzReportRoleConfig selectById(Serializable id);

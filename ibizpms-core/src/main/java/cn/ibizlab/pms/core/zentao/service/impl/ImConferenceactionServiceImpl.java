@@ -214,6 +214,14 @@ public class ImConferenceactionServiceImpl extends ServiceImpl<ImConferenceactio
 
 
 
+    public List<ImConferenceaction> selectQueryByDefault(ImConferenceactionSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<ImConferenceaction> selectQueryByView(ImConferenceactionSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

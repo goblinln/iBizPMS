@@ -102,7 +102,11 @@ public class DynaDashboardRuntime extends cn.ibizlab.pms.core.runtime.SystemData
 
     @Override
     public List<DynaDashboard> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        DynaDashboardSearchContext searchContext = (DynaDashboardSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return dynadashboardService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return dynadashboardService.selectQueryByView(searchContext);
         return null;
     }
 

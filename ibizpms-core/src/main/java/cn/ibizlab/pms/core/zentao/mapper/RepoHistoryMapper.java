@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface RepoHistoryMapper extends BaseMapper<RepoHistory> {
 
+    List<RepoHistory> selectQueryByDefault(@Param("srf") RepoHistorySearchContext context, @Param("ew") Wrapper<RepoHistory> wrapper);
+    List<RepoHistory> selectQueryByView(@Param("srf") RepoHistorySearchContext context, @Param("ew") Wrapper<RepoHistory> wrapper);
+
     Page<RepoHistory> searchDefault(IPage page, @Param("srf") RepoHistorySearchContext context, @Param("ew") Wrapper<RepoHistory> wrapper);
     @Override
     RepoHistory selectById(Serializable id);

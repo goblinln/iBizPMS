@@ -37,6 +37,10 @@ public interface IPSModuleService {
     boolean checkKey(PSModule et);
     boolean save(PSModule et);
     void saveBatch(List<PSModule> list);
+    
+    List<PSModule> selectQueryByDefault(PSModuleSearchContext context);
+    List<PSModule> selectQueryByView(PSModuleSearchContext context);
+
     Page<PSModule> searchDefault(PSModuleSearchContext context);
     PSModule dynamicCall(String key, String action, PSModule et);
 }

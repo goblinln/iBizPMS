@@ -258,6 +258,14 @@ public class TaskTeamServiceImpl extends ServiceImpl<TaskTeamMapper, TaskTeam> i
 	}
 
 
+    public List<TaskTeam> selectQueryByDefault(TaskTeamSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<TaskTeam> selectQueryByView(TaskTeamSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

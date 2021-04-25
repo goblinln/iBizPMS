@@ -59,6 +59,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzTopSearchContext" resultMap="IbzTopResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -67,6 +71,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzTopSearchContext" resultMap="IbzTopResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

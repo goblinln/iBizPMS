@@ -41,6 +41,11 @@ public interface ITestSuiteService extends IService<TestSuite> {
     boolean save(TestSuite et);
     void saveBatch(List<TestSuite> list);
     List<TestSuite> select(TestSuiteSearchContext context);
+    
+    List<TestSuite> selectQueryByDefault(TestSuiteSearchContext context);
+    List<TestSuite> selectQueryByPublicTestSuite(TestSuiteSearchContext context);
+    List<TestSuite> selectQueryByView(TestSuiteSearchContext context);
+
     Page<TestSuite> searchDefault(TestSuiteSearchContext context);
     Page<TestSuite> searchPublicTestSuite(TestSuiteSearchContext context);
     List<TestSuite> selectByProduct(Long id);

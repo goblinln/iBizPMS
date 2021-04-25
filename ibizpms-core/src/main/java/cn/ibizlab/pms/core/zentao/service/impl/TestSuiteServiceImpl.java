@@ -258,6 +258,17 @@ public class TestSuiteServiceImpl extends ServiceImpl<TestSuiteMapper, TestSuite
     }
 
 
+    public List<TestSuite> selectQueryByDefault(TestSuiteSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<TestSuite> selectQueryByPublicTestSuite(TestSuiteSearchContext context){
+        return baseMapper.selectQueryByPublicTestSuite(context, context.getSelectCond());
+    }
+    public List<TestSuite> selectQueryByView(TestSuiteSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

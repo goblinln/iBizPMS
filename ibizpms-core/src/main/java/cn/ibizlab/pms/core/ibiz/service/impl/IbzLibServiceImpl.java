@@ -231,6 +231,14 @@ public class IbzLibServiceImpl extends ServiceImpl<IbzLibMapper, IbzLib> impleme
 
 
 
+    public List<IbzLib> selectQueryByDefault(IbzLibSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IbzLib> selectQueryByView(IbzLibSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

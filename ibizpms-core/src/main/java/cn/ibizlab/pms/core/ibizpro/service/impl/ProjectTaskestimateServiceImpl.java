@@ -214,6 +214,17 @@ public class ProjectTaskestimateServiceImpl extends ServiceImpl<ProjectTaskestim
 
 
 
+    public List<ProjectTaskestimate> selectQueryByAccountDetail(ProjectTaskestimateSearchContext context){
+        return baseMapper.selectQueryByAccountDetail(context, context.getSelectCond());
+    }
+    public List<ProjectTaskestimate> selectQueryByDefault(ProjectTaskestimateSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<ProjectTaskestimate> selectQueryByView(ProjectTaskestimateSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 用户月工时详情
      */

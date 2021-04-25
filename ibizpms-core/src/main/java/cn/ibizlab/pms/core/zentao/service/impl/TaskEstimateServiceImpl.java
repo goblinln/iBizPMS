@@ -294,6 +294,32 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
 	}
 
 
+    public List<TaskEstimate> selectQueryByActionMonth(TaskEstimateSearchContext context){
+        return baseMapper.selectQueryByActionMonth(context, context.getSelectCond());
+    }
+    public List<TaskEstimate> selectQueryByActionYear(TaskEstimateSearchContext context){
+        return baseMapper.selectQueryByActionYear(context, context.getSelectCond());
+    }
+    public List<TaskEstimate> selectQueryByDefault(TaskEstimateSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<TaskEstimate> selectQueryByDefaults(TaskEstimateSearchContext context){
+        return baseMapper.selectQueryByDefaults(context, context.getSelectCond());
+    }
+    public List<TaskEstimate> selectQueryByProjectActionMonth(TaskEstimateSearchContext context){
+        return baseMapper.selectQueryByProjectActionMonth(context, context.getSelectCond());
+    }
+    public List<TaskEstimate> selectQueryByProjectActionYear(TaskEstimateSearchContext context){
+        return baseMapper.selectQueryByProjectActionYear(context, context.getSelectCond());
+    }
+    public List<TaskEstimate> selectQueryByProjectTaskEstimate(TaskEstimateSearchContext context){
+        return baseMapper.selectQueryByProjectTaskEstimate(context, context.getSelectCond());
+    }
+    public List<TaskEstimate> selectQueryByView(TaskEstimateSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 日志月
      */

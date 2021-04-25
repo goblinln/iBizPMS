@@ -102,7 +102,11 @@ public class SysUpdateLogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public List<SysUpdateLog> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        SysUpdateLogSearchContext searchContext = (SysUpdateLogSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return sysupdatelogService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return sysupdatelogService.selectQueryByView(searchContext);
         return null;
     }
 

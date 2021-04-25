@@ -108,7 +108,17 @@ public class ProjectTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
 
     @Override
     public List<ProjectTeam> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        ProjectTeamSearchContext searchContext = (ProjectTeamSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return projectteamService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("ProjectTeamPm"))
+            return projectteamService.selectQueryByProjectTeamPm(searchContext);
+        if (iPSDataQuery.getName().equals("RowEditDefault"))
+            return projectteamService.selectQueryByRowEditDefault(searchContext);
+        if (iPSDataQuery.getName().equals("TaskCntEstimateConsumedLeft"))
+            return projectteamService.selectQueryByTaskCntEstimateConsumedLeft(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return projectteamService.selectQueryByView(searchContext);
         return null;
     }
 

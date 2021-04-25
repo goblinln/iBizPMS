@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface TaskMsgRecordMapper extends BaseMapper<TaskMsgRecord> {
 
+    List<TaskMsgRecord> selectQueryByDefault(@Param("srf") TaskMsgRecordSearchContext context, @Param("ew") Wrapper<TaskMsgRecord> wrapper);
+    List<TaskMsgRecord> selectQueryByView(@Param("srf") TaskMsgRecordSearchContext context, @Param("ew") Wrapper<TaskMsgRecord> wrapper);
+
     Page<TaskMsgRecord> searchDefault(IPage page, @Param("srf") TaskMsgRecordSearchContext context, @Param("ew") Wrapper<TaskMsgRecord> wrapper);
     @Override
     TaskMsgRecord selectById(Serializable id);

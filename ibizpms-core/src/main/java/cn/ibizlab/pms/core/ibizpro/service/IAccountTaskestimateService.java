@@ -39,6 +39,11 @@ public interface IAccountTaskestimateService extends IService<AccountTaskestimat
     boolean save(AccountTaskestimate et);
     void saveBatch(List<AccountTaskestimate> list);
     List<AccountTaskestimate> select(AccountTaskestimateSearchContext context);
+    
+    List<AccountTaskestimate> selectQueryByAllAccountEstimate(AccountTaskestimateSearchContext context);
+    List<AccountTaskestimate> selectQueryByDefault(AccountTaskestimateSearchContext context);
+    List<AccountTaskestimate> selectQueryByView(AccountTaskestimateSearchContext context);
+
     Page<AccountTaskestimate> searchAllAccountEstimate(AccountTaskestimateSearchContext context);
     Page<AccountTaskestimate> searchDefault(AccountTaskestimateSearchContext context);
     AccountTaskestimate dynamicCall(String key, String action, AccountTaskestimate et);

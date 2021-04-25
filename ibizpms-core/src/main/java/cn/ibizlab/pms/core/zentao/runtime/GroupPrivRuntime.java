@@ -102,7 +102,11 @@ public class GroupPrivRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public List<GroupPriv> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        GroupPrivSearchContext searchContext = (GroupPrivSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return groupprivService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return groupprivService.selectQueryByView(searchContext);
         return null;
     }
 

@@ -89,6 +89,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.BurnSearchContext" resultMap="BurnResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[ESTIMATEANDLEFT]-->
     <sql id="ESTIMATEANDLEFT" databaseId="mysql">
@@ -97,6 +101,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByESTIMATEANDLEFT"  parameterType="cn.ibizlab.pms.core.zentao.filter.BurnSearchContext" resultMap="BurnResultMap">
+		<include refid="ESTIMATEANDLEFT" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -105,6 +113,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.BurnSearchContext" resultMap="BurnResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

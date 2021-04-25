@@ -122,7 +122,31 @@ public class DocRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
 
     @Override
     public List<Doc> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        DocSearchContext searchContext = (DocSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("ChildDocLibDoc"))
+            return docService.selectQueryByChildDocLibDoc(searchContext);
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return docService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("DocLibAndDoc"))
+            return docService.selectQueryByDocLibAndDoc(searchContext);
+        if (iPSDataQuery.getName().equals("DocLibDoc"))
+            return docService.selectQueryByDocLibDoc(searchContext);
+        if (iPSDataQuery.getName().equals("DocModuleDoc"))
+            return docService.selectQueryByDocModuleDoc(searchContext);
+        if (iPSDataQuery.getName().equals("DocStatus"))
+            return docService.selectQueryByDocStatus(searchContext);
+        if (iPSDataQuery.getName().equals("ModuleDocChild"))
+            return docService.selectQueryByModuleDocChild(searchContext);
+        if (iPSDataQuery.getName().equals("MYFAVOURITE"))
+            return docService.selectQueryByMyFavourite(searchContext);
+        if (iPSDataQuery.getName().equals("MyFavouritesOnlyDoc"))
+            return docService.selectQueryByMyFavouritesOnlyDoc(searchContext);
+        if (iPSDataQuery.getName().equals("NotRootDoc"))
+            return docService.selectQueryByNotRootDoc(searchContext);
+        if (iPSDataQuery.getName().equals("RootDoc"))
+            return docService.selectQueryByRootDoc(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return docService.selectQueryByView(searchContext);
         return null;
     }
 

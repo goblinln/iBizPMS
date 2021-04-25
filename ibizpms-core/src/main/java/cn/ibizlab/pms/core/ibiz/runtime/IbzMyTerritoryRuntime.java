@@ -112,7 +112,21 @@ public class IbzMyTerritoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
 
     @Override
     public List<IbzMyTerritory> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        IbzMyTerritorySearchContext searchContext = (IbzMyTerritorySearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return ibzmyterritoryService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("MyWork"))
+            return ibzmyterritoryService.selectQueryByMyWork(searchContext);
+        if (iPSDataQuery.getName().equals("MyWorkMob"))
+            return ibzmyterritoryService.selectQueryByMyWorkMob(searchContext);
+        if (iPSDataQuery.getName().equals("MyWorkPm"))
+            return ibzmyterritoryService.selectQueryByMyWorkPm(searchContext);
+        if (iPSDataQuery.getName().equals("PersonInfo"))
+            return ibzmyterritoryService.selectQueryByPersonInfo(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return ibzmyterritoryService.selectQueryByView(searchContext);
+        if (iPSDataQuery.getName().equals("welcome"))
+            return ibzmyterritoryService.selectQueryByWelcome(searchContext);
         return null;
     }
 

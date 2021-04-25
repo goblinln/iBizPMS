@@ -112,7 +112,21 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
 
     @Override
     public List<Build> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        BuildSearchContext searchContext = (BuildSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("BugProductBuild"))
+            return buildService.selectQueryByBugProductBuild(searchContext);
+        if (iPSDataQuery.getName().equals("CurProduct"))
+            return buildService.selectQueryByCurProduct(searchContext);
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return buildService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("TestBuild"))
+            return buildService.selectQueryByTestBuild(searchContext);
+        if (iPSDataQuery.getName().equals("TestRounds"))
+            return buildService.selectQueryByTestRounds(searchContext);
+        if (iPSDataQuery.getName().equals("UpdateLog"))
+            return buildService.selectQueryByUpdateLog(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return buildService.selectQueryByView(searchContext);
         return null;
     }
 

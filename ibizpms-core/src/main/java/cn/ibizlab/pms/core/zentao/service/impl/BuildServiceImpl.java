@@ -321,6 +321,29 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
     }
 
 
+    public List<Build> selectQueryByBugProductBuild(BuildSearchContext context){
+        return baseMapper.selectQueryByBugProductBuild(context, context.getSelectCond());
+    }
+    public List<Build> selectQueryByCurProduct(BuildSearchContext context){
+        return baseMapper.selectQueryByCurProduct(context, context.getSelectCond());
+    }
+    public List<Build> selectQueryByDefault(BuildSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Build> selectQueryByTestBuild(BuildSearchContext context){
+        return baseMapper.selectQueryByTestBuild(context, context.getSelectCond());
+    }
+    public List<Build> selectQueryByTestRounds(BuildSearchContext context){
+        return baseMapper.selectQueryByTestRounds(context, context.getSelectCond());
+    }
+    public List<Build> selectQueryByUpdateLog(BuildSearchContext context){
+        return baseMapper.selectQueryByUpdateLog(context, context.getSelectCond());
+    }
+    public List<Build> selectQueryByView(BuildSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 Bug产品版本
      */

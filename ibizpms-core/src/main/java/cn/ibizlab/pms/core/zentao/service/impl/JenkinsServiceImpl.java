@@ -214,6 +214,14 @@ public class JenkinsServiceImpl extends ServiceImpl<JenkinsMapper, Jenkins> impl
 
 
 
+    public List<Jenkins> selectQueryByDefault(JenkinsSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Jenkins> selectQueryByView(JenkinsSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

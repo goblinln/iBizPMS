@@ -19,6 +19,47 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface TaskMapper extends BaseMapper<Task> {
 
+    List<Task> selectQueryByAssignedToMyTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByAssignedToMyTaskPc(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByBugTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByByModule(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByChildDefault(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByChildTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByChildTaskTree(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByCurFinishTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByCurProjectTaskQuery(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByDefault(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByDefaultRow(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByESBulk(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByMyAgentTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByMyAllTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByMyCompleteTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByMyCompleteTaskMobDaily(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByMyCompleteTaskMobMonthly(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByMyCompleteTaskMonthlyZS(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByMyCompleteTaskZS(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByMyFavorites(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByMyPlansTaskMobMonthly(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByMyTomorrowPlanTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByMyTomorrowPlanTaskMobDaily(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByNextWeekCompleteTaskMobZS(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByNextWeekCompleteTaskZS(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByNextWeekPlanCompleteTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByPlanTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByProjectAppTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByProjectTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByRootTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByTaskLinkPlan(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByThisMonthCompleteTaskChoice(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByThisWeekCompleteTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByThisWeekCompleteTaskChoice(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByThisWeekCompleteTaskMobZS(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByThisWeekCompleteTaskZS(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByTodoListTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByTypeGroup(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByTypeGroupPlan(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectQueryByView(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+
     Page<Task> searchAssignedToMyTask(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchAssignedToMyTaskPc(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchBugTask(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);

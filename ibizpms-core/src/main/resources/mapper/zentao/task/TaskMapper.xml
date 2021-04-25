@@ -559,6 +559,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByAssignedToMyTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="AssignedToMyTask" />
+	</select>
 
     <!--数据查询[AssignedToMyTaskPc]-->
     <sql id="AssignedToMyTaskPc" databaseId="mysql">
@@ -582,6 +586,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByAssignedToMyTaskPc"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="AssignedToMyTaskPc" />
+	</select>
 
     <!--数据查询[BugTask]-->
     <sql id="BugTask" databaseId="mysql">
@@ -596,6 +604,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByBugTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="BugTask" />
+	</select>
 
     <!--数据查询[ByModule]-->
     <sql id="ByModule" databaseId="mysql">
@@ -613,6 +625,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByByModule"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="ByModule" />
+	</select>
 
     <!--数据查询[ChildDefault]-->
     <sql id="ChildDefault" databaseId="mysql">
@@ -624,6 +640,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByChildDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="ChildDefault" />
+	</select>
 
     <!--数据查询[ChildTask]-->
     <sql id="ChildTask" databaseId="mysql">
@@ -638,6 +658,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByChildTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="ChildTask" />
+	</select>
 
     <!--数据查询[ChildTaskTree]-->
     <sql id="ChildTaskTree" databaseId="mysql">
@@ -646,6 +670,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByChildTaskTree"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="ChildTaskTree" />
+	</select>
 
     <!--数据查询[CurFinishTask]-->
     <sql id="CurFinishTask" databaseId="mysql">
@@ -660,6 +688,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByCurFinishTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="CurFinishTask" />
+	</select>
 
     <!--数据查询[CurProjectTaskQuery]-->
     <sql id="CurProjectTaskQuery" databaseId="mysql">
@@ -671,6 +703,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByCurProjectTaskQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="CurProjectTaskQuery" />
+	</select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
@@ -682,6 +718,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[DefaultRow]-->
     <sql id="DefaultRow" databaseId="mysql">
@@ -693,6 +733,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefaultRow"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="DefaultRow" />
+	</select>
 
     <!--数据查询[ESBulk]-->
     <sql id="ESBulk" databaseId="mysql">
@@ -701,6 +745,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="ESBulk" />
+	</select>
 
     <!--数据查询[MyAgentTask]-->
     <sql id="MyAgentTask" databaseId="mysql">
@@ -712,6 +760,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyAgentTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="MyAgentTask" />
+	</select>
 
     <!--数据查询[MyAllTask]-->
     <sql id="MyAllTask" databaseId="mysql">
@@ -729,6 +781,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyAllTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="MyAllTask" />
+	</select>
 
     <!--数据查询[MyCompleteTask]-->
     <sql id="MyCompleteTask" databaseId="mysql">
@@ -746,6 +802,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyCompleteTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="MyCompleteTask" />
+	</select>
 
     <!--数据查询[MyCompleteTaskMobDaily]-->
     <sql id="MyCompleteTaskMobDaily" databaseId="mysql">
@@ -760,6 +820,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyCompleteTaskMobDaily"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="MyCompleteTaskMobDaily" />
+	</select>
 
     <!--数据查询[MyCompleteTaskMobMonthly]-->
     <sql id="MyCompleteTaskMobMonthly" databaseId="mysql">
@@ -774,6 +838,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyCompleteTaskMobMonthly"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="MyCompleteTaskMobMonthly" />
+	</select>
 
     <!--数据查询[MyCompleteTaskMonthlyZS]-->
     <sql id="MyCompleteTaskMonthlyZS" databaseId="mysql">
@@ -788,6 +856,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyCompleteTaskMonthlyZS"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="MyCompleteTaskMonthlyZS" />
+	</select>
 
     <!--数据查询[MyCompleteTaskZS]-->
     <sql id="MyCompleteTaskZS" databaseId="mysql">
@@ -802,6 +874,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyCompleteTaskZS"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="MyCompleteTaskZS" />
+	</select>
 
     <!--数据查询[MyFavorites]-->
     <sql id="MyFavorites" databaseId="mysql">
@@ -816,6 +892,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyFavorites"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="MyFavorites" />
+	</select>
 
     <!--数据查询[MyPlansTaskMobMonthly]-->
     <sql id="MyPlansTaskMobMonthly" databaseId="mysql">
@@ -830,6 +910,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyPlansTaskMobMonthly"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="MyPlansTaskMobMonthly" />
+	</select>
 
     <!--数据查询[MyTomorrowPlanTask]-->
     <sql id="MyTomorrowPlanTask" databaseId="mysql">
@@ -844,6 +928,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyTomorrowPlanTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="MyTomorrowPlanTask" />
+	</select>
 
     <!--数据查询[MyTomorrowPlanTaskMobDaily]-->
     <sql id="MyTomorrowPlanTaskMobDaily" databaseId="mysql">
@@ -858,6 +946,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyTomorrowPlanTaskMobDaily"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="MyTomorrowPlanTaskMobDaily" />
+	</select>
 
     <!--数据查询[NextWeekCompleteTaskMobZS]-->
     <sql id="NextWeekCompleteTaskMobZS" databaseId="mysql">
@@ -872,6 +964,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByNextWeekCompleteTaskMobZS"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="NextWeekCompleteTaskMobZS" />
+	</select>
 
     <!--数据查询[NextWeekCompleteTaskZS]-->
     <sql id="NextWeekCompleteTaskZS" databaseId="mysql">
@@ -886,6 +982,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByNextWeekCompleteTaskZS"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="NextWeekCompleteTaskZS" />
+	</select>
 
     <!--数据查询[NextWeekPlanCompleteTask]-->
     <sql id="NextWeekPlanCompleteTask" databaseId="mysql">
@@ -900,6 +1000,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByNextWeekPlanCompleteTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="NextWeekPlanCompleteTask" />
+	</select>
 
     <!--数据查询[PlanTask]-->
     <sql id="PlanTask" databaseId="mysql">
@@ -914,6 +1018,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByPlanTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="PlanTask" />
+	</select>
 
     <!--数据查询[ProjectAppTask]-->
     <sql id="ProjectAppTask" databaseId="mysql">
@@ -928,6 +1036,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectAppTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="ProjectAppTask" />
+	</select>
 
     <!--数据查询[ProjectTask]-->
     <sql id="ProjectTask" databaseId="mysql">
@@ -942,6 +1054,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="ProjectTask" />
+	</select>
 
     <!--数据查询[RootTask]-->
     <sql id="RootTask" databaseId="mysql">
@@ -956,6 +1072,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByRootTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="RootTask" />
+	</select>
 
     <!--数据查询[TaskLinkPlan]-->
     <sql id="TaskLinkPlan" databaseId="mysql">
@@ -970,6 +1090,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByTaskLinkPlan"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="TaskLinkPlan" />
+	</select>
 
     <!--数据查询[ThisMonthCompleteTaskChoice]-->
     <sql id="ThisMonthCompleteTaskChoice" databaseId="mysql">
@@ -987,6 +1111,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByThisMonthCompleteTaskChoice"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="ThisMonthCompleteTaskChoice" />
+	</select>
 
     <!--数据查询[ThisWeekCompleteTask]-->
     <sql id="ThisWeekCompleteTask" databaseId="mysql">
@@ -1001,6 +1129,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByThisWeekCompleteTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="ThisWeekCompleteTask" />
+	</select>
 
     <!--数据查询[ThisWeekCompleteTaskChoice]-->
     <sql id="ThisWeekCompleteTaskChoice" databaseId="mysql">
@@ -1018,6 +1150,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByThisWeekCompleteTaskChoice"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="ThisWeekCompleteTaskChoice" />
+	</select>
 
     <!--数据查询[ThisWeekCompleteTaskMobZS]-->
     <sql id="ThisWeekCompleteTaskMobZS" databaseId="mysql">
@@ -1032,6 +1168,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByThisWeekCompleteTaskMobZS"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="ThisWeekCompleteTaskMobZS" />
+	</select>
 
     <!--数据查询[ThisWeekCompleteTaskZS]-->
     <sql id="ThisWeekCompleteTaskZS" databaseId="mysql">
@@ -1046,6 +1186,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByThisWeekCompleteTaskZS"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="ThisWeekCompleteTaskZS" />
+	</select>
 
     <!--数据查询[TodoListTask]-->
     <sql id="TodoListTask" databaseId="mysql">
@@ -1057,6 +1201,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByTodoListTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="TodoListTask" />
+	</select>
 
     <!--数据查询[TypeGroup]-->
     <sql id="TypeGroup" databaseId="mysql">
@@ -1068,6 +1216,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByTypeGroup"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="TypeGroup" />
+	</select>
 
     <!--数据查询[TypeGroupPlan]-->
     <sql id="TypeGroupPlan" databaseId="mysql">
@@ -1076,6 +1228,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByTypeGroupPlan"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="TypeGroupPlan" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -1087,6 +1243,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

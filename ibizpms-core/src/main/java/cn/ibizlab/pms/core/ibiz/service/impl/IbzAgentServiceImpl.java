@@ -219,6 +219,14 @@ public class IbzAgentServiceImpl extends ServiceImpl<IbzAgentMapper, IbzAgent> i
 
 
 
+    public List<IbzAgent> selectQueryByDefault(IbzAgentSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IbzAgent> selectQueryByView(IbzAgentSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

@@ -214,6 +214,14 @@ public class GroupPrivServiceImpl extends ServiceImpl<GroupPrivMapper, GroupPriv
 
 
 
+    public List<GroupPriv> selectQueryByDefault(GroupPrivSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<GroupPriv> selectQueryByView(GroupPrivSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

@@ -124,6 +124,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByBugCountInResolution"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
+		<include refid="BugCountInResolution" />
+	</select>
 
     <!--数据查询[BugResolvedBy]-->
     <sql id="BugResolvedBy" databaseId="mysql">
@@ -132,6 +136,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByBugResolvedBy"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
+		<include refid="BugResolvedBy" />
+	</select>
 
     <!--数据查询[BugResolvedGird]-->
     <sql id="BugResolvedGird" databaseId="mysql">
@@ -140,6 +148,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByBugResolvedGird"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
+		<include refid="BugResolvedGird" />
+	</select>
 
     <!--数据查询[BugassignedTo]-->
     <sql id="BugassignedTo" databaseId="mysql">
@@ -148,6 +160,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByBugassignedTo"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
+		<include refid="BugassignedTo" />
+	</select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
@@ -156,6 +172,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[ProductBugResolutionStats]-->
     <sql id="ProductBugResolutionStats" databaseId="mysql">
@@ -164,6 +184,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProductBugResolutionStats"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
+		<include refid="ProductBugResolutionStats" />
+	</select>
 
     <!--数据查询[ProductBugStatusSum]-->
     <sql id="ProductBugStatusSum" databaseId="mysql">
@@ -172,6 +196,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProductBugStatusSum"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
+		<include refid="ProductBugStatusSum" />
+	</select>
 
     <!--数据查询[ProductCreateBug]-->
     <sql id="ProductCreateBug" databaseId="mysql">
@@ -180,6 +208,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProductCreateBug"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
+		<include refid="ProductCreateBug" />
+	</select>
 
     <!--数据查询[ProjectBugStatusCount]-->
     <sql id="ProjectBugStatusCount" databaseId="mysql">
@@ -188,6 +220,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectBugStatusCount"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
+		<include refid="ProjectBugStatusCount" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -196,6 +232,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

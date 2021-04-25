@@ -114,7 +114,23 @@ public class IbzMonthlyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
 
     @Override
     public List<IbzMonthly> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        IbzMonthlySearchContext searchContext = (IbzMonthlySearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return ibzmonthlyService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("MyMonthly"))
+            return ibzmonthlyService.selectQueryByMyMonthly(searchContext);
+        if (iPSDataQuery.getName().equals("MyMonthlyMob"))
+            return ibzmonthlyService.selectQueryByMyMonthlyMob(searchContext);
+        if (iPSDataQuery.getName().equals("MyReceivedMonthly"))
+            return ibzmonthlyService.selectQueryByMyReceivedMonthly(searchContext);
+        if (iPSDataQuery.getName().equals("MySubmitMonthly"))
+            return ibzmonthlyService.selectQueryByMySubmitMonthly(searchContext);
+        if (iPSDataQuery.getName().equals("ProductMonthly"))
+            return ibzmonthlyService.selectQueryByProductMonthly(searchContext);
+        if (iPSDataQuery.getName().equals("ProjectMonthly"))
+            return ibzmonthlyService.selectQueryByProjectMonthly(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return ibzmonthlyService.selectQueryByView(searchContext);
         return null;
     }
 

@@ -259,6 +259,38 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
     }
 
 
+    public List<BugStats> selectQueryByBugCountInResolution(BugStatsSearchContext context){
+        return baseMapper.selectQueryByBugCountInResolution(context, context.getSelectCond());
+    }
+    public List<BugStats> selectQueryByBugResolvedBy(BugStatsSearchContext context){
+        return baseMapper.selectQueryByBugResolvedBy(context, context.getSelectCond());
+    }
+    public List<BugStats> selectQueryByBugResolvedGird(BugStatsSearchContext context){
+        return baseMapper.selectQueryByBugResolvedGird(context, context.getSelectCond());
+    }
+    public List<BugStats> selectQueryByBugassignedTo(BugStatsSearchContext context){
+        return baseMapper.selectQueryByBugassignedTo(context, context.getSelectCond());
+    }
+    public List<BugStats> selectQueryByDefault(BugStatsSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<BugStats> selectQueryByProductBugResolutionStats(BugStatsSearchContext context){
+        return baseMapper.selectQueryByProductBugResolutionStats(context, context.getSelectCond());
+    }
+    public List<BugStats> selectQueryByProductBugStatusSum(BugStatsSearchContext context){
+        return baseMapper.selectQueryByProductBugStatusSum(context, context.getSelectCond());
+    }
+    public List<BugStats> selectQueryByProductCreateBug(BugStatsSearchContext context){
+        return baseMapper.selectQueryByProductCreateBug(context, context.getSelectCond());
+    }
+    public List<BugStats> selectQueryByProjectBugStatusCount(BugStatsSearchContext context){
+        return baseMapper.selectQueryByProjectBugStatusCount(context, context.getSelectCond());
+    }
+    public List<BugStats> selectQueryByView(BugStatsSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 Bug在每个解决方案的Bug数
      */

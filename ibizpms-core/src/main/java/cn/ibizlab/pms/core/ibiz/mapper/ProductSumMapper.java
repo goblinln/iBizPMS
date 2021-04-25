@@ -19,6 +19,15 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ProductSumMapper extends BaseMapper<ProductSum> {
 
+    List<ProductSum> selectQueryByDefault(@Param("srf") ProductSumSearchContext context, @Param("ew") Wrapper<ProductSum> wrapper);
+    List<ProductSum> selectQueryByProductBugcnt_QA(@Param("srf") ProductSumSearchContext context, @Param("ew") Wrapper<ProductSum> wrapper);
+    List<ProductSum> selectQueryByProductCreateStory(@Param("srf") ProductSumSearchContext context, @Param("ew") Wrapper<ProductSum> wrapper);
+    List<ProductSum> selectQueryByProductPlancntAndStorycnt_PO(@Param("srf") ProductSumSearchContext context, @Param("ew") Wrapper<ProductSum> wrapper);
+    List<ProductSum> selectQueryByProductStoryHoursSum(@Param("srf") ProductSumSearchContext context, @Param("ew") Wrapper<ProductSum> wrapper);
+    List<ProductSum> selectQueryByProductStorySum(@Param("srf") ProductSumSearchContext context, @Param("ew") Wrapper<ProductSum> wrapper);
+    List<ProductSum> selectQueryByProductSumBugType(@Param("srf") ProductSumSearchContext context, @Param("ew") Wrapper<ProductSum> wrapper);
+    List<ProductSum> selectQueryByView(@Param("srf") ProductSumSearchContext context, @Param("ew") Wrapper<ProductSum> wrapper);
+
     Page<ProductSum> searchDefault(IPage page, @Param("srf") ProductSumSearchContext context, @Param("ew") Wrapper<ProductSum> wrapper);
     Page<ProductSum> searchProductBugcnt_QA(IPage page, @Param("srf") ProductSumSearchContext context, @Param("ew") Wrapper<ProductSum> wrapper);
     Page<ProductSum> searchProductCreateStory(IPage page, @Param("srf") ProductSumSearchContext context, @Param("ew") Wrapper<ProductSum> wrapper);

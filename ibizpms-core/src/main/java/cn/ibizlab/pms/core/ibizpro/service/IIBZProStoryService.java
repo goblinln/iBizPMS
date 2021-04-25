@@ -41,6 +41,10 @@ public interface IIBZProStoryService extends IService<IBZProStory> {
     IBZProStory syncFromIBIZ(IBZProStory et);
     boolean syncFromIBIZBatch(List<IBZProStory> etList);
     List<IBZProStory> select(IBZProStorySearchContext context);
+    
+    List<IBZProStory> selectQueryByDefault(IBZProStorySearchContext context);
+    List<IBZProStory> selectQueryByView(IBZProStorySearchContext context);
+
     Page<IBZProStory> searchDefault(IBZProStorySearchContext context);
     List<IBZProStory> selectByProduct(Long id);
     void removeByProduct(Long id);

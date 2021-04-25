@@ -136,6 +136,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ReleaseSearchContext" resultMap="ReleaseResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[GetList]-->
     <sql id="GetList" databaseId="mysql">
@@ -150,6 +154,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByGetList"  parameterType="cn.ibizlab.pms.core.zentao.filter.ReleaseSearchContext" resultMap="ReleaseResultMap">
+		<include refid="GetList" />
+	</select>
 
     <!--数据查询[ReportRelease]-->
     <sql id="ReportRelease" databaseId="mysql">
@@ -164,6 +172,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByReportRelease"  parameterType="cn.ibizlab.pms.core.zentao.filter.ReleaseSearchContext" resultMap="ReleaseResultMap">
+		<include refid="ReportRelease" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -175,6 +187,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ReleaseSearchContext" resultMap="ReleaseResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

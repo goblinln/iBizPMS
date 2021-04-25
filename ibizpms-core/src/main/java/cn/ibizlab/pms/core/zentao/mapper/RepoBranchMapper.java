@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface RepoBranchMapper extends BaseMapper<RepoBranch> {
 
+    List<RepoBranch> selectQueryByDefault(@Param("srf") RepoBranchSearchContext context, @Param("ew") Wrapper<RepoBranch> wrapper);
+    List<RepoBranch> selectQueryByView(@Param("srf") RepoBranchSearchContext context, @Param("ew") Wrapper<RepoBranch> wrapper);
+
     Page<RepoBranch> searchDefault(IPage page, @Param("srf") RepoBranchSearchContext context, @Param("ew") Wrapper<RepoBranch> wrapper);
     @Override
     RepoBranch selectById(Serializable id);

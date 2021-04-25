@@ -214,6 +214,23 @@ public class ProductLifeServiceImpl extends ServiceImpl<ProductLifeMapper, Produ
 
 
 
+    public List<ProductLife> selectQueryByDefault(ProductLifeSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<ProductLife> selectQueryByGetRoadmap(ProductLifeSearchContext context){
+        return baseMapper.selectQueryByGetRoadmap(context, context.getSelectCond());
+    }
+    public List<ProductLife> selectQueryByGetRoadmapS(ProductLifeSearchContext context){
+        return baseMapper.selectQueryByGetRoadmapS(context, context.getSelectCond());
+    }
+    public List<ProductLife> selectQueryByRoadMapYear(ProductLifeSearchContext context){
+        return baseMapper.selectQueryByRoadMapYear(context, context.getSelectCond());
+    }
+    public List<ProductLife> selectQueryByView(ProductLifeSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

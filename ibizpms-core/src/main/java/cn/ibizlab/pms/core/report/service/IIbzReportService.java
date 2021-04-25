@@ -43,6 +43,12 @@ public interface IIbzReportService extends IService<IbzReport> {
     boolean save(IbzReport et);
     void saveBatch(List<IbzReport> list);
     List<IbzReport> select(IbzReportSearchContext context);
+    
+    List<IbzReport> selectQueryByAllReport(IbzReportSearchContext context);
+    List<IbzReport> selectQueryByDefault(IbzReportSearchContext context);
+    List<IbzReport> selectQueryByMyReAllReport(IbzReportSearchContext context);
+    List<IbzReport> selectQueryByView(IbzReportSearchContext context);
+
     Page<IbzReport> searchAllReport(IbzReportSearchContext context);
     Page<IbzReport> searchDefault(IbzReportSearchContext context);
     Page<IbzReport> searchMyReAllReport(IbzReportSearchContext context);

@@ -39,6 +39,10 @@ public interface IIbzCaseService extends IService<IbzCase> {
     boolean save(IbzCase et);
     void saveBatch(List<IbzCase> list);
     List<IbzCase> select(IbzCaseSearchContext context);
+    
+    List<IbzCase> selectQueryByDefault(IbzCaseSearchContext context);
+    List<IbzCase> selectQueryByView(IbzCaseSearchContext context);
+
     Page<IbzCase> searchDefault(IbzCaseSearchContext context);
     List<IbzCase> selectByModule(Long id);
     void removeByModule(Long id);

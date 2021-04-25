@@ -271,6 +271,14 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
     }
 
 
+    public List<ProjectStory> selectQueryByDefault(ProjectStorySearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<ProjectStory> selectQueryByView(ProjectStorySearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

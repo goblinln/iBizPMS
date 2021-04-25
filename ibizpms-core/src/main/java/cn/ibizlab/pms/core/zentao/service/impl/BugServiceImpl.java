@@ -734,6 +734,107 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     }
 
 
+    public List<Bug> selectQueryByAssignedToMyBug(BugSearchContext context){
+        return baseMapper.selectQueryByAssignedToMyBug(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByAssignedToMyBugPc(BugSearchContext context){
+        return baseMapper.selectQueryByAssignedToMyBugPc(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByBuildBugs(BugSearchContext context){
+        return baseMapper.selectQueryByBuildBugs(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByBuildLinkResolvedBugs(BugSearchContext context){
+        return baseMapper.selectQueryByBuildLinkResolvedBugs(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByBuildOpenBugs(BugSearchContext context){
+        return baseMapper.selectQueryByBuildOpenBugs(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByBuildProduceBug(BugSearchContext context){
+        return baseMapper.selectQueryByBuildProduceBug(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByBuildProduceBugModule(BugSearchContext context){
+        return baseMapper.selectQueryByBuildProduceBugModule(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByBuildProduceBugModule_Project(BugSearchContext context){
+        return baseMapper.selectQueryByBuildProduceBugModule_Project(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByBuildProduceBugOpenedBy(BugSearchContext context){
+        return baseMapper.selectQueryByBuildProduceBugOpenedBy(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByBuildProduceBugOpenedBy_Project(BugSearchContext context){
+        return baseMapper.selectQueryByBuildProduceBugOpenedBy_Project(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByBuildProduceBugRES(BugSearchContext context){
+        return baseMapper.selectQueryByBuildProduceBugRES(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByBuildProduceBugRESOLVEDBY(BugSearchContext context){
+        return baseMapper.selectQueryByBuildProduceBugRESOLVEDBY(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByBuildProduceBugRESOLVEDBY_Project(BugSearchContext context){
+        return baseMapper.selectQueryByBuildProduceBugRESOLVEDBY_Project(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByBuildProduceBugResolution_Project(BugSearchContext context){
+        return baseMapper.selectQueryByBuildProduceBugResolution_Project(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByBuildProduceBugSeverity_Project(BugSearchContext context){
+        return baseMapper.selectQueryByBuildProduceBugSeverity_Project(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByBuildProduceBugStatus_Project(BugSearchContext context){
+        return baseMapper.selectQueryByBuildProduceBugStatus_Project(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByBuildProduceBugType_Project(BugSearchContext context){
+        return baseMapper.selectQueryByBuildProduceBugType_Project(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByCurUserResolve(BugSearchContext context){
+        return baseMapper.selectQueryByCurUserResolve(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByDefault(BugSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByESBulk(BugSearchContext context){
+        return baseMapper.selectQueryByESBulk(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByMyAgentBug(BugSearchContext context){
+        return baseMapper.selectQueryByMyAgentBug(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByMyCurOpenedBug(BugSearchContext context){
+        return baseMapper.selectQueryByMyCurOpenedBug(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByMyFavorites(BugSearchContext context){
+        return baseMapper.selectQueryByMyFavorites(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByNotCurPlanLinkBug(BugSearchContext context){
+        return baseMapper.selectQueryByNotCurPlanLinkBug(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByReleaseBugs(BugSearchContext context){
+        return baseMapper.selectQueryByReleaseBugs(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByReleaseLeftBugs(BugSearchContext context){
+        return baseMapper.selectQueryByReleaseLeftBugs(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByReleaseLinkableLeftBug(BugSearchContext context){
+        return baseMapper.selectQueryByReleaseLinkableLeftBug(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByReleaseLinkableResolvedBug(BugSearchContext context){
+        return baseMapper.selectQueryByReleaseLinkableResolvedBug(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByReportBugs(BugSearchContext context){
+        return baseMapper.selectQueryByReportBugs(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryBySelectBugByBuild(BugSearchContext context){
+        return baseMapper.selectQueryBySelectBugByBuild(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryBySelectBugsByProject(BugSearchContext context){
+        return baseMapper.selectQueryBySelectBugsByProject(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByTaskBug(BugSearchContext context){
+        return baseMapper.selectQueryByTaskBug(context, context.getSelectCond());
+    }
+    public List<Bug> selectQueryByView(BugSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 指派给我Bug
      */

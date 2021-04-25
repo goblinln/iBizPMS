@@ -102,6 +102,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductStatsSearchContext" resultMap="ProductStatsResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[NoOpenProduct]-->
     <sql id="NoOpenProduct" databaseId="mysql">
@@ -119,6 +123,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByNoOpenProduct"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductStatsSearchContext" resultMap="ProductStatsResultMap">
+		<include refid="NoOpenProduct" />
+	</select>
 
     <!--数据查询[ProdctQuantiGird]-->
     <sql id="ProdctQuantiGird" databaseId="mysql">
@@ -127,6 +135,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProdctQuantiGird"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductStatsSearchContext" resultMap="ProductStatsResultMap">
+		<include refid="ProdctQuantiGird" />
+	</select>
 
     <!--数据查询[ProductInputTable]-->
     <sql id="ProductInputTable" databaseId="mysql">
@@ -135,6 +147,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProductInputTable"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductStatsSearchContext" resultMap="ProductStatsResultMap">
+		<include refid="ProductInputTable" />
+	</select>
 
     <!--数据查询[Productcompletionstatistics]-->
     <sql id="Productcompletionstatistics" databaseId="mysql">
@@ -143,6 +159,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProductcompletionstatistics"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductStatsSearchContext" resultMap="ProductStatsResultMap">
+		<include refid="Productcompletionstatistics" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -154,6 +174,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductStatsSearchContext" resultMap="ProductStatsResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

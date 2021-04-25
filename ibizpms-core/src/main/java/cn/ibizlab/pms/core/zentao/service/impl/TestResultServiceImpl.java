@@ -315,6 +315,17 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
 	}
 
 
+    public List<TestResult> selectQueryByCurTestRun(TestResultSearchContext context){
+        return baseMapper.selectQueryByCurTestRun(context, context.getSelectCond());
+    }
+    public List<TestResult> selectQueryByDefault(TestResultSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<TestResult> selectQueryByView(TestResultSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 CurTestRun
      */

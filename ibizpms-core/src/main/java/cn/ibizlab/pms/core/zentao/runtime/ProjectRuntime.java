@@ -144,7 +144,53 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public List<Project> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        ProjectSearchContext searchContext = (ProjectSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("BugSelectableProjectList"))
+            return projectService.selectQueryByBugSelectableProjectList(searchContext);
+        if (iPSDataQuery.getName().equals("CurDefaultQuery"))
+            return projectService.selectQueryByCurDefaultQuery(searchContext);
+        if (iPSDataQuery.getName().equals("CurDefaultQueryExp"))
+            return projectService.selectQueryByCurDefaultQueryExp(searchContext);
+        if (iPSDataQuery.getName().equals("CurPlanProject"))
+            return projectService.selectQueryByCurPlanProject(searchContext);
+        if (iPSDataQuery.getName().equals("CurProduct"))
+            return projectService.selectQueryByCurProduct(searchContext);
+        if (iPSDataQuery.getName().equals("CurUser"))
+            return projectService.selectQueryByCurUser(searchContext);
+        if (iPSDataQuery.getName().equals("CurUserSa"))
+            return projectService.selectQueryByCurUserSa(searchContext);
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return projectService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("DeveloperQuery"))
+            return projectService.selectQueryByDeveloperQuery(searchContext);
+        if (iPSDataQuery.getName().equals("ESBulk"))
+            return projectService.selectQueryByESBulk(searchContext);
+        if (iPSDataQuery.getName().equals("InvolvedProject"))
+            return projectService.selectQueryByInvolvedProject(searchContext);
+        if (iPSDataQuery.getName().equals("InvolvedProjectStoryTaskBug"))
+            return projectService.selectQueryByInvolvedProjectStoryTaskBug(searchContext);
+        if (iPSDataQuery.getName().equals("MyProject"))
+            return projectService.selectQueryByMyProject(searchContext);
+        if (iPSDataQuery.getName().equals("OpenByQuery"))
+            return projectService.selectQueryByOpenByQuery(searchContext);
+        if (iPSDataQuery.getName().equals("OpenQuery"))
+            return projectService.selectQueryByOpenQuery(searchContext);
+        if (iPSDataQuery.getName().equals("PMQuery"))
+            return projectService.selectQueryByPMQuery(searchContext);
+        if (iPSDataQuery.getName().equals("POQuery"))
+            return projectService.selectQueryByPOQuery(searchContext);
+        if (iPSDataQuery.getName().equals("ProjectTeam"))
+            return projectService.selectQueryByProjectTeam(searchContext);
+        if (iPSDataQuery.getName().equals("QDQuery"))
+            return projectService.selectQueryByQDQuery(searchContext);
+        if (iPSDataQuery.getName().equals("RDQuery"))
+            return projectService.selectQueryByRDQuery(searchContext);
+        if (iPSDataQuery.getName().equals("StoryProject"))
+            return projectService.selectQueryByStoryProject(searchContext);
+        if (iPSDataQuery.getName().equals("UnDoneProject"))
+            return projectService.selectQueryByUnDoneProject(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return projectService.selectQueryByView(searchContext);
         return null;
     }
 

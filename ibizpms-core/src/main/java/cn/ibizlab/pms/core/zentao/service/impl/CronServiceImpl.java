@@ -214,6 +214,14 @@ public class CronServiceImpl extends ServiceImpl<CronMapper, Cron> implements IC
 
 
 
+    public List<Cron> selectQueryByDefault(CronSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Cron> selectQueryByView(CronSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

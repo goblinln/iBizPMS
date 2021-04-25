@@ -108,7 +108,17 @@ public class IbzproProjectUserTaskRuntime extends cn.ibizlab.pms.core.runtime.Sy
 
     @Override
     public List<IbzproProjectUserTask> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        IbzproProjectUserTaskSearchContext searchContext = (IbzproProjectUserTaskSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return ibzproprojectusertaskService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("ProjectDailyTask"))
+            return ibzproprojectusertaskService.selectQueryByProjectDailyTask(searchContext);
+        if (iPSDataQuery.getName().equals("ProjectMonthlyTask"))
+            return ibzproprojectusertaskService.selectQueryByProjectMonthlyTask(searchContext);
+        if (iPSDataQuery.getName().equals("ProjectWeeklyTask"))
+            return ibzproprojectusertaskService.selectQueryByProjectWeeklyTask(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return ibzproprojectusertaskService.selectQueryByView(searchContext);
         return null;
     }
 

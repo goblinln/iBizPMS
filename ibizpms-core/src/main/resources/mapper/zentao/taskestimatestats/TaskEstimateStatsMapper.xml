@@ -62,6 +62,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByActionMonth"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskEstimateStatsSearchContext" resultMap="TaskEstimateStatsResultMap">
+		<include refid="ActionMonth" />
+	</select>
 
     <!--数据查询[ActionYear]-->
     <sql id="ActionYear" databaseId="mysql">
@@ -70,6 +74,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByActionYear"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskEstimateStatsSearchContext" resultMap="TaskEstimateStatsResultMap">
+		<include refid="ActionYear" />
+	</select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
@@ -78,6 +86,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskEstimateStatsSearchContext" resultMap="TaskEstimateStatsResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[TaskEstimateStatsSum]-->
     <sql id="TaskEstimateStatsSum" databaseId="mysql">
@@ -86,6 +98,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByTaskEstimateStatsSum"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskEstimateStatsSearchContext" resultMap="TaskEstimateStatsResultMap">
+		<include refid="TaskEstimateStatsSum" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -94,6 +110,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskEstimateStatsSearchContext" resultMap="TaskEstimateStatsResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

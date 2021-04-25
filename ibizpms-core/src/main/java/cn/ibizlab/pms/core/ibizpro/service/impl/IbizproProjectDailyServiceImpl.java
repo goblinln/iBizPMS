@@ -262,6 +262,14 @@ public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDa
     }
 
 
+    public List<IbizproProjectDaily> selectQueryByDefault(IbizproProjectDailySearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IbizproProjectDaily> selectQueryByView(IbizproProjectDailySearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

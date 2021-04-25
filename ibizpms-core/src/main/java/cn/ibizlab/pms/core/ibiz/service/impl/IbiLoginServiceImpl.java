@@ -171,6 +171,14 @@ public class IbiLoginServiceImpl extends ServiceImpl<IbiLoginMapper, IbiLogin> i
 
 
 
+    public List<IbiLogin> selectQueryByDefault(IbiLoginSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IbiLogin> selectQueryByView(IbiLoginSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

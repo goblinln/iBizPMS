@@ -19,6 +19,12 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ProjectTeamMapper extends BaseMapper<ProjectTeam> {
 
+    List<ProjectTeam> selectQueryByDefault(@Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
+    List<ProjectTeam> selectQueryByProjectTeamPm(@Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
+    List<ProjectTeam> selectQueryByRowEditDefault(@Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
+    List<ProjectTeam> selectQueryByTaskCntEstimateConsumedLeft(@Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
+    List<ProjectTeam> selectQueryByView(@Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
+
     Page<ProjectTeam> searchDefault(IPage page, @Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
     Page<ProjectTeam> searchProjectTeamPm(IPage page, @Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);
     Page<ProjectTeam> searchRowEditDefault(IPage page, @Param("srf") ProjectTeamSearchContext context, @Param("ew") Wrapper<ProjectTeam> wrapper);

@@ -273,6 +273,23 @@ public class PRODUCTTEAMServiceImpl extends ServiceImpl<PRODUCTTEAMMapper, PRODU
 	}
 
 
+    public List<PRODUCTTEAM> selectQueryByDefault(PRODUCTTEAMSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<PRODUCTTEAM> selectQueryByProductTeamInfo(PRODUCTTEAMSearchContext context){
+        return baseMapper.selectQueryByProductTeamInfo(context, context.getSelectCond());
+    }
+    public List<PRODUCTTEAM> selectQueryByProjectApp(PRODUCTTEAMSearchContext context){
+        return baseMapper.selectQueryByProjectApp(context, context.getSelectCond());
+    }
+    public List<PRODUCTTEAM> selectQueryByRowEditDefaultProductTeam(PRODUCTTEAMSearchContext context){
+        return baseMapper.selectQueryByRowEditDefaultProductTeam(context, context.getSelectCond());
+    }
+    public List<PRODUCTTEAM> selectQueryByView(PRODUCTTEAMSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

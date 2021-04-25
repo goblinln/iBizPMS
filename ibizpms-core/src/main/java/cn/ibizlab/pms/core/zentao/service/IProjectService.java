@@ -73,6 +73,31 @@ public interface IProjectService extends IService<Project> {
     Project updateOrder(Project et);
     boolean updateOrderBatch(List<Project> etList);
     List<Project> select(ProjectSearchContext context);
+    
+    List<Project> selectQueryByBugSelectableProjectList(ProjectSearchContext context);
+    List<Project> selectQueryByCurDefaultQuery(ProjectSearchContext context);
+    List<Project> selectQueryByCurDefaultQueryExp(ProjectSearchContext context);
+    List<Project> selectQueryByCurPlanProject(ProjectSearchContext context);
+    List<Project> selectQueryByCurProduct(ProjectSearchContext context);
+    List<Project> selectQueryByCurUser(ProjectSearchContext context);
+    List<Project> selectQueryByCurUserSa(ProjectSearchContext context);
+    List<Project> selectQueryByDefault(ProjectSearchContext context);
+    List<Project> selectQueryByDeveloperQuery(ProjectSearchContext context);
+    List<Project> selectQueryByESBulk(ProjectSearchContext context);
+    List<Project> selectQueryByInvolvedProject(ProjectSearchContext context);
+    List<Project> selectQueryByInvolvedProjectStoryTaskBug(ProjectSearchContext context);
+    List<Project> selectQueryByMyProject(ProjectSearchContext context);
+    List<Project> selectQueryByOpenByQuery(ProjectSearchContext context);
+    List<Project> selectQueryByOpenQuery(ProjectSearchContext context);
+    List<Project> selectQueryByPMQuery(ProjectSearchContext context);
+    List<Project> selectQueryByPOQuery(ProjectSearchContext context);
+    List<Project> selectQueryByProjectTeam(ProjectSearchContext context);
+    List<Project> selectQueryByQDQuery(ProjectSearchContext context);
+    List<Project> selectQueryByRDQuery(ProjectSearchContext context);
+    List<Project> selectQueryByStoryProject(ProjectSearchContext context);
+    List<Project> selectQueryByUnDoneProject(ProjectSearchContext context);
+    List<Project> selectQueryByView(ProjectSearchContext context);
+
     Page<Project> searchBugProject(ProjectSearchContext context);
     Page<Project> searchCurDefaultQuery(ProjectSearchContext context);
     Page<Project> searchCurDefaultQueryExp(ProjectSearchContext context);

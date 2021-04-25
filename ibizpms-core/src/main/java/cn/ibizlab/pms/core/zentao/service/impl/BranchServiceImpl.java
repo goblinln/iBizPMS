@@ -269,6 +269,20 @@ public class BranchServiceImpl extends ServiceImpl<BranchMapper, Branch> impleme
     }
 
 
+    public List<Branch> selectQueryByCurProduct(BranchSearchContext context){
+        return baseMapper.selectQueryByCurProduct(context, context.getSelectCond());
+    }
+    public List<Branch> selectQueryByDefault(BranchSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Branch> selectQueryByDefaultBranch(BranchSearchContext context){
+        return baseMapper.selectQueryByDefaultBranch(context, context.getSelectCond());
+    }
+    public List<Branch> selectQueryByView(BranchSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 CurProduct
      */

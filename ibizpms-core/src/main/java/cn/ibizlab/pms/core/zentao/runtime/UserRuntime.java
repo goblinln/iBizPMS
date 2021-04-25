@@ -114,7 +114,23 @@ public class UserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public List<User> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        UserSearchContext searchContext = (UserSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("BugUser"))
+            return userService.selectQueryByBugUser(searchContext);
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return userService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("getByLogin"))
+            return userService.selectQueryByGetByLogin(searchContext);
+        if (iPSDataQuery.getName().equals("ProjectTeamM"))
+            return userService.selectQueryByProjectTeamM(searchContext);
+        if (iPSDataQuery.getName().equals("ProjectTeamUser"))
+            return userService.selectQueryByProjectTeamUser(searchContext);
+        if (iPSDataQuery.getName().equals("ProjectTeamUserTask"))
+            return userService.selectQueryByProjectTeamUserTask(searchContext);
+        if (iPSDataQuery.getName().equals("TASKTEAM"))
+            return userService.selectQueryByTaskTeam(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return userService.selectQueryByView(searchContext);
         return null;
     }
 

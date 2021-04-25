@@ -104,7 +104,13 @@ public class ProjectTaskestimateRuntime extends cn.ibizlab.pms.core.runtime.Syst
 
     @Override
     public List<ProjectTaskestimate> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        ProjectTaskestimateSearchContext searchContext = (ProjectTaskestimateSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("AccountDetail"))
+            return projecttaskestimateService.selectQueryByAccountDetail(searchContext);
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return projecttaskestimateService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return projecttaskestimateService.selectQueryByView(searchContext);
         return null;
     }
 

@@ -214,6 +214,14 @@ public class UserQueryServiceImpl extends ServiceImpl<UserQueryMapper, UserQuery
 
 
 
+    public List<UserQuery> selectQueryByDefault(UserQuerySearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<UserQuery> selectQueryByView(UserQuerySearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

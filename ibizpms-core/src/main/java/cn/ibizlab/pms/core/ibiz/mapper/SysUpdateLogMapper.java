@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface SysUpdateLogMapper extends BaseMapper<SysUpdateLog> {
 
+    List<SysUpdateLog> selectQueryByDefault(@Param("srf") SysUpdateLogSearchContext context, @Param("ew") Wrapper<SysUpdateLog> wrapper);
+    List<SysUpdateLog> selectQueryByView(@Param("srf") SysUpdateLogSearchContext context, @Param("ew") Wrapper<SysUpdateLog> wrapper);
+
     Page<SysUpdateLog> searchDefault(IPage page, @Param("srf") SysUpdateLogSearchContext context, @Param("ew") Wrapper<SysUpdateLog> wrapper);
     @Override
     SysUpdateLog selectById(Serializable id);

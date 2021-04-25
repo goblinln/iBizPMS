@@ -53,6 +53,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IBZProTranslatorSearchContext" resultMap="IBZProTranslatorResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[Simple]-->
     <sql id="Simple" databaseId="mysql">
@@ -61,6 +65,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryBySimple"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IBZProTranslatorSearchContext" resultMap="IBZProTranslatorResultMap">
+		<include refid="Simple" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -69,6 +77,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IBZProTranslatorSearchContext" resultMap="IBZProTranslatorResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

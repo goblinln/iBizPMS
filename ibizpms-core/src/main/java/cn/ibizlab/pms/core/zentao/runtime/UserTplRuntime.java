@@ -104,7 +104,13 @@ public class UserTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public List<UserTpl> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        UserTplSearchContext searchContext = (UserTplSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return usertplService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("MyUserTpl"))
+            return usertplService.selectQueryByMyUserTpl(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return usertplService.selectQueryByView(searchContext);
         return null;
     }
 

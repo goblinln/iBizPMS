@@ -19,6 +19,15 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IbzDailyMapper extends BaseMapper<IbzDaily> {
 
+    List<IbzDaily> selectQueryByDefault(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
+    List<IbzDaily> selectQueryByMyAllDaily(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
+    List<IbzDaily> selectQueryByMyDaily(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
+    List<IbzDaily> selectQueryByMyNotSubmit(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
+    List<IbzDaily> selectQueryByMySubmitDaily(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
+    List<IbzDaily> selectQueryByProductDaily(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
+    List<IbzDaily> selectQueryByProjectDaily(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
+    List<IbzDaily> selectQueryByView(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
+
     Page<IbzDaily> searchDefault(IPage page, @Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
     Page<IbzDaily> searchMyAllDaily(IPage page, @Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
     Page<IbzDaily> searchMyDaily(IPage page, @Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);

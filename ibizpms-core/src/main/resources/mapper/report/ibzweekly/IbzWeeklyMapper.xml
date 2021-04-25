@@ -93,6 +93,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.report.filter.IbzWeeklySearchContext" resultMap="IbzWeeklyResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[MyNotSubmit]-->
     <sql id="MyNotSubmit" databaseId="mysql">
@@ -101,6 +105,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyNotSubmit"  parameterType="cn.ibizlab.pms.core.report.filter.IbzWeeklySearchContext" resultMap="IbzWeeklyResultMap">
+		<include refid="MyNotSubmit" />
+	</select>
 
     <!--数据查询[MyWeekly]-->
     <sql id="MyWeekly" databaseId="mysql">
@@ -115,6 +123,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyWeekly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzWeeklySearchContext" resultMap="IbzWeeklyResultMap">
+		<include refid="MyWeekly" />
+	</select>
 
     <!--数据查询[ProductTeamMemberWeekly]-->
     <sql id="ProductTeamMemberWeekly" databaseId="mysql">
@@ -126,6 +138,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProductTeamMemberWeekly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzWeeklySearchContext" resultMap="IbzWeeklyResultMap">
+		<include refid="ProductTeamMemberWeekly" />
+	</select>
 
     <!--数据查询[ProjectWeekly]-->
     <sql id="ProjectWeekly" databaseId="mysql">
@@ -137,6 +153,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectWeekly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzWeeklySearchContext" resultMap="IbzWeeklyResultMap">
+		<include refid="ProjectWeekly" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -145,6 +165,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.report.filter.IbzWeeklySearchContext" resultMap="IbzWeeklyResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

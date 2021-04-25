@@ -214,6 +214,14 @@ public class BlockServiceImpl extends ServiceImpl<BlockMapper, Block> implements
 
 
 
+    public List<Block> selectQueryByDefault(BlockSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Block> selectQueryByView(BlockSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

@@ -65,6 +65,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByCurUSERCONTACT"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext" resultMap="UserContactResultMap">
+		<include refid="CurUSERCONTACT" />
+	</select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
@@ -73,6 +77,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext" resultMap="UserContactResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[MyUSERCONTACT]-->
     <sql id="MyUSERCONTACT" databaseId="mysql">
@@ -84,6 +92,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyUSERCONTACT"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext" resultMap="UserContactResultMap">
+		<include refid="MyUSERCONTACT" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -92,6 +104,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext" resultMap="UserContactResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

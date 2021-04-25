@@ -214,6 +214,23 @@ public class TaskEstimateStatsServiceImpl extends ServiceImpl<TaskEstimateStatsM
 
 
 
+    public List<TaskEstimateStats> selectQueryByActionMonth(TaskEstimateStatsSearchContext context){
+        return baseMapper.selectQueryByActionMonth(context, context.getSelectCond());
+    }
+    public List<TaskEstimateStats> selectQueryByActionYear(TaskEstimateStatsSearchContext context){
+        return baseMapper.selectQueryByActionYear(context, context.getSelectCond());
+    }
+    public List<TaskEstimateStats> selectQueryByDefault(TaskEstimateStatsSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<TaskEstimateStats> selectQueryByTaskEstimateStatsSum(TaskEstimateStatsSearchContext context){
+        return baseMapper.selectQueryByTaskEstimateStatsSum(context, context.getSelectCond());
+    }
+    public List<TaskEstimateStats> selectQueryByView(TaskEstimateStatsSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 日志月
      */

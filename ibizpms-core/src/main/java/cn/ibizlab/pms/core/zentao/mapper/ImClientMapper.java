@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ImClientMapper extends BaseMapper<ImClient> {
 
+    List<ImClient> selectQueryByDefault(@Param("srf") ImClientSearchContext context, @Param("ew") Wrapper<ImClient> wrapper);
+    List<ImClient> selectQueryByView(@Param("srf") ImClientSearchContext context, @Param("ew") Wrapper<ImClient> wrapper);
+
     Page<ImClient> searchDefault(IPage page, @Param("srf") ImClientSearchContext context, @Param("ew") Wrapper<ImClient> wrapper);
     @Override
     ImClient selectById(Serializable id);

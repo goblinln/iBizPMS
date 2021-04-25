@@ -37,6 +37,11 @@ public interface IPSSysAppService {
     boolean checkKey(PSSysApp et);
     boolean save(PSSysApp et);
     void saveBatch(List<PSSysApp> list);
+    
+    List<PSSysApp> selectQueryByBuild(PSSysAppSearchContext context);
+    List<PSSysApp> selectQueryByDefault(PSSysAppSearchContext context);
+    List<PSSysApp> selectQueryByView(PSSysAppSearchContext context);
+
     Page<PSSysApp> searchBuild(PSSysAppSearchContext context);
     Page<PSSysApp> searchDefault(PSSysAppSearchContext context);
     List<PSSysApp> selectByPssysserviceapiid(String pssysserviceapiid);

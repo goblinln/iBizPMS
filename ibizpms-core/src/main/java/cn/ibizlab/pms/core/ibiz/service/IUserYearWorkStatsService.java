@@ -49,6 +49,13 @@ public interface IUserYearWorkStatsService extends IService<UserYearWorkStats> {
     UserYearWorkStats updateTitleByYear(UserYearWorkStats et);
     boolean updateTitleByYearBatch(List<UserYearWorkStats> etList);
     List<UserYearWorkStats> select(UserYearWorkStatsSearchContext context);
+    
+    List<UserYearWorkStats> selectQueryByDefault(UserYearWorkStatsSearchContext context);
+    List<UserYearWorkStats> selectQueryByMonthFinishTaskAndBug(UserYearWorkStatsSearchContext context);
+    List<UserYearWorkStats> selectQueryByMonthOpenedBugAndCase(UserYearWorkStatsSearchContext context);
+    List<UserYearWorkStats> selectQueryByMonthOpenedStory(UserYearWorkStatsSearchContext context);
+    List<UserYearWorkStats> selectQueryByView(UserYearWorkStatsSearchContext context);
+
     Page<UserYearWorkStats> searchDefault(UserYearWorkStatsSearchContext context);
     Page<UserYearWorkStats> searchMonthFinishTaskAndBug(UserYearWorkStatsSearchContext context);
     Page<UserYearWorkStats> searchMonthOpenedBugAndCase(UserYearWorkStatsSearchContext context);

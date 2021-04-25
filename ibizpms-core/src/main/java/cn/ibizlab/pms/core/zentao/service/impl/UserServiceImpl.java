@@ -236,6 +236,32 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
 
 
+    public List<User> selectQueryByBugUser(UserSearchContext context){
+        return baseMapper.selectQueryByBugUser(context, context.getSelectCond());
+    }
+    public List<User> selectQueryByDefault(UserSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<User> selectQueryByGetByLogin(UserSearchContext context){
+        return baseMapper.selectQueryByGetByLogin(context, context.getSelectCond());
+    }
+    public List<User> selectQueryByProjectTeamM(UserSearchContext context){
+        return baseMapper.selectQueryByProjectTeamM(context, context.getSelectCond());
+    }
+    public List<User> selectQueryByProjectTeamUser(UserSearchContext context){
+        return baseMapper.selectQueryByProjectTeamUser(context, context.getSelectCond());
+    }
+    public List<User> selectQueryByProjectTeamUserTask(UserSearchContext context){
+        return baseMapper.selectQueryByProjectTeamUserTask(context, context.getSelectCond());
+    }
+    public List<User> selectQueryByTaskTeam(UserSearchContext context){
+        return baseMapper.selectQueryByTaskTeam(context, context.getSelectCond());
+    }
+    public List<User> selectQueryByView(UserSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 Bug用户
      */

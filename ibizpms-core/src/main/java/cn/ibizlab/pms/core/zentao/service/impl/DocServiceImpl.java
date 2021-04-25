@@ -376,6 +376,44 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     }
 
 
+    public List<Doc> selectQueryByChildDocLibDoc(DocSearchContext context){
+        return baseMapper.selectQueryByChildDocLibDoc(context, context.getSelectCond());
+    }
+    public List<Doc> selectQueryByDefault(DocSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Doc> selectQueryByDocLibAndDoc(DocSearchContext context){
+        return baseMapper.selectQueryByDocLibAndDoc(context, context.getSelectCond());
+    }
+    public List<Doc> selectQueryByDocLibDoc(DocSearchContext context){
+        return baseMapper.selectQueryByDocLibDoc(context, context.getSelectCond());
+    }
+    public List<Doc> selectQueryByDocModuleDoc(DocSearchContext context){
+        return baseMapper.selectQueryByDocModuleDoc(context, context.getSelectCond());
+    }
+    public List<Doc> selectQueryByDocStatus(DocSearchContext context){
+        return baseMapper.selectQueryByDocStatus(context, context.getSelectCond());
+    }
+    public List<Doc> selectQueryByModuleDocChild(DocSearchContext context){
+        return baseMapper.selectQueryByModuleDocChild(context, context.getSelectCond());
+    }
+    public List<Doc> selectQueryByMyFavourite(DocSearchContext context){
+        return baseMapper.selectQueryByMyFavourite(context, context.getSelectCond());
+    }
+    public List<Doc> selectQueryByMyFavouritesOnlyDoc(DocSearchContext context){
+        return baseMapper.selectQueryByMyFavouritesOnlyDoc(context, context.getSelectCond());
+    }
+    public List<Doc> selectQueryByNotRootDoc(DocSearchContext context){
+        return baseMapper.selectQueryByNotRootDoc(context, context.getSelectCond());
+    }
+    public List<Doc> selectQueryByRootDoc(DocSearchContext context){
+        return baseMapper.selectQueryByRootDoc(context, context.getSelectCond());
+    }
+    public List<Doc> selectQueryByView(DocSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 文档库文档（子库）
      */

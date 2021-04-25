@@ -283,6 +283,17 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
     }
 
 
+    public List<ProjectProduct> selectQueryByDefault(ProjectProductSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<ProjectProduct> selectQueryByRelationPlan(ProjectProductSearchContext context){
+        return baseMapper.selectQueryByRelationPlan(context, context.getSelectCond());
+    }
+    public List<ProjectProduct> selectQueryByView(ProjectProductSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

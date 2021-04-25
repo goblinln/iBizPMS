@@ -45,6 +45,17 @@ public interface IActionService extends IService<Action> {
     boolean save(Action et);
     void saveBatch(List<Action> list);
     List<Action> select(ActionSearchContext context);
+    
+    List<Action> selectQueryByBianGengLineHistory(ActionSearchContext context);
+    List<Action> selectQueryByDefault(ActionSearchContext context);
+    List<Action> selectQueryByMobType(ActionSearchContext context);
+    List<Action> selectQueryByMyTrends(ActionSearchContext context);
+    List<Action> selectQueryByProductTrends(ActionSearchContext context);
+    List<Action> selectQueryByProjectTrends(ActionSearchContext context);
+    List<Action> selectQueryByQueryUserYEAR(ActionSearchContext context);
+    List<Action> selectQueryByType(ActionSearchContext context);
+    List<Action> selectQueryByView(ActionSearchContext context);
+
     Page<Action> searchDefault(ActionSearchContext context);
     Page<Action> searchMobType(ActionSearchContext context);
     Page<Action> searchMyTrends(ActionSearchContext context);

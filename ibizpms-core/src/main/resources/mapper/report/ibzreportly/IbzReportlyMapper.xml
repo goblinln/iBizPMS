@@ -80,6 +80,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext" resultMap="IbzReportlyResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[MyAllReportly]-->
     <sql id="MyAllReportly" databaseId="mysql">
@@ -91,6 +95,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyAllReportly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext" resultMap="IbzReportlyResultMap">
+		<include refid="MyAllReportly" />
+	</select>
 
     <!--数据查询[MyReceived]-->
     <sql id="MyReceived" databaseId="mysql">
@@ -105,6 +113,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyReceived"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext" resultMap="IbzReportlyResultMap">
+		<include refid="MyReceived" />
+	</select>
 
     <!--数据查询[MyReportlyMob]-->
     <sql id="MyReportlyMob" databaseId="mysql">
@@ -116,6 +128,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyReportlyMob"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext" resultMap="IbzReportlyResultMap">
+		<include refid="MyReportlyMob" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -124,6 +140,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext" resultMap="IbzReportlyResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

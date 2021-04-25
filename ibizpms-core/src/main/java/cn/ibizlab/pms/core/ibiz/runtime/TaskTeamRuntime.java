@@ -102,7 +102,11 @@ public class TaskTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
 
     @Override
     public List<TaskTeam> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        TaskTeamSearchContext searchContext = (TaskTeamSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return taskteamService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return taskteamService.selectQueryByView(searchContext);
         return null;
     }
 

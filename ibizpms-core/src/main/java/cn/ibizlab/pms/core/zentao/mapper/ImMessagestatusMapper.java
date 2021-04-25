@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ImMessagestatusMapper extends BaseMapper<ImMessagestatus> {
 
+    List<ImMessagestatus> selectQueryByDefault(@Param("srf") ImMessagestatusSearchContext context, @Param("ew") Wrapper<ImMessagestatus> wrapper);
+    List<ImMessagestatus> selectQueryByView(@Param("srf") ImMessagestatusSearchContext context, @Param("ew") Wrapper<ImMessagestatus> wrapper);
+
     Page<ImMessagestatus> searchDefault(IPage page, @Param("srf") ImMessagestatusSearchContext context, @Param("ew") Wrapper<ImMessagestatus> wrapper);
     @Override
     ImMessagestatus selectById(Serializable id);

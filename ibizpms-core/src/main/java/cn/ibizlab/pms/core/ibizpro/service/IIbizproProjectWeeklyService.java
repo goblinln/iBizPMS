@@ -41,6 +41,10 @@ public interface IIbizproProjectWeeklyService extends IService<IbizproProjectWee
     boolean save(IbizproProjectWeekly et);
     void saveBatch(List<IbizproProjectWeekly> list);
     List<IbizproProjectWeekly> select(IbizproProjectWeeklySearchContext context);
+    
+    List<IbizproProjectWeekly> selectQueryByDefault(IbizproProjectWeeklySearchContext context);
+    List<IbizproProjectWeekly> selectQueryByView(IbizproProjectWeeklySearchContext context);
+
     Page<IbizproProjectWeekly> searchDefault(IbizproProjectWeeklySearchContext context);
     List<IbizproProjectWeekly> selectByProject(Long id);
     void removeByProject(Long id);

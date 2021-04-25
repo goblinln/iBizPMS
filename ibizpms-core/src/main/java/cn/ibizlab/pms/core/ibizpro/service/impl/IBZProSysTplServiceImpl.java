@@ -226,6 +226,14 @@ public class IBZProSysTplServiceImpl extends ServiceImpl<IBZProSysTplMapper, IBZ
     }
 
 
+    public List<IBZProSysTpl> selectQueryByDefault(IBZProSysTplSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IBZProSysTpl> selectQueryByView(IBZProSysTplSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

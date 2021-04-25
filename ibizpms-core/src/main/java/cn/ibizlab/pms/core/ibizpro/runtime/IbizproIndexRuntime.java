@@ -106,7 +106,11 @@ public class IbizproIndexRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public List<IbizproIndex> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        IbizproIndexSearchContext searchContext = (IbizproIndexSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return ibizproindexService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return ibizproindexService.selectQueryByView(searchContext);
         return null;
     }
 

@@ -164,7 +164,73 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
 
     @Override
     public List<Bug> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        BugSearchContext searchContext = (BugSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("AssignedToMyBug"))
+            return bugService.selectQueryByAssignedToMyBug(searchContext);
+        if (iPSDataQuery.getName().equals("AssignedToMyBugPc"))
+            return bugService.selectQueryByAssignedToMyBugPc(searchContext);
+        if (iPSDataQuery.getName().equals("BuildBugs"))
+            return bugService.selectQueryByBuildBugs(searchContext);
+        if (iPSDataQuery.getName().equals("buildLinkResolvedBugs"))
+            return bugService.selectQueryByBuildLinkResolvedBugs(searchContext);
+        if (iPSDataQuery.getName().equals("BuildOpenBugs"))
+            return bugService.selectQueryByBuildOpenBugs(searchContext);
+        if (iPSDataQuery.getName().equals("BuildProduceBug"))
+            return bugService.selectQueryByBuildProduceBug(searchContext);
+        if (iPSDataQuery.getName().equals("BuildProduceBugModule"))
+            return bugService.selectQueryByBuildProduceBugModule(searchContext);
+        if (iPSDataQuery.getName().equals("BuildProduceBugModule_Project"))
+            return bugService.selectQueryByBuildProduceBugModule_Project(searchContext);
+        if (iPSDataQuery.getName().equals("BuildProduceBugOpenedBy"))
+            return bugService.selectQueryByBuildProduceBugOpenedBy(searchContext);
+        if (iPSDataQuery.getName().equals("BuildProduceBugOpenedBy_Project"))
+            return bugService.selectQueryByBuildProduceBugOpenedBy_Project(searchContext);
+        if (iPSDataQuery.getName().equals("BuildProduceBugRES"))
+            return bugService.selectQueryByBuildProduceBugRES(searchContext);
+        if (iPSDataQuery.getName().equals("BuildProduceBugRESOLVEDBY"))
+            return bugService.selectQueryByBuildProduceBugRESOLVEDBY(searchContext);
+        if (iPSDataQuery.getName().equals("BuildProduceBugRESOLVEDBY_Project"))
+            return bugService.selectQueryByBuildProduceBugRESOLVEDBY_Project(searchContext);
+        if (iPSDataQuery.getName().equals("BuildProduceBugResolution_Project"))
+            return bugService.selectQueryByBuildProduceBugResolution_Project(searchContext);
+        if (iPSDataQuery.getName().equals("BuildProduceBugSeverity_Project"))
+            return bugService.selectQueryByBuildProduceBugSeverity_Project(searchContext);
+        if (iPSDataQuery.getName().equals("BuildProduceBugStatus_Project"))
+            return bugService.selectQueryByBuildProduceBugStatus_Project(searchContext);
+        if (iPSDataQuery.getName().equals("BuildProduceBugType_Project"))
+            return bugService.selectQueryByBuildProduceBugType_Project(searchContext);
+        if (iPSDataQuery.getName().equals("CurUserResolve"))
+            return bugService.selectQueryByCurUserResolve(searchContext);
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return bugService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("ESBulk"))
+            return bugService.selectQueryByESBulk(searchContext);
+        if (iPSDataQuery.getName().equals("MyAgentBug"))
+            return bugService.selectQueryByMyAgentBug(searchContext);
+        if (iPSDataQuery.getName().equals("MyCurOpenedBug"))
+            return bugService.selectQueryByMyCurOpenedBug(searchContext);
+        if (iPSDataQuery.getName().equals("MyFavorites"))
+            return bugService.selectQueryByMyFavorites(searchContext);
+        if (iPSDataQuery.getName().equals("NotCurPlanLinkBug"))
+            return bugService.selectQueryByNotCurPlanLinkBug(searchContext);
+        if (iPSDataQuery.getName().equals("ReleaseBugs"))
+            return bugService.selectQueryByReleaseBugs(searchContext);
+        if (iPSDataQuery.getName().equals("ReleaseLeftBugs"))
+            return bugService.selectQueryByReleaseLeftBugs(searchContext);
+        if (iPSDataQuery.getName().equals("ReleaseLinkableLeftBug"))
+            return bugService.selectQueryByReleaseLinkableLeftBug(searchContext);
+        if (iPSDataQuery.getName().equals("ReleaseLinkableResolvedBug"))
+            return bugService.selectQueryByReleaseLinkableResolvedBug(searchContext);
+        if (iPSDataQuery.getName().equals("ReportBugs"))
+            return bugService.selectQueryByReportBugs(searchContext);
+        if (iPSDataQuery.getName().equals("SelectBugByBuild"))
+            return bugService.selectQueryBySelectBugByBuild(searchContext);
+        if (iPSDataQuery.getName().equals("SelectBugsByProject"))
+            return bugService.selectQueryBySelectBugsByProject(searchContext);
+        if (iPSDataQuery.getName().equals("TaskBug"))
+            return bugService.selectQueryByTaskBug(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return bugService.selectQueryByView(searchContext);
         return null;
     }
 

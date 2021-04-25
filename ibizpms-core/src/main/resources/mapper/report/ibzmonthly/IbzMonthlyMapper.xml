@@ -107,6 +107,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[MyMonthly]-->
     <sql id="MyMonthly" databaseId="mysql">
@@ -118,6 +122,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyMonthly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
+		<include refid="MyMonthly" />
+	</select>
 
     <!--数据查询[MyMonthlyMob]-->
     <sql id="MyMonthlyMob" databaseId="mysql">
@@ -129,6 +137,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyMonthlyMob"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
+		<include refid="MyMonthlyMob" />
+	</select>
 
     <!--数据查询[MyReceivedMonthly]-->
     <sql id="MyReceivedMonthly" databaseId="mysql">
@@ -143,6 +155,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyReceivedMonthly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
+		<include refid="MyReceivedMonthly" />
+	</select>
 
     <!--数据查询[MySubmitMonthly]-->
     <sql id="MySubmitMonthly" databaseId="mysql">
@@ -157,6 +173,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMySubmitMonthly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
+		<include refid="MySubmitMonthly" />
+	</select>
 
     <!--数据查询[ProductMonthly]-->
     <sql id="ProductMonthly" databaseId="mysql">
@@ -165,6 +185,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProductMonthly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
+		<include refid="ProductMonthly" />
+	</select>
 
     <!--数据查询[ProjectMonthly]-->
     <sql id="ProjectMonthly" databaseId="mysql">
@@ -176,6 +200,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectMonthly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
+		<include refid="ProjectMonthly" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -184,6 +212,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

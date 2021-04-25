@@ -214,6 +214,17 @@ public class CompanyStatsServiceImpl extends ServiceImpl<CompanyStatsMapper, Com
 
 
 
+    public List<CompanyStats> selectQueryByCompanyDynamicStats(CompanyStatsSearchContext context){
+        return baseMapper.selectQueryByCompanyDynamicStats(context, context.getSelectCond());
+    }
+    public List<CompanyStats> selectQueryByDefault(CompanyStatsSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<CompanyStats> selectQueryByView(CompanyStatsSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 公司动态统计
      */

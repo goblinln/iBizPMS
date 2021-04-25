@@ -104,7 +104,13 @@ public class IbzLibModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public List<IbzLibModule> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        IbzLibModuleSearchContext searchContext = (IbzLibModuleSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return ibzlibmoduleService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("Root_NoBranch"))
+            return ibzlibmoduleService.selectQueryByRoot_NoBranch(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return ibzlibmoduleService.selectQueryByView(searchContext);
         return null;
     }
 

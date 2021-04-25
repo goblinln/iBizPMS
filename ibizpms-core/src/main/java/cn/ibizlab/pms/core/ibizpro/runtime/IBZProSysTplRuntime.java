@@ -102,7 +102,11 @@ public class IBZProSysTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
 
     @Override
     public List<IBZProSysTpl> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        IBZProSysTplSearchContext searchContext = (IBZProSysTplSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return ibzprosystplService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return ibzprosystplService.selectQueryByView(searchContext);
         return null;
     }
 

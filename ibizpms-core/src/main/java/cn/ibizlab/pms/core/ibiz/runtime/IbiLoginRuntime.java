@@ -102,7 +102,11 @@ public class IbiLoginRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
 
     @Override
     public List<IbiLogin> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        IbiLoginSearchContext searchContext = (IbiLoginSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return ibiloginService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return ibiloginService.selectQueryByView(searchContext);
         return null;
     }
 

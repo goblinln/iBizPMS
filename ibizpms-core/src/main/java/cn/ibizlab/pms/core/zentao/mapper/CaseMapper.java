@@ -19,6 +19,30 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface CaseMapper extends BaseMapper<Case> {
 
+    List<Case> selectQueryByBatchNew(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByCurOpenedCase(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByCurSuite(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByCurTestTask(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByDefault(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByESBulk(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByModuleRePortCase(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByModuleRePortCaseEntry(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByModuleRePortCase_Project(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByMyFavorite(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByNotCurTestSuite(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByNotCurTestTask(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByNotCurTestTaskProject(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByRePortCase(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByRePortCaseEntry(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByRePortCase_Project(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByRunERRePortCase(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByRunERRePortCaseEntry(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByRunERRePortCase_Project(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByRunRePortCase(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByRunRePortCaseEntry(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByRunRePortCase_Project(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+    List<Case> selectQueryByView(@Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
+
     Page<Case> searchBatchNew(IPage page, @Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     Page<Case> searchCurOpenedCase(IPage page, @Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);
     Page<Case> searchCurSuite(IPage page, @Param("srf") CaseSearchContext context, @Param("ew") Wrapper<Case> wrapper);

@@ -217,6 +217,14 @@ public class CompileServiceImpl extends ServiceImpl<CompileMapper, Compile> impl
 
 
 
+    public List<Compile> selectQueryByDefault(CompileSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Compile> selectQueryByView(CompileSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

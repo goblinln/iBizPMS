@@ -126,6 +126,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext" resultMap="TodoResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[MyTodo]-->
     <sql id="MyTodo" databaseId="mysql">
@@ -140,6 +144,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyTodo"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext" resultMap="TodoResultMap">
+		<include refid="MyTodo" />
+	</select>
 
     <!--数据查询[MyTodoPc]-->
     <sql id="MyTodoPc" databaseId="mysql">
@@ -157,6 +165,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyTodoPc"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext" resultMap="TodoResultMap">
+		<include refid="MyTodoPc" />
+	</select>
 
     <!--数据查询[MyUpcoming]-->
     <sql id="MyUpcoming" databaseId="mysql">
@@ -168,6 +180,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyUpcoming"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext" resultMap="TodoResultMap">
+		<include refid="MyUpcoming" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -176,6 +192,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext" resultMap="TodoResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

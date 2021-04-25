@@ -102,7 +102,11 @@ public class IbizproProjectMonthlyRuntime extends cn.ibizlab.pms.core.runtime.Sy
 
     @Override
     public List<IbizproProjectMonthly> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        IbizproProjectMonthlySearchContext searchContext = (IbizproProjectMonthlySearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return ibizproprojectmonthlyService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return ibizproprojectmonthlyService.selectQueryByView(searchContext);
         return null;
     }
 

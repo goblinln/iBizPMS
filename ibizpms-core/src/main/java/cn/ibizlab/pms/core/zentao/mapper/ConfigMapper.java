@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ConfigMapper extends BaseMapper<Config> {
 
+    List<Config> selectQueryByDefault(@Param("srf") ConfigSearchContext context, @Param("ew") Wrapper<Config> wrapper);
+    List<Config> selectQueryByView(@Param("srf") ConfigSearchContext context, @Param("ew") Wrapper<Config> wrapper);
+
     Page<Config> searchDefault(IPage page, @Param("srf") ConfigSearchContext context, @Param("ew") Wrapper<Config> wrapper);
     @Override
     Config selectById(Serializable id);

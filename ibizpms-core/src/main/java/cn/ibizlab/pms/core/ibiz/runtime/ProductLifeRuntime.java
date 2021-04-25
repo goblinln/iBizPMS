@@ -108,7 +108,17 @@ public class ProductLifeRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
 
     @Override
     public List<ProductLife> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        ProductLifeSearchContext searchContext = (ProductLifeSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return productlifeService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("GetRoadmap"))
+            return productlifeService.selectQueryByGetRoadmap(searchContext);
+        if (iPSDataQuery.getName().equals("GetRoadmapS"))
+            return productlifeService.selectQueryByGetRoadmapS(searchContext);
+        if (iPSDataQuery.getName().equals("RoadMapYear"))
+            return productlifeService.selectQueryByRoadMapYear(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return productlifeService.selectQueryByView(searchContext);
         return null;
     }
 

@@ -19,6 +19,15 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ProjectModuleMapper extends BaseMapper<ProjectModule> {
 
+    List<ProjectModule> selectQueryByByPath(@Param("srf") ProjectModuleSearchContext context, @Param("ew") Wrapper<ProjectModule> wrapper);
+    List<ProjectModule> selectQueryByDefault(@Param("srf") ProjectModuleSearchContext context, @Param("ew") Wrapper<ProjectModule> wrapper);
+    List<ProjectModule> selectQueryByParentModule(@Param("srf") ProjectModuleSearchContext context, @Param("ew") Wrapper<ProjectModule> wrapper);
+    List<ProjectModule> selectQueryByRoot(@Param("srf") ProjectModuleSearchContext context, @Param("ew") Wrapper<ProjectModule> wrapper);
+    List<ProjectModule> selectQueryByRoot_NoBranch(@Param("srf") ProjectModuleSearchContext context, @Param("ew") Wrapper<ProjectModule> wrapper);
+    List<ProjectModule> selectQueryByRoot_Task(@Param("srf") ProjectModuleSearchContext context, @Param("ew") Wrapper<ProjectModule> wrapper);
+    List<ProjectModule> selectQueryByTaskModules(@Param("srf") ProjectModuleSearchContext context, @Param("ew") Wrapper<ProjectModule> wrapper);
+    List<ProjectModule> selectQueryByView(@Param("srf") ProjectModuleSearchContext context, @Param("ew") Wrapper<ProjectModule> wrapper);
+
     Page<ProjectModule> searchByPath(IPage page, @Param("srf") ProjectModuleSearchContext context, @Param("ew") Wrapper<ProjectModule> wrapper);
     Page<ProjectModule> searchDefault(IPage page, @Param("srf") ProjectModuleSearchContext context, @Param("ew") Wrapper<ProjectModule> wrapper);
     Page<ProjectModule> searchParentModule(IPage page, @Param("srf") ProjectModuleSearchContext context, @Param("ew") Wrapper<ProjectModule> wrapper);

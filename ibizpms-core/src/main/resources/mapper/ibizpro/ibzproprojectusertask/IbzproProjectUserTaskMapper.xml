@@ -73,6 +73,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzproProjectUserTaskSearchContext" resultMap="IbzproProjectUserTaskResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[ProjectDailyTask]-->
     <sql id="ProjectDailyTask" databaseId="mysql">
@@ -84,6 +88,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectDailyTask"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzproProjectUserTaskSearchContext" resultMap="IbzproProjectUserTaskResultMap">
+		<include refid="ProjectDailyTask" />
+	</select>
 
     <!--数据查询[ProjectMonthlyTask]-->
     <sql id="ProjectMonthlyTask" databaseId="mysql">
@@ -95,6 +103,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectMonthlyTask"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzproProjectUserTaskSearchContext" resultMap="IbzproProjectUserTaskResultMap">
+		<include refid="ProjectMonthlyTask" />
+	</select>
 
     <!--数据查询[ProjectWeeklyTask]-->
     <sql id="ProjectWeeklyTask" databaseId="mysql">
@@ -106,6 +118,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectWeeklyTask"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzproProjectUserTaskSearchContext" resultMap="IbzproProjectUserTaskResultMap">
+		<include refid="ProjectWeeklyTask" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -114,6 +130,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzproProjectUserTaskSearchContext" resultMap="IbzproProjectUserTaskResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

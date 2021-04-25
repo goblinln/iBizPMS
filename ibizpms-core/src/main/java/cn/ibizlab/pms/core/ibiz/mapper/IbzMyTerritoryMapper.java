@@ -19,6 +19,14 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IbzMyTerritoryMapper extends BaseMapper<IbzMyTerritory> {
 
+    List<IbzMyTerritory> selectQueryByDefault(@Param("srf") IbzMyTerritorySearchContext context, @Param("ew") Wrapper<IbzMyTerritory> wrapper);
+    List<IbzMyTerritory> selectQueryByMyWork(@Param("srf") IbzMyTerritorySearchContext context, @Param("ew") Wrapper<IbzMyTerritory> wrapper);
+    List<IbzMyTerritory> selectQueryByMyWorkMob(@Param("srf") IbzMyTerritorySearchContext context, @Param("ew") Wrapper<IbzMyTerritory> wrapper);
+    List<IbzMyTerritory> selectQueryByMyWorkPm(@Param("srf") IbzMyTerritorySearchContext context, @Param("ew") Wrapper<IbzMyTerritory> wrapper);
+    List<IbzMyTerritory> selectQueryByPersonInfo(@Param("srf") IbzMyTerritorySearchContext context, @Param("ew") Wrapper<IbzMyTerritory> wrapper);
+    List<IbzMyTerritory> selectQueryByView(@Param("srf") IbzMyTerritorySearchContext context, @Param("ew") Wrapper<IbzMyTerritory> wrapper);
+    List<IbzMyTerritory> selectQueryByWelcome(@Param("srf") IbzMyTerritorySearchContext context, @Param("ew") Wrapper<IbzMyTerritory> wrapper);
+
     Page<IbzMyTerritory> searchDefault(IPage page, @Param("srf") IbzMyTerritorySearchContext context, @Param("ew") Wrapper<IbzMyTerritory> wrapper);
     Page<IbzMyTerritory> searchMyWork(IPage page, @Param("srf") IbzMyTerritorySearchContext context, @Param("ew") Wrapper<IbzMyTerritory> wrapper);
     Page<IbzMyTerritory> searchMyWorkMob(IPage page, @Param("srf") IbzMyTerritorySearchContext context, @Param("ew") Wrapper<IbzMyTerritory> wrapper);

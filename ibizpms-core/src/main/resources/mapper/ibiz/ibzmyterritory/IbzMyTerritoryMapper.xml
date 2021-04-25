@@ -96,6 +96,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext" resultMap="IbzMyTerritoryResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[MyWork]-->
     <sql id="MyWork" databaseId="mysql">
@@ -104,6 +108,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyWork"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext" resultMap="IbzMyTerritoryResultMap">
+		<include refid="MyWork" />
+	</select>
 
     <!--数据查询[MyWorkMob]-->
     <sql id="MyWorkMob" databaseId="mysql">
@@ -112,6 +120,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyWorkMob"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext" resultMap="IbzMyTerritoryResultMap">
+		<include refid="MyWorkMob" />
+	</select>
 
     <!--数据查询[MyWorkPm]-->
     <sql id="MyWorkPm" databaseId="mysql">
@@ -120,6 +132,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyWorkPm"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext" resultMap="IbzMyTerritoryResultMap">
+		<include refid="MyWorkPm" />
+	</select>
 
     <!--数据查询[PersonInfo]-->
     <sql id="PersonInfo" databaseId="mysql">
@@ -128,6 +144,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByPersonInfo"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext" resultMap="IbzMyTerritoryResultMap">
+		<include refid="PersonInfo" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -136,6 +156,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext" resultMap="IbzMyTerritoryResultMap">
+		<include refid="View" />
+	</select>
 
     <!--数据查询[Welcome]-->
     <sql id="Welcome" databaseId="mysql">
@@ -144,6 +168,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByWelcome"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext" resultMap="IbzMyTerritoryResultMap">
+		<include refid="Welcome" />
+	</select>
 
 </mapper>
 

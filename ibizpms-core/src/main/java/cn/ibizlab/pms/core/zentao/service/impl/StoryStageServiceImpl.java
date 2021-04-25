@@ -291,6 +291,14 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
 	}
 
 
+    public List<StoryStage> selectQueryByDefault(StoryStageSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<StoryStage> selectQueryByView(StoryStageSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

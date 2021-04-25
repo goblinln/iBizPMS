@@ -555,6 +555,77 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
     }
 
 
+    public List<Project> selectQueryByBugSelectableProjectList(ProjectSearchContext context){
+        return baseMapper.selectQueryByBugSelectableProjectList(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByCurDefaultQuery(ProjectSearchContext context){
+        return baseMapper.selectQueryByCurDefaultQuery(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByCurDefaultQueryExp(ProjectSearchContext context){
+        return baseMapper.selectQueryByCurDefaultQueryExp(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByCurPlanProject(ProjectSearchContext context){
+        return baseMapper.selectQueryByCurPlanProject(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByCurProduct(ProjectSearchContext context){
+        return baseMapper.selectQueryByCurProduct(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByCurUser(ProjectSearchContext context){
+        return baseMapper.selectQueryByCurUser(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByCurUserSa(ProjectSearchContext context){
+        return baseMapper.selectQueryByCurUserSa(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByDefault(ProjectSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByDeveloperQuery(ProjectSearchContext context){
+        return baseMapper.selectQueryByDeveloperQuery(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByESBulk(ProjectSearchContext context){
+        return baseMapper.selectQueryByESBulk(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByInvolvedProject(ProjectSearchContext context){
+        return baseMapper.selectQueryByInvolvedProject(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByInvolvedProjectStoryTaskBug(ProjectSearchContext context){
+        return baseMapper.selectQueryByInvolvedProjectStoryTaskBug(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByMyProject(ProjectSearchContext context){
+        return baseMapper.selectQueryByMyProject(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByOpenByQuery(ProjectSearchContext context){
+        return baseMapper.selectQueryByOpenByQuery(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByOpenQuery(ProjectSearchContext context){
+        return baseMapper.selectQueryByOpenQuery(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByPMQuery(ProjectSearchContext context){
+        return baseMapper.selectQueryByPMQuery(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByPOQuery(ProjectSearchContext context){
+        return baseMapper.selectQueryByPOQuery(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByProjectTeam(ProjectSearchContext context){
+        return baseMapper.selectQueryByProjectTeam(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByQDQuery(ProjectSearchContext context){
+        return baseMapper.selectQueryByQDQuery(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByRDQuery(ProjectSearchContext context){
+        return baseMapper.selectQueryByRDQuery(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByStoryProject(ProjectSearchContext context){
+        return baseMapper.selectQueryByStoryProject(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByUnDoneProject(ProjectSearchContext context){
+        return baseMapper.selectQueryByUnDoneProject(context, context.getSelectCond());
+    }
+    public List<Project> selectQueryByView(ProjectSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 BugProject
      */

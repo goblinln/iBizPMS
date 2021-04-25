@@ -117,6 +117,35 @@ public interface IStoryService extends IService<Story> {
     Story unlinkStory(Story et);
     boolean unlinkStoryBatch(List<Story> etList);
     List<Story> select(StorySearchContext context);
+    
+    List<Story> selectQueryByAssignedToMyStory(StorySearchContext context);
+    List<Story> selectQueryByAssignedToMyStoryCalendar(StorySearchContext context);
+    List<Story> selectQueryByBugStory(StorySearchContext context);
+    List<Story> selectQueryByBuildLinkCompletedStories(StorySearchContext context);
+    List<Story> selectQueryByBuildLinkableStories(StorySearchContext context);
+    List<Story> selectQueryByBuildStories(StorySearchContext context);
+    List<Story> selectQueryByByModule(StorySearchContext context);
+    List<Story> selectQueryByCaseStory(StorySearchContext context);
+    List<Story> selectQueryByDefault(StorySearchContext context);
+    List<Story> selectQueryByESBulk(StorySearchContext context);
+    List<Story> selectQueryByGetProductStories(StorySearchContext context);
+    List<Story> selectQueryByMyAgentStory(StorySearchContext context);
+    List<Story> selectQueryByMyCurOpenedStory(StorySearchContext context);
+    List<Story> selectQueryByMyFavorites(StorySearchContext context);
+    List<Story> selectQueryByNotCurPlanLinkStory(StorySearchContext context);
+    List<Story> selectQueryByParentDefault(StorySearchContext context);
+    List<Story> selectQueryByParentDefaultQ(StorySearchContext context);
+    List<Story> selectQueryByProjectLinkStory(StorySearchContext context);
+    List<Story> selectQueryByProjectStories(StorySearchContext context);
+    List<Story> selectQueryByReleaseLinkableStories(StorySearchContext context);
+    List<Story> selectQueryByReleaseStories(StorySearchContext context);
+    List<Story> selectQueryByReportStories(StorySearchContext context);
+    List<Story> selectQueryByStoryChild(StorySearchContext context);
+    List<Story> selectQueryByStoryRelated(StorySearchContext context);
+    List<Story> selectQueryBySubStory(StorySearchContext context);
+    List<Story> selectQueryByTaskRelatedStory(StorySearchContext context);
+    List<Story> selectQueryByView(StorySearchContext context);
+
     Page<Story> searchAssignedToMyStory(StorySearchContext context);
     Page<Story> searchAssignedToMyStoryCalendar(StorySearchContext context);
     Page<Story> searchBugStory(StorySearchContext context);

@@ -116,6 +116,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[MyAllDaily]-->
     <sql id="MyAllDaily" databaseId="mysql">
@@ -127,6 +131,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyAllDaily"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
+		<include refid="MyAllDaily" />
+	</select>
 
     <!--数据查询[MyDaily]-->
     <sql id="MyDaily" databaseId="mysql">
@@ -141,6 +149,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyDaily"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
+		<include refid="MyDaily" />
+	</select>
 
     <!--数据查询[MyNotSubmit]-->
     <sql id="MyNotSubmit" databaseId="mysql">
@@ -149,6 +161,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMyNotSubmit"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
+		<include refid="MyNotSubmit" />
+	</select>
 
     <!--数据查询[MySubmitDaily]-->
     <sql id="MySubmitDaily" databaseId="mysql">
@@ -160,6 +176,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByMySubmitDaily"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
+		<include refid="MySubmitDaily" />
+	</select>
 
     <!--数据查询[ProductDaily]-->
     <sql id="ProductDaily" databaseId="mysql">
@@ -168,6 +188,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProductDaily"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
+		<include refid="ProductDaily" />
+	</select>
 
     <!--数据查询[ProjectDaily]-->
     <sql id="ProjectDaily" databaseId="mysql">
@@ -179,6 +203,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectDaily"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
+		<include refid="ProjectDaily" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -187,6 +215,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

@@ -214,6 +214,14 @@ public class ScoreServiceImpl extends ServiceImpl<ScoreMapper, Score> implements
 
 
 
+    public List<Score> selectQueryByDefault(ScoreSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Score> selectQueryByView(ScoreSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

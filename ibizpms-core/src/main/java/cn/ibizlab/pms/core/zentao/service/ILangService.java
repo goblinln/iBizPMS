@@ -39,6 +39,10 @@ public interface ILangService extends IService<Lang> {
     boolean save(Lang et);
     void saveBatch(List<Lang> list);
     List<Lang> select(LangSearchContext context);
+    
+    List<Lang> selectQueryByDefault(LangSearchContext context);
+    List<Lang> selectQueryByView(LangSearchContext context);
+
     Page<Lang> searchDefault(LangSearchContext context);
     Lang dynamicCall(Long key, String action, Lang et);
     /**

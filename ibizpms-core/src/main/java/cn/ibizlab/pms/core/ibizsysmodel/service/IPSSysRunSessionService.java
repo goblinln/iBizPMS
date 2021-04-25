@@ -37,6 +37,10 @@ public interface IPSSysRunSessionService {
     boolean checkKey(PSSysRunSession et);
     boolean save(PSSysRunSession et);
     void saveBatch(List<PSSysRunSession> list);
+    
+    List<PSSysRunSession> selectQueryByDefault(PSSysRunSessionSearchContext context);
+    List<PSSysRunSession> selectQueryByView(PSSysRunSessionSearchContext context);
+
     Page<PSSysRunSession> searchDefault(PSSysRunSessionSearchContext context);
     List<PSSysRunSession> selectByPssysappid(String pssysappid);
     void removeByPssysappid(String pssysappid);

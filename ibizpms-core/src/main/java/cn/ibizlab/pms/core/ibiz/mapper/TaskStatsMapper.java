@@ -19,6 +19,11 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface TaskStatsMapper extends BaseMapper<TaskStats> {
 
+    List<TaskStats> selectQueryByDefault(@Param("srf") TaskStatsSearchContext context, @Param("ew") Wrapper<TaskStats> wrapper);
+    List<TaskStats> selectQueryByTaskFinishHuiZong(@Param("srf") TaskStatsSearchContext context, @Param("ew") Wrapper<TaskStats> wrapper);
+    List<TaskStats> selectQueryByUserFinishTaskSum(@Param("srf") TaskStatsSearchContext context, @Param("ew") Wrapper<TaskStats> wrapper);
+    List<TaskStats> selectQueryByView(@Param("srf") TaskStatsSearchContext context, @Param("ew") Wrapper<TaskStats> wrapper);
+
     Page<TaskStats> searchDefault(IPage page, @Param("srf") TaskStatsSearchContext context, @Param("ew") Wrapper<TaskStats> wrapper);
     Page<TaskStats> searchTaskFinishHuiZong(IPage page, @Param("srf") TaskStatsSearchContext context, @Param("ew") Wrapper<TaskStats> wrapper);
     Page<TaskStats> searchUserFinishTaskSum(IPage page, @Param("srf") TaskStatsSearchContext context, @Param("ew") Wrapper<TaskStats> wrapper);

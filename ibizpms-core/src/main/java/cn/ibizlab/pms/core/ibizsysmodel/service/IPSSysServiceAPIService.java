@@ -37,6 +37,10 @@ public interface IPSSysServiceAPIService {
     boolean checkKey(PSSysServiceAPI et);
     boolean save(PSSysServiceAPI et);
     void saveBatch(List<PSSysServiceAPI> list);
+    
+    List<PSSysServiceAPI> selectQueryByDefault(PSSysServiceAPISearchContext context);
+    List<PSSysServiceAPI> selectQueryByView(PSSysServiceAPISearchContext context);
+
     Page<PSSysServiceAPI> searchDefault(PSSysServiceAPISearchContext context);
     List<PSSysServiceAPI> selectByPsmoduleid(String psmoduleid);
     List<PSSysServiceAPI> selectByPsmoduleid(Collection<String> ids);

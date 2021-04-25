@@ -277,6 +277,14 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
     }
 
 
+    public List<IbizproProductMonthly> selectQueryByDefault(IbizproProductMonthlySearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IbizproProductMonthly> selectQueryByView(IbizproProductMonthlySearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

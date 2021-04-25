@@ -161,6 +161,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByBugProductBuild"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext" resultMap="BuildResultMap">
+		<include refid="BugProductBuild" />
+	</select>
 
     <!--数据查询[CurProduct]-->
     <sql id="CurProduct" databaseId="mysql">
@@ -175,6 +179,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByCurProduct"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext" resultMap="BuildResultMap">
+		<include refid="CurProduct" />
+	</select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
@@ -186,6 +194,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext" resultMap="BuildResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[TestBuild]-->
     <sql id="TestBuild" databaseId="mysql">
@@ -197,6 +209,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByTestBuild"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext" resultMap="BuildResultMap">
+		<include refid="TestBuild" />
+	</select>
 
     <!--数据查询[TestRounds]-->
     <sql id="TestRounds" databaseId="mysql">
@@ -211,6 +227,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByTestRounds"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext" resultMap="BuildResultMap">
+		<include refid="TestRounds" />
+	</select>
 
     <!--数据查询[UpdateLog]-->
     <sql id="UpdateLog" databaseId="mysql">
@@ -222,6 +242,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByUpdateLog"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext" resultMap="BuildResultMap">
+		<include refid="UpdateLog" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -233,6 +257,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext" resultMap="BuildResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

@@ -258,6 +258,14 @@ public class IbzPlanTempletDetailServiceImpl extends ServiceImpl<IbzPlanTempletD
 	}
 
 
+    public List<IbzPlanTempletDetail> selectQueryByDefault(IbzPlanTempletDetailSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IbzPlanTempletDetail> selectQueryByView(IbzPlanTempletDetailSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

@@ -19,6 +19,15 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IbzMonthlyMapper extends BaseMapper<IbzMonthly> {
 
+    List<IbzMonthly> selectQueryByDefault(@Param("srf") IbzMonthlySearchContext context, @Param("ew") Wrapper<IbzMonthly> wrapper);
+    List<IbzMonthly> selectQueryByMyMonthly(@Param("srf") IbzMonthlySearchContext context, @Param("ew") Wrapper<IbzMonthly> wrapper);
+    List<IbzMonthly> selectQueryByMyMonthlyMob(@Param("srf") IbzMonthlySearchContext context, @Param("ew") Wrapper<IbzMonthly> wrapper);
+    List<IbzMonthly> selectQueryByMyReceivedMonthly(@Param("srf") IbzMonthlySearchContext context, @Param("ew") Wrapper<IbzMonthly> wrapper);
+    List<IbzMonthly> selectQueryByMySubmitMonthly(@Param("srf") IbzMonthlySearchContext context, @Param("ew") Wrapper<IbzMonthly> wrapper);
+    List<IbzMonthly> selectQueryByProductMonthly(@Param("srf") IbzMonthlySearchContext context, @Param("ew") Wrapper<IbzMonthly> wrapper);
+    List<IbzMonthly> selectQueryByProjectMonthly(@Param("srf") IbzMonthlySearchContext context, @Param("ew") Wrapper<IbzMonthly> wrapper);
+    List<IbzMonthly> selectQueryByView(@Param("srf") IbzMonthlySearchContext context, @Param("ew") Wrapper<IbzMonthly> wrapper);
+
     Page<IbzMonthly> searchDefault(IPage page, @Param("srf") IbzMonthlySearchContext context, @Param("ew") Wrapper<IbzMonthly> wrapper);
     Page<IbzMonthly> searchMyMonthly(IPage page, @Param("srf") IbzMonthlySearchContext context, @Param("ew") Wrapper<IbzMonthly> wrapper);
     Page<IbzMonthly> searchMyMonthlyMob(IPage page, @Param("srf") IbzMonthlySearchContext context, @Param("ew") Wrapper<IbzMonthly> wrapper);

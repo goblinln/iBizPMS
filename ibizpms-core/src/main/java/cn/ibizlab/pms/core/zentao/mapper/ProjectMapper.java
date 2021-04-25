@@ -19,6 +19,30 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ProjectMapper extends BaseMapper<Project> {
 
+    List<Project> selectQueryByBugSelectableProjectList(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByCurDefaultQuery(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByCurDefaultQueryExp(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByCurPlanProject(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByCurProduct(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByCurUser(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByCurUserSa(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByDefault(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByDeveloperQuery(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByESBulk(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByInvolvedProject(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByInvolvedProjectStoryTaskBug(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByMyProject(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByOpenByQuery(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByOpenQuery(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByPMQuery(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByPOQuery(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByProjectTeam(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByQDQuery(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByRDQuery(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByStoryProject(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByUnDoneProject(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+    List<Project> selectQueryByView(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
+
     Page<Project> searchBugProject(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchCurDefaultQuery(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchCurDefaultQueryExp(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);

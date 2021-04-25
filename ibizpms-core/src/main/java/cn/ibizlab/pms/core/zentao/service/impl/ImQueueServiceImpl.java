@@ -214,6 +214,14 @@ public class ImQueueServiceImpl extends ServiceImpl<ImQueueMapper, ImQueue> impl
 
 
 
+    public List<ImQueue> selectQueryByDefault(ImQueueSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<ImQueue> selectQueryByView(ImQueueSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

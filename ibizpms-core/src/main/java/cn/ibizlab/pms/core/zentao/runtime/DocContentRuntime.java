@@ -104,7 +104,13 @@ public class DocContentRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
 
     @Override
     public List<DocContent> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        DocContentSearchContext searchContext = (DocContentSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("CurVersion"))
+            return doccontentService.selectQueryByCurVersion(searchContext);
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return doccontentService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return doccontentService.selectQueryByView(searchContext);
         return null;
     }
 

@@ -42,6 +42,16 @@ public interface IUserService extends IService<User> {
     User syncAccount(User et);
     boolean syncAccountBatch(List<User> etList);
     List<User> select(UserSearchContext context);
+    
+    List<User> selectQueryByBugUser(UserSearchContext context);
+    List<User> selectQueryByDefault(UserSearchContext context);
+    List<User> selectQueryByGetByLogin(UserSearchContext context);
+    List<User> selectQueryByProjectTeamM(UserSearchContext context);
+    List<User> selectQueryByProjectTeamUser(UserSearchContext context);
+    List<User> selectQueryByProjectTeamUserTask(UserSearchContext context);
+    List<User> selectQueryByTaskTeam(UserSearchContext context);
+    List<User> selectQueryByView(UserSearchContext context);
+
     Page<User> searchBugUser(UserSearchContext context);
     Page<User> searchDefault(UserSearchContext context);
     Page<User> searchGetByCommiter(UserSearchContext context);

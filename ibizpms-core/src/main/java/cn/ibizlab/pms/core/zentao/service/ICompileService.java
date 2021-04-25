@@ -39,6 +39,10 @@ public interface ICompileService extends IService<Compile> {
     boolean save(Compile et);
     void saveBatch(List<Compile> list);
     List<Compile> select(CompileSearchContext context);
+    
+    List<Compile> selectQueryByDefault(CompileSearchContext context);
+    List<Compile> selectQueryByView(CompileSearchContext context);
+
     Page<Compile> searchDefault(CompileSearchContext context);
     Compile dynamicCall(Long key, String action, Compile et);
     /**

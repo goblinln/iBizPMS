@@ -391,6 +391,65 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     }
 
 
+    public List<Product> selectQueryByAllList(ProductSearchContext context){
+        return baseMapper.selectQueryByAllList(context, context.getSelectCond());
+    }
+    public List<Product> selectQueryByAllProduct(ProductSearchContext context){
+        return baseMapper.selectQueryByAllProduct(context, context.getSelectCond());
+    }
+    public List<Product> selectQueryByCheckNameOrCode(ProductSearchContext context){
+        return baseMapper.selectQueryByCheckNameOrCode(context, context.getSelectCond());
+    }
+    public List<Product> selectQueryByCurDefault(ProductSearchContext context){
+        return baseMapper.selectQueryByCurDefault(context, context.getSelectCond());
+    }
+    public List<Product> selectQueryByCurProject(ProductSearchContext context){
+        return baseMapper.selectQueryByCurProject(context, context.getSelectCond());
+    }
+    public List<Product> selectQueryByCurUer(ProductSearchContext context){
+        return baseMapper.selectQueryByCurUer(context, context.getSelectCond());
+    }
+    public List<Product> selectQueryByDefault(ProductSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Product> selectQueryByDeveloperQuery(ProductSearchContext context){
+        return baseMapper.selectQueryByDeveloperQuery(context, context.getSelectCond());
+    }
+    public List<Product> selectQueryByESBulk(ProductSearchContext context){
+        return baseMapper.selectQueryByESBulk(context, context.getSelectCond());
+    }
+    public List<Product> selectQueryByOpenQuery(ProductSearchContext context){
+        return baseMapper.selectQueryByOpenQuery(context, context.getSelectCond());
+    }
+    public List<Product> selectQueryByPOQuery(ProductSearchContext context){
+        return baseMapper.selectQueryByPOQuery(context, context.getSelectCond());
+    }
+    public List<Product> selectQueryByProductManagerQuery(ProductSearchContext context){
+        return baseMapper.selectQueryByProductManagerQuery(context, context.getSelectCond());
+    }
+    public List<Product> selectQueryByProductPM(ProductSearchContext context){
+        return baseMapper.selectQueryByProductPM(context, context.getSelectCond());
+    }
+    public List<Product> selectQueryByProductTeam(ProductSearchContext context){
+        return baseMapper.selectQueryByProductTeam(context, context.getSelectCond());
+    }
+    public List<Product> selectQueryByQDQuery(ProductSearchContext context){
+        return baseMapper.selectQueryByQDQuery(context, context.getSelectCond());
+    }
+    public List<Product> selectQueryByRDQuery(ProductSearchContext context){
+        return baseMapper.selectQueryByRDQuery(context, context.getSelectCond());
+    }
+    public List<Product> selectQueryBySimple(ProductSearchContext context){
+        return baseMapper.selectQueryBySimple(context, context.getSelectCond());
+    }
+    public List<Product> selectQueryByStoryCurProject(ProductSearchContext context){
+        return baseMapper.selectQueryByStoryCurProject(context, context.getSelectCond());
+    }
+    public List<Product> selectQueryByView(ProductSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 全部产品
      */

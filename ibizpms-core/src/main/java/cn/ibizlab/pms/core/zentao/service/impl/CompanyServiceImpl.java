@@ -214,6 +214,14 @@ public class CompanyServiceImpl extends ServiceImpl<CompanyMapper, Company> impl
 
 
 
+    public List<Company> selectQueryByDefault(CompanySearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Company> selectQueryByView(CompanySearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

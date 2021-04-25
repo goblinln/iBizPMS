@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface StoryStageMapper extends BaseMapper<StoryStage> {
 
+    List<StoryStage> selectQueryByDefault(@Param("srf") StoryStageSearchContext context, @Param("ew") Wrapper<StoryStage> wrapper);
+    List<StoryStage> selectQueryByView(@Param("srf") StoryStageSearchContext context, @Param("ew") Wrapper<StoryStage> wrapper);
+
     Page<StoryStage> searchDefault(IPage page, @Param("srf") StoryStageSearchContext context, @Param("ew") Wrapper<StoryStage> wrapper);
     @Override
     StoryStage selectById(Serializable id);

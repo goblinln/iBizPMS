@@ -19,6 +19,15 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ModuleMapper extends BaseMapper<Module> {
 
+    List<Module> selectQueryByBugModule(@Param("srf") ModuleSearchContext context, @Param("ew") Wrapper<Module> wrapper);
+    List<Module> selectQueryByBugModuleCodeList(@Param("srf") ModuleSearchContext context, @Param("ew") Wrapper<Module> wrapper);
+    List<Module> selectQueryByDefault(@Param("srf") ModuleSearchContext context, @Param("ew") Wrapper<Module> wrapper);
+    List<Module> selectQueryByDocModule(@Param("srf") ModuleSearchContext context, @Param("ew") Wrapper<Module> wrapper);
+    List<Module> selectQueryByLine(@Param("srf") ModuleSearchContext context, @Param("ew") Wrapper<Module> wrapper);
+    List<Module> selectQueryByStoryModule(@Param("srf") ModuleSearchContext context, @Param("ew") Wrapper<Module> wrapper);
+    List<Module> selectQueryByTaskModule(@Param("srf") ModuleSearchContext context, @Param("ew") Wrapper<Module> wrapper);
+    List<Module> selectQueryByView(@Param("srf") ModuleSearchContext context, @Param("ew") Wrapper<Module> wrapper);
+
     Page<Module> searchBugModule(IPage page, @Param("srf") ModuleSearchContext context, @Param("ew") Wrapper<Module> wrapper);
     Page<Module> searchBugModuleCodeList(IPage page, @Param("srf") ModuleSearchContext context, @Param("ew") Wrapper<Module> wrapper);
     Page<Module> searchDefault(IPage page, @Param("srf") ModuleSearchContext context, @Param("ew") Wrapper<Module> wrapper);

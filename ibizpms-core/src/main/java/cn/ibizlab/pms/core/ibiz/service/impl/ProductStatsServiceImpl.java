@@ -221,6 +221,26 @@ public class ProductStatsServiceImpl extends ServiceImpl<ProductStatsMapper, Pro
 
 
 
+    public List<ProductStats> selectQueryByDefault(ProductStatsSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<ProductStats> selectQueryByNoOpenProduct(ProductStatsSearchContext context){
+        return baseMapper.selectQueryByNoOpenProduct(context, context.getSelectCond());
+    }
+    public List<ProductStats> selectQueryByProdctQuantiGird(ProductStatsSearchContext context){
+        return baseMapper.selectQueryByProdctQuantiGird(context, context.getSelectCond());
+    }
+    public List<ProductStats> selectQueryByProductInputTable(ProductStatsSearchContext context){
+        return baseMapper.selectQueryByProductInputTable(context, context.getSelectCond());
+    }
+    public List<ProductStats> selectQueryByProductcompletionstatistics(ProductStatsSearchContext context){
+        return baseMapper.selectQueryByProductcompletionstatistics(context, context.getSelectCond());
+    }
+    public List<ProductStats> selectQueryByView(ProductStatsSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

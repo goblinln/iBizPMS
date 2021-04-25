@@ -217,6 +217,14 @@ public class EntryServiceImpl extends ServiceImpl<EntryMapper, Entry> implements
 
 
 
+    public List<Entry> selectQueryByDefault(EntrySearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Entry> selectQueryByView(EntrySearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

@@ -214,6 +214,14 @@ public class ConfigServiceImpl extends ServiceImpl<ConfigMapper, Config> impleme
 
 
 
+    public List<Config> selectQueryByDefault(ConfigSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Config> selectQueryByView(ConfigSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

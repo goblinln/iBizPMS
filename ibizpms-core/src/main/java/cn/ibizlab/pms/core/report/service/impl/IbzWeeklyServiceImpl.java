@@ -330,6 +330,26 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
 
 
 
+    public List<IbzWeekly> selectQueryByDefault(IbzWeeklySearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IbzWeekly> selectQueryByMyNotSubmit(IbzWeeklySearchContext context){
+        return baseMapper.selectQueryByMyNotSubmit(context, context.getSelectCond());
+    }
+    public List<IbzWeekly> selectQueryByMyWeekly(IbzWeeklySearchContext context){
+        return baseMapper.selectQueryByMyWeekly(context, context.getSelectCond());
+    }
+    public List<IbzWeekly> selectQueryByProductTeamMemberWeekly(IbzWeeklySearchContext context){
+        return baseMapper.selectQueryByProductTeamMemberWeekly(context, context.getSelectCond());
+    }
+    public List<IbzWeekly> selectQueryByProjectWeekly(IbzWeeklySearchContext context){
+        return baseMapper.selectQueryByProjectWeekly(context, context.getSelectCond());
+    }
+    public List<IbzWeekly> selectQueryByView(IbzWeeklySearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

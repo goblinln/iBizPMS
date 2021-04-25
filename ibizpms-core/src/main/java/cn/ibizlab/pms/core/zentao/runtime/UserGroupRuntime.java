@@ -102,7 +102,11 @@ public class UserGroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public List<UserGroup> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        UserGroupSearchContext searchContext = (UserGroupSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return usergroupService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return usergroupService.selectQueryByView(searchContext);
         return null;
     }
 

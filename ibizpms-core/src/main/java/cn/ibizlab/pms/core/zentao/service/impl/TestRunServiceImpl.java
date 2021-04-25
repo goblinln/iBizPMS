@@ -270,6 +270,14 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
     }
 
 
+    public List<TestRun> selectQueryByDefault(TestRunSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<TestRun> selectQueryByView(TestRunSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

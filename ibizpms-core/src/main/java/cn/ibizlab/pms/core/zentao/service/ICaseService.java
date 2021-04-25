@@ -73,6 +73,31 @@ public interface ICaseService extends IService<Case> {
     Case unlinkSuiteCases(Case et);
     boolean unlinkSuiteCasesBatch(List<Case> etList);
     List<Case> select(CaseSearchContext context);
+    
+    List<Case> selectQueryByBatchNew(CaseSearchContext context);
+    List<Case> selectQueryByCurOpenedCase(CaseSearchContext context);
+    List<Case> selectQueryByCurSuite(CaseSearchContext context);
+    List<Case> selectQueryByCurTestTask(CaseSearchContext context);
+    List<Case> selectQueryByDefault(CaseSearchContext context);
+    List<Case> selectQueryByESBulk(CaseSearchContext context);
+    List<Case> selectQueryByModuleRePortCase(CaseSearchContext context);
+    List<Case> selectQueryByModuleRePortCaseEntry(CaseSearchContext context);
+    List<Case> selectQueryByModuleRePortCase_Project(CaseSearchContext context);
+    List<Case> selectQueryByMyFavorite(CaseSearchContext context);
+    List<Case> selectQueryByNotCurTestSuite(CaseSearchContext context);
+    List<Case> selectQueryByNotCurTestTask(CaseSearchContext context);
+    List<Case> selectQueryByNotCurTestTaskProject(CaseSearchContext context);
+    List<Case> selectQueryByRePortCase(CaseSearchContext context);
+    List<Case> selectQueryByRePortCaseEntry(CaseSearchContext context);
+    List<Case> selectQueryByRePortCase_Project(CaseSearchContext context);
+    List<Case> selectQueryByRunERRePortCase(CaseSearchContext context);
+    List<Case> selectQueryByRunERRePortCaseEntry(CaseSearchContext context);
+    List<Case> selectQueryByRunERRePortCase_Project(CaseSearchContext context);
+    List<Case> selectQueryByRunRePortCase(CaseSearchContext context);
+    List<Case> selectQueryByRunRePortCaseEntry(CaseSearchContext context);
+    List<Case> selectQueryByRunRePortCase_Project(CaseSearchContext context);
+    List<Case> selectQueryByView(CaseSearchContext context);
+
     Page<Case> searchBatchNew(CaseSearchContext context);
     Page<Case> searchCurOpenedCase(CaseSearchContext context);
     Page<Case> searchCurSuite(CaseSearchContext context);

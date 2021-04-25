@@ -19,6 +19,15 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface UserMapper extends BaseMapper<User> {
 
+    List<User> selectQueryByBugUser(@Param("srf") UserSearchContext context, @Param("ew") Wrapper<User> wrapper);
+    List<User> selectQueryByDefault(@Param("srf") UserSearchContext context, @Param("ew") Wrapper<User> wrapper);
+    List<User> selectQueryByGetByLogin(@Param("srf") UserSearchContext context, @Param("ew") Wrapper<User> wrapper);
+    List<User> selectQueryByProjectTeamM(@Param("srf") UserSearchContext context, @Param("ew") Wrapper<User> wrapper);
+    List<User> selectQueryByProjectTeamUser(@Param("srf") UserSearchContext context, @Param("ew") Wrapper<User> wrapper);
+    List<User> selectQueryByProjectTeamUserTask(@Param("srf") UserSearchContext context, @Param("ew") Wrapper<User> wrapper);
+    List<User> selectQueryByTaskTeam(@Param("srf") UserSearchContext context, @Param("ew") Wrapper<User> wrapper);
+    List<User> selectQueryByView(@Param("srf") UserSearchContext context, @Param("ew") Wrapper<User> wrapper);
+
     Page<User> searchBugUser(IPage page, @Param("srf") UserSearchContext context, @Param("ew") Wrapper<User> wrapper);
     Page<User> searchDefault(IPage page, @Param("srf") UserSearchContext context, @Param("ew") Wrapper<User> wrapper);
     Page<User> searchGetByCommiter(IPage page, @Param("srf") UserSearchContext context, @Param("ew") Wrapper<User> wrapper);

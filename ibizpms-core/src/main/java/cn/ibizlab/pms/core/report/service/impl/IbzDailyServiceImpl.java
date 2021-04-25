@@ -330,6 +330,32 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
 
 
 
+    public List<IbzDaily> selectQueryByDefault(IbzDailySearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IbzDaily> selectQueryByMyAllDaily(IbzDailySearchContext context){
+        return baseMapper.selectQueryByMyAllDaily(context, context.getSelectCond());
+    }
+    public List<IbzDaily> selectQueryByMyDaily(IbzDailySearchContext context){
+        return baseMapper.selectQueryByMyDaily(context, context.getSelectCond());
+    }
+    public List<IbzDaily> selectQueryByMyNotSubmit(IbzDailySearchContext context){
+        return baseMapper.selectQueryByMyNotSubmit(context, context.getSelectCond());
+    }
+    public List<IbzDaily> selectQueryByMySubmitDaily(IbzDailySearchContext context){
+        return baseMapper.selectQueryByMySubmitDaily(context, context.getSelectCond());
+    }
+    public List<IbzDaily> selectQueryByProductDaily(IbzDailySearchContext context){
+        return baseMapper.selectQueryByProductDaily(context, context.getSelectCond());
+    }
+    public List<IbzDaily> selectQueryByProjectDaily(IbzDailySearchContext context){
+        return baseMapper.selectQueryByProjectDaily(context, context.getSelectCond());
+    }
+    public List<IbzDaily> selectQueryByView(IbzDailySearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

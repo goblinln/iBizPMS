@@ -214,6 +214,32 @@ public class ProductSumServiceImpl extends ServiceImpl<ProductSumMapper, Product
 
 
 
+    public List<ProductSum> selectQueryByDefault(ProductSumSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<ProductSum> selectQueryByProductBugcnt_QA(ProductSumSearchContext context){
+        return baseMapper.selectQueryByProductBugcnt_QA(context, context.getSelectCond());
+    }
+    public List<ProductSum> selectQueryByProductCreateStory(ProductSumSearchContext context){
+        return baseMapper.selectQueryByProductCreateStory(context, context.getSelectCond());
+    }
+    public List<ProductSum> selectQueryByProductPlancntAndStorycnt_PO(ProductSumSearchContext context){
+        return baseMapper.selectQueryByProductPlancntAndStorycnt_PO(context, context.getSelectCond());
+    }
+    public List<ProductSum> selectQueryByProductStoryHoursSum(ProductSumSearchContext context){
+        return baseMapper.selectQueryByProductStoryHoursSum(context, context.getSelectCond());
+    }
+    public List<ProductSum> selectQueryByProductStorySum(ProductSumSearchContext context){
+        return baseMapper.selectQueryByProductStorySum(context, context.getSelectCond());
+    }
+    public List<ProductSum> selectQueryByProductSumBugType(ProductSumSearchContext context){
+        return baseMapper.selectQueryByProductSumBugType(context, context.getSelectCond());
+    }
+    public List<ProductSum> selectQueryByView(ProductSumSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

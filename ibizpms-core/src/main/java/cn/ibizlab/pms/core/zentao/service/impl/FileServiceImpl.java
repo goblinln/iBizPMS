@@ -233,6 +233,26 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
 
 
 
+    public List<File> selectQueryByDefault(FileSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<File> selectQueryByDocLibFile(FileSearchContext context){
+        return baseMapper.selectQueryByDocLibFile(context, context.getSelectCond());
+    }
+    public List<File> selectQueryByProductDocLibFile(FileSearchContext context){
+        return baseMapper.selectQueryByProductDocLibFile(context, context.getSelectCond());
+    }
+    public List<File> selectQueryByType(FileSearchContext context){
+        return baseMapper.selectQueryByType(context, context.getSelectCond());
+    }
+    public List<File> selectQueryByTypeNotBySrfparentkey(FileSearchContext context){
+        return baseMapper.selectQueryByTypeNotBySrfparentkey(context, context.getSelectCond());
+    }
+    public List<File> selectQueryByView(FileSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

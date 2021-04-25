@@ -258,6 +258,17 @@ public class DocContentServiceImpl extends ServiceImpl<DocContentMapper, DocCont
 	}
 
 
+    public List<DocContent> selectQueryByCurVersion(DocContentSearchContext context){
+        return baseMapper.selectQueryByCurVersion(context, context.getSelectCond());
+    }
+    public List<DocContent> selectQueryByDefault(DocContentSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<DocContent> selectQueryByView(DocContentSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 当前版本
      */

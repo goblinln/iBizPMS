@@ -77,6 +77,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext" resultMap="ProductLifeResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[GetRoadmap]-->
     <sql id="GetRoadmap" databaseId="mysql">
@@ -85,6 +89,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByGetRoadmap"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext" resultMap="ProductLifeResultMap">
+		<include refid="GetRoadmap" />
+	</select>
 
     <!--数据查询[GetRoadmapS]-->
     <sql id="GetRoadmapS" databaseId="mysql">
@@ -93,6 +101,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByGetRoadmapS"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext" resultMap="ProductLifeResultMap">
+		<include refid="GetRoadmapS" />
+	</select>
 
     <!--数据查询[RoadMapYear]-->
     <sql id="RoadMapYear" databaseId="mysql">
@@ -101,6 +113,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByRoadMapYear"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext" resultMap="ProductLifeResultMap">
+		<include refid="RoadMapYear" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -109,6 +125,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext" resultMap="ProductLifeResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

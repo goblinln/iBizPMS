@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ExtensionMapper extends BaseMapper<Extension> {
 
+    List<Extension> selectQueryByDefault(@Param("srf") ExtensionSearchContext context, @Param("ew") Wrapper<Extension> wrapper);
+    List<Extension> selectQueryByView(@Param("srf") ExtensionSearchContext context, @Param("ew") Wrapper<Extension> wrapper);
+
     Page<Extension> searchDefault(IPage page, @Param("srf") ExtensionSearchContext context, @Param("ew") Wrapper<Extension> wrapper);
     @Override
     Extension selectById(Serializable id);

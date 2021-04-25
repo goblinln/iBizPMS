@@ -19,6 +19,26 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ProductMapper extends BaseMapper<Product> {
 
+    List<Product> selectQueryByAllList(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    List<Product> selectQueryByAllProduct(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    List<Product> selectQueryByCheckNameOrCode(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    List<Product> selectQueryByCurDefault(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    List<Product> selectQueryByCurProject(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    List<Product> selectQueryByCurUer(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    List<Product> selectQueryByDefault(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    List<Product> selectQueryByDeveloperQuery(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    List<Product> selectQueryByESBulk(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    List<Product> selectQueryByOpenQuery(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    List<Product> selectQueryByPOQuery(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    List<Product> selectQueryByProductManagerQuery(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    List<Product> selectQueryByProductPM(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    List<Product> selectQueryByProductTeam(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    List<Product> selectQueryByQDQuery(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    List<Product> selectQueryByRDQuery(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    List<Product> selectQueryBySimple(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    List<Product> selectQueryByStoryCurProject(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+    List<Product> selectQueryByView(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
+
     Page<Product> searchAllList(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchAllProduct(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchCheckNameOrCode(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);

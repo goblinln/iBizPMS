@@ -214,6 +214,14 @@ public class ImMessagestatusServiceImpl extends ServiceImpl<ImMessagestatusMappe
 
 
 
+    public List<ImMessagestatus> selectQueryByDefault(ImMessagestatusSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<ImMessagestatus> selectQueryByView(ImMessagestatusSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

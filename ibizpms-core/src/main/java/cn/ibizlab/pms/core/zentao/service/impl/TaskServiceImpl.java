@@ -691,6 +691,128 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     }
 
 
+    public List<Task> selectQueryByAssignedToMyTask(TaskSearchContext context){
+        return baseMapper.selectQueryByAssignedToMyTask(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByAssignedToMyTaskPc(TaskSearchContext context){
+        return baseMapper.selectQueryByAssignedToMyTaskPc(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByBugTask(TaskSearchContext context){
+        return baseMapper.selectQueryByBugTask(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByByModule(TaskSearchContext context){
+        return baseMapper.selectQueryByByModule(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByChildDefault(TaskSearchContext context){
+        return baseMapper.selectQueryByChildDefault(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByChildTask(TaskSearchContext context){
+        return baseMapper.selectQueryByChildTask(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByChildTaskTree(TaskSearchContext context){
+        return baseMapper.selectQueryByChildTaskTree(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByCurFinishTask(TaskSearchContext context){
+        return baseMapper.selectQueryByCurFinishTask(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByCurProjectTaskQuery(TaskSearchContext context){
+        return baseMapper.selectQueryByCurProjectTaskQuery(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByDefault(TaskSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByDefaultRow(TaskSearchContext context){
+        return baseMapper.selectQueryByDefaultRow(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByESBulk(TaskSearchContext context){
+        return baseMapper.selectQueryByESBulk(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByMyAgentTask(TaskSearchContext context){
+        return baseMapper.selectQueryByMyAgentTask(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByMyAllTask(TaskSearchContext context){
+        return baseMapper.selectQueryByMyAllTask(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByMyCompleteTask(TaskSearchContext context){
+        return baseMapper.selectQueryByMyCompleteTask(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByMyCompleteTaskMobDaily(TaskSearchContext context){
+        return baseMapper.selectQueryByMyCompleteTaskMobDaily(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByMyCompleteTaskMobMonthly(TaskSearchContext context){
+        return baseMapper.selectQueryByMyCompleteTaskMobMonthly(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByMyCompleteTaskMonthlyZS(TaskSearchContext context){
+        return baseMapper.selectQueryByMyCompleteTaskMonthlyZS(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByMyCompleteTaskZS(TaskSearchContext context){
+        return baseMapper.selectQueryByMyCompleteTaskZS(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByMyFavorites(TaskSearchContext context){
+        return baseMapper.selectQueryByMyFavorites(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByMyPlansTaskMobMonthly(TaskSearchContext context){
+        return baseMapper.selectQueryByMyPlansTaskMobMonthly(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByMyTomorrowPlanTask(TaskSearchContext context){
+        return baseMapper.selectQueryByMyTomorrowPlanTask(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByMyTomorrowPlanTaskMobDaily(TaskSearchContext context){
+        return baseMapper.selectQueryByMyTomorrowPlanTaskMobDaily(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByNextWeekCompleteTaskMobZS(TaskSearchContext context){
+        return baseMapper.selectQueryByNextWeekCompleteTaskMobZS(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByNextWeekCompleteTaskZS(TaskSearchContext context){
+        return baseMapper.selectQueryByNextWeekCompleteTaskZS(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByNextWeekPlanCompleteTask(TaskSearchContext context){
+        return baseMapper.selectQueryByNextWeekPlanCompleteTask(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByPlanTask(TaskSearchContext context){
+        return baseMapper.selectQueryByPlanTask(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByProjectAppTask(TaskSearchContext context){
+        return baseMapper.selectQueryByProjectAppTask(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByProjectTask(TaskSearchContext context){
+        return baseMapper.selectQueryByProjectTask(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByRootTask(TaskSearchContext context){
+        return baseMapper.selectQueryByRootTask(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByTaskLinkPlan(TaskSearchContext context){
+        return baseMapper.selectQueryByTaskLinkPlan(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByThisMonthCompleteTaskChoice(TaskSearchContext context){
+        return baseMapper.selectQueryByThisMonthCompleteTaskChoice(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByThisWeekCompleteTask(TaskSearchContext context){
+        return baseMapper.selectQueryByThisWeekCompleteTask(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByThisWeekCompleteTaskChoice(TaskSearchContext context){
+        return baseMapper.selectQueryByThisWeekCompleteTaskChoice(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByThisWeekCompleteTaskMobZS(TaskSearchContext context){
+        return baseMapper.selectQueryByThisWeekCompleteTaskMobZS(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByThisWeekCompleteTaskZS(TaskSearchContext context){
+        return baseMapper.selectQueryByThisWeekCompleteTaskZS(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByTodoListTask(TaskSearchContext context){
+        return baseMapper.selectQueryByTodoListTask(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByTypeGroup(TaskSearchContext context){
+        return baseMapper.selectQueryByTypeGroup(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByTypeGroupPlan(TaskSearchContext context){
+        return baseMapper.selectQueryByTypeGroupPlan(context, context.getSelectCond());
+    }
+    public List<Task> selectQueryByView(TaskSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 指派给我任务
      */

@@ -19,6 +19,18 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface DocLibModuleMapper extends BaseMapper<DocLibModule> {
 
+    List<DocLibModule> selectQueryByAllDoclibModule_Custom(@Param("srf") DocLibModuleSearchContext context, @Param("ew") Wrapper<DocLibModule> wrapper);
+    List<DocLibModule> selectQueryByChildModuleByParent(@Param("srf") DocLibModuleSearchContext context, @Param("ew") Wrapper<DocLibModule> wrapper);
+    List<DocLibModule> selectQueryByChildModuleByRealParent(@Param("srf") DocLibModuleSearchContext context, @Param("ew") Wrapper<DocLibModule> wrapper);
+    List<DocLibModule> selectQueryByDefault(@Param("srf") DocLibModuleSearchContext context, @Param("ew") Wrapper<DocLibModule> wrapper);
+    List<DocLibModule> selectQueryByDefaultDoclib(@Param("srf") DocLibModuleSearchContext context, @Param("ew") Wrapper<DocLibModule> wrapper);
+    List<DocLibModule> selectQueryByMyFavourites(@Param("srf") DocLibModuleSearchContext context, @Param("ew") Wrapper<DocLibModule> wrapper);
+    List<DocLibModule> selectQueryByParentModule(@Param("srf") DocLibModuleSearchContext context, @Param("ew") Wrapper<DocLibModule> wrapper);
+    List<DocLibModule> selectQueryByRootModuleMuLu(@Param("srf") DocLibModuleSearchContext context, @Param("ew") Wrapper<DocLibModule> wrapper);
+    List<DocLibModule> selectQueryByRootModuleMuLuByRoot(@Param("srf") DocLibModuleSearchContext context, @Param("ew") Wrapper<DocLibModule> wrapper);
+    List<DocLibModule> selectQueryByRootModuleMuLuBysrfparentkey(@Param("srf") DocLibModuleSearchContext context, @Param("ew") Wrapper<DocLibModule> wrapper);
+    List<DocLibModule> selectQueryByView(@Param("srf") DocLibModuleSearchContext context, @Param("ew") Wrapper<DocLibModule> wrapper);
+
     Page<DocLibModule> searchAllDocLibModule_Custom(IPage page, @Param("srf") DocLibModuleSearchContext context, @Param("ew") Wrapper<DocLibModule> wrapper);
     Page<DocLibModule> searchAllDoclibModule(IPage page, @Param("srf") DocLibModuleSearchContext context, @Param("ew") Wrapper<DocLibModule> wrapper);
     Page<DocLibModule> searchChildModuleByParent(IPage page, @Param("srf") DocLibModuleSearchContext context, @Param("ew") Wrapper<DocLibModule> wrapper);

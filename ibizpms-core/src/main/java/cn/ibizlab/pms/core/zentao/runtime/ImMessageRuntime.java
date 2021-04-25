@@ -102,7 +102,11 @@ public class ImMessageRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public List<ImMessage> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        ImMessageSearchContext searchContext = (ImMessageSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return immessageService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return immessageService.selectQueryByView(searchContext);
         return null;
     }
 

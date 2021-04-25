@@ -214,6 +214,20 @@ public class TaskStatsServiceImpl extends ServiceImpl<TaskStatsMapper, TaskStats
 
 
 
+    public List<TaskStats> selectQueryByDefault(TaskStatsSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<TaskStats> selectQueryByTaskFinishHuiZong(TaskStatsSearchContext context){
+        return baseMapper.selectQueryByTaskFinishHuiZong(context, context.getSelectCond());
+    }
+    public List<TaskStats> selectQueryByUserFinishTaskSum(TaskStatsSearchContext context){
+        return baseMapper.selectQueryByUserFinishTaskSum(context, context.getSelectCond());
+    }
+    public List<TaskStats> selectQueryByView(TaskStatsSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

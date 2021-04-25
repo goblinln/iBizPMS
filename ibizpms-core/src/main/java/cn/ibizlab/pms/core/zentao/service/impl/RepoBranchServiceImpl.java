@@ -214,6 +214,14 @@ public class RepoBranchServiceImpl extends ServiceImpl<RepoBranchMapper, RepoBra
 
 
 
+    public List<RepoBranch> selectQueryByDefault(RepoBranchSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<RepoBranch> selectQueryByView(RepoBranchSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

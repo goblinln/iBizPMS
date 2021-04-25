@@ -19,6 +19,17 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface BugStatsMapper extends BaseMapper<BugStats> {
 
+    List<BugStats> selectQueryByBugCountInResolution(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
+    List<BugStats> selectQueryByBugResolvedBy(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
+    List<BugStats> selectQueryByBugResolvedGird(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
+    List<BugStats> selectQueryByBugassignedTo(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
+    List<BugStats> selectQueryByDefault(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
+    List<BugStats> selectQueryByProductBugResolutionStats(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
+    List<BugStats> selectQueryByProductBugStatusSum(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
+    List<BugStats> selectQueryByProductCreateBug(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
+    List<BugStats> selectQueryByProjectBugStatusCount(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
+    List<BugStats> selectQueryByView(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
+
     Page<BugStats> searchBugCountInResolution(IPage page, @Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
     Page<BugStats> searchBugResolvedBy(IPage page, @Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
     Page<BugStats> searchBugResolvedGird(IPage page, @Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);

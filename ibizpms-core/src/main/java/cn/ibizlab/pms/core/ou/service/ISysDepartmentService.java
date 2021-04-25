@@ -37,6 +37,10 @@ public interface ISysDepartmentService {
     boolean checkKey(SysDepartment et);
     boolean save(SysDepartment et);
     void saveBatch(List<SysDepartment> list);
+    
+    List<SysDepartment> selectQueryByDefault(SysDepartmentSearchContext context);
+    List<SysDepartment> selectQueryByView(SysDepartmentSearchContext context);
+
     Page<SysDepartment> searchDefault(SysDepartmentSearchContext context);
     List<SysDepartment> selectByParentdeptid(String deptid);
     List<SysDepartment> selectByParentdeptid(Collection<String> ids);

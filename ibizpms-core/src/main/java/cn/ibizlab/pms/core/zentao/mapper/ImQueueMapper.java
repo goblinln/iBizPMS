@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ImQueueMapper extends BaseMapper<ImQueue> {
 
+    List<ImQueue> selectQueryByDefault(@Param("srf") ImQueueSearchContext context, @Param("ew") Wrapper<ImQueue> wrapper);
+    List<ImQueue> selectQueryByView(@Param("srf") ImQueueSearchContext context, @Param("ew") Wrapper<ImQueue> wrapper);
+
     Page<ImQueue> searchDefault(IPage page, @Param("srf") ImQueueSearchContext context, @Param("ew") Wrapper<ImQueue> wrapper);
     @Override
     ImQueue selectById(Serializable id);

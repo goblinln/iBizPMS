@@ -116,6 +116,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.PRODUCTTEAMSearchContext" resultMap="PRODUCTTEAMResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[ProductTeamInfo]-->
     <sql id="ProductTeamInfo" databaseId="mysql">
@@ -127,6 +131,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProductTeamInfo"  parameterType="cn.ibizlab.pms.core.ibiz.filter.PRODUCTTEAMSearchContext" resultMap="PRODUCTTEAMResultMap">
+		<include refid="ProductTeamInfo" />
+	</select>
 
     <!--数据查询[ProjectApp]-->
     <sql id="ProjectApp" databaseId="mysql">
@@ -138,6 +146,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByProjectApp"  parameterType="cn.ibizlab.pms.core.ibiz.filter.PRODUCTTEAMSearchContext" resultMap="PRODUCTTEAMResultMap">
+		<include refid="ProjectApp" />
+	</select>
 
     <!--数据查询[RowEditDefaultProductTeam]-->
     <sql id="RowEditDefaultProductTeam" databaseId="mysql">
@@ -149,6 +161,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByRowEditDefaultProductTeam"  parameterType="cn.ibizlab.pms.core.ibiz.filter.PRODUCTTEAMSearchContext" resultMap="PRODUCTTEAMResultMap">
+		<include refid="RowEditDefaultProductTeam" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -157,6 +173,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.PRODUCTTEAMSearchContext" resultMap="PRODUCTTEAMResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

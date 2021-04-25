@@ -271,6 +271,14 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     }
 
 
+    public List<SuiteCase> selectQueryByDefault(SuiteCaseSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<SuiteCase> selectQueryByView(SuiteCaseSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

@@ -214,6 +214,14 @@ public class IbzFavoritesServiceImpl extends ServiceImpl<IbzFavoritesMapper, Ibz
 
 
 
+    public List<IbzFavorites> selectQueryByDefault(IbzFavoritesSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IbzFavorites> selectQueryByView(IbzFavoritesSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

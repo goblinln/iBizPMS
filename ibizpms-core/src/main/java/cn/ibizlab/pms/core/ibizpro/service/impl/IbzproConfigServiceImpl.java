@@ -229,6 +229,14 @@ public class IbzproConfigServiceImpl extends ServiceImpl<IbzproConfigMapper, Ibz
 
 
 
+    public List<IbzproConfig> selectQueryByDefault(IbzproConfigSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IbzproConfig> selectQueryByView(IbzproConfigSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

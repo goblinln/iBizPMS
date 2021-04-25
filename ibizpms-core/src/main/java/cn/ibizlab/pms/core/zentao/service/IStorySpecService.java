@@ -39,6 +39,11 @@ public interface IStorySpecService extends IService<StorySpec> {
     boolean save(StorySpec et);
     void saveBatch(List<StorySpec> list);
     List<StorySpec> select(StorySpecSearchContext context);
+    
+    List<StorySpec> selectQueryByDefault(StorySpecSearchContext context);
+    List<StorySpec> selectQueryByVersion(StorySpecSearchContext context);
+    List<StorySpec> selectQueryByView(StorySpecSearchContext context);
+
     Page<StorySpec> searchDefault(StorySpecSearchContext context);
     Page<StorySpec> searchVersion(StorySpecSearchContext context);
     List<StorySpec> selectByStory(Long id);

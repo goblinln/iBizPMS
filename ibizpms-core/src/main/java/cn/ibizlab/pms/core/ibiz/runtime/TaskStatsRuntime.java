@@ -106,7 +106,15 @@ public class TaskStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
 
     @Override
     public List<TaskStats> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        TaskStatsSearchContext searchContext = (TaskStatsSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return taskstatsService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("TaskFinishHuiZong"))
+            return taskstatsService.selectQueryByTaskFinishHuiZong(searchContext);
+        if (iPSDataQuery.getName().equals("UserFinishTaskSum"))
+            return taskstatsService.selectQueryByUserFinishTaskSum(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return taskstatsService.selectQueryByView(searchContext);
         return null;
     }
 

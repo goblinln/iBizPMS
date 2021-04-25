@@ -259,6 +259,29 @@ public class IbzMyTerritoryServiceImpl extends ServiceImpl<IbzMyTerritoryMapper,
 
 
 
+    public List<IbzMyTerritory> selectQueryByDefault(IbzMyTerritorySearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IbzMyTerritory> selectQueryByMyWork(IbzMyTerritorySearchContext context){
+        return baseMapper.selectQueryByMyWork(context, context.getSelectCond());
+    }
+    public List<IbzMyTerritory> selectQueryByMyWorkMob(IbzMyTerritorySearchContext context){
+        return baseMapper.selectQueryByMyWorkMob(context, context.getSelectCond());
+    }
+    public List<IbzMyTerritory> selectQueryByMyWorkPm(IbzMyTerritorySearchContext context){
+        return baseMapper.selectQueryByMyWorkPm(context, context.getSelectCond());
+    }
+    public List<IbzMyTerritory> selectQueryByPersonInfo(IbzMyTerritorySearchContext context){
+        return baseMapper.selectQueryByPersonInfo(context, context.getSelectCond());
+    }
+    public List<IbzMyTerritory> selectQueryByView(IbzMyTerritorySearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+    public List<IbzMyTerritory> selectQueryByWelcome(IbzMyTerritorySearchContext context){
+        return baseMapper.selectQueryByWelcome(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

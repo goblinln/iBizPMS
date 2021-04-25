@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface EntryMapper extends BaseMapper<Entry> {
 
+    List<Entry> selectQueryByDefault(@Param("srf") EntrySearchContext context, @Param("ew") Wrapper<Entry> wrapper);
+    List<Entry> selectQueryByView(@Param("srf") EntrySearchContext context, @Param("ew") Wrapper<Entry> wrapper);
+
     Page<Entry> searchDefault(IPage page, @Param("srf") EntrySearchContext context, @Param("ew") Wrapper<Entry> wrapper);
     @Override
     Entry selectById(Serializable id);

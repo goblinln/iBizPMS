@@ -106,7 +106,15 @@ public class UserContactRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
 
     @Override
     public List<UserContact> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        UserContactSearchContext searchContext = (UserContactSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("CurUSERCONTACT"))
+            return usercontactService.selectQueryByCurUSERCONTACT(searchContext);
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return usercontactService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("MyUSERCONTACT"))
+            return usercontactService.selectQueryByMyUSERCONTACT(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return usercontactService.selectQueryByView(searchContext);
         return null;
     }
 

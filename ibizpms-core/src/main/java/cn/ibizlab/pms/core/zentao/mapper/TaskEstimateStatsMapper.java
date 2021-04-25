@@ -19,6 +19,12 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface TaskEstimateStatsMapper extends BaseMapper<TaskEstimateStats> {
 
+    List<TaskEstimateStats> selectQueryByActionMonth(@Param("srf") TaskEstimateStatsSearchContext context, @Param("ew") Wrapper<TaskEstimateStats> wrapper);
+    List<TaskEstimateStats> selectQueryByActionYear(@Param("srf") TaskEstimateStatsSearchContext context, @Param("ew") Wrapper<TaskEstimateStats> wrapper);
+    List<TaskEstimateStats> selectQueryByDefault(@Param("srf") TaskEstimateStatsSearchContext context, @Param("ew") Wrapper<TaskEstimateStats> wrapper);
+    List<TaskEstimateStats> selectQueryByTaskEstimateStatsSum(@Param("srf") TaskEstimateStatsSearchContext context, @Param("ew") Wrapper<TaskEstimateStats> wrapper);
+    List<TaskEstimateStats> selectQueryByView(@Param("srf") TaskEstimateStatsSearchContext context, @Param("ew") Wrapper<TaskEstimateStats> wrapper);
+
     Page<TaskEstimateStats> searchActionMonth(IPage page, @Param("srf") TaskEstimateStatsSearchContext context, @Param("ew") Wrapper<TaskEstimateStats> wrapper);
     Page<TaskEstimateStats> searchActionYear(IPage page, @Param("srf") TaskEstimateStatsSearchContext context, @Param("ew") Wrapper<TaskEstimateStats> wrapper);
     Page<TaskEstimateStats> searchDefault(IPage page, @Param("srf") TaskEstimateStatsSearchContext context, @Param("ew") Wrapper<TaskEstimateStats> wrapper);

@@ -88,6 +88,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByCurProduct"  parameterType="cn.ibizlab.pms.core.zentao.filter.BranchSearchContext" resultMap="BranchResultMap">
+		<include refid="CurProduct" />
+	</select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
@@ -99,6 +103,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.BranchSearchContext" resultMap="BranchResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[DefaultBranch]-->
     <sql id="DefaultBranch" databaseId="mysql">
@@ -107,6 +115,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefaultBranch"  parameterType="cn.ibizlab.pms.core.zentao.filter.BranchSearchContext" resultMap="BranchResultMap">
+		<include refid="DefaultBranch" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -118,6 +130,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.BranchSearchContext" resultMap="BranchResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

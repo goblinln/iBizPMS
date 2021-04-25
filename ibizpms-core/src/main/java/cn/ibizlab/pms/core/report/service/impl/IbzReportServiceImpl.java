@@ -244,6 +244,20 @@ public class IbzReportServiceImpl extends ServiceImpl<IbzReportMapper, IbzReport
 
 
 
+    public List<IbzReport> selectQueryByAllReport(IbzReportSearchContext context){
+        return baseMapper.selectQueryByAllReport(context, context.getSelectCond());
+    }
+    public List<IbzReport> selectQueryByDefault(IbzReportSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IbzReport> selectQueryByMyReAllReport(IbzReportSearchContext context){
+        return baseMapper.selectQueryByMyReAllReport(context, context.getSelectCond());
+    }
+    public List<IbzReport> selectQueryByView(IbzReportSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 汇报汇总
      */

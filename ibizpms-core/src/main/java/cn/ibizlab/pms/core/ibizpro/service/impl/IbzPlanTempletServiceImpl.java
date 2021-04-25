@@ -240,6 +240,17 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
 
 
 
+    public List<IbzPlanTemplet> selectQueryByCurUserTemplet(IbzPlanTempletSearchContext context){
+        return baseMapper.selectQueryByCurUserTemplet(context, context.getSelectCond());
+    }
+    public List<IbzPlanTemplet> selectQueryByDefault(IbzPlanTempletSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IbzPlanTemplet> selectQueryByView(IbzPlanTempletSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 CurUserTemplet
      */

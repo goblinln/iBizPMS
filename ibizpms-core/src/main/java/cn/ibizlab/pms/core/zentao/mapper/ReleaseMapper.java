@@ -19,6 +19,11 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ReleaseMapper extends BaseMapper<Release> {
 
+    List<Release> selectQueryByDefault(@Param("srf") ReleaseSearchContext context, @Param("ew") Wrapper<Release> wrapper);
+    List<Release> selectQueryByGetList(@Param("srf") ReleaseSearchContext context, @Param("ew") Wrapper<Release> wrapper);
+    List<Release> selectQueryByReportRelease(@Param("srf") ReleaseSearchContext context, @Param("ew") Wrapper<Release> wrapper);
+    List<Release> selectQueryByView(@Param("srf") ReleaseSearchContext context, @Param("ew") Wrapper<Release> wrapper);
+
     Page<Release> searchDefault(IPage page, @Param("srf") ReleaseSearchContext context, @Param("ew") Wrapper<Release> wrapper);
     Page<Release> searchReportRelease(IPage page, @Param("srf") ReleaseSearchContext context, @Param("ew") Wrapper<Release> wrapper);
     @Override

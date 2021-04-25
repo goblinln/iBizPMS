@@ -244,6 +244,14 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team> implements IT
 
 
 
+    public List<Team> selectQueryByDefault(TeamSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Team> selectQueryByView(TeamSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

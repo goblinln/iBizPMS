@@ -289,6 +289,23 @@ public class UserYearWorkStatsServiceImpl extends ServiceImpl<UserYearWorkStatsM
 
 
 
+    public List<UserYearWorkStats> selectQueryByDefault(UserYearWorkStatsSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<UserYearWorkStats> selectQueryByMonthFinishTaskAndBug(UserYearWorkStatsSearchContext context){
+        return baseMapper.selectQueryByMonthFinishTaskAndBug(context, context.getSelectCond());
+    }
+    public List<UserYearWorkStats> selectQueryByMonthOpenedBugAndCase(UserYearWorkStatsSearchContext context){
+        return baseMapper.selectQueryByMonthOpenedBugAndCase(context, context.getSelectCond());
+    }
+    public List<UserYearWorkStats> selectQueryByMonthOpenedStory(UserYearWorkStatsSearchContext context){
+        return baseMapper.selectQueryByMonthOpenedStory(context, context.getSelectCond());
+    }
+    public List<UserYearWorkStats> selectQueryByView(UserYearWorkStatsSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

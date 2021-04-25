@@ -39,6 +39,10 @@ public interface IImChatuserService extends IService<ImChatuser> {
     boolean save(ImChatuser et);
     void saveBatch(List<ImChatuser> list);
     List<ImChatuser> select(ImChatuserSearchContext context);
+    
+    List<ImChatuser> selectQueryByDefault(ImChatuserSearchContext context);
+    List<ImChatuser> selectQueryByView(ImChatuserSearchContext context);
+
     Page<ImChatuser> searchDefault(ImChatuserSearchContext context);
     ImChatuser dynamicCall(Long key, String action, ImChatuser et);
     /**

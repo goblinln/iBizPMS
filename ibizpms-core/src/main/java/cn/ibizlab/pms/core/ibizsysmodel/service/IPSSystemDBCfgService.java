@@ -37,6 +37,11 @@ public interface IPSSystemDBCfgService {
     boolean checkKey(PSSystemDBCfg et);
     boolean save(PSSystemDBCfg et);
     void saveBatch(List<PSSystemDBCfg> list);
+    
+    List<PSSystemDBCfg> selectQueryByBuild(PSSystemDBCfgSearchContext context);
+    List<PSSystemDBCfg> selectQueryByDefault(PSSystemDBCfgSearchContext context);
+    List<PSSystemDBCfg> selectQueryByView(PSSystemDBCfgSearchContext context);
+
     Page<PSSystemDBCfg> searchBuild(PSSystemDBCfgSearchContext context);
     Page<PSSystemDBCfg> searchDefault(PSSystemDBCfgSearchContext context);
     PSSystemDBCfg dynamicCall(String key, String action, PSSystemDBCfg et);

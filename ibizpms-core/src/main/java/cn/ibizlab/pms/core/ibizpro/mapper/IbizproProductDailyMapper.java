@@ -19,6 +19,10 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IbizproProductDailyMapper extends BaseMapper<IbizproProductDaily> {
 
+    List<IbizproProductDaily> selectQueryByDefault(@Param("srf") IbizproProductDailySearchContext context, @Param("ew") Wrapper<IbizproProductDaily> wrapper);
+    List<IbizproProductDaily> selectQueryByProductDaily(@Param("srf") IbizproProductDailySearchContext context, @Param("ew") Wrapper<IbizproProductDaily> wrapper);
+    List<IbizproProductDaily> selectQueryByView(@Param("srf") IbizproProductDailySearchContext context, @Param("ew") Wrapper<IbizproProductDaily> wrapper);
+
     Page<IbizproProductDaily> searchDefault(IPage page, @Param("srf") IbizproProductDailySearchContext context, @Param("ew") Wrapper<IbizproProductDaily> wrapper);
     Page<IbizproProductDaily> searchProductDaily(IPage page, @Param("srf") IbizproProductDailySearchContext context, @Param("ew") Wrapper<IbizproProductDaily> wrapper);
     @Override

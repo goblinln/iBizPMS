@@ -214,6 +214,14 @@ public class EffortServiceImpl extends ServiceImpl<EffortMapper, Effort> impleme
 
 
 
+    public List<Effort> selectQueryByDefault(EffortSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<Effort> selectQueryByView(EffortSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

@@ -69,6 +69,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByCurUserTemplet"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzPlanTempletSearchContext" resultMap="IbzPlanTempletResultMap">
+		<include refid="CurUserTemplet" />
+	</select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
@@ -77,6 +81,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzPlanTempletSearchContext" resultMap="IbzPlanTempletResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -85,6 +93,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzPlanTempletSearchContext" resultMap="IbzPlanTempletResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

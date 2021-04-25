@@ -37,6 +37,10 @@ public interface ISysOrganizationService {
     boolean checkKey(SysOrganization et);
     boolean save(SysOrganization et);
     void saveBatch(List<SysOrganization> list);
+    
+    List<SysOrganization> selectQueryByDefault(SysOrganizationSearchContext context);
+    List<SysOrganization> selectQueryByView(SysOrganizationSearchContext context);
+
     Page<SysOrganization> searchDefault(SysOrganizationSearchContext context);
     List<SysOrganization> selectByParentorgid(String orgid);
     List<SysOrganization> selectByParentorgid(Collection<String> ids);

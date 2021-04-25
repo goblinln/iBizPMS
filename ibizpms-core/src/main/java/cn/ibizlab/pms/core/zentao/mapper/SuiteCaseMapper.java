@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface SuiteCaseMapper extends BaseMapper<SuiteCase> {
 
+    List<SuiteCase> selectQueryByDefault(@Param("srf") SuiteCaseSearchContext context, @Param("ew") Wrapper<SuiteCase> wrapper);
+    List<SuiteCase> selectQueryByView(@Param("srf") SuiteCaseSearchContext context, @Param("ew") Wrapper<SuiteCase> wrapper);
+
     Page<SuiteCase> searchDefault(IPage page, @Param("srf") SuiteCaseSearchContext context, @Param("ew") Wrapper<SuiteCase> wrapper);
     @Override
     SuiteCase selectById(Serializable id);

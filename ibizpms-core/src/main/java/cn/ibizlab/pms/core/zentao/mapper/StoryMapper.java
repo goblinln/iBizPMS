@@ -19,6 +19,34 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface StoryMapper extends BaseMapper<Story> {
 
+    List<Story> selectQueryByAssignedToMyStory(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByAssignedToMyStoryCalendar(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByBugStory(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByBuildLinkCompletedStories(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByBuildLinkableStories(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByBuildStories(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByByModule(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByCaseStory(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByDefault(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByESBulk(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByGetProductStories(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByMyAgentStory(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByMyCurOpenedStory(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByMyFavorites(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByNotCurPlanLinkStory(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByParentDefault(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByParentDefaultQ(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByProjectLinkStory(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByProjectStories(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByReleaseLinkableStories(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByReleaseStories(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByReportStories(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByStoryChild(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByStoryRelated(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryBySubStory(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByTaskRelatedStory(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectQueryByView(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+
     Page<Story> searchAssignedToMyStory(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchAssignedToMyStoryCalendar(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchBugStory(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);

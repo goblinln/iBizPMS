@@ -259,6 +259,17 @@ public class CaseStatsServiceImpl extends ServiceImpl<CaseStatsMapper, CaseStats
     }
 
 
+    public List<CaseStats> selectQueryByDefault(CaseStatsSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<CaseStats> selectQueryByTestCaseStats(CaseStatsSearchContext context){
+        return baseMapper.selectQueryByTestCaseStats(context, context.getSelectCond());
+    }
+    public List<CaseStats> selectQueryByView(CaseStatsSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

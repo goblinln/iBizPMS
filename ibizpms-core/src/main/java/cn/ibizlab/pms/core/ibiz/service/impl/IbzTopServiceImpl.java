@@ -214,6 +214,14 @@ public class IbzTopServiceImpl extends ServiceImpl<IbzTopMapper, IbzTop> impleme
 
 
 
+    public List<IbzTop> selectQueryByDefault(IbzTopSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IbzTop> selectQueryByView(IbzTopSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

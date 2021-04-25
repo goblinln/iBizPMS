@@ -180,6 +180,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByByPath"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductModuleSearchContext" resultMap="ProductModuleResultMap">
+		<include refid="ByPath" />
+	</select>
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
@@ -194,6 +198,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductModuleSearchContext" resultMap="ProductModuleResultMap">
+		<include refid="Default" />
+	</select>
 
     <!--数据查询[ParentModule]-->
     <sql id="ParentModule" databaseId="mysql">
@@ -211,6 +219,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByParentModule"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductModuleSearchContext" resultMap="ProductModuleResultMap">
+		<include refid="ParentModule" />
+	</select>
 
     <!--数据查询[Root]-->
     <sql id="Root" databaseId="mysql">
@@ -225,6 +237,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByRoot"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductModuleSearchContext" resultMap="ProductModuleResultMap">
+		<include refid="Root" />
+	</select>
 
     <!--数据查询[Root_NoBranch]-->
     <sql id="Root_NoBranch" databaseId="mysql">
@@ -239,6 +255,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByRoot_NoBranch"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductModuleSearchContext" resultMap="ProductModuleResultMap">
+		<include refid="Root_NoBranch" />
+	</select>
 
     <!--数据查询[StoryModule]-->
     <sql id="StoryModule" databaseId="mysql">
@@ -253,6 +273,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByStoryModule"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductModuleSearchContext" resultMap="ProductModuleResultMap">
+		<include refid="StoryModule" />
+	</select>
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
@@ -267,6 +291,10 @@
 			<include refid="searchMode" />
 		</trim>
     </sql>
+	
+	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductModuleSearchContext" resultMap="ProductModuleResultMap">
+		<include refid="View" />
+	</select>
 
 </mapper>
 

@@ -214,6 +214,14 @@ public class ImMessageServiceImpl extends ServiceImpl<ImMessageMapper, ImMessage
 
 
 
+    public List<ImMessage> selectQueryByDefault(ImMessageSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<ImMessage> selectQueryByView(ImMessageSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 DEFAULT
      */

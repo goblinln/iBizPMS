@@ -102,7 +102,11 @@ public class CompanyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public List<Company> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        CompanySearchContext searchContext = (CompanySearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return companyService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return companyService.selectQueryByView(searchContext);
         return null;
     }
 

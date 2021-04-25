@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface WebHookMapper extends BaseMapper<WebHook> {
 
+    List<WebHook> selectQueryByDefault(@Param("srf") WebHookSearchContext context, @Param("ew") Wrapper<WebHook> wrapper);
+    List<WebHook> selectQueryByView(@Param("srf") WebHookSearchContext context, @Param("ew") Wrapper<WebHook> wrapper);
+
     Page<WebHook> searchDefault(IPage page, @Param("srf") WebHookSearchContext context, @Param("ew") Wrapper<WebHook> wrapper);
     @Override
     WebHook selectById(Serializable id);

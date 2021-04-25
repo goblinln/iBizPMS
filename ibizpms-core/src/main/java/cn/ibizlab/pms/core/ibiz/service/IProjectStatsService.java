@@ -41,6 +41,20 @@ public interface IProjectStatsService extends IService<ProjectStats> {
     boolean save(ProjectStats et);
     void saveBatch(List<ProjectStats> list);
     List<ProjectStats> select(ProjectStatsSearchContext context);
+    
+    List<ProjectStats> selectQueryByDefault(ProjectStatsSearchContext context);
+    List<ProjectStats> selectQueryByNoOpenProduct(ProjectStatsSearchContext context);
+    List<ProjectStats> selectQueryByProjectBugType(ProjectStatsSearchContext context);
+    List<ProjectStats> selectQueryByProjectInputStats(ProjectStatsSearchContext context);
+    List<ProjectStats> selectQueryByProjectProgress(ProjectStatsSearchContext context);
+    List<ProjectStats> selectQueryByProjectQuality(ProjectStatsSearchContext context);
+    List<ProjectStats> selectQueryByProjectStoryStageStats(ProjectStatsSearchContext context);
+    List<ProjectStats> selectQueryByProjectStoryStatusStats(ProjectStatsSearchContext context);
+    List<ProjectStats> selectQueryByProjectTaskCountByTaskStatus(ProjectStatsSearchContext context);
+    List<ProjectStats> selectQueryByProjectTaskCountByType(ProjectStatsSearchContext context);
+    List<ProjectStats> selectQueryByTaskTime(ProjectStatsSearchContext context);
+    List<ProjectStats> selectQueryByView(ProjectStatsSearchContext context);
+
     Page<ProjectStats> searchDefault(ProjectStatsSearchContext context);
     Page<ProjectStats> searchNoOpenProduct(ProjectStatsSearchContext context);
     Page<ProjectStats> searchProjectBugType(ProjectStatsSearchContext context);

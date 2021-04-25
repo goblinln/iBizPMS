@@ -19,6 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface BlockMapper extends BaseMapper<Block> {
 
+    List<Block> selectQueryByDefault(@Param("srf") BlockSearchContext context, @Param("ew") Wrapper<Block> wrapper);
+    List<Block> selectQueryByView(@Param("srf") BlockSearchContext context, @Param("ew") Wrapper<Block> wrapper);
+
     Page<Block> searchDefault(IPage page, @Param("srf") BlockSearchContext context, @Param("ew") Wrapper<Block> wrapper);
     @Override
     Block selectById(Serializable id);

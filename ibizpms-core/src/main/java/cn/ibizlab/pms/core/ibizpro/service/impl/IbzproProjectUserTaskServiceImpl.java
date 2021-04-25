@@ -214,6 +214,23 @@ public class IbzproProjectUserTaskServiceImpl extends ServiceImpl<IbzproProjectU
 
 
 
+    public List<IbzproProjectUserTask> selectQueryByDefault(IbzproProjectUserTaskSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<IbzproProjectUserTask> selectQueryByProjectDailyTask(IbzproProjectUserTaskSearchContext context){
+        return baseMapper.selectQueryByProjectDailyTask(context, context.getSelectCond());
+    }
+    public List<IbzproProjectUserTask> selectQueryByProjectMonthlyTask(IbzproProjectUserTaskSearchContext context){
+        return baseMapper.selectQueryByProjectMonthlyTask(context, context.getSelectCond());
+    }
+    public List<IbzproProjectUserTask> selectQueryByProjectWeeklyTask(IbzproProjectUserTaskSearchContext context){
+        return baseMapper.selectQueryByProjectWeeklyTask(context, context.getSelectCond());
+    }
+    public List<IbzproProjectUserTask> selectQueryByView(IbzproProjectUserTaskSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

@@ -19,6 +19,12 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface TodoMapper extends BaseMapper<Todo> {
 
+    List<Todo> selectQueryByDefault(@Param("srf") TodoSearchContext context, @Param("ew") Wrapper<Todo> wrapper);
+    List<Todo> selectQueryByMyTodo(@Param("srf") TodoSearchContext context, @Param("ew") Wrapper<Todo> wrapper);
+    List<Todo> selectQueryByMyTodoPc(@Param("srf") TodoSearchContext context, @Param("ew") Wrapper<Todo> wrapper);
+    List<Todo> selectQueryByMyUpcoming(@Param("srf") TodoSearchContext context, @Param("ew") Wrapper<Todo> wrapper);
+    List<Todo> selectQueryByView(@Param("srf") TodoSearchContext context, @Param("ew") Wrapper<Todo> wrapper);
+
     Page<Todo> searchDefault(IPage page, @Param("srf") TodoSearchContext context, @Param("ew") Wrapper<Todo> wrapper);
     Page<Todo> searchMyTodo(IPage page, @Param("srf") TodoSearchContext context, @Param("ew") Wrapper<Todo> wrapper);
     Page<Todo> searchMyTodoPc(IPage page, @Param("srf") TodoSearchContext context, @Param("ew") Wrapper<Todo> wrapper);

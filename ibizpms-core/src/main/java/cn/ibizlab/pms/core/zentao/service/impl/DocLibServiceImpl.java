@@ -293,6 +293,38 @@ public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> impleme
     }
 
 
+    public List<DocLib> selectQueryByByCustom(DocLibSearchContext context){
+        return baseMapper.selectQueryByByCustom(context, context.getSelectCond());
+    }
+    public List<DocLib> selectQueryByByProduct(DocLibSearchContext context){
+        return baseMapper.selectQueryByByProduct(context, context.getSelectCond());
+    }
+    public List<DocLib> selectQueryByByProductNotFiles(DocLibSearchContext context){
+        return baseMapper.selectQueryByByProductNotFiles(context, context.getSelectCond());
+    }
+    public List<DocLib> selectQueryByByProject(DocLibSearchContext context){
+        return baseMapper.selectQueryByByProject(context, context.getSelectCond());
+    }
+    public List<DocLib> selectQueryByByProjectNotFiles(DocLibSearchContext context){
+        return baseMapper.selectQueryByByProjectNotFiles(context, context.getSelectCond());
+    }
+    public List<DocLib> selectQueryByCurDocLib(DocLibSearchContext context){
+        return baseMapper.selectQueryByCurDocLib(context, context.getSelectCond());
+    }
+    public List<DocLib> selectQueryByDefault(DocLibSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<DocLib> selectQueryByMyFavourites(DocLibSearchContext context){
+        return baseMapper.selectQueryByMyFavourites(context, context.getSelectCond());
+    }
+    public List<DocLib> selectQueryByRootModuleMuLu(DocLibSearchContext context){
+        return baseMapper.selectQueryByRootModuleMuLu(context, context.getSelectCond());
+    }
+    public List<DocLib> selectQueryByView(DocLibSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 自定义文档库
      */

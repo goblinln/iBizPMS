@@ -102,7 +102,11 @@ public class ImConferenceactionRuntime extends cn.ibizlab.pms.core.runtime.Syste
 
     @Override
     public List<ImConferenceaction> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        ImConferenceactionSearchContext searchContext = (ImConferenceactionSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return imconferenceactionService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return imconferenceactionService.selectQueryByView(searchContext);
         return null;
     }
 

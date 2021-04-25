@@ -236,6 +236,14 @@ public class SysUpdateLogServiceImpl extends ServiceImpl<SysUpdateLogMapper, Sys
 
 
 
+    public List<SysUpdateLog> selectQueryByDefault(SysUpdateLogSearchContext context){
+        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    }
+    public List<SysUpdateLog> selectQueryByView(SysUpdateLogSearchContext context){
+        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    }
+
+
     /**
      * 查询集合 数据集
      */

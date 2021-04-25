@@ -104,7 +104,13 @@ public class ProjectProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
 
     @Override
     public List<ProjectProduct> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
-        //暂未实现
+        ProjectProductSearchContext searchContext = (ProjectProductSearchContext) iSearchContextBase;
+        if (iPSDataQuery.getName().equals("DEFAULT"))
+            return projectproductService.selectQueryByDefault(searchContext);
+        if (iPSDataQuery.getName().equals("RelationPlan"))
+            return projectproductService.selectQueryByRelationPlan(searchContext);
+        if (iPSDataQuery.getName().equals("VIEW"))
+            return projectproductService.selectQueryByView(searchContext);
         return null;
     }
 
