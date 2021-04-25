@@ -214,20 +214,20 @@ public class IbzproProductUserTaskServiceImpl extends ServiceImpl<IbzproProductU
 
 
 
-    public List<IbzproProductUserTask> selectQueryByDefault(IbzproProductUserTaskSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IbzproProductUserTask> selectDefault(IbzproProductUserTaskSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IbzproProductUserTask> selectQueryByProductDailyUserTaskStats(IbzproProductUserTaskSearchContext context){
-        return baseMapper.selectQueryByProductDailyUserTaskStats(context, context.getSelectCond());
+    public List<IbzproProductUserTask> selectProductDailyUserTaskStats(IbzproProductUserTaskSearchContext context){
+        return baseMapper.selectProductDailyUserTaskStats(context, context.getSelectCond());
     }
-    public List<IbzproProductUserTask> selectQueryByProductMonthlyUserTaskStats(IbzproProductUserTaskSearchContext context){
-        return baseMapper.selectQueryByProductMonthlyUserTaskStats(context, context.getSelectCond());
+    public List<IbzproProductUserTask> selectProductMonthlyUserTaskStats(IbzproProductUserTaskSearchContext context){
+        return baseMapper.selectProductMonthlyUserTaskStats(context, context.getSelectCond());
     }
-    public List<IbzproProductUserTask> selectQueryByProductWeeklyUserTaskStats(IbzproProductUserTaskSearchContext context){
-        return baseMapper.selectQueryByProductWeeklyUserTaskStats(context, context.getSelectCond());
+    public List<IbzproProductUserTask> selectProductWeeklyUserTaskStats(IbzproProductUserTaskSearchContext context){
+        return baseMapper.selectProductWeeklyUserTaskStats(context, context.getSelectCond());
     }
-    public List<IbzproProductUserTask> selectQueryByView(IbzproProductUserTaskSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IbzproProductUserTask> selectView(IbzproProductUserTaskSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

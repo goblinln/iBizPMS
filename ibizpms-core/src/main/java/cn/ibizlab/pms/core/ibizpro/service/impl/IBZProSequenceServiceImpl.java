@@ -229,14 +229,14 @@ public class IBZProSequenceServiceImpl extends ServiceImpl<IBZProSequenceMapper,
 
 
 
-    public List<IBZProSequence> selectQueryByDefault(IBZProSequenceSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IBZProSequence> selectDefault(IBZProSequenceSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IBZProSequence> selectQueryBySimple(IBZProSequenceSearchContext context){
-        return baseMapper.selectQueryBySimple(context, context.getSelectCond());
+    public List<IBZProSequence> selectSimple(IBZProSequenceSearchContext context){
+        return baseMapper.selectSimple(context, context.getSelectCond());
     }
-    public List<IBZProSequence> selectQueryByView(IBZProSequenceSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IBZProSequence> selectView(IBZProSequenceSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

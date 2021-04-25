@@ -104,9 +104,9 @@ public class RepoHistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     public List<RepoHistory> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         RepoHistorySearchContext searchContext = (RepoHistorySearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return repohistoryService.selectQueryByDefault(searchContext);
+            return repohistoryService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return repohistoryService.selectQueryByView(searchContext);
+            return repohistoryService.selectView(searchContext);
         return null;
     }
 

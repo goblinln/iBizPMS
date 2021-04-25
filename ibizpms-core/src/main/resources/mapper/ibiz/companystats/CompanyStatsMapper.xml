@@ -66,7 +66,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCompanyDynamicStats"  parameterType="cn.ibizlab.pms.core.ibiz.filter.CompanyStatsSearchContext" resultMap="CompanyStatsResultMap">
+	<select id="selectCompanyDynamicStats"  parameterType="cn.ibizlab.pms.core.ibiz.filter.CompanyStatsSearchContext" resultMap="CompanyStatsResultMap">
 		<include refid="CompanyDynamicStats" />
 	</select>
 
@@ -78,7 +78,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.CompanyStatsSearchContext" resultMap="CompanyStatsResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.CompanyStatsSearchContext" resultMap="CompanyStatsResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -90,7 +90,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.CompanyStatsSearchContext" resultMap="CompanyStatsResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.CompanyStatsSearchContext" resultMap="CompanyStatsResultMap">
 		<include refid="View" />
 	</select>
 

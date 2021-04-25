@@ -56,7 +56,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzLibCaseStepSearchContext" resultMap="IbzLibCaseStepResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzLibCaseStepSearchContext" resultMap="IbzLibCaseStepResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -68,7 +68,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzLibCaseStepSearchContext" resultMap="IbzLibCaseStepResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzLibCaseStepSearchContext" resultMap="IbzLibCaseStepResultMap">
 		<include refid="View" />
 	</select>
 

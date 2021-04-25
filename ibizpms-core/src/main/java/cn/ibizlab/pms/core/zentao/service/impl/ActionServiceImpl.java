@@ -284,32 +284,32 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
     }
 
 
-    public List<Action> selectQueryByBianGengLineHistory(ActionSearchContext context){
-        return baseMapper.selectQueryByBianGengLineHistory(context, context.getSelectCond());
+    public List<Action> selectBianGengLineHistory(ActionSearchContext context){
+        return baseMapper.selectBianGengLineHistory(context, context.getSelectCond());
     }
-    public List<Action> selectQueryByDefault(ActionSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Action> selectDefault(ActionSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Action> selectQueryByMobType(ActionSearchContext context){
-        return baseMapper.selectQueryByMobType(context, context.getSelectCond());
+    public List<Action> selectMobType(ActionSearchContext context){
+        return baseMapper.selectMobType(context, context.getSelectCond());
     }
-    public List<Action> selectQueryByMyTrends(ActionSearchContext context){
-        return baseMapper.selectQueryByMyTrends(context, context.getSelectCond());
+    public List<Action> selectMyTrends(ActionSearchContext context){
+        return baseMapper.selectMyTrends(context, context.getSelectCond());
     }
-    public List<Action> selectQueryByProductTrends(ActionSearchContext context){
-        return baseMapper.selectQueryByProductTrends(context, context.getSelectCond());
+    public List<Action> selectProductTrends(ActionSearchContext context){
+        return baseMapper.selectProductTrends(context, context.getSelectCond());
     }
-    public List<Action> selectQueryByProjectTrends(ActionSearchContext context){
-        return baseMapper.selectQueryByProjectTrends(context, context.getSelectCond());
+    public List<Action> selectProjectTrends(ActionSearchContext context){
+        return baseMapper.selectProjectTrends(context, context.getSelectCond());
     }
-    public List<Action> selectQueryByQueryUserYEAR(ActionSearchContext context){
-        return baseMapper.selectQueryByQueryUserYEAR(context, context.getSelectCond());
+    public List<Action> selectQueryUserYEAR(ActionSearchContext context){
+        return baseMapper.selectQueryUserYEAR(context, context.getSelectCond());
     }
-    public List<Action> selectQueryByType(ActionSearchContext context){
-        return baseMapper.selectQueryByType(context, context.getSelectCond());
+    public List<Action> selectType(ActionSearchContext context){
+        return baseMapper.selectType(context, context.getSelectCond());
     }
-    public List<Action> selectQueryByView(ActionSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Action> selectView(ActionSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

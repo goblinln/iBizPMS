@@ -534,41 +534,41 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
     }
 
 
-    public List<ProductPlan> selectQueryByChildPlan(ProductPlanSearchContext context){
-        return baseMapper.selectQueryByChildPlan(context, context.getSelectCond());
+    public List<ProductPlan> selectChildPlan(ProductPlanSearchContext context){
+        return baseMapper.selectChildPlan(context, context.getSelectCond());
     }
-    public List<ProductPlan> selectQueryByDefault(ProductPlanSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<ProductPlan> selectDefault(ProductPlanSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<ProductPlan> selectQueryByDefaultParent(ProductPlanSearchContext context){
-        return baseMapper.selectQueryByDefaultParent(context, context.getSelectCond());
+    public List<ProductPlan> selectDefaultParent(ProductPlanSearchContext context){
+        return baseMapper.selectDefaultParent(context, context.getSelectCond());
     }
-    public List<ProductPlan> selectQueryByGetList(ProductPlanSearchContext context){
-        return baseMapper.selectQueryByGetList(context, context.getSelectCond());
+    public List<ProductPlan> selectGetList(ProductPlanSearchContext context){
+        return baseMapper.selectGetList(context, context.getSelectCond());
     }
-    public List<ProductPlan> selectQueryByPlanCodeList(ProductPlanSearchContext context){
-        return baseMapper.selectQueryByPlanCodeList(context, context.getSelectCond());
+    public List<ProductPlan> selectPlanCodeList(ProductPlanSearchContext context){
+        return baseMapper.selectPlanCodeList(context, context.getSelectCond());
     }
-    public List<ProductPlan> selectQueryByPlanTasks(ProductPlanSearchContext context){
-        return baseMapper.selectQueryByPlanTasks(context, context.getSelectCond());
+    public List<ProductPlan> selectPlanTasks(ProductPlanSearchContext context){
+        return baseMapper.selectPlanTasks(context, context.getSelectCond());
     }
-    public List<ProductPlan> selectQueryByProductQuery(ProductPlanSearchContext context){
-        return baseMapper.selectQueryByProductQuery(context, context.getSelectCond());
+    public List<ProductPlan> selectProductQuery(ProductPlanSearchContext context){
+        return baseMapper.selectProductQuery(context, context.getSelectCond());
     }
-    public List<ProductPlan> selectQueryByProjectApp(ProductPlanSearchContext context){
-        return baseMapper.selectQueryByProjectApp(context, context.getSelectCond());
+    public List<ProductPlan> selectProjectApp(ProductPlanSearchContext context){
+        return baseMapper.selectProjectApp(context, context.getSelectCond());
     }
-    public List<ProductPlan> selectQueryByProjectPlan(ProductPlanSearchContext context){
-        return baseMapper.selectQueryByProjectPlan(context, context.getSelectCond());
+    public List<ProductPlan> selectProjectPlan(ProductPlanSearchContext context){
+        return baseMapper.selectProjectPlan(context, context.getSelectCond());
     }
-    public List<ProductPlan> selectQueryByRootPlan(ProductPlanSearchContext context){
-        return baseMapper.selectQueryByRootPlan(context, context.getSelectCond());
+    public List<ProductPlan> selectRootPlan(ProductPlanSearchContext context){
+        return baseMapper.selectRootPlan(context, context.getSelectCond());
     }
-    public List<ProductPlan> selectQueryByTaskPlan(ProductPlanSearchContext context){
-        return baseMapper.selectQueryByTaskPlan(context, context.getSelectCond());
+    public List<ProductPlan> selectTaskPlan(ProductPlanSearchContext context){
+        return baseMapper.selectTaskPlan(context, context.getSelectCond());
     }
-    public List<ProductPlan> selectQueryByView(ProductPlanSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<ProductPlan> selectView(ProductPlanSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

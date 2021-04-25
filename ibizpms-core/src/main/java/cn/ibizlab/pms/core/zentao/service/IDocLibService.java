@@ -43,16 +43,16 @@ public interface IDocLibService extends IService<DocLib> {
     DocLib unCollect(DocLib et);
     boolean unCollectBatch(List<DocLib> etList);
     List<DocLib> select(DocLibSearchContext context);
-    List<DocLib> selectQueryByByCustom(DocLibSearchContext context);
-    List<DocLib> selectQueryByByProduct(DocLibSearchContext context);
-    List<DocLib> selectQueryByByProductNotFiles(DocLibSearchContext context);
-    List<DocLib> selectQueryByByProject(DocLibSearchContext context);
-    List<DocLib> selectQueryByByProjectNotFiles(DocLibSearchContext context);
-    List<DocLib> selectQueryByCurDocLib(DocLibSearchContext context);
-    List<DocLib> selectQueryByDefault(DocLibSearchContext context);
-    List<DocLib> selectQueryByMyFavourites(DocLibSearchContext context);
-    List<DocLib> selectQueryByRootModuleMuLu(DocLibSearchContext context);
-    List<DocLib> selectQueryByView(DocLibSearchContext context);
+    List<DocLib> selectByCustom(DocLibSearchContext context);
+    List<DocLib> selectByProduct(DocLibSearchContext context);
+    List<DocLib> selectByProductNotFiles(DocLibSearchContext context);
+    List<DocLib> selectByProject(DocLibSearchContext context);
+    List<DocLib> selectByProjectNotFiles(DocLibSearchContext context);
+    List<DocLib> selectCurDocLib(DocLibSearchContext context);
+    List<DocLib> selectDefault(DocLibSearchContext context);
+    List<DocLib> selectMyFavourites(DocLibSearchContext context);
+    List<DocLib> selectRootModuleMuLu(DocLibSearchContext context);
+    List<DocLib> selectView(DocLibSearchContext context);
 
     Page<DocLib> searchByCustom(DocLibSearchContext context);
     Page<DocLib> searchByProduct(DocLibSearchContext context);

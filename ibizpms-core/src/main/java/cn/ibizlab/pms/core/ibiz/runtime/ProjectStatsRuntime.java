@@ -124,29 +124,29 @@ public class ProjectStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     public List<ProjectStats> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         ProjectStatsSearchContext searchContext = (ProjectStatsSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return projectstatsService.selectQueryByDefault(searchContext);
+            return projectstatsService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("NOOpenProduct"))
-            return projectstatsService.selectQueryByNoOpenProduct(searchContext);
+            return projectstatsService.selectNoOpenProduct(searchContext);
         if (iPSDataQuery.getName().equals("ProjectBugType"))
-            return projectstatsService.selectQueryByProjectBugType(searchContext);
+            return projectstatsService.selectProjectBugType(searchContext);
         if (iPSDataQuery.getName().equals("ProjectInputStats"))
-            return projectstatsService.selectQueryByProjectInputStats(searchContext);
+            return projectstatsService.selectProjectInputStats(searchContext);
         if (iPSDataQuery.getName().equals("ProjectProgress"))
-            return projectstatsService.selectQueryByProjectProgress(searchContext);
+            return projectstatsService.selectProjectProgress(searchContext);
         if (iPSDataQuery.getName().equals("ProjectQuality"))
-            return projectstatsService.selectQueryByProjectQuality(searchContext);
+            return projectstatsService.selectProjectQuality(searchContext);
         if (iPSDataQuery.getName().equals("ProjectStoryStageStats"))
-            return projectstatsService.selectQueryByProjectStoryStageStats(searchContext);
+            return projectstatsService.selectProjectStoryStageStats(searchContext);
         if (iPSDataQuery.getName().equals("ProjectStoryStatusStats"))
-            return projectstatsService.selectQueryByProjectStoryStatusStats(searchContext);
+            return projectstatsService.selectProjectStoryStatusStats(searchContext);
         if (iPSDataQuery.getName().equals("ProjectTaskCountByTaskStatus"))
-            return projectstatsService.selectQueryByProjectTaskCountByTaskStatus(searchContext);
+            return projectstatsService.selectProjectTaskCountByTaskStatus(searchContext);
         if (iPSDataQuery.getName().equals("ProjectTaskCountByType"))
-            return projectstatsService.selectQueryByProjectTaskCountByType(searchContext);
+            return projectstatsService.selectProjectTaskCountByType(searchContext);
         if (iPSDataQuery.getName().equals("TASKTIME"))
-            return projectstatsService.selectQueryByTaskTime(searchContext);
+            return projectstatsService.selectTaskTime(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return projectstatsService.selectQueryByView(searchContext);
+            return projectstatsService.selectView(searchContext);
         return null;
     }
 

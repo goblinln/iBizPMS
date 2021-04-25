@@ -78,7 +78,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySpecSearchContext" resultMap="StorySpecResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySpecSearchContext" resultMap="StorySpecResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -90,7 +90,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByVersion"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySpecSearchContext" resultMap="StorySpecResultMap">
+	<select id="selectVersion"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySpecSearchContext" resultMap="StorySpecResultMap">
 		<include refid="Version" />
 	</select>
 
@@ -102,7 +102,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySpecSearchContext" resultMap="StorySpecResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySpecSearchContext" resultMap="StorySpecResultMap">
 		<include refid="View" />
 	</select>
 

@@ -104,9 +104,9 @@ public class WebHookRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     public List<WebHook> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         WebHookSearchContext searchContext = (WebHookSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return webhookService.selectQueryByDefault(searchContext);
+            return webhookService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return webhookService.selectQueryByView(searchContext);
+            return webhookService.selectView(searchContext);
         return null;
     }
 

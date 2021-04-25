@@ -43,14 +43,14 @@ public interface IProjectModuleService extends IService<ProjectModule> {
     boolean save(ProjectModule et);
     void saveBatch(List<ProjectModule> list);
     List<ProjectModule> select(ProjectModuleSearchContext context);
-    List<ProjectModule> selectQueryByByPath(ProjectModuleSearchContext context);
-    List<ProjectModule> selectQueryByDefault(ProjectModuleSearchContext context);
-    List<ProjectModule> selectQueryByParentModule(ProjectModuleSearchContext context);
-    List<ProjectModule> selectQueryByRoot(ProjectModuleSearchContext context);
-    List<ProjectModule> selectQueryByRoot_NoBranch(ProjectModuleSearchContext context);
-    List<ProjectModule> selectQueryByRoot_Task(ProjectModuleSearchContext context);
-    List<ProjectModule> selectQueryByTaskModules(ProjectModuleSearchContext context);
-    List<ProjectModule> selectQueryByView(ProjectModuleSearchContext context);
+    List<ProjectModule> selectByPath(ProjectModuleSearchContext context);
+    List<ProjectModule> selectDefault(ProjectModuleSearchContext context);
+    List<ProjectModule> selectParentModule(ProjectModuleSearchContext context);
+    List<ProjectModule> selectRoot(ProjectModuleSearchContext context);
+    List<ProjectModule> selectRoot_NoBranch(ProjectModuleSearchContext context);
+    List<ProjectModule> selectRoot_Task(ProjectModuleSearchContext context);
+    List<ProjectModule> selectTaskModules(ProjectModuleSearchContext context);
+    List<ProjectModule> selectView(ProjectModuleSearchContext context);
 
     Page<ProjectModule> searchByPath(ProjectModuleSearchContext context);
     Page<ProjectModule> searchDefault(ProjectModuleSearchContext context);

@@ -258,11 +258,11 @@ public class TaskTeamServiceImpl extends ServiceImpl<TaskTeamMapper, TaskTeam> i
 	}
 
 
-    public List<TaskTeam> selectQueryByDefault(TaskTeamSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<TaskTeam> selectDefault(TaskTeamSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<TaskTeam> selectQueryByView(TaskTeamSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<TaskTeam> selectView(TaskTeamSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

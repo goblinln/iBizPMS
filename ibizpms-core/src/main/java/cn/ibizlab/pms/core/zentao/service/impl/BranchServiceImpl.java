@@ -269,17 +269,17 @@ public class BranchServiceImpl extends ServiceImpl<BranchMapper, Branch> impleme
     }
 
 
-    public List<Branch> selectQueryByCurProduct(BranchSearchContext context){
-        return baseMapper.selectQueryByCurProduct(context, context.getSelectCond());
+    public List<Branch> selectCurProduct(BranchSearchContext context){
+        return baseMapper.selectCurProduct(context, context.getSelectCond());
     }
-    public List<Branch> selectQueryByDefault(BranchSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Branch> selectDefault(BranchSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Branch> selectQueryByDefaultBranch(BranchSearchContext context){
-        return baseMapper.selectQueryByDefaultBranch(context, context.getSelectCond());
+    public List<Branch> selectDefaultBranch(BranchSearchContext context){
+        return baseMapper.selectDefaultBranch(context, context.getSelectCond());
     }
-    public List<Branch> selectQueryByView(BranchSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Branch> selectView(BranchSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

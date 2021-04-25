@@ -295,29 +295,29 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
     }
 
 
-    public List<ProjectModule> selectQueryByByPath(ProjectModuleSearchContext context){
-        return baseMapper.selectQueryByByPath(context, context.getSelectCond());
+    public List<ProjectModule> selectByPath(ProjectModuleSearchContext context){
+        return baseMapper.selectByPath(context, context.getSelectCond());
     }
-    public List<ProjectModule> selectQueryByDefault(ProjectModuleSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<ProjectModule> selectDefault(ProjectModuleSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<ProjectModule> selectQueryByParentModule(ProjectModuleSearchContext context){
-        return baseMapper.selectQueryByParentModule(context, context.getSelectCond());
+    public List<ProjectModule> selectParentModule(ProjectModuleSearchContext context){
+        return baseMapper.selectParentModule(context, context.getSelectCond());
     }
-    public List<ProjectModule> selectQueryByRoot(ProjectModuleSearchContext context){
-        return baseMapper.selectQueryByRoot(context, context.getSelectCond());
+    public List<ProjectModule> selectRoot(ProjectModuleSearchContext context){
+        return baseMapper.selectRoot(context, context.getSelectCond());
     }
-    public List<ProjectModule> selectQueryByRoot_NoBranch(ProjectModuleSearchContext context){
-        return baseMapper.selectQueryByRoot_NoBranch(context, context.getSelectCond());
+    public List<ProjectModule> selectRoot_NoBranch(ProjectModuleSearchContext context){
+        return baseMapper.selectRoot_NoBranch(context, context.getSelectCond());
     }
-    public List<ProjectModule> selectQueryByRoot_Task(ProjectModuleSearchContext context){
-        return baseMapper.selectQueryByRoot_Task(context, context.getSelectCond());
+    public List<ProjectModule> selectRoot_Task(ProjectModuleSearchContext context){
+        return baseMapper.selectRoot_Task(context, context.getSelectCond());
     }
-    public List<ProjectModule> selectQueryByTaskModules(ProjectModuleSearchContext context){
-        return baseMapper.selectQueryByTaskModules(context, context.getSelectCond());
+    public List<ProjectModule> selectTaskModules(ProjectModuleSearchContext context){
+        return baseMapper.selectTaskModules(context, context.getSelectCond());
     }
-    public List<ProjectModule> selectQueryByView(ProjectModuleSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<ProjectModule> selectView(ProjectModuleSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

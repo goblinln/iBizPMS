@@ -292,7 +292,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBugSelectableProjectList"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectBugSelectableProjectList"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="BugSelectableProjectList" />
 	</select>
 
@@ -307,7 +307,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurDefaultQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectCurDefaultQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="CurDefaultQuery" />
 	</select>
 
@@ -322,7 +322,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurDefaultQueryExp"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectCurDefaultQueryExp"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="CurDefaultQueryExp" />
 	</select>
 
@@ -340,7 +340,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurPlanProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectCurPlanProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="CurPlanProject" />
 	</select>
 
@@ -358,7 +358,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurProduct"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectCurProduct"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="CurProduct" />
 	</select>
 
@@ -370,7 +370,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurUser"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectCurUser"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="CurUser" />
 	</select>
 
@@ -382,7 +382,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurUserSa"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectCurUserSa"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="CurUserSa" />
 	</select>
 
@@ -397,7 +397,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -415,7 +415,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDeveloperQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectDeveloperQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="DeveloperQuery" />
 	</select>
 
@@ -427,7 +427,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="ESBulk" />
 	</select>
 
@@ -439,7 +439,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByInvolvedProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectInvolvedProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="InvolvedProject" />
 	</select>
 
@@ -451,7 +451,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByInvolvedProjectStoryTaskBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectInvolvedProjectStoryTaskBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="InvolvedProjectStoryTaskBug" />
 	</select>
 
@@ -466,7 +466,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectMyProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="MyProject" />
 	</select>
 
@@ -484,7 +484,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByOpenByQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectOpenByQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="OpenByQuery" />
 	</select>
 
@@ -502,7 +502,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByOpenQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectOpenQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="OpenQuery" />
 	</select>
 
@@ -520,7 +520,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByPMQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectPMQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="PMQuery" />
 	</select>
 
@@ -538,7 +538,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByPOQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectPOQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="POQuery" />
 	</select>
 
@@ -559,7 +559,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectTeam"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectProjectTeam"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="ProjectTeam" />
 	</select>
 
@@ -577,7 +577,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByQDQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectQDQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="QDQuery" />
 	</select>
 
@@ -595,7 +595,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRDQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectRDQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="RDQuery" />
 	</select>
 
@@ -610,7 +610,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByStoryProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectStoryProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="StoryProject" />
 	</select>
 
@@ -628,7 +628,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByUnDoneProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectUnDoneProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="UnDoneProject" />
 	</select>
 
@@ -643,7 +643,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext" resultMap="ProjectResultMap">
 		<include refid="View" />
 	</select>
 

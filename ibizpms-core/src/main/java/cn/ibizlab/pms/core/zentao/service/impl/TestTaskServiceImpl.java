@@ -381,14 +381,14 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
     }
 
 
-    public List<TestTask> selectQueryByDefault(TestTaskSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<TestTask> selectDefault(TestTaskSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<TestTask> selectQueryByMyTestTaskPc(TestTaskSearchContext context){
-        return baseMapper.selectQueryByMyTestTaskPc(context, context.getSelectCond());
+    public List<TestTask> selectMyTestTaskPc(TestTaskSearchContext context){
+        return baseMapper.selectMyTestTaskPc(context, context.getSelectCond());
     }
-    public List<TestTask> selectQueryByView(TestTaskSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<TestTask> selectView(TestTaskSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

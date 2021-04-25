@@ -226,11 +226,11 @@ public class HistoryServiceImpl extends ServiceImpl<HistoryMapper, History> impl
     }
 
 
-    public List<History> selectQueryByDefault(HistorySearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<History> selectDefault(HistorySearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<History> selectQueryByView(HistorySearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<History> selectView(HistorySearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

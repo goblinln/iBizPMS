@@ -116,21 +116,21 @@ public class IbzDailyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     public List<IbzDaily> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         IbzDailySearchContext searchContext = (IbzDailySearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return ibzdailyService.selectQueryByDefault(searchContext);
+            return ibzdailyService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("MyAllDaily"))
-            return ibzdailyService.selectQueryByMyAllDaily(searchContext);
+            return ibzdailyService.selectMyAllDaily(searchContext);
         if (iPSDataQuery.getName().equals("MyDaily"))
-            return ibzdailyService.selectQueryByMyDaily(searchContext);
+            return ibzdailyService.selectMyDaily(searchContext);
         if (iPSDataQuery.getName().equals("MyNotSubmit"))
-            return ibzdailyService.selectQueryByMyNotSubmit(searchContext);
+            return ibzdailyService.selectMyNotSubmit(searchContext);
         if (iPSDataQuery.getName().equals("MySubmitDaily"))
-            return ibzdailyService.selectQueryByMySubmitDaily(searchContext);
+            return ibzdailyService.selectMySubmitDaily(searchContext);
         if (iPSDataQuery.getName().equals("ProductDaily"))
-            return ibzdailyService.selectQueryByProductDaily(searchContext);
+            return ibzdailyService.selectProductDaily(searchContext);
         if (iPSDataQuery.getName().equals("ProjectDaily"))
-            return ibzdailyService.selectQueryByProjectDaily(searchContext);
+            return ibzdailyService.selectProjectDaily(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return ibzdailyService.selectQueryByView(searchContext);
+            return ibzdailyService.selectView(searchContext);
         return null;
     }
 

@@ -19,9 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface DeptMapper extends BaseMapper<Dept> {
 
-    List<Dept> selectQueryByDefault(@Param("srf") DeptSearchContext context, @Param("ew") Wrapper<Dept> wrapper);
-    List<Dept> selectQueryByRoot(@Param("srf") DeptSearchContext context, @Param("ew") Wrapper<Dept> wrapper);
-    List<Dept> selectQueryByView(@Param("srf") DeptSearchContext context, @Param("ew") Wrapper<Dept> wrapper);
+    List<Dept> selectDefault(@Param("srf") DeptSearchContext context, @Param("ew") Wrapper<Dept> wrapper);
+    List<Dept> selectRoot(@Param("srf") DeptSearchContext context, @Param("ew") Wrapper<Dept> wrapper);
+    List<Dept> selectView(@Param("srf") DeptSearchContext context, @Param("ew") Wrapper<Dept> wrapper);
 
     Page<Dept> searchDefault(IPage page, @Param("srf") DeptSearchContext context, @Param("ew") Wrapper<Dept> wrapper);
     Page<Dept> searchRoot(IPage page, @Param("srf") DeptSearchContext context, @Param("ew") Wrapper<Dept> wrapper);

@@ -56,7 +56,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByAllAccountEstimate"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.AccountTaskestimateSearchContext" resultMap="AccountTaskestimateResultMap">
+	<select id="selectAllAccountEstimate"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.AccountTaskestimateSearchContext" resultMap="AccountTaskestimateResultMap">
 		<include refid="AllAccountEstimate" />
 	</select>
 
@@ -71,7 +71,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.AccountTaskestimateSearchContext" resultMap="AccountTaskestimateResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.AccountTaskestimateSearchContext" resultMap="AccountTaskestimateResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -83,7 +83,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.AccountTaskestimateSearchContext" resultMap="AccountTaskestimateResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.AccountTaskestimateSearchContext" resultMap="AccountTaskestimateResultMap">
 		<include refid="View" />
 	</select>
 

@@ -19,8 +19,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface JenkinsMapper extends BaseMapper<Jenkins> {
 
-    List<Jenkins> selectQueryByDefault(@Param("srf") JenkinsSearchContext context, @Param("ew") Wrapper<Jenkins> wrapper);
-    List<Jenkins> selectQueryByView(@Param("srf") JenkinsSearchContext context, @Param("ew") Wrapper<Jenkins> wrapper);
+    List<Jenkins> selectDefault(@Param("srf") JenkinsSearchContext context, @Param("ew") Wrapper<Jenkins> wrapper);
+    List<Jenkins> selectView(@Param("srf") JenkinsSearchContext context, @Param("ew") Wrapper<Jenkins> wrapper);
 
     Page<Jenkins> searchDefault(IPage page, @Param("srf") JenkinsSearchContext context, @Param("ew") Wrapper<Jenkins> wrapper);
     @Override

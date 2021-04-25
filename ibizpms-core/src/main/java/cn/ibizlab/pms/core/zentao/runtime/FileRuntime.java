@@ -112,17 +112,17 @@ public class FileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     public List<File> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         FileSearchContext searchContext = (FileSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return fileService.selectQueryByDefault(searchContext);
+            return fileService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("DocLibFile"))
-            return fileService.selectQueryByDocLibFile(searchContext);
+            return fileService.selectDocLibFile(searchContext);
         if (iPSDataQuery.getName().equals("ProductDocLibFile"))
-            return fileService.selectQueryByProductDocLibFile(searchContext);
+            return fileService.selectProductDocLibFile(searchContext);
         if (iPSDataQuery.getName().equals("Type"))
-            return fileService.selectQueryByType(searchContext);
+            return fileService.selectType(searchContext);
         if (iPSDataQuery.getName().equals("TypeNotBySrfparentkey"))
-            return fileService.selectQueryByTypeNotBySrfparentkey(searchContext);
+            return fileService.selectTypeNotBySrfparentkey(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return fileService.selectQueryByView(searchContext);
+            return fileService.selectView(searchContext);
         return null;
     }
 

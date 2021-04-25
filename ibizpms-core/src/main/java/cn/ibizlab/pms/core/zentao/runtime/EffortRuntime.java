@@ -104,9 +104,9 @@ public class EffortRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     public List<Effort> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         EffortSearchContext searchContext = (EffortSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return effortService.selectQueryByDefault(searchContext);
+            return effortService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return effortService.selectQueryByView(searchContext);
+            return effortService.selectView(searchContext);
         return null;
     }
 

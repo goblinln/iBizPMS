@@ -104,9 +104,9 @@ public class CronRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     public List<Cron> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         CronSearchContext searchContext = (CronSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return cronService.selectQueryByDefault(searchContext);
+            return cronService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return cronService.selectQueryByView(searchContext);
+            return cronService.selectView(searchContext);
         return null;
     }
 

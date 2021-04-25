@@ -120,25 +120,25 @@ public class DocLibRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     public List<DocLib> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         DocLibSearchContext searchContext = (DocLibSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("ByCustom"))
-            return doclibService.selectQueryByByCustom(searchContext);
+            return doclibService.selectByCustom(searchContext);
         if (iPSDataQuery.getName().equals("ByProduct"))
-            return doclibService.selectQueryByByProduct(searchContext);
+            return doclibService.selectByProduct(searchContext);
         if (iPSDataQuery.getName().equals("ByProductNotFiles"))
-            return doclibService.selectQueryByByProductNotFiles(searchContext);
+            return doclibService.selectByProductNotFiles(searchContext);
         if (iPSDataQuery.getName().equals("ByProject"))
-            return doclibService.selectQueryByByProject(searchContext);
+            return doclibService.selectByProject(searchContext);
         if (iPSDataQuery.getName().equals("ByProjectNotFiles"))
-            return doclibService.selectQueryByByProjectNotFiles(searchContext);
+            return doclibService.selectByProjectNotFiles(searchContext);
         if (iPSDataQuery.getName().equals("CurDocLib"))
-            return doclibService.selectQueryByCurDocLib(searchContext);
+            return doclibService.selectCurDocLib(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return doclibService.selectQueryByDefault(searchContext);
+            return doclibService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("MyFavourites"))
-            return doclibService.selectQueryByMyFavourites(searchContext);
+            return doclibService.selectMyFavourites(searchContext);
         if (iPSDataQuery.getName().equals("RootModuleMuLu"))
-            return doclibService.selectQueryByRootModuleMuLu(searchContext);
+            return doclibService.selectRootModuleMuLu(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return doclibService.selectQueryByView(searchContext);
+            return doclibService.selectView(searchContext);
         return null;
     }
 

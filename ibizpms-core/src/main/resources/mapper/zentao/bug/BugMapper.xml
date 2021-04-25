@@ -618,7 +618,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByAssignedToMyBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectAssignedToMyBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="AssignedToMyBug" />
 	</select>
 
@@ -642,7 +642,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByAssignedToMyBugPc"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectAssignedToMyBugPc"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="AssignedToMyBugPc" />
 	</select>
 
@@ -657,7 +657,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBuildBugs"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectBuildBugs"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="BuildBugs" />
 	</select>
 
@@ -675,7 +675,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBuildLinkResolvedBugs"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectBuildLinkResolvedBugs"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="BuildLinkResolvedBugs" />
 	</select>
 
@@ -690,7 +690,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBuildOpenBugs"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectBuildOpenBugs"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="BuildOpenBugs" />
 	</select>
 
@@ -708,7 +708,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBuildProduceBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectBuildProduceBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="BuildProduceBug" />
 	</select>
 
@@ -726,7 +726,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBuildProduceBugModule"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectBuildProduceBugModule"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="BuildProduceBugModule" />
 	</select>
 
@@ -744,7 +744,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBuildProduceBugModule_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectBuildProduceBugModule_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="BuildProduceBugModule_Project" />
 	</select>
 
@@ -762,7 +762,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBuildProduceBugOpenedBy"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectBuildProduceBugOpenedBy"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="BuildProduceBugOpenedBy" />
 	</select>
 
@@ -783,7 +783,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBuildProduceBugOpenedBy_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectBuildProduceBugOpenedBy_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="BuildProduceBugOpenedBy_Project" />
 	</select>
 
@@ -801,7 +801,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBuildProduceBugRES"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectBuildProduceBugRES"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="BuildProduceBugRES" />
 	</select>
 
@@ -822,7 +822,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBuildProduceBugRESOLVEDBY"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectBuildProduceBugRESOLVEDBY"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="BuildProduceBugRESOLVEDBY" />
 	</select>
 
@@ -843,7 +843,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBuildProduceBugRESOLVEDBY_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectBuildProduceBugRESOLVEDBY_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="BuildProduceBugRESOLVEDBY_Project" />
 	</select>
 
@@ -864,7 +864,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBuildProduceBugResolution_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectBuildProduceBugResolution_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="BuildProduceBugResolution_Project" />
 	</select>
 
@@ -882,7 +882,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBuildProduceBugSeverity_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectBuildProduceBugSeverity_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="BuildProduceBugSeverity_Project" />
 	</select>
 
@@ -900,7 +900,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBuildProduceBugStatus_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectBuildProduceBugStatus_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="BuildProduceBugStatus_Project" />
 	</select>
 
@@ -918,7 +918,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBuildProduceBugType_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectBuildProduceBugType_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="BuildProduceBugType_Project" />
 	</select>
 
@@ -936,7 +936,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurUserResolve"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectCurUserResolve"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="CurUserResolve" />
 	</select>
 
@@ -951,7 +951,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -963,7 +963,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="ESBulk" />
 	</select>
 
@@ -978,7 +978,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyAgentBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectMyAgentBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="MyAgentBug" />
 	</select>
 
@@ -996,7 +996,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyCurOpenedBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectMyCurOpenedBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="MyCurOpenedBug" />
 	</select>
 
@@ -1014,7 +1014,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyFavorites"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectMyFavorites"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="MyFavorites" />
 	</select>
 
@@ -1038,7 +1038,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByNotCurPlanLinkBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectNotCurPlanLinkBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="NotCurPlanLinkBug" />
 	</select>
 
@@ -1053,7 +1053,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByReleaseBugs"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectReleaseBugs"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="ReleaseBugs" />
 	</select>
 
@@ -1068,7 +1068,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByReleaseLeftBugs"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectReleaseLeftBugs"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="ReleaseLeftBugs" />
 	</select>
 
@@ -1086,7 +1086,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByReleaseLinkableLeftBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectReleaseLinkableLeftBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="ReleaseLinkableLeftBug" />
 	</select>
 
@@ -1104,7 +1104,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByReleaseLinkableResolvedBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectReleaseLinkableResolvedBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="ReleaseLinkableResolvedBug" />
 	</select>
 
@@ -1116,7 +1116,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByReportBugs"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectReportBugs"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="ReportBugs" />
 	</select>
 
@@ -1134,7 +1134,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryBySelectBugByBuild"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectSelectBugByBuild"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="SelectBugByBuild" />
 	</select>
 
@@ -1152,7 +1152,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryBySelectBugsByProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectSelectBugsByProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="SelectBugsByProject" />
 	</select>
 
@@ -1170,7 +1170,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByTaskBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectTaskBug"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="TaskBug" />
 	</select>
 
@@ -1185,7 +1185,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.BugSearchContext" resultMap="BugResultMap">
 		<include refid="View" />
 	</select>
 

@@ -104,11 +104,11 @@ public class IBZProTranslatorRuntime extends cn.ibizlab.pms.core.runtime.SystemD
     public List<IBZProTranslator> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         IBZProTranslatorSearchContext searchContext = (IBZProTranslatorSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return ibzprotranslatorService.selectQueryByDefault(searchContext);
+            return ibzprotranslatorService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("SIMPLE"))
-            return ibzprotranslatorService.selectQueryBySimple(searchContext);
+            return ibzprotranslatorService.selectSimple(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return ibzprotranslatorService.selectQueryByView(searchContext);
+            return ibzprotranslatorService.selectView(searchContext);
         return null;
     }
 

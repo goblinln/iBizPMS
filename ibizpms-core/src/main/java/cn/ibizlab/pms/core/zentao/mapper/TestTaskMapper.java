@@ -19,9 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface TestTaskMapper extends BaseMapper<TestTask> {
 
-    List<TestTask> selectQueryByDefault(@Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
-    List<TestTask> selectQueryByMyTestTaskPc(@Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
-    List<TestTask> selectQueryByView(@Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
+    List<TestTask> selectDefault(@Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
+    List<TestTask> selectMyTestTaskPc(@Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
+    List<TestTask> selectView(@Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
 
     Page<TestTask> searchDefault(IPage page, @Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
     Page<TestTask> searchMyTestTaskPc(IPage page, @Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);

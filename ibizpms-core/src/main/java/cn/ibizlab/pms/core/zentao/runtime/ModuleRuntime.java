@@ -116,21 +116,21 @@ public class ModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     public List<Module> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         ModuleSearchContext searchContext = (ModuleSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("BugModule"))
-            return moduleService.selectQueryByBugModule(searchContext);
+            return moduleService.selectBugModule(searchContext);
         if (iPSDataQuery.getName().equals("BugModuleCodeList"))
-            return moduleService.selectQueryByBugModuleCodeList(searchContext);
+            return moduleService.selectBugModuleCodeList(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return moduleService.selectQueryByDefault(searchContext);
+            return moduleService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("DocModule"))
-            return moduleService.selectQueryByDocModule(searchContext);
+            return moduleService.selectDocModule(searchContext);
         if (iPSDataQuery.getName().equals("Line"))
-            return moduleService.selectQueryByLine(searchContext);
+            return moduleService.selectLine(searchContext);
         if (iPSDataQuery.getName().equals("StoryModule"))
-            return moduleService.selectQueryByStoryModule(searchContext);
+            return moduleService.selectStoryModule(searchContext);
         if (iPSDataQuery.getName().equals("TaskModule"))
-            return moduleService.selectQueryByTaskModule(searchContext);
+            return moduleService.selectTaskModule(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return moduleService.selectQueryByView(searchContext);
+            return moduleService.selectView(searchContext);
         return null;
     }
 

@@ -19,14 +19,14 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IbzDailyMapper extends BaseMapper<IbzDaily> {
 
-    List<IbzDaily> selectQueryByDefault(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
-    List<IbzDaily> selectQueryByMyAllDaily(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
-    List<IbzDaily> selectQueryByMyDaily(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
-    List<IbzDaily> selectQueryByMyNotSubmit(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
-    List<IbzDaily> selectQueryByMySubmitDaily(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
-    List<IbzDaily> selectQueryByProductDaily(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
-    List<IbzDaily> selectQueryByProjectDaily(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
-    List<IbzDaily> selectQueryByView(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
+    List<IbzDaily> selectDefault(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
+    List<IbzDaily> selectMyAllDaily(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
+    List<IbzDaily> selectMyDaily(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
+    List<IbzDaily> selectMyNotSubmit(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
+    List<IbzDaily> selectMySubmitDaily(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
+    List<IbzDaily> selectProductDaily(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
+    List<IbzDaily> selectProjectDaily(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
+    List<IbzDaily> selectView(@Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
 
     Page<IbzDaily> searchDefault(IPage page, @Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);
     Page<IbzDaily> searchMyAllDaily(IPage page, @Param("srf") IbzDailySearchContext context, @Param("ew") Wrapper<IbzDaily> wrapper);

@@ -214,11 +214,11 @@ public class TaskMsgRecordServiceImpl extends ServiceImpl<TaskMsgRecordMapper, T
 
 
 
-    public List<TaskMsgRecord> selectQueryByDefault(TaskMsgRecordSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<TaskMsgRecord> selectDefault(TaskMsgRecordSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<TaskMsgRecord> selectQueryByView(TaskMsgRecordSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<TaskMsgRecord> selectView(TaskMsgRecordSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

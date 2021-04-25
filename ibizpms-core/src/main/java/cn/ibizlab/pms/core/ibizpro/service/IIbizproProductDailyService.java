@@ -43,9 +43,9 @@ public interface IIbizproProductDailyService extends IService<IbizproProductDail
     IbizproProductDaily statsProductDaily(IbizproProductDaily et);
     boolean statsProductDailyBatch(List<IbizproProductDaily> etList);
     List<IbizproProductDaily> select(IbizproProductDailySearchContext context);
-    List<IbizproProductDaily> selectQueryByDefault(IbizproProductDailySearchContext context);
-    List<IbizproProductDaily> selectQueryByProductDaily(IbizproProductDailySearchContext context);
-    List<IbizproProductDaily> selectQueryByView(IbizproProductDailySearchContext context);
+    List<IbizproProductDaily> selectDefault(IbizproProductDailySearchContext context);
+    List<IbizproProductDaily> selectProductDaily(IbizproProductDailySearchContext context);
+    List<IbizproProductDaily> selectView(IbizproProductDailySearchContext context);
 
     Page<IbizproProductDaily> searchDefault(IbizproProductDailySearchContext context);
     Page<IbizproProductDaily> searchProductDaily(IbizproProductDailySearchContext context);

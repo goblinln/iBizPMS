@@ -104,9 +104,9 @@ public class LogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
     public List<Log> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         LogSearchContext searchContext = (LogSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return logService.selectQueryByDefault(searchContext);
+            return logService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return logService.selectQueryByView(searchContext);
+            return logService.selectView(searchContext);
         return null;
     }
 

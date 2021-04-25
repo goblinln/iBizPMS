@@ -214,11 +214,11 @@ public class IbzTopServiceImpl extends ServiceImpl<IbzTopMapper, IbzTop> impleme
 
 
 
-    public List<IbzTop> selectQueryByDefault(IbzTopSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IbzTop> selectDefault(IbzTopSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IbzTop> selectQueryByView(IbzTopSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IbzTop> selectView(IbzTopSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

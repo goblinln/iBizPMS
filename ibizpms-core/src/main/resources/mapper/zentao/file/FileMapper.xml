@@ -99,7 +99,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext" resultMap="FileResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext" resultMap="FileResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -117,7 +117,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDocLibFile"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext" resultMap="FileResultMap">
+	<select id="selectDocLibFile"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext" resultMap="FileResultMap">
 		<include refid="DocLibFile" />
 	</select>
 
@@ -135,7 +135,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductDocLibFile"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext" resultMap="FileResultMap">
+	<select id="selectProductDocLibFile"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext" resultMap="FileResultMap">
 		<include refid="ProductDocLibFile" />
 	</select>
 
@@ -153,7 +153,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByType"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext" resultMap="FileResultMap">
+	<select id="selectType"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext" resultMap="FileResultMap">
 		<include refid="Type" />
 	</select>
 
@@ -171,7 +171,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByTypeNotBySrfparentkey"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext" resultMap="FileResultMap">
+	<select id="selectTypeNotBySrfparentkey"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext" resultMap="FileResultMap">
 		<include refid="TypeNotBySrfparentkey" />
 	</select>
 
@@ -186,7 +186,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext" resultMap="FileResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext" resultMap="FileResultMap">
 		<include refid="View" />
 	</select>
 

@@ -48,7 +48,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.GroupPrivSearchContext" resultMap="GroupPrivResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.GroupPrivSearchContext" resultMap="GroupPrivResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -60,7 +60,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.GroupPrivSearchContext" resultMap="GroupPrivResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.GroupPrivSearchContext" resultMap="GroupPrivResultMap">
 		<include refid="View" />
 	</select>
 

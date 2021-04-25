@@ -19,11 +19,11 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ProductLifeMapper extends BaseMapper<ProductLife> {
 
-    List<ProductLife> selectQueryByDefault(@Param("srf") ProductLifeSearchContext context, @Param("ew") Wrapper<ProductLife> wrapper);
-    List<ProductLife> selectQueryByGetRoadmap(@Param("srf") ProductLifeSearchContext context, @Param("ew") Wrapper<ProductLife> wrapper);
-    List<ProductLife> selectQueryByGetRoadmapS(@Param("srf") ProductLifeSearchContext context, @Param("ew") Wrapper<ProductLife> wrapper);
-    List<ProductLife> selectQueryByRoadMapYear(@Param("srf") ProductLifeSearchContext context, @Param("ew") Wrapper<ProductLife> wrapper);
-    List<ProductLife> selectQueryByView(@Param("srf") ProductLifeSearchContext context, @Param("ew") Wrapper<ProductLife> wrapper);
+    List<ProductLife> selectDefault(@Param("srf") ProductLifeSearchContext context, @Param("ew") Wrapper<ProductLife> wrapper);
+    List<ProductLife> selectGetRoadmap(@Param("srf") ProductLifeSearchContext context, @Param("ew") Wrapper<ProductLife> wrapper);
+    List<ProductLife> selectGetRoadmapS(@Param("srf") ProductLifeSearchContext context, @Param("ew") Wrapper<ProductLife> wrapper);
+    List<ProductLife> selectRoadMapYear(@Param("srf") ProductLifeSearchContext context, @Param("ew") Wrapper<ProductLife> wrapper);
+    List<ProductLife> selectView(@Param("srf") ProductLifeSearchContext context, @Param("ew") Wrapper<ProductLife> wrapper);
 
     Page<ProductLife> searchDefault(IPage page, @Param("srf") ProductLifeSearchContext context, @Param("ew") Wrapper<ProductLife> wrapper);
     Page<ProductLife> searchGetRoadmap(IPage page, @Param("srf") ProductLifeSearchContext context, @Param("ew") Wrapper<ProductLife> wrapper);

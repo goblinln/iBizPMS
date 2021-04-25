@@ -104,9 +104,9 @@ public class GroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     public List<Group> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         GroupSearchContext searchContext = (GroupSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return groupService.selectQueryByDefault(searchContext);
+            return groupService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return groupService.selectQueryByView(searchContext);
+            return groupService.selectView(searchContext);
         return null;
     }
 

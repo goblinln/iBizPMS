@@ -41,8 +41,8 @@ public interface IIbizproProductWeeklyService extends IService<IbizproProductWee
     IbizproProductWeekly sumProductWeekly(IbizproProductWeekly et);
     boolean sumProductWeeklyBatch(List<IbizproProductWeekly> etList);
     List<IbizproProductWeekly> select(IbizproProductWeeklySearchContext context);
-    List<IbizproProductWeekly> selectQueryByDefault(IbizproProductWeeklySearchContext context);
-    List<IbizproProductWeekly> selectQueryByView(IbizproProductWeeklySearchContext context);
+    List<IbizproProductWeekly> selectDefault(IbizproProductWeeklySearchContext context);
+    List<IbizproProductWeekly> selectView(IbizproProductWeeklySearchContext context);
 
     Page<IbizproProductWeekly> searchDefault(IbizproProductWeeklySearchContext context);
     List<IbizproProductWeekly> selectByProduct(Long id);

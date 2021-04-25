@@ -116,21 +116,21 @@ public class ProductSumRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     public List<ProductSum> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         ProductSumSearchContext searchContext = (ProductSumSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return productsumService.selectQueryByDefault(searchContext);
+            return productsumService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("ProductBugcnt_QA"))
-            return productsumService.selectQueryByProductBugcnt_QA(searchContext);
+            return productsumService.selectProductBugcnt_QA(searchContext);
         if (iPSDataQuery.getName().equals("ProductCreateStory"))
-            return productsumService.selectQueryByProductCreateStory(searchContext);
+            return productsumService.selectProductCreateStory(searchContext);
         if (iPSDataQuery.getName().equals("ProductPlancntAndStorycnt_PO"))
-            return productsumService.selectQueryByProductPlancntAndStorycnt_PO(searchContext);
+            return productsumService.selectProductPlancntAndStorycnt_PO(searchContext);
         if (iPSDataQuery.getName().equals("ProductStoryHoursSum"))
-            return productsumService.selectQueryByProductStoryHoursSum(searchContext);
+            return productsumService.selectProductStoryHoursSum(searchContext);
         if (iPSDataQuery.getName().equals("ProductStorySum"))
-            return productsumService.selectQueryByProductStorySum(searchContext);
+            return productsumService.selectProductStorySum(searchContext);
         if (iPSDataQuery.getName().equals("ProductSumBugType"))
-            return productsumService.selectQueryByProductSumBugType(searchContext);
+            return productsumService.selectProductSumBugType(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return productsumService.selectQueryByView(searchContext);
+            return productsumService.selectView(searchContext);
         return null;
     }
 

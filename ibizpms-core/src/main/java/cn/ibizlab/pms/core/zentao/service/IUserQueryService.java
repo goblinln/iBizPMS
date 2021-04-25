@@ -39,8 +39,8 @@ public interface IUserQueryService extends IService<UserQuery> {
     boolean save(UserQuery et);
     void saveBatch(List<UserQuery> list);
     List<UserQuery> select(UserQuerySearchContext context);
-    List<UserQuery> selectQueryByDefault(UserQuerySearchContext context);
-    List<UserQuery> selectQueryByView(UserQuerySearchContext context);
+    List<UserQuery> selectDefault(UserQuerySearchContext context);
+    List<UserQuery> selectView(UserQuerySearchContext context);
 
     Page<UserQuery> searchDefault(UserQuerySearchContext context);
     UserQuery dynamicCall(Long key, String action, UserQuery et);

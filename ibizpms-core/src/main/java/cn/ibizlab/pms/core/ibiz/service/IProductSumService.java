@@ -39,14 +39,14 @@ public interface IProductSumService extends IService<ProductSum> {
     boolean save(ProductSum et);
     void saveBatch(List<ProductSum> list);
     List<ProductSum> select(ProductSumSearchContext context);
-    List<ProductSum> selectQueryByDefault(ProductSumSearchContext context);
-    List<ProductSum> selectQueryByProductBugcnt_QA(ProductSumSearchContext context);
-    List<ProductSum> selectQueryByProductCreateStory(ProductSumSearchContext context);
-    List<ProductSum> selectQueryByProductPlancntAndStorycnt_PO(ProductSumSearchContext context);
-    List<ProductSum> selectQueryByProductStoryHoursSum(ProductSumSearchContext context);
-    List<ProductSum> selectQueryByProductStorySum(ProductSumSearchContext context);
-    List<ProductSum> selectQueryByProductSumBugType(ProductSumSearchContext context);
-    List<ProductSum> selectQueryByView(ProductSumSearchContext context);
+    List<ProductSum> selectDefault(ProductSumSearchContext context);
+    List<ProductSum> selectProductBugcnt_QA(ProductSumSearchContext context);
+    List<ProductSum> selectProductCreateStory(ProductSumSearchContext context);
+    List<ProductSum> selectProductPlancntAndStorycnt_PO(ProductSumSearchContext context);
+    List<ProductSum> selectProductStoryHoursSum(ProductSumSearchContext context);
+    List<ProductSum> selectProductStorySum(ProductSumSearchContext context);
+    List<ProductSum> selectProductSumBugType(ProductSumSearchContext context);
+    List<ProductSum> selectView(ProductSumSearchContext context);
 
     Page<ProductSum> searchDefault(ProductSumSearchContext context);
     Page<ProductSum> searchProductBugcnt_QA(ProductSumSearchContext context);

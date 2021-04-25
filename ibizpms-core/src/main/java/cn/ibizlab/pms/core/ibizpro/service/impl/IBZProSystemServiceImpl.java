@@ -214,11 +214,11 @@ public class IBZProSystemServiceImpl extends ServiceImpl<IBZProSystemMapper, IBZ
 
 
 
-    public List<IBZProSystem> selectQueryByDefault(IBZProSystemSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IBZProSystem> selectDefault(IBZProSystemSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IBZProSystem> selectQueryByView(IBZProSystemSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IBZProSystem> selectView(IBZProSystemSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

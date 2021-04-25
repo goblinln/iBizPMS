@@ -104,9 +104,9 @@ public class ExtensionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     public List<Extension> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         ExtensionSearchContext searchContext = (ExtensionSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return extensionService.selectQueryByDefault(searchContext);
+            return extensionService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return extensionService.selectQueryByView(searchContext);
+            return extensionService.selectView(searchContext);
         return null;
     }
 

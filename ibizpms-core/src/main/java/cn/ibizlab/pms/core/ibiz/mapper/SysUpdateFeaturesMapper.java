@@ -19,8 +19,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface SysUpdateFeaturesMapper extends BaseMapper<SysUpdateFeatures> {
 
-    List<SysUpdateFeatures> selectQueryByDefault(@Param("srf") SysUpdateFeaturesSearchContext context, @Param("ew") Wrapper<SysUpdateFeatures> wrapper);
-    List<SysUpdateFeatures> selectQueryByView(@Param("srf") SysUpdateFeaturesSearchContext context, @Param("ew") Wrapper<SysUpdateFeatures> wrapper);
+    List<SysUpdateFeatures> selectDefault(@Param("srf") SysUpdateFeaturesSearchContext context, @Param("ew") Wrapper<SysUpdateFeatures> wrapper);
+    List<SysUpdateFeatures> selectView(@Param("srf") SysUpdateFeaturesSearchContext context, @Param("ew") Wrapper<SysUpdateFeatures> wrapper);
 
     Page<SysUpdateFeatures> searchDefault(IPage page, @Param("srf") SysUpdateFeaturesSearchContext context, @Param("ew") Wrapper<SysUpdateFeatures> wrapper);
     @Override

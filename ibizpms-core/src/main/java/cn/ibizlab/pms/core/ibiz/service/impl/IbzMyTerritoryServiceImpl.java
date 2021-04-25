@@ -259,26 +259,26 @@ public class IbzMyTerritoryServiceImpl extends ServiceImpl<IbzMyTerritoryMapper,
 
 
 
-    public List<IbzMyTerritory> selectQueryByDefault(IbzMyTerritorySearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IbzMyTerritory> selectDefault(IbzMyTerritorySearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IbzMyTerritory> selectQueryByMyWork(IbzMyTerritorySearchContext context){
-        return baseMapper.selectQueryByMyWork(context, context.getSelectCond());
+    public List<IbzMyTerritory> selectMyWork(IbzMyTerritorySearchContext context){
+        return baseMapper.selectMyWork(context, context.getSelectCond());
     }
-    public List<IbzMyTerritory> selectQueryByMyWorkMob(IbzMyTerritorySearchContext context){
-        return baseMapper.selectQueryByMyWorkMob(context, context.getSelectCond());
+    public List<IbzMyTerritory> selectMyWorkMob(IbzMyTerritorySearchContext context){
+        return baseMapper.selectMyWorkMob(context, context.getSelectCond());
     }
-    public List<IbzMyTerritory> selectQueryByMyWorkPm(IbzMyTerritorySearchContext context){
-        return baseMapper.selectQueryByMyWorkPm(context, context.getSelectCond());
+    public List<IbzMyTerritory> selectMyWorkPm(IbzMyTerritorySearchContext context){
+        return baseMapper.selectMyWorkPm(context, context.getSelectCond());
     }
-    public List<IbzMyTerritory> selectQueryByPersonInfo(IbzMyTerritorySearchContext context){
-        return baseMapper.selectQueryByPersonInfo(context, context.getSelectCond());
+    public List<IbzMyTerritory> selectPersonInfo(IbzMyTerritorySearchContext context){
+        return baseMapper.selectPersonInfo(context, context.getSelectCond());
     }
-    public List<IbzMyTerritory> selectQueryByView(IbzMyTerritorySearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IbzMyTerritory> selectView(IbzMyTerritorySearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
-    public List<IbzMyTerritory> selectQueryByWelcome(IbzMyTerritorySearchContext context){
-        return baseMapper.selectQueryByWelcome(context, context.getSelectCond());
+    public List<IbzMyTerritory> selectWelcome(IbzMyTerritorySearchContext context){
+        return baseMapper.selectWelcome(context, context.getSelectCond());
     }
 
 

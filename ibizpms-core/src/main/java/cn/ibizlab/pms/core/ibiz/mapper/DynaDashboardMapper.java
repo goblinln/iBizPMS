@@ -19,8 +19,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface DynaDashboardMapper extends BaseMapper<DynaDashboard> {
 
-    List<DynaDashboard> selectQueryByDefault(@Param("srf") DynaDashboardSearchContext context, @Param("ew") Wrapper<DynaDashboard> wrapper);
-    List<DynaDashboard> selectQueryByView(@Param("srf") DynaDashboardSearchContext context, @Param("ew") Wrapper<DynaDashboard> wrapper);
+    List<DynaDashboard> selectDefault(@Param("srf") DynaDashboardSearchContext context, @Param("ew") Wrapper<DynaDashboard> wrapper);
+    List<DynaDashboard> selectView(@Param("srf") DynaDashboardSearchContext context, @Param("ew") Wrapper<DynaDashboard> wrapper);
 
     Page<DynaDashboard> searchDefault(IPage page, @Param("srf") DynaDashboardSearchContext context, @Param("ew") Wrapper<DynaDashboard> wrapper);
     @Override

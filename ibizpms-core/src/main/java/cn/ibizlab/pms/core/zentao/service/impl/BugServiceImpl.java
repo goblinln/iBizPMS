@@ -734,104 +734,104 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     }
 
 
-    public List<Bug> selectQueryByAssignedToMyBug(BugSearchContext context){
-        return baseMapper.selectQueryByAssignedToMyBug(context, context.getSelectCond());
+    public List<Bug> selectAssignedToMyBug(BugSearchContext context){
+        return baseMapper.selectAssignedToMyBug(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByAssignedToMyBugPc(BugSearchContext context){
-        return baseMapper.selectQueryByAssignedToMyBugPc(context, context.getSelectCond());
+    public List<Bug> selectAssignedToMyBugPc(BugSearchContext context){
+        return baseMapper.selectAssignedToMyBugPc(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByBuildBugs(BugSearchContext context){
-        return baseMapper.selectQueryByBuildBugs(context, context.getSelectCond());
+    public List<Bug> selectBuildBugs(BugSearchContext context){
+        return baseMapper.selectBuildBugs(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByBuildLinkResolvedBugs(BugSearchContext context){
-        return baseMapper.selectQueryByBuildLinkResolvedBugs(context, context.getSelectCond());
+    public List<Bug> selectBuildLinkResolvedBugs(BugSearchContext context){
+        return baseMapper.selectBuildLinkResolvedBugs(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByBuildOpenBugs(BugSearchContext context){
-        return baseMapper.selectQueryByBuildOpenBugs(context, context.getSelectCond());
+    public List<Bug> selectBuildOpenBugs(BugSearchContext context){
+        return baseMapper.selectBuildOpenBugs(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByBuildProduceBug(BugSearchContext context){
-        return baseMapper.selectQueryByBuildProduceBug(context, context.getSelectCond());
+    public List<Bug> selectBuildProduceBug(BugSearchContext context){
+        return baseMapper.selectBuildProduceBug(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByBuildProduceBugModule(BugSearchContext context){
-        return baseMapper.selectQueryByBuildProduceBugModule(context, context.getSelectCond());
+    public List<Bug> selectBuildProduceBugModule(BugSearchContext context){
+        return baseMapper.selectBuildProduceBugModule(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByBuildProduceBugModule_Project(BugSearchContext context){
-        return baseMapper.selectQueryByBuildProduceBugModule_Project(context, context.getSelectCond());
+    public List<Bug> selectBuildProduceBugModule_Project(BugSearchContext context){
+        return baseMapper.selectBuildProduceBugModule_Project(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByBuildProduceBugOpenedBy(BugSearchContext context){
-        return baseMapper.selectQueryByBuildProduceBugOpenedBy(context, context.getSelectCond());
+    public List<Bug> selectBuildProduceBugOpenedBy(BugSearchContext context){
+        return baseMapper.selectBuildProduceBugOpenedBy(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByBuildProduceBugOpenedBy_Project(BugSearchContext context){
-        return baseMapper.selectQueryByBuildProduceBugOpenedBy_Project(context, context.getSelectCond());
+    public List<Bug> selectBuildProduceBugOpenedBy_Project(BugSearchContext context){
+        return baseMapper.selectBuildProduceBugOpenedBy_Project(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByBuildProduceBugRES(BugSearchContext context){
-        return baseMapper.selectQueryByBuildProduceBugRES(context, context.getSelectCond());
+    public List<Bug> selectBuildProduceBugRES(BugSearchContext context){
+        return baseMapper.selectBuildProduceBugRES(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByBuildProduceBugRESOLVEDBY(BugSearchContext context){
-        return baseMapper.selectQueryByBuildProduceBugRESOLVEDBY(context, context.getSelectCond());
+    public List<Bug> selectBuildProduceBugRESOLVEDBY(BugSearchContext context){
+        return baseMapper.selectBuildProduceBugRESOLVEDBY(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByBuildProduceBugRESOLVEDBY_Project(BugSearchContext context){
-        return baseMapper.selectQueryByBuildProduceBugRESOLVEDBY_Project(context, context.getSelectCond());
+    public List<Bug> selectBuildProduceBugRESOLVEDBY_Project(BugSearchContext context){
+        return baseMapper.selectBuildProduceBugRESOLVEDBY_Project(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByBuildProduceBugResolution_Project(BugSearchContext context){
-        return baseMapper.selectQueryByBuildProduceBugResolution_Project(context, context.getSelectCond());
+    public List<Bug> selectBuildProduceBugResolution_Project(BugSearchContext context){
+        return baseMapper.selectBuildProduceBugResolution_Project(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByBuildProduceBugSeverity_Project(BugSearchContext context){
-        return baseMapper.selectQueryByBuildProduceBugSeverity_Project(context, context.getSelectCond());
+    public List<Bug> selectBuildProduceBugSeverity_Project(BugSearchContext context){
+        return baseMapper.selectBuildProduceBugSeverity_Project(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByBuildProduceBugStatus_Project(BugSearchContext context){
-        return baseMapper.selectQueryByBuildProduceBugStatus_Project(context, context.getSelectCond());
+    public List<Bug> selectBuildProduceBugStatus_Project(BugSearchContext context){
+        return baseMapper.selectBuildProduceBugStatus_Project(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByBuildProduceBugType_Project(BugSearchContext context){
-        return baseMapper.selectQueryByBuildProduceBugType_Project(context, context.getSelectCond());
+    public List<Bug> selectBuildProduceBugType_Project(BugSearchContext context){
+        return baseMapper.selectBuildProduceBugType_Project(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByCurUserResolve(BugSearchContext context){
-        return baseMapper.selectQueryByCurUserResolve(context, context.getSelectCond());
+    public List<Bug> selectCurUserResolve(BugSearchContext context){
+        return baseMapper.selectCurUserResolve(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByDefault(BugSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Bug> selectDefault(BugSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByESBulk(BugSearchContext context){
-        return baseMapper.selectQueryByESBulk(context, context.getSelectCond());
+    public List<Bug> selectESBulk(BugSearchContext context){
+        return baseMapper.selectESBulk(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByMyAgentBug(BugSearchContext context){
-        return baseMapper.selectQueryByMyAgentBug(context, context.getSelectCond());
+    public List<Bug> selectMyAgentBug(BugSearchContext context){
+        return baseMapper.selectMyAgentBug(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByMyCurOpenedBug(BugSearchContext context){
-        return baseMapper.selectQueryByMyCurOpenedBug(context, context.getSelectCond());
+    public List<Bug> selectMyCurOpenedBug(BugSearchContext context){
+        return baseMapper.selectMyCurOpenedBug(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByMyFavorites(BugSearchContext context){
-        return baseMapper.selectQueryByMyFavorites(context, context.getSelectCond());
+    public List<Bug> selectMyFavorites(BugSearchContext context){
+        return baseMapper.selectMyFavorites(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByNotCurPlanLinkBug(BugSearchContext context){
-        return baseMapper.selectQueryByNotCurPlanLinkBug(context, context.getSelectCond());
+    public List<Bug> selectNotCurPlanLinkBug(BugSearchContext context){
+        return baseMapper.selectNotCurPlanLinkBug(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByReleaseBugs(BugSearchContext context){
-        return baseMapper.selectQueryByReleaseBugs(context, context.getSelectCond());
+    public List<Bug> selectReleaseBugs(BugSearchContext context){
+        return baseMapper.selectReleaseBugs(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByReleaseLeftBugs(BugSearchContext context){
-        return baseMapper.selectQueryByReleaseLeftBugs(context, context.getSelectCond());
+    public List<Bug> selectReleaseLeftBugs(BugSearchContext context){
+        return baseMapper.selectReleaseLeftBugs(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByReleaseLinkableLeftBug(BugSearchContext context){
-        return baseMapper.selectQueryByReleaseLinkableLeftBug(context, context.getSelectCond());
+    public List<Bug> selectReleaseLinkableLeftBug(BugSearchContext context){
+        return baseMapper.selectReleaseLinkableLeftBug(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByReleaseLinkableResolvedBug(BugSearchContext context){
-        return baseMapper.selectQueryByReleaseLinkableResolvedBug(context, context.getSelectCond());
+    public List<Bug> selectReleaseLinkableResolvedBug(BugSearchContext context){
+        return baseMapper.selectReleaseLinkableResolvedBug(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByReportBugs(BugSearchContext context){
-        return baseMapper.selectQueryByReportBugs(context, context.getSelectCond());
+    public List<Bug> selectReportBugs(BugSearchContext context){
+        return baseMapper.selectReportBugs(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryBySelectBugByBuild(BugSearchContext context){
-        return baseMapper.selectQueryBySelectBugByBuild(context, context.getSelectCond());
+    public List<Bug> selectSelectBugByBuild(BugSearchContext context){
+        return baseMapper.selectSelectBugByBuild(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryBySelectBugsByProject(BugSearchContext context){
-        return baseMapper.selectQueryBySelectBugsByProject(context, context.getSelectCond());
+    public List<Bug> selectSelectBugsByProject(BugSearchContext context){
+        return baseMapper.selectSelectBugsByProject(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByTaskBug(BugSearchContext context){
-        return baseMapper.selectQueryByTaskBug(context, context.getSelectCond());
+    public List<Bug> selectTaskBug(BugSearchContext context){
+        return baseMapper.selectTaskBug(context, context.getSelectCond());
     }
-    public List<Bug> selectQueryByView(BugSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Bug> selectView(BugSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

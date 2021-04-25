@@ -59,7 +59,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.JobSearchContext" resultMap="JobResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.JobSearchContext" resultMap="JobResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -74,7 +74,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.JobSearchContext" resultMap="JobResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.JobSearchContext" resultMap="JobResultMap">
 		<include refid="View" />
 	</select>
 

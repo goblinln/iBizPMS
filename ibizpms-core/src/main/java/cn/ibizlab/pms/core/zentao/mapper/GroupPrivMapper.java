@@ -19,8 +19,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface GroupPrivMapper extends BaseMapper<GroupPriv> {
 
-    List<GroupPriv> selectQueryByDefault(@Param("srf") GroupPrivSearchContext context, @Param("ew") Wrapper<GroupPriv> wrapper);
-    List<GroupPriv> selectQueryByView(@Param("srf") GroupPrivSearchContext context, @Param("ew") Wrapper<GroupPriv> wrapper);
+    List<GroupPriv> selectDefault(@Param("srf") GroupPrivSearchContext context, @Param("ew") Wrapper<GroupPriv> wrapper);
+    List<GroupPriv> selectView(@Param("srf") GroupPrivSearchContext context, @Param("ew") Wrapper<GroupPriv> wrapper);
 
     Page<GroupPriv> searchDefault(IPage page, @Param("srf") GroupPrivSearchContext context, @Param("ew") Wrapper<GroupPriv> wrapper);
     @Override

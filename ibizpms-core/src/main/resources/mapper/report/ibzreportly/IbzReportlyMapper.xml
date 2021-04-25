@@ -81,7 +81,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext" resultMap="IbzReportlyResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext" resultMap="IbzReportlyResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -96,7 +96,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyAllReportly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext" resultMap="IbzReportlyResultMap">
+	<select id="selectMyAllReportly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext" resultMap="IbzReportlyResultMap">
 		<include refid="MyAllReportly" />
 	</select>
 
@@ -114,7 +114,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyReceived"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext" resultMap="IbzReportlyResultMap">
+	<select id="selectMyReceived"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext" resultMap="IbzReportlyResultMap">
 		<include refid="MyReceived" />
 	</select>
 
@@ -129,7 +129,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyReportlyMob"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext" resultMap="IbzReportlyResultMap">
+	<select id="selectMyReportlyMob"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext" resultMap="IbzReportlyResultMap">
 		<include refid="MyReportlyMob" />
 	</select>
 
@@ -141,7 +141,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext" resultMap="IbzReportlyResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext" resultMap="IbzReportlyResultMap">
 		<include refid="View" />
 	</select>
 

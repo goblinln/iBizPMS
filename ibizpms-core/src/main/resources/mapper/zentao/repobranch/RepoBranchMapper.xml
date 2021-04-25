@@ -48,7 +48,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.RepoBranchSearchContext" resultMap="RepoBranchResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.RepoBranchSearchContext" resultMap="RepoBranchResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -60,7 +60,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.RepoBranchSearchContext" resultMap="RepoBranchResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.RepoBranchSearchContext" resultMap="RepoBranchResultMap">
 		<include refid="View" />
 	</select>
 

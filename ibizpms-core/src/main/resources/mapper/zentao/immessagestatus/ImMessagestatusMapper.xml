@@ -51,7 +51,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ImMessagestatusSearchContext" resultMap="ImMessagestatusResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ImMessagestatusSearchContext" resultMap="ImMessagestatusResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -63,7 +63,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ImMessagestatusSearchContext" resultMap="ImMessagestatusResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ImMessagestatusSearchContext" resultMap="ImMessagestatusResultMap">
 		<include refid="View" />
 	</select>
 

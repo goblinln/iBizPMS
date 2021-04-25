@@ -106,11 +106,11 @@ public class IbzPlanTempletRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
     public List<IbzPlanTemplet> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         IbzPlanTempletSearchContext searchContext = (IbzPlanTempletSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("CurUserTemplet"))
-            return ibzplantempletService.selectQueryByCurUserTemplet(searchContext);
+            return ibzplantempletService.selectCurUserTemplet(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return ibzplantempletService.selectQueryByDefault(searchContext);
+            return ibzplantempletService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return ibzplantempletService.selectQueryByView(searchContext);
+            return ibzplantempletService.selectView(searchContext);
         return null;
     }
 

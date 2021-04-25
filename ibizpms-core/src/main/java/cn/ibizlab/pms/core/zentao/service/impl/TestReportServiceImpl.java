@@ -378,11 +378,11 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
     }
 
 
-    public List<TestReport> selectQueryByDefault(TestReportSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<TestReport> selectDefault(TestReportSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<TestReport> selectQueryByView(TestReportSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<TestReport> selectView(TestReportSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

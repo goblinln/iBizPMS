@@ -117,7 +117,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.PRODUCTTEAMSearchContext" resultMap="PRODUCTTEAMResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.PRODUCTTEAMSearchContext" resultMap="PRODUCTTEAMResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -132,7 +132,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductTeamInfo"  parameterType="cn.ibizlab.pms.core.ibiz.filter.PRODUCTTEAMSearchContext" resultMap="PRODUCTTEAMResultMap">
+	<select id="selectProductTeamInfo"  parameterType="cn.ibizlab.pms.core.ibiz.filter.PRODUCTTEAMSearchContext" resultMap="PRODUCTTEAMResultMap">
 		<include refid="ProductTeamInfo" />
 	</select>
 
@@ -147,7 +147,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectApp"  parameterType="cn.ibizlab.pms.core.ibiz.filter.PRODUCTTEAMSearchContext" resultMap="PRODUCTTEAMResultMap">
+	<select id="selectProjectApp"  parameterType="cn.ibizlab.pms.core.ibiz.filter.PRODUCTTEAMSearchContext" resultMap="PRODUCTTEAMResultMap">
 		<include refid="ProjectApp" />
 	</select>
 
@@ -162,7 +162,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRowEditDefaultProductTeam"  parameterType="cn.ibizlab.pms.core.ibiz.filter.PRODUCTTEAMSearchContext" resultMap="PRODUCTTEAMResultMap">
+	<select id="selectRowEditDefaultProductTeam"  parameterType="cn.ibizlab.pms.core.ibiz.filter.PRODUCTTEAMSearchContext" resultMap="PRODUCTTEAMResultMap">
 		<include refid="RowEditDefaultProductTeam" />
 	</select>
 
@@ -174,7 +174,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.PRODUCTTEAMSearchContext" resultMap="PRODUCTTEAMResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.PRODUCTTEAMSearchContext" resultMap="PRODUCTTEAMResultMap">
 		<include refid="View" />
 	</select>
 

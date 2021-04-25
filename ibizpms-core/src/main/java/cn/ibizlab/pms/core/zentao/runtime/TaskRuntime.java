@@ -176,85 +176,85 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     public List<Task> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         TaskSearchContext searchContext = (TaskSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("AssignedToMyTask"))
-            return taskService.selectQueryByAssignedToMyTask(searchContext);
+            return taskService.selectAssignedToMyTask(searchContext);
         if (iPSDataQuery.getName().equals("AssignedToMyTaskPc"))
-            return taskService.selectQueryByAssignedToMyTaskPc(searchContext);
+            return taskService.selectAssignedToMyTaskPc(searchContext);
         if (iPSDataQuery.getName().equals("BugTask"))
-            return taskService.selectQueryByBugTask(searchContext);
+            return taskService.selectBugTask(searchContext);
         if (iPSDataQuery.getName().equals("ByModule"))
-            return taskService.selectQueryByByModule(searchContext);
+            return taskService.selectByModule(searchContext);
         if (iPSDataQuery.getName().equals("ChildDefault"))
-            return taskService.selectQueryByChildDefault(searchContext);
+            return taskService.selectChildDefault(searchContext);
         if (iPSDataQuery.getName().equals("ChildTask"))
-            return taskService.selectQueryByChildTask(searchContext);
+            return taskService.selectChildTask(searchContext);
         if (iPSDataQuery.getName().equals("ChildTaskTree"))
-            return taskService.selectQueryByChildTaskTree(searchContext);
+            return taskService.selectChildTaskTree(searchContext);
         if (iPSDataQuery.getName().equals("CurFinishTask"))
-            return taskService.selectQueryByCurFinishTask(searchContext);
+            return taskService.selectCurFinishTask(searchContext);
         if (iPSDataQuery.getName().equals("CurProjectTaskQuery"))
-            return taskService.selectQueryByCurProjectTaskQuery(searchContext);
+            return taskService.selectCurProjectTaskQuery(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return taskService.selectQueryByDefault(searchContext);
+            return taskService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("DefaultRow"))
-            return taskService.selectQueryByDefaultRow(searchContext);
+            return taskService.selectDefaultRow(searchContext);
         if (iPSDataQuery.getName().equals("ESBulk"))
-            return taskService.selectQueryByESBulk(searchContext);
+            return taskService.selectESBulk(searchContext);
         if (iPSDataQuery.getName().equals("MyAgentTask"))
-            return taskService.selectQueryByMyAgentTask(searchContext);
+            return taskService.selectMyAgentTask(searchContext);
         if (iPSDataQuery.getName().equals("MyAllTask"))
-            return taskService.selectQueryByMyAllTask(searchContext);
+            return taskService.selectMyAllTask(searchContext);
         if (iPSDataQuery.getName().equals("MyCompleteTask"))
-            return taskService.selectQueryByMyCompleteTask(searchContext);
+            return taskService.selectMyCompleteTask(searchContext);
         if (iPSDataQuery.getName().equals("MyCompleteTaskMobDaily"))
-            return taskService.selectQueryByMyCompleteTaskMobDaily(searchContext);
+            return taskService.selectMyCompleteTaskMobDaily(searchContext);
         if (iPSDataQuery.getName().equals("MyCompleteTaskMobMonthly"))
-            return taskService.selectQueryByMyCompleteTaskMobMonthly(searchContext);
+            return taskService.selectMyCompleteTaskMobMonthly(searchContext);
         if (iPSDataQuery.getName().equals("MyCompleteTaskMonthlyZS"))
-            return taskService.selectQueryByMyCompleteTaskMonthlyZS(searchContext);
+            return taskService.selectMyCompleteTaskMonthlyZS(searchContext);
         if (iPSDataQuery.getName().equals("MyCompleteTaskZS"))
-            return taskService.selectQueryByMyCompleteTaskZS(searchContext);
+            return taskService.selectMyCompleteTaskZS(searchContext);
         if (iPSDataQuery.getName().equals("MyFavorites"))
-            return taskService.selectQueryByMyFavorites(searchContext);
+            return taskService.selectMyFavorites(searchContext);
         if (iPSDataQuery.getName().equals("MyPlansTaskMobMonthly"))
-            return taskService.selectQueryByMyPlansTaskMobMonthly(searchContext);
+            return taskService.selectMyPlansTaskMobMonthly(searchContext);
         if (iPSDataQuery.getName().equals("MyTomorrowPlanTask"))
-            return taskService.selectQueryByMyTomorrowPlanTask(searchContext);
+            return taskService.selectMyTomorrowPlanTask(searchContext);
         if (iPSDataQuery.getName().equals("MyTomorrowPlanTaskMobDaily"))
-            return taskService.selectQueryByMyTomorrowPlanTaskMobDaily(searchContext);
+            return taskService.selectMyTomorrowPlanTaskMobDaily(searchContext);
         if (iPSDataQuery.getName().equals("NextWeekCompleteTaskMobZS"))
-            return taskService.selectQueryByNextWeekCompleteTaskMobZS(searchContext);
+            return taskService.selectNextWeekCompleteTaskMobZS(searchContext);
         if (iPSDataQuery.getName().equals("NextWeekCompleteTaskZS"))
-            return taskService.selectQueryByNextWeekCompleteTaskZS(searchContext);
+            return taskService.selectNextWeekCompleteTaskZS(searchContext);
         if (iPSDataQuery.getName().equals("NextWeekPlanCompleteTask"))
-            return taskService.selectQueryByNextWeekPlanCompleteTask(searchContext);
+            return taskService.selectNextWeekPlanCompleteTask(searchContext);
         if (iPSDataQuery.getName().equals("PlanTask"))
-            return taskService.selectQueryByPlanTask(searchContext);
+            return taskService.selectPlanTask(searchContext);
         if (iPSDataQuery.getName().equals("ProjectAppTask"))
-            return taskService.selectQueryByProjectAppTask(searchContext);
+            return taskService.selectProjectAppTask(searchContext);
         if (iPSDataQuery.getName().equals("ProjectTask"))
-            return taskService.selectQueryByProjectTask(searchContext);
+            return taskService.selectProjectTask(searchContext);
         if (iPSDataQuery.getName().equals("RootTask"))
-            return taskService.selectQueryByRootTask(searchContext);
+            return taskService.selectRootTask(searchContext);
         if (iPSDataQuery.getName().equals("TaskLinkPlan"))
-            return taskService.selectQueryByTaskLinkPlan(searchContext);
+            return taskService.selectTaskLinkPlan(searchContext);
         if (iPSDataQuery.getName().equals("ThisMonthCompleteTaskChoice"))
-            return taskService.selectQueryByThisMonthCompleteTaskChoice(searchContext);
+            return taskService.selectThisMonthCompleteTaskChoice(searchContext);
         if (iPSDataQuery.getName().equals("ThisWeekCompleteTask"))
-            return taskService.selectQueryByThisWeekCompleteTask(searchContext);
+            return taskService.selectThisWeekCompleteTask(searchContext);
         if (iPSDataQuery.getName().equals("ThisWeekCompleteTaskChoice"))
-            return taskService.selectQueryByThisWeekCompleteTaskChoice(searchContext);
+            return taskService.selectThisWeekCompleteTaskChoice(searchContext);
         if (iPSDataQuery.getName().equals("ThisWeekCompleteTaskMobZS"))
-            return taskService.selectQueryByThisWeekCompleteTaskMobZS(searchContext);
+            return taskService.selectThisWeekCompleteTaskMobZS(searchContext);
         if (iPSDataQuery.getName().equals("ThisWeekCompleteTaskZS"))
-            return taskService.selectQueryByThisWeekCompleteTaskZS(searchContext);
+            return taskService.selectThisWeekCompleteTaskZS(searchContext);
         if (iPSDataQuery.getName().equals("TodoListTask"))
-            return taskService.selectQueryByTodoListTask(searchContext);
+            return taskService.selectTodoListTask(searchContext);
         if (iPSDataQuery.getName().equals("TypeGroup"))
-            return taskService.selectQueryByTypeGroup(searchContext);
+            return taskService.selectTypeGroup(searchContext);
         if (iPSDataQuery.getName().equals("TypeGroupPlan"))
-            return taskService.selectQueryByTypeGroupPlan(searchContext);
+            return taskService.selectTypeGroupPlan(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return taskService.selectQueryByView(searchContext);
+            return taskService.selectView(searchContext);
         return null;
     }
 

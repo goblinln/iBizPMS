@@ -110,15 +110,15 @@ public class UserYearWorkStatsRuntime extends cn.ibizlab.pms.core.runtime.System
     public List<UserYearWorkStats> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         UserYearWorkStatsSearchContext searchContext = (UserYearWorkStatsSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return useryearworkstatsService.selectQueryByDefault(searchContext);
+            return useryearworkstatsService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("MonthFinishTaskAndBug"))
-            return useryearworkstatsService.selectQueryByMonthFinishTaskAndBug(searchContext);
+            return useryearworkstatsService.selectMonthFinishTaskAndBug(searchContext);
         if (iPSDataQuery.getName().equals("MonthOpenedBugAndCase"))
-            return useryearworkstatsService.selectQueryByMonthOpenedBugAndCase(searchContext);
+            return useryearworkstatsService.selectMonthOpenedBugAndCase(searchContext);
         if (iPSDataQuery.getName().equals("MonthOpenedStory"))
-            return useryearworkstatsService.selectQueryByMonthOpenedStory(searchContext);
+            return useryearworkstatsService.selectMonthOpenedStory(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return useryearworkstatsService.selectQueryByView(searchContext);
+            return useryearworkstatsService.selectView(searchContext);
         return null;
     }
 

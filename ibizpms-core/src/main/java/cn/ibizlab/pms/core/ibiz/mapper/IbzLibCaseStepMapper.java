@@ -19,8 +19,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IbzLibCaseStepMapper extends BaseMapper<IbzLibCaseStep> {
 
-    List<IbzLibCaseStep> selectQueryByDefault(@Param("srf") IbzLibCaseStepSearchContext context, @Param("ew") Wrapper<IbzLibCaseStep> wrapper);
-    List<IbzLibCaseStep> selectQueryByView(@Param("srf") IbzLibCaseStepSearchContext context, @Param("ew") Wrapper<IbzLibCaseStep> wrapper);
+    List<IbzLibCaseStep> selectDefault(@Param("srf") IbzLibCaseStepSearchContext context, @Param("ew") Wrapper<IbzLibCaseStep> wrapper);
+    List<IbzLibCaseStep> selectView(@Param("srf") IbzLibCaseStepSearchContext context, @Param("ew") Wrapper<IbzLibCaseStep> wrapper);
 
     Page<IbzLibCaseStep> searchDefault(IPage page, @Param("srf") IbzLibCaseStepSearchContext context, @Param("ew") Wrapper<IbzLibCaseStep> wrapper);
     @Override

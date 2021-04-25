@@ -214,29 +214,29 @@ public class ProductSumServiceImpl extends ServiceImpl<ProductSumMapper, Product
 
 
 
-    public List<ProductSum> selectQueryByDefault(ProductSumSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<ProductSum> selectDefault(ProductSumSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<ProductSum> selectQueryByProductBugcnt_QA(ProductSumSearchContext context){
-        return baseMapper.selectQueryByProductBugcnt_QA(context, context.getSelectCond());
+    public List<ProductSum> selectProductBugcnt_QA(ProductSumSearchContext context){
+        return baseMapper.selectProductBugcnt_QA(context, context.getSelectCond());
     }
-    public List<ProductSum> selectQueryByProductCreateStory(ProductSumSearchContext context){
-        return baseMapper.selectQueryByProductCreateStory(context, context.getSelectCond());
+    public List<ProductSum> selectProductCreateStory(ProductSumSearchContext context){
+        return baseMapper.selectProductCreateStory(context, context.getSelectCond());
     }
-    public List<ProductSum> selectQueryByProductPlancntAndStorycnt_PO(ProductSumSearchContext context){
-        return baseMapper.selectQueryByProductPlancntAndStorycnt_PO(context, context.getSelectCond());
+    public List<ProductSum> selectProductPlancntAndStorycnt_PO(ProductSumSearchContext context){
+        return baseMapper.selectProductPlancntAndStorycnt_PO(context, context.getSelectCond());
     }
-    public List<ProductSum> selectQueryByProductStoryHoursSum(ProductSumSearchContext context){
-        return baseMapper.selectQueryByProductStoryHoursSum(context, context.getSelectCond());
+    public List<ProductSum> selectProductStoryHoursSum(ProductSumSearchContext context){
+        return baseMapper.selectProductStoryHoursSum(context, context.getSelectCond());
     }
-    public List<ProductSum> selectQueryByProductStorySum(ProductSumSearchContext context){
-        return baseMapper.selectQueryByProductStorySum(context, context.getSelectCond());
+    public List<ProductSum> selectProductStorySum(ProductSumSearchContext context){
+        return baseMapper.selectProductStorySum(context, context.getSelectCond());
     }
-    public List<ProductSum> selectQueryByProductSumBugType(ProductSumSearchContext context){
-        return baseMapper.selectQueryByProductSumBugType(context, context.getSelectCond());
+    public List<ProductSum> selectProductSumBugType(ProductSumSearchContext context){
+        return baseMapper.selectProductSumBugType(context, context.getSelectCond());
     }
-    public List<ProductSum> selectQueryByView(ProductSumSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<ProductSum> selectView(ProductSumSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

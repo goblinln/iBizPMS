@@ -128,7 +128,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBugUser"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
+	<select id="selectBugUser"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
 		<include refid="BugUser" />
 	</select>
 
@@ -143,7 +143,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -161,7 +161,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByGetByLogin"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
+	<select id="selectGetByLogin"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
 		<include refid="GetByLogin" />
 	</select>
 
@@ -179,7 +179,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectTeamM"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
+	<select id="selectProjectTeamM"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
 		<include refid="ProjectTeamM" />
 	</select>
 
@@ -200,7 +200,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectTeamUser"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
+	<select id="selectProjectTeamUser"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
 		<include refid="ProjectTeamUser" />
 	</select>
 
@@ -221,7 +221,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectTeamUserTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
+	<select id="selectProjectTeamUserTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
 		<include refid="ProjectTeamUserTask" />
 	</select>
 
@@ -239,7 +239,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByTaskTeam"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
+	<select id="selectTaskTeam"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
 		<include refid="TaskTeam" />
 	</select>
 
@@ -254,7 +254,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserSearchContext" resultMap="UserResultMap">
 		<include refid="View" />
 	</select>
 

@@ -19,16 +19,16 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface BugStatsMapper extends BaseMapper<BugStats> {
 
-    List<BugStats> selectQueryByBugCountInResolution(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
-    List<BugStats> selectQueryByBugResolvedBy(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
-    List<BugStats> selectQueryByBugResolvedGird(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
-    List<BugStats> selectQueryByBugassignedTo(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
-    List<BugStats> selectQueryByDefault(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
-    List<BugStats> selectQueryByProductBugResolutionStats(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
-    List<BugStats> selectQueryByProductBugStatusSum(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
-    List<BugStats> selectQueryByProductCreateBug(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
-    List<BugStats> selectQueryByProjectBugStatusCount(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
-    List<BugStats> selectQueryByView(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
+    List<BugStats> selectBugCountInResolution(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
+    List<BugStats> selectBugResolvedBy(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
+    List<BugStats> selectBugResolvedGird(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
+    List<BugStats> selectBugassignedTo(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
+    List<BugStats> selectDefault(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
+    List<BugStats> selectProductBugResolutionStats(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
+    List<BugStats> selectProductBugStatusSum(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
+    List<BugStats> selectProductCreateBug(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
+    List<BugStats> selectProjectBugStatusCount(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
+    List<BugStats> selectView(@Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
 
     Page<BugStats> searchBugCountInResolution(IPage page, @Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);
     Page<BugStats> searchBugResolvedBy(IPage page, @Param("srf") BugStatsSearchContext context, @Param("ew") Wrapper<BugStats> wrapper);

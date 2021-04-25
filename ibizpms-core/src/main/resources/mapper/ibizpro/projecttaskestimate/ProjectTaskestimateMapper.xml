@@ -62,7 +62,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByAccountDetail"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.ProjectTaskestimateSearchContext" resultMap="ProjectTaskestimateResultMap">
+	<select id="selectAccountDetail"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.ProjectTaskestimateSearchContext" resultMap="ProjectTaskestimateResultMap">
 		<include refid="AccountDetail" />
 	</select>
 
@@ -77,7 +77,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.ProjectTaskestimateSearchContext" resultMap="ProjectTaskestimateResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.ProjectTaskestimateSearchContext" resultMap="ProjectTaskestimateResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -89,7 +89,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.ProjectTaskestimateSearchContext" resultMap="ProjectTaskestimateResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.ProjectTaskestimateSearchContext" resultMap="ProjectTaskestimateResultMap">
 		<include refid="View" />
 	</select>
 

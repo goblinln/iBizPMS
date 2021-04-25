@@ -176,7 +176,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByByCustom"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
+	<select id="selectByCustom"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
 		<include refid="ByCustom" />
 	</select>
 
@@ -194,7 +194,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByByProduct"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
+	<select id="selectByProduct"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
 		<include refid="ByProduct" />
 	</select>
 
@@ -212,7 +212,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByByProductNotFiles"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
+	<select id="selectByProductNotFiles"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
 		<include refid="ByProductNotFiles" />
 	</select>
 
@@ -230,7 +230,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByByProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
+	<select id="selectByProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
 		<include refid="ByProject" />
 	</select>
 
@@ -248,7 +248,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByByProjectNotFiles"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
+	<select id="selectByProjectNotFiles"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
 		<include refid="ByProjectNotFiles" />
 	</select>
 
@@ -263,7 +263,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurDocLib"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
+	<select id="selectCurDocLib"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
 		<include refid="CurDocLib" />
 	</select>
 
@@ -281,7 +281,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -299,7 +299,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyFavourites"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
+	<select id="selectMyFavourites"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
 		<include refid="MyFavourites" />
 	</select>
 
@@ -317,7 +317,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRootModuleMuLu"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
+	<select id="selectRootModuleMuLu"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
 		<include refid="RootModuleMuLu" />
 	</select>
 
@@ -332,7 +332,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext" resultMap="DocLibResultMap">
 		<include refid="View" />
 	</select>
 

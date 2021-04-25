@@ -125,7 +125,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBugCountInResolution"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
+	<select id="selectBugCountInResolution"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
 		<include refid="BugCountInResolution" />
 	</select>
 
@@ -137,7 +137,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBugResolvedBy"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
+	<select id="selectBugResolvedBy"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
 		<include refid="BugResolvedBy" />
 	</select>
 
@@ -149,7 +149,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBugResolvedGird"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
+	<select id="selectBugResolvedGird"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
 		<include refid="BugResolvedGird" />
 	</select>
 
@@ -161,7 +161,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBugassignedTo"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
+	<select id="selectBugassignedTo"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
 		<include refid="BugassignedTo" />
 	</select>
 
@@ -173,7 +173,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -185,7 +185,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductBugResolutionStats"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
+	<select id="selectProductBugResolutionStats"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
 		<include refid="ProductBugResolutionStats" />
 	</select>
 
@@ -197,7 +197,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductBugStatusSum"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
+	<select id="selectProductBugStatusSum"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
 		<include refid="ProductBugStatusSum" />
 	</select>
 
@@ -209,7 +209,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductCreateBug"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
+	<select id="selectProductCreateBug"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
 		<include refid="ProductCreateBug" />
 	</select>
 
@@ -221,7 +221,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectBugStatusCount"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
+	<select id="selectProjectBugStatusCount"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
 		<include refid="ProjectBugStatusCount" />
 	</select>
 
@@ -233,7 +233,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.BugStatsSearchContext" resultMap="BugStatsResultMap">
 		<include refid="View" />
 	</select>
 

@@ -560,7 +560,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByAssignedToMyTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectAssignedToMyTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="AssignedToMyTask" />
 	</select>
 
@@ -587,7 +587,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByAssignedToMyTaskPc"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectAssignedToMyTaskPc"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="AssignedToMyTaskPc" />
 	</select>
 
@@ -605,7 +605,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBugTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectBugTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="BugTask" />
 	</select>
 
@@ -626,7 +626,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByByModule"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectByModule"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="ByModule" />
 	</select>
 
@@ -641,7 +641,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByChildDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectChildDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="ChildDefault" />
 	</select>
 
@@ -659,7 +659,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByChildTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectChildTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="ChildTask" />
 	</select>
 
@@ -671,7 +671,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByChildTaskTree"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectChildTaskTree"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="ChildTaskTree" />
 	</select>
 
@@ -689,7 +689,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurFinishTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectCurFinishTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="CurFinishTask" />
 	</select>
 
@@ -704,7 +704,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurProjectTaskQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectCurProjectTaskQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="CurProjectTaskQuery" />
 	</select>
 
@@ -719,7 +719,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -734,7 +734,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefaultRow"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectDefaultRow"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="DefaultRow" />
 	</select>
 
@@ -746,7 +746,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="ESBulk" />
 	</select>
 
@@ -761,7 +761,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyAgentTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectMyAgentTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="MyAgentTask" />
 	</select>
 
@@ -782,7 +782,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyAllTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectMyAllTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="MyAllTask" />
 	</select>
 
@@ -803,7 +803,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyCompleteTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectMyCompleteTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="MyCompleteTask" />
 	</select>
 
@@ -821,7 +821,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyCompleteTaskMobDaily"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectMyCompleteTaskMobDaily"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="MyCompleteTaskMobDaily" />
 	</select>
 
@@ -839,7 +839,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyCompleteTaskMobMonthly"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectMyCompleteTaskMobMonthly"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="MyCompleteTaskMobMonthly" />
 	</select>
 
@@ -857,7 +857,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyCompleteTaskMonthlyZS"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectMyCompleteTaskMonthlyZS"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="MyCompleteTaskMonthlyZS" />
 	</select>
 
@@ -875,7 +875,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyCompleteTaskZS"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectMyCompleteTaskZS"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="MyCompleteTaskZS" />
 	</select>
 
@@ -893,7 +893,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyFavorites"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectMyFavorites"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="MyFavorites" />
 	</select>
 
@@ -911,7 +911,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyPlansTaskMobMonthly"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectMyPlansTaskMobMonthly"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="MyPlansTaskMobMonthly" />
 	</select>
 
@@ -929,7 +929,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyTomorrowPlanTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectMyTomorrowPlanTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="MyTomorrowPlanTask" />
 	</select>
 
@@ -947,7 +947,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyTomorrowPlanTaskMobDaily"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectMyTomorrowPlanTaskMobDaily"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="MyTomorrowPlanTaskMobDaily" />
 	</select>
 
@@ -965,7 +965,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByNextWeekCompleteTaskMobZS"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectNextWeekCompleteTaskMobZS"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="NextWeekCompleteTaskMobZS" />
 	</select>
 
@@ -983,7 +983,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByNextWeekCompleteTaskZS"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectNextWeekCompleteTaskZS"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="NextWeekCompleteTaskZS" />
 	</select>
 
@@ -1001,7 +1001,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByNextWeekPlanCompleteTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectNextWeekPlanCompleteTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="NextWeekPlanCompleteTask" />
 	</select>
 
@@ -1019,7 +1019,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByPlanTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectPlanTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="PlanTask" />
 	</select>
 
@@ -1037,7 +1037,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectAppTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectProjectAppTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="ProjectAppTask" />
 	</select>
 
@@ -1055,7 +1055,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectProjectTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="ProjectTask" />
 	</select>
 
@@ -1073,7 +1073,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRootTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectRootTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="RootTask" />
 	</select>
 
@@ -1091,7 +1091,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByTaskLinkPlan"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectTaskLinkPlan"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="TaskLinkPlan" />
 	</select>
 
@@ -1112,7 +1112,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByThisMonthCompleteTaskChoice"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectThisMonthCompleteTaskChoice"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="ThisMonthCompleteTaskChoice" />
 	</select>
 
@@ -1130,7 +1130,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByThisWeekCompleteTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectThisWeekCompleteTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="ThisWeekCompleteTask" />
 	</select>
 
@@ -1151,7 +1151,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByThisWeekCompleteTaskChoice"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectThisWeekCompleteTaskChoice"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="ThisWeekCompleteTaskChoice" />
 	</select>
 
@@ -1169,7 +1169,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByThisWeekCompleteTaskMobZS"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectThisWeekCompleteTaskMobZS"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="ThisWeekCompleteTaskMobZS" />
 	</select>
 
@@ -1187,7 +1187,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByThisWeekCompleteTaskZS"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectThisWeekCompleteTaskZS"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="ThisWeekCompleteTaskZS" />
 	</select>
 
@@ -1202,7 +1202,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByTodoListTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectTodoListTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="TodoListTask" />
 	</select>
 
@@ -1217,7 +1217,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByTypeGroup"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectTypeGroup"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="TypeGroup" />
 	</select>
 
@@ -1229,7 +1229,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByTypeGroupPlan"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectTypeGroupPlan"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="TypeGroupPlan" />
 	</select>
 
@@ -1244,7 +1244,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskSearchContext" resultMap="TaskResultMap">
 		<include refid="View" />
 	</select>
 

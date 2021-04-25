@@ -104,9 +104,9 @@ public class IbzProjectMemberRuntime extends cn.ibizlab.pms.core.runtime.SystemD
     public List<IbzProjectMember> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         IbzProjectMemberSearchContext searchContext = (IbzProjectMemberSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return ibzprojectmemberService.selectQueryByDefault(searchContext);
+            return ibzprojectmemberService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return ibzprojectmemberService.selectQueryByView(searchContext);
+            return ibzprojectmemberService.selectView(searchContext);
         return null;
     }
 

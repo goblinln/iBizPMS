@@ -315,14 +315,14 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
 	}
 
 
-    public List<TestResult> selectQueryByCurTestRun(TestResultSearchContext context){
-        return baseMapper.selectQueryByCurTestRun(context, context.getSelectCond());
+    public List<TestResult> selectCurTestRun(TestResultSearchContext context){
+        return baseMapper.selectCurTestRun(context, context.getSelectCond());
     }
-    public List<TestResult> selectQueryByDefault(TestResultSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<TestResult> selectDefault(TestResultSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<TestResult> selectQueryByView(TestResultSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<TestResult> selectView(TestResultSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

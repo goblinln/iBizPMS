@@ -19,8 +19,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface UserViewMapper extends BaseMapper<UserView> {
 
-    List<UserView> selectQueryByDefault(@Param("srf") UserViewSearchContext context, @Param("ew") Wrapper<UserView> wrapper);
-    List<UserView> selectQueryByView(@Param("srf") UserViewSearchContext context, @Param("ew") Wrapper<UserView> wrapper);
+    List<UserView> selectDefault(@Param("srf") UserViewSearchContext context, @Param("ew") Wrapper<UserView> wrapper);
+    List<UserView> selectView(@Param("srf") UserViewSearchContext context, @Param("ew") Wrapper<UserView> wrapper);
 
     Page<UserView> searchDefault(IPage page, @Param("srf") UserViewSearchContext context, @Param("ew") Wrapper<UserView> wrapper);
     @Override

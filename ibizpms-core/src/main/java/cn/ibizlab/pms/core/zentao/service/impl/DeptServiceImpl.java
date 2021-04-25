@@ -246,14 +246,14 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     }
 
 
-    public List<Dept> selectQueryByDefault(DeptSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Dept> selectDefault(DeptSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Dept> selectQueryByRoot(DeptSearchContext context){
-        return baseMapper.selectQueryByRoot(context, context.getSelectCond());
+    public List<Dept> selectRoot(DeptSearchContext context){
+        return baseMapper.selectRoot(context, context.getSelectCond());
     }
-    public List<Dept> selectQueryByView(DeptSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Dept> selectView(DeptSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

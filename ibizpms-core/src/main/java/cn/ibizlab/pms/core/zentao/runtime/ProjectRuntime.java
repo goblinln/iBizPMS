@@ -146,51 +146,51 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     public List<Project> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         ProjectSearchContext searchContext = (ProjectSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("BugSelectableProjectList"))
-            return projectService.selectQueryByBugSelectableProjectList(searchContext);
+            return projectService.selectBugSelectableProjectList(searchContext);
         if (iPSDataQuery.getName().equals("CurDefaultQuery"))
-            return projectService.selectQueryByCurDefaultQuery(searchContext);
+            return projectService.selectCurDefaultQuery(searchContext);
         if (iPSDataQuery.getName().equals("CurDefaultQueryExp"))
-            return projectService.selectQueryByCurDefaultQueryExp(searchContext);
+            return projectService.selectCurDefaultQueryExp(searchContext);
         if (iPSDataQuery.getName().equals("CurPlanProject"))
-            return projectService.selectQueryByCurPlanProject(searchContext);
+            return projectService.selectCurPlanProject(searchContext);
         if (iPSDataQuery.getName().equals("CurProduct"))
-            return projectService.selectQueryByCurProduct(searchContext);
+            return projectService.selectCurProduct(searchContext);
         if (iPSDataQuery.getName().equals("CurUser"))
-            return projectService.selectQueryByCurUser(searchContext);
+            return projectService.selectCurUser(searchContext);
         if (iPSDataQuery.getName().equals("CurUserSa"))
-            return projectService.selectQueryByCurUserSa(searchContext);
+            return projectService.selectCurUserSa(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return projectService.selectQueryByDefault(searchContext);
+            return projectService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("DeveloperQuery"))
-            return projectService.selectQueryByDeveloperQuery(searchContext);
+            return projectService.selectDeveloperQuery(searchContext);
         if (iPSDataQuery.getName().equals("ESBulk"))
-            return projectService.selectQueryByESBulk(searchContext);
+            return projectService.selectESBulk(searchContext);
         if (iPSDataQuery.getName().equals("InvolvedProject"))
-            return projectService.selectQueryByInvolvedProject(searchContext);
+            return projectService.selectInvolvedProject(searchContext);
         if (iPSDataQuery.getName().equals("InvolvedProjectStoryTaskBug"))
-            return projectService.selectQueryByInvolvedProjectStoryTaskBug(searchContext);
+            return projectService.selectInvolvedProjectStoryTaskBug(searchContext);
         if (iPSDataQuery.getName().equals("MyProject"))
-            return projectService.selectQueryByMyProject(searchContext);
+            return projectService.selectMyProject(searchContext);
         if (iPSDataQuery.getName().equals("OpenByQuery"))
-            return projectService.selectQueryByOpenByQuery(searchContext);
+            return projectService.selectOpenByQuery(searchContext);
         if (iPSDataQuery.getName().equals("OpenQuery"))
-            return projectService.selectQueryByOpenQuery(searchContext);
+            return projectService.selectOpenQuery(searchContext);
         if (iPSDataQuery.getName().equals("PMQuery"))
-            return projectService.selectQueryByPMQuery(searchContext);
+            return projectService.selectPMQuery(searchContext);
         if (iPSDataQuery.getName().equals("POQuery"))
-            return projectService.selectQueryByPOQuery(searchContext);
+            return projectService.selectPOQuery(searchContext);
         if (iPSDataQuery.getName().equals("ProjectTeam"))
-            return projectService.selectQueryByProjectTeam(searchContext);
+            return projectService.selectProjectTeam(searchContext);
         if (iPSDataQuery.getName().equals("QDQuery"))
-            return projectService.selectQueryByQDQuery(searchContext);
+            return projectService.selectQDQuery(searchContext);
         if (iPSDataQuery.getName().equals("RDQuery"))
-            return projectService.selectQueryByRDQuery(searchContext);
+            return projectService.selectRDQuery(searchContext);
         if (iPSDataQuery.getName().equals("StoryProject"))
-            return projectService.selectQueryByStoryProject(searchContext);
+            return projectService.selectStoryProject(searchContext);
         if (iPSDataQuery.getName().equals("UnDoneProject"))
-            return projectService.selectQueryByUnDoneProject(searchContext);
+            return projectService.selectUnDoneProject(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return projectService.selectQueryByView(searchContext);
+            return projectService.selectView(searchContext);
         return null;
     }
 

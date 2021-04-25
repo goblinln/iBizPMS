@@ -262,11 +262,11 @@ public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDa
     }
 
 
-    public List<IbizproProjectDaily> selectQueryByDefault(IbizproProjectDailySearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IbizproProjectDaily> selectDefault(IbizproProjectDailySearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IbizproProjectDaily> selectQueryByView(IbizproProjectDailySearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IbizproProjectDaily> selectView(IbizproProjectDailySearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

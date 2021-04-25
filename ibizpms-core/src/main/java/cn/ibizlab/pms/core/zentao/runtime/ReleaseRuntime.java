@@ -106,13 +106,13 @@ public class ReleaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     public List<Release> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         ReleaseSearchContext searchContext = (ReleaseSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return releaseService.selectQueryByDefault(searchContext);
+            return releaseService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("GetList"))
-            return releaseService.selectQueryByGetList(searchContext);
+            return releaseService.selectGetList(searchContext);
         if (iPSDataQuery.getName().equals("ReportRelease"))
-            return releaseService.selectQueryByReportRelease(searchContext);
+            return releaseService.selectReportRelease(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return releaseService.selectQueryByView(searchContext);
+            return releaseService.selectView(searchContext);
         return null;
     }
 

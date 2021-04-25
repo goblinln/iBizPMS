@@ -288,29 +288,29 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
     }
 
 
-    public List<Module> selectQueryByBugModule(ModuleSearchContext context){
-        return baseMapper.selectQueryByBugModule(context, context.getSelectCond());
+    public List<Module> selectBugModule(ModuleSearchContext context){
+        return baseMapper.selectBugModule(context, context.getSelectCond());
     }
-    public List<Module> selectQueryByBugModuleCodeList(ModuleSearchContext context){
-        return baseMapper.selectQueryByBugModuleCodeList(context, context.getSelectCond());
+    public List<Module> selectBugModuleCodeList(ModuleSearchContext context){
+        return baseMapper.selectBugModuleCodeList(context, context.getSelectCond());
     }
-    public List<Module> selectQueryByDefault(ModuleSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Module> selectDefault(ModuleSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Module> selectQueryByDocModule(ModuleSearchContext context){
-        return baseMapper.selectQueryByDocModule(context, context.getSelectCond());
+    public List<Module> selectDocModule(ModuleSearchContext context){
+        return baseMapper.selectDocModule(context, context.getSelectCond());
     }
-    public List<Module> selectQueryByLine(ModuleSearchContext context){
-        return baseMapper.selectQueryByLine(context, context.getSelectCond());
+    public List<Module> selectLine(ModuleSearchContext context){
+        return baseMapper.selectLine(context, context.getSelectCond());
     }
-    public List<Module> selectQueryByStoryModule(ModuleSearchContext context){
-        return baseMapper.selectQueryByStoryModule(context, context.getSelectCond());
+    public List<Module> selectStoryModule(ModuleSearchContext context){
+        return baseMapper.selectStoryModule(context, context.getSelectCond());
     }
-    public List<Module> selectQueryByTaskModule(ModuleSearchContext context){
-        return baseMapper.selectQueryByTaskModule(context, context.getSelectCond());
+    public List<Module> selectTaskModule(ModuleSearchContext context){
+        return baseMapper.selectTaskModule(context, context.getSelectCond());
     }
-    public List<Module> selectQueryByView(ModuleSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Module> selectView(ModuleSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

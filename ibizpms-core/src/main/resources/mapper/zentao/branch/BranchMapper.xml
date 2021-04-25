@@ -89,7 +89,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurProduct"  parameterType="cn.ibizlab.pms.core.zentao.filter.BranchSearchContext" resultMap="BranchResultMap">
+	<select id="selectCurProduct"  parameterType="cn.ibizlab.pms.core.zentao.filter.BranchSearchContext" resultMap="BranchResultMap">
 		<include refid="CurProduct" />
 	</select>
 
@@ -104,7 +104,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.BranchSearchContext" resultMap="BranchResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.BranchSearchContext" resultMap="BranchResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -116,7 +116,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefaultBranch"  parameterType="cn.ibizlab.pms.core.zentao.filter.BranchSearchContext" resultMap="BranchResultMap">
+	<select id="selectDefaultBranch"  parameterType="cn.ibizlab.pms.core.zentao.filter.BranchSearchContext" resultMap="BranchResultMap">
 		<include refid="DefaultBranch" />
 	</select>
 
@@ -131,7 +131,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.BranchSearchContext" resultMap="BranchResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.BranchSearchContext" resultMap="BranchResultMap">
 		<include refid="View" />
 	</select>
 

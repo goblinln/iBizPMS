@@ -104,9 +104,9 @@ public class RepoFilesRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     public List<RepoFiles> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         RepoFilesSearchContext searchContext = (RepoFilesSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return repofilesService.selectQueryByDefault(searchContext);
+            return repofilesService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return repofilesService.selectQueryByView(searchContext);
+            return repofilesService.selectView(searchContext);
         return null;
     }
 

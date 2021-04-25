@@ -19,9 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface StorySpecMapper extends BaseMapper<StorySpec> {
 
-    List<StorySpec> selectQueryByDefault(@Param("srf") StorySpecSearchContext context, @Param("ew") Wrapper<StorySpec> wrapper);
-    List<StorySpec> selectQueryByVersion(@Param("srf") StorySpecSearchContext context, @Param("ew") Wrapper<StorySpec> wrapper);
-    List<StorySpec> selectQueryByView(@Param("srf") StorySpecSearchContext context, @Param("ew") Wrapper<StorySpec> wrapper);
+    List<StorySpec> selectDefault(@Param("srf") StorySpecSearchContext context, @Param("ew") Wrapper<StorySpec> wrapper);
+    List<StorySpec> selectVersion(@Param("srf") StorySpecSearchContext context, @Param("ew") Wrapper<StorySpec> wrapper);
+    List<StorySpec> selectView(@Param("srf") StorySpecSearchContext context, @Param("ew") Wrapper<StorySpec> wrapper);
 
     Page<StorySpec> searchDefault(IPage page, @Param("srf") StorySpecSearchContext context, @Param("ew") Wrapper<StorySpec> wrapper);
     Page<StorySpec> searchVersion(IPage page, @Param("srf") StorySpecSearchContext context, @Param("ew") Wrapper<StorySpec> wrapper);

@@ -127,7 +127,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext" resultMap="TodoResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext" resultMap="TodoResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -145,7 +145,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyTodo"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext" resultMap="TodoResultMap">
+	<select id="selectMyTodo"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext" resultMap="TodoResultMap">
 		<include refid="MyTodo" />
 	</select>
 
@@ -166,7 +166,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyTodoPc"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext" resultMap="TodoResultMap">
+	<select id="selectMyTodoPc"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext" resultMap="TodoResultMap">
 		<include refid="MyTodoPc" />
 	</select>
 
@@ -181,7 +181,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyUpcoming"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext" resultMap="TodoResultMap">
+	<select id="selectMyUpcoming"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext" resultMap="TodoResultMap">
 		<include refid="MyUpcoming" />
 	</select>
 
@@ -193,7 +193,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext" resultMap="TodoResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext" resultMap="TodoResultMap">
 		<include refid="View" />
 	</select>
 

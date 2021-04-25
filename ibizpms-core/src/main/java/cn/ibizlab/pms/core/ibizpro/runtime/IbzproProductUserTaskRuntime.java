@@ -110,15 +110,15 @@ public class IbzproProductUserTaskRuntime extends cn.ibizlab.pms.core.runtime.Sy
     public List<IbzproProductUserTask> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         IbzproProductUserTaskSearchContext searchContext = (IbzproProductUserTaskSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return ibzproproductusertaskService.selectQueryByDefault(searchContext);
+            return ibzproproductusertaskService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("ProductDailyUserTaskStats"))
-            return ibzproproductusertaskService.selectQueryByProductDailyUserTaskStats(searchContext);
+            return ibzproproductusertaskService.selectProductDailyUserTaskStats(searchContext);
         if (iPSDataQuery.getName().equals("ProductMonthlyUserTaskStats"))
-            return ibzproproductusertaskService.selectQueryByProductMonthlyUserTaskStats(searchContext);
+            return ibzproproductusertaskService.selectProductMonthlyUserTaskStats(searchContext);
         if (iPSDataQuery.getName().equals("ProductWeeklyUserTaskStats"))
-            return ibzproproductusertaskService.selectQueryByProductWeeklyUserTaskStats(searchContext);
+            return ibzproproductusertaskService.selectProductWeeklyUserTaskStats(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return ibzproproductusertaskService.selectQueryByView(searchContext);
+            return ibzproproductusertaskService.selectView(searchContext);
         return null;
     }
 

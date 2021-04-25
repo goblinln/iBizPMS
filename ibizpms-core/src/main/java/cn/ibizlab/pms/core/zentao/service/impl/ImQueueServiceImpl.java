@@ -214,11 +214,11 @@ public class ImQueueServiceImpl extends ServiceImpl<ImQueueMapper, ImQueue> impl
 
 
 
-    public List<ImQueue> selectQueryByDefault(ImQueueSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<ImQueue> selectDefault(ImQueueSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<ImQueue> selectQueryByView(ImQueueSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<ImQueue> selectView(ImQueueSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

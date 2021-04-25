@@ -164,7 +164,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBugModule"  parameterType="cn.ibizlab.pms.core.zentao.filter.ModuleSearchContext" resultMap="ModuleResultMap">
+	<select id="selectBugModule"  parameterType="cn.ibizlab.pms.core.zentao.filter.ModuleSearchContext" resultMap="ModuleResultMap">
 		<include refid="BugModule" />
 	</select>
 
@@ -182,7 +182,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBugModuleCodeList"  parameterType="cn.ibizlab.pms.core.zentao.filter.ModuleSearchContext" resultMap="ModuleResultMap">
+	<select id="selectBugModuleCodeList"  parameterType="cn.ibizlab.pms.core.zentao.filter.ModuleSearchContext" resultMap="ModuleResultMap">
 		<include refid="BugModuleCodeList" />
 	</select>
 
@@ -197,7 +197,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ModuleSearchContext" resultMap="ModuleResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ModuleSearchContext" resultMap="ModuleResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -215,7 +215,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDocModule"  parameterType="cn.ibizlab.pms.core.zentao.filter.ModuleSearchContext" resultMap="ModuleResultMap">
+	<select id="selectDocModule"  parameterType="cn.ibizlab.pms.core.zentao.filter.ModuleSearchContext" resultMap="ModuleResultMap">
 		<include refid="DocModule" />
 	</select>
 
@@ -233,7 +233,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByLine"  parameterType="cn.ibizlab.pms.core.zentao.filter.ModuleSearchContext" resultMap="ModuleResultMap">
+	<select id="selectLine"  parameterType="cn.ibizlab.pms.core.zentao.filter.ModuleSearchContext" resultMap="ModuleResultMap">
 		<include refid="Line" />
 	</select>
 
@@ -251,7 +251,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByStoryModule"  parameterType="cn.ibizlab.pms.core.zentao.filter.ModuleSearchContext" resultMap="ModuleResultMap">
+	<select id="selectStoryModule"  parameterType="cn.ibizlab.pms.core.zentao.filter.ModuleSearchContext" resultMap="ModuleResultMap">
 		<include refid="StoryModule" />
 	</select>
 
@@ -269,7 +269,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByTaskModule"  parameterType="cn.ibizlab.pms.core.zentao.filter.ModuleSearchContext" resultMap="ModuleResultMap">
+	<select id="selectTaskModule"  parameterType="cn.ibizlab.pms.core.zentao.filter.ModuleSearchContext" resultMap="ModuleResultMap">
 		<include refid="TaskModule" />
 	</select>
 
@@ -284,7 +284,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ModuleSearchContext" resultMap="ModuleResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ModuleSearchContext" resultMap="ModuleResultMap">
 		<include refid="View" />
 	</select>
 

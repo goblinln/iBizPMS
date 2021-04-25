@@ -59,7 +59,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.JenkinsSearchContext" resultMap="JenkinsResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.JenkinsSearchContext" resultMap="JenkinsResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -74,7 +74,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.JenkinsSearchContext" resultMap="JenkinsResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.JenkinsSearchContext" resultMap="JenkinsResultMap">
 		<include refid="View" />
 	</select>
 

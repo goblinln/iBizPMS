@@ -233,23 +233,23 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
 
 
 
-    public List<File> selectQueryByDefault(FileSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<File> selectDefault(FileSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<File> selectQueryByDocLibFile(FileSearchContext context){
-        return baseMapper.selectQueryByDocLibFile(context, context.getSelectCond());
+    public List<File> selectDocLibFile(FileSearchContext context){
+        return baseMapper.selectDocLibFile(context, context.getSelectCond());
     }
-    public List<File> selectQueryByProductDocLibFile(FileSearchContext context){
-        return baseMapper.selectQueryByProductDocLibFile(context, context.getSelectCond());
+    public List<File> selectProductDocLibFile(FileSearchContext context){
+        return baseMapper.selectProductDocLibFile(context, context.getSelectCond());
     }
-    public List<File> selectQueryByType(FileSearchContext context){
-        return baseMapper.selectQueryByType(context, context.getSelectCond());
+    public List<File> selectType(FileSearchContext context){
+        return baseMapper.selectType(context, context.getSelectCond());
     }
-    public List<File> selectQueryByTypeNotBySrfparentkey(FileSearchContext context){
-        return baseMapper.selectQueryByTypeNotBySrfparentkey(context, context.getSelectCond());
+    public List<File> selectTypeNotBySrfparentkey(FileSearchContext context){
+        return baseMapper.selectTypeNotBySrfparentkey(context, context.getSelectCond());
     }
-    public List<File> selectQueryByView(FileSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<File> selectView(FileSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

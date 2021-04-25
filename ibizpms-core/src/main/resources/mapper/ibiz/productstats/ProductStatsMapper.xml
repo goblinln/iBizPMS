@@ -103,7 +103,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductStatsSearchContext" resultMap="ProductStatsResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductStatsSearchContext" resultMap="ProductStatsResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -124,7 +124,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByNoOpenProduct"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductStatsSearchContext" resultMap="ProductStatsResultMap">
+	<select id="selectNoOpenProduct"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductStatsSearchContext" resultMap="ProductStatsResultMap">
 		<include refid="NoOpenProduct" />
 	</select>
 
@@ -136,7 +136,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProdctQuantiGird"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductStatsSearchContext" resultMap="ProductStatsResultMap">
+	<select id="selectProdctQuantiGird"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductStatsSearchContext" resultMap="ProductStatsResultMap">
 		<include refid="ProdctQuantiGird" />
 	</select>
 
@@ -148,7 +148,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductInputTable"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductStatsSearchContext" resultMap="ProductStatsResultMap">
+	<select id="selectProductInputTable"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductStatsSearchContext" resultMap="ProductStatsResultMap">
 		<include refid="ProductInputTable" />
 	</select>
 
@@ -160,7 +160,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductcompletionstatistics"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductStatsSearchContext" resultMap="ProductStatsResultMap">
+	<select id="selectProductcompletionstatistics"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductStatsSearchContext" resultMap="ProductStatsResultMap">
 		<include refid="Productcompletionstatistics" />
 	</select>
 
@@ -175,7 +175,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductStatsSearchContext" resultMap="ProductStatsResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductStatsSearchContext" resultMap="ProductStatsResultMap">
 		<include refid="View" />
 	</select>
 

@@ -84,7 +84,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbizproProductDailySearchContext" resultMap="IbizproProductDailyResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbizproProductDailySearchContext" resultMap="IbizproProductDailyResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -96,7 +96,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductDaily"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbizproProductDailySearchContext" resultMap="IbizproProductDailyResultMap">
+	<select id="selectProductDaily"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbizproProductDailySearchContext" resultMap="IbizproProductDailyResultMap">
 		<include refid="ProductDaily" />
 	</select>
 
@@ -108,7 +108,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbizproProductDailySearchContext" resultMap="IbizproProductDailyResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbizproProductDailySearchContext" resultMap="IbizproProductDailyResultMap">
 		<include refid="View" />
 	</select>
 

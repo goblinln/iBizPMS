@@ -58,7 +58,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportRoleConfigSearchContext" resultMap="IbzReportRoleConfigResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportRoleConfigSearchContext" resultMap="IbzReportRoleConfigResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -70,7 +70,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportRoleConfigSearchContext" resultMap="IbzReportRoleConfigResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportRoleConfigSearchContext" resultMap="IbzReportRoleConfigResultMap">
 		<include refid="View" />
 	</select>
 

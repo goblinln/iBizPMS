@@ -116,21 +116,21 @@ public class ProjectModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemData
     public List<ProjectModule> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         ProjectModuleSearchContext searchContext = (ProjectModuleSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("BYPATH"))
-            return projectmoduleService.selectQueryByByPath(searchContext);
+            return projectmoduleService.selectByPath(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return projectmoduleService.selectQueryByDefault(searchContext);
+            return projectmoduleService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("ParentModule"))
-            return projectmoduleService.selectQueryByParentModule(searchContext);
+            return projectmoduleService.selectParentModule(searchContext);
         if (iPSDataQuery.getName().equals("ROOT"))
-            return projectmoduleService.selectQueryByRoot(searchContext);
+            return projectmoduleService.selectRoot(searchContext);
         if (iPSDataQuery.getName().equals("Root_NoBranch"))
-            return projectmoduleService.selectQueryByRoot_NoBranch(searchContext);
+            return projectmoduleService.selectRoot_NoBranch(searchContext);
         if (iPSDataQuery.getName().equals("ROOT_TASK"))
-            return projectmoduleService.selectQueryByRoot_Task(searchContext);
+            return projectmoduleService.selectRoot_Task(searchContext);
         if (iPSDataQuery.getName().equals("TaskModules"))
-            return projectmoduleService.selectQueryByTaskModules(searchContext);
+            return projectmoduleService.selectTaskModules(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return projectmoduleService.selectQueryByView(searchContext);
+            return projectmoduleService.selectView(searchContext);
         return null;
     }
 

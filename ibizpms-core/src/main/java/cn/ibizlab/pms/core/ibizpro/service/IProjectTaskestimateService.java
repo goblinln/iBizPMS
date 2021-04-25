@@ -39,9 +39,9 @@ public interface IProjectTaskestimateService extends IService<ProjectTaskestimat
     boolean save(ProjectTaskestimate et);
     void saveBatch(List<ProjectTaskestimate> list);
     List<ProjectTaskestimate> select(ProjectTaskestimateSearchContext context);
-    List<ProjectTaskestimate> selectQueryByAccountDetail(ProjectTaskestimateSearchContext context);
-    List<ProjectTaskestimate> selectQueryByDefault(ProjectTaskestimateSearchContext context);
-    List<ProjectTaskestimate> selectQueryByView(ProjectTaskestimateSearchContext context);
+    List<ProjectTaskestimate> selectAccountDetail(ProjectTaskestimateSearchContext context);
+    List<ProjectTaskestimate> selectDefault(ProjectTaskestimateSearchContext context);
+    List<ProjectTaskestimate> selectView(ProjectTaskestimateSearchContext context);
 
     Page<ProjectTaskestimate> searchAccountDetail(ProjectTaskestimateSearchContext context);
     Page<ProjectTaskestimate> searchDefault(ProjectTaskestimateSearchContext context);

@@ -19,8 +19,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface JobMapper extends BaseMapper<Job> {
 
-    List<Job> selectQueryByDefault(@Param("srf") JobSearchContext context, @Param("ew") Wrapper<Job> wrapper);
-    List<Job> selectQueryByView(@Param("srf") JobSearchContext context, @Param("ew") Wrapper<Job> wrapper);
+    List<Job> selectDefault(@Param("srf") JobSearchContext context, @Param("ew") Wrapper<Job> wrapper);
+    List<Job> selectView(@Param("srf") JobSearchContext context, @Param("ew") Wrapper<Job> wrapper);
 
     Page<Job> searchDefault(IPage page, @Param("srf") JobSearchContext context, @Param("ew") Wrapper<Job> wrapper);
     @Override

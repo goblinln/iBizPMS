@@ -39,8 +39,8 @@ public interface IRepoService extends IService<Repo> {
     boolean save(Repo et);
     void saveBatch(List<Repo> list);
     List<Repo> select(RepoSearchContext context);
-    List<Repo> selectQueryByDefault(RepoSearchContext context);
-    List<Repo> selectQueryByView(RepoSearchContext context);
+    List<Repo> selectDefault(RepoSearchContext context);
+    List<Repo> selectView(RepoSearchContext context);
 
     Page<Repo> searchDefault(RepoSearchContext context);
     Repo dynamicCall(Long key, String action, Repo et);

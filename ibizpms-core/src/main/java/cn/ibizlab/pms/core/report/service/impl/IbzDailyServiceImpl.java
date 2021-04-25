@@ -330,29 +330,29 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
 
 
 
-    public List<IbzDaily> selectQueryByDefault(IbzDailySearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IbzDaily> selectDefault(IbzDailySearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IbzDaily> selectQueryByMyAllDaily(IbzDailySearchContext context){
-        return baseMapper.selectQueryByMyAllDaily(context, context.getSelectCond());
+    public List<IbzDaily> selectMyAllDaily(IbzDailySearchContext context){
+        return baseMapper.selectMyAllDaily(context, context.getSelectCond());
     }
-    public List<IbzDaily> selectQueryByMyDaily(IbzDailySearchContext context){
-        return baseMapper.selectQueryByMyDaily(context, context.getSelectCond());
+    public List<IbzDaily> selectMyDaily(IbzDailySearchContext context){
+        return baseMapper.selectMyDaily(context, context.getSelectCond());
     }
-    public List<IbzDaily> selectQueryByMyNotSubmit(IbzDailySearchContext context){
-        return baseMapper.selectQueryByMyNotSubmit(context, context.getSelectCond());
+    public List<IbzDaily> selectMyNotSubmit(IbzDailySearchContext context){
+        return baseMapper.selectMyNotSubmit(context, context.getSelectCond());
     }
-    public List<IbzDaily> selectQueryByMySubmitDaily(IbzDailySearchContext context){
-        return baseMapper.selectQueryByMySubmitDaily(context, context.getSelectCond());
+    public List<IbzDaily> selectMySubmitDaily(IbzDailySearchContext context){
+        return baseMapper.selectMySubmitDaily(context, context.getSelectCond());
     }
-    public List<IbzDaily> selectQueryByProductDaily(IbzDailySearchContext context){
-        return baseMapper.selectQueryByProductDaily(context, context.getSelectCond());
+    public List<IbzDaily> selectProductDaily(IbzDailySearchContext context){
+        return baseMapper.selectProductDaily(context, context.getSelectCond());
     }
-    public List<IbzDaily> selectQueryByProjectDaily(IbzDailySearchContext context){
-        return baseMapper.selectQueryByProjectDaily(context, context.getSelectCond());
+    public List<IbzDaily> selectProjectDaily(IbzDailySearchContext context){
+        return baseMapper.selectProjectDaily(context, context.getSelectCond());
     }
-    public List<IbzDaily> selectQueryByView(IbzDailySearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IbzDaily> selectView(IbzDailySearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

@@ -77,7 +77,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbizproProjectDailySearchContext" resultMap="IbizproProjectDailyResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbizproProjectDailySearchContext" resultMap="IbizproProjectDailyResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -89,7 +89,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbizproProjectDailySearchContext" resultMap="IbizproProjectDailyResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbizproProjectDailySearchContext" resultMap="IbizproProjectDailyResultMap">
 		<include refid="View" />
 	</select>
 

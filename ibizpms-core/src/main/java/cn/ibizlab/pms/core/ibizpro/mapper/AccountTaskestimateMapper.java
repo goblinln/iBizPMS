@@ -19,9 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface AccountTaskestimateMapper extends BaseMapper<AccountTaskestimate> {
 
-    List<AccountTaskestimate> selectQueryByAllAccountEstimate(@Param("srf") AccountTaskestimateSearchContext context, @Param("ew") Wrapper<AccountTaskestimate> wrapper);
-    List<AccountTaskestimate> selectQueryByDefault(@Param("srf") AccountTaskestimateSearchContext context, @Param("ew") Wrapper<AccountTaskestimate> wrapper);
-    List<AccountTaskestimate> selectQueryByView(@Param("srf") AccountTaskestimateSearchContext context, @Param("ew") Wrapper<AccountTaskestimate> wrapper);
+    List<AccountTaskestimate> selectAllAccountEstimate(@Param("srf") AccountTaskestimateSearchContext context, @Param("ew") Wrapper<AccountTaskestimate> wrapper);
+    List<AccountTaskestimate> selectDefault(@Param("srf") AccountTaskestimateSearchContext context, @Param("ew") Wrapper<AccountTaskestimate> wrapper);
+    List<AccountTaskestimate> selectView(@Param("srf") AccountTaskestimateSearchContext context, @Param("ew") Wrapper<AccountTaskestimate> wrapper);
 
     Page<AccountTaskestimate> searchAllAccountEstimate(IPage page, @Param("srf") AccountTaskestimateSearchContext context, @Param("ew") Wrapper<AccountTaskestimate> wrapper);
     Page<AccountTaskestimate> searchDefault(IPage page, @Param("srf") AccountTaskestimateSearchContext context, @Param("ew") Wrapper<AccountTaskestimate> wrapper);

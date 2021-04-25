@@ -52,7 +52,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.LangSearchContext" resultMap="LangResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.LangSearchContext" resultMap="LangResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -64,7 +64,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.LangSearchContext" resultMap="LangResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.LangSearchContext" resultMap="LangResultMap">
 		<include refid="View" />
 	</select>
 

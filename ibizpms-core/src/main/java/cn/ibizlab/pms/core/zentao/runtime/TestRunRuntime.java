@@ -104,9 +104,9 @@ public class TestRunRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     public List<TestRun> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         TestRunSearchContext searchContext = (TestRunSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return testrunService.selectQueryByDefault(searchContext);
+            return testrunService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return testrunService.selectQueryByView(searchContext);
+            return testrunService.selectView(searchContext);
         return null;
     }
 

@@ -117,7 +117,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -132,7 +132,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyAllDaily"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
+	<select id="selectMyAllDaily"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
 		<include refid="MyAllDaily" />
 	</select>
 
@@ -150,7 +150,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyDaily"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
+	<select id="selectMyDaily"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
 		<include refid="MyDaily" />
 	</select>
 
@@ -162,7 +162,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyNotSubmit"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
+	<select id="selectMyNotSubmit"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
 		<include refid="MyNotSubmit" />
 	</select>
 
@@ -177,7 +177,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMySubmitDaily"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
+	<select id="selectMySubmitDaily"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
 		<include refid="MySubmitDaily" />
 	</select>
 
@@ -189,7 +189,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductDaily"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
+	<select id="selectProductDaily"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
 		<include refid="ProductDaily" />
 	</select>
 
@@ -204,7 +204,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectDaily"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
+	<select id="selectProjectDaily"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
 		<include refid="ProjectDaily" />
 	</select>
 
@@ -216,7 +216,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext" resultMap="IbzDailyResultMap">
 		<include refid="View" />
 	</select>
 

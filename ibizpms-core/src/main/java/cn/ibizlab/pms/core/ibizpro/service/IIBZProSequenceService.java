@@ -41,9 +41,9 @@ public interface IIBZProSequenceService extends IService<IBZProSequence> {
     boolean save(IBZProSequence et);
     void saveBatch(List<IBZProSequence> list);
     List<IBZProSequence> select(IBZProSequenceSearchContext context);
-    List<IBZProSequence> selectQueryByDefault(IBZProSequenceSearchContext context);
-    List<IBZProSequence> selectQueryBySimple(IBZProSequenceSearchContext context);
-    List<IBZProSequence> selectQueryByView(IBZProSequenceSearchContext context);
+    List<IBZProSequence> selectDefault(IBZProSequenceSearchContext context);
+    List<IBZProSequence> selectSimple(IBZProSequenceSearchContext context);
+    List<IBZProSequence> selectView(IBZProSequenceSearchContext context);
 
     Page<IBZProSequence> searchDefault(IBZProSequenceSearchContext context);
     IBZProSequence dynamicCall(String key, String action, IBZProSequence et);

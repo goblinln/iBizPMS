@@ -913,86 +913,86 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     }
 
 
-    public List<Story> selectQueryByAssignedToMyStory(StorySearchContext context){
-        return baseMapper.selectQueryByAssignedToMyStory(context, context.getSelectCond());
+    public List<Story> selectAssignedToMyStory(StorySearchContext context){
+        return baseMapper.selectAssignedToMyStory(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByAssignedToMyStoryCalendar(StorySearchContext context){
-        return baseMapper.selectQueryByAssignedToMyStoryCalendar(context, context.getSelectCond());
+    public List<Story> selectAssignedToMyStoryCalendar(StorySearchContext context){
+        return baseMapper.selectAssignedToMyStoryCalendar(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByBugStory(StorySearchContext context){
-        return baseMapper.selectQueryByBugStory(context, context.getSelectCond());
+    public List<Story> selectBugStory(StorySearchContext context){
+        return baseMapper.selectBugStory(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByBuildLinkCompletedStories(StorySearchContext context){
-        return baseMapper.selectQueryByBuildLinkCompletedStories(context, context.getSelectCond());
+    public List<Story> selectBuildLinkCompletedStories(StorySearchContext context){
+        return baseMapper.selectBuildLinkCompletedStories(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByBuildLinkableStories(StorySearchContext context){
-        return baseMapper.selectQueryByBuildLinkableStories(context, context.getSelectCond());
+    public List<Story> selectBuildLinkableStories(StorySearchContext context){
+        return baseMapper.selectBuildLinkableStories(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByBuildStories(StorySearchContext context){
-        return baseMapper.selectQueryByBuildStories(context, context.getSelectCond());
+    public List<Story> selectBuildStories(StorySearchContext context){
+        return baseMapper.selectBuildStories(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByByModule(StorySearchContext context){
-        return baseMapper.selectQueryByByModule(context, context.getSelectCond());
+    public List<Story> selectByModule(StorySearchContext context){
+        return baseMapper.selectByModule(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByCaseStory(StorySearchContext context){
-        return baseMapper.selectQueryByCaseStory(context, context.getSelectCond());
+    public List<Story> selectCaseStory(StorySearchContext context){
+        return baseMapper.selectCaseStory(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByDefault(StorySearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Story> selectDefault(StorySearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByESBulk(StorySearchContext context){
-        return baseMapper.selectQueryByESBulk(context, context.getSelectCond());
+    public List<Story> selectESBulk(StorySearchContext context){
+        return baseMapper.selectESBulk(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByGetProductStories(StorySearchContext context){
-        return baseMapper.selectQueryByGetProductStories(context, context.getSelectCond());
+    public List<Story> selectGetProductStories(StorySearchContext context){
+        return baseMapper.selectGetProductStories(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByMyAgentStory(StorySearchContext context){
-        return baseMapper.selectQueryByMyAgentStory(context, context.getSelectCond());
+    public List<Story> selectMyAgentStory(StorySearchContext context){
+        return baseMapper.selectMyAgentStory(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByMyCurOpenedStory(StorySearchContext context){
-        return baseMapper.selectQueryByMyCurOpenedStory(context, context.getSelectCond());
+    public List<Story> selectMyCurOpenedStory(StorySearchContext context){
+        return baseMapper.selectMyCurOpenedStory(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByMyFavorites(StorySearchContext context){
-        return baseMapper.selectQueryByMyFavorites(context, context.getSelectCond());
+    public List<Story> selectMyFavorites(StorySearchContext context){
+        return baseMapper.selectMyFavorites(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByNotCurPlanLinkStory(StorySearchContext context){
-        return baseMapper.selectQueryByNotCurPlanLinkStory(context, context.getSelectCond());
+    public List<Story> selectNotCurPlanLinkStory(StorySearchContext context){
+        return baseMapper.selectNotCurPlanLinkStory(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByParentDefault(StorySearchContext context){
-        return baseMapper.selectQueryByParentDefault(context, context.getSelectCond());
+    public List<Story> selectParentDefault(StorySearchContext context){
+        return baseMapper.selectParentDefault(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByParentDefaultQ(StorySearchContext context){
-        return baseMapper.selectQueryByParentDefaultQ(context, context.getSelectCond());
+    public List<Story> selectParentDefaultQ(StorySearchContext context){
+        return baseMapper.selectParentDefaultQ(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByProjectLinkStory(StorySearchContext context){
-        return baseMapper.selectQueryByProjectLinkStory(context, context.getSelectCond());
+    public List<Story> selectProjectLinkStory(StorySearchContext context){
+        return baseMapper.selectProjectLinkStory(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByProjectStories(StorySearchContext context){
-        return baseMapper.selectQueryByProjectStories(context, context.getSelectCond());
+    public List<Story> selectProjectStories(StorySearchContext context){
+        return baseMapper.selectProjectStories(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByReleaseLinkableStories(StorySearchContext context){
-        return baseMapper.selectQueryByReleaseLinkableStories(context, context.getSelectCond());
+    public List<Story> selectReleaseLinkableStories(StorySearchContext context){
+        return baseMapper.selectReleaseLinkableStories(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByReleaseStories(StorySearchContext context){
-        return baseMapper.selectQueryByReleaseStories(context, context.getSelectCond());
+    public List<Story> selectReleaseStories(StorySearchContext context){
+        return baseMapper.selectReleaseStories(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByReportStories(StorySearchContext context){
-        return baseMapper.selectQueryByReportStories(context, context.getSelectCond());
+    public List<Story> selectReportStories(StorySearchContext context){
+        return baseMapper.selectReportStories(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByStoryChild(StorySearchContext context){
-        return baseMapper.selectQueryByStoryChild(context, context.getSelectCond());
+    public List<Story> selectStoryChild(StorySearchContext context){
+        return baseMapper.selectStoryChild(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByStoryRelated(StorySearchContext context){
-        return baseMapper.selectQueryByStoryRelated(context, context.getSelectCond());
+    public List<Story> selectStoryRelated(StorySearchContext context){
+        return baseMapper.selectStoryRelated(context, context.getSelectCond());
     }
-    public List<Story> selectQueryBySubStory(StorySearchContext context){
-        return baseMapper.selectQueryBySubStory(context, context.getSelectCond());
+    public List<Story> selectSubStory(StorySearchContext context){
+        return baseMapper.selectSubStory(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByTaskRelatedStory(StorySearchContext context){
-        return baseMapper.selectQueryByTaskRelatedStory(context, context.getSelectCond());
+    public List<Story> selectTaskRelatedStory(StorySearchContext context){
+        return baseMapper.selectTaskRelatedStory(context, context.getSelectCond());
     }
-    public List<Story> selectQueryByView(StorySearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Story> selectView(StorySearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

@@ -19,13 +19,13 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface CaseStepMapper extends BaseMapper<CaseStep> {
 
-    List<CaseStep> selectQueryByCurTest(@Param("srf") CaseStepSearchContext context, @Param("ew") Wrapper<CaseStep> wrapper);
-    List<CaseStep> selectQueryByDefault(@Param("srf") CaseStepSearchContext context, @Param("ew") Wrapper<CaseStep> wrapper);
-    List<CaseStep> selectQueryByDefault1(@Param("srf") CaseStepSearchContext context, @Param("ew") Wrapper<CaseStep> wrapper);
-    List<CaseStep> selectQueryByMob(@Param("srf") CaseStepSearchContext context, @Param("ew") Wrapper<CaseStep> wrapper);
-    List<CaseStep> selectQueryByVersion(@Param("srf") CaseStepSearchContext context, @Param("ew") Wrapper<CaseStep> wrapper);
-    List<CaseStep> selectQueryByVersions(@Param("srf") CaseStepSearchContext context, @Param("ew") Wrapper<CaseStep> wrapper);
-    List<CaseStep> selectQueryByView(@Param("srf") CaseStepSearchContext context, @Param("ew") Wrapper<CaseStep> wrapper);
+    List<CaseStep> selectCurTest(@Param("srf") CaseStepSearchContext context, @Param("ew") Wrapper<CaseStep> wrapper);
+    List<CaseStep> selectDefault(@Param("srf") CaseStepSearchContext context, @Param("ew") Wrapper<CaseStep> wrapper);
+    List<CaseStep> selectDefault1(@Param("srf") CaseStepSearchContext context, @Param("ew") Wrapper<CaseStep> wrapper);
+    List<CaseStep> selectMob(@Param("srf") CaseStepSearchContext context, @Param("ew") Wrapper<CaseStep> wrapper);
+    List<CaseStep> selectVersion(@Param("srf") CaseStepSearchContext context, @Param("ew") Wrapper<CaseStep> wrapper);
+    List<CaseStep> selectVersions(@Param("srf") CaseStepSearchContext context, @Param("ew") Wrapper<CaseStep> wrapper);
+    List<CaseStep> selectView(@Param("srf") CaseStepSearchContext context, @Param("ew") Wrapper<CaseStep> wrapper);
 
     Page<CaseStep> searchCurTest(IPage page, @Param("srf") CaseStepSearchContext context, @Param("ew") Wrapper<CaseStep> wrapper);
     Page<CaseStep> searchDefault(IPage page, @Param("srf") CaseStepSearchContext context, @Param("ew") Wrapper<CaseStep> wrapper);

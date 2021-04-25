@@ -112,17 +112,17 @@ public class ProductStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     public List<ProductStats> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         ProductStatsSearchContext searchContext = (ProductStatsSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return productstatsService.selectQueryByDefault(searchContext);
+            return productstatsService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("NoOpenProduct"))
-            return productstatsService.selectQueryByNoOpenProduct(searchContext);
+            return productstatsService.selectNoOpenProduct(searchContext);
         if (iPSDataQuery.getName().equals("ProdctQuantiGird"))
-            return productstatsService.selectQueryByProdctQuantiGird(searchContext);
+            return productstatsService.selectProdctQuantiGird(searchContext);
         if (iPSDataQuery.getName().equals("ProductInputTable"))
-            return productstatsService.selectQueryByProductInputTable(searchContext);
+            return productstatsService.selectProductInputTable(searchContext);
         if (iPSDataQuery.getName().equals("Productcompletionstatistics"))
-            return productstatsService.selectQueryByProductcompletionstatistics(searchContext);
+            return productstatsService.selectProductcompletionstatistics(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return productstatsService.selectQueryByView(searchContext);
+            return productstatsService.selectView(searchContext);
         return null;
     }
 

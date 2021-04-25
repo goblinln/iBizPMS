@@ -94,7 +94,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.report.filter.IbzWeeklySearchContext" resultMap="IbzWeeklyResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.report.filter.IbzWeeklySearchContext" resultMap="IbzWeeklyResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -106,7 +106,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyNotSubmit"  parameterType="cn.ibizlab.pms.core.report.filter.IbzWeeklySearchContext" resultMap="IbzWeeklyResultMap">
+	<select id="selectMyNotSubmit"  parameterType="cn.ibizlab.pms.core.report.filter.IbzWeeklySearchContext" resultMap="IbzWeeklyResultMap">
 		<include refid="MyNotSubmit" />
 	</select>
 
@@ -124,7 +124,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyWeekly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzWeeklySearchContext" resultMap="IbzWeeklyResultMap">
+	<select id="selectMyWeekly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzWeeklySearchContext" resultMap="IbzWeeklyResultMap">
 		<include refid="MyWeekly" />
 	</select>
 
@@ -139,7 +139,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductTeamMemberWeekly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzWeeklySearchContext" resultMap="IbzWeeklyResultMap">
+	<select id="selectProductTeamMemberWeekly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzWeeklySearchContext" resultMap="IbzWeeklyResultMap">
 		<include refid="ProductTeamMemberWeekly" />
 	</select>
 
@@ -154,7 +154,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectWeekly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzWeeklySearchContext" resultMap="IbzWeeklyResultMap">
+	<select id="selectProjectWeekly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzWeeklySearchContext" resultMap="IbzWeeklyResultMap">
 		<include refid="ProjectWeekly" />
 	</select>
 
@@ -166,7 +166,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.report.filter.IbzWeeklySearchContext" resultMap="IbzWeeklyResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.report.filter.IbzWeeklySearchContext" resultMap="IbzWeeklyResultMap">
 		<include refid="View" />
 	</select>
 

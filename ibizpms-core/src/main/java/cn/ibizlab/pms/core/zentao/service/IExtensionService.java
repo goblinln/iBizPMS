@@ -39,8 +39,8 @@ public interface IExtensionService extends IService<Extension> {
     boolean save(Extension et);
     void saveBatch(List<Extension> list);
     List<Extension> select(ExtensionSearchContext context);
-    List<Extension> selectQueryByDefault(ExtensionSearchContext context);
-    List<Extension> selectQueryByView(ExtensionSearchContext context);
+    List<Extension> selectDefault(ExtensionSearchContext context);
+    List<Extension> selectView(ExtensionSearchContext context);
 
     Page<Extension> searchDefault(ExtensionSearchContext context);
     Extension dynamicCall(Long key, String action, Extension et);

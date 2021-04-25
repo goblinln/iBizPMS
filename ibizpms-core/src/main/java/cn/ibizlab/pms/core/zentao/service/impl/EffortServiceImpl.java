@@ -214,11 +214,11 @@ public class EffortServiceImpl extends ServiceImpl<EffortMapper, Effort> impleme
 
 
 
-    public List<Effort> selectQueryByDefault(EffortSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Effort> selectDefault(EffortSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Effort> selectQueryByView(EffortSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Effort> selectView(EffortSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

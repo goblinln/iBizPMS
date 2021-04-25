@@ -19,11 +19,11 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IbzproProjectUserTaskMapper extends BaseMapper<IbzproProjectUserTask> {
 
-    List<IbzproProjectUserTask> selectQueryByDefault(@Param("srf") IbzproProjectUserTaskSearchContext context, @Param("ew") Wrapper<IbzproProjectUserTask> wrapper);
-    List<IbzproProjectUserTask> selectQueryByProjectDailyTask(@Param("srf") IbzproProjectUserTaskSearchContext context, @Param("ew") Wrapper<IbzproProjectUserTask> wrapper);
-    List<IbzproProjectUserTask> selectQueryByProjectMonthlyTask(@Param("srf") IbzproProjectUserTaskSearchContext context, @Param("ew") Wrapper<IbzproProjectUserTask> wrapper);
-    List<IbzproProjectUserTask> selectQueryByProjectWeeklyTask(@Param("srf") IbzproProjectUserTaskSearchContext context, @Param("ew") Wrapper<IbzproProjectUserTask> wrapper);
-    List<IbzproProjectUserTask> selectQueryByView(@Param("srf") IbzproProjectUserTaskSearchContext context, @Param("ew") Wrapper<IbzproProjectUserTask> wrapper);
+    List<IbzproProjectUserTask> selectDefault(@Param("srf") IbzproProjectUserTaskSearchContext context, @Param("ew") Wrapper<IbzproProjectUserTask> wrapper);
+    List<IbzproProjectUserTask> selectProjectDailyTask(@Param("srf") IbzproProjectUserTaskSearchContext context, @Param("ew") Wrapper<IbzproProjectUserTask> wrapper);
+    List<IbzproProjectUserTask> selectProjectMonthlyTask(@Param("srf") IbzproProjectUserTaskSearchContext context, @Param("ew") Wrapper<IbzproProjectUserTask> wrapper);
+    List<IbzproProjectUserTask> selectProjectWeeklyTask(@Param("srf") IbzproProjectUserTaskSearchContext context, @Param("ew") Wrapper<IbzproProjectUserTask> wrapper);
+    List<IbzproProjectUserTask> selectView(@Param("srf") IbzproProjectUserTaskSearchContext context, @Param("ew") Wrapper<IbzproProjectUserTask> wrapper);
 
     Page<IbzproProjectUserTask> searchDefault(IPage page, @Param("srf") IbzproProjectUserTaskSearchContext context, @Param("ew") Wrapper<IbzproProjectUserTask> wrapper);
     Page<IbzproProjectUserTask> searchProjectDailyTask(IPage page, @Param("srf") IbzproProjectUserTaskSearchContext context, @Param("ew") Wrapper<IbzproProjectUserTask> wrapper);

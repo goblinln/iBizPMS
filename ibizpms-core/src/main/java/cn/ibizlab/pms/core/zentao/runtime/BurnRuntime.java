@@ -106,11 +106,11 @@ public class BurnRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     public List<Burn> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         BurnSearchContext searchContext = (BurnSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return burnService.selectQueryByDefault(searchContext);
+            return burnService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("ESTIMATEANDLEFT"))
-            return burnService.selectQueryByESTIMATEANDLEFT(searchContext);
+            return burnService.selectESTIMATEANDLEFT(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return burnService.selectQueryByView(searchContext);
+            return burnService.selectView(searchContext);
         return null;
     }
 

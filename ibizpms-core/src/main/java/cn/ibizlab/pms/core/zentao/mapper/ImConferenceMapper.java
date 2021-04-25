@@ -19,8 +19,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ImConferenceMapper extends BaseMapper<ImConference> {
 
-    List<ImConference> selectQueryByDefault(@Param("srf") ImConferenceSearchContext context, @Param("ew") Wrapper<ImConference> wrapper);
-    List<ImConference> selectQueryByView(@Param("srf") ImConferenceSearchContext context, @Param("ew") Wrapper<ImConference> wrapper);
+    List<ImConference> selectDefault(@Param("srf") ImConferenceSearchContext context, @Param("ew") Wrapper<ImConference> wrapper);
+    List<ImConference> selectView(@Param("srf") ImConferenceSearchContext context, @Param("ew") Wrapper<ImConference> wrapper);
 
     Page<ImConference> searchDefault(IPage page, @Param("srf") ImConferenceSearchContext context, @Param("ew") Wrapper<ImConference> wrapper);
     @Override

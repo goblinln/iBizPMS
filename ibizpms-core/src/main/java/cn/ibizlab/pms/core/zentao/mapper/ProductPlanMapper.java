@@ -19,18 +19,18 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ProductPlanMapper extends BaseMapper<ProductPlan> {
 
-    List<ProductPlan> selectQueryByChildPlan(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
-    List<ProductPlan> selectQueryByDefault(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
-    List<ProductPlan> selectQueryByDefaultParent(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
-    List<ProductPlan> selectQueryByGetList(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
-    List<ProductPlan> selectQueryByPlanCodeList(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
-    List<ProductPlan> selectQueryByPlanTasks(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
-    List<ProductPlan> selectQueryByProductQuery(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
-    List<ProductPlan> selectQueryByProjectApp(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
-    List<ProductPlan> selectQueryByProjectPlan(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
-    List<ProductPlan> selectQueryByRootPlan(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
-    List<ProductPlan> selectQueryByTaskPlan(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
-    List<ProductPlan> selectQueryByView(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectChildPlan(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectDefault(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectDefaultParent(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectGetList(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectPlanCodeList(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectPlanTasks(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectProductQuery(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectProjectApp(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectProjectPlan(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectRootPlan(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectTaskPlan(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectView(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
 
     Page<ProductPlan> searchChildPlan(IPage page, @Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
     Page<ProductPlan> searchCurProductPlan(IPage page, @Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);

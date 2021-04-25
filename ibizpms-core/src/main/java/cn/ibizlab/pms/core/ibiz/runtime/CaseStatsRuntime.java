@@ -106,11 +106,11 @@ public class CaseStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     public List<CaseStats> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         CaseStatsSearchContext searchContext = (CaseStatsSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return casestatsService.selectQueryByDefault(searchContext);
+            return casestatsService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("TestCaseStats"))
-            return casestatsService.selectQueryByTestCaseStats(searchContext);
+            return casestatsService.selectTestCaseStats(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return casestatsService.selectQueryByView(searchContext);
+            return casestatsService.selectView(searchContext);
         return null;
     }
 

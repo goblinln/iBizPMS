@@ -214,11 +214,11 @@ public class ImMessageServiceImpl extends ServiceImpl<ImMessageMapper, ImMessage
 
 
 
-    public List<ImMessage> selectQueryByDefault(ImMessageSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<ImMessage> selectDefault(ImMessageSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<ImMessage> selectQueryByView(ImMessageSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<ImMessage> selectView(ImMessageSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

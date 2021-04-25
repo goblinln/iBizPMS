@@ -274,14 +274,14 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     }
 
 
-    public List<Burn> selectQueryByDefault(BurnSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Burn> selectDefault(BurnSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Burn> selectQueryByESTIMATEANDLEFT(BurnSearchContext context){
-        return baseMapper.selectQueryByESTIMATEANDLEFT(context, context.getSelectCond());
+    public List<Burn> selectESTIMATEANDLEFT(BurnSearchContext context){
+        return baseMapper.selectESTIMATEANDLEFT(context, context.getSelectCond());
     }
-    public List<Burn> selectQueryByView(BurnSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Burn> selectView(BurnSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

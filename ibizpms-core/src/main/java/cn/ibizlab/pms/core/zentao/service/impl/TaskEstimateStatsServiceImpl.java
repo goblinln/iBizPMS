@@ -214,20 +214,20 @@ public class TaskEstimateStatsServiceImpl extends ServiceImpl<TaskEstimateStatsM
 
 
 
-    public List<TaskEstimateStats> selectQueryByActionMonth(TaskEstimateStatsSearchContext context){
-        return baseMapper.selectQueryByActionMonth(context, context.getSelectCond());
+    public List<TaskEstimateStats> selectActionMonth(TaskEstimateStatsSearchContext context){
+        return baseMapper.selectActionMonth(context, context.getSelectCond());
     }
-    public List<TaskEstimateStats> selectQueryByActionYear(TaskEstimateStatsSearchContext context){
-        return baseMapper.selectQueryByActionYear(context, context.getSelectCond());
+    public List<TaskEstimateStats> selectActionYear(TaskEstimateStatsSearchContext context){
+        return baseMapper.selectActionYear(context, context.getSelectCond());
     }
-    public List<TaskEstimateStats> selectQueryByDefault(TaskEstimateStatsSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<TaskEstimateStats> selectDefault(TaskEstimateStatsSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<TaskEstimateStats> selectQueryByTaskEstimateStatsSum(TaskEstimateStatsSearchContext context){
-        return baseMapper.selectQueryByTaskEstimateStatsSum(context, context.getSelectCond());
+    public List<TaskEstimateStats> selectTaskEstimateStatsSum(TaskEstimateStatsSearchContext context){
+        return baseMapper.selectTaskEstimateStatsSum(context, context.getSelectCond());
     }
-    public List<TaskEstimateStats> selectQueryByView(TaskEstimateStatsSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<TaskEstimateStats> selectView(TaskEstimateStatsSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

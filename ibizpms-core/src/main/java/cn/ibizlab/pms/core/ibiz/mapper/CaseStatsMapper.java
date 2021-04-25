@@ -19,9 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface CaseStatsMapper extends BaseMapper<CaseStats> {
 
-    List<CaseStats> selectQueryByDefault(@Param("srf") CaseStatsSearchContext context, @Param("ew") Wrapper<CaseStats> wrapper);
-    List<CaseStats> selectQueryByTestCaseStats(@Param("srf") CaseStatsSearchContext context, @Param("ew") Wrapper<CaseStats> wrapper);
-    List<CaseStats> selectQueryByView(@Param("srf") CaseStatsSearchContext context, @Param("ew") Wrapper<CaseStats> wrapper);
+    List<CaseStats> selectDefault(@Param("srf") CaseStatsSearchContext context, @Param("ew") Wrapper<CaseStats> wrapper);
+    List<CaseStats> selectTestCaseStats(@Param("srf") CaseStatsSearchContext context, @Param("ew") Wrapper<CaseStats> wrapper);
+    List<CaseStats> selectView(@Param("srf") CaseStatsSearchContext context, @Param("ew") Wrapper<CaseStats> wrapper);
 
     Page<CaseStats> searchDefault(IPage page, @Param("srf") CaseStatsSearchContext context, @Param("ew") Wrapper<CaseStats> wrapper);
     Page<CaseStats> searchTestCaseStats(IPage page, @Param("srf") CaseStatsSearchContext context, @Param("ew") Wrapper<CaseStats> wrapper);

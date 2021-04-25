@@ -104,9 +104,9 @@ public class SuiteCaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     public List<SuiteCase> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         SuiteCaseSearchContext searchContext = (SuiteCaseSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return suitecaseService.selectQueryByDefault(searchContext);
+            return suitecaseService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return suitecaseService.selectQueryByView(searchContext);
+            return suitecaseService.selectView(searchContext);
         return null;
     }
 

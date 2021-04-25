@@ -19,13 +19,13 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface TestModuleMapper extends BaseMapper<TestModule> {
 
-    List<TestModule> selectQueryByByPath(@Param("srf") TestModuleSearchContext context, @Param("ew") Wrapper<TestModule> wrapper);
-    List<TestModule> selectQueryByDefault(@Param("srf") TestModuleSearchContext context, @Param("ew") Wrapper<TestModule> wrapper);
-    List<TestModule> selectQueryByParentModule(@Param("srf") TestModuleSearchContext context, @Param("ew") Wrapper<TestModule> wrapper);
-    List<TestModule> selectQueryByRoot(@Param("srf") TestModuleSearchContext context, @Param("ew") Wrapper<TestModule> wrapper);
-    List<TestModule> selectQueryByRoot_NoBranch(@Param("srf") TestModuleSearchContext context, @Param("ew") Wrapper<TestModule> wrapper);
-    List<TestModule> selectQueryByTestModule(@Param("srf") TestModuleSearchContext context, @Param("ew") Wrapper<TestModule> wrapper);
-    List<TestModule> selectQueryByView(@Param("srf") TestModuleSearchContext context, @Param("ew") Wrapper<TestModule> wrapper);
+    List<TestModule> selectByPath(@Param("srf") TestModuleSearchContext context, @Param("ew") Wrapper<TestModule> wrapper);
+    List<TestModule> selectDefault(@Param("srf") TestModuleSearchContext context, @Param("ew") Wrapper<TestModule> wrapper);
+    List<TestModule> selectParentModule(@Param("srf") TestModuleSearchContext context, @Param("ew") Wrapper<TestModule> wrapper);
+    List<TestModule> selectRoot(@Param("srf") TestModuleSearchContext context, @Param("ew") Wrapper<TestModule> wrapper);
+    List<TestModule> selectRoot_NoBranch(@Param("srf") TestModuleSearchContext context, @Param("ew") Wrapper<TestModule> wrapper);
+    List<TestModule> selectTestModule(@Param("srf") TestModuleSearchContext context, @Param("ew") Wrapper<TestModule> wrapper);
+    List<TestModule> selectView(@Param("srf") TestModuleSearchContext context, @Param("ew") Wrapper<TestModule> wrapper);
 
     Page<TestModule> searchByPath(IPage page, @Param("srf") TestModuleSearchContext context, @Param("ew") Wrapper<TestModule> wrapper);
     Page<TestModule> searchDefault(IPage page, @Param("srf") TestModuleSearchContext context, @Param("ew") Wrapper<TestModule> wrapper);

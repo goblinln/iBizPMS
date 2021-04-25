@@ -120,25 +120,25 @@ public class BugStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     public List<BugStats> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         BugStatsSearchContext searchContext = (BugStatsSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("BugCountInResolution"))
-            return bugstatsService.selectQueryByBugCountInResolution(searchContext);
+            return bugstatsService.selectBugCountInResolution(searchContext);
         if (iPSDataQuery.getName().equals("BugResolvedBy"))
-            return bugstatsService.selectQueryByBugResolvedBy(searchContext);
+            return bugstatsService.selectBugResolvedBy(searchContext);
         if (iPSDataQuery.getName().equals("BugResolvedGird"))
-            return bugstatsService.selectQueryByBugResolvedGird(searchContext);
+            return bugstatsService.selectBugResolvedGird(searchContext);
         if (iPSDataQuery.getName().equals("BugassignedTo"))
-            return bugstatsService.selectQueryByBugassignedTo(searchContext);
+            return bugstatsService.selectBugassignedTo(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return bugstatsService.selectQueryByDefault(searchContext);
+            return bugstatsService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("ProductBugResolutionStats"))
-            return bugstatsService.selectQueryByProductBugResolutionStats(searchContext);
+            return bugstatsService.selectProductBugResolutionStats(searchContext);
         if (iPSDataQuery.getName().equals("ProductBugStatusSum"))
-            return bugstatsService.selectQueryByProductBugStatusSum(searchContext);
+            return bugstatsService.selectProductBugStatusSum(searchContext);
         if (iPSDataQuery.getName().equals("ProductCreateBug"))
-            return bugstatsService.selectQueryByProductCreateBug(searchContext);
+            return bugstatsService.selectProductCreateBug(searchContext);
         if (iPSDataQuery.getName().equals("ProjectBugStatusCount"))
-            return bugstatsService.selectQueryByProjectBugStatusCount(searchContext);
+            return bugstatsService.selectProjectBugStatusCount(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return bugstatsService.selectQueryByView(searchContext);
+            return bugstatsService.selectView(searchContext);
         return null;
     }
 

@@ -108,15 +108,15 @@ public class TaskEstimateStatsRuntime extends cn.ibizlab.pms.core.runtime.System
     public List<TaskEstimateStats> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         TaskEstimateStatsSearchContext searchContext = (TaskEstimateStatsSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("ActionMonth"))
-            return taskestimatestatsService.selectQueryByActionMonth(searchContext);
+            return taskestimatestatsService.selectActionMonth(searchContext);
         if (iPSDataQuery.getName().equals("ActionYear"))
-            return taskestimatestatsService.selectQueryByActionYear(searchContext);
+            return taskestimatestatsService.selectActionYear(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return taskestimatestatsService.selectQueryByDefault(searchContext);
+            return taskestimatestatsService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("TaskEstimateStatsSum"))
-            return taskestimatestatsService.selectQueryByTaskEstimateStatsSum(searchContext);
+            return taskestimatestatsService.selectTaskEstimateStatsSum(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return taskestimatestatsService.selectQueryByView(searchContext);
+            return taskestimatestatsService.selectView(searchContext);
         return null;
     }
 

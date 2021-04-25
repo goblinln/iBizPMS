@@ -45,13 +45,13 @@ public interface IBuildService extends IService<Build> {
     boolean save(Build et);
     void saveBatch(List<Build> list);
     List<Build> select(BuildSearchContext context);
-    List<Build> selectQueryByBugProductBuild(BuildSearchContext context);
-    List<Build> selectQueryByCurProduct(BuildSearchContext context);
-    List<Build> selectQueryByDefault(BuildSearchContext context);
-    List<Build> selectQueryByTestBuild(BuildSearchContext context);
-    List<Build> selectQueryByTestRounds(BuildSearchContext context);
-    List<Build> selectQueryByUpdateLog(BuildSearchContext context);
-    List<Build> selectQueryByView(BuildSearchContext context);
+    List<Build> selectBugProductBuild(BuildSearchContext context);
+    List<Build> selectCurProduct(BuildSearchContext context);
+    List<Build> selectDefault(BuildSearchContext context);
+    List<Build> selectTestBuild(BuildSearchContext context);
+    List<Build> selectTestRounds(BuildSearchContext context);
+    List<Build> selectUpdateLog(BuildSearchContext context);
+    List<Build> selectView(BuildSearchContext context);
 
     Page<Build> searchBugProductBuild(BuildSearchContext context);
     Page<Build> searchCurProduct(BuildSearchContext context);

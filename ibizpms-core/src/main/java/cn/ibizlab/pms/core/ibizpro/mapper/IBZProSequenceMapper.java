@@ -19,9 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IBZProSequenceMapper extends BaseMapper<IBZProSequence> {
 
-    List<IBZProSequence> selectQueryByDefault(@Param("srf") IBZProSequenceSearchContext context, @Param("ew") Wrapper<IBZProSequence> wrapper);
-    List<IBZProSequence> selectQueryBySimple(@Param("srf") IBZProSequenceSearchContext context, @Param("ew") Wrapper<IBZProSequence> wrapper);
-    List<IBZProSequence> selectQueryByView(@Param("srf") IBZProSequenceSearchContext context, @Param("ew") Wrapper<IBZProSequence> wrapper);
+    List<IBZProSequence> selectDefault(@Param("srf") IBZProSequenceSearchContext context, @Param("ew") Wrapper<IBZProSequence> wrapper);
+    List<IBZProSequence> selectSimple(@Param("srf") IBZProSequenceSearchContext context, @Param("ew") Wrapper<IBZProSequence> wrapper);
+    List<IBZProSequence> selectView(@Param("srf") IBZProSequenceSearchContext context, @Param("ew") Wrapper<IBZProSequence> wrapper);
 
     Page<IBZProSequence> searchDefault(IPage page, @Param("srf") IBZProSequenceSearchContext context, @Param("ew") Wrapper<IBZProSequence> wrapper);
     @Override

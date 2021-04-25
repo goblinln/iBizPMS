@@ -214,11 +214,11 @@ public class ImChatuserServiceImpl extends ServiceImpl<ImChatuserMapper, ImChatu
 
 
 
-    public List<ImChatuser> selectQueryByDefault(ImChatuserSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<ImChatuser> selectDefault(ImChatuserSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<ImChatuser> selectQueryByView(ImChatuserSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<ImChatuser> selectView(ImChatuserSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

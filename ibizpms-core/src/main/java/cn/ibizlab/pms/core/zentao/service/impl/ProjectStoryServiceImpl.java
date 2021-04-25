@@ -271,11 +271,11 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
     }
 
 
-    public List<ProjectStory> selectQueryByDefault(ProjectStorySearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<ProjectStory> selectDefault(ProjectStorySearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<ProjectStory> selectQueryByView(ProjectStorySearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<ProjectStory> selectView(ProjectStorySearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

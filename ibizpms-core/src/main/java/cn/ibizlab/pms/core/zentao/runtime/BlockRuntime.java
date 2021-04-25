@@ -104,9 +104,9 @@ public class BlockRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     public List<Block> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         BlockSearchContext searchContext = (BlockSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return blockService.selectQueryByDefault(searchContext);
+            return blockService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return blockService.selectQueryByView(searchContext);
+            return blockService.selectView(searchContext);
         return null;
     }
 

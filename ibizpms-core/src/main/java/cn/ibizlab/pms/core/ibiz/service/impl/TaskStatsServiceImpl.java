@@ -214,17 +214,17 @@ public class TaskStatsServiceImpl extends ServiceImpl<TaskStatsMapper, TaskStats
 
 
 
-    public List<TaskStats> selectQueryByDefault(TaskStatsSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<TaskStats> selectDefault(TaskStatsSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<TaskStats> selectQueryByTaskFinishHuiZong(TaskStatsSearchContext context){
-        return baseMapper.selectQueryByTaskFinishHuiZong(context, context.getSelectCond());
+    public List<TaskStats> selectTaskFinishHuiZong(TaskStatsSearchContext context){
+        return baseMapper.selectTaskFinishHuiZong(context, context.getSelectCond());
     }
-    public List<TaskStats> selectQueryByUserFinishTaskSum(TaskStatsSearchContext context){
-        return baseMapper.selectQueryByUserFinishTaskSum(context, context.getSelectCond());
+    public List<TaskStats> selectUserFinishTaskSum(TaskStatsSearchContext context){
+        return baseMapper.selectUserFinishTaskSum(context, context.getSelectCond());
     }
-    public List<TaskStats> selectQueryByView(TaskStatsSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<TaskStats> selectView(TaskStatsSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

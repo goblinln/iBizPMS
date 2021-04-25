@@ -19,15 +19,15 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ActionMapper extends BaseMapper<Action> {
 
-    List<Action> selectQueryByBianGengLineHistory(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
-    List<Action> selectQueryByDefault(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
-    List<Action> selectQueryByMobType(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
-    List<Action> selectQueryByMyTrends(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
-    List<Action> selectQueryByProductTrends(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
-    List<Action> selectQueryByProjectTrends(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
-    List<Action> selectQueryByQueryUserYEAR(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
-    List<Action> selectQueryByType(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
-    List<Action> selectQueryByView(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
+    List<Action> selectBianGengLineHistory(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
+    List<Action> selectDefault(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
+    List<Action> selectMobType(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
+    List<Action> selectMyTrends(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
+    List<Action> selectProductTrends(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
+    List<Action> selectProjectTrends(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
+    List<Action> selectQueryUserYEAR(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
+    List<Action> selectType(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
+    List<Action> selectView(@Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
 
     Page<Action> searchDefault(IPage page, @Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);
     Page<Action> searchMobType(IPage page, @Param("srf") ActionSearchContext context, @Param("ew") Wrapper<Action> wrapper);

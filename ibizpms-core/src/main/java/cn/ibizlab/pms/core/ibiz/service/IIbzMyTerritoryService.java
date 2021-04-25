@@ -45,13 +45,13 @@ public interface IIbzMyTerritoryService extends IService<IbzMyTerritory> {
     boolean save(IbzMyTerritory et);
     void saveBatch(List<IbzMyTerritory> list);
     List<IbzMyTerritory> select(IbzMyTerritorySearchContext context);
-    List<IbzMyTerritory> selectQueryByDefault(IbzMyTerritorySearchContext context);
-    List<IbzMyTerritory> selectQueryByMyWork(IbzMyTerritorySearchContext context);
-    List<IbzMyTerritory> selectQueryByMyWorkMob(IbzMyTerritorySearchContext context);
-    List<IbzMyTerritory> selectQueryByMyWorkPm(IbzMyTerritorySearchContext context);
-    List<IbzMyTerritory> selectQueryByPersonInfo(IbzMyTerritorySearchContext context);
-    List<IbzMyTerritory> selectQueryByView(IbzMyTerritorySearchContext context);
-    List<IbzMyTerritory> selectQueryByWelcome(IbzMyTerritorySearchContext context);
+    List<IbzMyTerritory> selectDefault(IbzMyTerritorySearchContext context);
+    List<IbzMyTerritory> selectMyWork(IbzMyTerritorySearchContext context);
+    List<IbzMyTerritory> selectMyWorkMob(IbzMyTerritorySearchContext context);
+    List<IbzMyTerritory> selectMyWorkPm(IbzMyTerritorySearchContext context);
+    List<IbzMyTerritory> selectPersonInfo(IbzMyTerritorySearchContext context);
+    List<IbzMyTerritory> selectView(IbzMyTerritorySearchContext context);
+    List<IbzMyTerritory> selectWelcome(IbzMyTerritorySearchContext context);
 
     Page<IbzMyTerritory> searchDefault(IbzMyTerritorySearchContext context);
     Page<IbzMyTerritory> searchMyWork(IbzMyTerritorySearchContext context);

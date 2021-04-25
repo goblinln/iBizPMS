@@ -63,7 +63,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByActionMonth"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskEstimateStatsSearchContext" resultMap="TaskEstimateStatsResultMap">
+	<select id="selectActionMonth"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskEstimateStatsSearchContext" resultMap="TaskEstimateStatsResultMap">
 		<include refid="ActionMonth" />
 	</select>
 
@@ -75,7 +75,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByActionYear"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskEstimateStatsSearchContext" resultMap="TaskEstimateStatsResultMap">
+	<select id="selectActionYear"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskEstimateStatsSearchContext" resultMap="TaskEstimateStatsResultMap">
 		<include refid="ActionYear" />
 	</select>
 
@@ -87,7 +87,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskEstimateStatsSearchContext" resultMap="TaskEstimateStatsResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskEstimateStatsSearchContext" resultMap="TaskEstimateStatsResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -99,7 +99,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByTaskEstimateStatsSum"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskEstimateStatsSearchContext" resultMap="TaskEstimateStatsResultMap">
+	<select id="selectTaskEstimateStatsSum"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskEstimateStatsSearchContext" resultMap="TaskEstimateStatsResultMap">
 		<include refid="TaskEstimateStatsSum" />
 	</select>
 
@@ -111,7 +111,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskEstimateStatsSearchContext" resultMap="TaskEstimateStatsResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.TaskEstimateStatsSearchContext" resultMap="TaskEstimateStatsResultMap">
 		<include refid="View" />
 	</select>
 

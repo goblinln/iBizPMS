@@ -104,9 +104,9 @@ public class IbzAgentRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     public List<IbzAgent> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         IbzAgentSearchContext searchContext = (IbzAgentSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return ibzagentService.selectQueryByDefault(searchContext);
+            return ibzagentService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return ibzagentService.selectQueryByView(searchContext);
+            return ibzagentService.selectView(searchContext);
         return null;
     }
 

@@ -214,11 +214,11 @@ public class WebHookServiceImpl extends ServiceImpl<WebHookMapper, WebHook> impl
 
 
 
-    public List<WebHook> selectQueryByDefault(WebHookSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<WebHook> selectDefault(WebHookSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<WebHook> selectQueryByView(WebHookSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<WebHook> selectView(WebHookSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

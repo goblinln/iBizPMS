@@ -483,7 +483,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByAssignedToMyStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectAssignedToMyStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="AssignedToMyStory" />
 	</select>
 
@@ -504,7 +504,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByAssignedToMyStoryCalendar"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectAssignedToMyStoryCalendar"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="AssignedToMyStoryCalendar" />
 	</select>
 
@@ -522,7 +522,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBugStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectBugStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="BugStory" />
 	</select>
 
@@ -534,7 +534,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBuildLinkCompletedStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectBuildLinkCompletedStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="BuildLinkCompletedStories" />
 	</select>
 
@@ -555,7 +555,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBuildLinkableStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectBuildLinkableStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="BuildLinkableStories" />
 	</select>
 
@@ -567,7 +567,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBuildStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectBuildStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="BuildStories" />
 	</select>
 
@@ -585,7 +585,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByByModule"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectByModule"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="ByModule" />
 	</select>
 
@@ -597,7 +597,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCaseStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectCaseStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="CaseStory" />
 	</select>
 
@@ -612,7 +612,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -624,7 +624,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="ESBulk" />
 	</select>
 
@@ -642,7 +642,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByGetProductStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectGetProductStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="GetProductStories" />
 	</select>
 
@@ -657,7 +657,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyAgentStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectMyAgentStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="MyAgentStory" />
 	</select>
 
@@ -675,7 +675,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyCurOpenedStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectMyCurOpenedStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="MyCurOpenedStory" />
 	</select>
 
@@ -693,7 +693,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyFavorites"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectMyFavorites"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="MyFavorites" />
 	</select>
 
@@ -720,7 +720,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByNotCurPlanLinkStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectNotCurPlanLinkStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="NotCurPlanLinkStory" />
 	</select>
 
@@ -738,7 +738,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByParentDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectParentDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="ParentDefault" />
 	</select>
 
@@ -759,7 +759,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByParentDefaultQ"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectParentDefaultQ"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="ParentDefaultQ" />
 	</select>
 
@@ -783,7 +783,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectLinkStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectProjectLinkStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="ProjectLinkStory" />
 	</select>
 
@@ -801,7 +801,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectProjectStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="ProjectStories" />
 	</select>
 
@@ -819,7 +819,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByReleaseLinkableStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectReleaseLinkableStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="ReleaseLinkableStories" />
 	</select>
 
@@ -834,7 +834,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByReleaseStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectReleaseStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="ReleaseStories" />
 	</select>
 
@@ -846,7 +846,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByReportStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectReportStories"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="ReportStories" />
 	</select>
 
@@ -861,7 +861,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByStoryChild"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectStoryChild"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="StoryChild" />
 	</select>
 
@@ -876,7 +876,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByStoryRelated"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectStoryRelated"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="StoryRelated" />
 	</select>
 
@@ -894,7 +894,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryBySubStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectSubStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="SubStory" />
 	</select>
 
@@ -915,7 +915,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByTaskRelatedStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectTaskRelatedStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="TaskRelatedStory" />
 	</select>
 
@@ -930,7 +930,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext" resultMap="StoryResultMap">
 		<include refid="View" />
 	</select>
 

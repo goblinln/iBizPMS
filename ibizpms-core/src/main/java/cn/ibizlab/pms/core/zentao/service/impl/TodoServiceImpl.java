@@ -330,20 +330,20 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
 
 
 
-    public List<Todo> selectQueryByDefault(TodoSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Todo> selectDefault(TodoSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Todo> selectQueryByMyTodo(TodoSearchContext context){
-        return baseMapper.selectQueryByMyTodo(context, context.getSelectCond());
+    public List<Todo> selectMyTodo(TodoSearchContext context){
+        return baseMapper.selectMyTodo(context, context.getSelectCond());
     }
-    public List<Todo> selectQueryByMyTodoPc(TodoSearchContext context){
-        return baseMapper.selectQueryByMyTodoPc(context, context.getSelectCond());
+    public List<Todo> selectMyTodoPc(TodoSearchContext context){
+        return baseMapper.selectMyTodoPc(context, context.getSelectCond());
     }
-    public List<Todo> selectQueryByMyUpcoming(TodoSearchContext context){
-        return baseMapper.selectQueryByMyUpcoming(context, context.getSelectCond());
+    public List<Todo> selectMyUpcoming(TodoSearchContext context){
+        return baseMapper.selectMyUpcoming(context, context.getSelectCond());
     }
-    public List<Todo> selectQueryByView(TodoSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Todo> selectView(TodoSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

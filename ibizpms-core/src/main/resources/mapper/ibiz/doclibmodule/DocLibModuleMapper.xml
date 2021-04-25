@@ -172,7 +172,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByAllDoclibModule_Custom"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+	<select id="selectAllDoclibModule_Custom"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
 		<include refid="AllDoclibModule_Custom" />
 	</select>
 
@@ -193,7 +193,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByChildModuleByParent"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+	<select id="selectChildModuleByParent"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
 		<include refid="ChildModuleByParent" />
 	</select>
 
@@ -214,7 +214,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByChildModuleByRealParent"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+	<select id="selectChildModuleByRealParent"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
 		<include refid="ChildModuleByRealParent" />
 	</select>
 
@@ -229,7 +229,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -247,7 +247,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefaultDoclib"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+	<select id="selectDefaultDoclib"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
 		<include refid="DefaultDoclib" />
 	</select>
 
@@ -265,7 +265,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyFavourites"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+	<select id="selectMyFavourites"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
 		<include refid="MyFavourites" />
 	</select>
 
@@ -286,7 +286,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByParentModule"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+	<select id="selectParentModule"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
 		<include refid="ParentModule" />
 	</select>
 
@@ -304,7 +304,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRootModuleMuLu"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+	<select id="selectRootModuleMuLu"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
 		<include refid="RootModuleMuLu" />
 	</select>
 
@@ -325,7 +325,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRootModuleMuLuByRoot"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+	<select id="selectRootModuleMuLuByRoot"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
 		<include refid="RootModuleMuLuByRoot" />
 	</select>
 
@@ -346,7 +346,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRootModuleMuLuBysrfparentkey"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+	<select id="selectRootModuleMuLuBysrfparentkey"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
 		<include refid="RootModuleMuLuBysrfparentkey" />
 	</select>
 
@@ -361,7 +361,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext" resultMap="DocLibModuleResultMap">
 		<include refid="View" />
 	</select>
 

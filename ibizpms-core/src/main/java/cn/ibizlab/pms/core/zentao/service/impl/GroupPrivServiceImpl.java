@@ -214,11 +214,11 @@ public class GroupPrivServiceImpl extends ServiceImpl<GroupPrivMapper, GroupPriv
 
 
 
-    public List<GroupPriv> selectQueryByDefault(GroupPrivSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<GroupPriv> selectDefault(GroupPrivSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<GroupPriv> selectQueryByView(GroupPrivSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<GroupPriv> selectView(GroupPrivSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

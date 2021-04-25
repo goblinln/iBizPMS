@@ -289,20 +289,20 @@ public class UserYearWorkStatsServiceImpl extends ServiceImpl<UserYearWorkStatsM
 
 
 
-    public List<UserYearWorkStats> selectQueryByDefault(UserYearWorkStatsSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<UserYearWorkStats> selectDefault(UserYearWorkStatsSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<UserYearWorkStats> selectQueryByMonthFinishTaskAndBug(UserYearWorkStatsSearchContext context){
-        return baseMapper.selectQueryByMonthFinishTaskAndBug(context, context.getSelectCond());
+    public List<UserYearWorkStats> selectMonthFinishTaskAndBug(UserYearWorkStatsSearchContext context){
+        return baseMapper.selectMonthFinishTaskAndBug(context, context.getSelectCond());
     }
-    public List<UserYearWorkStats> selectQueryByMonthOpenedBugAndCase(UserYearWorkStatsSearchContext context){
-        return baseMapper.selectQueryByMonthOpenedBugAndCase(context, context.getSelectCond());
+    public List<UserYearWorkStats> selectMonthOpenedBugAndCase(UserYearWorkStatsSearchContext context){
+        return baseMapper.selectMonthOpenedBugAndCase(context, context.getSelectCond());
     }
-    public List<UserYearWorkStats> selectQueryByMonthOpenedStory(UserYearWorkStatsSearchContext context){
-        return baseMapper.selectQueryByMonthOpenedStory(context, context.getSelectCond());
+    public List<UserYearWorkStats> selectMonthOpenedStory(UserYearWorkStatsSearchContext context){
+        return baseMapper.selectMonthOpenedStory(context, context.getSelectCond());
     }
-    public List<UserYearWorkStats> selectQueryByView(UserYearWorkStatsSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<UserYearWorkStats> selectView(UserYearWorkStatsSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

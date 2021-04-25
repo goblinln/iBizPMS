@@ -104,9 +104,9 @@ public class IbizproProductMonthlyRuntime extends cn.ibizlab.pms.core.runtime.Sy
     public List<IbizproProductMonthly> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         IbizproProductMonthlySearchContext searchContext = (IbizproProductMonthlySearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return ibizproproductmonthlyService.selectQueryByDefault(searchContext);
+            return ibizproproductmonthlyService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return ibizproproductmonthlyService.selectQueryByView(searchContext);
+            return ibizproproductmonthlyService.selectView(searchContext);
         return null;
     }
 

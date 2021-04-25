@@ -110,15 +110,15 @@ public class TodoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     public List<Todo> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         TodoSearchContext searchContext = (TodoSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return todoService.selectQueryByDefault(searchContext);
+            return todoService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("MyTodo"))
-            return todoService.selectQueryByMyTodo(searchContext);
+            return todoService.selectMyTodo(searchContext);
         if (iPSDataQuery.getName().equals("MyTodoPc"))
-            return todoService.selectQueryByMyTodoPc(searchContext);
+            return todoService.selectMyTodoPc(searchContext);
         if (iPSDataQuery.getName().equals("MyUpcoming"))
-            return todoService.selectQueryByMyUpcoming(searchContext);
+            return todoService.selectMyUpcoming(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return todoService.selectQueryByView(searchContext);
+            return todoService.selectView(searchContext);
         return null;
     }
 

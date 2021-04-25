@@ -214,11 +214,11 @@ public class IbzReportRoleConfigServiceImpl extends ServiceImpl<IbzReportRoleCon
 
 
 
-    public List<IbzReportRoleConfig> selectQueryByDefault(IbzReportRoleConfigSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IbzReportRoleConfig> selectDefault(IbzReportRoleConfigSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IbzReportRoleConfig> selectQueryByView(IbzReportRoleConfigSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IbzReportRoleConfig> selectView(IbzReportRoleConfigSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

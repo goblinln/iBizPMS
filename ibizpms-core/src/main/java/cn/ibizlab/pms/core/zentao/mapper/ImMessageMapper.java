@@ -19,8 +19,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ImMessageMapper extends BaseMapper<ImMessage> {
 
-    List<ImMessage> selectQueryByDefault(@Param("srf") ImMessageSearchContext context, @Param("ew") Wrapper<ImMessage> wrapper);
-    List<ImMessage> selectQueryByView(@Param("srf") ImMessageSearchContext context, @Param("ew") Wrapper<ImMessage> wrapper);
+    List<ImMessage> selectDefault(@Param("srf") ImMessageSearchContext context, @Param("ew") Wrapper<ImMessage> wrapper);
+    List<ImMessage> selectView(@Param("srf") ImMessageSearchContext context, @Param("ew") Wrapper<ImMessage> wrapper);
 
     Page<ImMessage> searchDefault(IPage page, @Param("srf") ImMessageSearchContext context, @Param("ew") Wrapper<ImMessage> wrapper);
     @Override

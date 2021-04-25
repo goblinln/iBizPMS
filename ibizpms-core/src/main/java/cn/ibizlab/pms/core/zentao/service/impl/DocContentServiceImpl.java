@@ -258,14 +258,14 @@ public class DocContentServiceImpl extends ServiceImpl<DocContentMapper, DocCont
 	}
 
 
-    public List<DocContent> selectQueryByCurVersion(DocContentSearchContext context){
-        return baseMapper.selectQueryByCurVersion(context, context.getSelectCond());
+    public List<DocContent> selectCurVersion(DocContentSearchContext context){
+        return baseMapper.selectCurVersion(context, context.getSelectCond());
     }
-    public List<DocContent> selectQueryByDefault(DocContentSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<DocContent> selectDefault(DocContentSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<DocContent> selectQueryByView(DocContentSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<DocContent> selectView(DocContentSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

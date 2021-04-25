@@ -270,11 +270,11 @@ public class IbzCaseServiceImpl extends ServiceImpl<IbzCaseMapper, IbzCase> impl
     }
 
 
-    public List<IbzCase> selectQueryByDefault(IbzCaseSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IbzCase> selectDefault(IbzCaseSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IbzCase> selectQueryByView(IbzCaseSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IbzCase> selectView(IbzCaseSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

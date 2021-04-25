@@ -53,11 +53,11 @@ public interface ITodoService extends IService<Todo> {
     Todo sendMsgPreProcess(Todo et);
     boolean sendMsgPreProcessBatch(List<Todo> etList);
     List<Todo> select(TodoSearchContext context);
-    List<Todo> selectQueryByDefault(TodoSearchContext context);
-    List<Todo> selectQueryByMyTodo(TodoSearchContext context);
-    List<Todo> selectQueryByMyTodoPc(TodoSearchContext context);
-    List<Todo> selectQueryByMyUpcoming(TodoSearchContext context);
-    List<Todo> selectQueryByView(TodoSearchContext context);
+    List<Todo> selectDefault(TodoSearchContext context);
+    List<Todo> selectMyTodo(TodoSearchContext context);
+    List<Todo> selectMyTodoPc(TodoSearchContext context);
+    List<Todo> selectMyUpcoming(TodoSearchContext context);
+    List<Todo> selectView(TodoSearchContext context);
 
     Page<Todo> searchDefault(TodoSearchContext context);
     Page<Todo> searchMyTodo(TodoSearchContext context);

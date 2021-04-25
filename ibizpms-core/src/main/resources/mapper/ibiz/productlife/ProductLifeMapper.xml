@@ -78,7 +78,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext" resultMap="ProductLifeResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext" resultMap="ProductLifeResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -90,7 +90,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByGetRoadmap"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext" resultMap="ProductLifeResultMap">
+	<select id="selectGetRoadmap"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext" resultMap="ProductLifeResultMap">
 		<include refid="GetRoadmap" />
 	</select>
 
@@ -102,7 +102,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByGetRoadmapS"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext" resultMap="ProductLifeResultMap">
+	<select id="selectGetRoadmapS"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext" resultMap="ProductLifeResultMap">
 		<include refid="GetRoadmapS" />
 	</select>
 
@@ -114,7 +114,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRoadMapYear"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext" resultMap="ProductLifeResultMap">
+	<select id="selectRoadMapYear"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext" resultMap="ProductLifeResultMap">
 		<include refid="RoadMapYear" />
 	</select>
 
@@ -126,7 +126,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext" resultMap="ProductLifeResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext" resultMap="ProductLifeResultMap">
 		<include refid="View" />
 	</select>
 

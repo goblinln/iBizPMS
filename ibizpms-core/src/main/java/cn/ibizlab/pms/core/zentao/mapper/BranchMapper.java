@@ -19,10 +19,10 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface BranchMapper extends BaseMapper<Branch> {
 
-    List<Branch> selectQueryByCurProduct(@Param("srf") BranchSearchContext context, @Param("ew") Wrapper<Branch> wrapper);
-    List<Branch> selectQueryByDefault(@Param("srf") BranchSearchContext context, @Param("ew") Wrapper<Branch> wrapper);
-    List<Branch> selectQueryByDefaultBranch(@Param("srf") BranchSearchContext context, @Param("ew") Wrapper<Branch> wrapper);
-    List<Branch> selectQueryByView(@Param("srf") BranchSearchContext context, @Param("ew") Wrapper<Branch> wrapper);
+    List<Branch> selectCurProduct(@Param("srf") BranchSearchContext context, @Param("ew") Wrapper<Branch> wrapper);
+    List<Branch> selectDefault(@Param("srf") BranchSearchContext context, @Param("ew") Wrapper<Branch> wrapper);
+    List<Branch> selectDefaultBranch(@Param("srf") BranchSearchContext context, @Param("ew") Wrapper<Branch> wrapper);
+    List<Branch> selectView(@Param("srf") BranchSearchContext context, @Param("ew") Wrapper<Branch> wrapper);
 
     Page<Branch> searchCurProduct(IPage page, @Param("srf") BranchSearchContext context, @Param("ew") Wrapper<Branch> wrapper);
     Page<Branch> searchDefault(IPage page, @Param("srf") BranchSearchContext context, @Param("ew") Wrapper<Branch> wrapper);

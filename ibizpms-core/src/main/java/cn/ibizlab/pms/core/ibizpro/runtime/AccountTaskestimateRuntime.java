@@ -106,11 +106,11 @@ public class AccountTaskestimateRuntime extends cn.ibizlab.pms.core.runtime.Syst
     public List<AccountTaskestimate> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         AccountTaskestimateSearchContext searchContext = (AccountTaskestimateSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("AllAccountEstimate"))
-            return accounttaskestimateService.selectQueryByAllAccountEstimate(searchContext);
+            return accounttaskestimateService.selectAllAccountEstimate(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return accounttaskestimateService.selectQueryByDefault(searchContext);
+            return accounttaskestimateService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return accounttaskestimateService.selectQueryByView(searchContext);
+            return accounttaskestimateService.selectView(searchContext);
         return null;
     }
 

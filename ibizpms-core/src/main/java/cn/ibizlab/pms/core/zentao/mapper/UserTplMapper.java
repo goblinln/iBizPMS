@@ -19,9 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface UserTplMapper extends BaseMapper<UserTpl> {
 
-    List<UserTpl> selectQueryByDefault(@Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
-    List<UserTpl> selectQueryByMyUserTpl(@Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
-    List<UserTpl> selectQueryByView(@Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
+    List<UserTpl> selectDefault(@Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
+    List<UserTpl> selectMyUserTpl(@Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
+    List<UserTpl> selectView(@Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
 
     Page<UserTpl> searchDefault(IPage page, @Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);
     Page<UserTpl> searchMyUserTpl(IPage page, @Param("srf") UserTplSearchContext context, @Param("ew") Wrapper<UserTpl> wrapper);

@@ -116,21 +116,21 @@ public class IbzMonthlyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     public List<IbzMonthly> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         IbzMonthlySearchContext searchContext = (IbzMonthlySearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return ibzmonthlyService.selectQueryByDefault(searchContext);
+            return ibzmonthlyService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("MyMonthly"))
-            return ibzmonthlyService.selectQueryByMyMonthly(searchContext);
+            return ibzmonthlyService.selectMyMonthly(searchContext);
         if (iPSDataQuery.getName().equals("MyMonthlyMob"))
-            return ibzmonthlyService.selectQueryByMyMonthlyMob(searchContext);
+            return ibzmonthlyService.selectMyMonthlyMob(searchContext);
         if (iPSDataQuery.getName().equals("MyReceivedMonthly"))
-            return ibzmonthlyService.selectQueryByMyReceivedMonthly(searchContext);
+            return ibzmonthlyService.selectMyReceivedMonthly(searchContext);
         if (iPSDataQuery.getName().equals("MySubmitMonthly"))
-            return ibzmonthlyService.selectQueryByMySubmitMonthly(searchContext);
+            return ibzmonthlyService.selectMySubmitMonthly(searchContext);
         if (iPSDataQuery.getName().equals("ProductMonthly"))
-            return ibzmonthlyService.selectQueryByProductMonthly(searchContext);
+            return ibzmonthlyService.selectProductMonthly(searchContext);
         if (iPSDataQuery.getName().equals("ProjectMonthly"))
-            return ibzmonthlyService.selectQueryByProjectMonthly(searchContext);
+            return ibzmonthlyService.selectProjectMonthly(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return ibzmonthlyService.selectQueryByView(searchContext);
+            return ibzmonthlyService.selectView(searchContext);
         return null;
     }
 

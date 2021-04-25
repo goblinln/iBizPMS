@@ -236,29 +236,29 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
 
 
 
-    public List<User> selectQueryByBugUser(UserSearchContext context){
-        return baseMapper.selectQueryByBugUser(context, context.getSelectCond());
+    public List<User> selectBugUser(UserSearchContext context){
+        return baseMapper.selectBugUser(context, context.getSelectCond());
     }
-    public List<User> selectQueryByDefault(UserSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<User> selectDefault(UserSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<User> selectQueryByGetByLogin(UserSearchContext context){
-        return baseMapper.selectQueryByGetByLogin(context, context.getSelectCond());
+    public List<User> selectGetByLogin(UserSearchContext context){
+        return baseMapper.selectGetByLogin(context, context.getSelectCond());
     }
-    public List<User> selectQueryByProjectTeamM(UserSearchContext context){
-        return baseMapper.selectQueryByProjectTeamM(context, context.getSelectCond());
+    public List<User> selectProjectTeamM(UserSearchContext context){
+        return baseMapper.selectProjectTeamM(context, context.getSelectCond());
     }
-    public List<User> selectQueryByProjectTeamUser(UserSearchContext context){
-        return baseMapper.selectQueryByProjectTeamUser(context, context.getSelectCond());
+    public List<User> selectProjectTeamUser(UserSearchContext context){
+        return baseMapper.selectProjectTeamUser(context, context.getSelectCond());
     }
-    public List<User> selectQueryByProjectTeamUserTask(UserSearchContext context){
-        return baseMapper.selectQueryByProjectTeamUserTask(context, context.getSelectCond());
+    public List<User> selectProjectTeamUserTask(UserSearchContext context){
+        return baseMapper.selectProjectTeamUserTask(context, context.getSelectCond());
     }
-    public List<User> selectQueryByTaskTeam(UserSearchContext context){
-        return baseMapper.selectQueryByTaskTeam(context, context.getSelectCond());
+    public List<User> selectTaskTeam(UserSearchContext context){
+        return baseMapper.selectTaskTeam(context, context.getSelectCond());
     }
-    public List<User> selectQueryByView(UserSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<User> selectView(UserSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

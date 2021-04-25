@@ -254,20 +254,20 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
 
 
 
-    public List<IbzReportly> selectQueryByDefault(IbzReportlySearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IbzReportly> selectDefault(IbzReportlySearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IbzReportly> selectQueryByMyAllReportly(IbzReportlySearchContext context){
-        return baseMapper.selectQueryByMyAllReportly(context, context.getSelectCond());
+    public List<IbzReportly> selectMyAllReportly(IbzReportlySearchContext context){
+        return baseMapper.selectMyAllReportly(context, context.getSelectCond());
     }
-    public List<IbzReportly> selectQueryByMyReceived(IbzReportlySearchContext context){
-        return baseMapper.selectQueryByMyReceived(context, context.getSelectCond());
+    public List<IbzReportly> selectMyReceived(IbzReportlySearchContext context){
+        return baseMapper.selectMyReceived(context, context.getSelectCond());
     }
-    public List<IbzReportly> selectQueryByMyReportlyMob(IbzReportlySearchContext context){
-        return baseMapper.selectQueryByMyReportlyMob(context, context.getSelectCond());
+    public List<IbzReportly> selectMyReportlyMob(IbzReportlySearchContext context){
+        return baseMapper.selectMyReportlyMob(context, context.getSelectCond());
     }
-    public List<IbzReportly> selectQueryByView(IbzReportlySearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IbzReportly> selectView(IbzReportlySearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

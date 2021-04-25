@@ -277,14 +277,14 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
     }
 
 
-    public List<IbizproProductDaily> selectQueryByDefault(IbizproProductDailySearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IbizproProductDaily> selectDefault(IbizproProductDailySearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IbizproProductDaily> selectQueryByProductDaily(IbizproProductDailySearchContext context){
-        return baseMapper.selectQueryByProductDaily(context, context.getSelectCond());
+    public List<IbizproProductDaily> selectProductDaily(IbizproProductDailySearchContext context){
+        return baseMapper.selectProductDaily(context, context.getSelectCond());
     }
-    public List<IbizproProductDaily> selectQueryByView(IbizproProductDailySearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IbizproProductDaily> selectView(IbizproProductDailySearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

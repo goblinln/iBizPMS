@@ -104,9 +104,9 @@ public class ImConferenceRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     public List<ImConference> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         ImConferenceSearchContext searchContext = (ImConferenceSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return imconferenceService.selectQueryByDefault(searchContext);
+            return imconferenceService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return imconferenceService.selectQueryByView(searchContext);
+            return imconferenceService.selectView(searchContext);
         return null;
     }
 

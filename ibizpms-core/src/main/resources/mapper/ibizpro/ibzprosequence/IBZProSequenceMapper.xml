@@ -63,7 +63,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IBZProSequenceSearchContext" resultMap="IBZProSequenceResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IBZProSequenceSearchContext" resultMap="IBZProSequenceResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -75,7 +75,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryBySimple"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IBZProSequenceSearchContext" resultMap="IBZProSequenceResultMap">
+	<select id="selectSimple"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IBZProSequenceSearchContext" resultMap="IBZProSequenceResultMap">
 		<include refid="Simple" />
 	</select>
 
@@ -87,7 +87,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IBZProSequenceSearchContext" resultMap="IBZProSequenceResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IBZProSequenceSearchContext" resultMap="IBZProSequenceResultMap">
 		<include refid="View" />
 	</select>
 

@@ -104,9 +104,9 @@ public class HistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     public List<History> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         HistorySearchContext searchContext = (HistorySearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return historyService.selectQueryByDefault(searchContext);
+            return historyService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return historyService.selectQueryByView(searchContext);
+            return historyService.selectView(searchContext);
         return null;
     }
 

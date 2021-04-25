@@ -104,9 +104,9 @@ public class RepoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     public List<Repo> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         RepoSearchContext searchContext = (RepoSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return repoService.selectQueryByDefault(searchContext);
+            return repoService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return repoService.selectQueryByView(searchContext);
+            return repoService.selectView(searchContext);
         return null;
     }
 

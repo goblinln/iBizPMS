@@ -589,74 +589,74 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     }
 
 
-    public List<Case> selectQueryByBatchNew(CaseSearchContext context){
-        return baseMapper.selectQueryByBatchNew(context, context.getSelectCond());
+    public List<Case> selectBatchNew(CaseSearchContext context){
+        return baseMapper.selectBatchNew(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByCurOpenedCase(CaseSearchContext context){
-        return baseMapper.selectQueryByCurOpenedCase(context, context.getSelectCond());
+    public List<Case> selectCurOpenedCase(CaseSearchContext context){
+        return baseMapper.selectCurOpenedCase(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByCurSuite(CaseSearchContext context){
-        return baseMapper.selectQueryByCurSuite(context, context.getSelectCond());
+    public List<Case> selectCurSuite(CaseSearchContext context){
+        return baseMapper.selectCurSuite(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByCurTestTask(CaseSearchContext context){
-        return baseMapper.selectQueryByCurTestTask(context, context.getSelectCond());
+    public List<Case> selectCurTestTask(CaseSearchContext context){
+        return baseMapper.selectCurTestTask(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByDefault(CaseSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Case> selectDefault(CaseSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByESBulk(CaseSearchContext context){
-        return baseMapper.selectQueryByESBulk(context, context.getSelectCond());
+    public List<Case> selectESBulk(CaseSearchContext context){
+        return baseMapper.selectESBulk(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByModuleRePortCase(CaseSearchContext context){
-        return baseMapper.selectQueryByModuleRePortCase(context, context.getSelectCond());
+    public List<Case> selectModuleRePortCase(CaseSearchContext context){
+        return baseMapper.selectModuleRePortCase(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByModuleRePortCaseEntry(CaseSearchContext context){
-        return baseMapper.selectQueryByModuleRePortCaseEntry(context, context.getSelectCond());
+    public List<Case> selectModuleRePortCaseEntry(CaseSearchContext context){
+        return baseMapper.selectModuleRePortCaseEntry(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByModuleRePortCase_Project(CaseSearchContext context){
-        return baseMapper.selectQueryByModuleRePortCase_Project(context, context.getSelectCond());
+    public List<Case> selectModuleRePortCase_Project(CaseSearchContext context){
+        return baseMapper.selectModuleRePortCase_Project(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByMyFavorite(CaseSearchContext context){
-        return baseMapper.selectQueryByMyFavorite(context, context.getSelectCond());
+    public List<Case> selectMyFavorite(CaseSearchContext context){
+        return baseMapper.selectMyFavorite(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByNotCurTestSuite(CaseSearchContext context){
-        return baseMapper.selectQueryByNotCurTestSuite(context, context.getSelectCond());
+    public List<Case> selectNotCurTestSuite(CaseSearchContext context){
+        return baseMapper.selectNotCurTestSuite(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByNotCurTestTask(CaseSearchContext context){
-        return baseMapper.selectQueryByNotCurTestTask(context, context.getSelectCond());
+    public List<Case> selectNotCurTestTask(CaseSearchContext context){
+        return baseMapper.selectNotCurTestTask(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByNotCurTestTaskProject(CaseSearchContext context){
-        return baseMapper.selectQueryByNotCurTestTaskProject(context, context.getSelectCond());
+    public List<Case> selectNotCurTestTaskProject(CaseSearchContext context){
+        return baseMapper.selectNotCurTestTaskProject(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByRePortCase(CaseSearchContext context){
-        return baseMapper.selectQueryByRePortCase(context, context.getSelectCond());
+    public List<Case> selectRePortCase(CaseSearchContext context){
+        return baseMapper.selectRePortCase(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByRePortCaseEntry(CaseSearchContext context){
-        return baseMapper.selectQueryByRePortCaseEntry(context, context.getSelectCond());
+    public List<Case> selectRePortCaseEntry(CaseSearchContext context){
+        return baseMapper.selectRePortCaseEntry(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByRePortCase_Project(CaseSearchContext context){
-        return baseMapper.selectQueryByRePortCase_Project(context, context.getSelectCond());
+    public List<Case> selectRePortCase_Project(CaseSearchContext context){
+        return baseMapper.selectRePortCase_Project(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByRunERRePortCase(CaseSearchContext context){
-        return baseMapper.selectQueryByRunERRePortCase(context, context.getSelectCond());
+    public List<Case> selectRunERRePortCase(CaseSearchContext context){
+        return baseMapper.selectRunERRePortCase(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByRunERRePortCaseEntry(CaseSearchContext context){
-        return baseMapper.selectQueryByRunERRePortCaseEntry(context, context.getSelectCond());
+    public List<Case> selectRunERRePortCaseEntry(CaseSearchContext context){
+        return baseMapper.selectRunERRePortCaseEntry(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByRunERRePortCase_Project(CaseSearchContext context){
-        return baseMapper.selectQueryByRunERRePortCase_Project(context, context.getSelectCond());
+    public List<Case> selectRunERRePortCase_Project(CaseSearchContext context){
+        return baseMapper.selectRunERRePortCase_Project(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByRunRePortCase(CaseSearchContext context){
-        return baseMapper.selectQueryByRunRePortCase(context, context.getSelectCond());
+    public List<Case> selectRunRePortCase(CaseSearchContext context){
+        return baseMapper.selectRunRePortCase(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByRunRePortCaseEntry(CaseSearchContext context){
-        return baseMapper.selectQueryByRunRePortCaseEntry(context, context.getSelectCond());
+    public List<Case> selectRunRePortCaseEntry(CaseSearchContext context){
+        return baseMapper.selectRunRePortCaseEntry(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByRunRePortCase_Project(CaseSearchContext context){
-        return baseMapper.selectQueryByRunRePortCase_Project(context, context.getSelectCond());
+    public List<Case> selectRunRePortCase_Project(CaseSearchContext context){
+        return baseMapper.selectRunRePortCase_Project(context, context.getSelectCond());
     }
-    public List<Case> selectQueryByView(CaseSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Case> selectView(CaseSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

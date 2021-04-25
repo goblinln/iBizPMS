@@ -86,7 +86,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.CaseStatsSearchContext" resultMap="CaseStatsResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.CaseStatsSearchContext" resultMap="CaseStatsResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -101,7 +101,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByTestCaseStats"  parameterType="cn.ibizlab.pms.core.ibiz.filter.CaseStatsSearchContext" resultMap="CaseStatsResultMap">
+	<select id="selectTestCaseStats"  parameterType="cn.ibizlab.pms.core.ibiz.filter.CaseStatsSearchContext" resultMap="CaseStatsResultMap">
 		<include refid="TestCaseStats" />
 	</select>
 
@@ -113,7 +113,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.CaseStatsSearchContext" resultMap="CaseStatsResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.CaseStatsSearchContext" resultMap="CaseStatsResultMap">
 		<include refid="View" />
 	</select>
 

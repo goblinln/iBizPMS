@@ -19,8 +19,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface TeamMapper extends BaseMapper<Team> {
 
-    List<Team> selectQueryByDefault(@Param("srf") TeamSearchContext context, @Param("ew") Wrapper<Team> wrapper);
-    List<Team> selectQueryByView(@Param("srf") TeamSearchContext context, @Param("ew") Wrapper<Team> wrapper);
+    List<Team> selectDefault(@Param("srf") TeamSearchContext context, @Param("ew") Wrapper<Team> wrapper);
+    List<Team> selectView(@Param("srf") TeamSearchContext context, @Param("ew") Wrapper<Team> wrapper);
 
     Page<Team> searchDefault(IPage page, @Param("srf") TeamSearchContext context, @Param("ew") Wrapper<Team> wrapper);
     @Override

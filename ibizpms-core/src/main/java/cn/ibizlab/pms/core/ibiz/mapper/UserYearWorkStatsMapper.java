@@ -19,11 +19,11 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface UserYearWorkStatsMapper extends BaseMapper<UserYearWorkStats> {
 
-    List<UserYearWorkStats> selectQueryByDefault(@Param("srf") UserYearWorkStatsSearchContext context, @Param("ew") Wrapper<UserYearWorkStats> wrapper);
-    List<UserYearWorkStats> selectQueryByMonthFinishTaskAndBug(@Param("srf") UserYearWorkStatsSearchContext context, @Param("ew") Wrapper<UserYearWorkStats> wrapper);
-    List<UserYearWorkStats> selectQueryByMonthOpenedBugAndCase(@Param("srf") UserYearWorkStatsSearchContext context, @Param("ew") Wrapper<UserYearWorkStats> wrapper);
-    List<UserYearWorkStats> selectQueryByMonthOpenedStory(@Param("srf") UserYearWorkStatsSearchContext context, @Param("ew") Wrapper<UserYearWorkStats> wrapper);
-    List<UserYearWorkStats> selectQueryByView(@Param("srf") UserYearWorkStatsSearchContext context, @Param("ew") Wrapper<UserYearWorkStats> wrapper);
+    List<UserYearWorkStats> selectDefault(@Param("srf") UserYearWorkStatsSearchContext context, @Param("ew") Wrapper<UserYearWorkStats> wrapper);
+    List<UserYearWorkStats> selectMonthFinishTaskAndBug(@Param("srf") UserYearWorkStatsSearchContext context, @Param("ew") Wrapper<UserYearWorkStats> wrapper);
+    List<UserYearWorkStats> selectMonthOpenedBugAndCase(@Param("srf") UserYearWorkStatsSearchContext context, @Param("ew") Wrapper<UserYearWorkStats> wrapper);
+    List<UserYearWorkStats> selectMonthOpenedStory(@Param("srf") UserYearWorkStatsSearchContext context, @Param("ew") Wrapper<UserYearWorkStats> wrapper);
+    List<UserYearWorkStats> selectView(@Param("srf") UserYearWorkStatsSearchContext context, @Param("ew") Wrapper<UserYearWorkStats> wrapper);
 
     Page<UserYearWorkStats> searchDefault(IPage page, @Param("srf") UserYearWorkStatsSearchContext context, @Param("ew") Wrapper<UserYearWorkStats> wrapper);
     Page<UserYearWorkStats> searchMonthFinishTaskAndBug(IPage page, @Param("srf") UserYearWorkStatsSearchContext context, @Param("ew") Wrapper<UserYearWorkStats> wrapper);

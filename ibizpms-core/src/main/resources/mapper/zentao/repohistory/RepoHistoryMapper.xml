@@ -49,7 +49,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.RepoHistorySearchContext" resultMap="RepoHistoryResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.RepoHistorySearchContext" resultMap="RepoHistoryResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -61,7 +61,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.RepoHistorySearchContext" resultMap="RepoHistoryResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.RepoHistorySearchContext" resultMap="RepoHistoryResultMap">
 		<include refid="View" />
 	</select>
 

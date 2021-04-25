@@ -39,8 +39,8 @@ public interface IImConferenceactionService extends IService<ImConferenceaction>
     boolean save(ImConferenceaction et);
     void saveBatch(List<ImConferenceaction> list);
     List<ImConferenceaction> select(ImConferenceactionSearchContext context);
-    List<ImConferenceaction> selectQueryByDefault(ImConferenceactionSearchContext context);
-    List<ImConferenceaction> selectQueryByView(ImConferenceactionSearchContext context);
+    List<ImConferenceaction> selectDefault(ImConferenceactionSearchContext context);
+    List<ImConferenceaction> selectView(ImConferenceactionSearchContext context);
 
     Page<ImConferenceaction> searchDefault(ImConferenceactionSearchContext context);
     ImConferenceaction dynamicCall(Long key, String action, ImConferenceaction et);

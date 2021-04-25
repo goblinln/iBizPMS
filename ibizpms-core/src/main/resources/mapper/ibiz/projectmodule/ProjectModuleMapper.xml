@@ -159,7 +159,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByByPath"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectModuleSearchContext" resultMap="ProjectModuleResultMap">
+	<select id="selectByPath"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectModuleSearchContext" resultMap="ProjectModuleResultMap">
 		<include refid="ByPath" />
 	</select>
 
@@ -177,7 +177,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectModuleSearchContext" resultMap="ProjectModuleResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectModuleSearchContext" resultMap="ProjectModuleResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -198,7 +198,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByParentModule"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectModuleSearchContext" resultMap="ProjectModuleResultMap">
+	<select id="selectParentModule"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectModuleSearchContext" resultMap="ProjectModuleResultMap">
 		<include refid="ParentModule" />
 	</select>
 
@@ -216,7 +216,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRoot"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectModuleSearchContext" resultMap="ProjectModuleResultMap">
+	<select id="selectRoot"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectModuleSearchContext" resultMap="ProjectModuleResultMap">
 		<include refid="Root" />
 	</select>
 
@@ -234,7 +234,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRoot_NoBranch"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectModuleSearchContext" resultMap="ProjectModuleResultMap">
+	<select id="selectRoot_NoBranch"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectModuleSearchContext" resultMap="ProjectModuleResultMap">
 		<include refid="Root_NoBranch" />
 	</select>
 
@@ -252,7 +252,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRoot_Task"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectModuleSearchContext" resultMap="ProjectModuleResultMap">
+	<select id="selectRoot_Task"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectModuleSearchContext" resultMap="ProjectModuleResultMap">
 		<include refid="Root_Task" />
 	</select>
 
@@ -270,7 +270,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByTaskModules"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectModuleSearchContext" resultMap="ProjectModuleResultMap">
+	<select id="selectTaskModules"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectModuleSearchContext" resultMap="ProjectModuleResultMap">
 		<include refid="TaskModules" />
 	</select>
 
@@ -285,7 +285,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectModuleSearchContext" resultMap="ProjectModuleResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectModuleSearchContext" resultMap="ProjectModuleResultMap">
 		<include refid="View" />
 	</select>
 

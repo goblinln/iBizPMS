@@ -90,7 +90,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzLibModuleSearchContext" resultMap="IbzLibModuleResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzLibModuleSearchContext" resultMap="IbzLibModuleResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -105,7 +105,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRoot_NoBranch"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzLibModuleSearchContext" resultMap="IbzLibModuleResultMap">
+	<select id="selectRoot_NoBranch"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzLibModuleSearchContext" resultMap="IbzLibModuleResultMap">
 		<include refid="Root_NoBranch" />
 	</select>
 
@@ -117,7 +117,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzLibModuleSearchContext" resultMap="IbzLibModuleResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzLibModuleSearchContext" resultMap="IbzLibModuleResultMap">
 		<include refid="View" />
 	</select>
 

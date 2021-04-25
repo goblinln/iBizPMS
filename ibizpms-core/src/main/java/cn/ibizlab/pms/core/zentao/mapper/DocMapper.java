@@ -19,18 +19,18 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface DocMapper extends BaseMapper<Doc> {
 
-    List<Doc> selectQueryByChildDocLibDoc(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
-    List<Doc> selectQueryByDefault(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
-    List<Doc> selectQueryByDocLibAndDoc(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
-    List<Doc> selectQueryByDocLibDoc(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
-    List<Doc> selectQueryByDocModuleDoc(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
-    List<Doc> selectQueryByDocStatus(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
-    List<Doc> selectQueryByModuleDocChild(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
-    List<Doc> selectQueryByMyFavourite(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
-    List<Doc> selectQueryByMyFavouritesOnlyDoc(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
-    List<Doc> selectQueryByNotRootDoc(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
-    List<Doc> selectQueryByRootDoc(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
-    List<Doc> selectQueryByView(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
+    List<Doc> selectChildDocLibDoc(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
+    List<Doc> selectDefault(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
+    List<Doc> selectDocLibAndDoc(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
+    List<Doc> selectDocLibDoc(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
+    List<Doc> selectDocModuleDoc(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
+    List<Doc> selectDocStatus(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
+    List<Doc> selectModuleDocChild(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
+    List<Doc> selectMyFavourite(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
+    List<Doc> selectMyFavouritesOnlyDoc(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
+    List<Doc> selectNotRootDoc(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
+    List<Doc> selectRootDoc(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
+    List<Doc> selectView(@Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
 
     Page<Doc> searchChildDocLibDoc(IPage page, @Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);
     Page<Doc> searchDefault(IPage page, @Param("srf") DocSearchContext context, @Param("ew") Wrapper<Doc> wrapper);

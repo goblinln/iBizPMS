@@ -19,11 +19,11 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IbzReportlyMapper extends BaseMapper<IbzReportly> {
 
-    List<IbzReportly> selectQueryByDefault(@Param("srf") IbzReportlySearchContext context, @Param("ew") Wrapper<IbzReportly> wrapper);
-    List<IbzReportly> selectQueryByMyAllReportly(@Param("srf") IbzReportlySearchContext context, @Param("ew") Wrapper<IbzReportly> wrapper);
-    List<IbzReportly> selectQueryByMyReceived(@Param("srf") IbzReportlySearchContext context, @Param("ew") Wrapper<IbzReportly> wrapper);
-    List<IbzReportly> selectQueryByMyReportlyMob(@Param("srf") IbzReportlySearchContext context, @Param("ew") Wrapper<IbzReportly> wrapper);
-    List<IbzReportly> selectQueryByView(@Param("srf") IbzReportlySearchContext context, @Param("ew") Wrapper<IbzReportly> wrapper);
+    List<IbzReportly> selectDefault(@Param("srf") IbzReportlySearchContext context, @Param("ew") Wrapper<IbzReportly> wrapper);
+    List<IbzReportly> selectMyAllReportly(@Param("srf") IbzReportlySearchContext context, @Param("ew") Wrapper<IbzReportly> wrapper);
+    List<IbzReportly> selectMyReceived(@Param("srf") IbzReportlySearchContext context, @Param("ew") Wrapper<IbzReportly> wrapper);
+    List<IbzReportly> selectMyReportlyMob(@Param("srf") IbzReportlySearchContext context, @Param("ew") Wrapper<IbzReportly> wrapper);
+    List<IbzReportly> selectView(@Param("srf") IbzReportlySearchContext context, @Param("ew") Wrapper<IbzReportly> wrapper);
 
     Page<IbzReportly> searchDefault(IPage page, @Param("srf") IbzReportlySearchContext context, @Param("ew") Wrapper<IbzReportly> wrapper);
     Page<IbzReportly> searchMyAllReportly(IPage page, @Param("srf") IbzReportlySearchContext context, @Param("ew") Wrapper<IbzReportly> wrapper);

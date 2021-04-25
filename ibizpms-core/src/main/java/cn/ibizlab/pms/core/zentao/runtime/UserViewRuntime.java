@@ -104,9 +104,9 @@ public class UserViewRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     public List<UserView> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         UserViewSearchContext searchContext = (UserViewSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return userviewService.selectQueryByDefault(searchContext);
+            return userviewService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return userviewService.selectQueryByView(searchContext);
+            return userviewService.selectView(searchContext);
         return null;
     }
 

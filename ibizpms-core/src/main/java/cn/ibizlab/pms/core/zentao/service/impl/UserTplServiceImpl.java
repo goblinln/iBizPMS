@@ -220,14 +220,14 @@ public class UserTplServiceImpl extends ServiceImpl<UserTplMapper, UserTpl> impl
 
 
 
-    public List<UserTpl> selectQueryByDefault(UserTplSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<UserTpl> selectDefault(UserTplSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<UserTpl> selectQueryByMyUserTpl(UserTplSearchContext context){
-        return baseMapper.selectQueryByMyUserTpl(context, context.getSelectCond());
+    public List<UserTpl> selectMyUserTpl(UserTplSearchContext context){
+        return baseMapper.selectMyUserTpl(context, context.getSelectCond());
     }
-    public List<UserTpl> selectQueryByView(UserTplSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<UserTpl> selectView(UserTplSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

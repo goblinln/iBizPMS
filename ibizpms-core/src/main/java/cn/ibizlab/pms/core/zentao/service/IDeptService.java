@@ -39,9 +39,9 @@ public interface IDeptService extends IService<Dept> {
     boolean save(Dept et);
     void saveBatch(List<Dept> list);
     List<Dept> select(DeptSearchContext context);
-    List<Dept> selectQueryByDefault(DeptSearchContext context);
-    List<Dept> selectQueryByRoot(DeptSearchContext context);
-    List<Dept> selectQueryByView(DeptSearchContext context);
+    List<Dept> selectDefault(DeptSearchContext context);
+    List<Dept> selectRoot(DeptSearchContext context);
+    List<Dept> selectView(DeptSearchContext context);
 
     Page<Dept> searchDefault(DeptSearchContext context);
     Page<Dept> searchRoot(DeptSearchContext context);

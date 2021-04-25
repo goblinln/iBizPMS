@@ -104,9 +104,9 @@ public class GroupPrivRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     public List<GroupPriv> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         GroupPrivSearchContext searchContext = (GroupPrivSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return groupprivService.selectQueryByDefault(searchContext);
+            return groupprivService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return groupprivService.selectQueryByView(searchContext);
+            return groupprivService.selectView(searchContext);
         return null;
     }
 

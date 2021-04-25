@@ -214,11 +214,11 @@ public class IbzProjectMemberServiceImpl extends ServiceImpl<IbzProjectMemberMap
 
 
 
-    public List<IbzProjectMember> selectQueryByDefault(IbzProjectMemberSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IbzProjectMember> selectDefault(IbzProjectMemberSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IbzProjectMember> selectQueryByView(IbzProjectMemberSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IbzProjectMember> selectView(IbzProjectMemberSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

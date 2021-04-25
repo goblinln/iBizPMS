@@ -273,20 +273,20 @@ public class PRODUCTTEAMServiceImpl extends ServiceImpl<PRODUCTTEAMMapper, PRODU
 	}
 
 
-    public List<PRODUCTTEAM> selectQueryByDefault(PRODUCTTEAMSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<PRODUCTTEAM> selectDefault(PRODUCTTEAMSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<PRODUCTTEAM> selectQueryByProductTeamInfo(PRODUCTTEAMSearchContext context){
-        return baseMapper.selectQueryByProductTeamInfo(context, context.getSelectCond());
+    public List<PRODUCTTEAM> selectProductTeamInfo(PRODUCTTEAMSearchContext context){
+        return baseMapper.selectProductTeamInfo(context, context.getSelectCond());
     }
-    public List<PRODUCTTEAM> selectQueryByProjectApp(PRODUCTTEAMSearchContext context){
-        return baseMapper.selectQueryByProjectApp(context, context.getSelectCond());
+    public List<PRODUCTTEAM> selectProjectApp(PRODUCTTEAMSearchContext context){
+        return baseMapper.selectProjectApp(context, context.getSelectCond());
     }
-    public List<PRODUCTTEAM> selectQueryByRowEditDefaultProductTeam(PRODUCTTEAMSearchContext context){
-        return baseMapper.selectQueryByRowEditDefaultProductTeam(context, context.getSelectCond());
+    public List<PRODUCTTEAM> selectRowEditDefaultProductTeam(PRODUCTTEAMSearchContext context){
+        return baseMapper.selectRowEditDefaultProductTeam(context, context.getSelectCond());
     }
-    public List<PRODUCTTEAM> selectQueryByView(PRODUCTTEAMSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<PRODUCTTEAM> selectView(PRODUCTTEAMSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

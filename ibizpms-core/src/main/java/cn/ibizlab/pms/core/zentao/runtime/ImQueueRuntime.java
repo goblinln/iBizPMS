@@ -104,9 +104,9 @@ public class ImQueueRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     public List<ImQueue> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         ImQueueSearchContext searchContext = (ImQueueSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return imqueueService.selectQueryByDefault(searchContext);
+            return imqueueService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return imqueueService.selectQueryByView(searchContext);
+            return imqueueService.selectView(searchContext);
         return null;
     }
 

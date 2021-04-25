@@ -236,7 +236,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByAllList"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+	<select id="selectAllList"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
 		<include refid="AllList" />
 	</select>
 
@@ -251,7 +251,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByAllProduct"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+	<select id="selectAllProduct"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
 		<include refid="AllProduct" />
 	</select>
 
@@ -263,7 +263,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCheckNameOrCode"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+	<select id="selectCheckNameOrCode"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
 		<include refid="CheckNameOrCode" />
 	</select>
 
@@ -278,7 +278,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+	<select id="selectCurDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
 		<include refid="CurDefault" />
 	</select>
 
@@ -296,7 +296,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+	<select id="selectCurProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
 		<include refid="CurProject" />
 	</select>
 
@@ -308,7 +308,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurUer"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+	<select id="selectCurUer"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
 		<include refid="CurUer" />
 	</select>
 
@@ -323,7 +323,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -341,7 +341,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDeveloperQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+	<select id="selectDeveloperQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
 		<include refid="DeveloperQuery" />
 	</select>
 
@@ -353,7 +353,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+	<select id="selectESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
 		<include refid="ESBulk" />
 	</select>
 
@@ -371,7 +371,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByOpenQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+	<select id="selectOpenQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
 		<include refid="OpenQuery" />
 	</select>
 
@@ -389,7 +389,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByPOQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+	<select id="selectPOQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
 		<include refid="POQuery" />
 	</select>
 
@@ -407,7 +407,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductManagerQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+	<select id="selectProductManagerQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
 		<include refid="ProductManagerQuery" />
 	</select>
 
@@ -419,7 +419,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductPM"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+	<select id="selectProductPM"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
 		<include refid="ProductPM" />
 	</select>
 
@@ -440,7 +440,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductTeam"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+	<select id="selectProductTeam"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
 		<include refid="ProductTeam" />
 	</select>
 
@@ -458,7 +458,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByQDQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+	<select id="selectQDQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
 		<include refid="QDQuery" />
 	</select>
 
@@ -476,7 +476,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRDQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+	<select id="selectRDQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
 		<include refid="RDQuery" />
 	</select>
 
@@ -491,7 +491,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryBySimple"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+	<select id="selectSimple"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
 		<include refid="Simple" />
 	</select>
 
@@ -509,7 +509,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByStoryCurProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+	<select id="selectStoryCurProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
 		<include refid="StoryCurProject" />
 	</select>
 
@@ -524,7 +524,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
 		<include refid="View" />
 	</select>
 

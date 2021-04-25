@@ -39,8 +39,8 @@ public interface IWebHookService extends IService<WebHook> {
     boolean save(WebHook et);
     void saveBatch(List<WebHook> list);
     List<WebHook> select(WebHookSearchContext context);
-    List<WebHook> selectQueryByDefault(WebHookSearchContext context);
-    List<WebHook> selectQueryByView(WebHookSearchContext context);
+    List<WebHook> selectDefault(WebHookSearchContext context);
+    List<WebHook> selectView(WebHookSearchContext context);
 
     Page<WebHook> searchDefault(WebHookSearchContext context);
     WebHook dynamicCall(Long key, String action, WebHook et);

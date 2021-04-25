@@ -214,14 +214,14 @@ public class IBZProTranslatorServiceImpl extends ServiceImpl<IBZProTranslatorMap
 
 
 
-    public List<IBZProTranslator> selectQueryByDefault(IBZProTranslatorSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IBZProTranslator> selectDefault(IBZProTranslatorSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IBZProTranslator> selectQueryBySimple(IBZProTranslatorSearchContext context){
-        return baseMapper.selectQueryBySimple(context, context.getSelectCond());
+    public List<IBZProTranslator> selectSimple(IBZProTranslatorSearchContext context){
+        return baseMapper.selectSimple(context, context.getSelectCond());
     }
-    public List<IBZProTranslator> selectQueryByView(IBZProTranslatorSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IBZProTranslator> selectView(IBZProTranslatorSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

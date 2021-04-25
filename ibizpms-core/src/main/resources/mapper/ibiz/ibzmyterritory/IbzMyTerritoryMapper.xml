@@ -97,7 +97,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext" resultMap="IbzMyTerritoryResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext" resultMap="IbzMyTerritoryResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -109,7 +109,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyWork"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext" resultMap="IbzMyTerritoryResultMap">
+	<select id="selectMyWork"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext" resultMap="IbzMyTerritoryResultMap">
 		<include refid="MyWork" />
 	</select>
 
@@ -121,7 +121,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyWorkMob"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext" resultMap="IbzMyTerritoryResultMap">
+	<select id="selectMyWorkMob"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext" resultMap="IbzMyTerritoryResultMap">
 		<include refid="MyWorkMob" />
 	</select>
 
@@ -133,7 +133,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyWorkPm"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext" resultMap="IbzMyTerritoryResultMap">
+	<select id="selectMyWorkPm"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext" resultMap="IbzMyTerritoryResultMap">
 		<include refid="MyWorkPm" />
 	</select>
 
@@ -145,7 +145,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByPersonInfo"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext" resultMap="IbzMyTerritoryResultMap">
+	<select id="selectPersonInfo"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext" resultMap="IbzMyTerritoryResultMap">
 		<include refid="PersonInfo" />
 	</select>
 
@@ -157,7 +157,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext" resultMap="IbzMyTerritoryResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext" resultMap="IbzMyTerritoryResultMap">
 		<include refid="View" />
 	</select>
 
@@ -169,7 +169,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByWelcome"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext" resultMap="IbzMyTerritoryResultMap">
+	<select id="selectWelcome"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext" resultMap="IbzMyTerritoryResultMap">
 		<include refid="Welcome" />
 	</select>
 

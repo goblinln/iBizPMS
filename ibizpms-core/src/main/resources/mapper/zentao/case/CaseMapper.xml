@@ -382,7 +382,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBatchNew"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectBatchNew"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="BatchNew" />
 	</select>
 
@@ -400,7 +400,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurOpenedCase"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectCurOpenedCase"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="CurOpenedCase" />
 	</select>
 
@@ -418,7 +418,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurSuite"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectCurSuite"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="CurSuite" />
 	</select>
 
@@ -436,7 +436,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurTestTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectCurTestTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="CurTestTask" />
 	</select>
 
@@ -451,7 +451,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -463,7 +463,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectESBulk"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="ESBulk" />
 	</select>
 
@@ -481,7 +481,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByModuleRePortCase"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectModuleRePortCase"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="ModuleRePortCase" />
 	</select>
 
@@ -493,7 +493,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByModuleRePortCaseEntry"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectModuleRePortCaseEntry"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="ModuleRePortCaseEntry" />
 	</select>
 
@@ -511,7 +511,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByModuleRePortCase_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectModuleRePortCase_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="ModuleRePortCase_Project" />
 	</select>
 
@@ -529,7 +529,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyFavorite"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectMyFavorite"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="MyFavorite" />
 	</select>
 
@@ -547,7 +547,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByNotCurTestSuite"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectNotCurTestSuite"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="NotCurTestSuite" />
 	</select>
 
@@ -568,7 +568,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByNotCurTestTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectNotCurTestTask"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="NotCurTestTask" />
 	</select>
 
@@ -589,7 +589,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByNotCurTestTaskProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectNotCurTestTaskProject"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="NotCurTestTaskProject" />
 	</select>
 
@@ -607,7 +607,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRePortCase"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectRePortCase"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="RePortCase" />
 	</select>
 
@@ -619,7 +619,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRePortCaseEntry"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectRePortCaseEntry"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="RePortCaseEntry" />
 	</select>
 
@@ -637,7 +637,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRePortCase_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectRePortCase_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="RePortCase_Project" />
 	</select>
 
@@ -655,7 +655,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRunERRePortCase"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectRunERRePortCase"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="RunERRePortCase" />
 	</select>
 
@@ -667,7 +667,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRunERRePortCaseEntry"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectRunERRePortCaseEntry"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="RunERRePortCaseEntry" />
 	</select>
 
@@ -685,7 +685,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRunERRePortCase_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectRunERRePortCase_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="RunERRePortCase_Project" />
 	</select>
 
@@ -703,7 +703,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRunRePortCase"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectRunRePortCase"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="RunRePortCase" />
 	</select>
 
@@ -715,7 +715,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRunRePortCaseEntry"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectRunRePortCaseEntry"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="RunRePortCaseEntry" />
 	</select>
 
@@ -733,7 +733,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRunRePortCase_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectRunRePortCase_Project"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="RunRePortCase_Project" />
 	</select>
 
@@ -748,7 +748,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseSearchContext" resultMap="CaseResultMap">
 		<include refid="View" />
 	</select>
 

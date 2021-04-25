@@ -225,11 +225,11 @@ public class RepoFilesServiceImpl extends ServiceImpl<RepoFilesMapper, RepoFiles
     }
 
 
-    public List<RepoFiles> selectQueryByDefault(RepoFilesSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<RepoFiles> selectDefault(RepoFilesSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<RepoFiles> selectQueryByView(RepoFilesSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<RepoFiles> selectView(RepoFilesSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

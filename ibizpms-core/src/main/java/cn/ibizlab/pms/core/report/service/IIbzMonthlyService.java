@@ -51,14 +51,14 @@ public interface IIbzMonthlyService extends IService<IbzMonthly> {
     IbzMonthly submit(IbzMonthly et);
     boolean submitBatch(List<IbzMonthly> etList);
     List<IbzMonthly> select(IbzMonthlySearchContext context);
-    List<IbzMonthly> selectQueryByDefault(IbzMonthlySearchContext context);
-    List<IbzMonthly> selectQueryByMyMonthly(IbzMonthlySearchContext context);
-    List<IbzMonthly> selectQueryByMyMonthlyMob(IbzMonthlySearchContext context);
-    List<IbzMonthly> selectQueryByMyReceivedMonthly(IbzMonthlySearchContext context);
-    List<IbzMonthly> selectQueryByMySubmitMonthly(IbzMonthlySearchContext context);
-    List<IbzMonthly> selectQueryByProductMonthly(IbzMonthlySearchContext context);
-    List<IbzMonthly> selectQueryByProjectMonthly(IbzMonthlySearchContext context);
-    List<IbzMonthly> selectQueryByView(IbzMonthlySearchContext context);
+    List<IbzMonthly> selectDefault(IbzMonthlySearchContext context);
+    List<IbzMonthly> selectMyMonthly(IbzMonthlySearchContext context);
+    List<IbzMonthly> selectMyMonthlyMob(IbzMonthlySearchContext context);
+    List<IbzMonthly> selectMyReceivedMonthly(IbzMonthlySearchContext context);
+    List<IbzMonthly> selectMySubmitMonthly(IbzMonthlySearchContext context);
+    List<IbzMonthly> selectProductMonthly(IbzMonthlySearchContext context);
+    List<IbzMonthly> selectProjectMonthly(IbzMonthlySearchContext context);
+    List<IbzMonthly> selectView(IbzMonthlySearchContext context);
 
     Page<IbzMonthly> searchDefault(IbzMonthlySearchContext context);
     Page<IbzMonthly> searchMyMonthly(IbzMonthlySearchContext context);

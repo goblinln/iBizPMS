@@ -70,7 +70,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurUserTemplet"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzPlanTempletSearchContext" resultMap="IbzPlanTempletResultMap">
+	<select id="selectCurUserTemplet"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzPlanTempletSearchContext" resultMap="IbzPlanTempletResultMap">
 		<include refid="CurUserTemplet" />
 	</select>
 
@@ -82,7 +82,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzPlanTempletSearchContext" resultMap="IbzPlanTempletResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzPlanTempletSearchContext" resultMap="IbzPlanTempletResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -94,7 +94,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzPlanTempletSearchContext" resultMap="IbzPlanTempletResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzPlanTempletSearchContext" resultMap="IbzPlanTempletResultMap">
 		<include refid="View" />
 	</select>
 

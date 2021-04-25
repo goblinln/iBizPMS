@@ -39,8 +39,8 @@ public interface IIbzTopService extends IService<IbzTop> {
     boolean save(IbzTop et);
     void saveBatch(List<IbzTop> list);
     List<IbzTop> select(IbzTopSearchContext context);
-    List<IbzTop> selectQueryByDefault(IbzTopSearchContext context);
-    List<IbzTop> selectQueryByView(IbzTopSearchContext context);
+    List<IbzTop> selectDefault(IbzTopSearchContext context);
+    List<IbzTop> selectView(IbzTopSearchContext context);
 
     Page<IbzTop> searchDefault(IbzTopSearchContext context);
     IbzTop dynamicCall(String key, String action, IbzTop et);

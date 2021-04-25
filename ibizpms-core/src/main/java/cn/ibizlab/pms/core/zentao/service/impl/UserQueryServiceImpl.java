@@ -214,11 +214,11 @@ public class UserQueryServiceImpl extends ServiceImpl<UserQueryMapper, UserQuery
 
 
 
-    public List<UserQuery> selectQueryByDefault(UserQuerySearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<UserQuery> selectDefault(UserQuerySearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<UserQuery> selectQueryByView(UserQuerySearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<UserQuery> selectView(UserQuerySearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

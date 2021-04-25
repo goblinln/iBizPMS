@@ -19,13 +19,13 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface BuildMapper extends BaseMapper<Build> {
 
-    List<Build> selectQueryByBugProductBuild(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
-    List<Build> selectQueryByCurProduct(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
-    List<Build> selectQueryByDefault(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
-    List<Build> selectQueryByTestBuild(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
-    List<Build> selectQueryByTestRounds(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
-    List<Build> selectQueryByUpdateLog(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
-    List<Build> selectQueryByView(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
+    List<Build> selectBugProductBuild(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
+    List<Build> selectCurProduct(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
+    List<Build> selectDefault(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
+    List<Build> selectTestBuild(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
+    List<Build> selectTestRounds(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
+    List<Build> selectUpdateLog(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
+    List<Build> selectView(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
 
     Page<Build> searchBugProductBuild(IPage page, @Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
     Page<Build> searchCurProduct(IPage page, @Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);

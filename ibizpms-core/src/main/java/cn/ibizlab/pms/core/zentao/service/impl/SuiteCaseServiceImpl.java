@@ -271,11 +271,11 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     }
 
 
-    public List<SuiteCase> selectQueryByDefault(SuiteCaseSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<SuiteCase> selectDefault(SuiteCaseSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<SuiteCase> selectQueryByView(SuiteCaseSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<SuiteCase> selectView(SuiteCaseSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

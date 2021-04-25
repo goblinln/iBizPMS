@@ -214,11 +214,11 @@ public class UserGroupServiceImpl extends ServiceImpl<UserGroupMapper, UserGroup
 
 
 
-    public List<UserGroup> selectQueryByDefault(UserGroupSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<UserGroup> selectDefault(UserGroupSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<UserGroup> selectQueryByView(UserGroupSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<UserGroup> selectView(UserGroupSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

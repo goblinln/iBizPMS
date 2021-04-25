@@ -106,13 +106,13 @@ public class BranchRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     public List<Branch> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         BranchSearchContext searchContext = (BranchSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("CurProduct"))
-            return branchService.selectQueryByCurProduct(searchContext);
+            return branchService.selectCurProduct(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return branchService.selectQueryByDefault(searchContext);
+            return branchService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("DefaultBranch"))
-            return branchService.selectQueryByDefaultBranch(searchContext);
+            return branchService.selectDefaultBranch(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return branchService.selectQueryByView(searchContext);
+            return branchService.selectView(searchContext);
         return null;
     }
 

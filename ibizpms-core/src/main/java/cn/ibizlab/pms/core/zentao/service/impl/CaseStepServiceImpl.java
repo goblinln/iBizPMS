@@ -326,26 +326,26 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
 	}
 
 
-    public List<CaseStep> selectQueryByCurTest(CaseStepSearchContext context){
-        return baseMapper.selectQueryByCurTest(context, context.getSelectCond());
+    public List<CaseStep> selectCurTest(CaseStepSearchContext context){
+        return baseMapper.selectCurTest(context, context.getSelectCond());
     }
-    public List<CaseStep> selectQueryByDefault(CaseStepSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<CaseStep> selectDefault(CaseStepSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<CaseStep> selectQueryByDefault1(CaseStepSearchContext context){
-        return baseMapper.selectQueryByDefault1(context, context.getSelectCond());
+    public List<CaseStep> selectDefault1(CaseStepSearchContext context){
+        return baseMapper.selectDefault1(context, context.getSelectCond());
     }
-    public List<CaseStep> selectQueryByMob(CaseStepSearchContext context){
-        return baseMapper.selectQueryByMob(context, context.getSelectCond());
+    public List<CaseStep> selectMob(CaseStepSearchContext context){
+        return baseMapper.selectMob(context, context.getSelectCond());
     }
-    public List<CaseStep> selectQueryByVersion(CaseStepSearchContext context){
-        return baseMapper.selectQueryByVersion(context, context.getSelectCond());
+    public List<CaseStep> selectVersion(CaseStepSearchContext context){
+        return baseMapper.selectVersion(context, context.getSelectCond());
     }
-    public List<CaseStep> selectQueryByVersions(CaseStepSearchContext context){
-        return baseMapper.selectQueryByVersions(context, context.getSelectCond());
+    public List<CaseStep> selectVersions(CaseStepSearchContext context){
+        return baseMapper.selectVersions(context, context.getSelectCond());
     }
-    public List<CaseStep> selectQueryByView(CaseStepSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<CaseStep> selectView(CaseStepSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

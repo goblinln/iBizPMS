@@ -39,8 +39,8 @@ public interface IIbiLoginService extends IService<IbiLogin> {
     IbiLogin ztlogin(IbiLogin et);
     boolean ztloginBatch(List<IbiLogin> etList);
     List<IbiLogin> select(IbiLoginSearchContext context);
-    List<IbiLogin> selectQueryByDefault(IbiLoginSearchContext context);
-    List<IbiLogin> selectQueryByView(IbiLoginSearchContext context);
+    List<IbiLogin> selectDefault(IbiLoginSearchContext context);
+    List<IbiLogin> selectView(IbiLoginSearchContext context);
 
     Page<IbiLogin> searchDefault(IbiLoginSearchContext context);
     IbiLogin dynamicCall(Long key, String action, IbiLogin et);

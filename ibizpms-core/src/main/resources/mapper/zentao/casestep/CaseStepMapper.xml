@@ -125,7 +125,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurTest"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext" resultMap="CaseStepResultMap">
+	<select id="selectCurTest"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext" resultMap="CaseStepResultMap">
 		<include refid="CurTest" />
 	</select>
 
@@ -137,7 +137,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext" resultMap="CaseStepResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext" resultMap="CaseStepResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -149,7 +149,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault1"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext" resultMap="CaseStepResultMap">
+	<select id="selectDefault1"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext" resultMap="CaseStepResultMap">
 		<include refid="Default1" />
 	</select>
 
@@ -161,7 +161,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMob"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext" resultMap="CaseStepResultMap">
+	<select id="selectMob"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext" resultMap="CaseStepResultMap">
 		<include refid="Mob" />
 	</select>
 
@@ -173,7 +173,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByVersion"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext" resultMap="CaseStepResultMap">
+	<select id="selectVersion"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext" resultMap="CaseStepResultMap">
 		<include refid="Version" />
 	</select>
 
@@ -185,7 +185,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByVersions"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext" resultMap="CaseStepResultMap">
+	<select id="selectVersions"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext" resultMap="CaseStepResultMap">
 		<include refid="Versions" />
 	</select>
 
@@ -197,7 +197,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext" resultMap="CaseStepResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.CaseStepSearchContext" resultMap="CaseStepResultMap">
 		<include refid="View" />
 	</select>
 

@@ -244,17 +244,17 @@ public class IbzReportServiceImpl extends ServiceImpl<IbzReportMapper, IbzReport
 
 
 
-    public List<IbzReport> selectQueryByAllReport(IbzReportSearchContext context){
-        return baseMapper.selectQueryByAllReport(context, context.getSelectCond());
+    public List<IbzReport> selectAllReport(IbzReportSearchContext context){
+        return baseMapper.selectAllReport(context, context.getSelectCond());
     }
-    public List<IbzReport> selectQueryByDefault(IbzReportSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IbzReport> selectDefault(IbzReportSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IbzReport> selectQueryByMyReAllReport(IbzReportSearchContext context){
-        return baseMapper.selectQueryByMyReAllReport(context, context.getSelectCond());
+    public List<IbzReport> selectMyReAllReport(IbzReportSearchContext context){
+        return baseMapper.selectMyReAllReport(context, context.getSelectCond());
     }
-    public List<IbzReport> selectQueryByView(IbzReportSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IbzReport> selectView(IbzReportSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

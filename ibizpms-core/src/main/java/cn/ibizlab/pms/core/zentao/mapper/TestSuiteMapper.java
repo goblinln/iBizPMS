@@ -19,9 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface TestSuiteMapper extends BaseMapper<TestSuite> {
 
-    List<TestSuite> selectQueryByDefault(@Param("srf") TestSuiteSearchContext context, @Param("ew") Wrapper<TestSuite> wrapper);
-    List<TestSuite> selectQueryByPublicTestSuite(@Param("srf") TestSuiteSearchContext context, @Param("ew") Wrapper<TestSuite> wrapper);
-    List<TestSuite> selectQueryByView(@Param("srf") TestSuiteSearchContext context, @Param("ew") Wrapper<TestSuite> wrapper);
+    List<TestSuite> selectDefault(@Param("srf") TestSuiteSearchContext context, @Param("ew") Wrapper<TestSuite> wrapper);
+    List<TestSuite> selectPublicTestSuite(@Param("srf") TestSuiteSearchContext context, @Param("ew") Wrapper<TestSuite> wrapper);
+    List<TestSuite> selectView(@Param("srf") TestSuiteSearchContext context, @Param("ew") Wrapper<TestSuite> wrapper);
 
     Page<TestSuite> searchDefault(IPage page, @Param("srf") TestSuiteSearchContext context, @Param("ew") Wrapper<TestSuite> wrapper);
     Page<TestSuite> searchPublicTestSuite(IPage page, @Param("srf") TestSuiteSearchContext context, @Param("ew") Wrapper<TestSuite> wrapper);

@@ -53,9 +53,9 @@ public interface ITestTaskService extends IService<TestTask> {
     TestTask unlinkCase(TestTask et);
     boolean unlinkCaseBatch(List<TestTask> etList);
     List<TestTask> select(TestTaskSearchContext context);
-    List<TestTask> selectQueryByDefault(TestTaskSearchContext context);
-    List<TestTask> selectQueryByMyTestTaskPc(TestTaskSearchContext context);
-    List<TestTask> selectQueryByView(TestTaskSearchContext context);
+    List<TestTask> selectDefault(TestTaskSearchContext context);
+    List<TestTask> selectMyTestTaskPc(TestTaskSearchContext context);
+    List<TestTask> selectView(TestTaskSearchContext context);
 
     Page<TestTask> searchDefault(TestTaskSearchContext context);
     Page<TestTask> searchMyTestTaskPc(TestTaskSearchContext context);

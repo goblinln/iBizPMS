@@ -116,23 +116,23 @@ public class ActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     public List<Action> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         ActionSearchContext searchContext = (ActionSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("BianGengLineHistory"))
-            return actionService.selectQueryByBianGengLineHistory(searchContext);
+            return actionService.selectBianGengLineHistory(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return actionService.selectQueryByDefault(searchContext);
+            return actionService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("MobType"))
-            return actionService.selectQueryByMobType(searchContext);
+            return actionService.selectMobType(searchContext);
         if (iPSDataQuery.getName().equals("MyTrends"))
-            return actionService.selectQueryByMyTrends(searchContext);
+            return actionService.selectMyTrends(searchContext);
         if (iPSDataQuery.getName().equals("ProductTrends"))
-            return actionService.selectQueryByProductTrends(searchContext);
+            return actionService.selectProductTrends(searchContext);
         if (iPSDataQuery.getName().equals("ProjectTrends"))
-            return actionService.selectQueryByProjectTrends(searchContext);
+            return actionService.selectProjectTrends(searchContext);
         if (iPSDataQuery.getName().equals("QueryUserYEAR"))
-            return actionService.selectQueryByQueryUserYEAR(searchContext);
+            return actionService.selectQueryUserYEAR(searchContext);
         if (iPSDataQuery.getName().equals("Type"))
-            return actionService.selectQueryByType(searchContext);
+            return actionService.selectType(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return actionService.selectQueryByView(searchContext);
+            return actionService.selectView(searchContext);
         return null;
     }
 

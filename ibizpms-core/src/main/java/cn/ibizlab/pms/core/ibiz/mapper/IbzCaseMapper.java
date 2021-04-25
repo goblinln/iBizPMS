@@ -19,8 +19,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IbzCaseMapper extends BaseMapper<IbzCase> {
 
-    List<IbzCase> selectQueryByDefault(@Param("srf") IbzCaseSearchContext context, @Param("ew") Wrapper<IbzCase> wrapper);
-    List<IbzCase> selectQueryByView(@Param("srf") IbzCaseSearchContext context, @Param("ew") Wrapper<IbzCase> wrapper);
+    List<IbzCase> selectDefault(@Param("srf") IbzCaseSearchContext context, @Param("ew") Wrapper<IbzCase> wrapper);
+    List<IbzCase> selectView(@Param("srf") IbzCaseSearchContext context, @Param("ew") Wrapper<IbzCase> wrapper);
 
     Page<IbzCase> searchDefault(IPage page, @Param("srf") IbzCaseSearchContext context, @Param("ew") Wrapper<IbzCase> wrapper);
     @Override

@@ -214,14 +214,14 @@ public class ProjectTaskestimateServiceImpl extends ServiceImpl<ProjectTaskestim
 
 
 
-    public List<ProjectTaskestimate> selectQueryByAccountDetail(ProjectTaskestimateSearchContext context){
-        return baseMapper.selectQueryByAccountDetail(context, context.getSelectCond());
+    public List<ProjectTaskestimate> selectAccountDetail(ProjectTaskestimateSearchContext context){
+        return baseMapper.selectAccountDetail(context, context.getSelectCond());
     }
-    public List<ProjectTaskestimate> selectQueryByDefault(ProjectTaskestimateSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<ProjectTaskestimate> selectDefault(ProjectTaskestimateSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<ProjectTaskestimate> selectQueryByView(ProjectTaskestimateSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<ProjectTaskestimate> selectView(ProjectTaskestimateSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

@@ -162,7 +162,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBugProductBuild"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext" resultMap="BuildResultMap">
+	<select id="selectBugProductBuild"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext" resultMap="BuildResultMap">
 		<include refid="BugProductBuild" />
 	</select>
 
@@ -180,7 +180,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurProduct"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext" resultMap="BuildResultMap">
+	<select id="selectCurProduct"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext" resultMap="BuildResultMap">
 		<include refid="CurProduct" />
 	</select>
 
@@ -195,7 +195,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext" resultMap="BuildResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext" resultMap="BuildResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -210,7 +210,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByTestBuild"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext" resultMap="BuildResultMap">
+	<select id="selectTestBuild"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext" resultMap="BuildResultMap">
 		<include refid="TestBuild" />
 	</select>
 
@@ -228,7 +228,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByTestRounds"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext" resultMap="BuildResultMap">
+	<select id="selectTestRounds"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext" resultMap="BuildResultMap">
 		<include refid="TestRounds" />
 	</select>
 
@@ -243,7 +243,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByUpdateLog"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext" resultMap="BuildResultMap">
+	<select id="selectUpdateLog"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext" resultMap="BuildResultMap">
 		<include refid="UpdateLog" />
 	</select>
 
@@ -258,7 +258,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext" resultMap="BuildResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.BuildSearchContext" resultMap="BuildResultMap">
 		<include refid="View" />
 	</select>
 

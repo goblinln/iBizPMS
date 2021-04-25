@@ -247,14 +247,14 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     }
 
 
-    public List<EmpLoyeeload> selectQueryByDefault(EmpLoyeeloadSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<EmpLoyeeload> selectDefault(EmpLoyeeloadSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<EmpLoyeeload> selectQueryByGETWOERKLOAD(EmpLoyeeloadSearchContext context){
-        return baseMapper.selectQueryByGETWOERKLOAD(context, context.getSelectCond());
+    public List<EmpLoyeeload> selectGETWOERKLOAD(EmpLoyeeloadSearchContext context){
+        return baseMapper.selectGETWOERKLOAD(context, context.getSelectCond());
     }
-    public List<EmpLoyeeload> selectQueryByView(EmpLoyeeloadSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<EmpLoyeeload> selectView(EmpLoyeeloadSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

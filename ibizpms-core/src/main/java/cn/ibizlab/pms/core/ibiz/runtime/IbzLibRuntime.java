@@ -104,9 +104,9 @@ public class IbzLibRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     public List<IbzLib> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         IbzLibSearchContext searchContext = (IbzLibSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return ibzlibService.selectQueryByDefault(searchContext);
+            return ibzlibService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return ibzlibService.selectQueryByView(searchContext);
+            return ibzlibService.selectView(searchContext);
         return null;
     }
 

@@ -104,9 +104,9 @@ public class JenkinsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     public List<Jenkins> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         JenkinsSearchContext searchContext = (JenkinsSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return jenkinsService.selectQueryByDefault(searchContext);
+            return jenkinsService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return jenkinsService.selectQueryByView(searchContext);
+            return jenkinsService.selectView(searchContext);
         return null;
     }
 

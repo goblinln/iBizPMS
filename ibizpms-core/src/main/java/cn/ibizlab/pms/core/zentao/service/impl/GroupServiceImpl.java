@@ -214,11 +214,11 @@ public class GroupServiceImpl extends ServiceImpl<GroupMapper, Group> implements
 
 
 
-    public List<Group> selectQueryByDefault(GroupSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Group> selectDefault(GroupSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Group> selectQueryByView(GroupSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Group> selectView(GroupSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

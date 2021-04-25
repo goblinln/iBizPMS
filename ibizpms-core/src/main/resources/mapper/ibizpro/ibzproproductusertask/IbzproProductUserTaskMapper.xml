@@ -70,7 +70,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzproProductUserTaskSearchContext" resultMap="IbzproProductUserTaskResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzproProductUserTaskSearchContext" resultMap="IbzproProductUserTaskResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -82,7 +82,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductDailyUserTaskStats"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzproProductUserTaskSearchContext" resultMap="IbzproProductUserTaskResultMap">
+	<select id="selectProductDailyUserTaskStats"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzproProductUserTaskSearchContext" resultMap="IbzproProductUserTaskResultMap">
 		<include refid="ProductDailyUserTaskStats" />
 	</select>
 
@@ -94,7 +94,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductMonthlyUserTaskStats"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzproProductUserTaskSearchContext" resultMap="IbzproProductUserTaskResultMap">
+	<select id="selectProductMonthlyUserTaskStats"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzproProductUserTaskSearchContext" resultMap="IbzproProductUserTaskResultMap">
 		<include refid="ProductMonthlyUserTaskStats" />
 	</select>
 
@@ -106,7 +106,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductWeeklyUserTaskStats"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzproProductUserTaskSearchContext" resultMap="IbzproProductUserTaskResultMap">
+	<select id="selectProductWeeklyUserTaskStats"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzproProductUserTaskSearchContext" resultMap="IbzproProductUserTaskResultMap">
 		<include refid="ProductWeeklyUserTaskStats" />
 	</select>
 
@@ -118,7 +118,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzproProductUserTaskSearchContext" resultMap="IbzproProductUserTaskResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibizpro.filter.IbzproProductUserTaskSearchContext" resultMap="IbzproProductUserTaskResultMap">
 		<include refid="View" />
 	</select>
 

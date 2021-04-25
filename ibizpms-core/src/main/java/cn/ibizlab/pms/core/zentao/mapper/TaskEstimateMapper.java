@@ -19,14 +19,14 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface TaskEstimateMapper extends BaseMapper<TaskEstimate> {
 
-    List<TaskEstimate> selectQueryByActionMonth(@Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
-    List<TaskEstimate> selectQueryByActionYear(@Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
-    List<TaskEstimate> selectQueryByDefault(@Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
-    List<TaskEstimate> selectQueryByDefaults(@Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
-    List<TaskEstimate> selectQueryByProjectActionMonth(@Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
-    List<TaskEstimate> selectQueryByProjectActionYear(@Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
-    List<TaskEstimate> selectQueryByProjectTaskEstimate(@Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
-    List<TaskEstimate> selectQueryByView(@Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
+    List<TaskEstimate> selectActionMonth(@Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
+    List<TaskEstimate> selectActionYear(@Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
+    List<TaskEstimate> selectDefault(@Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
+    List<TaskEstimate> selectDefaults(@Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
+    List<TaskEstimate> selectProjectActionMonth(@Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
+    List<TaskEstimate> selectProjectActionYear(@Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
+    List<TaskEstimate> selectProjectTaskEstimate(@Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
+    List<TaskEstimate> selectView(@Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
 
     Page<TaskEstimate> searchActionMonth(IPage page, @Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);
     Page<TaskEstimate> searchActionYear(IPage page, @Param("srf") TaskEstimateSearchContext context, @Param("ew") Wrapper<TaskEstimate> wrapper);

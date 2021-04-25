@@ -214,11 +214,11 @@ public class IbzFavoritesServiceImpl extends ServiceImpl<IbzFavoritesMapper, Ibz
 
 
 
-    public List<IbzFavorites> selectQueryByDefault(IbzFavoritesSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IbzFavorites> selectDefault(IbzFavoritesSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IbzFavorites> selectQueryByView(IbzFavoritesSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IbzFavorites> selectView(IbzFavoritesSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

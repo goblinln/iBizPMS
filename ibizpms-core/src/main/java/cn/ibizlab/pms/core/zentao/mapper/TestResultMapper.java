@@ -19,9 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface TestResultMapper extends BaseMapper<TestResult> {
 
-    List<TestResult> selectQueryByCurTestRun(@Param("srf") TestResultSearchContext context, @Param("ew") Wrapper<TestResult> wrapper);
-    List<TestResult> selectQueryByDefault(@Param("srf") TestResultSearchContext context, @Param("ew") Wrapper<TestResult> wrapper);
-    List<TestResult> selectQueryByView(@Param("srf") TestResultSearchContext context, @Param("ew") Wrapper<TestResult> wrapper);
+    List<TestResult> selectCurTestRun(@Param("srf") TestResultSearchContext context, @Param("ew") Wrapper<TestResult> wrapper);
+    List<TestResult> selectDefault(@Param("srf") TestResultSearchContext context, @Param("ew") Wrapper<TestResult> wrapper);
+    List<TestResult> selectView(@Param("srf") TestResultSearchContext context, @Param("ew") Wrapper<TestResult> wrapper);
 
     Page<TestResult> searchCurTestRun(IPage page, @Param("srf") TestResultSearchContext context, @Param("ew") Wrapper<TestResult> wrapper);
     Page<TestResult> searchDefault(IPage page, @Param("srf") TestResultSearchContext context, @Param("ew") Wrapper<TestResult> wrapper);

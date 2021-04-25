@@ -19,18 +19,18 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ProjectStatsMapper extends BaseMapper<ProjectStats> {
 
-    List<ProjectStats> selectQueryByDefault(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
-    List<ProjectStats> selectQueryByNoOpenProduct(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
-    List<ProjectStats> selectQueryByProjectBugType(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
-    List<ProjectStats> selectQueryByProjectInputStats(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
-    List<ProjectStats> selectQueryByProjectProgress(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
-    List<ProjectStats> selectQueryByProjectQuality(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
-    List<ProjectStats> selectQueryByProjectStoryStageStats(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
-    List<ProjectStats> selectQueryByProjectStoryStatusStats(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
-    List<ProjectStats> selectQueryByProjectTaskCountByTaskStatus(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
-    List<ProjectStats> selectQueryByProjectTaskCountByType(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
-    List<ProjectStats> selectQueryByTaskTime(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
-    List<ProjectStats> selectQueryByView(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
+    List<ProjectStats> selectDefault(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
+    List<ProjectStats> selectNoOpenProduct(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
+    List<ProjectStats> selectProjectBugType(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
+    List<ProjectStats> selectProjectInputStats(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
+    List<ProjectStats> selectProjectProgress(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
+    List<ProjectStats> selectProjectQuality(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
+    List<ProjectStats> selectProjectStoryStageStats(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
+    List<ProjectStats> selectProjectStoryStatusStats(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
+    List<ProjectStats> selectProjectTaskCountByTaskStatus(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
+    List<ProjectStats> selectProjectTaskCountByType(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
+    List<ProjectStats> selectTaskTime(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
+    List<ProjectStats> selectView(@Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
 
     Page<ProjectStats> searchDefault(IPage page, @Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);
     Page<ProjectStats> searchNoOpenProduct(IPage page, @Param("srf") ProjectStatsSearchContext context, @Param("ew") Wrapper<ProjectStats> wrapper);

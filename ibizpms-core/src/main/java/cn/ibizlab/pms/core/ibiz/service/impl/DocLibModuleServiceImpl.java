@@ -337,38 +337,38 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
     }
 
 
-    public List<DocLibModule> selectQueryByAllDoclibModule_Custom(DocLibModuleSearchContext context){
-        return baseMapper.selectQueryByAllDoclibModule_Custom(context, context.getSelectCond());
+    public List<DocLibModule> selectAllDoclibModule_Custom(DocLibModuleSearchContext context){
+        return baseMapper.selectAllDoclibModule_Custom(context, context.getSelectCond());
     }
-    public List<DocLibModule> selectQueryByChildModuleByParent(DocLibModuleSearchContext context){
-        return baseMapper.selectQueryByChildModuleByParent(context, context.getSelectCond());
+    public List<DocLibModule> selectChildModuleByParent(DocLibModuleSearchContext context){
+        return baseMapper.selectChildModuleByParent(context, context.getSelectCond());
     }
-    public List<DocLibModule> selectQueryByChildModuleByRealParent(DocLibModuleSearchContext context){
-        return baseMapper.selectQueryByChildModuleByRealParent(context, context.getSelectCond());
+    public List<DocLibModule> selectChildModuleByRealParent(DocLibModuleSearchContext context){
+        return baseMapper.selectChildModuleByRealParent(context, context.getSelectCond());
     }
-    public List<DocLibModule> selectQueryByDefault(DocLibModuleSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<DocLibModule> selectDefault(DocLibModuleSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<DocLibModule> selectQueryByDefaultDoclib(DocLibModuleSearchContext context){
-        return baseMapper.selectQueryByDefaultDoclib(context, context.getSelectCond());
+    public List<DocLibModule> selectDefaultDoclib(DocLibModuleSearchContext context){
+        return baseMapper.selectDefaultDoclib(context, context.getSelectCond());
     }
-    public List<DocLibModule> selectQueryByMyFavourites(DocLibModuleSearchContext context){
-        return baseMapper.selectQueryByMyFavourites(context, context.getSelectCond());
+    public List<DocLibModule> selectMyFavourites(DocLibModuleSearchContext context){
+        return baseMapper.selectMyFavourites(context, context.getSelectCond());
     }
-    public List<DocLibModule> selectQueryByParentModule(DocLibModuleSearchContext context){
-        return baseMapper.selectQueryByParentModule(context, context.getSelectCond());
+    public List<DocLibModule> selectParentModule(DocLibModuleSearchContext context){
+        return baseMapper.selectParentModule(context, context.getSelectCond());
     }
-    public List<DocLibModule> selectQueryByRootModuleMuLu(DocLibModuleSearchContext context){
-        return baseMapper.selectQueryByRootModuleMuLu(context, context.getSelectCond());
+    public List<DocLibModule> selectRootModuleMuLu(DocLibModuleSearchContext context){
+        return baseMapper.selectRootModuleMuLu(context, context.getSelectCond());
     }
-    public List<DocLibModule> selectQueryByRootModuleMuLuByRoot(DocLibModuleSearchContext context){
-        return baseMapper.selectQueryByRootModuleMuLuByRoot(context, context.getSelectCond());
+    public List<DocLibModule> selectRootModuleMuLuByRoot(DocLibModuleSearchContext context){
+        return baseMapper.selectRootModuleMuLuByRoot(context, context.getSelectCond());
     }
-    public List<DocLibModule> selectQueryByRootModuleMuLuBysrfparentkey(DocLibModuleSearchContext context){
-        return baseMapper.selectQueryByRootModuleMuLuBysrfparentkey(context, context.getSelectCond());
+    public List<DocLibModule> selectRootModuleMuLuBysrfparentkey(DocLibModuleSearchContext context){
+        return baseMapper.selectRootModuleMuLuBysrfparentkey(context, context.getSelectCond());
     }
-    public List<DocLibModule> selectQueryByView(DocLibModuleSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<DocLibModule> selectView(DocLibModuleSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

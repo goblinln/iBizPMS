@@ -315,29 +315,29 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
 
 
 
-    public List<IbzMonthly> selectQueryByDefault(IbzMonthlySearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IbzMonthly> selectDefault(IbzMonthlySearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IbzMonthly> selectQueryByMyMonthly(IbzMonthlySearchContext context){
-        return baseMapper.selectQueryByMyMonthly(context, context.getSelectCond());
+    public List<IbzMonthly> selectMyMonthly(IbzMonthlySearchContext context){
+        return baseMapper.selectMyMonthly(context, context.getSelectCond());
     }
-    public List<IbzMonthly> selectQueryByMyMonthlyMob(IbzMonthlySearchContext context){
-        return baseMapper.selectQueryByMyMonthlyMob(context, context.getSelectCond());
+    public List<IbzMonthly> selectMyMonthlyMob(IbzMonthlySearchContext context){
+        return baseMapper.selectMyMonthlyMob(context, context.getSelectCond());
     }
-    public List<IbzMonthly> selectQueryByMyReceivedMonthly(IbzMonthlySearchContext context){
-        return baseMapper.selectQueryByMyReceivedMonthly(context, context.getSelectCond());
+    public List<IbzMonthly> selectMyReceivedMonthly(IbzMonthlySearchContext context){
+        return baseMapper.selectMyReceivedMonthly(context, context.getSelectCond());
     }
-    public List<IbzMonthly> selectQueryByMySubmitMonthly(IbzMonthlySearchContext context){
-        return baseMapper.selectQueryByMySubmitMonthly(context, context.getSelectCond());
+    public List<IbzMonthly> selectMySubmitMonthly(IbzMonthlySearchContext context){
+        return baseMapper.selectMySubmitMonthly(context, context.getSelectCond());
     }
-    public List<IbzMonthly> selectQueryByProductMonthly(IbzMonthlySearchContext context){
-        return baseMapper.selectQueryByProductMonthly(context, context.getSelectCond());
+    public List<IbzMonthly> selectProductMonthly(IbzMonthlySearchContext context){
+        return baseMapper.selectProductMonthly(context, context.getSelectCond());
     }
-    public List<IbzMonthly> selectQueryByProjectMonthly(IbzMonthlySearchContext context){
-        return baseMapper.selectQueryByProjectMonthly(context, context.getSelectCond());
+    public List<IbzMonthly> selectProjectMonthly(IbzMonthlySearchContext context){
+        return baseMapper.selectProjectMonthly(context, context.getSelectCond());
     }
-    public List<IbzMonthly> selectQueryByView(IbzMonthlySearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IbzMonthly> selectView(IbzMonthlySearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

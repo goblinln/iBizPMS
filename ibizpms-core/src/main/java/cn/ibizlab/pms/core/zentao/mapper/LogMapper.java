@@ -19,8 +19,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface LogMapper extends BaseMapper<Log> {
 
-    List<Log> selectQueryByDefault(@Param("srf") LogSearchContext context, @Param("ew") Wrapper<Log> wrapper);
-    List<Log> selectQueryByView(@Param("srf") LogSearchContext context, @Param("ew") Wrapper<Log> wrapper);
+    List<Log> selectDefault(@Param("srf") LogSearchContext context, @Param("ew") Wrapper<Log> wrapper);
+    List<Log> selectView(@Param("srf") LogSearchContext context, @Param("ew") Wrapper<Log> wrapper);
 
     Page<Log> searchDefault(IPage page, @Param("srf") LogSearchContext context, @Param("ew") Wrapper<Log> wrapper);
     @Override

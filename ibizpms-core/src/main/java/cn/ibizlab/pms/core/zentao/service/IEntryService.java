@@ -39,8 +39,8 @@ public interface IEntryService extends IService<Entry> {
     boolean save(Entry et);
     void saveBatch(List<Entry> list);
     List<Entry> select(EntrySearchContext context);
-    List<Entry> selectQueryByDefault(EntrySearchContext context);
-    List<Entry> selectQueryByView(EntrySearchContext context);
+    List<Entry> selectDefault(EntrySearchContext context);
+    List<Entry> selectView(EntrySearchContext context);
 
     Page<Entry> searchDefault(EntrySearchContext context);
     Entry dynamicCall(Long key, String action, Entry et);

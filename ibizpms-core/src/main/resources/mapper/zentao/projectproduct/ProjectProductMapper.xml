@@ -128,7 +128,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectProductSearchContext" resultMap="ProjectProductResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectProductSearchContext" resultMap="ProjectProductResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -143,7 +143,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRelationPlan"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectProductSearchContext" resultMap="ProjectProductResultMap">
+	<select id="selectRelationPlan"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectProductSearchContext" resultMap="ProjectProductResultMap">
 		<include refid="RelationPlan" />
 	</select>
 
@@ -155,7 +155,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectProductSearchContext" resultMap="ProjectProductResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectProductSearchContext" resultMap="ProjectProductResultMap">
 		<include refid="View" />
 	</select>
 

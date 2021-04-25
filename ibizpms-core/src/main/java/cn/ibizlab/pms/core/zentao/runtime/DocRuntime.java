@@ -124,29 +124,29 @@ public class DocRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
     public List<Doc> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         DocSearchContext searchContext = (DocSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("ChildDocLibDoc"))
-            return docService.selectQueryByChildDocLibDoc(searchContext);
+            return docService.selectChildDocLibDoc(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return docService.selectQueryByDefault(searchContext);
+            return docService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("DocLibAndDoc"))
-            return docService.selectQueryByDocLibAndDoc(searchContext);
+            return docService.selectDocLibAndDoc(searchContext);
         if (iPSDataQuery.getName().equals("DocLibDoc"))
-            return docService.selectQueryByDocLibDoc(searchContext);
+            return docService.selectDocLibDoc(searchContext);
         if (iPSDataQuery.getName().equals("DocModuleDoc"))
-            return docService.selectQueryByDocModuleDoc(searchContext);
+            return docService.selectDocModuleDoc(searchContext);
         if (iPSDataQuery.getName().equals("DocStatus"))
-            return docService.selectQueryByDocStatus(searchContext);
+            return docService.selectDocStatus(searchContext);
         if (iPSDataQuery.getName().equals("ModuleDocChild"))
-            return docService.selectQueryByModuleDocChild(searchContext);
+            return docService.selectModuleDocChild(searchContext);
         if (iPSDataQuery.getName().equals("MYFAVOURITE"))
-            return docService.selectQueryByMyFavourite(searchContext);
+            return docService.selectMyFavourite(searchContext);
         if (iPSDataQuery.getName().equals("MyFavouritesOnlyDoc"))
-            return docService.selectQueryByMyFavouritesOnlyDoc(searchContext);
+            return docService.selectMyFavouritesOnlyDoc(searchContext);
         if (iPSDataQuery.getName().equals("NotRootDoc"))
-            return docService.selectQueryByNotRootDoc(searchContext);
+            return docService.selectNotRootDoc(searchContext);
         if (iPSDataQuery.getName().equals("RootDoc"))
-            return docService.selectQueryByRootDoc(searchContext);
+            return docService.selectRootDoc(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return docService.selectQueryByView(searchContext);
+            return docService.selectView(searchContext);
         return null;
     }
 

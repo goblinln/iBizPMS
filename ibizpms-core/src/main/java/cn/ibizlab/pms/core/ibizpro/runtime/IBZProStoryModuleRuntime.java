@@ -104,9 +104,9 @@ public class IBZProStoryModuleRuntime extends cn.ibizlab.pms.core.runtime.System
     public List<IBZProStoryModule> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         IBZProStoryModuleSearchContext searchContext = (IBZProStoryModuleSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return ibzprostorymoduleService.selectQueryByDefault(searchContext);
+            return ibzprostorymoduleService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return ibzprostorymoduleService.selectQueryByView(searchContext);
+            return ibzprostorymoduleService.selectView(searchContext);
         return null;
     }
 

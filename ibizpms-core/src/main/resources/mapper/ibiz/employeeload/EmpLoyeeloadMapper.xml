@@ -83,7 +83,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.EmpLoyeeloadSearchContext" resultMap="EmpLoyeeloadResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.EmpLoyeeloadSearchContext" resultMap="EmpLoyeeloadResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -95,7 +95,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByGETWOERKLOAD"  parameterType="cn.ibizlab.pms.core.ibiz.filter.EmpLoyeeloadSearchContext" resultMap="EmpLoyeeloadResultMap">
+	<select id="selectGETWOERKLOAD"  parameterType="cn.ibizlab.pms.core.ibiz.filter.EmpLoyeeloadSearchContext" resultMap="EmpLoyeeloadResultMap">
 		<include refid="GETWOERKLOAD" />
 	</select>
 
@@ -107,7 +107,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.EmpLoyeeloadSearchContext" resultMap="EmpLoyeeloadResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.EmpLoyeeloadSearchContext" resultMap="EmpLoyeeloadResultMap">
 		<include refid="View" />
 	</select>
 

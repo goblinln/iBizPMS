@@ -39,8 +39,8 @@ public interface ISysUpdateFeaturesService extends IService<SysUpdateFeatures> {
     boolean save(SysUpdateFeatures et);
     void saveBatch(List<SysUpdateFeatures> list);
     List<SysUpdateFeatures> select(SysUpdateFeaturesSearchContext context);
-    List<SysUpdateFeatures> selectQueryByDefault(SysUpdateFeaturesSearchContext context);
-    List<SysUpdateFeatures> selectQueryByView(SysUpdateFeaturesSearchContext context);
+    List<SysUpdateFeatures> selectDefault(SysUpdateFeaturesSearchContext context);
+    List<SysUpdateFeatures> selectView(SysUpdateFeaturesSearchContext context);
 
     Page<SysUpdateFeatures> searchDefault(SysUpdateFeaturesSearchContext context);
     List<SysUpdateFeatures> selectBySysupdatelogid(String sysupdatelogid);

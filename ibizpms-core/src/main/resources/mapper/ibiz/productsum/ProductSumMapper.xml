@@ -91,7 +91,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -103,7 +103,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductBugcnt_QA"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
+	<select id="selectProductBugcnt_QA"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
 		<include refid="ProductBugcnt_QA" />
 	</select>
 
@@ -115,7 +115,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductCreateStory"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
+	<select id="selectProductCreateStory"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
 		<include refid="ProductCreateStory" />
 	</select>
 
@@ -127,7 +127,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductPlancntAndStorycnt_PO"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
+	<select id="selectProductPlancntAndStorycnt_PO"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
 		<include refid="ProductPlancntAndStorycnt_PO" />
 	</select>
 
@@ -139,7 +139,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductStoryHoursSum"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
+	<select id="selectProductStoryHoursSum"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
 		<include refid="ProductStoryHoursSum" />
 	</select>
 
@@ -151,7 +151,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductStorySum"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
+	<select id="selectProductStorySum"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
 		<include refid="ProductStorySum" />
 	</select>
 
@@ -163,7 +163,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductSumBugType"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
+	<select id="selectProductSumBugType"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
 		<include refid="ProductSumBugType" />
 	</select>
 
@@ -175,7 +175,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext" resultMap="ProductSumResultMap">
 		<include refid="View" />
 	</select>
 

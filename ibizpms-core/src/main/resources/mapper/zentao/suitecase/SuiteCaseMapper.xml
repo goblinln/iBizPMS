@@ -87,7 +87,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.SuiteCaseSearchContext" resultMap="SuiteCaseResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.SuiteCaseSearchContext" resultMap="SuiteCaseResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -99,7 +99,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.SuiteCaseSearchContext" resultMap="SuiteCaseResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.SuiteCaseSearchContext" resultMap="SuiteCaseResultMap">
 		<include refid="View" />
 	</select>
 

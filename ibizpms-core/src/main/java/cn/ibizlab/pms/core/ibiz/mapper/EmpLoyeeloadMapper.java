@@ -19,9 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface EmpLoyeeloadMapper extends BaseMapper<EmpLoyeeload> {
 
-    List<EmpLoyeeload> selectQueryByDefault(@Param("srf") EmpLoyeeloadSearchContext context, @Param("ew") Wrapper<EmpLoyeeload> wrapper);
-    List<EmpLoyeeload> selectQueryByGETWOERKLOAD(@Param("srf") EmpLoyeeloadSearchContext context, @Param("ew") Wrapper<EmpLoyeeload> wrapper);
-    List<EmpLoyeeload> selectQueryByView(@Param("srf") EmpLoyeeloadSearchContext context, @Param("ew") Wrapper<EmpLoyeeload> wrapper);
+    List<EmpLoyeeload> selectDefault(@Param("srf") EmpLoyeeloadSearchContext context, @Param("ew") Wrapper<EmpLoyeeload> wrapper);
+    List<EmpLoyeeload> selectGETWOERKLOAD(@Param("srf") EmpLoyeeloadSearchContext context, @Param("ew") Wrapper<EmpLoyeeload> wrapper);
+    List<EmpLoyeeload> selectView(@Param("srf") EmpLoyeeloadSearchContext context, @Param("ew") Wrapper<EmpLoyeeload> wrapper);
 
     Page<EmpLoyeeload> searchDefault(IPage page, @Param("srf") EmpLoyeeloadSearchContext context, @Param("ew") Wrapper<EmpLoyeeload> wrapper);
     Page<EmpLoyeeload> searchGETWOERKLOAD(IPage page, @Param("srf") EmpLoyeeloadSearchContext context, @Param("ew") Wrapper<EmpLoyeeload> wrapper);

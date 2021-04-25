@@ -214,17 +214,17 @@ public class UserContactServiceImpl extends ServiceImpl<UserContactMapper, UserC
 
 
 
-    public List<UserContact> selectQueryByCurUSERCONTACT(UserContactSearchContext context){
-        return baseMapper.selectQueryByCurUSERCONTACT(context, context.getSelectCond());
+    public List<UserContact> selectCurUSERCONTACT(UserContactSearchContext context){
+        return baseMapper.selectCurUSERCONTACT(context, context.getSelectCond());
     }
-    public List<UserContact> selectQueryByDefault(UserContactSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<UserContact> selectDefault(UserContactSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<UserContact> selectQueryByMyUSERCONTACT(UserContactSearchContext context){
-        return baseMapper.selectQueryByMyUSERCONTACT(context, context.getSelectCond());
+    public List<UserContact> selectMyUSERCONTACT(UserContactSearchContext context){
+        return baseMapper.selectMyUSERCONTACT(context, context.getSelectCond());
     }
-    public List<UserContact> selectQueryByView(UserContactSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<UserContact> selectView(UserContactSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

@@ -214,11 +214,11 @@ public class RepoHistoryServiceImpl extends ServiceImpl<RepoHistoryMapper, RepoH
 
 
 
-    public List<RepoHistory> selectQueryByDefault(RepoHistorySearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<RepoHistory> selectDefault(RepoHistorySearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<RepoHistory> selectQueryByView(RepoHistorySearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<RepoHistory> selectView(RepoHistorySearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

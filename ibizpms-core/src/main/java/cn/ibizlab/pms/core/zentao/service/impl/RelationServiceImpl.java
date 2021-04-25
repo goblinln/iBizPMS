@@ -214,11 +214,11 @@ public class RelationServiceImpl extends ServiceImpl<RelationMapper, Relation> i
 
 
 
-    public List<Relation> selectQueryByDefault(RelationSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Relation> selectDefault(RelationSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Relation> selectQueryByView(RelationSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Relation> selectView(RelationSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

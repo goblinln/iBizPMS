@@ -214,11 +214,11 @@ public class LangServiceImpl extends ServiceImpl<LangMapper, Lang> implements IL
 
 
 
-    public List<Lang> selectQueryByDefault(LangSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Lang> selectDefault(LangSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Lang> selectQueryByView(LangSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Lang> selectView(LangSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

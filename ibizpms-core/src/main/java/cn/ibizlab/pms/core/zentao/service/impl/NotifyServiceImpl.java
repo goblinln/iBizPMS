@@ -214,11 +214,11 @@ public class NotifyServiceImpl extends ServiceImpl<NotifyMapper, Notify> impleme
 
 
 
-    public List<Notify> selectQueryByDefault(NotifySearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Notify> selectDefault(NotifySearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Notify> selectQueryByView(NotifySearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Notify> selectView(NotifySearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

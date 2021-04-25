@@ -214,20 +214,20 @@ public class ProductLifeServiceImpl extends ServiceImpl<ProductLifeMapper, Produ
 
 
 
-    public List<ProductLife> selectQueryByDefault(ProductLifeSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<ProductLife> selectDefault(ProductLifeSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<ProductLife> selectQueryByGetRoadmap(ProductLifeSearchContext context){
-        return baseMapper.selectQueryByGetRoadmap(context, context.getSelectCond());
+    public List<ProductLife> selectGetRoadmap(ProductLifeSearchContext context){
+        return baseMapper.selectGetRoadmap(context, context.getSelectCond());
     }
-    public List<ProductLife> selectQueryByGetRoadmapS(ProductLifeSearchContext context){
-        return baseMapper.selectQueryByGetRoadmapS(context, context.getSelectCond());
+    public List<ProductLife> selectGetRoadmapS(ProductLifeSearchContext context){
+        return baseMapper.selectGetRoadmapS(context, context.getSelectCond());
     }
-    public List<ProductLife> selectQueryByRoadMapYear(ProductLifeSearchContext context){
-        return baseMapper.selectQueryByRoadMapYear(context, context.getSelectCond());
+    public List<ProductLife> selectRoadMapYear(ProductLifeSearchContext context){
+        return baseMapper.selectRoadMapYear(context, context.getSelectCond());
     }
-    public List<ProductLife> selectQueryByView(ProductLifeSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<ProductLife> selectView(ProductLifeSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

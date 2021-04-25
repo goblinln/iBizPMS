@@ -229,41 +229,41 @@ public class ProjectStatsServiceImpl extends ServiceImpl<ProjectStatsMapper, Pro
 
 
 
-    public List<ProjectStats> selectQueryByDefault(ProjectStatsSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<ProjectStats> selectDefault(ProjectStatsSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<ProjectStats> selectQueryByNoOpenProduct(ProjectStatsSearchContext context){
-        return baseMapper.selectQueryByNoOpenProduct(context, context.getSelectCond());
+    public List<ProjectStats> selectNoOpenProduct(ProjectStatsSearchContext context){
+        return baseMapper.selectNoOpenProduct(context, context.getSelectCond());
     }
-    public List<ProjectStats> selectQueryByProjectBugType(ProjectStatsSearchContext context){
-        return baseMapper.selectQueryByProjectBugType(context, context.getSelectCond());
+    public List<ProjectStats> selectProjectBugType(ProjectStatsSearchContext context){
+        return baseMapper.selectProjectBugType(context, context.getSelectCond());
     }
-    public List<ProjectStats> selectQueryByProjectInputStats(ProjectStatsSearchContext context){
-        return baseMapper.selectQueryByProjectInputStats(context, context.getSelectCond());
+    public List<ProjectStats> selectProjectInputStats(ProjectStatsSearchContext context){
+        return baseMapper.selectProjectInputStats(context, context.getSelectCond());
     }
-    public List<ProjectStats> selectQueryByProjectProgress(ProjectStatsSearchContext context){
-        return baseMapper.selectQueryByProjectProgress(context, context.getSelectCond());
+    public List<ProjectStats> selectProjectProgress(ProjectStatsSearchContext context){
+        return baseMapper.selectProjectProgress(context, context.getSelectCond());
     }
-    public List<ProjectStats> selectQueryByProjectQuality(ProjectStatsSearchContext context){
-        return baseMapper.selectQueryByProjectQuality(context, context.getSelectCond());
+    public List<ProjectStats> selectProjectQuality(ProjectStatsSearchContext context){
+        return baseMapper.selectProjectQuality(context, context.getSelectCond());
     }
-    public List<ProjectStats> selectQueryByProjectStoryStageStats(ProjectStatsSearchContext context){
-        return baseMapper.selectQueryByProjectStoryStageStats(context, context.getSelectCond());
+    public List<ProjectStats> selectProjectStoryStageStats(ProjectStatsSearchContext context){
+        return baseMapper.selectProjectStoryStageStats(context, context.getSelectCond());
     }
-    public List<ProjectStats> selectQueryByProjectStoryStatusStats(ProjectStatsSearchContext context){
-        return baseMapper.selectQueryByProjectStoryStatusStats(context, context.getSelectCond());
+    public List<ProjectStats> selectProjectStoryStatusStats(ProjectStatsSearchContext context){
+        return baseMapper.selectProjectStoryStatusStats(context, context.getSelectCond());
     }
-    public List<ProjectStats> selectQueryByProjectTaskCountByTaskStatus(ProjectStatsSearchContext context){
-        return baseMapper.selectQueryByProjectTaskCountByTaskStatus(context, context.getSelectCond());
+    public List<ProjectStats> selectProjectTaskCountByTaskStatus(ProjectStatsSearchContext context){
+        return baseMapper.selectProjectTaskCountByTaskStatus(context, context.getSelectCond());
     }
-    public List<ProjectStats> selectQueryByProjectTaskCountByType(ProjectStatsSearchContext context){
-        return baseMapper.selectQueryByProjectTaskCountByType(context, context.getSelectCond());
+    public List<ProjectStats> selectProjectTaskCountByType(ProjectStatsSearchContext context){
+        return baseMapper.selectProjectTaskCountByType(context, context.getSelectCond());
     }
-    public List<ProjectStats> selectQueryByTaskTime(ProjectStatsSearchContext context){
-        return baseMapper.selectQueryByTaskTime(context, context.getSelectCond());
+    public List<ProjectStats> selectTaskTime(ProjectStatsSearchContext context){
+        return baseMapper.selectTaskTime(context, context.getSelectCond());
     }
-    public List<ProjectStats> selectQueryByView(ProjectStatsSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<ProjectStats> selectView(ProjectStatsSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

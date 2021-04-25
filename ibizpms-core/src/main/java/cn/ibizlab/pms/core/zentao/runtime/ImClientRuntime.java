@@ -104,9 +104,9 @@ public class ImClientRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     public List<ImClient> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         ImClientSearchContext searchContext = (ImClientSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return imclientService.selectQueryByDefault(searchContext);
+            return imclientService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return imclientService.selectQueryByView(searchContext);
+            return imclientService.selectView(searchContext);
         return null;
     }
 

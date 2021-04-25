@@ -67,7 +67,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.TaskStatsSearchContext" resultMap="TaskStatsResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.TaskStatsSearchContext" resultMap="TaskStatsResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -79,7 +79,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByTaskFinishHuiZong"  parameterType="cn.ibizlab.pms.core.ibiz.filter.TaskStatsSearchContext" resultMap="TaskStatsResultMap">
+	<select id="selectTaskFinishHuiZong"  parameterType="cn.ibizlab.pms.core.ibiz.filter.TaskStatsSearchContext" resultMap="TaskStatsResultMap">
 		<include refid="TaskFinishHuiZong" />
 	</select>
 
@@ -91,7 +91,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByUserFinishTaskSum"  parameterType="cn.ibizlab.pms.core.ibiz.filter.TaskStatsSearchContext" resultMap="TaskStatsResultMap">
+	<select id="selectUserFinishTaskSum"  parameterType="cn.ibizlab.pms.core.ibiz.filter.TaskStatsSearchContext" resultMap="TaskStatsResultMap">
 		<include refid="UserFinishTaskSum" />
 	</select>
 
@@ -103,7 +103,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.TaskStatsSearchContext" resultMap="TaskStatsResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.TaskStatsSearchContext" resultMap="TaskStatsResultMap">
 		<include refid="View" />
 	</select>
 

@@ -52,7 +52,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ImConferenceactionSearchContext" resultMap="ImConferenceactionResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ImConferenceactionSearchContext" resultMap="ImConferenceactionResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -64,7 +64,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ImConferenceactionSearchContext" resultMap="ImConferenceactionResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ImConferenceactionSearchContext" resultMap="ImConferenceactionResultMap">
 		<include refid="View" />
 	</select>
 

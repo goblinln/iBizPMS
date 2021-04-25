@@ -435,17 +435,17 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     }
 
 
-    public List<Release> selectQueryByDefault(ReleaseSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Release> selectDefault(ReleaseSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Release> selectQueryByGetList(ReleaseSearchContext context){
-        return baseMapper.selectQueryByGetList(context, context.getSelectCond());
+    public List<Release> selectGetList(ReleaseSearchContext context){
+        return baseMapper.selectGetList(context, context.getSelectCond());
     }
-    public List<Release> selectQueryByReportRelease(ReleaseSearchContext context){
-        return baseMapper.selectQueryByReportRelease(context, context.getSelectCond());
+    public List<Release> selectReportRelease(ReleaseSearchContext context){
+        return baseMapper.selectReportRelease(context, context.getSelectCond());
     }
-    public List<Release> selectQueryByView(ReleaseSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Release> selectView(ReleaseSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

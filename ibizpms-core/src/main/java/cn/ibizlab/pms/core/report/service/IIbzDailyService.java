@@ -53,14 +53,14 @@ public interface IIbzDailyService extends IService<IbzDaily> {
     IbzDaily submit(IbzDaily et);
     boolean submitBatch(List<IbzDaily> etList);
     List<IbzDaily> select(IbzDailySearchContext context);
-    List<IbzDaily> selectQueryByDefault(IbzDailySearchContext context);
-    List<IbzDaily> selectQueryByMyAllDaily(IbzDailySearchContext context);
-    List<IbzDaily> selectQueryByMyDaily(IbzDailySearchContext context);
-    List<IbzDaily> selectQueryByMyNotSubmit(IbzDailySearchContext context);
-    List<IbzDaily> selectQueryByMySubmitDaily(IbzDailySearchContext context);
-    List<IbzDaily> selectQueryByProductDaily(IbzDailySearchContext context);
-    List<IbzDaily> selectQueryByProjectDaily(IbzDailySearchContext context);
-    List<IbzDaily> selectQueryByView(IbzDailySearchContext context);
+    List<IbzDaily> selectDefault(IbzDailySearchContext context);
+    List<IbzDaily> selectMyAllDaily(IbzDailySearchContext context);
+    List<IbzDaily> selectMyDaily(IbzDailySearchContext context);
+    List<IbzDaily> selectMyNotSubmit(IbzDailySearchContext context);
+    List<IbzDaily> selectMySubmitDaily(IbzDailySearchContext context);
+    List<IbzDaily> selectProductDaily(IbzDailySearchContext context);
+    List<IbzDaily> selectProjectDaily(IbzDailySearchContext context);
+    List<IbzDaily> selectView(IbzDailySearchContext context);
 
     Page<IbzDaily> searchDefault(IbzDailySearchContext context);
     Page<IbzDaily> searchMyAllDaily(IbzDailySearchContext context);

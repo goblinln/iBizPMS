@@ -108,7 +108,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -123,7 +123,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyMonthly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
+	<select id="selectMyMonthly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
 		<include refid="MyMonthly" />
 	</select>
 
@@ -138,7 +138,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyMonthlyMob"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
+	<select id="selectMyMonthlyMob"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
 		<include refid="MyMonthlyMob" />
 	</select>
 
@@ -156,7 +156,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyReceivedMonthly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
+	<select id="selectMyReceivedMonthly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
 		<include refid="MyReceivedMonthly" />
 	</select>
 
@@ -174,7 +174,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMySubmitMonthly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
+	<select id="selectMySubmitMonthly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
 		<include refid="MySubmitMonthly" />
 	</select>
 
@@ -186,7 +186,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductMonthly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
+	<select id="selectProductMonthly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
 		<include refid="ProductMonthly" />
 	</select>
 
@@ -201,7 +201,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectMonthly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
+	<select id="selectProjectMonthly"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
 		<include refid="ProjectMonthly" />
 	</select>
 
@@ -213,7 +213,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext" resultMap="IbzMonthlyResultMap">
 		<include refid="View" />
 	</select>
 

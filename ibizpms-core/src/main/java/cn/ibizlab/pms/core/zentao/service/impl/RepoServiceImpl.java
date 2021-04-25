@@ -217,11 +217,11 @@ public class RepoServiceImpl extends ServiceImpl<RepoMapper, Repo> implements IR
 
 
 
-    public List<Repo> selectQueryByDefault(RepoSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Repo> selectDefault(RepoSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Repo> selectQueryByView(RepoSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Repo> selectView(RepoSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

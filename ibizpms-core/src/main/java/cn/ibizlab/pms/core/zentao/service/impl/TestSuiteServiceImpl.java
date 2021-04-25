@@ -258,14 +258,14 @@ public class TestSuiteServiceImpl extends ServiceImpl<TestSuiteMapper, TestSuite
     }
 
 
-    public List<TestSuite> selectQueryByDefault(TestSuiteSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<TestSuite> selectDefault(TestSuiteSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<TestSuite> selectQueryByPublicTestSuite(TestSuiteSearchContext context){
-        return baseMapper.selectQueryByPublicTestSuite(context, context.getSelectCond());
+    public List<TestSuite> selectPublicTestSuite(TestSuiteSearchContext context){
+        return baseMapper.selectPublicTestSuite(context, context.getSelectCond());
     }
-    public List<TestSuite> selectQueryByView(TestSuiteSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<TestSuite> selectView(TestSuiteSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

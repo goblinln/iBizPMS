@@ -106,11 +106,11 @@ public class DeptRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     public List<Dept> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         DeptSearchContext searchContext = (DeptSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return deptService.selectQueryByDefault(searchContext);
+            return deptService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("ROOT"))
-            return deptService.selectQueryByRoot(searchContext);
+            return deptService.selectRoot(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return deptService.selectQueryByView(searchContext);
+            return deptService.selectView(searchContext);
         return null;
     }
 

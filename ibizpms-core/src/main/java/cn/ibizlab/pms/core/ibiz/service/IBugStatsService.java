@@ -39,16 +39,16 @@ public interface IBugStatsService extends IService<BugStats> {
     boolean save(BugStats et);
     void saveBatch(List<BugStats> list);
     List<BugStats> select(BugStatsSearchContext context);
-    List<BugStats> selectQueryByBugCountInResolution(BugStatsSearchContext context);
-    List<BugStats> selectQueryByBugResolvedBy(BugStatsSearchContext context);
-    List<BugStats> selectQueryByBugResolvedGird(BugStatsSearchContext context);
-    List<BugStats> selectQueryByBugassignedTo(BugStatsSearchContext context);
-    List<BugStats> selectQueryByDefault(BugStatsSearchContext context);
-    List<BugStats> selectQueryByProductBugResolutionStats(BugStatsSearchContext context);
-    List<BugStats> selectQueryByProductBugStatusSum(BugStatsSearchContext context);
-    List<BugStats> selectQueryByProductCreateBug(BugStatsSearchContext context);
-    List<BugStats> selectQueryByProjectBugStatusCount(BugStatsSearchContext context);
-    List<BugStats> selectQueryByView(BugStatsSearchContext context);
+    List<BugStats> selectBugCountInResolution(BugStatsSearchContext context);
+    List<BugStats> selectBugResolvedBy(BugStatsSearchContext context);
+    List<BugStats> selectBugResolvedGird(BugStatsSearchContext context);
+    List<BugStats> selectBugassignedTo(BugStatsSearchContext context);
+    List<BugStats> selectDefault(BugStatsSearchContext context);
+    List<BugStats> selectProductBugResolutionStats(BugStatsSearchContext context);
+    List<BugStats> selectProductBugStatusSum(BugStatsSearchContext context);
+    List<BugStats> selectProductCreateBug(BugStatsSearchContext context);
+    List<BugStats> selectProjectBugStatusCount(BugStatsSearchContext context);
+    List<BugStats> selectView(BugStatsSearchContext context);
 
     Page<BugStats> searchBugCountInResolution(BugStatsSearchContext context);
     Page<BugStats> searchBugResolvedBy(BugStatsSearchContext context);

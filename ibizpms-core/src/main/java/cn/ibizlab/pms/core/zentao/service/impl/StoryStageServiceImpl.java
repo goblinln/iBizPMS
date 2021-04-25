@@ -291,11 +291,11 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
 	}
 
 
-    public List<StoryStage> selectQueryByDefault(StoryStageSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<StoryStage> selectDefault(StoryStageSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<StoryStage> selectQueryByView(StoryStageSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<StoryStage> selectView(StoryStageSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

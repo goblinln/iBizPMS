@@ -53,7 +53,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.BlockSearchContext" resultMap="BlockResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.BlockSearchContext" resultMap="BlockResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -65,7 +65,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.BlockSearchContext" resultMap="BlockResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.BlockSearchContext" resultMap="BlockResultMap">
 		<include refid="View" />
 	</select>
 

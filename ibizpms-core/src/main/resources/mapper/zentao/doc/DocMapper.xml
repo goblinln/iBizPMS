@@ -234,7 +234,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByChildDocLibDoc"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+	<select id="selectChildDocLibDoc"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
 		<include refid="ChildDocLibDoc" />
 	</select>
 
@@ -249,7 +249,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -267,7 +267,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDocLibAndDoc"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+	<select id="selectDocLibAndDoc"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
 		<include refid="DocLibAndDoc" />
 	</select>
 
@@ -285,7 +285,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDocLibDoc"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+	<select id="selectDocLibDoc"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
 		<include refid="DocLibDoc" />
 	</select>
 
@@ -303,7 +303,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDocModuleDoc"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+	<select id="selectDocModuleDoc"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
 		<include refid="DocModuleDoc" />
 	</select>
 
@@ -315,7 +315,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDocStatus"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+	<select id="selectDocStatus"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
 		<include refid="DocStatus" />
 	</select>
 
@@ -333,7 +333,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByModuleDocChild"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+	<select id="selectModuleDocChild"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
 		<include refid="ModuleDocChild" />
 	</select>
 
@@ -345,7 +345,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyFavourite"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+	<select id="selectMyFavourite"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
 		<include refid="MyFavourite" />
 	</select>
 
@@ -363,7 +363,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyFavouritesOnlyDoc"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+	<select id="selectMyFavouritesOnlyDoc"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
 		<include refid="MyFavouritesOnlyDoc" />
 	</select>
 
@@ -381,7 +381,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByNotRootDoc"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+	<select id="selectNotRootDoc"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
 		<include refid="NotRootDoc" />
 	</select>
 
@@ -402,7 +402,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRootDoc"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+	<select id="selectRootDoc"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
 		<include refid="RootDoc" />
 	</select>
 
@@ -417,7 +417,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocSearchContext" resultMap="DocResultMap">
 		<include refid="View" />
 	</select>
 

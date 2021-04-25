@@ -244,11 +244,11 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team> implements IT
 
 
 
-    public List<Team> selectQueryByDefault(TeamSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Team> selectDefault(TeamSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Team> selectQueryByView(TeamSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Team> selectView(TeamSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

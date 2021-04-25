@@ -214,11 +214,11 @@ public class IbzLibCaseStepServiceImpl extends ServiceImpl<IbzLibCaseStepMapper,
 
 
 
-    public List<IbzLibCaseStep> selectQueryByDefault(IbzLibCaseStepSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IbzLibCaseStep> selectDefault(IbzLibCaseStepSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IbzLibCaseStep> selectQueryByView(IbzLibCaseStepSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IbzLibCaseStep> selectView(IbzLibCaseStepSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

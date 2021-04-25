@@ -104,9 +104,9 @@ public class ConfigRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     public List<Config> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         ConfigSearchContext searchContext = (ConfigSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return configService.selectQueryByDefault(searchContext);
+            return configService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return configService.selectQueryByView(searchContext);
+            return configService.selectView(searchContext);
         return null;
     }
 

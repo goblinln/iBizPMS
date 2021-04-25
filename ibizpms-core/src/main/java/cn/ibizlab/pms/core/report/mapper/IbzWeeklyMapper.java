@@ -19,12 +19,12 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IbzWeeklyMapper extends BaseMapper<IbzWeekly> {
 
-    List<IbzWeekly> selectQueryByDefault(@Param("srf") IbzWeeklySearchContext context, @Param("ew") Wrapper<IbzWeekly> wrapper);
-    List<IbzWeekly> selectQueryByMyNotSubmit(@Param("srf") IbzWeeklySearchContext context, @Param("ew") Wrapper<IbzWeekly> wrapper);
-    List<IbzWeekly> selectQueryByMyWeekly(@Param("srf") IbzWeeklySearchContext context, @Param("ew") Wrapper<IbzWeekly> wrapper);
-    List<IbzWeekly> selectQueryByProductTeamMemberWeekly(@Param("srf") IbzWeeklySearchContext context, @Param("ew") Wrapper<IbzWeekly> wrapper);
-    List<IbzWeekly> selectQueryByProjectWeekly(@Param("srf") IbzWeeklySearchContext context, @Param("ew") Wrapper<IbzWeekly> wrapper);
-    List<IbzWeekly> selectQueryByView(@Param("srf") IbzWeeklySearchContext context, @Param("ew") Wrapper<IbzWeekly> wrapper);
+    List<IbzWeekly> selectDefault(@Param("srf") IbzWeeklySearchContext context, @Param("ew") Wrapper<IbzWeekly> wrapper);
+    List<IbzWeekly> selectMyNotSubmit(@Param("srf") IbzWeeklySearchContext context, @Param("ew") Wrapper<IbzWeekly> wrapper);
+    List<IbzWeekly> selectMyWeekly(@Param("srf") IbzWeeklySearchContext context, @Param("ew") Wrapper<IbzWeekly> wrapper);
+    List<IbzWeekly> selectProductTeamMemberWeekly(@Param("srf") IbzWeeklySearchContext context, @Param("ew") Wrapper<IbzWeekly> wrapper);
+    List<IbzWeekly> selectProjectWeekly(@Param("srf") IbzWeeklySearchContext context, @Param("ew") Wrapper<IbzWeekly> wrapper);
+    List<IbzWeekly> selectView(@Param("srf") IbzWeeklySearchContext context, @Param("ew") Wrapper<IbzWeekly> wrapper);
 
     Page<IbzWeekly> searchDefault(IPage page, @Param("srf") IbzWeeklySearchContext context, @Param("ew") Wrapper<IbzWeekly> wrapper);
     Page<IbzWeekly> searchMyNotSubmit(IPage page, @Param("srf") IbzWeeklySearchContext context, @Param("ew") Wrapper<IbzWeekly> wrapper);

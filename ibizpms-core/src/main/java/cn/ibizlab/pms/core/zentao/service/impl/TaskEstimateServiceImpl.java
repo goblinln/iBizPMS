@@ -294,29 +294,29 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
 	}
 
 
-    public List<TaskEstimate> selectQueryByActionMonth(TaskEstimateSearchContext context){
-        return baseMapper.selectQueryByActionMonth(context, context.getSelectCond());
+    public List<TaskEstimate> selectActionMonth(TaskEstimateSearchContext context){
+        return baseMapper.selectActionMonth(context, context.getSelectCond());
     }
-    public List<TaskEstimate> selectQueryByActionYear(TaskEstimateSearchContext context){
-        return baseMapper.selectQueryByActionYear(context, context.getSelectCond());
+    public List<TaskEstimate> selectActionYear(TaskEstimateSearchContext context){
+        return baseMapper.selectActionYear(context, context.getSelectCond());
     }
-    public List<TaskEstimate> selectQueryByDefault(TaskEstimateSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<TaskEstimate> selectDefault(TaskEstimateSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<TaskEstimate> selectQueryByDefaults(TaskEstimateSearchContext context){
-        return baseMapper.selectQueryByDefaults(context, context.getSelectCond());
+    public List<TaskEstimate> selectDefaults(TaskEstimateSearchContext context){
+        return baseMapper.selectDefaults(context, context.getSelectCond());
     }
-    public List<TaskEstimate> selectQueryByProjectActionMonth(TaskEstimateSearchContext context){
-        return baseMapper.selectQueryByProjectActionMonth(context, context.getSelectCond());
+    public List<TaskEstimate> selectProjectActionMonth(TaskEstimateSearchContext context){
+        return baseMapper.selectProjectActionMonth(context, context.getSelectCond());
     }
-    public List<TaskEstimate> selectQueryByProjectActionYear(TaskEstimateSearchContext context){
-        return baseMapper.selectQueryByProjectActionYear(context, context.getSelectCond());
+    public List<TaskEstimate> selectProjectActionYear(TaskEstimateSearchContext context){
+        return baseMapper.selectProjectActionYear(context, context.getSelectCond());
     }
-    public List<TaskEstimate> selectQueryByProjectTaskEstimate(TaskEstimateSearchContext context){
-        return baseMapper.selectQueryByProjectTaskEstimate(context, context.getSelectCond());
+    public List<TaskEstimate> selectProjectTaskEstimate(TaskEstimateSearchContext context){
+        return baseMapper.selectProjectTaskEstimate(context, context.getSelectCond());
     }
-    public List<TaskEstimate> selectQueryByView(TaskEstimateSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<TaskEstimate> selectView(TaskEstimateSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

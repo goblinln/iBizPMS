@@ -104,9 +104,9 @@ public class NotifyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     public List<Notify> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         NotifySearchContext searchContext = (NotifySearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return notifyService.selectQueryByDefault(searchContext);
+            return notifyService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return notifyService.selectQueryByView(searchContext);
+            return notifyService.selectView(searchContext);
         return null;
     }
 

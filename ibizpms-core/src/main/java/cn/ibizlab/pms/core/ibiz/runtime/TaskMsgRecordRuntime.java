@@ -104,9 +104,9 @@ public class TaskMsgRecordRuntime extends cn.ibizlab.pms.core.runtime.SystemData
     public List<TaskMsgRecord> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         TaskMsgRecordSearchContext searchContext = (TaskMsgRecordSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return taskmsgrecordService.selectQueryByDefault(searchContext);
+            return taskmsgrecordService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return taskmsgrecordService.selectQueryByView(searchContext);
+            return taskmsgrecordService.selectView(searchContext);
         return null;
     }
 

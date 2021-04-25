@@ -19,8 +19,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface CronMapper extends BaseMapper<Cron> {
 
-    List<Cron> selectQueryByDefault(@Param("srf") CronSearchContext context, @Param("ew") Wrapper<Cron> wrapper);
-    List<Cron> selectQueryByView(@Param("srf") CronSearchContext context, @Param("ew") Wrapper<Cron> wrapper);
+    List<Cron> selectDefault(@Param("srf") CronSearchContext context, @Param("ew") Wrapper<Cron> wrapper);
+    List<Cron> selectView(@Param("srf") CronSearchContext context, @Param("ew") Wrapper<Cron> wrapper);
 
     Page<Cron> searchDefault(IPage page, @Param("srf") CronSearchContext context, @Param("ew") Wrapper<Cron> wrapper);
     @Override

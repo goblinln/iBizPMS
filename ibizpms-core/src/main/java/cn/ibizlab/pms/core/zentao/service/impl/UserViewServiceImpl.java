@@ -214,11 +214,11 @@ public class UserViewServiceImpl extends ServiceImpl<UserViewMapper, UserView> i
 
 
 
-    public List<UserView> selectQueryByDefault(UserViewSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<UserView> selectDefault(UserViewSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<UserView> selectQueryByView(UserViewSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<UserView> selectView(UserViewSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

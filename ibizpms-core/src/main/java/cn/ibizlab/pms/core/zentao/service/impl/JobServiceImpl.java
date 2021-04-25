@@ -217,11 +217,11 @@ public class JobServiceImpl extends ServiceImpl<JobMapper, Job> implements IJobS
 
 
 
-    public List<Job> selectQueryByDefault(JobSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Job> selectDefault(JobSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Job> selectQueryByView(JobSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Job> selectView(JobSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

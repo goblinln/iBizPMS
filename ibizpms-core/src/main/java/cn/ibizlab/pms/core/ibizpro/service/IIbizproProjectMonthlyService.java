@@ -43,8 +43,8 @@ public interface IIbizproProjectMonthlyService extends IService<IbizproProjectMo
     IbizproProjectMonthly sumProjectMonthly(IbizproProjectMonthly et);
     boolean sumProjectMonthlyBatch(List<IbizproProjectMonthly> etList);
     List<IbizproProjectMonthly> select(IbizproProjectMonthlySearchContext context);
-    List<IbizproProjectMonthly> selectQueryByDefault(IbizproProjectMonthlySearchContext context);
-    List<IbizproProjectMonthly> selectQueryByView(IbizproProjectMonthlySearchContext context);
+    List<IbizproProjectMonthly> selectDefault(IbizproProjectMonthlySearchContext context);
+    List<IbizproProjectMonthly> selectView(IbizproProjectMonthlySearchContext context);
 
     Page<IbizproProjectMonthly> searchDefault(IbizproProjectMonthlySearchContext context);
     List<IbizproProjectMonthly> selectByProject(Long id);

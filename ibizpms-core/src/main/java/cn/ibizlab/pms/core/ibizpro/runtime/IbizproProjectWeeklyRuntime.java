@@ -104,9 +104,9 @@ public class IbizproProjectWeeklyRuntime extends cn.ibizlab.pms.core.runtime.Sys
     public List<IbizproProjectWeekly> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         IbizproProjectWeeklySearchContext searchContext = (IbizproProjectWeeklySearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return ibizproprojectweeklyService.selectQueryByDefault(searchContext);
+            return ibizproprojectweeklyService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return ibizproprojectweeklyService.selectQueryByView(searchContext);
+            return ibizproprojectweeklyService.selectView(searchContext);
         return null;
     }
 

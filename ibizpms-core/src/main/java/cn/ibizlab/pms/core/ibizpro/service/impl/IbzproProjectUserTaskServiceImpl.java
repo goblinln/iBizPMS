@@ -214,20 +214,20 @@ public class IbzproProjectUserTaskServiceImpl extends ServiceImpl<IbzproProjectU
 
 
 
-    public List<IbzproProjectUserTask> selectQueryByDefault(IbzproProjectUserTaskSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IbzproProjectUserTask> selectDefault(IbzproProjectUserTaskSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IbzproProjectUserTask> selectQueryByProjectDailyTask(IbzproProjectUserTaskSearchContext context){
-        return baseMapper.selectQueryByProjectDailyTask(context, context.getSelectCond());
+    public List<IbzproProjectUserTask> selectProjectDailyTask(IbzproProjectUserTaskSearchContext context){
+        return baseMapper.selectProjectDailyTask(context, context.getSelectCond());
     }
-    public List<IbzproProjectUserTask> selectQueryByProjectMonthlyTask(IbzproProjectUserTaskSearchContext context){
-        return baseMapper.selectQueryByProjectMonthlyTask(context, context.getSelectCond());
+    public List<IbzproProjectUserTask> selectProjectMonthlyTask(IbzproProjectUserTaskSearchContext context){
+        return baseMapper.selectProjectMonthlyTask(context, context.getSelectCond());
     }
-    public List<IbzproProjectUserTask> selectQueryByProjectWeeklyTask(IbzproProjectUserTaskSearchContext context){
-        return baseMapper.selectQueryByProjectWeeklyTask(context, context.getSelectCond());
+    public List<IbzproProjectUserTask> selectProjectWeeklyTask(IbzproProjectUserTaskSearchContext context){
+        return baseMapper.selectProjectWeeklyTask(context, context.getSelectCond());
     }
-    public List<IbzproProjectUserTask> selectQueryByView(IbzproProjectUserTaskSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IbzproProjectUserTask> selectView(IbzproProjectUserTaskSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

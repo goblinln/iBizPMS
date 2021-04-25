@@ -221,23 +221,23 @@ public class ProductStatsServiceImpl extends ServiceImpl<ProductStatsMapper, Pro
 
 
 
-    public List<ProductStats> selectQueryByDefault(ProductStatsSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<ProductStats> selectDefault(ProductStatsSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<ProductStats> selectQueryByNoOpenProduct(ProductStatsSearchContext context){
-        return baseMapper.selectQueryByNoOpenProduct(context, context.getSelectCond());
+    public List<ProductStats> selectNoOpenProduct(ProductStatsSearchContext context){
+        return baseMapper.selectNoOpenProduct(context, context.getSelectCond());
     }
-    public List<ProductStats> selectQueryByProdctQuantiGird(ProductStatsSearchContext context){
-        return baseMapper.selectQueryByProdctQuantiGird(context, context.getSelectCond());
+    public List<ProductStats> selectProdctQuantiGird(ProductStatsSearchContext context){
+        return baseMapper.selectProdctQuantiGird(context, context.getSelectCond());
     }
-    public List<ProductStats> selectQueryByProductInputTable(ProductStatsSearchContext context){
-        return baseMapper.selectQueryByProductInputTable(context, context.getSelectCond());
+    public List<ProductStats> selectProductInputTable(ProductStatsSearchContext context){
+        return baseMapper.selectProductInputTable(context, context.getSelectCond());
     }
-    public List<ProductStats> selectQueryByProductcompletionstatistics(ProductStatsSearchContext context){
-        return baseMapper.selectQueryByProductcompletionstatistics(context, context.getSelectCond());
+    public List<ProductStats> selectProductcompletionstatistics(ProductStatsSearchContext context){
+        return baseMapper.selectProductcompletionstatistics(context, context.getSelectCond());
     }
-    public List<ProductStats> selectQueryByView(ProductStatsSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<ProductStats> selectView(ProductStatsSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

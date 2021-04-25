@@ -73,7 +73,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurVersion"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocContentSearchContext" resultMap="DocContentResultMap">
+	<select id="selectCurVersion"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocContentSearchContext" resultMap="DocContentResultMap">
 		<include refid="CurVersion" />
 	</select>
 
@@ -85,7 +85,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocContentSearchContext" resultMap="DocContentResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocContentSearchContext" resultMap="DocContentResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -97,7 +97,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocContentSearchContext" resultMap="DocContentResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.DocContentSearchContext" resultMap="DocContentResultMap">
 		<include refid="View" />
 	</select>
 

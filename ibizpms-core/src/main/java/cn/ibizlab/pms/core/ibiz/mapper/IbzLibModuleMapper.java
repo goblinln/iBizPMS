@@ -19,9 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IbzLibModuleMapper extends BaseMapper<IbzLibModule> {
 
-    List<IbzLibModule> selectQueryByDefault(@Param("srf") IbzLibModuleSearchContext context, @Param("ew") Wrapper<IbzLibModule> wrapper);
-    List<IbzLibModule> selectQueryByRoot_NoBranch(@Param("srf") IbzLibModuleSearchContext context, @Param("ew") Wrapper<IbzLibModule> wrapper);
-    List<IbzLibModule> selectQueryByView(@Param("srf") IbzLibModuleSearchContext context, @Param("ew") Wrapper<IbzLibModule> wrapper);
+    List<IbzLibModule> selectDefault(@Param("srf") IbzLibModuleSearchContext context, @Param("ew") Wrapper<IbzLibModule> wrapper);
+    List<IbzLibModule> selectRoot_NoBranch(@Param("srf") IbzLibModuleSearchContext context, @Param("ew") Wrapper<IbzLibModule> wrapper);
+    List<IbzLibModule> selectView(@Param("srf") IbzLibModuleSearchContext context, @Param("ew") Wrapper<IbzLibModule> wrapper);
 
     Page<IbzLibModule> searchDefault(IPage page, @Param("srf") IbzLibModuleSearchContext context, @Param("ew") Wrapper<IbzLibModule> wrapper);
     Page<IbzLibModule> searchRoot_NoBranch(IPage page, @Param("srf") IbzLibModuleSearchContext context, @Param("ew") Wrapper<IbzLibModule> wrapper);

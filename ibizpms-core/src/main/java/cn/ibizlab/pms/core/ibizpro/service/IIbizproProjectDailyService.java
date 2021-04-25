@@ -41,8 +41,8 @@ public interface IIbizproProjectDailyService extends IService<IbizproProjectDail
     IbizproProjectDaily sumProjectDaily(IbizproProjectDaily et);
     boolean sumProjectDailyBatch(List<IbizproProjectDaily> etList);
     List<IbizproProjectDaily> select(IbizproProjectDailySearchContext context);
-    List<IbizproProjectDaily> selectQueryByDefault(IbizproProjectDailySearchContext context);
-    List<IbizproProjectDaily> selectQueryByView(IbizproProjectDailySearchContext context);
+    List<IbizproProjectDaily> selectDefault(IbizproProjectDailySearchContext context);
+    List<IbizproProjectDaily> selectView(IbizproProjectDailySearchContext context);
 
     Page<IbizproProjectDaily> searchDefault(IbizproProjectDailySearchContext context);
     List<IbizproProjectDaily> selectByProject(Long id);

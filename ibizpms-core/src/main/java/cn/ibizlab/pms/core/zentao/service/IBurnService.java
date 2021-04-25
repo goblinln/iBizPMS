@@ -41,9 +41,9 @@ public interface IBurnService extends IService<Burn> {
     boolean save(Burn et);
     void saveBatch(List<Burn> list);
     List<Burn> select(BurnSearchContext context);
-    List<Burn> selectQueryByDefault(BurnSearchContext context);
-    List<Burn> selectQueryByESTIMATEANDLEFT(BurnSearchContext context);
-    List<Burn> selectQueryByView(BurnSearchContext context);
+    List<Burn> selectDefault(BurnSearchContext context);
+    List<Burn> selectESTIMATEANDLEFT(BurnSearchContext context);
+    List<Burn> selectView(BurnSearchContext context);
 
     Page<Burn> searchDefault(BurnSearchContext context);
     Page<Burn> searchESTIMATEANDLEFT(BurnSearchContext context);

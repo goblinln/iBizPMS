@@ -19,13 +19,13 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ProductModuleMapper extends BaseMapper<ProductModule> {
 
-    List<ProductModule> selectQueryByByPath(@Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
-    List<ProductModule> selectQueryByDefault(@Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
-    List<ProductModule> selectQueryByParentModule(@Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
-    List<ProductModule> selectQueryByRoot(@Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
-    List<ProductModule> selectQueryByRoot_NoBranch(@Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
-    List<ProductModule> selectQueryByStoryModule(@Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
-    List<ProductModule> selectQueryByView(@Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
+    List<ProductModule> selectByPath(@Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
+    List<ProductModule> selectDefault(@Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
+    List<ProductModule> selectParentModule(@Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
+    List<ProductModule> selectRoot(@Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
+    List<ProductModule> selectRoot_NoBranch(@Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
+    List<ProductModule> selectStoryModule(@Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
+    List<ProductModule> selectView(@Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
 
     Page<ProductModule> searchByPath(IPage page, @Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);
     Page<ProductModule> searchDefault(IPage page, @Param("srf") ProductModuleSearchContext context, @Param("ew") Wrapper<ProductModule> wrapper);

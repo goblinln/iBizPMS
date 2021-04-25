@@ -19,16 +19,16 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface DocLibMapper extends BaseMapper<DocLib> {
 
-    List<DocLib> selectQueryByByCustom(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
-    List<DocLib> selectQueryByByProduct(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
-    List<DocLib> selectQueryByByProductNotFiles(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
-    List<DocLib> selectQueryByByProject(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
-    List<DocLib> selectQueryByByProjectNotFiles(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
-    List<DocLib> selectQueryByCurDocLib(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
-    List<DocLib> selectQueryByDefault(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
-    List<DocLib> selectQueryByMyFavourites(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
-    List<DocLib> selectQueryByRootModuleMuLu(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
-    List<DocLib> selectQueryByView(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
+    List<DocLib> selectByCustom(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
+    List<DocLib> selectByProduct(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
+    List<DocLib> selectByProductNotFiles(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
+    List<DocLib> selectByProject(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
+    List<DocLib> selectByProjectNotFiles(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
+    List<DocLib> selectCurDocLib(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
+    List<DocLib> selectDefault(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
+    List<DocLib> selectMyFavourites(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
+    List<DocLib> selectRootModuleMuLu(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
+    List<DocLib> selectView(@Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
 
     Page<DocLib> searchByCustom(IPage page, @Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);
     Page<DocLib> searchByProduct(IPage page, @Param("srf") DocLibSearchContext context, @Param("ew") Wrapper<DocLib> wrapper);

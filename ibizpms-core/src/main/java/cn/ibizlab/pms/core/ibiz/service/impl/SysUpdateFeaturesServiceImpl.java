@@ -252,11 +252,11 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
     }
 
 
-    public List<SysUpdateFeatures> selectQueryByDefault(SysUpdateFeaturesSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<SysUpdateFeatures> selectDefault(SysUpdateFeaturesSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<SysUpdateFeatures> selectQueryByView(SysUpdateFeaturesSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<SysUpdateFeatures> selectView(SysUpdateFeaturesSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

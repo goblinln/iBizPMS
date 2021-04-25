@@ -19,8 +19,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IbizproProjectDailyMapper extends BaseMapper<IbizproProjectDaily> {
 
-    List<IbizproProjectDaily> selectQueryByDefault(@Param("srf") IbizproProjectDailySearchContext context, @Param("ew") Wrapper<IbizproProjectDaily> wrapper);
-    List<IbizproProjectDaily> selectQueryByView(@Param("srf") IbizproProjectDailySearchContext context, @Param("ew") Wrapper<IbizproProjectDaily> wrapper);
+    List<IbizproProjectDaily> selectDefault(@Param("srf") IbizproProjectDailySearchContext context, @Param("ew") Wrapper<IbizproProjectDaily> wrapper);
+    List<IbizproProjectDaily> selectView(@Param("srf") IbizproProjectDailySearchContext context, @Param("ew") Wrapper<IbizproProjectDaily> wrapper);
 
     Page<IbizproProjectDaily> searchDefault(IPage page, @Param("srf") IbizproProjectDailySearchContext context, @Param("ew") Wrapper<IbizproProjectDaily> wrapper);
     @Override

@@ -108,7 +108,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzCaseSearchContext" resultMap="IbzCaseResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzCaseSearchContext" resultMap="IbzCaseResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -120,7 +120,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzCaseSearchContext" resultMap="IbzCaseResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzCaseSearchContext" resultMap="IbzCaseResultMap">
 		<include refid="View" />
 	</select>
 

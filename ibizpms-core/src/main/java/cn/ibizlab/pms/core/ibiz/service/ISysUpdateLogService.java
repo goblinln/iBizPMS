@@ -41,8 +41,8 @@ public interface ISysUpdateLogService extends IService<SysUpdateLog> {
     boolean save(SysUpdateLog et);
     void saveBatch(List<SysUpdateLog> list);
     List<SysUpdateLog> select(SysUpdateLogSearchContext context);
-    List<SysUpdateLog> selectQueryByDefault(SysUpdateLogSearchContext context);
-    List<SysUpdateLog> selectQueryByView(SysUpdateLogSearchContext context);
+    List<SysUpdateLog> selectDefault(SysUpdateLogSearchContext context);
+    List<SysUpdateLog> selectView(SysUpdateLogSearchContext context);
 
     Page<SysUpdateLog> searchDefault(SysUpdateLogSearchContext context);
     SysUpdateLog dynamicCall(String key, String action, SysUpdateLog et);

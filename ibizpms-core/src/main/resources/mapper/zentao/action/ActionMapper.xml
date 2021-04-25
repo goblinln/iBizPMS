@@ -125,7 +125,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByBianGengLineHistory"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
+	<select id="selectBianGengLineHistory"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
 		<include refid="BianGengLineHistory" />
 	</select>
 
@@ -137,7 +137,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -152,7 +152,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMobType"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
+	<select id="selectMobType"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
 		<include refid="MobType" />
 	</select>
 
@@ -167,7 +167,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyTrends"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
+	<select id="selectMyTrends"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
 		<include refid="MyTrends" />
 	</select>
 
@@ -182,7 +182,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductTrends"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
+	<select id="selectProductTrends"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
 		<include refid="ProductTrends" />
 	</select>
 
@@ -197,7 +197,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectTrends"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
+	<select id="selectProjectTrends"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
 		<include refid="ProjectTrends" />
 	</select>
 
@@ -212,7 +212,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByQueryUserYEAR"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
+	<select id="selectQueryUserYEAR"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
 		<include refid="QueryUserYEAR" />
 	</select>
 
@@ -227,7 +227,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByType"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
+	<select id="selectType"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
 		<include refid="Type" />
 	</select>
 
@@ -239,7 +239,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ActionSearchContext" resultMap="ActionResultMap">
 		<include refid="View" />
 	</select>
 

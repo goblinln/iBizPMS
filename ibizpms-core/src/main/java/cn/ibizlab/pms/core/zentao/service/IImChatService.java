@@ -39,8 +39,8 @@ public interface IImChatService extends IService<ImChat> {
     boolean save(ImChat et);
     void saveBatch(List<ImChat> list);
     List<ImChat> select(ImChatSearchContext context);
-    List<ImChat> selectQueryByDefault(ImChatSearchContext context);
-    List<ImChat> selectQueryByView(ImChatSearchContext context);
+    List<ImChat> selectDefault(ImChatSearchContext context);
+    List<ImChat> selectView(ImChatSearchContext context);
 
     Page<ImChat> searchDefault(ImChatSearchContext context);
     ImChat dynamicCall(Long key, String action, ImChat et);

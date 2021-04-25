@@ -277,11 +277,11 @@ public class IbizproProjectMonthlyServiceImpl extends ServiceImpl<IbizproProject
     }
 
 
-    public List<IbizproProjectMonthly> selectQueryByDefault(IbizproProjectMonthlySearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IbizproProjectMonthly> selectDefault(IbizproProjectMonthlySearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IbizproProjectMonthly> selectQueryByView(IbizproProjectMonthlySearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IbizproProjectMonthly> selectView(IbizproProjectMonthlySearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

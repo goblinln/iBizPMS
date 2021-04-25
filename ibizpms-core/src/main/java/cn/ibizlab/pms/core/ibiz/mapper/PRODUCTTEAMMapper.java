@@ -19,11 +19,11 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface PRODUCTTEAMMapper extends BaseMapper<PRODUCTTEAM> {
 
-    List<PRODUCTTEAM> selectQueryByDefault(@Param("srf") PRODUCTTEAMSearchContext context, @Param("ew") Wrapper<PRODUCTTEAM> wrapper);
-    List<PRODUCTTEAM> selectQueryByProductTeamInfo(@Param("srf") PRODUCTTEAMSearchContext context, @Param("ew") Wrapper<PRODUCTTEAM> wrapper);
-    List<PRODUCTTEAM> selectQueryByProjectApp(@Param("srf") PRODUCTTEAMSearchContext context, @Param("ew") Wrapper<PRODUCTTEAM> wrapper);
-    List<PRODUCTTEAM> selectQueryByRowEditDefaultProductTeam(@Param("srf") PRODUCTTEAMSearchContext context, @Param("ew") Wrapper<PRODUCTTEAM> wrapper);
-    List<PRODUCTTEAM> selectQueryByView(@Param("srf") PRODUCTTEAMSearchContext context, @Param("ew") Wrapper<PRODUCTTEAM> wrapper);
+    List<PRODUCTTEAM> selectDefault(@Param("srf") PRODUCTTEAMSearchContext context, @Param("ew") Wrapper<PRODUCTTEAM> wrapper);
+    List<PRODUCTTEAM> selectProductTeamInfo(@Param("srf") PRODUCTTEAMSearchContext context, @Param("ew") Wrapper<PRODUCTTEAM> wrapper);
+    List<PRODUCTTEAM> selectProjectApp(@Param("srf") PRODUCTTEAMSearchContext context, @Param("ew") Wrapper<PRODUCTTEAM> wrapper);
+    List<PRODUCTTEAM> selectRowEditDefaultProductTeam(@Param("srf") PRODUCTTEAMSearchContext context, @Param("ew") Wrapper<PRODUCTTEAM> wrapper);
+    List<PRODUCTTEAM> selectView(@Param("srf") PRODUCTTEAMSearchContext context, @Param("ew") Wrapper<PRODUCTTEAM> wrapper);
 
     Page<PRODUCTTEAM> searchDefault(IPage page, @Param("srf") PRODUCTTEAMSearchContext context, @Param("ew") Wrapper<PRODUCTTEAM> wrapper);
     Page<PRODUCTTEAM> searchProductTeamInfo(IPage page, @Param("srf") PRODUCTTEAMSearchContext context, @Param("ew") Wrapper<PRODUCTTEAM> wrapper);

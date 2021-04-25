@@ -78,7 +78,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.SysUpdateFeaturesSearchContext" resultMap="SysUpdateFeaturesResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.SysUpdateFeaturesSearchContext" resultMap="SysUpdateFeaturesResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -90,7 +90,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.SysUpdateFeaturesSearchContext" resultMap="SysUpdateFeaturesResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.SysUpdateFeaturesSearchContext" resultMap="SysUpdateFeaturesResultMap">
 		<include refid="View" />
 	</select>
 

@@ -104,9 +104,9 @@ public class ImChatuserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     public List<ImChatuser> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         ImChatuserSearchContext searchContext = (ImChatuserSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return imchatuserService.selectQueryByDefault(searchContext);
+            return imchatuserService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return imchatuserService.selectQueryByView(searchContext);
+            return imchatuserService.selectView(searchContext);
         return null;
     }
 

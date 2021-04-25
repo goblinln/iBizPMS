@@ -104,9 +104,9 @@ public class IbzFavoritesRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     public List<IbzFavorites> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         IbzFavoritesSearchContext searchContext = (IbzFavoritesSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return ibzfavoritesService.selectQueryByDefault(searchContext);
+            return ibzfavoritesService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return ibzfavoritesService.selectQueryByView(searchContext);
+            return ibzfavoritesService.selectView(searchContext);
         return null;
     }
 

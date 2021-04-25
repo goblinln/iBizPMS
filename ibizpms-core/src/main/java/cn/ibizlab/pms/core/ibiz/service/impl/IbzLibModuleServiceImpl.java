@@ -265,14 +265,14 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     }
 
 
-    public List<IbzLibModule> selectQueryByDefault(IbzLibModuleSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IbzLibModule> selectDefault(IbzLibModuleSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IbzLibModule> selectQueryByRoot_NoBranch(IbzLibModuleSearchContext context){
-        return baseMapper.selectQueryByRoot_NoBranch(context, context.getSelectCond());
+    public List<IbzLibModule> selectRoot_NoBranch(IbzLibModuleSearchContext context){
+        return baseMapper.selectRoot_NoBranch(context, context.getSelectCond());
     }
-    public List<IbzLibModule> selectQueryByView(IbzLibModuleSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IbzLibModule> selectView(IbzLibModuleSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

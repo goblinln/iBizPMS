@@ -283,14 +283,14 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
     }
 
 
-    public List<ProjectProduct> selectQueryByDefault(ProjectProductSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<ProjectProduct> selectDefault(ProjectProductSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<ProjectProduct> selectQueryByRelationPlan(ProjectProductSearchContext context){
-        return baseMapper.selectQueryByRelationPlan(context, context.getSelectCond());
+    public List<ProjectProduct> selectRelationPlan(ProjectProductSearchContext context){
+        return baseMapper.selectRelationPlan(context, context.getSelectCond());
     }
-    public List<ProjectProduct> selectQueryByView(ProjectProductSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<ProjectProduct> selectView(ProjectProductSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

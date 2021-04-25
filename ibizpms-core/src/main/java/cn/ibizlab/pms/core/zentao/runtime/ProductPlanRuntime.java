@@ -124,29 +124,29 @@ public class ProductPlanRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     public List<ProductPlan> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         ProductPlanSearchContext searchContext = (ProductPlanSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("ChildPlan"))
-            return productplanService.selectQueryByChildPlan(searchContext);
+            return productplanService.selectChildPlan(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return productplanService.selectQueryByDefault(searchContext);
+            return productplanService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("DefaultParent"))
-            return productplanService.selectQueryByDefaultParent(searchContext);
+            return productplanService.selectDefaultParent(searchContext);
         if (iPSDataQuery.getName().equals("GetList"))
-            return productplanService.selectQueryByGetList(searchContext);
+            return productplanService.selectGetList(searchContext);
         if (iPSDataQuery.getName().equals("PlanCodeList"))
-            return productplanService.selectQueryByPlanCodeList(searchContext);
+            return productplanService.selectPlanCodeList(searchContext);
         if (iPSDataQuery.getName().equals("PlanTasks"))
-            return productplanService.selectQueryByPlanTasks(searchContext);
+            return productplanService.selectPlanTasks(searchContext);
         if (iPSDataQuery.getName().equals("ProductQuery"))
-            return productplanService.selectQueryByProductQuery(searchContext);
+            return productplanService.selectProductQuery(searchContext);
         if (iPSDataQuery.getName().equals("ProjectApp"))
-            return productplanService.selectQueryByProjectApp(searchContext);
+            return productplanService.selectProjectApp(searchContext);
         if (iPSDataQuery.getName().equals("ProjectPlan"))
-            return productplanService.selectQueryByProjectPlan(searchContext);
+            return productplanService.selectProjectPlan(searchContext);
         if (iPSDataQuery.getName().equals("RootPlan"))
-            return productplanService.selectQueryByRootPlan(searchContext);
+            return productplanService.selectRootPlan(searchContext);
         if (iPSDataQuery.getName().equals("TaskPlan"))
-            return productplanService.selectQueryByTaskPlan(searchContext);
+            return productplanService.selectTaskPlan(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return productplanService.selectQueryByView(searchContext);
+            return productplanService.selectView(searchContext);
         return null;
     }
 

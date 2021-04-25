@@ -41,14 +41,14 @@ public interface ITaskEstimateService extends IService<TaskEstimate> {
     boolean save(TaskEstimate et);
     void saveBatch(List<TaskEstimate> list);
     List<TaskEstimate> select(TaskEstimateSearchContext context);
-    List<TaskEstimate> selectQueryByActionMonth(TaskEstimateSearchContext context);
-    List<TaskEstimate> selectQueryByActionYear(TaskEstimateSearchContext context);
-    List<TaskEstimate> selectQueryByDefault(TaskEstimateSearchContext context);
-    List<TaskEstimate> selectQueryByDefaults(TaskEstimateSearchContext context);
-    List<TaskEstimate> selectQueryByProjectActionMonth(TaskEstimateSearchContext context);
-    List<TaskEstimate> selectQueryByProjectActionYear(TaskEstimateSearchContext context);
-    List<TaskEstimate> selectQueryByProjectTaskEstimate(TaskEstimateSearchContext context);
-    List<TaskEstimate> selectQueryByView(TaskEstimateSearchContext context);
+    List<TaskEstimate> selectActionMonth(TaskEstimateSearchContext context);
+    List<TaskEstimate> selectActionYear(TaskEstimateSearchContext context);
+    List<TaskEstimate> selectDefault(TaskEstimateSearchContext context);
+    List<TaskEstimate> selectDefaults(TaskEstimateSearchContext context);
+    List<TaskEstimate> selectProjectActionMonth(TaskEstimateSearchContext context);
+    List<TaskEstimate> selectProjectActionYear(TaskEstimateSearchContext context);
+    List<TaskEstimate> selectProjectTaskEstimate(TaskEstimateSearchContext context);
+    List<TaskEstimate> selectView(TaskEstimateSearchContext context);
 
     Page<TaskEstimate> searchActionMonth(TaskEstimateSearchContext context);
     Page<TaskEstimate> searchActionYear(TaskEstimateSearchContext context);

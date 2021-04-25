@@ -214,14 +214,14 @@ public class CompanyStatsServiceImpl extends ServiceImpl<CompanyStatsMapper, Com
 
 
 
-    public List<CompanyStats> selectQueryByCompanyDynamicStats(CompanyStatsSearchContext context){
-        return baseMapper.selectQueryByCompanyDynamicStats(context, context.getSelectCond());
+    public List<CompanyStats> selectCompanyDynamicStats(CompanyStatsSearchContext context){
+        return baseMapper.selectCompanyDynamicStats(context, context.getSelectCond());
     }
-    public List<CompanyStats> selectQueryByDefault(CompanyStatsSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<CompanyStats> selectDefault(CompanyStatsSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<CompanyStats> selectQueryByView(CompanyStatsSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<CompanyStats> selectView(CompanyStatsSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

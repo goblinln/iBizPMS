@@ -112,7 +112,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectTeamSearchContext" resultMap="ProjectTeamResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectTeamSearchContext" resultMap="ProjectTeamResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -127,7 +127,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectTeamPm"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectTeamSearchContext" resultMap="ProjectTeamResultMap">
+	<select id="selectProjectTeamPm"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectTeamSearchContext" resultMap="ProjectTeamResultMap">
 		<include refid="ProjectTeamPm" />
 	</select>
 
@@ -142,7 +142,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRowEditDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectTeamSearchContext" resultMap="ProjectTeamResultMap">
+	<select id="selectRowEditDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectTeamSearchContext" resultMap="ProjectTeamResultMap">
 		<include refid="RowEditDefault" />
 	</select>
 
@@ -157,7 +157,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByTaskCntEstimateConsumedLeft"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectTeamSearchContext" resultMap="ProjectTeamResultMap">
+	<select id="selectTaskCntEstimateConsumedLeft"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectTeamSearchContext" resultMap="ProjectTeamResultMap">
 		<include refid="TaskCntEstimateConsumedLeft" />
 	</select>
 
@@ -172,7 +172,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectTeamSearchContext" resultMap="ProjectTeamResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectTeamSearchContext" resultMap="ProjectTeamResultMap">
 		<include refid="View" />
 	</select>
 

@@ -210,7 +210,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByChildPlan"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
+	<select id="selectChildPlan"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
 		<include refid="ChildPlan" />
 	</select>
 
@@ -225,7 +225,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -243,7 +243,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefaultParent"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
+	<select id="selectDefaultParent"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
 		<include refid="DefaultParent" />
 	</select>
 
@@ -261,7 +261,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByGetList"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
+	<select id="selectGetList"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
 		<include refid="GetList" />
 	</select>
 
@@ -273,7 +273,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByPlanCodeList"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
+	<select id="selectPlanCodeList"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
 		<include refid="PlanCodeList" />
 	</select>
 
@@ -291,7 +291,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByPlanTasks"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
+	<select id="selectPlanTasks"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
 		<include refid="PlanTasks" />
 	</select>
 
@@ -306,7 +306,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProductQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
+	<select id="selectProductQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
 		<include refid="ProductQuery" />
 	</select>
 
@@ -324,7 +324,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectApp"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
+	<select id="selectProjectApp"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
 		<include refid="ProjectApp" />
 	</select>
 
@@ -342,7 +342,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectPlan"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
+	<select id="selectProjectPlan"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
 		<include refid="ProjectPlan" />
 	</select>
 
@@ -360,7 +360,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRootPlan"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
+	<select id="selectRootPlan"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
 		<include refid="RootPlan" />
 	</select>
 
@@ -378,7 +378,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByTaskPlan"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
+	<select id="selectTaskPlan"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
 		<include refid="TaskPlan" />
 	</select>
 
@@ -393,7 +393,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext" resultMap="ProductPlanResultMap">
 		<include refid="View" />
 	</select>
 

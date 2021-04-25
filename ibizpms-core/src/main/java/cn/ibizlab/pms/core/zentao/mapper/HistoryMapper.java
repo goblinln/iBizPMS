@@ -19,8 +19,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface HistoryMapper extends BaseMapper<History> {
 
-    List<History> selectQueryByDefault(@Param("srf") HistorySearchContext context, @Param("ew") Wrapper<History> wrapper);
-    List<History> selectQueryByView(@Param("srf") HistorySearchContext context, @Param("ew") Wrapper<History> wrapper);
+    List<History> selectDefault(@Param("srf") HistorySearchContext context, @Param("ew") Wrapper<History> wrapper);
+    List<History> selectView(@Param("srf") HistorySearchContext context, @Param("ew") Wrapper<History> wrapper);
 
     Page<History> searchDefault(IPage page, @Param("srf") HistorySearchContext context, @Param("ew") Wrapper<History> wrapper);
     @Override

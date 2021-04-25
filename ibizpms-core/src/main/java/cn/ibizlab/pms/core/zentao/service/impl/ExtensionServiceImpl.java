@@ -214,11 +214,11 @@ public class ExtensionServiceImpl extends ServiceImpl<ExtensionMapper, Extension
 
 
 
-    public List<Extension> selectQueryByDefault(ExtensionSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Extension> selectDefault(ExtensionSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Extension> selectQueryByView(ExtensionSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Extension> selectView(ExtensionSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

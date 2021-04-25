@@ -116,21 +116,21 @@ public class UserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     public List<User> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         UserSearchContext searchContext = (UserSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("BugUser"))
-            return userService.selectQueryByBugUser(searchContext);
+            return userService.selectBugUser(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return userService.selectQueryByDefault(searchContext);
+            return userService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("getByLogin"))
-            return userService.selectQueryByGetByLogin(searchContext);
+            return userService.selectGetByLogin(searchContext);
         if (iPSDataQuery.getName().equals("ProjectTeamM"))
-            return userService.selectQueryByProjectTeamM(searchContext);
+            return userService.selectProjectTeamM(searchContext);
         if (iPSDataQuery.getName().equals("ProjectTeamUser"))
-            return userService.selectQueryByProjectTeamUser(searchContext);
+            return userService.selectProjectTeamUser(searchContext);
         if (iPSDataQuery.getName().equals("ProjectTeamUserTask"))
-            return userService.selectQueryByProjectTeamUserTask(searchContext);
+            return userService.selectProjectTeamUserTask(searchContext);
         if (iPSDataQuery.getName().equals("TASKTEAM"))
-            return userService.selectQueryByTaskTeam(searchContext);
+            return userService.selectTaskTeam(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return userService.selectQueryByView(searchContext);
+            return userService.selectView(searchContext);
         return null;
     }
 

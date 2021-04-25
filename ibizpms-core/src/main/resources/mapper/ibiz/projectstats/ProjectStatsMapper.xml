@@ -145,7 +145,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -166,7 +166,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByNoOpenProduct"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+	<select id="selectNoOpenProduct"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
 		<include refid="NoOpenProduct" />
 	</select>
 
@@ -178,7 +178,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectBugType"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+	<select id="selectProjectBugType"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
 		<include refid="ProjectBugType" />
 	</select>
 
@@ -193,7 +193,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectInputStats"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+	<select id="selectProjectInputStats"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
 		<include refid="ProjectInputStats" />
 	</select>
 
@@ -205,7 +205,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectProgress"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+	<select id="selectProjectProgress"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
 		<include refid="ProjectProgress" />
 	</select>
 
@@ -217,7 +217,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectQuality"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+	<select id="selectProjectQuality"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
 		<include refid="ProjectQuality" />
 	</select>
 
@@ -229,7 +229,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectStoryStageStats"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+	<select id="selectProjectStoryStageStats"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
 		<include refid="ProjectStoryStageStats" />
 	</select>
 
@@ -241,7 +241,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectStoryStatusStats"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+	<select id="selectProjectStoryStatusStats"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
 		<include refid="ProjectStoryStatusStats" />
 	</select>
 
@@ -253,7 +253,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectTaskCountByTaskStatus"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+	<select id="selectProjectTaskCountByTaskStatus"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
 		<include refid="ProjectTaskCountByTaskStatus" />
 	</select>
 
@@ -265,7 +265,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByProjectTaskCountByType"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+	<select id="selectProjectTaskCountByType"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
 		<include refid="ProjectTaskCountByType" />
 	</select>
 
@@ -277,7 +277,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByTaskTime"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+	<select id="selectTaskTime"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
 		<include refid="TaskTime" />
 	</select>
 
@@ -292,7 +292,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProjectStatsSearchContext" resultMap="ProjectStatsResultMap">
 		<include refid="View" />
 	</select>
 

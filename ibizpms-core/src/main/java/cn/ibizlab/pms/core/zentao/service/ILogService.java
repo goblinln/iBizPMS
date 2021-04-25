@@ -39,8 +39,8 @@ public interface ILogService extends IService<Log> {
     boolean save(Log et);
     void saveBatch(List<Log> list);
     List<Log> select(LogSearchContext context);
-    List<Log> selectQueryByDefault(LogSearchContext context);
-    List<Log> selectQueryByView(LogSearchContext context);
+    List<Log> selectDefault(LogSearchContext context);
+    List<Log> selectView(LogSearchContext context);
 
     Page<Log> searchDefault(LogSearchContext context);
     Log dynamicCall(Long key, String action, Log et);

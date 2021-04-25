@@ -104,9 +104,9 @@ public class SysUpdateFeaturesRuntime extends cn.ibizlab.pms.core.runtime.System
     public List<SysUpdateFeatures> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         SysUpdateFeaturesSearchContext searchContext = (SysUpdateFeaturesSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return sysupdatefeaturesService.selectQueryByDefault(searchContext);
+            return sysupdatefeaturesService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return sysupdatefeaturesService.selectQueryByView(searchContext);
+            return sysupdatefeaturesService.selectView(searchContext);
         return null;
     }
 

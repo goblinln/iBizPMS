@@ -214,11 +214,11 @@ public class ImConferenceactionServiceImpl extends ServiceImpl<ImConferenceactio
 
 
 
-    public List<ImConferenceaction> selectQueryByDefault(ImConferenceactionSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<ImConferenceaction> selectDefault(ImConferenceactionSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<ImConferenceaction> selectQueryByView(ImConferenceactionSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<ImConferenceaction> selectView(ImConferenceactionSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

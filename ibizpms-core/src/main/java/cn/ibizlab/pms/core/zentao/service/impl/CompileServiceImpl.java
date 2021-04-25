@@ -217,11 +217,11 @@ public class CompileServiceImpl extends ServiceImpl<CompileMapper, Compile> impl
 
 
 
-    public List<Compile> selectQueryByDefault(CompileSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Compile> selectDefault(CompileSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Compile> selectQueryByView(CompileSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Compile> selectView(CompileSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

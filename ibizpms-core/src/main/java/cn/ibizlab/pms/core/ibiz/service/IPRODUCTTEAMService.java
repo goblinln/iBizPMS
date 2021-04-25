@@ -41,11 +41,11 @@ public interface IPRODUCTTEAMService extends IService<PRODUCTTEAM> {
     boolean save(PRODUCTTEAM et);
     void saveBatch(List<PRODUCTTEAM> list);
     List<PRODUCTTEAM> select(PRODUCTTEAMSearchContext context);
-    List<PRODUCTTEAM> selectQueryByDefault(PRODUCTTEAMSearchContext context);
-    List<PRODUCTTEAM> selectQueryByProductTeamInfo(PRODUCTTEAMSearchContext context);
-    List<PRODUCTTEAM> selectQueryByProjectApp(PRODUCTTEAMSearchContext context);
-    List<PRODUCTTEAM> selectQueryByRowEditDefaultProductTeam(PRODUCTTEAMSearchContext context);
-    List<PRODUCTTEAM> selectQueryByView(PRODUCTTEAMSearchContext context);
+    List<PRODUCTTEAM> selectDefault(PRODUCTTEAMSearchContext context);
+    List<PRODUCTTEAM> selectProductTeamInfo(PRODUCTTEAMSearchContext context);
+    List<PRODUCTTEAM> selectProjectApp(PRODUCTTEAMSearchContext context);
+    List<PRODUCTTEAM> selectRowEditDefaultProductTeam(PRODUCTTEAMSearchContext context);
+    List<PRODUCTTEAM> selectView(PRODUCTTEAMSearchContext context);
 
     Page<PRODUCTTEAM> searchDefault(PRODUCTTEAMSearchContext context);
     Page<PRODUCTTEAM> searchProductTeamInfo(PRODUCTTEAMSearchContext context);

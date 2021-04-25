@@ -136,43 +136,43 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     public List<Product> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         ProductSearchContext searchContext = (ProductSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("AllList"))
-            return productService.selectQueryByAllList(searchContext);
+            return productService.selectAllList(searchContext);
         if (iPSDataQuery.getName().equals("AllProduct"))
-            return productService.selectQueryByAllProduct(searchContext);
+            return productService.selectAllProduct(searchContext);
         if (iPSDataQuery.getName().equals("CheckNameOrCode"))
-            return productService.selectQueryByCheckNameOrCode(searchContext);
+            return productService.selectCheckNameOrCode(searchContext);
         if (iPSDataQuery.getName().equals("CurDefault"))
-            return productService.selectQueryByCurDefault(searchContext);
+            return productService.selectCurDefault(searchContext);
         if (iPSDataQuery.getName().equals("CURPROJECT"))
-            return productService.selectQueryByCurProject(searchContext);
+            return productService.selectCurProject(searchContext);
         if (iPSDataQuery.getName().equals("CurUer"))
-            return productService.selectQueryByCurUer(searchContext);
+            return productService.selectCurUer(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return productService.selectQueryByDefault(searchContext);
+            return productService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("DeveloperQuery"))
-            return productService.selectQueryByDeveloperQuery(searchContext);
+            return productService.selectDeveloperQuery(searchContext);
         if (iPSDataQuery.getName().equals("ESBulk"))
-            return productService.selectQueryByESBulk(searchContext);
+            return productService.selectESBulk(searchContext);
         if (iPSDataQuery.getName().equals("OpenQuery"))
-            return productService.selectQueryByOpenQuery(searchContext);
+            return productService.selectOpenQuery(searchContext);
         if (iPSDataQuery.getName().equals("POQuery"))
-            return productService.selectQueryByPOQuery(searchContext);
+            return productService.selectPOQuery(searchContext);
         if (iPSDataQuery.getName().equals("ProductManagerQuery"))
-            return productService.selectQueryByProductManagerQuery(searchContext);
+            return productService.selectProductManagerQuery(searchContext);
         if (iPSDataQuery.getName().equals("ProductPM"))
-            return productService.selectQueryByProductPM(searchContext);
+            return productService.selectProductPM(searchContext);
         if (iPSDataQuery.getName().equals("ProductTeam"))
-            return productService.selectQueryByProductTeam(searchContext);
+            return productService.selectProductTeam(searchContext);
         if (iPSDataQuery.getName().equals("QDQuery"))
-            return productService.selectQueryByQDQuery(searchContext);
+            return productService.selectQDQuery(searchContext);
         if (iPSDataQuery.getName().equals("RDQuery"))
-            return productService.selectQueryByRDQuery(searchContext);
+            return productService.selectRDQuery(searchContext);
         if (iPSDataQuery.getName().equals("SIMPLE"))
-            return productService.selectQueryBySimple(searchContext);
+            return productService.selectSimple(searchContext);
         if (iPSDataQuery.getName().equals("StoryCURPROJECT"))
-            return productService.selectQueryByStoryCurProject(searchContext);
+            return productService.selectStoryCurProject(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return productService.selectQueryByView(searchContext);
+            return productService.selectView(searchContext);
         return null;
     }
 

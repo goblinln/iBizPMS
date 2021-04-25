@@ -19,8 +19,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ProjectStoryMapper extends BaseMapper<ProjectStory> {
 
-    List<ProjectStory> selectQueryByDefault(@Param("srf") ProjectStorySearchContext context, @Param("ew") Wrapper<ProjectStory> wrapper);
-    List<ProjectStory> selectQueryByView(@Param("srf") ProjectStorySearchContext context, @Param("ew") Wrapper<ProjectStory> wrapper);
+    List<ProjectStory> selectDefault(@Param("srf") ProjectStorySearchContext context, @Param("ew") Wrapper<ProjectStory> wrapper);
+    List<ProjectStory> selectView(@Param("srf") ProjectStorySearchContext context, @Param("ew") Wrapper<ProjectStory> wrapper);
 
     Page<ProjectStory> searchDefault(IPage page, @Param("srf") ProjectStorySearchContext context, @Param("ew") Wrapper<ProjectStory> wrapper);
     @Override

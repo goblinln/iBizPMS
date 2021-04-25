@@ -310,26 +310,26 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
     }
 
 
-    public List<ProductModule> selectQueryByByPath(ProductModuleSearchContext context){
-        return baseMapper.selectQueryByByPath(context, context.getSelectCond());
+    public List<ProductModule> selectByPath(ProductModuleSearchContext context){
+        return baseMapper.selectByPath(context, context.getSelectCond());
     }
-    public List<ProductModule> selectQueryByDefault(ProductModuleSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<ProductModule> selectDefault(ProductModuleSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<ProductModule> selectQueryByParentModule(ProductModuleSearchContext context){
-        return baseMapper.selectQueryByParentModule(context, context.getSelectCond());
+    public List<ProductModule> selectParentModule(ProductModuleSearchContext context){
+        return baseMapper.selectParentModule(context, context.getSelectCond());
     }
-    public List<ProductModule> selectQueryByRoot(ProductModuleSearchContext context){
-        return baseMapper.selectQueryByRoot(context, context.getSelectCond());
+    public List<ProductModule> selectRoot(ProductModuleSearchContext context){
+        return baseMapper.selectRoot(context, context.getSelectCond());
     }
-    public List<ProductModule> selectQueryByRoot_NoBranch(ProductModuleSearchContext context){
-        return baseMapper.selectQueryByRoot_NoBranch(context, context.getSelectCond());
+    public List<ProductModule> selectRoot_NoBranch(ProductModuleSearchContext context){
+        return baseMapper.selectRoot_NoBranch(context, context.getSelectCond());
     }
-    public List<ProductModule> selectQueryByStoryModule(ProductModuleSearchContext context){
-        return baseMapper.selectQueryByStoryModule(context, context.getSelectCond());
+    public List<ProductModule> selectStoryModule(ProductModuleSearchContext context){
+        return baseMapper.selectStoryModule(context, context.getSelectCond());
     }
-    public List<ProductModule> selectQueryByView(ProductModuleSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<ProductModule> selectView(ProductModuleSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

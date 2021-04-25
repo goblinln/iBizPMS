@@ -19,9 +19,9 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IBZProTranslatorMapper extends BaseMapper<IBZProTranslator> {
 
-    List<IBZProTranslator> selectQueryByDefault(@Param("srf") IBZProTranslatorSearchContext context, @Param("ew") Wrapper<IBZProTranslator> wrapper);
-    List<IBZProTranslator> selectQueryBySimple(@Param("srf") IBZProTranslatorSearchContext context, @Param("ew") Wrapper<IBZProTranslator> wrapper);
-    List<IBZProTranslator> selectQueryByView(@Param("srf") IBZProTranslatorSearchContext context, @Param("ew") Wrapper<IBZProTranslator> wrapper);
+    List<IBZProTranslator> selectDefault(@Param("srf") IBZProTranslatorSearchContext context, @Param("ew") Wrapper<IBZProTranslator> wrapper);
+    List<IBZProTranslator> selectSimple(@Param("srf") IBZProTranslatorSearchContext context, @Param("ew") Wrapper<IBZProTranslator> wrapper);
+    List<IBZProTranslator> selectView(@Param("srf") IBZProTranslatorSearchContext context, @Param("ew") Wrapper<IBZProTranslator> wrapper);
 
     Page<IBZProTranslator> searchDefault(IPage page, @Param("srf") IBZProTranslatorSearchContext context, @Param("ew") Wrapper<IBZProTranslator> wrapper);
     @Override

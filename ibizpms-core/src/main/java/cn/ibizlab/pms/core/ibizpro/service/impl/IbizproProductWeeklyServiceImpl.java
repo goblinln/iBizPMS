@@ -262,11 +262,11 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
     }
 
 
-    public List<IbizproProductWeekly> selectQueryByDefault(IbizproProductWeeklySearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IbizproProductWeekly> selectDefault(IbizproProductWeeklySearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IbizproProductWeekly> selectQueryByView(IbizproProductWeeklySearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IbizproProductWeekly> selectView(IbizproProductWeeklySearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

@@ -39,11 +39,11 @@ public interface IIbzproProjectUserTaskService extends IService<IbzproProjectUse
     boolean save(IbzproProjectUserTask et);
     void saveBatch(List<IbzproProjectUserTask> list);
     List<IbzproProjectUserTask> select(IbzproProjectUserTaskSearchContext context);
-    List<IbzproProjectUserTask> selectQueryByDefault(IbzproProjectUserTaskSearchContext context);
-    List<IbzproProjectUserTask> selectQueryByProjectDailyTask(IbzproProjectUserTaskSearchContext context);
-    List<IbzproProjectUserTask> selectQueryByProjectMonthlyTask(IbzproProjectUserTaskSearchContext context);
-    List<IbzproProjectUserTask> selectQueryByProjectWeeklyTask(IbzproProjectUserTaskSearchContext context);
-    List<IbzproProjectUserTask> selectQueryByView(IbzproProjectUserTaskSearchContext context);
+    List<IbzproProjectUserTask> selectDefault(IbzproProjectUserTaskSearchContext context);
+    List<IbzproProjectUserTask> selectProjectDailyTask(IbzproProjectUserTaskSearchContext context);
+    List<IbzproProjectUserTask> selectProjectMonthlyTask(IbzproProjectUserTaskSearchContext context);
+    List<IbzproProjectUserTask> selectProjectWeeklyTask(IbzproProjectUserTaskSearchContext context);
+    List<IbzproProjectUserTask> selectView(IbzproProjectUserTaskSearchContext context);
 
     Page<IbzproProjectUserTask> searchDefault(IbzproProjectUserTaskSearchContext context);
     Page<IbzproProjectUserTask> searchProjectDailyTask(IbzproProjectUserTaskSearchContext context);

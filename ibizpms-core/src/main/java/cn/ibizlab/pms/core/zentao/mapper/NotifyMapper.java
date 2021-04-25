@@ -19,8 +19,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface NotifyMapper extends BaseMapper<Notify> {
 
-    List<Notify> selectQueryByDefault(@Param("srf") NotifySearchContext context, @Param("ew") Wrapper<Notify> wrapper);
-    List<Notify> selectQueryByView(@Param("srf") NotifySearchContext context, @Param("ew") Wrapper<Notify> wrapper);
+    List<Notify> selectDefault(@Param("srf") NotifySearchContext context, @Param("ew") Wrapper<Notify> wrapper);
+    List<Notify> selectView(@Param("srf") NotifySearchContext context, @Param("ew") Wrapper<Notify> wrapper);
 
     Page<Notify> searchDefault(IPage page, @Param("srf") NotifySearchContext context, @Param("ew") Wrapper<Notify> wrapper);
     @Override

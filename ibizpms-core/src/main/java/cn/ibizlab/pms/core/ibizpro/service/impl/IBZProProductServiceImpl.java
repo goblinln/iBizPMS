@@ -220,11 +220,11 @@ public class IBZProProductServiceImpl extends ServiceImpl<IBZProProductMapper, I
 
 
 
-    public List<IBZProProduct> selectQueryByDefault(IBZProProductSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IBZProProduct> selectDefault(IBZProProductSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IBZProProduct> selectQueryByView(IBZProProductSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IBZProProduct> selectView(IBZProProductSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

@@ -104,9 +104,9 @@ public class ScoreRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     public List<Score> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         ScoreSearchContext searchContext = (ScoreSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return scoreService.selectQueryByDefault(searchContext);
+            return scoreService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return scoreService.selectQueryByView(searchContext);
+            return scoreService.selectView(searchContext);
         return null;
     }
 

@@ -106,11 +106,11 @@ public class CompanyStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     public List<CompanyStats> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         CompanyStatsSearchContext searchContext = (CompanyStatsSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("CompanyDynamicStats"))
-            return companystatsService.selectQueryByCompanyDynamicStats(searchContext);
+            return companystatsService.selectCompanyDynamicStats(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return companystatsService.selectQueryByDefault(searchContext);
+            return companystatsService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return companystatsService.selectQueryByView(searchContext);
+            return companystatsService.selectView(searchContext);
         return null;
     }
 

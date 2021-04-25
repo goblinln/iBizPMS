@@ -292,26 +292,26 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     }
 
 
-    public List<TestModule> selectQueryByByPath(TestModuleSearchContext context){
-        return baseMapper.selectQueryByByPath(context, context.getSelectCond());
+    public List<TestModule> selectByPath(TestModuleSearchContext context){
+        return baseMapper.selectByPath(context, context.getSelectCond());
     }
-    public List<TestModule> selectQueryByDefault(TestModuleSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<TestModule> selectDefault(TestModuleSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<TestModule> selectQueryByParentModule(TestModuleSearchContext context){
-        return baseMapper.selectQueryByParentModule(context, context.getSelectCond());
+    public List<TestModule> selectParentModule(TestModuleSearchContext context){
+        return baseMapper.selectParentModule(context, context.getSelectCond());
     }
-    public List<TestModule> selectQueryByRoot(TestModuleSearchContext context){
-        return baseMapper.selectQueryByRoot(context, context.getSelectCond());
+    public List<TestModule> selectRoot(TestModuleSearchContext context){
+        return baseMapper.selectRoot(context, context.getSelectCond());
     }
-    public List<TestModule> selectQueryByRoot_NoBranch(TestModuleSearchContext context){
-        return baseMapper.selectQueryByRoot_NoBranch(context, context.getSelectCond());
+    public List<TestModule> selectRoot_NoBranch(TestModuleSearchContext context){
+        return baseMapper.selectRoot_NoBranch(context, context.getSelectCond());
     }
-    public List<TestModule> selectQueryByTestModule(TestModuleSearchContext context){
-        return baseMapper.selectQueryByTestModule(context, context.getSelectCond());
+    public List<TestModule> selectTestModule(TestModuleSearchContext context){
+        return baseMapper.selectTestModule(context, context.getSelectCond());
     }
-    public List<TestModule> selectQueryByView(TestModuleSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<TestModule> selectView(TestModuleSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

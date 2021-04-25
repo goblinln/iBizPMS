@@ -19,10 +19,10 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface UserContactMapper extends BaseMapper<UserContact> {
 
-    List<UserContact> selectQueryByCurUSERCONTACT(@Param("srf") UserContactSearchContext context, @Param("ew") Wrapper<UserContact> wrapper);
-    List<UserContact> selectQueryByDefault(@Param("srf") UserContactSearchContext context, @Param("ew") Wrapper<UserContact> wrapper);
-    List<UserContact> selectQueryByMyUSERCONTACT(@Param("srf") UserContactSearchContext context, @Param("ew") Wrapper<UserContact> wrapper);
-    List<UserContact> selectQueryByView(@Param("srf") UserContactSearchContext context, @Param("ew") Wrapper<UserContact> wrapper);
+    List<UserContact> selectCurUSERCONTACT(@Param("srf") UserContactSearchContext context, @Param("ew") Wrapper<UserContact> wrapper);
+    List<UserContact> selectDefault(@Param("srf") UserContactSearchContext context, @Param("ew") Wrapper<UserContact> wrapper);
+    List<UserContact> selectMyUSERCONTACT(@Param("srf") UserContactSearchContext context, @Param("ew") Wrapper<UserContact> wrapper);
+    List<UserContact> selectView(@Param("srf") UserContactSearchContext context, @Param("ew") Wrapper<UserContact> wrapper);
 
     Page<UserContact> searchCurUSERCONTACT(IPage page, @Param("srf") UserContactSearchContext context, @Param("ew") Wrapper<UserContact> wrapper);
     Page<UserContact> searchDefault(IPage page, @Param("srf") UserContactSearchContext context, @Param("ew") Wrapper<UserContact> wrapper);

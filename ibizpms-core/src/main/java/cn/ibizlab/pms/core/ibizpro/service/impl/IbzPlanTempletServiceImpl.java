@@ -240,14 +240,14 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
 
 
 
-    public List<IbzPlanTemplet> selectQueryByCurUserTemplet(IbzPlanTempletSearchContext context){
-        return baseMapper.selectQueryByCurUserTemplet(context, context.getSelectCond());
+    public List<IbzPlanTemplet> selectCurUserTemplet(IbzPlanTempletSearchContext context){
+        return baseMapper.selectCurUserTemplet(context, context.getSelectCond());
     }
-    public List<IbzPlanTemplet> selectQueryByDefault(IbzPlanTempletSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IbzPlanTemplet> selectDefault(IbzPlanTempletSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IbzPlanTemplet> selectQueryByView(IbzPlanTempletSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IbzPlanTemplet> selectView(IbzPlanTempletSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

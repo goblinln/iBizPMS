@@ -104,9 +104,9 @@ public class ImMessagestatusRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
     public List<ImMessagestatus> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         ImMessagestatusSearchContext searchContext = (ImMessagestatusSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return immessagestatusService.selectQueryByDefault(searchContext);
+            return immessagestatusService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return immessagestatusService.selectQueryByView(searchContext);
+            return immessagestatusService.selectView(searchContext);
         return null;
     }
 

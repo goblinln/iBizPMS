@@ -66,7 +66,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByCurUSERCONTACT"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext" resultMap="UserContactResultMap">
+	<select id="selectCurUSERCONTACT"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext" resultMap="UserContactResultMap">
 		<include refid="CurUSERCONTACT" />
 	</select>
 
@@ -78,7 +78,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext" resultMap="UserContactResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext" resultMap="UserContactResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -93,7 +93,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyUSERCONTACT"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext" resultMap="UserContactResultMap">
+	<select id="selectMyUSERCONTACT"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext" resultMap="UserContactResultMap">
 		<include refid="MyUSERCONTACT" />
 	</select>
 
@@ -105,7 +105,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext" resultMap="UserContactResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext" resultMap="UserContactResultMap">
 		<include refid="View" />
 	</select>
 

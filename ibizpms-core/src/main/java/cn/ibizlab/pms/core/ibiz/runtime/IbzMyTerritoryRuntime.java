@@ -114,19 +114,19 @@ public class IbzMyTerritoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
     public List<IbzMyTerritory> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         IbzMyTerritorySearchContext searchContext = (IbzMyTerritorySearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return ibzmyterritoryService.selectQueryByDefault(searchContext);
+            return ibzmyterritoryService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("MyWork"))
-            return ibzmyterritoryService.selectQueryByMyWork(searchContext);
+            return ibzmyterritoryService.selectMyWork(searchContext);
         if (iPSDataQuery.getName().equals("MyWorkMob"))
-            return ibzmyterritoryService.selectQueryByMyWorkMob(searchContext);
+            return ibzmyterritoryService.selectMyWorkMob(searchContext);
         if (iPSDataQuery.getName().equals("MyWorkPm"))
-            return ibzmyterritoryService.selectQueryByMyWorkPm(searchContext);
+            return ibzmyterritoryService.selectMyWorkPm(searchContext);
         if (iPSDataQuery.getName().equals("PersonInfo"))
-            return ibzmyterritoryService.selectQueryByPersonInfo(searchContext);
+            return ibzmyterritoryService.selectPersonInfo(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return ibzmyterritoryService.selectQueryByView(searchContext);
+            return ibzmyterritoryService.selectView(searchContext);
         if (iPSDataQuery.getName().equals("welcome"))
-            return ibzmyterritoryService.selectQueryByWelcome(searchContext);
+            return ibzmyterritoryService.selectWelcome(searchContext);
         return null;
     }
 

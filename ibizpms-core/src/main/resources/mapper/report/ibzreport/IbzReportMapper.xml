@@ -64,7 +64,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByAllReport"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportSearchContext" resultMap="IbzReportResultMap">
+	<select id="selectAllReport"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportSearchContext" resultMap="IbzReportResultMap">
 		<include refid="AllReport" />
 	</select>
 
@@ -76,7 +76,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportSearchContext" resultMap="IbzReportResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportSearchContext" resultMap="IbzReportResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -91,7 +91,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyReAllReport"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportSearchContext" resultMap="IbzReportResultMap">
+	<select id="selectMyReAllReport"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportSearchContext" resultMap="IbzReportResultMap">
 		<include refid="MyReAllReport" />
 	</select>
 
@@ -103,7 +103,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportSearchContext" resultMap="IbzReportResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.report.filter.IbzReportSearchContext" resultMap="IbzReportResultMap">
 		<include refid="View" />
 	</select>
 

@@ -294,20 +294,20 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
 	}
 
 
-    public List<ProjectTeam> selectQueryByDefault(ProjectTeamSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<ProjectTeam> selectDefault(ProjectTeamSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<ProjectTeam> selectQueryByProjectTeamPm(ProjectTeamSearchContext context){
-        return baseMapper.selectQueryByProjectTeamPm(context, context.getSelectCond());
+    public List<ProjectTeam> selectProjectTeamPm(ProjectTeamSearchContext context){
+        return baseMapper.selectProjectTeamPm(context, context.getSelectCond());
     }
-    public List<ProjectTeam> selectQueryByRowEditDefault(ProjectTeamSearchContext context){
-        return baseMapper.selectQueryByRowEditDefault(context, context.getSelectCond());
+    public List<ProjectTeam> selectRowEditDefault(ProjectTeamSearchContext context){
+        return baseMapper.selectRowEditDefault(context, context.getSelectCond());
     }
-    public List<ProjectTeam> selectQueryByTaskCntEstimateConsumedLeft(ProjectTeamSearchContext context){
-        return baseMapper.selectQueryByTaskCntEstimateConsumedLeft(context, context.getSelectCond());
+    public List<ProjectTeam> selectTaskCntEstimateConsumedLeft(ProjectTeamSearchContext context){
+        return baseMapper.selectTaskCntEstimateConsumedLeft(context, context.getSelectCond());
     }
-    public List<ProjectTeam> selectQueryByView(ProjectTeamSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<ProjectTeam> selectView(ProjectTeamSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

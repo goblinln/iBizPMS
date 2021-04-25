@@ -39,8 +39,8 @@ public interface IBlockService extends IService<Block> {
     boolean save(Block et);
     void saveBatch(List<Block> list);
     List<Block> select(BlockSearchContext context);
-    List<Block> selectQueryByDefault(BlockSearchContext context);
-    List<Block> selectQueryByView(BlockSearchContext context);
+    List<Block> selectDefault(BlockSearchContext context);
+    List<Block> selectView(BlockSearchContext context);
 
     Page<Block> searchDefault(BlockSearchContext context);
     Block dynamicCall(Long key, String action, Block et);

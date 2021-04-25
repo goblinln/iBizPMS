@@ -40,12 +40,12 @@ public interface IProductStatsService extends IService<ProductStats> {
     boolean save(ProductStats et);
     void saveBatch(List<ProductStats> list);
     List<ProductStats> select(ProductStatsSearchContext context);
-    List<ProductStats> selectQueryByDefault(ProductStatsSearchContext context);
-    List<ProductStats> selectQueryByNoOpenProduct(ProductStatsSearchContext context);
-    List<ProductStats> selectQueryByProdctQuantiGird(ProductStatsSearchContext context);
-    List<ProductStats> selectQueryByProductInputTable(ProductStatsSearchContext context);
-    List<ProductStats> selectQueryByProductcompletionstatistics(ProductStatsSearchContext context);
-    List<ProductStats> selectQueryByView(ProductStatsSearchContext context);
+    List<ProductStats> selectDefault(ProductStatsSearchContext context);
+    List<ProductStats> selectNoOpenProduct(ProductStatsSearchContext context);
+    List<ProductStats> selectProdctQuantiGird(ProductStatsSearchContext context);
+    List<ProductStats> selectProductInputTable(ProductStatsSearchContext context);
+    List<ProductStats> selectProductcompletionstatistics(ProductStatsSearchContext context);
+    List<ProductStats> selectView(ProductStatsSearchContext context);
 
     Page<ProductStats> searchDefault(ProductStatsSearchContext context);
     Page<ProductStats> searchNoOpenProduct(ProductStatsSearchContext context);

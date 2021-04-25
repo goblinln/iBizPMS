@@ -112,17 +112,17 @@ public class IbzWeeklyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     public List<IbzWeekly> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         IbzWeeklySearchContext searchContext = (IbzWeeklySearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return ibzweeklyService.selectQueryByDefault(searchContext);
+            return ibzweeklyService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("MyNotSubmit"))
-            return ibzweeklyService.selectQueryByMyNotSubmit(searchContext);
+            return ibzweeklyService.selectMyNotSubmit(searchContext);
         if (iPSDataQuery.getName().equals("MyWeekly"))
-            return ibzweeklyService.selectQueryByMyWeekly(searchContext);
+            return ibzweeklyService.selectMyWeekly(searchContext);
         if (iPSDataQuery.getName().equals("ProductTeamMemberWeekly"))
-            return ibzweeklyService.selectQueryByProductTeamMemberWeekly(searchContext);
+            return ibzweeklyService.selectProductTeamMemberWeekly(searchContext);
         if (iPSDataQuery.getName().equals("ProjectWeekly"))
-            return ibzweeklyService.selectQueryByProjectWeekly(searchContext);
+            return ibzweeklyService.selectProjectWeekly(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return ibzweeklyService.selectQueryByView(searchContext);
+            return ibzweeklyService.selectView(searchContext);
         return null;
     }
 

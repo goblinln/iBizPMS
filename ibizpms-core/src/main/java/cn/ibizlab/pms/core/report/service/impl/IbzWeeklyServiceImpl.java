@@ -330,23 +330,23 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
 
 
 
-    public List<IbzWeekly> selectQueryByDefault(IbzWeeklySearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<IbzWeekly> selectDefault(IbzWeeklySearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<IbzWeekly> selectQueryByMyNotSubmit(IbzWeeklySearchContext context){
-        return baseMapper.selectQueryByMyNotSubmit(context, context.getSelectCond());
+    public List<IbzWeekly> selectMyNotSubmit(IbzWeeklySearchContext context){
+        return baseMapper.selectMyNotSubmit(context, context.getSelectCond());
     }
-    public List<IbzWeekly> selectQueryByMyWeekly(IbzWeeklySearchContext context){
-        return baseMapper.selectQueryByMyWeekly(context, context.getSelectCond());
+    public List<IbzWeekly> selectMyWeekly(IbzWeeklySearchContext context){
+        return baseMapper.selectMyWeekly(context, context.getSelectCond());
     }
-    public List<IbzWeekly> selectQueryByProductTeamMemberWeekly(IbzWeeklySearchContext context){
-        return baseMapper.selectQueryByProductTeamMemberWeekly(context, context.getSelectCond());
+    public List<IbzWeekly> selectProductTeamMemberWeekly(IbzWeeklySearchContext context){
+        return baseMapper.selectProductTeamMemberWeekly(context, context.getSelectCond());
     }
-    public List<IbzWeekly> selectQueryByProjectWeekly(IbzWeeklySearchContext context){
-        return baseMapper.selectQueryByProjectWeekly(context, context.getSelectCond());
+    public List<IbzWeekly> selectProjectWeekly(IbzWeeklySearchContext context){
+        return baseMapper.selectProjectWeekly(context, context.getSelectCond());
     }
-    public List<IbzWeekly> selectQueryByView(IbzWeeklySearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<IbzWeekly> selectView(IbzWeeklySearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

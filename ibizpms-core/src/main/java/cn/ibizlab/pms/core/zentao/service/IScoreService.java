@@ -39,8 +39,8 @@ public interface IScoreService extends IService<Score> {
     boolean save(Score et);
     void saveBatch(List<Score> list);
     List<Score> select(ScoreSearchContext context);
-    List<Score> selectQueryByDefault(ScoreSearchContext context);
-    List<Score> selectQueryByView(ScoreSearchContext context);
+    List<Score> selectDefault(ScoreSearchContext context);
+    List<Score> selectView(ScoreSearchContext context);
 
     Page<Score> searchDefault(ScoreSearchContext context);
     Score dynamicCall(Long key, String action, Score et);

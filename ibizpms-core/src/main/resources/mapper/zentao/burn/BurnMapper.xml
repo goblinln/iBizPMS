@@ -90,7 +90,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.BurnSearchContext" resultMap="BurnResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.BurnSearchContext" resultMap="BurnResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -102,7 +102,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByESTIMATEANDLEFT"  parameterType="cn.ibizlab.pms.core.zentao.filter.BurnSearchContext" resultMap="BurnResultMap">
+	<select id="selectESTIMATEANDLEFT"  parameterType="cn.ibizlab.pms.core.zentao.filter.BurnSearchContext" resultMap="BurnResultMap">
 		<include refid="ESTIMATEANDLEFT" />
 	</select>
 
@@ -114,7 +114,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.BurnSearchContext" resultMap="BurnResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.BurnSearchContext" resultMap="BurnResultMap">
 		<include refid="View" />
 	</select>
 

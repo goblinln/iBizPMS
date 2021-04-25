@@ -80,7 +80,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.DeptSearchContext" resultMap="DeptResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.DeptSearchContext" resultMap="DeptResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -95,7 +95,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRoot"  parameterType="cn.ibizlab.pms.core.zentao.filter.DeptSearchContext" resultMap="DeptResultMap">
+	<select id="selectRoot"  parameterType="cn.ibizlab.pms.core.zentao.filter.DeptSearchContext" resultMap="DeptResultMap">
 		<include refid="Root" />
 	</select>
 
@@ -107,7 +107,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.DeptSearchContext" resultMap="DeptResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.DeptSearchContext" resultMap="DeptResultMap">
 		<include refid="View" />
 	</select>
 

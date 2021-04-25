@@ -147,7 +147,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.TestTaskSearchContext" resultMap="TestTaskResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.TestTaskSearchContext" resultMap="TestTaskResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -162,7 +162,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByMyTestTaskPc"  parameterType="cn.ibizlab.pms.core.zentao.filter.TestTaskSearchContext" resultMap="TestTaskResultMap">
+	<select id="selectMyTestTaskPc"  parameterType="cn.ibizlab.pms.core.zentao.filter.TestTaskSearchContext" resultMap="TestTaskResultMap">
 		<include refid="MyTestTaskPc" />
 	</select>
 
@@ -177,7 +177,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.TestTaskSearchContext" resultMap="TestTaskResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.TestTaskSearchContext" resultMap="TestTaskResultMap">
 		<include refid="View" />
 	</select>
 

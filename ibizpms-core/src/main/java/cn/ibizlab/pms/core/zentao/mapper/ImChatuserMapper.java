@@ -19,8 +19,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface ImChatuserMapper extends BaseMapper<ImChatuser> {
 
-    List<ImChatuser> selectQueryByDefault(@Param("srf") ImChatuserSearchContext context, @Param("ew") Wrapper<ImChatuser> wrapper);
-    List<ImChatuser> selectQueryByView(@Param("srf") ImChatuserSearchContext context, @Param("ew") Wrapper<ImChatuser> wrapper);
+    List<ImChatuser> selectDefault(@Param("srf") ImChatuserSearchContext context, @Param("ew") Wrapper<ImChatuser> wrapper);
+    List<ImChatuser> selectView(@Param("srf") ImChatuserSearchContext context, @Param("ew") Wrapper<ImChatuser> wrapper);
 
     Page<ImChatuser> searchDefault(IPage page, @Param("srf") ImChatuserSearchContext context, @Param("ew") Wrapper<ImChatuser> wrapper);
     @Override

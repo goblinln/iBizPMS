@@ -116,21 +116,21 @@ public class TaskEstimateRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     public List<TaskEstimate> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         TaskEstimateSearchContext searchContext = (TaskEstimateSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("ActionMonth"))
-            return taskestimateService.selectQueryByActionMonth(searchContext);
+            return taskestimateService.selectActionMonth(searchContext);
         if (iPSDataQuery.getName().equals("ActionYear"))
-            return taskestimateService.selectQueryByActionYear(searchContext);
+            return taskestimateService.selectActionYear(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return taskestimateService.selectQueryByDefault(searchContext);
+            return taskestimateService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT1"))
-            return taskestimateService.selectQueryByDefaults(searchContext);
+            return taskestimateService.selectDefaults(searchContext);
         if (iPSDataQuery.getName().equals("ProjectActionMonth"))
-            return taskestimateService.selectQueryByProjectActionMonth(searchContext);
+            return taskestimateService.selectProjectActionMonth(searchContext);
         if (iPSDataQuery.getName().equals("ProjectActionYear"))
-            return taskestimateService.selectQueryByProjectActionYear(searchContext);
+            return taskestimateService.selectProjectActionYear(searchContext);
         if (iPSDataQuery.getName().equals("ProjectTaskEstimate"))
-            return taskestimateService.selectQueryByProjectTaskEstimate(searchContext);
+            return taskestimateService.selectProjectTaskEstimate(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return taskestimateService.selectQueryByView(searchContext);
+            return taskestimateService.selectView(searchContext);
         return null;
     }
 

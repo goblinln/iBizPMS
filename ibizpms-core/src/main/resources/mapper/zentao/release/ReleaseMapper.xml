@@ -137,7 +137,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ReleaseSearchContext" resultMap="ReleaseResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ReleaseSearchContext" resultMap="ReleaseResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -155,7 +155,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByGetList"  parameterType="cn.ibizlab.pms.core.zentao.filter.ReleaseSearchContext" resultMap="ReleaseResultMap">
+	<select id="selectGetList"  parameterType="cn.ibizlab.pms.core.zentao.filter.ReleaseSearchContext" resultMap="ReleaseResultMap">
 		<include refid="GetList" />
 	</select>
 
@@ -173,7 +173,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByReportRelease"  parameterType="cn.ibizlab.pms.core.zentao.filter.ReleaseSearchContext" resultMap="ReleaseResultMap">
+	<select id="selectReportRelease"  parameterType="cn.ibizlab.pms.core.zentao.filter.ReleaseSearchContext" resultMap="ReleaseResultMap">
 		<include refid="ReportRelease" />
 	</select>
 
@@ -188,7 +188,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ReleaseSearchContext" resultMap="ReleaseResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.zentao.filter.ReleaseSearchContext" resultMap="ReleaseResultMap">
 		<include refid="View" />
 	</select>
 

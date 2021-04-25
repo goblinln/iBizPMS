@@ -156,59 +156,59 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     public List<Story> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         StorySearchContext searchContext = (StorySearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("AssignedToMyStory"))
-            return storyService.selectQueryByAssignedToMyStory(searchContext);
+            return storyService.selectAssignedToMyStory(searchContext);
         if (iPSDataQuery.getName().equals("AssignedToMyStoryCalendar"))
-            return storyService.selectQueryByAssignedToMyStoryCalendar(searchContext);
+            return storyService.selectAssignedToMyStoryCalendar(searchContext);
         if (iPSDataQuery.getName().equals("BugStory"))
-            return storyService.selectQueryByBugStory(searchContext);
+            return storyService.selectBugStory(searchContext);
         if (iPSDataQuery.getName().equals("buildLinkCompletedStories"))
-            return storyService.selectQueryByBuildLinkCompletedStories(searchContext);
+            return storyService.selectBuildLinkCompletedStories(searchContext);
         if (iPSDataQuery.getName().equals("BuildLinkableStories"))
-            return storyService.selectQueryByBuildLinkableStories(searchContext);
+            return storyService.selectBuildLinkableStories(searchContext);
         if (iPSDataQuery.getName().equals("BuildStories"))
-            return storyService.selectQueryByBuildStories(searchContext);
+            return storyService.selectBuildStories(searchContext);
         if (iPSDataQuery.getName().equals("ByModule"))
-            return storyService.selectQueryByByModule(searchContext);
+            return storyService.selectByModule(searchContext);
         if (iPSDataQuery.getName().equals("CaseStory"))
-            return storyService.selectQueryByCaseStory(searchContext);
+            return storyService.selectCaseStory(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return storyService.selectQueryByDefault(searchContext);
+            return storyService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("ESBulk"))
-            return storyService.selectQueryByESBulk(searchContext);
+            return storyService.selectESBulk(searchContext);
         if (iPSDataQuery.getName().equals("GetProductStories"))
-            return storyService.selectQueryByGetProductStories(searchContext);
+            return storyService.selectGetProductStories(searchContext);
         if (iPSDataQuery.getName().equals("MyAgentStory"))
-            return storyService.selectQueryByMyAgentStory(searchContext);
+            return storyService.selectMyAgentStory(searchContext);
         if (iPSDataQuery.getName().equals("MyCurOpenedStory"))
-            return storyService.selectQueryByMyCurOpenedStory(searchContext);
+            return storyService.selectMyCurOpenedStory(searchContext);
         if (iPSDataQuery.getName().equals("MyFavorites"))
-            return storyService.selectQueryByMyFavorites(searchContext);
+            return storyService.selectMyFavorites(searchContext);
         if (iPSDataQuery.getName().equals("NotCurPlanLinkStory"))
-            return storyService.selectQueryByNotCurPlanLinkStory(searchContext);
+            return storyService.selectNotCurPlanLinkStory(searchContext);
         if (iPSDataQuery.getName().equals("ParentDefault"))
-            return storyService.selectQueryByParentDefault(searchContext);
+            return storyService.selectParentDefault(searchContext);
         if (iPSDataQuery.getName().equals("ParentDefaultQ"))
-            return storyService.selectQueryByParentDefaultQ(searchContext);
+            return storyService.selectParentDefaultQ(searchContext);
         if (iPSDataQuery.getName().equals("projectLinkStory"))
-            return storyService.selectQueryByProjectLinkStory(searchContext);
+            return storyService.selectProjectLinkStory(searchContext);
         if (iPSDataQuery.getName().equals("ProjectStories"))
-            return storyService.selectQueryByProjectStories(searchContext);
+            return storyService.selectProjectStories(searchContext);
         if (iPSDataQuery.getName().equals("ReleaseLinkableStories"))
-            return storyService.selectQueryByReleaseLinkableStories(searchContext);
+            return storyService.selectReleaseLinkableStories(searchContext);
         if (iPSDataQuery.getName().equals("ReleaseStories"))
-            return storyService.selectQueryByReleaseStories(searchContext);
+            return storyService.selectReleaseStories(searchContext);
         if (iPSDataQuery.getName().equals("ReportStories"))
-            return storyService.selectQueryByReportStories(searchContext);
+            return storyService.selectReportStories(searchContext);
         if (iPSDataQuery.getName().equals("StoryChild"))
-            return storyService.selectQueryByStoryChild(searchContext);
+            return storyService.selectStoryChild(searchContext);
         if (iPSDataQuery.getName().equals("StoryRelated"))
-            return storyService.selectQueryByStoryRelated(searchContext);
+            return storyService.selectStoryRelated(searchContext);
         if (iPSDataQuery.getName().equals("SubStory"))
-            return storyService.selectQueryBySubStory(searchContext);
+            return storyService.selectSubStory(searchContext);
         if (iPSDataQuery.getName().equals("TaskRelatedStory"))
-            return storyService.selectQueryByTaskRelatedStory(searchContext);
+            return storyService.selectTaskRelatedStory(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return storyService.selectQueryByView(searchContext);
+            return storyService.selectView(searchContext);
         return null;
     }
 

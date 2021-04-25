@@ -19,8 +19,8 @@ import com.alibaba.fastjson.JSONObject;
 
 public interface IBZProProductMapper extends BaseMapper<IBZProProduct> {
 
-    List<IBZProProduct> selectQueryByDefault(@Param("srf") IBZProProductSearchContext context, @Param("ew") Wrapper<IBZProProduct> wrapper);
-    List<IBZProProduct> selectQueryByView(@Param("srf") IBZProProductSearchContext context, @Param("ew") Wrapper<IBZProProduct> wrapper);
+    List<IBZProProduct> selectDefault(@Param("srf") IBZProProductSearchContext context, @Param("ew") Wrapper<IBZProProduct> wrapper);
+    List<IBZProProduct> selectView(@Param("srf") IBZProProductSearchContext context, @Param("ew") Wrapper<IBZProProduct> wrapper);
 
     Page<IBZProProduct> searchDefault(IPage page, @Param("srf") IBZProProductSearchContext context, @Param("ew") Wrapper<IBZProProduct> wrapper);
     @Override

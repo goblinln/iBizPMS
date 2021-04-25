@@ -146,51 +146,51 @@ public class CaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     public List<Case> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         CaseSearchContext searchContext = (CaseSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("BatchNew"))
-            return caseService.selectQueryByBatchNew(searchContext);
+            return caseService.selectBatchNew(searchContext);
         if (iPSDataQuery.getName().equals("CurOpenedCase"))
-            return caseService.selectQueryByCurOpenedCase(searchContext);
+            return caseService.selectCurOpenedCase(searchContext);
         if (iPSDataQuery.getName().equals("CurSuite"))
-            return caseService.selectQueryByCurSuite(searchContext);
+            return caseService.selectCurSuite(searchContext);
         if (iPSDataQuery.getName().equals("CurTestTask"))
-            return caseService.selectQueryByCurTestTask(searchContext);
+            return caseService.selectCurTestTask(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
-            return caseService.selectQueryByDefault(searchContext);
+            return caseService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("ESBulk"))
-            return caseService.selectQueryByESBulk(searchContext);
+            return caseService.selectESBulk(searchContext);
         if (iPSDataQuery.getName().equals("ModuleRePortCase"))
-            return caseService.selectQueryByModuleRePortCase(searchContext);
+            return caseService.selectModuleRePortCase(searchContext);
         if (iPSDataQuery.getName().equals("ModuleRePortCaseEntry"))
-            return caseService.selectQueryByModuleRePortCaseEntry(searchContext);
+            return caseService.selectModuleRePortCaseEntry(searchContext);
         if (iPSDataQuery.getName().equals("ModuleRePortCase_Project"))
-            return caseService.selectQueryByModuleRePortCase_Project(searchContext);
+            return caseService.selectModuleRePortCase_Project(searchContext);
         if (iPSDataQuery.getName().equals("MyFavorite"))
-            return caseService.selectQueryByMyFavorite(searchContext);
+            return caseService.selectMyFavorite(searchContext);
         if (iPSDataQuery.getName().equals("NotCurTestSuite"))
-            return caseService.selectQueryByNotCurTestSuite(searchContext);
+            return caseService.selectNotCurTestSuite(searchContext);
         if (iPSDataQuery.getName().equals("NotCurTestTask"))
-            return caseService.selectQueryByNotCurTestTask(searchContext);
+            return caseService.selectNotCurTestTask(searchContext);
         if (iPSDataQuery.getName().equals("NotCurTestTaskProject"))
-            return caseService.selectQueryByNotCurTestTaskProject(searchContext);
+            return caseService.selectNotCurTestTaskProject(searchContext);
         if (iPSDataQuery.getName().equals("RePortCase"))
-            return caseService.selectQueryByRePortCase(searchContext);
+            return caseService.selectRePortCase(searchContext);
         if (iPSDataQuery.getName().equals("RePortCaseEntry"))
-            return caseService.selectQueryByRePortCaseEntry(searchContext);
+            return caseService.selectRePortCaseEntry(searchContext);
         if (iPSDataQuery.getName().equals("RePortCase_Project"))
-            return caseService.selectQueryByRePortCase_Project(searchContext);
+            return caseService.selectRePortCase_Project(searchContext);
         if (iPSDataQuery.getName().equals("RunERRePortCase"))
-            return caseService.selectQueryByRunERRePortCase(searchContext);
+            return caseService.selectRunERRePortCase(searchContext);
         if (iPSDataQuery.getName().equals("RunERRePortCaseEntry"))
-            return caseService.selectQueryByRunERRePortCaseEntry(searchContext);
+            return caseService.selectRunERRePortCaseEntry(searchContext);
         if (iPSDataQuery.getName().equals("RunERRePortCase_Project"))
-            return caseService.selectQueryByRunERRePortCase_Project(searchContext);
+            return caseService.selectRunERRePortCase_Project(searchContext);
         if (iPSDataQuery.getName().equals("RunRePortCase"))
-            return caseService.selectQueryByRunRePortCase(searchContext);
+            return caseService.selectRunRePortCase(searchContext);
         if (iPSDataQuery.getName().equals("RunRePortCaseEntry"))
-            return caseService.selectQueryByRunRePortCaseEntry(searchContext);
+            return caseService.selectRunRePortCaseEntry(searchContext);
         if (iPSDataQuery.getName().equals("RunRePortCase_Project"))
-            return caseService.selectQueryByRunRePortCase_Project(searchContext);
+            return caseService.selectRunRePortCase_Project(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
-            return caseService.selectQueryByView(searchContext);
+            return caseService.selectView(searchContext);
         return null;
     }
 

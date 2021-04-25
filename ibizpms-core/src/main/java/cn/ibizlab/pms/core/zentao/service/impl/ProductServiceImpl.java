@@ -391,62 +391,62 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     }
 
 
-    public List<Product> selectQueryByAllList(ProductSearchContext context){
-        return baseMapper.selectQueryByAllList(context, context.getSelectCond());
+    public List<Product> selectAllList(ProductSearchContext context){
+        return baseMapper.selectAllList(context, context.getSelectCond());
     }
-    public List<Product> selectQueryByAllProduct(ProductSearchContext context){
-        return baseMapper.selectQueryByAllProduct(context, context.getSelectCond());
+    public List<Product> selectAllProduct(ProductSearchContext context){
+        return baseMapper.selectAllProduct(context, context.getSelectCond());
     }
-    public List<Product> selectQueryByCheckNameOrCode(ProductSearchContext context){
-        return baseMapper.selectQueryByCheckNameOrCode(context, context.getSelectCond());
+    public List<Product> selectCheckNameOrCode(ProductSearchContext context){
+        return baseMapper.selectCheckNameOrCode(context, context.getSelectCond());
     }
-    public List<Product> selectQueryByCurDefault(ProductSearchContext context){
-        return baseMapper.selectQueryByCurDefault(context, context.getSelectCond());
+    public List<Product> selectCurDefault(ProductSearchContext context){
+        return baseMapper.selectCurDefault(context, context.getSelectCond());
     }
-    public List<Product> selectQueryByCurProject(ProductSearchContext context){
-        return baseMapper.selectQueryByCurProject(context, context.getSelectCond());
+    public List<Product> selectCurProject(ProductSearchContext context){
+        return baseMapper.selectCurProject(context, context.getSelectCond());
     }
-    public List<Product> selectQueryByCurUer(ProductSearchContext context){
-        return baseMapper.selectQueryByCurUer(context, context.getSelectCond());
+    public List<Product> selectCurUer(ProductSearchContext context){
+        return baseMapper.selectCurUer(context, context.getSelectCond());
     }
-    public List<Product> selectQueryByDefault(ProductSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Product> selectDefault(ProductSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Product> selectQueryByDeveloperQuery(ProductSearchContext context){
-        return baseMapper.selectQueryByDeveloperQuery(context, context.getSelectCond());
+    public List<Product> selectDeveloperQuery(ProductSearchContext context){
+        return baseMapper.selectDeveloperQuery(context, context.getSelectCond());
     }
-    public List<Product> selectQueryByESBulk(ProductSearchContext context){
-        return baseMapper.selectQueryByESBulk(context, context.getSelectCond());
+    public List<Product> selectESBulk(ProductSearchContext context){
+        return baseMapper.selectESBulk(context, context.getSelectCond());
     }
-    public List<Product> selectQueryByOpenQuery(ProductSearchContext context){
-        return baseMapper.selectQueryByOpenQuery(context, context.getSelectCond());
+    public List<Product> selectOpenQuery(ProductSearchContext context){
+        return baseMapper.selectOpenQuery(context, context.getSelectCond());
     }
-    public List<Product> selectQueryByPOQuery(ProductSearchContext context){
-        return baseMapper.selectQueryByPOQuery(context, context.getSelectCond());
+    public List<Product> selectPOQuery(ProductSearchContext context){
+        return baseMapper.selectPOQuery(context, context.getSelectCond());
     }
-    public List<Product> selectQueryByProductManagerQuery(ProductSearchContext context){
-        return baseMapper.selectQueryByProductManagerQuery(context, context.getSelectCond());
+    public List<Product> selectProductManagerQuery(ProductSearchContext context){
+        return baseMapper.selectProductManagerQuery(context, context.getSelectCond());
     }
-    public List<Product> selectQueryByProductPM(ProductSearchContext context){
-        return baseMapper.selectQueryByProductPM(context, context.getSelectCond());
+    public List<Product> selectProductPM(ProductSearchContext context){
+        return baseMapper.selectProductPM(context, context.getSelectCond());
     }
-    public List<Product> selectQueryByProductTeam(ProductSearchContext context){
-        return baseMapper.selectQueryByProductTeam(context, context.getSelectCond());
+    public List<Product> selectProductTeam(ProductSearchContext context){
+        return baseMapper.selectProductTeam(context, context.getSelectCond());
     }
-    public List<Product> selectQueryByQDQuery(ProductSearchContext context){
-        return baseMapper.selectQueryByQDQuery(context, context.getSelectCond());
+    public List<Product> selectQDQuery(ProductSearchContext context){
+        return baseMapper.selectQDQuery(context, context.getSelectCond());
     }
-    public List<Product> selectQueryByRDQuery(ProductSearchContext context){
-        return baseMapper.selectQueryByRDQuery(context, context.getSelectCond());
+    public List<Product> selectRDQuery(ProductSearchContext context){
+        return baseMapper.selectRDQuery(context, context.getSelectCond());
     }
-    public List<Product> selectQueryBySimple(ProductSearchContext context){
-        return baseMapper.selectQueryBySimple(context, context.getSelectCond());
+    public List<Product> selectSimple(ProductSearchContext context){
+        return baseMapper.selectSimple(context, context.getSelectCond());
     }
-    public List<Product> selectQueryByStoryCurProject(ProductSearchContext context){
-        return baseMapper.selectQueryByStoryCurProject(context, context.getSelectCond());
+    public List<Product> selectStoryCurProject(ProductSearchContext context){
+        return baseMapper.selectStoryCurProject(context, context.getSelectCond());
     }
-    public List<Product> selectQueryByView(ProductSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Product> selectView(ProductSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

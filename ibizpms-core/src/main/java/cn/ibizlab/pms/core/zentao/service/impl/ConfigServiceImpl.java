@@ -214,11 +214,11 @@ public class ConfigServiceImpl extends ServiceImpl<ConfigMapper, Config> impleme
 
 
 
-    public List<Config> selectQueryByDefault(ConfigSearchContext context){
-        return baseMapper.selectQueryByDefault(context, context.getSelectCond());
+    public List<Config> selectDefault(ConfigSearchContext context){
+        return baseMapper.selectDefault(context, context.getSelectCond());
     }
-    public List<Config> selectQueryByView(ConfigSearchContext context){
-        return baseMapper.selectQueryByView(context, context.getSelectCond());
+    public List<Config> selectView(ConfigSearchContext context){
+        return baseMapper.selectView(context, context.getSelectCond());
     }
 
 

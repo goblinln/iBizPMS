@@ -181,7 +181,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByByPath"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductModuleSearchContext" resultMap="ProductModuleResultMap">
+	<select id="selectByPath"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductModuleSearchContext" resultMap="ProductModuleResultMap">
 		<include refid="ByPath" />
 	</select>
 
@@ -199,7 +199,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductModuleSearchContext" resultMap="ProductModuleResultMap">
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductModuleSearchContext" resultMap="ProductModuleResultMap">
 		<include refid="Default" />
 	</select>
 
@@ -220,7 +220,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByParentModule"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductModuleSearchContext" resultMap="ProductModuleResultMap">
+	<select id="selectParentModule"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductModuleSearchContext" resultMap="ProductModuleResultMap">
 		<include refid="ParentModule" />
 	</select>
 
@@ -238,7 +238,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRoot"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductModuleSearchContext" resultMap="ProductModuleResultMap">
+	<select id="selectRoot"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductModuleSearchContext" resultMap="ProductModuleResultMap">
 		<include refid="Root" />
 	</select>
 
@@ -256,7 +256,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByRoot_NoBranch"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductModuleSearchContext" resultMap="ProductModuleResultMap">
+	<select id="selectRoot_NoBranch"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductModuleSearchContext" resultMap="ProductModuleResultMap">
 		<include refid="Root_NoBranch" />
 	</select>
 
@@ -274,7 +274,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByStoryModule"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductModuleSearchContext" resultMap="ProductModuleResultMap">
+	<select id="selectStoryModule"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductModuleSearchContext" resultMap="ProductModuleResultMap">
 		<include refid="StoryModule" />
 	</select>
 
@@ -292,7 +292,7 @@
 		</trim>
     </sql>
 	
-	<select id="selectQueryByView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductModuleSearchContext" resultMap="ProductModuleResultMap">
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductModuleSearchContext" resultMap="ProductModuleResultMap">
 		<include refid="View" />
 	</select>
 
