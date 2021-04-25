@@ -8,4 +8,6 @@ export default [
     'suite',
     'ibizcase',
     'product',
+    'deptname',
+    'orgname',
 ];

@@ -64,4 +64,12 @@ export interface ITestRun extends IEntityBase {
      * 测试单
      */
     task?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
 }

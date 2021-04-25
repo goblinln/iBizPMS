@@ -7,10 +7,6 @@
     "logicName" : "Create",
     "name" : "Create",
     "orderValue" : 1,
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCreate"
-    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -21,10 +17,6 @@
     "logicName" : "Update",
     "name" : "Update",
     "orderValue" : 11,
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTUpdate"
-    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -35,10 +27,6 @@
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTRemove"
-    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -100,10 +88,6 @@
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/HaveRead.json",
     "logicName" : "已读",
     "name" : "HaveRead",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -112,10 +96,6 @@
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/PushUserMonthly.json",
     "logicName" : "定时推送待阅提醒用户月报",
     "name" : "PushUserMonthly",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",
@@ -132,10 +112,6 @@
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/Submit.json",
     "logicName" : "提交",
     "name" : "Submit",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   } ],
   "getAllPSDEDataQueries" : [ {

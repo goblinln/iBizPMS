@@ -101,6 +101,14 @@ export abstract class IBZCaseStepBase extends EntityBase implements IIBZCaseStep
      * 分组用例步骤的组编号
      */
     parent?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
 
     /**
      * 重置实体数据

@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`CREATEBY`, t1.`DELETED`, t1.`DEPT`, t1.`ID`, t1.`NAME`, t1.`ORDER`, t1.`ORG`, t1.`PRODUCT`, t1.`UPDATEBY` FROM `zt_branch` t1   ]]>
+        <![CDATA[ SELECT t1.`CREATEBY`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`NAME`, t1.`ORDER`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t1.`UPDATEBY` FROM `zt_branch` t1   ]]>
     </sql>
 
 	
@@ -98,7 +98,7 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CREATEBY`, t1.`DELETED`, t1.`DEPT`, t1.`ID`, t1.`NAME`, t1.`ORDER`, t1.`ORG`, t1.`PRODUCT`, t1.`UPDATEBY` FROM `zt_branch` t1   ]]>
+		<![CDATA[ SELECT t1.`CREATEBY`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`NAME`, t1.`ORDER`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t1.`UPDATEBY` FROM `zt_branch` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
 			<![CDATA[ AND t1.DELETED = '0' ]]>
@@ -125,7 +125,7 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CREATEBY`, t1.`DELETED`, t1.`DEPT`, t1.`ID`, t1.`NAME`, t1.`ORDER`, t1.`ORG`, t1.`PRODUCT`, t1.`UPDATEBY` FROM `zt_branch` t1   ]]>
+		<![CDATA[ SELECT t1.`CREATEBY`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`NAME`, t1.`ORDER`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t1.`UPDATEBY` FROM `zt_branch` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
 			<![CDATA[ AND t1.DELETED = '0' ]]>

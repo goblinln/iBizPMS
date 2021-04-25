@@ -35,10 +35,6 @@
     "logicName" : "Remove",
     "name" : "Remove",
     "orderValue" : 21,
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTRemove"
-    },
     "userCat" : "CAT1",
     "builtinAction" : true
   }, {
@@ -100,10 +96,6 @@
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/HaveRead.json",
     "logicName" : "已读",
     "name" : "haveRead",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   }, {
     "actionMode" : "UNKNOWN",

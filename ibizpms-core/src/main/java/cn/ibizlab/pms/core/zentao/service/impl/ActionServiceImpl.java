@@ -74,6 +74,9 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
+        if(!actionRuntime.isRtmodel()){
+            historyService.saveByAction(et.getId(), et.getHistorys());
+        }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }
@@ -91,6 +94,9 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
     public boolean update(Action et) {
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
+        }
+        if(!actionRuntime.isRtmodel()){
+            historyService.saveByAction(et.getId(), et.getHistorys());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -115,6 +121,7 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
     @Override
     @Transactional
     public boolean remove(Long key) {
+        historyService.removeByAction(key) ;
         boolean result = removeById(key);
         return result ;
     }
@@ -133,6 +140,7 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+            et.setHistorys(historyService.selectByAction(key));
         }
         return et;
     }

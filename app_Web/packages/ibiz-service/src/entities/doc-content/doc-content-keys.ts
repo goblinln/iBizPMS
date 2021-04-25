@@ -11,4 +11,6 @@ export default [
     'digest',
     'createby',
     'doc',
+    'deptname',
+    'orgname',
 ];

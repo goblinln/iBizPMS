@@ -8,4 +8,6 @@ export default [
     'ibizpublic',
     'updateby',
     'dept',
+    'deptname',
+    'orgname',
 ];

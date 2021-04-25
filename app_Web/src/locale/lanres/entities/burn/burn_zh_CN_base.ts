@@ -15,6 +15,8 @@ function getLocaleResourceBase(){
 		'estimate': commonLogic.appcommonhandle("最初预计",null),
 		'project': commonLogic.appcommonhandle("所属项目",null),
 		'task': commonLogic.appcommonhandle("任务",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 		views: {
 			'chartview': {

@@ -12,6 +12,8 @@ function getLocaleResourceBase(){
 		'suite': commonLogic.appcommonhandle("测试套件",null),
 		'ibizcase': commonLogic.appcommonhandle("用例",null),
 		'product': commonLogic.appcommonhandle("所属产品",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 	};
 	return data;

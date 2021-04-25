@@ -48,4 +48,12 @@ export interface IUserTpl extends IEntityBase {
      * 归属部门
      */
     dept?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
 }

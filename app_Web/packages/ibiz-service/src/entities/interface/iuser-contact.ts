@@ -36,4 +36,12 @@ export interface IUserContact extends IEntityBase {
      * account
      */
     account?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
 }

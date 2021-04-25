@@ -124,4 +124,12 @@ export interface ITestTask extends IEntityBase {
      * 所属项目
      */
     project?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
 }

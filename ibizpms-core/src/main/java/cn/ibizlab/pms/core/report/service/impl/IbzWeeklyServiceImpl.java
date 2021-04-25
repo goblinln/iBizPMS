@@ -114,20 +114,19 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
     
      return true;
    }
-        @Override
+    @Override
     @Transactional
     public boolean remove(Long key) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzWeeklyHelper.class).delete(key);
+        boolean result = removeById(key);
+        return result ;
     }
 
     @Override
-    public void removeBatch(Collection<Long> idList){
-        if (idList != null && !idList.isEmpty()) {
-            for (Long id : idList) {
-                this.remove(id);
-            }
-        }
+    @Transactional
+    public void removeBatch(Collection<Long> idList) {
+        removeByIds(idList);
     }
+
     @Override
     @Transactional
     public IbzWeekly get(Long key) {
@@ -208,19 +207,19 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
         return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public IbzWeekly haveRead(IbzWeekly et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzWeeklyHelper.class).haveRead(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean haveReadBatch (List<IbzWeekly> etList) {
-		 for(IbzWeekly et : etList) {
-		   haveRead(et);
-		 }
-	 	 return true;
+    public boolean haveReadBatch(List<IbzWeekly> etList) {
+        for(IbzWeekly et : etList) {
+            haveRead(et);
+        }
+        return true;
     }
 
     @Override

@@ -1607,7 +1607,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 4,
+    "masterRS" : 12,
+    "minorCodeName" : "Historys",
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/History.json"
@@ -1620,7 +1621,8 @@
     },
     "pickupDEFName" : "ACTION",
     "removeActionType" : -1,
-    "removeOrder" : 0
+    "removeOrder" : 0,
+    "nestedRS" : true
   } ],
   "getMinorPSDERs" : [ {
     "codeName" : "Zt_project",

@@ -16,6 +16,8 @@ function getLocaleResourceBase(){
 		'version': commonLogic.appcommonhandle("用例版本",null),
 		'ibizcase': commonLogic.appcommonhandle("测试用例",null),
 		'task': commonLogic.appcommonhandle("测试单",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 		views: {
 			'meditview9': {

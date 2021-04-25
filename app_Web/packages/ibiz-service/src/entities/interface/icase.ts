@@ -272,4 +272,12 @@ export interface ICase extends IEntityBase {
      * 所属模块
      */
     module?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
 }

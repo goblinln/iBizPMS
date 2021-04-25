@@ -153,6 +153,14 @@ export abstract class IBZTaskEstimateBase extends EntityBase implements IIBZTask
      * 任务
      */
     task?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
 
     /**
      * 重置实体数据

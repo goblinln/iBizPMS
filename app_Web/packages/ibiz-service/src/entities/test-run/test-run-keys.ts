@@ -12,4 +12,6 @@ export default [
     'version',
     'ibizcase',
     'task',
+    'deptname',
+    'orgname',
 ];

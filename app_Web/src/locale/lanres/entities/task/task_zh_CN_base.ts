@@ -92,6 +92,8 @@ function getLocaleResourceBase(){
 		'frombug': commonLogic.appcommonhandle("来源Bug",null),
 		'storyversionnew': commonLogic.appcommonhandle("相关需求最新版本",null),
 		'storystatus': commonLogic.appcommonhandle("需求状态",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 		views: {
 			'dailycompletezsgridview': {

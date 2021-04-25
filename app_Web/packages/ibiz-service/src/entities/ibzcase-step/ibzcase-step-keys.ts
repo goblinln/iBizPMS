@@ -15,4 +15,6 @@ export default [
     'version',
     'ibizcase',
     'parent',
+    'deptname',
+    'orgname',
 ];

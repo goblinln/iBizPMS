@@ -5,9 +5,5 @@
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/HaveRead.json",
   "logicName" : "已读",
   "name" : "HaveRead",
-  "getPSSysSFPlugin" : {
-    "pluginType" : "DEACTION",
-    "pluginCode" : "ZTCommon"
-  },
   "userCat" : "CAT1"
 }

@@ -19,6 +19,8 @@ function getLocaleResourceBase(){
 		'version': commonLogic.appcommonhandle("用例版本",null),
 		'ibizcase': commonLogic.appcommonhandle("用例",null),
 		'parent': commonLogic.appcommonhandle("分组用例步骤的组编号",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 		views: {
 			'gridview9': {

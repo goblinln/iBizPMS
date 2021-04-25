@@ -11,4 +11,6 @@ export default [
     'estimate',
     'project',
     'task',
+    'deptname',
+    'orgname',
 ];

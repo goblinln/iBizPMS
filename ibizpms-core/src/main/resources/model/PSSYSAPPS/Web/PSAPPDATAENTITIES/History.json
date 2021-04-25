@@ -430,7 +430,7 @@
   "logicName" : "操作历史",
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
-    "codeName" : "Histories",
+    "codeName" : "Historys",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,

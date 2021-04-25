@@ -411,6 +411,14 @@ export abstract class TaskBase extends EntityBase implements ITask {
      * 需求状态
      */
     storystatus?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
 
     /**
      * 重置实体数据

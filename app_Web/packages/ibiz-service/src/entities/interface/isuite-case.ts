@@ -44,4 +44,12 @@ export interface ISuiteCase extends IEntityBase {
      * 所属产品
      */
     product?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
 }

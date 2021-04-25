@@ -27,4 +27,6 @@ export default [
     'productname',
     'product',
     'project',
+    'deptname',
+    'orgname',
 ];

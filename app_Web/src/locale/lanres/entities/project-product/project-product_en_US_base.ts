@@ -15,6 +15,8 @@ function getLocaleResourceBase(){
 		'plan': commonLogic.appcommonhandle("产品计划",null),
 		'branch': commonLogic.appcommonhandle("平台/分支",null),
 		'project': commonLogic.appcommonhandle("项目",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 		views: {
 			'planlistview9': {

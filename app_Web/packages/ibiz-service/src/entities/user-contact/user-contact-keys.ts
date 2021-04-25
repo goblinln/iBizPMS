@@ -6,4 +6,6 @@ export default [
     'updateby',
     'dept',
     'account',
+    'deptname',
+    'orgname',
 ];

@@ -15,6 +15,8 @@ function getLocaleResourceBase(){
 		'digest': commonLogic.appcommonhandle("文档摘要",null),
 		'createby': commonLogic.appcommonhandle("由谁创建",null),
 		'doc': commonLogic.appcommonhandle("文档",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 	};
 	return data;

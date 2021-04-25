@@ -62,58 +62,48 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
         return pages.getRecords();
     }
 
-    	@Override
+    @Override
     @Transactional
     public boolean create(IbzReportly et) {
-  		if(!ibzreportlyRuntime.isRtmodel()){
-		  
+        if(!this.retBool(this.baseMapper.insert(et))) {
+            return false;
         }
-		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzReportlyHelper.class).create(et)) {
-			 return false;
-		}
-		
-  		return true;
+        CachedBeanCopier.copy(get(et.getIbzreportlyid()), et);
+        return true;
     }
 
     @Override
-	@Transactional
+    @Transactional
     public void createBatch(List<IbzReportly> list) {
-		if(!ibzreportlyRuntime.isRtmodel()){
-		  
-        }
-		this.saveBatch(list, batchSize);
+        this.saveBatch(list, batchSize);
     }
-    	@Override
+
+    @Override
     @Transactional
     public boolean update(IbzReportly et) {
-  		if(!ibzreportlyRuntime.isRtmodel()){
-		  
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibz_reportlyid", et.getIbzreportlyid()))) {
+            return false;
         }
-		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzReportlyHelper.class).edit(et)) {
-			 return false;
-		}
-		
-  		return true;
+        CachedBeanCopier.copy(get(et.getIbzreportlyid()), et);
+        return true;
     }
 
     @Override
-	@Transactional
+    @Transactional
     public void updateBatch(List<IbzReportly> list) {
-	  if(!ibzreportlyRuntime.isRtmodel()){
-		
-	  }
-		updateBatchById(list, batchSize);
+        updateBatchById(list, batchSize);
     }
-	
-	@Override
+
+    @Override
     @Transactional
     public boolean sysUpdate(IbzReportly et) {
-	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzReportlyHelper.class).edit(et)) {
-		return false;
-     }
-    
-     return true;
-   }
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("ibz_reportlyid", et.getIbzreportlyid()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getIbzreportlyid()), et);
+        return true;
+    }
+
     @Override
     @Transactional
     public boolean remove(Long key) {
@@ -162,19 +152,19 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
     public boolean checkKey(IbzReportly et) {
         return (!ObjectUtils.isEmpty(et.getIbzreportlyid())) && (!Objects.isNull(this.getById(et.getIbzreportlyid())));
     }
-       @Override
+    @Override
     @Transactional
     public IbzReportly haveRead(IbzReportly et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzReportlyHelper.class).haveRead(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean haveReadBatch (List<IbzReportly> etList) {
-		 for(IbzReportly et : etList) {
-		   haveRead(et);
-		 }
-	 	 return true;
+    public boolean haveReadBatch(List<IbzReportly> etList) {
+        for(IbzReportly et : etList) {
+            haveRead(et);
+        }
+        return true;
     }
 
     @Override
@@ -237,19 +227,19 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
         }
     }
 
-       @Override
+    @Override
     @Transactional
     public IbzReportly submit(IbzReportly et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzReportlyHelper.class).submit(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean submitBatch (List<IbzReportly> etList) {
-		 for(IbzReportly et : etList) {
-		   submit(et);
-		 }
-	 	 return true;
+    public boolean submitBatch(List<IbzReportly> etList) {
+        for(IbzReportly et : etList) {
+            submit(et);
+        }
+        return true;
     }
 
 

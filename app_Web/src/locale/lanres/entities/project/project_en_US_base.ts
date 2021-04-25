@@ -84,6 +84,8 @@ function getLocaleResourceBase(){
 		'qd': commonLogic.appcommonhandle("测试负责人",null),
 		'parentname': commonLogic.appcommonhandle("parent",null),
 		'parent': commonLogic.appcommonhandle("父项目",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
+		'mdeptname': commonLogic.appcommonhandle("归属部门名",null),
 	},
 		views: {
 			'tasktreeexpview': {

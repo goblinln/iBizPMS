@@ -76,4 +76,12 @@ export interface IIBZCaseStep extends IEntityBase {
      * 分组用例步骤的组编号
      */
     parent?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
 }

@@ -37,4 +37,6 @@ export default [
     'project',
     'product',
     'module',
+    'deptname',
+    'orgname',
 ];

@@ -102,4 +102,12 @@ export interface ITestResult extends IEntityBase {
      * 代码编译
      */
     compile?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
 }

@@ -88,4 +88,6 @@ export default [
     'frombug',
     'storyversionnew',
     'storystatus',
+    'deptname',
+    'orgname',
 ];

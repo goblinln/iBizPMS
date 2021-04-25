@@ -10,6 +10,8 @@ function getLocaleResourceBase(){
 		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'dept': commonLogic.appcommonhandle("归属部门",null),
 		'account': commonLogic.appcommonhandle("account",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 		views: {
 			'editview': {

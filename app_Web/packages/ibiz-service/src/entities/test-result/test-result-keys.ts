@@ -22,4 +22,6 @@ export default [
     'ibizcase',
     'run',
     'compile',
+    'deptname',
+    'orgname',
 ];

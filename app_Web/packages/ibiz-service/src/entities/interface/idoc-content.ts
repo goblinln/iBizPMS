@@ -58,4 +58,12 @@ export interface IDocContent extends IEntityBase {
      * 文档
      */
     doc?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
 }

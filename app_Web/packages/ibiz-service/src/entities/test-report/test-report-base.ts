@@ -147,6 +147,14 @@ export abstract class TestReportBase extends EntityBase implements ITestReport {
      * 所属项目
      */
     project?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
 
     /**
      * 重置实体数据

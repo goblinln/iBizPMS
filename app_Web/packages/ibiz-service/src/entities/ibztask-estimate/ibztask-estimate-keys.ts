@@ -28,4 +28,6 @@ export default [
     'deleted',
     'project',
     'task',
+    'orgname',
+    'deptname',
 ];

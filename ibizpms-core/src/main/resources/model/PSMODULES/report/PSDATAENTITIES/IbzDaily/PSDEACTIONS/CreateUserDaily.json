@@ -5,9 +5,5 @@
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/CreateUserDaily.json",
   "logicName" : "定时生成用户日报",
   "name" : "CreateUserDaily",
-  "getPSSysSFPlugin" : {
-    "pluginType" : "DEACTION",
-    "pluginCode" : "ZTCommon"
-  },
   "userCat" : "CAT1"
 }

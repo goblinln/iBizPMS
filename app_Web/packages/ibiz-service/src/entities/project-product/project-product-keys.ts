@@ -11,4 +11,6 @@ export default [
     'plan',
     'branch',
     'project',
+    'deptname',
+    'orgname',
 ];

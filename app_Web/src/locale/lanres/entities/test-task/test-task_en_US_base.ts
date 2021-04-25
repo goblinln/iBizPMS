@@ -31,6 +31,8 @@ function getLocaleResourceBase(){
 		'product': commonLogic.appcommonhandle("所属产品",null),
 		'build': commonLogic.appcommonhandle("版本",null),
 		'project': commonLogic.appcommonhandle("所属项目",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 		views: {
 			'editview_edit': {

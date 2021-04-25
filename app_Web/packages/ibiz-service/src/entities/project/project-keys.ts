@@ -80,4 +80,6 @@ export default [
     'qd',
     'parentname',
     'parent',
+    'orgname',
+    'mdeptname',
 ];
