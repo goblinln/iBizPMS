@@ -39,7 +39,6 @@ public interface ICaseStepService extends IService<CaseStep> {
     boolean save(CaseStep et);
     void saveBatch(List<CaseStep> list);
     List<CaseStep> select(CaseStepSearchContext context);
-    
     List<CaseStep> selectQueryByCurTest(CaseStepSearchContext context);
     List<CaseStep> selectQueryByDefault(CaseStepSearchContext context);
     List<CaseStep> selectQueryByDefault1(CaseStepSearchContext context);

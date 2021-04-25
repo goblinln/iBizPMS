@@ -39,7 +39,6 @@ public interface IIbzLibCaseStepsService extends IService<IbzLibCaseSteps> {
     boolean save(IbzLibCaseSteps et);
     void saveBatch(List<IbzLibCaseSteps> list);
     List<IbzLibCaseSteps> select(IbzLibCaseStepsSearchContext context);
-    
     List<IbzLibCaseSteps> selectQueryByDefault(IbzLibCaseStepsSearchContext context);
     List<IbzLibCaseSteps> selectQueryByView(IbzLibCaseStepsSearchContext context);
 

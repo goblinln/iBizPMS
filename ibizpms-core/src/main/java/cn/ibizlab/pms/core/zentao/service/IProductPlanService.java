@@ -73,7 +73,6 @@ public interface IProductPlanService extends IService<ProductPlan> {
     ProductPlan unlinkStory(ProductPlan et);
     boolean unlinkStoryBatch(List<ProductPlan> etList);
     List<ProductPlan> select(ProductPlanSearchContext context);
-    
     List<ProductPlan> selectQueryByChildPlan(ProductPlanSearchContext context);
     List<ProductPlan> selectQueryByDefault(ProductPlanSearchContext context);
     List<ProductPlan> selectQueryByDefaultParent(ProductPlanSearchContext context);

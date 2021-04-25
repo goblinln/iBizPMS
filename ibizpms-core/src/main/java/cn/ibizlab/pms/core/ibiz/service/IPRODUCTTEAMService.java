@@ -41,7 +41,6 @@ public interface IPRODUCTTEAMService extends IService<PRODUCTTEAM> {
     boolean save(PRODUCTTEAM et);
     void saveBatch(List<PRODUCTTEAM> list);
     List<PRODUCTTEAM> select(PRODUCTTEAMSearchContext context);
-    
     List<PRODUCTTEAM> selectQueryByDefault(PRODUCTTEAMSearchContext context);
     List<PRODUCTTEAM> selectQueryByProductTeamInfo(PRODUCTTEAMSearchContext context);
     List<PRODUCTTEAM> selectQueryByProjectApp(PRODUCTTEAMSearchContext context);

@@ -39,7 +39,6 @@ public interface ITaskEstimateStatsService extends IService<TaskEstimateStats> {
     boolean save(TaskEstimateStats et);
     void saveBatch(List<TaskEstimateStats> list);
     List<TaskEstimateStats> select(TaskEstimateStatsSearchContext context);
-    
     List<TaskEstimateStats> selectQueryByActionMonth(TaskEstimateStatsSearchContext context);
     List<TaskEstimateStats> selectQueryByActionYear(TaskEstimateStatsSearchContext context);
     List<TaskEstimateStats> selectQueryByDefault(TaskEstimateStatsSearchContext context);

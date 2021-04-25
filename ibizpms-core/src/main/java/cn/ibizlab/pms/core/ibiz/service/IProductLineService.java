@@ -37,9 +37,6 @@ public interface IProductLineService {
     boolean checkKey(ProductLine et);
     boolean save(ProductLine et);
     void saveBatch(List<ProductLine> list);
-    
-    List<ProductLine> selectQueryByDefault(ProductLineSearchContext context);
-    List<ProductLine> selectQueryByView(ProductLineSearchContext context);
 
     Page<ProductLine> searchDefault(ProductLineSearchContext context);
     ProductLine dynamicCall(String key, String action, ProductLine et);

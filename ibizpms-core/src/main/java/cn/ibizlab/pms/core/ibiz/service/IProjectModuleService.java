@@ -43,7 +43,6 @@ public interface IProjectModuleService extends IService<ProjectModule> {
     boolean save(ProjectModule et);
     void saveBatch(List<ProjectModule> list);
     List<ProjectModule> select(ProjectModuleSearchContext context);
-    
     List<ProjectModule> selectQueryByByPath(ProjectModuleSearchContext context);
     List<ProjectModule> selectQueryByDefault(ProjectModuleSearchContext context);
     List<ProjectModule> selectQueryByParentModule(ProjectModuleSearchContext context);

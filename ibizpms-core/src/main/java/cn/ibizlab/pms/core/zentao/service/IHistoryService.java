@@ -39,7 +39,6 @@ public interface IHistoryService extends IService<History> {
     boolean save(History et);
     void saveBatch(List<History> list);
     List<History> select(HistorySearchContext context);
-    
     List<History> selectQueryByDefault(HistorySearchContext context);
     List<History> selectQueryByView(HistorySearchContext context);
 

@@ -39,7 +39,6 @@ public interface IRepoFilesService extends IService<RepoFiles> {
     boolean save(RepoFiles et);
     void saveBatch(List<RepoFiles> list);
     List<RepoFiles> select(RepoFilesSearchContext context);
-    
     List<RepoFiles> selectQueryByDefault(RepoFilesSearchContext context);
     List<RepoFiles> selectQueryByView(RepoFilesSearchContext context);
 

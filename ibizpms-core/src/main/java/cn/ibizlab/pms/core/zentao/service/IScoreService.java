@@ -39,7 +39,6 @@ public interface IScoreService extends IService<Score> {
     boolean save(Score et);
     void saveBatch(List<Score> list);
     List<Score> select(ScoreSearchContext context);
-    
     List<Score> selectQueryByDefault(ScoreSearchContext context);
     List<Score> selectQueryByView(ScoreSearchContext context);
 

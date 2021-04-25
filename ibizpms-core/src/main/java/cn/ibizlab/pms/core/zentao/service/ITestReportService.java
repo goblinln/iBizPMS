@@ -55,7 +55,6 @@ public interface ITestReportService extends IService<TestReport> {
     boolean save(TestReport et);
     void saveBatch(List<TestReport> list);
     List<TestReport> select(TestReportSearchContext context);
-    
     List<TestReport> selectQueryByDefault(TestReportSearchContext context);
     List<TestReport> selectQueryByView(TestReportSearchContext context);
 

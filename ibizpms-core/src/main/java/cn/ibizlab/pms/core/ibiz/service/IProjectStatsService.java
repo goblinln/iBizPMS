@@ -41,7 +41,6 @@ public interface IProjectStatsService extends IService<ProjectStats> {
     boolean save(ProjectStats et);
     void saveBatch(List<ProjectStats> list);
     List<ProjectStats> select(ProjectStatsSearchContext context);
-    
     List<ProjectStats> selectQueryByDefault(ProjectStatsSearchContext context);
     List<ProjectStats> selectQueryByNoOpenProduct(ProjectStatsSearchContext context);
     List<ProjectStats> selectQueryByProjectBugType(ProjectStatsSearchContext context);

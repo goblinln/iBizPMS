@@ -39,7 +39,6 @@ public interface IEffortService extends IService<Effort> {
     boolean save(Effort et);
     void saveBatch(List<Effort> list);
     List<Effort> select(EffortSearchContext context);
-    
     List<Effort> selectQueryByDefault(EffortSearchContext context);
     List<Effort> selectQueryByView(EffortSearchContext context);
 

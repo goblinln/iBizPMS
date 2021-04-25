@@ -41,7 +41,6 @@ public interface IModuleService extends IService<Module> {
     boolean save(Module et);
     void saveBatch(List<Module> list);
     List<Module> select(ModuleSearchContext context);
-    
     List<Module> selectQueryByBugModule(ModuleSearchContext context);
     List<Module> selectQueryByBugModuleCodeList(ModuleSearchContext context);
     List<Module> selectQueryByDefault(ModuleSearchContext context);

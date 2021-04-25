@@ -39,7 +39,6 @@ public interface IIbzProjectMemberService extends IService<IbzProjectMember> {
     boolean save(IbzProjectMember et);
     void saveBatch(List<IbzProjectMember> list);
     List<IbzProjectMember> select(IbzProjectMemberSearchContext context);
-    
     List<IbzProjectMember> selectQueryByDefault(IbzProjectMemberSearchContext context);
     List<IbzProjectMember> selectQueryByView(IbzProjectMemberSearchContext context);
 

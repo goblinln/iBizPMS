@@ -39,7 +39,6 @@ public interface IImConferenceService extends IService<ImConference> {
     boolean save(ImConference et);
     void saveBatch(List<ImConference> list);
     List<ImConference> select(ImConferenceSearchContext context);
-    
     List<ImConference> selectQueryByDefault(ImConferenceSearchContext context);
     List<ImConference> selectQueryByView(ImConferenceSearchContext context);
 

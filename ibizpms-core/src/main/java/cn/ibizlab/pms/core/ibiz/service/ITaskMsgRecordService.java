@@ -39,7 +39,6 @@ public interface ITaskMsgRecordService extends IService<TaskMsgRecord> {
     boolean save(TaskMsgRecord et);
     void saveBatch(List<TaskMsgRecord> list);
     List<TaskMsgRecord> select(TaskMsgRecordSearchContext context);
-    
     List<TaskMsgRecord> selectQueryByDefault(TaskMsgRecordSearchContext context);
     List<TaskMsgRecord> selectQueryByView(TaskMsgRecordSearchContext context);
 

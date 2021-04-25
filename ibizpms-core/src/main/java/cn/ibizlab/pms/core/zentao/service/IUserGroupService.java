@@ -39,7 +39,6 @@ public interface IUserGroupService extends IService<UserGroup> {
     boolean save(UserGroup et);
     void saveBatch(List<UserGroup> list);
     List<UserGroup> select(UserGroupSearchContext context);
-    
     List<UserGroup> selectQueryByDefault(UserGroupSearchContext context);
     List<UserGroup> selectQueryByView(UserGroupSearchContext context);
 

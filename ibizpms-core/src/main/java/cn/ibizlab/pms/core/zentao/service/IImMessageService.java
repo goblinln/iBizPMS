@@ -39,7 +39,6 @@ public interface IImMessageService extends IService<ImMessage> {
     boolean save(ImMessage et);
     void saveBatch(List<ImMessage> list);
     List<ImMessage> select(ImMessageSearchContext context);
-    
     List<ImMessage> selectQueryByDefault(ImMessageSearchContext context);
     List<ImMessage> selectQueryByView(ImMessageSearchContext context);
 

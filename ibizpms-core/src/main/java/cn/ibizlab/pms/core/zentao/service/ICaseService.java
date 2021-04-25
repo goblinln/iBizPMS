@@ -73,7 +73,6 @@ public interface ICaseService extends IService<Case> {
     Case unlinkSuiteCases(Case et);
     boolean unlinkSuiteCasesBatch(List<Case> etList);
     List<Case> select(CaseSearchContext context);
-    
     List<Case> selectQueryByBatchNew(CaseSearchContext context);
     List<Case> selectQueryByCurOpenedCase(CaseSearchContext context);
     List<Case> selectQueryByCurSuite(CaseSearchContext context);

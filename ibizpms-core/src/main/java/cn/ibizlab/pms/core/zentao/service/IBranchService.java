@@ -41,7 +41,6 @@ public interface IBranchService extends IService<Branch> {
     Branch sort(Branch et);
     boolean sortBatch(List<Branch> etList);
     List<Branch> select(BranchSearchContext context);
-    
     List<Branch> selectQueryByCurProduct(BranchSearchContext context);
     List<Branch> selectQueryByDefault(BranchSearchContext context);
     List<Branch> selectQueryByDefaultBranch(BranchSearchContext context);

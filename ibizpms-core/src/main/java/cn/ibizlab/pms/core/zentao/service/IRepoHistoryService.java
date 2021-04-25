@@ -39,7 +39,6 @@ public interface IRepoHistoryService extends IService<RepoHistory> {
     boolean save(RepoHistory et);
     void saveBatch(List<RepoHistory> list);
     List<RepoHistory> select(RepoHistorySearchContext context);
-    
     List<RepoHistory> selectQueryByDefault(RepoHistorySearchContext context);
     List<RepoHistory> selectQueryByView(RepoHistorySearchContext context);
 

@@ -51,7 +51,6 @@ public interface IIbzMonthlyService extends IService<IbzMonthly> {
     IbzMonthly submit(IbzMonthly et);
     boolean submitBatch(List<IbzMonthly> etList);
     List<IbzMonthly> select(IbzMonthlySearchContext context);
-    
     List<IbzMonthly> selectQueryByDefault(IbzMonthlySearchContext context);
     List<IbzMonthly> selectQueryByMyMonthly(IbzMonthlySearchContext context);
     List<IbzMonthly> selectQueryByMyMonthlyMob(IbzMonthlySearchContext context);

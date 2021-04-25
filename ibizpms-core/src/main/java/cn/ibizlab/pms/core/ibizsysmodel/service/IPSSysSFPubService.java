@@ -37,10 +37,6 @@ public interface IPSSysSFPubService {
     boolean checkKey(PSSysSFPub et);
     boolean save(PSSysSFPub et);
     void saveBatch(List<PSSysSFPub> list);
-    
-    List<PSSysSFPub> selectQueryByBuild(PSSysSFPubSearchContext context);
-    List<PSSysSFPub> selectQueryByDefault(PSSysSFPubSearchContext context);
-    List<PSSysSFPub> selectQueryByView(PSSysSFPubSearchContext context);
 
     Page<PSSysSFPub> searchBuild(PSSysSFPubSearchContext context);
     Page<PSSysSFPub> searchDefault(PSSysSFPubSearchContext context);

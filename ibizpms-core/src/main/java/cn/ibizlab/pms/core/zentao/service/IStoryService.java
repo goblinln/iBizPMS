@@ -117,7 +117,6 @@ public interface IStoryService extends IService<Story> {
     Story unlinkStory(Story et);
     boolean unlinkStoryBatch(List<Story> etList);
     List<Story> select(StorySearchContext context);
-    
     List<Story> selectQueryByAssignedToMyStory(StorySearchContext context);
     List<Story> selectQueryByAssignedToMyStoryCalendar(StorySearchContext context);
     List<Story> selectQueryByBugStory(StorySearchContext context);

@@ -43,7 +43,6 @@ public interface IDocLibService extends IService<DocLib> {
     DocLib unCollect(DocLib et);
     boolean unCollectBatch(List<DocLib> etList);
     List<DocLib> select(DocLibSearchContext context);
-    
     List<DocLib> selectQueryByByCustom(DocLibSearchContext context);
     List<DocLib> selectQueryByByProduct(DocLibSearchContext context);
     List<DocLib> selectQueryByByProductNotFiles(DocLibSearchContext context);

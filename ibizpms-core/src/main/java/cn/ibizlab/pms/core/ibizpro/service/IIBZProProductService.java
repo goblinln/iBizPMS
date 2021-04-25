@@ -39,7 +39,6 @@ public interface IIBZProProductService extends IService<IBZProProduct> {
     boolean save(IBZProProduct et);
     void saveBatch(List<IBZProProduct> list);
     List<IBZProProduct> select(IBZProProductSearchContext context);
-    
     List<IBZProProduct> selectQueryByDefault(IBZProProductSearchContext context);
     List<IBZProProduct> selectQueryByView(IBZProProductSearchContext context);
 

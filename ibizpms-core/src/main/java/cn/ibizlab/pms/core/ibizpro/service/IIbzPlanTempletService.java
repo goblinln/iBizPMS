@@ -41,7 +41,6 @@ public interface IIbzPlanTempletService extends IService<IbzPlanTemplet> {
     boolean save(IbzPlanTemplet et);
     void saveBatch(List<IbzPlanTemplet> list);
     List<IbzPlanTemplet> select(IbzPlanTempletSearchContext context);
-    
     List<IbzPlanTemplet> selectQueryByCurUserTemplet(IbzPlanTempletSearchContext context);
     List<IbzPlanTemplet> selectQueryByDefault(IbzPlanTempletSearchContext context);
     List<IbzPlanTemplet> selectQueryByView(IbzPlanTempletSearchContext context);

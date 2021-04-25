@@ -39,7 +39,6 @@ public interface ICompanyService extends IService<Company> {
     boolean save(Company et);
     void saveBatch(List<Company> list);
     List<Company> select(CompanySearchContext context);
-    
     List<Company> selectQueryByDefault(CompanySearchContext context);
     List<Company> selectQueryByView(CompanySearchContext context);
 

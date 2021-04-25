@@ -43,7 +43,6 @@ public interface ITestModuleService extends IService<TestModule> {
     boolean save(TestModule et);
     void saveBatch(List<TestModule> list);
     List<TestModule> select(TestModuleSearchContext context);
-    
     List<TestModule> selectQueryByByPath(TestModuleSearchContext context);
     List<TestModule> selectQueryByDefault(TestModuleSearchContext context);
     List<TestModule> selectQueryByParentModule(TestModuleSearchContext context);

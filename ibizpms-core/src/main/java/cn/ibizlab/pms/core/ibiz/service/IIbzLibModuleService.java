@@ -39,7 +39,6 @@ public interface IIbzLibModuleService extends IService<IbzLibModule> {
     boolean save(IbzLibModule et);
     void saveBatch(List<IbzLibModule> list);
     List<IbzLibModule> select(IbzLibModuleSearchContext context);
-    
     List<IbzLibModule> selectQueryByDefault(IbzLibModuleSearchContext context);
     List<IbzLibModule> selectQueryByRoot_NoBranch(IbzLibModuleSearchContext context);
     List<IbzLibModule> selectQueryByView(IbzLibModuleSearchContext context);

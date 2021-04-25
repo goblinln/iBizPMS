@@ -43,7 +43,6 @@ public interface IIbizproProductMonthlyService extends IService<IbizproProductMo
     IbizproProductMonthly statsProductMonthly(IbizproProductMonthly et);
     boolean statsProductMonthlyBatch(List<IbizproProductMonthly> etList);
     List<IbizproProductMonthly> select(IbizproProductMonthlySearchContext context);
-    
     List<IbizproProductMonthly> selectQueryByDefault(IbizproProductMonthlySearchContext context);
     List<IbizproProductMonthly> selectQueryByView(IbizproProductMonthlySearchContext context);
 

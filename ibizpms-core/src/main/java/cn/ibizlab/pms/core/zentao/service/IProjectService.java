@@ -73,7 +73,6 @@ public interface IProjectService extends IService<Project> {
     Project updateOrder(Project et);
     boolean updateOrderBatch(List<Project> etList);
     List<Project> select(ProjectSearchContext context);
-    
     List<Project> selectQueryByBugSelectableProjectList(ProjectSearchContext context);
     List<Project> selectQueryByCurDefaultQuery(ProjectSearchContext context);
     List<Project> selectQueryByCurDefaultQueryExp(ProjectSearchContext context);

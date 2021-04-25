@@ -39,7 +39,6 @@ public interface ICompanyStatsService extends IService<CompanyStats> {
     boolean save(CompanyStats et);
     void saveBatch(List<CompanyStats> list);
     List<CompanyStats> select(CompanyStatsSearchContext context);
-    
     List<CompanyStats> selectQueryByCompanyDynamicStats(CompanyStatsSearchContext context);
     List<CompanyStats> selectQueryByDefault(CompanyStatsSearchContext context);
     List<CompanyStats> selectQueryByView(CompanyStatsSearchContext context);

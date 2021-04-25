@@ -39,7 +39,6 @@ public interface ITestRunService extends IService<TestRun> {
     boolean save(TestRun et);
     void saveBatch(List<TestRun> list);
     List<TestRun> select(TestRunSearchContext context);
-    
     List<TestRun> selectQueryByDefault(TestRunSearchContext context);
     List<TestRun> selectQueryByView(TestRunSearchContext context);
 

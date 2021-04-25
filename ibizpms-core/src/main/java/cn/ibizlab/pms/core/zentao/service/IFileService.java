@@ -41,7 +41,6 @@ public interface IFileService extends IService<File> {
     File updateObjectIDForPmsEe(File et);
     boolean updateObjectIDForPmsEeBatch(List<File> etList);
     List<File> select(FileSearchContext context);
-    
     List<File> selectQueryByDefault(FileSearchContext context);
     List<File> selectQueryByDocLibFile(FileSearchContext context);
     List<File> selectQueryByProductDocLibFile(FileSearchContext context);

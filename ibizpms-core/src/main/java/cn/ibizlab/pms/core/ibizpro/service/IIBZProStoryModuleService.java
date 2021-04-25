@@ -41,7 +41,6 @@ public interface IIBZProStoryModuleService extends IService<IBZProStoryModule> {
     IBZProStoryModule syncFromIBIZ(IBZProStoryModule et);
     boolean syncFromIBIZBatch(List<IBZProStoryModule> etList);
     List<IBZProStoryModule> select(IBZProStoryModuleSearchContext context);
-    
     List<IBZProStoryModule> selectQueryByDefault(IBZProStoryModuleSearchContext context);
     List<IBZProStoryModule> selectQueryByView(IBZProStoryModuleSearchContext context);
 

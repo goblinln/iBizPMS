@@ -37,9 +37,6 @@ public interface IIBIZProPluginService {
     boolean checkKey(IBIZProPlugin et);
     boolean save(IBIZProPlugin et);
     void saveBatch(List<IBIZProPlugin> list);
-    
-    List<IBIZProPlugin> selectQueryByDefault(IBIZProPluginSearchContext context);
-    List<IBIZProPlugin> selectQueryByView(IBIZProPluginSearchContext context);
 
     Page<IBIZProPlugin> searchDefault(IBIZProPluginSearchContext context);
     IBIZProPlugin dynamicCall(String key, String action, IBIZProPlugin et);

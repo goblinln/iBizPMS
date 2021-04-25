@@ -37,21 +37,6 @@ public interface ISysEmployeeService {
     boolean checkKey(SysEmployee et);
     boolean save(SysEmployee et);
     void saveBatch(List<SysEmployee> list);
-    
-    List<SysEmployee> selectQueryByBugUser(SysEmployeeSearchContext context);
-    List<SysEmployee> selectQueryByContActList(SysEmployeeSearchContext context);
-    List<SysEmployee> selectQueryByDefault(SysEmployeeSearchContext context);
-    List<SysEmployee> selectQueryByProductTeamM(SysEmployeeSearchContext context);
-    List<SysEmployee> selectQueryByProjectTeamM(SysEmployeeSearchContext context);
-    List<SysEmployee> selectQueryByProjectTeamMProduct(SysEmployeeSearchContext context);
-    List<SysEmployee> selectQueryByProjectTeamTaskUserTemp(SysEmployeeSearchContext context);
-    List<SysEmployee> selectQueryByProjectTeamUser(SysEmployeeSearchContext context);
-    List<SysEmployee> selectQueryByProjectTeamUserTask(SysEmployeeSearchContext context);
-    List<SysEmployee> selectQueryByProjectteamPk(SysEmployeeSearchContext context);
-    List<SysEmployee> selectQueryByStoryProductTeamPK(SysEmployeeSearchContext context);
-    List<SysEmployee> selectQueryByTaskMTeam(SysEmployeeSearchContext context);
-    List<SysEmployee> selectQueryByTaskTeam(SysEmployeeSearchContext context);
-    List<SysEmployee> selectQueryByView(SysEmployeeSearchContext context);
 
     Page<SysEmployee> searchBugUser(SysEmployeeSearchContext context);
     Page<SysEmployee> searchContActList(SysEmployeeSearchContext context);

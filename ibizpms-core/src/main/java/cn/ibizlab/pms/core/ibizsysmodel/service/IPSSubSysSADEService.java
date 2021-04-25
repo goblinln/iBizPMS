@@ -37,9 +37,6 @@ public interface IPSSubSysSADEService {
     boolean checkKey(PSSubSysSADE et);
     boolean save(PSSubSysSADE et);
     void saveBatch(List<PSSubSysSADE> list);
-    
-    List<PSSubSysSADE> selectQueryByDefault(PSSubSysSADESearchContext context);
-    List<PSSubSysSADE> selectQueryByView(PSSubSysSADESearchContext context);
 
     Page<PSSubSysSADE> searchDefault(PSSubSysSADESearchContext context);
     List<PSSubSysSADE> selectByPssubsysserviceapiid(String pssubsysserviceapiid);

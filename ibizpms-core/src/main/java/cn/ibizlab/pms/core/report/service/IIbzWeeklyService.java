@@ -53,7 +53,6 @@ public interface IIbzWeeklyService extends IService<IbzWeekly> {
     IbzWeekly submit(IbzWeekly et);
     boolean submitBatch(List<IbzWeekly> etList);
     List<IbzWeekly> select(IbzWeeklySearchContext context);
-    
     List<IbzWeekly> selectQueryByDefault(IbzWeeklySearchContext context);
     List<IbzWeekly> selectQueryByMyNotSubmit(IbzWeeklySearchContext context);
     List<IbzWeekly> selectQueryByMyWeekly(IbzWeeklySearchContext context);

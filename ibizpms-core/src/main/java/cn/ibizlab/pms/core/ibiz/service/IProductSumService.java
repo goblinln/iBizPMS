@@ -39,7 +39,6 @@ public interface IProductSumService extends IService<ProductSum> {
     boolean save(ProductSum et);
     void saveBatch(List<ProductSum> list);
     List<ProductSum> select(ProductSumSearchContext context);
-    
     List<ProductSum> selectQueryByDefault(ProductSumSearchContext context);
     List<ProductSum> selectQueryByProductBugcnt_QA(ProductSumSearchContext context);
     List<ProductSum> selectQueryByProductCreateStory(ProductSumSearchContext context);

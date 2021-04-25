@@ -84,7 +84,6 @@ public interface IBugService extends IService<Bug> {
     Bug updateStoryVersion(Bug et);
     boolean updateStoryVersionBatch(List<Bug> etList);
     List<Bug> select(BugSearchContext context);
-    
     List<Bug> selectQueryByAssignedToMyBug(BugSearchContext context);
     List<Bug> selectQueryByAssignedToMyBugPc(BugSearchContext context);
     List<Bug> selectQueryByBuildBugs(BugSearchContext context);

@@ -39,7 +39,6 @@ public interface IJobService extends IService<Job> {
     boolean save(Job et);
     void saveBatch(List<Job> list);
     List<Job> select(JobSearchContext context);
-    
     List<Job> selectQueryByDefault(JobSearchContext context);
     List<Job> selectQueryByView(JobSearchContext context);
 

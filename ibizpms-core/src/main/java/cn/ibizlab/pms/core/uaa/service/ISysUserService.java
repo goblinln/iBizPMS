@@ -39,9 +39,6 @@ public interface ISysUserService {
     boolean checkKey(SysUser et);
     boolean save(SysUser et);
     void saveBatch(List<SysUser> list);
-    
-    List<SysUser> selectQueryByDefault(SysUserSearchContext context);
-    List<SysUser> selectQueryByView(SysUserSearchContext context);
 
     Page<SysUser> searchDefault(SysUserSearchContext context);
     SysUser dynamicCall(String key, String action, SysUser et);

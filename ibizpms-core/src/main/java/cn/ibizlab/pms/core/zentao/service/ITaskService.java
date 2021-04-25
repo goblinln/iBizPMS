@@ -89,7 +89,6 @@ public interface ITaskService extends IService<Task> {
     Task updateStoryVersion(Task et);
     boolean updateStoryVersionBatch(List<Task> etList);
     List<Task> select(TaskSearchContext context);
-    
     List<Task> selectQueryByAssignedToMyTask(TaskSearchContext context);
     List<Task> selectQueryByAssignedToMyTaskPc(TaskSearchContext context);
     List<Task> selectQueryByBugTask(TaskSearchContext context);

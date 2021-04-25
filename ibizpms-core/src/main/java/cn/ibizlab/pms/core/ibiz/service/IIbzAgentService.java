@@ -39,7 +39,6 @@ public interface IIbzAgentService extends IService<IbzAgent> {
     boolean save(IbzAgent et);
     void saveBatch(List<IbzAgent> list);
     List<IbzAgent> select(IbzAgentSearchContext context);
-    
     List<IbzAgent> selectQueryByDefault(IbzAgentSearchContext context);
     List<IbzAgent> selectQueryByView(IbzAgentSearchContext context);
 

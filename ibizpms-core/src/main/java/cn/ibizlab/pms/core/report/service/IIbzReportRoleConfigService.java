@@ -39,7 +39,6 @@ public interface IIbzReportRoleConfigService extends IService<IbzReportRoleConfi
     boolean save(IbzReportRoleConfig et);
     void saveBatch(List<IbzReportRoleConfig> list);
     List<IbzReportRoleConfig> select(IbzReportRoleConfigSearchContext context);
-    
     List<IbzReportRoleConfig> selectQueryByDefault(IbzReportRoleConfigSearchContext context);
     List<IbzReportRoleConfig> selectQueryByView(IbzReportRoleConfigSearchContext context);
 

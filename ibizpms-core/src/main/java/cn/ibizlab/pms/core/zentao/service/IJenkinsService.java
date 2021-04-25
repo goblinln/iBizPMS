@@ -39,7 +39,6 @@ public interface IJenkinsService extends IService<Jenkins> {
     boolean save(Jenkins et);
     void saveBatch(List<Jenkins> list);
     List<Jenkins> select(JenkinsSearchContext context);
-    
     List<Jenkins> selectQueryByDefault(JenkinsSearchContext context);
     List<Jenkins> selectQueryByView(JenkinsSearchContext context);
 

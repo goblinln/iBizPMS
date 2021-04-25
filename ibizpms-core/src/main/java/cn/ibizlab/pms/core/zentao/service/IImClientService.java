@@ -39,7 +39,6 @@ public interface IImClientService extends IService<ImClient> {
     boolean save(ImClient et);
     void saveBatch(List<ImClient> list);
     List<ImClient> select(ImClientSearchContext context);
-    
     List<ImClient> selectQueryByDefault(ImClientSearchContext context);
     List<ImClient> selectQueryByView(ImClientSearchContext context);
 

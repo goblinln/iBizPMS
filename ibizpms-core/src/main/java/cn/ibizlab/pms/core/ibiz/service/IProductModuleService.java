@@ -45,7 +45,6 @@ public interface IProductModuleService extends IService<ProductModule> {
     ProductModule syncFromIBIZ(ProductModule et);
     boolean syncFromIBIZBatch(List<ProductModule> etList);
     List<ProductModule> select(ProductModuleSearchContext context);
-    
     List<ProductModule> selectQueryByByPath(ProductModuleSearchContext context);
     List<ProductModule> selectQueryByDefault(ProductModuleSearchContext context);
     List<ProductModule> selectQueryByParentModule(ProductModuleSearchContext context);

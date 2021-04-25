@@ -39,7 +39,6 @@ public interface IRepoBranchService extends IService<RepoBranch> {
     boolean save(RepoBranch et);
     void saveBatch(List<RepoBranch> list);
     List<RepoBranch> select(RepoBranchSearchContext context);
-    
     List<RepoBranch> selectQueryByDefault(RepoBranchSearchContext context);
     List<RepoBranch> selectQueryByView(RepoBranchSearchContext context);
 

@@ -39,7 +39,6 @@ public interface IEmpLoyeeloadService extends IService<EmpLoyeeload> {
     boolean save(EmpLoyeeload et);
     void saveBatch(List<EmpLoyeeload> list);
     List<EmpLoyeeload> select(EmpLoyeeloadSearchContext context);
-    
     List<EmpLoyeeload> selectQueryByDefault(EmpLoyeeloadSearchContext context);
     List<EmpLoyeeload> selectQueryByGETWOERKLOAD(EmpLoyeeloadSearchContext context);
     List<EmpLoyeeload> selectQueryByView(EmpLoyeeloadSearchContext context);

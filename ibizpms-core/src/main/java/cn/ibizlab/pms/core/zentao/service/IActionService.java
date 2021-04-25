@@ -45,7 +45,6 @@ public interface IActionService extends IService<Action> {
     boolean save(Action et);
     void saveBatch(List<Action> list);
     List<Action> select(ActionSearchContext context);
-    
     List<Action> selectQueryByBianGengLineHistory(ActionSearchContext context);
     List<Action> selectQueryByDefault(ActionSearchContext context);
     List<Action> selectQueryByMobType(ActionSearchContext context);

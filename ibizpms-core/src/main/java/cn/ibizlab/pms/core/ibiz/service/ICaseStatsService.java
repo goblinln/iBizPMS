@@ -39,7 +39,6 @@ public interface ICaseStatsService extends IService<CaseStats> {
     boolean save(CaseStats et);
     void saveBatch(List<CaseStats> list);
     List<CaseStats> select(CaseStatsSearchContext context);
-    
     List<CaseStats> selectQueryByDefault(CaseStatsSearchContext context);
     List<CaseStats> selectQueryByTestCaseStats(CaseStatsSearchContext context);
     List<CaseStats> selectQueryByView(CaseStatsSearchContext context);

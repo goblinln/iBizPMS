@@ -39,7 +39,6 @@ public interface IRelationService extends IService<Relation> {
     boolean save(Relation et);
     void saveBatch(List<Relation> list);
     List<Relation> select(RelationSearchContext context);
-    
     List<Relation> selectQueryByDefault(RelationSearchContext context);
     List<Relation> selectQueryByView(RelationSearchContext context);
 

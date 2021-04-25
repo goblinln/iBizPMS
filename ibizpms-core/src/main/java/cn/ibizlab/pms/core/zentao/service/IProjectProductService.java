@@ -39,7 +39,6 @@ public interface IProjectProductService extends IService<ProjectProduct> {
     boolean save(ProjectProduct et);
     void saveBatch(List<ProjectProduct> list);
     List<ProjectProduct> select(ProjectProductSearchContext context);
-    
     List<ProjectProduct> selectQueryByDefault(ProjectProductSearchContext context);
     List<ProjectProduct> selectQueryByRelationPlan(ProjectProductSearchContext context);
     List<ProjectProduct> selectQueryByView(ProjectProductSearchContext context);

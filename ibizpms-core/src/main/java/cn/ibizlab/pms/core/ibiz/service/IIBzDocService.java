@@ -37,10 +37,6 @@ public interface IIBzDocService {
     boolean checkKey(IBzDoc et);
     boolean save(IBzDoc et);
     void saveBatch(List<IBzDoc> list);
-    
-    List<IBzDoc> selectQueryByAllDoc(IBzDocSearchContext context);
-    List<IBzDoc> selectQueryByDefault(IBzDocSearchContext context);
-    List<IBzDoc> selectQueryByView(IBzDocSearchContext context);
 
     Page<IBzDoc> searchDefault(IBzDocSearchContext context);
     IBzDoc dynamicCall(String key, String action, IBzDoc et);

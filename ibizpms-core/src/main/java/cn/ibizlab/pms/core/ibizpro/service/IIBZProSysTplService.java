@@ -39,7 +39,6 @@ public interface IIBZProSysTplService extends IService<IBZProSysTpl> {
     boolean save(IBZProSysTpl et);
     void saveBatch(List<IBZProSysTpl> list);
     List<IBZProSysTpl> select(IBZProSysTplSearchContext context);
-    
     List<IBZProSysTpl> selectQueryByDefault(IBZProSysTplSearchContext context);
     List<IBZProSysTpl> selectQueryByView(IBZProSysTplSearchContext context);
 

@@ -49,7 +49,6 @@ public interface IDocLibModuleService extends IService<DocLibModule> {
     DocLibModule unCollect(DocLibModule et);
     boolean unCollectBatch(List<DocLibModule> etList);
     List<DocLibModule> select(DocLibModuleSearchContext context);
-    
     List<DocLibModule> selectQueryByAllDoclibModule_Custom(DocLibModuleSearchContext context);
     List<DocLibModule> selectQueryByChildModuleByParent(DocLibModuleSearchContext context);
     List<DocLibModule> selectQueryByChildModuleByRealParent(DocLibModuleSearchContext context);
