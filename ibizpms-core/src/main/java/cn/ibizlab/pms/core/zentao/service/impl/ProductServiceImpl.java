@@ -134,29 +134,27 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         return pages.getRecords();
     }
 
-    @Override
+        @Override
     @Transactional
     public boolean create(Product et) {
-        if(!productRuntime.isRtmodel()){
+  			if(!productRuntime.isRtmodel()){
             fillParentData(et);
         }
-        if(!this.retBool(this.baseMapper.insert(et))) {
-            return false;
-        }
-        productteamService.saveByRoot(et.getId(), et.getProductteam());
-        CachedBeanCopier.copy(get(et.getId()), et);
-        return true;
+	  		boolean bRst = cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ProductHelper.class).create(et);
+			if(!bRst) {
+			  return false;
+			}
+			CachedBeanCopier.copy(get(et.getId()), et);
+  			return bRst;
     }
 
     @Override
-    @Transactional
     public void createBatch(List<Product> list) {
-        if(!productRuntime.isRtmodel()){
+		if(!productRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
-        this.saveBatch(list, batchSize);
+		this.saveBatch(list, batchSize);
     }
-
     @Override
     @Transactional
     public boolean update(Product et) {
