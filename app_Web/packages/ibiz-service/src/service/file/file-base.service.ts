@@ -178,6 +178,17 @@ export class FileBaseService extends EntityBaseService<IFile> {
         return res;
     }
     /**
+     * UpdateObjectID
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof FileService
+     */
+    async UpdateObjectID(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.put(`/files/${_context.file}/updateobjectid`, _data);
+    }
+    /**
      * UpdateObjectIDForPmsEe
      *
      * @param {*} [_context={}]

@@ -173,6 +173,9 @@ public class FileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             else if (iPSDEAction.getName().equals("Save")) {
                 return fileService.save((File) args[0]);
             }
+            else if (iPSDEAction.getName().equals("updateObjectID")) {
+                return fileService.updateObjectID((File) args[0]);
+            }
             else if (iPSDEAction.getName().equals("updateObjectIDForPmsEe")) {
                 return fileService.updateObjectIDForPmsEe((File) args[0]);
             }
@@ -288,6 +291,9 @@ public class FileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         }
         else if (action.equals("save")) {
             return aroundAction("Save", point);
+        }
+        else if (action.equals("updateObjectID")) {
+            return aroundAction("updateObjectID", point);
         }
         else if (action.equals("updateObjectIDForPmsEe")) {
             return aroundAction("updateObjectIDForPmsEe", point);

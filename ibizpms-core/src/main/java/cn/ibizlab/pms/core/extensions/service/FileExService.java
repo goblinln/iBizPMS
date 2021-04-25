@@ -22,6 +22,16 @@ public class FileExService extends FileServiceImpl {
     }
 
     /**
+     * [UpdateObjectID:更新文件] 行为扩展
+     * @param et
+     * @return
+     */
+    @Override
+    @Transactional
+    public File updateObjectID(File et) {
+        return super.updateObjectID(et);
+    }
+    /**
      * [UpdateObjectIDForPmsEe:保存附件] 行为扩展
      * @param et
      * @return

@@ -148,6 +148,25 @@ public class FileResource {
     }
 
     @PreAuthorize("@FileRuntime.test(#file_id,'UPDATE')")
+    @ApiOperation(value = "更新文件", tags = {"附件" },  notes = "更新文件")
+	@RequestMapping(method = RequestMethod.PUT, value = "/files/{file_id}/updateobjectid")
+    public ResponseEntity<FileDTO> updateObjectID(@PathVariable("file_id") Long file_id, @RequestBody FileDTO filedto) {
+        File domain = fileMapping.toDomain(filedto);
+        domain.setId(file_id);
+        domain = fileService.updateObjectID(domain);
+        filedto = fileMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(filedto);
+    }
+    @PreAuthorize("@FileRuntime.test('UPDATE')")
+    @ApiOperation(value = "批量处理[更新文件]", tags = {"附件" },  notes = "批量处理[更新文件]")
+	@RequestMapping(method = RequestMethod.PUT, value = "/files/updateobjectidbatch")
+    public ResponseEntity<Boolean> updateObjectIDBatch(@RequestBody List<FileDTO> filedtos) {
+        List<File> domains = fileMapping.toDomain(filedtos);
+        boolean result = fileService.updateObjectIDBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @PreAuthorize("@FileRuntime.test(#file_id,'UPDATE')")
     @ApiOperation(value = "保存附件", tags = {"附件" },  notes = "保存附件")
 	@RequestMapping(method = RequestMethod.PUT, value = "/files/{file_id}/updateobjectidforpmsee")
     public ResponseEntity<FileDTO> updateObjectIDForPmsEe(@PathVariable("file_id") Long file_id, @RequestBody FileDTO filedto) {

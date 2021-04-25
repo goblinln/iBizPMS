@@ -205,19 +205,19 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
         return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Action managePmsEe(Action et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ActionHelper.class).managePmsEe(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean managePmsEeBatch (List<Action> etList) {
-		 for(Action et : etList) {
-		   managePmsEe(et);
-		 }
-	 	 return true;
+    public boolean managePmsEeBatch(List<Action> etList) {
+        for(Action et : etList) {
+            managePmsEe(et);
+        }
+        return true;
     }
 
     @Override

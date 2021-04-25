@@ -38,6 +38,8 @@ public interface IFileService extends IService<File> {
     boolean checkKey(File et);
     boolean save(File et);
     void saveBatch(List<File> list);
+    File updateObjectID(File et);
+    boolean updateObjectIDBatch(List<File> etList);
     File updateObjectIDForPmsEe(File et);
     boolean updateObjectIDForPmsEeBatch(List<File> etList);
     List<File> select(FileSearchContext context);

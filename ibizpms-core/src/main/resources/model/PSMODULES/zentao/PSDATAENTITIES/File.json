@@ -82,6 +82,13 @@
   }, {
     "actionMode" : "UPDATE",
     "actionType" : "USERCUSTOM",
+    "codeName" : "UpdateObjectID",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEACTIONS/UpdateObjectID.json",
+    "logicName" : "更新文件",
+    "name" : "updateObjectID"
+  }, {
+    "actionMode" : "UPDATE",
+    "actionType" : "USERCUSTOM",
     "codeName" : "UpdateObjectIDForPmsEe",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEACTIONS/UpdateObjectIDForPmsEe.json",
     "logicName" : "保存附件",

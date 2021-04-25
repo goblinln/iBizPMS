@@ -216,6 +216,21 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
         }
     }
 
+    @Override
+    @Transactional
+    public File updateObjectID(File et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean updateObjectIDBatch(List<File> etList) {
+        for(File et : etList) {
+            updateObjectID(et);
+        }
+        return true;
+    }
+
        @Override
     @Transactional
     public File updateObjectIDForPmsEe(File et) {
