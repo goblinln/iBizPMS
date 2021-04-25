@@ -167,7 +167,7 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
 	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ProjectHelper.class).edit(et)) {
 		return false;
      }
-     CachedBeanCopier.copy(get(et.getId()), et);
+    
      return true;
    }
         @Override

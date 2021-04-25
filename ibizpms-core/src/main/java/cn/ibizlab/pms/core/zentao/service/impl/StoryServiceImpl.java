@@ -140,7 +140,7 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
 	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.StoryHelper.class).edit(et)) {
 		return false;
      }
-     CachedBeanCopier.copy(get(et.getId()), et);
+    
      return true;
    }
         @Override

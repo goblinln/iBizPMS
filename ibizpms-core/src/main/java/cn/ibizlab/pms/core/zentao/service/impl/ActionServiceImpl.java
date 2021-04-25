@@ -117,7 +117,7 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
 	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ActionHelper.class).edit(et)) {
 		return false;
      }
-     CachedBeanCopier.copy(get(et.getId()), et);
+    
      return true;
    }
     @Override

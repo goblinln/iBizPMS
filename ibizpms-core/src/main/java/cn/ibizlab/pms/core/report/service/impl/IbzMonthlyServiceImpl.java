@@ -111,7 +111,7 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
 	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzMonthlyHelper.class).edit(et)) {
 		return false;
      }
-     CachedBeanCopier.copy(get(et.getId()), et);
+    
      return true;
    }
         @Override

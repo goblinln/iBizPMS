@@ -178,53 +178,53 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
         return et;
     }
 
-    @Override
+       @Override
     @Transactional
     public TestTask activate(TestTask et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TestTaskHelper.class).activate(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean activateBatch(List<TestTask> etList) {
-        for(TestTask et : etList) {
-            activate(et);
-        }
-        return true;
+    public boolean activateBatch (List<TestTask> etList) {
+		 for(TestTask et : etList) {
+		   activate(et);
+		 }
+	 	 return true;
     }
 
-    @Override
+       @Override
     @Transactional
     public TestTask block(TestTask et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TestTaskHelper.class).block(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean blockBatch(List<TestTask> etList) {
-        for(TestTask et : etList) {
-            block(et);
-        }
-        return true;
+    public boolean blockBatch (List<TestTask> etList) {
+		 for(TestTask et : etList) {
+		   block(et);
+		 }
+	 	 return true;
     }
 
     @Override
     public boolean checkKey(TestTask et) {
         return (!ObjectUtils.isEmpty(et.getId())) && (!Objects.isNull(this.getById(et.getId())));
     }
-    @Override
+       @Override
     @Transactional
     public TestTask close(TestTask et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TestTaskHelper.class).close(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean closeBatch(List<TestTask> etList) {
-        for(TestTask et : etList) {
-            close(et);
-        }
-        return true;
+    public boolean closeBatch (List<TestTask> etList) {
+		 for(TestTask et : etList) {
+		   close(et);
+		 }
+	 	 return true;
     }
 
     @Override
@@ -323,34 +323,34 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
         }
     }
 
-    @Override
+       @Override
     @Transactional
     public TestTask start(TestTask et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TestTaskHelper.class).start(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean startBatch(List<TestTask> etList) {
-        for(TestTask et : etList) {
-            start(et);
-        }
-        return true;
+    public boolean startBatch (List<TestTask> etList) {
+		 for(TestTask et : etList) {
+		   start(et);
+		 }
+	 	 return true;
     }
 
-    @Override
+       @Override
     @Transactional
     public TestTask unlinkCase(TestTask et) {
-        //自定义代码
-        return et;
+  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TestTaskHelper.class).unlinkCase(et);
     }
-    @Override
+	
+	@Override
     @Transactional
-    public boolean unlinkCaseBatch(List<TestTask> etList) {
-        for(TestTask et : etList) {
-            unlinkCase(et);
-        }
-        return true;
+    public boolean unlinkCaseBatch (List<TestTask> etList) {
+		 for(TestTask et : etList) {
+		   unlinkCase(et);
+		 }
+	 	 return true;
     }
 
 

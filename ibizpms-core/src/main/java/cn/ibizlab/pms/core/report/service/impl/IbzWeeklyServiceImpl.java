@@ -111,7 +111,7 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
 	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzWeeklyHelper.class).edit(et)) {
 		return false;
      }
-     CachedBeanCopier.copy(get(et.getId()), et);
+    
      return true;
    }
         @Override

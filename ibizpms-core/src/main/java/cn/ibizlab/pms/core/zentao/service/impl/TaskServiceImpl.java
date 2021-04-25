@@ -137,7 +137,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
 	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.TaskHelper.class).edit(et)) {
 		return false;
      }
-     CachedBeanCopier.copy(get(et.getId()), et);
+    
      return true;
    }
         @Override
