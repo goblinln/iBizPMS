@@ -65,7 +65,7 @@
 
     <!--数据查询[Simple]-->
     <sql id="Simple" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPTID`, t1.`IBZPRO_SEQUENCEID`, t1.`IBZPRO_SEQUENCENAME`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZPRO_SEQUENCE` t1   ]]>
+		<![CDATA[ SELECT t1.`BEGINSEQ`, t1.`CATEGORY`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CURSEQ`, t1.`DEPTID`, t1.`IBZPRO_SEQUENCEID`, t1.`IBZPRO_SEQUENCENAME`, t1.`INCREMENT`, t1.`ISENABLE`, t1.`ORGID`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`YEAR` FROM `T_IBZPRO_SEQUENCE` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>

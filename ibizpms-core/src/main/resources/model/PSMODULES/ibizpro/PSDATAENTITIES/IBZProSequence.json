@@ -83,7 +83,6 @@
       "name" : "MySQL5"
     } ],
     "codeName" : "Simple",
-    "dEFGroupType" : "BASEFIELDS",
     "logicName" : "基础属性查询",
     "name" : "SIMPLE"
   }, {

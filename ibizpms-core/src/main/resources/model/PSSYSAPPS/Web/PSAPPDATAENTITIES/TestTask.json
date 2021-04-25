@@ -360,43 +360,11 @@
     },
     "name" : "数据导入",
     "getPSDEDataImportItems" : [ {
-      "caption" : "描述",
-      "name" : "DESC",
+      "caption" : "已删除",
+      "name" : "DELETED",
       "getPSAppDEField" : {
-        "name" : "DESC",
-        "codeName" : "Desc"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "编号",
-      "name" : "ID",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "抄送给",
-      "name" : "MAILTO",
-      "getPSAppDEField" : {
-        "name" : "MAILTO",
-        "codeName" : "Mailto"
-      },
-      "getPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "负责人",
-      "name" : "OWNER",
-      "getPSAppDEField" : {
-        "name" : "OWNER",
-        "codeName" : "Owner"
-      },
-      "getPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProductTeam.json"
+        "name" : "DELETED",
+        "codeName" : "Deleted"
       },
       "uniqueItem" : false
     }, {
@@ -408,11 +376,11 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "已删除",
-      "name" : "DELETED",
+      "caption" : "名称",
+      "name" : "NAME",
       "getPSAppDEField" : {
-        "name" : "DELETED",
-        "codeName" : "Deleted"
+        "name" : "NAME",
+        "codeName" : "Name"
       },
       "uniqueItem" : false
     }, {
@@ -424,11 +392,11 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "名称",
-      "name" : "NAME",
+      "caption" : "版本",
+      "name" : "BUILDNAME",
       "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
+        "name" : "BUILDNAME",
+        "codeName" : "BuildName"
       },
       "uniqueItem" : false
     }, {
@@ -437,14 +405,6 @@
       "getPSAppDEField" : {
         "name" : "PROJECT",
         "codeName" : "Project"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "版本",
-      "name" : "BUILDNAME",
-      "getPSAppDEField" : {
-        "name" : "BUILDNAME",
-        "codeName" : "BuildName"
       },
       "uniqueItem" : false
     }, {
@@ -488,14 +448,6 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "产品",
-      "name" : "PRODUCTNAME",
-      "getPSAppDEField" : {
-        "name" : "PRODUCTNAME",
-        "codeName" : "ProductName"
-      },
-      "uniqueItem" : false
-    }, {
       "caption" : "auto",
       "name" : "AUTO",
       "getPSAppDEField" : {
@@ -516,6 +468,14 @@
       },
       "uniqueItem" : false
     }, {
+      "caption" : "产品",
+      "name" : "PRODUCTNAME",
+      "getPSAppDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
+      },
+      "uniqueItem" : false
+    }, {
       "caption" : "优先级",
       "name" : "PRI",
       "getPSAppDEField" : {
@@ -533,6 +493,46 @@
       "getPSAppDEField" : {
         "name" : "END",
         "codeName" : "End"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "描述",
+      "name" : "DESC",
+      "getPSAppDEField" : {
+        "name" : "DESC",
+        "codeName" : "Desc"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "编号",
+      "name" : "ID",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "抄送给",
+      "name" : "MAILTO",
+      "getPSAppDEField" : {
+        "name" : "MAILTO",
+        "codeName" : "Mailto"
+      },
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "负责人",
+      "name" : "OWNER",
+      "getPSAppDEField" : {
+        "name" : "OWNER",
+        "codeName" : "Owner"
+      },
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProductTeam.json"
       },
       "uniqueItem" : false
     } ],
