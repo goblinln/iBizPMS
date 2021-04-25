@@ -113,7 +113,7 @@ public class ProductSumRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     }
 
     @Override
-    public Page<ProductSum> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<ProductSum> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -132,8 +132,7 @@ public class ProductSumRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     @Override
     public List<ProductSum> select(ISearchContextBase iSearchContextBase) {
         ProductSumSearchContext searchContext = (ProductSumSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return productsumService.searchDefault(searchContext).getContent();
+        return productsumService.select(searchContext);
     }
 
     @Override

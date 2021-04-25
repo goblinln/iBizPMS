@@ -101,7 +101,7 @@ public class CronRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     }
 
     @Override
-    public Page<Cron> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Cron> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class CronRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     @Override
     public List<Cron> select(ISearchContextBase iSearchContextBase) {
         CronSearchContext searchContext = (CronSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return cronService.searchDefault(searchContext).getContent();
+        return cronService.select(searchContext);
     }
 
     @Override

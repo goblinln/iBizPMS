@@ -163,7 +163,7 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
     }
 
     @Override
-    public Page<Bug> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Bug> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -182,8 +182,7 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
     @Override
     public List<Bug> select(ISearchContextBase iSearchContextBase) {
         BugSearchContext searchContext = (BugSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return bugService.searchDefault(searchContext).getContent();
+        return bugService.select(searchContext);
     }
 
     @Override

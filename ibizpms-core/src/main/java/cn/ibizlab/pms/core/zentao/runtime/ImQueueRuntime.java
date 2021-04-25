@@ -101,7 +101,7 @@ public class ImQueueRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    public Page<ImQueue> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<ImQueue> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class ImQueueRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public List<ImQueue> select(ISearchContextBase iSearchContextBase) {
         ImQueueSearchContext searchContext = (ImQueueSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return imqueueService.searchDefault(searchContext).getContent();
+        return imqueueService.select(searchContext);
     }
 
     @Override

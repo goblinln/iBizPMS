@@ -111,7 +111,7 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     }
 
     @Override
-    public Page<Build> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Build> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -130,8 +130,7 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     @Override
     public List<Build> select(ISearchContextBase iSearchContextBase) {
         BuildSearchContext searchContext = (BuildSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return buildService.searchDefault(searchContext).getContent();
+        return buildService.select(searchContext);
     }
 
     @Override

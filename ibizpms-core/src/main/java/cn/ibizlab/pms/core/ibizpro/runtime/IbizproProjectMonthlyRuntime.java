@@ -101,7 +101,7 @@ public class IbizproProjectMonthlyRuntime extends cn.ibizlab.pms.core.runtime.Sy
     }
 
     @Override
-    public Page<IbizproProjectMonthly> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<IbizproProjectMonthly> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class IbizproProjectMonthlyRuntime extends cn.ibizlab.pms.core.runtime.Sy
     @Override
     public List<IbizproProjectMonthly> select(ISearchContextBase iSearchContextBase) {
         IbizproProjectMonthlySearchContext searchContext = (IbizproProjectMonthlySearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return ibizproprojectmonthlyService.searchDefault(searchContext).getContent();
+        return ibizproprojectmonthlyService.select(searchContext);
     }
 
     @Override

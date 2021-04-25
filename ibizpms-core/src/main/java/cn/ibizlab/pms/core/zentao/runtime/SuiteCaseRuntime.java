@@ -101,7 +101,7 @@ public class SuiteCaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    public Page<SuiteCase> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<SuiteCase> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class SuiteCaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     @Override
     public List<SuiteCase> select(ISearchContextBase iSearchContextBase) {
         SuiteCaseSearchContext searchContext = (SuiteCaseSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return suitecaseService.searchDefault(searchContext).getContent();
+        return suitecaseService.select(searchContext);
     }
 
     @Override

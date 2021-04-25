@@ -101,7 +101,7 @@ public class IBZProProductRuntime extends cn.ibizlab.pms.core.runtime.SystemData
     }
 
     @Override
-    public Page<IBZProProduct> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<IBZProProduct> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class IBZProProductRuntime extends cn.ibizlab.pms.core.runtime.SystemData
     @Override
     public List<IBZProProduct> select(ISearchContextBase iSearchContextBase) {
         IBZProProductSearchContext searchContext = (IBZProProductSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return ibzproproductService.searchDefault(searchContext).getContent();
+        return ibzproproductService.select(searchContext);
     }
 
     @Override

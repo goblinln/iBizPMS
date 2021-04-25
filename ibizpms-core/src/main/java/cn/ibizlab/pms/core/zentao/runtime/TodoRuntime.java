@@ -107,7 +107,7 @@ public class TodoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     }
 
     @Override
-    public Page<Todo> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Todo> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -126,8 +126,7 @@ public class TodoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     @Override
     public List<Todo> select(ISearchContextBase iSearchContextBase) {
         TodoSearchContext searchContext = (TodoSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return todoService.searchDefault(searchContext).getContent();
+        return todoService.select(searchContext);
     }
 
     @Override

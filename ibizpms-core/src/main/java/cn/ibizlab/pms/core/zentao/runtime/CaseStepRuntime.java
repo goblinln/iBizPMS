@@ -111,7 +111,7 @@ public class CaseStepRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     }
 
     @Override
-    public Page<CaseStep> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<CaseStep> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -130,8 +130,7 @@ public class CaseStepRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     @Override
     public List<CaseStep> select(ISearchContextBase iSearchContextBase) {
         CaseStepSearchContext searchContext = (CaseStepSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return casestepService.searchDefault(searchContext).getContent();
+        return casestepService.select(searchContext);
     }
 
     @Override

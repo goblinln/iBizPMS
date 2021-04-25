@@ -101,7 +101,7 @@ public class ImMessagestatusRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
     }
 
     @Override
-    public Page<ImMessagestatus> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<ImMessagestatus> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class ImMessagestatusRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
     @Override
     public List<ImMessagestatus> select(ISearchContextBase iSearchContextBase) {
         ImMessagestatusSearchContext searchContext = (ImMessagestatusSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return immessagestatusService.searchDefault(searchContext).getContent();
+        return immessagestatusService.select(searchContext);
     }
 
     @Override

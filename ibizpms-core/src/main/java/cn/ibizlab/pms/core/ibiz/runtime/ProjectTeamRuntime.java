@@ -107,7 +107,7 @@ public class ProjectTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     }
 
     @Override
-    public Page<ProjectTeam> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<ProjectTeam> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -126,8 +126,7 @@ public class ProjectTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     @Override
     public List<ProjectTeam> select(ISearchContextBase iSearchContextBase) {
         ProjectTeamSearchContext searchContext = (ProjectTeamSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return projectteamService.searchDefault(searchContext).getContent();
+        return projectteamService.select(searchContext);
     }
 
     @Override

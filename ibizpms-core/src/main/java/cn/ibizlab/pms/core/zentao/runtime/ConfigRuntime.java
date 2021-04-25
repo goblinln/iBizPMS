@@ -101,7 +101,7 @@ public class ConfigRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     }
 
     @Override
-    public Page<Config> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Config> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class ConfigRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     @Override
     public List<Config> select(ISearchContextBase iSearchContextBase) {
         ConfigSearchContext searchContext = (ConfigSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return configService.searchDefault(searchContext).getContent();
+        return configService.select(searchContext);
     }
 
     @Override

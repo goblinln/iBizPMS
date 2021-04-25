@@ -109,7 +109,7 @@ public class FileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     }
 
     @Override
-    public Page<File> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<File> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -128,8 +128,7 @@ public class FileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     @Override
     public List<File> select(ISearchContextBase iSearchContextBase) {
         FileSearchContext searchContext = (FileSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return fileService.searchDefault(searchContext).getContent();
+        return fileService.select(searchContext);
     }
 
     @Override

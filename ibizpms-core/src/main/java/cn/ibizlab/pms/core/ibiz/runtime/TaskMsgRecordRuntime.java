@@ -101,7 +101,7 @@ public class TaskMsgRecordRuntime extends cn.ibizlab.pms.core.runtime.SystemData
     }
 
     @Override
-    public Page<TaskMsgRecord> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<TaskMsgRecord> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class TaskMsgRecordRuntime extends cn.ibizlab.pms.core.runtime.SystemData
     @Override
     public List<TaskMsgRecord> select(ISearchContextBase iSearchContextBase) {
         TaskMsgRecordSearchContext searchContext = (TaskMsgRecordSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return taskmsgrecordService.searchDefault(searchContext).getContent();
+        return taskmsgrecordService.select(searchContext);
     }
 
     @Override

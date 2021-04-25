@@ -101,7 +101,7 @@ public class StoryStageRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     }
 
     @Override
-    public Page<StoryStage> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<StoryStage> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class StoryStageRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     @Override
     public List<StoryStage> select(ISearchContextBase iSearchContextBase) {
         StoryStageSearchContext searchContext = (StoryStageSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return storystageService.searchDefault(searchContext).getContent();
+        return storystageService.select(searchContext);
     }
 
     @Override

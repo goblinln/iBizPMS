@@ -107,7 +107,7 @@ public class UserYearWorkStatsRuntime extends cn.ibizlab.pms.core.runtime.System
     }
 
     @Override
-    public Page<UserYearWorkStats> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<UserYearWorkStats> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -126,8 +126,7 @@ public class UserYearWorkStatsRuntime extends cn.ibizlab.pms.core.runtime.System
     @Override
     public List<UserYearWorkStats> select(ISearchContextBase iSearchContextBase) {
         UserYearWorkStatsSearchContext searchContext = (UserYearWorkStatsSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return useryearworkstatsService.searchDefault(searchContext).getContent();
+        return useryearworkstatsService.select(searchContext);
     }
 
     @Override

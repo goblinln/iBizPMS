@@ -113,7 +113,7 @@ public class IbzMonthlyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     }
 
     @Override
-    public Page<IbzMonthly> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<IbzMonthly> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -132,8 +132,7 @@ public class IbzMonthlyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     @Override
     public List<IbzMonthly> select(ISearchContextBase iSearchContextBase) {
         IbzMonthlySearchContext searchContext = (IbzMonthlySearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return ibzmonthlyService.searchDefault(searchContext).getContent();
+        return ibzmonthlyService.select(searchContext);
     }
 
     @Override

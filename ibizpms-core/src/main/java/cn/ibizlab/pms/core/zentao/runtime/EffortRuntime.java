@@ -101,7 +101,7 @@ public class EffortRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     }
 
     @Override
-    public Page<Effort> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Effort> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class EffortRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     @Override
     public List<Effort> select(ISearchContextBase iSearchContextBase) {
         EffortSearchContext searchContext = (EffortSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return effortService.searchDefault(searchContext).getContent();
+        return effortService.select(searchContext);
     }
 
     @Override

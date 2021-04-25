@@ -101,7 +101,7 @@ public class ImMessageRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    public Page<ImMessage> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<ImMessage> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class ImMessageRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     @Override
     public List<ImMessage> select(ISearchContextBase iSearchContextBase) {
         ImMessageSearchContext searchContext = (ImMessageSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return immessageService.searchDefault(searchContext).getContent();
+        return immessageService.select(searchContext);
     }
 
     @Override

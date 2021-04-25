@@ -101,7 +101,7 @@ public class RepoFilesRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    public Page<RepoFiles> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<RepoFiles> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class RepoFilesRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     @Override
     public List<RepoFiles> select(ISearchContextBase iSearchContextBase) {
         RepoFilesSearchContext searchContext = (RepoFilesSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return repofilesService.searchDefault(searchContext).getContent();
+        return repofilesService.select(searchContext);
     }
 
     @Override

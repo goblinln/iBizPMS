@@ -105,7 +105,7 @@ public class TaskEstimateStatsRuntime extends cn.ibizlab.pms.core.runtime.System
     }
 
     @Override
-    public Page<TaskEstimateStats> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<TaskEstimateStats> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -124,8 +124,7 @@ public class TaskEstimateStatsRuntime extends cn.ibizlab.pms.core.runtime.System
     @Override
     public List<TaskEstimateStats> select(ISearchContextBase iSearchContextBase) {
         TaskEstimateStatsSearchContext searchContext = (TaskEstimateStatsSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return taskestimatestatsService.searchDefault(searchContext).getContent();
+        return taskestimatestatsService.select(searchContext);
     }
 
     @Override

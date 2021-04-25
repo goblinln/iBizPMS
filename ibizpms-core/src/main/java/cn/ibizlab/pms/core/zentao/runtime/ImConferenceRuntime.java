@@ -101,7 +101,7 @@ public class ImConferenceRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     }
 
     @Override
-    public Page<ImConference> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<ImConference> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class ImConferenceRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     @Override
     public List<ImConference> select(ISearchContextBase iSearchContextBase) {
         ImConferenceSearchContext searchContext = (ImConferenceSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return imconferenceService.searchDefault(searchContext).getContent();
+        return imconferenceService.select(searchContext);
     }
 
     @Override

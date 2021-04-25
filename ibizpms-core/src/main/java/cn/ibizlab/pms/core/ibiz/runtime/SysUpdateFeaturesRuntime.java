@@ -101,7 +101,7 @@ public class SysUpdateFeaturesRuntime extends cn.ibizlab.pms.core.runtime.System
     }
 
     @Override
-    public Page<SysUpdateFeatures> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<SysUpdateFeatures> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class SysUpdateFeaturesRuntime extends cn.ibizlab.pms.core.runtime.System
     @Override
     public List<SysUpdateFeatures> select(ISearchContextBase iSearchContextBase) {
         SysUpdateFeaturesSearchContext searchContext = (SysUpdateFeaturesSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return sysupdatefeaturesService.searchDefault(searchContext).getContent();
+        return sysupdatefeaturesService.select(searchContext);
     }
 
     @Override

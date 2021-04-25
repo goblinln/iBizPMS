@@ -103,7 +103,7 @@ public class ReleaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    public Page<Release> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Release> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -122,8 +122,7 @@ public class ReleaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public List<Release> select(ISearchContextBase iSearchContextBase) {
         ReleaseSearchContext searchContext = (ReleaseSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return releaseService.searchDefault(searchContext).getContent();
+        return releaseService.select(searchContext);
     }
 
     @Override

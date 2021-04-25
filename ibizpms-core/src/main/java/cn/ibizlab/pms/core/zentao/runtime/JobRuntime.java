@@ -101,7 +101,7 @@ public class JobRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
     }
 
     @Override
-    public Page<Job> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Job> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class JobRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
     @Override
     public List<Job> select(ISearchContextBase iSearchContextBase) {
         JobSearchContext searchContext = (JobSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return jobService.searchDefault(searchContext).getContent();
+        return jobService.select(searchContext);
     }
 
     @Override

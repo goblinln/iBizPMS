@@ -101,7 +101,7 @@ public class EntryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     }
 
     @Override
-    public Page<Entry> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Entry> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class EntryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     @Override
     public List<Entry> select(ISearchContextBase iSearchContextBase) {
         EntrySearchContext searchContext = (EntrySearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return entryService.searchDefault(searchContext).getContent();
+        return entryService.select(searchContext);
     }
 
     @Override

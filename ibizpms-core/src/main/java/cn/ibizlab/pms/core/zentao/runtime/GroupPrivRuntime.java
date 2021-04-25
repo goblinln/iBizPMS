@@ -101,7 +101,7 @@ public class GroupPrivRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    public Page<GroupPriv> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<GroupPriv> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class GroupPrivRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     @Override
     public List<GroupPriv> select(ISearchContextBase iSearchContextBase) {
         GroupPrivSearchContext searchContext = (GroupPrivSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return groupprivService.searchDefault(searchContext).getContent();
+        return groupprivService.select(searchContext);
     }
 
     @Override

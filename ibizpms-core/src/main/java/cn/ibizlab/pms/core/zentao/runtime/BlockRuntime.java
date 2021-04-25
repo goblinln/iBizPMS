@@ -101,7 +101,7 @@ public class BlockRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     }
 
     @Override
-    public Page<Block> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Block> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class BlockRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     @Override
     public List<Block> select(ISearchContextBase iSearchContextBase) {
         BlockSearchContext searchContext = (BlockSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return blockService.searchDefault(searchContext).getContent();
+        return blockService.select(searchContext);
     }
 
     @Override

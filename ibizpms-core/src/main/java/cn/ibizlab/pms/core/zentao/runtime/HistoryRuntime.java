@@ -101,7 +101,7 @@ public class HistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    public Page<History> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<History> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class HistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public List<History> select(ISearchContextBase iSearchContextBase) {
         HistorySearchContext searchContext = (HistorySearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return historyService.searchDefault(searchContext).getContent();
+        return historyService.select(searchContext);
     }
 
     @Override

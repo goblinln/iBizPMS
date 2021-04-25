@@ -101,7 +101,7 @@ public class IbzPlanTempletDetailRuntime extends cn.ibizlab.pms.core.runtime.Sys
     }
 
     @Override
-    public Page<IbzPlanTempletDetail> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<IbzPlanTempletDetail> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class IbzPlanTempletDetailRuntime extends cn.ibizlab.pms.core.runtime.Sys
     @Override
     public List<IbzPlanTempletDetail> select(ISearchContextBase iSearchContextBase) {
         IbzPlanTempletDetailSearchContext searchContext = (IbzPlanTempletDetailSearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return ibzplantempletdetailService.searchDefault(searchContext).getContent();
+        return ibzplantempletdetailService.select(searchContext);
     }
 
     @Override

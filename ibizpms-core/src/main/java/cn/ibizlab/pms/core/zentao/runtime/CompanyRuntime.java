@@ -101,7 +101,7 @@ public class CompanyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    public Page<Company> searchDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
+    public List<Company> selectDataQuery(IPSDEDataQuery iPSDataQuery, ISearchContextBase iSearchContextBase) {
         //暂未实现
         return null;
     }
@@ -120,8 +120,7 @@ public class CompanyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     @Override
     public List<Company> select(ISearchContextBase iSearchContextBase) {
         CompanySearchContext searchContext = (CompanySearchContext) iSearchContextBase;
-        searchContext.setSize(Integer.MAX_VALUE);
-        return companyService.searchDefault(searchContext).getContent();
+        return companyService.select(searchContext);
     }
 
     @Override
