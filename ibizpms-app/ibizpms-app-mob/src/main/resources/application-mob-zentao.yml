@@ -32,6 +32,9 @@ zuul:
       path: /login/guest
       serviceId: ${ibiz.ref.service.pms-webapi:pms-webapi}
       stripPrefix: false
+    ibzemp:
+      path: /sysemployees/**
+      serviceId: ${ibiz.ref.service.pms-webapi:pms-webapi}
 environment:
   - TZ=Asia/Shanghai
 
