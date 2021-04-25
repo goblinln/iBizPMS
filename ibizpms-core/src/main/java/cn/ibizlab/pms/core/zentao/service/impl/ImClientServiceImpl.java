@@ -56,6 +56,13 @@ public class ImClientServiceImpl extends ServiceImpl<ImClientMapper, ImClient> i
     protected int batchSize = 500;
 
     @Override
+    public List<ImClient> select(ImClientSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ImClient> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(ImClient et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

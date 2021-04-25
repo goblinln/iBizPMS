@@ -44,6 +44,7 @@ public interface IIbzMyTerritoryService extends IService<IbzMyTerritory> {
     boolean myTerritoryCountBatch(List<IbzMyTerritory> etList);
     boolean save(IbzMyTerritory et);
     void saveBatch(List<IbzMyTerritory> list);
+    List<IbzMyTerritory> select(IbzMyTerritorySearchContext context);
     Page<IbzMyTerritory> searchDefault(IbzMyTerritorySearchContext context);
     Page<IbzMyTerritory> searchMyWork(IbzMyTerritorySearchContext context);
     Page<IbzMyTerritory> searchMyWorkMob(IbzMyTerritorySearchContext context);

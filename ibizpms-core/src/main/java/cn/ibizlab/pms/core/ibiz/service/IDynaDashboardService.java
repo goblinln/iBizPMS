@@ -38,6 +38,7 @@ public interface IDynaDashboardService extends IService<DynaDashboard> {
     boolean checkKey(DynaDashboard et);
     boolean save(DynaDashboard et);
     void saveBatch(List<DynaDashboard> list);
+    List<DynaDashboard> select(DynaDashboardSearchContext context);
     Page<DynaDashboard> searchDefault(DynaDashboardSearchContext context);
     DynaDashboard dynamicCall(String key, String action, DynaDashboard et);
     /**

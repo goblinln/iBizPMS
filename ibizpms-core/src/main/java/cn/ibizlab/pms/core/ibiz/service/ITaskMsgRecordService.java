@@ -38,6 +38,7 @@ public interface ITaskMsgRecordService extends IService<TaskMsgRecord> {
     boolean checkKey(TaskMsgRecord et);
     boolean save(TaskMsgRecord et);
     void saveBatch(List<TaskMsgRecord> list);
+    List<TaskMsgRecord> select(TaskMsgRecordSearchContext context);
     Page<TaskMsgRecord> searchDefault(TaskMsgRecordSearchContext context);
     TaskMsgRecord dynamicCall(String key, String action, TaskMsgRecord et);
     /**

@@ -38,6 +38,7 @@ public interface ITestResultService extends IService<TestResult> {
     boolean checkKey(TestResult et);
     boolean save(TestResult et);
     void saveBatch(List<TestResult> list);
+    List<TestResult> select(TestResultSearchContext context);
     Page<TestResult> searchCurTestRun(TestResultSearchContext context);
     Page<TestResult> searchDefault(TestResultSearchContext context);
     List<TestResult> selectByIbizcase(Long id);

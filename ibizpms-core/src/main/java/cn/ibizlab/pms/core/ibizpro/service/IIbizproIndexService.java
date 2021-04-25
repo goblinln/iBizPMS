@@ -38,6 +38,7 @@ public interface IIbizproIndexService extends IService<IbizproIndex> {
     boolean checkKey(IbizproIndex et);
     boolean save(IbizproIndex et);
     void saveBatch(List<IbizproIndex> list);
+    List<IbizproIndex> select(IbizproIndexSearchContext context);
     Page<IbizproIndex> searchDefault(IbizproIndexSearchContext context);
     Page<IbizproIndex> searchESquery(IbizproIndexSearchContext context);
     Page<IbizproIndex> searchIndexDER(IbizproIndexSearchContext context);

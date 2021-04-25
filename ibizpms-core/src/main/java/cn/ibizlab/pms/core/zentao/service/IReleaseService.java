@@ -60,6 +60,7 @@ public interface IReleaseService extends IService<Release> {
     boolean terminateBatch(List<Release> etList);
     Release unlinkBug(Release et);
     boolean unlinkBugBatch(List<Release> etList);
+    List<Release> select(ReleaseSearchContext context);
     Page<Release> searchDefault(ReleaseSearchContext context);
     Page<Release> searchReportRelease(ReleaseSearchContext context);
     List<Release> selectByBranch(Long id);

@@ -38,6 +38,7 @@ public interface IProjectTaskestimateService extends IService<ProjectTaskestimat
     boolean checkKey(ProjectTaskestimate et);
     boolean save(ProjectTaskestimate et);
     void saveBatch(List<ProjectTaskestimate> list);
+    List<ProjectTaskestimate> select(ProjectTaskestimateSearchContext context);
     Page<ProjectTaskestimate> searchAccountDetail(ProjectTaskestimateSearchContext context);
     Page<ProjectTaskestimate> searchDefault(ProjectTaskestimateSearchContext context);
     ProjectTaskestimate dynamicCall(String key, String action, ProjectTaskestimate et);

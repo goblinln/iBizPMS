@@ -115,10 +115,10 @@ public class TaskEstimateStatsRuntime extends cn.ibizlab.pms.core.runtime.System
         //单条数据查询，多条数数据时 返回第一条
         TaskEstimateStatsSearchContext searchContext = (TaskEstimateStatsSearchContext) iSearchContextBase;
         searchContext.setSize(1);
-        Page<TaskEstimateStats> domains = taskestimatestatsService.searchDefault(searchContext);
-        if (domains.getTotalElements() == 0)
+        List<TaskEstimateStats> domains = taskestimatestatsService.select(searchContext);
+        if (domains.size() == 0)
             return null;
-        return domains.getContent().get(0);
+        return domains.get(0);
     }
 
     @Override

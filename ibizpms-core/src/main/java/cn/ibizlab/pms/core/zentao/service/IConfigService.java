@@ -38,6 +38,7 @@ public interface IConfigService extends IService<Config> {
     boolean checkKey(Config et);
     boolean save(Config et);
     void saveBatch(List<Config> list);
+    List<Config> select(ConfigSearchContext context);
     Page<Config> searchDefault(ConfigSearchContext context);
     Config dynamicCall(Long key, String action, Config et);
     /**

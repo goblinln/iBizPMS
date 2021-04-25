@@ -38,6 +38,7 @@ public interface IIbzPlanTempletDetailService extends IService<IbzPlanTempletDet
     boolean checkKey(IbzPlanTempletDetail et);
     boolean save(IbzPlanTempletDetail et);
     void saveBatch(List<IbzPlanTempletDetail> list);
+    List<IbzPlanTempletDetail> select(IbzPlanTempletDetailSearchContext context);
     Page<IbzPlanTempletDetail> searchDefault(IbzPlanTempletDetailSearchContext context);
     List<IbzPlanTempletDetail> selectByPlantempletid(String ibzplantempletid);
     void removeByPlantempletid(String ibzplantempletid);

@@ -65,6 +65,13 @@ public class IbzCaseServiceImpl extends ServiceImpl<IbzCaseMapper, IbzCase> impl
     protected int batchSize = 500;
 
     @Override
+    public List<IbzCase> select(IbzCaseSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzCase> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(IbzCase et) {
         if(!ibzcaseRuntime.isRtmodel()){

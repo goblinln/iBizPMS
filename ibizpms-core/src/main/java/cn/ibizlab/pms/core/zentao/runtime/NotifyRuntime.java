@@ -111,10 +111,10 @@ public class NotifyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
         //单条数据查询，多条数数据时 返回第一条
         NotifySearchContext searchContext = (NotifySearchContext) iSearchContextBase;
         searchContext.setSize(1);
-        Page<Notify> domains = notifyService.searchDefault(searchContext);
-        if (domains.getTotalElements() == 0)
+        List<Notify> domains = notifyService.select(searchContext);
+        if (domains.size() == 0)
             return null;
-        return domains.getContent().get(0);
+        return domains.get(0);
     }
 
     @Override

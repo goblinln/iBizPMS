@@ -42,6 +42,7 @@ public interface IIbzReportlyService extends IService<IbzReportly> {
     void saveBatch(List<IbzReportly> list);
     IbzReportly submit(IbzReportly et);
     boolean submitBatch(List<IbzReportly> etList);
+    List<IbzReportly> select(IbzReportlySearchContext context);
     Page<IbzReportly> searchDefault(IbzReportlySearchContext context);
     Page<IbzReportly> searchMyAllReportly(IbzReportlySearchContext context);
     Page<IbzReportly> searchMyReceived(IbzReportlySearchContext context);

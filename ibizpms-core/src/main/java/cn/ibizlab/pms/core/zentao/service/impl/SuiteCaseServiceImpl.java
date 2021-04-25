@@ -65,6 +65,13 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     protected int batchSize = 500;
 
     @Override
+    public List<SuiteCase> select(SuiteCaseSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<SuiteCase> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(SuiteCase et) {
         if(!suitecaseRuntime.isRtmodel()){

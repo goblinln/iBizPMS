@@ -111,10 +111,10 @@ public class IbzLibCaseStepRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
         //单条数据查询，多条数数据时 返回第一条
         IbzLibCaseStepSearchContext searchContext = (IbzLibCaseStepSearchContext) iSearchContextBase;
         searchContext.setSize(1);
-        Page<IbzLibCaseStep> domains = ibzlibcasestepService.searchDefault(searchContext);
-        if (domains.getTotalElements() == 0)
+        List<IbzLibCaseStep> domains = ibzlibcasestepService.select(searchContext);
+        if (domains.size() == 0)
             return null;
-        return domains.getContent().get(0);
+        return domains.get(0);
     }
 
     @Override

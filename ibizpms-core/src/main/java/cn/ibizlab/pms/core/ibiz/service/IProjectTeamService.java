@@ -40,6 +40,7 @@ public interface IProjectTeamService extends IService<ProjectTeam> {
     boolean getUserRoleBatch(List<ProjectTeam> etList);
     boolean save(ProjectTeam et);
     void saveBatch(List<ProjectTeam> list);
+    List<ProjectTeam> select(ProjectTeamSearchContext context);
     Page<ProjectTeam> searchDefault(ProjectTeamSearchContext context);
     Page<ProjectTeam> searchProjectTeamPm(ProjectTeamSearchContext context);
     Page<ProjectTeam> searchRowEditDefault(ProjectTeamSearchContext context);

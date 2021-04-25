@@ -56,6 +56,13 @@ public class UserQueryServiceImpl extends ServiceImpl<UserQueryMapper, UserQuery
     protected int batchSize = 500;
 
     @Override
+    public List<UserQuery> select(UserQuerySearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<UserQuery> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(UserQuery et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

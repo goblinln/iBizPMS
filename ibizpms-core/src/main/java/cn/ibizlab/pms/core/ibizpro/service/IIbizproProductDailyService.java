@@ -42,6 +42,7 @@ public interface IIbizproProductDailyService extends IService<IbizproProductDail
     void saveBatch(List<IbizproProductDaily> list);
     IbizproProductDaily statsProductDaily(IbizproProductDaily et);
     boolean statsProductDailyBatch(List<IbizproProductDaily> etList);
+    List<IbizproProductDaily> select(IbizproProductDailySearchContext context);
     Page<IbizproProductDaily> searchDefault(IbizproProductDailySearchContext context);
     Page<IbizproProductDaily> searchProductDaily(IbizproProductDailySearchContext context);
     List<IbizproProductDaily> selectByProduct(Long id);

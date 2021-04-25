@@ -40,6 +40,7 @@ public interface IIbizproProjectWeeklyService extends IService<IbizproProjectWee
     boolean pushSumProjectWeeklyBatch(List<IbizproProjectWeekly> etList);
     boolean save(IbizproProjectWeekly et);
     void saveBatch(List<IbizproProjectWeekly> list);
+    List<IbizproProjectWeekly> select(IbizproProjectWeeklySearchContext context);
     Page<IbizproProjectWeekly> searchDefault(IbizproProjectWeeklySearchContext context);
     List<IbizproProjectWeekly> selectByProject(Long id);
     void removeByProject(Long id);

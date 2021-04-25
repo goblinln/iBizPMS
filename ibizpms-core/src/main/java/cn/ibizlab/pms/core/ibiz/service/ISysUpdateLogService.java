@@ -40,6 +40,7 @@ public interface ISysUpdateLogService extends IService<SysUpdateLog> {
     boolean getLastUpdateInfoBatch(List<SysUpdateLog> etList);
     boolean save(SysUpdateLog et);
     void saveBatch(List<SysUpdateLog> list);
+    List<SysUpdateLog> select(SysUpdateLogSearchContext context);
     Page<SysUpdateLog> searchDefault(SysUpdateLogSearchContext context);
     SysUpdateLog dynamicCall(String key, String action, SysUpdateLog et);
     /**

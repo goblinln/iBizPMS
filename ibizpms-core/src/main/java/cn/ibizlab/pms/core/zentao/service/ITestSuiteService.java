@@ -40,6 +40,7 @@ public interface ITestSuiteService extends IService<TestSuite> {
     boolean mobTestSuiteCountBatch(List<TestSuite> etList);
     boolean save(TestSuite et);
     void saveBatch(List<TestSuite> list);
+    List<TestSuite> select(TestSuiteSearchContext context);
     Page<TestSuite> searchDefault(TestSuiteSearchContext context);
     Page<TestSuite> searchPublicTestSuite(TestSuiteSearchContext context);
     List<TestSuite> selectByProduct(Long id);

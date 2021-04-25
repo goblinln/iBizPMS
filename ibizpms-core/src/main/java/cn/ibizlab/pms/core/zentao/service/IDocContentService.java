@@ -38,6 +38,7 @@ public interface IDocContentService extends IService<DocContent> {
     boolean checkKey(DocContent et);
     boolean save(DocContent et);
     void saveBatch(List<DocContent> list);
+    List<DocContent> select(DocContentSearchContext context);
     Page<DocContent> searchCurVersion(DocContentSearchContext context);
     Page<DocContent> searchDefault(DocContentSearchContext context);
     List<DocContent> selectByDoc(Long id);

@@ -38,6 +38,7 @@ public interface IProjectProductService extends IService<ProjectProduct> {
     boolean checkKey(ProjectProduct et);
     boolean save(ProjectProduct et);
     void saveBatch(List<ProjectProduct> list);
+    List<ProjectProduct> select(ProjectProductSearchContext context);
     Page<ProjectProduct> searchDefault(ProjectProductSearchContext context);
     Page<ProjectProduct> searchRelationPlan(ProjectProductSearchContext context);
     List<ProjectProduct> selectByBranch(Long id);

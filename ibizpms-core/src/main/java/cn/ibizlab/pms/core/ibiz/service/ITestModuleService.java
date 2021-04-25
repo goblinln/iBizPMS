@@ -42,6 +42,7 @@ public interface ITestModuleService extends IService<TestModule> {
     boolean removeModuleBatch(List<TestModule> etList);
     boolean save(TestModule et);
     void saveBatch(List<TestModule> list);
+    List<TestModule> select(TestModuleSearchContext context);
     Page<TestModule> searchByPath(TestModuleSearchContext context);
     Page<TestModule> searchDefault(TestModuleSearchContext context);
     Page<TestModule> searchParentModule(TestModuleSearchContext context);

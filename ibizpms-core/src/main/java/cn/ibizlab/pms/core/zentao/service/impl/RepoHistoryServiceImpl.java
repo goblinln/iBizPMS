@@ -56,6 +56,13 @@ public class RepoHistoryServiceImpl extends ServiceImpl<RepoHistoryMapper, RepoH
     protected int batchSize = 500;
 
     @Override
+    public List<RepoHistory> select(RepoHistorySearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<RepoHistory> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(RepoHistory et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

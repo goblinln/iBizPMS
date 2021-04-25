@@ -38,6 +38,7 @@ public interface IJobService extends IService<Job> {
     boolean checkKey(Job et);
     boolean save(Job et);
     void saveBatch(List<Job> list);
+    List<Job> select(JobSearchContext context);
     Page<Job> searchDefault(JobSearchContext context);
     Job dynamicCall(Long key, String action, Job et);
     /**

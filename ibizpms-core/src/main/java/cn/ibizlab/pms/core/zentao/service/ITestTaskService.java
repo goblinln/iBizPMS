@@ -52,6 +52,7 @@ public interface ITestTaskService extends IService<TestTask> {
     boolean startBatch(List<TestTask> etList);
     TestTask unlinkCase(TestTask et);
     boolean unlinkCaseBatch(List<TestTask> etList);
+    List<TestTask> select(TestTaskSearchContext context);
     Page<TestTask> searchDefault(TestTaskSearchContext context);
     Page<TestTask> searchMyTestTaskPc(TestTaskSearchContext context);
     List<TestTask> selectByBuild(Long id);

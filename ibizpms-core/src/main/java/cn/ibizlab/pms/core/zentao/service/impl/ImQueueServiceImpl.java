@@ -56,6 +56,13 @@ public class ImQueueServiceImpl extends ServiceImpl<ImQueueMapper, ImQueue> impl
     protected int batchSize = 500;
 
     @Override
+    public List<ImQueue> select(ImQueueSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ImQueue> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(ImQueue et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

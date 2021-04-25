@@ -56,6 +56,13 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
     protected int batchSize = 500;
 
     @Override
+    public List<IbzReportly> select(IbzReportlySearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzReportly> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(IbzReportly et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

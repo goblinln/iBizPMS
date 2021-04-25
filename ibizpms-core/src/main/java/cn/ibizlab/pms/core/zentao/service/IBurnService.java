@@ -40,6 +40,7 @@ public interface IBurnService extends IService<Burn> {
     boolean computeBurnBatch(List<Burn> etList);
     boolean save(Burn et);
     void saveBatch(List<Burn> list);
+    List<Burn> select(BurnSearchContext context);
     Page<Burn> searchDefault(BurnSearchContext context);
     Page<Burn> searchESTIMATEANDLEFT(BurnSearchContext context);
     List<Burn> selectByProject(Long id);

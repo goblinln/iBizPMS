@@ -111,10 +111,10 @@ public class IbzCaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         //单条数据查询，多条数数据时 返回第一条
         IbzCaseSearchContext searchContext = (IbzCaseSearchContext) iSearchContextBase;
         searchContext.setSize(1);
-        Page<IbzCase> domains = ibzcaseService.searchDefault(searchContext);
-        if (domains.getTotalElements() == 0)
+        List<IbzCase> domains = ibzcaseService.select(searchContext);
+        if (domains.size() == 0)
             return null;
-        return domains.getContent().get(0);
+        return domains.get(0);
     }
 
     @Override

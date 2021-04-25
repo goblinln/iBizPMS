@@ -72,6 +72,7 @@ public interface IProjectService extends IService<Project> {
     boolean unlinkStoryBatch(List<Project> etList);
     Project updateOrder(Project et);
     boolean updateOrderBatch(List<Project> etList);
+    List<Project> select(ProjectSearchContext context);
     Page<Project> searchBugProject(ProjectSearchContext context);
     Page<Project> searchCurDefaultQuery(ProjectSearchContext context);
     Page<Project> searchCurDefaultQueryExp(ProjectSearchContext context);

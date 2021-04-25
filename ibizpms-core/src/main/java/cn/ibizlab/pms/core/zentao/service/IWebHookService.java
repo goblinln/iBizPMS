@@ -38,6 +38,7 @@ public interface IWebHookService extends IService<WebHook> {
     boolean checkKey(WebHook et);
     boolean save(WebHook et);
     void saveBatch(List<WebHook> list);
+    List<WebHook> select(WebHookSearchContext context);
     Page<WebHook> searchDefault(WebHookSearchContext context);
     WebHook dynamicCall(Long key, String action, WebHook et);
     /**

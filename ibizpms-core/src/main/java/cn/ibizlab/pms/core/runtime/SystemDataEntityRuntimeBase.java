@@ -223,7 +223,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     public int checkKeyState(Object objKey) {
         QueryWrapperContext context = this.createSearchContext();
         context.getSelectCond().eq(this.getKey(), objKey);
-        List domains = this.query(this.getService(), context);
+        List domains = this.select(context);
         if (domains.size() > 0)
             return CheckKeyStates.EXIST ;
         return CheckKeyStates.NOTEXIST;
@@ -237,15 +237,6 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     abstract protected IService getService();
 
     abstract public QueryWrapperContext createSearchContext();
-
-    public List query(IService service , QueryWrapperContext queryWrapperContext){
-        EvaluationContext elContext = new StandardEvaluationContext();
-        elContext.setVariable("service", service);
-        elContext.setVariable("queryWrapperContext", queryWrapperContext);
-        Expression expression = parser.parseExpression("#service.searchDefault(#queryWrapperContext)");
-        Page data = expression.getValue(elContext, Page.class);
-        return data.getContent() ;
-    }
 
     /**
      * 判断是否含有统一资源标识
@@ -293,7 +284,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         QueryWrapperContext context = this.createSearchContext();
         context.getSelectCond().eq(this.getKey(), key);
         addAuthorityConditions(context, action);
-        List domains = this.query(this.getService(), context);
+        List domains = this.select(context);
         if (domains.size() == 0) {
             return false;
         }
@@ -325,7 +316,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         context.getSelectCond().in(this.getKey(), keys);
         addAuthorityConditions(context, action);
 
-        List domains = this.query(this.getService(), context);
+        List domains = this.select(context);
         if (domains.size() != keys.size()) {
             return false;
         }

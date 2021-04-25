@@ -38,6 +38,7 @@ public interface ICaseStatsService extends IService<CaseStats> {
     boolean checkKey(CaseStats et);
     boolean save(CaseStats et);
     void saveBatch(List<CaseStats> list);
+    List<CaseStats> select(CaseStatsSearchContext context);
     Page<CaseStats> searchDefault(CaseStatsSearchContext context);
     Page<CaseStats> searchTestCaseStats(CaseStatsSearchContext context);
     List<CaseStats> selectByModule(Long id);

@@ -111,10 +111,10 @@ public class RepoBranchRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
         //单条数据查询，多条数数据时 返回第一条
         RepoBranchSearchContext searchContext = (RepoBranchSearchContext) iSearchContextBase;
         searchContext.setSize(1);
-        Page<RepoBranch> domains = repobranchService.searchDefault(searchContext);
-        if (domains.getTotalElements() == 0)
+        List<RepoBranch> domains = repobranchService.select(searchContext);
+        if (domains.size() == 0)
             return null;
-        return domains.getContent().get(0);
+        return domains.get(0);
     }
 
     @Override

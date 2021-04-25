@@ -62,6 +62,13 @@ public class CaseStatsServiceImpl extends ServiceImpl<CaseStatsMapper, CaseStats
     protected int batchSize = 500;
 
     @Override
+    public List<CaseStats> select(CaseStatsSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<CaseStats> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(CaseStats et) {
         if(!casestatsRuntime.isRtmodel()){

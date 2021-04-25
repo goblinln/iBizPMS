@@ -38,6 +38,7 @@ public interface IUserGroupService extends IService<UserGroup> {
     boolean checkKey(UserGroup et);
     boolean save(UserGroup et);
     void saveBatch(List<UserGroup> list);
+    List<UserGroup> select(UserGroupSearchContext context);
     Page<UserGroup> searchDefault(UserGroupSearchContext context);
     UserGroup dynamicCall(String key, String action, UserGroup et);
     /**

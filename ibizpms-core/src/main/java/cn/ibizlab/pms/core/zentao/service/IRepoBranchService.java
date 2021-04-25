@@ -38,6 +38,7 @@ public interface IRepoBranchService extends IService<RepoBranch> {
     boolean checkKey(RepoBranch et);
     boolean save(RepoBranch et);
     void saveBatch(List<RepoBranch> list);
+    List<RepoBranch> select(RepoBranchSearchContext context);
     Page<RepoBranch> searchDefault(RepoBranchSearchContext context);
     RepoBranch dynamicCall(String key, String action, RepoBranch et);
     /**

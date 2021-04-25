@@ -111,10 +111,10 @@ public class TaskTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
         //单条数据查询，多条数数据时 返回第一条
         TaskTeamSearchContext searchContext = (TaskTeamSearchContext) iSearchContextBase;
         searchContext.setSize(1);
-        Page<TaskTeam> domains = taskteamService.searchDefault(searchContext);
-        if (domains.getTotalElements() == 0)
+        List<TaskTeam> domains = taskteamService.select(searchContext);
+        if (domains.size() == 0)
             return null;
-        return domains.getContent().get(0);
+        return domains.get(0);
     }
 
     @Override

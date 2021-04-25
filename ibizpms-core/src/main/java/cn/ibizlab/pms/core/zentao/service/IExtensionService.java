@@ -38,6 +38,7 @@ public interface IExtensionService extends IService<Extension> {
     boolean checkKey(Extension et);
     boolean save(Extension et);
     void saveBatch(List<Extension> list);
+    List<Extension> select(ExtensionSearchContext context);
     Page<Extension> searchDefault(ExtensionSearchContext context);
     Extension dynamicCall(Long key, String action, Extension et);
     /**

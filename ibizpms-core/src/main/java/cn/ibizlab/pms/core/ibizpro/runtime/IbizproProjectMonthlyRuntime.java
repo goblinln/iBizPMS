@@ -111,10 +111,10 @@ public class IbizproProjectMonthlyRuntime extends cn.ibizlab.pms.core.runtime.Sy
         //单条数据查询，多条数数据时 返回第一条
         IbizproProjectMonthlySearchContext searchContext = (IbizproProjectMonthlySearchContext) iSearchContextBase;
         searchContext.setSize(1);
-        Page<IbizproProjectMonthly> domains = ibizproprojectmonthlyService.searchDefault(searchContext);
-        if (domains.getTotalElements() == 0)
+        List<IbizproProjectMonthly> domains = ibizproprojectmonthlyService.select(searchContext);
+        if (domains.size() == 0)
             return null;
-        return domains.getContent().get(0);
+        return domains.get(0);
     }
 
     @Override

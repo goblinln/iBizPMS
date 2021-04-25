@@ -59,6 +59,13 @@ public class TaskTeamServiceImpl extends ServiceImpl<TaskTeamMapper, TaskTeam> i
     protected int batchSize = 500;
 
     @Override
+    public List<TaskTeam> select(TaskTeamSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<TaskTeam> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(TaskTeam et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

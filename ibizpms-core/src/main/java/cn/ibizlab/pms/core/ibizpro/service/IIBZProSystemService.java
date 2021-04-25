@@ -38,6 +38,7 @@ public interface IIBZProSystemService extends IService<IBZProSystem> {
     boolean checkKey(IBZProSystem et);
     boolean save(IBZProSystem et);
     void saveBatch(List<IBZProSystem> list);
+    List<IBZProSystem> select(IBZProSystemSearchContext context);
     Page<IBZProSystem> searchDefault(IBZProSystemSearchContext context);
     IBZProSystem dynamicCall(String key, String action, IBZProSystem et);
     /**

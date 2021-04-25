@@ -38,6 +38,7 @@ public interface IImMessageService extends IService<ImMessage> {
     boolean checkKey(ImMessage et);
     boolean save(ImMessage et);
     void saveBatch(List<ImMessage> list);
+    List<ImMessage> select(ImMessageSearchContext context);
     Page<ImMessage> searchDefault(ImMessageSearchContext context);
     ImMessage dynamicCall(Long key, String action, ImMessage et);
     /**

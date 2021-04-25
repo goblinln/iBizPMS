@@ -56,6 +56,13 @@ public class DynaDashboardServiceImpl extends ServiceImpl<DynaDashboardMapper, D
     protected int batchSize = 500;
 
     @Override
+    public List<DynaDashboard> select(DynaDashboardSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<DynaDashboard> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(DynaDashboard et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

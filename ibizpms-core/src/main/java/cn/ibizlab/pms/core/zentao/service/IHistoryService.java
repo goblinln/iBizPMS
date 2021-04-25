@@ -38,6 +38,7 @@ public interface IHistoryService extends IService<History> {
     boolean checkKey(History et);
     boolean save(History et);
     void saveBatch(List<History> list);
+    List<History> select(HistorySearchContext context);
     Page<History> searchDefault(HistorySearchContext context);
     List<History> selectByAction(Long id);
     void removeByAction(Long id);

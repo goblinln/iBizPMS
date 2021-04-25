@@ -58,6 +58,13 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     protected int batchSize = 500;
 
     @Override
+    public List<Dept> select(DeptSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Dept> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(Dept et) {
         if(!deptRuntime.isRtmodel()){

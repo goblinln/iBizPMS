@@ -28,37 +28,13 @@ public class IBZWFFallback implements IBZWFFeignClient {
     }
 
     @Override
-    public Map<String, Map<String, Object>> getTaskByUserId(String system, String userId, String entity, String instTag, String instTag2) {
+    public Map<String, Map<String, Object>> getTask(String system, String userId, String entity, String instTag, String instTag2 ,String taskType) {
         return null;
     }
 
     @Override
-    public Map<String, Map<String, Object>> getTaskByStep(String system, String userId, String entity, String instTag, String instTag2 , String srfwfstep) {
+    public Map<String, Map<String, Object>> getTaskByStep(String system, String userId, String entity, String instTag, String instTag2 , String taskType, String srfwfstep) {
         return null;
     }
 
-    @Override
-    public Map<String, Map<String, Object>> getUnReadTaskByUserId(String system, String userId, String entity, String instTag, String instTag2) {
-        return null;
-    }
-
-    @Override
-    public Map<String, Map<String, Object>> getDoneTaskByUserId(String system, String userId, String entity, String instTag, String instTag2) {
-        return null;
-    }
-
-    @Override
-    public Map<String, Map<String, Object>> getFinishTaskByUserId(String system, String userId, String entity, String instTag, String instTag2) {
-        return null;
-    }
-
-    @Override
-    public Map<String, Map<String, Object>> getAllTaskByUserId(String system, String userId, String entity, String instTag, String instTag2) {
-        return null;
-    }
-
-    @Override
-    public Map<String, Map<String, Object>> getSendCopyTask(String system, String userId, String entity, String instTag, String instTag2) {
-        return null;
-    }
 }

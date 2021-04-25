@@ -56,6 +56,13 @@ public class ScoreServiceImpl extends ServiceImpl<ScoreMapper, Score> implements
     protected int batchSize = 500;
 
     @Override
+    public List<Score> select(ScoreSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Score> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(Score et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

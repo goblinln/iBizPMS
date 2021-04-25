@@ -56,6 +56,13 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     protected int batchSize = 500;
 
     @Override
+    public List<User> select(UserSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<User> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(User et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

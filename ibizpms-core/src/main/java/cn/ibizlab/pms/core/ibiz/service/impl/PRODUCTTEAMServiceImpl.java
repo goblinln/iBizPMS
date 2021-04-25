@@ -59,6 +59,13 @@ public class PRODUCTTEAMServiceImpl extends ServiceImpl<PRODUCTTEAMMapper, PRODU
     protected int batchSize = 500;
 
     @Override
+    public List<PRODUCTTEAM> select(PRODUCTTEAMSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<PRODUCTTEAM> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(PRODUCTTEAM et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

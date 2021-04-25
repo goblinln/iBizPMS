@@ -38,6 +38,7 @@ public interface IStoryStageService extends IService<StoryStage> {
     boolean checkKey(StoryStage et);
     boolean save(StoryStage et);
     void saveBatch(List<StoryStage> list);
+    List<StoryStage> select(StoryStageSearchContext context);
     Page<StoryStage> searchDefault(StoryStageSearchContext context);
     List<StoryStage> selectByBranch(Long id);
     void removeByBranch(Long id);

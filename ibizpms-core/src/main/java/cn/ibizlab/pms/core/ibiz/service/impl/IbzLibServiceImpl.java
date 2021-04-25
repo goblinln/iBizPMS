@@ -62,6 +62,13 @@ public class IbzLibServiceImpl extends ServiceImpl<IbzLibMapper, IbzLib> impleme
     protected int batchSize = 500;
 
     @Override
+    public List<IbzLib> select(IbzLibSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzLib> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(IbzLib et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

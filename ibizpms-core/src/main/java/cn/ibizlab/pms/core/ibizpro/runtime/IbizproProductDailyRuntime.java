@@ -113,10 +113,10 @@ public class IbizproProductDailyRuntime extends cn.ibizlab.pms.core.runtime.Syst
         //单条数据查询，多条数数据时 返回第一条
         IbizproProductDailySearchContext searchContext = (IbizproProductDailySearchContext) iSearchContextBase;
         searchContext.setSize(1);
-        Page<IbizproProductDaily> domains = ibizproproductdailyService.searchDefault(searchContext);
-        if (domains.getTotalElements() == 0)
+        List<IbizproProductDaily> domains = ibizproproductdailyService.select(searchContext);
+        if (domains.size() == 0)
             return null;
-        return domains.getContent().get(0);
+        return domains.get(0);
     }
 
     @Override

@@ -86,6 +86,13 @@ public class BranchServiceImpl extends ServiceImpl<BranchMapper, Branch> impleme
     protected int batchSize = 500;
 
     @Override
+    public List<Branch> select(BranchSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Branch> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(Branch et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

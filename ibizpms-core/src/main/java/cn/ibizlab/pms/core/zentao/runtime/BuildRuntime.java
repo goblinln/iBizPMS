@@ -121,10 +121,10 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         //单条数据查询，多条数数据时 返回第一条
         BuildSearchContext searchContext = (BuildSearchContext) iSearchContextBase;
         searchContext.setSize(1);
-        Page<Build> domains = buildService.searchDefault(searchContext);
-        if (domains.getTotalElements() == 0)
+        List<Build> domains = buildService.select(searchContext);
+        if (domains.size() == 0)
             return null;
-        return domains.getContent().get(0);
+        return domains.get(0);
     }
 
     @Override

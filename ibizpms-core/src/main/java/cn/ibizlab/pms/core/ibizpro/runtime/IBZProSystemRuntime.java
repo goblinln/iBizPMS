@@ -111,10 +111,10 @@ public class IBZProSystemRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
         //单条数据查询，多条数数据时 返回第一条
         IBZProSystemSearchContext searchContext = (IBZProSystemSearchContext) iSearchContextBase;
         searchContext.setSize(1);
-        Page<IBZProSystem> domains = ibzprosystemService.searchDefault(searchContext);
-        if (domains.getTotalElements() == 0)
+        List<IBZProSystem> domains = ibzprosystemService.select(searchContext);
+        if (domains.size() == 0)
             return null;
-        return domains.getContent().get(0);
+        return domains.get(0);
     }
 
     @Override

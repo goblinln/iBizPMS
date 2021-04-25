@@ -38,6 +38,7 @@ public interface IIbzProjectMemberService extends IService<IbzProjectMember> {
     boolean checkKey(IbzProjectMember et);
     boolean save(IbzProjectMember et);
     void saveBatch(List<IbzProjectMember> list);
+    List<IbzProjectMember> select(IbzProjectMemberSearchContext context);
     Page<IbzProjectMember> searchDefault(IbzProjectMemberSearchContext context);
     IbzProjectMember dynamicCall(Long key, String action, IbzProjectMember et);
     /**

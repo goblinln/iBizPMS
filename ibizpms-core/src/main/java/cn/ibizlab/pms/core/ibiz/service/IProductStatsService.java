@@ -39,6 +39,7 @@ public interface IProductStatsService extends IService<ProductStats> {
     ProductStats getTestStats(ProductStats et);
     boolean save(ProductStats et);
     void saveBatch(List<ProductStats> list);
+    List<ProductStats> select(ProductStatsSearchContext context);
     Page<ProductStats> searchDefault(ProductStatsSearchContext context);
     Page<ProductStats> searchNoOpenProduct(ProductStatsSearchContext context);
     Page<ProductStats> searchProdctQuantiGird(ProductStatsSearchContext context);

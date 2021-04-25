@@ -38,6 +38,7 @@ public interface IProductLifeService extends IService<ProductLife> {
     boolean checkKey(ProductLife et);
     boolean save(ProductLife et);
     void saveBatch(List<ProductLife> list);
+    List<ProductLife> select(ProductLifeSearchContext context);
     Page<ProductLife> searchDefault(ProductLifeSearchContext context);
     Page<ProductLife> searchGetRoadmap(ProductLifeSearchContext context);
     Page<ProductLife> searchGetRoadmapS(ProductLifeSearchContext context);

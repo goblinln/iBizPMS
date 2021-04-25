@@ -59,6 +59,13 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
     protected int batchSize = 500;
 
     @Override
+    public List<ProjectTeam> select(ProjectTeamSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProjectTeam> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(ProjectTeam et) {
         if(!projectteamRuntime.isRtmodel()){

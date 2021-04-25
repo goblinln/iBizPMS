@@ -61,6 +61,13 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
     protected int batchSize = 500;
 
     @Override
+    public List<DocLibModule> select(DocLibModuleSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<DocLibModule> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(DocLibModule et) {
         if(!doclibmoduleRuntime.isRtmodel()){

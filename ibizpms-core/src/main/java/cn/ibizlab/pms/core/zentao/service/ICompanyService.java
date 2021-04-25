@@ -38,6 +38,7 @@ public interface ICompanyService extends IService<Company> {
     boolean checkKey(Company et);
     boolean save(Company et);
     void saveBatch(List<Company> list);
+    List<Company> select(CompanySearchContext context);
     Page<Company> searchDefault(CompanySearchContext context);
     Company dynamicCall(Long key, String action, Company et);
     /**

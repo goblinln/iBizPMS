@@ -116,6 +116,7 @@ public interface IStoryService extends IService<Story> {
     boolean syncFromIbizBatch(List<Story> etList);
     Story unlinkStory(Story et);
     boolean unlinkStoryBatch(List<Story> etList);
+    List<Story> select(StorySearchContext context);
     Page<Story> searchAssignedToMyStory(StorySearchContext context);
     Page<Story> searchAssignedToMyStoryCalendar(StorySearchContext context);
     Page<Story> searchBugStory(StorySearchContext context);

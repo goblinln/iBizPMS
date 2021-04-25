@@ -38,6 +38,7 @@ public interface IImClientService extends IService<ImClient> {
     boolean checkKey(ImClient et);
     boolean save(ImClient et);
     void saveBatch(List<ImClient> list);
+    List<ImClient> select(ImClientSearchContext context);
     Page<ImClient> searchDefault(ImClientSearchContext context);
     ImClient dynamicCall(Long key, String action, ImClient et);
     /**

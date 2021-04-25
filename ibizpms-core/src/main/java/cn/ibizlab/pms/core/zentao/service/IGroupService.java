@@ -38,6 +38,7 @@ public interface IGroupService extends IService<Group> {
     boolean checkKey(Group et);
     boolean save(Group et);
     void saveBatch(List<Group> list);
+    List<Group> select(GroupSearchContext context);
     Page<Group> searchDefault(GroupSearchContext context);
     Group dynamicCall(Long key, String action, Group et);
     /**

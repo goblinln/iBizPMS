@@ -38,6 +38,7 @@ public interface IIbzLibCaseStepsService extends IService<IbzLibCaseSteps> {
     boolean checkKey(IbzLibCaseSteps et);
     boolean save(IbzLibCaseSteps et);
     void saveBatch(List<IbzLibCaseSteps> list);
+    List<IbzLibCaseSteps> select(IbzLibCaseStepsSearchContext context);
     Page<IbzLibCaseSteps> searchDefault(IbzLibCaseStepsSearchContext context);
     List<IbzLibCaseSteps> selectByIbizcase(Long id);
     void removeByIbizcase(Long id);

@@ -59,6 +59,13 @@ public class CompileServiceImpl extends ServiceImpl<CompileMapper, Compile> impl
     protected int batchSize = 500;
 
     @Override
+    public List<Compile> select(CompileSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Compile> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(Compile et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

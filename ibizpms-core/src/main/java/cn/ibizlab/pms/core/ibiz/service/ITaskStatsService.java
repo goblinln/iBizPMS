@@ -38,6 +38,7 @@ public interface ITaskStatsService extends IService<TaskStats> {
     boolean checkKey(TaskStats et);
     boolean save(TaskStats et);
     void saveBatch(List<TaskStats> list);
+    List<TaskStats> select(TaskStatsSearchContext context);
     Page<TaskStats> searchDefault(TaskStatsSearchContext context);
     Page<TaskStats> searchTaskFinishHuiZong(TaskStatsSearchContext context);
     Page<TaskStats> searchUserFinishTaskSum(TaskStatsSearchContext context);

@@ -38,6 +38,7 @@ public interface ICronService extends IService<Cron> {
     boolean checkKey(Cron et);
     boolean save(Cron et);
     void saveBatch(List<Cron> list);
+    List<Cron> select(CronSearchContext context);
     Page<Cron> searchDefault(CronSearchContext context);
     Cron dynamicCall(Long key, String action, Cron et);
     /**

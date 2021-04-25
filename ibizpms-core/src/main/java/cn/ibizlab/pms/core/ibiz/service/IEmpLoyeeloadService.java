@@ -38,6 +38,7 @@ public interface IEmpLoyeeloadService extends IService<EmpLoyeeload> {
     boolean checkKey(EmpLoyeeload et);
     boolean save(EmpLoyeeload et);
     void saveBatch(List<EmpLoyeeload> list);
+    List<EmpLoyeeload> select(EmpLoyeeloadSearchContext context);
     Page<EmpLoyeeload> searchDefault(EmpLoyeeloadSearchContext context);
     Page<EmpLoyeeload> searchGETWOERKLOAD(EmpLoyeeloadSearchContext context);
     List<EmpLoyeeload> selectByProject(Long id);

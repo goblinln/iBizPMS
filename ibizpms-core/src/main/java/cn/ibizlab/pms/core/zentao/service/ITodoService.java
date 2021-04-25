@@ -52,6 +52,7 @@ public interface ITodoService extends IService<Todo> {
     boolean sendMessageBatch(List<Todo> etList);
     Todo sendMsgPreProcess(Todo et);
     boolean sendMsgPreProcessBatch(List<Todo> etList);
+    List<Todo> select(TodoSearchContext context);
     Page<Todo> searchDefault(TodoSearchContext context);
     Page<Todo> searchMyTodo(TodoSearchContext context);
     Page<Todo> searchMyTodoPc(TodoSearchContext context);

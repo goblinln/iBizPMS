@@ -83,6 +83,7 @@ public interface IBugService extends IService<Bug> {
     boolean unlinkBugBatch(List<Bug> etList);
     Bug updateStoryVersion(Bug et);
     boolean updateStoryVersionBatch(List<Bug> etList);
+    List<Bug> select(BugSearchContext context);
     Page<Bug> searchAssignedToMyBug(BugSearchContext context);
     Page<Bug> searchAssignedToMyBugPc(BugSearchContext context);
     Page<Bug> searchBugsByBuild(BugSearchContext context);

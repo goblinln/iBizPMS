@@ -61,6 +61,13 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
     protected int batchSize = 500;
 
     @Override
+    public List<CaseStep> select(CaseStepSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<CaseStep> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(CaseStep et) {
         if(!casestepRuntime.isRtmodel()){

@@ -44,6 +44,7 @@ public interface IActionService extends IService<Action> {
     boolean managePmsEeBatch(List<Action> etList);
     boolean save(Action et);
     void saveBatch(List<Action> list);
+    List<Action> select(ActionSearchContext context);
     Page<Action> searchDefault(ActionSearchContext context);
     Page<Action> searchMobType(ActionSearchContext context);
     Page<Action> searchMyTrends(ActionSearchContext context);

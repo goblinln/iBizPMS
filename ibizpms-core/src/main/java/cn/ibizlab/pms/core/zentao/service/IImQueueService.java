@@ -38,6 +38,7 @@ public interface IImQueueService extends IService<ImQueue> {
     boolean checkKey(ImQueue et);
     boolean save(ImQueue et);
     void saveBatch(List<ImQueue> list);
+    List<ImQueue> select(ImQueueSearchContext context);
     Page<ImQueue> searchDefault(ImQueueSearchContext context);
     ImQueue dynamicCall(Long key, String action, ImQueue et);
     /**

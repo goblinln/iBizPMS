@@ -56,6 +56,13 @@ public class LangServiceImpl extends ServiceImpl<LangMapper, Lang> implements IL
     protected int batchSize = 500;
 
     @Override
+    public List<Lang> select(LangSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Lang> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(Lang et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

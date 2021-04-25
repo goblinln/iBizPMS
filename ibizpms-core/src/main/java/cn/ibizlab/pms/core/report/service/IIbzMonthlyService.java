@@ -50,6 +50,7 @@ public interface IIbzMonthlyService extends IService<IbzMonthly> {
     void saveBatch(List<IbzMonthly> list);
     IbzMonthly submit(IbzMonthly et);
     boolean submitBatch(List<IbzMonthly> etList);
+    List<IbzMonthly> select(IbzMonthlySearchContext context);
     Page<IbzMonthly> searchDefault(IbzMonthlySearchContext context);
     Page<IbzMonthly> searchMyMonthly(IbzMonthlySearchContext context);
     Page<IbzMonthly> searchMyMonthlyMob(IbzMonthlySearchContext context);

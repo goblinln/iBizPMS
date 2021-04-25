@@ -62,6 +62,13 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
     protected int batchSize = 500;
 
     @Override
+    public List<TestReport> select(TestReportSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<TestReport> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(TestReport et) {
         if(!testreportRuntime.isRtmodel()){

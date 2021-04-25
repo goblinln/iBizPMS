@@ -44,6 +44,7 @@ public interface IProductModuleService extends IService<ProductModule> {
     void saveBatch(List<ProductModule> list);
     ProductModule syncFromIBIZ(ProductModule et);
     boolean syncFromIBIZBatch(List<ProductModule> etList);
+    List<ProductModule> select(ProductModuleSearchContext context);
     Page<ProductModule> searchByPath(ProductModuleSearchContext context);
     Page<ProductModule> searchDefault(ProductModuleSearchContext context);
     Page<ProductModule> searchParentModule(ProductModuleSearchContext context);

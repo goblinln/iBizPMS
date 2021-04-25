@@ -42,6 +42,7 @@ public interface ITeamService extends IService<Team> {
     void saveBatch(List<Team> list);
     Team unlinkPorjectMember(Team et);
     boolean unlinkPorjectMemberBatch(List<Team> etList);
+    List<Team> select(TeamSearchContext context);
     Page<Team> searchDefault(TeamSearchContext context);
     Team dynamicCall(Long key, String action, Team et);
     /**

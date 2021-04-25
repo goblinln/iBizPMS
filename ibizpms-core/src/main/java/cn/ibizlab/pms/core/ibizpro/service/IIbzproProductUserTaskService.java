@@ -38,6 +38,7 @@ public interface IIbzproProductUserTaskService extends IService<IbzproProductUse
     boolean checkKey(IbzproProductUserTask et);
     boolean save(IbzproProductUserTask et);
     void saveBatch(List<IbzproProductUserTask> list);
+    List<IbzproProductUserTask> select(IbzproProductUserTaskSearchContext context);
     Page<IbzproProductUserTask> searchDefault(IbzproProductUserTaskSearchContext context);
     Page<IbzproProductUserTask> searchProductDailyUserTaskStats(IbzproProductUserTaskSearchContext context);
     Page<IbzproProductUserTask> searchProductMonthlyUserTaskStats(IbzproProductUserTaskSearchContext context);

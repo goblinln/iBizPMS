@@ -40,6 +40,7 @@ public interface IFileService extends IService<File> {
     void saveBatch(List<File> list);
     File updateObjectIDForPmsEe(File et);
     boolean updateObjectIDForPmsEeBatch(List<File> etList);
+    List<File> select(FileSearchContext context);
     Page<File> searchDefault(FileSearchContext context);
     Page<File> searchDocLibFile(FileSearchContext context);
     Page<File> searchProductDocLibFile(FileSearchContext context);

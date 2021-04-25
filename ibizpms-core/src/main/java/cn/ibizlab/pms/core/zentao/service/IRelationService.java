@@ -38,6 +38,7 @@ public interface IRelationService extends IService<Relation> {
     boolean checkKey(Relation et);
     boolean save(Relation et);
     void saveBatch(List<Relation> list);
+    List<Relation> select(RelationSearchContext context);
     Page<Relation> searchDefault(RelationSearchContext context);
     Relation dynamicCall(Long key, String action, Relation et);
     /**

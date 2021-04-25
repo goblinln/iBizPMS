@@ -111,10 +111,10 @@ public class UserViewRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
         //单条数据查询，多条数数据时 返回第一条
         UserViewSearchContext searchContext = (UserViewSearchContext) iSearchContextBase;
         searchContext.setSize(1);
-        Page<UserView> domains = userviewService.searchDefault(searchContext);
-        if (domains.getTotalElements() == 0)
+        List<UserView> domains = userviewService.select(searchContext);
+        if (domains.size() == 0)
             return null;
-        return domains.getContent().get(0);
+        return domains.get(0);
     }
 
     @Override

@@ -38,6 +38,7 @@ public interface IRepoHistoryService extends IService<RepoHistory> {
     boolean checkKey(RepoHistory et);
     boolean save(RepoHistory et);
     void saveBatch(List<RepoHistory> list);
+    List<RepoHistory> select(RepoHistorySearchContext context);
     Page<RepoHistory> searchDefault(RepoHistorySearchContext context);
     RepoHistory dynamicCall(Long key, String action, RepoHistory et);
     /**

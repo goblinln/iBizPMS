@@ -40,6 +40,7 @@ public interface IIbizproProjectDailyService extends IService<IbizproProjectDail
     void saveBatch(List<IbizproProjectDaily> list);
     IbizproProjectDaily sumProjectDaily(IbizproProjectDaily et);
     boolean sumProjectDailyBatch(List<IbizproProjectDaily> etList);
+    List<IbizproProjectDaily> select(IbizproProjectDailySearchContext context);
     Page<IbizproProjectDaily> searchDefault(IbizproProjectDailySearchContext context);
     List<IbizproProjectDaily> selectByProject(Long id);
     void removeByProject(Long id);

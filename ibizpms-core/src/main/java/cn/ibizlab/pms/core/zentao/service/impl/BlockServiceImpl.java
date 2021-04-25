@@ -56,6 +56,13 @@ public class BlockServiceImpl extends ServiceImpl<BlockMapper, Block> implements
     protected int batchSize = 500;
 
     @Override
+    public List<Block> select(BlockSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Block> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(Block et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

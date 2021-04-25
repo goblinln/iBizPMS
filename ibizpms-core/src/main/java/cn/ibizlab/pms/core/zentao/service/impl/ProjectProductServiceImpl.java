@@ -68,6 +68,13 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
     protected int batchSize = 500;
 
     @Override
+    public List<ProjectProduct> select(ProjectProductSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProjectProduct> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(ProjectProduct et) {
         if(!projectproductRuntime.isRtmodel()){

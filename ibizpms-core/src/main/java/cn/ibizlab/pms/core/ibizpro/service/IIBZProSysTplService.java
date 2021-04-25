@@ -38,6 +38,7 @@ public interface IIBZProSysTplService extends IService<IBZProSysTpl> {
     boolean checkKey(IBZProSysTpl et);
     boolean save(IBZProSysTpl et);
     void saveBatch(List<IBZProSysTpl> list);
+    List<IBZProSysTpl> select(IBZProSysTplSearchContext context);
     Page<IBZProSysTpl> searchDefault(IBZProSysTplSearchContext context);
     List<IBZProSysTpl> selectByFile(Long id);
     void removeByFile(Long id);

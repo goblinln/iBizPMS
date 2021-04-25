@@ -56,6 +56,13 @@ public class ProductLifeServiceImpl extends ServiceImpl<ProductLifeMapper, Produ
     protected int batchSize = 500;
 
     @Override
+    public List<ProductLife> select(ProductLifeSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductLife> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(ProductLife et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

@@ -56,6 +56,13 @@ public class UserViewServiceImpl extends ServiceImpl<UserViewMapper, UserView> i
     protected int batchSize = 500;
 
     @Override
+    public List<UserView> select(UserViewSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<UserView> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(UserView et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

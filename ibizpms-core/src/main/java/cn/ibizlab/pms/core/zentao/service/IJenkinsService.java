@@ -38,6 +38,7 @@ public interface IJenkinsService extends IService<Jenkins> {
     boolean checkKey(Jenkins et);
     boolean save(Jenkins et);
     void saveBatch(List<Jenkins> list);
+    List<Jenkins> select(JenkinsSearchContext context);
     Page<Jenkins> searchDefault(JenkinsSearchContext context);
     Jenkins dynamicCall(Long key, String action, Jenkins et);
     /**

@@ -88,6 +88,13 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     protected int batchSize = 500;
 
     @Override
+    public List<Case> select(CaseSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Case> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(Case et) {
         if(!caseRuntime.isRtmodel()){

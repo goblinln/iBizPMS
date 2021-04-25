@@ -38,6 +38,7 @@ public interface ISuiteCaseService extends IService<SuiteCase> {
     boolean checkKey(SuiteCase et);
     boolean save(SuiteCase et);
     void saveBatch(List<SuiteCase> list);
+    List<SuiteCase> select(SuiteCaseSearchContext context);
     Page<SuiteCase> searchDefault(SuiteCaseSearchContext context);
     List<SuiteCase> selectByIbizcase(Long id);
     void removeByIbizcase(Long id);

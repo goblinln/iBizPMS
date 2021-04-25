@@ -111,10 +111,10 @@ public class ImChatuserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
         //单条数据查询，多条数数据时 返回第一条
         ImChatuserSearchContext searchContext = (ImChatuserSearchContext) iSearchContextBase;
         searchContext.setSize(1);
-        Page<ImChatuser> domains = imchatuserService.searchDefault(searchContext);
-        if (domains.getTotalElements() == 0)
+        List<ImChatuser> domains = imchatuserService.select(searchContext);
+        if (domains.size() == 0)
             return null;
-        return domains.getContent().get(0);
+        return domains.get(0);
     }
 
     @Override

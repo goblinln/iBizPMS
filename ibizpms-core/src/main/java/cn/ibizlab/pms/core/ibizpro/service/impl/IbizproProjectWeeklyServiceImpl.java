@@ -59,6 +59,13 @@ public class IbizproProjectWeeklyServiceImpl extends ServiceImpl<IbizproProjectW
     protected int batchSize = 500;
 
     @Override
+    public List<IbizproProjectWeekly> select(IbizproProjectWeeklySearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbizproProjectWeekly> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(IbizproProjectWeekly et) {
         if(!ibizproprojectweeklyRuntime.isRtmodel()){

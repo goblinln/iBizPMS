@@ -40,6 +40,7 @@ public interface IIBZProStoryService extends IService<IBZProStory> {
     void saveBatch(List<IBZProStory> list);
     IBZProStory syncFromIBIZ(IBZProStory et);
     boolean syncFromIBIZBatch(List<IBZProStory> etList);
+    List<IBZProStory> select(IBZProStorySearchContext context);
     Page<IBZProStory> searchDefault(IBZProStorySearchContext context);
     List<IBZProStory> selectByProduct(Long id);
     void removeByProduct(Long id);

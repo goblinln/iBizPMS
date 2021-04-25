@@ -62,6 +62,13 @@ public class IBZProProductServiceImpl extends ServiceImpl<IBZProProductMapper, I
     protected int batchSize = 500;
 
     @Override
+    public List<IBZProProduct> select(IBZProProductSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IBZProProduct> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(IBZProProduct et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

@@ -38,6 +38,7 @@ public interface INotifyService extends IService<Notify> {
     boolean checkKey(Notify et);
     boolean save(Notify et);
     void saveBatch(List<Notify> list);
+    List<Notify> select(NotifySearchContext context);
     Page<Notify> searchDefault(NotifySearchContext context);
     Notify dynamicCall(Long key, String action, Notify et);
     /**

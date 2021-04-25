@@ -111,10 +111,10 @@ public class JobRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
         //单条数据查询，多条数数据时 返回第一条
         JobSearchContext searchContext = (JobSearchContext) iSearchContextBase;
         searchContext.setSize(1);
-        Page<Job> domains = jobService.searchDefault(searchContext);
-        if (domains.getTotalElements() == 0)
+        List<Job> domains = jobService.select(searchContext);
+        if (domains.size() == 0)
             return null;
-        return domains.getContent().get(0);
+        return domains.get(0);
     }
 
     @Override

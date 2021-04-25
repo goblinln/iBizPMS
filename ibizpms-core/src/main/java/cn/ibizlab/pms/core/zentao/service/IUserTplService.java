@@ -38,6 +38,7 @@ public interface IUserTplService extends IService<UserTpl> {
     boolean checkKey(UserTpl et);
     boolean save(UserTpl et);
     void saveBatch(List<UserTpl> list);
+    List<UserTpl> select(UserTplSearchContext context);
     Page<UserTpl> searchDefault(UserTplSearchContext context);
     Page<UserTpl> searchMyUserTpl(UserTplSearchContext context);
     UserTpl dynamicCall(Long key, String action, UserTpl et);

@@ -38,6 +38,7 @@ public interface IImMessagestatusService extends IService<ImMessagestatus> {
     boolean checkKey(ImMessagestatus et);
     boolean save(ImMessagestatus et);
     void saveBatch(List<ImMessagestatus> list);
+    List<ImMessagestatus> select(ImMessagestatusSearchContext context);
     Page<ImMessagestatus> searchDefault(ImMessagestatusSearchContext context);
     ImMessagestatus dynamicCall(String key, String action, ImMessagestatus et);
     /**

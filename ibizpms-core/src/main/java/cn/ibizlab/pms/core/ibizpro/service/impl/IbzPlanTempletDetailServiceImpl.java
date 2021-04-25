@@ -59,6 +59,13 @@ public class IbzPlanTempletDetailServiceImpl extends ServiceImpl<IbzPlanTempletD
     protected int batchSize = 500;
 
     @Override
+    public List<IbzPlanTempletDetail> select(IbzPlanTempletDetailSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzPlanTempletDetail> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(IbzPlanTempletDetail et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

@@ -42,6 +42,7 @@ public interface IProjectModuleService extends IService<ProjectModule> {
     boolean removeModuleBatch(List<ProjectModule> etList);
     boolean save(ProjectModule et);
     void saveBatch(List<ProjectModule> list);
+    List<ProjectModule> select(ProjectModuleSearchContext context);
     Page<ProjectModule> searchByPath(ProjectModuleSearchContext context);
     Page<ProjectModule> searchDefault(ProjectModuleSearchContext context);
     Page<ProjectModule> searchParentModule(ProjectModuleSearchContext context);

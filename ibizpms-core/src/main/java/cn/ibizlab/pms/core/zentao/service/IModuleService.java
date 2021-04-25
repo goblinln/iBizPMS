@@ -40,6 +40,7 @@ public interface IModuleService extends IService<Module> {
     boolean fixBatch(List<Module> etList);
     boolean save(Module et);
     void saveBatch(List<Module> list);
+    List<Module> select(ModuleSearchContext context);
     Page<Module> searchBugModule(ModuleSearchContext context);
     Page<Module> searchBugModuleCodeList(ModuleSearchContext context);
     Page<Module> searchDefault(ModuleSearchContext context);

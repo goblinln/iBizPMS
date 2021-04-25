@@ -111,10 +111,10 @@ public class TeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         //单条数据查询，多条数数据时 返回第一条
         TeamSearchContext searchContext = (TeamSearchContext) iSearchContextBase;
         searchContext.setSize(1);
-        Page<Team> domains = teamService.searchDefault(searchContext);
-        if (domains.getTotalElements() == 0)
+        List<Team> domains = teamService.select(searchContext);
+        if (domains.size() == 0)
             return null;
-        return domains.getContent().get(0);
+        return domains.get(0);
     }
 
     @Override

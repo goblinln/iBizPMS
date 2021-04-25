@@ -38,6 +38,7 @@ public interface IImConferenceService extends IService<ImConference> {
     boolean checkKey(ImConference et);
     boolean save(ImConference et);
     void saveBatch(List<ImConference> list);
+    List<ImConference> select(ImConferenceSearchContext context);
     Page<ImConference> searchDefault(ImConferenceSearchContext context);
     ImConference dynamicCall(Long key, String action, ImConference et);
     /**

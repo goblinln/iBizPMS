@@ -38,6 +38,7 @@ public interface IRepoFilesService extends IService<RepoFiles> {
     boolean checkKey(RepoFiles et);
     boolean save(RepoFiles et);
     void saveBatch(List<RepoFiles> list);
+    List<RepoFiles> select(RepoFilesSearchContext context);
     Page<RepoFiles> searchDefault(RepoFilesSearchContext context);
     List<RepoFiles> selectByParent(Long id);
     void removeByParent(Long id);

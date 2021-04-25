@@ -59,6 +59,13 @@ public class HistoryServiceImpl extends ServiceImpl<HistoryMapper, History> impl
     protected int batchSize = 500;
 
     @Override
+    public List<History> select(HistorySearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<History> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(History et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

@@ -56,6 +56,13 @@ public class TaskStatsServiceImpl extends ServiceImpl<TaskStatsMapper, TaskStats
     protected int batchSize = 500;
 
     @Override
+    public List<TaskStats> select(TaskStatsSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<TaskStats> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(TaskStats et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

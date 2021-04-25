@@ -48,6 +48,7 @@ public interface IUserYearWorkStatsService extends IService<UserYearWorkStats> {
     void saveBatch(List<UserYearWorkStats> list);
     UserYearWorkStats updateTitleByYear(UserYearWorkStats et);
     boolean updateTitleByYearBatch(List<UserYearWorkStats> etList);
+    List<UserYearWorkStats> select(UserYearWorkStatsSearchContext context);
     Page<UserYearWorkStats> searchDefault(UserYearWorkStatsSearchContext context);
     Page<UserYearWorkStats> searchMonthFinishTaskAndBug(UserYearWorkStatsSearchContext context);
     Page<UserYearWorkStats> searchMonthOpenedBugAndCase(UserYearWorkStatsSearchContext context);

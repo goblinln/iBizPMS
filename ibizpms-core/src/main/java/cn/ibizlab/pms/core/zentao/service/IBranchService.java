@@ -40,6 +40,7 @@ public interface IBranchService extends IService<Branch> {
     void saveBatch(List<Branch> list);
     Branch sort(Branch et);
     boolean sortBatch(List<Branch> etList);
+    List<Branch> select(BranchSearchContext context);
     Page<Branch> searchCurProduct(BranchSearchContext context);
     Page<Branch> searchDefault(BranchSearchContext context);
     List<Branch> selectByProduct(Long id);

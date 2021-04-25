@@ -111,10 +111,10 @@ public class HistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         //单条数据查询，多条数数据时 返回第一条
         HistorySearchContext searchContext = (HistorySearchContext) iSearchContextBase;
         searchContext.setSize(1);
-        Page<History> domains = historyService.searchDefault(searchContext);
-        if (domains.getTotalElements() == 0)
+        List<History> domains = historyService.select(searchContext);
+        if (domains.size() == 0)
             return null;
-        return domains.getContent().get(0);
+        return domains.get(0);
     }
 
     @Override

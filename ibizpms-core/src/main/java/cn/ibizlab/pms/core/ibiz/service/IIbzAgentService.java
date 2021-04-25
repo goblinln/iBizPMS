@@ -38,6 +38,7 @@ public interface IIbzAgentService extends IService<IbzAgent> {
     boolean checkKey(IbzAgent et);
     boolean save(IbzAgent et);
     void saveBatch(List<IbzAgent> list);
+    List<IbzAgent> select(IbzAgentSearchContext context);
     Page<IbzAgent> searchDefault(IbzAgentSearchContext context);
     IbzAgent dynamicCall(Long key, String action, IbzAgent et);
     /**

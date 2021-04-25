@@ -40,6 +40,7 @@ public interface IProjectStatsService extends IService<ProjectStats> {
     boolean projectQualitySumBatch(List<ProjectStats> etList);
     boolean save(ProjectStats et);
     void saveBatch(List<ProjectStats> list);
+    List<ProjectStats> select(ProjectStatsSearchContext context);
     Page<ProjectStats> searchDefault(ProjectStatsSearchContext context);
     Page<ProjectStats> searchNoOpenProduct(ProjectStatsSearchContext context);
     Page<ProjectStats> searchProjectBugType(ProjectStatsSearchContext context);

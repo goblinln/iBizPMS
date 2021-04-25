@@ -38,6 +38,7 @@ public interface IIBZProTranslatorService extends IService<IBZProTranslator> {
     boolean checkKey(IBZProTranslator et);
     boolean save(IBZProTranslator et);
     void saveBatch(List<IBZProTranslator> list);
+    List<IBZProTranslator> select(IBZProTranslatorSearchContext context);
     Page<IBZProTranslator> searchDefault(IBZProTranslatorSearchContext context);
     IBZProTranslator dynamicCall(String key, String action, IBZProTranslator et);
     /**

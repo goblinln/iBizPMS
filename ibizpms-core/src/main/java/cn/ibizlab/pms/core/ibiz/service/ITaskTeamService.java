@@ -38,6 +38,7 @@ public interface ITaskTeamService extends IService<TaskTeam> {
     boolean checkKey(TaskTeam et);
     boolean save(TaskTeam et);
     void saveBatch(List<TaskTeam> list);
+    List<TaskTeam> select(TaskTeamSearchContext context);
     Page<TaskTeam> searchDefault(TaskTeamSearchContext context);
     List<TaskTeam> selectByRoot(Long id);
     void removeByRoot(Long id);

@@ -59,6 +59,13 @@ public class RepoServiceImpl extends ServiceImpl<RepoMapper, Repo> implements IR
     protected int batchSize = 500;
 
     @Override
+    public List<Repo> select(RepoSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Repo> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(Repo et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

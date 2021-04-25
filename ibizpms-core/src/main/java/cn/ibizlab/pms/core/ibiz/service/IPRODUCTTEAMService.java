@@ -40,6 +40,7 @@ public interface IPRODUCTTEAMService extends IService<PRODUCTTEAM> {
     boolean productTeamGuoLvBatch(List<PRODUCTTEAM> etList);
     boolean save(PRODUCTTEAM et);
     void saveBatch(List<PRODUCTTEAM> list);
+    List<PRODUCTTEAM> select(PRODUCTTEAMSearchContext context);
     Page<PRODUCTTEAM> searchDefault(PRODUCTTEAMSearchContext context);
     Page<PRODUCTTEAM> searchProductTeamInfo(PRODUCTTEAMSearchContext context);
     Page<PRODUCTTEAM> searchProjectApp(PRODUCTTEAMSearchContext context);

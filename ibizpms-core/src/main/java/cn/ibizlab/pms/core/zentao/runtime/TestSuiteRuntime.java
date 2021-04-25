@@ -113,10 +113,10 @@ public class TestSuiteRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
         //单条数据查询，多条数数据时 返回第一条
         TestSuiteSearchContext searchContext = (TestSuiteSearchContext) iSearchContextBase;
         searchContext.setSize(1);
-        Page<TestSuite> domains = testsuiteService.searchDefault(searchContext);
-        if (domains.getTotalElements() == 0)
+        List<TestSuite> domains = testsuiteService.select(searchContext);
+        if (domains.size() == 0)
             return null;
-        return domains.getContent().get(0);
+        return domains.get(0);
     }
 
     @Override

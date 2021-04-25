@@ -71,6 +71,13 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     protected int batchSize = 500;
 
     @Override
+    public List<Doc> select(DocSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Doc> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(Doc et) {
         if(!docRuntime.isRtmodel()){

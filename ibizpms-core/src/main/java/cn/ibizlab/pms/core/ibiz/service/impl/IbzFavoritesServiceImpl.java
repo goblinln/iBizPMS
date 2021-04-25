@@ -56,6 +56,13 @@ public class IbzFavoritesServiceImpl extends ServiceImpl<IbzFavoritesMapper, Ibz
     protected int batchSize = 500;
 
     @Override
+    public List<IbzFavorites> select(IbzFavoritesSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzFavorites> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(IbzFavorites et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

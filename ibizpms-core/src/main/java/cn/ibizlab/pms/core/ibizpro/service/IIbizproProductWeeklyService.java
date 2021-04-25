@@ -40,6 +40,7 @@ public interface IIbizproProductWeeklyService extends IService<IbizproProductWee
     void saveBatch(List<IbizproProductWeekly> list);
     IbizproProductWeekly sumProductWeekly(IbizproProductWeekly et);
     boolean sumProductWeeklyBatch(List<IbizproProductWeekly> etList);
+    List<IbizproProductWeekly> select(IbizproProductWeeklySearchContext context);
     Page<IbizproProductWeekly> searchDefault(IbizproProductWeeklySearchContext context);
     List<IbizproProductWeekly> selectByProduct(Long id);
     void removeByProduct(Long id);

@@ -38,6 +38,7 @@ public interface IIbzReportRoleConfigService extends IService<IbzReportRoleConfi
     boolean checkKey(IbzReportRoleConfig et);
     boolean save(IbzReportRoleConfig et);
     void saveBatch(List<IbzReportRoleConfig> list);
+    List<IbzReportRoleConfig> select(IbzReportRoleConfigSearchContext context);
     Page<IbzReportRoleConfig> searchDefault(IbzReportRoleConfigSearchContext context);
     IbzReportRoleConfig dynamicCall(String key, String action, IbzReportRoleConfig et);
     /**

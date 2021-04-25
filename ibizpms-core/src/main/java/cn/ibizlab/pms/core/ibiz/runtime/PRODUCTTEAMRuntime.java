@@ -117,10 +117,10 @@ public class PRODUCTTEAMRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
         //单条数据查询，多条数数据时 返回第一条
         PRODUCTTEAMSearchContext searchContext = (PRODUCTTEAMSearchContext) iSearchContextBase;
         searchContext.setSize(1);
-        Page<PRODUCTTEAM> domains = productteamService.searchDefault(searchContext);
-        if (domains.getTotalElements() == 0)
+        List<PRODUCTTEAM> domains = productteamService.select(searchContext);
+        if (domains.size() == 0)
             return null;
-        return domains.getContent().get(0);
+        return domains.get(0);
     }
 
     @Override

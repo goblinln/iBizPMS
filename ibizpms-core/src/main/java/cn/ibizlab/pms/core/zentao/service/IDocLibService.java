@@ -42,6 +42,7 @@ public interface IDocLibService extends IService<DocLib> {
     void saveBatch(List<DocLib> list);
     DocLib unCollect(DocLib et);
     boolean unCollectBatch(List<DocLib> etList);
+    List<DocLib> select(DocLibSearchContext context);
     Page<DocLib> searchByCustom(DocLibSearchContext context);
     Page<DocLib> searchByProduct(DocLibSearchContext context);
     Page<DocLib> searchByProductNotFiles(DocLibSearchContext context);

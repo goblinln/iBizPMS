@@ -56,6 +56,13 @@ public class ImConferenceactionServiceImpl extends ServiceImpl<ImConferenceactio
     protected int batchSize = 500;
 
     @Override
+    public List<ImConferenceaction> select(ImConferenceactionSearchContext context) {
+        context.setSize(Integer.MAX_VALUE);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ImConferenceaction> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return pages.getRecords();
+    }
+
+    @Override
     @Transactional
     public boolean create(ImConferenceaction et) {
         if(!this.retBool(this.baseMapper.insert(et))) {

@@ -42,6 +42,7 @@ public interface IIbizproProjectMonthlyService extends IService<IbizproProjectMo
     void saveBatch(List<IbizproProjectMonthly> list);
     IbizproProjectMonthly sumProjectMonthly(IbizproProjectMonthly et);
     boolean sumProjectMonthlyBatch(List<IbizproProjectMonthly> etList);
+    List<IbizproProjectMonthly> select(IbizproProjectMonthlySearchContext context);
     Page<IbizproProjectMonthly> searchDefault(IbizproProjectMonthlySearchContext context);
     List<IbizproProjectMonthly> selectByProject(Long id);
     void removeByProject(Long id);

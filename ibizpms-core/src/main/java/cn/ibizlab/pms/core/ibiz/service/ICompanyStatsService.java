@@ -38,6 +38,7 @@ public interface ICompanyStatsService extends IService<CompanyStats> {
     boolean checkKey(CompanyStats et);
     boolean save(CompanyStats et);
     void saveBatch(List<CompanyStats> list);
+    List<CompanyStats> select(CompanyStatsSearchContext context);
     Page<CompanyStats> searchCompanyDynamicStats(CompanyStatsSearchContext context);
     Page<CompanyStats> searchDefault(CompanyStatsSearchContext context);
     CompanyStats dynamicCall(Long key, String action, CompanyStats et);
