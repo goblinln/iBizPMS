@@ -221,20 +221,7 @@ export class ViewToolbar extends Vue {
             if (item.itemType === 'SEPERATOR') {
                 content = this.renderSeperator();
             } else if (!item.items) {
-                content = (
-                    <i-button
-                        v-show={item.visabled}
-                        disabled={item.disabled}
-                        title={item.tooltip}
-                        class={item.class}
-                        ghost
-                        on-click={(e: any) => this.itemClick({ tag: item.name }, e)}
-                        loading={this.isViewLoading}
-                    >
-                        {item.showIcon ? <menu-icon item={item} /> : null}
-                        {item.showCaption ? item.caption : ''}
-                    </i-button>
-                );
+                content = this.renderMenuItem(item);
             } else {
                 content = (
                     <dropdown

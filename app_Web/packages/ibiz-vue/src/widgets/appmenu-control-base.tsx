@@ -196,7 +196,7 @@ export class AppMenuControlBase extends ControlBase {
      * @memberof AppMenuControlBase
      */
     public onStaticPropsChange(newVal: any, oldVal: any) {
-        this.mode = newVal.mode;
+        this.mode = newVal.mode ? newVal.mode : 'LEFT';
         this.selectTheme = newVal.selectTheme;
         this.isDefaultPage = newVal.isDefaultPage ? newVal.isDefaultPage : this.isDefaultPage;
         this.isBlankMode = newVal.isBlankMode ? newVal.isBlankMode : this.isBlankMode;
@@ -310,15 +310,15 @@ export class AppMenuControlBase extends ControlBase {
     public computeMenuSelect(items: Array<any>, appfunctag: string): boolean {
         const appFuncs: Array<any> = this.service.getAllFuncs();
         return items.some((item: any) => {
-            if (Object.is(appfunctag, '') && item.getPSAppFunc && !Object.is(item.getPSAppFunc.id, '') && item.openDefault) {
-                const appfunc = appFuncs?.find((_appfunc: any) => Object.is(_appfunc.appfunctag, item.getPSAppFunc.id));
+            if (Object.is(appfunctag, '') && item.getPSAppFunc && item.openDefault) {
+                const appfunc = appFuncs?.find((_appfunc: any) => Object.is(_appfunc.appfunctag, item.getPSAppFunc.codeName));
                 if (appfunc) {
                     this.defaultActive = item.name;
                     this.setHideSideBar(item);
                     return true;
                 }
             }
-            if (item.getPSAppFunc && Object.is(item.getPSAppFunc.id, appfunctag) && item.openDefault) {
+            if (item.getPSAppFunc && Object.is(item.getPSAppFunc.codeName, appfunctag) && item.openDefault) {
                 this.setHideSideBar(item);
                 this.defaultActive = item.name;
                 return true;

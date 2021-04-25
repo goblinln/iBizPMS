@@ -7,7 +7,7 @@
         <dropdown-menu slot='list'>
             <dropdown-item>
                 <p @click="exportExcel($event, 'maxRowCount')">
-                    {{caption}}{{$t('components.appExportExcel.total')}}({{$t('components.appExportExcel.max')}}{{caption}}{{item.MaxRowCount}}{{$t('components.appExportExcel.row')}})
+                    {{caption}}{{$t('components.appExportExcel.total')}}({{$t('components.appExportExcel.max')}}{{caption}}{{item.MaxRowCount || 1000}}{{$t('components.appExportExcel.row')}})
                 </p>
             </dropdown-item>
             <dropdown-item>

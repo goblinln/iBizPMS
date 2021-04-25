@@ -81,7 +81,7 @@ export class AppMenuModel {
         Object.assign(appMenuItem, { seperator: menuItem.seperator });
         Object.assign(appMenuItem, { hidden: menuItem.hidden });
         Object.assign(appMenuItem, { hidesidebar: menuItem.hideSideBar });
-        Object.assign(appMenuItem, { opendefault: menuItem.openDefault });
+        Object.assign(appMenuItem, { openDefault: menuItem.openDefault });
         Object.assign(appMenuItem, { getPSSysImage: menuItem.getPSSysImage() });
         Object.assign(appMenuItem, { getPSSysCss: menuItem.getPSSysCss() });
         Object.assign(appMenuItem, { getPSAppFunc: menuItem.getPSAppFunc() });

@@ -1,146 +1,99 @@
 <template>
     <div class="app-studioaction" v-if="isDevMode">
-        <div v-show="sdc.isShowTool" class="studio-config-container">
-            <div class="title">
-                <el-popover trigger="click" popper-class="view-config" placement="left">
-                    <div class="view-config-message" @dblclick="onDBClick">
-                        <div class="view-message">
-                            <div class="title">
-                                <div class="icon" />
-                                <strong>视图信息</strong>
+        <template v-if="sdc.isShowTool">
+            <div class="studio-config-preview">
+                <div class="preview-container">
+                    <div :class="{ 'title': true, 'is-expand': isExpand }" v-popover="`popover-${viewInstance.codeName}`" @click="() => { this.showDetails = !this.showDetails; }">
+                        <span>{{ viewTitle }}</span>
+                        <i class="el-icon-arrow-right" />
+                    </div>
+                    <div class="split"></div>
+                    <div class="actions">
+                        <div class="action-item" title="进入当前视图配置界面">
+                            <i-button type="text" ghost @click="configView()">配置</i-button>
+                        </div>
+                        <div class="action-item" title="动态应用市场模型模板">
+                            <i-button type="text" ghost @click="showViewModel()">应用市场模型模板</i-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <template>
+                <el-popover
+                    :ref="`popover-${viewInstance.codeName}`"
+                    placement="left"
+                    v-model="isExpand"
+                    popper-class="studio-config-details">
+                    <div class="details-container" @dblclick="onDBClick">
+                        <div class="view-details">
+                            <div class="message view-message"><span class="info">视图信息</span></div>
+                            <div class="title view-title">
+                                标题：<span class="info copy-info">{{ viewInstance.caption }}</span>
                             </div>
-                            <div class="content">
-                                <div>
-                                    标题 : <span title="双击复制">{{ viewInstance.caption }}</span>
-                                </div>
-                                <div>
-                                    标识 : <span title="双击复制">{{ viewInstance.codeName }}</span>
-                                </div>
+                            <div class="codename view-codename">
+                                标识：<span class="info copy-info">{{ viewInstance.codeName }}</span>
                             </div>
                         </div>
-                        <div class="entity-config" v-if="viewInstance.appDataEntity">
-                            <el-divider></el-divider>
-                            <div class="title">
-                                <div class="icon" />
-                                <strong>实体信息</strong>
+                        <div v-if="viewEntity && viewEntity.codeName" class="entity-deitals">
+                            <div class="message entity-message"><span class="word3">实体信息</span></div>
+                            <div class="title entity-title">
+                                标题：<span class="info copy-info">{{ viewEntity.logicName }}</span>
                             </div>
-                            <div class="content">
-                                <div>
-                                    名称 : <span title="双击复制">{{ viewInstance.appDataEntity.logicName }}</span>
-                                </div>
-                                <div>
-                                    标识 : <span title="双击复制">{{ viewInstance.appDataEntity.codeName }}</span>
-                                </div>
+                            <div class="codename entity-codename">
+                                标识：<span class="info copy-info">{{ viewEntity.codeName }}</span>
                             </div>
                         </div>
-                        <template v-if="viewInstance.controls && viewInstance.controls.length > 0">
-                            <el-divider></el-divider>
-                            <div :class="{ 'control-config': true, isExpand: showControlMessage }">
-                                <div
-                                    class="title"
-                                    @click="
-                                        () => {
-                                            this.showControlMessage = !this.showControlMessage;
-                                        }
-                                    "
-                                >
-                                    <span title="双击复制">
-                                        <div class="icon" />
-                                        <strong>部件信息</strong>
-                                    </span>
-                                    <Icon :size="16" :type="showControlMessage ? 'ios-arrow-up' : 'ios-arrow-down'" />
-                                </div>
-                                <template v-if="showControlMessage">
-                                    <template v-for="(control, index) in viewInstance.controls">
-                                        <el-divider v-if="index != 0" :key="index"></el-divider>
-                                        <div :class="`content control-${index}`" :key="control.codeName">
-                                            <div>
-                                                标题 : <span title="双击复制">{{ control.logicName }}</span>
-                                            </div>
-                                            <div>
-                                                标识 : <span title="双击复制">{{ control.codeName }}</span>
-                                            </div>
-                                            <div>
-                                                类型 : <span title="双击复制">{{ control.controlType }}</span>
-                                            </div>
-                                            <div style="float: right;" v-if="control.modelid">
-                                                <i-button type="text" ghost @click="gotoCtrlModel(control)"
-                                                    >查看配置</i-button
-                                                >
-                                            </div>
-                                        </div>
-                                    </template>
+                        <div class="control-details">
+                            <div class="message control-message" @click="() => { if (this.viewControls && this.viewControls.length > 0) this.showControlMessage = !this.showControlMessage; }">
+                                <span class="info">部件信息</span>
+                                <i :class="showControlMessage ? 'el-icon-arrow-down' : 'el-icon-arrow-right' " />
+                            </div>
+                            <template v-if="showControlMessage">
+                                <template v-for="(control, index) in viewControls" >
+                                    <div :key="index" class="title control-title">
+                                        标题：<span class="info copy-info">{{ control.logicName }}</span>
+                                    </div>
+                                    <div :key="index" class="codename conctrol-codename">
+                                        标识：<span class="info copy-info">{{ control.codeName }}</span>
+                                    </div>
+                                    <div :key="index" class="control-type">
+                                        类型：<span class="info copy-info">{{ control.controlType }}</span>
+                                    </div>
+                                    <button :key="index" class="open-config" @click="gotoCtrlModel(control)">
+                                        <span class="info">查看配置</span>
+                                    </button>
+                                    <div :key="index" v-if="index != viewControls.length - 1" class="control-split"></div>
                                 </template>
-                            </div>
-                        </template>
-                        <div :class="{ 'view-context': true, isExpand: showContext }">
-                            <el-divider></el-divider>
-                            <div
-                                class="title"
-                                @click="
-                                    () => {
-                                        if (Object.keys(context).length > 0) this.showContext = !this.showContext;
-                                    }
-                                "
-                            >
-                                <div class="icon" />
-                                <strong>应用上下文</strong>
-                                <Icon
-                                    v-if="Object.keys(context).length > 0"
-                                    :size="16"
-                                    :type="showContext ? 'ios-arrow-up' : 'ios-arrow-down'"
-                                />
+                            </template>
+                        </div>
+                        <div class="view-context">
+                            <div class="message" @click="() => { if (Object.keys(this.context).length > 0) this.showContext = !this.showContext; }">
+                                <span class="info">应用上下文</span>
+                                <i v-if="Object.keys(context).length > 0" :class="showContext ? 'el-icon-arrow-down' : 'el-icon-arrow-right' " />
                             </div>
                             <div v-if="showContext" class="content">
                                 <div class="context-item" v-for="(key, index) in Object.keys(context)" :key="index">
-                                    <span title="双击复制">{{ key }}</span> :
-                                    <span title="双击复制">{{ context[key] }}</span>
+                                    <span class="copy-info" title="双击复制">{{ key }}</span> :
+                                    <span class="copy-info" title="双击复制">{{ context[key] }}</span>
                                 </div>
                             </div>
                         </div>
-                        <div :class="{ 'view-viewparams': true, isExpand: showViewprams }">
-                            <el-divider></el-divider>
-                            <div
-                                class="title"
-                                @click="
-                                    () => {
-                                        if (Object.keys(viewparams).length > 0)
-                                            this.showViewprams = !this.showViewprams;
-                                    }
-                                "
-                            >
-                                <div class="icon" />
-                                <strong>视图参数</strong>
-                                <Icon
-                                    v-if="Object.keys(viewparams).length > 0"
-                                    :size="16"
-                                    :type="showViewprams ? 'ios-arrow-up' : 'ios-arrow-down'"
-                                />
+                        <div class="view-viewparams">
+                            <div class="message" @click="() => { if (Object.keys(this.viewparams).length > 0) this.showViewprams = !this.showViewprams; }">
+                                <span class="info">视图参数</span>
+                                <i v-if="Object.keys(viewparams).length > 0" :class="showViewprams ? 'el-icon-arrow-down' : 'el-icon-arrow-right' " />
                             </div>
                             <div v-if="showViewprams" class="content">
-                                <div
-                                    class="viewparams-item"
-                                    v-for="(key, index) in Object.keys(viewparams)"
-                                    :key="index"
-                                >
-                                    <span title="双击复制">{{ key }}</span> :
-                                    <span title="双击复制">{{ viewparams[key] }}</span>
+                                <div class="viewparams-item" v-for="(key, index) in Object.keys(viewparams)" :key="index">
+                                    <span class="copy-info" title="双击复制">{{ key }}</span> :
+                                    <span class="copy-info" title="双击复制">{{ viewparams[key] }}</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <span slot="reference">{{ viewTitle }}</span>
                 </el-popover>
-            </div>
-            <div class="actions">
-                <div class="action-item" title="进入当前视图配置界面">
-                    <i-button type="text" disabled ghost @click="configView()">配置</i-button>
-                </div>
-                <div class="action-item" title="动态应用市场模型模板">
-                    <i-button type="text" ghost @click="showViewModel()">应用市场模型模板</i-button>
-                </div>
-            </div>
-        </div>
+            </template>
+        </template>
     </div>
 </template>
 <script lang="ts">
@@ -150,13 +103,13 @@ import { AppDesign, AppDrawer } from 'ibiz-vue';
 
 @Component({})
 export default class AppStudioAction extends Vue {
+
     /**
      * 视图标题
      *
      * @type {string}
      * @memberof AppStudioAction
      */
-
     @Prop() public viewTitle!: string;
 
     /**
@@ -165,7 +118,6 @@ export default class AppStudioAction extends Vue {
      * @type {string}
      * @memberof AppStudioAction
      */
-
     @Prop() public viewName!: string;
 
     /**
@@ -174,7 +126,6 @@ export default class AppStudioAction extends Vue {
      * @type {any}
      * @memberof AppStudioAction
      */
-
     @Prop() public viewInstance!: any;
 
     /**
@@ -183,7 +134,6 @@ export default class AppStudioAction extends Vue {
      * @type {any}
      * @memberof AppStudioAction
      */
-
     @Prop() public context!: any;
 
     /**
@@ -192,8 +142,39 @@ export default class AppStudioAction extends Vue {
      * @type {any}
      * @memberof AppStudioAction
      */
-
     @Prop() public viewparams!: any;
+
+    /**
+     * 是否展示详情页
+     *
+     * @type {any}
+     * @memberof AppStudioAction
+     */
+    public showDetails: boolean = false;
+
+    /**
+     * 视图实体
+     *
+     * @type {any}
+     * @memberof AppStudioAction
+     */
+    public viewEntity: any;
+
+    /**
+     * 视图部件
+     *
+     * @type {any}
+     * @memberof AppStudioAction
+     */
+    public viewControls: any[] = [];
+
+    /**
+     * 详情是否展开
+     *
+     * @type {any}
+     * @memberof AppStudioAction
+     */
+    public isExpand: boolean = false;
 
     /**
      * 是否显示部件信息栏
@@ -309,6 +290,8 @@ export default class AppStudioAction extends Vue {
         if (Environment) {
             this.isDevMode = Environment.devMode;
         }
+        this.viewEntity = this.viewInstance.getPSAppDataEntity?.();
+        this.viewControls = this.viewInstance.getPSControls?.() || [];
     }
 
     /**
@@ -317,7 +300,7 @@ export default class AppStudioAction extends Vue {
      * @memberof AppStudioAction
      */
     public onDBClick(event: any) {
-        if (event && event.target && event.target.nodeName == 'SPAN') {
+        if (event && event.target && event.target.nodeName == 'SPAN' && event.target.className.indexOf('copy-info') !== -1) {
             const value: any = event.target.innerHTML;
             if (value) {
                 try {
