@@ -230,6 +230,20 @@
   }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "USERCUSTOM",
+    "codeName" : "ComputeBeginAndEnd",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json",
+    "logicName" : "计算开始时间和完成时间",
+    "name" : "computeBeginAndEnd"
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "ComputeWorkingHours",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json",
+    "logicName" : "更新工作时间",
+    "name" : "computeWorkingHours"
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ConfirmStoryChange",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json",
     "logicName" : "需求变更确认",

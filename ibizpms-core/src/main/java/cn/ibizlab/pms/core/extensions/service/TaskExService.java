@@ -62,6 +62,26 @@ public class TaskExService extends TaskServiceImpl {
         return super.close(et);
     }
     /**
+     * [ComputeBeginAndEnd:计算开始时间和完成时间] 行为扩展
+     * @param et
+     * @return
+     */
+    @Override
+    @Transactional
+    public Task computeBeginAndEnd(Task et) {
+        return super.computeBeginAndEnd(et);
+    }
+    /**
+     * [ComputeWorkingHours:更新工作时间] 行为扩展
+     * @param et
+     * @return
+     */
+    @Override
+    @Transactional
+    public Task computeWorkingHours(Task et) {
+        return super.computeWorkingHours(et);
+    }
+    /**
      * [ConfirmStoryChange:需求变更确认] 行为扩展
      * @param et
      * @return

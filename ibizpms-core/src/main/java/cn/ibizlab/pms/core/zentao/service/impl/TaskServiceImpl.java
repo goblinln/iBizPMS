@@ -271,6 +271,36 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
 
     @Override
     @Transactional
+    public Task computeBeginAndEnd(Task et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean computeBeginAndEndBatch(List<Task> etList) {
+        for(Task et : etList) {
+            computeBeginAndEnd(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public Task computeWorkingHours(Task et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean computeWorkingHoursBatch(List<Task> etList) {
+        for(Task et : etList) {
+            computeWorkingHours(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public Task confirmStoryChange(Task et) {
         //自定义代码
         return et;

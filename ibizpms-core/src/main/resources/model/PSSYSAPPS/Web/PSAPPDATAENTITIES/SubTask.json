@@ -171,6 +171,30 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "ComputeBeginAndEnd",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ComputeBeginAndEnd"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ComputeWorkingHours",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ComputeWorkingHours"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "ConfirmStoryChange",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2219,6 +2243,30 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Close"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ComputeBeginAndEnd",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ComputeBeginAndEnd"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ComputeWorkingHours",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ComputeWorkingHours"
     },
     "builtinMethod" : false
   }, {

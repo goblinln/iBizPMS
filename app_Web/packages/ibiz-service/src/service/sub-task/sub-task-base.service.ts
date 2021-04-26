@@ -744,6 +744,92 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
         return this.http.post(`/subtasks/${_context.subtask}/close`, _data);
     }
     /**
+     * ComputeBeginAndEnd
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubTaskService
+     */
+    async ComputeBeginAndEnd(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projectmodule && _context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/${_context.subtask}/computebeginandend`, _data);
+        }
+        if (_context.product && _context.story && _context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/${_context.subtask}/computebeginandend`, _data);
+        }
+        if (_context.product && _context.productplan && _context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/${_context.subtask}/computebeginandend`, _data);
+        }
+        if (_context.project && _context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/${_context.subtask}/computebeginandend`, _data);
+        }
+        if (_context.story && _context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/${_context.subtask}/computebeginandend`, _data);
+        }
+        if (_context.productplan && _context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/${_context.subtask}/computebeginandend`, _data);
+        }
+        if (_context.projectmodule && _context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/${_context.subtask}/computebeginandend`, _data);
+        }
+        if (_context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/${_context.subtask}/computebeginandend`, _data);
+        }
+        return this.http.post(`/subtasks/${_context.subtask}/computebeginandend`, _data);
+    }
+    /**
+     * ComputeWorkingHours
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubTaskService
+     */
+    async ComputeWorkingHours(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projectmodule && _context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/${_context.subtask}/computeworkinghours`, _data);
+        }
+        if (_context.product && _context.story && _context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/${_context.subtask}/computeworkinghours`, _data);
+        }
+        if (_context.product && _context.productplan && _context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/${_context.subtask}/computeworkinghours`, _data);
+        }
+        if (_context.project && _context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/subtasks/${_context.subtask}/computeworkinghours`, _data);
+        }
+        if (_context.story && _context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/subtasks/${_context.subtask}/computeworkinghours`, _data);
+        }
+        if (_context.productplan && _context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/${_context.subtask}/computeworkinghours`, _data);
+        }
+        if (_context.projectmodule && _context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/${_context.subtask}/computeworkinghours`, _data);
+        }
+        if (_context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tasks/${_context.task}/subtasks/${_context.subtask}/computeworkinghours`, _data);
+        }
+        return this.http.post(`/subtasks/${_context.subtask}/computeworkinghours`, _data);
+    }
+    /**
      * ConfirmStoryChange
      *
      * @param {*} [_context={}]

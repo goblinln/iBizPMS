@@ -314,6 +314,12 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             else if (iPSDEAction.getName().equals("Close")) {
                 return taskService.close((Task) args[0]);
             }
+            else if (iPSDEAction.getName().equals("computeBeginAndEnd")) {
+                return taskService.computeBeginAndEnd((Task) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("computeWorkingHours")) {
+                return taskService.computeWorkingHours((Task) args[0]);
+            }
             else if (iPSDEAction.getName().equals("ConfirmStoryChange")) {
                 return taskService.confirmStoryChange((Task) args[0]);
             }
@@ -519,6 +525,12 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         }
         else if (action.equals("close")) {
             return aroundAction("Close", point);
+        }
+        else if (action.equals("computeBeginAndEnd")) {
+            return aroundAction("computeBeginAndEnd", point);
+        }
+        else if (action.equals("computeWorkingHours")) {
+            return aroundAction("computeWorkingHours", point);
         }
         else if (action.equals("confirmStoryChange")) {
             return aroundAction("ConfirmStoryChange", point);

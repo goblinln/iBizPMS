@@ -44,6 +44,10 @@ public interface ITaskService extends IService<Task> {
     boolean checkKey(Task et);
     Task close(Task et);
     boolean closeBatch(List<Task> etList);
+    Task computeBeginAndEnd(Task et);
+    boolean computeBeginAndEndBatch(List<Task> etList);
+    Task computeWorkingHours(Task et);
+    boolean computeWorkingHoursBatch(List<Task> etList);
     Task confirmStoryChange(Task et);
     boolean confirmStoryChangeBatch(List<Task> etList);
     Task createByCycle(Task et);
