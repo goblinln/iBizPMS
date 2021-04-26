@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "RecordTimateZeroLeftAfterStart",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeftAfterStart.json",
+  "logicName" : "开始任务时填入预计剩余为0设为进行中",
+  "name" : "RecordTimateZeroLeftAfterStart"
+}

@@ -359,6 +359,42 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "RecordTimZeroLeftAfterContinue",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "RecordTimZeroLeftAfterContinue"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "RecordTimateZeroLeft",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "RecordTimateZeroLeft"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "RecordTimateZeroLeftAfterStart",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeftAfterStart.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "RecordTimateZeroLeftAfterStart"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Restart",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2339,6 +2375,42 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "RecordEstimate"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "RecordTimZeroLeftAfterContinue",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "RecordTimZeroLeftAfterContinue"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "RecordTimateZeroLeft",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "RecordTimateZeroLeft"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "RecordTimateZeroLeftAfterStart",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeftAfterStart.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "RecordTimateZeroLeftAfterStart"
     },
     "builtinMethod" : false
   }, {

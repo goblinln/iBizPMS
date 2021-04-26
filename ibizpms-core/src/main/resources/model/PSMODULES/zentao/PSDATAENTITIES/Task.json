@@ -352,6 +352,27 @@
   }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "USERCUSTOM",
+    "codeName" : "RecordTimZeroLeftAfterContinue",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json",
+    "logicName" : "继续任务时填入预计剩余为0设置为进行中",
+    "name" : "RecordTimZeroLeftAfterContinue"
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "RecordTimateZeroLeft",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json",
+    "logicName" : "预计剩余为0进行中",
+    "name" : "RecordTimateZeroLeft"
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "RecordTimateZeroLeftAfterStart",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeftAfterStart.json",
+    "logicName" : "开始任务时填入预计剩余为0设为进行中",
+    "name" : "RecordTimateZeroLeftAfterStart"
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "USERCUSTOM",
     "codeName" : "Restart",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Restart.json",
     "logicName" : "继续",

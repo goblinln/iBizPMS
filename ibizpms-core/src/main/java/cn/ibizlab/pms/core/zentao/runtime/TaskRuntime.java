@@ -356,6 +356,15 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             else if (iPSDEAction.getName().equals("RecordEstimate")) {
                 return taskService.recordEstimate((Task) args[0]);
             }
+            else if (iPSDEAction.getName().equals("RecordTimZeroLeftAfterContinue")) {
+                return taskService.recordTimZeroLeftAfterContinue((Task) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("RecordTimateZeroLeft")) {
+                return taskService.recordTimateZeroLeft((Task) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("RecordTimateZeroLeftAfterStart")) {
+                return taskService.recordTimateZeroLeftAfterStart((Task) args[0]);
+            }
             else if (iPSDEAction.getName().equals("Restart")) {
                 return taskService.restart((Task) args[0]);
             }
@@ -546,6 +555,15 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         }
         else if (action.equals("recordEstimate")) {
             return aroundAction("RecordEstimate", point);
+        }
+        else if (action.equals("recordTimZeroLeftAfterContinue")) {
+            return aroundAction("RecordTimZeroLeftAfterContinue", point);
+        }
+        else if (action.equals("recordTimateZeroLeft")) {
+            return aroundAction("RecordTimateZeroLeft", point);
+        }
+        else if (action.equals("recordTimateZeroLeftAfterStart")) {
+            return aroundAction("RecordTimateZeroLeftAfterStart", point);
         }
         else if (action.equals("restart")) {
             return aroundAction("Restart", point);

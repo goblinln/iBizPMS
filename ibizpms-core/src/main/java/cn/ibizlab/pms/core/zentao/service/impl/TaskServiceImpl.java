@@ -481,6 +481,51 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
 
     @Override
     @Transactional
+    public Task recordTimZeroLeftAfterContinue(Task et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean recordTimZeroLeftAfterContinueBatch(List<Task> etList) {
+        for(Task et : etList) {
+            recordTimZeroLeftAfterContinue(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public Task recordTimateZeroLeft(Task et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean recordTimateZeroLeftBatch(List<Task> etList) {
+        for(Task et : etList) {
+            recordTimateZeroLeft(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public Task recordTimateZeroLeftAfterStart(Task et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean recordTimateZeroLeftAfterStartBatch(List<Task> etList) {
+        for(Task et : etList) {
+            recordTimateZeroLeftAfterStart(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public Task restart(Task et) {
         //自定义代码
         return et;

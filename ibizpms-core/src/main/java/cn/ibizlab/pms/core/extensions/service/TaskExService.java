@@ -192,6 +192,36 @@ public class TaskExService extends TaskServiceImpl {
         return super.recordEstimate(et);
     }
     /**
+     * [RecordTimZeroLeftAfterContinue:继续任务时填入预计剩余为0设置为进行中] 行为扩展：继续任务
+     * @param et
+     * @return
+     */
+    @Override
+    @Transactional
+    public Task recordTimZeroLeftAfterContinue(Task et) {
+        return super.recordTimZeroLeftAfterContinue(et);
+    }
+    /**
+     * [RecordTimateZeroLeft:预计剩余为0进行中] 行为扩展：激活和填入工时
+     * @param et
+     * @return
+     */
+    @Override
+    @Transactional
+    public Task recordTimateZeroLeft(Task et) {
+        return super.recordTimateZeroLeft(et);
+    }
+    /**
+     * [RecordTimateZeroLeftAfterStart:开始任务时填入预计剩余为0设为进行中] 行为扩展：开始任务
+     * @param et
+     * @return
+     */
+    @Override
+    @Transactional
+    public Task recordTimateZeroLeftAfterStart(Task et) {
+        return super.recordTimateZeroLeftAfterStart(et);
+    }
+    /**
      * [Restart:继续] 行为扩展：重启挂起的任务
      * @param et
      * @return
