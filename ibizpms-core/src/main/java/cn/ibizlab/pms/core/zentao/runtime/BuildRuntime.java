@@ -192,6 +192,9 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             else if (iPSDEAction.getName().equals("unlinkBug")) {
                 return buildService.unlinkBug((Build) args[0]);
             }
+            else if (iPSDEAction.getName().equals("unlinkStory")) {
+                return buildService.unlinkStory((Build) args[0]);
+            }
         }else if (StringUtils.isNotBlank(strActionName)) {
             if (strActionName.equals(DEActions.CREATE)) {
                 return buildService.create((Build) args[0]);
@@ -319,6 +322,9 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         }
         else if (action.equals("unlinkBug")) {
             return aroundAction("unlinkBug", point);
+        }
+        else if (action.equals("unlinkStory")) {
+            return aroundAction("unlinkStory", point);
         }
         else if (action.equals("searchBugProductBuild")) {
             return aroundDataSet("BugProductBuild", point);

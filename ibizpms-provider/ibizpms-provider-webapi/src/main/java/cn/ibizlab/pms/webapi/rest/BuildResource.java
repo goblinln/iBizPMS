@@ -225,6 +225,23 @@ public class BuildResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @ApiOperation(value = "移除关联需求", tags = {"版本" },  notes = "移除关联需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/builds/{build_id}/unlinkstory")
+    public ResponseEntity<BuildDTO> unlinkStory(@PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+        Build domain = buildMapping.toDomain(builddto);
+        domain.setId(build_id);
+        domain = buildService.unlinkStory(domain);
+        builddto = buildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(builddto);
+    }
+    @ApiOperation(value = "批量处理[移除关联需求]", tags = {"版本" },  notes = "批量处理[移除关联需求]")
+	@RequestMapping(method = RequestMethod.POST, value = "/builds/unlinkstorybatch")
+    public ResponseEntity<Boolean> unlinkStoryBatch(@RequestBody List<BuildDTO> builddtos) {
+        List<Build> domains = buildMapping.toDomain(builddtos);
+        boolean result = buildService.unlinkStoryBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Bug产品版本", tags = {"版本" } ,notes = "获取Bug产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchbugproductbuild")
@@ -560,6 +577,23 @@ public class BuildResource {
         boolean result = buildService.unlinkBugBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @ApiOperation(value = "根据产品版本", tags = {"版本" },  notes = "根据产品版本")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/{build_id}/unlinkstory")
+    public ResponseEntity<BuildDTO> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+        Build domain = buildMapping.toDomain(builddto);
+        domain.setProduct(product_id);
+        domain.setId(build_id);
+        domain = buildService.unlinkStory(domain) ;
+        builddto = buildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(builddto);
+    }
+    @ApiOperation(value = "批量处理[根据产品版本]", tags = {"版本" },  notes = "批量处理[根据产品版本]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/builds/unlinkstorybatch")
+    public ResponseEntity<Boolean> unlinkStoryByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<BuildDTO> builddtos) {
+        List<Build> domains = buildMapping.toDomain(builddtos);
+        boolean result = buildService.unlinkStoryBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品获取Bug产品版本", tags = {"版本" } ,notes = "根据产品获取Bug产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/builds/fetchbugproductbuild")
@@ -891,6 +925,23 @@ public class BuildResource {
     public ResponseEntity<Boolean> unlinkBugByProject(@PathVariable("project_id") Long project_id, @RequestBody List<BuildDTO> builddtos) {
         List<Build> domains = buildMapping.toDomain(builddtos);
         boolean result = buildService.unlinkBugBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据项目版本", tags = {"版本" },  notes = "根据项目版本")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/{build_id}/unlinkstory")
+    public ResponseEntity<BuildDTO> unlinkStoryByProject(@PathVariable("project_id") Long project_id, @PathVariable("build_id") Long build_id, @RequestBody BuildDTO builddto) {
+        Build domain = buildMapping.toDomain(builddto);
+        domain.setProject(project_id);
+        domain.setId(build_id);
+        domain = buildService.unlinkStory(domain) ;
+        builddto = buildMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(builddto);
+    }
+    @ApiOperation(value = "批量处理[根据项目版本]", tags = {"版本" },  notes = "批量处理[根据项目版本]")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/builds/unlinkstorybatch")
+    public ResponseEntity<Boolean> unlinkStoryByProject(@PathVariable("project_id") Long project_id, @RequestBody List<BuildDTO> builddtos) {
+        List<Build> domains = buildMapping.toDomain(builddtos);
+        boolean result = buildService.unlinkStoryBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @PreAuthorize("@BuildRuntime.quickTest('READ')")

@@ -323,6 +323,21 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
         return true;
     }
 
+    @Override
+    @Transactional
+    public Build unlinkStory(Build et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean unlinkStoryBatch(List<Build> etList) {
+        for(Build et : etList) {
+            unlinkStory(et);
+        }
+        return true;
+    }
+
 
 	@Override
     public List<Build> selectByBranch(Long id) {

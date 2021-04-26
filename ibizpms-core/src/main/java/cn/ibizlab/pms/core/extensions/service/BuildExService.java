@@ -61,5 +61,15 @@ public class BuildExService extends BuildServiceImpl {
     public Build unlinkBug(Build et) {
         return super.unlinkBug(et);
     }
+    /**
+     * [UnlinkStory:移除关联需求] 行为扩展
+     * @param et
+     * @return
+     */
+    @Override
+    @Transactional
+    public Build unlinkStory(Build et) {
+        return super.unlinkStory(et);
+    }
 }
 
