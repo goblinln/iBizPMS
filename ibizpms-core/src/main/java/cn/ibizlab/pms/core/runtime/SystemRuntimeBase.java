@@ -158,6 +158,7 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
                 }
             }
         }
+        super.onInit();
     }
 
     @Override

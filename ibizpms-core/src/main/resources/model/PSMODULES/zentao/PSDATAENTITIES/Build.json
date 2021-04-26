@@ -103,6 +103,13 @@
     "logicName" : "Save",
     "name" : "Save",
     "builtinAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "UnlinkBug",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/UnlinkBug.json",
+    "logicName" : "移除Bug关联",
+    "name" : "unlinkBug"
   } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {

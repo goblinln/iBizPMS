@@ -46,6 +46,8 @@ public interface IBuildService extends IService<Build> {
     boolean oneClickReleaseBatch(List<Build> etList);
     boolean save(Build et);
     void saveBatch(List<Build> list);
+    Build unlinkBug(Build et);
+    boolean unlinkBugBatch(List<Build> etList);
     List<Build> select(BuildSearchContext context);
     List<Build> selectBugProductBuild(BuildSearchContext context);
     List<Build> selectCurProduct(BuildSearchContext context);

@@ -183,6 +183,18 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "UnlinkBug",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/UnlinkBug.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "UnlinkBug"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "MentionTest",
     "methodType" : "DEACTION",
     "name" : "mentionTest",
@@ -713,6 +725,18 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Save"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "UnlinkBug",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/UnlinkBug.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "UnlinkBug"
     },
     "builtinMethod" : false
   }, {

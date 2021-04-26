@@ -28,8 +28,8 @@ import java.util.Map;
 /**
  * 实体数据审计切面类
  */
-@Aspect
-@Component
+//@Aspect
+//@Component
 public class AuditAspect
 {
     private final ExpressionParser parser = new SpelExpressionParser();

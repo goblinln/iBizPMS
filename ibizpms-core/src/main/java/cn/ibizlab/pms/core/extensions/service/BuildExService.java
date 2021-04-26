@@ -51,5 +51,15 @@ public class BuildExService extends BuildServiceImpl {
     public Build oneClickRelease(Build et) {
         return super.oneClickRelease(et);
     }
+    /**
+     * [UnlinkBug:移除Bug关联] 行为扩展
+     * @param et
+     * @return
+     */
+    @Override
+    @Transactional
+    public Build unlinkBug(Build et) {
+        return super.unlinkBug(et);
+    }
 }
 

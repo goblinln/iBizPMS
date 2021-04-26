@@ -29,7 +29,7 @@ import java.util.*;
 /**
  * 实体[DataAudit] 服务对象接口实现
  */
-@Service
+//@Service
 @Slf4j
 public class SimpleAuditService extends ServiceImpl<IBZDataAuditMapper, IBZDataAudit> implements IBZDataAuditService {
 

@@ -16,6 +16,10 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Data
 @AllArgsConstructor
@@ -388,6 +392,11 @@ public class AuthenticationUser implements UserDetails, net.ibizsys.runtime.secu
 
     @Override
     public String getRemoteaddress() {
+        ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        if (attributes != null) {
+            HttpServletRequest request = attributes.getRequest();
+            return request.getRemoteAddr();
+        }
         return null;
     }
 
