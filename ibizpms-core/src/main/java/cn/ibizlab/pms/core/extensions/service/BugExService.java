@@ -69,7 +69,7 @@ public class BugExService extends BugServiceImpl {
             return false;
         }
         // 更新file
-        FileFelper.updateObjectID(et.getId(),StaticDict.File__object_type.BUG.getValue(), files, "", iFileService);
+        FileHelper.updateObjectID(et.getId(),StaticDict.File__object_type.BUG.getValue(), files, "", iFileService);
         // 创建日志
         ActionHelper.createHis(et.getId(), StaticDict.Action__object_type.BUG.getValue(), null,  StaticDict.Action__type.OPENED.getValue(), "","", null, iActionService);
         // 发送待办消息
@@ -89,7 +89,7 @@ public class BugExService extends BugServiceImpl {
             return false;
         }
         // 更新file
-        FileFelper.updateObjectID(et.getId(),StaticDict.File__object_type.BUG.getValue(), files, "", iFileService);
+        FileHelper.updateObjectID(et.getId(),StaticDict.File__object_type.BUG.getValue(), files, "", iFileService);
 
         List<History> changes = ChangeUtil.diff(old, et,null,null,diffAttrs);
         if (changes.size() > 0 || StringUtils.isNotBlank(comment)) {
@@ -142,7 +142,7 @@ public class BugExService extends BugServiceImpl {
 
         super.update(et);
         // 更新file
-        FileFelper.updateObjectID(et.getId(),StaticDict.File__object_type.BUG.getValue(), files, "", iFileService);
+        FileHelper.updateObjectID(et.getId(),StaticDict.File__object_type.BUG.getValue(), files, "", iFileService);
 
         // 发送待办消息
         ActionHelper.sendTodoOrToread(et.getId(), et.getTitle(), noticeusers, et.getAssignedto(), et.getMailto(), "Bug", StaticDict.Action__object_type.BUG.getValue(), "bugs", StaticDict.Action__type.ACTIVATED.getText(), true, iActionService);
@@ -173,7 +173,7 @@ public class BugExService extends BugServiceImpl {
         super.update(et);
 
         // 更新file
-        FileFelper.updateObjectID(et.getId(),StaticDict.File__object_type.BUG.getValue(), files, "", iFileService);
+        FileHelper.updateObjectID(et.getId(),StaticDict.File__object_type.BUG.getValue(), files, "", iFileService);
         List<History> changes = ChangeUtil.diff(old, et);
         if (!et.getAssignedto().equals(old.getAssignedto())){
             // 已读
@@ -476,7 +476,7 @@ public class BugExService extends BugServiceImpl {
         String files = et.getFiles();
         String noticeusers = et.getNoticeusers();
         ActionHelper.sendTodoOrToread(et.getId(), et.getTitle(), noticeusers, et.getAssignedto(), et.getMailto(), "Bug", StaticDict.Action__object_type.BUG.getValue(), "bugs", StaticDict.Action__type.RESOLVED.getText(), true, iActionService);
-        FileFelper.updateObjectID(et.getId(),StaticDict.File__object_type.BUG.getValue(), files, "", iFileService);
+        FileHelper.updateObjectID(et.getId(),StaticDict.File__object_type.BUG.getValue(), files, "", iFileService);
         //关联
         et.set("builds", et.getResolvedbuild());
         et.set("ids", et.getId());

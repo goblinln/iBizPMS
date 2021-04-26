@@ -3,7 +3,7 @@ package cn.ibizlab.pms.core.extensions.service;
 import cn.ibizlab.pms.core.zentao.domain.File;
 import cn.ibizlab.pms.core.zentao.service.IFileService;
 
-public class FileFelper {
+public class FileHelper {
 
     /**
      * 更新附件
