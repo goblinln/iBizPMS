@@ -15,6 +15,7 @@ declare global {
 declare module "vue/types/vue" {
     interface Vue {
         $http:any,
+        $throw:any,
         $util:any,
         $verify:any,
         $viewTool:any,

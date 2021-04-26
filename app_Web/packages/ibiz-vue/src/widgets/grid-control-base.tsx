@@ -1269,7 +1269,8 @@ export class GridControlBase extends MDControlBase {
         if ($event && $event.children) {
             return;
         }
-        if (!$event || this.actualIsOpenEdit || Object.is(this.gridRowActiveMode, 0)) {
+        // 多选时，双击不允许跳转编辑页(只有选中数据才能跳转编辑)
+        if (!$event || this.actualIsOpenEdit || Object.is(this.gridRowActiveMode, 0) || !this.isSingleSelect) {
             return;
         }
         this.selections = [];

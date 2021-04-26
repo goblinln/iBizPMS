@@ -50,6 +50,12 @@
           .grid-first-uiaction {
               padding: 0 10px 0 10px;
           }
+          // 去除边框
+          >td {
+            border-left: 0px !important;
+            border-top: 0px !important;
+            border-right: 0px !important;
+          }
       }
       .quick-toolbar {
           display: inline-block;
@@ -80,6 +86,12 @@
           min-height: 45px;
           max-height: 100px;
           height: auto;
+      }
+  }
+  // 多选表格(移上去有小手,用于提示可单击选中)
+  .el-table.multiple-table {
+      .el-table__row:hover {
+          cursor: pointer;
       }
   }
   .grid-pagination {

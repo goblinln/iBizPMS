@@ -1819,6 +1819,49 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
         return this.http.post(`/subtasks/${_context.subtask}/tasknfavorites`, _data);
     }
     /**
+     * UpdateRelatedPlanStatus
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubTaskService
+     */
+    async UpdateRelatedPlanStatus(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projectmodule && _context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/${_context.subtask}/updaterelatedplanstatus`, _data);
+        }
+        if (_context.product && _context.story && _context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/${_context.subtask}/updaterelatedplanstatus`, _data);
+        }
+        if (_context.product && _context.productplan && _context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/${_context.subtask}/updaterelatedplanstatus`, _data);
+        }
+        if (_context.project && _context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projects/${_context.project}/tasks/${_context.task}/subtasks/${_context.subtask}/updaterelatedplanstatus`, _data);
+        }
+        if (_context.story && _context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/stories/${_context.story}/tasks/${_context.task}/subtasks/${_context.subtask}/updaterelatedplanstatus`, _data);
+        }
+        if (_context.productplan && _context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/${_context.subtask}/updaterelatedplanstatus`, _data);
+        }
+        if (_context.projectmodule && _context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/${_context.subtask}/updaterelatedplanstatus`, _data);
+        }
+        if (_context.task && _context.subtask) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.put(`/tasks/${_context.task}/subtasks/${_context.subtask}/updaterelatedplanstatus`, _data);
+        }
+        return this.http.put(`/subtasks/${_context.subtask}/updaterelatedplanstatus`, _data);
+    }
+    /**
      * UpdateStoryVersion
      *
      * @param {*} [_context={}]

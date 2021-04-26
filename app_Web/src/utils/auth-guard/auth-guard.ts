@@ -1,7 +1,7 @@
 import qs from 'qs';
 import { GlobalHelp } from '@ibiz/dynamic-model-api';
 import { AppServiceBase, Http, getSessionStorage, setSessionStorage, AppModelService } from 'ibiz-core';
-import { AppCenterService } from 'ibiz-vue';
+import { AppCenterService, ErrorUtil } from 'ibiz-vue';
 import { Environment } from '@/environments/environment';
 import { DynamicInstanceConfig } from '@ibiz/dynamic-model-api';
 import i18n from '@/locale';
@@ -65,10 +65,11 @@ export class AuthGuard {
                     this.getOrgsByDcsystem(router).then((result: boolean) => {
                         if (!result) {
                             reject(false);
+                        }else{
+                            this.getAppData(url, params, router).then((result: any) => {
+                                result ? resolve(true) : reject(false);
+                            });
                         }
-                        this.getAppData(url, params, router).then((result: any) => {
-                            result ? resolve(true) : reject(false);
-                        });
                     });
                 }
             } else {
@@ -92,32 +93,33 @@ export class AuthGuard {
                     if (getSessionStorage('dcsystem')) {
                         tempViewParam = getSessionStorage('dcsystem');
                     }
-                    console.error('未获取到租户数据标识');
-                    resolve(false);
                 } else {
                     tempViewParam = this.hanldeViewParam(tempViewParam.redirect);
                 }
             }
             if (tempViewParam.srfdcsystem) {
                 setSessionStorage('dcsystem', tempViewParam);
-            }
-            let requestUrl: string = `/uaa/getbydcsystem/${tempViewParam.srfdcsystem}`;
-            const get: Promise<any> = Http.getInstance().get(requestUrl);
-            get.then((response: any) => {
-                if (response && response.status === 200) {
-                    let { data }: { data: any } = response;
-                    if (data && data.length > 0) {
-                        setSessionStorage('orgsData', data);
-                        setSessionStorage('activeOrgData', data[0]);
+                let requestUrl: string = `/uaa/getbydcsystem/${tempViewParam.srfdcsystem}`;
+                const get: Promise<any> = Http.getInstance().get(requestUrl);
+                get.then((response: any) => {
+                    if (response && response.status === 200) {
+                        let { data }: { data: any } = response;
+                        if (data && data.length > 0) {
+                            setSessionStorage('orgsData', data);
+                            setSessionStorage('activeOrgData', data[0]);
+                        }
+                        resolve(true);
+                    } else {
+                        resolve(false);
                     }
-                    resolve(true);
-                } else {
+                }).catch(() => {
                     resolve(false);
-                }
-            }).catch(() => {
+                    ErrorUtil.errorHandler("通过租户获取组织数据出现异常");
+                });
+            }else{
+                ErrorUtil.errorHandler("未获取到租户数据标识");
                 resolve(false);
-                console.error('通过租户获取组织数据出现异常');
-            });
+            }
         });
     }
 
@@ -162,7 +164,7 @@ export class AuthGuard {
                     this.initAppService(router).then(() => resolve(true));
                 }).catch(() => {
                     this.initAppService(router).then(() => resolve(true));
-                    console.error('获取应用数据出现异常');
+                    ErrorUtil.errorHandler("获取应用数据出现异常");
                 });
             } else {
                 this.initAppService(router).then(() => resolve(true));

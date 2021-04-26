@@ -153,8 +153,8 @@ export class TreeExpBarControlBase extends ExpBarControlBase {
             Object.assign(tempContext, { srfcounter: this.counter });
         }
         this.selection = {};
-        Object.assign(this.selection, { view: { viewname: 'app-view-shell', viewModelData: refview.viewModelData } });
-        Object.assign(this.selection, { 'viewparam': tempViewparam, 'context': tempContext });
+        Object.assign(tempContext, { viewpath: refview.viewModelData.modelFilePath });
+        Object.assign(this.selection, { view: { viewname: 'app-view-shell' }, context: tempContext, viewparam: tempViewparam });
         this.calcToolbarItemState(false);
         this.$forceUpdate();
     }

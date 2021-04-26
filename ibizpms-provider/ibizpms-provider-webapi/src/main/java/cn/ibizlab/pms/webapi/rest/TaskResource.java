@@ -639,6 +639,24 @@ public class TaskResource {
     }
 
     @PreAuthorize("@TaskRuntime.test(#task_id,'UPDATE')")
+    @ApiOperation(value = "更新父任务计划状态", tags = {"任务" },  notes = "更新父任务计划状态")
+	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/{task_id}/updaterelatedplanstatus")
+    public ResponseEntity<TaskDTO> updateRelatedPlanStatus(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setId(task_id);
+        domain = taskService.updateRelatedPlanStatus(domain);
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[更新父任务计划状态]", tags = {"任务" },  notes = "批量处理[更新父任务计划状态]")
+	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/updaterelatedplanstatusbatch")
+    public ResponseEntity<Boolean> updateRelatedPlanStatusBatch(@RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.updateRelatedPlanStatusBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @PreAuthorize("@TaskRuntime.test(#task_id,'UPDATE')")
     @ApiOperation(value = "更新需求版本", tags = {"任务" },  notes = "更新需求版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/{task_id}/updatestoryversion")
     public ResponseEntity<TaskDTO> updateStoryVersion(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -2096,6 +2114,24 @@ public class TaskResource {
         domain = taskService.taskNFavorites(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'UPDATE')")
+    @ApiOperation(value = "根据任务模块任务", tags = {"任务" },  notes = "根据任务模块任务")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/updaterelatedplanstatus")
+    public ResponseEntity<TaskDTO> updateRelatedPlanStatusByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setModule(projectmodule_id);
+        domain.setId(task_id);
+        domain = taskService.updateRelatedPlanStatus(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[根据任务模块任务]", tags = {"任务" },  notes = "批量处理[根据任务模块任务]")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projectmodules/{projectmodule_id}/tasks/updaterelatedplanstatusbatch")
+    public ResponseEntity<Boolean> updateRelatedPlanStatusByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.updateRelatedPlanStatusBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'UPDATE')")
     @ApiOperation(value = "根据任务模块任务", tags = {"任务" },  notes = "根据任务模块任务")
@@ -3589,6 +3625,24 @@ public class TaskResource {
     }
     @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'UPDATE')")
     @ApiOperation(value = "根据产品计划任务", tags = {"任务" },  notes = "根据产品计划任务")
+	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/tasks/{task_id}/updaterelatedplanstatus")
+    public ResponseEntity<TaskDTO> updateRelatedPlanStatusByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setPlan(productplan_id);
+        domain.setId(task_id);
+        domain = taskService.updateRelatedPlanStatus(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[根据产品计划任务]", tags = {"任务" },  notes = "批量处理[根据产品计划任务]")
+	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/tasks/updaterelatedplanstatusbatch")
+    public ResponseEntity<Boolean> updateRelatedPlanStatusByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.updateRelatedPlanStatusBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'UPDATE')")
+    @ApiOperation(value = "根据产品计划任务", tags = {"任务" },  notes = "根据产品计划任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/tasks/{task_id}/updatestoryversion")
     public ResponseEntity<TaskDTO> updateStoryVersionByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task domain = taskMapping.toDomain(taskdto);
@@ -5076,6 +5130,24 @@ public class TaskResource {
         domain = taskService.taskNFavorites(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @PreAuthorize("@StoryRuntime.test(#story_id,'UPDATE')")
+    @ApiOperation(value = "根据需求任务", tags = {"任务" },  notes = "根据需求任务")
+	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/tasks/{task_id}/updaterelatedplanstatus")
+    public ResponseEntity<TaskDTO> updateRelatedPlanStatusByStory(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setStory(story_id);
+        domain.setId(task_id);
+        domain = taskService.updateRelatedPlanStatus(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[根据需求任务]", tags = {"任务" },  notes = "批量处理[根据需求任务]")
+	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/tasks/updaterelatedplanstatusbatch")
+    public ResponseEntity<Boolean> updateRelatedPlanStatusByStory(@PathVariable("story_id") Long story_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.updateRelatedPlanStatusBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @PreAuthorize("@StoryRuntime.test(#story_id,'UPDATE')")
     @ApiOperation(value = "根据需求任务", tags = {"任务" },  notes = "根据需求任务")
@@ -6569,6 +6641,24 @@ public class TaskResource {
     }
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目任务", tags = {"任务" },  notes = "根据项目任务")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/updaterelatedplanstatus")
+    public ResponseEntity<TaskDTO> updateRelatedPlanStatusByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+        domain.setId(task_id);
+        domain = taskService.updateRelatedPlanStatus(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[根据项目任务]", tags = {"任务" },  notes = "批量处理[根据项目任务]")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/updaterelatedplanstatusbatch")
+    public ResponseEntity<Boolean> updateRelatedPlanStatusByProject(@PathVariable("project_id") Long project_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.updateRelatedPlanStatusBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
+    @ApiOperation(value = "根据项目任务", tags = {"任务" },  notes = "根据项目任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/updatestoryversion")
     public ResponseEntity<TaskDTO> updateStoryVersionByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task domain = taskMapping.toDomain(taskdto);
@@ -8056,6 +8146,24 @@ public class TaskResource {
         domain = taskService.taskNFavorites(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
+    @ApiOperation(value = "根据产品产品计划任务", tags = {"任务" },  notes = "根据产品产品计划任务")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/updaterelatedplanstatus")
+    public ResponseEntity<TaskDTO> updateRelatedPlanStatusByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setPlan(productplan_id);
+        domain.setId(task_id);
+        domain = taskService.updateRelatedPlanStatus(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[根据产品产品计划任务]", tags = {"任务" },  notes = "批量处理[根据产品产品计划任务]")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/tasks/updaterelatedplanstatusbatch")
+    public ResponseEntity<Boolean> updateRelatedPlanStatusByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.updateRelatedPlanStatusBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品产品计划任务", tags = {"任务" },  notes = "根据产品产品计划任务")
@@ -9549,6 +9657,24 @@ public class TaskResource {
     }
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品需求任务", tags = {"任务" },  notes = "根据产品需求任务")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/updaterelatedplanstatus")
+    public ResponseEntity<TaskDTO> updateRelatedPlanStatusByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setStory(story_id);
+        domain.setId(task_id);
+        domain = taskService.updateRelatedPlanStatus(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[根据产品需求任务]", tags = {"任务" },  notes = "批量处理[根据产品需求任务]")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/tasks/updaterelatedplanstatusbatch")
+    public ResponseEntity<Boolean> updateRelatedPlanStatusByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.updateRelatedPlanStatusBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
+    @ApiOperation(value = "根据产品需求任务", tags = {"任务" },  notes = "根据产品需求任务")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/updatestoryversion")
     public ResponseEntity<TaskDTO> updateStoryVersionByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task domain = taskMapping.toDomain(taskdto);
@@ -11036,6 +11162,24 @@ public class TaskResource {
         domain = taskService.taskNFavorites(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
+    @ApiOperation(value = "根据项目任务模块任务", tags = {"任务" },  notes = "根据项目任务模块任务")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/updaterelatedplanstatus")
+    public ResponseEntity<TaskDTO> updateRelatedPlanStatusByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setModule(projectmodule_id);
+        domain.setId(task_id);
+        domain = taskService.updateRelatedPlanStatus(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[根据项目任务模块任务]", tags = {"任务" },  notes = "批量处理[根据项目任务模块任务]")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/updaterelatedplanstatusbatch")
+    public ResponseEntity<Boolean> updateRelatedPlanStatusByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.updateRelatedPlanStatusBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目任务模块任务", tags = {"任务" },  notes = "根据项目任务模块任务")

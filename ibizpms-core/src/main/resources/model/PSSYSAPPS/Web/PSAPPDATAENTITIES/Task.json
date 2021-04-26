@@ -507,6 +507,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "UpdateRelatedPlanStatus",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateRelatedPlanStatus.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "UpdateRelatedPlanStatus"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "UpdateStoryVersion",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2539,6 +2555,22 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TaskNFavorites"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "UpdateRelatedPlanStatus",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateRelatedPlanStatus.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "UpdateRelatedPlanStatus"
     },
     "builtinMethod" : false
   }, {

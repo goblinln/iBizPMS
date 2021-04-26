@@ -392,6 +392,9 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             else if (iPSDEAction.getName().equals("TaskNFavorites")) {
                 return taskService.taskNFavorites((Task) args[0]);
             }
+            else if (iPSDEAction.getName().equals("updateRelatedPlanStatus")) {
+                return taskService.updateRelatedPlanStatus((Task) args[0]);
+            }
             else if (iPSDEAction.getName().equals("updateStoryVersion")) {
                 return taskService.updateStoryVersion((Task) args[0]);
             }
@@ -594,6 +597,9 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         }
         else if (action.equals("taskNFavorites")) {
             return aroundAction("TaskNFavorites", point);
+        }
+        else if (action.equals("updateRelatedPlanStatus")) {
+            return aroundAction("updateRelatedPlanStatus", point);
         }
         else if (action.equals("updateStoryVersion")) {
             return aroundAction("updateStoryVersion", point);

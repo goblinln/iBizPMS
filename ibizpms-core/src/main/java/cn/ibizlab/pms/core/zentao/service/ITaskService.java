@@ -96,6 +96,8 @@ public interface ITaskService extends IService<Task> {
     boolean taskForwardBatch(List<Task> etList);
     Task taskNFavorites(Task et);
     boolean taskNFavoritesBatch(List<Task> etList);
+    Task updateRelatedPlanStatus(Task et);
+    boolean updateRelatedPlanStatusBatch(List<Task> etList);
     Task updateStoryVersion(Task et);
     boolean updateStoryVersionBatch(List<Task> etList);
     List<Task> select(TaskSearchContext context);

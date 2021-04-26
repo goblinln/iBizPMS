@@ -28,7 +28,7 @@ export const Environment = {
     // 是否开启权限认证
     enablePermissionValid: false,
     // 菜单权限模式，可选值：RT(RT模式),RESOURCE(资源模式),MINIX(混合模式),默认MINIX
-    menuPermissionMode: 'MINIX',
+    menuPermissionMode: 'RESOURCE',
     // 项目模板地址
     ProjectUrl: 'https://oauth2:0fc5b56b52f5ad87efd3850b6536e034@gitee.com/ibizlab/iBizPMS.git',
     // 打开目标工具，可选参数：sln、mos

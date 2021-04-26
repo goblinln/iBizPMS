@@ -329,6 +329,13 @@ export default class TextFileUpload extends Vue {
     public iframeUrl: any = '';
 
     /**
+     * 文件状态：init初始化、upload新建、save保存
+     * @type {string}
+     * @memberof DiskFileUpload
+     */
+    public textstate: string = 'init';
+
+    /**
      * 编辑文件
      *
      * @memberof DiskFileUpload
@@ -384,7 +391,7 @@ export default class TextFileUpload extends Vue {
      * @memberof DiskFileUpload
      */
     public getOwnerid($event?: any) {
-        if ($event && $event.disdocid) {
+        if ($event && $event[this.filekey]) {
             return typeof $event[this.filekey] == "string" ? $event[this.filekey] : JSON.stringify($event[this.filekey]);
         }
         return typeof this.ownerid == "string" ? this.ownerid : JSON.stringify(this.ownerid);
@@ -473,12 +480,9 @@ export default class TextFileUpload extends Vue {
         let fileName = param[fileParam.name]?param[fileParam.name] + ".wps":"模板文件.wps";
         let fileText = param[fileParam.id]?param[fileParam.id]:"暂无内容";
         let file = new File([fileText],fileName,{type: 'application/kswps'});
-        //临时修改新建文件逻辑
-        // let data = JSON.parse(this.data);
-        // if (Object.is(data.srfuf, '0')) {
-        //   this.uploadFileList.push({file});
-        //   return;
-        // }
+        if (this.textstate === "init") {
+            this.textstate = "upload";
+        }
         // formData传参
         let formData = new FormData();
         formData.append('file', file);
@@ -678,28 +682,41 @@ export default class TextFileUpload extends Vue {
      * @memberof DiskFileUpload
      */
     public updateFileBatch(files: any,$event: any) {
+        if (this.textstate !== "upload") {
+          return;
+        }
+        this.textstate = "save";
         let _this: any = this;
         // 拼接url
         const updateUrl = '/net-disk/upload/' + this.getFolder() + '?ownertype=' + this.getOwnertype() + "&ownerid=" + this.getOwnerid($event.data);
         // requestBody参数
-        let formData = new FormData();
         if (files.length > 0) {
             files.forEach((item: any) => {
               if (item.file) {
+                const deleteUrl = '/net-disk/files/' + item.id;
+                // 发送delete请求
+                this.$http.delete(deleteUrl).then((response: any) => {
+                    if (!response || response.status != 200) {
+                        Message.error(_this.$t('components.diskFileUpload.deleteFileFailure') + '!');
+                    }
+                }).catch((error: any) => {
+                    // 提示删除失败
+                    Message.error(_this.$t('components.diskFileUpload.deleteFileFailure') + ':' + error);
+                });
+                let formData = new FormData();
                 formData.append('file', item.file);
+                // 发送post请求
+                this.$http.post(updateUrl, formData, {timeout: 2000}).then((response: any) => {
+                    if (!response || response.status != 200) {
+                        Message.error(_this.$t('components.diskFileUpload.loadFailure') + '!');
+                        return;
+                    }
+                }).catch((error: any) => {
+                    Message.error(_this.$t('components.diskFileUpload.loadFailure') + ':' + error);
+                });
               }
             });
         }
-        // 发送post请求
-        this.$http.post(updateUrl, formData, {timeout: 2000}).then((response: any) => {
-            if (!response || response.status != 200) {
-                Message.error(_this.$t('components.diskFileUpload.updateFailure') + '!');
-                return;
-            }
-        }).catch((error: any) => {
-            Message.error(_this.$t('components.diskFileUpload.updateFailure') + ':' + error);
-        });
-        
     }
 }
 </script>

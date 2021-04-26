@@ -6,15 +6,21 @@
             margin-right: 8px;
             padding: 8px;
             cursor: pointer;
-            .app-quick-item-label{
-                margin-left:4px;
-            }
             .app-seleted-item{
                 display: inline-block;
                 font-weight: 700;
                 color: var(--item-font-color-bright);
                 padding: 4px;
-                border-bottom: 2px solid;
+                position: relative;
+                &::after{
+                    content: "";
+                    height: 2px;
+                    background-color: var(--item-font-color-bright);
+                    position: absolute;
+                    bottom: -17px;
+                    width: 100%;
+                    left: 0px;
+                }
             }
             .app-seleted-item:focus {
                 outline: none;

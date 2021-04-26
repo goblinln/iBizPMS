@@ -6,6 +6,7 @@ import { TopItemsService } from '../app-service/common-service/top-items-service
 declare module 'vue/types/vue' {
     interface Vue {
         $Notice: Notice,
+        $throw: Function,
         $store: any,
         $viewTool: any,
         $route:any,

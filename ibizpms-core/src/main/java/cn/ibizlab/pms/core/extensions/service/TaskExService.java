@@ -281,5 +281,15 @@ public class TaskExService extends TaskServiceImpl {
     public Task taskForward(Task et) {
         return super.taskForward(et);
     }
+    /**
+     * [UpdateRelatedPlanStatus:更新父任务计划状态] 行为扩展
+     * @param et
+     * @return
+     */
+    @Override
+    @Transactional
+    public Task updateRelatedPlanStatus(Task et) {
+        return super.updateRelatedPlanStatus(et);
+    }
 }
 

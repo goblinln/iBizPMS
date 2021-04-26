@@ -712,6 +712,21 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
 
     @Override
     @Transactional
+    public Task updateRelatedPlanStatus(Task et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean updateRelatedPlanStatusBatch(List<Task> etList) {
+        for(Task et : etList) {
+            updateRelatedPlanStatus(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public Task updateStoryVersion(Task et) {
          return et ;
     }

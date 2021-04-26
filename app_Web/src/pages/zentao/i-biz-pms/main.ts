@@ -17,7 +17,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import 'view-design/dist/styles/iview.css';
 import 'ibiz-vue-lib/lib/ibiz-vue-lib.css';
 import '@/styles/default.less';
-import { AppComponentService,AppLayoutService } from 'ibiz-vue';
+import { AppComponentService,AppLayoutService, ErrorUtil } from 'ibiz-vue';
 
 import VueAMap from 'vue-amap';
 Vue.use(VueAMap);
@@ -41,8 +41,12 @@ win.axios = axios;
 install({baseUrl:Environment.BaseUrl});
 installPlugin();
 
+// 异常处理
 Vue.config.errorHandler = function (err: any, vm: any, info: any) {
-  console.log(err);
+  ErrorUtil.errorHandler(err,info);
+}
+Vue.prototype.$throw = (err:any)=> {
+  ErrorUtil.errorHandler(err);
 }
 
 Vue.config.productionTip = false;

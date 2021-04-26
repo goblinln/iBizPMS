@@ -19,10 +19,10 @@ const router = new Router({
                 }
                 const url: string = '/appdata';
                 const auth: Promise<any> = AuthGuard.getInstance().authGuard(url, params, router);
-                auth.then(() => {
-                    next();
+                auth.then((result) => {
+                    next(result ? true : false);
                 }).catch(() => {
-                    next();
+                    next(false);
                 });
             },
             meta: {  

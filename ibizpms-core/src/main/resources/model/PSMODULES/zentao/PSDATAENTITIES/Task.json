@@ -446,6 +446,13 @@
     }
   }, {
     "actionMode" : "UPDATE",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "UpdateRelatedPlanStatus",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateRelatedPlanStatus.json",
+    "logicName" : "更新父任务计划状态",
+    "name" : "updateRelatedPlanStatus"
+  }, {
+    "actionMode" : "UPDATE",
     "actionType" : "DELOGIC",
     "codeName" : "UpdateStoryVersion",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateStoryVersion.json",

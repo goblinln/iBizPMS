@@ -415,7 +415,7 @@ export class FormControlBase extends MainControlBase {
      */
     public load(opt: any = {}): void {
         if (!this.loadAction) {
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: `${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.loadaction') as string) });
+            this.$throw( `${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.loadaction') as string));
             return;
         }
         const arg: any = { ...opt };
@@ -424,28 +424,23 @@ export class FormControlBase extends MainControlBase {
         const get: Promise<any> = this.service.get(this.loadAction, JSON.parse(JSON.stringify(this.context)), { viewparams: viewparamResult }, this.showBusyIndicator);
         get.then((response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status === 200) {
-                const data = response.data;
-                this.onFormLoad(data, 'load');
-                this.ctrlEvent({
-                    controlname: this.controlInstance.name,
-                    action: 'load',
-                    data: data,
-                });
-                this.$nextTick(() => {
-                    this.formState.next({ type: 'load', data: data });
-                });
+            if (!response.status || response.status !== 200) {
+                this.$throw(response);
+                return;
             }
-        }).catch((response: any) => {
+            const data = response.data;
+            this.onFormLoad(data, 'load');
+            this.ctrlEvent({
+                controlname: this.controlInstance.name,
+                action: 'load',
+                data: data,
+            });
+            this.$nextTick(() => {
+                this.formState.next({ type: 'load', data: data });
+            });
+        }).catch((error: any) => {
             this.ctrlEndLoading();
-            if (response && response.status && response.data) {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                return;
-            }
-            if (!response || !response.status || !response.data) {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.sysException') as string) });
-                return;
-            }
+            this.$throw(error);
         });
     }
 
@@ -457,7 +452,7 @@ export class FormControlBase extends MainControlBase {
      */
     public loadDraft(opt: any = {}, mode?: string): void {
         if (!this.loaddraftAction) {
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: `${this.controlInstance.codeName}` + (this.$t('app.searchForm.notConfig.loaddraftAction') as string) });
+            this.$throw((this.$t('app.searchForm.notConfig.loaddraftAction') as string));
             return;
         }
         const arg: any = { ...opt };
@@ -467,12 +462,9 @@ export class FormControlBase extends MainControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                if (response.data && response.data.message) {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                }
+                this.$throw(response);
                 return;
             }
-
             const data = response.data;
             this.resetDraftFormStates();
             this.onFormLoad(data, 'loadDraft');
@@ -501,16 +493,7 @@ export class FormControlBase extends MainControlBase {
             });
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status === 401) {
-                return;
-            }
-            if (!response || !response.status || !response.data) {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.sysException') as string) });
-                return;
-            }
-
-            const { data: _data } = response;
-            this.$Notice.error({ title: _data.title, desc: _data.message });
+            this.$throw(response);
         });
     }
 

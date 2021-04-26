@@ -360,31 +360,15 @@
     },
     "name" : "数据导入",
     "getPSDEDataImportItems" : [ {
-      "caption" : "编号",
-      "name" : "ID",
+      "caption" : "负责人",
+      "name" : "OWNER",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "备注",
-      "name" : "COMMENT",
-      "getPSAppDEField" : {
-        "name" : "COMMENT",
-        "codeName" : "Comment"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "抄送给",
-      "name" : "MAILTO",
-      "getPSAppDEField" : {
-        "name" : "MAILTO",
-        "codeName" : "Mailto"
+        "name" : "OWNER",
+        "codeName" : "Owner"
       },
       "getPSCodeList" : {
         "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProductTeam.json"
       },
       "uniqueItem" : false
     }, {
@@ -396,15 +380,11 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "负责人",
-      "name" : "OWNER",
+      "caption" : "已删除",
+      "name" : "DELETED",
       "getPSAppDEField" : {
-        "name" : "OWNER",
-        "codeName" : "Owner"
-      },
-      "getPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProductTeam.json"
+        "name" : "DELETED",
+        "codeName" : "Deleted"
       },
       "uniqueItem" : false
     }, {
@@ -424,14 +404,6 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "已删除",
-      "name" : "DELETED",
-      "getPSAppDEField" : {
-        "name" : "DELETED",
-        "codeName" : "Deleted"
-      },
-      "uniqueItem" : false
-    }, {
       "caption" : "产品",
       "name" : "PRODUCTNAME",
       "getPSAppDEField" : {
@@ -440,19 +412,27 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "auto",
-      "name" : "AUTO",
-      "getPSAppDEField" : {
-        "name" : "AUTO",
-        "codeName" : "Auto"
-      },
-      "uniqueItem" : false
-    }, {
       "caption" : "子状态",
       "name" : "SUBSTATUS",
       "getPSAppDEField" : {
         "name" : "SUBSTATUS",
         "codeName" : "SubStatus"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "所属项目",
+      "name" : "PROJECT",
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "auto",
+      "name" : "AUTO",
+      "getPSAppDEField" : {
+        "name" : "AUTO",
+        "codeName" : "Auto"
       },
       "uniqueItem" : false
     }, {
@@ -468,22 +448,6 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "所属项目",
-      "name" : "PROJECT",
-      "getPSAppDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "开始日期",
-      "name" : "BEGIN",
-      "getPSAppDEField" : {
-        "name" : "BEGIN",
-        "codeName" : "Begin"
-      },
-      "uniqueItem" : false
-    }, {
       "caption" : "优先级",
       "name" : "PRI",
       "getPSAppDEField" : {
@@ -496,11 +460,11 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "名称",
-      "name" : "NAME",
+      "caption" : "开始日期",
+      "name" : "BEGIN",
       "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
+        "name" : "BEGIN",
+        "codeName" : "Begin"
       },
       "uniqueItem" : false
     }, {
@@ -509,6 +473,22 @@
       "getPSAppDEField" : {
         "name" : "END",
         "codeName" : "End"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "名称",
+      "name" : "NAME",
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "描述",
+      "name" : "DESC",
+      "getPSAppDEField" : {
+        "name" : "DESC",
+        "codeName" : "Desc"
       },
       "uniqueItem" : false
     }, {
@@ -528,11 +508,31 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "描述",
-      "name" : "DESC",
+      "caption" : "编号",
+      "name" : "ID",
       "getPSAppDEField" : {
-        "name" : "DESC",
-        "codeName" : "Desc"
+        "name" : "ID",
+        "codeName" : "Id"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "抄送给",
+      "name" : "MAILTO",
+      "getPSAppDEField" : {
+        "name" : "MAILTO",
+        "codeName" : "Mailto"
+      },
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "备注",
+      "name" : "COMMENT",
+      "getPSAppDEField" : {
+        "name" : "COMMENT",
+        "codeName" : "Comment"
       },
       "uniqueItem" : false
     } ],
