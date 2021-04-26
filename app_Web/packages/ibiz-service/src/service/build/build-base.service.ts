@@ -282,6 +282,25 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
         return res;
     }
     /**
+     * LinkBug
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof BuildService
+     */
+    async LinkBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.build) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/builds/${_context.build}/linkbug`, _data);
+        }
+        if (_context.product && _context.build) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/builds/${_context.build}/linkbug`, _data);
+        }
+        return this.http.post(`/builds/${_context.build}/linkbug`, _data);
+    }
+    /**
      * LinkStory
      *
      * @param {*} [_context={}]

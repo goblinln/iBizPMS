@@ -174,6 +174,9 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             else if (iPSDEAction.getName().equals("CheckKey")) {
                 return buildService.checkKey((Build) args[0]);
             }
+            else if (iPSDEAction.getName().equals("linkBug")) {
+                return buildService.linkBug((Build) args[0]);
+            }
             else if (iPSDEAction.getName().equals("LinkStory")) {
                 return buildService.linkStory((Build) args[0]);
             }
@@ -295,6 +298,9 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         }
         else if (action.equals("checkKey")) {
             return aroundAction("CheckKey", point);
+        }
+        else if (action.equals("linkBug")) {
+            return aroundAction("linkBug", point);
         }
         else if (action.equals("linkStory")) {
             return aroundAction("LinkStory", point);

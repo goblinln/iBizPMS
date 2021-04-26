@@ -36,6 +36,8 @@ public interface IBuildService extends IService<Build> {
     Build sysGet(Long key);
     Build getDraft(Build et);
     boolean checkKey(Build et);
+    Build linkBug(Build et);
+    boolean linkBugBatch(List<Build> etList);
     Build linkStory(Build et);
     boolean linkStoryBatch(List<Build> etList);
     Build mobProjectBuildCounter(Build et);

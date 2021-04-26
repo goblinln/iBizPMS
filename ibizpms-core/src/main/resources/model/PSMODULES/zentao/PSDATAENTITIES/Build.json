@@ -58,6 +58,13 @@
   }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "USERCUSTOM",
+    "codeName" : "LinkBug",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/LinkBug.json",
+    "logicName" : "关联Bug",
+    "name" : "linkBug"
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "USERCUSTOM",
     "codeName" : "LinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/LinkStory.json",
     "logicName" : "关联需求",

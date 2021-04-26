@@ -22,6 +22,16 @@ public class BuildExService extends BuildServiceImpl {
     }
 
     /**
+     * [LinkBug:关联Bug] 行为扩展
+     * @param et
+     * @return
+     */
+    @Override
+    @Transactional
+    public Build linkBug(Build et) {
+        return super.linkBug(et);
+    }
+    /**
      * [LinkStory:关联需求] 行为扩展：【版本】关联需求、使用多项数据选择视图，选择多个数据，再保存关联性。
      * @param et
      * @return

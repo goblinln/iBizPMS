@@ -184,6 +184,21 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
     }
     @Override
     @Transactional
+    public Build linkBug(Build et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean linkBugBatch(List<Build> etList) {
+        for(Build et : etList) {
+            linkBug(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public Build linkStory(Build et) {
         //自定义代码
         return et;
