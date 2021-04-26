@@ -183,6 +183,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "CreateByCycle",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CreateByCycle"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "CreateCycleTasks",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2199,6 +2215,22 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ConfirmStoryChange"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "CreateByCycle",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__CREATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CreateByCycle"
     },
     "builtinMethod" : false
   }, {

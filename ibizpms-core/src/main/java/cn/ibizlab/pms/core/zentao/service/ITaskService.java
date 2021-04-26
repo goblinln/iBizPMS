@@ -46,6 +46,8 @@ public interface ITaskService extends IService<Task> {
     boolean closeBatch(List<Task> etList);
     Task confirmStoryChange(Task et);
     boolean confirmStoryChangeBatch(List<Task> etList);
+    Task createByCycle(Task et);
+    boolean createByCycleBatch(List<Task> etList);
     Task createCycleTasks(Task et);
     boolean createCycleTasksBatch(List<Task> etList);
     Task delete(Task et);

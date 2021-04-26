@@ -317,6 +317,9 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             else if (iPSDEAction.getName().equals("ConfirmStoryChange")) {
                 return taskService.confirmStoryChange((Task) args[0]);
             }
+            else if (iPSDEAction.getName().equals("createByCycle")) {
+                return taskService.createByCycle((Task) args[0]);
+            }
             else if (iPSDEAction.getName().equals("CreateCycleTasks")) {
                 return taskService.createCycleTasks((Task) args[0]);
             }
@@ -516,6 +519,9 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         }
         else if (action.equals("confirmStoryChange")) {
             return aroundAction("ConfirmStoryChange", point);
+        }
+        else if (action.equals("createByCycle")) {
+            return aroundAction("createByCycle", point);
         }
         else if (action.equals("createCycleTasks")) {
             return aroundAction("CreateCycleTasks", point);

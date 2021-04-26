@@ -72,6 +72,16 @@ public class TaskExService extends TaskServiceImpl {
         return super.confirmStoryChange(et);
     }
     /**
+     * [CreateByCycle:创建周期任务] 行为扩展
+     * @param et
+     * @return
+     */
+    @Override
+    @Transactional
+    public Task createByCycle(Task et) {
+        return super.createByCycle(et);
+    }
+    /**
      * [CreateCycleTasks:创建周期任务] 行为扩展
      * @param et
      * @return

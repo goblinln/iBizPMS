@@ -220,6 +220,24 @@ public class SubTaskResource {
 
     @PreAuthorize("@TaskRuntime.test(#subtask_id,'CREATE')")
     @ApiOperation(value = "创建周期任务", tags = {"任务" },  notes = "创建周期任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/subtasks/{subtask_id}/createbycycle")
+    public ResponseEntity<SubTaskDTO> createByCycle(@PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
+        Task domain = subtaskMapping.toDomain(subtaskdto);
+        domain.setId(subtask_id);
+        domain = taskService.createByCycle(domain);
+        subtaskdto = subtaskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
+    }
+    @ApiOperation(value = "批量处理[创建周期任务]", tags = {"任务" },  notes = "批量处理[创建周期任务]")
+	@RequestMapping(method = RequestMethod.POST, value = "/subtasks/createbycyclebatch")
+    public ResponseEntity<Boolean> createByCycleBatch(@RequestBody List<SubTaskDTO> subtaskdtos) {
+        List<Task> domains = subtaskMapping.toDomain(subtaskdtos);
+        boolean result = taskService.createByCycleBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
+    @PreAuthorize("@TaskRuntime.test(#subtask_id,'CREATE')")
+    @ApiOperation(value = "创建周期任务", tags = {"任务" },  notes = "创建周期任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/subtasks/{subtask_id}/createcycletasks")
     public ResponseEntity<SubTaskDTO> createCycleTasks(@PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -1652,6 +1670,24 @@ public class SubTaskResource {
     public ResponseEntity<Boolean> confirmStoryChangeByTask(@PathVariable("task_id") Long task_id, @RequestBody List<SubTaskDTO> subtaskdtos) {
         List<Task> domains = subtaskMapping.toDomain(subtaskdtos);
         boolean result = taskService.confirmStoryChangeBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @PreAuthorize("@TaskRuntime.test(#task_id,'CREATE')")
+    @ApiOperation(value = "根据任务任务", tags = {"任务" },  notes = "根据任务任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/subtasks/{subtask_id}/createbycycle")
+    public ResponseEntity<SubTaskDTO> createByCycleByTask(@PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
+        Task domain = subtaskMapping.toDomain(subtaskdto);
+        domain.setParent(task_id);
+        domain.setId(subtask_id);
+        domain = taskService.createByCycle(domain) ;
+        subtaskdto = subtaskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
+    }
+    @ApiOperation(value = "批量处理[根据任务任务]", tags = {"任务" },  notes = "批量处理[根据任务任务]")
+	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/subtasks/createbycyclebatch")
+    public ResponseEntity<Boolean> createByCycleByTask(@PathVariable("task_id") Long task_id, @RequestBody List<SubTaskDTO> subtaskdtos) {
+        List<Task> domains = subtaskMapping.toDomain(subtaskdtos);
+        boolean result = taskService.createByCycleBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @PreAuthorize("@TaskRuntime.test(#task_id,'CREATE')")
@@ -3128,6 +3164,24 @@ public class SubTaskResource {
     }
     @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'CREATE')")
     @ApiOperation(value = "根据任务模块任务任务", tags = {"任务" },  notes = "根据任务模块任务任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/{subtask_id}/createbycycle")
+    public ResponseEntity<SubTaskDTO> createByCycleByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
+        Task domain = subtaskMapping.toDomain(subtaskdto);
+        domain.setParent(task_id);
+        domain.setId(subtask_id);
+        domain = taskService.createByCycle(domain) ;
+        subtaskdto = subtaskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
+    }
+    @ApiOperation(value = "批量处理[根据任务模块任务任务]", tags = {"任务" },  notes = "批量处理[根据任务模块任务任务]")
+	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/createbycyclebatch")
+    public ResponseEntity<Boolean> createByCycleByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody List<SubTaskDTO> subtaskdtos) {
+        List<Task> domains = subtaskMapping.toDomain(subtaskdtos);
+        boolean result = taskService.createByCycleBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'CREATE')")
+    @ApiOperation(value = "根据任务模块任务任务", tags = {"任务" },  notes = "根据任务模块任务任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/{subtask_id}/createcycletasks")
     public ResponseEntity<SubTaskDTO> createCycleTasksByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -4596,6 +4650,24 @@ public class SubTaskResource {
     public ResponseEntity<Boolean> confirmStoryChangeByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody List<SubTaskDTO> subtaskdtos) {
         List<Task> domains = subtaskMapping.toDomain(subtaskdtos);
         boolean result = taskService.confirmStoryChangeBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'CREATE')")
+    @ApiOperation(value = "根据产品计划任务任务", tags = {"任务" },  notes = "根据产品计划任务任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/{task_id}/subtasks/{subtask_id}/createbycycle")
+    public ResponseEntity<SubTaskDTO> createByCycleByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
+        Task domain = subtaskMapping.toDomain(subtaskdto);
+        domain.setParent(task_id);
+        domain.setId(subtask_id);
+        domain = taskService.createByCycle(domain) ;
+        subtaskdto = subtaskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
+    }
+    @ApiOperation(value = "批量处理[根据产品计划任务任务]", tags = {"任务" },  notes = "批量处理[根据产品计划任务任务]")
+	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/{task_id}/subtasks/createbycyclebatch")
+    public ResponseEntity<Boolean> createByCycleByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody List<SubTaskDTO> subtaskdtos) {
+        List<Task> domains = subtaskMapping.toDomain(subtaskdtos);
+        boolean result = taskService.createByCycleBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'CREATE')")
@@ -6072,6 +6144,24 @@ public class SubTaskResource {
     }
     @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
     @ApiOperation(value = "根据需求任务任务", tags = {"任务" },  notes = "根据需求任务任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/{task_id}/subtasks/{subtask_id}/createbycycle")
+    public ResponseEntity<SubTaskDTO> createByCycleByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
+        Task domain = subtaskMapping.toDomain(subtaskdto);
+        domain.setParent(task_id);
+        domain.setId(subtask_id);
+        domain = taskService.createByCycle(domain) ;
+        subtaskdto = subtaskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
+    }
+    @ApiOperation(value = "批量处理[根据需求任务任务]", tags = {"任务" },  notes = "批量处理[根据需求任务任务]")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/{task_id}/subtasks/createbycyclebatch")
+    public ResponseEntity<Boolean> createByCycleByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody List<SubTaskDTO> subtaskdtos) {
+        List<Task> domains = subtaskMapping.toDomain(subtaskdtos);
+        boolean result = taskService.createByCycleBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
+    @ApiOperation(value = "根据需求任务任务", tags = {"任务" },  notes = "根据需求任务任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/{task_id}/subtasks/{subtask_id}/createcycletasks")
     public ResponseEntity<SubTaskDTO> createCycleTasksByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -7540,6 +7630,24 @@ public class SubTaskResource {
     public ResponseEntity<Boolean> confirmStoryChangeByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody List<SubTaskDTO> subtaskdtos) {
         List<Task> domains = subtaskMapping.toDomain(subtaskdtos);
         boolean result = taskService.confirmStoryChangeBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
+    @ApiOperation(value = "根据项目任务任务", tags = {"任务" },  notes = "根据项目任务任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/subtasks/{subtask_id}/createbycycle")
+    public ResponseEntity<SubTaskDTO> createByCycleByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
+        Task domain = subtaskMapping.toDomain(subtaskdto);
+        domain.setParent(task_id);
+        domain.setId(subtask_id);
+        domain = taskService.createByCycle(domain) ;
+        subtaskdto = subtaskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
+    }
+    @ApiOperation(value = "批量处理[根据项目任务任务]", tags = {"任务" },  notes = "批量处理[根据项目任务任务]")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/subtasks/createbycyclebatch")
+    public ResponseEntity<Boolean> createByCycleByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody List<SubTaskDTO> subtaskdtos) {
+        List<Task> domains = subtaskMapping.toDomain(subtaskdtos);
+        boolean result = taskService.createByCycleBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
@@ -9016,6 +9124,24 @@ public class SubTaskResource {
     }
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品产品计划任务任务", tags = {"任务" },  notes = "根据产品产品计划任务任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/{subtask_id}/createbycycle")
+    public ResponseEntity<SubTaskDTO> createByCycleByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
+        Task domain = subtaskMapping.toDomain(subtaskdto);
+        domain.setParent(task_id);
+        domain.setId(subtask_id);
+        domain = taskService.createByCycle(domain) ;
+        subtaskdto = subtaskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
+    }
+    @ApiOperation(value = "批量处理[根据产品产品计划任务任务]", tags = {"任务" },  notes = "批量处理[根据产品产品计划任务任务]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/createbycyclebatch")
+    public ResponseEntity<Boolean> createByCycleByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody List<SubTaskDTO> subtaskdtos) {
+        List<Task> domains = subtaskMapping.toDomain(subtaskdtos);
+        boolean result = taskService.createByCycleBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "根据产品产品计划任务任务", tags = {"任务" },  notes = "根据产品产品计划任务任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/{subtask_id}/createcycletasks")
     public ResponseEntity<SubTaskDTO> createCycleTasksByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -10488,6 +10614,24 @@ public class SubTaskResource {
     }
     @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品需求任务任务", tags = {"任务" },  notes = "根据产品需求任务任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/{subtask_id}/createbycycle")
+    public ResponseEntity<SubTaskDTO> createByCycleByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
+        Task domain = subtaskMapping.toDomain(subtaskdto);
+        domain.setParent(task_id);
+        domain.setId(subtask_id);
+        domain = taskService.createByCycle(domain) ;
+        subtaskdto = subtaskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
+    }
+    @ApiOperation(value = "批量处理[根据产品需求任务任务]", tags = {"任务" },  notes = "批量处理[根据产品需求任务任务]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/createbycyclebatch")
+    public ResponseEntity<Boolean> createByCycleByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody List<SubTaskDTO> subtaskdtos) {
+        List<Task> domains = subtaskMapping.toDomain(subtaskdtos);
+        boolean result = taskService.createByCycleBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "根据产品需求任务任务", tags = {"任务" },  notes = "根据产品需求任务任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/{subtask_id}/createcycletasks")
     public ResponseEntity<SubTaskDTO> createCycleTasksByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
         Task domain = subtaskMapping.toDomain(subtaskdto);
@@ -11956,6 +12100,24 @@ public class SubTaskResource {
     public ResponseEntity<Boolean> confirmStoryChangeByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody List<SubTaskDTO> subtaskdtos) {
         List<Task> domains = subtaskMapping.toDomain(subtaskdtos);
         boolean result = taskService.confirmStoryChangeBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
+    @ApiOperation(value = "根据项目任务模块任务任务", tags = {"任务" },  notes = "根据项目任务模块任务任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/{subtask_id}/createbycycle")
+    public ResponseEntity<SubTaskDTO> createByCycleByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @PathVariable("subtask_id") Long subtask_id, @RequestBody SubTaskDTO subtaskdto) {
+        Task domain = subtaskMapping.toDomain(subtaskdto);
+        domain.setParent(task_id);
+        domain.setId(subtask_id);
+        domain = taskService.createByCycle(domain) ;
+        subtaskdto = subtaskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(subtaskdto);
+    }
+    @ApiOperation(value = "批量处理[根据项目任务模块任务任务]", tags = {"任务" },  notes = "批量处理[根据项目任务模块任务任务]")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/createbycyclebatch")
+    public ResponseEntity<Boolean> createByCycleByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody List<SubTaskDTO> subtaskdtos) {
+        List<Task> domains = subtaskMapping.toDomain(subtaskdtos);
+        boolean result = taskService.createByCycleBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
