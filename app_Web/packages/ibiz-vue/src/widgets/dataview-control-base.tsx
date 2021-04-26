@@ -1020,6 +1020,7 @@ export class DataViewControlBase extends MDControlBase {
             });
             group = group ? group : this.$t('app.commonWords.other');
             const tree: any = {
+                label: group,
                 group: group,
                 children: children,
             };

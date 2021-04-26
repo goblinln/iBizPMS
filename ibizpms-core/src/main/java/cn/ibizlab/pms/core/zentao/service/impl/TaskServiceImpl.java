@@ -301,6 +301,21 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
 
     @Override
     @Transactional
+    public Task delete(Task et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean deleteBatch(List<Task> etList) {
+        for(Task et : etList) {
+            delete(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public Task deleteEstimate(Task et) {
         //自定义代码
         return et;

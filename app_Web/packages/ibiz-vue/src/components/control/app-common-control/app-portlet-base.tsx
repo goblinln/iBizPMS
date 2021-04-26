@@ -89,7 +89,7 @@ export class AppPortletBase extends PortletControlBase {
             // 绘制其他部件
             let control = this.controlInstance.getPSControls()?.[0];
             let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(control);
-            return this.$createElement(targetCtrlName,{ props: targetCtrlParam, ref: control.name, on: targetCtrlEvent })
+            return this.$createElement(targetCtrlName,{ props: targetCtrlParam, ref: control?.name, on: targetCtrlEvent })
         }
     }
 

@@ -320,6 +320,9 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             else if (iPSDEAction.getName().equals("CreateCycleTasks")) {
                 return taskService.createCycleTasks((Task) args[0]);
             }
+            else if (iPSDEAction.getName().equals("delete")) {
+                return taskService.delete((Task) args[0]);
+            }
             else if (iPSDEAction.getName().equals("DeleteEstimate")) {
                 return taskService.deleteEstimate((Task) args[0]);
             }
@@ -507,6 +510,9 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         }
         else if (action.equals("createCycleTasks")) {
             return aroundAction("CreateCycleTasks", point);
+        }
+        else if (action.equals("delete")) {
+            return aroundAction("delete", point);
         }
         else if (action.equals("deleteEstimate")) {
             return aroundAction("DeleteEstimate", point);

@@ -4,7 +4,6 @@
         <router-view v-if="isRouterAlive" />
     </div>
 </template>
-+
 <script lang="ts">
 import { Vue, Component, Provide } from 'vue-property-decorator';
 import qs from 'qs';
@@ -69,6 +68,3 @@ export default class App extends Vue {
     }
 }
 </script>
-<style lang="less">
-@import './styles/default.less';
-</style>

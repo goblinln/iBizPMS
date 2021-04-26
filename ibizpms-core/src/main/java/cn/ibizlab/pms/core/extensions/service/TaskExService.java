@@ -82,6 +82,16 @@ public class TaskExService extends TaskServiceImpl {
         return super.createCycleTasks(et);
     }
     /**
+     * [Delete:删除任务] 行为扩展
+     * @param et
+     * @return
+     */
+    @Override
+    @Transactional
+    public Task delete(Task et) {
+        return super.delete(et);
+    }
+    /**
      * [DeleteEstimate:删除工时] 行为扩展
      * @param et
      * @return

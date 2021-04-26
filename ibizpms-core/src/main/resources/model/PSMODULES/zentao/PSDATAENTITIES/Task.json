@@ -245,6 +245,13 @@
   }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "USERCUSTOM",
+    "codeName" : "Delete",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json",
+    "logicName" : "删除任务",
+    "name" : "delete"
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "USERCUSTOM",
     "codeName" : "DeleteEstimate",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/DeleteEstimate.json",
     "logicName" : "删除工时",

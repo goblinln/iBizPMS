@@ -199,6 +199,18 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "Delete",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Delete"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "DeleteEstimate",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2167,6 +2179,18 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CreateCycleTasks"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "Delete",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Delete"
     },
     "builtinMethod" : false
   }, {

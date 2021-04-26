@@ -155,7 +155,7 @@ export class AppTreeViewBase extends TreeControlBase {
                             this.doDefaultAction(node);
                         }}
                     >
-                        <span class='icon'>{iconElement}&nbsp;</span>
+                        {iconElement ? <span class='icon'>{iconElement}&nbsp;</span> : null}
                         <span class='text'>
                             {textElement}
                         </span>
