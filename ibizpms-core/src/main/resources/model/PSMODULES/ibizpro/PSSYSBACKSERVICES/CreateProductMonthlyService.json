@@ -13,5 +13,6 @@
   "serviceContainer" : "SC01",
   "serviceHandler" : "CreateProductMonthlyService",
   "serviceOrder" : 0,
-  "startMode" : "AUTO"
+  "startMode" : "AUTO",
+  "taskType" : "DEACTION"
 }

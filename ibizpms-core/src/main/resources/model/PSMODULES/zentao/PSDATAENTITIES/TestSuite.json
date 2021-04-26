@@ -57,6 +57,13 @@
     "builtinAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "LinkCase",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/LinkCase.json",
+    "logicName" : "关联测试",
+    "name" : "linkCase"
+  }, {
+    "actionMode" : "UNKNOWN",
     "actionType" : "DELOGIC",
     "codeName" : "MobTestSuiteCount",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/MobTestSuiteCount.json",
@@ -74,6 +81,13 @@
     "logicName" : "Save",
     "name" : "Save",
     "builtinAction" : true
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "UnlinkCase",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/UnlinkCase.json",
+    "logicName" : "未关联测试",
+    "name" : "unlinkCase"
   } ],
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {

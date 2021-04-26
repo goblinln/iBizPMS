@@ -1,0 +1,8 @@
+{
+  "actionMode" : "UNKNOWN",
+  "actionType" : "USERCUSTOM",
+  "codeName" : "UnlinkCase",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEACTIONS/UnlinkCase.json",
+  "logicName" : "未关联测试",
+  "name" : "unlinkCase"
+}

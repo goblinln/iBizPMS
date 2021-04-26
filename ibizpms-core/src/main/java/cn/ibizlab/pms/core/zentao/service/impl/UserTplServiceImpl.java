@@ -154,6 +154,21 @@ public class UserTplServiceImpl extends ServiceImpl<UserTplMapper, UserTpl> impl
     }
     @Override
     @Transactional
+    public UserTpl hasDeleted(UserTpl et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean hasDeletedBatch(List<UserTpl> etList) {
+        for(UserTpl et : etList) {
+            hasDeleted(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public boolean save(UserTpl et) {
         if(!saveOrUpdate(et)) {
             return false;

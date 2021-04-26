@@ -36,6 +36,8 @@ public interface IUserTplService extends IService<UserTpl> {
     UserTpl sysGet(Long key);
     UserTpl getDraft(UserTpl et);
     boolean checkKey(UserTpl et);
+    UserTpl hasDeleted(UserTpl et);
+    boolean hasDeletedBatch(List<UserTpl> etList);
     boolean save(UserTpl et);
     void saveBatch(List<UserTpl> list);
     List<UserTpl> select(UserTplSearchContext context);

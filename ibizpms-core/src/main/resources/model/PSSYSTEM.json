@@ -1514,6 +1514,15 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateProductDailyService.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSBACKSERVICES/DENotifyDeamon.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSBACKSERVICES/SysDataSyncAgentDeamon.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSBACKSERVICES/WFCallbackDeamon.json"
   } ],
   "getAllPSSysSequences" : [ {
     "modelref" : true,

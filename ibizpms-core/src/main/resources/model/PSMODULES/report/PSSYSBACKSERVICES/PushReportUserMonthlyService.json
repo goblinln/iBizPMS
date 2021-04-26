@@ -13,5 +13,6 @@
   "serviceContainer" : "SC01",
   "serviceHandler" : "PushReportUserMonthlyService",
   "serviceOrder" : 0,
-  "startMode" : "MANUAL"
+  "startMode" : "MANUAL",
+  "taskType" : "DEACTION"
 }

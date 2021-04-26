@@ -133,6 +133,23 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(testsuiteService.checkKey(testsuiteMapping.toDomain(testsuitedto)));
     }
 
+    @ApiOperation(value = "关联测试", tags = {"测试套件" },  notes = "关联测试")
+	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/{testsuite_id}/linkcase")
+    public ResponseEntity<TestSuiteDTO> linkCase(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
+        TestSuite domain = testsuiteMapping.toDomain(testsuitedto);
+        domain.setId(testsuite_id);
+        domain = testsuiteService.linkCase(domain);
+        testsuitedto = testsuiteMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
+    }
+    @ApiOperation(value = "批量处理[关联测试]", tags = {"测试套件" },  notes = "批量处理[关联测试]")
+	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/linkcasebatch")
+    public ResponseEntity<Boolean> linkCaseBatch(@RequestBody List<TestSuiteDTO> testsuitedtos) {
+        List<TestSuite> domains = testsuiteMapping.toDomain(testsuitedtos);
+        boolean result = testsuiteService.linkCaseBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
     @ApiOperation(value = "移动端测试套件计数器", tags = {"测试套件" },  notes = "移动端测试套件计数器")
 	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/{testsuite_id}/mobtestsuitecount")
     public ResponseEntity<TestSuiteDTO> mobTestSuiteCount(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
@@ -156,6 +173,23 @@ public class TestSuiteResource {
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<TestSuiteDTO> testsuitedtos) {
         testsuiteService.saveBatch(testsuiteMapping.toDomain(testsuitedtos));
         return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @ApiOperation(value = "未关联测试", tags = {"测试套件" },  notes = "未关联测试")
+	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/{testsuite_id}/unlinkcase")
+    public ResponseEntity<TestSuiteDTO> unlinkCase(@PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
+        TestSuite domain = testsuiteMapping.toDomain(testsuitedto);
+        domain.setId(testsuite_id);
+        domain = testsuiteService.unlinkCase(domain);
+        testsuitedto = testsuiteMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
+    }
+    @ApiOperation(value = "批量处理[未关联测试]", tags = {"测试套件" },  notes = "批量处理[未关联测试]")
+	@RequestMapping(method = RequestMethod.POST, value = "/testsuites/unlinkcasebatch")
+    public ResponseEntity<Boolean> unlinkCaseBatch(@RequestBody List<TestSuiteDTO> testsuitedtos) {
+        List<TestSuite> domains = testsuiteMapping.toDomain(testsuitedtos);
+        boolean result = testsuiteService.unlinkCaseBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
     @PreAuthorize("@TestSuiteRuntime.quickTest('READ')")
@@ -301,6 +335,23 @@ public class TestSuiteResource {
     }
 
     @ApiOperation(value = "根据产品测试套件", tags = {"测试套件" },  notes = "根据产品测试套件")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/linkcase")
+    public ResponseEntity<TestSuiteDTO> linkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
+        TestSuite domain = testsuiteMapping.toDomain(testsuitedto);
+        domain.setProduct(product_id);
+        domain.setId(testsuite_id);
+        domain = testsuiteService.linkCase(domain) ;
+        testsuitedto = testsuiteMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
+    }
+    @ApiOperation(value = "批量处理[根据产品测试套件]", tags = {"测试套件" },  notes = "批量处理[根据产品测试套件]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/linkcasebatch")
+    public ResponseEntity<Boolean> linkCaseByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestSuiteDTO> testsuitedtos) {
+        List<TestSuite> domains = testsuiteMapping.toDomain(testsuitedtos);
+        boolean result = testsuiteService.linkCaseBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据产品测试套件", tags = {"测试套件" },  notes = "根据产品测试套件")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/mobtestsuitecount")
     public ResponseEntity<TestSuiteDTO> mobTestSuiteCountByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
         TestSuite domain = testsuiteMapping.toDomain(testsuitedto);
@@ -330,6 +381,23 @@ public class TestSuiteResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @ApiOperation(value = "根据产品测试套件", tags = {"测试套件" },  notes = "根据产品测试套件")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/{testsuite_id}/unlinkcase")
+    public ResponseEntity<TestSuiteDTO> unlinkCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testsuite_id") Long testsuite_id, @RequestBody TestSuiteDTO testsuitedto) {
+        TestSuite domain = testsuiteMapping.toDomain(testsuitedto);
+        domain.setProduct(product_id);
+        domain.setId(testsuite_id);
+        domain = testsuiteService.unlinkCase(domain) ;
+        testsuitedto = testsuiteMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(testsuitedto);
+    }
+    @ApiOperation(value = "批量处理[根据产品测试套件]", tags = {"测试套件" },  notes = "批量处理[根据产品测试套件]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testsuites/unlinkcasebatch")
+    public ResponseEntity<Boolean> unlinkCaseByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestSuiteDTO> testsuitedtos) {
+        List<TestSuite> domains = testsuiteMapping.toDomain(testsuitedtos);
+        boolean result = testsuiteService.unlinkCaseBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
     @PreAuthorize("@TestSuiteRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试套件" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testsuites/fetchdefault")

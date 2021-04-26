@@ -13,5 +13,6 @@
   "serviceContainer" : "SC01",
   "serviceHandler" : "CreateCycleTasksService",
   "serviceOrder" : 0,
-  "startMode" : "AUTO"
+  "startMode" : "AUTO",
+  "taskType" : "DEACTION"
 }

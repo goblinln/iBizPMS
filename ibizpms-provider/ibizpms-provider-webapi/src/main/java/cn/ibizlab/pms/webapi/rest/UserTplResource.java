@@ -132,6 +132,23 @@ public class UserTplResource {
         return  ResponseEntity.status(HttpStatus.OK).body(usertplService.checkKey(usertplMapping.toDomain(usertpldto)));
     }
 
+    @ApiOperation(value = "删除", tags = {"用户模板" },  notes = "删除")
+	@RequestMapping(method = RequestMethod.POST, value = "/usertpls/{usertpl_id}/hasdeleted")
+    public ResponseEntity<UserTplDTO> hasDeleted(@PathVariable("usertpl_id") Long usertpl_id, @RequestBody UserTplDTO usertpldto) {
+        UserTpl domain = usertplMapping.toDomain(usertpldto);
+        domain.setId(usertpl_id);
+        domain = usertplService.hasDeleted(domain);
+        usertpldto = usertplMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(usertpldto);
+    }
+    @ApiOperation(value = "批量处理[删除]", tags = {"用户模板" },  notes = "批量处理[删除]")
+	@RequestMapping(method = RequestMethod.POST, value = "/usertpls/hasdeletedbatch")
+    public ResponseEntity<Boolean> hasDeletedBatch(@RequestBody List<UserTplDTO> usertpldtos) {
+        List<UserTpl> domains = usertplMapping.toDomain(usertpldtos);
+        boolean result = usertplService.hasDeletedBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
     @ApiOperation(value = "保存用户模板", tags = {"用户模板" },  notes = "保存用户模板")
 	@RequestMapping(method = RequestMethod.POST, value = "/usertpls/save")
     public ResponseEntity<UserTplDTO> save(@RequestBody UserTplDTO usertpldto) {
