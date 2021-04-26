@@ -22,4 +22,9 @@ public class FileHelper {
         file.setExtra(extra);
         iFileService.updateObjectID(file);
     }
+
+    public static String saveUpload(String objectType, Long objectID, String extra, String filesName, String labelsName) {
+
+        return "";
+    }
 }

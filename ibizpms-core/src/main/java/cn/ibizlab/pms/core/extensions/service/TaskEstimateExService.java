@@ -144,7 +144,7 @@ public class TaskEstimateExService extends TaskEstimateServiceImpl {
         newTask.setStatus(data.getStatus());
         List<History> changes = ChangeUtil.diff(oldTask,newTask);
 
-        ActionHelper.createHis(et.getId(),StaticDict.Action__object_type.TESTTASK.getValue(),changes,StaticDict.Action__type.EDITESTIMATE.getValue(),
+        ActionHelper.createHis(task.getId(),StaticDict.Action__object_type.TASK.getValue(),changes,StaticDict.Action__type.EDITESTIMATE.getValue(),
                 et.getWork(),"", null,iActionService);
 
         return true;

@@ -107,7 +107,7 @@ public class ActionExService extends ActionServiceImpl {
                 }
             }
         }
-        FileFelper.updateObjectID(et.getObjectid(), et.getObjecttype(), files, extra, iFileService);
+        FileHelper.updateObjectID(et.getObjectid(), et.getObjecttype(), files, extra, iFileService);
         return true;
     }
 
