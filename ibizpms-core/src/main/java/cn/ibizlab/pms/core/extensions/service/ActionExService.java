@@ -90,10 +90,9 @@ public class ActionExService extends ActionServiceImpl {
         String noticeusers = et.getNoticeusers();
         String files = et.getFiles();
         this.createHis(et);
+        send(noticeusers, et);
         // 保存文件
         // 更新file
-        File file = new File();
-        file.set("files",files);
         String extra = "0";
         if(files != null) {
             if (StaticDict.Action__object_type.STORY.getValue().equals(et.getObjecttype())) {
@@ -108,8 +107,7 @@ public class ActionExService extends ActionServiceImpl {
                 }
             }
         }
-        file.setExtra(extra);
-        iFileService.updateObjectID(file);
+        FileFelper.updateObjectID(et.getObjectid(), et.getObjecttype(), files, extra, iFileService);
         return true;
     }
 
@@ -351,7 +349,7 @@ public class ActionExService extends ActionServiceImpl {
         SysEmployeeSearchContext fromSearchContext = new SysEmployeeSearchContext();
         fromSearchContext.setN_username_in(AuthenticationUser.getAuthenticationUser().getUsername());
         List<SysEmployee> fromList = iSysEmployeeService.searchDefault(fromSearchContext).getContent();
-        for(fromList.size() > 0) {
+        if(fromList.size() > 0) {
             ibizProMessage.setFrom(fromList.get(0).toString());
         }else {
             return  et;
