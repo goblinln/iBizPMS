@@ -57,7 +57,7 @@ public class IbizproIndexServiceImpl extends ServiceImpl<IbizproIndexMapper, Ibi
 
     @Override
     public List<IbizproIndex> select(IbizproIndexSearchContext context) {
-        return null;
+        return new ArrayList<IbizproIndex>();
     }
 
     @Override
