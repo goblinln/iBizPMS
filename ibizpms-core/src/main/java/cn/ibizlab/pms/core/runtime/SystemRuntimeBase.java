@@ -223,7 +223,7 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
         AuthenticationUser curUser = AuthenticationUser.getAuthenticationUser();
         List<UAAUniResAuthority> uaaUniResAuthorities = new ArrayList<>();
         uaaUniResAuthorities.addAll(userUAAUniResAuthority);
-        if (curUser.isSuperuser())
+        if (curUser.getAdminuser() == 1)
             uaaUniResAuthorities.addAll(adminUAAUniResAuthority);
         String curSystemId = curUser.getSrfsystemid();
         if (StringUtils.isEmpty(curSystemId)) {
