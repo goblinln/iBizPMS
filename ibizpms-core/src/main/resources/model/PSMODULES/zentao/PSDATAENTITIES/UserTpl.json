@@ -56,6 +56,13 @@
     "builtinAction" : true
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "HasDeleted",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEACTIONS/HasDeleted.json",
+    "logicName" : "删除",
+    "name" : "hasDeleted"
+  }, {
+    "actionMode" : "UNKNOWN",
     "actionType" : "BUILTIN",
     "codeName" : "Save",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEACTIONS/Save.json",

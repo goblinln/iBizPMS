@@ -158,11 +158,17 @@ public class TestSuiteRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
             else if (iPSDEAction.getName().equals("CheckKey")) {
                 return testsuiteService.checkKey((TestSuite) args[0]);
             }
+            else if (iPSDEAction.getName().equals("linkCase")) {
+                return testsuiteService.linkCase((TestSuite) args[0]);
+            }
             else if (iPSDEAction.getName().equals("MobTestSuiteCount")) {
                 return testsuiteService.mobTestSuiteCount((TestSuite) args[0]);
             }
             else if (iPSDEAction.getName().equals("Save")) {
                 return testsuiteService.save((TestSuite) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("unlinkCase")) {
+                return testsuiteService.unlinkCase((TestSuite) args[0]);
             }
         }else if (StringUtils.isNotBlank(strActionName)) {
             if (strActionName.equals(DEActions.CREATE)) {
@@ -274,11 +280,17 @@ public class TestSuiteRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
         else if (action.equals("checkKey")) {
             return aroundAction("CheckKey", point);
         }
+        else if (action.equals("linkCase")) {
+            return aroundAction("linkCase", point);
+        }
         else if (action.equals("mobTestSuiteCount")) {
             return aroundAction("MobTestSuiteCount", point);
         }
         else if (action.equals("save")) {
             return aroundAction("Save", point);
+        }
+        else if (action.equals("unlinkCase")) {
+            return aroundAction("unlinkCase", point);
         }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);

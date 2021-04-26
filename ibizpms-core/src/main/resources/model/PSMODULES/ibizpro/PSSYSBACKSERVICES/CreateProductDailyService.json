@@ -13,5 +13,6 @@
   "serviceContainer" : "SC01",
   "serviceHandler" : "CreateProductDailyService",
   "serviceOrder" : 0,
-  "startMode" : "AUTO"
+  "startMode" : "AUTO",
+  "taskType" : "DEACTION"
 }

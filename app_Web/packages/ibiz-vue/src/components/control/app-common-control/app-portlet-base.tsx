@@ -87,22 +87,9 @@ export class AppPortletBase extends PortletControlBase {
     public renderControl() {
         if (this.controlInstance.getPSControls()?.length) {
             // 绘制其他部件
-            let newStaticProps = { ...this.staticProps };
-            let newDynamicProps = { ...this.dynamicProps };
             let control = this.controlInstance.getPSControls()?.[0];
-            newStaticProps.modelData = control;
-            return this.$createElement('app-control-shell', {
-                props: { staticProps: newStaticProps, dynamicProps: newDynamicProps },
-                ref: control?.name || control?.codeName,
-                on: {
-                    'ctrl-event': ({controlname, action, data}: { controlname: string; action: string; data: any }) => {
-                      this.onCtrlEvent(controlname, action, data);
-                    },
-                    closeView: ($event: any) => {
-                        this.closeView($event);
-                    },
-                },
-            });
+            let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(control);
+            return this.$createElement(targetCtrlName,{ props: targetCtrlParam, ref: control.name, on: targetCtrlEvent })
         }
     }
 

@@ -36,10 +36,14 @@ public interface ITestSuiteService extends IService<TestSuite> {
     TestSuite sysGet(Long key);
     TestSuite getDraft(TestSuite et);
     boolean checkKey(TestSuite et);
+    TestSuite linkCase(TestSuite et);
+    boolean linkCaseBatch(List<TestSuite> etList);
     TestSuite mobTestSuiteCount(TestSuite et);
     boolean mobTestSuiteCountBatch(List<TestSuite> etList);
     boolean save(TestSuite et);
     void saveBatch(List<TestSuite> list);
+    TestSuite unlinkCase(TestSuite et);
+    boolean unlinkCaseBatch(List<TestSuite> etList);
     List<TestSuite> select(TestSuiteSearchContext context);
     List<TestSuite> selectDefault(TestSuiteSearchContext context);
     List<TestSuite> selectPublicTestSuite(TestSuiteSearchContext context);

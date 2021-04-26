@@ -2,7 +2,6 @@
     <div class="action-timeline">
         <div class="action-timeline-table">
             <div class="action-timeline-thead"></div>
-
             <div class="action-timeline-body" v-if="data && data.usertasks">
                 <div class="timeline-draw timeline timeline-head">
                     <div class="timeline-wrapper">
@@ -28,10 +27,10 @@
                                 </div>
                                 <div class="usertaskname">{{ usertask.userTaskName }}</div>
                                 <div class="authorname">
-                                    <Tooltip placement="bottom" theme='light'>
+                                    <Tooltip placement="bottom" theme='light' :disabled="usertask.comments.length > 0 ? false : true">
                                         {{ usertask.comments.map(item => item.authorName).toString() }}
                                         <div slot="content">
-                                            <div class="tooltips">
+                                            <div class="tooltips" >
                                                 <div class="tooltips-content" v-for="(item,toolindex) in usertask.comments" :key="toolindex">
                                                     {{item.authorName}}
                                                 </div>
@@ -40,14 +39,13 @@
                                     </Tooltip>
                                 </div>
                                 <div class="type">
-                                    <div class="dot"></div>
+                                    <div v-if="usertask.comments[usertask.comments.length-1] && usertask.comments[usertask.comments.length-1].type" class="dot"></div>
                                     <span>{{ usertask.comments[usertask.comments.length-1] && usertask.comments[usertask.comments.length-1].type }}</span>
                                 </div>
                                 <div class="last-time">{{ usertask.comments[usertask.comments.length-1] && formatDate(usertask.comments[usertask.comments.length-1].time, 'MM月DD日 HH:mm:ss') }}</div>
                                 <div class="fullmessage">{{ usertask.comments[usertask.comments.length-1] && usertask.comments[usertask.comments.length-1].fullMessage }}</div>
                             </div>
-
-                            <div class="arrow" @click="changeExpand(usertask)">
+                            <div v-if="usertask.comments.length>0" class="arrow" @click="changeExpand(usertask)">
                                 <i :class="usertask.isShow ? 'el-icon-minus' : 'el-icon-plus'" />
                             </div>
                         </div>
@@ -171,7 +169,7 @@ export default class ExtendActionTimeline extends Vue {
             }
             this.usertasksLength = this.usertasksIndex - 1;
             this.$forceUpdate();
-        }
+        }  
     }
 
     /**

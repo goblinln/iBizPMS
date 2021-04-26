@@ -123,6 +123,18 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "HasDeleted",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEACTIONS/HasDeleted.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "HasDeleted"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "Save",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -339,6 +351,18 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "CheckKey"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "HasDeleted",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEACTIONS/HasDeleted.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "HasDeleted"
     },
     "builtinMethod" : false
   }, {

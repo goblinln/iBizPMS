@@ -158,6 +158,9 @@ public class UserTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             else if (iPSDEAction.getName().equals("CheckKey")) {
                 return usertplService.checkKey((UserTpl) args[0]);
             }
+            else if (iPSDEAction.getName().equals("hasDeleted")) {
+                return usertplService.hasDeleted((UserTpl) args[0]);
+            }
             else if (iPSDEAction.getName().equals("Save")) {
                 return usertplService.save((UserTpl) args[0]);
             }
@@ -270,6 +273,9 @@ public class UserTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         }
         else if (action.equals("checkKey")) {
             return aroundAction("CheckKey", point);
+        }
+        else if (action.equals("hasDeleted")) {
+            return aroundAction("hasDeleted", point);
         }
         else if (action.equals("save")) {
             return aroundAction("Save", point);

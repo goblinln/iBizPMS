@@ -194,6 +194,10 @@ public class AuthenticationUser implements UserDetails, net.ibizsys.runtime.secu
     @JsonIgnore
     private Collection<GrantedAuthority> authorities;
     /**
+     * 是否为管理员
+     */
+    private int adminuser;
+    /**
      * 是否为超级管理员
      */
     private int superuser;

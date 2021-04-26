@@ -163,6 +163,21 @@ public class TestSuiteServiceImpl extends ServiceImpl<TestSuiteMapper, TestSuite
     }
     @Override
     @Transactional
+    public TestSuite linkCase(TestSuite et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean linkCaseBatch(List<TestSuite> etList) {
+        for(TestSuite et : etList) {
+            linkCase(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public TestSuite mobTestSuiteCount(TestSuite et) {
          return et ;
     }
@@ -234,6 +249,21 @@ public class TestSuiteServiceImpl extends ServiceImpl<TestSuiteMapper, TestSuite
         if (update.size() > 0) {
             getProxyService().updateBatch(update);
         }
+    }
+
+    @Override
+    @Transactional
+    public TestSuite unlinkCase(TestSuite et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean unlinkCaseBatch(List<TestSuite> etList) {
+        for(TestSuite et : etList) {
+            unlinkCase(et);
+        }
+        return true;
     }
 
 

@@ -174,6 +174,17 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
         return res;
     }
     /**
+     * HasDeleted
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof UserTplService
+     */
+    async HasDeleted(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/usertpls/${_context.usertpl}/hasdeleted`, _data);
+    }
+    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
