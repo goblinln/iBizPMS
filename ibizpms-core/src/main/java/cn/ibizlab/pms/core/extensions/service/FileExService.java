@@ -43,7 +43,7 @@ public class FileExService extends FileServiceImpl {
             }
             this.updateBatch(list);
         }
-        return et);
+        return et;
     }
     /**
      * [UpdateObjectIDForPmsEe:保存附件] 行为扩展
