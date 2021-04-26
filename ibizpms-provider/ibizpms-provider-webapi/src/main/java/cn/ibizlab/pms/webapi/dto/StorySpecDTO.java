@@ -108,7 +108,6 @@ public class StorySpecDTO extends DTOBase implements Serializable {
      */
     @JSONField(name = "title")
     @JsonProperty("title")
-    @NotBlank(message = "[需求名称]不允许为空!")
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("需求名称")
     private String title;

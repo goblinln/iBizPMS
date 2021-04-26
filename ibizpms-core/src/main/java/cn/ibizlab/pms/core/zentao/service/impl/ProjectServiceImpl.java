@@ -285,6 +285,21 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
 
     @Override
     @Transactional
+    public Project importPlanStories(Project et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean importPlanStoriesBatch(List<Project> etList) {
+        for(Project et : etList) {
+            importPlanStories(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public Project linkStory(Project et) {
         //自定义代码
         return et;

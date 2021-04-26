@@ -250,6 +250,9 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             else if (iPSDEAction.getName().equals("Close")) {
                 return projectService.close((Project) args[0]);
             }
+            else if (iPSDEAction.getName().equals("importPlanStories")) {
+                return projectService.importPlanStories((Project) args[0]);
+            }
             else if (iPSDEAction.getName().equals("LinkStory")) {
                 return projectService.linkStory((Project) args[0]);
             }
@@ -413,6 +416,9 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         }
         else if (action.equals("close")) {
             return aroundAction("Close", point);
+        }
+        else if (action.equals("importPlanStories")) {
+            return aroundAction("importPlanStories", point);
         }
         else if (action.equals("linkStory")) {
             return aroundAction("LinkStory", point);

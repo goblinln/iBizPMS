@@ -42213,7 +42213,7 @@
     "relation_name":"DER1N_ZT_STORYSPEC_ZT_STORY_STORY",
     "relation_codename":"ZTStory",
     "field_type":"PICKUPTEXT",
-    "nullable":0,
+    "nullable":1,
     "physical_field":1,
     "data_type":"VARCHAR",
     "data_length":255,

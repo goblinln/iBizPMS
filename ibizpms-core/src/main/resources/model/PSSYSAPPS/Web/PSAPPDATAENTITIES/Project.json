@@ -187,6 +187,18 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "ImportPlanStories",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/ImportPlanStories.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ImportPlanStories"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "LinkStory",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -1973,6 +1985,18 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Close"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "ImportPlanStories",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/ImportPlanStories.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ImportPlanStories"
     },
     "builtinMethod" : false
   }, {

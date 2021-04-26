@@ -44,6 +44,8 @@ public interface IProjectService extends IService<Project> {
     boolean checkKey(Project et);
     Project close(Project et);
     boolean closeBatch(List<Project> etList);
+    Project importPlanStories(Project et);
+    boolean importPlanStoriesBatch(List<Project> etList);
     Project linkStory(Project et);
     boolean linkStoryBatch(List<Project> etList);
     Project manageMembers(Project et);

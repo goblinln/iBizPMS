@@ -517,7 +517,6 @@
     "stdDataType" : 25,
     "stringLength" : 255,
     "valueFormat" : "%1$s",
-    "allowEmpty" : false,
     "enableQuickSearch" : true,
     "linkDEField" : true,
     "majorDEField" : true

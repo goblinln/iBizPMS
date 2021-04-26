@@ -206,6 +206,23 @@ public class ProjectResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @ApiOperation(value = "项目关联需求-按计划关联", tags = {"项目" },  notes = "项目关联需求-按计划关联")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/importplanstories")
+    public ResponseEntity<ProjectDTO> importPlanStories(@PathVariable("project_id") Long project_id, @RequestBody ProjectDTO projectdto) {
+        Project domain = projectMapping.toDomain(projectdto);
+        domain.setId(project_id);
+        domain = projectService.importPlanStories(domain);
+        projectdto = projectMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(projectdto);
+    }
+    @ApiOperation(value = "批量处理[项目关联需求-按计划关联]", tags = {"项目" },  notes = "批量处理[项目关联需求-按计划关联]")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/importplanstoriesbatch")
+    public ResponseEntity<Boolean> importPlanStoriesBatch(@RequestBody List<ProjectDTO> projectdtos) {
+        List<Project> domains = projectMapping.toDomain(projectdtos);
+        boolean result = projectService.importPlanStoriesBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
     @PreAuthorize("@ProjectRuntime.test(#project_id,'MANAGE')")
     @ApiOperation(value = "关联需求", tags = {"项目" },  notes = "关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/linkstory")

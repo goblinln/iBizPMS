@@ -229,6 +229,13 @@
   }, {
     "actionMode" : "UNKNOWN",
     "actionType" : "USERCUSTOM",
+    "codeName" : "ImportPlanStories",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/ImportPlanStories.json",
+    "logicName" : "项目关联需求-按计划关联",
+    "name" : "importPlanStories"
+  }, {
+    "actionMode" : "UNKNOWN",
+    "actionType" : "USERCUSTOM",
     "codeName" : "LinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/LinkStory.json",
     "logicName" : "关联需求",

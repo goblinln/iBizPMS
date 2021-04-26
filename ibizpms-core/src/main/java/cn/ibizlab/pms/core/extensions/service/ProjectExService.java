@@ -52,6 +52,16 @@ public class ProjectExService extends ProjectServiceImpl {
         return super.close(et);
     }
     /**
+     * [ImportPlanStories:项目关联需求-按计划关联] 行为扩展
+     * @param et
+     * @return
+     */
+    @Override
+    @Transactional
+    public Project importPlanStories(Project et) {
+        return super.importPlanStories(et);
+    }
+    /**
      * [LinkStory:关联需求] 行为扩展
      * @param et
      * @return
