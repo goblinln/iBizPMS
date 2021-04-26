@@ -342,6 +342,16 @@ public class StoryExService extends StoryServiceImpl {
         return super.sendMsgPreProcess(et);
     }
     /**
+     * [SetStage:设置需求阶段] 行为扩展
+     * @param et
+     * @return
+     */
+    @Override
+    @Transactional
+    public Story setStage(Story et) {
+        return super.setStage(et);
+    }
+    /**
      * [SyncFromIbiz:同步Ibz平台实体] 行为扩展
      * @param et
      * @return

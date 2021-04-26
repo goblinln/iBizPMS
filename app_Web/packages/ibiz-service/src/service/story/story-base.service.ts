@@ -940,6 +940,21 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         return this.http.post(`/stories/${_context.story}/sendmsgpreprocess`, _data);
     }
     /**
+     * SetStage
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async SetStage(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/setstage`, _data);
+        }
+        return this.http.post(`/stories/${_context.story}/setstage`, _data);
+    }
+    /**
      * StoryFavorites
      *
      * @param {*} [_context={}]

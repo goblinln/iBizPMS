@@ -797,6 +797,21 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
 
     @Override
     @Transactional
+    public Story setStage(Story et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean setStageBatch(List<Story> etList) {
+        for(Story et : etList) {
+            setStage(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public Story storyFavorites(Story et) {
          return et ;
     }

@@ -695,6 +695,18 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "SetStage",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SetStage"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "StoryFavorites",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2582,6 +2594,18 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "SendMsgPreProcess"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "SetStage",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "SetStage"
     },
     "builtinMethod" : false
   }, {

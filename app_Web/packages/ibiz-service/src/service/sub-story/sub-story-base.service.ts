@@ -1110,6 +1110,25 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         return this.http.post(`/substories/${_context.substory}/sendmsgpreprocess`, _data);
     }
     /**
+     * SetStage
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubStoryService
+     */
+    async SetStage(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && _context.substory) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/${_context.substory}/setstage`, _data);
+        }
+        if (_context.story && _context.substory) {
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/substories/${_context.substory}/setstage`, _data);
+        }
+        return this.http.post(`/substories/${_context.substory}/setstage`, _data);
+    }
+    /**
      * StoryFavorites
      *
      * @param {*} [_context={}]

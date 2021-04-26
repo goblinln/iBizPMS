@@ -757,6 +757,23 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @ApiOperation(value = "设置需求阶段", tags = {"需求" },  notes = "设置需求阶段")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/setstage")
+    public ResponseEntity<StoryDTO> setStage(@PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        domain.setId(story_id);
+        domain = storyService.setStage(domain);
+        storydto = storyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+    @ApiOperation(value = "批量处理[设置需求阶段]", tags = {"需求" },  notes = "批量处理[设置需求阶段]")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/setstagebatch")
+    public ResponseEntity<Boolean> setStageBatch(@RequestBody List<StoryDTO> storydtos) {
+        List<Story> domains = storyMapping.toDomain(storydtos);
+        boolean result = storyService.setStageBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
     @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
     @ApiOperation(value = "需求收藏", tags = {"需求" },  notes = "需求收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/storyfavorites")
@@ -2129,6 +2146,23 @@ public class StoryResource {
     public ResponseEntity<Boolean> sendMsgPreProcessByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<StoryDTO> storydtos) {
         List<Story> domains = storyMapping.toDomain(storydtos);
         boolean result = storyService.sendMsgPreProcessBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据产品需求", tags = {"需求" },  notes = "根据产品需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/setstage")
+    public ResponseEntity<StoryDTO> setStageByProduct(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StoryDTO storydto) {
+        Story domain = storyMapping.toDomain(storydto);
+        domain.setProduct(product_id);
+        domain.setId(story_id);
+        domain = storyService.setStage(domain) ;
+        storydto = storyMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(storydto);
+    }
+    @ApiOperation(value = "批量处理[根据产品需求]", tags = {"需求" },  notes = "批量处理[根据产品需求]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/setstagebatch")
+    public ResponseEntity<Boolean> setStageByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<StoryDTO> storydtos) {
+        List<Story> domains = storyMapping.toDomain(storydtos);
+        boolean result = storyService.setStageBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")

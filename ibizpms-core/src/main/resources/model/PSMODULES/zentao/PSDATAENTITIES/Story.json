@@ -428,6 +428,13 @@
     "name" : "sendMsgPreProcess"
   }, {
     "actionMode" : "UNKNOWN",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "SetStage",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json",
+    "logicName" : "设置需求阶段",
+    "name" : "setStage"
+  }, {
+    "actionMode" : "UNKNOWN",
     "actionType" : "DELOGIC",
     "codeName" : "StoryFavorites",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryFavorites.json",

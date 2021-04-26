@@ -757,6 +757,23 @@ public class SubStoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @ApiOperation(value = "设置需求阶段", tags = {"需求" },  notes = "设置需求阶段")
+	@RequestMapping(method = RequestMethod.POST, value = "/substories/{substory_id}/setstage")
+    public ResponseEntity<SubStoryDTO> setStage(@PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
+        Story domain = substoryMapping.toDomain(substorydto);
+        domain.setId(substory_id);
+        domain = storyService.setStage(domain);
+        substorydto = substoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(substorydto);
+    }
+    @ApiOperation(value = "批量处理[设置需求阶段]", tags = {"需求" },  notes = "批量处理[设置需求阶段]")
+	@RequestMapping(method = RequestMethod.POST, value = "/substories/setstagebatch")
+    public ResponseEntity<Boolean> setStageBatch(@RequestBody List<SubStoryDTO> substorydtos) {
+        List<Story> domains = substoryMapping.toDomain(substorydtos);
+        boolean result = storyService.setStageBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
     @PreAuthorize("@StoryRuntime.test(#substory_id,'READ')")
     @ApiOperation(value = "需求收藏", tags = {"需求" },  notes = "需求收藏")
 	@RequestMapping(method = RequestMethod.POST, value = "/substories/{substory_id}/storyfavorites")
@@ -2129,6 +2146,23 @@ public class SubStoryResource {
     public ResponseEntity<Boolean> sendMsgPreProcessByStory(@PathVariable("story_id") Long story_id, @RequestBody List<SubStoryDTO> substorydtos) {
         List<Story> domains = substoryMapping.toDomain(substorydtos);
         boolean result = storyService.sendMsgPreProcessBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据需求需求", tags = {"需求" },  notes = "根据需求需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/substories/{substory_id}/setstage")
+    public ResponseEntity<SubStoryDTO> setStageByStory(@PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
+        Story domain = substoryMapping.toDomain(substorydto);
+        domain.setParent(story_id);
+        domain.setId(substory_id);
+        domain = storyService.setStage(domain) ;
+        substorydto = substoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(substorydto);
+    }
+    @ApiOperation(value = "批量处理[根据需求需求]", tags = {"需求" },  notes = "批量处理[根据需求需求]")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/substories/setstagebatch")
+    public ResponseEntity<Boolean> setStageByStory(@PathVariable("story_id") Long story_id, @RequestBody List<SubStoryDTO> substorydtos) {
+        List<Story> domains = substoryMapping.toDomain(substorydtos);
+        boolean result = storyService.setStageBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
@@ -3522,6 +3556,23 @@ public class SubStoryResource {
     public ResponseEntity<Boolean> sendMsgPreProcessByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody List<SubStoryDTO> substorydtos) {
         List<Story> domains = substoryMapping.toDomain(substorydtos);
         boolean result = storyService.sendMsgPreProcessBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据产品需求需求", tags = {"需求" },  notes = "根据产品需求需求")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/substories/{substory_id}/setstage")
+    public ResponseEntity<SubStoryDTO> setStageByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("substory_id") Long substory_id, @RequestBody SubStoryDTO substorydto) {
+        Story domain = substoryMapping.toDomain(substorydto);
+        domain.setParent(story_id);
+        domain.setId(substory_id);
+        domain = storyService.setStage(domain) ;
+        substorydto = substoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(substorydto);
+    }
+    @ApiOperation(value = "批量处理[根据产品需求需求]", tags = {"需求" },  notes = "批量处理[根据产品需求需求]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/substories/setstagebatch")
+    public ResponseEntity<Boolean> setStageByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody List<SubStoryDTO> substorydtos) {
+        List<Story> domains = substoryMapping.toDomain(substorydtos);
+        boolean result = storyService.setStageBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")

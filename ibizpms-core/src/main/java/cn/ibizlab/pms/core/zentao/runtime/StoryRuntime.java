@@ -364,6 +364,9 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             else if (iPSDEAction.getName().equals("sendMsgPreProcess")) {
                 return storyService.sendMsgPreProcess((Story) args[0]);
             }
+            else if (iPSDEAction.getName().equals("setStage")) {
+                return storyService.setStage((Story) args[0]);
+            }
             else if (iPSDEAction.getName().equals("StoryFavorites")) {
                 return storyService.storyFavorites((Story) args[0]);
             }
@@ -593,6 +596,9 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         }
         else if (action.equals("sendMsgPreProcess")) {
             return aroundAction("sendMsgPreProcess", point);
+        }
+        else if (action.equals("setStage")) {
+            return aroundAction("setStage", point);
         }
         else if (action.equals("storyFavorites")) {
             return aroundAction("StoryFavorites", point);

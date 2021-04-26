@@ -108,6 +108,8 @@ public interface IStoryService extends IService<Story> {
     boolean sendMessageBatch(List<Story> etList);
     Story sendMsgPreProcess(Story et);
     boolean sendMsgPreProcessBatch(List<Story> etList);
+    Story setStage(Story et);
+    boolean setStageBatch(List<Story> etList);
     Story storyFavorites(Story et);
     boolean storyFavoritesBatch(List<Story> etList);
     Story storyNFavorites(Story et);
