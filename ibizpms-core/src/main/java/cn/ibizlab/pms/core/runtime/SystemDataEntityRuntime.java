@@ -5,14 +5,17 @@ import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
 import net.ibizsys.model.dataentity.der.IPSDER1N;
 import net.ibizsys.model.dataentity.der.IPSDERBase;
+import net.ibizsys.model.res.IPSSysSequence;
 import net.ibizsys.runtime.IDynaInstRuntime;
 import net.ibizsys.runtime.dataentity.der.DERTypes;
+import net.ibizsys.runtime.res.ISysSequenceRuntime;
 import net.ibizsys.runtime.util.IEntityBase;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.springframework.util.ObjectUtils;
 
+import java.util.Iterator;
 import java.util.List;
 
 public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBase {
@@ -90,6 +93,7 @@ public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBas
         }
     }
 
+    @Override
     protected String getFieldDataSetSortExp(IPSDEField iPSDEField) throws Exception {
         String fieldExp = super.getFieldDataSetSortExp(iPSDEField);
         if(StringUtils.isBlank(fieldExp))
@@ -99,4 +103,55 @@ public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBas
         }
         return fieldExp;
     }
+
+    @Override
+    protected void fillEntityDefaultValues(IEntityBase arg0, String strActionName, IPSDEAction iPSDEAction, IPSDataEntity iPSDataEntity, Object actionData) throws Throwable {
+        List<IPSDEField> psDEFields = iPSDataEntity.getAllPSDEFields();
+        if (psDEFields != null) {
+            boolean bCreateMode = "create".equals(strActionName) || iPSDEAction != null && "CREATE".equals(iPSDEAction.getActionMode());
+            Iterator var8 = psDEFields.iterator();
+
+            while(true) {
+                while(true) {
+                    IPSDEField iPSDEField;
+                    while(true) {
+                        if (!var8.hasNext()) {
+                            return;
+                        }
+
+                        iPSDEField = (IPSDEField)var8.next();
+                        if (this.isFillFieldDefaultValueWhenNull()) {
+                            if (this.getFieldValue(arg0, iPSDEField) != null) {
+                                continue;
+                            }
+                        } else if (this.containsFieldValue(arg0, iPSDEField)) {
+                            continue;
+                        }
+                        break;
+                    }
+
+                    String strSequenceMode = iPSDEField.getSequenceMode();
+                    Object objValue;
+                    if (org.springframework.util.StringUtils.hasLength(strSequenceMode) && !"NONE".equals(strSequenceMode) && ("CREATE".equals(strSequenceMode) && bCreateMode || "GETDRAFT".equals(strSequenceMode) && !bCreateMode)) {
+                        IPSSysSequence iPSSysSequence = iPSDEField.getPSSysSequence();
+                        ISysSequenceRuntime iSysSequenceRuntime = this.getCurrentSystemRuntimeBase(false).getSysSequenceRuntime(iPSSysSequence);
+                        objValue = iSysSequenceRuntime.get(arg0, iPSDEField, this);
+                        this.setFieldValue(arg0, iPSDEField, objValue);
+                    } else {
+                        String strDefaultValue = iPSDEField.getDefaultValue();
+                        String strDefaultValueType = iPSDEField.getDefaultValueType();
+                        if (org.springframework.util.StringUtils.hasLength(strDefaultValue) || org.springframework.util.StringUtils.hasLength(strDefaultValueType)) {
+                            objValue = this.calcFieldValue(arg0, iPSDEField, strDefaultValueType, strDefaultValue);
+                            if(objValue.equals("#EMPTY")) {
+                                this.setFieldValue(arg0, iPSDEField, "");
+                            }else {
+                                this.setFieldValue(arg0, iPSDEField, objValue);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }

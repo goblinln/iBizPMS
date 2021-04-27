@@ -42,7 +42,7 @@ public class DEFieldDefaultValueAspect
      * @param point
      * @throws Exception
      */
-    @Before(value = "execution(* cn.ibizlab.pms.core.*.service.*.create(..)) || execution(* cn.ibizlab.pms.core.util.ibizzentao.helper.*.create(..))")
+    @Before(value = "execution(* cn.ibizlab.pms.core.*.service.*.create(..))")
     public void BeforeCreate(JoinPoint point) throws Exception {
         fillDEFieldDefaultValue(point);
     }
@@ -56,7 +56,7 @@ public class DEFieldDefaultValueAspect
      * @param point
      * @throws Exception
      */
-    @Before(value = "execution(* cn.ibizlab.pms.core.*.service.*.update(..)) || execution(* cn.ibizlab.pms.core.util.ibizzentao.helper.*.edit(..))")
+    @Before(value = "execution(* cn.ibizlab.pms.core.*.service.*.update(..))")
     public void BeforeUpdate(JoinPoint point) throws Exception {
         fillDEFieldDefaultValue(point);
     }
@@ -206,10 +206,10 @@ public class DEFieldDefaultValueAspect
                         et.set(fieldname, curUser.getUserid());
                         break;
                     case OPERATORNAME:
-                        et.set(fieldname, curUser.getPersonname());
+                        et.set(fieldname, curUser.getLoginname());
                         break;
                     case CURTIME:
-                        et.set(fieldname, new Timestamp(new Date().getTime()));
+                        et.set(fieldname, new Timestamp(System.currentTimeMillis()));
                         break;
                     case APPDATA:
                         //暂未实现
@@ -238,19 +238,19 @@ public class DEFieldDefaultValueAspect
                     et.set(fieldname, StringUtils.isEmpty(curUser.getUserid()) ? et.get(TAG_PERSONID) : curUser.getUserid());
                     break;
                 case CREATEMANNAME:
-                    et.set(fieldname, StringUtils.isEmpty(curUser.getPersonname()) ? et.get(TAG_PERSONNAME) : curUser.getPersonname());
+                    et.set(fieldname, StringUtils.isEmpty(curUser.getLoginname()) ? et.get(TAG_PERSONNAME) : curUser.getLoginname());
                     break;
                 case UPDATEMAN:
                     et.set(fieldname, StringUtils.isEmpty(curUser.getUserid()) ? et.get(TAG_PERSONID) : curUser.getUserid());
                     break;
                 case UPDATEMANNAME:
-                    et.set(fieldname, StringUtils.isEmpty(curUser.getPersonname()) ? et.get(TAG_PERSONNAME) : curUser.getPersonname());
+                    et.set(fieldname, StringUtils.isEmpty(curUser.getLoginname()) ? et.get(TAG_PERSONNAME) : curUser.getLoginname());
                     break;
                 case CREATEDATE:
-                    et.set(fieldname, new Timestamp(new Date().getTime()));
+                    et.set(fieldname, new Timestamp(System.currentTimeMillis()));
                     break;
                 case UPDATEDATE:
-                    et.set(fieldname, new Timestamp(new Date().getTime()));
+                    et.set(fieldname, new Timestamp(System.currentTimeMillis()));
                     break;
                 case ORGID:
                     if(org.springframework.util.StringUtils.isEmpty(fieldValue)) {
