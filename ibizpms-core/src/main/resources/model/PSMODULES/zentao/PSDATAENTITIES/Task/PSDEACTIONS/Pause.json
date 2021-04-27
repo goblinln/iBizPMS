@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CUSTOM",
   "actionType" : "USERCUSTOM",
   "codeName" : "Pause",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Pause.json",

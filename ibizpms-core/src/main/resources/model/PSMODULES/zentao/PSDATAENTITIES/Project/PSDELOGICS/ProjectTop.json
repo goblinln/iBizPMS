@@ -5,47 +5,21 @@
   "logicName" : "置顶",
   "logicSubType" : "NONE",
   "name" : "置顶",
-  "getPSDELogicLinks" : [ {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Deaction1"
-    },
-    "name" : "连接1953",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam1"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam1"
-    },
-    "name" : "连接5143",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall1"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall1"
-    },
-    "name" : "连接2211",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "defaultLink" : false
-  } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
     "name" : "设置参数",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接1953"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Deaction1"
+      },
+      "name" : "连接1953",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      },
+      "defaultLink" : false
     } ],
     "getPSDELogicNodeParams" : [ {
       "dstFieldName" : "OBJECTID",
@@ -92,8 +66,16 @@
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取置顶最大排序值",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接5143"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      },
+      "name" : "连接5143",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      },
+      "defaultLink" : false
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "用户全局对象[srfloginname]",
@@ -124,8 +106,16 @@
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接2211"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      },
+      "name" : "连接2211",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      },
+      "defaultLink" : false
     } ],
     "parallelOutput" : true
   } ],

@@ -5,62 +5,6 @@
   "logicName" : "我未提交的（计数器）",
   "logicSubType" : "NONE",
   "name" : "我未提交的（计数器）",
-  "getPSDELogicLinks" : [ {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall3"
-    },
-    "name" : "连接7180",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall2"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "MyUnReadCnt"
-    },
-    "name" : "连接9813",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall3"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall2"
-    },
-    "name" : "连接7044",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall1"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall4"
-    },
-    "name" : "连接1334",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "MyUnReadCnt"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall1"
-    },
-    "name" : "连接879",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "defaultLink" : false
-  } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Rawsqlcall4",
     "getDstPSDELogicParam" : {
@@ -85,8 +29,16 @@
     "logicNodeType" : "RAWSQLCALL",
     "name" : "统计我未提交的周报",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接7180"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall3"
+      },
+      "name" : "连接7180",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall2"
+      },
+      "defaultLink" : false
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "用户全局对象[srfloginname]",
@@ -104,8 +56,16 @@
     "logicNodeType" : "RAWSQLCALL",
     "name" : "统计我收到的（未读）",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接1334"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall4"
+      },
+      "name" : "连接1334",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "MyUnReadCnt"
+      },
+      "defaultLink" : false
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "用户全局对象[srfloginname]",
@@ -148,8 +108,16 @@
     "logicNodeType" : "RAWSQLCALL",
     "name" : "统计我未提交的月报",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接9813"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "MyUnReadCnt"
+      },
+      "name" : "连接9813",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall3"
+      },
+      "defaultLink" : false
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "用户全局对象[srfloginname]",
@@ -167,8 +135,16 @@
     "logicNodeType" : "RAWSQLCALL",
     "name" : "统计我未提交的日报数",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接7044"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall2"
+      },
+      "name" : "连接7044",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      },
+      "defaultLink" : false
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "用户全局对象[srfloginname]",
@@ -182,8 +158,16 @@
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接879"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      },
+      "name" : "连接879",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      },
+      "defaultLink" : false
     } ],
     "parallelOutput" : true
   } ],

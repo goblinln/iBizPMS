@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CUSTOM",
   "actionType" : "USERCUSTOM",
   "codeName" : "MarkRead",
   "dynaModelFilePath" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProMessage/PSDEACTIONS/MarkRead.json",

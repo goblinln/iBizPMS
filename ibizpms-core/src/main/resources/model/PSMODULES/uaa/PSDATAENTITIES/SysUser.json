@@ -45,7 +45,7 @@
     "orderValue" : 41,
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "ChangePwd",
     "dynaModelFilePath" : "PSMODULES/uaa/PSDATAENTITIES/SysUser/PSDEACTIONS/ChangePwd.json",

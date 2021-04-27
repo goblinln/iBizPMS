@@ -5,110 +5,100 @@
   "logicName" : "根据计划或需求获取相关项目",
   "logicSubType" : "NONE",
   "name" : "根据计划或需求获取相关项目",
-  "getPSDELogicLinks" : [ {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam1"
-    },
-    "name" : "连接3730",
-    "getPSDELogicLinkGroupCond" : {
-      "groupOP" : "AND",
-      "logicType" : "GROUP",
-      "getPSDELogicLinkConds" : [ {
-        "condOP" : "ISNULL",
-        "dstFieldName" : "PLAN",
-        "getDstLogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "logicType" : "SINGLE",
-        "name" : "Default[PLAN] 值为空(Nil)"
-      }, {
-        "condOP" : "ISNULL",
-        "dstFieldName" : "STORY",
-        "getDstLogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "logicType" : "SINGLE",
-        "name" : "Default[STORY] 值为空(Nil)"
-      } ],
-      "notMode" : false,
-      "id" : "d63f5ab0738f93ad91fc5eb5ed466638"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall1"
-    },
-    "name" : "连接1706",
-    "getPSDELogicLinkGroupCond" : {
-      "groupOP" : "AND",
-      "logicType" : "GROUP",
-      "getPSDELogicLinkConds" : [ {
-        "condOP" : "ISNOTNULL",
-        "dstFieldName" : "STORY",
-        "getDstLogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "logicType" : "SINGLE",
-        "name" : "Default[STORY] 值不为空(NotNil)"
-      } ],
-      "notMode" : false,
-      "id" : "821f2daee10588ada3e72da13b1b161c"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall2"
-    },
-    "name" : "连接5784",
-    "getPSDELogicLinkGroupCond" : {
-      "groupOP" : "AND",
-      "logicType" : "GROUP",
-      "getPSDELogicLinkConds" : [ {
-        "condOP" : "ISNOTNULL",
-        "dstFieldName" : "PLAN",
-        "getDstLogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "logicType" : "SINGLE",
-        "name" : "Default[PLAN] 值不为空(NotNil)"
-      } ],
-      "notMode" : false,
-      "id" : "917ad9c2835d133e829cb39d5a9db061"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "defaultLink" : false
-  } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接3730"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      },
+      "name" : "连接3730",
+      "getPSDELogicLinkGroupCond" : {
+        "groupOP" : "AND",
+        "logicType" : "GROUP",
+        "getPSDELogicLinkConds" : [ {
+          "condOP" : "ISNULL",
+          "dstFieldName" : "PLAN",
+          "getDstLogicParam" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "logicType" : "SINGLE",
+          "name" : "Default[PLAN] 值为空(Nil)"
+        }, {
+          "condOP" : "ISNULL",
+          "dstFieldName" : "STORY",
+          "getDstLogicParam" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "logicType" : "SINGLE",
+          "name" : "Default[STORY] 值为空(Nil)"
+        } ],
+        "notMode" : false,
+        "id" : "d63f5ab0738f93ad91fc5eb5ed466638"
+      },
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      },
+      "defaultLink" : false
     }, {
-      "modelref" : true,
-      "id" : "连接1706"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      },
+      "name" : "连接1706",
+      "getPSDELogicLinkGroupCond" : {
+        "groupOP" : "AND",
+        "logicType" : "GROUP",
+        "getPSDELogicLinkConds" : [ {
+          "condOP" : "ISNOTNULL",
+          "dstFieldName" : "STORY",
+          "getDstLogicParam" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "logicType" : "SINGLE",
+          "name" : "Default[STORY] 值不为空(NotNil)"
+        } ],
+        "notMode" : false,
+        "id" : "821f2daee10588ada3e72da13b1b161c"
+      },
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      },
+      "defaultLink" : false
     }, {
-      "modelref" : true,
-      "id" : "连接5784"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall2"
+      },
+      "name" : "连接5784",
+      "getPSDELogicLinkGroupCond" : {
+        "groupOP" : "AND",
+        "logicType" : "GROUP",
+        "getPSDELogicLinkConds" : [ {
+          "condOP" : "ISNOTNULL",
+          "dstFieldName" : "PLAN",
+          "getDstLogicParam" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "logicType" : "SINGLE",
+          "name" : "Default[PLAN] 值不为空(NotNil)"
+        } ],
+        "notMode" : false,
+        "id" : "917ad9c2835d133e829cb39d5a9db061"
+      },
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      },
+      "defaultLink" : false
     } ],
     "parallelOutput" : true
   }, {

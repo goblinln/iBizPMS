@@ -74,7 +74,7 @@
     "orderValue" : 41,
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "Activate",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Activate.json",
@@ -86,14 +86,14 @@
     },
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "AllPush",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/AllPush.json",
     "logicName" : "全部推送",
     "name" : "AllPush"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "AssignTo",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/AssignTo.json",
@@ -105,56 +105,56 @@
     },
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "BatchAssignTo",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchAssignTo.json",
     "logicName" : "批量指派",
     "name" : "BatchAssignTo"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "BatchChangeBranch",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchChangeBranch.json",
     "logicName" : "批量变更平台/分支",
     "name" : "BatchChangeBranch"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "BatchChangeModule",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchChangeModule.json",
     "logicName" : "批量变更模块",
     "name" : "BatchChangeModule"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "BatchChangePlan",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchChangePlan.json",
     "logicName" : "批量关联计划",
     "name" : "BatchChangePlan"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "BatchChangeStage",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchChangeStage.json",
     "logicName" : "批量变更阶段",
     "name" : "BatchChangeStage"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "BatchClose",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchClose.json",
     "logicName" : "批量关闭",
     "name" : "BatchClose"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "BatchReview",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchReview.json",
     "logicName" : "批量评审",
     "name" : "BatchReview"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "BatchUnlinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchUnlinkStory.json",
@@ -162,14 +162,14 @@
     "name" : "BatchUnlinkStory",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "BugToStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BugToStory.json",
     "logicName" : "bug转需求",
     "name" : "BugToStory"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "BuildBatchUnlinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BuildBatchUnlinkStory.json",
@@ -181,7 +181,7 @@
     },
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "BuildLinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BuildLinkStory.json",
@@ -193,7 +193,7 @@
     },
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "BuildUnlinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BuildUnlinkStory.json",
@@ -205,7 +205,7 @@
     },
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "DELOGIC",
     "codeName" : "BuildUnlinkStorys",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BuildUnlinkStorys.json",
@@ -216,7 +216,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/buildUnlinkStorys.json"
     }
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "Change",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Change.json",
@@ -237,7 +237,7 @@
     "name" : "CheckKey",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "Close",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Close.json",
@@ -292,7 +292,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/GetCurUserConcat.json"
     }
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "ImportPlanStories",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ImportPlanStories.json",
@@ -300,7 +300,7 @@
     "name" : "importPlanStories",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "LinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/LinkStory.json",
@@ -312,7 +312,7 @@
     },
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "ProjectBatchUnlinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectBatchUnlinkStory.json",
@@ -320,7 +320,7 @@
     "name" : "ProjectBatchUnlinkStory",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "ProjectLinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectLinkStory.json",
@@ -328,7 +328,7 @@
     "name" : "ProjectLinkStory",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "ProjectUnlinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectUnlinkStory.json",
@@ -336,7 +336,7 @@
     "name" : "ProjectUnlinkStory",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "DELOGIC",
     "codeName" : "ProjectUnlinkStorys",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectUnlinkStorys.json",
@@ -347,14 +347,14 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/projectUnlinkStorys.json"
     }
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "Push",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Push.json",
     "logicName" : "推送",
     "name" : "Push"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "ReleaseBatchUnlinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ReleaseBatchUnlinkStory.json",
@@ -366,7 +366,7 @@
     },
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "ReleaseLinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ReleaseLinkStory.json",
@@ -374,7 +374,7 @@
     "name" : "ReleaseLinkStory",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "ReleaseUnlinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ReleaseUnlinkStory.json",
@@ -386,14 +386,14 @@
     },
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "ResetReviewedBy",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ResetReviewedBy.json",
     "logicName" : "重置由谁评审",
     "name" : "ResetReviewedBy"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "Review",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Review.json",
@@ -413,28 +413,28 @@
     "name" : "Save",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "SendMessage",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SendMessage.json",
     "logicName" : "行为",
     "name" : "sendMessage"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "SendMsgPreProcess",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SendMsgPreProcess.json",
     "logicName" : "发送消息前置处理",
     "name" : "sendMsgPreProcess"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "SetStage",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json",
     "logicName" : "设置需求阶段",
     "name" : "setStage"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "DELOGIC",
     "codeName" : "StoryFavorites",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryFavorites.json",
@@ -445,7 +445,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/StoryFavorites.json"
     }
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "DELOGIC",
     "codeName" : "StoryNFavorites",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryNFavorites.json",
@@ -456,21 +456,21 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/StoryNFavorites.json"
     }
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "SyncFromIbiz",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SyncFromIbiz.json",
     "logicName" : "同步Ibz平台实体",
     "name" : "SyncFromIbiz"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "ToStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ToStory.json",
     "logicName" : "转需求",
     "name" : "toStory"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "UnlinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/UnlinkStory.json",
@@ -4980,18 +4980,6 @@
     "logicName" : "获取联系人",
     "logicSubType" : "NONE",
     "name" : "获取联系人",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Prepareparam1"
-      },
-      "name" : "连接7428",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    } ],
     "getPSDELogicNodes" : [ {
       "codeName" : "Prepareparam1",
       "logicNodeType" : "PREPAREPARAM",
@@ -5017,8 +5005,16 @@
       "logicNodeType" : "BEGIN",
       "name" : "开始",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接7428"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "name" : "连接7428",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
       } ],
       "parallelOutput" : true
     } ],
@@ -5043,40 +5039,6 @@
     "logicName" : "GetStorySpecs",
     "logicSubType" : "NONE",
     "name" : "GetStorySpecs",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "name" : "连接987",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Prepareparam1"
-      },
-      "name" : "连接6939",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Deaction1"
-      },
-      "name" : "连接8758",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Prepareparam1"
-      },
-      "defaultLink" : false
-    } ],
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall1",
       "getDstPSDELogicParam" : {
@@ -5086,8 +5048,16 @@
       "logicNodeType" : "RAWSQLCALL",
       "name" : "获取数据",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接6939"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "name" : "连接6939",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "defaultLink" : false
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "Default[ID]",
@@ -5131,8 +5101,16 @@
       "logicNodeType" : "PREPAREPARAM",
       "name" : "参数",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接8758"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Deaction1"
+        },
+        "name" : "连接8758",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "defaultLink" : false
       } ],
       "getPSDELogicNodeParams" : [ {
         "dstFieldName" : "TITLE",
@@ -5183,8 +5161,16 @@
       "logicNodeType" : "BEGIN",
       "name" : "开始",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接987"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "name" : "连接987",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
       } ],
       "parallelOutput" : true
     } ],
@@ -5216,36 +5202,21 @@
     "logicName" : "需求收藏",
     "logicSubType" : "NONE",
     "name" : "需求收藏",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Deaction1"
-      },
-      "name" : "连接1062",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Prepareparam1"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Prepareparam1"
-      },
-      "name" : "连接7343",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    } ],
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
       "logicNodeType" : "BEGIN",
       "name" : "开始",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接7343"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "name" : "连接7343",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
       } ],
       "parallelOutput" : true
     }, {
@@ -5270,8 +5241,16 @@
       "logicNodeType" : "PREPAREPARAM",
       "name" : "设置收藏参数",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接1062"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Deaction1"
+        },
+        "name" : "连接1062",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "defaultLink" : false
       } ],
       "getPSDELogicNodeParams" : [ {
         "dstFieldName" : "OBJECTID",
@@ -5338,25 +5317,21 @@
     "logicName" : "需求取消收藏",
     "logicSubType" : "NONE",
     "name" : "需求取消收藏",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "name" : "连接9728",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    } ],
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
       "logicNodeType" : "BEGIN",
       "name" : "开始",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接9728"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "name" : "连接9728",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
       } ],
       "parallelOutput" : true
     }, {
@@ -5401,36 +5376,21 @@
     "logicName" : "buildUnlinkStorys",
     "logicSubType" : "NONE",
     "name" : "buildUnlinkStorys",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Prepareparam1"
-      },
-      "name" : "连接1292",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Deaction1"
-      },
-      "name" : "连接9262",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Prepareparam1"
-      },
-      "defaultLink" : false
-    } ],
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
       "logicNodeType" : "BEGIN",
       "name" : "开始",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接1292"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "name" : "连接1292",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
       } ],
       "parallelOutput" : true
     }, {
@@ -5438,8 +5398,16 @@
       "logicNodeType" : "PREPAREPARAM",
       "name" : "参数",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接9262"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Deaction1"
+        },
+        "name" : "连接9262",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "defaultLink" : false
       } ],
       "getPSDELogicNodeParams" : [ {
         "dstFieldName" : "build",
@@ -5510,36 +5478,21 @@
     "logicName" : "projectUnlinkStorys",
     "logicSubType" : "NONE",
     "name" : "projectUnlinkStorys",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Prepareparam1"
-      },
-      "name" : "连接2728",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Deaction1"
-      },
-      "name" : "连接7667",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Prepareparam1"
-      },
-      "defaultLink" : false
-    } ],
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
       "logicNodeType" : "BEGIN",
       "name" : "开始",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接2728"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "name" : "连接2728",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
       } ],
       "parallelOutput" : true
     }, {
@@ -5547,8 +5500,16 @@
       "logicNodeType" : "PREPAREPARAM",
       "name" : "准备参数",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接7667"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Deaction1"
+        },
+        "name" : "连接7667",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "defaultLink" : false
       } ],
       "getPSDELogicNodeParams" : [ {
         "dstFieldName" : "story",
@@ -5887,6 +5848,14 @@
     "logicName" : "激活_未收藏_细分",
     "mSTag" : "active__0__1",
     "name" : "激活_未收藏_细分",
+    "getPSDEMainStateActions" : [ {
+      "name" : "StoryFavorites",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryFavorites.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_FAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -8252,6 +8221,14 @@
     "logicName" : "草稿-已收藏_细分",
     "mSTag" : "draft__1__1",
     "name" : "草稿-已收藏_细分",
+    "getPSDEMainStateActions" : [ {
+      "name" : "StoryNFavorites",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryNFavorites.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_DELETE_BUT",
       "getPSDEOPPriv" : {

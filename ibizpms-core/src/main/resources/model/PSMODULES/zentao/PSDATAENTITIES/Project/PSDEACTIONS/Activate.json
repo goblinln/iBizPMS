@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CUSTOM",
   "actionType" : "USERCUSTOM",
   "codeName" : "Activate",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Activate.json",

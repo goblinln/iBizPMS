@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CUSTOM",
   "actionType" : "USERCUSTOM",
   "codeName" : "Putoff",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Putoff.json",

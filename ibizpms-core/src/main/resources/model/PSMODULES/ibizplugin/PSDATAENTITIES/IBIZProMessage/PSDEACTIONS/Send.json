@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CUSTOM",
   "actionType" : "USERCUSTOM",
   "codeName" : "Send",
   "dynaModelFilePath" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProMessage/PSDEACTIONS/Send.json",

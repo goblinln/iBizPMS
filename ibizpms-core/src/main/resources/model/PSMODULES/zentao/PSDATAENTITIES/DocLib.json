@@ -66,7 +66,7 @@
     "name" : "CheckKey",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "Collect",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Collect.json",
@@ -81,7 +81,7 @@
     "name" : "Save",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "UnCollect",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/UnCollect.json",
@@ -1645,25 +1645,21 @@
     "logicName" : "当前是否收藏文档库",
     "logicSubType" : "NONE",
     "name" : "当前是否收藏文档库",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "name" : "连接6543",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    } ],
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
       "logicNodeType" : "BEGIN",
       "name" : "开始",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接6543"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "name" : "连接6543",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
       } ],
       "parallelOutput" : true
     }, {

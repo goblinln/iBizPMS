@@ -165,7 +165,7 @@
     "name" : "CheckKey",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "PMEvaluation",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TaskEstimate/PSDEACTIONS/PMEvaluation.json",

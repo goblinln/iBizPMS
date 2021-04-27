@@ -53,14 +53,14 @@
     "name" : "CheckKey",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "MarkDone",
     "dynaModelFilePath" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProMessage/PSDEACTIONS/MarkDone.json",
     "logicName" : "标记已完成",
     "name" : "MarkDone"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "MarkRead",
     "dynaModelFilePath" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProMessage/PSDEACTIONS/MarkRead.json",
@@ -75,7 +75,7 @@
     "name" : "Save",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "Send",
     "dynaModelFilePath" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProMessage/PSDEACTIONS/Send.json",

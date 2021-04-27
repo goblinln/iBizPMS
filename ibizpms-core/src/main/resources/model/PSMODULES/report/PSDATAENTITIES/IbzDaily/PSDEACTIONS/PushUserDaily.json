@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CUSTOM",
   "actionType" : "USERCUSTOM",
   "codeName" : "PushUserDaily",
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/PushUserDaily.json",

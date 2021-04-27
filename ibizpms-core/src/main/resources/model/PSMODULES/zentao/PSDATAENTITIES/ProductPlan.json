@@ -70,7 +70,7 @@
     "orderValue" : 41,
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "BatchUnlinkBug",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/BatchUnlinkBug.json",
@@ -78,7 +78,7 @@
     "name" : "BatchUnlinkBug",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "BatchUnlinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/BatchUnlinkStory.json",
@@ -94,7 +94,7 @@
     "name" : "CheckKey",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "EeActivePlan",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeActivePlan.json",
@@ -102,7 +102,7 @@
     "name" : "EeActivePlan",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "EeCancelPlan",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeCancelPlan.json",
@@ -110,7 +110,7 @@
     "name" : "EeCancelPlan",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "EeClosePlan",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeClosePlan.json",
@@ -118,7 +118,7 @@
     "name" : "EeClosePlan",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "EeFinishPlan",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeFinishPlan.json",
@@ -126,7 +126,7 @@
     "name" : "EeFinishPlan",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "EePausePlan",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EePausePlan.json",
@@ -134,7 +134,7 @@
     "name" : "EePausePlan",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "EeRestartPlan",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeRestartPlan.json",
@@ -142,7 +142,7 @@
     "name" : "EeRestartPlan",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "EeStartPlan",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/EeStartPlan.json",
@@ -168,14 +168,14 @@
     "logicName" : "计算计划结束时间",
     "name" : "GetPlanEnd"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "ImportPlanTemplet",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/ImportPlanTemplet.json",
     "logicName" : "导入计划模板",
     "name" : "ImportPlanTemplet"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "LinkBug",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkBug.json",
@@ -183,7 +183,7 @@
     "name" : "LinkBug",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "LinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkStory.json",
@@ -191,7 +191,7 @@
     "name" : "LinkStory",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "LinkTask",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkTask.json",
@@ -199,7 +199,7 @@
     "name" : "LinkTask",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "DELOGIC",
     "codeName" : "MobProductPlanCounter",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/MobProductPlanCounter.json",
@@ -218,7 +218,7 @@
     "name" : "Save",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "UnlinkBug",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/UnlinkBug.json",
@@ -226,7 +226,7 @@
     "name" : "UnlinkBug",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "UnlinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/UnlinkStory.json",
@@ -2353,35 +2353,6 @@
     "logicName" : "获取开始日期和结束日期",
     "logicSubType" : "NONE",
     "name" : "获取开始日期和结束日期",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Prepareparam1"
-      },
-      "name" : "连接6861",
-      "getPSDELogicLinkGroupCond" : {
-        "groupOP" : "AND",
-        "logicType" : "GROUP",
-        "getPSDELogicLinkConds" : [ {
-          "condOP" : "EQ",
-          "dstFieldName" : "BEGINSTR",
-          "getDstLogicParam" : {
-            "modelref" : true,
-            "id" : "Default"
-          },
-          "logicType" : "SINGLE",
-          "name" : "Default[BEGINSTR] 等于(=) (待定)",
-          "paramValue" : "待定"
-        } ],
-        "notMode" : false,
-        "id" : "9207623f86872f5e1c36a7d70484b208"
-      },
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    } ],
     "getPSDELogicNodes" : [ {
       "codeName" : "Prepareparam1",
       "logicNodeType" : "PREPAREPARAM",
@@ -2411,8 +2382,33 @@
       "logicNodeType" : "BEGIN",
       "name" : "开始",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接6861"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "name" : "连接6861",
+        "getPSDELogicLinkGroupCond" : {
+          "groupOP" : "AND",
+          "logicType" : "GROUP",
+          "getPSDELogicLinkConds" : [ {
+            "condOP" : "EQ",
+            "dstFieldName" : "BEGINSTR",
+            "getDstLogicParam" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "logicType" : "SINGLE",
+            "name" : "Default[BEGINSTR] 等于(=) (待定)",
+            "paramValue" : "待定"
+          } ],
+          "notMode" : false,
+          "id" : "9207623f86872f5e1c36a7d70484b208"
+        },
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
       } ],
       "parallelOutput" : true
     } ],
@@ -2437,25 +2433,21 @@
     "logicName" : "获取上一个计划的名称",
     "logicSubType" : "NONE",
     "name" : "获取上一个计划的名称",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "name" : "连接980",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    } ],
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
       "logicNodeType" : "BEGIN",
       "name" : "开始",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接980"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "name" : "连接980",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
       } ],
       "parallelOutput" : true
     }, {
@@ -2499,36 +2491,21 @@
     "logicName" : "移动端产品计划计数器",
     "logicSubType" : "NONE",
     "name" : "移动端产品计划计数器",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "name" : "连接5534",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall2"
-      },
-      "name" : "连接6798",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "defaultLink" : false
-    } ],
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
       "logicNodeType" : "BEGIN",
       "name" : "开始",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接5534"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "name" : "连接5534",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
       } ],
       "parallelOutput" : true
     }, {
@@ -2559,8 +2536,16 @@
       "logicNodeType" : "RAWSQLCALL",
       "name" : "获取需求数",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接6798"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall2"
+        },
+        "name" : "连接6798",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "defaultLink" : false
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "Default[ID]",

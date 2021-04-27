@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CUSTOM",
   "actionType" : "USERCUSTOM",
   "codeName" : "Terminate",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Terminate.json",

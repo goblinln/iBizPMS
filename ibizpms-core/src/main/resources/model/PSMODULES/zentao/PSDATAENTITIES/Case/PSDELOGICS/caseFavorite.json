@@ -5,29 +5,6 @@
   "logicName" : "用例收藏",
   "logicSubType" : "NONE",
   "name" : "用例收藏",
-  "getPSDELogicLinks" : [ {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Create"
-    },
-    "name" : "连接2978",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam1"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam1"
-    },
-    "name" : "连接1309",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "defaultLink" : false
-  } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Create",
     "getDstPSDEAction" : {
@@ -50,8 +27,16 @@
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接1309"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      },
+      "name" : "连接1309",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      },
+      "defaultLink" : false
     } ],
     "parallelOutput" : true
   }, {
@@ -59,8 +44,16 @@
     "logicNodeType" : "PREPAREPARAM",
     "name" : "准备参数",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接2978"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Create"
+      },
+      "name" : "连接2978",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      },
+      "defaultLink" : false
     } ],
     "getPSDELogicNodeParams" : [ {
       "dstFieldName" : "OBJECTID",

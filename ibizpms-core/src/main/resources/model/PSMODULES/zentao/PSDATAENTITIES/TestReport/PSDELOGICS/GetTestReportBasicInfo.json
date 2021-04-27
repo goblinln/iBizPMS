@@ -5,161 +5,6 @@
   "logicName" : "根据测试报告获取基本信息",
   "logicSubType" : "NONE",
   "name" : "根据测试报告获取基本信息",
-  "getPSDELogicLinks" : [ {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Deaction1"
-    },
-    "name" : "连接4377",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall11"
-    },
-    "name" : "连接4549",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall10"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall13"
-    },
-    "name" : "连接6900",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall12"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall1"
-    },
-    "name" : "连接9637",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Deaction1"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall5"
-    },
-    "name" : "连接3617",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall11"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall4"
-    },
-    "name" : "连接715",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall3"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall2"
-    },
-    "name" : "连接9019",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall1"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall7"
-    },
-    "name" : "连接6472",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall6"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall6"
-    },
-    "name" : "连接7149",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall5"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall3"
-    },
-    "name" : "连接4999",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall2"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall12"
-    },
-    "name" : "连接1775",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall4"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall9"
-    },
-    "name" : "连接8691",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall8"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall10"
-    },
-    "name" : "连接9959",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall13"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall8"
-    },
-    "name" : "连接1248",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Rawsqlcall7"
-    },
-    "defaultLink" : false
-  } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Rawsqlcall13",
     "getDstPSDELogicParam" : {
@@ -169,8 +14,16 @@
     "logicNodeType" : "RAWSQLCALL",
     "name" : "需求覆盖用例数",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接9959"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall10"
+      },
+      "name" : "连接9959",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall13"
+      },
+      "defaultLink" : false
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[ID]",
@@ -192,8 +45,16 @@
     "logicNodeType" : "RAWSQLCALL",
     "name" : "用例产生的Bug",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接3617"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall5"
+      },
+      "name" : "连接3617",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall11"
+      },
+      "defaultLink" : false
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[ID]",
@@ -233,8 +94,16 @@
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取需求数",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接9019"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall2"
+      },
+      "name" : "连接9019",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      },
+      "defaultLink" : false
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[ID]",
@@ -256,8 +125,16 @@
     "logicNodeType" : "RAWSQLCALL",
     "name" : "执行的用例数",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接715"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall4"
+      },
+      "name" : "连接715",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall3"
+      },
+      "defaultLink" : false
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[ID]",
@@ -306,8 +183,16 @@
     "logicNodeType" : "RAWSQLCALL",
     "name" : "获取用例数",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接4999"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall3"
+      },
+      "name" : "连接4999",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall2"
+      },
+      "defaultLink" : false
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[ID]",
@@ -338,8 +223,16 @@
     "logicNodeType" : "RAWSQLCALL",
     "name" : "有效需求数",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接6900"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall13"
+      },
+      "name" : "连接6900",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall12"
+      },
+      "defaultLink" : false
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[ID]",
@@ -361,8 +254,16 @@
     "logicNodeType" : "RAWSQLCALL",
     "name" : "执行结果",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接7149"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall6"
+      },
+      "name" : "连接7149",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall5"
+      },
+      "defaultLink" : false
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[ID]",
@@ -384,8 +285,16 @@
     "logicNodeType" : "RAWSQLCALL",
     "name" : "失败的用例数",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接1775"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall12"
+      },
+      "name" : "连接1775",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall4"
+      },
+      "defaultLink" : false
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[ID]",
@@ -642,8 +551,16 @@
     "logicNodeType" : "RAWSQLCALL",
     "name" : "有效Bug数",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接6472"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall7"
+      },
+      "name" : "连接6472",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall6"
+      },
+      "defaultLink" : false
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[ID]",
@@ -683,8 +600,16 @@
     "logicNodeType" : "RAWSQLCALL",
     "name" : "解决的Bug",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接1248"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall8"
+      },
+      "name" : "连接1248",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall7"
+      },
+      "defaultLink" : false
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[ID]",
@@ -724,8 +649,16 @@
     "logicNodeType" : "RAWSQLCALL",
     "name" : "产生的Bug",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接8691"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall9"
+      },
+      "name" : "连接8691",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall8"
+      },
+      "defaultLink" : false
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[ID]",
@@ -761,8 +694,16 @@
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接4377"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Deaction1"
+      },
+      "name" : "连接4377",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      },
+      "defaultLink" : false
     } ],
     "parallelOutput" : true
   }, {
@@ -774,8 +715,16 @@
     "logicNodeType" : "RAWSQLCALL",
     "name" : "遗留Bug",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接4549"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall11"
+      },
+      "name" : "连接4549",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall10"
+      },
+      "defaultLink" : false
     } ],
     "getPSDELogicNodeParams" : [ {
       "name" : "Default[ID]",
@@ -832,8 +781,16 @@
     "logicNodeType" : "DEACTION",
     "name" : "获取数据",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接9637"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall1"
+      },
+      "name" : "连接9637",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Deaction1"
+      },
+      "defaultLink" : false
     } ],
     "parallelOutput" : true
   } ],

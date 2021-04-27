@@ -53,7 +53,7 @@
     "name" : "CheckKey",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "ManualCreateMonthly",
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectMonthly/PSDEACTIONS/ManualCreateMonthly.json",
@@ -68,7 +68,7 @@
     "name" : "Save",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "SumProjectMonthly",
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectMonthly/PSDEACTIONS/SumProjectMonthly.json",

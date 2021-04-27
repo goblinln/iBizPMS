@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CUSTOM",
   "actionType" : "USERCUSTOM",
   "codeName" : "Fix",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEACTIONS/Fix.json",

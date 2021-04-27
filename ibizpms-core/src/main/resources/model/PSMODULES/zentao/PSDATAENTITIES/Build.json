@@ -56,14 +56,14 @@
     "name" : "CheckKey",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "LinkBug",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/LinkBug.json",
     "logicName" : "关联Bug",
     "name" : "linkBug"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "LinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/LinkStory.json",
@@ -71,14 +71,14 @@
     "name" : "LinkStory",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "MentionTest",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/MentionTest.json",
     "logicName" : "提交测试",
     "name" : "mentionTest"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "DELOGIC",
     "codeName" : "MobProjectBuildCounter",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/MobProjectBuildCounter.json",
@@ -89,7 +89,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDELOGICS/MobProjectBuildCounter.json"
     }
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "OneClickRelease",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/OneClickRelease.json",
@@ -104,14 +104,14 @@
     "name" : "Save",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "UnlinkBug",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/UnlinkBug.json",
     "logicName" : "移除Bug关联",
     "name" : "unlinkBug"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "UnlinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/UnlinkStory.json",
@@ -1776,47 +1776,21 @@
     "logicName" : "移动端项目版本计数器",
     "logicSubType" : "NONE",
     "name" : "移动端项目版本计数器",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "name" : "连接6385",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall3"
-      },
-      "name" : "连接8410",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall2"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall2"
-      },
-      "name" : "连接587",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "defaultLink" : false
-    } ],
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
       "logicNodeType" : "BEGIN",
       "name" : "开始",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接6385"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "name" : "连接6385",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
       } ],
       "parallelOutput" : true
     }, {
@@ -1828,8 +1802,16 @@
       "logicNodeType" : "RAWSQLCALL",
       "name" : "获取完成的需求数",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接587"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall2"
+        },
+        "name" : "连接587",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "defaultLink" : false
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "Default[ID]",
@@ -1870,8 +1852,16 @@
       "logicNodeType" : "RAWSQLCALL",
       "name" : "获取解决的bug",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接8410"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall3"
+        },
+        "name" : "连接8410",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall2"
+        },
+        "defaultLink" : false
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "Default[ID]",

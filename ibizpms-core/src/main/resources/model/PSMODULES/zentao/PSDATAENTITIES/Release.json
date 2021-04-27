@@ -48,7 +48,7 @@
     "orderValue" : 41,
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "Activate",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Activate.json",
@@ -56,7 +56,7 @@
     "name" : "Activate",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "BatchUnlinkBug",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/BatchUnlinkBug.json",
@@ -64,7 +64,7 @@
     "name" : "BatchUnlinkBug",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "ChangeStatus",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/ChangeStatus.json",
@@ -80,7 +80,7 @@
     "name" : "CheckKey",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "LinkBug",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkBug.json",
@@ -88,7 +88,7 @@
     "name" : "linkBug",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "LinkBugbyBug",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkBugbyBug.json",
@@ -96,7 +96,7 @@
     "name" : "LinkBugbyBug",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "LinkBugbyLeftBug",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkBugbyLeftBug.json",
@@ -104,7 +104,7 @@
     "name" : "LinkBugbyLeftBug",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "LinkStory",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkStory.json",
@@ -112,7 +112,7 @@
     "name" : "linkStory",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "DELOGIC",
     "codeName" : "MobReleaseCounter",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/MobReleaseCounter.json",
@@ -123,7 +123,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDELOGICS/MobReleaseCounter.json"
     }
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "OneClickRelease",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/OneClickRelease.json",
@@ -138,7 +138,7 @@
     "name" : "Save",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "Terminate",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/Terminate.json",
@@ -146,7 +146,7 @@
     "name" : "Terminate",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "UnlinkBug",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/UnlinkBug.json",
@@ -1783,40 +1783,6 @@
     "logicName" : "移动端产品发布计数器",
     "logicSubType" : "NONE",
     "name" : "移动端产品发布计数器",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall2"
-      },
-      "name" : "连接923",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "name" : "连接6518",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall3"
-      },
-      "name" : "连接4449",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall2"
-      },
-      "defaultLink" : false
-    } ],
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall3",
       "getDstPSDELogicParam" : {
@@ -1845,8 +1811,16 @@
       "logicNodeType" : "RAWSQLCALL",
       "name" : "获取完成需求数",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接923"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall2"
+        },
+        "name" : "连接923",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "defaultLink" : false
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "Default[ID]",
@@ -1868,8 +1842,16 @@
       "logicNodeType" : "RAWSQLCALL",
       "name" : "获取解决的bug",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接4449"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall3"
+        },
+        "name" : "连接4449",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall2"
+        },
+        "defaultLink" : false
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "Default[ID]",
@@ -1887,8 +1869,16 @@
       "logicNodeType" : "BEGIN",
       "name" : "开始",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接6518"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "name" : "连接6518",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
       } ],
       "parallelOutput" : true
     } ],

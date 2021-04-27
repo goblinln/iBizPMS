@@ -45,7 +45,7 @@
     "transactionMode" : "NONE",
     "customParam" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "Ztlogin",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbiLogin/PSDEACTIONS/Ztlogin.json",

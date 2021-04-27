@@ -71,14 +71,14 @@
     "logicName" : "获取上周周报的下周计划",
     "name" : "CreateGetLastWeekPlanAndWork"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "EditGetLastWeekTaskAndComTask",
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/EditGetLastWeekTaskAndComTask.json",
     "logicName" : "编辑获取上周计划完成任务和本周已完成任务",
     "name" : "EditGetLastWeekTaskAndComTask"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "HaveRead",
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/HaveRead.json",
@@ -86,14 +86,14 @@
     "name" : "haveRead",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "JugThisWeekCreateWeekly",
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/JugThisWeekCreateWeekly.json",
     "logicName" : "判断本周是否创建过周报",
     "name" : "JugThisWeekCreateWeekly"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "PushUserWeekly",
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/PushUserWeekly.json",
@@ -109,7 +109,7 @@
     "name" : "Save",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "Submit",
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Submit.json",

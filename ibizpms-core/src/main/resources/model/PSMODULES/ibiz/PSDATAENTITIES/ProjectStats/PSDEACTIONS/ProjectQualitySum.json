@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CUSTOM",
   "actionType" : "DELOGIC",
   "codeName" : "ProjectQualitySum",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDEACTIONS/ProjectQualitySum.json",

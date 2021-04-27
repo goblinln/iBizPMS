@@ -69,7 +69,7 @@
     "name" : "Save",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "SyncAccount",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/User/PSDEACTIONS/SyncAccount.json",

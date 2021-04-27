@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CUSTOM",
   "actionType" : "USERCUSTOM",
   "codeName" : "Submit",
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/Submit.json",

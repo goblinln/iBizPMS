@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CUSTOM",
   "actionType" : "USERCUSTOM",
   "codeName" : "SumProjectMonthly",
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectMonthly/PSDEACTIONS/SumProjectMonthly.json",

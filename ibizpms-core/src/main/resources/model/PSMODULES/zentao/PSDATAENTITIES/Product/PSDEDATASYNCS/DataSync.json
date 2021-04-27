@@ -1,0 +1,14 @@
+{
+  "codeName" : "DataSync",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEDATASYNCS/DataSync.json",
+  "eventType" : 3,
+  "name" : "推送数据",
+  "getOutPSSysDataSyncAgent" : {
+    "modelref" : true,
+    "id" : "推送数据"
+  },
+  "syncDir" : "OUT",
+  "syncTag" : "DataSync",
+  "exportFull" : false,
+  "inMode" : false
+}

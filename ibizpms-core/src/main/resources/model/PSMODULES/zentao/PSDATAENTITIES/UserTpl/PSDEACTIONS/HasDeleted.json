@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CUSTOM",
   "actionType" : "USERCUSTOM",
   "codeName" : "HasDeleted",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEACTIONS/HasDeleted.json",

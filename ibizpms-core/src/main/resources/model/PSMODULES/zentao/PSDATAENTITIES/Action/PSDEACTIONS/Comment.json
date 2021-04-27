@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CUSTOM",
   "actionType" : "DELOGIC",
   "codeName" : "Comment",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/Comment.json",

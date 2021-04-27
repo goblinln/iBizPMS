@@ -53,7 +53,7 @@
     "name" : "CheckKey",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "DELOGIC",
     "codeName" : "MobMenuCount",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/MobMenuCount.json",
@@ -64,7 +64,7 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDELOGICS/MobMenuCount.json"
     }
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "DELOGIC",
     "codeName" : "MyFavoriteCount",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/MyFavoriteCount.json",
@@ -75,7 +75,7 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDELOGICS/MyFavoriteCount.json"
     }
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "DELOGIC",
     "codeName" : "MyTerritoryCount",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzMyTerritory/PSDEACTIONS/MyTerritoryCount.json",
@@ -2367,73 +2367,6 @@
     "logicName" : "移动端菜单计数器",
     "logicSubType" : "NONE",
     "name" : "移动端菜单计数器",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Deaction1"
-      },
-      "name" : "连接1912",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall2"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Deaction2"
-      },
-      "name" : "连接9787",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall3"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall4"
-      },
-      "name" : "连接8057",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Deaction2"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "name" : "连接6521",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall2"
-      },
-      "name" : "连接7668",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall3"
-      },
-      "name" : "连接8679",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Deaction1"
-      },
-      "defaultLink" : false
-    } ],
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall3",
       "getDstPSDELogicParam" : {
@@ -2443,8 +2376,16 @@
       "logicNodeType" : "RAWSQLCALL",
       "name" : "计算我的收藏数",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接9787"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Deaction2"
+        },
+        "name" : "连接9787",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall3"
+        },
+        "defaultLink" : false
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "Default[MYFAVORITEBUGS]",
@@ -2519,8 +2460,16 @@
       "logicNodeType" : "DEACTION",
       "name" : "我的",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接8057"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall4"
+        },
+        "name" : "连接8057",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Deaction2"
+        },
+        "defaultLink" : false
       } ],
       "parallelOutput" : true
     }, {
@@ -2532,8 +2481,16 @@
       "logicNodeType" : "RAWSQLCALL",
       "name" : "项目数",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接1912"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Deaction1"
+        },
+        "name" : "连接1912",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall2"
+        },
+        "defaultLink" : false
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "用户全局对象[srfloginname]",
@@ -2654,8 +2611,16 @@
       "logicNodeType" : "BEGIN",
       "name" : "开始",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接6521"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "name" : "连接6521",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
       } ],
       "parallelOutput" : true
     }, {
@@ -2667,8 +2632,16 @@
       "logicNodeType" : "RAWSQLCALL",
       "name" : "产品数",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接7668"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall2"
+        },
+        "name" : "连接7668",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "defaultLink" : false
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "用户全局对象[srfloginname]",
@@ -2714,8 +2687,16 @@
       "logicNodeType" : "DEACTION",
       "name" : "收藏",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接8679"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall3"
+        },
+        "name" : "连接8679",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Deaction1"
+        },
+        "defaultLink" : false
       } ],
       "parallelOutput" : true
     } ],
@@ -2740,47 +2721,21 @@
     "logicName" : "我的收藏计数器",
     "logicSubType" : "NONE",
     "name" : "我的收藏计数器",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall3"
-      },
-      "name" : "连接7826",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall2"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall2"
-      },
-      "name" : "连接9351",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "name" : "连接9195",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    } ],
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
       "logicNodeType" : "BEGIN",
       "name" : "开始",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接9195"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "name" : "连接9195",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
       } ],
       "parallelOutput" : true
     }, {
@@ -2807,8 +2762,16 @@
       "logicNodeType" : "RAWSQLCALL",
       "name" : "获取我的收藏需求数",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接9351"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall2"
+        },
+        "name" : "连接9351",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "defaultLink" : false
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "用户全局对象[srfloginname]",
@@ -2826,8 +2789,16 @@
       "logicNodeType" : "RAWSQLCALL",
       "name" : "我的收藏Bug数",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接7826"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall3"
+        },
+        "name" : "连接7826",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall2"
+        },
+        "defaultLink" : false
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "用户全局对象[srfloginname]",
@@ -2858,51 +2829,6 @@
     "logicName" : "我的地盘移动端计数器",
     "logicSubType" : "NONE",
     "name" : "我的地盘移动端计数器",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall3"
-      },
-      "name" : "连接3922",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall2"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall4"
-      },
-      "name" : "连接7988",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall3"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall2"
-      },
-      "name" : "连接8800",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "name" : "连接6119",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    } ],
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall1",
       "getDstPSDELogicParam" : {
@@ -2912,8 +2838,16 @@
       "logicNodeType" : "RAWSQLCALL",
       "name" : "获取我的需求数",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接8800"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall2"
+        },
+        "name" : "连接8800",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "defaultLink" : false
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "用户全局对象[srfloginname]",
@@ -2942,8 +2876,16 @@
       "logicNodeType" : "BEGIN",
       "name" : "开始",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接6119"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "name" : "连接6119",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
       } ],
       "parallelOutput" : true
     }, {
@@ -2955,8 +2897,16 @@
       "logicNodeType" : "RAWSQLCALL",
       "name" : "获取我的Bug数",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接3922"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall3"
+        },
+        "name" : "连接3922",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall2"
+        },
+        "defaultLink" : false
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "用户全局对象[srfloginname]",
@@ -2974,8 +2924,16 @@
       "logicNodeType" : "RAWSQLCALL",
       "name" : "获取我的Bug数",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接7988"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall4"
+        },
+        "name" : "连接7988",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall3"
+        },
+        "defaultLink" : false
       } ],
       "getPSDELogicNodeParams" : [ {
         "name" : "用户全局对象[srfloginname]",

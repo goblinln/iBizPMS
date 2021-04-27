@@ -473,13 +473,65 @@ export default class TextFileUpload extends Vue {
      * @param 上传文件
      * @memberof DiskFileUpload
      */
-    public customUploadFile(param: any) {
-        let fileParam = JSON.parse(this.fileParam)
+    public async customUploadFile(param: any) {
+        let fileParam: any = {};
+        if(this.fileParam) {
+          fileParam = this.$util.computedNavData(JSON.parse(this.data),this.context,this.viewparams,JSON.parse(this.fileParam));
+        }
+        //文件名与文件类型
+        let fileName = "模板文件.wps";
+        let filemime = "application/kswps";
+        let fileText = "";
+        //文件数据
+        let tempfile: any = {};
         // 上传的文件
         let _this: any = this;
-        let fileName = param[fileParam.name]?param[fileParam.name] + ".wps":"模板文件.wps";
-        let fileText = param[fileParam.id]?param[fileParam.id]:"暂无内容";
-        let file = new File([fileText],fileName,{type: 'application/kswps'});
+        if (param[fileParam.id]) {
+          const getUrl = '/net-disk/files/' + this.getFolder();
+          // 发送get请求
+          await this.$http.get(getUrl, {
+              ownertype: this.getOwnertype(),
+              ownerid: param[fileParam.id]
+          }).then((response: any) => {
+              if (!response || response.status != 200) {
+                  Message.error(_this.$t('components.diskFileUpload.getFileFailure') + '!');
+                  return;
+              }
+              // 返回的是一个jsonArray
+              if (response.data?.length > 0) {
+                  tempfile = response.data[0];
+                  fileName = response.data[0]?.filename;
+                  filemime = this.calcFilemime(response.data[0]?.ext);
+              }
+          }).catch((error: any) => {
+              Message.error(_this.$t('components.diskFileUpload.getFileFailure') + ':' + error);
+          });
+        }
+        //获取文件内容
+        if (Object.keys(tempfile).length > 0) {
+          const id = typeof tempfile.id == "string" ? tempfile.id : JSON.stringify(tempfile.id);
+          const name = typeof tempfile.name == "string" ? tempfile.name : JSON.stringify(tempfile.filename);
+          const downloadUrl = '/net-disk/download/' + this.getFolder() + '/' + id + '/' + name;
+          // 发送get请求
+          await this.$http.get(downloadUrl, {
+              'authcode': tempfile.authcode,
+              responseType: 'arraybuffer',
+          }).then((response: any) => {
+              if (!response || response.status != 200) {
+                  Message.error(_this.$t('components.diskFileUpload.downloadFile') + '!');
+                  return;
+              }
+              // 请求成功，后台返回的是一个文件流
+              if (response.data) {
+                  fileText = response.data;
+              } else {
+                  Message.error(_this.$t('components.diskFileUpload.downloadFile1'));
+              }
+          }).catch((error: any) => {
+              Message.error(_this.$t('components.diskFileUpload.downloadFile') + ':' + error);
+          });
+        }
+        let file = new File([fileText],fileName,{type: filemime});
         if (this.textstate === "init") {
             this.textstate = "upload";
         }
@@ -511,6 +563,31 @@ export default class TextFileUpload extends Vue {
         }).catch((error: any) => {
             Message.error(_this.$t('components.diskFileUpload.loadFailure') + ':' + error);
         })
+    }
+
+    /**
+     * 计算文件mime类型
+     *
+     * @param filetype 文件后缀
+     * @memberof DiskFileUpload
+     */
+    public calcFilemime(filetype: string): string {
+      let mime = "application/kswps";
+      switch(filetype) {
+        case ".wps":
+          mime = "application/kswps";
+          break;
+        case ".doc":
+          mime = "application/msword";
+          break;
+        case ".docx":
+          mime = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+          break;
+        case ".txt":
+          mime = "text/plain";
+          break;
+      }
+      return mime;
     }
 
     /**

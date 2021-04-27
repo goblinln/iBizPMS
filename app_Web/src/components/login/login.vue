@@ -253,17 +253,9 @@ export default class Login extends Vue {
             const data = error.data;
             if (data && data.message) {
                 this.loginTip = data.message;
-                this.$Message.error({
-                    content: (this.$t('components.login.loginfailed') as string)+' ' + data.message,
-                    duration: 5,
-                    closable: true
-                });
+                this.$throw((this.$t('components.login.loginfailed') as string)+' '+data.message);
             } else {
-                this.$Message.error({
-                    content: (this.$t('components.login.loginfailed') as string),
-                    duration: 5,
-                    closable: true
-                });
+                this.$throw((this.$t('components.login.loginfailed') as string));
             }
         });
 
@@ -315,11 +307,7 @@ export default class Login extends Vue {
                 // 4.跳转钉钉扫码
                 window.location.href = url;
         }else{
-            this.$Message.error({
-                content: result?.message,
-                duration: 5,
-                closable: true
-            });
+            this.$throw(result?.message);
         }
     }
 
@@ -348,11 +336,7 @@ export default class Login extends Vue {
             // 4.跳转钉钉扫码
             window.location.href = url;
         }else{
-            this.$Message.error({
-                content: result?.message,
-                duration: 5,
-                closable: true
-            });
+            this.$throw(result?.message);
         }
     }
 
@@ -374,11 +358,7 @@ export default class Login extends Vue {
                 }
             }
         }else{
-            this.$Message.error({
-                content: result?.message,
-                duration: 5,
-                closable: true,
-            });
+            this.$throw(result?.message);
         }
     }
 
@@ -406,11 +386,7 @@ export default class Login extends Vue {
         // 4.跳转到微信认证地址
         window.location.href = url;
         }else{
-                this.$Message.error({
-                content: result?.message,
-                duration: 5,
-                closable: true,
-            });
+            this.$throw(result?.message);
         }
     }
 

@@ -55,7 +55,7 @@
     "name" : "CheckKey",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "HaveRead",
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/HaveRead.json",
@@ -71,7 +71,7 @@
     "name" : "Save",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "Submit",
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReportly/PSDEACTIONS/Submit.json",

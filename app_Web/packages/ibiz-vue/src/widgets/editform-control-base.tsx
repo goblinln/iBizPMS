@@ -1589,7 +1589,7 @@ export class EditFormControlBase extends FormControlBase {
                         detailModel = new FormPartModel(detailOpts);
                         break;
                     case 'DRUIPART':
-                        // this.drCount++;
+                        this.drCount++;
                         detailModel = new FormDruipartModel(detailOpts);
                         break;
                     case 'IFRAME':

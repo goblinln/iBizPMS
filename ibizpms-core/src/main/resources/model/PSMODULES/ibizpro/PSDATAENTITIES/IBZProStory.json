@@ -61,7 +61,7 @@
     "name" : "Save",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "SyncFromIBIZ",
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProStory/PSDEACTIONS/SyncFromIBIZ.json",

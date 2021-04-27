@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CUSTOM",
   "actionType" : "USERCUSTOM",
   "codeName" : "HaveRead",
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/HaveRead.json",

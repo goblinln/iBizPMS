@@ -1524,6 +1524,11 @@
     "modelref" : true,
     "path" : "PSSYSBACKSERVICES/WFCallbackDeamon.json"
   } ],
+  "getAllPSSysDataSyncAgents" : [ {
+    "agentType" : "ACTIVEMQ",
+    "name" : "推送数据",
+    "syncDir" : "OUT"
+  } ],
   "getAllPSSysSequences" : [ {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProBugSeq.json"

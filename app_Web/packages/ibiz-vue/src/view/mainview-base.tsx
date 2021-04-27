@@ -160,6 +160,7 @@ export class MainViewBase extends ViewBase {
             }
         }
         const img = item.getPSSysImage();
+        const css = item.getPSSysCss();
         const tempModel: any = {
             name: item.name,
             showCaption: item.showCaption,
@@ -171,6 +172,7 @@ export class MainViewBase extends ViewBase {
             dataaccaction: '',
             uiaction:(item as any)?.getPSUIAction?.(),
             showIcon: item.showIcon,
+            class: css ? css.cssName : '',
             getPSSysImage: img ? { cssClass: img.cssClass, imagePath: img.imagePath } : '',
         };
         return tempModel;

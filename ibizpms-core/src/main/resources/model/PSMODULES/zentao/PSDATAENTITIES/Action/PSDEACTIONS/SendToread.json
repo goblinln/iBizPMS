@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CUSTOM",
   "actionType" : "USERCUSTOM",
   "codeName" : "SendToread",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/SendToread.json",

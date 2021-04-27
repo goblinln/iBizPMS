@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CUSTOM",
   "actionType" : "USERCUSTOM",
   "codeName" : "PushSumProjectWeekly",
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDEACTIONS/PushSumProjectWeekly.json",

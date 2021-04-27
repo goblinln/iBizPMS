@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CUSTOM",
   "actionType" : "USERCUSTOM",
   "codeName" : "EditGetLastWeekTaskAndComTask",
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/EditGetLastWeekTaskAndComTask.json",

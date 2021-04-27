@@ -66,7 +66,7 @@
     "name" : "CheckKey",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "DELOGIC",
     "codeName" : "Comment",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/Comment.json",
@@ -84,7 +84,7 @@
     "logicName" : "创建历史日志",
     "name" : "CreateHis"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "EditComment",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/EditComment.json",
@@ -92,7 +92,7 @@
     "name" : "editComment",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "ManagePmsEe",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/ManagePmsEe.json",
@@ -108,21 +108,21 @@
     "name" : "Save",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "SendMarkDone",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/SendMarkDone.json",
     "logicName" : "已读",
     "name" : "sendMarkDone"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "SendTodo",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/SendTodo.json",
     "logicName" : "发送待办",
     "name" : "sendTodo"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "SendToread",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEACTIONS/SendToread.json",
@@ -1620,18 +1620,6 @@
     "logicName" : "Comment",
     "logicSubType" : "NONE",
     "name" : "Comment",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Prepareparam1"
-      },
-      "name" : "连接6740",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    } ],
     "getPSDELogicNodes" : [ {
       "codeName" : "Prepareparam1",
       "logicNodeType" : "PREPAREPARAM",
@@ -1702,8 +1690,16 @@
       "logicNodeType" : "BEGIN",
       "name" : "开始",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接6740"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "name" : "连接6740",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
       } ],
       "parallelOutput" : true
     } ],

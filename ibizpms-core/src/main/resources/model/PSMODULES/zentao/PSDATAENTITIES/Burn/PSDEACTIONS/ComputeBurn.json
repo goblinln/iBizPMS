@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CUSTOM",
   "actionType" : "USERCUSTOM",
   "codeName" : "ComputeBurn",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEACTIONS/ComputeBurn.json",

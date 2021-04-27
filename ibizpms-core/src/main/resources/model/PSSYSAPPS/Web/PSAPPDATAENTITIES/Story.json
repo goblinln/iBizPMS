@@ -1863,18 +1863,6 @@
     "logicName" : "获取联系人",
     "logicSubType" : "NONE",
     "name" : "获取联系人",
-    "getPSDELogicLinks" : [ {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Prepareparam1"
-      },
-      "name" : "连接7428",
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    } ],
     "getPSDELogicNodes" : [ {
       "codeName" : "Prepareparam1",
       "logicNodeType" : "PREPAREPARAM",
@@ -1900,8 +1888,16 @@
       "logicNodeType" : "BEGIN",
       "name" : "开始",
       "getPSDELogicLinks" : [ {
-        "modelref" : true,
-        "id" : "连接7428"
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Prepareparam1"
+        },
+        "name" : "连接7428",
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
       } ],
       "parallelOutput" : true
     } ],
@@ -4826,6 +4822,14 @@
     "logicName" : "激活_未收藏_细分",
     "mSTag" : "active__0__1",
     "name" : "激活_未收藏_细分",
+    "getPSDEMainStateActions" : [ {
+      "name" : "StoryFavorites",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryFavorites.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_FAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -7191,6 +7195,14 @@
     "logicName" : "草稿-已收藏_细分",
     "mSTag" : "draft__1__1",
     "name" : "草稿-已收藏_细分",
+    "getPSDEMainStateActions" : [ {
+      "name" : "StoryNFavorites",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryNFavorites.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_DELETE_BUT",
       "getPSDEOPPriv" : {

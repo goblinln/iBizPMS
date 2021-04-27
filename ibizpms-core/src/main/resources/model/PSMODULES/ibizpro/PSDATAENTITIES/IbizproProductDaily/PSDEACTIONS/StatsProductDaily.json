@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CUSTOM",
   "actionType" : "USERCUSTOM",
   "codeName" : "StatsProductDaily",
   "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductDaily/PSDEACTIONS/StatsProductDaily.json",

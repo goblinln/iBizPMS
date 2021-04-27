@@ -5,35 +5,6 @@
   "logicName" : "获取开始日期和结束日期",
   "logicSubType" : "NONE",
   "name" : "获取开始日期和结束日期",
-  "getPSDELogicLinks" : [ {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam1"
-    },
-    "name" : "连接6861",
-    "getPSDELogicLinkGroupCond" : {
-      "groupOP" : "AND",
-      "logicType" : "GROUP",
-      "getPSDELogicLinkConds" : [ {
-        "condOP" : "EQ",
-        "dstFieldName" : "BEGINSTR",
-        "getDstLogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "logicType" : "SINGLE",
-        "name" : "Default[BEGINSTR] 等于(=) (待定)",
-        "paramValue" : "待定"
-      } ],
-      "notMode" : false,
-      "id" : "9207623f86872f5e1c36a7d70484b208"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "defaultLink" : false
-  } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Prepareparam1",
     "logicNodeType" : "PREPAREPARAM",
@@ -63,8 +34,33 @@
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接6861"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      },
+      "name" : "连接6861",
+      "getPSDELogicLinkGroupCond" : {
+        "groupOP" : "AND",
+        "logicType" : "GROUP",
+        "getPSDELogicLinkConds" : [ {
+          "condOP" : "EQ",
+          "dstFieldName" : "BEGINSTR",
+          "getDstLogicParam" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "logicType" : "SINGLE",
+          "name" : "Default[BEGINSTR] 等于(=) (待定)",
+          "paramValue" : "待定"
+        } ],
+        "notMode" : false,
+        "id" : "9207623f86872f5e1c36a7d70484b208"
+      },
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      },
+      "defaultLink" : false
     } ],
     "parallelOutput" : true
   } ],

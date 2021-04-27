@@ -5,56 +5,6 @@
   "logicName" : "获取模块的平台",
   "logicSubType" : "NONE",
   "name" : "获取模块的平台",
-  "getPSDELogicLinks" : [ {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Deaction1"
-    },
-    "name" : "连接6882",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam1"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam1"
-    },
-    "name" : "连接1496",
-    "getPSDELogicLinkGroupCond" : {
-      "groupOP" : "AND",
-      "logicType" : "GROUP",
-      "getPSDELogicLinkConds" : [ {
-        "condOP" : "ISNOTNULL",
-        "dstFieldName" : "MODULE",
-        "getDstLogicParam" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "logicType" : "SINGLE",
-        "name" : "Default[MODULE] 值不为空(NotNil)"
-      } ],
-      "notMode" : false,
-      "id" : "7d94f35e09afb96807e231a7ec3ac625"
-    },
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Begin"
-    },
-    "defaultLink" : false
-  }, {
-    "getDstPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Prepareparam2"
-    },
-    "name" : "连接9306",
-    "getSrcPSDELogicNode" : {
-      "modelref" : true,
-      "id" : "Deaction1"
-    },
-    "defaultLink" : false
-  } ],
   "getPSDELogicNodes" : [ {
     "codeName" : "Deaction1",
     "getDstPSDEAction" : {
@@ -72,8 +22,16 @@
     "logicNodeType" : "DEACTION",
     "name" : "获取模块详情",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接9306"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam2"
+      },
+      "name" : "连接9306",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Deaction1"
+      },
+      "defaultLink" : false
     } ],
     "parallelOutput" : true
   }, {
@@ -81,8 +39,16 @@
     "logicNodeType" : "PREPAREPARAM",
     "name" : "设置模块参数",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接6882"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Deaction1"
+      },
+      "name" : "连接6882",
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      },
+      "defaultLink" : false
     } ],
     "getPSDELogicNodeParams" : [ {
       "dstFieldName" : "ID",
@@ -105,8 +71,32 @@
     "logicNodeType" : "BEGIN",
     "name" : "开始",
     "getPSDELogicLinks" : [ {
-      "modelref" : true,
-      "id" : "连接1496"
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Prepareparam1"
+      },
+      "name" : "连接1496",
+      "getPSDELogicLinkGroupCond" : {
+        "groupOP" : "AND",
+        "logicType" : "GROUP",
+        "getPSDELogicLinkConds" : [ {
+          "condOP" : "ISNOTNULL",
+          "dstFieldName" : "MODULE",
+          "getDstLogicParam" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "logicType" : "SINGLE",
+          "name" : "Default[MODULE] 值不为空(NotNil)"
+        } ],
+        "notMode" : false,
+        "id" : "7d94f35e09afb96807e231a7ec3ac625"
+      },
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      },
+      "defaultLink" : false
     } ],
     "parallelOutput" : true
   }, {

@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CUSTOM",
   "actionType" : "USERCUSTOM",
   "codeName" : "MentionTest",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEACTIONS/MentionTest.json",

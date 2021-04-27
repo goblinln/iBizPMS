@@ -75,14 +75,14 @@
     },
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "EditGetCompleteTask",
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/EditGetCompleteTask.json",
     "logicName" : "编辑时获取完成任务",
     "name" : "EditGetCompleteTask"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "HaveRead",
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/HaveRead.json",
@@ -90,7 +90,7 @@
     "name" : "HaveRead",
     "userCat" : "CAT1"
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "PushUserMonthly",
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/PushUserMonthly.json",
@@ -106,7 +106,7 @@
     "name" : "Save",
     "builtinAction" : true
   }, {
-    "actionMode" : "UNKNOWN",
+    "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
     "codeName" : "Submit",
     "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzMonthly/PSDEACTIONS/Submit.json",

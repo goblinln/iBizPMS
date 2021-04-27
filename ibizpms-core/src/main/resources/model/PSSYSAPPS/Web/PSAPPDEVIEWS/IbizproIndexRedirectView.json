@@ -4,6 +4,10 @@
   "codeName" : "IbizproIndexRedirectView",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbizproIndexRedirectView.json",
   "funcViewMode" : "REDIRECTVIEW",
+  "getGetDataPSAppDEAction" : {
+    "modelref" : true,
+    "id" : "Get"
+  },
   "name" : "IbizproIndexRedirectView",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -148,6 +152,10 @@
     }
   } ],
   "title" : "索引检索数据重定向视图",
+  "getTypePSAppDEField" : {
+    "name" : "INDEX_TYPE",
+    "codeName" : "IndexType"
+  },
   "viewStyle" : "STYLE2",
   "viewType" : "DEREDIRECTVIEW",
   "enableCustomGetDataAction" : false,

@@ -29,8 +29,8 @@ public class SaaSTenantHandler implements TenantHandler {
 
     @Override
     public boolean doTableFilter(String tableName) {
-        tableName = tableName.replace("`","") ;
-        if (saaSTenantProperties.getSysTables().contains(tableName))
+        String strTableName = tableName.replace("`","") ;
+        if (saaSTenantProperties.getSysTables().stream().anyMatch(table -> table.equalsIgnoreCase(strTableName)))
             return true;
         return false;
     }

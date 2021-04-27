@@ -1,5 +1,5 @@
 {
-  "actionMode" : "UNKNOWN",
+  "actionMode" : "CUSTOM",
   "actionType" : "USERCUSTOM",
   "codeName" : "Sort",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Branch/PSDEACTIONS/Sort.json",

@@ -1,7 +1,7 @@
 import { IPSAppDEField, IPSDropDownList } from '@ibiz/dynamic-model-api';
 import { ModelTool, Util } from 'ibiz-core';
 import { Component, Prop } from 'vue-property-decorator';
-import { VueLifeCycleProcessing } from '../../../decorators';
+import { VueLifeCycleProcessing, Watch } from '../../../decorators';
 import { EditorBase } from '../editor-base/editor-base';
 
 /**
@@ -22,6 +22,31 @@ export default class DropdownListEditor extends EditorBase {
      * @memberof EditorBase
      */
     @Prop() editorInstance!: IPSDropDownList;
+
+    /**
+     * 监听编辑器值
+     * 
+     * 
+     * @param newVlue 
+     * @param oldVal 
+     * @memberof EditorBase
+     */
+    @Watch('value',{
+        deep: true,
+        immediate: true
+    })
+    public valueChange(newVlue: any, oldVal: any){
+        if (!Object.is(newVlue, oldVal)) {
+            this.cacheUUID = Util.createUUID();
+        }
+    }
+
+    /**
+     * 缓存UUID
+     * 
+     * @memberof EditorBase
+     */
+    public cacheUUID: any;
 
     /**
      * 编辑器初始化
@@ -82,7 +107,7 @@ export default class DropdownListEditor extends EditorBase {
      */
     public renderDropdownList(){
         return this.$createElement(this.editorComponentName, {
-            key: Util.createUUID(),
+            key: this.cacheUUID,
             props: {
                 name: this.editorInstance.name,
                 itemValue: this.value,
