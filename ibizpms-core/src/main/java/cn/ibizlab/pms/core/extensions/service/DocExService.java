@@ -163,13 +163,7 @@ public class DocExService extends DocServiceImpl {
         docContent.setFiles(filesId.toString());
         docContent.setDoc(et.getId());
         iDocContentService.create(docContent);
-
-        File file = new File();
-        file.setObjectid(et.getId());
-        file.setObjecttype(StaticDict.File__object_type.DOC.getValue());
-        file.set(files,files);
-        file.setExtra(String.valueOf(et.getVersion()));
-        iFileService.updateObjectID(file);
+        FileHelper.updateObjectID(et.getId(),StaticDict.File__object_type.DOC.getValue(),files,String.valueOf(et.getVersion()),iFileService);
 
 
         ActionHelper.createHis(et.getId(),StaticDict.Action__object_type.DOC.getValue(),null,StaticDict.Action__type.OPENED.getValue(),
@@ -242,13 +236,7 @@ public class DocExService extends DocServiceImpl {
             iDocContentService.create(docContent);
         }
 
-
-        File file = new File();
-        file.setObjectid(et.getId());
-        file.setObjecttype(StaticDict.File__object_type.DOC.getValue());
-        file.set(files,files);
-        file.setExtra(String.valueOf(et.getVersion()));
-        iFileService.updateObjectID(file);
+        FileHelper.updateObjectID(et.getId(),StaticDict.File__object_type.DOC.getValue(),files,String.valueOf(et.getVersion()),iFileService);
         ActionHelper.createHis(et.getId(),StaticDict.Action__object_type.DOC.getValue(),null,StaticDict.Action__type.EDITED.getValue(),
                 "","",null,iActionService);
         return true;

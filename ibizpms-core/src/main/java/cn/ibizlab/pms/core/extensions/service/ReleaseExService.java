@@ -265,12 +265,7 @@ public class ReleaseExService extends ReleaseServiceImpl {
 
         String files = et.getFiles();
         bOk = super.create(et);
-        File file = new File();
-        file.set(files,files);
-        file.setObjectid(et.getId());
-        file.setObjecttype(StaticDict.File__object_type.RELEASE.getValue());
-        file.setExtra("");
-        iFileService.updateObjectID(file);
+        FileHelper.updateObjectID(et.getId(),StaticDict.File__object_type.RELEASE.getValue(),files,"",iFileService);
 
         ActionHelper.createHis(et.getId(),StaticDict.Action__object_type.RELEASE.getValue(),null,StaticDict.Action__type.OPENED.getValue(),
                 "","", null,iActionService);
@@ -285,12 +280,7 @@ public class ReleaseExService extends ReleaseServiceImpl {
         if (!super.update(et)) {
             return false;
         }
-        File file = new File();
-        file.set(files,files);
-        file.setObjectid(et.getId());
-        file.setObjecttype(StaticDict.File__object_type.RELEASE.getValue());
-        file.setExtra("");
-        iFileService.updateObjectID(file);
+        FileHelper.updateObjectID(et.getId(),StaticDict.File__object_type.RELEASE.getValue(),files,"",iFileService);
 
         List<History> changes = ChangeUtil.diff(old, et,null,null,new String[]{"desc"});
         if (changes.size() > 0) {
