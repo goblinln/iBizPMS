@@ -111,7 +111,6 @@ public class IbzWeeklyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbzWeeklyRuntime.test(#ibzweekly_id,'READ')")
     @ApiOperation(value = "获取周报", tags = {"周报" },  notes = "获取周报")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzweeklies/{ibzweekly_id}")
     public ResponseEntity<IbzWeeklyDTO> get(@PathVariable("ibzweekly_id") Long ibzweekly_id) {

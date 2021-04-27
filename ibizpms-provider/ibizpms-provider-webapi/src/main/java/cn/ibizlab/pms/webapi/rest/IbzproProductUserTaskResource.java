@@ -147,11 +147,9 @@ public class IbzproProductUserTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbzproProductUserTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"产品汇报用户任务" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/fetchdefault")
 	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchDefault(@RequestBody IbzproProductUserTaskSearchContext context) {
-        ibzproproductusertaskRuntime.addAuthorityConditions(context,"READ");
         Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchDefault(context) ;
         List<IbzproProductUserTaskDTO> list = ibzproproductusertaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -161,21 +159,17 @@ public class IbzproProductUserTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzproProductUserTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"产品汇报用户任务" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/searchdefault")
 	public ResponseEntity<Page<IbzproProductUserTaskDTO>> searchDefault(@RequestBody IbzproProductUserTaskSearchContext context) {
-        ibzproproductusertaskRuntime.addAuthorityConditions(context,"READ");
         Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzproproductusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@IbzproProductUserTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品日报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "获取产品日报用户任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/fetchproductdailyusertaskstats")
 	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchProductDailyUserTaskStats(@RequestBody IbzproProductUserTaskSearchContext context) {
-        ibzproproductusertaskRuntime.addAuthorityConditions(context,"READ");
         Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchProductDailyUserTaskStats(context) ;
         List<IbzproProductUserTaskDTO> list = ibzproproductusertaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -185,21 +179,17 @@ public class IbzproProductUserTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzproProductUserTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询产品日报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "查询产品日报用户任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/searchproductdailyusertaskstats")
 	public ResponseEntity<Page<IbzproProductUserTaskDTO>> searchProductDailyUserTaskStats(@RequestBody IbzproProductUserTaskSearchContext context) {
-        ibzproproductusertaskRuntime.addAuthorityConditions(context,"READ");
         Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchProductDailyUserTaskStats(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzproproductusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@IbzproProductUserTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品月报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "获取产品月报用户任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/fetchproductmonthlyusertaskstats")
 	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchProductMonthlyUserTaskStats(@RequestBody IbzproProductUserTaskSearchContext context) {
-        ibzproproductusertaskRuntime.addAuthorityConditions(context,"READ");
         Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchProductMonthlyUserTaskStats(context) ;
         List<IbzproProductUserTaskDTO> list = ibzproproductusertaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -209,21 +199,17 @@ public class IbzproProductUserTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzproProductUserTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询产品月报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "查询产品月报用户任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/searchproductmonthlyusertaskstats")
 	public ResponseEntity<Page<IbzproProductUserTaskDTO>> searchProductMonthlyUserTaskStats(@RequestBody IbzproProductUserTaskSearchContext context) {
-        ibzproproductusertaskRuntime.addAuthorityConditions(context,"READ");
         Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchProductMonthlyUserTaskStats(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzproproductusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@IbzproProductUserTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品周报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "获取产品周报用户任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/fetchproductweeklyusertaskstats")
 	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchProductWeeklyUserTaskStats(@RequestBody IbzproProductUserTaskSearchContext context) {
-        ibzproproductusertaskRuntime.addAuthorityConditions(context,"READ");
         Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchProductWeeklyUserTaskStats(context) ;
         List<IbzproProductUserTaskDTO> list = ibzproproductusertaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -233,11 +219,9 @@ public class IbzproProductUserTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzproProductUserTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询产品周报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "查询产品周报用户任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/searchproductweeklyusertaskstats")
 	public ResponseEntity<Page<IbzproProductUserTaskDTO>> searchProductWeeklyUserTaskStats(@RequestBody IbzproProductUserTaskSearchContext context) {
-        ibzproproductusertaskRuntime.addAuthorityConditions(context,"READ");
         Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchProductWeeklyUserTaskStats(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzproproductusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

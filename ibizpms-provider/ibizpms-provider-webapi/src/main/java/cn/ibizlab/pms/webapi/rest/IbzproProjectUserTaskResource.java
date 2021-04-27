@@ -147,11 +147,9 @@ public class IbzproProjectUserTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"项目汇报用户任务" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/fetchdefault")
 	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchDefault(@RequestBody IbzproProjectUserTaskSearchContext context) {
-        ibzproprojectusertaskRuntime.addAuthorityConditions(context,"READ");
         Page<IbzproProjectUserTask> domains = ibzproprojectusertaskService.searchDefault(context) ;
         List<IbzproProjectUserTaskDTO> list = ibzproprojectusertaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -161,21 +159,17 @@ public class IbzproProjectUserTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"项目汇报用户任务" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/searchdefault")
 	public ResponseEntity<Page<IbzproProjectUserTaskDTO>> searchDefault(@RequestBody IbzproProjectUserTaskSearchContext context) {
-        ibzproprojectusertaskRuntime.addAuthorityConditions(context,"READ");
         Page<IbzproProjectUserTask> domains = ibzproprojectusertaskService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzproprojectusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目日报任务", tags = {"项目汇报用户任务" } ,notes = "获取项目日报任务")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/fetchprojectdailytask")
 	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchProjectDailyTask(@RequestBody IbzproProjectUserTaskSearchContext context) {
-        ibzproprojectusertaskRuntime.addAuthorityConditions(context,"READ");
         Page<IbzproProjectUserTask> domains = ibzproprojectusertaskService.searchProjectDailyTask(context) ;
         List<IbzproProjectUserTaskDTO> list = ibzproprojectusertaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -185,21 +179,17 @@ public class IbzproProjectUserTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询项目日报任务", tags = {"项目汇报用户任务" } ,notes = "查询项目日报任务")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/searchprojectdailytask")
 	public ResponseEntity<Page<IbzproProjectUserTaskDTO>> searchProjectDailyTask(@RequestBody IbzproProjectUserTaskSearchContext context) {
-        ibzproprojectusertaskRuntime.addAuthorityConditions(context,"READ");
         Page<IbzproProjectUserTask> domains = ibzproprojectusertaskService.searchProjectDailyTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzproprojectusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目日报任务", tags = {"项目汇报用户任务" } ,notes = "获取项目日报任务")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/fetchprojectmonthlytask")
 	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchProjectMonthlyTask(@RequestBody IbzproProjectUserTaskSearchContext context) {
-        ibzproprojectusertaskRuntime.addAuthorityConditions(context,"READ");
         Page<IbzproProjectUserTask> domains = ibzproprojectusertaskService.searchProjectMonthlyTask(context) ;
         List<IbzproProjectUserTaskDTO> list = ibzproprojectusertaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -209,21 +199,17 @@ public class IbzproProjectUserTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询项目日报任务", tags = {"项目汇报用户任务" } ,notes = "查询项目日报任务")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/searchprojectmonthlytask")
 	public ResponseEntity<Page<IbzproProjectUserTaskDTO>> searchProjectMonthlyTask(@RequestBody IbzproProjectUserTaskSearchContext context) {
-        ibzproprojectusertaskRuntime.addAuthorityConditions(context,"READ");
         Page<IbzproProjectUserTask> domains = ibzproprojectusertaskService.searchProjectMonthlyTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzproprojectusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目周报任务", tags = {"项目汇报用户任务" } ,notes = "获取项目周报任务")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/fetchprojectweeklytask")
 	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchProjectWeeklyTask(@RequestBody IbzproProjectUserTaskSearchContext context) {
-        ibzproprojectusertaskRuntime.addAuthorityConditions(context,"READ");
         Page<IbzproProjectUserTask> domains = ibzproprojectusertaskService.searchProjectWeeklyTask(context) ;
         List<IbzproProjectUserTaskDTO> list = ibzproprojectusertaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -233,11 +219,9 @@ public class IbzproProjectUserTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@IbzproProjectUserTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询项目周报任务", tags = {"项目汇报用户任务" } ,notes = "查询项目周报任务")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/searchprojectweeklytask")
 	public ResponseEntity<Page<IbzproProjectUserTaskDTO>> searchProjectWeeklyTask(@RequestBody IbzproProjectUserTaskSearchContext context) {
-        ibzproprojectusertaskRuntime.addAuthorityConditions(context,"READ");
         Page<IbzproProjectUserTask> domains = ibzproprojectusertaskService.searchProjectWeeklyTask(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzproprojectusertaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
