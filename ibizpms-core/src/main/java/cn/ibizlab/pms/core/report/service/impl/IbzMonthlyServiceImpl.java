@@ -167,19 +167,19 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
         return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public IbzMonthly createUserMonthly(IbzMonthly et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzMonthlyHelper.class).createUserMonthly(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean createUserMonthlyBatch (List<IbzMonthly> etList) {
-		 for(IbzMonthly et : etList) {
-		   createUserMonthly(et);
-		 }
-	 	 return true;
+    public boolean createUserMonthlyBatch(List<IbzMonthly> etList) {
+        for(IbzMonthly et : etList) {
+            createUserMonthly(et);
+        }
+        return true;
     }
 
     @Override

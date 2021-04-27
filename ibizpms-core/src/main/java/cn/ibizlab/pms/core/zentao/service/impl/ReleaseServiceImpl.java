@@ -392,19 +392,19 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
         return true;
     }
 
-       @Override
+    @Override
     @Transactional
     public Release unlinkBug(Release et) {
-  			return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.ReleaseHelper.class).unlinkBug(et);
+        //自定义代码
+        return et;
     }
-	
-	@Override
+    @Override
     @Transactional
-    public boolean unlinkBugBatch (List<Release> etList) {
-		 for(Release et : etList) {
-		   unlinkBug(et);
-		 }
-	 	 return true;
+    public boolean unlinkBugBatch(List<Release> etList) {
+        for(Release et : etList) {
+            unlinkBug(et);
+        }
+        return true;
     }
 
 
