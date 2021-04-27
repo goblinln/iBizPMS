@@ -615,7 +615,7 @@
     "name" : "推送数据",
     "getOutPSSysDataSyncAgent" : {
       "modelref" : true,
-      "id" : "推送数据"
+      "path" : "PSSYSDATASYNCAGENTS/DataPush.json"
     },
     "syncDir" : "OUT",
     "syncTag" : "DataSync",
