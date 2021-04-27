@@ -1528,7 +1528,7 @@
     "agentType" : "ACTIVEMQ",
     "codeName" : "DataPush",
     "dynaModelFilePath" : "PSSYSDATASYNCAGENTS/DataPush.json",
-    "name" : "推送数据",
+    "name" : "数据推送",
     "syncDir" : "OUT"
   } ],
   "getAllPSSysSequences" : [ {

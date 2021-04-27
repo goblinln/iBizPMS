@@ -325,7 +325,7 @@
 			<![CDATA[ AND (t1.parent = 0 or t1.parent is null ) and t1.type = 'doc' ]]>
 			</if>
 			<if test="true">
-			<![CDATA[ AND t1.root = #{srf.webcontext.root} ]]>
+			<![CDATA[ AND t1.root = #{srf.webcontext.srfroot} ]]>
 			</if>
 			<include refid="searchMode" />
 		</trim>
