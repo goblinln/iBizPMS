@@ -291,6 +291,7 @@ public class TodoExService extends TodoServiceImpl {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public boolean create(Todo et) {
         if (StringUtils.compare(et.getType(), StaticDict.Type.TASK.getValue()) == 0) {
             et.setName(et.getTask());
@@ -338,6 +339,7 @@ public class TodoExService extends TodoServiceImpl {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public boolean update(Todo et) {
         Todo old = new Todo();
         CachedBeanCopier.copy(get(et.getId()), old);
