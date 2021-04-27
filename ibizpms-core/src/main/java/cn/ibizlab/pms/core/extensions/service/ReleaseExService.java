@@ -68,7 +68,7 @@ public class ReleaseExService extends ReleaseServiceImpl {
      * @return
      */
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public Release batchUnlinkBug(Release et) {
         throw new RuntimeException("未实现");
     }
@@ -78,7 +78,7 @@ public class ReleaseExService extends ReleaseServiceImpl {
      * @return
      */
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public Release changeStatus(Release et) {
         throw new RuntimeException("未实现");
     }
@@ -121,7 +121,7 @@ public class ReleaseExService extends ReleaseServiceImpl {
      * @return
      */
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public Release linkBugbyBug(Release et) {
         throw new RuntimeException("未实现");
     }
@@ -131,7 +131,7 @@ public class ReleaseExService extends ReleaseServiceImpl {
      * @return
      */
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public Release linkBugbyLeftBug(Release et) {
         if (et.getId() == null || et.get(FIELD_SRFACTIONPARAM) == null) {
             return et;
@@ -163,7 +163,7 @@ public class ReleaseExService extends ReleaseServiceImpl {
      * @return
      */
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public Release linkStory(Release et) {
         if (et.getId() == null || et.get(FIELD_SRFACTIONPARAM) == null) {
             return et;
@@ -222,7 +222,7 @@ public class ReleaseExService extends ReleaseServiceImpl {
      * @return
      */
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public Release terminate(Release et) {
         et.setStatus(StaticDict.Release__status.TERMINATE.getValue());
         super.update(et);
@@ -237,12 +237,13 @@ public class ReleaseExService extends ReleaseServiceImpl {
      * @return
      */
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public Release unlinkBug(Release et) {
         throw new RuntimeException("未实现");
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public boolean create(Release et) {
         boolean bOk = false;
 
@@ -265,12 +266,7 @@ public class ReleaseExService extends ReleaseServiceImpl {
 
         String files = et.getFiles();
         bOk = super.create(et);
-        File file = new File();
-        file.set(files,files);
-        file.setObjectid(et.getId());
-        file.setObjecttype(StaticDict.File__object_type.RELEASE.getValue());
-        file.setExtra("");
-        iFileService.updateObjectID(file);
+        FileHelper.updateObjectID(et.getId(),StaticDict.File__object_type.RELEASE.getValue(),files,"",iFileService);
 
         ActionHelper.createHis(et.getId(),StaticDict.Action__object_type.RELEASE.getValue(),null,StaticDict.Action__type.OPENED.getValue(),
                 "","", null,iActionService);
@@ -278,6 +274,7 @@ public class ReleaseExService extends ReleaseServiceImpl {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public boolean update(Release et) {
         Release old = new Release();
         CachedBeanCopier.copy(get(et.getId()), old);
@@ -285,12 +282,7 @@ public class ReleaseExService extends ReleaseServiceImpl {
         if (!super.update(et)) {
             return false;
         }
-        File file = new File();
-        file.set(files,files);
-        file.setObjectid(et.getId());
-        file.setObjecttype(StaticDict.File__object_type.RELEASE.getValue());
-        file.setExtra("");
-        iFileService.updateObjectID(file);
+        FileHelper.updateObjectID(et.getId(),StaticDict.File__object_type.RELEASE.getValue(),files,"",iFileService);
 
         List<History> changes = ChangeUtil.diff(old, et,null,null,new String[]{"desc"});
         if (changes.size() > 0) {
@@ -312,7 +304,7 @@ public class ReleaseExService extends ReleaseServiceImpl {
         bOk = super.remove(key);
         return bOk;
     }
-
+    @Transactional(rollbackFor = Exception.class)
     public boolean deletedBuild(Long key, String name){
         List<Build> list1 = iBuildService.list(new QueryWrapper<Build>().eq("`id`", key));
         for(Build build : list1) {

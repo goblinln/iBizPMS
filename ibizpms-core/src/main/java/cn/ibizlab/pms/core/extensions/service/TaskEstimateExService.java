@@ -75,6 +75,7 @@ public class TaskEstimateExService extends TaskEstimateServiceImpl {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public boolean update(TaskEstimate et) {
         TaskEstimate oldEstimate = taskEstimateService.getById(et.getId());
         Task task = taskService.getById(oldEstimate.getTask());
@@ -144,12 +145,79 @@ public class TaskEstimateExService extends TaskEstimateServiceImpl {
         newTask.setStatus(data.getStatus());
         List<History> changes = ChangeUtil.diff(oldTask,newTask);
 
-        ActionHelper.createHis(task.getId(),StaticDict.Action__object_type.TASK.getValue(),changes,StaticDict.Action__type.EDITESTIMATE.getValue(),
-                et.getWork(),"", null,iActionService);
 
+        ActionHelper.createHis(et.getId(),StaticDict.Action__object_type.TASK.getValue(),changes,StaticDict.Action__type.EDITESTIMATE.getValue(),
+                et.getWork(),"", null,iActionService);
         return true;
     }
 
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public boolean remove(Long key) {
+        TaskEstimate taskEstimate = this.get(key);
+        Task task = iTaskService.get(taskEstimate.getTask());
+        this.remove(new QueryWrapper<TaskEstimate>().eq(FIELD_ID,key));
+        List<JSONObject> estimateLists = taskEstimateService.select(String.format("select * from zt_TASKESTIMATE where task = %1$s order by date desc,id desc limit 0,1",taskEstimate.getTask()),null);
+        TaskEstimate lastEstimate = null;
+        if (estimateLists.size() != 0){
+            lastEstimate = JSONObject.toJavaObject(estimateLists.get(0), TaskEstimate.class);
+        }
+        double consumed = task.getConsumed() - taskEstimate.getConsumed();
+        double left = lastEstimate != null && lastEstimate.getLeft() != 0 ? lastEstimate.getLeft() : taskEstimate.getLeft();
+        Task data = new Task();
+        data.setConsumed(consumed);
+        data.setLeft(left);
+        data.setStatus((left == 0 && consumed != 0) ? StaticDict.Task__status.DONE.getValue() : task.getStatus());
 
+        List<Team> teamLists = teamService.list(new QueryWrapper<Team>().eq(FIELD_ROOT,task.getId()).eq(FIELD_TYPE, StaticDict.Team__type.TASK.getValue()));
+        if (teamLists.size() != 0){
+            double oldConsumed = 0;
+            for (Team team : teamLists) {
+                if (team.getAccount().equals(taskEstimate.getAccount())){
+                    oldConsumed = team.getConsumed();
+                }
+            }
+            Team newTeamInfo = new Team();
+            newTeamInfo.setConsumed(oldConsumed - taskEstimate.getConsumed());
+            newTeamInfo.setLeft(left);
+            Map<String,Object> param = new HashMap<>();
+            param.put(FIELD_ROOT,taskEstimate.getTask());
+            param.put(FIELD_TYPE, StaticDict.Team__type.TASK.getValue());
+            param.put(FIELD_ACCOUNT,taskEstimate.getAccount());
+
+            iTeamService.update(newTeamInfo,(Wrapper<Team>) newTeamInfo.getUpdateWrapper(true).allEq(param));
+            List<TaskTeam> teams = task.getTaskteam();
+            // TODO 后续补充
+            //iTaskService.computeHours4Multiple(task,data,teams,false);
+        }
+        data.setId(taskEstimate.getTask());
+        iTaskService.update(data);
+
+        if (task.getParent() > 0) {
+            // TODO 后续补充
+            //iTaskService.updateParentStatus(task, task.getParent(), false);
+        }
+
+        if (task.getStory() != 0) {
+            Story et = storyService.getById(task.getStory());
+            storyService.setStage(et);
+        }
+        Task oldTask = new Task();
+        oldTask.setConsumed(task.getConsumed());
+        oldTask.setLeft(left);
+        oldTask.setStatus(task.getStatus());
+
+        Task newTask = new Task();
+        newTask.setConsumed(data.getConsumed());
+        newTask.setLeft(data.getLeft());
+        newTask.setStatus(data.getStatus());
+
+        List<History> changes = ChangeUtil.diff(oldTask,newTask);
+        if (changes.size() > 0) {
+            ActionHelper.createHis(task.getId(),StaticDict.Action__object_type.TASK.getValue(),changes,StaticDict.Action__type.EDITESTIMATE.getValue(),
+                    "","", null,iActionService);
+        }
+        return true;
+    }
 }
 
