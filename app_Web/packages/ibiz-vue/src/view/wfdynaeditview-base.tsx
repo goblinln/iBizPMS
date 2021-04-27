@@ -129,7 +129,7 @@ export class WFDynaEditViewBase extends MainViewBase {
         await super.viewModelInit();
         this.viewRefData = await ModelTool.loadedAppViewRef(this.viewInstance);
         this.drtabInstance = ModelTool.findPSControlByName('drtab', this.viewInstance.getPSControls()) as IPSDEDRTab;
-        this.deDRTabPages = this.drtabInstance.getPSDEDRTabPages();
+        this.deDRTabPages = this.drtabInstance?.getPSDEDRTabPages();
     }
 
     /**
@@ -194,7 +194,7 @@ export class WFDynaEditViewBase extends MainViewBase {
                 </tabs>
             )
         } else {
-            { this.renderFormContent() }
+            return this.renderFormContent(); 
         }
     }
 

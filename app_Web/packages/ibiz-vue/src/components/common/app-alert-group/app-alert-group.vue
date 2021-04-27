@@ -106,7 +106,7 @@ export default class AppAlertGroup extends Vue {
                 })  
             } 
         }).catch((error:any) => {
-            this.$throw(error);
+            console.log(error);
         });
     }
 }

@@ -70,9 +70,9 @@ export class AppBackEndAction {
             }
         }
         if (Object.is(actionTarget, 'SINGLEDATA')) {
-            actionContext.$Notice.error({ title: '错误', desc: '不支持单项数据' });
+            actionContext.$throw('不支持单项数据');
         } else if (Object.is(actionTarget, 'MULTIDATA')) {
-            actionContext.$Notice.error({ title: '错误', desc: '不支持多项数据' });
+            actionContext.$throw('不支持多项数据');
         } else {
             let data: any = {};
             let parentContext: any = {};
@@ -165,7 +165,7 @@ export class AppBackEndAction {
                             )
                                 .then((response: any) => {
                                     if (!response || response.status !== 200) {
-                                        actionContext.$Notice.error({ title: '错误', desc: response.message });
+                                        actionContext.$throw(response);
                                         return;
                                     }
                                     if (this.actionModel.showBusyIndicator) {
@@ -235,7 +235,7 @@ export class AppBackEndAction {
                                 })
                                 .catch((response: any) => {
                                     if (response && response.data && response.data.message) {
-                                        actionContext.$Notice.error({ title: '错误', desc: response.data.message });
+                                        actionContext.$throw(response);
                                     }
                                 });
                         });

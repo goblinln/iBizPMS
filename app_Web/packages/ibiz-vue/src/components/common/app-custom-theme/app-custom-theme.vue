@@ -164,7 +164,7 @@ export default class AppCustomTheme extends Vue {
      */
     public async initThemeOptions() {
         try {
-            const response = await this.$http.get('configs/custom/theme');
+            const response = await this.$http.get('configs/person/setting');
             if (response.status && response.status == 200) {
                 return response.data && response.data.model ? response.data.model : null;
             }
@@ -330,7 +330,7 @@ export default class AppCustomTheme extends Vue {
      */
     public saveThemeOptions() {
         if (this.themeOptions) {
-            this.$http.put(`/configs/custom/theme`, { model: JSON.stringify(this.themeOptions) }).then((res: any) => {
+            this.$http.put(`/configs/person/setting`, { model: JSON.stringify(this.themeOptions) }).then((res: any) => {
                 if (res) {
                     const _this: any = this;
                     _this.$notify({

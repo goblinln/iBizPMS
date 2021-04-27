@@ -70,7 +70,7 @@ export class AppPivotTable extends AppGridBase {
      */
     public load(opt: any = {}, pageReset: boolean = false): void {
         if(!this.fetchAction){
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.gridpage.notConfig.fetchAction') as string) });
+            this.$throw((this.$t('app.gridpage.notConfig.fetchAction') as string));
             return;
         }
         if(pageReset){
@@ -98,9 +98,7 @@ export class AppPivotTable extends AppGridBase {
         post.then(async (response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                if (response.data && response.data.message) {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                }
+                this.$throw(response);
                 return;
             }
             const data: any = response.data;
@@ -158,10 +156,7 @@ export class AppPivotTable extends AppGridBase {
             }          
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status === 401) {
-                return;
-            }
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data && response.data.message ? response.data.message : "" });
+            this.$throw(response);
         });
     }
 

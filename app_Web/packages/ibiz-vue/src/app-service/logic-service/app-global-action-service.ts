@@ -153,7 +153,7 @@ export class AppGlobalService {
      * @memberof AppGlobalService
      */
     public HELP(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
-        actionContext.$Notice.error({ title: '错误', desc: '帮助未支持' });
+        actionContext.$throw('帮助未支持');
     }
 
     /**
@@ -280,7 +280,7 @@ export class AppGlobalService {
             }
             actionContext.opendata([{ ...data }], params, $event, xData);
         } else {
-            actionContext.$Notice.error({ title: '错误', desc: 'opendata 视图处理逻辑不存在，请添加!' });
+            actionContext.$throw('opendata 视图处理逻辑不存在，请添加!');
         }
     }
 
@@ -307,7 +307,7 @@ export class AppGlobalService {
             }
             actionContext.opendata([{ ...data }], params, $event, xData);
         } else {
-            actionContext.$Notice.error({ title: '错误', desc: 'opendata 视图处理逻辑不存在，请添加!' });
+            actionContext.$throw('opendata 视图处理逻辑不存在，请添加!');
         }
     }
 
@@ -785,7 +785,7 @@ export class AppGlobalService {
             const data: any = {};
             actionContext.newdata([{ ...data }], [{ ...data }], params, $event, xData);
         } else {
-            actionContext.$Notice.error({ title: '错误', desc: 'newdata 视图处理逻辑不存在，请添加!' });
+            actionContext.$throw('newdata 视图处理逻辑不存在，请添加!');
         }
     }
 
@@ -808,7 +808,7 @@ export class AppGlobalService {
         } else if (xData.newRow && xData.newRow instanceof Function) {
             xData.newRow([{ ...data }], params, $event, xData);
         } else {
-            actionContext.$Notice.error({ title: '错误', desc: 'newRow 视图处理逻辑不存在，请添加!' });
+            actionContext.$throw('newRow 视图处理逻辑不存在，请添加!');
         }
     }
 
