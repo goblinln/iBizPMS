@@ -9705,6 +9705,91 @@
     "logicName" : "已关闭_已收藏_常规任务",
     "mSTag" : "closed__1__30",
     "name" : "已关闭_已收藏_常规任务",
+    "getPSDEMainStateActions" : [ {
+      "name" : "Activate",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "AssignTo",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "RecordEstimate",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordEstimate.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Save",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Save.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "TaskNFavorites",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskNFavorites.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "EditEstimate",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/EditEstimate.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Create",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "DeleteEstimate",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/DeleteEstimate.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_NFAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -17688,6 +17773,119 @@
     "logicName" : "需求变更_已收藏_常规任务",
     "mSTag" : "storychange__1__30",
     "name" : "需求变更_已收藏_常规任务",
+    "getPSDEMainStateActions" : [ {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "CreateCycleTasks",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateCycleTasks.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "LinkPlan",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/LinkPlan.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "OtherUpdate",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/OtherUpdate.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "AssignTo",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Start",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Start.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Finish",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Finish.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "EditEstimate",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/EditEstimate.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "DeleteEstimate",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/DeleteEstimate.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Save",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Save.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Create",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "RecordEstimate",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordEstimate.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "createByCycle",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__STORY_FJTASK_BUT",
       "getPSDEOPPriv" : {

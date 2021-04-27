@@ -211,7 +211,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                                 <app-message-popover />
                                 <app-lock-scren />
                                 <app-full-scren />
-                                <app-theme style="width:45px;display: flex;justify-content: center;"></app-theme>
+                                <app-custom-theme viewStyle={this.viewInstance.viewStyle}></app-custom-theme>
                             </div>
                         </header>
                         <content class={contentClass} >

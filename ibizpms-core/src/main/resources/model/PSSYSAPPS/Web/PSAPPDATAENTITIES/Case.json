@@ -6940,6 +6940,63 @@
     "logicName" : "正常_失败_未收藏",
     "mSTag" : "normal__fail__0",
     "name" : "正常_失败_未收藏",
+    "getPSDEMainStateActions" : [ {
+      "name" : "unlinkCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "TestRunCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/TestRunCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "unlinkSuiteCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkSuiteCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "RunCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/RunCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "confirmChange",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/ConfirmChange.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "bugCreateCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/BugCreateCase.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CONFIRM_BUT",
       "getPSDEOPPriv" : {
@@ -7114,6 +7171,49 @@
     "logicName" : "正常_忽略_已收藏",
     "mSTag" : "normal__n/a__1",
     "name" : "正常_忽略_已收藏",
+    "getPSDEMainStateActions" : [ {
+      "name" : "RunCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/RunCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "unlinkCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "bugCreateCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/BugCreateCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "unlinkSuiteCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkSuiteCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "TestRunCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/TestRunCase.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_NFAVOR_BUT",
       "getPSDEOPPriv" : {
@@ -8514,6 +8614,91 @@
     "logicName" : "需求变更_未执行_已收藏",
     "mSTag" : "storychange__no__1",
     "name" : "需求变更_未执行_已收藏",
+    "getPSDEMainStateActions" : [ {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "unlinkCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "GetByTestTask",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/GetByTestTask.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "unlinkSuiteCases",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkSuiteCases.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "confirmChange",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/ConfirmChange.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "bugCreateCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/BugCreateCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Save",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Save.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "TestRunCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/TestRunCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "unlinkSuiteCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkSuiteCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Create",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CASETOBUG_BUT",
       "getPSDEOPPriv" : {
@@ -8790,6 +8975,56 @@
     "logicName" : "需求变更_通过_已收藏",
     "mSTag" : "storychange__pass__1",
     "name" : "需求变更_通过_已收藏",
+    "getPSDEMainStateActions" : [ {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "unlinkCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "unlinkSuiteCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkSuiteCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "bugCreateCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/BugCreateCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "TestRunCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/TestRunCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "RunCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/RunCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "confirmChange",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/ConfirmChange.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_TOBUG_BUT",
       "getPSDEOPPriv" : {
@@ -8994,6 +9229,56 @@
     "logicName" : "未开始_阻塞_已收藏",
     "mSTag" : "wait__blocked__1",
     "name" : "未开始_阻塞_已收藏",
+    "getPSDEMainStateActions" : [ {
+      "name" : "bugCreateCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/BugCreateCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "confirmChange",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/ConfirmChange.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "RunCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/RunCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "unlinkSuiteCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkSuiteCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "TestRunCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/TestRunCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "unlinkCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkCase.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__CASE_CONFIRM_BUT",
       "getPSDEOPPriv" : {
