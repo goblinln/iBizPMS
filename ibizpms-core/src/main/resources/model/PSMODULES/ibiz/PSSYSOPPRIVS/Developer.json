@@ -391,6 +391,13 @@
     },
     "sysUniResCode" : "BUG_DELETE_BUT"
   }, {
+    "name" : "研发人员-顶部_全文检索",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_ELECSEARCH_MENU"
+    },
+    "sysUniResCode" : "TOP_ELECSEARCH_MENU"
+  }, {
     "name" : "研发人员-bug新建",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -404,6 +411,13 @@
       "id" : "ibiz__TASK_ASSIGN_BUT"
     },
     "sysUniResCode" : "TASK_ASSIGN_BUT"
+  }, {
+    "name" : "研发人员-顶部_测试主页",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_CASE_MENU"
+    },
+    "sysUniResCode" : "TOP_CASE_MENU"
   }, {
     "name" : "研发人员-Bug移除",
     "getPSSysUniRes" : {
@@ -454,6 +468,13 @@
     },
     "sysUniResCode" : "TASK_PROCEED_BUT"
   }, {
+    "name" : "研发人员-顶部_产品主页",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_PRODUCT_MENU"
+    },
+    "sysUniResCode" : "TOP_PRODUCT_MENU"
+  }, {
     "name" : "研发人员-Bug待收藏",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -461,12 +482,26 @@
     },
     "sysUniResCode" : "BUG_NFAVOR_BUT"
   }, {
+    "name" : "研发人员-左侧_测试资源",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__LEFT_CASE_MENU"
+    },
+    "sysUniResCode" : "LEFT_CASE_MENU"
+  }, {
     "name" : "研发人员-任务确认需求变更",
     "getPSSysUniRes" : {
       "modelref" : true,
       "id" : "ibiz__TASK_XQCHANGE_BUT"
     },
     "sysUniResCode" : "TASK_XQCHANGE_BUT"
+  }, {
+    "name" : "研发人员-顶部_年度统计",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_YEARSUM_MENU"
+    },
+    "sysUniResCode" : "TOP_YEARSUM_MENU"
   }, {
     "name" : "研发人员-任务新建",
     "getPSSysUniRes" : {
@@ -481,6 +516,13 @@
       "id" : "ibiz__BUG_CLOSE_BUT"
     },
     "sysUniResCode" : "BUG_CLOSE_BUT"
+  }, {
+    "name" : "研发人员-顶部_项目主页",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_PROJECT_MENU"
+    },
+    "sysUniResCode" : "TOP_PROJECT_MENU"
   }, {
     "name" : "研发人员-任务暂停",
     "getPSSysUniRes" : {
@@ -559,6 +601,13 @@
     },
     "sysUniResCode" : "TASK_COMPLETE_BUT"
   }, {
+    "name" : "研发人员-顶部_我的收藏",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_MYFAVOURITE_MENU"
+    },
+    "sysUniResCode" : "TOP_MYFAVOURITE_MENU"
+  }, {
     "name" : "研发人员-Bug已收藏",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -579,6 +628,20 @@
       "id" : "ibiz__TASK_START_BUT"
     },
     "sysUniResCode" : "TASK_START_BUT"
+  }, {
+    "name" : "研发人员-顶部_我的地盘",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_MYPLACE_MENU"
+    },
+    "sysUniResCode" : "TOP_MYPLACE_MENU"
+  }, {
+    "name" : "研发人员-顶部_文档",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_DOC_MENU"
+    },
+    "sysUniResCode" : "TOP_DOC_MENU"
   }, {
     "name" : "研发人员-任务待收藏",
     "getPSSysUniRes" : {
@@ -601,6 +664,13 @@
     },
     "sysUniResCode" : "UNIVERSALCREATE"
   }, {
+    "name" : "研发人员-顶部_统计",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_SUM_MENU"
+    },
+    "sysUniResCode" : "TOP_SUM_MENU"
+  }, {
     "name" : "研发人员-Bug指派",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -614,6 +684,20 @@
       "id" : "ibiz__BUG_CREATECASE_BUT"
     },
     "sysUniResCode" : "BUG_CREATECASE_BUT"
+  }, {
+    "name" : "研发人员-左侧_项目管理（一级）",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__LEFT_PROJECT_MENU"
+    },
+    "sysUniResCode" : "LEFT_PROJECT_MENU"
+  }, {
+    "name" : "研发人员-产品左侧资源",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PRODUCTLEFT"
+    },
+    "sysUniResCode" : "PRODUCTLEFT"
   }, {
     "name" : "研发人员-Bug提需求",
     "getPSSysUniRes" : {
@@ -638,5 +722,5 @@
   } ],
   "roleTag" : "Developer",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "BUG_DELETE_BUT", "BUG_CREATE_BUT", "TASK_ASSIGN_BUT", "BUG_UNLINK_BUT", "BUG_ACTIVATE_BUT", "TASK_DELETE_BUT", "UNIVERSALEDIT", "UNIVERSALSAVE", "TASK_FAVOR_BUT", "TASK_PROCEED_BUT", "BUG_NFAVOR_BUT", "TASK_XQCHANGE_BUT", "TASK_CREATE_BUT", "BUG_CLOSE_BUT", "TASK_PAUSE_BUT", "TASK_CLOSE_BUT", "TASK_CONSUM_BUT", "BUG_CONFIRM_BUT", "TASK_ACTIVATION_BUT", "BUG_EDIT_BUT", "TASK_EDIT_BUT", "BUG_RESOLVE_BUT", "TASK_CANCEL_BUT", "DOCLIBMODULE_FAVOUR_BUT", "TASK_COMPLETE_BUT", "BUG_FAVOR_BUT", "DOCLIB_NFAVOUR_BUT", "TASK_START_BUT", "TASK_NFAVOR_BUT", "UNIVERSALDELETE", "UNIVERSALCREATE", "BUG_ASSIGNTO_BUT", "BUG_CREATECASE_BUT", "BUG_TOSTORY_BUT", "TASK_FORWARD_BUT", "TASK_SUBTASKS_BUT" ]
+  "uniResTags" : [ "BUG_DELETE_BUT", "TOP_ELECSEARCH_MENU", "BUG_CREATE_BUT", "TASK_ASSIGN_BUT", "TOP_CASE_MENU", "BUG_UNLINK_BUT", "BUG_ACTIVATE_BUT", "TASK_DELETE_BUT", "UNIVERSALEDIT", "UNIVERSALSAVE", "TASK_FAVOR_BUT", "TASK_PROCEED_BUT", "TOP_PRODUCT_MENU", "BUG_NFAVOR_BUT", "LEFT_CASE_MENU", "TASK_XQCHANGE_BUT", "TOP_YEARSUM_MENU", "TASK_CREATE_BUT", "BUG_CLOSE_BUT", "TOP_PROJECT_MENU", "TASK_PAUSE_BUT", "TASK_CLOSE_BUT", "TASK_CONSUM_BUT", "BUG_CONFIRM_BUT", "TASK_ACTIVATION_BUT", "BUG_EDIT_BUT", "TASK_EDIT_BUT", "BUG_RESOLVE_BUT", "TASK_CANCEL_BUT", "DOCLIBMODULE_FAVOUR_BUT", "TASK_COMPLETE_BUT", "TOP_MYFAVOURITE_MENU", "BUG_FAVOR_BUT", "DOCLIB_NFAVOUR_BUT", "TASK_START_BUT", "TOP_MYPLACE_MENU", "TOP_DOC_MENU", "TASK_NFAVOR_BUT", "UNIVERSALDELETE", "UNIVERSALCREATE", "TOP_SUM_MENU", "BUG_ASSIGNTO_BUT", "BUG_CREATECASE_BUT", "LEFT_PROJECT_MENU", "PRODUCTLEFT", "BUG_TOSTORY_BUT", "TASK_FORWARD_BUT", "TASK_SUBTASKS_BUT" ]
 }

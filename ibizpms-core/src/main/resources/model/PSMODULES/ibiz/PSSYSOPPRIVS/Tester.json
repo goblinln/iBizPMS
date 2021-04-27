@@ -607,6 +607,13 @@
     },
     "sysUniResCode" : "TESTT_START_BUT"
   }, {
+    "name" : "null-顶部_统计",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_SUM_MENU"
+    },
+    "sysUniResCode" : "TOP_SUM_MENU"
+  }, {
     "name" : "测试人员-Bug指派",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -656,6 +663,13 @@
     },
     "sysUniResCode" : "TASK_FAVOR_BUT"
   }, {
+    "name" : "null-顶部_项目主页",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_PROJECT_MENU"
+    },
+    "sysUniResCode" : "TOP_PROJECT_MENU"
+  }, {
     "name" : "测试人员-任务指派",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -669,6 +683,13 @@
       "id" : "ibiz__TESTSU_LINKCASE_BUT"
     },
     "sysUniResCode" : "TESTSU_LINKCASE_BUT"
+  }, {
+    "name" : "null-顶部_文档",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_DOC_MENU"
+    },
+    "sysUniResCode" : "TOP_DOC_MENU"
   }, {
     "name" : "测试人员-测试版本编辑",
     "getPSSysUniRes" : {
@@ -690,6 +711,20 @@
       "id" : "ibiz__CASE_CREATE_BUT"
     },
     "sysUniResCode" : "CASE_CREATE_BUT"
+  }, {
+    "name" : "null-左侧_项目管理（一级）",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__LEFT_PROJECT_MENU"
+    },
+    "sysUniResCode" : "LEFT_PROJECT_MENU"
+  }, {
+    "name" : "null-产品左侧资源",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PRODUCTLEFT"
+    },
+    "sysUniResCode" : "PRODUCTLEFT"
   }, {
     "name" : "测试人员-测试用例（用例确认）",
     "getPSSysUniRes" : {
@@ -726,12 +761,33 @@
     },
     "sysUniResCode" : "CASE_UNLINK_BUT"
   }, {
+    "name" : "null-顶部_我的收藏",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_MYFAVOURITE_MENU"
+    },
+    "sysUniResCode" : "TOP_MYFAVOURITE_MENU"
+  }, {
+    "name" : "null-顶部_全文检索",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_ELECSEARCH_MENU"
+    },
+    "sysUniResCode" : "TOP_ELECSEARCH_MENU"
+  }, {
     "name" : "测试人员-Bug确认",
     "getPSSysUniRes" : {
       "modelref" : true,
       "id" : "ibiz__BUG_CONFIRM_BUT"
     },
     "sysUniResCode" : "BUG_CONFIRM_BUT"
+  }, {
+    "name" : "null-顶部_产品主页",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_PRODUCT_MENU"
+    },
+    "sysUniResCode" : "TOP_PRODUCT_MENU"
   }, {
     "name" : "测试人员-测试报告删除",
     "getPSSysUniRes" : {
@@ -789,6 +845,13 @@
     },
     "sysUniResCode" : "CASE_EDIT_BUT"
   }, {
+    "name" : "null-顶部_测试主页",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_CASE_MENU"
+    },
+    "sysUniResCode" : "TOP_CASE_MENU"
+  }, {
     "name" : "测试人员-任务继续",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -844,6 +907,13 @@
       "id" : "ibiz__BUILD_CREATE_BUT"
     },
     "sysUniResCode" : "BUILD_CREATE_BUT"
+  }, {
+    "name" : "null-顶部_年度统计",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_YEARSUM_MENU"
+    },
+    "sysUniResCode" : "TOP_YEARSUM_MENU"
   }, {
     "name" : "测试人员-Bug建用例",
     "getPSSysUniRes" : {
@@ -907,6 +977,13 @@
       "id" : "ibiz__STORY_FJTASK_BUT"
     },
     "sysUniResCode" : "STORY_FJTASK_BUT"
+  }, {
+    "name" : "null-左侧_测试资源",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__LEFT_CASE_MENU"
+    },
+    "sysUniResCode" : "LEFT_CASE_MENU"
   }, {
     "name" : "测试人员-任务待收藏",
     "getPSSysUniRes" : {
@@ -992,6 +1069,13 @@
     },
     "sysUniResCode" : "TESTSU_DELETE_BUT"
   }, {
+    "name" : "null-顶部_我的地盘",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_MYPLACE_MENU"
+    },
+    "sysUniResCode" : "TOP_MYPLACE_MENU"
+  }, {
     "name" : "测试人员-Bug已收藏",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -1036,5 +1120,5 @@
   } ],
   "roleTag" : "Tester",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "CASE_RUN_BUT", "TESTMOD_FIX_BUT", "TASK_COMPLETE_BUT", "CASE_RESULT_BUT", "CASE_CONFIRM_BUT", "CASE_CASERUN_BUT", "TESTT_ACTIVITE_BUT", "REPORT_CREATE_BUT", "TESTT_START_BUT", "BUG_ASSIGNTO_BUT", "TESTT_BLOCK_BUT", "BUG_NFAVOR_BUT", "BUG_UNLINK_BUT", "TESTT_LCASE_BUT", "TESTT_OPEN_BUT", "TASK_FAVOR_BUT", "TASK_ASSIGN_BUT", "TESTSU_LINKCASE_BUT", "TESTT_EDIT_BUT", "TASK_START_BUT", "CASE_CREATE_BUT", "CASE_CASECOF_BUT", "REPORT_EDIT_BUT", "CASE_DELETE_BUT", "TASK_FORWARD_BUT", "CASE_UNLINK_BUT", "BUG_CONFIRM_BUT", "REPORT_DELETE_BUT", "TASK_PAUSE_BUT", "CASE_CASETOBUG_BUT", "BUILD_LINK_BUT", "BUILD_EDIT_BUT", "TESTMOD_OQCVIEW_BUT", "CASE_CASERESULT_BUT", "CASE_EDIT_BUT", "TASK_PROCEED_BUT", "BUG_TOSTORY_BUT", "TASK_SUBTASKS_BUT", "BUG_EDIT_BUT", "CASE_TOBUG_BUT", "BUG_RESOLVE_BUT", "TASK_DELETE_BUT", "BUILD_CREATE_BUT", "BUG_CREATECASE_BUT", "TESTT_DELETE_BUT", "PROJ_TEST_TESTTASK", "BUG_CREATE_BUT", "TASK_CONSUM_BUT", "BUG_ACTIVATE_BUT", "TASK_CANCEL_BUT", "PROP_LBUG_BUT", "STORY_FJTASK_BUT", "TASK_NFAVOR_BUT", "TEST_TESTTASK", "TASK_CLOSE_BUT", "TESTT_CREATE_BUT", "TASK_EDIT_BUT", "TASK_ACTIVATION_BUT", "BUG_DELETE_BUT", "BUG_CLOSE_BUT", "TESTT_CLOSED_BUT", "TASK_CREATE_BUT", "BUILD_DELETE_BUT", "TESTSU_DELETE_BUT", "BUG_FAVOR_BUT", "BUILD_SUBT_BUT", "TEST_TESTREPORT", "TESTSU_CREATE_BUT", "TASK_XQCHANGE_BUT", "TESTSU_EDITSUITE_BUT" ]
+  "uniResTags" : [ "CASE_RUN_BUT", "TESTMOD_FIX_BUT", "TASK_COMPLETE_BUT", "CASE_RESULT_BUT", "CASE_CONFIRM_BUT", "CASE_CASERUN_BUT", "TESTT_ACTIVITE_BUT", "REPORT_CREATE_BUT", "TESTT_START_BUT", "TOP_SUM_MENU", "BUG_ASSIGNTO_BUT", "TESTT_BLOCK_BUT", "BUG_NFAVOR_BUT", "BUG_UNLINK_BUT", "TESTT_LCASE_BUT", "TESTT_OPEN_BUT", "TASK_FAVOR_BUT", "TOP_PROJECT_MENU", "TASK_ASSIGN_BUT", "TESTSU_LINKCASE_BUT", "TOP_DOC_MENU", "TESTT_EDIT_BUT", "TASK_START_BUT", "CASE_CREATE_BUT", "LEFT_PROJECT_MENU", "PRODUCTLEFT", "CASE_CASECOF_BUT", "REPORT_EDIT_BUT", "CASE_DELETE_BUT", "TASK_FORWARD_BUT", "CASE_UNLINK_BUT", "TOP_MYFAVOURITE_MENU", "TOP_ELECSEARCH_MENU", "BUG_CONFIRM_BUT", "TOP_PRODUCT_MENU", "REPORT_DELETE_BUT", "TASK_PAUSE_BUT", "CASE_CASETOBUG_BUT", "BUILD_LINK_BUT", "BUILD_EDIT_BUT", "TESTMOD_OQCVIEW_BUT", "CASE_CASERESULT_BUT", "CASE_EDIT_BUT", "TOP_CASE_MENU", "TASK_PROCEED_BUT", "BUG_TOSTORY_BUT", "TASK_SUBTASKS_BUT", "BUG_EDIT_BUT", "CASE_TOBUG_BUT", "BUG_RESOLVE_BUT", "TASK_DELETE_BUT", "BUILD_CREATE_BUT", "TOP_YEARSUM_MENU", "BUG_CREATECASE_BUT", "TESTT_DELETE_BUT", "PROJ_TEST_TESTTASK", "BUG_CREATE_BUT", "TASK_CONSUM_BUT", "BUG_ACTIVATE_BUT", "TASK_CANCEL_BUT", "PROP_LBUG_BUT", "STORY_FJTASK_BUT", "LEFT_CASE_MENU", "TASK_NFAVOR_BUT", "TEST_TESTTASK", "TASK_CLOSE_BUT", "TESTT_CREATE_BUT", "TASK_EDIT_BUT", "TASK_ACTIVATION_BUT", "BUG_DELETE_BUT", "BUG_CLOSE_BUT", "TESTT_CLOSED_BUT", "TASK_CREATE_BUT", "BUILD_DELETE_BUT", "TESTSU_DELETE_BUT", "TOP_MYPLACE_MENU", "BUG_FAVOR_BUT", "BUILD_SUBT_BUT", "TEST_TESTREPORT", "TESTSU_CREATE_BUT", "TASK_XQCHANGE_BUT", "TESTSU_EDITSUITE_BUT" ]
 }
