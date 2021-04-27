@@ -307,7 +307,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "t1.root = #{srf.webcontext.id}",
+        "customCond" : "t1.root = #{srf.webcontext.root}",
         "name" : "查询条件"
       } ]
     } ],
