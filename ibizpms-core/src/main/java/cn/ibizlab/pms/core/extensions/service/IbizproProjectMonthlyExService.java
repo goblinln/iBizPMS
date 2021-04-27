@@ -6,6 +6,8 @@ import cn.ibizlab.pms.core.ibizpro.domain.IbizproProjectMonthly;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Primary;
+
+import javax.annotation.Resource;
 import java.util.*;
 
 /**

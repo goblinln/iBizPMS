@@ -110,6 +110,7 @@ public class DocExService extends DocServiceImpl {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public boolean create(Doc et) {
         DocLib docLib = et.getZtDoclib();
         if (docLib == null) {
@@ -172,6 +173,7 @@ public class DocExService extends DocServiceImpl {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public boolean update(Doc et) {
 
         Doc oldDoc = this.get(et.getId());

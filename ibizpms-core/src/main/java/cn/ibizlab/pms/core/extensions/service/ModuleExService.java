@@ -55,6 +55,7 @@ public class ModuleExService extends ModuleServiceImpl {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public boolean update(Module et) {
         if(et.getParent() == null) {
             et.setParent(0L);
@@ -88,6 +89,7 @@ public class ModuleExService extends ModuleServiceImpl {
 
     @Transactional(rollbackFor = Exception.class)
     @Override
+
     public boolean remove(Long key) {
         Module et = this.get(key);
         Long parent = et.getParent();

@@ -91,7 +91,7 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
      * @return
      */
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public ProductPlan batchUnlinkBug(ProductPlan et) {
         throw new RuntimeException("未实现");
     }
@@ -101,7 +101,7 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
      * @return
      */
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public ProductPlan batchUnlinkStory(ProductPlan et) {
         throw new RuntimeException("未实现");
     }
@@ -111,7 +111,7 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
      * @return
      */
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public ProductPlan unlinkBug(ProductPlan et) {
         if(et.get(FIELD_BUGS)==null) {
             return et ;
@@ -120,7 +120,7 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
             Bug bug = new Bug() ;
             bug.setId(Long.parseLong(bugId));
             bug.setPlan(0L);
-            SpringContextHolder.getBean(BugHelper.class).internalUpdate(bug);
+            SpringContextHolder.getBean(IBugService.class).update(bug);
             ActionHelper.createHis(et.getId(),StaticDict.Action__object_type.BUG.getValue(),null,StaticDict.Action__type.UNLINKEDFROMPLAN.getValue(),
                     "",String.valueOf(et.getId()), null,iActionService);
         }
@@ -133,7 +133,7 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
      * @return
      */
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public ProductPlan unlinkStory(ProductPlan et) {
         return et;
     }
@@ -142,6 +142,7 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
      * 查询集合 默认查询
      */
     @Override
+    @Transactional
     public Page<ProductPlan> searchDefaultParent(ProductPlanSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductPlan> pages=baseMapper.searchDefaultParent(context.getPages(),context,context.getSelectCond());
         for (ProductPlan productPlan : pages.getRecords()) {
@@ -159,6 +160,7 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
      * 查询集合 默认查询
      */
     @Override
+    @Transactional
     public Page<ProductPlan> searchPlanTasks(ProductPlanSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductPlan> pages=baseMapper.searchPlanTasks(context.getPages(),context,context.getSelectCond());
         for (ProductPlan productPlan : pages.getRecords()) {
@@ -174,7 +176,9 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
         return new PageImpl<ProductPlan>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
+
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public boolean create(ProductPlan et) {
         if(et.getParent() != null && et.getParent() > 0) {
             Long parent = et.getParent();
@@ -195,6 +199,7 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public boolean update(ProductPlan et) {
         ProductPlan old = new ProductPlan();
         CachedBeanCopier.copy(this.get(et.getId()), old);
@@ -211,7 +216,8 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
         return true;
     }
 
-    @Transactional
+
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public boolean remove(Long key) {
         boolean bOk = super.remove(key);
@@ -222,6 +228,7 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
         return bOk;
     }
 
+    @Transactional
     public void changeParentField(Long key) {
         ProductPlan plan = this.get(key);
         if(plan == null && plan.getParent() <= 0) {
@@ -242,6 +249,8 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
             }
         }
     }
+
+    @Override
     @Transactional(rollbackFor = Exception.class)
     public ProductPlan linkStory(ProductPlan et) {
         Long productPlanId = et.getId();
@@ -297,6 +306,8 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
         return old;
     }
 
+    @Override
+    @Transactional(rollbackFor = Exception.class)
     public ProductPlan linkBug(ProductPlan et) {
 
         String bugs = "";
@@ -328,6 +339,9 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
         }
         return et ;
     }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
     public ProductPlan linkTask(ProductPlan et) {
         Long productPlanId = et.getId();
         if (productPlanId == null) {
@@ -381,6 +395,8 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
         return old;
     }
 
+    @Override
+    @Transactional
     public ProductPlan eeStartPlan(ProductPlan et){
         String comment = StringUtils.isNotBlank(et.getComment()) ? et.getComment() : "";
 
@@ -399,6 +415,8 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
         return et;
     }
 
+    @Override
+    @Transactional
     public ProductPlan eePausePlan(ProductPlan et){
         String comment = StringUtils.isNotBlank(et.getComment()) ? et.getComment() : "";
 
@@ -417,6 +435,8 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
         return et;
     }
 
+    @Override
+    @Transactional
     public ProductPlan eeRestartPlan(ProductPlan et){
         String comment = StringUtils.isNotBlank(et.getComment()) ? et.getComment() : "";
 
@@ -435,6 +455,7 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
         return et;
     }
 
+    @Transactional
     public ProductPlan eeFinishPlan(ProductPlan et){
         String comment = StringUtils.isNotBlank(et.getComment()) ? et.getComment() : "";
 
@@ -472,6 +493,7 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
         return et;
     }
 
+    @Override
     @Transactional
     public ProductPlan eeActivePlan(ProductPlan et){
         String comment = StringUtils.isNotBlank(et.getComment()) ? et.getComment() : "";
@@ -490,6 +512,7 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
         return et;
     }
 
+    @Override
     @Transactional
     public ProductPlan eeClosePlan(ProductPlan et){
         String comment = StringUtils.isNotBlank(et.getComment()) ? et.getComment() : "";

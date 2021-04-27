@@ -57,6 +57,7 @@ public class DocLibExService extends DocLibServiceImpl {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public boolean create(DocLib et) {
         if (StaticDict.Doclib__type.PRODUCT.getValue().equals(et.getType())) {
             et.setProject(0L);
@@ -74,6 +75,7 @@ public class DocLibExService extends DocLibServiceImpl {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public boolean update(DocLib et) {
         long libId =  et.getId();
         DocLib old = new DocLib();
