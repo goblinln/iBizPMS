@@ -531,19 +531,14 @@ export class CalendarControlBase extends MDControlBase{
         const post: Promise<any> = this.service.search(this.loadAction, JSON.parse(JSON.stringify(this.context?this.context:'')), arg, this.showBusyIndicator);
         post.then((response: any) => {
             if (!response || response.status !== 200) {
-                if (response.data && response.data.message) {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                }
+                this.$throw(response);
                 return;
             }
             // 默认选中第一项
             this.events = response.data;
             handleEvents();
         }, (response: any) => {
-            if (response && response.status === 401) {
-                return;
-            }
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data && response.data.message ? response.data.message : "" });
+            this.$throw(response);
         });
     }
 
@@ -698,17 +693,12 @@ export class CalendarControlBase extends MDControlBase{
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response || response.status !== 200) {
-                if (response.data && response.data.message) {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                }
+                this.$throw(response);
                 return;
             }
         }, (response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status === 401) {
-                return;
-            }
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data && response.data.message ? response.data.message : "" });
+            this.$throw(response);
         });
     }
 

@@ -1,0 +1,83 @@
+.app-custom-theme {
+    .app-theme-icon {
+        cursor: pointer;
+    }
+    color: var(--item-font-color);
+    .theme-color {
+        height: 54px;
+        h3 {
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 22px;
+        }
+        .theme-tag {
+            float: left;
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            color: #fff;
+            font-weight: 700;
+            text-align: center;
+            border-radius: 2px;
+            cursor: pointer;
+            position: relative;
+        }
+        .is-select::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 7px;
+            width: 6px;
+            height: 12px;
+            border: 0;
+            border-right: 2px solid #fff;
+            border-bottom: 2px solid #fff;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transition: all 0.3s ease;
+            -webkit-transition: all 0.3s ease;
+        }
+    }
+    .font-family {
+        height: 54px;
+        h3 {
+            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+    .theme-setting {
+        height: 42%;
+        > .el-tabs {
+            height: 100%;
+            > .el-tabs__content {
+                height: calc(100% - 55px);
+                overflow: auto;
+            }
+        }
+        > .el-tabs > .el-tabs__content .el-tab-pane {
+            .setting {
+                overflow: auto;
+            }
+            .setting-item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .el-color-picker .el-color-picker__trigger {
+                    width: 100px;
+                }
+            }
+        }
+    }
+    .split {
+        height: 2px;
+        background-color: rgba(0, 0, 0, 0.06);
+        margin: 24px 0;
+    }
+    //  抽屉样式
+    .app-custom-theme-drawaer {
+        .el-drawer__body {
+            padding: 24px;
+        }
+    }
+}

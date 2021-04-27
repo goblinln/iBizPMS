@@ -191,7 +191,7 @@ export class MEditViewPanelControlBase extends MDControlBase {
      */
     public load(data: any): void {
         if(!this.fetchAction){
-            this.$Notice.error({ title: '错误', desc: '多表单编辑视图fetchAction行为不存在' });
+            this.$throw('多表单编辑视图fetchAction行为不存在');
             return;
         }
         let arg: any = {};
@@ -204,9 +204,7 @@ export class MEditViewPanelControlBase extends MDControlBase {
             promice.then((response: any) => {
                 this.ctrlEndLoading();
                 if (!response.status || response.status !== 200) {
-                    if (response.data && response.data.message) {
-                        this.$Notice.error({ title: '错误', desc: response.data.message });
-                    }
+                    this.$throw(response);
                     return;
                 }
                 if (response?.data?.length > 0) {
@@ -216,10 +214,7 @@ export class MEditViewPanelControlBase extends MDControlBase {
                 this.ctrlEvent({ controlname: this.controlInstance.name, action: "load", data: this.items });
             }).catch((response: any) => {
                 this.ctrlEndLoading();
-                if (response && response.status === 401) {
-                    return;
-                }
-                this.$Notice.error({ title: '错误', desc: response.data && response.data.message ? response.data.message : "" });
+                this.$throw(response);
             });
         }
     }
@@ -234,7 +229,7 @@ export class MEditViewPanelControlBase extends MDControlBase {
             return;
         }
         if(!this.loaddraftAction){
-            this.$Notice.error({ title: '错误', desc: '多表单编辑视图loaddraftAction行为不存在' });
+            this.$throw('多表单编辑视图loaddraftAction行为不存在');
             return;
         }
         const promice: Promise<any> = this.service.loadDraft(this.loaddraftAction,JSON.parse(JSON.stringify(this.context)),{viewparams:this.viewparams}, this.showBusyIndicator);
@@ -242,19 +237,14 @@ export class MEditViewPanelControlBase extends MDControlBase {
         promice.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                if (response.data && response.data.message) {
-                    this.$Notice.error({ title: '错误', desc: response.data.message });
-                }
+                this.$throw(response);
                 return;
             }
             const data: any = response.data;
             this.doItems([data]);
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status === 401) {
-                return;
-            }
-            this.$Notice.error({ title: '错误', desc: response.data && response.data.message ? response.data.message : "" });
+            this.$throw(response);
         });
     }
 

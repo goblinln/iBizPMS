@@ -218,7 +218,7 @@ export class ListControlBase extends MDControlBase {
             try {
                 if (Object.is(item.rowDataState, 'create')) {
                     if (!this.createAction) {
-                        this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: '${view.getName()}' + (this.$t('app.list.notConfig.createAction') as string) });
+                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notConfig.createAction') as string));
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
                         this.ctrlBeginLoading();
@@ -228,7 +228,7 @@ export class ListControlBase extends MDControlBase {
                     }
                 } else if (Object.is(item.rowDataState, 'update')) {
                     if (!this.updateAction) {
-                        this.$Notice.error({ title: (this.$t('app.commonWords.warning') as string), desc: '${view.getName()}' + (this.$t('app.list.notConfig.updateAction') as string) });
+                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notConfig.updateAction') as string));
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
                         if (this.appDeCodeName && item[this.appDeCodeName]) {
@@ -252,8 +252,8 @@ export class ListControlBase extends MDControlBase {
             this.$Notice.success({ title: '', desc: (this.$t('app.commonWords.saveSuccess') as string) });
         } else {
             errorItems.forEach((item: any, index: number) => {
-                this.$Notice.error({ title: (this.$t('app.commonWords.saveFailed') as string), desc: item.majorentityname + (this.$t('app.commonWords.saveFailed') as string) + '!' });
-                console.error(errorMessage[index]);
+                this.$throw(item.majorentityname + (this.$t('app.commonWords.saveFailed') as string) + '!');
+                this.$throw(errorMessage[index]);
             });
         }
         return successItems;
@@ -298,7 +298,7 @@ export class ListControlBase extends MDControlBase {
      */
     public load(opt: any = {}): void {
         if (!this.fetchAction) {
-            this.$Notice.error({ title: '错误', desc: '视图列表fetchAction参数未配置' });
+            this.$throw('视图列表fetchAction参数未配置');
             return;
         }
         const arg: any = { ...opt };
@@ -337,9 +337,7 @@ export class ListControlBase extends MDControlBase {
             (response: any) => {
                 _this.ctrlEndLoading();
                 if (!response || response.status !== 200) {
-                    if (response.data && response.data.message) {
-                        _this.$Notice.error({ title: '错误', desc: response.data.message });
-                    }
+                    this.$throw(response);
                     return;
                 }
                 const data: any = response.data;
@@ -379,10 +377,7 @@ export class ListControlBase extends MDControlBase {
             },
             (response: any) => {
                 this.ctrlEndLoading();
-                if (response && response.status === 401) {
-                    return;
-                }
-                this.$Notice.error({ title: '错误', desc: response.data && response.data.message ? response.data.message : "" });
+                this.$throw(response);
             }
         )
     }
@@ -474,7 +469,7 @@ export class ListControlBase extends MDControlBase {
      */
     public async remove(items: any[]): Promise<any> {
         if (!this.removeAction) {
-            this.$Notice.error({ title: '错误', desc: `${this.name}列表removeAction参数未配置` });
+            this.$throw(`${this.name}列表removeAction参数未配置`);
             return;
         }
         if (items.length === 0) {
@@ -516,7 +511,7 @@ export class ListControlBase extends MDControlBase {
                 post.then((response: any) => {
                     this.ctrlEndLoading();
                     if (!response || response.status !== 200) {
-                        this.$Notice.error({ title: '', desc: '删除数据失败,' + response.info });
+                        this.$throw('删除数据失败,' + response.info);
                         return;
                     } else {
                         this.$Notice.success({ title: '', desc: '删除成功!' });
@@ -539,14 +534,7 @@ export class ListControlBase extends MDControlBase {
                     resolve(response);
                 }).catch((response: any) => {
                     this.ctrlEndLoading();
-                    if (response && response.status === 401) {
-                        return;
-                    }
-                    if (!response || !response.status || !response.data) {
-                        this.$Notice.error({ title: '错误', desc: '系统异常' });
-                        reject(response);
-                        return;
-                    }
+                    this.$throw(response);
                     reject(response);
                 });
             });

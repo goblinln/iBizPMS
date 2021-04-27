@@ -121,7 +121,7 @@ export class TreeControlBase extends MDControlBase {
             .then((response: any) => {
                 this.ctrlEndLoading();
                 if (!response || response.status !== 200) {
-                    this.$Notice.error({ title: this.$t('app.commonWords.wrong') as string, desc: response.info });
+                    this.$throw(response.info);
                     resolve([]);
                     return;
                 }
@@ -140,10 +140,7 @@ export class TreeControlBase extends MDControlBase {
             .catch((response: any) => {
                 this.ctrlEndLoading();
                 resolve([]);
-                if (response && response.status === 401) {
-                    return;
-                }
-                this.$Notice.error({ title: this.$t('app.commonWords.wrong') as string, desc: response.info });
+                this.$throw(response);
             });
     }
 
@@ -376,7 +373,7 @@ export class TreeControlBase extends MDControlBase {
         get.then((response: any) => {
             this.ctrlEndLoading();
             if (!response || response.status !== 200) {
-                this.$Notice.error({ title: this.$t('app.commonWords.wrong') as string, desc: response.info });
+                this.$throw(response.info);
                 return;
             }
             const _items = [...response.data];
@@ -390,10 +387,7 @@ export class TreeControlBase extends MDControlBase {
             this.setDefaultSelection(_items);
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status === 401) {
-                return;
-            }
-            this.$Notice.error({ title: this.$t('app.commonWords.wrong') as string, desc: response.info });
+            this.$throw(response);
         });
     }
 

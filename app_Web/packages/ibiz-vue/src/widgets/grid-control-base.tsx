@@ -293,7 +293,7 @@ export class GridControlBase extends MDControlBase {
                                 try {
                                     eval(sysRule.scriptCode);
                                 } catch (error) {
-                                    console.error(error);
+                                  this.$throw(error);
                                 }
                                 return true;
                             },
@@ -715,7 +715,7 @@ export class GridControlBase extends MDControlBase {
      */
     public load(opt: any = {}, pageReset: boolean = false): void {
         if (!this.fetchAction) {
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: '${view.getName()}' + (this.$t('app.gridpage.notConfig.fetchAction') as string) });
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.fetchAction') as string));
             return;
         }
         if (pageReset) {
@@ -762,9 +762,7 @@ export class GridControlBase extends MDControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                if (response.data && response.data.message) {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                }
+                this.$throw(response);
                 return;
             }
             const data: any = response.data;
@@ -828,10 +826,7 @@ export class GridControlBase extends MDControlBase {
             }
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status === 401) {
-                return;
-            }
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data && response.data.message ? response.data.message : "" });
+            this.$throw(response);
         });
     }
 
@@ -845,7 +840,7 @@ export class GridControlBase extends MDControlBase {
      */
     public async remove(datas: any[]): Promise<any> {
         if (!this.removeAction) {
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: '${view.getName()}' + (this.$t('app.gridpage.notConfig.removeAction') as string) });
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.removeAction') as string));
             return;
         }
         let _datas: any[] = [];
@@ -898,7 +893,7 @@ export class GridControlBase extends MDControlBase {
                 post.then((response: any) => {
                     this.ctrlEndLoading();
                     if (!response || response.status !== 200) {
-                        this.$Notice.error({ title: '', desc: (this.$t('app.gridpage.delDataFail') as string) + ',' + response.info });
+                        this.$throw((this.$t('app.gridpage.delDataFail') as string) + ',' + response.info);
                         return;
                     } else {
                         this.$Notice.success({ title: '', desc: (this.$t('app.gridpage.delSuccess') as string) });
@@ -919,14 +914,7 @@ export class GridControlBase extends MDControlBase {
                     resolve(response);
                 }).catch((response: any) => {
                     this.ctrlEndLoading();
-                    if (response && response.status === 401) {
-                        return;
-                    }
-                    if (!response || !response.status || !response.data) {
-                        this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.sysException') as string) });
-                        reject(response);
-                        return;
-                    }
+                    this.$throw(response);
                     reject(response);
                 });
             });
@@ -953,13 +941,13 @@ export class GridControlBase extends MDControlBase {
      */
     public addBatch(arg: any = {}): void {
         if (!this.fetchAction) {
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: '${view.getName()}' + (this.$t('app.gridpage.notConfig.fetchAction') as string) });
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.fetchAction') as string));
             return;
         }
         if (!arg) {
             arg = {};
         }
-        console.error((this.$t('app.gridpage.notBatch') as string));
+        this.$throw((this.$t('app.gridpage.notBatch') as string));
     }
 
     /**
@@ -1038,7 +1026,7 @@ export class GridControlBase extends MDControlBase {
                 try {
                     doExport(JSON.parse(JSON.stringify(this.items)));
                 } catch (error) {
-                    console.error(error);
+                    this.$throw(error);
                 }
                 return;
             }
@@ -1082,20 +1070,17 @@ export class GridControlBase extends MDControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response || response.status !== 200) {
-                this.$Notice.error({ title: '', desc: (this.$t('app.gridpage.exportFail') as string) + ',' + response.info });
+                this.$throw((this.$t('app.gridpage.exportFail') as string) + ',' + response.info);
                 return;
             }
             try {
                 doExport(JSON.parse(JSON.stringify(response.data)));
             } catch (error) {
-                console.error(error);
+                this.$throw(error);
             }
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status === 401) {
-                return;
-            }
-            this.$Notice.error({ title: '', desc: (this.$t('app.gridpage.exportFail') as string) });
+            this.$throw(response);
         });
     }
 
@@ -1780,21 +1765,16 @@ export class GridControlBase extends MDControlBase {
         this.service.getAggData(this.aggAction, JSON.parse(JSON.stringify(this.context)), this.showBusyIndicator).then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                if (response.data && response.data.message) {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                }
+                this.$throw(response);
                 return;
             }
             this.remoteData = response.data;
             this.isDisplay = true;
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status === 401) {
-                return;
-            }
             this.remoteData = {};
             this.isDisplay = true;
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data && response.data.message ? response.data.message : "" });
+            this.$throw(response);
         })
     }
 
@@ -1875,9 +1855,9 @@ export class GridControlBase extends MDControlBase {
         }
         if (!await this.validateAll()) {
             if (this.errorMessages && this.errorMessages.length > 0) {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: this.errorMessages[0] });
+                this.$throw(this.errorMessages[0]);
             } else {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.rulesException') as string) });
+                this.$throw((this.$t('app.commonWords.rulesException') as string));
             }
             return [];
         }
@@ -1889,7 +1869,7 @@ export class GridControlBase extends MDControlBase {
             try {
                 if (Object.is(item.rowDataState, 'create')) {
                     if (!this.createAction) {
-                        this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: '${view.getName()}' + (this.$t('app.gridpage.notConfig.createAction') as string) });
+                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.createAction') as string));
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
                         this.ctrlBeginLoading();
@@ -1899,7 +1879,7 @@ export class GridControlBase extends MDControlBase {
                     }
                 } else if (Object.is(item.rowDataState, 'update')) {
                     if (!this.updateAction) {
-                        this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: '${view.getName()}' + (this.$t('app.gridpage.notConfig.updateAction') as string) });
+                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.updateAction') as string));
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
                         if (item[appDeCodeName?.toLowerCase()]) {
@@ -1931,42 +1911,27 @@ export class GridControlBase extends MDControlBase {
                             let desc: any = this.allColumns.find((column: any) => {
                                 return Object.is(column.name, name);
                             });
-                            this.$Notice.error({
-                                title: (this.$t('app.commonWords.createFailed') as string),
-                                desc: (desc ? desc.label : '') + " : " + item[name] + (this.$t('app.commonWords.isExist') as string) + '!',
-                            });
+                            this.$throw((desc ? desc.label : '') + " : " + item[name] + (this.$t('app.commonWords.isExist') as string) + '!');
                         } else {
-                            this.$Notice.error({
-                                title: (this.$t('app.commonWords.createFailed') as string),
-                                desc: errorMessage[index].data.message ? errorMessage[index].data.message : (this.$t('app.commonWords.sysException') as string),
-                            });
+                            this.$throw(errorMessage[index].data.message ? errorMessage[index].data.message : (this.$t('app.commonWords.sysException') as string));
                         }
                     } else if (Object.is(errorMessage[index].data.errorKey, 'DuplicateKeyException')) {
                         if (Util.isEmpty(this.columnKeyName)) {
-                            this.$Notice.error({
-                                title: (this.$t('app.commonWords.saveFailed') as string),
-                                desc: errorMessage[index].data.message ? errorMessage[index].data.message : (this.$t('app.commonWords.sysException') as string),
-                            });
+                            this.$throw(errorMessage[index].data.message ? errorMessage[index].data.message : (this.$t('app.commonWords.sysException') as string));
                         } else {
                             let name: string = this.service.getNameByProp(this.columnKeyName);
                             if (name) {
                                 let desc: any = this.allColumns.find((column: any) => {
                                     return Object.is(column.name, name);
                                 });
-                                this.$Notice.error({
-                                    title: (this.$t('app.commonWords.createFailed') as string),
-                                    desc: (desc ? desc.label : '') + " : " + item[name] + (this.$t('app.commonWords.isExist') as string) + '!',
-                                });
+                                this.$throw((desc ? desc.label : '') + " : " + item[name] + (this.$t('app.commonWords.isExist') as string) + '!');
                             }
                         }
                     } else {
-                        this.$Notice.error({
-                            title: (this.$t('app.commonWords.saveFailed') as string),
-                            desc: errorMessage[index].data.message ? errorMessage[index].data.message : (this.$t('app.commonWords.sysException') as string),
-                        });
+                        this.$throw(errorMessage[index].data.message ? errorMessage[index].data.message : (this.$t('app.commonWords.sysException') as string));
                     }
                 } else {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.saveFailed') as string), desc: (item[this.majorInfoColName] ? item[this.majorInfoColName] : "") + (this.$t('app.commonWords.saveFailed') as string) + '!' });
+                    this.$throw((item[this.majorInfoColName] ? item[this.majorInfoColName] : "") + (this.$t('app.commonWords.saveFailed') as string) + '!');
                 }
             });
         }
@@ -1982,7 +1947,7 @@ export class GridControlBase extends MDControlBase {
      */
     public newRow(args: any[], params?: any, $event?: any, xData?: any): void {
         if (!this.loaddraftAction) {
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: '${view.getName()}' + (this.$t('app.gridpage.notConfig.loaddraftAction') as string) });
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.loaddraftAction') as string));
             return;
         }
         let _this = this;
@@ -1992,9 +1957,7 @@ export class GridControlBase extends MDControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                if (response.data && response.data.message) {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                }
+                this.$throw(response);
                 return;
             }
             const data = response.data;
@@ -2010,13 +1973,7 @@ export class GridControlBase extends MDControlBase {
             _this.gridItemsModel.push(_this.getGridRowModel());
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status === 401) {
-                return;
-            }
-            if (!response || !response.status || !response.data) {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.sysException') as string) });
-                return;
-            }
+            this.$throw(response);
         });
     }
 
@@ -2110,7 +2067,7 @@ export class GridControlBase extends MDControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response || response.status !== 200) {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.gridpage.formitemFailed') as string) });
+                this.$throw((this.$t('app.gridpage.formitemFailed') as string));
                 return;
             }
             const _data: any = response.data;
@@ -2125,13 +2082,7 @@ export class GridControlBase extends MDControlBase {
             });
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status === 401) {
-                return;
-            }
-            if (!response || !response.status || !response.data) {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.sysException') as string) });
-                return;
-            }
+            this.$throw(response);
         });
     }
 
@@ -2271,25 +2222,14 @@ export class GridControlBase extends MDControlBase {
             result.then((response: any) => {
                 this.ctrlEndLoading();
                 if (!response || response.status !== 200) {
-                    if (response.data) {
-                        this.$Notice.error({ title: '', desc: (this.$t('app.formpage.workflow.submiterror') as string) + ', ' + response.data.message });
-                    }
+                    this.$throw((this.$t('app.formpage.workflow.submiterror') as string) + ', ' + response.data.message);
                     return;
                 }
                 this.$Notice.info({ title: '', desc: (this.$t('app.formpage.workflow.submitsuccess') as string) });
                 resolve(response);
             }).catch((response: any) => {
                 this.ctrlEndLoading();
-                if (response && response.status && response.data) {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                    reject(response);
-                    return;
-                }
-                if (!response || !response.status || !response.data) {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.sysException') as string) });
-                    reject(response);
-                    return;
-                }
+                this.$throw(response);
                 reject(response);
             });
         })

@@ -484,10 +484,7 @@ export class DataViewControlBase extends MDControlBase {
      */
     public load(opt: any = {}, isReset: boolean = false) {
         if (!this.fetchAction) {
-            this.$Notice.error({
-                title: this.$t('app.commonWords.wrong') as string,
-                desc: '${view.getName()}' + (this.$t('app.list.notConfig.fetchAction') as string),
-            });
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notConfig.fetchAction') as string));
             return;
         }
         const arg: any = {};
@@ -519,12 +516,7 @@ export class DataViewControlBase extends MDControlBase {
                 (response: any) => {
                     this.ctrlEndLoading();
                     if (!response || response.status !== 200) {
-                        if (response.data && response.data.message) {
-                            this.$Notice.error({
-                                title: this.$t('app.commonWords.wrong') as string,
-                                desc: response.data.message,
-                            });
-                        }
+                        this.$throw(response);
                         return;
                     }
                     const data: any = response.data;
@@ -573,13 +565,7 @@ export class DataViewControlBase extends MDControlBase {
                 },
                 (response: any) => {
                     this.ctrlEndLoading();
-                    if (response && response.status === 401) {
-                        return;
-                    }
-                    this.$Notice.error({
-                        title: this.$t('app.commonWords.wrong') as string,
-                        desc: response.data && response.data.message ? response.data.message : '',
-                    });
+                    this.$throw(response);
                 },
             );
         }
@@ -683,10 +669,7 @@ export class DataViewControlBase extends MDControlBase {
      */
     public async remove(datas: any[]): Promise<any> {
         if (!this.removeAction) {
-            this.$Notice.error({
-                title: this.$t('app.commonWords.wrong') as string,
-                desc: '${view.getName()}' + (this.$t('app.gridpage.notConfig.removeAction') as string),
-            });
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.removeAction') as string));
             return;
         }
         let _datas: any[] = [];
@@ -753,10 +736,7 @@ export class DataViewControlBase extends MDControlBase {
                 post.then((response: any) => {
                     this.ctrlEndLoading();
                     if (!response || response.status !== 200) {
-                        this.$Notice.error({
-                            title: '',
-                            desc: (this.$t('app.commonWords.delDataFail') as string) + ',' + response.info,
-                        });
+                        this.$throw(response);
                         return;
                     } else {
                         this.$Notice.success({ title: '', desc: this.$t('app.commonWords.deleteSuccess') as string });
@@ -778,17 +758,7 @@ export class DataViewControlBase extends MDControlBase {
                     resolve(response);
                 }).catch((response: any) => {
                     this.ctrlEndLoading();
-                    if (response && response.status === 401) {
-                        return;
-                    }
-                    if (!response || !response.status || !response.data) {
-                        this.$Notice.error({
-                            title: this.$t('app.commonWords.wrong') as string,
-                            desc: this.$t('app.commonWords.sysException') as string,
-                        });
-                        reject(response);
-                        return;
-                    }
+                    this.$throw(response);
                     reject(response);
                 });
             });
@@ -830,10 +800,7 @@ export class DataViewControlBase extends MDControlBase {
             try {
                 if (Object.is(item.rowDataState, 'create')) {
                     if (!this.createAction) {
-                        this.$Notice.error({
-                            title: this.$t('app.commonWords.wrong') as string,
-                            desc: '${view.getName()}' + (this.$t('app.list.notConfig.createAction') as string),
-                        });
+                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notConfig.createAction') as string));
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
                         this.ctrlBeginLoading();
@@ -848,10 +815,7 @@ export class DataViewControlBase extends MDControlBase {
                     }
                 } else if (Object.is(item.rowDataState, 'update')) {
                     if (!this.updateAction) {
-                        this.$Notice.error({
-                            title: this.$t('app.commonWords.wrong') as string,
-                            desc: '${view.getName()}' + (this.$t('app.list.notConfig.updateAction') as string),
-                        });
+                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notConfig.updateAction') as string));
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
                         //<#if de??>            if(this.controlInstance.getPSAppDataEntity){}
@@ -886,11 +850,7 @@ export class DataViewControlBase extends MDControlBase {
             this.$Notice.success({ title: '', desc: this.$t('app.commonWords.saveSuccess') as string });
         } else {
             errorItems.forEach((item: any, index: number) => {
-                this.$Notice.error({
-                    title: this.$t('app.commonWords.saveFailed') as string,
-                    desc: item.majorentityname + (this.$t('app.commonWords.saveFailed') as string) + '！',
-                });
-                console.error(errorMessage[index]);
+                this.$throw(item.majorentityname + (this.$t('app.commonWords.saveFailed') as string) + '！');
             });
         }
         return successItems;

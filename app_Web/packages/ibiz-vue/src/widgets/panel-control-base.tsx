@@ -345,7 +345,7 @@ export class PanelControlBase extends MDControlBase {
      * @memberof PanelControlBase
      */
     public opendata = (args: any[], fullargs?: any[], params?: any, $event?: any, xData?: any) => {
-        this.$Notice.error({ title: this.$t('app.commonWords.wrong') as string, desc: '没有opendata' });
+        this.$throw('没有opendata');
     }
 
     /**
@@ -355,7 +355,7 @@ export class PanelControlBase extends MDControlBase {
      * @memberof PanelControlBase
      */
     public newdata = (args: any[], fullargs?: any[], params?: any, $event?: any, xData?: any) => {
-        this.$Notice.error({ title: this.$t('app.commonWords.wrong') as string, desc: '没有newdata' });
+        this.$throw('没有newdata');
     }
 
     /**
@@ -366,7 +366,7 @@ export class PanelControlBase extends MDControlBase {
      * @memberof PanelControlBase
      */
     public async remove(datas: any[]): Promise<any> {
-        this.$Notice.error({ title: this.$t('app.commonWords.wrong') as string, desc: '没有remove' });
+        this.$throw('没有remove');
     }
 
     /**
@@ -376,7 +376,7 @@ export class PanelControlBase extends MDControlBase {
      * @memberof PanelControlBase
      */
     public refresh(args?: any) {
-        this.$Notice.error({ title: this.$t('app.commonWords.wrong') as string, desc: '没有refresh' });
+        this.$throw('没有refresh');
     }
 
     /**

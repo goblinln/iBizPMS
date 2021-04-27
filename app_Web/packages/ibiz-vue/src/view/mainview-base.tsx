@@ -806,7 +806,7 @@ export class MainViewBase extends ViewBase {
                         .createBatch(JSON.parse(JSON.stringify(this.context)), requestParam, true)
                         .then((response: any) => {
                             if (!response || response.status !== 200) {
-                                this.$Notice.error({ title: '错误', desc: '批处理操作失败' });
+                                this.$throw('批处理操作失败');
                                 return;
                             }
                             if (!xData || !(xData.refresh instanceof Function)) {

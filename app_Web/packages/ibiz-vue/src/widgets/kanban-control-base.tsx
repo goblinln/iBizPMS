@@ -363,7 +363,7 @@ export class KanbanControlBase extends MDControlBase {
      */
     public async load(opt: any = {}, isReset: boolean = false) {
         if (!this.fetchAction) {
-            this.$Notice.error({ title: "警告", desc: '实体看板视图没有配置fetchAction' });
+            this.$throw('实体看板视图没有配置fetchAction');
             return;
         }
         const arg: any = { ...opt };
@@ -388,9 +388,7 @@ export class KanbanControlBase extends MDControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response || response.status !== 200) {
-                if (response.data && response.data.message) {
-                    this.$Notice.error({ title: "警告", desc: response.data.message });
-                }
+                this.$throw(response);
                 return;
             }
             const data: any = response.data;
@@ -417,10 +415,7 @@ export class KanbanControlBase extends MDControlBase {
             }
         }, (response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status === 401) {
-                return;
-            }
-            this.$Notice.error({ title: "警告", desc: response.data && response.data.message ? response.data.message : "" });
+            this.$throw(response);
         });
     }
 
@@ -459,7 +454,7 @@ export class KanbanControlBase extends MDControlBase {
      */
     public async remove(datas: any[]): Promise<any> {
         if (!this.removeAction) {
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: '${view.getName()}' + (this.$t('app.kanban.notConfig.removeAction') as string) });
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.kanban.notConfig.removeAction') as string));
             return;
         }
         let _datas: any[] = [];
@@ -510,7 +505,7 @@ export class KanbanControlBase extends MDControlBase {
                 post.then((response: any) => {
                     this.ctrlEndLoading();
                     if (!response || response.status !== 200) {
-                        this.$Notice.error({ title: '', desc: (this.$t('app.commonWords.delDataFail') as string) + ',' + response.info });
+                        this.$throw((this.$t('app.commonWords.delDataFail') as string) + ',' + response.info);
                         return;
                     } else {
                         this.$Notice.success({ title: '', desc: (this.$t('app.commonWords.deleteSuccess') as string) });
@@ -529,14 +524,7 @@ export class KanbanControlBase extends MDControlBase {
                     resolve(response);
                 }).catch((response: any) => {
                     this.ctrlEndLoading();
-                    if (response && response.status === 401) {
-                        return;
-                    }
-                    if (!response || !response.status || !response.data) {
-                        this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.sysException') as string) });
-                        reject(response);
-                        return;
-                    }
+                    this.$throw(response);
                     reject(response);
                 });
             });
@@ -572,9 +560,7 @@ export class KanbanControlBase extends MDControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                if (response.data) {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                }
+                this.$throw(response);
                 this.setGroups();
                 return;
             }
@@ -584,16 +570,7 @@ export class KanbanControlBase extends MDControlBase {
             this.$emit("ctrl-event", { controlname: "kanban", action: "update", data: this.items });
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status && response.data) {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                this.refresh();
-                return;
-            }
-            if (!response || !response.status || !response.data) {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.sysException') as string) });
-                this.refresh();
-                return;
-            }
+            this.$throw(response);
         });
     }
 
