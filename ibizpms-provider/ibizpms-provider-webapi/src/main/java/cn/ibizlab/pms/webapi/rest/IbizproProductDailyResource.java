@@ -111,7 +111,6 @@ public class IbizproProductDailyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbizproProductDailyRuntime.test(#ibizproproductdaily_id,'READ')")
     @ApiOperation(value = "获取产品日报", tags = {"产品日报" },  notes = "获取产品日报")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibizproproductdailies/{ibizproproductdaily_id}")
     public ResponseEntity<IbizproProductDailyDTO> get(@PathVariable("ibizproproductdaily_id") Long ibizproproductdaily_id) {
