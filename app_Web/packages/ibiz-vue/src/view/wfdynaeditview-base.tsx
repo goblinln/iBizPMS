@@ -164,6 +164,9 @@ export class WFDynaEditViewBase extends MainViewBase {
      * @memberof WFDynaEditViewBase
      */
     public renderMainContent() {
+        if (!this.editFormInstance) {
+            return;
+        }
         if (this.deDRTabPages && this.deDRTabPages.length > 0) {
             const tempContext = Util.deepCopy(this.context);
             return (

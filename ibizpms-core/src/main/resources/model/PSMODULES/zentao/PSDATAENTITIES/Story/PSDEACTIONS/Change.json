@@ -5,10 +5,6 @@
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Change.json",
   "logicName" : "变更",
   "name" : "Change",
-  "getPSSysSFPlugin" : {
-    "pluginType" : "DEACTION",
-    "pluginCode" : "ZTCommon"
-  },
   "userCat" : "CAT1",
   "userTag4" : "update"
 }

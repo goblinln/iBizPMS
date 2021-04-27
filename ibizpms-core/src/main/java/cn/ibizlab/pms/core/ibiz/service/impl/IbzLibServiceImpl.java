@@ -84,37 +84,32 @@ public class IbzLibServiceImpl extends ServiceImpl<IbzLibMapper, IbzLib> impleme
         this.saveBatch(list, batchSize);
     }
 
-    	@Override
+    @Override
     @Transactional
     public boolean update(IbzLib et) {
-  		if(!ibzlibRuntime.isRtmodel()){
-		  
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
         }
-		if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzLibHelper.class).edit(et)) {
-			 return false;
-		}
-		
-  		return true;
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
     }
 
     @Override
-	@Transactional
+    @Transactional
     public void updateBatch(List<IbzLib> list) {
-	  if(!ibzlibRuntime.isRtmodel()){
-		
-	  }
-		updateBatchById(list, batchSize);
+        updateBatchById(list, batchSize);
     }
-	
-	@Override
+
+    @Override
     @Transactional
     public boolean sysUpdate(IbzLib et) {
-	  if(!cn.ibizlab.pms.util.security.SpringContextHolder.getBean(cn.ibizlab.pms.core.util.ibizzentao.helper.IbzLibHelper.class).edit(et)) {
-		return false;
-     }
-    
-     return true;
-   }
+        if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
+            return false;
+        }
+        CachedBeanCopier.copy(get(et.getId()), et);
+        return true;
+    }
+
     @Override
     @Transactional
     public boolean remove(Long key) {

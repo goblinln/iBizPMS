@@ -152,10 +152,6 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/UnlinkBug.json",
     "logicName" : "解除关联Bug",
     "name" : "UnlinkBug",
-    "getPSSysSFPlugin" : {
-      "pluginType" : "DEACTION",
-      "pluginCode" : "ZTCommon"
-    },
     "userCat" : "CAT1"
   } ],
   "getAllPSDEDataQueries" : [ {

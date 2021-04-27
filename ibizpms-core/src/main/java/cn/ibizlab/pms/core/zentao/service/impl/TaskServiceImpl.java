@@ -1347,7 +1347,6 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
             }
             et.setStoryname(ztstory.getTitle());
             et.setProduct(ztstory.getProduct());
-            et.setStoryversion(ztstory.getVersion());
             et.setProductname(ztstory.getProductname());
         }
         //实体关系[DER1N__ZT_TASK__ZT_TASK__PARENT]

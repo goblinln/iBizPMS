@@ -20,6 +20,11 @@ export const appConfig = {
             title: 'Dark Blue',
             color: '#606d80'
         },
+        {
+            tag: 'app-theme-studio-dark',
+            title: 'Studio Dark',
+            color: '#aaaaaa'
+        }
     ],
     //字体集合
     fonts: [
