@@ -25,7 +25,7 @@ public class IBIZProMessageExService extends IBIZProMessageServiceImpl {
     @Override
     @Transactional
     public IBIZProMessage markDone(IBIZProMessage et) {
-        return super.markDone(et);
+        return et;
     }
     /**
      * [MarkRead:标记已读] 行为扩展
@@ -35,7 +35,7 @@ public class IBIZProMessageExService extends IBIZProMessageServiceImpl {
     @Override
     @Transactional
     public IBIZProMessage markRead(IBIZProMessage et) {
-        return super.markRead(et);
+        return et;
     }
     /**
      * [Send:发送消息] 行为扩展
@@ -45,7 +45,7 @@ public class IBIZProMessageExService extends IBIZProMessageServiceImpl {
     @Override
     @Transactional
     public IBIZProMessage send(IBIZProMessage et) {
-        return super.send(et);
+        return et;
     }
 }
 

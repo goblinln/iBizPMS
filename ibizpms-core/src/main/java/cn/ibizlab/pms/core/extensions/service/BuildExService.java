@@ -4,6 +4,7 @@ import cn.ibizlab.pms.core.util.ibizzentao.common.ChangeUtil;
 import cn.ibizlab.pms.core.util.ibizzentao.common.ZTDateUtil;
 import cn.ibizlab.pms.core.zentao.domain.Bug;
 import cn.ibizlab.pms.core.zentao.domain.History;
+import cn.ibizlab.pms.core.zentao.filter.BuildSearchContext;
 import cn.ibizlab.pms.core.zentao.service.IActionService;
 import cn.ibizlab.pms.core.zentao.service.IBugService;
 import cn.ibizlab.pms.core.zentao.service.IFileService;
@@ -15,6 +16,8 @@ import lombok.extern.slf4j.Slf4j;
 import cn.ibizlab.pms.core.zentao.domain.Build;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Primary;
@@ -236,5 +239,19 @@ public class BuildExService extends BuildServiceImpl {
             }
         }
         return et;
+    }
+
+    @Override
+    public Page<Build> searchBugProductOrProjectBuild(BuildSearchContext context) {
+        Page<Build> page = super.searchBugProductOrProjectBuild(context);
+        List<Build> builds = new ArrayList<>();
+        Build build = new Build();
+        build.setIds("trunk");
+        build.setId(100000000000L);
+        build.setName("主干");
+        builds.add(build);
+        builds.addAll(page.getContent());
+
+        return new PageImpl<>(builds, context.getPageable(), builds.size());
     }
 }

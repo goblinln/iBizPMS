@@ -79,6 +79,9 @@ public class ActionExService extends ActionServiceImpl {
     IBugService iBugService;
 
     @Autowired
+    IHistoryService iHistoryService;
+
+    @Autowired
     IIBIZProMessageService iibizProMessageService;
 
     @Autowired
@@ -149,7 +152,13 @@ public class ActionExService extends ActionServiceImpl {
             et.setProject(jsonObject.getLongValue(StaticDict.Action__object_type.PROJECT.getValue()));
             log.info(processType + "product、project设置未实现");
         }
-        super.create(et);
+        List<History> changes = et.getHistorys();
+        et.setHistorys(null);
+        if(!super.create(et)) {
+            return et;
+        }
+        iHistoryService.saveByAction(et.getId(), changes);
+
         return et;
     }
 

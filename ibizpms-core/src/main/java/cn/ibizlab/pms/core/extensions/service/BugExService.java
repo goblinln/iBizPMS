@@ -475,6 +475,7 @@ public class BugExService extends BugServiceImpl {
 
         String files = et.getFiles();
         String noticeusers = et.getNoticeusers();
+        super.update(et);
         ActionHelper.sendTodoOrToread(et.getId(), et.getTitle(), noticeusers, et.getAssignedto(), et.getMailto(), "Bug", StaticDict.Action__object_type.BUG.getValue(), "bugs", StaticDict.Action__type.RESOLVED.getText(), true, iActionService);
         FileHelper.updateObjectID(et.getId(),StaticDict.File__object_type.BUG.getValue(), files, "", iFileService);
         //关联
