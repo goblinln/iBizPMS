@@ -85,6 +85,42 @@ public class TestRunRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
+    public Object serializeEntity(IEntityBase iEntityBase) {
+        try {
+            return MAPPER.writeValueAsString(iEntityBase);
+        } catch (Exception e) {
+            throw new RuntimeException("序列化错误");
+        }
+    }
+
+    @Override
+    public Object serializeEntities(IEntityBase[] list) {
+        try {
+            return MAPPER.writeValueAsString(list);
+        } catch (Exception e) {
+            throw new RuntimeException("序列化错误");
+        }
+    }
+
+    @Override
+    public IEntityBase deserializeEntity(Object objData) {
+        try {
+            return MAPPER.readValue(String.valueOf(objData),TestRun.class);
+        } catch (Exception e) {
+            throw new RuntimeException("反序列化错误");
+        }
+    }
+
+    @Override
+    public IEntityBase[] deserializeEntities(Object objData) {
+        try {
+            return MAPPER.readValue(String.valueOf(objData),TestRun[].class);
+        } catch (Exception e) {
+            throw new RuntimeException("反序列化错误");
+        }
+    }
+
+    @Override
     public boolean existsData(ISearchContextBase iSearchContextBase) {
         Page<TestRun> domains = testrunService.searchDefault((TestRunSearchContext) iSearchContextBase);
         if (domains.getSize() == 0)

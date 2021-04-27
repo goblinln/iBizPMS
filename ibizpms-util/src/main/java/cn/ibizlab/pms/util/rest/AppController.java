@@ -6,6 +6,7 @@ import cn.ibizlab.pms.util.service.IBZConfigService;
 import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import cn.ibizlab.pms.util.service.AuthenticationUserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,7 @@ import java.util.*;
 
 @RestController
 @RequestMapping(value = "")
+@Slf4j
 public class AppController {
 
 	@Value("${ibiz.enablePermissionValid:false}")
@@ -55,7 +57,7 @@ public class AppController {
                             forEach(grantedAuthority ->appMenu.add(grantedAuthority.getAuthority()) );
                 }
             } catch (Exception e) {
-
+                log.error(e.getMessage());
             }
 		}
 		Map<String, Object> context = new HashMap<>();

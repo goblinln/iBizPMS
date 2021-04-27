@@ -206,6 +206,23 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     }
 
     @Override
+    public List<? extends IEntityBase> select(String strCondition) {
+        QueryWrapperContext context = createSearchContext();
+        context.getSelectCond().and(ScopeUtils.parse(strCondition));
+        return this.select(context);
+    }
+
+    @Override
+    public IEntityBase selectOne(String strCondition) {
+        QueryWrapperContext context = createSearchContext();
+        context.getSelectCond().and(ScopeUtils.parse(strCondition));
+        List list = this.select(context);
+        if(list.size() > 0)
+            return (IEntityBase)list.get(0);
+        return null;
+    }
+
+    @Override
     public void setSearchCondition(ISearchContextBase iSearchContextBase, IPSDEField iPSDEField, String strCondition, Object objValue) {
         try {
             String strSearchField = String.format("n_%s_%s", iPSDEField.getName().toLowerCase(), strCondition.toLowerCase());
