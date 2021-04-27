@@ -17,12 +17,6 @@
       "paramType" : "CTRL"
     } ]
   } ],
-  "getPSAppViewNavContexts" : [ {
-    "key" : "PRODUCT",
-    "name" : "PRODUCT",
-    "value" : "PRODUCT",
-    "rawValue" : false
-  } ],
   "getPSControls" : [ {
     "codeName" : "Main",
     "controlType" : "DASHBOARD",
