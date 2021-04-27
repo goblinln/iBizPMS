@@ -14,6 +14,7 @@
 ** 更新日志
 ** 登录地图test
 ** 头像
+** test
 @endmindmap
 {% endplantuml %}
 
@@ -31,4 +32,5 @@
 |更新日志|[查看功能](func/SysUpdateLogMobMDView.md)|
 |登录地图test|[查看功能](func/ActionMobMapView.md)|
 |头像|[查看功能](func/SysEmployeeheadPortraitMobEditView.md)|
+|test|-|
 

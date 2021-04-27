@@ -185,6 +185,25 @@ export class AppIndexViewModel {
 	resourcetag: '',
 	authtag:'Mob-AppIndexView-menuitem10',
 },
+        {
+	id: '58CC5647-6F7F-41D4-9D0B-0305D06E9359',
+	name: 'menuitem11',
+	text: 'test',
+	type: 'MENUITEM',
+	counterid: '',
+	tooltip: 'test',
+	expanded: false,
+	separator: false,
+	hidden: false,
+	hidesidebar: false,
+	opendefault: false,
+	iconcls: 'male',
+	icon: '',
+	textcls: '',
+	appfunctag: '',
+	resourcetag: '',
+	authtag:'Mob-AppIndexView-menuitem11',
+},
     ];
 
 	/**
