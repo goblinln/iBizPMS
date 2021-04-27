@@ -963,15 +963,11 @@ export default class RichTextEditor extends Vue {
         const templateContent = this.editor.getContent();
         templParams.ibizpublic = this.single == true? '1' : '0';
         if(!templateContent || Object.is(templateContent,'')){
-            this.$Notice.error({
-                    title: '请填充模板内容!!!',
-            });
+            this.$throw('请填充模板内容!!!');
             return;
         }
         if(!templateTitle || Object.is(templateTitle,'')){
-            this.$Notice.error({
-                    title: '请输入模板标题!!!',
-            });
+            this.$throw('请输入模板标题!!!');
             return;
         }
         templParams.title = templateTitle;
@@ -982,9 +978,7 @@ export default class RichTextEditor extends Vue {
                 title: '保存模板成功!!!',
             });
         }else{
-            this.$Notice.error({
-                title: '保存模板失败!!!',
-            });
+            this.$throw('保存模板失败!!!');
         }
         this.appTemplateData();
         let propip: any = this.$refs.propip;
@@ -1023,9 +1017,7 @@ export default class RichTextEditor extends Vue {
                 title: '删除模板成功!!!',
             });
         }else{
-            this.$Notice.error({
-                title: '删除模板失败!!!',
-            });
+            this.$throw('删除模板失败!!!');
         }
         this.appTemplateData();
     }

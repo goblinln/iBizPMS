@@ -99,7 +99,7 @@ export default class AppLockIndex extends Vue{
                     this.$router.push({ name: 'login' });
                 }
             }).catch((error: any) =>{
-                console.error(error);
+                this.$throw(error);
             })
         });  
     }

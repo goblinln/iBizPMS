@@ -28,7 +28,7 @@ class ContextMenuService {
             this.clearContainer();
             this.container = container;
         } else {
-            console.error('容器Dom节点不存在');
+            ErrorUtil.errorHandler('容器Dom节点不存在');
         }
     }
 
@@ -48,6 +48,7 @@ class ContextMenuService {
 const service = new ContextMenuService();
 
 import { Vue, Component, Provide, Prop, Emit } from 'vue-property-decorator';
+import { ErrorUtil } from 'ibiz-vue';
 import './context-menu.less';
 
 @Component({})

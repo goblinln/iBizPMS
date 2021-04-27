@@ -34,336 +34,16 @@
             <div class="split"></div>
             <div class="theme-setting">
                 <el-tabs v-model="activeSetting">
-                    <el-tab-pane label="应用" name="app-tab">
-                        <div class="setting app-setting">
-                            <div class="setting-item bkcolor">
-                                应用背景色<el-color-picker show-alpha size="small" v-model="themeOptions['--app-background-color']"/>
-                            </div>
-                            <div class="setting-item bkcolor-tint">
-                                应用背景色（淡色）<el-color-picker show-alpha size="small" v-model="themeOptions['--app-background-color-tint']"/>
-                            </div>
-                            <div class="setting-item bkcolor-bright">
-                                应用背景色（亮色）<el-color-picker show-alpha size="small" v-model="themeOptions['--app-background-color-bright']"/>
-                            </div>
-                            <div class="setting-item font-color">
-                                字体颜色<el-color-picker show-alpha size="small" v-model="themeOptions['--app-font-color']"/>
-                            </div>
-                            <div class="setting-item font-color-tint">
-                                字体颜色（淡色）<el-color-picker show-alpha size="small" v-model="themeOptions['--app-font-color-light']"/>
-                            </div>
-                            <div class="setting-item font-color-bright">
-                                字体颜色（深色）<el-color-picker show-alpha size="small" v-model="themeOptions['--app-font-color-deep']"/>
-                            </div>
-                            <div class="setting-item font-color-bright">
-                                字体激活<el-color-picker show-alpha size="small" v-model="themeOptions['--app-font-color-active']"/>
-                            </div>
-                            <div class="setting-item scroll-bar">
-                                滚动条颜色<el-color-picker show-alpha size="small" v-model="themeOptions['--app-scroll-bar-color']"/>
-                            </div>
-                            <div class="setting-item dividing">
-                                分割线颜色<el-color-picker show-alpha size="small" v-model="themeOptions['--app-dividing-line-color']"/>
-                            </div>
-                            <div class="setting-item dividing-tint">
-                                分割线颜色（淡色）<el-color-picker show-alpha size="small" v-model="themeOptions['--app-dividing-line-color-tint']"/>
-                            </div>
-                            <div class="setting-item dividing-bright">
-                                分割线颜色（亮色）<el-color-picker show-alpha size="small" v-model="themeOptions['--app-dividing-line-color-bright']"/>
-                            </div>
-                            <div class="setting-item app-scrollbar">
-                                应用滚动条<el-color-picker show-alpha size="small" v-model="themeOptions['--app-scrollbar-thumb-background-color']"/>
-                            </div>
-                            <div class="setting-item theme-icon">
-                                主题选择<el-color-picker show-alpha size="small" v-model="themeOptions['--app-theme-icon-color']"/>
-                            </div>
-                            <div class="setting-item header-bkcolor">
-                                头部背景<el-color-picker show-alpha size="small" v-model="themeOptions['--app-header-background-color']"/>
-                            </div>
-                            <div class="setting-item header-bkcolor-active">
-                                头部激活<el-color-picker show-alpha size="small" v-model="themeOptions['--app-header-background-color-active']"/>
-                            </div>
-                            <div class="setting-item header-font-color">
-                                头部字体<el-color-picker show-alpha size="small" v-model="themeOptions['--app-header-color']"/>
-                            </div>
-                            <div class="setting-item header-font-color-bright">
-                                头部字体（亮色）<el-color-picker show-alpha size="small" v-model="themeOptions['--app-header-color-bright']"/>
-                            </div>
-                            <div class="setting-item header-font-color-active">
-                                头部字体激活<el-color-picker show-alpha size="small" v-model="themeOptions['--app-header-color-active']"/>
-                            </div>
-                            <div class="setting-item app-shadow">
-                                应用阴影<el-color-picker show-alpha size="small" v-model="themeOptions['--app-shadow-color']"/>
-                            </div>
-                            <div class="setting-item app-loading">
-                                应用加载<el-color-picker show-alpha size="small" v-model="themeOptions['--app-loading-background-color']"/>
-                            </div>
-                            <div class="setting-item font-color">
-                                应用加载（亮色）<el-color-picker show-alpha size="small" v-model="themeOptions['--app-loading-background-color-bright']"/>
-                            </div>
-                            <div class="setting-item font-color">
-                                应用加载蒙层<el-color-picker show-alpha size="small" v-model="themeOptions['--app-loading-masking-background-color']"/>
-                            </div>
-                        </div>
-                    </el-tab-pane>
-                    <el-tab-pane label="视图" name="view-tab">
-                        <div class="setting view-setting">
-                            <div class="setting-item bkcolor">
-                                背景色<el-color-picker show-alpha size="small" v-model="themeOptions['--view-background-color']"/>
-                            </div>
-                            <div class="setting-item bkcolor-tint">
-                                背景色（淡色）<el-color-picker show-alpha size="small" v-model="themeOptions['--view-background-color-tint']"/>
-                            </div>
-                            <div class="setting-item bkcolor-bright">
-                                背景色（亮色）<el-color-picker show-alpha size="small" v-model="themeOptions['--view-background-color-bright-bright']"/>
-                            </div>
-                            <div class="setting-item bkcolor-active">
-                                背景激活<el-color-picker show-alpha size="small" v-model="themeOptions['--view-background-color-active']"/>
-                            </div>
-                            <div class="setting-item ">
-                                背景激活rgb<el-color-picker show-alpha size="small" v-model="themeOptions['--view-background-color-active-rgb']"/>
-                            </div>
-                            <div class="setting-item ">
-                                背景悬浮<el-color-picker show-alpha size="small" v-model="themeOptions['--view-background-color-hover']"/>
-                            </div>
-                            <div class="setting-item ">
-                                头部边框<el-color-picker show-alpha size="small" v-model="themeOptions['--view-header-border-color']"/>
-                            </div>
-                            <div class="setting-item ">
-                                边框<el-color-picker show-alpha size="small" v-model="themeOptions['--view-border-color']"/>
-                            </div>
-                            <div class="setting-item ">
-                                字体颜色<el-color-picker show-alpha size="small" v-model="themeOptions['--view-font-color']"/>
-                            </div>
-                            <div class="setting-item ">
-                                字体颜色（淡色）<el-color-picker show-alpha size="small" v-model="themeOptions['--view-font-color-tint']"/>
-                            </div>
-                            <div class="setting-item ">
-                                字体颜色（亮色）<el-color-picker show-alpha size="small" v-model="themeOptions['--view-font-color-bright']"/>
-                            </div>
-                            <div class="setting-item ">
-                                字体激活<el-color-picker show-alpha size="small" v-model="themeOptions['--view-font-color-active']"/>
-                            </div>
-                            <div class="setting-item ">
-                                字体悬浮<el-color-picker show-alpha size="small" v-model="themeOptions['--view-font-color-hover']"/>
-                            </div>
-                            <div class="setting-item ">
-                                阴影<el-color-picker show-alpha size="small" v-model="themeOptions['--view-shadow-color']"/>
-                            </div>
-                            <div class="setting-item ">
-                                按钮背景<el-color-picker show-alpha size="small" v-model="themeOptions['--view-button-background-color']"/>
-                            </div>
-                            <div class="setting-item ">
-                                按钮激活<el-color-picker show-alpha size="small" v-model="themeOptions['--view-button-background-color-active']"/>
-                            </div>
-                            <div class="setting-item ">
-                                按钮字体<el-color-picker show-alpha size="small" v-model="themeOptions['--view-button-color']"/>
-                            </div>
-                            <div class="setting-item ">
-                                按钮激活字体<el-color-picker show-alpha size="small" v-model="themeOptions['--view-button-color-active']"/>
-                            </div>
-                            <div class="setting-item ">
-                                按钮边框<el-color-picker show-alpha size="small" v-model="themeOptions['--view-button-border-color']"/>
-                            </div>
-                            <div class="setting-item ">
-                                禁用按钮<el-color-picker show-alpha size="small" v-model="themeOptions['--view-button-background-color-disabled']"/>
-                            </div>
-                            <div class="setting-item ">
-                                分割线<el-color-picker show-alpha size="small" v-model="themeOptions['--view-dividing-line-color']"/>
-                            </div>
-                            <div class="setting-item ">
-                                分割线rgb<el-color-picker show-alpha size="small" v-model="themeOptions['--view-dividing-line-color-rgb']"/>
-                            </div>
-                            <div class="setting-item ">
-                                分割线（淡色）<el-color-picker show-alpha size="small" v-model="themeOptions['--view-dividing-line-color-tint']"/>
-                            </div>
-                            <div class="setting-item ">
-                                分割线（亮色）<el-color-picker show-alpha size="small" v-model="themeOptions['--view-dividing-line-color-bright']"/>
-                            </div>
-                        </div>
-                    </el-tab-pane>
-                    <el-tab-pane label="部件" name="widget-tab">
-                        <div class="setting widget-setting">
-                            <div class="setting-item">
-                                背景色（淡色）<el-color-picker show-alpha size="small" v-model="themeOptions['--ctrl-background-color-tint']"/>
-                            </div>
-                            <div class="setting-item">
-                                背景色（亮色）<el-color-picker show-alpha size="small" v-model="themeOptions['--ctrl-background-color-bright']"/>
-                            </div>
-                            <div class="setting-item">
-                                背景激活<el-color-picker show-alpha size="small" v-model="themeOptions['--ctrl-background-color-active']"/>
-                            </div>
-                            <div class="setting-item">
-                                背景激活（淡色）<el-color-picker show-alpha size="small" v-model="themeOptions['--ctrl-background-color-active-tint']"/>
-                            </div>
-                            <div class="setting-item">
-                                背景悬浮<el-color-picker show-alpha size="small" v-model="themeOptions['--ctrl-background-color-hover']"/>
-                            </div>
-                            <div class="setting-item">
-                                字体<el-color-picker show-alpha size="small" v-model="themeOptions['--ctrl-font-color']"/>
-                            </div>
-                            <div class="setting-item">
-                                字体（淡色）<el-color-picker show-alpha size="small" v-model="themeOptions['--ctrl-font-color-tint']"/>
-                            </div>
-                            <div class="setting-item">
-                                字体（深色）<el-color-picker show-alpha size="small" v-model="themeOptions['--ctrl-font-color-bright']"/>
-                            </div>
-                            <div class="setting-item">
-                                字体激活<el-color-picker show-alpha size="small" v-model="themeOptions['--ctrl-font-color-active']"/>
-                            </div>
-                            <div class="setting-item">
-                                字体悬浮<el-color-picker show-alpha size="small" v-model="themeOptions['--ctrl-font-color-hover']"/>
-                            </div>
-                            <div class="setting-item">
-                                边框<el-color-picker show-alpha size="small" v-model="themeOptions['--ctrl-border-color']"/>
-                            </div>
-                            <div class="setting-item">
-                                边框（淡色）<el-color-picker show-alpha size="small" v-model="themeOptions['--ctrl-border-color-tint']"/>
-                            </div>
-                            <div class="setting-item">
-                                边框激活<el-color-picker show-alpha size="small" v-model="themeOptions['--ctrl-border-color-active']"/>
-                            </div>
-                            <div class="setting-item">
-                                边框悬浮<el-color-picker show-alpha size="small" v-model="themeOptions['--ctrl-border-color-hover']"/>
-                            </div>
-                            <div class="setting-item">
-                                阴影<el-color-picker show-alpha size="small" v-model="themeOptions['--ctrl-shadow-color']"/>
-                            </div>
-                        </div>
-                    </el-tab-pane>
-                    <el-tab-pane label="组件" name="control-tab">
-                        <div class="setting control-setting">
-                            <div class="setting-item">
-                                背景色（淡色）<el-color-picker show-alpha size="small" v-model="themeOptions['--item-background-color-tint']"/>
-                            </div>
-                            <div class="setting-item">
-                                背景色（亮色）<el-color-picker show-alpha size="small" v-model="themeOptions['--item-background-color-bright']"/>
-                            </div>
-                            <div class="setting-item">
-                                背景激活<el-color-picker show-alpha size="small" v-model="themeOptions['--item-background-color-active']"/>
-                            </div>
-                            <div class="setting-item">
-                                背景悬浮<el-color-picker show-alpha size="small" v-model="themeOptions['--item-background-color-hover']"/>
-                            </div>
-                            <div class="setting-item">
-                                字体<el-color-picker show-alpha size="small" v-model="themeOptions['--item-font-color']"/>
-                            </div>
-                            <div class="setting-item">
-                                字体（淡色）<el-color-picker show-alpha size="small" v-model="themeOptions['--item-font-color-tint']"/>
-                            </div>
-                            <div class="setting-item">
-                                字体（深色）<el-color-picker show-alpha size="small" v-model="themeOptions['--item-font-color-bright']"/>
-                            </div>
-                            <div class="setting-item">
-                                字体激活<el-color-picker show-alpha size="small" v-model="themeOptions['--item-font-color-active']"/>
-                            </div>
-                            <div class="setting-item">
-                                字体悬浮<el-color-picker show-alpha size="small" v-model="themeOptions['--item-font-color-hover']"/>
-                            </div>
-                            <div class="setting-item">
-                                边框<el-color-picker show-alpha size="small" v-model="themeOptions['--item-border-color']"/>
-                            </div>
-                            <div class="setting-item">
-                                边框（淡色）<el-color-picker show-alpha size="small" v-model="themeOptions['--item-border-color-tint']"/>
-                            </div>
-                            <div class="setting-item">
-                                边框激活<el-color-picker show-alpha size="small" v-model="themeOptions['--item-border-color-active']"/>
-                            </div>
-                            <div class="setting-item">
-                                边框悬浮<el-color-picker show-alpha size="small" v-model="themeOptions['--item-border-color-hover']"/>
-                            </div>
-                            <div class="setting-item">
-                                阴影<el-color-picker show-alpha size="small" v-model="themeOptions['--item-shadow-color']"/>
-                            </div>
-                        </div>
-                    </el-tab-pane>
-                    <el-tab-pane label="侧边栏" name="left-sidebar-tab">
-                        <div class="setting left-sidebar-setting">
-                            <div class="setting-item bkcolor">
-                               背景色<el-color-picker show-alpha size="small" v-model="themeOptions['--app-left-sidebar-background-color']"/>
-                            </div>
-                            <div class="setting-item bkcolor-deep">
-                                背景色（深色）<el-color-picker show-alpha size="small" v-model="themeOptions['--app-left-sidebar-background-color-deep']"/>
-                            </div>
-                            <div class="setting-item bkcolor-active">
-                                背景激活<el-color-picker show-alpha size="small" v-model="themeOptions['--app-left-sidebar-background-color-active']"/>
-                            </div>
-                            <div class="setting-item font-color">
-                                字体颜色<el-color-picker show-alpha size="small" v-model="themeOptions['--app-left-sidebar-font-color']"/>
-                            </div>
-                            <div class="setting-item font-color-active">
-                                字体激活<el-color-picker show-alpha size="small" v-model="themeOptions['--app-left-sidebar-font-color-active']"/>
-                            </div>
-                        </div>
-                    </el-tab-pane>
-                    <el-tab-pane label="底部" name="bottom-tab">
-                        <div class="setting bottom-setting">
-                            <div class="setting-item bkcolor">
-                               背景色<el-color-picker show-alpha size="small" v-model="themeOptions['--app-footer-background-color']"/>
-                            </div>
-                            <div class="setting-item bkcolor-active">
-                                背景激活<el-color-picker show-alpha size="small" v-model="themeOptions['--app-footer-background-color']"/>
-                            </div>
-                            <div class="setting-item font-color">
-                                字体颜色<el-color-picker show-alpha size="small" v-model="themeOptions['--app-footer-color']"/>
-                            </div>
-                            <div class="setting-item font-color-active">
-                                字体激活<el-color-picker show-alpha size="small" v-model="themeOptions['--app-footer-font-color-active']"/>
-                            </div>
-                        </div>
-                    </el-tab-pane>
-                    <el-tab-pane label="悬浮菜单" name="hover-menu-tab">
-                        <div class="setting hover-menu-setting">
-                            <div class="setting-item bkcolor">
-                                背景色<el-color-picker show-alpha size="small" v-model="themeOptions['--app-suspension-windows-background-color']"/>
-                            </div>
-                            <div class="setting-item bkcolor-active">
-                                背景激活<el-color-picker show-alpha size="small" v-model="themeOptions['--app-suspension-windows-background-color-active']"/>
-                            </div>
-                            <div class="setting-item font-color">
-                                字体颜色<el-color-picker show-alpha size="small" v-model="themeOptions['--app-suspension-windows-color']"/>
-                            </div>
-                            <div class="setting-item font-color-active">
-                                字体激活<el-color-picker show-alpha size="small" v-model="themeOptions['--app-suspension-windows-font-color-active']"/>
-                            </div>
-                        </div>
-                    </el-tab-pane>
-                    <el-tab-pane label="表单" name="form-tab">
-                        <div class="setting form-setting">
-                            <div class="setting-item">
-                                标签字体<el-color-picker show-alpha size="small" v-model="themeOptions['--form-label-font-color']"/>
-                            </div>
-                            <div class="setting-item">
-                                编辑器字体<el-color-picker show-alpha size="small" v-model="themeOptions['--form-editor-font-color']"/>
-                            </div>
-                            <div class="setting-item">
-                                编辑器placeholder字体<el-color-picker show-alpha size="small" v-model="themeOptions['--form-editor-placeholder-font-color']"/>
-                            </div>
-                            <div class="setting-item">
-                                编辑器背景<el-color-picker show-alpha size="small" v-model="themeOptions['--form-editor-background-color']"/>
-                            </div>
-                            <div class="setting-item">
-                                编辑器边框<el-color-picker show-alpha size="small" v-model="themeOptions['--form-editor-border-color']"/>
-                            </div>
-                            <div class="setting-item">
-                                编辑器激活<el-color-picker show-alpha size="small" v-model="themeOptions['--form-editor-active-color']"/>
-                            </div>
-                            <div class="setting-item">
-                                编辑器激活rgb<el-color-picker show-alpha size="small" v-model="themeOptions['--form-editor-active-color-rgb']"/>
-                            </div>
-                            <div class="setting-item">
-                                禁用编辑器字体<el-color-picker show-alpha size="small" v-model="themeOptions['--form-disable-editor-font-color']"/>
-                            </div>
-                            <div class="setting-item">
-                                禁用编辑器背景<el-color-picker show-alpha size="small" v-model="themeOptions['--form-disable-editor-background-color']"/>
-                            </div>
-                            <div class="setting-item">
-                                编辑器下拉区背景<el-color-picker show-alpha size="small" v-model="themeOptions['--form-editor-dropdown-background-color']"/>
-                            </div>
-                        </div>
-                    </el-tab-pane>
-                    <el-tab-pane label="杂项" name="other-tab">
-                        <div class="setting other-setting">
-                        </div>
-                    </el-tab-pane>
+                    <template v-for="type in themeTypes">
+                        <el-tab-pane :key="type.value" :label="type.label" :name="type.value" :class="type.className ? type.className : ''">
+                            <div v-if="type.items && type.items.length > 0" :class="{ 'setting': true, [`${type.value}-setting`]: true }">
+                                <div v-for="(item, index) in type.items" :key="index" class="setting-item">
+                                    <span>{{ item.label }}</span>
+                                    <el-color-picker :show-alpha="item.showAlpha" size="small" v-model="themeOptions[item.cssName]"/>
+                                </div>
+                            </div>
+                        </el-tab-pane>
+                    </template>
                 </el-tabs>
             </div>
             <div class="split"></div>
@@ -377,6 +57,7 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import { appConfig } from '@/config/appConfig';
+import { themeConfig } from '@/config/themeConfig';
 
 @Component({})
 export default class AppCustomTheme extends Vue {
@@ -388,6 +69,14 @@ export default class AppCustomTheme extends Vue {
      * @memberof AppCustomTheme
      */
     @Prop({ default: 'DEFAULT' }) public viewStyle!: string;
+
+    /**
+     * 主题css变量配置
+     * 
+     * @type {string}
+     * @memberof AppCustomTheme
+     */
+    public themeTypes: Array<any> = [];
 
     /**
      * 默认样式集合
@@ -435,7 +124,7 @@ export default class AppCustomTheme extends Vue {
      * @type {string}
      * @memberof AppCustomTheme
      */
-    public activeSetting: string = 'app-tab';
+    public activeSetting: string = '';
 
     /**
      * 主题配置
@@ -451,6 +140,10 @@ export default class AppCustomTheme extends Vue {
      * @memberof AppCustomTheme
      */
     public created() {
+        this.themeTypes = themeConfig.types;
+        if (this.themeTypes.length > 0) {
+            this.activeSetting = this.themeTypes[0].value;
+        }
         this.initThemeOptions().then((options: any) => {
             this.selectTheme = this.getSelectTheme();
             const themeOptions = options ? options : localStorage.getItem('theme-options');
@@ -464,6 +157,11 @@ export default class AppCustomTheme extends Vue {
         this.initFontFamily();
     }
 
+    /**
+     * 初始化主题配置
+     * 
+     * @memberof AppCustomTheme
+     */
     public async initThemeOptions() {
         try {
             const response = await this.$http.get('configs/custom/theme');
@@ -476,6 +174,11 @@ export default class AppCustomTheme extends Vue {
         }
     }
 
+    /**
+     * 初始化默认字体
+     * 
+     * @memberof AppCustomTheme
+     */
     public initFontFamily() {
         this.selectFont = localStorage.getItem('font-family') ? localStorage.getItem('font-family') : appConfig.defaultFont;
     }

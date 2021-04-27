@@ -38,6 +38,11 @@
        }
         ,
        {
+            "unirescode":"TOP_DOC_MENU",
+            "uniresname":"顶部_文档"
+       }
+        ,
+       {
             "unirescode":"CASE_UNLINK_BUT",
             "uniresname":"测试用例移除"
        }
@@ -193,6 +198,16 @@
        }
         ,
        {
+            "unirescode":"TOP_ELECSEARCH_MENU",
+            "uniresname":"顶部_全文检索"
+       }
+        ,
+       {
+            "unirescode":"SYSTEMMANAGER_MENU",
+            "uniresname":"系统管理"
+       }
+        ,
+       {
             "unirescode":"DOCLIB_NFAVOUR_BUT",
             "uniresname":"取消收藏文档库"
        }
@@ -210,6 +225,11 @@
        {
             "unirescode":"LIBM_OPEN_BUT",
             "uniresname":"用例库模块概况"
+       }
+        ,
+       {
+            "unirescode":"TOP_PRODUCT_MENU",
+            "uniresname":"顶部_产品主页"
        }
         ,
        {
@@ -323,6 +343,11 @@
        }
         ,
        {
+            "unirescode":"TOP_USERCONCAT_MENU",
+            "uniresname":"顶部_通讯录"
+       }
+        ,
+       {
             "unirescode":"STORY_NFAVOR_BUT",
             "uniresname":"需求待收藏"
        }
@@ -388,8 +413,18 @@
        }
         ,
        {
+            "unirescode":"TOP_PLANMODULE_MENU",
+            "uniresname":"顶部_计划模板"
+       }
+        ,
+       {
             "unirescode":"BUG_CREATECASE_BUT",
             "uniresname":"Bug建用例"
+       }
+        ,
+       {
+            "unirescode":"TOP_PROJECT_MENU",
+            "uniresname":"顶部_项目主页"
        }
         ,
        {
@@ -518,6 +553,11 @@
        }
         ,
        {
+            "unirescode":"LEFT_CASE_MENU",
+            "uniresname":"左侧_测试资源"
+       }
+        ,
+       {
             "unirescode":"PRODUCTLEFT",
             "uniresname":"产品左侧资源"
        }
@@ -570,6 +610,11 @@
        {
             "unirescode":"STORY_CHANGED_BUT",
             "uniresname":"需求变更"
+       }
+        ,
+       {
+            "unirescode":"TOP_SUM_MENU",
+            "uniresname":"顶部_统计"
        }
         ,
        {
@@ -638,6 +683,11 @@
        }
         ,
        {
+            "unirescode":"TOP_CASE_MENU",
+            "uniresname":"顶部_测试主页"
+       }
+        ,
+       {
             "unirescode":"BUG_CONFIRM_BUT",
             "uniresname":"Bug确认"
        }
@@ -665,6 +715,11 @@
        {
             "unirescode":"DOCLIBMODULE_EDIT_BUT",
             "uniresname":"文档库分类编辑"
+       }
+        ,
+       {
+            "unirescode":"TOP_MYPLACE_MENU",
+            "uniresname":"顶部_我的地盘"
        }
         ,
        {
@@ -698,6 +753,11 @@
        }
         ,
        {
+            "unirescode":"LEFT_PROJECT_MENU",
+            "uniresname":"左侧_项目管理（一级）"
+       }
+        ,
+       {
             "unirescode":"REPORTLY_SUBMIT_BUT",
             "uniresname":"汇报提交"
        }
@@ -720,6 +780,11 @@
        {
             "unirescode":"PROD_DELETE_BUT",
             "uniresname":"产品删除"
+       }
+        ,
+       {
+            "unirescode":"TOP_MYFAVOURITE_MENU",
+            "uniresname":"顶部_我的收藏"
        }
         ,
        {
@@ -753,6 +818,11 @@
        }
         ,
        {
+            "unirescode":"TOP_YEARSUM_MENU",
+            "uniresname":"顶部_年度统计"
+       }
+        ,
+       {
             "unirescode":"BUILD_LINK_BUT",
             "uniresname":"项目版本关联Bug（需求）"
        }
@@ -770,6 +840,11 @@
        {
             "unirescode":"CASE_CONFIRM_BUT",
             "uniresname":"测试用例确认"
+       }
+        ,
+       {
+            "unirescode":"TOP_IBZAPPMANAGER_MENU",
+            "uniresname":"顶部_ibz软件生产管理"
        }
         ,
        {

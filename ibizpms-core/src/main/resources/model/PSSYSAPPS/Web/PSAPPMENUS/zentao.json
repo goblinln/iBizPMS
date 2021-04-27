@@ -224,7 +224,8 @@
         "id" : "菜单项文本[MENUITEM.CAPTION.LEFT_PRODUCT]"
       }
     }, {
-      "accUserMode" : 2,
+      "accUserMode" : 4,
+      "accessKey" : "LEFT_PROJECT_MENU",
       "caption" : "项目",
       "itemType" : "MENUITEM",
       "name" : "menuitem5",

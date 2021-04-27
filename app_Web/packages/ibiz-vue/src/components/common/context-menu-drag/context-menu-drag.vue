@@ -299,7 +299,7 @@ export default class ContextMenuDrag extends Vue {
           that.listFilter();
         }
       }).catch((error:any) =>{
-        console.warn("加载数据错误")
+        this.$throw("加载数据错误");
       });
   }
 }

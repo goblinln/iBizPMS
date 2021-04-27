@@ -371,7 +371,7 @@ export default class AppFileUpload extends Vue {
             const imageTypes = ["image/jpeg" , "image/gif" , "image/png" , "image/bmp"];
             const isImage = imageTypes.some((type: any)=> Object.is(type, file.type));
             if (!isImage) {
-              this.$Notice.error({ title: (this.$t('components.appFileUpload.fileTypeErrorTitle') as any) ,desc: (this.$t('components.appFileUpload.fileTypeErrorInfo') as any)});
+              this.$throw((this.$t('components.appFileUpload.fileTypeErrorInfo') as any));
             }
             return isImage;
         }
@@ -409,7 +409,7 @@ export default class AppFileUpload extends Vue {
      * @memberof AppFileUpload
      */
     public onError(error: any, file: any, fileList: any) {
-        this.$Notice.error({ title: (this.$t('components.appFileUpload.uploadError') as any) });
+        this.$throw(error);
     }
 
     /**

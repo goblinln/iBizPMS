@@ -31,3 +31,4 @@ export { FormPickupDataViewBase } from './formpickupdataview-base';
 export { WFDynaStartViewBase } from './wfdynastartview-base';
 export { WizardViewBase } from './wizardview-base';
 export { WFActionViewBase } from './wfactionview-base';
+export { WfStepTraceViewBase } from './wfsteptraceview-base';

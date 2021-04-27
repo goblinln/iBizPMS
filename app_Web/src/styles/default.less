@@ -235,6 +235,13 @@
     z-index: 100000000 !important;
 }
 
+.workflow-tabs-container{
+    >.ivu-tabs-content{
+        height: calc(100% - 52px) !important;
+        overflow-y: auto;
+    }
+}
+
 .app-loading {
     background-color: var(--app-loading-masking-background-color);
     .app-loading-icon {

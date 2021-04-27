@@ -101,10 +101,10 @@ export default class AppOrgSector extends Vue {
             this.updateStoreOrgData(item);
             this.reload();
           }else{
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data?response.data.message:(this.$t('components.appOrgSector.errorSwitch') as string) });
+            this.$throw(response);
           }
       }).catch((error:any) =>{
-          this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('components.appOrgSector.errorSwitch') as string) });
+          this.$throw((this.$t('components.appOrgSector.errorSwitch') as string));
       })
     }else{
       let beforeActiveOrgData:any = this.selectedOrgArray.find((_item: any) => {
@@ -206,7 +206,7 @@ export default class AppOrgSector extends Vue {
               }
           }).catch((error: any) => {
                 resolve(false);
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: "重置应用数据出现异常" });
+                this.$throw("重置应用数据出现异常");
           });
       });
   }

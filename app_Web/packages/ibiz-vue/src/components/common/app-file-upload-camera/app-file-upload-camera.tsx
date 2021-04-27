@@ -162,7 +162,7 @@ export default class AppFileUploadCamera extends Vue {
             this.imgFiles = [];
             this.$emit('closecamera', data);
         }).catch((response:any) => {
-            this.$Notice.error({ title: '错误', desc: response.data && response.data.message ? response.data.message : "" });
+            this.$throw(response);
         });
     }
     public dialogVisible:any=false;

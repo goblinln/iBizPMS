@@ -113,7 +113,7 @@ export default class AppUser extends Vue {
                 }
             }
         }).catch((error: any) =>{
-            console.error(error);
+            this.$throw(error);
         })
     }
 }

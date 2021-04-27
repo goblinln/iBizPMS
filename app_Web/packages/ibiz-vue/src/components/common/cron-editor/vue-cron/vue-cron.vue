@@ -217,10 +217,10 @@ export default class VueCron extends Vue {
         return '';
       }
       if (this.dVal === '?' && this.weekVal === '?') {
-        this.$message.error(this.$t('components.cronEditor.message.error1') as string);
+        this.$throw((this.$t('components.cronEditor.message.error1') as string));
       }
       if (this.dVal !== '?' && this.weekVal !== '?') {
-        this.$message.error(this.$t('components.cronEditor.message.error1') as string);
+        this.$throw((this.$t('components.cronEditor.message.error1') as string));
       }
       let v: any = `${this.sVal} ${this.mVal} ${this.hVal} ${this.dVal} ${this.monthVal} ${this.weekVal} ${this.yearVal}`;
       if (v !== this.value) {
