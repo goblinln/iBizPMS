@@ -316,6 +316,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchBugProductOrProjectBuild",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "BugProductOrProjectBuild"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchBugProductOrProjectBuild"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchCurProduct",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -777,6 +793,22 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchBugProductBuild"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchBugProductOrProjectBuild",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "BugProductOrProjectBuild"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchBugProductOrProjectBuild"
     },
     "builtinMethod" : false
   }, {

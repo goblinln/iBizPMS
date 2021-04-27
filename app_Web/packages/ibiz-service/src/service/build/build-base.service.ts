@@ -104,6 +104,10 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
         return this.condCache.get('bugProductBuild');
     }
 
+    protected getBugProductOrProjectBuildCond() {
+        return this.condCache.get('bugProductOrProjectBuild');
+    }
+
     protected getCurProductCond() {
         if (!this.condCache.has('curProduct')) {
             const strCond: any[] = ['AND', ['OR', ['EQ', 'PRODUCT',{ type: 'DATACONTEXT', value: 'product'}], ['EQ', 'PRODUCT',{ type: 'WEBCONTEXT', value: 'product'}]]];
@@ -411,6 +415,23 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
             return this.http.post(`/products/${_context.product}/builds/fetchbugproductbuild`, _data);
         }
         return this.http.post(`/builds/fetchbugproductbuild`, _data);
+    }
+    /**
+     * FetchBugProductOrProjectBuild
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof BuildService
+     */
+    async FetchBugProductOrProjectBuild(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/builds/fetchbugproductorprojectbuild`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/builds/fetchbugproductorprojectbuild`, _data);
+        }
+        return this.http.post(`/builds/fetchbugproductorprojectbuild`, _data);
     }
     /**
      * FetchCurProduct

@@ -370,6 +370,9 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
     public List<Build> selectBugProductBuild(BuildSearchContext context){
         return baseMapper.selectBugProductBuild(context, context.getSelectCond());
     }
+    public List<Build> selectBugProductOrProjectBuild(BuildSearchContext context){
+        return baseMapper.selectBugProductOrProjectBuild(context, context.getSelectCond());
+    }
     public List<Build> selectCurProduct(BuildSearchContext context){
         return baseMapper.selectCurProduct(context, context.getSelectCond());
     }
@@ -396,6 +399,15 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
     @Override
     public Page<Build> searchBugProductBuild(BuildSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Build> pages=baseMapper.searchBugProductBuild(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Build>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 Bug产品或者项目版本
+     */
+    @Override
+    public Page<Build> searchBugProductOrProjectBuild(BuildSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Build> pages=baseMapper.searchBugProductOrProjectBuild(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Build>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

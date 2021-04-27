@@ -97,6 +97,8 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         BuildSearchContext searchContext = (BuildSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("BugProductBuild"))
             return buildService.searchBugProductBuild(searchContext);    
+        if (iPSDEDataSet.getName().equals("BugProductOrProjectBuild"))
+            return buildService.searchBugProductOrProjectBuild(searchContext);    
         if (iPSDEDataSet.getName().equals("CurProduct"))
             return buildService.searchCurProduct(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -115,6 +117,8 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         BuildSearchContext searchContext = (BuildSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("BugProductBuild"))
             return buildService.selectBugProductBuild(searchContext);
+        if (iPSDataQuery.getName().equals("BugProductOrProjectBuild"))
+            return buildService.selectBugProductOrProjectBuild(searchContext);
         if (iPSDataQuery.getName().equals("CurProduct"))
             return buildService.selectCurProduct(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
@@ -328,6 +332,9 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         }
         else if (action.equals("searchBugProductBuild")) {
             return aroundDataSet("BugProductBuild", point);
+        }
+        else if (action.equals("searchBugProductOrProjectBuild")) {
+            return aroundDataSet("BugProductOrProjectBuild", point);
         }
         else if (action.equals("searchCurProduct")) {
             return aroundDataSet("CurProduct", point);

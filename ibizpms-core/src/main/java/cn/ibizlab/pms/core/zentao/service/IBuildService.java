@@ -52,6 +52,7 @@ public interface IBuildService extends IService<Build> {
     boolean unlinkStoryBatch(List<Build> etList);
     List<Build> select(BuildSearchContext context);
     List<Build> selectBugProductBuild(BuildSearchContext context);
+    List<Build> selectBugProductOrProjectBuild(BuildSearchContext context);
     List<Build> selectCurProduct(BuildSearchContext context);
     List<Build> selectDefault(BuildSearchContext context);
     List<Build> selectTestBuild(BuildSearchContext context);
@@ -60,6 +61,7 @@ public interface IBuildService extends IService<Build> {
     List<Build> selectView(BuildSearchContext context);
 
     Page<Build> searchBugProductBuild(BuildSearchContext context);
+    Page<Build> searchBugProductOrProjectBuild(BuildSearchContext context);
     Page<Build> searchCurProduct(BuildSearchContext context);
     Page<Build> searchDefault(BuildSearchContext context);
     Page<Build> searchTestBuild(BuildSearchContext context);

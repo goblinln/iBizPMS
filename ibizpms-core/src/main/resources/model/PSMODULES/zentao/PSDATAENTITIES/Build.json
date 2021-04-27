@@ -150,6 +150,32 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
+        "customCond" : "( t1.`PRODUCT` = ${srfdatacontext('bugproduct','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BUILD\"}')}  OR  t1.`PRODUCT` = ${srfwebcontext('bugproduct','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BUILD\"}')} \n or t1.`PRODUCT` is null)",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`PROJECT` = ${srfdatacontext('bugproject','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BUILD\"}')}  \n or t1.`PROJECT` is null or ${srfdatacontext('bugproject','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BUILD\"}')} is null)",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "not EXISTS(select 1 from zt_release t2 where t2.build = t1.id and t2.`status` = 'terminate')",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "BugProductOrProjectBuild",
+    "logicName" : "Bug产品或者项目版本",
+    "name" : "BugProductOrProjectBuild",
+    "customCode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
         "customCond" : "( ( t1.`PRODUCT` = ${srfdatacontext('product','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BUILD\"}')}  OR  t1.`PRODUCT` = ${srfwebcontext('product','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_BUILD\"}')} ) )",
         "name" : "查询条件"
       } ]
@@ -242,6 +268,21 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "BugProductBuild"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "BugProductOrProjectBuild",
+    "logicName" : "Bug产品或者项目版本",
+    "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "name" : "BugProductOrProjectBuild",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "BugProductOrProjectBuild"
     } ],
     "enableBackend" : true,
     "enableFront" : true

@@ -20,6 +20,7 @@ import com.alibaba.fastjson.JSONObject;
 public interface BuildMapper extends BaseMapper<Build> {
 
     List<Build> selectBugProductBuild(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
+    List<Build> selectBugProductOrProjectBuild(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
     List<Build> selectCurProduct(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
     List<Build> selectDefault(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
     List<Build> selectTestBuild(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
@@ -28,6 +29,7 @@ public interface BuildMapper extends BaseMapper<Build> {
     List<Build> selectView(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
 
     Page<Build> searchBugProductBuild(IPage page, @Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
+    Page<Build> searchBugProductOrProjectBuild(IPage page, @Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
     Page<Build> searchCurProduct(IPage page, @Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
     Page<Build> searchDefault(IPage page, @Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
     Page<Build> searchTestBuild(IPage page, @Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
