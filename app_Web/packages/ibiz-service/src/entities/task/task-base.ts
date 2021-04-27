@@ -234,6 +234,10 @@ export abstract class TaskBase extends EntityBase implements ITask {
      */
     ibztaskestimates?: any;
     /**
+     * 需求版本
+     */
+    storyversion?: any;
+    /**
      * 延期
      */
     delay?: any;
@@ -367,10 +371,6 @@ export abstract class TaskBase extends EntityBase implements ITask {
      * 产品
      */
     product?: any;
-    /**
-     * 需求版本
-     */
-    storyversion?: any;
     /**
      * 产品
      */

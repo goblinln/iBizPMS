@@ -1773,6 +1773,11 @@
     "stdDataType" : 21,
     "stringLength" : 1048576
   }, {
+    "codeName" : "StoryVersion",
+    "logicName" : "需求版本",
+    "name" : "STORYVERSION",
+    "stdDataType" : 9
+  }, {
     "codeName" : "Delay",
     "logicName" : "延期",
     "name" : "DELAY",
@@ -1958,11 +1963,6 @@
     "logicName" : "产品",
     "name" : "PRODUCT",
     "stdDataType" : 1
-  }, {
-    "codeName" : "StoryVersion",
-    "logicName" : "需求版本",
-    "name" : "STORYVERSION",
-    "stdDataType" : 9
   }, {
     "codeName" : "ProductName",
     "logicName" : "产品",

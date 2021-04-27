@@ -209,6 +209,10 @@ export interface ISubTask extends IEntityBase {
      */
     ibztaskestimates?: any;
     /**
+     * 需求版本
+     */
+    storyversion?: any;
+    /**
      * 延期
      */
     delay?: any;
@@ -342,10 +346,6 @@ export interface ISubTask extends IEntityBase {
      * 产品
      */
     product?: any;
-    /**
-     * 需求版本
-     */
-    storyversion?: any;
     /**
      * 产品
      */

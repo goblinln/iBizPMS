@@ -46096,6 +46096,19 @@
     "major_field":0
     },
     {
+    "fieldname":"STORYVERSION" ,
+    "codename":"StoryVersion",
+    "field_logic_name":"需求版本",
+    "entity_name":"ZT_TASK",
+    "field_type":"INT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"INT",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
     "fieldname":"DELAY" ,
     "codename":"Delay",
     "field_logic_name":"延期",
@@ -46569,24 +46582,6 @@
     "physical_field":0,
     "data_type":"BIGINT",
     "data_length":8,
-    "key_field":0,
-    "show_order":1000,
-    "major_field":0
-    },
-    {
-    "fieldname":"STORYVERSION" ,
-    "codename":"StoryVersion",
-    "field_logic_name":"需求版本",
-    "entity_name":"ZT_TASK",
-    "ref_de":"ZT_STORY",
-    "ref_field_name":"VERSION",
-    "relation_name":"DER1N_ZT_TASK_ZT_STORY_STORY",
-    "relation_codename":"ZTStory",
-    "field_type":"PICKUPDATA",
-    "nullable":1,
-    "physical_field":1,
-    "data_type":"INT",
-    "data_length":6,
     "key_field":0,
     "show_order":1000,
     "major_field":0

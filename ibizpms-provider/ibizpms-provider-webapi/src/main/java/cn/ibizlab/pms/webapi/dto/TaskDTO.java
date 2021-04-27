@@ -466,6 +466,15 @@ public class TaskDTO extends DTOBase implements Serializable {
     private String assignedto;
 
     /**
+     * 属性 [STORYVERSION]
+     *
+     */
+    @JSONField(name = "storyversion")
+    @JsonProperty("storyversion")
+    @ApiModelProperty("需求版本")
+    private Integer storyversion;
+
+    /**
      * 属性 [DELAY]
      *
      */
@@ -780,15 +789,6 @@ public class TaskDTO extends DTOBase implements Serializable {
     private Long product;
 
     /**
-     * 属性 [STORYVERSION]
-     *
-     */
-    @JSONField(name = "storyversion")
-    @JsonProperty("storyversion")
-    @ApiModelProperty("需求版本")
-    private Integer storyversion;
-
-    /**
      * 属性 [PRODUCTNAME]
      *
      */
@@ -1101,6 +1101,14 @@ public class TaskDTO extends DTOBase implements Serializable {
     }
 
     /**
+     * 设置 [STORYVERSION]
+     */
+    public void setStoryversion(Integer  storyversion){
+        this.storyversion = storyversion ;
+        this.modify("storyversion",storyversion);
+    }
+
+    /**
      * 设置 [DESC]
      */
     public void setDesc(String  desc){
@@ -1194,14 +1202,6 @@ public class TaskDTO extends DTOBase implements Serializable {
     public void setFinisheddate(Timestamp  finisheddate){
         this.finisheddate = finisheddate ;
         this.modify("finisheddate",finisheddate);
-    }
-
-    /**
-     * 设置 [STORYVERSION]
-     */
-    public void setStoryversion(Integer  storyversion){
-        this.storyversion = storyversion ;
-        this.modify("storyversion",storyversion);
     }
 
     /**

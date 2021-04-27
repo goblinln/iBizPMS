@@ -430,6 +430,15 @@ public class Task extends EntityMP implements Serializable {
     @ApiModelProperty("指派给")
     private String assignedto;
     /**
+     * 需求版本
+     */
+    @DEField(defaultValue = "1")
+    @TableField(value = "`STORYVERSION`")
+    @JSONField(name = "storyversion")
+    @JsonProperty("storyversion")
+    @ApiModelProperty("需求版本")
+    private Integer storyversion;
+    /**
      * 延期
      */
     @TableField(exist = false)
@@ -700,15 +709,6 @@ public class Task extends EntityMP implements Serializable {
     @JsonProperty("product")
     @ApiModelProperty("产品")
     private Long product;
-    /**
-     * 需求版本
-     */
-    @DEField(defaultValue = "1")
-    @TableField(value = "`STORYVERSION`")
-    @JSONField(name = "storyversion")
-    @JsonProperty("storyversion")
-    @ApiModelProperty("需求版本")
-    private Integer storyversion;
     /**
      * 产品
      */
@@ -1122,6 +1122,14 @@ public class Task extends EntityMP implements Serializable {
     }
 
     /**
+     * 设置 [需求版本]
+     */
+    public void setStoryversion(Integer storyversion) {
+        this.storyversion = storyversion;
+        this.modify("storyversion", storyversion);
+    }
+
+    /**
      * 设置 [任务描述]
      */
     public void setDesc(String desc) {
@@ -1257,14 +1265,6 @@ public class Task extends EntityMP implements Serializable {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         return sdf.format(finisheddate);
     }
-    /**
-     * 设置 [需求版本]
-     */
-    public void setStoryversion(Integer storyversion) {
-        this.storyversion = storyversion;
-        this.modify("storyversion", storyversion);
-    }
-
     /**
      * 设置 [所属项目]
      */
