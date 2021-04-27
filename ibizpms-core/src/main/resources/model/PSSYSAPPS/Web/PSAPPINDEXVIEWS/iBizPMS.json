@@ -17,7 +17,8 @@
       "itemType" : "MENUITEM",
       "name" : "top_menus",
       "getPSAppMenuItems" : [ {
-        "accUserMode" : 2,
+        "accUserMode" : 4,
+        "accessKey" : "TOP_MYFAVOURITE_MENU",
         "caption" : "我的收藏",
         "itemType" : "MENUITEM",
         "name" : "menuitem12",
@@ -36,7 +37,8 @@
         "tooltip" : "我的收藏",
         "openDefault" : true
       }, {
-        "accUserMode" : 2,
+        "accUserMode" : 4,
+        "accessKey" : "TOP_MYPLACE_MENU",
         "caption" : "我的地盘",
         "itemType" : "MENUITEM",
         "name" : "menuitem9",
@@ -54,7 +56,8 @@
         },
         "tooltip" : "我的地盘"
       }, {
-        "accUserMode" : 0,
+        "accUserMode" : 4,
+        "accessKey" : "TOP_PRODUCT_MENU",
         "caption" : "产品主页",
         "itemType" : "MENUITEM",
         "name" : "menuitem3",
@@ -72,7 +75,8 @@
         },
         "tooltip" : "产品主页"
       }, {
-        "accUserMode" : 0,
+        "accUserMode" : 4,
+        "accessKey" : "TOP_PROJECT_MENU",
         "caption" : "项目主页",
         "itemType" : "MENUITEM",
         "name" : "menuitem2",
@@ -90,7 +94,8 @@
         },
         "tooltip" : "项目主页"
       }, {
-        "accUserMode" : 0,
+        "accUserMode" : 4,
+        "accessKey" : "TOP_CASE_MENU",
         "caption" : "测试主页",
         "itemType" : "MENUITEM",
         "name" : "menuitem1",
@@ -108,7 +113,8 @@
         },
         "tooltip" : "测试主页"
       }, {
-        "accUserMode" : 2,
+        "accUserMode" : 4,
+        "accessKey" : "TOP_DOC_MENU",
         "caption" : "文档",
         "itemType" : "MENUITEM",
         "name" : "menuitem16",
@@ -126,7 +132,8 @@
         },
         "tooltip" : "文档"
       }, {
-        "accUserMode" : 2,
+        "accUserMode" : 4,
+        "accessKey" : "TOP_PLANMODULE_MENU",
         "caption" : "计划模板",
         "itemType" : "MENUITEM",
         "name" : "menuitem23",
@@ -144,7 +151,8 @@
         },
         "tooltip" : "计划模板"
       }, {
-        "accUserMode" : 2,
+        "accUserMode" : 4,
+        "accessKey" : "TOP_SUM_MENU",
         "caption" : "统计",
         "itemType" : "MENUITEM",
         "name" : "menuitem22",
@@ -162,7 +170,8 @@
         },
         "tooltip" : "统计"
       }, {
-        "accUserMode" : 2,
+        "accUserMode" : 4,
+        "accessKey" : "TOP_YEARSUM_MENU",
         "caption" : "年度统计",
         "itemType" : "MENUITEM",
         "name" : "menuitem25",
@@ -180,7 +189,8 @@
         },
         "tooltip" : "年度统计"
       }, {
-        "accUserMode" : 2,
+        "accUserMode" : 4,
+        "accessKey" : "TOP_IBZAPPMANAGER_MENU",
         "caption" : "iBiz软件生产管理",
         "itemType" : "MENUITEM",
         "name" : "menuitem7",
@@ -198,7 +208,8 @@
         },
         "tooltip" : "iBiz软件生产管理"
       }, {
-        "accUserMode" : 2,
+        "accUserMode" : 4,
+        "accessKey" : "TOP_USERCONCAT_MENU",
         "caption" : "通讯录",
         "itemType" : "MENUITEM",
         "name" : "menuitem26",
@@ -216,7 +227,8 @@
         },
         "tooltip" : "通讯录"
       }, {
-        "accUserMode" : 2,
+        "accUserMode" : 4,
+        "accessKey" : "TOP_ELECSEARCH_MENU",
         "caption" : "全文检索",
         "itemType" : "MENUITEM",
         "name" : "menuitem27",
@@ -235,7 +247,8 @@
         "tooltip" : "全文检索",
         "hidden" : true
       }, {
-        "accUserMode" : 0,
+        "accUserMode" : 4,
+        "accessKey" : "SYSTEMMANAGER_MENU",
         "caption" : "系统管理",
         "itemType" : "MENUITEM",
         "name" : "menuitem24",
@@ -423,7 +436,8 @@
         },
         "tooltip" : "项目"
       }, {
-        "accUserMode" : 2,
+        "accUserMode" : 4,
+        "accessKey" : "LEFT_CASE_MENU",
         "caption" : "测试",
         "itemType" : "MENUITEM",
         "name" : "menuitem6",
