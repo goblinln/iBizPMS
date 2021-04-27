@@ -250,10 +250,7 @@ export class WizardPanelControlBase extends MainControlBase {
             }
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status === 401) {
-                return;
-            }
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.info });
+            this.$throw(response);
         })
     }
 
@@ -312,10 +309,7 @@ export class WizardPanelControlBase extends MainControlBase {
             }
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status === 401) {
-                return;
-            }
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.info });
+            this.$throw(response);
         });
     }
 
@@ -356,7 +350,7 @@ export class WizardPanelControlBase extends MainControlBase {
                     let form: any = (this.$refs[this.activeForm] as any).ctrl;
                     this.curState = 'PREV';
                     if (!this.stepActions[this.activeForm].preAction) {
-                        this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: this.$t('app.wizardPanel.preactionmessage') as string });
+                        this.$throw((this.$t('app.wizardPanel.preactionmessage') as string));
                         return;
                     }
                     this.viewState.next({ tag: this.activeForm, action: 'panelaction', data: { action: this.stepActions[this.activeForm].preAction, emitAction: 'save', data: this.formParam } });
@@ -381,7 +375,7 @@ export class WizardPanelControlBase extends MainControlBase {
                     this.curState = 'NEXT';
                     this.wizardState.next({ tag: this.activeForm, action: 'panelaction', data: { action: this.stepActions[this.activeForm].saveAction, emitAction: 'save', data: this.formParam } });
                 } else {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.rulesException') as string) });
+                    this.$throw((this.$t('app.commonWords.rulesException') as string));
                 }
             }
         }
@@ -400,7 +394,7 @@ export class WizardPanelControlBase extends MainControlBase {
                     this.curState = 'FINISH';
                     this.wizardState.next({ tag: this.activeForm, action: 'panelaction', data: { action: this.stepActions[this.activeForm].saveAction, emitAction: 'save', data: this.formParam } });
                 } else {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.rulesException') as string) });
+                    this.$throw((this.$t('app.commonWords.rulesException') as string));
                 }
             }
         }

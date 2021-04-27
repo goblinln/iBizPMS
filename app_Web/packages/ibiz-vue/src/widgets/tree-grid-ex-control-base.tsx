@@ -157,7 +157,7 @@ export class TreeGridExControlBase extends MDControlBase {
         this.service.getNodes(tempContext, params).then((response: any) => {
             this.ctrlEndLoading();
             if (!response || response.status !== 200) {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.info });
+                this.$throw(response.info);
                 return;
             }
             response.data.forEach((item: any) => {
@@ -177,10 +177,7 @@ export class TreeGridExControlBase extends MDControlBase {
             this.ctrlEvent({ controlname: this.controlInstance.name, action: "load", data: this.items });
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status === 401) {
-                return;
-            }
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.info });
+            this.$throw(response);
         });
     }
 

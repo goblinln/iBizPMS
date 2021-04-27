@@ -180,14 +180,7 @@ export class WFDynaEditViewBase extends MainViewBase {
                     resolve(response.data);
                 }
             }).catch((response: any) => {
-                if (response && response.status) {
-                    this.$Notice.error({ title: '错误', desc: response.message });
-                    return;
-                }
-                if (!response || !response.status || !response.data) {
-                    this.$Notice.error({ title: '错误', desc: '系统异常' });
-                    return;
-                }
+                this.$throw(response);
             });
         });
     }
@@ -341,7 +334,7 @@ export class WFDynaEditViewBase extends MainViewBase {
         this.appEntityService[action](Util.deepCopy(this.context), tempSubmitData).then((response: any) => {
             const { data: data } = response;
             if (!response || response.status !== 200) {
-                this.$Notice.error({ title: '错误', desc: data?.message ? data.message : '提交数据异常' });
+                this.$throw(response);
                 return;
             }
             let _this: any = this;
@@ -354,8 +347,7 @@ export class WFDynaEditViewBase extends MainViewBase {
             AppCenterService.notifyMessage({ name: this.appDeCodeName, action: 'appRefresh', data: data });
             this.$Notice.success({ title: '成功', desc: data?.message ? data.message : '提交数据成功' });
         }).catch((error: any) => {
-            const { data: data } = error;
-            this.$Notice.error({ title: '错误', desc: data?.message ? data.message : '提交数据异常' });
+            this.$throw(error);
         })
     }
 

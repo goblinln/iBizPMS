@@ -282,10 +282,7 @@ export class StateWizardPanelControlBase extends MainControlBase {
             }
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status === 401) {
-                return;
-            }
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.info });
+            this.$throw(response);
         })
     }
 
@@ -324,10 +321,7 @@ export class StateWizardPanelControlBase extends MainControlBase {
             }
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status === 401) {
-                return;
-            }
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.info });
+            this.$throw(response);
         });
     }
 
@@ -488,7 +482,7 @@ export class StateWizardPanelControlBase extends MainControlBase {
                     this.curState = 'NEXT';
                     this.wizardState.next({ tag: name, action: 'save', data: this.formParam });
                 } else {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.rulesException') as string) });
+                    this.$throw((this.$t('app.commonWords.rulesException') as string));
                 }
             }
         }
@@ -508,7 +502,7 @@ export class StateWizardPanelControlBase extends MainControlBase {
                     this.curState = 'FINISH';
                     this.wizardState.next({ tag: name, action: 'save', data: this.formParam });
                 } else {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.rulesException') as string) });
+                    this.$throw((this.$t('app.commonWords.rulesException') as string));
                 }
             }
         }

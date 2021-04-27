@@ -278,14 +278,7 @@ export class WfDynaExpGridViewBase extends MainViewBase {
                     resolve(response.data);
                 }
             }).catch((response: any) => {
-                if (response && response.status) {
-                    this.$Notice.error({ title: '错误', desc: response.message });
-                    return;
-                }
-                if (!response || !response.status || !response.data) {
-                    this.$Notice.error({ title: '错误', desc: '系统异常' });
-                    return;
-                }
+                this.$throw(response);
             });
         })
     }
@@ -307,14 +300,7 @@ export class WfDynaExpGridViewBase extends MainViewBase {
                 }
             }
         }).catch((response: any) => {
-            if (response && response.status) {
-                this.$Notice.error({ title: '错误', desc: response.message });
-                return;
-            }
-            if (!response || !response.status || !response.data) {
-                this.$Notice.error({ title: '错误', desc: '系统异常' });
-                return;
-            }
+            this.$throw(response);
         });
     }
 

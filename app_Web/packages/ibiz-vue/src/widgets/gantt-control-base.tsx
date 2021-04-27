@@ -301,7 +301,7 @@ export class GanttControlBase extends MDControlBase {
         this.service.getNodes(tempContext,params).then((response: any) => {
             this.ctrlEndLoading();
             if (!response || response.status !== 200) {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.info });
+                this.$throw(response);
                 return;
             }
             this.tasks = [...this.tasks, ...response.data];
@@ -313,10 +313,7 @@ export class GanttControlBase extends MDControlBase {
             this.$emit("load", this.tasks);
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status === 401) {
-                return;
-            }
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.info });
+            this.$throw(response);
         });
     }
 

@@ -303,7 +303,7 @@ export class EditFormControlBase extends FormControlBase {
     public loadDraft(opt: any = {}): void {
         let callBack: any;
         if (!this.loaddraftAction) {
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: `${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.loaddraftaction') as string) });
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.loaddraftaction') as string));
             return;
         }
         this.createDefault();
@@ -318,9 +318,7 @@ export class EditFormControlBase extends FormControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                if (response.data) {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                }
+                this.$throw(response);
                 return;
             }
 
@@ -355,14 +353,7 @@ export class EditFormControlBase extends FormControlBase {
             });
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status && response.data) {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                return;
-            }
-            if (!response || !response.status || !response.data) {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.sysException') as string) });
-                return;
-            }
+            this.$throw(response);
         });
     }
 
@@ -383,7 +374,7 @@ export class EditFormControlBase extends FormControlBase {
         const action: any = Object.is(data.srfuf, '1') ? this.updateAction : this.createAction;
         if (!action) {
             let actionName: any = Object.is(data.srfuf, '1') ? "updateAction" : "createAction";
-            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: `${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.actionname') as string) });
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.actionname') as string));
             return;
         }
         Object.assign(arg, { viewparams: this.viewparams });
@@ -392,9 +383,7 @@ export class EditFormControlBase extends FormControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                if (response.data) {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                }
+                this.$throw(response);
                 return;
             }
             const data = response.data;
@@ -425,30 +414,21 @@ export class EditFormControlBase extends FormControlBase {
                         let errorProp: string = response.data.message.match(/\[[a-zA-Z]*\]/)[0];
                         let name: string = this.service.getNameByProp(errorProp.substr(1, errorProp.length - 2));
                         if (name) {
-                            this.$Notice.error({
-                                title: (this.$t('app.commonWords.createFailed') as string),
-                                desc: this.detailsModel[name].caption + " : " + arg[name] + (this.$t('app.commonWords.isExist') as string) + '!',
-                            });
+                            this.$throw(this.detailsModel[name].caption + " : " + arg[name] + (this.$t('app.commonWords.isExist') as string) + '!');
                         } else {
-                            this.$Notice.error({
-                                title: (this.$t('app.commonWords.createFailed') as string),
-                                desc: response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string),
-                            })
+                            this.$throw(response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string));
                         }
                     } else if (Object.is(response.data.errorKey, 'DuplicateKeyException')) {
-                        this.$Notice.error({
-                            title: (this.$t('app.commonWords.createFailed') as string),
-                            desc: this.detailsModel[this.majorKeyItemName].caption + " : " + arg[this.majorKeyItemName] + (this.$t('app.commonWords.isExist') as string) + '!',
-                        });
+                        this.$throw(this.detailsModel[this.majorKeyItemName].caption + " : " + arg[this.majorKeyItemName] + (this.$t('app.commonWords.isExist') as string) + '!');
                     } else {
-                        this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string) });
+                        this.$throw(response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string));
                     }
                 } else {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string) });
+                    this.$throw(response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string));
                 }
                 return;
             } else {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.sysException') as string) });
+                this.$throw((this.$t('app.commonWords.sysException') as string));
             }
         });
     }
@@ -470,9 +450,9 @@ export class EditFormControlBase extends FormControlBase {
                     this.errorMessages.forEach((message: any) => {
                         descMessage = descMessage + '<p>' + message.error + '<p>';
                     })
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: descMessage });
+                    this.$throw(descMessage);
                 } else {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.formpage.valuecheckex') as string) });
+                    this.$throw((this.$t('app.formpage.valuecheckex') as string));
                 }
                 return;
             }
@@ -494,7 +474,7 @@ export class EditFormControlBase extends FormControlBase {
             const action: any = Object.is(data.srfuf, '1') ? this.updateAction : this.createAction;
             if (!action) {
                 let actionName: any = Object.is(data.srfuf, '1') ? "updateAction" : "createAction";
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: `${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.actionname') as string) });
+                this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.actionname') as string));
                 return;
             }
             Object.assign(arg, { viewparams: this.viewparams });
@@ -503,9 +483,7 @@ export class EditFormControlBase extends FormControlBase {
             post.then((response: any) => {
                 this.ctrlEndLoading();
                 if (!response.status || response.status !== 200) {
-                    if (response.data) {
-                        this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                    }
+                    this.$throw(response);
                     return;
                 }
                 this.viewparams.copymode = false;
@@ -547,26 +525,20 @@ export class EditFormControlBase extends FormControlBase {
                             let errorProp: string = response.data.message.match(/\[[a-zA-Z]*\]/)[0];
                             let name: string = this.service.getNameByProp(errorProp.substr(1, errorProp.length - 2));
                             if (name) {
-                                this.$Notice.error({
-                                    title: (this.$t('app.commonWords.createFailed') as string),
-                                    desc: this.detailsModel[name].caption + " : " + arg[name] + (this.$t('app.commonWords.isExist') as string) + '!',
-                                });
+                                this.$throw(this.detailsModel[name].caption + " : " + arg[name] + (this.$t('app.commonWords.isExist') as string) + '!');
                             } else {
-                                this.$Notice.error({
-                                    title: (this.$t('app.commonWords.createFailed') as string),
-                                    desc: response.data.message + appendErrors,
-                                })
+                                this.$throw(response.data.message + appendErrors);
                             }
                         } else {
-                            this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message + appendErrors });
+                            this.$throw(response.data.message + appendErrors);
                         }
                     } else {
-                        this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message + appendErrors });
+                        this.$throw(response.data.message + appendErrors);
                         reject(response);
                     }
                     return;
                 } else {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.sysException') as string) });
+                    this.$throw((this.$t('app.commonWords.sysException') as string));
                     reject(response);
                 }
                 reject(response);
@@ -584,7 +556,7 @@ export class EditFormControlBase extends FormControlBase {
     public async remove(opt: Array<any> = [], showResultInfo?: boolean): Promise<any> {
         return new Promise((resolve: any, reject: any) => {
             if (!this.removeAction) {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: `${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.removeaction') as string) });
+                this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.removeaction') as string));
                 return;
             }
             const arg: any = opt[0];
@@ -608,8 +580,7 @@ export class EditFormControlBase extends FormControlBase {
                 }
             }).catch((error: any) => {
                 this.ctrlEndLoading();
-                const { data: _data } = error;
-                this.$Notice.error({ title: _data.title, desc: _data.message });
+                this.$throw(error);
                 reject(error);
             });
         });
@@ -678,39 +649,19 @@ export class EditFormControlBase extends FormControlBase {
                 result.then((response: any) => {
                     this.ctrlEndLoading();
                     if (!response || response.status !== 200) {
-                        if (response.data) {
-                            this.$Notice.error({ title: '', desc: (this.$t('app.formpage.workflow.starterror') as string) + ', ' + response.data.message });
-                        }
+                        this.$throw((this.$t('app.formpage.workflow.starterror') as string) + ', ' + response.data.message);
                         return;
                     }
                     this.$Notice.info({ title: '', desc: (this.$t('app.formpage.workflow.startsuccess') as string) });
                     resolve(response);
                 }).catch((response: any) => {
                     this.ctrlEndLoading();
-                    if (response && response.status && response.data) {
-                        this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                        reject(response);
-                        return;
-                    }
-                    if (!response || !response.status || !response.data) {
-                        this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.sysException') as string) });
-                        reject(response);
-                        return;
-                    }
+                    this.$throw(response);
                     reject(response);
                 });
             }).catch((response: any) => {
                 this.ctrlEndLoading();
-                if (response && response.status && response.data) {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                    reject(response);
-                    return;
-                }
-                if (!response || !response.status || !response.data) {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.sysException') as string) });
-                    reject(response);
-                    return;
-                }
+                this.$throw(response);
                 reject(response);
             })
         });
@@ -785,9 +736,7 @@ export class EditFormControlBase extends FormControlBase {
                 result.then((response: any) => {
                     this.ctrlEndLoading();
                     if (!response || response.status !== 200) {
-                        if (response.data) {
-                            this.$Notice.error({ title: '', desc: (this.$t('app.formpage.workflow.submiterror') as string) + ', ' + response.data.message });
-                        }
+                        this.$throw((this.$t('app.formpage.workflow.submiterror') as string) + ', ' + response.data.message);
                         return;
                     }
                     this.onFormLoad(arg, 'submit');
@@ -796,30 +745,12 @@ export class EditFormControlBase extends FormControlBase {
                     resolve(response);
                 }).catch((response: any) => {
                     this.ctrlEndLoading();
-                    if (response && response.status && response.data) {
-                        this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                        reject(response);
-                        return;
-                    }
-                    if (!response || !response.status || !response.data) {
-                        this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.sysException') as string) });
-                        reject(response);
-                        return;
-                    }
+                    this.$throw(response);
                     reject(response);
                 });
             }).catch((response: any) => {
                 this.ctrlEndLoading();
-                if (response && response.status && response.data) {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                    reject(response);
-                    return;
-                }
-                if (!response || !response.status || !response.data) {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.sysException') as string) });
-                    reject(response);
-                    return;
-                }
+                this.$throw(response);
                 reject(response);
             })
         })
@@ -867,9 +798,7 @@ export class EditFormControlBase extends FormControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                if (response.data) {
-                    this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                }
+                this.$throw(response);
                 return;
             }
             const data = response.data;
@@ -884,14 +813,7 @@ export class EditFormControlBase extends FormControlBase {
             });
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status && response.data) {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                return;
-            }
-            if (!response || !response.status || !response.data) {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.sysException') as string) });
-                return;
-            }
+            this.$throw(response);
         });
     }
 
@@ -915,7 +837,7 @@ export class EditFormControlBase extends FormControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response || response.status !== 200) {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.formpage.updateerror') as string) });
+                this.$throw((this.$t('app.formpage.updateerror') as string));
                 return;
             }
             const data = response.data;
@@ -935,14 +857,7 @@ export class EditFormControlBase extends FormControlBase {
             });
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            if (response && response.status && response.data) {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: response.data.message });
-                return;
-            }
-            if (!response || !response.status || !response.data) {
-                this.$Notice.error({ title: (this.$t('app.commonWords.wrong') as string), desc: (this.$t('app.commonWords.sysException') as string) });
-                return;
-            }
+            this.$throw(response);
         });
     }
 
@@ -1391,7 +1306,7 @@ export class EditFormControlBase extends FormControlBase {
                             try {
                                 eval(sysRule.scriptCode);
                             } catch (error) {
-                                console.error(error);
+                                this.$throw(error);
                             }
                             return true;
                         },

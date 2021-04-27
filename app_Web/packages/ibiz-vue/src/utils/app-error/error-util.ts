@@ -57,7 +57,7 @@ export class ErrorUtil {
                 if (!error || !error.status || !error.data) {
                     return this.createError(ErrorCode.APP);
                 } else {
-                    return this.createError(ErrorCode.CUSTOM, error.message);
+                    return this.createError(ErrorCode.CUSTOM, error.data.message);
                 }
             }
         }

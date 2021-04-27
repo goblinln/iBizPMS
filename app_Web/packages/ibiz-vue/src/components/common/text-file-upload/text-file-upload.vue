@@ -479,7 +479,8 @@ export default class TextFileUpload extends Vue {
           fileParam = this.$util.computedNavData(JSON.parse(this.data),this.context,this.viewparams,JSON.parse(this.fileParam));
         }
         //文件名与文件类型
-        let fileName = "模板文件.wps";
+        let fileName = "模板文件";
+        let filetype = ".wps"
         let filemime = "application/kswps";
         let fileText = "";
         //文件数据
@@ -500,7 +501,8 @@ export default class TextFileUpload extends Vue {
               // 返回的是一个jsonArray
               if (response.data?.length > 0) {
                   tempfile = response.data[0];
-                  fileName = response.data[0]?.filename;
+                  fileName = response.data[0]?.filename.split(".")[0];
+                  filetype = response.data[0]?.ext;
                   filemime = this.calcFilemime(response.data[0]?.ext);
               }
           }).catch((error: any) => {
@@ -531,7 +533,11 @@ export default class TextFileUpload extends Vue {
               Message.error(_this.$t('components.diskFileUpload.downloadFile') + ':' + error);
           });
         }
-        let file = new File([fileText],fileName,{type: filemime});
+        //配置优先级最高
+        fileName = fileParam.filename?fileParam.filename:fileName;
+        filetype = fileParam.filetype?fileParam.filetype:filetype;
+        filemime = fileParam.filetype?this.calcFilemime(fileParam.filetype):fileParam.filetype;
+        let file = new File([fileText],fileName + filetype,{type: filemime});
         if (this.textstate === "init") {
             this.textstate = "upload";
         }

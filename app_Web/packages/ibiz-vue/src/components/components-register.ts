@@ -112,6 +112,7 @@ import AppFormGroupDataPanel from './common/app-form-group-data-panel/app-form-g
 import TextFileUpload from './common/text-file-upload/text-file-upload.vue';
 import AppCommonMicrocom from './common/app-common-microcom/app-common-microcom.vue';
 import AppCalendarTimeline from './common/app-calendar-timeline/app-calendar-timeline.vue';
+import AppCustomTheme from './common/app-custom-theme/app-custom-theme.vue';
 
 // 视图组件
 import { AppViewShell } from '../view-container/app-view-shell';
@@ -340,6 +341,7 @@ export const ComponentsRegister = {
         v.component('app-file-upload-camera', AppFileUploadCamera);
         v.component('app-form-group-data-panel', AppFormGroupDataPanel);
         v.component('text-file-upload', TextFileUpload);
+        v.component('app-custom-theme', AppCustomTheme);
         // 视图组件
         v.component('app-view-shell', AppViewShell);
         v.component('app-default-indexview', AppDefaultIndexView);
