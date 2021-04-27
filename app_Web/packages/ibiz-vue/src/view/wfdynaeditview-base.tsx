@@ -255,7 +255,7 @@ export class WFDynaEditViewBase extends MainViewBase {
                                     if (Object.keys(resultData).length > 0) {
                                         let tempData: any = {};
                                         Object.keys(resultData).forEach((key: any) => {
-                                            if (resultData[key]) tempData[key] = resultData[key];
+                                            if (resultData[key] && (key !== "srfuf")) tempData[key] = resultData[key];
                                         })
                                         Object.assign(tempSubmitData, tempData);
                                     }
@@ -318,7 +318,7 @@ export class WFDynaEditViewBase extends MainViewBase {
                         if (Object.keys(resultData).length > 0) {
                             let tempData: any = {};
                             Object.keys(resultData).forEach((key: any) => {
-                                if (resultData[key]) tempData[key] = resultData[key];
+                                if (resultData[key] && (key !== "srfuf")) tempData[key] = resultData[key];
                             })
                             Object.assign(tempSubmitData, tempData);
                         }

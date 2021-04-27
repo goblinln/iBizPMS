@@ -43,7 +43,7 @@ export class AuthGuard {
      *
      * @memberof AuthGuard
      */
-    private constructor() {}
+    private constructor() { }
 
     /**
      * 获取应用数据
@@ -65,7 +65,7 @@ export class AuthGuard {
                     this.getOrgsByDcsystem(router).then((result: boolean) => {
                         if (!result) {
                             reject(false);
-                        }else{
+                        } else {
                             this.getAppData(url, params, router).then((result: any) => {
                                 result ? resolve(true) : reject(false);
                             });
@@ -114,11 +114,11 @@ export class AuthGuard {
                     }
                 }).catch(() => {
                     resolve(false);
-                    ErrorUtil.errorHandler("通过租户获取组织数据出现异常");
+                    this.doNoLogin(_router,"登录失败，请联系管理员");
                 });
-            }else{
-                ErrorUtil.errorHandler("未获取到租户数据标识");
+            } else {
                 resolve(false);
+                this.doNoLogin(_router,"登录失败，请联系管理员"); 
             }
         });
     }
@@ -164,7 +164,7 @@ export class AuthGuard {
                     this.initAppService(router).then(() => resolve(true));
                 }).catch(() => {
                     this.initAppService(router).then(() => resolve(true));
-                    ErrorUtil.errorHandler("获取应用数据出现异常");
+                    this.doNoLogin(router,"登录失败，请联系管理员");
                 });
             } else {
                 this.initAppService(router).then(() => resolve(true));
@@ -222,5 +222,32 @@ export class AuthGuard {
             });
         }
         return tempViewParam;
+    }
+
+    /**
+     * 处理未登录异常情况
+     *
+     * @memberof AuthGuard
+     */
+    public doNoLogin(router: any,message:string) {
+        // 清除user、token和cookie
+        if (localStorage.getItem('user')) {
+            localStorage.removeItem('user');
+        }
+        if (localStorage.getItem('token')) {
+            localStorage.removeItem('token');
+        }
+        let leftTime = new Date();
+        leftTime.setTime(leftTime.getSeconds() - 1);
+        document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
+        if (Environment.loginUrl) {
+            window.location.href = `${Environment.loginUrl}?redirect=${router.currentRoute.fullPath}`;
+        } else {
+            if (Object.is(router.currentRoute.name, 'login')) {
+                ErrorUtil.errorHandler(message);
+                return;
+            }
+            router.push({ name: 'login', query: { redirect: router.currentRoute.fullPath } });
+        }
     }
 }

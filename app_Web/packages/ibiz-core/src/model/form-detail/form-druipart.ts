@@ -50,6 +50,28 @@ export class FormDruipartModel extends FormDetailModel {
     constructor(opts: any = {}) {
         super(opts);
         this.refviewtype = opts.refviewtype;
+        if (this.$visible) {
+          this.form.drCount++;
+        }
+    }
+
+    /**
+     * 设置成员是否隐藏
+     *
+     * @memberof FormDetailModel
+     */
+    public setVisible(val: boolean) {
+        if(this.isPower) {
+            this.oldVisible = this.$visible;
+            this.$visible = val;
+            if (this.oldVisible != val) {
+                if (val) {
+                  this.form.drCount++;
+                } else {
+                  this.form.drCount--;
+                }
+            }
+        }
     }
 
     /**

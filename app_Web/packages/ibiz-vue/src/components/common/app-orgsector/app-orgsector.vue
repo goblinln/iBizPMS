@@ -116,7 +116,6 @@ export default class AppOrgSector extends Vue {
             this.selectedOrgName = item.srforgsectorname;
       }
       window.location.href = window.location.origin;
-      window.location.reload();
     }
   }
 

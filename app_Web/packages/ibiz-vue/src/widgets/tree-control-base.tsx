@@ -2,7 +2,7 @@ import { Provide } from 'vue-property-decorator';
 import { Util, ViewTool } from 'ibiz-core';
 import { AppTreeService } from '../ctrl-service';
 import { MDControlBase } from './md-control-base';
-import { GlobalService } from 'ibiz-service';
+import { GlobalService, UIServiceRegister } from 'ibiz-service';
 import { AppViewLogicService } from '../app-service';
 import { IPSDETree, IPSDETreeNode, IPSDEToolbarItem, IPSDECMUIActionItem, IPSDEUIAction, IPSDETBUIActionItem } from '@ibiz/dynamic-model-api';
 
@@ -681,7 +681,11 @@ export class TreeControlBase extends MDControlBase {
                 let tempContext: any = Util.deepCopy(this.context);
                 tempContext[appEntityName.toLowerCase()] = node.srfkey;
                 let targetData = await service.Get(tempContext, {}, false);
-                ViewTool.calcTreeActionItemAuthState(targetData.data,this.copyActionModel,this.appUIService);
+                const nodeUIService = await UIServiceRegister.getInstance().getService(this.context, appEntityName.toLowerCase());
+                if (nodeUIService) {
+                    await nodeUIService.loaded();
+                }
+                ViewTool.calcTreeActionItemAuthState(targetData.data, this.copyActionModel, nodeUIService);
                 return this.copyActionModel;
             } else {
                 console.warn('获取数据异常');
