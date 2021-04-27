@@ -73,7 +73,11 @@ export class AppWfStepTraceViewBase extends WfStepTraceViewBase {
      * @memberof AppWfStepTraceViewBase
      */
      public renderMainContent() { 
-        return this.$createElement('extend-action-timeline')
+        return this.$createElement('extend-action-timeline',{props:{
+            context:this.context,
+            viewparams:this.viewparams,
+            appEntityCodeName:this.staticProps?.appDeCodeName
+        }})
      }
 
     /**

@@ -181,6 +181,7 @@ export class WFDynaEditViewBase extends MainViewBase {
                                     props: {
                                         staticProps: {
                                             viewDefaultUsage: false,
+                                            appDeCodeName:this.appDeCodeName
                                         },
                                         dynamicProps: {
                                             viewdata: JSON.stringify(Object.assign(tempContext, { viewpath: deDRTabPage?.M?.getPSAppView?.path })),

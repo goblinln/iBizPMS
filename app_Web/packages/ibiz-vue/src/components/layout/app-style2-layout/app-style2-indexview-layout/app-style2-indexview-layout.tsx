@@ -149,7 +149,7 @@ export class AppStyle2IndexViewLayout extends AppStyle2DefaultLayout {
                                 {this.$topRenderService.rightItemsRenders.map((fun: any) => fun(h))}
                                 {<app-orgsector />}
                                 {<app-user />}
-                                {<app-custom-theme viewStyle={this.viewInstance.viewStyle}></app-custom-theme>}
+                                {/* {<app-custom-theme viewStyle={this.viewInstance.viewStyle}></app-custom-theme>} */}   
                             </template>
                         </app-header>
                         {this.$slots.default}
