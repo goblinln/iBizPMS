@@ -530,6 +530,23 @@
       },
       "allowEmpty" : false
     }, {
+      "caption" : "编号",
+      "codeName" : "root",
+      "createDV" : "root",
+      "createDVT" : "CONTEXT",
+      "enableCond" : 3,
+      "ignoreInput" : 0,
+      "name" : "root",
+      "getPSAppDEField" : {
+        "name" : "ROOT",
+        "codeName" : "Root"
+      },
+      "getPSEditor" : {
+        "editorType" : "HIDDEN",
+        "name" : "root"
+      },
+      "allowEmpty" : true
+    }, {
       "caption" : "名称",
       "codeName" : "name",
       "enableCond" : 3,
