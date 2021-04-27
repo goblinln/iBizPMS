@@ -493,8 +493,10 @@ hide footbox
 |编号(ID)|EQ|
 |编号(ID)|NOTEQ|
 |需求来源(SOURCE)|EQ|
+|是否可以细分(ISCHILD)|EQ|
 |关闭原因(CLOSEDREASON)|EQ|
 |标题颜色(COLOR)|EQ|
+|是否收藏(ISFAVORITES)|EQ|
 |关键词(KEYWORDS)|LIKE|
 |最后修改(LASTEDITEDBY)|EQ|
 |所处阶段(STAGE)|EQ|

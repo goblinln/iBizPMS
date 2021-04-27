@@ -122,6 +122,7 @@ hide footbox
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|id(ID)|EQ|
 |名称(NAME)|LIKE|
 |编号(ROOT)|EQ|
 |id(PARENT)|EQ|

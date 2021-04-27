@@ -70,6 +70,7 @@
 | 属性      |    搜索模式     |
 | --------   |------------|
 |类型(TYPE)|EQ|
+|收藏标识(IBZ_FAVORITESID)|EQ|
 |数据对象标识(OBJECTID)|EQ|
 |收藏用户(ACCOUNT)|EQ|
 |收藏名称(IBZ_FAVORITESNAME)|LIKE|

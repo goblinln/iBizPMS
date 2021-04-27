@@ -129,6 +129,7 @@ hide members
 | 属性      |    搜索模式     |
 | --------   |------------|
 |系统运行会话名称(PSSYSRUNSESSIONNAME)|LIKE|
+|系统运行会话标识(PSSYSRUNSESSIONID)|EQ|
 |打包模式(PACKMODE)|EQ|
 |运行模式(RUNMODE)|EQ|
 |运行状态(RUNSTATE)|EQ|

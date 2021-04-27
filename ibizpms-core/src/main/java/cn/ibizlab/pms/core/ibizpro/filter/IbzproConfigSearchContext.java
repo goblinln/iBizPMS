@@ -34,6 +34,13 @@ public class IbzproConfigSearchContext extends QueryWrapperContext<IbzproConfig>
             this.getSearchCond().like("`ibzpro_configname`", n_ibzpro_configname_like);
         }
     }
+	private String n_ibzpro_configid_eq;//[系统配置表标识]
+	public void setN_ibzpro_configid_eq(String n_ibzpro_configid_eq) {
+        this.n_ibzpro_configid_eq = n_ibzpro_configid_eq;
+        if(!ObjectUtils.isEmpty(this.n_ibzpro_configid_eq)){
+            this.getSearchCond().eq("`ibzpro_configid`", n_ibzpro_configid_eq);
+        }
+    }
 	private String n_type_eq;//[类型]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;

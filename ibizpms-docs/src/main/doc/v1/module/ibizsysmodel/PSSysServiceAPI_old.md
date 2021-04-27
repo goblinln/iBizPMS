@@ -149,6 +149,7 @@ hide members
 | --------   |------------|
 |接口模式(APIMODE)|EQ|
 |平台预定义类型(PREDEFINEDTYPE)|EQ|
+|系统服务接口标识(PSSYSSERVICEAPIID)|EQ|
 |模型锁标志(LOCKFLAG)|EQ|
 |默认查询请求方式(DEFSELECTREQMETHOD)|EQ|
 |用户分类(USERCAT)|EQ|

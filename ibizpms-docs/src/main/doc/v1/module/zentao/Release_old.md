@@ -149,6 +149,7 @@ hide footbox
 | 属性      |    搜索模式     |
 | --------   |------------|
 |里程碑(MARKER)|EQ|
+|ID(ID)|EQ|
 |重新构建(REBUILD)|EQ|
 |发布名称(NAME)|LIKE|
 |发布日期(DATE)|LTANDEQ|

@@ -254,6 +254,7 @@ hide members
 |实体类型(DETYPE)|EQ|
 |SaaS构型(SAASMODE)|EQ|
 |实体名称(PSDATAENTITYNAME)|LIKE|
+|实体标识(PSDATAENTITYID)|EQ|
 |预置业务功能模式(BIZTAG)|EQ|
 |数据库表空间(DBTABSPACE)|EQ|
 |默认数据源(DSLINK)|EQ|

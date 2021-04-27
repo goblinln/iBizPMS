@@ -27,6 +27,13 @@ import cn.ibizlab.pms.core.zentao.domain.Product;
 @Data
 public class ProductSearchContext extends QueryWrapperContext<Product> {
 
+	private Integer n_istop_eq;//[是否置顶]
+	public void setN_istop_eq(Integer n_istop_eq) {
+        this.n_istop_eq = n_istop_eq;
+        if(!ObjectUtils.isEmpty(this.n_istop_eq)){
+            this.getSearchCond().eq("`istop`", n_istop_eq);
+        }
+    }
 	private String n_productclass_eq;//[产品分类]
 	public void setN_productclass_eq(String n_productclass_eq) {
         this.n_productclass_eq = n_productclass_eq;

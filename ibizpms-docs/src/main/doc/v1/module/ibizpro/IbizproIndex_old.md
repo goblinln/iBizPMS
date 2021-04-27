@@ -87,6 +87,7 @@ hide members
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|主键(INDEXID)|EQ|
 |标题[需求、任务等](INDEXNAME)|LIKE|
 |类型(INDEX_TYPE)|EQ|
 

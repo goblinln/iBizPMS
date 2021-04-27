@@ -27,6 +27,13 @@ import cn.ibizlab.pms.core.ibizpro.domain.IBZProSysTpl;
 @Data
 public class IBZProSysTplSearchContext extends QueryWrapperContext<IBZProSysTpl> {
 
+	private String n_ibzpro_systplid_eq;//[系统模板标识]
+	public void setN_ibzpro_systplid_eq(String n_ibzpro_systplid_eq) {
+        this.n_ibzpro_systplid_eq = n_ibzpro_systplid_eq;
+        if(!ObjectUtils.isEmpty(this.n_ibzpro_systplid_eq)){
+            this.getSearchCond().eq("`ibzpro_systplid`", n_ibzpro_systplid_eq);
+        }
+    }
 	private String n_public_eq;//[是否公开]
 	public void setN_public_eq(String n_public_eq) {
         this.n_public_eq = n_public_eq;

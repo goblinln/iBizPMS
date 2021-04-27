@@ -194,9 +194,12 @@ hide footbox
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|文档查询类型(DOCQTYPE)|EQ|
+|文档编号(ID)|EQ|
 |文档标题(TITLE)|LIKE|
 |文档类型(TYPE)|EQ|
 |权限(ACL)|EQ|
+|是否收藏(ISFAVOURITES)|EQ|
 |收藏者(COLLECTOR)|LIKE|
 |由谁添加(ADDEDBY)|EQ|
 |所属产品(PRODUCTNAME)|EQ|

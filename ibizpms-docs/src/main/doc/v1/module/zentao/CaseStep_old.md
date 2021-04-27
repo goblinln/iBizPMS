@@ -102,6 +102,7 @@ hide members
 | --------   |------------|
 |测试结果(STEPS)|EQ|
 |用例步骤类型(TYPE)|EQ|
+|编号(ID)|EQ|
 |预期(EXPECT)|LIKE|
 |用例版本(VERSION)|EQ|
 |用例(CASE)|EQ|

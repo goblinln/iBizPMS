@@ -415,6 +415,7 @@ hide footbox
 | --------   |------------|
 |标题(TITLE)|LIKE|
 |对象类型(OBJECTTYPE)|EQ|
+|编号(ID)|EQ|
 |所属项目(PROJECTNAME)|EQ|
 |所属项目(PROJECTNAME)|LIKE|
 |所属产品(PRODUCTNAME)|EQ|

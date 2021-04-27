@@ -263,6 +263,7 @@
 | --------   |------------|
 |月(MONTH)|EQ|
 |日期(DATE)|EQ|
+|主键(ID)|EQ|
 |年(YEAR)|EQ|
 |项目标识(PROJECT)|IN|
 |用户(ACCOUNT)|EQ|

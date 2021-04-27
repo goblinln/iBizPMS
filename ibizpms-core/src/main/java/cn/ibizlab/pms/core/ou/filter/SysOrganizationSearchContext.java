@@ -25,6 +25,8 @@ import cn.ibizlab.pms.util.filter.SearchContextBase;
 @Slf4j
 @Data
 public class SysOrganizationSearchContext extends SearchContextBase {
+	private String n_orgid_eq;//[单位标识]
+
 	private String n_orgname_like;//[名称]
 
 	private String n_porgid_eq;//[上级单位]

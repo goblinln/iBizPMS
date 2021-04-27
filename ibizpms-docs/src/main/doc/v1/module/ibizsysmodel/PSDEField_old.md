@@ -246,6 +246,7 @@ hide members
 |默认值类型(DVT)|EQ|
 |扩展模式(EXTENDMODE)|EQ|
 |业务标记(BIZTAG)|EQ|
+|实体属性标识(PSDEFIELDID)|EQ|
 |联合键值(UNIONKEYVALUE)|EQ|
 |实体属性名称(PSDEFIELDNAME)|LIKE|
 |用户分类(USERCAT)|EQ|

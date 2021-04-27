@@ -120,6 +120,9 @@ export class MobModel {
       {
         name: 'config',
       },
+      {
+        name: 'consumed',
+      },
     ]
   }
 

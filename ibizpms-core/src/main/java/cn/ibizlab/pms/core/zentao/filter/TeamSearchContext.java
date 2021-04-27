@@ -34,6 +34,13 @@ public class TeamSearchContext extends QueryWrapperContext<Team> {
             this.getSearchCond().eq("`type`", n_type_eq);
         }
     }
+	private Long n_id_eq;//[编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 
     /**
 	 * 启用快速搜索

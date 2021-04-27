@@ -126,6 +126,7 @@
 | --------   |------------|
 |状态(REPORTSTATUS)|EQ|
 |是否提交(ISSUBMIT)|EQ|
+|月报标识(IBZ_MONTHLYID)|EQ|
 |用户(ACCOUNT)|EQ|
 |汇报给(REPORTTO)|EQ|
 |月报名称(IBZ_MONTHLYNAME)|LIKE|

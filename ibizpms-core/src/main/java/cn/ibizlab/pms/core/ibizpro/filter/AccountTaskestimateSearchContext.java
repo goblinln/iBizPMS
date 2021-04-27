@@ -43,6 +43,13 @@ public class AccountTaskestimateSearchContext extends QueryWrapperContext<Accoun
             this.getSearchCond().eq("`date`", n_date_eq);
         }
     }
+	private String n_id_eq;//[主键]
+	public void setN_id_eq(String n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 	private String n_year_eq;//[年]
 	public void setN_year_eq(String n_year_eq) {
         this.n_year_eq = n_year_eq;

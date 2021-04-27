@@ -55,6 +55,13 @@ public class BugSearchContext extends QueryWrapperContext<Bug> {
             this.getSearchCond().eq("`resolution`", n_resolution_eq);
         }
     }
+	private String n_isfavorites_eq;//[是否收藏]
+	public void setN_isfavorites_eq(String n_isfavorites_eq) {
+        this.n_isfavorites_eq = n_isfavorites_eq;
+        if(!ObjectUtils.isEmpty(this.n_isfavorites_eq)){
+            this.getSearchCond().eq("`isfavorites`", n_isfavorites_eq);
+        }
+    }
 	private String n_closedby_eq;//[由谁关闭]
 	public void setN_closedby_eq(String n_closedby_eq) {
         this.n_closedby_eq = n_closedby_eq;

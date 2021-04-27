@@ -67,6 +67,7 @@ hide members
 | 属性      |    搜索模式     |
 | --------   |------------|
 |字段(FIELD)|LEFTLIKE|
+|id(ID)|EQ|
 |关联日志(ACTION)|EQ|
 
 ## 导入模式

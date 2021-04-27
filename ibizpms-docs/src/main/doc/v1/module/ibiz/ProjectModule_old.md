@@ -140,6 +140,7 @@ hide footbox
 | --------   |------------|
 |类型（task）(TYPE)|EQ|
 |名称(NAME)|LIKE|
+|id(ID)|EQ|
 |所属项目(ROOTNAME)|EQ|
 |所属项目(ROOTNAME)|LIKE|
 |上级模块(PARENTNAME)|EQ|

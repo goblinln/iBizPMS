@@ -29,6 +29,8 @@ public class PSSysSFPubSearchContext extends SearchContextBase {
 
 	private String n_pssyssfpubname_like;//[后台服务架构名称]
 
+	private String n_pssyssfpubid_eq;//[后台服务架构标识]
+
 	private String n_contenttype_eq;//[发布内容类型]
 
 	private String n_usercat_eq;//[用户分类]

@@ -116,6 +116,7 @@ hide members
 | 属性      |    搜索模式     |
 | --------   |------------|
 |项类型(ITEMTYPE)|EQ|
+|系统需求项标识(PSSYSREQITEMID)|EQ|
 |用户分类(USERCAT)|EQ|
 |系统需求项名称(PSSYSREQITEMNAME)|LIKE|
 |需求模块(PSSYSREQMODULENAME)|EQ|

@@ -76,6 +76,7 @@ hide members
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|组成员标识(TEAMMEMBERID)|EQ|
 |组名称(TEAMNAME)|EQ|
 |组名称(TEAMNAME)|LIKE|
 |岗位(POSTNAME)|EQ|

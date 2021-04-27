@@ -96,6 +96,7 @@ hide footbox
 | 属性      |    搜索模式     |
 | --------   |------------|
 |名称(NAME)|LIKE|
+|编号(ID)|EQ|
 |类型(TYPE)|EQ|
 |所属产品(PRODUCT)|EQ|
 

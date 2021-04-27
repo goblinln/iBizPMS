@@ -27,11 +27,32 @@ import cn.ibizlab.pms.core.ibiz.domain.DocLibModule;
 @Data
 public class DocLibModuleSearchContext extends QueryWrapperContext<DocLibModule> {
 
+	private String n_isfavourites_eq;//[是否已收藏]
+	public void setN_isfavourites_eq(String n_isfavourites_eq) {
+        this.n_isfavourites_eq = n_isfavourites_eq;
+        if(!ObjectUtils.isEmpty(this.n_isfavourites_eq)){
+            this.getSearchCond().eq("`isfavourites`", n_isfavourites_eq);
+        }
+    }
 	private String n_name_like;//[名称]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;
         if(!ObjectUtils.isEmpty(this.n_name_like)){
             this.getSearchCond().like("`name`", n_name_like);
+        }
+    }
+	private String n_docqtype_eq;//[查询类型]
+	public void setN_docqtype_eq(String n_docqtype_eq) {
+        this.n_docqtype_eq = n_docqtype_eq;
+        if(!ObjectUtils.isEmpty(this.n_docqtype_eq)){
+            this.getSearchCond().eq("`docqtype`", n_docqtype_eq);
+        }
+    }
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
         }
     }
 	private String n_modulename_eq;//[上级模块]

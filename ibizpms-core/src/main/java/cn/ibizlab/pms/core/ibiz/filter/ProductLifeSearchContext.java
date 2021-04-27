@@ -41,6 +41,13 @@ public class ProductLifeSearchContext extends QueryWrapperContext<ProductLife> {
             this.getSearchCond().eq("`year`", n_year_eq);
         }
     }
+	private String n_ibz_productlifeid_eq;//[产品生命周期标识]
+	public void setN_ibz_productlifeid_eq(String n_ibz_productlifeid_eq) {
+        this.n_ibz_productlifeid_eq = n_ibz_productlifeid_eq;
+        if(!ObjectUtils.isEmpty(this.n_ibz_productlifeid_eq)){
+            this.getSearchCond().eq("`ibz_productlifeid`", n_ibz_productlifeid_eq);
+        }
+    }
 
     /**
 	 * 启用快速搜索

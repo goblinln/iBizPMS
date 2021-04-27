@@ -68,6 +68,7 @@ hide members
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|虚拟主键(ID)|EQ|
 |需求(STORY)|EQ|
 |项目(PROJECT)|EQ|
 |所属产品(PRODUCT)|EQ|

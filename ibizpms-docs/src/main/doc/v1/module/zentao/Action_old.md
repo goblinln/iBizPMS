@@ -139,6 +139,7 @@ hide footbox
 |本周(THISWEEK)|EQ|
 |今天(TODAY)|EQ|
 |对象类型(OBJECTTYPE)|EQ|
+|id(ID)|EQ|
 |备注(COMMENT)|LIKE|
 |已读(READ)|EQ|
 |动作(ACTION)|EQ|

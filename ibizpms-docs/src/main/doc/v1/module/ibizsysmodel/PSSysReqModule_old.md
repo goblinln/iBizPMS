@@ -111,6 +111,7 @@ hide members
 | --------   |------------|
 |系统需求模块名称(PSSYSREQMODULENAME)|LIKE|
 |用户分类(USERCAT)|EQ|
+|系统需求模块标识(PSSYSREQMODULEID)|EQ|
 |系统模块(PSMODULENAME)|EQ|
 |系统模块(PSMODULENAME)|LIKE|
 |父需求模块(PPSSYSREQMODULENAME)|EQ|

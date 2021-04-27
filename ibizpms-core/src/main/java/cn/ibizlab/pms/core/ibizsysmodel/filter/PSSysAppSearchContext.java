@@ -27,6 +27,8 @@ import cn.ibizlab.pms.util.filter.SearchContextBase;
 public class PSSysAppSearchContext extends SearchContextBase {
 	private String n_mainmenuside_eq;//[视图主菜单方向]
 
+	private String n_pssysappid_eq;//[系统应用标识]
+
 	private Integer n_finoprivdm_eq;//[表单项无权限显示模式]
 
 	private String n_orientationmode_eq;//[移动端方向设置]

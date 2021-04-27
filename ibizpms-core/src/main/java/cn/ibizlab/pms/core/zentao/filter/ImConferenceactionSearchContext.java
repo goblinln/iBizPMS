@@ -34,6 +34,13 @@ public class ImConferenceactionSearchContext extends QueryWrapperContext<ImConfe
             this.getSearchCond().eq("`type`", n_type_eq);
         }
     }
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 
     /**
 	 * 启用快速搜索

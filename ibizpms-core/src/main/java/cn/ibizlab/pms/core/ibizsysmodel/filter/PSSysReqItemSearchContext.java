@@ -27,6 +27,8 @@ import cn.ibizlab.pms.util.filter.SearchContextBase;
 public class PSSysReqItemSearchContext extends SearchContextBase {
 	private String n_itemtype_eq;//[项类型]
 
+	private String n_pssysreqitemid_eq;//[系统需求项标识]
+
 	private String n_usercat_eq;//[用户分类]
 
 	private String n_pssysreqitemname_like;//[系统需求项名称]

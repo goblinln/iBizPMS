@@ -148,7 +148,9 @@ hide footbox
 | --------   |------------|
 |文档类型(TYPE)|EQ|
 |文件库类型(DOCLIBTYPE)|EQ|
+|是否收藏(ISFAVOURITES)|EQ|
 |权限(ACL)|EQ|
+|编号(ID)|EQ|
 |是否是主库(MAIN)|EQ|
 |文档库名称(NAME)|LIKE|
 |所属产品(PRODUCTNAME)|EQ|

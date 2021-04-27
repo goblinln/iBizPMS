@@ -145,6 +145,7 @@ hide footbox
 | --------   |------------|
 |受限用户(LIMITED)|EQ|
 |团队类型(TYPE)|EQ|
+|编号(ID)|EQ|
 |用户(ACCOUNT)|EQ|
 |用户(ACCOUNT)|LIKE|
 |所属项目(PROJECTNAME)|EQ|

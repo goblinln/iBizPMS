@@ -89,6 +89,7 @@ hide members
 | --------   |------------|
 |任务名(NAME)|LIKE|
 |部门(DEPT)|EQ|
+|主键(ID)|EQ|
 |工作日天数(WORKDAY)|EQ|
 |是否指派(ASSIGN)|EQ|
 |属性(BEGIN)|LTANDEQ|

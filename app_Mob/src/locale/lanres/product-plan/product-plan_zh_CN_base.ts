@@ -34,6 +34,8 @@ export default {
     branch: "平台/分支",
     parent: "父计划",
     product: "产品",
+    begintime: "开始时间",
+    ordernum: "排序",
   },
 	views: {
 		mobeditview: {

@@ -181,6 +181,7 @@ hide members
 | 属性      |    搜索模式     |
 | --------   |------------|
 |视图主菜单方向(MAINMENUSIDE)|EQ|
+|系统应用标识(PSSYSAPPID)|EQ|
 |表单项无权限显示模式(FINOPRIVDM)|EQ|
 |移动端方向设置(ORIENTATIONMODE)|EQ|
 |删除模式(REMOVEFLAG)|EQ|

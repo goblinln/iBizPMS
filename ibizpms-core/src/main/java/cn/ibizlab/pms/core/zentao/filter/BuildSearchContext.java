@@ -55,6 +55,13 @@ public class BuildSearchContext extends QueryWrapperContext<Build> {
             this.getSearchCond().eq("`rebuild`", n_rebuild_eq);
         }
     }
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 	private String n_sqlid_eq;//[运行数据库]
 	public void setN_sqlid_eq(String n_sqlid_eq) {
         this.n_sqlid_eq = n_sqlid_eq;

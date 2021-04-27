@@ -41,6 +41,13 @@ public class IbzPlanTempletSearchContext extends QueryWrapperContext<IbzPlanTemp
             this.getSearchCond().eq("`createmanname`", n_createmanname_eq);
         }
     }
+	private String n_ibz_plantempletid_eq;//[产品计划模板标识]
+	public void setN_ibz_plantempletid_eq(String n_ibz_plantempletid_eq) {
+        this.n_ibz_plantempletid_eq = n_ibz_plantempletid_eq;
+        if(!ObjectUtils.isEmpty(this.n_ibz_plantempletid_eq)){
+            this.getSearchCond().eq("`ibz_plantempletid`", n_ibz_plantempletid_eq);
+        }
+    }
 	private String n_ibz_plantempletname_like;//[模板名称]
 	public void setN_ibz_plantempletname_like(String n_ibz_plantempletname_like) {
         this.n_ibz_plantempletname_like = n_ibz_plantempletname_like;

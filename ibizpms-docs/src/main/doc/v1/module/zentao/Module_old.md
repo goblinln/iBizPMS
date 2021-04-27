@@ -111,6 +111,7 @@ hide members
 |所属根(ROOT)|EQ|
 |类型(TYPE)|EQ|
 |模块名称(NAME)|LIKE|
+|id(ID)|EQ|
 |上级模块(PARENTNAME)|EQ|
 |上级模块(PARENTNAME)|LIKE|
 |平台/分支(BRANCH)|EQ|

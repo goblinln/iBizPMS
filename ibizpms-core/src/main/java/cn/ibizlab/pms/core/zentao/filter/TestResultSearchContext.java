@@ -27,6 +27,13 @@ import cn.ibizlab.pms.core.zentao.domain.TestResult;
 @Data
 public class TestResultSearchContext extends QueryWrapperContext<TestResult> {
 
+	private Long n_id_eq;//[编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 	private Long n_product_eq;//[所属产品]
 	public void setN_product_eq(Long n_product_eq) {
         this.n_product_eq = n_product_eq;

@@ -122,6 +122,7 @@ hide members
 |模型锁模式(LOCKFLAG)|EQ|
 |系统模块名称(PSMODULENAME)|LIKE|
 |用户分类(USERCAT)|EQ|
+|系统模块标识(PSMODULEID)|EQ|
 |服务API模式(SERVICEAPIFLAG)|EQ|
 |子系统类型(SYSREFTYPE)|EQ|
 

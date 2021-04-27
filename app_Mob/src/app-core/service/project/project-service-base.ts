@@ -648,6 +648,21 @@ export class ProjectServiceBase extends EntityService {
     }
 
     /**
+     * FetchCurUserTodo接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProjectServiceBase
+     */
+    public async FetchCurUserTodo(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        let res:any = Http.getInstance().get(`/projects/fetchcurusertodo`,tempData,isloading);
+        return res;
+    }
+
+    /**
      * FetchDefault接口方法
      *
      * @param {*} [context={}]
@@ -861,6 +876,18 @@ export class ProjectServiceBase extends EntityService {
      * @memberof ProjectServiceBase
      */
     public async FetchTempCurUserSa(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    }
+
+    /**
+     * FetchTempCurUserTodo接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProjectServiceBase
+     */
+    public async FetchTempCurUserTodo(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
     }
 
     /**

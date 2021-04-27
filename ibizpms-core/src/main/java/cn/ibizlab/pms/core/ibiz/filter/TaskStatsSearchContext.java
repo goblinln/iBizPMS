@@ -45,6 +45,13 @@ public class TaskStatsSearchContext extends QueryWrapperContext<TaskStats> {
             this.getSearchCond().ge("`begin`", n_begin_gtandeq);
         }
     }
+	private Long n_id_eq;//[编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 	private String n_dept_eq;//[部门]
 	public void setN_dept_eq(String n_dept_eq) {
         this.n_dept_eq = n_dept_eq;

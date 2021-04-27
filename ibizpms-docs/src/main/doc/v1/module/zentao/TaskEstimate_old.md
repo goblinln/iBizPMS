@@ -131,6 +131,7 @@ hide members
 | --------   |------------|
 |年(YEAR)|EQ|
 |编号(ID)|LIKE|
+|编号(ID)|EQ|
 |月(MONTH)|EQ|
 |任务名称(TASKNAME)|EQ|
 |任务名称(TASKNAME)|LIKE|

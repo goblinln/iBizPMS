@@ -80,6 +80,7 @@
 | 属性      |    搜索模式     |
 | --------   |------------|
 |public(PUBLIC)|EQ|
+|id(ID)|EQ|
 |name(NAME)|LIKE|
 
 ## 导入模式

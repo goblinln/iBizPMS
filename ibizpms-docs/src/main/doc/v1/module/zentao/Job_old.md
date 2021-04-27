@@ -95,6 +95,7 @@ hide members
 | 属性      |    搜索模式     |
 | --------   |------------|
 |name(NAME)|LIKE|
+|id(ID)|EQ|
 
 ## 导入模式
 无

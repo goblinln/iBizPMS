@@ -25,6 +25,8 @@ import cn.ibizlab.pms.util.filter.SearchContextBase;
 @Slf4j
 @Data
 public class SysUserRoleSearchContext extends SearchContextBase {
+	private String n_sys_user_roleid_eq;//[用户角色关系标识]
+
 	private String n_sys_roleid_eq;//[角色标识]
 
 	private String n_sys_rolename_eq;//[角色名称]

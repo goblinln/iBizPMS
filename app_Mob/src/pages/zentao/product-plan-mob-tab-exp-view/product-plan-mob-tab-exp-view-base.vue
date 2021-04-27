@@ -179,7 +179,7 @@ export default class ProductPlanMobTabExpViewBase extends Vue {
      * @type {*}
      * @memberof ProductPlanMobTabExpViewBase
      */
-    protected navContext: any = {};
+    protected navContext: any = { 'products': '%products%' };
 
     /**
      * 视图导航参数
@@ -188,7 +188,7 @@ export default class ProductPlanMobTabExpViewBase extends Vue {
      * @type {*}
      * @memberof ProductPlanMobTabExpViewBase
      */
-    protected navParam: any = {};
+    protected navParam: any = { 'products': '%products%' };
 
     /**
      * 视图模型数据

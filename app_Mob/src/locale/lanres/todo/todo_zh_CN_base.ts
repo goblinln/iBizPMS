@@ -36,6 +36,7 @@ export default {
     story: "待办名称",
     ibizprivate: "私人事务",
     config: "config",
+    consumed: "工时",
   },
 	views: {
 		newmobeditview: {

@@ -41,6 +41,13 @@ public class IbzMonthlySearchContext extends QueryWrapperContext<IbzMonthly> {
             this.getSearchCond().eq("`issubmit`", n_issubmit_eq);
         }
     }
+	private Long n_ibz_monthlyid_eq;//[月报标识]
+	public void setN_ibz_monthlyid_eq(Long n_ibz_monthlyid_eq) {
+        this.n_ibz_monthlyid_eq = n_ibz_monthlyid_eq;
+        if(!ObjectUtils.isEmpty(this.n_ibz_monthlyid_eq)){
+            this.getSearchCond().eq("`ibz_monthlyid`", n_ibz_monthlyid_eq);
+        }
+    }
 	private String n_account_eq;//[用户]
 	public void setN_account_eq(String n_account_eq) {
         this.n_account_eq = n_account_eq;

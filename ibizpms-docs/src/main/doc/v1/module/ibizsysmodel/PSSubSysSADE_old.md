@@ -100,6 +100,7 @@ hide members
 | 属性      |    搜索模式     |
 | --------   |------------|
 |同步模型模式(SYNCMODELMODE)|EQ|
+|外部接口实体标识(PSSUBSYSSADEID)|EQ|
 |接口模式(MAJORFLAG)|EQ|
 |用户分类(USERCAT)|EQ|
 |外部接口实体名称(PSSUBSYSSADENAME)|LIKE|

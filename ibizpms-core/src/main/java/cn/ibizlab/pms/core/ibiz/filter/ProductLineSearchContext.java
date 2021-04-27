@@ -27,6 +27,8 @@ import cn.ibizlab.pms.util.filter.SearchContextBase;
 public class ProductLineSearchContext extends SearchContextBase {
 	private String n_ibz_productlinename_like;//[产品线名称]
 
+	private String n_ibz_productlineid_eq;//[产品线标识]
+
 }
 
 

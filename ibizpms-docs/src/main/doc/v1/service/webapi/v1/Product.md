@@ -698,22 +698,23 @@ POST
 #### ProductSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |
 | ---- | ---- | ---- | ---- | ---- |
-| 1 | n_productclass_eq | String | 允许 | 条件字段：productclass<br>条件组合方式：`=` |
-| 2 | n_acl_eq | String | 允许 | 条件字段：acl<br>条件组合方式：`=` |
-| 3 | n_name_eq | String | 允许 | 条件字段：name<br>条件组合方式：`=` |
-| 4 | n_name_like | String | 允许 | 条件字段：name<br>条件组合方式：`%like%` |
-| 5 | n_id_eq | Long | 允许 | 条件字段：id<br>条件组合方式：`=` |
-| 6 | n_id_in | Long | 允许 | 条件字段：id<br>条件组合方式：`in(...)` |
-| 7 | n_type_eq | String | 允许 | 条件字段：type<br>条件组合方式：`=` |
-| 8 | n_status_eq | String | 允许 | 条件字段：status<br>条件组合方式：`=` |
-| 9 | n_status_isnotnull | String | 允许 | 条件字段：status<br>条件组合方式：`is not NULL` |
-| 10 | n_linename_eq | String | 允许 | 条件字段：linename<br>条件组合方式：`=` |
-| 11 | n_linename_like | String | 允许 | 条件字段：linename<br>条件组合方式：`%like%` |
-| 12 | n_line_eq | Long | 允许 | 条件字段：line<br>条件组合方式：`=` |
-| 13 | customcond | String | 允许 | 自定义查询条件 |
-| 14 | customparams | String | 允许 | 自定义查询参数 |
-| 15 | query | String | 允许 | 快速搜索 |
-| 16 | filter | QueryFilter | 允许 | 条件表达式<br>参照`cn.ibizlab.pms.util.filter.QueryFilter` |
-| 17 | page | int | 允许 | 当前页数<br>默认值0 |
-| 18 | size | int | 允许 | 每页显示条数<br>默认值20 |
-| 19 | sort | String | 允许 | 排序 |
+| 1 | n_istop_eq | Integer | 允许 | 条件字段：istop<br>条件组合方式：`=` |
+| 2 | n_productclass_eq | String | 允许 | 条件字段：productclass<br>条件组合方式：`=` |
+| 3 | n_acl_eq | String | 允许 | 条件字段：acl<br>条件组合方式：`=` |
+| 4 | n_name_eq | String | 允许 | 条件字段：name<br>条件组合方式：`=` |
+| 5 | n_name_like | String | 允许 | 条件字段：name<br>条件组合方式：`%like%` |
+| 6 | n_id_eq | Long | 允许 | 条件字段：id<br>条件组合方式：`=` |
+| 7 | n_id_in | Long | 允许 | 条件字段：id<br>条件组合方式：`in(...)` |
+| 8 | n_type_eq | String | 允许 | 条件字段：type<br>条件组合方式：`=` |
+| 9 | n_status_eq | String | 允许 | 条件字段：status<br>条件组合方式：`=` |
+| 10 | n_status_isnotnull | String | 允许 | 条件字段：status<br>条件组合方式：`is not NULL` |
+| 11 | n_linename_eq | String | 允许 | 条件字段：linename<br>条件组合方式：`=` |
+| 12 | n_linename_like | String | 允许 | 条件字段：linename<br>条件组合方式：`%like%` |
+| 13 | n_line_eq | Long | 允许 | 条件字段：line<br>条件组合方式：`=` |
+| 14 | customcond | String | 允许 | 自定义查询条件 |
+| 15 | customparams | String | 允许 | 自定义查询参数 |
+| 16 | query | String | 允许 | 快速搜索 |
+| 17 | filter | QueryFilter | 允许 | 条件表达式<br>参照`cn.ibizlab.pms.util.filter.QueryFilter` |
+| 18 | page | int | 允许 | 当前页数<br>默认值0 |
+| 19 | size | int | 允许 | 每页显示条数<br>默认值20 |
+| 20 | sort | String | 允许 | 排序 |

@@ -71,6 +71,7 @@
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|动态数据看板标识(DYNADASHBOARDID)|EQ|
 |动态数据看板名称(DYNADASHBOARDNAME)|LIKE|
 
 ## 导入模式

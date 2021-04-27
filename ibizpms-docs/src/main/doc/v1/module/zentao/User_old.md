@@ -140,6 +140,7 @@
 |职位(ROLE)|EQ|
 |clientStatus(CLIENTSTATUS)|EQ|
 |性别(GENDER)|EQ|
+|ID(ID)|EQ|
 
 ## 导入模式
 无

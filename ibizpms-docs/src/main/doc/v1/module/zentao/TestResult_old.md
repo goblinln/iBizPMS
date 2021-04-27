@@ -97,6 +97,7 @@ hide members
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|编号(ID)|EQ|
 |所属产品(PRODUCT)|EQ|
 |所属产品(PRODUCT)|LIKE|
 |构建任务(JOB)|EQ|

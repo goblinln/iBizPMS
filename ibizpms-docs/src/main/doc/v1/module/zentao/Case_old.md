@@ -470,6 +470,7 @@ hide footbox
 |由谁创建(OPENEDBY)|EQ|
 |用例类型(TYPE)|EQ|
 |用例状态(STATUS)|EQ|
+|是否收藏(ISFAVORITES)|EQ|
 |frequency(FREQUENCY)|EQ|
 |用例标题(TITLE)|LIKE|
 |指派给(ASSIGNEDTO)|EQ|
@@ -477,6 +478,7 @@ hide footbox
 |用例状态(STATUS1)|EQ|
 |工具/框架(FRAME)|EQ|
 |测试用例结果(LASTRUNRESULT1)|EQ|
+|用例编号(ID)|EQ|
 |执行人(LASTRUNNER)|EQ|
 |用例库(LIBNAME)|EQ|
 |用例库(LIBNAME)|LIKE|

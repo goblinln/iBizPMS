@@ -64,6 +64,7 @@
 | 属性      |    搜索模式     |
 | --------   |------------|
 |产品线名称(IBZ_PRODUCTLINENAME)|LIKE|
+|产品线标识(IBZ_PRODUCTLINEID)|EQ|
 
 ## 导入模式
 无

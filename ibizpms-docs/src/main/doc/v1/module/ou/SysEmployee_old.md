@@ -142,6 +142,7 @@ hide members
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|用户标识(USERID)|EQ|
 |用户全局名(USERNAME)|EQ|
 |用户全局名(USERNAME)|IN|
 |用户全局名(USERNAME)|LIKE|

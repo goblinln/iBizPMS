@@ -27,6 +27,20 @@ import cn.ibizlab.pms.core.zentao.domain.Doc;
 @Data
 public class DocSearchContext extends QueryWrapperContext<Doc> {
 
+	private String n_docqtype_eq;//[文档查询类型]
+	public void setN_docqtype_eq(String n_docqtype_eq) {
+        this.n_docqtype_eq = n_docqtype_eq;
+        if(!ObjectUtils.isEmpty(this.n_docqtype_eq)){
+            this.getSearchCond().eq("`docqtype`", n_docqtype_eq);
+        }
+    }
+	private Long n_id_eq;//[文档编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 	private String n_title_like;//[文档标题]
 	public void setN_title_like(String n_title_like) {
         this.n_title_like = n_title_like;
@@ -46,6 +60,13 @@ public class DocSearchContext extends QueryWrapperContext<Doc> {
         this.n_acl_eq = n_acl_eq;
         if(!ObjectUtils.isEmpty(this.n_acl_eq)){
             this.getSearchCond().eq("`acl`", n_acl_eq);
+        }
+    }
+	private String n_isfavourites_eq;//[是否收藏]
+	public void setN_isfavourites_eq(String n_isfavourites_eq) {
+        this.n_isfavourites_eq = n_isfavourites_eq;
+        if(!ObjectUtils.isEmpty(this.n_isfavourites_eq)){
+            this.getSearchCond().eq("`isfavourites`", n_isfavourites_eq);
         }
     }
 	private String n_collector_like;//[收藏者]

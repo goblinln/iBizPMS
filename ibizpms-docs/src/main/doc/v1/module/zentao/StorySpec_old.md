@@ -68,6 +68,7 @@ hide members
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|虚拟主键(ID)|EQ|
 |需求名称(TITLE)|LIKE|
 |版本号(VERSION)|EQ|
 |版本号(VERSION)|NOTEQ|

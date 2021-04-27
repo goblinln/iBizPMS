@@ -71,6 +71,7 @@
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|标识(IBZ_TOPID)|EQ|
 |置顶名称(IBZ_TOPNAME)|LIKE|
 |置顶用户(ACCOUNT)|EQ|
 |类型(TYPE)|EQ|

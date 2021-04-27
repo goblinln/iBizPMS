@@ -34,6 +34,13 @@ public class IbzAgentSearchContext extends QueryWrapperContext<IbzAgent> {
             this.getSearchCond().eq("`createmanname`", n_createmanname_eq);
         }
     }
+	private Long n_ibz_agentid_eq;//[代理标识]
+	public void setN_ibz_agentid_eq(Long n_ibz_agentid_eq) {
+        this.n_ibz_agentid_eq = n_ibz_agentid_eq;
+        if(!ObjectUtils.isEmpty(this.n_ibz_agentid_eq)){
+            this.getSearchCond().eq("`ibz_agentid`", n_ibz_agentid_eq);
+        }
+    }
 	private String n_ibz_agentname_like;//[代理名称]
 	public void setN_ibz_agentname_like(String n_ibz_agentname_like) {
         this.n_ibz_agentname_like = n_ibz_agentname_like;

@@ -78,6 +78,7 @@
 | 属性      |    搜索模式     |
 | --------   |------------|
 |待办消息记录名称(TASKMSGRECORDNAME)|LIKE|
+|待办消息记录标识(TASKMSGRECORDID)|EQ|
 
 ## 导入模式
 无

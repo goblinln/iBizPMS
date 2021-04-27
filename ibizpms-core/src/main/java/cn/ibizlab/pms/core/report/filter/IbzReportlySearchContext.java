@@ -34,6 +34,13 @@ public class IbzReportlySearchContext extends QueryWrapperContext<IbzReportly> {
             this.getSearchCond().eq("`account`", n_account_eq);
         }
     }
+	private Long n_ibz_reportlyid_eq;//[汇报标识]
+	public void setN_ibz_reportlyid_eq(Long n_ibz_reportlyid_eq) {
+        this.n_ibz_reportlyid_eq = n_ibz_reportlyid_eq;
+        if(!ObjectUtils.isEmpty(this.n_ibz_reportlyid_eq)){
+            this.getSearchCond().eq("`ibz_reportlyid`", n_ibz_reportlyid_eq);
+        }
+    }
 	private String n_ibz_reportlyname_like;//[汇报名称]
 	public void setN_ibz_reportlyname_like(String n_ibz_reportlyname_like) {
         this.n_ibz_reportlyname_like = n_ibz_reportlyname_like;

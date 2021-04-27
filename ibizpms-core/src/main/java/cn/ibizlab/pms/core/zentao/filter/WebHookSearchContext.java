@@ -27,6 +27,13 @@ import cn.ibizlab.pms.core.zentao.domain.WebHook;
 @Data
 public class WebHookSearchContext extends QueryWrapperContext<WebHook> {
 
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 	private String n_name_like;//[name]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;

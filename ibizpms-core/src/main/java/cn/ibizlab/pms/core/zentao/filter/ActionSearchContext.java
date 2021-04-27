@@ -69,6 +69,13 @@ public class ActionSearchContext extends QueryWrapperContext<Action> {
             this.getSearchCond().eq("`objecttype`", n_objecttype_eq);
         }
     }
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 	private String n_comment_like;//[备注]
 	public void setN_comment_like(String n_comment_like) {
         this.n_comment_like = n_comment_like;

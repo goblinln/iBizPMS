@@ -41,11 +41,25 @@ public class DocLibSearchContext extends QueryWrapperContext<DocLib> {
             this.getSearchCond().eq("`doclibtype`", n_doclibtype_eq);
         }
     }
+	private String n_isfavourites_eq;//[是否收藏]
+	public void setN_isfavourites_eq(String n_isfavourites_eq) {
+        this.n_isfavourites_eq = n_isfavourites_eq;
+        if(!ObjectUtils.isEmpty(this.n_isfavourites_eq)){
+            this.getSearchCond().eq("`isfavourites`", n_isfavourites_eq);
+        }
+    }
 	private String n_acl_eq;//[权限]
 	public void setN_acl_eq(String n_acl_eq) {
         this.n_acl_eq = n_acl_eq;
         if(!ObjectUtils.isEmpty(this.n_acl_eq)){
             this.getSearchCond().eq("`acl`", n_acl_eq);
+        }
+    }
+	private Long n_id_eq;//[编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
         }
     }
 	private String n_main_eq;//[是否是主库]

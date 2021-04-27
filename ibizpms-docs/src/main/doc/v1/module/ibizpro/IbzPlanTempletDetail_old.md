@@ -89,6 +89,7 @@ hide members
 | 属性      |    搜索模式     |
 | --------   |------------|
 |类型(TYPE)|EQ|
+|计划模板详情标识(IBZ_PLANTEMPLETDETAILID)|EQ|
 |计划模板详情名称(IBZ_PLANTEMPLETDETAILNAME)|LIKE|
 |产品计划模板标识(PLANTEMPLETID)|EQ|
 

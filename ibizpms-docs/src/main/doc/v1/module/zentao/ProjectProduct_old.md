@@ -75,6 +75,7 @@ hide members
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|虚拟主键(ID)|EQ|
 |产品(PRODUCTNAME)|EQ|
 |产品(PRODUCTNAME)|LIKE|
 |项目(PROJECTNAME)|EQ|

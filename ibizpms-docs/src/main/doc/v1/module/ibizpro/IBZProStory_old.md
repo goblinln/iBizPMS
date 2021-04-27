@@ -147,6 +147,7 @@ hide members
 |优先级(PRI)|EQ|
 |需求阶段(STAGE)|EQ|
 |需求类型(TYPE)|EQ|
+|编号(ID)|EQ|
 |需求名称(TITLE)|LIKE|
 |来源对象(IBIZ_SOURCEOBJECT)|EQ|
 |IBIZ标识(IBIZ_ID)|EQ|

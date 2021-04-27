@@ -34,6 +34,13 @@ public class IbizproProductWeeklySearchContext extends QueryWrapperContext<Ibizp
             this.getSearchCond().eq("`po`", n_po_eq);
         }
     }
+	private Long n_ibizpro_productweeklyid_eq;//[产品周报标识]
+	public void setN_ibizpro_productweeklyid_eq(Long n_ibizpro_productweeklyid_eq) {
+        this.n_ibizpro_productweeklyid_eq = n_ibizpro_productweeklyid_eq;
+        if(!ObjectUtils.isEmpty(this.n_ibizpro_productweeklyid_eq)){
+            this.getSearchCond().eq("`ibizpro_productweeklyid`", n_ibizpro_productweeklyid_eq);
+        }
+    }
 	private String n_ibizpro_productdailyname_like;//[产品周报名称]
 	public void setN_ibizpro_productdailyname_like(String n_ibizpro_productdailyname_like) {
         this.n_ibizpro_productdailyname_like = n_ibizpro_productdailyname_like;

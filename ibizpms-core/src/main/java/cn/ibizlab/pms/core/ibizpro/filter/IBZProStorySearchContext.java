@@ -62,6 +62,13 @@ public class IBZProStorySearchContext extends QueryWrapperContext<IBZProStory> {
             this.getSearchCond().eq("`type`", n_type_eq);
         }
     }
+	private Long n_id_eq;//[编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 	private String n_title_like;//[需求名称]
 	public void setN_title_like(String n_title_like) {
         this.n_title_like = n_title_like;

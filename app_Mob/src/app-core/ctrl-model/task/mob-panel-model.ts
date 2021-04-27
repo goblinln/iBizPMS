@@ -270,6 +270,9 @@ export class MobModel {
       {
         name: 'frombug',
       },
+      {
+        name: 'ordernum',
+      },
     ]
   }
 

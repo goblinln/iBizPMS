@@ -27,6 +27,13 @@ import cn.ibizlab.pms.core.zentao.domain.ImQueue;
 @Data
 public class ImQueueSearchContext extends QueryWrapperContext<ImQueue> {
 
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 
     /**
 	 * 启用快速搜索

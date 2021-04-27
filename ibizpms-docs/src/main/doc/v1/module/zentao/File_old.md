@@ -96,6 +96,7 @@ hide members
 |对象ID(OBJECTID)|EQ|
 |对象类型(OBJECTTYPE)|EQ|
 |标题(TITLE)|LIKE|
+|id(ID)|EQ|
 |备注(EXTRA)|EQ|
 |备注(EXTRA)|NOTEQ|
 

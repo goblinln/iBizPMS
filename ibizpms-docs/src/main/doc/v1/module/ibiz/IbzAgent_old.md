@@ -72,6 +72,7 @@
 | 属性      |    搜索模式     |
 | --------   |------------|
 |创建人姓名(CREATEMANNAME)|EQ|
+|代理标识(IBZ_AGENTID)|EQ|
 |代理名称(IBZ_AGENTNAME)|LIKE|
 
 ## 导入模式

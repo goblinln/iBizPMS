@@ -95,6 +95,7 @@ hide members
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|部门标识(DEPTID)|EQ|
 |部门名称(DEPTNAME)|LIKE|
 |单位(ORGID)|EQ|
 |上级部门(PDEPTID)|EQ|

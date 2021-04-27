@@ -87,6 +87,7 @@ hide members
 | --------   |------------|
 |项目日报名称(IBIZPRO_PROJECTDAILYNAME)|LIKE|
 |项目负责人(PM)|EQ|
+|项目日报标识(IBIZPRO_PROJECTDAILYID)|EQ|
 |项目名称(PROJECTNAME)|EQ|
 |项目名称(PROJECTNAME)|LIKE|
 |项目编号(PROJECT)|EQ|

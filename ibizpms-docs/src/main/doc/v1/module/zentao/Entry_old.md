@@ -82,6 +82,7 @@ hide members
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|id(ID)|EQ|
 |freePasswd(FREEPASSWD)|EQ|
 |name(NAME)|LIKE|
 

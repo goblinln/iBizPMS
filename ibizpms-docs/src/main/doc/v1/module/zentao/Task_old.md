@@ -577,8 +577,10 @@ hide footbox
 | --------   |------------|
 |由谁取消(CANCELEDBY)|EQ|
 |周期类型(CONFIG_TYPE)|EQ|
+|是否收藏(ISFAVORITES)|EQ|
 |标题颜色(COLOR)|EQ|
 |编号(ID)|NOTEQ|
+|编号(ID)|EQ|
 |由谁完成(FINISHEDBY)|EQ|
 |任务状态(STATUS1)|EQ|
 |由谁关闭(CLOSEDBY)|EQ|

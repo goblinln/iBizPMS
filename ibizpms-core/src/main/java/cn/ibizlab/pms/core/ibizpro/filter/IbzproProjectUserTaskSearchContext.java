@@ -41,6 +41,13 @@ public class IbzproProjectUserTaskSearchContext extends QueryWrapperContext<Ibzp
             this.getSearchCond().like("`id`", n_id_like);
         }
     }
+	private Long n_id_eq;//[编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 
     /**
 	 * 启用快速搜索

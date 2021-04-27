@@ -249,6 +249,7 @@ hide footbox
 |状态(STATUS)|EQ|
 |状态(STATUS)|NOTEQ|
 |项目名称(NAME)|LIKE|
+|项目编号(ID)|EQ|
 
 ## 导入模式
 无

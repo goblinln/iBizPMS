@@ -55,6 +55,13 @@ public class ProductModuleSearchContext extends QueryWrapperContext<ProductModul
             this.getSearchCond().eq("`type`", n_type_eq);
         }
     }
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 	private String n_rootname_eq;//[所属产品]
 	public void setN_rootname_eq(String n_rootname_eq) {
         this.n_rootname_eq = n_rootname_eq;

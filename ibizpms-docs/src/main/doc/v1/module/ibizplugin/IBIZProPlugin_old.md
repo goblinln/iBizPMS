@@ -81,6 +81,7 @@
 | --------   |------------|
 |类型(TYPE)|EQ|
 |系统插件名称(IBIZPRO_PLUGINNAME)|LIKE|
+|系统插件标识(IBIZPRO_PLUGINID)|EQ|
 
 ## 导入模式
 无

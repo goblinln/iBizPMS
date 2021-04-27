@@ -86,6 +86,7 @@ export default {
     story: "相关需求",
     parent: "父任务",
     frombug: "来源Bug",
+    ordernum: "排序",
   },
 	views: {
 		activemobtask: {

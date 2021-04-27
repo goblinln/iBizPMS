@@ -270,6 +270,9 @@ export class MyFavoriteTaskModel {
       {
         name: 'frombug',
       },
+      {
+        name: 'ordernum',
+      },
     ]
   }
 

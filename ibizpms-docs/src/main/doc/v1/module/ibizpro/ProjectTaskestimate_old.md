@@ -270,6 +270,7 @@
 |日期(DATE)|EQ|
 |用户(ACCOUNT)|EQ|
 |年(YEAR)|EQ|
+|主键(ID)|EQ|
 
 ## 导入模式
 无

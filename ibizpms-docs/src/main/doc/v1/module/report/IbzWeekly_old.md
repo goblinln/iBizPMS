@@ -123,6 +123,7 @@
 | --------   |------------|
 |是否提交(ISSUBMIT)|EQ|
 |周报名称(IBZ_WEEKLYNAME)|LIKE|
+|周报标识(IBZ_WEEKLYID)|EQ|
 |状态(REPORTSTATUS)|EQ|
 |汇报给(REPORTTO)|EQ|
 |用户(ACCOUNT)|EQ|

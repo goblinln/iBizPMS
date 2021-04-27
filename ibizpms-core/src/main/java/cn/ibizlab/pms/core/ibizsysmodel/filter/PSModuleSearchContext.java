@@ -31,6 +31,8 @@ public class PSModuleSearchContext extends SearchContextBase {
 
 	private String n_usercat_eq;//[用户分类]
 
+	private String n_psmoduleid_eq;//[系统模块标识]
+
 	private Integer n_serviceapiflag_eq;//[服务API模式]
 
 	private String n_sysreftype_eq;//[子系统类型]

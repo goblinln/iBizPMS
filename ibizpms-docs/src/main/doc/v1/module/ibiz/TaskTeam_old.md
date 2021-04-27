@@ -99,6 +99,7 @@ hide members
 | --------   |------------|
 |用户(ACCOUNT)|LIKE|
 |受限用户(LIMITED)|EQ|
+|编号(ID)|EQ|
 |团队类型(TYPE)|EQ|
 |编号(ROOT)|EQ|
 

@@ -41,6 +41,13 @@ public class IbizproProjectDailySearchContext extends QueryWrapperContext<Ibizpr
             this.getSearchCond().eq("`pm`", n_pm_eq);
         }
     }
+	private String n_ibizpro_projectdailyid_eq;//[项目日报标识]
+	public void setN_ibizpro_projectdailyid_eq(String n_ibizpro_projectdailyid_eq) {
+        this.n_ibizpro_projectdailyid_eq = n_ibizpro_projectdailyid_eq;
+        if(!ObjectUtils.isEmpty(this.n_ibizpro_projectdailyid_eq)){
+            this.getSearchCond().eq("`ibizpro_projectdailyid`", n_ibizpro_projectdailyid_eq);
+        }
+    }
 	private String n_projectname_eq;//[项目名称]
 	public void setN_projectname_eq(String n_projectname_eq) {
         this.n_projectname_eq = n_projectname_eq;

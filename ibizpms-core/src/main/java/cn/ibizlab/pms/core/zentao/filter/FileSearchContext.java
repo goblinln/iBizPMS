@@ -48,6 +48,13 @@ public class FileSearchContext extends QueryWrapperContext<File> {
             this.getSearchCond().like("`title`", n_title_like);
         }
     }
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 	private String n_extra_eq;//[备注]
 	public void setN_extra_eq(String n_extra_eq) {
         this.n_extra_eq = n_extra_eq;

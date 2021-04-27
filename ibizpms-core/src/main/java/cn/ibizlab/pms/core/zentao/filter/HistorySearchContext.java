@@ -34,6 +34,13 @@ public class HistorySearchContext extends QueryWrapperContext<History> {
             this.getSearchCond().likeRight("`field`", n_field_leftlike);
         }
     }
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 	private Long n_action_eq;//[关联日志]
 	public void setN_action_eq(Long n_action_eq) {
         this.n_action_eq = n_action_eq;

@@ -74,6 +74,7 @@ hide members
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|角色标识(SYS_ROLEID)|EQ|
 |角色名称(SYS_ROLENAME)|LIKE|
 |父角色标识(PROLEID)|EQ|
 |父角色名称(PROLENAME)|EQ|

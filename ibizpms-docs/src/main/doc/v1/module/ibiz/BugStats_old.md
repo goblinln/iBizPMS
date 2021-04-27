@@ -153,6 +153,7 @@ hide members
 |bug解决日期(BUGRESOLVEDDATE)|GTANDEQ|
 |bug解决日期(BUGRESOLVEDDATE)|LTANDEQ|
 |结束(END)|LTANDEQ|
+|标识(ID)|EQ|
 |名称(TITLE)|LIKE|
 |由谁创建(OPENEDBY)|EQ|
 |编号(PRODUCT)|EQ|

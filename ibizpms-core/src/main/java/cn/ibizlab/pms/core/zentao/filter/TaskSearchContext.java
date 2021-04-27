@@ -41,6 +41,13 @@ public class TaskSearchContext extends QueryWrapperContext<Task> {
             this.getSearchCond().eq("`config_type`", n_config_type_eq);
         }
     }
+	private String n_isfavorites_eq;//[是否收藏]
+	public void setN_isfavorites_eq(String n_isfavorites_eq) {
+        this.n_isfavorites_eq = n_isfavorites_eq;
+        if(!ObjectUtils.isEmpty(this.n_isfavorites_eq)){
+            this.getSearchCond().eq("`isfavorites`", n_isfavorites_eq);
+        }
+    }
 	private String n_color_eq;//[标题颜色]
 	public void setN_color_eq(String n_color_eq) {
         this.n_color_eq = n_color_eq;
@@ -53,6 +60,13 @@ public class TaskSearchContext extends QueryWrapperContext<Task> {
         this.n_id_noteq = n_id_noteq;
         if(!ObjectUtils.isEmpty(this.n_id_noteq)){
             this.getSearchCond().ne("`id`", n_id_noteq);
+        }
+    }
+	private Long n_id_eq;//[编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
         }
     }
 	private String n_finishedby_eq;//[由谁完成]

@@ -25,6 +25,8 @@ import cn.ibizlab.pms.util.filter.SearchContextBase;
 @Slf4j
 @Data
 public class IBzDocSearchContext extends SearchContextBase {
+	private String n_ibz_docid_eq;//[文档标识]
+
 	private String n_ibz_docname_like;//[文档名称]
 
 }

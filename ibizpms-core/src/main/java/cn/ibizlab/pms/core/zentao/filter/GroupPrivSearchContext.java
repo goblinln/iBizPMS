@@ -27,6 +27,13 @@ import cn.ibizlab.pms.core.zentao.domain.GroupPriv;
 @Data
 public class GroupPrivSearchContext extends QueryWrapperContext<GroupPriv> {
 
+	private String n_id_eq;//[虚拟主键]
+	public void setN_id_eq(String n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 
     /**
 	 * 启用快速搜索

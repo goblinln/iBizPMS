@@ -86,6 +86,7 @@ hide members
 | 属性      |    搜索模式     |
 | --------   |------------|
 |产品负责人(PO)|EQ|
+|产品周报标识(IBIZPRO_PRODUCTWEEKLYID)|EQ|
 |产品周报名称(IBIZPRO_PRODUCTDAILYNAME)|LIKE|
 |产品名称(PRODUCTNAME)|EQ|
 |产品名称(PRODUCTNAME)|LIKE|

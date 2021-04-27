@@ -103,6 +103,7 @@ hide footbox
 | 属性      |    搜索模式     |
 | --------   |------------|
 |需求模块类型(IBIZ_STORYTYPE)|EQ|
+|id(ID)|EQ|
 |类型(TYPE)|EQ|
 |名称(NAME)|LIKE|
 |IBIZ标识(IBIZ_ID)|EQ|

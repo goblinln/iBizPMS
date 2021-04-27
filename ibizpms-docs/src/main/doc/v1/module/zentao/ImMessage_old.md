@@ -73,6 +73,7 @@
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|id(ID)|EQ|
 |type(TYPE)|EQ|
 |contentType(CONTENTTYPE)|EQ|
 

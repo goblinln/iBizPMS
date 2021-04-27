@@ -85,6 +85,7 @@ hide members
 | 属性      |    搜索模式     |
 | --------   |------------|
 |项目月报名称(IBIZPRO_PROJECTMONTHLYNAME)|LIKE|
+|项目月报标识(IBIZPRO_PROJECTMONTHLYID)|EQ|
 |项目负责人(PM)|EQ|
 |项目名称(PROJECTNAME)|EQ|
 |项目名称(PROJECTNAME)|LIKE|

@@ -25,6 +25,8 @@ import cn.ibizlab.pms.util.filter.SearchContextBase;
 @Slf4j
 @Data
 public class IBIZProKeywordSearchContext extends SearchContextBase {
+	private String n_id_eq;//[ID]
+
 }
 
 

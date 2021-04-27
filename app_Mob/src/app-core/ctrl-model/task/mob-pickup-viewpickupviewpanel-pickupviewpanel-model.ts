@@ -270,6 +270,9 @@ export class MobPickupViewpickupviewpanelModel {
       {
         name: 'frombug',
       },
+      {
+        name: 'ordernum',
+      },
     ]
   }
 

@@ -62,6 +62,13 @@ public class CaseSearchContext extends QueryWrapperContext<Case> {
             this.getSearchCond().eq("`status`", n_status_eq);
         }
     }
+	private String n_isfavorites_eq;//[是否收藏]
+	public void setN_isfavorites_eq(String n_isfavorites_eq) {
+        this.n_isfavorites_eq = n_isfavorites_eq;
+        if(!ObjectUtils.isEmpty(this.n_isfavorites_eq)){
+            this.getSearchCond().eq("`isfavorites`", n_isfavorites_eq);
+        }
+    }
 	private String n_frequency_eq;//[frequency]
 	public void setN_frequency_eq(String n_frequency_eq) {
         this.n_frequency_eq = n_frequency_eq;
@@ -109,6 +116,13 @@ public class CaseSearchContext extends QueryWrapperContext<Case> {
         this.n_lastrunresult1_eq = n_lastrunresult1_eq;
         if(!ObjectUtils.isEmpty(this.n_lastrunresult1_eq)){
             this.getSearchCond().eq("`lastrunresult1`", n_lastrunresult1_eq);
+        }
+    }
+	private Long n_id_eq;//[用例编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
         }
     }
 	private String n_lastrunner_eq;//[执行人]

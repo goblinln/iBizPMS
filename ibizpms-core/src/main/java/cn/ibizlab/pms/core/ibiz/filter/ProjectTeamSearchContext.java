@@ -41,6 +41,13 @@ public class ProjectTeamSearchContext extends QueryWrapperContext<ProjectTeam> {
             this.getSearchCond().eq("`type`", n_type_eq);
         }
     }
+	private Long n_id_eq;//[编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 	private String n_account_eq;//[用户]
 	public void setN_account_eq(String n_account_eq) {
         this.n_account_eq = n_account_eq;

@@ -73,6 +73,7 @@
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|id(ID)|EQ|
 |freeze(FREEZE)|EQ|
 |star(STAR)|EQ|
 |hide(HIDE)|EQ|

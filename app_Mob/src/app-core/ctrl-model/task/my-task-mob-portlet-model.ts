@@ -270,6 +270,9 @@ export class MyTaskMobModel {
       {
         name: 'frombug',
       },
+      {
+        name: 'ordernum',
+      },
     ]
   }
 

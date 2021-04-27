@@ -75,6 +75,7 @@ hide members
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|编号(ID)|EQ|
 |由谁创建(ADDEDBY)|EQ|
 |名称(NAME)|LIKE|
 |类型(TYPE)|EQ|

@@ -178,6 +178,7 @@ hide footbox
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|编号(ID)|EQ|
 |所有者(ACCOUNT)|EQ|
 |周期类型(CONFIG_TYPE)|EQ|
 |类型(TYPE)|EQ|

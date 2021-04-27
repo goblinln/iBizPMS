@@ -291,6 +291,7 @@ hide footbox
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|是否置顶(ISTOP)|EQ|
 |产品分类(PRODUCTCLASS)|EQ|
 |访问控制(ACL)|EQ|
 |产品名称(NAME)|EQ|

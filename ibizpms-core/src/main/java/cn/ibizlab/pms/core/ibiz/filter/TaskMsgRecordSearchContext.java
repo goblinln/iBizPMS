@@ -34,6 +34,13 @@ public class TaskMsgRecordSearchContext extends QueryWrapperContext<TaskMsgRecor
             this.getSearchCond().like("`taskmsgrecordname`", n_taskmsgrecordname_like);
         }
     }
+	private String n_taskmsgrecordid_eq;//[待办消息记录标识]
+	public void setN_taskmsgrecordid_eq(String n_taskmsgrecordid_eq) {
+        this.n_taskmsgrecordid_eq = n_taskmsgrecordid_eq;
+        if(!ObjectUtils.isEmpty(this.n_taskmsgrecordid_eq)){
+            this.getSearchCond().eq("`taskmsgrecordid`", n_taskmsgrecordid_eq);
+        }
+    }
 
     /**
 	 * 启用快速搜索

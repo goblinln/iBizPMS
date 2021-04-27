@@ -189,7 +189,10 @@ hide footbox
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|是否已收藏(ISFAVOURITES)|EQ|
 |名称(NAME)|LIKE|
+|查询类型(DOCQTYPE)|EQ|
+|id(ID)|EQ|
 |上级模块(MODULENAME)|EQ|
 |上级模块(MODULENAME)|LIKE|
 |所属文档库(DOCLIBNAME)|EQ|

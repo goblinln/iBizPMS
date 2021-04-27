@@ -80,6 +80,7 @@ hide members
 | 属性      |    搜索模式     |
 | --------   |------------|
 |用例标题(TITLE)|LIKE|
+|用例编号(ID)|EQ|
 |模块名称(MODULENAME)|EQ|
 |模块名称(MODULENAME)|LIKE|
 |产品(PRODUCT)|EQ|

@@ -114,6 +114,12 @@ export class MobTabExpViewtabviewpanel4Model {
       {
         name: 'product',
       },
+      {
+        name: 'begintime',
+      },
+      {
+        name: 'ordernum',
+      },
     ]
   }
 

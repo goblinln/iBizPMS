@@ -75,6 +75,7 @@
 | 属性      |    搜索模式     |
 | --------   |------------|
 |系统配置表名称(IBZPRO_CONFIGNAME)|LIKE|
+|系统配置表标识(IBZPRO_CONFIGID)|EQ|
 |类型(TYPE)|EQ|
 |管理现状(MANAGEMENTSTATUS)|EQ|
 |是否启用(VAILD)|EQ|

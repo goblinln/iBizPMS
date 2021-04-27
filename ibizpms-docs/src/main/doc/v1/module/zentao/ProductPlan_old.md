@@ -219,7 +219,9 @@ hide footbox
 | 属性      |    搜索模式     |
 | --------   |------------|
 |名称(TITLE)|LIKE|
+|编号(ID)|EQ|
 |开始日期(BEGIN)|GTANDEQ|
+|状态(STATUSS)|EQ|
 |结束日期(END)|LTANDEQ|
 |计划模板(PLANTEMPLET)|EQ|
 |是否过期(ISEXPIRED)|EQ|

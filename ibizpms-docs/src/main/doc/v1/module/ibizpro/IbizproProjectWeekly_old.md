@@ -92,6 +92,7 @@ hide members
 | 属性      |    搜索模式     |
 | --------   |------------|
 |项目周报名称(IBZPRO_PROJECTWEEKLYNAME)|LIKE|
+|项目周报标识(IBZPRO_PROJECTWEEKLYID)|EQ|
 |项目负责人(PM)|EQ|
 |项目编号(PROJECT)|EQ|
 

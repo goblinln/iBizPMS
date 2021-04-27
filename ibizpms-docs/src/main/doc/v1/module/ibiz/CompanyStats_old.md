@@ -82,6 +82,7 @@
 |日志日期(DATE)|GTANDEQ|
 |日志日期(DATE)|LTANDEQ|
 |备注(COMMENT)|LIKE|
+|标识(ID)|EQ|
 
 ## 导入模式
 无

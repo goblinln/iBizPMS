@@ -140,6 +140,7 @@ hide footbox
 |加盟日(JOIN)|GTANDEQ|
 |结束时间(END)|LTANDEQ|
 |团队类型(TYPE)|EQ|
+|编号(ID)|EQ|
 |当前负责人(LEADINGCADRE)|EQ|
 |受限用户(LIMITED)|EQ|
 |产品编号(ROOT)|EQ|

@@ -11282,6 +11282,1623 @@ export class TaskServiceBase extends EntityService {
     }
 
     /**
+     * RecordTimZeroLeftAfterContinue接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TaskServiceBase
+     */
+    public async RecordTimZeroLeftAfterContinue(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && context.projectmodule && context.task){
+            let masterData:any = {};
+        let ibztaskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates'),'undefined')){
+            ibztaskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates') as any);
+            if(ibztaskestimatesData && ibztaskestimatesData.length && ibztaskestimatesData.length > 0){
+                ibztaskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskestimates = ibztaskestimatesData;
+        let ibztaskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams'),'undefined')){
+            ibztaskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams') as any);
+            if(ibztaskteamsData && ibztaskteamsData.length && ibztaskteamsData.length > 0){
+                ibztaskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskteams = ibztaskteamsData;
+        let taskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates'),'undefined')){
+            taskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates') as any);
+            if(taskestimatesData && taskestimatesData.length && taskestimatesData.length > 0){
+                taskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskestimates = taskestimatesData;
+        let taskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskteams'),'undefined')){
+            taskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskteams') as any);
+            if(taskteamsData && taskteamsData.length && taskteamsData.length > 0){
+                taskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskteams = taskteamsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/projects/${context.project}/projectmodules/${context.projectmodule}/tasks/${context.task}/recordtimzeroleftaftercontinue`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibztaskestimates',JSON.stringify(res.data.ibztaskestimates?res.data.ibztaskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibztaskteams',JSON.stringify(res.data.ibztaskteams?res.data.ibztaskteams:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskestimates',JSON.stringify(res.data.taskestimates?res.data.taskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskteams',JSON.stringify(res.data.taskteams?res.data.taskteams:[]));
+
+            return res;
+        }
+        if(context.product && context.story && context.task){
+            let masterData:any = {};
+        let ibztaskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates'),'undefined')){
+            ibztaskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates') as any);
+            if(ibztaskestimatesData && ibztaskestimatesData.length && ibztaskestimatesData.length > 0){
+                ibztaskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskestimates = ibztaskestimatesData;
+        let ibztaskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams'),'undefined')){
+            ibztaskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams') as any);
+            if(ibztaskteamsData && ibztaskteamsData.length && ibztaskteamsData.length > 0){
+                ibztaskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskteams = ibztaskteamsData;
+        let taskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates'),'undefined')){
+            taskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates') as any);
+            if(taskestimatesData && taskestimatesData.length && taskestimatesData.length > 0){
+                taskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskestimates = taskestimatesData;
+        let taskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskteams'),'undefined')){
+            taskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskteams') as any);
+            if(taskteamsData && taskteamsData.length && taskteamsData.length > 0){
+                taskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskteams = taskteamsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/products/${context.product}/stories/${context.story}/tasks/${context.task}/recordtimzeroleftaftercontinue`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibztaskestimates',JSON.stringify(res.data.ibztaskestimates?res.data.ibztaskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibztaskteams',JSON.stringify(res.data.ibztaskteams?res.data.ibztaskteams:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskestimates',JSON.stringify(res.data.taskestimates?res.data.taskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskteams',JSON.stringify(res.data.taskteams?res.data.taskteams:[]));
+
+            return res;
+        }
+        if(context.product && context.productplan && context.task){
+            let masterData:any = {};
+        let ibztaskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates'),'undefined')){
+            ibztaskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates') as any);
+            if(ibztaskestimatesData && ibztaskestimatesData.length && ibztaskestimatesData.length > 0){
+                ibztaskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskestimates = ibztaskestimatesData;
+        let ibztaskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams'),'undefined')){
+            ibztaskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams') as any);
+            if(ibztaskteamsData && ibztaskteamsData.length && ibztaskteamsData.length > 0){
+                ibztaskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskteams = ibztaskteamsData;
+        let taskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates'),'undefined')){
+            taskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates') as any);
+            if(taskestimatesData && taskestimatesData.length && taskestimatesData.length > 0){
+                taskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskestimates = taskestimatesData;
+        let taskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskteams'),'undefined')){
+            taskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskteams') as any);
+            if(taskteamsData && taskteamsData.length && taskteamsData.length > 0){
+                taskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskteams = taskteamsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/products/${context.product}/productplans/${context.productplan}/tasks/${context.task}/recordtimzeroleftaftercontinue`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibztaskestimates',JSON.stringify(res.data.ibztaskestimates?res.data.ibztaskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibztaskteams',JSON.stringify(res.data.ibztaskteams?res.data.ibztaskteams:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskestimates',JSON.stringify(res.data.taskestimates?res.data.taskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskteams',JSON.stringify(res.data.taskteams?res.data.taskteams:[]));
+
+            return res;
+        }
+        if(context.project && context.task){
+            let masterData:any = {};
+        let ibztaskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates'),'undefined')){
+            ibztaskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates') as any);
+            if(ibztaskestimatesData && ibztaskestimatesData.length && ibztaskestimatesData.length > 0){
+                ibztaskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskestimates = ibztaskestimatesData;
+        let ibztaskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams'),'undefined')){
+            ibztaskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams') as any);
+            if(ibztaskteamsData && ibztaskteamsData.length && ibztaskteamsData.length > 0){
+                ibztaskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskteams = ibztaskteamsData;
+        let taskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates'),'undefined')){
+            taskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates') as any);
+            if(taskestimatesData && taskestimatesData.length && taskestimatesData.length > 0){
+                taskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskestimates = taskestimatesData;
+        let taskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskteams'),'undefined')){
+            taskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskteams') as any);
+            if(taskteamsData && taskteamsData.length && taskteamsData.length > 0){
+                taskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskteams = taskteamsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/projects/${context.project}/tasks/${context.task}/recordtimzeroleftaftercontinue`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibztaskestimates',JSON.stringify(res.data.ibztaskestimates?res.data.ibztaskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibztaskteams',JSON.stringify(res.data.ibztaskteams?res.data.ibztaskteams:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskestimates',JSON.stringify(res.data.taskestimates?res.data.taskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskteams',JSON.stringify(res.data.taskteams?res.data.taskteams:[]));
+
+            return res;
+        }
+        if(context.story && context.task){
+            let masterData:any = {};
+        let ibztaskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates'),'undefined')){
+            ibztaskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates') as any);
+            if(ibztaskestimatesData && ibztaskestimatesData.length && ibztaskestimatesData.length > 0){
+                ibztaskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskestimates = ibztaskestimatesData;
+        let ibztaskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams'),'undefined')){
+            ibztaskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams') as any);
+            if(ibztaskteamsData && ibztaskteamsData.length && ibztaskteamsData.length > 0){
+                ibztaskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskteams = ibztaskteamsData;
+        let taskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates'),'undefined')){
+            taskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates') as any);
+            if(taskestimatesData && taskestimatesData.length && taskestimatesData.length > 0){
+                taskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskestimates = taskestimatesData;
+        let taskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskteams'),'undefined')){
+            taskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskteams') as any);
+            if(taskteamsData && taskteamsData.length && taskteamsData.length > 0){
+                taskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskteams = taskteamsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/stories/${context.story}/tasks/${context.task}/recordtimzeroleftaftercontinue`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibztaskestimates',JSON.stringify(res.data.ibztaskestimates?res.data.ibztaskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibztaskteams',JSON.stringify(res.data.ibztaskteams?res.data.ibztaskteams:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskestimates',JSON.stringify(res.data.taskestimates?res.data.taskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskteams',JSON.stringify(res.data.taskteams?res.data.taskteams:[]));
+
+            return res;
+        }
+        if(context.productplan && context.task){
+            let masterData:any = {};
+        let ibztaskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates'),'undefined')){
+            ibztaskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates') as any);
+            if(ibztaskestimatesData && ibztaskestimatesData.length && ibztaskestimatesData.length > 0){
+                ibztaskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskestimates = ibztaskestimatesData;
+        let ibztaskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams'),'undefined')){
+            ibztaskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams') as any);
+            if(ibztaskteamsData && ibztaskteamsData.length && ibztaskteamsData.length > 0){
+                ibztaskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskteams = ibztaskteamsData;
+        let taskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates'),'undefined')){
+            taskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates') as any);
+            if(taskestimatesData && taskestimatesData.length && taskestimatesData.length > 0){
+                taskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskestimates = taskestimatesData;
+        let taskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskteams'),'undefined')){
+            taskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskteams') as any);
+            if(taskteamsData && taskteamsData.length && taskteamsData.length > 0){
+                taskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskteams = taskteamsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/productplans/${context.productplan}/tasks/${context.task}/recordtimzeroleftaftercontinue`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibztaskestimates',JSON.stringify(res.data.ibztaskestimates?res.data.ibztaskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibztaskteams',JSON.stringify(res.data.ibztaskteams?res.data.ibztaskteams:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskestimates',JSON.stringify(res.data.taskestimates?res.data.taskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskteams',JSON.stringify(res.data.taskteams?res.data.taskteams:[]));
+
+            return res;
+        }
+        if(context.projectmodule && context.task){
+            let masterData:any = {};
+        let ibztaskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates'),'undefined')){
+            ibztaskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates') as any);
+            if(ibztaskestimatesData && ibztaskestimatesData.length && ibztaskestimatesData.length > 0){
+                ibztaskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskestimates = ibztaskestimatesData;
+        let ibztaskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams'),'undefined')){
+            ibztaskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams') as any);
+            if(ibztaskteamsData && ibztaskteamsData.length && ibztaskteamsData.length > 0){
+                ibztaskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskteams = ibztaskteamsData;
+        let taskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates'),'undefined')){
+            taskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates') as any);
+            if(taskestimatesData && taskestimatesData.length && taskestimatesData.length > 0){
+                taskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskestimates = taskestimatesData;
+        let taskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskteams'),'undefined')){
+            taskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskteams') as any);
+            if(taskteamsData && taskteamsData.length && taskteamsData.length > 0){
+                taskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskteams = taskteamsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/projectmodules/${context.projectmodule}/tasks/${context.task}/recordtimzeroleftaftercontinue`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibztaskestimates',JSON.stringify(res.data.ibztaskestimates?res.data.ibztaskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibztaskteams',JSON.stringify(res.data.ibztaskteams?res.data.ibztaskteams:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskestimates',JSON.stringify(res.data.taskestimates?res.data.taskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskteams',JSON.stringify(res.data.taskteams?res.data.taskteams:[]));
+
+            return res;
+        }
+            let res:any = Http.getInstance().post(`/tasks/${context.task}/recordtimzeroleftaftercontinue`,data,isloading);
+            return res;
+    }
+
+    /**
+     * RecordTimateZeroLeft接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TaskServiceBase
+     */
+    public async RecordTimateZeroLeft(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && context.projectmodule && context.task){
+            let masterData:any = {};
+        let ibztaskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates'),'undefined')){
+            ibztaskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates') as any);
+            if(ibztaskestimatesData && ibztaskestimatesData.length && ibztaskestimatesData.length > 0){
+                ibztaskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskestimates = ibztaskestimatesData;
+        let ibztaskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams'),'undefined')){
+            ibztaskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams') as any);
+            if(ibztaskteamsData && ibztaskteamsData.length && ibztaskteamsData.length > 0){
+                ibztaskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskteams = ibztaskteamsData;
+        let taskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates'),'undefined')){
+            taskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates') as any);
+            if(taskestimatesData && taskestimatesData.length && taskestimatesData.length > 0){
+                taskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskestimates = taskestimatesData;
+        let taskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskteams'),'undefined')){
+            taskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskteams') as any);
+            if(taskteamsData && taskteamsData.length && taskteamsData.length > 0){
+                taskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskteams = taskteamsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/projects/${context.project}/projectmodules/${context.projectmodule}/tasks/${context.task}/recordtimatezeroleft`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibztaskestimates',JSON.stringify(res.data.ibztaskestimates?res.data.ibztaskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibztaskteams',JSON.stringify(res.data.ibztaskteams?res.data.ibztaskteams:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskestimates',JSON.stringify(res.data.taskestimates?res.data.taskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskteams',JSON.stringify(res.data.taskteams?res.data.taskteams:[]));
+
+            return res;
+        }
+        if(context.product && context.story && context.task){
+            let masterData:any = {};
+        let ibztaskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates'),'undefined')){
+            ibztaskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates') as any);
+            if(ibztaskestimatesData && ibztaskestimatesData.length && ibztaskestimatesData.length > 0){
+                ibztaskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskestimates = ibztaskestimatesData;
+        let ibztaskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams'),'undefined')){
+            ibztaskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams') as any);
+            if(ibztaskteamsData && ibztaskteamsData.length && ibztaskteamsData.length > 0){
+                ibztaskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskteams = ibztaskteamsData;
+        let taskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates'),'undefined')){
+            taskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates') as any);
+            if(taskestimatesData && taskestimatesData.length && taskestimatesData.length > 0){
+                taskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskestimates = taskestimatesData;
+        let taskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskteams'),'undefined')){
+            taskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskteams') as any);
+            if(taskteamsData && taskteamsData.length && taskteamsData.length > 0){
+                taskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskteams = taskteamsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/products/${context.product}/stories/${context.story}/tasks/${context.task}/recordtimatezeroleft`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibztaskestimates',JSON.stringify(res.data.ibztaskestimates?res.data.ibztaskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibztaskteams',JSON.stringify(res.data.ibztaskteams?res.data.ibztaskteams:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskestimates',JSON.stringify(res.data.taskestimates?res.data.taskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskteams',JSON.stringify(res.data.taskteams?res.data.taskteams:[]));
+
+            return res;
+        }
+        if(context.product && context.productplan && context.task){
+            let masterData:any = {};
+        let ibztaskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates'),'undefined')){
+            ibztaskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates') as any);
+            if(ibztaskestimatesData && ibztaskestimatesData.length && ibztaskestimatesData.length > 0){
+                ibztaskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskestimates = ibztaskestimatesData;
+        let ibztaskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams'),'undefined')){
+            ibztaskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams') as any);
+            if(ibztaskteamsData && ibztaskteamsData.length && ibztaskteamsData.length > 0){
+                ibztaskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskteams = ibztaskteamsData;
+        let taskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates'),'undefined')){
+            taskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates') as any);
+            if(taskestimatesData && taskestimatesData.length && taskestimatesData.length > 0){
+                taskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskestimates = taskestimatesData;
+        let taskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskteams'),'undefined')){
+            taskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskteams') as any);
+            if(taskteamsData && taskteamsData.length && taskteamsData.length > 0){
+                taskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskteams = taskteamsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/products/${context.product}/productplans/${context.productplan}/tasks/${context.task}/recordtimatezeroleft`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibztaskestimates',JSON.stringify(res.data.ibztaskestimates?res.data.ibztaskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibztaskteams',JSON.stringify(res.data.ibztaskteams?res.data.ibztaskteams:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskestimates',JSON.stringify(res.data.taskestimates?res.data.taskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskteams',JSON.stringify(res.data.taskteams?res.data.taskteams:[]));
+
+            return res;
+        }
+        if(context.project && context.task){
+            let masterData:any = {};
+        let ibztaskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates'),'undefined')){
+            ibztaskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates') as any);
+            if(ibztaskestimatesData && ibztaskestimatesData.length && ibztaskestimatesData.length > 0){
+                ibztaskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskestimates = ibztaskestimatesData;
+        let ibztaskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams'),'undefined')){
+            ibztaskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams') as any);
+            if(ibztaskteamsData && ibztaskteamsData.length && ibztaskteamsData.length > 0){
+                ibztaskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskteams = ibztaskteamsData;
+        let taskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates'),'undefined')){
+            taskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates') as any);
+            if(taskestimatesData && taskestimatesData.length && taskestimatesData.length > 0){
+                taskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskestimates = taskestimatesData;
+        let taskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskteams'),'undefined')){
+            taskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskteams') as any);
+            if(taskteamsData && taskteamsData.length && taskteamsData.length > 0){
+                taskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskteams = taskteamsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/projects/${context.project}/tasks/${context.task}/recordtimatezeroleft`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibztaskestimates',JSON.stringify(res.data.ibztaskestimates?res.data.ibztaskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibztaskteams',JSON.stringify(res.data.ibztaskteams?res.data.ibztaskteams:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskestimates',JSON.stringify(res.data.taskestimates?res.data.taskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskteams',JSON.stringify(res.data.taskteams?res.data.taskteams:[]));
+
+            return res;
+        }
+        if(context.story && context.task){
+            let masterData:any = {};
+        let ibztaskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates'),'undefined')){
+            ibztaskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates') as any);
+            if(ibztaskestimatesData && ibztaskestimatesData.length && ibztaskestimatesData.length > 0){
+                ibztaskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskestimates = ibztaskestimatesData;
+        let ibztaskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams'),'undefined')){
+            ibztaskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams') as any);
+            if(ibztaskteamsData && ibztaskteamsData.length && ibztaskteamsData.length > 0){
+                ibztaskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskteams = ibztaskteamsData;
+        let taskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates'),'undefined')){
+            taskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates') as any);
+            if(taskestimatesData && taskestimatesData.length && taskestimatesData.length > 0){
+                taskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskestimates = taskestimatesData;
+        let taskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskteams'),'undefined')){
+            taskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskteams') as any);
+            if(taskteamsData && taskteamsData.length && taskteamsData.length > 0){
+                taskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskteams = taskteamsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/stories/${context.story}/tasks/${context.task}/recordtimatezeroleft`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibztaskestimates',JSON.stringify(res.data.ibztaskestimates?res.data.ibztaskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibztaskteams',JSON.stringify(res.data.ibztaskteams?res.data.ibztaskteams:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskestimates',JSON.stringify(res.data.taskestimates?res.data.taskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskteams',JSON.stringify(res.data.taskteams?res.data.taskteams:[]));
+
+            return res;
+        }
+        if(context.productplan && context.task){
+            let masterData:any = {};
+        let ibztaskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates'),'undefined')){
+            ibztaskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates') as any);
+            if(ibztaskestimatesData && ibztaskestimatesData.length && ibztaskestimatesData.length > 0){
+                ibztaskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskestimates = ibztaskestimatesData;
+        let ibztaskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams'),'undefined')){
+            ibztaskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams') as any);
+            if(ibztaskteamsData && ibztaskteamsData.length && ibztaskteamsData.length > 0){
+                ibztaskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskteams = ibztaskteamsData;
+        let taskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates'),'undefined')){
+            taskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates') as any);
+            if(taskestimatesData && taskestimatesData.length && taskestimatesData.length > 0){
+                taskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskestimates = taskestimatesData;
+        let taskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskteams'),'undefined')){
+            taskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskteams') as any);
+            if(taskteamsData && taskteamsData.length && taskteamsData.length > 0){
+                taskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskteams = taskteamsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/productplans/${context.productplan}/tasks/${context.task}/recordtimatezeroleft`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibztaskestimates',JSON.stringify(res.data.ibztaskestimates?res.data.ibztaskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibztaskteams',JSON.stringify(res.data.ibztaskteams?res.data.ibztaskteams:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskestimates',JSON.stringify(res.data.taskestimates?res.data.taskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskteams',JSON.stringify(res.data.taskteams?res.data.taskteams:[]));
+
+            return res;
+        }
+        if(context.projectmodule && context.task){
+            let masterData:any = {};
+        let ibztaskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates'),'undefined')){
+            ibztaskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates') as any);
+            if(ibztaskestimatesData && ibztaskestimatesData.length && ibztaskestimatesData.length > 0){
+                ibztaskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskestimates = ibztaskestimatesData;
+        let ibztaskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams'),'undefined')){
+            ibztaskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams') as any);
+            if(ibztaskteamsData && ibztaskteamsData.length && ibztaskteamsData.length > 0){
+                ibztaskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskteams = ibztaskteamsData;
+        let taskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates'),'undefined')){
+            taskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates') as any);
+            if(taskestimatesData && taskestimatesData.length && taskestimatesData.length > 0){
+                taskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskestimates = taskestimatesData;
+        let taskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskteams'),'undefined')){
+            taskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskteams') as any);
+            if(taskteamsData && taskteamsData.length && taskteamsData.length > 0){
+                taskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskteams = taskteamsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/projectmodules/${context.projectmodule}/tasks/${context.task}/recordtimatezeroleft`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibztaskestimates',JSON.stringify(res.data.ibztaskestimates?res.data.ibztaskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibztaskteams',JSON.stringify(res.data.ibztaskteams?res.data.ibztaskteams:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskestimates',JSON.stringify(res.data.taskestimates?res.data.taskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskteams',JSON.stringify(res.data.taskteams?res.data.taskteams:[]));
+
+            return res;
+        }
+            let res:any = Http.getInstance().post(`/tasks/${context.task}/recordtimatezeroleft`,data,isloading);
+            return res;
+    }
+
+    /**
+     * RecordTimateZeroLeftAfterStart接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TaskServiceBase
+     */
+    public async RecordTimateZeroLeftAfterStart(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && context.projectmodule && context.task){
+            let masterData:any = {};
+        let ibztaskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates'),'undefined')){
+            ibztaskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates') as any);
+            if(ibztaskestimatesData && ibztaskestimatesData.length && ibztaskestimatesData.length > 0){
+                ibztaskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskestimates = ibztaskestimatesData;
+        let ibztaskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams'),'undefined')){
+            ibztaskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams') as any);
+            if(ibztaskteamsData && ibztaskteamsData.length && ibztaskteamsData.length > 0){
+                ibztaskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskteams = ibztaskteamsData;
+        let taskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates'),'undefined')){
+            taskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates') as any);
+            if(taskestimatesData && taskestimatesData.length && taskestimatesData.length > 0){
+                taskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskestimates = taskestimatesData;
+        let taskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskteams'),'undefined')){
+            taskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskteams') as any);
+            if(taskteamsData && taskteamsData.length && taskteamsData.length > 0){
+                taskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskteams = taskteamsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/projects/${context.project}/projectmodules/${context.projectmodule}/tasks/${context.task}/recordtimatezeroleftafterstart`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibztaskestimates',JSON.stringify(res.data.ibztaskestimates?res.data.ibztaskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibztaskteams',JSON.stringify(res.data.ibztaskteams?res.data.ibztaskteams:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskestimates',JSON.stringify(res.data.taskestimates?res.data.taskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskteams',JSON.stringify(res.data.taskteams?res.data.taskteams:[]));
+
+            return res;
+        }
+        if(context.product && context.story && context.task){
+            let masterData:any = {};
+        let ibztaskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates'),'undefined')){
+            ibztaskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates') as any);
+            if(ibztaskestimatesData && ibztaskestimatesData.length && ibztaskestimatesData.length > 0){
+                ibztaskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskestimates = ibztaskestimatesData;
+        let ibztaskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams'),'undefined')){
+            ibztaskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams') as any);
+            if(ibztaskteamsData && ibztaskteamsData.length && ibztaskteamsData.length > 0){
+                ibztaskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskteams = ibztaskteamsData;
+        let taskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates'),'undefined')){
+            taskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates') as any);
+            if(taskestimatesData && taskestimatesData.length && taskestimatesData.length > 0){
+                taskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskestimates = taskestimatesData;
+        let taskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskteams'),'undefined')){
+            taskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskteams') as any);
+            if(taskteamsData && taskteamsData.length && taskteamsData.length > 0){
+                taskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskteams = taskteamsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/products/${context.product}/stories/${context.story}/tasks/${context.task}/recordtimatezeroleftafterstart`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibztaskestimates',JSON.stringify(res.data.ibztaskestimates?res.data.ibztaskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibztaskteams',JSON.stringify(res.data.ibztaskteams?res.data.ibztaskteams:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskestimates',JSON.stringify(res.data.taskestimates?res.data.taskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskteams',JSON.stringify(res.data.taskteams?res.data.taskteams:[]));
+
+            return res;
+        }
+        if(context.product && context.productplan && context.task){
+            let masterData:any = {};
+        let ibztaskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates'),'undefined')){
+            ibztaskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates') as any);
+            if(ibztaskestimatesData && ibztaskestimatesData.length && ibztaskestimatesData.length > 0){
+                ibztaskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskestimates = ibztaskestimatesData;
+        let ibztaskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams'),'undefined')){
+            ibztaskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams') as any);
+            if(ibztaskteamsData && ibztaskteamsData.length && ibztaskteamsData.length > 0){
+                ibztaskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskteams = ibztaskteamsData;
+        let taskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates'),'undefined')){
+            taskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates') as any);
+            if(taskestimatesData && taskestimatesData.length && taskestimatesData.length > 0){
+                taskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskestimates = taskestimatesData;
+        let taskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskteams'),'undefined')){
+            taskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskteams') as any);
+            if(taskteamsData && taskteamsData.length && taskteamsData.length > 0){
+                taskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskteams = taskteamsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/products/${context.product}/productplans/${context.productplan}/tasks/${context.task}/recordtimatezeroleftafterstart`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibztaskestimates',JSON.stringify(res.data.ibztaskestimates?res.data.ibztaskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibztaskteams',JSON.stringify(res.data.ibztaskteams?res.data.ibztaskteams:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskestimates',JSON.stringify(res.data.taskestimates?res.data.taskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskteams',JSON.stringify(res.data.taskteams?res.data.taskteams:[]));
+
+            return res;
+        }
+        if(context.project && context.task){
+            let masterData:any = {};
+        let ibztaskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates'),'undefined')){
+            ibztaskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates') as any);
+            if(ibztaskestimatesData && ibztaskestimatesData.length && ibztaskestimatesData.length > 0){
+                ibztaskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskestimates = ibztaskestimatesData;
+        let ibztaskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams'),'undefined')){
+            ibztaskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams') as any);
+            if(ibztaskteamsData && ibztaskteamsData.length && ibztaskteamsData.length > 0){
+                ibztaskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskteams = ibztaskteamsData;
+        let taskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates'),'undefined')){
+            taskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates') as any);
+            if(taskestimatesData && taskestimatesData.length && taskestimatesData.length > 0){
+                taskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskestimates = taskestimatesData;
+        let taskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskteams'),'undefined')){
+            taskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskteams') as any);
+            if(taskteamsData && taskteamsData.length && taskteamsData.length > 0){
+                taskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskteams = taskteamsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/projects/${context.project}/tasks/${context.task}/recordtimatezeroleftafterstart`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibztaskestimates',JSON.stringify(res.data.ibztaskestimates?res.data.ibztaskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibztaskteams',JSON.stringify(res.data.ibztaskteams?res.data.ibztaskteams:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskestimates',JSON.stringify(res.data.taskestimates?res.data.taskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskteams',JSON.stringify(res.data.taskteams?res.data.taskteams:[]));
+
+            return res;
+        }
+        if(context.story && context.task){
+            let masterData:any = {};
+        let ibztaskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates'),'undefined')){
+            ibztaskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates') as any);
+            if(ibztaskestimatesData && ibztaskestimatesData.length && ibztaskestimatesData.length > 0){
+                ibztaskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskestimates = ibztaskestimatesData;
+        let ibztaskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams'),'undefined')){
+            ibztaskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams') as any);
+            if(ibztaskteamsData && ibztaskteamsData.length && ibztaskteamsData.length > 0){
+                ibztaskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskteams = ibztaskteamsData;
+        let taskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates'),'undefined')){
+            taskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates') as any);
+            if(taskestimatesData && taskestimatesData.length && taskestimatesData.length > 0){
+                taskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskestimates = taskestimatesData;
+        let taskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskteams'),'undefined')){
+            taskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskteams') as any);
+            if(taskteamsData && taskteamsData.length && taskteamsData.length > 0){
+                taskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskteams = taskteamsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/stories/${context.story}/tasks/${context.task}/recordtimatezeroleftafterstart`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibztaskestimates',JSON.stringify(res.data.ibztaskestimates?res.data.ibztaskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibztaskteams',JSON.stringify(res.data.ibztaskteams?res.data.ibztaskteams:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskestimates',JSON.stringify(res.data.taskestimates?res.data.taskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskteams',JSON.stringify(res.data.taskteams?res.data.taskteams:[]));
+
+            return res;
+        }
+        if(context.productplan && context.task){
+            let masterData:any = {};
+        let ibztaskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates'),'undefined')){
+            ibztaskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates') as any);
+            if(ibztaskestimatesData && ibztaskestimatesData.length && ibztaskestimatesData.length > 0){
+                ibztaskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskestimates = ibztaskestimatesData;
+        let ibztaskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams'),'undefined')){
+            ibztaskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams') as any);
+            if(ibztaskteamsData && ibztaskteamsData.length && ibztaskteamsData.length > 0){
+                ibztaskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskteams = ibztaskteamsData;
+        let taskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates'),'undefined')){
+            taskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates') as any);
+            if(taskestimatesData && taskestimatesData.length && taskestimatesData.length > 0){
+                taskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskestimates = taskestimatesData;
+        let taskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskteams'),'undefined')){
+            taskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskteams') as any);
+            if(taskteamsData && taskteamsData.length && taskteamsData.length > 0){
+                taskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskteams = taskteamsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/productplans/${context.productplan}/tasks/${context.task}/recordtimatezeroleftafterstart`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibztaskestimates',JSON.stringify(res.data.ibztaskestimates?res.data.ibztaskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibztaskteams',JSON.stringify(res.data.ibztaskteams?res.data.ibztaskteams:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskestimates',JSON.stringify(res.data.taskestimates?res.data.taskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskteams',JSON.stringify(res.data.taskteams?res.data.taskteams:[]));
+
+            return res;
+        }
+        if(context.projectmodule && context.task){
+            let masterData:any = {};
+        let ibztaskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates'),'undefined')){
+            ibztaskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskestimates') as any);
+            if(ibztaskestimatesData && ibztaskestimatesData.length && ibztaskestimatesData.length > 0){
+                ibztaskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskestimates = ibztaskestimatesData;
+        let ibztaskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams'),'undefined')){
+            ibztaskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_ibztaskteams') as any);
+            if(ibztaskteamsData && ibztaskteamsData.length && ibztaskteamsData.length > 0){
+                ibztaskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.ibztaskteams = ibztaskteamsData;
+        let taskestimatesData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates'),'undefined')){
+            taskestimatesData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskestimates') as any);
+            if(taskestimatesData && taskestimatesData.length && taskestimatesData.length > 0){
+                taskestimatesData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskestimates = taskestimatesData;
+        let taskteamsData:any = [];
+        if(!Object.is(this.tempStorage.getItem(context.srfsessionkey+'_taskteams'),'undefined')){
+            taskteamsData = JSON.parse(this.tempStorage.getItem(context.srfsessionkey+'_taskteams') as any);
+            if(taskteamsData && taskteamsData.length && taskteamsData.length > 0){
+                taskteamsData.forEach((item:any) => {
+                    if(item.srffrontuf){
+                        if(Object.is(item.srffrontuf,"0")){
+                            item.id = null;
+                            if(item.hasOwnProperty('id') && item.id) item.id = null;
+                        }
+                        delete item.srffrontuf;
+                    }
+                });
+            }
+        }
+        masterData.taskteams = taskteamsData;
+            Object.assign(data,masterData);
+            let res:any = await Http.getInstance().post(`/projectmodules/${context.projectmodule}/tasks/${context.task}/recordtimatezeroleftafterstart`,data,isloading);
+                        this.tempStorage.setItem(context.srfsessionkey+'_ibztaskestimates',JSON.stringify(res.data.ibztaskestimates?res.data.ibztaskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_ibztaskteams',JSON.stringify(res.data.ibztaskteams?res.data.ibztaskteams:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskestimates',JSON.stringify(res.data.taskestimates?res.data.taskestimates:[]));
+            this.tempStorage.setItem(context.srfsessionkey+'_taskteams',JSON.stringify(res.data.taskteams?res.data.taskteams:[]));
+
+            return res;
+        }
+            let res:any = Http.getInstance().post(`/tasks/${context.task}/recordtimatezeroleftafterstart`,data,isloading);
+            return res;
+    }
+
+    /**
      * Restart接口方法
      *
      * @param {*} [context={}]
@@ -16254,6 +17871,56 @@ export class TaskServiceBase extends EntityService {
     }
 
     /**
+     * FetchAssignedToMyTaskEE接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TaskServiceBase
+     */
+    public async FetchAssignedToMyTaskEE(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && context.projectmodule && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/projects/${context.project}/projectmodules/${context.projectmodule}/tasks/fetchassignedtomytaskee`,tempData,isloading);
+            return res;
+        }
+        if(context.product && context.story && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/products/${context.product}/stories/${context.story}/tasks/fetchassignedtomytaskee`,tempData,isloading);
+            return res;
+        }
+        if(context.product && context.productplan && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/products/${context.product}/productplans/${context.productplan}/tasks/fetchassignedtomytaskee`,tempData,isloading);
+            return res;
+        }
+        if(context.project && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/projects/${context.project}/tasks/fetchassignedtomytaskee`,tempData,isloading);
+            return res;
+        }
+        if(context.story && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/stories/${context.story}/tasks/fetchassignedtomytaskee`,tempData,isloading);
+            return res;
+        }
+        if(context.productplan && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/productplans/${context.productplan}/tasks/fetchassignedtomytaskee`,tempData,isloading);
+            return res;
+        }
+        if(context.projectmodule && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/projectmodules/${context.projectmodule}/tasks/fetchassignedtomytaskee`,tempData,isloading);
+            return res;
+        }
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        let res:any = Http.getInstance().get(`/tasks/fetchassignedtomytaskee`,tempData,isloading);
+        return res;
+    }
+
+    /**
      * FetchAssignedToMyTaskPc接口方法
      *
      * @param {*} [context={}]
@@ -16400,6 +18067,156 @@ export class TaskServiceBase extends EntityService {
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
         let res:any = Http.getInstance().post(`/tasks/fetchbymodule`,tempData,isloading);
+        return res;
+    }
+
+    /**
+     * FetchByModuleEE接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TaskServiceBase
+     */
+    public async FetchByModuleEE(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && context.projectmodule && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/projects/${context.project}/projectmodules/${context.projectmodule}/tasks/fetchbymoduleee`,tempData,isloading);
+            return res;
+        }
+        if(context.product && context.story && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/products/${context.product}/stories/${context.story}/tasks/fetchbymoduleee`,tempData,isloading);
+            return res;
+        }
+        if(context.product && context.productplan && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/products/${context.product}/productplans/${context.productplan}/tasks/fetchbymoduleee`,tempData,isloading);
+            return res;
+        }
+        if(context.project && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/projects/${context.project}/tasks/fetchbymoduleee`,tempData,isloading);
+            return res;
+        }
+        if(context.story && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/stories/${context.story}/tasks/fetchbymoduleee`,tempData,isloading);
+            return res;
+        }
+        if(context.productplan && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/productplans/${context.productplan}/tasks/fetchbymoduleee`,tempData,isloading);
+            return res;
+        }
+        if(context.projectmodule && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/projectmodules/${context.projectmodule}/tasks/fetchbymoduleee`,tempData,isloading);
+            return res;
+        }
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        let res:any = Http.getInstance().get(`/tasks/fetchbymoduleee`,tempData,isloading);
+        return res;
+    }
+
+    /**
+     * FetchChildDefault接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TaskServiceBase
+     */
+    public async FetchChildDefault(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && context.projectmodule && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/projects/${context.project}/projectmodules/${context.projectmodule}/tasks/fetchchilddefault`,tempData,isloading);
+            return res;
+        }
+        if(context.product && context.story && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/products/${context.product}/stories/${context.story}/tasks/fetchchilddefault`,tempData,isloading);
+            return res;
+        }
+        if(context.product && context.productplan && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/products/${context.product}/productplans/${context.productplan}/tasks/fetchchilddefault`,tempData,isloading);
+            return res;
+        }
+        if(context.project && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/projects/${context.project}/tasks/fetchchilddefault`,tempData,isloading);
+            return res;
+        }
+        if(context.story && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/stories/${context.story}/tasks/fetchchilddefault`,tempData,isloading);
+            return res;
+        }
+        if(context.productplan && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/productplans/${context.productplan}/tasks/fetchchilddefault`,tempData,isloading);
+            return res;
+        }
+        if(context.projectmodule && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/projectmodules/${context.projectmodule}/tasks/fetchchilddefault`,tempData,isloading);
+            return res;
+        }
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        let res:any = Http.getInstance().get(`/tasks/fetchchilddefault`,tempData,isloading);
+        return res;
+    }
+
+    /**
+     * FetchChildDefaultMore接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TaskServiceBase
+     */
+    public async FetchChildDefaultMore(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && context.projectmodule && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/projects/${context.project}/projectmodules/${context.projectmodule}/tasks/fetchchilddefaultmore`,tempData,isloading);
+            return res;
+        }
+        if(context.product && context.story && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/products/${context.product}/stories/${context.story}/tasks/fetchchilddefaultmore`,tempData,isloading);
+            return res;
+        }
+        if(context.product && context.productplan && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/products/${context.product}/productplans/${context.productplan}/tasks/fetchchilddefaultmore`,tempData,isloading);
+            return res;
+        }
+        if(context.project && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/projects/${context.project}/tasks/fetchchilddefaultmore`,tempData,isloading);
+            return res;
+        }
+        if(context.story && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/stories/${context.story}/tasks/fetchchilddefaultmore`,tempData,isloading);
+            return res;
+        }
+        if(context.productplan && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/productplans/${context.productplan}/tasks/fetchchilddefaultmore`,tempData,isloading);
+            return res;
+        }
+        if(context.projectmodule && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/projectmodules/${context.projectmodule}/tasks/fetchchilddefaultmore`,tempData,isloading);
+            return res;
+        }
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        let res:any = Http.getInstance().get(`/tasks/fetchchilddefaultmore`,tempData,isloading);
         return res;
     }
 
@@ -16800,6 +18617,56 @@ export class TaskServiceBase extends EntityService {
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
         let res:any = Http.getInstance().post(`/tasks/fetchmyalltask`,tempData,isloading);
+        return res;
+    }
+
+    /**
+     * FetchMyAllTaskEE接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TaskServiceBase
+     */
+    public async FetchMyAllTaskEE(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && context.projectmodule && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/projects/${context.project}/projectmodules/${context.projectmodule}/tasks/fetchmyalltaskee`,tempData,isloading);
+            return res;
+        }
+        if(context.product && context.story && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/products/${context.product}/stories/${context.story}/tasks/fetchmyalltaskee`,tempData,isloading);
+            return res;
+        }
+        if(context.product && context.productplan && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/products/${context.product}/productplans/${context.productplan}/tasks/fetchmyalltaskee`,tempData,isloading);
+            return res;
+        }
+        if(context.project && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/projects/${context.project}/tasks/fetchmyalltaskee`,tempData,isloading);
+            return res;
+        }
+        if(context.story && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/stories/${context.story}/tasks/fetchmyalltaskee`,tempData,isloading);
+            return res;
+        }
+        if(context.productplan && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/productplans/${context.productplan}/tasks/fetchmyalltaskee`,tempData,isloading);
+            return res;
+        }
+        if(context.projectmodule && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/projectmodules/${context.projectmodule}/tasks/fetchmyalltaskee`,tempData,isloading);
+            return res;
+        }
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        let res:any = Http.getInstance().get(`/tasks/fetchmyalltaskee`,tempData,isloading);
         return res;
     }
 
@@ -17554,6 +19421,56 @@ export class TaskServiceBase extends EntityService {
     }
 
     /**
+     * FetchProjectTaskEE接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TaskServiceBase
+     */
+    public async FetchProjectTaskEE(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && context.projectmodule && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/projects/${context.project}/projectmodules/${context.projectmodule}/tasks/fetchprojecttaskee`,tempData,isloading);
+            return res;
+        }
+        if(context.product && context.story && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/products/${context.product}/stories/${context.story}/tasks/fetchprojecttaskee`,tempData,isloading);
+            return res;
+        }
+        if(context.product && context.productplan && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/products/${context.product}/productplans/${context.productplan}/tasks/fetchprojecttaskee`,tempData,isloading);
+            return res;
+        }
+        if(context.project && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/projects/${context.project}/tasks/fetchprojecttaskee`,tempData,isloading);
+            return res;
+        }
+        if(context.story && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/stories/${context.story}/tasks/fetchprojecttaskee`,tempData,isloading);
+            return res;
+        }
+        if(context.productplan && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/productplans/${context.productplan}/tasks/fetchprojecttaskee`,tempData,isloading);
+            return res;
+        }
+        if(context.projectmodule && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            let res:any = Http.getInstance().get(`/projectmodules/${context.projectmodule}/tasks/fetchprojecttaskee`,tempData,isloading);
+            return res;
+        }
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        let res:any = Http.getInstance().get(`/tasks/fetchprojecttaskee`,tempData,isloading);
+        return res;
+    }
+
+    /**
      * FetchRootTask接口方法
      *
      * @param {*} [context={}]
@@ -18093,6 +20010,18 @@ export class TaskServiceBase extends EntityService {
     }
 
     /**
+     * FetchTempAssignedToMyTaskEE接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TaskServiceBase
+     */
+    public async FetchTempAssignedToMyTaskEE(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    }
+
+    /**
      * FetchTempAssignedToMyTaskPc接口方法
      *
      * @param {*} [context={}]
@@ -18126,6 +20055,42 @@ export class TaskServiceBase extends EntityService {
      * @memberof TaskServiceBase
      */
     public async FetchTempByModule(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    }
+
+    /**
+     * FetchTempByModuleEE接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TaskServiceBase
+     */
+    public async FetchTempByModuleEE(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    }
+
+    /**
+     * FetchTempChildDefault接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TaskServiceBase
+     */
+    public async FetchTempChildDefault(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    }
+
+    /**
+     * FetchTempChildDefaultMore接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TaskServiceBase
+     */
+    public async FetchTempChildDefaultMore(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
     }
 
     /**
@@ -18222,6 +20187,18 @@ export class TaskServiceBase extends EntityService {
      * @memberof TaskServiceBase
      */
     public async FetchTempMyAllTask(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    }
+
+    /**
+     * FetchTempMyAllTaskEE接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TaskServiceBase
+     */
+    public async FetchTempMyAllTaskEE(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
     }
 
     /**
@@ -18402,6 +20379,18 @@ export class TaskServiceBase extends EntityService {
      * @memberof TaskServiceBase
      */
     public async FetchTempProjectTask(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+    }
+
+    /**
+     * FetchTempProjectTaskEE接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TaskServiceBase
+     */
+    public async FetchTempProjectTaskEE(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
     }
 
     /**

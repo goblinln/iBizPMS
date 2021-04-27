@@ -91,6 +91,7 @@ hide members
 | --------   |------------|
 |权限(ACL)|EQ|
 |创建人姓名(CREATEMANNAME)|EQ|
+|产品计划模板标识(IBZ_PLANTEMPLETID)|EQ|
 |模板名称(IBZ_PLANTEMPLETNAME)|LIKE|
 
 ## 导入模式

@@ -27,6 +27,13 @@ import cn.ibizlab.pms.core.zentao.domain.Entry;
 @Data
 public class EntrySearchContext extends QueryWrapperContext<Entry> {
 
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 	private String n_freepasswd_eq;//[freePasswd]
 	public void setN_freepasswd_eq(String n_freepasswd_eq) {
         this.n_freepasswd_eq = n_freepasswd_eq;

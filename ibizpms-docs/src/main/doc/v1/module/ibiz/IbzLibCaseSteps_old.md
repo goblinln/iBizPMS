@@ -85,6 +85,7 @@ hide members
 | 属性      |    搜索模式     |
 | --------   |------------|
 |预期(EXPECT)|LIKE|
+|编号(ID)|EQ|
 |类型(TYPE)|EQ|
 |版本(VERSION)|EQ|
 |编号(PARENT)|EQ|

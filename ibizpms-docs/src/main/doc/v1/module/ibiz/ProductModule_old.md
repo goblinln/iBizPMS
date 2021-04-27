@@ -141,6 +141,7 @@ hide footbox
 |branch(BRANCH)|EQ|
 |branch(BRANCH)|NOTEQ|
 |类型（story）(TYPE)|EQ|
+|id(ID)|EQ|
 |所属产品(ROOTNAME)|EQ|
 |所属产品(ROOTNAME)|LIKE|
 |上级模块(PARENTNAME)|EQ|

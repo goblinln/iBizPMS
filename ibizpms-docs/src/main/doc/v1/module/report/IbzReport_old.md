@@ -163,6 +163,7 @@ hide footbox
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|汇报标识(IBZ_DAILYID)|EQ|
 |用户(ACCOUNT)|EQ|
 |类型(TYPE)|EQ|
 |汇报名称(IBZ_DAILYNAME)|LIKE|

@@ -34,6 +34,13 @@ public class TestTaskSearchContext extends QueryWrapperContext<TestTask> {
             this.getSearchCond().eq("`pri`", n_pri_eq);
         }
     }
+	private Long n_id_eq;//[编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 	private String n_status_eq;//[当前状态]
 	public void setN_status_eq(String n_status_eq) {
         this.n_status_eq = n_status_eq;

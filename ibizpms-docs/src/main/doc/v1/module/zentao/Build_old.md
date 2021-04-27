@@ -142,6 +142,7 @@ hide footbox
 |后台体系(BACKGROUNDID)|EQ|
 |运行模式(RELEASETYPE)|EQ|
 |重新构建(REBUILD)|EQ|
+|id(ID)|EQ|
 |运行数据库(SQLID)|EQ|
 |系统应用(FRONTAPPLICATION)|EQ|
 |打包日期(DATE)|LTANDEQ|

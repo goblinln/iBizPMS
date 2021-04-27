@@ -34,6 +34,13 @@ public class ProductPlanSearchContext extends QueryWrapperContext<ProductPlan> {
             this.getSearchCond().like("`title`", n_title_like);
         }
     }
+	private Long n_id_eq;//[编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
     @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
     @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_begin_gtandeq;//[开始日期]
@@ -41,6 +48,13 @@ public class ProductPlanSearchContext extends QueryWrapperContext<ProductPlan> {
         this.n_begin_gtandeq = n_begin_gtandeq;
         if(!ObjectUtils.isEmpty(this.n_begin_gtandeq)){
             this.getSearchCond().ge("`begin`", n_begin_gtandeq);
+        }
+    }
+	private String n_statuss_eq;//[状态]
+	public void setN_statuss_eq(String n_statuss_eq) {
+        this.n_statuss_eq = n_statuss_eq;
+        if(!ObjectUtils.isEmpty(this.n_statuss_eq)){
+            this.getSearchCond().eq("`statuss`", n_statuss_eq);
         }
     }
     @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")

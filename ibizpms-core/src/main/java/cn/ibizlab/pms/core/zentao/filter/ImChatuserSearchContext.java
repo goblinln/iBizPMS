@@ -27,6 +27,13 @@ import cn.ibizlab.pms.core.zentao.domain.ImChatuser;
 @Data
 public class ImChatuserSearchContext extends QueryWrapperContext<ImChatuser> {
 
+	private Long n_id_eq;//[id]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 	private String n_freeze_eq;//[freeze]
 	public void setN_freeze_eq(String n_freeze_eq) {
         this.n_freeze_eq = n_freeze_eq;

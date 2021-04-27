@@ -80,6 +80,7 @@ hide members
 | --------   |------------|
 |系统更新功能名称(SYS_UPDATE_FEATURESNAME)|LIKE|
 |更新类型(TYPE)|EQ|
+|系统更新功能标识(SYS_UPDATE_FEATURESID)|EQ|
 |所属更新(SYS_UPDATE_LOGNAME)|EQ|
 |所属更新(SYS_UPDATE_LOGNAME)|LIKE|
 |系统更新日志标识(SYS_UPDATE_LOGID)|EQ|

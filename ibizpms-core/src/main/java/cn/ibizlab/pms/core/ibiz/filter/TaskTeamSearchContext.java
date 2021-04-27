@@ -41,6 +41,13 @@ public class TaskTeamSearchContext extends QueryWrapperContext<TaskTeam> {
             this.getSearchCond().eq("`limited`", n_limited_eq);
         }
     }
+	private Long n_id_eq;//[编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 	private String n_type_eq;//[团队类型]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;

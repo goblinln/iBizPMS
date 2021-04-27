@@ -105,6 +105,7 @@
 | --------   |------------|
 |结束(END)|LTANDEQ|
 |属性(BEGIN)|GTANDEQ|
+|编号(ID)|EQ|
 |部门(DEPT)|EQ|
 |名称(NAME)|LIKE|
 |项目(PROJECT)|EQ|

@@ -27,6 +27,13 @@ import cn.ibizlab.pms.core.ibizpro.domain.ProjectTodo;
 @Data
 public class ProjectTodoSearchContext extends QueryWrapperContext<ProjectTodo> {
 
+	private Long n_id_eq;//[编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 	private String n_status_eq;//[状态]
 	public void setN_status_eq(String n_status_eq) {
         this.n_status_eq = n_status_eq;

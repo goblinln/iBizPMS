@@ -29,6 +29,8 @@ public class IBIZProPluginSearchContext extends SearchContextBase {
 
 	private String n_ibizpro_pluginname_like;//[系统插件名称]
 
+	private String n_ibizpro_pluginid_eq;//[系统插件标识]
+
 }
 
 

@@ -131,6 +131,7 @@ hide members
 | --------   |------------|
 |删除模式(REMOVEFLAG)|EQ|
 |后台服务架构名称(PSSYSSFPUBNAME)|LIKE|
+|后台服务架构标识(PSSYSSFPUBID)|EQ|
 |发布内容类型(CONTENTTYPE)|EQ|
 |用户分类(USERCAT)|EQ|
 |父后台服务体系(PPSSYSSFPUBNAME)|EQ|

@@ -81,6 +81,7 @@ hide members
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|单位标识(ORGID)|EQ|
 |名称(ORGNAME)|LIKE|
 |上级单位(PORGID)|EQ|
 |上级单位(PORGNAME)|EQ|

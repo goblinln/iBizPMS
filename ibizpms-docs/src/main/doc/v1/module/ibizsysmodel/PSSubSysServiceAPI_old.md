@@ -82,6 +82,7 @@ hide members
 | 属性      |    搜索模式     |
 | --------   |------------|
 |外部服务接口名称(PSSUBSYSSERVICEAPINAME)|LIKE|
+|外部服务接口标识(PSSUBSYSSERVICEAPIID)|EQ|
 |系统服务接口(PSSYSSERVICEAPINAME)|EQ|
 |系统服务接口(PSSYSSERVICEAPINAME)|LIKE|
 |系统模块(PSMODULENAME)|EQ|

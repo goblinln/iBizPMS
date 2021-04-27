@@ -69,6 +69,7 @@ hide members
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|id(ID)|EQ|
 |parent(PARENT)|EQ|
 
 ## 导入模式

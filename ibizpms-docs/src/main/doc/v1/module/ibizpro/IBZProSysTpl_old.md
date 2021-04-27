@@ -76,6 +76,7 @@ hide members
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|系统模板标识(IBZPRO_SYSTPLID)|EQ|
 |是否公开(PUBLIC)|EQ|
 |系统模板名称(IBZPRO_SYSTPLNAME)|LIKE|
 |IBIZ模板类型(TPLTYPE)|EQ|

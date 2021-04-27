@@ -114,6 +114,12 @@ export class MobModel {
       {
         name: 'product',
       },
+      {
+        name: 'begintime',
+      },
+      {
+        name: 'ordernum',
+      },
     ]
   }
 

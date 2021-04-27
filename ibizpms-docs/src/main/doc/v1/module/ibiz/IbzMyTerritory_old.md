@@ -238,6 +238,7 @@ hide footbox
 |clientStatus(CLIENTSTATUS)|EQ|
 |账户(ACCOUNT)|EQ|
 |男女(GENDER)|EQ|
+|ID(ID)|EQ|
 
 ## 导入模式
 无

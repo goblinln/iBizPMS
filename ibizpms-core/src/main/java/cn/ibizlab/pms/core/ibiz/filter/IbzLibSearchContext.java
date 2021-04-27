@@ -27,6 +27,13 @@ import cn.ibizlab.pms.core.ibiz.domain.IbzLib;
 @Data
 public class IbzLibSearchContext extends QueryWrapperContext<IbzLib> {
 
+	private Long n_id_eq;//[编号]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 	private String n_addedby_eq;//[由谁创建]
 	public void setN_addedby_eq(String n_addedby_eq) {
         this.n_addedby_eq = n_addedby_eq;

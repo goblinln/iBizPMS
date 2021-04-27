@@ -75,6 +75,7 @@ hide members
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|用户角色关系标识(SYS_USER_ROLEID)|EQ|
 |角色标识(SYS_ROLEID)|EQ|
 |角色名称(SYS_ROLENAME)|EQ|
 |角色名称(SYS_ROLENAME)|IN|

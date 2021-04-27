@@ -34,6 +34,13 @@ public class IbizproProjectWeeklySearchContext extends QueryWrapperContext<Ibizp
             this.getSearchCond().like("`ibzpro_projectweeklyname`", n_ibzpro_projectweeklyname_like);
         }
     }
+	private String n_ibzpro_projectweeklyid_eq;//[项目周报标识]
+	public void setN_ibzpro_projectweeklyid_eq(String n_ibzpro_projectweeklyid_eq) {
+        this.n_ibzpro_projectweeklyid_eq = n_ibzpro_projectweeklyid_eq;
+        if(!ObjectUtils.isEmpty(this.n_ibzpro_projectweeklyid_eq)){
+            this.getSearchCond().eq("`ibzpro_projectweeklyid`", n_ibzpro_projectweeklyid_eq);
+        }
+    }
 	private String n_pm_eq;//[项目负责人]
 	public void setN_pm_eq(String n_pm_eq) {
         this.n_pm_eq = n_pm_eq;

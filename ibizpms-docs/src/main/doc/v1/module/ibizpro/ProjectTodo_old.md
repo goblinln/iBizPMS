@@ -116,6 +116,7 @@ hide members
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|编号(ID)|EQ|
 |状态(STATUS)|EQ|
 |待办名称(NAME)|LIKE|
 |项目编号(IDVALUE)|EQ|

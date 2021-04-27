@@ -27,6 +27,13 @@ import cn.ibizlab.pms.core.ibiz.domain.DynaDashboard;
 @Data
 public class DynaDashboardSearchContext extends QueryWrapperContext<DynaDashboard> {
 
+	private String n_dynadashboardid_eq;//[动态数据看板标识]
+	public void setN_dynadashboardid_eq(String n_dynadashboardid_eq) {
+        this.n_dynadashboardid_eq = n_dynadashboardid_eq;
+        if(!ObjectUtils.isEmpty(this.n_dynadashboardid_eq)){
+            this.getSearchCond().eq("`dynadashboardid`", n_dynadashboardid_eq);
+        }
+    }
 	private String n_dynadashboardname_like;//[动态数据看板名称]
 	public void setN_dynadashboardname_like(String n_dynadashboardname_like) {
         this.n_dynadashboardname_like = n_dynadashboardname_like;

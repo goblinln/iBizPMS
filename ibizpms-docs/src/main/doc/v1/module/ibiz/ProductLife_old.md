@@ -87,6 +87,7 @@
 | --------   |------------|
 |产品生命周期名称(IBZ_PRODUCTLIFENAME)|LIKE|
 |年(YEAR)|EQ|
+|产品生命周期标识(IBZ_PRODUCTLIFEID)|EQ|
 
 ## 导入模式
 无

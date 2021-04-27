@@ -91,6 +91,7 @@ hide footbox
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|系统更新日志标识(SYS_UPDATE_LOGID)|EQ|
 |更新平台(UPDATEBRANCH)|EQ|
 |更新名称(SYS_UPDATE_LOGNAME)|LIKE|
 |最新更新(LATESTUPDATE)|EQ|

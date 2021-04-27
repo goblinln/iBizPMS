@@ -77,6 +77,7 @@
 |name(NAME)|LIKE|
 |todo(TODO)|EQ|
 |type(TYPE)|EQ|
+|id(ID)|EQ|
 
 ## 导入模式
 无

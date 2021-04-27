@@ -84,6 +84,7 @@ hide members
 ## 查询模式
 | 属性      |    搜索模式     |
 | --------   |------------|
+|产品月报标识(IBIZPRO_PRODUCTMONTHLYID)|EQ|
 |产品月报名称(IBIZPRO_PRODUCTMONTHLYNAME)|LIKE|
 |产品负责人(PO)|EQ|
 |产品名称(PRODUCTNAME)|EQ|

@@ -66,6 +66,7 @@
 | 属性      |    搜索模式     |
 | --------   |------------|
 |模板标题(TITLE)|LIKE|
+|id(ID)|EQ|
 |type(TYPE)|EQ|
 |公开(PUBLIC)|EQ|
 

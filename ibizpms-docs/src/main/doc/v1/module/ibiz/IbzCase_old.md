@@ -121,6 +121,7 @@ hide members
 | 属性      |    搜索模式     |
 | --------   |------------|
 |最后修改者(LASTEDITEDBY)|EQ|
+|用例编号(ID)|EQ|
 |用例类型(TYPE)|EQ|
 |用例标题(TITLE)|LIKE|
 |优先级(PRI)|EQ|

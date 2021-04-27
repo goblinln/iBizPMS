@@ -259,13 +259,14 @@ POST
 #### SysUpdateLogSearchContext
 | 序号 | 属性名 | 属性类型 | 是否可以为空 | 说明 |
 | ---- | ---- | ---- | ---- | ---- |
-| 1 | n_updatebranch_eq | String | 允许 | 条件字段：updatebranch<br>条件组合方式：`=` |
-| 2 | n_sys_update_logname_like | String | 允许 | 条件字段：sys_update_logname<br>条件组合方式：`%like%` |
-| 3 | n_latestupdate_eq | Integer | 允许 | 条件字段：latestupdate<br>条件组合方式：`=` |
-| 4 | customcond | String | 允许 | 自定义查询条件 |
-| 5 | customparams | String | 允许 | 自定义查询参数 |
-| 6 | query | String | 允许 | 快速搜索 |
-| 7 | filter | QueryFilter | 允许 | 条件表达式<br>参照`cn.ibizlab.pms.util.filter.QueryFilter` |
-| 8 | page | int | 允许 | 当前页数<br>默认值0 |
-| 9 | size | int | 允许 | 每页显示条数<br>默认值20 |
-| 10 | sort | String | 允许 | 排序 |
+| 1 | n_sys_update_logid_eq | String | 允许 | 条件字段：sys_update_logid<br>条件组合方式：`=` |
+| 2 | n_updatebranch_eq | String | 允许 | 条件字段：updatebranch<br>条件组合方式：`=` |
+| 3 | n_sys_update_logname_like | String | 允许 | 条件字段：sys_update_logname<br>条件组合方式：`%like%` |
+| 4 | n_latestupdate_eq | Integer | 允许 | 条件字段：latestupdate<br>条件组合方式：`=` |
+| 5 | customcond | String | 允许 | 自定义查询条件 |
+| 6 | customparams | String | 允许 | 自定义查询参数 |
+| 7 | query | String | 允许 | 快速搜索 |
+| 8 | filter | QueryFilter | 允许 | 条件表达式<br>参照`cn.ibizlab.pms.util.filter.QueryFilter` |
+| 9 | page | int | 允许 | 当前页数<br>默认值0 |
+| 10 | size | int | 允许 | 每页显示条数<br>默认值20 |
+| 11 | sort | String | 允许 | 排序 |

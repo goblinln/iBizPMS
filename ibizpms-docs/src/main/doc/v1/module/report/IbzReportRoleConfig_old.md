@@ -68,6 +68,7 @@
 | 属性      |    搜索模式     |
 | --------   |------------|
 |汇报角色配置名称(IBZ_REPORT_ROLE_CONFIGNAME)|LIKE|
+|汇报角色配置标识(IBZ_REPORT_ROLE_CONFIGID)|EQ|
 |类型(TYPE)|EQ|
 
 ## 导入模式

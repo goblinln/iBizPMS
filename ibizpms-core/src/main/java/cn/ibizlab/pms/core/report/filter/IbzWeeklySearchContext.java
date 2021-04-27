@@ -41,6 +41,13 @@ public class IbzWeeklySearchContext extends QueryWrapperContext<IbzWeekly> {
             this.getSearchCond().like("`ibz_weeklyname`", n_ibz_weeklyname_like);
         }
     }
+	private Long n_ibz_weeklyid_eq;//[周报标识]
+	public void setN_ibz_weeklyid_eq(Long n_ibz_weeklyid_eq) {
+        this.n_ibz_weeklyid_eq = n_ibz_weeklyid_eq;
+        if(!ObjectUtils.isEmpty(this.n_ibz_weeklyid_eq)){
+            this.getSearchCond().eq("`ibz_weeklyid`", n_ibz_weeklyid_eq);
+        }
+    }
 	private String n_reportstatus_eq;//[状态]
 	public void setN_reportstatus_eq(String n_reportstatus_eq) {
         this.n_reportstatus_eq = n_reportstatus_eq;

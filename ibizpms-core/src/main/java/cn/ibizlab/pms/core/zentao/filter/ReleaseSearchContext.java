@@ -34,6 +34,13 @@ public class ReleaseSearchContext extends QueryWrapperContext<Release> {
             this.getSearchCond().eq("`marker`", n_marker_eq);
         }
     }
+	private Long n_id_eq;//[ID]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 	private Integer n_rebuild_eq;//[重新构建]
 	public void setN_rebuild_eq(Integer n_rebuild_eq) {
         this.n_rebuild_eq = n_rebuild_eq;

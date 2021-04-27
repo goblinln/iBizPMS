@@ -465,6 +465,7 @@ hide footbox
 |过期天数(OVERDUEBUGS)|LT|
 |指派给(ASSIGNEDTO)|EQ|
 |解决方案(RESOLUTION)|EQ|
+|是否收藏(ISFAVORITES)|EQ|
 |由谁关闭(CLOSEDBY)|EQ|
 |浏览器(BROWSER)|EQ|
 |是否确认(CONFIRMED)|EQ|

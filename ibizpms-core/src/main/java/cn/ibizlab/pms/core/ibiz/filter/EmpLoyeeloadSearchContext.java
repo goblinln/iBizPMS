@@ -41,6 +41,13 @@ public class EmpLoyeeloadSearchContext extends QueryWrapperContext<EmpLoyeeload>
             this.getSearchCond().eq("`dept`", n_dept_eq);
         }
     }
+	private Long n_id_eq;//[主键]
+	public void setN_id_eq(Long n_id_eq) {
+        this.n_id_eq = n_id_eq;
+        if(!ObjectUtils.isEmpty(this.n_id_eq)){
+            this.getSearchCond().eq("`id`", n_id_eq);
+        }
+    }
 	private Integer n_workday_eq;//[工作日天数]
 	public void setN_workday_eq(Integer n_workday_eq) {
         this.n_workday_eq = n_workday_eq;

@@ -134,6 +134,7 @@ hide footbox
 | 属性      |    搜索模式     |
 | --------   |------------|
 |branch(BRANCH)|EQ|
+|id(ID)|EQ|
 |名称(NAME)|LIKE|
 |上级模块(PARENTNAME)|EQ|
 |上级模块(PARENTNAME)|LIKE|
