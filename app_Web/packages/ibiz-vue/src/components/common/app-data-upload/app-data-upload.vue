@@ -336,17 +336,17 @@ export default class AppDataUploadView extends Vue {
             }).catch((error:any) =>{
                 this.isUploading = false;
                 this.promptInfo = (this.$t('components.appDataUploadView.importfailed') as string);
-                console.error(error);
+                this.$throw(error);
             })
             }).catch((error:any) =>{
                 this.isUploading = false;
                 this.promptInfo = (this.$t('components.appDataUploadView.importfailed') as string);
-                console.error(error);
+                this.$throw(error);
             })
         }catch(error){
             this.isUploading = false;
             this.promptInfo = (this.$t('components.appDataUploadView.importfailed') as string);
-            console.error(error);
+            this.$throw(error);
         };
     }
     /**

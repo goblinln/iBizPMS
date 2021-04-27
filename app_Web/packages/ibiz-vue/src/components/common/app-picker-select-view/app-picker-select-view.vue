@@ -261,7 +261,7 @@ export default class AppPickerSelectView extends Vue {
      */
     public handlePublicParams(arg: any): boolean {
         if (!this.data) {
-            this.$Notice.error({ title: (this.$t('components.appPickerSelectView.error') as any), desc: (this.$t('components.appPickerSelectView.formdataException') as any) });
+            this.$throw((this.$t('components.appPickerSelectView.formdataException') as any));
             return false;
         }
         // 合并表单参数
@@ -311,7 +311,7 @@ export default class AppPickerSelectView extends Vue {
         if(this.isSingleSelect){
             this.queryValue = newVal;
             if (!this.data || !this.valueitem || !this.data[this.valueitem]) {
-                this.$Notice.error({ title: (this.$t('components.appPickerSelectView.error') as any), desc: (this.$t('components.appPickerSelectView.editor') as any)+this.name+(this.$t('components.appPickerSelectView.valueitemException') as any) });
+                this.$throw((this.$t('components.appPickerSelectView.editor') as any)+this.name+(this.$t('components.appPickerSelectView.valueitemException') as any));
             }else{
                 let _viewparam = JSON.parse(this.viewparam);
                 _viewparam.selectedData = [{srfkey: this.data[this.valueitem], srfmajortext: this.value }];
@@ -322,7 +322,7 @@ export default class AppPickerSelectView extends Vue {
             this.selectItems = [];
             if (newVal) {
                 if (!this.data || !this.valueitem || !this.data[this.valueitem]) {
-                    this.$Notice.error({ title: (this.$t('components.appPickerSelectView.error') as any), desc: (this.$t('components.appPickerSelectView.editor') as any)+this.name+(this.$t('components.appPickerSelectView.valueitemException') as any) });
+                    this.$throw((this.$t('components.appPickerSelectView.editor') as any)+this.name+(this.$t('components.appPickerSelectView.valueitemException') as any));
                 }else{
                     let tempvalue: Array<any> = this.data[this.valueitem].split(',');
                     let temptext: Array<any> = newVal.split(',');
@@ -439,7 +439,7 @@ export default class AppPickerSelectView extends Vue {
      */
     public openLinkView($event: any): void {
         if (!this.data || !this.valueitem || !this.data[this.valueitem]) {
-            console.error({ title: (this.$t('components.appPickerSelectView.error') as any), desc: (this.$t('components.appPickerSelectView.editor') as any)+this.name+(this.$t('components.appPickerSelectView.valueitemException') as any) });
+            this.$throw((this.$t('components.appPickerSelectView.editor') as any)+this.name+(this.$t('components.appPickerSelectView.valueitemException') as any));
             return;
         }
         // 公共参数处理

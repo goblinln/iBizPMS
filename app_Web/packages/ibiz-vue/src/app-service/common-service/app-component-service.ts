@@ -86,6 +86,7 @@ export class AppComponentService {
         this.viewMap.set("DEWIZARDVIEW_DEFAULT", 'app-default-wizardview');
         this.viewMap.set("DEWFACTIONVIEW_DEFAULT", 'app-default-wfactionview');
         this.viewMap.set("DEREDIRECTVIEW_DEFAULT", 'app-default-deredirectview');
+        this.viewMap.set("APPWFSTEPTRACEVIEW_DEFAULT", 'app-default-wfsteptraceview');
         // STYLE2 样式
         this.viewMap.set("APPINDEXVIEW_STYLE2", 'app-style2-indexview');
         this.viewMap.set("DEEDITVIEW_STYLE2", 'app-style2-editview');
@@ -130,6 +131,7 @@ export class AppComponentService {
         this.viewMap.set("DEWIZARDVIEW_STYLE2", 'app-style2-wizardview');
         this.viewMap.set("DEWFACTIONVIEW_STYLE2", 'app-style2-wfactionview');
         this.viewMap.set("DEREDIRECTVIEW_STYLE2", 'app-style2-deredirectview');
+        this.viewMap.set("APPWFSTEPTRACEVIEW_STYLE2", 'app-style2-wfsteptraceview');
         // STYLE3 样式
         this.viewMap.set("APPINDEXVIEW_STYLE3", 'app-style2-indexview');
         // 注册视图插件

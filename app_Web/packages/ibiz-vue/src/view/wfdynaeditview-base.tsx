@@ -1,4 +1,4 @@
-import { IPSAppDEWFDynaEditView, IPSAppView, IPSDEForm } from '@ibiz/dynamic-model-api';
+import { IPSAppDEWFDynaEditView, IPSAppView, IPSDEDRTab, IPSDEDRTabPage, IPSDEForm } from '@ibiz/dynamic-model-api';
 import { WFDynaEditViewEngine, Util, ModelTool, GetModelService, AppModelService } from 'ibiz-core';
 import { AppCenterService } from '../app-service';
 import { MainViewBase } from './mainview-base';
@@ -33,9 +33,18 @@ export class WFDynaEditViewBase extends MainViewBase {
      *
      * @public
      * @type {IBizFormModel}
-     * @memberof EditViewBase
+     * @memberof WFDynaEditViewBase
      */
     public editFormInstance !: IPSDEForm;
+
+    /**
+     * 数据关系分页部件实例
+     *
+     * @public
+     * @type {IPSDEDRTab}
+     * @memberof WFDynaEditViewBase
+     */
+     public drtabInstance !: IPSDEDRTab;
 
     /**
      * 工具栏模型数据
@@ -50,6 +59,14 @@ export class WFDynaEditViewBase extends MainViewBase {
      * @memberof WFDynaEditViewBase                
      */
     public viewRefData: any = {};
+
+    /**
+     * 关系数据分页部件分页
+     * 
+     * @type {IPSDEDRTabPage[] | null}
+     * @memberof WFDynaEditViewBase
+     */
+     public deDRTabPages: IPSDEDRTabPage[] | null = [];
 
     /**
      * 工作流附加功能类型映射关系对象
@@ -111,6 +128,8 @@ export class WFDynaEditViewBase extends MainViewBase {
     public async viewModelInit() {
         await super.viewModelInit();
         this.viewRefData = await ModelTool.loadedAppViewRef(this.viewInstance);
+        this.drtabInstance = ModelTool.findPSControlByName('drtab', this.viewInstance.getPSControls()) as IPSDEDRTab;
+        this.deDRTabPages = this.drtabInstance.getPSDEDRTabPages();
     }
 
     /**
@@ -145,6 +164,43 @@ export class WFDynaEditViewBase extends MainViewBase {
      * @memberof WFDynaEditViewBase
      */
     public renderMainContent() {
+        if (this.deDRTabPages && this.deDRTabPages.length > 0) {
+            const tempContext = Util.deepCopy(this.context);
+            return (
+                <tabs animated={false} class="workflow-tabs-container">
+                    <tab-pane tab={this.editFormInstance.codeName.toLowerCase()} label={this.editFormInstance.logicName}>
+                        {this.renderFormContent()}
+                    </tab-pane>
+                    {this.deDRTabPages.map((deDRTabPage: IPSDEDRTabPage) => {
+                        return (
+                            <tab-pane tab={deDRTabPage.name.toLowerCase()} label={deDRTabPage.caption}>
+                                { this.$createElement('app-view-shell', {
+                                    props: {
+                                        staticProps: {
+                                            viewDefaultUsage: false,
+                                        },
+                                        dynamicProps: {
+                                            viewdata: JSON.stringify(Object.assign(tempContext, { viewpath: deDRTabPage?.M?.getPSAppView?.path })),
+                                            viewparam: JSON.stringify(this.viewparams),
+                                        },
+                                    }
+                                })}
+                            </tab-pane>
+                        )
+                    })}
+                </tabs>
+            )
+        } else {
+            { this.renderFormContent() }
+        }
+    }
+
+    /**
+     * 渲染流程表单内容区
+     * 
+     * @memberof WFDynaEditViewBase
+     */
+    public renderFormContent() {
         if (!this.editFormInstance) {
             return;
         }

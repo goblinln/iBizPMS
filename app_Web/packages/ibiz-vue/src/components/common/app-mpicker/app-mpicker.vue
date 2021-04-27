@@ -205,15 +205,15 @@ export default class AppMpicker extends Vue {
         let miss: string = (this.$t('components.appMpicker.miss') as any);
         let requestException: string = (this.$t('components.appMpicker.requestException') as any);
         if(!this.service){
-            this.$Notice.error({ title: error, desc: miss+'service' });
+            this.$throw(miss+'service');
         } else if(!this.acParams.serviceName) {
-            this.$Notice.error({ title: error, desc: miss+'serviceName' });
+            this.$throw(miss+'serviceName');
         } else if(!this.acParams.interfaceName) {
-            this.$Notice.error({ title: error, desc: miss+'interfaceName' });
+            this.$throw(miss+'interfaceName');
         } else {
           this.service.getItems(this.acParams.serviceName,this.acParams.interfaceName, _context, _param).then((response: any) => {
               if (!response) {
-                  this.$Notice.error({ title: error, desc: requestException });
+                  this.$throw(requestException);
               } else {
                   this.items = [...response];
               }
@@ -274,7 +274,7 @@ export default class AppMpicker extends Vue {
      */
     public handlePublicParams(arg: any): boolean {
         if (!this.data) {
-            this.$Notice.error({ title: (this.$t('components.AppMpicker.error') as any), desc: (this.$t('components.AppMpicker.formdataException') as any) });
+            this.$throw((this.$t('components.AppMpicker.formdataException') as any));
             return false;
         }
         // 合并表单参数

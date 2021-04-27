@@ -410,7 +410,7 @@ export default class AppImageUpload extends Vue {
      * @memberof AppImageUpload
      */
     public onError(error: any, file: any, fileList: any) {
-        this.$Notice.error({ title: (this.$t('components.appImageUpload.uploadFail') as string) });
+        this.$throw(error);
     }
 
     /**

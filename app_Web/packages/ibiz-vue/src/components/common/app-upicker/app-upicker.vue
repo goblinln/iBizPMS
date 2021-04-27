@@ -322,13 +322,7 @@ export default class AppUpicker extends Vue {
 				}
 			})
 			.catch((response: any) => {
-				if (!response || !response.status || !response.data) {
-					this.$Notice.error({
-						title: this.$t("app.commonWords.error") as string,
-						desc: this.$t("app.commonWords.sysException") as string,
-					});
-					return;
-				}
+				this.$throw(response);
 			});
 	}
 
@@ -358,7 +352,7 @@ export default class AppUpicker extends Vue {
      */
     public handlePublicParams(arg: any): boolean {
         if (!this.data) {
-            this.$Notice.error({ title: (this.$t('components.appPicker.error') as any), desc: (this.$t('components.appPicker.formdataException') as any) });
+            this.$throw((this.$t('components.appPicker.formdataException') as any));
             return false;
         }
         // 合并表单参数

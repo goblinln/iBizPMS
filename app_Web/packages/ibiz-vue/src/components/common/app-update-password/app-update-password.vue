@@ -71,10 +71,7 @@ export default class AppUpdatePassword extends Vue {
      */
     public oldPwdVaild(){
         if(!this.oldPwd){
-            this.$Notice.error({
-                title: (this.$t('components.appUpdatePassword.oldPwdErr') as string),
-                duration: 3
-            });
+            this.$throw((this.$t('components.appUpdatePassword.oldPwdErr') as string));
         }
     }
 
@@ -86,10 +83,7 @@ export default class AppUpdatePassword extends Vue {
      */
     public newPwdVaild(){
         if(!this.newPwd){
-            this.$Notice.error({
-                title: (this.$t('components.appUpdatePassword.newPwdErr') as string),
-                duration: 3
-            });
+            this.$throw((this.$t('components.appUpdatePassword.newPwdErr') as string));
         }
     }
 
@@ -102,10 +96,7 @@ export default class AppUpdatePassword extends Vue {
     public confirmVaild() {
         if (this.newPwd && this.confirmPwd) {
             if (this.confirmPwd !== this.newPwd) {
-                this.$Notice.error({
-                    title: (this.$t('components.appUpdatePassword.confirmPwdErr') as string),
-                    duration: 3
-                });
+                this.$throw((this.$t('components.appUpdatePassword.confirmPwdErr') as string));
             }else{
                 this.disUpdate=false;
             }
@@ -134,11 +125,8 @@ export default class AppUpdatePassword extends Vue {
                 this.$emit("close");
             }
         }).catch((error: any) =>{
-            this.$Notice.error({
-                title: (this.$t('app.codeNotExist.sysException') as string),
-                duration: 3
-            });
-            console.error(error);
+            this.$throw((this.$t('app.codeNotExist.sysException') as string));
+            this.$throw(error);
         })
     }
 }

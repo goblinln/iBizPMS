@@ -227,7 +227,7 @@ export default class AppOrgSelect extends Vue {
     }
     Http.getInstance().get(requestUrl).then((res:any) =>{
       if(!res.status && res.status !== 200){
-        console.error((this.$t('components.appOrgSelect.loadFail') as string));
+        this.$throw((this.$t('components.appOrgSelect.loadFail') as string));
         return;
       }
       this.NodesData = res.data;
