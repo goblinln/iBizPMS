@@ -170,13 +170,12 @@ export class AuthGuard {
      * @memberof AuthGuard
      */
     public async initAppService(router: any) {
-        const appContext: any = router.app.$store.getters.getAppData().context;
         AppServiceBase.getInstance().setAppEnvironment(Environment);
         AppServiceBase.getInstance().setAppStore(router.app.$store);
         AppServiceBase.getInstance().setI18n(i18n);
-        const service = new AppModelService()
+        const service = new AppModelService();
         await GlobalHelp.install(service, async (strPath: string, config: DynamicInstanceConfig) => {
-            let url: string = "";
+            let url: string = '';
             if (Environment.bDynamic) {
                 url = `${Environment.remoteDynaPath}${strPath}`;
                 if (config) {
@@ -185,8 +184,12 @@ export class AuthGuard {
             } else {
                 url = `./assets/model${strPath}`;
             }
-            let result: any = await Http.getInstance().get(url);
-            return result.data ? result.data : null;
+            try {
+                const result: any = await Http.getInstance().get(url);
+                return result.data ? result.data : null;
+            } catch (error) {
+                return null;
+            }
         });
         AppServiceBase.getInstance().setAppModelDataObject(service.app);
         AppCenterService.getInstance(router.app.$store);
