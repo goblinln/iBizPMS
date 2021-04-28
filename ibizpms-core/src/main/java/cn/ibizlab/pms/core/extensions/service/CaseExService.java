@@ -9,8 +9,10 @@ import cn.ibizlab.pms.core.zentao.service.impl.CaseServiceImpl;
 import cn.ibizlab.pms.util.dict.StaticDict;
 import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
+import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import liquibase.pro.packaged.O;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -417,6 +419,21 @@ public class CaseExService extends CaseServiceImpl {
     public Case unlinkSuiteCase(Case et) {
         iSuiteCaseService.remove(new QueryWrapper<SuiteCase>().eq("suite",et.get("suite")).eq("`case`",et.get(StaticDict.Action__object_type.CASE.getValue()))) ;
         return et;
+    }
+
+    @Override
+    public Case sysGet(Long key) {
+        Case aCase = super.sysGet(key);
+        String sql = "SELECT COUNT(1) AS ISFAVORITES FROM `t_ibz_favorites` t WHERE t.IBZ_FAVORITESID = #{et.id} AND t.TYPE = 'case' AND t.ACCOUNT = #{et.account}";
+        HashMap<String, Object> param = new HashMap<>();
+        param.put("id",aCase.getId());
+        param.put("account",AuthenticationUser.getAuthenticationUser().getLoginname());
+        List<JSONObject> result = this.select(sql, param);
+        if (result.size()>0){
+            aCase.setIsfavorites(result.get(0).getString("ISFAVORITES"));
+        }
+
+        return aCase;
     }
 }
 
