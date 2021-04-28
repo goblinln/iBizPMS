@@ -8,6 +8,7 @@ import cn.ibizlab.pms.core.zentao.service.impl.BugServiceImpl;
 import cn.ibizlab.pms.util.dict.StaticDict;
 import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
+import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -57,6 +58,21 @@ public class BugExService extends BugServiceImpl {
     @Override
     protected Class currentModelClass() {
         return com.baomidou.mybatisplus.core.toolkit.ReflectionKit.getSuperClassGenericType(this.getClass().getSuperclass(), 1);
+    }
+
+    @Override
+    public Bug sysGet(Long key) {
+        Bug bug = super.sysGet(key);
+        String sql = "SELECT COUNT(1) as ISFAVOURITES from t_ibz_favorites t where t.OBJECTID = #{et.id} and t.TYPE = 'bug' and t.ACCOUNT = #{et.account}";
+        Map<String,Object> param = new HashMap<>();
+        param.put("id",bug.getId());
+        param.put("account",AuthenticationUser.getAuthenticationUser().getLoginname());
+        List<JSONObject> list = this.select(sql, param);
+        if (list.size() > 0){
+            bug.setIsfavorites(list.get(0).getString("ISFAVOURITES"));
+        }
+        return bug;
+
     }
 
     @Override
