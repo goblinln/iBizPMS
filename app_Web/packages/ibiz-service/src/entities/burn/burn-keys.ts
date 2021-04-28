@@ -5,7 +5,6 @@ export default [
     'dept',
     'date',
     'org',
-    'id',
     'consumed',
     'left',
     'estimate',
@@ -13,4 +12,5 @@ export default [
     'task',
     'deptname',
     'orgname',
+    'id',
 ];

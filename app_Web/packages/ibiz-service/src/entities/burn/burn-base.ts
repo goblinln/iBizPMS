@@ -58,10 +58,6 @@ export abstract class BurnBase extends EntityBase implements IBurn {
      */
     org?: any;
     /**
-     * 虚拟主键
-     */
-    id?: any;
-    /**
      * 总计消耗
      */
     consumed?: any;
@@ -89,6 +85,10 @@ export abstract class BurnBase extends EntityBase implements IBurn {
      * 归属组织名
      */
     orgname?: any;
+    /**
+     * 主键
+     */
+    id?: any;
 
     /**
      * 重置实体数据

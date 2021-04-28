@@ -292,7 +292,7 @@
 
 
     <!--输出实体[ZT_BURN]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_burn-6-8">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_burn-9-8">
         <createTable tableName="zt_burn">
                 <column name="CREATEBY" remarks="" type="VARCHAR(100)">
                 </column>
@@ -317,6 +317,9 @@
                 <column name="DEPTNAME" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="ORGNAME" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="ID" remarks="" type="VARCHAR(60)">
+                    <constraints primaryKey="true" primaryKeyName="PK_ZT_BURN_ID"/>
                 </column>
         </createTable>
     </changeSet>
@@ -2442,7 +2445,7 @@
 
 
     <!--输出实体[ZT_PROJECTPRODUCT]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_projectproduct-5-90">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_projectproduct-8-90">
         <createTable tableName="zt_projectproduct">
                 <column name="CREATEBY" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2463,6 +2466,9 @@
                 <column name="DEPTNAME" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="ORGNAME" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="ID" remarks="" type="VARCHAR(60)">
+                    <constraints primaryKey="true" primaryKeyName="PK_ZT_PROJECTPRODUCT_ID"/>
                 </column>
         </createTable>
     </changeSet>
@@ -2778,7 +2784,7 @@
 
 
     <!--输出实体[ZT_SUITECASE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_suitecase-5-105">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_suitecase-10-105">
         <createTable tableName="zt_suitecase">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2799,6 +2805,9 @@
                 <column name="DEPTNAME" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="ORGNAME" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="ID" remarks="" type="VARCHAR(60)">
+                    <constraints primaryKey="true" primaryKeyName="PK_ZT_SUITECASE_ID"/>
                 </column>
         </createTable>
     </changeSet>

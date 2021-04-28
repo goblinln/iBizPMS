@@ -4875,21 +4875,6 @@
     "major_field":0
     },
     {
-    "fieldname":"ID" ,
-    "codename":"Id",
-    "field_logic_name":"虚拟主键",
-    "entity_name":"ZT_BURN",
-    "field_type":"TEXT",
-    "nullable":0,
-    "physical_field":0,
-    "data_type":"VARCHAR",
-    "data_length":200,
-    "expression":"concat(%1$s,'__',%2$s,'__',%3$s)",
-    "key_field":1,
-    "show_order":1000,
-    "major_field":0
-    },
-    {
     "fieldname":"CONSUMED" ,
     "codename":"Consumed",
     "field_logic_name":"总计消耗",
@@ -5005,6 +4990,20 @@
     "data_length":100,
     "predefined":"ORGNAME",
     "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"ID" ,
+    "codename":"Id",
+    "field_logic_name":"主键",
+    "entity_name":"ZT_BURN",
+    "field_type":"GUID",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":60,
+    "key_field":1,
     "show_order":1000,
     "major_field":0
     }
@@ -36084,21 +36083,6 @@
     "major_field":0
     },
     {
-    "fieldname":"ID" ,
-    "codename":"Id",
-    "field_logic_name":"虚拟主键",
-    "entity_name":"ZT_PROJECTPRODUCT",
-    "field_type":"TEXT",
-    "nullable":0,
-    "physical_field":0,
-    "data_type":"VARCHAR",
-    "data_length":200,
-    "expression":"concat(%1$s,'__',%2$s)",
-    "key_field":1,
-    "show_order":1000,
-    "major_field":0
-    },
-    {
     "fieldname":"PRODUCTNAME" ,
     "codename":"ProductName",
     "field_logic_name":"产品",
@@ -36251,6 +36235,20 @@
     "data_length":100,
     "predefined":"ORGNAME",
     "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"ID" ,
+    "codename":"Id",
+    "field_logic_name":"主键",
+    "entity_name":"ZT_PROJECTPRODUCT",
+    "field_type":"GUID",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":60,
+    "key_field":1,
     "show_order":1000,
     "major_field":0
     }
@@ -42549,21 +42547,6 @@
     "major_field":0
     },
     {
-    "fieldname":"ID" ,
-    "codename":"Id",
-    "field_logic_name":"虚拟主键",
-    "entity_name":"ZT_SUITECASE",
-    "field_type":"TEXT",
-    "nullable":0,
-    "physical_field":0,
-    "data_type":"VARCHAR",
-    "data_length":200,
-    "expression":"concat(%1$s,'__',%2$s)",
-    "key_field":1,
-    "show_order":1000,
-    "major_field":0
-    },
-    {
     "fieldname":"UPDATEBY" ,
     "codename":"UpdateBy",
     "field_logic_name":"由谁更新",
@@ -42694,6 +42677,20 @@
     "data_length":100,
     "predefined":"ORGNAME",
     "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"ID" ,
+    "codename":"Id",
+    "field_logic_name":"主键",
+    "entity_name":"ZT_SUITECASE",
+    "field_type":"GUID",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":60,
+    "key_field":1,
     "show_order":1000,
     "major_field":0
     }

@@ -35,10 +35,6 @@ public class BurnSearchContext extends QueryWrapperContext<Burn> {
 	public void setN_isweekend_in(String n_isweekend_in) {
         this.n_isweekend_in = n_isweekend_in;
     }
-	private String n_id_eq;//[虚拟主键]
-	public void setN_id_eq(String n_id_eq) {
-        this.n_id_eq = n_id_eq;
-    }
 	private Long n_project_eq;//[所属项目]
 	public void setN_project_eq(Long n_project_eq) {
         this.n_project_eq = n_project_eq;
@@ -46,6 +42,10 @@ public class BurnSearchContext extends QueryWrapperContext<Burn> {
 	private Long n_task_eq;//[任务]
 	public void setN_task_eq(Long n_task_eq) {
         this.n_task_eq = n_task_eq;
+    }
+	private String n_id_eq;//[主键]
+	public void setN_id_eq(String n_id_eq) {
+        this.n_id_eq = n_id_eq;
     }
 
     /**

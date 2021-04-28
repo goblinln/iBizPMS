@@ -7,7 +7,6 @@ function getLocaleResourceBase(){
 		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'org': commonLogic.appcommonhandle("归属组织",null),
 		'dept': commonLogic.appcommonhandle("归属部门",null),
-		'id': commonLogic.appcommonhandle("虚拟主键",null),
 		'productname': commonLogic.appcommonhandle("产品",null),
 		'projectname': commonLogic.appcommonhandle("项目",null),
 		'planname': commonLogic.appcommonhandle("计划名称",null),
@@ -17,6 +16,7 @@ function getLocaleResourceBase(){
 		'project': commonLogic.appcommonhandle("项目",null),
 		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 		'orgname': commonLogic.appcommonhandle("归属组织名",null),
+		'id': commonLogic.appcommonhandle("主键",null),
 	},
 		views: {
 			'planlistview9': {

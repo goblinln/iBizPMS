@@ -3,7 +3,6 @@ export default [
     'updateby',
     'org',
     'dept',
-    'id',
     'productname',
     'projectname',
     'planname',
@@ -13,4 +12,5 @@ export default [
     'project',
     'deptname',
     'orgname',
+    'id',
 ];
