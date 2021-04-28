@@ -20,6 +20,7 @@ import com.alibaba.fastjson.JSONObject;
 public interface ProductPlanMapper extends BaseMapper<ProductPlan> {
 
     List<ProductPlan> selectChildPlan(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
+    List<ProductPlan> selectCurProductPlan(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
     List<ProductPlan> selectDefault(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
     List<ProductPlan> selectDefaultParent(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);
     List<ProductPlan> selectGetList(@Param("srf") ProductPlanSearchContext context, @Param("ew") Wrapper<ProductPlan> wrapper);

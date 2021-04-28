@@ -87,6 +87,10 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         return this.condCache.get('childPlan');
     }
 
+    protected getCurProductPlanCond() {
+        return this.condCache.get('curProductPlan');
+    }
+
     protected getDefaultCond() {
         return this.condCache.get('default');
     }

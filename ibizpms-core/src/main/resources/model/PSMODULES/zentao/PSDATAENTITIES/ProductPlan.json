@@ -256,6 +256,24 @@
         "condType" : "CUSTOM",
         "customCond" : "t1.DELETED = '0'",
         "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`product` =#{srf.datacontext.product}",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "CurProductPlan",
+    "logicName" : "当前产品计划",
+    "name" : "CurProductPlan",
+    "customCode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
       } ]
     } ],
     "codeName" : "Default",

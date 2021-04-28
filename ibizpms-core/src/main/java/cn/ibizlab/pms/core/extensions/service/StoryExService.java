@@ -71,6 +71,20 @@ public class StoryExService extends StoryServiceImpl {
     IBuildService iBuildService;
 
     @Override
+    public Story sysGet(Long key) {
+        Story story = super.sysGet(key);
+        String sql = "SELECT COUNT(1) as ISFAVOURITES from t_ibz_favorites t where t.OBJECTID = #{et.id} and t.TYPE = 'story' and t.ACCOUNT = #{et.account}";
+        Map<String,Object> param = new HashMap<>();
+        param.put("id",story.getId());
+        param.put("account",AuthenticationUser.getAuthenticationUser().getLoginname());
+        List<JSONObject> list = this.select(sql, param);
+        if (list.size() > 0){
+            story.setIsfavorites(list.get(0).getString("ISFAVOURITES"));
+        }
+        return story;
+    }
+
+    @Override
     public boolean create(Story et) {
         et.setVersion(1);//版本号 默认1
         et.setReviewedby("");//由谁评审

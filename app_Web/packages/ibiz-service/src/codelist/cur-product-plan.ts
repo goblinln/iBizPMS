@@ -85,6 +85,7 @@ export default class CurProductPlan {
      * @memberof CurProductPlan
      */
     public queryParamNames:any ={
+        sort: 'order,asc'
     }
 
     /**
@@ -113,7 +114,7 @@ export default class CurProductPlan {
                 Object.assign(itemdata,{value:item.id});
                 Object.assign(itemdata,{text:item.title});
                 Object.assign(itemdata,{label:item.title});
-                
+                Object.assign(itemdata,{pvalue:item.parent});
                 
                 
                 _items.push(itemdata);
@@ -134,7 +135,7 @@ export default class CurProductPlan {
     public getItems(context: any={}, data: any={}, isloading?: boolean): Promise<any> {
         return new Promise((resolve, reject) => {
             data = this.handleQueryParam(data);
-            const promise: Promise<any> = this.productplanService.FetchDefault(context, data);
+            const promise: Promise<any> = this.productplanService.FetchCurProductPlan(context, data);
             promise.then((response: any) => {
                 if (response && response.status === 200) {
                     const data =  response.data;

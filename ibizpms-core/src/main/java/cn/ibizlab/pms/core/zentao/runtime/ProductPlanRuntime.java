@@ -162,6 +162,8 @@ public class ProductPlanRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
         ProductPlanSearchContext searchContext = (ProductPlanSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("ChildPlan"))
             return productplanService.selectChildPlan(searchContext);
+        if (iPSDataQuery.getName().equals("CurProductPlan"))
+            return productplanService.selectCurProductPlan(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
             return productplanService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("DefaultParent"))

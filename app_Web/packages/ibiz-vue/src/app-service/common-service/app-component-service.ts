@@ -192,22 +192,22 @@ export class AppComponentService {
         this.controlMap.set("WIZARDPANEL_DEFAULT", 'app-default-wizard-panel');
         this.controlMap.set("WIZARDPANEL_STATE", 'app-default-state-wizard-panel');
         // 注册部件插件标识
-        this.controlMap.set("LEFTNAVLIST", 'app-custom-leftnavlist');
-        this.controlMap.set("NEW", 'app-chart-render-new');
-        this.controlMap.set("TreeGrid", 'app-grid-render-tree-grid');
-        this.controlMap.set("listDownload", 'app-list-itemrender-list-download');
-        this.controlMap.set("StepTable", 'app-grid-render-step-table');
-        this.controlMap.set("piePlugin", 'app-chart-render-pie-plugin');
-        this.controlMap.set("TESTLEFTNAVLIST", 'app-custom-testleftnavlist');
-        this.controlMap.set("newDynamicTimeLine", 'app-custom-new-dynamic-time-line');
-        this.controlMap.set("tablechart", 'app-chart-render-tablechart');
-        this.controlMap.set("DirectoryTree", 'app-tree-render-directory-tree');
-        this.controlMap.set("ActionHistory", 'app-custom-action-history');
-        this.controlMap.set("PROJECTLEFTNavLIST", 'app-ac-item-projectleftnav-list');
-        this.controlMap.set("RoadMap", 'app-custom-road-map');
-        this.controlMap.set("FullTextSearch", 'app-list-render-full-text-search');
-        this.controlMap.set("PivotTable", 'app-grid-render-pivot-table');
-        this.controlMap.set("saveBatch", 'app-grid-render-save-batch');
+        this.controlMap.set("CUSTOM_LEFTNAVLIST", 'app-custom-leftnavlist');
+        this.controlMap.set("CHART_RENDER_NEW", 'app-chart-render-new');
+        this.controlMap.set("GRID_RENDER_TreeGrid", 'app-grid-render-tree-grid');
+        this.controlMap.set("LIST_ITEMRENDER_listDownload", 'app-list-itemrender-list-download');
+        this.controlMap.set("GRID_RENDER_StepTable", 'app-grid-render-step-table');
+        this.controlMap.set("CHART_RENDER_piePlugin", 'app-chart-render-pie-plugin');
+        this.controlMap.set("CUSTOM_TESTLEFTNAVLIST", 'app-custom-testleftnavlist');
+        this.controlMap.set("CUSTOM_newDynamicTimeLine", 'app-custom-new-dynamic-time-line');
+        this.controlMap.set("CHART_RENDER_tablechart", 'app-chart-render-tablechart');
+        this.controlMap.set("TREE_RENDER_DirectoryTree", 'app-tree-render-directory-tree');
+        this.controlMap.set("CUSTOM_ActionHistory", 'app-custom-action-history');
+        this.controlMap.set("AC_ITEM_PROJECTLEFTNavLIST", 'app-ac-item-projectleftnav-list');
+        this.controlMap.set("CUSTOM_RoadMap", 'app-custom-road-map');
+        this.controlMap.set("LIST_RENDER_FullTextSearch", 'app-list-render-full-text-search');
+        this.controlMap.set("GRID_RENDER_PivotTable", 'app-grid-render-pivot-table');
+        this.controlMap.set("GRID_RENDER_saveBatch", 'app-grid-render-save-batch');
         this.controlMap.set("PivotTable", 'app-pivot-table');
     }
 

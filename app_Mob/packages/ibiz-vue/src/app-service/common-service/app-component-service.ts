@@ -118,6 +118,7 @@ export class AppComponentService {
         this.controlMap.set("", 'app-list-render-list-render5dacc74a9f');
         this.controlMap.set("mobBugItemList", 'app-list-itemrender-mob-bug-item-list');
         this.controlMap.set("mobFileList3", 'app-list-render-mob-file-list3');
+        this.controlMap.set("mobItemList", 'app-list-itemrender-mob-item-list');
         this.controlMap.set("NEW", 'app-chart-render-new');
         this.controlMap.set("mobReportList2", 'app-list-render-mob-report-list2');
         this.controlMap.set("", 'app-list-render-list-renderc8da12e867');
@@ -127,7 +128,6 @@ export class AppComponentService {
         this.controlMap.set("mobAllDynamicList2", 'app-list-render-mob-all-dynamic-list2');
         this.controlMap.set("mobHistoryList2", 'app-list-render-mob-history-list2');
         this.controlMap.set("mobProjectTeamItemList", 'app-list-itemrender-mob-project-team-item-list');
-        this.controlMap.set("StartTaskOptForm", 'app-editform-render-start-task-opt-form');
         this.controlMap.set("mobTaskTeam", 'app-list-itemrender-mob-task-team');
         this.controlMap.set("mobTestList2", 'app-list-itemrender-mob-test-list2');
         this.controlMap.set("mobTaskItemList2", 'app-list-itemrender-mob-task-item-list2');

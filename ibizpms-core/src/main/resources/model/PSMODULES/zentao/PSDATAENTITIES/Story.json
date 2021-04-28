@@ -752,7 +752,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "EXISTS(SELECT * FROM zt_projectstory t51 \n WHERE \n t1.ID = t51.STORY  AND  ( t51.`PROJECT` = #{srf.sessioncontext.srfparentkey}) )",
+        "customCond" : "EXISTS(SELECT * FROM zt_projectstory t51 \n WHERE \n t1.ID = t51.STORY  AND  ( t51.`PROJECT` = #{srf.datacontext.srfparentkey}) )",
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
@@ -8934,6 +8934,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain.json",
     "name" : "需求维护",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -8968,6 +8969,7 @@
     "roleTag" : "Story_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Manage.json",
     "name" : "需求管理",
     "getPSDEUserRoleOPPrivs" : [ {

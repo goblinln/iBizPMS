@@ -81,6 +81,20 @@ public class TaskExService extends TaskServiceImpl {
     List<String> ignore = Arrays.asList("totalwh", "totalleft", "totalconsumed", "totalestimate");
 
     @Override
+    public Task sysGet(Long key) {
+        Task task = super.sysGet(key);
+        String sql = "SELECT COUNT(1) as ISFAVOURITES from t_ibz_favorites t where t.OBJECTID = #{et.id} and t.TYPE = 'task' and t.ACCOUNT = #{et.account}";
+        Map<String,Object> param = new HashMap<>();
+        param.put("id",task.getId());
+        param.put("account",AuthenticationUser.getAuthenticationUser().getLoginname());
+        List<JSONObject> list = this.select(sql, param);
+        if (list.size() > 0){
+            task.setIsfavorites(list.get(0).getString("ISFAVOURITES"));
+        }
+        return task;
+    }
+
+    @Override
     public boolean create(Task et) {
         jugEststartedAndDeadline(et);
         String multiple = et.getMultiple();//多人任务

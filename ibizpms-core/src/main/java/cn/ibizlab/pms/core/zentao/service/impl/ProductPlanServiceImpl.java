@@ -537,6 +537,9 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
     public List<ProductPlan> selectChildPlan(ProductPlanSearchContext context){
         return baseMapper.selectChildPlan(context, context.getSelectCond());
     }
+    public List<ProductPlan> selectCurProductPlan(ProductPlanSearchContext context){
+        return baseMapper.selectCurProductPlan(context, context.getSelectCond());
+    }
     public List<ProductPlan> selectDefault(ProductPlanSearchContext context){
         return baseMapper.selectDefault(context, context.getSelectCond());
     }

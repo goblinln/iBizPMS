@@ -27,7 +27,7 @@ ruleflow-group "projectgetcurusersettoprawsqlcall1"
     Map param =new HashMap();
     param.put("param0",projectgetcurusersettopdefault.get("id"));
     param.put("param1",curuser.getSessionParams().get("srfloginname"));
-    String strSql="select COUNT(1) as ISTOP from t_ibz_top t where t.OBJECTID = #{et.param0} and  t.type = 'product'  and t.ACCOUNT = #{et.param1}";
+    String strSql="select COUNT(1) as ISTOP from t_ibz_top t where t.OBJECTID = #{et.param0} and  t.type = 'project'  and t.ACCOUNT = #{et.param1}";
     java.util.List<JSONObject> entities=iBzSysProjectDefaultService.select(strSql,param);//SQL调用
     if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
         JSONObject entity=entities.get(0);
