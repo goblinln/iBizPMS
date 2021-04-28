@@ -999,7 +999,7 @@ export class MobFormControlBase extends MainControlBase {
                 details.push(item.name)
             })
             if (await this.validItem(formDetail.name, this.data)) {
-                this.updateFormItems(getPSAppDEMethod?.id as string, this.data, details, showBusyIndicator);
+                this.updateFormItems(getPSAppDEMethod?.codeName as string, this.data, details, showBusyIndicator);
             }
         }
     }

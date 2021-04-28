@@ -6,6 +6,7 @@
         "packages/*"
   ],
   "scripts": {
+    "link-model": "./node_modules/.bin/ibz link-model -m ibizpms-core/src/main/resources/model -f",
     "serve": "node --max_old_space_size=8102 ./node_modules/@vue/cli-service/bin/vue-cli-service serve --mode test",
     "dev-serve": "node --max_old_space_size=8102 ./node_modules/@vue/cli-service/bin/vue-cli-service serve --mode development",
     "build": "node --max_old_space_size=8102 ./node_modules/@vue/cli-service/bin/vue-cli-service build",
@@ -49,11 +50,12 @@
     "vue-amap": "^0.5.10",
     "vue-router": "^3.1.5",
     "vue-touch": "^2.0.0-beta.4",
-    "@ibiz/dynamic-model-api": "0.0.7",
-    "vue-cropper": "^0.5.6",
+    "@ibiz/dynamic-model-api": "0.0.8",
+  "vue-cropper": "^0.5.6",
     "vuex": "^3.1.2"
   },
   "devDependencies": {
+    "@ibiz/cli": "0.1.1",
     "@types/echarts": "^4.4.3",
     "@types/mockjs": "^1.0.2",
     "@types/qs": "^6.9.1",

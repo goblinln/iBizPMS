@@ -118,6 +118,7 @@ export class AppComponentService {
         this.controlMap.set("", 'app-list-render-list-render5dacc74a9f');
         this.controlMap.set("mobBugItemList", 'app-list-itemrender-mob-bug-item-list');
         this.controlMap.set("mobFileList3", 'app-list-render-mob-file-list3');
+        this.controlMap.set("mobItemList", 'app-list-itemrender-mob-item-list');
         this.controlMap.set("NEW", 'app-chart-render-new');
         this.controlMap.set("mobReportList2", 'app-list-render-mob-report-list2');
         this.controlMap.set("", 'app-list-render-list-renderc8da12e867');

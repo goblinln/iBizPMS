@@ -8,6 +8,7 @@ import { MOBHTMLOFPMS } from './editor/mobhtmltext/mobhtmlofpms';
 import { LIST_RENDER5dacc74a9f } from './plugin/list-render/list-render5dacc74a9f';
 import { MobBugItemList } from './plugin/list-itemrender/mob-bug-item-list';
 import { MobFileList3 } from './plugin/list-render/mob-file-list3';
+import { MobItemList } from './plugin/list-itemrender/mob-item-list';
 import { NEW } from './plugin/chart-render/new';
 import { MobReportList2 } from './plugin/list-render/mob-report-list2';
 import { LIST_RENDERc8da12e867 } from './plugin/list-render/list-renderc8da12e867';
@@ -33,6 +34,7 @@ export const PluginRegister = {
         v.component('app-list-render-list-render5dacc74a9f',LIST_RENDER5dacc74a9f);
         v.component('app-list-itemrender-mob-bug-item-list',MobBugItemList);
         v.component('app-list-render-mob-file-list3',MobFileList3);
+        v.component('app-list-itemrender-mob-item-list',MobItemList);
         v.component('app-chart-render-new',NEW);
         v.component('app-list-render-mob-report-list2',MobReportList2);
         v.component('app-list-render-list-renderc8da12e867',LIST_RENDERc8da12e867);
