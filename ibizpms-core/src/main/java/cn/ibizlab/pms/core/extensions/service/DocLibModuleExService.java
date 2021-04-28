@@ -1,6 +1,7 @@
 package cn.ibizlab.pms.core.extensions.service;
 
 import cn.ibizlab.pms.core.ibiz.service.impl.DocLibModuleServiceImpl;
+import cn.ibizlab.pms.util.security.AuthenticationUser;
 import lombok.extern.slf4j.Slf4j;
 import cn.ibizlab.pms.core.ibiz.domain.DocLibModule;
 import org.springframework.stereotype.Service;
@@ -27,18 +28,35 @@ public class DocLibModuleExService extends DocLibModuleServiceImpl {
      * @return
      */
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public DocLibModule collect(DocLibModule et) {
+        DocLibModule docLibModule = this.get(et.getId());
+        String collector = docLibModule.getCollector();
+        if ("".equals(collector) || "/".equals(collector)) {
+            collector += ",";
+        }
+        collector += AuthenticationUser.getAuthenticationUser().getUsername() + ",";
+        et.setCollector(collector);
+        this.updateById(et);
         return super.collect(et);
     }
+
     /**
      * [UnCollect:取消收藏] 行为扩展
      * @param et
      * @return
      */
     @Override
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     public DocLibModule unCollect(DocLibModule et) {
+        DocLibModule docLibModule = this.get(et.getId());
+        String collector = docLibModule.getCollector();
+        collector = collector.replaceFirst(AuthenticationUser.getAuthenticationUser().getUsername() + ",", "");
+        if (",".equals(collector)) {
+            collector = "";
+        }
+        et.setCollector(collector);
+        this.updateById(et);
         return super.unCollect(et);
     }
 }
