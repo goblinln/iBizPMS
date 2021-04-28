@@ -1498,6 +1498,9 @@
     "path" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateProductMonthlyService.json"
   }, {
     "modelref" : true,
+    "path" : "PSSYSBACKSERVICES/ProductSync.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/SumPorjectMonthly.json"
   }, {
     "modelref" : true,

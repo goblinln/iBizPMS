@@ -113,7 +113,6 @@
 
 <script lang="ts">
 import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
-import { Environment } from '@/environments/environment';
 
 @Component({})
 export default class AppFormGroup extends Vue {
@@ -237,7 +236,8 @@ export default class AppFormGroup extends Vue {
             'app-form-group',
             this.isShowCaption && this.collapseContant ? 'app-group-collapse-contant' : '',
             this.isInfoGroupMode ? 'app-info-group-mode' : '',
-            Object.is(this.layoutType, 'FLEX') ? 'app-group-flex': ''
+            Object.is(this.layoutType, 'FLEX') ? 'app-group-flex' : '',
+            this.isShowCaption ? 'show-caption' : '',
         ];
     }
 
