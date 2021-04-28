@@ -1,0 +1,76 @@
+.app-pms-upload-list {
+    min-height: 44px;
+    .app-pms-upload-list_item {
+        font-size: 12px;
+        display: flex;
+        align-items: center;
+        background-color: #fff;
+        border-bottom: solid 1px #efefef;
+        .index_icon {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            margin-left: 10px;
+            font-size: 30px;
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 4px;
+            }
+            .doc {
+                color: #54b5f0;
+            }
+            .txt {
+                color: #ccc;
+            }
+            .pdf {
+                color: #ec0013;
+            }
+            .zip {
+                color: #0078d7;
+            }
+            .rar {
+                color: #8c58a2;
+            }
+            .xls {
+                color: #107c41;
+            }
+            .ppt {
+                color: #c43e1c;
+            }
+            .mp4 {
+                color: #177ecd;
+            }
+        }
+        .file_info_content {
+            position: relative;
+            width: calc(100% - 50px);
+            padding: 10px 30px 10px 10px;
+        }
+        .file_size {
+            margin-right: 10px;
+        }
+        .file_footer {
+            display: flex;
+            color: #b4b4b4;
+        }
+        .file_name {
+            padding: 8px 0;
+        }
+        .file_delete_icon {
+            padding-right: 10px;
+            font-size: 1rem;
+        }
+    }
+    ion-icon {
+        color: @color-main-color;
+    }
+    .nofile {
+        height: 44px;
+        text-align: center;
+        background: #fcfcfc;
+        line-height: 44px;
+        font-size: 13px;
+    }
+}
