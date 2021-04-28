@@ -1,0 +1,411 @@
+{
+  "accUserMode" : 2,
+  "caption" : "月报",
+  "codeName" : "IbzMonthlyMonthlyMobMDView",
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzMonthlyMonthlyMobMDView.json",
+  "name" : "IbzMonthlyMonthlyMobMDView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "MobMDView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
+    }, {
+      "name" : "MDCTRL",
+      "paramType" : "CTRL"
+    }, {
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "eventArg" : "deuiaction1",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "righttoolbar_deuiaction1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "righttoolbar_deuiaction1"
+    },
+    "getPSViewCtrlName" : "righttoolbar"
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "getNewDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzMonthlyMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzMonthlyMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzMonthlyMainInfoMobTabExpView.json",
+          "viewType" : "DEMOBTABEXPVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzMonthlyMainInfoMobTabExpView.json",
+          "viewType" : "DEMOBTABEXPVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA"
+    }
+  } ],
+  "getPSAppViewNavParams" : [ {
+    "key" : "n_issubmit_eq",
+    "name" : "n_issubmit_eq",
+    "value" : "0",
+    "rawValue" : true
+  } ],
+  "getPSAppViewRefs" : [ {
+    "name" : "NEWDATA",
+    "realTitle" : "月报移动端编辑视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzMonthlyMobEditView.json",
+      "viewType" : "DEMOBEDITVIEW"
+    }
+  }, {
+    "name" : "EDITDATA",
+    "realTitle" : "月报分页导航视图",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzMonthlyMainInfoMobTabExpView.json",
+      "viewType" : "DEMOBTABEXPVIEW"
+    }
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "righttoolbar_deuiaction1",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+      },
+      "modelref" : true,
+      "id" : "MobCreate@IbzMonthly"
+    },
+    "uIActionTarget" : "NONE",
+    "xDataControlName" : "mdctrl"
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "MyMonthly",
+    "controlStyle" : "LISTVIEW",
+    "controlType" : "MOBMDCTRL",
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly/PSMOBMDCTRLS/MyMonthly.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "groupMode" : "NONE",
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "logicName" : "MyMonthly",
+    "minorSortDir" : "DESC",
+    "getMinorSortPSAppDEField" : {
+      "name" : "IBZ_MONTHLYID",
+      "codeName" : "IbzMonthlyId"
+    },
+    "mobListStyle" : "LISTVIEW",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchMyMonthlyMob"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "列表控件处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "MDCTRL"
+    },
+    "getPSDEListDataItems" : [ {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/ReportStatus.json"
+      },
+      "name" : "reportstatus"
+    }, {
+      "dataType" : 5,
+      "format" : "HH:mm:ss",
+      "name" : "submittime"
+    }, {
+      "dataType" : 5,
+      "format" : "YYYY-MM-DD",
+      "name" : "date"
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName_Gird.json"
+      },
+      "name" : "reportto"
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
+      },
+      "name" : "account"
+    }, {
+      "dataType" : 25,
+      "name" : "worktoday",
+      "getPSAppDEField" : {
+        "name" : "WORKTHISMONTH",
+        "codeName" : "Workthismonth"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "planstomorrow",
+      "getPSAppDEField" : {
+        "name" : "PLANSNEXTMONTH",
+        "codeName" : "Plansnextmonth"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "ibz_monthlyname"
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "IBZ_MONTHLYID",
+        "codeName" : "IbzMonthlyId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "IBZ_MONTHLYNAME",
+        "codeName" : "IbzMonthlyName"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmstag"
+    } ],
+    "getPSSysPFPlugin" : {
+      "pluginType" : "LIST_RENDER",
+      "pluginCode" : "PFPlugin20"
+    },
+    "pagingSize" : 5,
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "hasWFDataItems" : false,
+    "enableGroup" : false,
+    "enableRowEdit" : false,
+    "enableRowEditGroup" : false,
+    "enableRowEditOrder" : false,
+    "enableRowNew" : false,
+    "noSort" : false,
+    "showHeader" : true,
+    "name" : "mdctrl",
+    "modelid" : "40a1b295461dc1ec430bea93425f9de9"
+  }, {
+    "codeName" : "MonthlyMobMDViewrighttoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "移动端新建操作栏",
+    "name" : "righttoolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+    },
+    "getPSControlParam" : {
+      "id" : "RIGHTTOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "caption" : "新建",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "deuiaction1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "righttoolbar_deuiaction1"
+      },
+      "getPSSysImage" : {
+        "glyph" : "xf067@FontAwesome",
+        "cssClass" : "fa fa-plus"
+      },
+      "getPSUIAction" : {
+        "actionTarget" : "NONE",
+        "caption" : "新建",
+        "codeName" : "MobCreate",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzMonthlyCreateMobEditView.json",
+          "viewType" : "DEMOBEDITVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "IbzMonthly_MobCreate",
+        "name" : "新建（移动端）",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+        },
+        "getPSNavigateContexts" : [ {
+          "key" : "DATE",
+          "name" : "DATE",
+          "value" : "date",
+          "rawValue" : false
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "date",
+          "name" : "date",
+          "value" : "date",
+          "rawValue" : false
+        } ],
+        "getPSSysImage" : {
+          "cssClass" : "add"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "MobCreate",
+        "uIActionType" : "DEUIACTION",
+        "reloadData" : true,
+        "id" : "MobCreate@IbzMonthly"
+      },
+      "tooltip" : "新建",
+      "showCaption" : false,
+      "showIcon" : true
+    } ],
+    "toolbarStyle" : "MOBBOTTOMMENU",
+    "modelid" : "938cdd2c508f0ce4f7b2a2c85d5c9e86"
+  } ],
+  "getPSDEViewCodeName" : "MonthlyMobMDView",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEMOBMDVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMonthly.json"
+    },
+    "getPSControlParam" : { },
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "月报移动端多数据视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEMOBMDVIEW",
+  "xDataControlName" : "mdctrl",
+  "enableDP" : true,
+  "enableFilter" : false,
+  "enablePullDownRefresh" : true,
+  "enableQuickSearch" : true,
+  "showCaptionBar" : true
+}

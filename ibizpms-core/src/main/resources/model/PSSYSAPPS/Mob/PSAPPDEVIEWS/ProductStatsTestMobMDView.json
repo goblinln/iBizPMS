@@ -1,0 +1,346 @@
+{
+  "accUserMode" : 2,
+  "caption" : "产品",
+  "codeName" : "ProductStatsTestMobMDView",
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductStatsTestMobMDView.json",
+  "name" : "ProductStatsTestMobMDView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductStats.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "MobMDView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
+    }, {
+      "name" : "MDCTRL",
+      "paramType" : "CTRL"
+    }, {
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "eventArg" : "tbitem1",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "righttoolbar_tbitem1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "righttoolbar_tbitem1"
+    },
+    "getPSViewCtrlName" : "righttoolbar"
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "getOpenDataPSAppView" : {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductMobTabExpView.json",
+          "viewType" : "DEMOBTABEXPVIEW"
+        }
+      },
+      "getPSAppUILogicRefViews" : [ {
+        "getRefPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductMobTabExpView.json",
+          "viewType" : "DEMOBTABEXPVIEW"
+        }
+      } ],
+      "viewLogicType" : "APP_OPENDATA"
+    }
+  } ],
+  "getPSAppViewRefs" : [ {
+    "name" : "NEWDATA"
+  }, {
+    "name" : "EDITDATA",
+    "realTitle" : "测试",
+    "getRefPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductMobTabExpView.json",
+      "viewType" : "DEMOBTABEXPVIEW"
+    }
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "righttoolbar_tbitem1",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "New"
+    },
+    "xDataControlName" : "mdctrl"
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "Mob",
+    "controlStyle" : "LISTVIEW",
+    "controlType" : "MOBMDCTRL",
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductStats/PSMOBMDCTRLS/Mob.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "groupMode" : "NONE",
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "logicName" : "MOB",
+    "mobListStyle" : "LISTVIEW",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductStats.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductStats.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchDefault"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductStats.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductStats.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductStats.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductStats.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "列表控件处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "MDCTRL"
+    },
+    "getPSDEListDataItems" : [ {
+      "dataType" : 9,
+      "name" : "activebugcnt"
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Product__status.json"
+      },
+      "name" : "status"
+    }, {
+      "dataType" : 25,
+      "name" : "code"
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Product__type.json"
+      },
+      "name" : "type"
+    }, {
+      "dataType" : 9,
+      "name" : "unconfirmbugcnt"
+    }, {
+      "dataType" : 25,
+      "name" : "name"
+    }, {
+      "dataType" : 9,
+      "name" : "notclosedbugcnt"
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      }
+    } ],
+    "getPSSysPFPlugin" : {
+      "pluginType" : "LIST_RENDER",
+      "pluginCode" : "Auto19"
+    },
+    "pagingSize" : 1000,
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "hasWFDataItems" : false,
+    "enableGroup" : false,
+    "enableRowEdit" : false,
+    "enableRowEditGroup" : false,
+    "enableRowEditOrder" : false,
+    "enableRowNew" : false,
+    "noSort" : false,
+    "showHeader" : true,
+    "name" : "mdctrl",
+    "modelid" : "2f245d84bb730bea73003d63ce0251af"
+  }, {
+    "codeName" : "TestMobMDViewrighttoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "工具栏模板（移动端多数据视图）",
+    "name" : "righttoolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductStats.json"
+    },
+    "getPSControlParam" : {
+      "id" : "RIGHTTOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.*.NEW",
+        "id" : "工具栏按钮文本[*.NEW]"
+      },
+      "caption" : "新建",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "tbitem1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "righttoolbar_tbitem1"
+      },
+      "getPSSysImage" : {
+        "cssClass" : "add"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.*.NEW",
+          "id" : "工具栏按钮文本[*.NEW]"
+        },
+        "caption" : "新建",
+        "codeName" : "New",
+        "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
+        "fullCodeName" : "New",
+        "name" : "表格界面_新建操作",
+        "getPSSysImage" : {
+          "glyph" : "xf0f6@FontAwesome",
+          "cssClass" : "fa fa-file-text-o"
+        },
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.*.NEW",
+          "id" : "工具栏按钮提示[*.NEW]"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "New",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "新建",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.*.NEW",
+        "id" : "工具栏按钮提示[*.NEW]"
+      },
+      "showCaption" : false,
+      "showIcon" : true
+    } ],
+    "toolbarStyle" : "MOBNAVRIGHTMENU",
+    "modelid" : "a8cd736a3346c5814b7a8a25a334e495"
+  } ],
+  "getPSDEViewCodeName" : "TestMobMDView",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEMOBMDVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductStats.json"
+    },
+    "getPSControlParam" : { },
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "产品统计移动端多数据视图",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEMOBMDVIEW",
+  "xDataControlName" : "mdctrl",
+  "enableDP" : true,
+  "enableFilter" : false,
+  "enablePullDownRefresh" : false,
+  "enableQuickSearch" : true,
+  "showCaptionBar" : true
+}

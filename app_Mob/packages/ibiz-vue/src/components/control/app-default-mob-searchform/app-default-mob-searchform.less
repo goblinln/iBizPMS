@@ -1,0 +1,25 @@
+.form {
+    height: 100%;
+    > .app-form-tabs {
+        height: calc(100% - 10px);
+        overflow: hidden;
+        > .app-form-tab {
+            height: 100%;
+            overflow: auto;
+        }
+    }
+    ion-tab-bar {
+        border: 0;
+    }
+    .van-tabs__content.van-tabs__content--animated {
+        height: calc(100% - 30px);
+    }
+    .van-tabs--card > .van-tabs__wrap {
+        height: 30px;
+        margin-top: 10px;
+    }
+    .van-tab__pane, .van-tab__pane-wrapper {
+        height: 100%;
+        overflow-y: auto;
+    }
+}

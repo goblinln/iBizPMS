@@ -2,6 +2,9 @@
   "getAllPSApps" : [ {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSSYSAPP.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSSYSAPP.json"
   } ],
   "getAllPSCodeLists" : [ {
     "modelref" : true,

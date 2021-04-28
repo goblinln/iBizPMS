@@ -1,0 +1,1023 @@
+{
+  "accUserMode" : 2,
+  "caption" : "项目",
+  "codeName" : "ProjectNewMobEditView",
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProjectNewMobEditView.json",
+  "name" : "ProjectNewMobEditView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "MobEditView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "name" : "FORM",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "eventArg" : "tbitem1",
+    "eventNames" : "CLICK",
+    "logicTrigger" : "CTRLEVENT",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "righttoolbar_tbitem1_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "righttoolbar_tbitem1"
+    },
+    "getPSViewCtrlName" : "righttoolbar"
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "righttoolbar_tbitem1",
+    "getPSUIAction" : {
+      "modelref" : true,
+      "id" : "SaveAndExit"
+    },
+    "xDataControlName" : "form"
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "MobNewForm",
+    "controlType" : "FORM",
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project/PSFORMS/MobNewForm.json",
+    "getGetDraftFromPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraftfrom"
+    },
+    "getGetDraftPSControlAction" : {
+      "modelref" : true,
+      "id" : "loaddraft"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "hookEventNames" : [ "SAVE", "BEFORELOAD", "REMOVE", "BEFORESAVE", "LOAD" ],
+    "logicName" : "移动端新建模式",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+        }
+      }, {
+        "actionName" : "GETDRAFTFROM",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraftfrom",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+        }
+      }, {
+        "actionName" : "GetDraft",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "GetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+        }
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "编辑表单处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "FORM"
+    },
+    "getPSDEFormItemUpdates" : [ {
+      "codeName" : "UpdateProjectCycle",
+      "name" : "更新项目周期",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "UpdateProjectCycle"
+      },
+      "getPSDEFIUpdateDetails" : [ {
+        "name" : "end"
+      }, {
+        "name" : "days"
+      } ]
+    }, {
+      "codeName" : "UpdateCycle",
+      "name" : "更新可用工作日",
+      "getPSAppDEMethod" : {
+        "modelref" : true,
+        "id" : "UpdateCycle"
+      },
+      "getPSDEFIUpdateDetails" : [ {
+        "name" : "days"
+      } ]
+    } ],
+    "getPSDEFormItemVRs" : [ {
+      "checkMode" : 1,
+      "name" : "表单项值规则",
+      "getPSDEFValueRule" : {
+        "codeName" : "EndRule",
+        "name" : "『截止日期』不能为空",
+        "getPSDEFVRGroupCondition" : {
+          "condOp" : "AND",
+          "condType" : "GROUP",
+          "name" : "默认组",
+          "getPSDEFVRConditions" : [ {
+            "condOp" : "AND",
+            "condType" : "GROUP",
+            "name" : "[条件组]AND",
+            "getPSDEFVRConditions" : [ {
+              "condOp" : "GTANDEQ",
+              "condType" : "SIMPLE",
+              "dEFName" : "END",
+              "name" : "[常规条件] 大于等于(>=) 数据对象属性(BEGIN)",
+              "paramType" : "ENTITYFIELD",
+              "paramValue" : "BEGIN",
+              "ruleInfo" : "截止日期应该大于起始日期"
+            } ],
+            "ruleInfo" : "截止日期应该大于起始日期"
+          } ],
+          "ruleInfo" : "截止日期应该大于起始日期"
+        },
+        "getPSDEField" : {
+          "name" : "END",
+          "codeName" : "End"
+        },
+        "ruleInfo" : "『截止日期』不能为空。",
+        "checkDefault" : false,
+        "defaultMode" : false,
+        "enableBackend" : true,
+        "enableFront" : true
+      },
+      "getPSDEFormItemName" : "end",
+      "valueRuleType" : "DEFVALUERULE"
+    } ],
+    "getPSDEFormItems" : [ {
+      "id" : "srforikey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfkey",
+      "hidden" : true,
+      "dataType" : 1,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "id" : "srfmajortext",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      }
+    }, {
+      "id" : "srftempmode",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfuf",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfdeid",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "srfsourcekey",
+      "hidden" : true,
+      "dataType" : 25
+    }, {
+      "id" : "name",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      }
+    }, {
+      "id" : "code",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "CODE",
+        "codeName" : "Code"
+      }
+    }, {
+      "id" : "begin",
+      "dataType" : 5,
+      "createDVT" : "CURTIME",
+      "getPSAppDEField" : {
+        "name" : "BEGIN",
+        "codeName" : "Begin"
+      }
+    }, {
+      "id" : "period",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "PERIOD",
+        "codeName" : "Period"
+      }
+    }, {
+      "id" : "end",
+      "dataType" : 5,
+      "getPSAppDEField" : {
+        "name" : "END",
+        "codeName" : "End"
+      }
+    }, {
+      "id" : "days",
+      "dataType" : 9,
+      "getPSAppDEField" : {
+        "name" : "DAYS",
+        "codeName" : "Days"
+      }
+    }, {
+      "id" : "team",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "TEAM",
+        "codeName" : "Team"
+      }
+    }, {
+      "id" : "type",
+      "dataType" : 25,
+      "createDV" : "sprint",
+      "getPSAppDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      }
+    }, {
+      "id" : "products",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "PRODUCTS",
+        "codeName" : "Products"
+      }
+    }, {
+      "id" : "srfarray",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "SRFARRAY",
+        "codeName" : "SrfArray"
+      }
+    }, {
+      "id" : "branchs",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "BRANCHS",
+        "codeName" : "Branchs"
+      }
+    }, {
+      "id" : "plans",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "PLANS",
+        "codeName" : "Plans"
+      }
+    }, {
+      "id" : "formitemex1",
+      "dataType" : 25
+    }, {
+      "id" : "desc",
+      "dataType" : 21,
+      "getPSAppDEField" : {
+        "name" : "DESC",
+        "codeName" : "Desc"
+      }
+    }, {
+      "id" : "acl",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "ACL",
+        "codeName" : "Acl"
+      }
+    }, {
+      "id" : "id",
+      "hidden" : true,
+      "dataType" : 1,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    } ],
+    "getPSDEFormPages" : [ {
+      "caption" : "基本信息",
+      "codeName" : "formpage1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMPAGE",
+      "name" : "formpage1",
+      "getPSDEFormDetails" : [ {
+        "actionGroupExtractMode" : "ITEM",
+        "caption" : "project基本信息",
+        "codeName" : "group1",
+        "detailStyle" : "DEFAULT",
+        "detailType" : "GROUPPANEL",
+        "name" : "group1",
+        "getPSDEFormDetails" : [ {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "分组面板",
+          "codeName" : "grouppanel2",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "name" : "grouppanel2",
+          "getPSDEFormDetails" : [ {
+            "caption" : "项目名称",
+            "codeName" : "name",
+            "dataType" : 25,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 130,
+            "name" : "name",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "NAME",
+              "codeName" : "Name"
+            },
+            "getPSEditor" : {
+              "editorType" : "MOBTEXT",
+              "maxLength" : 90,
+              "name" : "name"
+            },
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "allowEmpty" : false,
+            "emptyCaption" : false,
+            "hidden" : false,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          }, {
+            "caption" : "项目代号",
+            "codeName" : "code",
+            "dataType" : 25,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 130,
+            "name" : "code",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "CODE",
+              "codeName" : "Code"
+            },
+            "getPSEditor" : {
+              "editorType" : "MOBTEXT",
+              "maxLength" : 45,
+              "name" : "code"
+            },
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "allowEmpty" : false,
+            "emptyCaption" : false,
+            "hidden" : false,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : false
+        }, {
+          "caption" : "开始时间",
+          "codeName" : "begin",
+          "createDVT" : "CURTIME",
+          "dataType" : 5,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "begin",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "BEGIN",
+            "codeName" : "Begin"
+          },
+          "getPSEditor" : {
+            "dateTimeFormat" : "YYYY-MM-DD HH:mm:ss",
+            "editorParams" : {
+              "TIMEFMT" : "YYYY-MM-DD HH:mm:ss"
+            },
+            "editorStyle" : "Auto6",
+            "editorType" : "MOBDATE",
+            "name" : "begin"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : false,
+          "emptyCaption" : false,
+          "hidden" : false,
+          "inputTipClosable" : false,
+          "showCaption" : true
+        }, {
+          "caption" : "时间段",
+          "codeName" : "period",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "period",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "PERIOD",
+            "codeName" : "Period"
+          },
+          "getPSDEFormItemUpdate" : {
+            "modelref" : true,
+            "id" : "UpdateProjectCycle"
+          },
+          "getPSEditor" : {
+            "editorType" : "MOBDROPDOWNLIST",
+            "name" : "period",
+            "getPSAppCodeList" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Zt__delta.json"
+            },
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "resetItemName" : "end",
+          "resetItemNames" : [ "end" ],
+          "allowEmpty" : true,
+          "emptyCaption" : false,
+          "hidden" : false,
+          "inputTipClosable" : false,
+          "needCodeListConfig" : true,
+          "showCaption" : true
+        }, {
+          "caption" : "结束日期",
+          "codeName" : "end",
+          "dataType" : 5,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "end",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "END",
+            "codeName" : "End"
+          },
+          "getPSDEFormItemUpdate" : {
+            "modelref" : true,
+            "id" : "UpdateCycle"
+          },
+          "getPSEditor" : {
+            "dateTimeFormat" : "YYYY-MM-DD HH:mm:ss",
+            "editorParams" : {
+              "TIMEFMT" : "YYYY-MM-DD HH:mm:ss"
+            },
+            "editorStyle" : "Auto6",
+            "editorType" : "MOBDATE",
+            "name" : "end"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "resetItemName" : "begin",
+          "resetItemNames" : [ "begin" ],
+          "allowEmpty" : false,
+          "emptyCaption" : false,
+          "hidden" : false,
+          "inputTipClosable" : false,
+          "showCaption" : true
+        }, {
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "分组面板",
+          "codeName" : "grouppanel1",
+          "detailStyle" : "DEFAULT",
+          "detailType" : "GROUPPANEL",
+          "name" : "grouppanel1",
+          "getPSDEFormDetails" : [ {
+            "caption" : "可用工作日",
+            "codeName" : "days",
+            "dataType" : 9,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 130,
+            "name" : "days",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "DAYS",
+              "codeName" : "Days"
+            },
+            "getPSEditor" : {
+              "editorType" : "MOBNUMBER",
+              "name" : "days"
+            },
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "resetItemName" : "begin",
+            "resetItemNames" : [ "begin" ],
+            "unitName" : "天",
+            "allowEmpty" : false,
+            "emptyCaption" : false,
+            "enableUnitName" : true,
+            "hidden" : false,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          }, {
+            "caption" : "团队名称",
+            "codeName" : "team",
+            "dataType" : 25,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 130,
+            "name" : "team",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "TEAM",
+              "codeName" : "Team"
+            },
+            "getPSEditor" : {
+              "editorType" : "MOBTEXT",
+              "maxLength" : 90,
+              "name" : "team"
+            },
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "allowEmpty" : true,
+            "emptyCaption" : false,
+            "hidden" : false,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          }, {
+            "caption" : "项目类型",
+            "codeName" : "type",
+            "createDV" : "sprint",
+            "dataType" : 25,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 130,
+            "name" : "type",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "TYPE",
+              "codeName" : "Type"
+            },
+            "getPSEditor" : {
+              "editorType" : "MOBDROPDOWNLIST",
+              "name" : "type",
+              "getPSAppCodeList" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Project__type.json"
+              },
+              "singleSelect" : true
+            },
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "allowEmpty" : true,
+            "emptyCaption" : false,
+            "hidden" : false,
+            "inputTipClosable" : false,
+            "needCodeListConfig" : true,
+            "showCaption" : true
+          }, {
+            "codeName" : "formitemex1",
+            "dataType" : 25,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 130,
+            "name" : "formitemex1",
+            "noPrivDisplayMode" : 1,
+            "getPSDEFormItems" : [ {
+              "caption" : "关联产品",
+              "codeName" : "products",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "products",
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "PRODUCTS",
+                "codeName" : "Products"
+              },
+              "getPSEditor" : {
+                "editorType" : "HIDDEN",
+                "name" : "products"
+              },
+              "userTag" : "unique",
+              "allowEmpty" : true,
+              "emptyCaption" : false,
+              "hidden" : true,
+              "inputTipClosable" : false,
+              "showCaption" : true
+            }, {
+              "caption" : "关联数据数组",
+              "codeName" : "srfarray",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "srfarray",
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "SRFARRAY",
+                "codeName" : "SrfArray"
+              },
+              "getPSEditor" : {
+                "editorType" : "HIDDEN",
+                "name" : "srfarray"
+              },
+              "allowEmpty" : true,
+              "emptyCaption" : false,
+              "hidden" : true,
+              "inputTipClosable" : false,
+              "showCaption" : true
+            }, {
+              "caption" : "关联产品平台集合",
+              "codeName" : "branchs",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "branchs",
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "BRANCHS",
+                "codeName" : "Branchs"
+              },
+              "getPSEditor" : {
+                "editorType" : "HIDDEN",
+                "name" : "branchs"
+              },
+              "userTag" : "hidden",
+              "valueItemName" : "products",
+              "allowEmpty" : true,
+              "emptyCaption" : false,
+              "hidden" : true,
+              "inputTipClosable" : false,
+              "showCaption" : true
+            }, {
+              "caption" : "关联计划",
+              "codeName" : "plans",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 130,
+              "name" : "plans",
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "PLANS",
+                "codeName" : "Plans"
+              },
+              "getPSEditor" : {
+                "editorType" : "HIDDEN",
+                "name" : "plans"
+              },
+              "resetItemName" : "products",
+              "resetItemNames" : [ "products" ],
+              "allowEmpty" : true,
+              "emptyCaption" : false,
+              "hidden" : true,
+              "inputTipClosable" : false,
+              "showCaption" : true
+            } ],
+            "getPSEditor" : {
+              "editorType" : "MOBTEXT",
+              "name" : "formitemex1"
+            },
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "getPSSysPFPlugin" : {
+              "pluginType" : "CUSTOM",
+              "pluginCode" : "PFPlugin28"
+            },
+            "allowEmpty" : true,
+            "compositeItem" : true,
+            "emptyCaption" : false,
+            "hidden" : false,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : false
+        }, {
+          "caption" : "项目描述",
+          "codeName" : "desc",
+          "dataType" : 21,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "desc",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "DESC",
+            "codeName" : "Desc"
+          },
+          "getPSEditor" : {
+            "editorParams" : {
+              "uploadparams" : "{objecttype:\"project\",version:\"editor\"}",
+              "exportparams" : "{objecttype:\"project\",version:\"editor\"}"
+            },
+            "editorStyle" : "MOBHTMLOFPMS",
+            "editorType" : "MOBHTMLTEXT",
+            "name" : "desc",
+            "getPSSysPFPlugin" : {
+              "pluginType" : "EDITOR_CUSTOMSTYLE",
+              "pluginCode" : "PMSRICHTEXT"
+            }
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "emptyCaption" : false,
+          "hidden" : false,
+          "inputTipClosable" : false,
+          "showCaption" : true
+        }, {
+          "caption" : "访问控制",
+          "codeName" : "acl",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 130,
+          "name" : "acl",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "ACL",
+            "codeName" : "Acl"
+          },
+          "getPSEditor" : {
+            "editorType" : "MOBDROPDOWNLIST",
+            "name" : "acl",
+            "getPSAppCodeList" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Project__acl.json"
+            },
+            "singleSelect" : true
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "emptyCaption" : false,
+          "hidden" : false,
+          "inputTipClosable" : false,
+          "needCodeListConfig" : true,
+          "showCaption" : true
+        } ],
+        "getPSLayout" : {
+          "columnCount" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 23,
+          "colMD" : 23,
+          "colSM" : 23,
+          "colXS" : 23,
+          "layout" : "TABLE_24COL"
+        },
+        "infoGroupMode" : false,
+        "showCaption" : false
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "tabHeaderPos" : "TOP",
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "enableAutoSave" : false,
+    "infoFormMode" : false,
+    "noTabHeader" : true,
+    "readOnly" : false,
+    "showFormNavBar" : false,
+    "name" : "form",
+    "modelid" : "faa6d8175a3de8e1549dc389b7af29ef"
+  }, {
+    "codeName" : "NewMobEditViewrighttoolbar",
+    "controlType" : "TOOLBAR",
+    "hookEventNames" : [ "CLICK" ],
+    "logicName" : "工具栏模板（移动端编辑视图）",
+    "name" : "righttoolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+    },
+    "getPSControlParam" : {
+      "id" : "RIGHTTOOLBAR"
+    },
+    "getPSDEToolbarItems" : [ {
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+        "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
+      },
+      "caption" : "保存",
+      "groupExtractMode" : "ITEM",
+      "itemType" : "DEUIACTION",
+      "name" : "tbitem1",
+      "noPrivDisplayMode" : 2,
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "righttoolbar_tbitem1"
+      },
+      "getPSSysImage" : {
+        "cssClass" : "checkmark-outline"
+      },
+      "getPSUIAction" : {
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+          "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
+        },
+        "caption" : "保存并关闭",
+        "codeName" : "SaveAndExit",
+        "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
+        "fullCodeName" : "SaveAndExit",
+        "name" : "编辑界面_保存并退出操作",
+        "getPSSysImage" : {
+          "cssClass" : "sx-tb-saveandclose"
+        },
+        "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+          "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
+        },
+        "uIActionMode" : "SYS",
+        "uIActionTag" : "SaveAndExit",
+        "uIActionType" : "DEUIACTION"
+      },
+      "tooltip" : "保存",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+        "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
+      },
+      "showCaption" : false,
+      "showIcon" : true
+    } ],
+    "toolbarStyle" : "MOBBOTTOMMENU",
+    "modelid" : "c798012a3dda52e17ac452776aa498f0"
+  } ],
+  "getPSDEViewCodeName" : "NewMobEditView",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEMOBEDITVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+    },
+    "getPSControlParam" : { },
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "项目移动端编辑视图（新建）",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEMOBEDITVIEW",
+  "xDataControlName" : "form",
+  "enableDP" : true,
+  "enablePullDownRefresh" : false,
+  "showCaptionBar" : true,
+  "showDataInfoBar" : true
+}

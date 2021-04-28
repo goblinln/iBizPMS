@@ -1,0 +1,17 @@
+export default [
+    'estimate',
+    'username',
+    'join',
+    'hours',
+    'account',
+    'order',
+    'left',
+    'consumed',
+    'limited',
+    'role',
+    'id',
+    'days',
+    'total',
+    'type',
+    'root',
+];
