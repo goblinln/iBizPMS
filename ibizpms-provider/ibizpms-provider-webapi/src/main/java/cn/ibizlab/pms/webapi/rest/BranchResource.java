@@ -164,11 +164,9 @@ public class BranchResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("@BranchRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取CurProduct", tags = {"产品的分支和平台信息" } ,notes = "获取CurProduct")
     @RequestMapping(method= RequestMethod.POST , value="/branches/fetchcurproduct")
 	public ResponseEntity<List<BranchDTO>> fetchCurProduct(@RequestBody BranchSearchContext context) {
-        branchRuntime.addAuthorityConditions(context,"READ");
         Page<Branch> domains = branchService.searchCurProduct(context) ;
         List<BranchDTO> list = branchMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -178,11 +176,9 @@ public class BranchResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@BranchRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询CurProduct", tags = {"产品的分支和平台信息" } ,notes = "查询CurProduct")
     @RequestMapping(method= RequestMethod.POST , value="/branches/searchcurproduct")
 	public ResponseEntity<Page<BranchDTO>> searchCurProduct(@RequestBody BranchSearchContext context) {
-        branchRuntime.addAuthorityConditions(context,"READ");
         Page<Branch> domains = branchService.searchCurProduct(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(branchMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -342,12 +338,10 @@ public class BranchResource {
         boolean result = branchService.sortBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@BranchRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品获取CurProduct", tags = {"产品的分支和平台信息" } ,notes = "根据产品获取CurProduct")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/branches/fetchcurproduct")
 	public ResponseEntity<List<BranchDTO>> fetchBranchCurProductByProduct(@PathVariable("product_id") Long product_id,@RequestBody BranchSearchContext context) {
         context.setN_product_eq(product_id);
-        branchRuntime.addAuthorityConditions(context,"READ");
         Page<Branch> domains = branchService.searchCurProduct(context) ;
         List<BranchDTO> list = branchMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -357,12 +351,10 @@ public class BranchResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@BranchRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据产品查询CurProduct", tags = {"产品的分支和平台信息" } ,notes = "根据产品查询CurProduct")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/branches/searchcurproduct")
 	public ResponseEntity<Page<BranchDTO>> searchBranchCurProductByProduct(@PathVariable("product_id") Long product_id, @RequestBody BranchSearchContext context) {
         context.setN_product_eq(product_id);
-        branchRuntime.addAuthorityConditions(context,"READ");
         Page<Branch> domains = branchService.searchCurProduct(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(branchMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
