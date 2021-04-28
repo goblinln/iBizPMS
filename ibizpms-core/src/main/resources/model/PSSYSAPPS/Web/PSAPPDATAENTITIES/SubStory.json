@@ -3643,10 +3643,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "StoryFavorites",
+      "name" : "StoryNFavorites",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryFavorites.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryNFavorites.json"
       },
       "allowMode" : true
     }, {
@@ -3766,17 +3766,17 @@
       },
       "allowMode" : true
     }, {
-      "name" : "StoryFavorites",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryFavorites.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Close",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Close.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "StoryNFavorites",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryNFavorites.json"
       },
       "allowMode" : true
     }, {
@@ -3923,17 +3923,17 @@
     "mSTag" : "active__1__2",
     "name" : "激活_已收藏_细分（删除）",
     "getPSDEMainStateActions" : [ {
-      "name" : "StoryFavorites",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryFavorites.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "AssignTo",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/AssignTo.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "StoryNFavorites",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryNFavorites.json"
       },
       "allowMode" : true
     }, {
@@ -4425,6 +4425,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "StoryNFavorites",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryNFavorites.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "AssignTo",
       "getPSDEAction" : {
         "modelref" : true,
@@ -4450,13 +4457,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchClose.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "StoryFavorites",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryFavorites.json"
       },
       "allowMode" : true
     }, {
@@ -5284,17 +5284,17 @@
       },
       "allowMode" : true
     }, {
-      "name" : "StoryFavorites",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryFavorites.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Remove",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "StoryNFavorites",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryNFavorites.json"
       },
       "allowMode" : true
     }, {
@@ -5410,6 +5410,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "StoryNFavorites",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryNFavorites.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Remove",
       "getPSDEAction" : {
         "modelref" : true,
@@ -5421,13 +5428,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "StoryFavorites",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryFavorites.json"
       },
       "allowMode" : true
     }, {
@@ -5621,10 +5621,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "StoryFavorites",
+      "name" : "StoryNFavorites",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryFavorites.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryNFavorites.json"
       },
       "allowMode" : true
     }, {
@@ -6205,13 +6205,6 @@
     "mSTag" : "draft__1__1",
     "name" : "草稿-已收藏_细分",
     "getPSDEMainStateActions" : [ {
-      "name" : "StoryFavorites",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryFavorites.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "StoryNFavorites",
       "getPSDEAction" : {
         "modelref" : true,
@@ -6416,17 +6409,17 @@
       },
       "allowMode" : true
     }, {
+      "name" : "StoryNFavorites",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryNFavorites.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "BatchClose",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchClose.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "StoryFavorites",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/StoryFavorites.json"
       },
       "allowMode" : true
     }, {
