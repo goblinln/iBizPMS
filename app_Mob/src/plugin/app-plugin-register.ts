@@ -18,7 +18,6 @@ import { MobFileTree2 } from './plugin/tree-render/mob-file-tree2';
 import { MobAllDynamicList2 } from './plugin/list-render/mob-all-dynamic-list2';
 import { MobHistoryList2 } from './plugin/list-render/mob-history-list2';
 import { MobProjectTeamItemList } from './plugin/list-itemrender/mob-project-team-item-list';
-import { StartTaskOptForm } from './plugin/editform-render/start-task-opt-form';
 import { MobTaskTeam } from './plugin/list-itemrender/mob-task-team';
 import { MobTestList2 } from './plugin/list-itemrender/mob-test-list2';
 import { MobTaskItemList2 } from './plugin/list-itemrender/mob-task-item-list2';
@@ -44,7 +43,6 @@ export const PluginRegister = {
         v.component('app-list-render-mob-all-dynamic-list2',MobAllDynamicList2);
         v.component('app-list-render-mob-history-list2',MobHistoryList2);
         v.component('app-list-itemrender-mob-project-team-item-list',MobProjectTeamItemList);
-        v.component('app-editform-render-start-task-opt-form',StartTaskOptForm);
         v.component('app-list-itemrender-mob-task-team',MobTaskTeam);
         v.component('app-list-itemrender-mob-test-list2',MobTestList2);
         v.component('app-list-itemrender-mob-task-item-list2',MobTaskItemList2);

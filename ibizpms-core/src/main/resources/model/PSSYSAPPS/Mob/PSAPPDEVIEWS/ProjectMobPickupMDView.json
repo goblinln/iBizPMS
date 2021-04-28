@@ -216,8 +216,8 @@
       "name" : "srfmstag"
     } ],
     "getPSSysPFPlugin" : {
-      "pluginType" : "EDITFORM_RENDER",
-      "pluginCode" : "StartTaskOptForm"
+      "pluginType" : "LIST_ITEMRENDER",
+      "pluginCode" : "mobItemList"
     },
     "pagingSize" : 1000,
     "getRemovePSControlAction" : {

@@ -128,7 +128,6 @@ export class AppComponentService {
         this.controlMap.set("mobAllDynamicList2", 'app-list-render-mob-all-dynamic-list2');
         this.controlMap.set("mobHistoryList2", 'app-list-render-mob-history-list2');
         this.controlMap.set("mobProjectTeamItemList", 'app-list-itemrender-mob-project-team-item-list');
-        this.controlMap.set("StartTaskOptForm", 'app-editform-render-start-task-opt-form');
         this.controlMap.set("mobTaskTeam", 'app-list-itemrender-mob-task-team');
         this.controlMap.set("mobTestList2", 'app-list-itemrender-mob-test-list2');
         this.controlMap.set("mobTaskItemList2", 'app-list-itemrender-mob-task-item-list2');
