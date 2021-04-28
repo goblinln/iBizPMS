@@ -3,7 +3,7 @@
 import { MOBHTMLOFPMS } from './editor/mobhtmltext/mobhtmlofpms';
 import { MOBCOLORPICKER } from './editor/mobtext/mobcolorpicker';
 import { Defaluturl } from './editor/mobpicture/defaluturl';
-import { MOBHTMLOFPMS } from './editor/mobhtmltext/mobhtmlofpms';
+// import { MOBHTMLOFPMS } from './editor/mobhtmltext/mobhtmlofpms';
 // 注册部件插件
 import { LIST_RENDER5dacc74a9f } from './plugin/list-render/list-render5dacc74a9f';
 import { MobBugItemList } from './plugin/list-itemrender/mob-bug-item-list';
