@@ -1763,6 +1763,48 @@
     "queryColumn" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "STORYSTATUS",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "getPSDEField" : {
+        "name" : "STORYSTATUS",
+        "codeName" : "Storystatus"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Storystatus",
+    "dEFType" : 5,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "需求状态",
+    "name" : "STORYSTATUS",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s",
+    "phisicalDEField" : false,
+    "uIAssistDEField" : true
+  }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "LEFT",
       "dBType" : "MYSQL5",
@@ -2602,6 +2644,53 @@
     "uIAssistDEField" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "DEPTNAME",
+      "dBType" : "MYSQL5",
+      "name" : "DEPTNAME",
+      "standardColumnName" : "`DEPTNAME`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "DEPTNAME",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "getPSDEField" : {
+        "name" : "DEPTNAME",
+        "codeName" : "DeptName"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "DeptName",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "归属部门名",
+    "name" : "DEPTNAME",
+    "predefinedType" : "ORGSECTORNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "CONFIG_BEGIN",
       "dBType" : "MYSQL5",
       "name" : "CONFIG_BEGIN",
@@ -2763,6 +2852,35 @@
     "stdDataType" : 25,
     "stringLength" : 30,
     "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "STORYVERSIONNEW",
+        "codeName" : "Storyversionnew"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Storyversionnew",
+    "dEFType" : 5,
+    "dataType" : "INT",
+    "importOrder" : 1000,
+    "logicName" : "相关需求最新版本",
+    "name" : "STORYVERSIONNEW",
+    "stdDataType" : 9,
+    "valueFormat" : "%1$s",
+    "phisicalDEField" : false,
+    "uIAssistDEField" : true
   }, {
     "getAllPSDEFValueRules" : [ {
       "codeName" : "ValueRule5",
@@ -3683,6 +3801,53 @@
     },
     "stdDataType" : 25,
     "stringLength" : 30,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "ORGNAME",
+      "dBType" : "MYSQL5",
+      "name" : "ORGNAME",
+      "standardColumnName" : "`ORGNAME`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "ORGNAME",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "getPSDEField" : {
+        "name" : "ORGNAME",
+        "codeName" : "OrgName"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "OrgName",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "predefinedType" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100,
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFValueRules" : [ {
@@ -5762,171 +5927,6 @@
     "translatorMode" : "TRANSLATE2",
     "valueFormat" : "%1$s",
     "linkDEField" : true
-  }, {
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "STORYVERSIONNEW",
-        "codeName" : "Storyversionnew"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Storyversionnew",
-    "dEFType" : 5,
-    "dataType" : "INT",
-    "importOrder" : 1000,
-    "logicName" : "相关需求最新版本",
-    "name" : "STORYVERSIONNEW",
-    "stdDataType" : 9,
-    "valueFormat" : "%1$s",
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true
-  }, {
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "STORYSTATUS",
-          "maxValue" : 100,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[100]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[100]"
-      },
-      "getPSDEField" : {
-        "name" : "STORYSTATUS",
-        "codeName" : "Storystatus"
-      },
-      "ruleInfo" : "内容长度必须小于等于[100]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Storystatus",
-    "dEFType" : 5,
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "length" : 100,
-    "logicName" : "需求状态",
-    "name" : "STORYSTATUS",
-    "stdDataType" : 25,
-    "stringLength" : 100,
-    "valueFormat" : "%1$s",
-    "phisicalDEField" : false,
-    "uIAssistDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "DEPTNAME",
-      "dBType" : "MYSQL5",
-      "name" : "DEPTNAME",
-      "standardColumnName" : "`DEPTNAME`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "DEPTNAME",
-          "maxValue" : 100,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[100]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[100]"
-      },
-      "getPSDEField" : {
-        "name" : "DEPTNAME",
-        "codeName" : "DeptName"
-      },
-      "ruleInfo" : "内容长度必须小于等于[100]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "DeptName",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "length" : 100,
-    "logicName" : "归属部门名",
-    "name" : "DEPTNAME",
-    "predefinedType" : "ORGSECTORNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100,
-    "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "ORGNAME",
-      "dBType" : "MYSQL5",
-      "name" : "ORGNAME",
-      "standardColumnName" : "`ORGNAME`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "ORGNAME",
-          "maxValue" : 100,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[100]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[100]"
-      },
-      "getPSDEField" : {
-        "name" : "ORGNAME",
-        "codeName" : "OrgName"
-      },
-      "ruleInfo" : "内容长度必须小于等于[100]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "OrgName",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "length" : 100,
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "predefinedType" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100,
-    "valueFormat" : "%1$s"
   } ],
   "getAllPSDELogics" : [ {
     "codeName" : "ComputeDelay",
@@ -6323,7 +6323,7 @@
             "paramValue" : "0"
           } ],
           "notMode" : false,
-          "id" : "686558b2b80cb7ce96a990ac8807d4d2"
+          "id" : "0a09b63b73dee80a075a78f6c337af71"
         },
         "getSrcPSDELogicNode" : {
           "modelref" : true,
@@ -6366,7 +6366,7 @@
             "notMode" : false
           } ],
           "notMode" : false,
-          "id" : "71fb46665d77d5fb8056714839ac97bc"
+          "id" : "518635eba6c1df271042c7db1ed96eb0"
         },
         "getSrcPSDELogicNode" : {
           "modelref" : true,
@@ -6465,7 +6465,7 @@
             "name" : "Default[STORY] 值为空(Nil)"
           } ],
           "notMode" : false,
-          "id" : "d63f5ab0738f93ad91fc5eb5ed466638"
+          "id" : "b144e45691fa2f6055df0ad7be5cb69f"
         },
         "getSrcPSDELogicNode" : {
           "modelref" : true,
@@ -6492,7 +6492,7 @@
             "name" : "Default[STORY] 值不为空(NotNil)"
           } ],
           "notMode" : false,
-          "id" : "821f2daee10588ada3e72da13b1b161c"
+          "id" : "8ae44fc58f799afaabab755da4102b87"
         },
         "getSrcPSDELogicNode" : {
           "modelref" : true,
@@ -6519,7 +6519,7 @@
             "name" : "Default[PLAN] 值不为空(NotNil)"
           } ],
           "notMode" : false,
-          "id" : "917ad9c2835d133e829cb39d5a9db061"
+          "id" : "f7c670bc2f813e45946d48e220a7c6d0"
         },
         "getSrcPSDELogicNode" : {
           "modelref" : true,
@@ -6619,34 +6619,6 @@
       "getPSDELogicLinks" : [ {
         "getDstPSDELogicNode" : {
           "modelref" : true,
-          "id" : "Rawsqlcall2"
-        },
-        "name" : "连接6464",
-        "getPSDELogicLinkGroupCond" : {
-          "groupOP" : "AND",
-          "logicType" : "GROUP",
-          "getPSDELogicLinkConds" : [ {
-            "condOP" : "NOTEQ",
-            "dstFieldName" : "MULTIPLE",
-            "getDstLogicParam" : {
-              "modelref" : true,
-              "id" : "Default"
-            },
-            "logicType" : "SINGLE",
-            "name" : "Default[MULTIPLE] 不等于(<>) (1)",
-            "paramValue" : "1"
-          } ],
-          "notMode" : false,
-          "id" : "744eb69b991e71834727d528f79a3dd2"
-        },
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Begin"
-        },
-        "defaultLink" : false
-      }, {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
           "id" : "Rawsqlcall1"
         },
         "name" : "连接9577",
@@ -6665,7 +6637,35 @@
             "paramValue" : "1"
           } ],
           "notMode" : false,
-          "id" : "92d1be3cfd5aaa4a72a363b7741b4476"
+          "id" : "c2f12771558192af8aaa4a9f60e7df25"
+        },
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
+      }, {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Rawsqlcall2"
+        },
+        "name" : "连接6464",
+        "getPSDELogicLinkGroupCond" : {
+          "groupOP" : "AND",
+          "logicType" : "GROUP",
+          "getPSDELogicLinkConds" : [ {
+            "condOP" : "NOTEQ",
+            "dstFieldName" : "MULTIPLE",
+            "getDstLogicParam" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "logicType" : "SINGLE",
+            "name" : "Default[MULTIPLE] 不等于(<>) (1)",
+            "paramValue" : "1"
+          } ],
+          "notMode" : false,
+          "id" : "e0be4bbb734801f10bff44f63df51f69"
         },
         "getSrcPSDELogicNode" : {
           "modelref" : true,
@@ -6809,13 +6809,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "RecordTimateZeroLeft",
       "getPSDEAction" : {
         "modelref" : true,
@@ -6837,10 +6830,31 @@
       },
       "allowMode" : true
     }, {
+      "name" : "computeWorkingHours",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "taskForward",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskForward.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "computeBeginAndEnd",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "updateRelatedPlanStatus",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateRelatedPlanStatus.json"
       },
       "allowMode" : true
     }, {
@@ -6855,13 +6869,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/LinkPlan.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "computeWorkingHours",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
       },
       "allowMode" : true
     }, {
@@ -6900,6 +6907,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "TaskFavorites",
       "getPSDEAction" : {
         "modelref" : true,
@@ -6918,20 +6932,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Update.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "computeBeginAndEnd",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "updateRelatedPlanStatus",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateRelatedPlanStatus.json"
       },
       "allowMode" : true
     }, {
@@ -7662,6 +7662,13 @@
     "mSTag" : "cancel__1__10",
     "name" : "已取消_已收藏_多人任务",
     "getPSDEMainStateActions" : [ {
+      "name" : "computeWorkingHours",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Close",
       "getPSDEAction" : {
         "modelref" : true,
@@ -7704,13 +7711,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "computeBeginAndEnd",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "EditEstimate",
       "getPSDEAction" : {
         "modelref" : true,
@@ -7718,17 +7718,17 @@
       },
       "allowMode" : true
     }, {
-      "name" : "updateStoryVersion",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateStoryVersion.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "delete",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "updateStoryVersion",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateStoryVersion.json"
       },
       "allowMode" : true
     }, {
@@ -7816,6 +7816,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "computeBeginAndEnd",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Save",
       "getPSDEAction" : {
         "modelref" : true,
@@ -7827,13 +7834,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/LinkPlan.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "computeWorkingHours",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
       },
       "allowMode" : true
     } ],
@@ -8034,6 +8034,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Close",
       "getPSDEAction" : {
         "modelref" : true,
@@ -8045,13 +8052,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Save.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     } ],
@@ -9097,6 +9097,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "EditEstimate",
       "getPSDEAction" : {
         "modelref" : true,
@@ -9136,13 +9143,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Save.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     } ],
@@ -9304,13 +9304,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Remove",
       "getPSDEAction" : {
         "modelref" : true,
@@ -9364,6 +9357,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/DeleteEstimate.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     }, {
@@ -9762,17 +9762,17 @@
       },
       "allowMode" : true
     }, {
-      "name" : "Update",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Update.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "delete",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Update.json"
       },
       "allowMode" : true
     }, {
@@ -9929,13 +9929,6 @@
     "mSTag" : "closed__1__40",
     "name" : "已关闭_已收藏_子任务",
     "getPSDEMainStateActions" : [ {
-      "name" : "RecordTimateZeroLeft",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "DeleteEstimate",
       "getPSDEAction" : {
         "modelref" : true,
@@ -9964,10 +9957,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "delete",
+      "name" : "updateRelatedPlanStatus",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateRelatedPlanStatus.json"
       },
       "allowMode" : true
     }, {
@@ -9982,6 +9975,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     }, {
@@ -10034,13 +10034,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "CalcTime",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CalcTime.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "computeWorkingHours",
       "getPSDEAction" : {
         "modelref" : true,
@@ -10048,10 +10041,17 @@
       },
       "allowMode" : true
     }, {
-      "name" : "updateRelatedPlanStatus",
+      "name" : "RecordTimateZeroLeft",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateRelatedPlanStatus.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "CalcTime",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CalcTime.json"
       },
       "allowMode" : true
     }, {
@@ -10248,13 +10248,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "computeBeginAndEnd",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "GetTeamUserLeftStart",
       "getPSDEAction" : {
         "modelref" : true,
@@ -10283,6 +10276,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "computeWorkingHours",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "ConfirmStoryChange",
       "getPSDEAction" : {
         "modelref" : true,
@@ -10294,6 +10294,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Finish.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "computeBeginAndEnd",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
       },
       "allowMode" : true
     }, {
@@ -10311,13 +10318,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "updateStoryVersion",
       "getPSDEAction" : {
         "modelref" : true,
@@ -10329,13 +10329,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Update.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "computeWorkingHours",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
       },
       "allowMode" : true
     }, {
@@ -10364,6 +10357,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     }, {
@@ -10517,6 +10517,20 @@
       },
       "allowMode" : true
     }, {
+      "name" : "computeWorkingHours",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "createByCycle",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "taskForward",
       "getPSDEAction" : {
         "modelref" : true,
@@ -10531,20 +10545,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "RecordTimateZeroLeft",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "computeBeginAndEnd",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Create",
       "getPSDEAction" : {
         "modelref" : true,
@@ -10556,6 +10556,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Finish.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     }, {
@@ -10601,6 +10608,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "computeBeginAndEnd",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "CalcTime",
       "getPSDEAction" : {
         "modelref" : true,
@@ -10629,24 +10643,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "createByCycle",
+      "name" : "RecordTimateZeroLeft",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "computeWorkingHours",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
       },
       "allowMode" : true
     }, {
@@ -11180,13 +11180,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Update",
       "getPSDEAction" : {
         "modelref" : true,
@@ -11226,6 +11219,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Pause.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     }, {
@@ -11351,13 +11351,6 @@
     "mSTag" : "doing__1__10",
     "name" : "进行中_已收藏_多人任务",
     "getPSDEMainStateActions" : [ {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "OtherUpdate",
       "getPSDEAction" : {
         "modelref" : true,
@@ -11372,6 +11365,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "computeWorkingHours",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "GetNextTeamUserFinish",
       "getPSDEAction" : {
         "modelref" : true,
@@ -11383,6 +11383,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "computeBeginAndEnd",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
       },
       "allowMode" : true
     }, {
@@ -11407,10 +11414,24 @@
       },
       "allowMode" : true
     }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "CalcTime",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CalcTime.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "RecordTimateZeroLeft",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
       },
       "allowMode" : true
     }, {
@@ -11435,13 +11456,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "RecordTimateZeroLeft",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Remove",
       "getPSDEAction" : {
         "modelref" : true,
@@ -11449,24 +11463,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "computeWorkingHours",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "LinkPlan",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/LinkPlan.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "computeBeginAndEnd",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
       },
       "allowMode" : true
     }, {
@@ -11641,6 +11641,13 @@
     "mSTag" : "doing__1__20",
     "name" : "进行中_已收藏_父任务",
     "getPSDEMainStateActions" : [ {
+      "name" : "computeBeginAndEnd",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "AssignTo",
       "getPSDEAction" : {
         "modelref" : true,
@@ -11659,13 +11666,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/OtherUpdate.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "computeBeginAndEnd",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
       },
       "allowMode" : true
     }, {
@@ -11718,17 +11718,17 @@
       },
       "allowMode" : true
     }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "ConfirmStoryChange",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "RecordTimateZeroLeft",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
       },
       "allowMode" : true
     }, {
@@ -11750,13 +11750,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/EditEstimate.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     }, {
@@ -11792,6 +11785,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "RecordTimateZeroLeft",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
       },
       "allowMode" : true
     } ],
@@ -11977,6 +11977,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "createByCycle",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "taskForward",
       "getPSDEAction" : {
         "modelref" : true,
@@ -11998,17 +12005,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "RecordTimateZeroLeft",
+      "name" : "computeBeginAndEnd",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "createByCycle",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
       },
       "allowMode" : true
     }, {
@@ -12030,13 +12030,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Create.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "computeBeginAndEnd",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
       },
       "allowMode" : true
     }, {
@@ -12068,6 +12061,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "computeWorkingHours",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Finish",
       "getPSDEAction" : {
         "modelref" : true,
@@ -12082,24 +12082,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "EditEstimate",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/EditEstimate.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "computeWorkingHours",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
       },
       "allowMode" : true
     }, {
@@ -12117,6 +12103,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "RecordTimateZeroLeft",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Update",
       "getPSDEAction" : {
         "modelref" : true,
@@ -12128,6 +12121,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CalcTime.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     }, {
@@ -12255,6 +12255,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "computeBeginAndEnd",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Save",
       "getPSDEAction" : {
         "modelref" : true,
@@ -12290,17 +12297,17 @@
       },
       "allowMode" : true
     }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Finish",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Finish.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "computeBeginAndEnd",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
       },
       "allowMode" : true
     }, {
@@ -12346,10 +12353,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "delete",
+      "name" : "RecordTimateZeroLeft",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
       },
       "allowMode" : true
     }, {
@@ -12385,13 +12392,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "RecordTimateZeroLeft",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
       },
       "allowMode" : true
     }, {
@@ -12559,13 +12559,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "computeWorkingHours",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "TaskFavorites",
       "getPSDEAction" : {
         "modelref" : true,
@@ -12587,17 +12580,17 @@
       },
       "allowMode" : true
     }, {
-      "name" : "Close",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Close.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "delete",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Close",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Close.json"
       },
       "allowMode" : true
     }, {
@@ -12612,6 +12605,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetTeamUserLeftStart.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "RecordTimateZeroLeft",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
       },
       "allowMode" : true
     }, {
@@ -12643,24 +12643,17 @@
       },
       "allowMode" : true
     }, {
+      "name" : "computeWorkingHours",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "GetNextTeamUserFinish",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetNextTeamUser.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "RecordTimateZeroLeft",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "computeBeginAndEnd",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
       },
       "allowMode" : true
     }, {
@@ -12682,6 +12675,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetTeamUserLeftActivity.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "computeBeginAndEnd",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
       },
       "allowMode" : true
     }, {
@@ -12840,13 +12840,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Create",
       "getPSDEAction" : {
         "modelref" : true,
@@ -12882,6 +12875,20 @@
       },
       "allowMode" : true
     }, {
+      "name" : "computeWorkingHours",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "AssignTo",
       "getPSDEAction" : {
         "modelref" : true,
@@ -12910,13 +12917,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "createByCycle",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "TaskFavorites",
       "getPSDEAction" : {
         "modelref" : true,
@@ -12938,17 +12938,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "computeWorkingHours",
+      "name" : "createByCycle",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "computeBeginAndEnd",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
       },
       "allowMode" : true
     }, {
@@ -12970,6 +12963,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateCycleTasks.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "computeBeginAndEnd",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
       },
       "allowMode" : true
     }, {
@@ -13857,13 +13857,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "TaskNFavorites",
       "getPSDEAction" : {
         "modelref" : true,
@@ -13910,6 +13903,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     }, {
@@ -14042,13 +14042,6 @@
     "mSTag" : "done__1__40",
     "name" : "已完成_已收藏_子任务",
     "getPSDEMainStateActions" : [ {
-      "name" : "RecordTimZeroLeftAfterContinue",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "CalcTime",
       "getPSDEAction" : {
         "modelref" : true,
@@ -14070,10 +14063,17 @@
       },
       "allowMode" : true
     }, {
-      "name" : "updateRelatedPlanStatus",
+      "name" : "RecordTimZeroLeftAfterContinue",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateRelatedPlanStatus.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "computeBeginAndEnd",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
       },
       "allowMode" : true
     }, {
@@ -14091,10 +14091,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "computeWorkingHours",
+      "name" : "delete",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     }, {
@@ -14123,6 +14123,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "updateRelatedPlanStatus",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateRelatedPlanStatus.json"
       },
       "allowMode" : true
     }, {
@@ -14182,17 +14189,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "computeBeginAndEnd",
+      "name" : "computeWorkingHours",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
       },
       "allowMode" : true
     }, {
@@ -14337,13 +14337,6 @@
     "mSTag" : "pause__0__10",
     "name" : "已暂停_未收藏_多人任务",
     "getPSDEMainStateActions" : [ {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Finish",
       "getPSDEAction" : {
         "modelref" : true,
@@ -14362,6 +14355,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CalcTime.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "RecordTimateZeroLeft",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
       },
       "allowMode" : true
     }, {
@@ -14421,10 +14421,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "RecordTimateZeroLeft",
+      "name" : "computeWorkingHours",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
       },
       "allowMode" : true
     }, {
@@ -14432,6 +14432,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetTeamUserLeftActivity.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "computeBeginAndEnd",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
       },
       "allowMode" : true
     }, {
@@ -14456,17 +14463,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "computeBeginAndEnd",
+      "name" : "delete",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "RecordTimZeroLeftAfterContinue",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     }, {
@@ -14498,13 +14498,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "computeWorkingHours",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Save",
       "getPSDEAction" : {
         "modelref" : true,
@@ -14523,6 +14516,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/DeleteEstimate.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "RecordTimZeroLeftAfterContinue",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json"
       },
       "allowMode" : true
     } ],
@@ -14641,6 +14641,13 @@
     "mSTag" : "pause__0__20",
     "name" : "已暂停_未收藏_父任务",
     "getPSDEMainStateActions" : [ {
+      "name" : "RecordTimateZeroLeft",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "updateStoryVersion",
       "getPSDEAction" : {
         "modelref" : true,
@@ -14690,6 +14697,20 @@
       },
       "allowMode" : true
     }, {
+      "name" : "createByCycle",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "RecordTimZeroLeftAfterContinue",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Finish",
       "getPSDEAction" : {
         "modelref" : true,
@@ -14732,24 +14753,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "createByCycle",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "TaskFavorites",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskFavorites.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     }, {
@@ -14788,10 +14795,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "RecordTimateZeroLeft",
+      "name" : "delete",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     }, {
@@ -14799,13 +14806,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "RecordTimZeroLeftAfterContinue",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json"
       },
       "allowMode" : true
     } ],
@@ -15234,6 +15234,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "updateStoryVersion",
       "getPSDEAction" : {
         "modelref" : true,
@@ -15255,13 +15262,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "LinkPlan",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/LinkPlan.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "updateRelatedPlanStatus",
       "getPSDEAction" : {
         "modelref" : true,
@@ -15269,10 +15269,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "RecordTimZeroLeftAfterContinue",
+      "name" : "LinkPlan",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/LinkPlan.json"
       },
       "allowMode" : true
     }, {
@@ -15287,6 +15287,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "computeWorkingHours",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
       },
       "allowMode" : true
     }, {
@@ -15318,13 +15325,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "computeWorkingHours",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "AssignTo",
       "getPSDEAction" : {
         "modelref" : true,
@@ -15346,17 +15346,17 @@
       },
       "allowMode" : true
     }, {
+      "name" : "RecordTimZeroLeftAfterContinue",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "EditEstimate",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/EditEstimate.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     }, {
@@ -15524,10 +15524,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "RecordTimZeroLeftAfterContinue",
+      "name" : "RecordTimateZeroLeft",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
       },
       "allowMode" : true
     }, {
@@ -15608,20 +15608,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "computeWorkingHours",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "GetTeamUserLeftActivity",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetTeamUserLeftActivity.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "computeBeginAndEnd",
       "getPSDEAction" : {
         "modelref" : true,
@@ -15629,10 +15615,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "RecordTimateZeroLeft",
+      "name" : "GetTeamUserLeftActivity",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetTeamUserLeftActivity.json"
       },
       "allowMode" : true
     }, {
@@ -15689,6 +15675,20 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "RecordTimZeroLeftAfterContinue",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "computeWorkingHours",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
       },
       "allowMode" : true
     }, {
@@ -15835,13 +15835,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "createByCycle",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "DeleteEstimate",
       "getPSDEAction" : {
         "modelref" : true,
@@ -15898,13 +15891,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "EditEstimate",
       "getPSDEAction" : {
         "modelref" : true,
@@ -15933,6 +15919,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "TaskNFavorites",
       "getPSDEAction" : {
         "modelref" : true,
@@ -15944,6 +15937,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "createByCycle",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
       },
       "allowMode" : true
     } ],
@@ -16150,13 +16150,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "DeleteEstimate",
       "getPSDEAction" : {
         "modelref" : true,
@@ -16168,6 +16161,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     }, {
@@ -16358,6 +16358,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "RecordTimateZeroLeft",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "LinkPlan",
       "getPSDEAction" : {
         "modelref" : true,
@@ -16379,10 +16386,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "updateRelatedPlanStatus",
+      "name" : "computeBeginAndEnd",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateRelatedPlanStatus.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
       },
       "allowMode" : true
     }, {
@@ -16390,13 +16397,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Restart.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "RecordTimateZeroLeft",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
       },
       "allowMode" : true
     }, {
@@ -16456,10 +16456,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "delete",
+      "name" : "CalcTime",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CalcTime.json"
       },
       "allowMode" : true
     }, {
@@ -16467,13 +16467,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "CalcTime",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CalcTime.json"
       },
       "allowMode" : true
     }, {
@@ -16491,17 +16484,24 @@
       },
       "allowMode" : true
     }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "updateRelatedPlanStatus",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateRelatedPlanStatus.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "computeWorkingHours",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "computeBeginAndEnd",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
       },
       "allowMode" : true
     } ],
@@ -16627,6 +16627,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "RecordTimateZeroLeftAfterStart",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeftAfterStart.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "RecordEstimate",
       "getPSDEAction" : {
         "modelref" : true,
@@ -16638,6 +16645,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Restart.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "computeBeginAndEnd",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
       },
       "allowMode" : true
     }, {
@@ -16655,17 +16669,17 @@
       },
       "allowMode" : true
     }, {
-      "name" : "RecordTimateZeroLeft",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Create",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     }, {
@@ -16680,13 +16694,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "RecordTimZeroLeftAfterContinue",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json"
       },
       "allowMode" : true
     }, {
@@ -16718,6 +16725,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "RecordTimateZeroLeft",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Save",
       "getPSDEAction" : {
         "modelref" : true,
@@ -16739,20 +16753,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "computeBeginAndEnd",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Start",
       "getPSDEAction" : {
         "modelref" : true,
@@ -16764,6 +16764,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/GetTeamUserLeftActivity.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "RecordTimZeroLeftAfterContinue",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json"
       },
       "allowMode" : true
     }, {
@@ -16806,13 +16813,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CalcTime.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "RecordTimateZeroLeftAfterStart",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeftAfterStart.json"
       },
       "allowMode" : true
     }, {
@@ -17186,13 +17186,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "OtherUpdate",
       "getPSDEAction" : {
         "modelref" : true,
@@ -17214,6 +17207,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "createByCycle",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Update",
       "getPSDEAction" : {
         "modelref" : true,
@@ -17232,13 +17232,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "createByCycle",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
       },
       "allowMode" : true
     }, {
@@ -17295,6 +17288,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     } ],
@@ -18006,6 +18006,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "createByCycle",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "AssignTo",
       "getPSDEAction" : {
         "modelref" : true,
@@ -18041,13 +18048,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Update",
       "getPSDEAction" : {
         "modelref" : true,
@@ -18062,6 +18062,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Create",
       "getPSDEAction" : {
         "modelref" : true,
@@ -18073,13 +18080,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordEstimate.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "createByCycle",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
       },
       "allowMode" : true
     } ],
@@ -18260,13 +18260,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "RecordTimateZeroLeft",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "RecordEstimate",
       "getPSDEAction" : {
         "modelref" : true,
@@ -18274,10 +18267,24 @@
       },
       "allowMode" : true
     }, {
+      "name" : "RecordTimZeroLeftAfterContinue",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "EditEstimate",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/EditEstimate.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "RecordTimateZeroLeft",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
       },
       "allowMode" : true
     }, {
@@ -18302,6 +18309,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Pause",
       "getPSDEAction" : {
         "modelref" : true,
@@ -18323,13 +18337,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "RecordTimZeroLeftAfterContinue",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimZeroLeftAfterContinue.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Remove",
       "getPSDEAction" : {
         "modelref" : true,
@@ -18337,10 +18344,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "computeWorkingHours",
+      "name" : "updateRelatedPlanStatus",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateRelatedPlanStatus.json"
       },
       "allowMode" : true
     }, {
@@ -18358,17 +18365,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "delete",
+      "name" : "RecordTimateZeroLeftAfterStart",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "computeBeginAndEnd",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeftAfterStart.json"
       },
       "allowMode" : true
     }, {
@@ -18386,10 +18386,17 @@
       },
       "allowMode" : true
     }, {
-      "name" : "RecordTimateZeroLeftAfterStart",
+      "name" : "computeWorkingHours",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeftAfterStart.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "computeBeginAndEnd",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
       },
       "allowMode" : true
     }, {
@@ -18411,13 +18418,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "updateRelatedPlanStatus",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateRelatedPlanStatus.json"
       },
       "allowMode" : true
     }, {
@@ -18762,6 +18762,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "createByCycle",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Update",
       "getPSDEAction" : {
         "modelref" : true,
@@ -18780,6 +18787,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Save.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     }, {
@@ -18804,13 +18818,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Get",
       "getPSDEAction" : {
         "modelref" : true,
@@ -18822,13 +18829,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordEstimate.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "createByCycle",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
       },
       "allowMode" : true
     }, {
@@ -19299,10 +19299,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "RecordTimateZeroLeft",
+      "name" : "RecordTimateZeroLeftAfterStart",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeftAfterStart.json"
       },
       "allowMode" : true
     }, {
@@ -19334,17 +19334,17 @@
       },
       "allowMode" : true
     }, {
-      "name" : "computeBeginAndEnd",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Update",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "computeBeginAndEnd",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
       },
       "allowMode" : true
     }, {
@@ -19369,13 +19369,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "RecordTimateZeroLeftAfterStart",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeftAfterStart.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "DeleteEstimate",
       "getPSDEAction" : {
         "modelref" : true,
@@ -19390,10 +19383,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "delete",
+      "name" : "updateRelatedPlanStatus",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateRelatedPlanStatus.json"
       },
       "allowMode" : true
     }, {
@@ -19401,6 +19394,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordEstimate.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "computeWorkingHours",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
       },
       "allowMode" : true
     }, {
@@ -19418,6 +19418,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "RecordTimateZeroLeft",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Start",
       "getPSDEAction" : {
         "modelref" : true,
@@ -19425,10 +19432,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "updateRelatedPlanStatus",
+      "name" : "delete",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateRelatedPlanStatus.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     }, {
@@ -19436,13 +19443,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CalcTime.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "computeWorkingHours",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
       },
       "allowMode" : true
     } ],
@@ -19703,17 +19703,17 @@
       },
       "allowMode" : true
     }, {
-      "name" : "createByCycle",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "RecordEstimate",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordEstimate.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "createByCycle",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
       },
       "allowMode" : true
     }, {
@@ -19749,6 +19749,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     }, {
@@ -19791,13 +19798,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     }, {
@@ -19990,6 +19990,13 @@
     "mSTag" : "wait__1__30",
     "name" : "未进行_已收藏_常规任务",
     "getPSDEMainStateActions" : [ {
+      "name" : "delete",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Remove",
       "getPSDEAction" : {
         "modelref" : true,
@@ -20046,13 +20053,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Finish",
       "getPSDEAction" : {
         "modelref" : true,
@@ -20095,17 +20095,17 @@
       },
       "allowMode" : true
     }, {
-      "name" : "CreateCycleTasks",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateCycleTasks.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "createByCycle",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateByCycle.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "CreateCycleTasks",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CreateCycleTasks.json"
       },
       "allowMode" : true
     }, {
@@ -20233,6 +20233,20 @@
       },
       "allowMode" : true
     }, {
+      "name" : "computeWorkingHours",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "computeBeginAndEnd",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "taskForward",
       "getPSDEAction" : {
         "modelref" : true,
@@ -20254,10 +20268,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "computeWorkingHours",
+      "name" : "delete",
       "getPSDEAction" : {
         "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json"
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     }, {
@@ -20265,13 +20279,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/LinkPlan.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "delete",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Delete.json"
       },
       "allowMode" : true
     }, {
@@ -20286,6 +20293,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/EditEstimate.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "RecordTimateZeroLeftAfterStart",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeftAfterStart.json"
       },
       "allowMode" : true
     }, {
@@ -20310,13 +20324,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "computeBeginAndEnd",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeBeginAndEnd.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "TaskNFavorites",
       "getPSDEAction" : {
         "modelref" : true,
@@ -20331,24 +20338,10 @@
       },
       "allowMode" : true
     }, {
-      "name" : "RecordTimateZeroLeft",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "AssignTo",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "RecordTimateZeroLeftAfterStart",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeftAfterStart.json"
       },
       "allowMode" : true
     }, {
@@ -20370,6 +20363,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/CalcTime.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "RecordTimateZeroLeft",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordTimateZeroLeft.json"
       },
       "allowMode" : true
     }, {

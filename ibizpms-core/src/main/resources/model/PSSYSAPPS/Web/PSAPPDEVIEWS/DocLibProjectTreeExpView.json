@@ -197,25 +197,25 @@
       "getPSDETreeNodeRSs" : [ {
         "getChildPSDETreeNode" : {
           "modelref" : true,
-          "id" : "RootDoclibModule"
-        },
-        "name" : "文档库 - 根文档库模块",
-        "parentFilter" : "root",
-        "getParentPSDETreeNode" : {
-          "modelref" : true,
-          "id" : "DocLib"
-        },
-        "parentValueLevel" : 1,
-        "searchMode" : 3
-      }, {
-        "getChildPSDETreeNode" : {
-          "modelref" : true,
           "id" : "Project"
         },
         "name" : "所有项目 - 项目",
         "getParentPSDETreeNode" : {
           "modelref" : true,
           "id" : "ALLProject"
+        },
+        "parentValueLevel" : 1,
+        "searchMode" : 3
+      }, {
+        "getChildPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ChildDoclibModule"
+        },
+        "name" : "子文档库模块 - 子文档库模块",
+        "parentFilter" : "parent",
+        "getParentPSDETreeNode" : {
+          "modelref" : true,
+          "id" : "ChildDoclibModule"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3
@@ -278,13 +278,13 @@
       }, {
         "getChildPSDETreeNode" : {
           "modelref" : true,
-          "id" : "ChildDoclibModule"
+          "id" : "RootDoclibModule"
         },
-        "name" : "子文档库模块 - 子文档库模块",
-        "parentFilter" : "parent",
+        "name" : "文档库 - 根文档库模块",
+        "parentFilter" : "root",
         "getParentPSDETreeNode" : {
           "modelref" : true,
-          "id" : "ChildDoclibModule"
+          "id" : "DocLib"
         },
         "parentValueLevel" : 1,
         "searchMode" : 3

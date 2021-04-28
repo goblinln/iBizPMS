@@ -277,6 +277,15 @@ public class Product extends EntityMP implements Serializable {
     @ApiModelProperty("产品类型")
     private String type;
     /**
+     * 归属部门名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
+    @TableField(value = "`mdeptname`")
+    @JSONField(name = "mdeptname")
+    @JsonProperty("mdeptname")
+    @ApiModelProperty("归属部门名")
+    private String mdeptname;
+    /**
      * 产品负责人
      */
     @DEField(defaultValue = "#EMPTY")
@@ -453,6 +462,15 @@ public class Product extends EntityMP implements Serializable {
     @ApiModelProperty("BUILD数")
     private Integer buildcnt;
     /**
+     * 归属组织名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGNAME)
+    @TableField(value = "`orgname`")
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+    /**
      * 创建日期
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
@@ -495,24 +513,6 @@ public class Product extends EntityMP implements Serializable {
     @JsonProperty("line")
     @ApiModelProperty("产品线")
     private Long line;
-    /**
-     * 归属组织名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`orgname`")
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
-    /**
-     * 归属部门名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "`mdeptname`")
-    @JSONField(name = "mdeptname")
-    @JsonProperty("mdeptname")
-    @ApiModelProperty("归属部门名")
-    private String mdeptname;
 
     /**
      * 产品线

@@ -47,6 +47,15 @@ public class StoryStage extends EntityMP implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
+     * 主键
+     */
+    @DEField(isKeyField = true)
+    @TableId(value = "`ID`", type = IdType.ASSIGN_UUID)
+    @JSONField(name = "id")
+    @JsonProperty("id")
+    @ApiModelProperty("主键")
+    private String id;
+    /**
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
@@ -83,6 +92,24 @@ public class StoryStage extends EntityMP implements Serializable {
     @ApiModelProperty("由谁创建")
     private String createby;
     /**
+     * 归属组织名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGNAME)
+    @TableField(value = "`ORGNAME`")
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+    /**
+     * 归属部门名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
+    @TableField(value = "`DEPTNAME`")
+    @JSONField(name = "deptname")
+    @JsonProperty("deptname")
+    @ApiModelProperty("归属部门名")
+    private String deptname;
+    /**
      * 设置阶段者
      */
     @TableField(value = "`STAGEDBY`")
@@ -114,33 +141,6 @@ public class StoryStage extends EntityMP implements Serializable {
     @JsonProperty("branch")
     @ApiModelProperty("平台/分支")
     private Long branch;
-    /**
-     * 归属组织名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`ORGNAME`")
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
-    /**
-     * 归属部门名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "`DEPTNAME`")
-    @JSONField(name = "deptname")
-    @JsonProperty("deptname")
-    @ApiModelProperty("归属部门名")
-    private String deptname;
-    /**
-     * 主键
-     */
-    @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_UUID)
-    @JSONField(name = "id")
-    @JsonProperty("id")
-    @ApiModelProperty("主键")
-    private String id;
 
     /**
      * 

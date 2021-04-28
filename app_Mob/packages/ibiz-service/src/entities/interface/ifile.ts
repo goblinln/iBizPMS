@@ -51,6 +51,10 @@ export interface IFile extends IEntityBase {
      */
     title?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 由谁更新
      */
     updateby?: any;
@@ -71,6 +75,10 @@ export interface IFile extends IEntityBase {
      */
     size?: any;
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * id
      */
     id?: any;
@@ -78,12 +86,4 @@ export interface IFile extends IEntityBase {
      * 备注
      */
     extra?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
 }

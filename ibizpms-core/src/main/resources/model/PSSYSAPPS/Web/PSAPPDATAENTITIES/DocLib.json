@@ -329,6 +329,12 @@
     "stdDataType" : 21,
     "stringLength" : 65535
   }, {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "UpdateManName",
     "logicName" : "由谁更新",
     "name" : "UPDATEMANNAME",
@@ -387,6 +393,12 @@
     "name" : "ID",
     "stdDataType" : 1,
     "keyField" : true
+  }, {
+    "codeName" : "DeptName",
+    "logicName" : "归属部门名",
+    "name" : "DEPTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
     "codeName" : "Users",
     "logicName" : "用户",
@@ -451,18 +463,6 @@
     "logicName" : "产品库",
     "name" : "PRODUCT",
     "stdDataType" : 1
-  }, {
-    "codeName" : "DeptName",
-    "logicName" : "归属部门名",
-    "name" : "DEPTNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "OrgName",
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

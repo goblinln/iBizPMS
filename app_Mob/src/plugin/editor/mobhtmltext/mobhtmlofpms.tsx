@@ -14,12 +14,61 @@ import { VueLifeCycleProcessing,EditorBase } from 'ibiz-vue';
 @VueLifeCycleProcessing()
 export class MOBHTMLOFPMS extends EditorBase {
     
-    !!!!模版产生代码错误:!!!!模版产生代码错误:----
-Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
-----
+        /**
+     * 编辑器初始化
+     *
+     * @memberof MOBHTMLOFPMS
+     */
+    public async initEditor() {
+        const { editorParams } = this.editorInstance;
+        if (editorParams) {
+            let uploadparams = eval("(" + editorParams.uploadparams + ")");
+            let exportparams = eval("(" + editorParams.exportparams + ")");
+            this.customProps.uploadparams = uploadparams || {};
+            this.customProps.exportparams = exportparams || {};
+        }
+    }
 
-----
-FTL stack trace ("~" means nesting-related):
-	- Failed at: #if ctrl.isInfoFormMode?? && ctrl.isI...  [in template "TEMPLCODE_zh_CN" at line 1, column 54]
-----
+    /**
+     * 编辑器change事件
+     *
+     * @param {*} value
+     * @memberof MOBHTMLOFPMS
+     */
+    public handleChange($event: any) {
+        this.editorChange({ name: this.editorInstance.name, value: $event })
+    }
+
+    public noticeusersChange(val: any) {
+        this.editorChange({ name: this.editorInstance.name, value: val })
+    }
+
+
+    /**
+     * 绘制内容
+     *
+     * @returns {*}
+     * @memberof MOBHTMLOFPMS
+     */
+    public render(): any {
+        if (!this.editorIsLoaded) {
+            return null;
+        }
+        return this.$createElement('app-mob-rich-text-editor-pms', {
+            props: {
+                name: this.editorInstance.name,
+                value: this.value,
+                disabled: this.disabled,
+                formState: this.contextState,
+                data: JSON.stringify(this.contextData),
+                ...this.customProps,
+            },
+            on: {
+                change: this.handleChange,
+                noticeusers_change: this.noticeusersChange,
+            },
+            style: this.customStyle
+        })
+
+    }
 }

@@ -1,7 +1,7 @@
 
 import { Component, Watch } from 'vue-property-decorator';
 import { VueLifeCycleProcessing,AppControlBase } from 'ibiz-vue';
-
+import { AppMobMDCtrlBase } from 'ibiz-vue';
 
 
 /**
@@ -14,9 +14,13 @@ import { VueLifeCycleProcessing,AppControlBase } from 'ibiz-vue';
  */
 @Component({})
 @VueLifeCycleProcessing()
-export class LIST_RENDER5dacc74a9f extends AppControlBase {
+export class LIST_RENDER5dacc74a9f extends AppMobMDCtrlBase {
 
-<app-pms-update-log-info :items="items" ></app-pms-update-log-info>
+    render() {
+        return this.$createElement('app-pms-update-log-info', {
+            props: { items: this.items }
+        })
+    }
 
 }
 

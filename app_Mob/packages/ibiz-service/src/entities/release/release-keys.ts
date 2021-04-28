@@ -17,6 +17,8 @@ export default [
     'backgroundid',
     'desc',
     'files',
+    'orgname',
+    'deptname',
     'updateby',
     'frontapplication',
     'dept',
@@ -28,6 +30,4 @@ export default [
     'product',
     'build',
     'branch',
-    'orgname',
-    'deptname',
 ];

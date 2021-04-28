@@ -1390,6 +1390,18 @@
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
       "modelref" : true,
+      "id" : "RootModule"
+    },
+    "name" : "默认根节点 - 文档库根目录",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ROOT"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
       "id" : "ChildModule"
     },
     "name" : "文档库根目录 - 文档库子目录",
@@ -1430,18 +1442,6 @@
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "RootModule"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "RootModule"
-    },
-    "name" : "默认根节点 - 文档库根目录",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ROOT"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
@@ -1494,12 +1494,13 @@
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "DocLibDoc"
+      "id" : "ModuleDoc"
     },
-    "name" : "默认根节点 - 文档",
+    "name" : "文档库根目录 - 分类下文档",
+    "parentFilter" : "module",
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ROOT"
+      "id" : "RootModule"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
@@ -1519,13 +1520,12 @@
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ModuleDoc"
+      "id" : "DocLibDoc"
     },
-    "name" : "文档库根目录 - 分类下文档",
-    "parentFilter" : "module",
+    "name" : "默认根节点 - 文档",
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "RootModule"
+      "id" : "ROOT"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3

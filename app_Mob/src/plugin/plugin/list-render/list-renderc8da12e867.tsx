@@ -1,7 +1,7 @@
 
 import { Component, Watch } from 'vue-property-decorator';
 import { VueLifeCycleProcessing,AppControlBase } from 'ibiz-vue';
-
+import { AppMobControlBase } from 'ibiz-vue';
 
 
 /**
@@ -14,9 +14,9 @@ import { VueLifeCycleProcessing,AppControlBase } from 'ibiz-vue';
  */
 @Component({})
 @VueLifeCycleProcessing()
-export class LIST_RENDERc8da12e867 extends AppControlBase {
+export class LIST_RENDERc8da12e867 extends AppMobControlBase {
 
-<app-list-index :items="items" @clickItem="item_click"></app-list-index>
+
 
 }
 

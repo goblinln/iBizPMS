@@ -187,6 +187,12 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "CreateBy",
     "logicName" : "由谁创建",
     "name" : "CREATEBY",
@@ -202,6 +208,19 @@
     "codeName" : "Org",
     "logicName" : "归属组织",
     "name" : "ORG",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "Id",
+    "logicName" : "主键",
+    "name" : "ID",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "keyField" : true
+  }, {
+    "codeName" : "DeptName",
+    "logicName" : "归属部门名",
+    "name" : "DEPTNAME",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
@@ -222,25 +241,6 @@
     "logicName" : "需求",
     "name" : "STORY",
     "stdDataType" : 1
-  }, {
-    "codeName" : "OrgName",
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "DeptName",
-    "logicName" : "归属部门名",
-    "name" : "DEPTNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Id",
-    "logicName" : "主键",
-    "name" : "ID",
-    "stdDataType" : 25,
-    "stringLength" : 60,
-    "keyField" : true
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

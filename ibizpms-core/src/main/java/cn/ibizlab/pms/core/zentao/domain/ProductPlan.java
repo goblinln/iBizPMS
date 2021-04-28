@@ -188,6 +188,15 @@ public class ProductPlan extends EntityMP implements Serializable {
     @ApiModelProperty("计划模板")
     private String plantemplet;
     /**
+     * 归属部门名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
+    @TableField(value = "`DEPTNAME`")
+    @JSONField(name = "deptname")
+    @JsonProperty("deptname")
+    @ApiModelProperty("归属部门名")
+    private String deptname;
+    /**
      * 未完成任务数
      */
     @TableField(exist = false)
@@ -229,6 +238,15 @@ public class ProductPlan extends EntityMP implements Serializable {
     @JsonProperty("isexpired")
     @ApiModelProperty("是否过期")
     private String isexpired;
+    /**
+     * 归属组织名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGNAME)
+    @TableField(value = "`ORGNAME`")
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
     /**
      * 由谁更新
      */
@@ -357,24 +375,6 @@ public class ProductPlan extends EntityMP implements Serializable {
     @JsonProperty("product")
     @ApiModelProperty("产品")
     private Long product;
-    /**
-     * 归属组织名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`ORGNAME`")
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
-    /**
-     * 归属部门名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "`DEPTNAME`")
-    @JSONField(name = "deptname")
-    @JsonProperty("deptname")
-    @ApiModelProperty("归属部门名")
-    private String deptname;
 
     /**
      * 

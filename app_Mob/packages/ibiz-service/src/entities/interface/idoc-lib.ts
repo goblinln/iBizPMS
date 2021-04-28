@@ -29,6 +29,10 @@ export interface IDocLib extends IEntityBase {
      */
     collector?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 由谁更新
      */
     updatemanname?: any;
@@ -70,6 +74,10 @@ export interface IDocLib extends IEntityBase {
      * 编号
      */
     id?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
     /**
      * 用户
      */
@@ -114,12 +122,4 @@ export interface IDocLib extends IEntityBase {
      * 产品库
      */
     product?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 }

@@ -150,6 +150,18 @@
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
       "modelref" : true,
+      "id" : "deptroot"
+    },
+    "name" : "公司 - 部门根节点",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "Company"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
       "id" : "ChildDept"
     },
     "name" : "部门根节点 - 子部门",
@@ -194,12 +206,12 @@
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "deptroot"
+      "id" : "Company"
     },
-    "name" : "公司 - 部门根节点",
+    "name" : "默认根节点 - 公司",
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "Company"
+      "id" : "ROOT"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
@@ -244,18 +256,6 @@
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "ChildDept"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "Company"
-    },
-    "name" : "默认根节点 - 公司",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "ROOT"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3

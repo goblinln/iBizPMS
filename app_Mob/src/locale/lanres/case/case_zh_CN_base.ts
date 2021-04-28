@@ -12,6 +12,7 @@ export default {
     casesteps: "用例步骤集合",
     task: "属性",
     order: "排序",
+    orgname: "归属组织名",
     howrun: "howRun",
     resultcnt: "测试结果数",
     noticeusers: "消息通知用户",
@@ -24,6 +25,7 @@ export default {
     comment: "备注",
     auto: "auto",
     isfavorites: "是否收藏",
+    deptname: "归属部门名",
     dept: "归属部门",
     frequency: "frequency",
     title: "用例标题",
@@ -62,8 +64,6 @@ export default {
     product: "所属产品",
     lib: "所属库",
     module: "所属模块",
-    deptname: "归属部门名",
-    orgname: "归属组织名",
   },
 	views: {
 		mobeditview: {

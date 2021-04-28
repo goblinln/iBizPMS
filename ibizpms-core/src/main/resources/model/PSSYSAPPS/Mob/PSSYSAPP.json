@@ -21919,6 +21919,12 @@
         "stdDataType" : 25,
         "stringLength" : 200
       }, {
+        "codeName" : "Dept",
+        "logicName" : "归属部门",
+        "name" : "DEPT",
+        "stdDataType" : 25,
+        "stringLength" : 100
+      }, {
         "codeName" : "Yesterday",
         "logicName" : "昨天",
         "name" : "YESTERDAY",
@@ -21948,6 +21954,12 @@
         "name" : "ISACTORSS",
         "stdDataType" : 1
       }, {
+        "codeName" : "DeptName",
+        "logicName" : "归属部门名",
+        "name" : "DEPTNAME",
+        "stdDataType" : 25,
+        "stringLength" : 100
+      }, {
         "codeName" : "Thisweek",
         "logicName" : "本周",
         "name" : "THISWEEK",
@@ -21971,6 +21983,12 @@
         "name" : "OBJECTTYPE",
         "stdDataType" : 25,
         "stringLength" : 30
+      }, {
+        "codeName" : "OrgName",
+        "logicName" : "归属组织名",
+        "name" : "ORGNAME",
+        "stdDataType" : 25,
+        "stringLength" : 100
       }, {
         "codeName" : "Id",
         "logicName" : "id",
@@ -22032,6 +22050,12 @@
         "stdDataType" : 25,
         "stringLength" : 200
       }, {
+        "codeName" : "Org",
+        "logicName" : "归属组织",
+        "name" : "ORG",
+        "stdDataType" : 25,
+        "stringLength" : 100
+      }, {
         "codeName" : "Lastweek",
         "logicName" : "上周",
         "name" : "LASTWEEK",
@@ -22054,30 +22078,6 @@
         "logicName" : "项目",
         "name" : "PROJECT",
         "stdDataType" : 1
-      }, {
-        "codeName" : "DeptName",
-        "logicName" : "归属部门名",
-        "name" : "DEPTNAME",
-        "stdDataType" : 25,
-        "stringLength" : 100
-      }, {
-        "codeName" : "OrgName",
-        "logicName" : "归属组织名",
-        "name" : "ORGNAME",
-        "stdDataType" : 25,
-        "stringLength" : 100
-      }, {
-        "codeName" : "Dept",
-        "logicName" : "归属部门",
-        "name" : "DEPT",
-        "stdDataType" : 25,
-        "stringLength" : 100
-      }, {
-        "codeName" : "Org",
-        "logicName" : "归属组织",
-        "name" : "ORG",
-        "stdDataType" : 25,
-        "stringLength" : 100
       } ],
       "getAllPSAppDEMethods" : [ {
         "codeName" : "Select",
@@ -24921,6 +24921,12 @@
         "stdDataType" : 25,
         "stringLength" : 30
       }, {
+        "codeName" : "MdeptName",
+        "logicName" : "归属部门名",
+        "name" : "MDEPTNAME",
+        "stdDataType" : 25,
+        "stringLength" : 100
+      }, {
         "codeName" : "PO",
         "logicName" : "产品负责人",
         "name" : "PO",
@@ -25039,6 +25045,12 @@
         "name" : "BUILDCNT",
         "stdDataType" : 9
       }, {
+        "codeName" : "OrgName",
+        "logicName" : "归属组织名",
+        "name" : "ORGNAME",
+        "stdDataType" : 25,
+        "stringLength" : 100
+      }, {
         "codeName" : "CreatedDate",
         "logicName" : "创建日期",
         "name" : "CREATEDDATE",
@@ -25066,18 +25078,6 @@
         "logicName" : "产品线",
         "name" : "LINE",
         "stdDataType" : 1
-      }, {
-        "codeName" : "OrgName",
-        "logicName" : "归属组织名",
-        "name" : "ORGNAME",
-        "stdDataType" : 25,
-        "stringLength" : 100
-      }, {
-        "codeName" : "MdeptName",
-        "logicName" : "归属部门名",
-        "name" : "MDEPTNAME",
-        "stdDataType" : 25,
-        "stringLength" : 100
       } ],
       "getAllPSAppDELogics" : [ {
         "codeName" : "CancelProductTop",
@@ -27229,6 +27229,12 @@
         "stdDataType" : 25,
         "stringLength" : 20
       }, {
+        "codeName" : "OrgName",
+        "logicName" : "归属组织名",
+        "name" : "ORGNAME",
+        "stdDataType" : 25,
+        "stringLength" : 100
+      }, {
         "codeName" : "Begin",
         "logicName" : "开始时间",
         "name" : "BEGIN",
@@ -27310,6 +27316,12 @@
         "logicName" : "未完成任务数",
         "name" : "UNCOMPLETETASKCNT",
         "stdDataType" : 9
+      }, {
+        "codeName" : "MdeptName",
+        "logicName" : "归属部门名",
+        "name" : "MDEPTNAME",
+        "stdDataType" : 25,
+        "stringLength" : 100
       }, {
         "codeName" : "Teamcnt",
         "logicName" : "团队成员总数",
@@ -27680,18 +27692,6 @@
         "logicName" : "父项目",
         "name" : "PARENT",
         "stdDataType" : 1
-      }, {
-        "codeName" : "OrgName",
-        "logicName" : "归属组织名",
-        "name" : "ORGNAME",
-        "stdDataType" : 25,
-        "stringLength" : 100
-      }, {
-        "codeName" : "MdeptName",
-        "logicName" : "归属部门名",
-        "name" : "MDEPTNAME",
-        "stdDataType" : 25,
-        "stringLength" : 100
       } ],
       "getAllPSAppDELogics" : [ {
         "codeName" : "ProjectTaskQCnt",

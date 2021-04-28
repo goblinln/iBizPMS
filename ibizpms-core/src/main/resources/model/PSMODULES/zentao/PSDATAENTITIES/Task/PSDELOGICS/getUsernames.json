@@ -31,34 +31,6 @@
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Rawsqlcall2"
-      },
-      "name" : "连接6464",
-      "getPSDELogicLinkGroupCond" : {
-        "groupOP" : "AND",
-        "logicType" : "GROUP",
-        "getPSDELogicLinkConds" : [ {
-          "condOP" : "NOTEQ",
-          "dstFieldName" : "MULTIPLE",
-          "getDstLogicParam" : {
-            "modelref" : true,
-            "id" : "Default"
-          },
-          "logicType" : "SINGLE",
-          "name" : "Default[MULTIPLE] 不等于(<>) (1)",
-          "paramValue" : "1"
-        } ],
-        "notMode" : false,
-        "id" : "744eb69b991e71834727d528f79a3dd2"
-      },
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
         "id" : "Rawsqlcall1"
       },
       "name" : "连接9577",
@@ -77,7 +49,35 @@
           "paramValue" : "1"
         } ],
         "notMode" : false,
-        "id" : "92d1be3cfd5aaa4a72a363b7741b4476"
+        "id" : "c2f12771558192af8aaa4a9f60e7df25"
+      },
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      },
+      "defaultLink" : false
+    }, {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Rawsqlcall2"
+      },
+      "name" : "连接6464",
+      "getPSDELogicLinkGroupCond" : {
+        "groupOP" : "AND",
+        "logicType" : "GROUP",
+        "getPSDELogicLinkConds" : [ {
+          "condOP" : "NOTEQ",
+          "dstFieldName" : "MULTIPLE",
+          "getDstLogicParam" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "logicType" : "SINGLE",
+          "name" : "Default[MULTIPLE] 不等于(<>) (1)",
+          "paramValue" : "1"
+        } ],
+        "notMode" : false,
+        "id" : "e0be4bbb734801f10bff44f63df51f69"
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,

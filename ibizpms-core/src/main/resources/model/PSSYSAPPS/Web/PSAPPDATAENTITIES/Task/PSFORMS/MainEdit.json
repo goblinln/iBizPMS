@@ -2365,34 +2365,31 @@
                   "checkMode" : 3,
                   "name" : "编辑项值规则",
                   "getPSDEFValueRule" : {
-                    "codeName" : "ValueRule2",
-                    "name" : "预计剩余大于等于0",
+                    "codeName" : "ValueRule",
+                    "name" : "预计消耗大于等于0",
                     "getPSDEFVRGroupCondition" : {
                       "condOp" : "AND",
                       "condType" : "GROUP",
                       "name" : "默认组",
                       "getPSDEFVRConditions" : [ {
-                        "condType" : "VALUERANGE2",
-                        "dEFName" : "LEFT",
-                        "minValue" : 0.0,
-                        "name" : "[数值范围] 大于等于 0.0",
-                        "ruleInfo" : "预计剩余大于等于0",
-                        "includeMaxValue" : false,
-                        "includeMinValue" : true
-                      } ],
-                      "ruleInfo" : "预计剩余大于等于0"
+                        "condOp" : "GT",
+                        "condType" : "SIMPLE",
+                        "dEFName" : "ESTIMATE",
+                        "name" : "[常规条件] 大于(>) (0)",
+                        "paramValue" : "0"
+                      } ]
                     },
                     "getPSDEField" : {
-                      "name" : "LEFT",
-                      "codeName" : "Left"
+                      "name" : "ESTIMATE",
+                      "codeName" : "Estimate"
                     },
-                    "ruleInfo" : "预计剩余大于等于0",
+                    "ruleInfo" : "预计大于等于0",
                     "checkDefault" : false,
                     "defaultMode" : false,
                     "enableBackend" : true,
                     "enableFront" : true
                   },
-                  "getPSDEGridEditItemName" : "left",
+                  "getPSDEGridEditItemName" : "estimate",
                   "valueRuleType" : "DEFVALUERULE"
                 }, {
                   "checkMode" : 3,
@@ -2431,31 +2428,34 @@
                   "checkMode" : 3,
                   "name" : "编辑项值规则",
                   "getPSDEFValueRule" : {
-                    "codeName" : "ValueRule",
-                    "name" : "预计消耗大于等于0",
+                    "codeName" : "ValueRule2",
+                    "name" : "预计剩余大于等于0",
                     "getPSDEFVRGroupCondition" : {
                       "condOp" : "AND",
                       "condType" : "GROUP",
                       "name" : "默认组",
                       "getPSDEFVRConditions" : [ {
-                        "condOp" : "GT",
-                        "condType" : "SIMPLE",
-                        "dEFName" : "ESTIMATE",
-                        "name" : "[常规条件] 大于(>) (0)",
-                        "paramValue" : "0"
-                      } ]
+                        "condType" : "VALUERANGE2",
+                        "dEFName" : "LEFT",
+                        "minValue" : 0.0,
+                        "name" : "[数值范围] 大于等于 0.0",
+                        "ruleInfo" : "预计剩余大于等于0",
+                        "includeMaxValue" : false,
+                        "includeMinValue" : true
+                      } ],
+                      "ruleInfo" : "预计剩余大于等于0"
                     },
                     "getPSDEField" : {
-                      "name" : "ESTIMATE",
-                      "codeName" : "Estimate"
+                      "name" : "LEFT",
+                      "codeName" : "Left"
                     },
-                    "ruleInfo" : "预计大于等于0",
+                    "ruleInfo" : "预计剩余大于等于0",
                     "checkDefault" : false,
                     "defaultMode" : false,
                     "enableBackend" : true,
                     "enableFront" : true
                   },
-                  "getPSDEGridEditItemName" : "estimate",
+                  "getPSDEGridEditItemName" : "left",
                   "valueRuleType" : "DEFVALUERULE"
                 } ],
                 "getPSDEGridEditItems" : [ {

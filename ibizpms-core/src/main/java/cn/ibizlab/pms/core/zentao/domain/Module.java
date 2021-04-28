@@ -56,6 +56,15 @@ public class Module extends EntityMP implements Serializable {
     @ApiModelProperty("所属根")
     private String root;
     /**
+     * 归属组织名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGNAME)
+    @TableField(value = "`ORGNAME`")
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+    /**
      * 级别
      */
     @DEField(defaultValue = "0")
@@ -124,6 +133,15 @@ public class Module extends EntityMP implements Serializable {
     @JsonProperty("createby")
     @ApiModelProperty("由谁创建")
     private String createby;
+    /**
+     * 归属部门名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
+    @TableField(value = "`MDEPTNAME`")
+    @JSONField(name = "mdeptname")
+    @JsonProperty("mdeptname")
+    @ApiModelProperty("归属部门名")
+    private String mdeptname;
     /**
      * 收藏者
      */
@@ -213,24 +231,6 @@ public class Module extends EntityMP implements Serializable {
     @JsonProperty("parent")
     @ApiModelProperty("上级模块")
     private Long parent;
-    /**
-     * 归属组织名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`ORGNAME`")
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
-    /**
-     * 归属部门名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "`MDEPTNAME`")
-    @JSONField(name = "mdeptname")
-    @JsonProperty("mdeptname")
-    @ApiModelProperty("归属部门名")
-    private String mdeptname;
 
     /**
      * 

@@ -734,10 +734,10 @@
       "modelref" : true,
       "id" : "Doc"
     },
-    "name" : "文档分类 - 文档",
+    "name" : "默认根节点 - 文档",
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "Module"
+      "id" : "ROOT"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
@@ -746,10 +746,10 @@
       "modelref" : true,
       "id" : "Doc"
     },
-    "name" : "默认根节点 - 文档",
+    "name" : "文档分类 - 文档",
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ROOT"
+      "id" : "Module"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3

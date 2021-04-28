@@ -2,6 +2,7 @@ import commonLogic from '@/locale/logic/common/common-logic';
 export default {
   fields: {
     openedversion: "当前系统版本",
+    orgname: "归属组织名",
     begin: "开始时间",
     hours: "可用工时/天",
     pmseeprojectinfo: "项目立项信息",
@@ -17,6 +18,7 @@ export default {
     mycompletetaskcnt: "我完成任务数",
     istop: "是否置顶",
     uncompletetaskcnt: "未完成任务数",
+    mdeptname: "归属部门名",
     teamcnt: "团队成员总数",
     pm: "项目负责人",
     dept: "选择部门",
@@ -82,8 +84,6 @@ export default {
     qd: "测试负责人",
     parentname: "parent",
     parent: "父项目",
-    orgname: "归属组织名",
-    mdeptname: "归属部门名",
   },
 	views: {
 		mobtabexpview: {

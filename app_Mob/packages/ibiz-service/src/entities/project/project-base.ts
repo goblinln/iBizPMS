@@ -38,6 +38,10 @@ export abstract class ProjectBase extends EntityBase implements IProject {
      */
     openedversion?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 开始时间
      */
     begin?: any;
@@ -99,6 +103,10 @@ export abstract class ProjectBase extends EntityBase implements IProject {
      * 未完成任务数
      */
     uncompletetaskcnt?: any;
+    /**
+     * 归属部门名
+     */
+    mdeptname?: any;
     /**
      * 团队成员总数
      */
@@ -373,14 +381,6 @@ export abstract class ProjectBase extends EntityBase implements IProject {
      * 父项目
      */
     parent?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 归属部门名
-     */
-    mdeptname?: any;
 
     /**
      * 重置实体数据

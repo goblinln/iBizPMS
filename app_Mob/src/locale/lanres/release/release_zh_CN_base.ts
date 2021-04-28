@@ -19,6 +19,8 @@ export default {
     backgroundid: "后台体系",
     desc: "描述",
     files: "附件",
+    orgname: "归属组织名",
+    deptname: "归属部门名",
     updateby: "由谁更新",
     frontapplication: "系统应用",
     dept: "归属部门",
@@ -30,8 +32,6 @@ export default {
     product: "产品",
     build: "版本",
     branch: "平台/分支",
-    orgname: "归属组织名",
-    deptname: "归属部门名",
   },
 	views: {
 		mobmdview: {

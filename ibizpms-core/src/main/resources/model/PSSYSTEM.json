@@ -1498,9 +1498,6 @@
     "path" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateProductMonthlyService.json"
   }, {
     "modelref" : true,
-    "path" : "PSSYSBACKSERVICES/ProductSync.json"
-  }, {
-    "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/SumPorjectMonthly.json"
   }, {
     "modelref" : true,
@@ -1511,6 +1508,9 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSSYSBACKSERVICES/TodoService.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSBACKSERVICES/ProductSync.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/report/PSSYSBACKSERVICES/PushReportUserWeeklyService.json"
@@ -1545,20 +1545,20 @@
   } ],
   "getAllPSSysSequences" : [ {
     "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProBugSeq.json"
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTodoSeq.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTodoSeq.json"
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProBugSeq.json"
   } ],
   "getAllPSSysTranslators" : [ {
+    "modelref" : true,
+    "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
+  }, {
     "modelref" : true,
     "path" : "PSSYSTRANSLATORS/BuildValueTranslator.json"
   }, {
     "modelref" : true,
     "path" : "PSSYSTRANSLATORS/ModulePathValueTranslator.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
   }, {
     "modelref" : true,
     "path" : "PSSYSTRANSLATORS/BranchValueTranslator.json"
@@ -1592,10 +1592,6 @@
     "resCode" : "UNIVERSALSAVE",
     "id" : "ibiz__UNIVERSALSAVE"
   }, {
-    "name" : "顶部_文档",
-    "resCode" : "TOP_DOC_MENU",
-    "id" : "zentao__TOP_DOC_MENU"
-  }, {
     "name" : "测试用例移除",
     "resCode" : "CASE_UNLINK_BUT",
     "id" : "ibiz__CASE_UNLINK_BUT"
@@ -1624,6 +1620,10 @@
     "resCode" : "PROJ_SUSPEND_BUT",
     "id" : "ibiz__PROJ_SUSPEND_BUT"
   }, {
+    "name" : "顶部_全文检索",
+    "resCode" : "TOP_ELECSEARCH_MENU",
+    "id" : "zentao__TOP_ELECSEARCH_MENU"
+  }, {
     "name" : "产品统计打开需求",
     "resCode" : "PRODSTA_STOREOP_BUT",
     "id" : "ibiz__PRODSTA_STOREOP_BUT"
@@ -1631,6 +1631,10 @@
     "name" : "测试模块修复路径",
     "resCode" : "TESTMOD_FIX_BUT",
     "id" : "ibiz__TESTMOD_FIX_BUT"
+  }, {
+    "name" : "顶部_产品主页",
+    "resCode" : "TOP_PRODUCT_MENU",
+    "id" : "zentao__TOP_PRODUCT_MENU"
   }, {
     "name" : "产品统计创建项目",
     "resCode" : "PRODSTA_PROJCRT_BUT",
@@ -1668,6 +1672,10 @@
     "resCode" : "STEP_CREATE_BUT",
     "id" : "ibiz__STEP_CREATE_BUT"
   }, {
+    "name" : "顶部_测试主页",
+    "resCode" : "TOP_CASE_MENU",
+    "id" : "zentao__TOP_CASE_MENU"
+  }, {
     "name" : "用例库概况",
     "resCode" : "LIB_OPEN_BUT",
     "id" : "ibiz__LIB_OPEN_BUT"
@@ -1675,6 +1683,10 @@
     "name" : "计划关联需求",
     "resCode" : "PROP_LSTORY_BUT",
     "id" : "ibiz__PROP_LSTORY_BUT"
+  }, {
+    "name" : "左侧_测试资源",
+    "resCode" : "LEFT_CASE_MENU",
+    "id" : "zentao__LEFT_CASE_MENU"
   }, {
     "name" : "测试版本编辑",
     "resCode" : "TESTT_EDIT_BUT",
@@ -1720,14 +1732,6 @@
     "resCode" : "PROD_EDIT_BUT",
     "id" : "ibiz__PROD_EDIT_BUT"
   }, {
-    "name" : "顶部_全文检索",
-    "resCode" : "TOP_ELECSEARCH_MENU",
-    "id" : "zentao__TOP_ELECSEARCH_MENU"
-  }, {
-    "name" : "系统管理",
-    "resCode" : "SYSTEMMANAGER_MENU",
-    "id" : "zentao__SYSTEMMANAGER_MENU"
-  }, {
     "name" : "取消收藏文档库",
     "resCode" : "DOCLIB_NFAVOUR_BUT",
     "id" : "ibiz__DOCLIB_NFAVOUR_BUT"
@@ -1744,10 +1748,6 @@
     "resCode" : "LIBM_OPEN_BUT",
     "id" : "ibiz__LIBM_OPEN_BUT"
   }, {
-    "name" : "顶部_产品主页",
-    "resCode" : "TOP_PRODUCT_MENU",
-    "id" : "zentao__TOP_PRODUCT_MENU"
-  }, {
     "name" : "产品关闭",
     "resCode" : "PROD_CLOSED_BUT",
     "id" : "ibiz__PROD_CLOSED_BUT"
@@ -1763,6 +1763,10 @@
     "name" : "测试版本开始",
     "resCode" : "TESTT_START_BUT",
     "id" : "ibiz__TESTT_START_BUT"
+  }, {
+    "name" : "左侧_项目管理（一级）",
+    "resCode" : "LEFT_PROJECT_MENU",
+    "id" : "zentao__LEFT_PROJECT_MENU"
   }, {
     "name" : "测试分页导航-测试单",
     "resCode" : "TEST_TESTTASK",
@@ -1836,9 +1840,9 @@
     "resCode" : "BUG_RESOLVE_BUT",
     "id" : "ibiz__BUG_RESOLVE_BUT"
   }, {
-    "name" : "顶部_通讯录",
-    "resCode" : "TOP_USERCONCAT_MENU",
-    "id" : "zentao__TOP_USERCONCAT_MENU"
+    "name" : "顶部_文档",
+    "resCode" : "TOP_DOC_MENU",
+    "id" : "zentao__TOP_DOC_MENU"
   }, {
     "name" : "需求待收藏",
     "resCode" : "STORY_NFAVOR_BUT",
@@ -1859,6 +1863,10 @@
     "name" : "任务完成",
     "resCode" : "TASK_COMPLETE_BUT",
     "id" : "ibiz__TASK_COMPLETE_BUT"
+  }, {
+    "name" : "顶部_统计",
+    "resCode" : "TOP_SUM_MENU",
+    "id" : "zentao__TOP_SUM_MENU"
   }, {
     "name" : "任务开始",
     "resCode" : "TASK_START_BUT",
@@ -1892,17 +1900,9 @@
     "resCode" : "DOC_NFAVOUR_BUT",
     "id" : "ibiz__DOC_NFAVOUR_BUT"
   }, {
-    "name" : "顶部_计划模板",
-    "resCode" : "TOP_PLANMODULE_MENU",
-    "id" : "zentao__TOP_PLANMODULE_MENU"
-  }, {
     "name" : "Bug建用例",
     "resCode" : "BUG_CREATECASE_BUT",
     "id" : "ibiz__BUG_CREATECASE_BUT"
-  }, {
-    "name" : "顶部_项目主页",
-    "resCode" : "TOP_PROJECT_MENU",
-    "id" : "zentao__TOP_PROJECT_MENU"
   }, {
     "name" : "发布操作列（激活）",
     "resCode" : "RELEASE_ACTIVE",
@@ -1928,9 +1928,21 @@
     "resCode" : "PROD_CREATE_BUT",
     "id" : "ibiz__PROD_CREATE_BUT"
   }, {
+    "name" : "系统管理",
+    "resCode" : "SYSTEMMANAGER_MENU",
+    "id" : "zentao__SYSTEMMANAGER_MENU"
+  }, {
+    "name" : "顶部_ibz软件生产管理",
+    "resCode" : "TOP_IBZAPPMANAGER_MENU",
+    "id" : "zentao__TOP_IBZAPPMANAGER_MENU"
+  }, {
     "name" : "测试版本新建",
     "resCode" : "TESTT_CREATE_BUT",
     "id" : "ibiz__TESTT_CREATE_BUT"
+  }, {
+    "name" : "顶部_年度统计",
+    "resCode" : "TOP_YEARSUM_MENU",
+    "id" : "zentao__TOP_YEARSUM_MENU"
   }, {
     "name" : "测试用例转BUG",
     "resCode" : "CASE_TOBUG_BUT",
@@ -1939,6 +1951,10 @@
     "name" : "测试用例（用例转BUG）",
     "resCode" : "CASE_CASETOBUG_BUT",
     "id" : "ibiz__CASE_CASETOBUG_BUT"
+  }, {
+    "name" : "顶部_项目主页",
+    "resCode" : "TOP_PROJECT_MENU",
+    "id" : "zentao__TOP_PROJECT_MENU"
   }, {
     "name" : "月报编辑",
     "resCode" : "MONTHLY_EDIT_BUT",
@@ -1955,6 +1971,10 @@
     "name" : "用例库模块新建",
     "resCode" : "LIBM_CREATE_BUT",
     "id" : "ibiz__LIBM_CREATE_BUT"
+  }, {
+    "name" : "顶部_我的收藏",
+    "resCode" : "TOP_MYFAVOURITE_MENU",
+    "id" : "zentao__TOP_MYFAVOURITE_MENU"
   }, {
     "name" : "任务已收藏",
     "resCode" : "TASK_FAVOR_BUT",
@@ -2004,10 +2024,6 @@
     "resCode" : "STORY_ASS_BUT",
     "id" : "ibiz__STORY_ASS_BUT"
   }, {
-    "name" : "左侧_测试资源",
-    "resCode" : "LEFT_CASE_MENU",
-    "id" : "zentao__LEFT_CASE_MENU"
-  }, {
     "name" : "产品左侧资源",
     "resCode" : "PRODUCTLEFT",
     "id" : "ibiz__PRODUCTLEFT"
@@ -2052,9 +2068,9 @@
     "resCode" : "STORY_CHANGED_BUT",
     "id" : "ibiz__STORY_CHANGED_BUT"
   }, {
-    "name" : "顶部_统计",
-    "resCode" : "TOP_SUM_MENU",
-    "id" : "zentao__TOP_SUM_MENU"
+    "name" : "顶部_通讯录",
+    "resCode" : "TOP_USERCONCAT_MENU",
+    "id" : "zentao__TOP_USERCONCAT_MENU"
   }, {
     "name" : "项目激活",
     "resCode" : "PROJ_ACTIVATION_BUT",
@@ -2108,10 +2124,6 @@
     "resCode" : "LIBM_EDIT_BUT",
     "id" : "ibiz__LIBM_EDIT_BUT"
   }, {
-    "name" : "顶部_测试主页",
-    "resCode" : "TOP_CASE_MENU",
-    "id" : "zentao__TOP_CASE_MENU"
-  }, {
     "name" : "Bug确认",
     "resCode" : "BUG_CONFIRM_BUT",
     "id" : "ibiz__BUG_CONFIRM_BUT"
@@ -2135,10 +2147,6 @@
     "name" : "文档库分类编辑",
     "resCode" : "DOCLIBMODULE_EDIT_BUT",
     "id" : "ibiz__DOCLIBMODULE_EDIT_BUT"
-  }, {
-    "name" : "顶部_我的地盘",
-    "resCode" : "TOP_MYPLACE_MENU",
-    "id" : "zentao__TOP_MYPLACE_MENU"
   }, {
     "name" : "任务子任务",
     "resCode" : "TASK_SUBTASKS_BUT",
@@ -2164,10 +2172,6 @@
     "resCode" : "REPORT_CREATE_BUT",
     "id" : "ibiz__REPORT_CREATE_BUT"
   }, {
-    "name" : "左侧_项目管理（一级）",
-    "resCode" : "LEFT_PROJECT_MENU",
-    "id" : "zentao__LEFT_PROJECT_MENU"
-  }, {
     "name" : "汇报提交",
     "resCode" : "REPORTLY_SUBMIT_BUT",
     "id" : "report__REPORTLY_SUBMIT_BUT"
@@ -2184,13 +2188,13 @@
     "resCode" : "CASE_FAVOR_BUT",
     "id" : "ibiz__CASE_FAVOR_BUT"
   }, {
+    "name" : "顶部_我的地盘",
+    "resCode" : "TOP_MYPLACE_MENU",
+    "id" : "zentao__TOP_MYPLACE_MENU"
+  }, {
     "name" : "产品删除",
     "resCode" : "PROD_DELETE_BUT",
     "id" : "ibiz__PROD_DELETE_BUT"
-  }, {
-    "name" : "顶部_我的收藏",
-    "resCode" : "TOP_MYFAVOURITE_MENU",
-    "id" : "zentao__TOP_MYFAVOURITE_MENU"
   }, {
     "name" : "任务待收藏",
     "resCode" : "TASK_NFAVOR_BUT",
@@ -2216,10 +2220,6 @@
     "resCode" : "PROJECT_MANAGER",
     "id" : "PROJECT_MANAGER"
   }, {
-    "name" : "顶部_年度统计",
-    "resCode" : "TOP_YEARSUM_MENU",
-    "id" : "zentao__TOP_YEARSUM_MENU"
-  }, {
     "name" : "项目版本关联Bug（需求）",
     "resCode" : "BUILD_LINK_BUT",
     "id" : "ibiz__BUILD_LINK_BUT"
@@ -2228,6 +2228,10 @@
     "resCode" : "TESTT_ACTIVITE_BUT",
     "id" : "ibiz__TESTT_ACTIVITE_BUT"
   }, {
+    "name" : "顶部_计划模板",
+    "resCode" : "TOP_PLANMODULE_MENU",
+    "id" : "zentao__TOP_PLANMODULE_MENU"
+  }, {
     "name" : "项目版本新建",
     "resCode" : "BUILD_CREATE_BUT",
     "id" : "ibiz__BUILD_CREATE_BUT"
@@ -2235,10 +2239,6 @@
     "name" : "测试用例确认",
     "resCode" : "CASE_CONFIRM_BUT",
     "id" : "ibiz__CASE_CONFIRM_BUT"
-  }, {
-    "name" : "顶部_ibz软件生产管理",
-    "resCode" : "TOP_IBZAPPMANAGER_MENU",
-    "id" : "zentao__TOP_IBZAPPMANAGER_MENU"
   }, {
     "name" : "产品统计创建计划",
     "resCode" : "PRODSTA_PLANCRT_BUT",

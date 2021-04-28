@@ -483,6 +483,12 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Yearname",
     "logicName" : "年（显示）",
     "name" : "YEARNAME",
@@ -516,6 +522,12 @@
     "name" : "DATES",
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD"
+  }, {
+    "codeName" : "DeptName",
+    "logicName" : "归属部门名",
+    "name" : "DEPTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
     "codeName" : "Month",
     "logicName" : "月",
@@ -574,18 +586,6 @@
     "logicName" : "任务",
     "name" : "TASK",
     "stdDataType" : 1
-  }, {
-    "codeName" : "OrgName",
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "DeptName",
-    "logicName" : "归属部门名",
-    "name" : "DEPTNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

@@ -294,6 +294,16 @@ public class ProductDTO extends DTOBase implements Serializable {
     private String type;
 
     /**
+     * 属性 [MDEPTNAME]
+     *
+     */
+    @JSONField(name = "mdeptname")
+    @JsonProperty("mdeptname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属部门名")
+    private String mdeptname;
+
+    /**
      * 属性 [PO]
      *
      */
@@ -495,6 +505,16 @@ public class ProductDTO extends DTOBase implements Serializable {
     private Integer buildcnt;
 
     /**
+     * 属性 [ORGNAME]
+     *
+     */
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+
+    /**
      * 属性 [CREATEDDATE]
      *
      */
@@ -542,26 +562,6 @@ public class ProductDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("产品线")
     private Long line;
-
-    /**
-     * 属性 [ORGNAME]
-     *
-     */
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
-
-    /**
-     * 属性 [MDEPTNAME]
-     *
-     */
-    @JSONField(name = "mdeptname")
-    @JsonProperty("mdeptname")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属部门名")
-    private String mdeptname;
 
 
     /**

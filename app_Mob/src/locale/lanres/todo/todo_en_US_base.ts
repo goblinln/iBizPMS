@@ -15,6 +15,7 @@ export default {
     desc:  commonLogic.appcommonhandle("描述",null),
     updateBy:  commonLogic.appcommonhandle("由谁更新",null),
     noticeusers:  commonLogic.appcommonhandle("消息通知用户",null),
+    orgName:  commonLogic.appcommonhandle("归属组织名",null),
     org:  commonLogic.appcommonhandle("归属组织",null),
     finishedBy:  commonLogic.appcommonhandle("由谁完成",null),
     begin:  commonLogic.appcommonhandle("开始",null),
@@ -39,9 +40,8 @@ export default {
     date:  commonLogic.appcommonhandle("日期",null),
     story:  commonLogic.appcommonhandle("待办名称",null),
     iBizPrivate:  commonLogic.appcommonhandle("私人事务",null),
-    config:  commonLogic.appcommonhandle("config",null),
-    orgName:  commonLogic.appcommonhandle("归属组织名",null),
     deptName:  commonLogic.appcommonhandle("归属部门名",null),
+    config:  commonLogic.appcommonhandle("config",null),
   },
 	views: {
 		newmobeditview: {

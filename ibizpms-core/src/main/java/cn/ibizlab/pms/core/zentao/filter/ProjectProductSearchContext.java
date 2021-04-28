@@ -27,6 +27,10 @@ import cn.ibizlab.pms.core.zentao.domain.ProjectProduct;
 @Data
 public class ProjectProductSearchContext extends QueryWrapperContext<ProjectProduct> {
 
+	private String n_id_eq;//[主键]
+	public void setN_id_eq(String n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 	private String n_productname_eq;//[产品]
 	public void setN_productname_eq(String n_productname_eq) {
         this.n_productname_eq = n_productname_eq;
@@ -66,10 +70,6 @@ public class ProjectProductSearchContext extends QueryWrapperContext<ProjectProd
 	private Long n_project_eq;//[项目]
 	public void setN_project_eq(Long n_project_eq) {
         this.n_project_eq = n_project_eq;
-    }
-	private String n_id_eq;//[主键]
-	public void setN_id_eq(String n_id_eq) {
-        this.n_id_eq = n_id_eq;
     }
 
     /**

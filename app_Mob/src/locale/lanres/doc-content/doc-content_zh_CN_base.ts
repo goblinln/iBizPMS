@@ -9,11 +9,11 @@ export default {
     updateby: "由谁更新",
     type: "文档类型",
     title: "文档标题",
+    orgname: "归属组织名",
     version: "版本号",
     digest: "文档摘要",
+    deptname: "归属部门名",
     createby: "由谁创建",
     doc: "文档",
-    deptname: "归属部门名",
-    orgname: "归属组织名",
   },
 };

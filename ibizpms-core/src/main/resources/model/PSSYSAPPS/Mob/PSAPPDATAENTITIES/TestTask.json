@@ -360,6 +360,14 @@
     },
     "name" : "数据导入",
     "getPSDEDataImportItems" : [ {
+      "caption" : "auto",
+      "name" : "AUTO",
+      "getPSAppDEField" : {
+        "name" : "AUTO",
+        "codeName" : "Auto"
+      },
+      "uniqueItem" : false
+    }, {
       "caption" : "当前状态",
       "name" : "STATUS",
       "getPSAppDEField" : {
@@ -369,6 +377,14 @@
       "getPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testtask__status.json"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "开始日期",
+      "name" : "BEGIN",
+      "getPSAppDEField" : {
+        "name" : "BEGIN",
+        "codeName" : "Begin"
       },
       "uniqueItem" : false
     }, {
@@ -384,75 +400,19 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "结束日期",
-      "name" : "END",
-      "getPSAppDEField" : {
-        "name" : "END",
-        "codeName" : "End"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "描述",
-      "name" : "DESC",
-      "getPSAppDEField" : {
-        "name" : "DESC",
-        "codeName" : "Desc"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "编号",
-      "name" : "ID",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "抄送给",
-      "name" : "MAILTO",
-      "getPSAppDEField" : {
-        "name" : "MAILTO",
-        "codeName" : "Mailto"
-      },
-      "getPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "负责人",
-      "name" : "OWNER",
-      "getPSAppDEField" : {
-        "name" : "OWNER",
-        "codeName" : "Owner"
-      },
-      "getPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealNameProductTeam.json"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "开始日期",
-      "name" : "BEGIN",
-      "getPSAppDEField" : {
-        "name" : "BEGIN",
-        "codeName" : "Begin"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "已删除",
-      "name" : "DELETED",
-      "getPSAppDEField" : {
-        "name" : "DELETED",
-        "codeName" : "Deleted"
-      },
-      "uniqueItem" : false
-    }, {
       "caption" : "名称",
       "name" : "NAME",
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "结束日期",
+      "name" : "END",
+      "getPSAppDEField" : {
+        "name" : "END",
+        "codeName" : "End"
       },
       "uniqueItem" : false
     }, {
@@ -472,11 +432,19 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "子状态",
-      "name" : "SUBSTATUS",
+      "caption" : "描述",
+      "name" : "DESC",
       "getPSAppDEField" : {
-        "name" : "SUBSTATUS",
-        "codeName" : "SubStatus"
+        "name" : "DESC",
+        "codeName" : "Desc"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "编号",
+      "name" : "ID",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
       },
       "uniqueItem" : false
     }, {
@@ -488,11 +456,15 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "所属项目",
-      "name" : "PROJECT",
+      "caption" : "抄送给",
+      "name" : "MAILTO",
       "getPSAppDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
+        "name" : "MAILTO",
+        "codeName" : "Mailto"
+      },
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
       },
       "uniqueItem" : false
     }, {
@@ -504,11 +476,47 @@
       },
       "uniqueItem" : false
     }, {
+      "caption" : "子状态",
+      "name" : "SUBSTATUS",
+      "getPSAppDEField" : {
+        "name" : "SUBSTATUS",
+        "codeName" : "SubStatus"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "负责人",
+      "name" : "OWNER",
+      "getPSAppDEField" : {
+        "name" : "OWNER",
+        "codeName" : "Owner"
+      },
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealNameProductTeam.json"
+      },
+      "uniqueItem" : false
+    }, {
       "caption" : "所属产品",
       "name" : "PRODUCT",
       "getPSAppDEField" : {
         "name" : "PRODUCT",
         "codeName" : "Product"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "所属项目",
+      "name" : "PROJECT",
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "已删除",
+      "name" : "DELETED",
+      "getPSAppDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
       },
       "uniqueItem" : false
     }, {
@@ -525,14 +533,6 @@
       "getPSAppDEField" : {
         "name" : "PRODUCTNAME",
         "codeName" : "ProductName"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "auto",
-      "name" : "AUTO",
-      "getPSAppDEField" : {
-        "name" : "AUTO",
-        "codeName" : "Auto"
       },
       "uniqueItem" : false
     } ],
@@ -645,6 +645,12 @@
     "stdDataType" : 21,
     "stringLength" : 1048576
   }, {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "CreateBy",
     "logicName" : "由谁创建",
     "name" : "CREATEBY",
@@ -699,6 +705,12 @@
     "stdDataType" : 25,
     "stringLength" : 1
   }, {
+    "codeName" : "DeptName",
+    "logicName" : "归属部门名",
+    "name" : "DEPTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Auto",
     "logicName" : "auto",
     "name" : "AUTO",
@@ -745,18 +757,6 @@
     "logicName" : "所属项目",
     "name" : "PROJECT",
     "stdDataType" : 1
-  }, {
-    "codeName" : "DeptName",
-    "logicName" : "归属部门名",
-    "name" : "DEPTNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "OrgName",
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDELogics" : [ {
     "codeName" : "GetCurUserConcat",

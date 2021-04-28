@@ -153,6 +153,12 @@
     "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Diff",
     "logicName" : "不同",
     "name" : "DIFF",
@@ -203,6 +209,12 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
+    "codeName" : "DeptName",
+    "logicName" : "归属部门名",
+    "name" : "DEPTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Id",
     "logicName" : "id",
     "name" : "ID",
@@ -213,18 +225,6 @@
     "logicName" : "关联日志",
     "name" : "ACTION",
     "stdDataType" : 1
-  }, {
-    "codeName" : "DeptName",
-    "logicName" : "归属部门名",
-    "name" : "DEPTNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "OrgName",
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

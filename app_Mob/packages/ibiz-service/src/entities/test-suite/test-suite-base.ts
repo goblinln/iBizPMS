@@ -34,6 +34,10 @@ export abstract class TestSuiteBase extends EntityBase implements ITestSuite {
         this.name = val;
     }
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * 归属部门
      */
     dept?: any;
@@ -45,6 +49,10 @@ export abstract class TestSuiteBase extends EntityBase implements ITestSuite {
      * 名称
      */
     name?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
     /**
      * 创建时间
      */
@@ -87,14 +95,6 @@ export abstract class TestSuiteBase extends EntityBase implements ITestSuite {
      * 所属产品
      */
     product?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 
     /**
      * 重置实体数据

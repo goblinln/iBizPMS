@@ -12,6 +12,7 @@ export default {
     caseSteps:  commonLogic.appcommonhandle("用例步骤集合",null),
     task:  commonLogic.appcommonhandle("属性",null),
     order:  commonLogic.appcommonhandle("排序",null),
+    orgName:  commonLogic.appcommonhandle("归属组织名",null),
     howRun:  commonLogic.appcommonhandle("howRun",null),
     resultCNT:  commonLogic.appcommonhandle("测试结果数",null),
     noticeusers:  commonLogic.appcommonhandle("消息通知用户",null),
@@ -24,6 +25,7 @@ export default {
     comment:  commonLogic.appcommonhandle("备注",null),
     auto:  commonLogic.appcommonhandle("auto",null),
     isfavorites:  commonLogic.appcommonhandle("是否收藏",null),
+    deptName:  commonLogic.appcommonhandle("归属部门名",null),
     dept:  commonLogic.appcommonhandle("归属部门",null),
     frequency:  commonLogic.appcommonhandle("frequency",null),
     title:  commonLogic.appcommonhandle("用例标题",null),
@@ -62,8 +64,6 @@ export default {
     product:  commonLogic.appcommonhandle("所属产品",null),
     lib:  commonLogic.appcommonhandle("所属库",null),
     module:  commonLogic.appcommonhandle("所属模块",null),
-    deptName:  commonLogic.appcommonhandle("归属部门名",null),
-    orgName:  commonLogic.appcommonhandle("归属组织名",null),
   },
 	views: {
 		mobeditview: {

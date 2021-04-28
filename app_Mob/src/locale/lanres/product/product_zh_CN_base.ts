@@ -28,6 +28,7 @@ export default {
     supproreport: "支持产品汇报",
     order: "排序",
     type: "产品类型",
+    mdeptname: "归属部门名",
     po: "产品负责人",
     qdpk: "测试负责人（选择）",
     desc: "产品描述	",
@@ -49,13 +50,12 @@ export default {
     order1: "排序",
     updateby: "由谁更新",
     buildcnt: "BUILD数",
+    orgname: "归属组织名",
     createddate: "创建日期",
     noticeusers: "消息通知用户",
     activestorycnt: "激活需求数",
     linename: "产品线",
     line: "产品线",
-    orgname: "归属组织名",
-    mdeptname: "归属部门名",
   },
 	views: {
 		testmobmdview: {

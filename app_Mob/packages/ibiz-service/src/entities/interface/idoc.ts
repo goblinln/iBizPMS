@@ -13,6 +13,10 @@ export interface IDoc extends IEntityBase {
      */
     groups?: any;
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * 文档正文
      */
     content?: any;
@@ -89,6 +93,10 @@ export interface IDoc extends IEntityBase {
      */
     url?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 文档数
      */
     doccnt?: any;
@@ -164,12 +172,4 @@ export interface IDoc extends IEntityBase {
      * 所属分类
      */
     module?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 }

@@ -47,6 +47,43 @@
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
         "modelref" : true,
+        "id" : "Rawsqlcall1"
+      },
+      "name" : "连接6511",
+      "getPSDELogicLinkGroupCond" : {
+        "groupOP" : "AND",
+        "logicType" : "GROUP",
+        "getPSDELogicLinkConds" : [ {
+          "condOP" : "ISNOTNULL",
+          "dstFieldName" : "STORY",
+          "getDstLogicParam" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "logicType" : "SINGLE",
+          "name" : "Default[STORY] 值不为空(NotNil)"
+        }, {
+          "condOP" : "NOTEQ",
+          "dstFieldName" : "STORY",
+          "getDstLogicParam" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "logicType" : "SINGLE",
+          "name" : "Default[STORY] 不等于(<>) (0)",
+          "paramValue" : "0"
+        } ],
+        "notMode" : false,
+        "id" : "474936a7376232e08bc3c02e410ca7f3"
+      },
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Begin"
+      },
+      "defaultLink" : false
+    }, {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
         "id" : "Prepareparam1"
       },
       "name" : "连接4196",
@@ -80,44 +117,7 @@
           "notMode" : false
         } ],
         "notMode" : false,
-        "id" : "78c84ea5e369bdbd3751671870b06faa"
-      },
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Begin"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Rawsqlcall1"
-      },
-      "name" : "连接6511",
-      "getPSDELogicLinkGroupCond" : {
-        "groupOP" : "AND",
-        "logicType" : "GROUP",
-        "getPSDELogicLinkConds" : [ {
-          "condOP" : "ISNOTNULL",
-          "dstFieldName" : "STORY",
-          "getDstLogicParam" : {
-            "modelref" : true,
-            "id" : "Default"
-          },
-          "logicType" : "SINGLE",
-          "name" : "Default[STORY] 值不为空(NotNil)"
-        }, {
-          "condOP" : "NOTEQ",
-          "dstFieldName" : "STORY",
-          "getDstLogicParam" : {
-            "modelref" : true,
-            "id" : "Default"
-          },
-          "logicType" : "SINGLE",
-          "name" : "Default[STORY] 不等于(<>) (0)",
-          "paramValue" : "0"
-        } ],
-        "notMode" : false,
-        "id" : "e5644b68dcd61e4fefc3c4848af3eb5a"
+        "id" : "de86bd876b30d3e06b56f58df7ec1ef5"
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,

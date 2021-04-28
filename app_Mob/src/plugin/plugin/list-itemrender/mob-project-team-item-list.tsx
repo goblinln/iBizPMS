@@ -1,7 +1,7 @@
 
 import { Component, Watch } from 'vue-property-decorator';
 import { VueLifeCycleProcessing,AppControlBase } from 'ibiz-vue';
-import { VueLifeCycleProcessing,AppMobMDCtrlBase } from 'ibiz-vue';
+import { AppMobMDCtrlBase } from 'ibiz-vue';
 
 
 /**

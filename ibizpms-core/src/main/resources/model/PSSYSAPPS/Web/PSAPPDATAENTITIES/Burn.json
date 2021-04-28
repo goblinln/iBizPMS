@@ -199,9 +199,21 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Dept",
     "logicName" : "归属部门",
     "name" : "DEPT",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "DeptName",
+    "logicName" : "归属部门名",
+    "name" : "DEPTNAME",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
@@ -218,6 +230,13 @@
     "name" : "ORG",
     "stdDataType" : 25,
     "stringLength" : 100
+  }, {
+    "codeName" : "Id",
+    "logicName" : "主键",
+    "name" : "ID",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "keyField" : true
   }, {
     "codeName" : "Consumed",
     "logicName" : "总计消耗",
@@ -245,25 +264,6 @@
     "logicName" : "任务",
     "name" : "TASK",
     "stdDataType" : 1
-  }, {
-    "codeName" : "DeptName",
-    "logicName" : "归属部门名",
-    "name" : "DEPTNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "OrgName",
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "Id",
-    "logicName" : "主键",
-    "name" : "ID",
-    "stdDataType" : 25,
-    "stringLength" : 60,
-    "keyField" : true
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

@@ -15,6 +15,7 @@ export default {
     desc: "描述",
     updateby: "由谁更新",
     noticeusers: "消息通知用户",
+    orgname: "归属组织名",
     org: "归属组织",
     finishedby: "由谁完成",
     begin: "开始",
@@ -39,9 +40,8 @@ export default {
     date: "日期",
     story: "待办名称",
     ibizprivate: "私人事务",
-    config: "config",
-    orgname: "归属组织名",
     deptname: "归属部门名",
+    config: "config",
   },
 	views: {
 		newmobeditview: {

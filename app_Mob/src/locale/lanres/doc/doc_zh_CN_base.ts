@@ -2,6 +2,7 @@ import commonLogic from '@/locale/logic/common/common-logic';
 export default {
   fields: {
     groups: "分组",
+    deptname: "归属部门名",
     content: "文档正文",
     docqtype: "文档查询类型",
     editeddate: "更新时间",
@@ -20,6 +21,7 @@ export default {
     acl: "权限",
     mydoccnt: "我的文档数量",
     url: "文档链接",
+    orgname: "归属组织名",
     doccnt: "文档数",
     myfavouritecnt: "我的收藏数量",
     users: "用户",
@@ -39,7 +41,5 @@ export default {
     project: "所属项目",
     product: "所属产品",
     module: "所属分类",
-    deptname: "归属部门名",
-    orgname: "归属组织名",
   },
 };

@@ -2094,6 +2094,53 @@
     "stringLength" : 30,
     "valueFormat" : "%1$s"
   }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "DEPTNAME",
+      "dBType" : "MYSQL5",
+      "name" : "DEPTNAME",
+      "standardColumnName" : "`DEPTNAME`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "DEPTNAME",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "getPSDEField" : {
+        "name" : "DEPTNAME",
+        "codeName" : "DeptName"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "DeptName",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "归属部门名",
+    "name" : "DEPTNAME",
+    "predefinedType" : "ORGSECTORNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s"
+  }, {
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3569,6 +3616,53 @@
     },
     "stdDataType" : 25,
     "stringLength" : 200,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "ORGNAME",
+      "dBType" : "MYSQL5",
+      "name" : "ORGNAME",
+      "standardColumnName" : "`ORGNAME`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "ORGNAME",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "getPSDEField" : {
+        "name" : "ORGNAME",
+        "codeName" : "OrgName"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "OrgName",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "predefinedType" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100,
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
@@ -5086,100 +5180,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "DEPTNAME",
-      "dBType" : "MYSQL5",
-      "name" : "DEPTNAME",
-      "standardColumnName" : "`DEPTNAME`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "DEPTNAME",
-          "maxValue" : 100,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[100]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[100]"
-      },
-      "getPSDEField" : {
-        "name" : "DEPTNAME",
-        "codeName" : "DeptName"
-      },
-      "ruleInfo" : "内容长度必须小于等于[100]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "DeptName",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "length" : 100,
-    "logicName" : "归属部门名",
-    "name" : "DEPTNAME",
-    "predefinedType" : "ORGSECTORNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100,
-    "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "ORGNAME",
-      "dBType" : "MYSQL5",
-      "name" : "ORGNAME",
-      "standardColumnName" : "`ORGNAME`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "ORGNAME",
-          "maxValue" : 100,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[100]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[100]"
-      },
-      "getPSDEField" : {
-        "name" : "ORGNAME",
-        "codeName" : "OrgName"
-      },
-      "ruleInfo" : "内容长度必须小于等于[100]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "OrgName",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "length" : 100,
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "predefinedType" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100,
-    "valueFormat" : "%1$s"
   } ],
   "getAllPSDELogics" : [ {
     "codeName" : "BugFavorites",
@@ -5561,7 +5561,7 @@
             "name" : "Default[MODULE] 值不为空(NotNil)"
           } ],
           "notMode" : false,
-          "id" : "7d94f35e09afb96807e231a7ec3ac625"
+          "id" : "c19c2f022669422b2be014b4966838d5"
         },
         "getSrcPSDELogicNode" : {
           "modelref" : true,
@@ -5719,6 +5719,43 @@
       "getPSDELogicLinks" : [ {
         "getDstPSDELogicNode" : {
           "modelref" : true,
+          "id" : "Rawsqlcall1"
+        },
+        "name" : "连接6511",
+        "getPSDELogicLinkGroupCond" : {
+          "groupOP" : "AND",
+          "logicType" : "GROUP",
+          "getPSDELogicLinkConds" : [ {
+            "condOP" : "ISNOTNULL",
+            "dstFieldName" : "STORY",
+            "getDstLogicParam" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "logicType" : "SINGLE",
+            "name" : "Default[STORY] 值不为空(NotNil)"
+          }, {
+            "condOP" : "NOTEQ",
+            "dstFieldName" : "STORY",
+            "getDstLogicParam" : {
+              "modelref" : true,
+              "id" : "Default"
+            },
+            "logicType" : "SINGLE",
+            "name" : "Default[STORY] 不等于(<>) (0)",
+            "paramValue" : "0"
+          } ],
+          "notMode" : false,
+          "id" : "474936a7376232e08bc3c02e410ca7f3"
+        },
+        "getSrcPSDELogicNode" : {
+          "modelref" : true,
+          "id" : "Begin"
+        },
+        "defaultLink" : false
+      }, {
+        "getDstPSDELogicNode" : {
+          "modelref" : true,
           "id" : "Prepareparam1"
         },
         "name" : "连接4196",
@@ -5752,44 +5789,7 @@
             "notMode" : false
           } ],
           "notMode" : false,
-          "id" : "78c84ea5e369bdbd3751671870b06faa"
-        },
-        "getSrcPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Begin"
-        },
-        "defaultLink" : false
-      }, {
-        "getDstPSDELogicNode" : {
-          "modelref" : true,
-          "id" : "Rawsqlcall1"
-        },
-        "name" : "连接6511",
-        "getPSDELogicLinkGroupCond" : {
-          "groupOP" : "AND",
-          "logicType" : "GROUP",
-          "getPSDELogicLinkConds" : [ {
-            "condOP" : "ISNOTNULL",
-            "dstFieldName" : "STORY",
-            "getDstLogicParam" : {
-              "modelref" : true,
-              "id" : "Default"
-            },
-            "logicType" : "SINGLE",
-            "name" : "Default[STORY] 值不为空(NotNil)"
-          }, {
-            "condOP" : "NOTEQ",
-            "dstFieldName" : "STORY",
-            "getDstLogicParam" : {
-              "modelref" : true,
-              "id" : "Default"
-            },
-            "logicType" : "SINGLE",
-            "name" : "Default[STORY] 不等于(<>) (0)",
-            "paramValue" : "0"
-          } ],
-          "notMode" : false,
-          "id" : "e5644b68dcd61e4fefc3c4848af3eb5a"
+          "id" : "de86bd876b30d3e06b56f58df7ec1ef5"
         },
         "getSrcPSDELogicNode" : {
           "modelref" : true,

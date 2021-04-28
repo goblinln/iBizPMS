@@ -1,5 +1,6 @@
 export default [
     'root',
+    'orgname',
     'grade',
     'type',
     'name',
@@ -8,6 +9,7 @@ export default [
     'id',
     'orderpk',
     'createby',
+    'mdeptname',
     'collector',
     'updateby',
     'ibizshort',
@@ -18,6 +20,4 @@ export default [
     'parentname',
     'branch',
     'parent',
-    'orgname',
-    'mdeptname',
 ];

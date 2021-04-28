@@ -56,6 +56,24 @@ public class ProjectStory extends EntityMP implements Serializable {
     @ApiModelProperty("由谁更新")
     private String updateby;
     /**
+     * 主键
+     */
+    @DEField(isKeyField = true)
+    @TableId(value = "`ID`", type = IdType.ASSIGN_UUID)
+    @JSONField(name = "id")
+    @JsonProperty("id")
+    @ApiModelProperty("主键")
+    private String id;
+    /**
+     * 归属组织名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGNAME)
+    @TableField(value = "`ORGNAME`")
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+    /**
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
@@ -81,6 +99,15 @@ public class ProjectStory extends EntityMP implements Serializable {
     @JsonProperty("org")
     @ApiModelProperty("归属组织")
     private String org;
+    /**
+     * 归属部门名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
+    @TableField(value = "`DEPTNAME`")
+    @JSONField(name = "deptname")
+    @JsonProperty("deptname")
+    @ApiModelProperty("归属部门名")
+    private String deptname;
     /**
      * 由谁创建
      */
@@ -123,33 +150,6 @@ public class ProjectStory extends EntityMP implements Serializable {
     @JsonProperty("product")
     @ApiModelProperty("所属产品")
     private Long product;
-    /**
-     * 归属部门名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "`DEPTNAME`")
-    @JSONField(name = "deptname")
-    @JsonProperty("deptname")
-    @ApiModelProperty("归属部门名")
-    private String deptname;
-    /**
-     * 归属组织名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`ORGNAME`")
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
-    /**
-     * 主键
-     */
-    @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_UUID)
-    @JSONField(name = "id")
-    @JsonProperty("id")
-    @ApiModelProperty("主键")
-    private String id;
 
     /**
      * 

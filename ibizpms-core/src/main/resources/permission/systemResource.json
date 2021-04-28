@@ -38,11 +38,6 @@
        }
         ,
        {
-            "unirescode":"TOP_DOC_MENU",
-            "uniresname":"顶部_文档"
-       }
-        ,
-       {
             "unirescode":"CASE_UNLINK_BUT",
             "uniresname":"测试用例移除"
        }
@@ -78,6 +73,11 @@
        }
         ,
        {
+            "unirescode":"TOP_ELECSEARCH_MENU",
+            "uniresname":"顶部_全文检索"
+       }
+        ,
+       {
             "unirescode":"PRODSTA_STOREOP_BUT",
             "uniresname":"产品统计打开需求"
        }
@@ -85,6 +85,11 @@
        {
             "unirescode":"TESTMOD_FIX_BUT",
             "uniresname":"测试模块修复路径"
+       }
+        ,
+       {
+            "unirescode":"TOP_PRODUCT_MENU",
+            "uniresname":"顶部_产品主页"
        }
         ,
        {
@@ -133,6 +138,11 @@
        }
         ,
        {
+            "unirescode":"TOP_CASE_MENU",
+            "uniresname":"顶部_测试主页"
+       }
+        ,
+       {
             "unirescode":"LIB_OPEN_BUT",
             "uniresname":"用例库概况"
        }
@@ -140,6 +150,11 @@
        {
             "unirescode":"PROP_LSTORY_BUT",
             "uniresname":"计划关联需求"
+       }
+        ,
+       {
+            "unirescode":"LEFT_CASE_MENU",
+            "uniresname":"左侧_测试资源"
        }
         ,
        {
@@ -198,16 +213,6 @@
        }
         ,
        {
-            "unirescode":"TOP_ELECSEARCH_MENU",
-            "uniresname":"顶部_全文检索"
-       }
-        ,
-       {
-            "unirescode":"SYSTEMMANAGER_MENU",
-            "uniresname":"系统管理"
-       }
-        ,
-       {
             "unirescode":"DOCLIB_NFAVOUR_BUT",
             "uniresname":"取消收藏文档库"
        }
@@ -228,11 +233,6 @@
        }
         ,
        {
-            "unirescode":"TOP_PRODUCT_MENU",
-            "uniresname":"顶部_产品主页"
-       }
-        ,
-       {
             "unirescode":"PROD_CLOSED_BUT",
             "uniresname":"产品关闭"
        }
@@ -250,6 +250,11 @@
        {
             "unirescode":"TESTT_START_BUT",
             "uniresname":"测试版本开始"
+       }
+        ,
+       {
+            "unirescode":"LEFT_PROJECT_MENU",
+            "uniresname":"左侧_项目管理（一级）"
        }
         ,
        {
@@ -343,8 +348,8 @@
        }
         ,
        {
-            "unirescode":"TOP_USERCONCAT_MENU",
-            "uniresname":"顶部_通讯录"
+            "unirescode":"TOP_DOC_MENU",
+            "uniresname":"顶部_文档"
        }
         ,
        {
@@ -370,6 +375,11 @@
        {
             "unirescode":"TASK_COMPLETE_BUT",
             "uniresname":"任务完成"
+       }
+        ,
+       {
+            "unirescode":"TOP_SUM_MENU",
+            "uniresname":"顶部_统计"
        }
         ,
        {
@@ -413,18 +423,8 @@
        }
         ,
        {
-            "unirescode":"TOP_PLANMODULE_MENU",
-            "uniresname":"顶部_计划模板"
-       }
-        ,
-       {
             "unirescode":"BUG_CREATECASE_BUT",
             "uniresname":"Bug建用例"
-       }
-        ,
-       {
-            "unirescode":"TOP_PROJECT_MENU",
-            "uniresname":"顶部_项目主页"
        }
         ,
        {
@@ -458,8 +458,23 @@
        }
         ,
        {
+            "unirescode":"SYSTEMMANAGER_MENU",
+            "uniresname":"系统管理"
+       }
+        ,
+       {
+            "unirescode":"TOP_IBZAPPMANAGER_MENU",
+            "uniresname":"顶部_ibz软件生产管理"
+       }
+        ,
+       {
             "unirescode":"TESTT_CREATE_BUT",
             "uniresname":"测试版本新建"
+       }
+        ,
+       {
+            "unirescode":"TOP_YEARSUM_MENU",
+            "uniresname":"顶部_年度统计"
        }
         ,
        {
@@ -470,6 +485,11 @@
        {
             "unirescode":"CASE_CASETOBUG_BUT",
             "uniresname":"测试用例（用例转BUG）"
+       }
+        ,
+       {
+            "unirescode":"TOP_PROJECT_MENU",
+            "uniresname":"顶部_项目主页"
        }
         ,
        {
@@ -490,6 +510,11 @@
        {
             "unirescode":"LIBM_CREATE_BUT",
             "uniresname":"用例库模块新建"
+       }
+        ,
+       {
+            "unirescode":"TOP_MYFAVOURITE_MENU",
+            "uniresname":"顶部_我的收藏"
        }
         ,
        {
@@ -553,11 +578,6 @@
        }
         ,
        {
-            "unirescode":"LEFT_CASE_MENU",
-            "uniresname":"左侧_测试资源"
-       }
-        ,
-       {
             "unirescode":"PRODUCTLEFT",
             "uniresname":"产品左侧资源"
        }
@@ -613,8 +633,8 @@
        }
         ,
        {
-            "unirescode":"TOP_SUM_MENU",
-            "uniresname":"顶部_统计"
+            "unirescode":"TOP_USERCONCAT_MENU",
+            "uniresname":"顶部_通讯录"
        }
         ,
        {
@@ -683,11 +703,6 @@
        }
         ,
        {
-            "unirescode":"TOP_CASE_MENU",
-            "uniresname":"顶部_测试主页"
-       }
-        ,
-       {
             "unirescode":"BUG_CONFIRM_BUT",
             "uniresname":"Bug确认"
        }
@@ -715,11 +730,6 @@
        {
             "unirescode":"DOCLIBMODULE_EDIT_BUT",
             "uniresname":"文档库分类编辑"
-       }
-        ,
-       {
-            "unirescode":"TOP_MYPLACE_MENU",
-            "uniresname":"顶部_我的地盘"
        }
         ,
        {
@@ -753,11 +763,6 @@
        }
         ,
        {
-            "unirescode":"LEFT_PROJECT_MENU",
-            "uniresname":"左侧_项目管理（一级）"
-       }
-        ,
-       {
             "unirescode":"REPORTLY_SUBMIT_BUT",
             "uniresname":"汇报提交"
        }
@@ -778,13 +783,13 @@
        }
         ,
        {
-            "unirescode":"PROD_DELETE_BUT",
-            "uniresname":"产品删除"
+            "unirescode":"TOP_MYPLACE_MENU",
+            "uniresname":"顶部_我的地盘"
        }
         ,
        {
-            "unirescode":"TOP_MYFAVOURITE_MENU",
-            "uniresname":"顶部_我的收藏"
+            "unirescode":"PROD_DELETE_BUT",
+            "uniresname":"产品删除"
        }
         ,
        {
@@ -818,11 +823,6 @@
        }
         ,
        {
-            "unirescode":"TOP_YEARSUM_MENU",
-            "uniresname":"顶部_年度统计"
-       }
-        ,
-       {
             "unirescode":"BUILD_LINK_BUT",
             "uniresname":"项目版本关联Bug（需求）"
        }
@@ -833,6 +833,11 @@
        }
         ,
        {
+            "unirescode":"TOP_PLANMODULE_MENU",
+            "uniresname":"顶部_计划模板"
+       }
+        ,
+       {
             "unirescode":"BUILD_CREATE_BUT",
             "uniresname":"项目版本新建"
        }
@@ -840,11 +845,6 @@
        {
             "unirescode":"CASE_CONFIRM_BUT",
             "uniresname":"测试用例确认"
-       }
-        ,
-       {
-            "unirescode":"TOP_IBZAPPMANAGER_MENU",
-            "uniresname":"顶部_ibz软件生产管理"
        }
         ,
        {

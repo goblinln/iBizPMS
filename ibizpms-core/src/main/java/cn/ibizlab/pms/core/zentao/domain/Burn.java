@@ -73,6 +73,15 @@ public class Burn extends EntityMP implements Serializable {
     @ApiModelProperty("由谁更新")
     private String updateby;
     /**
+     * 归属组织名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGNAME)
+    @TableField(value = "`ORGNAME`")
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+    /**
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
@@ -81,6 +90,15 @@ public class Burn extends EntityMP implements Serializable {
     @JsonProperty("dept")
     @ApiModelProperty("归属部门")
     private String dept;
+    /**
+     * 归属部门名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
+    @TableField(value = "`DEPTNAME`")
+    @JSONField(name = "deptname")
+    @JsonProperty("deptname")
+    @ApiModelProperty("归属部门名")
+    private String deptname;
     /**
      * 日期
      */
@@ -99,6 +117,15 @@ public class Burn extends EntityMP implements Serializable {
     @JsonProperty("org")
     @ApiModelProperty("归属组织")
     private String org;
+    /**
+     * 主键
+     */
+    @DEField(isKeyField = true)
+    @TableId(value = "`ID`", type = IdType.ASSIGN_UUID)
+    @JSONField(name = "id")
+    @JsonProperty("id")
+    @ApiModelProperty("主键")
+    private String id;
     /**
      * 总计消耗
      */
@@ -139,33 +166,6 @@ public class Burn extends EntityMP implements Serializable {
     @JsonProperty("task")
     @ApiModelProperty("任务")
     private Long task;
-    /**
-     * 归属部门名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "`DEPTNAME`")
-    @JSONField(name = "deptname")
-    @JsonProperty("deptname")
-    @ApiModelProperty("归属部门名")
-    private String deptname;
-    /**
-     * 归属组织名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`ORGNAME`")
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
-    /**
-     * 主键
-     */
-    @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.ASSIGN_UUID)
-    @JSONField(name = "id")
-    @JsonProperty("id")
-    @ApiModelProperty("主键")
-    private String id;
 
     /**
      * 

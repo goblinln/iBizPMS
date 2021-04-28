@@ -2536,12 +2536,46 @@
     }, {
       "getChildPSDETreeNode" : {
         "modelref" : true,
-        "id" : "DocLib"
+        "id" : "ChildDir"
       },
-      "name" : "默认根节点 - 文档库",
+      "name" : "文档库根目录 - 文档库子目录",
+      "parentFilter" : "parent",
+      "getParentPSAppDEField" : {
+        "name" : "PARENT",
+        "codeName" : "Parent"
+      },
+      "getParentPSDER1N" : {
+        "codeName" : "PDocLibModule",
+        "dERType" : "DER1N",
+        "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json",
+        "logicName" : "父模块",
+        "getMajorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+        },
+        "masterOrder" : -1,
+        "masterRS" : 0,
+        "getMinorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+        },
+        "name" : "DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT",
+        "orderValue" : 100,
+        "getPSPickupDEField" : {
+          "name" : "PARENT",
+          "codeName" : "Parent"
+        },
+        "getPSPickupTextDEField" : {
+          "name" : "MODULENAME",
+          "codeName" : "Modulename"
+        },
+        "pickupDEFName" : "PARENT",
+        "removeActionType" : -1,
+        "removeOrder" : 0
+      },
       "getParentPSDETreeNode" : {
         "modelref" : true,
-        "id" : "ROOT"
+        "id" : "RootDir"
       },
       "parentValueLevel" : 1,
       "searchMode" : 3
@@ -2594,46 +2628,12 @@
     }, {
       "getChildPSDETreeNode" : {
         "modelref" : true,
-        "id" : "ChildDir"
+        "id" : "DocLib"
       },
-      "name" : "文档库根目录 - 文档库子目录",
-      "parentFilter" : "parent",
-      "getParentPSAppDEField" : {
-        "name" : "PARENT",
-        "codeName" : "Parent"
-      },
-      "getParentPSDER1N" : {
-        "codeName" : "PDocLibModule",
-        "dERType" : "DER1N",
-        "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT.json",
-        "logicName" : "父模块",
-        "getMajorPSDataEntity" : {
-          "modelref" : true,
-          "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-        },
-        "masterOrder" : -1,
-        "masterRS" : 0,
-        "getMinorPSDataEntity" : {
-          "modelref" : true,
-          "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-        },
-        "name" : "DER1N_IBZ_DOCLIBMODULE_IBZ_DOCLIBMODULE_PARENT",
-        "orderValue" : 100,
-        "getPSPickupDEField" : {
-          "name" : "PARENT",
-          "codeName" : "Parent"
-        },
-        "getPSPickupTextDEField" : {
-          "name" : "MODULENAME",
-          "codeName" : "Modulename"
-        },
-        "pickupDEFName" : "PARENT",
-        "removeActionType" : -1,
-        "removeOrder" : 0
-      },
+      "name" : "默认根节点 - 文档库",
       "getParentPSDETreeNode" : {
         "modelref" : true,
-        "id" : "RootDir"
+        "id" : "ROOT"
       },
       "parentValueLevel" : 1,
       "searchMode" : 3
@@ -2680,18 +2680,6 @@
       "getParentPSDETreeNode" : {
         "modelref" : true,
         "id" : "Module"
-      },
-      "parentValueLevel" : 1,
-      "searchMode" : 3
-    }, {
-      "getChildPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "Module"
-      },
-      "name" : "默认根节点 - 文档库分类",
-      "getParentPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "ROOT"
       },
       "parentValueLevel" : 1,
       "searchMode" : 3
@@ -2776,6 +2764,18 @@
       "getParentPSDETreeNode" : {
         "modelref" : true,
         "id" : "DocLib"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "Module"
+      },
+      "name" : "默认根节点 - 文档库分类",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "ROOT"
       },
       "parentValueLevel" : 1,
       "searchMode" : 3

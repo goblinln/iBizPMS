@@ -63,6 +63,16 @@ public class StorySpecDTO extends DTOBase implements Serializable {
     private String updateby;
 
     /**
+     * 属性 [ORGNAME]
+     *
+     */
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+
+    /**
      * 属性 [CREATEBY]
      *
      */
@@ -93,6 +103,26 @@ public class StorySpecDTO extends DTOBase implements Serializable {
     private String org;
 
     /**
+     * 属性 [ID]
+     *
+     */
+    @JSONField(name = "id")
+    @JsonProperty("id")
+    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
+    @ApiModelProperty("主键")
+    private String id;
+
+    /**
+     * 属性 [DEPTNAME]
+     *
+     */
+    @JSONField(name = "deptname")
+    @JsonProperty("deptname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属部门名")
+    private String deptname;
+
+    /**
      * 属性 [TITLE]
      *
      */
@@ -120,36 +150,6 @@ public class StorySpecDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("需求")
     private Long story;
-
-    /**
-     * 属性 [ORGNAME]
-     *
-     */
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
-
-    /**
-     * 属性 [DEPTNAME]
-     *
-     */
-    @JSONField(name = "deptname")
-    @JsonProperty("deptname")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属部门名")
-    private String deptname;
-
-    /**
-     * 属性 [ID]
-     *
-     */
-    @JSONField(name = "id")
-    @JsonProperty("id")
-    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
-    @ApiModelProperty("主键")
-    private String id;
 
 
     /**

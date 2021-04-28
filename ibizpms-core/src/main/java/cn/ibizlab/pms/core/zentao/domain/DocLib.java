@@ -80,6 +80,15 @@ public class DocLib extends EntityMP implements Serializable {
     @ApiModelProperty("收藏者")
     private String collector;
     /**
+     * 归属组织名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGNAME)
+    @TableField(value = "`ORGNAME`")
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+    /**
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
@@ -167,6 +176,15 @@ public class DocLib extends EntityMP implements Serializable {
     @JsonProperty("id")
     @ApiModelProperty("编号")
     private Long id;
+    /**
+     * 归属部门名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
+    @TableField(value = "`DEPTNAME`")
+    @JSONField(name = "deptname")
+    @JsonProperty("deptname")
+    @ApiModelProperty("归属部门名")
+    private String deptname;
     /**
      * 用户
      */
@@ -262,24 +280,6 @@ public class DocLib extends EntityMP implements Serializable {
     @JsonProperty("product")
     @ApiModelProperty("产品库")
     private Long product;
-    /**
-     * 归属部门名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "`DEPTNAME`")
-    @JSONField(name = "deptname")
-    @JsonProperty("deptname")
-    @ApiModelProperty("归属部门名")
-    private String deptname;
-    /**
-     * 归属组织名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`ORGNAME`")
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
 
     /**
      * 

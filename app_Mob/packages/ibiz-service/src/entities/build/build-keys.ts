@@ -13,7 +13,9 @@ export default [
     'desc',
     'id',
     'deleted',
+    'deptname',
     'sqlid',
+    'orgname',
     'scmpath',
     'filepath',
     'createbugcnt',
@@ -27,6 +29,4 @@ export default [
     'product',
     'branch',
     'project',
-    'deptname',
-    'orgname',
 ];

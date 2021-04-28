@@ -5,6 +5,7 @@ export default {
     doclibtype:  commonLogic.appcommonhandle("文件库类型",null),
     isfavourites:  commonLogic.appcommonhandle("是否收藏",null),
     collector:  commonLogic.appcommonhandle("收藏者",null),
+    orgName:  commonLogic.appcommonhandle("归属组织名",null),
     updateManName:  commonLogic.appcommonhandle("由谁更新",null),
     mdeptId:  commonLogic.appcommonhandle("部门标识",null),
     orgId:  commonLogic.appcommonhandle("组织标识",null),
@@ -15,6 +16,7 @@ export default {
     groups:  commonLogic.appcommonhandle("分组",null),
     doccnt:  commonLogic.appcommonhandle("文档数量",null),
     id:  commonLogic.appcommonhandle("编号",null),
+    deptName:  commonLogic.appcommonhandle("归属部门名",null),
     users:  commonLogic.appcommonhandle("用户",null),
     main:  commonLogic.appcommonhandle("是否是主库",null),
     name:  commonLogic.appcommonhandle("文档库名称",null),
@@ -26,8 +28,6 @@ export default {
     projectName:  commonLogic.appcommonhandle("所属项目",null),
     project:  commonLogic.appcommonhandle("项目库",null),
     product:  commonLogic.appcommonhandle("产品库",null),
-    deptName:  commonLogic.appcommonhandle("归属部门名",null),
-    orgName:  commonLogic.appcommonhandle("归属组织名",null),
   },
 	views: {
 		projectdoclibmobtreeview: {

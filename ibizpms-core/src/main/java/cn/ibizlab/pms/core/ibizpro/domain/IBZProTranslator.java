@@ -56,6 +56,25 @@ public class IBZProTranslator extends EntityMP implements Serializable {
     @ApiModelProperty("业务值转换名称")
     private String ibzprotranslatorname;
     /**
+     * 更新时间
+     */
+    @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
+    @TableField(value = "`UPDATEDATE`")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
+    @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("updatedate")
+    @ApiModelProperty("更新时间")
+    private Timestamp updatedate;
+    /**
+     * 组织部门标识
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
+    @TableField(value = "`DEPTID`")
+    @JSONField(name = "deptid")
+    @JsonProperty("deptid")
+    @ApiModelProperty("组织部门标识")
+    private String deptid;
+    /**
      * 业务值转换标识
      */
     @DEField(name = "ibzpro_translatorid", isKeyField = true)
@@ -75,24 +94,14 @@ public class IBZProTranslator extends EntityMP implements Serializable {
     @ApiModelProperty("建立时间")
     private Timestamp createdate;
     /**
-     * 建立人
+     * 组织机构标识
      */
-    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
-    @JSONField(name = "createman")
-    @JsonProperty("createman")
-    @ApiModelProperty("建立人")
-    private String createman;
-    /**
-     * 更新时间
-     */
-    @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
-    @TableField(value = "`UPDATEDATE`")
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
-    @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
-    @JsonProperty("updatedate")
-    @ApiModelProperty("更新时间")
-    private Timestamp updatedate;
+    @DEField(preType = DEPredefinedFieldType.ORGID)
+    @TableField(value = "`ORGID`")
+    @JSONField(name = "orgid")
+    @JsonProperty("orgid")
+    @ApiModelProperty("组织机构标识")
+    private String orgid;
     /**
      * 更新人
      */
@@ -103,23 +112,14 @@ public class IBZProTranslator extends EntityMP implements Serializable {
     @ApiModelProperty("更新人")
     private String updateman;
     /**
-     * 组织部门标识
+     * 建立人
      */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`DEPTID`")
-    @JSONField(name = "deptid")
-    @JsonProperty("deptid")
-    @ApiModelProperty("组织部门标识")
-    private String deptid;
-    /**
-     * 组织机构标识
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`ORGID`")
-    @JSONField(name = "orgid")
-    @JsonProperty("orgid")
-    @ApiModelProperty("组织机构标识")
-    private String orgid;
+    @DEField(preType = DEPredefinedFieldType.CREATEMAN)
+    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
+    @JSONField(name = "createman")
+    @JsonProperty("createman")
+    @ApiModelProperty("建立人")
+    private String createman;
 
 
 

@@ -75,34 +75,6 @@
     "getPSDELogicLinks" : [ {
       "getDstPSDELogicNode" : {
         "modelref" : true,
-        "id" : "Deaction4"
-      },
-      "name" : "连接3532",
-      "getPSDELogicLinkGroupCond" : {
-        "groupOP" : "AND",
-        "logicType" : "GROUP",
-        "getPSDELogicLinkConds" : [ {
-          "condOP" : "EQ",
-          "dstFieldName" : "JUDGEROLE",
-          "getDstLogicParam" : {
-            "modelref" : true,
-            "id" : "Default"
-          },
-          "logicType" : "SINGLE",
-          "name" : "Default[JUDGEROLE] 等于(=) (po)",
-          "paramValue" : "po"
-        } ],
-        "notMode" : false,
-        "id" : "05eb9d9dac88e3363b662e4fe269a02e"
-      },
-      "getSrcPSDELogicNode" : {
-        "modelref" : true,
-        "id" : "Deaction1"
-      },
-      "defaultLink" : false
-    }, {
-      "getDstPSDELogicNode" : {
-        "modelref" : true,
         "id" : "Deaction2"
       },
       "name" : "连接9228",
@@ -121,7 +93,35 @@
           "paramValue" : "dev"
         } ],
         "notMode" : false,
-        "id" : "4b45d2124dd72a0e9a3dc66057413f29"
+        "id" : "b091f5cc9f61c7bfc74a732350f47472"
+      },
+      "getSrcPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Deaction1"
+      },
+      "defaultLink" : false
+    }, {
+      "getDstPSDELogicNode" : {
+        "modelref" : true,
+        "id" : "Deaction4"
+      },
+      "name" : "连接3532",
+      "getPSDELogicLinkGroupCond" : {
+        "groupOP" : "AND",
+        "logicType" : "GROUP",
+        "getPSDELogicLinkConds" : [ {
+          "condOP" : "EQ",
+          "dstFieldName" : "JUDGEROLE",
+          "getDstLogicParam" : {
+            "modelref" : true,
+            "id" : "Default"
+          },
+          "logicType" : "SINGLE",
+          "name" : "Default[JUDGEROLE] 等于(=) (po)",
+          "paramValue" : "po"
+        } ],
+        "notMode" : false,
+        "id" : "b6de7ae2d7e9d4cea649f353f48d3b33"
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,
@@ -149,7 +149,7 @@
           "paramValue" : "qa"
         } ],
         "notMode" : false,
-        "id" : "b38739628ce5f441c301945eab75a463"
+        "id" : "e4c4322cd868260d927a3800329dccc0"
       },
       "getSrcPSDELogicNode" : {
         "modelref" : true,

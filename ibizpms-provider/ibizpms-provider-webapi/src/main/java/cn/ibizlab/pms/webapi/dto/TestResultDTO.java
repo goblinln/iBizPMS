@@ -93,6 +93,16 @@ public class TestResultDTO extends DTOBase implements Serializable {
     private String caseresult;
 
     /**
+     * 属性 [ORGNAME]
+     *
+     */
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+
+    /**
      * 属性 [UPDATEBY]
      *
      */
@@ -140,6 +150,16 @@ public class TestResultDTO extends DTOBase implements Serializable {
     @JsonProperty("date")
     @ApiModelProperty("测试时间")
     private Timestamp date;
+
+    /**
+     * 属性 [DEPTNAME]
+     *
+     */
+    @JSONField(name = "deptname")
+    @JsonProperty("deptname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属部门名")
+    private String deptname;
 
     /**
      * 属性 [ID]
@@ -259,26 +279,6 @@ public class TestResultDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("代码编译")
     private Long compile;
-
-    /**
-     * 属性 [DEPTNAME]
-     *
-     */
-    @JSONField(name = "deptname")
-    @JsonProperty("deptname")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属部门名")
-    private String deptname;
-
-    /**
-     * 属性 [ORGNAME]
-     *
-     */
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
 
 
     /**

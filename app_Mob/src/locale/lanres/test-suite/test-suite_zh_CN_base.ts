@@ -1,9 +1,11 @@
 import commonLogic from '@/locale/logic/common/common-logic';
 export default {
   fields: {
+    deptname: "归属部门名",
     dept: "归属部门",
     org: "归属组织",
     name: "名称",
+    orgname: "归属组织名",
     addeddate: "创建时间",
     id: "编号",
     deleted: "已删除",
@@ -14,8 +16,6 @@ export default {
     casecnt: "用例数",
     desc: "描述",
     product: "所属产品",
-    deptname: "归属部门名",
-    orgname: "归属组织名",
   },
 	views: {
 		mobtabexpview: {

@@ -64,14 +64,6 @@ public class GroupPriv extends EntityMP implements Serializable {
     @ApiModelProperty("method")
     private String method;
     /**
-     * module
-     */
-    @TableField(value = "`MODULE`")
-    @JSONField(name = "module")
-    @JsonProperty("module")
-    @ApiModelProperty("module")
-    private String module;
-    /**
      * 主键
      */
     @DEField(isKeyField = true)
@@ -80,6 +72,14 @@ public class GroupPriv extends EntityMP implements Serializable {
     @JsonProperty("id")
     @ApiModelProperty("主键")
     private String id;
+    /**
+     * module
+     */
+    @TableField(value = "`MODULE`")
+    @JSONField(name = "module")
+    @JsonProperty("module")
+    @ApiModelProperty("module")
+    private String module;
 
 
 

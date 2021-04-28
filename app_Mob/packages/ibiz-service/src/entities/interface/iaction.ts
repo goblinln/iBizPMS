@@ -13,6 +13,10 @@ export interface IAction extends IEntityBase {
      */
     thismonth?: any;
     /**
+     * 归属部门
+     */
+    dept?: any;
+    /**
      * 昨天
      */
     yesterday?: any;
@@ -33,6 +37,10 @@ export interface IAction extends IEntityBase {
      */
     isactorss?: any;
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * 本周
      */
     thisweek?: any;
@@ -50,6 +58,10 @@ export interface IAction extends IEntityBase {
      * @type {('product' | 'story' | 'productplan' | 'release' | 'project' | 'task' | 'build' | 'bug' | 'case' | 'caseresult' | 'stepresult' | 'testtask' | 'user' | 'doc' | 'doclib' | 'todo' | 'branch' | 'module' | 'testsuite' | 'caselib' | 'testreport' | 'entry' | 'webhook' | 'daily' | 'weekly' | 'monthly' | 'reportly')} product: 产品, story: 需求, productplan: 计划, release: 发布, project: 项目, task: 任务, build: 版本, bug: Bug, case: 用例, caseresult: 用例结果, stepresult: 用例步骤, testtask: 测试单, user: 用户, doc: 文档, doclib: 文档库, todo: 待办, branch: 分支, module: 模块, testsuite: 套件, caselib: 用例库, testreport: 报告, entry: 应用, webhook: Webhook, daily: 日报, weekly: 周报, monthly: 月报, reportly: 汇报
      */
     objecttype?: 'product' | 'story' | 'productplan' | 'release' | 'project' | 'task' | 'build' | 'bug' | 'case' | 'caseresult' | 'stepresult' | 'testtask' | 'user' | 'doc' | 'doclib' | 'todo' | 'branch' | 'module' | 'testsuite' | 'caselib' | 'testreport' | 'entry' | 'webhook' | 'daily' | 'weekly' | 'monthly' | 'reportly';
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
     /**
      * id
      */
@@ -97,6 +109,10 @@ export interface IAction extends IEntityBase {
      */
     actionmanner?: 'story_closed_willnotdo' | 'story_closed_cancel' | 'story_closed_done' | 'story_closed_subdivided' | 'story_closed_postponed' | 'story_closed_bydesign' | 'story_closed_duplicate' | 'bug_resolved_willnotfix' | 'bug_resolved_external' | 'bug_resolved_fixed' | 'bug_resolved_postponed' | 'bug_resolved_notrepro' | 'bug_resolved_bydesign' | 'bug_resolved_tostory' | 'bug_resolved_duplicate' | 'story_reviewed_reject' | 'story_reviewed_revert' | 'story_reviewed_clarify' | 'story_reviewed_pass' | ' release_changestatus_terminate' | ' release_changestatus_normal';
     /**
+     * 归属组织
+     */
+    org?: any;
+    /**
      * 上周
      */
     lastweek?: any;
@@ -112,20 +128,4 @@ export interface IAction extends IEntityBase {
      * 项目
      */
     project?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 归属部门
-     */
-    dept?: any;
-    /**
-     * 归属组织
-     */
-    org?: any;
 }

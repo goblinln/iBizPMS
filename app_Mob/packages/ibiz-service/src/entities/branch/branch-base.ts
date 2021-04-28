@@ -42,6 +42,10 @@ export abstract class BranchBase extends EntityBase implements IBranch {
      */
     dept?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 由谁更新
      */
     updateby?: any;
@@ -66,17 +70,13 @@ export abstract class BranchBase extends EntityBase implements IBranch {
      */
     org?: any;
     /**
-     * 所属产品
-     */
-    product?: any;
-    /**
      * 归属部门名
      */
     deptname?: any;
     /**
-     * 归属组织名
+     * 所属产品
      */
-    orgname?: any;
+    product?: any;
 
     /**
      * 重置实体数据

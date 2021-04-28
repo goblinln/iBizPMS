@@ -1514,6 +1514,12 @@
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD"
   }, {
+    "codeName" : "DeptName",
+    "logicName" : "归属部门名",
+    "name" : "DEPTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Title",
     "logicName" : "需求名称",
     "name" : "TITLE",
@@ -1714,6 +1720,12 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Verify",
     "logicName" : "验收标准",
     "name" : "VERIFY",
@@ -1843,18 +1855,6 @@
     "logicName" : "转Bug",
     "name" : "TOBUG",
     "stdDataType" : 1
-  }, {
-    "codeName" : "OrgName",
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "DeptName",
-    "logicName" : "归属部门名",
-    "name" : "DEPTNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDELogics" : [ {
     "codeName" : "GetCurUserConcat",
@@ -5200,6 +5200,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "setStage",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "StoryNFavorites",
       "getPSDEAction" : {
         "modelref" : true,
@@ -5218,13 +5225,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchClose.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "setStage",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
       },
       "allowMode" : true
     }, {
@@ -5350,6 +5350,13 @@
     "mSTag" : "active__1__2",
     "name" : "激活_已收藏_细分（删除）",
     "getPSDEMainStateActions" : [ {
+      "name" : "setStage",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "AssignTo",
       "getPSDEAction" : {
         "modelref" : true,
@@ -5375,13 +5382,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchAssignTo.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "setStage",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
       },
       "allowMode" : true
     }, {
@@ -5873,13 +5873,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "setStage",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "BatchClose",
       "getPSDEAction" : {
         "modelref" : true,
@@ -5891,6 +5884,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "setStage",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
       },
       "allowMode" : true
     }, {
@@ -6222,6 +6222,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "setStage",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Update",
       "getPSDEAction" : {
         "modelref" : true,
@@ -6282,13 +6289,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchUnlinkStory.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "setStage",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
       },
       "allowMode" : true
     }, {
@@ -6725,17 +6725,17 @@
       },
       "allowMode" : true
     }, {
-      "name" : "setStage",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "AssignTo",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/AssignTo.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "setStage",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
       },
       "allowMode" : true
     } ],
@@ -6851,13 +6851,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "setStage",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Change",
       "getPSDEAction" : {
         "modelref" : true,
@@ -6876,6 +6869,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/AssignTo.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "setStage",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
       },
       "allowMode" : true
     }, {
@@ -7013,6 +7013,13 @@
     "mSTag" : "closed__1__2",
     "name" : "已关闭_已收藏_细分（删除）",
     "getPSDEMainStateActions" : [ {
+      "name" : "setStage",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "BatchAssignTo",
       "getPSDEAction" : {
         "modelref" : true,
@@ -7059,13 +7066,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchClose.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "setStage",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
       },
       "allowMode" : true
     } ],
@@ -7493,13 +7493,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "setStage",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "projectUnlinkStorys",
       "getPSDEAction" : {
         "modelref" : true,
@@ -7518,6 +7511,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectUnlinkStory.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "setStage",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
       },
       "allowMode" : true
     }, {
@@ -7836,6 +7836,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "setStage",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "StoryNFavorites",
       "getPSDEAction" : {
         "modelref" : true,
@@ -7854,13 +7861,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Close.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "setStage",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
       },
       "allowMode" : true
     }, {

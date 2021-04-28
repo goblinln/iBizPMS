@@ -5,6 +5,7 @@ export default {
     doclibtype: "文件库类型",
     isfavourites: "是否收藏",
     collector: "收藏者",
+    orgname: "归属组织名",
     updatemanname: "由谁更新",
     mdeptid: "部门标识",
     orgid: "组织标识",
@@ -15,6 +16,7 @@ export default {
     groups: "分组",
     doccnt: "文档数量",
     id: "编号",
+    deptname: "归属部门名",
     users: "用户",
     main: "是否是主库",
     name: "文档库名称",
@@ -26,8 +28,6 @@ export default {
     projectname: "所属项目",
     project: "项目库",
     product: "产品库",
-    deptname: "归属部门名",
-    orgname: "归属组织名",
   },
 	views: {
 		projectdoclibmobtreeview: {

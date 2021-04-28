@@ -23,18 +23,6 @@
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ptask"
-    },
-    "name" : "跟 - 跟任务",
-    "getParentPSDETreeNode" : {
-      "modelref" : true,
-      "id" : "rootinfo"
-    },
-    "parentValueLevel" : 1,
-    "searchMode" : 3
-  }, {
-    "getChildPSDETreeNode" : {
-      "modelref" : true,
       "id" : "ChildTask"
     },
     "name" : "跟任务 - 子任务",
@@ -74,6 +62,18 @@
     "getParentPSDETreeNode" : {
       "modelref" : true,
       "id" : "ptask"
+    },
+    "parentValueLevel" : 1,
+    "searchMode" : 3
+  }, {
+    "getChildPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "ptask"
+    },
+    "name" : "跟 - 跟任务",
+    "getParentPSDETreeNode" : {
+      "modelref" : true,
+      "id" : "rootinfo"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3

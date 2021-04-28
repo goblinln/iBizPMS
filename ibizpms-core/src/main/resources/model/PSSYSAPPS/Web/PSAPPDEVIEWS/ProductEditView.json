@@ -240,54 +240,6 @@
       "checkMode" : 3,
       "name" : "表单项值规则",
       "getPSDEFValueRule" : {
-        "codeName" : "ProductCodeRule",
-        "name" : "产品代号重复值校验",
-        "getPSDEFVRGroupCondition" : {
-          "condOp" : "AND",
-          "condType" : "GROUP",
-          "name" : "默认组",
-          "getPSDEFVRConditions" : [ {
-            "condType" : "VALUERANGE",
-            "dEFName" : "CODE",
-            "getExtMajorPSDEField" : {
-              "name" : "CODE",
-              "codeName" : "Code"
-            },
-            "getExtPSDEField" : {
-              "name" : "CODE",
-              "codeName" : "Code"
-            },
-            "getMajorPSDEDataSet" : {
-              "modelref" : true,
-              "id" : "CheckNameOrCode"
-            },
-            "getMajorPSDataEntity" : {
-              "modelref" : true,
-              "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
-            },
-            "name" : "[数据集范围]实体[ZT_PRODUCT]数据集合[CheckNameOrCode]([CODE]等于[CODE])",
-            "ruleInfo" : "『产品代号』已经有这条记录了。如果您确定该记录已删除，请到后台-数据-回收站还原。",
-            "alwaysCheck" : false,
-            "tryMode" : false
-          } ],
-          "ruleInfo" : "『产品代号』已经有这条记录了。如果您确定该记录已删除，请到后台-数据-回收站还原。"
-        },
-        "getPSDEField" : {
-          "name" : "CODE",
-          "codeName" : "Code"
-        },
-        "ruleInfo" : "『产品代号』已经有这条记录了。如果您确定该记录已删除，请到后台-数据-回收站还原。",
-        "checkDefault" : false,
-        "defaultMode" : false,
-        "enableBackend" : true,
-        "enableFront" : true
-      },
-      "getPSDEFormItemName" : "code",
-      "valueRuleType" : "DEFVALUERULE"
-    }, {
-      "checkMode" : 3,
-      "name" : "表单项值规则",
-      "getPSDEFValueRule" : {
         "codeName" : "ProductNameRule",
         "name" : "产品名称重复值校验",
         "getPSDEFVRGroupCondition" : {
@@ -331,6 +283,54 @@
         "enableFront" : true
       },
       "getPSDEFormItemName" : "name",
+      "valueRuleType" : "DEFVALUERULE"
+    }, {
+      "checkMode" : 3,
+      "name" : "表单项值规则",
+      "getPSDEFValueRule" : {
+        "codeName" : "ProductCodeRule",
+        "name" : "产品代号重复值校验",
+        "getPSDEFVRGroupCondition" : {
+          "condOp" : "AND",
+          "condType" : "GROUP",
+          "name" : "默认组",
+          "getPSDEFVRConditions" : [ {
+            "condType" : "VALUERANGE",
+            "dEFName" : "CODE",
+            "getExtMajorPSDEField" : {
+              "name" : "CODE",
+              "codeName" : "Code"
+            },
+            "getExtPSDEField" : {
+              "name" : "CODE",
+              "codeName" : "Code"
+            },
+            "getMajorPSDEDataSet" : {
+              "modelref" : true,
+              "id" : "CheckNameOrCode"
+            },
+            "getMajorPSDataEntity" : {
+              "modelref" : true,
+              "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+            },
+            "name" : "[数据集范围]实体[ZT_PRODUCT]数据集合[CheckNameOrCode]([CODE]等于[CODE])",
+            "ruleInfo" : "『产品代号』已经有这条记录了。如果您确定该记录已删除，请到后台-数据-回收站还原。",
+            "alwaysCheck" : false,
+            "tryMode" : false
+          } ],
+          "ruleInfo" : "『产品代号』已经有这条记录了。如果您确定该记录已删除，请到后台-数据-回收站还原。"
+        },
+        "getPSDEField" : {
+          "name" : "CODE",
+          "codeName" : "Code"
+        },
+        "ruleInfo" : "『产品代号』已经有这条记录了。如果您确定该记录已删除，请到后台-数据-回收站还原。",
+        "checkDefault" : false,
+        "defaultMode" : false,
+        "enableBackend" : true,
+        "enableFront" : true
+      },
+      "getPSDEFormItemName" : "code",
       "valueRuleType" : "DEFVALUERULE"
     } ],
     "getPSDEFormItems" : [ {

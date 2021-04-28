@@ -65,6 +65,14 @@ public class Task extends EntityMP implements Serializable {
     @ApiModelProperty("周期类型")
     private String configtype;
     /**
+     * 需求状态
+     */
+    @TableField(exist = false)
+    @JSONField(name = "storystatus")
+    @JsonProperty("storystatus")
+    @ApiModelProperty("需求状态")
+    private String storystatus;
+    /**
      * 预计剩余
      */
     @DEField(defaultValue = "0")
@@ -220,6 +228,15 @@ public class Task extends EntityMP implements Serializable {
     @ApiModelProperty("回复数量")
     private Integer replycount;
     /**
+     * 归属部门名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
+    @TableField(value = "`DEPTNAME`")
+    @JSONField(name = "deptname")
+    @JsonProperty("deptname")
+    @ApiModelProperty("归属部门名")
+    private String deptname;
+    /**
      * 开始日期
      */
     @DEField(name = "config_begin")
@@ -255,6 +272,14 @@ public class Task extends EntityMP implements Serializable {
     @JsonProperty("closedby")
     @ApiModelProperty("由谁关闭")
     private String closedby;
+    /**
+     * 相关需求最新版本
+     */
+    @TableField(exist = false)
+    @JSONField(name = "storyversionnew")
+    @JsonProperty("storyversionnew")
+    @ApiModelProperty("相关需求最新版本")
+    private Integer storyversionnew;
     /**
      * 本次消耗
      */
@@ -429,6 +454,15 @@ public class Task extends EntityMP implements Serializable {
     @JsonProperty("assignedto")
     @ApiModelProperty("指派给")
     private String assignedto;
+    /**
+     * 归属组织名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGNAME)
+    @TableField(value = "`ORGNAME`")
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
     /**
      * 需求版本
      */
@@ -778,40 +812,6 @@ public class Task extends EntityMP implements Serializable {
     @JsonProperty("frombug")
     @ApiModelProperty("来源Bug")
     private Long frombug;
-    /**
-     * 相关需求最新版本
-     */
-    @TableField(exist = false)
-    @JSONField(name = "storyversionnew")
-    @JsonProperty("storyversionnew")
-    @ApiModelProperty("相关需求最新版本")
-    private Integer storyversionnew;
-    /**
-     * 需求状态
-     */
-    @TableField(exist = false)
-    @JSONField(name = "storystatus")
-    @JsonProperty("storystatus")
-    @ApiModelProperty("需求状态")
-    private String storystatus;
-    /**
-     * 归属部门名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "`DEPTNAME`")
-    @JSONField(name = "deptname")
-    @JsonProperty("deptname")
-    @ApiModelProperty("归属部门名")
-    private String deptname;
-    /**
-     * 归属组织名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`ORGNAME`")
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
 
     /**
      * 
