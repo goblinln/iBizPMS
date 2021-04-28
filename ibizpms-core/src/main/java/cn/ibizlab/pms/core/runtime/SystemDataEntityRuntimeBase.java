@@ -266,6 +266,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      * @return
      */
     public boolean testUnires(String uniResTag) {
+        this.prepare();
         return ((SystemRuntime) this.getSystemRuntime()).testUniRes(uniResTag);
     }
 
@@ -276,6 +277,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      * @return
      */
     public boolean quickTest(String action) {
+        this.prepare();
         if (this.getUserContext().isSuperuser())
             return true;
         if (testUnires(action))
@@ -293,6 +295,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      * @return
      */
     public boolean test(Serializable key, String action) {
+        this.prepare();
         if (this.getUserContext().isSuperuser())
             return true;
         if (testUnires(action))
@@ -324,6 +327,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      * @return
      */
     public boolean test(List<Serializable> keys, String action) {
+        this.prepare();
         if (this.getUserContext().isSuperuser())
             return true;
         if (testUnires(action))
@@ -362,6 +366,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      * @return
      */
     public boolean test(String PDEName, Serializable PKey, String action) throws Exception {
+        this.prepare();
         if (StringUtils.isBlank(PDEName))
             return quickTest(action);
         try {
@@ -383,6 +388,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      * @return
      */
     public boolean test(String PDEName, Serializable PKey, Serializable key, String action) throws Exception {
+        this.prepare();
         if (StringUtils.isBlank(PDEName))
             return test(key, action);
         try {

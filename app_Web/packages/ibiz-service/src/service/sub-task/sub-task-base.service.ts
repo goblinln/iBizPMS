@@ -254,6 +254,68 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
         return this.condCache.get('view');
     }
     /**
+     * GetDraft
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubTaskService
+     */
+    async GetDraft(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projectmodule && _context.task && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && _context.story && _context.task && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/subtasks/getdraft`, _data);
+            return res;
+        }
+        if (_context.product && _context.productplan && _context.task && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/getdraft`, _data);
+            return res;
+        }
+        if (_context.project && _context.task && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projects/${_context.project}/tasks/${_context.task}/subtasks/getdraft`, _data);
+            return res;
+        }
+        if (_context.story && _context.task && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/stories/${_context.story}/tasks/${_context.task}/subtasks/getdraft`, _data);
+            return res;
+        }
+        if (_context.productplan && _context.task && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/productplans/${_context.productplan}/tasks/${_context.task}/subtasks/getdraft`, _data);
+            return res;
+        }
+        if (_context.projectmodule && _context.task && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/subtasks/getdraft`, _data);
+            return res;
+        }
+        if (_context.task && true) {
+            _data[this.APPDENAME?.toLowerCase()] = undefined;
+            _data[this.APPDEKEY] = undefined;
+            const res = await this.http.get(`/tasks/${_context.task}/subtasks/getdraft`, _data);
+            return res;
+        }
+        _data[this.APPDENAME?.toLowerCase()] = undefined;
+        _data[this.APPDEKEY] = undefined;
+        const res = await this.http.get(`/subtasks/getdraft`, _data);
+        return res;
+    }
+    /**
      * ChildTask
      *
      * @param {*} [_context={}]

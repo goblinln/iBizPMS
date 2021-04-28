@@ -1,6 +1,5 @@
 package cn.ibizlab.pms.util.filter;
 
-import cn.ibizlab.pms.util.errors.BadRequestAlertException;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 
 import java.util.ArrayList;
@@ -25,8 +24,8 @@ public class ScopeUtils {
     public static String COLUMN_NOTIN = "'not in'";
     public static String COLUMN_LIKE = "'like'";
 
-    public static Consumer<QueryWrapper> parse(String scope){
-        Consumer<QueryWrapper> wrapper = null ;
+    public static Consumer<QueryWrapper> parse(String scope) {
+        Consumer<QueryWrapper> wrapper = null;
         Stack<String> conditions = new Stack<>();
         Stack<Object> conditions_in = new Stack<>();
 
@@ -35,7 +34,7 @@ public class ScopeUtils {
         if (matcher.find()) {
             scope = matcher.group().substring(1, matcher.group().length() - 1);
         } else {
-            throw new BadRequestAlertException("scope解析错误", "", "");
+            throw new RuntimeException(String.format("scope解析错误:%s",scope));
         }
 
         //提取
@@ -56,11 +55,9 @@ public class ScopeUtils {
             wrapper = convert(conditions, conditions_in);
         }
 
-        if(conditions.size()>0){
+        if (conditions.size() == 1) {
             wrapper = dataCondition -> {
-                while (conditions.size() > 0) {
-                    fillColumn(dataCondition, conditions.pop().toString());
-                }
+                fillColumn(dataCondition, conditions.pop().toString());
             };
         }
         return wrapper;
@@ -74,7 +71,7 @@ public class ScopeUtils {
                 String operation = operations.pop();
                 if (operation.equals(OPERATION_AND) || operation.equals(OPERATION_OR)) {
                     Consumer<QueryWrapper> child = genChildWrapper(operation, conditions.pop(), conditions.pop());
-                    conditions.add(0,child);
+                    conditions.add(0, child);
                     if (operations.size() == 0)
                         dataCondition.and(child);
                 } else {
@@ -117,37 +114,37 @@ public class ScopeUtils {
     private static void fillColumn(QueryWrapper wrapper, String condition) {
         String[] args = condition.split(";");
         if (args.length != 3)
-            throw new BadRequestAlertException(String.format("scope解析错误:%s", args.toString()), "", "");
+            throw new RuntimeException(String.format("字段条件解析错误:%s", args.toString()));
         if (args[1].trim().equals(COLUMN_EQ)) {
-            if ("false".equalsIgnoreCase(args[2]))
+            if ("false".equalsIgnoreCase(args[2].replace("'", "")))
                 wrapper.isNull(args[0].replace("'", ""));
-            else if ("true".equalsIgnoreCase(args[2]))
+            else if ("true".equalsIgnoreCase(args[2].replace("'", "")))
                 wrapper.isNotNull(args[0].replace("'", ""));
             else {
-                wrapper.eq(args[0].replace("'", ""), args[2]);
+                wrapper.eq(args[0].replace("'", ""), args[2].replace("'", ""));
             }
         } else if (args[1].trim().equals(COLUMN_NE)) {
-            if ("false".equalsIgnoreCase(args[2]))
+            if ("false".equalsIgnoreCase(args[2].replace("'", "")))
                 wrapper.isNotNull(args[0].replace("'", ""));
-            if ("true".equalsIgnoreCase(args[2]))
+            if ("true".equalsIgnoreCase(args[2].replace("'", "")))
                 wrapper.isNull(args[0].replace("'", ""));
             else {
-                wrapper.ne(args[0].replace("'", ""), args[2]);
+                wrapper.ne(args[0].replace("'", ""), args[2].replace("'", ""));
             }
         } else if (args[1].trim().equalsIgnoreCase(COLUMN_GT)) {
-            wrapper.gt(args[0].replace("'", ""), args[2]);
+            wrapper.gt(args[0].replace("'", ""), args[2].replace("'", ""));
         } else if (args[1].trim().equalsIgnoreCase(COLUMN_GE)) {
-            wrapper.ge(args[0].replace("'", ""), args[2]);
+            wrapper.ge(args[0].replace("'", ""), args[2].replace("'", ""));
         } else if (args[1].trim().equalsIgnoreCase(COLUMN_LT)) {
-            wrapper.lt(args[0].replace("'", ""), args[2]);
+            wrapper.lt(args[0].replace("'", ""), args[2].replace("'", ""));
         } else if (args[1].trim().equalsIgnoreCase(COLUMN_LE)) {
-            wrapper.le(args[0].replace("'", ""), args[2]);
+            wrapper.le(args[0].replace("'", ""), args[2].replace("'", ""));
         } else if (args[1].trim().equalsIgnoreCase(COLUMN_IN)) {
-            wrapper.in(args[0].replace("'", ""), args[2]);
+            wrapper.in(args[0].replace("'", ""), args[2].replace("'", ""));
         } else if (args[1].trim().equalsIgnoreCase(COLUMN_NOTIN)) {
-            wrapper.notIn(args[0].replace("'", ""), args[2]);
+            wrapper.notIn(args[0].replace("'", ""), args[2].replace("'", ""));
         } else if (args[1].trim().equalsIgnoreCase(COLUMN_LIKE)) {
-            wrapper.like(args[0].replace("'", ""), args[2]);
+            wrapper.like(args[0].replace("'", ""), args[2].replace("'", ""));
         }
     }
 
@@ -161,10 +158,9 @@ public class ScopeUtils {
 //                "('public', '=', 'public')," +
 //                "'&', ('public', '=', 'private'), ('channel_partner_ids', 'in', 1)," +
 //                "'&', ('public', '=', 'groups'), ('group_public_id', 'in', a)]";
-        String scope = "['|', ('type', '!=', 'private'), ('type', '=', False)]" ;
+        String scope = "['|', ('type', '!=', 'private'), ('type', '=', False)]";
         parse(scope);
 
         System.out.println(query.getSqlSegment());
     }
 }
-
