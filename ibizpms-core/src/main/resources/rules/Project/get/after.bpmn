@@ -11,8 +11,6 @@
             <endEvent id="prepareparam1_end" name="end"/>
            <callActivity activiti:exclusive="true" calledElement="cn.ibizlab.pms.core.zentao.service.logic.projectgetprojectproductplan" id="72df3dec705e8366e5571175f0afba3d" name="ProjectgetProjectProductPlanRuleFlow.bpmn"/>
            <sequenceFlow id="begin_72df3dec705e8366e5571175f0afba3d" sourceRef="begin" targetRef="72df3dec705e8366e5571175f0afba3d"/>
-           <callActivity activiti:exclusive="true" calledElement="cn.ibizlab.pms.core.zentao.service.logic.projectgetcurusersettop" id="4B687B89-6B93-47B9-85C5-BE904B8EDBF9" name="ProjectgetCurUserSetTopRuleFlow.bpmn"/>
-           <sequenceFlow id="72df3dec705e8366e5571175f0afba3d_4B687B89-6B93-47B9-85C5-BE904B8EDBF9" sourceRef="72df3dec705e8366e5571175f0afba3d" targetRef="4B687B89-6B93-47B9-85C5-BE904B8EDBF9"/>
-           <sequenceFlow id="4B687B89-6B93-47B9-85C5-BE904B8EDBF9_prepareparam1_end" sourceRef="4B687B89-6B93-47B9-85C5-BE904B8EDBF9" targetRef="prepareparam1_end"/>
+           <sequenceFlow id="72df3dec705e8366e5571175f0afba3d_prepareparam1_end" sourceRef="72df3dec705e8366e5571175f0afba3d" targetRef="prepareparam1_end"/>
     </process>
 </definitions>

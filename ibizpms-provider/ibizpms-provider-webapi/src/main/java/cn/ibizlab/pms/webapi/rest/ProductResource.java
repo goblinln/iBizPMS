@@ -209,16 +209,6 @@ public class ProductResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @ApiOperation(value = "获取数据", tags = {"产品" },  notes = "获取数据")
-	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/sysget")
-    public ResponseEntity<ProductDTO> sysGet(@PathVariable("product_id") Long product_id, @RequestBody ProductDTO productdto) {
-        Product domain = productMapping.toDomain(productdto);
-        domain.setId(product_id);
-        domain = productService.sysGet(domain);
-        productdto = productMapping.toDto(domain);
-        return ResponseEntity.status(HttpStatus.OK).body(productdto);
-    }
-
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取全部产品", tags = {"产品" } ,notes = "获取全部产品")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchalllist")
