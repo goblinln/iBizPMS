@@ -1548,7 +1548,7 @@
     },
     "getPSSysPFPlugin" : {
       "pluginType" : "LIST_ITEMRENDER",
-      "pluginCode" : "PFPlugin22"
+      "pluginCode" : "mobTaskItemList2"
     },
     "pagingSize" : 25,
     "getRemovePSControlAction" : {

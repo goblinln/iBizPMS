@@ -1,4 +1,4 @@
-import { CUSTOM01e334068e } from './plugin/custom/custom01e334068e';
+import { MobCompoundList2 } from './plugin/custom/mob-compound-list2';
 /**
  * 插件实例工厂（部件项，界面行为）
  *
@@ -70,7 +70,7 @@ export class AppPluginService {
      * @memberof AppPluginService
      */
     private registerControlItemPlugin(){
-        this.controlItemMap.set('',new CUSTOM01e334068e());
+        this.controlItemMap.set('mobCompoundList2',new MobCompoundList2());
     }
 
     /**

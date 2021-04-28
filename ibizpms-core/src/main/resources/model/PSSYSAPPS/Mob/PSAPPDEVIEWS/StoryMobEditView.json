@@ -1590,7 +1590,7 @@
                 } ],
                 "getPSSysPFPlugin" : {
                   "pluginType" : "LIST_RENDER",
-                  "pluginCode" : "PFPlugin31"
+                  "pluginCode" : "mobFileList3"
                 },
                 "pagingSize" : 1000,
                 "getRemovePSControlAction" : {
@@ -2007,7 +2007,7 @@
                 } ],
                 "getPSSysPFPlugin" : {
                   "pluginType" : "LIST_RENDER",
-                  "pluginCode" : "Auto20"
+                  "pluginCode" : "mobHistoryList2"
                 },
                 "pagingSize" : 1000,
                 "getRemovePSControlAction" : {

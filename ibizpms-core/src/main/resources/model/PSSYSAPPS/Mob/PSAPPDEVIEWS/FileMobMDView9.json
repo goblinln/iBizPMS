@@ -214,7 +214,7 @@
     } ],
     "getPSSysPFPlugin" : {
       "pluginType" : "LIST_RENDER",
-      "pluginCode" : "PFPlugin31"
+      "pluginCode" : "mobFileList3"
     },
     "pagingSize" : 1000,
     "getRemovePSControlAction" : {

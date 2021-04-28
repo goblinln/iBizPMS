@@ -792,7 +792,7 @@
     },
     "getPSSysPFPlugin" : {
       "pluginType" : "LIST_RENDER",
-      "pluginCode" : "PFPlugin20"
+      "pluginCode" : "mobReportList2"
     },
     "pagingSize" : 1000,
     "getRemovePSControlAction" : {

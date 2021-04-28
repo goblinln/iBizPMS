@@ -802,7 +802,7 @@
             },
             "getPSSysPFPlugin" : {
               "pluginType" : "CUSTOM",
-              "pluginCode" : "PFPlugin28"
+              "pluginCode" : "mobCompoundList2"
             },
             "allowEmpty" : true,
             "compositeItem" : true,
