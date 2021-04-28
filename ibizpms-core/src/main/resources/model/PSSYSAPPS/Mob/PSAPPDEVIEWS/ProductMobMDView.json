@@ -650,6 +650,13 @@
       "name" : "istop"
     }, {
       "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Product__status.json"
+      },
+      "name" : "status"
+    }, {
+      "dataType" : 25,
       "name" : "srfkey",
       "getPSAppDEField" : {
         "name" : "ID",
@@ -848,6 +855,10 @@
         "showCaption" : true,
         "showIcon" : true
       } ]
+    },
+    "getPSSysPFPlugin" : {
+      "pluginType" : "LIST_ITEMRENDER",
+      "pluginCode" : "mobItemList"
     },
     "pagingSize" : 1000,
     "getRemovePSControlAction" : {

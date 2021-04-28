@@ -275,9 +275,6 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             else if (iPSDEAction.getName().equals("Save")) {
                 return productService.save((Product) args[0]);
             }
-            else if (iPSDEAction.getName().equals("sysGet")) {
-                return productService.sysGet((Product) args[0]);
-            }
         }else if (StringUtils.isNotBlank(strActionName)) {
             if (strActionName.equals(DEActions.CREATE)) {
                 return productService.create((Product) args[0]);
@@ -405,9 +402,6 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         }
         else if (action.equals("save")) {
             return aroundAction("Save", point);
-        }
-        else if (action.equals("sysGet")) {
-            return aroundAction(action, point);
         }
         else if (action.equals("searchAllList")) {
             return aroundDataSet("AllList", point);

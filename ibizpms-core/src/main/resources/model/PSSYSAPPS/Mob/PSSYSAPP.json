@@ -18653,6 +18653,13 @@
           "name" : "istop"
         }, {
           "dataType" : 25,
+          "getFrontPSCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Product__status.json"
+          },
+          "name" : "status"
+        }, {
+          "dataType" : 25,
           "name" : "srfkey",
           "getPSAppDEField" : {
             "name" : "ID",
@@ -18851,6 +18858,10 @@
             "showCaption" : true,
             "showIcon" : true
           } ]
+        },
+        "getPSSysPFPlugin" : {
+          "pluginType" : "LIST_ITEMRENDER",
+          "pluginCode" : "mobItemList"
         },
         "pagingSize" : 1000,
         "getRemovePSControlAction" : {
@@ -20916,6 +20927,13 @@
           "name" : "istop"
         }, {
           "dataType" : 25,
+          "getFrontPSCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Product__status.json"
+          },
+          "name" : "status"
+        }, {
+          "dataType" : 25,
           "name" : "srfkey",
           "getPSAppDEField" : {
             "name" : "ID",
@@ -20939,6 +20957,10 @@
           "dataType" : 25,
           "name" : "srfmstag"
         } ],
+        "getPSSysPFPlugin" : {
+          "pluginType" : "LIST_ITEMRENDER",
+          "pluginCode" : "mobItemList"
+        },
         "pagingSize" : 1000,
         "getRemovePSControlAction" : {
           "modelref" : true,
@@ -24487,18 +24509,6 @@
         },
         "builtinMethod" : false
       }, {
-        "codeName" : "SysGet",
-        "methodType" : "DEACTION",
-        "getPSDEAction" : {
-          "modelref" : true,
-          "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/SysGet.json"
-        },
-        "getPSDEServiceAPIMethod" : {
-          "modelref" : true,
-          "id" : "SysGet"
-        },
-        "builtinMethod" : false
-      }, {
         "codeName" : "ReturnEdit",
         "methodType" : "DEACTION",
         "name" : "ReturnEdit",
@@ -25485,18 +25495,6 @@
         "getPSDEServiceAPIMethod" : {
           "modelref" : true,
           "id" : "Save"
-        },
-        "builtinMethod" : false
-      }, {
-        "codeName" : "SysGet",
-        "methodType" : "DEACTION",
-        "getPSDEAction" : {
-          "modelref" : true,
-          "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/SysGet.json"
-        },
-        "getPSDEServiceAPIMethod" : {
-          "modelref" : true,
-          "id" : "SysGet"
         },
         "builtinMethod" : false
       }, {

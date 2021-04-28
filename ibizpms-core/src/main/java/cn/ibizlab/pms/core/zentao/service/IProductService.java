@@ -48,7 +48,6 @@ public interface IProductService extends IService<Product> {
     boolean productTopBatch(List<Product> etList);
     boolean save(Product et);
     void saveBatch(List<Product> list);
-    Product sysGet(Product et);
     List<Product> select(ProductSearchContext context);
     List<Product> selectAllList(ProductSearchContext context);
     List<Product> selectAllProduct(ProductSearchContext context);
