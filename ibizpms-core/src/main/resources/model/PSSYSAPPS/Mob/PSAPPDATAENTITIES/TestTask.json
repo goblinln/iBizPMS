@@ -360,14 +360,6 @@
     },
     "name" : "数据导入",
     "getPSDEDataImportItems" : [ {
-      "caption" : "结束日期",
-      "name" : "END",
-      "getPSAppDEField" : {
-        "name" : "END",
-        "codeName" : "End"
-      },
-      "uniqueItem" : false
-    }, {
       "caption" : "描述",
       "name" : "DESC",
       "getPSAppDEField" : {
@@ -533,6 +525,14 @@
       "getPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testtask__pri.json"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "结束日期",
+      "name" : "END",
+      "getPSAppDEField" : {
+        "name" : "END",
+        "codeName" : "End"
       },
       "uniqueItem" : false
     } ],

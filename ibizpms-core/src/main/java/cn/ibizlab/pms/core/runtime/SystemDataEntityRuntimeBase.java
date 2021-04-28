@@ -571,19 +571,21 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                     .collect(Collectors.toList()));
         }
         //运行时分配能力
-        String curSystemId = curUser.getSrfsystemid();
-        if (StringUtils.isEmpty(curSystemId)) {
-            uaaDEAuthority.addAll(curUser.getAuthorities().stream()
-                    .filter(f -> f instanceof UAADEAuthority
-                            && ((UAADEAuthority) f).getEntity().equals(this.getName())
-                            && (DataAccessActions.READ.equals(action) || ((UAADEAuthority) f).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
-                    .map(f -> (UAADEAuthority) f).collect(Collectors.toList()));
-        } else {
-            uaaDEAuthority.addAll(curUser.getAuthorities().stream()
-                    .filter(f -> f instanceof UAADEAuthority
-                            && curSystemId.equalsIgnoreCase(((UAADEAuthority) f).getSystemid()) && ((UAADEAuthority) f).getEntity().equals(this.getName())
-                            && (DataAccessActions.READ.equals(action) || ((UAADEAuthority) f).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
-                    .map(f -> (UAADEAuthority) f).collect(Collectors.toList()));
+        if(curUser.getAuthorities() != null){
+            String curSystemId = curUser.getSrfsystemid();
+            if (StringUtils.isEmpty(curSystemId)) {
+                uaaDEAuthority.addAll(curUser.getAuthorities().stream()
+                        .filter(f -> f instanceof UAADEAuthority
+                                && ((UAADEAuthority) f).getEntity().equals(this.getName())
+                                && (DataAccessActions.READ.equals(action) || ((UAADEAuthority) f).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
+                        .map(f -> (UAADEAuthority) f).collect(Collectors.toList()));
+            } else {
+                uaaDEAuthority.addAll(curUser.getAuthorities().stream()
+                        .filter(f -> f instanceof UAADEAuthority
+                                && curSystemId.equalsIgnoreCase(((UAADEAuthority) f).getSystemid()) && ((UAADEAuthority) f).getEntity().equals(this.getName())
+                                && (DataAccessActions.READ.equals(action) || ((UAADEAuthority) f).getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
+                        .map(f -> (UAADEAuthority) f).collect(Collectors.toList()));
+            }
         }
         return uaaDEAuthority;
     }
