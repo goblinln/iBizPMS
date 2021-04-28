@@ -511,8 +511,25 @@
     "name" : "pri"
   }, {
     "dataType" : 25,
+    "name" : "isfavorites"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Task__type.json"
+    },
+    "name" : "type"
+  }, {
+    "dataType" : 25,
     "groupItem" : "GROUP1",
     "name" : "parentname"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/TaskStatusCK.json"
+    },
+    "name" : "status1"
   }, {
     "dataType" : 1,
     "name" : "parent"
@@ -540,7 +557,13 @@
     "name" : "deadline"
   }, {
     "dataType" : 25,
+    "name" : "tasktype"
+  }, {
+    "dataType" : 25,
     "name" : "name"
+  }, {
+    "dataType" : 25,
+    "name" : "multiple"
   }, {
     "dataType" : 25,
     "name" : "srfkey",

@@ -61,7 +61,7 @@ export const Environment = {
     // 是否开启预览模式
     isPreviewMode: false,
     // SaaS模式
-    SaaSMode: false,
+    SaaSMode: true,
     // 是否启用动态
     bDynamic: false
 };

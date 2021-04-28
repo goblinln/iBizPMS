@@ -1,6 +1,6 @@
 import qs from 'qs';
 import { GlobalHelp } from '@ibiz/dynamic-model-api';
-import { AppServiceBase, Http, getSessionStorage, setSessionStorage, AppModelService } from 'ibiz-core';
+import { AppServiceBase, Http, getSessionStorage, setSessionStorage, AppModelService, Util } from 'ibiz-core';
 import { AppCenterService, ErrorUtil } from 'ibiz-vue';
 import { Environment } from '@/environments/environment';
 import { DynamicInstanceConfig } from '@ibiz/dynamic-model-api';
@@ -141,8 +141,8 @@ export class AuthGuard {
                         let { data }: { data: any } = response;
                         if (data) {
                             // token认证把用户信息放入应用级数据
-                            if (localStorage.getItem('user')) {
-                                let user: any = JSON.parse(localStorage.getItem('user') as string);
+                            if (Util.getCookie('ibzuaa-user')) {
+                                let user: any = JSON.parse(Util.getCookie('ibzuaa-user') as string);
                                 let localAppData: any = {};
                                 if (user.sessionParams) {
                                     localAppData = { context: user.sessionParams };
@@ -240,6 +240,7 @@ export class AuthGuard {
         let leftTime = new Date();
         leftTime.setTime(leftTime.getSeconds() - 1);
         document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
+        document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();
         if (Environment.loginUrl) {
             window.location.href = `${Environment.loginUrl}?redirect=${router.currentRoute.fullPath}`;
         } else {

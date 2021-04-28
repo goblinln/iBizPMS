@@ -91,16 +91,8 @@ export class Interceptors {
                 config.headers['srforgid'] = tempOrgId ? tempOrgId : activeOrgData?.orgid;
                 config.headers['srfsystemid'] =  activeOrgData?.systemid;
             }
-            if (!window.localStorage.getItem('token')) {
-                let arr;
-                let reg = new RegExp("(^| )ibzuaa-token=([^;]*)(;|$)");
-                if (arr = document.cookie.match(reg)) {
-                    window.localStorage.setItem('token', unescape(arr[2]));
-                }
-            }
-            if (window.localStorage.getItem('token')) {
-                const token = window.localStorage.getItem('token');
-                config.headers['Authorization'] = `Bearer ${token}`;
+            if (Util.getCookie('ibzuaa-token')) {
+                config.headers['Authorization'] = `Bearer ${Util.getCookie('ibzuaa-token')}`;
             } else {
                 // 第三方应用打开免登
                 if (sessionStorage.getItem("srftoken")) {
@@ -181,6 +173,7 @@ export class Interceptors {
         let leftTime = new Date();
         leftTime.setTime(leftTime.getSeconds() - 1);
         document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
+        document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();
         if (Environment.loginUrl) {
             window.location.href = `${Environment.loginUrl}?redirect=${this.router.currentRoute.fullPath}`;
         } else {
