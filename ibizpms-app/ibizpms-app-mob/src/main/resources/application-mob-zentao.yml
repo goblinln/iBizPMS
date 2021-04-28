@@ -1,0 +1,85 @@
+zuul:
+  routes:
+    common:
+      path:
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      stripPrefix: false
+    v7:
+      path: /appdata
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      stripPrefix: false
+    ibizutil:
+      path: /ibizutil/**
+      serviceId: ${ibiz.ref.service.uaa:ibzuaa-api}
+      stripPrefix: false
+    ibizutilpms:
+      path: /ibizutilpms/**
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      stripPrefix: false
+#    dingtalktoken:
+#      path: /uaa/open/dingtalk/access_token
+#      serviceId: ${ibiz.ref.service.ibizpms-webapi:pms-webapi}
+#      stripPrefix: false
+#    dingtalkjsapisign:
+#      path: /uaa/dingtalk/jsapi/sign
+#      serviceId: ${ibiz.ref.service.ibizpms-webapi:pms-webapi}
+#      stripPrefix: false
+#    dingtalkauth:
+#      path:  /uaa/open/dingtalk/auth/**
+#      serviceId: ${ibiz.ref.service.ibizpms-webapi:pms-webapi}
+#      stripPrefix: false
+#    guest:
+#      path:  /login/guest
+#      serviceId: ${ibiz.ref.service.ibizpms-webapi:pms-webapi}
+#      stripPrefix: false
+#    loginv7:
+#      path: /v7/login
+#      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibzuaa-api}
+#      stripPrefix: false
+#    changepwd:
+#      path: /v7/changepwd
+#      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibzuaa-api}
+#      stripPrefix: false
+#    sys_user:
+#      path: /sysusers/**
+#      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibzuaa-api}
+#      stripPrefix: false
+    ibzemp:
+      path: /sysemployees/**
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+
+environment:
+  - TZ=Asia/Shanghai
+
+ibiz:
+  permitall: true
+  ref:
+    service:
+      pms-webapi: ibizpms-webapi
+      ibizpms-webapi: ibizpms-webapi
+      uaa: ibizrt4ebsx-rt4ebsx
+      ou: ibizrt4ebsx-rt4ebsx
+  auth:
+    # token:
+      # 本地ZT账户认证模式：SimpleTokenUtil
+      # UAA认证模式：UAATokenUtil
+      # util: UAATokenUtil
+    # service: SimulUserService
+  cacheLevel: L2
+spring:
+  servlet:
+    multipart:
+      # 代表文件上传最大大小
+      max-file-size: 100MB
+      # 代表文件上传最大总大小
+      max-request-size: 1024MB
+
+
+pms:
+  #是否跟踪数据流
+  trace: false
+
+#Log配置
+logging:
+  level:
+    cn.ibizlab.pms: debug
