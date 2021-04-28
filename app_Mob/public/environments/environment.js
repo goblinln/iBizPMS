@@ -22,4 +22,8 @@ window.Environment = {
     SysId: "B428B5BE-EA90-4101-A493-BA7085D89F0A",
     // 前端应用标识
     AppId: "6e0b7357169ef4eba84e1347ed94bd84",
+    // 文件导出
+    ExportFile: 'ibizutilpms/ztdownload',
+    // 文件上传
+    UploadFile: 'ibizutilpms/ztupload',
 }
