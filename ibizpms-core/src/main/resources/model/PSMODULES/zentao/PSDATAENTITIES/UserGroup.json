@@ -181,7 +181,7 @@
       "columnName" : "ID",
       "dBType" : "MYSQL5",
       "name" : "ID",
-      "queryCodeExp" : "concat(t1.`ACCOUNT`,'__',t1.`GROUP`)",
+      "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -194,40 +194,37 @@
         "getPSDEFVRConditions" : [ {
           "condType" : "STRINGLENGTH",
           "dEFName" : "ID",
-          "maxValue" : 200,
+          "maxValue" : 60,
           "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[200]",
+          "ruleInfo" : "内容长度必须小于等于[60]",
           "includeMaxValue" : true,
           "includeMinValue" : false,
           "keyCond" : true
         } ],
-        "ruleInfo" : "内容长度必须小于等于[200]"
+        "ruleInfo" : "内容长度必须小于等于[60]"
       },
       "getPSDEField" : {
         "name" : "ID",
         "codeName" : "Id"
       },
-      "ruleInfo" : "内容长度必须小于等于[200]",
+      "ruleInfo" : "内容长度必须小于等于[60]",
       "checkDefault" : true,
       "defaultMode" : true,
       "enableBackend" : true,
       "enableFront" : true
     } ],
     "codeName" : "Id",
-    "dEFType" : 2,
-    "dataType" : "TEXT",
+    "dEFType" : 1,
+    "dataType" : "GUID",
     "importOrder" : 1000,
-    "length" : 200,
-    "logicName" : "虚拟主键",
+    "length" : 60,
+    "logicName" : "主键",
     "name" : "ID",
     "stdDataType" : 25,
-    "stringLength" : 200,
+    "stringLength" : 60,
     "valueFormat" : "%1$s",
-    "allowEmpty" : false,
-    "formulaDEField" : true,
     "keyDEField" : true,
-    "pasteReset" : true,
-    "phisicalDEField" : false
+    "pasteReset" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",

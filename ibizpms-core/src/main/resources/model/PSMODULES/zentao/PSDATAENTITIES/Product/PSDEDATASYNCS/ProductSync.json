@@ -1,0 +1,14 @@
+{
+  "codeName" : "ProductSync",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEDATASYNCS/ProductSync.json",
+  "eventType" : 7,
+  "getInPSSysDataSyncAgent" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSSYSDATASYNCAGENTS/SYNC.json"
+  },
+  "name" : "产品接收",
+  "syncDir" : "IN",
+  "syncTag" : "ProductSync",
+  "exportFull" : false,
+  "inMode" : true
+}

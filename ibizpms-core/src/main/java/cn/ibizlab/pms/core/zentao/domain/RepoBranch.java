@@ -55,15 +55,6 @@ public class RepoBranch extends EntityMP implements Serializable {
     @ApiModelProperty("revision")
     private Integer revision;
     /**
-     * 虚拟主键
-     */
-    @DEField(isKeyField = true)
-    @TableField(exist = false)
-    @JSONField(name = "id")
-    @JsonProperty("id")
-    @ApiModelProperty("虚拟主键")
-    private String id;
-    /**
      * repo
      */
     @TableField(value = "`REPO`")
@@ -79,6 +70,15 @@ public class RepoBranch extends EntityMP implements Serializable {
     @JsonProperty("branch")
     @ApiModelProperty("branch")
     private String branch;
+    /**
+     * 主键
+     */
+    @DEField(isKeyField = true)
+    @TableId(value = "`ID`", type = IdType.ASSIGN_UUID)
+    @JSONField(name = "id")
+    @JsonProperty("id")
+    @ApiModelProperty("主键")
+    private String id;
 
 
 
