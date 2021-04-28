@@ -525,8 +525,6 @@ export default {
 			tip: '关联bug',
 		},
 	},
-	usr5mobmdviewrighttoolbar_toolbar: {
-	},
 	mobmdviewrighttoolbar_toolbar: {
 	},
 	resolvemobeditviewrighttoolbar_toolbar: {

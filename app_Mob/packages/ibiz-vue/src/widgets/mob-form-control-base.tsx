@@ -5,7 +5,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { AppMobFormService } from '../ctrl-service';
 import { MainControlBase } from './main-control-base';
 import { AppCenterService } from '../app-service/common-service';
-import { IPSAppDEUIAction, IPSDEEditForm, IPSDEEditFormItem, IPSDEFDCatGroupLogic, IPSDEFormButton, IPSDEFormDetail, IPSDEFormGroupPanel, IPSDEFormItem, IPSDEFormItemVR, IPSDEFormPage, IPSDEFormTabPage, IPSDEFormTabPanel } from '@ibiz/dynamic-model-api';
+import { IPSAppDEUIAction, IPSDEEditForm, IPSDEEditFormItem, IPSDEFDCatGroupLogic, IPSDEFormButton, IPSDEFormDetail, IPSDEFormGroupPanel, IPSDEFormItem, IPSDEFormItemVR, IPSDEFormPage, IPSDEFormTabPage, IPSDEFormTabPanel, IPSDEFIUpdateDetail } from '@ibiz/dynamic-model-api';
 
 
 /**
@@ -282,7 +282,11 @@ export class MobFormControlBase extends MainControlBase {
                 //     this.autoSave();
                 // }
                 const state = !Object.is(JSON.stringify(this.oldData), JSON.stringify(this.data)) ? true : false;
-                this.$store.commit('viewaction/setViewDataChange', { viewtag: this.viewtag, viewdatachange: state });
+                this.ctrlEvent({
+                    controlname: this.controlInstance.name,
+                    action: 'dataChange',
+                    data: state,
+                })
             });
     }
 
@@ -622,7 +626,6 @@ export class MobFormControlBase extends MainControlBase {
         this.fillForm(data, action);
         this.oldData = {};
         Object.assign(this.oldData, JSON.parse(JSON.stringify(this.data)));
-        this.$store.commit('viewaction/setViewDataChange', { viewtag: this.viewtag, viewdatachange: false });
         this.formLogic({ name: '', newVal: null, oldVal: null });
     }
 
@@ -986,15 +989,17 @@ export class MobFormControlBase extends MainControlBase {
         })
 
         // 表单项更新
-        let formDetail: any = ModelTool.getFormDetailByName(this.controlInstance, name);
-        if (formDetail?.formItemUpdate) {
-            const { getPSAppDEMethod, getPSDEFIUpdateDetails, showBusyIndicator } = formDetail.formItemUpdate;
+        let formDetail = ModelTool.getFormDetailByName(this.controlInstance, name) as IPSDEFormItem;
+        if (formDetail?.getPSDEFormItemUpdate?.()) {
+            const showBusyIndicator = formDetail.getPSDEFormItemUpdate()?.showBusyIndicator;
+            const getPSAppDEMethod = formDetail.getPSDEFormItemUpdate()?.getPSAppDEMethod();
+            const getPSDEFIUpdateDetails = formDetail.getPSDEFormItemUpdate()?.getPSDEFIUpdateDetails();
             let details: string[] = [];
-            getPSDEFIUpdateDetails?.forEach((item: any) => {
+            getPSDEFIUpdateDetails?.forEach((item: IPSDEFIUpdateDetail) => {
                 details.push(item.name)
             })
             if (await this.validItem(formDetail.name, this.data)) {
-                this.updateFormItems(getPSAppDEMethod?.id, this.data, details, showBusyIndicator);
+                this.updateFormItems(getPSAppDEMethod?.id as string, this.data, details, showBusyIndicator);
             }
         }
     }

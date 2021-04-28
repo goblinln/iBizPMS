@@ -37,6 +37,15 @@ export class MobEditViewBase extends MainViewBase {
     public editFormInstance !: IPSDEForm;
 
     /**
+     * 表单数据是否变化
+     *
+     * @public
+     * @type {Engine}
+     * @memberof MobEditViewBase
+     */
+    public dataChange: boolean = false;  
+
+    /**
      * 引擎初始化
      *
      * @public
@@ -77,4 +86,53 @@ export class MobEditViewBase extends MainViewBase {
         let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.editFormInstance);
         return this.$createElement(targetCtrlName, { slot: 'default', props: targetCtrlParam, ref: this.editFormInstance.name, on: targetCtrlEvent });
     }
+
+    /**
+     * 部件事件
+     * @param ctrl 部件 
+     * @param action  行为
+     * @param data 数据
+     * 
+     * @memberof MobEditViewBase
+     */
+    public onCtrlEvent(controlname: string, action: string, data: any) {
+        if (action == 'dataChange' && data == true) {
+          this.dataChange = true;
+        }
+        super.onCtrlEvent(controlname,action,data);
+    }
+
+    /**
+     * 检查表单是否修改
+     *
+     * @param {any[]} args
+     * @memberof MobEditViewBase
+     */
+    public async cheackChange(): Promise<any> {
+        if (this.dataChange) {
+            const title: any = this.$t('app.tabpage.sureclosetip.title');
+            const contant: any = this.$t('app.tabpage.sureclosetip.content');
+            const result = await this.$Notice.confirm(title, contant);
+            if (result) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return true;
+        }
+    }
+
+    /**
+     *  关闭视图
+     *
+     * @memberof MobEditViewBase
+     */
+    public async closeView(args?: any[]) {
+        let result = await this.cheackChange();
+        if(result){
+          super.closeView(args);
+        }
+    }
+
 }

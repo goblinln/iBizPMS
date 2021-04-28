@@ -1,5 +1,5 @@
 import { MainViewBase } from "./main-view-base";
-import { MobOptionViewEngine, ModelTool } from 'ibiz-core';
+import { MobOptionViewEngine, ModelTool, ThirdPartyService } from 'ibiz-core';
 import { IPSAppDEMobEditView, IPSDEForm } from "@ibiz/dynamic-model-api";
 
 /**
@@ -35,6 +35,15 @@ export class MobOptViewBase extends MainViewBase {
      * @memberof MobOptViewBase
      */
     public engine: MobOptionViewEngine = new MobOptionViewEngine();
+
+    /**
+     * 表单数据是否变化
+     *
+     * @public
+     * @type {Engine}
+     * @memberof MobOptViewBase
+     */
+     public dataChange: boolean = false;  
 
     /**
      * 引擎初始化
@@ -83,6 +92,8 @@ export class MobOptViewBase extends MainViewBase {
 
     /**
      *  渲染视图底部按钮
+     * 
+     * @memberof MobOptViewBase
      */
     public renderFooter() {
         return <div class="option-view-btnbox" slot="footer">
@@ -99,10 +110,25 @@ export class MobOptViewBase extends MainViewBase {
     }
 
     /**
+     * 部件事件
+     * @param ctrl 部件 
+     * @param action  行为
+     * @param data 数据
+     * 
+     * @memberof MobOptViewBase
+     */
+    public onCtrlEvent(controlname: string, action: string, data: any) {
+        if (action == 'dataChange' && data == true) {
+          this.dataChange = true;
+        }
+        super.onCtrlEvent(controlname,action,data);
+    }
+
+    /**
      * 保存按钮事件
      *
      * @protected
-     * @memberof MOBTESTMobOptionViewBase
+     * @memberof MobOptViewBase
      */
     protected save() {
         // 取数
@@ -122,7 +148,7 @@ export class MobOptViewBase extends MainViewBase {
      * 返回按钮事件
      *
      * @protected
-     * @memberof MOBTESTMobOptionViewBase
+     * @memberof MobOptViewBase
      */
     protected back(args: any[]) {
         if (this.viewDefaultUsage === "routerView") {
@@ -137,16 +163,14 @@ export class MobOptViewBase extends MainViewBase {
      * 检查表单是否修改
      *
      * @param {any[]} args
-     * @memberof PimEducationMobEditViewBase
+     * @memberof MobOptViewBase
      */
     public async cheackChange(): Promise<any> {
-        const view = this.$store.getters['viewaction/getAppView'](this.viewtag);
-        if (view && view.viewdatachange) {
+        if (this.dataChange) {
             const title: any = this.$t('app.tabpage.sureclosetip.title');
             const contant: any = this.$t('app.tabpage.sureclosetip.content');
             const result = await this.$Notice.confirm(title, contant);
             if (result) {
-                this.$store.commit('viewaction/setViewDataChange', { viewtag: this.viewtag, viewdatachange: false });
                 return true;
             } else {
                 return false;
@@ -155,4 +179,18 @@ export class MobOptViewBase extends MainViewBase {
             return true;
         }
     }
+
+    /**
+     *  关闭视图
+     *
+     * @memberof MobOptViewBase
+     */
+    public async closeView(args?: any[]) {
+        let result = await this.cheackChange();
+        if(result){
+          super.closeView(args);
+        }
+    }
+
+
 }

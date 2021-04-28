@@ -225,13 +225,15 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
         uaaUniResAuthorities.addAll(userUAAUniResAuthority);
         if (curUser.getAdminuser() == 1)
             uaaUniResAuthorities.addAll(adminUAAUniResAuthority);
-        String curSystemId = curUser.getSrfsystemid();
-        if (StringUtils.isEmpty(curSystemId)) {
-            uaaUniResAuthorities.addAll(curUser.getAuthorities().stream()
-                    .filter(f -> f instanceof UAAUniResAuthority).map(f -> (UAAUniResAuthority) f).collect(Collectors.toList()));
-        } else {
-            uaaUniResAuthorities.addAll(curUser.getAuthorities().stream()
-                    .filter(f -> f instanceof UAAUniResAuthority && curSystemId.equalsIgnoreCase(((UAAUniResAuthority) f).getSystemid())).map(f -> (UAAUniResAuthority) f).collect(Collectors.toList()));
+        if(curUser.getAuthorities() != null){
+            String curSystemId = curUser.getSrfsystemid();
+            if (StringUtils.isEmpty(curSystemId)) {
+                uaaUniResAuthorities.addAll(curUser.getAuthorities().stream()
+                        .filter(f -> f instanceof UAAUniResAuthority).map(f -> (UAAUniResAuthority) f).collect(Collectors.toList()));
+            } else {
+                uaaUniResAuthorities.addAll(curUser.getAuthorities().stream()
+                        .filter(f -> f instanceof UAAUniResAuthority && curSystemId.equalsIgnoreCase(((UAAUniResAuthority) f).getSystemid())).map(f -> (UAAUniResAuthority) f).collect(Collectors.toList()));
+            }
         }
 
         return uaaUniResAuthorities;

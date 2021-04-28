@@ -4,7 +4,7 @@ import { FormButtonModel, FormDruipartModel, FormGroupPanelModel, FormIFrameMode
 import { FormControlBase } from './form-control-base';
 import { AppFormService } from '../ctrl-service';
 import { AppCenterService, AppViewLogicService } from '../app-service';
-import { IPSAppDEUIAction, IPSDEEditForm, IPSDEEditFormItem, IPSDEFDCatGroupLogic, IPSDEFDLogic, IPSDEFDSingleLogic, IPSDEFormButton, IPSDEFormDetail, IPSDEFormDRUIPart, IPSDEFormGroupPanel, IPSDEFormItem, IPSDEFormItemVR, IPSDEFormPage, IPSDEFormTabPage, IPSDEFormTabPanel, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
+import { IPSAppDEUIAction, IPSDEEditForm, IPSDEEditFormItem, IPSDEFDCatGroupLogic, IPSDEFDLogic, IPSDEFDSingleLogic,IPSDEFIUpdateDetail, IPSDEFormButton, IPSDEFormDetail, IPSDEFormDRUIPart, IPSDEFormGroupPanel, IPSDEFormItem, IPSDEFormItemVR, IPSDEFormPage, IPSDEFormTabPage, IPSDEFormTabPanel, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
 
 /**
  * 编辑表单部件基类
@@ -1598,15 +1598,17 @@ export class EditFormControlBase extends FormControlBase {
         })
 
         // 表单项更新
-        let formDetail: any = ModelTool.getFormDetailByName(this.controlInstance, name);
-        if (formDetail?.formItemUpdate) {
-            const { getPSAppDEMethod, getPSDEFIUpdateDetails, showBusyIndicator } = formDetail.formItemUpdate;
+        let formDetail: IPSDEFormItem = ModelTool.getFormDetailByName(this.controlInstance, name);
+        if (formDetail?.getPSDEFormItemUpdate?.()) {
+            const showBusyIndicator = formDetail.getPSDEFormItemUpdate()?.showBusyIndicator;
+            const getPSAppDEMethod = formDetail.getPSDEFormItemUpdate()?.getPSAppDEMethod();
+            const getPSDEFIUpdateDetails = formDetail.getPSDEFormItemUpdate()?.getPSDEFIUpdateDetails();
             let details: string[] = [];
-            getPSDEFIUpdateDetails?.forEach((item: any) => {
+            getPSDEFIUpdateDetails?.forEach((item: IPSDEFIUpdateDetail) => {
                 details.push(item.name)
             })
             if (await this.checkItem(formDetail.name)) {
-                this.updateFormItems(getPSAppDEMethod?.id, this.data, details, showBusyIndicator);
+                this.updateFormItems(getPSAppDEMethod?.id as string, this.data, details, showBusyIndicator);
             }
         }
     }

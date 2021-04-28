@@ -254,7 +254,6 @@ export class MobAppMenuControlBase extends AppControlBase {
             return;
         }
         let _this: any = this;
-        debugger
         if (_this.$store.getters['authresource/getEnablePermissionValid']) {
             this.computedEffectiveMenus(inputMenus);
         }

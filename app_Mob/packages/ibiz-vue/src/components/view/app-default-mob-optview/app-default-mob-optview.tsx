@@ -82,6 +82,7 @@ export class AppDefaultMobOptView extends MobOptViewBase {
         return h(targetViewLayoutComponent, {
             props: { viewInstance: this.viewInstance }
         }, [
+            this.renderViewHeaderCaptionBar(),
             this.renderTopMessage(),
             this.renderBodyMessage(),
             this.renderToolBar(),

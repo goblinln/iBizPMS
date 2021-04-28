@@ -525,8 +525,6 @@ export default {
 			tip: 'deuiaction1',
 		},
 	},
-	usr5mobmdviewrighttoolbar_toolbar: {
-	},
 	mobmdviewrighttoolbar_toolbar: {
 	},
 	resolvemobeditviewrighttoolbar_toolbar: {
