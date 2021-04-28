@@ -6,6 +6,21 @@ services:
       - "8080:8080"
     networks:
       - agent_network
+    environment:
+      - SPRING_CLOUD_NACOS_DISCOVERY_IP=baidu.com
+      - SERVER_PORT=8080
+      - SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR=127.0.0.1:8848
+      - SPRING_REDIS_HOST=127.0.0.1
+      - SPRING_REDIS_PORT=6379
+      - SPRING_REDIS_DATABASE=0
+      - SPRING_DATASOURCE_USERNAME=a_A_23e8aa361
+      - SPRING_DATASOURCE_PASSWORD=b7989eb@
+      - SPRING_DATASOURCE_URL=jdbc:mysql://172.16.180.232:3306/a_A_23e8aa361?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true
+      - SPRING_DATASOURCE_DRIVER-CLASS-NAME=com.mysql.jdbc.Driver
+      - SPRING_DATASOURCE_DEFAULTSCHEMA=a_A_23e8aa361
+      - REMOTEDYNAPATH=/dynamodel
+      - BDYNAMIC=true
+      - REMOTEDYNAPATH2=http://172.16.190.145:30080/dynamodel2/
     deploy:
       resources:
            limits:

@@ -23,6 +23,35 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+        env:
+        - name: SPRING_CLOUD_NACOS_DISCOVERY_IP
+          value: "baidu.com"      
+        - name: SERVER_PORT
+          value: "8080"
+        - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR
+          value: "127.0.0.1:8848"
+        - name: SPRING_REDIS_HOST
+          value: "127.0.0.1"
+        - name: SPRING_REDIS_PORT
+          value: "6379"
+        - name: SPRING_REDIS_DATABASE
+          value: "0"
+        - name: SPRING_DATASOURCE_USERNAME
+          value: "a_A_23e8aa361"
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: "b7989eb@"
+        - name: SPRING_DATASOURCE_URL
+          value: "jdbc:mysql://172.16.180.232:3306/a_A_23e8aa361?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true"
+        - name: SPRING_DATASOURCE_DRIVER-CLASS-NAME
+          value: "com.mysql.jdbc.Driver"
+        - name: SPRING_DATASOURCE_DEFAULTSCHEMA
+          value: "a_A_23e8aa361"
+        - name: REMOTEDYNAPATH
+          value: "/dynamodel"      
+        - name: BDYNAMIC
+          value: "true"      
+        - name: REMOTEDYNAPATH2
+          value: "http://172.16.190.145:30080/dynamodel2/"      
 
 ---
 apiVersion: v1
