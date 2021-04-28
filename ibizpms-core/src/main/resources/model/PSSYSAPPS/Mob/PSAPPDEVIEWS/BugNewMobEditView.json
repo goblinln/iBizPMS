@@ -998,7 +998,7 @@
               "editorParams" : {
                 "TIMEFMT" : "YYYY-MM-DD HH:mm:ss"
               },
-              "editorStyle" : "Auto6",
+              "editorStyle" : "day",
               "editorType" : "MOBDATE",
               "name" : "deadline"
             },

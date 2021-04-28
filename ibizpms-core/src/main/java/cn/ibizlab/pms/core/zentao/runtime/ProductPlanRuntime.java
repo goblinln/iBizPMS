@@ -136,6 +136,8 @@ public class ProductPlanRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
             return productplanService.searchChildPlan(searchContext);    
         if (iPSDEDataSet.getName().equals("CurProductPlan"))
             return productplanService.searchCurProductPlan(searchContext);    
+        if (iPSDEDataSet.getName().equals("CurProductPlanStory"))
+            return productplanService.searchCurProductPlanStory(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
             return productplanService.searchDefault(searchContext);    
         if (iPSDEDataSet.getName().equals("DefaultParent"))
@@ -456,6 +458,9 @@ public class ProductPlanRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
         }
         else if (action.equals("searchCurProductPlan")) {
             return aroundDataSet("CurProductPlan", point);
+        }
+        else if (action.equals("searchCurProductPlanStory")) {
+            return aroundDataSet("CurProductPlanStory", point);
         }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);

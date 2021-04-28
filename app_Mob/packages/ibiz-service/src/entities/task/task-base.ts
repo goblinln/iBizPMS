@@ -71,10 +71,10 @@ export abstract class TaskBase extends EntityBase implements ITask {
      * 创建日期
      */
     openeddate?: any;
-    /**
-     * 是否指派
-     */
-    assign?: any;
+    // /**
+    //  * 是否指派
+    //  */
+    // assign?: any;
     /**
      * 标题颜色
      *

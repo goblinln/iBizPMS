@@ -13,15 +13,11 @@
   "name" : "当前产品计划（动态）_缓存",
   "getPSAppDEDataSet" : {
     "modelref" : true,
-    "id" : "FetchCurProductPlan"
+    "id" : "FetchCurProductPlanStory"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
-  },
-  "getPValuePSAppDEField" : {
-    "name" : "PARENT",
-    "codeName" : "Parent"
   },
   "enableCache" : true
 }

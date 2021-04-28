@@ -123,10 +123,10 @@ export abstract class ActionBase extends EntityBase implements IAction {
      * 备注
      */
     lastcomment?: any;
-    /**
-     * 前端键值
-     */
-    srfkey?: any;
+    // /**
+    //  * 前端键值
+    //  */
+    // srfkey?: any;
     /**
      * 操作方式
      *
