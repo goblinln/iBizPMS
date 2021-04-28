@@ -69,7 +69,7 @@ export class AppControlShell extends Vue {
             this.controlComponentName = AppComponentService.getControlComponents(
                 opts.modelData?.controlType,
                 opts.modelData?.controlStyle || 'DEFAULT',
-                opts.modelData?.getPSSysPFPlugin()?.pluginCode
+                opts.modelData?.getPSSysPFPlugin()?.pluginType+'_'+opts.modelData?.getPSSysPFPlugin()?.pluginCode
             );
         } else {
             this.controlComponentName = AppComponentService.getControlComponents(

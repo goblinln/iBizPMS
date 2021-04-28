@@ -35,12 +35,14 @@
             <div class="theme-setting">
                 <el-tabs v-model="activeSetting">
                     <template v-for="type in themeTypes">
-                        <el-tab-pane :key="type.value" :label="type.label" :name="type.value" :class="type.className ? type.className : ''">
+                        <el-tab-pane v-if="!type.disable" :key="type.value" :label="type.label" :name="type.value" :class="type.className ? type.className : ''">
                             <div v-if="type.items && type.items.length > 0" :class="{ 'setting': true, [`${type.value}-setting`]: true }">
-                                <div v-for="(item, index) in type.items" :key="index" class="setting-item">
-                                    <span>{{ item.label }}</span>
-                                    <el-color-picker :show-alpha="item.showAlpha" size="small" v-model="themeOptions[item.cssName]"/>
-                                </div>
+                                <template v-for="(item, index) in type.items">
+                                    <div v-if="!item.disable" :key="index" class="setting-item">
+                                        <span>{{ item.label }}</span>
+                                        <el-color-picker :show-alpha="item.showAlpha" size="small" v-model="themeOptions[item.cssName]"/>
+                                    </div>
+                                </template>
                             </div>
                         </el-tab-pane>
                     </template>
@@ -58,6 +60,7 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import { appConfig } from '@/config/appConfig';
 import { themeConfig } from '@/config/themeConfig';
+import { AppServiceBase } from 'ibiz-core';
 
 @Component({})
 export default class AppCustomTheme extends Vue {
@@ -93,6 +96,8 @@ export default class AppCustomTheme extends Vue {
      * @memberof AppCustomTheme
      */
     public fontsFamily: any[] = appConfig.fonts;
+
+    public Environment: any = AppServiceBase.getInstance().getAppEnvironment();
 
     /**
      * 当前选中样式
@@ -147,12 +152,14 @@ export default class AppCustomTheme extends Vue {
         this.initThemeOptions().then((options: any) => {
             this.selectTheme = this.getSelectTheme();
             const themeOptions = options ? options : localStorage.getItem('theme-options');
-            if (themeOptions) {
+            if (themeOptions !== null && themeOptions !== undefined && themeOptions !== '') {
                 this.themeOptions = JSON.parse(themeOptions);
+                this.previewTheme();
             } else {
-                this.handleThemeOptions(this.selectTheme);
+                this.handleThemeOptions(this.selectTheme).then(() => {
+                    this.previewTheme();
+                });
             }
-            this.previewTheme();
         });
         this.initFontFamily();
     }
@@ -164,7 +171,7 @@ export default class AppCustomTheme extends Vue {
      */
     public async initThemeOptions() {
         try {
-            const response = await this.$http.get('configs/person/setting');
+            const response = await this.$http.get(`configs/${this.Environment.SysName}-${this.Environment.AppName}/theme-setting`);
             if (response.status && response.status == 200) {
                 return response.data && response.data.model ? response.data.model : null;
             }
@@ -204,24 +211,23 @@ export default class AppCustomTheme extends Vue {
      * 
      * @memberof AppCustomTheme
      */
-    public handleThemeOptions(tag: any) {
+    public async handleThemeOptions(tag: any) {
         if (!tag || !tag.slice(10)) {
             return;
         }
         try {
-            this.$http.get(`./assets/theme/${tag.slice(10)}.theme.less`).then((response: any) => {
-                if ((response.status && response.status != 200) || !response.data) {
-                    return;
+            const response = await this.$http.get(`./assets/theme/${tag.slice(10)}.theme.less`);
+            if ((response.status && response.status != 200) || !response.data) {
+                return;
+            }
+            const items: Array<any> = response.data.toString().match(/--[app|view|ctrl|item|menu|form]+[a-zA-Z-]+: ?[#()a-zA-Z0-9,. ]+/g) || [];
+            items.forEach((item: any, index: number) => {
+                const splitVar = item.split(':');
+                if (splitVar && splitVar.length == 2) {
+                    Object.assign(this.themeOptions, { [splitVar[0]]: splitVar[1].trim() });
                 }
-                const items: Array<any> = response.data.toString().match(/--[app|view|ctrl|item|menu|form]+[a-zA-Z-]+: ?[#()a-zA-Z0-9,. ]+/g) || [];
-                items.forEach((item: any, index: number) => {
-                    const splitVar = item.split(':');
-                    if (splitVar && splitVar.length == 2) {
-                        Object.assign(this.themeOptions, { [splitVar[0]]: splitVar[1].trim() });
-                    }
-                })
-                this.$forceUpdate();
             })
+            // this.$forceUpdate();
         } catch {
 
         }
@@ -245,9 +251,8 @@ export default class AppCustomTheme extends Vue {
      * @memberof AppCustomTheme
      */
     public fontChange(val: any) {
-        if (!Object.is(this.selectFont, val)) {
+        if (val) {
             const _this: any = this;
-            _this.selectFont = val;
             localStorage.setItem('font-family', val);
             _this.$router.app.$store.commit('setCurrentSelectFont', val);
         }
@@ -330,7 +335,7 @@ export default class AppCustomTheme extends Vue {
      */
     public saveThemeOptions() {
         if (this.themeOptions) {
-            this.$http.put(`/configs/person/setting`, { model: JSON.stringify(this.themeOptions) }).then((res: any) => {
+            this.$http.put(`/configs/${this.Environment.SysName}-${this.Environment.AppName}/theme-setting`, { model: JSON.stringify(this.themeOptions) }).then((res: any) => {
                 if (res) {
                     const _this: any = this;
                     _this.$notify({
