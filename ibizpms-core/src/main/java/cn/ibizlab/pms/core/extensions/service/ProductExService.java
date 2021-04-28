@@ -3,9 +3,7 @@ package cn.ibizlab.pms.core.extensions.service;
 import cn.ibizlab.pms.core.ibizpro.domain.IbzproConfig;
 import cn.ibizlab.pms.core.ibizpro.service.IIbzproConfigService;
 import cn.ibizlab.pms.core.util.ibizzentao.common.ChangeUtil;
-import cn.ibizlab.pms.core.zentao.domain.Action;
-import cn.ibizlab.pms.core.zentao.domain.DocLib;
-import cn.ibizlab.pms.core.zentao.domain.History;
+import cn.ibizlab.pms.core.zentao.domain.*;
 import cn.ibizlab.pms.core.zentao.service.IActionService;
 import cn.ibizlab.pms.core.zentao.service.IDocLibService;
 import cn.ibizlab.pms.core.zentao.service.IFileService;
@@ -16,7 +14,6 @@ import cn.ibizlab.pms.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
-import cn.ibizlab.pms.core.zentao.domain.Product;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -158,6 +155,21 @@ public class ProductExService extends ProductServiceImpl {
 
         }
         return et;
+    }
+
+    @Override
+    public Product sysGet(Long key) {
+        Product product = super.sysGet(key);
+        String sql = "SELECT COUNT(1) AS ISTOP FROM `t_ibz_top` t WHERE t.OBJECTID = #{et.id} AND t.TYPE = 'project' AND t.ACCOUNT = #{et.account}";
+        HashMap<String, Object> param = new HashMap<>();
+        param.put("id",product.getId());
+        param.put("account",AuthenticationUser.getAuthenticationUser().getLoginname());
+        List<JSONObject> result = this.select(sql, param);
+        if (result.size()>0){
+            product.setIstop(result.get(0).getInteger("ISTOP"));
+        }
+
+        return product;
     }
 }
 
