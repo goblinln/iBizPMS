@@ -23,6 +23,10 @@ export interface ITask extends IEntityBase {
      */
     taskteams?: any;
     /**
+     * 需求状态
+     */
+    storystatus?: any;
+    /**
      * 预计剩余
      */
     left?: any;
@@ -99,6 +103,10 @@ export interface ITask extends IEntityBase {
      */
     replycount?: any;
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * 开始日期
      */
     configbegin?: any;
@@ -114,6 +122,10 @@ export interface ITask extends IEntityBase {
      * 由谁关闭
      */
     closedby?: any;
+    /**
+     * 相关需求最新版本
+     */
+    storyversionnew?: any;
     /**
      * 本次消耗
      */
@@ -204,6 +216,10 @@ export interface ITask extends IEntityBase {
      * 指派给
      */
     assignedto?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
     /**
      * 工时
      */
@@ -378,20 +394,4 @@ export interface ITask extends IEntityBase {
      * 来源Bug
      */
     frombug?: any;
-    /**
-     * 相关需求最新版本
-     */
-    storyversionnew?: any;
-    /**
-     * 需求状态
-     */
-    storystatus?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 }

@@ -38,6 +38,10 @@ export abstract class ModuleBase extends EntityBase implements IModule {
      */
     root?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 级别
      */
     grade?: any;
@@ -71,6 +75,10 @@ export abstract class ModuleBase extends EntityBase implements IModule {
      * 由谁创建
      */
     createby?: any;
+    /**
+     * 归属部门名
+     */
+    mdeptname?: any;
     /**
      * 收藏者
      */
@@ -111,14 +119,6 @@ export abstract class ModuleBase extends EntityBase implements IModule {
      * 上级模块
      */
     parent?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 归属部门名
-     */
-    mdeptname?: any;
 
     /**
      * 重置实体数据

@@ -54,6 +54,16 @@ public class UserTplDTO extends DTOBase implements Serializable {
     private Long id;
 
     /**
+     * 属性 [DEPTNAME]
+     *
+     */
+    @JSONField(name = "deptname")
+    @JsonProperty("deptname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属部门名")
+    private String deptname;
+
+    /**
      * 属性 [ORG]
      *
      */
@@ -72,6 +82,16 @@ public class UserTplDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 65535, message = "内容长度必须小于等于[65535]")
     @ApiModelProperty("content")
     private String content;
+
+    /**
+     * 属性 [ORGNAME]
+     *
+     */
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
 
     /**
      * 属性 [TYPE]
@@ -122,26 +142,6 @@ public class UserTplDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门")
     private String dept;
-
-    /**
-     * 属性 [DEPTNAME]
-     *
-     */
-    @JSONField(name = "deptname")
-    @JsonProperty("deptname")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属部门名")
-    private String deptname;
-
-    /**
-     * 属性 [ORGNAME]
-     *
-     */
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
 
 
     /**

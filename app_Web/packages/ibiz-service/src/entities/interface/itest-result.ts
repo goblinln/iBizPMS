@@ -35,6 +35,10 @@ export interface ITestResult extends IEntityBase {
      */
     caseresult?: 'n/a' | 'pass' | 'fail' | 'blocked';
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 由谁更新
      */
     updateby?: any;
@@ -54,6 +58,10 @@ export interface ITestResult extends IEntityBase {
      * 测试时间
      */
     date?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
     /**
      * 编号
      */
@@ -102,12 +110,4 @@ export interface ITestResult extends IEntityBase {
      * 代码编译
      */
     compile?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 }

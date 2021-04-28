@@ -1,4 +1,6 @@
 export default [
+    'orgname',
+    'deptname',
     'userlist',
     'org',
     'listname',
@@ -6,6 +8,4 @@ export default [
     'updateby',
     'dept',
     'account',
-    'deptname',
-    'orgname',
 ];

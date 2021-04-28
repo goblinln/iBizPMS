@@ -1,7 +1,9 @@
 export default [
+    'deptname',
     'dept',
     'org',
     'name',
+    'orgname',
     'addeddate',
     'id',
     'deleted',
@@ -12,6 +14,4 @@ export default [
     'casecnt',
     'desc',
     'product',
-    'deptname',
-    'orgname',
 ];

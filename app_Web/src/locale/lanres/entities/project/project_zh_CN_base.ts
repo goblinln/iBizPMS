@@ -4,6 +4,7 @@ function getLocaleResourceBase(){
 	const data:any = {
 	fields: {
 		'openedversion': commonLogic.appcommonhandle("当前系统版本",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 		'begin': commonLogic.appcommonhandle("开始时间",null),
 		'hours': commonLogic.appcommonhandle("可用工时/天",null),
 		'pmseeprojectinfo': commonLogic.appcommonhandle("项目立项信息",null),
@@ -19,6 +20,7 @@ function getLocaleResourceBase(){
 		'mycompletetaskcnt': commonLogic.appcommonhandle("我完成任务数",null),
 		'istop': commonLogic.appcommonhandle("是否置顶",null),
 		'uncompletetaskcnt': commonLogic.appcommonhandle("未完成任务数",null),
+		'mdeptname': commonLogic.appcommonhandle("归属部门名",null),
 		'teamcnt': commonLogic.appcommonhandle("团队成员总数",null),
 		'pm': commonLogic.appcommonhandle("项目负责人",null),
 		'dept': commonLogic.appcommonhandle("选择部门",null),
@@ -84,8 +86,6 @@ function getLocaleResourceBase(){
 		'qd': commonLogic.appcommonhandle("测试负责人",null),
 		'parentname': commonLogic.appcommonhandle("parent",null),
 		'parent': commonLogic.appcommonhandle("父项目",null),
-		'orgname': commonLogic.appcommonhandle("归属组织名",null),
-		'mdeptname': commonLogic.appcommonhandle("归属部门名",null),
 	},
 		views: {
 			'tasktreeexpview': {

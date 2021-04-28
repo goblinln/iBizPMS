@@ -15,7 +15,9 @@ export default {
     desc:  commonLogic.appcommonhandle("描述",null),
     id:  commonLogic.appcommonhandle("id",null),
     deleted:  commonLogic.appcommonhandle("已删除",null),
+    deptName:  commonLogic.appcommonhandle("归属部门名",null),
     sqlid:  commonLogic.appcommonhandle("运行数据库",null),
+    orgName:  commonLogic.appcommonhandle("归属组织名",null),
     scmPath:  commonLogic.appcommonhandle("源代码地址",null),
     filePath:  commonLogic.appcommonhandle("下载地址",null),
     createbugcnt:  commonLogic.appcommonhandle("产生的bug",null),
@@ -29,8 +31,6 @@ export default {
     product:  commonLogic.appcommonhandle("产品",null),
     branch:  commonLogic.appcommonhandle("平台/分支",null),
     project:  commonLogic.appcommonhandle("所属项目",null),
-    deptName:  commonLogic.appcommonhandle("归属部门名",null),
-    orgName:  commonLogic.appcommonhandle("归属组织名",null),
   },
 	views: {
 		mobmpickupview: {

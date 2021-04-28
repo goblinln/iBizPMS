@@ -3,84 +3,44 @@
   "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/TestSupervisor.json",
   "name" : "测试主管",
   "getPSSysUserRoleDatas" : [ {
-    "name" : "null-ZT_ACTION[null]",
+    "name" : "null-IBZ_DOCLIBMODULE[null]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_MANAGE_ALL.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Read.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
     }
   }, {
-    "name" : "null-ZT_BUG[null]",
+    "name" : "null-ZT_DOC[null]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Maintain.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEUSERROLES/Doc_Read.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
     }
   }, {
-    "name" : "null-IBZ_PROJECTMEMBER[null]",
+    "name" : "null-ZT_SUITECASE[null]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/ProjectMember_Read.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDEUSERROLES/SuiteCase_Read.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase.json"
     }
   }, {
-    "name" : "null-IBZ_TESTMODULE[null]",
+    "name" : "null-ZT_PROJECT[null]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEUSERROLES/TestModule_Manage.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_CO.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
-    }
-  }, {
-    "name" : "null-ZT_CASE[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
-    }
-  }, {
-    "name" : "null-IBZ_PROJECTMODULE[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEUSERROLES/ProjectModule_Manage.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
-    }
-  }, {
-    "name" : "null-IBZ_PROJECTMODULE[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEUSERROLES/ProjectModule_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
-    }
-  }, {
-    "name" : "null-ZT_ACTION[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_READ_ALL.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     }
   }, {
     "name" : "null-ZT_CASESTEP[null]",
@@ -93,50 +53,10 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
     }
   }, {
-    "name" : "null-ZT_MODULE[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEUSERROLES/Module_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
-    }
-  }, {
-    "name" : "null-ZT_SUITECASE[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDEUSERROLES/SuiteCase_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase.json"
-    }
-  }, {
-    "name" : "null-ZT_TODO[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
-    }
-  }, {
-    "name" : "null-ZT_RELEASE[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEUSERROLES/Release_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
-    }
-  }, {
     "name" : "null-ZT_TESTTASK[null]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEUSERROLES/TestTask_Read.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEUSERROLES/TestTask_Maintain.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
@@ -146,81 +66,11 @@
     "name" : "null-IBZ_PRODUCTMODULE[null]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEUSERROLES/ProductModule_Maintain.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEUSERROLES/ProductModule_Read.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
-    }
-  }, {
-    "name" : "null-IBZ_PRODUCTSTATS[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEUSERROLES/IBZProductStats_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats.json"
-    }
-  }, {
-    "name" : "null-ZT_BUILD[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEUSERROLES/Build_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
-    }
-  }, {
-    "name" : "null-ZT_DOCLIB[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
-    }
-  }, {
-    "name" : "null-ZT_TASK[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
-    }
-  }, {
-    "name" : "null-ZT_TESTSUITE[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEUSERROLES/TestSuite_Read_CO.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite.json"
-    }
-  }, {
-    "name" : "null-ZT_TODO[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Manage.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
-    }
-  }, {
-    "name" : "null-ZT_PRODUCTPLAN[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEUSERROLES/ProductPlan_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
     }
   }, {
     "name" : "null-ZT_DOC[null]",
@@ -233,24 +83,14 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
     }
   }, {
-    "name" : "null-ZT_TESTSUITE[null]",
+    "name" : "null-ZT_TESTREPORT[null]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEUSERROLES/TestSuite_Maintain_CO.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEUSERROLES/TestReport_Read.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite.json"
-    }
-  }, {
-    "name" : "null-IBZ_PROJECTMODULE[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEUSERROLES/ProjectModule_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
     }
   }, {
     "name" : "null-ZT_DOCLIB[null]",
@@ -263,10 +103,410 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
     }
   }, {
+    "name" : "null-ZT_TESTSUITE[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEUSERROLES/TestSuite_Read_CO.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite.json"
+    }
+  }, {
+    "name" : "null-ZT_RELEASE[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEUSERROLES/Release_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
+    }
+  }, {
+    "name" : "null-ZT_TASK[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    }
+  }, {
+    "name" : "null-IBZ_PROJECTMEMBER[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/ProjectMember_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember.json"
+    }
+  }, {
+    "name" : "null-IBZ_PRODUCTTEAM[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEUSERROLES/ProductTeam_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
+    }
+  }, {
+    "name" : "null-ZT_TODO[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+    }
+  }, {
+    "name" : "null-IBZ_TESTMODULE[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEUSERROLES/TestModule_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
+    }
+  }, {
+    "name" : "null-ZT_BUG[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+    }
+  }, {
+    "name" : "null-ZT_STORY[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
+    }
+  }, {
+    "name" : "null-ZT_CASESTEP[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEUSERROLES/CaseStep_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
+    }
+  }, {
+    "name" : "null-IBZ_DOCLIBMODULE[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Manage.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+    }
+  }, {
+    "name" : "null-ZT_TODO[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+    }
+  }, {
+    "name" : "null-IBZ_DOCLIBMODULE[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+    }
+  }, {
+    "name" : "null-IBZ_PROJECTMODULE[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEUSERROLES/ProjectModule_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+    }
+  }, {
+    "name" : "null-ZT_BUG[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+    }
+  }, {
+    "name" : "null-ZT_TESTSUITE[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEUSERROLES/TestSuite_Maintain_CO.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite.json"
+    }
+  }, {
+    "name" : "null-ZT_DOCLIB[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Manage.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+    }
+  }, {
+    "name" : "null-ZT_ACTION[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_MANAGE_ALL.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
+    }
+  }, {
+    "name" : "null-IBZ_PROJECTMODULE[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEUSERROLES/ProjectModule_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+    }
+  }, {
+    "name" : "null-ZT_PRODUCTPLAN[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEUSERROLES/ProductPlan_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+    }
+  }, {
+    "name" : "null-ZT_DOCLIB[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+    }
+  }, {
+    "name" : "null-ZT_BUILD[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEUSERROLES/Build_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
+    }
+  }, {
+    "name" : "null-ZT_CASE[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+    }
+  }, {
+    "name" : "null-ZT_BUILD[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEUSERROLES/Build_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
+    }
+  }, {
+    "name" : "null-ZT_CASESTEP[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEUSERROLES/CaseStep_Manage.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
+    }
+  }, {
+    "name" : "null-IBZ_PRODUCTLIFE[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEUSERROLES/IBZProductLife_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife.json"
+    }
+  }, {
     "name" : "null-IBZ_PRODUCTMODULE[null]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEUSERROLES/ProductModule_Read.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEUSERROLES/ProductModule_Manage.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+    }
+  }, {
+    "name" : "null-ZT_CASE[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+    }
+  }, {
+    "name" : "null-ZT_TESTREPORT[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEUSERROLES/TestReport_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
+    }
+  }, {
+    "name" : "null-ZT_ACTION[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_READ_ALL.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
+    }
+  }, {
+    "name" : "null-ZT_TASK[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    }
+  }, {
+    "name" : "null-ZT_FILE[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEUSERROLES/File_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    }
+  }, {
+    "name" : "null-ZT_MODULE[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEUSERROLES/Module_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+    }
+  }, {
+    "name" : "null-ZT_MODULE[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEUSERROLES/Module_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+    }
+  }, {
+    "name" : "null-IBZ_PRODUCTSTATS[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEUSERROLES/IBZProductStats_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats.json"
+    }
+  }, {
+    "name" : "null-ZT_PRODUCT[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_CO.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
+    "name" : "null-ZT_TODO[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Manage.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+    }
+  }, {
+    "name" : "null-ZT_TESTTASK[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEUSERROLES/TestTask_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
+    }
+  }, {
+    "name" : "null-IBZ_PROJECTMODULE[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEUSERROLES/ProjectModule_Manage.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+    }
+  }, {
+    "name" : "null-ZT_FILE[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEUSERROLES/File_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+    }
+  }, {
+    "name" : "null-IBZ_PRODUCTMODULE[null]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEUSERROLES/ProductModule_Maintain.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
@@ -283,264 +523,24 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
     }
   }, {
-    "name" : "null-IBZ_DOCLIBMODULE[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-    }
-  }, {
-    "name" : "null-ZT_TASK[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
-    }
-  }, {
-    "name" : "null-ZT_TODO[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
-    }
-  }, {
-    "name" : "null-ZT_TESTREPORT[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEUSERROLES/TestReport_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
-    }
-  }, {
-    "name" : "null-ZT_DOC[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEUSERROLES/Doc_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
-    }
-  }, {
-    "name" : "null-ZT_DOCLIB[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Manage.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
-    }
-  }, {
-    "name" : "null-ZT_SUITECASE[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDEUSERROLES/SuiteCase_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase.json"
-    }
-  }, {
-    "name" : "null-ZT_BUILD[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEUSERROLES/Build_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
-    }
-  }, {
-    "name" : "null-ZT_PROJECT[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_CO.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
-    }
-  }, {
-    "name" : "null-ZT_TESTREPORT[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEUSERROLES/TestReport_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
-    }
-  }, {
-    "name" : "null-ZT_MODULE[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEUSERROLES/Module_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
-    }
-  }, {
-    "name" : "null-ZT_CASE[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
-    }
-  }, {
-    "name" : "null-IBZ_DOCLIBMODULE[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Manage.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-    }
-  }, {
-    "name" : "null-ZT_STORY[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
-    }
-  }, {
-    "name" : "null-IBZ_PRODUCTTEAM[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEUSERROLES/ProductTeam_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
-    }
-  }, {
-    "name" : "null-ZT_TESTTASK[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEUSERROLES/TestTask_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
-    }
-  }, {
-    "name" : "null-IBZ_PRODUCTMODULE[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEUSERROLES/ProductModule_Manage.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
-    }
-  }, {
-    "name" : "null-ZT_PRODUCT[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_CO.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
-    }
-  }, {
-    "name" : "null-ZT_BUG[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
-    }
-  }, {
-    "name" : "null-ZT_FILE[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEUSERROLES/File_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
-    }
-  }, {
     "name" : "null-IBZ_TESTMODULE[null]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEUSERROLES/TestModule_Maintain.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEUSERROLES/TestModule_Manage.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
     }
   }, {
-    "name" : "null-IBZ_PRODUCTLIFE[null]",
+    "name" : "null-ZT_SUITECASE[null]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife/PSDEUSERROLES/IBZProductLife_Read.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDEUSERROLES/SuiteCase_Maintain.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife.json"
-    }
-  }, {
-    "name" : "null-IBZ_DOCLIBMODULE[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-    }
-  }, {
-    "name" : "null-ZT_CASESTEP[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEUSERROLES/CaseStep_Manage.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
-    }
-  }, {
-    "name" : "null-ZT_CASESTEP[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEUSERROLES/CaseStep_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
-    }
-  }, {
-    "name" : "null-ZT_FILE[null]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEUSERROLES/File_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase.json"
     }
   } ],
   "getPSSysUserRoleReses" : [ {

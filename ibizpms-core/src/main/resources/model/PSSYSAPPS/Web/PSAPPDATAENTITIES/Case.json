@@ -1085,6 +1085,12 @@
     "name" : "ORDER",
     "stdDataType" : 9
   }, {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "HowRun",
     "logicName" : "howRun",
     "name" : "HOWRUN",
@@ -1153,6 +1159,12 @@
     "name" : "ISFAVORITES",
     "stdDataType" : 25,
     "stringLength" : 200
+  }, {
+    "codeName" : "DeptName",
+    "logicName" : "归属部门名",
+    "name" : "DEPTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
     "codeName" : "Dept",
     "logicName" : "归属部门",
@@ -1371,18 +1383,6 @@
     "logicName" : "所属模块",
     "name" : "MODULE",
     "stdDataType" : 1
-  }, {
-    "codeName" : "DeptName",
-    "logicName" : "归属部门名",
-    "name" : "DEPTNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "OrgName",
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDELogics" : [ {
     "codeName" : "GetCaseStepByIdVersion",

@@ -204,6 +204,15 @@ public class Bug extends EntityMP implements Serializable {
     @ApiModelProperty("浏览器")
     private String browser;
     /**
+     * 归属部门名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
+    @TableField(value = "`DEPTNAME`")
+    @JSONField(name = "deptname")
+    @JsonProperty("deptname")
+    @ApiModelProperty("归属部门名")
+    private String deptname;
+    /**
      * 消息通知用户
      */
     @TableField(exist = false)
@@ -485,6 +494,15 @@ public class Bug extends EntityMP implements Serializable {
     @ApiModelProperty("解决者")
     private String resolvedby;
     /**
+     * 归属组织名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGNAME)
+    @TableField(value = "`ORGNAME`")
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+    /**
      * 解决版本
      */
     @DEField(defaultValue = "#EMPTY")
@@ -736,24 +754,6 @@ public class Bug extends EntityMP implements Serializable {
     @JsonProperty("testtask")
     @ApiModelProperty("测试单")
     private Long testtask;
-    /**
-     * 归属部门名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "`DEPTNAME`")
-    @JSONField(name = "deptname")
-    @JsonProperty("deptname")
-    @ApiModelProperty("归属部门名")
-    private String deptname;
-    /**
-     * 归属组织名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`ORGNAME`")
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
 
     /**
      * 

@@ -53,6 +53,16 @@ public class TaskDTO extends DTOBase implements Serializable {
     private String configtype;
 
     /**
+     * 属性 [STORYSTATUS]
+     *
+     */
+    @JSONField(name = "storystatus")
+    @JsonProperty("storystatus")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("需求状态")
+    private String storystatus;
+
+    /**
      * 属性 [LEFT]
      *
      */
@@ -230,6 +240,16 @@ public class TaskDTO extends DTOBase implements Serializable {
     private Integer replycount;
 
     /**
+     * 属性 [DEPTNAME]
+     *
+     */
+    @JSONField(name = "deptname")
+    @JsonProperty("deptname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属部门名")
+    private String deptname;
+
+    /**
      * 属性 [CONFIG_BEGIN]
      *
      */
@@ -268,6 +288,15 @@ public class TaskDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("由谁关闭")
     private String closedby;
+
+    /**
+     * 属性 [STORYVERSIONNEW]
+     *
+     */
+    @JSONField(name = "storyversionnew")
+    @JsonProperty("storyversionnew")
+    @ApiModelProperty("相关需求最新版本")
+    private Integer storyversionnew;
 
     /**
      * 属性 [CURRENTCONSUMED]
@@ -464,6 +493,16 @@ public class TaskDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("指派给")
     private String assignedto;
+
+    /**
+     * 属性 [ORGNAME]
+     *
+     */
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
 
     /**
      * 属性 [STORYVERSION]
@@ -867,45 +906,6 @@ public class TaskDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("来源Bug")
     private Long frombug;
-
-    /**
-     * 属性 [STORYVERSIONNEW]
-     *
-     */
-    @JSONField(name = "storyversionnew")
-    @JsonProperty("storyversionnew")
-    @ApiModelProperty("相关需求最新版本")
-    private Integer storyversionnew;
-
-    /**
-     * 属性 [STORYSTATUS]
-     *
-     */
-    @JSONField(name = "storystatus")
-    @JsonProperty("storystatus")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("需求状态")
-    private String storystatus;
-
-    /**
-     * 属性 [DEPTNAME]
-     *
-     */
-    @JSONField(name = "deptname")
-    @JsonProperty("deptname")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属部门名")
-    private String deptname;
-
-    /**
-     * 属性 [ORGNAME]
-     *
-     */
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
 
 
     /**

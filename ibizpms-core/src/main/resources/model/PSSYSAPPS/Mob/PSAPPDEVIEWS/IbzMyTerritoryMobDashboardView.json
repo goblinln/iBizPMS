@@ -761,7 +761,7 @@
             },
             "getPSSysPFPlugin" : {
               "pluginType" : "LIST_ITEMRENDER",
-              "pluginCode" : "PFPlugin23"
+              "pluginCode" : "mobDemandList2"
             },
             "pagingSize" : 5,
             "getRemovePSControlAction" : {
@@ -4964,7 +4964,7 @@
             },
             "getPSSysPFPlugin" : {
               "pluginType" : "LIST_ITEMRENDER",
-              "pluginCode" : "PFPlugin23"
+              "pluginCode" : "mobDemandList2"
             },
             "pagingSize" : 5,
             "getRemovePSControlAction" : {
@@ -7486,7 +7486,7 @@
             } ],
             "getPSSysPFPlugin" : {
               "pluginType" : "LIST_RENDER",
-              "pluginCode" : "PFPlugin21"
+              "pluginCode" : "mobAllDynamicList2"
             },
             "pagingSize" : 10,
             "getRemovePSControlAction" : {

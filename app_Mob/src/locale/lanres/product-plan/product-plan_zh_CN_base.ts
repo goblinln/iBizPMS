@@ -18,11 +18,13 @@ export default {
     beginstr: "开始日期",
     leftestimate: "剩余工时",
     plantemplet: "计划模板",
+    deptname: "归属部门名",
     unfinishedtaskscnt: "未完成任务数",
     endstr: "结束日期",
     createby: "由谁创建",
     status: "计划状态",
     isexpired: "是否过期",
+    orgname: "归属组织名",
     updateby: "由谁更新",
     deleted: "已删除",
     consumedestimate: "消耗工时",
@@ -38,8 +40,6 @@ export default {
     branch: "平台/分支",
     parent: "父计划",
     product: "产品",
-    orgname: "归属组织名",
-    deptname: "归属部门名",
   },
 	views: {
 		mobeditview: {

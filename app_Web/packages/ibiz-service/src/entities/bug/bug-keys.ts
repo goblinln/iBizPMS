@@ -17,6 +17,7 @@ export default [
     'modulename1',
     'closedby',
     'browser',
+    'deptname',
     'noticeusers',
     'steps',
     'v2',
@@ -49,6 +50,7 @@ export default [
     'delay',
     'found',
     'resolvedby',
+    'orgname',
     'resolvedbuild',
     'pri',
     'os',
@@ -78,6 +80,4 @@ export default [
     'project',
     'task',
     'testtask',
-    'deptname',
-    'orgname',
 ];

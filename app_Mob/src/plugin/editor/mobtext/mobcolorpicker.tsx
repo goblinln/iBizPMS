@@ -14,12 +14,60 @@ import { VueLifeCycleProcessing,EditorBase } from 'ibiz-vue';
 @VueLifeCycleProcessing()
 export class MOBCOLORPICKER extends EditorBase {
     
-    !!!!模版产生代码错误:!!!!模版产生代码错误:----
-Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
-----
+        /**
+     * 编辑器初始化
+     *
+     * @memberof MOBCOLORPICKER
+     */
+    public async initEditor() {
+        this.customProps.color = this.editorInstance.editorParams?.color || '';
+    }
 
-----
-FTL stack trace ("~" means nesting-related):
-	- Failed at: ${editor.name}  [in template "TEMPLCODE_zh_CN" at line 2, column 19]
-----
+    /**
+     * 编辑器change事件
+     *
+     * @param {*} value
+     * @memberof MOBCOLORPICKER
+     */
+    public handleChange($event: any) {
+        this.editorChange({ name: this.editorInstance.name, value: $event })
+    }
+
+    /**
+     * 编辑器colorchange事件
+     *
+     * @param {*} value
+     * @memberof MOBCOLORPICKER
+     */
+    public handleColorChange($event: any) {
+        this.editorChange($event);
+    }
+
+    /**
+     * 绘制内容
+     *
+     * @returns {*}
+     * @memberof MOBCOLORPICKER
+     */
+    public render() {
+        if (!this.editorIsLoaded) {
+            return null;
+        }
+        return this.$createElement('app-mob-color-picker', {
+            props: {
+                name: this.editorInstance.name,
+                value: this.value,
+                disabled: this.disabled,
+                formState: this.contextState,
+                data: JSON.stringify(this.contextData),
+                ...this.customProps,
+            },
+            on: {
+                change: this.handleChange,
+                colorChange: this.handleColorChange,
+            },
+            style: this.customStyle
+        })
+
+    }
 }

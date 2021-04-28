@@ -498,11 +498,23 @@
     "stdDataType" : 25,
     "stringLength" : 1
   }, {
+    "codeName" : "DeptName",
+    "logicName" : "归属部门名",
+    "name" : "DEPTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Sqlid",
     "logicName" : "运行数据库",
     "name" : "SQLID",
     "stdDataType" : 25,
     "stringLength" : 200
+  }, {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
     "codeName" : "ScmPath",
     "logicName" : "源代码地址",
@@ -578,18 +590,6 @@
     "logicName" : "所属项目",
     "name" : "PROJECT",
     "stdDataType" : 1
-  }, {
-    "codeName" : "DeptName",
-    "logicName" : "归属部门名",
-    "name" : "DEPTNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "OrgName",
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

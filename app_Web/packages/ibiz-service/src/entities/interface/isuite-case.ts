@@ -17,6 +17,14 @@ export interface ISuiteCase extends IEntityBase {
      */
     createby?: any;
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
+     * 主键
+     */
+    id?: any;
+    /**
      * 由谁更新
      */
     updateby?: any;
@@ -24,6 +32,10 @@ export interface ISuiteCase extends IEntityBase {
      * 归属组织
      */
     org?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
     /**
      * 用例版本
      */
@@ -40,16 +52,4 @@ export interface ISuiteCase extends IEntityBase {
      * 所属产品
      */
     product?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 主键
-     */
-    id?: any;
 }

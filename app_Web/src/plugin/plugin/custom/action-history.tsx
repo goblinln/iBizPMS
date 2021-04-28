@@ -186,7 +186,7 @@ export class ActionHistory extends AppListBase {
      * @protected
      * @memberof ActionHistory
      */
-    protected async formatData(){
+    protected async formatData() {
         if (this.actionType.length === 0) {
             const codeList2 = await this.codeListService.getDataItems({ tag: 'Action__type', type: 'STATIC', context: this.context });
             if (codeList2) {

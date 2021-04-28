@@ -781,7 +781,7 @@
           "name" : "formitem7",
           "getPSSysPFPlugin" : {
             "pluginType" : "EDITOR_CUSTOMSTYLE",
-            "pluginCode" : "PFPlugin30"
+            "pluginCode" : "MOBCOLORPICKER"
           }
         },
         "getPSLayoutPos" : {

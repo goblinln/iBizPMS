@@ -1192,6 +1192,12 @@
     "stdDataType" : 25,
     "stringLength" : 30
   }, {
+    "codeName" : "DeptName",
+    "logicName" : "归属部门名",
+    "name" : "DEPTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Noticeusers",
     "logicName" : "消息通知用户",
     "name" : "NOTICEUSERS",
@@ -1382,6 +1388,12 @@
     "stdDataType" : 25,
     "stringLength" : 200
   }, {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "ResolvedBuild",
     "logicName" : "解决版本",
     "name" : "RESOLVEDBUILD",
@@ -1541,18 +1553,6 @@
     "logicName" : "测试单",
     "name" : "TESTTASK",
     "stdDataType" : 1
-  }, {
-    "codeName" : "DeptName",
-    "logicName" : "归属部门名",
-    "name" : "DEPTNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "OrgName",
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDELogics" : [ {
     "codeName" : "GetCurUserConcat",

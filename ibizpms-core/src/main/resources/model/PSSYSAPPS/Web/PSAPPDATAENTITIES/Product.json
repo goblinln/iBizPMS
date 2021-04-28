@@ -647,6 +647,12 @@
     "stdDataType" : 25,
     "stringLength" : 30
   }, {
+    "codeName" : "MdeptName",
+    "logicName" : "归属部门名",
+    "name" : "MDEPTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "PO",
     "logicName" : "产品负责人",
     "name" : "PO",
@@ -765,6 +771,12 @@
     "name" : "BUILDCNT",
     "stdDataType" : 9
   }, {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "CreatedDate",
     "logicName" : "创建日期",
     "name" : "CREATEDDATE",
@@ -792,18 +804,6 @@
     "logicName" : "产品线",
     "name" : "LINE",
     "stdDataType" : 1
-  }, {
-    "codeName" : "OrgName",
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "MdeptName",
-    "logicName" : "归属部门名",
-    "name" : "MDEPTNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDELogics" : [ {
     "codeName" : "CancelProductTop",

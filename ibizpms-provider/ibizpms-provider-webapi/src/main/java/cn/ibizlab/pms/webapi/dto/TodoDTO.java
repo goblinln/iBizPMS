@@ -171,6 +171,16 @@ public class TodoDTO extends DTOBase implements Serializable {
     private String noticeusers;
 
     /**
+     * 属性 [ORGNAME]
+     *
+     */
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+
+    /**
      * 属性 [ORG]
      *
      */
@@ -406,26 +416,6 @@ public class TodoDTO extends DTOBase implements Serializable {
     private String ibizprivate;
 
     /**
-     * 属性 [CONFIG]
-     *
-     */
-    @JSONField(name = "config")
-    @JsonProperty("config")
-    @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
-    @ApiModelProperty("config")
-    private String config;
-
-    /**
-     * 属性 [ORGNAME]
-     *
-     */
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
-
-    /**
      * 属性 [DEPTNAME]
      *
      */
@@ -434,6 +424,16 @@ public class TodoDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属部门名")
     private String deptname;
+
+    /**
+     * 属性 [CONFIG]
+     *
+     */
+    @JSONField(name = "config")
+    @JsonProperty("config")
+    @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
+    @ApiModelProperty("config")
+    private String config;
 
 
     /**

@@ -64,6 +64,15 @@ public class Branch extends EntityMP implements Serializable {
     @ApiModelProperty("归属部门")
     private String dept;
     /**
+     * 归属组织名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGNAME)
+    @TableField(value = "`ORGNAME`")
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+    /**
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
@@ -119,15 +128,6 @@ public class Branch extends EntityMP implements Serializable {
     @ApiModelProperty("归属组织")
     private String org;
     /**
-     * 所属产品
-     */
-    @DEField(defaultValue = "0")
-    @TableField(value = "`PRODUCT`")
-    @JSONField(name = "product")
-    @JsonProperty("product")
-    @ApiModelProperty("所属产品")
-    private Long product;
-    /**
      * 归属部门名
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
@@ -137,14 +137,14 @@ public class Branch extends EntityMP implements Serializable {
     @ApiModelProperty("归属部门名")
     private String deptname;
     /**
-     * 归属组织名
+     * 所属产品
      */
-    @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`ORGNAME`")
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
+    @DEField(defaultValue = "0")
+    @TableField(value = "`PRODUCT`")
+    @JSONField(name = "product")
+    @JsonProperty("product")
+    @ApiModelProperty("所属产品")
+    private Long product;
 
     /**
      * 

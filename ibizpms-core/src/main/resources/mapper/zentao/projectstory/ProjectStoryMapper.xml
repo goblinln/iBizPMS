@@ -11,6 +11,9 @@
 	
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_id_eq != null ">
+			<![CDATA[ AND  t1.`ID` = #{srf.n_id_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_story_eq != null ">
 			<![CDATA[ AND  t1.`STORY` = #{srf.n_story_eq,jdbcType=BIGINT} ]]>
         </if>
@@ -19,9 +22,6 @@
         </if>
 		<if test="srf.n_product_eq != null ">
 			<![CDATA[ AND  t1.`PRODUCT` = #{srf.n_product_eq,jdbcType=BIGINT} ]]>
-        </if>
-		<if test="srf.n_id_eq != null ">
-			<![CDATA[ AND  t1.`ID` = #{srf.n_id_eq,jdbcType=VARCHAR} ]]>
         </if>
 		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
 		AND ${ew.sqlSegment}

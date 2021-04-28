@@ -3,6 +3,7 @@ export default [
     'doclibtype',
     'isfavourites',
     'collector',
+    'orgname',
     'updatemanname',
     'mdeptid',
     'orgid',
@@ -13,6 +14,7 @@ export default [
     'groups',
     'doccnt',
     'id',
+    'deptname',
     'users',
     'main',
     'name',
@@ -24,6 +26,4 @@ export default [
     'projectname',
     'project',
     'product',
-    'deptname',
-    'orgname',
 ];

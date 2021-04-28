@@ -126,6 +126,10 @@ export abstract class SubStoryBase extends EntityBase implements ISubStory {
      */
     revieweddate?: any;
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * 需求名称
      */
     title?: any;
@@ -268,6 +272,10 @@ export abstract class SubStoryBase extends EntityBase implements ISubStory {
      */
     acllist?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 验收标准
      */
     verify?: any;
@@ -363,14 +371,6 @@ export abstract class SubStoryBase extends EntityBase implements ISubStory {
      * 转Bug
      */
     tobug?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
 
     /**
      * 重置实体数据

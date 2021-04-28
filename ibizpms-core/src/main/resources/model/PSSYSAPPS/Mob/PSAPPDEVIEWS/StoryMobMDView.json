@@ -968,7 +968,7 @@
     },
     "getPSSysPFPlugin" : {
       "pluginType" : "LIST_ITEMRENDER",
-      "pluginCode" : "PFPlugin23"
+      "pluginCode" : "mobDemandList2"
     },
     "pagingSize" : 25,
     "getRemovePSControlAction" : {

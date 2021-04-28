@@ -13,6 +13,10 @@ export interface IProjectProduct extends IEntityBase {
      */
     createby?: any;
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * 由谁更新
      */
     updateby?: any;
@@ -24,6 +28,14 @@ export interface IProjectProduct extends IEntityBase {
      * 归属部门
      */
     dept?: any;
+    /**
+     * 主键
+     */
+    id?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
     /**
      * 产品
      */
@@ -52,16 +64,4 @@ export interface IProjectProduct extends IEntityBase {
      * 项目
      */
     project?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 主键
-     */
-    id?: any;
 }

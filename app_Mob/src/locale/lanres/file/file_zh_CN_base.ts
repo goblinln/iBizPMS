@@ -11,15 +11,15 @@ export default {
     objecttype: "对象类型",
     addedby: "由谁添加",
     title: "标题",
+    orgname: "归属组织名",
     updateby: "由谁更新",
     addeddate: "添加时间",
     downloads: "下载次数",
     dept: "归属部门",
     size: "大小",
+    deptname: "归属部门名",
     id: "id",
     extra: "备注",
-    orgname: "归属组织名",
-    deptname: "归属部门名",
   },
 	views: {
 		mobmdview9: {

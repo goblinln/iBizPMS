@@ -10,6 +10,7 @@ export default [
     'casesteps',
     'task',
     'order',
+    'orgname',
     'howrun',
     'resultcnt',
     'noticeusers',
@@ -22,6 +23,7 @@ export default [
     'comment',
     'auto',
     'isfavorites',
+    'deptname',
     'dept',
     'frequency',
     'title',
@@ -60,6 +62,4 @@ export default [
     'product',
     'lib',
     'module',
-    'deptname',
-    'orgname',
 ];

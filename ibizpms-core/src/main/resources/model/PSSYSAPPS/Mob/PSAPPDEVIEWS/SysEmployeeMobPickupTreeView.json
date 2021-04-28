@@ -113,44 +113,59 @@
     "getPSDETreeNodeRSs" : [ {
       "getChildPSDETreeNode" : {
         "modelref" : true,
-        "id" : "Teammember"
+        "id" : "Depart"
       },
-      "name" : "团队 - 组员",
+      "name" : "组织 - 部门",
       "getParentPSAppDEField" : {
-        "name" : "TEAMID",
-        "codeName" : "TeamId"
+        "name" : "ORGID",
+        "codeName" : "OrgId"
       },
       "getParentPSDER1N" : {
-        "codeName" : "Team",
+        "codeName" : "Org",
         "dERType" : "DER1N",
-        "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_SYS_TEAM_TEAMID.json",
+        "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDERS/DER1N_SYS_DEPT_SYS_ORG_ORGID.json",
+        "logicName" : "单位",
         "getMajorPSDataEntity" : {
           "modelref" : true,
-          "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeam.json"
+          "path" : "PSMODULES/ou/PSDATAENTITIES/SysOrganization.json"
         },
         "masterOrder" : -1,
-        "masterRS" : 0,
+        "masterRS" : 8,
+        "minorCodeName" : "Depts",
         "getMinorPSDataEntity" : {
           "modelref" : true,
-          "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember.json"
+          "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
         },
-        "name" : "DER1N_SYS_TEAMMEMBER_SYS_TEAM_TEAMID",
+        "name" : "DER1N_SYS_DEPT_SYS_ORG_ORGID",
         "orderValue" : 100,
         "getPSPickupDEField" : {
-          "name" : "TEAMID",
-          "codeName" : "TeamId"
+          "name" : "ORGID",
+          "codeName" : "OrgId"
         },
         "getPSPickupTextDEField" : {
-          "name" : "TEAMNAME",
-          "codeName" : "TeamName"
+          "name" : "ORGNAME",
+          "codeName" : "OrgName"
         },
-        "pickupDEFName" : "TEAMID",
-        "removeActionType" : -1,
-        "removeOrder" : 0
+        "pickupDEFName" : "ORGID",
+        "removeActionType" : 3,
+        "removeOrder" : 0,
+        "nestedRS" : true
       },
       "getParentPSDETreeNode" : {
         "modelref" : true,
-        "id" : "SysTeam"
+        "id" : "Org"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "OrgEmp"
+      },
+      "name" : "默认根节点 - 组织人员",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "ROOT"
       },
       "parentValueLevel" : 1,
       "searchMode" : 3
@@ -201,101 +216,6 @@
     }, {
       "getChildPSDETreeNode" : {
         "modelref" : true,
-        "id" : "SysPost"
-      },
-      "name" : "岗位 - 岗位（动态）",
-      "getParentPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "post"
-      },
-      "parentValueLevel" : 1,
-      "searchMode" : 3
-    }, {
-      "getChildPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "SysTeam"
-      },
-      "name" : "组 - 团队",
-      "getParentPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "Team"
-      },
-      "parentValueLevel" : 1,
-      "searchMode" : 3
-    }, {
-      "getChildPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "UserContact"
-      },
-      "name" : "联系人 - 联系列表",
-      "getParentPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "ConcatList"
-      },
-      "parentValueLevel" : 1,
-      "searchMode" : 3
-    }, {
-      "getChildPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "OrgEmp"
-      },
-      "name" : "默认根节点 - 组织人员",
-      "getParentPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "ROOT"
-      },
-      "parentValueLevel" : 1,
-      "searchMode" : 3
-    }, {
-      "getChildPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "Depart"
-      },
-      "name" : "组织 - 部门",
-      "getParentPSAppDEField" : {
-        "name" : "ORGID",
-        "codeName" : "OrgId"
-      },
-      "getParentPSDER1N" : {
-        "codeName" : "Org",
-        "dERType" : "DER1N",
-        "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment/PSDERS/DER1N_SYS_DEPT_SYS_ORG_ORGID.json",
-        "logicName" : "单位",
-        "getMajorPSDataEntity" : {
-          "modelref" : true,
-          "path" : "PSMODULES/ou/PSDATAENTITIES/SysOrganization.json"
-        },
-        "masterOrder" : -1,
-        "masterRS" : 8,
-        "minorCodeName" : "Depts",
-        "getMinorPSDataEntity" : {
-          "modelref" : true,
-          "path" : "PSMODULES/ou/PSDATAENTITIES/SysDepartment.json"
-        },
-        "name" : "DER1N_SYS_DEPT_SYS_ORG_ORGID",
-        "orderValue" : 100,
-        "getPSPickupDEField" : {
-          "name" : "ORGID",
-          "codeName" : "OrgId"
-        },
-        "getPSPickupTextDEField" : {
-          "name" : "ORGNAME",
-          "codeName" : "OrgName"
-        },
-        "pickupDEFName" : "ORGID",
-        "removeActionType" : 3,
-        "removeOrder" : 0,
-        "nestedRS" : true
-      },
-      "getParentPSDETreeNode" : {
-        "modelref" : true,
-        "id" : "Org"
-      },
-      "parentValueLevel" : 1,
-      "searchMode" : 3
-    }, {
-      "getChildPSDETreeNode" : {
-        "modelref" : true,
         "id" : "ProjectTeam"
       },
       "name" : "项目团队 - 项目",
@@ -321,12 +241,92 @@
     }, {
       "getChildPSDETreeNode" : {
         "modelref" : true,
+        "id" : "Org"
+      },
+      "name" : "组织人员 - 组织",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "OrgEmp"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "UserContact"
+      },
+      "name" : "联系人 - 联系列表",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "ConcatList"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
         "id" : "ContActUser"
       },
       "name" : "联系列表 - 联系用户",
       "getParentPSDETreeNode" : {
         "modelref" : true,
         "id" : "UserContact"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "Teammember"
+      },
+      "name" : "团队 - 组员",
+      "getParentPSAppDEField" : {
+        "name" : "TEAMID",
+        "codeName" : "TeamId"
+      },
+      "getParentPSDER1N" : {
+        "codeName" : "Team",
+        "dERType" : "DER1N",
+        "dynaModelFilePath" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDERS/DER1N_SYS_TEAMMEMBER_SYS_TEAM_TEAMID.json",
+        "getMajorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeam.json"
+        },
+        "masterOrder" : -1,
+        "masterRS" : 0,
+        "getMinorPSDataEntity" : {
+          "modelref" : true,
+          "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember.json"
+        },
+        "name" : "DER1N_SYS_TEAMMEMBER_SYS_TEAM_TEAMID",
+        "orderValue" : 100,
+        "getPSPickupDEField" : {
+          "name" : "TEAMID",
+          "codeName" : "TeamId"
+        },
+        "getPSPickupTextDEField" : {
+          "name" : "TEAMNAME",
+          "codeName" : "TeamName"
+        },
+        "pickupDEFName" : "TEAMID",
+        "removeActionType" : -1,
+        "removeOrder" : 0
+      },
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "SysTeam"
+      },
+      "parentValueLevel" : 1,
+      "searchMode" : 3
+    }, {
+      "getChildPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "SysPost"
+      },
+      "name" : "岗位 - 岗位（动态）",
+      "getParentPSDETreeNode" : {
+        "modelref" : true,
+        "id" : "post"
       },
       "parentValueLevel" : 1,
       "searchMode" : 3
@@ -377,12 +377,12 @@
     }, {
       "getChildPSDETreeNode" : {
         "modelref" : true,
-        "id" : "Org"
+        "id" : "SysTeam"
       },
-      "name" : "组织人员 - 组织",
+      "name" : "组 - 团队",
       "getParentPSDETreeNode" : {
         "modelref" : true,
-        "id" : "OrgEmp"
+        "id" : "Team"
       },
       "parentValueLevel" : 1,
       "searchMode" : 3

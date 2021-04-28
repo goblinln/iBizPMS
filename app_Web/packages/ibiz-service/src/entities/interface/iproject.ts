@@ -13,6 +13,10 @@ export interface IProject extends IEntityBase {
      */
     openedversion?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 开始时间
      */
     begin?: any;
@@ -74,6 +78,10 @@ export interface IProject extends IEntityBase {
      * 未完成任务数
      */
     uncompletetaskcnt?: any;
+    /**
+     * 归属部门名
+     */
+    mdeptname?: any;
     /**
      * 团队成员总数
      */
@@ -348,12 +356,4 @@ export interface IProject extends IEntityBase {
      * 父项目
      */
     parent?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 归属部门名
-     */
-    mdeptname?: any;
 }

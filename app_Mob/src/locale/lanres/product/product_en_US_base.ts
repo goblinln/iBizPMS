@@ -28,6 +28,7 @@ export default {
     supproreport:  commonLogic.appcommonhandle("支持产品汇报",null),
     order:  commonLogic.appcommonhandle("排序",null),
     type:  commonLogic.appcommonhandle("产品类型",null),
+    mdeptName:  commonLogic.appcommonhandle("归属部门名",null),
     pO:  commonLogic.appcommonhandle("产品负责人",null),
     qdpk:  commonLogic.appcommonhandle("测试负责人（选择）",null),
     desc:  commonLogic.appcommonhandle("产品描述	",null),
@@ -49,13 +50,12 @@ export default {
     order1:  commonLogic.appcommonhandle("排序",null),
     updateBy:  commonLogic.appcommonhandle("由谁更新",null),
     buildcnt:  commonLogic.appcommonhandle("BUILD数",null),
+    orgName:  commonLogic.appcommonhandle("归属组织名",null),
     createdDate:  commonLogic.appcommonhandle("创建日期",null),
     noticeusers:  commonLogic.appcommonhandle("消息通知用户",null),
     activeStoryCnt:  commonLogic.appcommonhandle("激活需求数",null),
     lineName:  commonLogic.appcommonhandle("产品线",null),
     line:  commonLogic.appcommonhandle("产品线",null),
-    orgName:  commonLogic.appcommonhandle("归属组织名",null),
-    mdeptName:  commonLogic.appcommonhandle("归属部门名",null),
   },
 	views: {
 		testmobmdview: {

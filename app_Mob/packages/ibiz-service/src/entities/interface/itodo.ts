@@ -71,6 +71,10 @@ export interface ITodo extends IEntityBase {
      */
     noticeusers?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 归属组织
      */
     org?: any;
@@ -179,15 +183,11 @@ export interface ITodo extends IEntityBase {
      */
     ibizprivate?: '1';
     /**
-     * config
-     */
-    config?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
      * 归属部门名
      */
     deptname?: any;
+    /**
+     * config
+     */
+    config?: any;
 }

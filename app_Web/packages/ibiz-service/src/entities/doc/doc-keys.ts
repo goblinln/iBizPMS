@@ -1,5 +1,6 @@
 export default [
     'groups',
+    'deptname',
     'content',
     'docqtype',
     'editeddate',
@@ -18,6 +19,7 @@ export default [
     'acl',
     'mydoccnt',
     'url',
+    'orgname',
     'doccnt',
     'myfavouritecnt',
     'users',
@@ -37,6 +39,4 @@ export default [
     'project',
     'product',
     'module',
-    'deptname',
-    'orgname',
 ];

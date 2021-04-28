@@ -101,6 +101,10 @@ export interface ISubStory extends IEntityBase {
      */
     revieweddate?: any;
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * 需求名称
      */
     title?: any;
@@ -243,6 +247,10 @@ export interface ISubStory extends IEntityBase {
      */
     acllist?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 验收标准
      */
     verify?: any;
@@ -338,12 +346,4 @@ export interface ISubStory extends IEntityBase {
      * 转Bug
      */
     tobug?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
 }

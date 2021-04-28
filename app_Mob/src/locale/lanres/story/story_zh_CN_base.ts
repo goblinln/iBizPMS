@@ -22,6 +22,7 @@ export default {
     estimate: "预计工时",
     noticeusers: "消息通知用户",
     revieweddate: "评审时间",
+    deptname: "归属部门名",
     title: "需求名称",
     mailtoconact: "联系人",
     sourcenote: "来源备注",
@@ -55,6 +56,7 @@ export default {
     assignedtopk: "指派给（选择）",
     comment: "备注",
     acllist: "acllist",
+    orgname: "归属组织名",
     verify: "验收标准",
     closedby: "由谁关闭",
     acl: "acl",
@@ -78,8 +80,6 @@ export default {
     duplicatestory: "重复需求ID",
     branch: "平台/分支",
     tobug: "转Bug",
-    orgname: "归属组织名",
-    deptname: "归属部门名",
   },
 	views: {
 		editmobeditview: {

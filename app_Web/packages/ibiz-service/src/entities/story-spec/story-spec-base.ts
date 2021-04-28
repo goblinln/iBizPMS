@@ -46,6 +46,10 @@ export abstract class StorySpecBase extends EntityBase implements IStorySpec {
      */
     updateby?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 由谁创建
      */
     createby?: any;
@@ -58,6 +62,14 @@ export abstract class StorySpecBase extends EntityBase implements IStorySpec {
      */
     org?: any;
     /**
+     * 主键
+     */
+    id?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * 需求名称
      */
     title?: any;
@@ -69,18 +81,6 @@ export abstract class StorySpecBase extends EntityBase implements IStorySpec {
      * 需求
      */
     story?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 主键
-     */
-    id?: any;
 
     /**
      * 重置实体数据

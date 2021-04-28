@@ -13,15 +13,15 @@ function getLocaleResourceBase(){
 		'objecttype': commonLogic.appcommonhandle("对象类型",null),
 		'addedby': commonLogic.appcommonhandle("由谁添加",null),
 		'title': commonLogic.appcommonhandle("标题",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'addeddate': commonLogic.appcommonhandle("添加时间",null),
 		'downloads': commonLogic.appcommonhandle("下载次数",null),
 		'dept': commonLogic.appcommonhandle("归属部门",null),
 		'size': commonLogic.appcommonhandle("大小",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 		'id': commonLogic.appcommonhandle("id",null),
 		'extra': commonLogic.appcommonhandle("备注",null),
-		'orgname': commonLogic.appcommonhandle("归属组织名",null),
-		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 	},
 		views: {
 			'productgridview': {

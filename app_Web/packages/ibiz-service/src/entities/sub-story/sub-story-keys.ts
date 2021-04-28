@@ -20,6 +20,7 @@ export default [
     'estimate',
     'noticeusers',
     'revieweddate',
+    'deptname',
     'title',
     'mailtoconact',
     'sourcenote',
@@ -53,6 +54,7 @@ export default [
     'assignedtopk',
     'comment',
     'acllist',
+    'orgname',
     'verify',
     'closedby',
     'acl',
@@ -76,6 +78,4 @@ export default [
     'duplicatestory',
     'branch',
     'tobug',
-    'orgname',
-    'deptname',
 ];

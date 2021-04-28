@@ -48,6 +48,10 @@ export abstract class TaskBase extends EntityBase implements ITask {
      */
     taskteams?: any;
     /**
+     * 需求状态
+     */
+    storystatus?: any;
+    /**
      * 预计剩余
      */
     left?: any;
@@ -124,6 +128,10 @@ export abstract class TaskBase extends EntityBase implements ITask {
      */
     replycount?: any;
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * 开始日期
      */
     configbegin?: any;
@@ -139,6 +147,10 @@ export abstract class TaskBase extends EntityBase implements ITask {
      * 由谁关闭
      */
     closedby?: any;
+    /**
+     * 相关需求最新版本
+     */
+    storyversionnew?: any;
     /**
      * 本次消耗
      */
@@ -229,6 +241,10 @@ export abstract class TaskBase extends EntityBase implements ITask {
      * 指派给
      */
     assignedto?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
     /**
      * 工时
      */
@@ -403,22 +419,6 @@ export abstract class TaskBase extends EntityBase implements ITask {
      * 来源Bug
      */
     frombug?: any;
-    /**
-     * 相关需求最新版本
-     */
-    storyversionnew?: any;
-    /**
-     * 需求状态
-     */
-    storystatus?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 
     /**
      * 重置实体数据

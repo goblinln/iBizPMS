@@ -27,6 +27,10 @@ import cn.ibizlab.pms.core.zentao.domain.SuiteCase;
 @Data
 public class SuiteCaseSearchContext extends QueryWrapperContext<SuiteCase> {
 
+	private String n_id_eq;//[主键]
+	public void setN_id_eq(String n_id_eq) {
+        this.n_id_eq = n_id_eq;
+    }
 	private Long n_suite_eq;//[测试套件]
 	public void setN_suite_eq(Long n_suite_eq) {
         this.n_suite_eq = n_suite_eq;
@@ -38,10 +42,6 @@ public class SuiteCaseSearchContext extends QueryWrapperContext<SuiteCase> {
 	private Long n_product_eq;//[所属产品]
 	public void setN_product_eq(Long n_product_eq) {
         this.n_product_eq = n_product_eq;
-    }
-	private String n_id_eq;//[主键]
-	public void setN_id_eq(String n_id_eq) {
-        this.n_id_eq = n_id_eq;
     }
 
     /**

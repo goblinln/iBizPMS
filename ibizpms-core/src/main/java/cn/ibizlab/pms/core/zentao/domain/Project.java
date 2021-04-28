@@ -56,6 +56,15 @@ public class Project extends EntityMP implements Serializable {
     @ApiModelProperty("当前系统版本")
     private String openedversion;
     /**
+     * 归属组织名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGNAME)
+    @TableField(value = "`ORGNAME`")
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+    /**
      * 开始时间
      */
     @TableField(value = "`BEGIN`")
@@ -180,6 +189,15 @@ public class Project extends EntityMP implements Serializable {
     @JsonProperty("uncompletetaskcnt")
     @ApiModelProperty("未完成任务数")
     private Integer uncompletetaskcnt;
+    /**
+     * 归属部门名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
+    @TableField(value = "`MDEPTNAME`")
+    @JSONField(name = "mdeptname")
+    @JsonProperty("mdeptname")
+    @ApiModelProperty("归属部门名")
+    private String mdeptname;
     /**
      * 团队成员总数
      */
@@ -724,24 +742,6 @@ public class Project extends EntityMP implements Serializable {
     @JsonProperty("parent")
     @ApiModelProperty("父项目")
     private Long parent;
-    /**
-     * 归属组织名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`ORGNAME`")
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
-    /**
-     * 归属部门名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
-    @TableField(value = "`MDEPTNAME`")
-    @JSONField(name = "mdeptname")
-    @JsonProperty("mdeptname")
-    @ApiModelProperty("归属部门名")
-    private String mdeptname;
 
     /**
      * 

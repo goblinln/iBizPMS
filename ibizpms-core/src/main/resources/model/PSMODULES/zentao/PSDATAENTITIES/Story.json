@@ -2159,6 +2159,53 @@
     "valueFormat" : "%1$tY-%1$tm-%1$td"
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "DEPTNAME",
+      "dBType" : "MYSQL5",
+      "name" : "DEPTNAME",
+      "standardColumnName" : "`DEPTNAME`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "DEPTNAME",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "getPSDEField" : {
+        "name" : "DEPTNAME",
+        "codeName" : "DeptName"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "DeptName",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "归属部门名",
+    "name" : "DEPTNAME",
+    "predefinedType" : "ORGSECTORNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "TITLE",
       "dBType" : "MYSQL5",
       "name" : "TITLE",
@@ -3698,6 +3745,53 @@
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "ORGNAME",
+      "dBType" : "MYSQL5",
+      "name" : "ORGNAME",
+      "standardColumnName" : "`ORGNAME`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "ORGNAME",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "getPSDEField" : {
+        "name" : "ORGNAME",
+        "codeName" : "OrgName"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "OrgName",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "predefinedType" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s"
+  }, {
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -4814,100 +4908,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "ORGNAME",
-      "dBType" : "MYSQL5",
-      "name" : "ORGNAME",
-      "standardColumnName" : "`ORGNAME`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "ORGNAME",
-          "maxValue" : 100,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[100]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[100]"
-      },
-      "getPSDEField" : {
-        "name" : "ORGNAME",
-        "codeName" : "OrgName"
-      },
-      "ruleInfo" : "内容长度必须小于等于[100]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "OrgName",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "length" : 100,
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "predefinedType" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100,
-    "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "DEPTNAME",
-      "dBType" : "MYSQL5",
-      "name" : "DEPTNAME",
-      "standardColumnName" : "`DEPTNAME`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "DEPTNAME",
-          "maxValue" : 100,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[100]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[100]"
-      },
-      "getPSDEField" : {
-        "name" : "DEPTNAME",
-        "codeName" : "DeptName"
-      },
-      "ruleInfo" : "内容长度必须小于等于[100]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "DeptName",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "length" : 100,
-    "logicName" : "归属部门名",
-    "name" : "DEPTNAME",
-    "predefinedType" : "ORGSECTORNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100,
-    "valueFormat" : "%1$s"
   } ],
   "getAllPSDELogics" : [ {
     "codeName" : "ComputeIsLeaf",
@@ -6184,6 +6184,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "setStage",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "StoryNFavorites",
       "getPSDEAction" : {
         "modelref" : true,
@@ -6202,13 +6209,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchClose.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "setStage",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
       },
       "allowMode" : true
     }, {
@@ -6334,6 +6334,13 @@
     "mSTag" : "active__1__2",
     "name" : "激活_已收藏_细分（删除）",
     "getPSDEMainStateActions" : [ {
+      "name" : "setStage",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "AssignTo",
       "getPSDEAction" : {
         "modelref" : true,
@@ -6359,13 +6366,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchAssignTo.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "setStage",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
       },
       "allowMode" : true
     }, {
@@ -6857,13 +6857,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "setStage",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "BatchClose",
       "getPSDEAction" : {
         "modelref" : true,
@@ -6875,6 +6868,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "setStage",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
       },
       "allowMode" : true
     }, {
@@ -7206,6 +7206,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "setStage",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Update",
       "getPSDEAction" : {
         "modelref" : true,
@@ -7266,13 +7273,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchUnlinkStory.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "setStage",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
       },
       "allowMode" : true
     }, {
@@ -7709,17 +7709,17 @@
       },
       "allowMode" : true
     }, {
-      "name" : "setStage",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "AssignTo",
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/AssignTo.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "setStage",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
       },
       "allowMode" : true
     } ],
@@ -7835,13 +7835,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "setStage",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Change",
       "getPSDEAction" : {
         "modelref" : true,
@@ -7860,6 +7853,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/AssignTo.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "setStage",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
       },
       "allowMode" : true
     }, {
@@ -7997,6 +7997,13 @@
     "mSTag" : "closed__1__2",
     "name" : "已关闭_已收藏_细分（删除）",
     "getPSDEMainStateActions" : [ {
+      "name" : "setStage",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "BatchAssignTo",
       "getPSDEAction" : {
         "modelref" : true,
@@ -8043,13 +8050,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchClose.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "setStage",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
       },
       "allowMode" : true
     } ],
@@ -8477,13 +8477,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "setStage",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "projectUnlinkStorys",
       "getPSDEAction" : {
         "modelref" : true,
@@ -8502,6 +8495,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/ProjectUnlinkStory.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "setStage",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
       },
       "allowMode" : true
     }, {
@@ -8820,6 +8820,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "setStage",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "StoryNFavorites",
       "getPSDEAction" : {
         "modelref" : true,
@@ -8838,13 +8845,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Close.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "setStage",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/SetStage.json"
       },
       "allowMode" : true
     }, {

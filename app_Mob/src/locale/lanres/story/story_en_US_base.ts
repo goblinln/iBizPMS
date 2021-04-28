@@ -22,6 +22,7 @@ export default {
     estimate:  commonLogic.appcommonhandle("预计工时",null),
     noticeusers:  commonLogic.appcommonhandle("消息通知用户",null),
     reviewedDate:  commonLogic.appcommonhandle("评审时间",null),
+    deptName:  commonLogic.appcommonhandle("归属部门名",null),
     title:  commonLogic.appcommonhandle("需求名称",null),
     mailtoconact:  commonLogic.appcommonhandle("联系人",null),
     sourceNote:  commonLogic.appcommonhandle("来源备注",null),
@@ -55,6 +56,7 @@ export default {
     assignedtopk:  commonLogic.appcommonhandle("指派给（选择）",null),
     comment:  commonLogic.appcommonhandle("备注",null),
     acllist:  commonLogic.appcommonhandle("acllist",null),
+    orgName:  commonLogic.appcommonhandle("归属组织名",null),
     verify:  commonLogic.appcommonhandle("验收标准",null),
     closedBy:  commonLogic.appcommonhandle("由谁关闭",null),
     acl:  commonLogic.appcommonhandle("acl",null),
@@ -78,8 +80,6 @@ export default {
     duplicateStory:  commonLogic.appcommonhandle("重复需求ID",null),
     branch:  commonLogic.appcommonhandle("平台/分支",null),
     toBug:  commonLogic.appcommonhandle("转Bug",null),
-    orgName:  commonLogic.appcommonhandle("归属组织名",null),
-    deptName:  commonLogic.appcommonhandle("归属部门名",null),
   },
 	views: {
 		editmobeditview: {

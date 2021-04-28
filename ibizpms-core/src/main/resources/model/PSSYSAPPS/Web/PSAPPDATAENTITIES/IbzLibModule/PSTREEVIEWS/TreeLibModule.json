@@ -23,24 +23,24 @@
   "getPSDETreeNodeRSs" : [ {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ALL"
+      "id" : "ChildModule"
     },
-    "name" : "默认根节点 - 所有模块",
+    "name" : "根模块 - 子节点",
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ROOT"
+      "id" : "LibRoot"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
   }, {
     "getChildPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ChildModule"
+      "id" : "ALL"
     },
-    "name" : "子节点 - 子节点",
+    "name" : "默认根节点 - 所有模块",
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "ChildModule"
+      "id" : "ROOT"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3
@@ -61,10 +61,10 @@
       "modelref" : true,
       "id" : "ChildModule"
     },
-    "name" : "根模块 - 子节点",
+    "name" : "子节点 - 子节点",
     "getParentPSDETreeNode" : {
       "modelref" : true,
-      "id" : "LibRoot"
+      "id" : "ChildModule"
     },
     "parentValueLevel" : 1,
     "searchMode" : 3

@@ -2,6 +2,7 @@ import commonLogic from '@/locale/logic/common/common-logic';
 export default {
   fields: {
     groups:  commonLogic.appcommonhandle("分组",null),
+    deptName:  commonLogic.appcommonhandle("归属部门名",null),
     content:  commonLogic.appcommonhandle("文档正文",null),
     docqtype:  commonLogic.appcommonhandle("文档查询类型",null),
     editedDate:  commonLogic.appcommonhandle("更新时间",null),
@@ -20,6 +21,7 @@ export default {
     acl:  commonLogic.appcommonhandle("权限",null),
     mydoccnt:  commonLogic.appcommonhandle("我的文档数量",null),
     url:  commonLogic.appcommonhandle("文档链接",null),
+    orgName:  commonLogic.appcommonhandle("归属组织名",null),
     doccnt:  commonLogic.appcommonhandle("文档数",null),
     myfavouritecnt:  commonLogic.appcommonhandle("我的收藏数量",null),
     users:  commonLogic.appcommonhandle("用户",null),
@@ -39,7 +41,5 @@ export default {
     project:  commonLogic.appcommonhandle("所属项目",null),
     product:  commonLogic.appcommonhandle("所属产品",null),
     module:  commonLogic.appcommonhandle("所属分类",null),
-    deptName:  commonLogic.appcommonhandle("归属部门名",null),
-    orgName:  commonLogic.appcommonhandle("归属组织名",null),
   },
 };

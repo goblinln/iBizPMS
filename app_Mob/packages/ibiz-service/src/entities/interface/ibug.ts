@@ -89,6 +89,10 @@ export interface IBug extends IEntityBase {
      */
     browser?: 'all' | 'ie' | 'ie11' | 'ie10' | 'ie9' | 'ie8' | 'ie7' | 'ie6' | 'chrome' | 'firefox' | 'firefox4' | 'firefox3' | 'firefox2' | 'opera' | 'opera11' | 'oprea10' | 'opera9' | 'safari' | 'maxthon' | 'uc' | 'others';
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * 消息通知用户
      */
     noticeusers?: any;
@@ -225,6 +229,10 @@ export interface IBug extends IEntityBase {
      */
     resolvedby?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 解决版本
      */
     resolvedbuild?: any;
@@ -344,12 +352,4 @@ export interface IBug extends IEntityBase {
      * 测试单
      */
     testtask?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 }

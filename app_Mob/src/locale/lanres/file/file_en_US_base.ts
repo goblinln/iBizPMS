@@ -11,15 +11,15 @@ export default {
     objectType:  commonLogic.appcommonhandle("对象类型",null),
     addedBy:  commonLogic.appcommonhandle("由谁添加",null),
     title:  commonLogic.appcommonhandle("标题",null),
+    orgName:  commonLogic.appcommonhandle("归属组织名",null),
     updateBy:  commonLogic.appcommonhandle("由谁更新",null),
     addedDate:  commonLogic.appcommonhandle("添加时间",null),
     downloads:  commonLogic.appcommonhandle("下载次数",null),
     dept:  commonLogic.appcommonhandle("归属部门",null),
     size:  commonLogic.appcommonhandle("大小",null),
+    deptName:  commonLogic.appcommonhandle("归属部门名",null),
     id:  commonLogic.appcommonhandle("id",null),
     extra:  commonLogic.appcommonhandle("备注",null),
-    orgName:  commonLogic.appcommonhandle("归属组织名",null),
-    deptName:  commonLogic.appcommonhandle("归属部门名",null),
   },
 	views: {
 		mobmdview9: {

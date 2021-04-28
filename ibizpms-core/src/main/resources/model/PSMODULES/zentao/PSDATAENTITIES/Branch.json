@@ -252,6 +252,54 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "ORGNAME",
+      "dBType" : "MYSQL5",
+      "name" : "ORGNAME",
+      "queryCodeExp" : "t1.`ORGNAME`",
+      "standardColumnName" : "`ORGNAME`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "ORGNAME",
+          "maxValue" : 100,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[100]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[100]"
+      },
+      "getPSDEField" : {
+        "name" : "ORGNAME",
+        "codeName" : "OrgName"
+      },
+      "ruleInfo" : "内容长度必须小于等于[100]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "OrgName",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 100,
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "predefinedType" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "UPDATEBY",
       "dBType" : "MYSQL5",
       "name" : "UPDATEBY",
@@ -537,52 +585,6 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "PRODUCT",
-      "dBType" : "MYSQL5",
-      "name" : "PRODUCT",
-      "queryCodeExp" : "t1.`PRODUCT`",
-      "standardColumnName" : "`PRODUCT`",
-      "valueAutoGen" : true
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Product",
-    "dEFType" : 1,
-    "dataType" : "PICKUP",
-    "defaultValue" : "0",
-    "importOrder" : 1000,
-    "length" : 8,
-    "logicName" : "所属产品",
-    "name" : "PRODUCT",
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Branch/PSDERS/DER1N_ZT_BRANCH_ZT_PRODUCT_PRODUCT.json"
-    },
-    "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s",
-    "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
       "columnName" : "DEPTNAME",
       "dBType" : "MYSQL5",
       "name" : "DEPTNAME",
@@ -631,11 +633,12 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "ORGNAME",
+      "columnName" : "PRODUCT",
       "dBType" : "MYSQL5",
-      "name" : "ORGNAME",
-      "queryCodeExp" : "t1.`ORGNAME`",
-      "standardColumnName" : "`ORGNAME`"
+      "name" : "PRODUCT",
+      "queryCodeExp" : "t1.`PRODUCT`",
+      "standardColumnName" : "`PRODUCT`",
+      "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -643,40 +646,37 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "ORGNAME",
-          "maxValue" : 100,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[100]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[100]"
+        "name" : "默认组"
       },
       "getPSDEField" : {
-        "name" : "ORGNAME",
-        "codeName" : "OrgName"
+        "name" : "PRODUCT",
+        "codeName" : "Product"
       },
-      "ruleInfo" : "内容长度必须小于等于[100]",
+      "ruleInfo" : "默认规则",
       "checkDefault" : true,
       "defaultMode" : true,
       "enableBackend" : true,
       "enableFront" : true
     } ],
-    "codeName" : "OrgName",
+    "codeName" : "Product",
     "dEFType" : 1,
-    "dataType" : "TEXT",
+    "dataType" : "PICKUP",
+    "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 100,
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "predefinedType" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100,
-    "valueFormat" : "%1$s"
+    "length" : 8,
+    "logicName" : "所属产品",
+    "name" : "PRODUCT",
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Branch/PSDERS/DER1N_ZT_BRANCH_ZT_PRODUCT_PRODUCT.json"
+    },
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s",
+    "linkDEField" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",

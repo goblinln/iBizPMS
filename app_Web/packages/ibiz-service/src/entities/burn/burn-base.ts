@@ -46,9 +46,17 @@ export abstract class BurnBase extends EntityBase implements IBurn {
      */
     updateby?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 归属部门
      */
     dept?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
     /**
      * 日期
      */
@@ -57,6 +65,10 @@ export abstract class BurnBase extends EntityBase implements IBurn {
      * 归属组织
      */
     org?: any;
+    /**
+     * 主键
+     */
+    id?: any;
     /**
      * 总计消耗
      */
@@ -77,18 +89,6 @@ export abstract class BurnBase extends EntityBase implements IBurn {
      * 任务
      */
     task?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 主键
-     */
-    id?: any;
 
     /**
      * 重置实体数据

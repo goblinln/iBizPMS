@@ -14,12 +14,14 @@ export default {
     files: "附件",
     id: "编号",
     evaluationstatus: "评估状态",
+    orgname: "归属组织名",
     yearname: "年（显示）",
     date: "日期",
     updateby: "由谁更新",
     evaluationtime: "评估工时",
     inputcost: "投入成本",
     dates: "日期",
+    deptname: "归属部门名",
     month: "月",
     work: "work",
     evaluationdesc: "评估说明",
@@ -30,8 +32,6 @@ export default {
     deleted: "任务删除标识",
     project: "项目",
     task: "任务",
-    orgname: "归属组织名",
-    deptname: "归属部门名",
   },
 	views: {
 		mobmdview: {

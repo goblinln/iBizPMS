@@ -1,6 +1,8 @@
 import commonLogic from '@/locale/logic/common/common-logic';
 export default {
   fields: {
+    orgname: "归属组织名",
+    deptname: "归属部门名",
     userlist: "userList",
     org: "归属组织",
     listname: "标题",
@@ -8,7 +10,5 @@ export default {
     updateby: "由谁更新",
     dept: "归属部门",
     account: "account",
-    deptname: "归属部门名",
-    orgname: "归属组织名",
   },
 };

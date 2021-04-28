@@ -19,6 +19,7 @@ export default {
     modulename1: "模块名称",
     closedby: "由谁关闭",
     browser: "浏览器",
+    deptname: "归属部门名",
     noticeusers: "消息通知用户",
     steps: "重现步骤",
     v2: "v2",
@@ -51,6 +52,7 @@ export default {
     delay: "延期",
     found: "found",
     resolvedby: "解决者",
+    orgname: "归属组织名",
     resolvedbuild: "解决版本",
     pri: "优先级",
     os: "操作系统",
@@ -80,8 +82,6 @@ export default {
     project: "所属项目",
     task: "相关任务",
     testtask: "测试单",
-    deptname: "归属部门名",
-    orgname: "归属组织名",
   },
 	views: {
 		usr3mobmpickupleftview: {

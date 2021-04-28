@@ -24,6 +24,7 @@ function getLocaleResourceBase(){
 		'estimate': commonLogic.appcommonhandle("预计工时",null),
 		'noticeusers': commonLogic.appcommonhandle("消息通知用户",null),
 		'revieweddate': commonLogic.appcommonhandle("评审时间",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 		'title': commonLogic.appcommonhandle("需求名称",null),
 		'mailtoconact': commonLogic.appcommonhandle("联系人",null),
 		'sourcenote': commonLogic.appcommonhandle("来源备注",null),
@@ -57,6 +58,7 @@ function getLocaleResourceBase(){
 		'assignedtopk': commonLogic.appcommonhandle("指派给（选择）",null),
 		'comment': commonLogic.appcommonhandle("备注",null),
 		'acllist': commonLogic.appcommonhandle("acllist",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 		'verify': commonLogic.appcommonhandle("验收标准",null),
 		'closedby': commonLogic.appcommonhandle("由谁关闭",null),
 		'acl': commonLogic.appcommonhandle("acl",null),
@@ -80,8 +82,6 @@ function getLocaleResourceBase(){
 		'duplicatestory': commonLogic.appcommonhandle("重复需求ID",null),
 		'branch': commonLogic.appcommonhandle("平台/分支",null),
 		'tobug': commonLogic.appcommonhandle("转Bug",null),
-		'orgname': commonLogic.appcommonhandle("归属组织名",null),
-		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 	},
 		views: {
 			'subgridview': {

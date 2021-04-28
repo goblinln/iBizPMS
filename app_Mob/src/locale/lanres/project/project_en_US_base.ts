@@ -2,6 +2,7 @@ import commonLogic from '@/locale/logic/common/common-logic';
 export default {
   fields: {
     openedVersion:  commonLogic.appcommonhandle("当前系统版本",null),
+    orgName:  commonLogic.appcommonhandle("归属组织名",null),
     begin:  commonLogic.appcommonhandle("开始时间",null),
     hours:  commonLogic.appcommonhandle("可用工时/天",null),
     pmseeprojectinfo:  commonLogic.appcommonhandle("项目立项信息",null),
@@ -17,6 +18,7 @@ export default {
     mycompletetaskcnt:  commonLogic.appcommonhandle("我完成任务数",null),
     istop:  commonLogic.appcommonhandle("是否置顶",null),
     uncompletetaskcnt:  commonLogic.appcommonhandle("未完成任务数",null),
+    mdeptName:  commonLogic.appcommonhandle("归属部门名",null),
     teamcnt:  commonLogic.appcommonhandle("团队成员总数",null),
     pM:  commonLogic.appcommonhandle("项目负责人",null),
     dept:  commonLogic.appcommonhandle("选择部门",null),
@@ -82,8 +84,6 @@ export default {
     qD:  commonLogic.appcommonhandle("测试负责人",null),
     parentName:  commonLogic.appcommonhandle("parent",null),
     parent:  commonLogic.appcommonhandle("父项目",null),
-    orgName:  commonLogic.appcommonhandle("归属组织名",null),
-    mdeptName:  commonLogic.appcommonhandle("归属部门名",null),
   },
 	views: {
 		mobtabexpview: {

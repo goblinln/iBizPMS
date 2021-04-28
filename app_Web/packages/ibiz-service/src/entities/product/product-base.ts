@@ -148,6 +148,10 @@ export abstract class ProductBase extends EntityBase implements IProduct {
      */
     type?: 'normal' | 'branch' | 'platform';
     /**
+     * 归属部门名
+     */
+    mdeptname?: any;
+    /**
      * 产品负责人
      */
     po?: any;
@@ -234,6 +238,10 @@ export abstract class ProductBase extends EntityBase implements IProduct {
      */
     buildcnt?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 创建日期
      */
     createddate?: any;
@@ -253,14 +261,6 @@ export abstract class ProductBase extends EntityBase implements IProduct {
      * 产品线
      */
     line?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 归属部门名
-     */
-    mdeptname?: any;
 
     /**
      * 重置实体数据

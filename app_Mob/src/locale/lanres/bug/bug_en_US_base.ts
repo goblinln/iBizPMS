@@ -19,6 +19,7 @@ export default {
     modulename1:  commonLogic.appcommonhandle("模块名称",null),
     closedBy:  commonLogic.appcommonhandle("由谁关闭",null),
     browser:  commonLogic.appcommonhandle("浏览器",null),
+    deptName:  commonLogic.appcommonhandle("归属部门名",null),
     noticeusers:  commonLogic.appcommonhandle("消息通知用户",null),
     steps:  commonLogic.appcommonhandle("重现步骤",null),
     v2:  commonLogic.appcommonhandle("v2",null),
@@ -51,6 +52,7 @@ export default {
     delay:  commonLogic.appcommonhandle("延期",null),
     found:  commonLogic.appcommonhandle("found",null),
     resolvedBy:  commonLogic.appcommonhandle("解决者",null),
+    orgName:  commonLogic.appcommonhandle("归属组织名",null),
     resolvedBuild:  commonLogic.appcommonhandle("解决版本",null),
     pri:  commonLogic.appcommonhandle("优先级",null),
     os:  commonLogic.appcommonhandle("操作系统",null),
@@ -80,8 +82,6 @@ export default {
     project:  commonLogic.appcommonhandle("所属项目",null),
     task:  commonLogic.appcommonhandle("相关任务",null),
     testtask:  commonLogic.appcommonhandle("测试单",null),
-    deptName:  commonLogic.appcommonhandle("归属部门名",null),
-    orgName:  commonLogic.appcommonhandle("归属组织名",null),
   },
 	views: {
 		usr3mobmpickupleftview: {

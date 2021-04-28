@@ -9,6 +9,14 @@ import { IEntityBase } from 'ibiz-core';
  */
 export interface IUserContact extends IEntityBase {
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * userList
      */
     userlist?: any;
@@ -36,12 +44,4 @@ export interface IUserContact extends IEntityBase {
      * account
      */
     account?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 }

@@ -1,5 +1,6 @@
 export default [
     'openedversion',
+    'orgname',
     'begin',
     'hours',
     'pmseeprojectinfo',
@@ -15,6 +16,7 @@ export default [
     'mycompletetaskcnt',
     'istop',
     'uncompletetaskcnt',
+    'mdeptname',
     'teamcnt',
     'pm',
     'dept',
@@ -80,6 +82,4 @@ export default [
     'qd',
     'parentname',
     'parent',
-    'orgname',
-    'mdeptname',
 ];

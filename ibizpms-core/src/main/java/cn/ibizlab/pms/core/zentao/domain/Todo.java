@@ -166,6 +166,15 @@ public class Todo extends EntityMP implements Serializable {
     @ApiModelProperty("消息通知用户")
     private String noticeusers;
     /**
+     * 归属组织名
+     */
+    @DEField(preType = DEPredefinedFieldType.ORGNAME)
+    @TableField(value = "`ORGNAME`")
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
+    /**
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
@@ -372,24 +381,6 @@ public class Todo extends EntityMP implements Serializable {
     @ApiModelProperty("私人事务")
     private String ibizprivate;
     /**
-     * config
-     */
-    @DEField(defaultValue = "#EMPTY")
-    @TableField(value = "`CONFIG`")
-    @JSONField(name = "config")
-    @JsonProperty("config")
-    @ApiModelProperty("config")
-    private String config;
-    /**
-     * 归属组织名
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGNAME)
-    @TableField(value = "`ORGNAME`")
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
-    /**
      * 归属部门名
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORNAME)
@@ -398,6 +389,15 @@ public class Todo extends EntityMP implements Serializable {
     @JsonProperty("deptname")
     @ApiModelProperty("归属部门名")
     private String deptname;
+    /**
+     * config
+     */
+    @DEField(defaultValue = "#EMPTY")
+    @TableField(value = "`CONFIG`")
+    @JSONField(name = "config")
+    @JsonProperty("config")
+    @ApiModelProperty("config")
+    private String config;
 
 
 

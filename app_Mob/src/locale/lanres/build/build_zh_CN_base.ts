@@ -15,7 +15,9 @@ export default {
     desc: "描述",
     id: "id",
     deleted: "已删除",
+    deptname: "归属部门名",
     sqlid: "运行数据库",
+    orgname: "归属组织名",
     scmpath: "源代码地址",
     filepath: "下载地址",
     createbugcnt: "产生的bug",
@@ -29,8 +31,6 @@ export default {
     product: "产品",
     branch: "平台/分支",
     project: "所属项目",
-    deptname: "归属部门名",
-    orgname: "归属组织名",
   },
 	views: {
 		mobmpickupview: {

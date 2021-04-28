@@ -11,6 +11,9 @@
 	
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_id_eq != null ">
+			<![CDATA[ AND  t1.`ID` = #{srf.n_id_eq,jdbcType=VARCHAR} ]]>
+        </if>
 		<if test="srf.n_productname_eq != null ">
 			<![CDATA[ AND  t11.`name` = #{srf.n_productname_eq,jdbcType=VARCHAR} ]]>
         </if>
@@ -43,9 +46,6 @@
         </if>
 		<if test="srf.n_project_eq != null ">
 			<![CDATA[ AND  t1.`PROJECT` = #{srf.n_project_eq,jdbcType=BIGINT} ]]>
-        </if>
-		<if test="srf.n_id_eq != null ">
-			<![CDATA[ AND  t1.`ID` = #{srf.n_id_eq,jdbcType=VARCHAR} ]]>
         </if>
 		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
 		AND ${ew.sqlSegment}

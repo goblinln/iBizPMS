@@ -7,10 +7,10 @@ export default [
     'updateby',
     'type',
     'title',
+    'orgname',
     'version',
     'digest',
+    'deptname',
     'createby',
     'doc',
-    'deptname',
-    'orgname',
 ];

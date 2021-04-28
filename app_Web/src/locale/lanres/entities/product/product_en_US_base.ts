@@ -30,6 +30,7 @@ function getLocaleResourceBase(){
 		'supproreport': commonLogic.appcommonhandle("支持产品汇报",null),
 		'order': commonLogic.appcommonhandle("排序",null),
 		'type': commonLogic.appcommonhandle("产品类型",null),
+		'mdeptname': commonLogic.appcommonhandle("归属部门名",null),
 		'po': commonLogic.appcommonhandle("产品负责人",null),
 		'qdpk': commonLogic.appcommonhandle("测试负责人（选择）",null),
 		'desc': commonLogic.appcommonhandle("产品描述	",null),
@@ -51,13 +52,12 @@ function getLocaleResourceBase(){
 		'order1': commonLogic.appcommonhandle("排序",null),
 		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'buildcnt': commonLogic.appcommonhandle("BUILD数",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 		'createddate': commonLogic.appcommonhandle("创建日期",null),
 		'noticeusers': commonLogic.appcommonhandle("消息通知用户",null),
 		'activestorycnt': commonLogic.appcommonhandle("激活需求数",null),
 		'linename': commonLogic.appcommonhandle("产品线",null),
 		'line': commonLogic.appcommonhandle("产品线",null),
-		'orgname': commonLogic.appcommonhandle("归属组织名",null),
-		'mdeptname': commonLogic.appcommonhandle("归属部门名",null),
 	},
 		views: {
 			'testtabexpview': {

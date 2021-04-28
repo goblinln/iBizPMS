@@ -9,6 +9,10 @@ import { IEntityBase } from 'ibiz-core';
  */
 export interface IHistory extends IEntityBase {
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 不同
      */
     diff?: any;
@@ -41,6 +45,10 @@ export interface IHistory extends IEntityBase {
      */
     updateby?: any;
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * id
      */
     id?: any;
@@ -48,12 +56,4 @@ export interface IHistory extends IEntityBase {
      * 关联日志
      */
     action?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 }

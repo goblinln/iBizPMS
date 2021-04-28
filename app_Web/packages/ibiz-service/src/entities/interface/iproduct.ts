@@ -123,6 +123,10 @@ export interface IProduct extends IEntityBase {
      */
     type?: 'normal' | 'branch' | 'platform';
     /**
+     * 归属部门名
+     */
+    mdeptname?: any;
+    /**
      * 产品负责人
      */
     po?: any;
@@ -209,6 +213,10 @@ export interface IProduct extends IEntityBase {
      */
     buildcnt?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 创建日期
      */
     createddate?: any;
@@ -228,12 +236,4 @@ export interface IProduct extends IEntityBase {
      * 产品线
      */
     line?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 归属部门名
-     */
-    mdeptname?: any;
 }

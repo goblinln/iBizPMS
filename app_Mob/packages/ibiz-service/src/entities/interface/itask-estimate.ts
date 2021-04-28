@@ -61,6 +61,10 @@ export interface ITaskEstimate extends IEntityBase {
      */
     evaluationstatus?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 年（显示）
      */
     yearname?: any;
@@ -84,6 +88,10 @@ export interface ITaskEstimate extends IEntityBase {
      * 日期
      */
     dates?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
     /**
      * 月
      */
@@ -128,12 +136,4 @@ export interface ITaskEstimate extends IEntityBase {
      * 任务
      */
     task?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
 }

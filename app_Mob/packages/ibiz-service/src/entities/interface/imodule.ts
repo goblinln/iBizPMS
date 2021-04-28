@@ -13,6 +13,10 @@ export interface IModule extends IEntityBase {
      */
     root?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 级别
      */
     grade?: any;
@@ -46,6 +50,10 @@ export interface IModule extends IEntityBase {
      * 由谁创建
      */
     createby?: any;
+    /**
+     * 归属部门名
+     */
+    mdeptname?: any;
     /**
      * 收藏者
      */
@@ -86,12 +94,4 @@ export interface IModule extends IEntityBase {
      * 上级模块
      */
     parent?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 归属部门名
-     */
-    mdeptname?: any;
 }

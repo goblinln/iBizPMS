@@ -57,6 +57,10 @@ export interface ICase extends IEntityBase {
      */
     order?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * howRun
      */
     howrun?: any;
@@ -108,6 +112,10 @@ export interface ICase extends IEntityBase {
      * 是否收藏
      */
     isfavorites?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
     /**
      * 归属部门
      */
@@ -272,12 +280,4 @@ export interface ICase extends IEntityBase {
      * 所属模块
      */
     module?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 }

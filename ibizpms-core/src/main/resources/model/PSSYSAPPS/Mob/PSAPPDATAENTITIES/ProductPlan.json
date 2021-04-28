@@ -714,6 +714,12 @@
     "stdDataType" : 25,
     "stringLength" : 200
   }, {
+    "codeName" : "DeptName",
+    "logicName" : "归属部门名",
+    "name" : "DEPTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "UnFinishedTaskscnt",
     "logicName" : "未完成任务数",
     "name" : "UNFINISHEDTASKSCNT",
@@ -742,6 +748,12 @@
     "name" : "ISEXPIRED",
     "stdDataType" : 25,
     "stringLength" : 200
+  }, {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
   }, {
     "codeName" : "UpdateBy",
     "logicName" : "由谁更新",
@@ -825,18 +837,6 @@
     "logicName" : "产品",
     "name" : "PRODUCT",
     "stdDataType" : 1
-  }, {
-    "codeName" : "OrgName",
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "DeptName",
-    "logicName" : "归属部门名",
-    "name" : "DEPTNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

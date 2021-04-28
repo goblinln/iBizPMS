@@ -13,6 +13,10 @@ export interface ITestReport extends IEntityBase {
      */
     productcnt?: any;
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * 概况
      */
     overviews?: any;
@@ -83,6 +87,10 @@ export interface ITestReport extends IEntityBase {
      */
     builds?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 归属部门
      */
     dept?: any;
@@ -122,12 +130,4 @@ export interface ITestReport extends IEntityBase {
      * 所属项目
      */
     project?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 }

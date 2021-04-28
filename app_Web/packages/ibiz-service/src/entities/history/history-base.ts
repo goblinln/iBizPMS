@@ -34,6 +34,10 @@ export abstract class HistoryBase extends EntityBase implements IHistory {
         this.diff = val;
     }
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 不同
      */
     diff?: any;
@@ -66,6 +70,10 @@ export abstract class HistoryBase extends EntityBase implements IHistory {
      */
     updateby?: any;
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * id
      */
     id?: any;
@@ -73,14 +81,6 @@ export abstract class HistoryBase extends EntityBase implements IHistory {
      * 关联日志
      */
     action?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 
     /**
      * 重置实体数据

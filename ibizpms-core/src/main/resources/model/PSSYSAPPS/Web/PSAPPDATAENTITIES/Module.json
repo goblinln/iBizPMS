@@ -267,6 +267,12 @@
     "stdDataType" : 25,
     "stringLength" : 8
   }, {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Grade",
     "logicName" : "级别",
     "name" : "GRADE",
@@ -312,6 +318,12 @@
     "codeName" : "CreateBy",
     "logicName" : "由谁创建",
     "name" : "CREATEBY",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "MdeptName",
+    "logicName" : "归属部门名",
+    "name" : "MDEPTNAME",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
@@ -372,18 +384,6 @@
     "logicName" : "上级模块",
     "name" : "PARENT",
     "stdDataType" : 1
-  }, {
-    "codeName" : "OrgName",
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "MdeptName",
-    "logicName" : "归属部门名",
-    "name" : "MDEPTNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

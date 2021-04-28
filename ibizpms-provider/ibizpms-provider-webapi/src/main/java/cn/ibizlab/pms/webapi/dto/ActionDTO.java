@@ -43,6 +43,16 @@ public class ActionDTO extends DTOBase implements Serializable {
     private String thismonth;
 
     /**
+     * 属性 [DEPT]
+     *
+     */
+    @JSONField(name = "dept")
+    @JsonProperty("dept")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属部门")
+    private String dept;
+
+    /**
      * 属性 [YESTERDAY]
      *
      */
@@ -93,6 +103,16 @@ public class ActionDTO extends DTOBase implements Serializable {
     private Long isactorss;
 
     /**
+     * 属性 [DEPTNAME]
+     *
+     */
+    @JSONField(name = "deptname")
+    @JsonProperty("deptname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属部门名")
+    private String deptname;
+
+    /**
      * 属性 [THISWEEK]
      *
      */
@@ -131,6 +151,16 @@ public class ActionDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("对象类型")
     private String objecttype;
+
+    /**
+     * 属性 [ORGNAME]
+     *
+     */
+    @JSONField(name = "orgname")
+    @JsonProperty("orgname")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属组织名")
+    private String orgname;
 
     /**
      * 属性 [ID]
@@ -233,6 +263,16 @@ public class ActionDTO extends DTOBase implements Serializable {
     private String actionmanner;
 
     /**
+     * 属性 [ORG]
+     *
+     */
+    @JSONField(name = "org")
+    @JsonProperty("org")
+    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
+    @ApiModelProperty("归属组织")
+    private String org;
+
+    /**
      * 属性 [LASTWEEK]
      *
      */
@@ -271,46 +311,6 @@ public class ActionDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("项目")
     private Long project;
-
-    /**
-     * 属性 [DEPTNAME]
-     *
-     */
-    @JSONField(name = "deptname")
-    @JsonProperty("deptname")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属部门名")
-    private String deptname;
-
-    /**
-     * 属性 [ORGNAME]
-     *
-     */
-    @JSONField(name = "orgname")
-    @JsonProperty("orgname")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属组织名")
-    private String orgname;
-
-    /**
-     * 属性 [DEPT]
-     *
-     */
-    @JSONField(name = "dept")
-    @JsonProperty("dept")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属部门")
-    private String dept;
-
-    /**
-     * 属性 [ORG]
-     *
-     */
-    @JSONField(name = "org")
-    @JsonProperty("org")
-    @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
-    @ApiModelProperty("归属组织")
-    private String org;
 
 
     /**

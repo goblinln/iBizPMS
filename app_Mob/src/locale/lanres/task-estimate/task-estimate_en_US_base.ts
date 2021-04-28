@@ -14,12 +14,14 @@ export default {
     files:  commonLogic.appcommonhandle("附件",null),
     id:  commonLogic.appcommonhandle("编号",null),
     evaluationstatus:  commonLogic.appcommonhandle("评估状态",null),
+    orgName:  commonLogic.appcommonhandle("归属组织名",null),
     yearname:  commonLogic.appcommonhandle("年（显示）",null),
     date:  commonLogic.appcommonhandle("日期",null),
     updateBy:  commonLogic.appcommonhandle("由谁更新",null),
     evaluationtime:  commonLogic.appcommonhandle("评估工时",null),
     inputcost:  commonLogic.appcommonhandle("投入成本",null),
     dates:  commonLogic.appcommonhandle("日期",null),
+    deptName:  commonLogic.appcommonhandle("归属部门名",null),
     month:  commonLogic.appcommonhandle("月",null),
     work:  commonLogic.appcommonhandle("work",null),
     evaluationdesc:  commonLogic.appcommonhandle("评估说明",null),
@@ -30,8 +32,6 @@ export default {
     deleted:  commonLogic.appcommonhandle("任务删除标识",null),
     project:  commonLogic.appcommonhandle("项目",null),
     task:  commonLogic.appcommonhandle("任务",null),
-    orgName:  commonLogic.appcommonhandle("归属组织名",null),
-    deptName:  commonLogic.appcommonhandle("归属部门名",null),
   },
 	views: {
 		mobmdview: {

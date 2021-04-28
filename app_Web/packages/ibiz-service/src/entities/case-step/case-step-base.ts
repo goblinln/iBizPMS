@@ -52,6 +52,14 @@ export abstract class CaseStepBase extends EntityBase implements ICaseStep {
      */
     steps?: 'n/a' | 'pass' | 'fail' | 'blocked';
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * 用例步骤类型
      *
      * @type {('step' | 'group' | 'item')} step: 步骤, group: 分组, item: 分组步骤
@@ -101,14 +109,6 @@ export abstract class CaseStepBase extends EntityBase implements ICaseStep {
      * 分组用例步骤的组编号
      */
     parent?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 
     /**
      * 重置实体数据

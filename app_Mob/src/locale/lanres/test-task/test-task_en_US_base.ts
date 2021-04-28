@@ -12,6 +12,7 @@ export default {
     org:  commonLogic.appcommonhandle("归属组织",null),
     pri:  commonLogic.appcommonhandle("优先级",null),
     comment:  commonLogic.appcommonhandle("备注",null),
+    orgName:  commonLogic.appcommonhandle("归属组织名",null),
     createBy:  commonLogic.appcommonhandle("由谁创建",null),
     subStatus:  commonLogic.appcommonhandle("子状态",null),
     report:  commonLogic.appcommonhandle("report",null),
@@ -21,6 +22,7 @@ export default {
     mailtoconact:  commonLogic.appcommonhandle("联系人",null),
     owner:  commonLogic.appcommonhandle("负责人",null),
     deleted:  commonLogic.appcommonhandle("已删除",null),
+    deptName:  commonLogic.appcommonhandle("归属部门名",null),
     auto:  commonLogic.appcommonhandle("auto",null),
     name:  commonLogic.appcommonhandle("名称",null),
     buildName:  commonLogic.appcommonhandle("版本",null),
@@ -29,8 +31,6 @@ export default {
     product:  commonLogic.appcommonhandle("所属产品",null),
     build:  commonLogic.appcommonhandle("版本",null),
     project:  commonLogic.appcommonhandle("所属项目",null),
-    deptName:  commonLogic.appcommonhandle("归属部门名",null),
-    orgName:  commonLogic.appcommonhandle("归属组织名",null),
   },
 	views: {
 		moboptionviewclose: {

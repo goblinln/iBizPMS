@@ -3,26 +3,6 @@
   "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/Tester.json",
   "name" : "测试人员",
   "getPSSysUserRoleDatas" : [ {
-    "name" : "测试人员-ZT_TESTTASK[测试单查看]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEUSERROLES/TestTask_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
-    }
-  }, {
-    "name" : "测试人员-ZT_TESTREPORT[测试报告维护]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEUSERROLES/TestReport_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
-    }
-  }, {
     "name" : "测试人员-ZT_SUITECASE[套件用例查看]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -33,44 +13,44 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase.json"
     }
   }, {
-    "name" : "测试人员-ZT_ACTION[系统日志添加备注（全部数据）]",
+    "name" : "测试人员-ZT_TASK[任务查看]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_MANAGE_ALL.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Read.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
     }
   }, {
-    "name" : "测试人员-ZT_MODULE[Module维护]",
+    "name" : "测试人员-IBZ_TESTMODULE[测试模块查看]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEUSERROLES/Module_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
-    }
-  }, {
-    "name" : "测试人员-IBZ_DOCLIBMODULE[文档模块维护]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-    }
-  }, {
-    "name" : "测试人员-IBZ_TESTMODULE[测试模块管理]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEUSERROLES/TestModule_Manage.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEUSERROLES/TestModule_Read.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_PRODUCT[产品查看（当前机构）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_CO.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_FILE[文件查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEUSERROLES/File_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
     }
   }, {
     "name" : "测试人员-ZT_DOC[文档查看]",
@@ -83,14 +63,14 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
     }
   }, {
-    "name" : "测试人员-ZT_BUG[BUG查看]",
+    "name" : "测试人员-ZT_MODULE[Module查看]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Read.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEUSERROLES/Module_Read.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
     }
   }, {
     "name" : "测试人员-ZT_CASESTEP[用例步骤管理]",
@@ -103,6 +83,56 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
     }
   }, {
+    "name" : "测试人员-ZT_SUITECASE[套件用例维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDEUSERROLES/SuiteCase_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase.json"
+    }
+  }, {
+    "name" : "测试人员-IBZ_TESTMODULE[测试模块维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEUSERROLES/TestModule_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
+    }
+  }, {
+    "name" : "测试人员-IBZ_PROJECTMODULE[任务模块管理]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEUSERROLES/ProjectModule_Manage.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_TESTREPORT[测试报告维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEUSERROLES/TestReport_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
+    }
+  }, {
+    "name" : "测试人员-IBZ_TESTMODULE[测试模块管理]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEUSERROLES/TestModule_Manage.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
+    }
+  }, {
     "name" : "测试人员-IBZ_DOCLIBMODULE[文档模块查看]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -113,24 +143,64 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
     }
   }, {
-    "name" : "测试人员-ZT_PROJECT[项目查看（当前机构）]",
+    "name" : "测试人员-ZT_CASE[用例维护]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_CO.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_Maintain.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
     }
   }, {
-    "name" : "测试人员-ZT_DOC[文档维护]",
+    "name" : "测试人员-ZT_TESTREPORT[测试报告查看]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEUSERROLES/Doc_Maintain.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEUSERROLES/TestReport_Read.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_BUG[BUG查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_TODO[待办查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_BUG[BUG维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_ACTION[系统日志查看（全部数据）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_READ_ALL.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
     }
   }, {
     "name" : "测试人员-ZT_TESTSUITE[测试套件维护（当前机构）]",
@@ -153,134 +223,14 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductLife.json"
     }
   }, {
-    "name" : "测试人员-ZT_ACTION[系统日志查看（全部数据）]",
+    "name" : "测试人员-ZT_TESTTASK[测试单维护]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_READ_ALL.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEUSERROLES/TestTask_Maintain.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
-    }
-  }, {
-    "name" : "测试人员-IBZ_PRODUCTMODULE[需求模块维护]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEUSERROLES/ProductModule_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
-    }
-  }, {
-    "name" : "测试人员-ZT_BUG[BUG维护]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
-    }
-  }, {
-    "name" : "测试人员-IBZ_PROJECTMODULE[任务模块查看]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEUSERROLES/ProjectModule_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
-    }
-  }, {
-    "name" : "测试人员-ZT_DOCLIB[文档库管理]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Manage.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
-    }
-  }, {
-    "name" : "测试人员-ZT_MODULE[Module查看]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEUSERROLES/Module_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
-    }
-  }, {
-    "name" : "测试人员-ZT_TODO[待办维护]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
-    }
-  }, {
-    "name" : "测试人员-ZT_DOCLIB[文档库维护]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
-    }
-  }, {
-    "name" : "测试人员-ZT_PRODUCT[产品查看（当前机构）]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_CO.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
-    }
-  }, {
-    "name" : "测试人员-ZT_CASE[用例查看]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
-    }
-  }, {
-    "name" : "测试人员-ZT_CASESTEP[用例步骤查看]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEUSERROLES/CaseStep_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
-    }
-  }, {
-    "name" : "测试人员-IBZ_PROJECTMODULE[任务模块维护]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEUSERROLES/ProjectModule_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
-    }
-  }, {
-    "name" : "测试人员-IBZ_TESTMODULE[测试模块维护]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEUSERROLES/TestModule_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
     }
   }, {
     "name" : "测试人员-IBZ_PROJECTMEMBER[项目相关成员查看]",
@@ -293,110 +243,10 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember.json"
     }
   }, {
-    "name" : "测试人员-ZT_FILE[文件查看]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEUSERROLES/File_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
-    }
-  }, {
-    "name" : "测试人员-ZT_TASK[任务查看]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
-    }
-  }, {
-    "name" : "测试人员-ZT_SUITECASE[套件用例维护]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDEUSERROLES/SuiteCase_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase.json"
-    }
-  }, {
     "name" : "测试人员-IBZ_PRODUCTMODULE[需求模块管理]",
     "getPSDEUserRole" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEUSERROLES/ProductModule_Manage.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
-    }
-  }, {
-    "name" : "测试人员-IBZ_PROJECTMODULE[任务模块管理]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEUSERROLES/ProjectModule_Manage.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
-    }
-  }, {
-    "name" : "测试人员-ZT_BUILD[版本维护]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEUSERROLES/Build_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
-    }
-  }, {
-    "name" : "测试人员-ZT_STORY[需求查看]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
-    }
-  }, {
-    "name" : "测试人员-ZT_CASESTEP[用例步骤维护]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEUSERROLES/CaseStep_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
-    }
-  }, {
-    "name" : "测试人员-ZT_TODO[待办查看]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
-    }
-  }, {
-    "name" : "测试人员-IBZ_DOCLIBMODULE[文档模块管理]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Manage.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
-    }
-  }, {
-    "name" : "测试人员-IBZ_PRODUCTMODULE[需求模块查看]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEUSERROLES/ProductModule_Read.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
@@ -413,84 +263,14 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
     }
   }, {
-    "name" : "测试人员-ZT_FILE[文件维护]",
+    "name" : "测试人员-ZT_STORY[需求查看]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEUSERROLES/File_Maintain.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Read.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
-    }
-  }, {
-    "name" : "测试人员-ZT_TODO[待办管理]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Manage.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
-    }
-  }, {
-    "name" : "测试人员-IBZ_PRODUCTSTATS[产品统计查看]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEUSERROLES/IBZProductStats_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats.json"
-    }
-  }, {
-    "name" : "测试人员-ZT_RELEASE[产品发布查看]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEUSERROLES/Release_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
-    }
-  }, {
-    "name" : "测试人员-ZT_TESTREPORT[测试报告查看]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDEUSERROLES/TestReport_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
-    }
-  }, {
-    "name" : "测试人员-ZT_TASK[任务维护]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
-    }
-  }, {
-    "name" : "测试人员-IBZ_TESTMODULE[测试模块查看]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDEUSERROLES/TestModule_Read.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
-    }
-  }, {
-    "name" : "测试人员-ZT_CASE[用例维护]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     }
   }, {
     "name" : "测试人员-IBZ_PRODUCTTEAM[产品团队查看]",
@@ -503,24 +283,24 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
     }
   }, {
-    "name" : "测试人员-ZT_TESTSUITE[测试套件查看（当前机构）]",
+    "name" : "测试人员-ZT_FILE[文件维护]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEUSERROLES/TestSuite_Read_CO.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEUSERROLES/File_Maintain.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/File.json"
     }
   }, {
-    "name" : "测试人员-ZT_PRODUCTPLAN[产品计划查看]",
+    "name" : "测试人员-ZT_CASESTEP[用例步骤维护]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEUSERROLES/ProductPlan_Read.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEUSERROLES/CaseStep_Maintain.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
     }
   }, {
     "name" : "测试人员-ZT_DOCLIB[文档库查看]",
@@ -533,17 +313,244 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
     }
   }, {
-    "name" : "测试人员-ZT_TESTTASK[测试单维护]",
+    "name" : "测试人员-IBZ_PRODUCTMODULE[需求模块维护]",
     "getPSDEUserRole" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEUSERROLES/TestTask_Maintain.json"
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEUSERROLES/ProductModule_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_DOCLIB[文档库维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+    }
+  }, {
+    "name" : "测试人员-IBZ_PROJECTMODULE[任务模块查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEUSERROLES/ProjectModule_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_PRODUCTPLAN[产品计划查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEUSERROLES/ProductPlan_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_DOC[文档维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEUSERROLES/Doc_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_DOCLIB[文档库管理]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEUSERROLES/DocLib_Manage.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_BUILD[版本维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEUSERROLES/Build_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_MODULE[Module维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module/PSDEUSERROLES/Module_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_TODO[待办管理]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Manage.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+    }
+  }, {
+    "name" : "测试人员-IBZ_PROJECTMODULE[任务模块维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDEUSERROLES/ProjectModule_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_RELEASE[产品发布查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEUSERROLES/Release_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_PROJECT[项目查看（当前机构）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_CO.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    }
+  }, {
+    "name" : "测试人员-IBZ_DOCLIBMODULE[文档模块维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_CASE[用例查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_TASK[任务维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    }
+  }, {
+    "name" : "测试人员-IBZ_DOCLIBMODULE[文档模块管理]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDEUSERROLES/DocLibModule_Manage.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_ACTION[系统日志添加备注（全部数据）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_MANAGE_ALL.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_CASESTEP[用例步骤查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEUSERROLES/CaseStep_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep.json"
+    }
+  }, {
+    "name" : "测试人员-IBZ_PRODUCTSTATS[产品统计查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDEUSERROLES/IBZProductStats_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_TESTSUITE[测试套件查看（当前机构）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite/PSDEUSERROLES/TestSuite_Read_CO.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestSuite.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_TESTTASK[测试单查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEUSERROLES/TestTask_Read.json"
     },
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"
     }
+  }, {
+    "name" : "测试人员-IBZ_PRODUCTMODULE[需求模块查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule/PSDEUSERROLES/ProductModule_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_TODO[待办维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+    }
   } ],
   "getPSSysUserRoleReses" : [ {
+    "name" : "null-左侧_项目管理（一级）",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__LEFT_PROJECT_MENU"
+    },
+    "sysUniResCode" : "LEFT_PROJECT_MENU"
+  }, {
     "name" : "测试人员-测试用例执行",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -571,6 +578,13 @@
       "id" : "ibiz__CASE_RESULT_BUT"
     },
     "sysUniResCode" : "CASE_RESULT_BUT"
+  }, {
+    "name" : "null-顶部_测试主页",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_CASE_MENU"
+    },
+    "sysUniResCode" : "TOP_CASE_MENU"
   }, {
     "name" : "测试人员-测试用例确认",
     "getPSSysUniRes" : {
@@ -600,19 +614,19 @@
     },
     "sysUniResCode" : "REPORT_CREATE_BUT"
   }, {
+    "name" : "null-顶部_我的收藏",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_MYFAVOURITE_MENU"
+    },
+    "sysUniResCode" : "TOP_MYFAVOURITE_MENU"
+  }, {
     "name" : "测试人员-测试版本开始",
     "getPSSysUniRes" : {
       "modelref" : true,
       "id" : "ibiz__TESTT_START_BUT"
     },
     "sysUniResCode" : "TESTT_START_BUT"
-  }, {
-    "name" : "null-顶部_统计",
-    "getPSSysUniRes" : {
-      "modelref" : true,
-      "id" : "zentao__TOP_SUM_MENU"
-    },
-    "sysUniResCode" : "TOP_SUM_MENU"
   }, {
     "name" : "测试人员-Bug指派",
     "getPSSysUniRes" : {
@@ -663,12 +677,12 @@
     },
     "sysUniResCode" : "TASK_FAVOR_BUT"
   }, {
-    "name" : "null-顶部_项目主页",
+    "name" : "null-顶部_全文检索",
     "getPSSysUniRes" : {
       "modelref" : true,
-      "id" : "zentao__TOP_PROJECT_MENU"
+      "id" : "zentao__TOP_ELECSEARCH_MENU"
     },
-    "sysUniResCode" : "TOP_PROJECT_MENU"
+    "sysUniResCode" : "TOP_ELECSEARCH_MENU"
   }, {
     "name" : "测试人员-任务指派",
     "getPSSysUniRes" : {
@@ -684,19 +698,19 @@
     },
     "sysUniResCode" : "TESTSU_LINKCASE_BUT"
   }, {
-    "name" : "null-顶部_文档",
-    "getPSSysUniRes" : {
-      "modelref" : true,
-      "id" : "zentao__TOP_DOC_MENU"
-    },
-    "sysUniResCode" : "TOP_DOC_MENU"
-  }, {
     "name" : "测试人员-测试版本编辑",
     "getPSSysUniRes" : {
       "modelref" : true,
       "id" : "ibiz__TESTT_EDIT_BUT"
     },
     "sysUniResCode" : "TESTT_EDIT_BUT"
+  }, {
+    "name" : "null-顶部_文档",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_DOC_MENU"
+    },
+    "sysUniResCode" : "TOP_DOC_MENU"
   }, {
     "name" : "测试人员-任务开始",
     "getPSSysUniRes" : {
@@ -711,13 +725,6 @@
       "id" : "ibiz__CASE_CREATE_BUT"
     },
     "sysUniResCode" : "CASE_CREATE_BUT"
-  }, {
-    "name" : "null-左侧_项目管理（一级）",
-    "getPSSysUniRes" : {
-      "modelref" : true,
-      "id" : "zentao__LEFT_PROJECT_MENU"
-    },
-    "sysUniResCode" : "LEFT_PROJECT_MENU"
   }, {
     "name" : "null-产品左侧资源",
     "getPSSysUniRes" : {
@@ -761,20 +768,6 @@
     },
     "sysUniResCode" : "CASE_UNLINK_BUT"
   }, {
-    "name" : "null-顶部_我的收藏",
-    "getPSSysUniRes" : {
-      "modelref" : true,
-      "id" : "zentao__TOP_MYFAVOURITE_MENU"
-    },
-    "sysUniResCode" : "TOP_MYFAVOURITE_MENU"
-  }, {
-    "name" : "null-顶部_全文检索",
-    "getPSSysUniRes" : {
-      "modelref" : true,
-      "id" : "zentao__TOP_ELECSEARCH_MENU"
-    },
-    "sysUniResCode" : "TOP_ELECSEARCH_MENU"
-  }, {
     "name" : "测试人员-Bug确认",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -782,12 +775,12 @@
     },
     "sysUniResCode" : "BUG_CONFIRM_BUT"
   }, {
-    "name" : "null-顶部_产品主页",
+    "name" : "null-顶部_项目主页",
     "getPSSysUniRes" : {
       "modelref" : true,
-      "id" : "zentao__TOP_PRODUCT_MENU"
+      "id" : "zentao__TOP_PROJECT_MENU"
     },
-    "sysUniResCode" : "TOP_PRODUCT_MENU"
+    "sysUniResCode" : "TOP_PROJECT_MENU"
   }, {
     "name" : "测试人员-测试报告删除",
     "getPSSysUniRes" : {
@@ -809,6 +802,13 @@
       "id" : "ibiz__CASE_CASETOBUG_BUT"
     },
     "sysUniResCode" : "CASE_CASETOBUG_BUT"
+  }, {
+    "name" : "null-顶部_产品主页",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_PRODUCT_MENU"
+    },
+    "sysUniResCode" : "TOP_PRODUCT_MENU"
   }, {
     "name" : "测试人员-项目版本关联Bug（需求）",
     "getPSSysUniRes" : {
@@ -844,13 +844,6 @@
       "id" : "ibiz__CASE_EDIT_BUT"
     },
     "sysUniResCode" : "CASE_EDIT_BUT"
-  }, {
-    "name" : "null-顶部_测试主页",
-    "getPSSysUniRes" : {
-      "modelref" : true,
-      "id" : "zentao__TOP_CASE_MENU"
-    },
-    "sysUniResCode" : "TOP_CASE_MENU"
   }, {
     "name" : "测试人员-任务继续",
     "getPSSysUniRes" : {
@@ -908,12 +901,12 @@
     },
     "sysUniResCode" : "BUILD_CREATE_BUT"
   }, {
-    "name" : "null-顶部_年度统计",
+    "name" : "null-顶部_我的地盘",
     "getPSSysUniRes" : {
       "modelref" : true,
-      "id" : "zentao__TOP_YEARSUM_MENU"
+      "id" : "zentao__TOP_MYPLACE_MENU"
     },
-    "sysUniResCode" : "TOP_YEARSUM_MENU"
+    "sysUniResCode" : "TOP_MYPLACE_MENU"
   }, {
     "name" : "测试人员-Bug建用例",
     "getPSSysUniRes" : {
@@ -964,6 +957,13 @@
     },
     "sysUniResCode" : "TASK_CANCEL_BUT"
   }, {
+    "name" : "null-顶部_年度统计",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_YEARSUM_MENU"
+    },
+    "sysUniResCode" : "TOP_YEARSUM_MENU"
+  }, {
     "name" : "测试人员-计划关联bug",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -977,13 +977,6 @@
       "id" : "ibiz__STORY_FJTASK_BUT"
     },
     "sysUniResCode" : "STORY_FJTASK_BUT"
-  }, {
-    "name" : "null-左侧_测试资源",
-    "getPSSysUniRes" : {
-      "modelref" : true,
-      "id" : "zentao__LEFT_CASE_MENU"
-    },
-    "sysUniResCode" : "LEFT_CASE_MENU"
   }, {
     "name" : "测试人员-任务待收藏",
     "getPSSysUniRes" : {
@@ -1048,6 +1041,13 @@
     },
     "sysUniResCode" : "TESTT_CLOSED_BUT"
   }, {
+    "name" : "null-左侧_测试资源",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__LEFT_CASE_MENU"
+    },
+    "sysUniResCode" : "LEFT_CASE_MENU"
+  }, {
     "name" : "测试人员-任务新建",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -1069,13 +1069,6 @@
     },
     "sysUniResCode" : "TESTSU_DELETE_BUT"
   }, {
-    "name" : "null-顶部_我的地盘",
-    "getPSSysUniRes" : {
-      "modelref" : true,
-      "id" : "zentao__TOP_MYPLACE_MENU"
-    },
-    "sysUniResCode" : "TOP_MYPLACE_MENU"
-  }, {
     "name" : "测试人员-Bug已收藏",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -1089,6 +1082,13 @@
       "id" : "ibiz__BUILD_SUBT_BUT"
     },
     "sysUniResCode" : "BUILD_SUBT_BUT"
+  }, {
+    "name" : "null-顶部_统计",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__TOP_SUM_MENU"
+    },
+    "sysUniResCode" : "TOP_SUM_MENU"
   }, {
     "name" : "测试人员-测试分页导航-测试报告",
     "getPSSysUniRes" : {
@@ -1120,5 +1120,5 @@
   } ],
   "roleTag" : "Tester",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "CASE_RUN_BUT", "TESTMOD_FIX_BUT", "TASK_COMPLETE_BUT", "CASE_RESULT_BUT", "CASE_CONFIRM_BUT", "CASE_CASERUN_BUT", "TESTT_ACTIVITE_BUT", "REPORT_CREATE_BUT", "TESTT_START_BUT", "TOP_SUM_MENU", "BUG_ASSIGNTO_BUT", "TESTT_BLOCK_BUT", "BUG_NFAVOR_BUT", "BUG_UNLINK_BUT", "TESTT_LCASE_BUT", "TESTT_OPEN_BUT", "TASK_FAVOR_BUT", "TOP_PROJECT_MENU", "TASK_ASSIGN_BUT", "TESTSU_LINKCASE_BUT", "TOP_DOC_MENU", "TESTT_EDIT_BUT", "TASK_START_BUT", "CASE_CREATE_BUT", "LEFT_PROJECT_MENU", "PRODUCTLEFT", "CASE_CASECOF_BUT", "REPORT_EDIT_BUT", "CASE_DELETE_BUT", "TASK_FORWARD_BUT", "CASE_UNLINK_BUT", "TOP_MYFAVOURITE_MENU", "TOP_ELECSEARCH_MENU", "BUG_CONFIRM_BUT", "TOP_PRODUCT_MENU", "REPORT_DELETE_BUT", "TASK_PAUSE_BUT", "CASE_CASETOBUG_BUT", "BUILD_LINK_BUT", "BUILD_EDIT_BUT", "TESTMOD_OQCVIEW_BUT", "CASE_CASERESULT_BUT", "CASE_EDIT_BUT", "TOP_CASE_MENU", "TASK_PROCEED_BUT", "BUG_TOSTORY_BUT", "TASK_SUBTASKS_BUT", "BUG_EDIT_BUT", "CASE_TOBUG_BUT", "BUG_RESOLVE_BUT", "TASK_DELETE_BUT", "BUILD_CREATE_BUT", "TOP_YEARSUM_MENU", "BUG_CREATECASE_BUT", "TESTT_DELETE_BUT", "PROJ_TEST_TESTTASK", "BUG_CREATE_BUT", "TASK_CONSUM_BUT", "BUG_ACTIVATE_BUT", "TASK_CANCEL_BUT", "PROP_LBUG_BUT", "STORY_FJTASK_BUT", "LEFT_CASE_MENU", "TASK_NFAVOR_BUT", "TEST_TESTTASK", "TASK_CLOSE_BUT", "TESTT_CREATE_BUT", "TASK_EDIT_BUT", "TASK_ACTIVATION_BUT", "BUG_DELETE_BUT", "BUG_CLOSE_BUT", "TESTT_CLOSED_BUT", "TASK_CREATE_BUT", "BUILD_DELETE_BUT", "TESTSU_DELETE_BUT", "TOP_MYPLACE_MENU", "BUG_FAVOR_BUT", "BUILD_SUBT_BUT", "TEST_TESTREPORT", "TESTSU_CREATE_BUT", "TASK_XQCHANGE_BUT", "TESTSU_EDITSUITE_BUT" ]
+  "uniResTags" : [ "LEFT_PROJECT_MENU", "CASE_RUN_BUT", "TESTMOD_FIX_BUT", "TASK_COMPLETE_BUT", "CASE_RESULT_BUT", "TOP_CASE_MENU", "CASE_CONFIRM_BUT", "CASE_CASERUN_BUT", "TESTT_ACTIVITE_BUT", "REPORT_CREATE_BUT", "TOP_MYFAVOURITE_MENU", "TESTT_START_BUT", "BUG_ASSIGNTO_BUT", "TESTT_BLOCK_BUT", "BUG_NFAVOR_BUT", "BUG_UNLINK_BUT", "TESTT_LCASE_BUT", "TESTT_OPEN_BUT", "TASK_FAVOR_BUT", "TOP_ELECSEARCH_MENU", "TASK_ASSIGN_BUT", "TESTSU_LINKCASE_BUT", "TESTT_EDIT_BUT", "TOP_DOC_MENU", "TASK_START_BUT", "CASE_CREATE_BUT", "PRODUCTLEFT", "CASE_CASECOF_BUT", "REPORT_EDIT_BUT", "CASE_DELETE_BUT", "TASK_FORWARD_BUT", "CASE_UNLINK_BUT", "BUG_CONFIRM_BUT", "TOP_PROJECT_MENU", "REPORT_DELETE_BUT", "TASK_PAUSE_BUT", "CASE_CASETOBUG_BUT", "TOP_PRODUCT_MENU", "BUILD_LINK_BUT", "BUILD_EDIT_BUT", "TESTMOD_OQCVIEW_BUT", "CASE_CASERESULT_BUT", "CASE_EDIT_BUT", "TASK_PROCEED_BUT", "BUG_TOSTORY_BUT", "TASK_SUBTASKS_BUT", "BUG_EDIT_BUT", "CASE_TOBUG_BUT", "BUG_RESOLVE_BUT", "TASK_DELETE_BUT", "BUILD_CREATE_BUT", "TOP_MYPLACE_MENU", "BUG_CREATECASE_BUT", "TESTT_DELETE_BUT", "PROJ_TEST_TESTTASK", "BUG_CREATE_BUT", "TASK_CONSUM_BUT", "BUG_ACTIVATE_BUT", "TASK_CANCEL_BUT", "TOP_YEARSUM_MENU", "PROP_LBUG_BUT", "STORY_FJTASK_BUT", "TASK_NFAVOR_BUT", "TEST_TESTTASK", "TASK_CLOSE_BUT", "TESTT_CREATE_BUT", "TASK_EDIT_BUT", "TASK_ACTIVATION_BUT", "BUG_DELETE_BUT", "BUG_CLOSE_BUT", "TESTT_CLOSED_BUT", "LEFT_CASE_MENU", "TASK_CREATE_BUT", "BUILD_DELETE_BUT", "TESTSU_DELETE_BUT", "BUG_FAVOR_BUT", "BUILD_SUBT_BUT", "TOP_SUM_MENU", "TEST_TESTREPORT", "TESTSU_CREATE_BUT", "TASK_XQCHANGE_BUT", "TESTSU_EDITSUITE_BUT" ]
 }

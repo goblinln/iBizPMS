@@ -17,19 +17,19 @@
                         <endEvent id="rawsqlcall1_end" name="end"/>
                         <sequenceFlow id="rawsqlcall1_end_line" sourceRef="rawsqlcall1" targetRef="rawsqlcall1_end"/>
                         <startEvent id="begin" isInterrupting="true"/>
-                    <sequenceFlow id="gateway-begin_prepareparam1" sourceRef="gateway-begin" targetRef="prepareparam1">
-                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
-                                            $bugupdatestoryversiondefault:Bug();
-                                    eval($bugupdatestoryversiondefault==bugupdatestoryversiondefault);
-                                eval(((RuleUtils.test($bugupdatestoryversiondefault.get("story"),"EQ","0"))||(RuleUtils.test($bugupdatestoryversiondefault.get("story"),"ISNULL",""))))
-                                ]]>
-                            </conditionExpression>
-                    </sequenceFlow>
                     <sequenceFlow id="gateway-begin_rawsqlcall1" sourceRef="gateway-begin" targetRef="rawsqlcall1">
                             <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
                                             $bugupdatestoryversiondefault:Bug();
                                     eval($bugupdatestoryversiondefault==bugupdatestoryversiondefault);
                                 eval((RuleUtils.test($bugupdatestoryversiondefault.get("story"),"ISNOTNULL",""))&&(RuleUtils.test($bugupdatestoryversiondefault.get("story"),"NOTEQ","0")))
+                                ]]>
+                            </conditionExpression>
+                    </sequenceFlow>
+                    <sequenceFlow id="gateway-begin_prepareparam1" sourceRef="gateway-begin" targetRef="prepareparam1">
+                            <conditionExpression  language="http://www.jboss.org/drools/rule" ><![CDATA[
+                                            $bugupdatestoryversiondefault:Bug();
+                                    eval($bugupdatestoryversiondefault==bugupdatestoryversiondefault);
+                                eval(((RuleUtils.test($bugupdatestoryversiondefault.get("story"),"EQ","0"))||(RuleUtils.test($bugupdatestoryversiondefault.get("story"),"ISNULL",""))))
                                 ]]>
                             </conditionExpression>
                     </sequenceFlow>

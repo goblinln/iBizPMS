@@ -415,6 +415,12 @@
     "stdDataType" : 25,
     "stringLength" : 255
   }, {
+    "codeName" : "DeptName",
+    "logicName" : "归属部门名",
+    "name" : "DEPTNAME",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
     "codeName" : "Content",
     "logicName" : "文档正文",
     "name" : "CONTENT",
@@ -517,6 +523,12 @@
     "codeName" : "Url",
     "logicName" : "文档链接",
     "name" : "URL",
+    "stdDataType" : 25,
+    "stringLength" : 100
+  }, {
+    "codeName" : "OrgName",
+    "logicName" : "归属组织名",
+    "name" : "ORGNAME",
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
@@ -625,18 +637,6 @@
     "logicName" : "所属分类",
     "name" : "MODULE",
     "stdDataType" : 1
-  }, {
-    "codeName" : "DeptName",
-    "logicName" : "归属部门名",
-    "name" : "DEPTNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
-  }, {
-    "codeName" : "OrgName",
-    "logicName" : "归属组织名",
-    "name" : "ORGNAME",
-    "stdDataType" : 25,
-    "stringLength" : 100
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

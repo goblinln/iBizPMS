@@ -14,6 +14,7 @@ function getLocaleResourceBase(){
 		'org': commonLogic.appcommonhandle("归属组织",null),
 		'pri': commonLogic.appcommonhandle("优先级",null),
 		'comment': commonLogic.appcommonhandle("备注",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 		'createby': commonLogic.appcommonhandle("由谁创建",null),
 		'substatus': commonLogic.appcommonhandle("子状态",null),
 		'report': commonLogic.appcommonhandle("report",null),
@@ -23,6 +24,7 @@ function getLocaleResourceBase(){
 		'mailtoconact': commonLogic.appcommonhandle("联系人",null),
 		'owner': commonLogic.appcommonhandle("负责人",null),
 		'deleted': commonLogic.appcommonhandle("已删除",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 		'auto': commonLogic.appcommonhandle("auto",null),
 		'name': commonLogic.appcommonhandle("名称",null),
 		'buildname': commonLogic.appcommonhandle("版本",null),
@@ -31,8 +33,6 @@ function getLocaleResourceBase(){
 		'product': commonLogic.appcommonhandle("所属产品",null),
 		'build': commonLogic.appcommonhandle("版本",null),
 		'project': commonLogic.appcommonhandle("所属项目",null),
-		'deptname': commonLogic.appcommonhandle("归属部门名",null),
-		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 		views: {
 			'editview_edit': {

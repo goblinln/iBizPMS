@@ -12,6 +12,7 @@ export default {
     org: "归属组织",
     pri: "优先级",
     comment: "备注",
+    orgname: "归属组织名",
     createby: "由谁创建",
     substatus: "子状态",
     report: "report",
@@ -21,6 +22,7 @@ export default {
     mailtoconact: "联系人",
     owner: "负责人",
     deleted: "已删除",
+    deptname: "归属部门名",
     auto: "auto",
     name: "名称",
     buildname: "版本",
@@ -29,8 +31,6 @@ export default {
     product: "所属产品",
     build: "版本",
     project: "所属项目",
-    deptname: "归属部门名",
-    orgname: "归属组织名",
   },
 	views: {
 		moboptionviewclose: {

@@ -86,6 +86,10 @@ export abstract class IbzTaskestimateBase extends EntityBase implements IIbzTask
      */
     evaluationstatus?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 年（显示）
      */
     yearname?: any;
@@ -109,6 +113,10 @@ export abstract class IbzTaskestimateBase extends EntityBase implements IIbzTask
      * 日期
      */
     dates?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
     /**
      * 月
      */
@@ -153,14 +161,6 @@ export abstract class IbzTaskestimateBase extends EntityBase implements IIbzTask
      * 任务
      */
     task?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
 
     /**
      * 重置实体数据
