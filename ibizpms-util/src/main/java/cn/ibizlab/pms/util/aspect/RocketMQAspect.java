@@ -42,10 +42,10 @@ public class RocketMQAspect
     private String topic;
 
     @Around(value = "(execution(* cn.ibizlab.pms.core.*.service.IProductService.create*(..))||execution(* cn.ibizlab.pms.core.*.service.IProductService.update*(..)))")
-    public Object productDataPush(ProceedingJoinPoint point) throws Throwable{
+    public Object productProductPush(ProceedingJoinPoint point) throws Throwable{
         Object entity = getEntity(point);
         Object result = point.proceed();
-        sendMsg(topic, "datapush", entity);
+        sendMsg(topic, "productpush", entity);
         return result;
     }
 

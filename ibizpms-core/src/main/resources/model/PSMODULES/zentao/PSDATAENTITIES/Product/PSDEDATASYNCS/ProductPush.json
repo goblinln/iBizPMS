@@ -1,0 +1,14 @@
+{
+  "codeName" : "ProductPush",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEDATASYNCS/ProductPush.json",
+  "eventType" : 3,
+  "name" : "数据推送",
+  "getOutPSSysDataSyncAgent" : {
+    "modelref" : true,
+    "path" : "PSSYSDATASYNCAGENTS/DataPush.json"
+  },
+  "syncDir" : "OUT",
+  "syncTag" : "ProductPush",
+  "exportFull" : false,
+  "inMode" : false
+}

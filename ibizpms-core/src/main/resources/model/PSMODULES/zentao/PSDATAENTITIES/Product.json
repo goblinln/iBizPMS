@@ -609,8 +609,8 @@
     "enableFront" : true
   } ],
   "getAllPSDEDataSyncs" : [ {
-    "codeName" : "DataPush",
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEDATASYNCS/DataPush.json",
+    "codeName" : "ProductPush",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEDATASYNCS/ProductPush.json",
     "eventType" : 3,
     "name" : "数据推送",
     "getOutPSSysDataSyncAgent" : {
@@ -618,7 +618,7 @@
       "path" : "PSSYSDATASYNCAGENTS/DataPush.json"
     },
     "syncDir" : "OUT",
-    "syncTag" : "DataPush",
+    "syncTag" : "ProductPush",
     "exportFull" : false,
     "inMode" : false
   } ],
