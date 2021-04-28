@@ -3,6 +3,8 @@ import commonLogic from '@/locale/logic/common/common-logic';
 function getLocaleResourceBase(){
 	const data:any = {
 	fields: {
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 		'userlist': commonLogic.appcommonhandle("userList",null),
 		'org': commonLogic.appcommonhandle("归属组织",null),
 		'listname': commonLogic.appcommonhandle("标题",null),
@@ -10,8 +12,6 @@ function getLocaleResourceBase(){
 		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'dept': commonLogic.appcommonhandle("归属部门",null),
 		'account': commonLogic.appcommonhandle("account",null),
-		'deptname': commonLogic.appcommonhandle("归属部门名",null),
-		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 		views: {
 			'editview': {

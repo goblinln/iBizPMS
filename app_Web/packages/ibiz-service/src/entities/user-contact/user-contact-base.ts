@@ -34,6 +34,14 @@ export abstract class UserContactBase extends EntityBase implements IUserContact
         this.listname = val;
     }
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * userList
      */
     userlist?: any;
@@ -61,14 +69,6 @@ export abstract class UserContactBase extends EntityBase implements IUserContact
      * account
      */
     account?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 
     /**
      * 重置实体数据

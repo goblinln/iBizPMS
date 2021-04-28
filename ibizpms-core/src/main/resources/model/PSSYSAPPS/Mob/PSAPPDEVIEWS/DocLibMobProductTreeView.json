@@ -2228,7 +2228,7 @@
     } ],
     "getPSSysPFPlugin" : {
       "pluginType" : "TREE_RENDER",
-      "pluginCode" : "PFPlugin18"
+      "pluginCode" : "mobFileTree2"
     },
     "getRemovePSControlAction" : {
       "modelref" : true,

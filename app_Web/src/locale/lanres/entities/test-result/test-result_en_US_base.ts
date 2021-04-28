@@ -9,11 +9,13 @@ function getLocaleResourceBase(){
 		'dept': commonLogic.appcommonhandle("归属部门",null),
 		'stepresults': commonLogic.appcommonhandle("步骤结果",null),
 		'caseresult': commonLogic.appcommonhandle("测试结果",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'xml': commonLogic.appcommonhandle("结果文件",null),
 		'task': commonLogic.appcommonhandle("属性",null),
 		'duration': commonLogic.appcommonhandle("持续时间",null),
 		'date': commonLogic.appcommonhandle("测试时间",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 		'id': commonLogic.appcommonhandle("编号",null),
 		'version': commonLogic.appcommonhandle("用例版本",null),
 		'story': commonLogic.appcommonhandle("相关需求",null),
@@ -26,8 +28,6 @@ function getLocaleResourceBase(){
 		'ibizcase': commonLogic.appcommonhandle("用例",null),
 		'run': commonLogic.appcommonhandle("测试执行",null),
 		'compile': commonLogic.appcommonhandle("代码编译",null),
-		'deptname': commonLogic.appcommonhandle("归属部门名",null),
-		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 		views: {
 			'editview': {

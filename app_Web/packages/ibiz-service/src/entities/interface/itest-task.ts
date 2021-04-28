@@ -55,6 +55,10 @@ export interface ITestTask extends IEntityBase {
      */
     comment?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 由谁创建
      */
     createby?: any;
@@ -93,6 +97,10 @@ export interface ITestTask extends IEntityBase {
      */
     deleted?: any;
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * auto
      */
     auto?: any;
@@ -124,12 +132,4 @@ export interface ITestTask extends IEntityBase {
      * 所属项目
      */
     project?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 }

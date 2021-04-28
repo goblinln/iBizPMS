@@ -4,6 +4,7 @@ function getLocaleResourceBase(){
 	const data:any = {
 	fields: {
 		'groups': commonLogic.appcommonhandle("分组",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 		'content': commonLogic.appcommonhandle("文档正文",null),
 		'docqtype': commonLogic.appcommonhandle("文档查询类型",null),
 		'editeddate': commonLogic.appcommonhandle("更新时间",null),
@@ -22,6 +23,7 @@ function getLocaleResourceBase(){
 		'acl': commonLogic.appcommonhandle("权限",null),
 		'mydoccnt': commonLogic.appcommonhandle("我的文档数量",null),
 		'url': commonLogic.appcommonhandle("文档链接",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 		'doccnt': commonLogic.appcommonhandle("文档数",null),
 		'myfavouritecnt': commonLogic.appcommonhandle("我的收藏数量",null),
 		'users': commonLogic.appcommonhandle("用户",null),
@@ -41,8 +43,6 @@ function getLocaleResourceBase(){
 		'project': commonLogic.appcommonhandle("所属项目",null),
 		'product': commonLogic.appcommonhandle("所属产品",null),
 		'module': commonLogic.appcommonhandle("所属分类",null),
-		'deptname': commonLogic.appcommonhandle("归属部门名",null),
-		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 		views: {
 			'basiceditview9': {

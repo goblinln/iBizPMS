@@ -288,7 +288,7 @@
   } ],
   "getPSSysPFPlugin" : {
     "pluginType" : "LIST_ITEMRENDER",
-    "pluginCode" : "PFPlugin24"
+    "pluginCode" : "mobTestList2"
   },
   "pagingSize" : 1000,
   "getRemovePSControlAction" : {

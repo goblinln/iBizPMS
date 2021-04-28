@@ -1,4 +1,5 @@
 export default [
+    'deptname',
     'lastrunresult',
     'lastrundate',
     'org',
@@ -8,10 +9,9 @@ export default [
     'lastrunner',
     'status',
     'id',
+    'orgname',
     'createby',
     'version',
     'ibizcase',
     'task',
-    'deptname',
-    'orgname',
 ];

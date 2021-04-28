@@ -60,6 +60,10 @@ export abstract class TestResultBase extends EntityBase implements ITestResult {
      */
     caseresult?: 'n/a' | 'pass' | 'fail' | 'blocked';
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 由谁更新
      */
     updateby?: any;
@@ -79,6 +83,10 @@ export abstract class TestResultBase extends EntityBase implements ITestResult {
      * 测试时间
      */
     date?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
     /**
      * 编号
      */
@@ -127,14 +135,6 @@ export abstract class TestResultBase extends EntityBase implements ITestResult {
      * 代码编译
      */
     compile?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 
     /**
      * 重置实体数据

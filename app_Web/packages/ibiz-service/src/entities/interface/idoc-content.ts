@@ -43,6 +43,10 @@ export interface IDocContent extends IEntityBase {
      */
     title?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 版本号
      */
     version?: any;
@@ -51,6 +55,10 @@ export interface IDocContent extends IEntityBase {
      */
     digest?: any;
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * 由谁创建
      */
     createby?: any;
@@ -58,12 +66,4 @@ export interface IDocContent extends IEntityBase {
      * 文档
      */
     doc?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 }

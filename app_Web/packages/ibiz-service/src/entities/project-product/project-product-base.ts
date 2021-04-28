@@ -38,6 +38,10 @@ export abstract class ProjectProductBase extends EntityBase implements IProjectP
      */
     createby?: any;
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * 由谁更新
      */
     updateby?: any;
@@ -49,6 +53,14 @@ export abstract class ProjectProductBase extends EntityBase implements IProjectP
      * 归属部门
      */
     dept?: any;
+    /**
+     * 主键
+     */
+    id?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
     /**
      * 产品
      */
@@ -77,18 +89,6 @@ export abstract class ProjectProductBase extends EntityBase implements IProjectP
      * 项目
      */
     project?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 主键
-     */
-    id?: any;
 
     /**
      * 重置实体数据

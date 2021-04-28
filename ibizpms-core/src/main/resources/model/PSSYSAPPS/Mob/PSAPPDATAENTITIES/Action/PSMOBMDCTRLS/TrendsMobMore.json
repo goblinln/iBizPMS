@@ -257,7 +257,7 @@
   } ],
   "getPSSysPFPlugin" : {
     "pluginType" : "LIST_RENDER",
-    "pluginCode" : "PFPlugin21"
+    "pluginCode" : "mobAllDynamicList2"
   },
   "pagingSize" : 30,
   "getRemovePSControlAction" : {

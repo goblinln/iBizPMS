@@ -9,6 +9,10 @@ import { IEntityBase } from 'ibiz-core';
  */
 export interface ITestRun extends IEntityBase {
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * 结果
      *
      * @type {('n/a' | 'pass' | 'fail' | 'blocked')} n/a: 忽略, pass: 通过, fail: 失败, blocked: 阻塞
@@ -49,6 +53,10 @@ export interface ITestRun extends IEntityBase {
      */
     id?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 由谁创建
      */
     createby?: any;
@@ -64,12 +72,4 @@ export interface ITestRun extends IEntityBase {
      * 测试单
      */
     task?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 }

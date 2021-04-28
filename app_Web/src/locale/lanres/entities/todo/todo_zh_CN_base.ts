@@ -17,6 +17,7 @@ function getLocaleResourceBase(){
 		'desc': commonLogic.appcommonhandle("描述",null),
 		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'noticeusers': commonLogic.appcommonhandle("消息通知用户",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 		'org': commonLogic.appcommonhandle("归属组织",null),
 		'finishedby': commonLogic.appcommonhandle("由谁完成",null),
 		'begin': commonLogic.appcommonhandle("开始",null),
@@ -41,9 +42,8 @@ function getLocaleResourceBase(){
 		'date': commonLogic.appcommonhandle("日期",null),
 		'story': commonLogic.appcommonhandle("待办名称",null),
 		'ibizprivate': commonLogic.appcommonhandle("私人事务",null),
-		'config': commonLogic.appcommonhandle("config",null),
-		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 		'deptname': commonLogic.appcommonhandle("归属部门名",null),
+		'config': commonLogic.appcommonhandle("config",null),
 	},
 		views: {
 			'closeview': {

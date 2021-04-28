@@ -77,6 +77,10 @@ export interface ISubProductPlan extends IEntityBase {
      */
     plantemplet?: any;
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * 未完成任务数
      */
     unfinishedtaskscnt?: any;
@@ -98,6 +102,10 @@ export interface ISubProductPlan extends IEntityBase {
      * 是否过期
      */
     isexpired?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
     /**
      * 由谁更新
      */
@@ -162,12 +170,4 @@ export interface ISubProductPlan extends IEntityBase {
      * 产品
      */
     product?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
 }

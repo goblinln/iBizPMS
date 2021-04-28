@@ -21,6 +21,7 @@ function getLocaleResourceBase(){
 		'modulename1': commonLogic.appcommonhandle("模块名称",null),
 		'closedby': commonLogic.appcommonhandle("由谁关闭",null),
 		'browser': commonLogic.appcommonhandle("浏览器",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 		'noticeusers': commonLogic.appcommonhandle("消息通知用户",null),
 		'steps': commonLogic.appcommonhandle("重现步骤",null),
 		'v2': commonLogic.appcommonhandle("v2",null),
@@ -53,6 +54,7 @@ function getLocaleResourceBase(){
 		'delay': commonLogic.appcommonhandle("延期",null),
 		'found': commonLogic.appcommonhandle("found",null),
 		'resolvedby': commonLogic.appcommonhandle("解决者",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 		'resolvedbuild': commonLogic.appcommonhandle("解决版本",null),
 		'pri': commonLogic.appcommonhandle("优先级",null),
 		'os': commonLogic.appcommonhandle("操作系统",null),
@@ -82,8 +84,6 @@ function getLocaleResourceBase(){
 		'project': commonLogic.appcommonhandle("所属项目",null),
 		'task': commonLogic.appcommonhandle("相关任务",null),
 		'testtask': commonLogic.appcommonhandle("测试单",null),
-		'deptname': commonLogic.appcommonhandle("归属部门名",null),
-		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 		views: {
 			'testbugsgridview': {

@@ -34,6 +34,10 @@ export abstract class TestRunBase extends EntityBase implements ITestRun {
         this.id = val;
     }
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * 结果
      *
      * @type {('n/a' | 'pass' | 'fail' | 'blocked')} n/a: 忽略, pass: 通过, fail: 失败, blocked: 阻塞
@@ -74,6 +78,10 @@ export abstract class TestRunBase extends EntityBase implements ITestRun {
      */
     id?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 由谁创建
      */
     createby?: any;
@@ -89,14 +97,6 @@ export abstract class TestRunBase extends EntityBase implements ITestRun {
      * 测试单
      */
     task?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 
     /**
      * 重置实体数据

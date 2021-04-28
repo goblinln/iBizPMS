@@ -13,6 +13,7 @@ export default [
     'desc',
     'updateby',
     'noticeusers',
+    'orgname',
     'org',
     'finishedby',
     'begin',
@@ -37,7 +38,6 @@ export default [
     'date',
     'story',
     'ibizprivate',
-    'config',
-    'orgname',
     'deptname',
+    'config',
 ];

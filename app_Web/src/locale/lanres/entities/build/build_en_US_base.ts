@@ -17,7 +17,9 @@ function getLocaleResourceBase(){
 		'desc': commonLogic.appcommonhandle("描述",null),
 		'id': commonLogic.appcommonhandle("id",null),
 		'deleted': commonLogic.appcommonhandle("已删除",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 		'sqlid': commonLogic.appcommonhandle("运行数据库",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 		'scmpath': commonLogic.appcommonhandle("源代码地址",null),
 		'filepath': commonLogic.appcommonhandle("下载地址",null),
 		'createbugcnt': commonLogic.appcommonhandle("产生的bug",null),
@@ -31,8 +33,6 @@ function getLocaleResourceBase(){
 		'product': commonLogic.appcommonhandle("产品",null),
 		'branch': commonLogic.appcommonhandle("平台/分支",null),
 		'project': commonLogic.appcommonhandle("所属项目",null),
-		'deptname': commonLogic.appcommonhandle("归属部门名",null),
-		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 		views: {
 			'maingridview': {

@@ -16,7 +16,7 @@ import { AppChartBase } from 'ibiz-vue';
 @VueLifeCycleProcessing()
 export class NEW extends AppChartBase {
 
-
+//
 
 }
 

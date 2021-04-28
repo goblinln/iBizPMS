@@ -1,4 +1,5 @@
 export default [
+    'orgname',
     'diff',
     'field',
     'ibiznew',
@@ -7,8 +8,7 @@ export default [
     'old',
     'dept',
     'updateby',
+    'deptname',
     'id',
     'action',
-    'deptname',
-    'orgname',
 ];

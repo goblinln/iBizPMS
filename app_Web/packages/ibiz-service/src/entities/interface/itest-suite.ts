@@ -9,6 +9,10 @@ import { IEntityBase } from 'ibiz-core';
  */
 export interface ITestSuite extends IEntityBase {
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * 归属部门
      */
     dept?: any;
@@ -20,6 +24,10 @@ export interface ITestSuite extends IEntityBase {
      * 名称
      */
     name?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
     /**
      * 创建时间
      */
@@ -62,12 +70,4 @@ export interface ITestSuite extends IEntityBase {
      * 所属产品
      */
     product?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 }

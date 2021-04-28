@@ -3,6 +3,8 @@ export default [
     'dept',
     'reals',
     'steps',
+    'orgname',
+    'deptname',
     'type',
     'createby',
     'id',
@@ -15,6 +17,4 @@ export default [
     'version',
     'ibizcase',
     'parent',
-    'deptname',
-    'orgname',
 ];

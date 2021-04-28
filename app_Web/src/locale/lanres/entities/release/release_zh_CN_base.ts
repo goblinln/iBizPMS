@@ -21,6 +21,8 @@ function getLocaleResourceBase(){
 		'backgroundid': commonLogic.appcommonhandle("后台体系",null),
 		'desc': commonLogic.appcommonhandle("描述",null),
 		'files': commonLogic.appcommonhandle("附件",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'frontapplication': commonLogic.appcommonhandle("系统应用",null),
 		'dept': commonLogic.appcommonhandle("归属部门",null),
@@ -32,8 +34,6 @@ function getLocaleResourceBase(){
 		'product': commonLogic.appcommonhandle("产品",null),
 		'build': commonLogic.appcommonhandle("版本",null),
 		'branch': commonLogic.appcommonhandle("平台/分支",null),
-		'orgname': commonLogic.appcommonhandle("归属组织名",null),
-		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 	},
 		views: {
 			'quickcreateview': {

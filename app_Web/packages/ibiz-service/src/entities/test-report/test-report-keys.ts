@@ -1,5 +1,6 @@
 export default [
     'productcnt',
+    'deptname',
     'overviews',
     'objectid',
     'cases',
@@ -17,6 +18,7 @@ export default [
     'org',
     'end',
     'builds',
+    'orgname',
     'dept',
     'createddate',
     'report',
@@ -27,6 +29,4 @@ export default [
     'productname',
     'product',
     'project',
-    'deptname',
-    'orgname',
 ];

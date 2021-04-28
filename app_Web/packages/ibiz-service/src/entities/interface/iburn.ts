@@ -21,9 +21,17 @@ export interface IBurn extends IEntityBase {
      */
     updateby?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 归属部门
      */
     dept?: any;
+    /**
+     * 归属部门名
+     */
+    deptname?: any;
     /**
      * 日期
      */
@@ -32,6 +40,10 @@ export interface IBurn extends IEntityBase {
      * 归属组织
      */
     org?: any;
+    /**
+     * 主键
+     */
+    id?: any;
     /**
      * 总计消耗
      */
@@ -52,16 +64,4 @@ export interface IBurn extends IEntityBase {
      * 任务
      */
     task?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 主键
-     */
-    id?: any;
 }

@@ -20,11 +20,13 @@ function getLocaleResourceBase(){
 		'beginstr': commonLogic.appcommonhandle("开始日期",null),
 		'leftestimate': commonLogic.appcommonhandle("剩余工时",null),
 		'plantemplet': commonLogic.appcommonhandle("计划模板",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 		'unfinishedtaskscnt': commonLogic.appcommonhandle("未完成任务数",null),
 		'endstr': commonLogic.appcommonhandle("结束日期",null),
 		'createby': commonLogic.appcommonhandle("由谁创建",null),
 		'status': commonLogic.appcommonhandle("计划状态",null),
 		'isexpired': commonLogic.appcommonhandle("是否过期",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'deleted': commonLogic.appcommonhandle("已删除",null),
 		'consumedestimate': commonLogic.appcommonhandle("消耗工时",null),
@@ -40,8 +42,6 @@ function getLocaleResourceBase(){
 		'branch': commonLogic.appcommonhandle("平台/分支",null),
 		'parent': commonLogic.appcommonhandle("父计划",null),
 		'product': commonLogic.appcommonhandle("产品",null),
-		'orgname': commonLogic.appcommonhandle("归属组织名",null),
-		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 	},
 		views: {
 			'subplaneditview': {

@@ -80,6 +80,10 @@ export abstract class TestTaskBase extends EntityBase implements ITestTask {
      */
     comment?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 由谁创建
      */
     createby?: any;
@@ -118,6 +122,10 @@ export abstract class TestTaskBase extends EntityBase implements ITestTask {
      */
     deleted?: any;
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * auto
      */
     auto?: any;
@@ -149,14 +157,6 @@ export abstract class TestTaskBase extends EntityBase implements ITestTask {
      * 所属项目
      */
     project?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 
     /**
      * 重置实体数据

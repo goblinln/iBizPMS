@@ -4,6 +4,7 @@ function getLocaleResourceBase(){
 	const data:any = {
 	fields: {
 		'root': commonLogic.appcommonhandle("所属根",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 		'grade': commonLogic.appcommonhandle("级别",null),
 		'type': commonLogic.appcommonhandle("类型",null),
 		'name': commonLogic.appcommonhandle("模块名称",null),
@@ -12,6 +13,7 @@ function getLocaleResourceBase(){
 		'id': commonLogic.appcommonhandle("id",null),
 		'orderpk': commonLogic.appcommonhandle("数据选择排序",null),
 		'createby': commonLogic.appcommonhandle("由谁创建",null),
+		'mdeptname': commonLogic.appcommonhandle("归属部门名",null),
 		'collector': commonLogic.appcommonhandle("收藏者",null),
 		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'ibizshort': commonLogic.appcommonhandle("简称",null),
@@ -22,8 +24,6 @@ function getLocaleResourceBase(){
 		'parentname': commonLogic.appcommonhandle("上级模块",null),
 		'branch': commonLogic.appcommonhandle("平台/分支",null),
 		'parent': commonLogic.appcommonhandle("上级模块",null),
-		'orgname': commonLogic.appcommonhandle("归属组织名",null),
-		'mdeptname': commonLogic.appcommonhandle("归属部门名",null),
 	},
 		views: {
 			'linegridview': {

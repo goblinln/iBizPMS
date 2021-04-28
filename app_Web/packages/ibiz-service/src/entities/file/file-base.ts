@@ -76,6 +76,10 @@ export abstract class FileBase extends EntityBase implements IFile {
      */
     title?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 由谁更新
      */
     updateby?: any;
@@ -96,6 +100,10 @@ export abstract class FileBase extends EntityBase implements IFile {
      */
     size?: any;
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * id
      */
     id?: any;
@@ -103,14 +111,6 @@ export abstract class FileBase extends EntityBase implements IFile {
      * 备注
      */
     extra?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
 
     /**
      * 重置实体数据

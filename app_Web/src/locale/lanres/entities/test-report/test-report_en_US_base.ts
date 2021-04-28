@@ -4,6 +4,7 @@ function getLocaleResourceBase(){
 	const data:any = {
 	fields: {
 		'productcnt': commonLogic.appcommonhandle("项目报告产品数",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 		'overviews': commonLogic.appcommonhandle("概况",null),
 		'objectid': commonLogic.appcommonhandle("所属对象",null),
 		'cases': commonLogic.appcommonhandle("用例",null),
@@ -21,6 +22,7 @@ function getLocaleResourceBase(){
 		'org': commonLogic.appcommonhandle("归属组织",null),
 		'end': commonLogic.appcommonhandle("结束时间",null),
 		'builds': commonLogic.appcommonhandle("版本信息",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 		'dept': commonLogic.appcommonhandle("归属部门",null),
 		'createddate': commonLogic.appcommonhandle("创建时间",null),
 		'report': commonLogic.appcommonhandle("总结",null),
@@ -31,8 +33,6 @@ function getLocaleResourceBase(){
 		'productname': commonLogic.appcommonhandle("所属产品",null),
 		'product': commonLogic.appcommonhandle("所属产品",null),
 		'project': commonLogic.appcommonhandle("所属项目",null),
-		'deptname': commonLogic.appcommonhandle("归属部门名",null),
-		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 		views: {
 			'projectgridview': {

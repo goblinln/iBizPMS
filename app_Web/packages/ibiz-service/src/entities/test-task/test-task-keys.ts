@@ -10,6 +10,7 @@ export default [
     'org',
     'pri',
     'comment',
+    'orgname',
     'createby',
     'substatus',
     'report',
@@ -19,6 +20,7 @@ export default [
     'mailtoconact',
     'owner',
     'deleted',
+    'deptname',
     'auto',
     'name',
     'buildname',
@@ -27,6 +29,4 @@ export default [
     'product',
     'build',
     'project',
-    'deptname',
-    'orgname',
 ];

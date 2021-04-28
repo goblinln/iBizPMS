@@ -7,6 +7,8 @@ function getLocaleResourceBase(){
 		'dept': commonLogic.appcommonhandle("归属部门",null),
 		'reals': commonLogic.appcommonhandle("实际情况",null),
 		'steps': commonLogic.appcommonhandle("测试结果",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
+		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 		'type': commonLogic.appcommonhandle("用例步骤类型",null),
 		'createby': commonLogic.appcommonhandle("由谁创建",null),
 		'id': commonLogic.appcommonhandle("编号",null),
@@ -19,8 +21,6 @@ function getLocaleResourceBase(){
 		'version': commonLogic.appcommonhandle("用例版本",null),
 		'ibizcase': commonLogic.appcommonhandle("用例",null),
 		'parent': commonLogic.appcommonhandle("分组用例步骤的组编号",null),
-		'deptname': commonLogic.appcommonhandle("归属部门名",null),
-		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 		views: {
 			'carryouteditmode': {

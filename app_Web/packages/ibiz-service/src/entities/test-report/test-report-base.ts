@@ -38,6 +38,10 @@ export abstract class TestReportBase extends EntityBase implements ITestReport {
      */
     productcnt?: any;
     /**
+     * 归属部门名
+     */
+    deptname?: any;
+    /**
      * 概况
      */
     overviews?: any;
@@ -108,6 +112,10 @@ export abstract class TestReportBase extends EntityBase implements ITestReport {
      */
     builds?: any;
     /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
      * 归属部门
      */
     dept?: any;
@@ -147,14 +155,6 @@ export abstract class TestReportBase extends EntityBase implements ITestReport {
      * 所属项目
      */
     project?: any;
-    /**
-     * 归属部门名
-     */
-    deptname?: any;
-    /**
-     * 归属组织名
-     */
-    orgname?: any;
 
     /**
      * 重置实体数据
