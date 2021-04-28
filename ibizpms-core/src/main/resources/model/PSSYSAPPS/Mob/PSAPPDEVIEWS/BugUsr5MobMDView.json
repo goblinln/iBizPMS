@@ -1029,19 +1029,6 @@
     "showHeader" : true,
     "name" : "mdctrl",
     "modelid" : "05ffa34f975db44e42e996304004f0f5"
-  }, {
-    "codeName" : "Usr5MobMDViewrighttoolbar",
-    "controlType" : "TOOLBAR",
-    "name" : "righttoolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
-    },
-    "getPSControlParam" : {
-      "id" : "RIGHTTOOLBAR"
-    },
-    "toolbarStyle" : "MOBNAVRIGHTMENU",
-    "modelid" : "6c04afb3ad25be916fb58cab0f83ec05_righttoolbar"
   } ],
   "getPSDEViewCodeName" : "Usr5MobMDView",
   "getPSSysImage" : {
