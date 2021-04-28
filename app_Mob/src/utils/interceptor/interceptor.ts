@@ -3,7 +3,8 @@ import axios from 'axios';
 import Router from 'vue-router';
 import i18n from '@/locale';
 import ignoreProxyMap from './ignore-proxy';
-import { Http} from 'ibiz-core';
+import { Http, getSessionStorage } from 'ibiz-core';
+import { Environment } from '@/environments/environment';
 /**
  * 拦截器
  *
@@ -86,6 +87,12 @@ export class Interceptors {
             if (window.localStorage.getItem('token')) {
                 const token = window.localStorage.getItem('token');
                 config.headers.Authorization = `Bearer ${token}`;
+            }
+            if (Environment.SaaSMode) {
+                let activeOrgData = getSessionStorage('activeOrgData');
+                let tempOrgId = getSessionStorage("tempOrgId");
+                config.headers['srforgid'] = tempOrgId ? tempOrgId : activeOrgData?.orgid;
+                config.headers['srfsystemid'] = activeOrgData?.systemid;
             }
             config.headers['Accept-Language'] = i18n.locale;
 

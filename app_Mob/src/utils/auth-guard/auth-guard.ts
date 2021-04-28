@@ -1,7 +1,7 @@
 import { Environment } from '@/environments/environment';
 import i18n from '@/locale';
 import { DynamicInstanceConfig, GlobalHelp } from '@ibiz/dynamic-model-api';
-import { AppServiceBase, Http, AppModelService } from 'ibiz-core';
+import { AppServiceBase, Http,setSessionStorage,getSessionStorage, AppModelService } from 'ibiz-core';
 import { AppCenterService } from 'ibiz-vue';
 import qs from 'qs';
 
@@ -78,33 +78,38 @@ export class AuthGuard {
      * @memberof AuthGuard
      */
     public getOrgsByDcsystem(router: any): Promise<boolean> {
-        return new Promise((resolve: any, reject: any) => {
+        return new Promise((resolve: any) => {
             let tempViewParam = this.hanldeViewParam(window.location.href);
             if (!tempViewParam.srfdcsystem) {
                 if (!tempViewParam.redirect) {
-                    console.error('未获取到租户数据标识');
-                    resolve(false);
+                    if (getSessionStorage('dcsystem')) {
+                        tempViewParam = getSessionStorage('dcsystem');
+                    }
                 } else {
                     tempViewParam = this.hanldeViewParam(tempViewParam.redirect);
                 }
             }
-            let requestUrl: string = `/uaa/getbydcsystem/${tempViewParam.srfdcsystem}`;
-            const get: Promise<any> = Http.getInstance().get(requestUrl);
-            get.then((response: any) => {
-                if (response && response.status === 200) {
-                    let { data }: { data: any } = response;
-                    if (data && data.length > 0) {
-                        router.app.$store.commit('addOrgsData', data);
-                        router.app.$store.commit('setActiveOrgData', data[0]);
+            if (tempViewParam.srfdcsystem) {
+                setSessionStorage('dcsystem', tempViewParam);
+                let requestUrl: string = `/uaa/getbydcsystem/${tempViewParam.srfdcsystem}`;
+                const get: Promise<any> = Http.getInstance().get(requestUrl);
+                get.then((response: any) => {
+                    if (response && response.status === 200) {
+                        let { data }: { data: any } = response;
+                        if (data && data.length > 0) {
+                            setSessionStorage('orgsData', data);
+                            setSessionStorage('activeOrgData', data[0]);
+                        }
+                        resolve(true);
+                    } else {
+                        resolve(false);
                     }
-                    resolve(true);
-                } else {
+                }).catch(() => {
                     resolve(false);
-                }
-            }).catch((error: any) => {
+                });
+            } else {
                 resolve(false);
-                console.error('通过租户获取组织数据出现异常');
-            });
+            }
         });
     }
 
