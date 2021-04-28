@@ -22,12 +22,12 @@ spec:
         image: registry.cn-shanghai.aliyuncs.com/ibizsys/ibizpms-app-web:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 34011
+        - containerPort: 33011
         env:
         - name: SPRING_CLOUD_NACOS_DISCOVERY_IP
           value: "172.16.240.110"      
         - name: SERVER_PORT
-          value: "34011"
+          value: "33011"
         - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR
           value: "172.16.240.110:8850"
         - name: SPRING_REDIS_HOST
@@ -46,8 +46,18 @@ spec:
           value: "com.mysql.jdbc.Driver"
         - name: SPRING_DATASOURCE_DEFAULTSCHEMA
           value: "a_A_23e8aa361"
+        - name: REMOTEDYNAPATH
+          value: "/dynamodel"      
+        - name: ZUUL_ROUTES_DYNAMODEL_STRIPPREFIX
+          value: "true"      
+        - name: BDYNAMIC
+          value: "true"      
         - name: ZUUL_ROUTES_IBZEMP_SERVICEID
           value: "ibizpms-webapi"      
+        - name: ZUUL_ROUTES_DYNAMODEL_PATH
+          value: "/dynamodel/**"      
+        - name: ZUUL_ROUTES_DYNAMODEL_URL
+          value: "http://172.16.170.145"      
         - name: CAS
           value: "https://passport.ibizlab.cn"      
         - name: NACOS
@@ -70,9 +80,9 @@ spec:
   type: NodePort
   ports:
   - name: http
-    port: 34011
-    targetPort: 34011
-    nodePort: 34011
+    port: 33011
+    targetPort: 33011
+    nodePort: 33011
     protocol: TCP
   selector:
     app: ibizpms-app-web

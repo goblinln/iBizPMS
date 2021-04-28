@@ -85,7 +85,7 @@ export class AppMenuModel {
         Object.assign(appMenuItem, { getPSSysImage: menuItem.getPSSysImage() });
         Object.assign(appMenuItem, { getPSSysCss: menuItem.getPSSysCss() });
         Object.assign(appMenuItem, { getPSAppFunc: menuItem.getPSAppFunc() });
-        Object.assign(appMenuItem, { resourcetag: menuItem.accessKey });
+        Object.assign(appMenuItem, { accessKey: menuItem.accessKey });
         Object.assign(appMenuItem, { getPSNavigateContexts: menuItem.getPSNavigateContexts() });
         if (menuItem.getPSAppMenuItems()) {
             let childMenus: Array<any> = [];

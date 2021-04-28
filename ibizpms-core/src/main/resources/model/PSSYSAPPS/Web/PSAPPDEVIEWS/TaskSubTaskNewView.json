@@ -253,7 +253,7 @@
         "name" : "fetch",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FetchChildTask"
+          "id" : "ChildTask"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
