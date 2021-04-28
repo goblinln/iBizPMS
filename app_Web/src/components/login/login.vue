@@ -218,6 +218,7 @@ export default class Login extends Vue {
         let leftTime = new Date();
         leftTime.setTime(leftTime.getSeconds() - 1000);
         document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
+        document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();
         const form: any = this.$refs.loginForm;
         let validatestate: boolean = true;
         form.validate((valid: boolean) => {
@@ -240,7 +241,7 @@ export default class Login extends Vue {
                     Util.setCookie('ibzuaa-token',data.token,7);
                 }
                 if(data && data.user){
-                    localStorage.setItem('user', JSON.stringify(data.user));
+                    Util.setCookie('ibzuaa-user',JSON.stringify(data.user),7);
                 }
                 // 设置cookie,保存账号密码7天
                 Util.setCookie("loginname",loginname, 7);

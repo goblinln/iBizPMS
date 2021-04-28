@@ -22,7 +22,7 @@
 import { Vue, Component } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
 import { Environment } from '@/environments/environment';
-import { removeSessionStorage } from 'ibiz-core';
+import { removeSessionStorage, Util } from 'ibiz-core';
 @Component({
 })
 export default class AppUser extends Vue {
@@ -77,8 +77,8 @@ export default class AppUser extends Vue {
                 _user.avatar = this.$store.getters.getAppData().context.srfusericonpath;
             }
         }
-        if(localStorage.getItem("user")){
-            let user:any = JSON.parse(localStorage.getItem("user") as string);
+        if(Util.getCookie('ibzuaa-user')){
+            let user:any = JSON.parse(Util.getCookie('ibzuaa-user') as string);
             if(user && user.personname){
                 _user.name = user.personname;
             }
@@ -102,6 +102,7 @@ export default class AppUser extends Vue {
                 let leftTime = new Date();
                 leftTime.setTime(leftTime.getSeconds() - 1);
                 document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
+                document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();
                 removeSessionStorage("activeOrgData");
                 removeSessionStorage("tempOrgId");
                 removeSessionStorage("dcsystem");

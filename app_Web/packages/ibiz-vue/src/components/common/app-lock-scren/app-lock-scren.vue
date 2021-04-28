@@ -25,6 +25,7 @@
     </div>
 </template>
 <script lang = 'ts'>
+import { Util } from 'ibiz-core';
 import { Vue, Component, Prop, Model, Watch } from 'vue-property-decorator';
 
 @Component({})
@@ -80,8 +81,8 @@ export default class AppLockScren extends Vue{
         if(this.$store.getters.getAppData() && this.$store.getters.getAppData().context && this.$store.getters.getAppData().context.srfusername){
             _user.name = this.$store.getters.getAppData().context.srfusername;
         }
-        if(localStorage.getItem("user")){
-            let user:any = JSON.parse(localStorage.getItem("user") as string);
+        if(Util.getCookie('ibzuaa-user')){
+            let user:any = JSON.parse(Util.getCookie('ibzuaa-user') as string);
             if(user && user.personname){
                 _user.name = user.personname;
             }

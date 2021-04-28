@@ -22,7 +22,7 @@
   </div>
 </template>
 <script lang = 'ts'>
-import { AppServiceBase, getSessionStorage, Http, setSessionStorage } from 'ibiz-core';
+import { AppServiceBase, getSessionStorage, Http, setSessionStorage, Util } from 'ibiz-core';
 import { Vue, Component, Inject } from "vue-property-decorator";
 
 @Component({})
@@ -186,8 +186,8 @@ export default class AppOrgSector extends Vue {
                   let { data }: { data: any } = response;
                   if (data) {
                       // token认证把用户信息放入应用级数据
-                      if (localStorage.getItem('user')) {
-                          let user: any = JSON.parse(localStorage.getItem('user') as string);
+                      if (Util.getCookie('ibzuaa-user')) {
+                          let user: any = JSON.parse(Util.getCookie('ibzuaa-user') as string);
                           let localAppData: any = {};
                           if (user.sessionParams) {
                               localAppData = { context: user.sessionParams };

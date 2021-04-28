@@ -3,7 +3,15 @@
         <template v-if="sdc.isShowTool">
             <div class="studio-config-preview">
                 <div class="preview-container">
-                    <div :class="{ 'title': true, 'is-expand': isExpand }" v-popover="`popover-${viewInstance.codeName}`" @click="() => { this.showDetails = !this.showDetails; }">
+                    <div
+                        :class="{ title: true, 'is-expand': isExpand }"
+                        v-popover="`popover-${viewInstance.codeName}`"
+                        @click="
+                            () => {
+                                this.showDetails = !this.showDetails;
+                            }
+                        "
+                    >
                         <span>{{ viewTitle }}</span>
                         <i class="el-icon-arrow-right" />
                     </div>
@@ -23,7 +31,8 @@
                     :ref="`popover-${viewInstance.codeName}`"
                     placement="left"
                     v-model="isExpand"
-                    popper-class="studio-config-details">
+                    popper-class="studio-config-details"
+                >
                     <div class="details-container" @dblclick="onDBClick">
                         <div class="view-details">
                             <div class="message view-message"><span class="info">视图信息</span></div>
@@ -44,32 +53,54 @@
                             </div>
                         </div>
                         <div class="control-details">
-                            <div class="message control-message" @click="() => { if (this.viewControls && this.viewControls.length > 0) this.showControlMessage = !this.showControlMessage; }">
+                            <div
+                                class="message control-message"
+                                @click="
+                                    () => {
+                                        if (this.viewControls && this.viewControls.length > 0)
+                                            this.showControlMessage = !this.showControlMessage;
+                                    }
+                                "
+                            >
                                 <span class="info">部件信息</span>
-                                <i :class="showControlMessage ? 'el-icon-arrow-down' : 'el-icon-arrow-right' " />
+                                <i :class="showControlMessage ? 'el-icon-arrow-down' : 'el-icon-arrow-right'" />
                             </div>
                             <template v-if="showControlMessage">
-                                <template v-for="(control, index) in viewControls" >
-                                    <div :key="index" class="title control-title">
+                                <template v-for="(control, index) in viewControls">
+                                    <div :key="index + 'title'" class="title control-title">
                                         标题：<span class="info copy-info">{{ control.logicName }}</span>
                                     </div>
-                                    <div :key="index" class="codename conctrol-codename">
+                                    <div :key="index + 'key'" class="codename conctrol-codename">
                                         标识：<span class="info copy-info">{{ control.codeName }}</span>
                                     </div>
-                                    <div :key="index" class="control-type">
+                                    <div :key="index + 'type'" class="control-type">
                                         类型：<span class="info copy-info">{{ control.controlType }}</span>
                                     </div>
-                                    <button :key="index" class="open-config" @click="gotoCtrlModel(control)">
+                                    <button :key="index + 'view'" class="open-config" @click="gotoCtrlModel(control)">
                                         <span class="info">查看配置</span>
                                     </button>
-                                    <div :key="index" v-if="index != viewControls.length - 1" class="control-split"></div>
+                                    <div
+                                        :key="index"
+                                        v-if="index != viewControls.length - 1"
+                                        class="control-split"
+                                    ></div>
                                 </template>
                             </template>
                         </div>
                         <div class="view-context">
-                            <div class="message" @click="() => { if (Object.keys(this.context).length > 0) this.showContext = !this.showContext; }">
+                            <div
+                                class="message"
+                                @click="
+                                    () => {
+                                        if (Object.keys(this.context).length > 0) this.showContext = !this.showContext;
+                                    }
+                                "
+                            >
                                 <span class="info">应用上下文</span>
-                                <i v-if="Object.keys(context).length > 0" :class="showContext ? 'el-icon-arrow-down' : 'el-icon-arrow-right' " />
+                                <i
+                                    v-if="Object.keys(context).length > 0"
+                                    :class="showContext ? 'el-icon-arrow-down' : 'el-icon-arrow-right'"
+                                />
                             </div>
                             <div v-if="showContext" class="content">
                                 <div class="context-item" v-for="(key, index) in Object.keys(context)" :key="index">
@@ -79,12 +110,27 @@
                             </div>
                         </div>
                         <div class="view-viewparams">
-                            <div class="message" @click="() => { if (Object.keys(this.viewparams).length > 0) this.showViewprams = !this.showViewprams; }">
+                            <div
+                                class="message"
+                                @click="
+                                    () => {
+                                        if (Object.keys(this.viewparams).length > 0)
+                                            this.showViewprams = !this.showViewprams;
+                                    }
+                                "
+                            >
                                 <span class="info">视图参数</span>
-                                <i v-if="Object.keys(viewparams).length > 0" :class="showViewprams ? 'el-icon-arrow-down' : 'el-icon-arrow-right' " />
+                                <i
+                                    v-if="Object.keys(viewparams).length > 0"
+                                    :class="showViewprams ? 'el-icon-arrow-down' : 'el-icon-arrow-right'"
+                                />
                             </div>
                             <div v-if="showViewprams" class="content">
-                                <div class="viewparams-item" v-for="(key, index) in Object.keys(viewparams)" :key="index">
+                                <div
+                                    class="viewparams-item"
+                                    v-for="(key, index) in Object.keys(viewparams)"
+                                    :key="index"
+                                >
                                     <span class="copy-info" title="双击复制">{{ key }}</span> :
                                     <span class="copy-info" title="双击复制">{{ viewparams[key] }}</span>
                                 </div>
@@ -98,12 +144,11 @@
 </template>
 <script lang="ts">
 import { Vue, Component, Inject, Prop } from 'vue-property-decorator';
-import { AppServiceBase, StudioActionUtil } from 'ibiz-core';
+import { AppModelService, AppServiceBase, GetModelService, StudioActionUtil } from 'ibiz-core';
 import { AppDesign, AppDrawer } from 'ibiz-vue';
 
 @Component({})
 export default class AppStudioAction extends Vue {
-
     /**
      * 视图标题
      *
@@ -234,7 +279,7 @@ export default class AppStudioAction extends Vue {
      * @memberof AppStudioAction
      */
     protected configView(): void {
-        this.sdc.openStudioConfigView(this.viewName);
+        // this.sdc.openStudioConfigView(this.viewName);
     }
 
     /**
@@ -244,18 +289,17 @@ export default class AppStudioAction extends Vue {
      * @memberof AppStudioAction
      */
     protected showViewModel(): void {
-        let dynamicProps: any = {};
-        if (this.context && this.context.srfdynainstid) {
-            Object.assign(dynamicProps, { srfdynainstid: this.context.srfdynainstid });
-        } else {
-            const appStore: any = AppServiceBase.getInstance().getAppStore();
-            let standDynaInstId: string = appStore.getters['authresource/getStandDynainstid'];
-            Object.assign(dynamicProps, { srfdynainstid: standDynaInstId });
-        }
-        Object.assign(dynamicProps, { objectid: this.viewInstance.dynaModelFilePath });
-        this.appDesign.openDrawer({ dynamicProps: dynamicProps }).subscribe((result: any) => {
-            console.log(result);
-        });
+        // GetModelService(this.context).then((modelService: AppModelService) => {
+        //     if (modelService) {
+        //         let dynamicProps: any = {};
+        //         let dynamicInstanceConfig: DynamicInstanceConfig = modelService.getDynaInsConfig();
+        //         Object.assign(dynamicProps, { srfdynainstid: dynamicInstanceConfig?.id });
+        //         Object.assign(dynamicProps, { objectid: this.viewInstance.dynaModelFilePath });
+        //         this.appDesign.openDrawer({ dynamicProps: dynamicProps }).subscribe((result: any) => {
+        //             console.log(result);
+        //         });
+        //     }
+        // });
     }
 
     /**
@@ -265,18 +309,19 @@ export default class AppStudioAction extends Vue {
      * @memberof AppStudioAction
      */
     protected gotoCtrlModel(data: any): void {
-        let dynamicProps: any = {};
-        if (this.context && this.context.srfdynainstid) {
-            Object.assign(dynamicProps, { srfdynainstid: this.context.srfdynainstid });
-        } else {
-            const appStore: any = AppServiceBase.getInstance().getAppStore();
-            let standDynaInstId: string = appStore.getters['authresource/getStandDynainstid'];
-            Object.assign(dynamicProps, { srfdynainstid: standDynaInstId });
-        }
-        const appEnvironment: any = AppServiceBase.getInstance().getAppEnvironment();
-        window.open(
-            `${appEnvironment.configDynaPath}?tooltype=${data?.controlType}&dynainst=${dynamicProps.srfdynainstid}&id=${data.modelid}`
-        );
+        GetModelService(this.context).then((modelService: AppModelService) => {
+            if (modelService) {
+                let dynamicInstanceId: string = modelService.app.M.getPSDynaInstId;
+                if (dynamicInstanceId) {
+                    const appEnvironment: any = AppServiceBase.getInstance().getAppEnvironment();
+                    window.open(
+                        `${appEnvironment.configDynaPath}?tooltype=${data?.controlType}&dynainst=${dynamicInstanceId}&id=${data.M?.modelid}`,
+                    );
+                } else {
+                    this.$Notice.info('线下模式不支持跳转动态设计工具');
+                }
+            }
+        });
     }
 
     /**
@@ -300,7 +345,12 @@ export default class AppStudioAction extends Vue {
      * @memberof AppStudioAction
      */
     public onDBClick(event: any) {
-        if (event && event.target && event.target.nodeName == 'SPAN' && event.target.className.indexOf('copy-info') !== -1) {
+        if (
+            event &&
+            event.target &&
+            event.target.nodeName == 'SPAN' &&
+            event.target.className.indexOf('copy-info') !== -1
+        ) {
             const value: any = event.target.innerHTML;
             if (value) {
                 try {

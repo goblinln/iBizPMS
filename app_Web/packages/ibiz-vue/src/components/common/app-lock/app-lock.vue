@@ -96,6 +96,7 @@ export default class AppLockIndex extends Vue{
                     let leftTime = new Date();
                     leftTime.setTime(leftTime.getSeconds() - 1);
                     document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
+                    document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();
                     this.$router.push({ name: 'login' });
                 }
             }).catch((error: any) =>{

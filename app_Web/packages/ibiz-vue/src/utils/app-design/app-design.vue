@@ -1,6 +1,6 @@
 <template>
     <div class="app-model-setting" v-if="sdc.isShowTool">
-        <div class="app-design-button" @click="handleButtonClick">
+        <!-- <div class="app-design-button" @click="handleButtonClick">
             <icon type="md-settings" />
         </div>
         <drawer :closable="false" class-name="app-design-drawer" :width="800" v-model="isShowDrawer">
@@ -8,7 +8,7 @@
                 <icon type="md-close" />
             </div>
             <iframe class="app-modle-setting-content" height="100%" width="100%" scrolling="true" :src="iframeUrl" />
-        </drawer>
+        </drawer> -->
     </div>
 </template>
 

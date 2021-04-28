@@ -1246,11 +1246,6 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
             },
             "getPSNavigateContexts" : [ {
-              "key" : "PROJECT",
-              "name" : "PROJECT",
-              "value" : "project",
-              "rawValue" : false
-            }, {
               "key" : "MODULE",
               "name" : "MODULE",
               "value" : "module",
