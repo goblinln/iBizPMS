@@ -16,7 +16,7 @@ import { VueLifeCycleProcessing,AppControlBase } from 'ibiz-vue';
 @VueLifeCycleProcessing()
 export class MeditCollapseArrow extends AppControlBase {
 
-<app-update-log-list :items="items" @item_click="item_click"></app-update-log-list>
+
 
 }
 
