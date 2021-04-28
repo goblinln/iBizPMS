@@ -388,6 +388,13 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         }
     }
 
+    @Override
+    @Transactional
+    public Product sysGet(Product et) {
+        //自定义代码
+        return et;
+    }
+
 
 	@Override
     public List<Product> selectByLine(Long id) {
