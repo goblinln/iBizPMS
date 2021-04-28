@@ -467,7 +467,6 @@ public class ProductPlanResource {
                 .body(new PageImpl(productplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"产品计划" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchdefault")
 	public ResponseEntity<List<ProductPlanDTO>> fetchDefault(@RequestBody ProductPlanSearchContext context) {
@@ -480,7 +479,6 @@ public class ProductPlanResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"产品计划" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/searchdefault")
 	public ResponseEntity<Page<ProductPlanDTO>> searchDefault(@RequestBody ProductPlanSearchContext context) {

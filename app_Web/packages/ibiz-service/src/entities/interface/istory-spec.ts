@@ -33,10 +33,6 @@ export interface IStorySpec extends IEntityBase {
      */
     org?: any;
     /**
-     * 虚拟主键
-     */
-    id?: any;
-    /**
      * 需求名称
      */
     title?: any;
@@ -56,4 +52,8 @@ export interface IStorySpec extends IEntityBase {
      * 归属部门名
      */
     deptname?: any;
+    /**
+     * 主键
+     */
+    id?: any;
 }

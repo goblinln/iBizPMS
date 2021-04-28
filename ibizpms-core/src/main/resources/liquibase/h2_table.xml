@@ -2388,7 +2388,7 @@
 
 
     <!--输出实体[ZT_PRODUCTPLAN]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_productplan-74-85">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_productplan-75-85">
         <createTable tableName="zt_productplan">
                 <column name="TITLE" remarks="" type="VARCHAR(90)">
                 </column>
@@ -2713,7 +2713,7 @@
 
 
     <!--输出实体[ZT_STORYSPEC]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_storyspec-9-103">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_storyspec-12-103">
         <createTable tableName="zt_storyspec">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2736,6 +2736,9 @@
                 <column name="ORGNAME" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="DEPTNAME" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="ID" remarks="" type="VARCHAR(60)">
+                    <constraints primaryKey="true" primaryKeyName="PK_ZT_STORYSPEC_ID"/>
                 </column>
         </createTable>
     </changeSet>

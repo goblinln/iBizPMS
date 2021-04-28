@@ -58,10 +58,6 @@ export abstract class StorySpecBase extends EntityBase implements IStorySpec {
      */
     org?: any;
     /**
-     * 虚拟主键
-     */
-    id?: any;
-    /**
      * 需求名称
      */
     title?: any;
@@ -81,6 +77,10 @@ export abstract class StorySpecBase extends EntityBase implements IStorySpec {
      * 归属部门名
      */
     deptname?: any;
+    /**
+     * 主键
+     */
+    id?: any;
 
     /**
      * 重置实体数据

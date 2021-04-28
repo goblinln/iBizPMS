@@ -101,15 +101,6 @@ public class StorySpec extends EntityMP implements Serializable {
     @ApiModelProperty("归属组织")
     private String org;
     /**
-     * 虚拟主键
-     */
-    @DEField(isKeyField = true)
-    @TableField(exist = false)
-    @JSONField(name = "id")
-    @JsonProperty("id")
-    @ApiModelProperty("虚拟主键")
-    private String id;
-    /**
      * 需求名称
      */
     @TableField(value = "`TITLE`")
@@ -151,6 +142,15 @@ public class StorySpec extends EntityMP implements Serializable {
     @JsonProperty("deptname")
     @ApiModelProperty("归属部门名")
     private String deptname;
+    /**
+     * 主键
+     */
+    @DEField(isKeyField = true)
+    @TableId(value = "`ID`", type = IdType.ASSIGN_UUID)
+    @JSONField(name = "id")
+    @JsonProperty("id")
+    @ApiModelProperty("主键")
+    private String id;
 
     /**
      * 
