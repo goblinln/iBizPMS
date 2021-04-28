@@ -7,6 +7,7 @@
   ],
   "scripts": {
     "link-model": "./node_modules/.bin/ibz link-model -m ibizpms-core/src/main/resources/model -f",
+    "prebuild": "./node_modules/.bin/ibz link-model -m -m ibizpms-core/src/main/resources/model -f",
     "serve": "node --max_old_space_size=8102 ./node_modules/@vue/cli-service/bin/vue-cli-service serve --mode test",
     "dev-serve": "node --max_old_space_size=8102 ./node_modules/@vue/cli-service/bin/vue-cli-service serve --mode development",
     "build": "node --max_old_space_size=8102 ./node_modules/@vue/cli-service/bin/vue-cli-service build",
