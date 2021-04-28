@@ -1608,7 +1608,7 @@ export class EditFormControlBase extends FormControlBase {
                 details.push(item.name)
             })
             if (await this.checkItem(formDetail.name)) {
-                this.updateFormItems(getPSAppDEMethod?.id as string, this.data, details, showBusyIndicator);
+                this.updateFormItems(getPSAppDEMethod?.codeName as string, this.data, details, showBusyIndicator);
             }
         }
     }

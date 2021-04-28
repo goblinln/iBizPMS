@@ -4832,8 +4832,9 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
     },
     "getPSAppPortletCat" : {
-      "modelref" : true,
-      "id" : "Ungroup"
+      "codeName" : "Ungroup",
+      "name" : "（未分类）",
+      "ungroup" : true
     },
     "getPSControl" : {
       "codeName" : "ProductStatusChartMob",
@@ -5056,8 +5057,9 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
     },
     "getPSAppPortletCat" : {
-      "modelref" : true,
-      "id" : "Ungroup"
+      "codeName" : "Ungroup",
+      "name" : "（未分类）",
+      "ungroup" : true
     },
     "getPSControl" : {
       "actionGroupExtractMode" : "ITEM",
@@ -5599,8 +5601,9 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
     },
     "getPSAppPortletCat" : {
-      "modelref" : true,
-      "id" : "Ungroup"
+      "codeName" : "Ungroup",
+      "name" : "（未分类）",
+      "ungroup" : true
     },
     "getPSControl" : {
       "actionGroupExtractMode" : "ITEM",
@@ -6895,8 +6898,9 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
     },
     "getPSAppPortletCat" : {
-      "modelref" : true,
-      "id" : "Ungroup"
+      "codeName" : "Ungroup",
+      "name" : "（未分类）",
+      "ungroup" : true
     },
     "getPSControl" : {
       "actionGroupExtractMode" : "ITEM",
@@ -7684,8 +7688,9 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzMyTerritory.json"
     },
     "getPSAppPortletCat" : {
-      "modelref" : true,
-      "id" : "Ungroup"
+      "codeName" : "Ungroup",
+      "name" : "（未分类）",
+      "ungroup" : true
     },
     "getPSControl" : {
       "codeName" : "MyWork",
@@ -8305,8 +8310,9 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
     },
     "getPSAppPortletCat" : {
-      "modelref" : true,
-      "id" : "Ungroup"
+      "codeName" : "Ungroup",
+      "name" : "（未分类）",
+      "ungroup" : true
     },
     "getPSControl" : {
       "actionGroupExtractMode" : "ITEM",
@@ -9833,8 +9839,9 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
     },
     "getPSAppPortletCat" : {
-      "modelref" : true,
-      "id" : "Ungroup"
+      "codeName" : "Ungroup",
+      "name" : "（未分类）",
+      "ungroup" : true
     },
     "getPSControl" : {
       "actionGroupExtractMode" : "ITEM",
@@ -11464,8 +11471,9 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
     },
     "getPSAppPortletCat" : {
-      "modelref" : true,
-      "id" : "Ungroup"
+      "codeName" : "Ungroup",
+      "name" : "（未分类）",
+      "ungroup" : true
     },
     "getPSControl" : {
       "actionGroupExtractMode" : "ITEM",
@@ -12475,8 +12483,9 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
     },
     "getPSAppPortletCat" : {
-      "modelref" : true,
-      "id" : "Ungroup"
+      "codeName" : "Ungroup",
+      "name" : "（未分类）",
+      "ungroup" : true
     },
     "getPSControl" : {
       "codeName" : "ProjectStatusBarMob",
@@ -12766,8 +12775,9 @@
     "codeName" : "ImgswipeStyleMenu",
     "name" : "图片滑动",
     "getPSAppPortletCat" : {
-      "modelref" : true,
-      "id" : "Ungroup"
+      "codeName" : "Ungroup",
+      "name" : "（未分类）",
+      "ungroup" : true
     },
     "getPSControl" : {
       "aMListStyle" : "SWIPERVIEW",
@@ -12871,8 +12881,9 @@
     "codeName" : "IconStyleMenu",
     "name" : "图标",
     "getPSAppPortletCat" : {
-      "modelref" : true,
-      "id" : "Ungroup"
+      "codeName" : "Ungroup",
+      "name" : "（未分类）",
+      "ungroup" : true
     },
     "getPSControl" : {
       "aMListStyle" : "ICONVIEW",
@@ -13141,8 +13152,9 @@
     "codeName" : "ListMenu",
     "name" : "列表",
     "getPSAppPortletCat" : {
-      "modelref" : true,
-      "id" : "Ungroup"
+      "codeName" : "Ungroup",
+      "name" : "（未分类）",
+      "ungroup" : true
     },
     "getPSControl" : {
       "aMListStyle" : "LISTVIEW",
@@ -13333,8 +13345,9 @@
     "codeName" : "My",
     "name" : "我的地盘",
     "getPSAppPortletCat" : {
-      "modelref" : true,
-      "id" : "Ungroup"
+      "codeName" : "Ungroup",
+      "name" : "（未分类）",
+      "ungroup" : true
     },
     "getPSControl" : {
       "aMListStyle" : "ICONVIEW",
@@ -13450,8 +13463,9 @@
     "codeName" : "reportNew",
     "name" : "汇报",
     "getPSAppPortletCat" : {
-      "modelref" : true,
-      "id" : "Ungroup"
+      "codeName" : "Ungroup",
+      "name" : "（未分类）",
+      "ungroup" : true
     },
     "getPSControl" : {
       "aMListStyle" : "ICONVIEW",
@@ -18838,10 +18852,6 @@
             "showIcon" : true
           } ]
         },
-        "getPSSysPFPlugin" : {
-          "pluginType" : "EDITFORM_RENDER",
-          "pluginCode" : "StartTaskOptForm"
-        },
         "pagingSize" : 1000,
         "getRemovePSControlAction" : {
           "modelref" : true,
@@ -20929,10 +20939,6 @@
           "dataType" : 25,
           "name" : "srfmstag"
         } ],
-        "getPSSysPFPlugin" : {
-          "pluginType" : "EDITFORM_RENDER",
-          "pluginCode" : "StartTaskOptForm"
-        },
         "pagingSize" : 1000,
         "getRemovePSControlAction" : {
           "modelref" : true,

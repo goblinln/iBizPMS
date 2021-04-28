@@ -238,7 +238,6 @@
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "name" : "DEFAULT",
-    "customCode" : true,
     "defaultMode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {

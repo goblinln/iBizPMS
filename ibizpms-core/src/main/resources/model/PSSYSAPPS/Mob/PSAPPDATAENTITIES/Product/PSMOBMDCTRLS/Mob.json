@@ -90,10 +90,6 @@
     "dataType" : 25,
     "name" : "srfmstag"
   } ],
-  "getPSSysPFPlugin" : {
-    "pluginType" : "EDITFORM_RENDER",
-    "pluginCode" : "StartTaskOptForm"
-  },
   "pagingSize" : 1000,
   "getRemovePSControlAction" : {
     "modelref" : true,
