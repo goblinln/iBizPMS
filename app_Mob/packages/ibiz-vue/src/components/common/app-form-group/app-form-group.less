@@ -1,0 +1,49 @@
+.app-form-group {
+  width: 100%;
+  ion-item-divider {
+    font-size: 1rem;
+    z-index: 1;
+  }
+  .form-group-content {
+    width: 100%;
+  }
+  .group-title {
+    display: flex;
+    font-weight: 700;
+    align-items: center;
+  }
+  > ion-item-divider {
+    --background: @color-main-background;
+    --color: @color-main-color;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .actiongroup {
+    position: absolute;
+    right: 10px;
+    font-size: 1rem;
+    color: #4285f4;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    .groupbox {
+      margin-right: 5px;
+      ion-icon {
+        position: relative;
+        top: 2px;
+      }
+      .van-button {
+        height: 100%;
+        background-color: transparent;
+        border: none;
+        color: #4285f4;
+        padding-left: 0;
+      }
+    }
+  }
+  .closemode {
+    right: 40px;
+  }
+}

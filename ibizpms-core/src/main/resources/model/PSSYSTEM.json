@@ -2,6 +2,9 @@
   "getAllPSApps" : [ {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSSYSAPP.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSSYSAPP.json"
   } ],
   "getAllPSCodeLists" : [ {
     "modelref" : true,
@@ -1493,6 +1496,9 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/CreateProductMonthlyService.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSBACKSERVICES/ProductSync.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/SumPorjectMonthly.json"

@@ -1,0 +1,208 @@
+{
+  "codeName" : "Mob",
+  "controlStyle" : "LISTVIEW",
+  "controlType" : "MOBMDCTRL",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action/PSMOBMDCTRLS/Mob.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+  "getItemPSLayoutPanel" : {
+    "getAllPSPanelFields" : [ {
+      "id" : "date"
+    }, {
+      "id" : "actor"
+    }, {
+      "id" : "actions"
+    } ],
+    "codeName" : "Mob",
+    "controlType" : "PANEL",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action/PSPANELS/Mob.json",
+    "layoutMode" : "TABLE_12COL",
+    "logicName" : "移动端列表项布局面板",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+    },
+    "getPSControlParam" : { },
+    "getPSLayout" : {
+      "columnCount" : 12,
+      "layout" : "TABLE_12COL"
+    },
+    "getRootPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container1",
+      "getPSLayout" : {
+        "columnCount" : 12,
+        "layout" : "TABLE_12COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 12,
+        "layout" : "TABLE_12COL"
+      },
+      "getPSPanelItems" : [ {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "date",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "date",
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 6,
+          "colMD" : 6,
+          "layout" : "TABLE_12COL"
+        },
+        "viewFieldName" : "date",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "actor",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "actor",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
+          },
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 3,
+          "colMD" : 3,
+          "layout" : "TABLE_12COL"
+        },
+        "viewFieldName" : "actor",
+        "convertToCodeItemText" : true,
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "actions",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "actions",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Action__type.json"
+          },
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 3,
+          "colMD" : 3,
+          "layout" : "TABLE_12COL"
+        },
+        "viewFieldName" : "actions",
+        "convertToCodeItemText" : true,
+        "hidden" : false,
+        "showCaption" : false
+      } ],
+      "showCaption" : true
+    } ],
+    "mobilePanel" : true,
+    "name" : "mdctrl_itempanel",
+    "modelid" : "5696f0682d1f1aca90b60ec57e448fd7"
+  },
+  "logicName" : "MOB",
+  "minorSortDir" : "ASC",
+  "getMinorSortPSAppDEField" : {
+    "name" : "DATE",
+    "codeName" : "Date"
+  },
+  "mobListStyle" : "LISTVIEW",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+  },
+  "getPSDEListDataItems" : [ {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
+    },
+    "name" : "actor"
+  }, {
+    "dataType" : 25,
+    "name" : "actions",
+    "getPSAppDEField" : {
+      "name" : "ACTION",
+      "codeName" : "Action"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "item"
+  }, {
+    "dataType" : 5,
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "name" : "date"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/ActionManner.json"
+    },
+    "name" : "actionmanner"
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "COMMENT",
+      "codeName" : "Comment"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "project",
+    "getPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    }
+  } ],
+  "getPSSysPFPlugin" : {
+    "pluginType" : "LIST_RENDER",
+    "pluginCode" : "Auto20"
+  },
+  "pagingSize" : 1000,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "enableGroup" : false,
+  "enableRowEdit" : false,
+  "enableRowEditGroup" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "noSort" : false,
+  "showHeader" : true,
+  "modelid" : "5696f0682d1f1aca90b60ec57e448fd7"
+}

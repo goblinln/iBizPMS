@@ -1,0 +1,455 @@
+{
+  "codeName" : "Mob",
+  "controlStyle" : "LISTVIEW",
+  "controlType" : "MOBMDCTRL",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Release/PSMOBMDCTRLS/Mob.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+  "getItemPSLayoutPanel" : {
+    "getAllPSPanelFields" : [ {
+      "id" : "name"
+    }, {
+      "id" : "marker",
+      "hidden" : true
+    }, {
+      "id" : "buildname"
+    }, {
+      "id" : "date"
+    }, {
+      "id" : "status",
+      "hidden" : true
+    } ],
+    "codeName" : "Mob",
+    "controlType" : "PANEL",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Release/PSPANELS/Mob.json",
+    "layoutMode" : "TABLE_12COL",
+    "logicName" : "移动端列表项布局面板",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Release.json"
+    },
+    "getPSControlParam" : { },
+    "getPSLayout" : {
+      "columnCount" : 12,
+      "layout" : "TABLE_12COL"
+    },
+    "getRootPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container1",
+      "getPSLayout" : {
+        "columnCount" : 12,
+        "layout" : "TABLE_12COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 12,
+        "layout" : "TABLE_12COL"
+      },
+      "getPSPanelItems" : [ {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "name",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "name",
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 6,
+          "colMD" : 6,
+          "layout" : "TABLE_12COL"
+        },
+        "viewFieldName" : "name",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "htmlContent" : "<ion-icon name=\"flag\" style=\"color: brown;font-size: 18px;\"></ion-icon>",
+        "itemStyle" : "DEFAULT",
+        "itemType" : "RAWITEM",
+        "name" : "rawitem1",
+        "getPSLayoutPos" : {
+          "colLG" : 4,
+          "colMD" : 4,
+          "layout" : "TABLE_12COL"
+        },
+        "getPSPanelItemGroupLogics" : [ {
+          "groupOP" : "AND",
+          "logicCat" : "PANELVISIBLE",
+          "logicType" : "GROUP",
+          "name" : "面板成员[rawitem1][面板显示]逻辑",
+          "getPSPanelItemLogics" : [ {
+            "condOp" : "EQ",
+            "dstModelField" : "marker",
+            "logicType" : "SINGLE",
+            "name" : "marker 等于(=) (1)",
+            "value" : "1"
+          } ],
+          "notMode" : false
+        } ],
+        "getPSSysImage" : {
+          "cssClass" : "flag"
+        },
+        "showCaption" : true
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "marker",
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "marker"
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 2,
+          "colMD" : 2,
+          "layout" : "TABLE_12COL"
+        },
+        "viewFieldName" : "marker",
+        "hidden" : true,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "CONTAINER",
+        "name" : "container2",
+        "getPSLayout" : {
+          "columnCount" : 12,
+          "layout" : "TABLE_12COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 12,
+          "layout" : "TABLE_12COL"
+        },
+        "getPSPanelItems" : [ {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "FIELD",
+          "name" : "buildname",
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "buildname",
+            "editable" : false,
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 4,
+            "colMD" : 4,
+            "layout" : "TABLE_12COL"
+          },
+          "viewFieldName" : "buildname",
+          "hidden" : false,
+          "showCaption" : false
+        }, {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "FIELD",
+          "name" : "date",
+          "getPSEditor" : {
+            "editorType" : "SPAN",
+            "name" : "date",
+            "editable" : false,
+            "enableLinkView" : false
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 4,
+            "colMD" : 4,
+            "layout" : "TABLE_12COL"
+          },
+          "viewFieldName" : "date",
+          "hidden" : false,
+          "showCaption" : false
+        }, {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "FIELD",
+          "name" : "status",
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "status"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 4,
+            "colMD" : 4,
+            "layout" : "TABLE_12COL"
+          },
+          "viewFieldName" : "status",
+          "hidden" : true,
+          "showCaption" : false
+        }, {
+          "htmlContent" : "<ion-icon name=\"pause\" style=\"color: blue;font-size: 18px;\"></ion-icon>",
+          "itemStyle" : "DEFAULT",
+          "itemType" : "RAWITEM",
+          "name" : "rawitem2",
+          "getPSLayoutPos" : {
+            "colLG" : 2,
+            "colLGOffset" : 2,
+            "colMD" : 2,
+            "colMDOffset" : 2,
+            "layout" : "TABLE_12COL"
+          },
+          "getPSPanelItemGroupLogics" : [ {
+            "groupOP" : "AND",
+            "logicCat" : "PANELVISIBLE",
+            "logicType" : "GROUP",
+            "name" : "面板成员[rawitem2][面板显示]逻辑",
+            "getPSPanelItemLogics" : [ {
+              "condOp" : "EQ",
+              "dstModelField" : "status",
+              "logicType" : "SINGLE",
+              "name" : "status 等于(=) (normal)",
+              "value" : "normal"
+            } ],
+            "notMode" : false
+          } ],
+          "showCaption" : true
+        }, {
+          "htmlContent" : "<ion-icon name=\"play\" style=\"color: brown;font-size: 18px;\"></ion-icon>",
+          "itemStyle" : "DEFAULT",
+          "itemType" : "RAWITEM",
+          "name" : "rawitem3",
+          "getPSLayoutPos" : {
+            "colLG" : 2,
+            "colLGOffset" : 2,
+            "colMD" : 2,
+            "colMDOffset" : 2,
+            "layout" : "TABLE_12COL"
+          },
+          "getPSPanelItemGroupLogics" : [ {
+            "groupOP" : "AND",
+            "logicCat" : "PANELVISIBLE",
+            "logicType" : "GROUP",
+            "name" : "面板成员[rawitem3][面板显示]逻辑",
+            "getPSPanelItemLogics" : [ {
+              "condOp" : "EQ",
+              "dstModelField" : "status",
+              "logicType" : "SINGLE",
+              "name" : "status 等于(=) (terminate)",
+              "value" : "terminate"
+            } ],
+            "notMode" : false
+          } ],
+          "showCaption" : true
+        } ],
+        "showCaption" : true
+      } ],
+      "getPSSysCss" : {
+        "cssName" : "mob_list_card"
+      },
+      "showCaption" : true
+    } ],
+    "mobilePanel" : true,
+    "name" : "mdctrl_itempanel",
+    "modelid" : "0f199ea4f30a97099dc97273edc8ca0c"
+  },
+  "logicName" : "MOB",
+  "minorSortDir" : "DESC",
+  "getMinorSortPSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
+  "mobListStyle" : "LISTVIEW",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Release.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "mdctrl_u5a2341a_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "激活（移动端）"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "mdctrl_u7f36f68_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "停止维护（移动端）"
+    }
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "激活（移动端）",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Release.json"
+      },
+      "modelref" : true,
+      "id" : "MobActive@Release"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "mdctrl"
+  }, {
+    "name" : "停止维护（移动端）",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Release.json"
+      },
+      "modelref" : true,
+      "id" : "MobTerminal@Release"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "mdctrl"
+  } ],
+  "getPSDEListDataItems" : [ {
+    "dataType" : 25,
+    "name" : "buildname"
+  }, {
+    "dataType" : 5,
+    "format" : "YYYY-MM-DD",
+    "name" : "date"
+  }, {
+    "dataType" : 25,
+    "name" : "name"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Release__status.json"
+    },
+    "name" : "status"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/YesNo.json"
+    },
+    "name" : "marker"
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "product",
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "build",
+    "getPSAppDEField" : {
+      "name" : "BUILD",
+      "codeName" : "Build"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "branch",
+    "getPSAppDEField" : {
+      "name" : "BRANCH",
+      "codeName" : "Branch"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
+  } ],
+  "getPSDEUIActionGroup2" : {
+    "name" : "移动端发布右滑行为组",
+    "getPSUIActionGroupDetails" : [ {
+      "detailType" : "DEUIACTION",
+      "name" : "u5a2341a",
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "caption" : "激活",
+        "codeName" : "MobActive",
+        "dataAccessAction" : "SRFUR__RELEASE_ACTIVE",
+        "fullCodeName" : "Release_MobActive",
+        "name" : "激活（移动端）",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Activate"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Release.json"
+        },
+        "getPSSysImage" : {
+          "cssClass" : "play"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "BACKEND",
+        "uIActionTag" : "MobActive",
+        "uIActionType" : "DEUIACTION",
+        "enableConfirm" : true,
+        "reloadData" : true,
+        "id" : "MobActive@Release"
+      },
+      "addSeparator" : false,
+      "showCaption" : false,
+      "showIcon" : true
+    }, {
+      "detailType" : "DEUIACTION",
+      "name" : "u7f36f68",
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "caption" : "停止维护",
+        "codeName" : "MobTerminal",
+        "dataAccessAction" : "SRFUR__RELEASE_TERMINATE",
+        "fullCodeName" : "Release_MobTerminal",
+        "name" : "停止维护（移动端）",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Terminate"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Release.json"
+        },
+        "getPSSysImage" : {
+          "cssClass" : "pause"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "BACKEND",
+        "uIActionTag" : "MobTerminal",
+        "uIActionType" : "DEUIACTION",
+        "reloadData" : true,
+        "id" : "MobTerminal@Release"
+      },
+      "addSeparator" : false,
+      "showCaption" : false,
+      "showIcon" : true
+    } ]
+  },
+  "pagingSize" : 1000,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "enableGroup" : false,
+  "enableRowEdit" : false,
+  "enableRowEditGroup" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "noSort" : false,
+  "showHeader" : true,
+  "modelid" : "0f199ea4f30a97099dc97273edc8ca0c"
+}

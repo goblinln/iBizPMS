@@ -1,0 +1,9 @@
+{
+  "codeName" : "ProductSync",
+  "dynaModelFilePath" : "PSSYSBACKSERVICES/ProductSync.json",
+  "name" : "ProductSync",
+  "serviceContainer" : "SC01",
+  "serviceOrder" : 0,
+  "startMode" : "MANUAL",
+  "taskType" : "USER"
+}

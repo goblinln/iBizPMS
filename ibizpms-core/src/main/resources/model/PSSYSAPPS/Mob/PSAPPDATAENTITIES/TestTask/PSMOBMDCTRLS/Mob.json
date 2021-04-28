@@ -1,0 +1,486 @@
+{
+  "codeName" : "Mob",
+  "controlStyle" : "LISTVIEW",
+  "controlType" : "MOBMDCTRL",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask/PSMOBMDCTRLS/Mob.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+  "getItemPSLayoutPanel" : {
+    "getAllPSPanelFields" : [ {
+      "id" : "pri"
+    }, {
+      "id" : "name"
+    }, {
+      "id" : "begin"
+    }, {
+      "id" : "end"
+    }, {
+      "id" : "status"
+    } ],
+    "codeName" : "Mob",
+    "controlType" : "PANEL",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask/PSPANELS/Mob.json",
+    "layoutMode" : "TABLE_12COL",
+    "logicName" : "移动端列表项布局面板",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+    },
+    "getPSControlParam" : { },
+    "getPSLayout" : {
+      "columnCount" : 12,
+      "layout" : "TABLE_12COL"
+    },
+    "getRootPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container1",
+      "getPSLayout" : {
+        "columnCount" : 12,
+        "layout" : "TABLE_12COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 12,
+        "layout" : "TABLE_12COL"
+      },
+      "getPSPanelItems" : [ {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "pri",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "pri",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testtask__pri.json"
+          },
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 1,
+          "colMD" : 1,
+          "layout" : "TABLE_12COL"
+        },
+        "viewFieldName" : "pri",
+        "convertToCodeItemText" : true,
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "name",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "name",
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 11,
+          "colMD" : 11,
+          "layout" : "TABLE_12COL"
+        },
+        "viewFieldName" : "name",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "begin",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "begin",
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 4,
+          "colMD" : 4,
+          "layout" : "TABLE_12COL"
+        },
+        "viewFieldName" : "begin",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "end",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "end",
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 4,
+          "colMD" : 4,
+          "layout" : "TABLE_12COL"
+        },
+        "viewFieldName" : "end",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "status",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "status",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testtask__status.json"
+          },
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 3,
+          "colLGOffset" : 1,
+          "colMD" : 3,
+          "colMDOffset" : 1,
+          "layout" : "TABLE_12COL"
+        },
+        "viewFieldName" : "status",
+        "convertToCodeItemText" : true,
+        "hidden" : false,
+        "showCaption" : false
+      } ],
+      "getPSSysCss" : {
+        "cssName" : "mob_list_card"
+      },
+      "showCaption" : true
+    } ],
+    "mobilePanel" : true,
+    "name" : "mdctrl_itempanel",
+    "modelid" : "d8b527e1ac25ad6a13f4455496e91e1c"
+  },
+  "logicName" : "MOB",
+  "minorSortDir" : "DESC",
+  "getMinorSortPSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
+  "mobListStyle" : "LISTVIEW",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "mdctrl_u6c2f01c_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "开始（移动端）"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "mdctrl_ua6bb380_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "阻塞（移动端）"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "mdctrl_u6d5001b_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "激活（移动端）"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "mdctrl_u3981617_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "关闭（移动端）"
+    }
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "开始（移动端）",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+      },
+      "modelref" : true,
+      "id" : "MobStart@TestTask"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "mdctrl"
+  }, {
+    "name" : "阻塞（移动端）",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+      },
+      "modelref" : true,
+      "id" : "MobBlock@TestTask"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "mdctrl"
+  }, {
+    "name" : "激活（移动端）",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+      },
+      "modelref" : true,
+      "id" : "MobActivite@TestTask"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "mdctrl"
+  }, {
+    "name" : "关闭（移动端）",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+      },
+      "modelref" : true,
+      "id" : "MobClose@TestTask"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "mdctrl"
+  } ],
+  "getPSDEListDataItems" : [ {
+    "dataType" : 5,
+    "format" : "YYYY-MM-DD",
+    "name" : "begin"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testtask__status.json"
+    },
+    "name" : "status"
+  }, {
+    "dataType" : 9,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testtask__pri.json"
+    },
+    "name" : "pri"
+  }, {
+    "dataType" : 5,
+    "format" : "YYYY-MM-DD",
+    "name" : "end"
+  }, {
+    "dataType" : 25,
+    "name" : "name"
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "product",
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "build",
+    "getPSAppDEField" : {
+      "name" : "BUILD",
+      "codeName" : "Build"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "project",
+    "getPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
+  } ],
+  "getPSDEUIActionGroup2" : {
+    "name" : "移动端右滑操作栏",
+    "getPSUIActionGroupDetails" : [ {
+      "detailType" : "DEUIACTION",
+      "name" : "u6c2f01c",
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "caption" : "开始",
+        "codeName" : "MobStart",
+        "dataAccessAction" : "SRFUR__TESTT_START_BUT",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TestTaskMobOptionViewStart.json",
+          "viewType" : "DEMOBOPTVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "TestTask_MobStart",
+        "name" : "开始（移动端）",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+        },
+        "getPSSysImage" : {
+          "cssClass" : "play"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "MobStart",
+        "uIActionType" : "DEUIACTION",
+        "reloadData" : true,
+        "id" : "MobStart@TestTask"
+      },
+      "addSeparator" : false,
+      "showCaption" : false,
+      "showIcon" : true
+    }, {
+      "detailType" : "DEUIACTION",
+      "name" : "ua6bb380",
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "caption" : "阻塞",
+        "codeName" : "MobBlock",
+        "dataAccessAction" : "SRFUR__TESTT_BLOCK_BUT",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TestTaskMobOptionViewBlock.json",
+          "viewType" : "DEMOBOPTVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "TestTask_MobBlock",
+        "name" : "阻塞（移动端）",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+        },
+        "getPSSysImage" : {
+          "cssClass" : "pause"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "MobBlock",
+        "uIActionType" : "DEUIACTION",
+        "reloadData" : true,
+        "id" : "MobBlock@TestTask"
+      },
+      "addSeparator" : false,
+      "showCaption" : false,
+      "showIcon" : true
+    }, {
+      "detailType" : "DEUIACTION",
+      "name" : "u6d5001b",
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "caption" : "激活",
+        "codeName" : "MobActivite",
+        "dataAccessAction" : "SRFUR__TESTT_ACTIVITE_BUT",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TestTaskMobOptionViewActivite.json",
+          "viewType" : "DEMOBOPTVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "TestTask_MobActivite",
+        "name" : "激活（移动端）",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf0d0@FontAwesome",
+          "cssClass" : "fa fa-magic"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "MobActivite",
+        "uIActionType" : "DEUIACTION",
+        "reloadData" : true,
+        "id" : "MobActivite@TestTask"
+      },
+      "addSeparator" : false,
+      "showCaption" : false,
+      "showIcon" : true
+    }, {
+      "detailType" : "DEUIACTION",
+      "name" : "u3981617",
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "caption" : "关闭",
+        "codeName" : "MobClose",
+        "dataAccessAction" : "SRFUR__TESTT_CLOSED_BUT",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TestTaskMobOptionViewClose.json",
+          "viewType" : "DEMOBOPTVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "TestTask_MobClose",
+        "name" : "关闭（移动端）",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json"
+        },
+        "getPSSysImage" : {
+          "cssClass" : "close"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "MobClose",
+        "uIActionType" : "DEUIACTION",
+        "reloadData" : true,
+        "id" : "MobClose@TestTask"
+      },
+      "addSeparator" : false,
+      "showCaption" : false,
+      "showIcon" : true
+    } ]
+  },
+  "pagingSize" : 1000,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "enableGroup" : false,
+  "enableRowEdit" : false,
+  "enableRowEditGroup" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "noSort" : false,
+  "showHeader" : true,
+  "modelid" : "d8b527e1ac25ad6a13f4455496e91e1c"
+}

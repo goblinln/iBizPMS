@@ -1,4 +1,5 @@
 import {
+    getPSUIActionByModelObject,
     IPSAppDataEntity,
     IPSAppDEField,
     IPSAppDERedirectView,
@@ -234,16 +235,26 @@ export class AppFrontAction {
                     actionContext.closeView(null);
                 }
                 // 后续界面行为
-                if (actionModel.getNextPSUIAction()) {
-                    const nextUIaction: IPSAppDEUIAction | null = actionModel.getNextPSUIAction() as IPSAppDEUIAction;
-                    if (!nextUIaction) {
-                        return;
-                    }
-                    if (nextUIaction.getPSAppDataEntity()) {
-                        let [tag, appDeName] = (actionModel.getNextPSUIAction() as IPSAppDEUIAction).id.split('@');
-                        if (deUIService) {
-                            deUIService.excuteAction(
-                                tag,
+                if (this.actionModel.M?.getNextPSUIAction) {
+                    getPSUIActionByModelObject(this.actionModel).then((nextUIaction:any)=>{
+                        if (nextUIaction.getPSAppDataEntity()) {
+                            let [tag, appDeName] = (actionModel.getNextPSUIAction() as IPSAppDEUIAction).id.split('@');
+                            if (deUIService) {
+                                deUIService.excuteAction(
+                                    tag,
+                                    resultDatas,
+                                    context,
+                                    params,
+                                    $event,
+                                    xData,
+                                    actionContext,
+                                    undefined,
+                                    deUIService,
+                                );
+                            }
+                        } else {
+                            (AppGlobalService.getInstance() as any).executeGlobalAction(
+                                nextUIaction.id,
                                 resultDatas,
                                 context,
                                 params,
@@ -251,21 +262,9 @@ export class AppFrontAction {
                                 xData,
                                 actionContext,
                                 undefined,
-                                deUIService,
                             );
                         }
-                    } else {
-                        (AppGlobalService.getInstance() as any).executeGlobalAction(
-                            nextUIaction.id,
-                            resultDatas,
-                            context,
-                            params,
-                            $event,
-                            xData,
-                            actionContext,
-                            undefined,
-                        );
-                    }
+                    })
                 }
             };
             // 打开重定向视图

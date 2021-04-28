@@ -50,7 +50,7 @@ export const Environment = {
     // 应用动态路径
     appDynaModelFilePath: 'PSSYSAPPS/Web/PSSYSAPP.json',
     // 远端动态基础路径
-    remoteDynaPath: '',
+    remoteDynaPath: '/dynamodel',
     // 预览动态基础路径
     previewDynaPath: 'http://172.16.170.145',
     // 实例配置地址
@@ -58,7 +58,7 @@ export const Environment = {
     // 是否开启工作流
     workflow: false,
     // 是否启用动态
-    bDynamic: false,
+    bDynamic: true,
     // 动态模式(RT/WEB)
     dynaMode: 'WEB',
     // 是否预览模式

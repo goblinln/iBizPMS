@@ -1,0 +1,1085 @@
+{
+  "codeName" : "Mob",
+  "controlStyle" : "LISTVIEW",
+  "controlType" : "MOBMDCTRL",
+  "getCreatePSControlAction" : {
+    "modelref" : true,
+    "id" : "create"
+  },
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task/PSMOBMDCTRLS/Mob.json",
+  "getFetchPSControlAction" : {
+    "modelref" : true,
+    "id" : "fetch"
+  },
+  "getGetPSControlAction" : {
+    "modelref" : true,
+    "id" : "load"
+  },
+  "groupMode" : "NONE",
+  "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+  "getItemPSLayoutPanel" : {
+    "getAllPSPanelFields" : [ {
+      "id" : "pri"
+    }, {
+      "id" : "name"
+    }, {
+      "id" : "status"
+    }, {
+      "id" : "assignedto"
+    }, {
+      "id" : "left"
+    } ],
+    "codeName" : "Mob",
+    "controlType" : "PANEL",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task/PSPANELS/Mob.json",
+    "layoutMode" : "TABLE_12COL",
+    "logicName" : "移动端列表项布局面板",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+    },
+    "getPSControlParam" : { },
+    "getPSLayout" : {
+      "columnCount" : 12,
+      "layout" : "TABLE_12COL"
+    },
+    "getRootPSPanelItems" : [ {
+      "itemStyle" : "DEFAULT",
+      "itemType" : "CONTAINER",
+      "name" : "container1",
+      "getPSLayout" : {
+        "columnCount" : 12,
+        "layout" : "TABLE_12COL"
+      },
+      "getPSLayoutPos" : {
+        "colMD" : 12,
+        "layout" : "TABLE_12COL"
+      },
+      "getPSPanelItems" : [ {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "pri",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "pri",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Task__pri.json"
+          },
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 1,
+          "colMD" : 1,
+          "layout" : "TABLE_12COL"
+        },
+        "viewFieldName" : "pri",
+        "convertToCodeItemText" : true,
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "name",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "name",
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 11,
+          "colMD" : 11,
+          "layout" : "TABLE_12COL"
+        },
+        "viewFieldName" : "name",
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "status",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "status",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Task__status.json"
+          },
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 3,
+          "colMD" : 3,
+          "layout" : "TABLE_12COL"
+        },
+        "viewFieldName" : "status",
+        "convertToCodeItemText" : true,
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "htmlContent" : "<i class=\"fa fa-hand-o-right\"></i>",
+        "itemStyle" : "DEFAULT",
+        "itemType" : "RAWITEM",
+        "name" : "rawitem1",
+        "getPSLayoutPos" : {
+          "colLG" : 1,
+          "colMD" : 1,
+          "layout" : "TABLE_12COL"
+        },
+        "getPSPanelItemGroupLogics" : [ {
+          "groupOP" : "AND",
+          "logicCat" : "PANELVISIBLE",
+          "logicType" : "GROUP",
+          "name" : "面板成员[rawitem1][面板显示]逻辑",
+          "getPSPanelItemLogics" : [ {
+            "condOp" : "ISNOTNULL",
+            "dstModelField" : "assignedto",
+            "logicType" : "SINGLE",
+            "name" : "assignedto 值不为空(NotNil)"
+          }, {
+            "condOp" : "NOTEQ",
+            "dstModelField" : "assignedto",
+            "logicType" : "SINGLE",
+            "name" : "assignedto 不等于(<>) (closed)",
+            "value" : "closed"
+          } ],
+          "notMode" : false
+        } ],
+        "showCaption" : true
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "RAWITEM",
+        "name" : "rawitem3",
+        "getPSLayoutPos" : {
+          "colLG" : 1,
+          "colMD" : 1,
+          "layout" : "TABLE_12COL"
+        },
+        "getPSPanelItemGroupLogics" : [ {
+          "groupOP" : "AND",
+          "logicCat" : "PANELVISIBLE",
+          "logicType" : "GROUP",
+          "name" : "面板成员[rawitem3][面板显示]逻辑",
+          "getPSPanelItemLogics" : [ {
+            "condOp" : "EQ",
+            "dstModelField" : "assignedto",
+            "logicType" : "SINGLE",
+            "name" : "assignedto 等于(=) (closed)",
+            "value" : "closed"
+          } ],
+          "notMode" : false
+        } ],
+        "showCaption" : true
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "RAWITEM",
+        "name" : "rawitem2",
+        "getPSLayoutPos" : {
+          "colLG" : 1,
+          "colMD" : 1,
+          "layout" : "TABLE_12COL"
+        },
+        "getPSPanelItemGroupLogics" : [ {
+          "groupOP" : "AND",
+          "logicCat" : "PANELVISIBLE",
+          "logicType" : "GROUP",
+          "name" : "面板成员[rawitem2][面板显示]逻辑",
+          "getPSPanelItemLogics" : [ {
+            "condOp" : "ISNULL",
+            "dstModelField" : "assignedto",
+            "logicType" : "SINGLE",
+            "name" : "assignedto 值为空(Nil)"
+          } ],
+          "notMode" : false
+        } ],
+        "showCaption" : true
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "assignedto",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "assignedto",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
+          },
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 4,
+          "colMD" : 4,
+          "layout" : "TABLE_12COL"
+        },
+        "viewFieldName" : "assignedto",
+        "convertToCodeItemText" : true,
+        "hidden" : false,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "left",
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "left",
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 2,
+          "colLGOffset" : 2,
+          "colMD" : 2,
+          "colMDOffset" : 2,
+          "layout" : "TABLE_12COL"
+        },
+        "viewFieldName" : " left",
+        "hidden" : false,
+        "showCaption" : false
+      } ],
+      "getPSSysCss" : {
+        "cssName" : "mob_list_card"
+      },
+      "showCaption" : true
+    } ],
+    "mobilePanel" : true,
+    "name" : "mdctrl_itempanel",
+    "modelid" : "881c273f0a3edb62a7fded4f04b338fe"
+  },
+  "logicName" : "MOB",
+  "minorSortDir" : "DESC",
+  "getMinorSortPSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
+  "mobListStyle" : "LISTVIEW",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+  },
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "mdctrl_u3d0414f_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "需求变更确认（操作栏）"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "mdctrl_ua94be54_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "收藏（移动端）"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "mdctrl_ub6f46d3_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "取消收藏（移动端）"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "mdctrl_u105f6fb_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "开始任务(移动端)(多人任务检查)"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "mdctrl_ub0717c0_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "指派任务（移动端）"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "mdctrl_uc3a39d7_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "完成任务(移动端)(多人任务检查)"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "mdctrl_u396366e_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "暂停任务(移动端)(多人任务检查)"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "mdctrl_u3d58a5c_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "取消任务（移动端）"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "mdctrl_udbc2509_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "关闭任务（移动端）"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "mdctrl_uda0683f_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "激活任务(移动端)"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "mdctrl_u2ebba9c_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "工时(移动端)(多人任务检查)"
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "APPVIEWUIACTION",
+    "name" : "mdctrl_ue7e5c43_click",
+    "getPSAppViewUIAction" : {
+      "modelref" : true,
+      "id" : "删除（移动端）"
+    }
+  } ],
+  "getPSAppViewUIActions" : [ {
+    "name" : "需求变更确认（操作栏）",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+      },
+      "modelref" : true,
+      "id" : "confirmStoryChangeCz@Task"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "mdctrl"
+  }, {
+    "name" : "收藏（移动端）",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+      },
+      "modelref" : true,
+      "id" : "TaskFavoritesMob@Task"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "mdctrl"
+  }, {
+    "name" : "取消收藏（移动端）",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+      },
+      "modelref" : true,
+      "id" : "TaskNFavoritesMob@Task"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "mdctrl"
+  }, {
+    "name" : "开始任务(移动端)(多人任务检查)",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+      },
+      "modelref" : true,
+      "id" : "StartMobTeamTask@Task"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "mdctrl"
+  }, {
+    "name" : "指派任务（移动端）",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+      },
+      "modelref" : true,
+      "id" : "AssignTaskMob@Task"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "mdctrl"
+  }, {
+    "name" : "完成任务(移动端)(多人任务检查)",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+      },
+      "modelref" : true,
+      "id" : "finishTask1@Task"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "mdctrl"
+  }, {
+    "name" : "暂停任务(移动端)(多人任务检查)",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+      },
+      "modelref" : true,
+      "id" : "PauseMobTeamTask@Task"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "mdctrl"
+  }, {
+    "name" : "取消任务（移动端）",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+      },
+      "modelref" : true,
+      "id" : "CancelTaskMob@Task"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "mdctrl"
+  }, {
+    "name" : "关闭任务（移动端）",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+      },
+      "modelref" : true,
+      "id" : "CloseTaskMob@Task"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "mdctrl"
+  }, {
+    "name" : "激活任务(移动端)",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+      },
+      "modelref" : true,
+      "id" : "ActiveMobTask@Task"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "mdctrl"
+  }, {
+    "name" : "工时(移动端)(多人任务检查)",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+      },
+      "modelref" : true,
+      "id" : "ConsumedMobTaskTeam@Task"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "mdctrl"
+  }, {
+    "name" : "删除（移动端）",
+    "getPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+      },
+      "modelref" : true,
+      "id" : "deleteMob@Task"
+    },
+    "uIActionTarget" : "SINGLEKEY",
+    "xDataControlName" : "mdctrl"
+  } ],
+  "getPSDEListDataItems" : [ {
+    "dataType" : 9,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Task__pri.json"
+    },
+    "name" : "pri"
+  }, {
+    "dataType" : 25,
+    "groupItem" : "GROUP1",
+    "name" : "parentname"
+  }, {
+    "dataType" : 1,
+    "name" : "parent"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
+    },
+    "name" : "assignedto"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Task__status.json"
+    },
+    "groupItem" : "GROUP2",
+    "name" : "status"
+  }, {
+    "dataType" : 7,
+    "name" : "left"
+  }, {
+    "dataType" : 5,
+    "format" : "YYYY-MM-DD",
+    "name" : "deadline"
+  }, {
+    "dataType" : 25,
+    "name" : "name"
+  }, {
+    "dataType" : 25,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "project",
+    "getPSAppDEField" : {
+      "name" : "PROJECT",
+      "codeName" : "Project"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "plan",
+    "getPSAppDEField" : {
+      "name" : "PLAN",
+      "codeName" : "Plan"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "module",
+    "getPSAppDEField" : {
+      "name" : "MODULE",
+      "codeName" : "Module"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "story",
+    "getPSAppDEField" : {
+      "name" : "STORY",
+      "codeName" : "Story"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "frombug",
+    "getPSAppDEField" : {
+      "name" : "FROMBUG",
+      "codeName" : "FromBug"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "srfmstag"
+  } ],
+  "getPSDEUIActionGroup2" : {
+    "name" : "移动端滑动",
+    "getPSUIActionGroupDetails" : [ {
+      "detailType" : "DEUIACTION",
+      "name" : "u3d0414f",
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "caption" : "确认",
+        "codeName" : "confirmStoryChangeCz",
+        "dataAccessAction" : "SRFUR__TASK_XQCHANGE_BUT",
+        "fullCodeName" : "Task_confirmStoryChangeCz",
+        "name" : "需求变更确认（操作栏）",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "ConfirmStoryChange"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf002@FontAwesome",
+          "cssClass" : "fa fa-search"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "BACKEND",
+        "uIActionTag" : "confirmStoryChangeCz",
+        "uIActionType" : "DEUIACTION",
+        "enableConfirm" : true,
+        "reloadData" : true,
+        "id" : "confirmStoryChangeCz@Task"
+      },
+      "addSeparator" : false,
+      "showCaption" : false,
+      "showIcon" : true
+    }, {
+      "detailType" : "DEUIACTION",
+      "name" : "ua94be54",
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "caption" : "收藏",
+        "codeName" : "TaskFavoritesMob",
+        "dataAccessAction" : "SRFUR__TASK_NFAVOR_BUT",
+        "fullCodeName" : "Task_TaskFavoritesMob",
+        "name" : "收藏（移动端）",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "TaskFavorites"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+        },
+        "getPSSysImage" : {
+          "cssClass" : "star-outline"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "BACKEND",
+        "uIActionTag" : "TaskFavoritesMob",
+        "uIActionType" : "DEUIACTION",
+        "enableConfirm" : true,
+        "reloadData" : true,
+        "id" : "TaskFavoritesMob@Task"
+      },
+      "addSeparator" : false,
+      "showCaption" : false,
+      "showIcon" : true
+    }, {
+      "detailType" : "DEUIACTION",
+      "name" : "ub6f46d3",
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "caption" : "取消收藏",
+        "codeName" : "TaskNFavoritesMob",
+        "dataAccessAction" : "SRFUR__TASK_FAVOR_BUT",
+        "fullCodeName" : "Task_TaskNFavoritesMob",
+        "name" : "取消收藏（移动端）",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "TaskNFavorites"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+        },
+        "getPSSysImage" : {
+          "cssClass" : "star-half-outline"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "BACKEND",
+        "uIActionTag" : "TaskNFavoritesMob",
+        "uIActionType" : "DEUIACTION",
+        "enableConfirm" : true,
+        "reloadData" : true,
+        "id" : "TaskNFavoritesMob@Task"
+      },
+      "addSeparator" : false,
+      "showCaption" : false,
+      "showIcon" : true
+    }, {
+      "detailType" : "DEUIACTION",
+      "name" : "u105f6fb",
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "caption" : "开始",
+        "codeName" : "StartMobTeamTask",
+        "dataAccessAction" : "SRFUR__TASK_START_BUT",
+        "fullCodeName" : "Task_StartMobTeamTask",
+        "name" : "开始任务(移动端)(多人任务检查)",
+        "getNextPSUIAction" : {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+          },
+          "modelref" : true,
+          "id" : "StartTaskMob@Task"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "TaskForward"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+        },
+        "getPSNavigateParams" : [ {
+          "key" : "actioninfo",
+          "name" : "actioninfo",
+          "value" : "当前任务只有%1$s才可以开始。",
+          "rawValue" : true
+        } ],
+        "getPSSysImage" : {
+          "cssClass" : "play"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "BACKEND",
+        "uIActionTag" : "StartMobTeamTask",
+        "uIActionType" : "DEUIACTION",
+        "enableConfirm" : true,
+        "showBusyIndicator" : false,
+        "id" : "StartMobTeamTask@Task"
+      },
+      "addSeparator" : false,
+      "showCaption" : false,
+      "showIcon" : true
+    }, {
+      "detailType" : "DEUIACTION",
+      "name" : "ub0717c0",
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "caption" : "指派",
+        "codeName" : "AssignTaskMob",
+        "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMobOptionView.json",
+          "viewType" : "DEMOBOPTVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "Task_AssignTaskMob",
+        "name" : "指派任务（移动端）",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+        },
+        "getPSSysImage" : {
+          "cssClass" : "people"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "AssignTaskMob",
+        "uIActionType" : "DEUIACTION",
+        "reloadData" : true,
+        "id" : "AssignTaskMob@Task"
+      },
+      "addSeparator" : false,
+      "showCaption" : false,
+      "showIcon" : true
+    }, {
+      "detailType" : "DEUIACTION",
+      "name" : "uc3a39d7",
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "caption" : "完成",
+        "codeName" : "finishTask1",
+        "dataAccessAction" : "SRFUR__TASK_COMPLETE_BUT",
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "Task_finishTask1",
+        "name" : "完成任务(移动端)(多人任务检查)",
+        "getNextPSUIAction" : {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+          },
+          "modelref" : true,
+          "id" : "DoneTaskMob@Task"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "TaskForward"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+        },
+        "getPSNavigateParams" : [ {
+          "key" : "actioninfo",
+          "name" : "actioninfo",
+          "value" : "当前任务只有%1$s才可以完成。",
+          "rawValue" : true
+        } ],
+        "getPSSysImage" : {
+          "cssClass" : "checkmark-circle-outline"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "BACKEND",
+        "uIActionTag" : "finishTask1",
+        "uIActionType" : "DEUIACTION",
+        "enableConfirm" : true,
+        "showBusyIndicator" : false,
+        "id" : "finishTask1@Task"
+      },
+      "addSeparator" : false,
+      "showCaption" : false,
+      "showIcon" : true
+    }, {
+      "detailType" : "DEUIACTION",
+      "name" : "u396366e",
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "caption" : "暂停",
+        "codeName" : "PauseMobTeamTask",
+        "dataAccessAction" : "SRFUR__TASK_PAUSE_BUT",
+        "fullCodeName" : "Task_PauseMobTeamTask",
+        "name" : "暂停任务(移动端)(多人任务检查)",
+        "getNextPSUIAction" : {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+          },
+          "modelref" : true,
+          "id" : "PauseTaskMob@Task"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "TaskForward"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+        },
+        "getPSNavigateParams" : [ {
+          "key" : "actioninfo",
+          "name" : "actioninfo",
+          "value" : "当前任务只有%1$s才可以暂停。",
+          "rawValue" : true
+        } ],
+        "getPSSysImage" : {
+          "cssClass" : "pause"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "BACKEND",
+        "uIActionTag" : "PauseMobTeamTask",
+        "uIActionType" : "DEUIACTION",
+        "enableConfirm" : true,
+        "showBusyIndicator" : false,
+        "id" : "PauseMobTeamTask@Task"
+      },
+      "addSeparator" : false,
+      "showCaption" : false,
+      "showIcon" : true
+    }, {
+      "detailType" : "DEUIACTION",
+      "name" : "u3d58a5c",
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "caption" : "取消",
+        "codeName" : "CancelTaskMob",
+        "dataAccessAction" : "SRFUR__TASK_CANCEL_BUT",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskCancelMobOptionView.json",
+          "viewType" : "DEMOBOPTVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "Task_CancelTaskMob",
+        "name" : "取消任务（移动端）",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+        },
+        "getPSSysImage" : {
+          "cssClass" : "power"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "CancelTaskMob",
+        "uIActionType" : "DEUIACTION",
+        "reloadData" : true,
+        "id" : "CancelTaskMob@Task"
+      },
+      "addSeparator" : false,
+      "showCaption" : false,
+      "showIcon" : true
+    }, {
+      "detailType" : "DEUIACTION",
+      "name" : "udbc2509",
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "caption" : "关闭",
+        "codeName" : "CloseTaskMob",
+        "dataAccessAction" : "SRFUR__TASK_CLOSE_BUT",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskCloseMobOptionView.json",
+          "viewType" : "DEMOBOPTVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "Task_CloseTaskMob",
+        "name" : "关闭任务（移动端）",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Close"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+        },
+        "getPSSysImage" : {
+          "cssClass" : "backspace"
+        },
+        "refreshMode" : 1,
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "CloseTaskMob",
+        "uIActionType" : "DEUIACTION",
+        "reloadData" : true,
+        "id" : "CloseTaskMob@Task"
+      },
+      "addSeparator" : false,
+      "showCaption" : false,
+      "showIcon" : true
+    }, {
+      "detailType" : "DEUIACTION",
+      "name" : "uda0683f",
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "caption" : "激活",
+        "codeName" : "ActiveMobTask",
+        "dataAccessAction" : "SRFUR__TASK_ACTIVATION_BUT",
+        "getFrontPSAppView" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskActiveMobTask.json",
+          "viewType" : "DEMOBOPTVIEW"
+        },
+        "frontProcessType" : "WIZARD",
+        "fullCodeName" : "Task_ActiveMobTask",
+        "name" : "激活任务(移动端)",
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+        },
+        "getPSSysImage" : {
+          "glyph" : "xf0d0@FontAwesome",
+          "cssClass" : "fa fa-magic"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "FRONT",
+        "uIActionTag" : "ActiveMobTask",
+        "uIActionType" : "DEUIACTION",
+        "id" : "ActiveMobTask@Task"
+      },
+      "addSeparator" : false,
+      "showCaption" : false,
+      "showIcon" : true
+    }, {
+      "detailType" : "DEUIACTION",
+      "name" : "u2ebba9c",
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "caption" : "工时",
+        "codeName" : "ConsumedMobTaskTeam",
+        "dataAccessAction" : "SRFUR__TASK_CONSUM_BUT",
+        "fullCodeName" : "Task_ConsumedMobTaskTeam",
+        "name" : "工时(移动端)(多人任务检查)",
+        "getNextPSUIAction" : {
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+          },
+          "modelref" : true,
+          "id" : "WorkHoursMob@Task"
+        },
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "TaskForward"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+        },
+        "getPSNavigateParams" : [ {
+          "key" : "actioninfo",
+          "name" : "actioninfo",
+          "value" : "当前任务只有%1$s才可以记录工时。",
+          "rawValue" : true
+        } ],
+        "getPSSysImage" : {
+          "glyph" : "xf017@FontAwesome",
+          "cssClass" : "fa fa-clock-o"
+        },
+        "timeout" : 60000,
+        "uIActionMode" : "BACKEND",
+        "uIActionTag" : "ConsumedMobTaskTeam",
+        "uIActionType" : "DEUIACTION",
+        "enableConfirm" : true,
+        "showBusyIndicator" : false,
+        "id" : "ConsumedMobTaskTeam@Task"
+      },
+      "addSeparator" : false,
+      "showCaption" : false,
+      "showIcon" : true
+    }, {
+      "detailType" : "DEUIACTION",
+      "name" : "ue7e5c43",
+      "getPSUIAction" : {
+        "actionTarget" : "SINGLEKEY",
+        "caption" : "删除",
+        "codeName" : "deleteMob",
+        "confirmMsg" : "确认要删除，删除操作将不可恢复？",
+        "dataAccessAction" : "SRFUR__TASK_DELETE_BUT",
+        "fullCodeName" : "Task_deleteMob",
+        "name" : "删除（移动端）",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
+        },
+        "getPSSysImage" : {
+          "cssClass" : "remove"
+        },
+        "refreshMode" : 1,
+        "successMsg" : "已删除",
+        "timeout" : 60000,
+        "uIActionMode" : "BACKEND",
+        "uIActionTag" : "deleteMob",
+        "uIActionType" : "DEUIACTION",
+        "closeEditView" : true,
+        "closePopupView" : true,
+        "enableConfirm" : true,
+        "reloadData" : true,
+        "id" : "deleteMob@Task"
+      },
+      "addSeparator" : false,
+      "showCaption" : false,
+      "showIcon" : true
+    } ]
+  },
+  "getPSSysPFPlugin" : {
+    "pluginType" : "LIST_ITEMRENDER",
+    "pluginCode" : "PFPlugin22"
+  },
+  "pagingSize" : 25,
+  "getRemovePSControlAction" : {
+    "modelref" : true,
+    "id" : "remove"
+  },
+  "getUpdatePSControlAction" : {
+    "modelref" : true,
+    "id" : "update"
+  },
+  "hasWFDataItems" : false,
+  "enableGroup" : false,
+  "enableRowEdit" : false,
+  "enableRowEditGroup" : false,
+  "enableRowEditOrder" : false,
+  "enableRowNew" : false,
+  "noSort" : false,
+  "showHeader" : true,
+  "modelid" : "881c273f0a3edb62a7fded4f04b338fe"
+}

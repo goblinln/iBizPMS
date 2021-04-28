@@ -1,0 +1,17 @@
+export default [
+    'dept',
+    'org',
+    'name',
+    'addeddate',
+    'id',
+    'deleted',
+    'lasteditedby',
+    'type',
+    'lastediteddate',
+    'addedby',
+    'casecnt',
+    'desc',
+    'product',
+    'deptname',
+    'orgname',
+];
