@@ -1791,6 +1791,13 @@
     "mSTag" : "closed__0",
     "name" : "关闭_未置顶",
     "getPSDEMainStateActions" : [ {
+      "name" : "CancelProductTop",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/CancelProductTop.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Update",
       "getPSDEAction" : {
         "modelref" : true,
@@ -1972,6 +1979,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Save.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "CancelProductTop",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/CancelProductTop.json"
       },
       "allowMode" : true
     } ],

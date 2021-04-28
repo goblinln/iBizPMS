@@ -1,0 +1,1 @@
+{"codeListType":"STATIC","codeName":"NeedNotReview","dynaInstMode":1,"dynaModelFilePath":"PSSYSAPPS/Mob/PSAPPCODELISTS/NeedNotReview.json","emptyText":"未定义","name":"不需要评审","getPSAppDataEntity":{"modelref":true,"path":"PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"},"getPSCodeItems":[{"codeName":"Item_0","text":"不需要评审","value":"0"}],"enableCache":true}

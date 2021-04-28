@@ -47,14 +47,16 @@ public class AppController {
                 for (UAAUniResAuthority uaaUniResAuthority:uniResAuthorities ) {
                     uniRes.add(uaaUniResAuthority.getAuthority());
                 }
-                String curSystemId = curUser.getSrfsystemid();
-                if(StringUtils.isEmpty(curSystemId))
-                {
-                    curUser.getAuthorities().stream().filter(authority -> authority instanceof UAAMenuAuthority ).
-                            forEach(grantedAuthority ->appMenu.add(grantedAuthority.getAuthority()) );
-                }else{
-                    curUser.getAuthorities().stream().filter(authority -> authority instanceof UAAMenuAuthority && curSystemId.equals(((UAAMenuAuthority)authority).getSystemid()) ).
-                            forEach(grantedAuthority ->appMenu.add(grantedAuthority.getAuthority()) );
+                if(curUser.getAuthorities() != null){
+                    String curSystemId = curUser.getSrfsystemid();
+                    if(StringUtils.isEmpty(curSystemId))
+                    {
+                        curUser.getAuthorities().stream().filter(authority -> authority instanceof UAAMenuAuthority ).
+                                forEach(grantedAuthority ->appMenu.add(grantedAuthority.getAuthority()) );
+                    }else{
+                        curUser.getAuthorities().stream().filter(authority -> authority instanceof UAAMenuAuthority && curSystemId.equals(((UAAMenuAuthority)authority).getSystemid()) ).
+                                forEach(grantedAuthority ->appMenu.add(grantedAuthority.getAuthority()) );
+                    }
                 }
             } catch (Exception e) {
                 log.error(e.getMessage());

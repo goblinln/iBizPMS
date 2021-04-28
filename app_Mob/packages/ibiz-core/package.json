@@ -1,0 +1,17 @@
+{
+  "name": "ibiz-core",
+  "version": "1.0.0",
+  "description": "ibiz核心包",
+  "main": "src/index.ts",
+  "author": "ibiz-temp",
+  "license": "MIT",
+  "dependencies": {
+      "async-validator": "^3.3.0",
+      "qs": "^6.9.1",
+      "axios": "^0.19.1",
+      "ramda": "^0.27.1"
+  },
+  "devDependencies": {
+      "@types/ramda": "^0.27.34"
+  }
+}

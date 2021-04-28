@@ -1,0 +1,16 @@
+export default [
+    'files',
+    'id',
+    'org',
+    'dept',
+    'content',
+    'updateby',
+    'type',
+    'title',
+    'orgname',
+    'version',
+    'digest',
+    'deptname',
+    'createby',
+    'doc',
+];
