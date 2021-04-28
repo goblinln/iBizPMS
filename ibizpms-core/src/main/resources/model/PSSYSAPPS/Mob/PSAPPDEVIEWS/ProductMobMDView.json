@@ -849,10 +849,6 @@
         "showIcon" : true
       } ]
     },
-    "getPSSysPFPlugin" : {
-      "pluginType" : "EDITFORM_RENDER",
-      "pluginCode" : "StartTaskOptForm"
-    },
     "pagingSize" : 1000,
     "getRemovePSControlAction" : {
       "modelref" : true,

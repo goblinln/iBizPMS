@@ -676,11 +676,11 @@ public class DELogicAspect {
         validLogic.put("ibzmyterritorymyterritorycountexec.bpmn", 1);
         validLogic.put("ibzreportmyreportinotsubmitexec.bpmn", 1);
         validLogic.put("ibzreportreportireceivedexec.bpmn", 1);
-        validLogic.put("productgetafter.bpmn", 1);
         validLogic.put("productcancelproducttopexec.bpmn", 1);
         validLogic.put("productmobproductcounterexec.bpmn", 1);
         validLogic.put("productmobproducttestcounterexec.bpmn", 1);
         validLogic.put("productproducttopexec.bpmn", 1);
+        validLogic.put("productsysgetafter.bpmn", 1);
         validLogic.put("productmodulecreateafter.bpmn", 1);
         validLogic.put("productmoduleupdateafter.bpmn", 1);
         validLogic.put("productmodulefixexec.bpmn", 1);
