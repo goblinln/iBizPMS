@@ -455,11 +455,9 @@ public class ProjectResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取BugProject", tags = {"项目" } ,notes = "获取BugProject")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchbugproject")
 	public ResponseEntity<List<ProjectDTO>> fetchBugProject(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchBugProject(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -469,11 +467,9 @@ public class ProjectResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询BugProject", tags = {"项目" } ,notes = "查询BugProject")
     @RequestMapping(method= RequestMethod.POST , value="/projects/searchbugproject")
 	public ResponseEntity<Page<ProjectDTO>> searchBugProject(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchBugProject(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

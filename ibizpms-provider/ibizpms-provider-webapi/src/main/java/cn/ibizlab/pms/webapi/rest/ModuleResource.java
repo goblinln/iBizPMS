@@ -164,11 +164,9 @@ public class ModuleResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取BugModule", tags = {"模块" } ,notes = "获取BugModule")
     @RequestMapping(method= RequestMethod.POST , value="/modules/fetchbugmodule")
 	public ResponseEntity<List<ModuleDTO>> fetchBugModule(@RequestBody ModuleSearchContext context) {
-        moduleRuntime.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchBugModule(context) ;
         List<ModuleDTO> list = moduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -178,11 +176,9 @@ public class ModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询BugModule", tags = {"模块" } ,notes = "查询BugModule")
     @RequestMapping(method= RequestMethod.POST , value="/modules/searchbugmodule")
 	public ResponseEntity<Page<ModuleDTO>> searchBugModule(@RequestBody ModuleSearchContext context) {
-        moduleRuntime.addAuthorityConditions(context,"READ");
         Page<Module> domains = moduleService.searchBugModule(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(moduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
