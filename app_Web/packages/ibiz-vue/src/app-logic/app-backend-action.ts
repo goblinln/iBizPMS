@@ -1,4 +1,5 @@
 import {
+    getPSUIActionByModelObject,
     IPSAppDataEntity,
     IPSAppDEField,
     IPSAppDEMethod,
@@ -193,7 +194,7 @@ export class AppBackEndAction {
                                         actionContext.closeView(null);
                                     }
                                     // 后续界面行为
-                                    if (this.actionModel.getNextPSUIAction) {
+                                    if (this.actionModel.M?.getNextPSUIAction) {
                                         const { data: result } = response;
                                         let _args: any[] = [];
                                         if (Object.is(actionContext.$util.typeOf(result), 'array')) {
@@ -203,12 +204,25 @@ export class AppBackEndAction {
                                         } else {
                                             _args = [...args];
                                         }
-                                        const nextUIaction: IPSAppDEUIAction = this.actionModel.getNextPSUIAction() as IPSAppDEUIAction;
-                                        if (nextUIaction.getPSAppDataEntity()) {
-                                            let [tag, appDeName] = nextUIaction.id.split('@');
-                                            if (deUIService) {
-                                                deUIService.excuteAction(
-                                                    tag,
+                                        getPSUIActionByModelObject(this.actionModel).then((nextUIaction:any)=>{
+                                            if (nextUIaction) {
+                                                let [tag, appDeName] = nextUIaction.id.split('@');
+                                                if (deUIService) {
+                                                    deUIService.excuteAction(
+                                                        tag,
+                                                        _args,
+                                                        context,
+                                                        params,
+                                                        $event,
+                                                        xData,
+                                                        actionContext,
+                                                        undefined,
+                                                        deUIService,
+                                                    );
+                                                }
+                                            } else {
+                                                (AppGlobalService.getInstance() as any).executeGlobalAction(
+                                                    nextUIaction.id,
                                                     _args,
                                                     context,
                                                     params,
@@ -216,21 +230,9 @@ export class AppBackEndAction {
                                                     xData,
                                                     actionContext,
                                                     undefined,
-                                                    deUIService,
                                                 );
                                             }
-                                        } else {
-                                            (AppGlobalService.getInstance() as any).executeGlobalAction(
-                                                nextUIaction.id,
-                                                _args,
-                                                context,
-                                                params,
-                                                $event,
-                                                xData,
-                                                actionContext,
-                                                undefined,
-                                            );
-                                        }
+                                        });
                                     }
                                 })
                                 .catch((response: any) => {
