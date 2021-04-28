@@ -11,6 +11,16 @@
     "cloneParam" : false,
     "ignoreException" : false,
     "internalLogic" : true
+  }, {
+    "attachMode" : "AFTER",
+    "name" : "附加逻辑",
+    "getPSDELogic" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/getCurUserSetTop.json"
+    },
+    "cloneParam" : false,
+    "ignoreException" : false,
+    "internalLogic" : true
   } ],
   "codeName" : "Get",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Get.json",

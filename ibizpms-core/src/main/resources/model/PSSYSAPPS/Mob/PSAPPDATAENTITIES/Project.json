@@ -3219,13 +3219,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "CancelProjectTop",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/CancelProjectTop.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Update",
       "getPSDEAction" : {
         "modelref" : true,
@@ -3517,13 +3510,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "CancelProjectTop",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/CancelProjectTop.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Close",
       "getPSDEAction" : {
         "modelref" : true,
@@ -3750,13 +3736,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Activate.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "CancelProjectTop",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/CancelProjectTop.json"
       },
       "allowMode" : true
     }, {
@@ -3989,13 +3968,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/ProjectTaskQCnt.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "CancelProjectTop",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/CancelProjectTop.json"
       },
       "allowMode" : true
     }, {

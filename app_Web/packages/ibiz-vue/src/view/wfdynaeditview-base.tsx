@@ -169,14 +169,15 @@ export class WFDynaEditViewBase extends MainViewBase {
         }
         if (this.deDRTabPages && this.deDRTabPages.length > 0) {
             const tempContext = Util.deepCopy(this.context);
+            const tabsName = `${this.appDeCodeName?.toLowerCase()}_${this.viewInstance.codeName.toLowerCase()}`;
             return (
-                <tabs animated={false} class="workflow-tabs-container">
-                    <tab-pane tab={this.editFormInstance.codeName.toLowerCase()} label={this.editFormInstance.logicName}>
+                <tabs animated={false} name={tabsName} class="workflow-tabs-container">
+                    <tab-pane tab={tabsName} label={this.editFormInstance.logicName}>
                         {this.renderFormContent()}
                     </tab-pane>
                     {this.deDRTabPages.map((deDRTabPage: IPSDEDRTabPage) => {
                         return (
-                            <tab-pane tab={deDRTabPage.name.toLowerCase()} label={deDRTabPage.caption}>
+                            <tab-pane tab={tabsName} label={deDRTabPage.caption}>
                                 { this.$createElement('app-view-shell', {
                                     props: {
                                         staticProps: {
