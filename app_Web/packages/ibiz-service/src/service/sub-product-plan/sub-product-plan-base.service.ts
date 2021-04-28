@@ -652,6 +652,23 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
     return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
     /**
+     * FetchCurProductPlanStory
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubProductPlanService
+     */
+    async FetchCurProductPlanStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/fetchcurproductplanstory`, _data);
+        }
+        if (_context.productplan && true) {
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/fetchcurproductplanstory`, _data);
+        }
+    return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
+    }
+    /**
      * FetchDefault
      *
      * @param {*} [_context={}]

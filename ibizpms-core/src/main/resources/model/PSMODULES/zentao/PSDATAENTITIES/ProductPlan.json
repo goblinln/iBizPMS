@@ -463,6 +463,10 @@
     "codeName" : "CurProductPlanStory",
     "logicName" : "数据集",
     "name" : "CurProductPlanStory",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "CurProductPlan"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   }, {

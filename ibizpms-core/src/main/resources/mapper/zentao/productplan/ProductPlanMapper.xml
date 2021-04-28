@@ -140,6 +140,13 @@
          )t1
      </select>
 
+    <!--数据集合[CurProductPlanStory]-->
+	 <select id="searchCurProductPlanStory"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext"  resultMap="ProductPlanResultMap">
+         select t1.* from (
+                <include refid="CurProductPlan" />
+         )t1
+     </select>
+
     <!--数据集合[Default]-->
 	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductPlanSearchContext"  resultMap="ProductPlanResultMap">
 	 	select * from (

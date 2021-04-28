@@ -558,6 +558,20 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
         return this.http.post(`/productplans/fetchcurproductplan`, _data);
     }
     /**
+     * FetchCurProductPlanStory
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof ProductPlanService
+     */
+    async FetchCurProductPlanStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/productplans/fetchcurproductplanstory`, _data);
+        }
+        return this.http.post(`/productplans/fetchcurproductplanstory`, _data);
+    }
+    /**
      * FetchDefault
      *
      * @param {*} [_context={}]
