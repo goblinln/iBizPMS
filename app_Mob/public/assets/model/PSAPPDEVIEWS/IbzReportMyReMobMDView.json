@@ -1,0 +1,841 @@
+{
+  "accUserMode" : 2,
+  "caption" : "我收到的",
+  "codeName" : "IbzReportMyReMobMDView",
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzReportMyReMobMDView.json",
+  "name" : "IbzReportMyReMobMDView",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+  },
+  "getPSAppViewEngines" : [ {
+    "engineCat" : "VIEW",
+    "engineType" : "MobMDView",
+    "name" : "engine",
+    "getPSUIEngineParams" : [ {
+      "name" : "OPENDATA",
+      "paramType" : "LOGIC"
+    }, {
+      "name" : "MDCTRL",
+      "paramType" : "CTRL"
+    }, {
+      "name" : "NEWDATA",
+      "paramType" : "LOGIC"
+    }, {
+      "name" : "SEARCHFORM",
+      "paramType" : "CTRL"
+    } ]
+  } ],
+  "getPSAppViewLogics" : [ {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "newdata",
+    "getPSAppUILogic" : {
+      "actionAfterWizard" : "DEFAULT",
+      "logicType" : "PREDEFINED",
+      "name" : "新建数据",
+      "viewLogicType" : "APP_NEWDATA",
+      "batchAddOnly" : false,
+      "enableBatchAdd" : false,
+      "enableWizardAdd" : false
+    }
+  }, {
+    "logicTrigger" : "CUSTOM",
+    "logicType" : "SYSUILOGIC",
+    "name" : "opendata",
+    "getPSAppUILogic" : {
+      "logicType" : "PREDEFINED",
+      "name" : "打开数据",
+      "viewLogicType" : "APP_OPENDATA"
+    }
+  } ],
+  "getPSControls" : [ {
+    "codeName" : "MobDef",
+    "controlType" : "SEARCHFORM",
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport/PSSEARCHFORMS/MobDef.json",
+    "hookEventNames" : [ "SEARCH", "LOAD" ],
+    "logicName" : "移动端搜索表单",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+    },
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionType" : "FILTERACTION",
+        "name" : "search",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterSearch"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGet"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+        }
+      }, {
+        "actionType" : "FILTERACTION",
+        "name" : "loaddraft",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FilterGetDraft"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+        }
+      } ],
+      "enableDEFieldPrivilege" : false,
+      "id" : "搜索表单处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "SEARCHFORM"
+    },
+    "getPSDEFormItems" : [ {
+      "id" : "n_type_eq",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "TYPE",
+        "codeName" : "Type"
+      }
+    } ],
+    "getPSDEFormPages" : [ {
+      "caption" : "常规条件",
+      "codeName" : "formpage1",
+      "detailStyle" : "DEFAULT",
+      "detailType" : "FORMPAGE",
+      "name" : "formpage1",
+      "getPSDEFormDetails" : [ {
+        "caption" : "模板",
+        "codeName" : "n_type_eq",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "name" : "n_type_eq",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "TYPE",
+          "codeName" : "Type"
+        },
+        "getPSEditor" : {
+          "editorType" : "MOBDROPDOWNLIST",
+          "editorWidth" : 100.0,
+          "name" : "n_type_eq",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/ReportType.json"
+          },
+          "singleSelect" : true
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "emptyCaption" : false,
+        "hidden" : false,
+        "inputTipClosable" : false,
+        "needCodeListConfig" : true,
+        "showCaption" : true
+      } ],
+      "getPSLayout" : {
+        "columnCount" : 24,
+        "layout" : "TABLE_24COL"
+      },
+      "infoGroupMode" : false
+    } ],
+    "getPSLayout" : {
+      "columnCount" : 24,
+      "layout" : "TABLE_24COL"
+    },
+    "searchButtonStyle" : "DEFAULT",
+    "tabHeaderPos" : "TOP",
+    "enableAdvanceSearch" : false,
+    "enableAutoSearch" : false,
+    "enableFilterSave" : false,
+    "noTabHeader" : true,
+    "name" : "searchform",
+    "modelid" : "fa664c22a3d7e3552eab2d71fce62a45"
+  }, {
+    "codeName" : "MyRe",
+    "controlStyle" : "LISTVIEW",
+    "controlType" : "MOBMDCTRL",
+    "getCreatePSControlAction" : {
+      "modelref" : true,
+      "id" : "create"
+    },
+    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport/PSMOBMDCTRLS/MyRe.json",
+    "getFetchPSControlAction" : {
+      "modelref" : true,
+      "id" : "fetch"
+    },
+    "getGetPSControlAction" : {
+      "modelref" : true,
+      "id" : "load"
+    },
+    "groupMode" : "AUTO",
+    "getGroupPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
+    "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWCLICK", "LOAD" ],
+    "getItemPSLayoutPanel" : {
+      "getAllPSPanelFields" : [ {
+        "id" : "account"
+      }, {
+        "id" : "submittime"
+      }, {
+        "id" : "worktoday"
+      }, {
+        "id" : "planstomorrow"
+      }, {
+        "id" : "type",
+        "hidden" : true
+      }, {
+        "id" : "issubmit",
+        "hidden" : true
+      } ],
+      "codeName" : "MySubmit",
+      "controlType" : "PANEL",
+      "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport/PSPANELS/MySubmit.json",
+      "layoutMode" : "TABLE_12COL",
+      "logicName" : "我提交的项布局面板",
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+      },
+      "getPSControlParam" : { },
+      "getPSLayout" : {
+        "columnCount" : 12,
+        "layout" : "TABLE_12COL"
+      },
+      "getRootPSPanelItems" : [ {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "CONTAINER",
+        "name" : "container2",
+        "getPSLayout" : {
+          "columnCount" : 12,
+          "layout" : "TABLE_12COL"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 12,
+          "layout" : "TABLE_12COL"
+        },
+        "getPSPanelItems" : [ {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "CONTAINER",
+          "name" : "container1",
+          "getPSLayout" : {
+            "columnCount" : 12,
+            "layout" : "TABLE_12COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 12,
+            "layout" : "TABLE_12COL"
+          },
+          "getPSPanelItems" : [ {
+            "itemStyle" : "DEFAULT",
+            "itemType" : "FIELD",
+            "name" : "account",
+            "getPSEditor" : {
+              "editorType" : "SPAN",
+              "name" : "account",
+              "getPSAppCodeList" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
+              },
+              "editable" : false,
+              "enableLinkView" : false
+            },
+            "getPSLayoutPos" : {
+              "colLG" : 5,
+              "colMD" : 12,
+              "layout" : "TABLE_12COL"
+            },
+            "viewFieldName" : "account",
+            "convertToCodeItemText" : true,
+            "hidden" : false,
+            "showCaption" : false
+          }, {
+            "itemStyle" : "DEFAULT",
+            "itemType" : "FIELD",
+            "name" : "submittime",
+            "getPSEditor" : {
+              "editorType" : "SPAN",
+              "name" : "submittime",
+              "editable" : false,
+              "enableLinkView" : false
+            },
+            "getPSLayoutPos" : {
+              "colLG" : 2,
+              "colLGOffset" : 4,
+              "colMD" : 12,
+              "layout" : "TABLE_12COL"
+            },
+            "viewFieldName" : "submittime",
+            "hidden" : false,
+            "showCaption" : false
+          } ],
+          "showCaption" : false
+        }, {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "CONTAINER",
+          "name" : "container3",
+          "getPSLayout" : {
+            "columnCount" : 12,
+            "layout" : "TABLE_12COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 12,
+            "layout" : "TABLE_12COL"
+          },
+          "getPSPanelItems" : [ {
+            "itemStyle" : "DEFAULT",
+            "itemType" : "FIELD",
+            "name" : "worktoday",
+            "getPSEditor" : {
+              "editorStyle" : "MOBHTMLOFPMS",
+              "editorType" : "MOBHTMLTEXT",
+              "name" : "worktoday",
+              "getPSSysPFPlugin" : {
+                "pluginType" : "EDITOR_CUSTOMSTYLE",
+                "pluginCode" : "PMSRICHTEXT"
+              }
+            },
+            "getPSLayoutPos" : {
+              "colLG" : 11,
+              "colLGOffset" : 1,
+              "colMD" : 12,
+              "layout" : "TABLE_12COL"
+            },
+            "viewFieldName" : "worktoday",
+            "hidden" : false,
+            "showCaption" : false
+          } ],
+          "showCaption" : true
+        }, {
+          "itemStyle" : "DEFAULT",
+          "itemType" : "CONTAINER",
+          "name" : "container4",
+          "getPSLayout" : {
+            "columnCount" : 12,
+            "layout" : "TABLE_12COL"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 12,
+            "layout" : "TABLE_12COL"
+          },
+          "getPSPanelItems" : [ {
+            "itemStyle" : "DEFAULT",
+            "itemType" : "FIELD",
+            "name" : "planstomorrow",
+            "getPSEditor" : {
+              "editorStyle" : "MOBHTMLOFPMS",
+              "editorType" : "MOBHTMLTEXT",
+              "name" : "planstomorrow",
+              "getPSSysPFPlugin" : {
+                "pluginType" : "EDITOR_CUSTOMSTYLE",
+                "pluginCode" : "PMSRICHTEXT"
+              }
+            },
+            "getPSLayoutPos" : {
+              "colLG" : 11,
+              "colLGOffset" : 1,
+              "colMD" : 12,
+              "layout" : "TABLE_12COL"
+            },
+            "viewFieldName" : "planstomorrow",
+            "hidden" : false,
+            "showCaption" : false
+          } ],
+          "showCaption" : true
+        } ],
+        "getPSSysCss" : {
+          "cssName" : "mob_list_card"
+        },
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "type",
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "type"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 12,
+          "layout" : "TABLE_12COL"
+        },
+        "viewFieldName" : "type",
+        "hidden" : true,
+        "showCaption" : false
+      }, {
+        "itemStyle" : "DEFAULT",
+        "itemType" : "FIELD",
+        "name" : "issubmit",
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "issubmit"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 12,
+          "layout" : "TABLE_12COL"
+        },
+        "viewFieldName" : "issubmit",
+        "hidden" : true,
+        "showCaption" : false
+      } ],
+      "mobilePanel" : true,
+      "name" : "mdctrl_itempanel",
+      "modelid" : "b8c465d621ad8098363ffc3bb5327845"
+    },
+    "logicName" : "MyRe",
+    "minorSortDir" : "DESC",
+    "getMinorSortPSAppDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
+    "mobListStyle" : "LISTVIEW",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+    },
+    "getPSAppViewLogics" : [ {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "mdctrl_u1f235cc_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "我收到的（日报）"
+      }
+    }, {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "mdctrl_ua63e727_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "我收到的（周报）"
+      }
+    }, {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "mdctrl_u5c3cca0_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "我收到的（月报）"
+      }
+    }, {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
+      "name" : "mdctrl_uf5e5614_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "我收到的（汇报）"
+      }
+    } ],
+    "getPSAppViewUIActions" : [ {
+      "name" : "我收到的（日报）",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+        },
+        "modelref" : true,
+        "id" : "MyReDaily@IbzReport"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "xDataControlName" : "mdctrl"
+    }, {
+      "name" : "我收到的（周报）",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+        },
+        "modelref" : true,
+        "id" : "MyReWeekly@IbzReport"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "xDataControlName" : "mdctrl"
+    }, {
+      "name" : "我收到的（月报）",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+        },
+        "modelref" : true,
+        "id" : "MyReMonthy@IbzReport"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "xDataControlName" : "mdctrl"
+    }, {
+      "name" : "我收到的（汇报）",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+        },
+        "modelref" : true,
+        "id" : "MyReReportly@IbzReport"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "xDataControlName" : "mdctrl"
+    } ],
+    "getPSControlHandler" : {
+      "getPSHandlerActions" : [ {
+        "actionName" : "Update",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "UPDATE",
+        "name" : "update",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Update"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+        }
+      }, {
+        "actionType" : "DEDATASET",
+        "name" : "fetch",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "FetchMyReAllReport"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+        }
+      }, {
+        "actionName" : "Remove",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "DELETE",
+        "name" : "remove",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Remove"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+        }
+      }, {
+        "actionName" : "Get",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "READ",
+        "name" : "load",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Get"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+        }
+      }, {
+        "actionName" : "Create",
+        "actionType" : "DEACTION",
+        "dataAccessAction" : "CREATE",
+        "name" : "create",
+        "getPSAppDEMethod" : {
+          "modelref" : true,
+          "id" : "Create"
+        },
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+        }
+      } ],
+      "userDRAction" : "READ",
+      "enableDEFieldPrivilege" : false,
+      "id" : "列表控件处理器"
+    },
+    "getPSControlParam" : {
+      "autoLoad" : true,
+      "showBusyIndicator" : true,
+      "id" : "MDCTRL"
+    },
+    "getPSDEListDataItems" : [ {
+      "dataType" : 21,
+      "name" : "planstomorrow"
+    }, {
+      "dataType" : 1,
+      "name" : "ibz_dailyid"
+    }, {
+      "dataType" : 5,
+      "format" : "YYYY-MM-DD",
+      "name" : "date"
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
+      },
+      "name" : "account"
+    }, {
+      "dataType" : 21,
+      "name" : "comment"
+    }, {
+      "dataType" : 25,
+      "name" : "ibz_dailyname"
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/ReportType.json"
+      },
+      "name" : "type"
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/ReportStatus.json"
+      },
+      "name" : "reportstatus"
+    }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/YesNo.json"
+      },
+      "name" : "issubmit"
+    }, {
+      "dataType" : 21,
+      "name" : "worktoday"
+    }, {
+      "dataType" : 25,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "IBZ_DAILYID",
+        "codeName" : "IbzDailyId"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmajortext",
+      "getPSAppDEField" : {
+        "name" : "IBZ_DAILYNAME",
+        "codeName" : "IbzDailyName"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "srfmstag"
+    } ],
+    "getPSDEListItems" : [ {
+      "align" : "LEFT",
+      "cLConvertMode" : "FRONT",
+      "caption" : "模板",
+      "dataItemName" : "type",
+      "itemType" : "TEXTITEM",
+      "name" : "TYPE",
+      "width" : 150,
+      "widthString" : "150px",
+      "enableSort" : true
+    } ],
+    "getPSDEUIActionGroup" : {
+      "name" : "右滑行为组（我收到的）",
+      "getPSUIActionGroupDetails" : [ {
+        "detailType" : "DEUIACTION",
+        "name" : "u1f235cc",
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "caption" : "查收",
+          "codeName" : "MyReDaily",
+          "dataAccessAction" : "DAILY",
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzDailyMyDailyMobTabExpView.json",
+            "viewType" : "DEMOBTABEXPVIEW"
+          },
+          "frontProcessType" : "WIZARD",
+          "fullCodeName" : "IbzReport_MyReDaily",
+          "name" : "我收到的（日报）",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+          },
+          "getPSNavigateContexts" : [ {
+            "key" : "IBZDAILY",
+            "name" : "IBZDAILY",
+            "value" : "ibzreport",
+            "rawValue" : false
+          } ],
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "MyReDaily",
+          "uIActionType" : "DEUIACTION",
+          "id" : "MyReDaily@IbzReport"
+        },
+        "addSeparator" : false,
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "detailType" : "DEUIACTION",
+        "name" : "ua63e727",
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "caption" : "查收",
+          "codeName" : "MyReWeekly",
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzWeeklyUsr2MobTabExpViewMyReceived.json",
+            "viewType" : "DEMOBTABEXPVIEW"
+          },
+          "frontProcessType" : "WIZARD",
+          "fullCodeName" : "IbzReport_MyReWeekly",
+          "name" : "我收到的（周报）",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+          },
+          "getPSNavigateContexts" : [ {
+            "key" : "IBZWEEKLY",
+            "name" : "IBZWEEKLY",
+            "value" : "ibzreport",
+            "rawValue" : false
+          } ],
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "MyReWeekly",
+          "uIActionType" : "DEUIACTION",
+          "id" : "MyReWeekly@IbzReport"
+        },
+        "addSeparator" : false,
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "detailType" : "DEUIACTION",
+        "name" : "u5c3cca0",
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "caption" : "查收",
+          "codeName" : "MyReMonthy",
+          "dataAccessAction" : "MONTHLY",
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzMonthlyMyReceivedMobTabExpView.json",
+            "viewType" : "DEMOBTABEXPVIEW"
+          },
+          "frontProcessType" : "WIZARD",
+          "fullCodeName" : "IbzReport_MyReMonthy",
+          "name" : "我收到的（月报）",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+          },
+          "getPSNavigateContexts" : [ {
+            "key" : "IBZMONTHLY",
+            "name" : "IBZMONTHLY",
+            "value" : "ibzreport",
+            "rawValue" : false
+          } ],
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "MyReMonthy",
+          "uIActionType" : "DEUIACTION",
+          "id" : "MyReMonthy@IbzReport"
+        },
+        "addSeparator" : false,
+        "showCaption" : true,
+        "showIcon" : true
+      }, {
+        "detailType" : "DEUIACTION",
+        "name" : "uf5e5614",
+        "getPSUIAction" : {
+          "actionTarget" : "SINGLEKEY",
+          "caption" : "查收",
+          "codeName" : "MyReReportly",
+          "dataAccessAction" : "REPORTLY",
+          "getFrontPSAppView" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzReportlyMobEditView.json",
+            "viewType" : "DEMOBEDITVIEW"
+          },
+          "frontProcessType" : "WIZARD",
+          "fullCodeName" : "IbzReport_MyReReportly",
+          "name" : "我收到的（汇报）",
+          "getPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+          },
+          "getPSNavigateContexts" : [ {
+            "key" : "IBZREPORTLY",
+            "name" : "IBZREPORTLY",
+            "value" : "ibzreport",
+            "rawValue" : false
+          } ],
+          "timeout" : 60000,
+          "uIActionMode" : "FRONT",
+          "uIActionTag" : "MyReReportly",
+          "uIActionType" : "DEUIACTION",
+          "id" : "MyReReportly@IbzReport"
+        },
+        "addSeparator" : false,
+        "showCaption" : true,
+        "showIcon" : true
+      } ]
+    },
+    "getPSSysPFPlugin" : {
+      "pluginType" : "LIST_RENDER",
+      "pluginCode" : "mobReportList2"
+    },
+    "pagingSize" : 1000,
+    "getRemovePSControlAction" : {
+      "modelref" : true,
+      "id" : "remove"
+    },
+    "getUpdatePSControlAction" : {
+      "modelref" : true,
+      "id" : "update"
+    },
+    "hasWFDataItems" : false,
+    "enableGroup" : true,
+    "enableRowEdit" : false,
+    "enableRowEditGroup" : false,
+    "enableRowEditOrder" : false,
+    "enableRowNew" : false,
+    "noSort" : false,
+    "showHeader" : true,
+    "name" : "mdctrl",
+    "modelid" : "06a7a6599f24777a7257d41585bd4df3"
+  } ],
+  "getPSDEViewCodeName" : "MyReMobMDView",
+  "getPSViewLayoutPanel" : {
+    "codeName" : "Layoutpanel",
+    "controlStyle" : "APPDEMOBMDVIEW",
+    "controlType" : "VIEWLAYOUTPANEL",
+    "name" : "layoutpanel",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzReport.json"
+    },
+    "getPSControlParam" : { },
+    "layoutPanel" : true,
+    "useDefaultLayout" : true
+  },
+  "title" : "汇报移动端多数据视图（我收到的）",
+  "viewStyle" : "DEFAULT",
+  "viewType" : "DEMOBMDVIEW",
+  "xDataControlName" : "mdctrl",
+  "enableDP" : true,
+  "enableFilter" : true,
+  "enablePullDownRefresh" : true,
+  "enableQuickSearch" : true,
+  "enableSearch" : true,
+  "showCaptionBar" : true
+}

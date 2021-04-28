@@ -1,0 +1,84 @@
+{
+  "codeName" : "ListMenu",
+  "controlType" : "APPMENU",
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPMENUS/ListMenu.json",
+  "logicName" : "列表菜单",
+  "getPSAppMenuItems" : [ {
+    "accUserMode" : 0,
+    "caption" : "电脑",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem1",
+    "getPSSysImage" : {
+      "cssClass" : "desktop"
+    },
+    "tooltip" : "电脑"
+  }, {
+    "accUserMode" : 2,
+    "caption" : "个人信息",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem8",
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "AppFunc"
+    },
+    "tooltip" : "个人信息"
+  }, {
+    "accUserMode" : 0,
+    "caption" : "手机",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem2",
+    "getPSSysImage" : {
+      "cssClass" : "phone-portrait"
+    },
+    "tooltip" : "手机"
+  }, {
+    "accUserMode" : 0,
+    "caption" : "杯子",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem3",
+    "getPSSysImage" : {
+      "cssClass" : "cafe"
+    },
+    "tooltip" : "杯子"
+  }, {
+    "accUserMode" : 0,
+    "caption" : "用户",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem4",
+    "getPSSysImage" : {
+      "cssClass" : "people"
+    },
+    "tooltip" : "用户"
+  }, {
+    "accUserMode" : 0,
+    "caption" : "相机",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem5",
+    "getPSSysImage" : {
+      "cssClass" : "camera"
+    },
+    "tooltip" : "相机"
+  }, {
+    "accUserMode" : 0,
+    "caption" : "望远镜",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem6",
+    "getPSSysImage" : {
+      "cssClass" : "flask"
+    },
+    "tooltip" : "望远镜"
+  }, {
+    "accUserMode" : 0,
+    "caption" : "更多",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem7",
+    "getPSSysImage" : {
+      "glyph" : "xf18c@FontAwesome",
+      "cssClass" : "fa fa-pagelines"
+    },
+    "tooltip" : "更多"
+  } ],
+  "enableCustomize" : false,
+  "name" : "listmenu",
+  "modelid" : "12bcd5021f1866e8bb83fc2fd44344fd"
+}

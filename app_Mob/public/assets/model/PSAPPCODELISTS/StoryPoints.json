@@ -1,0 +1,58 @@
+{
+  "codeListType" : "STATIC",
+  "codeName" : "StoryPoints",
+  "dynaInstMode" : 1,
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPCODELISTS/StoryPoints.json",
+  "emptyText" : "未定义",
+  "name" : "需求故事点",
+  "getPSAppDataEntity" : {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
+  },
+  "getPSCodeItems" : [ {
+    "codeName" : "Item_0",
+    "text" : "0",
+    "value" : "0"
+  }, {
+    "codeName" : "Item_05",
+    "text" : "0.5",
+    "value" : "0.5"
+  }, {
+    "codeName" : "Item_1",
+    "text" : "1",
+    "value" : "1"
+  }, {
+    "codeName" : "Item_2",
+    "text" : "2",
+    "value" : "2"
+  }, {
+    "codeName" : "Item_3",
+    "text" : "3",
+    "value" : "3"
+  }, {
+    "codeName" : "Item_5",
+    "text" : "5",
+    "value" : "5"
+  }, {
+    "codeName" : "Item_8",
+    "text" : "8",
+    "value" : "8"
+  }, {
+    "codeName" : "Item_13",
+    "text" : "13",
+    "value" : "13"
+  }, {
+    "codeName" : "Item_20",
+    "text" : "20",
+    "value" : "20"
+  }, {
+    "codeName" : "Item_40",
+    "text" : "40",
+    "value" : "40"
+  }, {
+    "codeName" : "Item_100",
+    "text" : "100",
+    "value" : "100"
+  } ],
+  "enableCache" : true
+}

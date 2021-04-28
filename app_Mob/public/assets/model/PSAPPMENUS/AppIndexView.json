@@ -1,0 +1,119 @@
+{
+  "codeName" : "AppIndexView",
+  "controlType" : "APPMENU",
+  "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPMENUS/AppIndexView.json",
+  "logicName" : "应用首页视图默认菜单",
+  "getPSAppMenuItems" : [ {
+    "accUserMode" : 2,
+    "caption" : "产品",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem1",
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "Auto13"
+    },
+    "getPSSysImage" : {
+      "cssClass" : "home"
+    },
+    "tooltip" : "产品"
+  }, {
+    "accUserMode" : 2,
+    "caption" : "项目",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem2",
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "Auto18"
+    },
+    "getPSSysImage" : {
+      "cssClass" : "cube"
+    },
+    "tooltip" : "项目"
+  }, {
+    "accUserMode" : 2,
+    "caption" : "测试",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem3",
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "Auto20"
+    },
+    "getPSSysImage" : {
+      "cssClass" : "clipboard"
+    },
+    "tooltip" : "测试"
+  }, {
+    "accUserMode" : 0,
+    "caption" : "我的",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem4",
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "Auto22"
+    },
+    "getPSSysImage" : {
+      "cssClass" : "person"
+    },
+    "tooltip" : "我的",
+    "expanded" : true,
+    "openDefault" : true
+  }, {
+    "accUserMode" : 2,
+    "caption" : "个人中心",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem6",
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "AppFunc"
+    },
+    "tooltip" : "个人中心",
+    "hidden" : true
+  }, {
+    "accUserMode" : 2,
+    "caption" : "用户选择",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem7",
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "AppFunc2"
+    },
+    "tooltip" : "用户选择",
+    "hidden" : true
+  }, {
+    "accUserMode" : 2,
+    "caption" : "更新日志",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem8",
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "AppFunc3"
+    },
+    "tooltip" : "更新日志",
+    "hidden" : true
+  }, {
+    "accUserMode" : 2,
+    "caption" : "登录地图test",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem9",
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "AppFunc4"
+    },
+    "tooltip" : "登录地图test",
+    "hidden" : true
+  }, {
+    "accUserMode" : 2,
+    "caption" : "头像",
+    "itemType" : "MENUITEM",
+    "name" : "menuitem10",
+    "getPSAppFunc" : {
+      "modelref" : true,
+      "id" : "AppFunc14"
+    },
+    "tooltip" : "头像",
+    "hidden" : true
+  } ],
+  "enableCustomize" : false,
+  "name" : "appindexview",
+  "modelid" : "f23beaed85fa4c2edc21e98e3b4711fc"
+}
