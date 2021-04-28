@@ -27,10 +27,6 @@ import cn.ibizlab.pms.core.zentao.domain.StoryStage;
 @Data
 public class StoryStageSearchContext extends QueryWrapperContext<StoryStage> {
 
-	private String n_id_eq;//[虚拟主键]
-	public void setN_id_eq(String n_id_eq) {
-        this.n_id_eq = n_id_eq;
-    }
 	private Long n_story_eq;//[需求]
 	public void setN_story_eq(Long n_story_eq) {
         this.n_story_eq = n_story_eq;
@@ -38,6 +34,10 @@ public class StoryStageSearchContext extends QueryWrapperContext<StoryStage> {
 	private Long n_branch_eq;//[平台/分支]
 	public void setN_branch_eq(Long n_branch_eq) {
         this.n_branch_eq = n_branch_eq;
+    }
+	private String n_id_eq;//[主键]
+	public void setN_id_eq(String n_id_eq) {
+        this.n_id_eq = n_id_eq;
     }
 
     /**

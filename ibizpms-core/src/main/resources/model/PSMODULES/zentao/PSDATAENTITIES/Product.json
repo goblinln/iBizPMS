@@ -609,18 +609,31 @@
     "enableFront" : true
   } ],
   "getAllPSDEDataSyncs" : [ {
-    "codeName" : "DataPush",
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEDATASYNCS/DataPush.json",
+    "codeName" : "ProductPush",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEDATASYNCS/ProductPush.json",
     "eventType" : 3,
-    "name" : "数据推送",
+    "name" : "产品推送",
     "getOutPSSysDataSyncAgent" : {
       "modelref" : true,
-      "path" : "PSSYSDATASYNCAGENTS/DataPush.json"
+      "path" : "PSSYSDATASYNCAGENTS/SYNC.json"
     },
     "syncDir" : "OUT",
-    "syncTag" : "DataPush",
+    "syncTag" : "ProductPush",
     "exportFull" : false,
     "inMode" : false
+  }, {
+    "codeName" : "ProductSync",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEDATASYNCS/ProductSync.json",
+    "eventType" : 7,
+    "getInPSSysDataSyncAgent" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSSYSDATASYNCAGENTS/SYNC.json"
+    },
+    "name" : "产品接收",
+    "syncDir" : "IN",
+    "syncTag" : "ProductSync",
+    "exportFull" : false,
+    "inMode" : true
   } ],
   "getAllPSDEFields" : [ {
     "getAllPSDEFDTColumns" : [ {

@@ -47,15 +47,6 @@ public class StoryStage extends EntityMP implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
-     * 虚拟主键
-     */
-    @DEField(isKeyField = true)
-    @TableField(exist = false)
-    @JSONField(name = "id")
-    @JsonProperty("id")
-    @ApiModelProperty("虚拟主键")
-    private String id;
-    /**
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
@@ -141,6 +132,15 @@ public class StoryStage extends EntityMP implements Serializable {
     @JsonProperty("deptname")
     @ApiModelProperty("归属部门名")
     private String deptname;
+    /**
+     * 主键
+     */
+    @DEField(isKeyField = true)
+    @TableId(value = "`ID`", type = IdType.ASSIGN_UUID)
+    @JSONField(name = "id")
+    @JsonProperty("id")
+    @ApiModelProperty("主键")
+    private String id;
 
     /**
      * 

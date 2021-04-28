@@ -50,10 +50,6 @@ export abstract class ProjectProductBase extends EntityBase implements IProjectP
      */
     dept?: any;
     /**
-     * 虚拟主键
-     */
-    id?: any;
-    /**
      * 产品
      */
     productname?: any;
@@ -89,6 +85,10 @@ export abstract class ProjectProductBase extends EntityBase implements IProjectP
      * 归属组织名
      */
     orgname?: any;
+    /**
+     * 主键
+     */
+    id?: any;
 
     /**
      * 重置实体数据

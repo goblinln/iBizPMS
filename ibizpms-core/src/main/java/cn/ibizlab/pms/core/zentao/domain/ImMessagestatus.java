@@ -72,13 +72,13 @@ public class ImMessagestatus extends EntityMP implements Serializable {
     @ApiModelProperty("user")
     private Integer user;
     /**
-     * 虚拟主键
+     * 主键
      */
     @DEField(isKeyField = true)
-    @TableField(exist = false)
+    @TableId(value = "`ID`", type = IdType.ASSIGN_UUID)
     @JSONField(name = "id")
     @JsonProperty("id")
-    @ApiModelProperty("虚拟主键")
+    @ApiModelProperty("主键")
     private String id;
 
 

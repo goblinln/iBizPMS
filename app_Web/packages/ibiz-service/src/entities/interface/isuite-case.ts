@@ -17,10 +17,6 @@ export interface ISuiteCase extends IEntityBase {
      */
     createby?: any;
     /**
-     * 虚拟主键
-     */
-    id?: any;
-    /**
      * 由谁更新
      */
     updateby?: any;
@@ -52,4 +48,8 @@ export interface ISuiteCase extends IEntityBase {
      * 归属组织名
      */
     orgname?: any;
+    /**
+     * 主键
+     */
+    id?: any;
 }

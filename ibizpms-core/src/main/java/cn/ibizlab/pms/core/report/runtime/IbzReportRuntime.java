@@ -19,6 +19,7 @@ import net.ibizsys.runtime.IDynaInstRuntime;
 import cn.ibizlab.pms.util.domain.EntityBase;
 import cn.ibizlab.pms.util.errors.BadRequestAlertException;
 import cn.ibizlab.pms.util.helper.DELogicExecutor;
+import net.ibizsys.runtime.dataentity.DataEntityRuntimeException;
 import net.ibizsys.runtime.util.IEntityBase;
 import net.ibizsys.runtime.util.ISearchContextBase;
 import org.springframework.data.domain.Page;
@@ -89,7 +90,7 @@ public class IbzReportRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
         try {
             return MAPPER.writeValueAsString(iEntityBase);
         } catch (Exception e) {
-            throw new RuntimeException("序列化错误");
+            throw new DataEntityRuntimeException(String.format("[%1$s]序列化数据异常，%2$s", this.getName(), e.getMessage()), this, e);
         }
     }
 
@@ -98,7 +99,7 @@ public class IbzReportRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
         try {
             return MAPPER.writeValueAsString(list);
         } catch (Exception e) {
-            throw new RuntimeException("序列化错误");
+            throw new DataEntityRuntimeException(String.format("[%1$s]序列化数据异常，%2$s", this.getName(), e.getMessage()), this, e);
         }
     }
 
@@ -107,7 +108,7 @@ public class IbzReportRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
         try {
             return MAPPER.readValue(String.valueOf(objData),IbzReport.class);
         } catch (Exception e) {
-            throw new RuntimeException("反序列化错误");
+            throw new DataEntityRuntimeException(String.format("[%1$s]反序列化数据异常，%2$s", this.getName(), e.getMessage()), this, e);
         }
     }
 
@@ -116,7 +117,7 @@ public class IbzReportRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
         try {
             return MAPPER.readValue(String.valueOf(objData),IbzReport[].class);
         } catch (Exception e) {
-            throw new RuntimeException("反序列化错误");
+            throw new DataEntityRuntimeException(String.format("[%1$s]反序列化数据异常，%2$s", this.getName(), e.getMessage()), this, e);
         }
     }
 

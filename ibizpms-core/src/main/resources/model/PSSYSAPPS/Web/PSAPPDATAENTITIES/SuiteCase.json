@@ -165,13 +165,6 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
-    "codeName" : "Id",
-    "logicName" : "虚拟主键",
-    "name" : "ID",
-    "stdDataType" : 25,
-    "stringLength" : 200,
-    "keyField" : true
-  }, {
     "codeName" : "UpdateBy",
     "logicName" : "由谁更新",
     "name" : "UPDATEBY",
@@ -217,6 +210,13 @@
     "name" : "ORGNAME",
     "stdDataType" : 25,
     "stringLength" : 100
+  }, {
+    "codeName" : "Id",
+    "logicName" : "主键",
+    "name" : "ID",
+    "stdDataType" : 25,
+    "stringLength" : 60,
+    "keyField" : true
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

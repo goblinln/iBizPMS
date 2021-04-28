@@ -5,14 +5,14 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`ACCOUNT`, concat(t1.`ACCOUNT`) AS `ID`, t1.`PRODUCTS`, t1.`PROJECTS` FROM `zt_userview` t1   ]]>
+        <![CDATA[ SELECT t1.`ACCOUNT`, t1.`ID`, t1.`PRODUCTS`, t1.`PROJECTS` FROM `zt_userview` t1   ]]>
     </sql>
 
 	
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
 		<if test="srf.n_id_eq != null ">
-			<![CDATA[ AND  concat(t1.`ACCOUNT`) = #{srf.n_id_eq,jdbcType=VARCHAR} ]]>
+			<![CDATA[ AND  t1.`ID` = #{srf.n_id_eq,jdbcType=VARCHAR} ]]>
         </if>
 		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
 		AND ${ew.sqlSegment}
@@ -31,6 +31,7 @@
 
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="UserViewResultMap" type="cn.ibizlab.pms.core.zentao.domain.UserView" autoMapping="true">
+		<id property="id" column="id" /><!--主键字段映射-->
             
 		
     </resultMap>
@@ -45,7 +46,7 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, concat(t1.`ACCOUNT`) AS `ID` FROM `zt_userview` t1   ]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ID` FROM `zt_userview` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>
@@ -57,7 +58,7 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, concat(t1.`ACCOUNT`) AS `ID`, t1.`PRODUCTS`, t1.`PROJECTS` FROM `zt_userview` t1   ]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ID`, t1.`PRODUCTS`, t1.`PROJECTS` FROM `zt_userview` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>

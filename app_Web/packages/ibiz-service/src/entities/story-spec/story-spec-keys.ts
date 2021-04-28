@@ -5,10 +5,10 @@ export default [
     'createby',
     'verify',
     'org',
-    'id',
     'title',
     'version',
     'story',
     'orgname',
     'deptname',
+    'id',
 ];

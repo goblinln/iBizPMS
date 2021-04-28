@@ -1,7 +1,6 @@
 export default [
     'dept',
     'createby',
-    'id',
     'updateby',
     'org',
     'version',
@@ -10,4 +9,5 @@ export default [
     'product',
     'deptname',
     'orgname',
+    'id',
 ];

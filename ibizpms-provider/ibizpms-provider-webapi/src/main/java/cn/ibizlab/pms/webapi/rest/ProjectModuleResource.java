@@ -312,11 +312,9 @@ public class ProjectModuleResource {
                 .body(new PageImpl(projectmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务模块", tags = {"任务模块" } ,notes = "获取任务模块")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/fetchtaskmodules")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchTaskModules(@RequestBody ProjectModuleSearchContext context) {
-        projectmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectModule> domains = projectmoduleService.searchTaskModules(context) ;
         List<ProjectModuleDTO> list = projectmoduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -326,11 +324,9 @@ public class ProjectModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询任务模块", tags = {"任务模块" } ,notes = "查询任务模块")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/searchtaskmodules")
 	public ResponseEntity<Page<ProjectModuleDTO>> searchTaskModules(@RequestBody ProjectModuleSearchContext context) {
-        projectmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectModule> domains = projectmoduleService.searchTaskModules(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -620,12 +616,10 @@ public class ProjectModuleResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目获取任务模块", tags = {"任务模块" } ,notes = "根据项目获取任务模块")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/fetchtaskmodules")
 	public ResponseEntity<List<ProjectModuleDTO>> fetchProjectModuleTaskModulesByProject(@PathVariable("project_id") Long project_id,@RequestBody ProjectModuleSearchContext context) {
         context.setN_root_eq(project_id);
-        projectmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectModule> domains = projectmoduleService.searchTaskModules(context) ;
         List<ProjectModuleDTO> list = projectmoduleMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -635,12 +629,10 @@ public class ProjectModuleResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProjectModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "根据项目查询任务模块", tags = {"任务模块" } ,notes = "根据项目查询任务模块")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/searchtaskmodules")
 	public ResponseEntity<Page<ProjectModuleDTO>> searchProjectModuleTaskModulesByProject(@PathVariable("project_id") Long project_id, @RequestBody ProjectModuleSearchContext context) {
         context.setN_root_eq(project_id);
-        projectmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectModule> domains = projectmoduleService.searchTaskModules(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectmoduleMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

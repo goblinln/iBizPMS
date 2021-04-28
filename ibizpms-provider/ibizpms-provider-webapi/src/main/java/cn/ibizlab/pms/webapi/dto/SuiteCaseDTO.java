@@ -53,16 +53,6 @@ public class SuiteCaseDTO extends DTOBase implements Serializable {
     private String createby;
 
     /**
-     * 属性 [ID]
-     *
-     */
-    @JSONField(name = "id")
-    @JsonProperty("id")
-    @Size(min = 0, max = 200, message = "内容长度必须小于等于[200]")
-    @ApiModelProperty("虚拟主键")
-    private String id;
-
-    /**
      * 属性 [UPDATEBY]
      *
      */
@@ -140,6 +130,16 @@ public class SuiteCaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 100, message = "内容长度必须小于等于[100]")
     @ApiModelProperty("归属组织名")
     private String orgname;
+
+    /**
+     * 属性 [ID]
+     *
+     */
+    @JSONField(name = "id")
+    @JsonProperty("id")
+    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
+    @ApiModelProperty("主键")
+    private String id;
 
 
     /**

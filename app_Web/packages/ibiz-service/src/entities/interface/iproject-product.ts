@@ -25,10 +25,6 @@ export interface IProjectProduct extends IEntityBase {
      */
     dept?: any;
     /**
-     * 虚拟主键
-     */
-    id?: any;
-    /**
      * 产品
      */
     productname?: any;
@@ -64,4 +60,8 @@ export interface IProjectProduct extends IEntityBase {
      * 归属组织名
      */
     orgname?: any;
+    /**
+     * 主键
+     */
+    id?: any;
 }

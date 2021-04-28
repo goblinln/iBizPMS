@@ -65,15 +65,6 @@ public class SuiteCase extends EntityMP implements Serializable {
     @ApiModelProperty("由谁创建")
     private String createby;
     /**
-     * 虚拟主键
-     */
-    @DEField(isKeyField = true)
-    @TableField(exist = false)
-    @JSONField(name = "id")
-    @JsonProperty("id")
-    @ApiModelProperty("虚拟主键")
-    private String id;
-    /**
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
@@ -144,6 +135,15 @@ public class SuiteCase extends EntityMP implements Serializable {
     @JsonProperty("orgname")
     @ApiModelProperty("归属组织名")
     private String orgname;
+    /**
+     * 主键
+     */
+    @DEField(isKeyField = true)
+    @TableId(value = "`ID`", type = IdType.ASSIGN_UUID)
+    @JSONField(name = "id")
+    @JsonProperty("id")
+    @ApiModelProperty("主键")
+    private String id;
 
     /**
      * 

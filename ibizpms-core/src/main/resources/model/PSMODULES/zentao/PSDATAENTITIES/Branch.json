@@ -695,6 +695,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Branch/PSDEUSERROLES/Branch_Maintain.json",
     "name" : "产品分支/平台维护",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -729,6 +730,7 @@
     "roleTag" : "Branch_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Branch/PSDEUSERROLES/Branch_Read.json",
     "name" : "产品分支/平台查看",
     "getPSDEUserRoleOPPrivs" : [ {

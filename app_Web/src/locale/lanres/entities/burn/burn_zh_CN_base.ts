@@ -9,7 +9,6 @@ function getLocaleResourceBase(){
 		'dept': commonLogic.appcommonhandle("归属部门",null),
 		'date': commonLogic.appcommonhandle("日期",null),
 		'org': commonLogic.appcommonhandle("归属组织",null),
-		'id': commonLogic.appcommonhandle("虚拟主键",null),
 		'consumed': commonLogic.appcommonhandle("总计消耗",null),
 		'left': commonLogic.appcommonhandle("预计剩余",null),
 		'estimate': commonLogic.appcommonhandle("最初预计",null),
@@ -17,6 +16,7 @@ function getLocaleResourceBase(){
 		'task': commonLogic.appcommonhandle("任务",null),
 		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 		'orgname': commonLogic.appcommonhandle("归属组织名",null),
+		'id': commonLogic.appcommonhandle("主键",null),
 	},
 		views: {
 			'chartview': {

@@ -917,7 +917,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2674,7 +2674,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -17527,6 +17527,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "TaskFavorites",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskFavorites.json"
       },
       "allowMode" : true
     }, {

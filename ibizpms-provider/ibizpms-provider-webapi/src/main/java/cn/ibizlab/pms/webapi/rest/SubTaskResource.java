@@ -733,7 +733,6 @@ public class SubTaskResource {
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Bug相关任务", tags = {"任务" } ,notes = "获取Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchbugtask")
 	public ResponseEntity<List<SubTaskDTO>> fetchBugTask(@RequestBody TaskSearchContext context) {
@@ -746,7 +745,6 @@ public class SubTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询Bug相关任务", tags = {"任务" } ,notes = "查询Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/subtasks/searchbugtask")
 	public ResponseEntity<Page<SubTaskDTO>> searchBugTask(@RequestBody TaskSearchContext context) {
@@ -2246,7 +2244,6 @@ public class SubTaskResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TaskRuntime.test(#task_id,'READ')")
 	@ApiOperation(value = "根据任务获取Bug相关任务", tags = {"任务" } ,notes = "根据任务获取Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/fetchbugtask")
 	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByTask(@PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
@@ -2260,7 +2257,6 @@ public class SubTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TaskRuntime.test(#task_id,'READ')")
 	@ApiOperation(value = "根据任务查询Bug相关任务", tags = {"任务" } ,notes = "根据任务查询Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/tasks/{task_id}/subtasks/searchbugtask")
 	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskBugTaskByTask(@PathVariable("task_id") Long task_id, @RequestBody TaskSearchContext context) {
@@ -3788,7 +3784,6 @@ public class SubTaskResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块任务获取Bug相关任务", tags = {"任务" } ,notes = "根据任务模块任务获取Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchbugtask")
 	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
@@ -3802,7 +3797,6 @@ public class SubTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'READ')")
 	@ApiOperation(value = "根据任务模块任务查询Bug相关任务", tags = {"任务" } ,notes = "根据任务模块任务查询Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/searchbugtask")
 	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskBugTaskByProjectModuleTask(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskSearchContext context) {
@@ -5330,7 +5324,6 @@ public class SubTaskResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划任务获取Bug相关任务", tags = {"任务" } ,notes = "根据产品计划任务获取Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchbugtask")
 	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
@@ -5344,7 +5337,6 @@ public class SubTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'READ')")
 	@ApiOperation(value = "根据产品计划任务查询Bug相关任务", tags = {"任务" } ,notes = "根据产品计划任务查询Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/tasks/{task_id}/subtasks/searchbugtask")
 	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskBugTaskByProductPlanTask(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskSearchContext context) {
@@ -6872,7 +6864,6 @@ public class SubTaskResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求任务获取Bug相关任务", tags = {"任务" } ,notes = "根据需求任务获取Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/fetchbugtask")
 	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
@@ -6886,7 +6877,6 @@ public class SubTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
 	@ApiOperation(value = "根据需求任务查询Bug相关任务", tags = {"任务" } ,notes = "根据需求任务查询Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/tasks/{task_id}/subtasks/searchbugtask")
 	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskBugTaskByStoryTask(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskSearchContext context) {
@@ -8414,7 +8404,6 @@ public class SubTaskResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务获取Bug相关任务", tags = {"任务" } ,notes = "根据项目任务获取Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/fetchbugtask")
 	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
@@ -8428,7 +8417,6 @@ public class SubTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务查询Bug相关任务", tags = {"任务" } ,notes = "根据项目任务查询Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/tasks/{task_id}/subtasks/searchbugtask")
 	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskBugTaskByProjectTask(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskSearchContext context) {
@@ -9956,7 +9944,6 @@ public class SubTaskResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划任务获取Bug相关任务", tags = {"任务" } ,notes = "根据产品产品计划任务获取Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/fetchbugtask")
 	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
@@ -9970,7 +9957,6 @@ public class SubTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品产品计划任务查询Bug相关任务", tags = {"任务" } ,notes = "根据产品产品计划任务查询Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/subtasks/searchbugtask")
 	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskBugTaskByProductProductPlanTask(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskSearchContext context) {
@@ -11498,7 +11484,6 @@ public class SubTaskResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求任务获取Bug相关任务", tags = {"任务" } ,notes = "根据产品需求任务获取Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/fetchbugtask")
 	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
@@ -11512,7 +11497,6 @@ public class SubTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品需求任务查询Bug相关任务", tags = {"任务" } ,notes = "根据产品需求任务查询Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/tasks/{task_id}/subtasks/searchbugtask")
 	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskBugTaskByProductStoryTask(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskSearchContext context) {
@@ -13040,7 +13024,6 @@ public class SubTaskResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块任务获取Bug相关任务", tags = {"任务" } ,notes = "根据项目任务模块任务获取Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/fetchbugtask")
 	public ResponseEntity<List<SubTaskDTO>> fetchSubTaskBugTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id,@RequestBody TaskSearchContext context) {
@@ -13054,7 +13037,6 @@ public class SubTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目任务模块任务查询Bug相关任务", tags = {"任务" } ,notes = "根据项目任务模块任务查询Bug相关任务")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/subtasks/searchbugtask")
 	public ResponseEntity<Page<SubTaskDTO>> searchSubTaskBugTaskByProjectProjectModuleTask(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskSearchContext context) {

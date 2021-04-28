@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ESTIMATE`, concat(t1.`PROJECT`,'__',t1.`TASK`,'__',t1.`DATE`) AS `ID`, DATE_FORMAT( t1.`DATE`, '%w' ) AS `ISWEEKEND`, t1.`LEFT`, t1.`ORG`, t1.`ORGNAME`, t1.`PROJECT`, t1.`TASK`, t1.`UPDATEBY` FROM `zt_burn` t1   ]]>
+        <![CDATA[ SELECT t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ESTIMATE`, t1.`ID`, DATE_FORMAT( t1.`DATE`, '%w' ) AS `ISWEEKEND`, t1.`LEFT`, t1.`ORG`, t1.`ORGNAME`, t1.`PROJECT`, t1.`TASK`, t1.`UPDATEBY` FROM `zt_burn` t1   ]]>
     </sql>
 
 	
@@ -20,14 +20,14 @@
                 #{item}
             </foreach>
         </if>
-		<if test="srf.n_id_eq != null ">
-			<![CDATA[ AND  concat(t1.`PROJECT`,'__',t1.`TASK`,'__',t1.`DATE`) = #{srf.n_id_eq,jdbcType=VARCHAR} ]]>
-        </if>
 		<if test="srf.n_project_eq != null ">
 			<![CDATA[ AND  t1.`PROJECT` = #{srf.n_project_eq,jdbcType=BIGINT} ]]>
         </if>
 		<if test="srf.n_task_eq != null ">
 			<![CDATA[ AND  t1.`TASK` = #{srf.n_task_eq,jdbcType=BIGINT} ]]>
+        </if>
+		<if test="srf.n_id_eq != null ">
+			<![CDATA[ AND  t1.`ID` = #{srf.n_id_eq,jdbcType=VARCHAR} ]]>
         </if>
 		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
 		AND ${ew.sqlSegment}
@@ -46,6 +46,7 @@
 
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="BurnResultMap" type="cn.ibizlab.pms.core.zentao.domain.Burn" autoMapping="true">
+		<id property="id" column="id" /><!--主键字段映射-->
 		<result property="project" column="project" />
 		<result property="task" column="task" />
             
@@ -87,7 +88,7 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ESTIMATE`, concat(t1.`PROJECT`,'__',t1.`TASK`,'__',t1.`DATE`) AS `ID`, DATE_FORMAT( t1.`DATE`, '%w' ) AS `ISWEEKEND`, t1.`LEFT`, t1.`ORG`, t1.`ORGNAME`, t1.`PROJECT`, t1.`TASK`, t1.`UPDATEBY` FROM `zt_burn` t1   ]]>
+		<![CDATA[ SELECT t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ESTIMATE`, t1.`ID`, DATE_FORMAT( t1.`DATE`, '%w' ) AS `ISWEEKEND`, t1.`LEFT`, t1.`ORG`, t1.`ORGNAME`, t1.`PROJECT`, t1.`TASK`, t1.`UPDATEBY` FROM `zt_burn` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>
@@ -111,7 +112,7 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ESTIMATE`, concat(t1.`PROJECT`,'__',t1.`TASK`,'__',t1.`DATE`) AS `ID`, DATE_FORMAT( t1.`DATE`, '%w' ) AS `ISWEEKEND`, t1.`LEFT`, t1.`ORG`, t1.`ORGNAME`, t1.`PROJECT`, t1.`TASK`, t1.`UPDATEBY` FROM `zt_burn` t1   ]]>
+		<![CDATA[ SELECT t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ESTIMATE`, t1.`ID`, DATE_FORMAT( t1.`DATE`, '%w' ) AS `ISWEEKEND`, t1.`LEFT`, t1.`ORG`, t1.`ORGNAME`, t1.`PROJECT`, t1.`TASK`, t1.`UPDATEBY` FROM `zt_burn` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>

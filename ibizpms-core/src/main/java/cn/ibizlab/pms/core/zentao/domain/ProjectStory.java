@@ -56,15 +56,6 @@ public class ProjectStory extends EntityMP implements Serializable {
     @ApiModelProperty("由谁更新")
     private String updateby;
     /**
-     * 虚拟主键
-     */
-    @DEField(isKeyField = true)
-    @TableField(exist = false)
-    @JSONField(name = "id")
-    @JsonProperty("id")
-    @ApiModelProperty("虚拟主键")
-    private String id;
-    /**
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
@@ -150,6 +141,15 @@ public class ProjectStory extends EntityMP implements Serializable {
     @JsonProperty("orgname")
     @ApiModelProperty("归属组织名")
     private String orgname;
+    /**
+     * 主键
+     */
+    @DEField(isKeyField = true)
+    @TableId(value = "`ID`", type = IdType.ASSIGN_UUID)
+    @JSONField(name = "id")
+    @JsonProperty("id")
+    @ApiModelProperty("主键")
+    private String id;
 
     /**
      * 

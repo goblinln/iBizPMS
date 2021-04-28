@@ -33,10 +33,6 @@ export interface IBurn extends IEntityBase {
      */
     org?: any;
     /**
-     * 虚拟主键
-     */
-    id?: any;
-    /**
      * 总计消耗
      */
     consumed?: any;
@@ -64,4 +60,8 @@ export interface IBurn extends IEntityBase {
      * 归属组织名
      */
     orgname?: any;
+    /**
+     * 主键
+     */
+    id?: any;
 }
