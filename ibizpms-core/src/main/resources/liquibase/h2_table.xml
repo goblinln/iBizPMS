@@ -2472,7 +2472,7 @@
 
 
     <!--输出实体[ZT_PROJECTSTORY]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_projectstory-7-92">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_projectstory-10-92">
         <createTable tableName="zt_projectstory">
                 <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2495,6 +2495,9 @@
                 <column name="DEPTNAME" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="ORGNAME" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="ID" remarks="" type="VARCHAR(60)">
+                    <constraints primaryKey="true" primaryKeyName="PK_ZT_PROJECTSTORY_ID"/>
                 </column>
         </createTable>
     </changeSet>
