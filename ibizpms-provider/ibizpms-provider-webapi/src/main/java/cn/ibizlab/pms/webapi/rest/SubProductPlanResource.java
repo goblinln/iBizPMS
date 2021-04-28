@@ -467,6 +467,27 @@ public class SubProductPlanResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+	@ApiOperation(value = "根据产品计划获取数据集", tags = {"产品计划" } ,notes = "根据产品计划获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/subproductplans/fetchcurproductplanstory")
+	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanCurProductPlanStoryByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody ProductPlanSearchContext context) {
+        context.setN_parent_eq(productplan_id);
+        Page<ProductPlan> domains = productplanService.searchCurProductPlanStory(context) ;
+        List<SubProductPlanDTO> list = subproductplanMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+	@ApiOperation(value = "根据产品计划查询数据集", tags = {"产品计划" } ,notes = "根据产品计划查询数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/subproductplans/searchcurproductplanstory")
+	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanCurProductPlanStoryByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
+        context.setN_parent_eq(productplan_id);
+        Page<ProductPlan> domains = productplanService.searchCurProductPlanStory(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
 	@ApiOperation(value = "根据产品计划获取DEFAULT", tags = {"产品计划" } ,notes = "根据产品计划获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/subproductplans/fetchdefault")
 	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanDefaultByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody ProductPlanSearchContext context) {
@@ -1068,6 +1089,27 @@ public class SubProductPlanResource {
 	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanCurProductPlanByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
         context.setN_parent_eq(productplan_id);
         Page<ProductPlan> domains = productplanService.searchCurProductPlan(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+	@ApiOperation(value = "根据产品产品计划获取数据集", tags = {"产品计划" } ,notes = "根据产品产品计划获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/fetchcurproductplanstory")
+	public ResponseEntity<List<SubProductPlanDTO>> fetchSubProductPlanCurProductPlanStoryByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody ProductPlanSearchContext context) {
+        context.setN_parent_eq(productplan_id);
+        Page<ProductPlan> domains = productplanService.searchCurProductPlanStory(context) ;
+        List<SubProductPlanDTO> list = subproductplanMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+	@ApiOperation(value = "根据产品产品计划查询数据集", tags = {"产品计划" } ,notes = "根据产品产品计划查询数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/subproductplans/searchcurproductplanstory")
+	public ResponseEntity<Page<SubProductPlanDTO>> searchSubProductPlanCurProductPlanStoryByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanSearchContext context) {
+        context.setN_parent_eq(productplan_id);
+        Page<ProductPlan> domains = productplanService.searchCurProductPlanStory(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(subproductplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}

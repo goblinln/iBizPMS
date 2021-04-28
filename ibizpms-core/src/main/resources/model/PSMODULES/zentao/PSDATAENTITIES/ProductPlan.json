@@ -460,6 +460,12 @@
     "enableBackend" : true,
     "enableFront" : true
   }, {
+    "codeName" : "CurProductPlanStory",
+    "logicName" : "数据集",
+    "name" : "CurProductPlanStory",
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
     "codeName" : "Default",
     "logicName" : "DEFAULT",
     "majorSortDir" : "DESC",
