@@ -531,8 +531,11 @@
 
     <!--数据查询[BuildLinkCompletedStories]-->
     <sql id="BuildLinkCompletedStories" databaseId="mysql">
-		<![CDATA[ SELECT 	t1.`ASSIGNEDTO`, 	t1.`ESTIMATE`,	 	t1.`ID`, 	t11.`NAME` AS `MODULENAME`, 	t1.`OPENEDBY`, 	t1.`PLAN`, 	t1.`PRI`,	 	t1.`PRODUCT`,	 	t1.`STAGE`,	 	t1.`STATUS`,	 	t1.`TITLE`	 	FROM 		`zt_story` t1 		LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID 		LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID 		LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID 		LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID  	WHERE 		t1.DELETED = '0'  		AND t1.id IN ( 		SELECT 			tt.story  		FROM 			zt_projectstory tt  		WHERE 			tt.project = ( SELECT ttt.project FROM zt_build ttt WHERE ttt.id = $ { srfdatacontext ( 'build', '{\"defname\":\"ID\",\"dename\":\"ZT_BUILD\"}' ) } )  		)  		AND t1.product = ( SELECT t2.product FROM zt_build t2 WHERE t2.id = $ { srfdatacontext ( 'build', '{\"defname\":\"ID\",\"dename\":\"ZT_BUILD\"}' ) } )  		AND t1.id NOT IN ( 		SELECT 			t3.id  		FROM 			zt_story t3, 			zt_build t4  		WHERE 			t4.id = $ { srfdatacontext ( 'build', '{\"defname\":\"ID\",\"dename\":\"ZT_BUILD\"}' ) }  		AND FIND_IN_SET( t3.id, t4.stories )  ) ]]>
+		<![CDATA[ SELECT 	t1.`ASSIGNEDTO`, 	t1.`ESTIMATE`,	 	t1.`ID`, 	t11.`NAME` AS `MODULENAME`, 	t1.`OPENEDBY`, 	t1.`PLAN`, 	t1.`PRI`,	 	t1.`PRODUCT`,	 	t1.`STAGE`,	 	t1.`STATUS`,	 	t1.`TITLE`	 	FROM 		`zt_story` t1 		LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID 		LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID 		LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID 		LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID  	 		 ]]>
 		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.DELETED = '0'  		AND t1.id IN ( 		SELECT 			tt.story  		FROM 			zt_projectstory tt  		WHERE 			tt.project = ( SELECT ttt.project FROM zt_build ttt WHERE ttt.id = #{srf.datacontext.build} )  		)  		AND t1.product = ( SELECT t2.product FROM zt_build t2 WHERE t2.id = #{srf.datacontext.build} )  		AND t1.id NOT IN ( 		SELECT 			t3.id  		FROM 			zt_story t3, 			zt_build t4  		WHERE 			t4.id = #{srf.datacontext.build}  		AND FIND_IN_SET( t3.id, t4.stories )  ) ]]>
+			</if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -564,8 +567,11 @@
 
     <!--数据查询[BuildStories]-->
     <sql id="BuildStories" databaseId="mysql">
-		<![CDATA[ SELECT 	t1.`COLOR`,	 	t1.`ESTIMATE`, 	t1.`ID`, 	( SELECT 	( CASE WHEN COUNT( t.IBZ_FAVORITESID ) > 0 THEN 1 ELSE 0 END ) AS ISFAVORITES  FROM 	T_IBZ_FAVORITES t  WHERE 	t.TYPE = 'story'  	AND t.ACCOUNT = #{srf.sessioncontext.srfloginname}  	AND t.OBJECTID = t1.id  	) AS `ISFAVORITES`,	 	t11.`NAME` AS `MODULENAME`, 	t1.`OPENEDBY`,	 	t1.`PRI`,	 	t1.`STAGE`, 	t1.`STATUS`,	 	t1.`TITLE`, 	'' AS isChild  	FROM 		`zt_story` t1 		LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID 		LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID 		LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  	WHERE 	t1.`DELETED` = '0'  AND FIND_IN_SET ( t1.ID, ( SELECT STORIES FROM ZT_BUILD WHERE ID = $ { srfdatacontext ( 'srfparentkey', '{\"defname\":\"ID\",\"dename\":\"ZT_BUILD\"}' ) } ) ) ]]>
+		<![CDATA[ SELECT 	t1.`COLOR`,	 	t1.`ESTIMATE`, 	t1.`ID`, 	( SELECT 	( CASE WHEN COUNT( t.IBZ_FAVORITESID ) > 0 THEN 1 ELSE 0 END ) AS ISFAVORITES  FROM 	T_IBZ_FAVORITES t  WHERE 	t.TYPE = 'story'  	AND t.ACCOUNT = #{srf.sessioncontext.srfloginname}  	AND t.OBJECTID = t1.id  	) AS `ISFAVORITES`,	 	t11.`NAME` AS `MODULENAME`, 	t1.`OPENEDBY`,	 	t1.`PRI`,	 	t1.`STAGE`, 	t1.`STATUS`,	 	t1.`TITLE`, 	'' AS isChild  	FROM 		`zt_story` t1 		LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID 		LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID 		LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  	 	 ]]>
 		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+			<![CDATA[ AND t1.`DELETED` = '0'  AND FIND_IN_SET ( t1.ID, ( SELECT STORIES FROM ZT_BUILD WHERE ID = #{srf.datacontext.srfparentkey}  ) ) ]]>
+			</if>
 			<include refid="searchMode" />
 		</trim>
     </sql>

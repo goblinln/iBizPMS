@@ -487,7 +487,12 @@
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0' \n\t\tAND t1.id IN (\n\t\tSELECT\n\t\t\ttt.story \n\t\tFROM\n\t\t\tzt_projectstory tt \n\t\tWHERE\n\t\t\ttt.project = ( SELECT ttt.project FROM zt_build ttt WHERE ttt.id = #{srf.datacontext.build} ) \n\t\t) \n\t\tAND t1.product = ( SELECT t2.product FROM zt_build t2 WHERE t2.id = #{srf.datacontext.build} ) \n\t\tAND t1.id NOT IN (\n\t\tSELECT\n\t\t\tt3.id \n\t\tFROM\n\t\t\tzt_story t3,\n\t\t\tzt_build t4 \n\t\tWHERE\n\t\t\tt4.id = #{srf.datacontext.build} \n\t\tAND FIND_IN_SET( t3.id, t4.stories ) \n)",
+        "name" : "查询条件"
+      } ]
     } ],
     "codeName" : "BuildLinkCompletedStories",
     "logicName" : "版本关联\b已完成的需求（选择数据源）\b",
@@ -518,7 +523,12 @@
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`DELETED` = '0' \nAND FIND_IN_SET ( t1.ID, ( SELECT STORIES FROM ZT_BUILD WHERE ID = #{srf.datacontext.srfparentkey}  ) )",
+        "name" : "查询条件"
+      } ]
     } ],
     "codeName" : "BuildStories",
     "logicName" : "获取版本相关需求",
