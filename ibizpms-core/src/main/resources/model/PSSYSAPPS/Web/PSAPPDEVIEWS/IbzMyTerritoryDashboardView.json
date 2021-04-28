@@ -1000,8 +1000,8 @@
                     "logicName" : "Exp",
                     "minorSortDir" : "DESC",
                     "getMinorSortPSAppDEField" : {
-                      "name" : "ID",
-                      "codeName" : "Id"
+                      "name" : "ORDER1",
+                      "codeName" : "Order1"
                     },
                     "mobListStyle" : "LISTVIEW",
                     "getNavPSAppView" : {
@@ -1648,8 +1648,8 @@
                     "logicName" : "TestExp",
                     "minorSortDir" : "DESC",
                     "getMinorSortPSAppDEField" : {
-                      "name" : "ID",
-                      "codeName" : "Id"
+                      "name" : "ORDER1",
+                      "codeName" : "Order1"
                     },
                     "mobListStyle" : "LISTVIEW",
                     "getNavPSAppView" : {
