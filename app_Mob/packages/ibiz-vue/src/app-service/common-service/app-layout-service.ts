@@ -67,7 +67,6 @@ export class AppLayoutService {
      * @memberof AppLayoutService
      */
     public static getLayoutComponent(key: string) {
-        console.warn(key);
         return this.layoutMap.get(key);
     }
 

@@ -1,7 +1,7 @@
 import { Subscription } from 'rxjs';
 import { UIServiceRegister } from 'ibiz-service';
 import { CtrlLoadingService } from '..';
-import { AppCenterService } from '../app-service';
+import { AppCenterService, AppLoadingService, ViewLoadingService } from '../app-service';
 import { AppControlBase } from './app-control-base';
 import { ModelTool } from 'ibiz-core';
 import { IPSAppDataEntity, IPSAppDEField } from '@ibiz/dynamic-model-api';
@@ -81,20 +81,20 @@ export class MainControlBase extends AppControlBase {
      * @type {AppLoading}
      * @memberof MainControlBase
      */
-    public ctrlLoadingService: CtrlLoadingService = new CtrlLoadingService();
+    public ctrlLoadingService: AppLoadingService = new AppLoadingService();
 
     /**
      * 开始加载
      */
     public ctrlBeginLoading() {
-        this.ctrlLoadingService.beginLoading(this.controlInstance);
+        this.ctrlLoadingService.beginLoading();
     }
 
     /**
      * 结束加载
      */
     public endLoading() {
-        this.ctrlLoadingService.endLoading(this.controlInstance);
+        this.ctrlLoadingService.endLoading();
     }
 
     /**

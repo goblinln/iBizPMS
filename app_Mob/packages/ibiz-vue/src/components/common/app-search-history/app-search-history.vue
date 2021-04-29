@@ -11,11 +11,11 @@
           </div>
         </div>
         <div class="record" v-show="thirdPartyService.isInit && (searchbarIsFocus || isSpeaking)" >
-          <div class="record_icon" :class="{'speaking':isSpeaking}" >
+          <!-- <div class="record_icon" :class="{'speaking':isSpeaking}" >
             <ion-icon name="mic-outline"  @touchstart="gotouchstart"  @touchend="gotouchend" @gesturestart="gotouchstart" @gestureend="gotouchend"></ion-icon>
           </div>
           <div class="record_text" v-show="!isSpeaking"><div>按住说话</div></div>
-          <div class="record_text" v-show="isSpeaking"><div>请说话</div></div>
+          <div class="record_text" v-show="isSpeaking"><div>请说话</div></div> -->
         </div>
   </div>
 </template>
