@@ -98,7 +98,7 @@ public class TaskExService extends TaskServiceImpl {
     public boolean create(Task et) {
         jugEststartedAndDeadline(et);
         String multiple = et.getMultiple();//多人任务
-        List<TaskTeam> taskTeams = et.getTaskteam();//任务团队成员
+        List<TaskTeam> taskTeams = et.getTaskteams();//任务团队成员
         String assignedto = et.getAssignedto();//任务指派给
         //如果是多人任务且任务团队不为空
         if (StringUtils.compare(multiple, StaticDict.YesNo.ITEM_1.getValue()) == 0 && taskTeams != null && !taskTeams.isEmpty()) {
@@ -312,7 +312,7 @@ public class TaskExService extends TaskServiceImpl {
             createByCycle(et);
         }
         String multiple = et.getMultiple();
-        List<TaskTeam> teams = et.getTaskteam();
+        List<TaskTeam> teams = et.getTaskteams();
         String comment = StringUtils.isNotBlank(et.getComment()) ? et.getComment() : "";
         Task old = new Task();
         CachedBeanCopier.copy(this.get(et.getId()), old);
