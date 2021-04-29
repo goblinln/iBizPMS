@@ -32,10 +32,10 @@ zuul:
 #      path:  /login/guest
 #      serviceId: ${ibiz.ref.service.ibizpms-webapi:pms-webapi}
 #      stripPrefix: false
-#    loginv7:
-#      path: /v7/login
-#      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibzuaa-api}
-#      stripPrefix: false
+    loginv7:
+      path: /v7/login
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibzuaa-api}
+      stripPrefix: false
 #    changepwd:
 #      path: /v7/changepwd
 #      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibzuaa-api}
