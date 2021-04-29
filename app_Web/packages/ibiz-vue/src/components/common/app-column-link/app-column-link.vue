@@ -8,6 +8,7 @@
 import { Vue, Component,Prop } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
 import { Util } from 'ibiz-core';
+import { IPSAppDataEntity, IPSAppDERedirectView, IPSAppDEView, IPSAppView, IPSAppViewRef, IPSNavigateContext } from '@ibiz/dynamic-model-api';
 /**
  * 表格列链接
  */
@@ -80,6 +81,14 @@ export default class AppColumnLink extends Vue {
     @Prop() public deKeyField!:string;
 
     /**
+     * 界面UI服务对象
+     * 
+     * @type {*}
+     * @memberof AppDefaultGridColumn
+     */
+    @Prop() public appUIService!: any;
+
+    /**
      * 打开链接视图
      *
      * @memberof AppColumnLink
@@ -104,7 +113,7 @@ export default class AppColumnLink extends Vue {
         const viewname2: string = this.$util.srfFilePath2(view.viewname);
         view.viewname = viewname2;
         if (view.isRedirectView) {
-            this.openRedirectView($event, view, data);
+            this.openRedirectView($event, _context, _param);
         } else if (Object.is(view.placement, 'INDEXVIEWTAB') || Util.isEmpty(view.placement)) {
             this.openIndexViewTab(view, _context, _param);
         } else if (Object.is(view.placement, 'POPOVER')) {
@@ -125,7 +134,7 @@ export default class AppColumnLink extends Vue {
      * @memberof AppColumnLink
      */
     private openIndexViewTab(view: any, context: any, param: any): void {
-        const routePath = this.$viewTool.buildUpRoutePath(this.$route, this.context, view.deResParameters, view.parameters, [context] , param);
+        const routePath = this.$viewTool.buildUpRoutePath(this.$route, context, view.deResParameters, view.parameters, [this.data] , param);
         this.$router.push(routePath);
     }
 
@@ -202,12 +211,91 @@ export default class AppColumnLink extends Vue {
      *
      * @private
      * @param {*} $event
-     * @param {*} view
-     * @param {*} data
+     * @param {*} context
+     * @param {*} params
      * @memberof AppColumnLink
      */
-    private openRedirectView($event: any, view: any, data: any): void {
-        console.warn("表格链接视图重定向视图暂不支持");
+    private async openRedirectView($event: any, context: any, params: any) {
+        let targetRedirectView: IPSAppDERedirectView = this.linkview.viewModel;
+        await targetRedirectView.fill(true);
+        if ( targetRedirectView.getRedirectPSAppViewRefs() && targetRedirectView.getRedirectPSAppViewRefs()?.length === 0 ) {
+            return;
+        }
+        let result = await this.appUIService.getRDAppView(this.data[this.deKeyField], params);
+        if (!result) {
+            return;
+        }
+        let targetOpenViewRef: | IPSAppViewRef | undefined = targetRedirectView.getRedirectPSAppViewRefs()?.find((item: IPSAppViewRef) => {
+            return item.name === result.split(':')[0];
+        });
+        if (!targetOpenViewRef) {
+            return;
+        }
+        if ( targetOpenViewRef.getPSNavigateContexts() && (targetOpenViewRef.getPSNavigateContexts() as IPSNavigateContext[]).length > 0
+        ) {
+            let localContextRef: any = Util.formatNavParam( targetOpenViewRef.getPSNavigateContexts(), true );
+            let _context: any = Util.computedNavData(this.data, context, params, localContextRef);
+            Object.assign(context, _context);
+        }
+        let targetOpenView: IPSAppView | null = targetOpenViewRef.getRefPSAppView();
+        if (!targetOpenView) {
+            return;
+        }
+        await targetOpenView.fill(true);
+        const view: any = {
+            viewname: Util.srfFilePath2(targetOpenView.codeName),
+            height: targetOpenView.height,
+            width: targetOpenView.width,
+            title: targetOpenView.title,
+            placement: targetOpenView.openMode ? targetOpenView.openMode : '',
+            viewpath: targetOpenView.modelFilePath,
+        };
+        if (!targetOpenView.openMode || targetOpenView.openMode == 'INDEXVIEWTAB') {
+            if (targetOpenView.getPSAppDataEntity()) {
+                view.parameters = [
+                    {
+                        pathName: Util.srfpluralize(
+                            (targetOpenView.getPSAppDataEntity() as IPSAppDataEntity)?.codeName,
+                        ).toLowerCase(),
+                        parameterName: (targetOpenView.getPSAppDataEntity() as IPSAppDataEntity)?.codeName.toLowerCase(),
+                    },
+                    {
+                        pathName: 'views',
+                        parameterName: ((targetOpenView as IPSAppDEView).getPSDEViewCodeName() as string).toLowerCase(),
+                    },
+                ];
+            } else {
+                view.parameters = [
+                    {
+                        pathName: targetOpenView.codeName.toLowerCase(),
+                        parameterName: targetOpenView.codeName.toLowerCase(),
+                    },
+                ];
+            }
+        } else {
+            if (targetOpenView.getPSAppDataEntity()) {
+                view.parameters = [
+                    {
+                        pathName: Util.srfpluralize(
+                            (targetOpenView.getPSAppDataEntity() as IPSAppDataEntity)?.codeName,
+                        ).toLowerCase(),
+                        parameterName: (targetOpenView.getPSAppDataEntity() as IPSAppDataEntity)?.codeName.toLowerCase(),
+                    },
+                ];
+            }
+            if (targetRedirectView && targetRedirectView.modelPath) {
+                Object.assign(context, { viewpath: targetRedirectView.modelPath });
+            }
+        }
+        if (Object.is(view.placement, 'INDEXVIEWTAB') || Util.isEmpty(view.placement)) {
+            this.openIndexViewTab(view, context, params);
+        } else if (Object.is(view.placement, 'POPOVER')) {
+            this.openPopOver($event, view, context, params);
+        } else if (Object.is(view.placement, 'POPUPMODAL')) {
+            this.openPopupModal(view, context, params);
+        } else if (view.placement.startsWith('DRAWER')) {
+            this.openDrawer(view, context, params);
+        }
     }
 
     /**

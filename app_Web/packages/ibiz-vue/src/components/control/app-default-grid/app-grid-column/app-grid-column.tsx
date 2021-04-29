@@ -53,6 +53,13 @@ export class AppDefaultGridColumn extends Vue {
      */
     @Prop() public viewparams!: any;
 
+    /**
+     * 界面UI服务对象
+     * 
+     * @type {*}
+     * @memberof AppDefaultGridColumn
+     */
+    @Prop() public appUIService!: any;
 
     /**
      * 绘制
@@ -101,8 +108,9 @@ export class AppDefaultGridColumn extends Vue {
                 title: linkView.title,
                 isRedirectView: linkView.redirectView ? true : false,
                 placement: linkView.openMode ? linkView.openMode : '',
-                viewpath: linkView.modelFilePath
+                viewpath: linkView.modelFilePath,
             }
+            Object.defineProperty(view,'viewModel', { enumerable: false, writable: true, value: linkView });
             this.handleLinkViewParams(linkView, view);
             return this.renderLinkView(linkView, view);
         } else {    //常规显示
@@ -208,6 +216,7 @@ export class AppDefaultGridColumn extends Vue {
                 viewparams={tempViewParam}
                 data={this.row}
                 linkview={view}
+                appUIService={this.appUIService}
                 valueitem={(this.columnInstance as IPSDEGridFieldColumn).linkValueItem}
             >
                 {editInstance && editInstance.editorType ?

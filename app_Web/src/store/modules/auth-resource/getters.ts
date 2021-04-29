@@ -41,7 +41,7 @@ export const getAuthMenu = (state: any) => (menu: any) => {
         let resourceIndex: any;
         let menuIndex: any;
         resourceIndex = state.resourceData.findIndex((resourcetag: any, objIndex: any, objs: any) => {
-            return Object.is(menu.accessKey, resourcetag);
+            return Object.is(menu.resourcetag, resourcetag);
         })
         menuIndex = state.menuData.findIndex((menutag: any, objIndex: any, objs: any) => {
             return Object.is(menu.authtag, menutag);
@@ -61,7 +61,7 @@ export const getAuthMenuWithResource = (state: any) => (menu: any) => {
     if (state.enablePermissionValid && menu.resourcetag) {
         let resourceIndex: any;
         resourceIndex = state.resourceData.findIndex((resourcetag: any, objIndex: any, objs: any) => {
-            return Object.is(menu.accessKey, resourcetag);
+            return Object.is(menu.resourcetag, resourcetag);
         })
         return resourceIndex !== -1 ? true : false;
     } else {
