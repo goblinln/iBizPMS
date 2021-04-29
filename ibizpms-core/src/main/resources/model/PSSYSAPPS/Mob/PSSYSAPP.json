@@ -29565,6 +29565,20 @@
           },
           "allowMode" : true
         }, {
+          "name" : "UnlinkStory",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UnlinkStory.json"
+          },
+          "allowMode" : true
+        }, {
+          "name" : "LinkStory",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/LinkStory.json"
+          },
+          "allowMode" : true
+        }, {
           "name" : "Get",
           "getPSDEAction" : {
             "modelref" : true,
@@ -29686,6 +29700,13 @@
           },
           "allowMode" : true
         }, {
+          "name" : "UnlinkStory",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UnlinkStory.json"
+          },
+          "allowMode" : true
+        }, {
           "name" : "ProjectTaskQCnt",
           "getPSDEAction" : {
             "modelref" : true,
@@ -29700,6 +29721,13 @@
           },
           "allowMode" : true
         }, {
+          "name" : "LinkStory",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/LinkStory.json"
+          },
+          "allowMode" : true
+        }, {
           "name" : "Activate",
           "getPSDEAction" : {
             "modelref" : true,
@@ -29711,6 +29739,13 @@
           "getPSDEAction" : {
             "modelref" : true,
             "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Update.json"
+          },
+          "allowMode" : true
+        }, {
+          "name" : "UnlinkMember",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UnlinkMember.json"
           },
           "allowMode" : true
         }, {
@@ -29814,6 +29849,13 @@
           },
           "allowMode" : true
         }, {
+          "name" : "LinkStory",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/LinkStory.json"
+          },
+          "allowMode" : true
+        }, {
           "name" : "ProjectTaskQCnt",
           "getPSDEAction" : {
             "modelref" : true,
@@ -29839,6 +29881,13 @@
           "getPSDEAction" : {
             "modelref" : true,
             "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Get.json"
+          },
+          "allowMode" : true
+        }, {
+          "name" : "UnlinkStory",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UnlinkStory.json"
           },
           "allowMode" : true
         }, {
@@ -29925,6 +29974,13 @@
           },
           "allowMode" : true
         }, {
+          "name" : "UnlinkStory",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UnlinkStory.json"
+          },
+          "allowMode" : true
+        }, {
           "name" : "Create",
           "getPSDEAction" : {
             "modelref" : true,
@@ -29943,6 +29999,13 @@
           "getPSDEAction" : {
             "modelref" : true,
             "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Close.json"
+          },
+          "allowMode" : true
+        }, {
+          "name" : "LinkStory",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/LinkStory.json"
           },
           "allowMode" : true
         }, {
@@ -30022,6 +30085,13 @@
           },
           "allowMode" : true
         }, {
+          "name" : "UnlinkStory",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UnlinkStory.json"
+          },
+          "allowMode" : true
+        }, {
           "name" : "Remove",
           "getPSDEAction" : {
             "modelref" : true,
@@ -30047,6 +30117,13 @@
           "getPSDEAction" : {
             "modelref" : true,
             "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Create.json"
+          },
+          "allowMode" : true
+        }, {
+          "name" : "LinkStory",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/LinkStory.json"
           },
           "allowMode" : true
         }, {
@@ -30138,6 +30215,13 @@
         "mSTag" : "suspended__1",
         "name" : "已挂起_已置顶",
         "getPSDEMainStateActions" : [ {
+          "name" : "LinkStory",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/LinkStory.json"
+          },
+          "allowMode" : true
+        }, {
           "name" : "Activate",
           "getPSDEAction" : {
             "modelref" : true,
@@ -30156,6 +30240,13 @@
           "getPSDEAction" : {
             "modelref" : true,
             "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Save.json"
+          },
+          "allowMode" : true
+        }, {
+          "name" : "UnlinkStory",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UnlinkStory.json"
           },
           "allowMode" : true
         }, {
@@ -30254,6 +30345,13 @@
           },
           "allowMode" : true
         }, {
+          "name" : "UnlinkStory",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UnlinkStory.json"
+          },
+          "allowMode" : true
+        }, {
           "name" : "Get",
           "getPSDEAction" : {
             "modelref" : true,
@@ -30279,6 +30377,13 @@
           "getPSDEAction" : {
             "modelref" : true,
             "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Update.json"
+          },
+          "allowMode" : true
+        }, {
+          "name" : "LinkStory",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/LinkStory.json"
           },
           "allowMode" : true
         }, {
@@ -30420,6 +30525,20 @@
           "getPSDEAction" : {
             "modelref" : true,
             "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/ProjectTaskQCnt.json"
+          },
+          "allowMode" : true
+        }, {
+          "name" : "UnlinkStory",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UnlinkStory.json"
+          },
+          "allowMode" : true
+        }, {
+          "name" : "LinkStory",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/LinkStory.json"
           },
           "allowMode" : true
         } ],
