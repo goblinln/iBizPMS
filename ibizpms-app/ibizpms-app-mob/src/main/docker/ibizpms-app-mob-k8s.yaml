@@ -22,42 +22,7 @@ spec:
         image: registry.cn-shanghai.aliyuncs.com/ibizsys/ibizpms-app-mob:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 34011
-        env:
-        - name: SPRING_CLOUD_NACOS_DISCOVERY_IP
-          value: "172.16.240.110"      
-        - name: SERVER_PORT
-          value: "34011"
-        - name: SPRING_CLOUD_NACOS_DISCOVERY_SERVER-ADDR
-          value: "172.16.240.110:8850"
-        - name: SPRING_REDIS_HOST
-          value: "172.16.240.110"
-        - name: SPRING_REDIS_PORT
-          value: "6381"
-        - name: SPRING_REDIS_DATABASE
-          value: "0"
-        - name: SPRING_DATASOURCE_USERNAME
-          value: "a_A_23e8aa361"
-        - name: SPRING_DATASOURCE_PASSWORD
-          value: "b7989eb@"
-        - name: SPRING_DATASOURCE_URL
-          value: "jdbc:mysql://172.16.180.232:3306/a_A_23e8aa361?autoReconnect=true&useUnicode=true&characterEncoding=UTF-8&useOldAliasMetadataBehavior=true&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true"
-        - name: SPRING_DATASOURCE_DRIVER-CLASS-NAME
-          value: "com.mysql.jdbc.Driver"
-        - name: SPRING_DATASOURCE_DEFAULTSCHEMA
-          value: "a_A_23e8aa361"
-        - name: ZUUL_ROUTES_IBZEMP_SERVICEID
-          value: "ibizpms-webapi"      
-        - name: CAS
-          value: "https://passport.ibizlab.cn"      
-        - name: NACOS
-          value: "172.16.240.110:8850"      
-        - name: IBIZ_CACHELEVEL
-          value: "L2"      
-        - name: SEATA_REGISTRY_NACOS_SERVER-ADDR
-          value: "172.16.240.110:8850"      
-        - name: SEATA_ENABLED
-          value: "true"      
+        - containerPort: 8080
 
 ---
 apiVersion: v1
@@ -70,9 +35,9 @@ spec:
   type: NodePort
   ports:
   - name: http
-    port: 34011
-    targetPort: 34011
-    nodePort: 34011
+    port: 8080
+    targetPort: 8080
+    nodePort: 8080
     protocol: TCP
   selector:
     app: ibizpms-app-mob

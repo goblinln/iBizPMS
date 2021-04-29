@@ -1618,7 +1618,18 @@
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
                 },
+                "getPSNavigateContexts" : [ {
+                  "key" : "PROJECT",
+                  "name" : "PROJECT",
+                  "value" : "project",
+                  "rawValue" : false
+                } ],
                 "getPSNavigateParams" : [ {
+                  "key" : "project",
+                  "name" : "project",
+                  "value" : "project",
+                  "rawValue" : false
+                }, {
                   "key" : "actioninfo",
                   "name" : "actioninfo",
                   "value" : "当前任务只有%1$s才可以记录工时。",
@@ -1667,8 +1678,6 @@
                 "uIActionMode" : "BACKEND",
                 "uIActionTag" : "deleteMob",
                 "uIActionType" : "DEUIACTION",
-                "closeEditView" : true,
-                "closePopupView" : true,
                 "enableConfirm" : true,
                 "reloadData" : true,
                 "id" : "deleteMob@Task"

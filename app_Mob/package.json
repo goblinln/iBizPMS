@@ -7,6 +7,7 @@
   ],
   "scripts": {
     "link-model": "./node_modules/.bin/ibz link-model -m ibizpms-core/src/main/resources/model -f",
+    "prebuild": "./node_modules/.bin/ibz link-model -m ibizpms-core/src/main/resources/model -f",
     "serve": "node --max_old_space_size=8102 ./node_modules/@vue/cli-service/bin/vue-cli-service serve --mode test",
     "dev-serve": "node --max_old_space_size=8102 ./node_modules/@vue/cli-service/bin/vue-cli-service serve --mode development",
     "build": "node --max_old_space_size=8102 ./node_modules/@vue/cli-service/bin/vue-cli-service build",
@@ -51,7 +52,6 @@
     "vue-router": "^3.5.1",
     "vue-touch": "^2.0.0-beta.4",
     "@ibiz/dynamic-model-api": "0.0.8",
-    "vue-cropper": "^0.5.6",
   "vue-cropper": "^0.5.6",
     "vuex": "^3.6.2"
   },
