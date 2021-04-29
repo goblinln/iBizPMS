@@ -4,6 +4,21 @@
   "codeName" : "ProjectMobTabExpView",
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProjectMobTabExpView.json",
   "name" : "ProjectMobTabExpView",
+  "getPSAppCounterRef" : {
+    "modelref" : true,
+    "id" : "fd92d026502384475a2af3f6e02c2d6d"
+  },
+  "getPSAppCounterRefs" : [ {
+    "getPSAppCounter" : {
+      "codeName" : "ProjectCounter",
+      "counterType" : "CUSTOM",
+      "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPCOUNTERS/ProjectCounter.json",
+      "name" : "项目移动端计数器",
+      "timer" : 5000
+    },
+    "tag" : "fd92d026502384475a2af3f6e02c2d6d",
+    "id" : "fd92d026502384475a2af3f6e02c2d6d"
+  } ],
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"

@@ -771,6 +771,11 @@
           "name" : "BUG",
           "value" : "0",
           "rawValue" : true
+        }, {
+          "key" : "PRODUCT",
+          "name" : "PRODUCT",
+          "value" : "product",
+          "rawValue" : false
         } ],
         "getPSNavigateParams" : [ {
           "key" : "productplan",
