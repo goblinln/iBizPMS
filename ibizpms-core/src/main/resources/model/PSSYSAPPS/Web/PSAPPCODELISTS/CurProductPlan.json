@@ -1,5 +1,4 @@
 {
-  "cacheTimeout" : 600,
   "codeListType" : "DYNAMIC",
   "codeName" : "CurProductPlan",
   "dynaInstMode" : 1,
