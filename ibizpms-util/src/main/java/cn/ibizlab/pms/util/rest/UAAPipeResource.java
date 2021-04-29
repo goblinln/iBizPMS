@@ -71,7 +71,7 @@ public class UAAPipeResource {
 //        ztLogin(info);
 
         // 记录登陆日志
-        recordLoginLog(info.getUser().getUsername());
+    //    recordLoginLog(info.getUser().getUsername());
 
         log.info("登录成功！");
         return info;
