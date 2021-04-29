@@ -85,7 +85,6 @@ export default class CurProductPlan {
      * @memberof CurProductPlan
      */
     public queryParamNames:any ={
-        sort: 'order,asc'
     }
 
     /**

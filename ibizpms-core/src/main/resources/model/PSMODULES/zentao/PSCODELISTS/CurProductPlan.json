@@ -4,7 +4,6 @@
   "dynaInstMode" : 1,
   "dynaModelFilePath" : "PSMODULES/zentao/PSCODELISTS/CurProductPlan.json",
   "emptyText" : "未定义",
-  "minorSortDir" : "ASC",
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : true,
