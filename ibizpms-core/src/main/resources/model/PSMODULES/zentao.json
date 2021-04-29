@@ -434,6 +434,9 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/Testrun__result.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSCODELISTS/AllProductPlan.json"
   } ],
   "getAllPSDataEntities" : [ {
     "modelref" : true,
