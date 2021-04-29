@@ -91,7 +91,7 @@ export class AppDrtabBase extends DrtabControlBase {
             props: { 
                 staticProps: {
                     viewDefaultUsage: false,
-                    appDecodeName: this.appDeCodeName,
+                    appDeCodeName: this.appDeCodeName
                 },
                 dynamicProps:{
                     viewdata: JSON.stringify(viewData), 

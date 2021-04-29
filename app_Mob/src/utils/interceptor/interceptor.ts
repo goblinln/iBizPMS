@@ -118,6 +118,7 @@ export class Interceptors {
             let { data: _data } = res;
 
             if (res.status === 401) {
+                this.store.state.appdata = null;
                 this.doNoLogin(_data.data);
             }
             if (res.status === 404) {

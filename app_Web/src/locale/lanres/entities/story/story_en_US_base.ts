@@ -627,6 +627,7 @@ function getLocaleResourceBase(){
 				'prodoctname': commonLogic.appcommonhandle("所属产品",null), 
 				'branch': commonLogic.appcommonhandle("平台/分支",null), 
 				'branchname': commonLogic.appcommonhandle("平台/分支",null), 
+				'module': commonLogic.appcommonhandle("所属模块",null), 
 				'modulename1': commonLogic.appcommonhandle("所属模块",null), 
 				'plan': commonLogic.appcommonhandle("所属计划",null), 
 				'source': commonLogic.appcommonhandle("需求来源",null), 
