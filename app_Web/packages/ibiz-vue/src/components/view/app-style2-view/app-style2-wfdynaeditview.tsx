@@ -1,6 +1,6 @@
 import { Component } from 'vue-property-decorator';
 import { VueLifeCycleProcessing } from '../../../decorators';
-import { AppWFDynaEditViewBase } from '../app-common-view/app-wfdynaeditview-base';
+import { AppWFDynaEditViewBase } from '../app-common-view';
 
 /**
  * 应用实体工作流动态编辑视图

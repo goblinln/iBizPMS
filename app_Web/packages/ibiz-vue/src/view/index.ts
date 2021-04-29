@@ -1,4 +1,5 @@
 export { EditViewBase } from './editview-base';
+export { EditView3Base } from './editview3-base';
 export { GridViewBase } from './gridview-base';
 export { ChartViewBase } from './chartview-base';
 export { ListViewBase } from './listview-base';
@@ -32,3 +33,4 @@ export { WFDynaStartViewBase } from './wfdynastartview-base';
 export { WizardViewBase } from './wizardview-base';
 export { WFActionViewBase } from './wfactionview-base';
 export { WfStepTraceViewBase } from './wfsteptraceview-base';
+export { WFDynaEditView3Base } from './wfdynaeditview3-base';

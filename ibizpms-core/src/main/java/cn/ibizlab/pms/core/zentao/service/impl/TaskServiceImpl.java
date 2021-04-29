@@ -98,7 +98,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
             return false;
         }
         if(!taskRuntime.isRtmodel()){
-            taskteamService.saveByRoot(et.getId(), et.getTaskteam());
+            taskteamService.saveByRoot(et.getId(), et.getTaskteams());
         }
         if(!taskRuntime.isRtmodel()){
             taskestimateService.saveByTask(et.getId(), et.getTaskestimates());
@@ -126,7 +126,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
             return false;
         }
         if(!taskRuntime.isRtmodel()){
-            taskteamService.saveByRoot(et.getId(), et.getTaskteam());
+            taskteamService.saveByRoot(et.getId(), et.getTaskteams());
         }
         if(!taskRuntime.isRtmodel()){
             taskestimateService.saveByTask(et.getId(), et.getTaskestimates());
@@ -177,7 +177,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-            et.setTaskteam(taskteamService.selectByRoot(key));
+            et.setTaskteams(taskteamService.selectByRoot(key));
             et.setTaskestimates(taskestimateService.selectByTask(key));
         }
         return et;

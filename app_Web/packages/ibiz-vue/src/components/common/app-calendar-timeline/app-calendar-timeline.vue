@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="container">
-            <Split v-model="split" mode="horizontal" :min="0.2">
+            <Split v-model="split" mode="horizontal" ref="calendar-time-line">
                 <div slot="left" :class="['group',defaultView]">
                     <div class="group-header">
                         <div>分组</div>
@@ -319,7 +319,7 @@ export default class AppClaendarTimeline extends Vue{
      * @type {number}
      * @memberof AppClaendarTimeline
      */
-    public split: number = 0.4;
+    public split: number = 0.2;
 
     /**
      * 模态显示控制变量
@@ -494,6 +494,15 @@ export default class AppClaendarTimeline extends Vue{
                     this.groupMode = ctrlParams[param];
                 } else if (Object.is("GROUPCODELIST", param)) {
                     this.groupCodelist = eval('(' + ctrlParams[param] + ')');
+                } else if (Object.is("WIDTH", param)) {
+                    this.$nextTick(() => {
+                        const splitDom: any = this.$refs["calendar-time-line"];
+                        const containerWidth: number = splitDom?.$el?.offsetWidth;
+                        const ctrlWidth = parseInt(ctrlParams[param]);
+                        if (ctrlWidth && containerWidth) {
+                            this.split = ctrlWidth / containerWidth;
+                        }
+                    })
                 }
             }    
         }

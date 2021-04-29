@@ -108,7 +108,7 @@ public class TaskEstimateHelper extends ZTBaseHelper<TaskEstimateMapper, TaskEst
             param.put(FIELD_TYPE, StaticDict.Team__type.TASK.getValue());
             param.put("account",oldEstimate.getAccount());
             teamHelper.update(newTeamInfo,(Wrapper<Team>) newTeamInfo.getUpdateWrapper(true).allEq(param));
-            List<TaskTeam> teams = task.getTaskteam();
+            List<TaskTeam> teams = task.getTaskteams();
             taskHelper.computeHours4Multiple(task,data,teams,false);
         }
         taskHelper.internalUpdate(data);
@@ -177,7 +177,7 @@ public class TaskEstimateHelper extends ZTBaseHelper<TaskEstimateMapper, TaskEst
             param.put(FIELD_ACCOUNT,taskEstimate.getAccount());
 
             teamHelper.update(newTeamInfo,(Wrapper<Team>) newTeamInfo.getUpdateWrapper(true).allEq(param));
-            List<TaskTeam> teams = task.getTaskteam();
+            List<TaskTeam> teams = task.getTaskteams();
 
             taskHelper.computeHours4Multiple(task,data,teams,false);
         }

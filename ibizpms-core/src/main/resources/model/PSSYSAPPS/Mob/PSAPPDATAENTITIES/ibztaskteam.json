@@ -648,7 +648,7 @@
   "logicName" : "任务团队",
   "getMinorPSAppDERSs" : [ {
     "actionRSMode" : 1,
-    "codeName" : "IBZTaskTeams",
+    "codeName" : "TaskTeams",
     "dataRSMode" : 0,
     "getMajorPSAppDataEntity" : {
       "modelref" : true,

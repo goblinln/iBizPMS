@@ -3,9 +3,11 @@ package cn.ibizlab.pms.core.extensions.service;
 import cn.ibizlab.pms.core.util.ibizzentao.common.ChangeUtil;
 import cn.ibizlab.pms.core.util.ibizzentao.common.ZTDateUtil;
 import cn.ibizlab.pms.core.zentao.domain.*;
+import cn.ibizlab.pms.core.zentao.filter.StorySpecSearchContext;
 import cn.ibizlab.pms.core.zentao.service.*;
 import cn.ibizlab.pms.core.zentao.service.impl.StoryServiceImpl;
 import cn.ibizlab.pms.util.dict.StaticDict;
+import cn.ibizlab.pms.util.errors.BadRequestAlertException;
 import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
@@ -72,16 +74,24 @@ public class StoryExService extends StoryServiceImpl {
 
     @Override
     public Story sysGet(Long key) {
-        Story story = super.sysGet(key);
-        String sql = "SELECT COUNT(1) as ISFAVOURITES from t_ibz_favorites t where t.OBJECTID = #{et.id} and t.TYPE = 'story' and t.ACCOUNT = #{et.account}";
-        Map<String,Object> param = new HashMap<>();
-        param.put("id",story.getId());
-        param.put("account",AuthenticationUser.getAuthenticationUser().getLoginname());
-        List<JSONObject> list = this.select(sql, param);
-        if (list.size() > 0){
-            story.setIsfavorites(list.get(0).getString("ISFAVOURITES"));
+        if(key == null || key == 0L) {
+            Story story = new Story();
+            story.setId(key);
+            story.setOrgid(AuthenticationUser.getAuthenticationUser().getOrgid());
+            return story;
+        }else {
+            Story story = super.sysGet(key);
+            String sql = "SELECT COUNT(1) as ISFAVOURITES from t_ibz_favorites t where t.OBJECTID = #{et.id} and t.TYPE = 'story' and t.ACCOUNT = #{et.account}";
+            Map<String, Object> param = new HashMap<>();
+            param.put("id", story.getId());
+            param.put("account", AuthenticationUser.getAuthenticationUser().getLoginname());
+            List<JSONObject> list = this.select(sql, param);
+            if (list.size() > 0) {
+                story.setIsfavorites(list.get(0).getString("ISFAVOURITES"));
+            }
+            return story;
         }
-        return story;
+
     }
 
     @Override
@@ -177,6 +187,7 @@ public class StoryExService extends StoryServiceImpl {
         return true;
     }
 
+    @Override
     @Transactional(rollbackFor = Exception.class)
     public Story setStage(Story et) {
         iStoryStageService.removeByStory(et.getId());
@@ -929,6 +940,19 @@ public class StoryExService extends StoryServiceImpl {
     public Story createTasks(Story et) {
         return super.createTasks(et);
     }
+
+    @Override
+    public Story get(Long key) {
+        Story et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        }
+        else {
+            this.getStorySpec(et);
+        }
+        return et;
+    }
+
     /**
      * [GetStorySpec:获取需求描述] 行为扩展
      * @param et
@@ -937,7 +961,18 @@ public class StoryExService extends StoryServiceImpl {
     @Override
     @Transactional
     public Story getStorySpec(Story et) {
-        return super.getStorySpec(et);
+        StorySpecSearchContext context = new StorySpecSearchContext();
+        context.setN_story_eq(et.getId());
+        context.setN_version_eq(et.getVersion());
+        context.setSort("version,desc");
+        List<StorySpec> list = storyspecService.searchDefault(context).getContent();
+        if (!list.isEmpty() && list.size() > 0) {
+            StorySpec storySpec = list.get(0);
+            et.setSpec(storySpec.getSpec());
+            et.setVerify(storySpec.getVerify());
+            et.setTitle(storySpec.getTitle());
+        }
+        return et;
     }
     /**
      * [ImportPlanStories:项目关联需求-按计划关联] 行为扩展
