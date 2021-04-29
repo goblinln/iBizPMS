@@ -5,7 +5,7 @@
   "name" : "产品推送",
   "getOutPSSysDataSyncAgent" : {
     "modelref" : true,
-    "path" : "PSSYSDATASYNCAGENTS/SYNC.json"
+    "path" : "PSSYSDATASYNCAGENTS/UniData.json"
   },
   "syncDir" : "OUT",
   "syncTag" : "ProductPush",

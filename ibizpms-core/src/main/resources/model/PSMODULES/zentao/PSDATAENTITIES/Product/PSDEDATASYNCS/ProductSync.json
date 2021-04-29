@@ -4,7 +4,7 @@
   "eventType" : 7,
   "getInPSSysDataSyncAgent" : {
     "modelref" : true,
-    "path" : "PSMODULES/zentao/PSSYSDATASYNCAGENTS/SYNC.json"
+    "path" : "PSMODULES/zentao/PSSYSDATASYNCAGENTS/UniData.json"
   },
   "name" : "产品接收",
   "syncDir" : "IN",

@@ -1529,14 +1529,14 @@
   } ],
   "getAllPSSysDataSyncAgents" : [ {
     "agentType" : "ACTIVEMQ",
-    "codeName" : "SYNC",
-    "dynaModelFilePath" : "PSSYSDATASYNCAGENTS/SYNC.json",
+    "codeName" : "UniData",
+    "dynaModelFilePath" : "PSSYSDATASYNCAGENTS/UniData.json",
     "name" : "数据推送",
     "syncDir" : "OUT"
   }, {
     "agentType" : "ACTIVEMQ",
-    "codeName" : "SYNC",
-    "dynaModelFilePath" : "PSMODULES/zentao/PSSYSDATASYNCAGENTS/SYNC.json",
+    "codeName" : "UniData",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSSYSDATASYNCAGENTS/UniData.json",
     "name" : "数据接收",
     "syncDir" : "IN"
   } ],

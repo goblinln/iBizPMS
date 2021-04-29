@@ -24,10 +24,6 @@ import VueTouch from 'vue-touch';
 // 富文本
 import 'quill/dist/quill.snow.css';
 import VueQuillEditor from 'vue-quill-editor';
-// 模拟数据
-if (process.env.NODE_ENV === 'development') {
-    require('@/mock');
-}
 ibizMobileComponentsInitialize();
 const pathToRegExp = require('path-to-regexp');
 Vue.use(VueAMap);
