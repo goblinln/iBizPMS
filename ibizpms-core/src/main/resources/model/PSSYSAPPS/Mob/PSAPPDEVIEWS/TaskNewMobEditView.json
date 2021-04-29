@@ -29,6 +29,18 @@
     },
     "getPSViewCtrlName" : "righttoolbar"
   } ],
+  "getPSAppViewNavContexts" : [ {
+    "key" : "PROJECT",
+    "name" : "PROJECT",
+    "value" : "project",
+    "rawValue" : false
+  } ],
+  "getPSAppViewNavParams" : [ {
+    "key" : "project",
+    "name" : "project",
+    "value" : "project",
+    "rawValue" : false
+  } ],
   "getPSAppViewUIActions" : [ {
     "name" : "righttoolbar_tbitem1",
     "getPSUIAction" : {

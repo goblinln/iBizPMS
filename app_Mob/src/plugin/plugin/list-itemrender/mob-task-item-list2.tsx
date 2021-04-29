@@ -209,7 +209,7 @@ export class MobTaskItemList2 extends AppMobMDCtrlBase {
                                 return item.multiple == '1' && index < 2 ? !_item.img  ? <div class="assignedto_item">{_item.name}</div> : <div class="assignedto_item_img"><img v-lazy="_item.img" alt=""></img></div> : null
                             })
                         }
-                        {item.assignedtoArr.length >= 3?<div class="ion" ><ion-icon name="ellipsis-horizontal-outline"></ion-icon></div>:null}
+                        { item.assignedtoArr && item.assignedtoArr.length >= 3?<div class="ion" ><ion-icon name="ellipsis-horizontal-outline"></ion-icon></div>:null}
                         
                     </div>
                 </div>
