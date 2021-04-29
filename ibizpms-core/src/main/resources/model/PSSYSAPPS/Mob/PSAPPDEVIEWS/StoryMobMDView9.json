@@ -710,6 +710,9 @@
       "dataType" : 25,
       "name" : "title"
     }, {
+      "dataType" : 25,
+      "name" : "isfavorites"
+    }, {
       "dataType" : 9,
       "getFrontPSCodeList" : {
         "modelref" : true,
