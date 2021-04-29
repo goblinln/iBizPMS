@@ -26,4 +26,9 @@ window.Environment = {
     ExportFile: 'ibizutilpms/ztdownload',
     // 文件上传
     UploadFile: 'ibizutilpms/ztupload',
+    // SaaS模式
+    SaaSMode: true,
+    // 是否启用动态
+    bDynamic: false,
+    remoteDynaPath: "/dynamic",
 }
