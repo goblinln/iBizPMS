@@ -1744,6 +1744,18 @@
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
               },
+              "getPSNavigateContexts" : [ {
+                "key" : "PROJECT",
+                "name" : "PROJECT",
+                "value" : "project",
+                "rawValue" : false
+              } ],
+              "getPSNavigateParams" : [ {
+                "key" : "project",
+                "name" : "project",
+                "value" : "project",
+                "rawValue" : false
+              } ],
               "getPSSysImage" : {
                 "cssClass" : "add"
               },
