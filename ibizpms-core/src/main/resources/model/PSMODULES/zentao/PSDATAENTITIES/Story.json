@@ -34,22 +34,6 @@
   }, {
     "actionMode" : "READ",
     "actionType" : "BUILTIN",
-    "getAfterPSDEActionLogics" : [ {
-      "actionLogicType" : 0,
-      "attachMode" : "AFTER",
-      "getDstPSDE" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
-      },
-      "getDstPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/GetStorySpec.json"
-      },
-      "name" : "附加逻辑",
-      "cloneParam" : true,
-      "ignoreException" : false,
-      "internalLogic" : false
-    } ],
     "codeName" : "Get",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Get.json",
     "logicName" : "Get",

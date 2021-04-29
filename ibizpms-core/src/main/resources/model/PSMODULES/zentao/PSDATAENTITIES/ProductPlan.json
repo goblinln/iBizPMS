@@ -2695,6 +2695,28 @@
     "logicName" : "父计划",
     "mSTag" : "parent",
     "name" : "父计划",
+    "getPSDEMainStateActions" : [ {
+      "name" : "LinkTask",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkTask.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "LinkStory",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkStory.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "LinkBug",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkBug.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__PROP_DELETE_BUT",
       "getPSDEOPPriv" : {

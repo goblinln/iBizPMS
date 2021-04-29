@@ -354,7 +354,7 @@
         "id" : "NFavorite@DocLibModule"
       },
       "tooltip" : "取消收藏",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     }, {
       "caption" : "收藏",
@@ -398,7 +398,7 @@
         "id" : "Favorite@DocLibModule"
       },
       "tooltip" : "收藏",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     } ],
     "modelid" : "3cb7552aa4fc69cff860c9a97fb2387c"
@@ -458,7 +458,7 @@
         "id" : "UnCollect@DocLib"
       },
       "tooltip" : "取消收藏",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     }, {
       "caption" : "收藏",
@@ -502,7 +502,7 @@
         "id" : "Collect@DocLib"
       },
       "tooltip" : "收藏",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     } ],
     "modelid" : "4bfa65a07f87fa297552fe73d50c7af9"
@@ -567,7 +567,7 @@
         "id" : "Collect@Doc"
       },
       "tooltip" : "收藏",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     }, {
       "caption" : "取消收藏",
@@ -618,7 +618,7 @@
         "id" : "UnCollect@Doc"
       },
       "tooltip" : "取消收藏",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     } ],
     "modelid" : "dd3b0ccd0d4ee97eacb6a428abd98dc1"
@@ -678,7 +678,7 @@
         "id" : "NFavorite@DocLibModule"
       },
       "tooltip" : "取消收藏",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     }, {
       "caption" : "收藏",
@@ -722,7 +722,7 @@
         "id" : "Favorite@DocLibModule"
       },
       "tooltip" : "收藏",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     } ],
     "modelid" : "3cb7552aa4fc69cff860c9a97fb2387c"
@@ -787,7 +787,7 @@
         "id" : "Collect@Doc"
       },
       "tooltip" : "收藏",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     }, {
       "caption" : "取消收藏",
@@ -838,7 +838,7 @@
         "id" : "UnCollect@Doc"
       },
       "tooltip" : "取消收藏",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     } ],
     "modelid" : "dd3b0ccd0d4ee97eacb6a428abd98dc1"
@@ -892,7 +892,7 @@
         "id" : "ibzdownload@File"
       },
       "tooltip" : "下载",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     }, {
       "caption" : "删除",
@@ -938,7 +938,7 @@
         "id" : "delete@File"
       },
       "tooltip" : "删除",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     } ],
     "modelid" : "41940344eb2ecce1ebfbe089e9953c92"
@@ -1263,7 +1263,7 @@
           "id" : "UnCollect@DocLib"
         },
         "tooltip" : "取消收藏",
-        "showCaption" : false,
+        "showCaption" : true,
         "showIcon" : true
       }, {
         "caption" : "收藏",
@@ -1307,7 +1307,7 @@
           "id" : "Collect@DocLib"
         },
         "tooltip" : "收藏",
-        "showCaption" : false,
+        "showCaption" : true,
         "showIcon" : true
       } ],
       "modelid" : "4bfa65a07f87fa297552fe73d50c7af9"
@@ -1462,7 +1462,7 @@
           "id" : "Collect@Doc"
         },
         "tooltip" : "收藏",
-        "showCaption" : false,
+        "showCaption" : true,
         "showIcon" : true
       }, {
         "caption" : "取消收藏",
@@ -1513,7 +1513,7 @@
           "id" : "UnCollect@Doc"
         },
         "tooltip" : "取消收藏",
-        "showCaption" : false,
+        "showCaption" : true,
         "showIcon" : true
       } ],
       "modelid" : "dd3b0ccd0d4ee97eacb6a428abd98dc1"
@@ -1614,7 +1614,7 @@
           "id" : "NFavorite@DocLibModule"
         },
         "tooltip" : "取消收藏",
-        "showCaption" : false,
+        "showCaption" : true,
         "showIcon" : true
       }, {
         "caption" : "收藏",
@@ -1658,7 +1658,7 @@
           "id" : "Favorite@DocLibModule"
         },
         "tooltip" : "收藏",
-        "showCaption" : false,
+        "showCaption" : true,
         "showIcon" : true
       } ],
       "modelid" : "3cb7552aa4fc69cff860c9a97fb2387c"
@@ -1753,7 +1753,7 @@
           "id" : "ibzdownload@File"
         },
         "tooltip" : "下载",
-        "showCaption" : false,
+        "showCaption" : true,
         "showIcon" : true
       }, {
         "caption" : "删除",
@@ -1799,7 +1799,7 @@
           "id" : "delete@File"
         },
         "tooltip" : "删除",
-        "showCaption" : false,
+        "showCaption" : true,
         "showIcon" : true
       } ],
       "modelid" : "41940344eb2ecce1ebfbe089e9953c92"
@@ -1900,7 +1900,7 @@
           "id" : "NFavorite@DocLibModule"
         },
         "tooltip" : "取消收藏",
-        "showCaption" : false,
+        "showCaption" : true,
         "showIcon" : true
       }, {
         "caption" : "收藏",
@@ -1944,7 +1944,7 @@
           "id" : "Favorite@DocLibModule"
         },
         "tooltip" : "收藏",
-        "showCaption" : false,
+        "showCaption" : true,
         "showIcon" : true
       } ],
       "modelid" : "3cb7552aa4fc69cff860c9a97fb2387c"
@@ -2050,7 +2050,7 @@
           "id" : "Collect@Doc"
         },
         "tooltip" : "收藏",
-        "showCaption" : false,
+        "showCaption" : true,
         "showIcon" : true
       }, {
         "caption" : "取消收藏",
@@ -2101,7 +2101,7 @@
           "id" : "UnCollect@Doc"
         },
         "tooltip" : "取消收藏",
-        "showCaption" : false,
+        "showCaption" : true,
         "showIcon" : true
       } ],
       "modelid" : "dd3b0ccd0d4ee97eacb6a428abd98dc1"

@@ -1297,8 +1297,6 @@
           "uIActionMode" : "BACKEND",
           "uIActionTag" : "deleteMob",
           "uIActionType" : "DEUIACTION",
-          "closeEditView" : true,
-          "closePopupView" : true,
           "enableConfirm" : true,
           "reloadData" : true,
           "id" : "deleteMob@Bug"

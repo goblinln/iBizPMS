@@ -51,6 +51,12 @@
     "xDataControlName" : "mdctrl"
   } ],
   "getPSDEListDataItems" : [ {
+    "dataType" : 7,
+    "name" : "estimate"
+  }, {
+    "dataType" : 1,
+    "name" : "product"
+  }, {
     "dataType" : 25,
     "getFrontPSCodeList" : {
       "modelref" : true,
@@ -67,6 +73,13 @@
   }, {
     "dataType" : 1,
     "name" : "id"
+  }, {
+    "dataType" : 21,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/CurProductPlan.json"
+    },
+    "name" : "plan"
   }, {
     "dataType" : 9,
     "getFrontPSCodeList" : {
@@ -87,6 +100,16 @@
   }, {
     "dataType" : 25,
     "name" : "title"
+  }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName_Gird.json"
+    },
+    "name" : "openedby"
+  }, {
+    "dataType" : 25,
+    "name" : "modulename"
   }, {
     "dataType" : 25,
     "name" : "srfkey",
@@ -121,13 +144,6 @@
     "getPSAppDEField" : {
       "name" : "MODULE",
       "codeName" : "Module"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "product",
-    "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
     }
   }, {
     "dataType" : 25,

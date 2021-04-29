@@ -938,6 +938,7 @@
             "cssClass" : "fa fa-unlink"
           },
           "refreshMode" : 1,
+          "successMsg" : "移除成功！",
           "timeout" : 60000,
           "uIActionMode" : "BACKEND",
           "uIActionTag" : "mobUnlinkCase",

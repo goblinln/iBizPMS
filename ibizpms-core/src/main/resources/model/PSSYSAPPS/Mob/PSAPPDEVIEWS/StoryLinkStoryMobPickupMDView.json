@@ -494,6 +494,7 @@
   "enableDP" : true,
   "enableFilter" : true,
   "enablePullDownRefresh" : false,
+  "enableQuickSearch" : true,
   "enableSearch" : true,
   "expandSearchForm" : true,
   "showCaptionBar" : true,

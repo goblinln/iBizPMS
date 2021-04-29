@@ -701,7 +701,6 @@ public class DELogicAspect {
         validLogic.put("projectstatsprojectqualitysumexec.bpmn", 1);
         validLogic.put("projectteamgetdraftafter.bpmn", 1);
         validLogic.put("releasemobreleasecounterexec.bpmn", 1);
-        validLogic.put("storygetafter.bpmn", 1);
         validLogic.put("storybuildunlinkstorysexec.bpmn", 1);
         validLogic.put("storygetstoryspecsexec.bpmn", 1);
         validLogic.put("storyprojectunlinkstorysexec.bpmn", 1);

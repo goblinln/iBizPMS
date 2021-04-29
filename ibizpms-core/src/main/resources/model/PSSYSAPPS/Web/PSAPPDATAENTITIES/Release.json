@@ -1119,6 +1119,28 @@
     "logicName" : "正常",
     "mSTag" : "normal",
     "name" : "正常",
+    "getPSDEMainStateActions" : [ {
+      "name" : "linkStory",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkStory.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "LinkBugbyLeftBug",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkBugbyLeftBug.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "linkBug",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkBug.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__RELEASE_ACTIVE",
       "getPSDEOPPriv" : {
@@ -1147,6 +1169,28 @@
     "logicName" : "停止维护",
     "mSTag" : "terminate",
     "name" : "停止维护",
+    "getPSDEMainStateActions" : [ {
+      "name" : "LinkBugbyLeftBug",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkBugbyLeftBug.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "linkBug",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkBug.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "linkStory",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkStory.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__RELEASE_TERMINATE",
       "getPSDEOPPriv" : {
