@@ -102,37 +102,39 @@ export class MobEditViewBase extends MainViewBase {
         super.onCtrlEvent(controlname,action,data);
     }
 
-    /**
-     * 检查表单是否修改
-     *
-     * @param {any[]} args
-     * @memberof MobEditViewBase
-     */
-    public async cheackChange(): Promise<any> {
-        if (this.dataChange) {
-            const title: any = this.$t('app.tabpage.sureclosetip.title');
-            const contant: any = this.$t('app.tabpage.sureclosetip.content');
-            const result = await this.$Notice.confirm(title, contant);
-            if (result) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            return true;
-        }
-    }
+    // TODO
+    // /**
+    //  * 检查表单是否修改
+    //  *
+    //  * @param {any[]} args
+    //  * @memberof MobEditViewBase
+    //  */
+    // public async cheackChange(): Promise<any> {
+    //     if (this.dataChange) {
+    //         const title: any = this.$t('app.tabpage.sureclosetip.title');
+    //         const contant: any = this.$t('app.tabpage.sureclosetip.content');
+    //         const result = await this.$Notice.confirm(title, contant);
+    //         if (result) {
+    //             this.dataChange = false;
+    //             return true;
+    //         } else {
+    //             return false;
+    //         }
+    //     } else {
+    //         return true;
+    //     }
+    // }
 
-    /**
-     *  关闭视图
-     *
-     * @memberof MobEditViewBase
-     */
-    public async closeView(args?: any[]) {
-        let result = await this.cheackChange();
-        if(result){
-          super.closeView(args);
-        }
-    }
+    // /**
+    //  *  关闭视图
+    //  *
+    //  * @memberof MobEditViewBase
+    //  */
+    // public async closeView(args?: any[]) {
+    //     let result = await this.cheackChange();
+    //     if(result){
+    //       super.closeView(args);
+    //     }
+    // }
 
 }
