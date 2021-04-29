@@ -16,6 +16,10 @@ zuul:
       path: /ibizutilpms/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
+    recordloginlog:
+      path: /recordloginlog
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      stripPrefix: false
 #    dingtalktoken:
 #      path: /uaa/open/dingtalk/access_token
 #      serviceId: ${ibiz.ref.service.ibizpms-webapi:pms-webapi}
