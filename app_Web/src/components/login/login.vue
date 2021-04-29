@@ -83,7 +83,7 @@
 <script lang="ts">
 import {Vue, Component, Watch} from 'vue-property-decorator';
 import {Environment} from '@/environments/environment';
-import { removeSessionStorage, Util } from 'ibiz-core';
+import { removeSessionStorage,getSessionStorage, Util } from 'ibiz-core';
 import { AppThirdService } from 'ibiz-vue';
 
 @Component({
@@ -236,6 +236,7 @@ export default class Login extends Vue {
         const post: Promise<any> = this.$http.post('/v7/login', this.form, true);
         post.then((response: any) => {
             if (response && response.status === 200) {
+
                 const data = response.data;
                 if (data && data.token) {
                     Util.setCookie('ibzuaa-token',data.token,7);
@@ -248,6 +249,7 @@ export default class Login extends Vue {
                 // 跳转首页
                 const url: any = this.$route.query.redirect ? this.$route.query.redirect : '*';
                 this.$router.push({path: url});
+                this.afterLogin();
             }
         }).catch((error: any) => {
             // 登录提示
@@ -260,6 +262,45 @@ export default class Login extends Vue {
             }
         });
 
+    }
+
+    /**
+     * 定时器实例
+     *
+     * @type {[any]}
+     * @memberof Login
+     */
+    protected timer?: any;
+
+    /**
+     * 登录之后事件
+     *
+     * @type {[any]}
+     * @memberof Login
+     */
+    protected afterLogin(count: number = 0): void {
+        if (count > 500) {
+            return;
+        }
+        const clearResource: Function = () => {
+            if (this.timer !== undefined) {
+                clearTimeout(this.timer);
+                this.timer = undefined;
+            }
+        }
+        if (count === 0) {
+            clearResource();
+        }
+        let activeOrgData = getSessionStorage('activeOrgData');
+        if(activeOrgData){
+            const loginname: any = this.form.loginname;
+            this.$http.post('/recordloginlog',{username: loginname});
+            return
+        }
+        this.timer = setTimeout(() => {
+            count++;
+            this.afterLogin(count);
+        }, 30);
     }
     
     /**
