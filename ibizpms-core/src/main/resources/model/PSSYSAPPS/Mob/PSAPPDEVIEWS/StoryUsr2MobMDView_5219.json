@@ -487,12 +487,12 @@
         "getPSNavigateContexts" : [ {
           "key" : "PRODUCTPLAN",
           "name" : "PRODUCTPLAN",
-          "value" : "%productplan% ",
-          "rawValue" : true
+          "value" : "productplan",
+          "rawValue" : false
         }, {
           "key" : "STORY",
           "name" : "STORY",
-          "value" : "0 ",
+          "value" : "0",
           "rawValue" : true
         }, {
           "key" : "PRODUCT",
@@ -503,8 +503,8 @@
         "getPSNavigateParams" : [ {
           "key" : "productplan",
           "name" : "productplan",
-          "value" : "%productplan% ",
-          "rawValue" : true
+          "value" : "productplan",
+          "rawValue" : false
         } ],
         "getPSSysImage" : {
           "glyph" : "xf0c1@FontAwesome",

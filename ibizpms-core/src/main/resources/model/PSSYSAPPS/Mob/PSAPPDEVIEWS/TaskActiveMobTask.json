@@ -378,7 +378,7 @@
             "codeName" : "Left"
           },
           "getPSEditor" : {
-            "editorType" : "MOBTEXT",
+            "editorType" : "MOBNUMBER",
             "name" : "left",
             "precision" : 2
           },
