@@ -517,5 +517,24 @@ public class ProjectExService extends ProjectServiceImpl {
 
         return project;
     }
+
+    @Override
+    public Project get(Long key) {
+        Project project = super.get(key);
+        List<ProjectProduct> list = iProjectProductService.selectByProject(key);
+        if(list.size() > 0) {
+            JSONArray jsonArray = new JSONArray();
+            for(ProjectProduct projectProduct : list) {
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put("products", projectProduct.getProduct());
+                jsonObject.put("plans", projectProduct.getPlan());
+                jsonObject.put("branchs", projectProduct.getBranch());
+                jsonArray.add(jsonObject);
+            }
+            project.setSrfarray(jsonArray.toString());
+        }
+
+        return project;
+    }
 }
 
