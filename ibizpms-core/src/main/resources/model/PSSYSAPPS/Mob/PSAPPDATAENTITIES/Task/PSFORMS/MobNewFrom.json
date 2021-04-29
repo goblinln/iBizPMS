@@ -611,8 +611,8 @@
         "detailType" : "FORMITEM",
         "enableCond" : 3,
         "ignoreInput" : 0,
-        "labelPos" : "RIGHT",
-        "labelWidth" : 80,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
         "name" : "allmodules",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
