@@ -1,5 +1,6 @@
 package cn.ibizlab.pms.util.client;
 
+import cn.ibizlab.pms.util.security.AuthenticationInfo;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import cn.ibizlab.pms.util.security.AuthorizationLogin;
 import org.springframework.util.MultiValueMap;
@@ -20,6 +21,11 @@ public class IBZUAAFallback implements IBZUAAFeignClient {
     }
 
     @Override
+    public AuthenticationInfo v7Login(AuthorizationLogin authorizationLogin) {
+        return null;
+    }
+
+    @Override
     public String getDynaModelIdByInstId(String instid) {
         return null;
     }
@@ -31,6 +37,26 @@ public class IBZUAAFallback implements IBZUAAFeignClient {
 
     @Override
     public String getPublicKey() {
+        return null;
+    }
+
+    @Override
+    public JSONObject getDingtalkAppId(String id) {
+        return null;
+    }
+
+    @Override
+    public AuthenticationInfo getUserByToken(String code, String id) {
+        return null;
+    }
+
+    @Override
+    public JSONObject getDingTalkJSSign(String openAccessId, String url) {
+        return null;
+    }
+
+    @Override
+    public Boolean changepwd(JSONObject jsonObject) {
         return null;
     }
 }
