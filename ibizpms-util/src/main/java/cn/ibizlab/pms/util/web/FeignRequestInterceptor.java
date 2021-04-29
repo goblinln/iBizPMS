@@ -25,10 +25,13 @@ public class FeignRequestInterceptor implements RequestInterceptor {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
+    @Value("${ibiz.deploysystemid:NONE}")
+    private String strDeploySystemId;
 
     @Override
     public void apply(RequestTemplate requestTemplate) {
         ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        requestTemplate.header("srfdeploysystemid", strDeploySystemId);
         if (requestAttributes != null) {
             HttpServletRequest request = requestAttributes.getRequest();
             Enumeration<String> headerNames = request.getHeaderNames();

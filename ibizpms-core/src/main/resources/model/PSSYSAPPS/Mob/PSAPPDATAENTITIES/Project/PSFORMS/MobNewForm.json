@@ -162,6 +162,7 @@
   }, {
     "id" : "days",
     "dataType" : 9,
+    "createDVT" : "CURTIME",
     "getPSAppDEField" : {
       "name" : "DAYS",
       "codeName" : "Days"
@@ -456,6 +457,7 @@
         "getPSDEFormDetails" : [ {
           "caption" : "可用工作日",
           "codeName" : "days",
+          "createDVT" : "CURTIME",
           "dataType" : 9,
           "detailStyle" : "DEFAULT",
           "detailType" : "FORMITEM",

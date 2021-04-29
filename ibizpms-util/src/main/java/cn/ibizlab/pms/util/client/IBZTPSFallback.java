@@ -7,7 +7,12 @@ import org.springframework.stereotype.Component;
 public class IBZTPSFallback implements IBZTPSFeignClient {
 
     @Override
-    public Boolean send(Message message) {
+    public Boolean produce(Message message) {
+        return null;
+    }
+
+    @Override
+    public Boolean custome(String topic) {
         return null;
     }
     

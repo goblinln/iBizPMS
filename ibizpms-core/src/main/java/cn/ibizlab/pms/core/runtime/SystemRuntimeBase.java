@@ -15,11 +15,14 @@ import net.ibizsys.model.dataentity.ds.IPSDEDataQueryCodeCond;
 import net.ibizsys.model.dataentity.ds.IPSDEDataSet;
 import net.ibizsys.model.dataentity.priv.IPSDEUserRole;
 import net.ibizsys.model.dataentity.priv.IPSDEUserRoleOPPriv;
+import net.ibizsys.model.res.IPSSysDataSyncAgent;
 import net.ibizsys.model.security.IPSSysUniRes;
 import net.ibizsys.model.security.IPSSysUserRole;
 import net.ibizsys.model.security.IPSSysUserRoleData;
 import net.ibizsys.model.security.IPSSysUserRoleRes;
 import net.ibizsys.runtime.IDynaInstRuntime;
+import net.ibizsys.runtime.res.ISysDataSyncAgentRuntime;
+import net.ibizsys.runtime.res.SysDataSyncAgentTypes;
 import net.ibizsys.runtime.security.DataAccessActions;
 import net.ibizsys.runtime.security.SysUserRoleDefaultModes;
 import net.ibizsys.runtime.util.DBTypes;
@@ -38,6 +41,15 @@ import java.util.stream.Collectors;
 @Slf4j
 public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntimeBase {
 
+    @Value("${ibiz.deploysystemid:NONE}")
+    private String strDeploySystemId;
+
+    @Value("${ibiz.dynamic.publishpath:/app/file/dynamicModel/publicpath}")
+    private String publishPath;
+
+    @Autowired
+    IBZUAAFeignClient uaaClient;
+    
 	@Override
 	public String getName() {
 		return "iBiz软件生产管理";
@@ -169,12 +181,6 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
         return systemModelService;
     }
 
-    @Value("${ibiz.dynamic.publishpath:/app/file/dynamicModel/publicpath}")
-    private String publishPath;
-
-    @Autowired
-    IBZUAAFeignClient uaaClient;
-
     @Override
     protected IPSDynaInstService createPSDynaInstService(String strPSDynaInstId) throws Exception {
         String strDynaModelId = uaaClient.getDynaModelIdByInstId(strPSDynaInstId);
@@ -209,6 +215,11 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
     @Override
     public Object getGlobalParam(String s) {
         return null;
+    }
+
+    @Override
+    public String getDeploySystemId() {
+        return this.strDeploySystemId;
     }
     
     public List<UAADEAuthority> getUserUAADEAuthority() {
