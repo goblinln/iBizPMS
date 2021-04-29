@@ -37,7 +37,7 @@ export default class CurProductPlan {
      * @type any
      * @memberof CurProductPlan
      */
-    public cacheTimeout:any = 600;
+    public cacheTimeout:any = -1;
 
     /**
      * 代码表模型对象
@@ -114,7 +114,7 @@ export default class CurProductPlan {
                 Object.assign(itemdata,{value:item.id});
                 Object.assign(itemdata,{text:item.title});
                 Object.assign(itemdata,{label:item.title});
-                
+                Object.assign(itemdata,{pvalue:item.parent});
                 
                 
                 _items.push(itemdata);

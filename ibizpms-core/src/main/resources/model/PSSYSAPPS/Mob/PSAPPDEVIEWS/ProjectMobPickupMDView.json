@@ -189,6 +189,13 @@
       "name" : "istop"
     }, {
       "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Project__status.json"
+      },
+      "name" : "status"
+    }, {
+      "dataType" : 25,
       "name" : "name"
     }, {
       "dataType" : 25,

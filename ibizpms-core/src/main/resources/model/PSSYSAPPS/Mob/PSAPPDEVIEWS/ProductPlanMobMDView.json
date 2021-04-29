@@ -73,6 +73,18 @@
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
       "getOpenDataPSAppView" : {
+        "getPSNavigateContexts" : [ {
+          "key" : "PRODUCT",
+          "name" : "PRODUCT",
+          "value" : "product",
+          "rawValue" : false
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "product",
+          "name" : "product",
+          "value" : "product",
+          "rawValue" : false
+        } ],
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductPlanMobTabExpView.json",
@@ -80,6 +92,18 @@
         }
       },
       "getPSAppUILogicRefViews" : [ {
+        "getPSNavigateContexts" : [ {
+          "key" : "PRODUCT",
+          "name" : "PRODUCT",
+          "value" : "product",
+          "rawValue" : false
+        } ],
+        "getPSNavigateParams" : [ {
+          "key" : "product",
+          "name" : "product",
+          "value" : "product",
+          "rawValue" : false
+        } ],
         "getRefPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductPlanMobTabExpView.json",
@@ -99,6 +123,18 @@
     }
   }, {
     "name" : "EDITDATA",
+    "getPSNavigateContexts" : [ {
+      "key" : "PRODUCT",
+      "name" : "PRODUCT",
+      "value" : "product",
+      "rawValue" : false
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "product",
+      "name" : "product",
+      "value" : "product",
+      "rawValue" : false
+    } ],
     "realTitle" : "产品计划分页导航视图",
     "getRefPSAppView" : {
       "modelref" : true,

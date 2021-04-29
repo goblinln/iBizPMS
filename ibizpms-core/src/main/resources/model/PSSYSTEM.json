@@ -1510,9 +1510,6 @@
     "path" : "PSMODULES/zentao/PSSYSBACKSERVICES/TodoService.json"
   }, {
     "modelref" : true,
-    "path" : "PSSYSBACKSERVICES/ProductSync.json"
-  }, {
-    "modelref" : true,
     "path" : "PSMODULES/report/PSSYSBACKSERVICES/PushReportUserWeeklyService.json"
   }, {
     "modelref" : true,
