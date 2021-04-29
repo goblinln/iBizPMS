@@ -6,7 +6,7 @@ import cn.ibizlab.pms.core.zentao.domain.Burn;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Primary;
-import java.util.*;
+import org.springframework.util.DigestUtils;
 
 /**
  * 实体[burn] 自定义服务对象
@@ -30,6 +30,12 @@ public class BurnExService extends BurnServiceImpl {
     @Transactional
     public Burn computeBurn(Burn et) {
         return super.computeBurn(et);
+    }
+
+    @Override
+    public boolean create(Burn et) {
+        et.setId(DigestUtils.md5DigestAsHex(String.format("%1$s__%2$s", et.getProject(), et.getTask(),et.getDate()).getBytes()));
+        return super.create(et);
     }
 }
 
