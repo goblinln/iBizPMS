@@ -914,6 +914,13 @@
       "dataType" : 1,
       "name" : "id"
     }, {
+      "dataType" : 25,
+      "name" : "pri2",
+      "getPSAppDEField" : {
+        "name" : "PRI",
+        "codeName" : "Pri"
+      }
+    }, {
       "dataType" : 9,
       "getFrontPSCodeList" : {
         "modelref" : true,

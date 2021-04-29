@@ -862,7 +862,7 @@
             "noPrivDisplayMode" : 1,
             "getPSAppCodeList" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CurProductPlan.json"
+              "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/AllProductPlan.json"
             },
             "getPSAppDEField" : {
               "name" : "PLAN",
