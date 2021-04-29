@@ -160,7 +160,7 @@ public class ProductExService extends ProductServiceImpl {
     @Override
     public Product sysGet(Long key) {
         Product product = super.sysGet(key);
-        String sql = "SELECT COUNT(1) AS ISTOP FROM `t_ibz_top` t WHERE t.OBJECTID = #{et.id} AND t.TYPE = 'project' AND t.ACCOUNT = #{et.account}";
+        String sql = "SELECT COUNT(1) AS ISTOP FROM `t_ibz_top` t WHERE t.OBJECTID = #{et.id} AND t.TYPE = 'product' AND t.ACCOUNT = #{et.account}";
         HashMap<String, Object> param = new HashMap<>();
         param.put("id",product.getId());
         param.put("account",AuthenticationUser.getAuthenticationUser().getLoginname());

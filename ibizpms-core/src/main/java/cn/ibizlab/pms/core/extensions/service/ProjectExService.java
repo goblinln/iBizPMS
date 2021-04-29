@@ -502,5 +502,20 @@ public class ProjectExService extends ProjectServiceImpl {
     public Project updateOrder(Project et) {
         return super.updateOrder(et);
     }
+
+    @Override
+    public Project sysGet(Long key) {
+        Project project = super.sysGet(key);
+        String sql = "SELECT COUNT(1) AS ISTOP FROM `t_ibz_top` t WHERE t.OBJECTID = #{et.id} AND t.TYPE = 'project' AND t.ACCOUNT = #{et.account}";
+        HashMap<String, Object> param = new HashMap<>();
+        param.put("id",project.getId());
+        param.put("account",AuthenticationUser.getAuthenticationUser().getLoginname());
+        List<JSONObject> result = this.select(sql, param);
+        if (result.size()>0){
+            project.setIstop(result.get(0).getInteger("ISTOP"));
+        }
+
+        return project;
+    }
 }
 
