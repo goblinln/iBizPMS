@@ -226,10 +226,6 @@
         "condType" : "CUSTOM",
         "customCond" : "t1.DELETED = '0'",
         "name" : "查询条件"
-      }, {
-        "condType" : "CUSTOM",
-        "customCond" : "( ( t1.`type` = 'task' and t1.`ROOT` = ${srfwebcontext('project','{\"defname\":\"ROOT\",\"dename\":\"IBZ_PROJECTMODULE\"}')} )  or \n(${srfwebcontext('allmodules','{\"defname\":\"ROOT\",\"dename\":\"IBZ_PROJECTMODULE\"}')} = '1' and t1.`type` = 'story' and t1.`root` in (select product from zt_projectproduct where project =  ${srfwebcontext('project','{\"defname\":\"ROOT\",\"dename\":\"IBZ_PROJECTMODULE\"}')}))  or (t1.`id` = ${srfwebcontext('module','{\"defname\":\"ROOT\",\"dename\":\"IBZ_PROJECTMODULE\"}')}))",
-        "name" : "查询条件"
       } ]
     } ],
     "codeName" : "TaskModules",
