@@ -123,9 +123,11 @@
 
     <!--数据集合[CurDefault]-->
 	 <select id="searchCurDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext"  resultMap="ProductResultMap">
+	 	select * from (
          select t1.* from (
                 <include refid="CurDefault" />
          )t1
+		 )t1
      </select>
 
     <!--数据集合[CurProject]-->

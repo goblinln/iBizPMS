@@ -130,16 +130,20 @@
 
     <!--数据集合[CurDefaultQuery]-->
 	 <select id="searchCurDefaultQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext"  resultMap="ProjectResultMap">
+	 	select * from (
          select t1.* from (
                 <include refid="CurDefaultQuery" />
          )t1
+		 )t1
      </select>
 
     <!--数据集合[CurDefaultQueryExp]-->
 	 <select id="searchCurDefaultQueryExp"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectSearchContext"  resultMap="ProjectResultMap">
+	 	select * from (
          select t1.* from (
                 <include refid="CurDefaultQueryExp" />
          )t1
+		 )t1
      </select>
 
     <!--数据集合[CurPlanProject]-->

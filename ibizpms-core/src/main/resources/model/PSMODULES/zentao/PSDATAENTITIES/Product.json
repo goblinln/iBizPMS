@@ -448,6 +448,11 @@
   }, {
     "codeName" : "CurDefault",
     "logicName" : "默认查询",
+    "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER1",
+      "codeName" : "Order1"
+    },
     "name" : "CurDefault",
     "getPSDEDataQueries" : [ {
       "modelref" : true,

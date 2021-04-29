@@ -246,8 +246,8 @@
     "logicName" : "TestSidebar",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
-      "name" : "ORDER1",
-      "codeName" : "Order1"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "mobListStyle" : "LISTVIEW",
     "getPSAppDataEntity" : {

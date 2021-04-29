@@ -719,6 +719,11 @@
   }, {
     "codeName" : "CurDefaultQuery",
     "logicName" : "默认查询",
+    "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER1",
+      "codeName" : "Order1"
+    },
     "name" : "CurDefaultQuery",
     "getPSDEDataQueries" : [ {
       "modelref" : true,
@@ -730,6 +735,11 @@
   }, {
     "codeName" : "CurDefaultQueryExp",
     "logicName" : "默认查询（项目导航）",
+    "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "ORDER1",
+      "codeName" : "Order1"
+    },
     "name" : "CurDefaultQueryExp",
     "getPSDEDataQueries" : [ {
       "modelref" : true,
