@@ -1507,6 +1507,28 @@
     "logicName" : "子计划",
     "mSTag" : "chlid",
     "name" : "子计划",
+    "getPSDEMainStateActions" : [ {
+      "name" : "LinkBug",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkBug.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "LinkTask",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkTask.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "LinkStory",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkStory.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__PROP_CHILD_BUT",
       "getPSDEOPPriv" : {
@@ -1535,6 +1557,28 @@
     "logicName" : "正常",
     "mSTag" : "normal",
     "name" : "正常",
+    "getPSDEMainStateActions" : [ {
+      "name" : "LinkStory",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkStory.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "LinkBug",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkBug.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "LinkTask",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkTask.json"
+      },
+      "allowMode" : true
+    } ],
     "stateValue" : "normal",
     "viewActions" : 0,
     "wFStateMode" : 0,

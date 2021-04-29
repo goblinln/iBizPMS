@@ -47,6 +47,11 @@
     }
   } ],
   "getPSAppViewNavParams" : [ {
+    "key" : "srfparentkey",
+    "name" : "srfparentkey",
+    "value" : "srfparentkey",
+    "rawValue" : true
+  }, {
     "key" : "objecttype",
     "name" : "objecttype",
     "value" : "OBJECTTYPE",

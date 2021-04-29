@@ -348,6 +348,9 @@
             },
             "name" : "stage"
           }, {
+            "dataType" : 1,
+            "name" : "id"
+          }, {
             "dataType" : 9,
             "getFrontPSCodeList" : {
               "modelref" : true,

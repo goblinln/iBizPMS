@@ -745,6 +745,9 @@
                   "id" : "MDCTRL"
                 },
                 "getPSDEListDataItems" : [ {
+                  "dataType" : 21,
+                  "name" : "comment"
+                }, {
                   "dataType" : 25,
                   "getFrontPSCodeList" : {
                     "modelref" : true,
@@ -758,6 +761,13 @@
                     "name" : "ACTION",
                     "codeName" : "Action"
                   }
+                }, {
+                  "dataType" : 25,
+                  "getFrontPSCodeList" : {
+                    "modelref" : true,
+                    "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Action__object_type.json"
+                  },
+                  "name" : "objecttype"
                 }, {
                   "dataType" : 25,
                   "name" : "item"

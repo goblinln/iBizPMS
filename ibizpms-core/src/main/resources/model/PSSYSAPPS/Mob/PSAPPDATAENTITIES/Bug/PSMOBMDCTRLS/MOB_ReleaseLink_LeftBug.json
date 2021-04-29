@@ -37,6 +37,9 @@
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
   },
   "getPSDEListDataItems" : [ {
+    "dataType" : 1,
+    "name" : "id"
+  }, {
     "dataType" : 9,
     "getFrontPSCodeList" : {
       "modelref" : true,
