@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Order(100)
 @Component("ReportServiceServiceRuntime")
-public class ReportServiceServiceRuntime extends SysUserBackendTaskRuntimeBase {
+public class ReportServiceServiceRuntime extends net.ibizsys.runtime.backend.SysUserBackendTaskRuntimeBase {
 
     @Autowired
     ISystemRuntime systemRuntime;
