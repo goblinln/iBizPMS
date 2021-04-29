@@ -13,7 +13,7 @@ export default class CurProductPlan {
      * @type boolean
      * @memberof CurProductPlan
      */
-    public isEnableCache:boolean = true;
+    public isEnableCache:boolean = false;
 
     /**
      * 过期时间
@@ -85,7 +85,6 @@ export default class CurProductPlan {
      * @memberof CurProductPlan
      */
     public queryParamNames:any ={
-        sort: 'order,asc'
     }
 
     /**
@@ -114,7 +113,7 @@ export default class CurProductPlan {
                 Object.assign(itemdata,{value:item.id});
                 Object.assign(itemdata,{text:item.title});
                 Object.assign(itemdata,{label:item.title});
-                Object.assign(itemdata,{pvalue:item.parent});
+                
                 
                 
                 _items.push(itemdata);

@@ -76,7 +76,6 @@ export class AppComponentService {
      */
     public static getViewComponents(viewType: string, viewStyle: string, pluginCode?: string) {
         let componentName = 'app-default-notsupportedview';
-        console.log(`${viewType}_${viewStyle}`);
         if(pluginCode){
             componentName = this.viewMap.get(`${pluginCode}`);
         }else{
@@ -141,7 +140,6 @@ export class AppComponentService {
      */
     public static getControlComponents(ctrlType: string, ctrlStyle: string, pluginCode?: string) {
         let componentName = 'app-default-notsupportedcontrol';
-        console.log(`${ctrlType}_${ctrlStyle}`);
         if(pluginCode){
             componentName = this.controlMap.get(`${pluginCode}`);
         }else{

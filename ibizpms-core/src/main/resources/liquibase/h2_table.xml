@@ -17,7 +17,7 @@
 
 
     <!--输出实体[ZT_ACTION]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_action-3-2">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_action-5-2">
         <createTable tableName="zt_action">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -246,7 +246,7 @@
 
 
     <!--输出实体[ZT_BUILD]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_build-3-7">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_build-8-7">
         <createTable tableName="zt_build">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -928,7 +928,7 @@
 
 
     <!--输出实体[ZT_FILE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_file-5-27">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_file-6-27">
         <createTable tableName="zt_file">
                 <column name="PATHNAME" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2397,7 +2397,7 @@
 
 
     <!--输出实体[ZT_PRODUCTPLAN]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_productplan-13-85">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_productplan-14-85">
         <createTable tableName="zt_productplan">
                 <column name="TITLE" remarks="" type="VARCHAR(90)">
                 </column>

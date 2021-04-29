@@ -953,6 +953,18 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json"
     },
+    "getPSNavigateContexts" : [ {
+      "key" : "PRODUCT",
+      "name" : "PRODUCT",
+      "value" : "product",
+      "rawValue" : false
+    } ],
+    "getPSNavigateParams" : [ {
+      "key" : "product",
+      "name" : "product",
+      "value" : "product",
+      "rawValue" : false
+    } ],
     "getPSSysImage" : {
       "cssClass" : "add"
     },

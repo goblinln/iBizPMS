@@ -228,11 +228,11 @@
     },
     "name" : "status"
   }, {
-    "dataType" : 25,
-    "name" : "isfavorites"
-  }, {
     "dataType" : 7,
     "name" : "estimate"
+  }, {
+    "dataType" : 25,
+    "name" : "isfavorites"
   }, {
     "dataType" : 25,
     "getFrontPSCodeList" : {

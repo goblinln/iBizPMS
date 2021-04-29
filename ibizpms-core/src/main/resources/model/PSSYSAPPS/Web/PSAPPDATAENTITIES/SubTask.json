@@ -675,7 +675,7 @@
     } ]
   } ],
   "getAllPSAppDEDataSets" : [ {
-    "codeName" : "ChildTask",
+    "codeName" : "FetchChildTask",
     "methodType" : "FETCH",
     "name" : "FetchChildTask",
     "getPSDEDataSet" : {
@@ -684,11 +684,11 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "ChildTask"
+      "id" : "FetchChildTask"
     },
     "builtinMethod" : false
   }, {
@@ -1653,7 +1653,7 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "ChildTask",
+    "codeName" : "FetchChildTask",
     "methodType" : "FETCH",
     "name" : "FetchChildTask",
     "getPSDEDataSet" : {
@@ -1662,11 +1662,11 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
-      "id" : "ChildTask"
+      "id" : "FetchChildTask"
     },
     "builtinMethod" : false
   }, {

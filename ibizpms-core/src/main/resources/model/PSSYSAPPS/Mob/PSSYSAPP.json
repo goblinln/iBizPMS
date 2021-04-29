@@ -2042,11 +2042,6 @@
     "dynaInstMode" : 1,
     "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPCODELISTS/CurProductPlan.json",
     "emptyText" : "未定义",
-    "minorSortDir" : "ASC",
-    "getMinorSortPSAppDEField" : {
-      "name" : "ORDER",
-      "codeName" : "Order"
-    },
     "name" : "当前产品计划（动态）_缓存",
     "getPSAppDEDataSet" : {
       "modelref" : true,
@@ -2056,10 +2051,6 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
     },
-    "getPValuePSAppDEField" : {
-      "name" : "PARENT",
-      "codeName" : "Parent"
-    },
     "getTextPSAppDEField" : {
       "name" : "TITLE",
       "codeName" : "Title"
@@ -2068,8 +2059,7 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "codeItemValueNumber" : true,
-    "enableCache" : true
+    "codeItemValueNumber" : true
   }, {
     "cacheTimeout" : 6000,
     "codeListType" : "DYNAMIC",

@@ -37,6 +37,9 @@
   .app-format-data {
       display: inline;
   }
+  .app-column-link {
+      color: #606266;
+  }
   .el-table {
       height: 100%;
       display: flex;
@@ -55,6 +58,11 @@
             border-left: 0px !important;
             border-top: 0px !important;
             border-right: 0px !important;
+          }
+      }
+      .el-table__row:hover {
+          .app-column-link {
+              color: #2d8cf0;
           }
       }
       .quick-toolbar {
@@ -88,8 +96,8 @@
           height: auto;
       }
   }
-  // 多选表格(移上去有小手,用于提示可单击选中)
-  .el-table.multiple-table {
+  // 表格(单击能打开时移上去有小手)
+  .el-table.grid-rowactive-click {
       .el-table__row:hover {
           cursor: pointer;
       }

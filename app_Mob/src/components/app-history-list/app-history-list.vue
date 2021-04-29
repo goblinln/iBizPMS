@@ -113,7 +113,7 @@ export default class APPHistoryList extends Vue {
             item.actorText = this.getUserReName(item.actor);
             if (item.actions)item.method = this.getActionName(item.actions);
             if(item.comment)item.comment = this.parseImgUrl(item.comment);
-            if (item.item.length > 0) {
+            if (item?.item && item.item.length > 0) {
               for (let index = 0; index < item.item.length; index++) {
                   const _item = item.item[index];
                   _item.ibiznew = this.parseImgUrl(_item.ibiznew);

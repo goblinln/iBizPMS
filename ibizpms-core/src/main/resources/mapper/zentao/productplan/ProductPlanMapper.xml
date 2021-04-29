@@ -235,7 +235,7 @@
 			<![CDATA[ AND t1.DELETED = '0' ]]>
 			</if>
 			<if test="true">
-			<![CDATA[ AND t1.`product` =#{srf.datacontext.product} or t1.`product` =#{srf.datacontext.products} ]]>
+			<![CDATA[ AND (t1.`product` =#{srf.datacontext.product} or t1.`product` =#{srf.datacontext.products}) ]]>
 			</if>
 			<include refid="searchMode" />
 		</trim>
