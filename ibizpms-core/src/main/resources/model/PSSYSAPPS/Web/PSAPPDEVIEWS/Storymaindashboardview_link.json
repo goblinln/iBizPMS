@@ -3802,6 +3802,14 @@
                   "codeName" : "Branchname"
                 }
               }, {
+                "id" : "module",
+                "hidden" : true,
+                "dataType" : 1,
+                "getPSAppDEField" : {
+                  "name" : "MODULE",
+                  "codeName" : "Module"
+                }
+              }, {
                 "id" : "modulename1",
                 "dataType" : 25,
                 "getPSAppDEField" : {
@@ -4119,6 +4127,35 @@
                     "getPSEditor" : {
                       "editorType" : "HIDDEN",
                       "name" : "branchname"
+                    },
+                    "getPSLayoutPos" : {
+                      "colMD" : 24,
+                      "layout" : "TABLE_24COL"
+                    },
+                    "allowEmpty" : true,
+                    "emptyCaption" : false,
+                    "hidden" : true,
+                    "inputTipClosable" : false,
+                    "showCaption" : true
+                  }, {
+                    "caption" : "所属模块",
+                    "codeName" : "module",
+                    "dataType" : 1,
+                    "detailStyle" : "DEFAULT",
+                    "detailType" : "FORMITEM",
+                    "enableCond" : 3,
+                    "ignoreInput" : 0,
+                    "labelPos" : "LEFT",
+                    "labelWidth" : 70,
+                    "name" : "module",
+                    "noPrivDisplayMode" : 1,
+                    "getPSAppDEField" : {
+                      "name" : "MODULE",
+                      "codeName" : "Module"
+                    },
+                    "getPSEditor" : {
+                      "editorType" : "HIDDEN",
+                      "name" : "module"
                     },
                     "getPSLayoutPos" : {
                       "colMD" : 24,

@@ -28,6 +28,7 @@ import { AppDefaultOptViewLayout } from "../../components/layout/app-default-lay
 import { AppDefaultWFDynaActionViewLayout } from '../../components/layout/app-default-layout/app-default-wfdynaactionview-layout/app-default-wfdynaactionview-layout';
 import { AppDefaultWfDynaExpGridViewLayout } from "../../components/layout/app-default-layout/app-default-wfdynaexpgridview-layout/app-default-wfdynaexpgridview-layout";
 import { AppDefaultWFDynaEditViewLayout } from "../../components/layout/app-default-layout/app-default-wfdynaeditview-layout/app-default-wfdynaeditview-layout";
+import { AppDefaultWFDynaEditView3Layout } from "../../components/layout/app-default-layout/app-default-wfdynaeditview3-layout/app-default-wfdynaeditview3-layout";
 import { AppDefaultFormPickupDataViewLayout } from '../../components/layout/app-default-layout/app-default-formpickupdataview-layout/app-default-formpickupdataview-layout';
 import { AppDefaultWizardViewLayout } from '../../components/layout/app-default-layout/app-default-wizardview-layout/app-default-wizardview-layout';
 import { AppDefaultWFActionViewLayout } from '../../components/layout/app-default-layout/app-default-wfactionview-layout/app-default-wfactionview-layout';
@@ -51,6 +52,7 @@ import { AppStyle2PortalViewLayout } from '../../components/layout/app-style2-la
 import { AppStyle2KanBanViewLayout } from '../../components/layout/app-style2-layout/app-style2-kanbanview-layout/app-style2-kanbanview-layout';
 import { AppStyle2OptViewLayout } from '../../components/layout/app-style2-layout/app-style2-optview-layout/app-style2-optview-layout';
 import { AppStyle2WFDynaEditViewLayout } from '../../components/layout/app-style2-layout/app-style2-wfdynaeditview-layout/app-style2-wfdynaeditview-layout';
+import { AppStyle2WFDynaEditView3Layout } from '../../components/layout/app-style2-layout/app-style2-wfdynaeditview3-layout/app-style2-wfdynaeditview3-layout';
 import { AppStyle2CustomViewLayout } from '../../components/layout/app-style2-layout/app-style2-customview-layout/app-style2-customview-layout';
 import { AppStyle2PickupTreeViewLayout } from '../../components/layout/app-style2-layout/app-style2-pickuptreeview-layout/app-style2-pickuptreeview-layout';
 import { AppStyle2TreeGridExViewLayout } from '../../components/layout/app-style2-layout/app-style2-treegridexview-layout/app-style2-treegridexview-layout';
@@ -125,6 +127,7 @@ export class AppLayoutService {
         this.layoutMap.set("DEOPTVIEW-DEFAULT", AppDefaultOptViewLayout);
         this.layoutMap.set("DEWFDYNAACTIONVIEW-DEFAULT", AppDefaultWFDynaActionViewLayout);
         this.layoutMap.set("DEWFDYNAEDITVIEW-DEFAULT", AppDefaultWFDynaEditViewLayout);
+        this.layoutMap.set("DEWFDYNAEDITVIEW3-DEFAULT", AppDefaultWFDynaEditView3Layout);
         this.layoutMap.set("DEFORMPICKUPDATAVIEW-DEFAULT",AppDefaultFormPickupDataViewLayout);
         this.layoutMap.set("DEINDEXPICKUPDATAVIEW-DEFAULT",AppDefaultIndexPickupDataViewLayout);
         this.layoutMap.set("DEWFDYNASTARTVIEW-DEFAULT", AppDefaultWFDynaStartViewLayout);
@@ -170,6 +173,7 @@ export class AppLayoutService {
         this.layoutMap.set("DEOPTVIEW-STYLE2", AppStyle2OptViewLayout);
         this.layoutMap.set("DEWFDYNAACTIONVIEW-STYLE2", AppStyle2WFDynaActionViewLayout);
         this.layoutMap.set("DEWFDYNAEDITVIEW-STYLE2", AppStyle2WFDynaEditViewLayout);
+        this.layoutMap.set("DEWFDYNAEDITVIEW3-STYLE2", AppStyle2WFDynaEditView3Layout);
         this.layoutMap.set("DEHTMLVIEW-STYLE2", AppStyle2HtmlViewLayout);
         this.layoutMap.set("DEFORMPICKUPDATAVIEW-STYLE2",AppStyle2FormPickupDataViewLayout);
         this.layoutMap.set("DEINDEXPICKUPDATAVIEW-STYLE2",AppStyle2IndexPickupDataViewLayout);

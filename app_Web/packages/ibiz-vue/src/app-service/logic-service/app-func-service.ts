@@ -1,16 +1,15 @@
-import { IPSAppDataEntity } from "@ibiz/dynamic-model-api";
-import { ViewTool, Util } from "ibiz-core";
+import { IPSAppDataEntity } from '@ibiz/dynamic-model-api';
+import { ViewTool, Util } from 'ibiz-core';
 
 /**
  * 应用功能服务
- * 
+ *
  * @memberof AppFuncService
  */
 export class AppFuncService {
-
     /**
      * 单例变量声明
-     * 
+     *
      * @memberof AppFuncService
      */
     private static appFuncService: AppFuncService;
@@ -20,11 +19,11 @@ export class AppFuncService {
      *
      * @memberof AppViewLogicService
      */
-    constructor() { }
+    constructor() {}
 
     /**
      * vue对象
-     * 
+     *
      * @memberof AppFuncService
      */
     public v!: any;
@@ -40,7 +39,7 @@ export class AppFuncService {
 
     /**
      * 获取 AppFuncService 单例对象
-     * 
+     *
      * @memberof AppFuncService
      */
     public static getInstance() {
@@ -52,13 +51,13 @@ export class AppFuncService {
 
     /**
      * 执行应用功能
-     * 
+     *
      * @memberof AppFuncService
      */
     public async executeApplication(appFunc: any, context: any) {
         if (appFunc) {
             let viewParam: any = {};
-            if(appFunc?.getPSAppView){
+            if (appFunc?.getPSAppView) {
                 await appFunc.getPSAppView.fill();
             }
             if (appFunc.getPSNavigateContexts) {
@@ -93,14 +92,14 @@ export class AppFuncService {
 
     /**
      * 打开应用视图
-     * 
+     *
      * @memberof AppFuncService
      */
     public async openAppView(appFunc: any, context: any, viewparam: any = {}) {
         const appView = appFunc.getPSAppView;
         if (Object.values(appView).length == 0) {
             console.error('未找到应用视图');
-            return
+            return;
         }
         if (appView.redirectView) {
             this.v.$Notice.warning({ title: '警告', desc: '重定向视图暂不支持应用功能打开' });
@@ -133,7 +132,7 @@ export class AppFuncService {
 
     /**
      * 整合参数
-     * 
+     *
      * @memberof AppFuncService
      */
     public async processingParameter(context: any, appView: any, deResParameters: any[], parameters: any[]) {
@@ -145,45 +144,59 @@ export class AppFuncService {
                 console.error('未找到应用实体');
                 return;
             }
-            if ((appView.openMode && (appView.openMode == 'INDEXVIEWTAB' || appView.openMode == '')) || !appView.openMode) {
+            if (
+                (appView.openMode && (appView.openMode == 'INDEXVIEWTAB' || appView.openMode == '')) ||
+                !appView.openMode
+            ) {
                 params = [
-                    { pathName: Util.srfpluralize(result.codeName).toLowerCase(), parameterName: result.codeName.toLowerCase() },
-                    { pathName: "views", parameterName: appView.getPSDEViewCodeName().toLowerCase() },
-                ]
+                    {
+                        pathName: Util.srfpluralize(result.codeName).toLowerCase(),
+                        parameterName: result.codeName.toLowerCase(),
+                    },
+                    { pathName: 'views', parameterName: appView.getPSDEViewCodeName().toLowerCase() },
+                ];
             } else {
                 params = [
-                    { pathName: Util.srfpluralize(result.codeName).toLowerCase(), parameterName: result.codeName.toLowerCase() },
-                ]
+                    {
+                        pathName: Util.srfpluralize(result.codeName).toLowerCase(),
+                        parameterName: result.codeName.toLowerCase(),
+                    },
+                ];
             }
         } else {
-            params = [
-                { pathName: "views", parameterName: appView.name.toLowerCase() },
-            ]
+            params = [{ pathName: 'views', parameterName: appView.name.toLowerCase() }];
         }
         Object.assign(parameters, params);
     }
 
     /**
      * 顶级分页打开
-     * 
+     *
      * @memberof AppFuncService
      */
     public openIndexViewTab(context: any, viewparam: any, deResParameters: any[], parameters: any[]) {
         if (context && context.srfdynainstid) {
             Object.assign(viewparam, { srfdynainstid: context.srfdynainstid });
         }
-        const path: string = ViewTool.buildUpRoutePath(this.v.$route, context, deResParameters, parameters, [], viewparam);
+        const path: string = ViewTool.buildUpRoutePath(
+            this.v.$route,
+            context,
+            deResParameters,
+            parameters,
+            [],
+            viewparam,
+        );
         if (Object.is(this.v.$route.fullPath, path)) {
             return;
         }
         this.v.$nextTick(() => {
             this.v.$router.push(path);
-        })
+        });
     }
 
     /**
      * 非模式弹出
-     * 
+     *
      * @memberof AppFuncService
      */
     public openPopup(viewparam: any, deResParameters: any[], parameters: any[]) {
@@ -192,12 +205,12 @@ export class AppFuncService {
 
     /**
      * 模态打开
-     * 
+     *
      * @memberof AppFuncService
      */
     public openModal(context: any, viewparam: any, appView: any) {
         const view = {
-            viewname: Util.srfFilePath2(appView.codeName),
+            viewname: 'app-view-shell',
             title: appView.title,
             height: appView.height,
             width: appView.width,
@@ -210,7 +223,7 @@ export class AppFuncService {
 
     /**
      * 独立程序弹出
-     * 
+     *
      * @memberof AppFuncService
      */
     public openApp(context: any, viewparam: any, deResParameters: any[], parameters: any[]) {
@@ -223,16 +236,16 @@ export class AppFuncService {
 
     /**
      * 气泡打开
-     * 
+     *
      * @memberof AppFuncService
      */
     public openPopover(context: any, viewparam: any, appView: any) {
         const view = {
-            viewname: Util.srfFilePath2(appView.codeName),
+            viewname: 'app-view-shell',
             title: appView.title,
             height: appView.height,
             width: appView.width,
-            placement: appView.openMode
+            placement: appView.openMode,
         };
         const appPopover = this.v.$apppopover.openPop({}, view, Util.deepCopy(context), viewparam);
         appPopover.subscribe((result: any) => {
@@ -242,18 +255,20 @@ export class AppFuncService {
 
     /**
      * 抽屉打开
-     * 
+     *
      * @memberof AppFuncService
      */
     public openDrawer(context: any, viewparam: any, appView: any) {
         const view = {
-            viewname: Util.srfFilePath2(appView.codeName),
+            viewname: 'app-view-shell',
             title: appView.title,
             height: appView.height,
             width: appView.width,
-            placement: appView.openMode
+            placement: appView.openMode,
         };
-        const appdrawer = this.v.$appdrawer.openDrawer(view, Util.getViewProps(context, viewparam), {viewModelData: appView});
+        const appdrawer = this.v.$appdrawer.openDrawer(view, Util.getViewProps(context, viewparam), {
+            viewModelData: appView,
+        });
         appdrawer.subscribe((result: any) => {
             console.log(result);
         });
@@ -261,7 +276,7 @@ export class AppFuncService {
 
     /**
      * 用户自定义
-     * 
+     *
      * @memberof AppFuncService
      */
     public openUser(context: any, viewparam: any, deResParameters: any[], parameters: any[]) {
@@ -270,7 +285,7 @@ export class AppFuncService {
 
     /**
      * 打开HTML页面
-     * 
+     *
      * @memberof AppFuncService
      */
     public openHtmlPage(appFunc: any, context: any, viewparam: any) {
@@ -280,7 +295,7 @@ export class AppFuncService {
 
     /**
      * 预置应用功能
-     * 
+     *
      * @memberof AppFuncService
      */
     public openPdAppFunc(appFunc: any, context: any, viewparam: any) {
@@ -289,7 +304,7 @@ export class AppFuncService {
 
     /**
      * 执行JS
-     * 
+     *
      * @memberof AppFuncService
      */
     public executeJavaScript(appFunc: any, context: any, viewparam: any) {
@@ -298,7 +313,7 @@ export class AppFuncService {
 
     /**
      * 自定义
-     * 
+     *
      * @memberof AppFuncService
      */
     public custom(appFunc: any, context: any, viewparam: any) {

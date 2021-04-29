@@ -88,7 +88,7 @@ export class DashboardViewBase extends MainViewBase {
     public loadModel(){
         let _this: any = this;
         if (this.context[this.appDeCodeName.toLowerCase()]) {
-            this.appEntityService.getDataInfo(JSON.parse(JSON.stringify(this.context)), {}, false).then((response: any) => {
+            this.appEntityService?.getDataInfo?.(JSON.parse(JSON.stringify(this.context)), {}, false).then((response: any) => {
                 if (!response || response.status !== 200) {
                     return;
                 }
