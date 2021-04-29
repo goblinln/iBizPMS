@@ -2068,8 +2068,7 @@
       "name" : "ID",
       "codeName" : "Id"
     },
-    "codeItemValueNumber" : true,
-    "enableCache" : true
+    "codeItemValueNumber" : true
   }, {
     "cacheTimeout" : 6000,
     "codeListType" : "DYNAMIC",

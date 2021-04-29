@@ -13,7 +13,7 @@ export default class CurProductPlan {
      * @type boolean
      * @memberof CurProductPlan
      */
-    public isEnableCache:boolean = true;
+    public isEnableCache:boolean = false;
 
     /**
      * 过期时间

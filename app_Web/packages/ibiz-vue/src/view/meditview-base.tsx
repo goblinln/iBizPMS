@@ -53,7 +53,6 @@ export class MEditViewBase extends MDViewBase {
      * @memberof MEditViewBase
      */
     public async viewModelInit(arg?: any) {
-        console.log('meditview',this.viewInstance);
         await super.viewModelInit();
         this.meditViewPanelInstance = ModelTool.findPSControlByName('meditviewpanel',this.viewInstance.getPSControls()) as IPSDEMultiEditViewPanel;
     }

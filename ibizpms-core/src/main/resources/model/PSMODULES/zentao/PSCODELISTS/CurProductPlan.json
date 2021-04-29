@@ -8,7 +8,7 @@
   "refFlag" : true,
   "systemTag" : "iBizPMS",
   "codeItemValueNumber" : true,
-  "enableCache" : true,
+  "enableCache" : false,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
   "userScope" : false

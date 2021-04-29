@@ -177,7 +177,7 @@ export class AppGridBase extends GridControlBase {
                 props: this.computeGridParams(),
                 on: this.computeGridEvents(),
                 ref: `${this.name.toLowerCase()}grid`,
-                class: !this.isSingleSelect ? "multiple-table" : null,
+                class: this.gridRowActiveMode == 1 ? "grid-rowactive-click" : null,
             },
             [
                 !this.isSingleSelect ? (

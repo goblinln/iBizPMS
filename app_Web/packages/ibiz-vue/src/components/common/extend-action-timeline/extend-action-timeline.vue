@@ -33,7 +33,7 @@
                   <Tooltip
                     placement="bottom"
                     theme="light"
-                    :disabled="usertask.comments.length > 0 ? false : true"
+                    :disabled="usertask.comments.length > 1 ? false : true"
                   >
                     {{
                       usertask.comments
@@ -83,7 +83,7 @@
                 </div>
               </div>
               <div
-                v-if="usertask.comments.length > 0"
+                v-if="usertask.comments.length > 1"
                 class="arrow"
                 @click="changeExpand(usertask)"
               >

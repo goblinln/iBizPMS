@@ -30,6 +30,5 @@
     "name" : "ID",
     "codeName" : "Id"
   },
-  "codeItemValueNumber" : true,
-  "enableCache" : true
+  "codeItemValueNumber" : true
 }
