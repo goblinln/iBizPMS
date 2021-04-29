@@ -4,6 +4,7 @@ import { AppDefaultDataViewLayout } from "../../components/layout/app-default-la
 import { AppDefaultDePortalViewLayout } from "../../components/layout/app-default-layout/app-default-deportalview-layout/app-default-deportalview-layout";
 import { AppDefaultPortalViewLayout } from "../../components/layout/app-default-layout/app-default-portalview-layout/app-default-portalview-layout";
 import { AppDefaultEditViewLayout } from "../../components/layout/app-default-layout/app-default-editview-layout/app-default-editview-layout";
+import { AppDefaultEditView3Layout } from "../../components/layout/app-default-layout/app-default-editview3-layout/app-default-editview3-layout";
 import { AppDefaultGridViewLayout } from "../../components/layout/app-default-layout/app-default-gridview-layout/app-default-gridview-layout";
 import { AppDefaultIndexViewLayout } from "../../components/layout/app-default-layout/app-default-indexview-layout/app-default-indexview-layout";
 import { AppDefaultKanbanViewLayout } from "../../components/layout/app-default-layout/app-default-kanbanview-layout/app-default-kanbanview-layout";
@@ -42,6 +43,7 @@ import { AppStyle2ListViewLayout } from '../../components/layout/app-style2-layo
 import { AppStyle2TabExpViewLayout } from '../../components/layout/app-style2-layout/app-style2-tabexpview-layout/app-style2-tabexpview-layout';
 import { AppStyle2CalendarViewLayout } from '../../components/layout/app-style2-layout/app-style2-calendarview-layout/app-style2-calendarview-layout';
 import { AppStyle2EditViewLayout } from '../../components/layout/app-style2-layout/app-style2-editview-layout/app-style2-editview-layout';
+import { AppStyle2EditView3Layout } from '../../components/layout/app-style2-layout/app-style2-editview3-layout/app-style2-editview3-layout';
 import { AppStyle2ChartViewLayout } from '../../components/layout/app-style2-layout/app-style2-chartview-layout/app-style2-chartview-layout';
 import { AppStyle2DataViewLayout } from '../../components/layout/app-style2-layout/app-style2-dataview-layout/app-style2-dataview-layout';
 import { AppStyle2DePortalViewLayout } from '../../components/layout/app-style2-layout/app-style2-deportalview-layout/app-style2-deportalview-layout';
@@ -94,6 +96,7 @@ export class AppLayoutService {
      */
     public static registerLayoutComponent() {
         this.layoutMap.set("DEEDITVIEW-DEFAULT", AppDefaultEditViewLayout);
+        this.layoutMap.set("DEEDITVIEW3-DEFAULT", AppDefaultEditView3Layout);
         this.layoutMap.set("DEGRIDVIEW-DEFAULT", AppDefaultGridViewLayout);
         this.layoutMap.set("DECALENDARVIEW-DEFAULT", AppDefaultCalendarViewLayout);
         this.layoutMap.set("DECHARTVIEW-DEFAULT", AppDefaultChartViewLayout);
@@ -138,6 +141,7 @@ export class AppLayoutService {
         this.layoutMap.set("DEDATAVIEW9-DEFAULT",AppDefaultDataViewLayout);
         // STYLE2视图布局
         this.layoutMap.set("DEEDITVIEW-STYLE2", AppStyle2EditViewLayout);
+        this.layoutMap.set("DEEDITVIEW3-STYLE2", AppStyle2EditView3Layout);
         this.layoutMap.set("DEGRIDVIEW-STYLE2", AppStyle2GridViewLayout);
         this.layoutMap.set("DECALENDARVIEW-STYLE2", AppStyle2CalendarViewLayout);
         this.layoutMap.set("DECHARTVIEW-STYLE2", AppStyle2ChartViewLayout);

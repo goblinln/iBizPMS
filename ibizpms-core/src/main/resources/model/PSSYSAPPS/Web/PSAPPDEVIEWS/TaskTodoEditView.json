@@ -1411,7 +1411,7 @@
                 "enableUpdateDataRS" : false
               }, {
                 "actionRSMode" : 1,
-                "codeName" : "IBZTaskTeams",
+                "codeName" : "TaskTeams",
                 "dataRSMode" : 0,
                 "getMajorPSAppDataEntity" : {
                   "modelref" : true,
@@ -1487,7 +1487,7 @@
                 "enableUpdateDataRS" : false
               }, {
                 "actionRSMode" : 1,
-                "codeName" : "IBZTaskTeams",
+                "codeName" : "TaskTeams",
                 "dataRSMode" : 0,
                 "getMajorPSAppDataEntity" : {
                   "modelref" : true,
@@ -1563,7 +1563,7 @@
                 "enableUpdateDataRS" : false
               }, {
                 "actionRSMode" : 1,
-                "codeName" : "IBZTaskTeams",
+                "codeName" : "TaskTeams",
                 "dataRSMode" : 0,
                 "getMajorPSAppDataEntity" : {
                   "modelref" : true,
@@ -1614,7 +1614,7 @@
                 "enableUpdateDataRS" : false
               }, {
                 "actionRSMode" : 1,
-                "codeName" : "IBZTaskTeams",
+                "codeName" : "TaskTeams",
                 "dataRSMode" : 0,
                 "getMajorPSAppDataEntity" : {
                   "modelref" : true,
@@ -1665,7 +1665,7 @@
                 "enableUpdateDataRS" : false
               }, {
                 "actionRSMode" : 1,
-                "codeName" : "IBZTaskTeams",
+                "codeName" : "TaskTeams",
                 "dataRSMode" : 0,
                 "getMajorPSAppDataEntity" : {
                   "modelref" : true,
@@ -1716,7 +1716,7 @@
                 "enableUpdateDataRS" : false
               }, {
                 "actionRSMode" : 1,
-                "codeName" : "IBZTaskTeams",
+                "codeName" : "TaskTeams",
                 "dataRSMode" : 0,
                 "getMajorPSAppDataEntity" : {
                   "modelref" : true,
@@ -1767,7 +1767,7 @@
                 "enableUpdateDataRS" : false
               }, {
                 "actionRSMode" : 1,
-                "codeName" : "IBZTaskTeams",
+                "codeName" : "TaskTeams",
                 "dataRSMode" : 0,
                 "getMajorPSAppDataEntity" : {
                   "modelref" : true,
@@ -1793,7 +1793,7 @@
                 "enableUpdateDataRS" : false
               } ], [ {
                 "actionRSMode" : 1,
-                "codeName" : "IBZTaskTeams",
+                "codeName" : "TaskTeams",
                 "dataRSMode" : 0,
                 "getMajorPSAppDataEntity" : {
                   "modelref" : true,

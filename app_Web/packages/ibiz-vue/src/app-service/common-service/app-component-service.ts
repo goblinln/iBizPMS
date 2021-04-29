@@ -75,6 +75,7 @@ export class AppComponentService {
         this.viewMap.set("DEWFDYNAACTIONVIEW_DEFAULT", 'app-default-wfdynaactionview');
         this.viewMap.set("DEWFDYNASTARTVIEW_DEFAULT", 'app-default-wfdynastartview');
         this.viewMap.set("DEWFDYNAEDITVIEW_DEFAULT", 'app-default-wfdynaeditview');
+        this.viewMap.set("DEWFDYNAEDITVIEW3_DEFAULT", 'app-default-wfdynaeditview3');
         this.viewMap.set("DEPORTALVIEW9_DEFAULT", 'app-default-deportalview');
         this.viewMap.set("DEEDITVIEW9_DEFAULT", 'app-default-editview');
         this.viewMap.set("DEGRIDVIEW9_DEFAULT", 'app-default-gridview');
@@ -87,9 +88,11 @@ export class AppComponentService {
         this.viewMap.set("DEWFACTIONVIEW_DEFAULT", 'app-default-wfactionview');
         this.viewMap.set("DEREDIRECTVIEW_DEFAULT", 'app-default-deredirectview');
         this.viewMap.set("APPWFSTEPTRACEVIEW_DEFAULT", 'app-default-wfsteptraceview');
+        this.viewMap.set("DEEDITVIEW3_DEFAULT", 'app-default-editview3');
         // STYLE2 样式
         this.viewMap.set("APPINDEXVIEW_STYLE2", 'app-style2-indexview');
         this.viewMap.set("DEEDITVIEW_STYLE2", 'app-style2-editview');
+        this.viewMap.set("DEEDITVIEW3_STYLE2", 'app-style2-editview3');
         this.viewMap.set("DEGRIDVIEW_STYLE2", 'app-style2-gridview');
         this.viewMap.set("DELISTVIEW_STYLE2", 'app-style2-listview');
         this.viewMap.set("DECHARTVIEW_STYLE2", 'app-style2-chartview');
@@ -119,6 +122,7 @@ export class AppComponentService {
         this.viewMap.set("DEWFDYNAACTIONVIEW_STYLE2", 'app-style2-wfdynaactionview');
         this.viewMap.set("DEWFDYNASTARTVIEW_STYLE2", 'app-style2-wfdynastartview');
         this.viewMap.set("DEWFDYNAEDITVIEW_STYLE2", 'app-style2-wfdynaeditview');
+        this.viewMap.set("DEWFDYNAEDITVIEW3_STYLE2", 'app-style2-wfdynaeditview3');
         this.viewMap.set("DEPORTALVIEW9_STYLE2", 'app-style2-deportalview');
         this.viewMap.set("DEEDITVIEW9_STYLE2", 'app-style2-editview');
         this.viewMap.set("DEGRIDVIEW9_STYLE2", 'app-style2-gridview');
@@ -191,6 +195,7 @@ export class AppComponentService {
         this.controlMap.set("TABVIEWPANEL_DEFAULT", 'app-default-tab-view-panel');
         this.controlMap.set("WIZARDPANEL_DEFAULT", 'app-default-wizard-panel');
         this.controlMap.set("WIZARDPANEL_STATE", 'app-default-state-wizard-panel');
+        this.controlMap.set("DRTAB_DEFAULT", 'app-default-drtab');
         // 注册部件插件标识
         this.controlMap.set("CUSTOM_LEFTNAVLIST", 'app-custom-leftnavlist');
         this.controlMap.set("CHART_RENDER_NEW", 'app-chart-render-new');

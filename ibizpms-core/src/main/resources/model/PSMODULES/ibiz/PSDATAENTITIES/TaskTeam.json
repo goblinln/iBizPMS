@@ -1008,6 +1008,7 @@
     },
     "masterOrder" : -1,
     "masterRS" : 12,
+    "minorCodeName" : "TaskTeams",
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam.json"

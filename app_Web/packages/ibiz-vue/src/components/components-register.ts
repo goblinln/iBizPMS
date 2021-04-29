@@ -118,6 +118,7 @@ import AppCustomTheme from './common/app-custom-theme/app-custom-theme.vue';
 import { AppViewShell } from '../view-container/app-view-shell';
 import { AppDefaultIndexView } from './view/app-default-view/app-default-indexview';
 import { AppDefaultEditView } from './view/app-default-view/app-default-editview';
+import { AppDefaultEditView3 } from './view/app-default-view/app-default-editview3';
 import { AppDefaultListView } from './view/app-default-view/app-default-listview';
 import { AppDefaultGridView } from './view/app-default-view/app-default-gridview';
 import { AppDefaultChartView } from './view/app-default-view/app-default-chartview';
@@ -153,8 +154,10 @@ import { AppDefaultWizardView } from './view/app-default-view/app-default-wizard
 import { AppDefaultWFActionView } from './view/app-default-view/app-default-wfactionview';
 import { AppDefaultDeRedirectView } from './view/app-default-view/app-default-deredirectview';
 import { AppDefaultWfStepTraceView } from './view/app-default-view/app-default-wfsteptraceview';
+import { AppDefaultWFDynaEditView3 } from './view/app-default-view/app-default-wfdynaeditview3';
 import { AppStyle2IndexView } from './view/app-style2-view/app-style2-indexview';
 import { AppStyle2EditView } from './view/app-style2-view/app-style2-editview';
+import { AppStyle2EditView3 } from './view/app-style2-view/app-style2-editview3';
 import { AppStyle2ListView } from './view/app-style2-view/app-style2-listview';
 import { AppStyle2GridView } from './view/app-style2-view/app-style2-gridview';
 import { AppStyle2ChartView } from './view/app-style2-view/app-style2-chartview';
@@ -190,6 +193,7 @@ import { AppStyle2WizardView } from './view/app-style2-view/app-style2-wizardvie
 import { AppStyle2WFActionView } from './view/app-style2-view/app-style2-wfactionview';
 import { AppStyle2DeRedirectView } from './view/app-style2-view/app-style2-deredirectview';
 import { AppStyle2WfStepTraceView } from './view/app-style2-view/app-style2-wfsteptraceview';
+import { AppStyle2WFDynaEditView3 } from './view/app-style2-view/app-style2-wfdynaeditview3';
 // 部件组件
 import { ViewToolbar } from './control/view-toolbar/view-toolbar';
 import { AppDefaultGrid } from './control/app-default-grid/app-default-grid';
@@ -227,6 +231,7 @@ import { StudioViewStyle2 } from './common/studio-view-style2/studio-view-style2
 import { AppDefaultSearchBar } from './control/app-default-searchbar/app-default-searchbar';
 import { AppDefaultWizardPanel } from './control/app-default-wizard-panel/app-default-wizard-panel';
 import { AppDefaultStateWizardPanel } from './control/app-default-statewizard-panel/app-default-statewizard-panel';
+import { AppDefaultDrtab } from './control/app-default-drtab/app-default-drtab';
 import { NotificationSignal } from '../directives';
 export const ComponentsRegister = {
     install(v: any, opt: any) {
@@ -348,6 +353,7 @@ export const ComponentsRegister = {
         v.component('app-view-shell', AppViewShell);
         v.component('app-default-indexview', AppDefaultIndexView);
         v.component('app-default-editview', AppDefaultEditView);
+        v.component('app-default-editview3', AppDefaultEditView3);
         v.component('app-default-listview', AppDefaultListView);
         v.component('app-default-gridview', AppDefaultGridView);
         v.component('app-default-chartview', AppDefaultChartView);
@@ -376,6 +382,7 @@ export const ComponentsRegister = {
         v.component('app-default-optview', AppDefaultOptView);
         v.component('app-default-wfdynaactionview', AppDefaultWFDynaActionView);
         v.component('app-default-wfdynaeditview', AppDefaultWFDynaEditView);
+        v.component('app-default-wfdynaeditview3', AppDefaultWFDynaEditView3);
         v.component('app-default-formpickupdataview', AppDefaultFormPickupDataView);
         v.component('app-default-indexpickupdataview', AppDefaultIndexPickupDataView);
         v.component('app-default-wfdynastartview', AppDefaultWFDynaStartView);
@@ -385,6 +392,7 @@ export const ComponentsRegister = {
         v.component("app-default-wfsteptraceview",AppDefaultWfStepTraceView);
         v.component('app-style2-indexview', AppStyle2IndexView);
         v.component('app-style2-editview', AppStyle2EditView);
+        v.component('app-style2-editview3', AppStyle2EditView3);
         v.component('app-style2-listview', AppStyle2ListView);
         v.component('app-style2-gridview', AppStyle2GridView);
         v.component('app-style2-chartview', AppStyle2ChartView);
@@ -420,6 +428,7 @@ export const ComponentsRegister = {
         v.component('app-style2-wfactionview', AppStyle2WFActionView);
         v.component("app-style2-deredirectview",AppStyle2DeRedirectView);
         v.component("app-style2-wfsteptraceview",AppStyle2WfStepTraceView);
+        v.component('app-style2-wfdynaeditview3', AppStyle2WFDynaEditView3);
         // 部件组件
         v.component('app-default-form', AppDefaultForm);
         v.component('app-default-searchform', AppDefaultSearchForm);
@@ -453,6 +462,7 @@ export const ComponentsRegister = {
         v.component('app-timeline-calendar', AppTimeLineCalendar);
         v.component('app-default-searchbar', AppDefaultSearchBar);
         v.component('app-default-wizard-panel', AppDefaultWizardPanel);
+        v.component('app-default-drtab', AppDefaultDrtab);
         v.component('app-default-state-wizard-panel', AppDefaultStateWizardPanel);
         v.component('app-pivot-table', AppPivotTable);
         // 注册指令
