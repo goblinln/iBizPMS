@@ -617,6 +617,9 @@
       "dataType" : 25,
       "name" : "title"
     }, {
+      "dataType" : 25,
+      "name" : "statuss"
+    }, {
       "dataType" : 5,
       "format" : "YYYY-MM-DD",
       "name" : "end"

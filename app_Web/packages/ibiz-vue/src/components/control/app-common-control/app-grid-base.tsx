@@ -489,6 +489,7 @@ export class AppGridBase extends GridControlBase {
                 gridInstance={this.controlInstance}
                 context={this.context}
                 viewparams={this.viewparams}
+                appUIService={this.appUIService}
                 on-uiAction={($event: any) => this.columnUIAction(scope.row, $event, item)}
             ></app-grid-column>
         );
