@@ -18,5 +18,18 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
   },
+  "getPValuePSAppDEField" : {
+    "name" : "PARENT",
+    "codeName" : "Parent"
+  },
+  "getTextPSAppDEField" : {
+    "name" : "TITLE",
+    "codeName" : "Title"
+  },
+  "getValuePSAppDEField" : {
+    "name" : "ID",
+    "codeName" : "Id"
+  },
+  "codeItemValueNumber" : true,
   "enableCache" : true
 }

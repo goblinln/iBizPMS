@@ -7,7 +7,7 @@
   "minorSortDir" : "ASC",
   "refFlag" : true,
   "systemTag" : "iBizPMS",
-  "codeItemValueNumber" : false,
+  "codeItemValueNumber" : true,
   "enableCache" : true,
   "subSysAsCloud" : false,
   "subSysCodeList" : false,
