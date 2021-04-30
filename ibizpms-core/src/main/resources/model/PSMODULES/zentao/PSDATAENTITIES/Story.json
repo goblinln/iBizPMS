@@ -462,6 +462,10 @@
         "condType" : "CUSTOM",
         "customCond" : "( ( EXISTS ( SELECT 1 FROM zt_projectstory t51 WHERE t1.ID = t51.STORY AND ( t51.`PROJECT` = ${srfdatacontext('n_project_eq','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTSTORY\"}')}) )  OR  ${srfdatacontext('n_project_eq','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTSTORY\"}')} is null ) )",
         "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.product = #{srf.datacontext.product} or t1.id = #{srf.datacontext.story})",
+        "name" : "查询条件"
       } ]
     } ],
     "codeName" : "BugStory",
@@ -539,7 +543,16 @@
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.deleted = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.product = #{srf.datacontext.product} or t1.id = #{srf.datacontext.story})",
+        "name" : "查询条件"
+      } ]
     } ],
     "codeName" : "CaseStory",
     "logicName" : "相关用例需求",

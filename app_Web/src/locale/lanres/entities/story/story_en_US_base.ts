@@ -1059,6 +1059,7 @@ function getLocaleResourceBase(){
 				'stage': commonLogic.appcommonhandle("阶段",null),
 				'modulename': commonLogic.appcommonhandle("所属模块名称",null),
 				'uagridcolumn1': commonLogic.appcommonhandle("操作",null),
+				'product': commonLogic.appcommonhandle("所属产品",null),
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
