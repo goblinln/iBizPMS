@@ -85,6 +85,7 @@ import { Vue, Component, Watch } from 'vue-property-decorator';
 import { Environment } from '@/environments/environment';
 import { removeSessionStorage, Util } from 'ibiz-core';
 import { AppThirdService } from 'ibiz-vue';
+import { AuthGuard } from '@/utils';
 
 @Component({
     components: {},
@@ -231,6 +232,8 @@ export default class Login extends Vue {
                 }
                 // 设置cookie,保存账号密码7天
                 Util.setCookie('loginname', loginname, 7);
+                // 获取租户信息回调
+                AuthGuard.hooks.dcSystemAfter.tap(this.setLoginLog);
                 // 跳转首页
                 const url: any = this.$route.query.redirect ? this.$route.query.redirect : '*';
                 this.$router.push({ path: url });
@@ -268,6 +271,17 @@ export default class Login extends Vue {
         removeSessionStorage("tempOrgId");
         removeSessionStorage("dcsystem");
         removeSessionStorage("orgsData");
+    }
+
+    /**
+     * 上传登录记录
+     *
+     * @memberof Login
+     */
+    public setLoginLog(context: any) {
+        this.$http.post('/recordloginlog', { username: this.form.loginname }).then((result: any) => {
+            console.info('上传登录日志成功');
+        });
     }
 
     /**
@@ -430,6 +444,17 @@ export default class Login extends Vue {
             baseUrl += '/';
         }
         return baseUrl;
+    }
+
+    /**
+     * 组件销毁
+     *
+     * @memberof Login
+     */
+    public destroy() {
+        AuthGuard.hooks.dcSystemAfter.removeTap(() => {
+            this.setLoginLog;
+        });
     }
 }
 </script>
