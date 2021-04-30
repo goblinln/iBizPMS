@@ -380,26 +380,6 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "优先级",
-      "name" : "PRI",
-      "getPSAppDEField" : {
-        "name" : "PRI",
-        "codeName" : "Pri"
-      },
-      "getPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testtask__pri.json"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "结束日期",
-      "name" : "END",
-      "getPSAppDEField" : {
-        "name" : "END",
-        "codeName" : "End"
-      },
-      "uniqueItem" : false
-    }, {
       "caption" : "开始日期",
       "name" : "BEGIN",
       "getPSAppDEField" : {
@@ -424,11 +404,23 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "描述",
-      "name" : "DESC",
+      "caption" : "优先级",
+      "name" : "PRI",
       "getPSAppDEField" : {
-        "name" : "DESC",
-        "codeName" : "Desc"
+        "name" : "PRI",
+        "codeName" : "Pri"
+      },
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testtask__pri.json"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "所属项目",
+      "name" : "PROJECT",
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
       },
       "uniqueItem" : false
     }, {
@@ -440,19 +432,43 @@
       },
       "uniqueItem" : false
     }, {
+      "caption" : "结束日期",
+      "name" : "END",
+      "getPSAppDEField" : {
+        "name" : "END",
+        "codeName" : "End"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "项目",
+      "name" : "PROJECTTNAME",
+      "getPSAppDEField" : {
+        "name" : "PROJECTTNAME",
+        "codeName" : "ProjecttName"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "描述",
+      "name" : "DESC",
+      "getPSAppDEField" : {
+        "name" : "DESC",
+        "codeName" : "Desc"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "备注",
+      "name" : "COMMENT",
+      "getPSAppDEField" : {
+        "name" : "COMMENT",
+        "codeName" : "Comment"
+      },
+      "uniqueItem" : false
+    }, {
       "caption" : "编号",
       "name" : "ID",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "所属项目",
-      "name" : "PROJECT",
-      "getPSAppDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
       },
       "uniqueItem" : false
     }, {
@@ -468,11 +484,19 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "项目",
-      "name" : "PROJECTTNAME",
+      "caption" : "版本",
+      "name" : "BUILD",
       "getPSAppDEField" : {
-        "name" : "PROJECTTNAME",
-        "codeName" : "ProjecttName"
+        "name" : "BUILD",
+        "codeName" : "Build"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "所属产品",
+      "name" : "PRODUCT",
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
       },
       "uniqueItem" : false
     }, {
@@ -488,19 +512,11 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "备注",
-      "name" : "COMMENT",
+      "caption" : "report",
+      "name" : "REPORT",
       "getPSAppDEField" : {
-        "name" : "COMMENT",
-        "codeName" : "Comment"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "版本",
-      "name" : "BUILD",
-      "getPSAppDEField" : {
-        "name" : "BUILD",
-        "codeName" : "Build"
+        "name" : "REPORT",
+        "codeName" : "Report"
       },
       "uniqueItem" : false
     }, {
@@ -509,22 +525,6 @@
       "getPSAppDEField" : {
         "name" : "DELETED",
         "codeName" : "Deleted"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "所属产品",
-      "name" : "PRODUCT",
-      "getPSAppDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "report",
-      "name" : "REPORT",
-      "getPSAppDEField" : {
-        "name" : "REPORT",
-        "codeName" : "Report"
       },
       "uniqueItem" : false
     }, {

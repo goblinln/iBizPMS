@@ -23,7 +23,7 @@ export class Associatedform {
     public renderCtrlItem(h: any, detailsInstance: any, parentContainer: any, data: any) {
         let formItems = detailsInstance.getPSDEFormItems();
         const formItemsProp: any[] = [];
-        const localParam: any[] = [];
+        const localParam: any = {};
         const getItemLocaleTag = (field: any) => {
             return `entities.${parentContainer.appDeCodeName.toLowerCase()}.fields.${field.getPSAppDEField().codeName.toLowerCase()}`;
         }
@@ -40,11 +40,9 @@ export class Associatedform {
                     });
                 }
                 formItemsProp.push(tempProp);
-                localParam.push(
-                    {
-                        [item.getPSAppDEField().codeName?.toLowerCase()]: ['%' + item.getPSAppDEField().codeName?.toLowerCase() + '%']
-                    }
-                );
+                Object.assign(localParam,{
+                    [item.getPSAppDEField().codeName?.toLowerCase()]: '%' + item.getPSAppDEField().codeName?.toLowerCase() + '%',
+                });
             }
         });
         return parentContainer.$createElement('comb-form-item', {
