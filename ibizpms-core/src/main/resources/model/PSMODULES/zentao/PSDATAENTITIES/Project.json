@@ -6856,7 +6856,7 @@
       }
     }, {
       "dataAccessAction" : "DELETE",
-      "name" : "DELETE",
+      "name" : "Project_Maintain_DEV_DELETE",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "DELETE"
@@ -7022,6 +7022,44 @@
       }
     } ],
     "roleTag" : "Project_Maintain_QD",
+    "userDRAction" : "READ"
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Maintain_RD.json",
+    "name" : "项目维护（发布负责人）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "RDQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "Project_Maintain_RD_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "Project_Maintain_RD_UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "CREATE",
+      "name" : "Project_Maintain_RD_CREATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CREATE"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "Project_Maintain_RD_DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    } ],
+    "roleTag" : "Project_Maintain_RD",
     "userDRAction" : "READ"
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Manage_CO.json",

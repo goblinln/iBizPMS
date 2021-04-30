@@ -21,7 +21,7 @@
     }
   }, {
     "dataAccessAction" : "DELETE",
-    "name" : "DELETE",
+    "name" : "Project_Maintain_DEV_DELETE",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "DELETE"
