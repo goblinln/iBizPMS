@@ -135,8 +135,8 @@ public class SysDepartmentResource {
     }
 
 	@ApiOperation(value = "获取数据集", tags = {"部门" } ,notes = "获取数据集")
-    @RequestMapping(method= RequestMethod.POST , value="/sysdepartments/fetchdefault")
-	public ResponseEntity<List<SysDepartmentDTO>> fetchdefault(@RequestBody SysDepartmentSearchContext context) {
+    @RequestMapping(method= RequestMethod.GET , value="/sysdepartments/fetchdefault")
+	public ResponseEntity<List<SysDepartmentDTO>> fetchdefault(SysDepartmentSearchContext context) {
         Page<SysDepartment> domains = sysdepartmentService.searchDefault(context) ;
         List<SysDepartmentDTO> list = sysdepartmentMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
