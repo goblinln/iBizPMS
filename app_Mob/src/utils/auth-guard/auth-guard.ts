@@ -175,7 +175,6 @@ export class AuthGuard {
      * @memberof AuthGuard
      */
     public async initAppService(router: any) {
-        const appContext: any = router.app.$store.getters.getAppData().context;
         AppServiceBase.getInstance().setAppEnvironment(Environment);
         AppServiceBase.getInstance().setAppStore(router.app.$store);
         AppServiceBase.getInstance().setI18n(i18n);
