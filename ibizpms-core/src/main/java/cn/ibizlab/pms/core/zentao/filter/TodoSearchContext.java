@@ -71,26 +71,26 @@ public class TodoSearchContext extends QueryWrapperContext<Todo> {
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_date_eq;//[日期]
 	public void setN_date_eq(Timestamp n_date_eq) {
         this.n_date_eq = n_date_eq;
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_date_gtandeq;//[日期]
 	public void setN_date_gtandeq(Timestamp n_date_gtandeq) {
         this.n_date_gtandeq = n_date_gtandeq;
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_date_ltandeq;//[日期]
 	public void setN_date_ltandeq(Timestamp n_date_ltandeq) {
         this.n_date_ltandeq = n_date_ltandeq;
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_date_noteq;//[日期]
 	public void setN_date_noteq(Timestamp n_date_noteq) {
         this.n_date_noteq = n_date_noteq;

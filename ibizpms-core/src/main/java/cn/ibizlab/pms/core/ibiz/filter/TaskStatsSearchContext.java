@@ -27,14 +27,14 @@ import cn.ibizlab.pms.core.ibiz.domain.TaskStats;
 @Data
 public class TaskStatsSearchContext extends QueryWrapperContext<TaskStats> {
 
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_end_ltandeq;//[结束]
 	public void setN_end_ltandeq(Timestamp n_end_ltandeq) {
         this.n_end_ltandeq = n_end_ltandeq;
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_begin_gtandeq;//[属性]
 	public void setN_begin_gtandeq(Timestamp n_begin_gtandeq) {
         this.n_begin_gtandeq = n_begin_gtandeq;

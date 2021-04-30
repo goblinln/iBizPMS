@@ -35,20 +35,20 @@ public class IbzDailySearchContext extends QueryWrapperContext<IbzDaily> {
 	public void setN_issubmit_eq(String n_issubmit_eq) {
         this.n_issubmit_eq = n_issubmit_eq;
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_date_eq;//[日期]
 	public void setN_date_eq(Timestamp n_date_eq) {
         this.n_date_eq = n_date_eq;
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_date_gtandeq;//[日期]
 	public void setN_date_gtandeq(Timestamp n_date_gtandeq) {
         this.n_date_gtandeq = n_date_gtandeq;
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_date_ltandeq;//[日期]
 	public void setN_date_ltandeq(Timestamp n_date_ltandeq) {
         this.n_date_ltandeq = n_date_ltandeq;

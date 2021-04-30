@@ -1550,7 +1550,7 @@ export class EditFormControlBase extends FormControlBase {
      * @memberof AppDefaultForm
      */
     public resetFormData({ name, newVal, oldVal }: { name: string, newVal: any, oldVal: any }): void {
-        const formItems = this.controlInstance.getPSDEFormItems();
+        const formItems: IPSDEEditFormItem[] = ModelTool.getAllFormItems(this.controlInstance);
         if (formItems && formItems.length > 0) {
             for (const item of formItems) {
                 if (item.resetItemName && item.resetItemName == name) {

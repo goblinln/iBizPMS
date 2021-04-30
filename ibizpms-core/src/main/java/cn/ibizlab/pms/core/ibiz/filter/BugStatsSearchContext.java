@@ -43,26 +43,26 @@ public class BugStatsSearchContext extends QueryWrapperContext<BugStats> {
 	public void setN_assignedto_eq(String n_assignedto_eq) {
         this.n_assignedto_eq = n_assignedto_eq;
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_begin_gtandeq;//[开始]
 	public void setN_begin_gtandeq(Timestamp n_begin_gtandeq) {
         this.n_begin_gtandeq = n_begin_gtandeq;
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_bugresolveddate_gtandeq;//[bug解决日期]
 	public void setN_bugresolveddate_gtandeq(Timestamp n_bugresolveddate_gtandeq) {
         this.n_bugresolveddate_gtandeq = n_bugresolveddate_gtandeq;
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_bugresolveddate_ltandeq;//[bug解决日期]
 	public void setN_bugresolveddate_ltandeq(Timestamp n_bugresolveddate_ltandeq) {
         this.n_bugresolveddate_ltandeq = n_bugresolveddate_ltandeq;
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_end_ltandeq;//[结束]
 	public void setN_end_ltandeq(Timestamp n_end_ltandeq) {
         this.n_end_ltandeq = n_end_ltandeq;

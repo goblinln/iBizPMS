@@ -69,20 +69,20 @@ public class BugSearchContext extends QueryWrapperContext<Bug> {
 	public void setN_assigneddate_gtandeq(Timestamp n_assigneddate_gtandeq) {
         this.n_assigneddate_gtandeq = n_assigneddate_gtandeq;
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_deadline_gtandeq;//[截止日期]
 	public void setN_deadline_gtandeq(Timestamp n_deadline_gtandeq) {
         this.n_deadline_gtandeq = n_deadline_gtandeq;
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_deadline_lt;//[截止日期]
 	public void setN_deadline_lt(Timestamp n_deadline_lt) {
         this.n_deadline_lt = n_deadline_lt;
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_deadline_ltandeq;//[截止日期]
 	public void setN_deadline_ltandeq(Timestamp n_deadline_ltandeq) {
         this.n_deadline_ltandeq = n_deadline_ltandeq;

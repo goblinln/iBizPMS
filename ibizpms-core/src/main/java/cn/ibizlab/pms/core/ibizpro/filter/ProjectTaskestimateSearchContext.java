@@ -35,8 +35,8 @@ public class ProjectTaskestimateSearchContext extends QueryWrapperContext<Projec
 	public void setN_month_eq(String n_month_eq) {
         this.n_month_eq = n_month_eq;
     }
-    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
-    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_date_eq;//[日期]
 	public void setN_date_eq(Timestamp n_date_eq) {
         this.n_date_eq = n_date_eq;

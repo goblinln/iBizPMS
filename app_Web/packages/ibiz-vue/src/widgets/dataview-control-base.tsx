@@ -926,6 +926,7 @@ export class DataViewControlBase extends MDControlBase {
             const item: any = {
                 label: group.label,
                 group: group.label,
+                data: group,
                 children,
             };
             groupTree.push(item);
