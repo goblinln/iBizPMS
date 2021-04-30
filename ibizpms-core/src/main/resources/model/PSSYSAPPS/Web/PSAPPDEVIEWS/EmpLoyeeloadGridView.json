@@ -714,7 +714,7 @@
           "name" : "workday"
         },
         "getPSLayoutPos" : {
-          "colLG" : 4,
+          "colLG" : 3,
           "colLGOffset" : 1,
           "colMD" : 3,
           "layout" : "TABLE_24COL"
@@ -742,7 +742,7 @@
           "name" : "everydaytime"
         },
         "getPSLayoutPos" : {
-          "colLG" : 4,
+          "colLG" : 3,
           "colMD" : 3,
           "colMDOffset" : 5,
           "colSMOffset" : 5,

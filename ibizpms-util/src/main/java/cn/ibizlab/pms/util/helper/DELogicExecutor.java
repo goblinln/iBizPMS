@@ -71,8 +71,11 @@ public class DELogicExecutor {
      */
     public void executeLogic(EntityBase entity, IPSDEAction action, IPSDELogic logic, IDynaInstRuntime runtime) throws Exception {
         Resource bpmn = getBpmn(logic, entity, runtime);
-        if (bpmn != null && bpmn.exists() && isNeedLoad(bpmn,runtime)) {
-            DELogic deLogic = getDELogic(logic, entity, runtime);
+        if (bpmn != null && bpmn.exists()) {
+            DELogic deLogic = getCacheLogic(bpmn,runtime);
+            if(deLogic == null){
+                deLogic = getDELogic(logic, entity, runtime);
+            }
             if (deLogic != null) {
                 executeLogic(deLogic, entity , action);
             }
@@ -89,8 +92,11 @@ public class DELogicExecutor {
      */
     public void executeAttachLogic(EntityBase entity, IPSDEAction action, String attachMode, IDynaInstRuntime runtime) throws Exception {
         Resource bpmn = getBpmn(action, attachMode, entity, runtime);
-        if (bpmn != null && bpmn.exists() && isNeedLoad(bpmn,runtime)) {
-            DELogic deLogic = getDELogic(action, attachMode, entity, runtime);
+        if (bpmn != null && bpmn.exists()) {
+            DELogic deLogic = getCacheLogic(bpmn,runtime);
+            if(deLogic == null){
+                deLogic = getDELogic(action, attachMode, entity, runtime);
+            }
             if (deLogic != null) {
                 executeLogic(deLogic, entity , action);
             }
@@ -99,20 +105,20 @@ public class DELogicExecutor {
 
 
     /**
-     * 是否需要远程加载逻辑
+     * 获取缓存logic
      * @param bpmn
      * @param runtime
      * @return
      */
-    private boolean isNeedLoad(Resource bpmn, IDynaInstRuntime runtime) throws IOException {
+    private DELogic getCacheLogic(Resource bpmn, IDynaInstRuntime runtime) throws IOException {
         String bpmnId = DigestUtils.md5DigestAsHex(bpmn.getURL().toString().getBytes());
         if (runtime != null && !StringUtils.isEmpty(bpmnId) && !ObjectUtils.isEmpty(runtime.getLoadedTime())) {
             DELogic logic = deLogicMap.get(bpmnId);
-            if (logic != null && !ObjectUtils.isEmpty(logic.getLoadedTime())) {
-                return !(logic.getLoadedTime() == runtime.getLoadedTime());
+            if (logic != null && !ObjectUtils.isEmpty(logic.getLoadedTime()) && logic.getLoadedTime() == runtime.getLoadedTime()) {
+                return logic;
             }
         }
-        return true;
+        return null;
     }
 
     /**

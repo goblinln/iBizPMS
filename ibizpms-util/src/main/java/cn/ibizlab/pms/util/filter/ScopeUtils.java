@@ -116,35 +116,35 @@ public class ScopeUtils {
         if (args.length != 3)
             throw new RuntimeException(String.format("字段条件解析错误:%s", args.toString()));
         if (args[1].trim().equals(COLUMN_EQ)) {
-            if ("false".equalsIgnoreCase(args[2].replace("'", "")))
+            if ("false".equalsIgnoreCase(args[2].trim().replace("'", "")))
                 wrapper.isNull(args[0].replace("'", ""));
-            else if ("true".equalsIgnoreCase(args[2].replace("'", "")))
+            else if ("true".equalsIgnoreCase(args[2].trim().replace("'", "")))
                 wrapper.isNotNull(args[0].replace("'", ""));
             else {
-                wrapper.eq(args[0].replace("'", ""), args[2].replace("'", ""));
+                wrapper.eq(args[0].replace("'", ""), args[2].trim().replace("'", ""));
             }
         } else if (args[1].trim().equals(COLUMN_NE)) {
-            if ("false".equalsIgnoreCase(args[2].replace("'", "")))
+            if ("false".equalsIgnoreCase(args[2].trim().replace("'", "")))
                 wrapper.isNotNull(args[0].replace("'", ""));
-            if ("true".equalsIgnoreCase(args[2].replace("'", "")))
+            if ("true".equalsIgnoreCase(args[2].trim().replace("'", "")))
                 wrapper.isNull(args[0].replace("'", ""));
             else {
-                wrapper.ne(args[0].replace("'", ""), args[2].replace("'", ""));
+                wrapper.ne(args[0].replace("'", ""), args[2].trim().replace("'", ""));
             }
         } else if (args[1].trim().equalsIgnoreCase(COLUMN_GT)) {
-            wrapper.gt(args[0].replace("'", ""), args[2].replace("'", ""));
+            wrapper.gt(args[0].replace("'", ""), args[2].trim().replace("'", ""));
         } else if (args[1].trim().equalsIgnoreCase(COLUMN_GE)) {
-            wrapper.ge(args[0].replace("'", ""), args[2].replace("'", ""));
+            wrapper.ge(args[0].replace("'", ""), args[2].trim().replace("'", ""));
         } else if (args[1].trim().equalsIgnoreCase(COLUMN_LT)) {
-            wrapper.lt(args[0].replace("'", ""), args[2].replace("'", ""));
+            wrapper.lt(args[0].replace("'", ""), args[2].trim().replace("'", ""));
         } else if (args[1].trim().equalsIgnoreCase(COLUMN_LE)) {
-            wrapper.le(args[0].replace("'", ""), args[2].replace("'", ""));
+            wrapper.le(args[0].replace("'", ""), args[2].trim().replace("'", ""));
         } else if (args[1].trim().equalsIgnoreCase(COLUMN_IN)) {
-            wrapper.in(args[0].replace("'", ""), args[2].replace("'", ""));
+            wrapper.in(args[0].replace("'", ""), args[2].trim().replace("'", ""));
         } else if (args[1].trim().equalsIgnoreCase(COLUMN_NOTIN)) {
-            wrapper.notIn(args[0].replace("'", ""), args[2].replace("'", ""));
+            wrapper.notIn(args[0].replace("'", ""), args[2].trim().replace("'", ""));
         } else if (args[1].trim().equalsIgnoreCase(COLUMN_LIKE)) {
-            wrapper.like(args[0].replace("'", ""), args[2].replace("'", ""));
+            wrapper.like(args[0].replace("'", ""), args[2].trim().replace("'", ""));
         }
     }
 
