@@ -408,7 +408,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取批量新建用例", tags = {"测试用例" } ,notes = "获取批量新建用例")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchbatchnew")
-	public ResponseEntity<List<CaseDTO>> fetchBatchNew(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchbatchnew(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchBatchNew(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -432,7 +432,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取累计创建的用例", tags = {"测试用例" } ,notes = "获取累计创建的用例")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchcuropenedcase")
-	public ResponseEntity<List<CaseDTO>> fetchCurOpenedCase(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchcuropenedcase(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchCurOpenedCase(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -456,7 +456,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取套件关联用例", tags = {"测试用例" } ,notes = "获取套件关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchcursuite")
-	public ResponseEntity<List<CaseDTO>> fetchCurSuite(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchcursuite(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchCurSuite(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -480,7 +480,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试单关联用例", tags = {"测试用例" } ,notes = "获取测试单关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchcurtesttask")
-	public ResponseEntity<List<CaseDTO>> fetchCurTestTask(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchcurtesttask(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchCurTestTask(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -504,7 +504,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试用例" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchdefault")
-	public ResponseEntity<List<CaseDTO>> fetchDefault(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchdefault(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchDefault(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -528,7 +528,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取ES批量的导入", tags = {"测试用例" } ,notes = "获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchesbulk")
-	public ResponseEntity<List<CaseDTO>> fetchESBulk(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchesbulk(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchESBulk(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -552,7 +552,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联用例", tags = {"测试用例" } ,notes = "获取测试报告关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchmodulereportcase")
-	public ResponseEntity<List<CaseDTO>> fetchModuleRePortCase(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchmodulereportcase(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchModuleRePortCase(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -576,7 +576,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联-按模块-条目", tags = {"测试用例" } ,notes = "获取测试报告关联-按模块-条目")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchmodulereportcaseentry")
-	public ResponseEntity<List<CaseDTO>> fetchModuleRePortCaseEntry(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchmodulereportcaseentry(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchModuleRePortCaseEntry(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -600,7 +600,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目报告关联-按模块", tags = {"测试用例" } ,notes = "获取项目报告关联-按模块")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchmodulereportcase_project")
-	public ResponseEntity<List<CaseDTO>> fetchModuleRePortCase_Project(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchmodulereportcase_project(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchModuleRePortCase_Project(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -624,7 +624,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的收藏", tags = {"测试用例" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchmyfavorites")
-	public ResponseEntity<List<CaseDTO>> fetchMyFavorites(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchmyfavorites(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchMyFavorites(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -648,7 +648,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取套件关联用例", tags = {"测试用例" } ,notes = "获取套件关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchnotcurtestsuite")
-	public ResponseEntity<List<CaseDTO>> fetchNotCurTestSuite(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchnotcurtestsuite(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchNotCurTestSuite(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -672,7 +672,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试单关联用例", tags = {"测试用例" } ,notes = "获取测试单关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchnotcurtesttask")
-	public ResponseEntity<List<CaseDTO>> fetchNotCurTestTask(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchnotcurtesttask(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchNotCurTestTask(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -696,7 +696,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试单关联用例（项目关联）", tags = {"测试用例" } ,notes = "获取测试单关联用例（项目关联）")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchnotcurtesttaskproject")
-	public ResponseEntity<List<CaseDTO>> fetchNotCurTestTaskProject(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchnotcurtesttaskproject(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchNotCurTestTaskProject(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -720,7 +720,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联用例", tags = {"测试用例" } ,notes = "获取测试报告关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchreportcase")
-	public ResponseEntity<List<CaseDTO>> fetchRePortCase(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchreportcase(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchRePortCase(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -744,7 +744,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联用例-条目", tags = {"测试用例" } ,notes = "获取测试报告关联用例-条目")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchreportcaseentry")
-	public ResponseEntity<List<CaseDTO>> fetchRePortCaseEntry(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchreportcaseentry(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchRePortCaseEntry(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -768,7 +768,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目报告关联用例-关联用例", tags = {"测试用例" } ,notes = "获取项目报告关联用例-关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchreportcase_project")
-	public ResponseEntity<List<CaseDTO>> fetchRePortCase_Project(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchreportcase_project(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchRePortCase_Project(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -792,7 +792,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联-执行人", tags = {"测试用例" } ,notes = "获取测试报告关联-执行人")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchrunerreportcase")
-	public ResponseEntity<List<CaseDTO>> fetchRunERRePortCase(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchrunerreportcase(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchRunERRePortCase(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -816,7 +816,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联-执行人-条目", tags = {"测试用例" } ,notes = "获取测试报告关联-执行人-条目")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchrunerreportcaseentry")
-	public ResponseEntity<List<CaseDTO>> fetchRunERRePortCaseEntry(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchrunerreportcaseentry(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchRunERRePortCaseEntry(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -840,7 +840,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目报告关联-执行人", tags = {"测试用例" } ,notes = "获取项目报告关联-执行人")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchrunerreportcase_project")
-	public ResponseEntity<List<CaseDTO>> fetchRunERRePortCase_Project(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchrunerreportcase_project(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchRunERRePortCase_Project(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -864,7 +864,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联用例", tags = {"测试用例" } ,notes = "获取测试报告关联用例")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchrunreportcase")
-	public ResponseEntity<List<CaseDTO>> fetchRunRePortCase(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchrunreportcase(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchRunRePortCase(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -888,7 +888,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联--执行结果条目", tags = {"测试用例" } ,notes = "获取测试报告关联--执行结果条目")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchrunreportcaseentry")
-	public ResponseEntity<List<CaseDTO>> fetchRunRePortCaseEntry(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchrunreportcaseentry(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchRunRePortCaseEntry(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());
@@ -912,7 +912,7 @@ public class CaseResource {
     @PreAuthorize("@CaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目报告关联-执行结果", tags = {"测试用例" } ,notes = "获取项目报告关联-执行结果")
     @RequestMapping(method= RequestMethod.POST , value="/cases/fetchrunreportcase_project")
-	public ResponseEntity<List<CaseDTO>> fetchRunRePortCase_Project(@RequestBody CaseSearchContext context) {
+	public ResponseEntity<List<CaseDTO>> fetchrunreportcase_project(@RequestBody CaseSearchContext context) {
         caseRuntime.addAuthorityConditions(context,"READ");
         Page<Case> domains = caseService.searchRunRePortCase_Project(context) ;
         List<CaseDTO> list = caseMapping.toDto(domains.getContent());

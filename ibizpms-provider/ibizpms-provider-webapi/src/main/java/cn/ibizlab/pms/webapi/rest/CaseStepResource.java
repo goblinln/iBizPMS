@@ -150,7 +150,7 @@ public class CaseStepResource {
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前测试步骤", tags = {"用例步骤" } ,notes = "获取当前测试步骤")
     @RequestMapping(method= RequestMethod.POST , value="/casesteps/fetchcurtest")
-	public ResponseEntity<List<CaseStepDTO>> fetchCurTest(@RequestBody CaseStepSearchContext context) {
+	public ResponseEntity<List<CaseStepDTO>> fetchcurtest(@RequestBody CaseStepSearchContext context) {
         Page<CaseStep> domains = casestepService.searchCurTest(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -172,7 +172,7 @@ public class CaseStepResource {
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用例步骤" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/casesteps/fetchdefault")
-	public ResponseEntity<List<CaseStepDTO>> fetchDefault(@RequestBody CaseStepSearchContext context) {
+	public ResponseEntity<List<CaseStepDTO>> fetchdefault(@RequestBody CaseStepSearchContext context) {
         Page<CaseStep> domains = casestepService.searchDefault(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -194,7 +194,7 @@ public class CaseStepResource {
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT1", tags = {"用例步骤" } ,notes = "获取DEFAULT1")
     @RequestMapping(method= RequestMethod.POST , value="/casesteps/fetchdefault1")
-	public ResponseEntity<List<CaseStepDTO>> fetchDefault1(@RequestBody CaseStepSearchContext context) {
+	public ResponseEntity<List<CaseStepDTO>> fetchdefault1(@RequestBody CaseStepSearchContext context) {
         Page<CaseStep> domains = casestepService.searchDefault1(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -216,7 +216,7 @@ public class CaseStepResource {
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Mob", tags = {"用例步骤" } ,notes = "获取Mob")
     @RequestMapping(method= RequestMethod.POST , value="/casesteps/fetchmob")
-	public ResponseEntity<List<CaseStepDTO>> fetchMob(@RequestBody CaseStepSearchContext context) {
+	public ResponseEntity<List<CaseStepDTO>> fetchmob(@RequestBody CaseStepSearchContext context) {
         Page<CaseStep> domains = casestepService.searchMob(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -238,7 +238,7 @@ public class CaseStepResource {
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本", tags = {"用例步骤" } ,notes = "获取版本")
     @RequestMapping(method= RequestMethod.POST , value="/casesteps/fetchversion")
-	public ResponseEntity<List<CaseStepDTO>> fetchVersion(@RequestBody CaseStepSearchContext context) {
+	public ResponseEntity<List<CaseStepDTO>> fetchversion(@RequestBody CaseStepSearchContext context) {
         Page<CaseStep> domains = casestepService.searchVersion(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -260,7 +260,7 @@ public class CaseStepResource {
     @PreAuthorize("@CaseStepRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本1", tags = {"用例步骤" } ,notes = "获取版本1")
     @RequestMapping(method= RequestMethod.POST , value="/casesteps/fetchversions")
-	public ResponseEntity<List<CaseStepDTO>> fetchVersions(@RequestBody CaseStepSearchContext context) {
+	public ResponseEntity<List<CaseStepDTO>> fetchversions(@RequestBody CaseStepSearchContext context) {
         Page<CaseStep> domains = casestepService.searchVersions(context) ;
         List<CaseStepDTO> list = casestepMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

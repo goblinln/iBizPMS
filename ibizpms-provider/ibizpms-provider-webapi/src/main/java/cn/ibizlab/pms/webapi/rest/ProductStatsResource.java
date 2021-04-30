@@ -158,7 +158,7 @@ public class ProductStatsResource {
 
 	@ApiOperation(value = "获取DEFAULT", tags = {"产品统计" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productstats/fetchdefault")
-	public ResponseEntity<List<ProductStatsDTO>> fetchDefault(@RequestBody ProductStatsSearchContext context) {
+	public ResponseEntity<List<ProductStatsDTO>> fetchdefault(@RequestBody ProductStatsSearchContext context) {
         Page<ProductStats> domains = productstatsService.searchDefault(context) ;
         List<ProductStatsDTO> list = productstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -178,7 +178,7 @@ public class ProductStatsResource {
 
 	@ApiOperation(value = "获取未关闭产品", tags = {"产品统计" } ,notes = "获取未关闭产品")
     @RequestMapping(method= RequestMethod.POST , value="/productstats/fetchnoopenproduct")
-	public ResponseEntity<List<ProductStatsDTO>> fetchNoOpenProduct(@RequestBody ProductStatsSearchContext context) {
+	public ResponseEntity<List<ProductStatsDTO>> fetchnoopenproduct(@RequestBody ProductStatsSearchContext context) {
         Page<ProductStats> domains = productstatsService.searchNoOpenProduct(context) ;
         List<ProductStatsDTO> list = productstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -198,7 +198,7 @@ public class ProductStatsResource {
 
 	@ApiOperation(value = "获取产品质量表", tags = {"产品统计" } ,notes = "获取产品质量表")
     @RequestMapping(method= RequestMethod.POST , value="/productstats/fetchprodctquantigird")
-	public ResponseEntity<List<ProductStatsDTO>> fetchProdctQuantiGird(@RequestBody ProductStatsSearchContext context) {
+	public ResponseEntity<List<ProductStatsDTO>> fetchprodctquantigird(@RequestBody ProductStatsSearchContext context) {
         Page<ProductStats> domains = productstatsService.searchProdctQuantiGird(context) ;
         List<ProductStatsDTO> list = productstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -218,7 +218,7 @@ public class ProductStatsResource {
 
 	@ApiOperation(value = "获取产品投入表", tags = {"产品统计" } ,notes = "获取产品投入表")
     @RequestMapping(method= RequestMethod.POST , value="/productstats/fetchproductinputtable")
-	public ResponseEntity<List<ProductStatsDTO>> fetchProductInputTable(@RequestBody ProductStatsSearchContext context) {
+	public ResponseEntity<List<ProductStatsDTO>> fetchproductinputtable(@RequestBody ProductStatsSearchContext context) {
         Page<ProductStats> domains = productstatsService.searchProductInputTable(context) ;
         List<ProductStatsDTO> list = productstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -238,7 +238,7 @@ public class ProductStatsResource {
 
 	@ApiOperation(value = "获取产品完成统计表", tags = {"产品统计" } ,notes = "获取产品完成统计表")
     @RequestMapping(method= RequestMethod.POST , value="/productstats/fetchproductcompletionstatistics")
-	public ResponseEntity<List<ProductStatsDTO>> fetchProductcompletionstatistics(@RequestBody ProductStatsSearchContext context) {
+	public ResponseEntity<List<ProductStatsDTO>> fetchproductcompletionstatistics(@RequestBody ProductStatsSearchContext context) {
         Page<ProductStats> domains = productstatsService.searchProductcompletionstatistics(context) ;
         List<ProductStatsDTO> list = productstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

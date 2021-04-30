@@ -149,7 +149,7 @@ public class EmpLoyeeloadResource {
 
 	@ApiOperation(value = "获取数据集", tags = {"员工负载表" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/employeeloads/fetchdefault")
-	public ResponseEntity<List<EmpLoyeeloadDTO>> fetchDefault(@RequestBody EmpLoyeeloadSearchContext context) {
+	public ResponseEntity<List<EmpLoyeeloadDTO>> fetchdefault(@RequestBody EmpLoyeeloadSearchContext context) {
         Page<EmpLoyeeload> domains = employeeloadService.searchDefault(context) ;
         List<EmpLoyeeloadDTO> list = employeeloadMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -169,7 +169,7 @@ public class EmpLoyeeloadResource {
 
 	@ApiOperation(value = "获取获取员工负载表", tags = {"员工负载表" } ,notes = "获取获取员工负载表")
     @RequestMapping(method= RequestMethod.POST , value="/employeeloads/fetchgetwoerkload")
-	public ResponseEntity<List<EmpLoyeeloadDTO>> fetchGETWOERKLOAD(@RequestBody EmpLoyeeloadSearchContext context) {
+	public ResponseEntity<List<EmpLoyeeloadDTO>> fetchgetwoerkload(@RequestBody EmpLoyeeloadSearchContext context) {
         Page<EmpLoyeeload> domains = employeeloadService.searchGETWOERKLOAD(context) ;
         List<EmpLoyeeloadDTO> list = employeeloadMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

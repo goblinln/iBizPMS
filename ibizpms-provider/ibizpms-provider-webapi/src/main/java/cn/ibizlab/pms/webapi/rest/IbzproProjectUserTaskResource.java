@@ -149,7 +149,7 @@ public class IbzproProjectUserTaskResource {
 
 	@ApiOperation(value = "获取数据集", tags = {"项目汇报用户任务" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/fetchdefault")
-	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchDefault(@RequestBody IbzproProjectUserTaskSearchContext context) {
+	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchdefault(@RequestBody IbzproProjectUserTaskSearchContext context) {
         Page<IbzproProjectUserTask> domains = ibzproprojectusertaskService.searchDefault(context) ;
         List<IbzproProjectUserTaskDTO> list = ibzproprojectusertaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -169,7 +169,7 @@ public class IbzproProjectUserTaskResource {
 
 	@ApiOperation(value = "获取项目日报任务", tags = {"项目汇报用户任务" } ,notes = "获取项目日报任务")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/fetchprojectdailytask")
-	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchProjectDailyTask(@RequestBody IbzproProjectUserTaskSearchContext context) {
+	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchprojectdailytask(@RequestBody IbzproProjectUserTaskSearchContext context) {
         Page<IbzproProjectUserTask> domains = ibzproprojectusertaskService.searchProjectDailyTask(context) ;
         List<IbzproProjectUserTaskDTO> list = ibzproprojectusertaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -189,7 +189,7 @@ public class IbzproProjectUserTaskResource {
 
 	@ApiOperation(value = "获取项目日报任务", tags = {"项目汇报用户任务" } ,notes = "获取项目日报任务")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/fetchprojectmonthlytask")
-	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchProjectMonthlyTask(@RequestBody IbzproProjectUserTaskSearchContext context) {
+	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchprojectmonthlytask(@RequestBody IbzproProjectUserTaskSearchContext context) {
         Page<IbzproProjectUserTask> domains = ibzproprojectusertaskService.searchProjectMonthlyTask(context) ;
         List<IbzproProjectUserTaskDTO> list = ibzproprojectusertaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -209,7 +209,7 @@ public class IbzproProjectUserTaskResource {
 
 	@ApiOperation(value = "获取项目周报任务", tags = {"项目汇报用户任务" } ,notes = "获取项目周报任务")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectusertasks/fetchprojectweeklytask")
-	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchProjectWeeklyTask(@RequestBody IbzproProjectUserTaskSearchContext context) {
+	public ResponseEntity<List<IbzproProjectUserTaskDTO>> fetchprojectweeklytask(@RequestBody IbzproProjectUserTaskSearchContext context) {
         Page<IbzproProjectUserTask> domains = ibzproprojectusertaskService.searchProjectWeeklyTask(context) ;
         List<IbzproProjectUserTaskDTO> list = ibzproprojectusertaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

@@ -149,7 +149,7 @@ public class TaskStatsResource {
 
 	@ApiOperation(value = "获取数据集", tags = {"任务统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/taskstats/fetchdefault")
-	public ResponseEntity<List<TaskStatsDTO>> fetchDefault(@RequestBody TaskStatsSearchContext context) {
+	public ResponseEntity<List<TaskStatsDTO>> fetchdefault(@RequestBody TaskStatsSearchContext context) {
         Page<TaskStats> domains = taskstatsService.searchDefault(context) ;
         List<TaskStatsDTO> list = taskstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -169,7 +169,7 @@ public class TaskStatsResource {
 
 	@ApiOperation(value = "获取任务完成汇总表", tags = {"任务统计" } ,notes = "获取任务完成汇总表")
     @RequestMapping(method= RequestMethod.POST , value="/taskstats/fetchtaskfinishhuizong")
-	public ResponseEntity<List<TaskStatsDTO>> fetchTaskFinishHuiZong(@RequestBody TaskStatsSearchContext context) {
+	public ResponseEntity<List<TaskStatsDTO>> fetchtaskfinishhuizong(@RequestBody TaskStatsSearchContext context) {
         Page<TaskStats> domains = taskstatsService.searchTaskFinishHuiZong(context) ;
         List<TaskStatsDTO> list = taskstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -189,7 +189,7 @@ public class TaskStatsResource {
 
 	@ApiOperation(value = "获取用户完成任务统计", tags = {"任务统计" } ,notes = "获取用户完成任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/taskstats/fetchuserfinishtasksum")
-	public ResponseEntity<List<TaskStatsDTO>> fetchUserFinishTaskSum(@RequestBody TaskStatsSearchContext context) {
+	public ResponseEntity<List<TaskStatsDTO>> fetchuserfinishtasksum(@RequestBody TaskStatsSearchContext context) {
         Page<TaskStats> domains = taskstatsService.searchUserFinishTaskSum(context) ;
         List<TaskStatsDTO> list = taskstatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

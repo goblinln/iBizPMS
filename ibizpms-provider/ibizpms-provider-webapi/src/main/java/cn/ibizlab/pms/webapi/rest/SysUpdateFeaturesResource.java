@@ -151,7 +151,7 @@ public class SysUpdateFeaturesResource {
     @PreAuthorize("@SysUpdateFeaturesRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"系统更新功能" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysupdatefeatures/fetchdefault")
-	public ResponseEntity<List<SysUpdateFeaturesDTO>> fetchDefault(@RequestBody SysUpdateFeaturesSearchContext context) {
+	public ResponseEntity<List<SysUpdateFeaturesDTO>> fetchdefault(@RequestBody SysUpdateFeaturesSearchContext context) {
         Page<SysUpdateFeatures> domains = sysupdatefeaturesService.searchDefault(context) ;
         List<SysUpdateFeaturesDTO> list = sysupdatefeaturesMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

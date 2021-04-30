@@ -150,7 +150,7 @@ public class HistoryResource {
     @PreAuthorize("@HistoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"操作历史" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/histories/fetchdefault")
-	public ResponseEntity<List<HistoryDTO>> fetchDefault(@RequestBody HistorySearchContext context) {
+	public ResponseEntity<List<HistoryDTO>> fetchdefault(@RequestBody HistorySearchContext context) {
         Page<History> domains = historyService.searchDefault(context) ;
         List<HistoryDTO> list = historyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

@@ -150,7 +150,7 @@ public class ProjectTaskestimateResource {
     @PreAuthorize("@ProjectTaskestimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取用户月工时详情", tags = {"项目工时统计" } ,notes = "获取用户月工时详情")
     @RequestMapping(method= RequestMethod.POST , value="/projecttaskestimates/fetchaccountdetail")
-	public ResponseEntity<List<ProjectTaskestimateDTO>> fetchAccountDetail(@RequestBody ProjectTaskestimateSearchContext context) {
+	public ResponseEntity<List<ProjectTaskestimateDTO>> fetchaccountdetail(@RequestBody ProjectTaskestimateSearchContext context) {
         projecttaskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectTaskestimate> domains = projecttaskestimateService.searchAccountDetail(context) ;
         List<ProjectTaskestimateDTO> list = projecttaskestimateMapping.toDto(domains.getContent());
@@ -174,7 +174,7 @@ public class ProjectTaskestimateResource {
     @PreAuthorize("@ProjectTaskestimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"项目工时统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/projecttaskestimates/fetchdefault")
-	public ResponseEntity<List<ProjectTaskestimateDTO>> fetchDefault(@RequestBody ProjectTaskestimateSearchContext context) {
+	public ResponseEntity<List<ProjectTaskestimateDTO>> fetchdefault(@RequestBody ProjectTaskestimateSearchContext context) {
         projecttaskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<ProjectTaskestimate> domains = projecttaskestimateService.searchDefault(context) ;
         List<ProjectTaskestimateDTO> list = projecttaskestimateMapping.toDto(domains.getContent());

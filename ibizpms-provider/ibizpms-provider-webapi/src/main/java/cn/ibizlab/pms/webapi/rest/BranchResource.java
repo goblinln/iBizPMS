@@ -166,7 +166,7 @@ public class BranchResource {
 
 	@ApiOperation(value = "获取CurProduct", tags = {"产品的分支和平台信息" } ,notes = "获取CurProduct")
     @RequestMapping(method= RequestMethod.POST , value="/branches/fetchcurproduct")
-	public ResponseEntity<List<BranchDTO>> fetchCurProduct(@RequestBody BranchSearchContext context) {
+	public ResponseEntity<List<BranchDTO>> fetchcurproduct(@RequestBody BranchSearchContext context) {
         Page<Branch> domains = branchService.searchCurProduct(context) ;
         List<BranchDTO> list = branchMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -187,7 +187,7 @@ public class BranchResource {
     @PreAuthorize("@BranchRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"产品的分支和平台信息" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/branches/fetchdefault")
-	public ResponseEntity<List<BranchDTO>> fetchDefault(@RequestBody BranchSearchContext context) {
+	public ResponseEntity<List<BranchDTO>> fetchdefault(@RequestBody BranchSearchContext context) {
         branchRuntime.addAuthorityConditions(context,"READ");
         Page<Branch> domains = branchService.searchDefault(context) ;
         List<BranchDTO> list = branchMapping.toDto(domains.getContent());

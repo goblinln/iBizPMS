@@ -426,7 +426,7 @@ public class ProductPlanResource {
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取子计划", tags = {"产品计划" } ,notes = "获取子计划")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchchildplan")
-	public ResponseEntity<List<ProductPlanDTO>> fetchChildPlan(@RequestBody ProductPlanSearchContext context) {
+	public ResponseEntity<List<ProductPlanDTO>> fetchchildplan(@RequestBody ProductPlanSearchContext context) {
         Page<ProductPlan> domains = productplanService.searchChildPlan(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -447,7 +447,7 @@ public class ProductPlanResource {
 
 	@ApiOperation(value = "获取CurProductPlan", tags = {"产品计划" } ,notes = "获取CurProductPlan")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchcurproductplan")
-	public ResponseEntity<List<ProductPlanDTO>> fetchCurProductPlan(@RequestBody ProductPlanSearchContext context) {
+	public ResponseEntity<List<ProductPlanDTO>> fetchcurproductplan(@RequestBody ProductPlanSearchContext context) {
         Page<ProductPlan> domains = productplanService.searchCurProductPlan(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -467,7 +467,7 @@ public class ProductPlanResource {
 
 	@ApiOperation(value = "获取数据集", tags = {"产品计划" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchcurproductplanstory")
-	public ResponseEntity<List<ProductPlanDTO>> fetchCurProductPlanStory(@RequestBody ProductPlanSearchContext context) {
+	public ResponseEntity<List<ProductPlanDTO>> fetchcurproductplanstory(@RequestBody ProductPlanSearchContext context) {
         Page<ProductPlan> domains = productplanService.searchCurProductPlanStory(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -487,7 +487,7 @@ public class ProductPlanResource {
 
 	@ApiOperation(value = "获取DEFAULT", tags = {"产品计划" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchdefault")
-	public ResponseEntity<List<ProductPlanDTO>> fetchDefault(@RequestBody ProductPlanSearchContext context) {
+	public ResponseEntity<List<ProductPlanDTO>> fetchdefault(@RequestBody ProductPlanSearchContext context) {
         Page<ProductPlan> domains = productplanService.searchDefault(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -508,7 +508,7 @@ public class ProductPlanResource {
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取默认查询", tags = {"产品计划" } ,notes = "获取默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchdefaultparent")
-	public ResponseEntity<List<ProductPlanDTO>> fetchDefaultParent(@RequestBody ProductPlanSearchContext context) {
+	public ResponseEntity<List<ProductPlanDTO>> fetchdefaultparent(@RequestBody ProductPlanSearchContext context) {
         Page<ProductPlan> domains = productplanService.searchDefaultParent(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -530,7 +530,7 @@ public class ProductPlanResource {
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取计划（代码表）", tags = {"产品计划" } ,notes = "获取计划（代码表）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchplancodelist")
-	public ResponseEntity<List<ProductPlanDTO>> fetchPlanCodeList(@RequestBody ProductPlanSearchContext context) {
+	public ResponseEntity<List<ProductPlanDTO>> fetchplancodelist(@RequestBody ProductPlanSearchContext context) {
         Page<ProductPlan> domains = productplanService.searchPlanCodeList(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -552,7 +552,7 @@ public class ProductPlanResource {
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目计划任务（项目管理-项目计划）", tags = {"产品计划" } ,notes = "获取项目计划任务（项目管理-项目计划）")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchplantasks")
-	public ResponseEntity<List<ProductPlanDTO>> fetchPlanTasks(@RequestBody ProductPlanSearchContext context) {
+	public ResponseEntity<List<ProductPlanDTO>> fetchplantasks(@RequestBody ProductPlanSearchContext context) {
         Page<ProductPlan> domains = productplanService.searchPlanTasks(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -574,7 +574,7 @@ public class ProductPlanResource {
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品默认查询", tags = {"产品计划" } ,notes = "获取产品默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchproductquery")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProductQuery(@RequestBody ProductPlanSearchContext context) {
+	public ResponseEntity<List<ProductPlanDTO>> fetchproductquery(@RequestBody ProductPlanSearchContext context) {
         Page<ProductPlan> domains = productplanService.searchProductQuery(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -596,7 +596,7 @@ public class ProductPlanResource {
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目立项", tags = {"产品计划" } ,notes = "获取项目立项")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchprojectapp")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProjectApp(@RequestBody ProductPlanSearchContext context) {
+	public ResponseEntity<List<ProductPlanDTO>> fetchprojectapp(@RequestBody ProductPlanSearchContext context) {
         Page<ProductPlan> domains = productplanService.searchProjectApp(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -618,7 +618,7 @@ public class ProductPlanResource {
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目计划列表", tags = {"产品计划" } ,notes = "获取项目计划列表")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchprojectplan")
-	public ResponseEntity<List<ProductPlanDTO>> fetchProjectPlan(@RequestBody ProductPlanSearchContext context) {
+	public ResponseEntity<List<ProductPlanDTO>> fetchprojectplan(@RequestBody ProductPlanSearchContext context) {
         Page<ProductPlan> domains = productplanService.searchProjectPlan(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -640,7 +640,7 @@ public class ProductPlanResource {
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取跟计划", tags = {"产品计划" } ,notes = "获取跟计划")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchrootplan")
-	public ResponseEntity<List<ProductPlanDTO>> fetchRootPlan(@RequestBody ProductPlanSearchContext context) {
+	public ResponseEntity<List<ProductPlanDTO>> fetchrootplan(@RequestBody ProductPlanSearchContext context) {
         Page<ProductPlan> domains = productplanService.searchRootPlan(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -662,7 +662,7 @@ public class ProductPlanResource {
     @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务计划", tags = {"产品计划" } ,notes = "获取任务计划")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchtaskplan")
-	public ResponseEntity<List<ProductPlanDTO>> fetchTaskPlan(@RequestBody ProductPlanSearchContext context) {
+	public ResponseEntity<List<ProductPlanDTO>> fetchtaskplan(@RequestBody ProductPlanSearchContext context) {
         Page<ProductPlan> domains = productplanService.searchTaskPlan(context) ;
         List<ProductPlanDTO> list = productplanMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

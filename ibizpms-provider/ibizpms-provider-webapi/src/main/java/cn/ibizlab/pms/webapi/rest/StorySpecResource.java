@@ -150,7 +150,7 @@ public class StorySpecResource {
     @PreAuthorize("@StorySpecRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"需求描述" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/storyspecs/fetchdefault")
-	public ResponseEntity<List<StorySpecDTO>> fetchDefault(@RequestBody StorySpecSearchContext context) {
+	public ResponseEntity<List<StorySpecDTO>> fetchdefault(@RequestBody StorySpecSearchContext context) {
         Page<StorySpec> domains = storyspecService.searchDefault(context) ;
         List<StorySpecDTO> list = storyspecMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -172,7 +172,7 @@ public class StorySpecResource {
     @PreAuthorize("@StorySpecRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本", tags = {"需求描述" } ,notes = "获取版本")
     @RequestMapping(method= RequestMethod.POST , value="/storyspecs/fetchversion")
-	public ResponseEntity<List<StorySpecDTO>> fetchVersion(@RequestBody StorySpecSearchContext context) {
+	public ResponseEntity<List<StorySpecDTO>> fetchversion(@RequestBody StorySpecSearchContext context) {
         Page<StorySpec> domains = storyspecService.searchVersion(context) ;
         List<StorySpecDTO> list = storyspecMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

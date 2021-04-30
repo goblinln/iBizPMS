@@ -272,7 +272,7 @@ public class IbzWeeklyResource {
 
 	@ApiOperation(value = "获取数据集", tags = {"周报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/fetchdefault")
-	public ResponseEntity<List<IbzWeeklyDTO>> fetchDefault(@RequestBody IbzWeeklySearchContext context) {
+	public ResponseEntity<List<IbzWeeklyDTO>> fetchdefault(@RequestBody IbzWeeklySearchContext context) {
         Page<IbzWeekly> domains = ibzweeklyService.searchDefault(context) ;
         List<IbzWeeklyDTO> list = ibzweeklyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -292,7 +292,7 @@ public class IbzWeeklyResource {
 
 	@ApiOperation(value = "获取我的周报", tags = {"周报" } ,notes = "获取我的周报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/fetchmynotsubmit")
-	public ResponseEntity<List<IbzWeeklyDTO>> fetchMyNotSubmit(@RequestBody IbzWeeklySearchContext context) {
+	public ResponseEntity<List<IbzWeeklyDTO>> fetchmynotsubmit(@RequestBody IbzWeeklySearchContext context) {
         Page<IbzWeekly> domains = ibzweeklyService.searchMyNotSubmit(context) ;
         List<IbzWeeklyDTO> list = ibzweeklyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -312,7 +312,7 @@ public class IbzWeeklyResource {
 
 	@ApiOperation(value = "获取我收到的周报", tags = {"周报" } ,notes = "获取我收到的周报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/fetchmyweekly")
-	public ResponseEntity<List<IbzWeeklyDTO>> fetchMyWeekly(@RequestBody IbzWeeklySearchContext context) {
+	public ResponseEntity<List<IbzWeeklyDTO>> fetchmyweekly(@RequestBody IbzWeeklySearchContext context) {
         Page<IbzWeekly> domains = ibzweeklyService.searchMyWeekly(context) ;
         List<IbzWeeklyDTO> list = ibzweeklyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -332,7 +332,7 @@ public class IbzWeeklyResource {
 
 	@ApiOperation(value = "获取产品团队成员周报", tags = {"周报" } ,notes = "获取产品团队成员周报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/fetchproductteammemberweekly")
-	public ResponseEntity<List<IbzWeeklyDTO>> fetchProductTeamMemberWeekly(@RequestBody IbzWeeklySearchContext context) {
+	public ResponseEntity<List<IbzWeeklyDTO>> fetchproductteammemberweekly(@RequestBody IbzWeeklySearchContext context) {
         Page<IbzWeekly> domains = ibzweeklyService.searchProductTeamMemberWeekly(context) ;
         List<IbzWeeklyDTO> list = ibzweeklyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -352,7 +352,7 @@ public class IbzWeeklyResource {
 
 	@ApiOperation(value = "获取项目周报", tags = {"周报" } ,notes = "获取项目周报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzweeklies/fetchprojectweekly")
-	public ResponseEntity<List<IbzWeeklyDTO>> fetchProjectWeekly(@RequestBody IbzWeeklySearchContext context) {
+	public ResponseEntity<List<IbzWeeklyDTO>> fetchprojectweekly(@RequestBody IbzWeeklySearchContext context) {
         Page<IbzWeekly> domains = ibzweeklyService.searchProjectWeekly(context) ;
         List<IbzWeeklyDTO> list = ibzweeklyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

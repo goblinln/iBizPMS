@@ -170,7 +170,7 @@ public class IbzproConfigResource {
     @PreAuthorize("@IbzproConfigRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"系统配置表" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproconfigs/fetchdefault")
-	public ResponseEntity<List<IbzproConfigDTO>> fetchDefault(@RequestBody IbzproConfigSearchContext context) {
+	public ResponseEntity<List<IbzproConfigDTO>> fetchdefault(@RequestBody IbzproConfigSearchContext context) {
         ibzproconfigRuntime.addAuthorityConditions(context,"READ");
         Page<IbzproConfig> domains = ibzproconfigService.searchDefault(context) ;
         List<IbzproConfigDTO> list = ibzproconfigMapping.toDto(domains.getContent());

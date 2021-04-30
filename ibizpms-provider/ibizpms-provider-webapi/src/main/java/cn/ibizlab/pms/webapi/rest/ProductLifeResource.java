@@ -55,7 +55,7 @@ public class ProductLifeResource {
     @PreAuthorize("@ProductLifeRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取RoadMapYear", tags = {"产品生命周期" } ,notes = "获取RoadMapYear")
     @RequestMapping(method= RequestMethod.GET , value="/productlives/fetchroadmapyear")
-	public ResponseEntity<List<ProductLifeDTO>> fetchRoadMapYear(ProductLifeSearchContext context) {
+	public ResponseEntity<List<ProductLifeDTO>> fetchroadmapyear(ProductLifeSearchContext context) {
         productlifeRuntime.addAuthorityConditions(context,"READ");
         Page<ProductLife> domains = productlifeService.searchRoadMapYear(context) ;
         List<ProductLifeDTO> list = productlifeMapping.toDto(domains.getContent());
@@ -79,7 +79,7 @@ public class ProductLifeResource {
     @PreAuthorize("@ProductLifeRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取获取产品路线", tags = {"产品生命周期" } ,notes = "获取获取产品路线")
     @RequestMapping(method= RequestMethod.GET , value="/productlives/fetchgetroadmaps")
-	public ResponseEntity<List<ProductLifeDTO>> fetchGetRoadmapS(ProductLifeSearchContext context) {
+	public ResponseEntity<List<ProductLifeDTO>> fetchgetroadmaps(ProductLifeSearchContext context) {
         productlifeRuntime.addAuthorityConditions(context,"READ");
         Page<ProductLife> domains = productlifeService.searchGetRoadmapS(context) ;
         List<ProductLifeDTO> list = productlifeMapping.toDto(domains.getContent());
@@ -103,7 +103,7 @@ public class ProductLifeResource {
     @PreAuthorize("@ProductLifeRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取GetRoadmap", tags = {"产品生命周期" } ,notes = "获取GetRoadmap")
     @RequestMapping(method= RequestMethod.GET , value="/productlives/fetchgetroadmap")
-	public ResponseEntity<List<ProductLifeDTO>> fetchGetRoadmap(ProductLifeSearchContext context) {
+	public ResponseEntity<List<ProductLifeDTO>> fetchgetroadmap(ProductLifeSearchContext context) {
         productlifeRuntime.addAuthorityConditions(context,"READ");
         Page<ProductLife> domains = productlifeService.searchGetRoadmap(context) ;
         List<ProductLifeDTO> list = productlifeMapping.toDto(domains.getContent());

@@ -136,7 +136,7 @@ public class SysUserRoleResource {
 
 	@ApiOperation(value = "获取数据集", tags = {"用户角色关系" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysuserroles/fetchdefault")
-	public ResponseEntity<List<SysUserRoleDTO>> fetchDefault(@RequestBody SysUserRoleSearchContext context) {
+	public ResponseEntity<List<SysUserRoleDTO>> fetchdefault(@RequestBody SysUserRoleSearchContext context) {
         Page<SysUserRole> domains = sysuserroleService.searchDefault(context) ;
         List<SysUserRoleDTO> list = sysuserroleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

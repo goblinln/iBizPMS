@@ -171,7 +171,7 @@ public class TestModuleResource {
     @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取BYPATH", tags = {"测试模块" } ,notes = "获取BYPATH")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/fetchbypath")
-	public ResponseEntity<List<TestModuleDTO>> fetchByPath(@RequestBody TestModuleSearchContext context) {
+	public ResponseEntity<List<TestModuleDTO>> fetchbypath(@RequestBody TestModuleSearchContext context) {
         testmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchByPath(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
@@ -195,7 +195,7 @@ public class TestModuleResource {
     @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试模块" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/fetchdefault")
-	public ResponseEntity<List<TestModuleDTO>> fetchDefault(@RequestBody TestModuleSearchContext context) {
+	public ResponseEntity<List<TestModuleDTO>> fetchdefault(@RequestBody TestModuleSearchContext context) {
         testmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchDefault(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
@@ -219,7 +219,7 @@ public class TestModuleResource {
     @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取父模块", tags = {"测试模块" } ,notes = "获取父模块")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/fetchparentmodule")
-	public ResponseEntity<List<TestModuleDTO>> fetchParentModule(@RequestBody TestModuleSearchContext context) {
+	public ResponseEntity<List<TestModuleDTO>> fetchparentmodule(@RequestBody TestModuleSearchContext context) {
         testmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchParentModule(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
@@ -243,7 +243,7 @@ public class TestModuleResource {
     @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根模块", tags = {"测试模块" } ,notes = "获取根模块")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/fetchroot")
-	public ResponseEntity<List<TestModuleDTO>> fetchRoot(@RequestBody TestModuleSearchContext context) {
+	public ResponseEntity<List<TestModuleDTO>> fetchroot(@RequestBody TestModuleSearchContext context) {
         testmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchRoot(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
@@ -267,7 +267,7 @@ public class TestModuleResource {
     @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根模块_无分支", tags = {"测试模块" } ,notes = "获取根模块_无分支")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/fetchroot_nobranch")
-	public ResponseEntity<List<TestModuleDTO>> fetchRoot_NoBranch(@RequestBody TestModuleSearchContext context) {
+	public ResponseEntity<List<TestModuleDTO>> fetchroot_nobranch(@RequestBody TestModuleSearchContext context) {
         testmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchRoot_NoBranch(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());
@@ -291,7 +291,7 @@ public class TestModuleResource {
     @PreAuthorize("@TestModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取TestModule", tags = {"测试模块" } ,notes = "获取TestModule")
     @RequestMapping(method= RequestMethod.POST , value="/testmodules/fetchtestmodule")
-	public ResponseEntity<List<TestModuleDTO>> fetchTestModule(@RequestBody TestModuleSearchContext context) {
+	public ResponseEntity<List<TestModuleDTO>> fetchtestmodule(@RequestBody TestModuleSearchContext context) {
         testmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<TestModule> domains = testmoduleService.searchTestModule(context) ;
         List<TestModuleDTO> list = testmoduleMapping.toDto(domains.getContent());

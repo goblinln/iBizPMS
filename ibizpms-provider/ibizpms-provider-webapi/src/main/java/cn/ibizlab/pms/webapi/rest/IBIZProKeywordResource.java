@@ -135,7 +135,7 @@ public class IBIZProKeywordResource {
 
 	@ApiOperation(value = "获取数据集", tags = {"关键字" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizprokeywords/fetchdefault")
-	public ResponseEntity<List<IBIZProKeywordDTO>> fetchDefault(@RequestBody IBIZProKeywordSearchContext context) {
+	public ResponseEntity<List<IBIZProKeywordDTO>> fetchdefault(@RequestBody IBIZProKeywordSearchContext context) {
         Page<IBIZProKeyword> domains = ibizprokeywordService.searchDefault(context) ;
         List<IBIZProKeywordDTO> list = ibizprokeywordMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

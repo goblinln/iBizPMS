@@ -150,7 +150,7 @@ public class TestResultResource {
     @PreAuthorize("@TestResultRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取CurTestRun", tags = {"测试结果" } ,notes = "获取CurTestRun")
     @RequestMapping(method= RequestMethod.POST , value="/testresults/fetchcurtestrun")
-	public ResponseEntity<List<TestResultDTO>> fetchCurTestRun(@RequestBody TestResultSearchContext context) {
+	public ResponseEntity<List<TestResultDTO>> fetchcurtestrun(@RequestBody TestResultSearchContext context) {
         Page<TestResult> domains = testresultService.searchCurTestRun(context) ;
         List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -172,7 +172,7 @@ public class TestResultResource {
     @PreAuthorize("@TestResultRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试结果" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testresults/fetchdefault")
-	public ResponseEntity<List<TestResultDTO>> fetchDefault(@RequestBody TestResultSearchContext context) {
+	public ResponseEntity<List<TestResultDTO>> fetchdefault(@RequestBody TestResultSearchContext context) {
         Page<TestResult> domains = testresultService.searchDefault(context) ;
         List<TestResultDTO> list = testresultMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

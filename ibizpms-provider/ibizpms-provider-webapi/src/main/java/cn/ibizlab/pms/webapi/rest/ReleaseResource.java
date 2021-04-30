@@ -330,7 +330,7 @@ public class ReleaseResource {
     @PreAuthorize("@ReleaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"发布" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/releases/fetchdefault")
-	public ResponseEntity<List<ReleaseDTO>> fetchDefault(@RequestBody ReleaseSearchContext context) {
+	public ResponseEntity<List<ReleaseDTO>> fetchdefault(@RequestBody ReleaseSearchContext context) {
         releaseRuntime.addAuthorityConditions(context,"READ");
         Page<Release> domains = releaseService.searchDefault(context) ;
         List<ReleaseDTO> list = releaseMapping.toDto(domains.getContent());
@@ -354,7 +354,7 @@ public class ReleaseResource {
     @PreAuthorize("@ReleaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试报告关联发布", tags = {"发布" } ,notes = "获取测试报告关联发布")
     @RequestMapping(method= RequestMethod.POST , value="/releases/fetchreportrelease")
-	public ResponseEntity<List<ReleaseDTO>> fetchReportRelease(@RequestBody ReleaseSearchContext context) {
+	public ResponseEntity<List<ReleaseDTO>> fetchreportrelease(@RequestBody ReleaseSearchContext context) {
         releaseRuntime.addAuthorityConditions(context,"READ");
         Page<Release> domains = releaseService.searchReportRelease(context) ;
         List<ReleaseDTO> list = releaseMapping.toDto(domains.getContent());

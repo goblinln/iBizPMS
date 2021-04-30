@@ -150,7 +150,7 @@ public class DocContentResource {
     @PreAuthorize("@DocContentRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前版本", tags = {"文档内容" } ,notes = "获取当前版本")
     @RequestMapping(method= RequestMethod.POST , value="/doccontents/fetchcurversion")
-	public ResponseEntity<List<DocContentDTO>> fetchCurVersion(@RequestBody DocContentSearchContext context) {
+	public ResponseEntity<List<DocContentDTO>> fetchcurversion(@RequestBody DocContentSearchContext context) {
         Page<DocContent> domains = doccontentService.searchCurVersion(context) ;
         List<DocContentDTO> list = doccontentMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -172,7 +172,7 @@ public class DocContentResource {
     @PreAuthorize("@DocContentRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"文档内容" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/doccontents/fetchdefault")
-	public ResponseEntity<List<DocContentDTO>> fetchDefault(@RequestBody DocContentSearchContext context) {
+	public ResponseEntity<List<DocContentDTO>> fetchdefault(@RequestBody DocContentSearchContext context) {
         Page<DocContent> domains = doccontentService.searchDefault(context) ;
         List<DocContentDTO> list = doccontentMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

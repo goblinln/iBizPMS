@@ -183,7 +183,7 @@ public class IbizproProductDailyResource {
 
 	@ApiOperation(value = "获取数据集", tags = {"产品日报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproproductdailies/fetchdefault")
-	public ResponseEntity<List<IbizproProductDailyDTO>> fetchDefault(@RequestBody IbizproProductDailySearchContext context) {
+	public ResponseEntity<List<IbizproProductDailyDTO>> fetchdefault(@RequestBody IbizproProductDailySearchContext context) {
         Page<IbizproProductDaily> domains = ibizproproductdailyService.searchDefault(context) ;
         List<IbizproProductDailyDTO> list = ibizproproductdailyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -203,7 +203,7 @@ public class IbizproProductDailyResource {
 
 	@ApiOperation(value = "获取产品日报", tags = {"产品日报" } ,notes = "获取产品日报")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproproductdailies/fetchproductdaily")
-	public ResponseEntity<List<IbizproProductDailyDTO>> fetchProductDaily(@RequestBody IbizproProductDailySearchContext context) {
+	public ResponseEntity<List<IbizproProductDailyDTO>> fetchproductdaily(@RequestBody IbizproProductDailySearchContext context) {
         Page<IbizproProductDaily> domains = ibizproproductdailyService.searchProductDaily(context) ;
         List<IbizproProductDailyDTO> list = ibizproproductdailyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

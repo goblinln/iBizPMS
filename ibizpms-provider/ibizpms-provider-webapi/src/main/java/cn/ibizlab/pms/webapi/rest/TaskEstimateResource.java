@@ -168,7 +168,7 @@ public class TaskEstimateResource {
     @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取日志月", tags = {"任务预计" } ,notes = "获取日志月")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimates/fetchactionmonth")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchActionMonth(@RequestBody TaskEstimateSearchContext context) {
+	public ResponseEntity<List<TaskEstimateDTO>> fetchactionmonth(@RequestBody TaskEstimateSearchContext context) {
         Page<TaskEstimate> domains = taskestimateService.searchActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -190,7 +190,7 @@ public class TaskEstimateResource {
     @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取日志年", tags = {"任务预计" } ,notes = "获取日志年")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimates/fetchactionyear")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchActionYear(@RequestBody TaskEstimateSearchContext context) {
+	public ResponseEntity<List<TaskEstimateDTO>> fetchactionyear(@RequestBody TaskEstimateSearchContext context) {
         Page<TaskEstimate> domains = taskestimateService.searchActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -212,7 +212,7 @@ public class TaskEstimateResource {
     @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"任务预计" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimates/fetchdefault")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchDefault(@RequestBody TaskEstimateSearchContext context) {
+	public ResponseEntity<List<TaskEstimateDTO>> fetchdefault(@RequestBody TaskEstimateSearchContext context) {
         Page<TaskEstimate> domains = taskestimateService.searchDefault(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -234,7 +234,7 @@ public class TaskEstimateResource {
     @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT1", tags = {"任务预计" } ,notes = "获取DEFAULT1")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimates/fetchdefaults")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchDefaults(@RequestBody TaskEstimateSearchContext context) {
+	public ResponseEntity<List<TaskEstimateDTO>> fetchdefaults(@RequestBody TaskEstimateSearchContext context) {
         Page<TaskEstimate> domains = taskestimateService.searchDefaults(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -256,7 +256,7 @@ public class TaskEstimateResource {
     @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取日志月（项目）", tags = {"任务预计" } ,notes = "获取日志月（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimates/fetchprojectactionmonth")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchProjectActionMonth(@RequestBody TaskEstimateSearchContext context) {
+	public ResponseEntity<List<TaskEstimateDTO>> fetchprojectactionmonth(@RequestBody TaskEstimateSearchContext context) {
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionMonth(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -278,7 +278,7 @@ public class TaskEstimateResource {
     @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取日志年（项目）", tags = {"任务预计" } ,notes = "获取日志年（项目）")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimates/fetchprojectactionyear")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchProjectActionYear(@RequestBody TaskEstimateSearchContext context) {
+	public ResponseEntity<List<TaskEstimateDTO>> fetchprojectactionyear(@RequestBody TaskEstimateSearchContext context) {
         Page<TaskEstimate> domains = taskestimateService.searchProjectActionYear(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -300,7 +300,7 @@ public class TaskEstimateResource {
     @PreAuthorize("@TaskEstimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目日志", tags = {"任务预计" } ,notes = "获取项目日志")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimates/fetchprojecttaskestimate")
-	public ResponseEntity<List<TaskEstimateDTO>> fetchProjectTaskEstimate(@RequestBody TaskEstimateSearchContext context) {
+	public ResponseEntity<List<TaskEstimateDTO>> fetchprojecttaskestimate(@RequestBody TaskEstimateSearchContext context) {
         Page<TaskEstimate> domains = taskestimateService.searchProjectTaskEstimate(context) ;
         List<TaskEstimateDTO> list = taskestimateMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

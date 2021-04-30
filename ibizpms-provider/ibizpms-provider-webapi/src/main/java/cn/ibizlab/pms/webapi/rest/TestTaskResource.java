@@ -262,7 +262,7 @@ public class TestTaskResource {
     @PreAuthorize("@TestTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试版本" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testtasks/fetchdefault")
-	public ResponseEntity<List<TestTaskDTO>> fetchDefault(@RequestBody TestTaskSearchContext context) {
+	public ResponseEntity<List<TestTaskDTO>> fetchdefault(@RequestBody TestTaskSearchContext context) {
         testtaskRuntime.addAuthorityConditions(context,"READ");
         Page<TestTask> domains = testtaskService.searchDefault(context) ;
         List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
@@ -286,7 +286,7 @@ public class TestTaskResource {
     @PreAuthorize("@TestTaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的测试单", tags = {"测试版本" } ,notes = "获取我的测试单")
     @RequestMapping(method= RequestMethod.POST , value="/testtasks/fetchmytesttaskpc")
-	public ResponseEntity<List<TestTaskDTO>> fetchMyTestTaskPc(@RequestBody TestTaskSearchContext context) {
+	public ResponseEntity<List<TestTaskDTO>> fetchmytesttaskpc(@RequestBody TestTaskSearchContext context) {
         testtaskRuntime.addAuthorityConditions(context,"READ");
         Page<TestTask> domains = testtaskService.searchMyTestTaskPc(context) ;
         List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());

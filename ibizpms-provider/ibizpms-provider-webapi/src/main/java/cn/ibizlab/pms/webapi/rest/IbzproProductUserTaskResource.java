@@ -149,7 +149,7 @@ public class IbzproProductUserTaskResource {
 
 	@ApiOperation(value = "获取数据集", tags = {"产品汇报用户任务" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/fetchdefault")
-	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchDefault(@RequestBody IbzproProductUserTaskSearchContext context) {
+	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchdefault(@RequestBody IbzproProductUserTaskSearchContext context) {
         Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchDefault(context) ;
         List<IbzproProductUserTaskDTO> list = ibzproproductusertaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -169,7 +169,7 @@ public class IbzproProductUserTaskResource {
 
 	@ApiOperation(value = "获取产品日报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "获取产品日报用户任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/fetchproductdailyusertaskstats")
-	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchProductDailyUserTaskStats(@RequestBody IbzproProductUserTaskSearchContext context) {
+	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchproductdailyusertaskstats(@RequestBody IbzproProductUserTaskSearchContext context) {
         Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchProductDailyUserTaskStats(context) ;
         List<IbzproProductUserTaskDTO> list = ibzproproductusertaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -189,7 +189,7 @@ public class IbzproProductUserTaskResource {
 
 	@ApiOperation(value = "获取产品月报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "获取产品月报用户任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/fetchproductmonthlyusertaskstats")
-	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchProductMonthlyUserTaskStats(@RequestBody IbzproProductUserTaskSearchContext context) {
+	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchproductmonthlyusertaskstats(@RequestBody IbzproProductUserTaskSearchContext context) {
         Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchProductMonthlyUserTaskStats(context) ;
         List<IbzproProductUserTaskDTO> list = ibzproproductusertaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -209,7 +209,7 @@ public class IbzproProductUserTaskResource {
 
 	@ApiOperation(value = "获取产品周报用户任务统计", tags = {"产品汇报用户任务" } ,notes = "获取产品周报用户任务统计")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproproductusertasks/fetchproductweeklyusertaskstats")
-	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchProductWeeklyUserTaskStats(@RequestBody IbzproProductUserTaskSearchContext context) {
+	public ResponseEntity<List<IbzproProductUserTaskDTO>> fetchproductweeklyusertaskstats(@RequestBody IbzproProductUserTaskSearchContext context) {
         Page<IbzproProductUserTask> domains = ibzproproductusertaskService.searchProductWeeklyUserTaskStats(context) ;
         List<IbzproProductUserTaskDTO> list = ibzproproductusertaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

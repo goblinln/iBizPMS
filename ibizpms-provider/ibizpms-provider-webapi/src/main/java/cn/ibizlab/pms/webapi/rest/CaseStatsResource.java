@@ -149,7 +149,7 @@ public class CaseStatsResource {
 
 	@ApiOperation(value = "获取数据集", tags = {"测试用例统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/casestats/fetchdefault")
-	public ResponseEntity<List<CaseStatsDTO>> fetchDefault(@RequestBody CaseStatsSearchContext context) {
+	public ResponseEntity<List<CaseStatsDTO>> fetchdefault(@RequestBody CaseStatsSearchContext context) {
         Page<CaseStats> domains = casestatsService.searchDefault(context) ;
         List<CaseStatsDTO> list = casestatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -169,7 +169,7 @@ public class CaseStatsResource {
 
 	@ApiOperation(value = "获取测试用例统计", tags = {"测试用例统计" } ,notes = "获取测试用例统计")
     @RequestMapping(method= RequestMethod.POST , value="/casestats/fetchtestcasestats")
-	public ResponseEntity<List<CaseStatsDTO>> fetchTestCaseStats(@RequestBody CaseStatsSearchContext context) {
+	public ResponseEntity<List<CaseStatsDTO>> fetchtestcasestats(@RequestBody CaseStatsSearchContext context) {
         Page<CaseStats> domains = casestatsService.searchTestCaseStats(context) ;
         List<CaseStatsDTO> list = casestatsMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

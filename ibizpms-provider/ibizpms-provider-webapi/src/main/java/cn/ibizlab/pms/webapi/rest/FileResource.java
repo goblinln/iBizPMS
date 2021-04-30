@@ -188,7 +188,7 @@ public class FileResource {
     @PreAuthorize("@FileRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"附件" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/files/fetchdefault")
-	public ResponseEntity<List<FileDTO>> fetchDefault(@RequestBody FileSearchContext context) {
+	public ResponseEntity<List<FileDTO>> fetchdefault(@RequestBody FileSearchContext context) {
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDefault(context) ;
         List<FileDTO> list = fileMapping.toDto(domains.getContent());
@@ -212,7 +212,7 @@ public class FileResource {
     @PreAuthorize("@FileRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取文件库查询", tags = {"附件" } ,notes = "获取文件库查询")
     @RequestMapping(method= RequestMethod.POST , value="/files/fetchdoclibfile")
-	public ResponseEntity<List<FileDTO>> fetchDocLibFile(@RequestBody FileSearchContext context) {
+	public ResponseEntity<List<FileDTO>> fetchdoclibfile(@RequestBody FileSearchContext context) {
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchDocLibFile(context) ;
         List<FileDTO> list = fileMapping.toDto(domains.getContent());
@@ -236,7 +236,7 @@ public class FileResource {
     @PreAuthorize("@FileRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取文件库查询", tags = {"附件" } ,notes = "获取文件库查询")
     @RequestMapping(method= RequestMethod.POST , value="/files/fetchproductdoclibfile")
-	public ResponseEntity<List<FileDTO>> fetchProductDocLibFile(@RequestBody FileSearchContext context) {
+	public ResponseEntity<List<FileDTO>> fetchproductdoclibfile(@RequestBody FileSearchContext context) {
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchProductDocLibFile(context) ;
         List<FileDTO> list = fileMapping.toDto(domains.getContent());
@@ -260,7 +260,7 @@ public class FileResource {
     @PreAuthorize("@FileRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"附件" } ,notes = "获取动态(根据类型过滤)")
     @RequestMapping(method= RequestMethod.POST , value="/files/fetchtype")
-	public ResponseEntity<List<FileDTO>> fetchType(@RequestBody FileSearchContext context) {
+	public ResponseEntity<List<FileDTO>> fetchtype(@RequestBody FileSearchContext context) {
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchType(context) ;
         List<FileDTO> list = fileMapping.toDto(domains.getContent());
@@ -284,7 +284,7 @@ public class FileResource {
     @PreAuthorize("@FileRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取查询附件", tags = {"附件" } ,notes = "获取查询附件")
     @RequestMapping(method= RequestMethod.POST , value="/files/fetchtypenotbysrfparentkey")
-	public ResponseEntity<List<FileDTO>> fetchTypeNotBySrfparentkey(@RequestBody FileSearchContext context) {
+	public ResponseEntity<List<FileDTO>> fetchtypenotbysrfparentkey(@RequestBody FileSearchContext context) {
         fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchTypeNotBySrfparentkey(context) ;
         List<FileDTO> list = fileMapping.toDto(domains.getContent());

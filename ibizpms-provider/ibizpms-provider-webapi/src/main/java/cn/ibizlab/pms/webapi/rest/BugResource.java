@@ -515,7 +515,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取指派给我Bug", tags = {"Bug" } ,notes = "获取指派给我Bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchassignedtomybug")
-	public ResponseEntity<List<BugDTO>> fetchAssignedToMyBug(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchassignedtomybug(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchAssignedToMyBug(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -539,7 +539,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取指派给我Bug（PC）", tags = {"Bug" } ,notes = "获取指派给我Bug（PC）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchassignedtomybugpc")
-	public ResponseEntity<List<BugDTO>> fetchAssignedToMyBugPc(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchassignedtomybugpc(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchAssignedToMyBugPc(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -563,7 +563,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本关联bug(遗留的)", tags = {"Bug" } ,notes = "获取版本关联bug(遗留的)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbugsbybuild")
-	public ResponseEntity<List<BugDTO>> fetchBugsByBuild(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchbugsbybuild(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBugsByBuild(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -587,7 +587,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本关联Bug（已解决）", tags = {"Bug" } ,notes = "获取版本关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildbugs")
-	public ResponseEntity<List<BugDTO>> fetchBuildBugs(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchbuildbugs(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildBugs(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -611,7 +611,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本可关联的已解决的Bugs集合", tags = {"Bug" } ,notes = "获取版本可关联的已解决的Bugs集合")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildlinkresolvedbugs")
-	public ResponseEntity<List<BugDTO>> fetchBuildLinkResolvedBugs(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchbuildlinkresolvedbugs(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildLinkResolvedBugs(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -635,7 +635,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本关联Bug（已解决）", tags = {"Bug" } ,notes = "获取版本关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildopenbugs")
-	public ResponseEntity<List<BugDTO>> fetchBuildOpenBugs(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchbuildopenbugs(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildOpenBugs(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -659,7 +659,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug", tags = {"Bug" } ,notes = "获取Build产生的Bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebug")
-	public ResponseEntity<List<BugDTO>> fetchBuildProduceBug(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchbuildproducebug(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBug(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -683,7 +683,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug", tags = {"Bug" } ,notes = "获取Build产生的Bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugmodule")
-	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugModule(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchbuildproducebugmodule(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugModule(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -707,7 +707,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-创建者分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-创建者分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugmodule_project")
-	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugModule_Project(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchbuildproducebugmodule_project(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugModule_Project(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -731,7 +731,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-创建分类", tags = {"Bug" } ,notes = "获取Build产生的Bug-创建分类")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugopenedby")
-	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugOpenedBy(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchbuildproducebugopenedby(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugOpenedBy(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -755,7 +755,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-创建者分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-创建者分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugopenedby_project")
-	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugOpenedBy_Project(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchbuildproducebugopenedby_project(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugOpenedBy_Project(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -779,7 +779,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug（已解决）", tags = {"Bug" } ,notes = "获取Build产生的Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugres")
-	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugRES(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchbuildproducebugres(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugRES(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -803,7 +803,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-解决者分布", tags = {"Bug" } ,notes = "获取Build产生的Bug-解决者分布")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugresolvedby")
-	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugRESOLVEDBY(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchbuildproducebugresolvedby(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugRESOLVEDBY(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -827,7 +827,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-解决者分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-解决者分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugresolvedby_project")
-	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugRESOLVEDBY_Project(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchbuildproducebugresolvedby_project(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugRESOLVEDBY_Project(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -851,7 +851,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-解决方案分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-解决方案分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugresolution_project")
-	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugResolution_Project(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchbuildproducebugresolution_project(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugResolution_Project(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -875,7 +875,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-严重程度分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-严重程度分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugseverity_project")
-	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugSeverity_Project(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchbuildproducebugseverity_project(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugSeverity_Project(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -899,7 +899,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-状态分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-状态分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugstatus_project")
-	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugStatus_Project(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchbuildproducebugstatus_project(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugStatus_Project(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -923,7 +923,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Build产生的Bug-类型分布(项目)", tags = {"Bug" } ,notes = "获取Build产生的Bug-类型分布(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchbuildproducebugtype_project")
-	public ResponseEntity<List<BugDTO>> fetchBuildProduceBugType_Project(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchbuildproducebugtype_project(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchBuildProduceBugType_Project(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -947,7 +947,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前用户解决的Bug", tags = {"Bug" } ,notes = "获取当前用户解决的Bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchcuruserresolve")
-	public ResponseEntity<List<BugDTO>> fetchCurUserResolve(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchcuruserresolve(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchCurUserResolve(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -971,7 +971,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"Bug" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchdefault")
-	public ResponseEntity<List<BugDTO>> fetchDefault(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchdefault(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchDefault(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -995,7 +995,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取ES批量的导入", tags = {"Bug" } ,notes = "获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchesbulk")
-	public ResponseEntity<List<BugDTO>> fetchESBulk(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchesbulk(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchESBulk(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -1019,7 +1019,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我代理的Bug", tags = {"Bug" } ,notes = "获取我代理的Bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchmyagentbug")
-	public ResponseEntity<List<BugDTO>> fetchMyAgentBug(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchmyagentbug(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchMyAgentBug(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -1043,7 +1043,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取累计创建的Bug数", tags = {"Bug" } ,notes = "获取累计创建的Bug数")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchmycuropenedbug")
-	public ResponseEntity<List<BugDTO>> fetchMyCurOpenedBug(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchmycuropenedbug(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchMyCurOpenedBug(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -1067,7 +1067,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的收藏", tags = {"Bug" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchmyfavorites")
-	public ResponseEntity<List<BugDTO>> fetchMyFavorites(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchmyfavorites(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchMyFavorites(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -1091,7 +1091,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取计划关联bug（去除已关联）", tags = {"Bug" } ,notes = "获取计划关联bug（去除已关联）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchnotcurplanlinkbug")
-	public ResponseEntity<List<BugDTO>> fetchNotCurPlanLinkBug(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchnotcurplanlinkbug(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchNotCurPlanLinkBug(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -1115,7 +1115,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取遗留得Bug(项目)", tags = {"Bug" } ,notes = "获取遗留得Bug(项目)")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchprojectbugs")
-	public ResponseEntity<List<BugDTO>> fetchProjectBugs(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchprojectbugs(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchProjectBugs(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -1139,7 +1139,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取发布关联Bug（已解决）", tags = {"Bug" } ,notes = "获取发布关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchreleasebugs")
-	public ResponseEntity<List<BugDTO>> fetchReleaseBugs(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchreleasebugs(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchReleaseBugs(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -1163,7 +1163,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取发布关联Bug（已解决）", tags = {"Bug" } ,notes = "获取发布关联Bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchreleaseleftbugs")
-	public ResponseEntity<List<BugDTO>> fetchReleaseLeftBugs(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchreleaseleftbugs(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchReleaseLeftBugs(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -1187,7 +1187,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取发布可关联的bug（遗留）", tags = {"Bug" } ,notes = "获取发布可关联的bug（遗留）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchreleaselinkableleftbug")
-	public ResponseEntity<List<BugDTO>> fetchReleaseLinkableLeftBug(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchreleaselinkableleftbug(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchReleaseLinkableLeftBug(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -1211,7 +1211,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取发布可关联的bug（已解决）", tags = {"Bug" } ,notes = "获取发布可关联的bug（已解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchreleaselinkableresolvedbug")
-	public ResponseEntity<List<BugDTO>> fetchReleaseLinkableResolvedBug(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchreleaselinkableresolvedbug(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchReleaseLinkableResolvedBug(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -1235,7 +1235,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取发布关联Bug（未解决）", tags = {"Bug" } ,notes = "获取发布关联Bug（未解决）")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchreportbugs")
-	public ResponseEntity<List<BugDTO>> fetchReportBugs(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchreportbugs(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchReportBugs(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());
@@ -1259,7 +1259,7 @@ public class BugResource {
     @PreAuthorize("@BugRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取任务相关bug", tags = {"Bug" } ,notes = "获取任务相关bug")
     @RequestMapping(method= RequestMethod.POST , value="/bugs/fetchtaskrelatedbug")
-	public ResponseEntity<List<BugDTO>> fetchTaskRelatedBug(@RequestBody BugSearchContext context) {
+	public ResponseEntity<List<BugDTO>> fetchtaskrelatedbug(@RequestBody BugSearchContext context) {
         bugRuntime.addAuthorityConditions(context,"READ");
         Page<Bug> domains = bugService.searchTaskRelatedBug(context) ;
         List<BugDTO> list = bugMapping.toDto(domains.getContent());

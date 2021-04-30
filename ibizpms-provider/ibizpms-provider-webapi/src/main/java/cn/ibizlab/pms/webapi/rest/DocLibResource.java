@@ -184,7 +184,7 @@ public class DocLibResource {
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取自定义文档库", tags = {"文档库" } ,notes = "获取自定义文档库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchbycustom")
-	public ResponseEntity<List<DocLibDTO>> fetchByCustom(@RequestBody DocLibSearchContext context) {
+	public ResponseEntity<List<DocLibDTO>> fetchbycustom(@RequestBody DocLibSearchContext context) {
         doclibRuntime.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchByCustom(context) ;
         List<DocLibDTO> list = doclibMapping.toDto(domains.getContent());
@@ -208,7 +208,7 @@ public class DocLibResource {
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品文档库", tags = {"文档库" } ,notes = "获取产品文档库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchbyproduct")
-	public ResponseEntity<List<DocLibDTO>> fetchByProduct(@RequestBody DocLibSearchContext context) {
+	public ResponseEntity<List<DocLibDTO>> fetchbyproduct(@RequestBody DocLibSearchContext context) {
         doclibRuntime.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchByProduct(context) ;
         List<DocLibDTO> list = doclibMapping.toDto(domains.getContent());
@@ -232,7 +232,7 @@ public class DocLibResource {
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品文档库", tags = {"文档库" } ,notes = "获取产品文档库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchbyproductnotfiles")
-	public ResponseEntity<List<DocLibDTO>> fetchByProductNotFiles(@RequestBody DocLibSearchContext context) {
+	public ResponseEntity<List<DocLibDTO>> fetchbyproductnotfiles(@RequestBody DocLibSearchContext context) {
         doclibRuntime.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchByProductNotFiles(context) ;
         List<DocLibDTO> list = doclibMapping.toDto(domains.getContent());
@@ -256,7 +256,7 @@ public class DocLibResource {
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目文件库", tags = {"文档库" } ,notes = "获取项目文件库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchbyproject")
-	public ResponseEntity<List<DocLibDTO>> fetchByProject(@RequestBody DocLibSearchContext context) {
+	public ResponseEntity<List<DocLibDTO>> fetchbyproject(@RequestBody DocLibSearchContext context) {
         doclibRuntime.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchByProject(context) ;
         List<DocLibDTO> list = doclibMapping.toDto(domains.getContent());
@@ -280,7 +280,7 @@ public class DocLibResource {
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目文件库", tags = {"文档库" } ,notes = "获取项目文件库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchbyprojectnotfiles")
-	public ResponseEntity<List<DocLibDTO>> fetchByProjectNotFiles(@RequestBody DocLibSearchContext context) {
+	public ResponseEntity<List<DocLibDTO>> fetchbyprojectnotfiles(@RequestBody DocLibSearchContext context) {
         doclibRuntime.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchByProjectNotFiles(context) ;
         List<DocLibDTO> list = doclibMapping.toDto(domains.getContent());
@@ -304,7 +304,7 @@ public class DocLibResource {
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取所属文档库", tags = {"文档库" } ,notes = "获取所属文档库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchcurdoclib")
-	public ResponseEntity<List<DocLibDTO>> fetchCurDocLib(@RequestBody DocLibSearchContext context) {
+	public ResponseEntity<List<DocLibDTO>> fetchcurdoclib(@RequestBody DocLibSearchContext context) {
         doclibRuntime.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchCurDocLib(context) ;
         List<DocLibDTO> list = doclibMapping.toDto(domains.getContent());
@@ -328,7 +328,7 @@ public class DocLibResource {
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"文档库" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchdefault")
-	public ResponseEntity<List<DocLibDTO>> fetchDefault(@RequestBody DocLibSearchContext context) {
+	public ResponseEntity<List<DocLibDTO>> fetchdefault(@RequestBody DocLibSearchContext context) {
         doclibRuntime.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchDefault(context) ;
         List<DocLibDTO> list = doclibMapping.toDto(domains.getContent());
@@ -352,7 +352,7 @@ public class DocLibResource {
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的收藏", tags = {"文档库" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchmyfavourites")
-	public ResponseEntity<List<DocLibDTO>> fetchMyFavourites(@RequestBody DocLibSearchContext context) {
+	public ResponseEntity<List<DocLibDTO>> fetchmyfavourites(@RequestBody DocLibSearchContext context) {
         doclibRuntime.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchMyFavourites(context) ;
         List<DocLibDTO> list = doclibMapping.toDto(domains.getContent());
@@ -376,7 +376,7 @@ public class DocLibResource {
     @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根目录", tags = {"文档库" } ,notes = "获取根目录")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchrootmodulemulu")
-	public ResponseEntity<List<DocLibDTO>> fetchRootModuleMuLu(@RequestBody DocLibSearchContext context) {
+	public ResponseEntity<List<DocLibDTO>> fetchrootmodulemulu(@RequestBody DocLibSearchContext context) {
         doclibRuntime.addAuthorityConditions(context,"READ");
         Page<DocLib> domains = doclibService.searchRootModuleMuLu(context) ;
         List<DocLibDTO> list = doclibMapping.toDto(domains.getContent());

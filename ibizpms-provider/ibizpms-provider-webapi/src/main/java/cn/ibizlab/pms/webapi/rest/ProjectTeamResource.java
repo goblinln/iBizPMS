@@ -167,7 +167,7 @@ public class ProjectTeamResource {
     @PreAuthorize("@ProjectTeamRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"项目团队" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projectteams/fetchdefault")
-	public ResponseEntity<List<ProjectTeamDTO>> fetchDefault(@RequestBody ProjectTeamSearchContext context) {
+	public ResponseEntity<List<ProjectTeamDTO>> fetchdefault(@RequestBody ProjectTeamSearchContext context) {
         Page<ProjectTeam> domains = projectteamService.searchDefault(context) ;
         List<ProjectTeamDTO> list = projectteamMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -189,7 +189,7 @@ public class ProjectTeamResource {
     @PreAuthorize("@ProjectTeamRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目成员（项目经理）", tags = {"项目团队" } ,notes = "获取项目成员（项目经理）")
     @RequestMapping(method= RequestMethod.POST , value="/projectteams/fetchprojectteampm")
-	public ResponseEntity<List<ProjectTeamDTO>> fetchProjectTeamPm(@RequestBody ProjectTeamSearchContext context) {
+	public ResponseEntity<List<ProjectTeamDTO>> fetchprojectteampm(@RequestBody ProjectTeamSearchContext context) {
         Page<ProjectTeam> domains = projectteamService.searchProjectTeamPm(context) ;
         List<ProjectTeamDTO> list = projectteamMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -211,7 +211,7 @@ public class ProjectTeamResource {
     @PreAuthorize("@ProjectTeamRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取行编辑查询", tags = {"项目团队" } ,notes = "获取行编辑查询")
     @RequestMapping(method= RequestMethod.POST , value="/projectteams/fetchroweditdefault")
-	public ResponseEntity<List<ProjectTeamDTO>> fetchRowEditDefault(@RequestBody ProjectTeamSearchContext context) {
+	public ResponseEntity<List<ProjectTeamDTO>> fetchroweditdefault(@RequestBody ProjectTeamSearchContext context) {
         Page<ProjectTeam> domains = projectteamService.searchRowEditDefault(context) ;
         List<ProjectTeamDTO> list = projectteamMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -233,7 +233,7 @@ public class ProjectTeamResource {
     @PreAuthorize("@ProjectTeamRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据查询", tags = {"项目团队" } ,notes = "获取数据查询")
     @RequestMapping(method= RequestMethod.POST , value="/projectteams/fetchtaskcntestimateconsumedleft")
-	public ResponseEntity<List<ProjectTeamDTO>> fetchTaskCntEstimateConsumedLeft(@RequestBody ProjectTeamSearchContext context) {
+	public ResponseEntity<List<ProjectTeamDTO>> fetchtaskcntestimateconsumedleft(@RequestBody ProjectTeamSearchContext context) {
         Page<ProjectTeam> domains = projectteamService.searchTaskCntEstimateConsumedLeft(context) ;
         List<ProjectTeamDTO> list = projectteamMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

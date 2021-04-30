@@ -166,7 +166,7 @@ public class IbizproProjectDailyResource {
 
 	@ApiOperation(value = "获取数据集", tags = {"项目日报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproprojectdailies/fetchdefault")
-	public ResponseEntity<List<IbizproProjectDailyDTO>> fetchDefault(@RequestBody IbizproProjectDailySearchContext context) {
+	public ResponseEntity<List<IbizproProjectDailyDTO>> fetchdefault(@RequestBody IbizproProjectDailySearchContext context) {
         Page<IbizproProjectDaily> domains = ibizproprojectdailyService.searchDefault(context) ;
         List<IbizproProjectDailyDTO> list = ibizproprojectdailyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

@@ -267,7 +267,7 @@ public class ActionResource {
     @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"系统日志" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/actions/fetchdefault")
-	public ResponseEntity<List<ActionDTO>> fetchDefault(@RequestBody ActionSearchContext context) {
+	public ResponseEntity<List<ActionDTO>> fetchdefault(@RequestBody ActionSearchContext context) {
         actionRuntime.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchDefault(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
@@ -291,7 +291,7 @@ public class ActionResource {
     @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取MobType", tags = {"系统日志" } ,notes = "获取MobType")
     @RequestMapping(method= RequestMethod.POST , value="/actions/fetchmobtype")
-	public ResponseEntity<List<ActionDTO>> fetchMobType(@RequestBody ActionSearchContext context) {
+	public ResponseEntity<List<ActionDTO>> fetchmobtype(@RequestBody ActionSearchContext context) {
         actionRuntime.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchMobType(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
@@ -315,7 +315,7 @@ public class ActionResource {
     @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目动态(我的)", tags = {"系统日志" } ,notes = "获取项目动态(我的)")
     @RequestMapping(method= RequestMethod.POST , value="/actions/fetchmytrends")
-	public ResponseEntity<List<ActionDTO>> fetchMyTrends(@RequestBody ActionSearchContext context) {
+	public ResponseEntity<List<ActionDTO>> fetchmytrends(@RequestBody ActionSearchContext context) {
         actionRuntime.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchMyTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
@@ -339,7 +339,7 @@ public class ActionResource {
     @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取ProductTrends", tags = {"系统日志" } ,notes = "获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/actions/fetchproducttrends")
-	public ResponseEntity<List<ActionDTO>> fetchProductTrends(@RequestBody ActionSearchContext context) {
+	public ResponseEntity<List<ActionDTO>> fetchproducttrends(@RequestBody ActionSearchContext context) {
         actionRuntime.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchProductTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
@@ -363,7 +363,7 @@ public class ActionResource {
     @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/actions/fetchprojecttrends")
-	public ResponseEntity<List<ActionDTO>> fetchProjectTrends(@RequestBody ActionSearchContext context) {
+	public ResponseEntity<List<ActionDTO>> fetchprojecttrends(@RequestBody ActionSearchContext context) {
         actionRuntime.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchProjectTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
@@ -387,7 +387,7 @@ public class ActionResource {
     @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取查询用户使用年", tags = {"系统日志" } ,notes = "获取查询用户使用年")
     @RequestMapping(method= RequestMethod.POST , value="/actions/fetchqueryuseryear")
-	public ResponseEntity<List<ActionDTO>> fetchQueryUserYEAR(@RequestBody ActionSearchContext context) {
+	public ResponseEntity<List<ActionDTO>> fetchqueryuseryear(@RequestBody ActionSearchContext context) {
         actionRuntime.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchQueryUserYEAR(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
@@ -411,7 +411,7 @@ public class ActionResource {
     @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Type", tags = {"系统日志" } ,notes = "获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/actions/fetchtype")
-	public ResponseEntity<List<ActionDTO>> fetchType(@RequestBody ActionSearchContext context) {
+	public ResponseEntity<List<ActionDTO>> fetchtype(@RequestBody ActionSearchContext context) {
         actionRuntime.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchType(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());

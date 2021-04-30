@@ -150,7 +150,7 @@ public class taskestimatestatsResource {
     @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取日志月", tags = {"任务工时统计" } ,notes = "获取日志月")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/fetchactionmonth")
-	public ResponseEntity<List<taskestimatestatsDTO>> fetchActionMonth(@RequestBody TaskEstimateStatsSearchContext context) {
+	public ResponseEntity<List<taskestimatestatsDTO>> fetchactionmonth(@RequestBody TaskEstimateStatsSearchContext context) {
         taskestimatestatsRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimateStats> domains = taskestimatestatsService.searchActionMonth(context) ;
         List<taskestimatestatsDTO> list = taskestimatestatsMapping.toDto(domains.getContent());
@@ -174,7 +174,7 @@ public class taskestimatestatsResource {
     @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取日志年", tags = {"任务工时统计" } ,notes = "获取日志年")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/fetchactionyear")
-	public ResponseEntity<List<taskestimatestatsDTO>> fetchActionYear(@RequestBody TaskEstimateStatsSearchContext context) {
+	public ResponseEntity<List<taskestimatestatsDTO>> fetchactionyear(@RequestBody TaskEstimateStatsSearchContext context) {
         taskestimatestatsRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimateStats> domains = taskestimatestatsService.searchActionYear(context) ;
         List<taskestimatestatsDTO> list = taskestimatestatsMapping.toDto(domains.getContent());
@@ -198,7 +198,7 @@ public class taskestimatestatsResource {
     @PreAuthorize("@TaskEstimateStatsRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"任务工时统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/taskestimatestats/fetchdefault")
-	public ResponseEntity<List<taskestimatestatsDTO>> fetchDefault(@RequestBody TaskEstimateStatsSearchContext context) {
+	public ResponseEntity<List<taskestimatestatsDTO>> fetchdefault(@RequestBody TaskEstimateStatsSearchContext context) {
         taskestimatestatsRuntime.addAuthorityConditions(context,"READ");
         Page<TaskEstimateStats> domains = taskestimatestatsService.searchDefault(context) ;
         List<taskestimatestatsDTO> list = taskestimatestatsMapping.toDto(domains.getContent());

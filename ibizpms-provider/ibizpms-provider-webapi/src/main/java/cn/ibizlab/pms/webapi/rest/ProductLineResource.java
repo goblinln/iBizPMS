@@ -136,7 +136,7 @@ public class ProductLineResource {
 
 	@ApiOperation(value = "获取DEFAULT", tags = {"产品线" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productlines/fetchdefault")
-	public ResponseEntity<List<ProductLineDTO>> fetchDefault(@RequestBody ProductLineSearchContext context) {
+	public ResponseEntity<List<ProductLineDTO>> fetchdefault(@RequestBody ProductLineSearchContext context) {
         Page<ProductLine> domains = productlineService.searchDefault(context) ;
         List<ProductLineDTO> list = productlineMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

@@ -176,7 +176,7 @@ public class IbzMyTerritoryResource {
 
 	@ApiOperation(value = "获取DEFAULT", tags = {"我的地盘" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchdefault")
-	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchDefault(@RequestBody IbzMyTerritorySearchContext context) {
+	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchdefault(@RequestBody IbzMyTerritorySearchContext context) {
         Page<IbzMyTerritory> domains = ibzmyterritoryService.searchDefault(context) ;
         List<IbzMyTerritoryDTO> list = ibzmyterritoryMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -196,7 +196,7 @@ public class IbzMyTerritoryResource {
 
 	@ApiOperation(value = "获取我的工作", tags = {"我的地盘" } ,notes = "获取我的工作")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchmywork")
-	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchMyWork(@RequestBody IbzMyTerritorySearchContext context) {
+	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchmywork(@RequestBody IbzMyTerritorySearchContext context) {
         Page<IbzMyTerritory> domains = ibzmyterritoryService.searchMyWork(context) ;
         List<IbzMyTerritoryDTO> list = ibzmyterritoryMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -216,7 +216,7 @@ public class IbzMyTerritoryResource {
 
 	@ApiOperation(value = "获取我的工作", tags = {"我的地盘" } ,notes = "获取我的工作")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchmyworkmob")
-	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchMyWorkMob(@RequestBody IbzMyTerritorySearchContext context) {
+	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchmyworkmob(@RequestBody IbzMyTerritorySearchContext context) {
         Page<IbzMyTerritory> domains = ibzmyterritoryService.searchMyWorkMob(context) ;
         List<IbzMyTerritoryDTO> list = ibzmyterritoryMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -236,7 +236,7 @@ public class IbzMyTerritoryResource {
 
 	@ApiOperation(value = "获取我的工作（项目经理）", tags = {"我的地盘" } ,notes = "获取我的工作（项目经理）")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchmyworkpm")
-	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchMyWorkPm(@RequestBody IbzMyTerritorySearchContext context) {
+	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchmyworkpm(@RequestBody IbzMyTerritorySearchContext context) {
         Page<IbzMyTerritory> domains = ibzmyterritoryService.searchMyWorkPm(context) ;
         List<IbzMyTerritoryDTO> list = ibzmyterritoryMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -256,7 +256,7 @@ public class IbzMyTerritoryResource {
 
 	@ApiOperation(value = "获取个人信息-个人贡献", tags = {"我的地盘" } ,notes = "获取个人信息-个人贡献")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchpersoninfo")
-	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchPersonInfo(@RequestBody IbzMyTerritorySearchContext context) {
+	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchpersoninfo(@RequestBody IbzMyTerritorySearchContext context) {
         Page<IbzMyTerritory> domains = ibzmyterritoryService.searchPersonInfo(context) ;
         List<IbzMyTerritoryDTO> list = ibzmyterritoryMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -276,7 +276,7 @@ public class IbzMyTerritoryResource {
 
 	@ApiOperation(value = "获取欢迎", tags = {"我的地盘" } ,notes = "获取欢迎")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmyterritories/fetchwelcome")
-	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchWelcome(@RequestBody IbzMyTerritorySearchContext context) {
+	public ResponseEntity<List<IbzMyTerritoryDTO>> fetchwelcome(@RequestBody IbzMyTerritorySearchContext context) {
         Page<IbzMyTerritory> domains = ibzmyterritoryService.searchWelcome(context) ;
         List<IbzMyTerritoryDTO> list = ibzmyterritoryMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

@@ -257,7 +257,7 @@ public class IbzMonthlyResource {
     @PreAuthorize("@IbzMonthlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"月报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchdefault")
-	public ResponseEntity<List<IbzMonthlyDTO>> fetchDefault(@RequestBody IbzMonthlySearchContext context) {
+	public ResponseEntity<List<IbzMonthlyDTO>> fetchdefault(@RequestBody IbzMonthlySearchContext context) {
         ibzmonthlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzMonthly> domains = ibzmonthlyService.searchDefault(context) ;
         List<IbzMonthlyDTO> list = ibzmonthlyMapping.toDto(domains.getContent());
@@ -281,7 +281,7 @@ public class IbzMonthlyResource {
     @PreAuthorize("@IbzMonthlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的月报", tags = {"月报" } ,notes = "获取我的月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchmymonthly")
-	public ResponseEntity<List<IbzMonthlyDTO>> fetchMyMonthly(@RequestBody IbzMonthlySearchContext context) {
+	public ResponseEntity<List<IbzMonthlyDTO>> fetchmymonthly(@RequestBody IbzMonthlySearchContext context) {
         ibzmonthlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzMonthly> domains = ibzmonthlyService.searchMyMonthly(context) ;
         List<IbzMonthlyDTO> list = ibzmonthlyMapping.toDto(domains.getContent());
@@ -305,7 +305,7 @@ public class IbzMonthlyResource {
     @PreAuthorize("@IbzMonthlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的月报（移动端）", tags = {"月报" } ,notes = "获取我的月报（移动端）")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchmymonthlymob")
-	public ResponseEntity<List<IbzMonthlyDTO>> fetchMyMonthlyMob(@RequestBody IbzMonthlySearchContext context) {
+	public ResponseEntity<List<IbzMonthlyDTO>> fetchmymonthlymob(@RequestBody IbzMonthlySearchContext context) {
         ibzmonthlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzMonthly> domains = ibzmonthlyService.searchMyMonthlyMob(context) ;
         List<IbzMonthlyDTO> list = ibzmonthlyMapping.toDto(domains.getContent());
@@ -329,7 +329,7 @@ public class IbzMonthlyResource {
     @PreAuthorize("@IbzMonthlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我收到的月报", tags = {"月报" } ,notes = "获取我收到的月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchmyreceivedmonthly")
-	public ResponseEntity<List<IbzMonthlyDTO>> fetchMyReceivedMonthly(@RequestBody IbzMonthlySearchContext context) {
+	public ResponseEntity<List<IbzMonthlyDTO>> fetchmyreceivedmonthly(@RequestBody IbzMonthlySearchContext context) {
         ibzmonthlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzMonthly> domains = ibzmonthlyService.searchMyReceivedMonthly(context) ;
         List<IbzMonthlyDTO> list = ibzmonthlyMapping.toDto(domains.getContent());
@@ -353,7 +353,7 @@ public class IbzMonthlyResource {
     @PreAuthorize("@IbzMonthlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我提交的月报", tags = {"月报" } ,notes = "获取我提交的月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchmysubmitmonthly")
-	public ResponseEntity<List<IbzMonthlyDTO>> fetchMySubmitMonthly(@RequestBody IbzMonthlySearchContext context) {
+	public ResponseEntity<List<IbzMonthlyDTO>> fetchmysubmitmonthly(@RequestBody IbzMonthlySearchContext context) {
         ibzmonthlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzMonthly> domains = ibzmonthlyService.searchMySubmitMonthly(context) ;
         List<IbzMonthlyDTO> list = ibzmonthlyMapping.toDto(domains.getContent());
@@ -377,7 +377,7 @@ public class IbzMonthlyResource {
     @PreAuthorize("@IbzMonthlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品月报", tags = {"月报" } ,notes = "获取产品月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchproductmonthly")
-	public ResponseEntity<List<IbzMonthlyDTO>> fetchProductMonthly(@RequestBody IbzMonthlySearchContext context) {
+	public ResponseEntity<List<IbzMonthlyDTO>> fetchproductmonthly(@RequestBody IbzMonthlySearchContext context) {
         ibzmonthlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzMonthly> domains = ibzmonthlyService.searchProductMonthly(context) ;
         List<IbzMonthlyDTO> list = ibzmonthlyMapping.toDto(domains.getContent());
@@ -401,7 +401,7 @@ public class IbzMonthlyResource {
     @PreAuthorize("@IbzMonthlyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目月报", tags = {"月报" } ,notes = "获取项目月报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzmonthlies/fetchprojectmonthly")
-	public ResponseEntity<List<IbzMonthlyDTO>> fetchProjectMonthly(@RequestBody IbzMonthlySearchContext context) {
+	public ResponseEntity<List<IbzMonthlyDTO>> fetchprojectmonthly(@RequestBody IbzMonthlySearchContext context) {
         ibzmonthlyRuntime.addAuthorityConditions(context,"READ");
         Page<IbzMonthly> domains = ibzmonthlyService.searchProjectMonthly(context) ;
         List<IbzMonthlyDTO> list = ibzmonthlyMapping.toDto(domains.getContent());

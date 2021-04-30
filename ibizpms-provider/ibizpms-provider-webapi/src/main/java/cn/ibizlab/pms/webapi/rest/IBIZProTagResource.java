@@ -135,7 +135,7 @@ public class IBIZProTagResource {
 
 	@ApiOperation(value = "获取数据集", tags = {"标签" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizprotags/fetchdefault")
-	public ResponseEntity<List<IBIZProTagDTO>> fetchDefault(@RequestBody IBIZProTagSearchContext context) {
+	public ResponseEntity<List<IBIZProTagDTO>> fetchdefault(@RequestBody IBIZProTagSearchContext context) {
         Page<IBIZProTag> domains = ibizprotagService.searchDefault(context) ;
         List<IBIZProTagDTO> list = ibizprotagMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

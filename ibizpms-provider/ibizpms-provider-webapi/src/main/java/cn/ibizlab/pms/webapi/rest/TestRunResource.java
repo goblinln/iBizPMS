@@ -150,7 +150,7 @@ public class TestRunResource {
     @PreAuthorize("@TestRunRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试运行" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testruns/fetchdefault")
-	public ResponseEntity<List<TestRunDTO>> fetchDefault(@RequestBody TestRunSearchContext context) {
+	public ResponseEntity<List<TestRunDTO>> fetchdefault(@RequestBody TestRunSearchContext context) {
         testrunRuntime.addAuthorityConditions(context,"READ");
         Page<TestRun> domains = testrunService.searchDefault(context) ;
         List<TestRunDTO> list = testrunMapping.toDto(domains.getContent());

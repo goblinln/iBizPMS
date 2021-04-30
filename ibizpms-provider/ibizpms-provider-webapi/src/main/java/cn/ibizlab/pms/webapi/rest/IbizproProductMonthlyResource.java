@@ -183,7 +183,7 @@ public class IbizproProductMonthlyResource {
 
 	@ApiOperation(value = "获取数据集", tags = {"产品月报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibizproproductmonthlies/fetchdefault")
-	public ResponseEntity<List<IbizproProductMonthlyDTO>> fetchDefault(@RequestBody IbizproProductMonthlySearchContext context) {
+	public ResponseEntity<List<IbizproProductMonthlyDTO>> fetchdefault(@RequestBody IbizproProductMonthlySearchContext context) {
         Page<IbizproProductMonthly> domains = ibizproproductmonthlyService.searchDefault(context) ;
         List<IbizproProductMonthlyDTO> list = ibizproproductmonthlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

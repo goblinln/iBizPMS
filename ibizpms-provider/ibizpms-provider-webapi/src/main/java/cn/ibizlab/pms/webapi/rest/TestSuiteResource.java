@@ -195,7 +195,7 @@ public class TestSuiteResource {
     @PreAuthorize("@TestSuiteRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试套件" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/fetchdefault")
-	public ResponseEntity<List<TestSuiteDTO>> fetchDefault(@RequestBody TestSuiteSearchContext context) {
+	public ResponseEntity<List<TestSuiteDTO>> fetchdefault(@RequestBody TestSuiteSearchContext context) {
         testsuiteRuntime.addAuthorityConditions(context,"READ");
         Page<TestSuite> domains = testsuiteService.searchDefault(context) ;
         List<TestSuiteDTO> list = testsuiteMapping.toDto(domains.getContent());
@@ -219,7 +219,7 @@ public class TestSuiteResource {
     @PreAuthorize("@TestSuiteRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取公开套件", tags = {"测试套件" } ,notes = "获取公开套件")
     @RequestMapping(method= RequestMethod.POST , value="/testsuites/fetchpublictestsuite")
-	public ResponseEntity<List<TestSuiteDTO>> fetchPublicTestSuite(@RequestBody TestSuiteSearchContext context) {
+	public ResponseEntity<List<TestSuiteDTO>> fetchpublictestsuite(@RequestBody TestSuiteSearchContext context) {
         testsuiteRuntime.addAuthorityConditions(context,"READ");
         Page<TestSuite> domains = testsuiteService.searchPublicTestSuite(context) ;
         List<TestSuiteDTO> list = testsuiteMapping.toDto(domains.getContent());

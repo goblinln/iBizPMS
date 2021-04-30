@@ -167,7 +167,7 @@ public class BurnResource {
     @PreAuthorize("@BurnRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"burn" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/burns/fetchdefault")
-	public ResponseEntity<List<BurnDTO>> fetchDefault(@RequestBody BurnSearchContext context) {
+	public ResponseEntity<List<BurnDTO>> fetchdefault(@RequestBody BurnSearchContext context) {
         Page<Burn> domains = burnService.searchDefault(context) ;
         List<BurnDTO> list = burnMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -189,7 +189,7 @@ public class BurnResource {
     @PreAuthorize("@BurnRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取燃尽图预计（含周末）", tags = {"burn" } ,notes = "获取燃尽图预计（含周末）")
     @RequestMapping(method= RequestMethod.POST , value="/burns/fetchestimateandleft")
-	public ResponseEntity<List<BurnDTO>> fetchESTIMATEANDLEFT(@RequestBody BurnSearchContext context) {
+	public ResponseEntity<List<BurnDTO>> fetchestimateandleft(@RequestBody BurnSearchContext context) {
         Page<Burn> domains = burnService.searchESTIMATEANDLEFT(context) ;
         List<BurnDTO> list = burnMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

@@ -150,7 +150,7 @@ public class IbzAgentResource {
 
 	@ApiOperation(value = "获取数据集", tags = {"代理" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzagents/fetchdefault")
-	public ResponseEntity<List<IbzAgentDTO>> fetchDefault(@RequestBody IbzAgentSearchContext context) {
+	public ResponseEntity<List<IbzAgentDTO>> fetchdefault(@RequestBody IbzAgentSearchContext context) {
         Page<IbzAgent> domains = ibzagentService.searchDefault(context) ;
         List<IbzAgentDTO> list = ibzagentMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

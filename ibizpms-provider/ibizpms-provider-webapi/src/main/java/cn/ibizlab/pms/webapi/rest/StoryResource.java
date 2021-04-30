@@ -830,7 +830,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取指派给我的需求", tags = {"需求" } ,notes = "获取指派给我的需求")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchassignedtomystory")
-	public ResponseEntity<List<StoryDTO>> fetchAssignedToMyStory(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchassignedtomystory(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchAssignedToMyStory(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -852,7 +852,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取指派给我的需求（日历）", tags = {"需求" } ,notes = "获取指派给我的需求（日历）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchassignedtomystorycalendar")
-	public ResponseEntity<List<StoryDTO>> fetchAssignedToMyStoryCalendar(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchassignedtomystorycalendar(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchAssignedToMyStoryCalendar(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -873,7 +873,7 @@ public class StoryResource {
 
 	@ApiOperation(value = "获取Bug相关需求", tags = {"需求" } ,notes = "获取Bug相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchbugstory")
-	public ResponseEntity<List<StoryDTO>> fetchBugStory(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchbugstory(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchBugStory(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -894,7 +894,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本关联已完成的需求（选择数据源）", tags = {"需求" } ,notes = "获取版本关联已完成的需求（选择数据源）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchbuildlinkcompletedstories")
-	public ResponseEntity<List<StoryDTO>> fetchBuildLinkCompletedStories(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchbuildlinkcompletedstories(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchBuildLinkCompletedStories(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -916,7 +916,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本可关联的需求（产品内）", tags = {"需求" } ,notes = "获取版本可关联的需求（产品内）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchbuildlinkablestories")
-	public ResponseEntity<List<StoryDTO>> fetchBuildLinkableStories(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchbuildlinkablestories(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchBuildLinkableStories(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -938,7 +938,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取获取版本相关需求", tags = {"需求" } ,notes = "获取获取版本相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchbuildstories")
-	public ResponseEntity<List<StoryDTO>> fetchBuildStories(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchbuildstories(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchBuildStories(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -960,7 +960,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取通过模块查询", tags = {"需求" } ,notes = "获取通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchbymodule")
-	public ResponseEntity<List<StoryDTO>> fetchByModule(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchbymodule(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchByModule(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -982,7 +982,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取相关用例需求", tags = {"需求" } ,notes = "获取相关用例需求")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchcasestory")
-	public ResponseEntity<List<StoryDTO>> fetchCaseStory(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchcasestory(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchCaseStory(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1004,7 +1004,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"需求" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchdefault")
-	public ResponseEntity<List<StoryDTO>> fetchDefault(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchdefault(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchDefault(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1026,7 +1026,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取ES批量的导入", tags = {"需求" } ,notes = "获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchesbulk")
-	public ResponseEntity<List<StoryDTO>> fetchESBulk(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchesbulk(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchESBulk(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1048,7 +1048,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取获取产品需求", tags = {"需求" } ,notes = "获取获取产品需求")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchgetproductstories")
-	public ResponseEntity<List<StoryDTO>> fetchGetProductStories(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchgetproductstories(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchGetProductStories(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1070,7 +1070,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我代理的需求", tags = {"需求" } ,notes = "获取我代理的需求")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchmyagentstory")
-	public ResponseEntity<List<StoryDTO>> fetchMyAgentStory(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchmyagentstory(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchMyAgentStory(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1092,7 +1092,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取所创建需求数和对应的优先级及状态", tags = {"需求" } ,notes = "获取所创建需求数和对应的优先级及状态")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchmycuropenedstory")
-	public ResponseEntity<List<StoryDTO>> fetchMyCurOpenedStory(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchmycuropenedstory(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchMyCurOpenedStory(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1114,7 +1114,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的收藏", tags = {"需求" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchmyfavorites")
-	public ResponseEntity<List<StoryDTO>> fetchMyFavorites(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchmyfavorites(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchMyFavorites(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1136,7 +1136,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取计划关联需求(去除已关联)", tags = {"需求" } ,notes = "获取计划关联需求(去除已关联)")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchnotcurplanlinkstory")
-	public ResponseEntity<List<StoryDTO>> fetchNotCurPlanLinkStory(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchnotcurplanlinkstory(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchNotCurPlanLinkStory(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1158,7 +1158,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据查询", tags = {"需求" } ,notes = "获取数据查询")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchparentdefault")
-	public ResponseEntity<List<StoryDTO>> fetchParentDefault(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchparentdefault(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchParentDefault(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1180,7 +1180,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据查询", tags = {"需求" } ,notes = "获取数据查询")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchparentdefaultq")
-	public ResponseEntity<List<StoryDTO>> fetchParentDefaultQ(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchparentdefaultq(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchParentDefaultQ(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1202,7 +1202,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目关联需求", tags = {"需求" } ,notes = "获取项目关联需求")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchprojectlinkstory")
-	public ResponseEntity<List<StoryDTO>> fetchProjectLinkStory(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchprojectlinkstory(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchProjectLinkStory(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1224,7 +1224,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目相关需求", tags = {"需求" } ,notes = "获取项目相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchprojectstories")
-	public ResponseEntity<List<StoryDTO>> fetchProjectStories(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchprojectstories(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchProjectStories(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1246,7 +1246,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取版本可关联的完成的需求", tags = {"需求" } ,notes = "获取版本可关联的完成的需求")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchreleaselinkablestories")
-	public ResponseEntity<List<StoryDTO>> fetchReleaseLinkableStories(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchreleaselinkablestories(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchReleaseLinkableStories(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1268,7 +1268,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取获取产品发布相关需求", tags = {"需求" } ,notes = "获取获取产品发布相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchreleasestories")
-	public ResponseEntity<List<StoryDTO>> fetchReleaseStories(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchreleasestories(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchReleaseStories(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1290,7 +1290,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取通过模块查询", tags = {"需求" } ,notes = "获取通过模块查询")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchreportstories")
-	public ResponseEntity<List<StoryDTO>> fetchReportStories(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchreportstories(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchReportStories(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1312,7 +1312,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取获取产品发布相关需求", tags = {"需求" } ,notes = "获取获取产品发布相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchstorychild")
-	public ResponseEntity<List<StoryDTO>> fetchStoryChild(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchstorychild(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchStoryChild(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1334,7 +1334,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取获取产品发布相关需求", tags = {"需求" } ,notes = "获取获取产品发布相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchstoryrelated")
-	public ResponseEntity<List<StoryDTO>> fetchStoryRelated(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchstoryrelated(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchStoryRelated(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1356,7 +1356,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取需求细分", tags = {"需求" } ,notes = "获取需求细分")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchsubstory")
-	public ResponseEntity<List<StoryDTO>> fetchSubStory(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchsubstory(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchSubStory(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1377,7 +1377,7 @@ public class StoryResource {
 
 	@ApiOperation(value = "获取任务相关需求", tags = {"需求" } ,notes = "获取任务相关需求")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchtaskrelatedstory")
-	public ResponseEntity<List<StoryDTO>> fetchTaskRelatedStory(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchtaskrelatedstory(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchTaskRelatedStory(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -1398,7 +1398,7 @@ public class StoryResource {
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取默认（全部数据）", tags = {"需求" } ,notes = "获取默认（全部数据）")
     @RequestMapping(method= RequestMethod.POST , value="/stories/fetchview")
-	public ResponseEntity<List<StoryDTO>> fetchView(@RequestBody StorySearchContext context) {
+	public ResponseEntity<List<StoryDTO>> fetchview(@RequestBody StorySearchContext context) {
         Page<Story> domains = storyService.searchView(context) ;
         List<StoryDTO> list = storyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

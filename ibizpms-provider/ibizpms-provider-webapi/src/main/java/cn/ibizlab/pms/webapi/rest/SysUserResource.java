@@ -152,7 +152,7 @@ public class SysUserResource {
 
 	@ApiOperation(value = "获取数据集", tags = {"系统用户" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysusers/fetchdefault")
-	public ResponseEntity<List<SysUserDTO>> fetchDefault(@RequestBody SysUserSearchContext context) {
+	public ResponseEntity<List<SysUserDTO>> fetchdefault(@RequestBody SysUserSearchContext context) {
         Page<SysUser> domains = sysuserService.searchDefault(context) ;
         List<SysUserDTO> list = sysuserMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

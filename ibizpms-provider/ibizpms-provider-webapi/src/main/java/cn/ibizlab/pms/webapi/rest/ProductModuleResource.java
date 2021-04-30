@@ -188,7 +188,7 @@ public class ProductModuleResource {
     @PreAuthorize("@ProductModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取BYPATH", tags = {"需求模块" } ,notes = "获取BYPATH")
     @RequestMapping(method= RequestMethod.POST , value="/productmodules/fetchbypath")
-	public ResponseEntity<List<ProductModuleDTO>> fetchByPath(@RequestBody ProductModuleSearchContext context) {
+	public ResponseEntity<List<ProductModuleDTO>> fetchbypath(@RequestBody ProductModuleSearchContext context) {
         productmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<ProductModule> domains = productmoduleService.searchByPath(context) ;
         List<ProductModuleDTO> list = productmoduleMapping.toDto(domains.getContent());
@@ -212,7 +212,7 @@ public class ProductModuleResource {
     @PreAuthorize("@ProductModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"需求模块" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productmodules/fetchdefault")
-	public ResponseEntity<List<ProductModuleDTO>> fetchDefault(@RequestBody ProductModuleSearchContext context) {
+	public ResponseEntity<List<ProductModuleDTO>> fetchdefault(@RequestBody ProductModuleSearchContext context) {
         productmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<ProductModule> domains = productmoduleService.searchDefault(context) ;
         List<ProductModuleDTO> list = productmoduleMapping.toDto(domains.getContent());
@@ -236,7 +236,7 @@ public class ProductModuleResource {
     @PreAuthorize("@ProductModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取父模块", tags = {"需求模块" } ,notes = "获取父模块")
     @RequestMapping(method= RequestMethod.POST , value="/productmodules/fetchparentmodule")
-	public ResponseEntity<List<ProductModuleDTO>> fetchParentModule(@RequestBody ProductModuleSearchContext context) {
+	public ResponseEntity<List<ProductModuleDTO>> fetchparentmodule(@RequestBody ProductModuleSearchContext context) {
         productmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<ProductModule> domains = productmoduleService.searchParentModule(context) ;
         List<ProductModuleDTO> list = productmoduleMapping.toDto(domains.getContent());
@@ -260,7 +260,7 @@ public class ProductModuleResource {
     @PreAuthorize("@ProductModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根模块", tags = {"需求模块" } ,notes = "获取根模块")
     @RequestMapping(method= RequestMethod.POST , value="/productmodules/fetchroot")
-	public ResponseEntity<List<ProductModuleDTO>> fetchRoot(@RequestBody ProductModuleSearchContext context) {
+	public ResponseEntity<List<ProductModuleDTO>> fetchroot(@RequestBody ProductModuleSearchContext context) {
         productmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<ProductModule> domains = productmoduleService.searchRoot(context) ;
         List<ProductModuleDTO> list = productmoduleMapping.toDto(domains.getContent());
@@ -284,7 +284,7 @@ public class ProductModuleResource {
     @PreAuthorize("@ProductModuleRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取根模块_无分支", tags = {"需求模块" } ,notes = "获取根模块_无分支")
     @RequestMapping(method= RequestMethod.POST , value="/productmodules/fetchroot_nobranch")
-	public ResponseEntity<List<ProductModuleDTO>> fetchRoot_NoBranch(@RequestBody ProductModuleSearchContext context) {
+	public ResponseEntity<List<ProductModuleDTO>> fetchroot_nobranch(@RequestBody ProductModuleSearchContext context) {
         productmoduleRuntime.addAuthorityConditions(context,"READ");
         Page<ProductModule> domains = productmoduleService.searchRoot_NoBranch(context) ;
         List<ProductModuleDTO> list = productmoduleMapping.toDto(domains.getContent());
@@ -307,7 +307,7 @@ public class ProductModuleResource {
 
 	@ApiOperation(value = "获取StoryModule", tags = {"需求模块" } ,notes = "获取StoryModule")
     @RequestMapping(method= RequestMethod.POST , value="/productmodules/fetchstorymodule")
-	public ResponseEntity<List<ProductModuleDTO>> fetchStoryModule(@RequestBody ProductModuleSearchContext context) {
+	public ResponseEntity<List<ProductModuleDTO>> fetchstorymodule(@RequestBody ProductModuleSearchContext context) {
         Page<ProductModule> domains = productmoduleService.searchStoryModule(context) ;
         List<ProductModuleDTO> list = productmoduleMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

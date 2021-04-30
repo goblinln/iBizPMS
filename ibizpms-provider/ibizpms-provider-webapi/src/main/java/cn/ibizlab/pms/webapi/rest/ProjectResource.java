@@ -457,7 +457,7 @@ public class ProjectResource {
 
 	@ApiOperation(value = "获取BugProject", tags = {"项目" } ,notes = "获取BugProject")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchbugproject")
-	public ResponseEntity<List<ProjectDTO>> fetchBugProject(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchbugproject(@RequestBody ProjectSearchContext context) {
         Page<Project> domains = projectService.searchBugProject(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -478,7 +478,7 @@ public class ProjectResource {
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取默认查询", tags = {"项目" } ,notes = "获取默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurdefaultquery")
-	public ResponseEntity<List<ProjectDTO>> fetchCurDefaultQuery(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchcurdefaultquery(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchCurDefaultQuery(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -502,7 +502,7 @@ public class ProjectResource {
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取默认查询（项目导航）", tags = {"项目" } ,notes = "获取默认查询（项目导航）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurdefaultqueryexp")
-	public ResponseEntity<List<ProjectDTO>> fetchCurDefaultQueryExp(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchcurdefaultqueryexp(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchCurDefaultQueryExp(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -526,7 +526,7 @@ public class ProjectResource {
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前计划项目", tags = {"项目" } ,notes = "获取当前计划项目")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurplanproject")
-	public ResponseEntity<List<ProjectDTO>> fetchCurPlanProject(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchcurplanproject(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchCurPlanProject(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -550,7 +550,7 @@ public class ProjectResource {
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前项目", tags = {"项目" } ,notes = "获取当前项目")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurproduct")
-	public ResponseEntity<List<ProjectDTO>> fetchCurProduct(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchcurproduct(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchCurProduct(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -574,7 +574,7 @@ public class ProjectResource {
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前用户项目", tags = {"项目" } ,notes = "获取当前用户项目")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcuruser")
-	public ResponseEntity<List<ProjectDTO>> fetchCurUser(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchcuruser(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchCurUser(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -598,7 +598,7 @@ public class ProjectResource {
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前用户项目（企业版）", tags = {"项目" } ,notes = "获取当前用户项目（企业版）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchcurusersa")
-	public ResponseEntity<List<ProjectDTO>> fetchCurUserSa(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchcurusersa(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchCurUserSa(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -622,7 +622,7 @@ public class ProjectResource {
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"项目" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchdefault")
-	public ResponseEntity<List<ProjectDTO>> fetchDefault(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchdefault(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchDefault(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -646,7 +646,7 @@ public class ProjectResource {
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取研发人员（启用权限）", tags = {"项目" } ,notes = "获取研发人员（启用权限）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchdeveloperquery")
-	public ResponseEntity<List<ProjectDTO>> fetchDeveloperQuery(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchdeveloperquery(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchDeveloperQuery(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -670,7 +670,7 @@ public class ProjectResource {
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取ES批量的导入", tags = {"项目" } ,notes = "获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchesbulk")
-	public ResponseEntity<List<ProjectDTO>> fetchESBulk(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchesbulk(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchESBulk(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -694,7 +694,7 @@ public class ProjectResource {
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取参与项目(年度总结)", tags = {"项目" } ,notes = "获取参与项目(年度总结)")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchinvolvedproject")
-	public ResponseEntity<List<ProjectDTO>> fetchInvolvedProject(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchinvolvedproject(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchInvolvedProject(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -718,7 +718,7 @@ public class ProjectResource {
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取参与项目完成需求任务bug", tags = {"项目" } ,notes = "获取参与项目完成需求任务bug")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchinvolvedproject_storytaskbug")
-	public ResponseEntity<List<ProjectDTO>> fetchInvolvedProject_StoryTaskBug(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchinvolvedproject_storytaskbug(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchInvolvedProject_StoryTaskBug(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -742,7 +742,7 @@ public class ProjectResource {
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的项目", tags = {"项目" } ,notes = "获取我的项目")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchmyproject")
-	public ResponseEntity<List<ProjectDTO>> fetchMyProject(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchmyproject(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchMyProject(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -766,7 +766,7 @@ public class ProjectResource {
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前创建者（启用权限）", tags = {"项目" } ,notes = "获取当前创建者（启用权限）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchopenbyquery")
-	public ResponseEntity<List<ProjectDTO>> fetchOpenByQuery(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchopenbyquery(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchOpenByQuery(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -790,7 +790,7 @@ public class ProjectResource {
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取公开（启用权限）", tags = {"项目" } ,notes = "获取公开（启用权限）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchopenquery")
-	public ResponseEntity<List<ProjectDTO>> fetchOpenQuery(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchopenquery(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchOpenQuery(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -814,7 +814,7 @@ public class ProjectResource {
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目负责人（启用权限）", tags = {"项目" } ,notes = "获取项目负责人（启用权限）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchpmquery")
-	public ResponseEntity<List<ProjectDTO>> fetchPMQuery(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchpmquery(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchPMQuery(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -838,7 +838,7 @@ public class ProjectResource {
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品负责人（启用权限）", tags = {"项目" } ,notes = "获取产品负责人（启用权限）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchpoquery")
-	public ResponseEntity<List<ProjectDTO>> fetchPOQuery(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchpoquery(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchPOQuery(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -862,7 +862,7 @@ public class ProjectResource {
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目团队", tags = {"项目" } ,notes = "获取项目团队")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchprojectteam")
-	public ResponseEntity<List<ProjectDTO>> fetchProjectTeam(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchprojectteam(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchProjectTeam(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -886,7 +886,7 @@ public class ProjectResource {
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试负责人（启用权限）", tags = {"项目" } ,notes = "获取测试负责人（启用权限）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchqdquery")
-	public ResponseEntity<List<ProjectDTO>> fetchQDQuery(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchqdquery(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchQDQuery(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -910,7 +910,7 @@ public class ProjectResource {
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取发布负责人（启用权限）", tags = {"项目" } ,notes = "获取发布负责人（启用权限）")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchrdquery")
-	public ResponseEntity<List<ProjectDTO>> fetchRDQuery(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchrdquery(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchRDQuery(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -934,7 +934,7 @@ public class ProjectResource {
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取需求影响项目", tags = {"项目" } ,notes = "获取需求影响项目")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchstoryproject")
-	public ResponseEntity<List<ProjectDTO>> fetchStoryProject(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchstoryproject(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchStoryProject(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
@@ -958,7 +958,7 @@ public class ProjectResource {
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取未完成项目", tags = {"项目" } ,notes = "获取未完成项目")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchundoneproject")
-	public ResponseEntity<List<ProjectDTO>> fetchUnDoneProject(@RequestBody ProjectSearchContext context) {
+	public ResponseEntity<List<ProjectDTO>> fetchundoneproject(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchUnDoneProject(context) ;
         List<ProjectDTO> list = projectMapping.toDto(domains.getContent());

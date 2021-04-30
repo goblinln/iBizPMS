@@ -150,7 +150,7 @@ public class CompanyResource {
     @PreAuthorize("@CompanyRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"公司" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/companies/fetchdefault")
-	public ResponseEntity<List<CompanyDTO>> fetchDefault(@RequestBody CompanySearchContext context) {
+	public ResponseEntity<List<CompanyDTO>> fetchdefault(@RequestBody CompanySearchContext context) {
         companyRuntime.addAuthorityConditions(context,"READ");
         Page<Company> domains = companyService.searchDefault(context) ;
         List<CompanyDTO> list = companyMapping.toDto(domains.getContent());

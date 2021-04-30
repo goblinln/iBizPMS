@@ -150,7 +150,7 @@ public class SuiteCaseResource {
     @PreAuthorize("@SuiteCaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"套件用例" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/suitecases/fetchdefault")
-	public ResponseEntity<List<SuiteCaseDTO>> fetchDefault(@RequestBody SuiteCaseSearchContext context) {
+	public ResponseEntity<List<SuiteCaseDTO>> fetchdefault(@RequestBody SuiteCaseSearchContext context) {
         suitecaseRuntime.addAuthorityConditions(context,"READ");
         Page<SuiteCase> domains = suitecaseService.searchDefault(context) ;
         List<SuiteCaseDTO> list = suitecaseMapping.toDto(domains.getContent());

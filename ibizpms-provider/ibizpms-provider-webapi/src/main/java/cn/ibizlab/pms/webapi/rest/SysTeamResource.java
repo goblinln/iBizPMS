@@ -135,7 +135,7 @@ public class SysTeamResource {
 
 	@ApiOperation(value = "获取数据集", tags = {"组" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/systeams/fetchdefault")
-	public ResponseEntity<List<SysTeamDTO>> fetchDefault(@RequestBody SysTeamSearchContext context) {
+	public ResponseEntity<List<SysTeamDTO>> fetchdefault(@RequestBody SysTeamSearchContext context) {
         Page<SysTeam> domains = systeamService.searchDefault(context) ;
         List<SysTeamDTO> list = systeamMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

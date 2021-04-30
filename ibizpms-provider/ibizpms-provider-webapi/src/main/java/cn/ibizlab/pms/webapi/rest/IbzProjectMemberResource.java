@@ -150,7 +150,7 @@ public class IbzProjectMemberResource {
     @PreAuthorize("@IbzProjectMemberRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"项目相关成员" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzprojectmembers/fetchdefault")
-	public ResponseEntity<List<IbzProjectMemberDTO>> fetchDefault(@RequestBody IbzProjectMemberSearchContext context) {
+	public ResponseEntity<List<IbzProjectMemberDTO>> fetchdefault(@RequestBody IbzProjectMemberSearchContext context) {
         ibzprojectmemberRuntime.addAuthorityConditions(context,"READ");
         Page<IbzProjectMember> domains = ibzprojectmemberService.searchDefault(context) ;
         List<IbzProjectMemberDTO> list = ibzprojectmemberMapping.toDto(domains.getContent());

@@ -173,7 +173,7 @@ public class IbzReportlyResource {
 
 	@ApiOperation(value = "获取数据集", tags = {"汇报" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/fetchdefault")
-	public ResponseEntity<List<IbzReportlyDTO>> fetchDefault(@RequestBody IbzReportlySearchContext context) {
+	public ResponseEntity<List<IbzReportlyDTO>> fetchdefault(@RequestBody IbzReportlySearchContext context) {
         Page<IbzReportly> domains = ibzreportlyService.searchDefault(context) ;
         List<IbzReportlyDTO> list = ibzreportlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -193,7 +193,7 @@ public class IbzReportlyResource {
 
 	@ApiOperation(value = "获取我所有的汇报", tags = {"汇报" } ,notes = "获取我所有的汇报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/fetchmyallreportly")
-	public ResponseEntity<List<IbzReportlyDTO>> fetchMyAllReportly(@RequestBody IbzReportlySearchContext context) {
+	public ResponseEntity<List<IbzReportlyDTO>> fetchmyallreportly(@RequestBody IbzReportlySearchContext context) {
         Page<IbzReportly> domains = ibzreportlyService.searchMyAllReportly(context) ;
         List<IbzReportlyDTO> list = ibzreportlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -213,7 +213,7 @@ public class IbzReportlyResource {
 
 	@ApiOperation(value = "获取我收到的汇报", tags = {"汇报" } ,notes = "获取我收到的汇报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/fetchmyreceived")
-	public ResponseEntity<List<IbzReportlyDTO>> fetchMyReceived(@RequestBody IbzReportlySearchContext context) {
+	public ResponseEntity<List<IbzReportlyDTO>> fetchmyreceived(@RequestBody IbzReportlySearchContext context) {
         Page<IbzReportly> domains = ibzreportlyService.searchMyReceived(context) ;
         List<IbzReportlyDTO> list = ibzreportlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -233,7 +233,7 @@ public class IbzReportlyResource {
 
 	@ApiOperation(value = "获取我的未提交汇报", tags = {"汇报" } ,notes = "获取我的未提交汇报")
     @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/fetchmyreportlymob")
-	public ResponseEntity<List<IbzReportlyDTO>> fetchMyReportlyMob(@RequestBody IbzReportlySearchContext context) {
+	public ResponseEntity<List<IbzReportlyDTO>> fetchmyreportlymob(@RequestBody IbzReportlySearchContext context) {
         Page<IbzReportly> domains = ibzreportlyService.searchMyReportlyMob(context) ;
         List<IbzReportlyDTO> list = ibzreportlyMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

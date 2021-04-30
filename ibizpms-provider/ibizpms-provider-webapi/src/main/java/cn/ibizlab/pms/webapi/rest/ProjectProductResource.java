@@ -150,7 +150,7 @@ public class ProjectProductResource {
     @PreAuthorize("@ProjectProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"项目产品" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projectproducts/fetchdefault")
-	public ResponseEntity<List<ProjectProductDTO>> fetchDefault(@RequestBody ProjectProductSearchContext context) {
+	public ResponseEntity<List<ProjectProductDTO>> fetchdefault(@RequestBody ProjectProductSearchContext context) {
         Page<ProjectProduct> domains = projectproductService.searchDefault(context) ;
         List<ProjectProductDTO> list = projectproductMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -172,7 +172,7 @@ public class ProjectProductResource {
     @PreAuthorize("@ProjectProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取关联计划", tags = {"项目产品" } ,notes = "获取关联计划")
     @RequestMapping(method= RequestMethod.POST , value="/projectproducts/fetchrelationplan")
-	public ResponseEntity<List<ProjectProductDTO>> fetchRelationPlan(@RequestBody ProjectProductSearchContext context) {
+	public ResponseEntity<List<ProjectProductDTO>> fetchrelationplan(@RequestBody ProjectProductSearchContext context) {
         Page<ProjectProduct> domains = projectproductService.searchRelationPlan(context) ;
         List<ProjectProductDTO> list = projectproductMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

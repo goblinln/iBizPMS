@@ -136,7 +136,7 @@ public class PSSystemDBCfgResource {
 
 	@ApiOperation(value = "获取版本", tags = {"系统数据库" } ,notes = "获取版本")
     @RequestMapping(method= RequestMethod.POST , value="/pssystemdbcfgs/fetchbuild")
-	public ResponseEntity<List<PSSystemDBCfgDTO>> fetchBuild(@RequestBody PSSystemDBCfgSearchContext context) {
+	public ResponseEntity<List<PSSystemDBCfgDTO>> fetchbuild(@RequestBody PSSystemDBCfgSearchContext context) {
         Page<PSSystemDBCfg> domains = pssystemdbcfgService.searchBuild(context) ;
         List<PSSystemDBCfgDTO> list = pssystemdbcfgMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -156,7 +156,7 @@ public class PSSystemDBCfgResource {
 
 	@ApiOperation(value = "获取数据集", tags = {"系统数据库" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/pssystemdbcfgs/fetchdefault")
-	public ResponseEntity<List<PSSystemDBCfgDTO>> fetchDefault(@RequestBody PSSystemDBCfgSearchContext context) {
+	public ResponseEntity<List<PSSystemDBCfgDTO>> fetchdefault(@RequestBody PSSystemDBCfgSearchContext context) {
         Page<PSSystemDBCfg> domains = pssystemdbcfgService.searchDefault(context) ;
         List<PSSystemDBCfgDTO> list = pssystemdbcfgMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

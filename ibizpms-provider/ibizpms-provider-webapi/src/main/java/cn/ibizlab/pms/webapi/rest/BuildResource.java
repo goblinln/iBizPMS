@@ -245,7 +245,7 @@ public class BuildResource {
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Bug产品版本", tags = {"版本" } ,notes = "获取Bug产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchbugproductbuild")
-	public ResponseEntity<List<BuildDTO>> fetchBugProductBuild(@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchbugproductbuild(@RequestBody BuildSearchContext context) {
         buildRuntime.addAuthorityConditions(context,"READ");
         Page<Build> domains = buildService.searchBugProductBuild(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
@@ -268,7 +268,7 @@ public class BuildResource {
 
 	@ApiOperation(value = "获取Bug产品或者项目版本", tags = {"版本" } ,notes = "获取Bug产品或者项目版本")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchbugproductorprojectbuild")
-	public ResponseEntity<List<BuildDTO>> fetchBugProductOrProjectBuild(@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchbugproductorprojectbuild(@RequestBody BuildSearchContext context) {
         Page<Build> domains = buildService.searchBugProductOrProjectBuild(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -289,7 +289,7 @@ public class BuildResource {
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品版本", tags = {"版本" } ,notes = "获取产品版本")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchcurproduct")
-	public ResponseEntity<List<BuildDTO>> fetchCurProduct(@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchcurproduct(@RequestBody BuildSearchContext context) {
         buildRuntime.addAuthorityConditions(context,"READ");
         Page<Build> domains = buildService.searchCurProduct(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
@@ -313,7 +313,7 @@ public class BuildResource {
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"版本" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchdefault")
-	public ResponseEntity<List<BuildDTO>> fetchDefault(@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchdefault(@RequestBody BuildSearchContext context) {
         buildRuntime.addAuthorityConditions(context,"READ");
         Page<Build> domains = buildService.searchDefault(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
@@ -336,7 +336,7 @@ public class BuildResource {
 
 	@ApiOperation(value = "获取测试版本", tags = {"版本" } ,notes = "获取测试版本")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchtestbuild")
-	public ResponseEntity<List<BuildDTO>> fetchTestBuild(@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchtestbuild(@RequestBody BuildSearchContext context) {
         Page<Build> domains = buildService.searchTestBuild(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -357,7 +357,7 @@ public class BuildResource {
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试轮次", tags = {"版本" } ,notes = "获取测试轮次")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchtestrounds")
-	public ResponseEntity<List<BuildDTO>> fetchTestRounds(@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchtestrounds(@RequestBody BuildSearchContext context) {
         buildRuntime.addAuthorityConditions(context,"READ");
         Page<Build> domains = buildService.searchTestRounds(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());
@@ -381,7 +381,7 @@ public class BuildResource {
     @PreAuthorize("@BuildRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取更新日志", tags = {"版本" } ,notes = "获取更新日志")
     @RequestMapping(method= RequestMethod.POST , value="/builds/fetchupdatelog")
-	public ResponseEntity<List<BuildDTO>> fetchUpdateLog(@RequestBody BuildSearchContext context) {
+	public ResponseEntity<List<BuildDTO>> fetchupdatelog(@RequestBody BuildSearchContext context) {
         buildRuntime.addAuthorityConditions(context,"READ");
         Page<Build> domains = buildService.searchUpdateLog(context) ;
         List<BuildDTO> list = buildMapping.toDto(domains.getContent());

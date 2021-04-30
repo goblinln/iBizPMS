@@ -138,7 +138,7 @@ public class UserContactResource {
 
 	@ApiOperation(value = "获取抄送联系人", tags = {"用户联系方式" } ,notes = "获取抄送联系人")
     @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchcurusercontact")
-	public ResponseEntity<List<UserContactDTO>> fetchCurUSERCONTACT(@RequestBody UserContactSearchContext context) {
+	public ResponseEntity<List<UserContactDTO>> fetchcurusercontact(@RequestBody UserContactSearchContext context) {
         Page<UserContact> domains = usercontactService.searchCurUSERCONTACT(context) ;
         List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -158,7 +158,7 @@ public class UserContactResource {
 
 	@ApiOperation(value = "获取DEFAULT", tags = {"用户联系方式" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchdefault")
-	public ResponseEntity<List<UserContactDTO>> fetchDefault(@RequestBody UserContactSearchContext context) {
+	public ResponseEntity<List<UserContactDTO>> fetchdefault(@RequestBody UserContactSearchContext context) {
         Page<UserContact> domains = usercontactService.searchDefault(context) ;
         List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -178,7 +178,7 @@ public class UserContactResource {
 
 	@ApiOperation(value = "获取我的联系人", tags = {"用户联系方式" } ,notes = "获取我的联系人")
     @RequestMapping(method= RequestMethod.POST , value="/usercontacts/fetchmyusercontact")
-	public ResponseEntity<List<UserContactDTO>> fetchMyUSERCONTACT(@RequestBody UserContactSearchContext context) {
+	public ResponseEntity<List<UserContactDTO>> fetchmyusercontact(@RequestBody UserContactSearchContext context) {
         Page<UserContact> domains = usercontactService.searchMyUSERCONTACT(context) ;
         List<UserContactDTO> list = usercontactMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

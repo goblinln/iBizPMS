@@ -169,7 +169,7 @@ public class SysUpdateLogResource {
 
 	@ApiOperation(value = "获取数据集", tags = {"更新日志" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysupdatelogs/fetchdefault")
-	public ResponseEntity<List<SysUpdateLogDTO>> fetchDefault(@RequestBody SysUpdateLogSearchContext context) {
+	public ResponseEntity<List<SysUpdateLogDTO>> fetchdefault(@RequestBody SysUpdateLogSearchContext context) {
         Page<SysUpdateLog> domains = sysupdatelogService.searchDefault(context) ;
         List<SysUpdateLogDTO> list = sysupdatelogMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

@@ -136,7 +136,7 @@ public class SysEmployeeResource {
 
 	@ApiOperation(value = "获取Bug用户", tags = {"人员" } ,notes = "获取Bug用户")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchbuguser")
-	public ResponseEntity<List<SysEmployeeDTO>> fetchBugUser(@RequestBody SysEmployeeSearchContext context) {
+	public ResponseEntity<List<SysEmployeeDTO>> fetchbuguser(@RequestBody SysEmployeeSearchContext context) {
         Page<SysEmployee> domains = sysemployeeService.searchBugUser(context) ;
         List<SysEmployeeDTO> list = sysemployeeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -156,7 +156,7 @@ public class SysEmployeeResource {
 
 	@ApiOperation(value = "获取联系人用户", tags = {"人员" } ,notes = "获取联系人用户")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchcontactlist")
-	public ResponseEntity<List<SysEmployeeDTO>> fetchContActList(@RequestBody SysEmployeeSearchContext context) {
+	public ResponseEntity<List<SysEmployeeDTO>> fetchcontactlist(@RequestBody SysEmployeeSearchContext context) {
         Page<SysEmployee> domains = sysemployeeService.searchContActList(context) ;
         List<SysEmployeeDTO> list = sysemployeeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -176,7 +176,7 @@ public class SysEmployeeResource {
 
 	@ApiOperation(value = "获取数据集", tags = {"人员" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchdefault")
-	public ResponseEntity<List<SysEmployeeDTO>> fetchDefault(@RequestBody SysEmployeeSearchContext context) {
+	public ResponseEntity<List<SysEmployeeDTO>> fetchdefault(@RequestBody SysEmployeeSearchContext context) {
         Page<SysEmployee> domains = sysemployeeService.searchDefault(context) ;
         List<SysEmployeeDTO> list = sysemployeeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -196,7 +196,7 @@ public class SysEmployeeResource {
 
 	@ApiOperation(value = "获取项目团队管理", tags = {"人员" } ,notes = "获取项目团队管理")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchproductteamm")
-	public ResponseEntity<List<SysEmployeeDTO>> fetchProductTeamM(@RequestBody SysEmployeeSearchContext context) {
+	public ResponseEntity<List<SysEmployeeDTO>> fetchproductteamm(@RequestBody SysEmployeeSearchContext context) {
         Page<SysEmployee> domains = sysemployeeService.searchProductTeamM(context) ;
         List<SysEmployeeDTO> list = sysemployeeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -216,7 +216,7 @@ public class SysEmployeeResource {
 
 	@ApiOperation(value = "获取项目团队管理", tags = {"人员" } ,notes = "获取项目团队管理")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchprojectteamm")
-	public ResponseEntity<List<SysEmployeeDTO>> fetchProjectTeamM(@RequestBody SysEmployeeSearchContext context) {
+	public ResponseEntity<List<SysEmployeeDTO>> fetchprojectteamm(@RequestBody SysEmployeeSearchContext context) {
         Page<SysEmployee> domains = sysemployeeService.searchProjectTeamM(context) ;
         List<SysEmployeeDTO> list = sysemployeeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -236,7 +236,7 @@ public class SysEmployeeResource {
 
 	@ApiOperation(value = "获取项目团队管理", tags = {"人员" } ,notes = "获取项目团队管理")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchprojectteammproduct")
-	public ResponseEntity<List<SysEmployeeDTO>> fetchProjectTeamMProduct(@RequestBody SysEmployeeSearchContext context) {
+	public ResponseEntity<List<SysEmployeeDTO>> fetchprojectteammproduct(@RequestBody SysEmployeeSearchContext context) {
         Page<SysEmployee> domains = sysemployeeService.searchProjectTeamMProduct(context) ;
         List<SysEmployeeDTO> list = sysemployeeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -256,7 +256,7 @@ public class SysEmployeeResource {
 
 	@ApiOperation(value = "获取项目团队成员(临时)", tags = {"人员" } ,notes = "获取项目团队成员(临时)")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchprojectteamtaskusertemp")
-	public ResponseEntity<List<SysEmployeeDTO>> fetchProjectTeamTaskUserTemp(@RequestBody SysEmployeeSearchContext context) {
+	public ResponseEntity<List<SysEmployeeDTO>> fetchprojectteamtaskusertemp(@RequestBody SysEmployeeSearchContext context) {
         Page<SysEmployee> domains = sysemployeeService.searchProjectTeamTaskUserTemp(context) ;
         List<SysEmployeeDTO> list = sysemployeeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -276,7 +276,7 @@ public class SysEmployeeResource {
 
 	@ApiOperation(value = "获取项目团队成员", tags = {"人员" } ,notes = "获取项目团队成员")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchprojectteamuser")
-	public ResponseEntity<List<SysEmployeeDTO>> fetchProjectTeamUser(@RequestBody SysEmployeeSearchContext context) {
+	public ResponseEntity<List<SysEmployeeDTO>> fetchprojectteamuser(@RequestBody SysEmployeeSearchContext context) {
         Page<SysEmployee> domains = sysemployeeService.searchProjectTeamUser(context) ;
         List<SysEmployeeDTO> list = sysemployeeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -296,7 +296,7 @@ public class SysEmployeeResource {
 
 	@ApiOperation(value = "获取项目团队成员", tags = {"人员" } ,notes = "获取项目团队成员")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchprojectteamusertask")
-	public ResponseEntity<List<SysEmployeeDTO>> fetchProjectTeamUserTask(@RequestBody SysEmployeeSearchContext context) {
+	public ResponseEntity<List<SysEmployeeDTO>> fetchprojectteamusertask(@RequestBody SysEmployeeSearchContext context) {
         Page<SysEmployee> domains = sysemployeeService.searchProjectTeamUserTask(context) ;
         List<SysEmployeeDTO> list = sysemployeeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -316,7 +316,7 @@ public class SysEmployeeResource {
 
 	@ApiOperation(value = "获取项目团队成员选择", tags = {"人员" } ,notes = "获取项目团队成员选择")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchprojectteampk")
-	public ResponseEntity<List<SysEmployeeDTO>> fetchProjectteamPk(@RequestBody SysEmployeeSearchContext context) {
+	public ResponseEntity<List<SysEmployeeDTO>> fetchprojectteampk(@RequestBody SysEmployeeSearchContext context) {
         Page<SysEmployee> domains = sysemployeeService.searchProjectteamPk(context) ;
         List<SysEmployeeDTO> list = sysemployeeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -336,7 +336,7 @@ public class SysEmployeeResource {
 
 	@ApiOperation(value = "获取产品团队成员选择", tags = {"人员" } ,notes = "获取产品团队成员选择")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchstoryproductteampk")
-	public ResponseEntity<List<SysEmployeeDTO>> fetchStoryProductTeamPK(@RequestBody SysEmployeeSearchContext context) {
+	public ResponseEntity<List<SysEmployeeDTO>> fetchstoryproductteampk(@RequestBody SysEmployeeSearchContext context) {
         Page<SysEmployee> domains = sysemployeeService.searchStoryProductTeamPK(context) ;
         List<SysEmployeeDTO> list = sysemployeeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -356,7 +356,7 @@ public class SysEmployeeResource {
 
 	@ApiOperation(value = "获取任务多人团队", tags = {"人员" } ,notes = "获取任务多人团队")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchtaskmteam")
-	public ResponseEntity<List<SysEmployeeDTO>> fetchTaskMTeam(@RequestBody SysEmployeeSearchContext context) {
+	public ResponseEntity<List<SysEmployeeDTO>> fetchtaskmteam(@RequestBody SysEmployeeSearchContext context) {
         Page<SysEmployee> domains = sysemployeeService.searchTaskMTeam(context) ;
         List<SysEmployeeDTO> list = sysemployeeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -376,7 +376,7 @@ public class SysEmployeeResource {
 
 	@ApiOperation(value = "获取数据查询2", tags = {"人员" } ,notes = "获取数据查询2")
     @RequestMapping(method= RequestMethod.POST , value="/sysemployees/fetchtaskteam")
-	public ResponseEntity<List<SysEmployeeDTO>> fetchTaskTeam(@RequestBody SysEmployeeSearchContext context) {
+	public ResponseEntity<List<SysEmployeeDTO>> fetchtaskteam(@RequestBody SysEmployeeSearchContext context) {
         Page<SysEmployee> domains = sysemployeeService.searchTaskTeam(context) ;
         List<SysEmployeeDTO> list = sysemployeeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

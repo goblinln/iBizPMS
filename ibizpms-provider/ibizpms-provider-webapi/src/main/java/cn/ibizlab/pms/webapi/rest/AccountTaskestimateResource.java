@@ -150,7 +150,7 @@ public class AccountTaskestimateResource {
     @PreAuthorize("@AccountTaskestimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取所有用户工时", tags = {"用户工时统计" } ,notes = "获取所有用户工时")
     @RequestMapping(method= RequestMethod.POST , value="/accounttaskestimates/fetchallaccountestimate")
-	public ResponseEntity<List<AccountTaskestimateDTO>> fetchAllAccountEstimate(@RequestBody AccountTaskestimateSearchContext context) {
+	public ResponseEntity<List<AccountTaskestimateDTO>> fetchallaccountestimate(@RequestBody AccountTaskestimateSearchContext context) {
         accounttaskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<AccountTaskestimate> domains = accounttaskestimateService.searchAllAccountEstimate(context) ;
         List<AccountTaskestimateDTO> list = accounttaskestimateMapping.toDto(domains.getContent());
@@ -174,7 +174,7 @@ public class AccountTaskestimateResource {
     @PreAuthorize("@AccountTaskestimateRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"用户工时统计" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/accounttaskestimates/fetchdefault")
-	public ResponseEntity<List<AccountTaskestimateDTO>> fetchDefault(@RequestBody AccountTaskestimateSearchContext context) {
+	public ResponseEntity<List<AccountTaskestimateDTO>> fetchdefault(@RequestBody AccountTaskestimateSearchContext context) {
         accounttaskestimateRuntime.addAuthorityConditions(context,"READ");
         Page<AccountTaskestimate> domains = accounttaskestimateService.searchDefault(context) ;
         List<AccountTaskestimateDTO> list = accounttaskestimateMapping.toDto(domains.getContent());

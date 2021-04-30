@@ -156,7 +156,7 @@ public class IbzCaseResource {
     @PreAuthorize("@IbzCaseRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试用例" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzcases/fetchdefault")
-	public ResponseEntity<List<IbzCaseDTO>> fetchDefault(@RequestBody IbzCaseSearchContext context) {
+	public ResponseEntity<List<IbzCaseDTO>> fetchdefault(@RequestBody IbzCaseSearchContext context) {
         ibzcaseRuntime.addAuthorityConditions(context,"READ");
         Page<IbzCase> domains = ibzcaseService.searchDefault(context) ;
         List<IbzCaseDTO> list = ibzcaseMapping.toDto(domains.getContent());

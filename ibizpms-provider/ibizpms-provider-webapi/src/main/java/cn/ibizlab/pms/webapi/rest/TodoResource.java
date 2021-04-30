@@ -283,7 +283,7 @@ public class TodoResource {
     @PreAuthorize("@TodoRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"待办" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/todos/fetchdefault")
-	public ResponseEntity<List<TodoDTO>> fetchDefault(@RequestBody TodoSearchContext context) {
+	public ResponseEntity<List<TodoDTO>> fetchdefault(@RequestBody TodoSearchContext context) {
         todoRuntime.addAuthorityConditions(context,"READ");
         Page<Todo> domains = todoService.searchDefault(context) ;
         List<TodoDTO> list = todoMapping.toDto(domains.getContent());
@@ -307,7 +307,7 @@ public class TodoResource {
     @PreAuthorize("@TodoRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的待办", tags = {"待办" } ,notes = "获取我的待办")
     @RequestMapping(method= RequestMethod.POST , value="/todos/fetchmytodo")
-	public ResponseEntity<List<TodoDTO>> fetchMyTodo(@RequestBody TodoSearchContext context) {
+	public ResponseEntity<List<TodoDTO>> fetchmytodo(@RequestBody TodoSearchContext context) {
         todoRuntime.addAuthorityConditions(context,"READ");
         Page<Todo> domains = todoService.searchMyTodo(context) ;
         List<TodoDTO> list = todoMapping.toDto(domains.getContent());
@@ -331,7 +331,7 @@ public class TodoResource {
     @PreAuthorize("@TodoRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取我的待办", tags = {"待办" } ,notes = "获取我的待办")
     @RequestMapping(method= RequestMethod.POST , value="/todos/fetchmytodopc")
-	public ResponseEntity<List<TodoDTO>> fetchMyTodoPc(@RequestBody TodoSearchContext context) {
+	public ResponseEntity<List<TodoDTO>> fetchmytodopc(@RequestBody TodoSearchContext context) {
         todoRuntime.addAuthorityConditions(context,"READ");
         Page<Todo> domains = todoService.searchMyTodoPc(context) ;
         List<TodoDTO> list = todoMapping.toDto(domains.getContent());
@@ -355,7 +355,7 @@ public class TodoResource {
     @PreAuthorize("@TodoRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取MyUpcoming", tags = {"待办" } ,notes = "获取MyUpcoming")
     @RequestMapping(method= RequestMethod.POST , value="/todos/fetchmyupcoming")
-	public ResponseEntity<List<TodoDTO>> fetchMyUpcoming(@RequestBody TodoSearchContext context) {
+	public ResponseEntity<List<TodoDTO>> fetchmyupcoming(@RequestBody TodoSearchContext context) {
         todoRuntime.addAuthorityConditions(context,"READ");
         Page<Todo> domains = todoService.searchMyUpcoming(context) ;
         List<TodoDTO> list = todoMapping.toDto(domains.getContent());

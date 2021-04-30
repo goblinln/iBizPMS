@@ -77,7 +77,7 @@ public class SubTaskResource {
     @PreAuthorize("@TaskRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取子任务", tags = {"任务" } ,notes = "获取子任务")
     @RequestMapping(method= RequestMethod.POST , value="/subtasks/fetchchildtask")
-	public ResponseEntity<List<SubTaskDTO>> fetchChildTask(@RequestBody TaskSearchContext context) {
+	public ResponseEntity<List<SubTaskDTO>> fetchchildtask(@RequestBody TaskSearchContext context) {
         Page<Task> domains = taskService.searchChildTask(context) ;
         List<SubTaskDTO> list = subtaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)

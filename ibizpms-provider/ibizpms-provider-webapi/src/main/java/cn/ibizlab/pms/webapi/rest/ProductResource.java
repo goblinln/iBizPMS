@@ -212,7 +212,7 @@ public class ProductResource {
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取全部产品", tags = {"产品" } ,notes = "获取全部产品")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchalllist")
-	public ResponseEntity<List<ProductDTO>> fetchAllList(@RequestBody ProductSearchContext context) {
+	public ResponseEntity<List<ProductDTO>> fetchalllist(@RequestBody ProductSearchContext context) {
         productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchAllList(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
@@ -236,7 +236,7 @@ public class ProductResource {
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取所有产品", tags = {"产品" } ,notes = "获取所有产品")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchallproduct")
-	public ResponseEntity<List<ProductDTO>> fetchAllProduct(@RequestBody ProductSearchContext context) {
+	public ResponseEntity<List<ProductDTO>> fetchallproduct(@RequestBody ProductSearchContext context) {
         productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchAllProduct(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
@@ -260,7 +260,7 @@ public class ProductResource {
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取校验产品名称或产品代号是否已经存在", tags = {"产品" } ,notes = "获取校验产品名称或产品代号是否已经存在")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchchecknameorcode")
-	public ResponseEntity<List<ProductDTO>> fetchCheckNameOrCode(@RequestBody ProductSearchContext context) {
+	public ResponseEntity<List<ProductDTO>> fetchchecknameorcode(@RequestBody ProductSearchContext context) {
         productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchCheckNameOrCode(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
@@ -284,7 +284,7 @@ public class ProductResource {
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取默认查询", tags = {"产品" } ,notes = "获取默认查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchcurdefault")
-	public ResponseEntity<List<ProductDTO>> fetchCurDefault(@RequestBody ProductSearchContext context) {
+	public ResponseEntity<List<ProductDTO>> fetchcurdefault(@RequestBody ProductSearchContext context) {
         productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchCurDefault(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
@@ -308,7 +308,7 @@ public class ProductResource {
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前项目", tags = {"产品" } ,notes = "获取当前项目")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchcurproject")
-	public ResponseEntity<List<ProductDTO>> fetchCurProject(@RequestBody ProductSearchContext context) {
+	public ResponseEntity<List<ProductDTO>> fetchcurproject(@RequestBody ProductSearchContext context) {
         productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchCurProject(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
@@ -332,7 +332,7 @@ public class ProductResource {
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前用户", tags = {"产品" } ,notes = "获取当前用户")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchcuruer")
-	public ResponseEntity<List<ProductDTO>> fetchCurUer(@RequestBody ProductSearchContext context) {
+	public ResponseEntity<List<ProductDTO>> fetchcuruer(@RequestBody ProductSearchContext context) {
         productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchCurUer(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
@@ -356,7 +356,7 @@ public class ProductResource {
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"产品" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchdefault")
-	public ResponseEntity<List<ProductDTO>> fetchDefault(@RequestBody ProductSearchContext context) {
+	public ResponseEntity<List<ProductDTO>> fetchdefault(@RequestBody ProductSearchContext context) {
         productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchDefault(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
@@ -380,7 +380,7 @@ public class ProductResource {
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取ES批量的导入", tags = {"产品" } ,notes = "获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchesbulk")
-	public ResponseEntity<List<ProductDTO>> fetchESBulk(@RequestBody ProductSearchContext context) {
+	public ResponseEntity<List<ProductDTO>> fetchesbulk(@RequestBody ProductSearchContext context) {
         productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchESBulk(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
@@ -404,7 +404,7 @@ public class ProductResource {
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取公开查询", tags = {"产品" } ,notes = "获取公开查询")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchopenquery")
-	public ResponseEntity<List<ProductDTO>> fetchOpenQuery(@RequestBody ProductSearchContext context) {
+	public ResponseEntity<List<ProductDTO>> fetchopenquery(@RequestBody ProductSearchContext context) {
         productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchOpenQuery(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
@@ -428,7 +428,7 @@ public class ProductResource {
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品负责人（启用权限）", tags = {"产品" } ,notes = "获取产品负责人（启用权限）")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchpoquery")
-	public ResponseEntity<List<ProductDTO>> fetchPOQuery(@RequestBody ProductSearchContext context) {
+	public ResponseEntity<List<ProductDTO>> fetchpoquery(@RequestBody ProductSearchContext context) {
         productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchPOQuery(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
@@ -452,7 +452,7 @@ public class ProductResource {
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品经理（启用权限）", tags = {"产品" } ,notes = "获取产品经理（启用权限）")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchproductmanagerquery")
-	public ResponseEntity<List<ProductDTO>> fetchProductManagerQuery(@RequestBody ProductSearchContext context) {
+	public ResponseEntity<List<ProductDTO>> fetchproductmanagerquery(@RequestBody ProductSearchContext context) {
         productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchProductManagerQuery(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
@@ -476,7 +476,7 @@ public class ProductResource {
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品总览", tags = {"产品" } ,notes = "获取产品总览")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchproductpm")
-	public ResponseEntity<List<ProductDTO>> fetchProductPM(@RequestBody ProductSearchContext context) {
+	public ResponseEntity<List<ProductDTO>> fetchproductpm(@RequestBody ProductSearchContext context) {
         productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchProductPM(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
@@ -500,7 +500,7 @@ public class ProductResource {
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品团队", tags = {"产品" } ,notes = "获取产品团队")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchproductteam")
-	public ResponseEntity<List<ProductDTO>> fetchProductTeam(@RequestBody ProductSearchContext context) {
+	public ResponseEntity<List<ProductDTO>> fetchproductteam(@RequestBody ProductSearchContext context) {
         productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchProductTeam(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
@@ -524,7 +524,7 @@ public class ProductResource {
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取测试负责人（启用权限）", tags = {"产品" } ,notes = "获取测试负责人（启用权限）")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchqdquery")
-	public ResponseEntity<List<ProductDTO>> fetchQDQuery(@RequestBody ProductSearchContext context) {
+	public ResponseEntity<List<ProductDTO>> fetchqdquery(@RequestBody ProductSearchContext context) {
         productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchQDQuery(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
@@ -548,7 +548,7 @@ public class ProductResource {
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取发布负责人（启用权限）", tags = {"产品" } ,notes = "获取发布负责人（启用权限）")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchrdquery")
-	public ResponseEntity<List<ProductDTO>> fetchRDQuery(@RequestBody ProductSearchContext context) {
+	public ResponseEntity<List<ProductDTO>> fetchrdquery(@RequestBody ProductSearchContext context) {
         productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchRDQuery(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());
@@ -572,7 +572,7 @@ public class ProductResource {
     @PreAuthorize("@ProductRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取当前项目", tags = {"产品" } ,notes = "获取当前项目")
     @RequestMapping(method= RequestMethod.POST , value="/products/fetchstorycurproject")
-	public ResponseEntity<List<ProductDTO>> fetchStoryCurProject(@RequestBody ProductSearchContext context) {
+	public ResponseEntity<List<ProductDTO>> fetchstorycurproject(@RequestBody ProductSearchContext context) {
         productRuntime.addAuthorityConditions(context,"READ");
         Page<Product> domains = productService.searchStoryCurProject(context) ;
         List<ProductDTO> list = productMapping.toDto(domains.getContent());

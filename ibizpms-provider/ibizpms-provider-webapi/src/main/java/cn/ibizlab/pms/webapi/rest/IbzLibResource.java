@@ -151,7 +151,7 @@ public class IbzLibResource {
     @PreAuthorize("@IbzLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"用例库" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/ibzlibs/fetchdefault")
-	public ResponseEntity<List<IbzLibDTO>> fetchDefault(@RequestBody IbzLibSearchContext context) {
+	public ResponseEntity<List<IbzLibDTO>> fetchdefault(@RequestBody IbzLibSearchContext context) {
         ibzlibRuntime.addAuthorityConditions(context,"READ");
         Page<IbzLib> domains = ibzlibService.searchDefault(context) ;
         List<IbzLibDTO> list = ibzlibMapping.toDto(domains.getContent());
