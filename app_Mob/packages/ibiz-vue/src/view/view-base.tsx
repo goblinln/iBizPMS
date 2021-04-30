@@ -851,11 +851,11 @@ export class ViewBase extends Vue {
      * @param {*} args
      * @memberof ViewBase
      */
-    public refresh(args?: any): void {
+    public async refresh(args?: any):Promise<any>  {
         const refs: any = this.$refs;
         const modelData: any = this.staticProps.modeldata;
         if (refs && modelData && modelData.xDataControlName && refs[modelData.xDataControlName]) {
-            refs[modelData.xDataControlName].refresh();
+            return refs[modelData.xDataControlName]?.ctrl.refresh();
         }
     }
 

@@ -171,7 +171,7 @@ export class MobAppMenuControlBase extends AppControlBase {
      */
     public computedEffectiveMenus(inputMenus: Array<any>) {
         inputMenus.forEach((_item: any) => {
-            if (!this.$store.getters['authresource/getAuthMenu'](_item)) {
+            if(!this.authService.getMenusPermission(_item)){
                 _item.hidden = true;
                 if (_item.items && _item.items.length > 0) {
                     this.computedEffectiveMenus(_item.items);

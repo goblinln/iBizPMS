@@ -458,9 +458,7 @@ export class MDViewBase extends MainViewBase {
      * @memberof ViewBase
      */
     public async pullDownToRefresh($event: any): Promise<any> {
-        setTimeout(() => {
-            $event.srcElement.complete();
-        }, 2000);
+        this.refresh();
     }
 
     /**

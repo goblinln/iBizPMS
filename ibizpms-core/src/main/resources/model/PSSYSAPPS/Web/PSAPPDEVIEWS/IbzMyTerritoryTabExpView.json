@@ -3473,7 +3473,7 @@
                           "name" : "DATE1",
                           "codeName" : "Date1"
                         },
-                        "width" : 70,
+                        "width" : 100,
                         "widthUnit" : "PX",
                         "enableSort" : false
                       }, {
@@ -3494,7 +3494,7 @@
                           "name" : "BEGIN",
                           "codeName" : "Begin"
                         },
-                        "width" : 60,
+                        "width" : 90,
                         "widthUnit" : "PX",
                         "enableSort" : false
                       }, {
