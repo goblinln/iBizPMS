@@ -76,7 +76,7 @@ export class AppDefaultMobListExpView extends MobListExpViewBase {
      * @memberof AppDefaultMobEditView
      */
      public activated() {
-        this.viewActived();
+        this.viewActivated();
     }
 
     /**
@@ -93,7 +93,6 @@ export class AppDefaultMobListExpView extends MobListExpViewBase {
                 props: { viewInstance: this.viewInstance }
             }, [
                 this.renderViewHeaderCaptionBar(),
-                this.renderPullDownRefresh(),
                 this.renderMainContent()
         ]);
     }

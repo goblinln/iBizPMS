@@ -67,7 +67,7 @@ export class AppDefaultMobTabExpView extends MobTabExpViewBase {
      * @memberof AppDefaultMobTabExpView
      */
      public activated() {
-        this.viewActived();
+        this.viewActivated();
     }
 
     /**

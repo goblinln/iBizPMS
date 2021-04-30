@@ -67,7 +67,7 @@ export class AppDefaultMobMdView extends MobMDViewBase {
      * @memberof AppDefaultMdView
      */
     public activated() {
-        this.viewActived();
+        this.viewActivated();
     }
     
     /**
@@ -86,7 +86,6 @@ export class AppDefaultMobMdView extends MobMDViewBase {
             this.renderViewHeaderCaptionBar(),
             this.renderViewHeaderButton(),
             this.renderSearchForm(),
-            this.renderPullDownRefresh(),
             this.renderQuickGroup(),
             this.renderQuickSearch(),
             this.renderViewContent(),

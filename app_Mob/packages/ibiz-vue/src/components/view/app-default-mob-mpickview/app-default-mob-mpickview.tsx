@@ -67,7 +67,7 @@ export class AppDefaultMobMPickUpView extends MobMPickUpViewBase {
      * @memberof AppDefaultMobMPickUpView
      */
      public activated() {
-        this.viewActived();
+        this.viewActivated();
     }
 
     /**

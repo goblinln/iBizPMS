@@ -67,7 +67,7 @@ export class AppDefaultMobPortalView extends MobPortalViewBase {
      * @memberof AppDefaultMobPortalView
      */
      public activated() {
-        this.viewActived();
+        this.viewActivated();
     }
 
     /**

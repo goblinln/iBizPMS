@@ -67,7 +67,7 @@ export class AppDefaultPickUpMDView extends MobPickUpMDViewBase {
      * @memberof AppDefaultPickUpMDView
      */
      public activated() {
-        this.viewActived();
+        this.viewActivated();
     }
 
     /**

@@ -67,7 +67,7 @@ export class AppDefaultMobTreeView extends MobTreeViewBase {
      * @memberof AppDefaultMobTreeView
      */
      public activated() {
-        this.viewActived();
+        this.viewActivated();
     }
 
     /**

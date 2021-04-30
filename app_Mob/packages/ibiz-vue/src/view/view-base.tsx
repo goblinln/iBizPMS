@@ -368,7 +368,7 @@ export class ViewBase extends Vue {
      *
      * @memberof ViewBase
      */
-    public viewActived() {
+    public viewActivated() {
         this.thirdPartyInit();
     }
 
@@ -949,41 +949,6 @@ export class ViewBase extends Vue {
      * @memberof ViewBase
      */
     public renderMainContent() { }
-
-    /**
-     * 渲染视图下拉刷新
-     * 
-     * @memberof ViewBase
-     */
-    public renderPullDownRefresh() {
-        return <ion-refresher
-            slot="fixed"
-            ref="loadmore"
-            pull-factor="0.5"
-            pull-min="50"
-            pull-max="100"
-            on-ionRefresh={this.pullDownToRefresh}>
-            <ion-refresher-content
-                pulling-icon="arrow-down-outline"
-                pulling-text={'app.pulling_text'}
-                refreshing-spinner="circles"
-                refreshing-text="">
-            </ion-refresher-content>
-        </ion-refresher>
-    }
-
-    /**
-     * 下拉刷新
-     *
-     * @param {*} $event
-     * @returns {Promise<any>}
-     * @memberof ViewBase
-     */
-    public async pullDownToRefresh($event: any): Promise<any> {
-        setTimeout(() => {
-            $event.srcElement.complete();
-        }, 2000);
-    }
 
     /**
      * 工具栏点击

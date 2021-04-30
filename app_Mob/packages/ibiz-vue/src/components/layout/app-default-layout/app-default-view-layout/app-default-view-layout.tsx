@@ -43,7 +43,6 @@ export class AppDefaultViewLayout extends Vue {
      */
     public renderViewContent() {
         return <ion-content ref="ionScroll">
-            {this.$slots.fixed}
             {this.$slots.default}
         </ion-content>
     }

@@ -97,6 +97,21 @@ export class MobMDViewBase extends MDViewBase {
      */
     public renderViewContent() {
         return <ion-content ref="ionScroll" slot="ioncontent" scroll-events={true} on-ionScroll={this.onScroll.bind(this)} on-ionScrollEnd={this.onScrollEnd.bind(this)}>
+            <ion-refresher
+            slot="fixed"
+            ref="loadmore"
+            pull-factor="0.5"
+            pull-min="50"
+            pull-max="100"
+            on-ionRefresh={this.pullDownToRefresh}>
+            <ion-refresher-content
+                pulling-icon="arrow-down-outline"
+                pulling-text={'app.pulling_text'}
+                refreshing-spinner="circles"
+                refreshing-text="">
+            </ion-refresher-content>
+        </ion-refresher>
+            {/* {this.renderPullDownRefresh()} */}
             {this.renderMainContent()}
         </ion-content>
     }

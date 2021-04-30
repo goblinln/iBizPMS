@@ -74,7 +74,7 @@ export class AppDefaultMobChartView extends MobChartViewBase {
      * @memberof AppDefaultMobCalendarView
      */
     public activated() {
-        this.viewActived();
+        this.viewActivated();
     }
 
     /**

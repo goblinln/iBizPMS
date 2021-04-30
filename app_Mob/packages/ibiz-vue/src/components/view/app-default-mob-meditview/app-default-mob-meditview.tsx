@@ -67,7 +67,7 @@ export class AppDefaultMobMeditView extends MobMeditViewBase {
      * @memberof AppDefaultMobEditView
      */
      public activated() {
-        this.viewActived();
+        this.viewActivated();
     }
 
     /**

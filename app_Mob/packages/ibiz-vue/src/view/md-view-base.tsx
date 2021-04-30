@@ -276,7 +276,7 @@ export class MDViewBase extends MainViewBase {
             quickSearchFields.forEach((field: IPSAppDEField, index: number) => {
                 const _field: IPSAppDEField | null | undefined = (this.viewInstance as IPSAppDEMultiDataView).getPSAppDataEntity()?.findPSAppDEField(field.codeName);
                 if (_field) {
-                    this.placeholder += (_field.logicName + (index === quickSearchFields.length-1 ? '' : ', '))
+                    this.placeholder += (_field.logicName + (index === quickSearchFields.length - 1 ? '' : ', '))
                 }
             })
         }
@@ -429,6 +429,41 @@ export class MDViewBase extends MainViewBase {
     }
 
     /**
+     * 渲染视图下拉刷新
+     * 
+     * @memberof ViewBase
+     */
+    public renderPullDownRefresh() {
+        return <ion-refresher
+            slot="fixed"
+            ref="loadmore"
+            pull-factor="0.5"
+            pull-min="50"
+            pull-max="100"
+            on-ionRefresh={this.pullDownToRefresh}>
+            <ion-refresher-content
+                pulling-icon="arrow-down-outline"
+                pulling-text={'app.pulling_text'}
+                refreshing-spinner="circles"
+                refreshing-text="">
+            </ion-refresher-content>
+        </ion-refresher>
+    }
+
+    /**
+     * 下拉刷新
+     *
+     * @param {*} $event
+     * @returns {Promise<any>}
+     * @memberof ViewBase
+     */
+    public async pullDownToRefresh($event: any): Promise<any> {
+        setTimeout(() => {
+            $event.srcElement.complete();
+        }, 2000);
+    }
+
+    /**
      * 渲染搜索表单
      * 
      * @memberof MDViewBase
@@ -437,7 +472,7 @@ export class MDViewBase extends MainViewBase {
         if (!this.searchFormInstance) {
             return;
         }
-        return <van-popup slot="searchForm" get-container="html" lazy-render={false} duration="0.2" v-model={this.searchformState} position="right" class="searchform" style="height: 100%; width: 85%;"  >
+        return <van-popup slot="searchForm" get-container="#app" lazy-render={false} duration="0.2" v-model={this.searchformState} position="right" class="searchform" style="height: 100%; width: 85%;"  >
             <ion-header>
                 <ion-toolbar translucent>
                     <ion-title>条件搜索</ion-title>
@@ -470,7 +505,7 @@ export class MDViewBase extends MainViewBase {
      * 搜索表单状态
      *
      * @type {get}
-     * @memberof ${srfclassname('${view.name}')}Base
+     * @memberof MDViewBase
      */
     get searchformState() {
         return this.$store.state.searchformStatus;
@@ -480,7 +515,7 @@ export class MDViewBase extends MainViewBase {
      * 搜索表单状态
      *
      * @type {set}
-     * @memberof ${srfclassname('${view.name}')}Base
+     * @memberof MDViewBase
      */
     set searchformState(val: any) {
         this.$store.commit('setSearchformStatus', val);
@@ -501,7 +536,7 @@ export class MDViewBase extends MainViewBase {
     /**
      * 执行搜索表单
      *
-     * @memberof ${srfclassname('${view.name}')}Base
+     * @memberof MDViewBase
      */
     public onSearch(): void {
         this.$store.commit('setSearchformStatus', false);
@@ -515,7 +550,7 @@ export class MDViewBase extends MainViewBase {
     /**
      * 重置搜索表单
      *
-     * @memberof ${srfclassname('${view.name}')}Base
+     * @memberof MDViewBase
      */
     public onReset(): void {
         this.$store.commit('setSearchformStatus', false);
@@ -570,13 +605,13 @@ export class MDViewBase extends MainViewBase {
             <div class="mdview-tools-select">
                 {listItems && listItems.map((item: IPSDEListItem) => {
                     // 列表项需要代码表，需要根据key去数据项中找到对应的然后去取代码表
-                    const dataItem = listDataItems?.find((dataItem:IPSDEListDataItem)=>{
-                      return dataItem.name == item.name.toLowerCase();
+                    const dataItem = listDataItems?.find((dataItem: IPSDEListDataItem) => {
+                        return dataItem.name == item.name.toLowerCase();
                     })
                     const codelist = dataItem?.getFrontPSCodeList?.() as IPSAppCodeList;
                     let items: Array<any> = [];
                     if (codelist && codelist?.getPSCodeItems?.()) {
-                        const codeItems =  codelist?.getPSCodeItems() as IPSCodeItem[];
+                        const codeItems = codelist?.getPSCodeItems() as IPSCodeItem[];
                         codeItems.forEach((codeitem: IPSCodeItem) => {
                             items.push({
                                 value: codeitem?.value,
@@ -622,61 +657,61 @@ export class MDViewBase extends MainViewBase {
      *
      * @memberof MDViewBase
      */
-     public isScrollStop = true;
+    public isScrollStop = true;
 
-     /**
-      * 是否应该显示返回顶部按钮
-      *
-      * @memberof MDViewBase
-      */
-     public isShouleBackTop = false;
- 
-     /**
-      * 返回顶部
-      *
-      * @memberof MDViewBase
-      */
-     public onScrollToTop() {
-         let ionScroll: any = this.$refs.ionScroll;
-         if (ionScroll && ionScroll.scrollToTop && Util.isFunction(ionScroll.scrollToTop)) {
-             ionScroll.scrollToTop(500);
-         }
-     }
- 
-     /**
-      * onScroll滚动结束事件
-      *
-      * @memberof MDViewBase
-      */
-     public onScrollEnd() {
-         this.isScrollStop = true;
-     }
- 
-     /**
-      * onScroll滚动事件
-      *
-      * @memberof MDViewBase
-      */
-     public async onScroll(e: any) {
-         this.isScrollStop = false;
-         if (e.detail.scrollTop > 600) {
-             this.isShouleBackTop = true;
-         } else {
-             this.isShouleBackTop = false;
-         }
-         // 多数据、选择多数据有额外逻辑scroll_block
-     }
- 
-     /**
-      * 绘制多数据置顶
-      * 
-      * @memberof MDViewBase
-      */
-     public renderScrollTool() {
-         return <div class="scroll_tool" slot="scrollTool">
-             {this.isShouleBackTop ? <div class="scrollToTop" on-click={this.onScrollToTop.bind(this)} style={{ right: this.isScrollStop ? '-18px' : '-70px' }} > <van-icon name="back-top" /></div> : null}
-         </div>
-     }
- 
+    /**
+     * 是否应该显示返回顶部按钮
+     *
+     * @memberof MDViewBase
+     */
+    public isShouleBackTop = false;
+
+    /**
+     * 返回顶部
+     *
+     * @memberof MDViewBase
+     */
+    public onScrollToTop() {
+        let ionScroll: any = this.$refs.ionScroll;
+        if (ionScroll && ionScroll.scrollToTop && Util.isFunction(ionScroll.scrollToTop)) {
+            ionScroll.scrollToTop(500);
+        }
+    }
+
+    /**
+     * onScroll滚动结束事件
+     *
+     * @memberof MDViewBase
+     */
+    public onScrollEnd() {
+        this.isScrollStop = true;
+    }
+
+    /**
+     * onScroll滚动事件
+     *
+     * @memberof MDViewBase
+     */
+    public async onScroll(e: any) {
+        this.isScrollStop = false;
+        if (e.detail.scrollTop > 600) {
+            this.isShouleBackTop = true;
+        } else {
+            this.isShouleBackTop = false;
+        }
+        // 多数据、选择多数据有额外逻辑scroll_block
+    }
+
+    /**
+     * 绘制多数据置顶
+     * 
+     * @memberof MDViewBase
+     */
+    public renderScrollTool() {
+        return <div class="scroll_tool" slot="scrollTool">
+            {this.isShouleBackTop ? <div class="scrollToTop" on-click={this.onScrollToTop.bind(this)} style={{ right: this.isScrollStop ? '-18px' : '-70px' }} > <van-icon name="back-top" /></div> : null}
+        </div>
+    }
+
 
 }

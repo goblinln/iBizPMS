@@ -74,7 +74,6 @@ export class AppDefaultMdView extends MobMDViewBase {
         return h(targetViewLayoutComponent, {
             props: { viewInstance: this.viewInstance }
         }, [
-            this.renderPullDownRefresh(),
             this.renderSearchForm(),
             this.renderMainContent()
         ]);

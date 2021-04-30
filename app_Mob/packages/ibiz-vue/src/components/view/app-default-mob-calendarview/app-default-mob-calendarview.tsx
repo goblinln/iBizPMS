@@ -68,7 +68,7 @@ export class AppDefaultMobCalendarView extends MobCalendarViewBase {
      * @memberof AppDefaultMobCalendarView
      */
     public activated() {
-        this.viewActived();
+        this.viewActivated();
     }
 
     /**

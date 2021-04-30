@@ -67,7 +67,7 @@ export class AppDefaultMobOptView extends MobOptViewBase {
      * @memberof AppDefaultMobOptView
      */
      public activated() {
-        this.viewActived();
+        this.viewActivated();
     }
     /**
      * 编辑视图渲染
