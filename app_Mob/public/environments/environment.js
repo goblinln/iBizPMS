@@ -9,11 +9,11 @@ window.Environment = {
     // 是否为开发模式
     devMode: true,
     // 是否为pc端应用
-    isAppMode:false,
+    isAppMode: false,
     // 是否开启权限认证
-    enablePermissionValid:false,
+    enablePermissionValid: false,
     // 打开目标工具，可选参数：sln、mos
-    debugOpenMode:'mos',
+    debugOpenMode: 'mos',
     // 配置平台地址
     StudioUrl: "http://172.16.170.145/mos/",
     // 中心标识
@@ -31,4 +31,6 @@ window.Environment = {
     // 是否启用动态
     bDynamic: false,
     remoteDynaPath: "/dynamic",
+    // 菜单权限模式，可选值：RT(RT模式),RESOURCE(资源模式),MINIX(混合模式),默认MINIX
+    menuPermissionMode: 'RESOURCE',
 }
