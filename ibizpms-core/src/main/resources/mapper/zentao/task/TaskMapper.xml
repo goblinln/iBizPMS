@@ -602,7 +602,7 @@
 			<![CDATA[ AND t1.deleted = '0' ]]>
 			</if>
 			<if test="true">
-			<![CDATA[ AND (t1.project = #{srf.webcontext.project} or t1.project = #{srf.webcontext.curproject}) ]]>
+			<![CDATA[ AND (t1.project = #{srf.webcontext.project} or t1.project = #{srf.webcontext.curproject} or t1.id= #{srf.webcontext.task}) ]]>
 			</if>
 			<include refid="searchMode" />
 		</trim>

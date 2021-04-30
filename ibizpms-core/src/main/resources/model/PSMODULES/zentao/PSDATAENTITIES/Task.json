@@ -539,7 +539,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "(t1.project = #{srf.webcontext.project} or t1.project = #{srf.webcontext.curproject})",
+        "customCond" : "(t1.project = #{srf.webcontext.project} or t1.project = #{srf.webcontext.curproject} or t1.id= #{srf.webcontext.task})",
         "name" : "查询条件"
       } ]
     } ],

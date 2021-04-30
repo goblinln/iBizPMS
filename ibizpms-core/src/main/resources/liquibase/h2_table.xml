@@ -115,7 +115,7 @@
 
 
     <!--输出实体[ZT_BUG]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_bug-17-5">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_bug-19-5">
         <createTable tableName="zt_bug">
                 <column name="SEVERITY" remarks="" type="INT">
                 </column>
@@ -1624,7 +1624,7 @@
 
 
     <!--输出实体[IBZ_MONTHLY]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibz_monthly-1-54">
+    <changeSet author="a_A_23e8aa361" id="tab-ibz_monthly-2-54">
         <createTable tableName="T_IBZ_MONTHLY">
                 <column name="CREATEMAN" remarks="" type="VARCHAR(60)">
                 </column>
