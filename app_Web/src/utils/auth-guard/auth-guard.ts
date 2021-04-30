@@ -5,6 +5,7 @@ import { AppCenterService, ErrorUtil } from 'ibiz-vue';
 import { Environment } from '@/environments/environment';
 import { DynamicInstanceConfig } from '@ibiz/dynamic-model-api';
 import i18n from '@/locale';
+import { SyncSeriesHook } from 'qx-util';
 
 /**
  * AuthGuard net 对象
@@ -13,12 +14,26 @@ import i18n from '@/locale';
  * @class Http
  */
 export class AuthGuard {
+
+
+    /**
+     * 执行钩子(包含获取租户前、获取租户后、获取应用数据前、获取应用数据后)
+     *
+     * @memberof AuthGuard
+     */
+    public static hooks = {
+        dcSystemBefore: new SyncSeriesHook<[], { dcsystem: string }>(),
+        dcSystemAfter: new SyncSeriesHook<[], { dcsystem: string, data: any }>(),
+        appBefore: new SyncSeriesHook<[], { url: string, param: any }>(),
+        appAfter: new SyncSeriesHook<[], { data: any }>()
+    };
+
     /**
      * 获取 Auth 单例对象
      *
      * @static
-     * @returns {Auth}
-     * @memberof Auth
+     * @returns {AuthGuard}
+     * @memberof AuthGuard
      */
     static getInstance(): AuthGuard {
         if (!AuthGuard.auth) {
@@ -98,12 +113,14 @@ export class AuthGuard {
                 }
             }
             if (tempViewParam.srfdcsystem) {
+                AuthGuard.hooks.dcSystemBefore.callSync({ dcsystem: tempViewParam.srfdcsystem });
                 setSessionStorage('dcsystem', tempViewParam);
                 let requestUrl: string = `/uaa/getbydcsystem/${tempViewParam.srfdcsystem}`;
                 const get: Promise<any> = Http.getInstance().get(requestUrl);
                 get.then((response: any) => {
                     if (response && response.status === 200) {
                         let { data }: { data: any } = response;
+                        AuthGuard.hooks.dcSystemAfter.callSync({ dcsystem: tempViewParam.srfdcsystem, data: data });
                         if (data && data.length > 0) {
                             setSessionStorage('orgsData', data);
                             setSessionStorage('activeOrgData', data[0]);
@@ -114,11 +131,11 @@ export class AuthGuard {
                     }
                 }).catch(() => {
                     resolve(false);
-                    this.doNoLogin(_router,"登录失败，请联系管理员");
+                    this.doNoLogin(_router, "登录失败，请联系管理员");
                 });
             } else {
                 resolve(false);
-                this.doNoLogin(_router,"登录失败，请联系管理员"); 
+                this.doNoLogin(_router, "登录失败，请联系管理员");
             }
         });
     }
@@ -135,10 +152,12 @@ export class AuthGuard {
     getAppData(url: string, _params: any = {}, router: any): Promise<boolean> {
         return new Promise((resolve: any) => {
             if (Environment.enableAppData) {
+                AuthGuard.hooks.appBefore.callSync({ url: url, param: _params });
                 const get: Promise<any> = Http.getInstance().get(url);
                 get.then((response: any) => {
                     if (response && response.status === 200) {
                         let { data }: { data: any } = response;
+                        AuthGuard.hooks.appAfter.callSync({ data: data });
                         if (data) {
                             // token认证把用户信息放入应用级数据
                             if (Util.getCookie('ibzuaa-user')) {
@@ -164,7 +183,7 @@ export class AuthGuard {
                     this.initAppService(router).then(() => resolve(true));
                 }).catch(() => {
                     this.initAppService(router).then(() => resolve(true));
-                    this.doNoLogin(router,"登录失败，请联系管理员");
+                    this.doNoLogin(router, "登录失败，请联系管理员");
                 });
             } else {
                 this.initAppService(router).then(() => resolve(true));
@@ -229,18 +248,8 @@ export class AuthGuard {
      *
      * @memberof AuthGuard
      */
-    public doNoLogin(router: any,message:string) {
-        // 清除user、token和cookie
-        if (localStorage.getItem('user')) {
-            localStorage.removeItem('user');
-        }
-        if (localStorage.getItem('token')) {
-            localStorage.removeItem('token');
-        }
-        let leftTime = new Date();
-        leftTime.setTime(leftTime.getSeconds() - 1);
-        document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
-        document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();
+    public doNoLogin(router: any, message: string) {
+        this.clearAppData(router.app.$store);
         if (Environment.loginUrl) {
             window.location.href = `${Environment.loginUrl}?redirect=${router.currentRoute.fullPath}`;
         } else {
@@ -250,5 +259,23 @@ export class AuthGuard {
             }
             router.push({ name: 'login', query: { redirect: router.currentRoute.fullPath } });
         }
+    }
+
+    /**
+     * 清除应用数据
+     *
+     * @private
+     * @memberof AuthGuard
+     */
+     private clearAppData(store:any) {
+        // 清除user、token
+        let leftTime = new Date();
+        leftTime.setTime(leftTime.getSeconds() - 1);
+        document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
+        document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();
+        // 清除应用级数据
+        localStorage.removeItem('localdata')
+        store.commit('addAppData', {});
+        store.dispatch('authresource/commitAuthData', {});
     }
 }

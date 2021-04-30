@@ -4,6 +4,7 @@ import i18n from '@/locale';
 import { Environment } from '@/environments/environment';
 import { Util, Http, getSessionStorage } from 'ibiz-core';
 import { AppLoadingService, nsc } from 'ibiz-vue';
+import { SyncSeriesHook } from 'qx-util';
 
 /**
  * 拦截器
@@ -71,6 +72,16 @@ export class Interceptors {
     }
 
     /**
+     * 执行钩子(请求、响应)
+     *
+     * @memberof Interceptors
+     */
+    public static hooks = {
+        request: new SyncSeriesHook<[], { config: any }>(),
+        response: new SyncSeriesHook<[], { response: any }>()
+    };
+
+    /**
      * 拦截器实现接口
      *
      * @private
@@ -78,6 +89,7 @@ export class Interceptors {
      */
     private intercept(): void {
         Http.getHttp().interceptors.request.use((config: any) => {
+            Interceptors.hooks.request.callSync({ config: config });
             let appdata: any;
             if (this.router) {
                 appdata = this.store.getters.getAppData();
@@ -85,11 +97,11 @@ export class Interceptors {
             if (appdata && appdata.context) {
                 config.headers['srforgsectorid'] = appdata.context.srforgsectorid;
             }
-            if(Environment.SaaSMode){
+            if (Environment.SaaSMode) {
                 let activeOrgData = getSessionStorage('activeOrgData');
                 let tempOrgId = getSessionStorage("tempOrgId");
                 config.headers['srforgid'] = tempOrgId ? tempOrgId : activeOrgData?.orgid;
-                config.headers['srfsystemid'] =  activeOrgData?.systemid;
+                config.headers['srfsystemid'] = activeOrgData?.systemid;
             }
             if (Util.getCookie('ibzuaa-token')) {
                 config.headers['Authorization'] = `Bearer ${Util.getCookie('ibzuaa-token')}`;
@@ -114,6 +126,7 @@ export class Interceptors {
         });
 
         Http.getHttp().interceptors.response.use((response: any) => {
+            Interceptors.hooks.response.callSync({ response: response });
             if (response.headers && response.headers['refreshtoken'] && localStorage.getItem('token')) {
                 this.refreshToken(response);
             }
@@ -125,7 +138,7 @@ export class Interceptors {
         }, (error: any) => {
             // 关闭loading
             this.endLoading();
-            
+
             error = error ? error : { response: {} };
             let { response: res } = error;
             let { data: _data } = res;
@@ -163,17 +176,7 @@ export class Interceptors {
      * @memberof Interceptors
      */
     private doNoLogin(data: any = {}): void {
-        // 清除user、token和cookie
-        if (localStorage.getItem('user')) {
-            localStorage.removeItem('user');
-        }
-        if (localStorage.getItem('token')) {
-            localStorage.removeItem('token');
-        }
-        let leftTime = new Date();
-        leftTime.setTime(leftTime.getSeconds() - 1);
-        document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
-        document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();
+        this.clearAppData();
         if (Environment.loginUrl) {
             window.location.href = `${Environment.loginUrl}?redirect=${this.router.currentRoute.fullPath}`;
         } else {
@@ -182,6 +185,24 @@ export class Interceptors {
             }
             this.router.push({ name: 'login', query: { redirect: this.router.currentRoute.fullPath } });
         }
+    }
+
+    /**
+     * 清除应用数据
+     *
+     * @private
+     * @memberof Interceptors
+     */
+    private clearAppData() {
+        // 清除user、token
+        let leftTime = new Date();
+        leftTime.setTime(leftTime.getSeconds() - 1);
+        document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
+        document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();
+        // 清除应用级数据
+        localStorage.removeItem('localdata')
+        this.store.commit('addAppData', {});
+        this.store.dispatch('authresource/commitAuthData', {});
     }
 
     /**
@@ -216,7 +237,7 @@ export class Interceptors {
      * @private
      * @memberof Http
      */
-     private beginLoading(): void {
+    private beginLoading(): void {
         AppLoadingService.getInstance().beginLoading();
     }
 

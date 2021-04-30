@@ -97,16 +97,7 @@ export default class AppUser extends Vue {
         const get: Promise<any> = this.$http.get('/v7/logout');
         get.then((response:any) =>{
             if (response && response.status === 200) {
-                localStorage.removeItem('user');
-                localStorage.removeItem('token');
-                let leftTime = new Date();
-                leftTime.setTime(leftTime.getSeconds() - 1);
-                document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
-                document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();
-                removeSessionStorage("activeOrgData");
-                removeSessionStorage("tempOrgId");
-                removeSessionStorage("dcsystem");
-                removeSessionStorage("orgsData");
+                this.clearAppData();
                 if (Environment.loginUrl) {
                     window.location.href = `${Environment.loginUrl}`;
                 } else {
@@ -116,6 +107,29 @@ export default class AppUser extends Vue {
         }).catch((error: any) =>{
             console.error(error);
         })
+    }
+
+    /**
+     * 清除应用数据
+     *
+     * @private
+     * @memberof AppUser
+     */
+    private clearAppData() {
+        // 清除user、token
+        let leftTime = new Date();
+        leftTime.setTime(leftTime.getSeconds() - 1);
+        document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
+        document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();
+        // 清除应用级数据
+        localStorage.removeItem('localdata')
+        this.$store.commit('addAppData', {});
+        this.$store.dispatch('authresource/commitAuthData', {});
+        // 清除租户相关信息
+        removeSessionStorage("activeOrgData");
+        removeSessionStorage("tempOrgId");
+        removeSessionStorage("dcsystem");
+        removeSessionStorage("orgsData");
     }
 }
 </script>

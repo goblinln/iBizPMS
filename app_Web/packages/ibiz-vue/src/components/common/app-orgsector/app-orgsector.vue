@@ -199,7 +199,7 @@ export default class AppOrgSector extends Vue {
                           this.$store.commit('addLocalData', JSON.parse(localStorage.getItem('localdata') as string));
                       }
                       this.$store.commit('addAppData', data);
-                      // 提交统一资源数据
+                      // 提交权限数据
                       this.$store.dispatch('authresource/commitAuthData', data);
                       resolve(true);
                   }
