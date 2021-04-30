@@ -526,9 +526,9 @@ public class ProjectExService extends ProjectServiceImpl {
             JSONArray jsonArray = new JSONArray();
             for(ProjectProduct projectProduct : list) {
                 JSONObject jsonObject = new JSONObject();
-                jsonObject.put("products", projectProduct.getProduct());
-                jsonObject.put("plans", projectProduct.getPlan());
-                jsonObject.put("branchs", projectProduct.getBranch());
+                jsonObject.put("products", String.valueOf(projectProduct.getProduct() != null ? projectProduct.getProduct()  : 0L));
+                jsonObject.put("plans", String.valueOf(projectProduct.getPlan() != null ? projectProduct.getPlan() : 0L));
+                jsonObject.put("branchs", String.valueOf(projectProduct.getBranch() != null ? projectProduct.getBranch() : 0L));
                 jsonArray.add(jsonObject);
             }
             project.setSrfarray(jsonArray.toString());
