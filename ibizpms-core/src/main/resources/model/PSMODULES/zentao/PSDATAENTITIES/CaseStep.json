@@ -1169,6 +1169,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEUSERROLES/CaseStep_Maintain.json",
     "name" : "用例步骤维护",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -1203,6 +1204,7 @@
     "roleTag" : "CaseStep_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEUSERROLES/CaseStep_Manage.json",
     "name" : "用例步骤管理",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -1216,6 +1218,7 @@
     "roleTag" : "CaseStep_Manage",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/CaseStep/PSDEUSERROLES/CaseStep_Read.json",
     "name" : "用例步骤查看",
     "getPSDEUserRoleOPPrivs" : [ {

@@ -43,7 +43,7 @@
         "moment": "^2.29.1",
         "path-to-regexp": "^6.2.0",
         "qs": "^6.10.1",
-        "qx-util": "^0.0.6",
+        "qx-util": "^0.0.7",
         "rxjs": "^6.6.7",
         "tinymce": "5.7.1",
         "view-design": "4.4.0",

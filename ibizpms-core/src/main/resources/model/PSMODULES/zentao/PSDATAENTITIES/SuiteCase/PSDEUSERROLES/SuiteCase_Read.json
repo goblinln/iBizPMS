@@ -1,4 +1,5 @@
 {
+  "customCond" : "[ (1, '=', 1) ]",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDEUSERROLES/SuiteCase_Read.json",
   "name" : "套件用例查看",
   "getPSDEUserRoleOPPrivs" : [ {

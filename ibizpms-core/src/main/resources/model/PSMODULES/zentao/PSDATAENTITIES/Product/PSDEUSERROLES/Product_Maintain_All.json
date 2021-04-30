@@ -1,36 +1,36 @@
 {
-  "customCond" : "\n[ (1, '=', 1) ]",
-  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEUSERROLES/ProjectTeam_Maintain.json",
-  "name" : "项目团队维护",
+  "customCond" : "[ (1, '=', 1) ]",
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Maintain_All.json",
+  "name" : "产品维护（全部数据）",
   "getPSDEUserRoleOPPrivs" : [ {
     "dataAccessAction" : "DELETE",
-    "name" : "ProjectTeam_Maintain_DELETE",
+    "name" : "Prodect_Maintain_All_DELETE",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "DELETE"
     }
   }, {
     "dataAccessAction" : "READ",
-    "name" : "ProjectTeam_Maintain_READ",
+    "name" : "Prodect_Maintain_All_READ",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
     }
   }, {
     "dataAccessAction" : "UPDATE",
-    "name" : "ProjectTeam_Maintain_UPDATE",
+    "name" : "Prodect_Maintain_All_UPDATE",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "UPDATE"
     }
   }, {
     "dataAccessAction" : "CREATE",
-    "name" : "ProjectTeam_Maintain_CREATE",
+    "name" : "Prodect_Maintain_All_CREATE",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
     }
   } ],
-  "roleTag" : "ProjectTeam_Maintain",
+  "roleTag" : "Product_Maintain_All",
   "userDRAction" : "READ"
 }

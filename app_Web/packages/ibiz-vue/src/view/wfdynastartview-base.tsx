@@ -75,7 +75,7 @@ export class WFDynaStartViewBase extends MainViewBase {
      */
     public onClickOk(){
         let xData:any =(this.$refs.form as any).ctrl;
-        if(xData){
+        if(xData && xData.formValidateStatus()){
             let preFormData:any = xData.getData();
             let nextFormData:any = xData.transformData(preFormData);
             Object.assign(preFormData,nextFormData);

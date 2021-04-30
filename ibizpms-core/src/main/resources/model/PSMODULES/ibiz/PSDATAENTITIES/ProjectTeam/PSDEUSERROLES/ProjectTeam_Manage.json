@@ -1,4 +1,5 @@
 {
+  "customCond" : "\n[ (1, '=', 1) ]",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEUSERROLES/ProjectTeam_Manage.json",
   "name" : "项目团队管理",
   "getPSDEUserRoleOPPrivs" : [ {

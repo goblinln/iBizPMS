@@ -308,6 +308,11 @@
        }
         ,
        {
+            "unirescode":"BOTTOM_PRODUCTTEST_MENU",
+            "uniresname":"底部_测试资源_移动端"
+       }
+        ,
+       {
             "unirescode":"REPORTLY_EDIT_BUT",
             "uniresname":"汇报编辑"
        }
@@ -425,6 +430,11 @@
        {
             "unirescode":"BUG_CREATECASE_BUT",
             "uniresname":"Bug建用例"
+       }
+        ,
+       {
+            "unirescode":"BOTTOM_PROJECT_MENU",
+            "uniresname":"底部_项目资源_移动端"
        }
         ,
        {
@@ -598,6 +608,11 @@
        }
         ,
        {
+            "unirescode":"BOTTOM_PRODUCT_MENU",
+            "uniresname":"底部_产品资源_移动端"
+       }
+        ,
+       {
             "unirescode":"DOCLIBMODULE_NFAVOUR_BUT",
             "uniresname":"取消收藏文档库分类"
        }
@@ -625,6 +640,11 @@
        {
             "unirescode":"CASE_RUN_BUT",
             "uniresname":"测试用例执行"
+       }
+        ,
+       {
+            "unirescode":"BOTTOM_MY_MENU",
+            "uniresname":"底部_我的资源_移动端"
        }
         ,
        {

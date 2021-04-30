@@ -1,4 +1,5 @@
 {
+  "customCond" : "[ (1, '=', 1) ]",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEUSERROLES/Burn_Read.json",
   "name" : "燃尽图查看",
   "getPSDEUserRoleOPPrivs" : [ {

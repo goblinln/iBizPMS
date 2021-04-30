@@ -965,6 +965,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Team/PSDEUSERROLES/Team_Maintain.json",
     "name" : "团队维护",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -999,6 +1000,7 @@
     "roleTag" : "Team_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Team/PSDEUSERROLES/Team_Read.json",
     "name" : "团队查看",
     "getPSDEUserRoleOPPrivs" : [ {

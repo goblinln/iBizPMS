@@ -841,6 +841,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDEUSERROLES/TestRun_Maintain.json",
     "name" : "测试运行维护",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -875,6 +876,7 @@
     "roleTag" : "TestRun_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDEUSERROLES/TestRun_Read.json",
     "name" : "测试运行查看",
     "getPSDEUserRoleOPPrivs" : [ {

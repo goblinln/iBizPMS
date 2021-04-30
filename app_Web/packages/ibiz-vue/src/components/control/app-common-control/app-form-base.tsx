@@ -335,7 +335,7 @@ export class AppFormBase extends EditFormControlBase {
             <app-form-druipart
                 class={modelJson.getPSSysCss()?.cssName}
                 formState={this.formState}
-                isForbidLoad={this.data?.srfuf === '0'}
+                isForbidLoad={ this.data?.hasOwnProperty('druipartload') ? false : this.data?.srfuf === '0'}
                 paramItem={appDataEntity?.codeName?.toLowerCase()}
                 parentdata={parentDataJO || undefined}
                 parameters={Util.formatAppDERSPath(this.context, appDERSPaths)}

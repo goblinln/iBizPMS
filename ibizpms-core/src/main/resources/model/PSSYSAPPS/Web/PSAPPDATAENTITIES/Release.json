@@ -1140,6 +1140,13 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/LinkBug.json"
       },
       "allowMode" : true
+    }, {
+      "name" : "MobReleaseCounter",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/MobReleaseCounter.json"
+      },
+      "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__RELEASE_ACTIVE",

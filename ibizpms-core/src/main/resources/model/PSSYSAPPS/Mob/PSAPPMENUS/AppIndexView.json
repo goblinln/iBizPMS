@@ -4,7 +4,8 @@
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPMENUS/AppIndexView.json",
   "logicName" : "应用首页视图默认菜单",
   "getPSAppMenuItems" : [ {
-    "accUserMode" : 2,
+    "accUserMode" : 4,
+    "accessKey" : "BOTTOM_PRODUCT_MENU",
     "caption" : "产品",
     "itemType" : "MENUITEM",
     "name" : "menuitem1",
@@ -17,7 +18,8 @@
     },
     "tooltip" : "产品"
   }, {
-    "accUserMode" : 2,
+    "accUserMode" : 4,
+    "accessKey" : "BOTTOM_PROJECT_MENU",
     "caption" : "项目",
     "itemType" : "MENUITEM",
     "name" : "menuitem2",
@@ -30,7 +32,8 @@
     },
     "tooltip" : "项目"
   }, {
-    "accUserMode" : 2,
+    "accUserMode" : 4,
+    "accessKey" : "BOTTOM_PRODUCTTEST_MENU",
     "caption" : "测试",
     "itemType" : "MENUITEM",
     "name" : "menuitem3",
@@ -43,7 +46,8 @@
     },
     "tooltip" : "测试"
   }, {
-    "accUserMode" : 0,
+    "accUserMode" : 4,
+    "accessKey" : "BOTTOM_MY_MENU",
     "caption" : "我的",
     "itemType" : "MENUITEM",
     "name" : "menuitem4",

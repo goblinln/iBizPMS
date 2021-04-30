@@ -2113,6 +2113,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEUSERROLES/TestTask_Maintain.json",
     "name" : "测试单维护",
     "getPSDEUserRoleOPPrivs" : [ {

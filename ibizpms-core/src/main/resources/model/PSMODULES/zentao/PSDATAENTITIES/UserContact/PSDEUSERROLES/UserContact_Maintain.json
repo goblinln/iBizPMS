@@ -1,4 +1,5 @@
 {
+  "customCond" : "[ (1, '=', 1) ]",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserContact/PSDEUSERROLES/UserContact_Maintain.json",
   "name" : "用户联系人维护",
   "getPSDEUserRoleOPPrivs" : [ {

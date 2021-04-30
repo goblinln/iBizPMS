@@ -1,4 +1,5 @@
 {
+  "customCond" : "[ (1, '=', 1) ]",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/History/PSDEUSERROLES/History_Maintain.json",
   "name" : "操作历史维护",
   "getPSDEUserRoleOPPrivs" : [ {

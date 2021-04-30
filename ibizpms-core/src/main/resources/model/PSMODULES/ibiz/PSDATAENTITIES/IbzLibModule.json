@@ -1172,6 +1172,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule/PSDEUSERROLES/LibModule_Maintain.json",
     "name" : "用例库模块维护",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -1206,6 +1207,7 @@
     "roleTag" : "LibModule_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule/PSDEUSERROLES/LibModule_Manage.json",
     "name" : "用例库模块管理",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -1219,6 +1221,7 @@
     "roleTag" : "LibModule_Manage",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzLibModule/PSDEUSERROLES/LibModule_Read.json",
     "name" : "用例库模块查看",
     "getPSDEUserRoleOPPrivs" : [ {

@@ -788,6 +788,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEUSERROLES/Burn_Maintain.json",
     "name" : "燃尽图维护",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -822,6 +823,7 @@
     "roleTag" : "Burn_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDEUSERROLES/Burn_Read.json",
     "name" : "燃尽图查看",
     "getPSDEUserRoleOPPrivs" : [ {

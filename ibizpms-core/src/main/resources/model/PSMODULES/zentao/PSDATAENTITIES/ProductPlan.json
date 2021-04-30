@@ -2861,6 +2861,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEUSERROLES/ProductPlan_Maintain.json",
     "name" : "产品计划维护",
     "getPSDEUserRoleOPPrivs" : [ {

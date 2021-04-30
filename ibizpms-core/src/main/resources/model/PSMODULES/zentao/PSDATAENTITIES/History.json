@@ -703,6 +703,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/History/PSDEUSERROLES/History_Maintain.json",
     "name" : "操作历史维护",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -737,6 +738,7 @@
     "roleTag" : "History_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/History/PSDEUSERROLES/History_Read.json",
     "name" : "操作历史查看",
     "getPSDEUserRoleOPPrivs" : [ {

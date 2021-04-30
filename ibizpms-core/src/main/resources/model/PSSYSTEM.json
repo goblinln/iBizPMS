@@ -1808,6 +1808,10 @@
     "resCode" : "STORY_UNLP_BUT",
     "id" : "ibiz__STORY_UNLP_BUT"
   }, {
+    "name" : "底部_测试资源_移动端",
+    "resCode" : "BOTTOM_PRODUCTTEST_MENU",
+    "id" : "BOTTOM_PRODUCTTEST_MENU"
+  }, {
     "name" : "汇报编辑",
     "resCode" : "REPORTLY_EDIT_BUT",
     "id" : "report__REPORTLY_EDIT_BUT"
@@ -1903,6 +1907,10 @@
     "name" : "Bug建用例",
     "resCode" : "BUG_CREATECASE_BUT",
     "id" : "ibiz__BUG_CREATECASE_BUT"
+  }, {
+    "name" : "底部_项目资源_移动端",
+    "resCode" : "BOTTOM_PROJECT_MENU",
+    "id" : "BOTTOM_PROJECT_MENU"
   }, {
     "name" : "发布操作列（激活）",
     "resCode" : "RELEASE_ACTIVE",
@@ -2040,6 +2048,10 @@
     "resCode" : "BUG_TOSTORY_BUT",
     "id" : "ibiz__BUG_TOSTORY_BUT"
   }, {
+    "name" : "底部_产品资源_移动端",
+    "resCode" : "BOTTOM_PRODUCT_MENU",
+    "id" : "BOTTOM_PRODUCT_MENU"
+  }, {
     "name" : "取消收藏文档库分类",
     "resCode" : "DOCLIBMODULE_NFAVOUR_BUT",
     "id" : "ibiz__DOCLIBMODULE_NFAVOUR_BUT"
@@ -2063,6 +2075,10 @@
     "name" : "测试用例执行",
     "resCode" : "CASE_RUN_BUT",
     "id" : "ibiz__CASE_RUN_BUT"
+  }, {
+    "name" : "底部_我的资源_移动端",
+    "resCode" : "BOTTOM_MY_MENU",
+    "id" : "BOTTOM_MY_MENU"
   }, {
     "name" : "需求变更",
     "resCode" : "STORY_CHANGED_BUT",

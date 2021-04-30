@@ -4016,7 +4016,7 @@
   } ],
   "getAllPSDEUserRoles" : [ {
     "customCond" : "[ (1, '=', 1) ]",
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Prodect_Maintain_All.json",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Maintain_All.json",
     "name" : "产品维护（全部数据）",
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "DELETE",
@@ -4047,21 +4047,7 @@
         "id" : "CREATE"
       }
     } ],
-    "roleTag" : "Prodect_Maintain_All",
-    "userDRAction" : "READ"
-  }, {
-    "customCond" : "[ (1, '=', 1) ]",
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Prodect_Read_All.json",
-    "name" : "产品查看（全部数据）",
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "Prodect_Read_All_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    } ],
-    "roleTag" : "Prodect_Read_All",
+    "roleTag" : "Product_Maintain_All",
     "userDRAction" : "READ"
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Maintain_CO.json",
@@ -4392,6 +4378,20 @@
     "roleTag" : "Product_Manage_Open",
     "userDRAction" : "READ",
     "defaultMode" : true
+  }, {
+    "customCond" : "[ (1, '=', 1) ]",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_All.json",
+    "name" : "产品查看（全部数据）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "Prodect_Read_All_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "Product_Read_All",
+    "userDRAction" : "READ"
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_CO.json",
     "name" : "产品查看（当前机构）",

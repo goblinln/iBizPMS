@@ -1351,6 +1351,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "\n[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEUSERROLES/ProjectTeam_Maintain.json",
     "name" : "项目团队维护",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -1385,6 +1386,7 @@
     "roleTag" : "ProjectTeam_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "\n[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEUSERROLES/ProjectTeam_Manage.json",
     "name" : "项目团队管理",
     "getPSDEUserRoleOPPrivs" : [ {

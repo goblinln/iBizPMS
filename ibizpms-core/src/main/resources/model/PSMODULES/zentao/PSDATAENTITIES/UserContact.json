@@ -588,6 +588,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserContact/PSDEUSERROLES/UserContact_Maintain.json",
     "name" : "用户联系人维护",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -622,6 +623,7 @@
     "roleTag" : "UserContact_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserContact/PSDEUSERROLES/UserContact_Read.json",
     "name" : "用户联系人查看",
     "getPSDEUserRoleOPPrivs" : [ {

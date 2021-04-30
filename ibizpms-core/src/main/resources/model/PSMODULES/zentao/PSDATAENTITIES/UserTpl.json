@@ -686,6 +686,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEUSERROLES/UserTpl_Maintain.json",
     "name" : "模板维护",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -756,6 +757,7 @@
     "userDRAction" : "READ",
     "enableOrgDR" : true
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/UserTpl/PSDEUSERROLES/UserTpl_Read.json",
     "name" : "模板查看",
     "getPSDEUserRoleOPPrivs" : [ {

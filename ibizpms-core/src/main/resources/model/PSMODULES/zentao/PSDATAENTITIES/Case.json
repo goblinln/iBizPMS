@@ -14114,6 +14114,7 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEUSERROLES/Case_Maintain.json",
     "name" : "用例维护",
     "getPSDEUserRoleOPPrivs" : [ {

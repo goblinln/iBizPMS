@@ -844,7 +844,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "(t1.`id` in (select tt.`story` from zt_projectstory tt where tt.`project` = ${srfdatacontext('project','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')}) or ${srfdatacontext('project','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')} is null)",
+        "customCond" : "(t1.`id` in (select tt.`story` from zt_projectstory tt where tt.`project` = #{srf.datacontext.project})  or t1.id = #{srf.datacontext.story})",
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
