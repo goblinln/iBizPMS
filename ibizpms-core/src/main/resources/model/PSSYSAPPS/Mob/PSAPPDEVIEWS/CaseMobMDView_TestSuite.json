@@ -662,6 +662,13 @@
       },
       "name" : "lastrunresult"
     }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testcase__result.json"
+      },
+      "name" : "lastrunresult1"
+    }, {
       "dataType" : 9,
       "getFrontPSCodeList" : {
         "modelref" : true,
@@ -678,6 +685,9 @@
     }, {
       "dataType" : 25,
       "name" : "title"
+    }, {
+      "dataType" : 25,
+      "name" : "isfavorites"
     }, {
       "dataType" : 25,
       "getFrontPSCodeList" : {
