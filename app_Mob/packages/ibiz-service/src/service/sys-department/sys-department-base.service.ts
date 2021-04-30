@@ -152,6 +152,6 @@ export class SysDepartmentBaseService extends EntityBaseService<ISysDepartment> 
      * @memberof SysDepartmentService
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/sysdepartments/fetchdefault`, _data);
+        return this.http.get(`/sysdepartments/fetchdefault`, _data);
     }
 }
