@@ -6798,6 +6798,41 @@
     "name" : "UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Maintain_All.json",
+    "name" : "项目维护（全部数据）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "Project_Maintain_All_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "Project_Maintain_All_UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "Project_Maintain_All_DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    }, {
+      "dataAccessAction" : "CREATE",
+      "name" : "Project_Maintain_All_CREATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CREATE"
+      }
+    } ],
+    "roleTag" : "Project_Maintain_All",
+    "userDRAction" : "READ"
+  }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Maintain_CO.json",
     "name" : "项目维护（当前机构）",
     "orgDR" : 1,
@@ -7062,6 +7097,20 @@
     "roleTag" : "Project_Maintain_RD",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[ (1, '=', 1) ]",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Manage_All.json",
+    "name" : "项目管理（全部数据）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "MANAGE",
+      "name" : "Project_Manage_All_MANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "MANAGE"
+      }
+    } ],
+    "roleTag" : "Project_Manage_All",
+    "userDRAction" : "READ"
+  }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Manage_CO.json",
     "name" : "项目管理（当前机构）",
     "orgDR" : 1,
@@ -7094,6 +7143,20 @@
     "roleTag" : "Project_Manage_OpenBy",
     "userDRAction" : "READ",
     "defaultMode" : true
+  }, {
+    "customCond" : "[ (1, '=', 1) ]",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_All.json",
+    "name" : "项目查看（全部数据）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "Project_Read_All_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "Project_Read_All",
+    "userDRAction" : "READ"
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_CO.json",
     "name" : "项目查看（当前机构）",
