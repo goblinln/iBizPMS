@@ -3328,6 +3328,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "BugFavorites",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/BugFavorites.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "ReleaseLinkBugbyLeftBug",
       "getPSDEAction" : {
         "modelref" : true,

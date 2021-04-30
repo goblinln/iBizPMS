@@ -17171,7 +17171,7 @@
             "name" : "fetch",
             "getPSAppDEMethod" : {
               "modelref" : true,
-              "id" : "FetchCurUser"
+              "id" : "FetchCurDefaultQuery"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -18540,7 +18540,7 @@
             "name" : "fetch",
             "getPSAppDEMethod" : {
               "modelref" : true,
-              "id" : "FetchCurUer"
+              "id" : "FetchCurDefault"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
@@ -20814,7 +20814,7 @@
             "name" : "fetch",
             "getPSAppDEMethod" : {
               "modelref" : true,
-              "id" : "FetchCurUer"
+              "id" : "FetchCurDefault"
             },
             "getPSAppDataEntity" : {
               "modelref" : true,
