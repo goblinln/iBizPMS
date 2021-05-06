@@ -15,6 +15,7 @@ import appUserHeader from './components/user-header/user-header.vue'
 import appMobPicturePMS from './components/app-mob-picture-pms/app-mob-picture-pms.vue'
 import AppUpdateLogList from './components/app-update-log-list/app-update-log-list.vue'
 import AppPmsUpdateLogInfo from './components/app-pms-update-log-info/app-pms-update-log-info.vue'
+import AppUpdateLog from './components/app-update-log/app-update-log.vue'
 
 export const UserComponent = {
     install(v: any, opt: any) {
@@ -34,5 +35,6 @@ export const UserComponent = {
       v.component('app-mob-picture-pms', appMobPicturePMS);
       v.component('app-update-log-list', AppUpdateLogList);
       v.component('app-pms-update-log-info', AppPmsUpdateLogInfo);
+      v.component('app-update-log', AppUpdateLog);
     }
 };
