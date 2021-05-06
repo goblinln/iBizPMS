@@ -19463,8 +19463,8 @@
           }
         } ],
         "getPSSysPFPlugin" : {
-          "pluginType" : "EDITFORM_RENDER",
-          "pluginCode" : "meditCollapseArrow"
+          "pluginType" : "LIST_RENDER",
+          "pluginCode" : "mobUpdateLogList"
         },
         "pagingSize" : 1000,
         "getRemovePSControlAction" : {

@@ -121,7 +121,7 @@ export class AppComponentService {
         this.controlMap.set("NEW", 'app-chart-render-new');
         this.controlMap.set("mobReportList2", 'app-list-render-mob-report-list2');
         this.controlMap.set("", 'app-list-render-list-renderc8da12e867');
-        this.controlMap.set("meditCollapseArrow", 'app-editform-render-medit-collapse-arrow');
+        this.controlMap.set("mobUpdateLogList", 'app-list-render-mob-update-log-list');
         this.controlMap.set("mobDemandList2", 'app-list-itemrender-mob-demand-list2');
         this.controlMap.set("mobFileTree2", 'app-tree-render-mob-file-tree2');
         this.controlMap.set("mobAllDynamicList2", 'app-list-render-mob-all-dynamic-list2');

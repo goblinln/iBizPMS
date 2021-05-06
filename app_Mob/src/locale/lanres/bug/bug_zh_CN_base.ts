@@ -205,6 +205,7 @@ export default {
 			mailtopk: commonLogic.appcommonhandle("抄送给",null), 
 			comment: commonLogic.appcommonhandle("备注",null), 
 			project: commonLogic.appcommonhandle("所属项目",null), 
+			product: commonLogic.appcommonhandle("所属产品",null), 
 			id: commonLogic.appcommonhandle("Bug编号",null), 
 		},
 		uiactions: {
@@ -256,7 +257,6 @@ export default {
 			resolvedbuild: commonLogic.appcommonhandle("解决版本",null), 
 			resolveddate: commonLogic.appcommonhandle("解决日期",null), 
 			assignedto: commonLogic.appcommonhandle("指派给",null), 
-			project: commonLogic.appcommonhandle("所属项目",null), 
 			files: commonLogic.appcommonhandle("附件",null), 
 			comment: commonLogic.appcommonhandle("备注",null), 
 		},
