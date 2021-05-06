@@ -176,6 +176,23 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
         return new PageImpl<ProductPlan>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
+    @Override
+    public Page<ProductPlan> searchProductQuery(ProductPlanSearchContext context) {
+        context.setN_parent_ltandeq(0L);
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductPlan> pages=baseMapper.searchProductQuery(context.getPages(),context,context.getSelectCond());
+        for (ProductPlan productPlan : pages.getRecords()) {
+            if(productPlan.getParent() == 0L) {
+                continue;
+            }
+            ProductPlanSearchContext productPlanSearchContext = new ProductPlanSearchContext();
+            productPlanSearchContext.setSelectCond(context.getSelectCond().clone());
+            productPlanSearchContext.setN_parent_eq(productPlan.getId());
+            productPlanSearchContext.setN_parent_ltandeq(null);
+            productPlanSearchContext.setSort(context.getSort());
+            productPlan.set("items", this.searchChildPlan(productPlanSearchContext).getContent());
+        }
+        return new PageImpl<ProductPlan>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
 
     @Override
     @Transactional(rollbackFor = Exception.class)

@@ -23,8 +23,7 @@ public class StoryStageExService extends StoryStageServiceImpl {
     @Override
     public boolean create(StoryStage et) {
         et.setId(DigestUtils.md5DigestAsHex(String.format("%1$s__%2$s", et.getStory(), et.getBranch()).getBytes()));
-        // return super.create(et);
-        return true;
+        return super.create(et);
     }
 
 

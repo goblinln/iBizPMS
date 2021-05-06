@@ -23,8 +23,7 @@ public class StorySpecExService extends StorySpecServiceImpl {
     @Override
     public boolean create(StorySpec et) {
         et.setId(DigestUtils.md5DigestAsHex(String.format("%1$s__%2$s", et.getStory(), et.getVersion()).getBytes()));
-        // return super.create(et);
-        return true;
+        return super.create(et);
     }
 
 
