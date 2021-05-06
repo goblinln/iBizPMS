@@ -3646,32 +3646,6 @@
     "id" : "MobBuildLinkStory@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "caption" : "取消收藏",
-    "codeName" : "StoryNFavoritesMob",
-    "dataAccessAction" : "SRFUR__STORY_FAVOR_BUT",
-    "fullCodeName" : "Story_StoryNFavoritesMob",
-    "name" : "取消收藏（移动端）",
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "StoryNFavorites"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
-    },
-    "getPSSysImage" : {
-      "cssClass" : "star-half-outline"
-    },
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "BACKEND",
-    "uIActionTag" : "StoryNFavoritesMob",
-    "uIActionType" : "DEUIACTION",
-    "enableConfirm" : true,
-    "reloadData" : true,
-    "id" : "StoryNFavoritesMob@Story"
-  }, {
-    "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
     "codeName" : "OpenBaseInfoEditViewMob",
     "dataAccessAction" : "SRFUR__STORY_EDIT_BUT",
@@ -3698,6 +3672,32 @@
     "uIActionType" : "DEUIACTION",
     "reloadData" : true,
     "id" : "OpenBaseInfoEditViewMob@Story"
+  }, {
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "取消收藏",
+    "codeName" : "StoryNFavoritesMob",
+    "dataAccessAction" : "SRFUR__STORY_FAVOR_BUT",
+    "fullCodeName" : "Story_StoryNFavoritesMob",
+    "name" : "取消收藏（移动端）",
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "StoryNFavorites"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSSysImage" : {
+      "cssClass" : "star-half-outline"
+    },
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "StoryNFavoritesMob",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "reloadData" : true,
+    "id" : "StoryNFavoritesMob@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "移除关联",

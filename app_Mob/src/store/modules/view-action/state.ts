@@ -4,6 +4,24 @@
 export const viewstate: any = {
     appviews: [
         {
+            viewtag: '7f305e69fef591271653071c641ce82c',
+            viewmodule: 'Ungroup',
+            viewname: 'AppIndexView',
+            viewaction: '',
+            viewdatachange: false,
+            refviews: [
+                '0e7dfc85e620169defd80d3f4abbaae9',
+                '1b8475a617a67336720ec64b72c45ad5',
+                'fef4d4f067fe339a72b2ff7265ac3854',
+                '20185e9e81dbfc2382770db7d2a85ea8',
+                'fe3da0b3244df9edc5967b895d385b1e',
+                'ffd8cfab23c7ada71144ea25210ba5e3',
+                'c47f239e594f70b036aaa6a7e6ea56e2',
+                '064a8e203568a5929ea303ec7acb2945',
+                'd51cddc777fcf4f78f512f5b9e0538ea',
+            ],
+        },
+        {
             viewtag: '004e7d24fd2ead93b3b3836c70a05a23',
             viewmodule: 'ibiz',
             viewname: 'TaskTeamMobEditView9',
@@ -1595,24 +1613,6 @@ export const viewstate: any = {
                 '1e4e95416f6ad3614a107303d3fe1cd3',
                 'dd80bc5b2ebbb1fa5beb4c61b76ada0f',
                 '1c3ec51cec0f0610ade4f822908925aa',
-            ],
-        },
-        {
-            viewtag: '7f305e69fef591271653071c641ce82c',
-            viewmodule: 'Ungroup',
-            viewname: 'AppIndexView',
-            viewaction: '',
-            viewdatachange: false,
-            refviews: [
-                '0e7dfc85e620169defd80d3f4abbaae9',
-                '1b8475a617a67336720ec64b72c45ad5',
-                'fef4d4f067fe339a72b2ff7265ac3854',
-                '20185e9e81dbfc2382770db7d2a85ea8',
-                'fe3da0b3244df9edc5967b895d385b1e',
-                'ffd8cfab23c7ada71144ea25210ba5e3',
-                'c47f239e594f70b036aaa6a7e6ea56e2',
-                '064a8e203568a5929ea303ec7acb2945',
-                'd51cddc777fcf4f78f512f5b9e0538ea',
             ],
         },
         {

@@ -66,9 +66,13 @@ export default {
 			caption: commonLogic.appcommonhandle("日报",null),
 		},
 	},
-	mobdailyedit_form: {
+	dailyinfomob_form: {
 		details: {
 			group1: commonLogic.appcommonhandle("日报基本信息",null), 
+			druipart1: commonLogic.appcommonhandle("",null), 
+			grouppanel1: commonLogic.appcommonhandle("附件",null), 
+			druipart2: commonLogic.appcommonhandle("",null), 
+			grouppanel2: commonLogic.appcommonhandle("操作记录",null), 
 			formpage1: commonLogic.appcommonhandle("基本信息",null), 
 			srfupdatedate: commonLogic.appcommonhandle("更新时间",null), 
 			srforikey: commonLogic.appcommonhandle("",null), 
@@ -78,19 +82,16 @@ export default {
 			srfuf: commonLogic.appcommonhandle("",null), 
 			srfdeid: commonLogic.appcommonhandle("",null), 
 			srfsourcekey: commonLogic.appcommonhandle("",null), 
-			ibz_dailyname: commonLogic.appcommonhandle("日报名称",null), 
+			account: commonLogic.appcommonhandle("",null), 
+			ibzdailyname: commonLogic.appcommonhandle("日报名称",null), 
 			date: commonLogic.appcommonhandle("日期",null), 
-			todaytask: commonLogic.appcommonhandle("完成任务",null), 
 			worktoday: commonLogic.appcommonhandle("今日工作",null), 
-			tomorrowplanstask: commonLogic.appcommonhandle("明日计划任务",null), 
 			planstomorrow: commonLogic.appcommonhandle("明日计划",null), 
 			comment: commonLogic.appcommonhandle("其他事项",null), 
-			files: commonLogic.appcommonhandle("附件",null), 
 			reportto: commonLogic.appcommonhandle("汇报给",null), 
-			reporttopk: commonLogic.appcommonhandle("汇报给",null), 
 			mailto: commonLogic.appcommonhandle("抄送给",null), 
 			ibz_dailyid: commonLogic.appcommonhandle("日报标识",null), 
-			account: commonLogic.appcommonhandle("用户",null), 
+			todaytask: commonLogic.appcommonhandle("完成任务",null), 
 			issubmit: commonLogic.appcommonhandle("是否提交",null), 
 		},
 		uiactions: {
@@ -132,13 +133,9 @@ export default {
 		uiactions: {
 		},
 	},
-	dailyinfomob_form: {
+	mobdailyedit_form: {
 		details: {
 			group1: commonLogic.appcommonhandle("日报基本信息",null), 
-			druipart1: commonLogic.appcommonhandle("",null), 
-			grouppanel1: commonLogic.appcommonhandle("附件",null), 
-			druipart2: commonLogic.appcommonhandle("",null), 
-			grouppanel2: commonLogic.appcommonhandle("操作记录",null), 
 			formpage1: commonLogic.appcommonhandle("基本信息",null), 
 			srfupdatedate: commonLogic.appcommonhandle("更新时间",null), 
 			srforikey: commonLogic.appcommonhandle("",null), 
@@ -148,31 +145,30 @@ export default {
 			srfuf: commonLogic.appcommonhandle("",null), 
 			srfdeid: commonLogic.appcommonhandle("",null), 
 			srfsourcekey: commonLogic.appcommonhandle("",null), 
-			account: commonLogic.appcommonhandle("",null), 
-			ibzdailyname: commonLogic.appcommonhandle("日报名称",null), 
+			ibz_dailyname: commonLogic.appcommonhandle("日报名称",null), 
 			date: commonLogic.appcommonhandle("日期",null), 
+			todaytask: commonLogic.appcommonhandle("完成任务",null), 
 			worktoday: commonLogic.appcommonhandle("今日工作",null), 
+			tomorrowplanstask: commonLogic.appcommonhandle("明日计划任务",null), 
 			planstomorrow: commonLogic.appcommonhandle("明日计划",null), 
 			comment: commonLogic.appcommonhandle("其他事项",null), 
+			files: commonLogic.appcommonhandle("附件",null), 
 			reportto: commonLogic.appcommonhandle("汇报给",null), 
+			reporttopk: commonLogic.appcommonhandle("汇报给",null), 
 			mailto: commonLogic.appcommonhandle("抄送给",null), 
 			ibz_dailyid: commonLogic.appcommonhandle("日报标识",null), 
-			todaytask: commonLogic.appcommonhandle("完成任务",null), 
+			account: commonLogic.appcommonhandle("用户",null), 
 			issubmit: commonLogic.appcommonhandle("是否提交",null), 
 		},
 		uiactions: {
 		},
 	},
+	dailycompletetaskmobmdviewrighttoolbar_toolbar: {
+	},
 	dailymobeditviewrighttoolbar_toolbar: {
 		tbitem1: {
 			caption: commonLogic.appcommonhandle("保存",null),
 			tip: '保存',
-		},
-	},
-	dailymobmdviewrighttoolbar_toolbar: {
-		tbitem1: {
-			caption: commonLogic.appcommonhandle("新建",null),
-			tip: '新建',
 		},
 	},
 	mobeditviewrighttoolbar_toolbar: {
@@ -185,6 +181,10 @@ export default {
 			tip: '提交',
 		},
 	},
+	dailyplanstomorrowtaskmobmdviewrighttoolbar_toolbar: {
+	},
+	mydailymobtabexpviewrighttoolbar_toolbar: {
+	},
 	dailyinfomobeditviewrighttoolbar_toolbar: {
 		deuiaction1_mobedit: {
 			caption: commonLogic.appcommonhandle("编辑",null),
@@ -195,13 +195,9 @@ export default {
 			tip: '提交',
 		},
 	},
-	dailycompletetaskmobmdviewrighttoolbar_toolbar: {
-	},
-	dailyplanstomorrowtaskmobmdviewrighttoolbar_toolbar: {
-	},
 	dailymobtabexpviewrighttoolbar_toolbar: {
 	},
-	dailyreportsubmitmobmdviewrighttoolbar_toolbar: {
+	reportreceivedmobmdviewrighttoolbar_toolbar: {
 	},
 	dailycreatemobeditviewrighttoolbar_toolbar: {
 		tbitem1: {
@@ -209,12 +205,16 @@ export default {
 			tip: '保存',
 		},
 	},
-	reportreceivedmobmdviewrighttoolbar_toolbar: {
-	},
-	mydailymobtabexpviewrighttoolbar_toolbar: {
-	},
 	mymobmdviewrighttoolbar_toolbar: {
 		deuiaction1_mobcreate: {
+			caption: commonLogic.appcommonhandle("新建",null),
+			tip: '新建',
+		},
+	},
+	dailyreportsubmitmobmdviewrighttoolbar_toolbar: {
+	},
+	dailymobmdviewrighttoolbar_toolbar: {
+		tbitem1: {
 			caption: commonLogic.appcommonhandle("新建",null),
 			tip: '新建',
 		},

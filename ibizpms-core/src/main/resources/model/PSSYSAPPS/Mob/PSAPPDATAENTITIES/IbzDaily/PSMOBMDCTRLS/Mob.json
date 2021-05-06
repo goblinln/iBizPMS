@@ -255,48 +255,6 @@
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
   },
-  "getPSAppViewLogics" : [ {
-    "logicTrigger" : "CUSTOM",
-    "logicType" : "APPVIEWUIACTION",
-    "name" : "mdctrl_u33dbc9c_click",
-    "getPSAppViewUIAction" : {
-      "modelref" : true,
-      "id" : "移动端编辑"
-    }
-  }, {
-    "logicTrigger" : "CUSTOM",
-    "logicType" : "APPVIEWUIACTION",
-    "name" : "mdctrl_uaaa670d_click",
-    "getPSAppViewUIAction" : {
-      "modelref" : true,
-      "id" : "submit（移动端）"
-    }
-  } ],
-  "getPSAppViewUIActions" : [ {
-    "name" : "移动端编辑",
-    "getPSUIAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
-      },
-      "modelref" : true,
-      "id" : "MobEdit@IbzDaily"
-    },
-    "uIActionTarget" : "SINGLEKEY",
-    "xDataControlName" : "mdctrl"
-  }, {
-    "name" : "submit（移动端）",
-    "getPSUIAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
-      },
-      "modelref" : true,
-      "id" : "submitMob@IbzDaily"
-    },
-    "uIActionTarget" : "SINGLEKEY",
-    "xDataControlName" : "mdctrl"
-  } ],
   "getPSDEListDataItems" : [ {
     "dataType" : 5,
     "format" : "YYYY-MM-DD",
@@ -353,89 +311,6 @@
     "dataType" : 25,
     "name" : "srfmstag"
   } ],
-  "getPSDEUIActionGroup2" : {
-    "name" : "移动端编辑",
-    "getPSUIActionGroupDetails" : [ {
-      "detailType" : "DEUIACTION",
-      "name" : "u33dbc9c",
-      "getPSUIAction" : {
-        "actionTarget" : "SINGLEKEY",
-        "caption" : "编辑",
-        "codeName" : "MobEdit",
-        "dataAccessAction" : "SRFUR__DAILY_SUBMIT_BUT",
-        "getFrontPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzDailyDailyMobEditView.json",
-          "viewType" : "DEMOBEDITVIEW"
-        },
-        "frontProcessType" : "TOP",
-        "fullCodeName" : "IbzDaily_MobEdit",
-        "name" : "移动端编辑",
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
-        },
-        "getPSNavigateContexts" : [ {
-          "key" : "DATE",
-          "name" : "DATE",
-          "value" : "date",
-          "rawValue" : false
-        } ],
-        "getPSNavigateParams" : [ {
-          "key" : "date",
-          "name" : "date",
-          "value" : "date",
-          "rawValue" : false
-        } ],
-        "getPSSysImage" : {
-          "glyph" : "xf044@FontAwesome",
-          "cssClass" : "fa fa-edit"
-        },
-        "timeout" : 60000,
-        "uIActionMode" : "FRONT",
-        "uIActionTag" : "MobEdit",
-        "uIActionType" : "DEUIACTION",
-        "id" : "MobEdit@IbzDaily"
-      },
-      "addSeparator" : false,
-      "showCaption" : false,
-      "showIcon" : true
-    }, {
-      "detailType" : "DEUIACTION",
-      "name" : "uaaa670d",
-      "getPSUIAction" : {
-        "actionTarget" : "SINGLEKEY",
-        "caption" : "提交",
-        "codeName" : "submitMob",
-        "dataAccessAction" : "SRFUR__DAILY_SUBMIT_BUT",
-        "fullCodeName" : "IbzDaily_submitMob",
-        "name" : "submit（移动端）",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "Submit"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzDaily.json"
-        },
-        "getPSSysImage" : {
-          "glyph" : "xf00c@FontAwesome",
-          "cssClass" : "fa fa-check"
-        },
-        "refreshMode" : 1,
-        "timeout" : 60000,
-        "uIActionMode" : "BACKEND",
-        "uIActionTag" : "submitMob",
-        "uIActionType" : "DEUIACTION",
-        "enableConfirm" : true,
-        "reloadData" : true,
-        "id" : "submitMob@IbzDaily"
-      },
-      "addSeparator" : false,
-      "showCaption" : false,
-      "showIcon" : true
-    } ]
-  },
   "getPSSysPFPlugin" : {
     "pluginType" : "LIST_RENDER",
     "pluginCode" : "mobReportList2"

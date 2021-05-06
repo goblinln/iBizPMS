@@ -60,16 +60,12 @@ export default {
 			caption: commonLogic.appcommonhandle("周报",null),
 		},
 	},
-	mobwaitread_form: {
+	mobinfomain2_form: {
 		details: {
 			druipart1: commonLogic.appcommonhandle("",null), 
-			grouppanel1: commonLogic.appcommonhandle("完成的任务",null), 
+			grouppanel1: commonLogic.appcommonhandle("附件",null), 
 			druipart2: commonLogic.appcommonhandle("",null), 
-			grouppanel2: commonLogic.appcommonhandle("下周计划参与",null), 
-			druipart3: commonLogic.appcommonhandle("",null), 
-			grouppanel3: commonLogic.appcommonhandle("附件",null), 
-			druipart4: commonLogic.appcommonhandle("",null), 
-			grouppanel4: commonLogic.appcommonhandle("操作历史",null), 
+			grouppanel3: commonLogic.appcommonhandle("操作历史",null), 
 			group1: commonLogic.appcommonhandle("周报基本信息",null), 
 			formpage1: commonLogic.appcommonhandle("基本信息",null), 
 			srfupdatedate: commonLogic.appcommonhandle("更新时间",null), 
@@ -126,12 +122,16 @@ export default {
 		uiactions: {
 		},
 	},
-	mobinfomain2_form: {
+	mobwaitread_form: {
 		details: {
 			druipart1: commonLogic.appcommonhandle("",null), 
-			grouppanel1: commonLogic.appcommonhandle("附件",null), 
+			grouppanel1: commonLogic.appcommonhandle("完成的任务",null), 
 			druipart2: commonLogic.appcommonhandle("",null), 
-			grouppanel3: commonLogic.appcommonhandle("操作历史",null), 
+			grouppanel2: commonLogic.appcommonhandle("下周计划参与",null), 
+			druipart3: commonLogic.appcommonhandle("",null), 
+			grouppanel3: commonLogic.appcommonhandle("附件",null), 
+			druipart4: commonLogic.appcommonhandle("",null), 
+			grouppanel4: commonLogic.appcommonhandle("操作历史",null), 
 			group1: commonLogic.appcommonhandle("周报基本信息",null), 
 			formpage1: commonLogic.appcommonhandle("基本信息",null), 
 			srfupdatedate: commonLogic.appcommonhandle("更新时间",null), 
@@ -164,19 +164,7 @@ export default {
 			tip: '保存',
 		},
 	},
-	mobeditviewrighttoolbar_toolbar: {
-		deuiaction1_mobsubmit: {
-			caption: commonLogic.appcommonhandle("提交",null),
-			tip: '提交',
-		},
-		deuiaction1_mobedit1: {
-			caption: commonLogic.appcommonhandle("编辑",null),
-			tip: '编辑',
-		},
-	},
-	mobmdviewrighttoolbar_toolbar: {
-	},
-	usr2mobeditviewrighttoolbar_toolbar: {
+	mobeditviewmainreceivedrighttoolbar_toolbar: {
 		deuiaction1: {
 			caption: commonLogic.appcommonhandle("编辑",null),
 			tip: '编辑',
@@ -196,14 +184,16 @@ export default {
 			tip: '提交',
 		},
 	},
-	mobeditviewmainreceivedrighttoolbar_toolbar: {
-		deuiaction1: {
-			caption: commonLogic.appcommonhandle("编辑",null),
-			tip: '编辑',
-		},
-		deuiaction2: {
+	mobmdviewrighttoolbar_toolbar: {
+	},
+	mobeditviewrighttoolbar_toolbar: {
+		deuiaction1_mobsubmit: {
 			caption: commonLogic.appcommonhandle("提交",null),
 			tip: '提交',
+		},
+		deuiaction1_mobedit1: {
+			caption: commonLogic.appcommonhandle("编辑",null),
+			tip: '编辑',
 		},
 	},
 	mobeditviewcreaterighttoolbar_toolbar: {
@@ -216,6 +206,16 @@ export default {
 		deuiaction1: {
 			caption: commonLogic.appcommonhandle("新建",null),
 			tip: '新建',
+		},
+	},
+	usr2mobeditviewrighttoolbar_toolbar: {
+		deuiaction1: {
+			caption: commonLogic.appcommonhandle("编辑",null),
+			tip: '编辑',
+		},
+		deuiaction2: {
+			caption: commonLogic.appcommonhandle("提交",null),
+			tip: '提交',
 		},
 	},
 };

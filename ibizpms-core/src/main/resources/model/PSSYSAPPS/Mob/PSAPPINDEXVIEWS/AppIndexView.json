@@ -223,6 +223,10 @@
     "enableCustomize" : false,
     "modelid" : "f23beaed85fa4c2edc21e98e3b4711fc"
   } ],
+  "getPSSysPFPlugin" : {
+    "pluginType" : "VIEW_CUSTOM",
+    "pluginCode" : "UPDATELOGINDEXVIEW"
+  },
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
     "controlStyle" : "APPINDEXVIEW",
@@ -234,7 +238,7 @@
   },
   "subCaption" : "工作台",
   "title" : "iBiz软件生产管理",
-  "viewStyle" : "DEFAULT",
+  "viewStyle" : "UPDATELOG",
   "viewType" : "APPINDEXVIEW",
   "blankMode" : false,
   "defaultPage" : true,

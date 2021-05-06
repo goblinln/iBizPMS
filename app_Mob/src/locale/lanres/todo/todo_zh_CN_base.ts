@@ -60,6 +60,27 @@ export default {
 			caption: commonLogic.appcommonhandle("待办",null),
 		},
 	},
+	assmob_form: {
+		details: {
+			group1: commonLogic.appcommonhandle("指派给",null), 
+			formpage1: commonLogic.appcommonhandle("基本信息",null), 
+			srforikey: commonLogic.appcommonhandle("",null), 
+			srfkey: commonLogic.appcommonhandle("编号",null), 
+			srfmajortext: commonLogic.appcommonhandle("待办名称",null), 
+			srftempmode: commonLogic.appcommonhandle("",null), 
+			srfuf: commonLogic.appcommonhandle("",null), 
+			srfdeid: commonLogic.appcommonhandle("",null), 
+			srfsourcekey: commonLogic.appcommonhandle("",null), 
+			assignedto: commonLogic.appcommonhandle("指派给",null), 
+			assignedtopk: commonLogic.appcommonhandle("指派给",null), 
+			date: commonLogic.appcommonhandle("日期",null), 
+			begin: commonLogic.appcommonhandle("开始时间",null), 
+			end: commonLogic.appcommonhandle("结束时间",null), 
+			id: commonLogic.appcommonhandle("编号",null), 
+		},
+		uiactions: {
+		},
+	},
 	mobnew_form: {
 		details: {
 			group1: commonLogic.appcommonhandle("待办事宜表基本信息",null), 
@@ -99,27 +120,6 @@ export default {
 			formitem4: commonLogic.appcommonhandle("【多选】单位（仅含指定单位及其下级单位多选）",null), 
 			formitem5: commonLogic.appcommonhandle("【单选】单位（全部单位单选）",null), 
 			formitem6: commonLogic.appcommonhandle("【多选】单位（全部单位多选）",null), 
-			id: commonLogic.appcommonhandle("编号",null), 
-		},
-		uiactions: {
-		},
-	},
-	assmob_form: {
-		details: {
-			group1: commonLogic.appcommonhandle("指派给",null), 
-			formpage1: commonLogic.appcommonhandle("基本信息",null), 
-			srforikey: commonLogic.appcommonhandle("",null), 
-			srfkey: commonLogic.appcommonhandle("编号",null), 
-			srfmajortext: commonLogic.appcommonhandle("待办名称",null), 
-			srftempmode: commonLogic.appcommonhandle("",null), 
-			srfuf: commonLogic.appcommonhandle("",null), 
-			srfdeid: commonLogic.appcommonhandle("",null), 
-			srfsourcekey: commonLogic.appcommonhandle("",null), 
-			assignedto: commonLogic.appcommonhandle("指派给",null), 
-			assignedtopk: commonLogic.appcommonhandle("指派给",null), 
-			date: commonLogic.appcommonhandle("日期",null), 
-			begin: commonLogic.appcommonhandle("开始时间",null), 
-			end: commonLogic.appcommonhandle("结束时间",null), 
 			id: commonLogic.appcommonhandle("编号",null), 
 		},
 		uiactions: {
