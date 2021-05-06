@@ -29594,6 +29594,13 @@
           },
           "allowMode" : true
         }, {
+          "name" : "MobProjectCount",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/MobProjectCount.json"
+          },
+          "allowMode" : true
+        }, {
           "name" : "Get",
           "getPSDEAction" : {
             "modelref" : true,
@@ -29743,6 +29750,13 @@
           },
           "allowMode" : true
         }, {
+          "name" : "MobProjectCount",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/MobProjectCount.json"
+          },
+          "allowMode" : true
+        }, {
           "name" : "Activate",
           "getPSDEAction" : {
             "modelref" : true,
@@ -29864,6 +29878,13 @@
           },
           "allowMode" : true
         }, {
+          "name" : "MobProjectCount",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/MobProjectCount.json"
+          },
+          "allowMode" : true
+        }, {
           "name" : "LinkStory",
           "getPSDEAction" : {
             "modelref" : true,
@@ -29982,6 +30003,13 @@
           },
           "allowMode" : true
         }, {
+          "name" : "MobProjectCount",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/MobProjectCount.json"
+          },
+          "allowMode" : true
+        }, {
           "name" : "Remove",
           "getPSDEAction" : {
             "modelref" : true,
@@ -30093,6 +30121,13 @@
         "mSTag" : "suspended__0",
         "name" : "已挂起_未置顶",
         "getPSDEMainStateActions" : [ {
+          "name" : "MobProjectCount",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/MobProjectCount.json"
+          },
+          "allowMode" : true
+        }, {
           "name" : "projectTop",
           "getPSDEAction" : {
             "modelref" : true,
@@ -30230,6 +30265,13 @@
         "mSTag" : "suspended__1",
         "name" : "已挂起_已置顶",
         "getPSDEMainStateActions" : [ {
+          "name" : "MobProjectCount",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/MobProjectCount.json"
+          },
+          "allowMode" : true
+        }, {
           "name" : "LinkStory",
           "getPSDEAction" : {
             "modelref" : true,
@@ -30423,6 +30465,13 @@
           },
           "allowMode" : true
         }, {
+          "name" : "MobProjectCount",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/MobProjectCount.json"
+          },
+          "allowMode" : true
+        }, {
           "name" : "Remove",
           "getPSDEAction" : {
             "modelref" : true,
@@ -30540,6 +30589,13 @@
           "getPSDEAction" : {
             "modelref" : true,
             "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/ProjectTaskQCnt.json"
+          },
+          "allowMode" : true
+        }, {
+          "name" : "MobProjectCount",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/MobProjectCount.json"
           },
           "allowMode" : true
         }, {
