@@ -8,6 +8,10 @@ import java.util.List;
 public interface TestTaskDataImport {
     @Mappings({
         @Mapping(target = "id", source = "id"),
+        @Mapping(target = "project", source = "project"),
+        @Mapping(target = "end", source = "end"),
+        @Mapping(target = "desc", source = "desc"),
+        @Mapping(target = "mailto", source = "mailto"),
         @Mapping(target = "owner", source = "owner"),
         @Mapping(target = "deleted", source = "deleted"),
         @Mapping(target = "begin", source = "begin"),
@@ -15,18 +19,14 @@ public interface TestTaskDataImport {
         @Mapping(target = "buildname", source = "buildname"),
         @Mapping(target = "projecttname", source = "projecttname"),
         @Mapping(target = "comment", source = "comment"),
-        @Mapping(target = "auto", source = "auto"),
-        @Mapping(target = "status", source = "status"),
         @Mapping(target = "build", source = "build"),
         @Mapping(target = "product", source = "product"),
-        @Mapping(target = "pri", source = "pri"),
         @Mapping(target = "report", source = "report"),
-        @Mapping(target = "end", source = "end"),
-        @Mapping(target = "substatus", source = "substatus"),
+        @Mapping(target = "auto", source = "auto"),
         @Mapping(target = "productname", source = "productname"),
-        @Mapping(target = "desc", source = "desc"),
-        @Mapping(target = "project", source = "project"),
-        @Mapping(target = "mailto", source = "mailto"),
+        @Mapping(target = "status", source = "status"),
+        @Mapping(target = "substatus", source = "substatus"),
+        @Mapping(target = "pri", source = "pri"),
     })
     @BeanMapping(ignoreByDefault = true)
     TestTask toDomain(TestTask entity);
