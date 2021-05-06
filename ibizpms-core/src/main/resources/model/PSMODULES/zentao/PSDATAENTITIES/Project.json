@@ -518,6 +518,10 @@
         "condType" : "CUSTOM",
         "customCond" : "t1.DELETED = '0'",
         "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "t21.`account` =#{srf.sessioncontext.srfloginname}",
+        "name" : "查询条件"
       } ]
     } ],
     "codeName" : "MyProject",

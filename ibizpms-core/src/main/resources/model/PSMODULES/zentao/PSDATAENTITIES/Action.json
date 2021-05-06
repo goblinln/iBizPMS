@@ -3,6 +3,7 @@
     "actionMode" : "CREATE",
     "actionType" : "BUILTIN",
     "getBeforePSDEActionLogics" : [ {
+      "actionLogicType" : 1,
       "attachMode" : "BEFORE",
       "name" : "附加逻辑",
       "getPSDELogic" : {
