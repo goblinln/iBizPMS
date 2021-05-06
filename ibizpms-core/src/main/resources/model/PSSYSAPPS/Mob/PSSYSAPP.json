@@ -19760,7 +19760,7 @@
       "getPSAppViewNavContexts" : [ {
         "key" : "SYSEMPLOYEE",
         "name" : "SYSEMPLOYEE",
-        "value" : "srfuserid",
+        "value" : "srfusercode",
         "rawValue" : false
       } ],
       "getPSControls" : [ {

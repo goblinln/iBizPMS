@@ -54,7 +54,7 @@ export class Defaluturl extends EditorBase {
                 ...this.customProps,
             },
             on: {
-                change: this.handleChange,
+                formitemvaluechange: this.handleChange,
             },
             style: this.customStyle
         })
