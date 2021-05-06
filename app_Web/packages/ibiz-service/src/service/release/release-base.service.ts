@@ -427,13 +427,13 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
      * @returns {Promise<any>}
      * @memberof ReleaseServiceBase
      */
-    public async ActivateBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/releases/activatebatch`,tempData,isloading);
+    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/releases/activatebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/releases/activatebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/releases/activatebatch`,_data);
     }
 
     /**
@@ -445,13 +445,13 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
      * @returns {Promise<any>}
      * @memberof ReleaseServiceBase
      */
-    public async BatchUnlinkBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/releases/batchunlinkbugbatch`,tempData,isloading);
+    public async BatchUnlinkBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/releases/batchunlinkbugbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/releases/batchunlinkbugbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/releases/batchunlinkbugbatch`,_data);
     }
 
     /**
@@ -463,13 +463,13 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
      * @returns {Promise<any>}
      * @memberof ReleaseServiceBase
      */
-    public async ChangeStatusBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/releases/changestatusbatch`,tempData,isloading);
+    public async ChangeStatusBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/releases/changestatusbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/releases/changestatusbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/releases/changestatusbatch`,_data);
     }
 
     /**
@@ -481,13 +481,13 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
      * @returns {Promise<any>}
      * @memberof ReleaseServiceBase
      */
-    public async LinkBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/releases/linkbugbatch`,tempData,isloading);
+    public async LinkBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/releases/linkbugbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/releases/linkbugbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/releases/linkbugbatch`,_data);
     }
 
     /**
@@ -499,13 +499,13 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
      * @returns {Promise<any>}
      * @memberof ReleaseServiceBase
      */
-    public async LinkBugbyBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/releases/linkbugbybugbatch`,tempData,isloading);
+    public async LinkBugbyBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/releases/linkbugbybugbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/releases/linkbugbybugbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/releases/linkbugbybugbatch`,_data);
     }
 
     /**
@@ -517,13 +517,13 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
      * @returns {Promise<any>}
      * @memberof ReleaseServiceBase
      */
-    public async LinkBugbyLeftBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/releases/linkbugbyleftbugbatch`,tempData,isloading);
+    public async LinkBugbyLeftBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/releases/linkbugbyleftbugbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/releases/linkbugbyleftbugbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/releases/linkbugbyleftbugbatch`,_data);
     }
 
     /**
@@ -535,13 +535,13 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
      * @returns {Promise<any>}
      * @memberof ReleaseServiceBase
      */
-    public async LinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/releases/linkstorybatch`,tempData,isloading);
+    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/releases/linkstorybatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/releases/linkstorybatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/releases/linkstorybatch`,_data);
     }
 
     /**
@@ -553,13 +553,13 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
      * @returns {Promise<any>}
      * @memberof ReleaseServiceBase
      */
-    public async OneClickReleaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/releases/oneclickreleasebatch`,tempData,isloading);
+    public async OneClickReleaseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/releases/oneclickreleasebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/releases/oneclickreleasebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/releases/oneclickreleasebatch`,_data);
     }
 
     /**
@@ -571,13 +571,13 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
      * @returns {Promise<any>}
      * @memberof ReleaseServiceBase
      */
-    public async TerminateBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/releases/terminatebatch`,tempData,isloading);
+    public async TerminateBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/releases/terminatebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/releases/terminatebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/releases/terminatebatch`,_data);
     }
 
     /**
@@ -589,12 +589,12 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
      * @returns {Promise<any>}
      * @memberof ReleaseServiceBase
      */
-    public async UnlinkBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/releases/unlinkbugbatch`,tempData,isloading);
+    public async UnlinkBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/releases/unlinkbugbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/releases/unlinkbugbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/releases/unlinkbugbatch`,_data);
     }
 }

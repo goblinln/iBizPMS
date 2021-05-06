@@ -1989,25 +1989,25 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async ActivateBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/bugs/activatebatch`,tempData,isloading);
+    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/activatebatch`,_data);
         }
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/bugs/activatebatch`,tempData,isloading);
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/bugs/activatebatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/bugs/activatebatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/bugs/activatebatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/bugs/activatebatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/bugs/activatebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/bugs/activatebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/bugs/activatebatch`,_data);
     }
 
     /**
@@ -2019,25 +2019,25 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async AssignToBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/bugs/assigntobatch`,tempData,isloading);
+    public async AssignToBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/assigntobatch`,_data);
         }
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/bugs/assigntobatch`,tempData,isloading);
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/bugs/assigntobatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/bugs/assigntobatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/bugs/assigntobatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/bugs/assigntobatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/bugs/assigntobatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/bugs/assigntobatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/bugs/assigntobatch`,_data);
     }
 
     /**
@@ -2049,25 +2049,25 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async BatchUnlinkBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/bugs/batchunlinkbugbatch`,tempData,isloading);
+    public async BatchUnlinkBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/batchunlinkbugbatch`,_data);
         }
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/bugs/batchunlinkbugbatch`,tempData,isloading);
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/bugs/batchunlinkbugbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/bugs/batchunlinkbugbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/bugs/batchunlinkbugbatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/bugs/batchunlinkbugbatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/bugs/batchunlinkbugbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/bugs/batchunlinkbugbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/bugs/batchunlinkbugbatch`,_data);
     }
 
     /**
@@ -2079,25 +2079,25 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async BuildBatchUnlinkBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/bugs/buildbatchunlinkbugbatch`,tempData,isloading);
+    public async BuildBatchUnlinkBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/buildbatchunlinkbugbatch`,_data);
         }
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/bugs/buildbatchunlinkbugbatch`,tempData,isloading);
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/bugs/buildbatchunlinkbugbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/bugs/buildbatchunlinkbugbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/bugs/buildbatchunlinkbugbatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/bugs/buildbatchunlinkbugbatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/bugs/buildbatchunlinkbugbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/bugs/buildbatchunlinkbugbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/bugs/buildbatchunlinkbugbatch`,_data);
     }
 
     /**
@@ -2109,25 +2109,25 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async BuildLinkBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/bugs/buildlinkbugbatch`,tempData,isloading);
+    public async BuildLinkBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/buildlinkbugbatch`,_data);
         }
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/bugs/buildlinkbugbatch`,tempData,isloading);
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/bugs/buildlinkbugbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/bugs/buildlinkbugbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/bugs/buildlinkbugbatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/bugs/buildlinkbugbatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/bugs/buildlinkbugbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/bugs/buildlinkbugbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/bugs/buildlinkbugbatch`,_data);
     }
 
     /**
@@ -2139,25 +2139,25 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async BuildUnlinkBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/bugs/buildunlinkbugbatch`,tempData,isloading);
+    public async BuildUnlinkBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/buildunlinkbugbatch`,_data);
         }
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/bugs/buildunlinkbugbatch`,tempData,isloading);
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/bugs/buildunlinkbugbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/bugs/buildunlinkbugbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/bugs/buildunlinkbugbatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/bugs/buildunlinkbugbatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/bugs/buildunlinkbugbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/bugs/buildunlinkbugbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/bugs/buildunlinkbugbatch`,_data);
     }
 
     /**
@@ -2169,25 +2169,25 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async CloseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/bugs/closebatch`,tempData,isloading);
+    public async CloseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/closebatch`,_data);
         }
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/bugs/closebatch`,tempData,isloading);
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/bugs/closebatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/bugs/closebatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/bugs/closebatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/bugs/closebatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/bugs/closebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/bugs/closebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/bugs/closebatch`,_data);
     }
 
     /**
@@ -2199,25 +2199,25 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async ConfirmBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/bugs/confirmbatch`,tempData,isloading);
+    public async ConfirmBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/confirmbatch`,_data);
         }
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/bugs/confirmbatch`,tempData,isloading);
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/bugs/confirmbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/bugs/confirmbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/bugs/confirmbatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/bugs/confirmbatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/bugs/confirmbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/bugs/confirmbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/bugs/confirmbatch`,_data);
     }
 
     /**
@@ -2229,25 +2229,25 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async LinkBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/bugs/linkbugbatch`,tempData,isloading);
+    public async LinkBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/linkbugbatch`,_data);
         }
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/bugs/linkbugbatch`,tempData,isloading);
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/bugs/linkbugbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/bugs/linkbugbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/bugs/linkbugbatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/bugs/linkbugbatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/bugs/linkbugbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/bugs/linkbugbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/bugs/linkbugbatch`,_data);
     }
 
     /**
@@ -2259,25 +2259,25 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async ReleaaseBatchUnlinkBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/bugs/releaasebatchunlinkbugbatch`,tempData,isloading);
+    public async ReleaaseBatchUnlinkBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/releaasebatchunlinkbugbatch`,_data);
         }
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/bugs/releaasebatchunlinkbugbatch`,tempData,isloading);
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/bugs/releaasebatchunlinkbugbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/bugs/releaasebatchunlinkbugbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/bugs/releaasebatchunlinkbugbatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/bugs/releaasebatchunlinkbugbatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/bugs/releaasebatchunlinkbugbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/bugs/releaasebatchunlinkbugbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/bugs/releaasebatchunlinkbugbatch`,_data);
     }
 
     /**
@@ -2289,25 +2289,25 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async ReleaseLinkBugbyBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/bugs/releaselinkbugbybugbatch`,tempData,isloading);
+    public async ReleaseLinkBugbyBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/releaselinkbugbybugbatch`,_data);
         }
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/bugs/releaselinkbugbybugbatch`,tempData,isloading);
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/bugs/releaselinkbugbybugbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/bugs/releaselinkbugbybugbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/bugs/releaselinkbugbybugbatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/bugs/releaselinkbugbybugbatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/bugs/releaselinkbugbybugbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/bugs/releaselinkbugbybugbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/bugs/releaselinkbugbybugbatch`,_data);
     }
 
     /**
@@ -2319,25 +2319,25 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async ReleaseLinkBugbyLeftBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/bugs/releaselinkbugbyleftbugbatch`,tempData,isloading);
+    public async ReleaseLinkBugbyLeftBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/releaselinkbugbyleftbugbatch`,_data);
         }
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/bugs/releaselinkbugbyleftbugbatch`,tempData,isloading);
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/bugs/releaselinkbugbyleftbugbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/bugs/releaselinkbugbyleftbugbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/bugs/releaselinkbugbyleftbugbatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/bugs/releaselinkbugbyleftbugbatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/bugs/releaselinkbugbyleftbugbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/bugs/releaselinkbugbyleftbugbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/bugs/releaselinkbugbyleftbugbatch`,_data);
     }
 
     /**
@@ -2349,25 +2349,25 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async ReleaseUnLinkBugbyLeftBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/bugs/releaseunlinkbugbyleftbugbatch`,tempData,isloading);
+    public async ReleaseUnLinkBugbyLeftBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/releaseunlinkbugbyleftbugbatch`,_data);
         }
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/bugs/releaseunlinkbugbyleftbugbatch`,tempData,isloading);
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/bugs/releaseunlinkbugbyleftbugbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/bugs/releaseunlinkbugbyleftbugbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/bugs/releaseunlinkbugbyleftbugbatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/bugs/releaseunlinkbugbyleftbugbatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/bugs/releaseunlinkbugbyleftbugbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/bugs/releaseunlinkbugbyleftbugbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/bugs/releaseunlinkbugbyleftbugbatch`,_data);
     }
 
     /**
@@ -2379,25 +2379,25 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async ReleaseUnlinkBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/bugs/releaseunlinkbugbatch`,tempData,isloading);
+    public async ReleaseUnlinkBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/releaseunlinkbugbatch`,_data);
         }
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/bugs/releaseunlinkbugbatch`,tempData,isloading);
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/bugs/releaseunlinkbugbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/bugs/releaseunlinkbugbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/bugs/releaseunlinkbugbatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/bugs/releaseunlinkbugbatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/bugs/releaseunlinkbugbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/bugs/releaseunlinkbugbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/bugs/releaseunlinkbugbatch`,_data);
     }
 
     /**
@@ -2409,25 +2409,25 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async ResolveBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/bugs/resolvebatch`,tempData,isloading);
+    public async ResolveBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/resolvebatch`,_data);
         }
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/bugs/resolvebatch`,tempData,isloading);
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/bugs/resolvebatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/bugs/resolvebatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/bugs/resolvebatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/bugs/resolvebatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/bugs/resolvebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/bugs/resolvebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/bugs/resolvebatch`,_data);
     }
 
     /**
@@ -2439,25 +2439,25 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async SendMessageBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/bugs/sendmessagebatch`,tempData,isloading);
+    public async SendMessageBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/sendmessagebatch`,_data);
         }
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/bugs/sendmessagebatch`,tempData,isloading);
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/bugs/sendmessagebatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/bugs/sendmessagebatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/bugs/sendmessagebatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/bugs/sendmessagebatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/bugs/sendmessagebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/bugs/sendmessagebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/bugs/sendmessagebatch`,_data);
     }
 
     /**
@@ -2469,25 +2469,25 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async SendMsgPreProcessBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/bugs/sendmsgpreprocessbatch`,tempData,isloading);
+    public async SendMsgPreProcessBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/sendmsgpreprocessbatch`,_data);
         }
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/bugs/sendmsgpreprocessbatch`,tempData,isloading);
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/bugs/sendmsgpreprocessbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/bugs/sendmsgpreprocessbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/bugs/sendmsgpreprocessbatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/bugs/sendmsgpreprocessbatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/bugs/sendmsgpreprocessbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/bugs/sendmsgpreprocessbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/bugs/sendmsgpreprocessbatch`,_data);
     }
 
     /**
@@ -2499,25 +2499,25 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async ToStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/bugs/tostorybatch`,tempData,isloading);
+    public async ToStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/tostorybatch`,_data);
         }
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/bugs/tostorybatch`,tempData,isloading);
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/bugs/tostorybatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/bugs/tostorybatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/bugs/tostorybatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/bugs/tostorybatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/bugs/tostorybatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/bugs/tostorybatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/bugs/tostorybatch`,_data);
     }
 
     /**
@@ -2529,24 +2529,24 @@ export class BugBaseService extends EntityBaseService<IBug> {
      * @returns {Promise<any>}
      * @memberof BugServiceBase
      */
-    public async UnlinkBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/bugs/unlinkbugbatch`,tempData,isloading);
+    public async UnlinkBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/unlinkbugbatch`,_data);
         }
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/bugs/unlinkbugbatch`,tempData,isloading);
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/bugs/unlinkbugbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/bugs/unlinkbugbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/bugs/unlinkbugbatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/bugs/unlinkbugbatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/bugs/unlinkbugbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/bugs/unlinkbugbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/bugs/unlinkbugbatch`,_data);
     }
 }

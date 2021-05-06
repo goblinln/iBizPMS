@@ -1686,17 +1686,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async ActivateBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/activatebatch`,tempData,isloading);
+    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/activatebatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/activatebatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/activatebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/activatebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/activatebatch`,_data);
     }
 
     /**
@@ -1708,17 +1708,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async AllPushBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/allpushbatch`,tempData,isloading);
+    public async AllPushBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/allpushbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/allpushbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/allpushbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/allpushbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/allpushbatch`,_data);
     }
 
     /**
@@ -1730,17 +1730,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async AssignToBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/assigntobatch`,tempData,isloading);
+    public async AssignToBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/assigntobatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/assigntobatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/assigntobatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/assigntobatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/assigntobatch`,_data);
     }
 
     /**
@@ -1752,17 +1752,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async BatchAssignToBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/batchassigntobatch`,tempData,isloading);
+    public async BatchAssignToBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/batchassigntobatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/batchassigntobatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/batchassigntobatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/batchassigntobatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/batchassigntobatch`,_data);
     }
 
     /**
@@ -1774,17 +1774,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async BatchChangeBranchBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/batchchangebranchbatch`,tempData,isloading);
+    public async BatchChangeBranchBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/batchchangebranchbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/batchchangebranchbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/batchchangebranchbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/batchchangebranchbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/batchchangebranchbatch`,_data);
     }
 
     /**
@@ -1796,17 +1796,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async BatchChangeModuleBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/batchchangemodulebatch`,tempData,isloading);
+    public async BatchChangeModuleBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/batchchangemodulebatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/batchchangemodulebatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/batchchangemodulebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/batchchangemodulebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/batchchangemodulebatch`,_data);
     }
 
     /**
@@ -1818,17 +1818,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async BatchChangePlanBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/batchchangeplanbatch`,tempData,isloading);
+    public async BatchChangePlanBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/batchchangeplanbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/batchchangeplanbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/batchchangeplanbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/batchchangeplanbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/batchchangeplanbatch`,_data);
     }
 
     /**
@@ -1840,17 +1840,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async BatchChangeStageBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/batchchangestagebatch`,tempData,isloading);
+    public async BatchChangeStageBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/batchchangestagebatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/batchchangestagebatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/batchchangestagebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/batchchangestagebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/batchchangestagebatch`,_data);
     }
 
     /**
@@ -1862,17 +1862,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async BatchCloseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/batchclosebatch`,tempData,isloading);
+    public async BatchCloseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/batchclosebatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/batchclosebatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/batchclosebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/batchclosebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/batchclosebatch`,_data);
     }
 
     /**
@@ -1884,17 +1884,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async BatchReviewBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/batchreviewbatch`,tempData,isloading);
+    public async BatchReviewBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/batchreviewbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/batchreviewbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/batchreviewbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/batchreviewbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/batchreviewbatch`,_data);
     }
 
     /**
@@ -1906,17 +1906,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async BatchUnlinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/batchunlinkstorybatch`,tempData,isloading);
+    public async BatchUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/batchunlinkstorybatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/batchunlinkstorybatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/batchunlinkstorybatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/batchunlinkstorybatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/batchunlinkstorybatch`,_data);
     }
 
     /**
@@ -1928,17 +1928,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async BugToStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/bugtostorybatch`,tempData,isloading);
+    public async BugToStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/bugtostorybatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/bugtostorybatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/bugtostorybatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/bugtostorybatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/bugtostorybatch`,_data);
     }
 
     /**
@@ -1950,17 +1950,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async BuildBatchUnlinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/buildbatchunlinkstorybatch`,tempData,isloading);
+    public async BuildBatchUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/buildbatchunlinkstorybatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/buildbatchunlinkstorybatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/buildbatchunlinkstorybatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/buildbatchunlinkstorybatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/buildbatchunlinkstorybatch`,_data);
     }
 
     /**
@@ -1972,17 +1972,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async BuildLinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/buildlinkstorybatch`,tempData,isloading);
+    public async BuildLinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/buildlinkstorybatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/buildlinkstorybatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/buildlinkstorybatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/buildlinkstorybatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/buildlinkstorybatch`,_data);
     }
 
     /**
@@ -1994,17 +1994,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async BuildUnlinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/buildunlinkstorybatch`,tempData,isloading);
+    public async BuildUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/buildunlinkstorybatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/buildunlinkstorybatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/buildunlinkstorybatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/buildunlinkstorybatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/buildunlinkstorybatch`,_data);
     }
 
     /**
@@ -2016,17 +2016,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async ChangeBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/changebatch`,tempData,isloading);
+    public async ChangeBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/changebatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/changebatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/changebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/changebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/changebatch`,_data);
     }
 
     /**
@@ -2038,17 +2038,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async CloseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/closebatch`,tempData,isloading);
+    public async CloseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/closebatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/closebatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/closebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/closebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/closebatch`,_data);
     }
 
     /**
@@ -2060,17 +2060,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async CreateTasksBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/createtasksbatch`,tempData,isloading);
+    public async CreateTasksBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/createtasksbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/createtasksbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/createtasksbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/createtasksbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/createtasksbatch`,_data);
     }
 
     /**
@@ -2082,17 +2082,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async GetStorySpecBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/getstoryspecbatch`,tempData,isloading);
+    public async GetStorySpecBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/getstoryspecbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/getstoryspecbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/getstoryspecbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/getstoryspecbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/getstoryspecbatch`,_data);
     }
 
     /**
@@ -2104,17 +2104,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async ImportPlanStoriesBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/importplanstoriesbatch`,tempData,isloading);
+    public async ImportPlanStoriesBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/importplanstoriesbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/importplanstoriesbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/importplanstoriesbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/importplanstoriesbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/importplanstoriesbatch`,_data);
     }
 
     /**
@@ -2126,17 +2126,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async LinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/linkstorybatch`,tempData,isloading);
+    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/linkstorybatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/linkstorybatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/linkstorybatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/linkstorybatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/linkstorybatch`,_data);
     }
 
     /**
@@ -2148,17 +2148,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async ProjectBatchUnlinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/projectbatchunlinkstorybatch`,tempData,isloading);
+    public async ProjectBatchUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/projectbatchunlinkstorybatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/projectbatchunlinkstorybatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/projectbatchunlinkstorybatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/projectbatchunlinkstorybatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/projectbatchunlinkstorybatch`,_data);
     }
 
     /**
@@ -2170,17 +2170,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async ProjectLinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/projectlinkstorybatch`,tempData,isloading);
+    public async ProjectLinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/projectlinkstorybatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/projectlinkstorybatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/projectlinkstorybatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/projectlinkstorybatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/projectlinkstorybatch`,_data);
     }
 
     /**
@@ -2192,17 +2192,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async ProjectUnlinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/projectunlinkstorybatch`,tempData,isloading);
+    public async ProjectUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/projectunlinkstorybatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/projectunlinkstorybatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/projectunlinkstorybatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/projectunlinkstorybatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/projectunlinkstorybatch`,_data);
     }
 
     /**
@@ -2214,17 +2214,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async PushBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/pushbatch`,tempData,isloading);
+    public async PushBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/pushbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/pushbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/pushbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/pushbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/pushbatch`,_data);
     }
 
     /**
@@ -2236,17 +2236,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async ReleaseBatchUnlinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/releasebatchunlinkstorybatch`,tempData,isloading);
+    public async ReleaseBatchUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/releasebatchunlinkstorybatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/releasebatchunlinkstorybatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/releasebatchunlinkstorybatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/releasebatchunlinkstorybatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/releasebatchunlinkstorybatch`,_data);
     }
 
     /**
@@ -2258,17 +2258,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async ReleaseLinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/releaselinkstorybatch`,tempData,isloading);
+    public async ReleaseLinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/releaselinkstorybatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/releaselinkstorybatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/releaselinkstorybatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/releaselinkstorybatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/releaselinkstorybatch`,_data);
     }
 
     /**
@@ -2280,17 +2280,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async ReleaseUnlinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/releaseunlinkstorybatch`,tempData,isloading);
+    public async ReleaseUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/releaseunlinkstorybatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/releaseunlinkstorybatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/releaseunlinkstorybatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/releaseunlinkstorybatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/releaseunlinkstorybatch`,_data);
     }
 
     /**
@@ -2302,17 +2302,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async ResetReviewedByBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/resetreviewedbybatch`,tempData,isloading);
+    public async ResetReviewedByBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/resetreviewedbybatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/resetreviewedbybatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/resetreviewedbybatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/resetreviewedbybatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/resetreviewedbybatch`,_data);
     }
 
     /**
@@ -2324,17 +2324,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async ReviewBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/reviewbatch`,tempData,isloading);
+    public async ReviewBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/reviewbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/reviewbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/reviewbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/reviewbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/reviewbatch`,_data);
     }
 
     /**
@@ -2346,17 +2346,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async SendMessageBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/sendmessagebatch`,tempData,isloading);
+    public async SendMessageBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/sendmessagebatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/sendmessagebatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/sendmessagebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/sendmessagebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/sendmessagebatch`,_data);
     }
 
     /**
@@ -2368,17 +2368,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async SendMsgPreProcessBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/sendmsgpreprocessbatch`,tempData,isloading);
+    public async SendMsgPreProcessBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/sendmsgpreprocessbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/sendmsgpreprocessbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/sendmsgpreprocessbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/sendmsgpreprocessbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/sendmsgpreprocessbatch`,_data);
     }
 
     /**
@@ -2390,17 +2390,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async SetStageBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/setstagebatch`,tempData,isloading);
+    public async SetStageBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/setstagebatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/setstagebatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/setstagebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/setstagebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/setstagebatch`,_data);
     }
 
     /**
@@ -2412,17 +2412,17 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async SyncFromIbizBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/syncfromibizbatch`,tempData,isloading);
+    public async SyncFromIbizBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/syncfromibizbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/syncfromibizbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/syncfromibizbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/syncfromibizbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/syncfromibizbatch`,_data);
     }
 
     /**
@@ -2434,16 +2434,16 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
      * @returns {Promise<any>}
      * @memberof SubStoryServiceBase
      */
-    public async UnlinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/substories/unlinkstorybatch`,tempData,isloading);
+    public async UnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/unlinkstorybatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/substories/unlinkstorybatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/substories/unlinkstorybatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/substories/unlinkstorybatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/substories/unlinkstorybatch`,_data);
     }
 }

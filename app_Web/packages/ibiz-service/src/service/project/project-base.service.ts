@@ -752,9 +752,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async ActivateBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/projects/activatebatch`,tempData,isloading);
+    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/projects/activatebatch`,_data);
     }
 
     /**
@@ -766,9 +766,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async BatchUnlinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/projects/batchunlinkstorybatch`,tempData,isloading);
+    public async BatchUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/projects/batchunlinkstorybatch`,_data);
     }
 
     /**
@@ -780,9 +780,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async CloseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/projects/closebatch`,tempData,isloading);
+    public async CloseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/projects/closebatch`,_data);
     }
 
     /**
@@ -794,9 +794,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async ImportPlanStoriesBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/projects/importplanstoriesbatch`,tempData,isloading);
+    public async ImportPlanStoriesBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/projects/importplanstoriesbatch`,_data);
     }
 
     /**
@@ -808,9 +808,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async LinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/projects/linkstorybatch`,tempData,isloading);
+    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/projects/linkstorybatch`,_data);
     }
 
     /**
@@ -822,9 +822,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async ManageMembersBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/projects/managemembersbatch`,tempData,isloading);
+    public async ManageMembersBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/projects/managemembersbatch`,_data);
     }
 
     /**
@@ -836,9 +836,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async PmsEeProjectAllTaskCountBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/projects/pmseeprojectalltaskcountbatch`,tempData,isloading);
+    public async PmsEeProjectAllTaskCountBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/projects/pmseeprojectalltaskcountbatch`,_data);
     }
 
     /**
@@ -850,9 +850,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async PmsEeProjectTodoTaskCountBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/projects/pmseeprojecttodotaskcountbatch`,tempData,isloading);
+    public async PmsEeProjectTodoTaskCountBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/projects/pmseeprojecttodotaskcountbatch`,_data);
     }
 
     /**
@@ -864,9 +864,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async PutoffBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/projects/putoffbatch`,tempData,isloading);
+    public async PutoffBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/projects/putoffbatch`,_data);
     }
 
     /**
@@ -878,9 +878,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async StartBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/projects/startbatch`,tempData,isloading);
+    public async StartBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/projects/startbatch`,_data);
     }
 
     /**
@@ -892,9 +892,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async SuspendBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/projects/suspendbatch`,tempData,isloading);
+    public async SuspendBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/projects/suspendbatch`,_data);
     }
 
     /**
@@ -906,9 +906,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async UnlinkMemberBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/projects/unlinkmemberbatch`,tempData,isloading);
+    public async UnlinkMemberBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/projects/unlinkmemberbatch`,_data);
     }
 
     /**
@@ -920,9 +920,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async UnlinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/projects/unlinkstorybatch`,tempData,isloading);
+    public async UnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/projects/unlinkstorybatch`,_data);
     }
 
     /**
@@ -934,8 +934,8 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async UpdateOrderBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/projects/updateorderbatch`,tempData,isloading);
+    public async UpdateOrderBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/projects/updateorderbatch`,_data);
     }
 }

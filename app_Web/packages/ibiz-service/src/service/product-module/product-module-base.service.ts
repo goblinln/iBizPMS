@@ -407,12 +407,12 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
      * @returns {Promise<any>}
      * @memberof ProductModuleServiceBase
      */
-    public async SyncFromIBIZBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/productmodules/syncfromibizbatch`,tempData,isloading);
+    public async SyncFromIBIZBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/productmodules/syncfromibizbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/productmodules/syncfromibizbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/productmodules/syncfromibizbatch`,_data);
     }
 }

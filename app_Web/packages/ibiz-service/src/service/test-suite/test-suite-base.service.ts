@@ -293,13 +293,13 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
      * @returns {Promise<any>}
      * @memberof TestSuiteServiceBase
      */
-    public async LinkCaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/testsuites/linkcasebatch`,tempData,isloading);
+    public async LinkCaseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/testsuites/linkcasebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/testsuites/linkcasebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/testsuites/linkcasebatch`,_data);
     }
 
     /**
@@ -311,12 +311,12 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
      * @returns {Promise<any>}
      * @memberof TestSuiteServiceBase
      */
-    public async UnlinkCaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/testsuites/unlinkcasebatch`,tempData,isloading);
+    public async UnlinkCaseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/testsuites/unlinkcasebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/testsuites/unlinkcasebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/testsuites/unlinkcasebatch`,_data);
     }
 }

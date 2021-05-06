@@ -5184,6 +5184,13 @@
     "mSTag" : "resolved__0__1",
     "name" : "已解决_未收藏_已确认",
     "getPSDEMainStateActions" : [ {
+      "name" : "Close",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Close.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "buildLinkBug",
       "getPSDEAction" : {
         "modelref" : true,

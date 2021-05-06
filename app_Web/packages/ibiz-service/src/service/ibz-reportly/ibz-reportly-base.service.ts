@@ -219,9 +219,9 @@ export class IbzReportlyBaseService extends EntityBaseService<IIbzReportly> {
      * @returns {Promise<any>}
      * @memberof IbzReportlyServiceBase
      */
-    public async HaveReadBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/ibzreportlies/havereadbatch`,tempData,isloading);
+    public async HaveReadBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/ibzreportlies/havereadbatch`,_data);
     }
 
     /**
@@ -233,8 +233,8 @@ export class IbzReportlyBaseService extends EntityBaseService<IIbzReportly> {
      * @returns {Promise<any>}
      * @memberof IbzReportlyServiceBase
      */
-    public async SubmitBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/ibzreportlies/submitbatch`,tempData,isloading);
+    public async SubmitBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/ibzreportlies/submitbatch`,_data);
     }
 }

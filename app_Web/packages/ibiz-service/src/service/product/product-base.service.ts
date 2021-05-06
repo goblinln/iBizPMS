@@ -528,8 +528,8 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      * @returns {Promise<any>}
      * @memberof ProductServiceBase
      */
-    public async CloseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/products/closebatch`,tempData,isloading);
+    public async CloseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/products/closebatch`,_data);
     }
 }

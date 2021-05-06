@@ -1401,21 +1401,21 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      * @returns {Promise<any>}
      * @memberof CaseServiceBase
      */
-    public async ConfirmChangeBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/confirmchangebatch`,tempData,isloading);
+    public async ConfirmChangeBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/confirmchangebatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/cases/confirmchangebatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/cases/confirmchangebatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/cases/confirmchangebatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/cases/confirmchangebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/cases/confirmchangebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/cases/confirmchangebatch`,_data);
     }
 
     /**
@@ -1427,21 +1427,21 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      * @returns {Promise<any>}
      * @memberof CaseServiceBase
      */
-    public async ConfirmstorychangeBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/confirmstorychangebatch`,tempData,isloading);
+    public async ConfirmstorychangeBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/confirmstorychangebatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/cases/confirmstorychangebatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/cases/confirmstorychangebatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/cases/confirmstorychangebatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/cases/confirmstorychangebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/cases/confirmstorychangebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/cases/confirmstorychangebatch`,_data);
     }
 
     /**
@@ -1453,21 +1453,21 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      * @returns {Promise<any>}
      * @memberof CaseServiceBase
      */
-    public async GetByTestTaskBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/getbytesttaskbatch`,tempData,isloading);
+    public async GetByTestTaskBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/getbytesttaskbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/cases/getbytesttaskbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/cases/getbytesttaskbatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/cases/getbytesttaskbatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/cases/getbytesttaskbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/cases/getbytesttaskbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/cases/getbytesttaskbatch`,_data);
     }
 
     /**
@@ -1479,21 +1479,21 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      * @returns {Promise<any>}
      * @memberof CaseServiceBase
      */
-    public async GetTestTaskCntRunBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/gettesttaskcntrunbatch`,tempData,isloading);
+    public async GetTestTaskCntRunBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/gettesttaskcntrunbatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/cases/gettesttaskcntrunbatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/cases/gettesttaskcntrunbatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/cases/gettesttaskcntrunbatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/cases/gettesttaskcntrunbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/cases/gettesttaskcntrunbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/cases/gettesttaskcntrunbatch`,_data);
     }
 
     /**
@@ -1505,21 +1505,21 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      * @returns {Promise<any>}
      * @memberof CaseServiceBase
      */
-    public async LinkCaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/linkcasebatch`,tempData,isloading);
+    public async LinkCaseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/linkcasebatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/cases/linkcasebatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/cases/linkcasebatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/cases/linkcasebatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/cases/linkcasebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/cases/linkcasebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/cases/linkcasebatch`,_data);
     }
 
     /**
@@ -1531,21 +1531,21 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      * @returns {Promise<any>}
      * @memberof CaseServiceBase
      */
-    public async MobLinkCaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/moblinkcasebatch`,tempData,isloading);
+    public async MobLinkCaseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/moblinkcasebatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/cases/moblinkcasebatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/cases/moblinkcasebatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/cases/moblinkcasebatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/cases/moblinkcasebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/cases/moblinkcasebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/cases/moblinkcasebatch`,_data);
     }
 
     /**
@@ -1557,21 +1557,21 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      * @returns {Promise<any>}
      * @memberof CaseServiceBase
      */
-    public async RunCaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/runcasebatch`,tempData,isloading);
+    public async RunCaseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/runcasebatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/cases/runcasebatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/cases/runcasebatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/cases/runcasebatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/cases/runcasebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/cases/runcasebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/cases/runcasebatch`,_data);
     }
 
     /**
@@ -1583,21 +1583,21 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      * @returns {Promise<any>}
      * @memberof CaseServiceBase
      */
-    public async TestRunCaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/testruncasebatch`,tempData,isloading);
+    public async TestRunCaseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/testruncasebatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/cases/testruncasebatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/cases/testruncasebatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/cases/testruncasebatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/cases/testruncasebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/cases/testruncasebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/cases/testruncasebatch`,_data);
     }
 
     /**
@@ -1609,21 +1609,21 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      * @returns {Promise<any>}
      * @memberof CaseServiceBase
      */
-    public async TestsuitelinkCaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/testsuitelinkcasebatch`,tempData,isloading);
+    public async TestsuitelinkCaseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/testsuitelinkcasebatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/cases/testsuitelinkcasebatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/cases/testsuitelinkcasebatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/cases/testsuitelinkcasebatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/cases/testsuitelinkcasebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/cases/testsuitelinkcasebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/cases/testsuitelinkcasebatch`,_data);
     }
 
     /**
@@ -1635,21 +1635,21 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      * @returns {Promise<any>}
      * @memberof CaseServiceBase
      */
-    public async UnlinkCaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/unlinkcasebatch`,tempData,isloading);
+    public async UnlinkCaseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/unlinkcasebatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/cases/unlinkcasebatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/cases/unlinkcasebatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/cases/unlinkcasebatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/cases/unlinkcasebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/cases/unlinkcasebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/cases/unlinkcasebatch`,_data);
     }
 
     /**
@@ -1661,20 +1661,20 @@ export class CaseBaseService extends EntityBaseService<ICase> {
      * @returns {Promise<any>}
      * @memberof CaseServiceBase
      */
-    public async UnlinkSuiteCaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/unlinksuitecasebatch`,tempData,isloading);
+    public async UnlinkSuiteCaseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/unlinksuitecasebatch`,_data);
         }
-        if(context.story && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/cases/unlinksuitecasebatch`,tempData,isloading);
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/cases/unlinksuitecasebatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/cases/unlinksuitecasebatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/cases/unlinksuitecasebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/cases/unlinksuitecasebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/cases/unlinksuitecasebatch`,_data);
     }
 }

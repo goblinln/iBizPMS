@@ -398,9 +398,9 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @returns {Promise<any>}
      * @memberof DocServiceBase
      */
-    public async ByVersionUpdateContextBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/docs/byversionupdatecontextbatch`,tempData,isloading);
+    public async ByVersionUpdateContextBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/docs/byversionupdatecontextbatch`,_data);
     }
 
     /**
@@ -412,9 +412,9 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @returns {Promise<any>}
      * @memberof DocServiceBase
      */
-    public async CollectBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/docs/collectbatch`,tempData,isloading);
+    public async CollectBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/docs/collectbatch`,_data);
     }
 
     /**
@@ -426,9 +426,9 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @returns {Promise<any>}
      * @memberof DocServiceBase
      */
-    public async GetDocStatusBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/docs/getdocstatusbatch`,tempData,isloading);
+    public async GetDocStatusBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/docs/getdocstatusbatch`,_data);
     }
 
     /**
@@ -440,9 +440,9 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @returns {Promise<any>}
      * @memberof DocServiceBase
      */
-    public async OnlyCollectDocBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/docs/onlycollectdocbatch`,tempData,isloading);
+    public async OnlyCollectDocBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/docs/onlycollectdocbatch`,_data);
     }
 
     /**
@@ -454,9 +454,9 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @returns {Promise<any>}
      * @memberof DocServiceBase
      */
-    public async OnlyUnCollectDocBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/docs/onlyuncollectdocbatch`,tempData,isloading);
+    public async OnlyUnCollectDocBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/docs/onlyuncollectdocbatch`,_data);
     }
 
     /**
@@ -468,8 +468,8 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @returns {Promise<any>}
      * @memberof DocServiceBase
      */
-    public async UnCollectBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/docs/uncollectbatch`,tempData,isloading);
+    public async UnCollectBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/docs/uncollectbatch`,_data);
     }
 }

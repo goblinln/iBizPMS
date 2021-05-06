@@ -707,13 +707,13 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @returns {Promise<any>}
      * @memberof ProductPlanServiceBase
      */
-    public async BatchUnlinkBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/productplans/batchunlinkbugbatch`,tempData,isloading);
+    public async BatchUnlinkBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/productplans/batchunlinkbugbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/productplans/batchunlinkbugbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/productplans/batchunlinkbugbatch`,_data);
     }
 
     /**
@@ -725,13 +725,13 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @returns {Promise<any>}
      * @memberof ProductPlanServiceBase
      */
-    public async BatchUnlinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/productplans/batchunlinkstorybatch`,tempData,isloading);
+    public async BatchUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/productplans/batchunlinkstorybatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/productplans/batchunlinkstorybatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/productplans/batchunlinkstorybatch`,_data);
     }
 
     /**
@@ -743,13 +743,13 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @returns {Promise<any>}
      * @memberof ProductPlanServiceBase
      */
-    public async EeActivePlanBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/productplans/eeactiveplanbatch`,tempData,isloading);
+    public async EeActivePlanBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/productplans/eeactiveplanbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/productplans/eeactiveplanbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/productplans/eeactiveplanbatch`,_data);
     }
 
     /**
@@ -761,13 +761,13 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @returns {Promise<any>}
      * @memberof ProductPlanServiceBase
      */
-    public async EeCancelPlanBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/productplans/eecancelplanbatch`,tempData,isloading);
+    public async EeCancelPlanBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/productplans/eecancelplanbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/productplans/eecancelplanbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/productplans/eecancelplanbatch`,_data);
     }
 
     /**
@@ -779,13 +779,13 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @returns {Promise<any>}
      * @memberof ProductPlanServiceBase
      */
-    public async EeClosePlanBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/productplans/eecloseplanbatch`,tempData,isloading);
+    public async EeClosePlanBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/productplans/eecloseplanbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/productplans/eecloseplanbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/productplans/eecloseplanbatch`,_data);
     }
 
     /**
@@ -797,13 +797,13 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @returns {Promise<any>}
      * @memberof ProductPlanServiceBase
      */
-    public async EeFinishPlanBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/productplans/eefinishplanbatch`,tempData,isloading);
+    public async EeFinishPlanBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/productplans/eefinishplanbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/productplans/eefinishplanbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/productplans/eefinishplanbatch`,_data);
     }
 
     /**
@@ -815,13 +815,13 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @returns {Promise<any>}
      * @memberof ProductPlanServiceBase
      */
-    public async EePausePlanBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/productplans/eepauseplanbatch`,tempData,isloading);
+    public async EePausePlanBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/productplans/eepauseplanbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/productplans/eepauseplanbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/productplans/eepauseplanbatch`,_data);
     }
 
     /**
@@ -833,13 +833,13 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @returns {Promise<any>}
      * @memberof ProductPlanServiceBase
      */
-    public async EeRestartPlanBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/productplans/eerestartplanbatch`,tempData,isloading);
+    public async EeRestartPlanBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/productplans/eerestartplanbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/productplans/eerestartplanbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/productplans/eerestartplanbatch`,_data);
     }
 
     /**
@@ -851,13 +851,13 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @returns {Promise<any>}
      * @memberof ProductPlanServiceBase
      */
-    public async EeStartPlanBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/productplans/eestartplanbatch`,tempData,isloading);
+    public async EeStartPlanBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/productplans/eestartplanbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/productplans/eestartplanbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/productplans/eestartplanbatch`,_data);
     }
 
     /**
@@ -869,13 +869,13 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @returns {Promise<any>}
      * @memberof ProductPlanServiceBase
      */
-    public async ImportPlanTempletBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/productplans/importplantempletbatch`,tempData,isloading);
+    public async ImportPlanTempletBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/productplans/importplantempletbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/productplans/importplantempletbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/productplans/importplantempletbatch`,_data);
     }
 
     /**
@@ -887,13 +887,13 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @returns {Promise<any>}
      * @memberof ProductPlanServiceBase
      */
-    public async LinkBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/productplans/linkbugbatch`,tempData,isloading);
+    public async LinkBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/productplans/linkbugbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/productplans/linkbugbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/productplans/linkbugbatch`,_data);
     }
 
     /**
@@ -905,13 +905,13 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @returns {Promise<any>}
      * @memberof ProductPlanServiceBase
      */
-    public async LinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/productplans/linkstorybatch`,tempData,isloading);
+    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/productplans/linkstorybatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/productplans/linkstorybatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/productplans/linkstorybatch`,_data);
     }
 
     /**
@@ -923,13 +923,13 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @returns {Promise<any>}
      * @memberof ProductPlanServiceBase
      */
-    public async LinkTaskBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/productplans/linktaskbatch`,tempData,isloading);
+    public async LinkTaskBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/productplans/linktaskbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/productplans/linktaskbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/productplans/linktaskbatch`,_data);
     }
 
     /**
@@ -941,13 +941,13 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @returns {Promise<any>}
      * @memberof ProductPlanServiceBase
      */
-    public async UnlinkBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/productplans/unlinkbugbatch`,tempData,isloading);
+    public async UnlinkBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/productplans/unlinkbugbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/productplans/unlinkbugbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/productplans/unlinkbugbatch`,_data);
     }
 
     /**
@@ -959,12 +959,12 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
      * @returns {Promise<any>}
      * @memberof ProductPlanServiceBase
      */
-    public async UnlinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/productplans/unlinkstorybatch`,tempData,isloading);
+    public async UnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/productplans/unlinkstorybatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/productplans/unlinkstorybatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/productplans/unlinkstorybatch`,_data);
     }
 }

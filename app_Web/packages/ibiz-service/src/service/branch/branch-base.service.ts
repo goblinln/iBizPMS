@@ -275,12 +275,12 @@ export class BranchBaseService extends EntityBaseService<IBranch> {
      * @returns {Promise<any>}
      * @memberof BranchServiceBase
      */
-    public async SortBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/branches/sortbatch`,tempData,isloading);
+    public async SortBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/branches/sortbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/branches/sortbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/branches/sortbatch`,_data);
     }
 }

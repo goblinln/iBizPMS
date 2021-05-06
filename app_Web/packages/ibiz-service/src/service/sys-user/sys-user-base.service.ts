@@ -175,8 +175,8 @@ export class SysUserBaseService extends EntityBaseService<ISysUser> {
      * @returns {Promise<any>}
      * @memberof SysUserServiceBase
      */
-    public async ChangePwdBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/sysusers/changepwdbatch`,tempData,isloading);
+    public async ChangePwdBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/sysusers/changepwdbatch`,_data);
     }
 }

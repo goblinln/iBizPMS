@@ -197,9 +197,9 @@ export class IbizproProductDailyBaseService extends EntityBaseService<IIbizproPr
      * @returns {Promise<any>}
      * @memberof IbizproProductDailyServiceBase
      */
-    public async ManualCreateDailyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/ibizproproductdailies/manualcreatedailybatch`,tempData,isloading);
+    public async ManualCreateDailyBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/ibizproproductdailies/manualcreatedailybatch`,_data);
     }
 
     /**
@@ -211,8 +211,8 @@ export class IbizproProductDailyBaseService extends EntityBaseService<IIbizproPr
      * @returns {Promise<any>}
      * @memberof IbizproProductDailyServiceBase
      */
-    public async StatsProductDailyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/ibizproproductdailies/statsproductdailybatch`,tempData,isloading);
+    public async StatsProductDailyBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/ibizproproductdailies/statsproductdailybatch`,_data);
     }
 }

@@ -338,9 +338,9 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
      * @returns {Promise<any>}
      * @memberof IbzMonthlyServiceBase
      */
-    public async CreateGetInfoBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/ibzmonthlies/creategetinfobatch`,tempData,isloading);
+    public async CreateGetInfoBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/ibzmonthlies/creategetinfobatch`,_data);
     }
 
     /**
@@ -352,9 +352,9 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
      * @returns {Promise<any>}
      * @memberof IbzMonthlyServiceBase
      */
-    public async CreateUserMonthlyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/ibzmonthlies/createusermonthlybatch`,tempData,isloading);
+    public async CreateUserMonthlyBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/ibzmonthlies/createusermonthlybatch`,_data);
     }
 
     /**
@@ -366,9 +366,9 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
      * @returns {Promise<any>}
      * @memberof IbzMonthlyServiceBase
      */
-    public async EditGetCompleteTaskBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/ibzmonthlies/editgetcompletetaskbatch`,tempData,isloading);
+    public async EditGetCompleteTaskBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/ibzmonthlies/editgetcompletetaskbatch`,_data);
     }
 
     /**
@@ -380,9 +380,9 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
      * @returns {Promise<any>}
      * @memberof IbzMonthlyServiceBase
      */
-    public async HaveReadBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/ibzmonthlies/havereadbatch`,tempData,isloading);
+    public async HaveReadBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/ibzmonthlies/havereadbatch`,_data);
     }
 
     /**
@@ -394,9 +394,9 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
      * @returns {Promise<any>}
      * @memberof IbzMonthlyServiceBase
      */
-    public async PushUserMonthlyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/ibzmonthlies/pushusermonthlybatch`,tempData,isloading);
+    public async PushUserMonthlyBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/ibzmonthlies/pushusermonthlybatch`,_data);
     }
 
     /**
@@ -408,8 +408,8 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
      * @returns {Promise<any>}
      * @memberof IbzMonthlyServiceBase
      */
-    public async SubmitBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/ibzmonthlies/submitbatch`,tempData,isloading);
+    public async SubmitBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/ibzmonthlies/submitbatch`,_data);
     }
 }

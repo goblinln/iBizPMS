@@ -274,9 +274,9 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      * @returns {Promise<any>}
      * @memberof TodoServiceBase
      */
-    public async ActivateBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/todos/activatebatch`,tempData,isloading);
+    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/todos/activatebatch`,_data);
     }
 
     /**
@@ -288,9 +288,9 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      * @returns {Promise<any>}
      * @memberof TodoServiceBase
      */
-    public async AssignToBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/todos/assigntobatch`,tempData,isloading);
+    public async AssignToBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/todos/assigntobatch`,_data);
     }
 
     /**
@@ -302,9 +302,9 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      * @returns {Promise<any>}
      * @memberof TodoServiceBase
      */
-    public async CloseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/todos/closebatch`,tempData,isloading);
+    public async CloseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/todos/closebatch`,_data);
     }
 
     /**
@@ -316,9 +316,9 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      * @returns {Promise<any>}
      * @memberof TodoServiceBase
      */
-    public async CreateCycleBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/todos/createcyclebatch`,tempData,isloading);
+    public async CreateCycleBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/todos/createcyclebatch`,_data);
     }
 
     /**
@@ -330,9 +330,9 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      * @returns {Promise<any>}
      * @memberof TodoServiceBase
      */
-    public async FinishBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/todos/finishbatch`,tempData,isloading);
+    public async FinishBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/todos/finishbatch`,_data);
     }
 
     /**
@@ -344,9 +344,9 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      * @returns {Promise<any>}
      * @memberof TodoServiceBase
      */
-    public async SendMessageBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/todos/sendmessagebatch`,tempData,isloading);
+    public async SendMessageBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/todos/sendmessagebatch`,_data);
     }
 
     /**
@@ -358,8 +358,8 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      * @returns {Promise<any>}
      * @memberof TodoServiceBase
      */
-    public async SendMsgPreProcessBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/todos/sendmsgpreprocessbatch`,tempData,isloading);
+    public async SendMsgPreProcessBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/todos/sendmsgpreprocessbatch`,_data);
     }
 }

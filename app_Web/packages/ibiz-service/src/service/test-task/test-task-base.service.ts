@@ -428,17 +428,17 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @returns {Promise<any>}
      * @memberof TestTaskServiceBase
      */
-    public async ActivateBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/testtasks/activatebatch`,tempData,isloading);
+    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/testtasks/activatebatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/testtasks/activatebatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/testtasks/activatebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/testtasks/activatebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/testtasks/activatebatch`,_data);
     }
 
     /**
@@ -450,17 +450,17 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @returns {Promise<any>}
      * @memberof TestTaskServiceBase
      */
-    public async BlockBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/testtasks/blockbatch`,tempData,isloading);
+    public async BlockBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/testtasks/blockbatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/testtasks/blockbatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/testtasks/blockbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/testtasks/blockbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/testtasks/blockbatch`,_data);
     }
 
     /**
@@ -472,17 +472,17 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @returns {Promise<any>}
      * @memberof TestTaskServiceBase
      */
-    public async CloseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/testtasks/closebatch`,tempData,isloading);
+    public async CloseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/testtasks/closebatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/testtasks/closebatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/testtasks/closebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/testtasks/closebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/testtasks/closebatch`,_data);
     }
 
     /**
@@ -494,17 +494,17 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @returns {Promise<any>}
      * @memberof TestTaskServiceBase
      */
-    public async LinkCaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/testtasks/linkcasebatch`,tempData,isloading);
+    public async LinkCaseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/testtasks/linkcasebatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/testtasks/linkcasebatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/testtasks/linkcasebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/testtasks/linkcasebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/testtasks/linkcasebatch`,_data);
     }
 
     /**
@@ -516,17 +516,17 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @returns {Promise<any>}
      * @memberof TestTaskServiceBase
      */
-    public async StartBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/testtasks/startbatch`,tempData,isloading);
+    public async StartBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/testtasks/startbatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/testtasks/startbatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/testtasks/startbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/testtasks/startbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/testtasks/startbatch`,_data);
     }
 
     /**
@@ -538,16 +538,16 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @returns {Promise<any>}
      * @memberof TestTaskServiceBase
      */
-    public async UnlinkCaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.project && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/testtasks/unlinkcasebatch`,tempData,isloading);
+    public async UnlinkCaseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/testtasks/unlinkcasebatch`,_data);
         }
-        if(context.product && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/testtasks/unlinkcasebatch`,tempData,isloading);
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/testtasks/unlinkcasebatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/testtasks/unlinkcasebatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/testtasks/unlinkcasebatch`,_data);
     }
 }

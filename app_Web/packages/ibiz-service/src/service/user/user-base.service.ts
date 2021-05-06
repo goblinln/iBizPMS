@@ -303,8 +303,8 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @returns {Promise<any>}
      * @memberof UserServiceBase
      */
-    public async SyncAccountBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/users/syncaccountbatch`,tempData,isloading);
+    public async SyncAccountBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/users/syncaccountbatch`,_data);
     }
 }

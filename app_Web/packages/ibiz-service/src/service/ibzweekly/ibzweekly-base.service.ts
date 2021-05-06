@@ -285,9 +285,9 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      * @returns {Promise<any>}
      * @memberof IBZWEEKLYServiceBase
      */
-    public async CreateEveryWeekReportBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/ibzweeklies/createeveryweekreportbatch`,tempData,isloading);
+    public async CreateEveryWeekReportBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/ibzweeklies/createeveryweekreportbatch`,_data);
     }
 
     /**
@@ -299,9 +299,9 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      * @returns {Promise<any>}
      * @memberof IBZWEEKLYServiceBase
      */
-    public async CreateGetLastWeekPlanAndWorkBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/ibzweeklies/creategetlastweekplanandworkbatch`,tempData,isloading);
+    public async CreateGetLastWeekPlanAndWorkBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/ibzweeklies/creategetlastweekplanandworkbatch`,_data);
     }
 
     /**
@@ -313,9 +313,9 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      * @returns {Promise<any>}
      * @memberof IBZWEEKLYServiceBase
      */
-    public async EditGetLastWeekTaskAndComTaskBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/ibzweeklies/editgetlastweektaskandcomtaskbatch`,tempData,isloading);
+    public async EditGetLastWeekTaskAndComTaskBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/ibzweeklies/editgetlastweektaskandcomtaskbatch`,_data);
     }
 
     /**
@@ -327,9 +327,9 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      * @returns {Promise<any>}
      * @memberof IBZWEEKLYServiceBase
      */
-    public async HaveReadBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/ibzweeklies/havereadbatch`,tempData,isloading);
+    public async HaveReadBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/ibzweeklies/havereadbatch`,_data);
     }
 
     /**
@@ -341,9 +341,9 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      * @returns {Promise<any>}
      * @memberof IBZWEEKLYServiceBase
      */
-    public async JugThisWeekCreateWeeklyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/ibzweeklies/jugthisweekcreateweeklybatch`,tempData,isloading);
+    public async JugThisWeekCreateWeeklyBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/ibzweeklies/jugthisweekcreateweeklybatch`,_data);
     }
 
     /**
@@ -355,9 +355,9 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      * @returns {Promise<any>}
      * @memberof IBZWEEKLYServiceBase
      */
-    public async PushUserWeeklyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/ibzweeklies/pushuserweeklybatch`,tempData,isloading);
+    public async PushUserWeeklyBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/ibzweeklies/pushuserweeklybatch`,_data);
     }
 
     /**
@@ -369,8 +369,8 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      * @returns {Promise<any>}
      * @memberof IBZWEEKLYServiceBase
      */
-    public async SubmitBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/ibzweeklies/submitbatch`,tempData,isloading);
+    public async SubmitBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/ibzweeklies/submitbatch`,_data);
     }
 }

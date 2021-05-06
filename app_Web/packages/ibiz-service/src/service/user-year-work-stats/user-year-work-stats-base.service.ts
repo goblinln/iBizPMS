@@ -255,9 +255,9 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @returns {Promise<any>}
      * @memberof UserYearWorkStatsServiceBase
      */
-    public async GetUserYearActionBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/useryearworkstats/getuseryearactionbatch`,tempData,isloading);
+    public async GetUserYearActionBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/useryearworkstats/getuseryearactionbatch`,_data);
     }
 
     /**
@@ -269,8 +269,8 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
      * @returns {Promise<any>}
      * @memberof UserYearWorkStatsServiceBase
      */
-    public async UpdateTitleByYearBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/useryearworkstats/updatetitlebyyearbatch`,tempData,isloading);
+    public async UpdateTitleByYearBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/useryearworkstats/updatetitlebyyearbatch`,_data);
     }
 }

@@ -186,9 +186,9 @@ export class IbizproProductMonthlyBaseService extends EntityBaseService<IIbizpro
      * @returns {Promise<any>}
      * @memberof IbizproProductMonthlyServiceBase
      */
-    public async ManualCreateMonthlyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/ibizproproductmonthlies/manualcreatemonthlybatch`,tempData,isloading);
+    public async ManualCreateMonthlyBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/ibizproproductmonthlies/manualcreatemonthlybatch`,_data);
     }
 
     /**
@@ -200,8 +200,8 @@ export class IbizproProductMonthlyBaseService extends EntityBaseService<IIbizpro
      * @returns {Promise<any>}
      * @memberof IbizproProductMonthlyServiceBase
      */
-    public async StatsProductMonthlyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/ibizproproductmonthlies/statsproductmonthlybatch`,tempData,isloading);
+    public async StatsProductMonthlyBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/ibizproproductmonthlies/statsproductmonthlybatch`,_data);
     }
 }

@@ -750,40 +750,40 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
      * @returns {Promise<any>}
      * @memberof TaskEstimateServiceBase
      */
-    public async PMEvaluationBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        if(context.project && context.projectmodule && context.task && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/projectmodules/${context.projectmodule}/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
+    public async PMEvaluationBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        if(_context.project && _context.projectmodule && _context.task && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
         }
-        if(context.product && context.story && context.task && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/stories/${context.story}/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
+        if(_context.product && _context.story && _context.task && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
         }
-        if(context.product && context.productplan && context.task && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/products/${context.product}/productplans/${context.productplan}/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
+        if(_context.product && _context.productplan && _context.task && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
         }
-        if(context.project && context.task && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projects/${context.project}/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
+        if(_context.project && _context.task && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
         }
-        if(context.story && context.task && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/stories/${context.story}/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
+        if(_context.story && _context.task && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/stories/${_context.story}/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
         }
-        if(context.productplan && context.task && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/productplans/${context.productplan}/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
+        if(_context.productplan && _context.task && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
         }
-        if(context.projectmodule && context.task && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/projectmodules/${context.projectmodule}/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
+        if(_context.projectmodule && _context.task && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
         }
-        if(context.task && true){
-            let tempData:any = JSON.parse(JSON.stringify(data));
-            return await this.http.post(`/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
+        if(_context.task && true){
+        _data = await this.obtainMinor(_context, _data);
+            return await this.http.post(`/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
         }
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/taskestimates/pmevaluationbatch`,tempData,isloading);
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/taskestimates/pmevaluationbatch`,_data);
     }
 }

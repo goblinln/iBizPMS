@@ -175,8 +175,8 @@ export class IBZProStoryBaseService extends EntityBaseService<IIBZProStory> {
      * @returns {Promise<any>}
      * @memberof IBZProStoryServiceBase
      */
-    public async SyncFromIBIZBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/ibzprostories/syncfromibizbatch`,tempData,isloading);
+    public async SyncFromIBIZBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/ibzprostories/syncfromibizbatch`,_data);
     }
 }

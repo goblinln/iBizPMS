@@ -175,8 +175,8 @@ export class SysUpdateLogBaseService extends EntityBaseService<ISysUpdateLog> {
      * @returns {Promise<any>}
      * @memberof SysUpdateLogServiceBase
      */
-    public async GetLastUpdateInfoBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
-        let tempData:any = JSON.parse(JSON.stringify(data));
-        return await this.http.post(`/sysupdatelogs/getlastupdateinfobatch`,tempData,isloading);
+    public async GetLastUpdateInfoBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return await this.http.post(`/sysupdatelogs/getlastupdateinfobatch`,_data);
     }
 }
