@@ -273,21 +273,18 @@ export class MobFormControlBase extends MainControlBase {
                 }
             });
         }
-        this.dataChange
-            .pipe(
-                debounceTime(300),
-                distinctUntilChanged()
-            ).subscribe((data: any) => {
-                // if (this.autosave) {
+        this.dataChange.subscribe((data: any) => {
+                // TO TEST
+                // if (this.isAutoSave) {
                 //     this.autoSave();
                 // }
-                const state = !Object.is(JSON.stringify(this.oldData), JSON.stringify(this.data)) ? true : false;
+                const state = !Object.is(JSON.stringify(this.oldData), data) ? true : false;
                 this.ctrlEvent({
                     controlname: this.controlInstance.name,
                     action: 'dataChange',
                     data: state,
                 })
-            });
+        });
     }
 
     /**
@@ -626,6 +623,7 @@ export class MobFormControlBase extends MainControlBase {
         this.fillForm(data, action);
         this.oldData = {};
         Object.assign(this.oldData, JSON.parse(JSON.stringify(this.data)));
+        this.dataChange.next(JSON.stringify(this.data));
         this.formLogic({ name: '', newVal: null, oldVal: null });
     }
 
@@ -1167,6 +1165,87 @@ export class MobFormControlBase extends MainControlBase {
         })
     }
 
+
+    /**
+     * 自动保存
+     *
+     * @param {*} [opt={}]
+     * @memberof EditFormControlBase
+     */
+    public async autoSave(opt: any = {}): Promise<void> {
+        if (this.data.srfuf == '1' ? !await this.validAll() : !await this.validAll('new')) {
+            return Promise.reject();
+        }
+        const arg: any = { ...opt };
+        const data = this.getData();
+        Object.assign(arg, data);
+        Object.assign(arg, { srfmajortext: data[this.majorMessageItemName] });
+        const action: any = Object.is(data.srfuf, '1') ? this.updateAction : this.createAction;
+        if (!action) {
+            let actionName: any = Object.is(data.srfuf, '1') ? "updateAction" : "createAction";
+            this.$Notice.error( `${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.actionname') as string) );
+            return;
+        }
+        Object.assign(arg, { viewparams: this.viewparams });
+        const post: Promise<any> = this.service.add(action, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator);
+        this.ctrlBeginLoading();
+        post.then((response: any) => {
+            this.endLoading();
+            if (!response.status || response.status !== 200) {
+                if (response.data) {
+                    this.$Notice.error( response.data.message );
+                }
+                return;
+            }
+            const data = response.data;
+            this.onFormLoad(data, 'autoSave');
+            this.ctrlEvent({
+                controlname: this.controlInstance.name,
+                action: 'save',
+                data: data,
+            });
+            AppCenterService.notifyMessage({ name: this.controlInstance.getPSAppDataEntity()?.codeName || '', action: 'appRefresh', data: data });
+            this.$nextTick(() => {
+                this.formState.next({ type: 'save', data: data });
+            });
+        }).catch((response: any) => {
+            this.endLoading();
+            if (response && response.status && response.data) {
+                if (response.data.errorKey) {
+                    if (Object.is(response.data.errorKey, "versionCheck")) {
+                        this.$Notice.confirm((this.$t('app.formpage.saveerror') as string), (this.$t('app.formpage.savecontent') as string)).then((result:any)=>{
+                          if (result) {
+                            this.refresh([]);
+                          }
+                        });
+                    } else if (Object.is(response.data.errorKey, 'DupCheck')) {
+                        let errorProp: string = response.data.message.match(/\[[a-zA-Z]*\]/)[0];
+                        let name: string = this.service.getNameByProp(errorProp.substr(1, errorProp.length - 2));
+                        if (name) {
+                            this.$Notice.error(
+                                this.detailsModel[name].caption + " : " + arg[name] + (this.$t('app.commonWords.isExist') as string) + '!',
+                            );
+                        } else {
+                            this.$Notice.error(
+                                response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string),
+                            )
+                        }
+                    } else if (Object.is(response.data.errorKey, 'DuplicateKeyException')) {
+                        this.$Notice.error(
+                            this.detailsModel[this.majorKeyItemName].caption + " : " + arg[this.majorKeyItemName] + (this.$t('app.commonWords.isExist') as string) + '!',
+                        );
+                    } else {
+                        this.$Notice.error( response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string) );
+                    }
+                } else {
+                    this.$Notice.error( response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string) );
+                }
+                return;
+            } else {
+                this.$Notice.error(this.$t('app.commonWords.sysException') as string) ;
+            }
+        });
+    }
 
     /**
      * 保存

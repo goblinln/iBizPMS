@@ -110,21 +110,6 @@ export class MobOptViewBase extends MainViewBase {
     }
 
     /**
-     * 部件事件
-     * @param ctrl 部件 
-     * @param action  行为
-     * @param data 数据
-     * 
-     * @memberof MobOptViewBase
-     */
-    public onCtrlEvent(controlname: string, action: string, data: any) {
-        if (action == 'dataChange' && data == true) {
-          this.dataChange = true;
-        }
-        super.onCtrlEvent(controlname,action,data);
-    }
-
-    /**
      * 保存按钮事件
      *
      * @protected
@@ -159,39 +144,54 @@ export class MobOptViewBase extends MainViewBase {
         }
     }
 
-    // TODO
-    // /**
-    //  * 检查表单是否修改
-    //  *
-    //  * @param {any[]} args
-    //  * @memberof MobOptViewBase
-    //  */
-    // public async cheackChange(): Promise<any> {
-    //     if (this.dataChange) {
-    //         const title: any = this.$t('app.tabpage.sureclosetip.title');
-    //         const contant: any = this.$t('app.tabpage.sureclosetip.content');
-    //         const result = await this.$Notice.confirm(title, contant);
-    //         if (result) {
-    //             return true;
-    //         } else {
-    //             return false;
-    //         }
-    //     } else {
-    //         return true;
-    //     }
-    // }
+    /**
+     * 部件事件
+     * @param ctrl 部件 
+     * @param action  行为
+     * @param data 数据
+     * 
+     * @memberof MobOptViewBase
+     */
+    public onCtrlEvent(controlname: string, action: string, data: any) {
+        if (action == 'dataChange') {
+          this.dataChange = data;
+        }
+        super.onCtrlEvent(controlname,action,data);
+    }
 
-    // /**
-    //  *  关闭视图
-    //  *
-    //  * @memberof MobOptViewBase
-    //  */
-    // public async closeView(args?: any[]) {
-    //     let result = await this.cheackChange();
-    //     if(result){
-    //       super.closeView(args);
-    //     }
-    // }
+    /**
+     * 检查表单是否修改
+     *
+     * @param {any[]} args
+     * @memberof MobOptViewBase
+     */
+    public async cheackChange(): Promise<any> {
+        if (this.dataChange) {
+            const title: any = this.$t('app.tabpage.sureclosetip.title');
+            const contant: any = this.$t('app.tabpage.sureclosetip.content');
+            const result = await this.$Notice.confirm(title, contant);
+            if (result) {
+                this.dataChange = false;
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return true;
+        }
+    }
+
+    /**
+     *  关闭视图
+     *
+     * @memberof MobOptViewBase
+     */
+    public async closeView(args?: any[]) {
+        let result = await this.cheackChange();
+        if(result){
+          super.closeView(args);
+        }
+    }
 
 
 }
