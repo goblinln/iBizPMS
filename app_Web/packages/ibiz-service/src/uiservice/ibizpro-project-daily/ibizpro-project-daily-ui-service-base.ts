@@ -54,10 +54,11 @@ export class IbizproProjectDailyUIServiceBase extends UIServiceBase {
      * 
      * @memberof  IbizproProjectDailyUIServiceBase
      */
-    protected async initActionMap() {
-        if (this.entityModel && this.entityModel.getAllPSAppDEUIActions() && (this.entityModel.getAllPSAppDEUIActions() as IPSAppDEUIAction[]).length > 0) {
-            for(let element of (this.entityModel.getAllPSAppDEUIActions() as IPSAppDEUIAction[])){
-                const targetAction:any = await AppLogicFactory.getInstance(element, this.context);
+    protected async initActionMap(): Promise<void> {
+        const actions = this.entityModel?.getAllPSAppDEUIActions() as IPSAppDEUIAction[];
+        if (actions && actions.length > 0) {
+            for (const element of actions) {
+                const targetAction: any = await AppLogicFactory.getInstance(element, this.context);
                 this.actionMap.set(element.uIActionTag, targetAction);
             }
         }

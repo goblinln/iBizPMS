@@ -254,4 +254,32 @@ export class FileBaseService extends EntityBaseService<IFile> {
     async FetchTypeNotBySrfparentkey(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/files/fetchtypenotbysrfparentkey`, _data);
     }
+
+    /**
+     * UpdateObjectIDBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof FileServiceBase
+     */
+    public async UpdateObjectIDBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/files/updateobjectidbatch`,tempData,isloading);
+    }
+
+    /**
+     * UpdateObjectIDForPmsEeBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof FileServiceBase
+     */
+    public async UpdateObjectIDForPmsEeBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/files/updateobjectidforpmseebatch`,tempData,isloading);
+    }
 }

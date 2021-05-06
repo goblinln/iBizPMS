@@ -165,4 +165,18 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibzproconfigs/fetchdefault`, _data);
     }
+
+    /**
+     * GetSystemConfigBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzproConfigServiceBase
+     */
+    public async GetSystemConfigBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/ibzproconfigs/getsystemconfigbatch`,tempData,isloading);
+    }
 }

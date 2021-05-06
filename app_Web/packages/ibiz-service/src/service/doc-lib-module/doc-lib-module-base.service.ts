@@ -308,4 +308,32 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
     async FetchRootModuleMuLuBysrfparentkey(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/doclibmodules/fetchrootmodulemulubysrfparentkey`, _data);
     }
+
+    /**
+     * CollectBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof DocLibModuleServiceBase
+     */
+    public async CollectBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/doclibmodules/collectbatch`,tempData,isloading);
+    }
+
+    /**
+     * UnCollectBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof DocLibModuleServiceBase
+     */
+    public async UnCollectBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/doclibmodules/uncollectbatch`,tempData,isloading);
+    }
 }

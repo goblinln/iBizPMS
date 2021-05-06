@@ -39157,10 +39157,18 @@ const router = new Router({
                 requireAuth: false,
                 ignoreAddPage: true,
             },
-            beforeEnter: (to: any, from: any, next: any) => {
-                next();
-            },
             component: () => import('@components/app-lock/app-lock.vue'),
+        },
+        {
+            path: '/appredirectview',
+            name: 'appredirectview',
+            meta: {  
+                caption: '全局应用重定向视图',
+                viewType: 'REDIRECTVIEW',
+                requireAuth: false,
+                ignoreAddPage: true,
+            },
+            component: () => import('@components/app-redirect-view/app-redirect-view.vue'),
         },
         {
             path: '/404',

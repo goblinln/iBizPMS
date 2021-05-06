@@ -209,4 +209,32 @@ export class IbzReportlyBaseService extends EntityBaseService<IIbzReportly> {
     async FetchMyReportlyMob(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibzreportlies/fetchmyreportlymob`, _data);
     }
+
+    /**
+     * HaveReadBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzReportlyServiceBase
+     */
+    public async HaveReadBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/ibzreportlies/havereadbatch`,tempData,isloading);
+    }
+
+    /**
+     * SubmitBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzReportlyServiceBase
+     */
+    public async SubmitBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/ibzreportlies/submitbatch`,tempData,isloading);
+    }
 }

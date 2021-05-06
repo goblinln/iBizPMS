@@ -215,7 +215,6 @@
       },
       "getPSLayoutPos" : {
         "colLG" : 3,
-        "colLGOffset" : 1,
         "colMD" : 3,
         "layout" : "TABLE_24COL"
       },
@@ -244,9 +243,6 @@
       "getPSLayoutPos" : {
         "colLG" : 3,
         "colMD" : 3,
-        "colMDOffset" : 5,
-        "colSMOffset" : 5,
-        "colXSOffset" : 5,
         "layout" : "TABLE_24COL"
       },
       "allowEmpty" : true,

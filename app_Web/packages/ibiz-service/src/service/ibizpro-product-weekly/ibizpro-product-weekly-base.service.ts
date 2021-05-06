@@ -165,4 +165,18 @@ export class IbizproProductWeeklyBaseService extends EntityBaseService<IIbizproP
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibizproproductweeklies/fetchdefault`, _data);
     }
+
+    /**
+     * SumProductWeeklyBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbizproProductWeeklyServiceBase
+     */
+    public async SumProductWeeklyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/ibizproproductweeklies/sumproductweeklybatch`,tempData,isloading);
+    }
 }

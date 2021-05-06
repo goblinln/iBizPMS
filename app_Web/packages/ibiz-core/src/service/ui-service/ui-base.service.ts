@@ -1,8 +1,8 @@
-import { IPSAppDataEntity, IPSDEMainState, IPSDEMainStateOPPriv, IPSDEOPPriv } from "@ibiz/dynamic-model-api";
-import { setSessionStorage } from "../..";
-import { AppServiceBase } from "../app-service/app-base.service";
-import { AuthServiceBase } from "../auth-service/auth-base.service";
-import { GetModelService } from "../model-service/model-service";
+import { IPSAppDataEntity, IPSDEMainState, IPSDEMainStateOPPriv, IPSDEOPPriv } from '@ibiz/dynamic-model-api';
+import { setSessionStorage } from '../..';
+import { AppServiceBase } from '../app-service/app-base.service';
+import { AuthServiceBase } from '../auth-service/auth-base.service';
+import { GetModelService } from '../model-service/model-service';
 
 /**
  * 界面服务基类
@@ -11,7 +11,6 @@ import { GetModelService } from "../model-service/model-service";
  * @class UIServiceBase
  */
 export class UIServiceBase {
-
     /**
      * 应用存储对象
      *
@@ -28,11 +27,11 @@ export class UIServiceBase {
      * @type {Array<string>}
      * @memberof UIServiceBase
      */
-     protected InWorkflowArray: Array<string> = ["todo","toread","done"];
+    protected InWorkflowArray: Array<string> = ['todo', 'toread', 'done'];
 
     /**
      * 应用上下文
-     * 
+     *
      * @protected
      * @type {any}
      * @memberof UIServiceBase
@@ -48,7 +47,7 @@ export class UIServiceBase {
 
     /**
      * 所依赖数据服务
-     * 
+     *
      * @memberof  UIServiceBase
      */
     protected dataService: any;
@@ -60,7 +59,7 @@ export class UIServiceBase {
      * @type {string}
      * @memberof UIServiceBase
      */
-    protected dynaModelFilePath: string = "";
+    protected dynaModelFilePath: string = '';
 
     /**
      * 应用实体模型对象
@@ -69,95 +68,95 @@ export class UIServiceBase {
      * @type {IBizEntityModel}
      * @memberof UIServiceBase
      */
-    protected entityModel !: IPSAppDataEntity;
+    protected entityModel!: IPSAppDataEntity;
 
     /**
      * 是否支持实体主状态
-     * 
+     *
      * @memberof  UIServiceBase
      */
     protected isEnableDEMainState: boolean = false;
 
     /**
      * 界面行为Map
-     * 
+     *
      * @memberof  UIServiceBase
      */
     protected actionMap: Map<string, any> = new Map();
 
     /**
      * 所有关联视图功能数据
-     * 
+     *
      * @memberof  UIServiceBase
      */
     protected allViewFuncMap: Map<string, Object> = new Map();
 
     /**
      * 状态值
-     * 
+     *
      * @memberof  UIServiceBase
      */
     protected stateValue: number = 0;
 
     /**
      * 状态属性
-     * 
+     *
      * @memberof  UIServiceBase
      */
-    protected stateField: string = "";
+    protected stateField: string = '';
 
     /**
      * 多表单属性
-     * 
+     *
      * @memberof  UIServiceBase
      */
     protected multiFormDEField: string | null = null;
 
     /**
      * 索引类型属性
-     * 
+     *
      * @memberof  UIServiceBase
      */
     protected indexTypeDEField: string | null = null;
 
     /**
      * 临时组织标识属性
-     * 
+     *
      * @memberof  UIServiceBase
      */
     protected tempOrgIdDEField: string | null = null;
 
     /**
      * 动态实例标记
-     * 
+     *
      * @memberof  UIServiceBase
      */
     protected dynaInstTag: string | null = null;
 
     /**
      * 主状态属性集合
-     * 
+     *
      * @memberof  UIServiceBase
      */
     protected mainStateFields: Array<any> = [];
 
     /**
      * 主状态集合Map
-     * 
+     *
      * @memberof  UIServiceBase
      */
     protected allDeMainStateMap: Map<string, string> = new Map();
 
     /**
      * 主状态操作标识Map
-     * 
+     *
      * @memberof  UIServiceBase
      */
     protected allDeMainStateOPPrivsMap: Map<string, any> = new Map();
 
     /**
      * Creates an instance of UIServiceBase.
-     * 
+     *
      * @param {*} [opts={}]
      * @memberof UIServiceBase
      */
@@ -187,12 +186,22 @@ export class UIServiceBase {
      * @param {*} [xData]  执行行为所需当前部件
      * @param {*} [actionContext]  执行行为上下文
      * @param {*} [srfParentDeName] 父实体名称
-     * 
+     *
      * @memberof UIServiceBase
      */
-    protected excuteAction(uIActionTag: string, args: any[], context: any = {}, params: any = {}, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
-        if (this.actionMap.get(uIActionTag)) {
-            this.actionMap.get(uIActionTag).execute(args, context, params, $event, xData, actionContext, srfParentDeName, this);
+    protected excuteAction(
+        uIActionTag: string,
+        args: any[],
+        context: any = {},
+        params: any = {},
+        $event?: any,
+        xData?: any,
+        actionContext?: any,
+        srfParentDeName?: string,
+    ) {
+        if (this.actionMap.has(uIActionTag)) {
+            const action = this.actionMap.get(uIActionTag);
+            action.execute(args, context, params, $event, xData, actionContext, srfParentDeName, this);
         } else {
             console.warn(`当前实例${uIActionTag}界面行为未实现`);
         }
@@ -200,7 +209,7 @@ export class UIServiceBase {
 
     /**
      * 加载应用实体模型数据
-     * 
+     *
      * @memberof  UIServiceBase
      */
     protected async loaded() {
@@ -211,7 +220,7 @@ export class UIServiceBase {
 
     /**
      * 初始化运行时数据
-     * 
+     *
      * @memberof  UIServiceBase
      */
     protected initRuntimeData() {
@@ -223,32 +232,36 @@ export class UIServiceBase {
 
     /**
      * 初始化基础数据
-     * 
+     *
      * @memberof  UIServiceBase
      */
-    protected initBasicData() { }
+    protected initBasicData() {}
 
     /**
      * 初始化界面行为数据
-     * 
+     *
      * @memberof  UIServiceBase
      */
-    protected async initActionMap() { }
+    protected async initActionMap(): Promise<void> {}
 
     /**
-      * 初始化视图功能数据Map
-      * 
-      * @memberof  UIServiceBase
-      */
-    protected initViewFuncMap() { }
+     * 初始化视图功能数据Map
+     *
+     * @memberof  UIServiceBase
+     */
+    protected initViewFuncMap() {}
 
     /**
      * 初始化主状态集合
-     * 
+     *
      * @memberof  UIServiceBase
      */
     protected initDeMainStateMap() {
-        if (this.entityModel && this.entityModel.getAllPSDEMainStates() && (this.entityModel.getAllPSDEMainStates() as IPSDEMainState[]).length > 0) {
+        if (
+            this.entityModel &&
+            this.entityModel.getAllPSDEMainStates() &&
+            (this.entityModel.getAllPSDEMainStates() as IPSDEMainState[]).length > 0
+        ) {
             (this.entityModel.getAllPSDEMainStates() as IPSDEMainState[]).forEach((element: IPSDEMainState) => {
                 this.allDeMainStateMap.set(element.mSTag, element.mSTag);
             });
@@ -257,14 +270,22 @@ export class UIServiceBase {
 
     /**
      * 初始化主状态操作标识
-     * 
+     *
      * @memberof  UIServiceBase
      */
     protected initDeMainStateOPPrivsMap() {
-        if (this.entityModel && this.entityModel.getAllPSDEMainStates() && (this.entityModel.getAllPSDEMainStates() as IPSDEMainState[]).length > 0) {
+        if (
+            this.entityModel &&
+            this.entityModel.getAllPSDEMainStates() &&
+            (this.entityModel.getAllPSDEMainStates() as IPSDEMainState[]).length > 0
+        ) {
             (this.entityModel.getAllPSDEMainStates() as IPSDEMainState[]).forEach((element: IPSDEMainState) => {
                 let tempMainStateOPPrivs: any = {};
-                if (this.entityModel && this.entityModel.getAllPSDEOPPrivs() && (this.entityModel.getAllPSDEOPPrivs() as IPSDEOPPriv[]).length > 0) {
+                if (
+                    this.entityModel &&
+                    this.entityModel.getAllPSDEOPPrivs() &&
+                    (this.entityModel.getAllPSDEOPPrivs() as IPSDEOPPriv[]).length > 0
+                ) {
                     (this.entityModel.getAllPSDEOPPrivs() as IPSDEOPPriv[]).forEach((deOPPriv: IPSDEOPPriv) => {
                         if (element.oPPrivAllowMode) {
                             tempMainStateOPPrivs[deOPPriv.name] = 0;
@@ -273,14 +294,19 @@ export class UIServiceBase {
                         }
                     });
                 }
-                if (element.getPSDEMainStateOPPrivs() && (element.getPSDEMainStateOPPrivs() as IPSDEMainStateOPPriv[]).length > 0) {
-                    (element.getPSDEMainStateOPPrivs() as IPSDEMainStateOPPriv[]).forEach((mainStateOPPriv: IPSDEMainStateOPPriv) => {
-                        if (element.oPPrivAllowMode) {
-                            tempMainStateOPPrivs[mainStateOPPriv.name] = 1;
-                        } else {
-                            tempMainStateOPPrivs[mainStateOPPriv.name] = 0;
-                        }
-                    });
+                if (
+                    element.getPSDEMainStateOPPrivs() &&
+                    (element.getPSDEMainStateOPPrivs() as IPSDEMainStateOPPriv[]).length > 0
+                ) {
+                    (element.getPSDEMainStateOPPrivs() as IPSDEMainStateOPPriv[]).forEach(
+                        (mainStateOPPriv: IPSDEMainStateOPPriv) => {
+                            if (element.oPPrivAllowMode) {
+                                tempMainStateOPPrivs[mainStateOPPriv.name] = 1;
+                            } else {
+                                tempMainStateOPPrivs[mainStateOPPriv.name] = 0;
+                            }
+                        },
+                    );
                 }
                 this.allDeMainStateOPPrivsMap.set(element.mSTag, tempMainStateOPPrivs);
             });
@@ -288,11 +314,11 @@ export class UIServiceBase {
     }
 
     /**
-    * 获取资源标识是否有权限(无数据目标)
-    * 
-    * @param tag 资源标识
-    * @memberof  UIServiceBase
-    */
+     * 获取资源标识是否有权限(无数据目标)
+     *
+     * @param tag 资源标识
+     * @memberof  UIServiceBase
+     */
     protected getResourceOPPrivs(tag: any) {
         if (!this.authService) {
             this.authService = new AuthServiceBase(this.getStore());
@@ -302,7 +328,7 @@ export class UIServiceBase {
 
     /**
      * 获取指定数据的重定向页面
-     * 
+     *
      * @param srfkey 数据主键
      * @param enableWorkflowParam  重定向视图需要处理流程中的数据
      * @memberof  UIServiceBase
@@ -312,8 +338,8 @@ export class UIServiceBase {
         let result: any = await this.dataService.Get({ [this.entityModel.codeName.toLowerCase()]: srfkey });
         const curData: any = result.data;
         // 设置临时组织标识（用于获取多实例）
-        if(this.tempOrgIdDEField && curData && curData[this.tempOrgIdDEField]){
-            setSessionStorage("tempOrgId",curData[this.tempOrgIdDEField]);
+        if (this.tempOrgIdDEField && curData && curData[this.tempOrgIdDEField]) {
+            setSessionStorage('tempOrgId', curData[this.tempOrgIdDEField]);
         }
         //判断当前数据模式,默认为true，todo
         const iRealDEModel: boolean = true;
@@ -321,7 +347,12 @@ export class UIServiceBase {
         let bDataInWF: boolean = false;
         let bWFMode: any = false;
         // 计算数据模式
-        if ((enableWorkflowParam && enableWorkflowParam.srfwf && (this.InWorkflowArray.indexOf(enableWorkflowParam.srfwf) !== -1)) || (enableWorkflowParam && enableWorkflowParam.enableWorkflow)) {
+        if (
+            (enableWorkflowParam &&
+                enableWorkflowParam.srfwf &&
+                this.InWorkflowArray.indexOf(enableWorkflowParam.srfwf) !== -1) ||
+            (enableWorkflowParam && enableWorkflowParam.enableWorkflow)
+        ) {
             bDataInWF = true;
         }
         let strPDTViewParam: string = await this.getDESDDEViewPDTParam(curData, bDataInWF, bWFMode);
@@ -334,20 +365,20 @@ export class UIServiceBase {
             return strPDTViewParam;
         } else {
             //返回视图功能数据
-            return `${this.allViewFuncMap.get(strPDTViewParam) ? this.allViewFuncMap.get(strPDTViewParam) : ""}`;
+            return `${this.allViewFuncMap.get(strPDTViewParam) ? this.allViewFuncMap.get(strPDTViewParam) : ''}`;
         }
     }
 
     /**
      * 获取实际的数据类型
-     * 
+     *
      * @memberof  UIServiceBase
      */
-    protected getRealDEType(entity: any) { }
+    protected getRealDEType(entity: any) {}
 
     /**
      * 获取实体单数据实体视图预定义参数
-     * 
+     *
      * @param curData 当前数据
      * @param bDataInWF 是否有数据在工作流中
      * @param bWFMode   是否工作流模式
@@ -359,8 +390,8 @@ export class UIServiceBase {
         if (bDataInWF) {
             // 存在多表单属性
             if (this.multiFormDEField) {
-                strPDTParam = "";
-                const formFieldValue: string = curData[this.multiFormDEField] ? curData[this.multiFormDEField] : "";
+                strPDTParam = '';
+                const formFieldValue: string = curData[this.multiFormDEField] ? curData[this.multiFormDEField] : '';
                 if (formFieldValue) {
                     if (!Environment.isAppMode) {
                         strPDTParam += 'MOBWFEDITVIEW:' + formFieldValue;
@@ -370,8 +401,8 @@ export class UIServiceBase {
             }
             // 存在索引类型属性
             if (this.indexTypeDEField) {
-                strPDTParam = "";
-                const indexTypeValue: string = curData[this.indexTypeDEField] ? curData[this.indexTypeDEField] : "";
+                strPDTParam = '';
+                const indexTypeValue: string = curData[this.indexTypeDEField] ? curData[this.indexTypeDEField] : '';
                 if (indexTypeValue) {
                     if (!Environment.isAppMode) {
                         strPDTParam += 'MOBWFEDITVIEW:' + indexTypeValue;
@@ -386,7 +417,7 @@ export class UIServiceBase {
         }
         // 存在多表单属性
         if (this.multiFormDEField) {
-            const formFieldValue: string = curData[this.multiFormDEField] ? curData[this.multiFormDEField] : "";
+            const formFieldValue: string = curData[this.multiFormDEField] ? curData[this.multiFormDEField] : '';
             if (formFieldValue) {
                 if (!Environment.isAppMode) {
                     return 'MOBEDITVIEW:' + formFieldValue;
@@ -396,7 +427,7 @@ export class UIServiceBase {
         }
         // 存在索引类型属性
         if (this.indexTypeDEField) {
-            const indexTypeValue: string = curData[this.indexTypeDEField] ? curData[this.indexTypeDEField] : "";
+            const indexTypeValue: string = curData[this.indexTypeDEField] ? curData[this.indexTypeDEField] : '';
             if (indexTypeValue) {
                 if (!Environment.isAppMode) {
                     return 'MOBEDITVIEW:' + indexTypeValue;
@@ -418,7 +449,7 @@ export class UIServiceBase {
 
     /**
      * 获取数据对象的主状态标识
-     * 
+     *
      * @param curData 当前数据
      * @memberof  UIServiceBase
      */
@@ -427,17 +458,30 @@ export class UIServiceBase {
 
         this.mainStateFields.forEach((singleMainField: any) => {
             if (!(singleMainField in curData)) {
-                console.warn(`当前数据对象不包含属性「${singleMainField}」，根据「${singleMainField}」属性进行的主状态计算默认为空值`);
+                console.warn(
+                    `当前数据对象不包含属性「${singleMainField}」，根据「${singleMainField}」属性进行的主状态计算默认为空值`,
+                );
             }
-        })
+        });
         for (let i = 0; i <= 1; i++) {
-            let strTag: string = (curData[this.mainStateFields[0]] != null && curData[this.mainStateFields[0]] !== "") ? (i == 0) ? `${curData[this.mainStateFields[0]]}` : "" : "";
+            let strTag: string =
+                curData[this.mainStateFields[0]] != null && curData[this.mainStateFields[0]] !== ''
+                    ? i == 0
+                        ? `${curData[this.mainStateFields[0]]}`
+                        : ''
+                    : '';
             if (this.mainStateFields.length >= 2) {
                 for (let j = 0; j <= 1; j++) {
-                    let strTag2: string = (curData[this.mainStateFields[1]] != null && curData[this.mainStateFields[1]] !== "") ? `${strTag}__${(j == 0) ? `${curData[this.mainStateFields[1]]}` : ""}` : strTag;
+                    let strTag2: string =
+                        curData[this.mainStateFields[1]] != null && curData[this.mainStateFields[1]] !== ''
+                            ? `${strTag}__${j == 0 ? `${curData[this.mainStateFields[1]]}` : ''}`
+                            : strTag;
                     if (this.mainStateFields.length >= 3) {
                         for (let k = 0; k <= 1; k++) {
-                            let strTag3: string = (curData[this.mainStateFields[2]] != null && curData[this.mainStateFields[2]] !== "") ? `${strTag2}__${(k == 0) ? `${curData[this.mainStateFields[2]]}` : ""}` : strTag2;
+                            let strTag3: string =
+                                curData[this.mainStateFields[2]] != null && curData[this.mainStateFields[2]] !== ''
+                                    ? `${strTag2}__${k == 0 ? `${curData[this.mainStateFields[2]]}` : ''}`
+                                    : strTag2;
                             // 判断是否存在
                             return this.allDeMainStateMap.get(strTag3);
                         }
@@ -453,27 +497,26 @@ export class UIServiceBase {
     }
 
     /**
-    * 获取数据对象当前操作标识
-    * 
-    * @param data 当前数据
-    * @memberof  UIServiceBase
-    */
+     * 获取数据对象当前操作标识
+     *
+     * @param data 当前数据
+     * @memberof  UIServiceBase
+     */
     protected getDEMainStateOPPrivs(data: any) {
         if (this.getDEMainStateTag(data)) {
-            return this.allDeMainStateOPPrivsMap.get((this.getDEMainStateTag(data) as string));
+            return this.allDeMainStateOPPrivsMap.get(this.getDEMainStateTag(data) as string);
         } else {
             return null;
         }
     }
 
     /**
-    * 获取数据对象所有的操作标识
-    * 
-    * @param data 当前数据
-    * @memberof  UIServiceBase
-    */
+     * 获取数据对象所有的操作标识
+     *
+     * @param data 当前数据
+     * @memberof  UIServiceBase
+     */
     protected getAllOPPrivs(data: any) {
         return this.authService.getOPPrivs(this.getDEMainStateOPPrivs(data));
     }
-
 }

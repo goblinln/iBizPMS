@@ -101,7 +101,18 @@ export default class AppLockScren extends Vue{
       color: var(--item-font-color-tint);
     }
 }
-.lockscren-body .el-dialog__body{
-  height: 80%;
-}
+.el-dialog.lockscren-body{
+  height: auto;
+  .el-dialog__header{
+    height: auto;
+  }
+  .el-dialog__body{
+    height: auto;
+    display: flex;
+    align-items: center;
+    .el-form{
+      width: 100%;
+    }
+  }
+} 
 </style>

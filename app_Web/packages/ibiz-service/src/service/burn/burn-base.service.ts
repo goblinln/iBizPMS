@@ -231,4 +231,22 @@ export class BurnBaseService extends EntityBaseService<IBurn> {
         }
         return this.http.post(`/burns/fetchestimateandleft`, _data);
     }
+
+    /**
+     * ComputeBurnBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BurnServiceBase
+     */
+    public async ComputeBurnBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        if(context.project && true){
+            let tempData:any = JSON.parse(JSON.stringify(data));
+            return await Http.getInstance().post(`/projects/${context.project}/burns/computeburnbatch`,tempData,isloading);
+        }
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/burns/computeburnbatch`,tempData,isloading);
+    }
 }

@@ -245,4 +245,32 @@ export class UserYearWorkStatsBaseService extends EntityBaseService<IUserYearWor
     async FetchMonthOpenedStory(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/useryearworkstats/fetchmonthopenedstory`, _data);
     }
+
+    /**
+     * GetUserYearActionBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof UserYearWorkStatsServiceBase
+     */
+    public async GetUserYearActionBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/useryearworkstats/getuseryearactionbatch`,tempData,isloading);
+    }
+
+    /**
+     * UpdateTitleByYearBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof UserYearWorkStatsServiceBase
+     */
+    public async UpdateTitleByYearBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/useryearworkstats/updatetitlebyyearbatch`,tempData,isloading);
+    }
 }

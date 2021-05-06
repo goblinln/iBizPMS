@@ -187,4 +187,32 @@ export class IbizproProductDailyBaseService extends EntityBaseService<IIbizproPr
     async FetchProductDaily(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibizproproductdailies/fetchproductdaily`, _data);
     }
+
+    /**
+     * ManualCreateDailyBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbizproProductDailyServiceBase
+     */
+    public async ManualCreateDailyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/ibizproproductdailies/manualcreatedailybatch`,tempData,isloading);
+    }
+
+    /**
+     * StatsProductDailyBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbizproProductDailyServiceBase
+     */
+    public async StatsProductDailyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/ibizproproductdailies/statsproductdailybatch`,tempData,isloading);
+    }
 }

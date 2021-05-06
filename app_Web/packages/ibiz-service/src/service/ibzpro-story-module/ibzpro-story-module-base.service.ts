@@ -165,4 +165,18 @@ export class IBZProStoryModuleBaseService extends EntityBaseService<IIBZProStory
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibzprostorymodules/fetchdefault`, _data);
     }
+
+    /**
+     * SyncFromIBIZBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IBZProStoryModuleServiceBase
+     */
+    public async SyncFromIBIZBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
+        let tempData:any = JSON.parse(JSON.stringify(data));
+        return await Http.getInstance().post(`/ibzprostorymodules/syncfromibizbatch`,tempData,isloading);
+    }
 }
