@@ -331,12 +331,10 @@ export default class AppPicker extends Vue {
             if (index !== -1) {
                 return;
             }
+            // items里匹配不到当前值项值时，生成自身的选项
             this.items = [];
-            if (value) {
+            if (!Util.isEmpty(newVal) && !Util.isEmpty(value)) {
                 this.items.push({text: newVal, value: value});
-            }
-            if(Util.isEmpty(newVal) && Util.isEmpty(value)){
-                this.onSearch(newVal, null, false);
             }
         }
     }

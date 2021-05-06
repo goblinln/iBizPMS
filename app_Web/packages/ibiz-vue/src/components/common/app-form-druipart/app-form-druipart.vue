@@ -1,6 +1,7 @@
 <template>
   <div class="form-druipart">
     <component
+      v-if="Object.keys(viewdata).length > 0"
       ref="appFormDruipart"
       :is="'app-view-shell'"
       :key="uuid"
@@ -173,6 +174,14 @@ export default class AppFormDRUIPart extends Vue {
      * @memberof AppFormDRUIPart
      */
     @Prop() public parentName!: string;
+
+    /**
+     * 用户标记
+     *
+     * @type {string}
+     * @memberof AppFormDRUIPart
+     */
+    @Prop() public userTag!: string;
 
     /**
      * 关系界面向视图下发指令对象
@@ -358,7 +367,7 @@ export default class AppFormDRUIPart extends Vue {
                 }
             }
         }
-        if (!this.isForbidLoad) {
+        if (Object.is(this.userTag, 'alwaysLoad') || !this.isForbidLoad) {
             setTimeout(() => {
                 this.partViewEvent(
                     "load",

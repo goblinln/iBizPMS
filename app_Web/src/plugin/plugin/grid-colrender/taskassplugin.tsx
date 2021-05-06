@@ -21,7 +21,7 @@ export class TASKASSPlugin {
      * @memberof TASKASSPlugin
      */
     public renderCtrlItem(h:any,ctrlItemModel:any,parentContainer:any,data:any){
-        const { name, caption, align, width, widthUnit, codeList } = ctrlItemModel;
+        const { name, caption, align, width, widthUnit, psappcodelist } = ctrlItemModel;
         let renderParams: any = {
             "show-overflow-tooltip": true,
             "label": caption,
@@ -45,7 +45,7 @@ export class TASKASSPlugin {
                         <app-user-span
                             value={scope.row.assignedto}
                             context={JSON.parse(JSON.stringify(parentContainer.context))}
-                            codeList={codeList}
+                            codeList={psappcodelist}
                         >
                         </app-user-span>
                     </a> : <a  
@@ -55,7 +55,7 @@ export class TASKASSPlugin {
                             <app-user-span
                                 value={scope.row.assignedto}
                                 context={JSON.parse(JSON.stringify(parentContainer.context))}
-                                codeList={codeList}
+                                codeList={psappcodelist}
                             >
                             </app-user-span></a>
                 },

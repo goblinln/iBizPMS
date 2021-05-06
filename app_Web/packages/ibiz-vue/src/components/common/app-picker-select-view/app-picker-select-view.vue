@@ -13,14 +13,16 @@
           </el-select>
           <DropdownMenu slot="list">
               <component
-                :is="pickupView.viewname"
+                v-if="isInited"
+                is="app-view-shell"
                 :dynamicProps="{
                     viewdata: viewdata,
-                    viewparam: viewparam
+                    viewparam: viewparam,
                 }"
                 :staticProps="{
                     isShowButton: false,
                     viewDefaultUsage: false,
+                    viewModelData: pickupView.viewModelData
 
                 }"
                 @viewdataschange="onViewdatasChange"
@@ -103,6 +105,22 @@ export default class AppPickerSelectView extends Vue {
      * @memberof AppPickerSelectView
      */
     public viewdata: any = JSON.stringify(this.context);
+
+    /**
+     * 选中数据
+     *
+     * @type {string}
+     * @memberof AppPickerSelectView
+     */
+    public selectedData: any = null;
+
+    /**
+     * 选中数据
+     *
+     * @type {boolean}
+     * @memberof AppPickerSelectView
+     */
+    public isInited: boolean = false;
 
     /**
      * 表单数据
@@ -248,6 +266,7 @@ export default class AppPickerSelectView extends Vue {
         if (!visible) {
             this.visible = !this.visible;
         } else {
+            this.isInited = true;
             this.visible = visible;
         }
     }
@@ -275,6 +294,9 @@ export default class AppPickerSelectView extends Vue {
         if (this.localParam && Object.keys(this.localParam).length >0) {
             let _param = this.$util.computedNavData(this.data,arg.param,arg.param,this.localParam);
             Object.assign(arg.param,_param);
+            if(this.selectedData){
+                arg.param.selectedData = this.selectedData;
+            }
         }
         return true;
     }
@@ -286,7 +308,7 @@ export default class AppPickerSelectView extends Vue {
      * @param {*} oldVal
      * @memberof AppPickerSelectView
      */
-    @Watch('data',{deep:true})
+    @Watch('data',{ deep:true })
     onActivedataChange(newVal: any, oldVal: any) {
         // 公共参数处理
         let data: any = {};
@@ -306,7 +328,7 @@ export default class AppPickerSelectView extends Vue {
      * @param {*} oldVal
      * @memberof AppPickerSelectView
      */
-    @Watch('value', { deep: true })
+    @Watch('value', {immediate: true, deep: true })
     public onValueChange(newVal: any, oldVal: any) {
         if(this.isSingleSelect){
             this.queryValue = newVal;
@@ -314,7 +336,8 @@ export default class AppPickerSelectView extends Vue {
                 this.$throw((this.$t('components.appPickerSelectView.editor') as any)+this.name+(this.$t('components.appPickerSelectView.valueitemException') as any));
             }else{
                 let _viewparam = JSON.parse(this.viewparam);
-                _viewparam.selectedData = [{srfkey: this.data[this.valueitem], srfmajortext: this.value }];
+                this.selectedData = [{srfkey: this.data[this.valueitem], srfmajortext: this.value }];
+                _viewparam.selectedData = this.selectedData;
                 this.viewparam = JSON.stringify(_viewparam);
             }
         }else{
@@ -339,7 +362,8 @@ export default class AppPickerSelectView extends Vue {
                 }
             }
             let _viewparam = JSON.parse(this.viewparam);
-            _viewparam.selectedData = this.selectItems;
+            this.selectedData = this.selectItems;
+            _viewparam.selectedData = this.selectedData;
             this.viewparam = JSON.stringify(_viewparam);
         }
         this.$forceUpdate();
@@ -351,15 +375,7 @@ export default class AppPickerSelectView extends Vue {
      * @memberof AppPickerSelectView
      */
     public created() {
-        // 公共参数处理
-        let data: any = {};
-        const bcancel: boolean = this.handlePublicParams(data);
-        if (!bcancel) {
-            return;
-        }
-        // 参数处理
-        this.viewdata = JSON.stringify(data.context);
-        this.viewparam = JSON.stringify(data.param);
+        this.onActivedataChange(this.data, undefined);
     }
 
     /**

@@ -180,7 +180,7 @@ export default class AppAutocomplete extends Vue {
      * @param {*} oldVal
      * @memberof AppAutocomplete
      */
-    @Watch('value')
+    @Watch('value',{immediate: true})
     public onValueChange(newVal: any, oldVal: any) {
         this.curvalue = newVal;
     }

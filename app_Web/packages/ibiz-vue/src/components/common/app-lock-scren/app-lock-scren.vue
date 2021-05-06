@@ -5,6 +5,7 @@
             <el-dialog :title="this.$t('components.lockScren.title')"
                 :visible.sync="box"
                 width="30%"
+                custom-class="lockscren-body"
                 append-to-body>
             <el-form :model="form"
                 ref="form"
@@ -99,5 +100,8 @@ export default class AppLockScren extends Vue{
     .ivu-icon{
       color: var(--item-font-color-tint);
     }
+}
+.lockscren-body .el-dialog__body{
+  height: 80%;
 }
 </style>

@@ -951,7 +951,7 @@ export class DataViewControlBase extends MDControlBase {
         if (child && child.length > 0) {
             groupTree.push(Tree);
         }
-        this.groupData = [...groupTree];
+        this.groupData = groupTree;
     }
 
     /**
@@ -987,7 +987,7 @@ export class DataViewControlBase extends MDControlBase {
             };
             groupTree.push(tree);
         });
-        this.groupData = [...groupTree];
+        this.groupData = groupTree;
     }
 
     /**
