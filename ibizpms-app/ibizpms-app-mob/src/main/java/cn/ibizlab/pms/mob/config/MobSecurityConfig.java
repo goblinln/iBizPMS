@@ -117,8 +117,8 @@ public class MobSecurityConfig extends WebSecurityConfigurerAdapter {
                 // 放行注销请求
                 .antMatchers( HttpMethod.GET, "/"+logoutPath).permitAll()
                 // 文件操作
-                .antMatchers("/"+downloadpath+"/**").permitAll()
-                .antMatchers("/"+uploadpath).permitAll()
+//                .antMatchers("/"+downloadpath+"/**").permitAll()
+//                .antMatchers("/"+uploadpath).permitAll()
                 .antMatchers("/"+previewpath+"/**");
 
         for (String excludePattern : excludesPattern) {

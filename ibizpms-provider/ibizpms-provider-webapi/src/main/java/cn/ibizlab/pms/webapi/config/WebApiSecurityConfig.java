@@ -125,10 +125,10 @@ public class WebApiSecurityConfig extends WebSecurityConfigurerAdapter {
                 //放行注销请求
                 .antMatchers( HttpMethod.GET, "/"+logoutPath).permitAll()
                 // 文件操作
-                .antMatchers("/"+downloadpath+"/**").permitAll()
-               .antMatchers("/" + ztdownloadpath + "/**").permitAll()
-                .antMatchers("/"+uploadpath).permitAll()
-               .antMatchers("/" + ztuploadpath).permitAll()
+//                .antMatchers("/"+downloadpath+"/**").permitAll()
+//               .antMatchers("/" + ztdownloadpath + "/**").permitAll()
+//                .antMatchers("/"+uploadpath).permitAll()
+//               .antMatchers("/" + ztuploadpath).permitAll()
                 .antMatchers("/"+previewpath+"/**").permitAll();
                 
         for (String excludePattern : excludesPattern) {
