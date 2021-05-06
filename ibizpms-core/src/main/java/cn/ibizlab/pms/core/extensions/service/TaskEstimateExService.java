@@ -50,6 +50,7 @@ public class TaskEstimateExService extends TaskEstimateServiceImpl {
     @Autowired
     IActionService iActionService;
 
+
     @Override
     protected Class currentModelClass() {
         return com.baomidou.mybatisplus.core.toolkit.ReflectionKit.getSuperClassGenericType(this.getClass().getSuperclass(), 1);
@@ -116,15 +117,19 @@ public class TaskEstimateExService extends TaskEstimateServiceImpl {
             param.put("account",oldEstimate.getAccount());
             iTeamService.update(newTeamInfo,(Wrapper<Team>) newTeamInfo.getUpdateWrapper(true).allEq(param));
             List<TaskTeam> teams = task.getTaskteams();
-            // TODO 后续补充
-            // iTaskService.computeHours4Multiple(task,data,teams,false);
+            task.set("data",data);
+            task.set("teams",teams);
+            task.set("changed",false);
+            iTaskService.computeHours4Multiple(task);
         }
         iTaskService.sysUpdate(data);
 
 
         if (task.getParent() > 0) {  //编辑的任务是子任务
-            // TODO 后续补充
-            // iTaskService.updateParentStatus(task, task.getParent(),false);
+
+            task.set("parentId", task.getParent());
+            task.set("changed", false);
+            iTaskService.updateParentStatus(task);
         }
 
         //     * Set stage of a story.
@@ -187,15 +192,18 @@ public class TaskEstimateExService extends TaskEstimateServiceImpl {
 
             iTeamService.update(newTeamInfo,(Wrapper<Team>) newTeamInfo.getUpdateWrapper(true).allEq(param));
             List<TaskTeam> teams = task.getTaskteams();
-            // TODO 后续补充
-            //iTaskService.computeHours4Multiple(task,data,teams,false);
+            task.set("task",data);
+            task.set("teams",teams);
+            task.set("auto",false);
+            iTaskService.computeHours4Multiple(task);
         }
         data.setId(taskEstimate.getTask());
         iTaskService.update(data);
 
         if (task.getParent() > 0) {
-            // TODO 后续补充
-            //iTaskService.updateParentStatus(task, task.getParent(), false);
+            task.set("parentId", task.getParent());
+            task.set("changed", false);
+            iTaskService.updateParentStatus(task);
         }
 
         if (task.getStory() != 0) {
@@ -219,5 +227,6 @@ public class TaskEstimateExService extends TaskEstimateServiceImpl {
         }
         return true;
     }
+
 }
 

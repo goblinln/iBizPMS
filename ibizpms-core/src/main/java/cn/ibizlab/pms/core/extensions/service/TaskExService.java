@@ -439,7 +439,10 @@ public class TaskExService extends TaskServiceImpl {
                 }
                 iTaskTeamService.create(team);
             }
-            this.computeHours4Multiple(old, et, null, false);
+            old.set("task",et);
+            old.set("teams",null);
+            old.set("auto",false);
+            this.computeHours4Multiple(old);
             if (et.getStatus().equals(StaticDict.Task__status.WAIT.getValue())) {
                 et.setAssignedto(assignedto);
             }
@@ -475,7 +478,9 @@ public class TaskExService extends TaskServiceImpl {
 
         if (old.getParent() > 0) {
             Task oldParent = this.get(old.getParent());
-            updateParentStatus(et, oldParent.getId(), !changeParent);
+            et.set("parentId", et.getParent());
+            et.set("changed", !changeParent);
+            updateParentStatus(et);
             computeBeginAndEnd(oldParent);
             if (changeParent) {
                 int oldChildCount = this.count(new QueryWrapper<Task>().eq("parent", old.getParent()));
@@ -504,7 +509,9 @@ public class TaskExService extends TaskServiceImpl {
             task2.setId(et.getParent());
             task2.setParent(-1L);
             super.update(task2);
-            updateParentStatus(et, et.getParent(), !changeParent);
+            et.set("parentId", et.getParent());
+            et.set("changed", !changeParent);
+            updateParentStatus(et);
             computeBeginAndEnd(this.get(et.getParent()));
             if (changeParent) {
                 Task task1 = new Task();
@@ -612,13 +619,17 @@ public class TaskExService extends TaskServiceImpl {
     }
 
     @Transactional(rollbackFor = Exception.class)
-    public void updateParentStatus(Task childTask, Long parentId, boolean changed) {
+    @Override
+    public Task updateParentStatus(Task et) {
         log.info("updateParentStatus:未实现");
+        Long parentId = (Long) et.get("parentId");
+        Boolean changed = (Boolean) et.get("changed");
+
         if (parentId == null) {
-            parentId = childTask.getParent();
+            parentId = et.getParent();
         }
         if (parentId <= 0) {
-            return;
+            return null;
         }
         Task oldParentTask = this.get(parentId);
 
@@ -637,7 +648,7 @@ public class TaskExService extends TaskServiceImpl {
             pTask.setId(parentId);
             pTask.setParent(0L);
             super.update(pTask);
-            return;
+            return et;
         }
 
         //根据子任务状态计算父任务状态
@@ -646,10 +657,10 @@ public class TaskExService extends TaskServiceImpl {
         Task parentTask = this.getOne(new QueryWrapper<Task>().eq("id", parentId).eq("deleted", '0'));
         if (parentTask == null) {
             Task task1 = new Task();
-            task1.setId(childTask.getId());
+            task1.setId(et.getId());
             task1.setParent(0L);
             super.update(task1);
-            return;
+            return et;
         }
         //
         if (!"".equals(status) && !status.equals(oldParentTask.getStatus())) {
@@ -680,7 +691,7 @@ public class TaskExService extends TaskServiceImpl {
                 task.setClosedreason(StaticDict.Task__status.DONE.getValue());
             } else if (StaticDict.Task__status.DOING.getValue().equals(status) || StaticDict.Task__status.WAIT.getValue().equals(status)) {
                 if (StaticDict.Task__status.CLOSED.getValue().equals(oldParentTask.getAssignedto())) {
-                    task.setAssignedto(childTask.getAssignedto());
+                    task.setAssignedto(et.getAssignedto());
                     task.setCanceleddate(nowDate);
                 }
                 task.setFinishedby("");
@@ -696,7 +707,7 @@ public class TaskExService extends TaskServiceImpl {
                 this.updateRelatedPlanStatus(task);
             }
             if (!changed) {
-                return;
+                return et;
             }
 
             List<History> changes = ChangeUtil.diff(oldParentTask, this.get(parentId));
@@ -717,35 +728,41 @@ public class TaskExService extends TaskServiceImpl {
 
             }
         }
+        return et;
     }
 
-    public void computeHours4Multiple(Task old, Task task, List<TaskTeam> teams, boolean auto) {
-        if (old == null) {
-            return;
+    @Override
+    public Task computeHours4Multiple(Task et) {
+        if (et == null) {
+            return et;
         }
+        Task task = (Task) et.get("task");
+        List<TaskTeam> teams = (List<TaskTeam>)et.get("teams");
+        Boolean auto = (Boolean) et.get("auto");
+
         if (teams == null) {
-            teams = iTaskTeamService.list(new QueryWrapper<TaskTeam>().eq("root", old.getId()).eq("type", StaticDict.Team__type.TASK.getValue()).orderByAsc("`order`"));
+            teams = iTaskTeamService.list(new QueryWrapper<TaskTeam>().eq("root", et.getId()).eq("type", StaticDict.Team__type.TASK.getValue()).orderByAsc("`order`"));
         }
         if (teams != null && teams.size() != 0) {
             Timestamp now = ZTDateUtil.now();
             Task currentTask = task != null ? task : new Task();
             if (currentTask.getStatus() == null) {
-                currentTask.setStatus(old.getStatus());
+                currentTask.setStatus(et.getStatus());
             }
             if (task.getAssignedto() != null) {
                 currentTask.setAssignedto(task.getAssignedto());
             } else {
-                if (old.getAssignedto() == null) {
+                if (et.getAssignedto() == null) {
                     TaskTeam firstMember = teams.get(0);
                     currentTask.setAssignedto(firstMember.getAccount());
                     currentTask.setAssigneddate(now);
                 } else {
                     for (TaskTeam team : teams) {
-                        if (team.getAccount() != null && team.getAccount().equals(old.getAssignedto()) && team.getLeft() == 0 && team.getConsumed() != 0) {
-                            if (!old.getAssignedto().equals(teams.get(teams.size() - 1).getAccount())) {
-                                currentTask.setAssignedto(this.getNextUser(teams, old));
+                        if (team.getAccount() != null && team.getAccount().equals(et.getAssignedto()) && team.getLeft() == 0 && team.getConsumed() != 0) {
+                            if (!et.getAssignedto().equals(teams.get(teams.size() - 1).getAccount())) {
+                                currentTask.setAssignedto(this.getNextUser(teams, et));
                             } else {
-                                currentTask.setAssignedto(old.getOpenedby());
+                                currentTask.setAssignedto(et.getOpenedby());
                             }
                             break;
                         }
@@ -784,7 +801,7 @@ public class TaskExService extends TaskServiceImpl {
                     }
                     boolean flag1 = true;
                     for (TaskTeam team : teams) {
-                        if (team.getAccount().equals(old.getAssignedto())) {
+                        if (team.getAccount().equals(et.getAssignedto())) {
                             flag1 = false;
                             break;
                         }
@@ -800,7 +817,7 @@ public class TaskExService extends TaskServiceImpl {
                         currentTask.setFinisheddate(currentTask.getFinisheddate() == null ? ZTDateUtil.now() : currentTask.getFinisheddate());
                     }
                 }
-                if (!old.getAssignedto().equals(currentTask.getAssignedto()) || currentTask.getStatus().equals(StaticDict.Task__status.DONE.getValue())) {
+                if (!et.getAssignedto().equals(currentTask.getAssignedto()) || currentTask.getStatus().equals(StaticDict.Task__status.DONE.getValue())) {
                     String login = AuthenticationUser.getAuthenticationUser().getUsername();
                     boolean flag = false;
                     double left = 0;
@@ -811,8 +828,8 @@ public class TaskExService extends TaskServiceImpl {
                             break;
                         }
                     }
-                    if (flag && left == 0 && !old.getFinishedlist().contains(login)) { //完成者列表
-                        String finsihList = old.getFinishedlist() + "," + login;
+                    if (flag && left == 0 && !et.getFinishedlist().contains(login)) { //完成者列表
+                        String finsihList = et.getFinishedlist() + "," + login;
                         if (finsihList.indexOf(",") == 0) {
                             finsihList.substring(1);
                         } else if (finsihList.indexOf(",") == finsihList.length() - 1) {
@@ -821,16 +838,17 @@ public class TaskExService extends TaskServiceImpl {
                         currentTask.setFinishedlist(finsihList);
 
                     }
-                    if ((StaticDict.Task__status.DONE.getValue().equals(old.getStatus()) || StaticDict.Task__status.CLOSED.getValue().equals(old.getStatus())) && StaticDict.Task__status.DOING.getValue().equals(currentTask.getStatus()) && old.getStatus() != null) {
-                        if (old.getFinishedlist().contains(old.getAssignedto()) && old.getFinishedlist().length() >= old.getFinishedlist().indexOf(old.getAssignedto())) {
-                            currentTask.setFinishedlist(old.getFinishedlist().substring(0, old.getFinishedlist().indexOf(old.getAssignedto()) - 1));
+                    if ((StaticDict.Task__status.DONE.getValue().equals(et.getStatus()) || StaticDict.Task__status.CLOSED.getValue().equals(et.getStatus())) && StaticDict.Task__status.DOING.getValue().equals(currentTask.getStatus()) && et.getStatus() != null) {
+                        if (et.getFinishedlist().contains(et.getAssignedto()) && et.getFinishedlist().length() >= et.getFinishedlist().indexOf(et.getAssignedto())) {
+                            currentTask.setFinishedlist(et.getFinishedlist().substring(0, et.getFinishedlist().indexOf(et.getAssignedto()) - 1));
                         }
                     }
                 }
             }
-            currentTask.setId(old.getId());
+            currentTask.setId(et.getId());
             super.update(currentTask);
         }
+        return et;
     }
 
     public String getNextUser(List<TaskTeam> teams, Task old) {
@@ -906,7 +924,9 @@ public class TaskExService extends TaskServiceImpl {
             return false;
         }
         if (old.getParent() > 0) {
-            updateParentStatus(old, old.getParent(), false);
+            old.set("parentId", old.getParent());
+            old.set("changed", false);
+            updateParentStatus(old);
             ActionHelper.createHis(old.getParent(), StaticDict.Action__object_type.TASK.getValue(), null,   StaticDict.Action__type.DELETECHILDRENTASK.getValue(), "","", null, iActionService);
         }
         if (old.getFrombug() != 0) {
@@ -954,14 +974,19 @@ public class TaskExService extends TaskServiceImpl {
                     break;
                 }
             }
-            computeHours4Multiple(old, newTask, null, false);
+            old.set("task",newTask);
+            old.set("teams",null);
+            old.set("auto",false);
+            computeHours4Multiple(old);
         }
 
         String noticeusers = et.getNoticeusers();
         super.update(newTask);
 
         if (old.getParent() > 0) {
-            updateParentStatus(newTask, old.getParent(), true);
+            newTask.set("parentId", old.getParent());
+            newTask.set("changed", true);
+            updateParentStatus(newTask);
         }
 
         if (old.getParent() == -1L) {
@@ -1038,13 +1063,17 @@ public class TaskExService extends TaskServiceImpl {
             Team team1 = new Team();
             team1.setLeft(newTask.getLeft());
             iTeamService.update(team1, new QueryWrapper<Team>().eq("root", newTask.getId()).eq("type", StaticDict.Team__type.TASK.getValue()).eq("account", newTask.getAssignedto()));
-
-            computeHours4Multiple(old, newTask, null, false);
+            old.set("task",newTask);
+            old.set("teams",null);
+            old.set("auto",false);
+            computeHours4Multiple(old);
         }
 
 
         if (old.getParent() > 0) {
-            updateParentStatus(newTask, old.getParent(), true);
+            newTask.set("parentId", old.getParent());
+            newTask.set("changed", true);
+            updateParentStatus(newTask);
         }
         String noticeusers = et.getNoticeusers();
         super.update(newTask);
@@ -1094,7 +1123,9 @@ public class TaskExService extends TaskServiceImpl {
         super.update(newTask);
 
         if (old.getParent() > 0) {
-            updateParentStatus(newTask, old.getParent(), true);
+            newTask.set("parentId", old.getParent());
+            newTask.set("changed", true);
+            updateParentStatus(newTask);
         }
 
         if (old.getParent() == -1L) {
@@ -1160,7 +1191,9 @@ public class TaskExService extends TaskServiceImpl {
         String noticeusers = et.getNoticeusers();
         super.update(newTask);
         if (old.getParent() > 0) {
-            updateParentStatus(newTask, old.getParent(), true);
+            newTask.set("parentId", old.getParent());
+            newTask.set("changed", true);
+            updateParentStatus(newTask);
         }
         //PmsEe操作任务，需判断状态，计算关联的计划的状态
         if (newTask.getPlan() != null && newTask.getPlan() > 0){
@@ -1253,7 +1286,9 @@ public class TaskExService extends TaskServiceImpl {
 
         if (parent > 0) {
             Task lastInsertTask = list.get(list.size() - 1);
-            updateParentStatus(lastInsertTask, parent, true);
+            lastInsertTask.set("parentId",parent);
+            lastInsertTask.set("changed", true);
+            updateParentStatus(lastInsertTask);
             computeBeginAndEnd(this.get(old.getId()));
             if (old.getParent() != -1L) {
                 Task update = new Task();
@@ -1392,7 +1427,10 @@ public class TaskExService extends TaskServiceImpl {
                 }
             }
             newTask.setFinisheddate(et.getFinisheddate());
-            computeHours4Multiple(old, newTask, null, false);
+            old.set("task",newTask);
+            old.set("teams",null);
+            old.set("auto",false);
+            computeHours4Multiple(old);
         }
 
         String files = newTask.getFiles();
@@ -1402,7 +1440,9 @@ public class TaskExService extends TaskServiceImpl {
         FileHelper.updateObjectID(newTask.getId(), StaticDict.File__object_type.TASK.getValue(), files, "", iFileService);
 
         if (old.getParent() > 0) {
-            updateParentStatus(newTask, old.getParent(), true);
+            newTask.set("parentId", old.getParent());
+            newTask.set("changed", true);
+            updateParentStatus(newTask);
         }
 
         //PmsEe操作任务，需判断状态，计算关联的计划的状态
@@ -1557,7 +1597,9 @@ public class TaskExService extends TaskServiceImpl {
         super.update(newTask);
 
         if (old.getParent() > 0) {
-            this.updateParentStatus(newTask, newTask.getParent(), true);
+            newTask.set("parentId", newTask.getParent());
+            newTask.set("changed", true);
+            updateParentStatus(newTask);
         }
         //PmsEe操作任务，需判断状态，计算关联的计划的状态
         if (newTask.getPlan() != null && newTask.getPlan() > 0){
@@ -1690,7 +1732,11 @@ public class TaskExService extends TaskServiceImpl {
             task.setAssigneddate(nowDate);
         }
         if (teams.size() > 0) {
-            this.computeHours4Multiple(old, task, null, false);
+            old.set("task",task);
+            old.set("teams",null);
+            old.set("auto",false);
+            computeHours4Multiple(old);
+
         }
         super.update(task);
 
@@ -1701,7 +1747,9 @@ public class TaskExService extends TaskServiceImpl {
             ActionHelper.logHistory(actionid, changes, iHistoryService);
         }
         if (old.getParent() > 0) {
-            updateParentStatus(task, task.getParent(), true);
+            task.set("parentId", task.getParent());
+            task.set("changed", true);
+            updateParentStatus(task);
         }
         if (old.getStory() != null && old.getStory() != 0L) {
             iStoryService.setStage(old.getZtstory());
@@ -1884,14 +1932,19 @@ public class TaskExService extends TaskServiceImpl {
             team.setLeft(et.getLeft());
             team.setConsumed(et.getConsumed());
             iTeamService.update(team, new QueryWrapper<Team>().eq("root", newTask.getId()).eq("type", StaticDict.Team__type.TASK.getValue()).eq("account", oldAssignTo));
-            computeHours4Multiple(old, newTask, null, false);
+            old.set("task",newTask);
+            old.set("teams",null);
+            old.set("auto",false);
+            computeHours4Multiple(old);
         }
 
         super.update(newTask);
         //保存开始任务时上传的附件
         FileHelper.updateObjectID(newTask.getId(), StaticDict.File__object_type.TASK.getValue(),files,"", iFileService);
         if (old.getParent() > 0) {
-            updateParentStatus(old, old.getParent(), true);
+            old.set("parentId", old.getParent());
+            old.set("changed", true);
+            updateParentStatus(old);
             computeBeginAndEnd(this.get(old.getParent()));
         }
     }
@@ -1927,5 +1980,6 @@ public class TaskExService extends TaskServiceImpl {
         }
         return page;
     }
+
 }
 
