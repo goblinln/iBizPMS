@@ -840,6 +840,7 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/productplans/${_context.productplan}/subproductplans/batchunlinkbugbatch`,_data);
         }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -860,6 +861,7 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/productplans/${_context.productplan}/subproductplans/batchunlinkstorybatch`,_data);
         }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -880,6 +882,7 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/productplans/${_context.productplan}/subproductplans/eeactiveplanbatch`,_data);
         }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -900,6 +903,7 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/productplans/${_context.productplan}/subproductplans/eecancelplanbatch`,_data);
         }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -920,6 +924,7 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/productplans/${_context.productplan}/subproductplans/eecloseplanbatch`,_data);
         }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -940,6 +945,7 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/productplans/${_context.productplan}/subproductplans/eefinishplanbatch`,_data);
         }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -960,6 +966,7 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/productplans/${_context.productplan}/subproductplans/eepauseplanbatch`,_data);
         }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -980,6 +987,7 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/productplans/${_context.productplan}/subproductplans/eerestartplanbatch`,_data);
         }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -1000,6 +1008,7 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/productplans/${_context.productplan}/subproductplans/eestartplanbatch`,_data);
         }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -1020,6 +1029,7 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/productplans/${_context.productplan}/subproductplans/importplantempletbatch`,_data);
         }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -1040,6 +1050,7 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/productplans/${_context.productplan}/subproductplans/linkbugbatch`,_data);
         }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -1060,6 +1071,7 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/productplans/${_context.productplan}/subproductplans/linkstorybatch`,_data);
         }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -1080,6 +1092,7 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/productplans/${_context.productplan}/subproductplans/linktaskbatch`,_data);
         }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -1100,6 +1113,7 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/productplans/${_context.productplan}/subproductplans/unlinkbugbatch`,_data);
         }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 
     /**
@@ -1120,5 +1134,6 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
         _data = await this.obtainMinor(_context, _data);
             return this.http.post(`/productplans/${_context.productplan}/subproductplans/unlinkstorybatch`,_data);
         }
+        return new HttpResponse(null, { status: 404, statusText: '无匹配请求地址!' });
     }
 }
