@@ -577,6 +577,7 @@
   }, {
     "codeName" : "Default",
     "controlType" : "DRBAR",
+    "editItemCaption" : "文档库分类",
     "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
     "name" : "drbar",
     "getPSAppDataEntity" : {
