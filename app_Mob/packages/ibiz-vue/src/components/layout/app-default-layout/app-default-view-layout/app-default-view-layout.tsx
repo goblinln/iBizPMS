@@ -80,7 +80,7 @@ export class AppDefaultViewLayout extends Vue {
             [Util.srfFilePath2(this.viewInstance.codeName)]: true
         };
         return (
-            this.isEmbedView ? <app-embed-view>
+            this.isEmbedView ? <app-embed-view className={viewClass}>
                 <template slot="header">{this.renderViewHeader()}</template>
                 <template slot="content">{this.$slots.default}</template>
                 <template slot="footer">{this.renderViewFooter()}</template>

@@ -47,6 +47,17 @@ export class MobDashboardControlBase extends MainControlBase {
     public customModelData: any;
 
     /**
+     * 渲染定义模型数据
+     *
+     * @public
+     * @type {(*)}
+     * @memberof MobDashboardControlBase
+     */
+    public renderCustomModelData: any;
+
+
+
+    /**
      * modleId
      *
      * @type {string}
@@ -201,10 +212,11 @@ export class MobDashboardControlBase extends MainControlBase {
                 if (res && res.status == 200) {
                     const data: any = res.data;
                     if (data && data.length > 0) {
-                        for (const model of data) {
+                        this.customModelData = JSON.parse(JSON.stringify(data));
+                        this.renderCustomModelData = data;
+                        for (const model of this.renderCustomModelData) {
                             model.modelData = this.getPortletInstance(model);
                         }
-                        this.customModelData = data;
                         this.isHasCustomized = true;
                         this.$forceUpdate();
                     } else {
