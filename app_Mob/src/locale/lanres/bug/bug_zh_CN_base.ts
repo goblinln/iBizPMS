@@ -283,7 +283,6 @@ export default {
 			assignedto: commonLogic.appcommonhandle("指派给",null), 
 			product: commonLogic.appcommonhandle("所属产品",null), 
 			files: commonLogic.appcommonhandle("附件",null), 
-			project: commonLogic.appcommonhandle("所属项目",null), 
 			comment: commonLogic.appcommonhandle("备注",null), 
 		},
 		uiactions: {

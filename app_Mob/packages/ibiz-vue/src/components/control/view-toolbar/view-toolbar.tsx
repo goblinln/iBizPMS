@@ -1,7 +1,7 @@
 import { Vue, Component, Prop, Watch, Emit } from 'vue-property-decorator';
 import { ToolbarItem } from 'ibiz-core/src/interface/ctrl/toolbarItem';
-import { Util } from 'ibiz-core';
 import "./view-toolbar.less";
+import { AnimationService } from 'ibiz-core';
 
 /**
  * 视图工具栏
@@ -23,6 +23,15 @@ export class ViewToolbar extends Vue {
     public toolbarModels!: { [key: string]: ToolbarItem };
 
     /**
+     * 视图标识
+     *
+     * @type string
+     * @memberof ViewToolbar
+     */
+    @Prop()
+    public viewtag!: string;
+
+    /**
      * 计树器服务集合
      *
      * @type {any}
@@ -30,6 +39,14 @@ export class ViewToolbar extends Vue {
      */
     @Prop()
     public counterServiceArray?: any;
+
+    /**
+     * 底部按钮样式
+     *
+     * @type string
+     * @memberof ViewToolbar
+     */
+    public button_style: any = { right: '16px', bottom: '4px' };
 
     /**
      * 监控工具栏模型变更
@@ -173,7 +190,7 @@ export class ViewToolbar extends Vue {
                 <app-mob-button
                     iconName="chevron-up-circle-outline"
                     class="app-view-toolbar-button"
-                    on-click={() => { this.showGroup = true}} />
+                    on-click={() => { this.showGroup = true }} />
 
                 <van-popup class="popup" value={this.showGroup} round position="bottom" get-container='body' on-click-overlay={() => { this.showGroup = false; }}>
                     <div class="container">
@@ -191,6 +208,15 @@ export class ViewToolbar extends Vue {
     }
 
     /**
+     * 生命周期
+     *
+     * @memberof ViewToolbar
+     */
+    public mounted() {
+        AnimationService.draggable(document.getElementById(this.viewtag + '_bottom_button'), (style: any) => { this.button_style = style }, 100);
+    }
+
+    /**
      * 绘制工具栏内容
      *
      * @returns {*}
@@ -201,6 +227,6 @@ export class ViewToolbar extends Vue {
             return;
         }
         let content: any = this.renderBottomDefault();
-        return <div class={{ 'toolbar-container': true, 'fab_container': true }}>{content}</div>;
+        return <div id={[this.viewtag + '_bottom_button']} style={{ 'right': this.button_style.right, 'bottom': this.button_style.bottom }} class={{ 'toolbar-container': true, 'fab_container': true }}>{content}</div>;
     }
 }

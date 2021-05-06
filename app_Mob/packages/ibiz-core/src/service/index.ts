@@ -13,3 +13,4 @@ export { DingTalkService } from './third-party-service/DingTalkService';
 export { WeChatService } from './third-party-service/WeChatService';
 export { GetModelService } from './model-service/model-service';
 export { AppModelService } from './model-service/model-service';
+export { AnimationService } from './aniamtion-service/aniamtion-service';

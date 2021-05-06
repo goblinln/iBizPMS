@@ -1078,6 +1078,7 @@ export class ViewBase extends Vue {
             <view-toolbar
                 slot='mobbottommenu'
                 toolbarModels={this.toolbarModels}
+                viewtag={this.viewtag}
                 on-item-click={(data: any, $event: any) => { this.handleItemClick(data, $event) }}
             ></view-toolbar>
         );

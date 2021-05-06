@@ -436,14 +436,15 @@ export class MDViewBase extends MainViewBase {
     public renderPullDownRefresh() {
         return <ion-refresher
             slot="fixed"
-            ref="loadmore"
+            ref="refresher"
             pull-factor="0.5"
             pull-min="50"
             pull-max="100"
-            on-ionRefresh={this.pullDownToRefresh}>
+            closeDuration='280ms'
+            on-ionRefresh={($event:any)=>{this.pullDownToRefresh($event)}}>
             <ion-refresher-content
                 pulling-icon="arrow-down-outline"
-                pulling-text={'app.pulling_text'}
+                pulling-text='加载中'
                 refreshing-spinner="circles"
                 refreshing-text="">
             </ion-refresher-content>
@@ -458,7 +459,11 @@ export class MDViewBase extends MainViewBase {
      * @memberof ViewBase
      */
     public async pullDownToRefresh($event: any): Promise<any> {
-        this.refresh();
+        await this.refresh($event);
+        const refresher:any = this.$refs.refresher;
+        if(refresher){
+            refresher.cancel()
+        }
     }
 
     /**

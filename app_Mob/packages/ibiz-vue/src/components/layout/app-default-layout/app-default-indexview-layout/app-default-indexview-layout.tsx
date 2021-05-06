@@ -1,7 +1,6 @@
 import { AppDefaultViewLayout } from "../app-default-view-layout/app-default-view-layout";
 import { Prop,Component } from 'vue-property-decorator';
 import './app-default-indexview-layout.less';
-import { Util, AppServiceBase } from "ibiz-core";
 
 @Component({})
 export class AppDefaultIndexViewLayout extends AppDefaultViewLayout{
