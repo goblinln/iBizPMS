@@ -1245,6 +1245,12 @@
         "name" : "DELETE"
       }
     }, {
+      "name" : "MANAGE",
+      "getPSDEOPPriv" : {
+        "logicName" : "管理",
+        "name" : "MANAGE"
+      }
+    }, {
       "name" : "ACTIVATE",
       "getPSDEOPPriv" : {
         "logicName" : "激活",
@@ -1330,6 +1336,12 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
+      "name" : "MANAGE",
+      "getPSDEOPPriv" : {
+        "logicName" : "管理",
+        "name" : "MANAGE"
+      }
+    }, {
       "name" : "FINISH",
       "getPSDEOPPriv" : {
         "logicName" : "完成",
@@ -1445,6 +1457,12 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
+      "name" : "MANAGE",
+      "getPSDEOPPriv" : {
+        "logicName" : "管理",
+        "name" : "MANAGE"
+      }
+    }, {
       "name" : "READ",
       "getPSDEOPPriv" : {
         "logicName" : "读取",
@@ -1577,6 +1595,12 @@
       "getPSDEOPPriv" : {
         "logicName" : "更新",
         "name" : "UPDATE"
+      }
+    }, {
+      "name" : "MANAGE",
+      "getPSDEOPPriv" : {
+        "logicName" : "管理",
+        "name" : "MANAGE"
       }
     }, {
       "name" : "TOBUG",
