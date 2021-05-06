@@ -17,13 +17,93 @@ import { Util } from 'ibiz-core';
 @VueLifeCycleProcessing()
 export class UPDATELOGINDEXVIEW extends IndexViewBase {
 
-    !!!!模版产生代码错误:!!!!模版产生代码错误:----
-Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
-----
+        /**
+     * 视图动态参数
+     *
+     * @type {string}
+     * @memberof UPDATELOGINDEXVIEW
+     */
+    @Prop() public dynamicProps!: any;
 
-----
-FTL stack trace ("~" means nesting-related):
-	- Failed at: ${this.viewInstance.viewType}  [in template "TEMPLCODE_zh_CN" at line 67, column 14]
-----
+    /**
+     * 视图静态参数
+     *
+     * @type {string}
+     * @memberof UPDATELOGINDEXVIEW
+     */
+    @Prop() public staticProps!: any;
+
+    /**
+     * 监听视图动态参数变化
+     *
+     * @param {*} newVal
+     * @param {*} oldVal
+     * @memberof UPDATELOGINDEXVIEW
+     */
+    @Watch("dynamicProps", {
+        immediate: true,
+    })
+    public onDynamicPropsChange(newVal: any, oldVal: any) {
+        if (newVal && !Util.isFieldsSame(newVal, oldVal)) {
+            super.onDynamicPropsChange(newVal, oldVal);
+        }
+    }
+
+    /**
+     * 监听视图静态参数变化
+     *
+     * @memberof UPDATELOGINDEXVIEW
+     */
+    @Watch("staticProps", {
+        immediate: true,
+    })
+    public onStaticPropsChange(newVal: any, oldVal: any) {
+        if (newVal && !Util.isFieldsSame(newVal, oldVal)) {
+            super.onStaticPropsChange(newVal, oldVal);
+        }
+    }
+
+    /**
+     * 销毁视图回调
+     *
+     * @memberof UPDATELOGINDEXVIEW
+     */
+    public destroyed() {
+        this.viewDestroyed();
+    }
+
+    /**
+     * 绘制视图内容
+     *
+     *
+     * @memberof UPDATELOGINDEXVIEW
+     */
+    public render(h: any) {
+        if (!this.viewIsLoaded) {
+            return null;
+        }
+        const targetViewLayoutComponent: any = AppLayoutService.getLayoutComponent(
+            `${this.viewInstance.viewType}-DEFAULT`
+        );
+        return h(
+            targetViewLayoutComponent,
+            {
+                props: { viewInstance: this.viewInstance },
+            },
+            [this.renderMainContent(), this.renderUpdateLog()]
+        );
+    }
+
+    /**
+     * 绘制更新内容
+     *
+     *
+     * @memberof UPDATELOGINDEXVIEW
+     */    
+    public renderUpdateLog() {
+        if ( !(localStorage.getItem("updateLogStatus") == 'true') ) {
+            return <app-update-log></app-update-log>;
+        }
+    }
 
 }
