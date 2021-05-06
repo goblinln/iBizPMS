@@ -440,7 +440,7 @@ public class TaskExService extends TaskServiceImpl {
                 iTaskTeamService.create(team);
             }
             old.set("task",et);
-            old.set("teams",null);
+            old.setTaskteams(null);
             old.set("auto",false);
             this.computeHours4Multiple(old);
             if (et.getStatus().equals(StaticDict.Task__status.WAIT.getValue())) {
@@ -737,7 +737,8 @@ public class TaskExService extends TaskServiceImpl {
             return et;
         }
         Task task = (Task) et.get("task");
-        List<TaskTeam> teams = (List<TaskTeam>)et.get("teams");
+        List<TaskTeam> teams = et.getTaskteams();
+        //List<TaskTeam> teams = (List<TaskTeam>)et.get("teams");
         Boolean auto = (Boolean) et.get("auto");
 
         if (teams == null) {
@@ -975,7 +976,7 @@ public class TaskExService extends TaskServiceImpl {
                 }
             }
             old.set("task",newTask);
-            old.set("teams",null);
+            old.setTaskteams(null);
             old.set("auto",false);
             computeHours4Multiple(old);
         }
@@ -1064,7 +1065,7 @@ public class TaskExService extends TaskServiceImpl {
             team1.setLeft(newTask.getLeft());
             iTeamService.update(team1, new QueryWrapper<Team>().eq("root", newTask.getId()).eq("type", StaticDict.Team__type.TASK.getValue()).eq("account", newTask.getAssignedto()));
             old.set("task",newTask);
-            old.set("teams",null);
+            old.setTaskteams(null);
             old.set("auto",false);
             computeHours4Multiple(old);
         }
@@ -1428,7 +1429,7 @@ public class TaskExService extends TaskServiceImpl {
             }
             newTask.setFinisheddate(et.getFinisheddate());
             old.set("task",newTask);
-            old.set("teams",null);
+            old.setTaskteams(null);
             old.set("auto",false);
             computeHours4Multiple(old);
         }
@@ -1733,7 +1734,7 @@ public class TaskExService extends TaskServiceImpl {
         }
         if (teams.size() > 0) {
             old.set("task",task);
-            old.set("teams",null);
+            old.setTaskteams(null);
             old.set("auto",false);
             computeHours4Multiple(old);
 
@@ -1933,7 +1934,7 @@ public class TaskExService extends TaskServiceImpl {
             team.setConsumed(et.getConsumed());
             iTeamService.update(team, new QueryWrapper<Team>().eq("root", newTask.getId()).eq("type", StaticDict.Team__type.TASK.getValue()).eq("account", oldAssignTo));
             old.set("task",newTask);
-            old.set("teams",null);
+            old.setTaskteams(null);
             old.set("auto",false);
             computeHours4Multiple(old);
         }

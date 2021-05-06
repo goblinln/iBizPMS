@@ -117,8 +117,8 @@ public class TaskEstimateExService extends TaskEstimateServiceImpl {
             param.put("account",oldEstimate.getAccount());
             iTeamService.update(newTeamInfo,(Wrapper<Team>) newTeamInfo.getUpdateWrapper(true).allEq(param));
             List<TaskTeam> teams = task.getTaskteams();
-            task.set("data",data);
-            task.set("teams",teams);
+            task.set("task",data);
+            task.setTaskteams(teams);
             task.set("changed",false);
             iTaskService.computeHours4Multiple(task);
         }
@@ -193,7 +193,7 @@ public class TaskEstimateExService extends TaskEstimateServiceImpl {
             iTeamService.update(newTeamInfo,(Wrapper<Team>) newTeamInfo.getUpdateWrapper(true).allEq(param));
             List<TaskTeam> teams = task.getTaskteams();
             task.set("task",data);
-            task.set("teams",teams);
+            task.setTaskteams(teams);
             task.set("auto",false);
             iTaskService.computeHours4Multiple(task);
         }
