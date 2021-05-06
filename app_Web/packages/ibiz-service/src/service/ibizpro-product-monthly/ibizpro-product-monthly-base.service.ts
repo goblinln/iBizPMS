@@ -188,7 +188,7 @@ export class IbizproProductMonthlyBaseService extends EntityBaseService<IIbizpro
      */
     public async ManualCreateMonthlyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/ibizproproductmonthlies/manualcreatemonthlybatch`,tempData,isloading);
+        return await this.http.post(`/ibizproproductmonthlies/manualcreatemonthlybatch`,tempData,isloading);
     }
 
     /**
@@ -202,6 +202,6 @@ export class IbizproProductMonthlyBaseService extends EntityBaseService<IIbizpro
      */
     public async StatsProductMonthlyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/ibizproproductmonthlies/statsproductmonthlybatch`,tempData,isloading);
+        return await this.http.post(`/ibizproproductmonthlies/statsproductmonthlybatch`,tempData,isloading);
     }
 }

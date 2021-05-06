@@ -410,9 +410,9 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
     public async SyncFromIBIZBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/productmodules/syncfromibizbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/productmodules/syncfromibizbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/productmodules/syncfromibizbatch`,tempData,isloading);
+        return await this.http.post(`/productmodules/syncfromibizbatch`,tempData,isloading);
     }
 }

@@ -287,7 +287,7 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      */
     public async CreateEveryWeekReportBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/ibzweeklies/createeveryweekreportbatch`,tempData,isloading);
+        return await this.http.post(`/ibzweeklies/createeveryweekreportbatch`,tempData,isloading);
     }
 
     /**
@@ -301,7 +301,7 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      */
     public async CreateGetLastWeekPlanAndWorkBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/ibzweeklies/creategetlastweekplanandworkbatch`,tempData,isloading);
+        return await this.http.post(`/ibzweeklies/creategetlastweekplanandworkbatch`,tempData,isloading);
     }
 
     /**
@@ -315,7 +315,7 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      */
     public async EditGetLastWeekTaskAndComTaskBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/ibzweeklies/editgetlastweektaskandcomtaskbatch`,tempData,isloading);
+        return await this.http.post(`/ibzweeklies/editgetlastweektaskandcomtaskbatch`,tempData,isloading);
     }
 
     /**
@@ -329,7 +329,7 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      */
     public async HaveReadBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/ibzweeklies/havereadbatch`,tempData,isloading);
+        return await this.http.post(`/ibzweeklies/havereadbatch`,tempData,isloading);
     }
 
     /**
@@ -343,7 +343,7 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      */
     public async JugThisWeekCreateWeeklyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/ibzweeklies/jugthisweekcreateweeklybatch`,tempData,isloading);
+        return await this.http.post(`/ibzweeklies/jugthisweekcreateweeklybatch`,tempData,isloading);
     }
 
     /**
@@ -357,7 +357,7 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      */
     public async PushUserWeeklyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/ibzweeklies/pushuserweeklybatch`,tempData,isloading);
+        return await this.http.post(`/ibzweeklies/pushuserweeklybatch`,tempData,isloading);
     }
 
     /**
@@ -371,6 +371,6 @@ export class IBZWEEKLYBaseService extends EntityBaseService<IIBZWEEKLY> {
      */
     public async SubmitBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/ibzweeklies/submitbatch`,tempData,isloading);
+        return await this.http.post(`/ibzweeklies/submitbatch`,tempData,isloading);
     }
 }

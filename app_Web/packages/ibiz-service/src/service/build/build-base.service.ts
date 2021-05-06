@@ -531,14 +531,14 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
     public async LinkBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.project && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/projects/${context.project}/builds/linkbugbatch`,tempData,isloading);
+            return await this.http.post(`/projects/${context.project}/builds/linkbugbatch`,tempData,isloading);
         }
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/builds/linkbugbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/builds/linkbugbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/builds/linkbugbatch`,tempData,isloading);
+        return await this.http.post(`/builds/linkbugbatch`,tempData,isloading);
     }
 
     /**
@@ -553,14 +553,14 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
     public async LinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.project && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/projects/${context.project}/builds/linkstorybatch`,tempData,isloading);
+            return await this.http.post(`/projects/${context.project}/builds/linkstorybatch`,tempData,isloading);
         }
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/builds/linkstorybatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/builds/linkstorybatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/builds/linkstorybatch`,tempData,isloading);
+        return await this.http.post(`/builds/linkstorybatch`,tempData,isloading);
     }
 
     /**
@@ -575,14 +575,14 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
     public async OneClickReleaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.project && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/projects/${context.project}/builds/oneclickreleasebatch`,tempData,isloading);
+            return await this.http.post(`/projects/${context.project}/builds/oneclickreleasebatch`,tempData,isloading);
         }
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/builds/oneclickreleasebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/builds/oneclickreleasebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/builds/oneclickreleasebatch`,tempData,isloading);
+        return await this.http.post(`/builds/oneclickreleasebatch`,tempData,isloading);
     }
 
     /**
@@ -597,14 +597,14 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
     public async UnlinkBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.project && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/projects/${context.project}/builds/unlinkbugbatch`,tempData,isloading);
+            return await this.http.post(`/projects/${context.project}/builds/unlinkbugbatch`,tempData,isloading);
         }
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/builds/unlinkbugbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/builds/unlinkbugbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/builds/unlinkbugbatch`,tempData,isloading);
+        return await this.http.post(`/builds/unlinkbugbatch`,tempData,isloading);
     }
 
     /**
@@ -619,13 +619,13 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
     public async UnlinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.project && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/projects/${context.project}/builds/unlinkstorybatch`,tempData,isloading);
+            return await this.http.post(`/projects/${context.project}/builds/unlinkstorybatch`,tempData,isloading);
         }
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/builds/unlinkstorybatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/builds/unlinkstorybatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/builds/unlinkstorybatch`,tempData,isloading);
+        return await this.http.post(`/builds/unlinkstorybatch`,tempData,isloading);
     }
 }

@@ -199,7 +199,7 @@ export class IbizproProductDailyBaseService extends EntityBaseService<IIbizproPr
      */
     public async ManualCreateDailyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/ibizproproductdailies/manualcreatedailybatch`,tempData,isloading);
+        return await this.http.post(`/ibizproproductdailies/manualcreatedailybatch`,tempData,isloading);
     }
 
     /**
@@ -213,6 +213,6 @@ export class IbizproProductDailyBaseService extends EntityBaseService<IIbizproPr
      */
     public async StatsProductDailyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/ibizproproductdailies/statsproductdailybatch`,tempData,isloading);
+        return await this.http.post(`/ibizproproductdailies/statsproductdailybatch`,tempData,isloading);
     }
 }

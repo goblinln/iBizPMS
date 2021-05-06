@@ -1404,18 +1404,18 @@ export class CaseBaseService extends EntityBaseService<ICase> {
     public async ConfirmChangeBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/${context.story}/cases/confirmchangebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/confirmchangebatch`,tempData,isloading);
         }
         if(context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/stories/${context.story}/cases/confirmchangebatch`,tempData,isloading);
+            return await this.http.post(`/stories/${context.story}/cases/confirmchangebatch`,tempData,isloading);
         }
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/cases/confirmchangebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/cases/confirmchangebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/cases/confirmchangebatch`,tempData,isloading);
+        return await this.http.post(`/cases/confirmchangebatch`,tempData,isloading);
     }
 
     /**
@@ -1430,18 +1430,18 @@ export class CaseBaseService extends EntityBaseService<ICase> {
     public async ConfirmstorychangeBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/${context.story}/cases/confirmstorychangebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/confirmstorychangebatch`,tempData,isloading);
         }
         if(context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/stories/${context.story}/cases/confirmstorychangebatch`,tempData,isloading);
+            return await this.http.post(`/stories/${context.story}/cases/confirmstorychangebatch`,tempData,isloading);
         }
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/cases/confirmstorychangebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/cases/confirmstorychangebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/cases/confirmstorychangebatch`,tempData,isloading);
+        return await this.http.post(`/cases/confirmstorychangebatch`,tempData,isloading);
     }
 
     /**
@@ -1456,18 +1456,18 @@ export class CaseBaseService extends EntityBaseService<ICase> {
     public async GetByTestTaskBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/${context.story}/cases/getbytesttaskbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/getbytesttaskbatch`,tempData,isloading);
         }
         if(context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/stories/${context.story}/cases/getbytesttaskbatch`,tempData,isloading);
+            return await this.http.post(`/stories/${context.story}/cases/getbytesttaskbatch`,tempData,isloading);
         }
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/cases/getbytesttaskbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/cases/getbytesttaskbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/cases/getbytesttaskbatch`,tempData,isloading);
+        return await this.http.post(`/cases/getbytesttaskbatch`,tempData,isloading);
     }
 
     /**
@@ -1482,18 +1482,18 @@ export class CaseBaseService extends EntityBaseService<ICase> {
     public async GetTestTaskCntRunBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/${context.story}/cases/gettesttaskcntrunbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/gettesttaskcntrunbatch`,tempData,isloading);
         }
         if(context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/stories/${context.story}/cases/gettesttaskcntrunbatch`,tempData,isloading);
+            return await this.http.post(`/stories/${context.story}/cases/gettesttaskcntrunbatch`,tempData,isloading);
         }
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/cases/gettesttaskcntrunbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/cases/gettesttaskcntrunbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/cases/gettesttaskcntrunbatch`,tempData,isloading);
+        return await this.http.post(`/cases/gettesttaskcntrunbatch`,tempData,isloading);
     }
 
     /**
@@ -1508,18 +1508,18 @@ export class CaseBaseService extends EntityBaseService<ICase> {
     public async LinkCaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/${context.story}/cases/linkcasebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/linkcasebatch`,tempData,isloading);
         }
         if(context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/stories/${context.story}/cases/linkcasebatch`,tempData,isloading);
+            return await this.http.post(`/stories/${context.story}/cases/linkcasebatch`,tempData,isloading);
         }
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/cases/linkcasebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/cases/linkcasebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/cases/linkcasebatch`,tempData,isloading);
+        return await this.http.post(`/cases/linkcasebatch`,tempData,isloading);
     }
 
     /**
@@ -1534,18 +1534,18 @@ export class CaseBaseService extends EntityBaseService<ICase> {
     public async MobLinkCaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/${context.story}/cases/moblinkcasebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/moblinkcasebatch`,tempData,isloading);
         }
         if(context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/stories/${context.story}/cases/moblinkcasebatch`,tempData,isloading);
+            return await this.http.post(`/stories/${context.story}/cases/moblinkcasebatch`,tempData,isloading);
         }
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/cases/moblinkcasebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/cases/moblinkcasebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/cases/moblinkcasebatch`,tempData,isloading);
+        return await this.http.post(`/cases/moblinkcasebatch`,tempData,isloading);
     }
 
     /**
@@ -1560,18 +1560,18 @@ export class CaseBaseService extends EntityBaseService<ICase> {
     public async RunCaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/${context.story}/cases/runcasebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/runcasebatch`,tempData,isloading);
         }
         if(context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/stories/${context.story}/cases/runcasebatch`,tempData,isloading);
+            return await this.http.post(`/stories/${context.story}/cases/runcasebatch`,tempData,isloading);
         }
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/cases/runcasebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/cases/runcasebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/cases/runcasebatch`,tempData,isloading);
+        return await this.http.post(`/cases/runcasebatch`,tempData,isloading);
     }
 
     /**
@@ -1586,18 +1586,18 @@ export class CaseBaseService extends EntityBaseService<ICase> {
     public async TestRunCaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/${context.story}/cases/testruncasebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/testruncasebatch`,tempData,isloading);
         }
         if(context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/stories/${context.story}/cases/testruncasebatch`,tempData,isloading);
+            return await this.http.post(`/stories/${context.story}/cases/testruncasebatch`,tempData,isloading);
         }
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/cases/testruncasebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/cases/testruncasebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/cases/testruncasebatch`,tempData,isloading);
+        return await this.http.post(`/cases/testruncasebatch`,tempData,isloading);
     }
 
     /**
@@ -1612,18 +1612,18 @@ export class CaseBaseService extends EntityBaseService<ICase> {
     public async TestsuitelinkCaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/${context.story}/cases/testsuitelinkcasebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/testsuitelinkcasebatch`,tempData,isloading);
         }
         if(context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/stories/${context.story}/cases/testsuitelinkcasebatch`,tempData,isloading);
+            return await this.http.post(`/stories/${context.story}/cases/testsuitelinkcasebatch`,tempData,isloading);
         }
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/cases/testsuitelinkcasebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/cases/testsuitelinkcasebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/cases/testsuitelinkcasebatch`,tempData,isloading);
+        return await this.http.post(`/cases/testsuitelinkcasebatch`,tempData,isloading);
     }
 
     /**
@@ -1638,18 +1638,18 @@ export class CaseBaseService extends EntityBaseService<ICase> {
     public async UnlinkCaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/${context.story}/cases/unlinkcasebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/unlinkcasebatch`,tempData,isloading);
         }
         if(context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/stories/${context.story}/cases/unlinkcasebatch`,tempData,isloading);
+            return await this.http.post(`/stories/${context.story}/cases/unlinkcasebatch`,tempData,isloading);
         }
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/cases/unlinkcasebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/cases/unlinkcasebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/cases/unlinkcasebatch`,tempData,isloading);
+        return await this.http.post(`/cases/unlinkcasebatch`,tempData,isloading);
     }
 
     /**
@@ -1664,17 +1664,17 @@ export class CaseBaseService extends EntityBaseService<ICase> {
     public async UnlinkSuiteCaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/${context.story}/cases/unlinksuitecasebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/${context.story}/cases/unlinksuitecasebatch`,tempData,isloading);
         }
         if(context.story && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/stories/${context.story}/cases/unlinksuitecasebatch`,tempData,isloading);
+            return await this.http.post(`/stories/${context.story}/cases/unlinksuitecasebatch`,tempData,isloading);
         }
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/cases/unlinksuitecasebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/cases/unlinksuitecasebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/cases/unlinksuitecasebatch`,tempData,isloading);
+        return await this.http.post(`/cases/unlinksuitecasebatch`,tempData,isloading);
     }
 }

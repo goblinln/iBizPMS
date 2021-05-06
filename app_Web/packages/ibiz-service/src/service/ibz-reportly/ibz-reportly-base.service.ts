@@ -221,7 +221,7 @@ export class IbzReportlyBaseService extends EntityBaseService<IIbzReportly> {
      */
     public async HaveReadBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/ibzreportlies/havereadbatch`,tempData,isloading);
+        return await this.http.post(`/ibzreportlies/havereadbatch`,tempData,isloading);
     }
 
     /**
@@ -235,6 +235,6 @@ export class IbzReportlyBaseService extends EntityBaseService<IIbzReportly> {
      */
     public async SubmitBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/ibzreportlies/submitbatch`,tempData,isloading);
+        return await this.http.post(`/ibzreportlies/submitbatch`,tempData,isloading);
     }
 }

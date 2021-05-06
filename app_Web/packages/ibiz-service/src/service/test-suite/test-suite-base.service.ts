@@ -296,10 +296,10 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
     public async LinkCaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/testsuites/linkcasebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/testsuites/linkcasebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/testsuites/linkcasebatch`,tempData,isloading);
+        return await this.http.post(`/testsuites/linkcasebatch`,tempData,isloading);
     }
 
     /**
@@ -314,9 +314,9 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
     public async UnlinkCaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/testsuites/unlinkcasebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/testsuites/unlinkcasebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/testsuites/unlinkcasebatch`,tempData,isloading);
+        return await this.http.post(`/testsuites/unlinkcasebatch`,tempData,isloading);
     }
 }

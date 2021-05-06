@@ -266,7 +266,7 @@ export class FileBaseService extends EntityBaseService<IFile> {
      */
     public async UpdateObjectIDBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/files/updateobjectidbatch`,tempData,isloading);
+        return await this.http.post(`/files/updateobjectidbatch`,tempData,isloading);
     }
 
     /**
@@ -280,6 +280,6 @@ export class FileBaseService extends EntityBaseService<IFile> {
      */
     public async UpdateObjectIDForPmsEeBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/files/updateobjectidforpmseebatch`,tempData,isloading);
+        return await this.http.post(`/files/updateobjectidforpmseebatch`,tempData,isloading);
     }
 }

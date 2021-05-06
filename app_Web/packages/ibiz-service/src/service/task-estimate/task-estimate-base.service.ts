@@ -753,37 +753,37 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
     public async PMEvaluationBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.project && context.projectmodule && context.task && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/projects/${context.project}/projectmodules/${context.projectmodule}/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
+            return await this.http.post(`/projects/${context.project}/projectmodules/${context.projectmodule}/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
         }
         if(context.product && context.story && context.task && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/${context.story}/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/${context.story}/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
         }
         if(context.product && context.productplan && context.task && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/productplans/${context.productplan}/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/productplans/${context.productplan}/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
         }
         if(context.project && context.task && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/projects/${context.project}/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
+            return await this.http.post(`/projects/${context.project}/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
         }
         if(context.story && context.task && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/stories/${context.story}/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
+            return await this.http.post(`/stories/${context.story}/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
         }
         if(context.productplan && context.task && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/productplans/${context.productplan}/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
+            return await this.http.post(`/productplans/${context.productplan}/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
         }
         if(context.projectmodule && context.task && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/projectmodules/${context.projectmodule}/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
+            return await this.http.post(`/projectmodules/${context.projectmodule}/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
         }
         if(context.task && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
+            return await this.http.post(`/tasks/${context.task}/taskestimates/pmevaluationbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/taskestimates/pmevaluationbatch`,tempData,isloading);
+        return await this.http.post(`/taskestimates/pmevaluationbatch`,tempData,isloading);
     }
 }

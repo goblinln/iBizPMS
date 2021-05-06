@@ -351,7 +351,7 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      */
     public async CreateUserDailyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/ibzdailies/createuserdailybatch`,tempData,isloading);
+        return await this.http.post(`/ibzdailies/createuserdailybatch`,tempData,isloading);
     }
 
     /**
@@ -365,7 +365,7 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      */
     public async GetYeaterdayDailyPlansTaskEditBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/ibzdailies/getyeaterdaydailyplanstaskeditbatch`,tempData,isloading);
+        return await this.http.post(`/ibzdailies/getyeaterdaydailyplanstaskeditbatch`,tempData,isloading);
     }
 
     /**
@@ -379,7 +379,7 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      */
     public async GetYesterdayDailyPlansTaskBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/ibzdailies/getyesterdaydailyplanstaskbatch`,tempData,isloading);
+        return await this.http.post(`/ibzdailies/getyesterdaydailyplanstaskbatch`,tempData,isloading);
     }
 
     /**
@@ -393,7 +393,7 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      */
     public async HaveReadBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/ibzdailies/havereadbatch`,tempData,isloading);
+        return await this.http.post(`/ibzdailies/havereadbatch`,tempData,isloading);
     }
 
     /**
@@ -407,7 +407,7 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      */
     public async LinkCompleteTaskBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/ibzdailies/linkcompletetaskbatch`,tempData,isloading);
+        return await this.http.post(`/ibzdailies/linkcompletetaskbatch`,tempData,isloading);
     }
 
     /**
@@ -421,7 +421,7 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      */
     public async PushUserDailyBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/ibzdailies/pushuserdailybatch`,tempData,isloading);
+        return await this.http.post(`/ibzdailies/pushuserdailybatch`,tempData,isloading);
     }
 
     /**
@@ -435,6 +435,6 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      */
     public async SubmitBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/ibzdailies/submitbatch`,tempData,isloading);
+        return await this.http.post(`/ibzdailies/submitbatch`,tempData,isloading);
     }
 }

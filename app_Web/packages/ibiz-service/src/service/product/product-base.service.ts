@@ -530,6 +530,6 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
      */
     public async CloseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/products/closebatch`,tempData,isloading);
+        return await this.http.post(`/products/closebatch`,tempData,isloading);
     }
 }

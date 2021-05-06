@@ -310,9 +310,9 @@ export class PRODUCTTEAMBaseService extends EntityBaseService<IPRODUCTTEAM> {
     public async ProductTeamGuoLvBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/productteams/productteamguolvbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/productteams/productteamguolvbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/productteams/productteamguolvbatch`,tempData,isloading);
+        return await this.http.post(`/productteams/productteamguolvbatch`,tempData,isloading);
     }
 }

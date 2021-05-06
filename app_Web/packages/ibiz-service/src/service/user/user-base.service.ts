@@ -305,6 +305,6 @@ export class UserBaseService extends EntityBaseService<IUser> {
      */
     public async SyncAccountBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/users/syncaccountbatch`,tempData,isloading);
+        return await this.http.post(`/users/syncaccountbatch`,tempData,isloading);
     }
 }

@@ -430,10 +430,10 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
     public async ActivateBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/releases/activatebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/releases/activatebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/releases/activatebatch`,tempData,isloading);
+        return await this.http.post(`/releases/activatebatch`,tempData,isloading);
     }
 
     /**
@@ -448,10 +448,10 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
     public async BatchUnlinkBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/releases/batchunlinkbugbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/releases/batchunlinkbugbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/releases/batchunlinkbugbatch`,tempData,isloading);
+        return await this.http.post(`/releases/batchunlinkbugbatch`,tempData,isloading);
     }
 
     /**
@@ -466,10 +466,10 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
     public async ChangeStatusBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/releases/changestatusbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/releases/changestatusbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/releases/changestatusbatch`,tempData,isloading);
+        return await this.http.post(`/releases/changestatusbatch`,tempData,isloading);
     }
 
     /**
@@ -484,10 +484,10 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
     public async LinkBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/releases/linkbugbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/releases/linkbugbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/releases/linkbugbatch`,tempData,isloading);
+        return await this.http.post(`/releases/linkbugbatch`,tempData,isloading);
     }
 
     /**
@@ -502,10 +502,10 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
     public async LinkBugbyBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/releases/linkbugbybugbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/releases/linkbugbybugbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/releases/linkbugbybugbatch`,tempData,isloading);
+        return await this.http.post(`/releases/linkbugbybugbatch`,tempData,isloading);
     }
 
     /**
@@ -520,10 +520,10 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
     public async LinkBugbyLeftBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/releases/linkbugbyleftbugbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/releases/linkbugbyleftbugbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/releases/linkbugbyleftbugbatch`,tempData,isloading);
+        return await this.http.post(`/releases/linkbugbyleftbugbatch`,tempData,isloading);
     }
 
     /**
@@ -538,10 +538,10 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
     public async LinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/releases/linkstorybatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/releases/linkstorybatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/releases/linkstorybatch`,tempData,isloading);
+        return await this.http.post(`/releases/linkstorybatch`,tempData,isloading);
     }
 
     /**
@@ -556,10 +556,10 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
     public async OneClickReleaseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/releases/oneclickreleasebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/releases/oneclickreleasebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/releases/oneclickreleasebatch`,tempData,isloading);
+        return await this.http.post(`/releases/oneclickreleasebatch`,tempData,isloading);
     }
 
     /**
@@ -574,10 +574,10 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
     public async TerminateBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/releases/terminatebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/releases/terminatebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/releases/terminatebatch`,tempData,isloading);
+        return await this.http.post(`/releases/terminatebatch`,tempData,isloading);
     }
 
     /**
@@ -592,9 +592,9 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
     public async UnlinkBugBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/releases/unlinkbugbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/releases/unlinkbugbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/releases/unlinkbugbatch`,tempData,isloading);
+        return await this.http.post(`/releases/unlinkbugbatch`,tempData,isloading);
     }
 }

@@ -363,7 +363,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      */
     public async CreateHisBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/actions/createhisbatch`,tempData,isloading);
+        return await this.http.post(`/actions/createhisbatch`,tempData,isloading);
     }
 
     /**
@@ -377,7 +377,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      */
     public async EditCommentBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/actions/editcommentbatch`,tempData,isloading);
+        return await this.http.post(`/actions/editcommentbatch`,tempData,isloading);
     }
 
     /**
@@ -391,7 +391,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      */
     public async ManagePmsEeBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/actions/managepmseebatch`,tempData,isloading);
+        return await this.http.post(`/actions/managepmseebatch`,tempData,isloading);
     }
 
     /**
@@ -405,7 +405,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      */
     public async SendMarkDoneBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/actions/sendmarkdonebatch`,tempData,isloading);
+        return await this.http.post(`/actions/sendmarkdonebatch`,tempData,isloading);
     }
 
     /**
@@ -419,7 +419,7 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      */
     public async SendTodoBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/actions/sendtodobatch`,tempData,isloading);
+        return await this.http.post(`/actions/sendtodobatch`,tempData,isloading);
     }
 
     /**
@@ -433,6 +433,6 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      */
     public async SendToreadBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/actions/sendtoreadbatch`,tempData,isloading);
+        return await this.http.post(`/actions/sendtoreadbatch`,tempData,isloading);
     }
 }

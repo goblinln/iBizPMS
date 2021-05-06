@@ -309,6 +309,6 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      */
     public async FixBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/modules/fixbatch`,tempData,isloading);
+        return await this.http.post(`/modules/fixbatch`,tempData,isloading);
     }
 }

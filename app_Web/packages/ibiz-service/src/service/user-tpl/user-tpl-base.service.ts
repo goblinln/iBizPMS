@@ -218,6 +218,6 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
      */
     public async HasDeletedBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/usertpls/hasdeletedbatch`,tempData,isloading);
+        return await this.http.post(`/usertpls/hasdeletedbatch`,tempData,isloading);
     }
 }

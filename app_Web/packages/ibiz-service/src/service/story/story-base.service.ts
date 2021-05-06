@@ -1418,10 +1418,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async ActivateBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/activatebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/activatebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/activatebatch`,tempData,isloading);
+        return await this.http.post(`/stories/activatebatch`,tempData,isloading);
     }
 
     /**
@@ -1436,10 +1436,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async AllPushBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/allpushbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/allpushbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/allpushbatch`,tempData,isloading);
+        return await this.http.post(`/stories/allpushbatch`,tempData,isloading);
     }
 
     /**
@@ -1454,10 +1454,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async AssignToBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/assigntobatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/assigntobatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/assigntobatch`,tempData,isloading);
+        return await this.http.post(`/stories/assigntobatch`,tempData,isloading);
     }
 
     /**
@@ -1472,10 +1472,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async BatchAssignToBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/batchassigntobatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/batchassigntobatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/batchassigntobatch`,tempData,isloading);
+        return await this.http.post(`/stories/batchassigntobatch`,tempData,isloading);
     }
 
     /**
@@ -1490,10 +1490,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async BatchChangeBranchBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/batchchangebranchbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/batchchangebranchbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/batchchangebranchbatch`,tempData,isloading);
+        return await this.http.post(`/stories/batchchangebranchbatch`,tempData,isloading);
     }
 
     /**
@@ -1508,10 +1508,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async BatchChangeModuleBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/batchchangemodulebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/batchchangemodulebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/batchchangemodulebatch`,tempData,isloading);
+        return await this.http.post(`/stories/batchchangemodulebatch`,tempData,isloading);
     }
 
     /**
@@ -1526,10 +1526,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async BatchChangePlanBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/batchchangeplanbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/batchchangeplanbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/batchchangeplanbatch`,tempData,isloading);
+        return await this.http.post(`/stories/batchchangeplanbatch`,tempData,isloading);
     }
 
     /**
@@ -1544,10 +1544,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async BatchChangeStageBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/batchchangestagebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/batchchangestagebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/batchchangestagebatch`,tempData,isloading);
+        return await this.http.post(`/stories/batchchangestagebatch`,tempData,isloading);
     }
 
     /**
@@ -1562,10 +1562,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async BatchCloseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/batchclosebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/batchclosebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/batchclosebatch`,tempData,isloading);
+        return await this.http.post(`/stories/batchclosebatch`,tempData,isloading);
     }
 
     /**
@@ -1580,10 +1580,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async BatchReviewBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/batchreviewbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/batchreviewbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/batchreviewbatch`,tempData,isloading);
+        return await this.http.post(`/stories/batchreviewbatch`,tempData,isloading);
     }
 
     /**
@@ -1598,10 +1598,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async BatchUnlinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/batchunlinkstorybatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/batchunlinkstorybatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/batchunlinkstorybatch`,tempData,isloading);
+        return await this.http.post(`/stories/batchunlinkstorybatch`,tempData,isloading);
     }
 
     /**
@@ -1616,10 +1616,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async BugToStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/bugtostorybatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/bugtostorybatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/bugtostorybatch`,tempData,isloading);
+        return await this.http.post(`/stories/bugtostorybatch`,tempData,isloading);
     }
 
     /**
@@ -1634,10 +1634,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async BuildBatchUnlinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/buildbatchunlinkstorybatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/buildbatchunlinkstorybatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/buildbatchunlinkstorybatch`,tempData,isloading);
+        return await this.http.post(`/stories/buildbatchunlinkstorybatch`,tempData,isloading);
     }
 
     /**
@@ -1652,10 +1652,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async BuildLinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/buildlinkstorybatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/buildlinkstorybatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/buildlinkstorybatch`,tempData,isloading);
+        return await this.http.post(`/stories/buildlinkstorybatch`,tempData,isloading);
     }
 
     /**
@@ -1670,10 +1670,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async BuildUnlinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/buildunlinkstorybatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/buildunlinkstorybatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/buildunlinkstorybatch`,tempData,isloading);
+        return await this.http.post(`/stories/buildunlinkstorybatch`,tempData,isloading);
     }
 
     /**
@@ -1688,10 +1688,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async ChangeBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/changebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/changebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/changebatch`,tempData,isloading);
+        return await this.http.post(`/stories/changebatch`,tempData,isloading);
     }
 
     /**
@@ -1706,10 +1706,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async CloseBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/closebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/closebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/closebatch`,tempData,isloading);
+        return await this.http.post(`/stories/closebatch`,tempData,isloading);
     }
 
     /**
@@ -1724,10 +1724,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async CreateTasksBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/createtasksbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/createtasksbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/createtasksbatch`,tempData,isloading);
+        return await this.http.post(`/stories/createtasksbatch`,tempData,isloading);
     }
 
     /**
@@ -1742,10 +1742,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async GetStorySpecBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/getstoryspecbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/getstoryspecbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/getstoryspecbatch`,tempData,isloading);
+        return await this.http.post(`/stories/getstoryspecbatch`,tempData,isloading);
     }
 
     /**
@@ -1760,10 +1760,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async ImportPlanStoriesBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/importplanstoriesbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/importplanstoriesbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/importplanstoriesbatch`,tempData,isloading);
+        return await this.http.post(`/stories/importplanstoriesbatch`,tempData,isloading);
     }
 
     /**
@@ -1778,10 +1778,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async LinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/linkstorybatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/linkstorybatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/linkstorybatch`,tempData,isloading);
+        return await this.http.post(`/stories/linkstorybatch`,tempData,isloading);
     }
 
     /**
@@ -1796,10 +1796,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async ProjectBatchUnlinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/projectbatchunlinkstorybatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/projectbatchunlinkstorybatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/projectbatchunlinkstorybatch`,tempData,isloading);
+        return await this.http.post(`/stories/projectbatchunlinkstorybatch`,tempData,isloading);
     }
 
     /**
@@ -1814,10 +1814,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async ProjectLinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/projectlinkstorybatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/projectlinkstorybatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/projectlinkstorybatch`,tempData,isloading);
+        return await this.http.post(`/stories/projectlinkstorybatch`,tempData,isloading);
     }
 
     /**
@@ -1832,10 +1832,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async ProjectUnlinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/projectunlinkstorybatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/projectunlinkstorybatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/projectunlinkstorybatch`,tempData,isloading);
+        return await this.http.post(`/stories/projectunlinkstorybatch`,tempData,isloading);
     }
 
     /**
@@ -1850,10 +1850,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async PushBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/pushbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/pushbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/pushbatch`,tempData,isloading);
+        return await this.http.post(`/stories/pushbatch`,tempData,isloading);
     }
 
     /**
@@ -1868,10 +1868,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async ReleaseBatchUnlinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/releasebatchunlinkstorybatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/releasebatchunlinkstorybatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/releasebatchunlinkstorybatch`,tempData,isloading);
+        return await this.http.post(`/stories/releasebatchunlinkstorybatch`,tempData,isloading);
     }
 
     /**
@@ -1886,10 +1886,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async ReleaseLinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/releaselinkstorybatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/releaselinkstorybatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/releaselinkstorybatch`,tempData,isloading);
+        return await this.http.post(`/stories/releaselinkstorybatch`,tempData,isloading);
     }
 
     /**
@@ -1904,10 +1904,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async ReleaseUnlinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/releaseunlinkstorybatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/releaseunlinkstorybatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/releaseunlinkstorybatch`,tempData,isloading);
+        return await this.http.post(`/stories/releaseunlinkstorybatch`,tempData,isloading);
     }
 
     /**
@@ -1922,10 +1922,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async ResetReviewedByBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/resetreviewedbybatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/resetreviewedbybatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/resetreviewedbybatch`,tempData,isloading);
+        return await this.http.post(`/stories/resetreviewedbybatch`,tempData,isloading);
     }
 
     /**
@@ -1940,10 +1940,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async ReviewBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/reviewbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/reviewbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/reviewbatch`,tempData,isloading);
+        return await this.http.post(`/stories/reviewbatch`,tempData,isloading);
     }
 
     /**
@@ -1958,10 +1958,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async SendMessageBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/sendmessagebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/sendmessagebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/sendmessagebatch`,tempData,isloading);
+        return await this.http.post(`/stories/sendmessagebatch`,tempData,isloading);
     }
 
     /**
@@ -1976,10 +1976,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async SendMsgPreProcessBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/sendmsgpreprocessbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/sendmsgpreprocessbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/sendmsgpreprocessbatch`,tempData,isloading);
+        return await this.http.post(`/stories/sendmsgpreprocessbatch`,tempData,isloading);
     }
 
     /**
@@ -1994,10 +1994,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async SetStageBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/setstagebatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/setstagebatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/setstagebatch`,tempData,isloading);
+        return await this.http.post(`/stories/setstagebatch`,tempData,isloading);
     }
 
     /**
@@ -2012,10 +2012,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async SyncFromIbizBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/syncfromibizbatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/syncfromibizbatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/syncfromibizbatch`,tempData,isloading);
+        return await this.http.post(`/stories/syncfromibizbatch`,tempData,isloading);
     }
 
     /**
@@ -2030,9 +2030,9 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     public async UnlinkStoryBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.product && true){
             let tempData:any = JSON.parse(JSON.stringify(data));
-            return await Http.getInstance().post(`/products/${context.product}/stories/unlinkstorybatch`,tempData,isloading);
+            return await this.http.post(`/products/${context.product}/stories/unlinkstorybatch`,tempData,isloading);
         }
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/stories/unlinkstorybatch`,tempData,isloading);
+        return await this.http.post(`/stories/unlinkstorybatch`,tempData,isloading);
     }
 }

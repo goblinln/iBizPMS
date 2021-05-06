@@ -320,7 +320,7 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
      */
     public async CollectBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/doclibmodules/collectbatch`,tempData,isloading);
+        return await this.http.post(`/doclibmodules/collectbatch`,tempData,isloading);
     }
 
     /**
@@ -334,6 +334,6 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
      */
     public async UnCollectBatch(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         let tempData:any = JSON.parse(JSON.stringify(data));
-        return await Http.getInstance().post(`/doclibmodules/uncollectbatch`,tempData,isloading);
+        return await this.http.post(`/doclibmodules/uncollectbatch`,tempData,isloading);
     }
 }
