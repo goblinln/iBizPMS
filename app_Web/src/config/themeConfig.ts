@@ -3,605 +3,253 @@ export const themeConfig = {
         label: '应用',
         value: 'app',
         className: '',
+        disable: false,
         items: [{
             label: '背景色',
             cssName: '--app-background-color',
             default: '',
+            disable: false,
             showAlpha: true
         }, {
             label: '背景色（淡色）',
-            cssName: '--app-background-color-tint',
+            cssName: '--app-background-color-light',
             default: '',
+            disable: false,
             showAlpha: true
         }, {
             label: '背景色（亮色）',
             cssName: '--app-background-color-bright',
             default: '',
+            disable: false,
             showAlpha: true
         }, {
-            label: '字体',
+            label: '底部背景色',
+            cssName: '--app-footer-background-color',
+            default: '',
+            disable: false,
+            showAlpha: true
+        }, {
+            label: '字体颜色',
             cssName: '--app-font-color',
             default: '',
+            disable: false,
             showAlpha: true
         }, {
-            label: '字体（淡色）',
+            label: '字体颜色（淡色）',
             cssName: '--app-font-color-light',
             default: '',
+            disable: false,
             showAlpha: true
         }, {
-            label: '字体（深色）',
-            cssName: '--app-font-color-deep',
+            label: '字体颜色（深色）',
+            cssName: '--app-font-color-bright',
             default: '',
-            showAlpha: true
-        }, {
-            label: '激活字体',
-            cssName: '--app-font-color-active',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '滚动条',
-            cssName: '--app-scroll-bar-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '分割线',
-            cssName: '--app-dividing-line-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '分割线（淡色）',
-            cssName: '--app-dividing-line-color-tint',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '分割线（亮色）',
-            cssName: '--app-dividing-line-color-bright',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '应用滚动条',
-            cssName: '--app-scrollbar-thumb-background-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '主题选择',
-            cssName: '--app-theme-icon-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '头部背景',
-            cssName: '--app-header-background-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '头部激活',
-            cssName: '--app-header-background-color-active',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '头部字体',
-            cssName: '--app-header-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '头部字体（亮色）',
-            cssName: '--app-header-color-bright',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '头部激活字体',
-            cssName: '--app-header-color-active',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '阴影',
-            cssName: '--app-shadow-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '加载动画',
-            cssName: '--app-loading-background-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '加载动画亮色',
-            cssName: '--app-loading-background-color-bright',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '加载动画蒙层',
-            cssName: '--app-loading-masking-background-color',
-            default: '',
-            showAlpha: true
-        }]
-    }, {
-        label: '视图',
-        value: 'view',
-        className: '',
-        items: [{
-            label: '背景色',
-            cssName: '--view-background-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '背景色（淡色）',
-            cssName: '--view-background-color-tint',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '背景色（亮色）',
-            cssName: '--view-background-color-bright',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '激活背景色',
-            cssName: '--view-background-color-active',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '激活背景色rgb',
-            cssName: '--view-background-color-active-rgb',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '悬浮背景色',
-            cssName: '--view-background-color-hover',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '头部边框',
-            cssName: '--view-header-border-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '边框',
-            cssName: '--view-border-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '字体',
-            cssName: '--view-font-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '字体（淡色）',
-            cssName: '--view-font-color-tint',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '字体（亮色）',
-            cssName: '--view-font-color-bright',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '激活字体',
-            cssName: '--view-font-color-active',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '悬浮字体',
-            cssName: '--view-font-color-hover',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '阴影',
-            cssName: '--view-shadow-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '按钮背景色',
-            cssName: '--view-button-background-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '激活按钮背景色',
-            cssName: '--view-button-background-color-active',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '禁用按钮背景色',
-            cssName: '--view-button-background-color-disabled',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '按钮字体',
-            cssName: '--view-button-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '激活按钮字体',
-            cssName: '--view-button-color-active',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '禁用按钮字体',
-            cssName: '--view-button-color-disabled',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '按钮边框',
-            cssName: ' --view-button-border-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '分割线',
-            cssName: '--view-dividing-line-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '分割线rgb',
-            cssName: '--view-dividing-line-color-rgb',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '分割线（淡色）',
-            cssName: '--view-dividing-line-color-tint',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '分割线（亮色）',
-            cssName: '--view-dividing-line-color-bright',
-            default: '',
-            showAlpha: true
-        }]
-    }, {
-        label: '部件',
-        value: 'ctrl',
-        className: '',
-        items: [{
-            label: '背景色',
-            cssName: '--ctrl-background-color-tint',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '背景色（亮色）',
-            cssName: '--ctrl-background-color-bright',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '激活背景色',
-            cssName: '--ctrl-background-color-active',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '激活背景色（淡色）',
-            cssName: '--ctrl-background-color-active-tint',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '悬浮背景色',
-            cssName: '--ctrl-background-color-hover',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '字体',
-            cssName: '--ctrl-font-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '字体（淡色）',
-            cssName: '--ctrl-font-color-tint',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '字体（亮色）',
-            cssName: '--ctrl-font-color-bright',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '激活字体',
-            cssName: '--ctrl-font-color-active',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '悬浮字体',
-            cssName: '--ctrl-font-color-hover',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '边框',
-            cssName: '--ctrl-border-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '边框（淡色）',
-            cssName: '--ctrl-border-color-tint',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '边框（亮色）',
-            cssName: '--ctrl-border-color-bright',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '悬浮边框',
-            cssName: '--ctrl-border-color-hover',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '激活边框',
-            cssName: '--ctrl-border-color-active',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '阴影',
-            cssName: '--ctrl-shadow-color',
-            default: '',
-            showAlpha: true
-        }]
-    }, {
-        label: '组件',
-        value: 'item',
-        className: '',
-        items: [{
-            label: '背景色',
-            cssName: '--item-background-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '背景色（淡色）',
-            cssName: '--item-background-color-tint',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '背景色（亮色）',
-            cssName: '--item-background-color-bright',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '激活背景',
-            cssName: '--item-background-color-active',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '悬浮背景',
-            cssName: '--item-background-color-hover',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '字体',
-            cssName: '--item-font-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '字体（淡色）',
-            cssName: '--item-font-color-tint',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '字体（亮色）',
-            cssName: '--item-font-color-bright',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '激活字体',
-            cssName: '--item-font-color-active',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '悬浮字体',
-            cssName: '--item-font-color-hover',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '边框',
-            cssName: '--item-border-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '边框（淡色）',
-            cssName: '--item-border-color-tint',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '边框（亮色）',
-            cssName: '--item-border-color-bright',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '悬浮边框',
-            cssName: '--item-border-color-hover',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '激活边框',
-            cssName: '--item-border-color-active',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '阴影',
-            cssName: '--item-shadow-color',
-            default: '',
-            showAlpha: true
-        }]
-    }, {
-        label: '菜单',
-        value: 'menu',
-        className: '',
-        items: [{
-            label: '背景色',
-            cssName: '--menu-background-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '背景色（淡色）',
-            cssName: '--menu-background-color-tint',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '背景色（亮色）',
-            cssName: '--menu-background-color-bright',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '激活背景色',
-            cssName: '--menu-background-color-active',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '悬浮背景色',
-            cssName: '--menu-background-color-hover',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '字体',
-            cssName: '--menu-font-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '字体（淡色）',
-            cssName: '--menu-font-color-tint',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '字体（亮色）',
-            cssName: '--menu-font-color-bright',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '激活字体',
-            cssName: '--menu-font-color-active',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '悬浮字体',
-            cssName: '--menu-font-color-hover',
-            default: '',
-            showAlpha: true
-        }]
-    }, {
-        label: '表单',
-        value: 'form',
-        className: '',
-        items: [{
-            label: '标签字体',
-            cssName: '--form-label-font-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '编辑器字体',
-            cssName: '--form-editor-font-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '编辑器placeholder',
-            cssName: '--form-editor-placeholder-font-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '编辑器背景色',
-            cssName: '--form-editor-background-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '编辑器边框',
-            cssName: '--form-editor-border-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '禁用编辑器字体',
-            cssName: '--form-disable-editor-font-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '禁用编辑器背景色',
-            cssName: '--form-disable-editor-background-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '激活编辑器',
-            cssName: '--form-editor-active-color',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '激活编辑器rgb',
-            cssName: '--form-editor-active-color-rgb',
-            default: '',
-            showAlpha: true
-        }, {
-            label: '编辑器下拉区背景色',
-            cssName: '--form-editor-dropdown-background-color',
-            default: '',
+            disable: false,
             showAlpha: true
         }]
     }, {
         label: '侧边栏',
         value: 'leftsidebar',
         className: '',
+        disable: false,
         items: [{
             label: '背景色',
-            cssName: '--app-left-sidebar-background-color',
+            cssName: '--leftsidebar-background-color',
             default: '',
+            disable: false,
             showAlpha: true
         }, {
-            label: '背景（深色）',
-            cssName: '--app-left-sidebar-background-color-deep',
+            label: '背景色（淡色）',
+            cssName: '--leftsidebar-background-color-light',
             default: '',
+            disable: false,
             showAlpha: true
         }, {
-            label: '激活背景色',
-            cssName: '--app-left-sidebar-background-color-active',
+            label: '背景色（亮色）',
+            cssName: '--leftsidebar-background-color-bright',
             default: '',
+            disable: false,
             showAlpha: true
         }, {
-            label: '字体',
-            cssName: '--app-left-sidebar-font-color',
+            label: '字体颜色',
+            cssName: '--leftsidebar-font-color',
             default: '',
+            disable: false,
             showAlpha: true
         }, {
-            label: '激活字体',
-            cssName: '--app-left-sidebar-font-color-active',
+            label: '字体颜色（淡色）',
+            cssName: '--leftsidebar-font-color-light',
             default: '',
+            disable: false,
+            showAlpha: true
+        }, {
+            label: '字体颜色（亮色）',
+            cssName: '--leftsidebar-font-color-bright',
+            default: '',
+            disable: false,
             showAlpha: true
         }]
     }, {
-        label: '底部',
-        value: 'footer',
+        label: '按钮',
+        value: 'button',
         className: '',
+        disable: false,
         items: [{
             label: '背景色',
-            cssName: '--app-footer-background-color',
+            cssName: '--button-background-color',
             default: '',
+            disable: false,
             showAlpha: true
         }, {
-            label: '激活背景色',
-            cssName: '--app-footer-background-color-active',
+            label: '背景色（淡色）',
+            cssName: '--button-background-color-light',
             default: '',
+            disable: false,
             showAlpha: true
         }, {
-            label: '字体',
-            cssName: '--app-footer-color',
+            label: '背景色（亮色）',
+            cssName: '--leftsidebar-font-color-bright',
             default: '',
+            disable: false,
             showAlpha: true
         }, {
-            label: '激活字体',
-            cssName: '',
-            default: '--app-footer-font-color-active'
+            label: '字体颜色',
+            cssName: '--button-font-color',
+            default: '',
+            disable: false,
+            showAlpha: true
+        }, {
+            label: '字体颜色（淡色）',
+            cssName: '--button-font-color-light',
+            default: '',
+            disable: false,
+            showAlpha: true
+        }, {
+            label: '字体颜色（亮色）',
+            cssName: '--button-font-color-bright',
+            default: '',
+            disable: false,
+            showAlpha: true
         }]
     }, {
-        label: '悬浮菜单',
-        value: 'suspension',
+        label: '视图',
+        value: 'view',
         className: '',
+        disable: true,
         items: [{
             label: '背景色',
-            cssName: '--app-suspension-windows-background-color',
+            cssName: '--view-background-color',
             default: '',
+            disable: false,
             showAlpha: true
         }, {
-            label: '激活背景色',
-            cssName: '--app-suspension-windows-background-color-active',
+            label: '背景色（淡色）',
+            cssName: '--view-background-color-light',
             default: '',
+            disable: false,
             showAlpha: true
         }, {
-            label: '字体',
-            cssName: '--app-suspension-windows-color',
+            label: '背景色（亮色）',
+            cssName: '--view-background-color-bright',
             default: '',
+            disable: false,
             showAlpha: true
         }, {
-            label: '激活字体',
-            cssName: '--app-suspension-windows-font-color-active',
+            label: '字体颜色',
+            cssName: '--view-font-color',
             default: '',
+            disable: false,
+            showAlpha: true
+        }, {
+            label: '字体颜色（淡色）',
+            cssName: '--view-font-color-light',
+            default: '',
+            disable: false,
+            showAlpha: true
+        }, {
+            label: '字体颜色（亮色）',
+            cssName: '--view-font-color-bright',
+            default: '',
+            disable: false,
+            showAlpha: true
+        }, ]
+    }, {
+        label: '部件',
+        value: 'ctrl',
+        className: '',
+        disable: true,
+        items: [{
+            label: '背景色',
+            cssName: '--ctrl-background-color',
+            default: '',
+            disable: false,
+            showAlpha: true
+        }, {
+            label: '背景色（淡色）',
+            cssName: '--ctrl-background-color-light',
+            default: '',
+            disable: false,
+            showAlpha: true
+        }, {
+            label: '背景色（亮色）',
+            cssName: '--ctrl-background-color-bright',
+            default: '',
+            disable: false,
+            showAlpha: true
+        }, {
+            label: '字体颜色',
+            cssName: '--ctrl-font-color',
+            default: '',
+            disable: false,
+            showAlpha: true
+        }, {
+            label: '字体颜色（淡色）',
+            cssName: '--ctrl-font-color-light',
+            default: '',
+            disable: false,
+            showAlpha: true
+        }, {
+            label: '字体颜色（亮色）',
+            cssName: '--ctrl-font-color-bright',
+            default: '',
+            disable: false,
+            showAlpha: true
+        }, {
+            label: '选中颜色',
+            cssName: '--ctrl-select-color',
+            default: '',
+            disable: false,
             showAlpha: true
         }]
+    }, {
+        label: '其他',
+        value: 'other',
+        className: '',
+        disable: false,
+        items: [{
+            label: '部件字体颜色',
+            cssName: '--ctrl-font-color',
+            default: '',
+            disable: false,
+            showAlpha: true
+        }, {
+            label: '部件字体颜色（淡色）',
+            cssName: '--ctrl-font-color-light',
+            default: '',
+            disable: false,
+            showAlpha: true
+        }, {
+            label: '部件字体颜色（亮色）',
+            cssName: '--ctrl-font-color-bright',
+            default: '',
+            disable: false,
+            showAlpha: true
+        }, {
+            label: '选中颜色',
+            cssName: '--ctrl-select-color',
+            default: '',
+            disable: false,
+            showAlpha: true
+        }, ]
     }]
 }

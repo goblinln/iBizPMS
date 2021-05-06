@@ -5,8 +5,8 @@
   flex-grow: 1;
   overflow-y: auto;
   .el-collapse-item__header.is-active{
-      color:var(--ctrl-font-color-active);
-      background-color: var(--ctrl-background-color-active);
+    color:var(--ctrl-font-color-bright);
+    background-color: var(--ctrl-background-color-bright);
   }
   .el-collapse{
       .el-collapse-item{
@@ -24,7 +24,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid var( --ctrl-border-color-tint);
+      border-bottom: 1px solid var(--ctrl-font-color-bright);
       .app-list-item-content {
           width: 70%;
           display: flex;
@@ -54,34 +54,34 @@
                   text-overflow: ellipsis;
               }
               .item-subtext {
-                  color:var(--ctrl-font-color-tint);
+                  color:var(--ctrl-font-color-bright);
               }
           }
       }
       .app-list-item-date {
           position: relative;
-          color: var(--ctrl-font-color-tint);
+          color: var(--ctrl-font-color-bright);
       }
   }
   .app-list-item.isSelect {
-      background: var(--ctrl-background-color-active-tint);
+      background: var(--ctrl-select-color);
       border-radius: 2px;
-      border-color: var(--ctrl-border-color-active);
+      border-color: var(--ctrl-font-color-bright);
   }
   .app-list-item:hover {
-      background: var(--ctrl-background-color-hover);
+      background: var(--ctrl-select-color);
   }
   .loadmore {
       text-align: center;
       padding: 10px;
       text-decoration: underline;
-      color:var(--ctrl-font-color-bright);
+      color:var(--ctrl-font-color-light);
       cursor: default;
   }
 }
 .app-list-empty {
   height:100%;
-  color: var(--ctrl-font-color-tint);
+  color: var(--ctrl-font-color-bright);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,8 +89,8 @@
     .quick-toolbar{
         display: inline-block;
         button{
-          background: var(--ctrl-background-color-tint);
-          color:var(--ctrl-font-color-active);
+          background: var(--ctrl-background-color-bright);
+          color:var(--ctrl-font-color-bright);
           border: 0;
       }
     }
@@ -99,7 +99,7 @@
 // <#if ctrl.getBatchPSDEToolbar?? && ctrl.getBatchPSDEToolbar()??>
 .list-pagination {
     position: fixed;
-    background-color: var(--ctrl-background-color-bright);
+    background-color: var(--ctrl-background-color-light);
     height: 50px;
     bottom: 30px;
     display: flex;

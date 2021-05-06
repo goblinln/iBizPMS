@@ -1,7 +1,11 @@
 <template>
-    <div class="app-custom-theme">
-        <icon class='app-theme-icon' title="主题配置" @click="showDrawer = true" type='md-settings' :size="22" />
+    <div class="app-custom-theme" @click="showDrawer = true">
+        <span ><icon class='app-theme-icon' title="主题配置" type='md-settings' :size="15" /></span>
+        <span class="title">
+            主题配置
+        </span>
         <el-drawer
+            append-to-body
             title="自定义主题"
             :show-close="true"
             :visible.sync="showDrawer"
@@ -23,20 +27,21 @@
                     @click="themeChange(theme.tag)"/>
             </div>
             <div class="split"></div>
-            <div class="font-family">
-                <h3>字体</h3>
-                <el-select v-model="selectFont" size="small" @change="fontChange">
-                    <el-option v-for="font in fontsFamily" :key="font.value" :label="$t(`components.appTheme.fontFamilys.${font.label}`)" :value="font.value">
-                        {{$t(`components.appTheme.fontFamilys.${font.label}`)}}
-                    </el-option>
-                </el-select>
-            </div>
-            <div class="split"></div>
             <div class="theme-setting">
                 <el-tabs v-model="activeSetting">
                     <template v-for="type in themeTypes">
                         <el-tab-pane v-if="!type.disable" :key="type.value" :label="type.label" :name="type.value" :class="type.className ? type.className : ''">
                             <div v-if="type.items && type.items.length > 0" :class="{ 'setting': true, [`${type.value}-setting`]: true }">
+                                <template v-if="type.value == 'app'">
+                                    <div class="font-family setting-item">
+                                        字体
+                                        <el-select v-model="selectFont" size="small">
+                                            <el-option v-for="font in fontsFamily" :key="font.value" :label="$t(`components.appTheme.fontFamilys.${font.label}`)" :value="font.value">
+                                                {{$t(`components.appTheme.fontFamilys.${font.label}`)}}
+                                            </el-option>
+                                        </el-select>
+                                    </div>
+                                </template>
                                 <template v-for="(item, index) in type.items">
                                     <div v-if="!item.disable" :key="index" class="setting-item">
                                         <span>{{ item.label }}</span>
@@ -97,6 +102,12 @@ export default class AppCustomTheme extends Vue {
      */
     public fontsFamily: any[] = appConfig.fonts;
 
+    /**
+     * 环境配置
+     * 
+     * @type {any}
+     * @memberof AppCustomTheme
+     */
     public Environment: any = AppServiceBase.getInstance().getAppEnvironment();
 
     /**
@@ -151,7 +162,8 @@ export default class AppCustomTheme extends Vue {
         }
         this.initThemeOptions().then((options: any) => {
             this.selectTheme = this.getSelectTheme();
-            const themeOptions = options ? options : localStorage.getItem('theme-options');
+            this.initFontFamily(options);
+            const themeOptions = options && options.cssValue ? options.cssValue : localStorage.getItem('theme-options');
             if (themeOptions !== null && themeOptions !== undefined && themeOptions !== '') {
                 this.themeOptions = JSON.parse(themeOptions);
                 this.previewTheme();
@@ -186,8 +198,12 @@ export default class AppCustomTheme extends Vue {
      * 
      * @memberof AppCustomTheme
      */
-    public initFontFamily() {
-        this.selectFont = localStorage.getItem('font-family') ? localStorage.getItem('font-family') : appConfig.defaultFont;
+    public initFontFamily(options?: any) {
+        if (options && options.fontFamily) {
+            this.selectFont = options.fontFamily;
+        } else {
+            this.selectFont = localStorage.getItem('font-family') ? localStorage.getItem('font-family') : appConfig.defaultFont;
+        }
     }
 
     /**
@@ -220,14 +236,13 @@ export default class AppCustomTheme extends Vue {
             if ((response.status && response.status != 200) || !response.data) {
                 return;
             }
-            const items: Array<any> = response.data.toString().match(/--[app|view|ctrl|item|menu|form]+[a-zA-Z-]+: ?[#()a-zA-Z0-9,. ]+/g) || [];
+            const items: Array<any> = response.data.toString().match(/--[a-zA-Z-]+: ?[#()a-zA-Z0-9,. ]+/g) || [];
             items.forEach((item: any, index: number) => {
                 const splitVar = item.split(':');
                 if (splitVar && splitVar.length == 2) {
                     Object.assign(this.themeOptions, { [splitVar[0]]: splitVar[1].trim() });
                 }
             })
-            // this.$forceUpdate();
         } catch {
 
         }
@@ -242,19 +257,6 @@ export default class AppCustomTheme extends Vue {
         if (tag && this.selectTheme != tag) {
             this.selectTheme = tag;
             this.handleThemeOptions(tag);
-        }
-    }
-
-    /**
-     * 切换字体
-     * 
-     * @memberof AppCustomTheme
-     */
-    public fontChange(val: any) {
-        if (val) {
-            const _this: any = this;
-            localStorage.setItem('font-family', val);
-            _this.$router.app.$store.commit('setCurrentSelectFont', val);
         }
     }
 
@@ -278,6 +280,11 @@ export default class AppCustomTheme extends Vue {
                 });
                 dom.classList.add(this.selectTheme);
             }
+        }
+        if (this.selectFont) {
+            const _this: any = this;
+            localStorage.setItem('font-family', this.selectFont);
+            _this.$router.app.$store.commit('setCurrentSelectFont', this.selectFont);
         }
         localStorage.setItem('theme-options', JSON.stringify(this.themeOptions));
     }
@@ -335,7 +342,8 @@ export default class AppCustomTheme extends Vue {
      */
     public saveThemeOptions() {
         if (this.themeOptions) {
-            this.$http.put(`/configs/${this.Environment.SysName}-${this.Environment.AppName}/theme-setting`, { model: JSON.stringify(this.themeOptions) }).then((res: any) => {
+            this.$http.put(`/configs/${this.Environment.SysName}-${this.Environment.AppName}/theme-setting`, 
+                { model: { cssValue: JSON.stringify(this.themeOptions), fontFamily: this.selectFont } }).then((res: any) => {
                 if (res) {
                     const _this: any = this;
                     _this.$notify({

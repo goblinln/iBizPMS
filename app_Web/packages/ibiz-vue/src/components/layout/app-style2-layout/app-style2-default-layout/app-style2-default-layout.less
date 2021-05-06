@@ -2,20 +2,21 @@
     .quick-search {
       .ivu-input:focus{
         box-shadow: none;
-        border-color: var(--app-dividing-line-color) !important;
+        border-color: var(--ctrl-font-color-light) !important;
       }
       .ivu-input-group-with-append.ivu-input-group-default.ivu-input-wrapper.ivu-input-wrapper-default.ivu-input-type-text.ivu-input-group.ivu-input-with-search {
           margin-top: 0px !important;
           padding-left: 0px !important;
           input.ivu-input.ivu-input-default {
               border-right: 0px;
+              border-color: var(--ctrl-font-color-light);
           }
           > .ivu-input-group-append.ivu-input-search {
               padding: 2px !important;
               background-color: #fff !important;
-              border: 1px solid var(--app-dividing-line-color) !important;
+              border: 1px solid var(--ctrl-font-color-light) !important;
               border-left: 0px !important;
-              color: var(--app-dividing-line-color) !important;
+              color: var(--ctrl-font-color-light) !important;
           }
           > .ivu-input-group-append.ivu-input-search::before {
               display: none !important;
@@ -23,7 +24,7 @@
       }
       .ivu-input-group-with-append.ivu-input-group-default.ivu-input-wrapper.ivu-input-wrapper-default.ivu-input-type-text.ivu-input-group.ivu-input-with-search:hover {
           .ivu-input-group-append.ivu-input-search,.ivu-input {
-              border-color: var(--ctrl-border-color-active) !important;
+              border-color: var(--ctrl-font-color-bright) !important;
           }
       }
   }
@@ -32,7 +33,7 @@
 .view-style2 {
   .view-container {
       padding: 0;
-      background: var(--view-background-color-bright);
+      background: var(--view-background-color-light);
       box-shadow: none;
       > .view-card {
           height: 100%;
@@ -52,7 +53,7 @@
                   > .caption-info {
                       line-height: 42px;
                       font-size: 18px;
-                      color: var(--view-font-color-active);
+                      color: var(--view-font-color-light);
                       flex-shrink: 0;
                   }
                   > .toolbar-container {
@@ -150,7 +151,7 @@
       border-radius: 0;
       box-shadow: none;
       border: 0;
-      background-color: var(--app-scrollbar-thumb-background-color);
+      background-color: var(--app-background-color-light);
   }
 
   // 默认工具栏样式

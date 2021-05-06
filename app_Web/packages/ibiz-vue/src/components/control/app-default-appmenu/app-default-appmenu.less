@@ -1,56 +1,54 @@
 /***    BRGIN:菜单样式    ***/
 .app-app-menu {
-    background-color: var(--menu-background-color-tint);
+    background-color: var(--leftsidebar-background-color);
     > .app-menu {
-        background-color: var(--menu-background-color-tint);
+        background-color: var(--leftsidebar-background-color);
         .el-menu-item:hover {
-            background-color: var(--menu-background-color-hover);
-            color: var(--menu-font-color-active);
+            background-color: var(--leftsidebar-background-color-bright);
+            color: var(--leftsidebar-font-color-bright);
             i {
-                color: var(--menu-font-color-hover);
-            }
-        }
-        .el-submenu__title:hover {
-            color: var(--menu-font-color-hover);
-            i {
-                color: var(--menu-font-color-hover);
+                color: var(--leftsidebar-font-color-bright);
             }
         }
         .el-menu-item.is-active {
-            border-left: 4px solid var(--menu-font-color-active);
-            background-color: var(--menu-background-color-active);
-            color: var(--menu-font-color-active);
+            border-left: 4px solid var(--leftsidebar-font-color-bright);
+            background-color: var(--leftsidebar-background-color-bright);
+            color: var(--leftsidebar-font-color-bright);
             i {
-                color: var(--menu-font-color-active);
+                color: var(--leftsidebar-font-color-bright);
             }
         }
-        .el-submenu.is-opened,
-        .el-submenu:hover {
-            > .el-submenu__title {
-                background: var(--menu-background-color-tint);
-            }
-        }
+        // .el-submenu.is-opened,
         .el-submenu__title {
-            color: var(--menu-font-color-tint);
+            color: var(--leftsidebar-font-color);
             i {
-                color: var(--menu-font-color-tint);
+                color: var(--leftsidebar-font-color);
             }
         }
         .el-menu-item {
-            color: var(--menu-font-color-tint);
+            color: var(--leftsidebar-font-color);
             i {
-                color: var(--menu-font-color-tint);
+                color: var(--leftsidebar-font-color);
             }
-            border-top: 1px solid var(--menu-font-color-bright);
-            background: var(--menu-background-color-tint);
-            border-left: 4px solid var(--app-color-transparent);
+            border-top: 1px solid var(--leftsidebar-background-color);
+            background: var(--leftsidebar-background-color);
+            border-left: 4px solid var(--leftsidebar-background-color);
         }
         .el-submenu {
-            border-top: 1px solid var(--menu-font-color-bright);
-            background: var(--menu-background-color-tint);
+            border-top: 1px solid var(--leftsidebar-background-color);
+            background: var(--leftsidebar-background-color);
             > .el-menu {
-                border-top: 1px solid var(--menu-font-color-bright);
-                background: var(---menu-background-color-tint);
+                border-top: 1px solid var(--leftsidebar-background-color);
+                background: var(---leftsidebar-background-color);
+            }
+        }
+        .el-submenu {
+            > .el-submenu__title:hover {
+                color: var(--leftsidebar-font-color-bright);
+                i {
+                    color: var(--leftsidebar-font-color-bright);
+                }
+                background: var(--leftsidebar-background-color-bright);
             }
         }
     }
@@ -58,7 +56,7 @@
     overflow-x: hidden;
     height: calc(100% - 58px);
     .ivu-divider {
-        background-color: var(--menu-background-color-tint);
+        background-color: var(--leftsidebar-background-color);
         height: 2px;
     }
     > .el-menu {
@@ -70,7 +68,7 @@
             word-break: break-all;
             .ivu-badge {
                 .ivu-badge-count {
-                    box-shadow: 0 0 0 0px var(--app-color-primary-contrast);
+                    box-shadow: 0 0 0 0px var(--leftsidebar-background-color-light);
                 }
             }
         }
@@ -97,10 +95,10 @@
             vertical-align: middle;
             text-align: center;
             font: 12px Arial, sans-serif;
-            background: rgb(var(--app-footer-background-color-rgb));
+            background: var(--app-background-color);
             border: 1px solid #fff;
-            border-color: rgb(var(--app-header-color-rgb));
-            color: rgb(var(--app-header-color-rgb));
+            border-color: var(--app-font-color);
+            color: var(--app-font-color);
         }
 
         .el-submenu__title,
@@ -152,7 +150,7 @@
             position: absolute;
             right: 0;
             line-height: 42px;
-            color: var(--app-color-primary-contrast) !important;
+            color: var(--app-font-color-bright) !important;
             display: none;
             width: 24px !important;
             overflow: hidden;
@@ -197,7 +195,7 @@
     .el-menu-item {
         .ivu-badge {
             .ivu-badge-count {
-                box-shadow: 0 0 0 0px var(--app-color-primary-contrast);
+                box-shadow: 0 0 0 0px var(--app-font-color-light);
             }
         }
         > span {
@@ -231,13 +229,14 @@
                 width: 320px;
                 margin: 12px;
                 cursor: pointer;
-                border-left: 10px solid var(--app-font-color-active);
+                color: var(--ctrl-font-color);
+                border-left: 10px solid var(--ctrl-font-color-bright);
                 > .ivu-card-body {
                     font-size: 16px;
                 }
             }
             > .app-middle-menu-item:hover {
-                color: var(--app-font-color-active);
+                color: var(--ctrl-font-color-bright);
             }
         }
     }

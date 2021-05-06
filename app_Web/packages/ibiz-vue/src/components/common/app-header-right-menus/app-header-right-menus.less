@@ -1,7 +1,7 @@
 .app-header-menus {
     margin-right: 200px;
-
     > .ivu-menu.ivu-menu-horizontal {
+        color: var(--app-font-color);
         height: 35px;
         line-height: 35px;
         background: transparent;
@@ -10,13 +10,13 @@
         > .ivu-menu-item,
         > .ivu-menu-submenu {
             border: 0px;
-            color: var(--app-header-color);
+            color: var(--app-font-color);
             padding: 0px 10px;
         }
 
         > .ivu-menu-item:hover,
         > .ivu-menu-submenu:hover {
-            color: var(--app-header-color);
+            color: var(--app-font-color);
             background: hsla(0, 0%, 100%, 0.12);
             border-bottom: none;
         }
@@ -29,7 +29,7 @@
             }
 
             > .ivu-select-dropdown {
-                background: var(--app-header-background-color);
+                background: var(--app-background-color-bright);
                 max-height: 350px;
                 overflow-x: hidden;
                 overflow-y: auto;

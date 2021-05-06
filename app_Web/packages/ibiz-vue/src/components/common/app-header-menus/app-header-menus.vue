@@ -14,10 +14,19 @@
 import { Vue, Component, Prop, Model, Emit } from "vue-property-decorator";
 import { Subject } from "rxjs";
 import { Environment } from '@/environments/environment';
+import { StudioActionUtil } from "ibiz-core";
 
 @Component({
 })
 export default class AppHeaderMenus extends Vue {
+
+  /**
+   * 配置平台操作控制器
+   *
+   * @type {StudioActionController}
+   * @memberof AppStudioAction
+   */
+  public sdc: StudioActionUtil = StudioActionUtil.getInstance();
 
   /**
    * 是否显示
@@ -25,7 +34,9 @@ export default class AppHeaderMenus extends Vue {
    * @type {boolean}
    * @memberof AppHeaderMenus
    */
-  public isShow:boolean = Environment.devMode;
+  public isShow:boolean = Environment.devMode && this.sdc.isShowTool;
+
+  
   
   /**
    * 菜单数据

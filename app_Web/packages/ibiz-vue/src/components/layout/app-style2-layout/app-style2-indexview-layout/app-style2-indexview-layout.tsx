@@ -116,6 +116,7 @@ export class AppStyle2IndexViewLayout extends AppStyle2DefaultLayout {
         if (this.viewInstance && this.viewInstance.mainMenuAlign && Object.is(this.viewInstance.mainMenuAlign, "CENTER")) {
             const { codeName, title } = this.viewInstance;
             return (<studio-view
+                style={{ 'font-family': this.selectFont }}
                 viewName={codeName?.toLowerCase()}
                 viewTitle={title}
                 viewInstance={this.viewInstance}
@@ -135,7 +136,7 @@ export class AppStyle2IndexViewLayout extends AppStyle2DefaultLayout {
                     leftContent = this.$slots.leftNavMenu;
             }
             return (
-                <app-layout ref="appLayout" class={viewClassNames}>
+                <app-layout ref="appLayout" style={{ 'font-family': this.selectFont }} class={viewClassNames}>
                     <template slot="header">
                         <app-header>
                             <template slot="header_left">

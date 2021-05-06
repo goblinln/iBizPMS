@@ -110,47 +110,47 @@
     // 默认按钮样式 Start
     .ivu-btn.ivu-btn-default,
     .ivu-btn.ivu-btn-primary {
-        color: var(--view-button-color);
-        background-color: var(--view-button-background-color);
-        border-color: var(--view-button-border-color);
+        color: var(--button-font-color);
+        background-color: var(--button-background-color);
+        border-color: var(--button-font-color);
         padding: 1px 6px;
     }
 
     .ivu-btn.ivu-btn-default:hover,
     .ivu-btn.ivu-btn-primary:hover {
-        background: var(--view-button-background-color-active);
+        background: var(--button-background-color-bright);
     }
 
     .ivu-btn.ivu-btn-default:disabled,
     .ivu-btn.ivu-btn-primary:disabled {
-        color: var(--view-button-color-active);
-        background-color: var(--view-button-background-color-disabled);
-        border-color: var(--view-button-background-color-disabled);
+        color: var(--button-font-color-light);
+        background-color: var(--leftsidebar-font-color-light);
+        border-color: var(--leftsidebar-font-color-light);
     }
 
     .ivu-btn.ivu-btn-text {
-        color: var(--view-button-background-color);
+        color: var(--button-background-color);
     }
 
     .ivu-btn.ivu-btn-text:hover {
-        color: var(--view-button-background-color-active);
+        color: var(--button-background-color-bright);
         background-color: transparent;
     }
 
     .el-button.el-button--default {
-        color: var(--view-button-color);
-        background-color: var(--view-button-background-color);
-        border-color: var(--view-button-background-color);
+        color: var(--button-font-color);
+        background-color: var(--button-background-color);
+        border-color: var(--button-background-color);
     }
 
     .el-button.el-button--default:hover {
-        background: var(--view-button-background-color-active);
+        background: var(--button-background-color-bright);
     }
 
     .el-button.el-button--default:disabled {
-        color: var(--view-button-color-active);
-        background-color: var(--view-button-background-color-disabled);
-        border-color: var(--view-button-background-color-disabled);
+        color: var(--button-color-active);
+        background-color: var(--leftsidebar-font-color-light);
+        border-color: var(--leftsidebar-font-color-light);
     }
     // 默认按钮样式 End
     
@@ -164,9 +164,9 @@
 
     // 基础表单项禁用颜色
     .form-edit-disabled-base-color {
-      background-color: var(--view-button-background-color-disabled);
-      border-color: var(--view-button-background-color-disabled);
-      color: var(--view-button-color-disabled);
+      background-color: var(--leftsidebar-font-color-light);
+      border-color: var(--leftsidebar-font-color-light);
+      color: var(--button-font-color-light);
     }
 
     //快速搜索表单
@@ -346,18 +346,18 @@
                 flex-shrink: 0;
                 width: 20px;
                 font-size: 20px;
-                color: var(--app-color-danger);
+                color: var(--form-editor-color-danger);
     
                 .ivu-tooltip-popper[x-placement^='right'] .ivu-tooltip-arrow {
-                    border-right-color: var(--view-background-color-bright);
+                    border-right-color: var(--view-background-color-light);
                 }
     
                 .ivu-tooltip-inner {
-                    background-color: var(--view-background-color-bright);
+                    background-color: var(--view-background-color-light);
                 }
     
                 .editor-error-tip-content {
-                    color: var(--app-color-danger);
+                    color: var(--form-editor-color-danger);
                     font-weight: 500;
                 }
             }
@@ -705,12 +705,12 @@
       .el-table__body-wrapper::-webkit-scrollbar-thumb {
         /*滚动条颜色*/
         border-radius   : 0 !important;
-        background-color: var(--app-scrollbar-thumb-background-color) !important;
+        background-color: var(--app-background-color-light) !important;
       }
       .el-table__body-wrapper::-webkit-scrollbar-track {
         /*滚动条里面轨道*/
         box-shadow   : none !important;
-        background   : transparent !important;
+        background   : #ffffff !important;
         border-radius: 0 !important;
       }
       /*表格文字过长省略*/
@@ -730,8 +730,8 @@
       .el-table {
           height: 100%;
           max-height: calc(100% - 36px) !important;
-          background-color: var(--view-background-color-bright);
-          color: var(--view-font-color-tint);
+          background-color: var(--view-background-color-light);
+          color: var(--view-font-color);
           border: none;
           &::-webkit-scrollbar {
             width: 3px;
@@ -756,7 +756,7 @@
           }
 
           .el-table__body tr.hover-row > td {
-              background: rgba(var(--view-background-color-active-rgb), 0.5) !important;
+              background: var(--ctrl-select-color) !important;
           }
 
           > .el-table__header-wrapper,
@@ -769,13 +769,12 @@
               }
               > table {
                   > thead {
-                      color: var(--view-font-color-tint);
-
+                      color: var(--view-font-color);
                       > tr {
-                          background-color: var(--view-background-color-bright);
+                          background-color: var(--view-background-color-light);
 
                           > th {
-                              background-color: var(--view-background-color-tint);
+                              background-color: var(--view-background-color-bright);
                               border-right: 1px solid var(--form-editor-background-color);
                               border-bottom: none;
                               padding: 0;
@@ -830,13 +829,13 @@
                           background-color: var(--view-background-color-bright);
 
                           > td {
-                              background: var(--view-dividing-line-color-tint);
+                              background: var(--view-background-color-bright);
                               border: none;
                           }
                       }
 
                       > .el-table__row {
-                          background-color: var(--view-background-color-bright);
+                          background-color: var(--view-background-color-light);
                           > td {
                               border-right: 1px solid var(--form-editor-background-color);
                               border-bottom: none;
@@ -854,7 +853,7 @@
                                       > .el-checkbox__input {
                                           > .el-checkbox__inner {
                                               background-color: var(--form-editor-background-color);
-                                              border: 1px solid var(--view-background-color-bright);
+                                              border: 1px solid var(--view-background-color-light);
                                           }
 
                                           > .el-checkbox__inner::after {
@@ -871,11 +870,11 @@
                           }
                       }
 
-                      > .el-table__row:hover {
-                          > td {
-                              // color: var(--view-font-color-active);
-                              background-color: rgba(var(--view-background-color-active-rgb),.5);
-                          }
+                      > .el-table__row.grid-selected-row, >.el-table__row.el-table__row--striped.grid-selected-row, >.el-table__row.hover-row {
+                        background-color: var(--ctrl-select-color);
+                        > td {
+                            background-color: var(--ctrl-select-color);
+                        }
                       }
 
                       > .el-table__row.current-row {
@@ -954,8 +953,8 @@
 
               > .ivu-page-prev,
               > .ivu-page-next {
-                  background-color: var(--view-button-background-color-disabled);
-                  border: 1px solid var(--view-button-background-color-disabled);
+                  background-color: var(--leftsidebar-font-color-light);
+                  border: 1px solid var(--leftsidebar-font-color-light);
                   font-size: 16px;
 
                   > a {
@@ -964,18 +963,18 @@
               }
 
               > .ivu-page-item {
-                  background-color: var(--view-button-background-color);
-                  border: 1px solid var(--view-button-background-color);
+                  background-color: var(--button-background-color);
+                  border: 1px solid var(--button-font-color);
 
                   > a {
-                      color: var(--view-button-color);
+                      color: var(--button-font-color);
                   }
               }
 
               > .ivu-page-item:hover,
               .ivu-page-item-active {
-                  border-color: var(--view-button-background-color-active);
-                  background: var(--view-button-background-color-active);
+                  border-color: var(--button-font-color-bright);
+                  background: var(--button-background-color-bright);
               }
 
               > .ivu-page-item-active:hover,
@@ -983,7 +982,7 @@
                   cursor: no-drop;
                   > a {
                       cursor: no-drop;
-                      color: var(--view-button-color);
+                      color: var(--button-font-color);
                   }
               }
 
@@ -992,12 +991,12 @@
                       > .ivu-select {
                           > .ivu-select-selection {
                               height: 22px;
-                              background-color: var(--view-button-background-color);
+                              background-color: var(--button-background-color);
                               border: 1px solid var(--form-editor-border-color);
-                              color: var(--view-button-color);
+                              color: var(--button-font-color);
 
                               .ivu-icon.ivu-icon-ios-arrow-down.ivu-select-arrow {
-                                  color: var(--view-button-color);
+                                  color: var(--button-font-color);
                               }
 
                               .ivu-select-selected-value {
@@ -1007,9 +1006,9 @@
                           }
 
                           > .ivu-select-selection:hover {
-                              border-color: var(--view-button-background-color-active);
-                              background-color: var(--view-button-background-color-active);
-                              color: var(--view-button-color-active);
+                              border-color: var(--button-font-color-bright);
+                              background-color: var(--button-background-color-bright);
+                              color: var(--button-font-color-bright);
                           }
                       }
                   }
@@ -1020,9 +1019,9 @@
 
                       > input {
                           height: 22px;
-                          border: 1px solid var(--view-button-background-color);
-                          color: var(--view-button-color);
-                          background-color: var(--view-button-background-color);
+                          border: 1px solid var(--button-font-color);
+                          color: var(--button-font-color);
+                          background-color: var(--button-background-color);
                       }
                   }
               }
@@ -1082,7 +1081,7 @@
 
       .app-list-item {
           line-height: normal;
-          border-bottom: 1px solid var(--view-font-color-bright);
+          border-bottom: 1px solid var(--view-font-color-light);
           padding: 5px 0;
           cursor: pointer;
           .panel-container{
@@ -1091,7 +1090,7 @@
       }
 
       .app-list-item.isSelect {
-          background: rgba(var(--view-background-color-active-rgb), 0.5) ;
+          background: var(--ctrl-select-color);
       }
 
       .list-pagination {
@@ -1196,9 +1195,9 @@
                       line-height: 22px;
                       > input {
                           height: 22px;
-                          border: 1px solid var(--view-button-background-color);
-                          color: var(--view-button-color);
-                          background-color: var(--view-button-background-color);
+                          border: 1px solid var(--button-font-color);
+                          color: var(--button-font-color);
+                          background-color: var(--button-background-color);
                       }
                   }
               }
@@ -1283,7 +1282,7 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            background: var(--view-button-background-color);
+            background: var(--button-background-color);
             border-radius: 5px;
             padding: 0;
             .app-actionbar-item {
@@ -1291,17 +1290,17 @@
               margin-right: 0;
                 .ivu-btn {
                     padding: 0 15px;
-                    color: var(--view-button-color);
+                    color: var(--button-font-color);
                 }
         
                 .ivu-btn:hover {
-                    color: var(--view-button-background-color-active);
+                    color: var(--button-background-color-bright);
                     background-color: transparent;
                 }
             }
         
             .app-actionbar-item:nth-child(n + 2) {
-                border-left: 1px solid var(--app-dividing-line-color-bright);
+                border-left: 1px solid var(--leftsidebar-font-color-light);
             }
         }
       }

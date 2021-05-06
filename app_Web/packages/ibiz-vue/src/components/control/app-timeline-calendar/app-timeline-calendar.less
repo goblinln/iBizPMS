@@ -36,10 +36,10 @@
       }
       .event-lengend.event-disabled{
         .lengend-icon{
-          background: var(--ctrl-background-color-tint) !important;
+          background: var(--ctrl-background-color-bright) !important;
         }
         span{
-          color:var(--ctrl-font-color-bright) !important;
+          color:var(--ctrl-font-color-light) !important;
         }
       }
     }
@@ -47,7 +47,7 @@
   // 选中样式
   .calendar .selected-event,
   .select-first-calendar .select-first-event{
-    border: 2px solid var(--ctrl-border-color) !important;
+    border: 2px solid var(--ctrl-font-color) !important;
   }
   .calendar .fc-dayGrid-view .selected-event:before,
   .select-first-calendar .fc-dayGrid-view .select-first-event:before,
@@ -58,10 +58,10 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    border: 9px solid var(--ctrl-border-color);
+    border: 9px solid var(--ctrl-font-color);
     border-top-color: transparent;
     border-left-color: transparent;
-    color: var(--app-color-primary-contrast);
+    color: var(--ctrl-font-color-bright);
   }
   .calendar .fc-dayGrid-view .selected-event:after,
   .select-first-calendar .fc-dayGrid-view .select-first-event:after,
@@ -74,7 +74,7 @@
     position: absolute;
     right: 1px;
     bottom: 0px;
-    border: 2px solid var(--app-color-primary-contrast);
+    border: 2px solid var(--ctrl-font-color-bright);
     border-top-color: transparent;
     border-left-color: transparent;
     -webkit-transform: rotate(45deg);
@@ -96,7 +96,7 @@
   
   .app-popover {
     padding: 0px !important;
-    background-color: var(--ctrl-background-color-bright) !important;
+    background-color: var(--ctrl-background-color-light) !important;
   }
   #calendar-popover {
     .ivu-dropdown {

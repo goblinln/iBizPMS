@@ -1,28 +1,26 @@
 <template>
     <div class="lockscren">
-        <span>
-            <Icon type="md-lock" size="22" @click="handleLock"/>
-            <el-dialog :title="this.$t('components.lockScren.title')"
-                :visible.sync="box"
-                width="30%"
-                custom-class="lockscren-body"
-                append-to-body>
+        <span><Icon type="md-lock" size="15" @click="handleLock"/></span>
+        <span class="title" @click="handleLock">应用锁屏</span>
+        <el-dialog :title="this.$t('components.lockScren.title')"
+            :visible.sync="box"
+            width="30%"
+            custom-class="lockscren-body"
+            append-to-body>
             <el-form :model="form"
                 ref="form"
                 label-width="82px">
-            <el-form-item :label="this.$t('components.lockScren.label')"
-                prop="passwd"
-                :rules="[{ required: true, message: this.$t('components.lockScren.message')}]">
-            <el-input v-model="form.passwd"
-                :placeholder="this.$t('components.lockScren.placeholder')"></el-input>
-        </el-form-item>
-      </el-form>
-      <span slot="footer"
-            class="dialog-footer">
-        <el-button type="primary" @click="handleSetLock">{{this.$t('components.lockScren.confirmButtonText')}}</el-button>
-      </span>
-    </el-dialog>
-        </span>
+                <el-form-item :label="this.$t('components.lockScren.label')"
+                    prop="passwd"
+                    :rules="[{ required: true, message: this.$t('components.lockScren.message')}]">
+                    <el-input v-model="form.passwd"
+                        :placeholder="this.$t('components.lockScren.placeholder')"></el-input>
+                </el-form-item>
+            </el-form>
+            <span slot="footer" class="dialog-footer">
+                <el-button type="primary" @click="handleSetLock">{{this.$t('components.lockScren.confirmButtonText')}}</el-button>
+            </span>
+        </el-dialog>
     </div>
 </template>
 <script lang = 'ts'>
@@ -96,9 +94,11 @@ export default class AppLockScren extends Vue{
 <style lang='less'>
 .lockscren{
     cursor:pointer;
-    padding: 0 5px;
+    .title {
+        margin-left: 8px;
+    }
     .ivu-icon{
-      color: var(--item-font-color-tint);
+      color: var(--app-font-color-light);
     }
 }
 .el-dialog.lockscren-body{

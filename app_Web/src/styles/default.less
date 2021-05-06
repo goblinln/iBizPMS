@@ -18,7 +18,9 @@
 }
 .ivu-card-head p {
   font-size: 14px;
-  color: var(--app-font-color-deep);
+  //TODO 冲突
+  color: var(--ctrl-font-color);
+//   color: var(--app-font-color-light);
   font-weight: 400;
 }
 .app-app-menu .app-menus .ivu-card .ivu-card-body{
@@ -31,11 +33,13 @@
 }
 
 .ivu-card-body .grid>.el-table .el-table__header-wrapper thead>tr th {
-  background: var(--app-background-color-tint);
-  border-right: 1px solid var(--app-background-color-bright);
+  background: var(--app-background-color-bright);
+  //TODO 
+  border-right: 1px solid var(--ctrl-font-color-bright);
+//   border-right: 1px solid var(--app-background-color-light);
 }
 .el-table td, .el-table th.is-leaf {
-  border-bottom: 1px solid var(--app-background-color-bright);
+  border-bottom: 1px solid var(--app-background-color-light);
 }
 .el-table th {
   padding: 5px 0;
@@ -45,46 +49,69 @@
     width: 10px !important;
 }
 .grid .el-table__body-wrapper .el-table__row td{
-    border-left: 1px solid var(--app-background-color-tint);
-    border-top: 1px solid var(--app-background-color-tint);
+    //TODO
+    border-left: 1px solid var(--ctrl-font-color);
+    border-top: 1px solid var(--ctrl-font-color);
+    // border-left: 1px solid var(--app-background-color-bright);
+    // border-top: 1px solid var(--app-background-color-bright);
 }
 .el-table--enable-row-hover .el-table__body tr:hover>td {
-  background-color: var(--grid-row-background-color-hover) !important;
+  background-color: var(--ctrl-select-color) !important;
 }
 .grid .el-table__body-wrapper .grid-selected-row{
-    background-color: var(--grid-row-background-color-active) !important;
+    background-color: var(--ctrl-select-color) !important;
     > td{
-      background-color: var(--grid-row-background-color-active) !important;
+      background-color: var(--ctrl-select-color) !important;
     }
 }
 
 .el-table--enable-row-hover .el-table__body tr:hover>td,.grid .el-table__body-wrapper .grid-selected-row {
   .grid-uiaction-divider {
-    color: var(--item-font-color-bright);
-    border-left: 1px solid var(--item-font-color-bright);
+      //TODO
+    color: var(--ctrl-font-color-bright);
+    border-left: 1px solid var(--ctrl-font-color-bright);
+    // color: var(--ctrl-select-color);
+    // border-left: 1px solid var(--item-font-color-bright);
     &:hover {
-      color: var(--item-font-color-hover);
+        color: var(--ctrl-font-color-bright);
     }
   }
   .grid-first-uiaction {
-    color: var(--item-font-color-bright);
+    color: var(--ctrl-font-color-bright);
     &:hover {
-      color: var(--item-font-color-hover);
+      color: var(--ctrl-font-color-bright);
     }
   }
 }
 
+// .el-table th .sort-caret.ascending{
+//     border-bottom-color: var(--view-background-color-light);
+// }
+// .el-table th.ascending .sort-caret.ascending {
+//     border-bottom-color: var(--view-font-color-light);
+// }
+// .el-table th .sort-caret.descending{
+//     border-top-color: var(--view-background-color-light);
+// }
+// .el-table th.descending .sort-caret.descending {
+//     border-top-color: var(--view-font-color-light);
+// }
+
 .el-table th .sort-caret.ascending{
-    border-bottom-color: var(--app-background-color-bright);
+    border-bottom-color: var(--ctrl-font-color-light);
+    border-bottom-color: var(--view-background-color-light);
 }
 .el-table th.ascending .sort-caret.ascending {
-    border-bottom-color: var(--app-font-color-active);
+    border-bottom-color: var(--ctrl-font-color-bright);
+    border-bottom-color: var(--view-font-color-light);
 }
 .el-table th .sort-caret.descending{
-    border-top-color: var(--app-background-color-bright);
+    border-top-color: var(--ctrl-font-color-light);
+    border-top-color: var(--view-background-color-light);
 }
 .el-table th.descending .sort-caret.descending {
-    border-top-color: var(--app-font-color-active);
+    border-top-color: var(--ctrl-font-color-bright);
+    border-top-color: var(--view-font-color-light);
 }
 
 // tab分页模式首页布局
@@ -114,11 +141,54 @@
 /***    END:加载遮罩    ***/
 
 .grid-row-select {
-    background-color: var(--item-font-color-bright) !important;
+    background-color: var(--ctrl-font-color-bright) !important;
     td {
         background-color: var(--item-font-color-bright) !important;
     }
 }
+
+//搜索框
+.bar-container{
+    .ivu-input-wrapper {
+      .ivu-input {
+        border-color: var(--ctrl-font-color-light);
+        &:hover {
+          border-color: var(--ctrl-font-color-bright);
+        }
+        &:focus {
+          box-shadow: 0 0 0 1px var(--ctrl-font-color-bright);
+        }
+          background-color: var(--item-font-color-bright) !important;
+      }
+      .ivu-input-group-append.ivu-input-search {
+        color: var(--button-font-color) !important;
+        border-color: var(--button-background-color) !important;
+        background-color: var(--button-background-color) !important;
+        &:hover {
+            color: var(--button-font-color-bright) !important;
+            border-color: var(--button-background-color-bright) !important;
+            background-color: var(--button-background-color-bright) !important;
+        }
+      }
+    }
+  }
+
+  //按钮
+  .el-button{
+    color: var(--button-font-color);
+    border-color: var(--button-font-color);
+    background-color: var(--button-background-color);
+    &:hover {
+      color: var(--button-font-color-bright);
+      border-color: var(--button-font-color-bright);
+      background-color: var(--button-background-color-bright);
+    }
+    &:disabled,&:disabled:hover {
+      color: var(--button-font-color-light);
+      border-color: var(--button-font-color-light);
+      background-color: var(--button-background-color-light);
+    }
+  }
 
 /***    BRGIN:表单错误信息2    ***/
 .app-form-item-error-info {
@@ -165,28 +235,28 @@
 .property-layout-left {
     flex-direction: row-reverse;
     > div:nth-child(1) {
-        border-left: 1px solid var(--item-border-color-tint);
+        border-left: 1px solid var(--item-font-color-light);
         padding-left: 16px;
     }
 }
 .property-layout-right {
     flex-direction: row;
     > div:nth-child(1) {
-        border-right: 1px solid var(--item-border-color-tint);
+        border-right: 1px solid var(--item-font-color-light);
         padding-right: 16px;
     }
 }
 .property-layout-top {
     flex-direction: column-reverse;
     > div:nth-child(1) {
-        border-top: 1px solid var(--item-border-color-tint);
+        border-top: 1px solid var(--item-font-color-light);
         padding-top: 16px;
     }
 }
 .property-layout-bottom {
     flex-direction: column;
     > div:nth-child(1) {
-        border-bottom: 1px solid var(--item-border-color-tint);
+        border-bottom: 1px solid var(--item-font-color-light);
         padding-bottom: 16px;
     }
 }
@@ -217,17 +287,26 @@
 
 // 按钮下拉列表
 .ivu-select-dropdown.ivu-dropdown-transfer {
-  color: var(--view-button-color);
-  background-color: var(--view-button-background-color);
+  color: var(--app-font-color);
+  background-color: var(--app-background-color-bright);
 
   > .ivu-dropdown-menu {
       > .ivu-dropdown-item {
-          color: var(--view-button-color);
+        color: var(--app-font-color-light);
       }
 
       > .ivu-dropdown-item:hover {
-          background: var(--view-button-background-color-active);
+        color: var(--app-font-color);
+        background: var(--app-background-color);
       }
+  }
+}
+
+.appindexview{
+  .ivu-layout{
+    .index_content{
+      color: var(--ctrl-font-color);
+    }
   }
 }
 
@@ -246,7 +325,7 @@
 }
 
 .app-loading {
-    background-color: var(--app-loading-masking-background-color);
+    background-color: rgba(255, 255, 255, 0.5);
     .app-loading-icon {
         width: 40px;
         height: 40px;
@@ -260,11 +339,11 @@
             width: 13px;
             height: 13px;
             display: block;
-            background: var(--app-loading-background-color);
+            background: #9aceff;
             margin: 4px;
         }
         .active-color {
-            background: var(--app-loading-background-color-bright);
+            background: #badeff;
         }
         .icon-content {
             display: flex;

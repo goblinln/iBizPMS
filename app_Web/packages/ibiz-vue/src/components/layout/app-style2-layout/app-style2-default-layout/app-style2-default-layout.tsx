@@ -28,9 +28,25 @@ export class AppStyle2DefaultLayout extends Vue {
      * 
      * @public
      * @type {*}
-     * @memberof AppDefaultViewLayout
+     * @memberof AppStyle2DefaultLayout
      */
     @Prop() public viewparams!: any;
+
+    /**
+     * 当前字体
+     *
+     * @memberof AppStyle2DefaultLayout
+     */
+    get selectFont() {
+        let _this: any = this;
+        if (_this.$router.app.$store.state.selectFont) {
+            return _this.$router.app.$store.state.selectFont;
+        } else if (localStorage.getItem('font-family')) {
+            return localStorage.getItem('font-family');
+        } else {
+            return 'Microsoft YaHei';
+        }
+    }
 
     /**
      * 初始化类名
@@ -90,6 +106,7 @@ export class AppStyle2DefaultLayout extends Vue {
         if (Object.is('DEFAULT', styleMode)) {
             return (
                 <studio-view
+                    style={{ 'font-family': this.selectFont }}
                     viewName={codeName?.toLowerCase()}
                     viewTitle={title}
                     viewInstance={this.viewInstance}
@@ -139,6 +156,7 @@ export class AppStyle2DefaultLayout extends Vue {
         } else {
             return (
                 <studio-view-style2
+                    style={{ 'font-family': this.selectFont }}
                     viewName={codeName?.toLowerCase()}
                     viewTitle={title}
                     viewInstance={this.viewInstance}

@@ -5,8 +5,8 @@
     > .exp-actions {
         height: 100%;
         width: 48px;
-        color: var(--app-left-sidebar-font-color);
-        background: var(--app-left-sidebar-background-color);
+        color: var(--leftsidebar-font-color);
+        background: var(--leftsidebar-background-color);
 
         > .action-item {
             position: relative;
@@ -33,7 +33,7 @@
         }
 
         > .action-item.active {
-            color: var(--app-left-sidebar-font-color-active);
+            color: var(--leftsidebar-font-color-bright);
 
             > .active-item-indicator::before {
                 content: '';
@@ -44,12 +44,12 @@
                 height: 100%;
                 width: 0;
                 border-left: 2px solid;
-                border-left-color: var(--app-left-sidebar-font-color-active);
+                border-left-color: var(--leftsidebar-font-color-bright);
             }
         }
 
         > .action-item:hover {
-            color: var(--app-left-sidebar-font-color-active);
+            color: var(--leftsidebar-font-color-bright);
         }
     }
 

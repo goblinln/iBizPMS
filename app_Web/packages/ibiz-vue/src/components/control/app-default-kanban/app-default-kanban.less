@@ -1,242 +1,242 @@
 //默认从左往右布局
 .app-data-view-group {
-  height: 100%;
-  display: flex;
-  overflow: auto;
-  .dataview-group-folading-kanban{
-      border: 1px solid var(--ctrl-border-color-tint);
-      text-align: center;
-      border-left: 0;
-      height: 100%;
-      width: 40px;
-      background-color: var(--ctrl-background-color-tint);
-      color: var(--ctrl-font-color-tint);
-      .unfold-icon {
-          padding: 3px 0;
-          font-size: 20px;
-      }
-      .dataview-group-folding{
-          height: calc(100% - 39px);
-          writing-mode: tb;
-          width: 31px;
-          font-size: 17px;
-      }
-  }
-  .dataview-group-content {
-      border: 1px solid var(--ctrl-border-color-tint);
-      flex-shrink: 0;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      .dataview-group-header {
-          height: 36px;
-          line-height: 36px;
-          position: relative;
-          border-bottom: 1px solid var(--ctrl-border-color-tint);
-          padding: 0 8px;
-          .fold-icon{
-              font-size: 20px;
-              color:var(--ctrl-font-color-tint);
-              position: absolute;
-          }
-          .fold-text {
-              margin-left: 24px;
-          }
-          .group-action {
-              .group-action-item:nth-child(n+2){
-                  margin-top: 5px;
-              }
-              .app-kanban-icon{
-                  padding-right: 6px;
-              }
-              .caption{
-                  margin-left: 4px;
-              }
-          }
-      }
-      .dataview-group-items {
-          flex-grow: 1;
-          height: 100%;
-          overflow: auto;
-          .dataview-group-item {
-              margin: 8px 8px 0 8px;
-              border: 1px solid var(--ctrl-border-color-tint);
-              padding: 8px;
-              overflow: hidden;
-              .app-layoutpanel {
-                  .app-layoutpanel-button,.app-layoutpanel-conctrl,.app-layoutpanel-ctrlpos,.app-layoutpanel-field,.app-layoutpanel-rowitem,.app-layoutpanel-usercontrol,.app-layoutpanel-container{
-                      padding: 0px !important;
-                  }
-              }
-          }
-          .dataview-group-item.is-select {
-              border-color: var(--ctrl-border-color-active);
-          }
-      }
-      .app-data-empty{
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-      }
-  }
-  .dataview-group-content:nth-child(1) {
-      border-left: 1px solid var(--ctrl-border-color-tint);
-  }
-  .quick-toolbar {
-      flex-shrink: 0;
-      margin-left: 5px;
-      .quick-action-item {
-          width: 37px;
-          height: 37px;
-          text-align: center;
-          line-height: 37px;
-          border: 1px solid var(--ctrl-border-color-tint);
-          border-top-width: 0;
-      }
-      .quick-action-item:nth-child(1) {
-          border-top-width: 1px;
-      }
-  }
-
-  .dragitems {
-      z-index: -1 !important;
-      margin: 0px !important;
-      border: none !important;
-      padding: 0px !important;
-      height: 0px !important;
-      width: 10px !important;
-      color: #fff;
-      overflow: hidden;
-      .app-layoutpanel {
-          .app-layoutpanel-container {
-              padding: 0px !important;
-          }
-      }
-  }
+    height: 100%;
+    display: flex;
+    overflow: auto;
+    .dataview-group-folading-kanban{
+        border: 1px solid var(--ctrl-font-color-bright);
+        text-align: center;
+        border-left: 0;
+        height: 100%;
+        width: 40px;
+        background-color: var(--ctrl-background-color-bright);
+        color: var(--ctrl-font-color-bright);
+        .unfold-icon {
+            padding: 3px 0;
+            font-size: 20px;
+        }
+        .dataview-group-folding{
+            height: calc(100% - 39px);
+            writing-mode: tb;
+            width: 31px;
+            font-size: 17px;
+        }
+    }
+    .dataview-group-content {
+        border: 1px solid var(--ctrl-font-color-bright);
+        flex-shrink: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        .dataview-group-header {
+            height: 36px;
+            line-height: 36px;
+            position: relative;
+            border-bottom: 1px solid var(--ctrl-font-color-bright);
+            padding: 0 8px;
+            .fold-icon{
+                font-size: 20px;
+                color:var(--ctrl-font-color-bright);
+                position: absolute;
+            }
+            .fold-text {
+                margin-left: 24px;
+            }
+            .group-action {
+                .group-action-item:nth-child(n+2){
+                    margin-top: 5px;
+                }
+                .app-kanban-icon{
+                    padding-right: 6px;
+                }
+                .caption{
+                    margin-left: 4px;
+                }
+            }
+        }
+        .dataview-group-items {
+            flex-grow: 1;
+            height: 100%;
+            overflow: auto;
+            .dataview-group-item {
+                margin: 8px 8px 0 8px;
+                border: 1px solid var(--ctrl-font-color-bright);
+                padding: 8px;
+                overflow: hidden;
+                .app-layoutpanel {
+                    .app-layoutpanel-button,.app-layoutpanel-conctrl,.app-layoutpanel-ctrlpos,.app-layoutpanel-field,.app-layoutpanel-rowitem,.app-layoutpanel-usercontrol,.app-layoutpanel-container{
+                        padding: 0px !important;
+                    }
+                }
+            }
+            .dataview-group-item.is-select {
+                border-color: var(--ctrl-font-color-bright);
+            }
+        }
+        .app-data-empty{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .dataview-group-content:nth-child(1) {
+        border-left: 1px solid var(--ctrl-font-color-bright);
+    }
+    .quick-action {
+        flex-shrink: 0;
+        margin-left: 5px;
+        .quick-action-item {
+            width: 37px;
+            height: 37px;
+            text-align: center;
+            line-height: 37px;
+            border: 1px solid var(--ctrl-font-color-bright);
+            border-top-width: 0;
+        }
+        .quick-action-item:nth-child(1) {
+            border-top-width: 1px;
+        }
+    }
+  
+    .dragitems {
+        z-index: -1 !important;
+        margin: 0px !important;
+        border: none !important;
+        padding: 0px !important;
+        height: 0px !important;
+        width: 10px !important;
+        color: #fff;
+        overflow: hidden;
+        .app-layoutpanel {
+            .app-layoutpanel-container {
+                padding: 0px !important;
+            }
+        }
+    }
 }
 
 //从上往下布局
 .app-data-view-group-column{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  overflow: auto;
-  flex-direction: column;
-  .dataview-group-folading-kanban{
-      border: 1px solid var(--ctrl-border-color-tint);
-      text-align: center;
-      border-left: 0;
-      width: 100%;
-      height: 40px;
-      background-color: var(--ctrl-background-color-tint);
-      color: var(--ctrl-font-color-tint);
-      .unfold-icon {
-          padding: 6px 0px 0px 6px;
-          float: left;
-          font-size: 20px;
-      }
-      .dataview-group-folding{
-          font-size: 17px;
-          padding-top: 8px;
-      }
-  }
-  .dataview-group-content {
-      border: 1px solid var(--ctrl-border-color-tint);
-      flex-shrink: 0;
-      width: 100%;
-      display: flex;
-      .dataview-group-header {
-          width: 36px;
-          position: relative;
-          border-right: 1px solid var(--ctrl-border-color-tint);
-          padding: 8px 0px;
-          .fold-icon{
-              font-size: 20px;
-              padding: 0px 6px;
-              color:var(--ctrl-font-color-tint);
-              position: absolute;
-          }
-          .fold-text {
-              writing-mode: tb;
-              padding: 30px 6px 0px 6px;
-          }
-          .ivu-poptip{
-              position: absolute;
-              bottom: 0px;
-              left: 0px;
-              .ivu-poptip-rel{
-                  padding-left: 8px;
-              }
-          }
-          .group-action {
-              .group-action-item:nth-child(n+2){
-                  margin-top: 5px;
-              }
-              .app-kanban-icon{
-                  padding-right: 6px;
-              }
-              .caption{
-                  margin-left: 4px;
-              }
-          }
-      }
-      .dataview-group-items {
-          display: flex;
-          flex-grow: 1;
-          height: 100%;
-          overflow: auto;
-          .dataview-group-item {
-              margin: 8px 0px 8px 8px;
-              border: 1px solid var(--ctrl-border-color-tint);
-              padding: 8px;
-              overflow: hidden;
-          }
-          .dataview-group-item.is-select {
-              border-color: var(--ctrl-border-color-active);
-          }
-      }
-      .app-data-empty{
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-      }
-  }
-  .dataview-group-content:nth-child(1) {
-      border-left: 1px solid var(--ctrl-border-color-tint);
-  }
-  .quick-toolbar {
-      flex-shrink: 0;
-      display: flex;
-      .quick-action-item {
-          width: 37px;
-          height: 37px;
-          text-align: center;
-          line-height: 37px;
-          border: 1px solid var(--ctrl-border-color-tint);
-          border-top-width: 0;
-      }
-      .quick-action-item:nth-child(1) {
-          border-top-width: 1px;
-      }
-  }
-
-  .dragitems {
-      z-index: -1 !important;
-      margin: 0px !important;
-      border: none !important;
-      padding: 0px !important;
-      height: 0px !important;
-      width: 10px !important;
-      color: #fff;
-      overflow: hidden;
-      .app-layoutpanel {
-          .app-layoutpanel-container {
-              padding: 0px !important;
-          }
-      }
-  }
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    .dataview-group-folading-kanban{
+        border: 1px solid var(--ctrl-font-color-bright);
+        text-align: center;
+        border-left: 0;
+        width: 100%;
+        height: 40px;
+        background-color: var(--ctrl-background-color-bright);
+        color: var(--ctrl-font-color-bright);
+        .unfold-icon {
+            padding: 6px 0px 0px 6px;
+            float: left;
+            font-size: 20px;
+        }
+        .dataview-group-folding{
+            font-size: 17px;
+            padding-top: 8px;
+        }
+    }
+    .dataview-group-content {
+        border: 1px solid var(--ctrl-font-color-bright);
+        flex-shrink: 0;
+        width: 100%;
+        display: flex;
+        .dataview-group-header {
+            width: 36px;
+            position: relative;
+            border-right: 1px solid var(--ctrl-font-color-bright);
+            padding: 8px 0px;
+            .fold-icon{
+                font-size: 20px;
+                padding: 0px 6px;
+                color:var(--ctrl-font-color-bright);
+                position: absolute;
+            }
+            .fold-text {
+                writing-mode: tb;
+                padding: 30px 6px 0px 6px;
+            }
+            .ivu-poptip{
+                position: absolute;
+                bottom: 0px;
+                left: 0px;
+                .ivu-poptip-rel{
+                    padding-left: 8px;
+                }
+            }
+            .group-action {
+                .group-action-item:nth-child(n+2){
+                    margin-top: 5px;
+                }
+                .app-kanban-icon{
+                    padding-right: 6px;
+                }
+                .caption{
+                    margin-left: 4px;
+                }
+            }
+        }
+        .dataview-group-items {
+            display: flex;
+            flex-grow: 1;
+            height: 100%;
+            overflow: auto;
+            .dataview-group-item {
+                margin: 8px 0px 8px 8px;
+                border: 1px solid var(--ctrl-font-color-bright);
+                padding: 8px;
+                overflow: hidden;
+            }
+            .dataview-group-item.is-select {
+                border-color: var(--ctrl-font-color-bright);
+            }
+        }
+        .app-data-empty{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .dataview-group-content:nth-child(1) {
+        border-left: 1px solid var(--ctrl-font-color-bright);
+    }
+    .quick-action {
+        flex-shrink: 0;
+        display: flex;
+        .quick-action-item {
+            width: 37px;
+            height: 37px;
+            text-align: center;
+            line-height: 37px;
+            border: 1px solid var(--ctrl-font-color-bright);
+            border-top-width: 0;
+        }
+        .quick-action-item:nth-child(1) {
+            border-top-width: 1px;
+        }
+    }
+  
+    .dragitems {
+        z-index: -1 !important;
+        margin: 0px !important;
+        border: none !important;
+        padding: 0px !important;
+        height: 0px !important;
+        width: 10px !important;
+        color: #fff;
+        overflow: hidden;
+        .app-layoutpanel {
+            .app-layoutpanel-container {
+                padding: 0px !important;
+            }
+        }
+    }
 }

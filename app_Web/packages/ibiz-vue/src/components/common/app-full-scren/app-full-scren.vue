@@ -1,6 +1,7 @@
 <template>
     <div class="fullscren">
-        <Icon :type="fullScren == true ? 'ios-contract' : 'ios-expand'" size="22" @click="handleScreen"/>
+        <span><Icon :type="fullScren == true ? 'ios-contract' : 'ios-expand'" size="15" @click="handleScreen"/></span>
+        <span class="title" @click="handleScreen">应用全屏</span>
     </div>
 </template>
 <script lang = 'ts'>
@@ -84,10 +85,12 @@ export default class AppFullScren extends Vue{
 </script>
 <style lang='less'>
 .fullscren{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     cursor:pointer;
-    padding: 0 5px;
     .ivu-icon{
-      color: var(--item-font-color-tint);
+      color: var(--app-font-color);
     }
 }
 .ivu-icon-ios-expand{

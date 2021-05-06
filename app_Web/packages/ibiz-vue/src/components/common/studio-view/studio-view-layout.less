@@ -74,14 +74,15 @@
                 }
 
                 .el-tree-node__content:hover {
-                    background-color: var(--view-background-color-tint);
+                    background-color: var(--ctrl-select-color);
+                    color:var(--view-font-color-light);
                 }
             }
 
             .el-tree-node.is-current {
                 > .el-tree-node__content {
-                    background-color: var(--view-background-color-active);
-                    color:var(--view-font-color-active);
+                    background-color: var(--ctrl-select-color);
+                    color:var(--view-font-color-light);
                 }
             }
         }
@@ -99,7 +100,7 @@
 
                 > .ivu-tabs-bar {
                     margin-bottom: 0px;
-                    // border-bottom: 1px solid var(--app-dividing-line-color-tint);
+                    // border-bottom: 1px solid var(--app-dividing-line-color-bright);
 
                     > .ivu-tabs-nav-container {
                         > .ivu-tabs-nav-wrap {
@@ -276,7 +277,7 @@
                     }
 
                     .app-list-item.isSelect {
-                        background-color: var(--view-background-color-active);
+                        background-color: var(--ctrl-select-color);
                     }
                 }
             }
@@ -351,7 +352,7 @@
                     border-color: rgba(var(--view-dividing-line-color-rgb), 0.3);
                     color: var(--view-font-color);
                     border-radius: 5px 5px 0px 0px;
-                    background: var(--view-background-color-bright);
+                    background: var(--view-background-color-light);
 
                     .portlet-action {
                         float: right;
@@ -369,22 +370,22 @@
                     padding: 6px 8px;
                     border: 0;
                     border-radius: 0px 0px 5px 5px;
-                    background: var(--view-background-color-bright);
+                    background: var(--view-background-color-light);
                 }
 
                 > .portlet-without-title {
                     padding: 0px 8px;
                     border: 0;
                     border-radius: 5px;
-                    background: var(--view-background-color-bright);
+                    background: var(--view-background-color-light);
                 }
 
                 .studio-view {
-                    background: var(--view-background-color-bright);
+                    background: var(--view-background-color-light);
 
                     > .view-content {
                         .ivu-card.app-form-group {
-                            background: var(--view-background-color-bright);
+                            background: var(--view-background-color-light);
                         }
                     }
                 }

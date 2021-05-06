@@ -13,12 +13,12 @@
   .el-table__body-wrapper::-webkit-scrollbar-thumb {
       /*滚动条颜色*/
       border-radius: 10px !important;
-      background-color: var(--app-scrollbar-thumb-background-color) !important;
+      background-color: var(--app-background-color-light) !important;
   }
   .el-table__body-wrapper::-webkit-scrollbar-track {
       /*滚动条里面轨道*/
-      box-shadow: inset 0 0 5px var(--ctrl-shadow-color) !important;
-      background: var(--ctrl-background-color-tint) !important;
+      box-shadow: inset 0 0 5px var(--app-background-color-light) !important;
+      background: #ffffff !important;
       border-radius: 10px !important;
   }
   /*表格文字过长省略*/
@@ -48,7 +48,8 @@
       .el-table__row {
           .grid-uiaction-divider {
               padding: 0 10px 0 10px;
-              border-left: 1px var(--ctrl-border-color) solid;
+              //TODO 冲突
+              border-left: 1px var(--ctrl-font-color-light) solid;
           }
           .grid-first-uiaction {
               padding: 0 10px 0 10px;
@@ -61,16 +62,16 @@
           }
       }
       .el-table__row:hover {
-          .app-column-link {
-              color: #2d8cf0;
-          }
-      }
+        .app-column-link {
+            color: #2d8cf0;
+        }
+    }
       .quick-toolbar {
           display: inline-block;
           button {
-              // background: var(--ctrl-background-color-tint);
-              // color: var(--ctrl-font-color-active);
-              // border: 0;
+              background: var(--ctrl-background-color-bright);
+              color: var(--ctrl-font-color-bright);
+              border: 0;
           }
       }
       .el-tooltip {
@@ -96,7 +97,7 @@
           height: auto;
       }
   }
-  // 表格(单击能打开时移上去有小手)
+// 表格(单击能打开时移上去有小手)
   .el-table.grid-rowactive-click {
       .el-table__row:hover {
           cursor: pointer;
@@ -105,6 +106,24 @@
   .grid-pagination {
       height: 50px;
       padding: 6px 0px;
+      color: var(--ctrl-font-color);
+      .ivu-btn{
+        color: var(--ctrl-font-color);
+        border-color: var(--ctrl-font-color-light);
+        &:hover {
+          color: var(--ctrl-font-color-bright);
+          border-color: var(--ctrl-font-color-bright);
+        }
+      }
+      .ivu-page-item-active{
+        color: var(--ctrl-font-color-bright);
+        border-color: var(--ctrl-font-color-bright);
+      }
+      .ivu-select-selection{
+        &:hover {
+          border-color: var(--ctrl-font-color-bright);
+        }
+      }
       .page-button {
           button {
               padding: 0;
@@ -154,14 +173,14 @@
   > div > label {
       > span {
           .el-checkbox__inner {
-              background-color: var(--ctrl-font-color-active);
-              border-color: var(--ctrl-font-color-active);
+              background-color: var(--ctrl-background-color-bright);
+              border-color: var(--ctrl-font-color-bright);
           }
           .el-checkbox__inner:before {
               content: '';
               position: absolute;
               display: block;
-              background-color: var(--ctrl-background-color-bright);
+              background-color: var(--ctrl-background-color-light);
               height: 2px;
               transform: scale(0.5);
               left: 0;
@@ -171,8 +190,8 @@
       }
       > span.is-checked {
           .el-checkbox__inner {
-              background-color: var(--ctrl-font-color-active);
-              border-color: var(--ctrl-font-color-active);
+              background-color: var(--ctrl-background-color-bright);
+              border-color: var(--ctrl-font-color-bright);
           }
           .el-checkbox__inner:after {
               border: 0px;
@@ -185,13 +204,13 @@
   > div > label {
       > span {
           .el-checkbox__inner {
-              background-color: var(--ctrl-font-color-active);
-              border-color: var(--ctrl-font-color-active);
+              background-color: var(--ctrl-background-color-bright);
+              border-color: var(--ctrl-font-color-bright);
           }
           .el-checkbox__inner:after {
               box-sizing: content-box;
               content: '';
-              border: 1px solid var(--ctrl-background-color-bright);
+              border: 1px solid var(--ctrl-font-color-bright);
               border-left: 0;
               border-top: 0;
               height: 7px;

@@ -4,7 +4,7 @@
       box-sizing: border-box;
       height: 34px;
       padding: 0 60px 0 30px;
-      background: var(--app-left-sidebar-background-color);
+      background: var(--leftsidebar-background-color);
       margin: 0;
       .tags-body {
           position: relative;
@@ -24,8 +24,8 @@
                   line-height: 34px;
                   border: 0;
                   border-radius: 0;
-                  border-right: 1px solid var(--view-background-color);
-                  background: var(--view-dividing-line-color-tint);
+                  border-right: 1px solid var(--view-background-color-light);
+                  background: var(--app-background-color-light);
                   font-size: 14px;
   
                   .ivu-tag-text {
@@ -73,11 +73,11 @@
                   background: var(--view-background-color);
   
                   .ivu-tag-text {
-                      color: var(--view-font-color-bright);
+                      color: var(--view-font-color);
                   }
   
                   .ivu-icon {
-                      color: var(--view-font-color-bright);
+                      color: var(--view-font-color);
                   }
               }
   
@@ -88,7 +88,7 @@
                   }
   
                   .ivu-icon {
-                      color: var(--view-font-color-bright);
+                      color: var(--view-font-color);
                   }
               }
   
@@ -105,7 +105,7 @@
           width: 30px;
           height: 34px;
           line-height: 34px;
-          background-color: var(--app-left-sidebar-background-color);
+          background-color: var(--app-leftsidebar-background-color);
           border-left: var(1px solid --view-dividing-line-color-bright);
           border-right: var(1px solid --view-dividing-line-color-bright);
           text-align: center;
@@ -120,7 +120,7 @@
       .ivu-dropdown {
           position: absolute;
           top: 0;
-          color: var(--app-left-sidebar-font-color);
+          color: var(--app-leftsidebar-font-color);
       }
   
       .move-left {
@@ -135,17 +135,14 @@
           right: 0;
       }
   }
-  
   .app-page-more {
-      background: var(--app-suspension-windows-background-color);
-  
+      background: var(--app-background-color);
       .ivu-dropdown-item {
-          color: var(--app-suspension-windows-color);
+          color: var(--app-font-color);
       }
-  
       .ivu-dropdown-item:hover {
-          background: var(--app-suspension-windows-background-color-active);
-          color: var(--app-suspension-windows-font-color-active);
+          background: var(--app-background-color-bright);
+          color: var(--app-font-color-bright);
       }
   }
   

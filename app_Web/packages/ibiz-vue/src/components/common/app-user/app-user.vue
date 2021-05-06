@@ -10,6 +10,15 @@
                     <span><Icon type="ios-create-outline" style='margin-right: 8px;'/></span>
                     <span>{{$t('components.appUser.changepwd')}}</span>
                 </dropdown-item>
+                <dropdown-item name="fullscren" style='font-size: 15px !important;'>
+                    <app-full-scren/>
+                </dropdown-item>
+                <dropdown-item name="lockscren" style='font-size: 15px !important;'>
+                    <app-lock-scren />
+                </dropdown-item>
+                <dropdown-item name="changetheme" style='font-size: 15px !important;'>
+                    <app-custom-theme :viewStyle='this.viewStyle'></app-custom-theme>
+                </dropdown-item>
                 <dropdown-item name='logout' style='font-size: 15px !important;'>
                     <span><i aria-hidden='true' class='ivu-icon ivu-icon-md-power' style='margin-right: 8px;'></i></span>
                     <span>{{$t('components.appUser.logout')}}</span>
@@ -19,13 +28,15 @@
     </div>
 </template>
 <script lang = 'ts'>
-import { Vue, Component } from 'vue-property-decorator';
+import { Vue, Component, Prop } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
 import { Environment } from '@/environments/environment';
 import { removeSessionStorage, Util } from 'ibiz-core';
 @Component({
 })
 export default class AppUser extends Vue {
+
+    @Prop() public viewStyle!: string;
 
     /**
      * 用户信息 

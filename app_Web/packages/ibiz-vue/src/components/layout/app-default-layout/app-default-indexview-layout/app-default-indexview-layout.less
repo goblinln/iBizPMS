@@ -4,8 +4,8 @@
     height: 100%;
     padding: 0;
     margin: 0;
-    color: var(--app-font-color-deep);
-    background-color: var(--app-background-color);
+    color: var(--app-font-color-light);
+    background-color: var(--view-background-color);
     .loading-bar{
       height: 2px;
       width: 100%;
@@ -24,17 +24,17 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        background-color: var(--app-header-background-color);
+        background-color: var(--app-background-color-bright);
         .page-logo {
             display: flex;
             align-items: center;
         }
         .header-left {
             i {
-                color: var(--app-font-color-light);
+                color: var(--app-font-color);
             }
             i:hover {
-                color: var(--app-font-color-active);
+                color: var(--app-font-color-bright);
             }
             > .app-breadcrumb {
                 > span .el-breadcrumb__item .el-breadcrumb__inner {
@@ -43,7 +43,7 @@
                         cursor: pointer !important;
                     }
                     a:last-child:hover {
-                        color: var(--app-font-color-active);
+                        color: var(--app-font-color-bright);
                     }
                 }
             }
@@ -68,23 +68,24 @@
         }
     }
     .index_content {
-        background-color: var(--app-background-color-tint);
+        background-color: var(--app-background-color-light);
         height: calc(100vh - 50px);
         overflow-x: hidden;
         overflow-y: hidden;
     }
     > .ivu-layout {
+        color: var(--app-font-color);
         .ivu-layout-sider {
-            background-color: var(--app-background-color-tint);
+            background-color: var(--leftsidebar-background-color);
             .sider-top {
-                color: var(--app-left-sidebar-font-color);
-                background-color: var(--app-left-sidebar-background-color-deep);
+                color: var(--app-font-color);
+                background-color: var(--leftsidebar-background-color);
                 > .page-logo {
                     > .menuicon:hover {
                         background-color: var(
-                            --app-color-primary-contrast
+                            --app-background-color
                         );
-                        color: var(--app-color-primary-contrast);
+                        color: var(--app-font-color);
                     }
                 }
             }
@@ -106,7 +107,6 @@
         padding: 0px;
         margin-bottom: 1px;
         height: 65px;
-        box-shadow: 0 1px 2px 0 var(--app-shadow-color);
         > .page-logo {
             display: flex;
             align-items: center;
@@ -145,7 +145,7 @@
     width: 5px;
     height: 100%;
     cursor: w-resize;
-    background-color: var(--app-color-transparent);
+    background-color: var(--leftsidebar-background-color);
   }
   .index_sider {
     flex: none !important;
@@ -154,7 +154,7 @@
   }
   .inner_indexview{
     padding: 0 12px;
-    background: var(--view-background-color-bright);
+    background: var(--view-background-color);
     width: auto !important;
   }
   .fullscreen_logo{
@@ -171,7 +171,7 @@
     border-radius: 0;
     box-shadow: none;
     border: 0;
-    background-color: var(--app-scrollbar-thumb-background-color);
+    background-color: var(--app-background-color-light);
   }
   ::-webkit-scrollbar-track {
     border-radius: 0;

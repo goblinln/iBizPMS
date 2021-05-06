@@ -16,9 +16,9 @@
         justify-content: center;
         .el-dropdown{
           button{
-            color: var(--app-color-primary-contrast);
-            background-color: var(--item-background-color-active);
-            border-color: var(--item-background-color-active);
+            color: var(--button-font-color);
+            background-color: var(--button-background-color);
+            border-color: var(--button-font-color);
             &:hover{
               opacity: 0.8;
             }
@@ -26,7 +26,7 @@
         }
     }
     >.tag-tabs{
-        background-color: var(--app-background-color);
+        background-color: var(--app-background-color-light);
         .el-tabs{
             .el-tabs__nav{
                 padding:0px 10px;
@@ -38,9 +38,9 @@
             .el-tabs__item{
                 height: 32px;
                 line-height: 32px;
-                border: 1px solid var(--ctrl-border-color-tint);
-                color: var(--ctrl-font-color-tint)!important;
-                background: var(--ctrl-background-color-bright);
+                border: 1px solid var(--app-background-color-light);
+                color: var(--view-font-color)!important;
+                background: var(--view-background-color);
                 padding: 0 12px;
                 display: inline-block;
                 margin: 4px 4px 4px 0;
@@ -55,18 +55,18 @@
                     height: 12px;
                     margin-right: 8px;
                     border-radius: 50%;
-                    background: var(--ctrl-background-color-tint);
+                    background: var(--view-background-color-bright);
                     position: relative;
                     top: 1px;
                 }
             }
             .el-tabs__item:hover{
-                color:var(--ctrl-font-color-hover);
+                color:var(--view-font-color-bright);
             }
             .is-active{
-                color:var(--ctrl-font-color-active);
+                color:var(--view-font-color-bright);
                 .ivu-tag-dot-inner{
-                    background-color:var(--ctrl-font-color-active) !important;
+                    background-color:var(--view-font-color-bright) !important;
                 }
                 border-bottom:2px solid transparent !important; 
             }

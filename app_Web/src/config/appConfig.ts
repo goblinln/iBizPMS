@@ -13,17 +13,17 @@ export const appConfig = {
         {
             tag: 'app-theme-blue',
             title: 'Blue',
-            color: '#6ba1d1'
+            color: '#00abfc'
         },
         {
             tag: 'app-theme-dark-blue',
             title: 'Dark Blue',
-            color: '#606d80'
+            color: '#4e89f8'
         },
         {
             tag: 'app-theme-studio-dark',
             title: 'Studio Dark',
-            color: '#aaaaaa'
+            color: '#000000'
         }
     ],
     //字体集合

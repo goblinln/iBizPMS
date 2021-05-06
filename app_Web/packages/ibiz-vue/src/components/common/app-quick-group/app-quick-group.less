@@ -6,16 +6,19 @@
             margin-right: 8px;
             padding: 8px;
             cursor: pointer;
+            .app-quick-item-label:hover {
+                color: var(--ctrl-font-color-bright);
+            }
             .app-seleted-item{
                 display: inline-block;
                 font-weight: 700;
-                color: var(--item-font-color-bright);
+                color: var(--ctrl-font-color-bright);
                 padding: 4px;
                 position: relative;
                 &::after{
                     content: "";
                     height: 2px;
-                    background-color: var(--item-font-color-bright);
+                    background-color: var(--ctrl-font-color-bright);
                     position: absolute;
                     bottom: -17px;
                     width: 100%;
@@ -35,11 +38,11 @@
                 width: 18px;
                 height: 18px;
                 margin-left: 4px;
-                background-color: var(--item-background-color-tint);
+                background-color: var(--item-background-color-bright);
             }
         }
         .app-quick-item :hover{
-            color: var(--item-font-color-hover);
+            color: var(--item-font-color-light);
         }
     }
 }

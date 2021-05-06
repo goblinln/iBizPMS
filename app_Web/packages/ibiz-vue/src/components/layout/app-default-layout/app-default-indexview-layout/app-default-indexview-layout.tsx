@@ -207,12 +207,8 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                                 <app-header-menus />
                                 <app-lang style='font-size: 15px;padding: 0 10px;' />
                                 <app-orgsector />
-                                <app-user />
+                                <app-user viewStyle={this.viewInstance.viewStyle} />
                                 <app-message-popover />
-                                <app-lock-scren />
-                                <app-full-scren />
-                                {/* <app-custom-theme viewStyle={this.viewInstance.viewStyle}></app-custom-theme> */}
-                                <app-theme style="width:45px;display: flex;justify-content: center;"></app-theme>
                             </div>
                         </header>
                         <content class={contentClass} >
