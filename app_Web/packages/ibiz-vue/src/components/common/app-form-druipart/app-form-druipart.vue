@@ -1,6 +1,7 @@
 <template>
   <div class="form-druipart">
     <component
+      v-if="Object.keys(viewdata).length > 0"
       ref="appFormDruipart"
       :is="'app-view-shell'"
       :key="uuid"
