@@ -398,9 +398,9 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @returns {Promise<any>}
      * @memberof DocServiceBase
      */
-    public async ByVersionUpdateContextBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async ByVersionUpdateContextBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/docs/byversionupdatecontextbatch`,_data);
+        return this.http.post(`/docs/byversionupdatecontextbatch`,_data);
     }
 
     /**
@@ -412,9 +412,9 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @returns {Promise<any>}
      * @memberof DocServiceBase
      */
-    public async CollectBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async CollectBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/docs/collectbatch`,_data);
+        return this.http.post(`/docs/collectbatch`,_data);
     }
 
     /**
@@ -426,9 +426,9 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @returns {Promise<any>}
      * @memberof DocServiceBase
      */
-    public async GetDocStatusBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async GetDocStatusBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/docs/getdocstatusbatch`,_data);
+        return this.http.post(`/docs/getdocstatusbatch`,_data);
     }
 
     /**
@@ -440,9 +440,9 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @returns {Promise<any>}
      * @memberof DocServiceBase
      */
-    public async OnlyCollectDocBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async OnlyCollectDocBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/docs/onlycollectdocbatch`,_data);
+        return this.http.post(`/docs/onlycollectdocbatch`,_data);
     }
 
     /**
@@ -454,9 +454,9 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @returns {Promise<any>}
      * @memberof DocServiceBase
      */
-    public async OnlyUnCollectDocBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async OnlyUnCollectDocBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/docs/onlyuncollectdocbatch`,_data);
+        return this.http.post(`/docs/onlyuncollectdocbatch`,_data);
     }
 
     /**
@@ -468,8 +468,8 @@ export class DocBaseService extends EntityBaseService<IDoc> {
      * @returns {Promise<any>}
      * @memberof DocServiceBase
      */
-    public async UnCollectBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async UnCollectBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/docs/uncollectbatch`,_data);
+        return this.http.post(`/docs/uncollectbatch`,_data);
     }
 }

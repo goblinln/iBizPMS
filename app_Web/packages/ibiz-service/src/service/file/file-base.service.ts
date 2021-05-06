@@ -264,9 +264,9 @@ export class FileBaseService extends EntityBaseService<IFile> {
      * @returns {Promise<any>}
      * @memberof FileServiceBase
      */
-    public async UpdateObjectIDBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async UpdateObjectIDBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/files/updateobjectidbatch`,_data);
+        return this.http.post(`/files/updateobjectidbatch`,_data);
     }
 
     /**
@@ -278,8 +278,8 @@ export class FileBaseService extends EntityBaseService<IFile> {
      * @returns {Promise<any>}
      * @memberof FileServiceBase
      */
-    public async UpdateObjectIDForPmsEeBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async UpdateObjectIDForPmsEeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/files/updateobjectidforpmseebatch`,_data);
+        return this.http.post(`/files/updateobjectidforpmseebatch`,_data);
     }
 }

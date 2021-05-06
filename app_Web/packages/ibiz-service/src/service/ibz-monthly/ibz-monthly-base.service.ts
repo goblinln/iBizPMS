@@ -338,9 +338,9 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
      * @returns {Promise<any>}
      * @memberof IbzMonthlyServiceBase
      */
-    public async CreateGetInfoBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async CreateGetInfoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/ibzmonthlies/creategetinfobatch`,_data);
+        return this.http.post(`/ibzmonthlies/creategetinfobatch`,_data);
     }
 
     /**
@@ -352,9 +352,9 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
      * @returns {Promise<any>}
      * @memberof IbzMonthlyServiceBase
      */
-    public async CreateUserMonthlyBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async CreateUserMonthlyBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/ibzmonthlies/createusermonthlybatch`,_data);
+        return this.http.post(`/ibzmonthlies/createusermonthlybatch`,_data);
     }
 
     /**
@@ -366,9 +366,9 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
      * @returns {Promise<any>}
      * @memberof IbzMonthlyServiceBase
      */
-    public async EditGetCompleteTaskBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async EditGetCompleteTaskBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/ibzmonthlies/editgetcompletetaskbatch`,_data);
+        return this.http.post(`/ibzmonthlies/editgetcompletetaskbatch`,_data);
     }
 
     /**
@@ -380,9 +380,9 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
      * @returns {Promise<any>}
      * @memberof IbzMonthlyServiceBase
      */
-    public async HaveReadBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async HaveReadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/ibzmonthlies/havereadbatch`,_data);
+        return this.http.post(`/ibzmonthlies/havereadbatch`,_data);
     }
 
     /**
@@ -394,9 +394,9 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
      * @returns {Promise<any>}
      * @memberof IbzMonthlyServiceBase
      */
-    public async PushUserMonthlyBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async PushUserMonthlyBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/ibzmonthlies/pushusermonthlybatch`,_data);
+        return this.http.post(`/ibzmonthlies/pushusermonthlybatch`,_data);
     }
 
     /**
@@ -408,8 +408,8 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
      * @returns {Promise<any>}
      * @memberof IbzMonthlyServiceBase
      */
-    public async SubmitBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async SubmitBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/ibzmonthlies/submitbatch`,_data);
+        return this.http.post(`/ibzmonthlies/submitbatch`,_data);
     }
 }

@@ -175,8 +175,8 @@ export class IbizproProjectDailyBaseService extends EntityBaseService<IIbizproPr
      * @returns {Promise<any>}
      * @memberof IbizproProjectDailyServiceBase
      */
-    public async SumProjectDailyBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async SumProjectDailyBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/ibizproprojectdailies/sumprojectdailybatch`,_data);
+        return this.http.post(`/ibizproprojectdailies/sumprojectdailybatch`,_data);
     }
 }

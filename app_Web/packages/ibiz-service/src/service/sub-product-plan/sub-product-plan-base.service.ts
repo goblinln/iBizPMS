@@ -831,14 +831,14 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @returns {Promise<any>}
      * @memberof SubProductPlanServiceBase
      */
-    public async BatchUnlinkBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async BatchUnlinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/batchunlinkbugbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/batchunlinkbugbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/subproductplans/batchunlinkbugbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/batchunlinkbugbatch`,_data);
         }
     }
 
@@ -851,14 +851,14 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @returns {Promise<any>}
      * @memberof SubProductPlanServiceBase
      */
-    public async BatchUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async BatchUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/batchunlinkstorybatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/batchunlinkstorybatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/subproductplans/batchunlinkstorybatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/batchunlinkstorybatch`,_data);
         }
     }
 
@@ -871,14 +871,14 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @returns {Promise<any>}
      * @memberof SubProductPlanServiceBase
      */
-    public async EeActivePlanBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async EeActivePlanBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/eeactiveplanbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/eeactiveplanbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/subproductplans/eeactiveplanbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/eeactiveplanbatch`,_data);
         }
     }
 
@@ -891,14 +891,14 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @returns {Promise<any>}
      * @memberof SubProductPlanServiceBase
      */
-    public async EeCancelPlanBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async EeCancelPlanBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/eecancelplanbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/eecancelplanbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/subproductplans/eecancelplanbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/eecancelplanbatch`,_data);
         }
     }
 
@@ -911,14 +911,14 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @returns {Promise<any>}
      * @memberof SubProductPlanServiceBase
      */
-    public async EeClosePlanBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async EeClosePlanBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/eecloseplanbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/eecloseplanbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/subproductplans/eecloseplanbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/eecloseplanbatch`,_data);
         }
     }
 
@@ -931,14 +931,14 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @returns {Promise<any>}
      * @memberof SubProductPlanServiceBase
      */
-    public async EeFinishPlanBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async EeFinishPlanBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/eefinishplanbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/eefinishplanbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/subproductplans/eefinishplanbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/eefinishplanbatch`,_data);
         }
     }
 
@@ -951,14 +951,14 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @returns {Promise<any>}
      * @memberof SubProductPlanServiceBase
      */
-    public async EePausePlanBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async EePausePlanBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/eepauseplanbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/eepauseplanbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/subproductplans/eepauseplanbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/eepauseplanbatch`,_data);
         }
     }
 
@@ -971,14 +971,14 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @returns {Promise<any>}
      * @memberof SubProductPlanServiceBase
      */
-    public async EeRestartPlanBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async EeRestartPlanBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/eerestartplanbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/eerestartplanbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/subproductplans/eerestartplanbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/eerestartplanbatch`,_data);
         }
     }
 
@@ -991,14 +991,14 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @returns {Promise<any>}
      * @memberof SubProductPlanServiceBase
      */
-    public async EeStartPlanBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async EeStartPlanBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/eestartplanbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/eestartplanbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/subproductplans/eestartplanbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/eestartplanbatch`,_data);
         }
     }
 
@@ -1011,14 +1011,14 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @returns {Promise<any>}
      * @memberof SubProductPlanServiceBase
      */
-    public async ImportPlanTempletBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async ImportPlanTempletBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/importplantempletbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/importplantempletbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/subproductplans/importplantempletbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/importplantempletbatch`,_data);
         }
     }
 
@@ -1031,14 +1031,14 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @returns {Promise<any>}
      * @memberof SubProductPlanServiceBase
      */
-    public async LinkBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async LinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/linkbugbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/linkbugbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/subproductplans/linkbugbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/linkbugbatch`,_data);
         }
     }
 
@@ -1051,14 +1051,14 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @returns {Promise<any>}
      * @memberof SubProductPlanServiceBase
      */
-    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/linkstorybatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/linkstorybatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/subproductplans/linkstorybatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/linkstorybatch`,_data);
         }
     }
 
@@ -1071,14 +1071,14 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @returns {Promise<any>}
      * @memberof SubProductPlanServiceBase
      */
-    public async LinkTaskBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async LinkTaskBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/linktaskbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/linktaskbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/subproductplans/linktaskbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/linktaskbatch`,_data);
         }
     }
 
@@ -1091,14 +1091,14 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @returns {Promise<any>}
      * @memberof SubProductPlanServiceBase
      */
-    public async UnlinkBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async UnlinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/unlinkbugbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/unlinkbugbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/subproductplans/unlinkbugbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/unlinkbugbatch`,_data);
         }
     }
 
@@ -1111,14 +1111,14 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
      * @returns {Promise<any>}
      * @memberof SubProductPlanServiceBase
      */
-    public async UnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async UnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/unlinkstorybatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/subproductplans/unlinkstorybatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/subproductplans/unlinkstorybatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/subproductplans/unlinkstorybatch`,_data);
         }
     }
 }

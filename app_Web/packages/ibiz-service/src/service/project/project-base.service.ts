@@ -752,9 +752,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/projects/activatebatch`,_data);
+        return this.http.post(`/projects/activatebatch`,_data);
     }
 
     /**
@@ -766,9 +766,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async BatchUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async BatchUnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/projects/batchunlinkstorybatch`,_data);
+        return this.http.post(`/projects/batchunlinkstorybatch`,_data);
     }
 
     /**
@@ -780,9 +780,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async CloseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async CloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/projects/closebatch`,_data);
+        return this.http.post(`/projects/closebatch`,_data);
     }
 
     /**
@@ -794,9 +794,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async ImportPlanStoriesBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async ImportPlanStoriesBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/projects/importplanstoriesbatch`,_data);
+        return this.http.post(`/projects/importplanstoriesbatch`,_data);
     }
 
     /**
@@ -808,9 +808,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/projects/linkstorybatch`,_data);
+        return this.http.post(`/projects/linkstorybatch`,_data);
     }
 
     /**
@@ -822,9 +822,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async ManageMembersBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async ManageMembersBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/projects/managemembersbatch`,_data);
+        return this.http.post(`/projects/managemembersbatch`,_data);
     }
 
     /**
@@ -836,9 +836,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async PmsEeProjectAllTaskCountBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async PmsEeProjectAllTaskCountBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/projects/pmseeprojectalltaskcountbatch`,_data);
+        return this.http.post(`/projects/pmseeprojectalltaskcountbatch`,_data);
     }
 
     /**
@@ -850,9 +850,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async PmsEeProjectTodoTaskCountBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async PmsEeProjectTodoTaskCountBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/projects/pmseeprojecttodotaskcountbatch`,_data);
+        return this.http.post(`/projects/pmseeprojecttodotaskcountbatch`,_data);
     }
 
     /**
@@ -864,9 +864,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async PutoffBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async PutoffBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/projects/putoffbatch`,_data);
+        return this.http.post(`/projects/putoffbatch`,_data);
     }
 
     /**
@@ -878,9 +878,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async StartBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async StartBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/projects/startbatch`,_data);
+        return this.http.post(`/projects/startbatch`,_data);
     }
 
     /**
@@ -892,9 +892,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async SuspendBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async SuspendBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/projects/suspendbatch`,_data);
+        return this.http.post(`/projects/suspendbatch`,_data);
     }
 
     /**
@@ -906,9 +906,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async UnlinkMemberBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async UnlinkMemberBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/projects/unlinkmemberbatch`,_data);
+        return this.http.post(`/projects/unlinkmemberbatch`,_data);
     }
 
     /**
@@ -920,9 +920,9 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async UnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async UnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/projects/unlinkstorybatch`,_data);
+        return this.http.post(`/projects/unlinkstorybatch`,_data);
     }
 
     /**
@@ -934,8 +934,8 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      * @returns {Promise<any>}
      * @memberof ProjectServiceBase
      */
-    public async UpdateOrderBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async UpdateOrderBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/projects/updateorderbatch`,_data);
+        return this.http.post(`/projects/updateorderbatch`,_data);
     }
 }

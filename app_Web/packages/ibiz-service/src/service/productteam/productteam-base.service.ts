@@ -307,12 +307,12 @@ export class PRODUCTTEAMBaseService extends EntityBaseService<IPRODUCTTEAM> {
      * @returns {Promise<any>}
      * @memberof PRODUCTTEAMServiceBase
      */
-    public async ProductTeamGuoLvBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async ProductTeamGuoLvBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productteams/productteamguolvbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productteams/productteamguolvbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/productteams/productteamguolvbatch`,_data);
+        return this.http.post(`/productteams/productteamguolvbatch`,_data);
     }
 }

@@ -175,8 +175,8 @@ export class IbzproConfigBaseService extends EntityBaseService<IIbzproConfig> {
      * @returns {Promise<any>}
      * @memberof IbzproConfigServiceBase
      */
-    public async GetSystemConfigBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async GetSystemConfigBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/ibzproconfigs/getsystemconfigbatch`,_data);
+        return this.http.post(`/ibzproconfigs/getsystemconfigbatch`,_data);
     }
 }

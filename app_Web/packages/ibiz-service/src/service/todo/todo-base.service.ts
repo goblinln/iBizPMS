@@ -274,9 +274,9 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      * @returns {Promise<any>}
      * @memberof TodoServiceBase
      */
-    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/todos/activatebatch`,_data);
+        return this.http.post(`/todos/activatebatch`,_data);
     }
 
     /**
@@ -288,9 +288,9 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      * @returns {Promise<any>}
      * @memberof TodoServiceBase
      */
-    public async AssignToBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async AssignToBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/todos/assigntobatch`,_data);
+        return this.http.post(`/todos/assigntobatch`,_data);
     }
 
     /**
@@ -302,9 +302,9 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      * @returns {Promise<any>}
      * @memberof TodoServiceBase
      */
-    public async CloseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async CloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/todos/closebatch`,_data);
+        return this.http.post(`/todos/closebatch`,_data);
     }
 
     /**
@@ -316,9 +316,9 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      * @returns {Promise<any>}
      * @memberof TodoServiceBase
      */
-    public async CreateCycleBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async CreateCycleBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/todos/createcyclebatch`,_data);
+        return this.http.post(`/todos/createcyclebatch`,_data);
     }
 
     /**
@@ -330,9 +330,9 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      * @returns {Promise<any>}
      * @memberof TodoServiceBase
      */
-    public async FinishBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async FinishBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/todos/finishbatch`,_data);
+        return this.http.post(`/todos/finishbatch`,_data);
     }
 
     /**
@@ -344,9 +344,9 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      * @returns {Promise<any>}
      * @memberof TodoServiceBase
      */
-    public async SendMessageBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async SendMessageBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/todos/sendmessagebatch`,_data);
+        return this.http.post(`/todos/sendmessagebatch`,_data);
     }
 
     /**
@@ -358,8 +358,8 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
      * @returns {Promise<any>}
      * @memberof TodoServiceBase
      */
-    public async SendMsgPreProcessBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async SendMsgPreProcessBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/todos/sendmsgpreprocessbatch`,_data);
+        return this.http.post(`/todos/sendmsgpreprocessbatch`,_data);
     }
 }

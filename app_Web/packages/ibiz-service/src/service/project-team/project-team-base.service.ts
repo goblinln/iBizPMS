@@ -311,12 +311,12 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
      * @returns {Promise<any>}
      * @memberof ProjectTeamServiceBase
      */
-    public async getuserroleBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async getuserroleBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectteams/getuserrolebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectteams/getuserrolebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/projectteams/getuserrolebatch`,_data);
+        return this.http.post(`/projectteams/getuserrolebatch`,_data);
     }
 }
