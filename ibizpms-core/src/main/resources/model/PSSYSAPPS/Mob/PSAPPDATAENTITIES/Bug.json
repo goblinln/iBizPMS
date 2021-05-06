@@ -2938,30 +2938,6 @@
     "reloadData" : true,
     "id" : "MobCreate@Bug"
   }, {
-    "actionTarget" : "NONE",
-    "caption" : "更多",
-    "codeName" : "AssToMyBugMore",
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugAssMoreMobMDView.json",
-      "viewType" : "DEMOBMDVIEW"
-    },
-    "frontProcessType" : "TOP",
-    "fullCodeName" : "Bug_AssToMyBugMore",
-    "name" : "指派给我Bug（更多）",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
-    },
-    "getPSSysImage" : {
-      "cssClass" : "more"
-    },
-    "timeout" : 60000,
-    "uIActionMode" : "FRONT",
-    "uIActionTag" : "AssToMyBugMore",
-    "uIActionType" : "DEUIACTION",
-    "id" : "AssToMyBugMore@Bug"
-  }, {
     "actionTarget" : "SINGLEKEY",
     "noPrivDisplayMode" : 1,
     "caption" : "移除bug",
@@ -3001,6 +2977,30 @@
     "enableConfirm" : true,
     "reloadData" : true,
     "id" : "releaseUnlinkBugByLeftBug@Bug"
+  }, {
+    "actionTarget" : "NONE",
+    "caption" : "更多",
+    "codeName" : "AssToMyBugMore",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugAssMoreMobMDView.json",
+      "viewType" : "DEMOBMDVIEW"
+    },
+    "frontProcessType" : "TOP",
+    "fullCodeName" : "Bug_AssToMyBugMore",
+    "name" : "指派给我Bug（更多）",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
+    },
+    "getPSSysImage" : {
+      "cssClass" : "more"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "AssToMyBugMore",
+    "uIActionType" : "DEUIACTION",
+    "id" : "AssToMyBugMore@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "解决",

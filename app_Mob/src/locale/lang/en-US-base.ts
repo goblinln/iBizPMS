@@ -98,14 +98,14 @@ export default {
         },
         // 非实体视图
         views: {
+            appindexview: {
+                caption: commonLogic.appcommonhandle("iBiz软件生产管理",null),
+            },
             appportalview: {
                 caption: commonLogic.appcommonhandle("工作台",null),
                 imgswipestylemenu_portlet:commonLogic.appcommonhandle("图片滑动",null),
                 iconstylemenu_portlet:commonLogic.appcommonhandle("图标",null),
                 listmenu_portlet:commonLogic.appcommonhandle("列表",null),
-            },
-            appindexview: {
-                caption: commonLogic.appcommonhandle("iBiz软件生产管理",null),
             },
             appportalview2: {
                 caption: commonLogic.appcommonhandle("我的",null),

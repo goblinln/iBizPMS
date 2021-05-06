@@ -13735,6 +13735,11 @@
   } ],
   "getAllPSAppViews" : [ {
     "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPINDEXVIEWS/AppIndexView.json",
+    "viewType" : "APPINDEXVIEW",
+    "view" : "AppIndexView"
+  }, {
+    "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskTeamMobEditView9.json",
     "viewType" : "DEMOBEDITVIEW9",
     "resource" : "ibztaskteam",
@@ -14596,11 +14601,6 @@
     "viewType" : "DEMOBEDITVIEW",
     "resource" : "Bug",
     "view" : "NewMobEditView"
-  }, {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Mob/PSAPPINDEXVIEWS/AppIndexView.json",
-    "viewType" : "APPINDEXVIEW",
-    "view" : "AppIndexView"
   }, {
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMobPickupMDView.json",
@@ -19206,6 +19206,10 @@
         "enableCustomize" : false,
         "modelid" : "f23beaed85fa4c2edc21e98e3b4711fc"
       } ],
+      "getPSSysPFPlugin" : {
+        "pluginType" : "VIEW_CUSTOM",
+        "pluginCode" : "UPDATELOGINDEXVIEW"
+      },
       "getPSViewLayoutPanel" : {
         "codeName" : "Layoutpanel",
         "controlStyle" : "APPINDEXVIEW",
@@ -19217,7 +19221,7 @@
       },
       "subCaption" : "工作台",
       "title" : "iBiz软件生产管理",
-      "viewStyle" : "DEFAULT",
+      "viewStyle" : "UPDATELOG",
       "viewType" : "APPINDEXVIEW",
       "blankMode" : false,
       "defaultPage" : true,

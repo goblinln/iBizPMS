@@ -57,36 +57,6 @@ export default {
 			caption: commonLogic.appcommonhandle("月报",null),
 		},
 	},
-	mobnew_form: {
-		details: {
-			grouppanel1: commonLogic.appcommonhandle("分组面板",null), 
-			formpage1: commonLogic.appcommonhandle("基本信息",null), 
-			srfupdatedate: commonLogic.appcommonhandle("更新时间",null), 
-			srforikey: commonLogic.appcommonhandle("",null), 
-			srfkey: commonLogic.appcommonhandle("月报标识",null), 
-			srfmajortext: commonLogic.appcommonhandle("月报名称",null), 
-			srftempmode: commonLogic.appcommonhandle("",null), 
-			srfuf: commonLogic.appcommonhandle("",null), 
-			srfdeid: commonLogic.appcommonhandle("",null), 
-			srfsourcekey: commonLogic.appcommonhandle("",null), 
-			ibzmonthlyname: commonLogic.appcommonhandle("月报名称",null), 
-			date: commonLogic.appcommonhandle("日期",null), 
-			thismonthtask: commonLogic.appcommonhandle("本月完成任务",null), 
-			workthismonth: commonLogic.appcommonhandle("本月工作",null), 
-			nextmonthplanstask: commonLogic.appcommonhandle("下月计划任务",null), 
-			plansnextmonth: commonLogic.appcommonhandle("下月计划",null), 
-			comment: commonLogic.appcommonhandle("其他事项",null), 
-			files: commonLogic.appcommonhandle("附件",null), 
-			reportto: commonLogic.appcommonhandle("汇报给",null), 
-			reporttopk: commonLogic.appcommonhandle("汇报给",null), 
-			mailto: commonLogic.appcommonhandle("抄送给",null), 
-			ibz_monthlyid: commonLogic.appcommonhandle("月报标识",null), 
-			account: commonLogic.appcommonhandle("用户",null), 
-			issubmit: commonLogic.appcommonhandle("是否提交",null), 
-		},
-		uiactions: {
-		},
-	},
 	mobmaininfo_form: {
 		details: {
 			druipart1: commonLogic.appcommonhandle("",null), 
@@ -115,6 +85,36 @@ export default {
 			thismonthtask: commonLogic.appcommonhandle("本月完成任务",null), 
 			nextmonthplanstask: commonLogic.appcommonhandle("下月计划任务",null), 
 			ibz_monthlyid: commonLogic.appcommonhandle("月报标识",null), 
+			issubmit: commonLogic.appcommonhandle("是否提交",null), 
+		},
+		uiactions: {
+		},
+	},
+	mobnew_form: {
+		details: {
+			grouppanel1: commonLogic.appcommonhandle("分组面板",null), 
+			formpage1: commonLogic.appcommonhandle("基本信息",null), 
+			srfupdatedate: commonLogic.appcommonhandle("更新时间",null), 
+			srforikey: commonLogic.appcommonhandle("",null), 
+			srfkey: commonLogic.appcommonhandle("月报标识",null), 
+			srfmajortext: commonLogic.appcommonhandle("月报名称",null), 
+			srftempmode: commonLogic.appcommonhandle("",null), 
+			srfuf: commonLogic.appcommonhandle("",null), 
+			srfdeid: commonLogic.appcommonhandle("",null), 
+			srfsourcekey: commonLogic.appcommonhandle("",null), 
+			ibzmonthlyname: commonLogic.appcommonhandle("月报名称",null), 
+			date: commonLogic.appcommonhandle("日期",null), 
+			thismonthtask: commonLogic.appcommonhandle("本月完成任务",null), 
+			workthismonth: commonLogic.appcommonhandle("本月工作",null), 
+			nextmonthplanstask: commonLogic.appcommonhandle("下月计划任务",null), 
+			plansnextmonth: commonLogic.appcommonhandle("下月计划",null), 
+			comment: commonLogic.appcommonhandle("其他事项",null), 
+			files: commonLogic.appcommonhandle("附件",null), 
+			reportto: commonLogic.appcommonhandle("汇报给",null), 
+			reporttopk: commonLogic.appcommonhandle("汇报给",null), 
+			mailto: commonLogic.appcommonhandle("抄送给",null), 
+			ibz_monthlyid: commonLogic.appcommonhandle("月报标识",null), 
+			account: commonLogic.appcommonhandle("用户",null), 
 			issubmit: commonLogic.appcommonhandle("是否提交",null), 
 		},
 		uiactions: {
@@ -156,16 +156,20 @@ export default {
 		uiactions: {
 		},
 	},
-	createmobeditviewrighttoolbar_toolbar: {
+	editmobeditviewrighttoolbar_toolbar: {
 		tbitem1: {
 			caption: commonLogic.appcommonhandle("Save And Close",null),
 			tip: 'tbitem1',
 		},
 	},
-	editmobeditviewrighttoolbar_toolbar: {
-		tbitem1: {
-			caption: commonLogic.appcommonhandle("Save And Close",null),
-			tip: 'tbitem1',
+	maininfomobeditviewrighttoolbar_toolbar: {
+		deuiaction1_mobedit: {
+			caption: commonLogic.appcommonhandle("修改",null),
+			tip: 'deuiaction1_mobedit',
+		},
+		deuiaction1_mobsubmit: {
+			caption: commonLogic.appcommonhandle("提交",null),
+			tip: 'deuiaction1_mobsubmit',
 		},
 	},
 	mobeditviewrighttoolbar_toolbar: {
@@ -178,14 +182,10 @@ export default {
 			tip: 'deuiaction1_mobsubmit',
 		},
 	},
-	maininfomobeditviewrighttoolbar_toolbar: {
-		deuiaction1_mobedit: {
-			caption: commonLogic.appcommonhandle("修改",null),
-			tip: 'deuiaction1_mobedit',
-		},
-		deuiaction1_mobsubmit: {
-			caption: commonLogic.appcommonhandle("提交",null),
-			tip: 'deuiaction1_mobsubmit',
+	createmobeditviewrighttoolbar_toolbar: {
+		tbitem1: {
+			caption: commonLogic.appcommonhandle("Save And Close",null),
+			tip: 'tbitem1',
 		},
 	},
 	monthlymobmdviewrighttoolbar_toolbar: {

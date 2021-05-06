@@ -92,6 +92,38 @@ export default {
 			caption: commonLogic.appcommonhandle("产品",null),
 		},
 	},
+	mobnewfrom_form: {
+		details: {
+			grouppanel3: commonLogic.appcommonhandle("分组面板",null), 
+			grouppanel1: commonLogic.appcommonhandle("分组面板",null), 
+			group1: commonLogic.appcommonhandle("product基本信息",null), 
+			formpage1: commonLogic.appcommonhandle("基本信息",null), 
+			srfupdatedate: commonLogic.appcommonhandle("更新时间",null), 
+			srforikey: commonLogic.appcommonhandle("",null), 
+			srfkey: commonLogic.appcommonhandle("编号",null), 
+			srfmajortext: commonLogic.appcommonhandle("产品名称",null), 
+			srftempmode: commonLogic.appcommonhandle("",null), 
+			srfuf: commonLogic.appcommonhandle("",null), 
+			srfdeid: commonLogic.appcommonhandle("",null), 
+			srfsourcekey: commonLogic.appcommonhandle("",null), 
+			name: commonLogic.appcommonhandle("产品名称",null), 
+			code: commonLogic.appcommonhandle("产品代号",null), 
+			line: commonLogic.appcommonhandle("产品线",null), 
+			linename: commonLogic.appcommonhandle("产品线",null), 
+			popk: commonLogic.appcommonhandle("产品负责人",null), 
+			qdpk: commonLogic.appcommonhandle("测试负责人",null), 
+			rdpk: commonLogic.appcommonhandle("发布负责人",null), 
+			type: commonLogic.appcommonhandle("产品类型",null), 
+			desc: commonLogic.appcommonhandle("产品描述	",null), 
+			acl: commonLogic.appcommonhandle("访问控制",null), 
+			id: commonLogic.appcommonhandle("编号",null), 
+			po: commonLogic.appcommonhandle("产品负责人",null), 
+			rd: commonLogic.appcommonhandle("发布负责人",null), 
+			qd: commonLogic.appcommonhandle("测试负责人",null), 
+		},
+		uiactions: {
+		},
+	},
 	mobmain_form: {
 		details: {
 			druipart1: commonLogic.appcommonhandle("",null), 
@@ -147,38 +179,6 @@ export default {
 		uiactions: {
 		},
 	},
-	mobnewfrom_form: {
-		details: {
-			grouppanel3: commonLogic.appcommonhandle("分组面板",null), 
-			grouppanel1: commonLogic.appcommonhandle("分组面板",null), 
-			group1: commonLogic.appcommonhandle("product基本信息",null), 
-			formpage1: commonLogic.appcommonhandle("基本信息",null), 
-			srfupdatedate: commonLogic.appcommonhandle("更新时间",null), 
-			srforikey: commonLogic.appcommonhandle("",null), 
-			srfkey: commonLogic.appcommonhandle("编号",null), 
-			srfmajortext: commonLogic.appcommonhandle("产品名称",null), 
-			srftempmode: commonLogic.appcommonhandle("",null), 
-			srfuf: commonLogic.appcommonhandle("",null), 
-			srfdeid: commonLogic.appcommonhandle("",null), 
-			srfsourcekey: commonLogic.appcommonhandle("",null), 
-			name: commonLogic.appcommonhandle("产品名称",null), 
-			code: commonLogic.appcommonhandle("产品代号",null), 
-			line: commonLogic.appcommonhandle("产品线",null), 
-			linename: commonLogic.appcommonhandle("产品线",null), 
-			popk: commonLogic.appcommonhandle("产品负责人",null), 
-			qdpk: commonLogic.appcommonhandle("测试负责人",null), 
-			rdpk: commonLogic.appcommonhandle("发布负责人",null), 
-			type: commonLogic.appcommonhandle("产品类型",null), 
-			desc: commonLogic.appcommonhandle("产品描述	",null), 
-			acl: commonLogic.appcommonhandle("访问控制",null), 
-			id: commonLogic.appcommonhandle("编号",null), 
-			po: commonLogic.appcommonhandle("产品负责人",null), 
-			rd: commonLogic.appcommonhandle("发布负责人",null), 
-			qd: commonLogic.appcommonhandle("测试负责人",null), 
-		},
-		uiactions: {
-		},
-	},
 	mobdef_searchform: {
 		details: {
 			formpage1: commonLogic.appcommonhandle("常规条件",null), 
@@ -192,10 +192,10 @@ export default {
 	},
 	mobpickupmdviewmdctrl_batchtoolbar_toolbar: {
 	},
-	testmobmdviewmdctrl_batchtoolbar_toolbar: {
-		deuiaction1: {
-			caption: commonLogic.appcommonhandle("删除",null),
-			tip: '删除',
+	newmobeditviewrighttoolbar_toolbar: {
+		tbitem1: {
+			caption: commonLogic.appcommonhandle("保存",null),
+			tip: '保存',
 		},
 	},
 	closemobeditviewrighttoolbar_toolbar: {
@@ -218,10 +218,10 @@ export default {
 			tip: '删除',
 		},
 	},
-	newmobeditviewrighttoolbar_toolbar: {
-		tbitem1: {
-			caption: commonLogic.appcommonhandle("保存",null),
-			tip: '保存',
+	testmobmdviewmdctrl_batchtoolbar_toolbar: {
+		deuiaction1: {
+			caption: commonLogic.appcommonhandle("删除",null),
+			tip: '删除',
 		},
 	},
 	mobmdviewmdctrl_batchtoolbar_toolbar: {

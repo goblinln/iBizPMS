@@ -210,6 +210,7 @@ export class DynamicDataService {
      * @memberof DynamicDataService
      */
     public registerAppViewMappingMap() {
+        this.appViewMappingMap.set("PSSYSAPPS/Mob/PSAPPINDEXVIEWS/AppIndexView.json","./assets/json/view/ungroup/app-index-view.json");
         this.appViewMappingMap.set("PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskTeamMobEditView9.json","./assets/json/view/ibiz/task-team-mob-edit-view9.json");
         this.appViewMappingMap.set("PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskActiveMobTask.json","./assets/json/view/zentao/task-active-mob-task.json");
         this.appViewMappingMap.set("PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzWeeklyMobEditView.json","./assets/json/view/report/ibz-weekly-mob-edit-view.json");
@@ -354,7 +355,6 @@ export class DynamicDataService {
         this.appViewMappingMap.set("PSSYSAPPS/Mob/PSAPPDEVIEWS/DocLibMobProductTreeView.json","./assets/json/view/ibiz/doc-lib-mob-product-tree-view.json");
         this.appViewMappingMap.set("PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzMyTerritoryMobDashboardView.json","./assets/json/view/ibiz/ibz-my-territory-mob-dashboard-view.json");
         this.appViewMappingMap.set("PSSYSAPPS/Mob/PSAPPDEVIEWS/BugNewMobEditView.json","./assets/json/view/zentao/bug-new-mob-edit-view.json");
-        this.appViewMappingMap.set("PSSYSAPPS/Mob/PSAPPINDEXVIEWS/AppIndexView.json","./assets/json/view/ungroup/app-index-view.json");
         this.appViewMappingMap.set("PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMobPickupMDView.json","./assets/json/view/ibiz/task-mob-pickup-mdview.json");
         this.appViewMappingMap.set("PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzWeeklyUsr2MobTabExpViewMyReceived.json","./assets/json/view/report/ibz-weekly-usr2-mob-tab-exp-view-my-received.json");
         this.appViewMappingMap.set("PSSYSAPPS/Mob/PSAPPDEVIEWS/ProjectMobChartView.json","./assets/json/view/zentao/project-mob-chart-view.json");
@@ -486,6 +486,7 @@ export class DynamicDataService {
      * @memberof DynamicDataService
      */
     public registerAppCtrlMappingMap() {
+        this.appCtrlMappingMap.set("AppIndexView","./assets/json/widgets/app/app-index-view-appmenu.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Mob/PSAPPDATAENTITIES/ibztaskteam/PSFORMS/MobMain.json","./assets/json/widgets/ibztaskteam/mob-main-form.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task/PSFORMS/MobActiviteForm.json","./assets/json/widgets/task/mob-activite-form-form.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Mob/PSAPPDATAENTITIES/IbzWeekly/PSFORMS/MobWaitRead.json","./assets/json/widgets/ibz-weekly/mob-wait-read-form.json");
@@ -718,7 +719,6 @@ export class DynamicDataService {
         this.appCtrlMappingMap.set("ProductStatusChartMob","./assets/json/widgets/product/product-status-chart-mob-portlet.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product/PSCHARTS/ProductStatusPieMob.json","./assets/json/widgets/product/product-status-pie-mob-chart.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug/PSFORMS/MobNewFROM.json","./assets/json/widgets/bug/mob-new-from-form.json");
-        this.appCtrlMappingMap.set("AppIndexView","./assets/json/widgets/app/app-index-view-appmenu.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task/PSSEARCHFORMS/MobDef.json","./assets/json/widgets/task/mob-def-searchform.json");
         this.appCtrlMappingMap.set("PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task/PSMOBMDCTRLS/Mob_3335.json","./assets/json/widgets/task/mob-3335-mobmdctrl.json");
         this.appCtrlMappingMap.set("Usr2MobTabExpViewMyReceivedtabviewpanel","./assets/json/widgets/ibz-weekly/usr2-mob-tab-exp-view-my-receivedtabviewpanel-tabviewpanel.json");
