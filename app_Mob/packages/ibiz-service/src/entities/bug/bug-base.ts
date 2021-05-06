@@ -262,6 +262,10 @@ export abstract class BugBase extends EntityBase implements IBug {
      */
     resolvedbuild?: any;
     /**
+     * 用例版本
+     */
+    caseversion?: any;
+    /**
      * 优先级
      *
      * @type {(1 | 2 | 3 | 4)} 1: 严重, 2: 主要, 3: 次要, 4: 不重要
@@ -273,6 +277,10 @@ export abstract class BugBase extends EntityBase implements IBug {
      * @type {('all' | 'windows' | 'win10' | 'win8' | 'win7' | 'vista' | 'winxp' | 'win2012' | 'win2008' | 'win2003' | 'win2000' | 'android' | 'ios' | 'wp8' | 'wp7' | 'symbian' | 'linux' | 'freebsd' | 'osx' | 'unix' | 'others')} all: 全部, windows: Windows, win10: Windows 10, win8: Windows 8, win7: Windows 7, vista: Windows Vista, winxp: Windows XP, win2012: Windows 2012, win2008: Windows 2008, win2003: Windows 2003, win2000: Windows 2000, android: Android, ios: IOS, wp8: WP8, wp7: WP7, symbian: Symbian, linux: Linux, freebsd: FreeBSD, osx: OS X, unix: Unix, others: 其他
      */
     os?: 'all' | 'windows' | 'win10' | 'win8' | 'win7' | 'vista' | 'winxp' | 'win2012' | 'win2008' | 'win2003' | 'win2000' | 'android' | 'ios' | 'wp8' | 'wp7' | 'symbian' | 'linux' | 'freebsd' | 'osx' | 'unix' | 'others';
+    /**
+     * 代码类型
+     */
+    repotype?: any;
     /**
      * hardware
      */
@@ -309,14 +317,6 @@ export abstract class BugBase extends EntityBase implements IBug {
      * 相关需求
      */
     storyname?: any;
-    /**
-     * 用例版本
-     */
-    caseversion?: any;
-    /**
-     * 代码类型
-     */
-    repotype?: any;
     /**
      * 模块名称
      */

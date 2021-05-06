@@ -57,7 +57,6 @@ export class CaseBaseService extends EntityBaseService<ICase> {
             if (data) {
                 entity.storyname = data.title;
                 entity.story = data.id;
-                entity.story = data;
             }
         }
         return entity!;
@@ -82,7 +81,6 @@ export class CaseBaseService extends EntityBaseService<ICase> {
             if (data) {
                 entity.storyname = data.title;
                 entity.story = data.id;
-                entity.story = data;
             }
         }
         return new Case(entity);

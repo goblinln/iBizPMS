@@ -1,6 +1,7 @@
 export default [
     'dept',
     'spec',
+    'title',
     'updateby',
     'orgname',
     'createby',
@@ -8,7 +9,6 @@ export default [
     'org',
     'id',
     'deptname',
-    'title',
     'version',
     'story',
 ];

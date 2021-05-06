@@ -334,7 +334,7 @@ export default class AppSetting extends Vue {
         } else {
             // 自定义功能
             if (item.path) {
-                this.$router.push(`/viewshell/null/${item.path}`);
+                this.$router.push(`/viewshell/${item.path}`);
             } else if (item.viewName) {
                 this.openPopupModal({ viewname: item.viewName }, {}, {});
             }

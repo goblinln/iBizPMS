@@ -45,6 +45,10 @@ export interface ICaseStep extends IEntityBase {
      */
     createby?: any;
     /**
+     * 用例版本
+     */
+    version?: any;
+    /**
      * 编号
      */
     id?: any;
@@ -72,10 +76,6 @@ export interface ICaseStep extends IEntityBase {
      * 归属组织
      */
     org?: any;
-    /**
-     * 用例版本
-     */
-    version?: any;
     /**
      * 用例
      */

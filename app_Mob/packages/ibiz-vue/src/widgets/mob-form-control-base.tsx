@@ -275,9 +275,9 @@ export class MobFormControlBase extends MainControlBase {
         }
         this.dataChange.subscribe((data: any) => {
                 // TO TEST
-                // if (this.isAutoSave) {
-                //     this.autoSave();
-                // }
+                if (this.isAutoSave) {
+                    this.autoSave();
+                }
                 const state = !Object.is(JSON.stringify(this.oldData), data) ? true : false;
                 this.ctrlEvent({
                     controlname: this.controlInstance.name,
@@ -623,7 +623,9 @@ export class MobFormControlBase extends MainControlBase {
         this.fillForm(data, action);
         this.oldData = {};
         Object.assign(this.oldData, JSON.parse(JSON.stringify(this.data)));
-        this.dataChange.next(JSON.stringify(this.data));
+        if (action !== 'autoSave') {
+            this.dataChange.next(JSON.stringify(this.data));
+        }
         this.formLogic({ name: '', newVal: null, oldVal: null });
     }
 

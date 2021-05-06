@@ -73,6 +73,10 @@ export interface ICase extends IEntityBase {
      */
     noticeusers?: any;
     /**
+     * 来源用例版本
+     */
+    fromcaseversion?: any;
+    /**
      * 用例版本
      */
     version?: any;
@@ -159,6 +163,10 @@ export interface ICase extends IEntityBase {
      */
     deleted?: any;
     /**
+     * 需求版本
+     */
+    storyversion?: any;
+    /**
      * 评审时间
      */
     revieweddate?: any;
@@ -233,10 +241,6 @@ export interface ICase extends IEntityBase {
      */
     libname?: any;
     /**
-     * 来源用例版本
-     */
-    fromcaseversion?: any;
-    /**
      * 需求名称
      */
     storyname?: any;
@@ -244,10 +248,6 @@ export interface ICase extends IEntityBase {
      * 模块名称
      */
     modulename?: any;
-    /**
-     * 需求版本
-     */
-    storyversion?: any;
     /**
      * 产品名称
      */
