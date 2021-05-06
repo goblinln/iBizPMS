@@ -114,7 +114,7 @@ export class AppComponentService {
         // 临时
         this.controlMap.set("PFPlugin", 'app-default-mob-mdctrl');
         // 注册部件插件标识
-        this.controlMap.set("", 'app-list-render-list-render5dacc74a9f');
+        this.controlMap.set("MobUpdateLogInfo", 'app-list-render-mob-update-log-info');
         this.controlMap.set("mobBugItemList", 'app-list-itemrender-mob-bug-item-list');
         this.controlMap.set("mobFileList3", 'app-list-render-mob-file-list3');
         this.controlMap.set("mobItemList", 'app-list-itemrender-mob-item-list');
