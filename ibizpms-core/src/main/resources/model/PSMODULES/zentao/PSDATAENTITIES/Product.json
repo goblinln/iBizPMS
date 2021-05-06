@@ -3737,6 +3737,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "MobProductCounter",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/MobProductCounter.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Get",
       "getPSDEAction" : {
         "modelref" : true,
@@ -3791,6 +3798,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "MobProductCounter",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/MobProductCounter.json"
       },
       "allowMode" : true
     }, {
@@ -3897,6 +3911,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "MobProductCounter",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/MobProductCounter.json"
       },
       "allowMode" : true
     } ],

@@ -631,7 +631,7 @@ export class GridControlBase extends MDControlBase {
                     const uiAction: IPSUIAction | null = detail.getPSUIAction();
                     if (uiAction) {
                         const appUIAction: any = Util.deepCopy(uiAction) as IPSDEUIAction;
-                        this.actionModel[uiAction.uIActionTag] = Object.assign(appUIAction?._data ? appUIAction._data : {}, { disabled: false, visabled: true });
+                        this.actionModel[uiAction.uIActionTag] = Object.assign(appUIAction?._data ? appUIAction._data : {}, { disabled: false, visabled: true, getNoPrivDisplayMode: appUIAction._data.noPrivDisplayMode ? appUIAction._data.noPrivDisplayMode : 6 });
                     }
                 })
             }
@@ -644,7 +644,7 @@ export class GridControlBase extends MDControlBase {
         const uiAction = UIActionColumn?.getPSDEUIAction();
         if (uiAction) {
             const appUIAction: any = Util.deepCopy(uiAction) as IPSDEUIAction;
-            this.actionModel[uiAction.uIActionTag] = Object.assign(appUIAction?._data ? appUIAction._data : {}, { disabled: false, visabled: true });
+            this.actionModel[uiAction.uIActionTag] = Object.assign(appUIAction?._data ? appUIAction._data : {}, { disabled: false, visabled: true, getNoPrivDisplayMode: appUIAction._data.noPrivDisplayMode ? appUIAction._data.noPrivDisplayMode : 6 });
         }
     }
 

@@ -1,4 +1,5 @@
 import { IPSCodeListEditor } from '@ibiz/dynamic-model-api';
+import { Util } from 'ibiz-core';
 import { Vue, Component, Prop, Inject } from 'vue-property-decorator';
 import { VueLifeCycleProcessing } from '../../../decorators';
 import { EditorBase } from '../editor-base/editor-base';
@@ -56,6 +57,7 @@ export default class SpanEditor extends EditorBase {
                 data: JSON.stringify(this.contextData),
                 ...this.customProps,
             },
+            key:Util.createUUID(),
             style: this.customStyle,
             on: { change: this.editorChange }
         })

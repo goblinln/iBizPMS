@@ -205,19 +205,6 @@ export class AppKanbanBase extends KanbanControlBase {
     }
 
     /**
-     * 绘制快速操作栏
-     * 
-     * @memberof AppKanbanBase
-     */
-    public renderQuickToolbar() {
-        return (
-            <div class="quick-action">
-                <view-toolbar toolbarModels={this.toolbarModels} on-item-click={(data: any, $event: any) => { this.handleItemClick(data, $event) }}></view-toolbar>
-            </div>
-        );
-    }
-
-    /**
      * 绘制部件
      * 
      * @param h 

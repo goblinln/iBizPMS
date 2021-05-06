@@ -21,15 +21,6 @@ export class KanbanControlBase extends MDControlBase {
     public items: Array<any> = [];
 
     /**
-     * 快速行为模型数据
-     *
-     * @protected
-     * @type {boolean}
-     * @memberof KanbanControlBase
-     */
-    public toolbarModels: Array<any> = [];
-
-    /**
      * 看板部件模型实例
      * 
      * @type {*}
@@ -182,7 +173,6 @@ export class KanbanControlBase extends MDControlBase {
         const codeList: IPSCodeList | null = this.controlInstance.getGroupPSCodeList();
         await codeList?.fill();
         this.groupCodeList = codeList ? { type: codeList.codeListType, tag: codeList.codeName, data: codeList } : {};
-        this.initQuickAction();
     }
 
     /**
@@ -269,37 +259,6 @@ export class KanbanControlBase extends MDControlBase {
                 }
             });
         }
-    }
-
-    /**
-     * 初始化快速操作栏
-     * 
-     * @memberof AppDefaultKanban
-     */
-    public initQuickAction() {
-        let targetViewToolbarItems: any[] = [];
-        const kanban_quicktoolbar: IPSDEToolbar = ModelTool.findPSControlByName('kanban_quicktoolbar', this.controlInstance.getPSControls())
-        if (kanban_quicktoolbar?.getPSDEToolbarItems()) {
-            kanban_quicktoolbar?.getPSDEToolbarItems()?.forEach((_item: IPSDEToolbarItem | any) => {
-                const item: IPSDETBUIActionItem = _item as IPSDETBUIActionItem;
-                const uiAction: IPSDEUIAction = item.getPSUIAction() as IPSDEUIAction;
-                targetViewToolbarItems.push({ name: item.name, showCaption: item.showCaption, showIcon: item.showIcon, tooltip: item.tooltip, iconcls: item.getPSSysImage()?.cssClass, icon: item.getPSSysImage()?.imagePath, actiontarget: uiAction.actionTarget, caption: item.caption, disabled: false, itemType: item.itemType, visabled: true, noprivdisplaymode: item.noPrivDisplayMode, dataaccaction: '', uiaction: {} });
-            })
-        }
-        this.toolbarModels = targetViewToolbarItems;
-    }
-
-    /**
-     * 界面工具栏点击
-     * 
-     * @param ctrl 部件 
-     * @param action  行为
-     * @param data 数据
-     * @param $event 事件源对象
-     * @memberof AppDefaultKanban
-     */
-    public handleItemClick(data: any, $event: any) {
-        AppViewLogicService.getInstance().executeViewLogic(this.getViewLogicTag(this.controlInstance.name, 'quicktoolbar', data.tag), $event, this, undefined, this.controlInstance?.getPSAppViewLogics() as any);
     }
 
     /**

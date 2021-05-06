@@ -103,7 +103,7 @@ export class AppListBase extends ListControlBase {
                 </div>
                 {batchBar && (this.selections.length > 0 ?
                     <row class='list-pagination'>
-                        {this.renderBatchPSDEToolbar()}
+                        {this.renderBatchToolbar()}
                     </row> : null
                 )}
             </div>
@@ -164,35 +164,7 @@ export class AppListBase extends ListControlBase {
      */
     public renderNoItems() {
         const quickBar: any = ModelTool.findPSControlByName('list_quicktoolbar', this.controlInstance.getPSControls())
-        return quickBar && this.renderQuickPSDEToolbar();
-    }
-
-    /**
-     * 绘制BatchPSDEToolbar
-     *
-     * @returns {*}
-     * @memberof AppListBase
-     */
-    public renderBatchPSDEToolbar() {
-        return (
-            <div class="batch-toolbar">
-                <view-toolbar toolbarModels={this.batchToolbarModels} on-item-click={(data: any, $event: any) => { this.handleItemClick('batchtoolbar', data, $event) }}></view-toolbar>
-            </div>
-        );
-    }
-
-    /**
-     * 绘制quickPSDEToolbar
-     *
-     * @returns {*}
-     * @memberof AppListBase
-     */
-    public renderQuickPSDEToolbar() {
-        return (
-            <div class="quick-toolbar">
-                <view-toolbar toolbarModels={this.quickToolbarModels} on-item-click={(data: any, $event: any) => { this.handleItemClick('quicktoolbar', data, $event) }}></view-toolbar>
-            </div>
-        );
+        return quickBar && this.renderQuickToolbar();
     }
 
     /**

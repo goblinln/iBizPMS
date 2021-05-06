@@ -21,9 +21,11 @@ import { MobProjectTeamItemList } from './plugin/list-itemrender/mob-project-tea
 import { MobTaskTeam } from './plugin/list-itemrender/mob-task-team';
 import { MobTestList2 } from './plugin/list-itemrender/mob-test-list2';
 import { MobTaskItemList2 } from './plugin/list-itemrender/mob-task-item-list2';
+import { UPDATELOGINDEXVIEW } from './view/view-custom/updatelogindexview';
 export const PluginRegister = {
     install(v: any, opt: any) {
         // 注册视图插件
+        v.component('app-view-custom-updatelogindexview',UPDATELOGINDEXVIEW);
        // 注册编辑器插件
         v.component('app-mobhtmltext-mobhtmlofpms', MOBHTMLOFPMS);
         v.component('app-mobtext-mobcolorpicker', MOBCOLORPICKER);

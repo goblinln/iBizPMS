@@ -317,7 +317,6 @@ export default {
 			srfuf: commonLogic.appcommonhandle("",null), 
 			srfdeid: commonLogic.appcommonhandle("",null), 
 			srfsourcekey: commonLogic.appcommonhandle("",null), 
-			product: commonLogic.appcommonhandle("所属产品",null), 
 			id: commonLogic.appcommonhandle("Bug编号",null), 
 			resolution: commonLogic.appcommonhandle("解决方案",null), 
 			resolvedbuild: commonLogic.appcommonhandle("解决版本",null), 

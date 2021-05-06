@@ -46,24 +46,6 @@ export class ListControlBase extends MDControlBase {
     public items: Array<any> = [];
 
     /**
-     * 快速行为模型数据
-     *
-     * @protected
-     * @type {[]}
-     * @memberof ListControlBase
-     */
-    public quickToolbarModels: Array<any> = [];
-
-    /**
-     * 批操作行为模型数据
-     *
-     * @protected
-     * @type {[]}
-     * @memberof ListControlBase
-     */
-    public batchToolbarModels: Array<any> = [];
-
-    /**
      * todo 临时处理
      *
      * @memberof ListControlBase
@@ -586,45 +568,9 @@ export class ListControlBase extends MDControlBase {
             this.service = new AppListService(this.controlInstance);
             await this.service.loaded(this.controlInstance);
         }
-        this.initToolAction();
         this.minorSortPSDEF = this.controlInstance.getMinorSortPSAppDEField()?.codeName;
         this.minorSortDir = this.controlInstance.minorSortDir;
         this.limit = this.controlInstance?.pagingSize || this.limit;
-    }
-
-    /**
-     * 初始化操作栏
-     * 
-     * @memberof ListControlBase
-     */
-    public initToolAction() {
-        const quickTool: IPSDEToolbar = ModelTool.findPSControlByName('list_quicktoolbar', this.controlInstance.getPSControls())
-        const batchTool: IPSDEToolbar = ModelTool.findPSControlByName('list_batchtoolbar', this.controlInstance.getPSControls())
-        const getModelData = (_item: IPSDEToolbarItem) => {
-            const item: IPSDETBUIActionItem = _item as IPSDETBUIActionItem;
-            const uiAction: IPSDEUIAction | null = item.getPSUIAction ? item?.getPSUIAction() as IPSDEUIAction : null;
-            return {
-                name: item.name, showCaption: item.showCaption, showIcon: item.showIcon, tooltip: item.tooltip, iconcls: item.getPSSysImage()?.cssClass, icon: item.getPSSysImage()?.imagePath, actiontarget: item.uIActionTarget, caption: item.caption, disabled: false, itemType: item.itemType, visabled: true, noprivdisplaymode: uiAction?.noPrivDisplayMode, dataaccaction: '',
-                uiaction: {
-                    tag: uiAction?.uIActionTag ? uiAction.uIActionTag : uiAction?.id ? uiAction.id : '',
-                    target: uiAction?.actionTarget
-                }
-            }
-        }
-        if (quickTool) {
-            let targetViewToolbarItems: any[] = [];
-            quickTool.getPSDEToolbarItems()?.forEach((item: IPSDEToolbarItem) => {
-                targetViewToolbarItems.push(getModelData(item));
-            })
-            this.quickToolbarModels = targetViewToolbarItems;
-        }
-        if (batchTool) {
-            let targetViewToolbarItems: any[] = [];
-            batchTool.getPSDEToolbarItems()?.forEach((item: IPSDEToolbarItem) => {
-                targetViewToolbarItems.push(getModelData(item));
-            })
-            this.batchToolbarModels = targetViewToolbarItems;
-        }
     }
 
     /**
@@ -647,18 +593,6 @@ export class ListControlBase extends MDControlBase {
      */
     public handleActionClick(data: any, event: any, item: any, detail: any) {
         AppViewLogicService.getInstance().executeViewLogic(this.getViewLogicTag('list', item.dataItemName, detail.name), event, this, data, (this.controlInstance?.getPSAppViewLogics() as any));
-    }
-
-    /**
-     * 部件工具栏点击
-     * 
-     * @param ctrl 工具栏部件名称
-     * @param data 数据
-     * @param $event 事件源对象
-     * @memberof ListControlBase
-     */
-    public handleItemClick(ctrl: string, data: any, $event: any) {
-        AppViewLogicService.getInstance().executeViewLogic(this.getViewLogicTag(this.name, ctrl, data.tag), $event, this, undefined, (this.controlInstance?.getPSAppViewLogics as any));
     }
 
     /**

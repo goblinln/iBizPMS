@@ -473,4 +473,24 @@ export class ModelTool {
             return arr[0].text;
         }
     }
+
+    /**
+     * 获取部件多语言公共部分
+     *
+     * @static
+     * @param {*} control 部件模型对象
+     * @return {*} 
+     * @memberof ModelTool
+     */
+    public static getCtrlLangBase(control: any){
+        if(!control){
+            return '';
+        }
+        const { codeName, controlType } = control;
+        const appDataEntity = control.getPSAppDataEntity();
+        if (appDataEntity) {
+            return `entities.${appDataEntity.codeName?.toLowerCase()}.${codeName?.toLowerCase()}_${controlType?.toLowerCase()}`;
+        }
+        return ''
+    }
 }
