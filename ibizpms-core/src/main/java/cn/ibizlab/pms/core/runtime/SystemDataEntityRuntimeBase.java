@@ -532,7 +532,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             //自定义条件
             if (StringUtils.isNotBlank(uaadeAuthority.getBscope())) {
                 if(!uaadeAuthority.isDataset()){
-                    authorityCondition.or(ScopeUtils.parse(uaadeAuthority.getBscope()));
+                    authorityCondition.or(ScopeUtils.parse(this, uaadeAuthority.getBscope()));
                 }else{
                     //直接由查询构造条件
                     Consumer<QueryWrapper> bScopeConditions = bScopeCondition -> {
@@ -547,7 +547,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             List<Map<String, String>> deActions = uaadeAuthority.getDeAction().stream().filter(deaction -> deaction.containsKey(action) && StringUtils.isNotBlank(deaction.get(action)))
                     .collect(Collectors.toList());
             if (deActions.size() > 0) {
-                authorityCondition.and(ScopeUtils.parse(uaadeAuthority.getBscope()));
+                authorityCondition.and(ScopeUtils.parse(this, uaadeAuthority.getBscope()));
             }
         };
         return authorityConditions;
