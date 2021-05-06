@@ -18,11 +18,7 @@ public class CreateProductDailyServiceJobHandler implements IJobsHandler {
 
     @Override
     public JobsResponse execute(String tenantId, String param) throws JobsException {
-        cn.ibizlab.pms.core.ibizpro.domain.IbizproProductDaily entity = cn.ibizlab.pms.util.helper.Setting.getEntity(param, new cn.ibizlab.pms.core.ibizpro.domain.IbizproProductDaily());
-        entity.set("tenantid", tenantId);
-        entity.set("param", param);
-        ibizproproductdailyService.statsProductDaily(entity);
-        log.info("执行 DemoJobHandler tenantId=" + tenantId + ",param=" + param);
+        log.info("执行 CreateProductDailyServiceJobHandler tenantId=" + tenantId + ",param=" + param);
         return JobsResponse.ok();
     }
 }

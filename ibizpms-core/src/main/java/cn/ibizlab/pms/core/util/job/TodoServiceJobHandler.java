@@ -18,11 +18,7 @@ public class TodoServiceJobHandler implements IJobsHandler {
 
     @Override
     public JobsResponse execute(String tenantId, String param) throws JobsException {
-        cn.ibizlab.pms.core.zentao.domain.Todo entity = cn.ibizlab.pms.util.helper.Setting.getEntity(param, new cn.ibizlab.pms.core.zentao.domain.Todo());
-        entity.set("tenantid", tenantId);
-        entity.set("param", param);
-        todoService.createCycle(entity);
-        log.info("执行 DemoJobHandler tenantId=" + tenantId + ",param=" + param);
+        log.info("执行 TodoServiceJobHandler tenantId=" + tenantId + ",param=" + param);
         return JobsResponse.ok();
     }
 }

@@ -18,11 +18,7 @@ public class PushReportUserWeeklyServiceJobHandler implements IJobsHandler {
 
     @Override
     public JobsResponse execute(String tenantId, String param) throws JobsException {
-        cn.ibizlab.pms.core.report.domain.IbzWeekly entity = cn.ibizlab.pms.util.helper.Setting.getEntity(param, new cn.ibizlab.pms.core.report.domain.IbzWeekly());
-        entity.set("tenantid", tenantId);
-        entity.set("param", param);
-        ibzweeklyService.pushUserWeekly(entity);
-        log.info("执行 DemoJobHandler tenantId=" + tenantId + ",param=" + param);
+        log.info("执行 PushReportUserWeeklyServiceJobHandler tenantId=" + tenantId + ",param=" + param);
         return JobsResponse.ok();
     }
 }

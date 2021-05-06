@@ -1,6 +1,7 @@
 package cn.ibizlab.pms.util.filter;
 
 import cn.ibizlab.pms.util.helper.DEFieldCacheMap;
+import cn.ibizlab.pms.util.security.SpringContextHolder;
 import com.alibaba.fastjson.annotation.JSONField;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.OrderItem;
@@ -9,8 +10,14 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Sort;
+import org.springframework.expression.EvaluationContext;
+import org.springframework.expression.Expression;
+import org.springframework.expression.ExpressionParser;
+import org.springframework.expression.spel.standard.SpelExpressionParser;
+import org.springframework.expression.spel.support.StandardEvaluationContext;
 import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
+
 import java.lang.reflect.ParameterizedType;
 import java.util.*;
 import java.util.function.Consumer;
@@ -21,6 +28,10 @@ public class QueryWrapperContext<T> extends SearchContextBase implements ISearch
 
     @JsonIgnore
     @JSONField(serialize = false)
+    private final ExpressionParser parser = new SpelExpressionParser();
+
+    @JsonIgnore
+    @JSONField(serialize = false)
     private QueryWrapper<T> selectCond=new QueryWrapper<T>();
 
     
@@ -28,7 +39,7 @@ public class QueryWrapperContext<T> extends SearchContextBase implements ISearch
 
     public void setsrfcustomizedcond(String srfcustomizedcond){
         this.srfcustomizedcond = srfcustomizedcond;
-        ((QueryWrapper)selectCond).and(ScopeUtils.parse(srfcustomizedcond));
+        //((QueryWrapper)selectCond).and(ScopeUtils.parse(srfcustomizedcond));
     }
 
     /**
@@ -172,43 +183,43 @@ public class QueryWrapperContext<T> extends SearchContextBase implements ISearch
                 Object value=fieldCond.getValue();
                 switch (fieldCond.getKey()){
                     case "$eq":
-                        queryWrapper.eq(fieldName,value);
+                        queryWrapper.eq(getFieldQueryExp(fieldName),value);
                         break;
                     case "$ne":
-                        queryWrapper.ne(fieldName,value);
+                        queryWrapper.ne(getFieldQueryExp(fieldName),value);
                         break;
                     case "$gt":
-                        queryWrapper.gt(fieldName,value);
+                        queryWrapper.gt(getFieldQueryExp(fieldName),value);
                         break;
                     case "$gte":
-                        queryWrapper.ge(fieldName,value);
+                        queryWrapper.ge(getFieldQueryExp(fieldName),value);
                         break;
                     case "$lt":
-                        queryWrapper.lt(fieldName,value);
+                        queryWrapper.lt(getFieldQueryExp(fieldName),value);
                         break;
                     case "$lte":
-                        queryWrapper.le(fieldName,value);
+                        queryWrapper.le(getFieldQueryExp(fieldName),value);
                         break;
                     case "$null":
-                        queryWrapper.isNull(fieldName);
+                        queryWrapper.isNull(getFieldQueryExp(fieldName));
                         break;
                     case "$notNull":
-                        queryWrapper.isNotNull(fieldName);
+                        queryWrapper.isNotNull(getFieldQueryExp(fieldName));
                         break;
                     case "$in":
-                        queryWrapper.in(fieldName,(Collection)value);
+                        queryWrapper.in(getFieldQueryExp(fieldName),(Collection)value);
                         break;
                     case "$notIn":
-                        queryWrapper.notIn(fieldName,(Collection)value);
+                        queryWrapper.notIn(getFieldQueryExp(fieldName),(Collection)value);
                         break;
                     case "$like":
-                        queryWrapper.like(fieldName,value);
+                        queryWrapper.like(getFieldQueryExp(fieldName),value);
                         break;
                     case "$startsWith":
-                        queryWrapper.likeRight(fieldName,value);
+                        queryWrapper.likeRight(getFieldQueryExp(fieldName),value);
                         break;
                     case "$endsWith":
-                        queryWrapper.likeLeft(fieldName,value);
+                        queryWrapper.likeLeft(getFieldQueryExp(fieldName),value);
                         break;
                     case "$exists":
                         break;
@@ -219,5 +230,27 @@ public class QueryWrapperContext<T> extends SearchContextBase implements ISearch
         }
       };
         return consumer;
+    }
+
+    /**
+     *
+     * @param strField
+     * @return
+     */
+    public String getFieldQueryExp(String strField) {
+        try {
+            EvaluationContext elContext = new StandardEvaluationContext();
+            Object runtime = SpringContextHolder.getBean(this.getClass().getSimpleName().replace("SearchContext", "") + "Runtime");
+            elContext.setVariable("runtime", runtime);
+            elContext.setVariable("field", strField);
+            Expression expression = parser.parseExpression("#runtime.getFieldQueryExp(#field)");
+            String strFieldQueryExp = expression.getValue(elContext, String.class);
+            if(StringUtils.isEmpty(strFieldQueryExp))
+                return strField;
+            return strFieldQueryExp;
+        } catch (Exception e) {
+            log.warn(String.format("获取字段[%s]查询表达式发生错误：%s",strField,e.getMessage()));
+        }
+        return strField;
     }
 }

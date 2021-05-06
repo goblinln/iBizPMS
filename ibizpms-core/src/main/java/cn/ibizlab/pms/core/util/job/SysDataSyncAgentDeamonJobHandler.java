@@ -15,7 +15,7 @@ public class SysDataSyncAgentDeamonJobHandler implements IJobsHandler {
 
     @Override
     public JobsResponse execute(String tenantId, String param) throws JobsException {
-        log.info("执行 DemoJobHandler tenantId=" + tenantId + ",param=" + param);
+        log.info("执行 SysDataSyncAgentDeamonJobHandler tenantId=" + tenantId + ",param=" + param);
         return JobsResponse.ok();
     }
 }

@@ -41,6 +41,12 @@ import java.util.stream.Collectors;
 @Slf4j
 public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntimeBase {
 
+    /**
+	 * 模型驱动
+	 */
+    @Value("${ibiz.rtmodel:false}")
+    protected boolean rtmodel ;
+
     @Value("${ibiz.deploysystemid:NONE}")
     private String strDeploySystemId;
 
@@ -220,6 +226,10 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
     @Override
     public String getDeploySystemId() {
         return this.strDeploySystemId;
+    }
+
+    public boolean isRtmodel() {
+        return rtmodel;
     }
     
     public List<UAADEAuthority> getUserUAADEAuthority() {

@@ -8,6 +8,7 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.annotation.Order;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
@@ -36,38 +37,44 @@ public class CreateReportUserDailyServiceServiceRuntime extends net.ibizsys.runt
     }
 
     @Override
+    protected Object execute(String strDynaInstId, String strParam, ProceedingJoinPoint joinPoint) throws Throwable {
+        String[] arr = strDynaInstId.split("\\|");
+        String strRealDynaInstId = null;
+        if (arr.length == 2) {
+            strRealDynaInstId = arr[1];
+        }
+        createUserContext(arr[0]);
+        return super.execute(strRealDynaInstId, strParam, joinPoint);
+    }
+
+    @Override
     public ISystemRuntime getSystemRuntime() {
         return systemRuntime;
     }
 
     /**
      * 构造系统用户上下文
+     *
      * @return
      */
     protected IUserContext getUserContext() {
-        try {
-            if (SecurityContextHolder.getContext() == null || SecurityContextHolder.getContext().getAuthentication() == null || SecurityContextHolder.getContext().getAuthentication().getPrincipal() == null) {
-                AuthenticationUser authuserdetail = new AuthenticationUser();
-                this.getPSSysBackService().getCodeName();
-                String strDeploySystemId = this.getSystemRuntime().getDeploySystemId();
-                authuserdetail.setUserid("SYSTEM");
-                authuserdetail.setUsername("SYSTEM");
-                authuserdetail.setPersonname("SYSTEM");
-                authuserdetail.setSuperuser(1);
-                authuserdetail.setSrfdcid("aibizhi");
-                return authuserdetail;
-            }
-            Object userDetails = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-            AuthenticationUser authuserdetail;
-            if (userDetails instanceof AuthenticationUser) {
-                authuserdetail = (AuthenticationUser) userDetails;
-            } else {
-                authuserdetail = new AuthenticationUser();
-            }
-            return authuserdetail;
-        } catch (Exception e) {
-            return null;
-        }
+        return AuthenticationUser.getAuthenticationUser();
+    }
+
+    /**
+     * @param strDCId
+     * @throws Exception
+     */
+    private void createUserContext(String strDCId) throws Exception {
+        AuthenticationUser authuserdetail = new AuthenticationUser();
+        this.getPSSysBackService().getCodeName();
+        authuserdetail.setUserid("SYSTEM");
+        authuserdetail.setUsername("SYSTEM");
+        authuserdetail.setPersonname("SYSTEM");
+        authuserdetail.setSuperuser(1);
+        authuserdetail.setSrfdcid(strDCId);
+        UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(authuserdetail, null, authuserdetail.getAuthorities());
+        SecurityContextHolder.getContext().setAuthentication(authentication);
     }
 
 }

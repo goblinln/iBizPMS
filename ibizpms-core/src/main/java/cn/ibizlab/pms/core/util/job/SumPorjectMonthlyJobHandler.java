@@ -18,11 +18,7 @@ public class SumPorjectMonthlyJobHandler implements IJobsHandler {
 
     @Override
     public JobsResponse execute(String tenantId, String param) throws JobsException {
-        cn.ibizlab.pms.core.ibizpro.domain.IbizproProjectMonthly entity = cn.ibizlab.pms.util.helper.Setting.getEntity(param, new cn.ibizlab.pms.core.ibizpro.domain.IbizproProjectMonthly());
-        entity.set("tenantid", tenantId);
-        entity.set("param", param);
-        ibizproprojectmonthlyService.sumProjectMonthly(entity);
-        log.info("执行 DemoJobHandler tenantId=" + tenantId + ",param=" + param);
+        log.info("执行 SumPorjectMonthlyJobHandler tenantId=" + tenantId + ",param=" + param);
         return JobsResponse.ok();
     }
 }

@@ -1,6 +1,8 @@
 
-import { AppViewBase, VueLifeCycleProcessing } from 'ibiz-vue';
+import { ViewBase, VueLifeCycleProcessing } from 'ibiz-vue';
 import { Component } from 'vue-property-decorator';
+
+
 
 /**
  * 首页更新日志插件类
@@ -11,7 +13,7 @@ import { Component } from 'vue-property-decorator';
  */
 @Component({})
 @VueLifeCycleProcessing()
-export class UPDATELOGINDEXVIEW extends AppViewBase {
+export class UPDATELOGINDEXVIEW extends ViewBase {
 
     /**
      * 绘制视图内容

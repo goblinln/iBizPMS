@@ -58,12 +58,6 @@ import javax.annotation.PostConstruct;
 public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.dataentity.DataEntityRuntimeBase {
 
     /**
-	 * 模型驱动
-	 */
-    @Value("${ibiz.rtmodel:false}")
-    protected boolean rtmodel ;
-
-    /**
 	 * 主键字段
 	 */
     protected String key;
@@ -208,17 +202,17 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     @Override
     public List<? extends IEntityBase> select(String strCondition) {
         QueryWrapperContext context = createSearchContext();
-        context.getSelectCond().and(ScopeUtils.parse(strCondition));
+        context.getSelectCond().and(ScopeUtils.parse(this, strCondition));
         return this.select(context);
     }
 
     @Override
     public IEntityBase selectOne(String strCondition) {
         QueryWrapperContext context = createSearchContext();
-        context.getSelectCond().and(ScopeUtils.parse(strCondition));
+        context.getSelectCond().and(ScopeUtils.parse(this, strCondition));
         List list = this.select(context);
-        if(list.size() > 0)
-            return (IEntityBase)list.get(0);
+        if (list.size() > 0)
+            return (IEntityBase) list.get(0);
         return null;
     }
 
@@ -228,7 +222,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             String strSearchField = String.format("n_%s_%s", iPSDEField.getName().toLowerCase(), strCondition.toLowerCase());
             Field searchField = iSearchContextBase.getClass().getDeclaredField(strSearchField);
             searchField.setAccessible(true);
-            if (strCondition.equals(Conditions.ISNULL) || strCondition.equals(Conditions.ISNULL)){
+            if (strCondition.equals(Conditions.ISNULL) || strCondition.equals(Conditions.ISNULL)) {
                 searchField.set(iSearchContextBase, "true");
             } else {
                 searchField.set(iSearchContextBase, objValue);
@@ -246,7 +240,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         context.getSelectCond().eq(this.getKey(), objKey);
         List domains = this.select(context);
         if (domains.size() > 0)
-            return CheckKeyStates.EXIST ;
+            return CheckKeyStates.EXIST;
         return CheckKeyStates.NOTEXIST;
     }
 
@@ -298,6 +292,15 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         this.prepare();
         if (this.getUserContext().isSuperuser())
             return true;
+        //判断是否在流程中
+        if(this.isEnableWF() && this.testDataInWF(this.getSimpleEntity(key))){
+            //判断当前人有没有流程对应的能力
+            //UPDATE
+            //return true/false;
+
+            //READ
+            // true 直接return    false接着往下走
+        }
         if (testUnires(action))
             return true ;
         //检查能力
@@ -315,6 +318,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         try {
             return testDataAccessAction(domains.get(0), action);
         } catch (Exception e) {
+            log.error(String.format("[%s]数据:[%s]权限检查错误：%s", this.getName(), key, e.getMessage()));
             return false;
         }
     }
@@ -352,6 +356,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                 }
             }
         } catch (Exception e) {
+            log.error(String.format("[%s]数据:[%s]权限检查错误：%s", this.getName(), keys, e.getMessage()));
             return false;
         }
         return true;
@@ -549,11 +554,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     }
 
     public boolean isRtmodel() {
-        return rtmodel;
-    }
-
-    protected void setRtmodel(boolean rtmodel) {
-        this.rtmodel = rtmodel;
+        return ((SystemRuntime) this.getSystemRuntime()).isRtmodel();
     }
 
     /**
@@ -631,22 +632,21 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
 
     @Override
     protected void translateEntityNestedDER1NBeforeProceed(IEntityBase arg0, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
-        
+
     }
 
     @Override
     protected void translateEntityNestedDER1NAfterProceed(Object objKey, IEntityBase arg0, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
-        
+
     }
 
     @Override
     protected void translateEntityNestedDERsAfterProceed(IEntityBase arg0, String strActionName, IPSDEAction iPSDEAction, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
-        
+
     }
 
     @Override
     protected void translateEntityNestedDERsBeforeProceed(IEntityBase arg0, String strActionName, IPSDEAction iPSDEAction, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
-        
-    }
 
+    }
 }
