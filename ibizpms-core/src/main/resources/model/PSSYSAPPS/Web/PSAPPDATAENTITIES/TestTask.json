@@ -360,71 +360,11 @@
     },
     "name" : "数据导入",
     "getPSDEDataImportItems" : [ {
-      "caption" : "负责人",
-      "name" : "OWNER",
-      "getPSAppDEField" : {
-        "name" : "OWNER",
-        "codeName" : "Owner"
-      },
-      "getPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProductTeam.json"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "已删除",
-      "name" : "DELETED",
-      "getPSAppDEField" : {
-        "name" : "DELETED",
-        "codeName" : "Deleted"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "子状态",
-      "name" : "SUBSTATUS",
-      "getPSAppDEField" : {
-        "name" : "SUBSTATUS",
-        "codeName" : "SubStatus"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "所属项目",
-      "name" : "PROJECT",
-      "getPSAppDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "开始日期",
-      "name" : "BEGIN",
-      "getPSAppDEField" : {
-        "name" : "BEGIN",
-        "codeName" : "Begin"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "名称",
-      "name" : "NAME",
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "uniqueItem" : false
-    }, {
       "caption" : "auto",
       "name" : "AUTO",
       "getPSAppDEField" : {
         "name" : "AUTO",
         "codeName" : "Auto"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "版本",
-      "name" : "BUILDNAME",
-      "getPSAppDEField" : {
-        "name" : "BUILDNAME",
-        "codeName" : "BuildName"
       },
       "uniqueItem" : false
     }, {
@@ -440,11 +380,11 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "项目",
-      "name" : "PROJECTTNAME",
+      "caption" : "开始日期",
+      "name" : "BEGIN",
       "getPSAppDEField" : {
-        "name" : "PROJECTTNAME",
-        "codeName" : "ProjecttName"
+        "name" : "BEGIN",
+        "codeName" : "Begin"
       },
       "uniqueItem" : false
     }, {
@@ -460,11 +400,19 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "备注",
-      "name" : "COMMENT",
+      "caption" : "子状态",
+      "name" : "SUBSTATUS",
       "getPSAppDEField" : {
-        "name" : "COMMENT",
-        "codeName" : "Comment"
+        "name" : "SUBSTATUS",
+        "codeName" : "SubStatus"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "名称",
+      "name" : "NAME",
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
       },
       "uniqueItem" : false
     }, {
@@ -476,11 +424,19 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "版本",
-      "name" : "BUILD",
+      "caption" : "所属项目",
+      "name" : "PROJECT",
       "getPSAppDEField" : {
-        "name" : "BUILD",
-        "codeName" : "Build"
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "版本",
+      "name" : "BUILDNAME",
+      "getPSAppDEField" : {
+        "name" : "BUILDNAME",
+        "codeName" : "BuildName"
       },
       "uniqueItem" : false
     }, {
@@ -492,11 +448,11 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "所属产品",
-      "name" : "PRODUCT",
+      "caption" : "项目",
+      "name" : "PROJECTTNAME",
       "getPSAppDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
+        "name" : "PROJECTTNAME",
+        "codeName" : "ProjecttName"
       },
       "uniqueItem" : false
     }, {
@@ -508,11 +464,11 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "report",
-      "name" : "REPORT",
+      "caption" : "备注",
+      "name" : "COMMENT",
       "getPSAppDEField" : {
-        "name" : "REPORT",
-        "codeName" : "Report"
+        "name" : "COMMENT",
+        "codeName" : "Comment"
       },
       "uniqueItem" : false
     }, {
@@ -525,6 +481,50 @@
       "getPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "负责人",
+      "name" : "OWNER",
+      "getPSAppDEField" : {
+        "name" : "OWNER",
+        "codeName" : "Owner"
+      },
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProductTeam.json"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "版本",
+      "name" : "BUILD",
+      "getPSAppDEField" : {
+        "name" : "BUILD",
+        "codeName" : "Build"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "所属产品",
+      "name" : "PRODUCT",
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "已删除",
+      "name" : "DELETED",
+      "getPSAppDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "report",
+      "name" : "REPORT",
+      "getPSAppDEField" : {
+        "name" : "REPORT",
+        "codeName" : "Report"
       },
       "uniqueItem" : false
     }, {
@@ -1588,6 +1588,84 @@
     "logicName" : "阻塞",
     "mSTag" : "blocked",
     "name" : "阻塞",
+    "getPSDEMainStateActions" : [ {
+      "name" : "Close",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Close.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Create",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "MobTestTaskCounter",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/MobTestTaskCounter.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "linkCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/LinkCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "GetUserConcat",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/GetUserConcat.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Activate",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Activate.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "unlinkCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/UnlinkCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Save",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Save.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TESTT_START_BUT",
       "getPSDEOPPriv" : {
@@ -1628,6 +1706,84 @@
     "logicName" : "进行中",
     "mSTag" : "doing",
     "name" : "进行中",
+    "getPSDEMainStateActions" : [ {
+      "name" : "linkCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/LinkCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Block",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Block.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Save",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Save.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "GetUserConcat",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/GetUserConcat.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Create",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Close",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Close.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "unlinkCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/UnlinkCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "MobTestTaskCounter",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/MobTestTaskCounter.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TESTT_ACTIVITE_BUT",
       "getPSDEOPPriv" : {
@@ -1668,6 +1824,84 @@
     "logicName" : "已完成",
     "mSTag" : "done",
     "name" : "已完成",
+    "getPSDEMainStateActions" : [ {
+      "name" : "GetUserConcat",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/GetUserConcat.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Close",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Close.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Start",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Start.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "linkCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/LinkCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Create",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "unlinkCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/UnlinkCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "MobTestTaskCounter",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/MobTestTaskCounter.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Save",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Save.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TESTT_CLOSED_BUT",
       "getPSDEOPPriv" : {
@@ -1720,6 +1954,84 @@
     "logicName" : "未开始",
     "mSTag" : "wait",
     "name" : "未开始",
+    "getPSDEMainStateActions" : [ {
+      "name" : "unlinkCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/UnlinkCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "linkCase",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/LinkCase.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "MobTestTaskCounter",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/MobTestTaskCounter.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Create",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Close",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Close.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Start",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Start.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Save",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/Save.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "GetUserConcat",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDEACTIONS/GetUserConcat.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TESTT_ACTIVITE_BUT",
       "getPSDEOPPriv" : {

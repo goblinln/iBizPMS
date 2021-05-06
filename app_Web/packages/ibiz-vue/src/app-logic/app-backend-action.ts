@@ -159,7 +159,9 @@ export class AppBackEndAction {
                     new GlobalService()
                         .getService((this.actionModel.getPSAppDataEntity() as IPSAppDataEntity)?.codeName)
                         .then((curService: any) => {
-                            curService[(this.actionModel.getPSAppDEMethod() as IPSAppDEMethod)?.codeName](
+                            // todo 后台调用实体行为类型缺失getPSDEAction.getActionMode 暂时使用多数据做批操作Batch判断
+                            const methodCodeName = Object.is(actionTarget, 'MULTIKEY') ? (this.actionModel.getPSAppDEMethod() as IPSAppDEMethod)?.codeName + 'Batch' : (this.actionModel.getPSAppDEMethod() as IPSAppDEMethod)?.codeName;
+                            curService[methodCodeName](
                                 context,
                                 data,
                                 this.actionModel.showBusyIndicator,

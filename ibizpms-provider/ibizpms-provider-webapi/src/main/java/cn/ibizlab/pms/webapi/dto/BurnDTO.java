@@ -103,6 +103,15 @@ public class BurnDTO extends DTOBase implements Serializable {
     private Timestamp date;
 
     /**
+     * 属性 [CONSUMED]
+     *
+     */
+    @JSONField(name = "consumed")
+    @JsonProperty("consumed")
+    @ApiModelProperty("总计消耗")
+    private Double consumed;
+
+    /**
      * 属性 [ORG]
      *
      */
@@ -121,15 +130,6 @@ public class BurnDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("主键")
     private String id;
-
-    /**
-     * 属性 [CONSUMED]
-     *
-     */
-    @JSONField(name = "consumed")
-    @JsonProperty("consumed")
-    @ApiModelProperty("总计消耗")
-    private Double consumed;
 
     /**
      * 属性 [LEFT]

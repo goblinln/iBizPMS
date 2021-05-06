@@ -17,6 +17,10 @@ export interface IStorySpec extends IEntityBase {
      */
     spec?: any;
     /**
+     * 需求名称
+     */
+    title?: any;
+    /**
      * 由谁更新
      */
     updateby?: any;
@@ -44,10 +48,6 @@ export interface IStorySpec extends IEntityBase {
      * 归属部门名
      */
     deptname?: any;
-    /**
-     * 需求名称
-     */
-    title?: any;
     /**
      * 版本号
      */

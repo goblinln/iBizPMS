@@ -175,8 +175,8 @@ export class IbizproProductWeeklyBaseService extends EntityBaseService<IIbizproP
      * @returns {Promise<any>}
      * @memberof IbizproProductWeeklyServiceBase
      */
-    public async SumProductWeeklyBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async SumProductWeeklyBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/ibizproproductweeklies/sumproductweeklybatch`,_data);
+        return this.http.post(`/ibizproproductweeklies/sumproductweeklybatch`,_data);
     }
 }

@@ -361,9 +361,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @returns {Promise<any>}
      * @memberof ActionServiceBase
      */
-    public async CreateHisBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async CreateHisBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/actions/createhisbatch`,_data);
+        return this.http.post(`/actions/createhisbatch`,_data);
     }
 
     /**
@@ -375,9 +375,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @returns {Promise<any>}
      * @memberof ActionServiceBase
      */
-    public async EditCommentBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async EditCommentBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/actions/editcommentbatch`,_data);
+        return this.http.post(`/actions/editcommentbatch`,_data);
     }
 
     /**
@@ -389,9 +389,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @returns {Promise<any>}
      * @memberof ActionServiceBase
      */
-    public async ManagePmsEeBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async ManagePmsEeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/actions/managepmseebatch`,_data);
+        return this.http.post(`/actions/managepmseebatch`,_data);
     }
 
     /**
@@ -403,9 +403,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @returns {Promise<any>}
      * @memberof ActionServiceBase
      */
-    public async SendMarkDoneBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async SendMarkDoneBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/actions/sendmarkdonebatch`,_data);
+        return this.http.post(`/actions/sendmarkdonebatch`,_data);
     }
 
     /**
@@ -417,9 +417,9 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @returns {Promise<any>}
      * @memberof ActionServiceBase
      */
-    public async SendTodoBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async SendTodoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/actions/sendtodobatch`,_data);
+        return this.http.post(`/actions/sendtodobatch`,_data);
     }
 
     /**
@@ -431,8 +431,8 @@ export class ActionBaseService extends EntityBaseService<IAction> {
      * @returns {Promise<any>}
      * @memberof ActionServiceBase
      */
-    public async SendToreadBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async SendToreadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/actions/sendtoreadbatch`,_data);
+        return this.http.post(`/actions/sendtoreadbatch`,_data);
     }
 }

@@ -869,16 +869,6 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
      * @param et
      */
     private void fillParentData(Case et){
-        //实体关系[DER1N_ZT_CASE_ZT_CASE_FROMCAEID]
-        if(!ObjectUtils.isEmpty(et.getFromcaseid())){
-            cn.ibizlab.pms.core.zentao.domain.Case ztfromcase=et.getZtfromcase();
-            if(ObjectUtils.isEmpty(ztfromcase)){
-                cn.ibizlab.pms.core.zentao.domain.Case majorEntity=caseService.get(et.getFromcaseid());
-                et.setZtfromcase(majorEntity);
-                ztfromcase=majorEntity;
-            }
-            et.setFromcaseversion(ztfromcase.getVersion());
-        }
         //实体关系[DER1N_ZT_CASE_ZT_MODULE_MODULE]
         if(!ObjectUtils.isEmpty(et.getModule())){
             cn.ibizlab.pms.core.zentao.domain.Module ztmodule=et.getZtmodule();
@@ -908,7 +898,6 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
                 ztstory=majorEntity;
             }
             et.setStoryname(ztstory.getTitle());
-            et.setStoryversion(ztstory.getVersion());
         }
         //实体关系[DER1N_ZT_CASE_ZT_TESTSUITE_LIB]
         if(!ObjectUtils.isEmpty(et.getLib())){

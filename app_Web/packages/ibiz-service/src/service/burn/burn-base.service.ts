@@ -241,12 +241,12 @@ export class BurnBaseService extends EntityBaseService<IBurn> {
      * @returns {Promise<any>}
      * @memberof BurnServiceBase
      */
-    public async ComputeBurnBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async ComputeBurnBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/burns/computeburnbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/burns/computeburnbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/burns/computeburnbatch`,_data);
+        return this.http.post(`/burns/computeburnbatch`,_data);
     }
 }

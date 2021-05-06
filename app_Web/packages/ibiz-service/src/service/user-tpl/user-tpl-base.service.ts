@@ -216,8 +216,8 @@ export class UserTplBaseService extends EntityBaseService<IUserTpl> {
      * @returns {Promise<any>}
      * @memberof UserTplServiceBase
      */
-    public async HasDeletedBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async HasDeletedBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/usertpls/hasdeletedbatch`,_data);
+        return this.http.post(`/usertpls/hasdeletedbatch`,_data);
     }
 }

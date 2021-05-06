@@ -293,13 +293,13 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
      * @returns {Promise<any>}
      * @memberof TestSuiteServiceBase
      */
-    public async LinkCaseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async LinkCaseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/testsuites/linkcasebatch`,_data);
+            return this.http.post(`/products/${_context.product}/testsuites/linkcasebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/testsuites/linkcasebatch`,_data);
+        return this.http.post(`/testsuites/linkcasebatch`,_data);
     }
 
     /**
@@ -311,12 +311,12 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
      * @returns {Promise<any>}
      * @memberof TestSuiteServiceBase
      */
-    public async UnlinkCaseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async UnlinkCaseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/testsuites/unlinkcasebatch`,_data);
+            return this.http.post(`/products/${_context.product}/testsuites/unlinkcasebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/testsuites/unlinkcasebatch`,_data);
+        return this.http.post(`/testsuites/unlinkcasebatch`,_data);
     }
 }

@@ -175,8 +175,8 @@ export class IbizproProjectWeeklyBaseService extends EntityBaseService<IIbizproP
      * @returns {Promise<any>}
      * @memberof IbizproProjectWeeklyServiceBase
      */
-    public async PushSumProjectWeeklyBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async PushSumProjectWeeklyBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/ibizproprojectweeklies/pushsumprojectweeklybatch`,_data);
+        return this.http.post(`/ibizproprojectweeklies/pushsumprojectweeklybatch`,_data);
     }
 }

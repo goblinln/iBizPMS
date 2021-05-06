@@ -528,17 +528,17 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
      * @returns {Promise<any>}
      * @memberof BuildServiceBase
      */
-    public async LinkBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async LinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/builds/linkbugbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/builds/linkbugbatch`,_data);
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/builds/linkbugbatch`,_data);
+            return this.http.post(`/products/${_context.product}/builds/linkbugbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/builds/linkbugbatch`,_data);
+        return this.http.post(`/builds/linkbugbatch`,_data);
     }
 
     /**
@@ -550,17 +550,17 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
      * @returns {Promise<any>}
      * @memberof BuildServiceBase
      */
-    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async LinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/builds/linkstorybatch`,_data);
+            return this.http.post(`/projects/${_context.project}/builds/linkstorybatch`,_data);
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/builds/linkstorybatch`,_data);
+            return this.http.post(`/products/${_context.product}/builds/linkstorybatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/builds/linkstorybatch`,_data);
+        return this.http.post(`/builds/linkstorybatch`,_data);
     }
 
     /**
@@ -572,17 +572,17 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
      * @returns {Promise<any>}
      * @memberof BuildServiceBase
      */
-    public async OneClickReleaseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async OneClickReleaseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/builds/oneclickreleasebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/builds/oneclickreleasebatch`,_data);
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/builds/oneclickreleasebatch`,_data);
+            return this.http.post(`/products/${_context.product}/builds/oneclickreleasebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/builds/oneclickreleasebatch`,_data);
+        return this.http.post(`/builds/oneclickreleasebatch`,_data);
     }
 
     /**
@@ -594,17 +594,17 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
      * @returns {Promise<any>}
      * @memberof BuildServiceBase
      */
-    public async UnlinkBugBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async UnlinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/builds/unlinkbugbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/builds/unlinkbugbatch`,_data);
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/builds/unlinkbugbatch`,_data);
+            return this.http.post(`/products/${_context.product}/builds/unlinkbugbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/builds/unlinkbugbatch`,_data);
+        return this.http.post(`/builds/unlinkbugbatch`,_data);
     }
 
     /**
@@ -616,16 +616,16 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
      * @returns {Promise<any>}
      * @memberof BuildServiceBase
      */
-    public async UnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async UnlinkStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/builds/unlinkstorybatch`,_data);
+            return this.http.post(`/projects/${_context.project}/builds/unlinkstorybatch`,_data);
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/builds/unlinkstorybatch`,_data);
+            return this.http.post(`/products/${_context.product}/builds/unlinkstorybatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/builds/unlinkstorybatch`,_data);
+        return this.http.post(`/builds/unlinkstorybatch`,_data);
     }
 }

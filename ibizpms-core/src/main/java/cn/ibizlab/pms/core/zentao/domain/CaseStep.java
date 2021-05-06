@@ -116,6 +116,15 @@ public class CaseStep extends EntityMP implements Serializable {
     @ApiModelProperty("由谁创建")
     private String createby;
     /**
+     * 用例版本
+     */
+    @DEField(defaultValue = "0")
+    @TableField(value = "`VERSION`")
+    @JSONField(name = "version")
+    @JsonProperty("version")
+    @ApiModelProperty("用例版本")
+    private Integer version;
+    /**
      * 编号
      */
     @DEField(isKeyField = true)
@@ -177,15 +186,6 @@ public class CaseStep extends EntityMP implements Serializable {
     @ApiModelProperty("归属组织")
     private String org;
     /**
-     * 用例版本
-     */
-    @DEField(defaultValue = "0")
-    @TableField(value = "`VERSION`")
-    @JSONField(name = "version")
-    @JsonProperty("version")
-    @ApiModelProperty("用例版本")
-    private Integer version;
-    /**
      * 用例
      */
     @DEField(defaultValue = "0")
@@ -239,6 +239,14 @@ public class CaseStep extends EntityMP implements Serializable {
     }
 
     /**
+     * 设置 [用例版本]
+     */
+    public void setVersion(Integer version) {
+        this.version = version;
+        this.modify("version", version);
+    }
+
+    /**
      * 设置 [步骤]
      */
     public void setDesc(String desc) {
@@ -252,14 +260,6 @@ public class CaseStep extends EntityMP implements Serializable {
     public void setExpect(String expect) {
         this.expect = expect;
         this.modify("expect", expect);
-    }
-
-    /**
-     * 设置 [用例版本]
-     */
-    public void setVersion(Integer version) {
-        this.version = version;
-        this.modify("version", version);
     }
 
     /**

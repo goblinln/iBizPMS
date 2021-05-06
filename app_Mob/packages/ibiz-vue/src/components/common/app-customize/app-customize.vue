@@ -170,6 +170,9 @@ export default class AppCustomize extends Vue {
     onSelectedDataChange() {
         this.selectedData.forEach((item: any, index: number) => {
           item.id = index + 1;
+          if(item.modelData){
+            delete item.modelData
+          }
         });
     }
 

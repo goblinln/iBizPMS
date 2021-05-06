@@ -3319,37 +3319,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/activatebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/activatebatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/activatebatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/activatebatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/activatebatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/activatebatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/activatebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/activatebatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/activatebatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/activatebatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/activatebatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/activatebatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/activatebatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/activatebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/activatebatch`,_data);
+        return this.http.post(`/tasks/activatebatch`,_data);
     }
 
     /**
@@ -3361,37 +3361,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async AssignToBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async AssignToBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/assigntobatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/assigntobatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/assigntobatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/assigntobatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/assigntobatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/assigntobatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/assigntobatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/assigntobatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/assigntobatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/assigntobatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/assigntobatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/assigntobatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/assigntobatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/assigntobatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/assigntobatch`,_data);
+        return this.http.post(`/tasks/assigntobatch`,_data);
     }
 
     /**
@@ -3403,37 +3403,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async CancelBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async CancelBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/cancelbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/cancelbatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/cancelbatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/cancelbatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/cancelbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/cancelbatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/cancelbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/cancelbatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/cancelbatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/cancelbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/cancelbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/cancelbatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/cancelbatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/cancelbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/cancelbatch`,_data);
+        return this.http.post(`/tasks/cancelbatch`,_data);
     }
 
     /**
@@ -3445,37 +3445,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async CloseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async CloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/closebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/closebatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/closebatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/closebatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/closebatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/closebatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/closebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/closebatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/closebatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/closebatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/closebatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/closebatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/closebatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/closebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/closebatch`,_data);
+        return this.http.post(`/tasks/closebatch`,_data);
     }
 
     /**
@@ -3487,37 +3487,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async ComputeBeginAndEndBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async ComputeBeginAndEndBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/computebeginandendbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/computebeginandendbatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/computebeginandendbatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/computebeginandendbatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/computebeginandendbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/computebeginandendbatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/computebeginandendbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/computebeginandendbatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/computebeginandendbatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/computebeginandendbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/computebeginandendbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/computebeginandendbatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/computebeginandendbatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/computebeginandendbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/computebeginandendbatch`,_data);
+        return this.http.post(`/tasks/computebeginandendbatch`,_data);
     }
 
     /**
@@ -3529,37 +3529,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async ComputeHours4MultipleBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async ComputeHours4MultipleBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/computehours4multiplebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/computehours4multiplebatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/computehours4multiplebatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/computehours4multiplebatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/computehours4multiplebatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/computehours4multiplebatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/computehours4multiplebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/computehours4multiplebatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/computehours4multiplebatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/computehours4multiplebatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/computehours4multiplebatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/computehours4multiplebatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/computehours4multiplebatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/computehours4multiplebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/computehours4multiplebatch`,_data);
+        return this.http.post(`/tasks/computehours4multiplebatch`,_data);
     }
 
     /**
@@ -3571,37 +3571,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async ComputeWorkingHoursBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async ComputeWorkingHoursBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/computeworkinghoursbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/computeworkinghoursbatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/computeworkinghoursbatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/computeworkinghoursbatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/computeworkinghoursbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/computeworkinghoursbatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/computeworkinghoursbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/computeworkinghoursbatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/computeworkinghoursbatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/computeworkinghoursbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/computeworkinghoursbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/computeworkinghoursbatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/computeworkinghoursbatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/computeworkinghoursbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/computeworkinghoursbatch`,_data);
+        return this.http.post(`/tasks/computeworkinghoursbatch`,_data);
     }
 
     /**
@@ -3613,37 +3613,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async ConfirmStoryChangeBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async ConfirmStoryChangeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/confirmstorychangebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/confirmstorychangebatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/confirmstorychangebatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/confirmstorychangebatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/confirmstorychangebatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/confirmstorychangebatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/confirmstorychangebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/confirmstorychangebatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/confirmstorychangebatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/confirmstorychangebatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/confirmstorychangebatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/confirmstorychangebatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/confirmstorychangebatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/confirmstorychangebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/confirmstorychangebatch`,_data);
+        return this.http.post(`/tasks/confirmstorychangebatch`,_data);
     }
 
     /**
@@ -3655,37 +3655,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async CreateByCycleBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async CreateByCycleBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/createbycyclebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/createbycyclebatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/createbycyclebatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/createbycyclebatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/createbycyclebatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/createbycyclebatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/createbycyclebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/createbycyclebatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/createbycyclebatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/createbycyclebatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/createbycyclebatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/createbycyclebatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/createbycyclebatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/createbycyclebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/createbycyclebatch`,_data);
+        return this.http.post(`/tasks/createbycyclebatch`,_data);
     }
 
     /**
@@ -3697,37 +3697,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async CreateCycleTasksBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async CreateCycleTasksBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/createcycletasksbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/createcycletasksbatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/createcycletasksbatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/createcycletasksbatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/createcycletasksbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/createcycletasksbatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/createcycletasksbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/createcycletasksbatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/createcycletasksbatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/createcycletasksbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/createcycletasksbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/createcycletasksbatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/createcycletasksbatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/createcycletasksbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/createcycletasksbatch`,_data);
+        return this.http.post(`/tasks/createcycletasksbatch`,_data);
     }
 
     /**
@@ -3739,37 +3739,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async DeleteBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async DeleteBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/deletebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/deletebatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/deletebatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/deletebatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/deletebatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/deletebatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/deletebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/deletebatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/deletebatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/deletebatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/deletebatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/deletebatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/deletebatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/deletebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/deletebatch`,_data);
+        return this.http.post(`/tasks/deletebatch`,_data);
     }
 
     /**
@@ -3781,37 +3781,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async DeleteEstimateBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async DeleteEstimateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/deleteestimatebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/deleteestimatebatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/deleteestimatebatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/deleteestimatebatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/deleteestimatebatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/deleteestimatebatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/deleteestimatebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/deleteestimatebatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/deleteestimatebatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/deleteestimatebatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/deleteestimatebatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/deleteestimatebatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/deleteestimatebatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/deleteestimatebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/deleteestimatebatch`,_data);
+        return this.http.post(`/tasks/deleteestimatebatch`,_data);
     }
 
     /**
@@ -3823,37 +3823,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async EditEstimateBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async EditEstimateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/editestimatebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/editestimatebatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/editestimatebatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/editestimatebatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/editestimatebatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/editestimatebatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/editestimatebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/editestimatebatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/editestimatebatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/editestimatebatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/editestimatebatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/editestimatebatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/editestimatebatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/editestimatebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/editestimatebatch`,_data);
+        return this.http.post(`/tasks/editestimatebatch`,_data);
     }
 
     /**
@@ -3865,37 +3865,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async FinishBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async FinishBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/finishbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/finishbatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/finishbatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/finishbatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/finishbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/finishbatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/finishbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/finishbatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/finishbatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/finishbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/finishbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/finishbatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/finishbatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/finishbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/finishbatch`,_data);
+        return this.http.post(`/tasks/finishbatch`,_data);
     }
 
     /**
@@ -3907,37 +3907,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async GetNextTeamUserBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async GetNextTeamUserBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/getnextteamuserbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/getnextteamuserbatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/getnextteamuserbatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/getnextteamuserbatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/getnextteamuserbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/getnextteamuserbatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/getnextteamuserbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/getnextteamuserbatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/getnextteamuserbatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/getnextteamuserbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/getnextteamuserbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/getnextteamuserbatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/getnextteamuserbatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/getnextteamuserbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/getnextteamuserbatch`,_data);
+        return this.http.post(`/tasks/getnextteamuserbatch`,_data);
     }
 
     /**
@@ -3949,37 +3949,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async GetTeamUserLeftActivityBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async GetTeamUserLeftActivityBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/getteamuserleftactivitybatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/getteamuserleftactivitybatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/getteamuserleftactivitybatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/getteamuserleftactivitybatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/getteamuserleftactivitybatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/getteamuserleftactivitybatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/getteamuserleftactivitybatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/getteamuserleftactivitybatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/getteamuserleftactivitybatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/getteamuserleftactivitybatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/getteamuserleftactivitybatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/getteamuserleftactivitybatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/getteamuserleftactivitybatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/getteamuserleftactivitybatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/getteamuserleftactivitybatch`,_data);
+        return this.http.post(`/tasks/getteamuserleftactivitybatch`,_data);
     }
 
     /**
@@ -3991,37 +3991,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async GetTeamUserLeftStartBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async GetTeamUserLeftStartBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/getteamuserleftstartbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/getteamuserleftstartbatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/getteamuserleftstartbatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/getteamuserleftstartbatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/getteamuserleftstartbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/getteamuserleftstartbatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/getteamuserleftstartbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/getteamuserleftstartbatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/getteamuserleftstartbatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/getteamuserleftstartbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/getteamuserleftstartbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/getteamuserleftstartbatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/getteamuserleftstartbatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/getteamuserleftstartbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/getteamuserleftstartbatch`,_data);
+        return this.http.post(`/tasks/getteamuserleftstartbatch`,_data);
     }
 
     /**
@@ -4033,37 +4033,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async LinkPlanBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async LinkPlanBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/linkplanbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/linkplanbatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/linkplanbatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/linkplanbatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/linkplanbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/linkplanbatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/linkplanbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/linkplanbatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/linkplanbatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/linkplanbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/linkplanbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/linkplanbatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/linkplanbatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/linkplanbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/linkplanbatch`,_data);
+        return this.http.post(`/tasks/linkplanbatch`,_data);
     }
 
     /**
@@ -4075,37 +4075,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async OtherUpdateBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async OtherUpdateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/otherupdatebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/otherupdatebatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/otherupdatebatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/otherupdatebatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/otherupdatebatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/otherupdatebatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/otherupdatebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/otherupdatebatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/otherupdatebatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/otherupdatebatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/otherupdatebatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/otherupdatebatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/otherupdatebatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/otherupdatebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/otherupdatebatch`,_data);
+        return this.http.post(`/tasks/otherupdatebatch`,_data);
     }
 
     /**
@@ -4117,37 +4117,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async PauseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async PauseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/pausebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/pausebatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/pausebatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/pausebatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/pausebatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/pausebatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/pausebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/pausebatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/pausebatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/pausebatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/pausebatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/pausebatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/pausebatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/pausebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/pausebatch`,_data);
+        return this.http.post(`/tasks/pausebatch`,_data);
     }
 
     /**
@@ -4159,37 +4159,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async RecordEstimateBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async RecordEstimateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/recordestimatebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/recordestimatebatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/recordestimatebatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/recordestimatebatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/recordestimatebatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/recordestimatebatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/recordestimatebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/recordestimatebatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/recordestimatebatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/recordestimatebatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/recordestimatebatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/recordestimatebatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/recordestimatebatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/recordestimatebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/recordestimatebatch`,_data);
+        return this.http.post(`/tasks/recordestimatebatch`,_data);
     }
 
     /**
@@ -4201,37 +4201,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async RecordTimZeroLeftAfterContinueBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async RecordTimZeroLeftAfterContinueBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/recordtimzeroleftaftercontinuebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/recordtimzeroleftaftercontinuebatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/recordtimzeroleftaftercontinuebatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/recordtimzeroleftaftercontinuebatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/recordtimzeroleftaftercontinuebatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/recordtimzeroleftaftercontinuebatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/recordtimzeroleftaftercontinuebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/recordtimzeroleftaftercontinuebatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/recordtimzeroleftaftercontinuebatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/recordtimzeroleftaftercontinuebatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/recordtimzeroleftaftercontinuebatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/recordtimzeroleftaftercontinuebatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/recordtimzeroleftaftercontinuebatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/recordtimzeroleftaftercontinuebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/recordtimzeroleftaftercontinuebatch`,_data);
+        return this.http.post(`/tasks/recordtimzeroleftaftercontinuebatch`,_data);
     }
 
     /**
@@ -4243,37 +4243,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async RecordTimateZeroLeftBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async RecordTimateZeroLeftBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/recordtimatezeroleftbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/recordtimatezeroleftbatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/recordtimatezeroleftbatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/recordtimatezeroleftbatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/recordtimatezeroleftbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/recordtimatezeroleftbatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/recordtimatezeroleftbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/recordtimatezeroleftbatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/recordtimatezeroleftbatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/recordtimatezeroleftbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/recordtimatezeroleftbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/recordtimatezeroleftbatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/recordtimatezeroleftbatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/recordtimatezeroleftbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/recordtimatezeroleftbatch`,_data);
+        return this.http.post(`/tasks/recordtimatezeroleftbatch`,_data);
     }
 
     /**
@@ -4285,37 +4285,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async RecordTimateZeroLeftAfterStartBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async RecordTimateZeroLeftAfterStartBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/recordtimatezeroleftafterstartbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/recordtimatezeroleftafterstartbatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/recordtimatezeroleftafterstartbatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/recordtimatezeroleftafterstartbatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/recordtimatezeroleftafterstartbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/recordtimatezeroleftafterstartbatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/recordtimatezeroleftafterstartbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/recordtimatezeroleftafterstartbatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/recordtimatezeroleftafterstartbatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/recordtimatezeroleftafterstartbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/recordtimatezeroleftafterstartbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/recordtimatezeroleftafterstartbatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/recordtimatezeroleftafterstartbatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/recordtimatezeroleftafterstartbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/recordtimatezeroleftafterstartbatch`,_data);
+        return this.http.post(`/tasks/recordtimatezeroleftafterstartbatch`,_data);
     }
 
     /**
@@ -4327,37 +4327,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async RestartBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async RestartBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/restartbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/restartbatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/restartbatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/restartbatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/restartbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/restartbatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/restartbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/restartbatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/restartbatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/restartbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/restartbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/restartbatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/restartbatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/restartbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/restartbatch`,_data);
+        return this.http.post(`/tasks/restartbatch`,_data);
     }
 
     /**
@@ -4369,37 +4369,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async SendMessageBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async SendMessageBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/sendmessagebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/sendmessagebatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/sendmessagebatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/sendmessagebatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/sendmessagebatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/sendmessagebatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/sendmessagebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/sendmessagebatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/sendmessagebatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/sendmessagebatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/sendmessagebatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/sendmessagebatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/sendmessagebatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/sendmessagebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/sendmessagebatch`,_data);
+        return this.http.post(`/tasks/sendmessagebatch`,_data);
     }
 
     /**
@@ -4411,37 +4411,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async SendMsgPreProcessBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async SendMsgPreProcessBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/sendmsgpreprocessbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/sendmsgpreprocessbatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/sendmsgpreprocessbatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/sendmsgpreprocessbatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/sendmsgpreprocessbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/sendmsgpreprocessbatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/sendmsgpreprocessbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/sendmsgpreprocessbatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/sendmsgpreprocessbatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/sendmsgpreprocessbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/sendmsgpreprocessbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/sendmsgpreprocessbatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/sendmsgpreprocessbatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/sendmsgpreprocessbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/sendmsgpreprocessbatch`,_data);
+        return this.http.post(`/tasks/sendmsgpreprocessbatch`,_data);
     }
 
     /**
@@ -4453,37 +4453,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async StartBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async StartBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/startbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/startbatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/startbatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/startbatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/startbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/startbatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/startbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/startbatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/startbatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/startbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/startbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/startbatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/startbatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/startbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/startbatch`,_data);
+        return this.http.post(`/tasks/startbatch`,_data);
     }
 
     /**
@@ -4495,37 +4495,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async TaskForwardBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async TaskForwardBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/taskforwardbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/taskforwardbatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/taskforwardbatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/taskforwardbatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/taskforwardbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/taskforwardbatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/taskforwardbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/taskforwardbatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/taskforwardbatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/taskforwardbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/taskforwardbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/taskforwardbatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/taskforwardbatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/taskforwardbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/taskforwardbatch`,_data);
+        return this.http.post(`/tasks/taskforwardbatch`,_data);
     }
 
     /**
@@ -4537,37 +4537,37 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async UpdateParentStatusBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async UpdateParentStatusBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/updateparentstatusbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/updateparentstatusbatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/updateparentstatusbatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/updateparentstatusbatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/updateparentstatusbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/updateparentstatusbatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/updateparentstatusbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/updateparentstatusbatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/updateparentstatusbatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/updateparentstatusbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/updateparentstatusbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/updateparentstatusbatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/updateparentstatusbatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/updateparentstatusbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/updateparentstatusbatch`,_data);
+        return this.http.post(`/tasks/updateparentstatusbatch`,_data);
     }
 
     /**
@@ -4579,36 +4579,36 @@ export class TaskBaseService extends EntityBaseService<ITask> {
      * @returns {Promise<any>}
      * @memberof TaskServiceBase
      */
-    public async UpdateRelatedPlanStatusBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async UpdateRelatedPlanStatusBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && _context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/updaterelatedplanstatusbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/updaterelatedplanstatusbatch`,_data);
         }
         if(_context.product && _context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/updaterelatedplanstatusbatch`,_data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/updaterelatedplanstatusbatch`,_data);
         }
         if(_context.product && _context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/updaterelatedplanstatusbatch`,_data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/updaterelatedplanstatusbatch`,_data);
         }
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/tasks/updaterelatedplanstatusbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/tasks/updaterelatedplanstatusbatch`,_data);
         }
         if(_context.story && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/stories/${_context.story}/tasks/updaterelatedplanstatusbatch`,_data);
+            return this.http.post(`/stories/${_context.story}/tasks/updaterelatedplanstatusbatch`,_data);
         }
         if(_context.productplan && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/productplans/${_context.productplan}/tasks/updaterelatedplanstatusbatch`,_data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/updaterelatedplanstatusbatch`,_data);
         }
         if(_context.projectmodule && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projectmodules/${_context.projectmodule}/tasks/updaterelatedplanstatusbatch`,_data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/updaterelatedplanstatusbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/tasks/updaterelatedplanstatusbatch`,_data);
+        return this.http.post(`/tasks/updaterelatedplanstatusbatch`,_data);
     }
 }

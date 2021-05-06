@@ -349,9 +349,9 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      * @returns {Promise<any>}
      * @memberof IbzDailyServiceBase
      */
-    public async CreateUserDailyBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async CreateUserDailyBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/ibzdailies/createuserdailybatch`,_data);
+        return this.http.post(`/ibzdailies/createuserdailybatch`,_data);
     }
 
     /**
@@ -363,9 +363,9 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      * @returns {Promise<any>}
      * @memberof IbzDailyServiceBase
      */
-    public async GetYeaterdayDailyPlansTaskEditBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async GetYeaterdayDailyPlansTaskEditBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/ibzdailies/getyeaterdaydailyplanstaskeditbatch`,_data);
+        return this.http.post(`/ibzdailies/getyeaterdaydailyplanstaskeditbatch`,_data);
     }
 
     /**
@@ -377,9 +377,9 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      * @returns {Promise<any>}
      * @memberof IbzDailyServiceBase
      */
-    public async GetYesterdayDailyPlansTaskBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async GetYesterdayDailyPlansTaskBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/ibzdailies/getyesterdaydailyplanstaskbatch`,_data);
+        return this.http.post(`/ibzdailies/getyesterdaydailyplanstaskbatch`,_data);
     }
 
     /**
@@ -391,9 +391,9 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      * @returns {Promise<any>}
      * @memberof IbzDailyServiceBase
      */
-    public async HaveReadBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async HaveReadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/ibzdailies/havereadbatch`,_data);
+        return this.http.post(`/ibzdailies/havereadbatch`,_data);
     }
 
     /**
@@ -405,9 +405,9 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      * @returns {Promise<any>}
      * @memberof IbzDailyServiceBase
      */
-    public async LinkCompleteTaskBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async LinkCompleteTaskBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/ibzdailies/linkcompletetaskbatch`,_data);
+        return this.http.post(`/ibzdailies/linkcompletetaskbatch`,_data);
     }
 
     /**
@@ -419,9 +419,9 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      * @returns {Promise<any>}
      * @memberof IbzDailyServiceBase
      */
-    public async PushUserDailyBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async PushUserDailyBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/ibzdailies/pushuserdailybatch`,_data);
+        return this.http.post(`/ibzdailies/pushuserdailybatch`,_data);
     }
 
     /**
@@ -433,8 +433,8 @@ export class IbzDailyBaseService extends EntityBaseService<IIbzDaily> {
      * @returns {Promise<any>}
      * @memberof IbzDailyServiceBase
      */
-    public async SubmitBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async SubmitBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/ibzdailies/submitbatch`,_data);
+        return this.http.post(`/ibzdailies/submitbatch`,_data);
     }
 }

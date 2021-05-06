@@ -171,6 +171,15 @@ public class Case extends EntityMP implements Serializable {
     @ApiModelProperty("消息通知用户")
     private String noticeusers;
     /**
+     * 来源用例版本
+     */
+    @DEField(defaultValue = "0")
+    @TableField(value = "`FROMCASEVERSION`")
+    @JSONField(name = "fromcaseversion")
+    @JsonProperty("fromcaseversion")
+    @ApiModelProperty("来源用例版本")
+    private Integer fromcaseversion;
+    /**
      * 用例版本
      */
     @DEField(defaultValue = "1")
@@ -345,6 +354,15 @@ public class Case extends EntityMP implements Serializable {
     @ApiModelProperty("已删除")
     private String deleted;
     /**
+     * 需求版本
+     */
+    @DEField(defaultValue = "1")
+    @TableField(value = "`STORYVERSION`")
+    @JSONField(name = "storyversion")
+    @JsonProperty("storyversion")
+    @ApiModelProperty("需求版本")
+    private Integer storyversion;
+    /**
      * 评审时间
      */
     @TableField(value = "`REVIEWEDDATE`")
@@ -485,15 +503,6 @@ public class Case extends EntityMP implements Serializable {
     @ApiModelProperty("用例库")
     private String libname;
     /**
-     * 来源用例版本
-     */
-    @DEField(defaultValue = "0")
-    @TableField(value = "`FROMCASEVERSION`")
-    @JSONField(name = "fromcaseversion")
-    @JsonProperty("fromcaseversion")
-    @ApiModelProperty("来源用例版本")
-    private Integer fromcaseversion;
-    /**
      * 需求名称
      */
     @TableField(exist = false)
@@ -509,15 +518,6 @@ public class Case extends EntityMP implements Serializable {
     @JsonProperty("modulename")
     @ApiModelProperty("模块名称")
     private String modulename;
-    /**
-     * 需求版本
-     */
-    @DEField(defaultValue = "1")
-    @TableField(value = "`STORYVERSION`")
-    @JSONField(name = "storyversion")
-    @JsonProperty("storyversion")
-    @ApiModelProperty("需求版本")
-    private Integer storyversion;
     /**
      * 产品名称
      */
@@ -723,6 +723,14 @@ public class Case extends EntityMP implements Serializable {
     }
 
     /**
+     * 设置 [来源用例版本]
+     */
+    public void setFromcaseversion(Integer fromcaseversion) {
+        this.fromcaseversion = fromcaseversion;
+        this.modify("fromcaseversion", fromcaseversion);
+    }
+
+    /**
      * 设置 [用例版本]
      */
     public void setVersion(Integer version) {
@@ -784,6 +792,14 @@ public class Case extends EntityMP implements Serializable {
     public void setReviewedby(String reviewedby) {
         this.reviewedby = reviewedby;
         this.modify("reviewedby", reviewedby);
+    }
+
+    /**
+     * 设置 [需求版本]
+     */
+    public void setStoryversion(Integer storyversion) {
+        this.storyversion = storyversion;
+        this.modify("storyversion", storyversion);
     }
 
     /**
@@ -892,22 +908,6 @@ public class Case extends EntityMP implements Serializable {
     public void setLastrunner(String lastrunner) {
         this.lastrunner = lastrunner;
         this.modify("lastrunner", lastrunner);
-    }
-
-    /**
-     * 设置 [来源用例版本]
-     */
-    public void setFromcaseversion(Integer fromcaseversion) {
-        this.fromcaseversion = fromcaseversion;
-        this.modify("fromcaseversion", fromcaseversion);
-    }
-
-    /**
-     * 设置 [需求版本]
-     */
-    public void setStoryversion(Integer storyversion) {
-        this.storyversion = storyversion;
-        this.modify("storyversion", storyversion);
     }
 
     /**

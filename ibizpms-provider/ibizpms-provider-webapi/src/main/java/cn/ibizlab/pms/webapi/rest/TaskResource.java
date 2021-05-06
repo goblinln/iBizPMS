@@ -230,7 +230,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @ApiOperation(value = "行为2", tags = {"任务" },  notes = "行为2")
+    @ApiOperation(value = "更新父任务时间", tags = {"任务" },  notes = "更新父任务时间")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/computehours4multiple")
     public ResponseEntity<TaskDTO> computeHours4Multiple(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task domain = taskMapping.toDomain(taskdto);
@@ -239,7 +239,7 @@ public class TaskResource {
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
-    @ApiOperation(value = "批量处理[行为2]", tags = {"任务" },  notes = "批量处理[行为2]")
+    @ApiOperation(value = "批量处理[更新父任务时间]", tags = {"任务" },  notes = "批量处理[更新父任务时间]")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/computehours4multiplebatch")
     public ResponseEntity<Boolean> computeHours4MultipleBatch(@RequestBody List<TaskDTO> taskdtos) {
         List<Task> domains = taskMapping.toDomain(taskdtos);
@@ -690,7 +690,7 @@ public class TaskResource {
     }
 
     @PreAuthorize("@TaskRuntime.test(#task_id,'UPDATE')")
-    @ApiOperation(value = "行为3", tags = {"任务" },  notes = "行为3")
+    @ApiOperation(value = "更新父任务状态", tags = {"任务" },  notes = "更新父任务状态")
 	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/{task_id}/updateparentstatus")
     public ResponseEntity<TaskDTO> updateParentStatus(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task domain = taskMapping.toDomain(taskdto);
@@ -699,7 +699,7 @@ public class TaskResource {
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
     }
-    @ApiOperation(value = "批量处理[行为3]", tags = {"任务" },  notes = "批量处理[行为3]")
+    @ApiOperation(value = "批量处理[更新父任务状态]", tags = {"任务" },  notes = "批量处理[更新父任务状态]")
 	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/updateparentstatusbatch")
     public ResponseEntity<Boolean> updateParentStatusBatch(@RequestBody List<TaskDTO> taskdtos) {
         List<Task> domains = taskMapping.toDomain(taskdtos);

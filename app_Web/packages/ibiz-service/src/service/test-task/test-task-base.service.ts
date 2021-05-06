@@ -428,17 +428,17 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @returns {Promise<any>}
      * @memberof TestTaskServiceBase
      */
-    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/testtasks/activatebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/testtasks/activatebatch`,_data);
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/testtasks/activatebatch`,_data);
+            return this.http.post(`/products/${_context.product}/testtasks/activatebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/testtasks/activatebatch`,_data);
+        return this.http.post(`/testtasks/activatebatch`,_data);
     }
 
     /**
@@ -450,17 +450,17 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @returns {Promise<any>}
      * @memberof TestTaskServiceBase
      */
-    public async BlockBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async BlockBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/testtasks/blockbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/testtasks/blockbatch`,_data);
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/testtasks/blockbatch`,_data);
+            return this.http.post(`/products/${_context.product}/testtasks/blockbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/testtasks/blockbatch`,_data);
+        return this.http.post(`/testtasks/blockbatch`,_data);
     }
 
     /**
@@ -472,17 +472,17 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @returns {Promise<any>}
      * @memberof TestTaskServiceBase
      */
-    public async CloseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async CloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/testtasks/closebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/testtasks/closebatch`,_data);
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/testtasks/closebatch`,_data);
+            return this.http.post(`/products/${_context.product}/testtasks/closebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/testtasks/closebatch`,_data);
+        return this.http.post(`/testtasks/closebatch`,_data);
     }
 
     /**
@@ -494,17 +494,17 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @returns {Promise<any>}
      * @memberof TestTaskServiceBase
      */
-    public async LinkCaseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async LinkCaseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/testtasks/linkcasebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/testtasks/linkcasebatch`,_data);
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/testtasks/linkcasebatch`,_data);
+            return this.http.post(`/products/${_context.product}/testtasks/linkcasebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/testtasks/linkcasebatch`,_data);
+        return this.http.post(`/testtasks/linkcasebatch`,_data);
     }
 
     /**
@@ -516,17 +516,17 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @returns {Promise<any>}
      * @memberof TestTaskServiceBase
      */
-    public async StartBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async StartBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/testtasks/startbatch`,_data);
+            return this.http.post(`/projects/${_context.project}/testtasks/startbatch`,_data);
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/testtasks/startbatch`,_data);
+            return this.http.post(`/products/${_context.product}/testtasks/startbatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/testtasks/startbatch`,_data);
+        return this.http.post(`/testtasks/startbatch`,_data);
     }
 
     /**
@@ -538,16 +538,16 @@ export class TestTaskBaseService extends EntityBaseService<ITestTask> {
      * @returns {Promise<any>}
      * @memberof TestTaskServiceBase
      */
-    public async UnlinkCaseBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async UnlinkCaseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         if(_context.project && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/projects/${_context.project}/testtasks/unlinkcasebatch`,_data);
+            return this.http.post(`/projects/${_context.project}/testtasks/unlinkcasebatch`,_data);
         }
         if(_context.product && true){
         _data = await this.obtainMinor(_context, _data);
-            return await this.http.post(`/products/${_context.product}/testtasks/unlinkcasebatch`,_data);
+            return this.http.post(`/products/${_context.product}/testtasks/unlinkcasebatch`,_data);
         }
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/testtasks/unlinkcasebatch`,_data);
+        return this.http.post(`/testtasks/unlinkcasebatch`,_data);
     }
 }

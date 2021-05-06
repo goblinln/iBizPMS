@@ -156,7 +156,7 @@ export class AppMobDashboardBase extends MobDashboardControlBase {
      * @memberof AppMobDashboardBase
      */
     public renderCustomizedDashboard(): any {
-        return this.customModelData.map((item:any, index: number)=>{
+        return this.renderCustomModelData.map((item:any, index: number)=>{
             return this.renderCustomPortlet(item)
         })
     }

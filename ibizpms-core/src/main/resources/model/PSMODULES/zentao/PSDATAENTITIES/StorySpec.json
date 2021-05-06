@@ -209,6 +209,55 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "TITLE",
+      "dBType" : "MYSQL5",
+      "name" : "TITLE",
+      "queryCodeExp" : "t1.`TITLE`",
+      "standardColumnName" : "`TITLE`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "TITLE",
+          "maxValue" : 255,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[255]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[255]"
+      },
+      "getPSDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      },
+      "ruleInfo" : "内容长度必须小于等于[255]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Title",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 255,
+    "logicName" : "需求名称",
+    "name" : "TITLE",
+    "stdDataType" : 25,
+    "stringLength" : 255,
+    "valueFormat" : "%1$s",
+    "enableQuickSearch" : true,
+    "majorDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "UPDATEBY",
       "dBType" : "MYSQL5",
       "name" : "UPDATEBY",
@@ -558,64 +607,6 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "TITLE",
-      "dBType" : "MYSQL5",
-      "name" : "TITLE",
-      "queryCodeExp" : "t1.`TITLE`",
-      "standardColumnName" : "`TITLE`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "TITLE",
-          "maxValue" : 255,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[255]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[255]"
-      },
-      "getPSDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      },
-      "ruleInfo" : "内容长度必须小于等于[255]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Title",
-    "dEFType" : 1,
-    "dataType" : "PICKUPTEXT",
-    "importOrder" : 1000,
-    "length" : 255,
-    "logicName" : "需求名称",
-    "name" : "TITLE",
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDERS/DER1N_ZT_STORYSPEC_ZT_STORY_STORY.json"
-    },
-    "getRelatedPSDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
-    },
-    "stdDataType" : 25,
-    "stringLength" : 255,
-    "valueFormat" : "%1$s",
-    "enableQuickSearch" : true,
-    "linkDEField" : true,
-    "majorDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
       "columnName" : "VERSION",
       "dBType" : "MYSQL5",
       "name" : "VERSION",
@@ -642,22 +633,13 @@
     } ],
     "codeName" : "Version",
     "dEFType" : 1,
-    "dataType" : "PICKUPDATA",
+    "dataType" : "INT",
     "importOrder" : 1000,
     "length" : 6,
     "logicName" : "版本号",
     "name" : "VERSION",
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StorySpec/PSDERS/DER1N_ZT_STORYSPEC_ZT_STORY_STORY.json"
-    },
-    "getRelatedPSDEField" : {
-      "name" : "VERSION",
-      "codeName" : "Version"
-    },
     "stdDataType" : 9,
-    "valueFormat" : "%1$s",
-    "linkDEField" : true
+    "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "STORY",
@@ -754,10 +736,6 @@
     "getPSPickupDEField" : {
       "name" : "STORY",
       "codeName" : "Story"
-    },
-    "getPSPickupTextDEField" : {
-      "name" : "TITLE",
-      "codeName" : "Title"
     },
     "pickupDEFName" : "STORY",
     "removeActionType" : -1,

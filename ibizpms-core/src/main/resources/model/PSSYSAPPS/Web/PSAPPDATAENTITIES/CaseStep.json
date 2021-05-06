@@ -420,6 +420,11 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
+    "codeName" : "Version",
+    "logicName" : "用例版本",
+    "name" : "VERSION",
+    "stdDataType" : 9
+  }, {
     "codeName" : "Id",
     "logicName" : "编号",
     "name" : "ID",
@@ -462,11 +467,6 @@
     "name" : "ORG",
     "stdDataType" : 25,
     "stringLength" : 100
-  }, {
-    "codeName" : "Version",
-    "logicName" : "用例版本",
-    "name" : "VERSION",
-    "stdDataType" : 9
   }, {
     "codeName" : "IBizCase",
     "logicName" : "用例",

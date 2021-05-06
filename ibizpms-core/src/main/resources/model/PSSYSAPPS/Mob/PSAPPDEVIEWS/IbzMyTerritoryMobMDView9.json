@@ -305,7 +305,7 @@
             "colMD" : 4,
             "layout" : "TABLE_12COL"
           },
-          "rawContent" : "{{$t('userCustom.mywork.noCloseProject')}}",
+          "rawContent" : "{{userCustom.mywork.noCloseProject}}",
           "showCaption" : true
         }, {
           "itemStyle" : "DEFAULT",
@@ -340,7 +340,7 @@
             "colMD" : 4,
             "layout" : "TABLE_12COL"
           },
-          "rawContent" : "{{$t('userCustom.mywork.deferredProjects')}}",
+          "rawContent" : "{{userCustom.mywork.deferredProjects}}",
           "showCaption" : true
         }, {
           "itemStyle" : "DEFAULT",
@@ -375,7 +375,7 @@
             "colMD" : 4,
             "layout" : "TABLE_12COL"
           },
-          "rawContent" : "{{$t('userCustom.mywork.noCloseProduct')}}",
+          "rawContent" : "{{userCustom.mywork.noCloseProduct}}",
           "showCaption" : true
         }, {
           "itemStyle" : "DEFAULT",

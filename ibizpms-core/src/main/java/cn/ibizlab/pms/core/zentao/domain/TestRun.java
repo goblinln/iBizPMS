@@ -65,6 +65,15 @@ public class TestRun extends EntityMP implements Serializable {
     @ApiModelProperty("结果")
     private String lastrunresult;
     /**
+     * 用例版本
+     */
+    @DEField(defaultValue = "0")
+    @TableField(value = "`VERSION`")
+    @JSONField(name = "version")
+    @JsonProperty("version")
+    @ApiModelProperty("用例版本")
+    private Integer version;
+    /**
      * 最后执行时间
      */
     @TableField(value = "`LASTRUNDATE`")
@@ -155,15 +164,6 @@ public class TestRun extends EntityMP implements Serializable {
     @ApiModelProperty("由谁创建")
     private String createby;
     /**
-     * 用例版本
-     */
-    @DEField(defaultValue = "0")
-    @TableField(value = "`VERSION`")
-    @JSONField(name = "version")
-    @JsonProperty("version")
-    @ApiModelProperty("用例版本")
-    private Integer version;
-    /**
      * 测试用例
      */
     @DEField(defaultValue = "0")
@@ -217,6 +217,14 @@ public class TestRun extends EntityMP implements Serializable {
     }
 
     /**
+     * 设置 [用例版本]
+     */
+    public void setVersion(Integer version) {
+        this.version = version;
+        this.modify("version", version);
+    }
+
+    /**
      * 设置 [最后执行时间]
      */
     public void setLastrundate(Timestamp lastrundate) {
@@ -256,14 +264,6 @@ public class TestRun extends EntityMP implements Serializable {
     public void setStatus(String status) {
         this.status = status;
         this.modify("status", status);
-    }
-
-    /**
-     * 设置 [用例版本]
-     */
-    public void setVersion(Integer version) {
-        this.version = version;
-        this.modify("version", version);
     }
 
     /**

@@ -146,6 +146,42 @@
     "systemReserver" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "VERSION",
+      "dBType" : "MYSQL5",
+      "name" : "VERSION",
+      "queryCodeExp" : "t1.`VERSION`",
+      "standardColumnName" : "`VERSION`",
+      "valueAutoGen" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "VERSION",
+        "codeName" : "Version"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Version",
+    "dEFType" : 1,
+    "dataType" : "INT",
+    "defaultValue" : "1",
+    "importOrder" : 1000,
+    "logicName" : "需求版本",
+    "name" : "VERSION",
+    "stdDataType" : 9,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "ID",
       "dBType" : "MYSQL5",
       "name" : "ID",
@@ -474,52 +510,6 @@
     "stringLength" : 100,
     "valueFormat" : "%1$s",
     "systemReserver" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "VERSION",
-      "dBType" : "MYSQL5",
-      "name" : "VERSION",
-      "queryCodeExp" : "t1.`VERSION`",
-      "standardColumnName" : "`VERSION`",
-      "valueAutoGen" : true
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "VERSION",
-        "codeName" : "Version"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Version",
-    "dEFType" : 1,
-    "dataType" : "PICKUPDATA",
-    "defaultValue" : "1",
-    "importOrder" : 1000,
-    "length" : 6,
-    "logicName" : "需求版本",
-    "name" : "VERSION",
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDERS/DER1N_ZT_PROJECTSTORY_ZT_STORY_STORY.json"
-    },
-    "getRelatedPSDEField" : {
-      "name" : "VERSION",
-      "codeName" : "Version"
-    },
-    "stdDataType" : 9,
-    "valueFormat" : "%1$s",
-    "linkDEField" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "STORY",

@@ -56,6 +56,15 @@ public class ProjectStory extends EntityMP implements Serializable {
     @ApiModelProperty("由谁更新")
     private String updateby;
     /**
+     * 需求版本
+     */
+    @DEField(defaultValue = "1")
+    @TableField(value = "`VERSION`")
+    @JSONField(name = "version")
+    @JsonProperty("version")
+    @ApiModelProperty("需求版本")
+    private Integer version;
+    /**
      * 主键
      */
     @DEField(isKeyField = true)
@@ -118,15 +127,6 @@ public class ProjectStory extends EntityMP implements Serializable {
     @ApiModelProperty("由谁创建")
     private String createby;
     /**
-     * 需求版本
-     */
-    @DEField(defaultValue = "1")
-    @TableField(value = "`VERSION`")
-    @JSONField(name = "version")
-    @JsonProperty("version")
-    @ApiModelProperty("需求版本")
-    private Integer version;
-    /**
      * 需求
      */
     @TableField(value = "`STORY`")
@@ -178,19 +178,19 @@ public class ProjectStory extends EntityMP implements Serializable {
 
 
     /**
-     * 设置 [排序]
-     */
-    public void setOrder(Integer order) {
-        this.order = order;
-        this.modify("order", order);
-    }
-
-    /**
      * 设置 [需求版本]
      */
     public void setVersion(Integer version) {
         this.version = version;
         this.modify("version", version);
+    }
+
+    /**
+     * 设置 [排序]
+     */
+    public void setOrder(Integer order) {
+        this.order = order;
+        this.modify("order", order);
     }
 
     /**

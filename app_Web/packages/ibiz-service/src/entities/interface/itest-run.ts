@@ -19,6 +19,10 @@ export interface ITestRun extends IEntityBase {
      */
     lastrunresult?: 'n/a' | 'pass' | 'fail' | 'blocked';
     /**
+     * 用例版本
+     */
+    version?: any;
+    /**
      * 最后执行时间
      */
     lastrundate?: any;
@@ -60,10 +64,6 @@ export interface ITestRun extends IEntityBase {
      * 由谁创建
      */
     createby?: any;
-    /**
-     * 用例版本
-     */
-    version?: any;
     /**
      * 测试用例
      */

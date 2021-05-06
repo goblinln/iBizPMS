@@ -1601,6 +1601,43 @@
     "uIAssistDEField" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "FROMCASEVERSION",
+      "dBType" : "MYSQL5",
+      "name" : "FROMCASEVERSION",
+      "queryCodeExp" : "t1.`FROMCASEVERSION`",
+      "standardColumnName" : "`FROMCASEVERSION`",
+      "valueAutoGen" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "FROMCASEVERSION",
+        "codeName" : "FromCaseVersion"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "FromCaseVersion",
+    "dEFType" : 1,
+    "dataType" : "INT",
+    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "来源用例版本",
+    "name" : "FROMCASEVERSION",
+    "stdDataType" : 9,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "VERSION",
       "dBType" : "MYSQL5",
       "name" : "VERSION",
@@ -2560,6 +2597,43 @@
     "enableUIModify" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "STORYVERSION",
+      "dBType" : "MYSQL5",
+      "name" : "STORYVERSION",
+      "queryCodeExp" : "t1.`STORYVERSION`",
+      "standardColumnName" : "`STORYVERSION`",
+      "valueAutoGen" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "STORYVERSION",
+        "codeName" : "StoryVersion"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "StoryVersion",
+    "dEFType" : 1,
+    "dataType" : "INT",
+    "defaultValue" : "1",
+    "importOrder" : 1000,
+    "length" : 6,
+    "logicName" : "需求版本",
+    "name" : "STORYVERSION",
+    "stdDataType" : 9,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "REVIEWEDDATE",
       "dBType" : "MYSQL5",
       "name" : "REVIEWEDDATE",
@@ -3316,56 +3390,6 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "FROMCASEVERSION",
-      "dBType" : "MYSQL5",
-      "name" : "FROMCASEVERSION",
-      "queryCodeExp" : "t1.`FROMCASEVERSION`",
-      "standardColumnName" : "`FROMCASEVERSION`",
-      "valueAutoGen" : true
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "FROMCASEVERSION",
-        "codeName" : "FromCaseVersion"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "FromCaseVersion",
-    "dEFType" : 1,
-    "dataType" : "PICKUPDATA",
-    "defaultValue" : "0",
-    "importOrder" : 1000,
-    "length" : 8,
-    "logicName" : "来源用例版本",
-    "name" : "FROMCASEVERSION",
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/CurCaseVersion.json"
-    },
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_CASE_FROMCAEID.json"
-    },
-    "getRelatedPSDEField" : {
-      "name" : "VERSION",
-      "codeName" : "Version"
-    },
-    "stdDataType" : 9,
-    "valueFormat" : "%1$s",
-    "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
       "columnName" : "STORYNAME",
       "dBType" : "MYSQL5",
       "name" : "STORYNAME",
@@ -3478,52 +3502,6 @@
     "valueFormat" : "%1$s",
     "linkDEField" : true,
     "phisicalDEField" : false
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "STORYVERSION",
-      "dBType" : "MYSQL5",
-      "name" : "STORYVERSION",
-      "queryCodeExp" : "t1.`STORYVERSION`",
-      "standardColumnName" : "`STORYVERSION`",
-      "valueAutoGen" : true
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "STORYVERSION",
-        "codeName" : "StoryVersion"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "StoryVersion",
-    "dEFType" : 1,
-    "dataType" : "PICKUPDATA",
-    "defaultValue" : "1",
-    "importOrder" : 1000,
-    "length" : 6,
-    "logicName" : "需求版本",
-    "name" : "STORYVERSION",
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_STORY_STORY.json"
-    },
-    "getRelatedPSDEField" : {
-      "name" : "VERSION",
-      "codeName" : "Version"
-    },
-    "stdDataType" : 9,
-    "valueFormat" : "%1$s",
-    "linkDEField" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "PRODUCTNAME",

@@ -307,8 +307,8 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
      * @returns {Promise<any>}
      * @memberof ModuleServiceBase
      */
-    public async FixBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async FixBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/modules/fixbatch`,_data);
+        return this.http.post(`/modules/fixbatch`,_data);
     }
 }

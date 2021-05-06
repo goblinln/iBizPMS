@@ -186,9 +186,9 @@ export class IbizproProjectMonthlyBaseService extends EntityBaseService<IIbizpro
      * @returns {Promise<any>}
      * @memberof IbizproProjectMonthlyServiceBase
      */
-    public async ManualCreateMonthlyBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async ManualCreateMonthlyBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/ibizproprojectmonthlies/manualcreatemonthlybatch`,_data);
+        return this.http.post(`/ibizproprojectmonthlies/manualcreatemonthlybatch`,_data);
     }
 
     /**
@@ -200,8 +200,8 @@ export class IbizproProjectMonthlyBaseService extends EntityBaseService<IIbizpro
      * @returns {Promise<any>}
      * @memberof IbizproProjectMonthlyServiceBase
      */
-    public async SumProjectMonthlyBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async SumProjectMonthlyBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/ibizproprojectmonthlies/sumprojectmonthlybatch`,_data);
+        return this.http.post(`/ibizproprojectmonthlies/sumprojectmonthlybatch`,_data);
     }
 }

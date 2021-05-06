@@ -60,7 +60,7 @@
   } ],
   "getPSSysPFPlugin" : {
     "pluginType" : "LIST_RENDER",
-    "pluginCode" : "PFPlugin7"
+    "pluginCode" : "MobUpdateLogInfo"
   },
   "pagingSize" : 1000,
   "getRemovePSControlAction" : {

@@ -27,13 +27,13 @@ import cn.ibizlab.pms.core.zentao.domain.StorySpec;
 @Data
 public class StorySpecSearchContext extends QueryWrapperContext<StorySpec> {
 
-	private String n_id_eq;//[主键]
-	public void setN_id_eq(String n_id_eq) {
-        this.n_id_eq = n_id_eq;
-    }
 	private String n_title_like;//[需求名称]
 	public void setN_title_like(String n_title_like) {
         this.n_title_like = n_title_like;
+    }
+	private String n_id_eq;//[主键]
+	public void setN_id_eq(String n_id_eq) {
+        this.n_id_eq = n_id_eq;
     }
 	private Integer n_version_eq;//[版本号]
 	public void setN_version_eq(Integer n_version_eq) {

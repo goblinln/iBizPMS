@@ -19,10 +19,6 @@
     "name" : "STORY",
     "codeName" : "Story"
   },
-  "getPSPickupTextDEField" : {
-    "name" : "TITLE",
-    "codeName" : "Title"
-  },
   "pickupDEFName" : "STORY",
   "removeActionType" : -1,
   "removeOrder" : 0,

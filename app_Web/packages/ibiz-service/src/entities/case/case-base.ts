@@ -98,6 +98,10 @@ export abstract class CaseBase extends EntityBase implements ICase {
      */
     noticeusers?: any;
     /**
+     * 来源用例版本
+     */
+    fromcaseversion?: any;
+    /**
      * 用例版本
      */
     version?: any;
@@ -184,6 +188,10 @@ export abstract class CaseBase extends EntityBase implements ICase {
      */
     deleted?: any;
     /**
+     * 需求版本
+     */
+    storyversion?: any;
+    /**
      * 评审时间
      */
     revieweddate?: any;
@@ -258,10 +266,6 @@ export abstract class CaseBase extends EntityBase implements ICase {
      */
     libname?: any;
     /**
-     * 来源用例版本
-     */
-    fromcaseversion?: any;
-    /**
      * 需求名称
      */
     storyname?: any;
@@ -269,10 +273,6 @@ export abstract class CaseBase extends EntityBase implements ICase {
      * 模块名称
      */
     modulename?: any;
-    /**
-     * 需求版本
-     */
-    storyversion?: any;
     /**
      * 产品名称
      */

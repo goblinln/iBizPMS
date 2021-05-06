@@ -1400,6 +1400,11 @@
     "stdDataType" : 25,
     "stringLength" : 255
   }, {
+    "codeName" : "CaseVersion",
+    "logicName" : "用例版本",
+    "name" : "CASEVERSION",
+    "stdDataType" : 9
+  }, {
     "codeName" : "Pri",
     "logicName" : "优先级",
     "name" : "PRI",
@@ -1408,6 +1413,12 @@
     "codeName" : "Os",
     "logicName" : "操作系统",
     "name" : "OS",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "RepoType",
+    "logicName" : "代码类型",
+    "name" : "REPOTYPE",
     "stdDataType" : 25,
     "stringLength" : 30
   }, {
@@ -1466,17 +1477,6 @@
     "name" : "STORYNAME",
     "stdDataType" : 25,
     "stringLength" : 255
-  }, {
-    "codeName" : "CaseVersion",
-    "logicName" : "用例版本",
-    "name" : "CASEVERSION",
-    "stdDataType" : 9
-  }, {
-    "codeName" : "RepoType",
-    "logicName" : "代码类型",
-    "name" : "REPOTYPE",
-    "stdDataType" : 25,
-    "stringLength" : 30
   }, {
     "codeName" : "Modulename",
     "logicName" : "模块名称",

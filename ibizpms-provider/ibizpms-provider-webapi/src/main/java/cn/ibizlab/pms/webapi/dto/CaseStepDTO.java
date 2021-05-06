@@ -113,6 +113,15 @@ public class CaseStepDTO extends DTOBase implements Serializable {
     private String createby;
 
     /**
+     * 属性 [VERSION]
+     *
+     */
+    @JSONField(name = "version")
+    @JsonProperty("version")
+    @ApiModelProperty("用例版本")
+    private Integer version;
+
+    /**
      * 属性 [ID]
      *
      */
@@ -182,15 +191,6 @@ public class CaseStepDTO extends DTOBase implements Serializable {
     private String org;
 
     /**
-     * 属性 [VERSION]
-     *
-     */
-    @JSONField(name = "version")
-    @JsonProperty("version")
-    @ApiModelProperty("用例版本")
-    private Integer version;
-
-    /**
      * 属性 [CASE]
      *
      */
@@ -220,6 +220,14 @@ public class CaseStepDTO extends DTOBase implements Serializable {
     }
 
     /**
+     * 设置 [VERSION]
+     */
+    public void setVersion(Integer  version){
+        this.version = version ;
+        this.modify("version",version);
+    }
+
+    /**
      * 设置 [DESC]
      */
     public void setDesc(String  desc){
@@ -233,14 +241,6 @@ public class CaseStepDTO extends DTOBase implements Serializable {
     public void setExpect(String  expect){
         this.expect = expect ;
         this.modify("expect",expect);
-    }
-
-    /**
-     * 设置 [VERSION]
-     */
-    public void setVersion(Integer  version){
-        this.version = version ;
-        this.modify("version",version);
     }
 
     /**

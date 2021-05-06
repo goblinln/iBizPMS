@@ -181,6 +181,14 @@
     "stdDataType" : 21,
     "stringLength" : 65535
   }, {
+    "codeName" : "Title",
+    "logicName" : "需求名称",
+    "name" : "TITLE",
+    "stdDataType" : 25,
+    "stringLength" : 255,
+    "enableQuickSearch" : true,
+    "majorField" : true
+  }, {
     "codeName" : "UpdateBy",
     "logicName" : "由谁更新",
     "name" : "UPDATEBY",
@@ -223,14 +231,6 @@
     "name" : "DEPTNAME",
     "stdDataType" : 25,
     "stringLength" : 100
-  }, {
-    "codeName" : "Title",
-    "logicName" : "需求名称",
-    "name" : "TITLE",
-    "stdDataType" : 25,
-    "stringLength" : 255,
-    "enableQuickSearch" : true,
-    "majorField" : true
   }, {
     "codeName" : "Version",
     "logicName" : "版本号",

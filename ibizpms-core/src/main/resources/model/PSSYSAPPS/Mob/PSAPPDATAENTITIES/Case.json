@@ -1108,6 +1108,11 @@
     "stdDataType" : 25,
     "stringLength" : 100
   }, {
+    "codeName" : "FromCaseVersion",
+    "logicName" : "来源用例版本",
+    "name" : "FROMCASEVERSION",
+    "stdDataType" : 9
+  }, {
     "codeName" : "Version",
     "logicName" : "用例版本",
     "name" : "VERSION",
@@ -1227,6 +1232,11 @@
     "stdDataType" : 25,
     "stringLength" : 1
   }, {
+    "codeName" : "StoryVersion",
+    "logicName" : "需求版本",
+    "name" : "STORYVERSION",
+    "stdDataType" : 9
+  }, {
     "codeName" : "ReviewedDate",
     "logicName" : "评审时间",
     "name" : "REVIEWEDDATE",
@@ -1321,11 +1331,6 @@
     "stdDataType" : 25,
     "stringLength" : 255
   }, {
-    "codeName" : "FromCaseVersion",
-    "logicName" : "来源用例版本",
-    "name" : "FROMCASEVERSION",
-    "stdDataType" : 9
-  }, {
     "codeName" : "Storyname",
     "logicName" : "需求名称",
     "name" : "STORYNAME",
@@ -1337,11 +1342,6 @@
     "name" : "MODULENAME",
     "stdDataType" : 25,
     "stringLength" : 60
-  }, {
-    "codeName" : "StoryVersion",
-    "logicName" : "需求版本",
-    "name" : "STORYVERSION",
-    "stdDataType" : 9
   }, {
     "codeName" : "ProductName",
     "logicName" : "产品名称",

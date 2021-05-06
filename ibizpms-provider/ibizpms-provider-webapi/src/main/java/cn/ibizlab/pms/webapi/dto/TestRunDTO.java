@@ -53,6 +53,15 @@ public class TestRunDTO extends DTOBase implements Serializable {
     private String lastrunresult;
 
     /**
+     * 属性 [VERSION]
+     *
+     */
+    @JSONField(name = "version")
+    @JsonProperty("version")
+    @ApiModelProperty("用例版本")
+    private Integer version;
+
+    /**
      * 属性 [LASTRUNDATE]
      *
      */
@@ -153,15 +162,6 @@ public class TestRunDTO extends DTOBase implements Serializable {
     private String createby;
 
     /**
-     * 属性 [VERSION]
-     *
-     */
-    @JSONField(name = "version")
-    @JsonProperty("version")
-    @ApiModelProperty("用例版本")
-    private Integer version;
-
-    /**
      * 属性 [CASE]
      *
      */
@@ -188,6 +188,14 @@ public class TestRunDTO extends DTOBase implements Serializable {
     public void setLastrunresult(String  lastrunresult){
         this.lastrunresult = lastrunresult ;
         this.modify("lastrunresult",lastrunresult);
+    }
+
+    /**
+     * 设置 [VERSION]
+     */
+    public void setVersion(Integer  version){
+        this.version = version ;
+        this.modify("version",version);
     }
 
     /**
@@ -220,14 +228,6 @@ public class TestRunDTO extends DTOBase implements Serializable {
     public void setStatus(String  status){
         this.status = status ;
         this.modify("status",status);
-    }
-
-    /**
-     * 设置 [VERSION]
-     */
-    public void setVersion(Integer  version){
-        this.version = version ;
-        this.modify("version",version);
     }
 
     /**

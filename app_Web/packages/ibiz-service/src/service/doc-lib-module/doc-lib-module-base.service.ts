@@ -318,9 +318,9 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
      * @returns {Promise<any>}
      * @memberof DocLibModuleServiceBase
      */
-    public async CollectBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async CollectBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/doclibmodules/collectbatch`,_data);
+        return this.http.post(`/doclibmodules/collectbatch`,_data);
     }
 
     /**
@@ -332,8 +332,8 @@ export class DocLibModuleBaseService extends EntityBaseService<IDocLibModule> {
      * @returns {Promise<any>}
      * @memberof DocLibModuleServiceBase
      */
-    public async UnCollectBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async UnCollectBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/doclibmodules/uncollectbatch`,_data);
+        return this.http.post(`/doclibmodules/uncollectbatch`,_data);
     }
 }

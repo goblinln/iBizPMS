@@ -218,8 +218,8 @@ export class IbzPlanTempletBaseService extends EntityBaseService<IIbzPlanTemplet
      * @returns {Promise<any>}
      * @memberof IbzPlanTempletServiceBase
      */
-    public async GetPlanBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async GetPlanBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/ibzplantemplets/getplanbatch`,_data);
+        return this.http.post(`/ibzplantemplets/getplanbatch`,_data);
     }
 }

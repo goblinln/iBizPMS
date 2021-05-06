@@ -225,6 +225,11 @@
     "enableQuickSearch" : true,
     "majorField" : true
   }, {
+    "codeName" : "Consumed",
+    "logicName" : "总计消耗",
+    "name" : "CONSUMED",
+    "stdDataType" : 7
+  }, {
     "codeName" : "Org",
     "logicName" : "归属组织",
     "name" : "ORG",
@@ -238,16 +243,9 @@
     "stringLength" : 60,
     "keyField" : true
   }, {
-    "codeName" : "Consumed",
-    "logicName" : "总计消耗",
-    "name" : "CONSUMED",
-    "precision" : 2,
-    "stdDataType" : 7
-  }, {
     "codeName" : "Left",
     "logicName" : "预计剩余",
     "name" : "LEFT",
-    "precision" : 2,
     "stdDataType" : 7
   }, {
     "codeName" : "Estimate",

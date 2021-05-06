@@ -210,6 +210,9 @@ export class AppControlBase extends Vue implements ControlInterface {
      * @memberof ViewBase
      */
     public initRenderOptions(opts?: any) {
+        if(!opts){
+            return;
+        }
         this.renderOptions = {};
         const { controlType, codeName, getPSSysCss } = this.controlInstance;
         // 部件类名
@@ -379,8 +382,8 @@ export class AppControlBase extends Vue implements ControlInterface {
     public async ctrlModelInit(args?: any) {
         await this.ctrlModelLoad();
         this.initMountedMap();
-        this.name = this.controlInstance.name ? this.controlInstance.name : this.controlInstance.codeName;
-        this.showBusyIndicator = this.controlInstance.showBusyIndicator;
+        this.name = this.controlInstance?.name ? this.controlInstance.name : this.controlInstance?.codeName;
+        this.showBusyIndicator = this.controlInstance?.showBusyIndicator;
         this.initRenderOptions();
         await this.initCounterService(this.controlInstance);
     }
@@ -400,7 +403,7 @@ export class AppControlBase extends Vue implements ControlInterface {
     public ctrlMounted(args?: any) {
         this.hasCtrlMounted = true;
         this.ctrlEvent({
-            controlname: this.controlInstance.name,
+            controlname: this.controlInstance?.name,
             action: 'controlIsMounted',
             data: true
         })

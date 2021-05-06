@@ -5,6 +5,7 @@ function getLocaleResourceBase(){
 	fields: {
 		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 		'lastrunresult': commonLogic.appcommonhandle("结果",null),
+		'version': commonLogic.appcommonhandle("用例版本",null),
 		'lastrundate': commonLogic.appcommonhandle("最后执行时间",null),
 		'org': commonLogic.appcommonhandle("归属组织",null),
 		'updateby': commonLogic.appcommonhandle("由谁更新",null),
@@ -15,7 +16,6 @@ function getLocaleResourceBase(){
 		'id': commonLogic.appcommonhandle("编号",null),
 		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 		'createby': commonLogic.appcommonhandle("由谁创建",null),
-		'version': commonLogic.appcommonhandle("用例版本",null),
 		'ibizcase': commonLogic.appcommonhandle("测试用例",null),
 		'task': commonLogic.appcommonhandle("测试单",null),
 	},

@@ -303,8 +303,8 @@ export class UserBaseService extends EntityBaseService<IUser> {
      * @returns {Promise<any>}
      * @memberof UserServiceBase
      */
-    public async SyncAccountBatch(_context: any = {},_data: any = {}): Promise<IHttpResponse> {
+    public async SyncAccountBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
         _data = await this.obtainMinor(_context, _data);
-        return await this.http.post(`/users/syncaccountbatch`,_data);
+        return this.http.post(`/users/syncaccountbatch`,_data);
     }
 }

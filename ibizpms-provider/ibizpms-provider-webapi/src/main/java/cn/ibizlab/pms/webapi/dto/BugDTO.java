@@ -556,6 +556,15 @@ public class BugDTO extends DTOBase implements Serializable {
     private String resolvedbuild;
 
     /**
+     * 属性 [CASEVERSION]
+     *
+     */
+    @JSONField(name = "caseversion")
+    @JsonProperty("caseversion")
+    @ApiModelProperty("用例版本")
+    private Integer caseversion;
+
+    /**
      * 属性 [PRI]
      *
      */
@@ -573,6 +582,16 @@ public class BugDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
     @ApiModelProperty("操作系统")
     private String os;
+
+    /**
+     * 属性 [REPOTYPE]
+     *
+     */
+    @JSONField(name = "repotype")
+    @JsonProperty("repotype")
+    @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
+    @ApiModelProperty("代码类型")
+    private String repotype;
 
     /**
      * 属性 [HARDWARE]
@@ -664,25 +683,6 @@ public class BugDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
     @ApiModelProperty("相关需求")
     private String storyname;
-
-    /**
-     * 属性 [CASEVERSION]
-     *
-     */
-    @JSONField(name = "caseversion")
-    @JsonProperty("caseversion")
-    @ApiModelProperty("用例版本")
-    private Integer caseversion;
-
-    /**
-     * 属性 [REPOTYPE]
-     *
-     */
-    @JSONField(name = "repotype")
-    @JsonProperty("repotype")
-    @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
-    @ApiModelProperty("代码类型")
-    private String repotype;
 
     /**
      * 属性 [MODULENAME]
@@ -1076,6 +1076,14 @@ public class BugDTO extends DTOBase implements Serializable {
     }
 
     /**
+     * 设置 [CASEVERSION]
+     */
+    public void setCaseversion(Integer  caseversion){
+        this.caseversion = caseversion ;
+        this.modify("caseversion",caseversion);
+    }
+
+    /**
      * 设置 [PRI]
      */
     public void setPri(Integer  pri){
@@ -1092,6 +1100,14 @@ public class BugDTO extends DTOBase implements Serializable {
     }
 
     /**
+     * 设置 [REPOTYPE]
+     */
+    public void setRepotype(String  repotype){
+        this.repotype = repotype ;
+        this.modify("repotype",repotype);
+    }
+
+    /**
      * 设置 [HARDWARE]
      */
     public void setHardware(String  hardware){
@@ -1105,22 +1121,6 @@ public class BugDTO extends DTOBase implements Serializable {
     public void setTitle(String  title){
         this.title = title ;
         this.modify("title",title);
-    }
-
-    /**
-     * 设置 [CASEVERSION]
-     */
-    public void setCaseversion(Integer  caseversion){
-        this.caseversion = caseversion ;
-        this.modify("caseversion",caseversion);
-    }
-
-    /**
-     * 设置 [REPOTYPE]
-     */
-    public void setRepotype(String  repotype){
-        this.repotype = repotype ;
-        this.modify("repotype",repotype);
     }
 
     /**

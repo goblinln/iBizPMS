@@ -194,6 +194,43 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "VERSION",
+      "dBType" : "MYSQL5",
+      "name" : "VERSION",
+      "queryCodeExp" : "t1.`VERSION`",
+      "standardColumnName" : "`VERSION`",
+      "valueAutoGen" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "VERSION",
+        "codeName" : "Version"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Version",
+    "dEFType" : 1,
+    "dataType" : "INT",
+    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "length" : 3,
+    "logicName" : "用例版本",
+    "name" : "VERSION",
+    "stdDataType" : 9,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "LASTRUNDATE",
       "dBType" : "MYSQL5",
       "name" : "LASTRUNDATE",
@@ -671,56 +708,6 @@
     "stringLength" : 100,
     "valueFormat" : "%1$s",
     "systemReserver" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "VERSION",
-      "dBType" : "MYSQL5",
-      "name" : "VERSION",
-      "queryCodeExp" : "t1.`VERSION`",
-      "standardColumnName" : "`VERSION`",
-      "valueAutoGen" : true
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "VERSION",
-        "codeName" : "Version"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Version",
-    "dEFType" : 1,
-    "dataType" : "PICKUPDATA",
-    "defaultValue" : "0",
-    "importOrder" : 1000,
-    "length" : 3,
-    "logicName" : "用例版本",
-    "name" : "VERSION",
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/CurCaseVersion.json"
-    },
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestRun/PSDERS/DER1N_ZT_TESTRUN_ZT_CASE_CASE.json"
-    },
-    "getRelatedPSDEField" : {
-      "name" : "VERSION",
-      "codeName" : "Version"
-    },
-    "stdDataType" : 9,
-    "valueFormat" : "%1$s",
-    "linkDEField" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "CASE",

@@ -165,6 +165,11 @@
     "stdDataType" : 25,
     "stringLength" : 30
   }, {
+    "codeName" : "Version",
+    "logicName" : "用例版本",
+    "name" : "VERSION",
+    "stdDataType" : 9
+  }, {
     "codeName" : "LastRunDate",
     "logicName" : "最后执行时间",
     "name" : "LASTRUNDATE",
@@ -226,11 +231,6 @@
     "name" : "CREATEBY",
     "stdDataType" : 25,
     "stringLength" : 100
-  }, {
-    "codeName" : "Version",
-    "logicName" : "用例版本",
-    "name" : "VERSION",
-    "stdDataType" : 9
   }, {
     "codeName" : "IBizCase",
     "logicName" : "测试用例",

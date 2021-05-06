@@ -70,9 +70,6 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
     @Override
     @Transactional
     public boolean create(CaseStep et) {
-        if(!casestepRuntime.isRtmodel()){
-            fillParentData(et);
-        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -86,18 +83,12 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
     @Override
     @Transactional
     public void createBatch(List<CaseStep> list) {
-        if(!casestepRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(CaseStep et) {
-        if(!casestepRuntime.isRtmodel()){
-            fillParentData(et);
-        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -111,9 +102,6 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
     @Override
     @Transactional
     public void updateBatch(List<CaseStep> list) {
-        if(!casestepRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
         updateBatchById(list, batchSize);
     }
 
@@ -169,9 +157,6 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
 
     @Override
     public CaseStep getDraft(CaseStep et) {
-        if(!casestepRuntime.isRtmodel()){
-            fillParentData(et);
-        }
         return et;
     }
 
@@ -201,9 +186,6 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
     @Override
     @Transactional
     public boolean saveBatch(Collection<CaseStep> list) {
-        if(!casestepRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
         List<CaseStep> create = new ArrayList<>();
         List<CaseStep> update = new ArrayList<>();
         for (CaseStep et : list) {
@@ -225,9 +207,6 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
     @Override
     @Transactional
     public void saveBatch(List<CaseStep> list) {
-        if(!casestepRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
         List<CaseStep> create = new ArrayList<>();
         List<CaseStep> update = new ArrayList<>();
         for (CaseStep et : list) {
@@ -405,22 +384,6 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
 
 
 
-    /**
-     * 为当前实体填充父数据（外键值文本、外键值附加数据）
-     * @param et
-     */
-    private void fillParentData(CaseStep et){
-        //实体关系[DER1N_ZT_CASESTEP_ZT_CASE_CASE]
-        if(!ObjectUtils.isEmpty(et.getIbizcase())){
-            cn.ibizlab.pms.core.zentao.domain.Case ztcase=et.getZtcase();
-            if(ObjectUtils.isEmpty(ztcase)){
-                cn.ibizlab.pms.core.zentao.domain.Case majorEntity=caseService.get(et.getIbizcase());
-                et.setZtcase(majorEntity);
-                ztcase=majorEntity;
-            }
-            et.setVersion(ztcase.getVersion());
-        }
-    }
 
 
 

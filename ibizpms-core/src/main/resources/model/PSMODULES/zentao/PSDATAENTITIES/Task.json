@@ -240,7 +240,7 @@
     "actionType" : "USERCUSTOM",
     "codeName" : "ComputeHours4Multiple",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeHours4Multiple.json",
-    "logicName" : "行为2",
+    "logicName" : "更新父任务时间",
     "name" : "computeHours4Multiple"
   }, {
     "actionMode" : "CUSTOM",
@@ -471,7 +471,7 @@
     "actionType" : "USERCUSTOM",
     "codeName" : "UpdateParentStatus",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateParentStatus.json",
-    "logicName" : "行为3",
+    "logicName" : "更新父任务状态",
     "name" : "updateParentStatus"
   }, {
     "actionMode" : "UPDATE",

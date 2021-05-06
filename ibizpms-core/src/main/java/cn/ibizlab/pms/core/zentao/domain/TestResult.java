@@ -73,6 +73,14 @@ public class TestResult extends EntityMP implements Serializable {
     @ApiModelProperty("最后执行人")
     private String lastrunner;
     /**
+     * 用例版本
+     */
+    @TableField(value = "`VERSION`")
+    @JSONField(name = "version")
+    @JsonProperty("version")
+    @ApiModelProperty("用例版本")
+    private Integer version;
+    /**
      * 归属部门
      */
     @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
@@ -170,14 +178,6 @@ public class TestResult extends EntityMP implements Serializable {
     @JsonProperty("id")
     @ApiModelProperty("编号")
     private Long id;
-    /**
-     * 用例版本
-     */
-    @TableField(value = "`VERSION`")
-    @JSONField(name = "version")
-    @JsonProperty("version")
-    @ApiModelProperty("用例版本")
-    private Integer version;
     /**
      * 相关需求
      */
@@ -306,6 +306,14 @@ public class TestResult extends EntityMP implements Serializable {
     }
 
     /**
+     * 设置 [用例版本]
+     */
+    public void setVersion(Integer version) {
+        this.version = version;
+        this.modify("version", version);
+    }
+
+    /**
      * 设置 [步骤结果]
      */
     public void setStepresults(String stepresults) {
@@ -355,14 +363,6 @@ public class TestResult extends EntityMP implements Serializable {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         return sdf.format(date);
     }
-    /**
-     * 设置 [用例版本]
-     */
-    public void setVersion(Integer version) {
-        this.version = version;
-        this.modify("version", version);
-    }
-
     /**
      * 设置 [构建任务]
      */
