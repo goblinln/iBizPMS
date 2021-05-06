@@ -72,10 +72,12 @@ export class CtrlLoadingService {
         // 自定义loading元素
         const userEle = `<div class="app-loading-icon">
                             <div class="icon-content">
-                                <div class="app-loading-icon-item"><i class='el-icon-loading'></i></div>
+                                <div class="app-loading-icon-item active-color"></div>
+                                <div class="app-loading-icon-item"></div>
                             </div>
                             <div class="icon-content">
-                                <div class="app-loading-icon-item">加载中</div>
+                                <div class="app-loading-icon-item"></div>
+                                <div class="app-loading-icon-item"></div>
                             </div>
                         </div>`;
         const loadingEle = selection.lastChild;
