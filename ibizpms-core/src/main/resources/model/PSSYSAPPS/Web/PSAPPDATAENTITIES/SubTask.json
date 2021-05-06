@@ -317,6 +317,15 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "codeName" : "ComputeHours4Multiple",
+    "methodType" : "DEACTION",
+    "name" : "computeHours4Multiple",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeHours4Multiple.json"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "ConfirmStoryChange",
     "methodType" : "DEACTION",
     "name" : "ConfirmStoryChange",
@@ -524,6 +533,19 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskForward.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "UpdateParentStatus",
+    "methodType" : "DEACTION",
+    "name" : "updateParentStatus",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateParentStatus.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__UPDATE"
     },
     "builtinMethod" : false
   } ],
@@ -1926,6 +1948,15 @@
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
+    "codeName" : "ComputeHours4Multiple",
+    "methodType" : "DEACTION",
+    "name" : "computeHours4Multiple",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeHours4Multiple.json"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "ConfirmStoryChange",
     "methodType" : "DEACTION",
     "name" : "ConfirmStoryChange",
@@ -2133,6 +2164,19 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskForward.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "UpdateParentStatus",
+    "methodType" : "DEACTION",
+    "name" : "updateParentStatus",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateParentStatus.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__UPDATE"
     },
     "builtinMethod" : false
   }, {

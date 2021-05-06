@@ -238,6 +238,13 @@
   }, {
     "actionMode" : "CUSTOM",
     "actionType" : "USERCUSTOM",
+    "codeName" : "ComputeHours4Multiple",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeHours4Multiple.json",
+    "logicName" : "行为2",
+    "name" : "computeHours4Multiple"
+  }, {
+    "actionMode" : "CUSTOM",
+    "actionType" : "USERCUSTOM",
     "codeName" : "ComputeWorkingHours",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeWorkingHours.json",
     "logicName" : "更新工作时间",
@@ -459,6 +466,13 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/TaskCancleFavorites.json"
     }
+  }, {
+    "actionMode" : "UPDATE",
+    "actionType" : "USERCUSTOM",
+    "codeName" : "UpdateParentStatus",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateParentStatus.json",
+    "logicName" : "行为3",
+    "name" : "updateParentStatus"
   }, {
     "actionMode" : "UPDATE",
     "actionType" : "USERCUSTOM",

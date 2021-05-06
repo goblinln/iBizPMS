@@ -46,6 +46,8 @@ public interface ITaskService extends IService<Task> {
     boolean closeBatch(List<Task> etList);
     Task computeBeginAndEnd(Task et);
     boolean computeBeginAndEndBatch(List<Task> etList);
+    Task computeHours4Multiple(Task et);
+    boolean computeHours4MultipleBatch(List<Task> etList);
     Task computeWorkingHours(Task et);
     boolean computeWorkingHoursBatch(List<Task> etList);
     Task confirmStoryChange(Task et);
@@ -100,6 +102,8 @@ public interface ITaskService extends IService<Task> {
     boolean taskForwardBatch(List<Task> etList);
     Task taskNFavorites(Task et);
     boolean taskNFavoritesBatch(List<Task> etList);
+    Task updateParentStatus(Task et);
+    boolean updateParentStatusBatch(List<Task> etList);
     Task updateRelatedPlanStatus(Task et);
     boolean updateRelatedPlanStatusBatch(List<Task> etList);
     Task updateStoryVersion(Task et);

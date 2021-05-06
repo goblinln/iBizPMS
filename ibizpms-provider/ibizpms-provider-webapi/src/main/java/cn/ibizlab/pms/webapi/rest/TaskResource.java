@@ -230,6 +230,23 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @ApiOperation(value = "行为2", tags = {"任务" },  notes = "行为2")
+	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/computehours4multiple")
+    public ResponseEntity<TaskDTO> computeHours4Multiple(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setId(task_id);
+        domain = taskService.computeHours4Multiple(domain);
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[行为2]", tags = {"任务" },  notes = "批量处理[行为2]")
+	@RequestMapping(method = RequestMethod.POST, value = "/tasks/computehours4multiplebatch")
+    public ResponseEntity<Boolean> computeHours4MultipleBatch(@RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.computeHours4MultipleBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+
     @ApiOperation(value = "更新工作时间", tags = {"任务" },  notes = "更新工作时间")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/computeworkinghours")
     public ResponseEntity<TaskDTO> computeWorkingHours(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -670,6 +687,24 @@ public class TaskResource {
         domain = taskService.taskNFavorites(domain);
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+
+    @PreAuthorize("@TaskRuntime.test(#task_id,'UPDATE')")
+    @ApiOperation(value = "行为3", tags = {"任务" },  notes = "行为3")
+	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/{task_id}/updateparentstatus")
+    public ResponseEntity<TaskDTO> updateParentStatus(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setId(task_id);
+        domain = taskService.updateParentStatus(domain);
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[行为3]", tags = {"任务" },  notes = "批量处理[行为3]")
+	@RequestMapping(method = RequestMethod.PUT, value = "/tasks/updateparentstatusbatch")
+    public ResponseEntity<Boolean> updateParentStatusBatch(@RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.updateParentStatusBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
     @PreAuthorize("@TaskRuntime.test(#task_id,'UPDATE')")
@@ -1735,6 +1770,23 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @ApiOperation(value = "根据任务模块任务", tags = {"任务" },  notes = "根据任务模块任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/computehours4multiple")
+    public ResponseEntity<TaskDTO> computeHours4MultipleByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setModule(projectmodule_id);
+        domain.setId(task_id);
+        domain = taskService.computeHours4Multiple(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[根据任务模块任务]", tags = {"任务" },  notes = "批量处理[根据任务模块任务]")
+	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/computehours4multiplebatch")
+    public ResponseEntity<Boolean> computeHours4MultipleByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.computeHours4MultipleBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据任务模块任务", tags = {"任务" },  notes = "根据任务模块任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/computeworkinghours")
     public ResponseEntity<TaskDTO> computeWorkingHoursByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task domain = taskMapping.toDomain(taskdto);
@@ -2180,6 +2232,24 @@ public class TaskResource {
         domain = taskService.taskNFavorites(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'UPDATE')")
+    @ApiOperation(value = "根据任务模块任务", tags = {"任务" },  notes = "根据任务模块任务")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/updateparentstatus")
+    public ResponseEntity<TaskDTO> updateParentStatusByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setModule(projectmodule_id);
+        domain.setId(task_id);
+        domain = taskService.updateParentStatus(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[根据任务模块任务]", tags = {"任务" },  notes = "批量处理[根据任务模块任务]")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projectmodules/{projectmodule_id}/tasks/updateparentstatusbatch")
+    public ResponseEntity<Boolean> updateParentStatusByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.updateParentStatusBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'UPDATE')")
     @ApiOperation(value = "根据任务模块任务", tags = {"任务" },  notes = "根据任务模块任务")
@@ -3275,6 +3345,23 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @ApiOperation(value = "根据产品计划任务", tags = {"任务" },  notes = "根据产品计划任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/{task_id}/computehours4multiple")
+    public ResponseEntity<TaskDTO> computeHours4MultipleByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setPlan(productplan_id);
+        domain.setId(task_id);
+        domain = taskService.computeHours4Multiple(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[根据产品计划任务]", tags = {"任务" },  notes = "批量处理[根据产品计划任务]")
+	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/computehours4multiplebatch")
+    public ResponseEntity<Boolean> computeHours4MultipleByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.computeHours4MultipleBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据产品计划任务", tags = {"任务" },  notes = "根据产品计划任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/{task_id}/computeworkinghours")
     public ResponseEntity<TaskDTO> computeWorkingHoursByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task domain = taskMapping.toDomain(taskdto);
@@ -3720,6 +3807,24 @@ public class TaskResource {
         domain = taskService.taskNFavorites(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'UPDATE')")
+    @ApiOperation(value = "根据产品计划任务", tags = {"任务" },  notes = "根据产品计划任务")
+	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/tasks/{task_id}/updateparentstatus")
+    public ResponseEntity<TaskDTO> updateParentStatusByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setPlan(productplan_id);
+        domain.setId(task_id);
+        domain = taskService.updateParentStatus(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[根据产品计划任务]", tags = {"任务" },  notes = "批量处理[根据产品计划任务]")
+	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/tasks/updateparentstatusbatch")
+    public ResponseEntity<Boolean> updateParentStatusByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.updateParentStatusBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'UPDATE')")
     @ApiOperation(value = "根据产品计划任务", tags = {"任务" },  notes = "根据产品计划任务")
@@ -4815,6 +4920,23 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @ApiOperation(value = "根据需求任务", tags = {"任务" },  notes = "根据需求任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/{task_id}/computehours4multiple")
+    public ResponseEntity<TaskDTO> computeHours4MultipleByStory(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setStory(story_id);
+        domain.setId(task_id);
+        domain = taskService.computeHours4Multiple(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[根据需求任务]", tags = {"任务" },  notes = "批量处理[根据需求任务]")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/computehours4multiplebatch")
+    public ResponseEntity<Boolean> computeHours4MultipleByStory(@PathVariable("story_id") Long story_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.computeHours4MultipleBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据需求任务", tags = {"任务" },  notes = "根据需求任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/{task_id}/computeworkinghours")
     public ResponseEntity<TaskDTO> computeWorkingHoursByStory(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task domain = taskMapping.toDomain(taskdto);
@@ -5260,6 +5382,24 @@ public class TaskResource {
         domain = taskService.taskNFavorites(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @PreAuthorize("@StoryRuntime.test(#story_id,'UPDATE')")
+    @ApiOperation(value = "根据需求任务", tags = {"任务" },  notes = "根据需求任务")
+	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/tasks/{task_id}/updateparentstatus")
+    public ResponseEntity<TaskDTO> updateParentStatusByStory(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setStory(story_id);
+        domain.setId(task_id);
+        domain = taskService.updateParentStatus(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[根据需求任务]", tags = {"任务" },  notes = "批量处理[根据需求任务]")
+	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/tasks/updateparentstatusbatch")
+    public ResponseEntity<Boolean> updateParentStatusByStory(@PathVariable("story_id") Long story_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.updateParentStatusBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @PreAuthorize("@StoryRuntime.test(#story_id,'UPDATE')")
     @ApiOperation(value = "根据需求任务", tags = {"任务" },  notes = "根据需求任务")
@@ -6355,6 +6495,23 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @ApiOperation(value = "根据项目任务", tags = {"任务" },  notes = "根据项目任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/computehours4multiple")
+    public ResponseEntity<TaskDTO> computeHours4MultipleByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+        domain.setId(task_id);
+        domain = taskService.computeHours4Multiple(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[根据项目任务]", tags = {"任务" },  notes = "批量处理[根据项目任务]")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/computehours4multiplebatch")
+    public ResponseEntity<Boolean> computeHours4MultipleByProject(@PathVariable("project_id") Long project_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.computeHours4MultipleBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据项目任务", tags = {"任务" },  notes = "根据项目任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/computeworkinghours")
     public ResponseEntity<TaskDTO> computeWorkingHoursByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task domain = taskMapping.toDomain(taskdto);
@@ -6800,6 +6957,24 @@ public class TaskResource {
         domain = taskService.taskNFavorites(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
+    @ApiOperation(value = "根据项目任务", tags = {"任务" },  notes = "根据项目任务")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/{task_id}/updateparentstatus")
+    public ResponseEntity<TaskDTO> updateParentStatusByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setProject(project_id);
+        domain.setId(task_id);
+        domain = taskService.updateParentStatus(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[根据项目任务]", tags = {"任务" },  notes = "批量处理[根据项目任务]")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/tasks/updateparentstatusbatch")
+    public ResponseEntity<Boolean> updateParentStatusByProject(@PathVariable("project_id") Long project_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.updateParentStatusBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目任务", tags = {"任务" },  notes = "根据项目任务")
@@ -7895,6 +8070,23 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @ApiOperation(value = "根据产品产品计划任务", tags = {"任务" },  notes = "根据产品产品计划任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/computehours4multiple")
+    public ResponseEntity<TaskDTO> computeHours4MultipleByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setPlan(productplan_id);
+        domain.setId(task_id);
+        domain = taskService.computeHours4Multiple(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[根据产品产品计划任务]", tags = {"任务" },  notes = "批量处理[根据产品产品计划任务]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/computehours4multiplebatch")
+    public ResponseEntity<Boolean> computeHours4MultipleByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.computeHours4MultipleBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据产品产品计划任务", tags = {"任务" },  notes = "根据产品产品计划任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/computeworkinghours")
     public ResponseEntity<TaskDTO> computeWorkingHoursByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task domain = taskMapping.toDomain(taskdto);
@@ -8340,6 +8532,24 @@ public class TaskResource {
         domain = taskService.taskNFavorites(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
+    @ApiOperation(value = "根据产品产品计划任务", tags = {"任务" },  notes = "根据产品产品计划任务")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/updateparentstatus")
+    public ResponseEntity<TaskDTO> updateParentStatusByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setPlan(productplan_id);
+        domain.setId(task_id);
+        domain = taskService.updateParentStatus(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[根据产品产品计划任务]", tags = {"任务" },  notes = "批量处理[根据产品产品计划任务]")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/tasks/updateparentstatusbatch")
+    public ResponseEntity<Boolean> updateParentStatusByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.updateParentStatusBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品产品计划任务", tags = {"任务" },  notes = "根据产品产品计划任务")
@@ -9435,6 +9645,23 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @ApiOperation(value = "根据产品需求任务", tags = {"任务" },  notes = "根据产品需求任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/computehours4multiple")
+    public ResponseEntity<TaskDTO> computeHours4MultipleByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setStory(story_id);
+        domain.setId(task_id);
+        domain = taskService.computeHours4Multiple(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[根据产品需求任务]", tags = {"任务" },  notes = "批量处理[根据产品需求任务]")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/computehours4multiplebatch")
+    public ResponseEntity<Boolean> computeHours4MultipleByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.computeHours4MultipleBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据产品需求任务", tags = {"任务" },  notes = "根据产品需求任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/computeworkinghours")
     public ResponseEntity<TaskDTO> computeWorkingHoursByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task domain = taskMapping.toDomain(taskdto);
@@ -9880,6 +10107,24 @@ public class TaskResource {
         domain = taskService.taskNFavorites(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
+    @ApiOperation(value = "根据产品需求任务", tags = {"任务" },  notes = "根据产品需求任务")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/updateparentstatus")
+    public ResponseEntity<TaskDTO> updateParentStatusByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setStory(story_id);
+        domain.setId(task_id);
+        domain = taskService.updateParentStatus(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[根据产品需求任务]", tags = {"任务" },  notes = "批量处理[根据产品需求任务]")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/tasks/updateparentstatusbatch")
+    public ResponseEntity<Boolean> updateParentStatusByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.updateParentStatusBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品需求任务", tags = {"任务" },  notes = "根据产品需求任务")
@@ -10975,6 +11220,23 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @ApiOperation(value = "根据项目任务模块任务", tags = {"任务" },  notes = "根据项目任务模块任务")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/computehours4multiple")
+    public ResponseEntity<TaskDTO> computeHours4MultipleByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setModule(projectmodule_id);
+        domain.setId(task_id);
+        domain = taskService.computeHours4Multiple(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[根据项目任务模块任务]", tags = {"任务" },  notes = "批量处理[根据项目任务模块任务]")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/computehours4multiplebatch")
+    public ResponseEntity<Boolean> computeHours4MultipleByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.computeHours4MultipleBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
+    }
+    @ApiOperation(value = "根据项目任务模块任务", tags = {"任务" },  notes = "根据项目任务模块任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/computeworkinghours")
     public ResponseEntity<TaskDTO> computeWorkingHoursByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
         Task domain = taskMapping.toDomain(taskdto);
@@ -11420,6 +11682,24 @@ public class TaskResource {
         domain = taskService.taskNFavorites(domain) ;
         taskdto = taskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
+    @ApiOperation(value = "根据项目任务模块任务", tags = {"任务" },  notes = "根据项目任务模块任务")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/updateparentstatus")
+    public ResponseEntity<TaskDTO> updateParentStatusByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
+        Task domain = taskMapping.toDomain(taskdto);
+        domain.setModule(projectmodule_id);
+        domain.setId(task_id);
+        domain = taskService.updateParentStatus(domain) ;
+        taskdto = taskMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(taskdto);
+    }
+    @ApiOperation(value = "批量处理[根据项目任务模块任务]", tags = {"任务" },  notes = "批量处理[根据项目任务模块任务]")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/updateparentstatusbatch")
+    public ResponseEntity<Boolean> updateParentStatusByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody List<TaskDTO> taskdtos) {
+        List<Task> domains = taskMapping.toDomain(taskdtos);
+        boolean result = taskService.updateParentStatusBatch(domains);
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
     @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目任务模块任务", tags = {"任务" },  notes = "根据项目任务模块任务")

@@ -355,6 +355,9 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             else if (iPSDEAction.getName().equals("computeBeginAndEnd")) {
                 return taskService.computeBeginAndEnd((Task) args[0]);
             }
+            else if (iPSDEAction.getName().equals("computeHours4Multiple")) {
+                return taskService.computeHours4Multiple((Task) args[0]);
+            }
             else if (iPSDEAction.getName().equals("computeWorkingHours")) {
                 return taskService.computeWorkingHours((Task) args[0]);
             }
@@ -435,6 +438,9 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             }
             else if (iPSDEAction.getName().equals("TaskNFavorites")) {
                 return taskService.taskNFavorites((Task) args[0]);
+            }
+            else if (iPSDEAction.getName().equals("updateParentStatus")) {
+                return taskService.updateParentStatus((Task) args[0]);
             }
             else if (iPSDEAction.getName().equals("updateRelatedPlanStatus")) {
                 return taskService.updateRelatedPlanStatus((Task) args[0]);
@@ -567,6 +573,9 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         else if (action.equals("computeBeginAndEnd")) {
             return aroundAction("computeBeginAndEnd", point);
         }
+        else if (action.equals("computeHours4Multiple")) {
+            return aroundAction("computeHours4Multiple", point);
+        }
         else if (action.equals("computeWorkingHours")) {
             return aroundAction("computeWorkingHours", point);
         }
@@ -647,6 +656,9 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         }
         else if (action.equals("taskNFavorites")) {
             return aroundAction("TaskNFavorites", point);
+        }
+        else if (action.equals("updateParentStatus")) {
+            return aroundAction("updateParentStatus", point);
         }
         else if (action.equals("updateRelatedPlanStatus")) {
             return aroundAction("updateRelatedPlanStatus", point);

@@ -183,6 +183,18 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "ComputeHours4Multiple",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeHours4Multiple.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ComputeHours4Multiple"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "ComputeWorkingHours",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -528,6 +540,22 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TaskNFavorites"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "UpdateParentStatus",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateParentStatus.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "UpdateParentStatus"
     },
     "builtinMethod" : false
   }, {
@@ -2254,6 +2282,18 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "ComputeHours4Multiple",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ComputeHours4Multiple.json"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "ComputeHours4Multiple"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "ComputeWorkingHours",
     "methodType" : "DEACTION",
     "getPSDEAction" : {
@@ -2599,6 +2639,22 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "TaskNFavorites"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "UpdateParentStatus",
+    "methodType" : "DEACTION",
+    "getPSDEAction" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateParentStatus.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__UPDATE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "UpdateParentStatus"
     },
     "builtinMethod" : false
   }, {

@@ -286,6 +286,21 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
 
     @Override
     @Transactional
+    public Task computeHours4Multiple(Task et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean computeHours4MultipleBatch(List<Task> etList) {
+        for(Task et : etList) {
+            computeHours4Multiple(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
     public Task computeWorkingHours(Task et) {
         //自定义代码
         return et;
@@ -736,6 +751,21 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     public boolean taskNFavoritesBatch(List<Task> etList) {
         for(Task et : etList) {
             taskNFavorites(et);
+        }
+        return true;
+    }
+
+    @Override
+    @Transactional
+    public Task updateParentStatus(Task et) {
+        //自定义代码
+        return et;
+    }
+    @Override
+    @Transactional
+    public boolean updateParentStatusBatch(List<Task> etList) {
+        for(Task et : etList) {
+            updateParentStatus(et);
         }
         return true;
     }
