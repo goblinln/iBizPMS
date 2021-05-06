@@ -88,7 +88,7 @@ public class StoryStage extends EntityMP implements Serializable {
     @JSONField(name = "stage")
     @JsonProperty("stage")
     @ApiModelProperty("所处阶段")
-    private Integer stage;
+    private String stage;
     /**
      * 归属组织
      */
@@ -171,7 +171,7 @@ public class StoryStage extends EntityMP implements Serializable {
     /**
      * 设置 [所处阶段]
      */
-    public void setStage(Integer stage) {
+    public void setStage(String stage) {
         this.stage = stage;
         this.modify("stage", stage);
     }

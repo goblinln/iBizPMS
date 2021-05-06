@@ -302,13 +302,24 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组"
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "STAGE",
+          "maxValue" : 50,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[50]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[50]"
       },
       "getPSDEField" : {
         "name" : "STAGE",
         "codeName" : "Stage"
       },
-      "ruleInfo" : "默认规则",
+      "ruleInfo" : "内容长度必须小于等于[50]",
       "checkDefault" : true,
       "defaultMode" : true,
       "enableBackend" : true,
@@ -316,12 +327,13 @@
     } ],
     "codeName" : "Stage",
     "dEFType" : 1,
-    "dataType" : "INT",
+    "dataType" : "TEXT",
     "importOrder" : 1000,
     "length" : 50,
     "logicName" : "所处阶段",
     "name" : "STAGE",
-    "stdDataType" : 9,
+    "stdDataType" : 25,
+    "stringLength" : 50,
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {

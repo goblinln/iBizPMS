@@ -10,7 +10,6 @@ import { ViewLoadingService } from './view-loading-service';
  * @extends {LoadingServiceBase}
  */
 export class CtrlLoadingService {
-
     /**
      * 视图loading服务
      *
@@ -23,7 +22,7 @@ export class CtrlLoadingService {
      * 部件加载构造函数。
      * @memberof CtrlLoadingService
      */
-    constructor(ViewLoadingService: any){
+    constructor(ViewLoadingService: any) {
         this.viewLoadingService = ViewLoadingService;
     }
 
@@ -33,16 +32,16 @@ export class CtrlLoadingService {
      * @type {(ElLoadingComponent | any)}
      * @memberof LoadingServiceBase
      */
-     public elLoadingComponent: ElLoadingComponent | any;
+    public elLoadingComponent: ElLoadingComponent | any;
 
-     /**
-      * 是否加载
-      *
-      * @type {boolean}
-      * @memberof LoadingServiceBase
-      */
-     public isLoading: boolean = false;
- 
+    /**
+     * 是否加载
+     *
+     * @type {boolean}
+     * @memberof LoadingServiceBase
+     */
+    public isLoading: boolean = false;
+
     /**
      * 计算部件元素Id
      *
@@ -62,32 +61,30 @@ export class CtrlLoadingService {
     public beginLoading(controlInstance: any) {
         const selection: any = document.querySelector(this.calcCtrlId(controlInstance));
         if (!selection || this.isLoading) {
-            return
+            return;
         }
         this.elLoadingComponent = Loading.service({
             fullscreen: true,
             target: selection,
-            customClass: 'app-loading'
+            customClass: 'app-loading',
         });
         this.isLoading = true;
         // 自定义loading元素
         const userEle = `<div class="app-loading-icon">
-                        <div class="icon-content">
-                            <div class="app-loading-icon-item active-color"></div>
-                            <div class="app-loading-icon-item"></div>
-                        </div>
-                        <div class="icon-content">
-                            <div class="app-loading-icon-item"></div>
-                            <div class="app-loading-icon-item"></div>
-                        </div>
-                    </div>`
+                            <div class="icon-content">
+                                <div class="app-loading-icon-item"><i class='el-icon-loading'></i></div>
+                            </div>
+                            <div class="icon-content">
+                                <div class="app-loading-icon-item">加载中</div>
+                            </div>
+                        </div>`;
         const loadingEle = selection.lastChild;
         if (loadingEle) {
             loadingEle.innerHTML = userEle;
         }
 
         // 开启视图loading
-        if(this.viewLoadingService){
+        if (this.viewLoadingService) {
             this.viewLoadingService.beginLoading();
         }
     }
@@ -99,14 +96,13 @@ export class CtrlLoadingService {
      */
     public endLoading() {
         if (!this.isLoading) {
-            return
+            return;
         }
         this.elLoadingComponent.close();
         this.isLoading = false;
         // 关闭视图loading
-        if(this.viewLoadingService){
+        if (this.viewLoadingService) {
             this.viewLoadingService.endLoading();
         }
     }
-
 }

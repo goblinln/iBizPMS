@@ -2774,7 +2774,7 @@
                 </column>
                 <column name="STAGEDBY" remarks="" type="VARCHAR(30)">
                 </column>
-                <column name="STAGE" remarks="" type="INT">
+                <column name="STAGE" remarks="" type="VARCHAR(50)">
                 </column>
                 <column name="ORG" remarks="" type="VARCHAR(100)">
                 </column>
