@@ -109,6 +109,14 @@ public class Burn extends EntityMP implements Serializable {
     @ApiModelProperty("日期")
     private Timestamp date;
     /**
+     * 总计消耗
+     */
+    @TableField(value = "`CONSUMED`")
+    @JSONField(name = "consumed")
+    @JsonProperty("consumed")
+    @ApiModelProperty("总计消耗")
+    private Double consumed;
+    /**
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
@@ -126,14 +134,6 @@ public class Burn extends EntityMP implements Serializable {
     @JsonProperty("id")
     @ApiModelProperty("主键")
     private String id;
-    /**
-     * 总计消耗
-     */
-    @TableField(value = "`CONSUMED`")
-    @JSONField(name = "consumed")
-    @JsonProperty("consumed")
-    @ApiModelProperty("总计消耗")
-    private Double consumed;
     /**
      * 预计剩余
      */

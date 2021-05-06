@@ -43,9 +43,7 @@ export class StorySpecBaseService extends EntityBaseService<IStorySpec> {
             const s = await ___ibz___.gs.getStoryService();
             const data = await s.getLocal2(context, entity.story);
             if (data) {
-                entity.title = data.title;
                 entity.story = data.id;
-                entity.story = data;
             }
         }
         return entity!;
@@ -60,9 +58,7 @@ export class StorySpecBaseService extends EntityBaseService<IStorySpec> {
             const s = await ___ibz___.gs.getStoryService();
             const data = await s.getLocal2(_context, _context.story);
             if (data) {
-                entity.title = data.title;
                 entity.story = data.id;
-                entity.story = data;
             }
         }
         return new StorySpec(entity);

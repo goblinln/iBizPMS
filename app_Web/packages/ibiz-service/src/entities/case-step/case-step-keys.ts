@@ -7,6 +7,7 @@ export default [
     'deptname',
     'type',
     'createby',
+    'version',
     'id',
     'desc',
     'expect',
@@ -14,7 +15,6 @@ export default [
     'updateby',
     'runid',
     'org',
-    'version',
     'ibizcase',
     'parent',
 ];

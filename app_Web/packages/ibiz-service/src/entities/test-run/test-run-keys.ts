@@ -1,6 +1,7 @@
 export default [
     'deptname',
     'lastrunresult',
+    'version',
     'lastrundate',
     'org',
     'updateby',
@@ -11,7 +12,6 @@ export default [
     'id',
     'orgname',
     'createby',
-    'version',
     'ibizcase',
     'task',
 ];

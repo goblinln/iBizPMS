@@ -187,6 +187,11 @@
     "stdDataType" : 25,
     "stringLength" : 30
   }, {
+    "codeName" : "Version",
+    "logicName" : "用例版本",
+    "name" : "VERSION",
+    "stdDataType" : 9
+  }, {
     "codeName" : "Dept",
     "logicName" : "归属部门",
     "name" : "DEPT",
@@ -251,11 +256,6 @@
     "name" : "ID",
     "stdDataType" : 1,
     "keyField" : true
-  }, {
-    "codeName" : "Version",
-    "logicName" : "用例版本",
-    "name" : "VERSION",
-    "stdDataType" : 9
   }, {
     "codeName" : "Story",
     "logicName" : "相关需求",

@@ -63,6 +63,15 @@ public class TestResultDTO extends DTOBase implements Serializable {
     private String lastrunner;
 
     /**
+     * 属性 [VERSION]
+     *
+     */
+    @JSONField(name = "version")
+    @JsonProperty("version")
+    @ApiModelProperty("用例版本")
+    private Integer version;
+
+    /**
      * 属性 [DEPT]
      *
      */
@@ -170,15 +179,6 @@ public class TestResultDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("编号")
     private Long id;
-
-    /**
-     * 属性 [VERSION]
-     *
-     */
-    @JSONField(name = "version")
-    @JsonProperty("version")
-    @ApiModelProperty("用例版本")
-    private Integer version;
 
     /**
      * 属性 [STORY]
@@ -290,6 +290,14 @@ public class TestResultDTO extends DTOBase implements Serializable {
     }
 
     /**
+     * 设置 [VERSION]
+     */
+    public void setVersion(Integer  version){
+        this.version = version ;
+        this.modify("version",version);
+    }
+
+    /**
      * 设置 [STEPRESULTS]
      */
     public void setStepresults(String  stepresults){
@@ -327,14 +335,6 @@ public class TestResultDTO extends DTOBase implements Serializable {
     public void setDate(Timestamp  date){
         this.date = date ;
         this.modify("date",date);
-    }
-
-    /**
-     * 设置 [VERSION]
-     */
-    public void setVersion(Integer  version){
-        this.version = version ;
-        this.modify("version",version);
     }
 
     /**

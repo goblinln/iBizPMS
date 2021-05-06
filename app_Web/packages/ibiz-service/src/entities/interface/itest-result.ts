@@ -21,6 +21,10 @@ export interface ITestResult extends IEntityBase {
      */
     lastrunner?: any;
     /**
+     * 用例版本
+     */
+    version?: any;
+    /**
      * 归属部门
      */
     dept?: any;
@@ -66,10 +70,6 @@ export interface ITestResult extends IEntityBase {
      * 编号
      */
     id?: any;
-    /**
-     * 用例版本
-     */
-    version?: any;
     /**
      * 相关需求
      */

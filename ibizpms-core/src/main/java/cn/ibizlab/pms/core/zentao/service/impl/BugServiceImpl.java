@@ -1152,7 +1152,6 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
                 ztcase=majorEntity;
             }
             et.setCasename(ztcase.getTitle());
-            et.setCaseversion(ztcase.getVersion());
         }
         //实体关系[DER1N_ZT_BUG_ZT_MODULE_MODULE]
         if(!ObjectUtils.isEmpty(et.getModule())){
@@ -1183,16 +1182,6 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
                 ztproject=majorEntity;
             }
             et.setProjectname(ztproject.getName());
-        }
-        //实体关系[DER1N_ZT_BUG_ZT_REPO_REPO]
-        if(!ObjectUtils.isEmpty(et.getRepo())){
-            cn.ibizlab.pms.core.zentao.domain.Repo ztrepo=et.getZtrepo();
-            if(ObjectUtils.isEmpty(ztrepo)){
-                cn.ibizlab.pms.core.zentao.domain.Repo majorEntity=repoService.get(et.getRepo());
-                et.setZtrepo(majorEntity);
-                ztrepo=majorEntity;
-            }
-            et.setRepotype(ztrepo.getScm());
         }
         //实体关系[DER1N_ZT_BUG_ZT_STORY_STORY]
         if(!ObjectUtils.isEmpty(et.getStory())){

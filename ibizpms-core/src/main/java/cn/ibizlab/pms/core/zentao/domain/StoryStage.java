@@ -74,6 +74,22 @@ public class StoryStage extends EntityMP implements Serializable {
     @ApiModelProperty("由谁更新")
     private String updateby;
     /**
+     * 设置阶段者
+     */
+    @TableField(value = "`STAGEDBY`")
+    @JSONField(name = "stagedby")
+    @JsonProperty("stagedby")
+    @ApiModelProperty("设置阶段者")
+    private String stagedby;
+    /**
+     * 所处阶段
+     */
+    @TableField(value = "`STAGE`")
+    @JSONField(name = "stage")
+    @JsonProperty("stage")
+    @ApiModelProperty("所处阶段")
+    private Integer stage;
+    /**
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)
@@ -109,22 +125,6 @@ public class StoryStage extends EntityMP implements Serializable {
     @JsonProperty("deptname")
     @ApiModelProperty("归属部门名")
     private String deptname;
-    /**
-     * 设置阶段者
-     */
-    @TableField(value = "`STAGEDBY`")
-    @JSONField(name = "stagedby")
-    @JsonProperty("stagedby")
-    @ApiModelProperty("设置阶段者")
-    private String stagedby;
-    /**
-     * 所处阶段
-     */
-    @TableField(value = "`STAGE`")
-    @JSONField(name = "stage")
-    @JsonProperty("stage")
-    @ApiModelProperty("所处阶段")
-    private String stage;
     /**
      * 需求
      */
@@ -171,7 +171,7 @@ public class StoryStage extends EntityMP implements Serializable {
     /**
      * 设置 [所处阶段]
      */
-    public void setStage(String stage) {
+    public void setStage(Integer stage) {
         this.stage = stage;
         this.modify("stage", stage);
     }

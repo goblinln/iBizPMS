@@ -62,6 +62,10 @@ export abstract class BurnBase extends EntityBase implements IBurn {
      */
     date?: any;
     /**
+     * 总计消耗
+     */
+    consumed?: any;
+    /**
      * 归属组织
      */
     org?: any;
@@ -69,10 +73,6 @@ export abstract class BurnBase extends EntityBase implements IBurn {
      * 主键
      */
     id?: any;
-    /**
-     * 总计消耗
-     */
-    consumed?: any;
     /**
      * 预计剩余
      */

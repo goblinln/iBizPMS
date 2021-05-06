@@ -3734,6 +3734,43 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CASEVERSION",
+      "dBType" : "MYSQL5",
+      "name" : "CASEVERSION",
+      "queryCodeExp" : "t1.`CASEVERSION`",
+      "standardColumnName" : "`CASEVERSION`",
+      "valueAutoGen" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "CASEVERSION",
+        "codeName" : "CaseVersion"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "CaseVersion",
+    "dEFType" : 1,
+    "dataType" : "INT",
+    "defaultValue" : "1",
+    "importOrder" : 1000,
+    "length" : 6,
+    "logicName" : "用例版本",
+    "name" : "CASEVERSION",
+    "stdDataType" : 9,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "PRI",
       "dBType" : "MYSQL5",
       "name" : "PRI",
@@ -3823,6 +3860,53 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSCODELISTS/Bug__os.json"
     },
+    "stdDataType" : 25,
+    "stringLength" : 30,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "REPOTYPE",
+      "dBType" : "MYSQL5",
+      "name" : "REPOTYPE",
+      "queryCodeExp" : "t1.`REPOTYPE`",
+      "standardColumnName" : "`REPOTYPE`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "REPOTYPE",
+          "maxValue" : 30,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[30]"
+      },
+      "getPSDEField" : {
+        "name" : "REPOTYPE",
+        "codeName" : "RepoType"
+      },
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "RepoType",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 30,
+    "logicName" : "代码类型",
+    "name" : "REPOTYPE",
     "stdDataType" : 25,
     "stringLength" : 30,
     "valueFormat" : "%1$s"
@@ -4327,112 +4411,6 @@
     "valueFormat" : "%1$s",
     "linkDEField" : true,
     "phisicalDEField" : false
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "CASEVERSION",
-      "dBType" : "MYSQL5",
-      "name" : "CASEVERSION",
-      "queryCodeExp" : "t1.`CASEVERSION`",
-      "standardColumnName" : "`CASEVERSION`",
-      "valueAutoGen" : true
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "CASEVERSION",
-        "codeName" : "CaseVersion"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "CaseVersion",
-    "dEFType" : 1,
-    "dataType" : "PICKUPDATA",
-    "defaultValue" : "1",
-    "importOrder" : 1000,
-    "length" : 6,
-    "logicName" : "用例版本",
-    "name" : "CASEVERSION",
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/CurCaseVersion.json"
-    },
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_CASE_CASEID.json"
-    },
-    "getRelatedPSDEField" : {
-      "name" : "VERSION",
-      "codeName" : "Version"
-    },
-    "stdDataType" : 9,
-    "valueFormat" : "%1$s",
-    "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "REPOTYPE",
-      "dBType" : "MYSQL5",
-      "name" : "REPOTYPE",
-      "queryCodeExp" : "t1.`REPOTYPE`",
-      "standardColumnName" : "`REPOTYPE`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "REPOTYPE",
-          "maxValue" : 30,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[30]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[30]"
-      },
-      "getPSDEField" : {
-        "name" : "REPOTYPE",
-        "codeName" : "RepoType"
-      },
-      "ruleInfo" : "内容长度必须小于等于[30]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "RepoType",
-    "dEFType" : 1,
-    "dataType" : "PICKUPDATA",
-    "importOrder" : 1000,
-    "length" : 30,
-    "logicName" : "代码类型",
-    "name" : "REPOTYPE",
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_REPO_REPO.json"
-    },
-    "getRelatedPSDEField" : {
-      "name" : "SCM",
-      "codeName" : "SCM"
-    },
-    "stdDataType" : 25,
-    "stringLength" : 30,
-    "valueFormat" : "%1$s",
-    "linkDEField" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "MODULENAME",

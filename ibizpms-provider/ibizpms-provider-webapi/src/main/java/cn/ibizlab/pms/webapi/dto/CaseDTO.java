@@ -170,6 +170,15 @@ public class CaseDTO extends DTOBase implements Serializable {
     private String noticeusers;
 
     /**
+     * 属性 [FROMCASEVERSION]
+     *
+     */
+    @JSONField(name = "fromcaseversion")
+    @JsonProperty("fromcaseversion")
+    @ApiModelProperty("来源用例版本")
+    private Integer fromcaseversion;
+
+    /**
      * 属性 [VERSION]
      *
      */
@@ -368,6 +377,15 @@ public class CaseDTO extends DTOBase implements Serializable {
     private String deleted;
 
     /**
+     * 属性 [STORYVERSION]
+     *
+     */
+    @JSONField(name = "storyversion")
+    @JsonProperty("storyversion")
+    @ApiModelProperty("需求版本")
+    private Integer storyversion;
+
+    /**
      * 属性 [REVIEWEDDATE]
      *
      */
@@ -526,15 +544,6 @@ public class CaseDTO extends DTOBase implements Serializable {
     private String libname;
 
     /**
-     * 属性 [FROMCASEVERSION]
-     *
-     */
-    @JSONField(name = "fromcaseversion")
-    @JsonProperty("fromcaseversion")
-    @ApiModelProperty("来源用例版本")
-    private Integer fromcaseversion;
-
-    /**
      * 属性 [STORYNAME]
      *
      */
@@ -553,15 +562,6 @@ public class CaseDTO extends DTOBase implements Serializable {
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
     @ApiModelProperty("模块名称")
     private String modulename;
-
-    /**
-     * 属性 [STORYVERSION]
-     *
-     */
-    @JSONField(name = "storyversion")
-    @JsonProperty("storyversion")
-    @ApiModelProperty("需求版本")
-    private Integer storyversion;
 
     /**
      * 属性 [PRODUCTNAME]
@@ -701,6 +701,14 @@ public class CaseDTO extends DTOBase implements Serializable {
     }
 
     /**
+     * 设置 [FROMCASEVERSION]
+     */
+    public void setFromcaseversion(Integer  fromcaseversion){
+        this.fromcaseversion = fromcaseversion ;
+        this.modify("fromcaseversion",fromcaseversion);
+    }
+
+    /**
      * 设置 [VERSION]
      */
     public void setVersion(Integer  version){
@@ -762,6 +770,14 @@ public class CaseDTO extends DTOBase implements Serializable {
     public void setReviewedby(String  reviewedby){
         this.reviewedby = reviewedby ;
         this.modify("reviewedby",reviewedby);
+    }
+
+    /**
+     * 设置 [STORYVERSION]
+     */
+    public void setStoryversion(Integer  storyversion){
+        this.storyversion = storyversion ;
+        this.modify("storyversion",storyversion);
     }
 
     /**
@@ -850,22 +866,6 @@ public class CaseDTO extends DTOBase implements Serializable {
     public void setLastrunner(String  lastrunner){
         this.lastrunner = lastrunner ;
         this.modify("lastrunner",lastrunner);
-    }
-
-    /**
-     * 设置 [FROMCASEVERSION]
-     */
-    public void setFromcaseversion(Integer  fromcaseversion){
-        this.fromcaseversion = fromcaseversion ;
-        this.modify("fromcaseversion",fromcaseversion);
-    }
-
-    /**
-     * 设置 [STORYVERSION]
-     */
-    public void setStoryversion(Integer  storyversion){
-        this.storyversion = storyversion ;
-        this.modify("storyversion",storyversion);
     }
 
     /**

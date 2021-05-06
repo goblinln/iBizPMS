@@ -359,7 +359,6 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
                 et.setZtcase(majorEntity);
                 ztcase=majorEntity;
             }
-            et.setVersion(ztcase.getVersion());
             et.setStory(ztcase.getStory());
             et.setTitle(ztcase.getTitle());
             et.setModulename(ztcase.getModulename());

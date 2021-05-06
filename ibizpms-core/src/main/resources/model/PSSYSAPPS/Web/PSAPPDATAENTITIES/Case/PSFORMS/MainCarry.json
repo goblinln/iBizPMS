@@ -733,24 +733,17 @@
               "caption" : "用例版本",
               "codeName" : "version",
               "enableCond" : 3,
-              "ignoreInput" : 3,
+              "ignoreInput" : 0,
               "name" : "version",
               "getPSAppDEField" : {
                 "name" : "VERSION",
                 "codeName" : "Version"
               },
               "getPSEditor" : {
-                "editorType" : "SPAN",
-                "name" : "version",
-                "getPSAppCodeList" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CurCaseVersion.json"
-                },
-                "editable" : false,
-                "enableLinkView" : false
+                "editorType" : "TEXTBOX",
+                "name" : "version"
               },
-              "allowEmpty" : true,
-              "convertToCodeItemText" : true
+              "allowEmpty" : true
             } ],
             "pagingSize" : 500,
             "getRemovePSControlAction" : {

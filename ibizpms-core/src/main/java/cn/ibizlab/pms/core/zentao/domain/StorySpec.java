@@ -65,6 +65,14 @@ public class StorySpec extends EntityMP implements Serializable {
     @ApiModelProperty("需求描述	")
     private String spec;
     /**
+     * 需求名称
+     */
+    @TableField(value = "`TITLE`")
+    @JSONField(name = "title")
+    @JsonProperty("title")
+    @ApiModelProperty("需求名称")
+    private String title;
+    /**
      * 由谁更新
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMANNAME)
@@ -128,14 +136,6 @@ public class StorySpec extends EntityMP implements Serializable {
     @ApiModelProperty("归属部门名")
     private String deptname;
     /**
-     * 需求名称
-     */
-    @TableField(value = "`TITLE`")
-    @JSONField(name = "title")
-    @JsonProperty("title")
-    @ApiModelProperty("需求名称")
-    private String title;
-    /**
      * 版本号
      */
     @TableField(value = "`VERSION`")
@@ -171,19 +171,19 @@ public class StorySpec extends EntityMP implements Serializable {
     }
 
     /**
-     * 设置 [验收标准]
-     */
-    public void setVerify(String verify) {
-        this.verify = verify;
-        this.modify("verify", verify);
-    }
-
-    /**
      * 设置 [需求名称]
      */
     public void setTitle(String title) {
         this.title = title;
         this.modify("title", title);
+    }
+
+    /**
+     * 设置 [验收标准]
+     */
+    public void setVerify(String verify) {
+        this.verify = verify;
+        this.modify("verify", verify);
     }
 
     /**

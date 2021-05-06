@@ -243,6 +243,88 @@
     "systemReserver" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "STAGEDBY",
+      "dBType" : "MYSQL5",
+      "name" : "STAGEDBY",
+      "queryCodeExp" : "t1.`STAGEDBY`",
+      "standardColumnName" : "`STAGEDBY`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "STAGEDBY",
+          "maxValue" : 30,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[30]"
+      },
+      "getPSDEField" : {
+        "name" : "STAGEDBY",
+        "codeName" : "StagedBy"
+      },
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "StagedBy",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 30,
+    "logicName" : "设置阶段者",
+    "name" : "STAGEDBY",
+    "stdDataType" : 25,
+    "stringLength" : 30,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "STAGE",
+      "dBType" : "MYSQL5",
+      "name" : "STAGE",
+      "queryCodeExp" : "t1.`STAGE`",
+      "standardColumnName" : "`STAGE`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "STAGE",
+        "codeName" : "Stage"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Stage",
+    "dEFType" : 1,
+    "dataType" : "INT",
+    "importOrder" : 1000,
+    "length" : 50,
+    "logicName" : "所处阶段",
+    "name" : "STAGE",
+    "stdDataType" : 9,
+    "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "ORG",
       "dBType" : "MYSQL5",
       "name" : "ORG",
@@ -438,126 +520,6 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "STAGEDBY",
-      "dBType" : "MYSQL5",
-      "name" : "STAGEDBY",
-      "queryCodeExp" : "t1.`STAGEDBY`",
-      "standardColumnName" : "`STAGEDBY`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "STAGEDBY",
-          "maxValue" : 30,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[30]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[30]"
-      },
-      "getPSDEField" : {
-        "name" : "STAGEDBY",
-        "codeName" : "StagedBy"
-      },
-      "ruleInfo" : "内容长度必须小于等于[30]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "StagedBy",
-    "dEFType" : 1,
-    "dataType" : "PICKUPDATA",
-    "importOrder" : 1000,
-    "length" : 30,
-    "logicName" : "设置阶段者",
-    "name" : "STAGEDBY",
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
-    },
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StoryStage/PSDERS/DER1N_ZT_STORYSTAGE_ZT_STORY_STORY.json"
-    },
-    "getRelatedPSDEField" : {
-      "name" : "STAGEDBY",
-      "codeName" : "StagedBy"
-    },
-    "stdDataType" : 25,
-    "stringLength" : 30,
-    "valueFormat" : "%1$s",
-    "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "STAGE",
-      "dBType" : "MYSQL5",
-      "name" : "STAGE",
-      "queryCodeExp" : "t1.`STAGE`",
-      "standardColumnName" : "`STAGE`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "STAGE",
-          "maxValue" : 50,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[50]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[50]"
-      },
-      "getPSDEField" : {
-        "name" : "STAGE",
-        "codeName" : "Stage"
-      },
-      "ruleInfo" : "内容长度必须小于等于[50]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Stage",
-    "dEFType" : 1,
-    "dataType" : "PICKUPDATA",
-    "importOrder" : 1000,
-    "length" : 50,
-    "logicName" : "所处阶段",
-    "name" : "STAGE",
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/Story__stage.json"
-    },
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/StoryStage/PSDERS/DER1N_ZT_STORYSTAGE_ZT_STORY_STORY.json"
-    },
-    "getRelatedPSDEField" : {
-      "name" : "STAGE",
-      "codeName" : "Stage"
-    },
-    "stdDataType" : 25,
-    "stringLength" : 50,
-    "valueFormat" : "%1$s",
-    "linkDEField" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "STORY",

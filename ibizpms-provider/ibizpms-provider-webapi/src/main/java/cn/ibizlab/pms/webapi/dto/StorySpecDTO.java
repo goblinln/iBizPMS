@@ -53,6 +53,16 @@ public class StorySpecDTO extends DTOBase implements Serializable {
     private String spec;
 
     /**
+     * 属性 [TITLE]
+     *
+     */
+    @JSONField(name = "title")
+    @JsonProperty("title")
+    @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
+    @ApiModelProperty("需求名称")
+    private String title;
+
+    /**
      * 属性 [UPDATEBY]
      *
      */
@@ -123,16 +133,6 @@ public class StorySpecDTO extends DTOBase implements Serializable {
     private String deptname;
 
     /**
-     * 属性 [TITLE]
-     *
-     */
-    @JSONField(name = "title")
-    @JsonProperty("title")
-    @Size(min = 0, max = 255, message = "内容长度必须小于等于[255]")
-    @ApiModelProperty("需求名称")
-    private String title;
-
-    /**
      * 属性 [VERSION]
      *
      */
@@ -161,19 +161,19 @@ public class StorySpecDTO extends DTOBase implements Serializable {
     }
 
     /**
-     * 设置 [VERIFY]
-     */
-    public void setVerify(String  verify){
-        this.verify = verify ;
-        this.modify("verify",verify);
-    }
-
-    /**
      * 设置 [TITLE]
      */
     public void setTitle(String  title){
         this.title = title ;
         this.modify("title",title);
+    }
+
+    /**
+     * 设置 [VERIFY]
+     */
+    public void setVerify(String  verify){
+        this.verify = verify ;
+        this.modify("verify",verify);
     }
 
     /**

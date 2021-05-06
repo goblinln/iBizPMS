@@ -74,9 +74,6 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Override
     @Transactional
     public boolean create(SuiteCase et) {
-        if(!suitecaseRuntime.isRtmodel()){
-            fillParentData(et);
-        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -87,18 +84,12 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Override
     @Transactional
     public void createBatch(List<SuiteCase> list) {
-        if(!suitecaseRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(SuiteCase et) {
-        if(!suitecaseRuntime.isRtmodel()){
-            fillParentData(et);
-        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -109,9 +100,6 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Override
     @Transactional
     public void updateBatch(List<SuiteCase> list) {
-        if(!suitecaseRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
         updateBatchById(list, batchSize);
     }
 
@@ -166,9 +154,6 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
 
     @Override
     public SuiteCase getDraft(SuiteCase et) {
-        if(!suitecaseRuntime.isRtmodel()){
-            fillParentData(et);
-        }
         return et;
     }
 
@@ -198,9 +183,6 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Override
     @Transactional
     public boolean saveBatch(Collection<SuiteCase> list) {
-        if(!suitecaseRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
         List<SuiteCase> create = new ArrayList<>();
         List<SuiteCase> update = new ArrayList<>();
         for (SuiteCase et : list) {
@@ -222,9 +204,6 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Override
     @Transactional
     public void saveBatch(List<SuiteCase> list) {
-        if(!suitecaseRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
         List<SuiteCase> create = new ArrayList<>();
         List<SuiteCase> update = new ArrayList<>();
         for (SuiteCase et : list) {
@@ -290,22 +269,6 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
 
 
 
-    /**
-     * 为当前实体填充父数据（外键值文本、外键值附加数据）
-     * @param et
-     */
-    private void fillParentData(SuiteCase et){
-        //实体关系[DER1N_ZT_SUITECASE_ZT_CASE_CASE]
-        if(!ObjectUtils.isEmpty(et.getIbizcase())){
-            cn.ibizlab.pms.core.zentao.domain.Case ztcase=et.getZtcase();
-            if(ObjectUtils.isEmpty(ztcase)){
-                cn.ibizlab.pms.core.zentao.domain.Case majorEntity=caseService.get(et.getIbizcase());
-                et.setZtcase(majorEntity);
-                ztcase=majorEntity;
-            }
-            et.setVersion(ztcase.getVersion());
-        }
-    }
 
 
 

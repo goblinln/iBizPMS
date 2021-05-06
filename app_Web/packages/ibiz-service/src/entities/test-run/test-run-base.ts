@@ -44,6 +44,10 @@ export abstract class TestRunBase extends EntityBase implements ITestRun {
      */
     lastrunresult?: 'n/a' | 'pass' | 'fail' | 'blocked';
     /**
+     * 用例版本
+     */
+    version?: any;
+    /**
      * 最后执行时间
      */
     lastrundate?: any;
@@ -85,10 +89,6 @@ export abstract class TestRunBase extends EntityBase implements ITestRun {
      * 由谁创建
      */
     createby?: any;
-    /**
-     * 用例版本
-     */
-    version?: any;
     /**
      * 测试用例
      */

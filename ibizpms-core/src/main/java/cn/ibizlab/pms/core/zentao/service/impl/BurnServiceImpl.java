@@ -71,9 +71,6 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     @Override
     @Transactional
     public boolean create(Burn et) {
-        if(!burnRuntime.isRtmodel()){
-            fillParentData(et);
-        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -84,18 +81,12 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     @Override
     @Transactional
     public void createBatch(List<Burn> list) {
-        if(!burnRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(Burn et) {
-        if(!burnRuntime.isRtmodel()){
-            fillParentData(et);
-        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -106,9 +97,6 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     @Override
     @Transactional
     public void updateBatch(List<Burn> list) {
-        if(!burnRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
         updateBatchById(list, batchSize);
     }
 
@@ -163,9 +151,6 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
 
     @Override
     public Burn getDraft(Burn et) {
-        if(!burnRuntime.isRtmodel()){
-            fillParentData(et);
-        }
         return et;
     }
 
@@ -210,9 +195,6 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     @Override
     @Transactional
     public boolean saveBatch(Collection<Burn> list) {
-        if(!burnRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
         List<Burn> create = new ArrayList<>();
         List<Burn> update = new ArrayList<>();
         for (Burn et : list) {
@@ -234,9 +216,6 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     @Override
     @Transactional
     public void saveBatch(List<Burn> list) {
-        if(!burnRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
         List<Burn> create = new ArrayList<>();
         List<Burn> update = new ArrayList<>();
         for (Burn et : list) {
@@ -305,24 +284,6 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
 
 
 
-    /**
-     * 为当前实体填充父数据（外键值文本、外键值附加数据）
-     * @param et
-     */
-    private void fillParentData(Burn et){
-        //实体关系[DER1N_ZT_BURN_ZT_TASK_TASK]
-        if(!ObjectUtils.isEmpty(et.getTask())){
-            cn.ibizlab.pms.core.zentao.domain.Task zttask=et.getZttask();
-            if(ObjectUtils.isEmpty(zttask)){
-                cn.ibizlab.pms.core.zentao.domain.Task majorEntity=taskService.get(et.getTask());
-                et.setZttask(majorEntity);
-                zttask=majorEntity;
-            }
-            et.setConsumed(zttask.getConsumed());
-            et.setLeft(zttask.getLeft());
-            et.setEstimate(zttask.getEstimate());
-        }
-    }
 
 
 

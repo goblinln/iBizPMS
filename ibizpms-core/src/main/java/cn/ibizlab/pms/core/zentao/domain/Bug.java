@@ -512,6 +512,15 @@ public class Bug extends EntityMP implements Serializable {
     @ApiModelProperty("解决版本")
     private String resolvedbuild;
     /**
+     * 用例版本
+     */
+    @DEField(defaultValue = "1")
+    @TableField(value = "`CASEVERSION`")
+    @JSONField(name = "caseversion")
+    @JsonProperty("caseversion")
+    @ApiModelProperty("用例版本")
+    private Integer caseversion;
+    /**
      * 优先级
      */
     @DEField(defaultValue = "3")
@@ -529,6 +538,14 @@ public class Bug extends EntityMP implements Serializable {
     @JsonProperty("os")
     @ApiModelProperty("操作系统")
     private String os;
+    /**
+     * 代码类型
+     */
+    @TableField(value = "`REPOTYPE`")
+    @JSONField(name = "repotype")
+    @JsonProperty("repotype")
+    @ApiModelProperty("代码类型")
+    private String repotype;
     /**
      * hardware
      */
@@ -603,23 +620,6 @@ public class Bug extends EntityMP implements Serializable {
     @JsonProperty("storyname")
     @ApiModelProperty("相关需求")
     private String storyname;
-    /**
-     * 用例版本
-     */
-    @DEField(defaultValue = "1")
-    @TableField(value = "`CASEVERSION`")
-    @JSONField(name = "caseversion")
-    @JsonProperty("caseversion")
-    @ApiModelProperty("用例版本")
-    private Integer caseversion;
-    /**
-     * 代码类型
-     */
-    @TableField(value = "`REPOTYPE`")
-    @JSONField(name = "repotype")
-    @JsonProperty("repotype")
-    @ApiModelProperty("代码类型")
-    private String repotype;
     /**
      * 模块名称
      */
@@ -1160,6 +1160,14 @@ public class Bug extends EntityMP implements Serializable {
     }
 
     /**
+     * 设置 [用例版本]
+     */
+    public void setCaseversion(Integer caseversion) {
+        this.caseversion = caseversion;
+        this.modify("caseversion", caseversion);
+    }
+
+    /**
      * 设置 [优先级]
      */
     public void setPri(Integer pri) {
@@ -1176,6 +1184,14 @@ public class Bug extends EntityMP implements Serializable {
     }
 
     /**
+     * 设置 [代码类型]
+     */
+    public void setRepotype(String repotype) {
+        this.repotype = repotype;
+        this.modify("repotype", repotype);
+    }
+
+    /**
      * 设置 [hardware]
      */
     public void setHardware(String hardware) {
@@ -1189,22 +1205,6 @@ public class Bug extends EntityMP implements Serializable {
     public void setTitle(String title) {
         this.title = title;
         this.modify("title", title);
-    }
-
-    /**
-     * 设置 [用例版本]
-     */
-    public void setCaseversion(Integer caseversion) {
-        this.caseversion = caseversion;
-        this.modify("caseversion", caseversion);
-    }
-
-    /**
-     * 设置 [代码类型]
-     */
-    public void setRepotype(String repotype) {
-        this.repotype = repotype;
-        this.modify("repotype", repotype);
     }
 
     /**

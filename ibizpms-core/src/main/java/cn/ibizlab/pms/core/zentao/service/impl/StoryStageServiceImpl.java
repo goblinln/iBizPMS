@@ -71,9 +71,6 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Override
     @Transactional
     public boolean create(StoryStage et) {
-        if(!storystageRuntime.isRtmodel()){
-            fillParentData(et);
-        }
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
@@ -84,18 +81,12 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Override
     @Transactional
     public void createBatch(List<StoryStage> list) {
-        if(!storystageRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
         this.saveBatch(list, batchSize);
     }
 
     @Override
     @Transactional
     public boolean update(StoryStage et) {
-        if(!storystageRuntime.isRtmodel()){
-            fillParentData(et);
-        }
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
         }
@@ -106,9 +97,6 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Override
     @Transactional
     public void updateBatch(List<StoryStage> list) {
-        if(!storystageRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
         updateBatchById(list, batchSize);
     }
 
@@ -163,9 +151,6 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
 
     @Override
     public StoryStage getDraft(StoryStage et) {
-        if(!storystageRuntime.isRtmodel()){
-            fillParentData(et);
-        }
         return et;
     }
 
@@ -195,9 +180,6 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Override
     @Transactional
     public boolean saveBatch(Collection<StoryStage> list) {
-        if(!storystageRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
         List<StoryStage> create = new ArrayList<>();
         List<StoryStage> update = new ArrayList<>();
         for (StoryStage et : list) {
@@ -219,9 +201,6 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Override
     @Transactional
     public void saveBatch(List<StoryStage> list) {
-        if(!storystageRuntime.isRtmodel()){
-            list.forEach(item->fillParentData(item));
-        }
         List<StoryStage> create = new ArrayList<>();
         List<StoryStage> update = new ArrayList<>();
         for (StoryStage et : list) {
@@ -310,23 +289,6 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
 
 
 
-    /**
-     * 为当前实体填充父数据（外键值文本、外键值附加数据）
-     * @param et
-     */
-    private void fillParentData(StoryStage et){
-        //实体关系[DER1N_ZT_STORYSTAGE_ZT_STORY_STORY]
-        if(!ObjectUtils.isEmpty(et.getStory())){
-            cn.ibizlab.pms.core.zentao.domain.Story ztstory=et.getZtstory();
-            if(ObjectUtils.isEmpty(ztstory)){
-                cn.ibizlab.pms.core.zentao.domain.Story majorEntity=storyService.get(et.getStory());
-                et.setZtstory(majorEntity);
-                ztstory=majorEntity;
-            }
-            et.setStagedby(ztstory.getStagedby());
-            et.setStage(ztstory.getStage());
-        }
-    }
 
 
 

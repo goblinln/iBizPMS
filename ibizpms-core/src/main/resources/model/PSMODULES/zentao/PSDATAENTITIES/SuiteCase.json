@@ -466,26 +466,13 @@
     } ],
     "codeName" : "Version",
     "dEFType" : 1,
-    "dataType" : "PICKUPDATA",
+    "dataType" : "INT",
     "importOrder" : 1000,
     "length" : 5,
     "logicName" : "用例版本",
     "name" : "VERSION",
-    "getPSCodeList" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/CurCaseVersion.json"
-    },
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDERS/DER1N_ZT_SUITECASE_ZT_CASE_CASE.json"
-    },
-    "getRelatedPSDEField" : {
-      "name" : "VERSION",
-      "codeName" : "Version"
-    },
     "stdDataType" : 9,
-    "valueFormat" : "%1$s",
-    "linkDEField" : true
+    "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "SUITE",

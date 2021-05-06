@@ -196,19 +196,19 @@
                 </column>
                 <column name="RESOLVEDBUILD" remarks="" type="VARCHAR(255)">
                 </column>
+                <column name="CASEVERSION" remarks="" type="INT">
+                </column>
                 <column name="PRI" remarks="" type="INT">
                 </column>
                 <column name="OS" remarks="" type="VARCHAR(30)">
+                </column>
+                <column name="REPOTYPE" remarks="" type="VARCHAR(30)">
                 </column>
                 <column name="HARDWARE" remarks="" type="VARCHAR(30)">
                 </column>
                 <column name="LASTEDITEDBY" remarks="" type="VARCHAR(200)">
                 </column>
                 <column name="TITLE" remarks="" type="VARCHAR(255)">
-                </column>
-                <column name="CASEVERSION" remarks="" type="INT">
-                </column>
-                <column name="REPOTYPE" remarks="" type="VARCHAR(30)">
                 </column>
                 <column name="TOSTORY" remarks="" type="BIGINT">
                 </column>
@@ -306,12 +306,12 @@
                 </column>
                 <column name="DATE" remarks="" type="DATETIME">
                 </column>
+                <column name="CONSUMED" remarks="" type="FLOAT">
+                </column>
                 <column name="ORG" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="ID" remarks="" type="VARCHAR(60)">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_BURN_ID"/>
-                </column>
-                <column name="CONSUMED" remarks="" type="FLOAT">
                 </column>
                 <column name="LEFT" remarks="" type="FLOAT">
                 </column>
@@ -348,6 +348,8 @@
                 </column>
                 <column name="HOWRUN" remarks="" type="VARCHAR(30)">
                 </column>
+                <column name="FROMCASEVERSION" remarks="" type="INT">
+                </column>
                 <column name="VERSION" remarks="" type="INT">
                 </column>
                 <column name="SCRIPTEDBY" remarks="" type="VARCHAR(30)">
@@ -376,6 +378,8 @@
                 </column>
                 <column name="DELETED" remarks="" type="VARCHAR(1)">
                 </column>
+                <column name="STORYVERSION" remarks="" type="INT">
+                </column>
                 <column name="REVIEWEDDATE" remarks="" type="DATETIME">
                 </column>
                 <column name="PRI" remarks="" type="INT">
@@ -400,10 +404,6 @@
                 <column name="PRECONDITION" remarks="" type="TEXT(65535)">
                 </column>
                 <column name="LASTRUNNER" remarks="" type="VARCHAR(30)">
-                </column>
-                <column name="FROMCASEVERSION" remarks="" type="INT">
-                </column>
-                <column name="STORYVERSION" remarks="" type="INT">
                 </column>
                 <column name="FROMCASEID" remarks="" type="BIGINT">
                 </column>
@@ -439,6 +439,8 @@
                 </column>
                 <column name="CREATEBY" remarks="" type="VARCHAR(100)">
                 </column>
+                <column name="VERSION" remarks="" type="INT">
+                </column>
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_CASESTEP_ID"/>
                 </column>
@@ -449,8 +451,6 @@
                 <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="ORG" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="VERSION" remarks="" type="INT">
                 </column>
                 <column name="CASE" remarks="" type="BIGINT">
                 </column>
@@ -2488,6 +2488,8 @@
         <createTable tableName="zt_projectstory">
                 <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
                 </column>
+                <column name="VERSION" remarks="" type="INT">
+                </column>
                 <column name="ID" remarks="" type="VARCHAR(60)">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_PROJECTSTORY_ID"/>
                 </column>
@@ -2502,8 +2504,6 @@
                 <column name="DEPTNAME" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="CREATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="VERSION" remarks="" type="INT">
                 </column>
                 <column name="STORY" remarks="" type="BIGINT">
                 </column>
@@ -2737,6 +2737,8 @@
                 </column>
                 <column name="SPEC" remarks="" type="TEXT(65535)">
                 </column>
+                <column name="TITLE" remarks="" type="VARCHAR(255)">
+                </column>
                 <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="ORGNAME" remarks="" type="VARCHAR(100)">
@@ -2751,8 +2753,6 @@
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_STORYSPEC_ID"/>
                 </column>
                 <column name="DEPTNAME" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="TITLE" remarks="" type="VARCHAR(255)">
                 </column>
                 <column name="VERSION" remarks="" type="INT">
                 </column>
@@ -2772,6 +2772,10 @@
                 </column>
                 <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
                 </column>
+                <column name="STAGEDBY" remarks="" type="VARCHAR(30)">
+                </column>
+                <column name="STAGE" remarks="" type="INT">
+                </column>
                 <column name="ORG" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="CREATEBY" remarks="" type="VARCHAR(100)">
@@ -2779,10 +2783,6 @@
                 <column name="ORGNAME" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="DEPTNAME" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="STAGEDBY" remarks="" type="VARCHAR(30)">
-                </column>
-                <column name="STAGE" remarks="" type="VARCHAR(50)">
                 </column>
                 <column name="STORY" remarks="" type="BIGINT">
                 </column>
@@ -2987,6 +2987,8 @@
                 </column>
                 <column name="LASTRUNNER" remarks="" type="VARCHAR(30)">
                 </column>
+                <column name="VERSION" remarks="" type="INT">
+                </column>
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="STEPRESULTS" remarks="" type="TEXT(65535)">
@@ -3008,8 +3010,6 @@
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_TESTRESULT_ID"/>
                 </column>
-                <column name="VERSION" remarks="" type="INT">
-                </column>
                 <column name="JOB" remarks="" type="BIGINT">
                 </column>
                 <column name="CASE" remarks="" type="BIGINT">
@@ -3028,6 +3028,8 @@
                 <column name="DEPTNAME" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="LASTRUNRESULT" remarks="" type="VARCHAR(30)">
+                </column>
+                <column name="VERSION" remarks="" type="INT">
                 </column>
                 <column name="LASTRUNDATE" remarks="" type="DATETIME">
                 </column>
@@ -3049,8 +3051,6 @@
                 <column name="ORGNAME" remarks="" type="VARCHAR(100)">
                 </column>
                 <column name="CREATEBY" remarks="" type="VARCHAR(100)">
-                </column>
-                <column name="VERSION" remarks="" type="INT">
                 </column>
                 <column name="CASE" remarks="" type="BIGINT">
                 </column>

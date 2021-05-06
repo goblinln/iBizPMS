@@ -46,6 +46,10 @@ export abstract class TestResultBase extends EntityBase implements ITestResult {
      */
     lastrunner?: any;
     /**
+     * 用例版本
+     */
+    version?: any;
+    /**
      * 归属部门
      */
     dept?: any;
@@ -91,10 +95,6 @@ export abstract class TestResultBase extends EntityBase implements ITestResult {
      * 编号
      */
     id?: any;
-    /**
-     * 用例版本
-     */
-    version?: any;
     /**
      * 相关需求
      */

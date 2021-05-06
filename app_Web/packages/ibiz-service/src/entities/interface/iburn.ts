@@ -37,6 +37,10 @@ export interface IBurn extends IEntityBase {
      */
     date?: any;
     /**
+     * 总计消耗
+     */
+    consumed?: any;
+    /**
      * 归属组织
      */
     org?: any;
@@ -44,10 +48,6 @@ export interface IBurn extends IEntityBase {
      * 主键
      */
     id?: any;
-    /**
-     * 总计消耗
-     */
-    consumed?: any;
     /**
      * 预计剩余
      */
