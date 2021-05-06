@@ -175,6 +175,14 @@ export default class AppFormDRUIPart extends Vue {
     @Prop() public parentName!: string;
 
     /**
+     * 用户标记
+     *
+     * @type {string}
+     * @memberof AppFormDRUIPart
+     */
+    @Prop() public userTag!: string;
+
+    /**
      * 关系界面向视图下发指令对象
      *
      * @private
@@ -358,7 +366,7 @@ export default class AppFormDRUIPart extends Vue {
                 }
             }
         }
-        if (!this.isForbidLoad) {
+        if (Object.is(this.userTag, 'alwaysLoad') || !this.isForbidLoad) {
             setTimeout(() => {
                 this.partViewEvent(
                     "load",

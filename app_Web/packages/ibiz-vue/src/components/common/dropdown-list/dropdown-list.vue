@@ -298,12 +298,16 @@ export default class DropDownList extends Vue {
         if(this.formState) {
             this.formStateEvent = this.formState.subscribe(({ type, data }) => {
                 if (Object.is('load', type)) {
-                    this.loadData();
+                    if(this.itemValue){
+                        this.loadData();
+                    }
                     this.readyValue();
                 }
             });
         }
-        this.loadData();
+        if(this.itemValue){
+            this.loadData();
+        }
         this.readyValue();
     }
 
@@ -358,20 +362,7 @@ export default class DropDownList extends Vue {
      */
     public onClick($event:any){
         if($event){
-            if(this.tag && Object.is(this.codelistType,"DYNAMIC")){
-                // 公共参数处理
-                let data: any = {};
-                this.handlePublicParams(data);
-                // 参数处理
-                let _context = data.context;
-                let _param = data.param;
-                this.codeListService.getItems(this.tag,_context,_param).then((res:any) => {
-                    let items: Array<any> = [...res];
-                    this.formatCodeList(items);
-                }).catch((error:any) => {
-                    console.log(`----${this.tag}----代码表不存在`);
-                });
-            }
+            this.loadData();
         }
     }
 

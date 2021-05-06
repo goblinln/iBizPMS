@@ -248,7 +248,9 @@ export default class DropDownListMpicker extends Vue {
      * @memberof DropDownListMpicker
      */
     public created() {
-        this.handleCodeListItems();
+        if(this.itemValue){
+            this.handleCodeListItems();
+        }
     }
 
     /**
@@ -275,7 +277,9 @@ export default class DropDownListMpicker extends Vue {
      * @memberof DropDownListMpicker
      */
     public onClick($event:any){
-        this.handleCodeListItems();
+        if($event){
+            this.handleCodeListItems();
+        }
     }
 
     /**
