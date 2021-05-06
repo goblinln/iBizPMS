@@ -3892,6 +3892,13 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Save.json"
       },
       "allowMode" : true
+    }, {
+      "name" : "Create",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "TOP",

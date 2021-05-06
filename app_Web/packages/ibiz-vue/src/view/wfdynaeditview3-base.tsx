@@ -172,7 +172,7 @@ export class WFDynaEditView3Base extends MainViewBase {
             const tabsName = `${this.appDeCodeName?.toLowerCase()}_${this.viewInstance.codeName.toLowerCase()}`;
             return (
                 <tabs animated={false} name={tabsName} class="workflow-tabs-container">
-                    <tab-pane tab={tabsName} label={this.editFormInstance.logicName}>
+                    <tab-pane tab={tabsName} label={this.drtabInstance.M?.editItemCaption ? this.drtabInstance.M?.editItemCaption : this.editFormInstance.logicName}>
                         {this.renderFormContent()}
                     </tab-pane>
                     {this.deDRTabPages.map((deDRTabPage: IPSDEDRTabPage) => {
