@@ -49,7 +49,7 @@ export const Environment = {
     // 默认菜单
     useDefaultMenu: true,
     // 启用更新日志
-    useUpdateLog: false,
+    useUpdateLog: true,
     // 菜单权限模式，可选值：RT(RT模式),RESOURCE(资源模式),MINIX(混合模式),默认MINIX
     menuPermissionMode: 'MINIX',
     // 是否开启第三方免登

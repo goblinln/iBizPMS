@@ -162,8 +162,6 @@ export const ComponentsRegister = {
         v.component('app-quick-group-tab', () => import('../components/common/app-quick-group-tab/app-quick-group-tab.vue'));
         // 搜索历史组件
         v.component('app-search-history', () => import('../components/common/app-search-history/app-search-history.vue'));
-        // 更新日志
-        v.component('app-update-log', () => import('../components/common/app-update-log/app-update-log.vue'));
         // 风格切换组件
         v.component('app-mob-select-changeStyle', () => import('../components/common/app-mob-select-changeStyle/app-mob-select-changeStyle.vue'));
         // setting组件
