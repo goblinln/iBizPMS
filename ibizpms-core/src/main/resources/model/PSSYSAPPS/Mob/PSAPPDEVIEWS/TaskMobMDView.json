@@ -1637,7 +1637,7 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskNewMobEditView.json",
           "viewType" : "DEMOBEDITVIEW"
         },
-        "frontProcessType" : "WIZARD",
+        "frontProcessType" : "TOP",
         "fullCodeName" : "Task_CreateMob",
         "name" : "新建任务（移动端）",
         "getPSAppDataEntity" : {

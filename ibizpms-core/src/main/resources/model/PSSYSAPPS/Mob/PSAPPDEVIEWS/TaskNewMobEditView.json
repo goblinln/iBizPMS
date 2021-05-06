@@ -4,6 +4,7 @@
   "codeName" : "TaskNewMobEditView",
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskNewMobEditView.json",
   "name" : "TaskNewMobEditView",
+  "openMode" : "POPUPMODAL",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Task.json"
