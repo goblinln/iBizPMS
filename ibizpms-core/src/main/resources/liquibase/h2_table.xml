@@ -2763,7 +2763,7 @@
 
 
     <!--输出实体[ZT_STORYSTAGE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_storystage-3-104">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_storystage-4-104">
         <createTable tableName="zt_storystage">
                 <column name="ID" remarks="" type="VARCHAR(60)">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_STORYSTAGE_ID"/>
