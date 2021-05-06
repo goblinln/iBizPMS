@@ -143,7 +143,7 @@ export class ViewToolbar extends Vue {
      * @memberof ViewToolbar
      */
     protected renderMenuItem(item: any): any {
-        const targetCounterService:any = Util.findElementByField(this.counterServiceArray,'path',item.uiaction?.getPSAppCounter?.path)?.service;
+        const targetCounterService:any = Util.findElementByField(this.counterServiceArray,'path',item.uiaction?.getPSAppCounter?.()?.modelPath)?.service;
         if(item.visabled){
             return (
                 <tooltip transfer={true} max-width='600' disabled={!item.tooltip}>
@@ -154,7 +154,7 @@ export class ViewToolbar extends Vue {
                             on-exportexcel={($event: any) => this.itemClick({ tag: item.name }, $event)}
                             loading={this.isViewLoading}
                         ></app-export-excel>
-                    ) : (item.uiaction && item.uiaction.counterId) ? (
+                    ) : (item.uiaction && item.uiaction.counterId) && targetCounterService ? (
                         <el-badge value={targetCounterService.counterData[item.uiaction.counterId]}>
                             <i-button
                                 disabled={item.disabled}
@@ -167,16 +167,16 @@ export class ViewToolbar extends Vue {
                             </i-button>
                         </el-badge>
                     ) : (
-                                <i-button
-                                    disabled={item.disabled}
-                                    class={item.class}
-                                    on-click={(e: any) => this.itemClick({ tag: item.name }, e)}
-                                    loading={this.isViewLoading}
-                                >
-                                    {item.showIcon ? <menu-icon item={item} /> : null}
-                                    {item.showCaption ? <span class='caption'>{item.caption}</span> : ''}
-                                </i-button>
-                            )}
+                        <i-button
+                            disabled={item.disabled}
+                            class={item.class}
+                            on-click={(e: any) => this.itemClick({ tag: item.name }, e)}
+                            loading={this.isViewLoading}
+                        >
+                            {item.showIcon ? <menu-icon item={item} /> : null}
+                            {item.showCaption ? <span class='caption'>{item.caption}</span> : ''}
+                        </i-button>
+                    )}
                     <div slot='content'>{item.tooltip}</div>
                 </tooltip>
             );

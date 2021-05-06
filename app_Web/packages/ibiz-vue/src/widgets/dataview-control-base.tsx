@@ -187,42 +187,6 @@ export class DataViewControlBase extends MDControlBase {
     public thisRef: any = this;
 
     /**
-     * 快速行为模型数据
-     *
-     * @protected
-     * @type {[]}
-     * @memberof DataViewControlBase
-     */
-    public quickToolbarModels: Array<any> = [];
-
-    /**
-     * 批操作行为模型数据
-     *
-     * @protected
-     * @type {[]}
-     * @memberof DataViewControlBase
-     */
-    public batchToolbarModels: Array<any> = [];
-
-    /**
-     * 快速工具栏部件
-     *
-     * @memberof DataViewControlBase
-     */
-    get getQuickPSDEToolbar() {
-        return ModelTool.findPSControlByName('dataview_quicktoolbar', this.controlInstance.getPSControls());
-    }
-
-    /**
-     * 批操作工具栏部件
-     *
-     * @memberof DataViewControlBase
-     */
-    get getBatchPSDEToolbar() {
-        return ModelTool.findPSControlByName('dataview_batchtoolbar', this.controlInstance.getPSControls());
-    }
-
-    /**
      * 监听静态参数变化
      *
      * @param {*} newVal
@@ -262,55 +226,6 @@ export class DataViewControlBase extends MDControlBase {
                 context: this.context,
                 viewparam: this.viewparams,
             };
-        }
-        this.initToolAction();
-    }
-
-    /**
-     * 初始化操作栏
-     *
-     * @memberof DataViewControlBase
-     */
-    public initToolAction() {
-        let controls = this.controlInstance.getPSControls();
-        const quickTool: any = ModelTool.findPSControlByName('dataview_quicktoolbar', controls);
-        const batchTool: any = ModelTool.findPSControlByName('dataview_batchtoolbar', controls);
-        const getModelData = (_item: IPSDEToolbarItem) => {
-            const item: IPSDETBUIActionItem = _item as IPSDETBUIActionItem;
-            const uiAction: IPSDEUIAction | null = item.getPSUIAction ? (item?.getPSUIAction() as IPSDEUIAction) : null;
-            return {
-                name: item.name,
-                showCaption: item.showCaption,
-                showIcon: item.showIcon,
-                tooltip: item.tooltip,
-                iconcls: item.getPSSysImage()?.cssClass,
-                icon: item.getPSSysImage()?.imagePath,
-                actiontarget: item.uIActionTarget,
-                caption: item.caption,
-                disabled: false,
-                itemType: item.itemType,
-                visabled: true,
-                noprivdisplaymode: uiAction?.noPrivDisplayMode,
-                dataaccaction: '',
-                uiaction: {
-                    tag: uiAction?.uIActionTag ? uiAction.uIActionTag : uiAction?.id ? uiAction.id : '',
-                    target: uiAction?.actionTarget,
-                },
-            };
-        };
-        if (quickTool) {
-            let targetViewToolbarItems: any[] = [];
-            quickTool.getPSDEToolbarItems()?.forEach((item: IPSDEToolbarItem) => {
-                targetViewToolbarItems.push(getModelData(item));
-            });
-            this.quickToolbarModels = targetViewToolbarItems;
-        }
-        if (batchTool) {
-            let targetViewToolbarItems: any[] = [];
-            batchTool.getPSDEToolbarItems()?.forEach((item: IPSDEToolbarItem) => {
-                targetViewToolbarItems.push(getModelData(item));
-            });
-            this.batchToolbarModels = targetViewToolbarItems;
         }
     }
 
@@ -1109,19 +1024,14 @@ export class DataViewControlBase extends MDControlBase {
      *
      * @memberof DataViewControlBase
      */
-    public renderBatchToolbar(h: any) {
-        if (this.getBatchPSDEToolbar) {
+    public renderBatchToolbar() {
+        if (this.batchToolbarInstance) {
             return (
                 <div class='drag-filed' on-mousedown={($event: any) => this.down($event)}>
                     <row class='dataview-pagination'>
-                        <div v-show={this.flag} class='batch-toolbar'>
-                            <view-toolbar
-                                toolbarModels={this.batchToolbarModels}
-                                on-item-click={(data: any, $event: any) => {
-                                    this.handleItemClick('batchtoolbar', data, $event);
-                                }}
-                            ></view-toolbar>
-                        </div>
+                        <template v-show={this.flag}>
+                            {super.renderBatchToolbar()}
+                        </template>
                         <div class='dataview-pagination-icon'>
                             <icon type='md-code-working' on-click={($event: any) => this.onClick($event)} />
                         </div>
@@ -1136,20 +1046,11 @@ export class DataViewControlBase extends MDControlBase {
      *
      * @memberof DataViewControlBase
      */
-    public renderQuickToolbar(h: any) {
+    public renderQuickToolbar() {
         return (
             <div v-show={this.items.length == 0} calss='app-data-empty'>
                 {'无数据'}
-                {this.getQuickPSDEToolbar ? (
-                    <span class='quick-toolbar'>
-                        <view-toolbar
-                            toolbarModels={this.quickToolbarModels}
-                            on-item-click={(data: any, $event: any) => {
-                                this.handleItemClick('quicktoolbar', data, $event);
-                            }}
-                        ></view-toolbar>
-                    </span>
-                ) : null}
+                {this.renderQuickToolbar()}
             </div>
         );
     }
@@ -1320,24 +1221,6 @@ export class DataViewControlBase extends MDControlBase {
             event,
             this,
             data,
-            this.controlInstance.getPSAppViewLogics() as Array<any>,
-        );
-    }
-
-    /**
-     * 部件工具栏点击
-     *
-     * @param ctrl 部件
-     * @param data 数据
-     * @param $event 事件源对象
-     * @memberof AppDefaultKanban
-     */
-    public handleItemClick(ctrl: string, data: any, $event: any) {
-        AppViewLogicService.getInstance().executeViewLogic(
-            this.getViewLogicTag(this.controlInstance.name, ctrl, data.tag),
-            $event,
-            this,
-            undefined,
             this.controlInstance.getPSAppViewLogics() as Array<any>,
         );
     }

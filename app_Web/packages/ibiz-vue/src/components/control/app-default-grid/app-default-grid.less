@@ -68,9 +68,9 @@
       .quick-toolbar {
           display: inline-block;
           button {
-              background: var(--ctrl-background-color-tint);
-              color: var(--ctrl-font-color-active);
-              border: 0;
+              // background: var(--ctrl-background-color-tint);
+              // color: var(--ctrl-font-color-active);
+              // border: 0;
           }
       }
       .el-tooltip {
@@ -123,12 +123,21 @@
           left: 105px;
           > .toolbar-container {
               button {
-                  font-size: 16px;
+                  font-size: 14px;
                   min-width: 32px;
                   height: 32px;
-                  margin-right: 4px;
+                  margin-right: 0;
                   margin-top: 0;
                   margin-bottom: 0;
+                  margin-left: -1px;
+                  padding: 0 7px;
+                  border-radius: 0;
+              }
+              .ivu-tooltip:first-child button{
+                border-radius: 2px 0 0 2px;
+              }
+              .ivu-tooltip:last-child button{
+                border-radius: 0 2px 2px 0px;
               }
           }
       }

@@ -79,6 +79,7 @@ export class AppDefaultViewLayout extends Vue {
                 <div class='content-container'>
                     { (this.$slots.quickGroupSearch || this.$slots.quickSearch) && <div style="margin-bottom: 6px;">
                         {this.$slots.quickGroupSearch}
+                        {this.$slots.quickSearchForm}
                         {this.$slots.quickSearch}
                     </div> }
                     {this.$slots.bodyMessage}

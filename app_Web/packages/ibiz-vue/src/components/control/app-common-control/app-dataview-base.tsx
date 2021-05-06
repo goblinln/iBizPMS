@@ -67,7 +67,7 @@ export class AppDataViewBase extends DataViewControlBase {
             this.mouseEvent();
         })
         this.$el.addEventListener('scroll', ()=> {
-            if(this.getBatchPSDEToolbar){
+            if(this.batchToolbarInstance){
                 let el: any = this.$el.getElementsByClassName('dataview-pagination')[0];
                 el.style.top = 40 + this.$el.scrollTop + 'px';
             }
@@ -112,9 +112,9 @@ export class AppDataViewBase extends DataViewControlBase {
                 {this.renderSortBar(h)}
                 <row v-show={this.items.length > 0}class="data-view-container" gutter={20} type="flex" justify="start" style="margin:0px;">
                     {this.renderDataViewContent(h)}
-                    {this.renderBatchToolbar(h)}
+                    {this.renderBatchToolbar()}
                 </row>
-                {this.renderQuickToolbar(h)}
+                {this.renderQuickToolbar()}
                 <el-backtop target=".content-container .app-data-view"></el-backtop> 
             </div>
         );

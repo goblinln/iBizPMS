@@ -5892,6 +5892,9 @@
             "name" : "status"
           }, {
             "dataType" : 25,
+            "name" : "isfavorites"
+          }, {
+            "dataType" : 25,
             "name" : "srfkey",
             "getPSAppDEField" : {
               "name" : "ID",

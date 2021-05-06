@@ -1250,6 +1250,12 @@
         "logicName" : "激活",
         "name" : "ACTIVATE"
       }
+    }, {
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "logicName" : "读取",
+        "name" : "READ"
+      }
     } ],
     "stateValue" : "closed",
     "viewActions" : 0,
@@ -1340,6 +1346,12 @@
       "getPSDEOPPriv" : {
         "logicName" : "删除",
         "name" : "DELETE"
+      }
+    }, {
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "logicName" : "读取",
+        "name" : "READ"
       }
     }, {
       "name" : "TOTASK",
@@ -1433,6 +1445,12 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "logicName" : "读取",
+        "name" : "READ"
+      }
+    }, {
       "name" : "DELETE",
       "getPSDEOPPriv" : {
         "logicName" : "删除",
@@ -1547,6 +1565,12 @@
       "getPSDEOPPriv" : {
         "logicName" : "完成",
         "name" : "FINISH"
+      }
+    }, {
+      "name" : "READ",
+      "getPSDEOPPriv" : {
+        "logicName" : "读取",
+        "name" : "READ"
       }
     }, {
       "name" : "UPDATE",

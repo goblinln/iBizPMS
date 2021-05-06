@@ -1,9 +1,9 @@
 import { Subscription } from 'rxjs';
-import { CodeListServiceBase } from 'ibiz-core'
+import { CodeListServiceBase, ModelTool } from 'ibiz-core'
 import { MainControlBase } from './main-control-base';
 import { GlobalService } from 'ibiz-service';
-import { AppCenterService } from '../app-service';
-import { IPSAppDataEntity, IPSMDControl } from '@ibiz/dynamic-model-api';
+import { AppCenterService, AppViewLogicService } from '../app-service';
+import { IPSAppDataEntity, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDEUIAction, IPSMDControl } from '@ibiz/dynamic-model-api';
 
 
 /**
@@ -39,6 +39,40 @@ export class MDControlBase extends MainControlBase {
      * @memberof MDControlBase
      */
     public controlInstance!: any;
+
+    /**
+     * 快速工具栏实例
+     *
+     * @type {IPSDEToolbar}
+     * @memberof MDControlBase
+     */
+    public quickToolbarInstance!: IPSDEToolbar;
+    
+    /**
+     * 批处理工具栏实例
+     *
+     * @type {IPSDEToolbar}
+     * @memberof MDControlBase
+     */
+    public batchToolbarInstance!: IPSDEToolbar;
+
+    /**
+     * 快速行为模型数据
+     *
+     * @protected
+     * @type {[]}
+     * @memberof DataViewControlBase
+     */
+     public quickToolbarModels: Array<any> = [];
+
+     /**
+      * 批操作行为模型数据
+      *
+      * @protected
+      * @type {[]}
+      * @memberof DataViewControlBase
+      */
+     public batchToolbarModels: Array<any> = [];
 
     /**
      * 选中行数据
@@ -198,6 +232,7 @@ export class MDControlBase extends MainControlBase {
      */
     public async ctrlModelInit(args?: any) {
         await super.ctrlModelInit();
+        const { name } = this.controlInstance;
         if (this.controlInstance?.getPSAppDataEntity?.() && !(this.Environment && this.Environment.isPreviewMode)) {
             if(!this.controlInstance?.getPSAppDataEntity()?.isFill){
                 await this.controlInstance?.getPSAppDataEntity().fill();
@@ -210,6 +245,9 @@ export class MDControlBase extends MainControlBase {
         this.updateAction = this.controlInstance?.getUpdatePSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "Update";
         this.fetchAction = this.controlInstance?.getFetchPSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "FetchDefault";
         this.createAction = this.controlInstance?.getCreatePSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "Create";
+        this.quickToolbarInstance = ModelTool.findPSControlByName(`${name}_quicktoolbar`, this.controlInstance.getPSControls())
+        this.batchToolbarInstance = ModelTool.findPSControlByName(`${name}_batchtoolbar`, this.controlInstance.getPSControls())
+        this.initToolBarModels();
     }
 
     /**
@@ -264,5 +302,103 @@ export class MDControlBase extends MainControlBase {
      */
     public getData(): any {
         return this.selections[0];
+    }
+    
+    /**
+     * 初始化工具栏模型
+     *
+     * @memberof DataViewControlBase
+     */
+     public initToolBarModels() {
+        const getModelData = (_item: IPSDEToolbarItem) => {
+            const item: IPSDETBUIActionItem = _item as IPSDETBUIActionItem;
+            const uiAction: IPSDEUIAction | null = item.getPSUIAction ? (item?.getPSUIAction() as IPSDEUIAction) : null;
+            return {
+                name: item.name,
+                showCaption: item.showCaption,
+                showIcon: item.showIcon,
+                tooltip: item.tooltip,
+                iconcls: item.getPSSysImage()?.cssClass,
+                icon: item.getPSSysImage()?.imagePath,
+                actiontarget: item.uIActionTarget,
+                caption: item.caption,
+                disabled: false,
+                itemType: item.itemType,
+                visabled: true,
+                noprivdisplaymode: uiAction?.noPrivDisplayMode,
+                dataaccaction: '',
+                uiaction: {
+                    tag: uiAction?.uIActionTag ? uiAction.uIActionTag : uiAction?.id ? uiAction.id : '',
+                    target: uiAction?.actionTarget,
+                },
+            };
+        };
+        if (this.quickToolbarInstance) {
+            let targetViewToolbarItems: any[] = [];
+            this.quickToolbarInstance.getPSDEToolbarItems()?.forEach((item: IPSDEToolbarItem) => {
+                targetViewToolbarItems.push(getModelData(item));
+            });
+            this.quickToolbarModels = targetViewToolbarItems;
+        }
+        if (this.batchToolbarInstance) {
+            let targetViewToolbarItems: any[] = [];
+            this.batchToolbarInstance.getPSDEToolbarItems()?.forEach((item: IPSDEToolbarItem) => {
+                targetViewToolbarItems.push(getModelData(item));
+            });
+            this.batchToolbarModels = targetViewToolbarItems;
+        }
+    }
+
+    
+    /**
+     * 绘制快速工具栏
+     *
+     * @return {*} 
+     * @memberof MDControlBase
+     */
+    public renderQuickToolbar(): any{
+        return <span class='quick-toolbar'>
+            <view-toolbar
+                toolbarModels={this.quickToolbarModels}
+                on-item-click={(data: any, $event: any) => {
+                    this.handleItemClick('quicktoolbar', data, $event);
+                }}
+            ></view-toolbar>
+        </span>
+    }
+
+    /**
+     * 绘制批处理工具栏
+     *
+     * @return {*} 
+     * @memberof MDControlBase
+     */
+    public renderBatchToolbar(): any{
+        return <span v-show={this.selections.length > 0} class="batch-toolbar">
+            <view-toolbar
+                toolbarModels={this.batchToolbarModels}
+                on-item-click={(data: any, $event: any) => {
+                    this.handleItemClick('batchtoolbar', data, $event);
+                }}
+            ></view-toolbar>
+        </span>
+    }
+
+    /**
+     * 部件工具栏点击
+     *
+     * @param ctrl 部件
+     * @param data 工具栏回传数据
+     * @param $event 事件源对象
+     * @memberof MDControlBase
+     */
+     public handleItemClick(ctrl: string, data: any, $event: any) {
+        AppViewLogicService.getInstance().executeViewLogic(
+            this.getViewLogicTag(this.controlInstance.name, ctrl, data.tag),
+            $event,
+            this,
+            undefined,
+            this.controlInstance.getPSAppViewLogics() as Array<any>,
+        );
     }
 }

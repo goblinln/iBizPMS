@@ -7,6 +7,7 @@ import {
     IPSSysPFPlugin,
     IPSUIActionGroupDetail,
     IPSAppDEGridView,
+    IPSDEToolbar,
 } from '@ibiz/dynamic-model-api';
 import { ModelTool, Util } from 'ibiz-core';
 import { Prop, Watch, Emit } from 'vue-property-decorator';
@@ -198,8 +199,21 @@ export class AppGridBase extends GridControlBase {
                 ) : null,
                 this.renderGridColumns(h),
                 this.renderEmptyColumn ? <el-table-column></el-table-column> : null,
+                this.renderEmptyData(),
             ],
         );
+    }
+
+    public renderEmptyData(){
+        const langBase = ModelTool.getCtrlLangBase(this.controlInstance);
+        let emptyText = this.$t(`${langBase}.nodata`);
+        if(Util.isEmpty(emptyText)){
+            emptyText = '表格无数据'
+        }
+        return <template slot="empty">
+            <div>{emptyText}</div>
+            {this.renderQuickToolbar()}
+        </template>
     }
 
     /**
@@ -428,6 +442,7 @@ export class AppGridBase extends GridControlBase {
                             })}
                         </div>
                     </poptip>
+                    {this.renderBatchToolbar()}
                     <span class='page-button'>
                         <i-button icon='md-refresh' title='刷新' on-click={() => this.pageRefresh()}></i-button>
                     </span>
