@@ -70,6 +70,10 @@ export abstract class CaseStepBase extends EntityBase implements ICaseStep {
      */
     createby?: any;
     /**
+     * 用例版本
+     */
+    version?: any;
+    /**
      * 编号
      */
     id?: any;
@@ -97,10 +101,6 @@ export abstract class CaseStepBase extends EntityBase implements ICaseStep {
      * 归属组织
      */
     org?: any;
-    /**
-     * 用例版本
-     */
-    version?: any;
     /**
      * 用例
      */
