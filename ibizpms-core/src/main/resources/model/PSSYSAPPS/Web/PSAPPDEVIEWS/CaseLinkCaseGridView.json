@@ -208,6 +208,11 @@
           "value" : "0",
           "rawValue" : true
         }, {
+          "key" : "TESTTASK",
+          "name" : "TESTTASK",
+          "value" : "testtask",
+          "rawValue" : false
+        }, {
           "key" : "VERSIONS",
           "name" : "VERSIONS",
           "value" : "version",
