@@ -4082,7 +4082,7 @@
       "id" : "Default"
     },
     "getPSDENotifyTargets" : [ {
-      "name" : "监理人",
+      "name" : "负责人",
       "getTargetPSDEField" : {
         "name" : "CREATEDBY",
         "codeName" : "CreatedBy"

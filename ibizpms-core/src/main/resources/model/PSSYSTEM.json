@@ -1544,12 +1544,33 @@
     "syncDir" : "IN"
   } ],
   "getAllPSSysMsgQueues" : [ {
-    "modelref" : true,
-    "path" : "PSSYSMSGQUEUES/MsgQueue.json"
+    "codeName" : "MsgQueue",
+    "dynaModelFilePath" : "PSSYSMSGQUEUES/MsgQueue.json",
+    "msgQueueType" : "RUNTIME",
+    "name" : "消息队列"
   } ],
   "getAllPSSysMsgTargets" : [ {
-    "modelref" : true,
-    "path" : "PSSYSMSGTARGETS/ProductAdmin.json"
+    "codeName" : "ProductAdmin",
+    "dynaModelFilePath" : "PSSYSMSGTARGETS/ProductAdmin.json",
+    "msgTargetType" : "RUNTIME",
+    "name" : "产品管理员"
+  } ],
+  "getAllPSSysMsgTempls" : [ {
+    "codeName" : "ProductCheck",
+    "content" : "产品检查",
+    "contentType" : "TEXT",
+    "dynaModelFilePath" : "PSSYSMSGTEMPLS/ProductCheck.json",
+    "name" : "产品检查",
+    "subject" : "新版本",
+    "mailGroupSend" : false
+  }, {
+    "codeName" : "ProductNewBranch",
+    "content" : "发布新版本v1.0",
+    "contentType" : "TEXT",
+    "dynaModelFilePath" : "PSSYSMSGTEMPLS/ProductNewBranch.json",
+    "name" : "产品发布新版本",
+    "subject" : "新版本",
+    "mailGroupSend" : false
   } ],
   "getAllPSSysSequences" : [ {
     "modelref" : true,

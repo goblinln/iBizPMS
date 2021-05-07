@@ -360,31 +360,11 @@
     },
     "name" : "数据导入",
     "getPSDEDataImportItems" : [ {
-      "caption" : "优先级",
-      "name" : "PRI",
+      "caption" : "子状态",
+      "name" : "SUBSTATUS",
       "getPSAppDEField" : {
-        "name" : "PRI",
-        "codeName" : "Pri"
-      },
-      "getPSCodeList" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testtask__pri.json"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "产品",
-      "name" : "PRODUCTNAME",
-      "getPSAppDEField" : {
-        "name" : "PRODUCTNAME",
-        "codeName" : "ProductName"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "结束日期",
-      "name" : "END",
-      "getPSAppDEField" : {
-        "name" : "END",
-        "codeName" : "End"
+        "name" : "SUBSTATUS",
+        "codeName" : "SubStatus"
       },
       "uniqueItem" : false
     }, {
@@ -404,6 +384,14 @@
       },
       "uniqueItem" : false
     }, {
+      "caption" : "所属项目",
+      "name" : "PROJECT",
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      },
+      "uniqueItem" : false
+    }, {
       "caption" : "抄送给",
       "name" : "MAILTO",
       "getPSAppDEField" : {
@@ -416,6 +404,14 @@
       },
       "uniqueItem" : false
     }, {
+      "caption" : "开始日期",
+      "name" : "BEGIN",
+      "getPSAppDEField" : {
+        "name" : "BEGIN",
+        "codeName" : "Begin"
+      },
+      "uniqueItem" : false
+    }, {
       "caption" : "负责人",
       "name" : "OWNER",
       "getPSAppDEField" : {
@@ -425,22 +421,6 @@
       "getPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProductTeam.json"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "已删除",
-      "name" : "DELETED",
-      "getPSAppDEField" : {
-        "name" : "DELETED",
-        "codeName" : "Deleted"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "开始日期",
-      "name" : "BEGIN",
-      "getPSAppDEField" : {
-        "name" : "BEGIN",
-        "codeName" : "Begin"
       },
       "uniqueItem" : false
     }, {
@@ -457,6 +437,14 @@
       "getPSAppDEField" : {
         "name" : "BUILDNAME",
         "codeName" : "BuildName"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "已删除",
+      "name" : "DELETED",
+      "getPSAppDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
       },
       "uniqueItem" : false
     }, {
@@ -484,22 +472,6 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "子状态",
-      "name" : "SUBSTATUS",
-      "getPSAppDEField" : {
-        "name" : "SUBSTATUS",
-        "codeName" : "SubStatus"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "auto",
-      "name" : "AUTO",
-      "getPSAppDEField" : {
-        "name" : "AUTO",
-        "codeName" : "Auto"
-      },
-      "uniqueItem" : false
-    }, {
       "caption" : "所属产品",
       "name" : "PRODUCT",
       "getPSAppDEField" : {
@@ -508,11 +480,27 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "所属项目",
-      "name" : "PROJECT",
+      "caption" : "report",
+      "name" : "REPORT",
       "getPSAppDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
+        "name" : "REPORT",
+        "codeName" : "Report"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "产品",
+      "name" : "PRODUCTNAME",
+      "getPSAppDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "auto",
+      "name" : "AUTO",
+      "getPSAppDEField" : {
+        "name" : "AUTO",
+        "codeName" : "Auto"
       },
       "uniqueItem" : false
     }, {
@@ -528,11 +516,23 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "report",
-      "name" : "REPORT",
+      "caption" : "优先级",
+      "name" : "PRI",
       "getPSAppDEField" : {
-        "name" : "REPORT",
-        "codeName" : "Report"
+        "name" : "PRI",
+        "codeName" : "Pri"
+      },
+      "getPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testtask__pri.json"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "结束日期",
+      "name" : "END",
+      "getPSAppDEField" : {
+        "name" : "END",
+        "codeName" : "End"
       },
       "uniqueItem" : false
     } ],

@@ -33,4 +33,7 @@ public interface IBZWFFeignClient
 	Map<String, Map<String, Object>> getTaskByStep(@PathVariable("system") String system, @PathVariable("userId") String userId,
 													 @PathVariable("entity") String entity, @PathVariable("insttag") String instTag, @PathVariable("insttag2") String instTag2 , @RequestParam("srfwf") String taskType, @RequestParam("n_taskdefinitionkey_eq") String srfwfstep);
 
+	@RequestMapping(method = RequestMethod.POST, value = "/{system}/{entity}/{businessKey}/isedit")
+	Boolean testDataIsEdit(@PathVariable("system") String system, @PathVariable("entity") String entity, @PathVariable("businessKey") Serializable businessKey);
+
 }
