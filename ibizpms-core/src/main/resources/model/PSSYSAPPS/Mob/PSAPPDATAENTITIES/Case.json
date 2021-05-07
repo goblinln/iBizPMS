@@ -2676,14 +2676,14 @@
       "value" : "0",
       "rawValue" : true
     }, {
-      "key" : "TESTTASK",
-      "name" : "TESTTASK",
-      "value" : "testtask",
-      "rawValue" : false
-    }, {
       "key" : "VERSIONS",
       "name" : "VERSIONS",
       "value" : "version",
+      "rawValue" : false
+    }, {
+      "key" : "CASE",
+      "name" : "CASE",
+      "value" : "testtask",
       "rawValue" : false
     } ],
     "getPSNavigateParams" : [ {
@@ -2700,6 +2700,11 @@
       "key" : "ids",
       "name" : "ids",
       "value" : "id",
+      "rawValue" : false
+    }, {
+      "key" : "testtask",
+      "name" : "testtask",
+      "value" : "testtask",
       "rawValue" : false
     } ],
     "refreshMode" : 1,
