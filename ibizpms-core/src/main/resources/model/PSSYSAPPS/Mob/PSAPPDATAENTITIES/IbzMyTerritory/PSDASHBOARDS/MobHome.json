@@ -596,6 +596,9 @@
             "name" : "pri"
           }, {
             "dataType" : 25,
+            "name" : "ischild"
+          }, {
+            "dataType" : 25,
             "name" : "srfkey",
             "getPSAppDEField" : {
               "name" : "ID",
@@ -3485,6 +3488,16 @@
               "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Bug__status.json"
             },
             "name" : "status"
+          }, {
+            "dataType" : 25,
+            "name" : "isfavorites"
+          }, {
+            "dataType" : 9,
+            "getFrontPSCodeList" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/YesNo2.json"
+            },
+            "name" : "confirmed"
           }, {
             "dataType" : 25,
             "getFrontPSCodeList" : {

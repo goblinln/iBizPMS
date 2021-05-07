@@ -527,8 +527,6 @@ export class MobMDCtrlControlBase extends MDControlBase {
      */
     public mdctrl_click($event: any, detail: any, item: any): void {
         $event.stopPropagation();
-        this.selectedArray = [];
-        this.selectedArray.push(item);
         this.handleActionClick(item, $event, detail);
         this.closeSlidings(item);
     }

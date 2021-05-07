@@ -395,10 +395,6 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         if (this.getUserContext().isSuperuser())
             return true;
         //判断是否在流程中
-        if(this.isEnableWF() && this.testDataInWF(this.getSimpleEntity(key))){
-            if(!wfClient.testDataIsEdit(AuthenticationUser.getAuthenticationUser().getSrfsystemid() , this.getPSDataEntity().getCodeName().toLowerCase(),key))
-                return false;
-        }
         if (testUnires(action))
             return true ;
         //检查能力

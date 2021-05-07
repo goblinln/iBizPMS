@@ -549,6 +549,9 @@
             "name" : "pri"
           }, {
             "dataType" : 25,
+            "name" : "ischild"
+          }, {
+            "dataType" : 25,
             "name" : "srfkey",
             "getPSAppDEField" : {
               "name" : "ID",

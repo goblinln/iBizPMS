@@ -74,6 +74,20 @@ export class AppViewLogicService {
     }
 
     /**
+     * 执行逻辑
+     *
+     * @author chitanda
+     * @date 2021-04-23 15:04:34
+     * @param {IPSAppViewLogic} logic
+     * @param {*} $event
+     * @param {*} actionContext
+     * @param {*} [params]
+     */
+    executeLogic(logic: IPSAppViewLogic, $event: any, actionContext: any, params?: any): void {
+        this.prepareActionParams(logic, $event, actionContext, params);
+    }
+
+    /**
      * 准备界面行为参数
      *
      * @param viewLogic  视图逻辑

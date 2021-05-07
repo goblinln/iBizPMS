@@ -912,6 +912,16 @@
       "name" : "status"
     }, {
       "dataType" : 25,
+      "name" : "isfavorites"
+    }, {
+      "dataType" : 9,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/YesNo2.json"
+      },
+      "name" : "confirmed"
+    }, {
+      "dataType" : 25,
       "getFrontPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealNameUnAssignTo_Gird.json"
