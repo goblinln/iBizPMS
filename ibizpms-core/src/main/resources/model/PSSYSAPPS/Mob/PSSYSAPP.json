@@ -6911,7 +6911,7 @@
     "enableAppDashboard" : true,
     "enableDEDashboard" : true
   }, {
-    "codeName" : "mobMyFavoriteStory1",
+    "codeName" : "MOBMyFavoriteStory",
     "name" : "我收藏的需求",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -6927,7 +6927,7 @@
       "codeName" : "MOBMyFavoriteStory",
       "controlType" : "PORTLET",
       "height" : 300.0,
-      "name" : "portlet_mobMyFavoriteStory1",
+      "name" : "portlet_MOBMyFavoriteStory",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story.json"
@@ -6935,7 +6935,7 @@
       "getPSAppViewLogics" : [ {
         "logicTrigger" : "CUSTOM",
         "logicType" : "APPVIEWUIACTION",
-        "name" : "portlet_mobmyfavoritestory1_u1d8bd72_click",
+        "name" : "portlet_mobmyfavoritestory_u1d8bd72_click",
         "getPSAppViewUIAction" : {
           "modelref" : true,
           "id" : "更多（我收藏的）"
@@ -6952,11 +6952,11 @@
           "id" : "MyFavMore@Story"
         },
         "uIActionTarget" : "NONE",
-        "xDataControlName" : "portlet_mobMyFavoriteStory1"
+        "xDataControlName" : "portlet_MOBMyFavoriteStory"
       } ],
       "getPSControlHandler" : {
         "enableDEFieldPrivilege" : false,
-        "id" : "portlet_mobMyFavoriteStory1"
+        "id" : "portlet_MOBMyFavoriteStory"
       },
       "getPSControlParam" : {
         "autoLoad" : true,
@@ -8323,7 +8323,7 @@
     "enableAppDashboard" : true,
     "enableDEDashboard" : true
   }, {
-    "codeName" : "mybugmob",
+    "codeName" : "MyBugMob",
     "name" : "指派给我的Bug",
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -8339,7 +8339,7 @@
       "codeName" : "MyBugMob",
       "controlType" : "PORTLET",
       "height" : 300.0,
-      "name" : "portlet_mybugmob",
+      "name" : "portlet_MyBugMob",
       "getPSAppDataEntity" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
@@ -8364,11 +8364,11 @@
           "id" : "AssToMyBugMore@Bug"
         },
         "uIActionTarget" : "NONE",
-        "xDataControlName" : "portlet_mybugmob"
+        "xDataControlName" : "portlet_MyBugMob"
       } ],
       "getPSControlHandler" : {
         "enableDEFieldPrivilege" : false,
-        "id" : "portlet_mybugmob"
+        "id" : "portlet_MyBugMob"
       },
       "getPSControlParam" : {
         "autoLoad" : true,
