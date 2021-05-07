@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.Relation;
 import cn.ibizlab.pms.core.zentao.service.IRelationService;
 import cn.ibizlab.pms.core.zentao.filter.RelationSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class RelationRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof Relation){
                     Relation arg = (Relation) args[0] ;
-                    arg = relationService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(relationService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return relationService.get((Long) args[0]);
@@ -203,7 +204,7 @@ public class RelationRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof Relation){
                     Relation arg = (Relation) args[0] ;
-                    arg = relationService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(relationService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return relationService.get((Long) args[0]);

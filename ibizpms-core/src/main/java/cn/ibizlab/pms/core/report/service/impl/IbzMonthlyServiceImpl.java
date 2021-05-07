@@ -127,8 +127,8 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!ibzmonthlyRuntime.isRtmodel()){
-        }
+            if(!ibzmonthlyRuntime.isRtmodel()){
+            }
         }
         return et;
     }

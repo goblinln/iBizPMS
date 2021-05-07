@@ -127,8 +127,8 @@ public class IbzproProjectUserTaskServiceImpl extends ServiceImpl<IbzproProjectU
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!ibzproprojectusertaskRuntime.isRtmodel()){
-        }
+            if(!ibzproprojectusertaskRuntime.isRtmodel()){
+            }
         }
         return et;
     }

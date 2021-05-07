@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.ibizpro.runtime;
 import cn.ibizlab.pms.core.ibizpro.domain.IbizproProductDaily;
 import cn.ibizlab.pms.core.ibizpro.service.IIbizproProductDailyService;
 import cn.ibizlab.pms.core.ibizpro.filter.IbizproProductDailySearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -184,7 +185,7 @@ public class IbizproProductDailyRuntime extends cn.ibizlab.pms.core.runtime.Syst
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbizproProductDaily){
                     IbizproProductDaily arg = (IbizproProductDaily) args[0] ;
-                    arg = ibizproproductdailyService.get(arg.getIbizproproductdailyid()) ;
+                    CachedBeanCopier.copy(ibizproproductdailyService.get(arg.getIbizproproductdailyid()), arg);
                     return arg;
                 }else{
                     return ibizproproductdailyService.get((Long) args[0]);
@@ -213,7 +214,7 @@ public class IbizproProductDailyRuntime extends cn.ibizlab.pms.core.runtime.Syst
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbizproProductDaily){
                     IbizproProductDaily arg = (IbizproProductDaily) args[0] ;
-                    arg = ibizproproductdailyService.get(arg.getIbizproproductdailyid()) ;
+                    CachedBeanCopier.copy(ibizproproductdailyService.get(arg.getIbizproproductdailyid()), arg);
                     return arg;
                 }else{
                     return ibizproproductdailyService.get((Long) args[0]);

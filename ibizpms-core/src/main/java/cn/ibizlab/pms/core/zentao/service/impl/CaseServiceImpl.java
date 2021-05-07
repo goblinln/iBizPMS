@@ -178,9 +178,9 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!caseRuntime.isRtmodel()){
+            if(!caseRuntime.isRtmodel()){
                 et.setCasesteps(casestepService.selectByIbizcase(key));
-        }
+            }
         }
         return et;
     }

@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.Company;
 import cn.ibizlab.pms.core.zentao.service.ICompanyService;
 import cn.ibizlab.pms.core.zentao.filter.CompanySearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class CompanyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof Company){
                     Company arg = (Company) args[0] ;
-                    arg = companyService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(companyService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return companyService.get((Long) args[0]);
@@ -203,7 +204,7 @@ public class CompanyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof Company){
                     Company arg = (Company) args[0] ;
-                    arg = companyService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(companyService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return companyService.get((Long) args[0]);

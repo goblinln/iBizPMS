@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.WebHook;
 import cn.ibizlab.pms.core.zentao.service.IWebHookService;
 import cn.ibizlab.pms.core.zentao.filter.WebHookSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class WebHookRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof WebHook){
                     WebHook arg = (WebHook) args[0] ;
-                    arg = webhookService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(webhookService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return webhookService.get((Long) args[0]);
@@ -203,7 +204,7 @@ public class WebHookRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof WebHook){
                     WebHook arg = (WebHook) args[0] ;
-                    arg = webhookService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(webhookService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return webhookService.get((Long) args[0]);

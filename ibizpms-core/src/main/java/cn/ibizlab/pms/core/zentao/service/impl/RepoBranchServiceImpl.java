@@ -127,8 +127,8 @@ public class RepoBranchServiceImpl extends ServiceImpl<RepoBranchMapper, RepoBra
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!repobranchRuntime.isRtmodel()){
-        }
+            if(!repobranchRuntime.isRtmodel()){
+            }
         }
         return et;
     }

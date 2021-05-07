@@ -127,8 +127,8 @@ public class ImMessagestatusServiceImpl extends ServiceImpl<ImMessagestatusMappe
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!immessagestatusRuntime.isRtmodel()){
-        }
+            if(!immessagestatusRuntime.isRtmodel()){
+            }
         }
         return et;
     }

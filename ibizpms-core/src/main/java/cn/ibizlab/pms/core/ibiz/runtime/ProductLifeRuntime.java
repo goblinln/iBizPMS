@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.ibiz.runtime;
 import cn.ibizlab.pms.core.ibiz.domain.ProductLife;
 import cn.ibizlab.pms.core.ibiz.service.IProductLifeService;
 import cn.ibizlab.pms.core.ibiz.filter.ProductLifeSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -192,7 +193,7 @@ public class ProductLifeRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof ProductLife){
                     ProductLife arg = (ProductLife) args[0] ;
-                    arg = productlifeService.get(arg.getProductlifeid()) ;
+                    CachedBeanCopier.copy(productlifeService.get(arg.getProductlifeid()), arg);
                     return arg;
                 }else{
                     return productlifeService.get((String) args[0]);
@@ -215,7 +216,7 @@ public class ProductLifeRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof ProductLife){
                     ProductLife arg = (ProductLife) args[0] ;
-                    arg = productlifeService.get(arg.getProductlifeid()) ;
+                    CachedBeanCopier.copy(productlifeService.get(arg.getProductlifeid()), arg);
                     return arg;
                 }else{
                     return productlifeService.get((String) args[0]);

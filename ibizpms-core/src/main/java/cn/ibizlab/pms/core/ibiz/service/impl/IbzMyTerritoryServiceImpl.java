@@ -127,8 +127,8 @@ public class IbzMyTerritoryServiceImpl extends ServiceImpl<IbzMyTerritoryMapper,
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!ibzmyterritoryRuntime.isRtmodel()){
-        }
+            if(!ibzmyterritoryRuntime.isRtmodel()){
+            }
         }
         return et;
     }

@@ -127,8 +127,8 @@ public class JenkinsServiceImpl extends ServiceImpl<JenkinsMapper, Jenkins> impl
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!jenkinsRuntime.isRtmodel()){
-        }
+            if(!jenkinsRuntime.isRtmodel()){
+            }
         }
         return et;
     }

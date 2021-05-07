@@ -133,8 +133,8 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!storystageRuntime.isRtmodel()){
-        }
+            if(!storystageRuntime.isRtmodel()){
+            }
         }
         return et;
     }

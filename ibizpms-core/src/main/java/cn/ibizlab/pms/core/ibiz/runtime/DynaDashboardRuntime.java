@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.ibiz.runtime;
 import cn.ibizlab.pms.core.ibiz.domain.DynaDashboard;
 import cn.ibizlab.pms.core.ibiz.service.IDynaDashboardService;
 import cn.ibizlab.pms.core.ibiz.filter.DynaDashboardSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class DynaDashboardRuntime extends cn.ibizlab.pms.core.runtime.SystemData
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof DynaDashboard){
                     DynaDashboard arg = (DynaDashboard) args[0] ;
-                    arg = dynadashboardService.get(arg.getDynadashboardid()) ;
+                    CachedBeanCopier.copy(dynadashboardService.get(arg.getDynadashboardid()), arg);
                     return arg;
                 }else{
                     return dynadashboardService.get((String) args[0]);
@@ -203,7 +204,7 @@ public class DynaDashboardRuntime extends cn.ibizlab.pms.core.runtime.SystemData
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof DynaDashboard){
                     DynaDashboard arg = (DynaDashboard) args[0] ;
-                    arg = dynadashboardService.get(arg.getDynadashboardid()) ;
+                    CachedBeanCopier.copy(dynadashboardService.get(arg.getDynadashboardid()), arg);
                     return arg;
                 }else{
                     return dynadashboardService.get((String) args[0]);

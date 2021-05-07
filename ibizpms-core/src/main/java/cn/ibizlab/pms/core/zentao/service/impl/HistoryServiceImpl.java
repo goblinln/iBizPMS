@@ -130,8 +130,8 @@ public class HistoryServiceImpl extends ServiceImpl<HistoryMapper, History> impl
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!historyRuntime.isRtmodel()){
-        }
+            if(!historyRuntime.isRtmodel()){
+            }
         }
         return et;
     }

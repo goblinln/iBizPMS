@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.report.runtime;
 import cn.ibizlab.pms.core.report.domain.IbzReportly;
 import cn.ibizlab.pms.core.report.service.IIbzReportlyService;
 import cn.ibizlab.pms.core.report.filter.IbzReportlySearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -192,7 +193,7 @@ public class IbzReportlyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbzReportly){
                     IbzReportly arg = (IbzReportly) args[0] ;
-                    arg = ibzreportlyService.get(arg.getIbzreportlyid()) ;
+                    CachedBeanCopier.copy(ibzreportlyService.get(arg.getIbzreportlyid()), arg);
                     return arg;
                 }else{
                     return ibzreportlyService.get((Long) args[0]);
@@ -221,7 +222,7 @@ public class IbzReportlyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbzReportly){
                     IbzReportly arg = (IbzReportly) args[0] ;
-                    arg = ibzreportlyService.get(arg.getIbzreportlyid()) ;
+                    CachedBeanCopier.copy(ibzreportlyService.get(arg.getIbzreportlyid()), arg);
                     return arg;
                 }else{
                     return ibzreportlyService.get((Long) args[0]);

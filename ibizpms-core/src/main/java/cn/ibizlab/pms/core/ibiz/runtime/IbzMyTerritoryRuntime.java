@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.ibiz.runtime;
 import cn.ibizlab.pms.core.ibiz.domain.IbzMyTerritory;
 import cn.ibizlab.pms.core.ibiz.service.IIbzMyTerritoryService;
 import cn.ibizlab.pms.core.ibiz.filter.IbzMyTerritorySearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -200,7 +201,7 @@ public class IbzMyTerritoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbzMyTerritory){
                     IbzMyTerritory arg = (IbzMyTerritory) args[0] ;
-                    arg = ibzmyterritoryService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(ibzmyterritoryService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return ibzmyterritoryService.get((Long) args[0]);
@@ -232,7 +233,7 @@ public class IbzMyTerritoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbzMyTerritory){
                     IbzMyTerritory arg = (IbzMyTerritory) args[0] ;
-                    arg = ibzmyterritoryService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(ibzmyterritoryService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return ibzmyterritoryService.get((Long) args[0]);

@@ -182,10 +182,10 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!storyRuntime.isRtmodel()){
+            if(!storyRuntime.isRtmodel()){
                 et.setStoryspecs(storyspecService.selectByStory(key));
                 et.setStorystages(storystageService.selectByStory(key));
-        }
+            }
         }
         return et;
     }

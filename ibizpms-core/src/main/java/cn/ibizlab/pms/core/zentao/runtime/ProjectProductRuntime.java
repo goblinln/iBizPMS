@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.ProjectProduct;
 import cn.ibizlab.pms.core.zentao.service.IProjectProductService;
 import cn.ibizlab.pms.core.zentao.filter.ProjectProductSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -184,7 +185,7 @@ public class ProjectProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof ProjectProduct){
                     ProjectProduct arg = (ProjectProduct) args[0] ;
-                    arg = projectproductService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(projectproductService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return projectproductService.get((String) args[0]);
@@ -207,7 +208,7 @@ public class ProjectProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof ProjectProduct){
                     ProjectProduct arg = (ProjectProduct) args[0] ;
-                    arg = projectproductService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(projectproductService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return projectproductService.get((String) args[0]);

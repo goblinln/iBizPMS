@@ -137,9 +137,9 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!ibzplantempletRuntime.isRtmodel()){
+            if(!ibzplantempletRuntime.isRtmodel()){
                 et.setIbzplantempletdetail(ibzplantempletdetailService.selectByPlantempletid(key));
-        }
+            }
         }
         return et;
     }

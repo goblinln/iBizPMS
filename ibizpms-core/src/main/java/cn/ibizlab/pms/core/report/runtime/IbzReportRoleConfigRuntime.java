@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.report.runtime;
 import cn.ibizlab.pms.core.report.domain.IbzReportRoleConfig;
 import cn.ibizlab.pms.core.report.service.IIbzReportRoleConfigService;
 import cn.ibizlab.pms.core.report.filter.IbzReportRoleConfigSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class IbzReportRoleConfigRuntime extends cn.ibizlab.pms.core.runtime.Syst
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbzReportRoleConfig){
                     IbzReportRoleConfig arg = (IbzReportRoleConfig) args[0] ;
-                    arg = ibzreportroleconfigService.get(arg.getIbzreportroleconfigid()) ;
+                    CachedBeanCopier.copy(ibzreportroleconfigService.get(arg.getIbzreportroleconfigid()), arg);
                     return arg;
                 }else{
                     return ibzreportroleconfigService.get((String) args[0]);
@@ -203,7 +204,7 @@ public class IbzReportRoleConfigRuntime extends cn.ibizlab.pms.core.runtime.Syst
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbzReportRoleConfig){
                     IbzReportRoleConfig arg = (IbzReportRoleConfig) args[0] ;
-                    arg = ibzreportroleconfigService.get(arg.getIbzreportroleconfigid()) ;
+                    CachedBeanCopier.copy(ibzreportroleconfigService.get(arg.getIbzreportroleconfigid()), arg);
                     return arg;
                 }else{
                     return ibzreportroleconfigService.get((String) args[0]);

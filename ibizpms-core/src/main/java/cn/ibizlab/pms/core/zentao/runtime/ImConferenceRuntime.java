@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.ImConference;
 import cn.ibizlab.pms.core.zentao.service.IImConferenceService;
 import cn.ibizlab.pms.core.zentao.filter.ImConferenceSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class ImConferenceRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof ImConference){
                     ImConference arg = (ImConference) args[0] ;
-                    arg = imconferenceService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(imconferenceService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return imconferenceService.get((Long) args[0]);
@@ -203,7 +204,7 @@ public class ImConferenceRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof ImConference){
                     ImConference arg = (ImConference) args[0] ;
-                    arg = imconferenceService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(imconferenceService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return imconferenceService.get((Long) args[0]);

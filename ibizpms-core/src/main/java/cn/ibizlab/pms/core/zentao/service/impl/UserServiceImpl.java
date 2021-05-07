@@ -127,8 +127,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!userRuntime.isRtmodel()){
-        }
+            if(!userRuntime.isRtmodel()){
+            }
         }
         return et;
     }

@@ -154,8 +154,8 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!buildRuntime.isRtmodel()){
-        }
+            if(!buildRuntime.isRtmodel()){
+            }
         }
         return et;
     }

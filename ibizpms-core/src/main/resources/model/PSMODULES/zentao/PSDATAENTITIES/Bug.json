@@ -8238,6 +8238,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "assignTo",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/AssignTo.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "BatchUnlinkBug",
       "getPSDEAction" : {
         "modelref" : true,
@@ -8312,6 +8319,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Save.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Activate",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Activate.json"
       },
       "allowMode" : true
     }, {

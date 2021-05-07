@@ -136,8 +136,8 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!projectstoryRuntime.isRtmodel()){
-        }
+            if(!projectstoryRuntime.isRtmodel()){
+            }
         }
         return et;
     }

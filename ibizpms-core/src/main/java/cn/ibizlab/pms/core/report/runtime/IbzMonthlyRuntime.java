@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.report.runtime;
 import cn.ibizlab.pms.core.report.domain.IbzMonthly;
 import cn.ibizlab.pms.core.report.service.IIbzMonthlyService;
 import cn.ibizlab.pms.core.report.filter.IbzMonthlySearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -204,7 +205,7 @@ public class IbzMonthlyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbzMonthly){
                     IbzMonthly arg = (IbzMonthly) args[0] ;
-                    arg = ibzmonthlyService.get(arg.getIbzmonthlyid()) ;
+                    CachedBeanCopier.copy(ibzmonthlyService.get(arg.getIbzmonthlyid()), arg);
                     return arg;
                 }else{
                     return ibzmonthlyService.get((Long) args[0]);
@@ -245,7 +246,7 @@ public class IbzMonthlyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbzMonthly){
                     IbzMonthly arg = (IbzMonthly) args[0] ;
-                    arg = ibzmonthlyService.get(arg.getIbzmonthlyid()) ;
+                    CachedBeanCopier.copy(ibzmonthlyService.get(arg.getIbzmonthlyid()), arg);
                     return arg;
                 }else{
                     return ibzmonthlyService.get((Long) args[0]);

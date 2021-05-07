@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.ibiz.runtime;
 import cn.ibizlab.pms.core.ibiz.domain.ProductStats;
 import cn.ibizlab.pms.core.ibiz.service.IProductStatsService;
 import cn.ibizlab.pms.core.ibiz.filter.ProductStatsSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -196,7 +197,7 @@ public class ProductStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof ProductStats){
                     ProductStats arg = (ProductStats) args[0] ;
-                    arg = productstatsService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(productstatsService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return productstatsService.get((Long) args[0]);
@@ -222,7 +223,7 @@ public class ProductStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof ProductStats){
                     ProductStats arg = (ProductStats) args[0] ;
-                    arg = productstatsService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(productstatsService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return productstatsService.get((Long) args[0]);

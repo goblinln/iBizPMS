@@ -130,8 +130,8 @@ public class JobServiceImpl extends ServiceImpl<JobMapper, Job> implements IJobS
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!jobRuntime.isRtmodel()){
-        }
+            if(!jobRuntime.isRtmodel()){
+            }
         }
         return et;
     }

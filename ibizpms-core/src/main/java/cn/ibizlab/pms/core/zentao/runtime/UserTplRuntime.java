@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.UserTpl;
 import cn.ibizlab.pms.core.zentao.service.IUserTplService;
 import cn.ibizlab.pms.core.zentao.filter.UserTplSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -184,7 +185,7 @@ public class UserTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof UserTpl){
                     UserTpl arg = (UserTpl) args[0] ;
-                    arg = usertplService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(usertplService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return usertplService.get((Long) args[0]);
@@ -210,7 +211,7 @@ public class UserTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof UserTpl){
                     UserTpl arg = (UserTpl) args[0] ;
-                    arg = usertplService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(usertplService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return usertplService.get((Long) args[0]);

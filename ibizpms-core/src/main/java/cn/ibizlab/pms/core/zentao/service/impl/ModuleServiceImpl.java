@@ -159,8 +159,8 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!moduleRuntime.isRtmodel()){
-        }
+            if(!moduleRuntime.isRtmodel()){
+            }
         }
         return et;
     }

@@ -127,8 +127,8 @@ public class DynaDashboardServiceImpl extends ServiceImpl<DynaDashboardMapper, D
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!dynadashboardRuntime.isRtmodel()){
-        }
+            if(!dynadashboardRuntime.isRtmodel()){
+            }
         }
         return et;
     }

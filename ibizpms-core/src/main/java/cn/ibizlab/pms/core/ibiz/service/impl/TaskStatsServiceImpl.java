@@ -127,8 +127,8 @@ public class TaskStatsServiceImpl extends ServiceImpl<TaskStatsMapper, TaskStats
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!taskstatsRuntime.isRtmodel()){
-        }
+            if(!taskstatsRuntime.isRtmodel()){
+            }
         }
         return et;
     }

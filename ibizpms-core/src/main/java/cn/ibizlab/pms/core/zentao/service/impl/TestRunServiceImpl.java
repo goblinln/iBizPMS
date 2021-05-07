@@ -143,9 +143,9 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!testrunRuntime.isRtmodel()){
+            if(!testrunRuntime.isRtmodel()){
                 et.setTestresults(testresultService.selectByRun(key));
-        }
+            }
         }
         return et;
     }

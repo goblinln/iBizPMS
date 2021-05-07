@@ -133,8 +133,8 @@ public class IBZProProductServiceImpl extends ServiceImpl<IBZProProductMapper, I
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!ibzproproductRuntime.isRtmodel()){
-        }
+            if(!ibzproproductRuntime.isRtmodel()){
+            }
         }
         return et;
     }

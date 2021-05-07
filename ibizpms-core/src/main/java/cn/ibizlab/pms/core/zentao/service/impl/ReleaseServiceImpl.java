@@ -148,8 +148,8 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!releaseRuntime.isRtmodel()){
-        }
+            if(!releaseRuntime.isRtmodel()){
+            }
         }
         return et;
     }

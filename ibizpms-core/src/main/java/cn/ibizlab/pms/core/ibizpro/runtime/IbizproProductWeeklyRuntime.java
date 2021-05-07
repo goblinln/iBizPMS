@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.ibizpro.runtime;
 import cn.ibizlab.pms.core.ibizpro.domain.IbizproProductWeekly;
 import cn.ibizlab.pms.core.ibizpro.service.IIbizproProductWeeklyService;
 import cn.ibizlab.pms.core.ibizpro.filter.IbizproProductWeeklySearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class IbizproProductWeeklyRuntime extends cn.ibizlab.pms.core.runtime.Sys
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbizproProductWeekly){
                     IbizproProductWeekly arg = (IbizproProductWeekly) args[0] ;
-                    arg = ibizproproductweeklyService.get(arg.getIbizproProductweeklyid()) ;
+                    CachedBeanCopier.copy(ibizproproductweeklyService.get(arg.getIbizproProductweeklyid()), arg);
                     return arg;
                 }else{
                     return ibizproproductweeklyService.get((Long) args[0]);
@@ -206,7 +207,7 @@ public class IbizproProductWeeklyRuntime extends cn.ibizlab.pms.core.runtime.Sys
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbizproProductWeekly){
                     IbizproProductWeekly arg = (IbizproProductWeekly) args[0] ;
-                    arg = ibizproproductweeklyService.get(arg.getIbizproProductweeklyid()) ;
+                    CachedBeanCopier.copy(ibizproproductweeklyService.get(arg.getIbizproProductweeklyid()), arg);
                     return arg;
                 }else{
                     return ibizproproductweeklyService.get((Long) args[0]);

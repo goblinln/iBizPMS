@@ -141,8 +141,8 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!deptRuntime.isRtmodel()){
-        }
+            if(!deptRuntime.isRtmodel()){
+            }
         }
         return et;
     }

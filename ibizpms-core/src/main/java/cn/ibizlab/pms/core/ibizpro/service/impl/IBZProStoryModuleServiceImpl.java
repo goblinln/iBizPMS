@@ -151,8 +151,8 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!ibzprostorymoduleRuntime.isRtmodel()){
-        }
+            if(!ibzprostorymoduleRuntime.isRtmodel()){
+            }
         }
         return et;
     }

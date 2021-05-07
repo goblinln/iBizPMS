@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.ibiz.runtime;
 import cn.ibizlab.pms.core.ibiz.domain.IbzFavorites;
 import cn.ibizlab.pms.core.ibiz.service.IIbzFavoritesService;
 import cn.ibizlab.pms.core.ibiz.filter.IbzFavoritesSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class IbzFavoritesRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbzFavorites){
                     IbzFavorites arg = (IbzFavorites) args[0] ;
-                    arg = ibzfavoritesService.get(arg.getIbzfavoritesid()) ;
+                    CachedBeanCopier.copy(ibzfavoritesService.get(arg.getIbzfavoritesid()), arg);
                     return arg;
                 }else{
                     return ibzfavoritesService.get((String) args[0]);
@@ -203,7 +204,7 @@ public class IbzFavoritesRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbzFavorites){
                     IbzFavorites arg = (IbzFavorites) args[0] ;
-                    arg = ibzfavoritesService.get(arg.getIbzfavoritesid()) ;
+                    CachedBeanCopier.copy(ibzfavoritesService.get(arg.getIbzfavoritesid()), arg);
                     return arg;
                 }else{
                     return ibzfavoritesService.get((String) args[0]);

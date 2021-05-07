@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.ibiz.runtime;
 import cn.ibizlab.pms.core.ibiz.domain.SysUpdateLog;
 import cn.ibizlab.pms.core.ibiz.service.ISysUpdateLogService;
 import cn.ibizlab.pms.core.ibiz.filter.SysUpdateLogSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class SysUpdateLogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof SysUpdateLog){
                     SysUpdateLog arg = (SysUpdateLog) args[0] ;
-                    arg = sysupdatelogService.get(arg.getSysupdatelogid()) ;
+                    CachedBeanCopier.copy(sysupdatelogService.get(arg.getSysupdatelogid()), arg);
                     return arg;
                 }else{
                     return sysupdatelogService.get((String) args[0]);
@@ -206,7 +207,7 @@ public class SysUpdateLogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof SysUpdateLog){
                     SysUpdateLog arg = (SysUpdateLog) args[0] ;
-                    arg = sysupdatelogService.get(arg.getSysupdatelogid()) ;
+                    CachedBeanCopier.copy(sysupdatelogService.get(arg.getSysupdatelogid()), arg);
                     return arg;
                 }else{
                     return sysupdatelogService.get((String) args[0]);

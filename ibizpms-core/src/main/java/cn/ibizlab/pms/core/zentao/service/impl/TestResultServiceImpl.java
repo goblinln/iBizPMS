@@ -151,8 +151,8 @@ public class TestResultServiceImpl extends ServiceImpl<TestResultMapper, TestRes
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!testresultRuntime.isRtmodel()){
-        }
+            if(!testresultRuntime.isRtmodel()){
+            }
         }
         return et;
     }

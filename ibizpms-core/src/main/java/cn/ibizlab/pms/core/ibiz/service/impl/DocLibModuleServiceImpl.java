@@ -148,8 +148,8 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!doclibmoduleRuntime.isRtmodel()){
-        }
+            if(!doclibmoduleRuntime.isRtmodel()){
+            }
         }
         return et;
     }

@@ -127,8 +127,8 @@ public class UserViewServiceImpl extends ServiceImpl<UserViewMapper, UserView> i
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!userviewRuntime.isRtmodel()){
-        }
+            if(!userviewRuntime.isRtmodel()){
+            }
         }
         return et;
     }

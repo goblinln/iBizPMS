@@ -127,8 +127,8 @@ public class ProductSumServiceImpl extends ServiceImpl<ProductSumMapper, Product
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!productsumRuntime.isRtmodel()){
-        }
+            if(!productsumRuntime.isRtmodel()){
+            }
         }
         return et;
     }

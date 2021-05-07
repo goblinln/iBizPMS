@@ -129,8 +129,8 @@ public class RepoFilesServiceImpl extends ServiceImpl<RepoFilesMapper, RepoFiles
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!repofilesRuntime.isRtmodel()){
-        }
+            if(!repofilesRuntime.isRtmodel()){
+            }
         }
         return et;
     }

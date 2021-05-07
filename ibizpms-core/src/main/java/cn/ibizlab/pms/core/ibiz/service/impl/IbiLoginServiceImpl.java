@@ -127,8 +127,8 @@ public class IbiLoginServiceImpl extends ServiceImpl<IbiLoginMapper, IbiLogin> i
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!ibiloginRuntime.isRtmodel()){
-        }
+            if(!ibiloginRuntime.isRtmodel()){
+            }
         }
         return et;
     }

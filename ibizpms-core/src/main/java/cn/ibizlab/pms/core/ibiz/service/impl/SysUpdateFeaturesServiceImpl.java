@@ -142,8 +142,8 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!sysupdatefeaturesRuntime.isRtmodel()){
-        }
+            if(!sysupdatefeaturesRuntime.isRtmodel()){
+            }
         }
         return et;
     }

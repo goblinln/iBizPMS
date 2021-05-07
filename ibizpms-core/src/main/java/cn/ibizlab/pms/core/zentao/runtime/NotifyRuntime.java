@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.Notify;
 import cn.ibizlab.pms.core.zentao.service.INotifyService;
 import cn.ibizlab.pms.core.zentao.filter.NotifySearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class NotifyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof Notify){
                     Notify arg = (Notify) args[0] ;
-                    arg = notifyService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(notifyService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return notifyService.get((Long) args[0]);
@@ -203,7 +204,7 @@ public class NotifyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof Notify){
                     Notify arg = (Notify) args[0] ;
-                    arg = notifyService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(notifyService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return notifyService.get((Long) args[0]);

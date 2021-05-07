@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.ibiz.runtime;
 import cn.ibizlab.pms.core.ibiz.domain.IbzLibCaseSteps;
 import cn.ibizlab.pms.core.ibiz.service.IIbzLibCaseStepsService;
 import cn.ibizlab.pms.core.ibiz.filter.IbzLibCaseStepsSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class IbzLibCaseStepsRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbzLibCaseSteps){
                     IbzLibCaseSteps arg = (IbzLibCaseSteps) args[0] ;
-                    arg = ibzlibcasestepsService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(ibzlibcasestepsService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return ibzlibcasestepsService.get((Long) args[0]);
@@ -203,7 +204,7 @@ public class IbzLibCaseStepsRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbzLibCaseSteps){
                     IbzLibCaseSteps arg = (IbzLibCaseSteps) args[0] ;
-                    arg = ibzlibcasestepsService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(ibzlibcasestepsService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return ibzlibcasestepsService.get((Long) args[0]);

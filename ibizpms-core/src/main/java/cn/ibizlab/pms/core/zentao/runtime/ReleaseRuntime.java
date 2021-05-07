@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.Release;
 import cn.ibizlab.pms.core.zentao.service.IReleaseService;
 import cn.ibizlab.pms.core.zentao.filter.ReleaseSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -186,7 +187,7 @@ public class ReleaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof Release){
                     Release arg = (Release) args[0] ;
-                    arg = releaseService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(releaseService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return releaseService.get((Long) args[0]);
@@ -242,7 +243,7 @@ public class ReleaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof Release){
                     Release arg = (Release) args[0] ;
-                    arg = releaseService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(releaseService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return releaseService.get((Long) args[0]);

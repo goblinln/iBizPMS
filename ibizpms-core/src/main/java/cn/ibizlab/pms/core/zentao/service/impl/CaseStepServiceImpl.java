@@ -138,9 +138,9 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!casestepRuntime.isRtmodel()){
+            if(!casestepRuntime.isRtmodel()){
                 et.setCasestep(casestepService.selectByParent(key));
-        }
+            }
         }
         return et;
     }

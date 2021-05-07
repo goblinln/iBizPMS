@@ -127,8 +127,8 @@ public class LangServiceImpl extends ServiceImpl<LangMapper, Lang> implements IL
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!langRuntime.isRtmodel()){
-        }
+            if(!langRuntime.isRtmodel()){
+            }
         }
         return et;
     }

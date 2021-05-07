@@ -127,8 +127,8 @@ public class IbzAgentServiceImpl extends ServiceImpl<IbzAgentMapper, IbzAgent> i
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!ibzagentRuntime.isRtmodel()){
-        }
+            if(!ibzagentRuntime.isRtmodel()){
+            }
         }
         return et;
     }

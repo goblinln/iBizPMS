@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.report.runtime;
 import cn.ibizlab.pms.core.report.domain.IbzDaily;
 import cn.ibizlab.pms.core.report.service.IIbzDailyService;
 import cn.ibizlab.pms.core.report.filter.IbzDailySearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -204,7 +205,7 @@ public class IbzDailyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbzDaily){
                     IbzDaily arg = (IbzDaily) args[0] ;
-                    arg = ibzdailyService.get(arg.getIbzdailyid()) ;
+                    CachedBeanCopier.copy(ibzdailyService.get(arg.getIbzdailyid()), arg);
                     return arg;
                 }else{
                     return ibzdailyService.get((Long) args[0]);
@@ -248,7 +249,7 @@ public class IbzDailyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbzDaily){
                     IbzDaily arg = (IbzDaily) args[0] ;
-                    arg = ibzdailyService.get(arg.getIbzdailyid()) ;
+                    CachedBeanCopier.copy(ibzdailyService.get(arg.getIbzdailyid()), arg);
                     return arg;
                 }else{
                     return ibzdailyService.get((Long) args[0]);

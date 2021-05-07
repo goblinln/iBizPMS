@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.ibizpro.runtime;
 import cn.ibizlab.pms.core.ibizpro.domain.ProjectTaskestimate;
 import cn.ibizlab.pms.core.ibizpro.service.IProjectTaskestimateService;
 import cn.ibizlab.pms.core.ibizpro.filter.ProjectTaskestimateSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -184,7 +185,7 @@ public class ProjectTaskestimateRuntime extends cn.ibizlab.pms.core.runtime.Syst
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof ProjectTaskestimate){
                     ProjectTaskestimate arg = (ProjectTaskestimate) args[0] ;
-                    arg = projecttaskestimateService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(projecttaskestimateService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return projecttaskestimateService.get((String) args[0]);
@@ -207,7 +208,7 @@ public class ProjectTaskestimateRuntime extends cn.ibizlab.pms.core.runtime.Syst
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof ProjectTaskestimate){
                     ProjectTaskestimate arg = (ProjectTaskestimate) args[0] ;
-                    arg = projecttaskestimateService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(projecttaskestimateService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return projecttaskestimateService.get((String) args[0]);

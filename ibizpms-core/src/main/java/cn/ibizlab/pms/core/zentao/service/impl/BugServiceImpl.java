@@ -178,8 +178,8 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!bugRuntime.isRtmodel()){
-        }
+            if(!bugRuntime.isRtmodel()){
+            }
         }
         return et;
     }

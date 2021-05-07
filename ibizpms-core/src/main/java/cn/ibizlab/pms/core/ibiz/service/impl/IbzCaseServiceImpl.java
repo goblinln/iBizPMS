@@ -155,9 +155,9 @@ public class IbzCaseServiceImpl extends ServiceImpl<IbzCaseMapper, IbzCase> impl
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!ibzcaseRuntime.isRtmodel()){
+            if(!ibzcaseRuntime.isRtmodel()){
                 et.setIbzlibcasesteps(ibzlibcasestepsService.selectByIbizcase(key));
-        }
+            }
         }
         return et;
     }

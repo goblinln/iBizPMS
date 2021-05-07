@@ -127,8 +127,8 @@ public class CompanyStatsServiceImpl extends ServiceImpl<CompanyStatsMapper, Com
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!companystatsRuntime.isRtmodel()){
-        }
+            if(!companystatsRuntime.isRtmodel()){
+            }
         }
         return et;
     }

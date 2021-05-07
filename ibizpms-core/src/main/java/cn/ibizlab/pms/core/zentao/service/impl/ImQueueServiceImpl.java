@@ -127,8 +127,8 @@ public class ImQueueServiceImpl extends ServiceImpl<ImQueueMapper, ImQueue> impl
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!imqueueRuntime.isRtmodel()){
-        }
+            if(!imqueueRuntime.isRtmodel()){
+            }
         }
         return et;
     }

@@ -127,8 +127,8 @@ public class UserTplServiceImpl extends ServiceImpl<UserTplMapper, UserTpl> impl
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!usertplRuntime.isRtmodel()){
-        }
+            if(!usertplRuntime.isRtmodel()){
+            }
         }
         return et;
     }

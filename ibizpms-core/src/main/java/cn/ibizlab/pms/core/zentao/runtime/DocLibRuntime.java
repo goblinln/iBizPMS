@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.DocLib;
 import cn.ibizlab.pms.core.zentao.service.IDocLibService;
 import cn.ibizlab.pms.core.zentao.filter.DocLibSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -212,7 +213,7 @@ public class DocLibRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof DocLib){
                     DocLib arg = (DocLib) args[0] ;
-                    arg = doclibService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(doclibService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return doclibService.get((Long) args[0]);
@@ -241,7 +242,7 @@ public class DocLibRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof DocLib){
                     DocLib arg = (DocLib) args[0] ;
-                    arg = doclibService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(doclibService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return doclibService.get((Long) args[0]);

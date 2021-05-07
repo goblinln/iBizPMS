@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.Job;
 import cn.ibizlab.pms.core.zentao.service.IJobService;
 import cn.ibizlab.pms.core.zentao.filter.JobSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class JobRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof Job){
                     Job arg = (Job) args[0] ;
-                    arg = jobService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(jobService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return jobService.get((Long) args[0]);
@@ -203,7 +204,7 @@ public class JobRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof Job){
                     Job arg = (Job) args[0] ;
-                    arg = jobService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(jobService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return jobService.get((Long) args[0]);

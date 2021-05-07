@@ -150,9 +150,9 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!ibzlibcasestepsRuntime.isRtmodel()){
+            if(!ibzlibcasestepsRuntime.isRtmodel()){
                 et.setIbzlibcasesteps(ibzlibcasestepsService.selectByParent(key));
-        }
+            }
         }
         return et;
     }

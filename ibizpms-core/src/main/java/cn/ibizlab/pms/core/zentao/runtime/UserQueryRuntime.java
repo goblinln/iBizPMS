@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.UserQuery;
 import cn.ibizlab.pms.core.zentao.service.IUserQueryService;
 import cn.ibizlab.pms.core.zentao.filter.UserQuerySearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class UserQueryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof UserQuery){
                     UserQuery arg = (UserQuery) args[0] ;
-                    arg = userqueryService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(userqueryService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return userqueryService.get((Long) args[0]);
@@ -203,7 +204,7 @@ public class UserQueryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof UserQuery){
                     UserQuery arg = (UserQuery) args[0] ;
-                    arg = userqueryService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(userqueryService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return userqueryService.get((Long) args[0]);

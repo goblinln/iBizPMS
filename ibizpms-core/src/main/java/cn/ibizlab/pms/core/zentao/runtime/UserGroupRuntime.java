@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.UserGroup;
 import cn.ibizlab.pms.core.zentao.service.IUserGroupService;
 import cn.ibizlab.pms.core.zentao.filter.UserGroupSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class UserGroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof UserGroup){
                     UserGroup arg = (UserGroup) args[0] ;
-                    arg = usergroupService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(usergroupService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return usergroupService.get((String) args[0]);
@@ -203,7 +204,7 @@ public class UserGroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof UserGroup){
                     UserGroup arg = (UserGroup) args[0] ;
-                    arg = usergroupService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(usergroupService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return usergroupService.get((String) args[0]);

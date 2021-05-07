@@ -142,9 +142,9 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!actionRuntime.isRtmodel()){
+            if(!actionRuntime.isRtmodel()){
                 et.setHistorys(historyService.selectByAction(key));
-        }
+            }
         }
         return et;
     }

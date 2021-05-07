@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.ibiz.runtime;
 import cn.ibizlab.pms.core.ibiz.domain.ProductSum;
 import cn.ibizlab.pms.core.ibiz.service.IProductSumService;
 import cn.ibizlab.pms.core.ibiz.filter.ProductSumSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -204,7 +205,7 @@ public class ProductSumRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof ProductSum){
                     ProductSum arg = (ProductSum) args[0] ;
-                    arg = productsumService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(productsumService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return productsumService.get((Long) args[0]);
@@ -227,7 +228,7 @@ public class ProductSumRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof ProductSum){
                     ProductSum arg = (ProductSum) args[0] ;
-                    arg = productsumService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(productsumService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return productsumService.get((Long) args[0]);

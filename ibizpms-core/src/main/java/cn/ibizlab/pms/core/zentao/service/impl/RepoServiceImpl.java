@@ -130,8 +130,8 @@ public class RepoServiceImpl extends ServiceImpl<RepoMapper, Repo> implements IR
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!repoRuntime.isRtmodel()){
-        }
+            if(!repoRuntime.isRtmodel()){
+            }
         }
         return et;
     }

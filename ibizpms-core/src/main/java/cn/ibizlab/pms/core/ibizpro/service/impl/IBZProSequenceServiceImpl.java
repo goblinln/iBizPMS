@@ -127,8 +127,8 @@ public class IBZProSequenceServiceImpl extends ServiceImpl<IBZProSequenceMapper,
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!ibzprosequenceRuntime.isRtmodel()){
-        }
+            if(!ibzprosequenceRuntime.isRtmodel()){
+            }
         }
         return et;
     }

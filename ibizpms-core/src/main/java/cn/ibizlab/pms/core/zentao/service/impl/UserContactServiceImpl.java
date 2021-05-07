@@ -127,8 +127,8 @@ public class UserContactServiceImpl extends ServiceImpl<UserContactMapper, UserC
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!usercontactRuntime.isRtmodel()){
-        }
+            if(!usercontactRuntime.isRtmodel()){
+            }
         }
         return et;
     }

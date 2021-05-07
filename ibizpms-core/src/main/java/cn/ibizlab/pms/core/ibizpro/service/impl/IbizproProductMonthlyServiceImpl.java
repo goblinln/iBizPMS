@@ -142,8 +142,8 @@ public class IbizproProductMonthlyServiceImpl extends ServiceImpl<IbizproProduct
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!ibizproproductmonthlyRuntime.isRtmodel()){
-        }
+            if(!ibizproproductmonthlyRuntime.isRtmodel()){
+            }
         }
         return et;
     }

@@ -127,8 +127,8 @@ public class ProjectStatsServiceImpl extends ServiceImpl<ProjectStatsMapper, Pro
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!projectstatsRuntime.isRtmodel()){
-        }
+            if(!projectstatsRuntime.isRtmodel()){
+            }
         }
         return et;
     }

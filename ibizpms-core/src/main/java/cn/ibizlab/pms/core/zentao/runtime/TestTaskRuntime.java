@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.TestTask;
 import cn.ibizlab.pms.core.zentao.service.ITestTaskService;
 import cn.ibizlab.pms.core.zentao.filter.TestTaskSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -184,7 +185,7 @@ public class TestTaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof TestTask){
                     TestTask arg = (TestTask) args[0] ;
-                    arg = testtaskService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(testtaskService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return testtaskService.get((Long) args[0]);
@@ -228,7 +229,7 @@ public class TestTaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof TestTask){
                     TestTask arg = (TestTask) args[0] ;
-                    arg = testtaskService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(testtaskService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return testtaskService.get((Long) args[0]);

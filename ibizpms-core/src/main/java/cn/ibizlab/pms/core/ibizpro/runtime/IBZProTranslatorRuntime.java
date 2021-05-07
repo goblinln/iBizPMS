@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.ibizpro.runtime;
 import cn.ibizlab.pms.core.ibizpro.domain.IBZProTranslator;
 import cn.ibizlab.pms.core.ibizpro.service.IIBZProTranslatorService;
 import cn.ibizlab.pms.core.ibizpro.filter.IBZProTranslatorSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -182,7 +183,7 @@ public class IBZProTranslatorRuntime extends cn.ibizlab.pms.core.runtime.SystemD
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IBZProTranslator){
                     IBZProTranslator arg = (IBZProTranslator) args[0] ;
-                    arg = ibzprotranslatorService.get(arg.getIbzprotranslatorid()) ;
+                    CachedBeanCopier.copy(ibzprotranslatorService.get(arg.getIbzprotranslatorid()), arg);
                     return arg;
                 }else{
                     return ibzprotranslatorService.get((String) args[0]);
@@ -205,7 +206,7 @@ public class IBZProTranslatorRuntime extends cn.ibizlab.pms.core.runtime.SystemD
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IBZProTranslator){
                     IBZProTranslator arg = (IBZProTranslator) args[0] ;
-                    arg = ibzprotranslatorService.get(arg.getIbzprotranslatorid()) ;
+                    CachedBeanCopier.copy(ibzprotranslatorService.get(arg.getIbzprotranslatorid()), arg);
                     return arg;
                 }else{
                     return ibzprotranslatorService.get((String) args[0]);

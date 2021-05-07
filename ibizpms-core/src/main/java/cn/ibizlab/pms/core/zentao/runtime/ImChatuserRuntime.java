@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.ImChatuser;
 import cn.ibizlab.pms.core.zentao.service.IImChatuserService;
 import cn.ibizlab.pms.core.zentao.filter.ImChatuserSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class ImChatuserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof ImChatuser){
                     ImChatuser arg = (ImChatuser) args[0] ;
-                    arg = imchatuserService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(imchatuserService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return imchatuserService.get((Long) args[0]);
@@ -203,7 +204,7 @@ public class ImChatuserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof ImChatuser){
                     ImChatuser arg = (ImChatuser) args[0] ;
-                    arg = imchatuserService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(imchatuserService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return imchatuserService.get((Long) args[0]);

@@ -127,8 +127,8 @@ public class UserYearWorkStatsServiceImpl extends ServiceImpl<UserYearWorkStatsM
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!useryearworkstatsRuntime.isRtmodel()){
-        }
+            if(!useryearworkstatsRuntime.isRtmodel()){
+            }
         }
         return et;
     }

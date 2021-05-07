@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.ibiz.runtime;
 import cn.ibizlab.pms.core.ibiz.domain.TaskMsgRecord;
 import cn.ibizlab.pms.core.ibiz.service.ITaskMsgRecordService;
 import cn.ibizlab.pms.core.ibiz.filter.TaskMsgRecordSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class TaskMsgRecordRuntime extends cn.ibizlab.pms.core.runtime.SystemData
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof TaskMsgRecord){
                     TaskMsgRecord arg = (TaskMsgRecord) args[0] ;
-                    arg = taskmsgrecordService.get(arg.getTaskmsgrecordid()) ;
+                    CachedBeanCopier.copy(taskmsgrecordService.get(arg.getTaskmsgrecordid()), arg);
                     return arg;
                 }else{
                     return taskmsgrecordService.get((String) args[0]);
@@ -203,7 +204,7 @@ public class TaskMsgRecordRuntime extends cn.ibizlab.pms.core.runtime.SystemData
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof TaskMsgRecord){
                     TaskMsgRecord arg = (TaskMsgRecord) args[0] ;
-                    arg = taskmsgrecordService.get(arg.getTaskmsgrecordid()) ;
+                    CachedBeanCopier.copy(taskmsgrecordService.get(arg.getTaskmsgrecordid()), arg);
                     return arg;
                 }else{
                     return taskmsgrecordService.get((String) args[0]);

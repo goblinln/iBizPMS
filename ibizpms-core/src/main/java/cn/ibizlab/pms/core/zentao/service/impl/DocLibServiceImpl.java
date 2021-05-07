@@ -151,8 +151,8 @@ public class DocLibServiceImpl extends ServiceImpl<DocLibMapper, DocLib> impleme
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!doclibRuntime.isRtmodel()){
-        }
+            if(!doclibRuntime.isRtmodel()){
+            }
         }
         return et;
     }

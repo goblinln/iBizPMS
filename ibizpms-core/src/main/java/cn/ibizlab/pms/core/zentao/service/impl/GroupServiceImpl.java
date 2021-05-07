@@ -127,8 +127,8 @@ public class GroupServiceImpl extends ServiceImpl<GroupMapper, Group> implements
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!groupRuntime.isRtmodel()){
-        }
+            if(!groupRuntime.isRtmodel()){
+            }
         }
         return et;
     }

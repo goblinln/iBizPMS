@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.TestRun;
 import cn.ibizlab.pms.core.zentao.service.ITestRunService;
 import cn.ibizlab.pms.core.zentao.filter.TestRunSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class TestRunRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof TestRun){
                     TestRun arg = (TestRun) args[0] ;
-                    arg = testrunService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(testrunService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return testrunService.get((Long) args[0]);
@@ -203,7 +204,7 @@ public class TestRunRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof TestRun){
                     TestRun arg = (TestRun) args[0] ;
-                    arg = testrunService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(testrunService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return testrunService.get((Long) args[0]);

@@ -127,8 +127,8 @@ public class UserQueryServiceImpl extends ServiceImpl<UserQueryMapper, UserQuery
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!userqueryRuntime.isRtmodel()){
-        }
+            if(!userqueryRuntime.isRtmodel()){
+            }
         }
         return et;
     }

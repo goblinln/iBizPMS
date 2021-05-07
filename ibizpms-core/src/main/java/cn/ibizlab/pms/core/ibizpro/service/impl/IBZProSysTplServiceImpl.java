@@ -130,8 +130,8 @@ public class IBZProSysTplServiceImpl extends ServiceImpl<IBZProSysTplMapper, IBZ
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!ibzprosystplRuntime.isRtmodel()){
-        }
+            if(!ibzprosystplRuntime.isRtmodel()){
+            }
         }
         return et;
     }

@@ -127,8 +127,8 @@ public class GroupPrivServiceImpl extends ServiceImpl<GroupPrivMapper, GroupPriv
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!groupprivRuntime.isRtmodel()){
-        }
+            if(!groupprivRuntime.isRtmodel()){
+            }
         }
         return et;
     }

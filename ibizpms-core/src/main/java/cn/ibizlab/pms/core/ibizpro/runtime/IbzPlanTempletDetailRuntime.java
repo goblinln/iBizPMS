@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.ibizpro.runtime;
 import cn.ibizlab.pms.core.ibizpro.domain.IbzPlanTempletDetail;
 import cn.ibizlab.pms.core.ibizpro.service.IIbzPlanTempletDetailService;
 import cn.ibizlab.pms.core.ibizpro.filter.IbzPlanTempletDetailSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class IbzPlanTempletDetailRuntime extends cn.ibizlab.pms.core.runtime.Sys
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbzPlanTempletDetail){
                     IbzPlanTempletDetail arg = (IbzPlanTempletDetail) args[0] ;
-                    arg = ibzplantempletdetailService.get(arg.getIbzplantempletdetailid()) ;
+                    CachedBeanCopier.copy(ibzplantempletdetailService.get(arg.getIbzplantempletdetailid()), arg);
                     return arg;
                 }else{
                     return ibzplantempletdetailService.get((String) args[0]);
@@ -203,7 +204,7 @@ public class IbzPlanTempletDetailRuntime extends cn.ibizlab.pms.core.runtime.Sys
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbzPlanTempletDetail){
                     IbzPlanTempletDetail arg = (IbzPlanTempletDetail) args[0] ;
-                    arg = ibzplantempletdetailService.get(arg.getIbzplantempletdetailid()) ;
+                    CachedBeanCopier.copy(ibzplantempletdetailService.get(arg.getIbzplantempletdetailid()), arg);
                     return arg;
                 }else{
                     return ibzplantempletdetailService.get((String) args[0]);

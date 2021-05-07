@@ -127,8 +127,8 @@ public class RelationServiceImpl extends ServiceImpl<RelationMapper, Relation> i
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!relationRuntime.isRtmodel()){
-        }
+            if(!relationRuntime.isRtmodel()){
+            }
         }
         return et;
     }

@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.ibiz.runtime;
 import cn.ibizlab.pms.core.ibiz.domain.TaskTeam;
 import cn.ibizlab.pms.core.ibiz.service.ITaskTeamService;
 import cn.ibizlab.pms.core.ibiz.filter.TaskTeamSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class TaskTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof TaskTeam){
                     TaskTeam arg = (TaskTeam) args[0] ;
-                    arg = taskteamService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(taskteamService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return taskteamService.get((Long) args[0]);
@@ -203,7 +204,7 @@ public class TaskTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof TaskTeam){
                     TaskTeam arg = (TaskTeam) args[0] ;
-                    arg = taskteamService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(taskteamService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return taskteamService.get((Long) args[0]);

@@ -218,9 +218,9 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!productRuntime.isRtmodel()){
+            if(!productRuntime.isRtmodel()){
                 et.setProductteam(productteamService.selectByRoot(key));
-        }
+            }
         }
         return et;
     }

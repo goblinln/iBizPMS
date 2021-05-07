@@ -130,8 +130,8 @@ public class EntryServiceImpl extends ServiceImpl<EntryMapper, Entry> implements
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!entryRuntime.isRtmodel()){
-        }
+            if(!entryRuntime.isRtmodel()){
+            }
         }
         return et;
     }

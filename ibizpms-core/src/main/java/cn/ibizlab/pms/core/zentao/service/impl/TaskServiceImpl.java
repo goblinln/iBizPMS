@@ -179,10 +179,10 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!taskRuntime.isRtmodel()){
+            if(!taskRuntime.isRtmodel()){
                 et.setTaskteams(taskteamService.selectByRoot(key));
                 et.setTaskestimates(taskestimateService.selectByTask(key));
-        }
+            }
         }
         return et;
     }

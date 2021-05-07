@@ -127,8 +127,8 @@ public class IbzProjectMemberServiceImpl extends ServiceImpl<IbzProjectMemberMap
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!ibzprojectmemberRuntime.isRtmodel()){
-        }
+            if(!ibzprojectmemberRuntime.isRtmodel()){
+            }
         }
         return et;
     }

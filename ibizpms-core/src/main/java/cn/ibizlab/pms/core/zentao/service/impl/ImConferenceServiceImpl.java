@@ -127,8 +127,8 @@ public class ImConferenceServiceImpl extends ServiceImpl<ImConferenceMapper, ImC
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!imconferenceRuntime.isRtmodel()){
-        }
+            if(!imconferenceRuntime.isRtmodel()){
+            }
         }
         return et;
     }

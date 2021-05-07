@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.Burn;
 import cn.ibizlab.pms.core.zentao.service.IBurnService;
 import cn.ibizlab.pms.core.zentao.filter.BurnSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -184,7 +185,7 @@ public class BurnRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof Burn){
                     Burn arg = (Burn) args[0] ;
-                    arg = burnService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(burnService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return burnService.get((String) args[0]);
@@ -210,7 +211,7 @@ public class BurnRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof Burn){
                     Burn arg = (Burn) args[0] ;
-                    arg = burnService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(burnService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return burnService.get((String) args[0]);

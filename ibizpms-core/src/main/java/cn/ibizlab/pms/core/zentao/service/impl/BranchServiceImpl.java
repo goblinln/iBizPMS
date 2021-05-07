@@ -157,8 +157,8 @@ public class BranchServiceImpl extends ServiceImpl<BranchMapper, Branch> impleme
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!branchRuntime.isRtmodel()){
-        }
+            if(!branchRuntime.isRtmodel()){
+            }
         }
         return et;
     }

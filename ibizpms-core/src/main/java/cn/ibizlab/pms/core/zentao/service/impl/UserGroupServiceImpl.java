@@ -127,8 +127,8 @@ public class UserGroupServiceImpl extends ServiceImpl<UserGroupMapper, UserGroup
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!usergroupRuntime.isRtmodel()){
-        }
+            if(!usergroupRuntime.isRtmodel()){
+            }
         }
         return et;
     }

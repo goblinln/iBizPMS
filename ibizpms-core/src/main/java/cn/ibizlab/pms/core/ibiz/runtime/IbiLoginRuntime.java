@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.ibiz.runtime;
 import cn.ibizlab.pms.core.ibiz.domain.IbiLogin;
 import cn.ibizlab.pms.core.ibiz.service.IIbiLoginService;
 import cn.ibizlab.pms.core.ibiz.filter.IbiLoginSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class IbiLoginRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbiLogin){
                     IbiLogin arg = (IbiLogin) args[0] ;
-                    arg = ibiloginService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(ibiloginService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return ibiloginService.get((Long) args[0]);
@@ -200,7 +201,7 @@ public class IbiLoginRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbiLogin){
                     IbiLogin arg = (IbiLogin) args[0] ;
-                    arg = ibiloginService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(ibiloginService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return ibiloginService.get((Long) args[0]);

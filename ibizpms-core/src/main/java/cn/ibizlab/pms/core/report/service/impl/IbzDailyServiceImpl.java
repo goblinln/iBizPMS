@@ -127,8 +127,8 @@ public class IbzDailyServiceImpl extends ServiceImpl<IbzDailyMapper, IbzDaily> i
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!ibzdailyRuntime.isRtmodel()){
-        }
+            if(!ibzdailyRuntime.isRtmodel()){
+            }
         }
         return et;
     }

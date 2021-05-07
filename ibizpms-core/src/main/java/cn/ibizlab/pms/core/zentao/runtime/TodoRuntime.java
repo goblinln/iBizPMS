@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.Todo;
 import cn.ibizlab.pms.core.zentao.service.ITodoService;
 import cn.ibizlab.pms.core.zentao.filter.TodoSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -192,7 +193,7 @@ public class TodoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof Todo){
                     Todo arg = (Todo) args[0] ;
-                    arg = todoService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(todoService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return todoService.get((Long) args[0]);
@@ -236,7 +237,7 @@ public class TodoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof Todo){
                     Todo arg = (Todo) args[0] ;
-                    arg = todoService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(todoService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return todoService.get((Long) args[0]);

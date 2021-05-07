@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.ibiz.runtime;
 import cn.ibizlab.pms.core.ibiz.domain.DocLibModule;
 import cn.ibizlab.pms.core.ibiz.service.IDocLibModuleService;
 import cn.ibizlab.pms.core.ibiz.filter.DocLibModuleSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -216,7 +217,7 @@ public class DocLibModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof DocLibModule){
                     DocLibModule arg = (DocLibModule) args[0] ;
-                    arg = doclibmoduleService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(doclibmoduleService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return doclibmoduleService.get((Long) args[0]);
@@ -254,7 +255,7 @@ public class DocLibModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof DocLibModule){
                     DocLibModule arg = (DocLibModule) args[0] ;
-                    arg = doclibmoduleService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(doclibmoduleService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return doclibmoduleService.get((Long) args[0]);

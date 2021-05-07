@@ -142,8 +142,8 @@ public class IbizproProductDailyServiceImpl extends ServiceImpl<IbizproProductDa
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!ibizproproductdailyRuntime.isRtmodel()){
-        }
+            if(!ibizproproductdailyRuntime.isRtmodel()){
+            }
         }
         return et;
     }

@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.Team;
 import cn.ibizlab.pms.core.zentao.service.ITeamService;
 import cn.ibizlab.pms.core.zentao.filter.TeamSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class TeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof Team){
                     Team arg = (Team) args[0] ;
-                    arg = teamService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(teamService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return teamService.get((Long) args[0]);
@@ -209,7 +210,7 @@ public class TeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof Team){
                     Team arg = (Team) args[0] ;
-                    arg = teamService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(teamService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return teamService.get((Long) args[0]);

@@ -133,8 +133,8 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!burnRuntime.isRtmodel()){
-        }
+            if(!burnRuntime.isRtmodel()){
+            }
         }
         return et;
     }

@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.UserContact;
 import cn.ibizlab.pms.core.zentao.service.IUserContactService;
 import cn.ibizlab.pms.core.zentao.filter.UserContactSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -188,7 +189,7 @@ public class UserContactRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof UserContact){
                     UserContact arg = (UserContact) args[0] ;
-                    arg = usercontactService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(usercontactService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return usercontactService.get((Long) args[0]);
@@ -211,7 +212,7 @@ public class UserContactRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof UserContact){
                     UserContact arg = (UserContact) args[0] ;
-                    arg = usercontactService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(usercontactService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return usercontactService.get((Long) args[0]);

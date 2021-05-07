@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.ibiz.runtime;
 import cn.ibizlab.pms.core.ibiz.domain.EmpLoyeeload;
 import cn.ibizlab.pms.core.ibiz.service.IEmpLoyeeloadService;
 import cn.ibizlab.pms.core.ibiz.filter.EmpLoyeeloadSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -184,7 +185,7 @@ public class EmpLoyeeloadRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof EmpLoyeeload){
                     EmpLoyeeload arg = (EmpLoyeeload) args[0] ;
-                    arg = employeeloadService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(employeeloadService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return employeeloadService.get((Long) args[0]);
@@ -207,7 +208,7 @@ public class EmpLoyeeloadRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof EmpLoyeeload){
                     EmpLoyeeload arg = (EmpLoyeeload) args[0] ;
-                    arg = employeeloadService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(employeeloadService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return employeeloadService.get((Long) args[0]);

@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.ibiz.runtime;
 import cn.ibizlab.pms.core.ibiz.domain.IbzLibModule;
 import cn.ibizlab.pms.core.ibiz.service.IIbzLibModuleService;
 import cn.ibizlab.pms.core.ibiz.filter.IbzLibModuleSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -184,7 +185,7 @@ public class IbzLibModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbzLibModule){
                     IbzLibModule arg = (IbzLibModule) args[0] ;
-                    arg = ibzlibmoduleService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(ibzlibmoduleService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return ibzlibmoduleService.get((Long) args[0]);
@@ -207,7 +208,7 @@ public class IbzLibModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbzLibModule){
                     IbzLibModule arg = (IbzLibModule) args[0] ;
-                    arg = ibzlibmoduleService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(ibzlibmoduleService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return ibzlibmoduleService.get((Long) args[0]);

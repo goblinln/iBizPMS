@@ -127,8 +127,8 @@ public class ImChatServiceImpl extends ServiceImpl<ImChatMapper, ImChat> impleme
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!imchatRuntime.isRtmodel()){
-        }
+            if(!imchatRuntime.isRtmodel()){
+            }
         }
         return et;
     }

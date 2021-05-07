@@ -130,8 +130,8 @@ public class IbzPlanTempletDetailServiceImpl extends ServiceImpl<IbzPlanTempletD
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!ibzplantempletdetailRuntime.isRtmodel()){
-        }
+            if(!ibzplantempletdetailRuntime.isRtmodel()){
+            }
         }
         return et;
     }

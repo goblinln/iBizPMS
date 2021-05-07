@@ -127,8 +127,8 @@ public class ProductLifeServiceImpl extends ServiceImpl<ProductLifeMapper, Produ
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!productlifeRuntime.isRtmodel()){
-        }
+            if(!productlifeRuntime.isRtmodel()){
+            }
         }
         return et;
     }

@@ -127,8 +127,8 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team> implements IT
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!teamRuntime.isRtmodel()){
-        }
+            if(!teamRuntime.isRtmodel()){
+            }
         }
         return et;
     }

@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.ibizpro.runtime;
 import cn.ibizlab.pms.core.ibizpro.domain.IbzproConfig;
 import cn.ibizlab.pms.core.ibizpro.service.IIbzproConfigService;
 import cn.ibizlab.pms.core.ibizpro.filter.IbzproConfigSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class IbzproConfigRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IbzproConfig){
                     IbzproConfig arg = (IbzproConfig) args[0] ;
-                    arg = ibzproconfigService.get(arg.getIbzproconfigid()) ;
+                    CachedBeanCopier.copy(ibzproconfigService.get(arg.getIbzproconfigid()), arg);
                     return arg;
                 }else{
                     return ibzproconfigService.get((String) args[0]);
@@ -206,7 +207,7 @@ public class IbzproConfigRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IbzproConfig){
                     IbzproConfig arg = (IbzproConfig) args[0] ;
-                    arg = ibzproconfigService.get(arg.getIbzproconfigid()) ;
+                    CachedBeanCopier.copy(ibzproconfigService.get(arg.getIbzproconfigid()), arg);
                     return arg;
                 }else{
                     return ibzproconfigService.get((String) args[0]);

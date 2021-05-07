@@ -127,8 +127,8 @@ public class IbzFavoritesServiceImpl extends ServiceImpl<IbzFavoritesMapper, Ibz
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!ibzfavoritesRuntime.isRtmodel()){
-        }
+            if(!ibzfavoritesRuntime.isRtmodel()){
+            }
         }
         return et;
     }

@@ -127,8 +127,8 @@ public class IbzTopServiceImpl extends ServiceImpl<IbzTopMapper, IbzTop> impleme
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!ibztopRuntime.isRtmodel()){
-        }
+            if(!ibztopRuntime.isRtmodel()){
+            }
         }
         return et;
     }

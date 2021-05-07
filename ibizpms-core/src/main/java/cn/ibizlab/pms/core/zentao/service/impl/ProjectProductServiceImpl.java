@@ -151,8 +151,8 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!projectproductRuntime.isRtmodel()){
-        }
+            if(!projectproductRuntime.isRtmodel()){
+            }
         }
         return et;
     }

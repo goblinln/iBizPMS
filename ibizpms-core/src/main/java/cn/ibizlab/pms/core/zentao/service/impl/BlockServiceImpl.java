@@ -127,8 +127,8 @@ public class BlockServiceImpl extends ServiceImpl<BlockMapper, Block> implements
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!blockRuntime.isRtmodel()){
-        }
+            if(!blockRuntime.isRtmodel()){
+            }
         }
         return et;
     }

@@ -145,8 +145,8 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!bugstatsRuntime.isRtmodel()){
-        }
+            if(!bugstatsRuntime.isRtmodel()){
+            }
         }
         return et;
     }

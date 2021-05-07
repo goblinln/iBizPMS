@@ -145,8 +145,8 @@ public class CaseStatsServiceImpl extends ServiceImpl<CaseStatsMapper, CaseStats
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!casestatsRuntime.isRtmodel()){
-        }
+            if(!casestatsRuntime.isRtmodel()){
+            }
         }
         return et;
     }

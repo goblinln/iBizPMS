@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.Group;
 import cn.ibizlab.pms.core.zentao.service.IGroupService;
 import cn.ibizlab.pms.core.zentao.filter.GroupSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class GroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof Group){
                     Group arg = (Group) args[0] ;
-                    arg = groupService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(groupService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return groupService.get((Long) args[0]);
@@ -203,7 +204,7 @@ public class GroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof Group){
                     Group arg = (Group) args[0] ;
-                    arg = groupService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(groupService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return groupService.get((Long) args[0]);

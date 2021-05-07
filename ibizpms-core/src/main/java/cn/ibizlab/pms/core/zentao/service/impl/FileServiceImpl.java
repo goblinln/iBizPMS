@@ -130,8 +130,8 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!fileRuntime.isRtmodel()){
-        }
+            if(!fileRuntime.isRtmodel()){
+            }
         }
         return et;
     }

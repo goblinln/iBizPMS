@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.Build;
 import cn.ibizlab.pms.core.zentao.service.IBuildService;
 import cn.ibizlab.pms.core.zentao.filter.BuildSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -204,7 +205,7 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof Build){
                     Build arg = (Build) args[0] ;
-                    arg = buildService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(buildService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return buildService.get((Long) args[0]);
@@ -245,7 +246,7 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof Build){
                     Build arg = (Build) args[0] ;
-                    arg = buildService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(buildService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return buildService.get((Long) args[0]);

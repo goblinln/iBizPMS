@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.TaskEstimateStats;
 import cn.ibizlab.pms.core.zentao.service.ITaskEstimateStatsService;
 import cn.ibizlab.pms.core.zentao.filter.TaskEstimateStatsSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -190,7 +191,7 @@ public class TaskEstimateStatsRuntime extends cn.ibizlab.pms.core.runtime.System
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof TaskEstimateStats){
                     TaskEstimateStats arg = (TaskEstimateStats) args[0] ;
-                    arg = taskestimatestatsService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(taskestimatestatsService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return taskestimatestatsService.get((Long) args[0]);
@@ -213,7 +214,7 @@ public class TaskEstimateStatsRuntime extends cn.ibizlab.pms.core.runtime.System
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof TaskEstimateStats){
                     TaskEstimateStats arg = (TaskEstimateStats) args[0] ;
-                    arg = taskestimatestatsService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(taskestimatestatsService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return taskestimatestatsService.get((Long) args[0]);

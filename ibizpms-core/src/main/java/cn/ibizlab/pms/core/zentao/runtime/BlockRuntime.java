@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.Block;
 import cn.ibizlab.pms.core.zentao.service.IBlockService;
 import cn.ibizlab.pms.core.zentao.filter.BlockSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class BlockRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof Block){
                     Block arg = (Block) args[0] ;
-                    arg = blockService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(blockService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return blockService.get((Long) args[0]);
@@ -203,7 +204,7 @@ public class BlockRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof Block){
                     Block arg = (Block) args[0] ;
-                    arg = blockService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(blockService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return blockService.get((Long) args[0]);

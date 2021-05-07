@@ -202,9 +202,9 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!projectRuntime.isRtmodel()){
+            if(!projectRuntime.isRtmodel()){
                 et.setProjectteam(projectteamService.selectByRoot(key));
-        }
+            }
         }
         return et;
     }

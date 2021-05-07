@@ -127,8 +127,8 @@ public class IbzReportRoleConfigServiceImpl extends ServiceImpl<IbzReportRoleCon
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!ibzreportroleconfigRuntime.isRtmodel()){
-        }
+            if(!ibzreportroleconfigRuntime.isRtmodel()){
+            }
         }
         return et;
     }

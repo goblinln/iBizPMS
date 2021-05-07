@@ -136,8 +136,8 @@ public class TestSuiteServiceImpl extends ServiceImpl<TestSuiteMapper, TestSuite
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!testsuiteRuntime.isRtmodel()){
-        }
+            if(!testsuiteRuntime.isRtmodel()){
+            }
         }
         return et;
     }

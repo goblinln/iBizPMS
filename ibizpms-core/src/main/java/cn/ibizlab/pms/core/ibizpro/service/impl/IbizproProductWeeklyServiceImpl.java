@@ -142,8 +142,8 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!ibizproproductweeklyRuntime.isRtmodel()){
-        }
+            if(!ibizproproductweeklyRuntime.isRtmodel()){
+            }
         }
         return et;
     }

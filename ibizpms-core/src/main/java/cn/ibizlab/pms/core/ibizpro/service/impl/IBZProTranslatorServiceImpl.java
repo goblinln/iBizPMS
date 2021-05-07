@@ -127,8 +127,8 @@ public class IBZProTranslatorServiceImpl extends ServiceImpl<IBZProTranslatorMap
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!ibzprotranslatorRuntime.isRtmodel()){
-        }
+            if(!ibzprotranslatorRuntime.isRtmodel()){
+            }
         }
         return et;
     }

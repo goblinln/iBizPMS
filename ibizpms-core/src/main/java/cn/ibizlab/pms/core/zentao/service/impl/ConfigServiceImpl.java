@@ -127,8 +127,8 @@ public class ConfigServiceImpl extends ServiceImpl<ConfigMapper, Config> impleme
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!configRuntime.isRtmodel()){
-        }
+            if(!configRuntime.isRtmodel()){
+            }
         }
         return et;
     }

@@ -127,8 +127,8 @@ public class LogServiceImpl extends ServiceImpl<LogMapper, Log> implements ILogS
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!logRuntime.isRtmodel()){
-        }
+            if(!logRuntime.isRtmodel()){
+            }
         }
         return et;
     }

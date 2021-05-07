@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.Lang;
 import cn.ibizlab.pms.core.zentao.service.ILangService;
 import cn.ibizlab.pms.core.zentao.filter.LangSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class LangRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof Lang){
                     Lang arg = (Lang) args[0] ;
-                    arg = langService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(langService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return langService.get((Long) args[0]);
@@ -203,7 +204,7 @@ public class LangRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof Lang){
                     Lang arg = (Lang) args[0] ;
-                    arg = langService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(langService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return langService.get((Long) args[0]);

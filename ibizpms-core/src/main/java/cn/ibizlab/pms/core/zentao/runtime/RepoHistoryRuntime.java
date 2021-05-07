@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.RepoHistory;
 import cn.ibizlab.pms.core.zentao.service.IRepoHistoryService;
 import cn.ibizlab.pms.core.zentao.filter.RepoHistorySearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class RepoHistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof RepoHistory){
                     RepoHistory arg = (RepoHistory) args[0] ;
-                    arg = repohistoryService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(repohistoryService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return repohistoryService.get((Long) args[0]);
@@ -203,7 +204,7 @@ public class RepoHistoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof RepoHistory){
                     RepoHistory arg = (RepoHistory) args[0] ;
-                    arg = repohistoryService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(repohistoryService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return repohistoryService.get((Long) args[0]);

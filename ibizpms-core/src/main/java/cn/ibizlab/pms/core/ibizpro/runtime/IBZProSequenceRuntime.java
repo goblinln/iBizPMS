@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.ibizpro.runtime;
 import cn.ibizlab.pms.core.ibizpro.domain.IBZProSequence;
 import cn.ibizlab.pms.core.ibizpro.service.IIBZProSequenceService;
 import cn.ibizlab.pms.core.ibizpro.filter.IBZProSequenceSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -182,7 +183,7 @@ public class IBZProSequenceRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof IBZProSequence){
                     IBZProSequence arg = (IBZProSequence) args[0] ;
-                    arg = ibzprosequenceService.get(arg.getIbzprosequenceid()) ;
+                    CachedBeanCopier.copy(ibzprosequenceService.get(arg.getIbzprosequenceid()), arg);
                     return arg;
                 }else{
                     return ibzprosequenceService.get((String) args[0]);
@@ -208,7 +209,7 @@ public class IBZProSequenceRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof IBZProSequence){
                     IBZProSequence arg = (IBZProSequence) args[0] ;
-                    arg = ibzprosequenceService.get(arg.getIbzprosequenceid()) ;
+                    CachedBeanCopier.copy(ibzprosequenceService.get(arg.getIbzprosequenceid()), arg);
                     return arg;
                 }else{
                     return ibzprosequenceService.get((String) args[0]);

@@ -133,8 +133,8 @@ public class IbzLibServiceImpl extends ServiceImpl<IbzLibMapper, IbzLib> impleme
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!ibzlibRuntime.isRtmodel()){
-        }
+            if(!ibzlibRuntime.isRtmodel()){
+            }
         }
         return et;
     }

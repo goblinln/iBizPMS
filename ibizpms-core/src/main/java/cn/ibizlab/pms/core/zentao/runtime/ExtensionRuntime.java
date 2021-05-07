@@ -3,7 +3,8 @@ package cn.ibizlab.pms.core.zentao.runtime;
 import cn.ibizlab.pms.core.zentao.domain.Extension;
 import cn.ibizlab.pms.core.zentao.service.IExtensionService;
 import cn.ibizlab.pms.core.zentao.filter.ExtensionSearchContext;
-import  cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.filter.QueryWrapperContext;
+import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
@@ -180,7 +181,7 @@ public class ExtensionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
             else if (iPSDEAction.getName().equals("Get")) {
                 if(args[0] instanceof Extension){
                     Extension arg = (Extension) args[0] ;
-                    arg = extensionService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(extensionService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return extensionService.get((Long) args[0]);
@@ -203,7 +204,7 @@ public class ExtensionRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
             } else if (strActionName.equals(DEActions.GET)) {
                 if(args[0] instanceof Extension){
                     Extension arg = (Extension) args[0] ;
-                    arg = extensionService.get(arg.getId()) ;
+                    CachedBeanCopier.copy(extensionService.get(arg.getId()), arg);
                     return arg;
                 }else{
                     return extensionService.get((Long) args[0]);

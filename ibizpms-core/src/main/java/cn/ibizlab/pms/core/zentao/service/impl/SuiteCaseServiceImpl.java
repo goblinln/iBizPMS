@@ -136,8 +136,8 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!suitecaseRuntime.isRtmodel()){
-        }
+            if(!suitecaseRuntime.isRtmodel()){
+            }
         }
         return et;
     }

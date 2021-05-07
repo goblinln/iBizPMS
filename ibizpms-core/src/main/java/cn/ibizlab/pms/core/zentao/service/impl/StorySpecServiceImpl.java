@@ -130,8 +130,8 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-        if(!storyspecRuntime.isRtmodel()){
-        }
+            if(!storyspecRuntime.isRtmodel()){
+            }
         }
         return et;
     }

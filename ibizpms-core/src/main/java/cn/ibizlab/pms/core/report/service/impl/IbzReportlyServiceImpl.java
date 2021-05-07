@@ -127,8 +127,8 @@ public class IbzReportlyServiceImpl extends ServiceImpl<IbzReportlyMapper, IbzRe
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-        if(!ibzreportlyRuntime.isRtmodel()){
-        }
+            if(!ibzreportlyRuntime.isRtmodel()){
+            }
         }
         return et;
     }
