@@ -183,16 +183,17 @@ export default class GroupStepTable extends Vue {
      * 
      * @memberof GroupStepTable
      */
-    public async gridItemCodelist(item: any,col: any){
+    public gridItemCodelist(item: any,col: any){
         let gridItem = item[col.name];
         if(col.codelistId){
-            let codelist = await this.codeListService.getStaticItems(col.codelistId);
-            if(codelist){
-                const data = codelist.items.find((code:any) => Object.is(code.value, item[col.name]));
-                if(data){
-                    gridItem = data.text;
+            this.codeListService.getStaticItems(col.codelistId).then((codelist: any) => {
+                if(codelist){
+                    const data = codelist.items.find((code:any) => Object.is(code.value, item[col.name]));
+                    if(data){
+                        gridItem = data.text;
+                    }
                 }
-            }
+            });
         }
         return gridItem;
     }
