@@ -62,7 +62,8 @@ export class AppDataViewBase extends DataViewControlBase {
      * 
      * @memberof AppDataViewBase
      */
-    public mounted() {
+    public ctrlMounted() {
+        super.ctrlMounted();
         this.$nextTick(()=>{
             this.mouseEvent();
         })
@@ -108,9 +109,9 @@ export class AppDataViewBase extends DataViewControlBase {
         }
         const { controlClassNames } = this.renderOptions;
         return (
-            <div class={{...controlClassNames, "app-data-view":true }}>
+            <div class={{...controlClassNames, "app-data-view":true }} style="height: 100%;">
                 {this.renderSortBar(h)}
-                <row v-show={this.items.length > 0}class="data-view-container" gutter={20} type="flex" justify="start" style="margin:0px;">
+                <row v-show={this.items.length > 0} class="data-view-container" gutter={20} type="flex" justify="start" style="margin:0px;">
                     {this.renderDataViewContent(h)}
                     {this.renderBatchToolbar()}
                 </row>

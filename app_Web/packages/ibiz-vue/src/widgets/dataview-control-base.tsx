@@ -179,6 +179,14 @@ export class DataViewControlBase extends MDControlBase {
     public flag: boolean = false;
 
     /**
+     * 是否显示排序栏
+     *
+     * @type {boolean}
+     * @memberof DataViewControlBase
+     */
+    public hasSortBar:boolean = false;
+
+    /**
      * this引用
      *
      * @type {number}
@@ -226,6 +234,13 @@ export class DataViewControlBase extends MDControlBase {
                 context: this.context,
                 viewparam: this.viewparams,
             };
+        }
+        // 计算是否显示排序栏
+        const dataViewItems = this.controlInstance.getPSDEDataViewDataItems() || [];
+        if (dataViewItems.length > 0) {
+            this.hasSortBar = dataViewItems.some((dataItem: IPSDEDataViewDataItem) => {
+                return dataItem.getPSAppDEField() && !dataItem.getPSAppDEField()?.keyField;
+            });
         }
     }
 
@@ -319,6 +334,7 @@ export class DataViewControlBase extends MDControlBase {
     public onClick($event: any) {
         if (!this.moveflag) {
             this.flag = !this.flag;
+            console.log(this.flag)
         }
         this.moveflag = false;
     }
@@ -1029,9 +1045,9 @@ export class DataViewControlBase extends MDControlBase {
             return (
                 <div class='drag-filed' on-mousedown={($event: any) => this.down($event)}>
                     <row class='dataview-pagination'>
-                        <template v-show={this.flag}>
+                        <div v-show={this.flag}>
                             {super.renderBatchToolbar()}
-                        </template>
+                        </div>
                         <div class='dataview-pagination-icon'>
                             <icon type='md-code-working' on-click={($event: any) => this.onClick($event)} />
                         </div>
@@ -1048,9 +1064,11 @@ export class DataViewControlBase extends MDControlBase {
      */
     public renderQuickToolbar() {
         return (
-            <div v-show={this.items.length == 0} calss='app-data-empty'>
-                {'无数据'}
-                {this.renderQuickToolbar()}
+            <div v-show={this.items.length == 0} class='app-data-empty' style={{height: this.hasSortBar ? "calc(100% - 42px)" : "100%"}}>
+                <span>
+                    <div class="empty-text">无数据</div>
+                    {super.renderQuickToolbar()}
+                </span>
             </div>
         );
     }
@@ -1232,14 +1250,7 @@ export class DataViewControlBase extends MDControlBase {
      */
     public renderSortBar(h: any) {
         const appDataEntity = this.controlInstance.getPSAppDataEntity();
-        const dataViewItems = this.controlInstance.getPSDEDataViewDataItems() || [];
-        let hasSortBar: boolean = false;
-        if (dataViewItems.length > 0) {
-            hasSortBar = dataViewItems.some((dataItem: IPSDEDataViewDataItem) => {
-                return dataItem.getPSAppDEField() && !dataItem.getPSAppDEField()?.keyField;
-            });
-        }
-        if (hasSortBar) {
+        if (this.hasSortBar) {
             return (
                 <app-sort-bar
                     sortModel={this.sortModel}

@@ -1,5 +1,5 @@
 <template>
-  <div class="app-header-menus" v-if="isShow">
+  <div class="app-header-menus" v-if="isShow && this.sdc.isShowTool">
     <div v-for="(menu,index) in menus" :key="index" class="app-header-menu-item text" @click="openWindow(menu)">
       <div class="app-header-menu-item-icon">
         <i :class="menu.iconcls" :aria-hidden="true" />
@@ -34,7 +34,7 @@ export default class AppHeaderMenus extends Vue {
    * @type {boolean}
    * @memberof AppHeaderMenus
    */
-  public isShow:boolean = Environment.devMode && this.sdc.isShowTool;
+  public isShow:boolean = Environment.devMode;
 
   
   

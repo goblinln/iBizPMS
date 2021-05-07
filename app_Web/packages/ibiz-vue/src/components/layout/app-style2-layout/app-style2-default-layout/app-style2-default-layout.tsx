@@ -1,5 +1,5 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
-import { Util } from 'ibiz-core';
+import { AppServiceBase, Util } from 'ibiz-core';
 import "./app-style2-default-layout.less";
 
 @Component({})
@@ -38,9 +38,9 @@ export class AppStyle2DefaultLayout extends Vue {
      * @memberof AppStyle2DefaultLayout
      */
     get selectFont() {
-        let _this: any = this;
-        if (_this.$router.app.$store.state.selectFont) {
-            return _this.$router.app.$store.state.selectFont;
+        const appStore: any = AppServiceBase.getInstance().getAppStore();
+        if (appStore && appStore.state) {
+            return appStore.state.selectFont;
         } else if (localStorage.getItem('font-family')) {
             return localStorage.getItem('font-family');
         } else {

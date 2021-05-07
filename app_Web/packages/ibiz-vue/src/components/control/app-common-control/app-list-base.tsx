@@ -94,14 +94,13 @@ export class AppListBase extends ListControlBase {
             'app-list-empty': this.items.length <= 0,
             ...this.renderOptions.controlClassNames,
         };
-        const batchBar: any = ModelTool.findPSControlByName('list_batchtoolbar', this.controlInstance.getPSControls());
-        return batchBar
-            ? <div style="overflow:auto;">
+        return this.batchToolbarInstance
+            ? <div style="overflow:auto;height: 100%;">
                 <div class={listClassName} style='height:100%;'>
-                    {this.items.length > 0 ? <div style="height:100%;">{this.renderHaveItems()}</div> : <div style="height:100%;">{this.renderNoItems()}</div>}
+                    {this.items.length > 0 ? <div style="height:100%;">{this.renderHaveItems()}</div> : <div>{this.renderNoItems()}</div>}
                     {this.viewStyle == "DEFAULT" ? <el-backtop target=".content-container .app-list"></el-backtop> : null}
                 </div>
-                {batchBar && (this.selections.length > 0 ?
+                {this.batchToolbarInstance && (this.selections.length > 0 ?
                     <row class='list-pagination'>
                         {this.renderBatchToolbar()}
                     </row> : null
@@ -163,8 +162,10 @@ export class AppListBase extends ListControlBase {
      * @memberof AppListBase
      */
     public renderNoItems() {
-        const quickBar: any = ModelTool.findPSControlByName('list_quicktoolbar', this.controlInstance.getPSControls())
-        return quickBar && this.renderQuickToolbar();
+        return [
+            <div class="empty-text" style="text-align:center;">列表无数据</div>,
+            this.renderQuickToolbar()
+        ];
     }
 
     /**

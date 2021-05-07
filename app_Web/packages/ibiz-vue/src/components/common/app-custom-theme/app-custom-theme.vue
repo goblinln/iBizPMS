@@ -56,6 +56,7 @@
             <div class="split"></div>
             <el-button type="primary" size="small" @click="previewTheme">预览</el-button>
             <el-button type="primary" size="small" @click="saveThemeOptions">保存配置</el-button>
+            <el-button type="primary" size="small" @click="reset">重置</el-button>
         </el-drawer>
         
     </div>
@@ -151,11 +152,20 @@ export default class AppCustomTheme extends Vue {
     public themeOptions: any = {};
 
     /**
+     * 状态管理对象
+     * 
+     * @type {any}
+     * @memberof AppCustomTheme
+     */
+    public store: any;
+
+    /**
      * vue生命周期 -- created
      * 
      * @memberof AppCustomTheme
      */
     public created() {
+        this.store = AppServiceBase.getInstance().getAppStore();
         this.themeTypes = themeConfig.types;
         if (this.themeTypes.length > 0) {
             this.activeSetting = this.themeTypes[0].value;
@@ -173,7 +183,6 @@ export default class AppCustomTheme extends Vue {
                 });
             }
         });
-        this.initFontFamily();
     }
 
     /**
@@ -212,9 +221,8 @@ export default class AppCustomTheme extends Vue {
      * @memberof AppCustomTheme
      */
     public getSelectTheme() {
-        const _this: any = this;
-        if (_this.$router.app.$store.state.selectTheme) {
-            return _this.$router.app.$store.state.selectTheme;
+        if (this.store && this.store.state && this.store.state.selectTheme) {
+            return this.store.state.selectTheme;
         } else if (localStorage.getItem('theme-class')) {
             return localStorage.getItem('theme-class');
         } else {
@@ -270,7 +278,10 @@ export default class AppCustomTheme extends Vue {
             this.setStyle();
             const _this: any = this;
             localStorage.setItem('theme-class', this.selectTheme);
-            _this.$router.app.$store.commit('setCurrentSelectTheme', this.selectTheme);
+            AppServiceBase.getInstance().getAppStore().set
+            if (this.store) {
+                this.store.commit('setCurrentSelectTheme', this.selectTheme);
+            }
             const dom = document.body.parentElement;
             if (dom) {
                 dom.classList.forEach((val: string) => {
@@ -284,7 +295,9 @@ export default class AppCustomTheme extends Vue {
         if (this.selectFont) {
             const _this: any = this;
             localStorage.setItem('font-family', this.selectFont);
-            _this.$router.app.$store.commit('setCurrentSelectFont', this.selectFont);
+            if (this.store) {
+                this.store.commit('setCurrentSelectFont', this.selectFont);
+            }
         }
         localStorage.setItem('theme-options', JSON.stringify(this.themeOptions));
     }
@@ -354,6 +367,21 @@ export default class AppCustomTheme extends Vue {
                     this.previewTheme();
                 }
             });
+        }
+    }
+
+    /**
+     * 重置主题配置
+     * 
+     * @memberof AppCustomTheme
+     */
+    public reset() {
+        if (this.selectTheme) {
+            this.handleThemeOptions(this.selectTheme).then(() => {
+                this.$http.put(`/configs/${this.Environment.SysName}-${this.Environment.AppName}/theme-setting`, { }).then((res: any) => {
+                    this.previewTheme();
+                });
+            })
         }
     }
 

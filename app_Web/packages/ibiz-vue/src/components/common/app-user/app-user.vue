@@ -6,10 +6,6 @@
                 &nbsp;&nbsp;<avatar :src="user.avatar" />
             </div>
             <dropdown-menu class='menu' slot='list' style='font-size: 15px !important;'>
-                <dropdown-item name='updatepwd' style='font-size: 15px !important;'>
-                    <span><Icon type="ios-create-outline" style='margin-right: 8px;'/></span>
-                    <span>{{$t('components.appUser.changepwd')}}</span>
-                </dropdown-item>
                 <dropdown-item name="fullscren" style='font-size: 15px !important;'>
                     <app-full-scren/>
                 </dropdown-item>
@@ -18,6 +14,10 @@
                 </dropdown-item>
                 <dropdown-item name="changetheme" style='font-size: 15px !important;'>
                     <app-custom-theme :viewStyle='this.viewStyle'></app-custom-theme>
+                </dropdown-item>
+                <dropdown-item name='updatepwd' style='font-size: 15px !important;'>
+                    <span><Icon type="ios-create-outline" style='margin-right: 8px;'/></span>
+                    <span>{{$t('components.appUser.changepwd')}}</span>
                 </dropdown-item>
                 <dropdown-item name='logout' style='font-size: 15px !important;'>
                     <span><i aria-hidden='true' class='ivu-icon ivu-icon-md-power' style='margin-right: 8px;'></i></span>
