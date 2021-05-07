@@ -2671,11 +2671,6 @@
       "value" : "id",
       "rawValue" : false
     }, {
-      "key" : "TASK",
-      "name" : "TASK",
-      "value" : "testtask",
-      "rawValue" : false
-    }, {
       "key" : "ID",
       "name" : "ID",
       "value" : "0",
@@ -2705,11 +2700,6 @@
       "key" : "ids",
       "name" : "ids",
       "value" : "id",
-      "rawValue" : false
-    }, {
-      "key" : "task",
-      "name" : "task",
-      "value" : "testtask",
       "rawValue" : false
     } ],
     "refreshMode" : 1,
