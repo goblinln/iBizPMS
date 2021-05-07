@@ -182,7 +182,7 @@ public async ctrlModelInit() {
         const { row } = scope;
         if (uiactionDetails.length > 0) {
             return (
-                <div style="text-align: center;">
+                <div style="text-align: center;display: flex;">
                     {uiactionDetails.map((uiactionDetail: IPSUIActionGroupDetail, index: number) => {
                         const uiaction: IPSDEUIAction = uiactionDetail.getPSUIAction() as IPSDEUIAction;
                         if(row[uiaction.uIActionTag]?.visabled){
