@@ -312,7 +312,7 @@
           },
           "getPSAppDEDataSet" : {
             "modelref" : true,
-            "id" : "FetchCurUser"
+            "id" : "FetchCurDefaultQuery"
           },
           "getPSAppDataEntity" : {
             "modelref" : true,
