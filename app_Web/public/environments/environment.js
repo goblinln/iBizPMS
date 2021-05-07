@@ -1,6 +1,6 @@
 window.Environment = {
     // 应用基础路径
-    BaseUrl: '',
+    BaseUrl: '/pms',
     // 是否为开发模式
     devMode: true,
     // 是否为pc端应用
