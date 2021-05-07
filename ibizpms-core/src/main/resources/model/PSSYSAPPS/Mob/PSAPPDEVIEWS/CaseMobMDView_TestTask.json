@@ -439,7 +439,7 @@
         "name" : "移动端测试单关联用例",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "LinkCase"
+          "id" : "MobLinkCase"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -458,8 +458,13 @@
         }, {
           "key" : "ID",
           "name" : "ID",
-          "value" : "0 ",
+          "value" : "0",
           "rawValue" : true
+        }, {
+          "key" : "TESTTASK",
+          "name" : "TESTTASK",
+          "value" : "testtask",
+          "rawValue" : false
         }, {
           "key" : "VERSIONS",
           "name" : "VERSIONS",

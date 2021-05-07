@@ -2572,7 +2572,7 @@
     "name" : "关联用例",
     "getPSAppDEMethod" : {
       "modelref" : true,
-      "id" : "MobLinkCase"
+      "id" : "LinkCase"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -2593,11 +2593,6 @@
       "name" : "ID",
       "value" : "0",
       "rawValue" : true
-    }, {
-      "key" : "TESTTASK",
-      "name" : "TESTTASK",
-      "value" : "testtask",
-      "rawValue" : false
     }, {
       "key" : "VERSIONS",
       "name" : "VERSIONS",
