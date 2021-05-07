@@ -224,8 +224,8 @@ export default class AppRichTextEditor extends Vue {
    * @memberof AppRichTextEditor
    */
   public getParms() {
-    if (this.dynamicProps && this.dynamicProps._viewparam) {
-      let parm: any = JSON.parse(this.dynamicProps._viewparam);
+    if (this.dynamicProps && this.dynamicProps._viewparams) {
+      let parm: any = JSON.parse(this.dynamicProps._viewparams);
       setTimeout(() => {
         this.resloutValue = parm.value ? parm.value : "";
         const sourceEditorButton: any = document.querySelector(
@@ -378,8 +378,8 @@ export default class AppRichTextEditor extends Vue {
    */
   public async open() {
     const result: any = await this.$appmodal.openModal(
-      { viewname: "user-mob-pickup-view", title: "" },
-      {},
+      { viewname: "app-view-shell", title: "" },
+      { viewpath:'PSSYSAPPS/Mob/PSAPPDEVIEWS/UserMobPickupView.json' },
       {}
     );
     if (result || Object.is(result.ret, "OK")) {
