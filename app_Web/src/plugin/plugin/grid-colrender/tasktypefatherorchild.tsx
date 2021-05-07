@@ -36,16 +36,19 @@ export class TASKTYPEFATHERORCHILD {
         } else {
             renderParams["min-width"] = width;
         }
-        let view: any = {
-            viewname: 'app-view-shell',
-            height: linkView.height,
-            width: linkView.width,
-            title: linkView.title,
-            isRedirectView: linkView.redirectView ? true : false,
-            placement: linkView.openMode ? linkView.openMode : '',
-            viewpath: linkView.modelFilePath
+        let view: any = {}
+        if (linkView) {
+            view = {
+                viewname: 'app-view-shell',
+                height: linkView.height,
+                width: linkView.width,
+                title: linkView.title,
+                isRedirectView: linkView.redirectView ? true : false,
+                placement: linkView.openMode ? linkView.openMode : '',
+                viewpath: linkView.modelFilePath
+            }
+            this.handleLinkViewParams(linkView, view, parentContainer.context);
         }
-        this.handleLinkViewParams(linkView, view, parentContainer.context);
         let tempContext: any = Util.deepCopy(parentContainer.context);
         let tempViewParam: any = Util.deepCopy(parentContainer.viewparams);
         const refresh = parentContainer.refresh ? parentContainer.refresh : () => { };
