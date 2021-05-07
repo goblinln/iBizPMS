@@ -1543,6 +1543,14 @@
     "name" : "数据接收",
     "syncDir" : "IN"
   } ],
+  "getAllPSSysMsgQueues" : [ {
+    "modelref" : true,
+    "path" : "PSSYSMSGQUEUES/MsgQueue.json"
+  } ],
+  "getAllPSSysMsgTargets" : [ {
+    "modelref" : true,
+    "path" : "PSSYSMSGTARGETS/ProductAdmin.json"
+  } ],
   "getAllPSSysSequences" : [ {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTodoSeq.json"

@@ -10679,6 +10679,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "TaskFavorites",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskFavorites.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "GetDraft",
       "getPSDEAction" : {
         "modelref" : true,
@@ -19213,6 +19220,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Save.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Cancel",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Cancel.json"
       },
       "allowMode" : true
     }, {

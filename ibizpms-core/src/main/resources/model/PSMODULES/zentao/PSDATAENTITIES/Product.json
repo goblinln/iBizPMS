@@ -13,6 +13,18 @@
   }, {
     "actionMode" : "UPDATE",
     "actionType" : "BUILTIN",
+    "getAfterPSDEActionLogics" : [ {
+      "actionLogicType" : 3,
+      "attachMode" : "AFTER",
+      "name" : "附加逻辑",
+      "getPSDENotify" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDENOTIFIES/NewBranch.json"
+      },
+      "cloneParam" : false,
+      "ignoreException" : false,
+      "internalLogic" : false
+    } ],
     "codeName" : "Update",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Update.json",
     "logicName" : "Update",
@@ -4025,6 +4037,20 @@
     "enableViewActions" : false,
     "fieldAllowMode" : false,
     "oPPrivAllowMode" : false
+  } ],
+  "getAllPSDENotifies" : [ {
+    "codeName" : "NewBranch",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDENOTIFIES/NewBranch.json",
+    "msgType" : 0,
+    "name" : "新版本发布",
+    "getPSSysMsgQueue" : {
+      "modelref" : true,
+      "path" : "PSSYSMSGQUEUES/MsgQueue.json"
+    },
+    "getPSSysMsgTempl" : {
+      "modelref" : true,
+      "path" : "PSSYSMSGTEMPLS/ProductNewBranch.json"
+    }
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",

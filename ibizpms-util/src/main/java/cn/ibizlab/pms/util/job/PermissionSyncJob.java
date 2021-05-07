@@ -42,6 +42,10 @@ public class PermissionSyncJob implements ApplicationRunner {
 
     @Autowired
     @Lazy
+    private cn.ibizlab.pms.util.client.IBZNotifyFeignClient notifyClient;
+
+    @Autowired
+    @Lazy
     cn.ibizlab.pms.util.client.IBZDictFeignClient dictClient;
 
     @Override
@@ -79,6 +83,22 @@ public class PermissionSyncJob implements ApplicationRunner {
             }
         } catch (Exception ex) {
             log.error("向[lite]同步系统模型失败，请检查[lite]服务是否正常运行! {}", ex.getMessage());
+        }
+
+        try {
+            InputStream template = this.getClass().getResourceAsStream("/msgtempl/systemMsgTempl.json"); //消息模板
+            if (!ObjectUtils.isEmpty(template)) {
+                String strTemplate = IOUtils.toString(template, "UTF-8");
+                if (notifyClient.createMsgTemplate(new JSONObject() {{
+                    put("template", JSONArray.parseArray(strTemplate));
+                }})) {
+                    log.info("向[notify]同步消息模板成功");
+                } else {
+                    log.error("向[notify]同步消息模板失败");
+                }
+            }
+        } catch (Exception ex) {
+            log.error("向[notify]同步消息模板失败，请检查[notify]服务是否正常运行! {}", ex.getMessage());
         }
 
         try {
