@@ -2303,6 +2303,12 @@
         "name" : "MANAGE"
       }
     }, {
+      "name" : "CREATE",
+      "getPSDEOPPriv" : {
+        "logicName" : "建立",
+        "name" : "CREATE"
+      }
+    }, {
       "name" : "ACTIVATE",
       "getPSDEOPPriv" : {
         "logicName" : "激活",
@@ -2388,6 +2394,12 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
+      "name" : "CREATE",
+      "getPSDEOPPriv" : {
+        "logicName" : "建立",
+        "name" : "CREATE"
+      }
+    }, {
       "name" : "MANAGE",
       "getPSDEOPPriv" : {
         "logicName" : "管理",
@@ -2540,6 +2552,12 @@
         "name" : "CLOSE"
       }
     }, {
+      "name" : "CREATE",
+      "getPSDEOPPriv" : {
+        "logicName" : "建立",
+        "name" : "CREATE"
+      }
+    }, {
       "name" : "UPDATE",
       "getPSDEOPPriv" : {
         "logicName" : "更新",
@@ -2648,6 +2666,12 @@
       "getPSDEOPPriv" : {
         "logicName" : "读取",
         "name" : "READ"
+      }
+    }, {
+      "name" : "CREATE",
+      "getPSDEOPPriv" : {
+        "logicName" : "建立",
+        "name" : "CREATE"
       }
     }, {
       "name" : "UPDATE",
