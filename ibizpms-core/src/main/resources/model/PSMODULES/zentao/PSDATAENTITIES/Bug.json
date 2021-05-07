@@ -7943,6 +7943,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "assignTo",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/AssignTo.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "buildBatchUnlinkBug",
       "getPSDEAction" : {
         "modelref" : true,
