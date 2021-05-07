@@ -360,19 +360,19 @@
     },
     "name" : "数据导入",
     "getPSDEDataImportItems" : [ {
-      "caption" : "已删除",
-      "name" : "DELETED",
+      "caption" : "子状态",
+      "name" : "SUBSTATUS",
       "getPSAppDEField" : {
-        "name" : "DELETED",
-        "codeName" : "Deleted"
+        "name" : "SUBSTATUS",
+        "codeName" : "SubStatus"
       },
       "uniqueItem" : false
     }, {
-      "caption" : "产品",
-      "name" : "PRODUCTNAME",
+      "caption" : "所属项目",
+      "name" : "PROJECT",
       "getPSAppDEField" : {
-        "name" : "PRODUCTNAME",
-        "codeName" : "ProductName"
+        "name" : "PROJECT",
+        "codeName" : "Project"
       },
       "uniqueItem" : false
     }, {
@@ -464,14 +464,6 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "子状态",
-      "name" : "SUBSTATUS",
-      "getPSAppDEField" : {
-        "name" : "SUBSTATUS",
-        "codeName" : "SubStatus"
-      },
-      "uniqueItem" : false
-    }, {
       "caption" : "编号",
       "name" : "ID",
       "getPSAppDEField" : {
@@ -488,22 +480,6 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "所属产品",
-      "name" : "PRODUCT",
-      "getPSAppDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "所属项目",
-      "name" : "PROJECT",
-      "getPSAppDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
-      },
-      "uniqueItem" : false
-    }, {
       "caption" : "抄送给",
       "name" : "MAILTO",
       "getPSAppDEField" : {
@@ -513,6 +489,14 @@
       "getPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "所属产品",
+      "name" : "PRODUCT",
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
       },
       "uniqueItem" : false
     }, {
@@ -533,6 +517,22 @@
       "getPSAppDEField" : {
         "name" : "REPORT",
         "codeName" : "Report"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "已删除",
+      "name" : "DELETED",
+      "getPSAppDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "产品",
+      "name" : "PRODUCTNAME",
+      "getPSAppDEField" : {
+        "name" : "PRODUCTNAME",
+        "codeName" : "ProductName"
       },
       "uniqueItem" : false
     } ],
