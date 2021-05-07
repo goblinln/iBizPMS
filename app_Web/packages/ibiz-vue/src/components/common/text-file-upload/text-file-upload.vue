@@ -25,6 +25,7 @@
          <el-upload
             class="upload"
             ref="upload"
+            :headers="headers"
             :action="getAction()"
             :file-list="uploadFileList"
             :show-file-list="false"
@@ -54,7 +55,7 @@
 import {Component, Vue, Prop} from 'vue-property-decorator';
 import {Message, MessageBox} from 'element-ui';
 import {Unsubscribable} from 'rxjs';
-import { Util } from 'ibiz-core';
+import { AppServiceBase, getSessionStorage, Util } from 'ibiz-core';
 
 @Component({})
 export default class TextFileUpload extends Vue {
@@ -236,6 +237,14 @@ export default class TextFileUpload extends Vue {
     public showDialog: boolean = false;
 
     /**
+     * 请求头
+     * 
+     * @type {*}
+     * @memberof AppImageUpload 
+     */
+    public headers: any = {};
+
+    /**
      * 上传文件
      *
      * @type {boolean}
@@ -271,22 +280,6 @@ export default class TextFileUpload extends Vue {
      * @memberof DiskFileUpload
      */
     public uploadFileList: Array<any> = [];
-
-    /**
-     * 当前登陆人的token
-     *
-     * @type {string}
-     * @memberof DiskFileUpload
-     */
-    public token: string = "Bearer " + localStorage.getItem('token');
-
-    /**
-     * 上传文件请求头
-     *
-     * @type {*}
-     * @memberof DiskFileUpload
-     */
-    public myHeaders: any = {Authorization: this.token};
 
     /**
      * 表单状态事件
@@ -403,6 +396,7 @@ export default class TextFileUpload extends Vue {
      * @memberof DiskFileUpload
      */
     public created() {
+        this.setHeaders();
         this.formStateEvent = this.formState.subscribe(($event: any) => {
             // 表单加载完成
             if (Object.is($event.type, 'load')) {
@@ -435,6 +429,29 @@ export default class TextFileUpload extends Vue {
                 }
             }
         });
+    }
+
+    /**
+     * 设置请求头
+     * 
+     * @memberof AppFileUpload
+     */
+    public setHeaders(){
+        if (AppServiceBase.getInstance().getAppEnvironment().SaaSMode) {
+            let activeOrgData = getSessionStorage('activeOrgData');
+            let tempOrgId = getSessionStorage("tempOrgId");
+            this.headers['srforgid'] = tempOrgId ? tempOrgId : activeOrgData?.orgid;
+            this.headers['srfsystemid'] = activeOrgData?.systemid;
+        }
+        if (Util.getCookie('ibzuaa-token')) {
+            this.headers['Authorization'] = `Bearer ${Util.getCookie('ibzuaa-token')}`;
+        } else {
+            // 第三方应用打开免登
+            if (sessionStorage.getItem("srftoken")) {
+                const token = sessionStorage.getItem('srftoken');
+                this.headers['Authorization'] = `Bearer ${token}`;
+            }
+        }
     }
 
     /**

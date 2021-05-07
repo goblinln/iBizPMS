@@ -9,7 +9,7 @@
           :disabled="disabled"
           :file-list="files"
           :action="uploadUrl"
-          :headers="{}"
+          :headers="headers"
           :before-upload="beforeUpload"
           :before-remove="onRemove"
           :on-success="onSuccess"
@@ -51,9 +51,8 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
-import { AppServiceBase } from 'ibiz-core';
+import { AppServiceBase, getSessionStorage, Util } from 'ibiz-core';
 import { Subject, Unsubscribable } from 'rxjs';
-import { Util } from 'ibiz-core';
 
 @Component({
 })
@@ -227,6 +226,14 @@ export default class AppFileUpload extends Vue {
     public appData: any;
 
     /**
+     * 请求头
+     * 
+     * @type {*}
+     * @memberof AppImageUpload 
+     */
+    public headers: any = {};
+
+    /**
      * 设置files
      *
      * @private
@@ -287,6 +294,7 @@ export default class AppFileUpload extends Vue {
      * @memberof AppFileUpload
      */
     public created() {
+        this.setHeaders();
         if (this.formState) {
             this.formStateEvent = this.formState.subscribe(($event: any) => {
                 // 表单加载完成
@@ -310,6 +318,29 @@ export default class AppFileUpload extends Vue {
         this.getParams();
         this.setFiles(this.value);
         this.dataProcess();
+    }
+
+    /**
+     * 设置请求头
+     * 
+     * @memberof AppFileUpload
+     */
+    public setHeaders(){
+        if (AppServiceBase.getInstance().getAppEnvironment().SaaSMode) {
+            let activeOrgData = getSessionStorage('activeOrgData');
+            let tempOrgId = getSessionStorage("tempOrgId");
+            this.headers['srforgid'] = tempOrgId ? tempOrgId : activeOrgData?.orgid;
+            this.headers['srfsystemid'] = activeOrgData?.systemid;
+        }
+        if (Util.getCookie('ibzuaa-token')) {
+            this.headers['Authorization'] = `Bearer ${Util.getCookie('ibzuaa-token')}`;
+        } else {
+            // 第三方应用打开免登
+            if (sessionStorage.getItem("srftoken")) {
+                const token = sessionStorage.getItem('srftoken');
+                this.headers['Authorization'] = `Bearer ${token}`;
+            }
+        }
     }
 
     /**

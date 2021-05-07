@@ -6,7 +6,7 @@
                 :file-list="imageList"
                 list-type="picture-card"
                 :action="getAction()"
-                :headers="myHeaders"
+                :headers="headers"
                 :before-upload="beforeUpload"
                 :http-request="customImageUpload">
             <i class="el-icon-plus"></i>
@@ -67,6 +67,7 @@ import {Component, Vue, Prop} from 'vue-property-decorator';
 import {Message, MessageBox} from 'element-ui';
 import Axios from 'axios';
 import {Unsubscribable} from 'rxjs';
+import { AppServiceBase, getSessionStorage, Util } from 'ibiz-core';
 
 @Component({})
 export default class DiskImageUplaod extends Vue {
@@ -183,7 +184,7 @@ export default class DiskImageUplaod extends Vue {
      * @type {*}
      * @memberof DiskImageUplaod
      */
-    public myHeaders: any = {Authorization: this.token};
+    public headers: any = {Authorization: this.token};
 
     /**
      * 表单状态事件
@@ -312,6 +313,7 @@ export default class DiskImageUplaod extends Vue {
      * @memberof DiskImageUplaod
      */
     public created() {
+        this.setHeaders();
         this.formStateEvent = this.formState.subscribe(($event: any) => {
             // 表单加载完成
             if (Object.is($event.type, 'load')) {
@@ -346,6 +348,29 @@ export default class DiskImageUplaod extends Vue {
                 }
             }
         });
+    }
+
+    /**
+     * 设置请求头
+     * 
+     * @memberof AppFileUpload
+     */
+    public setHeaders(){
+        if (AppServiceBase.getInstance().getAppEnvironment().SaaSMode) {
+            let activeOrgData = getSessionStorage('activeOrgData');
+            let tempOrgId = getSessionStorage("tempOrgId");
+            this.headers['srforgid'] = tempOrgId ? tempOrgId : activeOrgData?.orgid;
+            this.headers['srfsystemid'] = activeOrgData?.systemid;
+        }
+        if (Util.getCookie('ibzuaa-token')) {
+            this.headers['Authorization'] = `Bearer ${Util.getCookie('ibzuaa-token')}`;
+        } else {
+            // 第三方应用打开免登
+            if (sessionStorage.getItem("srftoken")) {
+                const token = sessionStorage.getItem('srftoken');
+                this.headers['Authorization'] = `Bearer ${token}`;
+            }
+        }
     }
 
     /**
@@ -670,7 +695,8 @@ export default class DiskImageUplaod extends Vue {
         // 发送post请求
         Axios.post(updateUrl, requestBody, {
             headers: {
-                "Content-Type": "application/json;charset=UTF-8"
+                "Content-Type": "application/json;charset=UTF-8",
+                ...this.headers,
             },
             timeout: 2000
         }).then((response: any) => {

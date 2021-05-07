@@ -35,7 +35,7 @@
       :class = "{'el-upload-disabled':disabled}"
       :disabled = "disabled"
       :action = "uploadUrl"
-      :headers = "{ 'srfappdata': appData }"
+      :headers = "headers"
       :show-file-list = "false"
       list-type =  "picture-card"
       :file-list =  "files"
@@ -59,9 +59,8 @@
 </template>
 <script lang = 'ts'>
 import { Vue, Component, Prop, Watch, Provide } from 'vue-property-decorator';
-import { AppServiceBase } from 'ibiz-core';
+import { AppServiceBase, getSessionStorage, Util } from 'ibiz-core';
 import { Subject, Unsubscribable } from 'rxjs';
-import { Util } from 'ibiz-core';
 
 @Component({})
 export default class AppImageUpload extends Vue {
@@ -227,6 +226,14 @@ export default class AppImageUpload extends Vue {
     public custom_arr: Array<any> = [];
 
     /**
+     * 请求头
+     * 
+     * @type {*}
+     * @memberof AppImageUpload 
+     */
+    public headers: any = {};
+
+    /**
      * 应用参数
      *
      * @type {*}
@@ -294,6 +301,7 @@ export default class AppImageUpload extends Vue {
      * @memberof AppImageUpload
      */
     public created() {
+        this.setHeaders();
         if (this.formState) {
             this.formStateEvent = this.formState.subscribe(($event: any) => {
                 // 表单加载完成
@@ -312,10 +320,34 @@ export default class AppImageUpload extends Vue {
      * @memberof AppImageUpload
      */
     public mounted() {
-        this.appData = this.$store.getters.getAppData();
         this.getParams();
         this.setFiles(this.value);
         this.dataProcess();
+    }
+
+    /**
+     * 设置请求头
+     * 
+     * @memberof AppFileUpload
+     */
+    public setHeaders(){
+        this.appData = this.$store.getters.getAppData();
+        this.headers['srfappdata'] = this.appData;
+        if (AppServiceBase.getInstance().getAppEnvironment().SaaSMode) {
+            let activeOrgData = getSessionStorage('activeOrgData');
+            let tempOrgId = getSessionStorage("tempOrgId");
+            this.headers['srforgid'] = tempOrgId ? tempOrgId : activeOrgData?.orgid;
+            this.headers['srfsystemid'] = activeOrgData?.systemid;
+        }
+        if (Util.getCookie('ibzuaa-token')) {
+            this.headers['Authorization'] = `Bearer ${Util.getCookie('ibzuaa-token')}`;
+        } else {
+            // 第三方应用打开免登
+            if (sessionStorage.getItem("srftoken")) {
+                const token = sessionStorage.getItem('srftoken');
+                this.headers['Authorization'] = `Bearer ${token}`;
+            }
+        }
     }
 
     /**

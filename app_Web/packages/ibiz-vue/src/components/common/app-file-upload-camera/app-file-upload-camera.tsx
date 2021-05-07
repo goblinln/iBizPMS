@@ -1,7 +1,6 @@
-import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
-import { Http} from 'ibiz-core';
+import { Component, Vue, Prop } from 'vue-property-decorator';
+import { Http, getSessionStorage, Util, AppServiceBase } from 'ibiz-core';
 import { CreateElement } from 'vue';
-import { Subject, Unsubscribable } from 'rxjs';
 import './app-file-upload-camera.less';
 
 @Component({})
@@ -15,6 +14,14 @@ export default class AppFileUploadCamera extends Vue {
     @Prop({default: '/ibizutil/upload'}) public uploadUrl!: string;
 
     /**
+     * 请求头
+     * 
+     * @type {*}
+     * @memberof AppImageUpload 
+     */
+    public headers: any = {};
+
+    /**
      * vue 生命周期
      *
      * @returns
@@ -22,6 +29,30 @@ export default class AppFileUploadCamera extends Vue {
      */
     public mounted() {
         navigator.mediaDevices.enumerateDevices().then(this.gotDevices).then(this.getStream).catch(this.handleError);
+        this.setHeaders();
+    }
+
+    /**
+     * 设置请求头
+     * 
+     * @memberof AppFileUpload
+     */
+     public setHeaders(){
+        if (AppServiceBase.getInstance().getAppEnvironment().SaaSMode) {
+            let activeOrgData = getSessionStorage('activeOrgData');
+            let tempOrgId = getSessionStorage("tempOrgId");
+            this.headers['srforgid'] = tempOrgId ? tempOrgId : activeOrgData?.orgid;
+            this.headers['srfsystemid'] = activeOrgData?.systemid;
+        }
+        if (Util.getCookie('ibzuaa-token')) {
+            this.headers['Authorization'] = `Bearer ${Util.getCookie('ibzuaa-token')}`;
+        } else {
+            // 第三方应用打开免登
+            if (sessionStorage.getItem("srftoken")) {
+                const token = sessionStorage.getItem('srftoken');
+                this.headers['Authorization'] = `Bearer ${token}`;
+            }
+        }
     }
 
     public videoSelect:any = "";
@@ -202,6 +233,7 @@ export default class AppFileUploadCamera extends Vue {
                 {
                     props: {
                         action:"#",
+                        headers: this.headers,
                         "list-type":"picture-card",
                         'file-list': this.imgFiles,
                         'on-preview': (file: any) => this.handlePictureCardPreview(file),

@@ -3,6 +3,7 @@ package cn.ibizlab.pms.util.client;
 import org.springframework.stereotype.Component;
 import com.alibaba.fastjson.JSONObject;
 import java.util.*;
+import java.io.Serializable;
 
 @Component
 public class IBZWFFallback implements IBZWFFeignClient {
