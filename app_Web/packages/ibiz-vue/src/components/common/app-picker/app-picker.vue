@@ -334,7 +334,7 @@ export default class AppPicker extends Vue {
             // items里匹配不到当前值项值时，生成自身的选项
             this.items = [];
             if (!Util.isEmpty(newVal) && !Util.isEmpty(value)) {
-                this.items.push({text: newVal, value: value});
+                this.items.push({[this.deMajorField]: newVal, [this.deKeyField]: value});
             }
         }
     }

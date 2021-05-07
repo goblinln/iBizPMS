@@ -163,7 +163,7 @@ export class AppListBase extends ListControlBase {
      */
     public renderNoItems() {
         return [
-            <div class="empty-text" style="text-align:center;">列表无数据</div>,
+            <div class="empty-text">列表无数据</div>,
             this.renderQuickToolbar()
         ];
     }

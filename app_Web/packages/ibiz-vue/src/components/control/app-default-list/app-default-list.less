@@ -81,25 +81,26 @@
 }
 .app-list-empty {
   height:100%;
-  color: var(--ctrl-font-color-bright);
   display: flex;
   justify-content: center;
   align-items: center;
-//   <#if ctrl.getQuickPSDEToolbar?? && ctrl.getQuickPSDEToolbar()??>
+    .empty-text{
+        text-align: center;
+        color: #909399;
+        font-size: 14px;
+    }
     .quick-toolbar{
         display: inline-block;
         button{
-          background: var(--ctrl-background-color-bright);
-          color:var(--ctrl-font-color-bright);
-          border: 0;
+          // background: var(--ctrl-background-color-bright);
+          // color:var(--ctrl-font-color-bright);
+          // border: 0;
       }
     }
-    // </#if>
 }
 // <#if ctrl.getBatchPSDEToolbar?? && ctrl.getBatchPSDEToolbar()??>
 .ivu-row.list-pagination {
     position: fixed;
-    background-color: var(--ctrl-background-color-light);
     height: 50px;
     bottom: 30px;
     display: flex;

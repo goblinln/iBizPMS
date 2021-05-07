@@ -456,6 +456,9 @@ export class AppGlobalService {
         if (!xData || !(xData.wfstart instanceof Function) || (!_this.appEntityService)) {
             return;
         }
+        if(!(xData && xData.formValidateStatus())){
+            return;
+        }
         const startWorkFlow: Function = (param: any, localdata: any) => {
             xData.wfstart(param, localdata).then((response: any) => {
                 if (!response || response.status !== 200) {
