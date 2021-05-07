@@ -107,6 +107,8 @@ public class ImMessagestatusServiceImpl extends ServiceImpl<ImMessagestatusMappe
     @Override
     @Transactional
     public boolean remove(String key) {
+        if(!immessagestatusRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class ImMessagestatusServiceImpl extends ServiceImpl<ImMessagestatusMappe
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        if(!immessagestatusRuntime.isRtmodel()){
+        }
         }
         return et;
     }

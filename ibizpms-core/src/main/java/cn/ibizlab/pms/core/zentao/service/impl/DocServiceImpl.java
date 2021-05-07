@@ -140,7 +140,9 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
     @Override
     @Transactional
     public boolean remove(Long key) {
-        doccontentService.removeByDoc(key) ;
+        if(!docRuntime.isRtmodel()){
+            doccontentService.removeByDoc(key) ;
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -159,7 +161,9 @@ public class DocServiceImpl extends ServiceImpl<DocMapper, Doc> implements IDocS
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-            et.setDocconents(doccontentService.selectByDoc(key));
+        if(!docRuntime.isRtmodel()){
+                et.setDocconents(doccontentService.selectByDoc(key));
+        }
         }
         return et;
     }

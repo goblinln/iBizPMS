@@ -107,6 +107,8 @@ public class CronServiceImpl extends ServiceImpl<CronMapper, Cron> implements IC
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!cronRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class CronServiceImpl extends ServiceImpl<CronMapper, Cron> implements IC
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!cronRuntime.isRtmodel()){
+        }
         }
         return et;
     }

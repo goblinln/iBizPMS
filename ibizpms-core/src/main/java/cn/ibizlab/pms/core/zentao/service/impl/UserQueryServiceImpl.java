@@ -107,6 +107,8 @@ public class UserQueryServiceImpl extends ServiceImpl<UserQueryMapper, UserQuery
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!userqueryRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class UserQueryServiceImpl extends ServiceImpl<UserQueryMapper, UserQuery
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!userqueryRuntime.isRtmodel()){
+        }
         }
         return et;
     }

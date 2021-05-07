@@ -107,6 +107,8 @@ public class JenkinsServiceImpl extends ServiceImpl<JenkinsMapper, Jenkins> impl
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!jenkinsRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class JenkinsServiceImpl extends ServiceImpl<JenkinsMapper, Jenkins> impl
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!jenkinsRuntime.isRtmodel()){
+        }
         }
         return et;
     }

@@ -107,6 +107,8 @@ public class GroupServiceImpl extends ServiceImpl<GroupMapper, Group> implements
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!groupRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class GroupServiceImpl extends ServiceImpl<GroupMapper, Group> implements
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!groupRuntime.isRtmodel()){
+        }
         }
         return et;
     }

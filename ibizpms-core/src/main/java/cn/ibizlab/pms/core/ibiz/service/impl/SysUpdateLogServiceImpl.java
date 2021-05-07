@@ -112,7 +112,9 @@ public class SysUpdateLogServiceImpl extends ServiceImpl<SysUpdateLogMapper, Sys
     @Override
     @Transactional
     public boolean remove(String key) {
+        if(!sysupdatelogRuntime.isRtmodel()){
         sysupdatefeaturesService.removeBySysupdatelogid(key);
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -132,6 +134,8 @@ public class SysUpdateLogServiceImpl extends ServiceImpl<SysUpdateLogMapper, Sys
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        if(!sysupdatelogRuntime.isRtmodel()){
+        }
         }
         return et;
     }

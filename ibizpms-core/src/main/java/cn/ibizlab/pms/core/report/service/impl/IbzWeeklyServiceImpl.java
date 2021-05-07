@@ -107,6 +107,8 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!ibzweeklyRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!ibzweeklyRuntime.isRtmodel()){
+        }
         }
         return et;
     }

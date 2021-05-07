@@ -107,6 +107,8 @@ public class UserContactServiceImpl extends ServiceImpl<UserContactMapper, UserC
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!usercontactRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class UserContactServiceImpl extends ServiceImpl<UserContactMapper, UserC
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!usercontactRuntime.isRtmodel()){
+        }
         }
         return et;
     }

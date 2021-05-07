@@ -107,6 +107,8 @@ public class IBZProSystemServiceImpl extends ServiceImpl<IBZProSystemMapper, IBZ
     @Override
     @Transactional
     public boolean remove(String key) {
+        if(!ibzprosystemRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class IBZProSystemServiceImpl extends ServiceImpl<IBZProSystemMapper, IBZ
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        if(!ibzprosystemRuntime.isRtmodel()){
+        }
         }
         return et;
     }

@@ -16,6 +16,7 @@ public class CreateProductMonthlyServiceJobHandler implements IJobsHandler {
     @Lazy
     protected cn.ibizlab.pms.core.ibizpro.service.IIbizproProductMonthlyService ibizproproductmonthlyService;
 
+
     @Override
     public JobsResponse execute(String tenantId, String param) throws JobsException {
         log.info("执行 CreateProductMonthlyServiceJobHandler tenantId=" + tenantId + ",param=" + param);

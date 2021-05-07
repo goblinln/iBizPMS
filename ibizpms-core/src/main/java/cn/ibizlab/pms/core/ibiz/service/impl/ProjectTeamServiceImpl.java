@@ -122,6 +122,8 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!projectteamRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -140,6 +142,8 @@ public class ProjectTeamServiceImpl extends ServiceImpl<ProjectTeamMapper, Proje
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!projectteamRuntime.isRtmodel()){
+        }
         }
         return et;
     }

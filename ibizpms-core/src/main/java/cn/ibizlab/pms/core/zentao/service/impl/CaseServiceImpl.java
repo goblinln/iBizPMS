@@ -157,7 +157,9 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
     @Override
     @Transactional
     public boolean remove(Long key) {
-        casestepService.removeByIbizcase(key) ;
+        if(!caseRuntime.isRtmodel()){
+            casestepService.removeByIbizcase(key) ;
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -176,7 +178,9 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-            et.setCasesteps(casestepService.selectByIbizcase(key));
+        if(!caseRuntime.isRtmodel()){
+                et.setCasesteps(casestepService.selectByIbizcase(key));
+        }
         }
         return et;
     }

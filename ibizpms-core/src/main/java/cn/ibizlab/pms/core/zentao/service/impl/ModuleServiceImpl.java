@@ -139,6 +139,8 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!moduleRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -157,6 +159,8 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!moduleRuntime.isRtmodel()){
+        }
         }
         return et;
     }

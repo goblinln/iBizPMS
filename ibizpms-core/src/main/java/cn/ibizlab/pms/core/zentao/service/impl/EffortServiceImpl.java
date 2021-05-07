@@ -107,6 +107,8 @@ public class EffortServiceImpl extends ServiceImpl<EffortMapper, Effort> impleme
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!effortRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class EffortServiceImpl extends ServiceImpl<EffortMapper, Effort> impleme
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!effortRuntime.isRtmodel()){
+        }
         }
         return et;
     }

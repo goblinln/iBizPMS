@@ -107,6 +107,8 @@ public class TaskStatsServiceImpl extends ServiceImpl<TaskStatsMapper, TaskStats
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!taskstatsRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class TaskStatsServiceImpl extends ServiceImpl<TaskStatsMapper, TaskStats
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!taskstatsRuntime.isRtmodel()){
+        }
         }
         return et;
     }

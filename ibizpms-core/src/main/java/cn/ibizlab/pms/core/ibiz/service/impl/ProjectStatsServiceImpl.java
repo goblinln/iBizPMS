@@ -107,6 +107,8 @@ public class ProjectStatsServiceImpl extends ServiceImpl<ProjectStatsMapper, Pro
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!projectstatsRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class ProjectStatsServiceImpl extends ServiceImpl<ProjectStatsMapper, Pro
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!projectstatsRuntime.isRtmodel()){
+        }
         }
         return et;
     }

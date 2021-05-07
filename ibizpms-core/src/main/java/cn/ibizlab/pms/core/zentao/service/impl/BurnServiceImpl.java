@@ -113,6 +113,8 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
     @Override
     @Transactional
     public boolean remove(String key) {
+        if(!burnRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -131,6 +133,8 @@ public class BurnServiceImpl extends ServiceImpl<BurnMapper, Burn> implements IB
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        if(!burnRuntime.isRtmodel()){
+        }
         }
         return et;
     }

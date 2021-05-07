@@ -156,6 +156,8 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!bugRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -176,6 +178,8 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!bugRuntime.isRtmodel()){
+        }
         }
         return et;
     }

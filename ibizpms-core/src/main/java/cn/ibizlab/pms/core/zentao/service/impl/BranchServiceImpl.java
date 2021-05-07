@@ -137,6 +137,8 @@ public class BranchServiceImpl extends ServiceImpl<BranchMapper, Branch> impleme
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!branchRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -155,6 +157,8 @@ public class BranchServiceImpl extends ServiceImpl<BranchMapper, Branch> impleme
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!branchRuntime.isRtmodel()){
+        }
         }
         return et;
     }

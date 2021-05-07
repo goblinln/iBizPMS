@@ -116,6 +116,8 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Override
     @Transactional
     public boolean remove(String key) {
+        if(!suitecaseRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -134,6 +136,8 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        if(!suitecaseRuntime.isRtmodel()){
+        }
         }
         return et;
     }

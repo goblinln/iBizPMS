@@ -197,7 +197,9 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     @Override
     @Transactional
     public boolean remove(Long key) {
-        productteamService.removeByRoot(key) ;
+        if(!productRuntime.isRtmodel()){
+            productteamService.removeByRoot(key) ;
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -216,7 +218,9 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-            et.setProductteam(productteamService.selectByRoot(key));
+        if(!productRuntime.isRtmodel()){
+                et.setProductteam(productteamService.selectByRoot(key));
+        }
         }
         return et;
     }

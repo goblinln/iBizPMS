@@ -107,6 +107,8 @@ public class IbzLibCaseStepServiceImpl extends ServiceImpl<IbzLibCaseStepMapper,
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!ibzlibcasestepRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class IbzLibCaseStepServiceImpl extends ServiceImpl<IbzLibCaseStepMapper,
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!ibzlibcasestepRuntime.isRtmodel()){
+        }
         }
         return et;
     }

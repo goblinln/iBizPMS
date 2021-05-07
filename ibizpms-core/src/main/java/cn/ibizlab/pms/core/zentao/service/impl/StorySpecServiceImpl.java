@@ -110,6 +110,8 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
     @Override
     @Transactional
     public boolean remove(String key) {
+        if(!storyspecRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -128,6 +130,8 @@ public class StorySpecServiceImpl extends ServiceImpl<StorySpecMapper, StorySpec
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        if(!storyspecRuntime.isRtmodel()){
+        }
         }
         return et;
     }

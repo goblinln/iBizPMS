@@ -122,6 +122,8 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
     @Override
     @Transactional
     public boolean remove(String key) {
+        if(!sysupdatefeaturesRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -140,6 +142,8 @@ public class SysUpdateFeaturesServiceImpl extends ServiceImpl<SysUpdateFeaturesM
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        if(!sysupdatefeaturesRuntime.isRtmodel()){
+        }
         }
         return et;
     }

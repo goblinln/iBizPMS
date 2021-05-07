@@ -110,6 +110,8 @@ public class EntryServiceImpl extends ServiceImpl<EntryMapper, Entry> implements
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!entryRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -128,6 +130,8 @@ public class EntryServiceImpl extends ServiceImpl<EntryMapper, Entry> implements
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!entryRuntime.isRtmodel()){
+        }
         }
         return et;
     }

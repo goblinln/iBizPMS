@@ -107,6 +107,8 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team> implements IT
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!teamRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class TeamServiceImpl extends ServiceImpl<TeamMapper, Team> implements IT
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!teamRuntime.isRtmodel()){
+        }
         }
         return et;
     }

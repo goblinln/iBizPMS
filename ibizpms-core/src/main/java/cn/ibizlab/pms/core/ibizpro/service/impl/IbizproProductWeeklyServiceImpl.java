@@ -122,6 +122,8 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!ibizproproductweeklyRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -140,6 +142,8 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!ibizproproductweeklyRuntime.isRtmodel()){
+        }
         }
         return et;
     }

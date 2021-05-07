@@ -134,6 +134,8 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!testtaskRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -152,6 +154,8 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!testtaskRuntime.isRtmodel()){
+        }
         }
         return et;
     }

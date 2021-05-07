@@ -107,6 +107,8 @@ public class UserViewServiceImpl extends ServiceImpl<UserViewMapper, UserView> i
     @Override
     @Transactional
     public boolean remove(String key) {
+        if(!userviewRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class UserViewServiceImpl extends ServiceImpl<UserViewMapper, UserView> i
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        if(!userviewRuntime.isRtmodel()){
+        }
         }
         return et;
     }

@@ -107,6 +107,8 @@ public class RepoHistoryServiceImpl extends ServiceImpl<RepoHistoryMapper, RepoH
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!repohistoryRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class RepoHistoryServiceImpl extends ServiceImpl<RepoHistoryMapper, RepoH
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!repohistoryRuntime.isRtmodel()){
+        }
         }
         return et;
     }

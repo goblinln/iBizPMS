@@ -16,6 +16,7 @@ public class synchronousPMSToOuSystemServiceJobHandler implements IJobsHandler {
     @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IUserService userService;
 
+
     @Override
     public JobsResponse execute(String tenantId, String param) throws JobsException {
         log.info("执行 synchronousPMSToOuSystemServiceJobHandler tenantId=" + tenantId + ",param=" + param);

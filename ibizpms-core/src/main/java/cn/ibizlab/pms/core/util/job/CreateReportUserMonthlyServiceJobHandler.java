@@ -16,6 +16,7 @@ public class CreateReportUserMonthlyServiceJobHandler implements IJobsHandler {
     @Lazy
     protected cn.ibizlab.pms.core.report.service.IIbzMonthlyService ibzmonthlyService;
 
+
     @Override
     public JobsResponse execute(String tenantId, String param) throws JobsException {
         log.info("执行 CreateReportUserMonthlyServiceJobHandler tenantId=" + tenantId + ",param=" + param);

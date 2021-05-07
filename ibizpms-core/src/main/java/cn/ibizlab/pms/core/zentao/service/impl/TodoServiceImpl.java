@@ -107,6 +107,8 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!todoRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!todoRuntime.isRtmodel()){
+        }
         }
         return et;
     }

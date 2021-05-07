@@ -131,6 +131,8 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!projectmoduleRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -149,6 +151,8 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!projectmoduleRuntime.isRtmodel()){
+        }
         }
         return et;
     }

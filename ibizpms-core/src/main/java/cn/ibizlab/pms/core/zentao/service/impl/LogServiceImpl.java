@@ -107,6 +107,8 @@ public class LogServiceImpl extends ServiceImpl<LogMapper, Log> implements ILogS
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!logRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class LogServiceImpl extends ServiceImpl<LogMapper, Log> implements ILogS
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!logRuntime.isRtmodel()){
+        }
         }
         return et;
     }

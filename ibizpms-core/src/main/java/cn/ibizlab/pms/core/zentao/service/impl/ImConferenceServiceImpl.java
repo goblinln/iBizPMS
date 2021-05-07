@@ -107,6 +107,8 @@ public class ImConferenceServiceImpl extends ServiceImpl<ImConferenceMapper, ImC
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!imconferenceRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class ImConferenceServiceImpl extends ServiceImpl<ImConferenceMapper, ImC
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!imconferenceRuntime.isRtmodel()){
+        }
         }
         return et;
     }

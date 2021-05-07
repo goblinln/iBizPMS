@@ -110,6 +110,8 @@ public class RepoServiceImpl extends ServiceImpl<RepoMapper, Repo> implements IR
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!repoRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -128,6 +130,8 @@ public class RepoServiceImpl extends ServiceImpl<RepoMapper, Repo> implements IR
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!repoRuntime.isRtmodel()){
+        }
         }
         return et;
     }

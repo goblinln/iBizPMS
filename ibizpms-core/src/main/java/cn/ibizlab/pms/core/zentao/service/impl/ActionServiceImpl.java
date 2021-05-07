@@ -121,7 +121,9 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
     @Override
     @Transactional
     public boolean remove(Long key) {
-        historyService.removeByAction(key) ;
+        if(!actionRuntime.isRtmodel()){
+            historyService.removeByAction(key) ;
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -140,7 +142,9 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-            et.setHistorys(historyService.selectByAction(key));
+        if(!actionRuntime.isRtmodel()){
+                et.setHistorys(historyService.selectByAction(key));
+        }
         }
         return et;
     }

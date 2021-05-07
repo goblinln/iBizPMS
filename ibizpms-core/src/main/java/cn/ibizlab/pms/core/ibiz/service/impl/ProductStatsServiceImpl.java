@@ -107,6 +107,8 @@ public class ProductStatsServiceImpl extends ServiceImpl<ProductStatsMapper, Pro
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!productstatsRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class ProductStatsServiceImpl extends ServiceImpl<ProductStatsMapper, Pro
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!productstatsRuntime.isRtmodel()){
+        }
         }
         return et;
     }

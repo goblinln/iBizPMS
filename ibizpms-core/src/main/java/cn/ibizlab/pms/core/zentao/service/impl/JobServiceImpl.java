@@ -110,6 +110,8 @@ public class JobServiceImpl extends ServiceImpl<JobMapper, Job> implements IJobS
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!jobRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -128,6 +130,8 @@ public class JobServiceImpl extends ServiceImpl<JobMapper, Job> implements IJobS
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!jobRuntime.isRtmodel()){
+        }
         }
         return et;
     }

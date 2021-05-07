@@ -122,7 +122,9 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
     @Override
     @Transactional
     public boolean remove(Long key) {
-        testresultService.removeByRun(key) ;
+        if(!testrunRuntime.isRtmodel()){
+            testresultService.removeByRun(key) ;
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -141,7 +143,9 @@ public class TestRunServiceImpl extends ServiceImpl<TestRunMapper, TestRun> impl
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-            et.setTestresults(testresultService.selectByRun(key));
+        if(!testrunRuntime.isRtmodel()){
+                et.setTestresults(testresultService.selectByRun(key));
+        }
         }
         return et;
     }

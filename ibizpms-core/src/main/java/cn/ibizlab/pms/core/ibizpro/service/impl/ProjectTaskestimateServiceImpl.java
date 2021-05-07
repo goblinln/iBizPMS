@@ -107,6 +107,8 @@ public class ProjectTaskestimateServiceImpl extends ServiceImpl<ProjectTaskestim
     @Override
     @Transactional
     public boolean remove(String key) {
+        if(!projecttaskestimateRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class ProjectTaskestimateServiceImpl extends ServiceImpl<ProjectTaskestim
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        if(!projecttaskestimateRuntime.isRtmodel()){
+        }
         }
         return et;
     }

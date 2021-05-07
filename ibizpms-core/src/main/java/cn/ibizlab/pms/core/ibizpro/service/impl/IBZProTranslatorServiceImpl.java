@@ -107,6 +107,8 @@ public class IBZProTranslatorServiceImpl extends ServiceImpl<IBZProTranslatorMap
     @Override
     @Transactional
     public boolean remove(String key) {
+        if(!ibzprotranslatorRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class IBZProTranslatorServiceImpl extends ServiceImpl<IBZProTranslatorMap
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        if(!ibzprotranslatorRuntime.isRtmodel()){
+        }
         }
         return et;
     }

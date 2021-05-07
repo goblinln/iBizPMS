@@ -125,6 +125,8 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!bugstatsRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -143,6 +145,8 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!bugstatsRuntime.isRtmodel()){
+        }
         }
         return et;
     }

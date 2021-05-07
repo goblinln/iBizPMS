@@ -13,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 public class ReportServiceJobHandler implements IJobsHandler {
 
 
+
     @Override
     public JobsResponse execute(String tenantId, String param) throws JobsException {
         log.info("执行 ReportServiceJobHandler tenantId=" + tenantId + ",param=" + param);

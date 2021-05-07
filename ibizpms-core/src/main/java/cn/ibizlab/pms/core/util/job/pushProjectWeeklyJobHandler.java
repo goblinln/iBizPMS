@@ -16,6 +16,7 @@ public class pushProjectWeeklyJobHandler implements IJobsHandler {
     @Lazy
     protected cn.ibizlab.pms.core.ibizpro.service.IIbizproProjectWeeklyService ibizproprojectweeklyService;
 
+
     @Override
     public JobsResponse execute(String tenantId, String param) throws JobsException {
         log.info("执行 pushProjectWeeklyJobHandler tenantId=" + tenantId + ",param=" + param);

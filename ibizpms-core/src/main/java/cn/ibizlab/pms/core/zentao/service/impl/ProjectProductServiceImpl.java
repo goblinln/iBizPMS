@@ -131,6 +131,8 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
     @Override
     @Transactional
     public boolean remove(String key) {
+        if(!projectproductRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -149,6 +151,8 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        if(!projectproductRuntime.isRtmodel()){
+        }
         }
         return et;
     }

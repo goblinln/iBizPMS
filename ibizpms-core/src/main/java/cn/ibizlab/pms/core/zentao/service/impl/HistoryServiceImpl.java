@@ -110,6 +110,8 @@ public class HistoryServiceImpl extends ServiceImpl<HistoryMapper, History> impl
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!historyRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -128,6 +130,8 @@ public class HistoryServiceImpl extends ServiceImpl<HistoryMapper, History> impl
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!historyRuntime.isRtmodel()){
+        }
         }
         return et;
     }

@@ -16,6 +16,7 @@ public class CreateReportUserWeeklyServiceJobHandler implements IJobsHandler {
     @Lazy
     protected cn.ibizlab.pms.core.report.service.IIbzWeeklyService ibzweeklyService;
 
+
     @Override
     public JobsResponse execute(String tenantId, String param) throws JobsException {
         log.info("执行 CreateReportUserWeeklyServiceJobHandler tenantId=" + tenantId + ",param=" + param);

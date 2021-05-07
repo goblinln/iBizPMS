@@ -122,6 +122,8 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!employeeloadRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -140,6 +142,8 @@ public class EmpLoyeeloadServiceImpl extends ServiceImpl<EmpLoyeeloadMapper, Emp
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!employeeloadRuntime.isRtmodel()){
+        }
         }
         return et;
     }

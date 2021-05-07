@@ -107,6 +107,8 @@ public class ImChatuserServiceImpl extends ServiceImpl<ImChatuserMapper, ImChatu
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!imchatuserRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class ImChatuserServiceImpl extends ServiceImpl<ImChatuserMapper, ImChatu
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!imchatuserRuntime.isRtmodel()){
+        }
         }
         return et;
     }

@@ -107,6 +107,8 @@ public class CompanyStatsServiceImpl extends ServiceImpl<CompanyStatsMapper, Com
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!companystatsRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class CompanyStatsServiceImpl extends ServiceImpl<CompanyStatsMapper, Com
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!companystatsRuntime.isRtmodel()){
+        }
         }
         return et;
     }

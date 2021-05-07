@@ -107,6 +107,8 @@ public class ScoreServiceImpl extends ServiceImpl<ScoreMapper, Score> implements
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!scoreRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class ScoreServiceImpl extends ServiceImpl<ScoreMapper, Score> implements
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!scoreRuntime.isRtmodel()){
+        }
         }
         return et;
     }

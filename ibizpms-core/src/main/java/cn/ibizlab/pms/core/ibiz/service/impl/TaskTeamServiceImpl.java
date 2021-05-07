@@ -110,6 +110,8 @@ public class TaskTeamServiceImpl extends ServiceImpl<TaskTeamMapper, TaskTeam> i
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!taskteamRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -128,6 +130,8 @@ public class TaskTeamServiceImpl extends ServiceImpl<TaskTeamMapper, TaskTeam> i
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!taskteamRuntime.isRtmodel()){
+        }
         }
         return et;
     }

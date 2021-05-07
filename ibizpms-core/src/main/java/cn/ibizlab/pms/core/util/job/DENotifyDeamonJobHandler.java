@@ -13,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 public class DENotifyDeamonJobHandler implements IJobsHandler {
 
 
+
     @Override
     public JobsResponse execute(String tenantId, String param) throws JobsException {
         log.info("执行 DENotifyDeamonJobHandler tenantId=" + tenantId + ",param=" + param);

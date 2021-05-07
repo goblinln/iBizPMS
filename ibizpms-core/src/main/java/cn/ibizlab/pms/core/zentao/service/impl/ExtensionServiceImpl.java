@@ -107,6 +107,8 @@ public class ExtensionServiceImpl extends ServiceImpl<ExtensionMapper, Extension
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!extensionRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class ExtensionServiceImpl extends ServiceImpl<ExtensionMapper, Extension
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!extensionRuntime.isRtmodel()){
+        }
         }
         return et;
     }

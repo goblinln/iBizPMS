@@ -121,6 +121,8 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!deptRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -139,6 +141,8 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements ID
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!deptRuntime.isRtmodel()){
+        }
         }
         return et;
     }

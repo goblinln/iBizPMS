@@ -134,6 +134,8 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!buildRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -152,6 +154,8 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!buildRuntime.isRtmodel()){
+        }
         }
         return et;
     }

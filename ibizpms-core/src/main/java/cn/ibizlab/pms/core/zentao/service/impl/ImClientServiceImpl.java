@@ -107,6 +107,8 @@ public class ImClientServiceImpl extends ServiceImpl<ImClientMapper, ImClient> i
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!imclientRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class ImClientServiceImpl extends ServiceImpl<ImClientMapper, ImClient> i
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!imclientRuntime.isRtmodel()){
+        }
         }
         return et;
     }

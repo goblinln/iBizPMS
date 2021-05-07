@@ -131,6 +131,8 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!ibzlibmoduleRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -149,6 +151,8 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!ibzlibmoduleRuntime.isRtmodel()){
+        }
         }
         return et;
     }

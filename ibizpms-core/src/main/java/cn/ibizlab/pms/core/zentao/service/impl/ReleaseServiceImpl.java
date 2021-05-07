@@ -128,6 +128,8 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!releaseRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -146,6 +148,8 @@ public class ReleaseServiceImpl extends ServiceImpl<ReleaseMapper, Release> impl
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!releaseRuntime.isRtmodel()){
+        }
         }
         return et;
     }

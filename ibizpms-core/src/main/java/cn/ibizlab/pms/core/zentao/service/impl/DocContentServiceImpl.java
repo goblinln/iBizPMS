@@ -110,6 +110,8 @@ public class DocContentServiceImpl extends ServiceImpl<DocContentMapper, DocCont
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!doccontentRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -128,6 +130,8 @@ public class DocContentServiceImpl extends ServiceImpl<DocContentMapper, DocCont
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!doccontentRuntime.isRtmodel()){
+        }
         }
         return et;
     }

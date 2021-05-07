@@ -113,6 +113,8 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Override
     @Transactional
     public boolean remove(String key) {
+        if(!storystageRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -131,6 +133,8 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        if(!storystageRuntime.isRtmodel()){
+        }
         }
         return et;
     }

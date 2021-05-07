@@ -107,6 +107,8 @@ public class IbzproProjectUserTaskServiceImpl extends ServiceImpl<IbzproProjectU
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!ibzproprojectusertaskRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class IbzproProjectUserTaskServiceImpl extends ServiceImpl<IbzproProjectU
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!ibzproprojectusertaskRuntime.isRtmodel()){
+        }
         }
         return et;
     }

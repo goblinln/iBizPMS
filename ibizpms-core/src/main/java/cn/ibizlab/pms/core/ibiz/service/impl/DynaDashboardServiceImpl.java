@@ -107,6 +107,8 @@ public class DynaDashboardServiceImpl extends ServiceImpl<DynaDashboardMapper, D
     @Override
     @Transactional
     public boolean remove(String key) {
+        if(!dynadashboardRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class DynaDashboardServiceImpl extends ServiceImpl<DynaDashboardMapper, D
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        if(!dynadashboardRuntime.isRtmodel()){
+        }
         }
         return et;
     }

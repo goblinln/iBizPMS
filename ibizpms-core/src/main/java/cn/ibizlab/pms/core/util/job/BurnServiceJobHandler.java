@@ -16,6 +16,7 @@ public class BurnServiceJobHandler implements IJobsHandler {
     @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IBurnService burnService;
 
+
     @Override
     public JobsResponse execute(String tenantId, String param) throws JobsException {
         log.info("执行 BurnServiceJobHandler tenantId=" + tenantId + ",param=" + param);

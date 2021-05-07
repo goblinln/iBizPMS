@@ -107,6 +107,8 @@ public class ImMessageServiceImpl extends ServiceImpl<ImMessageMapper, ImMessage
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!immessageRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class ImMessageServiceImpl extends ServiceImpl<ImMessageMapper, ImMessage
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!immessageRuntime.isRtmodel()){
+        }
         }
         return et;
     }

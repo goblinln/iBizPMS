@@ -122,6 +122,8 @@ public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDa
     @Override
     @Transactional
     public boolean remove(String key) {
+        if(!ibizproprojectdailyRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -140,6 +142,8 @@ public class IbizproProjectDailyServiceImpl extends ServiceImpl<IbizproProjectDa
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        if(!ibizproprojectdailyRuntime.isRtmodel()){
+        }
         }
         return et;
     }

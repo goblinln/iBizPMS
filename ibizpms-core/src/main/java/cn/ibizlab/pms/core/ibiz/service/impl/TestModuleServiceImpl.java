@@ -128,6 +128,8 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!testmoduleRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -146,6 +148,8 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!testmoduleRuntime.isRtmodel()){
+        }
         }
         return et;
     }

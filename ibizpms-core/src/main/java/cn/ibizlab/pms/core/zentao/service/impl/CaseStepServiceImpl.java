@@ -118,6 +118,8 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!casestepRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -136,7 +138,9 @@ public class CaseStepServiceImpl extends ServiceImpl<CaseStepMapper, CaseStep> i
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-            et.setCasestep(casestepService.selectByParent(key));
+        if(!casestepRuntime.isRtmodel()){
+                et.setCasestep(casestepService.selectByParent(key));
+        }
         }
         return et;
     }

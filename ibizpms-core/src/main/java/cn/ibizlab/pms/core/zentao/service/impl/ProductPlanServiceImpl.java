@@ -136,6 +136,8 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!productplanRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -154,6 +156,8 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!productplanRuntime.isRtmodel()){
+        }
         }
         return et;
     }

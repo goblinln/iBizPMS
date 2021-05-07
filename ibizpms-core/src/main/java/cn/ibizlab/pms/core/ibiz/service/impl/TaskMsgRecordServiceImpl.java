@@ -107,6 +107,8 @@ public class TaskMsgRecordServiceImpl extends ServiceImpl<TaskMsgRecordMapper, T
     @Override
     @Transactional
     public boolean remove(String key) {
+        if(!taskmsgrecordRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class TaskMsgRecordServiceImpl extends ServiceImpl<TaskMsgRecordMapper, T
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        if(!taskmsgrecordRuntime.isRtmodel()){
+        }
         }
         return et;
     }

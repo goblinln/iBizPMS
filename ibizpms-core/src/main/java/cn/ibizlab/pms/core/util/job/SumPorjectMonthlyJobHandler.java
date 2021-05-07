@@ -16,6 +16,7 @@ public class SumPorjectMonthlyJobHandler implements IJobsHandler {
     @Lazy
     protected cn.ibizlab.pms.core.ibizpro.service.IIbizproProjectMonthlyService ibizproprojectmonthlyService;
 
+
     @Override
     public JobsResponse execute(String tenantId, String param) throws JobsException {
         log.info("执行 SumPorjectMonthlyJobHandler tenantId=" + tenantId + ",param=" + param);

@@ -107,6 +107,8 @@ public class BlockServiceImpl extends ServiceImpl<BlockMapper, Block> implements
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!blockRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class BlockServiceImpl extends ServiceImpl<BlockMapper, Block> implements
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!blockRuntime.isRtmodel()){
+        }
         }
         return et;
     }

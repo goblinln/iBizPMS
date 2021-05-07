@@ -107,6 +107,8 @@ public class IBZProSequenceServiceImpl extends ServiceImpl<IBZProSequenceMapper,
     @Override
     @Transactional
     public boolean remove(String key) {
+        if(!ibzprosequenceRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class IBZProSequenceServiceImpl extends ServiceImpl<IBZProSequenceMapper,
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        if(!ibzprosequenceRuntime.isRtmodel()){
+        }
         }
         return et;
     }

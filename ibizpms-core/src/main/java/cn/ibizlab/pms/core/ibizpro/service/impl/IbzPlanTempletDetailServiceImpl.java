@@ -110,6 +110,8 @@ public class IbzPlanTempletDetailServiceImpl extends ServiceImpl<IbzPlanTempletD
     @Override
     @Transactional
     public boolean remove(String key) {
+        if(!ibzplantempletdetailRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -128,6 +130,8 @@ public class IbzPlanTempletDetailServiceImpl extends ServiceImpl<IbzPlanTempletD
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        if(!ibzplantempletdetailRuntime.isRtmodel()){
+        }
         }
         return et;
     }

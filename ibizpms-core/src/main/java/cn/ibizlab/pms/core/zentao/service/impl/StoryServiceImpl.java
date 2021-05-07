@@ -160,8 +160,10 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     @Override
     @Transactional
     public boolean remove(Long key) {
-        storyspecService.removeByStory(key) ;
-        storystageService.removeByStory(key) ;
+        if(!storyRuntime.isRtmodel()){
+            storyspecService.removeByStory(key) ;
+            storystageService.removeByStory(key) ;
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -180,8 +182,10 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-            et.setStoryspecs(storyspecService.selectByStory(key));
-            et.setStorystages(storystageService.selectByStory(key));
+        if(!storyRuntime.isRtmodel()){
+                et.setStoryspecs(storyspecService.selectByStory(key));
+                et.setStorystages(storystageService.selectByStory(key));
+        }
         }
         return et;
     }

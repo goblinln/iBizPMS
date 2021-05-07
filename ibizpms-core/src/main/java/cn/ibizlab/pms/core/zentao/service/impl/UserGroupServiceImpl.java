@@ -107,6 +107,8 @@ public class UserGroupServiceImpl extends ServiceImpl<UserGroupMapper, UserGroup
     @Override
     @Transactional
     public boolean remove(String key) {
+        if(!usergroupRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class UserGroupServiceImpl extends ServiceImpl<UserGroupMapper, UserGroup
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        if(!usergroupRuntime.isRtmodel()){
+        }
         }
         return et;
     }

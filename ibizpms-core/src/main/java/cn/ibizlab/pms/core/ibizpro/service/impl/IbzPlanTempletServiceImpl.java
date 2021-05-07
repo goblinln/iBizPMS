@@ -116,7 +116,9 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
     @Override
     @Transactional
     public boolean remove(String key) {
-        ibzplantempletdetailService.removeByPlantempletid(key) ;
+        if(!ibzplantempletRuntime.isRtmodel()){
+            ibzplantempletdetailService.removeByPlantempletid(key) ;
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -135,7 +137,9 @@ public class IbzPlanTempletServiceImpl extends ServiceImpl<IbzPlanTempletMapper,
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
-            et.setIbzplantempletdetail(ibzplantempletdetailService.selectByPlantempletid(key));
+        if(!ibzplantempletRuntime.isRtmodel()){
+                et.setIbzplantempletdetail(ibzplantempletdetailService.selectByPlantempletid(key));
+        }
         }
         return et;
     }

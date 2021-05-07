@@ -157,8 +157,10 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     @Override
     @Transactional
     public boolean remove(Long key) {
-        taskteamService.removeByRoot(key) ;
-        taskestimateService.removeByTask(key) ;
+        if(!taskRuntime.isRtmodel()){
+            taskteamService.removeByRoot(key) ;
+            taskestimateService.removeByTask(key) ;
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -177,8 +179,10 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-            et.setTaskteams(taskteamService.selectByRoot(key));
-            et.setTaskestimates(taskestimateService.selectByTask(key));
+        if(!taskRuntime.isRtmodel()){
+                et.setTaskteams(taskteamService.selectByRoot(key));
+                et.setTaskestimates(taskestimateService.selectByTask(key));
+        }
         }
         return et;
     }

@@ -107,6 +107,8 @@ public class RelationServiceImpl extends ServiceImpl<RelationMapper, Relation> i
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!relationRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class RelationServiceImpl extends ServiceImpl<RelationMapper, Relation> i
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!relationRuntime.isRtmodel()){
+        }
         }
         return et;
     }

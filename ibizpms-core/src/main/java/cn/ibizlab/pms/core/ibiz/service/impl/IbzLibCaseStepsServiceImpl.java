@@ -130,6 +130,8 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!ibzlibcasestepsRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -148,7 +150,9 @@ public class IbzLibCaseStepsServiceImpl extends ServiceImpl<IbzLibCaseStepsMappe
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-            et.setIbzlibcasesteps(ibzlibcasestepsService.selectByParent(key));
+        if(!ibzlibcasestepsRuntime.isRtmodel()){
+                et.setIbzlibcasesteps(ibzlibcasestepsService.selectByParent(key));
+        }
         }
         return et;
     }

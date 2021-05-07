@@ -122,6 +122,8 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!taskestimateRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -140,6 +142,8 @@ public class TaskEstimateServiceImpl extends ServiceImpl<TaskEstimateMapper, Tas
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!taskestimateRuntime.isRtmodel()){
+        }
         }
         return et;
     }

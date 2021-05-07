@@ -110,6 +110,8 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!fileRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -128,6 +130,8 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!fileRuntime.isRtmodel()){
+        }
         }
         return et;
     }

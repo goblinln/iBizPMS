@@ -122,6 +122,8 @@ public class IbizproProjectMonthlyServiceImpl extends ServiceImpl<IbizproProject
     @Override
     @Transactional
     public boolean remove(String key) {
+        if(!ibizproprojectmonthlyRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -140,6 +142,8 @@ public class IbizproProjectMonthlyServiceImpl extends ServiceImpl<IbizproProject
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        if(!ibizproprojectmonthlyRuntime.isRtmodel()){
+        }
         }
         return et;
     }

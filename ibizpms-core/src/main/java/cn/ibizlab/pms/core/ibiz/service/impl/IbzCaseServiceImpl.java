@@ -134,7 +134,9 @@ public class IbzCaseServiceImpl extends ServiceImpl<IbzCaseMapper, IbzCase> impl
     @Override
     @Transactional
     public boolean remove(Long key) {
-        ibzlibcasestepsService.removeByIbizcase(key) ;
+        if(!ibzcaseRuntime.isRtmodel()){
+            ibzlibcasestepsService.removeByIbizcase(key) ;
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -153,7 +155,9 @@ public class IbzCaseServiceImpl extends ServiceImpl<IbzCaseMapper, IbzCase> impl
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-            et.setIbzlibcasesteps(ibzlibcasestepsService.selectByIbizcase(key));
+        if(!ibzcaseRuntime.isRtmodel()){
+                et.setIbzlibcasesteps(ibzlibcasestepsService.selectByIbizcase(key));
+        }
         }
         return et;
     }

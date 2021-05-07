@@ -181,7 +181,9 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
     @Override
     @Transactional
     public boolean remove(Long key) {
-        projectteamService.removeByRoot(key) ;
+        if(!projectRuntime.isRtmodel()){
+            projectteamService.removeByRoot(key) ;
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -200,7 +202,9 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
-            et.setProjectteam(projectteamService.selectByRoot(key));
+        if(!projectRuntime.isRtmodel()){
+                et.setProjectteam(projectteamService.selectByRoot(key));
+        }
         }
         return et;
     }

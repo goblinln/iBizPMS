@@ -125,6 +125,8 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!testreportRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -143,6 +145,8 @@ public class TestReportServiceImpl extends ServiceImpl<TestReportMapper, TestRep
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!testreportRuntime.isRtmodel()){
+        }
         }
         return et;
     }

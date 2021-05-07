@@ -10,7 +10,6 @@ import java.util.*;
 import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
-import cn.ibizlab.pms.util.helper.CaseFormatMethod;
 import cn.ibizlab.pms.util.helper.QueryContextHelper;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import cn.ibizlab.pms.util.security.UAADEAuthority;
@@ -19,7 +18,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
-import net.ibizsys.model.dataentity.defield.IPSOne2ManyDataDEField;
 import net.ibizsys.model.dataentity.der.IPSDER1N;
 import net.ibizsys.model.dataentity.der.IPSDERBase;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQuery;
@@ -30,6 +28,7 @@ import net.ibizsys.model.dataentity.priv.IPSDEUserRole;
 import net.ibizsys.model.dataentity.priv.IPSDEUserRoleOPPriv;
 import net.ibizsys.model.dataentity.wf.IPSDEWF;
 import net.ibizsys.runtime.IDynaInstRuntime;
+import net.ibizsys.runtime.dataentity.DataEntityRuntimeException;
 import net.ibizsys.runtime.dataentity.action.CheckKeyStates;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
 import net.ibizsys.runtime.ISystemRuntime;
@@ -37,20 +36,10 @@ import net.ibizsys.runtime.dataentity.IDataEntityRuntime;
 import net.ibizsys.runtime.security.DataAccessActions;
 import net.ibizsys.runtime.security.DataRanges;
 import net.ibizsys.runtime.security.IUserContext;
-import net.ibizsys.runtime.util.Conditions;
-import net.ibizsys.runtime.util.IEntity;
-import net.ibizsys.runtime.util.IEntityBase;
-import net.ibizsys.runtime.util.ISearchContextBase;
+import net.ibizsys.runtime.util.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.domain.Page;
-import org.springframework.expression.EvaluationContext;
-import org.springframework.expression.Expression;
-import org.springframework.expression.ExpressionParser;
-import org.springframework.expression.spel.standard.SpelExpressionParser;
-import org.springframework.expression.spel.support.StandardEvaluationContext;
-import org.springframework.security.core.GrantedAuthority;
+import org.springframework.data.domain.Sort;
 
 import javax.annotation.PostConstruct;
 
@@ -71,8 +60,6 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
 	 * 部门控制字段
 	 */
     protected String deptIdField;
-
-    private final ExpressionParser parser = new SpelExpressionParser();
 
     /**
      * 默认实体能力
@@ -105,6 +92,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
 
     /**
      * 加载系统默认角色
+     * 
      * @throws Exception
      */
     protected void loadDefaultDEUserRoles() throws Exception {
@@ -199,6 +187,80 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         entity.reset(ipsdeField.getCodeName());
     }
 
+@Override
+    public IEntityBase[] getNestedDERValue(IEntityBase iEntityBase, IPSDERBase iPSDERBase) {
+        IEntity entity = (IEntity) iEntityBase;
+        if(iPSDERBase instanceof IPSDER1N){
+            IPSDER1N iPSDER1N = (IPSDER1N) iPSDERBase;
+            String strNestField = iPSDER1N.getMinorCodeName();
+            if(StringUtils.isBlank(strNestField)){
+                try {
+                    strNestField = iPSDER1N.getMinorPSDataEntity().getCodeName();
+                }catch (Exception e){
+                    throw new DataEntityRuntimeException(String.format("获取嵌套属性发生错误：%s",e.getMessage()), Errors.INTERNALERROR, this);
+                }
+            }
+            Object obj = entity.get(strNestField.toLowerCase());
+            if(obj != null) {
+                List<IEntityBase> minorDatas = (List<IEntityBase>) obj;
+                return minorDatas.toArray(new IEntityBase[minorDatas.size()]);
+            }
+        }
+        return null ;
+    }
+
+    @Override
+    public void setNestedDERValue(IEntityBase iEntityBase, IPSDERBase iPSDERBase, IEntityBase[] value) {
+        IEntity entity = (IEntity) iEntityBase;
+        if(iPSDERBase instanceof IPSDER1N){
+            IPSDER1N iPSDER1N = (IPSDER1N) iPSDERBase;
+            String strNestField = iPSDER1N.getMinorCodeName();
+            if(StringUtils.isBlank(strNestField)){
+                try {
+                    strNestField = iPSDER1N.getMinorPSDataEntity().getCodeName();
+                }catch (Exception e){
+                    throw new DataEntityRuntimeException(String.format("获取嵌套属性发生错误：%s",e.getMessage()), Errors.INTERNALERROR, this);
+                }
+            }
+            entity.set(strNestField.toLowerCase(),Arrays.asList(value));
+        }
+    }
+
+    @Override
+    public boolean containsNestedDERValue(IEntityBase iEntityBase, IPSDERBase iPSDERBase){
+        IEntity entity = (IEntity) iEntityBase;
+        if(iPSDERBase instanceof IPSDER1N){
+            IPSDER1N iPSDER1N = (IPSDER1N) iPSDERBase;
+            String strNestField = iPSDER1N.getMinorCodeName();
+            if(StringUtils.isBlank(strNestField)){
+                try {
+                    strNestField = iPSDER1N.getMinorPSDataEntity().getCodeName();
+                }catch (Exception e){
+                    throw new DataEntityRuntimeException(String.format("获取嵌套属性发生错误：%s",e.getMessage()), Errors.INTERNALERROR, this);
+                }
+            }
+            return entity.contains(strNestField.toLowerCase());
+        }
+        return false ;
+    }
+
+    @Override
+    public void resetNestedDERValue(IEntityBase iEntityBase, IPSDERBase iPSDERBase) {
+        IEntity entity = (IEntity) iEntityBase;
+        if(iPSDERBase instanceof IPSDER1N){
+            IPSDER1N iPSDER1N = (IPSDER1N) iPSDERBase;
+            String strNestField = iPSDER1N.getMinorCodeName();
+            if(StringUtils.isBlank(strNestField)){
+                try {
+                    strNestField = iPSDER1N.getMinorPSDataEntity().getCodeName();
+                }catch (Exception e){
+                    throw new DataEntityRuntimeException(String.format("获取嵌套属性发生错误：%s",e.getMessage()), Errors.INTERNALERROR, this);
+                }
+            }
+            entity.reset(strNestField.toLowerCase());
+        }
+    }
+
     @Override
     public List<? extends IEntityBase> select(String strCondition) {
         QueryWrapperContext context = createSearchContext();
@@ -234,6 +296,25 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         }
     }
 
+    @Override
+    public void setSearchCustomCondition(ISearchContextBase iSearchContextBase, String strCustomCondition) {
+        QueryWrapperContext context = (QueryWrapperContext) iSearchContextBase;
+        context.getSelectCond().and(ScopeUtils.parse(this, strCustomCondition));
+    }
+
+    @Override
+    public void setSearchPaging(ISearchContextBase iSearchContextBase, int nPageIndex, int nPageSize, Sort sort) {
+        QueryWrapperContext context = (QueryWrapperContext) iSearchContextBase;
+        context.setPage(nPageIndex);
+        context.setSize(nPageSize);
+        context.setPageSort(sort);
+    }
+
+    @Override
+    public void setSearchDataContext(ISearchContextBase iSearchContextBase, String strParam, Object objValue) {
+        //throw new DataEntityRuntimeException("没有实现", Errors.NOTIMPL, this);
+    }
+    
     @Override
     public int checkKeyState(Object objKey) {
         QueryWrapperContext context = this.createSearchContext();
@@ -630,23 +711,4 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         return this.deptIdField;
     }
 
-    @Override
-    protected void translateEntityNestedDER1NBeforeProceed(IEntityBase arg0, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
-
-    }
-
-    @Override
-    protected void translateEntityNestedDER1NAfterProceed(Object objKey, IEntityBase arg0, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
-
-    }
-
-    @Override
-    protected void translateEntityNestedDERsAfterProceed(IEntityBase arg0, String strActionName, IPSDEAction iPSDEAction, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
-
-    }
-
-    @Override
-    protected void translateEntityNestedDERsBeforeProceed(IEntityBase arg0, String strActionName, IPSDEAction iPSDEAction, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
-
-    }
 }

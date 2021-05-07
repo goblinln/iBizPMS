@@ -107,6 +107,8 @@ public class NotifyServiceImpl extends ServiceImpl<NotifyMapper, Notify> impleme
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!notifyRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class NotifyServiceImpl extends ServiceImpl<NotifyMapper, Notify> impleme
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!notifyRuntime.isRtmodel()){
+        }
         }
         return et;
     }

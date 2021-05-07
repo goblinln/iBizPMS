@@ -107,6 +107,8 @@ public class RepoBranchServiceImpl extends ServiceImpl<RepoBranchMapper, RepoBra
     @Override
     @Transactional
     public boolean remove(String key) {
+        if(!repobranchRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class RepoBranchServiceImpl extends ServiceImpl<RepoBranchMapper, RepoBra
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        if(!repobranchRuntime.isRtmodel()){
+        }
         }
         return et;
     }

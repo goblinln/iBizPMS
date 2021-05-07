@@ -107,6 +107,8 @@ public class ProductSumServiceImpl extends ServiceImpl<ProductSumMapper, Product
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!productsumRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class ProductSumServiceImpl extends ServiceImpl<ProductSumMapper, Product
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!productsumRuntime.isRtmodel()){
+        }
         }
         return et;
     }

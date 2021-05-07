@@ -131,6 +131,8 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!ibzprostorymoduleRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -149,6 +151,8 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!ibzprostorymoduleRuntime.isRtmodel()){
+        }
         }
         return et;
     }

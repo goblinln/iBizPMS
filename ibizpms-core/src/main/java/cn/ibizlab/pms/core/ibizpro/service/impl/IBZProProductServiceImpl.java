@@ -113,6 +113,8 @@ public class IBZProProductServiceImpl extends ServiceImpl<IBZProProductMapper, I
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!ibzproproductRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -131,6 +133,8 @@ public class IBZProProductServiceImpl extends ServiceImpl<IBZProProductMapper, I
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!ibzproproductRuntime.isRtmodel()){
+        }
         }
         return et;
     }

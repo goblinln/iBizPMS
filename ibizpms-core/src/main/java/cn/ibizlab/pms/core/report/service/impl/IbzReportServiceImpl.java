@@ -107,6 +107,8 @@ public class IbzReportServiceImpl extends ServiceImpl<IbzReportMapper, IbzReport
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!ibzreportRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -125,6 +127,8 @@ public class IbzReportServiceImpl extends ServiceImpl<IbzReportMapper, IbzReport
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!ibzreportRuntime.isRtmodel()){
+        }
         }
         return et;
     }

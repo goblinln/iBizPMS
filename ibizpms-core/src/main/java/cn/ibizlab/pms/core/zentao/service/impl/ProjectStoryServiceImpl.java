@@ -116,6 +116,8 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
     @Override
     @Transactional
     public boolean remove(String key) {
+        if(!projectstoryRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -134,6 +136,8 @@ public class ProjectStoryServiceImpl extends ServiceImpl<ProjectStoryMapper, Pro
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), key);
         }
         else {
+        if(!projectstoryRuntime.isRtmodel()){
+        }
         }
         return et;
     }

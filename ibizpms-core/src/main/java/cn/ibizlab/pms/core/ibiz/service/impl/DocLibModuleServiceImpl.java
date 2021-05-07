@@ -128,6 +128,8 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
     @Override
     @Transactional
     public boolean remove(Long key) {
+        if(!doclibmoduleRuntime.isRtmodel()){
+        }
         boolean result = removeById(key);
         return result ;
     }
@@ -146,6 +148,8 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+        if(!doclibmoduleRuntime.isRtmodel()){
+        }
         }
         return et;
     }
