@@ -434,21 +434,31 @@ export class MDViewBase extends MainViewBase {
      * @memberof ViewBase
      */
     public renderPullDownRefresh() {
-        return <ion-refresher
-            slot="fixed"
-            ref="refresher"
-            pull-factor="0.5"
-            pull-min="50"
-            pull-max="100"
-            closeDuration='280ms'
-            on-ionRefresh={($event:any)=>{this.pullDownToRefresh($event)}}>
-            <ion-refresher-content
-                pulling-icon="arrow-down-outline"
-                pulling-text='加载中'
-                refreshing-spinner="circles"
-                refreshing-text="">
-            </ion-refresher-content>
-        </ion-refresher>
+        const h = this.$createElement;
+        return h("ion-refresher", {
+          "slot": "fixed",
+          "ref": "refresher",
+          "attrs": {
+            "pull-factor": "0.5",
+            "pull-min": "50",
+            "pull-max": "100",
+            "closeDuration": '280ms',
+            "disabled": "false",
+            "slot":"fixed"
+          },
+          "on": {
+            "ionRefresh": ($event:any) => {
+              this.pullDownToRefresh($event);
+            }
+          }
+        }, [h("ion-refresher-content", {
+          "attrs": {
+            "pulling-icon": "arrow-down-outline",
+            "pulling-text": '加载中',
+            "refreshing-spinner": "circles",
+            "refreshing-text": ""
+          }
+        })]);
     }
 
     /**

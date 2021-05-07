@@ -1,7 +1,7 @@
 import { getPSUIActionByModelObject, IPSAppDataEntity, IPSAppDEField, IPSAppDEMethod, IPSAppDEUIAction, IPSAppView, IPSNavigateContext, IPSNavigateParam } from "@ibiz/dynamic-model-api";
-import {  ModelTool, UIActionTool, Util } from "ibiz-core";
+import { ModelTool, UIActionTool, Util } from "ibiz-core";
 import { GlobalService } from "ibiz-service";
-import {  AppGlobalService } from "../app-service";
+import { AppGlobalService } from "../app-service";
 
 export class AppBackEndAction {
 
@@ -10,16 +10,16 @@ export class AppBackEndAction {
      * 
      * @memberof AppBackEndAction
      */
-     private actionModel !:IPSAppDEUIAction;
-    
-     /**
-      * 初始化AppBackEndAction
-      * 
-      * @memberof AppBackEndAction
-      */
-     constructor(opts:any,context?: any){
-         this.actionModel = opts;
-     }
+    private actionModel !: IPSAppDEUIAction;
+
+    /**
+     * 初始化AppBackEndAction
+     * 
+     * @memberof AppBackEndAction
+     */
+    constructor(opts: any, context?: any) {
+        this.actionModel = opts;
+    }
 
     /**
      * 执行界面行为
@@ -40,7 +40,7 @@ export class AppBackEndAction {
             let confirmResult: boolean = await actionContext.$Notice.confirm(
                 '警告',
                 this.actionModel.confirmMsg
-              );
+            );
             if (!confirmResult) {
                 return;
             }
@@ -64,23 +64,6 @@ export class AppBackEndAction {
                 Object.assign(params, { [(ModelTool.getAppEntityKeyField(this.actionModel.getPSAppDataEntity()) as IPSAppDEField)?.codeName.toLowerCase()]: `%${(this.actionModel.getPSAppDataEntity() as IPSAppDataEntity)?.codeName.toLowerCase()}%` });
                 Object.assign(params, { [(ModelTool.getAppEntityMajorField(this.actionModel.getPSAppDataEntity()) as IPSAppDEField)?.codeName.toLowerCase()]: `%${(ModelTool.getAppEntityMajorField(this.actionModel.getPSAppDataEntity()) as IPSAppDEField)?.codeName.toLowerCase()}%` });
             }
-            // 自定义导航参数优先级大于预置导航参数
-            if (this.actionModel.getPSNavigateContexts() && (this.actionModel.getPSNavigateContexts() as IPSNavigateContext[])?.length > 0) {
-                const localContext = Util.formatNavParam(this.actionModel.getPSNavigateContexts());
-                Object.assign(context, localContext);
-            }
-            if (this.actionModel.getPSNavigateParams() && (this.actionModel.getPSNavigateParams() as IPSNavigateParam[]).length > 0) {
-                const localParam = Util.formatNavParam(this.actionModel.getPSNavigateParams());
-                Object.assign(params, localParam);
-            }
-            if (_this.context) {
-                parentContext = _this.context;
-            }
-            if (_this.viewparams) {
-                parentViewParam = _this.viewparams;
-            }
-            context = UIActionTool.handleContextParam(actionTarget, _args, parentContext, parentViewParam, context);
-            data = UIActionTool.handleActionParam(actionTarget, _args, parentContext, parentViewParam, params);
             // 多项数据主键转换数据
             // TODO
             // if (Object.is(actionTarget, "MULTIKEY") && this.actionModel?.getPSDEAction?.actionType == 'USERCUSTOM') {
@@ -106,6 +89,23 @@ export class AppBackEndAction {
                 Object.assign(data, parentObj);
             }
             Object.assign(context, parentObj);
+            // 自定义导航参数优先级大于预置导航参数
+            if (this.actionModel.getPSNavigateContexts() && (this.actionModel.getPSNavigateContexts() as IPSNavigateContext[])?.length > 0) {
+                const localContext = Util.formatNavParam(this.actionModel.getPSNavigateContexts());
+                Object.assign(context, localContext);
+            }
+            if (this.actionModel.getPSNavigateParams() && (this.actionModel.getPSNavigateParams() as IPSNavigateParam[]).length > 0) {
+                const localParam = Util.formatNavParam(this.actionModel.getPSNavigateParams());
+                Object.assign(params, localParam);
+            }
+            if (_this.context) {
+                parentContext = _this.context;
+            }
+            if (_this.viewparams) {
+                parentViewParam = _this.viewparams;
+            }
+            context = UIActionTool.handleContextParam(actionTarget, _args, parentContext, parentViewParam, context);
+            data = UIActionTool.handleActionParam(actionTarget, _args, parentContext, parentViewParam, params);
             if (context && context.srfsessionid) {
                 context.srfsessionkey = context.srfsessionid;
                 delete context.srfsessionid;
@@ -142,15 +142,15 @@ export class AppBackEndAction {
                                 } else {
                                     _args = [...args];
                                 }
-                                getPSUIActionByModelObject(this.actionModel).then((nextUIaction:any)=>{
-                                  if (nextUIaction.getPSAppDataEntity()) {
-                                      let [tag, appDeName] = nextUIaction.id.split('@');
-                                      if (deUIService) {
-                                          deUIService.excuteAction(tag, _args, context, params, $event, xData, actionContext, undefined, deUIService);
-                                      }
-                                  } else {
-                                      (AppGlobalService.getInstance() as any).executeGlobalAction(nextUIaction.id, _args, context, params, $event, xData, actionContext, undefined);
-                                  }
+                                getPSUIActionByModelObject(this.actionModel).then((nextUIaction: any) => {
+                                    if (nextUIaction.getPSAppDataEntity()) {
+                                        let [tag, appDeName] = nextUIaction.id.split('@');
+                                        if (deUIService) {
+                                            deUIService.excuteAction(tag, _args, context, params, $event, xData, actionContext, undefined, deUIService);
+                                        }
+                                    } else {
+                                        (AppGlobalService.getInstance() as any).executeGlobalAction(nextUIaction.id, _args, context, params, $event, xData, actionContext, undefined);
+                                    }
                                 })
                             }
                         }).catch((response: any) => {

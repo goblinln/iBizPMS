@@ -12626,6 +12626,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "taskForward",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskForward.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Pause",
       "getPSDEAction" : {
         "modelref" : true,
@@ -15064,6 +15071,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "taskForward",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskForward.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "RemoveTempMajor",
       "getPSDEAction" : {
         "modelref" : true,
@@ -16031,6 +16045,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateTemp.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "taskForward",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskForward.json"
       },
       "allowMode" : true
     } ],
@@ -18384,6 +18405,14 @@
     "logicName" : "需求变更_未收藏_子任务",
     "mSTag" : "storychange__0__40",
     "name" : "需求变更_未收藏_子任务",
+    "getPSDEMainStateActions" : [ {
+      "name" : "TaskFavorites",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskFavorites.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__TASK_ASSIGN_BUT",
       "getPSDEOPPriv" : {

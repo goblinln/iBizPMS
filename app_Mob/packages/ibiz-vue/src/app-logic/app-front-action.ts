@@ -1,5 +1,5 @@
 import { IPSAppDataEntity, IPSAppDEField, IPSAppDEUIAction, IPSAppDEView, IPSAppView, IPSNavigateContext, IPSNavigateParam } from "@ibiz/dynamic-model-api";
-import {  ModelTool, UIActionTool, Util } from "ibiz-core";
+import { ModelTool, UIActionTool, Util } from "ibiz-core";
 import { AppGlobalService } from "../app-service";
 
 export class AppFrontAction {
@@ -9,16 +9,16 @@ export class AppFrontAction {
      * 
      * @memberof AppFrontAction
      */
-     private actionModel !: IPSAppDEUIAction;
+    private actionModel !: IPSAppDEUIAction;
 
-     /**
-      * 初始化AppFrontAction
-      * 
-      * @memberof AppFrontAction
-      */
-     constructor(opts: IPSAppDEUIAction, context?: any) {
-         this.actionModel = opts;
-     }
+    /**
+     * 初始化AppFrontAction
+     * 
+     * @memberof AppFrontAction
+     */
+    constructor(opts: IPSAppDEUIAction, context?: any) {
+        this.actionModel = opts;
+    }
 
     /**
      * 执行界面行为
@@ -55,6 +55,10 @@ export class AppFrontAction {
                 Object.assign(params, { [(ModelTool.getAppEntityKeyField(this.actionModel.getPSAppDataEntity()) as IPSAppDEField)?.codeName.toLowerCase()]: `%${(this.actionModel.getPSAppDataEntity() as IPSAppDataEntity)?.codeName.toLowerCase()}%` });
                 Object.assign(params, { [(ModelTool.getAppEntityMajorField(this.actionModel.getPSAppDataEntity()) as IPSAppDEField)?.codeName.toLowerCase()]: `%${(ModelTool.getAppEntityMajorField(this.actionModel.getPSAppDataEntity()) as IPSAppDEField)?.codeName.toLowerCase()}%` });
             }
+            // 构建srfparentdename和srfparentkey
+            let parentObj: any = { srfparentdename: srfParentDeName ? srfParentDeName : null, srfparentkey: srfParentDeName ? context[srfParentDeName.toLowerCase()] : null };
+            Object.assign(data, parentObj);
+            Object.assign(context, parentObj);
             // 自定义导航参数优先级大于预置导航参数
             if (this.actionModel.getPSNavigateContexts() && (this.actionModel.getPSNavigateContexts() as IPSNavigateContext[]).length > 0) {
                 const localContext = Util.formatNavParam(this.actionModel.getPSNavigateContexts());
@@ -73,10 +77,6 @@ export class AppFrontAction {
             context = UIActionTool.handleContextParam(actionTarget, _args, parentContext, parentViewParam, context);
             data = UIActionTool.handleActionParam(actionTarget, _args, parentContext, parentViewParam, params);
             context = Object.assign({}, actionContext.context, context);
-            // 构建srfparentdename和srfparentkey
-            let parentObj: any = { srfparentdename: srfParentDeName ? srfParentDeName : null, srfparentkey: srfParentDeName ? context[srfParentDeName.toLowerCase()] : null };
-            Object.assign(data, parentObj);
-            Object.assign(context, parentObj);
             // 打开HTML
             if (Object.is(this.actionModel.frontProcessType, "OPENHTMLPAGE") && this.actionModel.htmlPageUrl) {
                 window.open(this.actionModel.htmlPageUrl, '_blank');
