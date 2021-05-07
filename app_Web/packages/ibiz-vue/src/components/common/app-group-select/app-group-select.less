@@ -1,7 +1,7 @@
 .ibiz-group-select {
     width: 100%;
     display: flex;
-    border: 1px solid var(--item-font-color-bright);
+    border: 1px solid var(--item-font-color-light);
     height: 32px;
     border-radius: 4px;
     .ibiz-group-content {
@@ -26,16 +26,6 @@
             .group-item-multiple{
                 margin: 0 8px 0 0;
             }
-            .el-icon-close{
-                color: var(--item-font-color-light);
-                background-color: var(--item-background-color-bright);
-                border-radius: 50%;
-                top: 0;
-            }
-            .el-icon-close:hover{
-                color: var(--item-font-color-light);
-                background-color: var(--item-background-color-bright);
-            }
         }
     }
     .ibiz-group-open {
@@ -43,8 +33,18 @@
         text-align: center;
         align-items: center;
         padding: 0 5px;
+        .el-icon-circle-close{
+            color: #c0c4cc;
+            border-radius: 50%;
+            top: 0;
+            margin-right: 2px;
+            display: none;
+        }
     }
 }
 .ibiz-group-select:hover {
-    border-color: var(--item-font-color-hover);
+    border-color: var(--view-font-color-bright);
+    .ibiz-group-open .el-icon-circle-close {
+        display: block;
+    }
 }

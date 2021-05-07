@@ -7,12 +7,12 @@
             <template v-else v-for="(select, index) of selects">
                 <div :key="index" class="ibiz-group-item">
                     <span class="group-item-multiple">{{ select.label }}</span>
-                    <i v-if="!disabled" class="el-icon-close" @click="remove(select)"></i>
+                    <i v-if="!disabled" class="el-icon-circle-close" @click="remove(select)"></i>
                 </div>
             </template>
         </div>
         <div v-if="!disabled" class="ibiz-group-open">
-            <i v-if="!disabled && !multiple && selects.length > 0" class="el-icon-close" @click="remove(selects[0])"></i>
+            <i v-if="!disabled && !multiple && selects.length > 0" class="el-icon-circle-close" @click="remove(selects[0])"></i>
             <i class="el-icon-search" @click="openView" style="color: #c0c4cc;"></i>
         </div>
     </div>

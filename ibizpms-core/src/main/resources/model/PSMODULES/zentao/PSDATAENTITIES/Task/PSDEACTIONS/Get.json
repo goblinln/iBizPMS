@@ -5,7 +5,7 @@
     "actionLogicType" : 2,
     "attachMode" : "AFTER",
     "name" : "附加逻辑",
-    "scriptCode" : "entity.set(\"taskestimate\",null);",
+    "scriptCode" : "entity.set(\"taskestimates\",null);",
     "cloneParam" : false,
     "ignoreException" : false,
     "internalLogic" : false
