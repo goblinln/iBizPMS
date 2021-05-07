@@ -16,6 +16,7 @@ import DataPickerEditor from './data-picker-editor/data-picker-editor';
 import SwitchEditor from './switch-editor/switch-editor';
 import IpAddressEditor from './ipaddress-editor/ipaddress-editor';
 import { IPSEditor } from '@ibiz/dynamic-model-api';
+import CodeEditor from './code-editor/code-editor'
 
 
 /**
@@ -42,6 +43,7 @@ import { IPSEditor } from '@ibiz/dynamic-model-api';
         'data-picker-editor': DataPickerEditor,
         'switch-editor': SwitchEditor,
         'ipaddress-editor': IpAddressEditor,
+        'code-editor': CodeEditor,
     },
 })
 export class AppDefaultEditor extends Vue {
@@ -258,6 +260,9 @@ export class AppDefaultEditor extends Vue {
             'PICKER_DEPATMENTSELECT',
             'PICKER_DEPATMENTMULTIPLE',
             'PICKER_COMMONMICROCOM',
+        ]],
+        ['code-editor', [
+            'CODEEIDT',
         ]],
 
     ]);
