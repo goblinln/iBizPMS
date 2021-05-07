@@ -4066,6 +4066,38 @@
       "modelref" : true,
       "path" : "PSSYSMSGTEMPLS/ProductNewBranch.json"
     }
+  }, {
+    "getBeginTimePSDEField" : {
+      "name" : "UPDATEDATE",
+      "codeName" : "UpdateDate"
+    },
+    "checkTimer" : 10,
+    "codeName" : "ProductCheck",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDENOTIFIES/ProductCheck.json",
+    "msgType" : 0,
+    "name" : "产品版本检查",
+    "notifyStart" : 1,
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "Default"
+    },
+    "getPSDENotifyTargets" : [ {
+      "name" : "监理人",
+      "getTargetPSDEField" : {
+        "name" : "CREATEDBY",
+        "codeName" : "CreatedBy"
+      },
+      "targetType" : "DEFIELD"
+    } ],
+    "getPSSysMsgQueue" : {
+      "modelref" : true,
+      "path" : "PSSYSMSGQUEUES/MsgQueue.json"
+    },
+    "getPSSysMsgTempl" : {
+      "modelref" : true,
+      "path" : "PSSYSMSGTEMPLS/ProductCheck.json"
+    },
+    "timerMode" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",

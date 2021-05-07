@@ -11,6 +11,12 @@
 	
 	<!-- 搜索条件 -->
 	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_updatedate_ltandeq != null ">
+			<![CDATA[ AND  t1.`updatedate` <= #{srf.n_updatedate_ltandeq,jdbcType=TIMESTAMP} ]]>
+        </if>
+		<if test="srf.n_updatedate_gtandeq != null ">
+			<![CDATA[ AND  t1.`updatedate` >= #{srf.n_updatedate_gtandeq,jdbcType=TIMESTAMP} ]]>
+        </if>
 		<if test="srf.n_istop_eq != null ">
 			<![CDATA[ AND  '0' = #{srf.n_istop_eq,jdbcType=INTEGER} ]]>
         </if>

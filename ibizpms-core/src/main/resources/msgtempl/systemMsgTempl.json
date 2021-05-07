@@ -1,5 +1,11 @@
   [
     {
+      "tid":"productcheck",
+      "template_name":"产品检查",
+      "content":"产品检查"
+    }
+    ,
+    {
       "tid":"productnewbranch",
       "template_name":"产品发布新版本",
       "content":"发布新版本v1.0"

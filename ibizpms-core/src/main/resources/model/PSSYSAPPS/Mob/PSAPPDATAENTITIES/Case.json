@@ -2712,8 +2712,6 @@
     "uIActionMode" : "BACKEND",
     "uIActionTag" : "MobTaskLinkCase",
     "uIActionType" : "DEUIACTION",
-    "closeEditView" : true,
-    "closePopupView" : true,
     "enableConfirm" : true,
     "reloadData" : true,
     "id" : "MobTaskLinkCase@Case"

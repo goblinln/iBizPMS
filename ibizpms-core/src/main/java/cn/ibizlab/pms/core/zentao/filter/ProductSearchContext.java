@@ -27,6 +27,18 @@ import cn.ibizlab.pms.core.zentao.domain.Product;
 @Data
 public class ProductSearchContext extends QueryWrapperContext<Product> {
 
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+	private Timestamp n_updatedate_ltandeq;//[更新时间]
+	public void setN_updatedate_ltandeq(Timestamp n_updatedate_ltandeq) {
+        this.n_updatedate_ltandeq = n_updatedate_ltandeq;
+    }
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd HH:mm:ss")
+	private Timestamp n_updatedate_gtandeq;//[更新时间]
+	public void setN_updatedate_gtandeq(Timestamp n_updatedate_gtandeq) {
+        this.n_updatedate_gtandeq = n_updatedate_gtandeq;
+    }
 	private Integer n_istop_eq;//[是否置顶]
 	public void setN_istop_eq(Integer n_istop_eq) {
         this.n_istop_eq = n_istop_eq;
