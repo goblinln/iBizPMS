@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 import cn.ibizlab.pms.util.helper.QueryContextHelper;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import cn.ibizlab.pms.util.security.UAADEAuthority;
+import cn.ibizlab.pms.util.client.IBZWFFeignClient;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
@@ -40,6 +41,7 @@ import net.ibizsys.runtime.util.*;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import lombok.SneakyThrows;
 
 import javax.annotation.PostConstruct;
 
@@ -68,6 +70,9 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
 
     @Autowired
     ISystemRuntime system;
+
+    @Autowired
+    IBZWFFeignClient wfClient;
 
     @Override
     public ISystemRuntime getSystemRuntime() {
@@ -384,18 +389,15 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      * @param action 操作能力
      * @return
      */
+    @SneakyThrows
     public boolean test(Serializable key, String action) {
         this.prepare();
         if (this.getUserContext().isSuperuser())
             return true;
         //判断是否在流程中
         if(this.isEnableWF() && this.testDataInWF(this.getSimpleEntity(key))){
-            //判断当前人有没有流程对应的能力
-            //UPDATE
-            //return true/false;
-
-            //READ
-            // true 直接return    false接着往下走
+            if(!wfClient.testDataIsEdit(AuthenticationUser.getAuthenticationUser().getSrfsystemid() , this.getPSDataEntity().getCodeName().toLowerCase(),key))
+                return false;
         }
         if (testUnires(action))
             return true ;
