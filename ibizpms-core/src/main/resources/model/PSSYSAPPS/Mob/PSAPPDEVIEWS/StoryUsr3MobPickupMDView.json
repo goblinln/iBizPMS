@@ -135,6 +135,9 @@
       },
       "name" : "status"
     }, {
+      "dataType" : 1,
+      "name" : "id"
+    }, {
       "dataType" : 25,
       "name" : "title"
     }, {

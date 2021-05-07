@@ -286,8 +286,8 @@
       "pluginType" : "GRID_COLRENDER",
       "pluginCode" : "girdCounmColor"
     },
-    "width" : 500,
-    "widthUnit" : "STAR",
+    "width" : 300,
+    "widthUnit" : "PX",
     "enableLinkView" : true,
     "enableSort" : true
   }, {
