@@ -4043,6 +4043,21 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDENOTIFIES/NewBranch.json",
     "msgType" : 0,
     "name" : "新版本发布",
+    "getPSDENotifyTargets" : [ {
+      "name" : "负责人",
+      "getTargetPSDEField" : {
+        "name" : "CREATEDBY",
+        "codeName" : "CreatedBy"
+      },
+      "targetType" : "DEFIELD"
+    }, {
+      "name" : "产品管理员",
+      "getPSSysMsgTarget" : {
+        "modelref" : true,
+        "path" : "PSSYSMSGTARGETS/ProductAdmin.json"
+      },
+      "targetType" : "SYSMSGTARGET"
+    } ],
     "getPSSysMsgQueue" : {
       "modelref" : true,
       "path" : "PSSYSMSGQUEUES/MsgQueue.json"
