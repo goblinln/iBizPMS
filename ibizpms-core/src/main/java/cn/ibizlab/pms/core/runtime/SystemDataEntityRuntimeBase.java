@@ -187,7 +187,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         entity.reset(ipsdeField.getCodeName());
     }
 
-@Override
+    @Override
     public IEntityBase[] getNestedDERValue(IEntityBase iEntityBase, IPSDERBase iPSDERBase) {
         IEntity entity = (IEntity) iEntityBase;
         if(iPSDERBase instanceof IPSDER1N){
@@ -272,10 +272,25 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     public IEntityBase selectOne(String strCondition) {
         QueryWrapperContext context = createSearchContext();
         context.getSelectCond().and(ScopeUtils.parse(this, strCondition));
-        List list = this.select(context);
-        if (list.size() > 0)
-            return (IEntityBase) list.get(0);
-        return null;
+        return selectOne(context);
+    }
+
+    @Override
+    public IEntityBase selectOne(ISearchContextBase iSearchContextBase) {
+        //单条数据查询，多条数数据时 返回第一条
+        QueryWrapperContext context = (QueryWrapperContext) iSearchContextBase;
+        context.setSize(1);
+        List domains = this.select(context);
+        if (domains.size() == 0)
+            return null;
+        return (IEntityBase) domains.get(0);
+    }
+
+    @Override
+    public boolean existsData(ISearchContextBase iSearchContextBase) {
+        QueryWrapperContext context = (QueryWrapperContext) iSearchContextBase;
+        List domains = this.select(context);
+        return domains.size() > 0;
     }
 
     @Override

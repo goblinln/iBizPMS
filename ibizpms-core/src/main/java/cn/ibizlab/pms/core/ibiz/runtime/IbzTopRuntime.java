@@ -124,14 +124,6 @@ public class IbzTopRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<IbzTop> domains = ibztopService.searchDefault((IbzTopSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<IbzTop> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         IbzTopSearchContext searchContext = (IbzTopSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -147,17 +139,6 @@ public class IbzTopRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
         if (iPSDataQuery.getName().equals("VIEW"))
             return ibztopService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public IbzTop selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        IbzTopSearchContext searchContext = (IbzTopSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<IbzTop> domains = ibztopService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

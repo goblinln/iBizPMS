@@ -124,14 +124,6 @@ public class EffortRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<Effort> domains = effortService.searchDefault((EffortSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<Effort> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         EffortSearchContext searchContext = (EffortSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -147,17 +139,6 @@ public class EffortRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
         if (iPSDataQuery.getName().equals("VIEW"))
             return effortService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public Effort selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        EffortSearchContext searchContext = (EffortSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<Effort> domains = effortService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

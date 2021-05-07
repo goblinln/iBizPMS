@@ -186,7 +186,7 @@
         "name" : "关联用例",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "LinkCase"
+          "id" : "MobLinkCase"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

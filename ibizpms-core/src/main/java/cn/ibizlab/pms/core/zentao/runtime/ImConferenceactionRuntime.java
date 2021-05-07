@@ -124,14 +124,6 @@ public class ImConferenceactionRuntime extends cn.ibizlab.pms.core.runtime.Syste
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<ImConferenceaction> domains = imconferenceactionService.searchDefault((ImConferenceactionSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<ImConferenceaction> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         ImConferenceactionSearchContext searchContext = (ImConferenceactionSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -147,17 +139,6 @@ public class ImConferenceactionRuntime extends cn.ibizlab.pms.core.runtime.Syste
         if (iPSDataQuery.getName().equals("VIEW"))
             return imconferenceactionService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public ImConferenceaction selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        ImConferenceactionSearchContext searchContext = (ImConferenceactionSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<ImConferenceaction> domains = imconferenceactionService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

@@ -124,14 +124,6 @@ public class SuiteCaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<SuiteCase> domains = suitecaseService.searchDefault((SuiteCaseSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<SuiteCase> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         SuiteCaseSearchContext searchContext = (SuiteCaseSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -147,17 +139,6 @@ public class SuiteCaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
         if (iPSDataQuery.getName().equals("VIEW"))
             return suitecaseService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public SuiteCase selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        SuiteCaseSearchContext searchContext = (SuiteCaseSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<SuiteCase> domains = suitecaseService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

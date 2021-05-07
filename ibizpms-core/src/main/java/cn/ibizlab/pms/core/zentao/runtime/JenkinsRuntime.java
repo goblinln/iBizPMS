@@ -124,14 +124,6 @@ public class JenkinsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<Jenkins> domains = jenkinsService.searchDefault((JenkinsSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<Jenkins> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         JenkinsSearchContext searchContext = (JenkinsSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -147,17 +139,6 @@ public class JenkinsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         if (iPSDataQuery.getName().equals("VIEW"))
             return jenkinsService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public Jenkins selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        JenkinsSearchContext searchContext = (JenkinsSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<Jenkins> domains = jenkinsService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

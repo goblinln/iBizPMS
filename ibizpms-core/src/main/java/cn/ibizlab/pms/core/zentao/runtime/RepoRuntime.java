@@ -124,14 +124,6 @@ public class RepoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<Repo> domains = repoService.searchDefault((RepoSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<Repo> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         RepoSearchContext searchContext = (RepoSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -147,17 +139,6 @@ public class RepoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         if (iPSDataQuery.getName().equals("VIEW"))
             return repoService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public Repo selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        RepoSearchContext searchContext = (RepoSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<Repo> domains = repoService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

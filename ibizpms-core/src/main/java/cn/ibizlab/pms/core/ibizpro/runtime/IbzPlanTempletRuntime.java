@@ -124,14 +124,6 @@ public class IbzPlanTempletRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<IbzPlanTemplet> domains = ibzplantempletService.searchDefault((IbzPlanTempletSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<IbzPlanTemplet> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         IbzPlanTempletSearchContext searchContext = (IbzPlanTempletSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("CurUserTemplet"))
@@ -151,17 +143,6 @@ public class IbzPlanTempletRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
         if (iPSDataQuery.getName().equals("VIEW"))
             return ibzplantempletService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public IbzPlanTemplet selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        IbzPlanTempletSearchContext searchContext = (IbzPlanTempletSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<IbzPlanTemplet> domains = ibzplantempletService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

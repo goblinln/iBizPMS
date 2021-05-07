@@ -124,14 +124,6 @@ public class ProjectTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<ProjectTeam> domains = projectteamService.searchDefault((ProjectTeamSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<ProjectTeam> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         ProjectTeamSearchContext searchContext = (ProjectTeamSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -159,17 +151,6 @@ public class ProjectTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
         if (iPSDataQuery.getName().equals("VIEW"))
             return projectteamService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public ProjectTeam selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        ProjectTeamSearchContext searchContext = (ProjectTeamSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<ProjectTeam> domains = projectteamService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

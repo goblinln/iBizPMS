@@ -124,14 +124,6 @@ public class ConfigRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<Config> domains = configService.searchDefault((ConfigSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<Config> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         ConfigSearchContext searchContext = (ConfigSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -147,17 +139,6 @@ public class ConfigRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
         if (iPSDataQuery.getName().equals("VIEW"))
             return configService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public Config selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        ConfigSearchContext searchContext = (ConfigSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<Config> domains = configService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

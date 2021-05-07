@@ -124,14 +124,6 @@ public class ModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<Module> domains = moduleService.searchDefault((ModuleSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<Module> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         ModuleSearchContext searchContext = (ModuleSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("BugModule"))
@@ -171,17 +163,6 @@ public class ModuleRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
         if (iPSDataQuery.getName().equals("VIEW"))
             return moduleService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public Module selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        ModuleSearchContext searchContext = (ModuleSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<Module> domains = moduleService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

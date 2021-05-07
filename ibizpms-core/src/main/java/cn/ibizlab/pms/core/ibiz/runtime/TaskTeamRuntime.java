@@ -124,14 +124,6 @@ public class TaskTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<TaskTeam> domains = taskteamService.searchDefault((TaskTeamSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<TaskTeam> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         TaskTeamSearchContext searchContext = (TaskTeamSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -147,17 +139,6 @@ public class TaskTeamRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
         if (iPSDataQuery.getName().equals("VIEW"))
             return taskteamService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public TaskTeam selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        TaskTeamSearchContext searchContext = (TaskTeamSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<TaskTeam> domains = taskteamService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

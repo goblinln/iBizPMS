@@ -124,14 +124,6 @@ public class DynaDashboardRuntime extends cn.ibizlab.pms.core.runtime.SystemData
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<DynaDashboard> domains = dynadashboardService.searchDefault((DynaDashboardSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<DynaDashboard> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         DynaDashboardSearchContext searchContext = (DynaDashboardSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -147,17 +139,6 @@ public class DynaDashboardRuntime extends cn.ibizlab.pms.core.runtime.SystemData
         if (iPSDataQuery.getName().equals("VIEW"))
             return dynadashboardService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public DynaDashboard selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        DynaDashboardSearchContext searchContext = (DynaDashboardSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<DynaDashboard> domains = dynadashboardService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

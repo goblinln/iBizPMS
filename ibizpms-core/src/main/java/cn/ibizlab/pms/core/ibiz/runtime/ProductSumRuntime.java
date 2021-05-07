@@ -124,14 +124,6 @@ public class ProductSumRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<ProductSum> domains = productsumService.searchDefault((ProductSumSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<ProductSum> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         ProductSumSearchContext searchContext = (ProductSumSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -171,17 +163,6 @@ public class ProductSumRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnt
         if (iPSDataQuery.getName().equals("VIEW"))
             return productsumService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public ProductSum selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        ProductSumSearchContext searchContext = (ProductSumSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<ProductSum> domains = productsumService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

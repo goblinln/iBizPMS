@@ -124,14 +124,6 @@ public class CaseStepRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<CaseStep> domains = casestepService.searchDefault((CaseStepSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<CaseStep> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         CaseStepSearchContext searchContext = (CaseStepSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("CurTest"))
@@ -167,17 +159,6 @@ public class CaseStepRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
         if (iPSDataQuery.getName().equals("VIEW"))
             return casestepService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public CaseStep selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        CaseStepSearchContext searchContext = (CaseStepSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<CaseStep> domains = casestepService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

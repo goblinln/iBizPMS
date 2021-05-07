@@ -124,14 +124,6 @@ public class AccountTaskestimateRuntime extends cn.ibizlab.pms.core.runtime.Syst
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<AccountTaskestimate> domains = accounttaskestimateService.searchDefault((AccountTaskestimateSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<AccountTaskestimate> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         AccountTaskestimateSearchContext searchContext = (AccountTaskestimateSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("AllAccountEstimate"))
@@ -151,17 +143,6 @@ public class AccountTaskestimateRuntime extends cn.ibizlab.pms.core.runtime.Syst
         if (iPSDataQuery.getName().equals("VIEW"))
             return accounttaskestimateService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public AccountTaskestimate selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        AccountTaskestimateSearchContext searchContext = (AccountTaskestimateSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<AccountTaskestimate> domains = accounttaskestimateService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

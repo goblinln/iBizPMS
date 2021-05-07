@@ -124,14 +124,6 @@ public class ImQueueRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<ImQueue> domains = imqueueService.searchDefault((ImQueueSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<ImQueue> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         ImQueueSearchContext searchContext = (ImQueueSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -147,17 +139,6 @@ public class ImQueueRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         if (iPSDataQuery.getName().equals("VIEW"))
             return imqueueService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public ImQueue selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        ImQueueSearchContext searchContext = (ImQueueSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<ImQueue> domains = imqueueService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

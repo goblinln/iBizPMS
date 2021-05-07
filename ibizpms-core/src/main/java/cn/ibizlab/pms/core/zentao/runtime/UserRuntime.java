@@ -124,14 +124,6 @@ public class UserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<User> domains = userService.searchDefault((UserSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<User> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         UserSearchContext searchContext = (UserSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("BugUser"))
@@ -171,17 +163,6 @@ public class UserRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         if (iPSDataQuery.getName().equals("VIEW"))
             return userService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public User selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        UserSearchContext searchContext = (UserSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<User> domains = userService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

@@ -124,14 +124,6 @@ public class TaskMsgRecordRuntime extends cn.ibizlab.pms.core.runtime.SystemData
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<TaskMsgRecord> domains = taskmsgrecordService.searchDefault((TaskMsgRecordSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<TaskMsgRecord> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         TaskMsgRecordSearchContext searchContext = (TaskMsgRecordSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -147,17 +139,6 @@ public class TaskMsgRecordRuntime extends cn.ibizlab.pms.core.runtime.SystemData
         if (iPSDataQuery.getName().equals("VIEW"))
             return taskmsgrecordService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public TaskMsgRecord selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        TaskMsgRecordSearchContext searchContext = (TaskMsgRecordSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<TaskMsgRecord> domains = taskmsgrecordService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

@@ -124,14 +124,6 @@ public class SysUpdateLogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<SysUpdateLog> domains = sysupdatelogService.searchDefault((SysUpdateLogSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<SysUpdateLog> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         SysUpdateLogSearchContext searchContext = (SysUpdateLogSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -147,17 +139,6 @@ public class SysUpdateLogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
         if (iPSDataQuery.getName().equals("VIEW"))
             return sysupdatelogService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public SysUpdateLog selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        SysUpdateLogSearchContext searchContext = (SysUpdateLogSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<SysUpdateLog> domains = sysupdatelogService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

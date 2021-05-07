@@ -124,14 +124,6 @@ public class IbzReportRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<IbzReport> domains = ibzreportService.searchDefault((IbzReportSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<IbzReport> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         IbzReportSearchContext searchContext = (IbzReportSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("AllReport"))
@@ -155,17 +147,6 @@ public class IbzReportRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
         if (iPSDataQuery.getName().equals("VIEW"))
             return ibzreportService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public IbzReport selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        IbzReportSearchContext searchContext = (IbzReportSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<IbzReport> domains = ibzreportService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

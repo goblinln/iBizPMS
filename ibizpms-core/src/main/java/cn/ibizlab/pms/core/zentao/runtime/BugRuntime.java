@@ -124,14 +124,6 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<Bug> domains = bugService.searchDefault((BugSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<Bug> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         BugSearchContext searchContext = (BugSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("AssignedToMyBug"))
@@ -271,17 +263,6 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
         if (iPSDataQuery.getName().equals("VIEW"))
             return bugService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public Bug selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        BugSearchContext searchContext = (BugSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<Bug> domains = bugService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

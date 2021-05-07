@@ -124,14 +124,6 @@ public class BugStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<BugStats> domains = bugstatsService.searchDefault((BugStatsSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<BugStats> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         BugStatsSearchContext searchContext = (BugStatsSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("BugCountInResolution"))
@@ -179,17 +171,6 @@ public class BugStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
         if (iPSDataQuery.getName().equals("VIEW"))
             return bugstatsService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public BugStats selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        BugStatsSearchContext searchContext = (BugStatsSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<BugStats> domains = bugstatsService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

@@ -124,14 +124,6 @@ public class ReleaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<Release> domains = releaseService.searchDefault((ReleaseSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<Release> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         ReleaseSearchContext searchContext = (ReleaseSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -153,17 +145,6 @@ public class ReleaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         if (iPSDataQuery.getName().equals("VIEW"))
             return releaseService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public Release selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        ReleaseSearchContext searchContext = (ReleaseSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<Release> domains = releaseService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

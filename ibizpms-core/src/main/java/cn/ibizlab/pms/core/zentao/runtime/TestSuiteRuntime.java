@@ -124,14 +124,6 @@ public class TestSuiteRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<TestSuite> domains = testsuiteService.searchDefault((TestSuiteSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<TestSuite> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         TestSuiteSearchContext searchContext = (TestSuiteSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -151,17 +143,6 @@ public class TestSuiteRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
         if (iPSDataQuery.getName().equals("VIEW"))
             return testsuiteService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public TestSuite selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        TestSuiteSearchContext searchContext = (TestSuiteSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<TestSuite> domains = testsuiteService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

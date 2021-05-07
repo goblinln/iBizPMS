@@ -124,14 +124,6 @@ public class WebHookRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<WebHook> domains = webhookService.searchDefault((WebHookSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<WebHook> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         WebHookSearchContext searchContext = (WebHookSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -147,17 +139,6 @@ public class WebHookRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         if (iPSDataQuery.getName().equals("VIEW"))
             return webhookService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public WebHook selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        WebHookSearchContext searchContext = (WebHookSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<WebHook> domains = webhookService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

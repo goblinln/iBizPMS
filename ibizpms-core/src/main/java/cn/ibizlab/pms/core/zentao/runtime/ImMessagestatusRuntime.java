@@ -124,14 +124,6 @@ public class ImMessagestatusRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<ImMessagestatus> domains = immessagestatusService.searchDefault((ImMessagestatusSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<ImMessagestatus> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         ImMessagestatusSearchContext searchContext = (ImMessagestatusSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -147,17 +139,6 @@ public class ImMessagestatusRuntime extends cn.ibizlab.pms.core.runtime.SystemDa
         if (iPSDataQuery.getName().equals("VIEW"))
             return immessagestatusService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public ImMessagestatus selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        ImMessagestatusSearchContext searchContext = (ImMessagestatusSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<ImMessagestatus> domains = immessagestatusService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

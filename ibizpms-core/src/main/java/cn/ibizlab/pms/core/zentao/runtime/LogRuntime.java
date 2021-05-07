@@ -124,14 +124,6 @@ public class LogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<Log> domains = logService.searchDefault((LogSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<Log> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         LogSearchContext searchContext = (LogSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -147,17 +139,6 @@ public class LogRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
         if (iPSDataQuery.getName().equals("VIEW"))
             return logService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public Log selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        LogSearchContext searchContext = (LogSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<Log> domains = logService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

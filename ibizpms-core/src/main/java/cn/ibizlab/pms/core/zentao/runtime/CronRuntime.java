@@ -124,14 +124,6 @@ public class CronRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<Cron> domains = cronService.searchDefault((CronSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<Cron> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         CronSearchContext searchContext = (CronSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -147,17 +139,6 @@ public class CronRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         if (iPSDataQuery.getName().equals("VIEW"))
             return cronService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public Cron selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        CronSearchContext searchContext = (CronSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<Cron> domains = cronService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

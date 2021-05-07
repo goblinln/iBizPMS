@@ -124,14 +124,6 @@ public class SysUpdateFeaturesRuntime extends cn.ibizlab.pms.core.runtime.System
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<SysUpdateFeatures> domains = sysupdatefeaturesService.searchDefault((SysUpdateFeaturesSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<SysUpdateFeatures> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         SysUpdateFeaturesSearchContext searchContext = (SysUpdateFeaturesSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -147,17 +139,6 @@ public class SysUpdateFeaturesRuntime extends cn.ibizlab.pms.core.runtime.System
         if (iPSDataQuery.getName().equals("VIEW"))
             return sysupdatefeaturesService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public SysUpdateFeatures selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        SysUpdateFeaturesSearchContext searchContext = (SysUpdateFeaturesSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<SysUpdateFeatures> domains = sysupdatefeaturesService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

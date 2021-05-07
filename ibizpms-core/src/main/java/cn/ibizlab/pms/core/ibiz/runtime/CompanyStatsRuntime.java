@@ -124,14 +124,6 @@ public class CompanyStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<CompanyStats> domains = companystatsService.searchDefault((CompanyStatsSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<CompanyStats> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         CompanyStatsSearchContext searchContext = (CompanyStatsSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("CompanyDynamicStats"))
@@ -151,17 +143,6 @@ public class CompanyStatsRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
         if (iPSDataQuery.getName().equals("VIEW"))
             return companystatsService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public CompanyStats selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        CompanyStatsSearchContext searchContext = (CompanyStatsSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<CompanyStats> domains = companystatsService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

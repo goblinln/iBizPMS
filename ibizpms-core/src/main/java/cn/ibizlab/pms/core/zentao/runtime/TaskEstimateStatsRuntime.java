@@ -124,14 +124,6 @@ public class TaskEstimateStatsRuntime extends cn.ibizlab.pms.core.runtime.System
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<TaskEstimateStats> domains = taskestimatestatsService.searchDefault((TaskEstimateStatsSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<TaskEstimateStats> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         TaskEstimateStatsSearchContext searchContext = (TaskEstimateStatsSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("ActionMonth"))
@@ -157,17 +149,6 @@ public class TaskEstimateStatsRuntime extends cn.ibizlab.pms.core.runtime.System
         if (iPSDataQuery.getName().equals("VIEW"))
             return taskestimatestatsService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public TaskEstimateStats selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        TaskEstimateStatsSearchContext searchContext = (TaskEstimateStatsSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<TaskEstimateStats> domains = taskestimatestatsService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

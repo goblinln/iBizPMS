@@ -124,14 +124,6 @@ public class BranchRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<Branch> domains = branchService.searchDefault((BranchSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<Branch> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         BranchSearchContext searchContext = (BranchSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("CurProduct"))
@@ -153,17 +145,6 @@ public class BranchRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
         if (iPSDataQuery.getName().equals("VIEW"))
             return branchService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public Branch selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        BranchSearchContext searchContext = (BranchSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<Branch> domains = branchService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

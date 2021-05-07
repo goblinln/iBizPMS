@@ -124,14 +124,6 @@ public class DocLibRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<DocLib> domains = doclibService.searchDefault((DocLibSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<DocLib> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         DocLibSearchContext searchContext = (DocLibSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("ByCustom"))
@@ -179,17 +171,6 @@ public class DocLibRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityR
         if (iPSDataQuery.getName().equals("VIEW"))
             return doclibService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public DocLib selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        DocLibSearchContext searchContext = (DocLibSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<DocLib> domains = doclibService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

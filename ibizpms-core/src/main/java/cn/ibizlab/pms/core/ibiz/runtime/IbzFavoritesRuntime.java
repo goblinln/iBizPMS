@@ -124,14 +124,6 @@ public class IbzFavoritesRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<IbzFavorites> domains = ibzfavoritesService.searchDefault((IbzFavoritesSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<IbzFavorites> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         IbzFavoritesSearchContext searchContext = (IbzFavoritesSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -147,17 +139,6 @@ public class IbzFavoritesRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
         if (iPSDataQuery.getName().equals("VIEW"))
             return ibzfavoritesService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public IbzFavorites selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        IbzFavoritesSearchContext searchContext = (IbzFavoritesSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<IbzFavorites> domains = ibzfavoritesService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

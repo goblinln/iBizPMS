@@ -124,14 +124,6 @@ public class UserGroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<UserGroup> domains = usergroupService.searchDefault((UserGroupSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<UserGroup> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         UserGroupSearchContext searchContext = (UserGroupSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -147,17 +139,6 @@ public class UserGroupRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
         if (iPSDataQuery.getName().equals("VIEW"))
             return usergroupService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public UserGroup selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        UserGroupSearchContext searchContext = (UserGroupSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<UserGroup> domains = usergroupService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

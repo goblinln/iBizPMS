@@ -124,14 +124,6 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<Product> domains = productService.searchDefault((ProductSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<Product> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         ProductSearchContext searchContext = (ProductSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("AllList"))
@@ -213,17 +205,6 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         if (iPSDataQuery.getName().equals("VIEW"))
             return productService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public Product selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        ProductSearchContext searchContext = (ProductSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<Product> domains = productService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

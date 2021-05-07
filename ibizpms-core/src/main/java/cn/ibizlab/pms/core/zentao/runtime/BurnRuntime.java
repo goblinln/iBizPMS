@@ -124,14 +124,6 @@ public class BurnRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<Burn> domains = burnService.searchDefault((BurnSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<Burn> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         BurnSearchContext searchContext = (BurnSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -151,17 +143,6 @@ public class BurnRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         if (iPSDataQuery.getName().equals("VIEW"))
             return burnService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public Burn selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        BurnSearchContext searchContext = (BurnSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<Burn> domains = burnService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

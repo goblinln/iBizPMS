@@ -124,14 +124,6 @@ public class ScoreRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<Score> domains = scoreService.searchDefault((ScoreSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<Score> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         ScoreSearchContext searchContext = (ScoreSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -147,17 +139,6 @@ public class ScoreRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         if (iPSDataQuery.getName().equals("VIEW"))
             return scoreService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public Score selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        ScoreSearchContext searchContext = (ScoreSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<Score> domains = scoreService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

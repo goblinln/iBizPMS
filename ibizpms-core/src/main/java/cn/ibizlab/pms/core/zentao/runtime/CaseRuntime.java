@@ -124,14 +124,6 @@ public class CaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<Case> domains = caseService.searchDefault((CaseSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<Case> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         CaseSearchContext searchContext = (CaseSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("BatchNew"))
@@ -231,17 +223,6 @@ public class CaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         if (iPSDataQuery.getName().equals("VIEW"))
             return caseService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public Case selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        CaseSearchContext searchContext = (CaseSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<Case> domains = caseService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

@@ -124,14 +124,6 @@ public class UserTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<UserTpl> domains = usertplService.searchDefault((UserTplSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<UserTpl> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         UserTplSearchContext searchContext = (UserTplSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -151,17 +143,6 @@ public class UserTplRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         if (iPSDataQuery.getName().equals("VIEW"))
             return usertplService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public UserTpl selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        UserTplSearchContext searchContext = (UserTplSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<UserTpl> domains = usertplService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

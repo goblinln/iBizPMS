@@ -124,14 +124,6 @@ public class IbizproIndexRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<IbizproIndex> domains = ibizproindexService.searchDefault((IbizproIndexSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<IbizproIndex> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         IbizproIndexSearchContext searchContext = (IbizproIndexSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -151,17 +143,6 @@ public class IbizproIndexRuntime extends cn.ibizlab.pms.core.runtime.SystemDataE
         if (iPSDataQuery.getName().equals("VIEW"))
             return ibizproindexService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public IbizproIndex selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        IbizproIndexSearchContext searchContext = (IbizproIndexSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<IbizproIndex> domains = ibizproindexService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

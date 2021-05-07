@@ -124,14 +124,6 @@ public class UserQueryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<UserQuery> domains = userqueryService.searchDefault((UserQuerySearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<UserQuery> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         UserQuerySearchContext searchContext = (UserQuerySearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -147,17 +139,6 @@ public class UserQueryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
         if (iPSDataQuery.getName().equals("VIEW"))
             return userqueryService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public UserQuery selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        UserQuerySearchContext searchContext = (UserQuerySearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<UserQuery> domains = userqueryService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

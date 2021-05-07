@@ -124,14 +124,6 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<Build> domains = buildService.searchDefault((BuildSearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<Build> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         BuildSearchContext searchContext = (BuildSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("BugProductBuild"))
@@ -171,17 +163,6 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         if (iPSDataQuery.getName().equals("VIEW"))
             return buildService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public Build selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        BuildSearchContext searchContext = (BuildSearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<Build> domains = buildService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

@@ -124,14 +124,6 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<Story> domains = storyService.searchDefault((StorySearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<Story> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         StorySearchContext searchContext = (StorySearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("AssignedToMyStory"))
@@ -249,17 +241,6 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         if (iPSDataQuery.getName().equals("VIEW"))
             return storyService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public Story selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        StorySearchContext searchContext = (StorySearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<Story> domains = storyService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override

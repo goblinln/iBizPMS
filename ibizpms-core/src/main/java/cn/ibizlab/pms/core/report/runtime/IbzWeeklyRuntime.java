@@ -124,14 +124,6 @@ public class IbzWeeklyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
     }
 
     @Override
-    public boolean existsData(ISearchContextBase iSearchContextBase) {
-        Page<IbzWeekly> domains = ibzweeklyService.searchDefault((IbzWeeklySearchContext) iSearchContextBase);
-        if (domains.getSize() == 0)
-            return false;
-        return true;
-    }
-
-    @Override
     public Page<IbzWeekly> searchDataSet(IPSDEDataSet iPSDEDataSet, ISearchContextBase iSearchContextBase) {
         IbzWeeklySearchContext searchContext = (IbzWeeklySearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
@@ -163,17 +155,6 @@ public class IbzWeeklyRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEnti
         if (iPSDataQuery.getName().equals("VIEW"))
             return ibzweeklyService.selectView(searchContext);
         return null;
-    }
-
-    @Override
-    public IbzWeekly selectOne(ISearchContextBase iSearchContextBase) {
-        //单条数据查询，多条数数据时 返回第一条
-        IbzWeeklySearchContext searchContext = (IbzWeeklySearchContext) iSearchContextBase;
-        searchContext.setSize(1);
-        List<IbzWeekly> domains = ibzweeklyService.select(searchContext);
-        if (domains.size() == 0)
-            return null;
-        return domains.get(0);
     }
 
     @Override
