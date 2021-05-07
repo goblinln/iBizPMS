@@ -165,6 +165,27 @@
     },
     "sysUniResCode" : "PROJ_TEST_TESTTASK"
   }, {
+    "name" : "项目经理-需求删除",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__STORY_DELETE_BUT"
+    },
+    "sysUniResCode" : "STORY_DELETE_BUT"
+  }, {
+    "name" : "项目经理-需求新建",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__STORY_CREATE_BUT"
+    },
+    "sysUniResCode" : "STORY_CREATE_BUT"
+  }, {
+    "name" : "项目经理-需求变更",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__STORY_CHANGED_BUT"
+    },
+    "sysUniResCode" : "STORY_CHANGED_BUT"
+  }, {
     "name" : "项目经理-收藏文档库分类",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -179,12 +200,26 @@
     },
     "sysUniResCode" : "PROJ_EDIT_BUT"
   }, {
+    "name" : "项目经理-需求指派给",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__STORY_ASS_BUT"
+    },
+    "sysUniResCode" : "STORY_ASS_BUT"
+  }, {
     "name" : "项目经理-取消收藏文档库",
     "getPSSysUniRes" : {
       "modelref" : true,
       "id" : "ibiz__DOCLIB_NFAVOUR_BUT"
     },
     "sysUniResCode" : "DOCLIB_NFAVOUR_BUT"
+  }, {
+    "name" : "项目经理-需求评审",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__STORY_REVIEW_BUT"
+    },
+    "sysUniResCode" : "STORY_REVIEW_BUT"
   }, {
     "name" : "项目经理-项目管理",
     "getPSSysUniRes" : {
@@ -213,6 +248,27 @@
       "id" : "zentao__TOP_PROJECT_MENU"
     },
     "sysUniResCode" : "TOP_PROJECT_MENU"
+  }, {
+    "name" : "项目经理-需求建用例",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__STORY_CCASE_BUT"
+    },
+    "sysUniResCode" : "STORY_CCASE_BUT"
+  }, {
+    "name" : "项目经理-需求分解任务",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__STORY_FJTASK_BUT"
+    },
+    "sysUniResCode" : "STORY_FJTASK_BUT"
+  }, {
+    "name" : "项目经理-需求已收藏",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__STORY_FAVOR_BUT"
+    },
+    "sysUniResCode" : "STORY_FAVOR_BUT"
   }, {
     "name" : "项目经理-维护分类",
     "getPSSysUniRes" : {
@@ -298,6 +354,13 @@
     },
     "sysUniResCode" : "BUILD_EDIT_BUT"
   }, {
+    "name" : "项目经理-需求编辑",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__STORY_EDIT_BUT"
+    },
+    "sysUniResCode" : "STORY_EDIT_BUT"
+  }, {
     "name" : "项目经理-文档库分类编辑",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -318,6 +381,13 @@
       "id" : "ibiz__BUILD_LINK_BUT"
     },
     "sysUniResCode" : "BUILD_LINK_BUT"
+  }, {
+    "name" : "项目经理-需求待收藏",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__STORY_NFAVOR_BUT"
+    },
+    "sysUniResCode" : "STORY_NFAVOR_BUT"
   }, {
     "name" : "null-顶部_年度统计",
     "getPSSysUniRes" : {
@@ -354,6 +424,13 @@
     },
     "sysUniResCode" : "TOP_ELECSEARCH_MENU"
   }, {
+    "name" : "项目经理-需求细分",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__STORY_XQXF_BUT"
+    },
+    "sysUniResCode" : "STORY_XQXF_BUT"
+  }, {
     "name" : "项目经理-项目新建",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -388,6 +465,13 @@
       "id" : "ibiz__PRODUCTLEFT"
     },
     "sysUniResCode" : "PRODUCTLEFT"
+  }, {
+    "name" : "项目经理-需求激活",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__STORY_ACTIVE_BUT"
+    },
+    "sysUniResCode" : "STORY_ACTIVE_BUT"
   }, {
     "name" : "项目经理-项目报告列表",
     "getPSSysUniRes" : {
@@ -444,8 +528,15 @@
       "id" : "ibiz__STORY_UNLP_BUT"
     },
     "sysUniResCode" : "STORY_UNLP_BUT"
+  }, {
+    "name" : "项目经理-需求关闭",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__STORY_CLOSED_BUT"
+    },
+    "sysUniResCode" : "STORY_CLOSED_BUT"
   } ],
   "roleTag" : "ProjectManger",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "PROJ_DELETE_BUT", "PROJ_DELAY_BUT", "PROJ_TEST_TESTTASK", "DOCLIBMODULE_FAVOUR_BUT", "PROJ_EDIT_BUT", "DOCLIB_NFAVOUR_BUT", "PROJ_MANAGE_BUT", "PROJ_ACTIVATION_BUT", "BUILD_SUBT_BUT", "TOP_PROJECT_MENU", "DOCLIBMODULE_MAINTENANCE_BUT", "DOC_FAVOUR_BUT", "DOC_NFAVOUR_BUT", "DOC_DELETE_BUT", "PROJ_START_BUT", "PROJT_TM_BUT", "DOCLIB_EDIT_BUT", "TOP_CASE_MENU", "TOP_MYFAVOURITE_MENU", "TOP_DOC_MENU", "PROJ_SUSPEND_BUT", "BUILD_EDIT_BUT", "DOCLIBMODULE_EDIT_BUT", "PROJECT_MANAGER", "BUILD_LINK_BUT", "TOP_YEARSUM_MENU", "DOCLIBMODULE_NFAVOUR_BUT", "PROJ_CLOSED_BUT", "TOP_PRODUCT_MENU", "TOP_ELECSEARCH_MENU", "PROJ_CREATE_BUT", "TOP_SUM_MENU", "DOC_EDIT_BUT", "PRODSTA_PROJCRT_BUT", "PRODUCTLEFT", "PROJECT_REPORT_BUT", "BUILD_DELETE_BUT", "LEFT_CASE_MENU", "LEFT_PROJECT_MENU", "DOCLIB_FAVOUR_BUT", "TOP_MYPLACE_MENU", "BUILD_CREATE_BUT", "STORY_UNLP_BUT" ]
+  "uniResTags" : [ "PROJ_DELETE_BUT", "PROJ_DELAY_BUT", "PROJ_TEST_TESTTASK", "STORY_DELETE_BUT", "STORY_CREATE_BUT", "STORY_CHANGED_BUT", "DOCLIBMODULE_FAVOUR_BUT", "PROJ_EDIT_BUT", "STORY_ASS_BUT", "DOCLIB_NFAVOUR_BUT", "STORY_REVIEW_BUT", "PROJ_MANAGE_BUT", "PROJ_ACTIVATION_BUT", "BUILD_SUBT_BUT", "TOP_PROJECT_MENU", "STORY_CCASE_BUT", "STORY_FJTASK_BUT", "STORY_FAVOR_BUT", "DOCLIBMODULE_MAINTENANCE_BUT", "DOC_FAVOUR_BUT", "DOC_NFAVOUR_BUT", "DOC_DELETE_BUT", "PROJ_START_BUT", "PROJT_TM_BUT", "DOCLIB_EDIT_BUT", "TOP_CASE_MENU", "TOP_MYFAVOURITE_MENU", "TOP_DOC_MENU", "PROJ_SUSPEND_BUT", "BUILD_EDIT_BUT", "STORY_EDIT_BUT", "DOCLIBMODULE_EDIT_BUT", "PROJECT_MANAGER", "BUILD_LINK_BUT", "STORY_NFAVOR_BUT", "TOP_YEARSUM_MENU", "DOCLIBMODULE_NFAVOUR_BUT", "PROJ_CLOSED_BUT", "TOP_PRODUCT_MENU", "TOP_ELECSEARCH_MENU", "STORY_XQXF_BUT", "PROJ_CREATE_BUT", "TOP_SUM_MENU", "DOC_EDIT_BUT", "PRODSTA_PROJCRT_BUT", "PRODUCTLEFT", "STORY_ACTIVE_BUT", "PROJECT_REPORT_BUT", "BUILD_DELETE_BUT", "LEFT_CASE_MENU", "LEFT_PROJECT_MENU", "DOCLIB_FAVOUR_BUT", "TOP_MYPLACE_MENU", "BUILD_CREATE_BUT", "STORY_UNLP_BUT", "STORY_CLOSED_BUT" ]
 }

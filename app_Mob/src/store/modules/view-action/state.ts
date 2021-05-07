@@ -159,7 +159,6 @@ export const viewstate: any = {
             viewaction: '',
             viewdatachange: false,
             refviews: [
-                '21f0361e9c1ef6861286d9c398d556b6',
             ],
         },
         {

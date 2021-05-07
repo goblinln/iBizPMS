@@ -550,7 +550,13 @@ export class MobFormControlBase extends MainControlBase {
         this.ctrlBeginLoading();
         const arg: any = { ...opt };
         Object.assign(arg, this.viewparams);
-        const response: any = await this.service.get(this.loadAction, { ...this.context }, arg, this.showBusyIndicator);
+        let response: any
+        try {
+            response = await this.service.get(this.loadAction, { ...this.context }, arg, this.showBusyIndicator);
+        } catch (error) {
+            this.endLoading();
+            this.$Notice.error(error?.data?.message || 'Internal Server Error!');
+        }
         if (response && response.status === 200) {
             this.endLoading();
             const data = response.data;

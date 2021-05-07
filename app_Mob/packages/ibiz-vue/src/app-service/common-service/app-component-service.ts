@@ -183,8 +183,8 @@ export class AppComponentService {
         this.editorMap.set("MOBDATE_day", "app-mob-datetime-picker");
         // 注册编辑器
         this.editorMap.set("MOBHTMLTEXT_MOBHTMLOFPMS", "app-mobhtmltext-mobhtmlofpms");
-        this.editorMap.set("MOBTEXT_MOBCOLORPICKER", "app-mobtext-mobcolorpicker");
         this.editorMap.set("MOBPICTURE_defaluturl", "app-mobpicture-defaluturl");
+        this.editorMap.set("MOBTEXT_MOBCOLORPICKER", "app-mobtext-mobcolorpicker");
         this.editorMap.set("MOBHTMLTEXT_MOBHTMLOFPMS", "app-mobhtmltext-mobhtmlofpms");
   
 

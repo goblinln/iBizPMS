@@ -398,6 +398,13 @@
     },
     "sysUniResCode" : "TOP_ELECSEARCH_MENU"
   }, {
+    "name" : "研发人员-需求待收藏",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__STORY_NFAVOR_BUT"
+    },
+    "sysUniResCode" : "STORY_NFAVOR_BUT"
+  }, {
     "name" : "研发人员-bug新建",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -433,6 +440,13 @@
     },
     "sysUniResCode" : "TASK_DELETE_BUT"
   }, {
+    "name" : "研发人员-取消收藏文档",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__DOC_NFAVOUR_BUT"
+    },
+    "sysUniResCode" : "DOC_NFAVOUR_BUT"
+  }, {
     "name" : "研发人员-通用编辑",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -460,6 +474,13 @@
       "id" : "ibiz__TASK_PROCEED_BUT"
     },
     "sysUniResCode" : "TASK_PROCEED_BUT"
+  }, {
+    "name" : "研发人员-需求已收藏",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__STORY_FAVOR_BUT"
+    },
+    "sysUniResCode" : "STORY_FAVOR_BUT"
   }, {
     "name" : "研发人员-顶部_我的地盘",
     "getPSSysUniRes" : {
@@ -517,12 +538,26 @@
     },
     "sysUniResCode" : "TASK_PAUSE_BUT"
   }, {
+    "name" : "研发人员-收藏文档",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__DOC_FAVOUR_BUT"
+    },
+    "sysUniResCode" : "DOC_FAVOUR_BUT"
+  }, {
     "name" : "研发人员-任务关闭",
     "getPSSysUniRes" : {
       "modelref" : true,
       "id" : "ibiz__TASK_CLOSE_BUT"
     },
     "sysUniResCode" : "TASK_CLOSE_BUT"
+  }, {
+    "name" : "研发人员-用例已收藏",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__CASE_FAVOR_BUT"
+    },
+    "sysUniResCode" : "CASE_FAVOR_BUT"
   }, {
     "name" : "研发人员-任务工时",
     "getPSSysUniRes" : {
@@ -601,12 +636,33 @@
     },
     "sysUniResCode" : "TOP_CASE_MENU"
   }, {
+    "name" : "研发人员-收藏文档库",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__DOCLIB_FAVOUR_BUT"
+    },
+    "sysUniResCode" : "DOCLIB_FAVOUR_BUT"
+  }, {
+    "name" : "研发人员-用例待收藏",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__CASE_NFAVOR_BUT"
+    },
+    "sysUniResCode" : "CASE_NFAVOR_BUT"
+  }, {
     "name" : "研发人员-任务完成",
     "getPSSysUniRes" : {
       "modelref" : true,
       "id" : "ibiz__TASK_COMPLETE_BUT"
     },
     "sysUniResCode" : "TASK_COMPLETE_BUT"
+  }, {
+    "name" : "研发人员-取消收藏文档库分类",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__DOCLIBMODULE_NFAVOUR_BUT"
+    },
+    "sysUniResCode" : "DOCLIBMODULE_NFAVOUR_BUT"
   }, {
     "name" : "研发人员-Bug已收藏",
     "getPSSysUniRes" : {
@@ -722,5 +778,5 @@
   } ],
   "roleTag" : "Developer",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "BUG_DELETE_BUT", "TOP_ELECSEARCH_MENU", "BUG_CREATE_BUT", "TASK_ASSIGN_BUT", "BUG_UNLINK_BUT", "BUG_ACTIVATE_BUT", "TASK_DELETE_BUT", "UNIVERSALEDIT", "UNIVERSALSAVE", "TASK_FAVOR_BUT", "TASK_PROCEED_BUT", "TOP_MYPLACE_MENU", "BUG_NFAVOR_BUT", "TOP_DOC_MENU", "TASK_XQCHANGE_BUT", "LEFT_CASE_MENU", "TASK_CREATE_BUT", "BUG_CLOSE_BUT", "TASK_PAUSE_BUT", "TASK_CLOSE_BUT", "TASK_CONSUM_BUT", "BUG_CONFIRM_BUT", "TASK_ACTIVATION_BUT", "BUG_EDIT_BUT", "LEFT_PROJECT_MENU", "TOP_PRODUCT_MENU", "TASK_EDIT_BUT", "BUG_RESOLVE_BUT", "TASK_CANCEL_BUT", "DOCLIBMODULE_FAVOUR_BUT", "TOP_CASE_MENU", "TASK_COMPLETE_BUT", "BUG_FAVOR_BUT", "DOCLIB_NFAVOUR_BUT", "TASK_START_BUT", "TOP_MYFAVOURITE_MENU", "TASK_NFAVOR_BUT", "UNIVERSALDELETE", "UNIVERSALCREATE", "TOP_YEARSUM_MENU", "BUG_ASSIGNTO_BUT", "TOP_PROJECT_MENU", "BUG_CREATECASE_BUT", "TOP_SUM_MENU", "PRODUCTLEFT", "BUG_TOSTORY_BUT", "TASK_FORWARD_BUT", "TASK_SUBTASKS_BUT" ]
+  "uniResTags" : [ "BUG_DELETE_BUT", "TOP_ELECSEARCH_MENU", "STORY_NFAVOR_BUT", "BUG_CREATE_BUT", "TASK_ASSIGN_BUT", "BUG_UNLINK_BUT", "BUG_ACTIVATE_BUT", "TASK_DELETE_BUT", "DOC_NFAVOUR_BUT", "UNIVERSALEDIT", "UNIVERSALSAVE", "TASK_FAVOR_BUT", "TASK_PROCEED_BUT", "STORY_FAVOR_BUT", "TOP_MYPLACE_MENU", "BUG_NFAVOR_BUT", "TOP_DOC_MENU", "TASK_XQCHANGE_BUT", "LEFT_CASE_MENU", "TASK_CREATE_BUT", "BUG_CLOSE_BUT", "TASK_PAUSE_BUT", "DOC_FAVOUR_BUT", "TASK_CLOSE_BUT", "CASE_FAVOR_BUT", "TASK_CONSUM_BUT", "BUG_CONFIRM_BUT", "TASK_ACTIVATION_BUT", "BUG_EDIT_BUT", "LEFT_PROJECT_MENU", "TOP_PRODUCT_MENU", "TASK_EDIT_BUT", "BUG_RESOLVE_BUT", "TASK_CANCEL_BUT", "DOCLIBMODULE_FAVOUR_BUT", "TOP_CASE_MENU", "DOCLIB_FAVOUR_BUT", "CASE_NFAVOR_BUT", "TASK_COMPLETE_BUT", "DOCLIBMODULE_NFAVOUR_BUT", "BUG_FAVOR_BUT", "DOCLIB_NFAVOUR_BUT", "TASK_START_BUT", "TOP_MYFAVOURITE_MENU", "TASK_NFAVOR_BUT", "UNIVERSALDELETE", "UNIVERSALCREATE", "TOP_YEARSUM_MENU", "BUG_ASSIGNTO_BUT", "TOP_PROJECT_MENU", "BUG_CREATECASE_BUT", "TOP_SUM_MENU", "PRODUCTLEFT", "BUG_TOSTORY_BUT", "TASK_FORWARD_BUT", "TASK_SUBTASKS_BUT" ]
 }
