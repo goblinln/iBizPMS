@@ -2659,7 +2659,7 @@
     "name" : "移动端测试单关联用例",
     "getPSAppDEMethod" : {
       "modelref" : true,
-      "id" : "MobLinkCase"
+      "id" : "LinkCase"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
