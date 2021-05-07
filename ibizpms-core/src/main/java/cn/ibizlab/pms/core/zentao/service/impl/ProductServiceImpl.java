@@ -181,9 +181,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         if(!productRuntime.isRtmodel()){
             list.forEach(item->fillParentData(item));
         }
-        for (Product et : list) {
-            getProxyService().update(et);
-        }
+        updateBatchById(list, batchSize);
     }
 
     @Override
