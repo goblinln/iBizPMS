@@ -5228,6 +5228,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "ReleaseLinkBugbyBug",
       "getPSDEAction" : {
         "modelref" : true,
