@@ -213,6 +213,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/MobReleaseCounter.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "MobReleaseCounter"
@@ -737,6 +741,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEACTIONS/MobReleaseCounter.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
