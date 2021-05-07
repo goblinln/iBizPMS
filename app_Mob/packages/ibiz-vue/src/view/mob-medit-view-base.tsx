@@ -106,13 +106,44 @@ export class MobMeditViewBase extends MDViewBase {
     }
 
     /**
+     * 多表单编辑视图初始化
+     *
+     * @memberof MEditViewBase
+     */
+    public async viewInit() {
+        super.viewInit()
+    }
+
+
+    /**
+     * 关系表单订阅事件
+     *
+     * @memberof MEditViewBase
+     */
+    public formDruipartStatEvent() {
+        if (this.formDruipartState) {
+            this.formDruipartStateEvent = this.formDruipartState.subscribe(({ action }: any) => {
+                if (Object.is(action, 'save')) {
+                    this.viewState.next({ tag: 'meditviewpanel', action: 'save', data: this.viewparams });
+                }
+                if (Object.is(action, 'remove')) {
+                    this.viewState.next({ tag: 'meditviewpanel', action: 'remove', data: this.viewparams });
+                }
+                if (Object.is(action, 'load')) {
+                    this.viewState.next({ tag: 'meditviewpanel', action: 'load', data: this.viewparams });
+                }
+            });
+        }
+    }
+
+    /**
      * 部件事件监听
      *
      * @memberof MEditViewBase
      */
     public onCtrlEvent(controlname: string, action: string, data: any) {
         if (Object.is(controlname, this.meditViewPanelInstance?.name) && action) {
-
+            
             switch (action) {
                 case 'drdatasaved':
                     this.onDRDataSaved(data);

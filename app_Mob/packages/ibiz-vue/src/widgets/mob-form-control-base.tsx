@@ -274,7 +274,6 @@ export class MobFormControlBase extends MainControlBase {
             });
         }
         this.dataChange.subscribe((data: any) => {
-                // TO TEST
                 if (this.isAutoSave) {
                     this.autoSave();
                 }
@@ -1265,6 +1264,7 @@ export class MobFormControlBase extends MainControlBase {
      * @memberof MobFormControlBase
      */
     public async save(opt: any = {}, showResultInfo?: boolean, isStateNext: boolean = true): Promise<any> {
+        
         showResultInfo = showResultInfo === undefined ? true : false;
         if (this.data.srfuf == '1' ? !await this.validAll() : !await this.validAll('new')) {
             return Promise.reject();
@@ -1275,6 +1275,7 @@ export class MobFormControlBase extends MainControlBase {
             Object.assign(arg, this.context);
             Object.assign(arg, data);
             Object.assign(arg, { srfmajortext: data[this.majorMessageItemName] });
+            
             if (isStateNext && this.drCount > 0) {
                 this.drcounter = this.drCount;
                 this.drsaveopt = opt;
@@ -1498,14 +1499,6 @@ export class MobFormControlBase extends MainControlBase {
         }
         this.save({}, undefined, false).then((res) => {
             this.saveState(res);
-            if (Object.is(_this.currentAction, "saveAndNew")) {
-                _this.ResetData(res);
-                _this.loadDraft({});
-            } else if (Object.is(_this.currentAction, "saveAndExit")) {
-                if (res) {
-                    _this.closeView(res.data);
-                }
-            }
         });
     }
 

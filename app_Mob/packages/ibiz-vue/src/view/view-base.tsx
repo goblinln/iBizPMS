@@ -591,23 +591,33 @@ export class ViewBase extends Vue {
             })
         }
         if (_this.formDruipartState) {
-            _this.formDruipartStateEvent = _this.formDruipartState.subscribe(({ action }: any) => {
-                if (Object.is(action, 'save')) {
-                    if (_this.viewInstance) {
-                        if (_this.viewInstance.xDataControlName) {
-                            _this.viewState.next({ tag: _this.viewInstance.xDataControlName, action: action, data: _this.viewparams });
-                        } else {
-                            _this.$emit('view-event', { viewName: this.viewCodeName, action: 'drdatasaved', data: {} });
-                        }
-                    }
-                }
-                if (Object.is(action, 'load')) {
-                    if (_this.engine) {
-                        _this.engine.load();
-                    }
-                }
-            });
+            this.formDruipartStatEvent();
         }
+    }
+
+    /**
+     *  关系表单订阅事件
+     *
+     * @memberof ViewBase
+     */
+    public formDruipartStatEvent(){
+        let _this: any = this;
+        _this.formDruipartStateEvent = _this.formDruipartState.subscribe(({ action }: any) => {
+            if (Object.is(action, 'save')) {
+                if (_this.viewInstance) {
+                    if (_this.viewInstance.xDataControlName) {
+                        _this.viewState.next({ tag: _this.viewInstance.xDataControlName, action: action, data: _this.viewparams });
+                    } else {
+                        _this.$emit('view-event', { viewName: this.viewCodeName, action: 'drdatasaved', data: {} });
+                    }
+                }
+            }
+            if (Object.is(action, 'load')) {
+                if (_this.engine) {
+                    _this.engine.load();
+                }
+            }
+        });
     }
 
     /**

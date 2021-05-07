@@ -328,4 +328,88 @@ export class IbzMonthlyBaseService extends EntityBaseService<IIbzMonthly> {
     async FetchProjectMonthly(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibzmonthlies/fetchprojectmonthly`, _data);
     }
+
+    /**
+     * CreateGetInfoBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzMonthlyServiceBase
+     */
+    public async CreateGetInfoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/ibzmonthlies/creategetinfobatch`,_data);
+    }
+
+    /**
+     * CreateUserMonthlyBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzMonthlyServiceBase
+     */
+    public async CreateUserMonthlyBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/ibzmonthlies/createusermonthlybatch`,_data);
+    }
+
+    /**
+     * EditGetCompleteTaskBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzMonthlyServiceBase
+     */
+    public async EditGetCompleteTaskBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/ibzmonthlies/editgetcompletetaskbatch`,_data);
+    }
+
+    /**
+     * HaveReadBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzMonthlyServiceBase
+     */
+    public async HaveReadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/ibzmonthlies/havereadbatch`,_data);
+    }
+
+    /**
+     * PushUserMonthlyBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzMonthlyServiceBase
+     */
+    public async PushUserMonthlyBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/ibzmonthlies/pushusermonthlybatch`,_data);
+    }
+
+    /**
+     * SubmitBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof IbzMonthlyServiceBase
+     */
+    public async SubmitBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/ibzmonthlies/submitbatch`,_data);
+    }
 }

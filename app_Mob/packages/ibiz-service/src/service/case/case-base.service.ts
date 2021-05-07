@@ -1314,4 +1314,290 @@ export class CaseBaseService extends EntityBaseService<ICase> {
         }
         return this.http.post(`/cases/fetchrunreportcase_project`, _data);
     }
+
+    /**
+     * ConfirmChangeBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof CaseServiceBase
+     */
+    public async ConfirmChangeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/confirmchangebatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/cases/confirmchangebatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/cases/confirmchangebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/cases/confirmchangebatch`,_data);
+    }
+
+    /**
+     * ConfirmstorychangeBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof CaseServiceBase
+     */
+    public async ConfirmstorychangeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/confirmstorychangebatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/cases/confirmstorychangebatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/cases/confirmstorychangebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/cases/confirmstorychangebatch`,_data);
+    }
+
+    /**
+     * GetByTestTaskBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof CaseServiceBase
+     */
+    public async GetByTestTaskBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/getbytesttaskbatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/cases/getbytesttaskbatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/cases/getbytesttaskbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/cases/getbytesttaskbatch`,_data);
+    }
+
+    /**
+     * GetTestTaskCntRunBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof CaseServiceBase
+     */
+    public async GetTestTaskCntRunBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/gettesttaskcntrunbatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/cases/gettesttaskcntrunbatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/cases/gettesttaskcntrunbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/cases/gettesttaskcntrunbatch`,_data);
+    }
+
+    /**
+     * LinkCaseBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof CaseServiceBase
+     */
+    public async LinkCaseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/linkcasebatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/cases/linkcasebatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/cases/linkcasebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/cases/linkcasebatch`,_data);
+    }
+
+    /**
+     * MobLinkCaseBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof CaseServiceBase
+     */
+    public async MobLinkCaseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/moblinkcasebatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/cases/moblinkcasebatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/cases/moblinkcasebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/cases/moblinkcasebatch`,_data);
+    }
+
+    /**
+     * RunCaseBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof CaseServiceBase
+     */
+    public async RunCaseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/runcasebatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/cases/runcasebatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/cases/runcasebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/cases/runcasebatch`,_data);
+    }
+
+    /**
+     * TestRunCaseBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof CaseServiceBase
+     */
+    public async TestRunCaseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/testruncasebatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/cases/testruncasebatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/cases/testruncasebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/cases/testruncasebatch`,_data);
+    }
+
+    /**
+     * TestsuitelinkCaseBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof CaseServiceBase
+     */
+    public async TestsuitelinkCaseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/testsuitelinkcasebatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/cases/testsuitelinkcasebatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/cases/testsuitelinkcasebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/cases/testsuitelinkcasebatch`,_data);
+    }
+
+    /**
+     * UnlinkCaseBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof CaseServiceBase
+     */
+    public async UnlinkCaseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/unlinkcasebatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/cases/unlinkcasebatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/cases/unlinkcasebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/cases/unlinkcasebatch`,_data);
+    }
+
+    /**
+     * UnlinkSuiteCaseBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof CaseServiceBase
+     */
+    public async UnlinkSuiteCaseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/cases/unlinksuitecasebatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/cases/unlinksuitecasebatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/cases/unlinksuitecasebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/cases/unlinksuitecasebatch`,_data);
+    }
 }

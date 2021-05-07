@@ -397,4 +397,22 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
         }
         return this.http.post(`/productmodules/fetchstorymodule`, _data);
     }
+
+    /**
+     * SyncFromIBIZBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ProductModuleServiceBase
+     */
+    public async SyncFromIBIZBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productmodules/syncfromibizbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/productmodules/syncfromibizbatch`,_data);
+    }
 }

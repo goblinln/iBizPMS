@@ -13043,6 +13043,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "TaskFavorites",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/TaskFavorites.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Restart",
       "getPSDEAction" : {
         "modelref" : true,

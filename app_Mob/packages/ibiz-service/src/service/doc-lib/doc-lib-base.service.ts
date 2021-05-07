@@ -338,4 +338,32 @@ export class DocLibBaseService extends EntityBaseService<IDocLib> {
     async FetchRootModuleMuLu(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/doclibs/fetchrootmodulemulu`, _data);
     }
+
+    /**
+     * CollectBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof DocLibServiceBase
+     */
+    public async CollectBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/doclibs/collectbatch`,_data);
+    }
+
+    /**
+     * UnCollectBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof DocLibServiceBase
+     */
+    public async UnCollectBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/doclibs/uncollectbatch`,_data);
+    }
 }

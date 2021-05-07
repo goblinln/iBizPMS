@@ -88,8 +88,10 @@ export class MobMeditViewPanelControlBase extends MDControlBase {
      */
     public ctrlInit() {
         super.ctrlInit();
+        
         if (this.viewState) {
             this.viewStateEvent = this.viewState.subscribe(({ tag, action, data }: any) => {
+                
                 if (Object.is(action, 'load')) {
                     this.load(data);
                 }
@@ -127,11 +129,14 @@ export class MobMeditViewPanelControlBase extends MDControlBase {
      * @memberof MobMeditViewPanelControlBase
      */
     public saveData(data?: any) {
+        
         this.count = 0;
         if (this.items.length > 0) {
+            
             Object.assign(data, { showResultInfo: false });
             this.panelState.next({ tag: 'meditviewpanel', action: 'save', data: data });
         } else {
+            
             this.ctrlEvent({ controlname: "meditviewpanel", action: "drdatasaved", data: { action: 'drdatasaved' } });
         }
     }

@@ -283,4 +283,40 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
         }
         return this.http.post(`/testsuites/fetchpublictestsuite`, _data);
     }
+
+    /**
+     * LinkCaseBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TestSuiteServiceBase
+     */
+    public async LinkCaseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/testsuites/linkcasebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/testsuites/linkcasebatch`,_data);
+    }
+
+    /**
+     * UnlinkCaseBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TestSuiteServiceBase
+     */
+    public async UnlinkCaseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/testsuites/unlinkcasebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/testsuites/unlinkcasebatch`,_data);
+    }
 }

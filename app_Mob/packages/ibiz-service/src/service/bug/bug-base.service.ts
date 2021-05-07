@@ -1979,4 +1979,574 @@ export class BugBaseService extends EntityBaseService<IBug> {
         _data = await appLogic.onExecute();
         return new HttpResponse(_data);
     }
+
+    /**
+     * ActivateBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async ActivateBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/activatebatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/activatebatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/activatebatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/activatebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/bugs/activatebatch`,_data);
+    }
+
+    /**
+     * AssignToBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async AssignToBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/assigntobatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/assigntobatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/assigntobatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/assigntobatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/bugs/assigntobatch`,_data);
+    }
+
+    /**
+     * BatchUnlinkBugBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async BatchUnlinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/batchunlinkbugbatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/batchunlinkbugbatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/batchunlinkbugbatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/batchunlinkbugbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/bugs/batchunlinkbugbatch`,_data);
+    }
+
+    /**
+     * BuildBatchUnlinkBugBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async BuildBatchUnlinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/buildbatchunlinkbugbatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/buildbatchunlinkbugbatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/buildbatchunlinkbugbatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/buildbatchunlinkbugbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/bugs/buildbatchunlinkbugbatch`,_data);
+    }
+
+    /**
+     * BuildLinkBugBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async BuildLinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/buildlinkbugbatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/buildlinkbugbatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/buildlinkbugbatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/buildlinkbugbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/bugs/buildlinkbugbatch`,_data);
+    }
+
+    /**
+     * BuildUnlinkBugBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async BuildUnlinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/buildunlinkbugbatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/buildunlinkbugbatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/buildunlinkbugbatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/buildunlinkbugbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/bugs/buildunlinkbugbatch`,_data);
+    }
+
+    /**
+     * CloseBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async CloseBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/closebatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/closebatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/closebatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/closebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/bugs/closebatch`,_data);
+    }
+
+    /**
+     * ConfirmBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async ConfirmBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/confirmbatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/confirmbatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/confirmbatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/confirmbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/bugs/confirmbatch`,_data);
+    }
+
+    /**
+     * LinkBugBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async LinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/linkbugbatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/linkbugbatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/linkbugbatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/linkbugbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/bugs/linkbugbatch`,_data);
+    }
+
+    /**
+     * ReleaaseBatchUnlinkBugBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async ReleaaseBatchUnlinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/releaasebatchunlinkbugbatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/releaasebatchunlinkbugbatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/releaasebatchunlinkbugbatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/releaasebatchunlinkbugbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/bugs/releaasebatchunlinkbugbatch`,_data);
+    }
+
+    /**
+     * ReleaseLinkBugbyBugBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async ReleaseLinkBugbyBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/releaselinkbugbybugbatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/releaselinkbugbybugbatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/releaselinkbugbybugbatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/releaselinkbugbybugbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/bugs/releaselinkbugbybugbatch`,_data);
+    }
+
+    /**
+     * ReleaseLinkBugbyLeftBugBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async ReleaseLinkBugbyLeftBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/releaselinkbugbyleftbugbatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/releaselinkbugbyleftbugbatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/releaselinkbugbyleftbugbatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/releaselinkbugbyleftbugbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/bugs/releaselinkbugbyleftbugbatch`,_data);
+    }
+
+    /**
+     * ReleaseUnLinkBugbyLeftBugBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async ReleaseUnLinkBugbyLeftBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/releaseunlinkbugbyleftbugbatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/releaseunlinkbugbyleftbugbatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/releaseunlinkbugbyleftbugbatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/releaseunlinkbugbyleftbugbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/bugs/releaseunlinkbugbyleftbugbatch`,_data);
+    }
+
+    /**
+     * ReleaseUnlinkBugBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async ReleaseUnlinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/releaseunlinkbugbatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/releaseunlinkbugbatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/releaseunlinkbugbatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/releaseunlinkbugbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/bugs/releaseunlinkbugbatch`,_data);
+    }
+
+    /**
+     * ResolveBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async ResolveBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/resolvebatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/resolvebatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/resolvebatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/resolvebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/bugs/resolvebatch`,_data);
+    }
+
+    /**
+     * SendMessageBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async SendMessageBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/sendmessagebatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/sendmessagebatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/sendmessagebatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/sendmessagebatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/bugs/sendmessagebatch`,_data);
+    }
+
+    /**
+     * SendMsgPreProcessBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async SendMsgPreProcessBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/sendmsgpreprocessbatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/sendmsgpreprocessbatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/sendmsgpreprocessbatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/sendmsgpreprocessbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/bugs/sendmsgpreprocessbatch`,_data);
+    }
+
+    /**
+     * ToStoryBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async ToStoryBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/tostorybatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/tostorybatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/tostorybatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/tostorybatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/bugs/tostorybatch`,_data);
+    }
+
+    /**
+     * UnlinkBugBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BugServiceBase
+     */
+    public async UnlinkBugBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && _context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/unlinkbugbatch`,_data);
+        }
+        if(_context.project && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/bugs/unlinkbugbatch`,_data);
+        }
+        if(_context.story && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/bugs/unlinkbugbatch`,_data);
+        }
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/bugs/unlinkbugbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/bugs/unlinkbugbatch`,_data);
+    }
 }

@@ -351,4 +351,88 @@ export class ActionBaseService extends EntityBaseService<IAction> {
     async FetchType(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/actions/fetchtype`, _data);
     }
+
+    /**
+     * CreateHisBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ActionServiceBase
+     */
+    public async CreateHisBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/actions/createhisbatch`,_data);
+    }
+
+    /**
+     * EditCommentBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ActionServiceBase
+     */
+    public async EditCommentBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/actions/editcommentbatch`,_data);
+    }
+
+    /**
+     * ManagePmsEeBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ActionServiceBase
+     */
+    public async ManagePmsEeBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/actions/managepmseebatch`,_data);
+    }
+
+    /**
+     * SendMarkDoneBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ActionServiceBase
+     */
+    public async SendMarkDoneBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/actions/sendmarkdonebatch`,_data);
+    }
+
+    /**
+     * SendTodoBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ActionServiceBase
+     */
+    public async SendTodoBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/actions/sendtodobatch`,_data);
+    }
+
+    /**
+     * SendToreadBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof ActionServiceBase
+     */
+    public async SendToreadBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/actions/sendtoreadbatch`,_data);
+    }
 }

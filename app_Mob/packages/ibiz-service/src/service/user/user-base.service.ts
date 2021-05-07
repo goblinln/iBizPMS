@@ -293,4 +293,18 @@ export class UserBaseService extends EntityBaseService<IUser> {
     async FetchTaskTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/users/fetchtaskteam`, _data);
     }
+
+    /**
+     * SyncAccountBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof UserServiceBase
+     */
+    public async SyncAccountBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/users/syncaccountbatch`,_data);
+    }
 }

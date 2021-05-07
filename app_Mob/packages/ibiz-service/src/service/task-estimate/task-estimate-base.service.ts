@@ -740,4 +740,50 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
         }
         return this.http.post(`/taskestimates/fetchprojecttaskestimate`, _data);
     }
+
+    /**
+     * PMEvaluationBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof TaskEstimateServiceBase
+     */
+    public async PMEvaluationBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.project && _context.projectmodule && _context.task && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
+        }
+        if(_context.product && _context.story && _context.task && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
+        }
+        if(_context.product && _context.productplan && _context.task && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
+        }
+        if(_context.project && _context.task && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
+        }
+        if(_context.story && _context.task && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/stories/${_context.story}/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
+        }
+        if(_context.productplan && _context.task && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/productplans/${_context.productplan}/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
+        }
+        if(_context.projectmodule && _context.task && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
+        }
+        if(_context.task && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/tasks/${_context.task}/taskestimates/pmevaluationbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/taskestimates/pmevaluationbatch`,_data);
+    }
 }

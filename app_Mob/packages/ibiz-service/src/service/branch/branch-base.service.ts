@@ -265,4 +265,22 @@ export class BranchBaseService extends EntityBaseService<IBranch> {
         }
         return this.http.post(`/branches/fetchdefault`, _data);
     }
+
+    /**
+     * SortBatch接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof BranchServiceBase
+     */
+    public async SortBatch(_context: any = {},_data: any = {}): Promise<HttpResponse> {
+        if(_context.product && true){
+        _data = await this.obtainMinor(_context, _data);
+            return this.http.post(`/products/${_context.product}/branches/sortbatch`,_data);
+        }
+        _data = await this.obtainMinor(_context, _data);
+        return this.http.post(`/branches/sortbatch`,_data);
+    }
 }
