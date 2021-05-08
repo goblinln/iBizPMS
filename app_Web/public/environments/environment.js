@@ -18,7 +18,7 @@ window.Environment = {
     // 前端应用标识
     AppId: "6e0b7357169ef4eba84e1347ed94bd84",
     // 文件导出
-    ExportFile: 'ibizutilpms/ztdownload',
+    ExportFile: '/ibizutilpms/ztdownload',
     // 文件上传
-    UploadFile: 'ibizutilpms/ztupload',
+    UploadFile: '/ibizutilpms/ztupload',
 }
