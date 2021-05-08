@@ -46,12 +46,12 @@ export class TaskService extends TaskBaseService {
         const minorIBZTaskTeamService: any  = await new GlobalService().getService('Ibztaskteam');
         let items = await minorIBZTaskTeamService.cache.getList(_context);
         if(items && items.length>0){
-            _data.ibztaskestimates = items;
+            _data.ibztaskteams = items;
         }
         const minorIBZTaskestimatesService: any  = await new GlobalService().getService('IbzTaskestimate');
-        let taskestimatems = await minorIBZTaskestimatesService.cache.getList(_context);
-        if(taskestimatems && taskestimatems.length>0){
-            _data.ibztaskestimates = taskestimatems;
+        let ibztaskestimates = await minorIBZTaskestimatesService.cache.getList(_context);
+        if(ibztaskestimates && ibztaskestimates.length>0){
+            _data.ibztaskestimates = ibztaskestimates;
         }
         return _data
     }
