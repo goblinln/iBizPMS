@@ -1,3 +1,5 @@
+import { AppServiceBase } from 'ibiz-core';
+import { AppCenterService } from 'ibiz-vue';
 import { ProjectUIServiceBase } from './project-ui-service-base';
 
 /**
@@ -54,6 +56,42 @@ export default class ProjectUIService extends ProjectUIServiceBase {
             }
             return ProjectUIService.UIServiceMap.get(context.srfdynainstid);
         }
+    }
+
+    /**
+     * 执行界面行为统一入口
+     *
+     * @param {string} uIActionTag 界面行为tag
+     * @param {any[]} args 当前数据
+     * @param {any} context 行为附加上下文
+     * @param {*} [params] 附加参数
+     * @param {*} [$event] 事件源
+     * @param {*} [xData]  执行行为所需当前部件
+     * @param {*} [actionContext]  执行行为上下文
+     * @param {*} [srfParentDeName] 父实体名称
+     * 
+     * @memberof ProjectUIService
+     */
+     protected excuteAction(uIActionTag: string, args: any[], context: any = {}, params: any = {}, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        if (Object.is(uIActionTag, "ReturnEdit")) {
+            this.ReturnEdit(args, xData, actionContext);
+        } else {
+            super.excuteAction(uIActionTag, args, context, params, $event, xData, actionContext, srfParentDeName);
+        }
+    }
+
+    /**
+     * 退出
+     * 
+     * @memberof ProjectUIService
+     */
+    public async ReturnEdit(args: any[], xData: any, actionContext: any) {
+        const _this: any = actionContext;
+        AppCenterService.notifyMessage({ name: 'Project', action: 'appRefresh', data: undefined });
+        const appNavDataService: any = AppServiceBase.getInstance().getAppNavDataService();
+        const item:any = appNavDataService.historyList[appNavDataService.findHistoryIndex(_this.$route)];
+        _this.$tabPageExp.onClose(item);
+
     }
 
 }
