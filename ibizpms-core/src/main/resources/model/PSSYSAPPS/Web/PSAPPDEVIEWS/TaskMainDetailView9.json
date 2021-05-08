@@ -502,12 +502,6 @@
               "condOP" : "NOTEQ",
               "dEFDName" : "story",
               "logicType" : "SINGLE",
-              "name" : "story 不等于(<>) (0)",
-              "value" : "0"
-            }, {
-              "condOP" : "NOTEQ",
-              "dEFDName" : "story",
-              "logicType" : "SINGLE",
               "name" : "story 不等于(<>) (null)",
               "value" : "null"
             } ],
