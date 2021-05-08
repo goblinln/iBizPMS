@@ -8465,6 +8465,14 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDENOTIFIES/Close.json",
     "msgType" : 0,
     "name" : "Bug关闭",
+    "getPSDENotifyTargets" : [ {
+      "name" : "OPENEDBY",
+      "getTargetPSDEField" : {
+        "name" : "OPENEDBY",
+        "codeName" : "OpenedBy"
+      },
+      "targetType" : "DEFIELD"
+    } ],
     "getPSSysMsgQueue" : {
       "modelref" : true,
       "path" : "PSSYSMSGQUEUES/MsgQueue.json"

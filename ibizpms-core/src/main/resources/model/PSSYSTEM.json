@@ -1561,7 +1561,7 @@
     "contentType" : "TEXT",
     "dynaModelFilePath" : "PSSYSMSGTEMPLS/BugCheck.json",
     "name" : "Bug检查",
-    "subject" : "新版本",
+    "subject" : "Bug检查",
     "mailGroupSend" : false
   }, {
     "codeName" : "BugClose",
