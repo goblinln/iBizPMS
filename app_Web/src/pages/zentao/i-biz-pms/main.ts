@@ -45,8 +45,8 @@ installPlugin();
 Vue.config.errorHandler = function (err: any, vm: any, info: any) {
   ErrorUtil.errorHandler(err,info);
 }
-Vue.prototype.$throw = (err:any)=> {
-  ErrorUtil.errorHandler(err);
+Vue.prototype.$throw = (err:any, param?: any)=> {
+  ErrorUtil.errorHandler(err, param);
 }
 
 Vue.config.productionTip = false;

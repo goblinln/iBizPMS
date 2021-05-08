@@ -448,9 +448,9 @@ export class EditFormControlBase extends FormControlBase {
                 if (this.errorMessages && this.errorMessages.length > 0) {
                     let descMessage: string = '';
                     this.errorMessages.forEach((message: any) => {
-                        descMessage = descMessage + '<p>' + message.error + '<p>';
+                        descMessage += message.error + '<br/>';
                     })
-                    this.$throw(descMessage);
+                    this.$throw(descMessage, {dangerouslyUseHTMLString: true});
                 } else {
                     this.$throw((this.$t('app.formpage.valuecheckex') as string));
                 }
@@ -1138,15 +1138,17 @@ export class EditFormControlBase extends FormControlBase {
      */
     public formItemValidate(prop: string, status: boolean, error: string) {
         error = error ? error : '';
-        if (this.errorMessages && this.errorMessages.length > 0) {
-            const index = this.errorMessages.findIndex((errorMessage: any) => Object.is(errorMessage.prop, prop));
+        const index = this.errorMessages.findIndex((errorMessage: any) => Object.is(errorMessage.prop, prop));
+        if(status){
+            if (index != -1) {
+                this.errorMessages.splice(index,1);
+            }
+        }else{
             if (index != -1) {
                 this.errorMessages[index].error = error;
             } else {
                 this.errorMessages.push({ prop: prop, error: error });
             }
-        } else {
-            this.errorMessages.push({ prop: prop, error: error });
         }
     }
 

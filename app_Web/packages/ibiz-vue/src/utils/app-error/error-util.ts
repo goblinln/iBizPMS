@@ -29,7 +29,7 @@ export class ErrorUtil {
         this.hooks.before.callSync({ ignore: false, error, param });
         const appError: AppError = this.parse(error);
         this.hooks.after.callSync({ error: appError, param });
-        AppNoticeService.getInstance().error(appError.message);
+        AppNoticeService.getInstance().error(appError.message, param);
     }
 
     /**
