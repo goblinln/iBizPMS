@@ -423,6 +423,9 @@ public class CaseExService extends CaseServiceImpl {
 
     @Override
     public Case sysGet(Long key) {
+        if (key == 0){
+            return null;
+        }
         Case aCase = super.sysGet(key);
         String sql = "SELECT COUNT(1) AS ISFAVORITES FROM `t_ibz_favorites` t WHERE t.IBZ_FAVORITESID = #{et.id} AND t.TYPE = 'case' AND t.ACCOUNT = #{et.account}";
         HashMap<String, Object> param = new HashMap<>();

@@ -198,7 +198,7 @@ public class TaskEstimateExService extends TaskEstimateServiceImpl {
             iTaskService.computeHours4Multiple(task);
         }
         data.setId(taskEstimate.getTask());
-        iTaskService.update(data);
+        iTaskService.sysUpdate(data);
 
         if (task.getParent() > 0) {
             task.set("parentId", task.getParent());

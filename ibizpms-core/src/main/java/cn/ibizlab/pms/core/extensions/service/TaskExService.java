@@ -3,23 +3,31 @@ package cn.ibizlab.pms.core.extensions.service;
 import cn.ibizlab.pms.core.ibiz.domain.TaskTeam;
 import cn.ibizlab.pms.core.ibiz.service.ITaskTeamService;
 import cn.ibizlab.pms.core.ibizplugin.service.IIBIZProMessageService;
+import cn.ibizlab.pms.core.ou.client.SysEmployeeFeignClient;
+import cn.ibizlab.pms.core.ou.domain.SysEmployee;
+import cn.ibizlab.pms.core.ou.filter.SysEmployeeSearchContext;
 import cn.ibizlab.pms.core.ou.service.ISysEmployeeService;
 import cn.ibizlab.pms.core.util.ibizzentao.common.ChangeUtil;
 import cn.ibizlab.pms.core.util.ibizzentao.common.ZTDateUtil;
+import cn.ibizlab.pms.core.util.ibizzentao.helper.ProductPlanHelper;
+import cn.ibizlab.pms.core.util.ibizzentao.helper.ZTBaseHelper;
 import cn.ibizlab.pms.core.zentao.domain.*;
 import cn.ibizlab.pms.core.zentao.filter.TaskSearchContext;
 import cn.ibizlab.pms.core.zentao.service.*;
 import cn.ibizlab.pms.core.zentao.service.impl.TaskServiceImpl;
 import cn.ibizlab.pms.util.dict.StaticDict;
+import cn.ibizlab.pms.util.errors.BadRequestAlertException;
 import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import cn.ibizlab.pms.util.helper.DataObject;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,6 +35,8 @@ import org.springframework.context.annotation.Primary;
 
 import java.sql.Timestamp;
 import java.util.*;
+
+import static cn.ibizlab.pms.core.util.ibizzentao.helper.ZTBaseHelper.*;
 
 /**
  * 实体[任务] 自定义服务对象
@@ -77,24 +87,46 @@ public class TaskExService extends TaskServiceImpl {
     @Autowired
     IHistoryService iHistoryService;
 
+    @Autowired
+    SysEmployeeFeignClient sysEmployeeFeignClient;
+
+    @Autowired
+    @Lazy
+    cn.ibizlab.pms.core.zentao.runtime.TaskRuntime taskRuntime;
+
     String[] diffAttrs = {"desc"};
     List<String> ignore = Arrays.asList("totalwh", "totalleft", "totalconsumed", "totalestimate");
+
+    @Override
+    @Transactional
+    public Task get(Long key) {
+        Task et = getById(key);
+        if (et == null) {
+            throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
+        } else {
+            if (!taskRuntime.isRtmodel()) {
+                et.setTaskteams(taskteamService.selectByRoot(key));
+            }
+        }
+        return et;
+    }
 
     @Override
     public Task sysGet(Long key) {
         Task task = super.sysGet(key);
         String sql = "SELECT COUNT(1) as ISFAVOURITES from t_ibz_favorites t where t.OBJECTID = #{et.id} and t.TYPE = 'task' and t.ACCOUNT = #{et.account}";
-        Map<String,Object> param = new HashMap<>();
-        param.put("id",task.getId());
-        param.put("account",AuthenticationUser.getAuthenticationUser().getLoginname());
+        Map<String, Object> param = new HashMap<>();
+        param.put("id", task.getId());
+        param.put("account", AuthenticationUser.getAuthenticationUser().getLoginname());
         List<JSONObject> list = this.select(sql, param);
-        if (list.size() > 0){
+        if (list.size() > 0) {
             task.setIsfavorites(list.get(0).getString("ISFAVOURITES"));
         }
         return task;
     }
 
     @Override
+    @Transactional
     public boolean create(Task et) {
         jugEststartedAndDeadline(et);
         String multiple = et.getMultiple();//多人任务
@@ -176,12 +208,12 @@ public class TaskExService extends TaskServiceImpl {
 
         }
         //PmsEe操作任务，需判断状态，计算关联的计划的状态
-        if (et.getPlan() != null && et.getPlan() > 0){
+        if (et.getPlan() != null && et.getPlan() > 0) {
             //该任务有计划，根据任务状态更新计划状态
             this.updateRelatedPlanStatus(et);
         }
         ActionHelper.sendTodoOrToread(et.getId(), et.getName(), noticeusers, et.getAssignedto(), et.getMailto(), "任务", StaticDict.Action__object_type.STORY.getValue(), "tasks", StaticDict.Action__type.OPENED.getText(), true, iActionService);
-        ActionHelper.createHis(et.getId(), StaticDict.Action__object_type.TASK.getValue(), null,  StaticDict.Action__type.OPENED.getValue(), "","", null, iActionService);
+        ActionHelper.createHis(et.getId(), StaticDict.Action__object_type.TASK.getValue(), null, StaticDict.Action__type.OPENED.getValue(), "", "", null, iActionService);
 
         if (et.getStory() != null && et.getStory() != 0L) {
             iStoryService.setStage(et.getZtstory());
@@ -191,35 +223,35 @@ public class TaskExService extends TaskServiceImpl {
 
     @Transactional
     @Override
-    public Task updateRelatedPlanStatus(Task relatedTask){
+    public Task updateRelatedPlanStatus(Task relatedTask) {
         Long planId = relatedTask.getPlan();
 
-        if (planId == null || planId <= 0){
+        if (planId == null || planId <= 0) {
             return relatedTask;
         }
         ProductPlan oldRelatePlan = productPlanService.getById(planId);//任务关联的计划
-        if (oldRelatePlan == null){
+        if (oldRelatePlan == null) {
             relatedTask.setPlan(0L);
             super.update(relatedTask);
             return relatedTask;
         }
-        List<JSONObject> relatedTasks = taskService.select(String.format("select * from zt_task t1 where t1.deleted = '0' and t1.plan = %1$s",oldRelatePlan.getId()),null);
+        List<JSONObject> relatedTasks = taskService.select(String.format("select * from zt_task t1 where t1.deleted = '0' and t1.plan = %1$s", oldRelatePlan.getId()), null);
         //根据关联的任务的状态，计算计划的状态
         String status = this.getParentOrRelatedPlanStatusByChildTasks(relatedTasks);
-        if (StringUtils.compare(status,oldRelatePlan.getStatus()) != 0){
+        if (StringUtils.compare(status, oldRelatePlan.getStatus()) != 0) {
             ProductPlan newProductPlan = new ProductPlan();
-            CachedBeanCopier.copy(oldRelatePlan,newProductPlan);
+            CachedBeanCopier.copy(oldRelatePlan, newProductPlan);
             newProductPlan.setStatus(status);
             productPlanService.sysUpdate(newProductPlan);
-            String actionType = this.getActionTypeByStatus(oldRelatePlan.getStatus() == null ? StaticDict.Task__status.WAIT.getValue() : oldRelatePlan.getStatus(),status);
-            List<History> changes = ChangeUtil.diff(oldRelatePlan,newProductPlan);
-            ActionHelper.createHis(oldRelatePlan.getId(), StaticDict.Action__object_type.PRODUCTPLAN.getValue(), changes,  actionType, "","", null, iActionService);
+            String actionType = this.getActionTypeByStatus(oldRelatePlan.getStatus() == null ? StaticDict.Task__status.WAIT.getValue() : oldRelatePlan.getStatus(), status);
+            List<History> changes = ChangeUtil.diff(oldRelatePlan, newProductPlan);
+            ActionHelper.createHis(oldRelatePlan.getId(), StaticDict.Action__object_type.PRODUCTPLAN.getValue(), changes, actionType, "", "", null, iActionService);
 
         }
         return relatedTask;
     }
 
-    public String getActionTypeByStatus(String oldStatus,String status){
+    public String getActionTypeByStatus(String oldStatus, String status) {
         String action = "";
         if (StaticDict.Task__status.DOING.getValue().equals(status) && !StaticDict.Task__status.WAIT.getValue().equals(oldStatus) && !StaticDict.Task__status.PAUSE.getValue().equals(oldStatus)) {
             action = StaticDict.Action__type.ACTIVATED.getValue();
@@ -240,7 +272,7 @@ public class TaskExService extends TaskServiceImpl {
     }
 
     //根据子任务状态计算父任务(或者关联的计划)状态
-    public String getParentOrRelatedPlanStatusByChildTasks(List<JSONObject> childTasks){
+    public String getParentOrRelatedPlanStatusByChildTasks(List<JSONObject> childTasks) {
         String status = "";
         if (childTasks.size() == 1) {
             status = childTasks.get(0).getString("status");
@@ -300,15 +332,16 @@ public class TaskExService extends TaskServiceImpl {
     }
 
     @Override
+    @Transactional
     public boolean update(Task et) {
         jugEststartedAndDeadline(et);
-        if (null != et.getConfigbegin()){
+        if (null != et.getConfigbegin()) {
             et.setEststarted(et.getConfigbegin());
         }
-        if (null != et.getConfigend()){
+        if (null != et.getConfigend()) {
             et.setDeadline(et.getConfigend());
         }
-        if (StaticDict.TaskSpecies.CYCLE.getValue().equals(et.getTaskspecies())){
+        if (StaticDict.TaskSpecies.CYCLE.getValue().equals(et.getTaskspecies())) {
             createByCycle(et);
         }
         String multiple = et.getMultiple();
@@ -439,9 +472,9 @@ public class TaskExService extends TaskServiceImpl {
                 }
                 iTaskTeamService.create(team);
             }
-            old.set("task",et);
+            old.set("task", et);
             old.setTaskteams(null);
-            old.set("auto",false);
+            old.set("auto", false);
             this.computeHours4Multiple(old);
             if (et.getStatus().equals(StaticDict.Task__status.WAIT.getValue())) {
                 et.setAssignedto(assignedto);
@@ -495,11 +528,11 @@ public class TaskExService extends TaskServiceImpl {
                 task2.setLasteditedby(AuthenticationUser.getAuthenticationUser().getUsername());
                 task2.setLastediteddate(ZTDateUtil.now());
                 super.update(task2);
-                ActionHelper.createHis(et.getId(), StaticDict.Action__object_type.TASK.getValue(), null,  StaticDict.Action__type.UNLINKPARENTTASK.getValue(), "",String.valueOf(old.getParent()), null, iActionService);
+                ActionHelper.createHis(et.getId(), StaticDict.Action__object_type.TASK.getValue(), null, StaticDict.Action__type.UNLINKPARENTTASK.getValue(), "", String.valueOf(old.getParent()), null, iActionService);
 
                 Task parent = this.get(et.getParent());
                 List<History> changes = ChangeUtil.diff(oldParent, parent);
-                ActionHelper.createHis(old.getParent(), StaticDict.Action__object_type.TASK.getValue(), changes,  StaticDict.Action__type.UNLINKCHILDRENTASK.getValue(), "",String.valueOf(et.getId()), null, iActionService);
+                ActionHelper.createHis(old.getParent(), StaticDict.Action__object_type.TASK.getValue(), changes, StaticDict.Action__type.UNLINKCHILDRENTASK.getValue(), "", String.valueOf(et.getId()), null, iActionService);
             }
         }
 
@@ -518,16 +551,16 @@ public class TaskExService extends TaskServiceImpl {
                 task1.setLasteditedby(AuthenticationUser.getAuthenticationUser().getUsername());
                 task1.setLastediteddate(ZTDateUtil.now());
                 task1.setId(et.getParent());
-                ActionHelper.createHis(et.getId(), StaticDict.Action__object_type.TASK.getValue(), null,  StaticDict.Action__type.LINKPARENTTASK.getValue(), "",String.valueOf(old.getParent()), null, iActionService);
+                ActionHelper.createHis(et.getId(), StaticDict.Action__object_type.TASK.getValue(), null, StaticDict.Action__type.LINKPARENTTASK.getValue(), "", String.valueOf(old.getParent()), null, iActionService);
 
                 Task newParentTask = this.getById(et.getParent());
                 List<History> changes = ChangeUtil.diff(parentTask, newParentTask);
-                ActionHelper.createHis(et.getParent(), StaticDict.Action__object_type.TASK.getValue(), changes,  StaticDict.Action__type.LINKCHILDTASK.getValue(), "",String.valueOf(et.getId()), null, iActionService);
+                ActionHelper.createHis(et.getParent(), StaticDict.Action__object_type.TASK.getValue(), changes, StaticDict.Action__type.LINKCHILDTASK.getValue(), "", String.valueOf(et.getId()), null, iActionService);
 
             }
         }
         //PmsEe操作任务，需判断状态，计算关联的计划的状态
-        if (et.getPlan() != null && et.getPlan() > 0){
+        if (et.getPlan() != null && et.getPlan() > 0) {
             //该任务有计划，根据任务状态更新计划状态
             this.updateRelatedPlanStatus(et);
         }
@@ -702,7 +735,7 @@ public class TaskExService extends TaskServiceImpl {
             }
             super.update(task);
             //PmsEe操作任务，需判断状态，计算关联的计划的状态
-            if (task.getPlan() != null && task.getPlan() > 0){
+            if (task.getPlan() != null && task.getPlan() > 0) {
                 //该任务有计划，根据任务状态更新计划状态
                 this.updateRelatedPlanStatus(task);
             }
@@ -715,16 +748,16 @@ public class TaskExService extends TaskServiceImpl {
 
 
             //根据原本父任务状态，和stauts计算行为类型actiontype
-            String action = this.getActionTypeByStatus(oldParentTask.getStatus(),status);
+            String action = this.getActionTypeByStatus(oldParentTask.getStatus(), status);
             if (!"".equals(action)) {
-                ActionHelper.createHis(parentId, StaticDict.Action__object_type.TASK.getValue(), changes,  action, "","", null, iActionService);
+                ActionHelper.createHis(parentId, StaticDict.Action__object_type.TASK.getValue(), changes, action, "", "", null, iActionService);
             }
         } else {
             List<History> changes = ChangeUtil.diff(oldParentTask, this.get(parentId));
             this.removeIgonreChanges(changes);
             if (changes.size() > 0) {
 
-                ActionHelper.createHis(parentId, StaticDict.Action__object_type.TASK.getValue(), changes,   StaticDict.Action__type.EDITED.getValue(), "","", null, iActionService);
+                ActionHelper.createHis(parentId, StaticDict.Action__object_type.TASK.getValue(), changes, StaticDict.Action__type.EDITED.getValue(), "", "", null, iActionService);
 
             }
         }
@@ -732,6 +765,7 @@ public class TaskExService extends TaskServiceImpl {
     }
 
     @Override
+    @Transactional
     public Task computeHours4Multiple(Task et) {
         if (et == null) {
             return et;
@@ -916,19 +950,20 @@ public class TaskExService extends TaskServiceImpl {
     }
 
     @Override
+    @Transactional
     public boolean remove(Long key) {
         Task old = this.get(key);
         if (old.getParent() < 0) {
             throw new RuntimeException("不能删除父任务");
         }
-        if(!super.remove(key)) {
+        if (!super.remove(key)) {
             return false;
         }
         if (old.getParent() > 0) {
             old.set("parentId", old.getParent());
             old.set("changed", false);
             updateParentStatus(old);
-            ActionHelper.createHis(old.getParent(), StaticDict.Action__object_type.TASK.getValue(), null,   StaticDict.Action__type.DELETECHILDRENTASK.getValue(), "","", null, iActionService);
+            ActionHelper.createHis(old.getParent(), StaticDict.Action__object_type.TASK.getValue(), null, StaticDict.Action__type.DELETECHILDRENTASK.getValue(), "", "", null, iActionService);
         }
         if (old.getFrombug() != 0) {
             Bug bug = new Bug();
@@ -941,7 +976,7 @@ public class TaskExService extends TaskServiceImpl {
         }
 
         //PmsEe操作任务，需判断状态，计算关联的计划的状态
-        if (old.getPlan() != null && old.getPlan() > 0){
+        if (old.getPlan() != null && old.getPlan() > 0) {
             //该任务有计划，根据任务状态更新计划状态
             this.updateRelatedPlanStatus(old);
         }
@@ -950,6 +985,7 @@ public class TaskExService extends TaskServiceImpl {
 
     /**
      * [Activate:激活] 行为扩展：激活完成、取消、关闭的任务
+     *
      * @param et
      * @return
      */
@@ -975,9 +1011,9 @@ public class TaskExService extends TaskServiceImpl {
                     break;
                 }
             }
-            old.set("task",newTask);
+            old.set("task", newTask);
             old.setTaskteams(null);
-            old.set("auto",false);
+            old.set("auto", false);
             computeHours4Multiple(old);
         }
 
@@ -997,7 +1033,7 @@ public class TaskExService extends TaskServiceImpl {
             this.computeWorkingHours(newTask);
         }
         //PmsEe操作任务，需判断状态，计算关联的计划的状态
-        if (newTask.getPlan() != null && newTask.getPlan() > 0){
+        if (newTask.getPlan() != null && newTask.getPlan() > 0) {
             //该任务有计划，根据任务状态更新计划状态
             this.updateRelatedPlanStatus(newTask);
         }
@@ -1007,8 +1043,8 @@ public class TaskExService extends TaskServiceImpl {
         this.removeIgonreChanges(changes);
         if (changes.size() > 0 || StringUtils.isNotBlank(comment)) {
             ActionHelper.sendTodoOrToread(newTask.getId(), newTask.getName(), noticeusers, newTask.getAssignedto(), newTask.getMailto(), "任务", StaticDict.Action__object_type.TASK.getValue(), "tasks", StaticDict.Action__type.ACTIVATED.getText(), false, iActionService);
-            ActionHelper.createHis(newTask.getId(), StaticDict.Action__object_type.TASK.getValue(), changes,  StaticDict.Action__type.ACTIVATED.getValue(), comment,newTask.getAssignedto(), null, iActionService);
-    }
+            ActionHelper.createHis(newTask.getId(), StaticDict.Action__object_type.TASK.getValue(), changes, StaticDict.Action__type.ACTIVATED.getValue(), comment, newTask.getAssignedto(), null, iActionService);
+        }
         return et;
     }
 
@@ -1026,8 +1062,10 @@ public class TaskExService extends TaskServiceImpl {
         newTask.setLasteditedby(AuthenticationUser.getAuthenticationUser().getUsername());
         newTask.setLastediteddate(ZTDateUtil.now());
     }
+
     /**
      * [AssignTo:指派/转交] 行为扩展：单人任务指派任务 & 多人任务时转交任务
+     *
      * @param et
      * @return
      */
@@ -1064,9 +1102,9 @@ public class TaskExService extends TaskServiceImpl {
             Team team1 = new Team();
             team1.setLeft(newTask.getLeft());
             iTeamService.update(team1, new QueryWrapper<Team>().eq("root", newTask.getId()).eq("type", StaticDict.Team__type.TASK.getValue()).eq("account", newTask.getAssignedto()));
-            old.set("task",newTask);
+            old.set("task", newTask);
             old.setTaskteams(null);
-            old.set("auto",false);
+            old.set("auto", false);
             computeHours4Multiple(old);
         }
 
@@ -1080,7 +1118,7 @@ public class TaskExService extends TaskServiceImpl {
         super.update(newTask);
 
         //PmsEe操作任务，需判断状态，计算关联的计划的状态
-        if (newTask.getPlan() != null && newTask.getPlan() > 0){
+        if (newTask.getPlan() != null && newTask.getPlan() > 0) {
             //该任务有计划，根据任务状态更新计划状态
             this.updateRelatedPlanStatus(newTask);
         }
@@ -1088,16 +1126,17 @@ public class TaskExService extends TaskServiceImpl {
         this.removeIgonreChanges(changes);
         if (changes.size() > 0 || StringUtils.isNotBlank(comment)) {
             if (jugAssignToIsChanged(old, et)) {
-                ActionHelper.sendMarkDone(newTask.getId(),newTask.getName(),old.getAssignedto(), "任務", StaticDict.Action__object_type.TASK.getValue(), "tasks", StaticDict.Action__type.ASSIGNED.getText(), iActionService);
+                ActionHelper.sendMarkDone(newTask.getId(), newTask.getName(), old.getAssignedto(), "任務", StaticDict.Action__object_type.TASK.getValue(), "tasks", StaticDict.Action__type.ASSIGNED.getText(), iActionService);
                 // 发送待办消息
                 ActionHelper.sendTodoOrToread(newTask.getId(), newTask.getName(), noticeusers, newTask.getAssignedto(), newTask.getMailto(), "任务", StaticDict.Action__object_type.TASK.getValue(), "tasks", StaticDict.Action__type.ASSIGNED.getText(), true, iActionService);
 
             }
-            ActionHelper.createHis(newTask.getId(), StaticDict.Action__object_type.TASK.getValue(), changes,  StaticDict.Action__type.ASSIGNED.getValue(), comment,newTask.getAssignedto(), null, iActionService);
+            ActionHelper.createHis(newTask.getId(), StaticDict.Action__object_type.TASK.getValue(), changes, StaticDict.Action__type.ASSIGNED.getValue(), comment, newTask.getAssignedto(), null, iActionService);
 
         }
         return et;
     }
+
     public boolean jugAssignToIsChanged(Task old, Task et) {
         boolean flag = false;
         if ((StaticDict.Task__status.WAIT.getValue().equals(et.getStatus()) || StaticDict.Task__status.DOING.getValue().equals(et.getStatus())) && ((old.getAssignedto() == null) || !old.getAssignedto().equals(et.getAssignedto()))) {
@@ -1105,8 +1144,10 @@ public class TaskExService extends TaskServiceImpl {
         }
         return flag;
     }
+
     /**
      * [Cancel:取消] 行为扩展
+     *
      * @param et
      * @return
      */
@@ -1135,7 +1176,7 @@ public class TaskExService extends TaskServiceImpl {
             this.update(childNewTask, (Wrapper<Task>) childNewTask.getUpdateWrapper(true).eq("parent", old.getId()));
         }
         //PmsEe操作任务，需判断状态，计算关联的计划的状态
-        if (newTask.getPlan() != null && newTask.getPlan() > 0){
+        if (newTask.getPlan() != null && newTask.getPlan() > 0) {
             //该任务有计划，根据任务状态更新计划状态
             this.updateRelatedPlanStatus(newTask);
         }
@@ -1143,7 +1184,7 @@ public class TaskExService extends TaskServiceImpl {
         List<History> changes = ChangeUtil.diff(old, newTask);
         if (changes.size() > 0 || StringUtils.isNotBlank(comment)) {
             ActionHelper.sendTodoOrToread(newTask.getId(), newTask.getName(), noticeusers, newTask.getAssignedto(), newTask.getMailto(), "任务", StaticDict.Action__object_type.TASK.getValue(), "tasks", StaticDict.Action__type.CANCELED.getText(), false, iActionService);
-            ActionHelper.createHis(newTask.getId(), StaticDict.Action__object_type.TASK.getValue(), changes,  StaticDict.Action__type.CANCELED.getValue(), comment,newTask.getAssignedto(), null, iActionService);
+            ActionHelper.createHis(newTask.getId(), StaticDict.Action__object_type.TASK.getValue(), changes, StaticDict.Action__type.CANCELED.getValue(), comment, newTask.getAssignedto(), null, iActionService);
 
         }
         return et;
@@ -1161,8 +1202,10 @@ public class TaskExService extends TaskServiceImpl {
         newTask.setCanceledby(AuthenticationUser.getAuthenticationUser().getUsername());
         newTask.setCanceleddate(ZTDateUtil.now());
     }
+
     /**
      * [Close:关闭] 行为扩展
+     *
      * @param et
      * @return
      */
@@ -1197,7 +1240,7 @@ public class TaskExService extends TaskServiceImpl {
             updateParentStatus(newTask);
         }
         //PmsEe操作任务，需判断状态，计算关联的计划的状态
-        if (newTask.getPlan() != null && newTask.getPlan() > 0){
+        if (newTask.getPlan() != null && newTask.getPlan() > 0) {
             //该任务有计划，根据任务状态更新计划状态
             this.updateRelatedPlanStatus(newTask);
         }
@@ -1206,7 +1249,7 @@ public class TaskExService extends TaskServiceImpl {
         List<History> changes = ChangeUtil.diff(old, newTask, ignores, null, null);
         if (changes.size() > 0 || StringUtils.isNotBlank(comment)) {
             ActionHelper.sendTodoOrToread(newTask.getId(), newTask.getName(), noticeusers, newTask.getAssignedto(), newTask.getMailto(), "任务", StaticDict.Action__object_type.TASK.getValue(), "tasks", StaticDict.Action__type.CLOSED.getText(), false, iActionService);
-            ActionHelper.createHis(newTask.getId(), StaticDict.Action__object_type.TASK.getValue(), changes,  StaticDict.Action__type.CLOSED.getValue(), comment,newTask.getAssignedto(), null, iActionService);
+            ActionHelper.createHis(newTask.getId(), StaticDict.Action__object_type.TASK.getValue(), changes, StaticDict.Action__type.CLOSED.getValue(), comment, newTask.getAssignedto(), null, iActionService);
 
         }
         if (newTask.getStory() != null && newTask.getStory() != 0L) {
@@ -1214,8 +1257,10 @@ public class TaskExService extends TaskServiceImpl {
         }
         return et;
     }
+
     /**
      * [ConfirmStoryChange:需求变更确认] 行为扩展
+     *
      * @param et
      * @return
      */
@@ -1227,12 +1272,13 @@ public class TaskExService extends TaskServiceImpl {
         task.setId(et.getId());
         task.setStoryversion(storyService.get(et.getStory()).getVersion());
         super.update(task);
-        ActionHelper.createHis(et.getId(), StaticDict.Action__object_type.TASK.getValue(), null,  StaticDict.Action__type.CONFIRMED.getValue(), "","", null, iActionService);
+        ActionHelper.createHis(et.getId(), StaticDict.Action__object_type.TASK.getValue(), null, StaticDict.Action__type.CONFIRMED.getValue(), "", "", null, iActionService);
 
         return et;
     }
 
     @Override
+    @Transactional
     public void saveBatch(List<Task> list) {
         List<Long> storyIds = new ArrayList<>();
         List<String> taskNames = new ArrayList<>();
@@ -1263,9 +1309,9 @@ public class TaskExService extends TaskServiceImpl {
             task.setStatus(StaticDict.Task__status.WAIT.getValue());
 //            task.setLeft(task.getEstimate());
             task.setEstimate(task.getLeft());
-            if(isOps) {
+            if (isOps) {
                 task.setStory(0L);
-            }else if (task.getStory() != null && task.getStory() != 0L) {
+            } else if (task.getStory() != null && task.getStory() != 0L) {
                 task.setStoryversion(iStoryService.get(task.getStory()).getVersion());
             }
             if (assignedTo != "" && assignedTo != null) {
@@ -1275,7 +1321,7 @@ public class TaskExService extends TaskServiceImpl {
             super.create(task);
 
             childTasks += task.getId() + ",";
-            ActionHelper.createHis(task.getId(), StaticDict.Action__object_type.TASK.getValue(), null,  StaticDict.Action__type.OPENED.getValue(), "","", null, iActionService);
+            ActionHelper.createHis(task.getId(), StaticDict.Action__object_type.TASK.getValue(), null, StaticDict.Action__type.OPENED.getValue(), "", "", null, iActionService);
             if (task.getStory() != null && task.getStory() != 0L) {
                 iStoryService.setStage(task.getZtstory());
             }
@@ -1287,7 +1333,7 @@ public class TaskExService extends TaskServiceImpl {
 
         if (parent > 0) {
             Task lastInsertTask = list.get(list.size() - 1);
-            lastInsertTask.set("parentId",parent);
+            lastInsertTask.set("parentId", parent);
             lastInsertTask.set("changed", true);
             updateParentStatus(lastInsertTask);
             computeBeginAndEnd(this.get(old.getId()));
@@ -1302,33 +1348,92 @@ public class TaskExService extends TaskServiceImpl {
             childTasks = childTasks.replaceAll(regex, "");
             CachedBeanCopier.copy(this.get(old.getId()), newT);
             List<History> changes = ChangeUtil.diff(old, newT);
-            ActionHelper.createHis(parent, StaticDict.Action__object_type.TASK.getValue(), changes,  StaticDict.Action__type.CREATECHILDREN.getValue(), "",childTasks, null, iActionService);
+            ActionHelper.createHis(parent, StaticDict.Action__object_type.TASK.getValue(), changes, StaticDict.Action__type.CREATECHILDREN.getValue(), "", childTasks, null, iActionService);
 
         }
     }
 
     /**
      * [CreateCycleTasks:创建周期任务] 行为扩展
+     *
      * @param et
      * @return
      */
     @Override
     @Transactional
     public Task createCycleTasks(Task et) {
+        List<Task> taskList = this.list(new QueryWrapper<Task>().eq("cycle", 1));
+        for (Task task : taskList) {
+            createByCycle(task);
+        }
         return super.createCycleTasks(et);
     }
+
     /**
      * [Delete:删除任务] 行为扩展
+     *
      * @param et
      * @return
      */
     @Override
     @Transactional
     public Task delete(Task et) {
-        return super.delete(et);
+        boolean bOk = false;
+        Task old = this.get(et.getId());
+        if (old.getParent() < 0) {
+            throw new RuntimeException("不能删除父任务");
+        }
+        bOk = delete(et.getId());
+        if (old.getParent() > 0) {
+            old.set("changed", false);
+            updateParentStatus(old);
+            ActionHelper.createHis(old.getId(), StaticDict.Action__object_type.TASK.getValue(), null, StaticDict.Action__type.DELETECHILDRENTASK.getValue(), et.getComment(), "", "", iActionService);
+        }
+        if (old.getFrombug() != 0) {
+            Bug bug = new Bug();
+            bug.setId(old.getFrombug());
+            bug.setTotask(0L);
+            iBugService.sysUpdate(bug);
+        }
+        if (old.getStory() != null && old.getStory() != 0L) {
+            iStoryService.setStage(old.getZtstory());
+        }
+
+        //PmsEe操作任务，需判断状态，计算关联的计划的状态
+        if (old.getPlan() != null && old.getPlan() > 0) {
+            //该任务有计划，根据任务状态更新计划状态
+            this.updateRelatedPlanStatus(old);
+        }
+        et.set("bOk", bOk);
+        return et;
     }
+
+    public boolean hasId() {
+        return true;
+    }
+
+    public boolean hasDeleted() {
+        return true;
+    }
+
+    @Transactional(rollbackFor = Exception.class)
+    public boolean delete(Long key) {
+        if (hasId()) {
+            if (hasDeleted()) {
+                UpdateWrapper deleteWrapper = new UpdateWrapper();
+                deleteWrapper.set(FIELD_DELETED, StaticDict.YesNo.ITEM_1.getValue());
+                deleteWrapper.eq(FIELD_ID, key);
+                return this.update(deleteWrapper);
+            } else {
+                return removeById(key);
+            }
+        }
+        return true;
+    }
+
     /**
      * [DeleteEstimate:删除工时] 行为扩展
+     *
      * @param et
      * @return
      */
@@ -1337,8 +1442,10 @@ public class TaskExService extends TaskServiceImpl {
     public Task deleteEstimate(Task et) {
         return super.deleteEstimate(et);
     }
+
     /**
      * [EditEstimate:编辑工时] 行为扩展
+     *
      * @param et
      * @return
      */
@@ -1347,8 +1454,10 @@ public class TaskExService extends TaskServiceImpl {
     public Task editEstimate(Task et) {
         return super.editEstimate(et);
     }
+
     /**
      * [Finish:完成] 行为扩展
+     *
      * @param et
      * @return
      */
@@ -1364,7 +1473,7 @@ public class TaskExService extends TaskServiceImpl {
         newTask.setAssigneddate(ZTDateUtil.now());
         newTask.setLastediteddate(ZTDateUtil.now());
         newTask.setLasteditedby(AuthenticationUser.getAuthenticationUser().getUsername());
-        newTask.setConsumed(et.getTotaltime() != null ? et.getTotaltime() : (et.getConsumed() + (et.getCurrentconsumed()== null ?0:et.getCurrentconsumed()) ));
+        newTask.setConsumed(et.getTotaltime() != null ? et.getTotaltime() : (et.getConsumed() + (et.getCurrentconsumed() == null ? 0 : et.getCurrentconsumed())));
         newTask.setCurrentconsumed(et.getCurrentconsumed());
         newTask.setFiles(et.getFiles());
 
@@ -1406,7 +1515,7 @@ public class TaskExService extends TaskServiceImpl {
         taskEstimate.setAccount(AuthenticationUser.getAuthenticationUser().getUsername());
         taskEstimate.setDate(et.getFinisheddate() == null ? ZTDateUtil.now() : et.getFinisheddate());
         taskEstimate.setLeft(0.0);
-        taskEstimate.setConsumed(consumed == 0 ? (et.getCurrentconsumed()==null?0:et.getCurrentconsumed()) : consumed);
+        taskEstimate.setConsumed(consumed == 0 ? (et.getCurrentconsumed() == null ? 0 : et.getCurrentconsumed()) : consumed);
 
         if (teams.size() > 0) {
             for (Team team : teams) {
@@ -1415,7 +1524,7 @@ public class TaskExService extends TaskServiceImpl {
                 }
             }
         }
-        if (null != et.getCurrentconsumed()){
+        if (null != et.getCurrentconsumed()) {
             iTaskEstimateService.create(taskEstimate);
         }
 
@@ -1428,9 +1537,9 @@ public class TaskExService extends TaskServiceImpl {
                 }
             }
             newTask.setFinisheddate(et.getFinisheddate());
-            old.set("task",newTask);
+            old.set("task", newTask);
             old.setTaskteams(null);
-            old.set("auto",false);
+            old.set("auto", false);
             computeHours4Multiple(old);
         }
 
@@ -1447,19 +1556,19 @@ public class TaskExService extends TaskServiceImpl {
         }
 
         //PmsEe操作任务，需判断状态，计算关联的计划的状态
-        if (newTask.getPlan() != null && newTask.getPlan() > 0){
+        if (newTask.getPlan() != null && newTask.getPlan() > 0) {
             //该任务有计划，根据任务状态更新计划状态
             this.updateRelatedPlanStatus(newTask);
         }
         List<History> changes = ChangeUtil.diff(old, newTask);
         if (changes.size() > 0 || StringUtils.isNotBlank(comment)) {
 
-            ActionHelper.sendMarkDone(newTask.getId(),newTask.getName(),old.getAssignedto(), "任務", StaticDict.Action__object_type.TASK.getValue(), "tasks", StaticDict.Action__type.FINISHED.getText(), iActionService);
+            ActionHelper.sendMarkDone(newTask.getId(), newTask.getName(), old.getAssignedto(), "任務", StaticDict.Action__object_type.TASK.getValue(), "tasks", StaticDict.Action__type.FINISHED.getText(), iActionService);
             // 发送待办消息
             ActionHelper.sendTodoOrToread(newTask.getId(), newTask.getName(), noticeusers, newTask.getAssignedto(), newTask.getMailto(), "任务", StaticDict.Action__object_type.TASK.getValue(), "tasks", StaticDict.Action__type.FINISHED.getText(), true, iActionService);
-            ActionHelper.createHis(newTask.getId(), StaticDict.Action__object_type.TASK.getValue(), changes,  StaticDict.Action__type.FINISHED.getValue(), comment,newTask.getAssignedto(), null, iActionService);
+            ActionHelper.createHis(newTask.getId(), StaticDict.Action__object_type.TASK.getValue(), changes, StaticDict.Action__type.FINISHED.getValue(), comment, newTask.getAssignedto(), null, iActionService);
 
-         }
+        }
         if (newTask.getStory() != null && newTask.getStory() != 0L) {
             iStoryService.setStage(newTask.getZtstory());
         }
@@ -1468,36 +1577,84 @@ public class TaskExService extends TaskServiceImpl {
 
     /**
      * [GetTeamUserLeftActivity:获取团队成员剩余工时（激活）] 行为扩展
+     *
      * @param et
      * @return
      */
     @Override
     @Transactional
     public Task getTeamUserLeftActivity(Task et) {
-        return super.getTeamUserLeftActivity(et);
+        //自定义代码
+        et = this.get(et.getId());
+        //获取团队成员的剩余工时
+        List<TaskTeam> taskTeams = iTaskTeamService.list(new QueryWrapper<TaskTeam>().eq(ZTBaseHelper.FIELD_TYPE, StaticDict.Action__object_type.TASK.getValue()).eq(ZTBaseHelper.FIELD_ROOT, et.getId()).eq(ZTBaseHelper.FIELD_ACCOUNT, AuthenticationUser.getAuthenticationUser().getUsername()));
+        if (taskTeams.size() > 0) {
+            et.setLeft(taskTeams.get(0).getLeft());
+        }
+        return et;
     }
+
     /**
      * [GetTeamUserLeftStart:获取团队成员剩余工时（开始或继续）] 行为扩展
+     *
      * @param et
      * @return
      */
     @Override
     @Transactional
     public Task getTeamUserLeftStart(Task et) {
-        return super.getTeamUserLeftStart(et);
+        //自定义代码
+        et = this.get(et.getId());
+        // 获取团队成员的消耗和剩余工时
+        List<TaskTeam> taskTeams = iTaskTeamService.list(new QueryWrapper<TaskTeam>().eq(ZTBaseHelper.FIELD_TYPE, StaticDict.Action__object_type.TASK.getValue()).eq(ZTBaseHelper.FIELD_ROOT, et.getId()).eq(ZTBaseHelper.FIELD_ACCOUNT, AuthenticationUser.getAuthenticationUser().getUsername()));
+        if (taskTeams.size() > 0) {
+            et.setLeft(taskTeams.get(0).getLeft());
+            et.setConsumed(taskTeams.get(0).getConsumed());
+        }
+        return et;
     }
+
     /**
      * [LinkPlan:关联计划] 行为扩展
+     *
      * @param et
      * @return
      */
     @Override
     @Transactional
     public Task linkPlan(Task et) {
-        return super.linkPlan(et);
+        //先找到这个任务对应的productplan
+        List<ProductPlan> productPlanList = productPlanService.list(new QueryWrapper<ProductPlan>().eq("id", et.getPlan()));
+        ProductPlan oldProductPlan = productPlanList.get(0);
+        ProductPlan productPlan = new ProductPlan();
+        productPlan.setProduct(oldProductPlan.getProduct());
+        productPlan.setId(oldProductPlan.getId());
+        String tasksId = getTasks(et);
+        if ("[]".equals(tasksId)) {
+            productPlan.set("tasks", null);
+        } else {
+            productPlan.set("tasks", tasksId);
+
+        }
+        cn.ibizlab.pms.util.security.SpringContextHolder.getBean(ProductPlanHelper.class).linkTask(productPlan);
+        return et;
     }
+
+    public String getTasks(Task et) {
+        String tasks = "";
+        ArrayList<Map> list = (ArrayList) et.get(FIELD_SRFACTIONPARAM);
+        for (Map data : list) {
+            if (tasks.length() > 0) {
+                tasks += MULTIPLE_CHOICE;
+            }
+            tasks += data.get(FIELD_ID);
+        }
+        return tasks;
+    }
+
     /**
      * [OtherUpdate:其他更新] 行为扩展
+     *
      * @param et
      * @return
      */
@@ -1574,12 +1731,14 @@ public class TaskExService extends TaskServiceImpl {
         }
 
         ActionHelper.sendTodoOrToread(et.getId(), et.getName(), noticeusers, et.getAssignedto(), et.getMailto(), "任务", StaticDict.Action__object_type.STORY.getValue(), "tasks", strActionText, false, iActionService);
-        ActionHelper.createHis(et.getId(), StaticDict.Action__object_type.TASK.getValue(), changes, strAction, comment,"", null, iActionService);
+        ActionHelper.createHis(et.getId(), StaticDict.Action__object_type.TASK.getValue(), changes, strAction, comment, "", null, iActionService);
 
 
     }
+
     /**
      * [Pause:暂停] 行为扩展
+     *
      * @param et
      * @return
      */
@@ -1603,15 +1762,15 @@ public class TaskExService extends TaskServiceImpl {
             updateParentStatus(newTask);
         }
         //PmsEe操作任务，需判断状态，计算关联的计划的状态
-        if (newTask.getPlan() != null && newTask.getPlan() > 0){
+        if (newTask.getPlan() != null && newTask.getPlan() > 0) {
             //该任务有计划，根据任务状态更新计划状态
             this.updateRelatedPlanStatus(newTask);
         }
         List<History> changes = ChangeUtil.diff(old, newTask);
         if (changes.size() > 0 || StringUtils.isNotBlank(comment)) {
 
-            ActionHelper.sendTodoOrToread(newTask.getId(), newTask.getName(), noticeusers, newTask.getAssignedto(), newTask.getMailto(), "任务", StaticDict.Action__object_type.STORY.getValue(), "tasks",  StaticDict.Action__type.PAUSED.getText(), false, iActionService);
-            ActionHelper.createHis(newTask.getId(), StaticDict.Action__object_type.TASK.getValue(), changes,  StaticDict.Action__type.PAUSED.getValue(), comment,"", null, iActionService);
+            ActionHelper.sendTodoOrToread(newTask.getId(), newTask.getName(), noticeusers, newTask.getAssignedto(), newTask.getMailto(), "任务", StaticDict.Action__object_type.STORY.getValue(), "tasks", StaticDict.Action__type.PAUSED.getText(), false, iActionService);
+            ActionHelper.createHis(newTask.getId(), StaticDict.Action__object_type.TASK.getValue(), changes, StaticDict.Action__type.PAUSED.getValue(), comment, "", null, iActionService);
 
         }
         if (newTask.getStory() != null && newTask.getStory() != 0L) {
@@ -1619,8 +1778,10 @@ public class TaskExService extends TaskServiceImpl {
         }
         return et;
     }
+
     /**
      * [RecordEstimate:工时录入] 行为扩展
+     *
      * @param et
      * @return
      */
@@ -1673,7 +1834,7 @@ public class TaskExService extends TaskServiceImpl {
             iTaskEstimateService.create(taskEstimate);
             consumed += taskEstimate.getConsumed();
 
-            Action action1 = ActionHelper.createHis(old.getId(), StaticDict.Action__object_type.TASK.getValue(), null,  StaticDict.Action__type.RECORDESTIMATE.getValue(), taskEstimate.getWork(),String.valueOf(taskEstimate.getConsumed()), null, iActionService);
+            Action action1 = ActionHelper.createHis(old.getId(), StaticDict.Action__object_type.TASK.getValue(), null, StaticDict.Action__type.RECORDESTIMATE.getValue(), taskEstimate.getWork(), String.valueOf(taskEstimate.getConsumed()), null, iActionService);
             actionid = action1.getId();
             if (lastDate == null || lastDate.getTime() <= taskEstimate.getDate().getTime()) {
                 isNew = true;
@@ -1733,15 +1894,15 @@ public class TaskExService extends TaskServiceImpl {
             task.setAssigneddate(nowDate);
         }
         if (teams.size() > 0) {
-            old.set("task",task);
+            old.set("task", task);
             old.setTaskteams(null);
-            old.set("auto",false);
+            old.set("auto", false);
             computeHours4Multiple(old);
 
         }
         super.update(task);
 
-        FileHelper.updateObjectID(task.getId(), StaticDict.File__object_type.TASK.getValue(),files,"", iFileService);
+        FileHelper.updateObjectID(task.getId(), StaticDict.File__object_type.TASK.getValue(), files, "", iFileService);
 
         List<History> changes = ChangeUtil.diff(old, task);
         if (actionid != null && changes.size() > 0) {
@@ -1756,44 +1917,107 @@ public class TaskExService extends TaskServiceImpl {
             iStoryService.setStage(old.getZtstory());
         }
         //PmsEe操作任务，需判断状态，计算关联的计划的状态
-        if (task.getPlan() != null && task.getPlan() > 0){
+        if (task.getPlan() != null && task.getPlan() > 0) {
             //该任务有计划，根据任务状态更新计划状态
             this.updateRelatedPlanStatus(task);
         }
         return et;
     }
+
     /**
      * [RecordTimZeroLeftAfterContinue:继续任务时填入预计剩余为0设置为进行中] 行为扩展：继续任务
+     *
      * @param et
      * @return
      */
     @Override
     @Transactional
     public Task recordTimZeroLeftAfterContinue(Task et) {
-        return super.recordTimZeroLeftAfterContinue(et);
+        et = this.get(et.getId());
+        Task newTask = new Task();
+        newTask.setId(et.getId());
+        if (et.getLeft() == 0) {
+            newTask.setStatus(StaticDict.Task__status.DOING.getValue());
+            newTask.setFinishedby("");
+            newTask.setFinisheddate(null);
+            super.sysUpdate(newTask);
+            List<Action> actionList = iActionService.list(new QueryWrapper<Action>().eq("objectID", et.getId()).eq("actor", AuthenticationUser.getAuthenticationUser().getUsername()).eq("action", StaticDict.Action__type.FINISHED.getValue()).orderByDesc("date"));
+            if (actionList.size() > 0) {
+                Action action = actionList.get(0);
+                Action old = new Action();
+                old.setId(action.getId());
+                old.setAction(StaticDict.Action__type.RESTARTED.getValue());
+                iActionService.updateById(old);
+            }
+        }
+        if (et.getParent() > 0) {
+            et.set("changed", true);
+            updateParentStatus(et);
+        }
+        return et;
     }
+
     /**
      * [RecordTimateZeroLeft:预计剩余为0进行中] 行为扩展：激活和填入工时
+     *
      * @param et
      * @return
      */
     @Override
     @Transactional
     public Task recordTimateZeroLeft(Task et) {
-        return super.recordTimateZeroLeft(et);
+        et = this.get(et.getId());
+        Task newTask = new Task();
+        newTask.setId(et.getId());
+        if (et.getLeft() == 0) {
+            newTask.setStatus(StaticDict.Task__status.DOING.getValue());
+            newTask.setFinishedby("");
+            newTask.setFinisheddate(null);
+            super.sysUpdate(newTask);
+        }
+        if (et.getParent() > 0) {
+            et.set("changed", true);
+            updateParentStatus(et);
+        }
+        return et;
     }
+
     /**
      * [RecordTimateZeroLeftAfterStart:开始任务时填入预计剩余为0设为进行中] 行为扩展：开始任务
+     *
      * @param et
      * @return
      */
     @Override
     @Transactional
     public Task recordTimateZeroLeftAfterStart(Task et) {
-        return super.recordTimateZeroLeftAfterStart(et);
+        et = this.get(et.getId());
+        Task newTask = new Task();
+        newTask.setId(et.getId());
+        if (et.getLeft() == 0) {
+            newTask.setStatus(StaticDict.Task__status.DOING.getValue());
+            newTask.setFinishedby("");
+            newTask.setFinisheddate(null);
+            super.sysUpdate(newTask);
+            List<Action> actionList = iActionService.list(new QueryWrapper<Action>().eq("objectID", et.getId()).eq("actor", AuthenticationUser.getAuthenticationUser().getUsername()).eq("action", StaticDict.Action__type.FINISHED.getValue()).orderByDesc("date"));
+            if (actionList.size() > 0) {
+                Action action = actionList.get(0);
+                Action old = new Action();
+                old.setId(action.getId());
+                old.setAction(StaticDict.Action__type.STARTED.getValue());
+                iActionService.updateById(old);
+            }
+        }
+        if (et.getParent() > 0) {
+            et.set("changed", true);
+            updateParentStatus(et);
+        }
+        return et;
     }
+
     /**
      * [Restart:继续] 行为扩展：重启挂起的任务
+     *
      * @param et
      * @return
      */
@@ -1814,7 +2038,7 @@ public class TaskExService extends TaskServiceImpl {
         starts(et, old, newTask);
 
         //PmsEe操作任务，需判断状态，计算关联的计划的状态
-        if (newTask.getPlan() != null && newTask.getPlan() > 0){
+        if (newTask.getPlan() != null && newTask.getPlan() > 0) {
             //该任务有计划，根据任务状态更新计划状态
             this.updateRelatedPlanStatus(newTask);
         }
@@ -1828,7 +2052,7 @@ public class TaskExService extends TaskServiceImpl {
             }
 
             ActionHelper.sendTodoOrToread(newTask.getId(), newTask.getName(), noticeusers, newTask.getAssignedto(), newTask.getMailto(), "任务", StaticDict.Action__object_type.STORY.getValue(), "tasks", strActionText, false, iActionService);
-            ActionHelper.createHis(newTask.getId(), StaticDict.Action__object_type.TASK.getValue(), changes,  strAction, comment,"", null, iActionService);
+            ActionHelper.createHis(newTask.getId(), StaticDict.Action__object_type.TASK.getValue(), changes, strAction, comment, "", null, iActionService);
 
         }
         if (newTask.getStory() != null && newTask.getStory() != 0L) {
@@ -1836,8 +2060,10 @@ public class TaskExService extends TaskServiceImpl {
         }
         return et;
     }
+
     /**
      * [SendMessage:行为] 行为扩展
+     *
      * @param et
      * @return
      */
@@ -1846,8 +2072,10 @@ public class TaskExService extends TaskServiceImpl {
     public Task sendMessage(Task et) {
         return super.sendMessage(et);
     }
+
     /**
      * [SendMsgPreProcess:发送消息前置处理] 行为扩展
+     *
      * @param et
      * @return
      */
@@ -1856,8 +2084,10 @@ public class TaskExService extends TaskServiceImpl {
     public Task sendMsgPreProcess(Task et) {
         return super.sendMsgPreProcess(et);
     }
+
     /**
      * [Start:开始] 行为扩展
+     *
      * @param et
      * @return
      */
@@ -1874,7 +2104,7 @@ public class TaskExService extends TaskServiceImpl {
         starts(et, old, newTask);
 
         //PmsEe操作任务，需判断状态，计算关联的计划的状态
-        if (newTask.getPlan() != null && newTask.getPlan() > 0){
+        if (newTask.getPlan() != null && newTask.getPlan() > 0) {
             //该任务有计划，根据任务状态更新计划状态
             this.updateRelatedPlanStatus(newTask);
         }
@@ -1888,7 +2118,7 @@ public class TaskExService extends TaskServiceImpl {
             }
 
             ActionHelper.sendTodoOrToread(newTask.getId(), newTask.getName(), noticeusers, newTask.getAssignedto(), newTask.getMailto(), "任务", StaticDict.Action__object_type.STORY.getValue(), "tasks", strActionText, false, iActionService);
-            ActionHelper.createHis(newTask.getId(), StaticDict.Action__object_type.TASK.getValue(), changes,  strAction, comment,"", null, iActionService);
+            ActionHelper.createHis(newTask.getId(), StaticDict.Action__object_type.TASK.getValue(), changes, strAction, comment, "", null, iActionService);
 
         }
         if (newTask.getStory() != null && newTask.getStory() != 0L) {
@@ -1914,14 +2144,14 @@ public class TaskExService extends TaskServiceImpl {
             newTask.setAssignedto(old.getOpenedby());
         }
 
-        if(newTask.getConsumed() != null && newTask.getConsumed() > 0) {
+        if (newTask.getConsumed() != null && newTask.getConsumed() > 0) {
             //taskEstimate
             TaskEstimate taskEstimate = new TaskEstimate();
             taskEstimate.setTask(newTask.getId());
             taskEstimate.setAccount(AuthenticationUser.getAuthenticationUser().getUsername());
             taskEstimate.setDate(newTask.getRealstarted());
             taskEstimate.setLeft(newTask.getLeft() != null ? newTask.getLeft() : 0.0);
-            taskEstimate.setConsumed(newTask.getConsumed() != null ?newTask.getConsumed() : 0.0);
+            taskEstimate.setConsumed(newTask.getConsumed() != null ? newTask.getConsumed() : 0.0);
             iTaskEstimateService.create(taskEstimate);
         }
 
@@ -1933,15 +2163,15 @@ public class TaskExService extends TaskServiceImpl {
             team.setLeft(et.getLeft());
             team.setConsumed(et.getConsumed());
             iTeamService.update(team, new QueryWrapper<Team>().eq("root", newTask.getId()).eq("type", StaticDict.Team__type.TASK.getValue()).eq("account", oldAssignTo));
-            old.set("task",newTask);
+            old.set("task", newTask);
             old.setTaskteams(null);
-            old.set("auto",false);
+            old.set("auto", false);
             computeHours4Multiple(old);
         }
 
         super.update(newTask);
         //保存开始任务时上传的附件
-        FileHelper.updateObjectID(newTask.getId(), StaticDict.File__object_type.TASK.getValue(),files,"", iFileService);
+        FileHelper.updateObjectID(newTask.getId(), StaticDict.File__object_type.TASK.getValue(), files, "", iFileService);
         if (old.getParent() > 0) {
             old.set("parentId", old.getParent());
             old.set("changed", true);
@@ -1949,15 +2179,32 @@ public class TaskExService extends TaskServiceImpl {
             computeBeginAndEnd(this.get(old.getParent()));
         }
     }
+
     /**
      * [TaskForward:检查多人任务操作权限] 行为扩展
+     *
      * @param et
      * @return
      */
     @Override
     @Transactional
     public Task taskForward(Task et) {
-        return super.taskForward(et);
+        Object actioninfo = et.get("actioninfo");
+        et = this.get(et.getId());
+        if (StaticDict.YesNo.ITEM_1.getValue().equals(et.getMultiple())) {
+            if (!AuthenticationUser.getAuthenticationUser().getUsername().equals(et.getAssignedto())) {
+                SysEmployeeSearchContext context = new SysEmployeeSearchContext();
+                context.setN_username_in(et.getAssignedto());
+                Page<SysEmployee> page = sysEmployeeFeignClient.searchDefault(context);
+                List<SysEmployee> list = page.getContent();
+                if (list.size() > 0) {
+                    throw new RuntimeException(String.format(actioninfo.toString(), list.get(0).getPersonname()));
+                }
+                throw new RuntimeException(String.format(actioninfo.toString(), et.getAssignedto()));
+            }
+        }
+        //自定义代码
+        return et;
     }
 
     /**
@@ -1967,9 +2214,9 @@ public class TaskExService extends TaskServiceImpl {
     public Page<Task> searchCurProjectTaskQuery(TaskSearchContext context) {
         context.setN_parent_ltandeq(0L);
         Page<Task> page = super.searchCurProjectTaskQuery(context);
-        for(Task task : page.getContent()) {
+        for (Task task : page.getContent()) {
             // 子任务
-            if(task.getParent() < 0) {
+            if (task.getParent() < 0) {
                 TaskSearchContext context1 = new TaskSearchContext();
                 context1.setSelectCond(context.getSelectCond().clone());
                 context1.setN_parent_eq(task.getId());

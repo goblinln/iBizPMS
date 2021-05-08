@@ -62,6 +62,9 @@ public class BugExService extends BugServiceImpl {
 
     @Override
     public Bug sysGet(Long key) {
+        if (key == 0){
+            return null;
+        }
         Bug bug = super.sysGet(key);
         String sql = "SELECT COUNT(1) as ISFAVOURITES from t_ibz_favorites t where t.OBJECTID = #{et.id} and t.TYPE = 'bug' and t.ACCOUNT = #{et.account}";
         Map<String,Object> param = new HashMap<>();
