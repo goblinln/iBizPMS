@@ -19,7 +19,8 @@ export class SysTeamMemberBaseService extends EntityBaseService<ISysTeamMember> 
     protected APPDENAME = 'SysTeamMember';
     protected APPDENAMEPLURAL = 'SysTeamMembers';
     protected APPDEKEY = 'teammemberid';
-    // SysTeamMember 实体未设置主文本属性
+    protected APPDETEXT = 'teamid';
+    protected quickSearchFields = ['teamid',];
     protected selectContextParam = {
     };
 

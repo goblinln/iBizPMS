@@ -27,7 +27,12 @@ export abstract class SysTeamMemberBase extends EntityBase implements ISysTeamMe
     set srfkey(val: any) {
         this.teammemberid = val;
     }
-    // SysTeamMember 实体未设置主文本属性
+    get srfmajortext() {
+        return this.teamid;
+    }
+    set srfmajortext(val: any) {
+        this.teamid = val;
+    }
     /**
      * 组成员标识
      */
@@ -79,6 +84,6 @@ export abstract class SysTeamMemberBase extends EntityBase implements ISysTeamMe
     reset(data: any = {}): void {
         super.reset(data);
         this.teammemberid = data.teammemberid || data.srfkey;
-        // SysTeamMember 实体未设置主文本属性
+        this.teamid = data.teamid || data.srfmajortext;
     }
 }

@@ -461,6 +461,14 @@
         "codeName" : "Id"
       }
     }, {
+      "id" : "srfmajortext",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
       "id" : "srftempmode",
       "hidden" : true,
       "dataType" : 25

@@ -255,6 +255,13 @@
         }
       }, {
         "dataType" : 25,
+        "name" : "srfmajortext",
+        "getPSAppDEField" : {
+          "name" : "TEAMID",
+          "codeName" : "TeamId"
+        }
+      }, {
+        "dataType" : 25,
         "name" : "srfdataaccaction",
         "getPSAppDEField" : {
           "name" : "TEAMMEMBERID",

@@ -584,7 +584,9 @@
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
-    "linkDEField" : true
+    "enableQuickSearch" : true,
+    "linkDEField" : true,
+    "majorDEField" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "USERID",

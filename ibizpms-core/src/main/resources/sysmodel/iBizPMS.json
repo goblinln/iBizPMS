@@ -10926,7 +10926,7 @@
     "data_length":60,
     "key_field":1,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     }
     ],
     "subEntitys":[
@@ -11470,7 +11470,7 @@
     "data_length":60,
     "key_field":1,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     }
     ],
     "subEntitys":[
@@ -44206,7 +44206,7 @@
     "data_length":100,
     "key_field":0,
     "show_order":1000,
-    "major_field":0
+    "major_field":1
     },
     {
     "fieldname":"USERID" ,

@@ -145,6 +145,14 @@
         "codeName" : "TeamMemberId"
       }
     }, {
+      "id" : "srfmajortext",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "TEAMID",
+        "codeName" : "TeamId"
+      }
+    }, {
       "id" : "srftempmode",
       "hidden" : true,
       "dataType" : 25

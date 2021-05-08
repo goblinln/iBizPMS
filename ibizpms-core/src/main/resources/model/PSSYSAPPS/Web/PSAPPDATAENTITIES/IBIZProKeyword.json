@@ -10,8 +10,19 @@
         "name" : "ID",
         "codeName" : "Id"
       }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
     } ],
     "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
     "getValuePSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
@@ -147,7 +158,9 @@
     "name" : "ID",
     "stdDataType" : 25,
     "stringLength" : 60,
-    "keyField" : true
+    "enableQuickSearch" : true,
+    "keyField" : true,
+    "majorField" : true
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",
@@ -341,6 +354,10 @@
     "modelref" : true,
     "path" : "PSMODULES/ibizplugin/PSDATAENTITIES/IBIZProKeyword/PSDESERVICEAPIS/IBIZProKeyword.json"
   },
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "ID",
+    "codeName" : "Id"
+  } ],
   "storageMode" : 0,
   "defaultMode" : true,
   "enableFilterActions" : true,

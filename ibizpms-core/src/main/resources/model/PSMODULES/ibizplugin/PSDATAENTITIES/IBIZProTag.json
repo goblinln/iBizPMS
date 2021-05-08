@@ -139,7 +139,9 @@
     "stringLength" : 60,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
+    "enableQuickSearch" : true,
     "keyDEField" : true,
+    "majorDEField" : true,
     "pasteReset" : true
   } ],
   "getAllPSDEOPPrivs" : [ {

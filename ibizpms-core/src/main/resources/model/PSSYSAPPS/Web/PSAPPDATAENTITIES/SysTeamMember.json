@@ -10,8 +10,19 @@
         "name" : "TEAMMEMBERID",
         "codeName" : "TeamMemberId"
       }
+    }, {
+      "dataType" : 25,
+      "name" : "text",
+      "getPSAppDEField" : {
+        "name" : "TEAMID",
+        "codeName" : "TeamId"
+      }
     } ],
     "pagingSize" : 50,
+    "getTextPSAppDEField" : {
+      "name" : "TEAMID",
+      "codeName" : "TeamId"
+    },
     "getValuePSAppDEField" : {
       "name" : "TEAMMEMBERID",
       "codeName" : "TeamMemberId"
@@ -195,7 +206,9 @@
     "logicName" : "组标识",
     "name" : "TEAMID",
     "stdDataType" : 25,
-    "stringLength" : 100
+    "stringLength" : 100,
+    "enableQuickSearch" : true,
+    "majorField" : true
   }, {
     "codeName" : "UserId",
     "logicName" : "用户标识",
@@ -395,6 +408,10 @@
     "modelref" : true,
     "path" : "PSMODULES/ou/PSDATAENTITIES/SysTeamMember/PSDESERVICEAPIS/SysTeamMember.json"
   },
+  "getQuickSearchPSAppDEFields" : [ {
+    "name" : "TEAMID",
+    "codeName" : "TeamId"
+  } ],
   "storageMode" : 0,
   "defaultMode" : true,
   "enableFilterActions" : true,

@@ -37,11 +37,11 @@
 	  git clone -b devx $para2 ibizpms/
       export NODE_OPTIONS=--max-old-space-size=4096
       cd ibizpms/
-      mvn clean package -Pweb
-      cd ibizpms-app/ibizpms-app-web
-      mvn -Pweb docker:build
-      mvn -Pweb docker:push
-      docker -H $para1 stack deploy --compose-file=src/main/docker/ibizpms-app-web.yaml RTX --with-registry-auth
+      mvn clean package -Pmob
+      cd ibizpms-app/ibizpms-app-mob
+      mvn -Pmob docker:build
+      mvn -Pmob docker:push
+      docker -H $para1 stack deploy --compose-file=src/main/docker/ibizpms-app-mob.yaml RTX --with-registry-auth
       </command>
     </hudson.tasks.Shell>
   </builders>

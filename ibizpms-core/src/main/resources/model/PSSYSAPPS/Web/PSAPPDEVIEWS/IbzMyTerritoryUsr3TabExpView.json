@@ -968,6 +968,13 @@
           },
           "getPSDEGridDataItems" : [ {
             "dataType" : 25,
+            "name" : "srfmajortext",
+            "getPSAppDEField" : {
+              "name" : "ID",
+              "codeName" : "Id"
+            }
+          }, {
+            "dataType" : 25,
             "name" : "srfdataaccaction",
             "getPSAppDEField" : {
               "name" : "ID",

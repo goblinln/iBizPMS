@@ -190,6 +190,7 @@ export default class AppSetting extends Vue {
             const get: Promise<any> = this.$http.get("v7/logout");
             get.then((response: any) => {
                 if (response && response.status === 200) {
+                    this.$store.commit('addAppData', null);
                     this.doLogin();
                 }
             })
