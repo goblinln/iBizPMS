@@ -610,12 +610,41 @@
             "codeName" : "Plan"
           },
           "getPSEditor" : {
+            "editorParams" : {
+              "SRFNAVCTX.plan" : "%plan%",
+              "SRFNAVPARAM.product" : "%product%",
+              "valFormat" : "{0: '/'}",
+              "SRFNAVCTX.product" : "%product%",
+              "SRFNAVPARAM.plan" : "%plan%"
+            },
             "editorType" : "SPAN",
             "name" : "plan",
             "getPSAppCodeList" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/CurProductPlan.json"
             },
+            "getPSNavigateContexts" : [ {
+              "key" : "PLAN",
+              "name" : "PLAN",
+              "value" : "plan",
+              "rawValue" : false
+            }, {
+              "key" : "PRODUCT",
+              "name" : "PRODUCT",
+              "value" : "product",
+              "rawValue" : false
+            } ],
+            "getPSNavigateParams" : [ {
+              "key" : "product",
+              "name" : "product",
+              "value" : "product",
+              "rawValue" : false
+            }, {
+              "key" : "plan",
+              "name" : "plan",
+              "value" : "plan",
+              "rawValue" : false
+            } ],
             "editable" : false,
             "enableLinkView" : false
           },

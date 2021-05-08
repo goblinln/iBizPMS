@@ -260,7 +260,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "(t1.`product` =#{srf.datacontext.product} or t1.`product` =#{srf.datacontext.products})",
+        "customCond" : "(t1.`product` =#{srf.datacontext.product} or t1.`product` =#{srf.datacontext.products} or t1.`id` = #{srf.datacontext.plan})",
         "name" : "查询条件"
       } ]
     } ],
