@@ -203,7 +203,7 @@ export class EditFormControlBase extends FormControlBase {
         }
         this.isAutoSave = this.controlInstance.enableAutoSave;
         this.loaddraftAction = this.controlInstance.getGetDraftPSControlAction?.()?.actionName;
-        this.updateAction = this.controlInstance.getUpdatePSControlAction?.()?.actionName;
+        this.updateAction = this.controlInstance.getUpdatePSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "Update";
         this.removeAction = this.controlInstance.getRemovePSControlAction?.()?.actionName;
         this.loadAction = this.controlInstance.getGetPSControlAction?.()?.actionName;
         this.createAction = this.controlInstance.getCreatePSControlAction?.()?.actionName;

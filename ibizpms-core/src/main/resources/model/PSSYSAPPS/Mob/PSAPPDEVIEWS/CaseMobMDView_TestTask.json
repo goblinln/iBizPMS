@@ -463,8 +463,8 @@
         }, {
           "key" : "CASE",
           "name" : "CASE",
-          "value" : "testtask",
-          "rawValue" : false
+          "value" : "0",
+          "rawValue" : true
         } ],
         "getPSNavigateParams" : [ {
           "key" : "id",
@@ -486,6 +486,11 @@
           "name" : "testtask",
           "value" : "testtask",
           "rawValue" : false
+        }, {
+          "key" : "case",
+          "name" : "case",
+          "value" : "0",
+          "rawValue" : true
         } ],
         "refreshMode" : 1,
         "timeout" : 60000,
