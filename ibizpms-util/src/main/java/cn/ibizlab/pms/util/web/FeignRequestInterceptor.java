@@ -1,5 +1,6 @@
 package cn.ibizlab.pms.util.web;
 
+import cn.ibizlab.pms.util.security.AuthenticationUser;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import org.slf4j.Logger;
