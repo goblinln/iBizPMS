@@ -820,11 +820,6 @@
           "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Bug.json"
         },
         "getPSNavigateContexts" : [ {
-          "key" : "BUG",
-          "name" : "BUG",
-          "value" : "0",
-          "rawValue" : true
-        }, {
           "key" : "PRODUCT",
           "name" : "PRODUCT",
           "value" : "product",
@@ -845,11 +840,6 @@
           "name" : "srfparentkey",
           "value" : "release",
           "rawValue" : false
-        }, {
-          "key" : "bug",
-          "name" : "bug",
-          "value" : "0",
-          "rawValue" : true
         }, {
           "key" : "release",
           "name" : "release",
