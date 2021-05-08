@@ -188,7 +188,7 @@ export default class GroupStepTable extends Vue {
         if(col.codelistId){
             this.codeListService.getStaticItems(col.codelistId).then((codelist: any) => {
                 if(codelist){
-                    const data = codelist.items.find((code:any) => Object.is(code.value, item[col.name]));
+                    const data = codelist.find((code:any) => Object.is(code.value, item[col.name]));
                     if(data){
                         gridItem = data.text;
                     }
