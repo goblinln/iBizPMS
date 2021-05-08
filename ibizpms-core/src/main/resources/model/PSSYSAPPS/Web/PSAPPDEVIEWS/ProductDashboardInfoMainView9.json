@@ -359,7 +359,7 @@
         "name" : "group1",
         "getPSDEFormDetails" : [ {
           "codeName" : "id",
-          "contentWidth" : 35.0,
+          "contentWidth" : 42.0,
           "dataType" : 1,
           "detailStyle" : "DEFAULT",
           "detailType" : "FORMITEM",
@@ -382,12 +382,12 @@
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL",
-            "width" : 35
+            "width" : 42
           },
           "getPSSysCss" : {
             "cssName" : "project-id"
           },
-          "width" : 35.0,
+          "width" : 42.0,
           "allowEmpty" : true,
           "emptyCaption" : true,
           "hidden" : false,
