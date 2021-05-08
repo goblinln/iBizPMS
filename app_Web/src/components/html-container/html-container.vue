@@ -111,7 +111,6 @@ export default class HtmlContainer extends Vue {
                 if(item.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)!=null){
                     let src:any = item.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)[0];
                     src = await ImgurlBase64.getInstance().getImgURLOfBase64(src.substring(5,src.length-1));
-                    console.log(src);
                     const image = item.replace(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig, 'src="'+src+'"');
                     this.rHtml = this.rHtml.replace(/<img.*?(?:>|\/>)/gi, image);
                     this.srcList.push(src);
