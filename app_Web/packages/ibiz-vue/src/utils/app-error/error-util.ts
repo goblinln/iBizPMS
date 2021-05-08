@@ -1,6 +1,6 @@
-import { Notification } from 'element-ui';
 import { SyncSeriesHook } from "qx-util";
 import { AppError, ErrorCode } from "./app-error";
+import { AppNoticeService } from "../../app-service";
 
 /**
  * 错误提示辅助类
@@ -29,7 +29,7 @@ export class ErrorUtil {
         this.hooks.before.callSync({ ignore: false, error, param });
         const appError: AppError = this.parse(error);
         this.hooks.after.callSync({ error: appError, param });
-        Notification.error(appError.message);
+        AppNoticeService.getInstance().error(appError.message);
     }
 
     /**

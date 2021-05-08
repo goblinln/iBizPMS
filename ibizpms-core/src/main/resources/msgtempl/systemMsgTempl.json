@@ -1,14 +1,14 @@
   [
     {
-      "tid":"productcheck",
-      "template_name":"产品检查",
-      "content":"产品检查"
+      "tid":"bugcheck",
+      "template_name":"Bug检查",
+      "content":"Bug检查"
     }
     ,
     {
-      "tid":"productnewbranch",
-      "template_name":"产品发布新版本",
-      "content":"发布新版本v1.0"
+      "tid":"bugclose",
+      "template_name":"Bug关闭",
+      "content":"Bug关闭"
     }
    ]
 

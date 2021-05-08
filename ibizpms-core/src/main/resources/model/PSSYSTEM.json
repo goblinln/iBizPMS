@@ -1550,26 +1550,26 @@
     "name" : "消息队列"
   } ],
   "getAllPSSysMsgTargets" : [ {
-    "codeName" : "ProductAdmin",
-    "dynaModelFilePath" : "PSSYSMSGTARGETS/ProductAdmin.json",
+    "codeName" : "BugAdmin",
+    "dynaModelFilePath" : "PSSYSMSGTARGETS/BugAdmin.json",
     "msgTargetType" : "RUNTIME",
-    "name" : "产品管理员"
+    "name" : "Bug管理员"
   } ],
   "getAllPSSysMsgTempls" : [ {
-    "codeName" : "ProductCheck",
-    "content" : "产品检查",
+    "codeName" : "BugCheck",
+    "content" : "Bug检查",
     "contentType" : "TEXT",
-    "dynaModelFilePath" : "PSSYSMSGTEMPLS/ProductCheck.json",
-    "name" : "产品检查",
+    "dynaModelFilePath" : "PSSYSMSGTEMPLS/BugCheck.json",
+    "name" : "Bug检查",
     "subject" : "新版本",
     "mailGroupSend" : false
   }, {
-    "codeName" : "ProductNewBranch",
-    "content" : "发布新版本v1.0",
+    "codeName" : "BugClose",
+    "content" : "Bug关闭",
     "contentType" : "TEXT",
-    "dynaModelFilePath" : "PSSYSMSGTEMPLS/ProductNewBranch.json",
-    "name" : "产品发布新版本",
-    "subject" : "新版本",
+    "dynaModelFilePath" : "PSSYSMSGTEMPLS/BugClose.json",
+    "name" : "Bug关闭",
+    "subject" : "Bug关闭",
     "mailGroupSend" : false
   } ],
   "getAllPSSysSequences" : [ {

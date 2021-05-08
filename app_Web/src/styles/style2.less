@@ -1282,7 +1282,7 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            background: var(--app-background-color);
+            background: var(--button-background-color);
             border-radius: 5px;
             padding: 0;
             .app-actionbar-item {
@@ -1291,14 +1291,14 @@
                 .ivu-btn {
                     padding: 0 15px;
                     color: var(--button-font-color);
+                    background-color: var(--button-background-color);
+                    border-color: var(--button-background-color);
                 }
-        
                 .ivu-btn:hover {
                     color: var(--button-background-color-bright);
-                    background-color: transparent;
+                    background-color: var(--button-background-color);
                 }
             }
-        
             .app-actionbar-item:nth-child(n + 2) {
                 border-left: 1px solid var(--leftsidebar-font-color-light);
             }
