@@ -21,7 +21,7 @@ export class GridUserColorRed {
      * @memberof GridUserColorRed
      */
     public renderCtrlItem(h: any, ctrlItemModel: any, parentContainer: any, data: any) {
-        const { name, caption, align, width, widthUnit, codeList, getPSDEUIAction } = ctrlItemModel;
+        const { name, caption, align, width, widthUnit, psappcodelist, psdeuiaction } = ctrlItemModel;
         let renderParams: any = {
             "show-overflow-tooltip": true,
             "label": caption,
@@ -39,24 +39,24 @@ export class GridUserColorRed {
             scopedSlots: {
                 default: (scope: any) => {
                     return (
-                        getPSDEUIAction && getPSDEUIAction.uIActionTag ?
+                        psdeuiaction && psdeuiaction.uIActionTag ?
                         <a 
-                            v-show={scope.row[getPSDEUIAction.uIActionTag]?.visabled} 
-                            disabled={scope.row[getPSDEUIAction.uIActionTag]?.disabled}
+                            v-show={scope.row[psdeuiaction.uIActionTag]?.visabled} 
+                            disabled={scope.row[psdeuiaction.uIActionTag]?.disabled}
                             style="{'display': 'block'}"
                             on-click={($event: any ) => { this.onClick(scope.row, ctrlItemModel, parentContainer, $event) }}>
                             <app-user-span
                                 value={scope.row[ctrlItemModel.codeName.toLowerCase()]}
                                 data={scope.row}
                                 context={JSON.parse(JSON.stringify(parentContainer.context))}
-                                codeList={codeList}
+                                codeList={psappcodelist}
                             ></app-user-span>
                         </a> : 
                         <app-user-span
                             value={scope.row[ctrlItemModel.codeName.toLowerCase()]}
                             data={scope.row}
                             context={JSON.parse(JSON.stringify(parentContainer.context))}
-                            codeList={codeList}
+                            codeList={psappcodelist}
                         ></app-user-span>
                     )
                 },
@@ -76,11 +76,10 @@ export class GridUserColorRed {
      * 
      * @memberof GridUserColorRed
      */
-    public onClick(row: any, column: any, gridContainer: any, $event: any) {
+    public onClick(row: any, column: any, parentContainer: any, $event: any) {
         const tag = `grid_${column.codeName.toLowerCase()}_click`;
-        debugger
-        if(column && gridContainer && gridContainer.controlInstance) {
-            AppViewLogicService.getInstance().executeViewLogic(tag, $event, gridContainer, row, gridContainer.controlInstance.getPSAppViewLogics);
+        if(column && parentContainer && parentContainer.controlInstance) {
+            AppViewLogicService.getInstance().executeViewLogic(tag, $event, parentContainer, row, parentContainer.controlInstance.getPSAppViewLogics() || []);
         }
     }
 
