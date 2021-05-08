@@ -218,7 +218,7 @@ export default class DataPickerEditor extends EditorBase {
     public renderDefault() {
         return this.$createElement(this.editorComponentName, {
             props: {
-                parentCodeName: this.parentItem.codeName,
+                parentCodeName: this.parentItem?.codeName,
                 name: this.editorInstance.name,
                 value: this.value,
                 disabled: this.disabled,
