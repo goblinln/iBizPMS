@@ -15,7 +15,7 @@
           <div class="arrow"></div>
         </div>
         <template v-for="(usertask, usertaskIndex) in data.usertasks">
-          <div class="timeline-content" :key="usertaskIndex">
+          <div v-if="usertask.comments.length > 0" class="timeline-content" :key="usertaskIndex">
             <div class="timeline">
               <div class="timeline-wrapper">
                 <div class="timeline-index">
@@ -114,6 +114,75 @@
                       {{ formatDate(comment.time, "MM月DD日 HH:mm:ss") }}
                     </div>
                     <div class="fullmessage">{{ comment.fullMessage }}</div>
+                  </div>
+                  <div class="arrow"></div>
+                </div>
+              </template>
+            </div>
+          </div>
+          <div v-else class="timeline-content" :key="usertaskIndex">
+            <div class="timeline">
+              <div class="timeline-wrapper">
+                <div class="timeline-index">
+                  <span>{{ usertask.index }}</span>
+                  <div class="icon-bottom" v-if="usertask.index != 1">
+                    <i class="el-icon-bottom"></i>
+                  </div>
+                  <div
+                    class="icon-top"
+                    v-if="usertask.index < usertasksLength"
+                  ></div>
+                </div>
+                <div class="usertaskname">{{ usertask.userTaskName }}</div>
+                <div class="authorname">
+                  <Tooltip
+                    placement="bottom"
+                    theme="light"
+                    :disabled="usertask.identitylinks.length > 1 ? false : true"
+                  >
+                    {{
+                      usertask.identitylinks
+                        .map((item) => item.displayname)
+                        .toString()
+                    }}
+                    <div slot="content">
+                      <div class="tooltips">
+                        <div
+                          class="tooltips-content"
+                          v-for="(item, toolindex) in usertask.identitylinks"
+                          :key="toolindex"
+                        >
+                          {{ item.displayname }}
+                        </div>
+                      </div>
+                    </div>
+                  </Tooltip>
+                </div>
+              </div>
+              <div
+                v-if="usertask.identitylinks.length > 1"
+                class="arrow"
+                @click="changeExpand(usertask)"
+              >
+                <i
+                  :class="usertask.isShow ? 'el-icon-minus' : 'el-icon-plus'"
+                />
+              </div>
+            </div>
+            <div v-if="usertask.isShow">
+              <template v-for="(identitylink, index) in usertask.identitylinks">
+                <div class="timeline-draw timeline" :key="index">
+                  <div class="timeline-wrapper">
+                    <div class="timeline-index">
+                      <div
+                        v-if="usertask.index < usertasksLength"
+                        class="icon-line"
+                      ></div>
+                    </div>
+                    <div class="usertaskname"></div>
+                    <div class="authorname">
+                      {{ identitylink.displayname }}
+                    </div>
                   </div>
                   <div class="arrow"></div>
                 </div>

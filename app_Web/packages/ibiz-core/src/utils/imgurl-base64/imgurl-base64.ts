@@ -1,5 +1,5 @@
 
-import { Http } from 'ibiz-core';
+import axios from 'axios';
 
 export class ImgurlBase64{
     /**
@@ -29,15 +29,48 @@ export class ImgurlBase64{
      * @returns 
      */
     public async getImgURLOfBase64(url: string) {
-        try {
-            const response = await Http.getInstance().get(url);
-            if (response && response.status === 200 && response.data) {
-                return 'data:image/png;base64,' + btoa(new Uint8Array(response.data).reduce((data, byte) => data + String.fromCharCode(byte), ''));
-            } else {
-                return './';
-            }
-        } catch (error) {
-            return './';
-        }
+        return new Promise((resolve, reject) => {
+            let img = './';
+            axios({
+                method: 'get',
+                url: url,
+                responseType: 'blob'
+            }).then((response: any) => {
+                if (response && response.status === 200 && response.data) {
+                    let blob = new Blob([response.data],{type: 'image/png'});
+                    this.blobToBase64(blob).then((res) => {
+                        // 转化后的base64
+                        img = ""+res;
+                        resolve(img);
+                    })
+                } else {
+                    resolve(img);
+                }
+            })
+            .catch((response: any) => {
+                resolve(img);
+            });
+        });
+    }
+
+    /**
+     * 将blob转为base64
+     * 
+     * 
+     * @param blob blob对象
+     * @returns 
+     */
+    public blobToBase64(blob: any) {
+        return new Promise((resolve, reject) => {
+            const fileReader = new FileReader();
+            fileReader.onload = (e: any) => {
+                resolve(e.target.result);
+            };
+            // readAsDataURL
+            fileReader.readAsDataURL(blob);
+            fileReader.onerror = () => {
+                reject(new Error('blobToBase64 error'));
+            };
+        });
     }
 }

@@ -59,7 +59,7 @@ import { Vue, Component, Prop, Model, Watch } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
 import { Environment } from '@/environments/environment';
 import axios from 'axios';
-
+import { ImgurlBase64 } from 'ibiz-core';
 import tinymce from "tinymce/tinymce";
 // import 'tinymce/themes/modern';
 import 'tinymce/themes/silver';
@@ -201,7 +201,7 @@ export default class RichTextEditor extends Vue {
      * @type {string}
      * @memberof RichTextEditor
      */
-    public uploadUrl = Environment.BaseUrl + Environment.UploadFile;
+    public uploadUrl = Environment.UploadFile;
 
     /**
      * 下载路径
@@ -209,7 +209,7 @@ export default class RichTextEditor extends Vue {
      * @type {string}
      * @memberof RichTextEditor
      */
-    public downloadUrl =  Environment.BaseUrl + Environment.ExportFile;
+    public downloadUrl = Environment.ExportFile;
 
     /**
      * 当前富文本
@@ -466,16 +466,56 @@ export default class RichTextEditor extends Vue {
      * @memberof RichTextEditor
      */
     @Watch('value', { immediate: true, deep: true })
-    oncurrentContent(newval: any, val: any) {
+    async oncurrentContent(newval: any, val: any) {
         const content: any = this.editor ? this.editor.getContent() : undefined;
         const url = this.downloadUrl.indexOf('../') === 0 ? this.downloadUrl.substring(3) : this.downloadUrl;
         if(newval) {
             newval = newval.replace(/\{(\d+)\.(bmp|jpg|jpeg|png|tif|gif|pcx|tga|exif|fpx|svg|psd|cdr|pcd|dxf|ufo|eps|ai|raw|WMF|webp)\}/g, `${url}/$1`);
+            newval = await this.getImgUrlBase64(newval);
         }
         if (!Object.is(newval,content)) {
             this.init();
         }
         this.getParams();
+    }
+
+    /**
+     * 获取图片Base64
+     * 
+     * @memberof HtmlContainer
+     */
+    public async getImgUrlBase64(html: any){
+        let imgs:Array<any>|null = html.match(/<img.*?(?:>|\/>)/gi)!=null? html.match(/<img.*?(?:>|\/>)/gi):[];
+        if(imgs && imgs.length>0){
+             for (let item of imgs) {
+                if(item.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)!=null){
+                    let src:any = item.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)[0];
+                    src = await ImgurlBase64.getInstance().getImgURLOfBase64(src.substring(5,src.length-1));
+                    const image = item.replace(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig, 'src="'+src+'"');
+                    html = html.replace(/<img.*?(?:>|\/>)/gi, image);
+                }
+            }
+        }
+        return html;
+    }
+
+    /**
+     * 更替抛到表单的图片src
+     * 
+     * @memberof HtmlContainer
+     */
+    public getImgUrl(html: any){
+        let imgs:Array<any>|null = html.match(/<img.*?(?:>|\/>)/gi)!=null? html.match(/<img.*?(?:>|\/>)/gi):[];
+        const imgsrc = this.imgsrc;
+        if(imgs && imgs.length > 0 && imgsrc && imgsrc.length > 0){
+            imgs.forEach((img: any, index: number) => {
+                if(img.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)!=null){
+                    const newImg = img.replace(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig, 'src="{' + imgsrc[index].id + imgsrc[index].type + '}"');
+                    html = html.replace(/<img.*?(?:>|\/>)/gi, newImg);
+                }
+            })
+        }
+        return html;
     }
 
     /**
@@ -532,15 +572,7 @@ export default class RichTextEditor extends Vue {
                 richtexteditor.editor = editor;
                 editor.on('blur', () => {
                     let content = editor.getContent();
-                    const url = richtexteditor.downloadUrl.indexOf('../') === 0 ? richtexteditor.downloadUrl.substring(3) : richtexteditor.downloadUrl;
-                    let newContent: string = "";
-                    const imgsrc = richtexteditor.imgsrc;
-                    if(imgsrc && imgsrc.length > 0){
-                        imgsrc.forEach((item: any)=>{
-                            newContent = content.replace(url+"/"+item.id,"{"+item.id+item.type+"}");
-                            content = newContent;
-                        });
-                    }
+                    content = richtexteditor.getImgUrl(content);
                     richtexteditor.$emit('formitemvaluechange',{name: 'noticeusers',value: richtexteditor.jointSelectPersonId()});
                     richtexteditor.$emit('change', content);
                 });  
@@ -630,7 +662,9 @@ export default class RichTextEditor extends Vue {
                     if (file.filename) {
                         const id: string = file.fileid; 
                         const url: string = `${downloadUrl}/${id}`;
-                        success(url);
+                        ImgurlBase64.getInstance().getImgURLOfBase64(url).then((response: any) => {
+                            success(response);
+                        });
                     }
                     if (this.export_params.length > 0) {
                         downloadUrl +='?';
@@ -651,24 +685,18 @@ export default class RichTextEditor extends Vue {
                 const url = richtexteditor.downloadUrl.indexOf('../') === 0 ? richtexteditor.downloadUrl.substring(3) : richtexteditor.downloadUrl;
                 let value = (richtexteditor.value && richtexteditor.value.length > 0) ? richtexteditor.value : '';
                 value = value.replace(/\{(\d+)\.(bmp|jpg|jpeg|png|tif|gif|pcx|tga|exif|fpx|svg|psd|cdr|pcd|dxf|ufo|eps|ai|raw|WMF|webp)\}/g, `${url}/$1`);
-                if (richtexteditor.editor) {
-                    richtexteditor.editor.setContent(value);
-                }
-                if (richtexteditor.disabled) {
-                    richtexteditor.editor.setMode('readonly');
-                }
+                richtexteditor.getImgUrlBase64(value).then((newValue: any) =>{
+                    if (richtexteditor.editor) {
+                        richtexteditor.editor.setContent(newValue);
+                    }
+                    if (richtexteditor.disabled) {
+                        richtexteditor.editor.setMode('readonly');
+                    }
+                });
                 //  全屏状态下鼠标移除更新值
                 editor.on('mouseleave', () => {
                     let content = editor.getContent();
-                    const url = richtexteditor.downloadUrl.indexOf('../') === 0 ? richtexteditor.downloadUrl.substring(3) : richtexteditor.downloadUrl;
-                    let newContent: string = "";
-                    const imgsrc = richtexteditor.imgsrc;
-                    if(imgsrc && imgsrc.length > 0){
-                        imgsrc.forEach((item: any)=>{
-                            newContent = content.replace(url+"/"+item.id,"{"+item.id+item.type+"}");
-                            content = newContent;
-                        });
-                    }
+                    content = richtexteditor.getImgUrl(content);
                     richtexteditor.$emit('change', content);
                 }); 
             }
