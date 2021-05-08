@@ -72,7 +72,7 @@ export const Environment = {
     // 企业微信登录应用标识,用于网页扫码登录和企业微信内部免登
     wxWorkAppId: '',
     // 登录地址
-    loginUrl: 'http://172.16.240.108:33013',
+    loginUrl: 'http://172.16.186.207:8083',
     // cas登录地址
     casUrl: 'http://passportcs.ibizlab.cn',
 };
