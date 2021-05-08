@@ -1838,7 +1838,7 @@ export class GridControlBase extends MDControlBase {
      * @returns {Promise<any>}
      * @memberof GridControlBase
      */
-    public async save(args: any[], params?: any, $event?: any, xData?: any) {
+    public async save(args: any, params?: any, $event?: any, xData?: any) {
         let _this = this;
         // 拷贝模式
         if (_this.viewparams && _this.viewparams.copymode && Object.is(_this.viewparams.copymode, 'true') && _this.items && _this.items.length > 0) {
@@ -1900,7 +1900,9 @@ export class GridControlBase extends MDControlBase {
         this.ctrlEvent({ controlname: this.name, action: "save", data: successItems });
         this.refresh();
         if (errorItems.length === 0 && successItems.length > 0) {
-            this.$Notice.success({ title: '', desc: (this.$t('app.commonWords.saveSuccess') as string) });
+            if(args?.showResultInfo || (args && !args.hasOwnProperty('showResultInfo'))){
+                this.$Notice.success({ title: '', desc: (this.$t('app.commonWords.saveSuccess') as string) });
+            }
         } else {
             errorItems.forEach((item: any, index: number) => {
                 if (errorMessage[index] && errorMessage[index].data) {

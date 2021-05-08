@@ -191,7 +191,7 @@ export class ListControlBase extends MDControlBase {
      * @returns {Promise<any>}
      * @memberof ListControlBase
      */
-    public async save(args: any[], params?: any, $event?: any, xData?: any) {
+    public async save(args: any, params?: any, $event?: any, xData?: any) {
         let _this = this;
         let successItems: any = [];
         let errorItems: any = [];
@@ -231,7 +231,9 @@ export class ListControlBase extends MDControlBase {
         this.$emit('ctrl-event', { controlname: this.name, action: "save", data: successItems });
         this.refresh();
         if (errorItems.length === 0) {
-            this.$Notice.success({ title: '', desc: (this.$t('app.commonWords.saveSuccess') as string) });
+            if(args?.showResultInfo || (args && !args.hasOwnProperty('showResultInfo'))){
+                this.$Notice.success({ title: '', desc: (this.$t('app.commonWords.saveSuccess') as string) });
+            }
         } else {
             errorItems.forEach((item: any, index: number) => {
                 this.$throw(item.majorentityname + (this.$t('app.commonWords.saveFailed') as string) + '!');

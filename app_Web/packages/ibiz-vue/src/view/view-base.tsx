@@ -606,7 +606,7 @@ export class ViewBase extends Vue {
                 if (Object.is(action, 'save')) {
                     if (_this?.viewInstance) {
                         if (_this.viewInstance.xDataControlName) {
-                            _this.viewState.next({ tag: _this?.viewInstance?.xDataControlName, action: action, data: _this.viewparams });
+                            _this.viewState.next({ tag: _this?.viewInstance?.xDataControlName, action: action, data: Object.assign(_this.viewparams, { showResultInfo: false })});
                         } else {
                             _this.$emit('view-event', { viewName: this.viewCodeName, action: 'drdatasaved', data: {} });
                         }
