@@ -27,7 +27,12 @@ export abstract class IBIZProKeywordBase extends EntityBase implements IIBIZProK
     set srfkey(val: any) {
         this.id = val;
     }
-    // IBIZProKeyword 实体未设置主文本属性
+    get srfmajortext() {
+        return this.id;
+    }
+    set srfmajortext(val: any) {
+        this.id = val;
+    }
     /**
      * ID
      */
@@ -43,6 +48,6 @@ export abstract class IBIZProKeywordBase extends EntityBase implements IIBIZProK
     reset(data: any = {}): void {
         super.reset(data);
         this.id = data.id || data.srfkey;
-        // IBIZProKeyword 实体未设置主文本属性
+        this.id = data.id || data.srfmajortext;
     }
 }

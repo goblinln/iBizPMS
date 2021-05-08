@@ -19,7 +19,8 @@ export class IBIZProTagBaseService extends EntityBaseService<IIBIZProTag> {
     protected APPDENAME = 'IBIZProTag';
     protected APPDENAMEPLURAL = 'IBIZProTags';
     protected APPDEKEY = 'id';
-    // IBIZProTag 实体未设置主文本属性
+    protected APPDETEXT = 'id';
+    protected quickSearchFields = ['id',];
     protected selectContextParam = {
     };
 

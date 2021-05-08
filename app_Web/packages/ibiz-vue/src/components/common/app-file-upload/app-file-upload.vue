@@ -28,7 +28,7 @@
       <ul class="">
         <li v-for="(file,index) in files" :key="index" class="preview-file-list-item">
           <div class='preview-file-list-img'>
-            <el-image :src="file.url" class='' style=''>
+            <el-image :src="getImgURLOfBase64(file.url)" class='' style=''>
                 <div slot='error' class='image-slot'>
                     <img src="/assets/img/picture.png" style='width:100%;height:100%;'>
                 </div>
@@ -51,7 +51,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
-import { AppServiceBase, getSessionStorage, Util } from 'ibiz-core';
+import { AppServiceBase, getSessionStorage, Util, ImgurlBase64 } from 'ibiz-core';
 import { Subject, Unsubscribable } from 'rxjs';
 
 @Component({
@@ -505,7 +505,14 @@ export default class AppFileUpload extends Vue {
      */
     public showActions: boolean = false;
 
-
+    /**
+     * 获取图片
+     * 
+     * @memberof AppFileUpload
+     */
+    public async getImgURLOfBase64(url: string) {
+        return await ImgurlBase64.getInstance().getImgURLOfBase64(url);
+    }
 }
 </script>
 

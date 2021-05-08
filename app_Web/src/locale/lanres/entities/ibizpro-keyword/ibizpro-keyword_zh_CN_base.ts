@@ -23,6 +23,7 @@ function getLocaleResourceBase(){
 				'formpage2': commonLogic.appcommonhandle("其它",null), 
 				'srforikey': commonLogic.appcommonhandle("",null), 
 				'srfkey': commonLogic.appcommonhandle("ID",null), 
+				'srfmajortext': commonLogic.appcommonhandle("ID",null), 
 				'srftempmode': commonLogic.appcommonhandle("",null), 
 				'srfuf': commonLogic.appcommonhandle("",null), 
 				'srfdeid': commonLogic.appcommonhandle("",null), 

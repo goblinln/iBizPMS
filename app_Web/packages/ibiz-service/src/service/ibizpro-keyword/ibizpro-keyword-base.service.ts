@@ -19,7 +19,8 @@ export class IBIZProKeywordBaseService extends EntityBaseService<IIBIZProKeyword
     protected APPDENAME = 'IBIZProKeyword';
     protected APPDENAMEPLURAL = 'IBIZProKeywords';
     protected APPDEKEY = 'id';
-    // IBIZProKeyword 实体未设置主文本属性
+    protected APPDETEXT = 'id';
+    protected quickSearchFields = ['id',];
     protected selectContextParam = {
     };
 
