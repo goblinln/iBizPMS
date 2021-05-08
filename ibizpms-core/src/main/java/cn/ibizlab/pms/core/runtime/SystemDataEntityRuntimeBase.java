@@ -397,8 +397,8 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             return true;
         //判断是否在流程中
         if(this.isEnableWF()){
-            accessMode = wfClient.getDataAccessMode(AuthenticationUser.getAuthenticationUser().getSrfsystemid(), this.getPSDataEntity().getCodeName().toLowerCase(), key);
             if (DataAccessActions.READ.equals(action)) {
+                accessMode = wfClient.getDataAccessMode(AuthenticationUser.getAuthenticationUser().getSrfsystemid(), this.getPSDataEntity().getCodeName().toLowerCase(), key);
                 if ((accessMode & 1) > 0) {
                    return true;
                 }

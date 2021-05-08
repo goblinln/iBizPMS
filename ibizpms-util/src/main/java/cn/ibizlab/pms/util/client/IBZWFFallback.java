@@ -39,7 +39,7 @@ public class IBZWFFallback implements IBZWFFeignClient {
     }
 
     @Override
-    public Boolean testDataIsEdit(String system, String entity, Serializable businessKey) {
+    public Integer getDataAccessMode(String system, String entity, Serializable businessKey) {
         return null;
     }
 
