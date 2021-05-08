@@ -21,3 +21,4 @@ export { StudioActionUtil } from './studio-action/StudioActionUtil';
 export { DERuleCondEngine } from './de-rule-cond/de-rule-cond-engine';
 export { ModelTool } from './util/model-tool';
 export { StringUtil } from './string-util/string-util';
+export { ImgurlBase64 } from './imgurl-base64/imgurl-base64';

@@ -245,8 +245,10 @@ export class MDControlBase extends MainControlBase {
         this.updateAction = this.controlInstance?.getUpdatePSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "Update";
         this.fetchAction = this.controlInstance?.getFetchPSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "FetchDefault";
         this.createAction = this.controlInstance?.getCreatePSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "Create";
-        this.quickToolbarInstance = ModelTool.findPSControlByName(`${name}_quicktoolbar`, this.controlInstance.getPSControls())
-        this.batchToolbarInstance = ModelTool.findPSControlByName(`${name}_batchtoolbar`, this.controlInstance.getPSControls())
+        if(this.controlInstance?.getPSControls?.()){
+            this.quickToolbarInstance = ModelTool.findPSControlByName(`${name}_quicktoolbar`, this.controlInstance.getPSControls())
+            this.batchToolbarInstance = ModelTool.findPSControlByName(`${name}_batchtoolbar`, this.controlInstance.getPSControls())
+        }
         this.initToolBarModels();
     }
 

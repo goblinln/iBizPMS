@@ -512,6 +512,16 @@
       },
       "name" : "pri"
     }, {
+      "dataType" : 9,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/YesNo2.json"
+      },
+      "name" : "confirmed"
+    }, {
+      "dataType" : 25,
+      "name" : "isfavorites"
+    }, {
       "dataType" : 25,
       "name" : "title"
     }, {
@@ -783,6 +793,7 @@
           "value" : "productplan",
           "rawValue" : false
         } ],
+        "refreshMode" : 1,
         "timeout" : 60000,
         "uIActionMode" : "BACKEND",
         "uIActionParamJO" : {
@@ -791,6 +802,7 @@
         "uIActionTag" : "MobProductPlanLinkBug",
         "uIActionType" : "DEUIACTION",
         "enableConfirm" : true,
+        "reloadData" : true,
         "id" : "MobProductPlanLinkBug@Bug"
       },
       "tooltip" : "关联bug",

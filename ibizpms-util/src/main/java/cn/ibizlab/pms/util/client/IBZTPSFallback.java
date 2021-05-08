@@ -15,5 +15,10 @@ public class IBZTPSFallback implements IBZTPSFeignClient {
     public Boolean custome(String topic) {
         return null;
     }
+
+    @Override
+    public Boolean syslog(String info) {
+        return null;
+    }
     
 }

@@ -15,4 +15,7 @@ public interface IBZTPSFeignClient
 
 	@RequestMapping(method = RequestMethod.GET, value = "/message/consume/{topic}")
 	Boolean custome(@PathVariable("topic") String topic);
+
+    @RequestMapping(method = RequestMethod.POST, value = "/syslog")
+	Boolean syslog(@RequestBody String info);
 }

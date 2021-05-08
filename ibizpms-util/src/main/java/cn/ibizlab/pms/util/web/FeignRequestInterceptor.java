@@ -32,6 +32,12 @@ public class FeignRequestInterceptor implements RequestInterceptor {
     public void apply(RequestTemplate requestTemplate) {
         ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         requestTemplate.header("srfdeploysystemid", strDeploySystemId);
+        AuthenticationUser curUser = AuthenticationUser.getAuthenticationUser();
+        if(curUser != null){
+            requestTemplate.header("srfsystemid", curUser.getSrfsystemid());
+            requestTemplate.header("srfdcid", curUser.getSrfdcid());
+            requestTemplate.header("srfdcsystemid", curUser.getSrfdcsystemid());
+        }
         if (requestAttributes != null) {
             HttpServletRequest request = requestAttributes.getRequest();
             Enumeration<String> headerNames = request.getHeaderNames();

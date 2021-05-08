@@ -391,10 +391,23 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      */
     @SneakyThrows
     public boolean test(Serializable key, String action) {
+        int accessMode;
         this.prepare();
         if (this.getUserContext().isSuperuser())
             return true;
         //判断是否在流程中
+        if(this.isEnableWF()){
+            accessMode = wfClient.getDataAccessMode(AuthenticationUser.getAuthenticationUser().getSrfsystemid(), this.getPSDataEntity().getCodeName().toLowerCase(), key);
+            if (DataAccessActions.READ.equals(action)) {
+                if ((accessMode & 1) > 0) {
+                   return true;
+                }
+            }
+            else if (DataAccessActions.UPDATE.equals(action) && testDataInWF(this.getSimpleEntity(key))) {
+                accessMode = wfClient.getDataAccessMode(AuthenticationUser.getAuthenticationUser().getSrfsystemid(), this.getPSDataEntity().getCodeName().toLowerCase(), key);
+                return ((accessMode & 2) > 0);
+            }
+        }
         if (testUnires(action))
             return true ;
         //检查能力

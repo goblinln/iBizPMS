@@ -69,6 +69,10 @@ public class AuthenticationUser implements UserDetails, net.ibizsys.runtime.secu
      */
     private String srfsystemid;
     /**
+     * 租户系统标识
+     */
+    private String srfdcsystemid;
+    /**
      * 动态实例标识
      */
     private String srfdynainstid;
@@ -286,6 +290,7 @@ public class AuthenticationUser implements UserDetails, net.ibizsys.runtime.secu
     public Map<String, Object> getSessionParams() {
         if (this.sessionParams == null) {
             sessionParams = getUserSessionParam();
+            sessionParams.put("srfdcid",this.getSrfdcid());
             sessionParams.put("srfsystemid",this.getSrfsystemid());
             sessionParams.put("srfpersonid", this.getPersonid());
             sessionParams.put("srfpersonname", this.getPersonname());

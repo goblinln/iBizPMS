@@ -286,6 +286,9 @@
       "name" : "stage"
     }, {
       "dataType" : 25,
+      "name" : "ischild"
+    }, {
+      "dataType" : 25,
       "name" : "isfavorites"
     }, {
       "dataType" : 25,
