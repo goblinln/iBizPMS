@@ -1543,35 +1543,6 @@
     "name" : "数据接收",
     "syncDir" : "IN"
   } ],
-  "getAllPSSysMsgQueues" : [ {
-    "codeName" : "MsgQueue",
-    "dynaModelFilePath" : "PSSYSMSGQUEUES/MsgQueue.json",
-    "msgQueueType" : "RUNTIME",
-    "name" : "消息队列"
-  } ],
-  "getAllPSSysMsgTargets" : [ {
-    "codeName" : "BugAdmin",
-    "dynaModelFilePath" : "PSSYSMSGTARGETS/BugAdmin.json",
-    "msgTargetType" : "RUNTIME",
-    "name" : "Bug管理员"
-  } ],
-  "getAllPSSysMsgTempls" : [ {
-    "codeName" : "BugCheck",
-    "content" : "Bug检查",
-    "contentType" : "TEXT",
-    "dynaModelFilePath" : "PSSYSMSGTEMPLS/BugCheck.json",
-    "name" : "Bug检查",
-    "subject" : "Bug检查",
-    "mailGroupSend" : false
-  }, {
-    "codeName" : "BugClose",
-    "content" : "Bug关闭",
-    "contentType" : "TEXT",
-    "dynaModelFilePath" : "PSSYSMSGTEMPLS/BugClose.json",
-    "name" : "Bug关闭",
-    "subject" : "Bug关闭",
-    "mailGroupSend" : false
-  } ],
   "getAllPSSysSequences" : [ {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTodoSeq.json"

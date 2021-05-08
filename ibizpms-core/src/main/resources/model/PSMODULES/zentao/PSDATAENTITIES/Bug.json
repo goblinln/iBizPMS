@@ -8460,28 +8460,6 @@
     "fieldAllowMode" : false,
     "oPPrivAllowMode" : false
   } ],
-  "getAllPSDENotifies" : [ {
-    "codeName" : "Close",
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDENOTIFIES/Close.json",
-    "msgType" : 0,
-    "name" : "Bug关闭",
-    "getPSDENotifyTargets" : [ {
-      "name" : "OPENEDBY",
-      "getTargetPSDEField" : {
-        "name" : "OPENEDBY",
-        "codeName" : "OpenedBy"
-      },
-      "targetType" : "DEFIELD"
-    } ],
-    "getPSSysMsgQueue" : {
-      "modelref" : true,
-      "path" : "PSSYSMSGQUEUES/MsgQueue.json"
-    },
-    "getPSSysMsgTempl" : {
-      "modelref" : true,
-      "path" : "PSSYSMSGTEMPLS/BugClose.json"
-    }
-  } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"
