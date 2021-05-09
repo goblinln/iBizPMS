@@ -134,7 +134,7 @@ public class StoryExService extends StoryServiceImpl {
             return false;
         }
         // 更新file
-        FileHelper.updateObjectID(et.getId(),StaticDict.File__object_type.BUG.getValue(), files,  String.valueOf(et.getVersion()), iFileService);
+        FileHelper.updateObjectID(et.getId(),StaticDict.File__object_type.STORY.getValue(), files,  String.valueOf(et.getVersion()), iFileService);
         FileHelper.saveUpload(StaticDict.Action__object_type.STORY.getValue(), et.getId(), "", "", "");
         storySpec.setStory(et.getId());//将需求的编号值给到需求描述对象的“需求”字段
         storySpec.setVersion(1);//需求描述对象的版本号设置为1
