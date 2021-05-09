@@ -6,7 +6,7 @@
                 <div class="codelist-item" :key="index">
                     <span v-if="index != 0">{{ textSeparator }}</span>
                     <i v-if="item.iconcls" :class="item.iconcls"></i>
-                    <img  v-if="item.icon" :src="getIcon(item.icon)" />
+                    <img  v-if="item.imgUrlBase64" :src="item.imgUrlBase64" />
                     <div class="codelist-item-icon"  v-if="!item.icon">{{ isUseLangres ? $t(item.text).substring(0,1) : item.text.substring(0,1) }}</div>
                     <span :class="item.class" :style="{ color: item.color }">
                         {{ isUseLangres ? $t(item.text) : item.text }}
@@ -20,7 +20,7 @@
 <script lang="ts">
 import { Vue, Component, Prop, Model, Watch } from 'vue-property-decorator';
 import {CodeListService} from "ibiz-service";
-import { Environment } from '@/environments/environment';
+import { ImgurlBase64 } from 'ibiz-core';
 
 @Component({})
 export default class IconCodeList extends Vue {
@@ -225,7 +225,7 @@ export default class IconCodeList extends Vue {
      * @returns {*}
      * @memberof IconCodeList
      */
-    private setItems(items: any[], _this: any) {
+    private async setItems(items: any[], _this: any) {
         if (items) {
             let result: any = [];
             if (Object.is(_this.renderMode, 'NUM')) {
@@ -250,10 +250,10 @@ export default class IconCodeList extends Vue {
             }
             // 设置items
             if (result.length != 0) {
-                _this.items = result;
+                _this.items = await this.getImgURLOfBase64(result);
             } else {
                 _this.items = [{ text: _this.value }];
-            }
+            }   
         }
     }
 
@@ -324,11 +324,11 @@ export default class IconCodeList extends Vue {
                if(Object.prototype.toString.call(targetData) == "[object Array]"){
                     if(targetData && targetData.length >0){
                         let fileId:string = targetData[0] && targetData[0].id;
-                        return Environment.BaseUrl + "ibizutil/download/" + fileId;
+                        return "/ibizutilpms/ztdownload/" + fileId;
                     }
                 }else if(Object.prototype.toString.call(targetData) === '[object Object]'){
                         let fileId:string = targetData && targetData.id;
-                        return Environment.BaseUrl + "ibizutil/download/" + fileId;
+                        return "/ibizutilpms/ztdownload/" + fileId;
                 }
            } catch (error) {
                return arg;
@@ -336,14 +336,30 @@ export default class IconCodeList extends Vue {
        }else if(Object.prototype.toString.call(arg) == "[object Array]"){
            if(arg && arg.length >0){
                let fileId:string = arg[0] && arg[0].id;
-               return Environment.BaseUrl + "ibizutil/download/" + fileId;
+               return "/ibizutilpms/ztdownload/" + fileId;
            }
        }else if(Object.prototype.toString.call(arg) === '[object Object]'){
             let fileId:string = arg && arg.id;
-            return Environment.BaseUrl + "ibizutil/download/" + fileId;
+            return "/ibizutilpms/ztdownload/" + fileId;
        }else{
             return arg;
        }
+    }
+
+    /**
+     * 获取图片
+     * 
+     * @memberof 
+     */
+    public async getImgURLOfBase64(result: any[]) {
+        if (result.length>0) {
+            for (let item of result) {
+                if (item.icon) {
+                    item.imgUrlBase64 = await ImgurlBase64.getInstance().getImgURLOfBase64(this.getIcon(item.icon));
+                }
+            }
+        }
+        return result;
     }
 }
 </script>
