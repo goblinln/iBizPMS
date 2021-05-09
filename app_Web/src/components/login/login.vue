@@ -170,6 +170,9 @@ export default class Login extends Vue {
             this.WXWorkLogin();
             this.isEmbedThridPlatForm = true;
         }
+        this.setLoginLog = this.setLoginLog.bind(this);
+        // 获取租户信息回调
+        AuthGuard.hooks.dcSystemAfter.tap(this.setLoginLog);
     }
 
     /**
@@ -232,8 +235,6 @@ export default class Login extends Vue {
                 }
                 // 设置cookie,保存账号密码7天
                 Util.setCookie('loginname', loginname, 7);
-                // 获取租户信息回调
-                AuthGuard.hooks.dcSystemAfter.tap(this.setLoginLog);
                 // 跳转首页
                 const url: any = this.$route.query.redirect ? this.$route.query.redirect : '*';
                 this.$router.push({ path: url });
@@ -451,10 +452,8 @@ export default class Login extends Vue {
      *
      * @memberof Login
      */
-    public destroy() {
-        AuthGuard.hooks.dcSystemAfter.removeTap(() => {
-            this.setLoginLog;
-        });
+    public destroyed() {
+        AuthGuard.hooks.dcSystemAfter.removeTap(this.setLoginLog);
     }
 }
 </script>
