@@ -377,7 +377,7 @@
     "groupMode" : "NONE",
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "logicName" : "主表格",
-    "minorSortDir" : "ASC",
+    "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
