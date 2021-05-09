@@ -38,7 +38,9 @@ public class FileExService extends FileServiceImpl {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 File file = new File();
                 file.setId(jsonObject.getLongValue("id"));
-
+                file.setObjecttype(et.getObjecttype());
+                et.setObjectid(et.getObjectid());
+                et.setExtra(et.getExtra());
                 list.add(file);
             }
             this.updateBatch(list);
