@@ -10,6 +10,13 @@
       "id" : "UPDATE"
     }
   }, {
+    "dataAccessAction" : "CREATE",
+    "name" : " Action_MANAGE_ALL_CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
     "dataAccessAction" : "DELETE",
     "name" : " Action_MANAGE_ALL_DELETE",
     "getPSDEOPPriv" : {
