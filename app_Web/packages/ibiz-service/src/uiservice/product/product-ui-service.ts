@@ -1,5 +1,5 @@
-import { AppServiceBase } from 'ibiz-core';
-import { AppCenterService } from 'ibiz-vue';
+// import { AppServiceBase } from 'ibiz-core';
+// import { AppCenterService } from 'ibiz-vue';
 import { ProductUIServiceBase } from './product-ui-service-base';
 
 /**
@@ -80,11 +80,11 @@ export default class ProductUIService extends ProductUIServiceBase {
     //     }
     // }
 
-    // /**
-    //  * 退出
-    //  * 
-    //  * @memberof ProductUIService
-    //  */
+    /**
+     * 退出
+     * 
+     * @memberof ProductUIService
+     */
     // public async ReturnEdit(args: any[], xData: any, actionContext: any) {
     //     const _this: any = actionContext;
     //     AppCenterService.notifyMessage({ name: 'Product', action: 'appRefresh', data: undefined });

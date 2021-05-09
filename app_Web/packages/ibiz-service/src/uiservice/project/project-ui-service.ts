@@ -1,5 +1,5 @@
-import { AppServiceBase } from 'ibiz-core';
-import { AppCenterService } from 'ibiz-vue';
+// import { AppServiceBase } from 'ibiz-core';
+// import { AppCenterService } from 'ibiz-vue';
 import { ProjectUIServiceBase } from './project-ui-service-base';
 
 /**
@@ -80,11 +80,11 @@ export default class ProjectUIService extends ProjectUIServiceBase {
     //     }
     // }
 
-    // /**
-    //  * 退出
-    //  * 
-    //  * @memberof ProjectUIService
-    //  */
+    /**
+     * 退出
+     * 
+     * @memberof ProjectUIService
+     */
     // public async ReturnEdit(args: any[], xData: any, actionContext: any) {
     //     const _this: any = actionContext;
     //     AppCenterService.notifyMessage({ name: 'Project', action: 'appRefresh', data: undefined });
