@@ -72,26 +72,26 @@ export default class ProjectUIService extends ProjectUIServiceBase {
      * 
      * @memberof ProjectUIService
      */
-     protected excuteAction(uIActionTag: string, args: any[], context: any = {}, params: any = {}, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
-        if (Object.is(uIActionTag, "ReturnEdit")) {
-            this.ReturnEdit(args, xData, actionContext);
-        } else {
-            super.excuteAction(uIActionTag, args, context, params, $event, xData, actionContext, srfParentDeName);
-        }
-    }
+    //  protected excuteAction(uIActionTag: string, args: any[], context: any = {}, params: any = {}, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+    //     if (Object.is(uIActionTag, "ReturnEdit")) {
+    //         this.ReturnEdit(args, xData, actionContext);
+    //     } else {
+    //         super.excuteAction(uIActionTag, args, context, params, $event, xData, actionContext, srfParentDeName);
+    //     }
+    // }
 
-    /**
-     * 退出
-     * 
-     * @memberof ProjectUIService
-     */
-    public async ReturnEdit(args: any[], xData: any, actionContext: any) {
-        const _this: any = actionContext;
-        AppCenterService.notifyMessage({ name: 'Project', action: 'appRefresh', data: undefined });
-        const appNavDataService: any = AppServiceBase.getInstance().getAppNavDataService();
-        const item:any = appNavDataService.historyList[appNavDataService.findHistoryIndex(_this.$route)];
-        _this.$tabPageExp.onClose(item);
+    // /**
+    //  * 退出
+    //  * 
+    //  * @memberof ProjectUIService
+    //  */
+    // public async ReturnEdit(args: any[], xData: any, actionContext: any) {
+    //     const _this: any = actionContext;
+    //     AppCenterService.notifyMessage({ name: 'Project', action: 'appRefresh', data: undefined });
+    //     const appNavDataService: any = AppServiceBase.getInstance().getAppNavDataService();
+    //     const item:any = appNavDataService.historyList[appNavDataService.findHistoryIndex(_this.$route)];
+    //     _this.$tabPageExp.onClose(item);
 
-    }
+    // }
 
 }
