@@ -24,6 +24,7 @@ services:
       - ZUUL_ROUTES_IBZEMP_SERVICEID=ibizpms-webapi
       - ZUUL_ROUTES_DYNAMODEL_PATH=/dynamodel/**
       - ZUUL_ROUTES_DYNAMODEL_URL=http://172.16.170.145
+      - SERVER_SERVLET_CONTEXTPATH=/pms
       - NACOS=172.16.240.110:8850
       - IBIZ_REF_SERVICE_OU=ibizrt4ebsx-rt4ebsx
       - IBIZ_REF_SERVICE_DICT=ibizrt4ebsx-rt4ebsx

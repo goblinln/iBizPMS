@@ -58,6 +58,8 @@ spec:
           value: "/dynamodel/**"      
         - name: ZUUL_ROUTES_DYNAMODEL_URL
           value: "http://172.16.170.145"      
+        - name: SERVER_SERVLET_CONTEXTPATH
+          value: "/pms"      
         - name: NACOS
           value: "172.16.240.110:8850"      
         - name: IBIZ_REF_SERVICE_OU
