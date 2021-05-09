@@ -4,7 +4,7 @@ import { FormButtonModel, FormDruipartModel, FormGroupPanelModel, FormIFrameMode
 import { FormControlBase } from './form-control-base';
 import { AppFormService } from '../ctrl-service';
 import { AppCenterService, AppViewLogicService } from '../app-service';
-import { IPSAppDEUIAction, IPSDEEditForm, IPSDEEditFormItem, IPSDEFDCatGroupLogic, IPSDEFDLogic, IPSDEFDSingleLogic,IPSDEFIUpdateDetail, IPSDEFormButton, IPSDEFormDetail, IPSDEFormDRUIPart, IPSDEFormGroupPanel, IPSDEFormItem, IPSDEFormItemVR, IPSDEFormPage, IPSDEFormTabPage, IPSDEFormTabPanel, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
+import { IPSAppDEUIAction, IPSDEEditForm, IPSDEEditFormItem, IPSDEFDCatGroupLogic, IPSDEFDLogic, IPSDEFDSingleLogic, IPSDEFIUpdateDetail, IPSDEFormButton, IPSDEFormDetail, IPSDEFormDRUIPart, IPSDEFormGroupPanel, IPSDEFormItem, IPSDEFormItemVR, IPSDEFormPage, IPSDEFormTabPage, IPSDEFormTabPanel, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
 
 /**
  * 编辑表单部件基类
@@ -450,7 +450,7 @@ export class EditFormControlBase extends FormControlBase {
                     this.errorMessages.forEach((message: any) => {
                         descMessage += message.error + '<br/>';
                     })
-                    this.$throw(descMessage, {dangerouslyUseHTMLString: true});
+                    this.$throw(descMessage, { dangerouslyUseHTMLString: true });
                 } else {
                     this.$throw((this.$t('app.formpage.valuecheckex') as string));
                 }
@@ -831,7 +831,7 @@ export class EditFormControlBase extends FormControlBase {
         if (!mode || (mode && Object.is(mode, ''))) {
             return;
         }
-        const arg: any = Object.assign(this.viewparams, data);
+        const arg: any = Object.assign(data, Util.deepCopy(this.viewparams));
         const post: Promise<any> = this.service.frontLogic(mode, JSON.parse(JSON.stringify(this.context)), arg, showloading);
         this.ctrlBeginLoading();
         post.then((response: any) => {
@@ -1139,11 +1139,11 @@ export class EditFormControlBase extends FormControlBase {
     public formItemValidate(prop: string, status: boolean, error: string) {
         error = error ? error : '';
         const index = this.errorMessages.findIndex((errorMessage: any) => Object.is(errorMessage.prop, prop));
-        if(status){
+        if (status) {
             if (index != -1) {
-                this.errorMessages.splice(index,1);
+                this.errorMessages.splice(index, 1);
             }
-        }else{
+        } else {
             if (index != -1) {
                 this.errorMessages[index].error = error;
             } else {

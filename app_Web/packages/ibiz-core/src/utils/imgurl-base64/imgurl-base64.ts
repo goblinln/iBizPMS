@@ -40,7 +40,7 @@ export class ImgurlBase64{
                     let blob = new Blob([response.data],{type: 'image/png'});
                     this.blobToBase64(blob).then((res) => {
                         // 转化后的base64
-                        img = ""+res;
+                        img = `${res}`;
                         resolve(img);
                     })
                 } else {

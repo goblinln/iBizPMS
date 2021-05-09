@@ -334,7 +334,6 @@ export class DataViewControlBase extends MDControlBase {
     public onClick($event: any) {
         if (!this.moveflag) {
             this.flag = !this.flag;
-            console.log(this.flag)
         }
         this.moveflag = false;
     }

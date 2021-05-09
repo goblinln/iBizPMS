@@ -204,6 +204,12 @@ export class AppGridBase extends GridControlBase {
         );
     }
 
+    /**
+     * 绘制表格空数据
+     *
+     * @return {*} 
+     * @memberof AppGridBase
+     */
     public renderEmptyData(){
         const langBase = ModelTool.getCtrlLangBase(this.controlInstance);
         let emptyText = this.$t(`${langBase}.nodata`);
