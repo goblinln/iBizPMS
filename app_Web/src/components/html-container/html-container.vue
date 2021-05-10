@@ -1,7 +1,7 @@
 <template>
     <div class="html-outer">
-        <div v-if="imageLoad" class="html-container" v-html="rHtml" ref="outer" @click="handleClick"></div>
-        <div  class="src-canvas">
+        <div class="html-container" v-html="rHtml" ref="outer" @click="handleClick"></div>
+        <div class="src-canvas">
             <el-image-viewer 
                 v-if="showModal"
                 :on-close="()=>{ showModal = false }"
@@ -70,29 +70,20 @@ export default class HtmlContainer extends Vue {
     public viewerList: Array<any> = [];
 
     /**
-     * 图片是否加载完成
-     * 
-     * @type 
-     * @memberof HtmlContainer
-     */
-    public imageLoad: boolean = true;
-
-    /**
      * 监控html变化
      *
      * @memberof HtmlContainer
      */
     @Watch('content', { immediate: true })
-    public watchContent(): void {
+    public async watchContent(): Promise<void> {
         this.srcList = [];
         if (this.content) {
             if (!Object.is(this.content, '')) {
-                this.imageLoad = false;
-                this.rHtml = this.content.replace(
+                let rHtml = this.content.replace(
                     /\{(\d+)\.(bmp|jpg|jpeg|png|tif|gif|pcx|tga|exif|fpx|svg|psd|cdr|pcd|dxf|ufo|eps|ai|raw|WMF|webp)\}/g,
                     `${Environment.ExportFile}/$1`
                 );
-                this.geturlList();
+                this.rHtml = await this.geturlList(rHtml);
                 return;
             }
         }
@@ -104,20 +95,20 @@ export default class HtmlContainer extends Vue {
      * 
      * @memberof HtmlContainer
      */
-    public async geturlList(){
-        let imgs:Array<any>|null = this.rHtml.match(/<img.*?(?:>|\/>)/gi)!=null? this.rHtml.match(/<img.*?(?:>|\/>)/gi):[];
+    public async geturlList(rHtml: string){
+        let imgs:Array<any>|null = rHtml.match(/<img.*?(?:>|\/>)/gi)!=null? rHtml.match(/<img.*?(?:>|\/>)/gi):[];
         if(imgs && imgs.length>0){
              for (let item of imgs) {
                 if(item.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)!=null){
                     let src:any = item.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)[0];
                     src = await ImgurlBase64.getInstance().getImgURLOfBase64(src.substring(5,src.length-1));
                     const image = item.replace(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig, 'src="'+src+'"');
-                    this.rHtml = this.rHtml.replace(/<img.*?(?:>|\/>)/gi, image);
+                    rHtml = rHtml.replace(/<img.*?(?:>|\/>)/gi, image);
                     this.srcList.push(src);
                 }
             }
         }
-        this.imageLoad = true;  
+        return rHtml;
     }
 
     /**

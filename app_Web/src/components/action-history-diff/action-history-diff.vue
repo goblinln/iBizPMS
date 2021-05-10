@@ -5,6 +5,7 @@
 import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
 import { Environment } from '@/environments/environment';
 import ElImageViewer from 'element-ui/packages/image/src/image-viewer.vue';
+import { ImgurlBase64 } from 'ibiz-core';
 
 /**
  * 操作历史记录
@@ -43,14 +44,35 @@ export default class ActionHistoryDiff extends Vue {
      * @memberof ActionHistoryDiff
      */
     @Watch('content', { deep: true, immediate: true })
-    public contentWatch(): void {
+    public async contentWatch(): Promise<void> {
         if (!Object.is(this.content, '')) {
-            this.html = this.content.replace('\n', '<br/>');
-            this.html = this.content.replace(
+            let html = this.content.replace('\n', '<br/>');
+            html = html.replace(
                 /\{(\d+)\.(bmp|jpg|jpeg|png|tif|gif|pcx|tga|exif|fpx|svg|psd|cdr|pcd|dxf|ufo|eps|ai|raw|WMF|webp)\}/g,
-                 `${Environment.BaseUrl}${Environment.ExportFile}/$1`
+                 `${Environment.ExportFile}/$1`
             );
+            this.html = await this.getImgUrlBase64(html);
         }
+    }
+
+    /**
+     * 手动获取图片
+     * 
+     * @memberof ActionHistoryDiff
+     */
+    public async getImgUrlBase64(html: string) {
+        let imgs:Array<any>|null = html.match(/<img.*?(?:>|\/>)/gi)!=null? html.match(/<img.*?(?:>|\/>)/gi):[];
+        if(imgs && imgs.length>0){
+             for (let item of imgs) {
+                if(item.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)!=null){
+                    let src:any = item.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)[0];
+                    src = await ImgurlBase64.getInstance().getImgURLOfBase64(src.substring(5,src.length-1));
+                    const image = item.replace(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig, 'src="'+src+'"');
+                    html = html.replace(/<img.*?(?:>|\/>)/gi, image);
+                }
+            }
+        }
+        return html;
     }
 
 }
