@@ -33,4 +33,6 @@ window.Environment = {
     remoteDynaPath: "/dynamic",
     // 菜单权限模式，可选值：RT(RT模式),RESOURCE(资源模式),MINIX(混合模式),默认MINIX
     menuPermissionMode: 'RESOURCE',
+    // 租户id
+    srfDcSystem:'ae00a204-9369-11eb-b882-00163e06e68c'
 }
