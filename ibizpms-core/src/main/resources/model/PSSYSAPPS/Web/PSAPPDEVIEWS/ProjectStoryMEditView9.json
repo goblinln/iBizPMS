@@ -142,18 +142,18 @@
     "getPSDEGridColumns" : [ {
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
-      "caption" : "ID",
-      "codeName" : "id",
+      "caption" : "项目编号",
+      "codeName" : "projectsn",
       "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "id",
-      "excelCaption" : "ID",
-      "name" : "id",
+      "dataItemName" : "projectsn",
+      "excelCaption" : "项目编号",
+      "name" : "projectsn",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "PROJECTSN",
+        "codeName" : "Projectsn"
       },
-      "width" : 70,
+      "width" : 100,
       "widthUnit" : "PX",
       "enableSort" : true
     }, {
@@ -239,10 +239,10 @@
     } ],
     "getPSDEGridDataItems" : [ {
       "dataType" : 1,
-      "name" : "id",
+      "name" : "projectsn",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "PROJECTSN",
+        "codeName" : "Projectsn"
       }
     }, {
       "dataType" : 25,

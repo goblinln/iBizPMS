@@ -317,14 +317,21 @@
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "name",
       "excelCaption" : "项目名称",
+      "getLinkPSAppView" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainTabExpView.json",
+        "viewType" : "DETABEXPVIEW"
+      },
+      "linkValueItem" : "srfkey",
       "name" : "name",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
         "name" : "NAME",
         "codeName" : "Name"
       },
-      "width" : 200,
-      "widthUnit" : "STAR",
+      "width" : 100,
+      "widthUnit" : "PX",
+      "enableLinkView" : true,
       "enableSort" : true
     }, {
       "align" : "LEFT",

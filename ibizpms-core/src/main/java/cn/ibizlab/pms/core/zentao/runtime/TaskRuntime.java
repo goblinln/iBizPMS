@@ -266,6 +266,8 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return taskService.selectProjectTask(searchContext);
         if (iPSDataQuery.getName().equals("RootTask"))
             return taskService.selectRootTask(searchContext);
+        if (iPSDataQuery.getName().equals("SIMPLE"))
+            return taskService.selectSimple(searchContext);
         if (iPSDataQuery.getName().equals("TaskLinkPlan"))
             return taskService.selectTaskLinkPlan(searchContext);
         if (iPSDataQuery.getName().equals("ThisMonthCompleteTaskChoice"))

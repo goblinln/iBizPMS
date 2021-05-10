@@ -423,6 +423,14 @@ export abstract class TaskBase extends EntityBase implements ITask {
      * 任务编号
      */
     tasksn?: any;
+    /**
+     * 建立人
+     */
+    createman?: any;
+    /**
+     * 更新人
+     */
+    updateman?: any;
 
     /**
      * 重置实体数据

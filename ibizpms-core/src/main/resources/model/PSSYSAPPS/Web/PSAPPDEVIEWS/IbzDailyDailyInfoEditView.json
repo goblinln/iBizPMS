@@ -1602,6 +1602,23 @@
                 "getPSDEGridColumns" : [ {
                   "align" : "LEFT",
                   "cLConvertMode" : "NONE",
+                  "caption" : "任务编号",
+                  "codeName" : "tasksn",
+                  "columnType" : "DEFGRIDCOLUMN",
+                  "dataItemName" : "tasksn",
+                  "excelCaption" : "任务编号",
+                  "name" : "tasksn",
+                  "noPrivDisplayMode" : 1,
+                  "getPSAppDEField" : {
+                    "name" : "TASKSN",
+                    "codeName" : "Tasksn"
+                  },
+                  "width" : 100,
+                  "widthUnit" : "PX",
+                  "enableSort" : true
+                }, {
+                  "align" : "LEFT",
+                  "cLConvertMode" : "NONE",
                   "caption" : "任务名称",
                   "codeName" : "name",
                   "columnType" : "DEFGRIDCOLUMN",
@@ -1765,13 +1782,6 @@
                   },
                   "dataAccessAction" : true
                 }, {
-                  "dataType" : 1,
-                  "name" : "id",
-                  "getPSAppDEField" : {
-                    "name" : "ID",
-                    "codeName" : "Id"
-                  }
-                }, {
                   "dataType" : 25,
                   "name" : "assignedto",
                   "getPSAppDEField" : {
@@ -1889,6 +1899,13 @@
                   "getPSAppDEField" : {
                     "name" : "COLOR",
                     "codeName" : "Color"
+                  }
+                }, {
+                  "dataType" : 1,
+                  "name" : "tasksn",
+                  "getPSAppDEField" : {
+                    "name" : "TASKSN",
+                    "codeName" : "Tasksn"
                   }
                 }, {
                   "format" : "YYYY-MM-DD",
@@ -2439,6 +2456,23 @@
                 "getPSDEGridColumns" : [ {
                   "align" : "LEFT",
                   "cLConvertMode" : "NONE",
+                  "caption" : "任务编号",
+                  "codeName" : "tasksn",
+                  "columnType" : "DEFGRIDCOLUMN",
+                  "dataItemName" : "tasksn",
+                  "excelCaption" : "任务编号",
+                  "name" : "tasksn",
+                  "noPrivDisplayMode" : 1,
+                  "getPSAppDEField" : {
+                    "name" : "TASKSN",
+                    "codeName" : "Tasksn"
+                  },
+                  "width" : 100,
+                  "widthUnit" : "PX",
+                  "enableSort" : true
+                }, {
+                  "align" : "LEFT",
+                  "cLConvertMode" : "NONE",
                   "caption" : "任务名称",
                   "codeName" : "name",
                   "columnType" : "DEFGRIDCOLUMN",
@@ -2585,13 +2619,6 @@
                   },
                   "dataAccessAction" : true
                 }, {
-                  "dataType" : 1,
-                  "name" : "id",
-                  "getPSAppDEField" : {
-                    "name" : "ID",
-                    "codeName" : "Id"
-                  }
-                }, {
                   "dataType" : 25,
                   "name" : "assignedto",
                   "getPSAppDEField" : {
@@ -2709,6 +2736,13 @@
                   "getPSAppDEField" : {
                     "name" : "COLOR",
                     "codeName" : "Color"
+                  }
+                }, {
+                  "dataType" : 1,
+                  "name" : "tasksn",
+                  "getPSAppDEField" : {
+                    "name" : "TASKSN",
+                    "codeName" : "Tasksn"
                   }
                 }, {
                   "format" : "YYYY-MM-DD",

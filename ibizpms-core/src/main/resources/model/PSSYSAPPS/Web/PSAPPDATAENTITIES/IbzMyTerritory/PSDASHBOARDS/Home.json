@@ -3284,6 +3284,23 @@
               "getPSDEGridColumns" : [ {
                 "align" : "LEFT",
                 "cLConvertMode" : "NONE",
+                "caption" : "待办编号",
+                "codeName" : "todosn",
+                "columnType" : "DEFGRIDCOLUMN",
+                "dataItemName" : "todosn",
+                "excelCaption" : "待办编号",
+                "name" : "todosn",
+                "noPrivDisplayMode" : 1,
+                "getPSAppDEField" : {
+                  "name" : "TODOSN",
+                  "codeName" : "Todosn"
+                },
+                "width" : 100,
+                "widthUnit" : "PX",
+                "enableSort" : false
+              }, {
+                "align" : "LEFT",
+                "cLConvertMode" : "NONE",
                 "caption" : "日期",
                 "codeName" : "date1",
                 "columnType" : "DEFGRIDCOLUMN",
@@ -3366,18 +3383,18 @@
                 "enableSort" : false
               } ],
               "getPSDEGridDataItems" : [ {
-                "dataType" : 1,
-                "name" : "id",
-                "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
-                }
-              }, {
                 "dataType" : 9,
                 "name" : "pri",
                 "getPSAppDEField" : {
                   "name" : "PRI",
                   "codeName" : "Pri"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "todosn",
+                "getPSAppDEField" : {
+                  "name" : "TODOSN",
+                  "codeName" : "Todosn"
                 }
               }, {
                 "dataType" : 25,
@@ -4625,18 +4642,18 @@
               "getPSDEGridColumns" : [ {
                 "align" : "LEFT",
                 "cLConvertMode" : "NONE",
-                "caption" : "编号",
-                "codeName" : "id",
+                "caption" : "需求编号",
+                "codeName" : "storysn",
                 "columnType" : "DEFGRIDCOLUMN",
-                "dataItemName" : "id",
-                "excelCaption" : "编号",
-                "name" : "id",
+                "dataItemName" : "storysn",
+                "excelCaption" : "需求编号",
+                "name" : "storysn",
                 "noPrivDisplayMode" : 1,
                 "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
+                  "name" : "STORYSN",
+                  "codeName" : "Storysn"
                 },
-                "width" : 80,
+                "width" : 100,
                 "widthUnit" : "PX",
                 "enableSort" : true
               }, {
@@ -4729,6 +4746,13 @@
                 }
               }, {
                 "dataType" : 1,
+                "name" : "storysn",
+                "getPSAppDEField" : {
+                  "name" : "STORYSN",
+                  "codeName" : "Storysn"
+                }
+              }, {
+                "dataType" : 1,
                 "name" : "parent",
                 "getPSAppDEField" : {
                   "name" : "PARENT",
@@ -4766,13 +4790,6 @@
                   "codeName" : "Id"
                 },
                 "dataAccessAction" : true
-              }, {
-                "dataType" : 1,
-                "name" : "id",
-                "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
-                }
               }, {
                 "dataType" : 1,
                 "name" : "product",
@@ -5194,18 +5211,18 @@
               "getPSDEGridColumns" : [ {
                 "align" : "LEFT",
                 "cLConvertMode" : "NONE",
-                "caption" : "编号",
-                "codeName" : "id",
+                "caption" : "任务编号",
+                "codeName" : "tasksn",
                 "columnType" : "DEFGRIDCOLUMN",
-                "dataItemName" : "id",
-                "excelCaption" : "编号",
-                "name" : "id",
+                "dataItemName" : "tasksn",
+                "excelCaption" : "任务编号",
+                "name" : "tasksn",
                 "noPrivDisplayMode" : 1,
                 "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
+                  "name" : "TASKSN",
+                  "codeName" : "Tasksn"
                 },
-                "width" : 80,
+                "width" : 100,
                 "widthUnit" : "PX",
                 "enableSort" : true
               }, {
@@ -5362,13 +5379,6 @@
                 }
               }, {
                 "dataType" : 1,
-                "name" : "id",
-                "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
-                }
-              }, {
-                "dataType" : 1,
                 "name" : "story",
                 "getPSAppDEField" : {
                   "name" : "STORY",
@@ -5429,6 +5439,13 @@
                 "getPSAppDEField" : {
                   "name" : "ISFAVORITES",
                   "codeName" : "Isfavorites"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "tasksn",
+                "getPSAppDEField" : {
+                  "name" : "TASKSN",
+                  "codeName" : "Tasksn"
                 }
               }, {
                 "format" : "YYYY-MM-DD",

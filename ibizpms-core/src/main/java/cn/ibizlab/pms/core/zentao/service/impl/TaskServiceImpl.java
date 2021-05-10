@@ -950,6 +950,9 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     public List<Task> selectRootTask(TaskSearchContext context){
         return baseMapper.selectRootTask(context, context.getSelectCond());
     }
+    public List<Task> selectSimple(TaskSearchContext context){
+        return baseMapper.selectSimple(context, context.getSelectCond());
+    }
     public List<Task> selectTaskLinkPlan(TaskSearchContext context){
         return baseMapper.selectTaskLinkPlan(context, context.getSelectCond());
     }

@@ -95,6 +95,8 @@ function getLocaleResourceBase(){
 		'parent': commonLogic.appcommonhandle("父任务",null),
 		'frombug': commonLogic.appcommonhandle("来源Bug",null),
 		'tasksn': commonLogic.appcommonhandle("任务编号",null),
+		'createman': commonLogic.appcommonhandle("建立人",null),
+		'updateman': commonLogic.appcommonhandle("更新人",null),
 	},
 		views: {
 			'subtasknewview': {

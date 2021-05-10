@@ -53,7 +53,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__CREATE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -70,7 +70,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__CREATE"
+      "id" : "CREATE"
     },
     "userCat" : "CAT1",
     "userTag4" : "create",
@@ -85,7 +85,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__CREATE"
+      "id" : "CREATE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -99,7 +99,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__CREATE"
+      "id" : "CREATE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -199,7 +199,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__READ"
+      "id" : "READ"
     },
     "builtinMethod" : true
   }, {
@@ -212,7 +212,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__READ"
+      "id" : "READ"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -226,7 +226,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__READ"
+      "id" : "READ"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -240,7 +240,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__CREATE"
+      "id" : "CREATE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -254,7 +254,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__CREATE"
+      "id" : "CREATE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -384,7 +384,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__READ"
+      "id" : "READ"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -398,7 +398,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__READ"
+      "id" : "READ"
     },
     "builtinMethod" : false
   }, {
@@ -411,7 +411,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__READ"
+      "id" : "READ"
     },
     "builtinMethod" : false
   }, {
@@ -428,7 +428,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__READ"
+      "id" : "READ"
     },
     "builtinMethod" : false
   }, {
@@ -555,12 +555,12 @@
     "maxRowCount" : 1000,
     "name" : "数据导出",
     "getPSDEDataExportItems" : [ {
-      "caption" : "ID",
+      "caption" : "任务编号",
       "format" : "%1$s",
-      "name" : "id",
+      "name" : "tasksn",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "TASKSN",
+        "codeName" : "Tasksn"
       }
     }, {
       "caption" : "P",
@@ -1588,6 +1588,18 @@
     "logicName" : "任务编号",
     "name" : "TASKSN",
     "stdDataType" : 1
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
   } ],
   "getAllPSAppDELogics" : [ {
     "codeName" : "GetUserConcat",
@@ -1672,7 +1684,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__CREATE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1706,7 +1718,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__CREATE"
+      "id" : "CREATE"
     },
     "userCat" : "CAT1",
     "userTag4" : "create",
@@ -1721,7 +1733,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__CREATE"
+      "id" : "CREATE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -1735,7 +1747,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__CREATE"
+      "id" : "CREATE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -1835,7 +1847,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__READ"
+      "id" : "READ"
     },
     "builtinMethod" : true
   }, {
@@ -1848,7 +1860,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__READ"
+      "id" : "READ"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -1862,7 +1874,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__READ"
+      "id" : "READ"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -1876,7 +1888,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__CREATE"
+      "id" : "CREATE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -1890,7 +1902,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__CREATE"
+      "id" : "CREATE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -2020,7 +2032,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__READ"
+      "id" : "READ"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -2034,7 +2046,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__READ"
+      "id" : "READ"
     },
     "builtinMethod" : false
   }, {
@@ -2047,7 +2059,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__READ"
+      "id" : "READ"
     },
     "builtinMethod" : false
   }, {
@@ -2064,7 +2076,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProject__READ"
+      "id" : "READ"
     },
     "builtinMethod" : false
   }, {
@@ -22159,6 +22171,12 @@
     "name" : "CREATE",
     "id" : "ZTProject__CREATE"
   }, {
+    "logicName" : "建立",
+    "name" : "CREATE"
+  }, {
+    "logicName" : "删除",
+    "name" : "DELETE"
+  }, {
     "logicName" : "删除",
     "mapPSDEOPPrivName" : "DELETE",
     "getMapPSDER" : {
@@ -22185,6 +22203,12 @@
     },
     "name" : "READ",
     "id" : "ZTProject__READ"
+  }, {
+    "logicName" : "读取",
+    "name" : "READ"
+  }, {
+    "logicName" : "更新",
+    "name" : "UPDATE"
   }, {
     "logicName" : "更新",
     "mapPSDEOPPrivName" : "UPDATE",

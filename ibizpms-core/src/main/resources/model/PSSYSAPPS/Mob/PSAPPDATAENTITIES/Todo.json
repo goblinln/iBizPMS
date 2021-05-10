@@ -253,12 +253,12 @@
     "maxRowCount" : 1000,
     "name" : "数据导出",
     "getPSDEDataExportItems" : [ {
-      "caption" : "编号",
+      "caption" : "待办编号",
       "format" : "%1$s",
-      "name" : "id",
+      "name" : "todosn",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "TODOSN",
+        "codeName" : "Todosn"
       }
     }, {
       "caption" : "日期",

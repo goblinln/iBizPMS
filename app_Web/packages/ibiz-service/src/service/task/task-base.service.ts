@@ -300,6 +300,10 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         return this.condCache.get('rootTask');
     }
 
+    protected getSimpleCond() {
+        return this.condCache.get('simple');
+    }
+
     protected getTaskLinkPlanCond() {
         if (!this.condCache.has('taskLinkPlan')) {
             const strCond: any[] = ['AND', ['OR', ['NOTEQ', 'PLAN',{ type: 'WEBCONTEXT', value: 'productplan'}], ['ISNULL', 'PLAN','']]];

@@ -228,6 +228,23 @@
     "getPSDEGridColumns" : [ {
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
+      "caption" : "待办编号",
+      "codeName" : "todosn",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "todosn",
+      "excelCaption" : "待办编号",
+      "name" : "todosn",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "TODOSN",
+        "codeName" : "Todosn"
+      },
+      "width" : 100,
+      "widthUnit" : "PX",
+      "enableSort" : false
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
       "caption" : "日期",
       "codeName" : "date1",
       "columnType" : "DEFGRIDCOLUMN",
@@ -310,18 +327,18 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
-      "dataType" : 1,
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
       "dataType" : 9,
       "name" : "pri",
       "getPSAppDEField" : {
         "name" : "PRI",
         "codeName" : "Pri"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "todosn",
+      "getPSAppDEField" : {
+        "name" : "TODOSN",
+        "codeName" : "Todosn"
       }
     }, {
       "dataType" : 25,

@@ -5649,18 +5649,18 @@
                         "getPSDEGridColumns" : [ {
                           "align" : "LEFT",
                           "cLConvertMode" : "NONE",
-                          "caption" : "编号",
-                          "codeName" : "id",
+                          "caption" : "任务编号",
+                          "codeName" : "tasksn",
                           "columnType" : "DEFGRIDCOLUMN",
-                          "dataItemName" : "id",
-                          "excelCaption" : "编号",
-                          "name" : "id",
+                          "dataItemName" : "tasksn",
+                          "excelCaption" : "任务编号",
+                          "name" : "tasksn",
                           "noPrivDisplayMode" : 1,
                           "getPSAppDEField" : {
-                            "name" : "ID",
-                            "codeName" : "Id"
+                            "name" : "TASKSN",
+                            "codeName" : "Tasksn"
                           },
-                          "width" : 80,
+                          "width" : 100,
                           "widthUnit" : "PX",
                           "enableSort" : true
                         }, {
@@ -5713,13 +5713,6 @@
                           "enableSort" : true
                         } ],
                         "getPSDEGridDataItems" : [ {
-                          "dataType" : 1,
-                          "name" : "id",
-                          "getPSAppDEField" : {
-                            "name" : "ID",
-                            "codeName" : "Id"
-                          }
-                        }, {
                           "dataType" : 1,
                           "name" : "story",
                           "getPSAppDEField" : {
@@ -5774,6 +5767,13 @@
                           "getPSAppDEField" : {
                             "name" : "PROJECTNAME",
                             "codeName" : "ProjectName"
+                          }
+                        }, {
+                          "dataType" : 1,
+                          "name" : "tasksn",
+                          "getPSAppDEField" : {
+                            "name" : "TASKSN",
+                            "codeName" : "Tasksn"
                           }
                         }, {
                           "dataType" : 25,

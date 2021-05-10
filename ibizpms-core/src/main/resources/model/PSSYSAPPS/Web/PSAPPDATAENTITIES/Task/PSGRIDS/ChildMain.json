@@ -285,18 +285,18 @@
   "getPSDEGridColumns" : [ {
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
-    "caption" : "ID",
-    "codeName" : "id",
+    "caption" : "任务编号",
+    "codeName" : "tasksn",
     "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "id",
-    "excelCaption" : "ID",
-    "name" : "id",
+    "dataItemName" : "tasksn",
+    "excelCaption" : "任务编号",
+    "name" : "tasksn",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "TASKSN",
+      "codeName" : "Tasksn"
     },
-    "width" : 150,
+    "width" : 100,
     "widthUnit" : "PX",
     "enableSort" : true
   }, {
@@ -1130,13 +1130,6 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 1,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
     "dataType" : 25,
     "name" : "assignedto",
     "getPSAppDEField" : {
@@ -1254,6 +1247,13 @@
     "getPSAppDEField" : {
       "name" : "DELAY",
       "codeName" : "Delay"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "tasksn",
+    "getPSAppDEField" : {
+      "name" : "TASKSN",
+      "codeName" : "Tasksn"
     }
   }, {
     "format" : "YYYY-MM-DD",

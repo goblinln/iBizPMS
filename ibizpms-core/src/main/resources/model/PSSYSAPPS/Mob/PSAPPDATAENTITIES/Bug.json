@@ -438,12 +438,12 @@
     "maxRowCount" : 1000,
     "name" : "数据导出",
     "getPSDEDataExportItems" : [ {
-      "caption" : "ID",
+      "caption" : "BUG编号",
       "format" : "%1$s",
-      "name" : "id",
+      "name" : "bugsn",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "BUGSN",
+        "codeName" : "Bugsn"
       }
     }, {
       "caption" : "P",

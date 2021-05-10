@@ -91,4 +91,6 @@ export default [
     'parent',
     'frombug',
     'tasksn',
+    'createman',
+    'updateman',
 ];

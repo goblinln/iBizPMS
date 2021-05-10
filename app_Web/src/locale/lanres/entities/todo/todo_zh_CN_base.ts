@@ -345,6 +345,7 @@ function getLocaleResourceBase(){
 		},
 		myupcoming_grid: {
 			columns: {
+				'todosn': commonLogic.appcommonhandle("待办编号",null),
 				'date1': commonLogic.appcommonhandle("日期",null),
 				'begin': commonLogic.appcommonhandle("开始",null),
 				'pri': commonLogic.appcommonhandle("优先级",null),
@@ -356,7 +357,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("编号",null),
+				'todosn': commonLogic.appcommonhandle("待办编号",null),
 				'date1': commonLogic.appcommonhandle("日期",null),
 				'type': commonLogic.appcommonhandle("类型",null),
 				'pri': commonLogic.appcommonhandle("优先级",null),
@@ -368,7 +369,7 @@ function getLocaleResourceBase(){
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
-				'id': commonLogic.appcommonhandle("编号",null),
+				'todosn': commonLogic.appcommonhandle("待办编号",null),
 				'date1': commonLogic.appcommonhandle("日期",null),
 				'type': commonLogic.appcommonhandle("类型",null),
 				'pri': commonLogic.appcommonhandle("优先级",null),

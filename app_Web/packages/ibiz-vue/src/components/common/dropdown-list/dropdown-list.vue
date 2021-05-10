@@ -73,7 +73,7 @@ export default class DropDownList extends Vue {
         try {
             this.readyValue();
             // 代码表集合中不存在改选项，重新准备集合
-            if (this.value && !this.items.find((item: any) => Object.is(this.value, item.value))) {
+            if ((this.value == 0 || this.value) && !this.items.find((item: any) => Object.is(this.value, item.value))) {
                 this.loadData();
             }
         } catch (error) {

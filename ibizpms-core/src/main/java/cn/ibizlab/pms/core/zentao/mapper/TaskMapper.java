@@ -49,6 +49,7 @@ public interface TaskMapper extends BaseMapper<Task> {
     List<Task> selectProjectAppTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectProjectTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectRootTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectSimple(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectTaskLinkPlan(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectThisMonthCompleteTaskChoice(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectThisWeekCompleteTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
