@@ -351,7 +351,20 @@ export class MDControlBase extends MainControlBase {
         }
     }
 
-    
+    /**
+     * 绘制无数据提示信息
+     *
+     * @return {*} 
+     * @memberof MDControlBase
+     */
+    public renderEmptyDataTip(){
+        return <div class="empty-data-tip">
+            <img class="tip-img" src="/assets/img/empty-data.png" />
+            <span class="tip-text">未找到相关数据</span>
+            {this.renderQuickToolbar()}
+        </div>
+    }
+
     /**
      * 绘制快速工具栏
      *

@@ -43,13 +43,27 @@ export class AppDefaultViewLayout extends Vue {
     public viewIsshowToolbar: boolean = ModelTool.findPSControlByType("TOOLBAR", this.viewInstance.getPSControls()) ? true : false;
 
     /**
+     * 是否显示标题栏
+     *
+     * @readonly
+     * @memberof AppDefaultViewLayout
+     */
+    get showCaption(){
+        if(this.viewInstance && this.$parent){
+            return this.viewInstance.showCaptionBar && !(this.$parent as any).noViewCaption
+        }else{
+            return true;
+        }
+    }
+
+    /**
      * 绘制头部内容
      * 
      * @memberof AppDefaultViewLayout
      */
     public renderViewHeader(): any {
         return [
-            this.viewInstance.showCaptionBar ? <span class='caption-info'>{this.$slots.captionInfo ? this.$slots.captionInfo : this.viewInstance.caption}</span> : null,
+            this.showCaption ? <span class='caption-info'>{this.$slots.captionInfo ? this.$slots.captionInfo : this.viewInstance.caption}</span> : null,
             this.viewIsshowToolbar ? <div class='toolbar-container'>
                 {this.$slots.toolbar}
             </div> : null,
@@ -64,12 +78,12 @@ export class AppDefaultViewLayout extends Vue {
     public renderContent() {
         let cardClass = {
             'view-card': true,
-            'view-no-caption': !this.viewInstance.showCaptionBar,
+            'view-no-caption': !this.showCaption,
             'view-no-toolbar': !this.viewIsshowToolbar,
         };
         return (
             <card class={cardClass} disHover={true} bordered={false}>
-                {(this.viewInstance.showCaptionBar || this.viewIsshowToolbar) && (
+                {(this.showCaption || this.viewIsshowToolbar) && (
                     <div slot='title' class='header-container' key='view-header'>
                         {this.renderViewHeader()}
                     </div>

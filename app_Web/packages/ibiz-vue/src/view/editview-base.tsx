@@ -1,4 +1,4 @@
-import { Subject } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 import { DataPanelEngine, EditViewEngine, ModelTool, ViewState } from 'ibiz-core';
 import { MainViewBase } from './mainview-base';
 import { IPSAppDEEditView, IPSDEForm } from '@ibiz/dynamic-model-api';
@@ -66,6 +66,15 @@ export class EditViewBase extends MainViewBase {
     public panelState?: Subject<ViewState>;
 
     /**
+     * 状态事件
+     *
+     * @public
+     * @type {(Subscription | undefined)}
+     * @memberof ViewBase
+     */
+    public panelStateStateEvent: Subscription | undefined;
+
+    /**
      * 监听视图静态参数变化
      * 
      * @memberof EditViewBase 
@@ -85,7 +94,7 @@ export class EditViewBase extends MainViewBase {
     public viewInit() {
         super.viewInit();
         if (this.panelState) {
-            this.panelState.subscribe(({ tag, action, data }: any) => {
+            this.panelStateStateEvent = this.panelState.subscribe(({ tag, action, data }: any) => {
                 if (!Object.is(tag, this.viewInstance.name)) {
                     return;
                 }
@@ -184,6 +193,18 @@ export class EditViewBase extends MainViewBase {
         }).catch((error: any) => {
             console.warn("将抄送任务标记为已读失败");
         })
+    }
+    
+    /**
+     *  视图销毁
+     *
+     * @memberof EditViewBase
+     */
+     public viewDestroyed() {
+        super.viewDestroyed();
+        if (this.panelStateStateEvent) {
+            this.panelStateStateEvent.unsubscribe();
+        }
     }
 
 }

@@ -199,27 +199,8 @@ export class AppGridBase extends GridControlBase {
                 ) : null,
                 this.renderGridColumns(h),
                 this.renderEmptyColumn ? <el-table-column></el-table-column> : null,
-                this.renderEmptyData(),
             ],
         );
-    }
-
-    /**
-     * 绘制表格空数据
-     *
-     * @return {*} 
-     * @memberof AppGridBase
-     */
-    public renderEmptyData(){
-        const langBase = ModelTool.getCtrlLangBase(this.controlInstance);
-        let emptyText = this.$t(`${langBase}.nodata`);
-        if(Util.isEmpty(emptyText)){
-            emptyText = '表格无数据'
-        }
-        return <template slot="empty">
-            <div>{emptyText}</div>
-            {this.renderQuickToolbar()}
-        </template>
     }
 
     /**
@@ -530,7 +511,7 @@ export class AppGridBase extends GridControlBase {
         return (
             <div class={{ ...controlClassNames, grid: true }} style='height:100%'>
                 <i-form style='height:100%;display:flex;flex-direction: column;justify-content: space-between'>
-                    {this.renderGridContent(h)}
+                    {this.items?.length > 0 ? this.renderGridContent(h) : this.renderEmptyDataTip()}
                     {this.controlInstance?.enablePagingBar ? this.renderPagingBar(h) : ''}
                 </i-form>
             </div>

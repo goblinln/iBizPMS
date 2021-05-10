@@ -239,7 +239,7 @@ export class MainViewBase extends ViewBase {
      */
     public renderViewHeader() {
         return [
-            this.viewInstance?.showCaptionBar ? <span class='caption-info'>{this.viewInstance?.title}</span> : null,
+            (this.viewInstance?.showCaptionBar && !this.noViewCaption ) ? <span class='caption-info'>{this.viewInstance?.title}</span> : null,
         ];
     }
 

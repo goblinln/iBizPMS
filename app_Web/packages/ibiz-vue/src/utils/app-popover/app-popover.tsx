@@ -170,7 +170,7 @@ export class AppPopover {
         this.openPopover(event, (h: CreateElement) => {
             return h(view.viewname, {
                 props: {
-                    staticProps: { viewUsage: 4, viewDefaultUsage: false },
+                    staticProps: { viewDefaultUsage: false, noViewCaption: true},
                     dynamicProps: { viewdata: JSON.stringify(context), viewparam: JSON.stringify(data) }
                 },
                 on: {

@@ -71,13 +71,27 @@ export class AppStyle2DefaultLayout extends Vue {
     }
 
     /**
+     * 是否显示标题栏
+     *
+     * @readonly
+     * @memberof AppDefaultViewLayout
+     */
+    get showCaption(){
+        if(this.viewInstance && this.$parent){
+            return this.viewInstance.showCaptionBar && !(this.$parent as any).noViewCaption
+        }else{
+            return true;
+        }
+    }
+
+    /**
      * 绘制视图标题
      *  
      * @memberof AppStyle2DefaultLayout
      */
     public renderViewCaption() {
-        const { showCaptionBar, viewSysImage, caption } = this.viewInstance;
-        if(showCaptionBar) {
+        const { viewSysImage, caption } = this.viewInstance;
+        if(this.showCaption) {
             return (
                 <div slot="title">
                     {viewSysImage?.cssClass && viewSysImage.cssClass != '' ? 

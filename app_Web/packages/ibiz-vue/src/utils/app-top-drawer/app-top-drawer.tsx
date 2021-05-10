@@ -281,7 +281,7 @@ export class AppTopDrawer extends Vue {
         return this.showViewList.map((view: any, i: number) => {
             try {
                 const props: any = {
-                    staticProps: {...view.staticProps, viewDefaultUsage:false},
+                    staticProps: {...view.staticProps, viewDefaultUsage:false, noViewCaption: true},
                     dynamicProps: { ...view.dynamicProps }
                 };
                 const style: any = { 'z-index': i + 1 , 'height' : '100%' };

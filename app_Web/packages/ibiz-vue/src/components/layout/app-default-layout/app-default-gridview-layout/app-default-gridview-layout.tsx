@@ -13,7 +13,7 @@ export class AppDefaultGridViewLayout extends AppDefaultViewLayout{
     public renderViewHeader() {
         return [
             <div class="caption-container">
-                {this.viewInstance.showCaptionBar ? <span class='caption-info'>{this.$slots.captionInfo ? this.$slots.captionInfo : this.viewInstance.caption}</span> : null}
+                {this.showCaption ? <span class='caption-info'>{this.$slots.captionInfo ? this.$slots.captionInfo : this.viewInstance.caption}</span> : null}
                 {this.$slots.quickGroupSearch}
             </div>,
             <div class="bar-container">
@@ -29,10 +29,10 @@ export class AppDefaultGridViewLayout extends AppDefaultViewLayout{
      * @memberof AppDefaultGridViewLayout
      */
     public renderContent() {
-        const noHeader = !this.viewInstance.showCaptionBar && !this.viewIsshowToolbar && !this.$slots.quickGroupSearch && !this.$slots.quickSearch
+        const noHeader = !this.showCaption && !this.viewIsshowToolbar && !this.$slots.quickGroupSearch && !this.$slots.quickSearch
         let cardClass = {
             'view-card': true,
-            'view-no-caption': !this.viewInstance.showCaptionBar,
+            'view-no-caption': !this.showCaption,
             'view-no-toolbar': !this.viewIsshowToolbar,
             'view-no-header': noHeader
         };

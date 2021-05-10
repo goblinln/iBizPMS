@@ -4,7 +4,8 @@
             {{'自定义门户'}}
         </p>
         <div class="design-toolbar" slot="extra">
-            <i-button @click="click">{{ '保存' }}</i-button> 
+            <i-button @click="click('reset')">恢复默认</i-button>
+            <i-button @click="click('save')">保存</i-button> 
         </div>
         <div class="design-container">
             <app-dashboard-design :viewState="viewState" :context="context" :customModel="customModel" :viewparams="viewparams" :utilServiceName="utilServiceName" @save="onSaved"></app-dashboard-design>
@@ -224,8 +225,8 @@ export default class AppPortalDesign extends Vue {
      *
      * @memberof AppPortalDesign
      */
-    public click() {
-        this.viewState.next({ tag: "", action: "save", data: {} })
+    public click(action:string) {
+        this.viewState.next({ tag: '', action: action, data: {} });
     }
 
      /**

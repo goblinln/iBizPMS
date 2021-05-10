@@ -178,7 +178,7 @@ export class Interceptors {
     private doNoLogin(data: any = {}): void {
         this.clearAppData();
         if (Environment.loginUrl) {
-            window.location.href = `${Environment.loginUrl}?redirect=${this.router.currentRoute.fullPath}`;
+            window.location.href = `${Environment.loginUrl}?redirect=${window.location.href}`;
         } else {
             if (Object.is(this.router.currentRoute.name, 'login')) {
                 return;

@@ -14,7 +14,7 @@ export class AppStyle2DeRedirectViewLayout extends AppStyle2DefaultLayout {
     public renderContent() {
         let cardClass = {
             'view-card': true,
-            'view-no-caption': !this.viewInstance.showCaptionBar,
+            'view-no-caption': !this.showCaption,
             'view-no-toolbar': !this.viewInstance.viewIsshowToolbar,
         };
         return (

@@ -97,7 +97,7 @@ export class AppListBase extends ListControlBase {
         return this.batchToolbarInstance
             ? <div style="overflow:auto;height: 100%;">
                 <div class={listClassName} style='height:100%;'>
-                    {this.items.length > 0 ? <div style="height:100%;">{this.renderHaveItems()}</div> : <div>{this.renderNoItems()}</div>}
+                    {this.items.length > 0 ? <div style="height:100%;">{this.renderHaveItems()}</div> : this.renderEmptyDataTip()}
                     {this.viewStyle == "DEFAULT" ? <el-backtop target=".content-container .app-list"></el-backtop> : null}
                 </div>
                 {this.batchToolbarInstance && (this.selections.length > 0 ?
@@ -107,7 +107,7 @@ export class AppListBase extends ListControlBase {
                 )}
             </div>
             : <div class={listClassName} style='height:100%;'>
-                {this.items.length > 0 ? <div style="height:100%;">{this.renderHaveItems()}</div> : <div style="height:100%;">{this.renderNoItems()}</div>}
+                {this.items.length > 0 ? <div style="height:100%;">{this.renderHaveItems()}</div> : this.renderEmptyDataTip()}
                 {this.viewStyle == "DEFAULT" ? <el-backtop target=".content-container .app-list"></el-backtop> : null}
             </div>
     }
@@ -153,19 +153,6 @@ export class AppListBase extends ListControlBase {
             let listItem: any = this.controlInstance.getPSDEListItems() && (this.controlInstance.getPSDEListItems() as any)?.length > 0 ? (this.controlInstance.getPSDEListItems() as any)[index] : null;
             return this.controlInstance.enableGroup ? this.renderHaveGroup(item, listItem) : this.renderNoGroup(item, listItem);
         })
-    }
-
-    /**
-     * 绘制无items的情况
-     *
-     * @returns {*}
-     * @memberof AppListBase
-     */
-    public renderNoItems() {
-        return [
-            <div class="empty-text">列表无数据</div>,
-            this.renderQuickToolbar()
-        ];
     }
 
     /**

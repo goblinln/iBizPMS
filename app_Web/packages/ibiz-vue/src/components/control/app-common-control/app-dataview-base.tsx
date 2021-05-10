@@ -115,7 +115,7 @@ export class AppDataViewBase extends DataViewControlBase {
                     {this.renderDataViewContent(h)}
                     {this.renderBatchToolbar()}
                 </row>
-                {this.renderQuickToolbar()}
+                {this.renderEmptyDataTip()}
                 <el-backtop target=".content-container .app-data-view"></el-backtop> 
             </div>
         );

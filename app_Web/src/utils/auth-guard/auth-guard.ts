@@ -251,7 +251,7 @@ export class AuthGuard {
     public doNoLogin(router: any, message: string) {
         this.clearAppData(router.app.$store);
         if (Environment.loginUrl) {
-            window.location.href = `${Environment.loginUrl}?redirect=${router.currentRoute.fullPath}`;
+            window.location.href = `${Environment.loginUrl}?redirect=${window.location.href}`;
         } else {
             if (Object.is(router.currentRoute.name, 'login')) {
                 ErrorUtil.errorHandler(message);

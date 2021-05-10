@@ -1061,13 +1061,10 @@ export class DataViewControlBase extends MDControlBase {
      *
      * @memberof DataViewControlBase
      */
-    public renderQuickToolbar() {
+    public renderEmptyDataTip() {
         return (
             <div v-show={this.items.length == 0} class='app-data-empty' style={{height: this.hasSortBar ? "calc(100% - 42px)" : "100%"}}>
-                <span>
-                    <div class="empty-text">无数据</div>
-                    {super.renderQuickToolbar()}
-                </span>
+                {super.renderEmptyDataTip()}
             </div>
         );
     }

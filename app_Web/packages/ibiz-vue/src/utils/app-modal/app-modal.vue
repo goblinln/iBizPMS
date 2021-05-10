@@ -15,7 +15,7 @@
             :is="viewname"
             class="viewcontainer2"
             :dynamicProps="{viewdata: JSON.stringify(viewdata) , viewparam:JSON.stringify(viewparams)}"
-            :staticProps="{viewDefaultUsage: false, viewModelData: view.viewModelData}"
+            :staticProps="{viewDefaultUsage: false, viewModelData: view.viewModelData, noViewCaption: true}"
             @viewdataschange="dataChange($event)"
             @viewdatasactivated="viewDatasActivated($event)"
             @close="close($event)"

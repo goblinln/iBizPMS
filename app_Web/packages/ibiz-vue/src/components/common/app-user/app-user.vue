@@ -110,7 +110,7 @@ export default class AppUser extends Vue {
             if (response && response.status === 200) {
                 this.clearAppData();
                 if (Environment.loginUrl) {
-                    window.location.href = `${Environment.loginUrl}`;
+                    window.location.href = `${Environment.loginUrl}?redirect=${window.location.href}`;
                 } else {
                     this.$router.push({ name: 'login' });
                 }

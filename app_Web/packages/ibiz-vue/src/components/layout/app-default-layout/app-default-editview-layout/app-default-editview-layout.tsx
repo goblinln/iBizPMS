@@ -16,14 +16,14 @@ export class AppDefaultEditViewLayout extends AppDefaultViewLayout {
                 this.viewIsshowToolbar ? [<div class="toptoolbar">{this.$slots.toolbar}</div>, <divider class="toptoolbar-divider" />] : null,
                 <div class='header-info-container'>
                     {
-                        this.viewInstance.showCaptionBar ? <span class='caption-info'>{this.$slots.captionInfo ? this.$slots.captionInfo : this.viewInstance.caption}</span> : null
+                        this.showCaption ? <span class='caption-info'>{this.$slots.captionInfo ? this.$slots.captionInfo : this.viewInstance.caption}</span> : null
                     }
                     <div class='dataInfo-container'>{this.$slots.datapanel}</div>
                 </div>,
             ]
         } else {
             return [
-                this.viewInstance.showCaptionBar ? <span class='caption-info'>{this.$slots.captionInfo ? this.$slots.captionInfo : this.viewInstance.caption}</span> : null,
+                this.showCaption ? <span class='caption-info'>{this.$slots.captionInfo ? this.$slots.captionInfo : this.viewInstance.caption}</span> : null,
                 this.viewIsshowToolbar ? <div class='toolbar-container'>
                     {this.$slots.toolbar}
                 </div> : null,
@@ -40,12 +40,12 @@ export class AppDefaultEditViewLayout extends AppDefaultViewLayout {
         let cardClass = {
             'view-card': true,
             'view-card2': this.$slots.datapanel ? true : false,
-            'view-no-caption': !this.viewInstance.showCaptionBar,
+            'view-no-caption': !this.showCaption,
             'view-no-toolbar': !this.viewIsshowToolbar,
         };
         return (
             <card class={cardClass} disHover={true} bordered={false}>
-                {(this.viewInstance.showCaptionBar || this.viewIsshowToolbar) && (
+                {(this.showCaption || this.viewIsshowToolbar) && (
                     <div slot='title' class='header-container' key='view-header'>
                         {this.renderViewHeader()}
                     </div>

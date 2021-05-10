@@ -57,6 +57,13 @@ export class ViewBase extends Vue {
     public viewDefaultUsage!: boolean;
 
     /**
+     * 是否禁用视图标题（不显示标题：true）
+     *
+     * @memberof ViewBase
+     */
+    public noViewCaption = false;
+
+    /**
      * 视图传递对象
      *
      * @type {Subject}
@@ -395,6 +402,7 @@ export class ViewBase extends Vue {
      */
     public beforeViewModelInit(data: any) {
         this.viewDefaultUsage = data.viewDefaultUsage !== false;
+        this.noViewCaption = data.noViewCaption == true;
         this.navDataService = data.navDataService;
         this.portletState = data.portletState;
         this.viewtag = data.viewtag;

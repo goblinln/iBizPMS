@@ -14,7 +14,7 @@ export class AppDefaultDeRedirectViewLayout extends AppDefaultViewLayout {
     public renderContent() {
         let cardClass = {
             'view-card': true,
-            'view-no-caption': !this.viewInstance.showCaptionBar,
+            'view-no-caption': !this.showCaption,
             'view-no-toolbar': !this.viewIsshowToolbar,
         };
         return (
