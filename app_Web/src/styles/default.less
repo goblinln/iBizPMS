@@ -151,7 +151,6 @@
 .bar-container{
     .ivu-input-wrapper {
       .ivu-input {
-        border-color: var(--ctrl-font-color-light);
         &:hover {
           border-color: var(--ctrl-font-color-bright);
         }
@@ -176,7 +175,7 @@
   //按钮
   .el-button{
     color: var(--button-font-color);
-    border-color: var(--button-font-color);
+    border-color: var(--button-font-color-light);
     background-color: var(--button-background-color);
     &:hover {
       color: var(--button-font-color-bright);
@@ -287,18 +286,33 @@
 
 // 按钮下拉列表
 .ivu-select-dropdown.ivu-dropdown-transfer {
-  color: var(--app-font-color);
-  background-color: var(--app-background-color-bright);
+  color: var(--dropdown-font-color);
+  background-color: var(--dropdown-background-color);
 
   > .ivu-dropdown-menu {
       > .ivu-dropdown-item {
-        color: var(--app-font-color-light);
+        color: var(--dropdown-font-color);
       }
 
       > .ivu-dropdown-item:hover {
-        color: var(--app-font-color);
-        background: var(--app-background-color);
+        color: var(--dropdown-font-color-bright);
+        background: var(--dropdown-background-color);
+        .ivu-icon {
+          color: var(--dropdown-font-color-bright);
+        }
       }
+  }
+}
+// 树导航视图
+.view-default.view-container {
+  .app-tree-exp-bar.ivu-split-wrapper {
+    .ivu-split-horizontal{
+      .right-pane.ivu-split-pane {
+        .view-container {
+          box-shadow: none;
+        }
+      }
+    }
   }
 }
 

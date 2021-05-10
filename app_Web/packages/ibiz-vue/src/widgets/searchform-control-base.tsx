@@ -57,13 +57,12 @@ export class SearchFormControlBase extends EditFormControlBase {
      */
     public handleDataChange(){
         if (this.isAutoSave) {
-            this.autoSave();
+            this.ctrlEvent({
+                controlname: this.name,
+                action: 'load',
+                data: this.data,
+            });
         }
-        this.ctrlEvent({
-            controlname: this.name,
-            action: 'load',
-            data: this.data,
-        });
     }
 
     /**
