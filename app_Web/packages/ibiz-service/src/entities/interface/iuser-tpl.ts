@@ -56,4 +56,8 @@ export interface IUserTpl extends IEntityBase {
      * 归属部门
      */
     dept?: any;
+    /**
+     * 用户模板编号
+     */
+    usertplsn?: any;
 }

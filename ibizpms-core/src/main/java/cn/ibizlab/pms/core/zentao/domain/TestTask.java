@@ -308,6 +308,14 @@ public class TestTask extends EntityMP implements Serializable {
     @JsonProperty("project")
     @ApiModelProperty("所属项目")
     private Long project;
+    /**
+     * 测试版本编号
+     */
+    @TableField(value = "`TESTTASKSN`")
+    @JSONField(name = "testtasksn")
+    @JsonProperty("testtasksn")
+    @ApiModelProperty("测试版本编号")
+    private Long testtasksn;
 
     /**
      * 
@@ -465,6 +473,14 @@ public class TestTask extends EntityMP implements Serializable {
     public void setProject(Long project) {
         this.project = project;
         this.modify("project", project);
+    }
+
+    /**
+     * 设置 [测试版本编号]
+     */
+    public void setTesttasksn(Long testtasksn) {
+        this.testtasksn = testtasksn;
+        this.modify("testtasksn", testtasksn);
     }
 
 

@@ -240,6 +240,11 @@
     "name" : "ACCOUNT",
     "stdDataType" : 25,
     "stringLength" : 30
+  }, {
+    "codeName" : "Usercontactsn",
+    "logicName" : "用户联系方式编号",
+    "name" : "USERCONTACTSN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

@@ -1383,6 +1383,11 @@
     "logicName" : "所属模块",
     "name" : "MODULE",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Casesn",
+    "logicName" : "测试用例编号",
+    "name" : "CASESN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDELogics" : [ {
     "codeName" : "GetCaseStepByIdVersion",

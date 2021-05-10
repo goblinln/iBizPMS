@@ -173,6 +173,10 @@ export abstract class UserBase extends EntityBase implements IUser {
      * QQ
      */
     qq?: any;
+    /**
+     * 用户编号
+     */
+    usersn?: any;
 
     /**
      * 重置实体数据

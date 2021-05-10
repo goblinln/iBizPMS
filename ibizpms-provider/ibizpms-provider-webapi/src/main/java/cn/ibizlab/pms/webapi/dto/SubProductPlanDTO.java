@@ -413,6 +413,16 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     @ApiModelProperty("产品")
     private Long product;
 
+    /**
+     * 属性 [PRODUCTPLANSN]
+     *
+     */
+    @JSONField(name = "productplansn")
+    @JsonProperty("productplansn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("产品计划编号")
+    private Long productplansn;
+
 
     /**
      * 设置 [TITLE]
@@ -484,6 +494,14 @@ public class SubProductPlanDTO extends DTOBase implements Serializable {
     public void setProduct(Long  product){
         this.product = product ;
         this.modify("product",product);
+    }
+
+    /**
+     * 设置 [PRODUCTPLANSN]
+     */
+    public void setProductplansn(Long  productplansn){
+        this.productplansn = productplansn ;
+        this.modify("productplansn",productplansn);
     }
 
 

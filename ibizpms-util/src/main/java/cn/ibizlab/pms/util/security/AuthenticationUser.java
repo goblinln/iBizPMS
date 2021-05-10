@@ -1,5 +1,6 @@
 package cn.ibizlab.pms.util.security;
 
+import cn.ibizlab.pms.util.web.IPUtils;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -403,8 +404,7 @@ public class AuthenticationUser implements UserDetails, net.ibizsys.runtime.secu
     public String getRemoteaddress() {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         if (attributes != null) {
-            HttpServletRequest request = attributes.getRequest();
-            return request.getRemoteAddr();
+            return IPUtils.getIpAddr(request);
         }
         return null;
     }

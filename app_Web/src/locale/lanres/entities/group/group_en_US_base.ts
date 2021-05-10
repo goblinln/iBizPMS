@@ -8,6 +8,7 @@ function getLocaleResourceBase(){
 		'id': commonLogic.appcommonhandle("ID",null),
 		'name': commonLogic.appcommonhandle("分组名称",null),
 		'role': commonLogic.appcommonhandle("role",null),
+		'groupsn': commonLogic.appcommonhandle("群组编号",null),
 	},
 		views: {
 			'maingridview': {

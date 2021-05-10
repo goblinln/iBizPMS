@@ -10,4 +10,5 @@ export default [
     'org',
     'deptname',
     'product',
+    'branchsn',
 ];

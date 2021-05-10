@@ -29,4 +29,5 @@ export default [
     'product',
     'build',
     'project',
+    'testtasksn',
 ];

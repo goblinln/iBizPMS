@@ -67,8 +67,8 @@
 		<![CDATA[ SELECT t1.`ACL`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`IBZ_PLANTEMPLETID`, t1.`IBZ_PLANTEMPLETNAME`, t1.`PLANS`, t1.`PRODUCT`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZ_PLANTEMPLET` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND ( ( t1.`ACL` = 'open'  OR  t1.`CREATEMANNAME` =  #{srf.sessioncontext.srfloginname} ) ) ]]>
-			</if>
+                <![CDATA[ AND ( ( t1.`ACL` = 'open'  OR  t1.`CREATEMANNAME` =  #{srf.sessioncontext.srfloginname} ) ) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>

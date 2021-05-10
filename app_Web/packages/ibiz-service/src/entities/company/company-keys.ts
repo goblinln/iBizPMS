@@ -10,4 +10,5 @@ export default [
     'name',
     'guest',
     'phone',
+    'companysn',
 ];

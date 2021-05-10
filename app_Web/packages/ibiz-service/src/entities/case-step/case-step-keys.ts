@@ -17,4 +17,5 @@ export default [
     'org',
     'ibizcase',
     'parent',
+    'casestepsn',
 ];

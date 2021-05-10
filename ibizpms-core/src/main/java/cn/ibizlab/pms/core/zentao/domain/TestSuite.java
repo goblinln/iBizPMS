@@ -182,6 +182,14 @@ public class TestSuite extends EntityMP implements Serializable {
     @JsonProperty("product")
     @ApiModelProperty("所属产品")
     private Long product;
+    /**
+     * 测试套件编号
+     */
+    @TableField(value = "`TESTSUITESN`")
+    @JSONField(name = "testsuitesn")
+    @JsonProperty("testsuitesn")
+    @ApiModelProperty("测试套件编号")
+    private Long testsuitesn;
 
     /**
      * 
@@ -223,6 +231,14 @@ public class TestSuite extends EntityMP implements Serializable {
     public void setProduct(Long product) {
         this.product = product;
         this.modify("product", product);
+    }
+
+    /**
+     * 设置 [测试套件编号]
+     */
+    public void setTestsuitesn(Long testsuitesn) {
+        this.testsuitesn = testsuitesn;
+        this.modify("testsuitesn", testsuitesn);
     }
 
 

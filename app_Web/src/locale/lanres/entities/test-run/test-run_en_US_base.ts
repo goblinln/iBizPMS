@@ -18,6 +18,7 @@ function getLocaleResourceBase(){
 		'createby': commonLogic.appcommonhandle("由谁创建",null),
 		'ibizcase': commonLogic.appcommonhandle("测试用例",null),
 		'task': commonLogic.appcommonhandle("测试单",null),
+		'testrunsn': commonLogic.appcommonhandle("测试运行编号",null),
 	},
 		views: {
 			'meditview9': {

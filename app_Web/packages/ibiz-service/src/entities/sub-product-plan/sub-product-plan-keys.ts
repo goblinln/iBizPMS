@@ -38,4 +38,5 @@ export default [
     'branch',
     'parent',
     'product',
+    'productplansn',
 ];

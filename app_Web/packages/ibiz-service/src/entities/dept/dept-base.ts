@@ -77,6 +77,10 @@ export abstract class DeptBase extends EntityBase implements IDept {
      * parent
      */
     parent?: any;
+    /**
+     * 部门编号
+     */
+    deptsn?: any;
 
     /**
      * 重置实体数据

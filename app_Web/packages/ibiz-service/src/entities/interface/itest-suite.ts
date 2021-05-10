@@ -70,4 +70,8 @@ export interface ITestSuite extends IEntityBase {
      * 所属产品
      */
     product?: any;
+    /**
+     * 测试套件编号
+     */
+    testsuitesn?: any;
 }

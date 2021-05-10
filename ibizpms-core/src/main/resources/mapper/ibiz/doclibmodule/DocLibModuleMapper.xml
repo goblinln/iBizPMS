@@ -169,11 +169,11 @@
 		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t11.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t21.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE`,  'module' AS `DOCQTYPE`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES` FROM `zt_module` t1  LEFT JOIN zt_doclib t11 ON t1.ROOT = t11.ID  LEFT JOIN zt_module t21 ON t1.PARENT = t21.ID   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.DELETED = '0' ]]>
-			</if>
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND (t1.parent = 0 or t1.parent is null ) and t1.type = 'doc' ]]>
-			</if>
+                <![CDATA[ AND (t1.parent = 0 or t1.parent is null ) and t1.type = 'doc' ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -187,14 +187,14 @@
 		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t11.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t21.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE`,  'module' AS `DOCQTYPE`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES` FROM `zt_module` t1  LEFT JOIN zt_doclib t11 ON t1.ROOT = t11.ID  LEFT JOIN zt_module t21 ON t1.PARENT = t21.ID   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.DELETED = '0' ]]>
-			</if>
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND t1.type = 'doc' ]]>
-			</if>
+                <![CDATA[ AND t1.type = 'doc' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND t1.parent = #{srf.datacontext.srfparentkey} ]]>
-			</if>
+                <![CDATA[ AND t1.parent = #{srf.datacontext.srfparentkey} ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -208,14 +208,14 @@
 		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t11.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t21.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE`,  'module' AS `DOCQTYPE`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES` FROM `zt_module` t1  LEFT JOIN zt_doclib t11 ON t1.ROOT = t11.ID  LEFT JOIN zt_module t21 ON t1.PARENT = t21.ID ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.deleted = '0' ]]>
-			</if>
+                <![CDATA[ AND t1.deleted = '0' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND t1.type = 'doc' ]]>
-			</if>
+                <![CDATA[ AND t1.type = 'doc' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND t1.parent = #{srf.datacontext.srfparent} ]]>
-			</if>
+                <![CDATA[ AND t1.parent = #{srf.datacontext.srfparent} ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -229,8 +229,8 @@
 		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, (select count(1) from zt_doc t where t.deleted = '0' and t.module = t1.id) + (select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.root = t1.root and t.parent = t1.id) AS `DOCCNT`, t21.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t11.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1  LEFT JOIN `zt_module` t11 ON t1.`PARENT` = t11.`ID`  LEFT JOIN `zt_doclib` t21 ON t1.`ROOT` = t21.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.DELETED = '0' ]]>
-			</if>
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -244,11 +244,11 @@
 		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t11.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t21.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE`,  'module' AS `DOCQTYPE`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES` FROM `zt_module` t1  LEFT JOIN zt_doclib t11 ON t1.ROOT = t11.ID  LEFT JOIN zt_module t21 ON t1.PARENT = t21.ID   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.DELETED = '0' ]]>
-			</if>
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND t1.type = 'doc' ]]>
-			</if>
+                <![CDATA[ AND t1.type = 'doc' ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -262,11 +262,11 @@
 		<![CDATA[ SELECT 	t1.`BRANCH`, 	t1.`DELETED`, 	t1.`GRADE`, 	t1.`ID`, 	'module' AS `DOCQTYPE`, 	1 AS `ISFAVOURITES`, 	( CASE WHEN EXISTS ( SELECT 1 FROM ZT_MODULE WHERE PARENT = t1.`ID` ) THEN FALSE ELSE TRUE END ) AS `ISLEAF`, 	t1.`NAME`, 	t1.`ORDER`, 	t1.`OWNER`, 	t1.`PARENT`, 	t1.`PATH`, 	t1.`ROOT`, 	t1.`SHORT`, 	t1.`TYPE`  FROM 	`zt_module` t1 ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.deleted = '0' ]]>
-			</if>
+                <![CDATA[ AND t1.deleted = '0' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 ]]>
-			</if>
+                <![CDATA[ AND FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -280,14 +280,14 @@
 		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t11.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t21.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE`,  'module' AS `DOCQTYPE`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES` FROM `zt_module` t1  LEFT JOIN zt_doclib t11 ON t1.ROOT = t11.ID  LEFT JOIN zt_module t21 ON t1.PARENT = t21.ID   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.DELETED = '0' ]]>
-			</if>
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND t1.type = 'doc' ]]>
-			</if>
+                <![CDATA[ AND t1.type = 'doc' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND t1.id <> #{srf.webcontext.id} and find_in_set(#{srf.webcontext.id},t1.path) = 0 ]]>
-			</if>
+                <![CDATA[ AND t1.id <> #{srf.webcontext.id} and find_in_set(#{srf.webcontext.id},t1.path) = 0 ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -301,11 +301,11 @@
 		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t11.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t21.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, 'module'  as `TYPE`, 'module' AS `DOCQTYPE`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`, (select count(1) from zt_doc t where t.deleted = '0' and t.module = t1.id) + (select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.root = t1.root and t.parent = t1.id) as doccnt FROM `zt_module` t1  LEFT JOIN zt_doclib t11 ON t1.ROOT = t11.ID  LEFT JOIN zt_module t21 ON t1.PARENT = t21.ID   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.DELETED = '0' ]]>
-			</if>
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND (t1.parent = 0 or t1.parent is null ) and t1.type = 'doc' ]]>
-			</if>
+                <![CDATA[ AND (t1.parent = 0 or t1.parent is null ) and t1.type = 'doc' ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -319,14 +319,14 @@
 		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t11.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t21.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE`,  'module' AS `DOCQTYPE`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES` FROM `zt_module` t1  LEFT JOIN zt_doclib t11 ON t1.ROOT = t11.ID  LEFT JOIN zt_module t21 ON t1.PARENT = t21.ID   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.DELETED = '0' ]]>
-			</if>
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND (t1.parent = 0 or t1.parent is null ) and t1.type = 'doc' ]]>
-			</if>
+                <![CDATA[ AND (t1.parent = 0 or t1.parent is null ) and t1.type = 'doc' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND t1.root = #{srf.webcontext.srfroot} ]]>
-			</if>
+                <![CDATA[ AND t1.root = #{srf.webcontext.srfroot} ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -340,14 +340,14 @@
 		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t11.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t21.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE`, 'module' AS `DOCQTYPE`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES` FROM `zt_module` t1  LEFT JOIN zt_doclib t11 ON t1.ROOT = t11.ID  LEFT JOIN zt_module t21 ON t1.PARENT = t21.ID    ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.DELETED = '0' ]]>
-			</if>
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND (t1.parent = 0 or t1.parent is null ) and t1.type = 'doc' ]]>
-			</if>
+                <![CDATA[ AND (t1.parent = 0 or t1.parent is null ) and t1.type = 'doc' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND t1.root = #{srf.webcontext.srfparentkey} ]]>
-			</if>
+                <![CDATA[ AND t1.root = #{srf.webcontext.srfparentkey} ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -361,8 +361,8 @@
 		<![CDATA[ SELECT t1.`BRANCH`, t1.`COLLECTOR`, t1.`DELETED`, (select count(1) from zt_doc t where t.deleted = '0' and t.module = t1.id) + (select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.root = t1.root and t.parent = t1.id) AS `DOCCNT`, t21.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t11.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1  LEFT JOIN `zt_module` t11 ON t1.`PARENT` = t11.`ID`  LEFT JOIN `zt_doclib` t21 ON t1.`ROOT` = t21.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.DELETED = '0' ]]>
-			</if>
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>

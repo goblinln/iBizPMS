@@ -379,6 +379,11 @@
     "name" : "EXTRA",
     "stdDataType" : 25,
     "stringLength" : 255
+  }, {
+    "codeName" : "Filesn",
+    "logicName" : "附件编号",
+    "name" : "FILESN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

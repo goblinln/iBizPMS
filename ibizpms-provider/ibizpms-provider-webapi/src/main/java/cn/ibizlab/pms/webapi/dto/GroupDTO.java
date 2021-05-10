@@ -83,6 +83,16 @@ public class GroupDTO extends DTOBase implements Serializable {
     @ApiModelProperty("role")
     private String role;
 
+    /**
+     * 属性 [GROUPSN]
+     *
+     */
+    @JSONField(name = "groupsn")
+    @JsonProperty("groupsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("群组编号")
+    private Long groupsn;
+
 
     /**
      * 设置 [ACL]
@@ -114,6 +124,14 @@ public class GroupDTO extends DTOBase implements Serializable {
     public void setRole(String  role){
         this.role = role ;
         this.modify("role",role);
+    }
+
+    /**
+     * 设置 [GROUPSN]
+     */
+    public void setGroupsn(Long  groupsn){
+        this.groupsn = groupsn ;
+        this.modify("groupsn",groupsn);
     }
 
 

@@ -121,11 +121,11 @@
 		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ASSIGNEDBY`, t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, case when t1.`BEGIN` = 2400 then null else t1.`begin` end as `begin`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CONFIG`, t1.`CYCLE`, t1.`DATE` as `DATE`, (case when t1.`DATE` = '2030-01-01' then '待定' else t1.`DATE` end) AS `DATE1`, case when t1.`END` = 2400 then null else t1.`END` end as `END`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`ID`, t1.`IDVALUE`, case when t1.type = 'bug' then t11.`TITLE` when t1.type = 'task' then t21.`name` when t1.type = 'story' then t31.`TITLE` else t1.`NAME` end `name`, t1.`PRI`, t1.`PRIVATE`, t1.`STATUS`, t1.`TYPE` FROM `zt_todo` t1  LEFT JOIN zt_bug t11 on t11.id = t1.idvalue LEFT JOIN zt_task t21 on t21.id = t1.idvalue LEFT JOIN zt_story t31 on t31.id = t1.idvalue ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND ((#{srf.datacontext.thisyear} = 'thisyear' and YEAR(t1.date) = year(now())) or #{srf.datacontext.thisyear} is null) ]]>
-			</if>
+                <![CDATA[ AND ((#{srf.datacontext.thisyear} = 'thisyear' and YEAR(t1.date) = year(now())) or #{srf.datacontext.thisyear} is null) ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND ( t1.`ACCOUNT` =  #{srf.sessioncontext.srfloginname}  or t1.`assignedTo` =  #{srf.sessioncontext.srfloginname}  or t1.`finishedBy` =  #{srf.sessioncontext.srfloginname}   ) ]]>
-			</if>
+                <![CDATA[ AND ( t1.`ACCOUNT` =  #{srf.sessioncontext.srfloginname}  or t1.`assignedTo` =  #{srf.sessioncontext.srfloginname}  or t1.`finishedBy` =  #{srf.sessioncontext.srfloginname}   ) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -139,11 +139,11 @@
 		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ASSIGNEDBY`, t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BEGIN`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CONFIG`, t1.`CYCLE`, t1.`DATE`, (case when t1.`DATE` = '2030-01-01' then '待定' else t1.`DATE` end) AS `DATE1`, t1.`END`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`ID`, t1.`IDVALUE`, t1.`NAME`, t1.`PRI`, t1.`PRIVATE`, t1.`STATUS`, t1.`TYPE` FROM `zt_todo` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND ( t1.`ACCOUNT` =  #{srf.sessioncontext.srfloginname}  or t1.`assignedTo` =  #{srf.sessioncontext.srfloginname}  or t1.`finishedBy` =  #{srf.sessioncontext.srfloginname}   ) ]]>
-			</if>
+                <![CDATA[ AND ( t1.`ACCOUNT` =  #{srf.sessioncontext.srfloginname}  or t1.`assignedTo` =  #{srf.sessioncontext.srfloginname}  or t1.`finishedBy` =  #{srf.sessioncontext.srfloginname}   ) ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND t1.`CYCLE` = 0 ]]>
-			</if>
+                <![CDATA[ AND t1.`CYCLE` = 0 ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -157,14 +157,14 @@
 		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ASSIGNEDBY`, t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.`BEGIN`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CONFIG`, t1.`CYCLE`, t1.`DATE`, (case when t1.`DATE` = '2030-01-01' then '待定' else t1.`DATE` end) AS `DATE1`, t1.`END`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`ID`, t1.`IDVALUE`, t1.`NAME`, t1.`PRI`, t1.`PRIVATE`, t1.`STATUS`, t1.`TYPE` FROM `zt_todo` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND ( t1.`ACCOUNT` =  #{srf.sessioncontext.srfloginname}  or t1.`assignedTo` =  #{srf.sessioncontext.srfloginname}  or t1.`finishedBy` =  #{srf.sessioncontext.srfloginname}   ) ]]>
-			</if>
+                <![CDATA[ AND ( t1.`ACCOUNT` =  #{srf.sessioncontext.srfloginname}  or t1.`assignedTo` =  #{srf.sessioncontext.srfloginname}  or t1.`finishedBy` =  #{srf.sessioncontext.srfloginname}   ) ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND t1.`CYCLE` = 0 ]]>
-			</if>
+                <![CDATA[ AND t1.`CYCLE` = 0 ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND t1.date is not null ]]>
-			</if>
+                <![CDATA[ AND t1.date is not null ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -178,8 +178,8 @@
 		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ASSIGNEDBY`, t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, case when t1.`BEGIN` = 2400 then null else t1.`begin` end as `begin`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CONFIG`, t1.`CYCLE`, t1.`DATE` as `DATE`, DATE_FORMAT(t1.`date`,'%c月%d日') AS `DATE1`, case when t1.`END` = 2400 then null else t1.`END` end as `END`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`ID`, t1.`IDVALUE`, case when t1.type = 'bug' then t11.`TITLE` when t1.type = 'task' then t21.`name` when t1.type = 'story' then t31.`TITLE` else t1.`NAME` end `name`, t1.`PRI`, t1.`PRIVATE`, t1.`STATUS`, t1.`TYPE` FROM `zt_todo` t1  LEFT JOIN zt_bug t11 on t11.id = t1.idvalue LEFT JOIN zt_task t21 on t21.id = t1.idvalue LEFT JOIN zt_story t31 on t31.id = t1.idvalue ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND ( t1.`ACCOUNT` =  #{srf.sessioncontext.srfloginname}  or t1.`assignedTo` =  #{srf.sessioncontext.srfloginname}  or t1.`finishedBy` =  #{srf.sessioncontext.srfloginname}   ) ]]>
-			</if>
+                <![CDATA[ AND ( t1.`ACCOUNT` =  #{srf.sessioncontext.srfloginname}  or t1.`assignedTo` =  #{srf.sessioncontext.srfloginname}  or t1.`finishedBy` =  #{srf.sessioncontext.srfloginname}   ) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>

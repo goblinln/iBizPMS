@@ -197,6 +197,10 @@ export abstract class DocBase extends EntityBase implements IDoc {
      * 所属分类
      */
     module?: any;
+    /**
+     * 文档编号
+     */
+    docsn?: any;
 
     /**
      * 重置实体数据

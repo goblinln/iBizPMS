@@ -370,6 +370,46 @@
     "stdDataType" : 25,
     "stringLength" : 30,
     "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "CONFIGSN",
+      "dBType" : "MYSQL5",
+      "name" : "CONFIGSN",
+      "queryCodeExp" : "t1.`CONFIGSN`",
+      "standardColumnName" : "`CONFIGSN`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "CONFIGSN",
+        "codeName" : "Configsn"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Configsn",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "配置编号",
+    "name" : "CONFIGSN",
+    "getPSSysSequence" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProConfigSeq.json"
+    },
+    "sequenceMode" : "CREATE",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",

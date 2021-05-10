@@ -27,4 +27,5 @@ export default [
     'objectid',
     'actor',
     'project',
+    'actionsn',
 ];

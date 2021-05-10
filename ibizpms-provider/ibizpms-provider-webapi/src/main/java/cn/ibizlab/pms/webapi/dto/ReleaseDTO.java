@@ -342,6 +342,16 @@ public class ReleaseDTO extends DTOBase implements Serializable {
     @ApiModelProperty("平台/分支")
     private Long branch;
 
+    /**
+     * 属性 [RELEASESN]
+     *
+     */
+    @JSONField(name = "releasesn")
+    @JsonProperty("releasesn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("发布编号")
+    private Long releasesn;
+
 
     /**
      * 设置 [STORIES]
@@ -437,6 +447,14 @@ public class ReleaseDTO extends DTOBase implements Serializable {
     public void setBranch(Long  branch){
         this.branch = branch ;
         this.modify("branch",branch);
+    }
+
+    /**
+     * 设置 [RELEASESN]
+     */
+    public void setReleasesn(Long  releasesn){
+        this.releasesn = releasesn ;
+        this.modify("releasesn",releasesn);
     }
 
 

@@ -18,4 +18,5 @@ export default [
     'deptname',
     'id',
     'extra',
+    'filesn',
 ];

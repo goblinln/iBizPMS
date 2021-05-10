@@ -225,6 +225,11 @@
     "logicName" : "关联日志",
     "name" : "ACTION",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Historysn",
+    "logicName" : "操作历史编号",
+    "name" : "HISTORYSN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

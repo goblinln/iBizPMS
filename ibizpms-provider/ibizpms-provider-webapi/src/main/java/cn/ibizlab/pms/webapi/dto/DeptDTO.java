@@ -141,6 +141,16 @@ public class DeptDTO extends DTOBase implements Serializable {
     @ApiModelProperty("parent")
     private Long parent;
 
+    /**
+     * 属性 [DEPTSN]
+     *
+     */
+    @JSONField(name = "deptsn")
+    @JsonProperty("deptsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("部门编号")
+    private Long deptsn;
+
 
     /**
      * 设置 [MANAGER]
@@ -204,6 +214,14 @@ public class DeptDTO extends DTOBase implements Serializable {
     public void setParent(Long  parent){
         this.parent = parent ;
         this.modify("parent",parent);
+    }
+
+    /**
+     * 设置 [DEPTSN]
+     */
+    public void setDeptsn(Long  deptsn){
+        this.deptsn = deptsn ;
+        this.modify("deptsn",deptsn);
     }
 
 

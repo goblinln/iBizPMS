@@ -129,8 +129,8 @@
 		<![CDATA[ SELECT 		t1.`ACCOUNT`, 		t1.`CREATEDATE`, 		t1.`CREATEMAN`, 		t1.`CREATEMANNAME`, 		t1.`DATE`, 		t1.`IBZ_DAILYID`, 		t1.`IBZ_DAILYNAME`, 		t1.`ISSUBMIT`, 		t1.`MAILTO`, 		t1.MAILTO AS `MAILTOPK`, 		( CASE WHEN t11.id IS NOT NULL THEN '1' ELSE '0' END ) AS `REPORTSTATUS`, 		t1.`REPORTTO`, 		t1.REPORTTO AS `REPORTTOPK`, 		t1.`SUBMITTIME`, 		t1.`TODAYTASK`, 		t1.`TOMORROWPLANSTASK`, 		t1.`UPDATEDATE`, 		t1.`UPDATEMAN`, 		t1.`UPDATEMANNAME`  	FROM 		`T_IBZ_DAILY` t1 		LEFT JOIN zt_action t11 ON t11.objectID = t1.IBZ_DAILYID  		AND t11.objectType = 'daily'  		AND t11.action = 'read'  		AND t11.actor = #{srf.sessioncontext.srfloginname} ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.account =  #{srf.sessioncontext.srfloginname} ]]>
-			</if>
+                <![CDATA[ AND t1.account =  #{srf.sessioncontext.srfloginname} ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -144,11 +144,11 @@
 		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`DATE`, t1.`IBZ_DAILYID`, t1.`IBZ_DAILYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, (case when t11.id is not null then '1' else '0' end ) as `REPORTSTATUS`, t1.`REPORTTO`, t1.`TODAYTASK`, t1.`TOMORROWPLANSTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME` FROM `T_IBZ_DAILY` t1 left join zt_action t11 on t11.objectID = t1.IBZ_DAILYID and t11.objectType = 'daily' and t11.action = 'read' and t11.actor = #{srf.sessioncontext.srfloginname} ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.issubmit = '1' ]]>
-			</if>
+                <![CDATA[ AND t1.issubmit = '1' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND (t1.REPORTTO = #{srf.sessioncontext.srfloginname} or FIND_IN_SET(#{srf.sessioncontext.srfloginname},t1.MAILTO)) ]]>
-			</if>
+                <![CDATA[ AND (t1.REPORTTO = #{srf.sessioncontext.srfloginname} or FIND_IN_SET(#{srf.sessioncontext.srfloginname},t1.MAILTO)) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -174,8 +174,8 @@
 		<![CDATA[ SELECT 	t1. IBZ_DAILYID, 	t1.IBZ_DAILYNAME, 	t1.ACCOUNT, 	t1.DATE, 	t1.ISSUBMIT, 	t1.REPORTTO, 	t1.REPORTSTATUS FROM 	t_ibz_daily t1    ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.account=#{srf.sessioncontext.srfloginname} ]]>
-			</if>
+                <![CDATA[ AND t1.account=#{srf.sessioncontext.srfloginname} ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -201,8 +201,8 @@
 		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`DATE`, t1.`IBZ_DAILYID`, t1.`IBZ_DAILYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.MAILTO AS `MAILTOPK`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.REPORTTO AS `REPORTTOPK`, t1.`SUBMITTIME`, t1.`TODAYTASK`, t1.`TOMORROWPLANSTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME` FROM `T_IBZ_DAILY` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND ( t1.`ISSUBMIT` = '1'  AND  t1.ACCOUNT in (select t.ACCOUNT from zt_team t where t.type = 'project' and t.root =#{srf.datacontext.curproject})  AND  DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(#{srf.datacontext.date},'%Y-%m-%d') ) ]]>
-			</if>
+                <![CDATA[ AND ( t1.`ISSUBMIT` = '1'  AND  t1.ACCOUNT in (select t.ACCOUNT from zt_team t where t.type = 'project' and t.root =#{srf.datacontext.curproject})  AND  DATE_FORMAT(t1.date,'%Y-%m-%d') = DATE_FORMAT(#{srf.datacontext.date},'%Y-%m-%d') ) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>

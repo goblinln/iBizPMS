@@ -513,6 +513,14 @@ public class Product extends EntityMP implements Serializable {
     @JsonProperty("line")
     @ApiModelProperty("产品线")
     private Long line;
+    /**
+     * 产品编号
+     */
+    @TableField(value = "`productsn`")
+    @JSONField(name = "productsn")
+    @JsonProperty("productsn")
+    @ApiModelProperty("产品编号")
+    private Long productsn;
 
     /**
      * 产品线
@@ -666,6 +674,14 @@ public class Product extends EntityMP implements Serializable {
     public void setLine(Long line) {
         this.line = line;
         this.modify("line", line);
+    }
+
+    /**
+     * 设置 [产品编号]
+     */
+    public void setProductsn(Long productsn) {
+        this.productsn = productsn;
+        this.modify("productsn", productsn);
     }
 
 

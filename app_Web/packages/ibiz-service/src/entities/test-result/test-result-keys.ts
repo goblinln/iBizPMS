@@ -24,4 +24,5 @@ export default [
     'ibizcase',
     'run',
     'compile',
+    'testresultsn',
 ];

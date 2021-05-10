@@ -637,6 +637,11 @@
     "logicName" : "所属分类",
     "name" : "MODULE",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Docsn",
+    "logicName" : "文档编号",
+    "name" : "DOCSN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

@@ -589,6 +589,14 @@ public class Case extends EntityMP implements Serializable {
     @JsonProperty("module")
     @ApiModelProperty("所属模块")
     private Long module;
+    /**
+     * 测试用例编号
+     */
+    @TableField(value = "`CASESN`")
+    @JSONField(name = "casesn")
+    @JsonProperty("casesn")
+    @ApiModelProperty("测试用例编号")
+    private Long casesn;
 
     /**
      * 
@@ -964,6 +972,14 @@ public class Case extends EntityMP implements Serializable {
     public void setModule(Long module) {
         this.module = module;
         this.modify("module", module);
+    }
+
+    /**
+     * 设置 [测试用例编号]
+     */
+    public void setCasesn(Long casesn) {
+        this.casesn = casesn;
+        this.modify("casesn", casesn);
     }
 
 

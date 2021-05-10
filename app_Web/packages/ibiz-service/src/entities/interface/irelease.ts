@@ -140,4 +140,8 @@ export interface IRelease extends IEntityBase {
      * 平台/分支
      */
     branch?: any;
+    /**
+     * 发布编号
+     */
+    releasesn?: any;
 }

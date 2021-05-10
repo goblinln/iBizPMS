@@ -154,6 +154,14 @@ public class Notify extends EntityMP implements Serializable {
     @JsonProperty("objecttype")
     @ApiModelProperty("objectType")
     private String objecttype;
+    /**
+     * 通知编号
+     */
+    @TableField(value = "`NOTIFYSN`")
+    @JSONField(name = "notifysn")
+    @JsonProperty("notifysn")
+    @ApiModelProperty("通知编号")
+    private Long notifysn;
 
 
 
@@ -271,6 +279,14 @@ public class Notify extends EntityMP implements Serializable {
     public void setObjecttype(String objecttype) {
         this.objecttype = objecttype;
         this.modify("objecttype", objecttype);
+    }
+
+    /**
+     * 设置 [通知编号]
+     */
+    public void setNotifysn(Long notifysn) {
+        this.notifysn = notifysn;
+        this.modify("notifysn", notifysn);
     }
 
 

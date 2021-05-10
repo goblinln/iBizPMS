@@ -1855,6 +1855,11 @@
     "logicName" : "转Bug",
     "name" : "TOBUG",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Storysn",
+    "logicName" : "需求编号",
+    "name" : "STORYSN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDELogics" : [ {
     "codeName" : "GetCurUserConcat",

@@ -305,6 +305,14 @@ public class Build extends EntityMP implements Serializable {
     @JsonProperty("project")
     @ApiModelProperty("所属项目")
     private Long project;
+    /**
+     * 版本编号
+     */
+    @TableField(value = "`BUILDSN`")
+    @JSONField(name = "buildsn")
+    @JsonProperty("buildsn")
+    @ApiModelProperty("版本编号")
+    private Long buildsn;
 
     /**
      * 
@@ -428,6 +436,14 @@ public class Build extends EntityMP implements Serializable {
     public void setProject(Long project) {
         this.project = project;
         this.modify("project", project);
+    }
+
+    /**
+     * 设置 [版本编号]
+     */
+    public void setBuildsn(Long buildsn) {
+        this.buildsn = buildsn;
+        this.modify("buildsn", buildsn);
     }
 
 

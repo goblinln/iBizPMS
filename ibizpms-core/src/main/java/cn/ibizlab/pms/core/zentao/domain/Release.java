@@ -315,6 +315,14 @@ public class Release extends EntityMP implements Serializable {
     @JsonProperty("branch")
     @ApiModelProperty("平台/分支")
     private Long branch;
+    /**
+     * 发布编号
+     */
+    @TableField(value = "`RELEASESN`")
+    @JSONField(name = "releasesn")
+    @JsonProperty("releasesn")
+    @ApiModelProperty("发布编号")
+    private Long releasesn;
 
     /**
      * 
@@ -446,6 +454,14 @@ public class Release extends EntityMP implements Serializable {
     public void setBranch(Long branch) {
         this.branch = branch;
         this.modify("branch", branch);
+    }
+
+    /**
+     * 设置 [发布编号]
+     */
+    public void setReleasesn(Long releasesn) {
+        this.releasesn = releasesn;
+        this.modify("releasesn", releasesn);
     }
 
 

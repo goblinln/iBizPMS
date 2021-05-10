@@ -262,6 +262,14 @@ public class TestResult extends EntityMP implements Serializable {
     @JsonProperty("compile")
     @ApiModelProperty("代码编译")
     private Long compile;
+    /**
+     * 测试结果编号
+     */
+    @TableField(value = "`TESTRESULTSN`")
+    @JSONField(name = "testresultsn")
+    @JsonProperty("testresultsn")
+    @ApiModelProperty("测试结果编号")
+    private Long testresultsn;
 
     /**
      * 
@@ -393,6 +401,14 @@ public class TestResult extends EntityMP implements Serializable {
     public void setCompile(Long compile) {
         this.compile = compile;
         this.modify("compile", compile);
+    }
+
+    /**
+     * 设置 [测试结果编号]
+     */
+    public void setTestresultsn(Long testresultsn) {
+        this.testresultsn = testresultsn;
+        this.modify("testresultsn", testresultsn);
     }
 
 

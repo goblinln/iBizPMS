@@ -424,6 +424,16 @@ public class DocDTO extends DTOBase implements Serializable {
     @ApiModelProperty("所属分类")
     private Long module;
 
+    /**
+     * 属性 [DOCSN]
+     *
+     */
+    @JSONField(name = "docsn")
+    @JsonProperty("docsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("文档编号")
+    private Long docsn;
+
 
     /**
      * 设置 [GROUPS]
@@ -543,6 +553,14 @@ public class DocDTO extends DTOBase implements Serializable {
     public void setModule(Long  module){
         this.module = module ;
         this.modify("module",module);
+    }
+
+    /**
+     * 设置 [DOCSN]
+     */
+    public void setDocsn(Long  docsn){
+        this.docsn = docsn ;
+        this.modify("docsn",docsn);
     }
 
 

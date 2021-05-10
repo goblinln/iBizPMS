@@ -241,6 +241,11 @@
     "logicName" : "测试单",
     "name" : "TASK",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Testrunsn",
+    "logicName" : "测试运行编号",
+    "name" : "TESTRUNSN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

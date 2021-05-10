@@ -311,6 +311,11 @@
     "logicName" : "代码编译",
     "name" : "COMPILE",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Testresultsn",
+    "logicName" : "测试结果编号",
+    "name" : "TESTRESULTSN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

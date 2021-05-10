@@ -346,4 +346,8 @@ export interface IStory extends IEntityBase {
      * 转Bug
      */
     tobug?: any;
+    /**
+     * 需求编号
+     */
+    storysn?: any;
 }

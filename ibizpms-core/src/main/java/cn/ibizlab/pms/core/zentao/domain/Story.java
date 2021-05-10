@@ -724,6 +724,14 @@ public class Story extends EntityMP implements Serializable {
     @JsonProperty("tobug")
     @ApiModelProperty("转Bug")
     private Long tobug;
+    /**
+     * 需求编号
+     */
+    @TableField(value = "`STORYSN`")
+    @JSONField(name = "storysn")
+    @JsonProperty("storysn")
+    @ApiModelProperty("需求编号")
+    private Long storysn;
 
     /**
      * 
@@ -1183,6 +1191,14 @@ public class Story extends EntityMP implements Serializable {
     public void setTobug(Long tobug) {
         this.tobug = tobug;
         this.modify("tobug", tobug);
+    }
+
+    /**
+     * 设置 [需求编号]
+     */
+    public void setStorysn(Long storysn) {
+        this.storysn = storysn;
+        this.modify("storysn", storysn);
     }
 
 

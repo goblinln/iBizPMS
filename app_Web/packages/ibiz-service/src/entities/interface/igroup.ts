@@ -28,4 +28,8 @@ export interface IGroup extends IEntityBase {
      * role
      */
     role?: any;
+    /**
+     * 群组编号
+     */
+    groupsn?: any;
 }

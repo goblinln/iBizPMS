@@ -122,4 +122,8 @@ export interface IDocLib extends IEntityBase {
      * 产品库
      */
     product?: any;
+    /**
+     * 文档库编号
+     */
+    doclibsn?: any;
 }

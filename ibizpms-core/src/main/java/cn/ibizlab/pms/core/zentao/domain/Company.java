@@ -137,6 +137,14 @@ public class Company extends EntityMP implements Serializable {
     @JsonProperty("phone")
     @ApiModelProperty("联系电话")
     private String phone;
+    /**
+     * 公司编号
+     */
+    @TableField(value = "`COMPANYSN`")
+    @JSONField(name = "companysn")
+    @JsonProperty("companysn")
+    @ApiModelProperty("公司编号")
+    private Long companysn;
 
 
 
@@ -210,6 +218,14 @@ public class Company extends EntityMP implements Serializable {
     public void setPhone(String phone) {
         this.phone = phone;
         this.modify("phone", phone);
+    }
+
+    /**
+     * 设置 [公司编号]
+     */
+    public void setCompanysn(Long companysn) {
+        this.companysn = companysn;
+        this.modify("companysn", companysn);
     }
 
 

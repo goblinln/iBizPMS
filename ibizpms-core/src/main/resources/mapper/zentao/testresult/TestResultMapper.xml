@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`CASE`, t1.`CASERESULT`, t1.`COMPILE`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DURATION`, t1.`ID`, t1.`JOB`, t1.`LASTRUNNER`, t11.`MODULE`, t21.`NAME` AS `MODULENAME`, t1.`ORG`, t1.`ORGNAME`, t11.`PRECONDITION`, t11.`PRODUCT`, t1.`RUN`, t1.`STEPRESULTS`, t11.`STORY`, t1.`UPDATEBY`, t1.`VERSION`, t1.`XML` FROM `zt_testresult` t1  LEFT JOIN `zt_case` t11 ON t1.`CASE` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t11.`MODULE` = t21.`ID`   ]]>
+        <![CDATA[ SELECT t1.`CASE`, t1.`CASERESULT`, t1.`COMPILE`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DURATION`, t1.`ID`, t1.`JOB`, t1.`LASTRUNNER`, t11.`MODULE`, t21.`NAME` AS `MODULENAME`, t1.`ORG`, t1.`ORGNAME`, t11.`PRECONDITION`, t11.`PRODUCT`, t1.`RUN`, t1.`STEPRESULTS`, t11.`STORY`, t1.`TESTRESULTSN`, t1.`UPDATEBY`, t1.`VERSION`, t1.`XML` FROM `zt_testresult` t1  LEFT JOIN `zt_case` t11 ON t1.`CASE` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t11.`MODULE` = t21.`ID`   ]]>
     </sql>
 
 	
@@ -112,11 +112,11 @@
 
     <!--数据查询[CurTestRun]-->
     <sql id="CurTestRun" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CASE`, t1.`CASERESULT`, t1.`COMPILE`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DURATION`, t1.`ID`, t1.`JOB`, t1.`LASTRUNNER`, t11.`MODULE`, t21.`NAME` AS `MODULENAME`, t1.`ORG`, t1.`ORGNAME`, t11.`PRODUCT`, t1.`RUN`, t11.`STORY`, t1.`UPDATEBY`, t1.`VERSION` FROM `zt_testresult` t1  LEFT JOIN `zt_case` t11 ON t1.`CASE` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t11.`MODULE` = t21.`ID`  RIGHT JOIN `zt_testrun` t31 ON t1.`RUN` = t31.`ID`   ]]>
+		<![CDATA[ SELECT t1.`CASE`, t1.`CASERESULT`, t1.`COMPILE`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DURATION`, t1.`ID`, t1.`JOB`, t1.`LASTRUNNER`, t11.`MODULE`, t21.`NAME` AS `MODULENAME`, t1.`ORG`, t1.`ORGNAME`, t11.`PRODUCT`, t1.`RUN`, t11.`STORY`, t1.`TESTRESULTSN`, t1.`UPDATEBY`, t1.`VERSION` FROM `zt_testresult` t1  LEFT JOIN `zt_case` t11 ON t1.`CASE` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t11.`MODULE` = t21.`ID`  RIGHT JOIN `zt_testrun` t31 ON t1.`RUN` = t31.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND ( t31.`TASK` = #{srf.webcontext.task} ) ]]>
-			</if>
+                <![CDATA[ AND ( t31.`TASK` = #{srf.webcontext.task} ) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -127,7 +127,7 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CASE`, t1.`CASERESULT`, t1.`COMPILE`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DURATION`, t1.`ID`, t1.`JOB`, t1.`LASTRUNNER`, t11.`MODULE`, t21.`NAME` AS `MODULENAME`, t1.`ORG`, t1.`ORGNAME`, t11.`PRODUCT`, t1.`RUN`, t11.`STORY`, t1.`UPDATEBY`, t1.`VERSION` FROM `zt_testresult` t1  LEFT JOIN `zt_case` t11 ON t1.`CASE` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t11.`MODULE` = t21.`ID`   ]]>
+		<![CDATA[ SELECT t1.`CASE`, t1.`CASERESULT`, t1.`COMPILE`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DURATION`, t1.`ID`, t1.`JOB`, t1.`LASTRUNNER`, t11.`MODULE`, t21.`NAME` AS `MODULENAME`, t1.`ORG`, t1.`ORGNAME`, t11.`PRODUCT`, t1.`RUN`, t11.`STORY`, t1.`TESTRESULTSN`, t1.`UPDATEBY`, t1.`VERSION` FROM `zt_testresult` t1  LEFT JOIN `zt_case` t11 ON t1.`CASE` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t11.`MODULE` = t21.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>
@@ -139,7 +139,7 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CASE`, t1.`CASERESULT`, t1.`COMPILE`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DURATION`, t1.`ID`, t1.`JOB`, t1.`LASTRUNNER`, t11.`MODULE`, t21.`NAME` AS `MODULENAME`, t1.`ORG`, t1.`ORGNAME`, t11.`PRECONDITION`, t11.`PRODUCT`, t1.`RUN`, t1.`STEPRESULTS`, t11.`STORY`, t1.`UPDATEBY`, t1.`VERSION`, t1.`XML` FROM `zt_testresult` t1  LEFT JOIN `zt_case` t11 ON t1.`CASE` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t11.`MODULE` = t21.`ID`   ]]>
+		<![CDATA[ SELECT t1.`CASE`, t1.`CASERESULT`, t1.`COMPILE`, t1.`CREATEBY`, t1.`DATE`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DURATION`, t1.`ID`, t1.`JOB`, t1.`LASTRUNNER`, t11.`MODULE`, t21.`NAME` AS `MODULENAME`, t1.`ORG`, t1.`ORGNAME`, t11.`PRECONDITION`, t11.`PRODUCT`, t1.`RUN`, t1.`STEPRESULTS`, t11.`STORY`, t1.`TESTRESULTSN`, t1.`UPDATEBY`, t1.`VERSION`, t1.`XML` FROM `zt_testresult` t1  LEFT JOIN `zt_case` t11 ON t1.`CASE` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t11.`MODULE` = t21.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>

@@ -279,6 +279,14 @@ public class Action extends EntityMP implements Serializable {
     @JsonProperty("project")
     @ApiModelProperty("项目")
     private Long project;
+    /**
+     * 系统日志编号
+     */
+    @TableField(value = "`ACTIONSN`")
+    @JSONField(name = "actionsn")
+    @JsonProperty("actionsn")
+    @ApiModelProperty("系统日志编号")
+    private Long actionsn;
 
     /**
      * 项目
@@ -368,6 +376,14 @@ public class Action extends EntityMP implements Serializable {
     public void setProject(Long project) {
         this.project = project;
         this.modify("project", project);
+    }
+
+    /**
+     * 设置 [系统日志编号]
+     */
+    public void setActionsn(Long actionsn) {
+        this.actionsn = actionsn;
+        this.modify("actionsn", actionsn);
     }
 
 

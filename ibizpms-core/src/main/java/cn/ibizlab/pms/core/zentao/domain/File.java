@@ -211,6 +211,14 @@ public class File extends EntityMP implements Serializable {
     @JsonProperty("extra")
     @ApiModelProperty("备注")
     private String extra;
+    /**
+     * 附件编号
+     */
+    @TableField(value = "`FILESN`")
+    @JSONField(name = "filesn")
+    @JsonProperty("filesn")
+    @ApiModelProperty("附件编号")
+    private Long filesn;
 
 
 
@@ -276,6 +284,14 @@ public class File extends EntityMP implements Serializable {
     public void setExtra(String extra) {
         this.extra = extra;
         this.modify("extra", extra);
+    }
+
+    /**
+     * 设置 [附件编号]
+     */
+    public void setFilesn(Long filesn) {
+        this.filesn = filesn;
+        this.modify("filesn", filesn);
     }
 
 

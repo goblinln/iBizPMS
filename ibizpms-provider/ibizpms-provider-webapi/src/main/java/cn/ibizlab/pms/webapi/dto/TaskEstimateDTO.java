@@ -336,6 +336,16 @@ public class TaskEstimateDTO extends DTOBase implements Serializable {
     @ApiModelProperty("任务")
     private Long task;
 
+    /**
+     * 属性 [TASKESTIMATESN]
+     *
+     */
+    @JSONField(name = "taskestimatesn")
+    @JsonProperty("taskestimatesn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("任务预计编号")
+    private Long taskestimatesn;
+
 
     /**
      * 设置 [MONTHNAME]
@@ -439,6 +449,14 @@ public class TaskEstimateDTO extends DTOBase implements Serializable {
     public void setTask(Long  task){
         this.task = task ;
         this.modify("task",task);
+    }
+
+    /**
+     * 设置 [TASKESTIMATESN]
+     */
+    public void setTaskestimatesn(Long  taskestimatesn){
+        this.taskestimatesn = taskestimatesn ;
+        this.modify("taskestimatesn",taskestimatesn);
     }
 
 

@@ -356,4 +356,8 @@ export interface IProject extends IEntityBase {
      * 父项目
      */
     parent?: any;
+    /**
+     * 项目编号
+     */
+    projectsn?: any;
 }

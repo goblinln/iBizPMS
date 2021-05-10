@@ -182,6 +182,16 @@ public class TestSuiteDTO extends DTOBase implements Serializable {
     @ApiModelProperty("所属产品")
     private Long product;
 
+    /**
+     * 属性 [TESTSUITESN]
+     *
+     */
+    @JSONField(name = "testsuitesn")
+    @JsonProperty("testsuitesn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("测试套件编号")
+    private Long testsuitesn;
+
 
     /**
      * 设置 [NAME]
@@ -213,6 +223,14 @@ public class TestSuiteDTO extends DTOBase implements Serializable {
     public void setProduct(Long  product){
         this.product = product ;
         this.modify("product",product);
+    }
+
+    /**
+     * 设置 [TESTSUITESN]
+     */
+    public void setTestsuitesn(Long  testsuitesn){
+        this.testsuitesn = testsuitesn ;
+        this.modify("testsuitesn",testsuitesn);
     }
 
 

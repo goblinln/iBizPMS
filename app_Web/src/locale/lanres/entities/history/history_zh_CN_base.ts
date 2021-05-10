@@ -15,6 +15,7 @@ function getLocaleResourceBase(){
 		'deptname': commonLogic.appcommonhandle("归属部门名",null),
 		'id': commonLogic.appcommonhandle("id",null),
 		'action': commonLogic.appcommonhandle("关联日志",null),
+		'historysn': commonLogic.appcommonhandle("操作历史编号",null),
 	},
 		default_list: {
 			nodata:commonLogic.appcommonhandle("",null),

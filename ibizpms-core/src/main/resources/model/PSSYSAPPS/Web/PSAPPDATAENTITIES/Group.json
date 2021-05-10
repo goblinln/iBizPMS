@@ -184,6 +184,11 @@
     "name" : "ROLE",
     "stdDataType" : 25,
     "stringLength" : 30
+  }, {
+    "codeName" : "Groupsn",
+    "logicName" : "群组编号",
+    "name" : "GROUPSN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

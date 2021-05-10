@@ -515,6 +515,11 @@
     "logicName" : "任务",
     "name" : "TASK",
     "stdDataType" : 1
+  }, {
+    "codeName" : "TaskEstimatesn",
+    "logicName" : "任务预计编号",
+    "name" : "TASKESTIMATESN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Create",

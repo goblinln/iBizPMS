@@ -170,4 +170,8 @@ export interface ISubProductPlan extends IEntityBase {
      * 产品
      */
     product?: any;
+    /**
+     * 产品计划编号
+     */
+    productplansn?: any;
 }

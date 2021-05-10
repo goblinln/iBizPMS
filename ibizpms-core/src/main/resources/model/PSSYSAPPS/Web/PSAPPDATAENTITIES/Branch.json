@@ -277,6 +277,11 @@
     "logicName" : "所属产品",
     "name" : "PRODUCT",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Branchsn",
+    "logicName" : "产品的分支和平台信息编号",
+    "name" : "BRANCHSN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

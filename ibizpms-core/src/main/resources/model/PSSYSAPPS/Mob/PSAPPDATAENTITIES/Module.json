@@ -384,6 +384,11 @@
     "logicName" : "上级模块",
     "name" : "PARENT",
     "stdDataType" : 1
+  }, {
+    "codeName" : "ModuleSN",
+    "logicName" : "模块编号",
+    "name" : "MODULESN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

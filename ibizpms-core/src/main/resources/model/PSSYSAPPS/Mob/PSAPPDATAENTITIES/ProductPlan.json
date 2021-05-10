@@ -853,6 +853,11 @@
     "logicName" : "产品",
     "name" : "PRODUCT",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Productplansn",
+    "logicName" : "产品计划编号",
+    "name" : "PRODUCTPLANSN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

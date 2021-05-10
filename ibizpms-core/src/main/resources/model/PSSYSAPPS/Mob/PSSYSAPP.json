@@ -22170,6 +22170,11 @@
         "logicName" : "项目",
         "name" : "PROJECT",
         "stdDataType" : 1
+      }, {
+        "codeName" : "Actionsn",
+        "logicName" : "系统日志编号",
+        "name" : "ACTIONSN",
+        "stdDataType" : 1
       } ],
       "getAllPSAppDEMethods" : [ {
         "codeName" : "Select",
@@ -24035,6 +24040,11 @@
         "name" : "QQ",
         "stdDataType" : 25,
         "stringLength" : 20
+      }, {
+        "codeName" : "Usersn",
+        "logicName" : "用户编号",
+        "name" : "USERSN",
+        "stdDataType" : 1
       } ],
       "getAllPSAppDEMethods" : [ {
         "codeName" : "Select",
@@ -25177,6 +25187,11 @@
         "codeName" : "Line",
         "logicName" : "产品线",
         "name" : "LINE",
+        "stdDataType" : 1
+      }, {
+        "codeName" : "Productsn",
+        "logicName" : "产品编号",
+        "name" : "PRODUCTSN",
         "stdDataType" : 1
       } ],
       "getAllPSAppDELogics" : [ {
@@ -27853,6 +27868,11 @@
         "codeName" : "Parent",
         "logicName" : "父项目",
         "name" : "PARENT",
+        "stdDataType" : 1
+      }, {
+        "codeName" : "Projectsn",
+        "logicName" : "项目编号",
+        "name" : "PROJECTSN",
         "stdDataType" : 1
       } ],
       "getAllPSAppDELogics" : [ {

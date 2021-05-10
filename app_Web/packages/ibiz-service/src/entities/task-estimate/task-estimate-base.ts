@@ -161,6 +161,10 @@ export abstract class TaskEstimateBase extends EntityBase implements ITaskEstima
      * 任务
      */
     task?: any;
+    /**
+     * 任务预计编号
+     */
+    taskestimatesn?: any;
 
     /**
      * 重置实体数据

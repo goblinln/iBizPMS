@@ -142,6 +142,16 @@ public class BranchDTO extends DTOBase implements Serializable {
     @ApiModelProperty("所属产品")
     private Long product;
 
+    /**
+     * 属性 [BRANCHSN]
+     *
+     */
+    @JSONField(name = "branchsn")
+    @JsonProperty("branchsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("产品的分支和平台信息编号")
+    private Long branchsn;
+
 
     /**
      * 设置 [NAME]
@@ -165,6 +175,14 @@ public class BranchDTO extends DTOBase implements Serializable {
     public void setProduct(Long  product){
         this.product = product ;
         this.modify("product",product);
+    }
+
+    /**
+     * 设置 [BRANCHSN]
+     */
+    public void setBranchsn(Long  branchsn){
+        this.branchsn = branchsn ;
+        this.modify("branchsn",branchsn);
     }
 
 

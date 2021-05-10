@@ -334,6 +334,14 @@ public class User extends EntityMP implements Serializable {
     @JsonProperty("qq")
     @ApiModelProperty("QQ")
     private String qq;
+    /**
+     * 用户编号
+     */
+    @TableField(value = "`USERSN`")
+    @JSONField(name = "usersn")
+    @JsonProperty("usersn")
+    @ApiModelProperty("用户编号")
+    private Long usersn;
 
 
 
@@ -621,6 +629,14 @@ public class User extends EntityMP implements Serializable {
     public void setQq(String qq) {
         this.qq = qq;
         this.modify("qq", qq);
+    }
+
+    /**
+     * 设置 [用户编号]
+     */
+    public void setUsersn(Long usersn) {
+        this.usersn = usersn;
+        this.modify("usersn", usersn);
     }
 
 

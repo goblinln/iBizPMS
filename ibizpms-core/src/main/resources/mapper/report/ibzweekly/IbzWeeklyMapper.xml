@@ -118,11 +118,11 @@
 		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`COMMENT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`DATE`, t1.`IBZ_WEEKLYID`, t1.`IBZ_WEEKLYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.`NEXTWEEKTASK`, t1.`PLANNEXTWEEK`, (case when t11.id is not null then '1' else '0' end ) as `REPORTSTATUS`, t1.`REPORTTO`, t1.`THISWEEKTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME` FROM `T_IBZ_WEEKLY` t1  left join zt_action t11 on t11.objectID = t1.IBZ_WEEKLYID and t11.objectType = 'weekly' and t11.action = 'read' and t11.actor = #{srf.sessioncontext.srfloginname} ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.issubmit = '1' ]]>
-			</if>
+                <![CDATA[ AND t1.issubmit = '1' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND (t1.REPORTTO = #{srf.sessioncontext.srfloginname} or FIND_IN_SET(#{srf.sessioncontext.srfloginname},t1.MAILTO)) ]]>
-			</if>
+                <![CDATA[ AND (t1.REPORTTO = #{srf.sessioncontext.srfloginname} or FIND_IN_SET(#{srf.sessioncontext.srfloginname},t1.MAILTO)) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -136,8 +136,8 @@
 		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`DATE`, t1.`IBZ_WEEKLYID`, t1.`IBZ_WEEKLYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.mailto AS `MAILTOPK`, t1.`NEXTWEEKTASK`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.reportto AS `REPORTTOPK`, t1.`SUBMITTIME`, t1.`THISWEEKTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME` FROM `T_IBZ_WEEKLY` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND ( t1.`ISSUBMIT` = '1'  AND  t1.ACCOUNT in (select t.ACCOUNT from zt_team t where t.type = 'product' and t.root =#{srf.datacontext.product})   and YEARWEEK(t1.date,1) = YEARWEEK(#{srf.datacontext.date},1) ) ]]>
-			</if>
+                <![CDATA[ AND ( t1.`ISSUBMIT` = '1'  AND  t1.ACCOUNT in (select t.ACCOUNT from zt_team t where t.type = 'product' and t.root =#{srf.datacontext.product})   and YEARWEEK(t1.date,1) = YEARWEEK(#{srf.datacontext.date},1) ) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -151,8 +151,8 @@
 		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`CREATEMANNAME`, t1.`DATE`, t1.`IBZ_WEEKLYID`, t1.`IBZ_WEEKLYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.MAILTO AS `MAILTOPK`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.REPORTTO AS `REPORTTOPK`, t1.`SUBMITTIME`, t1.`THISWEEKTASK`, t1.`NEXTWEEKTASK`, t1.`UPDATEDATE`, t1.`UPDATEMAN`, t1.`UPDATEMANNAME` FROM `T_IBZ_WEEKLY` t1 ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND ( t1.`ISSUBMIT` = '1'  AND  t1.ACCOUNT in (select t.ACCOUNT from zt_team t where t.type = 'project' and t.root =#{srf.datacontext.curproject})  AND  (DATE_FORMAT(t1.date,'%Y-%m-%d') between DATE_FORMAT(#{srf.datacontext.begindatestats},'%Y-%m-%d') and DATE_FORMAT(#{srf.datacontext.enddatestats},'%Y-%m-%d'))  ) ]]>
-			</if>
+                <![CDATA[ AND ( t1.`ISSUBMIT` = '1'  AND  t1.ACCOUNT in (select t.ACCOUNT from zt_team t where t.type = 'project' and t.root =#{srf.datacontext.curproject})  AND  (DATE_FORMAT(t1.date,'%Y-%m-%d') between DATE_FORMAT(#{srf.datacontext.begindatestats},'%Y-%m-%d') and DATE_FORMAT(#{srf.datacontext.enddatestats},'%Y-%m-%d'))  ) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>

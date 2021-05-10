@@ -14,6 +14,7 @@ function getLocaleResourceBase(){
 		'ibizpublic': commonLogic.appcommonhandle("公开",null),
 		'updateby': commonLogic.appcommonhandle("由谁更新",null),
 		'dept': commonLogic.appcommonhandle("归属部门",null),
+		'usertplsn': commonLogic.appcommonhandle("用户模板编号",null),
 	},
 		views: {
 			'gridview': {

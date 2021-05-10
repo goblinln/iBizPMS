@@ -52,4 +52,8 @@ export interface IBranch extends IEntityBase {
      * 所属产品
      */
     product?: any;
+    /**
+     * 产品的分支和平台信息编号
+     */
+    branchsn?: any;
 }

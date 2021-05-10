@@ -823,6 +823,16 @@ public class ProjectDTO extends DTOBase implements Serializable {
     @ApiModelProperty("父项目")
     private Long parent;
 
+    /**
+     * 属性 [PROJECTSN]
+     *
+     */
+    @JSONField(name = "projectsn")
+    @JsonProperty("projectsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("项目编号")
+    private Long projectsn;
+
 
     /**
      * 设置 [OPENEDVERSION]
@@ -1054,6 +1064,14 @@ public class ProjectDTO extends DTOBase implements Serializable {
     public void setParent(Long  parent){
         this.parent = parent ;
         this.modify("parent",parent);
+    }
+
+    /**
+     * 设置 [PROJECTSN]
+     */
+    public void setProjectsn(Long  projectsn){
+        this.projectsn = projectsn ;
+        this.modify("projectsn",projectsn);
     }
 
 

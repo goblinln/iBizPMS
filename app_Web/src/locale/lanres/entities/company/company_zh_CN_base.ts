@@ -14,6 +14,7 @@ function getLocaleResourceBase(){
 		'name': commonLogic.appcommonhandle("公司名称",null),
 		'guest': commonLogic.appcommonhandle("匿名登陆",null),
 		'phone': commonLogic.appcommonhandle("联系电话",null),
+		'companysn': commonLogic.appcommonhandle("公司编号",null),
 	},
 		views: {
 			'mainview9': {

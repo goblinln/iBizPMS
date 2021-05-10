@@ -143,6 +143,16 @@ public class CompanyDTO extends DTOBase implements Serializable {
     @ApiModelProperty("联系电话")
     private String phone;
 
+    /**
+     * 属性 [COMPANYSN]
+     *
+     */
+    @JSONField(name = "companysn")
+    @JsonProperty("companysn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("公司编号")
+    private Long companysn;
+
 
     /**
      * 设置 [ADMINS]
@@ -214,6 +224,14 @@ public class CompanyDTO extends DTOBase implements Serializable {
     public void setPhone(String  phone){
         this.phone = phone ;
         this.modify("phone",phone);
+    }
+
+    /**
+     * 设置 [COMPANYSN]
+     */
+    public void setCompanysn(Long  companysn){
+        this.companysn = companysn ;
+        this.modify("companysn",companysn);
     }
 
 

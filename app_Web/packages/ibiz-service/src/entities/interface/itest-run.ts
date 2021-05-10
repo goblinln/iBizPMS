@@ -72,4 +72,8 @@ export interface ITestRun extends IEntityBase {
      * 测试单
      */
     task?: any;
+    /**
+     * 测试运行编号
+     */
+    testrunsn?: any;
 }

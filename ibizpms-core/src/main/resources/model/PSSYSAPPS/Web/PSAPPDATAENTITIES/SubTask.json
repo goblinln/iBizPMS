@@ -1583,6 +1583,11 @@
     "logicName" : "来源Bug",
     "name" : "FROMBUG",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Tasksn",
+    "logicName" : "任务编号",
+    "name" : "TASKSN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDELogics" : [ {
     "codeName" : "GetUserConcat",

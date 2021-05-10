@@ -590,6 +590,11 @@
     "logicName" : "所属项目",
     "name" : "PROJECT",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Buildsn",
+    "logicName" : "版本编号",
+    "name" : "BUILDSN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

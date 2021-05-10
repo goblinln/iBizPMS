@@ -1894,6 +1894,20 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"ACTIONSN" ,
+    "codename":"Actionsn",
+    "field_logic_name":"系统日志编号",
+    "entity_name":"ZT_ACTION",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
@@ -2260,6 +2274,20 @@
     "physical_field":1,
     "data_type":"BIGINT",
     "data_length":8,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"BRANCHSN" ,
+    "codename":"Branchsn",
+    "field_logic_name":"产品的分支和平台信息编号",
+    "entity_name":"ZT_BRANCH",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -4727,6 +4755,20 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"BUILDSN" ,
+    "codename":"Buildsn",
+    "field_logic_name":"版本编号",
+    "entity_name":"ZT_BUILD",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
@@ -5960,6 +6002,20 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"CASESN" ,
+    "codename":"Casesn",
+    "field_logic_name":"测试用例编号",
+    "entity_name":"ZT_CASE",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
@@ -6524,6 +6580,20 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"CASESTEPSN" ,
+    "codename":"Casestepsn",
+    "field_logic_name":"用例步骤编号",
+    "entity_name":"ZT_CASESTEP",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
@@ -6710,6 +6780,20 @@
     "nullable":1,
     "physical_field":1,
     "data_type":"VARCHAR",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"COMPANYSN" ,
+    "codename":"Companysn",
+    "field_logic_name":"公司编号",
+    "entity_name":"ZT_COMPANY",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
     "data_length":20,
     "key_field":0,
     "show_order":1000,
@@ -7212,6 +7296,20 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"CONFIGSN" ,
+    "codename":"Configsn",
+    "field_logic_name":"配置编号",
+    "entity_name":"ZT_CONFIG",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
@@ -7568,6 +7666,20 @@
     "nullable":1,
     "physical_field":1,
     "data_type":"BIGINT",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"DEPTSN" ,
+    "codename":"Deptsn",
+    "field_logic_name":"部门编号",
+    "entity_name":"ZT_DEPT",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -8196,6 +8308,20 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"DOCSN" ,
+    "codename":"Docsn",
+    "field_logic_name":"文档编号",
+    "entity_name":"ZT_DOC",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
@@ -8448,6 +8574,20 @@
     "physical_field":1,
     "data_type":"BIGINT",
     "data_length":8,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"DOCCONTENTSN" ,
+    "codename":"Doccontentsn",
+    "field_logic_name":"文档内容编号",
+    "entity_name":"ZT_DOCCONTENT",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -8879,6 +9019,20 @@
     "physical_field":1,
     "data_type":"BIGINT",
     "data_length":8,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"DOCLIBSN" ,
+    "codename":"Doclibsn",
+    "field_logic_name":"文档库编号",
+    "entity_name":"ZT_DOCLIB",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -10529,6 +10683,20 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"FILESN" ,
+    "codename":"Filesn",
+    "field_logic_name":"附件编号",
+    "entity_name":"ZT_FILE",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
@@ -10619,6 +10787,20 @@
     "physical_field":1,
     "data_type":"VARCHAR",
     "data_length":30,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"GROUPSN" ,
+    "codename":"Groupsn",
+    "field_logic_name":"群组编号",
+    "entity_name":"ZT_GROUP",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -10887,6 +11069,20 @@
     "physical_field":1,
     "data_type":"BIGINT",
     "data_length":8,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"HISTORYSN" ,
+    "codename":"Historysn",
+    "field_logic_name":"操作历史编号",
+    "entity_name":"ZT_HISTORY",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -22609,6 +22805,20 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"MODULESN" ,
+    "codename":"ModuleSN",
+    "field_logic_name":"模块编号",
+    "entity_name":"ZT_MODULE",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
@@ -22848,6 +23058,20 @@
     "physical_field":1,
     "data_type":"VARCHAR",
     "data_length":50,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"NOTIFYSN" ,
+    "codename":"Notifysn",
+    "field_logic_name":"通知编号",
+    "entity_name":"ZT_NOTIFY",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31803,6 +32027,20 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"PRODUCTSN" ,
+    "codename":"Productsn",
+    "field_logic_name":"产品编号",
+    "entity_name":"ZT_PRODUCT",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
@@ -33161,6 +33399,20 @@
     "physical_field":1,
     "data_type":"BIGINT",
     "data_length":8,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"PRODUCTPLANSN" ,
+    "codename":"Productplansn",
+    "field_logic_name":"产品计划编号",
+    "entity_name":"ZT_PRODUCTPLAN",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35539,6 +35791,20 @@
     "physical_field":1,
     "data_type":"BIGINT",
     "data_length":8,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"PROJECTSN" ,
+    "codename":"Projectsn",
+    "field_logic_name":"项目编号",
+    "entity_name":"ZT_PROJECT",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -40022,6 +40288,20 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"RELEASESN" ,
+    "codename":"Releasesn",
+    "field_logic_name":"发布编号",
+    "entity_name":"ZT_RELEASE",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
@@ -41927,6 +42207,20 @@
     "physical_field":1,
     "data_type":"BIGINT",
     "data_length":8,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"STORYSN" ,
+    "codename":"Storysn",
+    "field_logic_name":"需求编号",
+    "entity_name":"ZT_STORY",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -46712,6 +47006,20 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"TASKSN" ,
+    "codename":"Tasksn",
+    "field_logic_name":"任务编号",
+    "entity_name":"ZT_TASK",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
@@ -47273,6 +47581,20 @@
     "physical_field":1,
     "data_type":"BIGINT",
     "data_length":8,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"TASKESTIMATESN" ,
+    "codename":"TaskEstimatesn",
+    "field_logic_name":"任务预计编号",
+    "entity_name":"ZT_TASKESTIMATE",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -48568,6 +48890,20 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"TEAMSN" ,
+    "codename":"Teamsn",
+    "field_logic_name":"群组编号",
+    "entity_name":"ZT_TEAM",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
@@ -49305,6 +49641,20 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"TESTREPORTSN" ,
+    "codename":"Testreportsn",
+    "field_logic_name":"测试报告编号",
+    "entity_name":"ZT_TESTREPORT",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
@@ -49729,6 +50079,20 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"TESTRESULTSN" ,
+    "codename":"Testresultsn",
+    "field_logic_name":"测试结果编号",
+    "entity_name":"ZT_TESTRESULT",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
@@ -49997,6 +50361,20 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"TESTRUNSN" ,
+    "codename":"Testrunsn",
+    "field_logic_name":"测试运行编号",
+    "entity_name":"ZT_TESTRUN",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
@@ -50253,6 +50631,20 @@
     "physical_field":1,
     "data_type":"BIGINT",
     "data_length":8,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"TESTSUITESN" ,
+    "codename":"Testsuitesn",
+    "field_logic_name":"测试套件编号",
+    "entity_name":"ZT_TESTSUITE",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -50744,6 +51136,20 @@
     "physical_field":1,
     "data_type":"BIGINT",
     "data_length":8,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"TESTTASKSN" ,
+    "codename":"Testtasksn",
+    "field_logic_name":"测试版本编号",
+    "entity_name":"ZT_TESTTASK",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -51868,6 +52274,20 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"USERSN" ,
+    "codename":"Usersn",
+    "field_logic_name":"用户编号",
+    "entity_name":"ZT_USER",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
@@ -52014,6 +52434,20 @@
     "data_type":"VARCHAR",
     "data_length":30,
     "predefined":"CREATEMANNAME",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"USERCONTACTSN" ,
+    "codename":"Usercontactsn",
+    "field_logic_name":"用户联系方式编号",
+    "entity_name":"ZT_USERCONTACT",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -52187,6 +52621,20 @@
     "physical_field":1,
     "data_type":"VARCHAR",
     "data_length":30,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"USERQUERYSN" ,
+    "codename":"Userquerysn",
+    "field_logic_name":"用户查询编号",
+    "entity_name":"ZT_USERQUERY",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -52367,6 +52815,20 @@
     "data_type":"VARCHAR",
     "data_length":100,
     "predefined":"ORGSECTORID",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"USERTPLSN" ,
+    "codename":"Usertplsn",
+    "field_logic_name":"用户模板编号",
+    "entity_name":"ZT_USERTPL",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
     "key_field":0,
     "show_order":1000,
     "major_field":0

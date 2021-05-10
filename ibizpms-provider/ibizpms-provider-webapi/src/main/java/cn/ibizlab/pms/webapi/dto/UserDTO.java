@@ -366,6 +366,16 @@ public class UserDTO extends DTOBase implements Serializable {
     @ApiModelProperty("QQ")
     private String qq;
 
+    /**
+     * 属性 [USERSN]
+     *
+     */
+    @JSONField(name = "usersn")
+    @JsonProperty("usersn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("用户编号")
+    private Long usersn;
+
 
     /**
      * 设置 [PASSWORD]
@@ -621,6 +631,14 @@ public class UserDTO extends DTOBase implements Serializable {
     public void setQq(String  qq){
         this.qq = qq ;
         this.modify("qq",qq);
+    }
+
+    /**
+     * 设置 [USERSN]
+     */
+    public void setUsersn(Long  usersn){
+        this.usersn = usersn ;
+        this.modify("usersn",usersn);
     }
 
 

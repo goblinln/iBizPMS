@@ -154,6 +154,14 @@ public class History extends EntityMP implements Serializable {
     @JsonProperty("action")
     @ApiModelProperty("关联日志")
     private Long action;
+    /**
+     * 操作历史编号
+     */
+    @TableField(value = "`HISTORYSN`")
+    @JSONField(name = "historysn")
+    @JsonProperty("historysn")
+    @ApiModelProperty("操作历史编号")
+    private Long historysn;
 
     /**
      * 关联日志
@@ -203,6 +211,14 @@ public class History extends EntityMP implements Serializable {
     public void setAction(Long action) {
         this.action = action;
         this.modify("action", action);
+    }
+
+    /**
+     * 设置 [操作历史编号]
+     */
+    public void setHistorysn(Long historysn) {
+        this.historysn = historysn;
+        this.modify("historysn", historysn);
     }
 
 

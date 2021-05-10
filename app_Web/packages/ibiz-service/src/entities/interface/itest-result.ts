@@ -110,4 +110,8 @@ export interface ITestResult extends IEntityBase {
      * 代码编译
      */
     compile?: any;
+    /**
+     * 测试结果编号
+     */
+    testresultsn?: any;
 }

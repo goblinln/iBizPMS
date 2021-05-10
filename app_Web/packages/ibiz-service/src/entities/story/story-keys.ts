@@ -78,4 +78,5 @@ export default [
     'duplicatestory',
     'branch',
     'tobug',
+    'storysn',
 ];

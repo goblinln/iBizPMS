@@ -563,6 +563,16 @@ public class ProductDTO extends DTOBase implements Serializable {
     @ApiModelProperty("产品线")
     private Long line;
 
+    /**
+     * 属性 [PRODUCTSN]
+     *
+     */
+    @JSONField(name = "productsn")
+    @JsonProperty("productsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("产品编号")
+    private Long productsn;
+
 
     /**
      * 设置 [QD]
@@ -698,6 +708,14 @@ public class ProductDTO extends DTOBase implements Serializable {
     public void setLine(Long  line){
         this.line = line ;
         this.modify("line",line);
+    }
+
+    /**
+     * 设置 [PRODUCTSN]
+     */
+    public void setProductsn(Long  productsn){
+        this.productsn = productsn ;
+        this.modify("productsn",productsn);
     }
 
 

@@ -122,6 +122,16 @@ public class UserContactDTO extends DTOBase implements Serializable {
     @ApiModelProperty("account")
     private String account;
 
+    /**
+     * 属性 [USERCONTACTSN]
+     *
+     */
+    @JSONField(name = "usercontactsn")
+    @JsonProperty("usercontactsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("用户联系方式编号")
+    private Long usercontactsn;
+
 
     /**
      * 设置 [USERLIST]
@@ -137,6 +147,14 @@ public class UserContactDTO extends DTOBase implements Serializable {
     public void setListname(String  listname){
         this.listname = listname ;
         this.modify("listname",listname);
+    }
+
+    /**
+     * 设置 [USERCONTACTSN]
+     */
+    public void setUsercontactsn(Long  usercontactsn){
+        this.usercontactsn = usercontactsn ;
+        this.modify("usercontactsn",usercontactsn);
     }
 
 

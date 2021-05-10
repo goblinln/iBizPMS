@@ -252,6 +252,11 @@
     "logicName" : "文档",
     "name" : "DOC",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Doccontentsn",
+    "logicName" : "文档内容编号",
+    "name" : "DOCCONTENTSN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

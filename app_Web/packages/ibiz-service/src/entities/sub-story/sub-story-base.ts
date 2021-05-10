@@ -371,6 +371,10 @@ export abstract class SubStoryBase extends EntityBase implements ISubStory {
      * 转Bug
      */
     tobug?: any;
+    /**
+     * 需求编号
+     */
+    storysn?: any;
 
     /**
      * 重置实体数据

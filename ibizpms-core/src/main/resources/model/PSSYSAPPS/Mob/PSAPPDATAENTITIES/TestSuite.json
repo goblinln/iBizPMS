@@ -349,6 +349,11 @@
     "logicName" : "所属产品",
     "name" : "PRODUCT",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Testsuitesn",
+    "logicName" : "测试套件编号",
+    "name" : "TESTSUITESN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

@@ -97,6 +97,10 @@ export abstract class TestRunBase extends EntityBase implements ITestRun {
      * 测试单
      */
     task?: any;
+    /**
+     * 测试运行编号
+     */
+    testrunsn?: any;
 
     /**
      * 重置实体数据

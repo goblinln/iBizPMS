@@ -66,4 +66,8 @@ export interface IDocContent extends IEntityBase {
      * 文档
      */
     doc?: any;
+    /**
+     * 文档内容编号
+     */
+    doccontentsn?: any;
 }

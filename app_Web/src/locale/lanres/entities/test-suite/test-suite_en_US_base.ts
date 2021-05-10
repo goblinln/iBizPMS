@@ -18,6 +18,7 @@ function getLocaleResourceBase(){
 		'casecnt': commonLogic.appcommonhandle("用例数",null),
 		'desc': commonLogic.appcommonhandle("描述",null),
 		'product': commonLogic.appcommonhandle("所属产品",null),
+		'testsuitesn': commonLogic.appcommonhandle("测试套件编号",null),
 	},
 		views: {
 			'maindashboardview': {

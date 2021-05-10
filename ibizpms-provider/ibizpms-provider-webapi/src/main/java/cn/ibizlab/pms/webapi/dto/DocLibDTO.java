@@ -300,6 +300,16 @@ public class DocLibDTO extends DTOBase implements Serializable {
     @ApiModelProperty("产品库")
     private Long product;
 
+    /**
+     * 属性 [DOCLIBSN]
+     *
+     */
+    @JSONField(name = "doclibsn")
+    @JsonProperty("doclibsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("文档库编号")
+    private Long doclibsn;
+
 
     /**
      * 设置 [TYPE]
@@ -387,6 +397,14 @@ public class DocLibDTO extends DTOBase implements Serializable {
     public void setProduct(Long  product){
         this.product = product ;
         this.modify("product",product);
+    }
+
+    /**
+     * 设置 [DOCLIBSN]
+     */
+    public void setDoclibsn(Long  doclibsn){
+        this.doclibsn = doclibsn ;
+        this.modify("doclibsn",doclibsn);
     }
 
 

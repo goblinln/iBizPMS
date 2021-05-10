@@ -819,6 +819,16 @@ public class StoryDTO extends DTOBase implements Serializable {
     @ApiModelProperty("转Bug")
     private Long tobug;
 
+    /**
+     * 属性 [STORYSN]
+     *
+     */
+    @JSONField(name = "storysn")
+    @JsonProperty("storysn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("需求编号")
+    private Long storysn;
+
 
     /**
      * 设置 [ASSIGNEDTO]
@@ -1154,6 +1164,14 @@ public class StoryDTO extends DTOBase implements Serializable {
     public void setTobug(Long  tobug){
         this.tobug = tobug ;
         this.modify("tobug",tobug);
+    }
+
+    /**
+     * 设置 [STORYSN]
+     */
+    public void setStorysn(Long  storysn){
+        this.storysn = storysn ;
+        this.modify("storysn",storysn);
     }
 
 

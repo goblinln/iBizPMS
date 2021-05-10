@@ -233,6 +233,11 @@
     "logicName" : "parent",
     "name" : "PARENT",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Deptsn",
+    "logicName" : "部门编号",
+    "name" : "DEPTSN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

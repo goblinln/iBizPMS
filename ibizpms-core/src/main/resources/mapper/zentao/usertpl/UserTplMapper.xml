@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONTENT`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`ORG`, t1.`ORGNAME`, t1.`PUBLIC`, t1.`TITLE`, t1.`TYPE`, t1.`UPDATEBY` FROM `zt_usertpl` t1   ]]>
+        <![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONTENT`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`ORG`, t1.`ORGNAME`, t1.`PUBLIC`, t1.`TITLE`, t1.`TYPE`, t1.`UPDATEBY`, t1.`USERTPLSN` FROM `zt_usertpl` t1   ]]>
     </sql>
 
 	
@@ -64,11 +64,11 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONTENT`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`ORG`, t1.`ORGNAME`, t1.`PUBLIC`, t1.`TITLE`, t1.`TYPE`, t1.`UPDATEBY` FROM `zt_usertpl` t1   ]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONTENT`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`ORG`, t1.`ORGNAME`, t1.`PUBLIC`, t1.`TITLE`, t1.`TYPE`, t1.`UPDATEBY`, t1.`USERTPLSN` FROM `zt_usertpl` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND ( ( t1.`PUBLIC` = '1'  OR  t1.`ACCOUNT` =  #{srf.webcontext.account} )  AND  t1.`TYPE` =  #{srf.webcontext.type} ) ]]>
-			</if>
+                <![CDATA[ AND ( ( t1.`PUBLIC` = '1'  OR  t1.`ACCOUNT` =  #{srf.webcontext.account} )  AND  t1.`TYPE` =  #{srf.webcontext.type} ) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -79,11 +79,11 @@
 
     <!--数据查询[MyUserTpl]-->
     <sql id="MyUserTpl" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONTENT`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`ORG`, t1.`ORGNAME`, t1.`PUBLIC`, t1.`TITLE`, t1.`TYPE`, t1.`UPDATEBY` FROM `zt_usertpl` t1   ]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONTENT`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`ORG`, t1.`ORGNAME`, t1.`PUBLIC`, t1.`TITLE`, t1.`TYPE`, t1.`UPDATEBY`, t1.`USERTPLSN` FROM `zt_usertpl` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND ( t1.`ACCOUNT` =  #{srf.sessioncontext.srfloginname} ) ]]>
-			</if>
+                <![CDATA[ AND ( t1.`ACCOUNT` =  #{srf.sessioncontext.srfloginname} ) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -94,7 +94,7 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONTENT`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`ORG`, t1.`ORGNAME`, t1.`PUBLIC`, t1.`TITLE`, t1.`TYPE`, t1.`UPDATEBY` FROM `zt_usertpl` t1   ]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONTENT`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`ORG`, t1.`ORGNAME`, t1.`PUBLIC`, t1.`TITLE`, t1.`TYPE`, t1.`UPDATEBY`, t1.`USERTPLSN` FROM `zt_usertpl` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>

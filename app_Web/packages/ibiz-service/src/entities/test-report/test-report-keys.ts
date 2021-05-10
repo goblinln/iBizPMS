@@ -29,4 +29,5 @@ export default [
     'productname',
     'product',
     'project',
+    'testreportsn',
 ];

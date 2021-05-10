@@ -10,4 +10,5 @@ export default [
     'name',
     'parentname',
     'parent',
+    'deptsn',
 ];

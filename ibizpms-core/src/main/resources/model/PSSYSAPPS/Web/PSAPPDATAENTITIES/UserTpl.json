@@ -248,6 +248,11 @@
     "name" : "DEPT",
     "stdDataType" : 25,
     "stringLength" : 100
+  }, {
+    "codeName" : "Usertplsn",
+    "logicName" : "用户模板编号",
+    "name" : "USERTPLSN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`ACCOUNT`, t1.`ADDRESS`, t1.`AVATAR`, t1.`BIRTHDAY`, t1.`CLIENTLANG`, t1.`CLIENTSTATUS`, t1.`COMMITER`, t1.`DELETED`, t1.`DEPT`, t1.`DINGDING`, t1.`EMAIL`, t1.`FAILS`, t1.`GENDER`, t1.`ID`, t1.`IP`, t1.`JOIN`, t1.`LAST`, t1.`LOCKED`, t1.`MOBILE`, t1.`NICKNAME`, t1.`PASSWORD`, t1.`PHONE`, t1.`QQ`, t1.`RANZHI`, t1.`REALNAME`, t1.`ROLE`, t1.`SCORE`, t1.`SCORELEVEL`, t1.`SKYPE`, t1.`SLACK`, t1.`VISITS`, t1.`WEIXIN`, t1.`WHATSAPP`, t1.`ZIPCODE` FROM `zt_user` t1   ]]>
+        <![CDATA[ SELECT t1.`ACCOUNT`, t1.`ADDRESS`, t1.`AVATAR`, t1.`BIRTHDAY`, t1.`CLIENTLANG`, t1.`CLIENTSTATUS`, t1.`COMMITER`, t1.`DELETED`, t1.`DEPT`, t1.`DINGDING`, t1.`EMAIL`, t1.`FAILS`, t1.`GENDER`, t1.`ID`, t1.`IP`, t1.`JOIN`, t1.`LAST`, t1.`LOCKED`, t1.`MOBILE`, t1.`NICKNAME`, t1.`PASSWORD`, t1.`PHONE`, t1.`QQ`, t1.`RANZHI`, t1.`REALNAME`, t1.`ROLE`, t1.`SCORE`, t1.`SCORELEVEL`, t1.`SKYPE`, t1.`SLACK`, t1.`USERSN`, t1.`VISITS`, t1.`WEIXIN`, t1.`WHATSAPP`, t1.`ZIPCODE` FROM `zt_user` t1   ]]>
     </sql>
 
 	
@@ -122,11 +122,11 @@
 		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ADDRESS`, t1.`AVATAR`, t1.`BIRTHDAY`, t1.`CLIENTLANG`, t1.`CLIENTSTATUS`, t1.`COMMITER`, t1.`DELETED`, t1.`DEPT`, t1.`DINGDING`, t1.`EMAIL`, t1.`FAILS`, t1.`GENDER`, t1.`ID`, t1.`IP`, t1.`JOIN`, t1.`LAST`, t1.`LOCKED`, t1.`MOBILE`, t1.`NICKNAME`, t1.`PASSWORD`, t1.`PHONE`, t1.`QQ`, t1.`RANZHI`, t1.`REALNAME`, t1.`ROLE`, t1.`SCORE`, t1.`SCORELEVEL`, t1.`SKYPE`, t1.`SLACK`, t1.`VISITS`, t1.`WEIXIN`, t1.`WHATSAPP`, t1.`ZIPCODE` FROM `zt_user` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.DELETED = '0' ]]>
-			</if>
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND (#{srf.datacontext.project} is null or #{srf.datacontext.project} = '0' or t1.account in (select tt.account from zt_team tt where tt.type = 'project' and tt.root = #{srf.datacontext.project})) ]]>
-			</if>
+                <![CDATA[ AND (#{srf.datacontext.project} is null or #{srf.datacontext.project} = '0' or t1.account in (select tt.account from zt_team tt where tt.type = 'project' and tt.root = #{srf.datacontext.project})) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -137,11 +137,11 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ADDRESS`, t1.`AVATAR`, t1.`BIRTHDAY`, t1.`CLIENTLANG`, t1.`CLIENTSTATUS`, t1.`COMMITER`, t1.`DELETED`, t1.`DEPT`, t1.`DINGDING`, t1.`EMAIL`, t1.`FAILS`, t1.`GENDER`, t1.`ID`, t1.`IP`, t1.`JOIN`, t1.`LAST`, t1.`LOCKED`, t1.`MOBILE`, t1.`NICKNAME`, t1.`PASSWORD`, t1.`PHONE`, t1.`QQ`, t1.`RANZHI`, t1.`REALNAME`, t1.`ROLE`, t1.`SCORE`, t1.`SCORELEVEL`, t1.`SKYPE`, t1.`SLACK`, t1.`VISITS`, t1.`WEIXIN`, t1.`WHATSAPP`, t1.`ZIPCODE` FROM `zt_user` t1   ]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ADDRESS`, t1.`AVATAR`, t1.`BIRTHDAY`, t1.`CLIENTLANG`, t1.`CLIENTSTATUS`, t1.`COMMITER`, t1.`DELETED`, t1.`DEPT`, t1.`DINGDING`, t1.`EMAIL`, t1.`FAILS`, t1.`GENDER`, t1.`ID`, t1.`IP`, t1.`JOIN`, t1.`LAST`, t1.`LOCKED`, t1.`MOBILE`, t1.`NICKNAME`, t1.`PASSWORD`, t1.`PHONE`, t1.`QQ`, t1.`RANZHI`, t1.`REALNAME`, t1.`ROLE`, t1.`SCORE`, t1.`SCORELEVEL`, t1.`SKYPE`, t1.`SLACK`, t1.`USERSN`, t1.`VISITS`, t1.`WEIXIN`, t1.`WHATSAPP`, t1.`ZIPCODE` FROM `zt_user` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.DELETED = '0' ]]>
-			</if>
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -152,14 +152,14 @@
 
     <!--数据查询[GetByLogin]-->
     <sql id="GetByLogin" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ADDRESS`, t1.`AVATAR`, t1.`BIRTHDAY`, t1.`CLIENTLANG`, t1.`CLIENTSTATUS`, t1.`COMMITER`, t1.`DELETED`, t1.`DEPT`, t1.`DINGDING`, t1.`EMAIL`, t1.`FAILS`, t1.`GENDER`, t1.`ID`, t1.`IP`, t1.`JOIN`, t1.`LAST`, t1.`LOCKED`, t1.`MOBILE`, t1.`NICKNAME`, t1.`PASSWORD`, t1.`PHONE`, t1.`QQ`, t1.`RANZHI`, t1.`REALNAME`, t1.`ROLE`, t1.`SCORE`, t1.`SCORELEVEL`, t1.`SKYPE`, t1.`SLACK`, t1.`VISITS`, t1.`WEIXIN`, t1.`WHATSAPP`, t1.`ZIPCODE` FROM `zt_user` t1   ]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ADDRESS`, t1.`AVATAR`, t1.`BIRTHDAY`, t1.`CLIENTLANG`, t1.`CLIENTSTATUS`, t1.`COMMITER`, t1.`DELETED`, t1.`DEPT`, t1.`DINGDING`, t1.`EMAIL`, t1.`FAILS`, t1.`GENDER`, t1.`ID`, t1.`IP`, t1.`JOIN`, t1.`LAST`, t1.`LOCKED`, t1.`MOBILE`, t1.`NICKNAME`, t1.`PASSWORD`, t1.`PHONE`, t1.`QQ`, t1.`RANZHI`, t1.`REALNAME`, t1.`ROLE`, t1.`SCORE`, t1.`SCORELEVEL`, t1.`SKYPE`, t1.`SLACK`, t1.`USERSN`, t1.`VISITS`, t1.`WEIXIN`, t1.`WHATSAPP`, t1.`ZIPCODE` FROM `zt_user` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.DELETED = '0' ]]>
-			</if>
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND ( ( t1.`ACCOUNT` = 'account'  OR  t1.`MOBILE` = 'mobile'  OR  t1.`EMAIL` = 'email'  OR  t1.`COMMITER` = 'commiter' ) ) ]]>
-			</if>
+                <![CDATA[ AND ( ( t1.`ACCOUNT` = 'account'  OR  t1.`MOBILE` = 'mobile'  OR  t1.`EMAIL` = 'email'  OR  t1.`COMMITER` = 'commiter' ) ) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -170,14 +170,14 @@
 
     <!--数据查询[ProjectTeamM]-->
     <sql id="ProjectTeamM" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ADDRESS`, t1.`AVATAR`, t1.`BIRTHDAY`, t1.`CLIENTLANG`, t1.`CLIENTSTATUS`, t1.`COMMITER`, t1.`DELETED`, t1.`DEPT`, t1.`DINGDING`, t1.`EMAIL`, t1.`FAILS`, t1.`GENDER`, t1.`ID`, t1.`IP`, t1.`JOIN`, t1.`LAST`, t1.`LOCKED`, t1.`MOBILE`, t1.`NICKNAME`, t1.`PASSWORD`, t1.`PHONE`, t1.`QQ`, t1.`RANZHI`, t1.`REALNAME`, t1.`ROLE`, t1.`SCORE`, t1.`SCORELEVEL`, t1.`SKYPE`, t1.`SLACK`, t1.`VISITS`, t1.`WEIXIN`, t1.`WHATSAPP`, t1.`ZIPCODE` FROM `zt_user` t1   ]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ADDRESS`, t1.`AVATAR`, t1.`BIRTHDAY`, t1.`CLIENTLANG`, t1.`CLIENTSTATUS`, t1.`COMMITER`, t1.`DELETED`, t1.`DEPT`, t1.`DINGDING`, t1.`EMAIL`, t1.`FAILS`, t1.`GENDER`, t1.`ID`, t1.`IP`, t1.`JOIN`, t1.`LAST`, t1.`LOCKED`, t1.`MOBILE`, t1.`NICKNAME`, t1.`PASSWORD`, t1.`PHONE`, t1.`QQ`, t1.`RANZHI`, t1.`REALNAME`, t1.`ROLE`, t1.`SCORE`, t1.`SCORELEVEL`, t1.`SKYPE`, t1.`SLACK`, t1.`USERSN`, t1.`VISITS`, t1.`WEIXIN`, t1.`WHATSAPP`, t1.`ZIPCODE` FROM `zt_user` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.DELETED = '0' ]]>
-			</if>
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND ( (t1.account = #{srf.webcontext.account} or t1.account not in (select t.account from zt_team t where t.type = 'project' and t.root = #{srf.webcontext.srfparentkey})) ) ]]>
-			</if>
+                <![CDATA[ AND ( (t1.account = #{srf.webcontext.account} or t1.account not in (select t.account from zt_team t where t.type = 'project' and t.root = #{srf.webcontext.srfparentkey})) ) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -191,14 +191,14 @@
 		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ADDRESS`, t1.`AVATAR`, t1.`BIRTHDAY`, t1.`CLIENTLANG`, t1.`CLIENTSTATUS`, t1.`COMMITER`, t1.`DELETED`, t1.`DEPT`, t1.`DINGDING`, t1.`EMAIL`, t1.`FAILS`, t1.`GENDER`, t1.`ID`, t1.`IP`, t1.`JOIN`, t1.`LAST`, t1.`LOCKED`, t1.`MOBILE`, t1.`NICKNAME`, t1.`PASSWORD`, t1.`PHONE`, t1.`QQ`, t1.`RANZHI`, t1.`REALNAME`, t1.`ROLE`, t1.`SCORE`, t1.`SCORELEVEL`, t1.`SKYPE`, t1.`SLACK`, t1.`VISITS`, t1.`WEIXIN`, t1.`WHATSAPP`, t1.`ZIPCODE` FROM `zt_user` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.DELETED = '0' ]]>
-			</if>
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND t1.`account` in (select t.`account` from zt_team t where t.`type` = 'project' and t.`root` = #{srf.datacontext.project}) ]]>
-			</if>
+                <![CDATA[ AND t1.`account` in (select t.`account` from zt_team t where t.`type` = 'project' and t.`root` = #{srf.datacontext.project}) ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND t1.`account` not in(select t2.`account` from zt_user t2 where FIND_IN_SET(t2.`account`, #{srf.datacontext.account})) ]]>
-			</if>
+                <![CDATA[ AND t1.`account` not in(select t2.`account` from zt_user t2 where FIND_IN_SET(t2.`account`, #{srf.datacontext.account})) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -212,14 +212,14 @@
 		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ADDRESS`, t1.`AVATAR`, t1.`BIRTHDAY`, t1.`CLIENTLANG`, t1.`CLIENTSTATUS`, t1.`COMMITER`, t1.`DELETED`, t1.`DEPT`, t1.`DINGDING`, t1.`EMAIL`, t1.`FAILS`, t1.`GENDER`, t1.`ID`, t1.`IP`, t1.`JOIN`, t1.`LAST`, t1.`LOCKED`, t1.`MOBILE`, t1.`NICKNAME`, t1.`PASSWORD`, t1.`PHONE`, t1.`QQ`, t1.`RANZHI`, t1.`REALNAME`, t1.`ROLE`, t1.`SCORE`, t1.`SCORELEVEL`, t1.`SKYPE`, t1.`SLACK`, t1.`VISITS`, t1.`WEIXIN`, t1.`WHATSAPP`, t1.`ZIPCODE` FROM `zt_user` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.DELETED = '0' ]]>
-			</if>
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND t1.`account` in (select t.`account` from zt_team t where t.`type` = 'project' and t.`root` = (select tt.`project` from zt_task tt where tt.`id` = #{srf.datacontext.srfparentkey})) ]]>
-			</if>
+                <![CDATA[ AND t1.`account` in (select t.`account` from zt_team t where t.`type` = 'project' and t.`root` = (select tt.`project` from zt_task tt where tt.`id` = #{srf.datacontext.srfparentkey})) ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND t1.`account` not in(select t2.`account` from zt_user t2 where FIND_IN_SET(t2.`account`, #{srf.datacontext.account})) ]]>
-			</if>
+                <![CDATA[ AND t1.`account` not in(select t2.`account` from zt_user t2 where FIND_IN_SET(t2.`account`, #{srf.datacontext.account})) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -233,11 +233,11 @@
 		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ADDRESS`, t1.`AVATAR`, t1.`BIRTHDAY`, t1.`CLIENTLANG`, t1.`CLIENTSTATUS`, t1.`COMMITER`, t1.`DELETED`, t1.`DEPT`, t1.`DINGDING`, t1.`EMAIL`, t1.`FAILS`, t1.`GENDER`, t1.`ID`, t1.`IP`, t1.`JOIN`, t1.`LAST`, t1.`LOCKED`, t1.`MOBILE`, t1.`NICKNAME`, t1.`PASSWORD`, t1.`PHONE`, t1.`QQ`, t1.`RANZHI`, t1.`REALNAME`, t1.`ROLE`, t1.`SCORE`, t1.`SCORELEVEL`, t1.`SKYPE`, t1.`SLACK`, t1.`VISITS`, t1.`WEIXIN`, t1.`WHATSAPP`, t1.`ZIPCODE` FROM `zt_user` t1 ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.DELETED = '0' ]]>
-			</if>
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND (t1.`account` in (select t.`account` from zt_team t where t.`type` = 'task' and #{srf.datacontext.multiple} = '1'  and t.`root` = #{srf.datacontext.id}) or  t1.`account` in (select t.`account` from zt_team t where t.`type` = 'project' and #{srf.datacontext.multiple} = '0'  and t.`root` = (select tt.`project` from zt_task tt where tt.`id` = #{srf.datacontext.id})) ) ]]>
-			</if>
+                <![CDATA[ AND (t1.`account` in (select t.`account` from zt_team t where t.`type` = 'task' and #{srf.datacontext.multiple} = '1'  and t.`root` = #{srf.datacontext.id}) or  t1.`account` in (select t.`account` from zt_team t where t.`type` = 'project' and #{srf.datacontext.multiple} = '0'  and t.`root` = (select tt.`project` from zt_task tt where tt.`id` = #{srf.datacontext.id})) ) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -248,11 +248,11 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ADDRESS`, t1.`AVATAR`, t1.`BIRTHDAY`, t1.`CLIENTLANG`, t1.`CLIENTSTATUS`, t1.`COMMITER`, t1.`DELETED`, t1.`DEPT`, t1.`DINGDING`, t1.`EMAIL`, t1.`FAILS`, t1.`GENDER`, t1.`ID`, t1.`IP`, t1.`JOIN`, t1.`LAST`, t1.`LOCKED`, t1.`MOBILE`, t1.`NICKNAME`, t1.`PASSWORD`, t1.`PHONE`, t1.`QQ`, t1.`RANZHI`, t1.`REALNAME`, t1.`ROLE`, t1.`SCORE`, t1.`SCORELEVEL`, t1.`SKYPE`, t1.`SLACK`, t1.`VISITS`, t1.`WEIXIN`, t1.`WHATSAPP`, t1.`ZIPCODE` FROM `zt_user` t1   ]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ADDRESS`, t1.`AVATAR`, t1.`BIRTHDAY`, t1.`CLIENTLANG`, t1.`CLIENTSTATUS`, t1.`COMMITER`, t1.`DELETED`, t1.`DEPT`, t1.`DINGDING`, t1.`EMAIL`, t1.`FAILS`, t1.`GENDER`, t1.`ID`, t1.`IP`, t1.`JOIN`, t1.`LAST`, t1.`LOCKED`, t1.`MOBILE`, t1.`NICKNAME`, t1.`PASSWORD`, t1.`PHONE`, t1.`QQ`, t1.`RANZHI`, t1.`REALNAME`, t1.`ROLE`, t1.`SCORE`, t1.`SCORELEVEL`, t1.`SKYPE`, t1.`SLACK`, t1.`USERSN`, t1.`VISITS`, t1.`WEIXIN`, t1.`WHATSAPP`, t1.`ZIPCODE` FROM `zt_user` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.DELETED = '0' ]]>
-			</if>
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>

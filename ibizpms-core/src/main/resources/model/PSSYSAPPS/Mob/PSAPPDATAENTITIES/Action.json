@@ -510,6 +510,11 @@
     "logicName" : "项目",
     "name" : "PROJECT",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Actionsn",
+    "logicName" : "系统日志编号",
+    "name" : "ACTIONSN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

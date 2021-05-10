@@ -166,6 +166,14 @@ public class DocContent extends EntityMP implements Serializable {
     @JsonProperty("doc")
     @ApiModelProperty("文档")
     private Long doc;
+    /**
+     * 文档内容编号
+     */
+    @TableField(value = "`DOCCONTENTSN`")
+    @JSONField(name = "doccontentsn")
+    @JsonProperty("doccontentsn")
+    @ApiModelProperty("文档内容编号")
+    private Long doccontentsn;
 
     /**
      * 
@@ -231,6 +239,14 @@ public class DocContent extends EntityMP implements Serializable {
     public void setDoc(Long doc) {
         this.doc = doc;
         this.modify("doc", doc);
+    }
+
+    /**
+     * 设置 [文档内容编号]
+     */
+    public void setDoccontentsn(Long doccontentsn) {
+        this.doccontentsn = doccontentsn;
+        this.modify("doccontentsn", doccontentsn);
     }
 
 

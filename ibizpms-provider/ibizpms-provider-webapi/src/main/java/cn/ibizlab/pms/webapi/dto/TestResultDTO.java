@@ -280,6 +280,16 @@ public class TestResultDTO extends DTOBase implements Serializable {
     @ApiModelProperty("代码编译")
     private Long compile;
 
+    /**
+     * 属性 [TESTRESULTSN]
+     *
+     */
+    @JSONField(name = "testresultsn")
+    @JsonProperty("testresultsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("测试结果编号")
+    private Long testresultsn;
+
 
     /**
      * 设置 [LASTRUNNER]
@@ -367,6 +377,14 @@ public class TestResultDTO extends DTOBase implements Serializable {
     public void setCompile(Long  compile){
         this.compile = compile ;
         this.modify("compile",compile);
+    }
+
+    /**
+     * 设置 [TESTRESULTSN]
+     */
+    public void setTestresultsn(Long  testresultsn){
+        this.testresultsn = testresultsn ;
+        this.modify("testresultsn",testresultsn);
     }
 
 

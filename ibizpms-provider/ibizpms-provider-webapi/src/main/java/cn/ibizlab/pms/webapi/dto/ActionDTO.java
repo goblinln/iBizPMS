@@ -312,6 +312,16 @@ public class ActionDTO extends DTOBase implements Serializable {
     @ApiModelProperty("项目")
     private Long project;
 
+    /**
+     * 属性 [ACTIONSN]
+     *
+     */
+    @JSONField(name = "actionsn")
+    @JsonProperty("actionsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("系统日志编号")
+    private Long actionsn;
+
 
     /**
      * 设置 [EXTRA]
@@ -383,6 +393,14 @@ public class ActionDTO extends DTOBase implements Serializable {
     public void setProject(Long  project){
         this.project = project ;
         this.modify("project",project);
+    }
+
+    /**
+     * 设置 [ACTIONSN]
+     */
+    public void setActionsn(Long  actionsn){
+        this.actionsn = actionsn ;
+        this.modify("actionsn",actionsn);
     }
 
 

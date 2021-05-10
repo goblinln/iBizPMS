@@ -231,6 +231,14 @@ public class Module extends EntityMP implements Serializable {
     @JsonProperty("parent")
     @ApiModelProperty("上级模块")
     private Long parent;
+    /**
+     * 模块编号
+     */
+    @TableField(value = "`MODULESN`")
+    @JSONField(name = "modulesn")
+    @JsonProperty("modulesn")
+    @ApiModelProperty("模块编号")
+    private Long modulesn;
 
     /**
      * 
@@ -336,6 +344,14 @@ public class Module extends EntityMP implements Serializable {
     public void setParent(Long parent) {
         this.parent = parent;
         this.modify("parent", parent);
+    }
+
+    /**
+     * 设置 [模块编号]
+     */
+    public void setModulesn(Long modulesn) {
+        this.modulesn = modulesn;
+        this.modify("modulesn", modulesn);
     }
 
 

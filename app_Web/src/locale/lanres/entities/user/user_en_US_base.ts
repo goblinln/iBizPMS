@@ -37,6 +37,7 @@ function getLocaleResourceBase(){
 		'phone': commonLogic.appcommonhandle("电话",null),
 		'id': commonLogic.appcommonhandle("ID",null),
 		'qq': commonLogic.appcommonhandle("QQ",null),
+		'usersn': commonLogic.appcommonhandle("用户编号",null),
 	},
 		views: {
 			'infoeditview': {

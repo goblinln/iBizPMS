@@ -77,6 +77,10 @@ export abstract class BranchBase extends EntityBase implements IBranch {
      * 所属产品
      */
     product?: any;
+    /**
+     * 产品的分支和平台信息编号
+     */
+    branchsn?: any;
 
     /**
      * 重置实体数据

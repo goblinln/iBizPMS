@@ -331,6 +331,16 @@ public class TestTaskDTO extends DTOBase implements Serializable {
     @ApiModelProperty("所属项目")
     private Long project;
 
+    /**
+     * 属性 [TESTTASKSN]
+     *
+     */
+    @JSONField(name = "testtasksn")
+    @JsonProperty("testtasksn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("测试版本编号")
+    private Long testtasksn;
+
 
     /**
      * 设置 [END]
@@ -442,6 +452,14 @@ public class TestTaskDTO extends DTOBase implements Serializable {
     public void setProject(Long  project){
         this.project = project ;
         this.modify("project",project);
+    }
+
+    /**
+     * 设置 [TESTTASKSN]
+     */
+    public void setTesttasksn(Long  testtasksn){
+        this.testtasksn = testtasksn ;
+        this.modify("testtasksn",testtasksn);
     }
 
 

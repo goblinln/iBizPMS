@@ -643,6 +643,16 @@ public class CaseDTO extends DTOBase implements Serializable {
     @ApiModelProperty("所属模块")
     private Long module;
 
+    /**
+     * 属性 [CASESN]
+     *
+     */
+    @JSONField(name = "casesn")
+    @JsonProperty("casesn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("测试用例编号")
+    private Long casesn;
+
 
     /**
      * 设置 [SCRIPTEDDATE]
@@ -922,6 +932,14 @@ public class CaseDTO extends DTOBase implements Serializable {
     public void setModule(Long  module){
         this.module = module ;
         this.modify("module",module);
+    }
+
+    /**
+     * 设置 [CASESN]
+     */
+    public void setCasesn(Long  casesn){
+        this.casesn = casesn ;
+        this.modify("casesn",casesn);
     }
 
 

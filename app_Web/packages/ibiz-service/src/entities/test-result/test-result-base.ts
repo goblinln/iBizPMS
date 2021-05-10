@@ -135,6 +135,10 @@ export abstract class TestResultBase extends EntityBase implements ITestResult {
      * 代码编译
      */
     compile?: any;
+    /**
+     * 测试结果编号
+     */
+    testresultsn?: any;
 
     /**
      * 重置实体数据

@@ -394,4 +394,8 @@ export interface ITask extends IEntityBase {
      * 来源Bug
      */
     frombug?: any;
+    /**
+     * 任务编号
+     */
+    tasksn?: any;
 }

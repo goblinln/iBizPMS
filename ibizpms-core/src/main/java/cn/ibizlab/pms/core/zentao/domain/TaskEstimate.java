@@ -309,6 +309,14 @@ public class TaskEstimate extends EntityMP implements Serializable {
     @JsonProperty("task")
     @ApiModelProperty("任务")
     private Long task;
+    /**
+     * 任务预计编号
+     */
+    @TableField(value = "`TASKESTIMATESN`")
+    @JSONField(name = "taskestimatesn")
+    @JsonProperty("taskestimatesn")
+    @ApiModelProperty("任务预计编号")
+    private Long taskestimatesn;
 
     /**
      * 
@@ -432,6 +440,14 @@ public class TaskEstimate extends EntityMP implements Serializable {
     public void setTask(Long task) {
         this.task = task;
         this.modify("task", task);
+    }
+
+    /**
+     * 设置 [任务预计编号]
+     */
+    public void setTaskestimatesn(Long taskestimatesn) {
+        this.taskestimatesn = taskestimatesn;
+        this.modify("taskestimatesn", taskestimatesn);
     }
 
 

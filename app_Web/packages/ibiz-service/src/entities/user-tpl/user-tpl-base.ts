@@ -81,6 +81,10 @@ export abstract class UserTplBase extends EntityBase implements IUserTpl {
      * 归属部门
      */
     dept?: any;
+    /**
+     * 用户模板编号
+     */
+    usertplsn?: any;
 
     /**
      * 重置实体数据

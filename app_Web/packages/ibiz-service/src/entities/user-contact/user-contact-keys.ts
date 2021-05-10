@@ -8,4 +8,5 @@ export default [
     'updateby',
     'dept',
     'account',
+    'usercontactsn',
 ];

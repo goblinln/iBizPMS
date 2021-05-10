@@ -812,6 +812,11 @@
     "logicName" : "产品线",
     "name" : "LINE",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Productsn",
+    "logicName" : "产品编号",
+    "name" : "PRODUCTSN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDELogics" : [ {
     "codeName" : "CancelProductTop",

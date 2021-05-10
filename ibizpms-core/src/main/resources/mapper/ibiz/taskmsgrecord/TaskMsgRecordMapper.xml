@@ -56,8 +56,8 @@
 		<![CDATA[ SELECT t1.`APPTASKID`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATAID`, t1.`ENABLE`, t1.`MEMO`, t1.`TASKMSGRECORDID`, t1.`TASKMSGRECORDNAME`, t1.`TASKTYPE`, t1.`TASKUSERID`, t1.`TITLE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_TASKMSGRECORD` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.ENABLE = 1 ]]>
-			</if>
+                <![CDATA[ AND t1.ENABLE = 1 ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -71,8 +71,8 @@
 		<![CDATA[ SELECT t1.`APPTASKID`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATAID`, t1.`ENABLE`, t1.`MEMO`, t1.`TASKMSGRECORDID`, t1.`TASKMSGRECORDNAME`, t1.`TASKTYPE`, t1.`TASKUSERID`, t1.`TITLE`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_TASKMSGRECORD` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.ENABLE = 1 ]]>
-			</if>
+                <![CDATA[ AND t1.ENABLE = 1 ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>

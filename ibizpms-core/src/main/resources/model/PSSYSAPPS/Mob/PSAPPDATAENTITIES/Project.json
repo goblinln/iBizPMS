@@ -1417,6 +1417,11 @@
     "logicName" : "父项目",
     "name" : "PARENT",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Projectsn",
+    "logicName" : "项目编号",
+    "name" : "PROJECTSN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDELogics" : [ {
     "codeName" : "ProjectTaskQCnt",

@@ -86,4 +86,8 @@ export interface IFile extends IEntityBase {
      * 备注
      */
     extra?: any;
+    /**
+     * 附件编号
+     */
+    filesn?: any;
 }

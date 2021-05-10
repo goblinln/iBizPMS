@@ -125,6 +125,14 @@ public class UserContact extends EntityMP implements Serializable {
     @JsonProperty("account")
     @ApiModelProperty("account")
     private String account;
+    /**
+     * 用户联系方式编号
+     */
+    @TableField(value = "`USERCONTACTSN`")
+    @JSONField(name = "usercontactsn")
+    @JsonProperty("usercontactsn")
+    @ApiModelProperty("用户联系方式编号")
+    private Long usercontactsn;
 
 
 
@@ -142,6 +150,14 @@ public class UserContact extends EntityMP implements Serializable {
     public void setListname(String listname) {
         this.listname = listname;
         this.modify("listname", listname);
+    }
+
+    /**
+     * 设置 [用户联系方式编号]
+     */
+    public void setUsercontactsn(Long usercontactsn) {
+        this.usercontactsn = usercontactsn;
+        this.modify("usercontactsn", usercontactsn);
     }
 
 

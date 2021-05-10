@@ -130,4 +130,8 @@ export interface ITestReport extends IEntityBase {
      * 所属项目
      */
     project?: any;
+    /**
+     * 测试报告编号
+     */
+    testreportsn?: any;
 }

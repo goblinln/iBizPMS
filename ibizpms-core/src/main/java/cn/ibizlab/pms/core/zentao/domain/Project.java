@@ -742,6 +742,14 @@ public class Project extends EntityMP implements Serializable {
     @JsonProperty("parent")
     @ApiModelProperty("父项目")
     private Long parent;
+    /**
+     * 项目编号
+     */
+    @TableField(value = "`PROJECTSN`")
+    @JSONField(name = "projectsn")
+    @JsonProperty("projectsn")
+    @ApiModelProperty("项目编号")
+    private Long projectsn;
 
     /**
      * 
@@ -1031,6 +1039,14 @@ public class Project extends EntityMP implements Serializable {
     public void setParent(Long parent) {
         this.parent = parent;
         this.modify("parent", parent);
+    }
+
+    /**
+     * 设置 [项目编号]
+     */
+    public void setProjectsn(Long projectsn) {
+        this.projectsn = projectsn;
+        this.modify("projectsn", projectsn);
     }
 
 

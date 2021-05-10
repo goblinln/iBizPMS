@@ -87,6 +87,14 @@ public class Group extends EntityMP implements Serializable {
     @JsonProperty("role")
     @ApiModelProperty("role")
     private String role;
+    /**
+     * 群组编号
+     */
+    @TableField(value = "`GROUPSN`")
+    @JSONField(name = "groupsn")
+    @JsonProperty("groupsn")
+    @ApiModelProperty("群组编号")
+    private Long groupsn;
 
 
 
@@ -120,6 +128,14 @@ public class Group extends EntityMP implements Serializable {
     public void setRole(String role) {
         this.role = role;
         this.modify("role", role);
+    }
+
+    /**
+     * 设置 [群组编号]
+     */
+    public void setGroupsn(Long groupsn) {
+        this.groupsn = groupsn;
+        this.modify("groupsn", groupsn);
     }
 
 

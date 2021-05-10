@@ -56,8 +56,8 @@
 		<![CDATA[ SELECT t1.`ATTIME`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`DELETED`, t1.`ID`, t1.`JOB`, t1.`NAME`, t1.`QUEUE`, t1.`STATUS`, t1.`TAG`, t1.`TESTTASK`, t1.`UPDATEDATE` FROM `zt_compile` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.DELETED = '0' ]]>
-			</if>
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -71,8 +71,8 @@
 		<![CDATA[ SELECT t1.`ATTIME`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`DELETED`, t1.`ID`, t1.`JOB`, t1.`LOGS`, t1.`NAME`, t1.`QUEUE`, t1.`STATUS`, t1.`TAG`, t1.`TESTTASK`, t1.`UPDATEDATE` FROM `zt_compile` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.DELETED = '0' ]]>
-			</if>
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>

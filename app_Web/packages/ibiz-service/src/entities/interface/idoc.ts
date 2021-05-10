@@ -172,4 +172,8 @@ export interface IDoc extends IEntityBase {
      * 所属分类
      */
     module?: any;
+    /**
+     * 文档编号
+     */
+    docsn?: any;
 }

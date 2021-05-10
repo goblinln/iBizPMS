@@ -165,6 +165,10 @@ export abstract class ReleaseBase extends EntityBase implements IRelease {
      * 平台/分支
      */
     branch?: any;
+    /**
+     * 发布编号
+     */
+    releasesn?: any;
 
     /**
      * 重置实体数据

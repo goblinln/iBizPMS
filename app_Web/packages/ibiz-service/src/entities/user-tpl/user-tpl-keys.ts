@@ -10,4 +10,5 @@ export default [
     'ibizpublic',
     'updateby',
     'dept',
+    'usertplsn',
 ];

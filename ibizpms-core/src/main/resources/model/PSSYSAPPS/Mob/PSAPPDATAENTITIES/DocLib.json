@@ -463,6 +463,11 @@
     "logicName" : "产品库",
     "name" : "PRODUCT",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Doclibsn",
+    "logicName" : "文档库编号",
+    "name" : "DOCLIBSN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

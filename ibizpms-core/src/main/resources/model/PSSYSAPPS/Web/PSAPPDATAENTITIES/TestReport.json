@@ -522,6 +522,11 @@
     "logicName" : "所属项目",
     "name" : "PROJECT",
     "stdDataType" : 1
+  }, {
+    "codeName" : "Testreportsn",
+    "logicName" : "测试报告编号",
+    "name" : "TESTREPORTSN",
+    "stdDataType" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "getinfotesttask",

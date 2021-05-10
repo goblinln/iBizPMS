@@ -332,6 +332,16 @@ public class BuildDTO extends DTOBase implements Serializable {
     @ApiModelProperty("所属项目")
     private Long project;
 
+    /**
+     * 属性 [BUILDSN]
+     *
+     */
+    @JSONField(name = "buildsn")
+    @JsonProperty("buildsn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("版本编号")
+    private Long buildsn;
+
 
     /**
      * 设置 [NAME]
@@ -419,6 +429,14 @@ public class BuildDTO extends DTOBase implements Serializable {
     public void setProject(Long  project){
         this.project = project ;
         this.modify("project",project);
+    }
+
+    /**
+     * 设置 [BUILDSN]
+     */
+    public void setBuildsn(Long  buildsn){
+        this.buildsn = buildsn ;
+        this.modify("buildsn",buildsn);
     }
 
 

@@ -907,6 +907,16 @@ public class SubTaskDTO extends DTOBase implements Serializable {
     @ApiModelProperty("来源Bug")
     private Long frombug;
 
+    /**
+     * 属性 [TASKSN]
+     *
+     */
+    @JSONField(name = "tasksn")
+    @JsonProperty("tasksn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("任务编号")
+    private Long tasksn;
+
 
     /**
      * 设置 [CANCELEDBY]
@@ -1250,6 +1260,14 @@ public class SubTaskDTO extends DTOBase implements Serializable {
     public void setFrombug(Long  frombug){
         this.frombug = frombug ;
         this.modify("frombug",frombug);
+    }
+
+    /**
+     * 设置 [TASKSN]
+     */
+    public void setTasksn(Long  tasksn){
+        this.tasksn = tasksn ;
+        this.modify("tasksn",tasksn);
     }
 
 

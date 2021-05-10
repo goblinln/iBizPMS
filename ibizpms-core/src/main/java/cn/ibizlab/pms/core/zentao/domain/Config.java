@@ -95,6 +95,14 @@ public class Config extends EntityMP implements Serializable {
     @JsonProperty("owner")
     @ApiModelProperty("所有者")
     private String owner;
+    /**
+     * 配置编号
+     */
+    @TableField(value = "`CONFIGSN`")
+    @JSONField(name = "configsn")
+    @JsonProperty("configsn")
+    @ApiModelProperty("配置编号")
+    private Long configsn;
 
 
 
@@ -136,6 +144,14 @@ public class Config extends EntityMP implements Serializable {
     public void setOwner(String owner) {
         this.owner = owner;
         this.modify("owner", owner);
+    }
+
+    /**
+     * 设置 [配置编号]
+     */
+    public void setConfigsn(Long configsn) {
+        this.configsn = configsn;
+        this.modify("configsn", configsn);
     }
 
 

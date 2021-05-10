@@ -14,6 +14,7 @@ function getLocaleResourceBase(){
 		'name': commonLogic.appcommonhandle("部门名称",null),
 		'parentname': commonLogic.appcommonhandle("上级部门",null),
 		'parent': commonLogic.appcommonhandle("parent",null),
+		'deptsn': commonLogic.appcommonhandle("部门编号",null),
 	},
 		views: {
 			'pickupview': {

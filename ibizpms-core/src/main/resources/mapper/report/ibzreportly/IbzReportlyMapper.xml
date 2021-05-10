@@ -93,8 +93,8 @@
 		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DATE`, t1.`IBZ_REPORTLYID`, t1.`IBZ_REPORTLYNAME`, t1.`ISSUBMIT`, t1.`MAILTO`, t1.`REPORTSTATUS`, t1.`REPORTTO`, t1.`SUBMITTIME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `T_IBZ_REPORTLY` t1 ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.account = #{srf.sessioncontext.srfloginname} ]]>
-			</if>
+                <![CDATA[ AND t1.account = #{srf.sessioncontext.srfloginname} ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -108,11 +108,11 @@
 		<![CDATA[ SELECT 	t1.`ACCOUNT`, 	t1.`CONTENT`, 	t1.`CREATEDATE`, 	t1.`CREATEMAN`, 	t1.`DATE`, 	t1.`IBZ_REPORTLYID`, 	t1.`IBZ_REPORTLYNAME`, 	t1.`ISSUBMIT`, 	t1.`MAILTO`, 	( CASE WHEN t11.id IS NOT NULL THEN '1' ELSE '0' END ) AS `REPORTSTATUS`, 	t1.`REPORTTO`, 	t1.`SUBMITTIME`, 	t1.`UPDATEDATE`, 	t1.`UPDATEMAN`  FROM 	`t_ibz_reportly` t1 	LEFT JOIN zt_action t11 ON t11.objectID = t1.IBZ_REPORTLYID  	AND t11.objectType = 'reportly'  	AND t11.action = 'read'  	AND t11.actor = #{srf.sessioncontext.srfloginname} ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.issubmit = '1' ]]>
-			</if>
+                <![CDATA[ AND t1.issubmit = '1' ]]>
+            </if>
 			<if test="true">
-			<![CDATA[ AND (t1.REPORTTO = #{srf.sessioncontext.srfloginname} OR FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.MAILTO )) ]]>
-			</if>
+                <![CDATA[ AND (t1.REPORTTO = #{srf.sessioncontext.srfloginname} OR FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.MAILTO )) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -126,8 +126,8 @@
 		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CREATEDATE`, t1.`CREATEMAN`, DATE_FORMAT(t1.DATE,'%Y-%m-%d') as `DATE`, t1.`IBZ_REPORTLYID`, t1.`IBZ_REPORTLYNAME`, t1.`ISSUBMIT`, CONCAT_WS('','工作内容：',case when t1.CONTENT is null then '无' else t1.CONTENT end)  as `CONTENT`, t1.`MAILTO`, '1' as `REPORTSTATUS`, t1.`REPORTTO`, t1.`SUBMITTIME`, t1.`UPDATEDATE`, t1.`UPDATEMAN`,  'reportly' as type  FROM `T_IBZ_REPORTLY` t1 ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
-			<![CDATA[ AND t1.account = #{srf.sessioncontext.srfloginname} ]]>
-			</if>
+                <![CDATA[ AND t1.account = #{srf.sessioncontext.srfloginname} ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>

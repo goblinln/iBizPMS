@@ -221,6 +221,16 @@ public class FileDTO extends DTOBase implements Serializable {
     @ApiModelProperty("备注")
     private String extra;
 
+    /**
+     * 属性 [FILESN]
+     *
+     */
+    @JSONField(name = "filesn")
+    @JsonProperty("filesn")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("附件编号")
+    private Long filesn;
+
 
     /**
      * 设置 [PATHNAME]
@@ -284,6 +294,14 @@ public class FileDTO extends DTOBase implements Serializable {
     public void setExtra(String  extra){
         this.extra = extra ;
         this.modify("extra",extra);
+    }
+
+    /**
+     * 设置 [FILESN]
+     */
+    public void setFilesn(Long  filesn){
+        this.filesn = filesn ;
+        this.modify("filesn",filesn);
     }
 
 

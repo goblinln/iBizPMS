@@ -145,6 +145,14 @@ public class Branch extends EntityMP implements Serializable {
     @JsonProperty("product")
     @ApiModelProperty("所属产品")
     private Long product;
+    /**
+     * 产品的分支和平台信息编号
+     */
+    @TableField(value = "`BRANCHSN`")
+    @JSONField(name = "branchsn")
+    @JsonProperty("branchsn")
+    @ApiModelProperty("产品的分支和平台信息编号")
+    private Long branchsn;
 
     /**
      * 
@@ -178,6 +186,14 @@ public class Branch extends EntityMP implements Serializable {
     public void setProduct(Long product) {
         this.product = product;
         this.modify("product", product);
+    }
+
+    /**
+     * 设置 [产品的分支和平台信息编号]
+     */
+    public void setBranchsn(Long branchsn) {
+        this.branchsn = branchsn;
+        this.modify("branchsn", branchsn);
     }
 
 

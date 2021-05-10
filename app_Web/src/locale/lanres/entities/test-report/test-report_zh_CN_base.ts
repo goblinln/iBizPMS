@@ -33,6 +33,7 @@ function getLocaleResourceBase(){
 		'productname': commonLogic.appcommonhandle("所属产品",null),
 		'product': commonLogic.appcommonhandle("所属产品",null),
 		'project': commonLogic.appcommonhandle("所属项目",null),
+		'testreportsn': commonLogic.appcommonhandle("测试报告编号",null),
 	},
 		views: {
 			'projectgridview': {

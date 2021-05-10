@@ -280,6 +280,14 @@ public class DocLib extends EntityMP implements Serializable {
     @JsonProperty("product")
     @ApiModelProperty("产品库")
     private Long product;
+    /**
+     * 文档库编号
+     */
+    @TableField(value = "`DOCLIBSN`")
+    @JSONField(name = "doclibsn")
+    @JsonProperty("doclibsn")
+    @ApiModelProperty("文档库编号")
+    private Long doclibsn;
 
     /**
      * 
@@ -385,6 +393,14 @@ public class DocLib extends EntityMP implements Serializable {
     public void setProduct(Long product) {
         this.product = product;
         this.modify("product", product);
+    }
+
+    /**
+     * 设置 [文档库编号]
+     */
+    public void setDoclibsn(Long doclibsn) {
+        this.doclibsn = doclibsn;
+        this.modify("doclibsn", doclibsn);
     }
 
 

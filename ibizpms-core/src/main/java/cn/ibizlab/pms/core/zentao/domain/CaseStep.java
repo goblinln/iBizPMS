@@ -203,6 +203,14 @@ public class CaseStep extends EntityMP implements Serializable {
     @JsonProperty("parent")
     @ApiModelProperty("分组用例步骤的组编号")
     private Long parent;
+    /**
+     * 用例步骤编号
+     */
+    @TableField(value = "`CASESTEPSN`")
+    @JSONField(name = "casestepsn")
+    @JsonProperty("casestepsn")
+    @ApiModelProperty("用例步骤编号")
+    private Long casestepsn;
 
     /**
      * 
@@ -276,6 +284,14 @@ public class CaseStep extends EntityMP implements Serializable {
     public void setParent(Long parent) {
         this.parent = parent;
         this.modify("parent", parent);
+    }
+
+    /**
+     * 设置 [用例步骤编号]
+     */
+    public void setCasestepsn(Long casestepsn) {
+        this.casestepsn = casestepsn;
+        this.modify("casestepsn", casestepsn);
     }
 
 

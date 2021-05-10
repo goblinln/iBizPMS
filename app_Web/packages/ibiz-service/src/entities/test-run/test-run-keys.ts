@@ -14,4 +14,5 @@ export default [
     'createby',
     'ibizcase',
     'task',
+    'testrunsn',
 ];

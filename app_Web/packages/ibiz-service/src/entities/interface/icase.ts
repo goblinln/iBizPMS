@@ -280,4 +280,8 @@ export interface ICase extends IEntityBase {
      * 所属模块
      */
     module?: any;
+    /**
+     * 测试用例编号
+     */
+    casesn?: any;
 }

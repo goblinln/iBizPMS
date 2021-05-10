@@ -34,6 +34,7 @@ function getLocaleResourceBase(){
 		'deleted': commonLogic.appcommonhandle("任务删除标识",null),
 		'project': commonLogic.appcommonhandle("项目",null),
 		'task': commonLogic.appcommonhandle("任务",null),
+		'taskestimatesn': commonLogic.appcommonhandle("任务预计编号",null),
 	},
 		views: {
 			'gridview9': {
