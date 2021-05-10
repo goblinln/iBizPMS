@@ -1,4 +1,5 @@
 {
+  "customCond" : "[ (1, '=', 1) ]",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDEUSERROLES/SYS_UPDATE_LOG_MAINTAIN_ALL.json",
   "name" : "更新日志维护（全部数据）",
   "getPSDEUserRoleOPPrivs" : [ {

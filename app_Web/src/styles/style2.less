@@ -119,6 +119,8 @@
     .ivu-btn.ivu-btn-default:hover,
     .ivu-btn.ivu-btn-primary:hover {
         background: var(--button-background-color-bright);
+        color: var(--button-font-color-bright);
+        border-color: var(--button-font-color-bright) !important;
     }
 
     .ivu-btn.ivu-btn-default:disabled,
@@ -730,7 +732,7 @@
       .el-table {
           height: 100%;
           max-height: calc(100% - 36px) !important;
-          background-color: var(--view-background-color-light);
+          background-color: var(--view-background-color);
           color: var(--view-font-color);
           border: none;
           &::-webkit-scrollbar {
@@ -835,7 +837,7 @@
                       }
 
                       > .el-table__row {
-                          background-color: var(--view-background-color-light);
+                          background-color: var(--view-background-color);
                           > td {
                               border-right: 1px solid var(--form-editor-background-color);
                               border-bottom: none;

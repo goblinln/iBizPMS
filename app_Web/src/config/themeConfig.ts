@@ -108,7 +108,7 @@ export const themeConfig = {
             showAlpha: true
         }, {
             label: '背景色（亮色）',
-            cssName: '--leftsidebar-font-color-bright',
+            cssName: '--button-font-color-bright',
             default: '',
             disable: false,
             showAlpha: true

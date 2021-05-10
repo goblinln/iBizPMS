@@ -2867,7 +2867,7 @@
 
 
     <!--输出实体[SYS_UPDATE_LOG]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-sys_update_log-10-107">
+    <changeSet author="a_A_23e8aa361" id="tab-sys_update_log-12-107">
         <createTable tableName="T_SYS_UPDATE_LOG">
                 <column name="UPDATEDATE" remarks="" type="DATETIME">
                 </column>

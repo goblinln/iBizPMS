@@ -6,7 +6,7 @@
           <template v-for="(item, index) in items">
               <span class="codelist-item" :key="index">
                     <i v-if="getIconClass(item)" :class="getIconClass(item)"></i>
-                    <img v-if="isIconImage(item)" :src="getIconImagePath(item)" />
+                    <img v-if="isIconImage(item)" :src="item.imgUrlBase64" />
                     <span :class="getTextClass(item)" :style="{ color: item.color }">
                         {{ $t(item.text) || item.text }}
                     </span>
@@ -21,6 +21,7 @@
 import { Vue, Component, Prop, Model, Watch } from 'vue-property-decorator';
 import { Environment } from '@/environments/environment';
 import { CodeListTranslator } from 'ibiz-vue';
+import { ImgurlBase64 } from 'ibiz-core';
 
 @Component({})
 export default class CodeList extends Vue {
@@ -217,8 +218,8 @@ export default class CodeList extends Vue {
                 this.text = response;
             })
         }else{
-            this.codeListTranslator.getSelectedCodeListItems(this.value, this.codeList, this, _context,_param).then((response: any)=>{
-                this.items = response;
+            this.codeListTranslator.getSelectedCodeListItems(this.value, this.codeList, this, _context,_param).then(async (response: any)=>{
+                this.items = await this.getImgURLOfBase64(response);
                 this.isEmpty = !(this.items?.length > 0);
             })
         }
@@ -264,11 +265,11 @@ export default class CodeList extends Vue {
                 if(Object.prototype.toString.call(tpathetData) == "[object Array]"){
                         if(tpathetData && tpathetData.length >0){
                             let fileId:string = tpathetData[0] && tpathetData[0].id;
-                            return Environment.BaseUrl + Environment.ExportFile + fileId;
+                            return `${Environment.ExportFile}/` + fileId;
                         }
                     }else if(Object.prototype.toString.call(tpathetData) === '[object Object]'){
                             let fileId:string = tpathetData && tpathetData.id;
-                            return Environment.BaseUrl + Environment.ExportFile + fileId;
+                            return `${Environment.ExportFile}/` + fileId;
                     }
             } catch (error) {
                 return path;
@@ -276,16 +277,31 @@ export default class CodeList extends Vue {
         }else if(Object.prototype.toString.call(path) == "[object Array]"){
             if(path && path.length >0){
                 let fileId:string = path[0] && path[0].id;
-                return Environment.BaseUrl + Environment.ExportFile + fileId;
+                return `${Environment.ExportFile}/` + fileId;
             }
         }else if(Object.prototype.toString.call(path) === '[object Object]'){
                 let fileId:string = path && path.id;
-                return Environment.BaseUrl + Environment.ExportFile + fileId;
+                return `${Environment.ExportFile}/` + fileId;
         }else{
                 return path;
         }
     }
 
+    /**
+     * 获取图片
+     * 
+     * @memberof 
+     */
+    public async getImgURLOfBase64(result: any[]) {
+        if (result.length>0) {
+            for (let item of result) {
+                if (item.getPSSysImage?.imagePath) {
+                    item.imgUrlBase64 = await ImgurlBase64.getInstance().getImgURLOfBase64(this.getIconImagePath(item));
+                }
+            }
+        }
+        return result;
+    }
 }
 </script>
 

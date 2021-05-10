@@ -7,33 +7,33 @@
   box-shadow: 0 2px 4px 0 var(--view-background-color-light), 0 0 6px 0 var(--view-background-color-light);
   > .view-card {
       height: 100%;
-      > .ivu-card-head{
-        min-height: 42px;
-        border-color: var(--view-background-color-light);
-        border-style: solid;
-        border-width: 0px 0px 1px;
-        margin: 0px 0px 6px;
-        padding: 6px 0px 2px;
-        > .header-container{
+      > .ivu-card-head {
           min-height: 42px;
-          display: flex;
-          flex-wrap: nowrap;
-          align-items: flex-start;
-          justify-content: space-between;
-          > .caption-info{
-            line-height: 42px;
-            font-size: 18px;
-            //TODO 冲突
-            color: var(--view-font-color-bright);
-            flex-shrink: 0;
+          border-color: var(--view-background-color-light);
+          border-style: solid;
+          border-width: 0px 0px 1px;
+          margin: 0px 0px 6px;
+          padding: 6px 0px 2px;
+          > .header-container {
+              min-height: 42px;
+              display: flex;
+              flex-wrap: nowrap;
+              align-items: flex-start;
+              justify-content: space-between;
+              > .caption-info {
+                  line-height: 42px;
+                  font-size: 18px;
+                  //TODO 冲突
+                  color: var(--view-font-color-bright);
+                  flex-shrink: 0;
+              }
+              > .toolbar-container {
+                  margin-left: auto;
+                  display: flex;
+                  flex-wrap: wrap;
+                  align-items: center;
+              }
           }
-          > .toolbar-container{
-            margin-left: auto;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-          }
-        }
       }
       > .ivu-card-body {
           // height: 50%;
@@ -56,72 +56,70 @@
           height: 100%;
       }
   }
-    .view-card2 {
-        height: 100%;
-        >.ivu-card-head{
-            min-height: 42px;
-            border-color: var(--view-font-color-light);
-            border-style: solid;
-            border-width: 0px 0px 1px;
-            margin: 0px 0px 6px;
-            padding: 6px 0px 2px;
-            .header-container{
-                display: block;
-                min-height: 42px;
-                .toptoolbar{
-                    margin-left: auto;
-                    flex-direction: row-reverse;
-                    margin-bottom: 6px;
-                    display: flex;
-                    flex-wrap: wrap;
-                    align-items: center;
-                }
-                .toptoolbar-divider{
-                    margin: 0px;
-                }
-                .header-info-container{
-                    min-height: 42px;
-                    display: flex;
-                    flex-wrap: nowrap;
-                    align-items: flex-start;
-                    justify-content: space-between;
-                    .caption-info{
-                        line-height: 42px;
-                        font-size: 18px;
-                        color: var(--view-font-color-light);
-                        flex-shrink: 0;
-                    }
-                    .dataInfo-container{
-                        height: 42px;
-                    }
-                }
-            }
-        }
-        >.ivu-card-body {
-            height: calc(100% - 118px);
-            padding: 0px;
-            display: flex;
-            flex-direction: column;
-            > .content-container {
-                display: flex;
-                margin: 0;
-                flex-direction: column;
-                overflow: auto;
-            }
-        }
-    }
+  .view-card2 {
+      height: 100%;
+      > .ivu-card-head {
+          min-height: 42px;
+          border-color: var(--view-font-color-light);
+          border-style: solid;
+          border-width: 0px 0px 1px;
+          margin: 0px 0px 6px;
+          padding: 6px 0px 2px;
+          .header-container {
+              display: block;
+              min-height: 42px;
+              .toptoolbar {
+                  margin-left: auto;
+                  flex-direction: row-reverse;
+                  margin-bottom: 6px;
+                  display: flex;
+                  flex-wrap: wrap;
+                  align-items: center;
+              }
+              .toptoolbar-divider {
+                  margin: 0px;
+              }
+              .header-info-container {
+                  min-height: 42px;
+                  display: flex;
+                  flex-wrap: nowrap;
+                  align-items: flex-start;
+                  justify-content: space-between;
+                  .caption-info {
+                      line-height: 42px;
+                      font-size: 18px;
+                      color: var(--view-font-color-light);
+                      flex-shrink: 0;
+                  }
+                  .dataInfo-container {
+                      height: 42px;
+                  }
+              }
+          }
+      }
+      > .ivu-card-body {
+          height: calc(100% - 118px);
+          padding: 0px;
+          display: flex;
+          flex-direction: column;
+          > .content-container {
+              display: flex;
+              margin: 0;
+              flex-direction: column;
+              overflow: auto;
+          }
+      }
+  }
 }
 .viewcontainer2 {
   height: 100%;
   width: 100%;
-  padding: 0px 12px !important;
-  margin: 0px !important;
-  -webkit-box-shadow: none !important;
+  padding: 0px 12px;
+  margin: 0px;
 }
 .viewcontainer3 {
   height: 100%;
   width: 100%;
-  padding: 0px 12px !important;
-  margin: 0px !important;
-  -webkit-box-shadow: none !important;
+  padding: 0px 12px;
+  margin: 0px;
 }
