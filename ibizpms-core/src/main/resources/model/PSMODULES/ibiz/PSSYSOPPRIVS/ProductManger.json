@@ -43,6 +43,16 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
     }
   }, {
+    "name" : "产品经理-IBZ_PRODUCTTEAM[产品团队维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEUSERROLES/ProductTeam_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
+    }
+  }, {
     "name" : "产品经理-ZT_DOCLIB[文档库管理]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -63,6 +73,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     }
   }, {
+    "name" : "产品经理-IBZ_PROJECTTEAM[项目团队维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEUSERROLES/ProjectTeam_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam.json"
+    }
+  }, {
     "name" : "产品经理-IBZ_DOCLIBMODULE[文档模块维护]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -71,6 +91,16 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+    }
+  }, {
+    "name" : "产品经理-IBZ_PRODUCTTEAM[产品团队管理]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDEUSERROLES/ProductTeam_Manage.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM.json"
     }
   }, {
     "name" : "产品经理-IBZ_DOCLIBMODULE[文档模块管理]",
@@ -111,6 +141,16 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
+    "name" : "产品经理-IBZ_PROJECTTEAM[项目团队管理]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDEUSERROLES/ProjectTeam_Manage.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam.json"
     }
   }, {
     "name" : "产品经理-ZT_DOCLIB[文档库维护]",

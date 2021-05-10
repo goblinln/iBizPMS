@@ -4500,7 +4500,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "转需求",
     "name" : "TOSTORY",
     "getPSDER" : {
@@ -4512,8 +4512,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "STORYSN",
+      "codeName" : "Storysn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -4609,8 +4609,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PRODUCTSN",
+      "codeName" : "Productsn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -4648,7 +4648,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "转任务",
     "name" : "TOTASK",
     "getPSDER" : {
@@ -4660,8 +4660,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "TASKSN",
+      "codeName" : "Tasksn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -4699,7 +4699,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "所属计划",
     "name" : "PLAN",
     "getPSDER" : {
@@ -4711,8 +4711,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PRODUCTPLANSN",
+      "codeName" : "Productplansn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",

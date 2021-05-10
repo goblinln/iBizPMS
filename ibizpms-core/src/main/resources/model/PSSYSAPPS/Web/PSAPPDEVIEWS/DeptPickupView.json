@@ -193,16 +193,16 @@
         "getPSDEGridColumns" : [ {
           "align" : "LEFT",
           "cLConvertMode" : "NONE",
-          "caption" : "ID",
-          "codeName" : "id",
+          "caption" : "部门编号",
+          "codeName" : "deptsn",
           "columnType" : "DEFGRIDCOLUMN",
-          "dataItemName" : "id",
-          "excelCaption" : "ID",
-          "name" : "id",
+          "dataItemName" : "deptsn",
+          "excelCaption" : "部门编号",
+          "name" : "deptsn",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
-            "name" : "ID",
-            "codeName" : "Id"
+            "name" : "DEPTSN",
+            "codeName" : "Deptsn"
           },
           "width" : 100,
           "widthUnit" : "PX",
@@ -349,18 +349,18 @@
           "enableSort" : false
         } ],
         "getPSDEGridDataItems" : [ {
-          "dataType" : 1,
-          "name" : "id",
-          "getPSAppDEField" : {
-            "name" : "ID",
-            "codeName" : "Id"
-          }
-        }, {
           "dataType" : 25,
           "name" : "manager",
           "getPSAppDEField" : {
             "name" : "MANAGER",
             "codeName" : "Manager"
+          }
+        }, {
+          "dataType" : 1,
+          "name" : "deptsn",
+          "getPSAppDEField" : {
+            "name" : "DEPTSN",
+            "codeName" : "Deptsn"
           }
         }, {
           "dataType" : 25,

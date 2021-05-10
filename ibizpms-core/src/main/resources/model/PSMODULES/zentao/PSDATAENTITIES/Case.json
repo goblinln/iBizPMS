@@ -3591,7 +3591,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "来源用例",
     "name" : "FROMCASEID",
     "getPSDER" : {
@@ -3603,8 +3603,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "CASESN",
+      "codeName" : "Casesn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -3642,7 +3642,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "平台/分支",
     "name" : "BRANCH",
     "getPSDER" : {
@@ -3654,8 +3654,8 @@
       "path" : "PSSYSTRANSLATORS/BranchValueTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "BRANCHSN",
+      "codeName" : "Branchsn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -3693,7 +3693,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "来源Bug",
     "name" : "FROMBUG",
     "getPSDER" : {
@@ -3701,8 +3701,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_BUG_FROMBUG.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "BUGSN",
+      "codeName" : "Bugsn"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",

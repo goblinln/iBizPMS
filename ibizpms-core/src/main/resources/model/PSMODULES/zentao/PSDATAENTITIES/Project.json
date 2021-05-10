@@ -4449,8 +4449,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PROJECTSN",
+      "codeName" : "Projectsn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",

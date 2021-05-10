@@ -1183,7 +1183,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "用例",
     "name" : "CASE",
     "getPSDER" : {
@@ -1191,8 +1191,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestResult/PSDERS/DER1N_ZT_TESTRESULT_ZT_CASE_CASE.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "CASESN",
+      "codeName" : "Casesn"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
@@ -1229,7 +1229,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "测试执行",
     "name" : "RUN",
     "getPSDER" : {
@@ -1237,8 +1237,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestResult/PSDERS/DER1N_ZT_TESTRESULT_ZT_TESTRUN_RUN.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "TESTRUNSN",
+      "codeName" : "Testrunsn"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",

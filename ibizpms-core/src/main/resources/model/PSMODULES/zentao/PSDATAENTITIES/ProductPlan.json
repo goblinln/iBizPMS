@@ -2187,7 +2187,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "平台/分支",
     "name" : "BRANCH",
     "getPSDER" : {
@@ -2195,8 +2195,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DER1N_ZT_PRODUCTPLAN_ZT_BRANCH_BRANCH.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "BRANCHSN",
+      "codeName" : "Branchsn"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",

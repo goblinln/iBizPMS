@@ -1068,7 +1068,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "用例",
     "name" : "CASE",
     "getPSDER" : {
@@ -1080,8 +1080,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "CASESN",
+      "codeName" : "Casesn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -1131,8 +1131,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "CASESTEPSN",
+      "codeName" : "Casestepsn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",

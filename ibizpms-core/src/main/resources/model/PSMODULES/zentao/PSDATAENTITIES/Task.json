@@ -5529,7 +5529,7 @@
     "dEFType" : 3,
     "dataType" : "PICKUPDATA",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "产品",
     "name" : "PRODUCT",
     "getPSDER" : {
@@ -5702,8 +5702,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PROJECTSN",
+      "codeName" : "Projectsn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",

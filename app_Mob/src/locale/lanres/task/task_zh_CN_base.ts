@@ -93,6 +93,8 @@ export default {
     parent: "父任务",
     frombug: "来源Bug",
     tasksn: "任务编号",
+    createman: "建立人",
+    updateman: "更新人",
   },
 	views: {
 		activemobtask: {

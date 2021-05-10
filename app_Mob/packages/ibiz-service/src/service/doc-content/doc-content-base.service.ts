@@ -43,7 +43,7 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
             const s = await ___ibz___.gs.getDocService();
             const data = await s.getLocal2(context, entity.doc);
             if (data) {
-                entity.doc = data.id;
+                entity.doc = data.docsn;
             }
         }
         return entity!;
@@ -58,7 +58,7 @@ export class DocContentBaseService extends EntityBaseService<IDocContent> {
             const s = await ___ibz___.gs.getDocService();
             const data = await s.getLocal2(_context, _context.doc);
             if (data) {
-                entity.doc = data.id;
+                entity.doc = data.docsn;
             }
         }
         return new DocContent(entity);

@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`date` AS `DATES`, t11.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`EVALUATIONCOST`, t1.`EVALUATIONDESC`, t1.`EVALUATIONSTATUS`, t1.`EVALUATIONTIME`, t1.`FILES`, t1.`ID`, t1.`INPUTCOST`, t1.`LEFT`, t1.`MONTHNAME`, t1.`ORG`, t1.`ORGNAME`, t11.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TASK`, t1.`TASKESTIMATESN`, t11.`NAME` AS `TASKNAME`, t11.`TASKSPECIES`, t11.`TYPE`, t1.`UPDATEBY`, t1.`WORK` FROM `zt_taskestimate` t1  LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`  LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID`   ]]>
+        <![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`date` AS `DATES`, t11.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`EVALUATIONCOST`, t1.`EVALUATIONDESC`, t1.`EVALUATIONSTATUS`, t1.`EVALUATIONTIME`, t1.`FILES`, t1.`ID`, t1.`INPUTCOST`, t1.`LEFT`, t1.`MONTHNAME`, t1.`ORG`, t1.`ORGNAME`, t11.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TASK`, t1.`TASKESTIMATESN`, t11.`NAME` AS `TASKNAME`, t11.`TASKSPECIES`, t11.`TYPE`, t1.`UPDATEBY`, t1.`WORK` FROM `zt_taskestimate` t1  LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`TASKSN`  LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`PROJECTSN`   ]]>
     </sql>
 
 	
@@ -139,7 +139,7 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`date` AS `DATES`, t11.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`EVALUATIONCOST`, t1.`EVALUATIONSTATUS`, t1.`EVALUATIONTIME`, t1.`FILES`, t1.`ID`, t1.`INPUTCOST`, t1.`LEFT`, t1.`MONTHNAME`, t1.`ORG`, t1.`ORGNAME`, t11.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TASK`, t1.`TASKESTIMATESN`, t11.`NAME` AS `TASKNAME`, t11.`TASKSPECIES`, t11.`TYPE`, t1.`UPDATEBY` FROM `zt_taskestimate` t1  LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`  LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID`   ]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`date` AS `DATES`, t11.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`EVALUATIONCOST`, t1.`EVALUATIONSTATUS`, t1.`EVALUATIONTIME`, t1.`FILES`, t1.`ID`, t1.`INPUTCOST`, t1.`LEFT`, t1.`MONTHNAME`, t1.`ORG`, t1.`ORGNAME`, t11.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TASK`, t1.`TASKESTIMATESN`, t11.`NAME` AS `TASKNAME`, t11.`TASKSPECIES`, t11.`TYPE`, t1.`UPDATEBY` FROM `zt_taskestimate` t1  LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`TASKSN`  LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`PROJECTSN`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>
@@ -151,7 +151,7 @@
 
     <!--数据查询[Defaults]-->
     <sql id="Defaults" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`date` AS `DATES`, t11.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`EVALUATIONCOST`, t1.`EVALUATIONSTATUS`, t1.`EVALUATIONTIME`, t1.`FILES`, t1.`ID`, t1.`INPUTCOST`, t1.`LEFT`, t1.`MONTHNAME`, t1.`ORG`, t1.`ORGNAME`, t11.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TASK`, t1.`TASKESTIMATESN`, t11.`NAME` AS `TASKNAME`, t11.`TASKSPECIES`, t11.`TYPE`, t1.`UPDATEBY` FROM `zt_taskestimate` t1  LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`  LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID`   ]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`date` AS `DATES`, t11.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`EVALUATIONCOST`, t1.`EVALUATIONSTATUS`, t1.`EVALUATIONTIME`, t1.`FILES`, t1.`ID`, t1.`INPUTCOST`, t1.`LEFT`, t1.`MONTHNAME`, t1.`ORG`, t1.`ORGNAME`, t11.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TASK`, t1.`TASKESTIMATESN`, t11.`NAME` AS `TASKNAME`, t11.`TASKSPECIES`, t11.`TYPE`, t1.`UPDATEBY` FROM `zt_taskestimate` t1  LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`TASKSN`  LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`PROJECTSN`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND ( 1<>1 ) ]]>
@@ -196,7 +196,7 @@
 
     <!--数据查询[ProjectTaskEstimate]-->
     <sql id="ProjectTaskEstimate" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`date` AS `DATES`, t11.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`EVALUATIONCOST`, t1.`EVALUATIONSTATUS`, t1.`EVALUATIONTIME`, t1.`FILES`, t1.`ID`, t1.`INPUTCOST`, t1.`LEFT`, t1.`MONTHNAME`, t1.`ORG`, t1.`ORGNAME`, t11.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TASK`, t1.`TASKESTIMATESN`, t11.`NAME` AS `TASKNAME`, t11.`TASKSPECIES`, t11.`TYPE`, t1.`UPDATEBY` FROM `zt_taskestimate` t1  LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`  LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID`   ]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`date` AS `DATES`, t11.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`EVALUATIONCOST`, t1.`EVALUATIONSTATUS`, t1.`EVALUATIONTIME`, t1.`FILES`, t1.`ID`, t1.`INPUTCOST`, t1.`LEFT`, t1.`MONTHNAME`, t1.`ORG`, t1.`ORGNAME`, t11.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TASK`, t1.`TASKESTIMATESN`, t11.`NAME` AS `TASKNAME`, t11.`TASKSPECIES`, t11.`TYPE`, t1.`UPDATEBY` FROM `zt_taskestimate` t1  LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`TASKSN`  LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`PROJECTSN`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND ( t11.`PROJECT` = #{srf.webcontext.project}  AND  t11.`DELETED` = '0' ) ]]>
@@ -211,7 +211,7 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`date` AS `DATES`, t11.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`EVALUATIONCOST`, t1.`EVALUATIONDESC`, t1.`EVALUATIONSTATUS`, t1.`EVALUATIONTIME`, t1.`FILES`, t1.`ID`, t1.`INPUTCOST`, t1.`LEFT`, t1.`MONTHNAME`, t1.`ORG`, t1.`ORGNAME`, t11.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TASK`, t1.`TASKESTIMATESN`, t11.`NAME` AS `TASKNAME`, t11.`TASKSPECIES`, t11.`TYPE`, t1.`UPDATEBY`, t1.`WORK` FROM `zt_taskestimate` t1  LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`ID`  LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`ID`   ]]>
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`CONSUMED`, t1.`CREATEBY`, t1.`DATE`, t1.`date` AS `DATES`, t11.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`EVALUATIONCOST`, t1.`EVALUATIONDESC`, t1.`EVALUATIONSTATUS`, t1.`EVALUATIONTIME`, t1.`FILES`, t1.`ID`, t1.`INPUTCOST`, t1.`LEFT`, t1.`MONTHNAME`, t1.`ORG`, t1.`ORGNAME`, t11.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TASK`, t1.`TASKESTIMATESN`, t11.`NAME` AS `TASKNAME`, t11.`TASKSPECIES`, t11.`TYPE`, t1.`UPDATEBY`, t1.`WORK` FROM `zt_taskestimate` t1  LEFT JOIN `zt_task` t11 ON t1.`TASK` = t11.`TASKSN`  LEFT JOIN `zt_project` t21 ON t11.`PROJECT` = t21.`PROJECTSN`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>
