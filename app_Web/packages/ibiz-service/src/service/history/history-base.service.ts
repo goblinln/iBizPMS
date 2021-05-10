@@ -45,7 +45,7 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
             const s = await ___ibz___.gs.getActionService();
             const data = await s.getLocal2(context, entity.action);
             if (data) {
-                entity.action = data.id;
+                entity.action = data.actionsn;
             }
         }
         return entity!;
@@ -60,7 +60,7 @@ export class HistoryBaseService extends EntityBaseService<IHistory> {
             const s = await ___ibz___.gs.getActionService();
             const data = await s.getLocal2(_context, _context.action);
             if (data) {
-                entity.action = data.id;
+                entity.action = data.actionsn;
             }
         }
         return new History(entity);

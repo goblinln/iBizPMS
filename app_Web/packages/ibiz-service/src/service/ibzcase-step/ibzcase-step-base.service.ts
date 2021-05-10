@@ -44,7 +44,7 @@ export class IBZCaseStepBaseService extends EntityBaseService<IIBZCaseStep> {
             const s = await ___ibz___.gs.getCaseService();
             const data = await s.getLocal2(context, entity.ibizcase);
             if (data) {
-                entity.ibizcase = data.id;
+                entity.ibizcase = data.casesn;
             }
         }
         return entity!;
@@ -59,7 +59,7 @@ export class IBZCaseStepBaseService extends EntityBaseService<IIBZCaseStep> {
             const s = await ___ibz___.gs.getCaseService();
             const data = await s.getLocal2(_context, _context.case);
             if (data) {
-                entity.ibizcase = data.id;
+                entity.ibizcase = data.casesn;
             }
         }
         return new IBZCaseStep(entity);

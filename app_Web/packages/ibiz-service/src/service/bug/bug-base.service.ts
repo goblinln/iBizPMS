@@ -49,7 +49,7 @@ export class BugBaseService extends EntityBaseService<IBug> {
             const data = await s.getLocal2(context, entity.product);
             if (data) {
                 entity.productname = data.name;
-                entity.product = data.id;
+                entity.product = data.productsn;
             }
         }
         if (entity && entity.story && entity.story !== '') {
@@ -81,7 +81,7 @@ export class BugBaseService extends EntityBaseService<IBug> {
             const data = await s.getLocal2(_context, _context.product);
             if (data) {
                 entity.productname = data.name;
-                entity.product = data.id;
+                entity.product = data.productsn;
             }
         }
         if (_context.story && _context.story !== '') {

@@ -101,7 +101,7 @@ export class CaseBaseService extends EntityBaseService<ICase> {
         if (res.ok) {
             _data = mergeDeepLeft(_data, this.filterEntityData(res.data)) as any;
         }
-        const ibzcasestepsList = await this.getMinorLocal('IBZCaseStep', _context, { ibizcase: _data.id });
+        const ibzcasestepsList = await this.getMinorLocal('IBZCaseStep', _context, { ibizcase: _data.casesn });
         if (ibzcasestepsList?.length > 0) {
             _data.ibzcasesteps = ibzcasestepsList;
         }
@@ -125,7 +125,7 @@ export class CaseBaseService extends EntityBaseService<ICase> {
             {
                 let items: any[] = [];
                 const s = await ___ibz___.gs.getIBZCaseStepService();
-                items = await s.selectLocal(context, { ibizcase: oldData.id });
+                items = await s.selectLocal(context, { ibizcase: oldData.casesn });
                 if (items) {
                     for (let i = 0; i < items.length; i++) {
                         const item = items[i];

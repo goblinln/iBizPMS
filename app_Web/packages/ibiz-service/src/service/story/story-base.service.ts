@@ -47,7 +47,7 @@ export class StoryBaseService extends EntityBaseService<IStory> {
             const data = await s.getLocal2(context, entity.product);
             if (data) {
                 entity.productname = data.name;
-                entity.product = data.id;
+                entity.product = data.productsn;
             }
         }
         return entity!;
@@ -63,7 +63,7 @@ export class StoryBaseService extends EntityBaseService<IStory> {
             const data = await s.getLocal2(_context, _context.product);
             if (data) {
                 entity.productname = data.name;
-                entity.product = data.id;
+                entity.product = data.productsn;
             }
         }
         return new Story(entity);

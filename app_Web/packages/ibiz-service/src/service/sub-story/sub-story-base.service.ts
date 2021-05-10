@@ -47,7 +47,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
             const data = await s.getLocal2(context, entity.parent);
             if (data) {
                 entity.parentname = data.title;
-                entity.parent = data.id;
+                entity.parent = data.storysn;
             }
         }
         return entity!;
@@ -63,7 +63,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
             const data = await s.getLocal2(_context, _context.story);
             if (data) {
                 entity.parentname = data.title;
-                entity.parent = data.id;
+                entity.parent = data.storysn;
             }
         }
         return new SubStory(entity);

@@ -45,7 +45,7 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
             const s = await ___ibz___.gs.getProductService();
             const data = await s.getLocal2(context, entity.product);
             if (data) {
-                entity.product = data.id;
+                entity.product = data.productsn;
             }
         }
         return entity!;
@@ -60,7 +60,7 @@ export class TestSuiteBaseService extends EntityBaseService<ITestSuite> {
             const s = await ___ibz___.gs.getProductService();
             const data = await s.getLocal2(_context, _context.product);
             if (data) {
-                entity.product = data.id;
+                entity.product = data.productsn;
             }
         }
         return new TestSuite(entity);
