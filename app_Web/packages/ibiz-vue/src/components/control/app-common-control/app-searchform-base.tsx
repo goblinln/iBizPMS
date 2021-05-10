@@ -525,7 +525,7 @@ export class AppSearchFormBase extends SearchFormControlBase {
      * @memberof AppSearchFormBase
      */
     public render(): any {
-        const isShow = this.controlInstance.formStyle != 'SEARCHBAR' ? this.isExpandSearchForm : true;
+        const isShow = this.controlInstance.formStyle != 'SEARCHBAR';
         if (!(this.controlIsLoaded && isShow)) {
             return
         }
@@ -546,15 +546,15 @@ export class AppSearchFormBase extends SearchFormControlBase {
                             {this.renderFormContent()}
                         </row>
                     </i-col>
-                    {this.controlInstance.formStyle != 'SEARCHBAR' &&
-                        <i-col span="2" class="search-button">
-                            {Object.keys(this.data).length > 0 && <row>
-                                <i-button class='search_reset' size='default' type='primary' on-click={this.onSearch.bind(this)}>{this.$t('app.searchButton.search')}</i-button>
-                                <i-button class='search_reset' size='default' on-click={this.onReset.bind(this)}>{this.$t('app.searchButton.reset')}</i-button>
-                            </row>}
-                        </i-col>
-                    }
                 </row>
+                {this.controlInstance.formStyle != 'SEARCHBAR' &&
+                    <i-col span="24" class="search-button">
+                        {Object.keys(this.data).length > 0 && <row>
+                            <i-button class='search_reset' size='default' type='primary' on-click={this.onSearch.bind(this)}>{this.$t('app.searchButton.search')}</i-button>
+                            <i-button class='search_reset' size='default' on-click={this.onReset.bind(this)}>{this.$t('app.searchButton.reset')}</i-button>
+                        </row>}
+                    </i-col>
+                }
             </i-form>
         );
     }

@@ -1,6 +1,7 @@
 import { Component } from 'vue-property-decorator';
 import { VueLifeCycleProcessing } from '../../../decorators';
 import { AppSearchBarBase } from '../app-common-control/app-searchbar-base';
+import './app-default-searchbar.less';
 
 /**
  * 搜索栏部件基类

@@ -138,6 +138,8 @@ export class AppComponentService {
         this.viewMap.set("APPWFSTEPTRACEVIEW_STYLE2", 'app-style2-wfsteptraceview');
         // STYLE3 样式
         this.viewMap.set("APPINDEXVIEW_STYLE3", 'app-style2-indexview');
+        // STYLE4 样式
+        this.viewMap.set("APPINDEXVIEW_STYLE4", 'app-default-indexview');
         // 注册视图插件
         // 注册视图样式，无插件模式
     }

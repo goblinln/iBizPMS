@@ -72,6 +72,7 @@ import { AppStyle2FormPickupDataViewLayout } from "../../components/layout/app-s
 import { AppDefaultWFDynaStartViewLayout } from "../../components/layout/app-default-layout/app-default-wfdynastartview-layout/app-default-wfdynastartview-layout";
 import { AppStyle2WFDynaStartViewLayout } from "../../components/layout/app-style2-layout/app-style2-wfdynastartview-layout/app-style2-wfdynastartview-layout";
 import { AppStyle3IndexViewLayout } from '../../components/layout/app-style3-layout/app-style3-indexview-layout/app-style3-indexview-layout';
+import { AppStyle4IndexViewLayout } from '../../components/layout/app-style4-layout/app-style4-indexview-layout/app-style4-indexview-layout';
 import { AppStyle2WFActionViewLayout } from '../../components/layout/app-style2-layout/app-style2-wfactionview-layout/app-style2-wfactionview-layout';
 import { AppStyle2WizardViewLayout } from '../../components/layout/app-style2-layout/app-style2-wizardview-layout/app-style2-wizardview-layout';
 import { AppStyle2DeRedirectViewLayout } from "../../components/layout/app-style2-layout/app-style2-deredirectview-layout/app-style2-deredirectview-layout";
@@ -191,6 +192,8 @@ export class AppLayoutService {
         this.layoutMap.set("DEDATAVIEW9-STYLE2",AppStyle2DataViewLayout);
         // STYLE3视图布局
         this.layoutMap.set("APPINDEXVIEW-STYLE3", AppStyle3IndexViewLayout);
+        // STYLE4视图布局
+        this.layoutMap.set("APPINDEXVIEW-STYLE4", AppStyle4IndexViewLayout);
     }
 
     /**

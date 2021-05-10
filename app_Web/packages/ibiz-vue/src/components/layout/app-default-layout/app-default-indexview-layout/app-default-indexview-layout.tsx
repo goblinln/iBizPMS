@@ -200,7 +200,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                                 {!this.isFullScreen ? <div class="page-logo">
                                     {!this.collapseChange ? <i class="ivu-icon el-icon-s-fold" on-click={() => this.collapseMenus()}></i> : null}
                                     {this.collapseChange ? <i class="ivu-icon el-icon-s-unfold" on-click={() => this.collapseMenus()}></i> : null}
-                                    <app-breadcrumb navModel={this.navModel} indexViewTag="app-index-view" />
+                                    <app-breadcrumb indexViewTag="app-index-view" />
                                 </div> : <span class={{ "fullscreen_logo": true }}>{this.viewInstance.caption}</span>}
                             </div>
                             <div class="header-right" style="display: flex;align-items: center;justify-content: space-between;">

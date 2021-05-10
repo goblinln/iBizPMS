@@ -113,7 +113,7 @@ export class AppPopover {
      * @returns {void}
      * @memberof AppPopover
      */
-    private initVueExample(): void {
+    private initVueExample(customClass?: any): void {
         const self = this;
         if (!self.store || !self.i18n) {
             self.initBasicData();
@@ -142,7 +142,7 @@ export class AppPopover {
             render(h: CreateElement) {
                 const content: any = this.content;
                 container.style.zIndex = (self.zIndex - 1).toString();
-                return <div v-show="self.showPopper" style={{ width: this.width + 'px', height: this.height + 'px', 'z-index': self.zIndex }} class="app-popover app-popper" on-click={this.click}>{(self.showPopper && content) ? content(h) : null}</div>;
+                return <div v-show="self.showPopper" style={{ width: this.width + 'px', height: this.height + 'px', 'z-index': self.zIndex }} class={`app-popover app-popper${customClass ? ' ' + customClass : ''}`} on-click={this.click}>{(self.showPopper && content) ? content(h) : null}</div>;
             }
         });
     }
@@ -196,12 +196,12 @@ export class AppPopover {
      * @param {number} [height=300]
      * @memberof AppPopover
      */
-    public openPopover(event: any, content?: (h: CreateElement) => any, position: Placement = 'left-end', isAutoClose: boolean = true, width: number = 300, height: number = 300): void {
+    public openPopover(event: any, content?: (h: CreateElement) => any, position: Placement = 'left-end', isAutoClose: boolean = true, width: number = 300, height: number = 300, customClass?: any): void {
         // 阻止事件冒泡
         event.stopPropagation();
         const element: Element = event.toElement || event.srcElement;
         if (!this.vueExample) {
-            this.initVueExample();
+            this.initVueExample(customClass);
         }
         this.popperDestroy();
         const zIndex = this.vueExample.$store.getters.getZIndex();
