@@ -9,5 +9,8 @@
       "launchShowDuration": 0
     }
   },
+  "server": {
+    "url": "http://ibizpmsh5.ibizlab.cn/"
+  },
   "cordova": {}
 }
