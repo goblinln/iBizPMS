@@ -492,7 +492,7 @@ export default class RichTextEditor extends Vue {
                     let src:any = item.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)[0];
                     src = await ImgurlBase64.getInstance().getImgURLOfBase64(src.substring(5,src.length-1));
                     const image = item.replace(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig, 'src="'+src+'"');
-                    html = html.replace(/<img.*?(?:>|\/>)/gi, image);
+                    html = html.replace(item, image);
                 }
             }
         }
@@ -511,7 +511,7 @@ export default class RichTextEditor extends Vue {
             imgs.forEach((img: any, index: number) => {
                 if(img.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)!=null){
                     const newImg = img.replace(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig, 'src="{' + imgsrc[index].id + imgsrc[index].type + '}"');
-                    html = html.replace(/<img.*?(?:>|\/>)/gi, newImg);
+                    html = html.replace(img, newImg);
                 }
             })
         }

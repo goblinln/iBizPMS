@@ -447,6 +447,14 @@
     }, {
       "logicTrigger" : "CUSTOM",
       "logicType" : "APPVIEWUIACTION",
+      "name" : "grid_uagridcolumn1_u0000d68_click",
+      "getPSAppViewUIAction" : {
+        "modelref" : true,
+        "id" : "子任务-更多"
+      }
+    }, {
+      "logicTrigger" : "CUSTOM",
+      "logicType" : "APPVIEWUIACTION",
       "name" : "grid_uagridcolumn1_ubd2fb06_click",
       "getPSAppViewUIAction" : {
         "modelref" : true,
@@ -562,6 +570,18 @@
         },
         "modelref" : true,
         "id" : "MStartTaskDash1@Task"
+      },
+      "uIActionTarget" : "SINGLEKEY",
+      "xDataControlName" : "grid"
+    }, {
+      "name" : "子任务-更多",
+      "getPSUIAction" : {
+        "getPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+        },
+        "modelref" : true,
+        "id" : "ChildMore@Task"
       },
       "uIActionTarget" : "SINGLEKEY",
       "xDataControlName" : "grid"
@@ -1287,6 +1307,40 @@
           },
           "addSeparator" : false,
           "showCaption" : false,
+          "showIcon" : true
+        }, {
+          "detailType" : "DEUIACTION",
+          "name" : "u0000d68",
+          "getPSUIAction" : {
+            "actionTarget" : "SINGLEKEY",
+            "caption" : "更多",
+            "codeName" : "ChildMore",
+            "getFrontPSAppView" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskChildMoreGridView.json",
+              "viewType" : "DEGRIDVIEW"
+            },
+            "frontProcessType" : "WIZARD",
+            "fullCodeName" : "Task_ChildMore",
+            "name" : "子任务-更多",
+            "getPSAppDataEntity" : {
+              "modelref" : true,
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+            },
+            "getPSNavigateParams" : [ {
+              "key" : "n_parent_eq",
+              "name" : "n_parent_eq",
+              "value" : "parent",
+              "rawValue" : false
+            } ],
+            "timeout" : 60000,
+            "uIActionMode" : "FRONT",
+            "uIActionTag" : "ChildMore",
+            "uIActionType" : "DEUIACTION",
+            "id" : "ChildMore@Task"
+          },
+          "addSeparator" : false,
+          "showCaption" : true,
           "showIcon" : true
         }, {
           "detailType" : "DEUIACTION",
