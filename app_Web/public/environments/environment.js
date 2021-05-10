@@ -21,6 +21,6 @@ window.Environment = {
     ExportFile: '/ibizutilpms/ztdownload',
     // 文件上传
     UploadFile: '/ibizutilpms/ztupload',
-    loginUrl: 'http://ebsx.ibizee.cn',
-    // loginUrl: '',
+    // loginUrl: 'http://ebsx.ibizee.cn',
+    loginUrl: '',
 }
