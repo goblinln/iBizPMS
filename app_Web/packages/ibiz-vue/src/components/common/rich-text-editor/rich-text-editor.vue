@@ -510,8 +510,12 @@ export default class RichTextEditor extends Vue {
         if(imgs && imgs.length > 0 && imgsrc && imgsrc.length > 0){
             imgs.forEach((img: any, index: number) => {
                 if(img.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)!=null){
-                    const newImg = img.replace(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig, 'src="{' + imgsrc[index].id + imgsrc[index].type + '}"');
-                    html = html.replace(img, newImg);
+                    let src:any = img.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)[0];
+                    const _imgsrc = imgsrc.find((_imgsrc: any) => Object.is(_imgsrc.key, src.substring(5,src.length-1)));
+                    if (_imgsrc) {
+                        const newImg = img.replace(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig, 'src="{' + _imgsrc.value + '}"');
+                        html = html.replace(img, newImg);
+                    }
                 }
             })
         }
@@ -663,7 +667,11 @@ export default class RichTextEditor extends Vue {
                         const id: string = file.fileid; 
                         const url: string = `${downloadUrl}/${id}`;
                         ImgurlBase64.getInstance().getImgURLOfBase64(url).then((response: any) => {
-                            success(response);
+                            const imgsrc = richtexteditor.imgsrc.find((imgsrc: any) => Object.is(response,imgsrc.key));
+                            if (!imgsrc) {
+                                const item: any = { key: response, value: file.fileid+file.ext };
+                                richtexteditor.imgsrc.push(item);
+                            }
                         });
                     }
                     if (this.export_params.length > 0) {
