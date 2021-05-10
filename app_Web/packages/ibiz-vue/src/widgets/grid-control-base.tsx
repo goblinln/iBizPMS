@@ -1463,7 +1463,9 @@ export class GridControlBase extends MDControlBase {
             }
             this.selections = [...JSON.parse(JSON.stringify(selection))];
         }
-        this.ctrlEvent({ controlname: this.name, action: "selectionchange", data: this.selections });
+        if (this.gridRowActiveMode != 1) {
+            this.ctrlEvent({ controlname: this.name, action: "selectionchange", data: this.selections });
+        }
     }
 
     /**
