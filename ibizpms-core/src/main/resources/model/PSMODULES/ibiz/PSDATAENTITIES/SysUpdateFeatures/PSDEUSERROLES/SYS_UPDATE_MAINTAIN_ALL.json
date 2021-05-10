@@ -1,0 +1,36 @@
+{
+  "customCond" : "[ (1, '=', 1) ]",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateFeatures/PSDEUSERROLES/SYS_UPDATE_MAINTAIN_ALL.json",
+  "name" : "系统更新功能维护（全部数据）",
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "UPDATE",
+    "name" : "SYS_UPDATE_MAINTAIN_ALL_UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : "SYS_UPDATE_MAINTAIN_ALL_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "dataAccessAction" : "CREATE",
+    "name" : "SYS_UPDATE_MAINTAIN_ALL_CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "dataAccessAction" : "READ",
+    "name" : "SYS_UPDATE_MAINTAIN_ALL_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  } ],
+  "roleTag" : "SYS_UPDATE_MAINTAIN_ALL",
+  "userDRAction" : "READ"
+}
