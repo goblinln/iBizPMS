@@ -628,16 +628,16 @@
           "getPSDEGridColumns" : [ {
             "align" : "LEFT",
             "cLConvertMode" : "NONE",
-            "caption" : "Bug编号",
-            "codeName" : "id",
+            "caption" : "BUG编号",
+            "codeName" : "bugsn",
             "columnType" : "DEFGRIDCOLUMN",
-            "dataItemName" : "id",
-            "excelCaption" : "Bug编号",
-            "name" : "id",
+            "dataItemName" : "bugsn",
+            "excelCaption" : "BUG编号",
+            "name" : "bugsn",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
-              "name" : "ID",
-              "codeName" : "Id"
+              "name" : "BUGSN",
+              "codeName" : "Bugsn"
             },
             "width" : 100,
             "widthUnit" : "PX",
@@ -680,6 +680,13 @@
             "getPSAppDEField" : {
               "name" : "MODULE",
               "codeName" : "Module"
+            }
+          }, {
+            "dataType" : 1,
+            "name" : "bugsn",
+            "getPSAppDEField" : {
+              "name" : "BUGSN",
+              "codeName" : "Bugsn"
             }
           }, {
             "dataType" : 1,
@@ -733,13 +740,6 @@
             "getPSAppDEField" : {
               "name" : "DUPLICATEBUG",
               "codeName" : "DuplicateBug"
-            }
-          }, {
-            "dataType" : 1,
-            "name" : "id",
-            "getPSAppDEField" : {
-              "name" : "ID",
-              "codeName" : "Id"
             }
           }, {
             "dataType" : 1,

@@ -404,6 +404,7 @@ public class AuthenticationUser implements UserDetails, net.ibizsys.runtime.secu
     public String getRemoteaddress() {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         if (attributes != null) {
+            HttpServletRequest request = attributes.getRequest();
             return IPUtils.getIpAddr(request);
         }
         return null;

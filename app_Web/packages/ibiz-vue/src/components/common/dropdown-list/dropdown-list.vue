@@ -66,7 +66,9 @@ export default class DropDownList extends Vue {
      *
      * @memberof DropDownList
      */
-    @Watch('itemValue')
+    @Watch('itemValue',{
+        immediate: true
+    })
     public valueWatch() {
         try {
             this.readyValue();
