@@ -21,6 +21,7 @@
 import { Vue, Component, Prop, Model, Watch } from 'vue-property-decorator';
 import {CodeListService} from "ibiz-service";
 import { ImgurlBase64 } from 'ibiz-core';
+import { Environment } from '@/environments/environment';
 
 @Component({})
 export default class IconCodeList extends Vue {
@@ -324,11 +325,11 @@ export default class IconCodeList extends Vue {
                if(Object.prototype.toString.call(targetData) == "[object Array]"){
                     if(targetData && targetData.length >0){
                         let fileId:string = targetData[0] && targetData[0].id;
-                        return "/ibizutilpms/ztdownload/" + fileId;
+                        return `${Environment.ExportFile}/` + fileId;
                     }
                 }else if(Object.prototype.toString.call(targetData) === '[object Object]'){
                         let fileId:string = targetData && targetData.id;
-                        return "/ibizutilpms/ztdownload/" + fileId;
+                        return `${Environment.ExportFile}/` + fileId;
                 }
            } catch (error) {
                return arg;
@@ -336,11 +337,11 @@ export default class IconCodeList extends Vue {
        }else if(Object.prototype.toString.call(arg) == "[object Array]"){
            if(arg && arg.length >0){
                let fileId:string = arg[0] && arg[0].id;
-               return "/ibizutilpms/ztdownload/" + fileId;
+               return `${Environment.ExportFile}/` + fileId;
            }
        }else if(Object.prototype.toString.call(arg) === '[object Object]'){
             let fileId:string = arg && arg.id;
-            return "/ibizutilpms/ztdownload/" + fileId;
+            return `${Environment.ExportFile}/` + fileId;
        }else{
             return arg;
        }
