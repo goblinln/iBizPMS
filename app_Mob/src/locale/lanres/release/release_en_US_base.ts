@@ -32,6 +32,7 @@ export default {
     product:  commonLogic.appcommonhandle("产品",null),
     build:  commonLogic.appcommonhandle("版本",null),
     branch:  commonLogic.appcommonhandle("平台/分支",null),
+    releasesn:  commonLogic.appcommonhandle("发布编号",null),
   },
 	views: {
 		mobmdview: {

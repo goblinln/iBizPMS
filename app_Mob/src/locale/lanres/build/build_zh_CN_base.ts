@@ -31,6 +31,7 @@ export default {
     product: "产品",
     branch: "平台/分支",
     project: "所属项目",
+    buildsn: "版本编号",
   },
 	views: {
 		mobmpickupview: {

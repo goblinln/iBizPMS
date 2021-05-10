@@ -30,4 +30,5 @@ export default [
     'product',
     'build',
     'branch',
+    'releasesn',
 ];

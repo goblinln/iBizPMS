@@ -10,5 +10,6 @@ export default {
     updateby: "由谁更新",
     dept: "归属部门",
     account: "account",
+    usercontactsn: "用户联系方式编号",
   },
 };

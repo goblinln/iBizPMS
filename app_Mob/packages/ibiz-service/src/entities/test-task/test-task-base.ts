@@ -157,6 +157,10 @@ export abstract class TestTaskBase extends EntityBase implements ITestTask {
      * 所属项目
      */
     project?: any;
+    /**
+     * 测试版本编号
+     */
+    testtasksn?: any;
 
     /**
      * 重置实体数据

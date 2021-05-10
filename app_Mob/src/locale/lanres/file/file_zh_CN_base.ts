@@ -20,6 +20,7 @@ export default {
     deptname: "归属部门名",
     id: "id",
     extra: "备注",
+    filesn: "附件编号",
   },
 	views: {
 		mobmdview9: {

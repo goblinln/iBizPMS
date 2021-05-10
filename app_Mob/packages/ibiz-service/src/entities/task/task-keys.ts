@@ -90,4 +90,5 @@ export default [
     'story',
     'parent',
     'frombug',
+    'tasksn',
 ];

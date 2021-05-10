@@ -34,7 +34,7 @@ export class MobMeditViewPanelControlBase extends MDControlBase {
         }
         await this.controlInstance.getEmbeddedPSAppView()?.fill();
         this.loaddraftAction = this.controlInstance?.getGetDraftPSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "GetDraft";
-        this.initParameters();
+        await this.initParameters();
     }
 
     /**
@@ -88,10 +88,8 @@ export class MobMeditViewPanelControlBase extends MDControlBase {
      */
     public ctrlInit() {
         super.ctrlInit();
-        
         if (this.viewState) {
             this.viewStateEvent = this.viewState.subscribe(({ tag, action, data }: any) => {
-                
                 if (Object.is(action, 'load')) {
                     this.load(data);
                 }
@@ -107,10 +105,13 @@ export class MobMeditViewPanelControlBase extends MDControlBase {
      *
      * @memberof MobMeditViewPanelControlBase
      */
-    public initParameters() {
+    public async initParameters() {
         const emView = this.controlInstance.getEmbeddedPSAppView() as IPSAppView;
         const emViewEntity = emView?.getPSAppDataEntity();
         if (emView && emViewEntity) {
+            if(!emViewEntity.isFill){
+                await emViewEntity.fill();
+            }
             this.deResParameters = Util.formatAppDERSPath(this.context, (emView as IPSAppDEView).getPSAppDERSPaths());
             this.parameters = [{
                 pathName: Util.srfpluralize(emViewEntity.codeName).toLowerCase(),
@@ -129,10 +130,8 @@ export class MobMeditViewPanelControlBase extends MDControlBase {
      * @memberof MobMeditViewPanelControlBase
      */
     public saveData(data?: any) {
-        
         this.count = 0;
         if (this.items.length > 0) {
-            
             Object.assign(data, { showResultInfo: false });
             this.panelState.next({ tag: 'meditviewpanel', action: 'save', data: data });
         } else {

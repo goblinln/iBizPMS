@@ -136,4 +136,8 @@ export interface IIbzTaskestimate extends IEntityBase {
      * 任务
      */
     task?: any;
+    /**
+     * 任务预计编号
+     */
+    taskestimatesn?: any;
 }

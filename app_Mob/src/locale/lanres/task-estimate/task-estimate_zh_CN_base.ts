@@ -32,6 +32,7 @@ export default {
     deleted: "任务删除标识",
     project: "项目",
     task: "任务",
+    taskestimatesn: "任务预计编号",
   },
 	views: {
 		mobmdview: {

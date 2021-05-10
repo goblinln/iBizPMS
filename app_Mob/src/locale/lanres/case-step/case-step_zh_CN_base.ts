@@ -19,6 +19,7 @@ export default {
     org: "归属组织",
     ibizcase: "用例",
     parent: "分组用例步骤的组编号",
+    casestepsn: "用例步骤编号",
   },
 	views: {
 		mobmdview9: {

@@ -80,6 +80,7 @@ export default {
     duplicatestory: "重复需求ID",
     branch: "平台/分支",
     tobug: "转Bug",
+    storysn: "需求编号",
   },
 	views: {
 		editmobeditview: {

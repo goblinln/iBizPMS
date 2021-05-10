@@ -22,6 +22,7 @@ export default {
     parentname: "上级模块",
     branch: "平台/分支",
     parent: "上级模块",
+    modulesn: "模块编号",
   },
 	views: {
 		mobpickupmdview: {

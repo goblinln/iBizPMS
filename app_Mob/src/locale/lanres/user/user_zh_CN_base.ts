@@ -35,6 +35,7 @@ export default {
     phone: "电话",
     id: "ID",
     qq: "QQ",
+    usersn: "用户编号",
   },
 	views: {
 		mobmpickupview: {

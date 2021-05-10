@@ -40,6 +40,7 @@ export default {
     branch:  commonLogic.appcommonhandle("平台/分支",null),
     parent:  commonLogic.appcommonhandle("父计划",null),
     product:  commonLogic.appcommonhandle("产品",null),
+    productplansn:  commonLogic.appcommonhandle("产品计划编号",null),
   },
 	views: {
 		mobeditview: {

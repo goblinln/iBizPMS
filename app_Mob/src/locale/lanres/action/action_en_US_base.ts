@@ -29,6 +29,7 @@ export default {
     objectID:  commonLogic.appcommonhandle("对象ID",null),
     actor:  commonLogic.appcommonhandle("操作者",null),
     project:  commonLogic.appcommonhandle("项目",null),
+    actionsn:  commonLogic.appcommonhandle("系统日志编号",null),
   },
 	views: {
 		mobmdview9: {

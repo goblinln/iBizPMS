@@ -82,4 +82,5 @@ export default [
     'qd',
     'parentname',
     'parent',
+    'projectsn',
 ];

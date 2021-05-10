@@ -31,6 +31,7 @@ export default {
     product:  commonLogic.appcommonhandle("所属产品",null),
     build:  commonLogic.appcommonhandle("版本",null),
     project:  commonLogic.appcommonhandle("所属项目",null),
+    testtasksn:  commonLogic.appcommonhandle("测试版本编号",null),
   },
 	views: {
 		moboptionviewclose: {

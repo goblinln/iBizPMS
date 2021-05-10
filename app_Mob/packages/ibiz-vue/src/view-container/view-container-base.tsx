@@ -151,7 +151,10 @@ export class ViewContainerBase extends Vue {
             this.modeldata = this.staticProps.viewModelData;
         } else {
             if (this.dynaModelFilePath) {
-                this.modeldata = await ((await GetModelService(this.context)).getPSAppView(this.dynaModelFilePath)) as IPSAppView;
+                const data = await GetModelService(this.context);
+                if(data){
+                    this.modeldata  = await data.getPSAppView(this.dynaModelFilePath) as IPSAppView
+                }
             }
         }
         // 视图壳加载视图数据

@@ -39,4 +39,5 @@ export default [
     'project',
     'product',
     'module',
+    'docsn',
 ];

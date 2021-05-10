@@ -84,4 +84,8 @@ export interface ICaseStep extends IEntityBase {
      * 分组用例步骤的组编号
      */
     parent?: any;
+    /**
+     * 用例步骤编号
+     */
+    casestepsn?: any;
 }

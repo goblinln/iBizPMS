@@ -29,6 +29,7 @@ export default {
     objectid: "对象ID",
     actor: "操作者",
     project: "项目",
+    actionsn: "系统日志编号",
   },
 	views: {
 		mobmdview9: {

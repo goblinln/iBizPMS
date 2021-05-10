@@ -12,5 +12,6 @@ export default {
     org: "归属组织",
     deptname: "归属部门名",
     product: "所属产品",
+    branchsn: "产品的分支和平台信息编号",
   },
 };

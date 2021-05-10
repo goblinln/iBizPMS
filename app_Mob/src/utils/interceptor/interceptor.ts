@@ -95,13 +95,13 @@ export class Interceptors {
                 config.headers['srfsystemid'] = activeOrgData?.systemid;
             }
             config.headers['Accept-Language'] = i18n.locale;
-
             // 混合 app 代理处理
-            if (Object.is(process.env.VUE_APP_CURRENTMODE, 'hybridapp') && !config.url.startsWith('https://') && !config.url.startsWith('http://')) {
-                if (!ignoreProxyMap.has(config.url)) {
-                    config.url = process.env.VUE_APP_PROXY + config.url;
-                }
-            }
+            // if (Object.is(process.env.VUE_APP_CURRENTMODE, 'hybridapp') && !config.url.startsWith('https://') && !config.url.startsWith('http://')) {
+            //     if (!ignoreProxyMap.has(config.url) && !config.url.endsWith('.json')) {
+            //         config.url = process.env.VUE_APP_PROXY + config.url;
+            //         alert(config.url);
+            //     }
+            // }
             return config;
         }, (error: any) => {
             return Promise.reject(error);

@@ -20,4 +20,5 @@ export default [
     'parentname',
     'branch',
     'parent',
+    'modulesn',
 ];

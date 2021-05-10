@@ -31,6 +31,7 @@ export default {
     product: "所属产品",
     build: "版本",
     project: "所属项目",
+    testtasksn: "测试版本编号",
   },
 	views: {
 		moboptionviewclose: {

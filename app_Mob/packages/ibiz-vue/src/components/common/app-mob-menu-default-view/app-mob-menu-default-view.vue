@@ -28,7 +28,7 @@
 <script lang="ts">
 import { Vue, Component, Prop, Emit, Model } from 'vue-property-decorator';
 import { Environment } from '@/environments/environment';
-import { DynamicService, ViewTool } from "ibiz-core";
+import {ViewTool } from "ibiz-core";
 @Component({
     components: {
     }

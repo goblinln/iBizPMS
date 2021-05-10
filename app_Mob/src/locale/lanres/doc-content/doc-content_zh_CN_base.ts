@@ -15,5 +15,6 @@ export default {
     deptname: "归属部门名",
     createby: "由谁创建",
     doc: "文档",
+    doccontentsn: "文档内容编号",
   },
 };

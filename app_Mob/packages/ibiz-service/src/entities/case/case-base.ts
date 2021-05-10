@@ -305,6 +305,10 @@ export abstract class CaseBase extends EntityBase implements ICase {
      * 所属模块
      */
     module?: any;
+    /**
+     * 测试用例编号
+     */
+    casesn?: any;
 
     /**
      * 重置实体数据

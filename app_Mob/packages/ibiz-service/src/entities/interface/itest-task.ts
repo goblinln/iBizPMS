@@ -132,4 +132,8 @@ export interface ITestTask extends IEntityBase {
      * 所属项目
      */
     project?: any;
+    /**
+     * 测试版本编号
+     */
+    testtasksn?: any;
 }

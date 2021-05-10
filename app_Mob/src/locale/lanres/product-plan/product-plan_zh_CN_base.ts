@@ -40,6 +40,7 @@ export default {
     branch: "平台/分支",
     parent: "父计划",
     product: "产品",
+    productplansn: "产品计划编号",
   },
 	views: {
 		mobeditview: {

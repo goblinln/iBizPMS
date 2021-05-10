@@ -109,6 +109,10 @@ export abstract class CaseStepBase extends EntityBase implements ICaseStep {
      * 分组用例步骤的组编号
      */
     parent?: any;
+    /**
+     * 用例步骤编号
+     */
+    casestepsn?: any;
 
     /**
      * 重置实体数据

@@ -111,6 +111,10 @@ export abstract class FileBase extends EntityBase implements IFile {
      * 备注
      */
     extra?: any;
+    /**
+     * 附件编号
+     */
+    filesn?: any;
 
     /**
      * 重置实体数据

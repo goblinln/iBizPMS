@@ -6,7 +6,6 @@ export { ControlServiceBase } from './ctrl-service/ctrl-base.service';
 export { EntityBaseService } from './entity-service/entity-base.service';
 export { UIServiceBase } from './ui-service/ui-base.service';
 export { UtilServiceBase } from './util-service/util-base.service';
-export { DynamicService } from './dynamic-service/dynamic-base.service';
 export { ServiceRegisterBase } from './service-register/service-register';
 export { ThirdPartyService } from './third-party-service/ThirdPartyService';
 export { DingTalkService } from './third-party-service/DingTalkService';

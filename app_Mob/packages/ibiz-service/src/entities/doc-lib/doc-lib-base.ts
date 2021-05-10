@@ -147,6 +147,10 @@ export abstract class DocLibBase extends EntityBase implements IDocLib {
      * 产品库
      */
     product?: any;
+    /**
+     * 文档库编号
+     */
+    doclibsn?: any;
 
     /**
      * 重置实体数据

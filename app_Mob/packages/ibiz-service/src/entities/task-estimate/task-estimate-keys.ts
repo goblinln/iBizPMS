@@ -30,4 +30,5 @@ export default [
     'deleted',
     'project',
     'task',
+    'taskestimatesn',
 ];

@@ -1,4 +1,4 @@
-import { Util, ModelParser, DynamicService } from "ibiz-core";
+import { Util, ModelParser} from "ibiz-core";
 import { MainControlBase } from './main-control-base';
 import { IPSDEContextMenu } from '@ibiz/dynamic-model-api';
 

@@ -94,4 +94,8 @@ export interface IModule extends IEntityBase {
      * 上级模块
      */
     parent?: any;
+    /**
+     * 模块编号
+     */
+    modulesn?: any;
 }

@@ -64,6 +64,7 @@ export default {
     product: "所属产品",
     lib: "所属库",
     module: "所属模块",
+    casesn: "测试用例编号",
   },
 	views: {
 		mobeditview: {

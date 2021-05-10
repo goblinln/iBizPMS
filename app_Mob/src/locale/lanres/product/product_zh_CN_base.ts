@@ -56,6 +56,7 @@ export default {
     activestorycnt: "激活需求数",
     linename: "产品线",
     line: "产品线",
+    productsn: "产品编号",
   },
 	views: {
 		testmobmdview: {

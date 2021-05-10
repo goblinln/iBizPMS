@@ -15,5 +15,6 @@ export default {
     deptName:  commonLogic.appcommonhandle("归属部门名",null),
     createBy:  commonLogic.appcommonhandle("由谁创建",null),
     doc:  commonLogic.appcommonhandle("文档",null),
+    doccontentsn:  commonLogic.appcommonhandle("文档内容编号",null),
   },
 };

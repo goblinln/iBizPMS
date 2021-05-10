@@ -41,5 +41,6 @@ export default {
     project: "所属项目",
     product: "所属产品",
     module: "所属分类",
+    docsn: "文档编号",
   },
 };

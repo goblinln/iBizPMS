@@ -28,6 +28,7 @@ export default {
     projectName:  commonLogic.appcommonhandle("所属项目",null),
     project:  commonLogic.appcommonhandle("项目库",null),
     product:  commonLogic.appcommonhandle("产品库",null),
+    doclibsn:  commonLogic.appcommonhandle("文档库编号",null),
   },
 	views: {
 		projectdoclibmobtreeview: {

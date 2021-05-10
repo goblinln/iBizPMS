@@ -64,6 +64,7 @@ export default {
     product:  commonLogic.appcommonhandle("所属产品",null),
     lib:  commonLogic.appcommonhandle("所属库",null),
     module:  commonLogic.appcommonhandle("所属模块",null),
+    casesn:  commonLogic.appcommonhandle("测试用例编号",null),
   },
 	views: {
 		mobeditview: {

@@ -33,4 +33,5 @@ export default [
     'phone',
     'id',
     'qq',
+    'usersn',
 ];

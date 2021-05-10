@@ -20,6 +20,7 @@ export default {
     deptName:  commonLogic.appcommonhandle("归属部门名",null),
     id:  commonLogic.appcommonhandle("id",null),
     extra:  commonLogic.appcommonhandle("备注",null),
+    filesn:  commonLogic.appcommonhandle("附件编号",null),
   },
 	views: {
 		mobmdview9: {

@@ -132,4 +132,8 @@ export interface IBuild extends IEntityBase {
      * 所属项目
      */
     project?: any;
+    /**
+     * 版本编号
+     */
+    buildsn?: any;
 }

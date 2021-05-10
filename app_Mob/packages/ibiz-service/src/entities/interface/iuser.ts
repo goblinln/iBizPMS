@@ -148,4 +148,8 @@ export interface IUser extends IEntityBase {
      * QQ
      */
     qq?: any;
+    /**
+     * 用户编号
+     */
+    usersn?: any;
 }

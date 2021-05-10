@@ -84,6 +84,7 @@ export default {
     qd: "测试负责人",
     parentname: "parent",
     parent: "父项目",
+    projectsn: "项目编号",
   },
 	views: {
 		mobtabexpview: {

@@ -31,6 +31,7 @@ export default {
     product:  commonLogic.appcommonhandle("产品",null),
     branch:  commonLogic.appcommonhandle("平台/分支",null),
     project:  commonLogic.appcommonhandle("所属项目",null),
+    buildsn:  commonLogic.appcommonhandle("版本编号",null),
   },
 	views: {
 		mobmpickupview: {

@@ -83,9 +83,10 @@ export class AuthGuard {
      * @memberof AuthGuard
      */
     public getOrgsByDcsystem(router: any): Promise<boolean> {
+        const srfdcsystem = Environment.srfDcSystem;
         return new Promise((resolve: any) => {
             let tempViewParam = this.hanldeViewParam(window.location.href);
-            if (!tempViewParam.srfdcsystem) {
+            if (!srfdcsystem) {
                 if (!tempViewParam.redirect) {
                     if (getSessionStorage('dcsystem')) {
                         tempViewParam = getSessionStorage('dcsystem');
@@ -94,9 +95,9 @@ export class AuthGuard {
                     tempViewParam = this.hanldeViewParam(tempViewParam.redirect);
                 }
             }
-            if (tempViewParam.srfdcsystem) {
+            if (srfdcsystem) {
                 setSessionStorage('dcsystem', tempViewParam);
-                let requestUrl: string = `/uaa/getbydcsystem/${tempViewParam.srfdcsystem}`;
+                let requestUrl: string = `/uaa/getbydcsystem/${srfdcsystem}`;
                 const get: Promise<any> = Http.getInstance().get(requestUrl);
                 get.then((response: any) => {
                     if (response && response.status === 200) {
@@ -109,7 +110,7 @@ export class AuthGuard {
                     } else {
                         resolve(false);
                     }
-                }).catch(() => {
+                }).catch((error) => {
                     resolve(false);
                 });
             } else {
@@ -189,7 +190,8 @@ export class AuthGuard {
             } else {
                 url = `./assets/model${strPath}`;
             }
-            let result: any = await Http.getInstance().get(url);
+            let result: any
+            result = await Http.getInstance().get(url);
             return result.data ? result.data : null;
         });
         AppServiceBase.getInstance().setAppModelDataObject(service.app);

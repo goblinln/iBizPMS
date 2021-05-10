@@ -28,6 +28,7 @@ export default {
     projectname: "所属项目",
     project: "项目库",
     product: "产品库",
+    doclibsn: "文档库编号",
   },
 	views: {
 		projectdoclibmobtreeview: {

@@ -56,6 +56,7 @@ export default {
     activeStoryCnt:  commonLogic.appcommonhandle("激活需求数",null),
     lineName:  commonLogic.appcommonhandle("产品线",null),
     line:  commonLogic.appcommonhandle("产品线",null),
+    productsn:  commonLogic.appcommonhandle("产品编号",null),
   },
 	views: {
 		testmobmdview: {

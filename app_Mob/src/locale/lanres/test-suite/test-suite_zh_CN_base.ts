@@ -16,6 +16,7 @@ export default {
     casecnt: "用例数",
     desc: "描述",
     product: "所属产品",
+    testsuitesn: "测试套件编号",
   },
 	views: {
 		mobtabexpview: {

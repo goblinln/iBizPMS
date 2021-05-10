@@ -26,4 +26,5 @@ export default [
     'projectname',
     'project',
     'product',
+    'doclibsn',
 ];

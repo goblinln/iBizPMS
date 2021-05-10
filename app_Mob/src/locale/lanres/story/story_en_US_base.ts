@@ -80,6 +80,7 @@ export default {
     duplicateStory:  commonLogic.appcommonhandle("重复需求ID",null),
     branch:  commonLogic.appcommonhandle("平台/分支",null),
     toBug:  commonLogic.appcommonhandle("转Bug",null),
+    storysn:  commonLogic.appcommonhandle("需求编号",null),
   },
 	views: {
 		editmobeditview: {

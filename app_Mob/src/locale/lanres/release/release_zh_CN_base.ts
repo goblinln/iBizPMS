@@ -32,6 +32,7 @@ export default {
     product: "产品",
     build: "版本",
     branch: "平台/分支",
+    releasesn: "发布编号",
   },
 	views: {
 		mobmdview: {

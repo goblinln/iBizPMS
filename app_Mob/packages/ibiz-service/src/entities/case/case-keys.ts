@@ -62,4 +62,5 @@ export default [
     'product',
     'lib',
     'module',
+    'casesn',
 ];

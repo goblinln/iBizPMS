@@ -128,4 +128,8 @@ export interface IAction extends IEntityBase {
      * 项目
      */
     project?: any;
+    /**
+     * 系统日志编号
+     */
+    actionsn?: any;
 }

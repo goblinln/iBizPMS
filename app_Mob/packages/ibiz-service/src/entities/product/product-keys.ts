@@ -54,4 +54,5 @@ export default [
     'activestorycnt',
     'linename',
     'line',
+    'productsn',
 ];
