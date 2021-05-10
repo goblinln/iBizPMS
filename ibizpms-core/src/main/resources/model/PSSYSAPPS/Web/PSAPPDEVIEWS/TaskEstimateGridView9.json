@@ -201,6 +201,23 @@
     "getPSDEGridColumns" : [ {
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
+      "caption" : "任务预计编号",
+      "codeName" : "taskestimatesn",
+      "columnType" : "DEFGRIDCOLUMN",
+      "dataItemName" : "taskestimatesn",
+      "excelCaption" : "任务预计编号",
+      "name" : "taskestimatesn",
+      "noPrivDisplayMode" : 1,
+      "getPSAppDEField" : {
+        "name" : "TASKESTIMATESN",
+        "codeName" : "TaskEstimatesn"
+      },
+      "width" : 100,
+      "widthUnit" : "PX",
+      "enableSort" : true
+    }, {
+      "align" : "LEFT",
+      "cLConvertMode" : "NONE",
       "caption" : "日期",
       "codeName" : "dates",
       "columnType" : "DEFGRIDCOLUMN",
@@ -273,13 +290,6 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
-      "dataType" : 1,
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
       "dataType" : 21,
       "name" : "work",
       "getPSAppDEField" : {
@@ -300,6 +310,13 @@
       "getPSAppDEField" : {
         "name" : "DATES",
         "codeName" : "Dates"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "taskestimatesn",
+      "getPSAppDEField" : {
+        "name" : "TASKESTIMATESN",
+        "codeName" : "TaskEstimatesn"
       }
     }, {
       "dataType" : 1,
@@ -406,23 +423,6 @@
       "valueRuleType" : "DEFVALUERULE"
     } ],
     "getPSDEGridEditItems" : [ {
-      "caption" : "ID",
-      "codeName" : "id",
-      "enableCond" : 0,
-      "ignoreInput" : 0,
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      },
-      "getPSEditor" : {
-        "editorType" : "SPAN",
-        "name" : "id",
-        "editable" : false,
-        "enableLinkView" : false
-      },
-      "allowEmpty" : true
-    }, {
       "caption" : "备注",
       "codeName" : "work",
       "enableCond" : 3,

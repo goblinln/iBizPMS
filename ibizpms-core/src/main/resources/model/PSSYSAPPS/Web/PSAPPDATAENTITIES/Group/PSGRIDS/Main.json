@@ -52,18 +52,18 @@
   "getPSDEGridColumns" : [ {
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
-    "caption" : "ID",
-    "codeName" : "id",
+    "caption" : "群组编号",
+    "codeName" : "groupsn",
     "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "id",
-    "excelCaption" : "ID",
-    "name" : "id",
+    "dataItemName" : "groupsn",
+    "excelCaption" : "群组编号",
+    "name" : "groupsn",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "GROUPSN",
+      "codeName" : "Groupsn"
     },
-    "width" : 70,
+    "width" : 100,
     "widthUnit" : "PX",
     "enableSort" : true
   }, {
@@ -175,13 +175,6 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 1,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
     "dataType" : 25,
     "name" : "desc",
     "getPSAppDEField" : {
@@ -194,6 +187,13 @@
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "groupsn",
+    "getPSAppDEField" : {
+      "name" : "GROUPSN",
+      "codeName" : "Groupsn"
     }
   }, {
     "dataType" : 25,

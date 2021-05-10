@@ -362,12 +362,12 @@
     "maxRowCount" : 1000,
     "name" : "数据导出",
     "getPSDEDataExportItems" : [ {
-      "caption" : "编号",
+      "caption" : "产品计划编号",
       "format" : "%1$s",
-      "name" : "id",
+      "name" : "productplansn",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "PRODUCTPLANSN",
+        "codeName" : "Productplansn"
       }
     }, {
       "caption" : "名称",

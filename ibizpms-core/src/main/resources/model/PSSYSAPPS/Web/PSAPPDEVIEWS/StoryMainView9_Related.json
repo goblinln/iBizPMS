@@ -1171,18 +1171,18 @@
             "getPSDEGridColumns" : [ {
               "align" : "LEFT",
               "cLConvertMode" : "NONE",
-              "caption" : "编号",
-              "codeName" : "id",
+              "caption" : "需求编号",
+              "codeName" : "storysn",
               "columnType" : "DEFGRIDCOLUMN",
-              "dataItemName" : "id",
-              "excelCaption" : "编号",
-              "name" : "id",
+              "dataItemName" : "storysn",
+              "excelCaption" : "需求编号",
+              "name" : "storysn",
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
+                "name" : "STORYSN",
+                "codeName" : "Storysn"
               },
-              "width" : 70,
+              "width" : 100,
               "widthUnit" : "PX",
               "enableSort" : true
             }, {
@@ -1219,13 +1219,6 @@
               }
             }, {
               "dataType" : 1,
-              "name" : "id",
-              "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
-              }
-            }, {
-              "dataType" : 1,
               "name" : "module",
               "getPSAppDEField" : {
                 "name" : "MODULE",
@@ -1244,6 +1237,13 @@
               "getPSAppDEField" : {
                 "name" : "FROMBUG",
                 "codeName" : "FromBug"
+              }
+            }, {
+              "dataType" : 1,
+              "name" : "storysn",
+              "getPSAppDEField" : {
+                "name" : "STORYSN",
+                "codeName" : "Storysn"
               }
             }, {
               "dataType" : 1,
@@ -1668,18 +1668,18 @@
             "getPSDEGridColumns" : [ {
               "align" : "LEFT",
               "cLConvertMode" : "NONE",
-              "caption" : "编号",
-              "codeName" : "id",
+              "caption" : "需求编号",
+              "codeName" : "storysn",
               "columnType" : "DEFGRIDCOLUMN",
-              "dataItemName" : "id",
-              "excelCaption" : "编号",
-              "name" : "id",
+              "dataItemName" : "storysn",
+              "excelCaption" : "需求编号",
+              "name" : "storysn",
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
+                "name" : "STORYSN",
+                "codeName" : "Storysn"
               },
-              "width" : 70,
+              "width" : 100,
               "widthUnit" : "PX",
               "enableSort" : true
             }, {
@@ -1716,13 +1716,6 @@
               }
             }, {
               "dataType" : 1,
-              "name" : "id",
-              "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
-              }
-            }, {
-              "dataType" : 1,
               "name" : "module",
               "getPSAppDEField" : {
                 "name" : "MODULE",
@@ -1741,6 +1734,13 @@
               "getPSAppDEField" : {
                 "name" : "FROMBUG",
                 "codeName" : "FromBug"
+              }
+            }, {
+              "dataType" : 1,
+              "name" : "storysn",
+              "getPSAppDEField" : {
+                "name" : "STORYSN",
+                "codeName" : "Storysn"
               }
             }, {
               "dataType" : 1,

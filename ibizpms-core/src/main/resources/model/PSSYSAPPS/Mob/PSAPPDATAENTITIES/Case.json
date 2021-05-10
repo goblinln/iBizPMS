@@ -502,12 +502,12 @@
     "maxRowCount" : 1000,
     "name" : "数据导出",
     "getPSDEDataExportItems" : [ {
-      "caption" : "id",
+      "caption" : "测试用例编号",
       "format" : "%1$s",
-      "name" : "id",
+      "name" : "casesn",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "CASESN",
+        "codeName" : "Casesn"
       }
     }, {
       "caption" : "P",

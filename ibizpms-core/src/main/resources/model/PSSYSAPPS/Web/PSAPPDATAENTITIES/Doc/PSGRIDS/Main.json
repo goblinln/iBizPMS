@@ -121,15 +121,15 @@
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
     "caption" : "文档编号",
-    "codeName" : "id",
+    "codeName" : "docsn",
     "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "id",
+    "dataItemName" : "docsn",
     "excelCaption" : "文档编号",
-    "name" : "id",
+    "name" : "docsn",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "DOCSN",
+      "codeName" : "Docsn"
     },
     "width" : 100,
     "widthUnit" : "PX",
@@ -463,6 +463,13 @@
     }
   }, {
     "dataType" : 1,
+    "name" : "docsn",
+    "getPSAppDEField" : {
+      "name" : "DOCSN",
+      "codeName" : "Docsn"
+    }
+  }, {
+    "dataType" : 1,
     "name" : "srfkey",
     "getPSAppDEField" : {
       "name" : "ID",
@@ -482,13 +489,6 @@
     "getPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,

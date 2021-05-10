@@ -905,7 +905,7 @@ function getLocaleResourceBase(){
 		},
 		main_plansub_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("ID",null),
+				'storysn': commonLogic.appcommonhandle("需求编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'modulename': commonLogic.appcommonhandle("所属模块名称",null),
 				'title': commonLogic.appcommonhandle("需求名称",null),
@@ -956,7 +956,7 @@ function getLocaleResourceBase(){
 		},
 		projectstory_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("ID",null),
+				'storysn': commonLogic.appcommonhandle("需求编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("需求名称",null),
 				'plan': commonLogic.appcommonhandle("计划",null),
@@ -1025,7 +1025,7 @@ function getLocaleResourceBase(){
 		},
 		main_reportsub_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("ID",null),
+				'storysn': commonLogic.appcommonhandle("需求编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("需求名称",null),
 				'openedby': commonLogic.appcommonhandle("创建",null),
@@ -1040,7 +1040,7 @@ function getLocaleResourceBase(){
 		},
 		storyrelated_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("编号",null),
+				'storysn': commonLogic.appcommonhandle("需求编号",null),
 				'title': commonLogic.appcommonhandle("需求名称",null),
 			},
 			nodata:commonLogic.appcommonhandle("",null),
@@ -1127,7 +1127,7 @@ function getLocaleResourceBase(){
 		},
 		myfavoritemain_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("ID",null),
+				'storysn': commonLogic.appcommonhandle("需求编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'prodoctname': commonLogic.appcommonhandle("产品名称",null),
 				'title': commonLogic.appcommonhandle("需求名称",null),
@@ -1181,7 +1181,7 @@ function getLocaleResourceBase(){
 		},
 		mygroupmain_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("ID",null),
+				'storysn': commonLogic.appcommonhandle("需求编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'prodoctname': commonLogic.appcommonhandle("产品名称",null),
 				'title': commonLogic.appcommonhandle("需求名称",null),
@@ -1225,7 +1225,7 @@ function getLocaleResourceBase(){
 		},
 		main2_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("ID",null),
+				'storysn': commonLogic.appcommonhandle("需求编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("需求名称",null),
 				'uagridcolumn1': commonLogic.appcommonhandle("操作",null),
@@ -1261,7 +1261,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("ID",null),
+				'storysn': commonLogic.appcommonhandle("需求编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("需求名称",null),
 				'plan': commonLogic.appcommonhandle("计划",null),

@@ -305,16 +305,16 @@
     "getPSDEGridColumns" : [ {
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
-      "caption" : "编号",
-      "codeName" : "id",
+      "caption" : "用户模板编号",
+      "codeName" : "usertplsn",
       "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "id",
-      "excelCaption" : "编号",
-      "name" : "id",
+      "dataItemName" : "usertplsn",
+      "excelCaption" : "用户模板编号",
+      "name" : "usertplsn",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "USERTPLSN",
+        "codeName" : "Usertplsn"
       },
       "width" : 100,
       "widthUnit" : "PX",
@@ -424,18 +424,18 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
-      "dataType" : 1,
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
       "dataType" : 25,
       "name" : "title",
       "getPSAppDEField" : {
         "name" : "TITLE",
         "codeName" : "Title"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "usertplsn",
+      "getPSAppDEField" : {
+        "name" : "USERTPLSN",
+        "codeName" : "Usertplsn"
       }
     }, {
       "dataType" : 25,

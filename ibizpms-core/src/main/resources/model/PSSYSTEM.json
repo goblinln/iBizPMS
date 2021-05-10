@@ -2373,6 +2373,9 @@
   } ],
   "getAllPSSysUserRoles" : [ {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/PMSSysAdmin.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProductManger.json"
   }, {
     "modelref" : true,

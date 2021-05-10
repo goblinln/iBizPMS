@@ -180,16 +180,16 @@
       "getPSDEGridColumns" : [ {
         "align" : "LEFT",
         "cLConvertMode" : "NONE",
-        "caption" : "编号",
-        "codeName" : "id",
+        "caption" : "用户联系方式编号",
+        "codeName" : "usercontactsn",
         "columnType" : "DEFGRIDCOLUMN",
-        "dataItemName" : "id",
-        "excelCaption" : "编号",
-        "name" : "id",
+        "dataItemName" : "usercontactsn",
+        "excelCaption" : "用户联系方式编号",
+        "name" : "usercontactsn",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
-          "name" : "ID",
-          "codeName" : "Id"
+          "name" : "USERCONTACTSN",
+          "codeName" : "Usercontactsn"
         },
         "width" : 100,
         "widthUnit" : "PX",
@@ -214,10 +214,10 @@
       } ],
       "getPSDEGridDataItems" : [ {
         "dataType" : 1,
-        "name" : "id",
+        "name" : "usercontactsn",
         "getPSAppDEField" : {
-          "name" : "ID",
-          "codeName" : "Id"
+          "name" : "USERCONTACTSN",
+          "codeName" : "Usercontactsn"
         }
       }, {
         "dataType" : 25,

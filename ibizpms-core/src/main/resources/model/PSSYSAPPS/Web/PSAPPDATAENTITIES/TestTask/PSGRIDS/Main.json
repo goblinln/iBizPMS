@@ -129,18 +129,18 @@
   "getPSDEGridColumns" : [ {
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
-    "caption" : "ID",
-    "codeName" : "id",
+    "caption" : "测试版本编号",
+    "codeName" : "testtasksn",
     "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "id",
-    "excelCaption" : "ID",
-    "name" : "id",
+    "dataItemName" : "testtasksn",
+    "excelCaption" : "测试版本编号",
+    "name" : "testtasksn",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "TESTTASKSN",
+      "codeName" : "Testtasksn"
     },
-    "width" : 70,
+    "width" : 100,
     "widthUnit" : "PX",
     "enableSort" : true
   }, {
@@ -545,6 +545,13 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
+    "dataType" : 1,
+    "name" : "testtasksn",
+    "getPSAppDEField" : {
+      "name" : "TESTTASKSN",
+      "codeName" : "Testtasksn"
+    }
+  }, {
     "dataType" : 25,
     "name" : "status",
     "getPSAppDEField" : {
@@ -590,13 +597,6 @@
     "getPSAppDEField" : {
       "name" : "BEGIN",
       "codeName" : "Begin"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,

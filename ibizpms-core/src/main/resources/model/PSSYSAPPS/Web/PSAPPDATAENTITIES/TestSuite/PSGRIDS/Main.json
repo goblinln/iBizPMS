@@ -89,16 +89,16 @@
   "getPSDEGridColumns" : [ {
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
-    "caption" : "编号",
-    "codeName" : "id",
+    "caption" : "测试套件编号",
+    "codeName" : "testsuitesn",
     "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "id",
-    "excelCaption" : "编号",
-    "name" : "id",
+    "dataItemName" : "testsuitesn",
+    "excelCaption" : "测试套件编号",
+    "name" : "testsuitesn",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "TESTSUITESN",
+      "codeName" : "Testsuitesn"
     },
     "width" : 100,
     "widthUnit" : "PX",
@@ -328,13 +328,6 @@
       "codeName" : "Product"
     }
   }, {
-    "dataType" : 1,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
     "dataType" : 21,
     "name" : "desc",
     "getPSAppDEField" : {
@@ -355,6 +348,13 @@
     "getPSAppDEField" : {
       "name" : "ADDEDBY",
       "codeName" : "AddedBy"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "testsuitesn",
+    "getPSAppDEField" : {
+      "name" : "TESTSUITESN",
+      "codeName" : "Testsuitesn"
     }
   }, {
     "dataType" : 25,

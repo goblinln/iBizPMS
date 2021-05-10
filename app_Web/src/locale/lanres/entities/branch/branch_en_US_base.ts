@@ -58,14 +58,14 @@ function getLocaleResourceBase(){
 		},
 		platformmanagement_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("编号",null),
+				'branchsn': commonLogic.appcommonhandle("产品的分支和平台信息编号",null),
 				'name': commonLogic.appcommonhandle("名称",null),
 				'order': commonLogic.appcommonhandle("排序",null),
 				'uagridcolumn1': commonLogic.appcommonhandle("操作",null),
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
-				'id': commonLogic.appcommonhandle("编号",null),
+				'branchsn': commonLogic.appcommonhandle("产品的分支和平台信息编号",null),
 				'name': commonLogic.appcommonhandle("名称",null),
 				'order': commonLogic.appcommonhandle("排序",null),
 		},

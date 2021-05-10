@@ -816,12 +816,12 @@
     "maxRowCount" : 1000,
     "name" : "数据导出",
     "getPSDEDataExportItems" : [ {
-      "caption" : "ID",
+      "caption" : "需求编号",
       "format" : "%1$s",
-      "name" : "id",
+      "name" : "storysn",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "STORYSN",
+        "codeName" : "Storysn"
       }
     }, {
       "caption" : "P",

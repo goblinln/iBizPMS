@@ -701,16 +701,16 @@
     "getPSDEGridColumns" : [ {
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
-      "caption" : "id",
-      "codeName" : "id",
+      "caption" : "测试用例编号",
+      "codeName" : "casesn",
       "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "id",
-      "excelCaption" : "id",
-      "name" : "id",
+      "dataItemName" : "casesn",
+      "excelCaption" : "测试用例编号",
+      "name" : "casesn",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "CASESN",
+        "codeName" : "Casesn"
       },
       "width" : 100,
       "widthUnit" : "PX",
@@ -1267,6 +1267,13 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
+      "dataType" : 1,
+      "name" : "casesn",
+      "getPSAppDEField" : {
+        "name" : "CASESN",
+        "codeName" : "Casesn"
+      }
+    }, {
       "dataType" : 9,
       "name" : "resultcnt",
       "getPSAppDEField" : {
@@ -1325,13 +1332,6 @@
       "getPSAppDEField" : {
         "name" : "OPENEDBY",
         "codeName" : "OpenedBy"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,

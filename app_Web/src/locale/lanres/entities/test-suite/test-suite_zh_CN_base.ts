@@ -79,7 +79,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("编号",null),
+				'testsuitesn': commonLogic.appcommonhandle("测试套件编号",null),
 				'name': commonLogic.appcommonhandle("名称",null),
 				'desc': commonLogic.appcommonhandle("描述",null),
 				'addedby': commonLogic.appcommonhandle("由谁创建",null),
@@ -88,7 +88,7 @@ function getLocaleResourceBase(){
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
-				'id': commonLogic.appcommonhandle("编号",null),
+				'testsuitesn': commonLogic.appcommonhandle("测试套件编号",null),
 				'name': commonLogic.appcommonhandle("名称",null),
 				'desc': commonLogic.appcommonhandle("描述",null),
 				'addedby': commonLogic.appcommonhandle("由谁创建",null),

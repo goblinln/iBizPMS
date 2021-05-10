@@ -1,0 +1,7 @@
+{
+  "codeName" : "PMSSysAdmin",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/PMSSysAdmin.json",
+  "name" : "PMS系统管理员",
+  "roleTag" : "PMSSysAdmin",
+  "roleType" : "CUSTOM"
+}

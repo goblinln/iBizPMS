@@ -153,12 +153,12 @@
     "maxRowCount" : 1000,
     "name" : "数据导出",
     "getPSDEDataExportItems" : [ {
-      "caption" : "编号",
+      "caption" : "产品的分支和平台信息编号",
       "format" : "%1$s",
-      "name" : "id",
+      "name" : "branchsn",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "BRANCHSN",
+        "codeName" : "Branchsn"
       }
     }, {
       "caption" : "名称",

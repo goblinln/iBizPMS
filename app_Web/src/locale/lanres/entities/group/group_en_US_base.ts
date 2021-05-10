@@ -40,7 +40,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("ID",null),
+				'groupsn': commonLogic.appcommonhandle("群组编号",null),
 				'name': commonLogic.appcommonhandle("分组名称",null),
 				'desc': commonLogic.appcommonhandle("分组描述",null),
 				'uagridcolumn1': commonLogic.appcommonhandle("操作",null),

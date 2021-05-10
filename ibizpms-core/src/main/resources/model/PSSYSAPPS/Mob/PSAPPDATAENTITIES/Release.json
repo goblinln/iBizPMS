@@ -277,12 +277,12 @@
     "maxRowCount" : 1000,
     "name" : "数据导出",
     "getPSDEDataExportItems" : [ {
-      "caption" : "ID",
+      "caption" : "发布编号",
       "format" : "%1$s",
-      "name" : "id",
+      "name" : "releasesn",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "RELEASESN",
+        "codeName" : "Releasesn"
       }
     }, {
       "caption" : "发布名称",

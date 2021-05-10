@@ -607,18 +607,18 @@
     "getPSDEGridColumns" : [ {
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
-      "caption" : "ID",
-      "codeName" : "id",
+      "caption" : "发布编号",
+      "codeName" : "releasesn",
       "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "id",
-      "excelCaption" : "ID",
-      "name" : "id",
+      "dataItemName" : "releasesn",
+      "excelCaption" : "发布编号",
+      "name" : "releasesn",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "RELEASESN",
+        "codeName" : "Releasesn"
       },
-      "width" : 80,
+      "width" : 100,
       "widthUnit" : "PX",
       "enableSort" : true
     }, {
@@ -1037,10 +1037,10 @@
       }
     }, {
       "dataType" : 1,
-      "name" : "id",
+      "name" : "releasesn",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "RELEASESN",
+        "codeName" : "Releasesn"
       }
     }, {
       "dataType" : 25,

@@ -65,20 +65,19 @@
   "getPSDEGridColumns" : [ {
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
-    "caption" : "ID",
-    "codeName" : "id",
+    "caption" : "测试用例编号",
+    "codeName" : "casesn",
     "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "id",
-    "excelCaption" : "ID",
-    "name" : "id",
+    "dataItemName" : "casesn",
+    "excelCaption" : "测试用例编号",
+    "name" : "casesn",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "CASESN",
+      "codeName" : "Casesn"
     },
-    "width" : 80,
+    "width" : 100,
     "widthUnit" : "PX",
-    "enableRowEdit" : true,
     "enableSort" : true
   }, {
     "align" : "LEFT",
@@ -277,6 +276,13 @@
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 1,
+    "name" : "casesn",
+    "getPSAppDEField" : {
+      "name" : "CASESN",
+      "codeName" : "Casesn"
+    }
+  }, {
+    "dataType" : 1,
     "name" : "module",
     "getPSAppDEField" : {
       "name" : "MODULE",
@@ -373,13 +379,6 @@
     }
   }, {
     "dataType" : 1,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 1,
     "name" : "story",
     "getPSAppDEField" : {
       "name" : "STORY",
@@ -462,23 +461,6 @@
     "getPSEditor" : {
       "editorType" : "HIDDEN",
       "name" : "product"
-    },
-    "allowEmpty" : true
-  }, {
-    "caption" : "ID",
-    "codeName" : "id",
-    "enableCond" : 0,
-    "ignoreInput" : 0,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "getPSEditor" : {
-      "editorType" : "SPAN",
-      "name" : "id",
-      "editable" : false,
-      "enableLinkView" : false
     },
     "allowEmpty" : true
   }, {

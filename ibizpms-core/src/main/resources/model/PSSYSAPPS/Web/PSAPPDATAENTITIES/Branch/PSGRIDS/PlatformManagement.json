@@ -69,16 +69,16 @@
   "getPSDEGridColumns" : [ {
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
-    "caption" : "编号",
-    "codeName" : "id",
+    "caption" : "产品的分支和平台信息编号",
+    "codeName" : "branchsn",
     "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "id",
-    "excelCaption" : "编号",
-    "name" : "id",
+    "dataItemName" : "branchsn",
+    "excelCaption" : "产品的分支和平台信息编号",
+    "name" : "branchsn",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "BRANCHSN",
+      "codeName" : "Branchsn"
     },
     "width" : 100,
     "widthUnit" : "PX",
@@ -211,13 +211,6 @@
       "codeName" : "Product"
     }
   }, {
-    "dataType" : 1,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
     "dataType" : 9,
     "name" : "order",
     "getPSAppDEField" : {
@@ -230,6 +223,13 @@
     "getPSAppDEField" : {
       "name" : "NAME",
       "codeName" : "Name"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "branchsn",
+    "getPSAppDEField" : {
+      "name" : "BRANCHSN",
+      "codeName" : "Branchsn"
     }
   }, {
     "dataType" : 25,

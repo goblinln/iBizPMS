@@ -222,12 +222,12 @@
     "maxRowCount" : 1000,
     "name" : "数据导出",
     "getPSDEDataExportItems" : [ {
-      "caption" : "ID",
+      "caption" : "版本编号",
       "format" : "%1$s",
-      "name" : "id",
+      "name" : "buildsn",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "BUILDSN",
+        "codeName" : "Buildsn"
       }
     }, {
       "caption" : "产品名称",

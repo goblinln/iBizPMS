@@ -337,16 +337,16 @@
     "getPSDEGridColumns" : [ {
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
-      "caption" : "文档编号",
-      "codeName" : "id",
+      "caption" : "附件编号",
+      "codeName" : "filesn",
       "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "id",
-      "excelCaption" : "文档编号",
-      "name" : "id",
+      "dataItemName" : "filesn",
+      "excelCaption" : "附件编号",
+      "name" : "filesn",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "FILESN",
+        "codeName" : "Filesn"
       },
       "width" : 100,
       "widthUnit" : "PX",
@@ -566,10 +566,10 @@
       }
     }, {
       "dataType" : 1,
-      "name" : "id",
+      "name" : "filesn",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "FILESN",
+        "codeName" : "Filesn"
       }
     }, {
       "dataType" : 25,

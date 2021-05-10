@@ -181,12 +181,12 @@
     "maxRowCount" : 1000,
     "name" : "数据导出",
     "getPSDEDataExportItems" : [ {
-      "caption" : "编号",
+      "caption" : "测试套件编号",
       "format" : "%1$s",
-      "name" : "id",
+      "name" : "testsuitesn",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "TESTSUITESN",
+        "codeName" : "Testsuitesn"
       }
     }, {
       "caption" : "名称",

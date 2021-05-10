@@ -610,18 +610,18 @@
     "getPSDEGridColumns" : [ {
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
-      "caption" : "ID",
-      "codeName" : "id",
+      "caption" : "版本编号",
+      "codeName" : "buildsn",
       "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "id",
-      "excelCaption" : "ID",
-      "name" : "id",
+      "dataItemName" : "buildsn",
+      "excelCaption" : "版本编号",
+      "name" : "buildsn",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "BUILDSN",
+        "codeName" : "Buildsn"
       },
-      "width" : 80,
+      "width" : 100,
       "widthUnit" : "PX",
       "enableSort" : true
     }, {
@@ -1052,6 +1052,13 @@
         "codeName" : "Builder"
       }
     }, {
+      "dataType" : 1,
+      "name" : "buildsn",
+      "getPSAppDEField" : {
+        "name" : "BUILDSN",
+        "codeName" : "Buildsn"
+      }
+    }, {
       "format" : "YYYY-MM-DD",
       "dataType" : 5,
       "name" : "date",
@@ -1081,13 +1088,6 @@
         "codeName" : "Id"
       },
       "dataAccessAction" : true
-    }, {
-      "dataType" : 1,
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
     }, {
       "dataType" : 1,
       "name" : "product",

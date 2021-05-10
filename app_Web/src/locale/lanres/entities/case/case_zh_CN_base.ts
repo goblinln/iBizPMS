@@ -575,7 +575,7 @@ function getLocaleResourceBase(){
 		},
 		testmaingrid_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("id",null),
+				'casesn': commonLogic.appcommonhandle("测试用例编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("用例标题",null),
 				'type': commonLogic.appcommonhandle("用例类型",null),
@@ -592,7 +592,7 @@ function getLocaleResourceBase(){
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
-				'id': commonLogic.appcommonhandle("id",null),
+				'casesn': commonLogic.appcommonhandle("测试用例编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("用例标题",null),
 				'type': commonLogic.appcommonhandle("用例类型",null),
@@ -620,7 +620,7 @@ function getLocaleResourceBase(){
 		},
 		mainlinktest_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("ID",null),
+				'casesn': commonLogic.appcommonhandle("测试用例编号",null),
 				'version': commonLogic.appcommonhandle("版本",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("用例标题",null),
@@ -637,7 +637,7 @@ function getLocaleResourceBase(){
 		},
 		reportmaingrid_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("id",null),
+				'casesn': commonLogic.appcommonhandle("测试用例编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("用例标题",null),
 				'type': commonLogic.appcommonhandle("用例类型",null),
@@ -657,7 +657,7 @@ function getLocaleResourceBase(){
 		},
 		maingrid_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("id",null),
+				'casesn': commonLogic.appcommonhandle("测试用例编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("用例标题",null),
 				'type': commonLogic.appcommonhandle("用例类型",null),
@@ -673,7 +673,7 @@ function getLocaleResourceBase(){
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
-				'id': commonLogic.appcommonhandle("id",null),
+				'casesn': commonLogic.appcommonhandle("测试用例编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("用例标题",null),
 				'type': commonLogic.appcommonhandle("用例类型",null),
@@ -715,7 +715,7 @@ function getLocaleResourceBase(){
 		},
 		maingrid_suitsub_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("id",null),
+				'casesn': commonLogic.appcommonhandle("测试用例编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("用例标题",null),
 				'type': commonLogic.appcommonhandle("用例类型",null),
@@ -728,7 +728,7 @@ function getLocaleResourceBase(){
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
-				'id': commonLogic.appcommonhandle("id",null),
+				'casesn': commonLogic.appcommonhandle("测试用例编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("用例标题",null),
 				'type': commonLogic.appcommonhandle("用例类型",null),

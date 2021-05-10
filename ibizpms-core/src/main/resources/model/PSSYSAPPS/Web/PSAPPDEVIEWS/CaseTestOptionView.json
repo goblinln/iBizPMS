@@ -631,6 +631,23 @@
                 "widthUnit" : "PX",
                 "enableRowEdit" : true,
                 "enableSort" : true
+              }, {
+                "align" : "LEFT",
+                "cLConvertMode" : "NONE",
+                "caption" : "用例步骤编号",
+                "codeName" : "casestepsn",
+                "columnType" : "DEFGRIDCOLUMN",
+                "dataItemName" : "casestepsn",
+                "excelCaption" : "用例步骤编号",
+                "name" : "casestepsn",
+                "noPrivDisplayMode" : 1,
+                "getPSAppDEField" : {
+                  "name" : "CASESTEPSN",
+                  "codeName" : "Casestepsn"
+                },
+                "width" : 100,
+                "widthUnit" : "PX",
+                "enableSort" : true
               } ],
               "getPSDEGridDataItems" : [ {
                 "dataType" : 25,
@@ -719,37 +736,20 @@
                 }
               }, {
                 "dataType" : 1,
-                "name" : "id",
-                "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
-                }
-              }, {
-                "dataType" : 1,
                 "name" : "case",
                 "getPSAppDEField" : {
                   "name" : "CASE",
                   "codeName" : "IBizCase"
                 }
+              }, {
+                "dataType" : 1,
+                "name" : "casestepsn",
+                "getPSAppDEField" : {
+                  "name" : "CASESTEPSN",
+                  "codeName" : "Casestepsn"
+                }
               } ],
               "getPSDEGridEditItems" : [ {
-                "caption" : "编号",
-                "codeName" : "id",
-                "enableCond" : 0,
-                "ignoreInput" : 0,
-                "name" : "id",
-                "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
-                },
-                "getPSEditor" : {
-                  "editorType" : "SPAN",
-                  "name" : "id",
-                  "editable" : false,
-                  "enableLinkView" : false
-                },
-                "allowEmpty" : true
-              }, {
                 "caption" : "附件",
                 "codeName" : "files",
                 "enableCond" : 3,

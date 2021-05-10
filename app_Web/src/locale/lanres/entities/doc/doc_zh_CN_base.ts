@@ -278,7 +278,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("文档编号",null),
+				'docsn': commonLogic.appcommonhandle("文档编号",null),
 				'title': commonLogic.appcommonhandle("文档标题",null),
 				'addedby': commonLogic.appcommonhandle("由谁添加",null),
 				'addeddate': commonLogic.appcommonhandle("添加时间",null),
@@ -297,7 +297,7 @@ function getLocaleResourceBase(){
 		},
 		moremyfavourite_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("文档编号",null),
+				'docsn': commonLogic.appcommonhandle("文档编号",null),
 				'title': commonLogic.appcommonhandle("文档标题",null),
 				'addedby': commonLogic.appcommonhandle("由谁添加",null),
 				'addeddate': commonLogic.appcommonhandle("添加时间",null),
@@ -346,7 +346,7 @@ function getLocaleResourceBase(){
 		},
 		morerecentupdate_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("文档编号",null),
+				'docsn': commonLogic.appcommonhandle("文档编号",null),
 				'title': commonLogic.appcommonhandle("文档标题",null),
 				'addedby': commonLogic.appcommonhandle("由谁添加",null),
 				'addeddate': commonLogic.appcommonhandle("添加时间",null),

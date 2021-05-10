@@ -270,12 +270,12 @@
     "maxRowCount" : 1000,
     "name" : "数据导出",
     "getPSDEDataExportItems" : [ {
-      "caption" : "ID",
+      "caption" : "测试报告编号",
       "format" : "%1$s",
-      "name" : "id",
+      "name" : "testreportsn",
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "TESTREPORTSN",
+        "codeName" : "Testreportsn"
       }
     }, {
       "caption" : "标题",

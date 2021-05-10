@@ -165,18 +165,18 @@
   "getPSDEGridColumns" : [ {
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
-    "caption" : "编号",
-    "codeName" : "id",
+    "caption" : "产品计划编号",
+    "codeName" : "productplansn",
     "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "id",
-    "excelCaption" : "编号",
-    "name" : "id",
+    "dataItemName" : "productplansn",
+    "excelCaption" : "产品计划编号",
+    "name" : "productplansn",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PRODUCTPLANSN",
+      "codeName" : "Productplansn"
     },
-    "width" : 80,
+    "width" : 100,
     "widthUnit" : "PX",
     "enableSort" : true
   }, {
@@ -659,13 +659,6 @@
       "codeName" : "Product"
     }
   }, {
-    "dataType" : 1,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
     "dataType" : 25,
     "name" : "title",
     "getPSAppDEField" : {
@@ -685,6 +678,13 @@
     "getPSAppDEField" : {
       "name" : "BUGCNT",
       "codeName" : "BugCnt"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "productplansn",
+    "getPSAppDEField" : {
+      "name" : "PRODUCTPLANSN",
+      "codeName" : "Productplansn"
     }
   }, {
     "dataType" : 1,
