@@ -349,8 +349,8 @@ export default class AppRichTextEditor extends Vue {
                 if(item.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)!=null){
                     let src:any = item.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)[0];
                     src = await ImgurlBase64.getInstance().getImgURLOfBase64(src.substring(5,src.length-1));
-                    const image = item.replace(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig, 'src="'+src+'"');
-                    html = html.replace(/<img.*?(?:>|\/>)/gi, image);
+                    const image = item.replace(/src=[\'\"]?([^\'\"]*)[\'\"]?/i, 'src="'+src+'"');
+                    html = html.replace(item, image);
                 }
             }
         }
@@ -368,8 +368,8 @@ export default class AppRichTextEditor extends Vue {
         if(imgs && imgs.length > 0 && imgsrc && imgsrc.length > 0){
             imgs.forEach((img: any, index: number) => {
                 if(img.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)!=null){
-                    const newImg = img.replace(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig, 'src="{' + imgsrc[index].id + imgsrc[index].type + '}"');
-                    html = html.replace(/<img.*?(?:>|\/>)/gi, newImg);
+                    const newImg = img.replace(/src=[\'\"]?([^\'\"]*)[\'\"]?/i, 'src="{' + imgsrc[index].id + imgsrc[index].type + '}"');
+                    html = html.replace(img, newImg);
                 }
             })
         }
