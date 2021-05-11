@@ -107,6 +107,7 @@ import accounttaskestimate_en_US from '@locale/lanres/entities/account-taskestim
 import storyspec_en_US from '@locale/lanres/entities/story-spec/story-spec_en_US';
 import branch_en_US from '@locale/lanres/entities/branch/branch_en_US';
 import action_en_US from '@locale/lanres/entities/action/action_en_US';
+import dynafilter_en_US from '@locale/lanres/entities/dyna-filter/dyna-filter_en_US';
 import history_en_US from '@locale/lanres/entities/history/history_en_US';
 import module_en_US from '@locale/lanres/entities/module/module_en_US';
 import projecttaskestimate_en_US from '@locale/lanres/entities/project-taskestimate/project-taskestimate_en_US';
@@ -484,6 +485,7 @@ function getAppLocale(){
             'storyspec': storyspec_en_US(),
             'branch': branch_en_US(),
             'action': action_en_US(),
+            'dynafilter': dynafilter_en_US(),
             'history': history_en_US(),
             'module': module_en_US(),
             'projecttaskestimate': projecttaskestimate_en_US(),

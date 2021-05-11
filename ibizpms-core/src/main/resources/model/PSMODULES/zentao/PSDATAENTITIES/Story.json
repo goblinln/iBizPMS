@@ -796,7 +796,12 @@
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`DELETED` = '0' \nAND FIND_IN_SET ( t1.ID, ( SELECT STORIES FROM ZT_TESTREPORT WHERE ID = $ { srfdatacontext ( 'srfparentkey', '{\"defname\":\"ID\",\"dename\":\"ZT_TESTREPORT \"}' ) } ) )",
+        "name" : "查询条件"
+      } ]
     } ],
     "codeName" : "ReportStories",
     "logicName" : "报告完成需求",

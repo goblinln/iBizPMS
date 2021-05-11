@@ -163,6 +163,7 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('storyspec', () => import('../uiservice/story-spec/story-spec-ui-service'));
         UIServiceRegister.allUIServiceMap.set('branch', () => import('../uiservice/branch/branch-ui-service'));
         UIServiceRegister.allUIServiceMap.set('action', () => import('../uiservice/action/action-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('dynafilter', () => import('../uiservice/dyna-filter/dyna-filter-ui-service'));
         UIServiceRegister.allUIServiceMap.set('history', () => import('../uiservice/history/history-ui-service'));
         UIServiceRegister.allUIServiceMap.set('module', () => import('../uiservice/module/module-ui-service'));
         UIServiceRegister.allUIServiceMap.set('projecttaskestimate', () => import('../uiservice/project-taskestimate/project-taskestimate-ui-service'));

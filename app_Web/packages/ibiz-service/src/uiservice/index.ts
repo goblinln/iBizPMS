@@ -107,6 +107,7 @@ export * from './account-taskestimate/account-taskestimate-ui-service';
 export * from './story-spec/story-spec-ui-service';
 export * from './branch/branch-ui-service';
 export * from './action/action-ui-service';
+export * from './dyna-filter/dyna-filter-ui-service';
 export * from './history/history-ui-service';
 export * from './module/module-ui-service';
 export * from './project-taskestimate/project-taskestimate-ui-service';

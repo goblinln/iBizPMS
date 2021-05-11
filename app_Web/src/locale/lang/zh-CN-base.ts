@@ -107,6 +107,7 @@ import accounttaskestimate_zh_CN from '@locale/lanres/entities/account-taskestim
 import storyspec_zh_CN from '@locale/lanres/entities/story-spec/story-spec_zh_CN';
 import branch_zh_CN from '@locale/lanres/entities/branch/branch_zh_CN';
 import action_zh_CN from '@locale/lanres/entities/action/action_zh_CN';
+import dynafilter_zh_CN from '@locale/lanres/entities/dyna-filter/dyna-filter_zh_CN';
 import history_zh_CN from '@locale/lanres/entities/history/history_zh_CN';
 import module_zh_CN from '@locale/lanres/entities/module/module_zh_CN';
 import projecttaskestimate_zh_CN from '@locale/lanres/entities/project-taskestimate/project-taskestimate_zh_CN';
@@ -483,6 +484,7 @@ function getAppLocale(){
             'storyspec': storyspec_zh_CN(),
             'branch': branch_zh_CN(),
             'action': action_zh_CN(),
+            'dynafilter': dynafilter_zh_CN(),
             'history': history_zh_CN(),
             'module': module_zh_CN(),
             'projecttaskestimate': projecttaskestimate_zh_CN(),

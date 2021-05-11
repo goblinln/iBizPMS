@@ -90,7 +90,11 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
      * @memberof AppDefaultIndexViewLayout
      */
     public collapseMenus() {
-        this.collapseChange = !this.collapseChange;
+        if(sessionStorage.getItem("srffullscreen")){
+            this.isFullScreen = !this.isFullScreen;
+        }else{
+            this.collapseChange = !this.collapseChange;
+        }
         this.$emit('onCollapseChange', this.collapseChange);
     }
 
@@ -177,13 +181,13 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
     public renderContentLeft() {
         let contentClass = {
             'index_content': true,
-            'index_tab_content': (Object.is(this.navModel, 'tab') && !this.isFullScreen),
+            'index_tab_content': Object.is(this.navModel, 'tab'),
             'index_route_content': Object.is(this.navModel, 'route')
         }
         return (
             <layout style={{ 'font-family': this.selectFont, 'height': '100vh' }}>
                 <layout id="movebox">
-                    {!this.isFullScreen ? <sider class="index_sider" width={this.collapseChange ? 64 : 200} hide-trigger value={this.collapseChange} id="left_move">
+                    <sider class="index_sider" style={{'display':this.isFullScreen?'none':'block'}} width={this.collapseChange ? 64 : 200} hide-trigger value={this.collapseChange} id="left_move">
                         <div class="sider-top">
                             <div class="page-logo">
                                 {(this.viewInstance as IPSAppIndexView).enableAppSwitch ? <span class="menuicon" on-click={() => this.contextMenuDragVisiable = !this.contextMenuDragVisiable}><icon type="md-menu" /></span> : null}
@@ -192,16 +196,16 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                         </div>
                         {this.$slots.default}
                         {(this.viewInstance as IPSAppIndexView).enableAppSwitch ? <context-menu-drag contextMenuDragVisiable={this.contextMenuDragVisiable}></context-menu-drag> : null}
-                    </sider> : null}
-                    {!this.collapseChange && !this.isFullScreen ? <div id="move_axis"></div> : null}
+                    </sider>
+                    {!this.collapseChange ? <div id="move_axis" style={{'display':this.isFullScreen?'none':'block'}}></div> : null}
                     <layout id="right_move">
                         <header class="index_header">
                             <div class="header-left" >
-                                {!this.isFullScreen ? <div class="page-logo">
+                                <div class="page-logo">
                                     {!this.collapseChange ? <i class="ivu-icon el-icon-s-fold" on-click={() => this.collapseMenus()}></i> : null}
                                     {this.collapseChange ? <i class="ivu-icon el-icon-s-unfold" on-click={() => this.collapseMenus()}></i> : null}
                                     <app-breadcrumb indexViewTag="app-index-view" />
-                                </div> : <span class={{ "fullscreen_logo": true }}>{this.viewInstance.caption}</span>}
+                                </div>
                             </div>
                             <div class="header-right" style="display: flex;align-items: center;justify-content: space-between;">
                                 <app-header-menus />
@@ -212,7 +216,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                             </div>
                         </header>
                         <content class={contentClass} >
-                            {Object.is(this.navModel, 'tab') && !this.isFullScreen ? <tab-page-exp></tab-page-exp> : null}
+                            {Object.is(this.navModel, 'tab') ? <tab-page-exp></tab-page-exp> : null}
                             <app-keep-alive routerList={this.routerList}>
                                 <router-view key={this.routerViewKey}></router-view>
                             </app-keep-alive>
@@ -288,7 +292,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
      */
     public renderContentTabexpView() {
         return (
-            <div class='view-container view-default tabexp-container' style={{ margin: '0 12px', height: 'calc(100% - 65px)' }}>
+            <div class='view-container view-default tabexp-container'>
                 {this.$slots.default}
             </div>
         );
@@ -301,7 +305,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
      */
     public render(h: any) {
         let viewClass = {
-            'view-container': Object.is((this.viewInstance as IPSAppIndexView).mainMenuAlign, "CENTER") ? true : false,
+            'view-container': ((!Object.is((this.viewInstance as IPSAppIndexView).mainMenuAlign, "LEFT") && !Object.is((this.viewInstance as IPSAppIndexView).mainMenuAlign, "TOP"))) ? true : false,
             'inner_indexview': Object.is((this.viewInstance as IPSAppIndexView).mainMenuAlign, "CENTER") ? true : false,
             [this.viewInstance.viewType.toLowerCase()]: true,
             [Util.srfFilePath2(this.viewInstance.codeName)]: true

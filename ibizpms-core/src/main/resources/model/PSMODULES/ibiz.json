@@ -155,6 +155,9 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/DynaDashboard.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/DynaFilter.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload.json"
   }, {
     "modelref" : true,

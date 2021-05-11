@@ -261,14 +261,16 @@ export class ViewTool {
             }
             const _item = ActionModel[key];
             let dataActionResult: any;
-            if (Object.is(_item['actionTarget'], "NONE") || Object.is(_item['actionTarget'], "")) {
-                dataActionResult = UIService.getResourceOPPrivs(_item['dataAccessAction']);
-            } else {
-                if (_item && _item['dataAccessAction']) {
+            if (_item && _item['dataAccessAction']) {
+                if (Object.is(_item['actionTarget'], "NONE") || Object.is(_item['actionTarget'], "")) {
+                    dataActionResult = UIService.getResourceOPPrivs(_item['dataAccessAction']);
+                } else {
                     if (data && Object.keys(data).length > 0) {
                         dataActionResult = UIService.getAllOPPrivs(data)[_item['dataAccessAction']];
                     }
                 }
+            }else{
+                dataActionResult = 1;
             }
             // 无权限:0;有权限:1
             if (dataActionResult === 0) {

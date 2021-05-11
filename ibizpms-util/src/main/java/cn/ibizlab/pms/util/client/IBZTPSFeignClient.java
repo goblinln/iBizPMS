@@ -1,5 +1,7 @@
 package cn.ibizlab.pms.util.client;
 
+import cn.ibizlab.pms.util.domain.SysLog;
+import net.ibizsys.runtime.util.domain.MsgSendQueue;
 import org.apache.rocketmq.common.message.Message;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,6 +18,12 @@ public interface IBZTPSFeignClient
 	@RequestMapping(method = RequestMethod.GET, value = "/message/consume/{topic}")
 	Boolean custome(@PathVariable("topic") String topic);
 
-    @RequestMapping(method = RequestMethod.POST, value = "/syslog")
-	Boolean syslog(@RequestBody String info);
+	@RequestMapping(method = RequestMethod.POST, value = "/syslog")
+	Boolean syslog(@RequestBody SysLog syslog);
+
+	@RequestMapping(method = RequestMethod.POST, value = "/msgsend/send")
+	Boolean send(@RequestBody MsgSendQueue msgSendQueue);
+
+	@RequestMapping(method = RequestMethod.GET, value = "/msgsend/send/{msgid}")
+	Boolean sendById(@PathVariable("msgid") String msgid);
 }

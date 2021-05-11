@@ -54,7 +54,8 @@ export class UtilServiceRegister {
      * @memberof UtilServiceRegister
      */
     protected init(): void {
-                UtilServiceRegister.allUtilServiceMap.set('dynadashboard', () => import('../utilservice/dynadashboard/dynadashboard-util-service'));
+                UtilServiceRegister.allUtilServiceMap.set('dynafilter', () => import('../utilservice/dynafilter/dynafilter-util-service'));
+        UtilServiceRegister.allUtilServiceMap.set('dynadashboard', () => import('../utilservice/dynadashboard/dynadashboard-util-service'));
     }
 
     /**

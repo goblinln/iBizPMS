@@ -279,5 +279,9 @@ zuul:
       path: /productlines/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
+    dynafilter:
+      path: /dynafilters/**
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      stripPrefix: false
   sensitive-headers:
     - Cookie,Set-Cookie,Authorization

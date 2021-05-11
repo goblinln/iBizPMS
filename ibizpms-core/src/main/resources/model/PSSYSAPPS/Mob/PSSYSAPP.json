@@ -4435,6 +4435,9 @@
   }, {
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductLine.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DynaFilter.json"
   } ],
   "getAllPSAppFuncs" : [ {
     "appFuncType" : "APPVIEW",
@@ -13734,6 +13737,31 @@
     "enableDEDashboard" : false
   } ],
   "getAllPSAppUtils" : [ {
+    "codeName" : "DYNAFILTER",
+    "getCreatePSAppDEAction" : {
+      "modelref" : true,
+      "id" : "Create"
+    },
+    "getGetPSAppDEAction" : {
+      "modelref" : true,
+      "id" : "Get"
+    },
+    "name" : "移动端动态搜索栏",
+    "getRemovePSAppDEAction" : {
+      "modelref" : true,
+      "id" : "Remove"
+    },
+    "getStoagePSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DynaFilter.json"
+    },
+    "getUpdatePSAppDEAction" : {
+      "modelref" : true,
+      "id" : "Update"
+    },
+    "utilPSDEName" : "DYNAFILTER",
+    "utilType" : "FILTERSTORAGE"
+  }, {
     "getAppIdPSAppDEField" : {
       "name" : "APPID",
       "codeName" : "AppId"
@@ -15396,7 +15424,7 @@
   "pKGCodeName" : "Mob",
   "serviceCodeName" : "Mob",
   "enableDynaDashboard" : true,
-  "enableFilterStorage" : false,
+  "enableFilterStorage" : true,
   "enableUACLogin" : false,
   "mobileApp" : true,
   "useServiceApi" : true,

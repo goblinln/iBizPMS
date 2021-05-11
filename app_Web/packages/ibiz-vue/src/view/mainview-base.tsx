@@ -19,6 +19,7 @@ import {
     IPSDEToolbarItem,
     IPSNavigateContext,
     IPSNavigateParam,
+    IPSDEUIAction,
 } from '@ibiz/dynamic-model-api';
 import { AppViewLogicService } from '../app-service';
 
@@ -169,7 +170,8 @@ export class MainViewBase extends ViewBase {
             disabled: false,
             visabled: true,
             itemType: item.itemType,
-            dataaccaction: '',
+            dataaccaction: ((item as any)?.getPSUIAction?.() as IPSDEUIAction).dataAccessAction,
+            noprivdisplaymode: ((item as any)?.getPSUIAction?.() as IPSDEUIAction).noPrivDisplayMode,
             uiaction:(item as any)?.getPSUIAction?.(),
             showIcon: item.showIcon,
             class: css ? css.cssName : '',
@@ -417,7 +419,6 @@ export class MainViewBase extends ViewBase {
     public async opendata(args: any[], fullargs?: any, params?: any, $event?: any, xData?: any) {
         const openAppViewLogic: IPSAppViewLogic | null = this.viewInstance.findPSAppViewLogic('opendata');
         if (!openAppViewLogic || !openAppViewLogic.getPSAppUILogic()) {
-            this.$Notice.warning({ title: '错误', desc: '编辑应用界面逻辑不存在' });
             return;
         }
         let viewOpenAppUIlogic:
@@ -662,7 +663,6 @@ export class MainViewBase extends ViewBase {
     public async newdata(args: any[], fullargs?: any, params?: any, $event?: any, xData?: any) {
         const newAppViewLogic: IPSAppViewLogic | null = this.viewInstance.findPSAppViewLogic('newdata');
         if (!newAppViewLogic || !newAppViewLogic.getPSAppUILogic()) {
-            this.$Notice.warning({ title: '错误', desc: '新建应用界面逻辑不存在' });
             return;
         }
         let viewNewAppUIlogic: IPSAppUINewDataLogic | undefined | null = newAppViewLogic.getPSAppUILogic() as IPSAppUINewDataLogic;

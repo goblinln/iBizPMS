@@ -108,6 +108,7 @@ export * from './account-taskestimate/account-taskestimate';
 export * from './story-spec/story-spec';
 export * from './branch/branch';
 export * from './action/action';
+export * from './dyna-filter/dyna-filter';
 export * from './history/history';
 export * from './module/module';
 export * from './project-taskestimate/project-taskestimate';

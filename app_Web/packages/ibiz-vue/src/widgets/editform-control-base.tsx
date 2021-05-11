@@ -1085,9 +1085,15 @@ export class EditFormControlBase extends FormControlBase {
                 const model = this.detailsModel[name];
                 if (model?.detailType == "BUTTON" && model.uiaction?.tag) {
                     // 更新detailsModel里的按钮的权限状态值
-                    this.detailsModel[name].visible = this.actionModel[model.uiaction.tag].visabled;
-                    this.detailsModel[name].disabled = this.actionModel[model.uiaction.tag].disabled;
-                    this.detailsModel[name].isPower = this.actionModel[model.uiaction.tag].dataActionResult === 1 ? true : false;
+                    if(Util.isEmpty(this.actionModel[model.uiaction.tag].dataActionResult)){
+                        this.detailsModel[name].isPower = true;
+                        this.detailsModel[name].visible = true;
+                        this.detailsModel[name].disabled = false;
+                    }else{
+                        this.detailsModel[name].isPower = this.actionModel[model.uiaction.tag].dataActionResult === 1 ? true : false;
+                        this.detailsModel[name].visible = this.actionModel[model.uiaction.tag].visabled;
+                        this.detailsModel[name].disabled = this.actionModel[model.uiaction.tag].disabled;
+                    }
                 } else if (model?.detailType == 'GROUPPANEL' && model.uiActionGroup?.details?.length > 0) {
                     // 更新分组面板界面行为组的权限状态值
                     model.uiActionGroup.details.forEach((actionDetail: any) => {

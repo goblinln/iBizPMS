@@ -1,12 +1,11 @@
 package cn.ibizlab.pms.core.runtime;
 
 import cn.ibizlab.pms.util.client.IBZUAAFeignClient;
+import cn.ibizlab.pms.util.client.IBZTPSFeignClient;
+import cn.ibizlab.pms.util.domain.SysLog;
 import cn.ibizlab.pms.util.helper.QueryContextHelper;
 import lombok.extern.slf4j.Slf4j;
-import cn.ibizlab.pms.util.security.AuthenticationUser;
-import cn.ibizlab.pms.util.security.UAADEAuthority;
-import cn.ibizlab.pms.util.security.UAAMenuAuthority;
-import cn.ibizlab.pms.util.security.UAAUniResAuthority;
+import cn.ibizlab.pms.util.security.*;
 import net.ibizsys.model.IPSDynaInstService;
 import net.ibizsys.model.IPSSystem;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQuery;
@@ -15,12 +14,16 @@ import net.ibizsys.model.dataentity.ds.IPSDEDataQueryCodeCond;
 import net.ibizsys.model.dataentity.ds.IPSDEDataSet;
 import net.ibizsys.model.dataentity.priv.IPSDEUserRole;
 import net.ibizsys.model.dataentity.priv.IPSDEUserRoleOPPriv;
+import net.ibizsys.model.msg.IPSSysMsgQueue;
+import net.ibizsys.model.msg.IPSSysMsgTarget;
 import net.ibizsys.model.res.IPSSysDataSyncAgent;
 import net.ibizsys.model.security.IPSSysUniRes;
 import net.ibizsys.model.security.IPSSysUserRole;
 import net.ibizsys.model.security.IPSSysUserRoleData;
 import net.ibizsys.model.security.IPSSysUserRoleRes;
 import net.ibizsys.runtime.IDynaInstRuntime;
+import net.ibizsys.runtime.msg.ISysMsgQueueRuntime;
+import net.ibizsys.runtime.msg.ISysMsgTargetRuntime;
 import net.ibizsys.runtime.res.ISysDataSyncAgentRuntime;
 import net.ibizsys.runtime.res.SysDataSyncAgentTypes;
 import net.ibizsys.runtime.security.DataAccessActions;
@@ -263,5 +266,22 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
     public boolean testUniRes(String strUniResCode) {
         return this.getUAAUniResAuthority().stream().anyMatch(uaaUniResAuthority -> uaaUniResAuthority.equals(strUniResCode));
     }
+
+    @Override
+    public void log(int nLogLevel, String strCat, String strInfo, Object objData) {
+        IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
+        try{
+            SysLog sysLog = new SysLog();
+            sysLog.setLoglevel(nLogLevel);
+            sysLog.setCat(strCat);
+            sysLog.setInfo(strInfo);
+            if(objData != null)
+                sysLog.setObjdata(MAPPER.writeValueAsString(objData));
+            tps.syslog(sysLog);
+        }catch (Exception e){
+            log.error(String.format("登记系统日志发生错误：%s",e.getMessage()));
+        }
+    }
+    import cn.ibizlab.sample.util.client.IBZTPSFeignClient;
 
 }

@@ -503,6 +503,10 @@ zuul:
       path: /actions/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
+    dynafilter:
+      path: /dynafilters/**
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      stripPrefix: false
     zt_history:
       path: /histories/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}

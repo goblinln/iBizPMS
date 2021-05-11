@@ -28,7 +28,6 @@ import org.springframework.stereotype.Component;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.springframework.core.annotation.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import net.ibizsys.runtime.dataentity.action.DEActions;
 import org.apache.commons.lang3.StringUtils;
@@ -42,7 +41,7 @@ import com.alibaba.fastjson.JSONObject;
 
 
 @Aspect
-@Order(100)
+@org.springframework.core.annotation.Order(100)
 @Component("AccountTaskestimateRuntime")
 @Slf4j
 public class AccountTaskestimateRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRuntime {

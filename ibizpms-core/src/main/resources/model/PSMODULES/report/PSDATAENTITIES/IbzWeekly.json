@@ -1342,6 +1342,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "CreateGetLastWeekPlanAndWork",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateGetLastWeekPlanAndWork.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Create",
       "getPSDEAction" : {
         "modelref" : true,
@@ -1356,6 +1363,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "createEveryWeekReport",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateEveryWeekReport.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Update",
       "getPSDEAction" : {
         "modelref" : true,
@@ -1367,6 +1381,27 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "JugThisWeekCreateWeekly",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/JugThisWeekCreateWeekly.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "EditGetLastWeekTaskAndComTask",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/EditGetLastWeekTaskAndComTask.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "pushUserWeekly",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/PushUserWeekly.json"
       },
       "allowMode" : true
     } ],
@@ -1399,6 +1434,27 @@
     "mSTag" : "1",
     "name" : "已提交",
     "getPSDEMainStateActions" : [ {
+      "name" : "CreateGetLastWeekPlanAndWork",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/CreateGetLastWeekPlanAndWork.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "pushUserWeekly",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/PushUserWeekly.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "JugThisWeekCreateWeekly",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzWeekly/PSDEACTIONS/JugThisWeekCreateWeekly.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Update",
       "getPSDEAction" : {
         "modelref" : true,

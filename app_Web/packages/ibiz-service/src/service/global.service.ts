@@ -998,6 +998,15 @@ export class GlobalService {
         return (await import('./action/action.service')).default.getInstance();
     }
     /**
+     * 动态搜索栏服务
+     *
+     * @return {DynaFilter}
+     * @memberof GlobalService
+     */
+    async getDynaFilterService() {
+        return (await import('./dyna-filter/dyna-filter.service')).default.getInstance();
+    }
+    /**
      * 操作历史服务
      *
      * @return {History}

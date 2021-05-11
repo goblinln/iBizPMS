@@ -107,6 +107,7 @@ export * from './iaccount-taskestimate';
 export * from './istory-spec';
 export * from './ibranch';
 export * from './iaction';
+export * from './idyna-filter';
 export * from './ihistory';
 export * from './imodule';
 export * from './iproject-taskestimate';
