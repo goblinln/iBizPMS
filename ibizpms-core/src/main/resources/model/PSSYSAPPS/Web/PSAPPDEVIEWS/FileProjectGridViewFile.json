@@ -376,6 +376,10 @@
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/File.json"
         },
+        "getPSSysPFPlugin" : {
+          "pluginType" : "DEUIACTION",
+          "pluginCode" : "fileibzdownload"
+        },
         "timeout" : 60000,
         "uIActionMode" : "FRONT",
         "uIActionTag" : "Look",

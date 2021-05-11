@@ -22,7 +22,7 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
     protected APPDENAMEPLURAL = 'ProductPlans';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
-    protected quickSearchFields = ['title',];
+    protected quickSearchFields = ['title','productplansn',];
     protected selectContextParam = {
         product: 'product',
     };

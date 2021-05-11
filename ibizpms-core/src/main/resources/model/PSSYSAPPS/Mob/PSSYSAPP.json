@@ -24983,7 +24983,6 @@
         "logicName" : "编号",
         "name" : "ID",
         "stdDataType" : 1,
-        "enableQuickSearch" : true,
         "keyField" : true
       }, {
         "codeName" : "Deleted",
@@ -25220,7 +25219,8 @@
         "codeName" : "Productsn",
         "logicName" : "产品编号",
         "name" : "PRODUCTSN",
-        "stdDataType" : 1
+        "stdDataType" : 1,
+        "enableQuickSearch" : true
       } ],
       "getAllPSAppDELogics" : [ {
         "codeName" : "CancelProductTop",
@@ -26464,11 +26464,11 @@
         "name" : "NAME",
         "codeName" : "Name"
       }, {
-        "name" : "ID",
-        "codeName" : "Id"
-      }, {
         "name" : "CODE",
         "codeName" : "Code"
+      }, {
+        "name" : "PRODUCTSN",
+        "codeName" : "Productsn"
       } ],
       "storageMode" : 0,
       "defaultMode" : true,
@@ -27549,7 +27549,6 @@
         "logicName" : "项目编号",
         "name" : "ID",
         "stdDataType" : 1,
-        "enableQuickSearch" : true,
         "keyField" : true
       }, {
         "codeName" : "Name",
@@ -27901,7 +27900,8 @@
         "codeName" : "Projectsn",
         "logicName" : "项目编号",
         "name" : "PROJECTSN",
-        "stdDataType" : 1
+        "stdDataType" : 1,
+        "enableQuickSearch" : true
       } ],
       "getAllPSAppDELogics" : [ {
         "codeName" : "ProjectTaskQCnt",
@@ -30833,14 +30833,14 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDESERVICEAPIS/Project.json"
       },
       "getQuickSearchPSAppDEFields" : [ {
-        "name" : "ID",
-        "codeName" : "Id"
-      }, {
         "name" : "NAME",
         "codeName" : "Name"
       }, {
         "name" : "CODE",
         "codeName" : "Code"
+      }, {
+        "name" : "PROJECTSN",
+        "codeName" : "Projectsn"
       } ],
       "storageMode" : 0,
       "defaultMode" : true,

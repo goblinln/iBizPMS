@@ -20,7 +20,7 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
     protected APPDENAMEPLURAL = 'Todos';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
-    protected quickSearchFields = ['name',];
+    protected quickSearchFields = ['id','todosn','name',];
     protected selectContextParam = {
     };
 

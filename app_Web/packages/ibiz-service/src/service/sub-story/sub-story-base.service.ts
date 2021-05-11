@@ -23,7 +23,7 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
     protected APPDENAMEPLURAL = 'SubStories';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
-    protected quickSearchFields = ['title','id',];
+    protected quickSearchFields = ['title','storysn',];
     protected selectContextParam = {
         story: 'parent',
     };

@@ -1261,7 +1261,6 @@
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
     "enableDBAutoValue" : true,
-    "enableQuickSearch" : true,
     "enableUICreate" : false,
     "enableUIModify" : false,
     "keyDEField" : true,
@@ -3173,7 +3172,8 @@
     },
     "sequenceMode" : "CREATE",
     "stdDataType" : 1,
-    "valueFormat" : "%1$s"
+    "valueFormat" : "%1$s",
+    "enableQuickSearch" : true
   } ],
   "getAllPSDELogics" : [ {
     "codeName" : "CancelProductTop",

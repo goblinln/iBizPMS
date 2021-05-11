@@ -109,7 +109,9 @@ public class TodoSearchContext extends QueryWrapperContext<Todo> {
 		 this.query=query;
 		 if(!StringUtils.isEmpty(query)){
             this.getSearchCond().and( wrapper ->
-                     wrapper.like("t1.`NAME`", query)
+                     wrapper.like("t1.`ID`", query)
+                        .or().like("todosn", query)
+                        .or().like("t1.`NAME`", query)
             );
 		 }
 	}

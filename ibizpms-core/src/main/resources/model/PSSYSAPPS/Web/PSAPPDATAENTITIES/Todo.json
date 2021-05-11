@@ -408,6 +408,7 @@
     "logicName" : "编号",
     "name" : "ID",
     "stdDataType" : 1,
+    "enableQuickSearch" : true,
     "keyField" : true
   }, {
     "codeName" : "Account",
@@ -442,7 +443,8 @@
     "codeName" : "Todosn",
     "logicName" : "待办编号",
     "name" : "TODOSN",
-    "stdDataType" : 1
+    "stdDataType" : 1,
+    "enableQuickSearch" : true
   }, {
     "codeName" : "ClosedDate",
     "logicName" : "关闭时间",
@@ -2035,6 +2037,12 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDESERVICEAPIS/Todo.json"
   },
   "getQuickSearchPSAppDEFields" : [ {
+    "name" : "ID",
+    "codeName" : "Id"
+  }, {
+    "name" : "TODOSN",
+    "codeName" : "Todosn"
+  }, {
     "name" : "NAME",
     "codeName" : "Name"
   } ],

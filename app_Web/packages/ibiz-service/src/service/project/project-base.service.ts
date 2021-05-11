@@ -23,7 +23,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
     protected APPDENAMEPLURAL = 'Projects';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
-    protected quickSearchFields = ['id','name','code',];
+    protected quickSearchFields = ['name','code','projectsn',];
     protected selectContextParam = {
     };
 
