@@ -835,7 +835,7 @@
     "dEFType" : 3,
     "dataType" : "PICKUPDATA",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "相关需求",
     "name" : "STORY",
     "getPSDER" : {
@@ -990,6 +990,7 @@
     "dEFType" : 3,
     "dataType" : "PICKUPDATA",
     "importOrder" : 1000,
+    "length" : 20,
     "logicName" : "所属模块",
     "name" : "MODULE",
     "getPSDER" : {
@@ -1091,7 +1092,7 @@
     "dEFType" : 3,
     "dataType" : "PICKUPTEXT",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "所属产品",
     "name" : "PRODUCT",
     "getPSDER" : {

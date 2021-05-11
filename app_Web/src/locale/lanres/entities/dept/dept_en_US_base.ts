@@ -79,7 +79,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'deptsn': commonLogic.appcommonhandle("部门编号",null),
+				'deptsn': commonLogic.appcommonhandle("编号",null),
 				'name': commonLogic.appcommonhandle("部门",null),
 				'parentname': commonLogic.appcommonhandle("上级部门",null),
 				'manager': commonLogic.appcommonhandle("负责人",null),

@@ -49,7 +49,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'usertplsn': commonLogic.appcommonhandle("用户模板编号",null),
+				'usertplsn': commonLogic.appcommonhandle("编号",null),
 				'title': commonLogic.appcommonhandle("模板标题",null),
 				'type': commonLogic.appcommonhandle("类型",null),
 				'public': commonLogic.appcommonhandle("公开",null),

@@ -376,7 +376,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "EXISTS(SELECT * FROM `zt_suitecase` t51 \n WHERE \n t1.`ID` = t51.`CASE`  AND  ( t51.`SUITE` = ${srfdatacontext('srfparentkey','{\"defname\":\"SUITE\",\"dename\":\"ZT_SUITECASE\"}')} ) )",
+        "customCond" : "EXISTS(SELECT * FROM `zt_suitecase` t51 \n WHERE \n t1.`CASESN` = t51.`CASE`  AND  ( t51.`SUITE` = ${srfdatacontext('srfparentkey','{\"defname\":\"SUITE\",\"dename\":\"ZT_SUITECASE\"}')} ) )",
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
@@ -3739,7 +3739,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "相关需求",
     "name" : "STORY",
     "getPSDER" : {
@@ -3751,8 +3751,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "STORYSN",
+      "codeName" : "Storysn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -3790,7 +3790,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "所属产品",
     "name" : "PRODUCT",
     "getPSDER" : {
@@ -3802,8 +3802,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PRODUCTSN",
+      "codeName" : "Productsn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -3841,7 +3841,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "所属库",
     "name" : "LIB",
     "getPSDER" : {
@@ -3853,8 +3853,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "TESTSUITESN",
+      "codeName" : "Testsuitesn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -3892,6 +3892,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
+    "length" : 20,
     "logicName" : "所属模块",
     "name" : "MODULE",
     "getPSDER" : {
@@ -3903,8 +3904,8 @@
       "path" : "PSSYSTRANSLATORS/ModulePathValueTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "MODULESN",
+      "codeName" : "ModuleSN"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",

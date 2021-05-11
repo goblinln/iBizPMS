@@ -49,7 +49,7 @@ export class CaseBaseService extends EntityBaseService<ICase> {
             const data = await s.getLocal2(context, entity.product);
             if (data) {
                 entity.productname = data.name;
-                entity.product = data.id;
+                entity.product = data.productsn;
             }
         }
         if (entity && entity.story && entity.story !== '') {
@@ -57,7 +57,7 @@ export class CaseBaseService extends EntityBaseService<ICase> {
             const data = await s.getLocal2(context, entity.story);
             if (data) {
                 entity.storyname = data.title;
-                entity.story = data.id;
+                entity.story = data.storysn;
             }
         }
         return entity!;
@@ -73,7 +73,7 @@ export class CaseBaseService extends EntityBaseService<ICase> {
             const data = await s.getLocal2(_context, _context.product);
             if (data) {
                 entity.productname = data.name;
-                entity.product = data.id;
+                entity.product = data.productsn;
             }
         }
         if (_context.story && _context.story !== '') {
@@ -81,7 +81,7 @@ export class CaseBaseService extends EntityBaseService<ICase> {
             const data = await s.getLocal2(_context, _context.story);
             if (data) {
                 entity.storyname = data.title;
-                entity.story = data.id;
+                entity.story = data.storysn;
             }
         }
         return new Case(entity);

@@ -43,7 +43,7 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
             const s = await ___ibz___.gs.getTestTaskService();
             const data = await s.getLocal2(context, entity.task);
             if (data) {
-                entity.task = data.id;
+                entity.task = data.testtasksn;
             }
         }
         return entity!;
@@ -58,7 +58,7 @@ export class TestRunBaseService extends EntityBaseService<ITestRun> {
             const s = await ___ibz___.gs.getTestTaskService();
             const data = await s.getLocal2(_context, _context.testtask);
             if (data) {
-                entity.task = data.id;
+                entity.task = data.testtasksn;
             }
         }
         return new TestRun(entity);

@@ -193,11 +193,11 @@
         "getPSDEGridColumns" : [ {
           "align" : "LEFT",
           "cLConvertMode" : "NONE",
-          "caption" : "部门编号",
+          "caption" : "编号",
           "codeName" : "deptsn",
           "columnType" : "DEFGRIDCOLUMN",
           "dataItemName" : "deptsn",
-          "excelCaption" : "部门编号",
+          "excelCaption" : "编号",
           "name" : "deptsn",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {

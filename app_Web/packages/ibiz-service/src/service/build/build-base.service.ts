@@ -54,7 +54,7 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
             const s = await ___ibz___.gs.getProjectService();
             const data = await s.getLocal2(context, entity.project);
             if (data) {
-                entity.project = data.id;
+                entity.project = data.projectsn;
             }
         }
         return entity!;
@@ -77,7 +77,7 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
             const s = await ___ibz___.gs.getProjectService();
             const data = await s.getLocal2(_context, _context.project);
             if (data) {
-                entity.project = data.id;
+                entity.project = data.projectsn;
             }
         }
         return new Build(entity);
