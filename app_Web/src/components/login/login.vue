@@ -1,6 +1,6 @@
 <template>
     <div class="login">
-        <img src="assets/img/background.png" />
+        <img src="@/assets/img/background.png" />
         <div class="login-con" v-if="!isEmbedThridPlatForm">
             <card :bordered="false">
                 <p slot="title" style="text-align: center">&nbsp;&nbsp;{{ appTitle }}</p>
@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="sign-btn" @click="handleThridLogin('WXWORK')">
                                     <img
-                                        src="/../assets/img/qiyeweixin.svg"
+                                        src="@/assets/img/qiyeweixin.svg"
                                         class="third-svg-container"
                                         draggable="false"
                                     />
