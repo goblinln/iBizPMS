@@ -486,14 +486,13 @@
     } ],
     "getPSDEListDataItems" : [ {
       "dataType" : 1,
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "PRODUCTSN",
-        "codeName" : "Productsn"
-      }
+      "name" : "id"
     }, {
       "dataType" : 9,
       "name" : "istop"
+    }, {
+      "dataType" : 1,
+      "name" : "productsn"
     }, {
       "dataType" : 25,
       "getFrontPSCodeList" : {

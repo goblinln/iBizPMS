@@ -121,7 +121,7 @@ export class LEFTNAVLIST extends AppDefaultList {
         return <listItem class={{ 'is-top': p.istop }}>
             <div class="content-wrapper" on-click={(e: any) => this.click(e, p)}>
                 <div class="title">
-                    <tag type="border">{p.id}</tag>
+                    <tag type="border">{p.productsn}</tag>
                     <tag>{p.code}</tag>
                     <div class="name-content">
                         <div class="name" title={p.name}>{p.name}</div>

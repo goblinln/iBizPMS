@@ -569,11 +569,7 @@
       "name" : "bugcnt"
     }, {
       "dataType" : 1,
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "PROJECTSN",
-        "codeName" : "Projectsn"
-      }
+      "name" : "id"
     }, {
       "dataType" : 25,
       "name" : "code"
@@ -583,6 +579,9 @@
     }, {
       "dataType" : 9,
       "name" : "storycnt"
+    }, {
+      "dataType" : 1,
+      "name" : "projectsn"
     }, {
       "dataType" : 9,
       "name" : "taskcnt"
