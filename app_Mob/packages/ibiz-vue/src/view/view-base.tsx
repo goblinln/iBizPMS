@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { Subject, Subscription } from 'rxjs';
-import { Util, ViewTool, ThirdPartyService, ViewContext, ViewState, AppServiceBase, GetModelService, AppModelService, ModelTool } from 'ibiz-core';
+import { Util, ViewTool, ThirdPartyService, ViewContext, ViewState, AppServiceBase, GetModelService, AppModelService, ModelTool, AppCapacitorService } from 'ibiz-core';
 import { CounterServiceRegister } from 'ibiz-service';
 import { IPSAppView, IPSControl, IPSAppDEView } from '@ibiz/dynamic-model-api';
 /**
@@ -52,6 +52,15 @@ export class ViewBase extends Vue {
      * @memberof ViewBase
      */
     public viewDefaultUsage!: string;
+
+
+    /**
+     * 手机返回事件
+     *
+     * @type {Function}
+     * @memberof ViewBase
+     */
+    public backFunction: Function = () => { };
 
     /**
      * 视图传递对象
@@ -370,6 +379,7 @@ export class ViewBase extends Vue {
      */
     public viewActivated() {
         this.thirdPartyInit();
+        this.initCapacitorService();
     }
 
     /**
@@ -547,6 +557,19 @@ export class ViewBase extends Vue {
         }
     }
 
+
+    /**
+     * 初始化CapacitorService 打包apk 服务
+     *
+     * @memberof ViewBase
+     */
+    public initCapacitorService() {
+        if (!this.isChildView && Object.is(process.env.VUE_APP_CURRENTMODE, 'hybridapp')) {
+            this.backFunction = this.closeView;
+            AppCapacitorService.getInstance().setView(this);
+        }
+    }
+
     /**
      *  视图初始化
      *
@@ -593,6 +616,7 @@ export class ViewBase extends Vue {
         if (_this.formDruipartState) {
             this.formDruipartStatEvent();
         }
+        this.initCapacitorService();
     }
 
     /**
@@ -600,7 +624,7 @@ export class ViewBase extends Vue {
      *
      * @memberof ViewBase
      */
-    public formDruipartStatEvent(){
+    public formDruipartStatEvent() {
         let _this: any = this;
         _this.formDruipartStateEvent = _this.formDruipartState.subscribe(({ action }: any) => {
             if (Object.is(action, 'save')) {
@@ -861,7 +885,7 @@ export class ViewBase extends Vue {
      * @param {*} args
      * @memberof ViewBase
      */
-    public async refresh(args?: any):Promise<any>  {
+    public async refresh(args?: any): Promise<any> {
         const refs: any = this.$refs;
         const modelData: any = this.staticProps.modeldata;
         if (refs && modelData && modelData.xDataControlName && refs[modelData.xDataControlName]) {
@@ -895,19 +919,19 @@ export class ViewBase extends Vue {
      * @memberof ViewBase
      */
     public quitFun() {
-        if (!sessionStorage.getItem("firstQuit")) {  // 首次返回时
+        if (!sessionStorage.getItem("exitTimer")) {  // 首次返回时
             // 缓存首次返回的时间
-            window.sessionStorage.setItem("firstQuit", new Date().getTime().toString());
+            window.sessionStorage.setItem("exitTimer", new Date().getTime().toString());
             // 提示再按一次退出
             this.$toast("再按一次退出");
             // 两秒后清除缓存（与提示的持续时间一致）
-            setTimeout(() => { window.sessionStorage.removeItem("firstQuit") }, 2000);
+            setTimeout(() => { window.sessionStorage.removeItem("exitTimer") }, 2000);
         } else {
             // 获取首次返回时间
-            let firstQuitTime: any = sessionStorage.getItem("firstQuit");
+            let exitTimer: any = sessionStorage.getItem("exitTimer");
             // 如果时间差小于两秒 直接关闭
-            if (new Date().getTime() - firstQuitTime < 2000) {
-                ThirdPartyService.getInstance().thirdPartyEvent('close');
+            if (new Date().getTime() - exitTimer < 2000) {
+                Util.exitApp();
             }
         }
     }

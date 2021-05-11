@@ -1,5 +1,6 @@
 import Schema from 'async-validator';
 import { clone } from "ramda";
+import { AppCapacitorService, ThirdPartyService } from '../../service';
 
 /**
  * 平台工具类
@@ -634,6 +635,21 @@ export class Util {
     public static getI18n(_this: any, srfCaption: string, dataInfo: string, _defalut: any): string {
         return !(_this.$t(srfCaption) === srfCaption) ? _this.$t(srfCaption) + dataInfo : _defalut;
     }
+
+
+    /**
+     * 退出应用
+     *
+     * @static
+     * @memberof Util
+     */
+    public static exitApp() {
+        if(ThirdPartyService.getInstance().platform){
+            ThirdPartyService.getInstance().thirdPartyEvent('close');
+        }else{
+            AppCapacitorService.getInstance().exitApp();
+        }
+    }
 }
 /**
  * 创建 UUID
@@ -713,7 +729,7 @@ export const setSessionStorage: Function = (key: string, value: any) => {
  * 获取sessionStorage数据
  *
  */
- export const getSessionStorage: Function = (key: string) => {
+export const getSessionStorage: Function = (key: string) => {
     if (!key) {
         return null;
     }
