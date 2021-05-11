@@ -196,7 +196,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "(t1.`account` in (select t.`account` from zt_team t where t.`type` = 'task' and ${srfdatacontext('multiple','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')} = '1'  and t.`root` = ${srfdatacontext('id','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')}) or \nt1.`account` in (select t.`account` from zt_team t where t.`type` = 'project' and ${srfdatacontext('multiple','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')} = '0'  and t.`root` = (select tt.`project` from zt_task tt where tt.`id` = ${srfdatacontext('id','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')}))\n)",
+        "customCond" : "(t1.`account` in (select t.`account` from zt_team t where t.`type` = 'task' and ${srfdatacontext('multiple','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')} = '1'  and t.`root` = ${srfdatacontext('id','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')}) or \nt1.`account` in (select t.`account` from zt_team t where t.`type` = 'project' and ${srfdatacontext('multiple','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')} = '0'  and t.`root` = (select tt.`project` from zt_task tt where tt.`TASKSN` = ${srfdatacontext('id','{\"defname\":\"ID\",\"dename\":\"ZT_RELEASE\"}')}))\n)",
         "name" : "查询条件"
       } ]
     } ],

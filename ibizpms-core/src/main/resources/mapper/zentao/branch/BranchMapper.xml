@@ -113,7 +113,7 @@
 
     <!--数据查询[DefaultBranch]-->
     <sql id="DefaultBranch" databaseId="mysql">
-		<![CDATA[ SELECT '0' AS `DELETED`, 0 AS `ID`, '所有平台' AS`NAME`, 0 AS `ORDER`, t2.`id` AS `PRODUCT` FROM `zt_branch` t1 RIGHT JOIN `zt_product` t2 ON t1.product=t2.id WHERE ( ( t2.`ID` = #{srf.webcontext.product}  OR  t2.`ID` = #{srf.datacontext.product}  OR  t2.`ID` = #{srf.datacontext.products} ) ) ]]>
+		<![CDATA[ SELECT '0' AS `DELETED`, 0 AS `ID`, '所有平台' AS`NAME`, 0 AS `ORDER`, t2.`id` AS `PRODUCT` FROM `zt_branch` t1 RIGHT JOIN `zt_product` t2 ON t1.product=t2.productsn WHERE ( ( t2.`ID` = #{srf.webcontext.product}  OR  t2.`ID` = #{srf.datacontext.product}  OR  t2.`ID` = #{srf.datacontext.products} ) ) ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>

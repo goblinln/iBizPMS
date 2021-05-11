@@ -230,13 +230,13 @@
 
     <!--数据查询[TaskTeam]-->
     <sql id="TaskTeam" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ADDRESS`, t1.`AVATAR`, t1.`BIRTHDAY`, t1.`CLIENTLANG`, t1.`CLIENTSTATUS`, t1.`COMMITER`, t1.`DELETED`, t1.`DEPT`, t1.`DINGDING`, t1.`EMAIL`, t1.`FAILS`, t1.`GENDER`, t1.`ID`, t1.`IP`, t1.`JOIN`, t1.`LAST`, t1.`LOCKED`, t1.`MOBILE`, t1.`NICKNAME`, t1.`PASSWORD`, t1.`PHONE`, t1.`QQ`, t1.`RANZHI`, t1.`REALNAME`, t1.`ROLE`, t1.`SCORE`, t1.`SCORELEVEL`, t1.`SKYPE`, t1.`SLACK`, t1.`VISITS`, t1.`WEIXIN`, t1.`WHATSAPP`, t1.`ZIPCODE` FROM `zt_user` t1 ]]>
+		<![CDATA[ SELECT 	t1.`ACCOUNT`, 	t1.`ADDRESS`, 	t1.`AVATAR`, 	t1.`BIRTHDAY`, 	t1.`CLIENTLANG`, 	t1.`CLIENTSTATUS`, 	t1.`COMMITER`, 	t1.`DELETED`, 	t1.`DEPT`, 	t1.`DINGDING`, 	t1.`EMAIL`, 	t1.`FAILS`, 	t1.`GENDER`, 	t1.`USERSN`, 	t1.`IP`, 	t1.`JOIN`, 	t1.`LAST`, 	t1.`LOCKED`, 	t1.`MOBILE`, 	t1.`NICKNAME`, 	t1.`PASSWORD`, 	t1.`PHONE`, 	t1.`QQ`, 	t1.`RANZHI`, 	t1.`REALNAME`, 	t1.`ROLE`, 	t1.`SCORE`, 	t1.`SCORELEVEL`, 	t1.`SKYPE`, 	t1.`SLACK`, 	t1.`VISITS`, 	t1.`WEIXIN`, 	t1.`WHATSAPP`, 	t1.`ZIPCODE`  FROM 	`zt_user` t1 ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>
             </if>
 			<if test="true">
-                <![CDATA[ AND (t1.`account` in (select t.`account` from zt_team t where t.`type` = 'task' and #{srf.datacontext.multiple} = '1'  and t.`root` = #{srf.datacontext.id}) or  t1.`account` in (select t.`account` from zt_team t where t.`type` = 'project' and #{srf.datacontext.multiple} = '0'  and t.`root` = (select tt.`project` from zt_task tt where tt.`id` = #{srf.datacontext.id})) ) ]]>
+                <![CDATA[ AND (t1.`account` in (select t.`account` from zt_team t where t.`type` = 'task' and #{srf.datacontext.multiple} = '1'  and t.`root` = #{srf.datacontext.id}) or  t1.`account` in (select t.`account` from zt_team t where t.`type` = 'project' and #{srf.datacontext.multiple} = '0'  and t.`root` = (select tt.`project` from zt_task tt where tt.`TASKSN` = #{srf.datacontext.id})) ) ]]>
             </if>
 			<include refid="searchMode" />
 		</trim>
