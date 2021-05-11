@@ -466,7 +466,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "t61.TESTREPORTSN = ${srfwebcontext('srfparentkey','{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}')}",
+        "customCond" : "t61.ID= ${srfwebcontext('srfparentkey','{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}')}",
         "name" : "查询条件"
       } ]
     } ],
@@ -516,7 +516,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "NOT(EXISTS(SELECT * FROM zt_testrun t41 \n WHERE \n t1.CASESN = t41.`CASE`  AND  ( t41.`task` = ${srfwebcontext('task','{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}')} ) ))",
+        "customCond" : "NOT(EXISTS(SELECT * FROM zt_testrun t41 \n WHERE \n t1.ID = t41.`CASE`  AND  ( t41.`task` = ${srfwebcontext('task','{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}')} ) ))",
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
@@ -524,7 +524,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "t1.product in (select tt.product from zt_testtask t left join zt_projectproduct tt on tt.project = t.project where t.TESTTASKSN = ${srfwebcontext('task','{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}')})",
+        "customCond" : "t1.product in (select tt.product from zt_testtask t left join zt_projectproduct tt on tt.project = t.project where t.ID= ${srfwebcontext('task','{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}')})",
         "name" : "查询条件"
       } ]
     } ],
@@ -591,7 +591,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "t61.TESTREPORTSN = ${srfwebcontext('srfparentkey','{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}')}",
+        "customCond" : "t61.ID = ${srfwebcontext('srfparentkey','{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}')}",
         "name" : "查询条件"
       } ]
     } ],
@@ -609,7 +609,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "\tt91.TESTREPORTSN = $ { srfwebcontext ( 'srfparentkey', '{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}' ) } \n\tAND ( FIND_IN_SET( t1.CASESN, t91.cases ) ) \n\tAND t71.date > t91.`begin` \n\tAND t71.date < t91.`end`",
+        "customCond" : "\tt91.ID = $ { srfwebcontext ( 'srfparentkey', '{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}' ) } \n\tAND ( FIND_IN_SET( t1.ID, t91.cases ) ) \n\tAND t71.date > t91.`begin` \n\tAND t71.date < t91.`end`",
         "name" : "查询条件"
       } ]
     } ],
@@ -636,7 +636,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "\tt91.testreport = $ { srfwebcontext ( 'srfparentkey', '{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}' ) } \n\tAND ( FIND_IN_SET( t1.CASESN, t91.cases ) ) \n\tAND t71.date > t91.`begin` \n\tAND t71.date < CONCAT( DATE_FORMAT( t91.`end`, '%Y-%m-%d' ), ' 23:59:59' )",
+        "customCond" : "\tt91.testreport = $ { srfwebcontext ( 'srfparentkey', '{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}' ) } \n\tAND ( FIND_IN_SET( t1.ID, t91.cases ) ) \n\tAND t71.date > t91.`begin` \n\tAND t71.date < CONCAT( DATE_FORMAT( t91.`end`, '%Y-%m-%d' ), ' 23:59:59' )",
         "name" : "查询条件"
       } ]
     } ],
