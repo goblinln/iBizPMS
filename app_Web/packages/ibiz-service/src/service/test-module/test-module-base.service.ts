@@ -46,7 +46,7 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
             const data = await s.getLocal2(context, entity.root);
             if (data) {
                 entity.rootname = data.name;
-                entity.root = data.id;
+                entity.root = data.productsn;
             }
         }
         return entity!;
@@ -62,7 +62,7 @@ export class TestModuleBaseService extends EntityBaseService<ITestModule> {
             const data = await s.getLocal2(_context, _context.product);
             if (data) {
                 entity.rootname = data.name;
-                entity.root = data.id;
+                entity.root = data.productsn;
             }
         }
         return new TestModule(entity);

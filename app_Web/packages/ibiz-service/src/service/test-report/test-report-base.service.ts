@@ -53,7 +53,7 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
             const data = await s.getLocal2(context, entity.project);
             if (data) {
                 entity.projectname = data.name;
-                entity.project = data.id;
+                entity.project = data.projectsn;
             }
         }
         return entity!;
@@ -77,7 +77,7 @@ export class TestReportBaseService extends EntityBaseService<ITestReport> {
             const data = await s.getLocal2(_context, _context.project);
             if (data) {
                 entity.projectname = data.name;
-                entity.project = data.id;
+                entity.project = data.projectsn;
             }
         }
         return new TestReport(entity);

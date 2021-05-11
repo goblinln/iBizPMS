@@ -5937,7 +5937,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "来源Bug",
     "name" : "FROMBUG",
     "getPSDER" : {
@@ -5949,8 +5949,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "BUGSN",
+      "codeName" : "Bugsn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",

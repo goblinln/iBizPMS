@@ -193,7 +193,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "EXISTS(SELECT * FROM `zt_projectproduct` t21 \n WHERE \n t1.`id` = t21.`PRODUCT`  AND  ( t21.`PROJECT` = ${srfdatacontext('srfparentkey','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTPRODUCT\"}')} ) )",
+        "customCond" : "EXISTS(SELECT * FROM `zt_projectproduct` t21 \n WHERE \n t1.`productsn` = t21.`PRODUCT`  AND  ( t21.`PROJECT` = ${srfdatacontext('srfparentkey','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTPRODUCT\"}')} ) )",
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
@@ -390,7 +390,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "EXISTS(SELECT * FROM `zt_projectproduct` t21 \n WHERE \n t1.`id` = t21.`PRODUCT`  AND  ( t21.`PROJECT` = ${srfdatacontext('project','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTPRODUCT\"}')} ) )",
+        "customCond" : "EXISTS(SELECT * FROM `zt_projectproduct` t21 \n WHERE \n t1.`productsn` = t21.`PRODUCT`  AND  ( t21.`PROJECT` = ${srfdatacontext('project','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTPRODUCT\"}')} ) )",
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
@@ -3128,8 +3128,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDERS/DER1N_ZT_PRODUCT_ZT_MODULE_LINE.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "MODULESN",
+      "codeName" : "ModuleSN"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",

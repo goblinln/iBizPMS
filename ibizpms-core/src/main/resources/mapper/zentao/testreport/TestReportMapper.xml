@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`BEGIN`, t1.`BUGS`, t1.`BUILDS`, t1.`CASES`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`END`, t1.`ID`, t1.`MEMBERS`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`ORG`, t1.`ORGNAME`, t1.`OWNER`, t1.`PRODUCT`, t21.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t11.`NAME` AS `PROJECTNAME`, t1.`REPORT`, t1.`STORIES`, t1.`TASKS`, t1.`TESTREPORTSN`, t1.`TITLE`, t1.`UPDATEBY` FROM `zt_testreport` t1  LEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`ID`  LEFT JOIN `zt_product` t21 ON t1.`PRODUCT` = t21.`productsn`   ]]>
+        <![CDATA[ SELECT t1.`BEGIN`, t1.`BUGS`, t1.`BUILDS`, t1.`CASES`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`END`, t1.`ID`, t1.`MEMBERS`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`ORG`, t1.`ORGNAME`, t1.`OWNER`, t1.`PRODUCT`, t21.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t11.`NAME` AS `PROJECTNAME`, t1.`REPORT`, t1.`STORIES`, t1.`TASKS`, t1.`TESTREPORTSN`, t1.`TITLE`, t1.`UPDATEBY` FROM `zt_testreport` t1  LEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`PROJECTSN`  LEFT JOIN `zt_product` t21 ON t1.`PRODUCT` = t21.`productsn`   ]]>
     </sql>
 
 	
@@ -102,7 +102,7 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BEGIN`, t1.`BUILDS`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`END`, t1.`ID`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`ORG`, t1.`ORGNAME`, t1.`OWNER`, t1.`PRODUCT`, t21.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t11.`NAME` AS `PROJECTNAME`, t1.`TASKS`, t1.`TESTREPORTSN`, t1.`TITLE`, t1.`UPDATEBY` FROM `zt_testreport` t1  LEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`ID`  LEFT JOIN `zt_product` t21 ON t1.`PRODUCT` = t21.`productsn`   ]]>
+		<![CDATA[ SELECT t1.`BEGIN`, t1.`BUILDS`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`END`, t1.`ID`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`ORG`, t1.`ORGNAME`, t1.`OWNER`, t1.`PRODUCT`, t21.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t11.`NAME` AS `PROJECTNAME`, t1.`TASKS`, t1.`TESTREPORTSN`, t1.`TITLE`, t1.`UPDATEBY` FROM `zt_testreport` t1  LEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`PROJECTSN`  LEFT JOIN `zt_product` t21 ON t1.`PRODUCT` = t21.`productsn`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>
@@ -117,7 +117,7 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BEGIN`, t1.`BUGS`, t1.`BUILDS`, t1.`CASES`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`END`, t1.`ID`, t1.`MEMBERS`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`ORG`, t1.`ORGNAME`, t1.`OWNER`, t1.`PRODUCT`, t21.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t11.`NAME` AS `PROJECTNAME`, t1.`REPORT`, t1.`STORIES`, t1.`TASKS`, t1.`TESTREPORTSN`, t1.`TITLE`, t1.`UPDATEBY` FROM `zt_testreport` t1  LEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`ID`  LEFT JOIN `zt_product` t21 ON t1.`PRODUCT` = t21.`productsn`   ]]>
+		<![CDATA[ SELECT t1.`BEGIN`, t1.`BUGS`, t1.`BUILDS`, t1.`CASES`, t1.`CREATEDBY`, t1.`CREATEDDATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`END`, t1.`ID`, t1.`MEMBERS`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`ORG`, t1.`ORGNAME`, t1.`OWNER`, t1.`PRODUCT`, t21.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t11.`NAME` AS `PROJECTNAME`, t1.`REPORT`, t1.`STORIES`, t1.`TASKS`, t1.`TESTREPORTSN`, t1.`TITLE`, t1.`UPDATEBY` FROM `zt_testreport` t1  LEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`PROJECTSN`  LEFT JOIN `zt_product` t21 ON t1.`PRODUCT` = t21.`productsn`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>
