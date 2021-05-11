@@ -2245,8 +2245,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PRODUCTPLANSN",
+      "codeName" : "Productplansn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -2292,8 +2292,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DER1N_ZT_PRODUCTPLAN_ZT_PRODUCT_PRODUCT.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PRODUCTSN",
+      "codeName" : "Productsn"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",

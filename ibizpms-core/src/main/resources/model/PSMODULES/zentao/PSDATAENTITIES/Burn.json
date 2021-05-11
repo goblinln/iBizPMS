@@ -681,7 +681,7 @@
     "dEFType" : 1,
     "dataType" : "PICKUP",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "所属项目",
     "name" : "PROJECT",
     "getPSDER" : {
@@ -689,8 +689,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Burn/PSDERS/DER1N_ZT_BURN_ZT_PROJECT_PROJECT.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PROJECTSN",
+      "codeName" : "Projectsn"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
@@ -725,7 +725,7 @@
     "dEFType" : 1,
     "dataType" : "PICKUP",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "任务",
     "name" : "TASK",
     "getPSDER" : {
@@ -737,8 +737,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "TASKSN",
+      "codeName" : "Tasksn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",

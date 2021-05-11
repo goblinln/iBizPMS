@@ -599,11 +599,11 @@
               "getPSDEGridColumns" : [ {
                 "align" : "LEFT",
                 "cLConvertMode" : "NONE",
-                "caption" : "需求编号",
+                "caption" : "编号",
                 "codeName" : "storysn",
                 "columnType" : "DEFGRIDCOLUMN",
                 "dataItemName" : "storysn",
-                "excelCaption" : "需求编号",
+                "excelCaption" : "编号",
                 "name" : "storysn",
                 "noPrivDisplayMode" : 1,
                 "getPSAppDEField" : {
@@ -2932,11 +2932,11 @@
               "getPSDEGridColumns" : [ {
                 "align" : "LEFT",
                 "cLConvertMode" : "NONE",
-                "caption" : "BUG编号",
+                "caption" : "编号",
                 "codeName" : "bugsn",
                 "columnType" : "DEFGRIDCOLUMN",
                 "dataItemName" : "bugsn",
-                "excelCaption" : "BUG编号",
+                "excelCaption" : "编号",
                 "name" : "bugsn",
                 "noPrivDisplayMode" : 1,
                 "getPSAppDEField" : {

@@ -170,11 +170,11 @@
     "getPSDEGridColumns" : [ {
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
-      "caption" : "任务预计编号",
+      "caption" : "编号",
       "codeName" : "taskestimatesn",
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "taskestimatesn",
-      "excelCaption" : "任务预计编号",
+      "excelCaption" : "编号",
       "name" : "taskestimatesn",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {

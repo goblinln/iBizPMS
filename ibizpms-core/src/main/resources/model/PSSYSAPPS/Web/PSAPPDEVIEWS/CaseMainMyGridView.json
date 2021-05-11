@@ -457,11 +457,11 @@
     "getPSDEGridColumns" : [ {
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
-      "caption" : "测试用例编号",
+      "caption" : "编号",
       "codeName" : "casesn",
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "casesn",
-      "excelCaption" : "测试用例编号",
+      "excelCaption" : "编号",
       "name" : "casesn",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {

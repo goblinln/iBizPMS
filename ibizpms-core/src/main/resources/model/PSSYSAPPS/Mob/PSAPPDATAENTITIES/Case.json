@@ -502,7 +502,7 @@
     "maxRowCount" : 1000,
     "name" : "数据导出",
     "getPSDEDataExportItems" : [ {
-      "caption" : "测试用例编号",
+      "caption" : "编号",
       "format" : "%1$s",
       "name" : "casesn",
       "getPSAppDEField" : {

@@ -225,7 +225,7 @@
         "id" : "ComputeBurn@Burn"
       },
       "tooltip" : "更新燃尽图",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     } ],
     "modelid" : "5ad21b662e43fd5724b41620471178d8"
@@ -515,7 +515,7 @@
     },
     "getPSSysPFPlugin" : {
       "pluginType" : "CHART_RENDER",
-      "pluginCode" : "NEW"
+      "pluginCode" : "BurnoutFigure"
     },
     "readOnly" : true,
     "name" : "chart",

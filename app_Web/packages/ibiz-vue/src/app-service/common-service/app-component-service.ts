@@ -202,6 +202,7 @@ export class AppComponentService {
         this.controlMap.set("CUSTOM_LEFTNAVLIST", 'app-custom-leftnavlist');
         this.controlMap.set("CHART_RENDER_NEW", 'app-chart-render-new');
         this.controlMap.set("GRID_RENDER_TreeGrid", 'app-grid-render-tree-grid');
+        this.controlMap.set("CHART_RENDER_BurnoutFigure", 'app-chart-render-burnout-figure');
         this.controlMap.set("LIST_ITEMRENDER_listDownload", 'app-list-itemrender-list-download');
         this.controlMap.set("GRID_RENDER_StepTable", 'app-grid-render-step-table');
         this.controlMap.set("CHART_RENDER_piePlugin", 'app-chart-render-pie-plugin');

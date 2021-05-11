@@ -5898,8 +5898,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "TASKSN",
+      "codeName" : "Tasksn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",

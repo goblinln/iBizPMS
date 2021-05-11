@@ -1619,11 +1619,11 @@
           "getPSDEGridColumns" : [ {
             "align" : "LEFT",
             "cLConvertMode" : "NONE",
-            "caption" : "任务编号",
+            "caption" : "编号",
             "codeName" : "tasksn",
             "columnType" : "DEFGRIDCOLUMN",
             "dataItemName" : "tasksn",
-            "excelCaption" : "任务编号",
+            "excelCaption" : "编号",
             "name" : "tasksn",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {
@@ -2474,11 +2474,11 @@
           "getPSDEGridColumns" : [ {
             "align" : "LEFT",
             "cLConvertMode" : "NONE",
-            "caption" : "任务编号",
+            "caption" : "编号",
             "codeName" : "tasksn",
             "columnType" : "DEFGRIDCOLUMN",
             "dataItemName" : "tasksn",
-            "excelCaption" : "任务编号",
+            "excelCaption" : "编号",
             "name" : "tasksn",
             "noPrivDisplayMode" : 1,
             "getPSAppDEField" : {

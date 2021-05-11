@@ -13,6 +13,16 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
     }
   }, {
+    "name" : "项目经理-ZT_BUILD[版本维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEUSERROLES/Build_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
+    }
+  }, {
     "name" : "项目经理-IBZ_PROJECTTEAM[项目团队管理]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -111,6 +121,16 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule.json"
+    }
+  }, {
+    "name" : "项目经理-ZT_RELEASE[产品发布维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDEUSERROLES/Release_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
     }
   }, {
     "name" : "项目经理-ZT_PROJECT[项目查看（当前机构）]",

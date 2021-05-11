@@ -43,7 +43,7 @@ export class BurnBaseService extends EntityBaseService<IBurn> {
             const s = await ___ibz___.gs.getProjectService();
             const data = await s.getLocal2(context, entity.project);
             if (data) {
-                entity.project = data.id;
+                entity.project = data.projectsn;
             }
         }
         return entity!;
@@ -58,7 +58,7 @@ export class BurnBaseService extends EntityBaseService<IBurn> {
             const s = await ___ibz___.gs.getProjectService();
             const data = await s.getLocal2(_context, _context.project);
             if (data) {
-                entity.project = data.id;
+                entity.project = data.projectsn;
             }
         }
         return new Burn(entity);

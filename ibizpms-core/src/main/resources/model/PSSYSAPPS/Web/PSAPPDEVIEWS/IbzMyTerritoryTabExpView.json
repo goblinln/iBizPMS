@@ -3462,11 +3462,11 @@
                       "getPSDEGridColumns" : [ {
                         "align" : "LEFT",
                         "cLConvertMode" : "NONE",
-                        "caption" : "待办编号",
+                        "caption" : "编号",
                         "codeName" : "todosn",
                         "columnType" : "DEFGRIDCOLUMN",
                         "dataItemName" : "todosn",
-                        "excelCaption" : "待办编号",
+                        "excelCaption" : "编号",
                         "name" : "todosn",
                         "noPrivDisplayMode" : 1,
                         "getPSAppDEField" : {
@@ -4082,11 +4082,11 @@
                       "getPSDEGridColumns" : [ {
                         "align" : "LEFT",
                         "cLConvertMode" : "NONE",
-                        "caption" : "BUG编号",
+                        "caption" : "编号",
                         "codeName" : "bugsn",
                         "columnType" : "DEFGRIDCOLUMN",
                         "dataItemName" : "bugsn",
-                        "excelCaption" : "BUG编号",
+                        "excelCaption" : "编号",
                         "name" : "bugsn",
                         "noPrivDisplayMode" : 1,
                         "getPSAppDEField" : {
@@ -4820,11 +4820,11 @@
                       "getPSDEGridColumns" : [ {
                         "align" : "LEFT",
                         "cLConvertMode" : "NONE",
-                        "caption" : "需求编号",
+                        "caption" : "编号",
                         "codeName" : "storysn",
                         "columnType" : "DEFGRIDCOLUMN",
                         "dataItemName" : "storysn",
-                        "excelCaption" : "需求编号",
+                        "excelCaption" : "编号",
                         "name" : "storysn",
                         "noPrivDisplayMode" : 1,
                         "getPSAppDEField" : {
@@ -5389,11 +5389,11 @@
                       "getPSDEGridColumns" : [ {
                         "align" : "LEFT",
                         "cLConvertMode" : "NONE",
-                        "caption" : "任务编号",
+                        "caption" : "编号",
                         "codeName" : "tasksn",
                         "columnType" : "DEFGRIDCOLUMN",
                         "dataItemName" : "tasksn",
-                        "excelCaption" : "任务编号",
+                        "excelCaption" : "编号",
                         "name" : "tasksn",
                         "noPrivDisplayMode" : 1,
                         "getPSAppDEField" : {

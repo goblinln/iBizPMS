@@ -35,7 +35,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'casestepsn': commonLogic.appcommonhandle("用例步骤编号",null),
+				'casestepsn': commonLogic.appcommonhandle("编号",null),
 				'desc': commonLogic.appcommonhandle("步骤",null),
 				'type': commonLogic.appcommonhandle("类型",null),
 				'expect': commonLogic.appcommonhandle("预期",null),
@@ -46,7 +46,7 @@ function getLocaleResourceBase(){
 		},
 		mainr_grid: {
 			columns: {
-				'casestepsn': commonLogic.appcommonhandle("用例步骤编号",null),
+				'casestepsn': commonLogic.appcommonhandle("编号",null),
 				'desc': commonLogic.appcommonhandle("步骤",null),
 				'type': commonLogic.appcommonhandle("类型",null),
 				'expect': commonLogic.appcommonhandle("预期",null),

@@ -763,7 +763,7 @@
     "maxRowCount" : 1000,
     "name" : "数据导出",
     "getPSDEDataExportItems" : [ {
-      "caption" : "任务编号",
+      "caption" : "编号",
       "format" : "%1$s",
       "name" : "tasksn",
       "getPSAppDEField" : {
@@ -4111,10 +4111,12 @@
       "glyph" : "xf044@FontAwesome",
       "cssClass" : "fa fa-edit"
     },
+    "refreshMode" : 1,
     "timeout" : 60000,
     "uIActionMode" : "FRONT",
     "uIActionTag" : "MobMainEdit",
     "uIActionType" : "DEUIACTION",
+    "reloadData" : true,
     "id" : "MobMainEdit@Task"
   }, {
     "actionTarget" : "SINGLEKEY",

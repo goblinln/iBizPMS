@@ -588,7 +588,7 @@
         "id" : "MobCreate@IbzDaily"
       },
       "tooltip" : "新建",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     } ],
     "toolbarStyle" : "MOBBOTTOMMENU",

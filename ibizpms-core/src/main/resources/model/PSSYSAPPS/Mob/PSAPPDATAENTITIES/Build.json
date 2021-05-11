@@ -222,7 +222,7 @@
     "maxRowCount" : 1000,
     "name" : "数据导出",
     "getPSDEDataExportItems" : [ {
-      "caption" : "版本编号",
+      "caption" : "编号",
       "format" : "%1$s",
       "name" : "buildsn",
       "getPSAppDEField" : {

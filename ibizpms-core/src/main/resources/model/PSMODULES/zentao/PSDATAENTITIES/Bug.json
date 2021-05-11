@@ -4766,8 +4766,8 @@
       "path" : "PSSYSTRANSLATORS/ModulePathValueTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "MODULESN",
+      "codeName" : "ModuleSN"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -4805,7 +4805,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "平台/分支",
     "name" : "BRANCH",
     "getPSCodeList" : {
@@ -4821,8 +4821,8 @@
       "path" : "PSSYSTRANSLATORS/BranchValueTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "BRANCHSN",
+      "codeName" : "Branchsn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -4860,7 +4860,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "重复ID",
     "name" : "DUPLICATEBUG",
     "getPSDER" : {
@@ -4868,8 +4868,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_BUG_DUPLICATEBUG.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "BUGSN",
+      "codeName" : "Bugsn"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
@@ -4967,8 +4967,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "STORYSN",
+      "codeName" : "Storysn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -5014,8 +5014,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_CASE_CASEID.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "CASESN",
+      "codeName" : "Casesn"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
@@ -5103,7 +5103,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "相关任务",
     "name" : "TASK",
     "getPSDER" : {
@@ -5115,8 +5115,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "TASKSN",
+      "codeName" : "Tasksn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -5154,7 +5154,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "测试单",
     "name" : "TESTTASK",
     "getPSDER" : {
@@ -5162,8 +5162,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_TESTTASK_TESTTASK.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "TESTTASKSN",
+      "codeName" : "Testtasksn"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",

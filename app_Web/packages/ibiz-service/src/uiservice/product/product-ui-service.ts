@@ -1,5 +1,5 @@
-// import { AppServiceBase } from 'ibiz-core';
-// import { AppCenterService } from 'ibiz-vue';
+import { AppServiceBase } from 'ibiz-core';
+import { AppCenterService } from 'ibiz-vue';
 import { ProductUIServiceBase } from './product-ui-service-base';
 
 /**
@@ -72,26 +72,25 @@ export default class ProductUIService extends ProductUIServiceBase {
      * 
      * @memberof ProductUIService
      */
-    //  protected excuteAction(uIActionTag: string, args: any[], context: any = {}, params: any = {}, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
-    //     if (Object.is(uIActionTag, "ReturnEdit")) {
-    //         this.ReturnEdit(args, xData, actionContext);
-    //     } else {
-    //         super.excuteAction(uIActionTag, args, context, params, $event, xData, actionContext, srfParentDeName);
-    //     }
-    // }
+     protected excuteAction(uIActionTag: string, args: any[], context: any = {}, params: any = {}, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
+        if (Object.is(uIActionTag, "ReturnEdit")) {
+            this.ReturnEdit(args, xData, actionContext);
+        } else {
+            super.excuteAction(uIActionTag, args, context, params, $event, xData, actionContext, srfParentDeName);
+        }
+    }
 
     /**
      * 退出
      * 
      * @memberof ProductUIService
      */
-    // public async ReturnEdit(args: any[], xData: any, actionContext: any) {
-    //     const _this: any = actionContext;
-    //     AppCenterService.notifyMessage({ name: 'Product', action: 'appRefresh', data: undefined });
-    //     const appNavDataService: any = AppServiceBase.getInstance().getAppNavDataService();
-    //     const item:any = appNavDataService.historyList[appNavDataService.findHistoryIndex(_this.$route)];
-    //     _this.$tabPageExp.onClose(item);
-
-    // }
+    public async ReturnEdit(args: any[], xData: any, actionContext: any) {
+        const _this: any = actionContext;
+        AppCenterService.notifyMessage({ name: 'Product', action: 'appRefresh', data: undefined });
+        const appNavDataService: any = AppServiceBase.getInstance().getAppNavDataService();
+        const item:any = appNavDataService.historyList[appNavDataService.findHistoryIndex(_this.$route)];
+        _this.$tabPageExp.onClose(item);
+    }
 
 }

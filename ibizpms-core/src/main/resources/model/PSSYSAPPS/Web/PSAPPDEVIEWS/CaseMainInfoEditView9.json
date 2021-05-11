@@ -176,11 +176,11 @@
       "hidden" : true,
       "dataType" : 25
     }, {
-      "id" : "id",
+      "id" : "casesn",
       "dataType" : 1,
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "CASESN",
+        "codeName" : "Casesn"
       }
     }, {
       "id" : "title",
@@ -211,6 +211,14 @@
         "name" : "PRECONDITION",
         "codeName" : "Precondition"
       }
+    }, {
+      "id" : "id",
+      "hidden" : true,
+      "dataType" : 1,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
     } ],
     "getPSDEFormPages" : [ {
       "caption" : "基本信息",
@@ -226,27 +234,27 @@
         "detailType" : "GROUPPANEL",
         "name" : "group1",
         "getPSDEFormDetails" : [ {
-          "codeName" : "id",
+          "codeName" : "casesn",
           "dataType" : 1,
           "detailStyle" : "DEFAULT",
           "detailType" : "FORMITEM",
-          "enableCond" : 0,
+          "enableCond" : 3,
           "ignoreInput" : 0,
           "itemHeight" : 32.0,
           "itemWidth" : 41.0,
           "labelPos" : "LEFT",
           "labelWidth" : 1,
-          "name" : "id",
+          "name" : "casesn",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
-            "name" : "ID",
-            "codeName" : "Id"
+            "name" : "CASESN",
+            "codeName" : "Casesn"
           },
           "getPSEditor" : {
             "editorHeight" : 32.0,
             "editorType" : "SPAN",
             "editorWidth" : 40.0,
-            "name" : "id",
+            "name" : "casesn",
             "editable" : false,
             "enableLinkView" : false
           },
@@ -733,11 +741,11 @@
               "getPSDEGridColumns" : [ {
                 "align" : "LEFT",
                 "cLConvertMode" : "NONE",
-                "caption" : "用例步骤编号",
+                "caption" : "编号",
                 "codeName" : "casestepsn",
                 "columnType" : "DEFGRIDCOLUMN",
                 "dataItemName" : "casestepsn",
-                "excelCaption" : "用例步骤编号",
+                "excelCaption" : "编号",
                 "name" : "casestepsn",
                 "noPrivDisplayMode" : 1,
                 "getPSAppDEField" : {

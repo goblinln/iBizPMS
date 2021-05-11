@@ -49,7 +49,7 @@ function getLocaleResourceBase(){
 				'expect': commonLogic.appcommonhandle("预期",null),
 				'steps': commonLogic.appcommonhandle("测试结果",null),
 				'reals': commonLogic.appcommonhandle("实际情况",null),
-				'casestepsn': commonLogic.appcommonhandle("用例步骤编号",null),
+				'casestepsn': commonLogic.appcommonhandle("编号",null),
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 			uiactions: {

@@ -325,11 +325,11 @@
                   "codeName" : "Parent"
                 }
               }, {
-                "id" : "id",
+                "id" : "storysn",
                 "dataType" : 1,
                 "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
+                  "name" : "STORYSN",
+                  "codeName" : "Storysn"
                 }
               }, {
                 "id" : "title",
@@ -374,6 +374,14 @@
                 "getPSAppDEField" : {
                   "name" : "VERIFY",
                   "codeName" : "Verify"
+                }
+              }, {
+                "id" : "id",
+                "hidden" : true,
+                "dataType" : 1,
+                "getPSAppDEField" : {
+                  "name" : "ID",
+                  "codeName" : "Id"
                 }
               } ],
               "getPSDEFormPages" : [ {
@@ -426,24 +434,24 @@
                       "inputTipClosable" : false,
                       "showCaption" : true
                     }, {
-                      "codeName" : "id",
+                      "codeName" : "storysn",
                       "contentWidth" : 70.0,
                       "dataType" : 1,
                       "detailStyle" : "DEFAULT",
                       "detailType" : "FORMITEM",
-                      "enableCond" : 0,
+                      "enableCond" : 3,
                       "ignoreInput" : 0,
                       "labelPos" : "LEFT",
                       "labelWidth" : 2,
-                      "name" : "id",
+                      "name" : "storysn",
                       "noPrivDisplayMode" : 1,
                       "getPSAppDEField" : {
-                        "name" : "ID",
-                        "codeName" : "Id"
+                        "name" : "STORYSN",
+                        "codeName" : "Storysn"
                       },
                       "getPSEditor" : {
                         "editorType" : "SPAN",
-                        "name" : "id",
+                        "name" : "storysn",
                         "editable" : false,
                         "enableLinkView" : false
                       },
@@ -1419,11 +1427,11 @@
                         "getPSDEGridColumns" : [ {
                           "align" : "LEFT",
                           "cLConvertMode" : "NONE",
-                          "caption" : "需求编号",
+                          "caption" : "编号",
                           "codeName" : "storysn",
                           "columnType" : "DEFGRIDCOLUMN",
                           "dataItemName" : "storysn",
-                          "excelCaption" : "需求编号",
+                          "excelCaption" : "编号",
                           "name" : "storysn",
                           "noPrivDisplayMode" : 1,
                           "getPSAppDEField" : {
@@ -5649,11 +5657,11 @@
                         "getPSDEGridColumns" : [ {
                           "align" : "LEFT",
                           "cLConvertMode" : "NONE",
-                          "caption" : "任务编号",
+                          "caption" : "编号",
                           "codeName" : "tasksn",
                           "columnType" : "DEFGRIDCOLUMN",
                           "dataItemName" : "tasksn",
-                          "excelCaption" : "任务编号",
+                          "excelCaption" : "编号",
                           "name" : "tasksn",
                           "noPrivDisplayMode" : 1,
                           "getPSAppDEField" : {
@@ -6385,11 +6393,11 @@
                       "getPSDEGridColumns" : [ {
                         "align" : "LEFT",
                         "cLConvertMode" : "NONE",
-                        "caption" : "需求编号",
+                        "caption" : "编号",
                         "codeName" : "storysn",
                         "columnType" : "DEFGRIDCOLUMN",
                         "dataItemName" : "storysn",
-                        "excelCaption" : "需求编号",
+                        "excelCaption" : "编号",
                         "name" : "storysn",
                         "noPrivDisplayMode" : 1,
                         "getPSAppDEField" : {
@@ -6882,11 +6890,11 @@
                       "getPSDEGridColumns" : [ {
                         "align" : "LEFT",
                         "cLConvertMode" : "NONE",
-                        "caption" : "需求编号",
+                        "caption" : "编号",
                         "codeName" : "storysn",
                         "columnType" : "DEFGRIDCOLUMN",
                         "dataItemName" : "storysn",
-                        "excelCaption" : "需求编号",
+                        "excelCaption" : "编号",
                         "name" : "storysn",
                         "noPrivDisplayMode" : 1,
                         "getPSAppDEField" : {
@@ -7424,11 +7432,11 @@
                         "getPSDEGridColumns" : [ {
                           "align" : "LEFT",
                           "cLConvertMode" : "NONE",
-                          "caption" : "BUG编号",
+                          "caption" : "编号",
                           "codeName" : "bugsn",
                           "columnType" : "DEFGRIDCOLUMN",
                           "dataItemName" : "bugsn",
-                          "excelCaption" : "BUG编号",
+                          "excelCaption" : "编号",
                           "name" : "bugsn",
                           "noPrivDisplayMode" : 1,
                           "getPSAppDEField" : {
@@ -8070,11 +8078,11 @@
                         "getPSDEGridColumns" : [ {
                           "align" : "LEFT",
                           "cLConvertMode" : "NONE",
-                          "caption" : "BUG编号",
+                          "caption" : "编号",
                           "codeName" : "bugsn",
                           "columnType" : "DEFGRIDCOLUMN",
                           "dataItemName" : "bugsn",
-                          "excelCaption" : "BUG编号",
+                          "excelCaption" : "编号",
                           "name" : "bugsn",
                           "noPrivDisplayMode" : 1,
                           "getPSAppDEField" : {
