@@ -167,13 +167,13 @@
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZWEEKLY.json"
         }
       }, {
-        "actionName" : "CreateGetLastWeekPlanAndWork",
+        "actionName" : "GetDraft",
         "actionType" : "DEACTION",
         "dataAccessAction" : "CREATE",
         "name" : "loaddraft",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "CreateGetLastWeekPlanAndWork"
+          "id" : "GetDraft"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -207,7 +207,7 @@
         }
       } ],
       "enableDEFieldPrivilege" : false,
-      "id" : "编辑表单处理器(新建判断)"
+      "id" : "编辑表单处理器"
     },
     "getPSControlParam" : {
       "autoLoad" : true,

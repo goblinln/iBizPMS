@@ -53,6 +53,10 @@ public class IbzMonthlyServiceImpl extends ServiceImpl<IbzMonthlyMapper, IbzMont
     cn.ibizlab.pms.core.report.runtime.IbzMonthlyRuntime ibzmonthlyRuntime;
 
 
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.report.service.IIbzMonthlyService ibzmonthlyService;
+
     protected int batchSize = 500;
 
     @Override

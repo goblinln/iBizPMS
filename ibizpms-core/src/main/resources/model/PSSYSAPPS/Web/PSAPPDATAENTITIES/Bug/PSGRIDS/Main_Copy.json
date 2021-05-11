@@ -13,8 +13,8 @@
   "logicName" : "主表格_拷贝",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
-    "name" : "ID",
-    "codeName" : "Id"
+    "name" : "BUGSN",
+    "codeName" : "Bugsn"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,

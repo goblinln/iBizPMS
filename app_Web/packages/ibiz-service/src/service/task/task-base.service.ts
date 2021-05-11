@@ -77,7 +77,7 @@ export class TaskBaseService extends EntityBaseService<ITask> {
             const data = await s.getLocal2(context, entity.project);
             if (data) {
                 entity.projectname = data.name;
-                entity.project = data.projectsn;
+                entity.project = data.id;
             }
         }
         return entity!;
@@ -119,7 +119,7 @@ export class TaskBaseService extends EntityBaseService<ITask> {
             const data = await s.getLocal2(_context, _context.project);
             if (data) {
                 entity.projectname = data.name;
-                entity.project = data.projectsn;
+                entity.project = data.id;
             }
         }
         return new Task(entity);

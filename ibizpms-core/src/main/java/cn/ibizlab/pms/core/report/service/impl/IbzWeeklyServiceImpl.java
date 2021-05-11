@@ -53,6 +53,10 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
     cn.ibizlab.pms.core.report.runtime.IbzWeeklyRuntime ibzweeklyRuntime;
 
 
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.report.service.IIbzWeeklyService ibzweeklyService;
+
     protected int batchSize = 500;
 
     @Override

@@ -442,8 +442,8 @@
     "logicName" : "主信息",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "CASESN",
+      "codeName" : "Casesn"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,

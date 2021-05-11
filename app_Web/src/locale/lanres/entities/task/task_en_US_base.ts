@@ -943,7 +943,7 @@ function getLocaleResourceBase(){
 				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
-			task_childmore: commonLogic.appcommonhandle("更多",null),
+			task_morechild: commonLogic.appcommonhandle("子任务",null),
 			task_tasktobug: commonLogic.appcommonhandle("提缺陷",null),
 			task_confirmstorychange: commonLogic.appcommonhandle("确认",null),
 			task_mstarttaskdash1: commonLogic.appcommonhandle("开始",null),
@@ -997,6 +997,7 @@ function getLocaleResourceBase(){
 		},
 			uiactions: {
 			task_childmore: commonLogic.appcommonhandle("更多",null),
+			task_morechild: commonLogic.appcommonhandle("子任务",null),
 			task_tasktobug: commonLogic.appcommonhandle("提缺陷",null),
 			task_confirmstorychange: commonLogic.appcommonhandle("确认",null),
 			task_mstarttaskdash1: commonLogic.appcommonhandle("开始",null),
@@ -1068,7 +1069,7 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 			uiactions: {
 			task_assigntask: commonLogic.appcommonhandle("指派",null),
-			task_childmore: commonLogic.appcommonhandle("更多",null),
+			task_morechild: commonLogic.appcommonhandle("子任务",null),
 			task_tasktobug: commonLogic.appcommonhandle("提缺陷",null),
 			task_confirmstorychange: commonLogic.appcommonhandle("确认",null),
 			task_mstarttaskdash1: commonLogic.appcommonhandle("开始",null),
@@ -1100,7 +1101,7 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 			uiactions: {
 			task_assigntask: commonLogic.appcommonhandle("指派",null),
-			task_childmore: commonLogic.appcommonhandle("更多",null),
+			task_morechild: commonLogic.appcommonhandle("子任务",null),
 			task_tasktobug: commonLogic.appcommonhandle("提缺陷",null),
 			task_confirmstorychange: commonLogic.appcommonhandle("确认",null),
 			task_mstarttaskdash1: commonLogic.appcommonhandle("开始",null),
@@ -1133,7 +1134,7 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 			uiactions: {
 			task_assigntask: commonLogic.appcommonhandle("指派",null),
-			task_childmore: commonLogic.appcommonhandle("更多",null),
+			task_morechild: commonLogic.appcommonhandle("子任务",null),
 			task_tasktobug: commonLogic.appcommonhandle("提缺陷",null),
 			task_confirmstorychange: commonLogic.appcommonhandle("确认",null),
 			task_mstarttaskdash1: commonLogic.appcommonhandle("开始",null),
@@ -1165,7 +1166,7 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 			uiactions: {
 			task_assigntask: commonLogic.appcommonhandle("指派",null),
-			task_childmore: commonLogic.appcommonhandle("更多",null),
+			task_morechild: commonLogic.appcommonhandle("子任务",null),
 			task_tasktobug: commonLogic.appcommonhandle("提缺陷",null),
 			task_confirmstorychange: commonLogic.appcommonhandle("确认",null),
 			task_mstarttaskdash1: commonLogic.appcommonhandle("开始",null),
@@ -1197,7 +1198,7 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 			uiactions: {
 			task_assigntask: commonLogic.appcommonhandle("指派",null),
-			task_childmore: commonLogic.appcommonhandle("更多",null),
+			task_morechild: commonLogic.appcommonhandle("子任务",null),
 			task_tasktobug: commonLogic.appcommonhandle("提缺陷",null),
 			task_confirmstorychange: commonLogic.appcommonhandle("确认",null),
 			task_mstarttaskdash1: commonLogic.appcommonhandle("开始",null),
@@ -1259,7 +1260,7 @@ function getLocaleResourceBase(){
 				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
-			task_childmore: commonLogic.appcommonhandle("更多",null),
+			task_morechild: commonLogic.appcommonhandle("子任务",null),
 			task_tasktobug: commonLogic.appcommonhandle("提缺陷",null),
 			task_confirmstorychange: commonLogic.appcommonhandle("确认",null),
 			task_mstarttaskdash1: commonLogic.appcommonhandle("开始",null),
@@ -1372,7 +1373,7 @@ function getLocaleResourceBase(){
 				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
-			task_childmore: commonLogic.appcommonhandle("更多",null),
+			task_morechild: commonLogic.appcommonhandle("子任务",null),
 			task_tasktobug: commonLogic.appcommonhandle("提缺陷",null),
 			task_confirmstorychange: commonLogic.appcommonhandle("确认",null),
 			task_mstarttaskdash1: commonLogic.appcommonhandle("开始",null),

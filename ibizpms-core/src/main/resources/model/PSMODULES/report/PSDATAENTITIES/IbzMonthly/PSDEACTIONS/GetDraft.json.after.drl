@@ -1,0 +1,13 @@
+global cn.ibizlab.pms.core.report.service.IIbzMonthlyService  ibzmonthlyService;
+global cn.ibizlab.pms.core.report.domain.IbzMonthly et;
+
+    no-loop
+
+    rule "ibzmonthlycreateusermonthly"
+    ruleflow-group "2F71726D-29FB-456C-BE0E-A5BABD500BA7"
+    when
+    then
+    cn.ibizlab.pms.core.report.domain.IbzMonthly actionLogicDE =new cn.ibizlab.pms.core.report.domain.IbzMonthly();
+    et.copyTo(actionLogicDE,true);
+    ibzmonthlyService.createUserMonthly(actionLogicDE);
+    end
