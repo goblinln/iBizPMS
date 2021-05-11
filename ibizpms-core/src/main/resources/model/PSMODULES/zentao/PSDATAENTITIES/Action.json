@@ -169,7 +169,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "(t1.Today = #{srf.n_today_eq} or t1.yesterday = #{srf.n_yesterday_eq} or t1.thisweek= #{srf.n_thisweek_eq} or t1.lastweek= #{srf.n_lastweek_eq} or t1.thismonth = #{srf.n_thismonth_eq} or t1.lastmonth= #{srf.n_lastmonth_eq} or (#{srf.n_today_eq} is null and #{srf.n_yesterday_eq} is null) and #{srf.n_thisweek_eq} is null and #{srf.n_lastweek_eq} is null and #{srf.n_thismonth_eq} is null and  \n #{srf.n_lastmonth_eq} is null)",
+        "customCond" : "(t1.Today = #{srf.n_today_eq} or t1.yesterday = #{srf.n_yesterday_eq} or t1.thisweek= #{srf.n_thisweek_eq} or t1.lastweek= #{srf.n_lastweek_eq} or t1.thismonth = #{srf.n_thismonth_eq} or t1.lastmonth= #{srf.n_lastmonth_eq} or (#{srf.n_today_eq} is null and #{srf.n_yesterday_eq} is null and #{srf.n_thisweek_eq} is null and #{srf.n_lastweek_eq} is null and #{srf.n_thismonth_eq} is null and  \n #{srf.n_lastmonth_eq} is null))",
         "name" : "查询条件"
       } ]
     } ],
@@ -183,11 +183,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "( t1.`PRODUCT` LIKE  CONCAT('%,',${srfdatacontext('srfparentkey','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_ACTION\"}')},',%') )",
-        "name" : "查询条件"
-      }, {
-        "condType" : "CUSTOM",
-        "customCond" : "(t1.Today = #{srf.n_today_eq} or t1.yesterday = #{srf.n_yesterday_eq} or t1.thisweek= #{srf.n_thisweek_eq} or t1.lastweek= #{srf.n_lastweek_eq} or t1.thismonth = #{srf.n_thismonth_eq} or t1.lastmonth= #{srf.n_lastmonth_eq} or (#{srf.n_today_eq} is null and #{srf.n_yesterday_eq} is null) and #{srf.n_thisweek_eq} is null and #{srf.n_lastweek_eq} is null and #{srf.n_thismonth_eq} is null and  \n #{srf.n_lastmonth_eq} is null)",
+        "customCond" : "(t1.Today = #{srf.n_today_eq} or t1.yesterday = #{srf.n_yesterday_eq} or t1.thisweek= #{srf.n_thisweek_eq} or t1.lastweek= #{srf.n_lastweek_eq} or t1.thismonth = #{srf.n_thismonth_eq} or t1.lastmonth= #{srf.n_lastmonth_eq} or (#{srf.n_today_eq} is null and #{srf.n_yesterday_eq} is null and #{srf.n_thisweek_eq} is null and #{srf.n_lastweek_eq} is null and #{srf.n_thismonth_eq} is null and  \n #{srf.n_lastmonth_eq} is null ))",
         "name" : "查询条件"
       } ]
     } ],
@@ -201,11 +197,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "( t1.`PROJECT` = ${srfdatacontext('srfparentkey','{\"defname\":\"PROJECT\",\"dename\":\"ZT_ACTION\"}')} )",
-        "name" : "查询条件"
-      }, {
-        "condType" : "CUSTOM",
-        "customCond" : "(t1.Today = #{srf.n_today_eq} or t1.yesterday = #{srf.n_yesterday_eq} or t1.thisweek= #{srf.n_thisweek_eq} or t1.lastweek= #{srf.n_lastweek_eq} or t1.thismonth = #{srf.n_thismonth_eq} or t1.lastmonth= #{srf.n_lastmonth_eq} or (#{srf.n_today_eq} is null and #{srf.n_yesterday_eq} is null) and #{srf.n_thisweek_eq} is null and #{srf.n_lastweek_eq} is null and #{srf.n_thismonth_eq} is null and  \n #{srf.n_lastmonth_eq} is null)",
+        "customCond" : "(t1.Today = #{srf.n_today_eq} or t1.yesterday = #{srf.n_yesterday_eq} or t1.thisweek= #{srf.n_thisweek_eq} or t1.lastweek= #{srf.n_lastweek_eq} or t1.thismonth = #{srf.n_thismonth_eq} or t1.lastmonth= #{srf.n_lastmonth_eq} or (#{srf.n_today_eq} is null and #{srf.n_yesterday_eq} is null and #{srf.n_thisweek_eq} is null and #{srf.n_lastweek_eq} is null and #{srf.n_thismonth_eq} is null and  \n #{srf.n_lastmonth_eq} is null))",
         "name" : "查询条件"
       } ]
     } ],
