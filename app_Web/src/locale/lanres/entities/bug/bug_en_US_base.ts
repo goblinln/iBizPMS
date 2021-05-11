@@ -431,6 +431,8 @@ function getLocaleResourceBase(){
 		assignto_form: {
 			details: {
 				'grouppanel1': commonLogic.appcommonhandle("分组面板",null), 
+				'grouppanel2': commonLogic.appcommonhandle("分组面板",null), 
+				'grouppanel3': commonLogic.appcommonhandle("分组面板",null), 
 				'druipart1': commonLogic.appcommonhandle("",null), 
 				'grouppanel6': commonLogic.appcommonhandle("历史记录",null), 
 				'group1': commonLogic.appcommonhandle("Bug基本信息",null), 

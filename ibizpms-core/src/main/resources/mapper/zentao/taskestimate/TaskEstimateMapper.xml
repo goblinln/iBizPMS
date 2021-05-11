@@ -181,7 +181,7 @@
 
     <!--数据查询[ProjectActionYear]-->
     <sql id="ProjectActionYear" databaseId="mysql">
-		<![CDATA[ SELECT 	t1.`YEAR`, 	concat( t1.`year`, '年' ) AS yearname , 	t1.project FROM 	( SELECT DISTINCT YEAR ( t1.date ) AS `year`,t.project FROM zt_taskestimate t1 left join zt_task t on t.TASKSN = t1.task WHERE t1.date <> '0000-00-00'  ) t1 ]]>
+		<![CDATA[ SELECT 	t1.`YEAR`, 	concat( t1.`year`, '年' ) AS yearname , 	t1.project FROM 	( SELECT DISTINCT YEAR ( t1.date ) AS `year`,t.project FROM zt_taskestimate t1 left join zt_task t on t.ID = t1.task WHERE t1.date <> '0000-00-00'  ) t1 ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.project =#{srf.webcontext.project} ]]>

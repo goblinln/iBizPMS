@@ -173,7 +173,7 @@
 
     <!--数据查询[BugModuleCodeList]-->
     <sql id="BugModuleCodeList" databaseId="mysql">
-		<![CDATA[ SELECT 	t1.`BRANCH`, 	t1.`DELETED`, 	t1.`GRADE`, 	t1.`ID`, 	CONCAT( '/', t1.`name` ) AS `NAME`, 	t1.`ORDER`, 	t1.`OWNER`, 	case when t1.`PARENT` = 0 then null else t1.parent end as parent , 	t11.`NAME` AS `PARENTNAME`, 	t1.`PATH`, 	t1.`ROOT`, 	t1.`SHORT`, 	t1.`TYPE`, 	t1.MODULESN FROM 	`zt_module` t1 	LEFT JOIN zt_module t11 ON t1.PARENT = t11.MODULESN ]]>
+		<![CDATA[ SELECT 	t1.`BRANCH`, 	t1.`DELETED`, 	t1.`GRADE`, 	t1.`ID`, 	CONCAT( '/', t1.`name` ) AS `NAME`, 	t1.`ORDER`, 	t1.`OWNER`, 	case when t1.`PARENT` = 0 then null else t1.parent end as parent , 	t11.`NAME` AS `PARENTNAME`, 	t1.`PATH`, 	t1.`ROOT`, 	t1.`SHORT`, 	t1.`TYPE`, 	t1.MODULESN FROM 	`zt_module` t1 	LEFT JOIN zt_module t11 ON t1.PARENT = t11.ID ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>
@@ -206,7 +206,7 @@
 
     <!--数据查询[DocModule]-->
     <sql id="DocModule" databaseId="mysql">
-		<![CDATA[ SELECT 	t1.*  FROM 	( 	SELECT 		'0' AS DELETED, 		0 AS ID, 		'/' AS NAME, 		0 AS PARENT, 		',0,' AS path, 		$ { srfdatacontext ( 'doclib', '{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}' )} AS root, 		'doc' AS type , 	  0 as MODULESN UNION 	SELECT 		t1.`DELETED`, 		t1.`ID`, 		CONCAT( 			'/', 		CASE 				 				WHEN ( 				SELECT 					GROUP_CONCAT( tt.NAME SEPARATOR '/' )  				FROM 					zt_module tt  				WHERE 					FIND_IN_SET( tt.id, t1.path )  					AND tt.type = 'doc'  				GROUP BY 					tt.root  					LIMIT 0, 					1  					) IS NOT NULL THEN 					( 					SELECT 						GROUP_CONCAT( tt.NAME SEPARATOR '/' )  					FROM 						zt_module tt  					WHERE 						FIND_IN_SET( tt.id, t1.path )  						AND tt.type = 'doc'  					GROUP BY 						tt.root  						LIMIT 0, 						1  					) ELSE t1.`name`  				END  				) AS `NAME`, 				t1.`PARENT`, 				t1.`PATH`, 				t1.`ROOT`, 				t1.`TYPE` , 				t1.MODULESN 			FROM 				`zt_module` t1 			LEFT JOIN zt_module t11 ON t1.PARENT = t11.MODULESN  	) t1 ]]>
+		<![CDATA[ SELECT 	t1.*  FROM 	( 	SELECT 		'0' AS DELETED, 		0 AS ID, 		'/' AS NAME, 		0 AS PARENT, 		',0,' AS path, 		$ { srfdatacontext ( 'doclib', '{\"defname\":\"ROOT\",\"dename\":\"ZT_MODULE\"}' )} AS root, 		'doc' AS type , 	  0 as MODULESN UNION 	SELECT 		t1.`DELETED`, 		t1.`ID`, 		CONCAT( 			'/', 		CASE 				 				WHEN ( 				SELECT 					GROUP_CONCAT( tt.NAME SEPARATOR '/' )  				FROM 					zt_module tt  				WHERE 					FIND_IN_SET( tt.id, t1.path )  					AND tt.type = 'doc'  				GROUP BY 					tt.root  					LIMIT 0, 					1  					) IS NOT NULL THEN 					( 					SELECT 						GROUP_CONCAT( tt.NAME SEPARATOR '/' )  					FROM 						zt_module tt  					WHERE 						FIND_IN_SET( tt.id, t1.path )  						AND tt.type = 'doc'  					GROUP BY 						tt.root  						LIMIT 0, 						1  					) ELSE t1.`name`  				END  				) AS `NAME`, 				t1.`PARENT`, 				t1.`PATH`, 				t1.`ROOT`, 				t1.`TYPE` , 				t1.MODULESN 			FROM 				`zt_module` t1 			LEFT JOIN zt_module t11 ON t1.PARENT = t11.ID 	) t1 ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>

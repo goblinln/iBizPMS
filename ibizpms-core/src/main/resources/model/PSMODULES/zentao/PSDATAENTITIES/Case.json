@@ -538,7 +538,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "NOT (\n\t\t\tEXISTS (\n\t\t\tSELECT\n\t\t\t\t* \n\t\t\tFROM\n\t\t\t\tzt_testrun t41 \n\t\t\tWHERE\n\t\t\t\tt1.CASESN = t41.`CASE` \n\t\t\t\tAND ( t41.`task` = $ { srfwebcontext ( 'task', '{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}' ) } ) \n\t\t\t) \n\t)",
+        "customCond" : "NOT (\n\t\t\tEXISTS (\n\t\t\tSELECT\n\t\t\t\t* \n\t\t\tFROM\n\t\t\t\tzt_testrun t41 \n\t\t\tWHERE\n\t\t\t\tt1.ID = t41.`CASE` \n\t\t\t\tAND ( t41.`task` = $ { srfwebcontext ( 'task', '{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}' ) } ) \n\t\t\t) \n\t)",
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
@@ -546,7 +546,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "\t\tt1.product IN (\n\t\tSELECT\n\t\t\ttt.product \n\t\tFROM\n\t\t\tzt_testtask t\n\t\t\tLEFT JOIN zt_projectproduct tt ON tt.project = t.project \n\t\tWHERE\n\t\t\tt.TESTTASKSN = $ { srfwebcontext ( 'task', '{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}' ) } \n\t\t)",
+        "customCond" : "\t\tt1.product IN (\n\t\tSELECT\n\t\t\ttt.product \n\t\tFROM\n\t\t\tzt_testtask t\n\t\t\tLEFT JOIN zt_projectproduct tt ON tt.project = t.project \n\t\tWHERE\n\t\t\tt.ID = $ { srfwebcontext ( 'task', '{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}' ) } \n\t\t)",
         "name" : "查询条件"
       } ]
     } ],
@@ -654,7 +654,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "\tt81.TESTREPORTSN = $ { srfwebcontext ( 'srfparentkey', '{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}' ) } \n\tAND ( FIND_IN_SET( t1.CASESN, t81.cases ) ) \n\tAND t71.date > t81.`begin` \n\tAND t71.date < t81.`end`",
+        "customCond" : "\tt81.id = $ { srfwebcontext ( 'srfparentkey', '{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}' ) } \n\tAND ( FIND_IN_SET( t1.id, t81.cases ) ) \n\tAND t71.date > t81.`begin` \n\tAND t71.date < t81.`end`",
         "name" : "查询条件"
       } ]
     } ],

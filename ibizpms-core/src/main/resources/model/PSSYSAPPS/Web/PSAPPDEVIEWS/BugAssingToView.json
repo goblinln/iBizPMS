@@ -413,101 +413,119 @@
           "inputTipClosable" : false,
           "showCaption" : true
         }, {
-          "caption" : "抄送给",
-          "codeName" : "mailto",
-          "dataType" : 25,
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "分组面板",
+          "codeName" : "grouppanel2",
           "detailStyle" : "DEFAULT",
-          "detailType" : "FORMITEM",
-          "enableCond" : 3,
-          "ignoreInput" : 0,
-          "labelPos" : "LEFT",
-          "labelWidth" : 100,
-          "name" : "mailto",
-          "noPrivDisplayMode" : 1,
-          "getPSAppDEField" : {
-            "name" : "MAILTO",
-            "codeName" : "Mailto"
-          },
-          "getPSEditor" : {
-            "editorType" : "MDROPDOWNLIST",
+          "detailType" : "GROUPPANEL",
+          "name" : "grouppanel2",
+          "getPSDEFormDetails" : [ {
+            "caption" : "抄送给",
+            "codeName" : "mailto",
+            "dataType" : 25,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 100,
             "name" : "mailto",
-            "getPSAppCodeList" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "MAILTO",
+              "codeName" : "Mailto"
             },
-            "singleSelect" : false
-          },
-          "getPSLayoutPos" : {
-            "colLG" : 18,
-            "colMD" : 18,
-            "layout" : "TABLE_24COL"
-          },
-          "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "needCodeListConfig" : true,
-          "showCaption" : true
-        }, {
-          "codeName" : "mailtoconact",
-          "dataType" : 25,
-          "detailStyle" : "DEFAULT",
-          "detailType" : "FORMITEM",
-          "enableCond" : 3,
-          "ignoreInput" : 0,
-          "labelPos" : "LEFT",
-          "labelWidth" : 10,
-          "name" : "mailtoconact",
-          "noPrivDisplayMode" : 1,
-          "getPSAppDEField" : {
-            "name" : "MAILTOCONACT",
-            "codeName" : "Mailtoconact"
-          },
-          "getPSDEFormItemUpdate" : {
-            "modelref" : true,
-            "id" : "GetUserConcat"
-          },
-          "getPSEditor" : {
-            "editorParams" : {
-              "AC" : "TRUE",
-              "TRIGGER" : "TRUE",
-              "PICKUPVIEW" : "FALSE"
+            "getPSEditor" : {
+              "editorType" : "MDROPDOWNLIST",
+              "name" : "mailto",
+              "getPSAppCodeList" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+              },
+              "singleSelect" : false
             },
-            "editorType" : "PICKEREX_TRIGGER",
-            "handlerType" : "PickupText",
+            "getPSLayoutPos" : {
+              "colLG" : 18,
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "allowEmpty" : true,
+            "emptyCaption" : false,
+            "hidden" : false,
+            "inputTipClosable" : false,
+            "needCodeListConfig" : true,
+            "showCaption" : true
+          }, {
+            "codeName" : "mailtoconact",
+            "dataType" : 25,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 10,
             "name" : "mailtoconact",
-            "getPSAppDEACMode" : {
-              "modelref" : true,
-              "id" : "Default"
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "MAILTOCONACT",
+              "codeName" : "Mailtoconact"
             },
-            "getPSAppDEDataSet" : {
+            "getPSDEFormItemUpdate" : {
               "modelref" : true,
-              "id" : "FetchCurUSERCONTACT"
+              "id" : "GetUserConcat"
             },
-            "getPSAppDataEntity" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
+            "getPSEditor" : {
+              "editorParams" : {
+                "AC" : "TRUE",
+                "TRIGGER" : "TRUE",
+                "PICKUPVIEW" : "FALSE"
+              },
+              "editorType" : "PICKEREX_TRIGGER",
+              "handlerType" : "PickupText",
+              "name" : "mailtoconact",
+              "getPSAppDEACMode" : {
+                "modelref" : true,
+                "id" : "Default"
+              },
+              "getPSAppDEDataSet" : {
+                "modelref" : true,
+                "id" : "FetchCurUSERCONTACT"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/UserContact.json"
+              },
+              "valueItemName" : "mailtopk",
+              "dropDownView" : false,
+              "enableAC" : true,
+              "enableLinkView" : false,
+              "enablePickupView" : false,
+              "forceSelection" : true,
+              "showTrigger" : true,
+              "singleSelect" : true
+            },
+            "getPSLayoutPos" : {
+              "colLG" : 6,
+              "colMD" : 6,
+              "layout" : "TABLE_24COL"
             },
             "valueItemName" : "mailtopk",
-            "dropDownView" : false,
-            "enableAC" : true,
-            "enableLinkView" : false,
-            "enablePickupView" : false,
-            "forceSelection" : true,
-            "showTrigger" : true,
-            "singleSelect" : true
-          },
-          "getPSLayoutPos" : {
-            "colLG" : 6,
-            "colMD" : 6,
+            "allowEmpty" : true,
+            "emptyCaption" : true,
+            "hidden" : false,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "columnCount" : 24,
             "layout" : "TABLE_24COL"
           },
-          "valueItemName" : "mailtopk",
-          "allowEmpty" : true,
-          "emptyCaption" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : true
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "infoGroupMode" : false,
+          "showCaption" : false
         }, {
           "caption" : "抄送给",
           "codeName" : "mailtopk",
@@ -538,38 +556,56 @@
           "inputTipClosable" : false,
           "showCaption" : true
         }, {
-          "caption" : "备注",
-          "codeName" : "comment",
-          "dataType" : 21,
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "分组面板",
+          "codeName" : "grouppanel3",
           "detailStyle" : "DEFAULT",
-          "detailType" : "FORMITEM",
-          "enableCond" : 3,
-          "ignoreInput" : 0,
-          "labelPos" : "LEFT",
-          "labelWidth" : 100,
-          "name" : "comment",
-          "noPrivDisplayMode" : 1,
-          "getPSAppDEField" : {
-            "name" : "COMMENT",
-            "codeName" : "Comment"
-          },
-          "getPSEditor" : {
-            "editorParams" : {
-              "uploadparams" : "{objecttype:\"bug\",version:\"editor\"}",
-              "exportparams" : "{objecttype:\"bug\",version:\"editor\"}"
+          "detailType" : "GROUPPANEL",
+          "name" : "grouppanel3",
+          "getPSDEFormDetails" : [ {
+            "caption" : "备注",
+            "codeName" : "comment",
+            "dataType" : 21,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 100,
+            "name" : "comment",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "COMMENT",
+              "codeName" : "Comment"
             },
-            "editorType" : "HTMLEDITOR",
-            "name" : "comment"
+            "getPSEditor" : {
+              "editorParams" : {
+                "uploadparams" : "{objecttype:\"bug\",version:\"editor\"}",
+                "exportparams" : "{objecttype:\"bug\",version:\"editor\"}"
+              },
+              "editorType" : "HTMLEDITOR",
+              "name" : "comment"
+            },
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "allowEmpty" : true,
+            "emptyCaption" : false,
+            "hidden" : false,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
           },
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : true
+          "infoGroupMode" : false,
+          "showCaption" : false
         }, {
           "actionGroupExtractMode" : "ITEM",
           "caption" : "历史记录",

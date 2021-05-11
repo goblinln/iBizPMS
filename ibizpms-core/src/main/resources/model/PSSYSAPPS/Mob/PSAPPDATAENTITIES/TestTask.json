@@ -376,22 +376,6 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "版本",
-      "name" : "BUILDNAME",
-      "getPSAppDEField" : {
-        "name" : "BUILDNAME",
-        "codeName" : "BuildName"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "项目",
-      "name" : "PROJECTTNAME",
-      "getPSAppDEField" : {
-        "name" : "PROJECTTNAME",
-        "codeName" : "ProjecttName"
-      },
-      "uniqueItem" : false
-    }, {
       "caption" : "描述",
       "name" : "DESC",
       "getPSAppDEField" : {
@@ -408,14 +392,6 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "备注",
-      "name" : "COMMENT",
-      "getPSAppDEField" : {
-        "name" : "COMMENT",
-        "codeName" : "Comment"
-      },
-      "uniqueItem" : false
-    }, {
       "caption" : "抄送给",
       "name" : "MAILTO",
       "getPSAppDEField" : {
@@ -428,11 +404,11 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "版本",
-      "name" : "BUILD",
+      "caption" : "开始日期",
+      "name" : "BEGIN",
       "getPSAppDEField" : {
-        "name" : "BUILD",
-        "codeName" : "Build"
+        "name" : "BEGIN",
+        "codeName" : "Begin"
       },
       "uniqueItem" : false
     }, {
@@ -445,6 +421,54 @@
       "getPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealNameProductTeam.json"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "已删除",
+      "name" : "DELETED",
+      "getPSAppDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "名称",
+      "name" : "NAME",
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "版本",
+      "name" : "BUILDNAME",
+      "getPSAppDEField" : {
+        "name" : "BUILDNAME",
+        "codeName" : "BuildName"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "项目",
+      "name" : "PROJECTTNAME",
+      "getPSAppDEField" : {
+        "name" : "PROJECTTNAME",
+        "codeName" : "ProjecttName"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "备注",
+      "name" : "COMMENT",
+      "getPSAppDEField" : {
+        "name" : "COMMENT",
+        "codeName" : "Comment"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "版本",
+      "name" : "BUILD",
+      "getPSAppDEField" : {
+        "name" : "BUILD",
+        "codeName" : "Build"
       },
       "uniqueItem" : false
     }, {
@@ -464,14 +488,6 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "已删除",
-      "name" : "DELETED",
-      "getPSAppDEField" : {
-        "name" : "DELETED",
-        "codeName" : "Deleted"
-      },
-      "uniqueItem" : false
-    }, {
       "caption" : "子状态",
       "name" : "SUBSTATUS",
       "getPSAppDEField" : {
@@ -480,19 +496,19 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "所属项目",
-      "name" : "PROJECT",
-      "getPSAppDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
-      },
-      "uniqueItem" : false
-    }, {
       "caption" : "产品",
       "name" : "PRODUCTNAME",
       "getPSAppDEField" : {
         "name" : "PRODUCTNAME",
         "codeName" : "ProductName"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "所属项目",
+      "name" : "PROJECT",
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
       },
       "uniqueItem" : false
     }, {
@@ -516,14 +532,6 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "开始日期",
-      "name" : "BEGIN",
-      "getPSAppDEField" : {
-        "name" : "BEGIN",
-        "codeName" : "Begin"
-      },
-      "uniqueItem" : false
-    }, {
       "caption" : "优先级",
       "name" : "PRI",
       "getPSAppDEField" : {
@@ -533,14 +541,6 @@
       "getPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testtask__pri.json"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "名称",
-      "name" : "NAME",
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
       },
       "uniqueItem" : false
     } ],
