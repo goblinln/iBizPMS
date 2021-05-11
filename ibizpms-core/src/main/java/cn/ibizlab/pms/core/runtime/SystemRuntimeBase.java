@@ -282,6 +282,5 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
             log.error(String.format("登记系统日志发生错误：%s",e.getMessage()));
         }
     }
-    import cn.ibizlab.sample.util.client.IBZTPSFeignClient;
 
 }
