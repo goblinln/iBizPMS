@@ -186,6 +186,7 @@ export class AppSearchBarBase extends SearchBarControlBase {
                         transfer
                         placement="top-end"
                         title="存储自定义查询"
+                        popper-class="searchbar-poptip"
                         op-on-popper-show={this.openPoper.bind(this)}>
                             <i-button><i class="fa fa-floppy-o" aria-hidden="true"></i></i-button>
                             <div slot="content">

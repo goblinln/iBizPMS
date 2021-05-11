@@ -1,4 +1,5 @@
-import { IPSAppDEField, IPSDEFSearchMode, IPSSearchBar, IPSSearchBarFilter } from '@ibiz/dynamic-model-api';
+import { IPSAppDEField, IPSApplication, IPSAppUtil, IPSDEFSearchMode, IPSSearchBar, IPSSearchBarFilter } from '@ibiz/dynamic-model-api';
+import { GetModelService } from 'ibiz-core';
 import moment from 'moment';
 import { AppSearchBarService } from '../ctrl-service/app-searchbar-service';
 import { MDControlBase } from './md-control-base';
@@ -116,6 +117,21 @@ export class SearchBarControlBase extends MDControlBase {
         await super.ctrlModelInit();
         this.service = new AppSearchBarService();
         this.modelId = `searchbar_${this.appDeCodeName ? this.appDeCodeName.toLowerCase() : 'app'}_${this.controlInstance.codeName.toLowerCase()}`;
+        await this.initUtilService();
+    }
+
+    /**
+     * 初始化功能服务名称
+     *
+     * @memberof SearchBarControlBase
+     */
+    public async initUtilService() {
+        const appUtil: IPSAppUtil = ((await (await GetModelService(this.context))?.app as IPSApplication).getAllPSAppUtils() || []).find((util: any) => {
+            return util.utilType == 'FILTERSTORAGE';
+        }) as IPSAppUtil;
+        if (appUtil) {
+            this.utilServiceName = appUtil.codeName?.toLowerCase();
+        }
     }
 
     /**
@@ -126,13 +142,7 @@ export class SearchBarControlBase extends MDControlBase {
     public ctrlInit() {
         super.ctrlInit();
         this.initDetailsModel();
-        if(this.viewState) {
-            this.viewStateEvent = this.viewState.subscribe(({ tag, action, data }: any) => {
-                if (Object.is('load', action)) {
-                    this.load(data);
-                }
-            });
-        }
+        this.load();
     }
 
     /**
@@ -317,11 +327,10 @@ export class SearchBarControlBase extends MDControlBase {
             data: JSON.parse(JSON.stringify(this.filterItems))
         })
         this.selectItem = time.unix().toString();
-
         let param: any = {};
 		Object.assign(param, {
             model: JSON.parse(JSON.stringify(this.historyItems)),
-            appdeName: this.appdeName,
+            appdeName: this.appDeCodeName,
             modelid: this.modelId,
             utilServiceName: this.utilServiceName,
 			...this.viewparams
@@ -350,10 +359,10 @@ export class SearchBarControlBase extends MDControlBase {
      * @return {*}
      * @memberof SearchBarControlBase
      */
-    public load(data: any) {
+    public load() {
         let param: any = {};
         Object.assign(param, {
-            appdeName: this.appdeName,
+            appdeName: this.appDeCodeName,
             modelid: this.modelId,
             utilServiceName: this.utilServiceName,
             ...this.viewparams
@@ -380,6 +389,7 @@ export class SearchBarControlBase extends MDControlBase {
     public onFilterChange(evt: any) {
         let item: any = this.historyItems.find((item: any) => Object.is(evt, item.value));
         if(item) {
+            this.selectItem = item.value;
             this.filterItems = JSON.parse(JSON.stringify(item.data));
         }
     }

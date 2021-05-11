@@ -506,7 +506,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "(t1.parent <= 0 or (t1.parent > 0 and t1.assignedTo not in (select t.assignedTo from zt_task t where  t.deleted = '0' and t.id = t1.parent)))",
+        "customCond" : "(t1.parent <= 0 or (t1.parent > 0 and t1.assignedTo not in (select t.assignedTo from zt_task t where  t.deleted = '0' and t.TASKSN = t1.parent)))",
         "name" : "查询条件"
       } ]
     } ],
@@ -741,7 +741,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "EXISTS(select 1 from zt_taskestimate t where t.task = t1.id and t.account = #{srf.sessioncontext.srfloginname} and DATE_FORMAT( t.date, '%Y-%m-%d' ) = DATE_FORMAT( CASE WHEN #{srf.datacontext.date} IS NULL THEN now() ELSE #{srf.datacontext.date} END, '%Y-%m-%d' ))",
+        "customCond" : "EXISTS(select 1 from zt_taskestimate t where t.task = t1.TASKSN and t.account = #{srf.sessioncontext.srfloginname} and DATE_FORMAT( t.date, '%Y-%m-%d' ) = DATE_FORMAT( CASE WHEN #{srf.datacontext.date} IS NULL THEN now() ELSE #{srf.datacontext.date} END, '%Y-%m-%d' ))",
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",

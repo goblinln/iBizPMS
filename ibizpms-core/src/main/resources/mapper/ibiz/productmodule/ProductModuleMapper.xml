@@ -169,7 +169,7 @@
 
     <!--数据查询[ByPath]-->
     <sql id="ByPath" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1   ]]>
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`MODULESN`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, t1.`TYPE`, t1.MODULESN FROM `zt_module` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>
@@ -208,7 +208,7 @@
 
     <!--数据查询[ParentModule]-->
     <sql id="ParentModule" databaseId="mysql">
-		<![CDATA[ SELECT 	t1.`BRANCH`, 	t1.`DELETED`, 	t1.`GRADE`, 	t1.`ID`, 	( CASE WHEN EXISTS ( SELECT 1 FROM ZT_MODULE WHERE PARENT = t1.`ID` ) THEN FALSE ELSE TRUE END ) AS `ISLEAF`, 	CONCAT( 	'/', 	( SELECT 	GROUP_CONCAT( tt.NAME SEPARATOR '/' )  FROM 	zt_module tt  WHERE 	FIND_IN_SET( tt.id, t1.path )  	AND tt.type = 'story'  GROUP BY 	tt.root  	)  	) AS `NAME`, 	t1.`ORDER`, 	t1.`OWNER`, 	t1.`PARENT`, 	t21.`NAME` AS `PARENTNAME`, 	t1.`PATH`, 	t1.`ROOT`, 	t11.`NAME` AS `ROOTNAME`, 	t1.`SHORT`, 	t1.`TYPE`  FROM 	`zt_module` t1 	LEFT JOIN zt_product t11 ON t1.ROOT = t11.ID 	LEFT JOIN zt_module t21 ON t1.PARENT = t21.ID ]]>
+		<![CDATA[ SELECT 	t1.`BRANCH`, 	t1.`DELETED`, 	t1.`GRADE`, 	t1.`ID`, 	( CASE WHEN EXISTS ( SELECT 1 FROM ZT_MODULE WHERE PARENT = t1.`MODULESN` ) THEN FALSE ELSE TRUE END ) AS `ISLEAF`, 	CONCAT( 	'/', 	( SELECT 	GROUP_CONCAT( tt.NAME SEPARATOR '/' )  FROM 	zt_module tt  WHERE 	FIND_IN_SET( tt.id, t1.path )  	AND tt.type = 'story'  GROUP BY 	tt.root  	)  	) AS `NAME`, 	t1.`ORDER`, 	t1.`OWNER`, 	t1.`PARENT`, 	t21.`NAME` AS `PARENTNAME`, 	t1.`PATH`, 	t1.`ROOT`, 	t11.`NAME` AS `ROOTNAME`, 	t1.`SHORT`, 	t1.`TYPE`, 	t1.MODULESN FROM 	`zt_module` t1 	LEFT JOIN zt_product t11 ON t1.ROOT = t11.productsn 	LEFT JOIN zt_module t21 ON t1.PARENT = t21.MODULESN ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.type = 'story' ]]>
@@ -265,7 +265,7 @@
 
     <!--数据查询[StoryModule]-->
     <sql id="StoryModule" databaseId="mysql">
-		<![CDATA[ SELECT 	t1.*  FROM 	( 	SELECT 		'0' AS deleted, 		0 AS ID, 		'/' AS `name`,- 1 AS ORDERPK, 		#{srf.webcontext.product} AS root, 		'story' AS type  	FROM 	DUAL UNION 	SELECT 		t1.`DELETED`, 		t1.`ID`, 		CONCAT( 			'/',case when t1.parent > 0 then ( 			SELECT 				GROUP_CONCAT( tt.NAME SEPARATOR '/' )  			FROM 				zt_module tt  			WHERE 				FIND_IN_SET( tt.id, t1.path )  				AND tt.type = 'story'  			GROUP BY 				tt.root  			) else t1.`name` end) AS `NAME`, 		( 			CONCAT_ws( 				'', 			CASE 					 					WHEN t1.parent > 0 THEN 						( 						SELECT 							GROUP_CONCAT( tt.`ORDER` SEPARATOR '-' )  						FROM 							zt_module tt  						WHERE 							FIND_IN_SET( tt.id, t1.path )  							AND tt.type = 'story'  						GROUP BY 							tt.root  							LIMIT 0, 							1  						) ELSE t1.`ORDER`  					END  					)) AS ORDERPK, 				t1.`ROOT`, 				t1.`TYPE`  			FROM 			`zt_module` t1  			where t1.type = 'story' and t1.deleted = '0' and t1.root = #{srf.webcontext.product} 	) t1 ]]>
+		<![CDATA[ SELECT 	t1.*  FROM 	( 	SELECT 		'0' AS deleted, 		0 AS ID, 		'/' AS `name`,- 1 AS ORDERPK, 		#{srf.webcontext.product} AS root, 		'story' AS type  	FROM 	DUAL UNION 	SELECT 		t1.`DELETED`, 		t1.`ID`, 		CONCAT( 			'/',case when t1.parent > 0 then ( 			SELECT 				GROUP_CONCAT( tt.NAME SEPARATOR '/' )  			FROM 				zt_module tt  			WHERE 				FIND_IN_SET( tt.id, t1.path )  				AND tt.type = 'story'  			GROUP BY 				tt.root  			) else t1.`name` end) AS `NAME`, 		( 			CONCAT_ws( 				'', 			CASE 					 					WHEN t1.parent > 0 THEN 						( 						SELECT 							GROUP_CONCAT( tt.`ORDER` SEPARATOR '-' )  						FROM 							zt_module tt  						WHERE 							FIND_IN_SET( tt.id, t1.path )  							AND tt.type = 'story'  						GROUP BY 							tt.root  							LIMIT 0, 							1  						) ELSE t1.`ORDER`  					END  					)) AS ORDERPK, 				t1.`ROOT`, 				t1.`TYPE`  , 				t1.MODULESN 			FROM 			`zt_module` t1  			where t1.type = 'story' and t1.deleted = '0' and t1.root = #{srf.webcontext.product} 	) t1 ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>
