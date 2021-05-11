@@ -3509,12 +3509,10 @@
           "glyph" : "xf044@FontAwesome",
           "cssClass" : "fa fa-edit"
         },
-        "refreshMode" : 1,
         "timeout" : 60000,
         "uIActionMode" : "FRONT",
         "uIActionTag" : "MobMainEdit",
         "uIActionType" : "DEUIACTION",
-        "reloadData" : true,
         "id" : "MobMainEdit@Task"
       },
       "tooltip" : "编辑",

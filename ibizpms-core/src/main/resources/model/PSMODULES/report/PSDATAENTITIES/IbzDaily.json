@@ -1378,6 +1378,49 @@
     "logicName" : "已提交",
     "mSTag" : "1",
     "name" : "已提交",
+    "getPSDEMainStateActions" : [ {
+      "name" : "Create",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "HaveRead",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/HaveRead.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "GetDraft",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/GetDraft.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__DAILY_SUBMIT_BUT",
       "getPSDEOPPriv" : {
@@ -1406,6 +1449,84 @@
     "logicName" : "未提交",
     "mSTag" : "0",
     "name" : "未提交",
+    "getPSDEMainStateActions" : [ {
+      "name" : "getYeaterdayDailyPlansTaskEdit",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/GetYeaterdayDailyPlansTaskEdit.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "submit",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/Submit.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "PushUserDaily",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/PushUserDaily.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "CreateUserDaily",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/CreateUserDaily.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Create",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "LinkCompleteTask",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/LinkCompleteTask.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "GetDraft",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/GetDraft.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "getYesterdayDailyPlansTask",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/report/PSDATAENTITIES/IbzDaily/PSDEACTIONS/GetYesterdayDailyPlansTask.json"
+      },
+      "allowMode" : true
+    } ],
     "stateValue" : "0",
     "viewActions" : 0,
     "wFStateMode" : 0,

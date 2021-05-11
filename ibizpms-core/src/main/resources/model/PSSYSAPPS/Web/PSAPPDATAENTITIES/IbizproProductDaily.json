@@ -501,6 +501,12 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductDaily.json"
     },
+    "getPSNavigateContexts" : [ {
+      "key" : "IBIZPROPRODUCTDAILY",
+      "name" : "IBIZPROPRODUCTDAILY",
+      "value" : "0",
+      "rawValue" : true
+    } ],
     "getPSSysImage" : {
       "glyph" : "xf067@FontAwesome",
       "cssClass" : "fa fa-plus"

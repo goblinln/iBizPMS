@@ -220,6 +220,11 @@
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbizproProductWeekly.json"
         },
         "getPSNavigateContexts" : [ {
+          "key" : "IBIZPROPRODUCTWEEKLY",
+          "name" : "IBIZPROPRODUCTWEEKLY",
+          "value" : "0",
+          "rawValue" : true
+        }, {
           "key" : "ISAUTO",
           "name" : "ISAUTO",
           "value" : "No",

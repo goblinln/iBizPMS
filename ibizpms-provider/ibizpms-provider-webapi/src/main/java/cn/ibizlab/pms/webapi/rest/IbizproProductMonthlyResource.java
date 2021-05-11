@@ -52,20 +52,16 @@ public class IbizproProductMonthlyResource {
     @Lazy
     public IbizproProductMonthlyMapping ibizproproductmonthlyMapping;
 
-    @PreAuthorize("@IbizproProductMonthlyRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建产品月报", tags = {"产品月报" },  notes = "新建产品月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductmonthlies")
     @Transactional
     public ResponseEntity<IbizproProductMonthlyDTO> create(@Validated @RequestBody IbizproProductMonthlyDTO ibizproproductmonthlydto) {
         IbizproProductMonthly domain = ibizproproductmonthlyMapping.toDomain(ibizproproductmonthlydto);
 		ibizproproductmonthlyService.create(domain);
-        if(!ibizproproductmonthlyRuntime.test(domain.getIbizproproductmonthlyid(),"CREATE"))
-            throw new RuntimeException("无权限操作");
         IbizproProductMonthlyDTO dto = ibizproproductmonthlyMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbizproProductMonthlyRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建产品月报", tags = {"产品月报" },  notes = "批量新建产品月报")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibizproproductmonthlies/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IbizproProductMonthlyDTO> ibizproproductmonthlydtos) {
@@ -74,7 +70,6 @@ public class IbizproProductMonthlyResource {
     }
 
     @VersionCheck(entity = "ibizproproductmonthly" , versionfield = "updatedate")
-    @PreAuthorize("@IbizproProductMonthlyRuntime.test(#ibizproproductmonthly_id,'UPDATE')")
     @ApiOperation(value = "更新产品月报", tags = {"产品月报" },  notes = "更新产品月报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproproductmonthlies/{ibizproproductmonthly_id}")
     @Transactional
@@ -82,13 +77,10 @@ public class IbizproProductMonthlyResource {
 		IbizproProductMonthly domain  = ibizproproductmonthlyMapping.toDomain(ibizproproductmonthlydto);
         domain.setIbizproproductmonthlyid(ibizproproductmonthly_id);
 		ibizproproductmonthlyService.update(domain );
-        if(!ibizproproductmonthlyRuntime.test(ibizproproductmonthly_id,"UPDATE"))
-            throw new RuntimeException("无权限操作");
 		IbizproProductMonthlyDTO dto = ibizproproductmonthlyMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@IbizproProductMonthlyRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新产品月报", tags = {"产品月报" },  notes = "批量更新产品月报")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibizproproductmonthlies/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IbizproProductMonthlyDTO> ibizproproductmonthlydtos) {
@@ -96,14 +88,12 @@ public class IbizproProductMonthlyResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@IbizproProductMonthlyRuntime.test(#ibizproproductmonthly_id,'DELETE')")
     @ApiOperation(value = "删除产品月报", tags = {"产品月报" },  notes = "删除产品月报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductmonthlies/{ibizproproductmonthly_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibizproproductmonthly_id") Long ibizproproductmonthly_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibizproproductmonthlyService.remove(ibizproproductmonthly_id));
     }
 
-    @PreAuthorize("@IbizproProductMonthlyRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除产品月报", tags = {"产品月报" },  notes = "批量删除产品月报")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibizproproductmonthlies/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {

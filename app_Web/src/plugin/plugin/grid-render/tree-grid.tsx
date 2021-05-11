@@ -97,14 +97,14 @@ export class AppTreeGridService extends AppGridService {
 @VueLifeCycleProcessing()
 export class TreeGrid extends AppDefaultGrid {
 
-public async ctrlModelInit() {
-        await super.ctrlModelInit();
-        if (!(this.Environment && this.Environment.isPreviewMode)) {
-            this.service = new AppTreeGridService(this.controlInstance);
-        }
+	public async ctrlModelInit() {
+ 		await super.ctrlModelInit();
+ 		if (!(this.Environment && this.Environment.isPreviewMode)) {
+			this.service = new AppTreeGridService(this.controlInstance);
+		}
     }
 
-	/**
+	 /**
      * 绘制操作列
      * 
      * @param {any} column 表格列实例
@@ -169,7 +169,7 @@ public async ctrlModelInit() {
     public computeGridParams() {
         const opt = super.computeGridParams();
         opt['treeProps'] = {children: 'items', hasChildren: 'hasChildren'}
-        opt['rowKey'] = 'id'
+        opt['rowKey'] = 'srfkey'
         return opt;
     }
 
