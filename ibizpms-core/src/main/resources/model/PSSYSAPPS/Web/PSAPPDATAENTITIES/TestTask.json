@@ -368,6 +368,14 @@
       },
       "uniqueItem" : false
     }, {
+      "caption" : "已删除",
+      "name" : "DELETED",
+      "getPSAppDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "uniqueItem" : false
+    }, {
       "caption" : "名称",
       "name" : "NAME",
       "getPSAppDEField" : {
@@ -376,27 +384,11 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "子状态",
-      "name" : "SUBSTATUS",
-      "getPSAppDEField" : {
-        "name" : "SUBSTATUS",
-        "codeName" : "SubStatus"
-      },
-      "uniqueItem" : false
-    }, {
       "caption" : "版本",
       "name" : "BUILDNAME",
       "getPSAppDEField" : {
         "name" : "BUILDNAME",
         "codeName" : "BuildName"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "所属项目",
-      "name" : "PROJECT",
-      "getPSAppDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
       },
       "uniqueItem" : false
     }, {
@@ -424,6 +416,14 @@
       },
       "uniqueItem" : false
     }, {
+      "caption" : "子状态",
+      "name" : "SUBSTATUS",
+      "getPSAppDEField" : {
+        "name" : "SUBSTATUS",
+        "codeName" : "SubStatus"
+      },
+      "uniqueItem" : false
+    }, {
       "caption" : "所属产品",
       "name" : "PRODUCT",
       "getPSAppDEField" : {
@@ -432,11 +432,11 @@
       },
       "uniqueItem" : false
     }, {
-      "caption" : "auto",
-      "name" : "AUTO",
+      "caption" : "所属项目",
+      "name" : "PROJECT",
       "getPSAppDEField" : {
-        "name" : "AUTO",
-        "codeName" : "Auto"
+        "name" : "PROJECT",
+        "codeName" : "Project"
       },
       "uniqueItem" : false
     }, {
@@ -445,6 +445,14 @@
       "getPSAppDEField" : {
         "name" : "REPORT",
         "codeName" : "Report"
+      },
+      "uniqueItem" : false
+    }, {
+      "caption" : "auto",
+      "name" : "AUTO",
+      "getPSAppDEField" : {
+        "name" : "AUTO",
+        "codeName" : "Auto"
       },
       "uniqueItem" : false
     }, {
@@ -525,14 +533,6 @@
       "getPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProductTeam.json"
-      },
-      "uniqueItem" : false
-    }, {
-      "caption" : "已删除",
-      "name" : "DELETED",
-      "getPSAppDEField" : {
-        "name" : "DELETED",
-        "codeName" : "Deleted"
       },
       "uniqueItem" : false
     } ],

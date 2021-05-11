@@ -412,6 +412,13 @@
     },
     "sysUniResCode" : "BUG_CREATE_BUT"
   }, {
+    "name" : "研发人员-月报提交",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "report__MONTHLY_SUBMIT_BUT"
+    },
+    "sysUniResCode" : "MONTHLY_SUBMIT_BUT"
+  }, {
     "name" : "研发人员-任务指派",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -496,6 +503,13 @@
     },
     "sysUniResCode" : "BUG_NFAVOR_BUT"
   }, {
+    "name" : "研发人员-汇报提交",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "report__REPORTLY_SUBMIT_BUT"
+    },
+    "sysUniResCode" : "REPORTLY_SUBMIT_BUT"
+  }, {
     "name" : "研发人员-顶部_文档",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -524,6 +538,13 @@
     },
     "sysUniResCode" : "TASK_CREATE_BUT"
   }, {
+    "name" : "研发人员-周报待提交",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__WEEKLY_NSUBMIT_BUT"
+    },
+    "sysUniResCode" : "WEEKLY_NSUBMIT_BUT"
+  }, {
     "name" : "研发人员-Bug关闭",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -544,6 +565,13 @@
       "id" : "ibiz__DOC_FAVOUR_BUT"
     },
     "sysUniResCode" : "DOC_FAVOUR_BUT"
+  }, {
+    "name" : "研发人员-日报提交",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "report__DAILY_SUBMIT_BUT"
+    },
+    "sysUniResCode" : "DAILY_SUBMIT_BUT"
   }, {
     "name" : "研发人员-任务关闭",
     "getPSSysUniRes" : {
@@ -685,6 +713,13 @@
     },
     "sysUniResCode" : "TASK_START_BUT"
   }, {
+    "name" : "研发人员-周报已提交",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "report__WEEKLY_SUBMIT_BUT"
+    },
+    "sysUniResCode" : "WEEKLY_SUBMIT_BUT"
+  }, {
     "name" : "研发人员-顶部_我的收藏",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -778,5 +813,5 @@
   } ],
   "roleTag" : "Developer",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "BUG_DELETE_BUT", "TOP_ELECSEARCH_MENU", "STORY_NFAVOR_BUT", "BUG_CREATE_BUT", "TASK_ASSIGN_BUT", "BUG_UNLINK_BUT", "BUG_ACTIVATE_BUT", "TASK_DELETE_BUT", "DOC_NFAVOUR_BUT", "UNIVERSALEDIT", "UNIVERSALSAVE", "TASK_FAVOR_BUT", "TASK_PROCEED_BUT", "STORY_FAVOR_BUT", "TOP_MYPLACE_MENU", "BUG_NFAVOR_BUT", "TOP_DOC_MENU", "TASK_XQCHANGE_BUT", "LEFT_CASE_MENU", "TASK_CREATE_BUT", "BUG_CLOSE_BUT", "TASK_PAUSE_BUT", "DOC_FAVOUR_BUT", "TASK_CLOSE_BUT", "CASE_FAVOR_BUT", "TASK_CONSUM_BUT", "BUG_CONFIRM_BUT", "TASK_ACTIVATION_BUT", "BUG_EDIT_BUT", "LEFT_PROJECT_MENU", "TOP_PRODUCT_MENU", "TASK_EDIT_BUT", "BUG_RESOLVE_BUT", "TASK_CANCEL_BUT", "DOCLIBMODULE_FAVOUR_BUT", "TOP_CASE_MENU", "DOCLIB_FAVOUR_BUT", "CASE_NFAVOR_BUT", "TASK_COMPLETE_BUT", "DOCLIBMODULE_NFAVOUR_BUT", "BUG_FAVOR_BUT", "DOCLIB_NFAVOUR_BUT", "TASK_START_BUT", "TOP_MYFAVOURITE_MENU", "TASK_NFAVOR_BUT", "UNIVERSALDELETE", "UNIVERSALCREATE", "TOP_YEARSUM_MENU", "BUG_ASSIGNTO_BUT", "TOP_PROJECT_MENU", "BUG_CREATECASE_BUT", "TOP_SUM_MENU", "PRODUCTLEFT", "BUG_TOSTORY_BUT", "TASK_FORWARD_BUT", "TASK_SUBTASKS_BUT" ]
+  "uniResTags" : [ "BUG_DELETE_BUT", "TOP_ELECSEARCH_MENU", "STORY_NFAVOR_BUT", "BUG_CREATE_BUT", "MONTHLY_SUBMIT_BUT", "TASK_ASSIGN_BUT", "BUG_UNLINK_BUT", "BUG_ACTIVATE_BUT", "TASK_DELETE_BUT", "DOC_NFAVOUR_BUT", "UNIVERSALEDIT", "UNIVERSALSAVE", "TASK_FAVOR_BUT", "TASK_PROCEED_BUT", "STORY_FAVOR_BUT", "TOP_MYPLACE_MENU", "BUG_NFAVOR_BUT", "REPORTLY_SUBMIT_BUT", "TOP_DOC_MENU", "TASK_XQCHANGE_BUT", "LEFT_CASE_MENU", "TASK_CREATE_BUT", "WEEKLY_NSUBMIT_BUT", "BUG_CLOSE_BUT", "TASK_PAUSE_BUT", "DOC_FAVOUR_BUT", "DAILY_SUBMIT_BUT", "TASK_CLOSE_BUT", "CASE_FAVOR_BUT", "TASK_CONSUM_BUT", "BUG_CONFIRM_BUT", "TASK_ACTIVATION_BUT", "BUG_EDIT_BUT", "LEFT_PROJECT_MENU", "TOP_PRODUCT_MENU", "TASK_EDIT_BUT", "BUG_RESOLVE_BUT", "TASK_CANCEL_BUT", "DOCLIBMODULE_FAVOUR_BUT", "TOP_CASE_MENU", "DOCLIB_FAVOUR_BUT", "CASE_NFAVOR_BUT", "TASK_COMPLETE_BUT", "DOCLIBMODULE_NFAVOUR_BUT", "BUG_FAVOR_BUT", "DOCLIB_NFAVOUR_BUT", "TASK_START_BUT", "WEEKLY_SUBMIT_BUT", "TOP_MYFAVOURITE_MENU", "TASK_NFAVOR_BUT", "UNIVERSALDELETE", "UNIVERSALCREATE", "TOP_YEARSUM_MENU", "BUG_ASSIGNTO_BUT", "TOP_PROJECT_MENU", "BUG_CREATECASE_BUT", "TOP_SUM_MENU", "PRODUCTLEFT", "BUG_TOSTORY_BUT", "TASK_FORWARD_BUT", "TASK_SUBTASKS_BUT" ]
 }
