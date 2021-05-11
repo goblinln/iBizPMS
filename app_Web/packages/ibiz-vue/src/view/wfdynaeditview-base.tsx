@@ -281,8 +281,8 @@ export class WFDynaEditViewBase extends MainViewBase {
                 if (_this.viewdata) {
                     _this.$emit('view-event', { viewName: this.viewInstance.name, action: 'viewdataschange', data: [{ ..._data }] });
                     _this.$emit('view-event', { viewName: this.viewInstance.name, action: 'close', data: null });
-                } else if (_this.$tabPageExp) {
-                    _this.$tabPageExp.onClose(_this.$route.fullPath);
+                }else{
+                    this.closeView([{ ..._data }]);
                 }
             });
         }
@@ -402,8 +402,8 @@ export class WFDynaEditViewBase extends MainViewBase {
             if (_this.viewdata) {
                 _this.$emit('view-event', { viewName: this.viewInstance.name, action: 'viewdataschange', data: [{ ...data }] });
                 _this.$emit('view-event', { viewName: this.viewInstance.name, action: 'close', data: null });
-            } else if (_this.$tabPageExp) {
-                _this.$tabPageExp.onClose(_this.$route.fullPath);
+            } else{
+                this.closeView([{ ...data }]);
             }
             AppCenterService.notifyMessage({ name: this.appDeCodeName, action: 'appRefresh', data: data });
             this.$Notice.success({ title: '成功', desc: data?.message ? data.message : '提交数据成功' });

@@ -89,19 +89,6 @@ export class EditView3Base extends EditViewBase {
     }
 
     /**
-     * 重写工具栏绘制
-     *
-     * @return {*} 
-     * @memberof EditView3Base
-     */
-    public renderToolBar(){
-        if(this.selection.id == 'mainform'){
-            return super.renderToolBar();
-        }
-        return null;
-    }
-
-    /**
      * 绘制表单
      *
      * @return {*} 
