@@ -30,7 +30,7 @@
           <div class='preview-file-list-img'>
             <el-image :src="getImgURLOfBase64(file.url)" class='' style=''>
                 <div slot='error' class='image-slot'>
-                    <img src="/assets/img/picture.png" style='width:100%;height:100%;'>
+                    <img src="./assets/img/picture.png" style='width:100%;height:100%;'>
                 </div>
             </el-image>
             <div class='preview-file-list-actions' @mouseenter="()=>{showActions = true;}" @mouseleave="()=>{showActions = false;}">

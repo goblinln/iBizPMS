@@ -3462,11 +3462,11 @@
                       "getPSDEGridColumns" : [ {
                         "align" : "LEFT",
                         "cLConvertMode" : "NONE",
-                        "caption" : "待办编号",
+                        "caption" : "编号",
                         "codeName" : "todosn",
                         "columnType" : "DEFGRIDCOLUMN",
                         "dataItemName" : "todosn",
-                        "excelCaption" : "待办编号",
+                        "excelCaption" : "编号",
                         "name" : "todosn",
                         "noPrivDisplayMode" : 1,
                         "getPSAppDEField" : {
@@ -4082,11 +4082,11 @@
                       "getPSDEGridColumns" : [ {
                         "align" : "LEFT",
                         "cLConvertMode" : "NONE",
-                        "caption" : "BUG编号",
+                        "caption" : "编号",
                         "codeName" : "bugsn",
                         "columnType" : "DEFGRIDCOLUMN",
                         "dataItemName" : "bugsn",
-                        "excelCaption" : "BUG编号",
+                        "excelCaption" : "编号",
                         "name" : "bugsn",
                         "noPrivDisplayMode" : 1,
                         "getPSAppDEField" : {

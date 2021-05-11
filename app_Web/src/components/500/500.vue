@@ -1,7 +1,7 @@
 <template>
     <div class="app-error-view">
         <div class="app-error-container">
-            <img src="/assets/img/500.png" />
+            <img src="./assets/img/500.png" />
             <div class="error-text">
                 <div class="error-text1">{{$t('components.500.errorText1')}}</div>
                 <div class="error-text2">{{$t('components.500.errorText2')}} <a @click="gotoIndexView">{{$t('components.500.indexPage')}}</a> {{$t('components.500.continue')}}</div>

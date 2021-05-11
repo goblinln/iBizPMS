@@ -142,11 +142,11 @@
     "getPSDEGridColumns" : [ {
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
-      "caption" : "项目编号",
+      "caption" : "编号",
       "codeName" : "projectsn",
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "projectsn",
-      "excelCaption" : "项目编号",
+      "excelCaption" : "编号",
       "name" : "projectsn",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {

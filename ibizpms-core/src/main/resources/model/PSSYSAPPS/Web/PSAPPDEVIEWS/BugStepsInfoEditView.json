@@ -176,11 +176,11 @@
       "hidden" : true,
       "dataType" : 25
     }, {
-      "id" : "id",
+      "id" : "bugsn",
       "dataType" : 1,
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "BUGSN",
+        "codeName" : "Bugsn"
       }
     }, {
       "id" : "title",
@@ -204,6 +204,14 @@
         "name" : "COLOR",
         "codeName" : "Color"
       }
+    }, {
+      "id" : "id",
+      "hidden" : true,
+      "dataType" : 1,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
     } ],
     "getPSDEFormPages" : [ {
       "caption" : "基本信息",
@@ -219,26 +227,26 @@
         "detailType" : "GROUPPANEL",
         "name" : "group1",
         "getPSDEFormDetails" : [ {
-          "codeName" : "id",
+          "codeName" : "bugsn",
           "contentHeight" : 32.0,
           "contentWidth" : 70.0,
           "dataType" : 1,
           "detailStyle" : "DEFAULT",
           "detailType" : "FORMITEM",
-          "enableCond" : 0,
+          "enableCond" : 3,
           "height" : 32.0,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
           "labelWidth" : 2,
-          "name" : "id",
+          "name" : "bugsn",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
-            "name" : "ID",
-            "codeName" : "Id"
+            "name" : "BUGSN",
+            "codeName" : "Bugsn"
           },
           "getPSEditor" : {
             "editorType" : "SPAN",
-            "name" : "id",
+            "name" : "bugsn",
             "editable" : false,
             "enableLinkView" : false
           },

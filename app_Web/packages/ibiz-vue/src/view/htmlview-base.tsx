@@ -63,7 +63,7 @@ export class HtmlViewBase extends MainViewBase {
             return (
                 <div class="app-error-view">
                     <div class="app-error-container">
-                        <img src="/assets/img/404.png" />
+                        <img src="./assets/img/404.png" />
                         <div class="error-text">
                             <div class="error-text1">{this.$t('components.404.errorText1')}</div>
                             <div class="error-text2">{this.$t('components.404.errorText2')}</div>

@@ -1147,7 +1147,7 @@ function getLocaleResourceBase(){
 		taskgroup_grid: {
 			columns: {
 				'status1': commonLogic.appcommonhandle("任务状态",null),
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'name': commonLogic.appcommonhandle("任务名称",null),
 				'assignedto': commonLogic.appcommonhandle("指派给",null),
@@ -1178,7 +1178,7 @@ function getLocaleResourceBase(){
 		},
 		storytaskgroup_grid: {
 			columns: {
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'name': commonLogic.appcommonhandle("任务名称",null),
 				'status1': commonLogic.appcommonhandle("任务状态",null),
@@ -1220,7 +1220,7 @@ function getLocaleResourceBase(){
 		},
 		myfavoritemain_grid: {
 			columns: {
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'productname': commonLogic.appcommonhandle("产品",null),
 				'projectname': commonLogic.appcommonhandle("所属项目",null),
@@ -1288,7 +1288,7 @@ function getLocaleResourceBase(){
 		},
 		reportmainzs_grid: {
 			columns: {
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'name': commonLogic.appcommonhandle("任务名称",null),
 				'status1': commonLogic.appcommonhandle("任务状态",null),
 				'left': commonLogic.appcommonhandle("剩余",null),
@@ -1301,7 +1301,7 @@ function getLocaleResourceBase(){
 		},
 		main2my_grid: {
 			columns: {
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'name': commonLogic.appcommonhandle("任务名称",null),
 				'deadline': commonLogic.appcommonhandle("截止日期",null),
@@ -1330,7 +1330,7 @@ function getLocaleResourceBase(){
 		},
 		mygroupmain_grid: {
 			columns: {
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'productname': commonLogic.appcommonhandle("产品",null),
 				'projectname': commonLogic.appcommonhandle("所属项目",null),
@@ -1404,7 +1404,7 @@ function getLocaleResourceBase(){
 		},
 		projectrelated_grid: {
 			columns: {
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'name': commonLogic.appcommonhandle("任务名称",null),
 				'assignedto': commonLogic.appcommonhandle("指派给",null),
 				'status1': commonLogic.appcommonhandle("任务状态",null),
