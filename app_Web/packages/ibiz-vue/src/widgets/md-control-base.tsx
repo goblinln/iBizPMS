@@ -359,7 +359,7 @@ export class MDControlBase extends MainControlBase {
      */
     public renderEmptyDataTip(){
         return <div class="empty-data-tip">
-            <img class="tip-img" src="~@/assets/img/empty-data.svg" />
+            <img class="tip-img" src="./assets/img/empty-data.svg" />
             <span class="tip-text">未找到相关数据</span>
             {this.renderQuickToolbar()}
         </div>

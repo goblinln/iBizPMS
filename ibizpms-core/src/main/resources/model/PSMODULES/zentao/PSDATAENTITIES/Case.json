@@ -498,7 +498,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "\t\tNOT (\n\t\t\tEXISTS (\n\t\t\tSELECT\n\t\t\t\t* \n\t\t\tFROM\n\t\t\t\tzt_suitecase t41 \n\t\t\tWHERE\n\t\t\t\tt1.CASESN = t41.`CASE` \n\t\t\t\tAND ( t41.`suite` = $ { srfwebcontext ( 'suite', '{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}' ) } ) \n\t\t\t) \n\t)",
+        "customCond" : "\t\tNOT (\n\t\t\tEXISTS (\n\t\t\tSELECT\n\t\t\t\t* \n\t\t\tFROM\n\t\t\t\tzt_suitecase t41 \n\t\t\tWHERE\n\t\t\t\tt1.ID = t41.`CASE` \n\t\t\t\tAND ( t41.`suite` = $ { srfwebcontext ( 'suite', '{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}' ) } ) \n\t\t\t) \n\t)",
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
@@ -564,7 +564,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "t61.TESTREPORTSN = $ { srfwebcontext ( 'srfparentkey', '{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}' ) }",
+        "customCond" : "t61.ID = $ { srfwebcontext ( 'srfparentkey', '{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}' ) }",
         "name" : "查询条件"
       } ]
     } ],

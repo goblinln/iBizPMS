@@ -124,7 +124,7 @@ export class AppListBase extends ListControlBase {
                 {item.srficon ? (
                     <img src={item.srficon} />
                 ) : (
-                    <img src='/assets/img/noimage.png' />
+                    <img src='./assets/img/noimage.png' />
                 )}
             </div>
             <div class='item-content-text'>
