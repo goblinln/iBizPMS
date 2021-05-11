@@ -33,4 +33,9 @@ public class IBZTPSFallback implements IBZTPSFeignClient {
         return null;
     }
     
+    @Override
+    public MsgSendQueue[] getByIds(String[] msgids) {
+        return new MsgSendQueue[0];
+    }
+    
 }
