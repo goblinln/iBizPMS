@@ -84,7 +84,6 @@ export class AppChartViewBase extends ChartViewBase {
             this.renderToolBar(),
             this.renderQuickSearch(),
             this.renderQuickGroup(),
-            this.renderSearchForm(),
             this.renderQuickSearchForm(),
             this.renderBodyMessage(),
             this.renderMainContent(),

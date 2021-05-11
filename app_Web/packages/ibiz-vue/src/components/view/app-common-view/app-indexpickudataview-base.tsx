@@ -85,7 +85,6 @@ export class AppIndexPickupDataViewBase extends IndexPickupDataViewBase {
             this.renderToolBar(),
             this.renderQuickGroup(),
             this.renderQuickSearch(),
-            this.renderSearchForm(),
             this.renderMainContent(),
             this.renderBottomMessage()
         ]);

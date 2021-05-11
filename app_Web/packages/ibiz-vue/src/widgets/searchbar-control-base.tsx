@@ -431,7 +431,7 @@ export class SearchBarControlBase extends MDControlBase {
         }
         let propip: any = this.$refs.propip;
         propip.handleMouseleave();
-        this.onSave();
+        // this.onSave();
     }
 
 }

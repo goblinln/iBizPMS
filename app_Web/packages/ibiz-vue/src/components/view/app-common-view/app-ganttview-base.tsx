@@ -95,7 +95,6 @@ export class AppGanttViewBase extends GanttViewBase {
             this.renderToolBar(),
             this.renderQuickGroup(),
             this.renderQuickSearch(),
-            this.renderSearchForm(),
             this.renderMainContent(),
             this.renderBottomMessage(),
         ]);

@@ -1,6 +1,6 @@
 import { IPSDEEditForm, IPSDEFormItem } from '@ibiz/dynamic-model-api';
 import { ControlServiceBase, Util, ModelTool } from 'ibiz-core';
-import { GlobalService } from 'ibiz-service';
+import { GlobalService, UtilServiceRegister } from 'ibiz-service';
 import { AppFormModel } from 'ibiz-vue';
 
 
@@ -505,5 +505,54 @@ export class AppFormService extends ControlServiceBase {
      */
     public getRemoteCopyData() {
         return this.remoteCopyData;
+    }
+
+    /**
+     * 加载数据模型
+     *
+     * @param {string} serviceName
+     * @param {*} context
+     * @param {*} viewparams
+     * @memberof AppFormService
+     */
+    public loadModel(serviceName: string, context: any, viewparams: any) {
+        return new Promise((resolve: any, reject: any) => {
+            UtilServiceRegister.getInstance().getService(context,serviceName).then((service: any) => {
+                if(service) {
+                    service.loadModelData(JSON.stringify(context), viewparams).then((response: any) => {
+                        resolve(response);
+                    }).catch((response: any) => {
+                        reject(response);
+                    });
+                }
+            }).catch((response: any) => {
+                reject(response);
+            });
+        });
+    }
+
+    /**
+     * 保存模型
+     *
+     * @param {string} serviceName
+     * @param {*} context
+     * @param {*} viewparams
+     * @returns
+     * @memberof AppFormService
+     */
+    public saveModel(serviceName: string, context: any, viewparams: any) {
+        return new Promise((resolve: any, reject: any) => {
+            UtilServiceRegister.getInstance().getService(context,serviceName).then((service: any) => {
+                if(service) {
+                    service.saveModelData(JSON.stringify(context), '', viewparams).then((response: any) => {
+                        resolve(response);
+                    }).catch((response: any) => {
+                        reject(response);
+                    });
+                }
+            }).catch((response: any) => {
+                reject(response);
+            });
+        });
     }
 }

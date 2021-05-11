@@ -575,7 +575,11 @@
       "name" : "type"
     }, {
       "dataType" : 1,
-      "name" : "id"
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "PRODUCTSN",
+        "codeName" : "Productsn"
+      }
     }, {
       "dataType" : 9,
       "name" : "releasecnt"

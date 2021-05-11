@@ -1,6 +1,7 @@
-import { IPSControlHandler } from '@ibiz/dynamic-model-api';
+import { IPSApplication, IPSAppUtil, IPSControlHandler } from '@ibiz/dynamic-model-api';
 import { EditFormControlBase } from './editform-control-base';
-
+import moment from 'moment';
+import { GetModelService } from 'ibiz-core';
 /**
  * 搜索表单部件基类
  *
@@ -17,6 +18,46 @@ export class SearchFormControlBase extends EditFormControlBase {
      * @memberof SearchFormControlBase
      */
     public isExpandSearchForm: any = false;
+
+    /**
+     * 存储项名称
+     * 
+     * @type {string}
+     * @memberof SearchFormControlBase
+     */
+    public saveItemName: string = '';
+
+    /**
+     * 历史记录
+     * 
+     * @type {any[]}
+     * @memberof SearchFormControlBase
+     */
+    protected historyItems: any[] = [];
+
+    /**
+     * 选中记录
+     * 
+     * @type {any}
+     * @memberof SearchFormControlBase
+     */
+    protected selectItem: any = null;
+
+    /**
+     * 模型id
+     * 
+     * @type {any}
+     * @memberof SearchFormControlBase
+     */
+    public modelId: string = "";
+
+    /**
+     * 功能服务名称
+     * 
+     * @type {any}
+     * @memberof SearchFormControlBase
+     */
+    public utilServiceName: string = "";
 
     /**
      * 监听静态参数变化
@@ -39,6 +80,23 @@ export class SearchFormControlBase extends EditFormControlBase {
         await super.ctrlModelInit();
         this.loaddraftAction = (this.controlInstance.getPSControlHandler() as IPSControlHandler)?.findPSControlHandlerAction('loaddraft')?.getPSAppDEMethod?.()?.codeName || 'GetDraft';
         this.loadAction = (this.controlInstance.getPSControlHandler() as IPSControlHandler)?.findPSControlHandlerAction('load')?.getPSAppDEMethod?.()?.codeName || 'Load';
+        this.modelId = `searchform_${this.appDeCodeName ? this.appDeCodeName.toLowerCase() : 'app'}_${this.controlInstance.codeName.toLowerCase()}`;
+        await this.initUtilService();
+    }
+
+    /**
+     * 初始化功能服务名称
+     *
+     * @memberof SearchFormControlBase
+     */
+    public async initUtilService() {
+        const appUtil: IPSAppUtil = ((await (await GetModelService(this.context))?.app as IPSApplication).getAllPSAppUtils() || []).find((util: any) => {
+            return util.utilType == 'FILTERSTORAGE';
+        }) as IPSAppUtil;
+        if (appUtil) {
+            this.utilServiceName = appUtil.codeName?.toLowerCase();
+        }
+        this.utilServiceName = "dynafilter";
     }
 
     /**
@@ -48,6 +106,28 @@ export class SearchFormControlBase extends EditFormControlBase {
      */
     public ctrlInit(): void {
         super.ctrlInit();
+        this.loadModel();
+    }
+
+    public loadModel() {
+        let param: any = {};
+        Object.assign(param, {
+            appdeName: this.appDeCodeName,
+            modelid: this.modelId,
+            utilServiceName: this.utilServiceName,
+            ...this.viewparams
+        });
+        let post = this.service.loadModel(this.utilServiceName, this.context, param);
+        this.ctrlBeginLoading();
+		post.then((response: any) => {
+            this.ctrlEndLoading();
+			if(response.status == 200 && response.data) {
+                this.historyItems = response.data;
+			}
+		}).catch((response: any) => {
+            this.ctrlEndLoading();
+			console.log(response);
+		});
     }
 
     /**
@@ -172,6 +252,80 @@ export class SearchFormControlBase extends EditFormControlBase {
             action: 'search',
             data: this.data,
         });
+    }
+
+    /**
+     * 确定
+     *
+     * @return {*}
+     * @memberof SearchFormControlBase
+     */
+    public onOk() {
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
+        let propip: any = this.$refs.propip;
+        propip.handleMouseleave();
+        this.onSave(this.saveItemName);
+    }
+
+    /**
+     * 取消设置
+     *
+     * @return {*}
+     * @memberof SearchFormControlBase
+     */
+    public onCancel() {
+        if (this.Environment && this.Environment.isPreviewMode) {
+            return;
+        }
+        let propip: any = this.$refs.propip;
+        propip.handleMouseleave();
+        // this.onSave();
+    }
+
+    /**
+     * 保存
+     *
+     * @return {*}
+     * @memberof SearchFormControlBase
+     */
+    public onSave(name?: string) {
+        let time = moment();
+        this.historyItems.push({
+            name: (name ? name : time.format('YYYY-MM-DD HH:mm:ss')),
+            value: time.unix().toString(),
+            data: JSON.parse(JSON.stringify(this.data))
+        })
+        this.selectItem = time.unix().toString();
+        let param: any = {};
+		Object.assign(param, {
+            model: JSON.parse(JSON.stringify(this.historyItems)),
+            appdeName: this.appDeCodeName,
+            modelid: this.modelId,
+            utilServiceName: this.utilServiceName,
+			...this.viewparams
+		});
+		let post = this.service.saveModel(this.utilServiceName, this.context, param);
+		post.then((response: any) => {
+            this.ctrlEvent({ controlname: this.controlInstance.name, action: "save", data: response.data });
+		}).catch((response: any) => {
+			console.log(response);
+		});
+    }
+
+    /**
+     * 改变过滤条件
+     *
+     * @return {*}
+     * @memberof SearchFormControlBase
+     */
+    public onFilterChange(evt: any) {
+        let item: any = this.historyItems.find((item: any) => Object.is(evt, item.value));
+        if(item) {
+            this.selectItem = item.value;
+            this.data = JSON.parse(JSON.stringify(item.data));
+        }
     }
 
     /**

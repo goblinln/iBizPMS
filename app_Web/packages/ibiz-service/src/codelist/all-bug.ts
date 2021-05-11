@@ -109,8 +109,8 @@ export default class AllBug {
         if(items && items instanceof Array && items.length >0){
             items.forEach((item: any) => {
                 let itemdata:any = {};
-                Object.assign(itemdata,{id:item.id});
-                Object.assign(itemdata,{value:item.id});
+                Object.assign(itemdata,{id:item.bugsn});
+                Object.assign(itemdata,{value:item.bugsn});
                 Object.assign(itemdata,{text:item.title});
                 Object.assign(itemdata,{label:item.title});
                 

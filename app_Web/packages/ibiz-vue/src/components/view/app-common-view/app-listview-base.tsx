@@ -84,8 +84,6 @@ export class AppListViewBase extends ListViewBase {
             this.renderToolBar(),
             this.renderQuickGroup(),
             this.renderQuickSearch(),
-            this.renderSearchForm(),
-            this.renderSearchBar(),
             this.renderBodyMessage(),
             this.renderMainContent(),
             this.renderBottomMessage()

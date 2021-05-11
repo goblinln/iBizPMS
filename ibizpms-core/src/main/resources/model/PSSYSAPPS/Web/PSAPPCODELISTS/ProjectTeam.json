@@ -12,5 +12,9 @@
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+  },
+  "getValuePSAppDEField" : {
+    "name" : "PROJECTSN",
+    "codeName" : "Projectsn"
   }
 }

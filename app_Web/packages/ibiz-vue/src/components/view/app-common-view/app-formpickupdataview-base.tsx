@@ -85,7 +85,6 @@ export class AppFormPickupDataViewBase extends FormPickupDataViewBase {
             this.renderToolBar(),
             this.renderQuickGroup(),
             this.renderQuickSearch(),
-            this.renderSearchForm(),
             this.renderMainContent(),
             this.renderBottomMessage()
         ]);

@@ -85,8 +85,6 @@ export class AppCalendarViewBase extends CalendarViewBase {
             this.renderToolBar(),
             this.renderQuickGroup(),
             this.renderQuickSearch(),
-            this.renderSearchForm(),
-            this.renderSearchBar(),
             this.renderBodyMessage(),
             this.renderMainContent(),
             this.renderBottomMessage()

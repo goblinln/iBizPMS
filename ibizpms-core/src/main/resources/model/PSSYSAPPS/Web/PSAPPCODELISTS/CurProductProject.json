@@ -18,8 +18,8 @@
     "codeName" : "Name"
   },
   "getValuePSAppDEField" : {
-    "name" : "ID",
-    "codeName" : "Id"
+    "name" : "PROJECTSN",
+    "codeName" : "Projectsn"
   },
   "enableCache" : true
 }

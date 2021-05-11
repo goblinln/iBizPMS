@@ -85,9 +85,7 @@ export class AppDataViewBase extends DataViewBase {
             this.renderToolBar(),
             this.renderQuickGroup(),
             this.renderQuickSearch(),
-            this.renderSearchForm(),
             this.renderQuickSearchForm(),
-            this.renderSearchBar(),
             this.renderBodyMessage(),
             this.renderMainContent(),
             this.renderBottomMessage()

@@ -20,8 +20,8 @@
   },
   "textSeparator" : ",",
   "getValuePSAppDEField" : {
-    "name" : "ID",
-    "codeName" : "Id"
+    "name" : "STORYSN",
+    "codeName" : "Storysn"
   },
   "valueSeparator" : ",",
   "enableCache" : true

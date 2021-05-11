@@ -5,17 +5,26 @@
   padding: 14px 0;
 }
 .app-search-form {
-padding: 8px 14px 0;
-.ivu-form-item{
-  margin-bottom: 8px;
-}
-.search_reset {
-    margin-right: 12px;
+  padding: 8px 14px 0;
+  height: 100%;
+  .ivu-form-item{
     margin-bottom: 8px;
-}
-.search-button{
-    text-align: right;
-}
+  }
+  >.ivu-row {
+    overflow: scroll;
+    height: calc(100% - 40px);
+  }
+  .search_reset {
+      margin-right: 12px;
+  }
+  .search-action-footer {
+      padding: 4px 0;
+      display: flex;
+      justify-content: flex-end;
+      .el-select {
+        padding-right: 12px;
+      }
+  }
 }
 .app-search-form-flex {
   height: 100%;

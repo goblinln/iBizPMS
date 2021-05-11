@@ -12,5 +12,9 @@
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
+  },
+  "getValuePSAppDEField" : {
+    "name" : "PRODUCTPLANSN",
+    "codeName" : "Productplansn"
   }
 }

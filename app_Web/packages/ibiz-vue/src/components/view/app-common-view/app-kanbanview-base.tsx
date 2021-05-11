@@ -85,8 +85,6 @@ export class AppKanbanViewBase extends KanbanViewBase {
             this.renderToolBar(),
             this.renderQuickGroup(),
             this.renderQuickSearch(),
-            this.renderSearchBar(),
-            this.renderSearchForm(),
             this.renderMainContent(),
             this.renderBodyMessage()
         ]);
