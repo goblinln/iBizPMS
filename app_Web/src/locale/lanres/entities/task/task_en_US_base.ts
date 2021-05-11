@@ -553,10 +553,11 @@ function getLocaleResourceBase(){
 				'srfsourcekey': commonLogic.appcommonhandle("",null), 
 				'parent': commonLogic.appcommonhandle("父任务",null), 
 				'story': commonLogic.appcommonhandle("相关需求",null), 
-				'id': commonLogic.appcommonhandle("",null), 
+				'tasksn': commonLogic.appcommonhandle("",null), 
 				'name': commonLogic.appcommonhandle("",null), 
 				'color': commonLogic.appcommonhandle("标题颜色",null), 
 				'desc': commonLogic.appcommonhandle("任务描述",null), 
+				'id': commonLogic.appcommonhandle("编号",null), 
 			},
 			uiactions: {
 			},
@@ -880,7 +881,7 @@ function getLocaleResourceBase(){
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'name': commonLogic.appcommonhandle("任务名称",null),
 				'status': commonLogic.appcommonhandle("任务状态",null),
@@ -908,7 +909,7 @@ function getLocaleResourceBase(){
 		},
 		childmain_grid: {
 			columns: {
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'name': commonLogic.appcommonhandle("任务名称",null),
 				'status1': commonLogic.appcommonhandle("任务状态",null),
@@ -923,7 +924,7 @@ function getLocaleResourceBase(){
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'name': commonLogic.appcommonhandle("任务名称",null),
 				'status': commonLogic.appcommonhandle("任务状态",null),
@@ -960,7 +961,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'name': commonLogic.appcommonhandle("任务名称",null),
 				'status1': commonLogic.appcommonhandle("任务状态",null),
@@ -975,7 +976,7 @@ function getLocaleResourceBase(){
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'name': commonLogic.appcommonhandle("任务名称",null),
 				'status': commonLogic.appcommonhandle("任务状态",null),
@@ -1012,7 +1013,7 @@ function getLocaleResourceBase(){
 		},
 		pivottable_grid: {
 			columns: {
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'name': commonLogic.appcommonhandle("任务名称",null),
 				'status': commonLogic.appcommonhandle("任务状态",null),
@@ -1050,7 +1051,7 @@ function getLocaleResourceBase(){
 		pritaskgroup_grid: {
 			columns: {
 				'pri': commonLogic.appcommonhandle("P",null),
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'name': commonLogic.appcommonhandle("任务名称",null),
 				'status1': commonLogic.appcommonhandle("任务状态",null),
 				'assignedto': commonLogic.appcommonhandle("指派给",null),
@@ -1081,7 +1082,7 @@ function getLocaleResourceBase(){
 		},
 		assignedtogroup_grid: {
 			columns: {
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'name': commonLogic.appcommonhandle("任务名称",null),
 				'status1': commonLogic.appcommonhandle("任务状态",null),
@@ -1114,7 +1115,7 @@ function getLocaleResourceBase(){
 		typetaskgroup_grid: {
 			columns: {
 				'type': commonLogic.appcommonhandle("任务类型",null),
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'name': commonLogic.appcommonhandle("任务名称",null),
 				'status1': commonLogic.appcommonhandle("任务状态",null),
@@ -1210,7 +1211,7 @@ function getLocaleResourceBase(){
 		},
 		storyrelated_grid: {
 			columns: {
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'name': commonLogic.appcommonhandle("任务名称",null),
 				'projectname': commonLogic.appcommonhandle("所属项目",null),
 			},
@@ -1237,7 +1238,7 @@ function getLocaleResourceBase(){
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'name': commonLogic.appcommonhandle("任务名称",null),
 				'status': commonLogic.appcommonhandle("任务状态",null),
@@ -1274,7 +1275,7 @@ function getLocaleResourceBase(){
 		},
 		completereportmainzs_grid: {
 			columns: {
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'name': commonLogic.appcommonhandle("任务名称",null),
 				'status1': commonLogic.appcommonhandle("任务状态",null),
 				'consumed': commonLogic.appcommonhandle("工时",null),
@@ -1309,7 +1310,7 @@ function getLocaleResourceBase(){
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'name': commonLogic.appcommonhandle("任务名称",null),
 				'status': commonLogic.appcommonhandle("任务状态",null),
@@ -1347,7 +1348,7 @@ function getLocaleResourceBase(){
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'name': commonLogic.appcommonhandle("任务名称",null),
 				'status': commonLogic.appcommonhandle("任务状态",null),
@@ -1384,7 +1385,7 @@ function getLocaleResourceBase(){
 		},
 		reportmain_grid: {
 			columns: {
-				'tasksn': commonLogic.appcommonhandle("任务编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'productname': commonLogic.appcommonhandle("产品",null),
 				'projectname': commonLogic.appcommonhandle("所属项目",null),

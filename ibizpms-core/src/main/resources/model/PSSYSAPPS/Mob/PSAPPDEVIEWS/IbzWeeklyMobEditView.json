@@ -3306,7 +3306,7 @@
         "id" : "MobSubmit@IbzWeekly"
       },
       "tooltip" : "提交",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     }, {
       "caption" : "编辑",
@@ -3350,7 +3350,7 @@
         "id" : "mobEdit1@IbzWeekly"
       },
       "tooltip" : "编辑",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     } ],
     "toolbarStyle" : "MOBBOTTOMMENU",

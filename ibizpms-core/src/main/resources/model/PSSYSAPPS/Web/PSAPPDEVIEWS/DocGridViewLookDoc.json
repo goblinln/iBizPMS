@@ -478,11 +478,11 @@
     "getPSDEGridColumns" : [ {
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
-      "caption" : "文档编号",
+      "caption" : "编号",
       "codeName" : "docsn",
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "docsn",
-      "excelCaption" : "文档编号",
+      "excelCaption" : "编号",
       "name" : "docsn",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {

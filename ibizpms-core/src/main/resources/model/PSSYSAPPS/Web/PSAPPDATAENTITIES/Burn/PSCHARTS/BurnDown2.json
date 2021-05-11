@@ -209,7 +209,7 @@
   },
   "getPSSysPFPlugin" : {
     "pluginType" : "CHART_RENDER",
-    "pluginCode" : "NEW"
+    "pluginCode" : "BurnoutFigure"
   },
   "readOnly" : true,
   "modelid" : "dde39a9842220d96c7f2a9bc8e0559ad"

@@ -1407,7 +1407,7 @@
         "id" : "MobEdit@IbzReportly"
       },
       "tooltip" : "编辑",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     }, {
       "caption" : "提交",
@@ -1452,7 +1452,7 @@
         "id" : "MobSubmit@IbzReportly"
       },
       "tooltip" : "提交",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     } ],
     "toolbarStyle" : "MOBBOTTOMMENU",

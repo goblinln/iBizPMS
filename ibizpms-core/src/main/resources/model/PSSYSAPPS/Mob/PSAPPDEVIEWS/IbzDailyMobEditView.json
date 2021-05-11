@@ -3312,7 +3312,7 @@
         "id" : "MobEdit@IbzDaily"
       },
       "tooltip" : "编辑",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     }, {
       "caption" : "提交",
@@ -3357,7 +3357,7 @@
         "id" : "submitMob@IbzDaily"
       },
       "tooltip" : "提交",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     } ],
     "toolbarStyle" : "MOBBOTTOMMENU",

@@ -762,11 +762,11 @@
             "getPSDEGridColumns" : [ {
               "align" : "LEFT",
               "cLConvertMode" : "NONE",
-              "caption" : "需求编号",
+              "caption" : "编号",
               "codeName" : "storysn",
               "columnType" : "DEFGRIDCOLUMN",
               "dataItemName" : "storysn",
-              "excelCaption" : "需求编号",
+              "excelCaption" : "编号",
               "name" : "storysn",
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {

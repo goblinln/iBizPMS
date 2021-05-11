@@ -159,7 +159,7 @@
         "id" : "NewSubPlanCz@ProductPlan"
       },
       "tooltip" : "子计划",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     }, {
       "caption" : "编辑",
@@ -204,7 +204,7 @@
         "id" : "MainEdit@ProductPlan"
       },
       "tooltip" : "编辑",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     }, {
       "caption" : "删除",
@@ -251,7 +251,7 @@
         "id" : "DeleteCz@ProductPlan"
       },
       "tooltip" : "删除",
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true
     } ],
     "modelid" : "5ad21b662e43fd5724b41620471178d8"
@@ -1103,11 +1103,11 @@
               "getPSDEGridColumns" : [ {
                 "align" : "LEFT",
                 "cLConvertMode" : "NONE",
-                "caption" : "需求编号",
+                "caption" : "编号",
                 "codeName" : "storysn",
                 "columnType" : "DEFGRIDCOLUMN",
                 "dataItemName" : "storysn",
-                "excelCaption" : "需求编号",
+                "excelCaption" : "编号",
                 "name" : "storysn",
                 "noPrivDisplayMode" : 1,
                 "getPSAppDEField" : {

@@ -13,6 +13,16 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule.json"
     }
   }, {
+    "name" : "项目经理-ZT_BUILD[版本维护]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEUSERROLES/Build_Maintain.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
+    }
+  }, {
     "name" : "项目经理-IBZ_PROJECTTEAM[项目团队管理]",
     "getPSDEUserRole" : {
       "modelref" : true,

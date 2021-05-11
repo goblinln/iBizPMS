@@ -127,7 +127,7 @@
         "id" : "工具栏按钮提示[*.FILTER]"
       },
       "enableToggleMode" : true,
-      "showCaption" : false,
+      "showCaption" : true,
       "showIcon" : true,
       "valid" : false
     } ],

@@ -44,7 +44,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'taskestimatesn': commonLogic.appcommonhandle("任务预计编号",null),
+				'taskestimatesn': commonLogic.appcommonhandle("编号",null),
 				'dates': commonLogic.appcommonhandle("日期",null),
 				'consumed': commonLogic.appcommonhandle("总计消耗",null),
 				'left': commonLogic.appcommonhandle("预计剩余",null),

@@ -12,6 +12,7 @@ import { COLORSPAN as SPAN_COLORSPAN } from './editor/span/colorspan';
 import { LEFTNAVLIST as CUSTOM_LEFTNAVLIST } from './plugin/custom/leftnavlist';
 import { NEW as CHART_RENDER_NEW } from './plugin/chart-render/new';
 import { TreeGrid as GRID_RENDER_TreeGrid } from './plugin/grid-render/tree-grid';
+import { BurnoutFigure as CHART_RENDER_BurnoutFigure } from './plugin/chart-render/burnout-figure';
 import { ListDownload as LIST_ITEMRENDER_ListDownload } from './plugin/list-itemrender/list-download';
 import { StepTable as GRID_RENDER_StepTable } from './plugin/grid-render/step-table';
 import { PiePlugin as CHART_RENDER_PiePlugin } from './plugin/chart-render/pie-plugin';
@@ -41,6 +42,7 @@ export const PluginRegister = {
         v.component('app-custom-leftnavlist', CUSTOM_LEFTNAVLIST);
         v.component('app-chart-render-new', CHART_RENDER_NEW);
         v.component('app-grid-render-tree-grid', GRID_RENDER_TreeGrid);
+        v.component('app-chart-render-burnout-figure', CHART_RENDER_BurnoutFigure);
         v.component('app-list-itemrender-list-download', LIST_ITEMRENDER_ListDownload);
         v.component('app-grid-render-step-table', GRID_RENDER_StepTable);
         v.component('app-chart-render-pie-plugin', CHART_RENDER_PiePlugin);
