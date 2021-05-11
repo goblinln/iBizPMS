@@ -755,11 +755,11 @@
     "getPSDEGridColumns" : [ {
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
-      "caption" : "测试版本编号",
+      "caption" : "编号",
       "codeName" : "testtasksn",
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "testtasksn",
-      "excelCaption" : "测试版本编号",
+      "excelCaption" : "编号",
       "name" : "testtasksn",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {

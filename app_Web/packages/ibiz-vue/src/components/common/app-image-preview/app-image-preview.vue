@@ -5,7 +5,7 @@
         <div class='preview-file-list-img'>
           <el-image :src="file.url" class='' style=''>
               <div slot='error' class='image-slot'>
-                  <img src="./assets/img/picture.png" style='width:100%;height:100%;'>
+                  <img src="/assets/img/picture.png" style='width:100%;height:100%;'>
               </div>
           </el-image>
           <div class='preview-file-list-actions'>
@@ -23,7 +23,7 @@
     <modal v-model="dialogVisible" footer-hide width="auto" class-name='app-image-preview-model'>
       <el-image :src="dialogImageUrl">
           <div slot='error' class='image-slot'>
-              <img src="./assets/img/picture.png">
+              <img src="/assets/img/picture.png">
           </div>
       </el-image>
     </modal>

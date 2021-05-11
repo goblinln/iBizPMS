@@ -1,6 +1,6 @@
 <template>
     <div class="app-redirect-view">
-        <img src="./assets/img/500.png" />
+        <img src="/assets/img/500.png" />
         <div class="context">跳转中......</div>
     </div>
 </template>

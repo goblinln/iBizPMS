@@ -23,11 +23,11 @@
   "getPSDEGridColumns" : [ {
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
-    "caption" : "产品计划编号",
+    "caption" : "编号",
     "codeName" : "productplansn",
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "productplansn",
-    "excelCaption" : "产品计划编号",
+    "excelCaption" : "编号",
     "name" : "productplansn",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {

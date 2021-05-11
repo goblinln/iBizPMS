@@ -69,11 +69,11 @@
   "getPSDEGridColumns" : [ {
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
-    "caption" : "产品的分支和平台信息编号",
+    "caption" : "编号",
     "codeName" : "branchsn",
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "branchsn",
-    "excelCaption" : "产品的分支和平台信息编号",
+    "excelCaption" : "编号",
     "name" : "branchsn",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {

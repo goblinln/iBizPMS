@@ -562,11 +562,11 @@
             "getPSDEGridColumns" : [ {
               "align" : "LEFT",
               "cLConvertMode" : "NONE",
-              "caption" : "用例步骤编号",
+              "caption" : "编号",
               "codeName" : "casestepsn",
               "columnType" : "DEFGRIDCOLUMN",
               "dataItemName" : "casestepsn",
-              "excelCaption" : "用例步骤编号",
+              "excelCaption" : "编号",
               "name" : "casestepsn",
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {

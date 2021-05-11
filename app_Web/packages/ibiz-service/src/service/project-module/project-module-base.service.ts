@@ -46,7 +46,7 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
             const data = await s.getLocal2(context, entity.root);
             if (data) {
                 entity.rootname = data.name;
-                entity.root = data.id;
+                entity.root = data.projectsn;
             }
         }
         return entity!;
@@ -62,7 +62,7 @@ export class ProjectModuleBaseService extends EntityBaseService<IProjectModule> 
             const data = await s.getLocal2(_context, _context.project);
             if (data) {
                 entity.rootname = data.name;
-                entity.root = data.id;
+                entity.root = data.projectsn;
             }
         }
         return new ProjectModule(entity);

@@ -1149,7 +1149,7 @@ export class DataViewControlBase extends MDControlBase {
                 return pluginInstance.renderCtrlItem(this.$createElement, dataViewItem, this, args);
             }
         } else {
-            let itemImage: any = args.srficonpath ? args.srficonpath : './assets/img/noimage.png';
+            let itemImage: any = args.srficonpath ? args.srficonpath : '/assets/img/noimage.png';
             return [
                 <div class='data-view-item'>
                     <img src={itemImage} class='single-card-img' />

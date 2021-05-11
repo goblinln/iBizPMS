@@ -404,7 +404,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'testtasksn': commonLogic.appcommonhandle("测试版本编号",null),
+				'testtasksn': commonLogic.appcommonhandle("编号",null),
 				'name': commonLogic.appcommonhandle("名称",null),
 				'productname': commonLogic.appcommonhandle("产品",null),
 				'projecttname': commonLogic.appcommonhandle("项目",null),

@@ -186,7 +186,7 @@ function getLocaleResourceBase(){
 		},
 		maininfo_grid: {
 			columns: {
-				'productplansn': commonLogic.appcommonhandle("产品计划编号",null),
+				'productplansn': commonLogic.appcommonhandle("编号",null),
 				'title': commonLogic.appcommonhandle("名称",null),
 				'beginstr': commonLogic.appcommonhandle("开始日期",null),
 				'endstr': commonLogic.appcommonhandle("结束日期",null),
@@ -196,7 +196,7 @@ function getLocaleResourceBase(){
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
-				'productplansn': commonLogic.appcommonhandle("产品计划编号",null),
+				'productplansn': commonLogic.appcommonhandle("编号",null),
 				'title': commonLogic.appcommonhandle("名称",null),
 				'beginstr': commonLogic.appcommonhandle("开始日期",null),
 				'begin': commonLogic.appcommonhandle("开始日期",null),

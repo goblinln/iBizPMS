@@ -63,7 +63,7 @@ function getLocaleResourceBase(){
 		},
 		doclibl_grid: {
 			columns: {
-				'filesn': commonLogic.appcommonhandle("附件编号",null),
+				'filesn': commonLogic.appcommonhandle("编号",null),
 				'title': commonLogic.appcommonhandle("附件名",null),
 				'pathname': commonLogic.appcommonhandle("地址",null),
 				'objecttype': commonLogic.appcommonhandle("类型",null),

@@ -167,7 +167,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'releasesn': commonLogic.appcommonhandle("发布编号",null),
+				'releasesn': commonLogic.appcommonhandle("编号",null),
 				'name': commonLogic.appcommonhandle("发布名称",null),
 				'buildname': commonLogic.appcommonhandle("版本",null),
 				'status': commonLogic.appcommonhandle("状态",null),
@@ -176,7 +176,7 @@ function getLocaleResourceBase(){
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
-				'releasesn': commonLogic.appcommonhandle("发布编号",null),
+				'releasesn': commonLogic.appcommonhandle("编号",null),
 				'name': commonLogic.appcommonhandle("发布名称",null),
 				'buildname': commonLogic.appcommonhandle("版本",null),
 				'status': commonLogic.appcommonhandle("状态",null),

@@ -4794,7 +4794,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "重复需求ID",
     "name" : "DUPLICATESTORY",
     "getPSDER" : {
@@ -4802,8 +4802,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_STORY_DUPLICATESTORY.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "STORYSN",
+      "codeName" : "Storysn"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
@@ -4899,8 +4899,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_BUG_TOBUGID.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "BUGSN",
+      "codeName" : "Bugsn"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",

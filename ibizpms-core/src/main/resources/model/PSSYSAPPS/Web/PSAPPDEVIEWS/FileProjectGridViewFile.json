@@ -337,11 +337,11 @@
     "getPSDEGridColumns" : [ {
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
-      "caption" : "附件编号",
+      "caption" : "编号",
       "codeName" : "filesn",
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "filesn",
-      "excelCaption" : "附件编号",
+      "excelCaption" : "编号",
       "name" : "filesn",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
