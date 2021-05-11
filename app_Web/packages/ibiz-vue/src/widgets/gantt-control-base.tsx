@@ -3,6 +3,7 @@ import { Util, CodeListServiceBase } from 'ibiz-core';
 import { IPSDEGantt, IPSDETreeColumn, IPSDETreeNode, IPSDETreeNodeDataItem } from '@ibiz/dynamic-model-api';
 import { MDControlBase } from './md-control-base';
 import { AppGanttService } from '../ctrl-service';
+import { AppViewLogicService } from '../app-service';
 
 export class GanttControlBase extends MDControlBase {
     
@@ -355,11 +356,8 @@ export class GanttControlBase extends MDControlBase {
      * @memberof GanttControlBase
      */
     public taskClick({event, data}: {event: any, data: any}) {
-        const _this: any = this;
-        let key: string = data.id.split(';')[0];
-        if(_this[key + '_opendata'] instanceof Function) {
-            _this[key + '_opendata']([data]);
-        }
+        let logicTag: string = data.id.split(';')[0]?.toLowerCase() + '_opendata';
+        AppViewLogicService.getInstance().executeViewLogic(logicTag, event, this, data, this.controlInstance.getPSAppViewLogics() || []);
     }
 
     /**

@@ -90,9 +90,9 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
      * @memberof AppDefaultIndexViewLayout
      */
     public collapseMenus() {
-        if(sessionStorage.getItem("srffullscreen")){
+        if (sessionStorage.getItem("srffullscreen")) {
             this.isFullScreen = !this.isFullScreen;
-        }else{
+        } else {
             this.collapseChange = !this.collapseChange;
         }
         this.$emit('onCollapseChange', this.collapseChange);
@@ -129,51 +129,6 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
     }
 
     /**
-     * 鼠标拖动事件
-     *
-     * @param {*} val
-     * @returns {*}
-     * @memberof AppDefaultIndexViewLayout
-     */
-    public mouse_move() {
-        let move_axis: any = document.getElementById("move_axis");
-        let left_move: any = document.getElementById("left_move");
-        let right_move: any = document.getElementById("right_move");
-        let movebox: any = document.getElementById("movebox");
-        let leftWidth: number = parseInt(left_move.style.width);
-        move_axis.onmousedown = (e: any) => {
-            let startX = e.clientX;
-            move_axis.left = move_axis.offsetLeft;
-            document.onmousemove = (e: any) => {
-                let endX = e.clientX;
-                let moveLen = move_axis.left + (endX - startX);
-                let maxT = movebox.clientWidth - move_axis.offsetWidth;
-                if (moveLen < 150) moveLen = 150;
-                if (moveLen > maxT - 150) moveLen = maxT - 150;
-                move_axis.style.left = moveLen;
-                left_move.style.width = moveLen + "px";
-                right_move.style.width = (movebox.clientWidth - moveLen - 5) + "px";
-                if (moveLen > 500) {
-                    left_move.style.width = 500 + 'px';
-                }
-
-                let left_width: number = parseInt(left_move.style.width);
-                move_axis.style.left = left_width - 5 + 'px';
-                if (left_width < leftWidth) {
-                    move_axis.style.left = leftWidth - 5 + 'px';
-                }
-            }
-            document.onmouseup = (evt) => {
-                document.onmousemove = null;
-                document.onmouseup = null;
-                move_axis.releaseCapture && move_axis.releaseCapture();
-            }
-            move_axis.setCapture && move_axis.setCapture();
-            return false;
-        }
-    }
-
-    /**
      * 渲染左侧菜单样式
      * 
      * @memberof AppDefaultIndexViewLayout
@@ -186,42 +141,37 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
         }
         return (
             <layout style={{ 'font-family': this.selectFont, 'height': '100vh' }}>
-                <layout id="movebox">
-                    <sider class="index_sider" style={{'display':this.isFullScreen?'none':'block'}} width={this.collapseChange ? 64 : 200} hide-trigger value={this.collapseChange} id="left_move">
-                        <div class="sider-top">
-                            <div class="page-logo">
-                                {(this.viewInstance as IPSAppIndexView).enableAppSwitch ? <span class="menuicon" on-click={() => this.contextMenuDragVisiable = !this.contextMenuDragVisiable}><icon type="md-menu" /></span> : null}
-                                <span style="overflow-x: hidden;text-overflow: ellipsis;white-space: nowrap;display: block;text-align: center;font-weight: 300;font-size: 20px;">{!this.collapseChange ? AppServiceBase.getInstance().getAppModelDataObject().name : null}</span>
+                <header class="index_header">
+                    <div class="header-left" >
+                        <div class="page-logo">
+                            <div class="page-logo-left">
+                                {(this.viewInstance as IPSAppIndexView).appIconPath ? <img class="page-logo-image" src={(this.viewInstance as IPSAppIndexView).appIconPath}></img> : null}
+                                <span class="page-logo-title">{AppServiceBase.getInstance().getAppModelDataObject().name}</span>
+                                {(this.viewInstance as IPSAppIndexView).enableAppSwitch ? <context-menu-drag contextMenuDragVisiable={this.contextMenuDragVisiable}></context-menu-drag> : null}
                             </div>
+                            {!this.collapseChange ? <i class="ivu-icon el-icon-s-fold" on-click={() => this.collapseMenus()}></i> : null}
+                            {this.collapseChange ? <i class="ivu-icon el-icon-s-unfold" on-click={() => this.collapseMenus()}></i> : null}
+                            <app-breadcrumb indexViewTag="app-index-view" />
                         </div>
+                    </div>
+                    <div class="header-right" style="display: flex;align-items: center;justify-content: space-between;">
+                        <app-header-menus />
+                        <app-lang style='font-size: 15px;padding: 0 10px;' />
+                        <app-orgsector />
+                        <app-user viewStyle={this.viewInstance.viewStyle} />
+                        <app-message-popover />
+                    </div>
+                </header>
+                <layout>
+                    <sider class="index_sider" style={{ 'display': this.isFullScreen ? 'none' : 'block' }} width={this.collapseChange ? 64 : 200} hide-trigger value={this.collapseChange}>
                         {this.$slots.default}
-                        {(this.viewInstance as IPSAppIndexView).enableAppSwitch ? <context-menu-drag contextMenuDragVisiable={this.contextMenuDragVisiable}></context-menu-drag> : null}
                     </sider>
-                    {!this.collapseChange ? <div id="move_axis" style={{'display':this.isFullScreen?'none':'block'}}></div> : null}
-                    <layout id="right_move">
-                        <header class="index_header">
-                            <div class="header-left" >
-                                <div class="page-logo">
-                                    {!this.collapseChange ? <i class="ivu-icon el-icon-s-fold" on-click={() => this.collapseMenus()}></i> : null}
-                                    {this.collapseChange ? <i class="ivu-icon el-icon-s-unfold" on-click={() => this.collapseMenus()}></i> : null}
-                                    <app-breadcrumb indexViewTag="app-index-view" />
-                                </div>
-                            </div>
-                            <div class="header-right" style="display: flex;align-items: center;justify-content: space-between;">
-                                <app-header-menus />
-                                <app-lang style='font-size: 15px;padding: 0 10px;' />
-                                <app-orgsector />
-                                <app-user viewStyle={this.viewInstance.viewStyle} />
-                                <app-message-popover />
-                            </div>
-                        </header>
-                        <content class={contentClass} >
-                            {Object.is(this.navModel, 'tab') ? <tab-page-exp></tab-page-exp> : null}
-                            <app-keep-alive routerList={this.routerList}>
-                                <router-view key={this.routerViewKey}></router-view>
-                            </app-keep-alive>
-                        </content>
-                    </layout>
+                    <content class={contentClass} >
+                        {Object.is(this.navModel, 'tab') ? <tab-page-exp></tab-page-exp> : null}
+                        <app-keep-alive routerList={this.routerList}>
+                            <router-view key={this.routerViewKey}></router-view>
+                        </app-keep-alive>
+                    </content>
                 </layout>
             </layout>
         );
@@ -238,8 +188,8 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                 <header class="index_header" >
                     <div class="header-left">
                         <div class="page-logo">
-                            <img src="../../../assets/img/logo.png" height="32" />
-                            <span style="display: inline-block;margin-left: 10px;font-size: 22px;">{this.viewInstance.title}</span>
+                            {(this.viewInstance as IPSAppIndexView).appIconPath ? <img class="page-logo-image" src={(this.viewInstance as IPSAppIndexView).appIconPath}></img> : null}
+                            <span style="display: inline-block;margin-left: 10px;font-size: 22px;">{AppServiceBase.getInstance().getAppModelDataObject().name}</span>
                         </div>
                         <div style="margin-left: 50px;">
                             {this.$slots.default}
@@ -319,7 +269,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                     viewparams={this.viewparams}
                     viewName={this.viewInstance.codeName.toLowerCase()}
                     viewTitle={this.viewInstance.title} />
-                 { (Object.is(this.viewInstance.mainMenuAlign, "LEFT") || !this.viewInstance.mainMenuAlign) ? this.renderContentLeft() : null}
+                { (Object.is(this.viewInstance.mainMenuAlign, "LEFT") || !this.viewInstance.mainMenuAlign) ? this.renderContentLeft() : null}
                 { Object.is(this.viewInstance.mainMenuAlign, "TOP") ? this.renderContentTop() : null}
                 { Object.is(this.viewInstance.mainMenuAlign, "CENTER") ? this.renderContentMiddle() : null}
                 { Object.is(this.viewInstance.mainMenuAlign, 'TABEXP_LEFT') ? this.renderContentTabexpView() : null}
