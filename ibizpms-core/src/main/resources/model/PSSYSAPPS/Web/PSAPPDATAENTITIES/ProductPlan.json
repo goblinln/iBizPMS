@@ -857,7 +857,8 @@
     "codeName" : "Productplansn",
     "logicName" : "产品计划编号",
     "name" : "PRODUCTPLANSN",
-    "stdDataType" : 1
+    "stdDataType" : 1,
+    "enableQuickSearch" : true
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",
@@ -2395,6 +2396,9 @@
   "getQuickSearchPSAppDEFields" : [ {
     "name" : "TITLE",
     "codeName" : "Title"
+  }, {
+    "name" : "PRODUCTPLANSN",
+    "codeName" : "Productplansn"
   } ],
   "storageMode" : 0,
   "defaultMode" : true,

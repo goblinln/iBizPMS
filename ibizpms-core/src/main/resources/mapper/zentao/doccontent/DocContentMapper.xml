@@ -70,7 +70,7 @@
 
     <!--数据查询[CurVersion]-->
     <sql id="CurVersion" databaseId="mysql">
-		<![CDATA[ SELECT t1.id AS `ID`, t1.`DOC`, t1.`VERSION`, CONCAT('#',t1.`version`) as `TITLE` FROM `zt_doccontent` t1 ]]>
+		<![CDATA[ SELECT 	t1.id AS `ID`, 	t1.`DOC`, 	t1.`VERSION`, 	CONCAT( '#', t1.`version` ) AS `TITLE` , 	t1.DOCCONTENTSN FROM 	`zt_doccontent` t1 ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>

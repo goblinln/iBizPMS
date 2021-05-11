@@ -108,7 +108,7 @@
 
     <!--数据查询[DocLibFile]-->
     <sql id="DocLibFile" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ADDEDBY`, t1.`ADDEDDATE`, t1.`DELETED`, t1.`DOWNLOADS`, t1.`EXTENSION`, t1.`EXTRA`, t1.`ID`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`PATHNAME`, CONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end) as `STRSIZE`, t1.size, CONCAT_WS('',t1.`TITLE`,' [',UPPER(t1.objectType),' #',t1.objectID,']') AS `TITLE`, 'file' as doclibtype FROM `zt_file` t1 ]]>
+		<![CDATA[ SELECT t1.`ADDEDBY`, t1.`ADDEDDATE`, t1.`DELETED`, t1.`DOWNLOADS`, t1.`EXTENSION`, t1.`EXTRA`, t1.`ID`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`PATHNAME`, CONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end) as `STRSIZE`, t1.size, CONCAT_WS('',t1.`TITLE`,' [',UPPER(t1.objectType),' #',t1.objectID,']') AS `TITLE`, 'file' as doclibtype, t1.FILESN FROM `zt_file` t1 ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.deleted = '0' ]]>
@@ -126,7 +126,7 @@
 
     <!--数据查询[ProductDocLibFile]-->
     <sql id="ProductDocLibFile" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ADDEDBY`, t1.`ADDEDDATE`, t1.`DELETED`, t1.`DOWNLOADS`, t1.`EXTENSION`, t1.`EXTRA`, t1.`ID`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`PATHNAME`, CONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end) as `STRSIZE`, t1.size, CONCAT_WS('',t1.`TITLE`,' [',UPPER(t1.objectType),' #',t1.objectID,']') AS `TITLE`, 'file' as doclibtype FROM `zt_file` t1 ]]>
+		<![CDATA[ SELECT t1.`ADDEDBY`, t1.`ADDEDDATE`, t1.`DELETED`, t1.`DOWNLOADS`, t1.`EXTENSION`, t1.`EXTRA`, t1.`ID`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`PATHNAME`, CONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end) as `STRSIZE`, t1.size, CONCAT_WS('',t1.`TITLE`,' [',UPPER(t1.objectType),' #',t1.objectID,']') AS `TITLE`, 'file' as doclibtype, t1.FILESN FROM `zt_file` t1 ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.deleted = '0' ]]>
@@ -162,7 +162,7 @@
 
     <!--数据查询[TypeNotBySrfparentkey]-->
     <sql id="TypeNotBySrfparentkey" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ADDEDBY`, t1.`ADDEDDATE`, t1.`DELETED`, t1.`DOWNLOADS`, t1.`EXTENSION`, t1.`EXTRA`, t1.`ID`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`PATHNAME`, t1.`SIZE`, CONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end) AS `STRSIZE`, t1.`TITLE` FROM `zt_file` t1   ]]>
+		<![CDATA[ SELECT t1.`ADDEDBY`, t1.`ADDEDDATE`, t1.`DELETED`, t1.`DOWNLOADS`, t1.`EXTENSION`, t1.`EXTRA`, t1.`ID`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`PATHNAME`, t1.`SIZE`, CONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end) AS `STRSIZE`, t1.`TITLE`, t1.FILESN FROM `zt_file` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>

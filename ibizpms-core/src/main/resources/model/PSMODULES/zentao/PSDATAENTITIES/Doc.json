@@ -203,7 +203,12 @@
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "deleted = '0'",
+        "name" : "查询条件"
+      } ]
     } ],
     "codeName" : "DocStatus",
     "logicName" : "文档统计",
