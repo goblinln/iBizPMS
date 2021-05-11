@@ -3383,6 +3383,13 @@
                 "enableSort" : false
               } ],
               "getPSDEGridDataItems" : [ {
+                "dataType" : 1,
+                "name" : "id",
+                "getPSAppDEField" : {
+                  "name" : "ID",
+                  "codeName" : "Id"
+                }
+              }, {
                 "dataType" : 9,
                 "name" : "pri",
                 "getPSAppDEField" : {
@@ -4072,6 +4079,13 @@
                 "getPSAppDEField" : {
                   "name" : "PRODUCT",
                   "codeName" : "Product"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "id",
+                "getPSAppDEField" : {
+                  "name" : "ID",
+                  "codeName" : "Id"
                 }
               }, {
                 "dataType" : 1,
@@ -4792,6 +4806,13 @@
                 "dataAccessAction" : true
               }, {
                 "dataType" : 1,
+                "name" : "id",
+                "getPSAppDEField" : {
+                  "name" : "ID",
+                  "codeName" : "Id"
+                }
+              }, {
+                "dataType" : 1,
                 "name" : "product",
                 "getPSAppDEField" : {
                   "name" : "PRODUCT",
@@ -4813,17 +4834,17 @@
                 }
               }, {
                 "dataType" : 1,
-                "name" : "duplicatestory",
-                "getPSAppDEField" : {
-                  "name" : "DUPLICATESTORY",
-                  "codeName" : "DuplicateStory"
-                }
-              }, {
-                "dataType" : 1,
                 "name" : "branch",
                 "getPSAppDEField" : {
                   "name" : "BRANCH",
                   "codeName" : "Branch"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "duplicatestory",
+                "getPSAppDEField" : {
+                  "name" : "DUPLICATESTORY",
+                  "codeName" : "DuplicateStory"
                 }
               } ],
               "getPSDEGridEditItems" : [ {
@@ -5373,6 +5394,13 @@
               }, {
                 "dataType" : 1,
                 "name" : "srfkey",
+                "getPSAppDEField" : {
+                  "name" : "ID",
+                  "codeName" : "Id"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "id",
                 "getPSAppDEField" : {
                   "name" : "ID",
                   "codeName" : "Id"

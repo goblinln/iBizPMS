@@ -377,6 +377,7 @@ function getLocaleResourceBase(){
 				'begin': commonLogic.appcommonhandle("开始",null),
 				'end': commonLogic.appcommonhandle("结束",null),
 				'status': commonLogic.appcommonhandle("状态",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 			todo_assignto: commonLogic.appcommonhandle("指派",null),

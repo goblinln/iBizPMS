@@ -189,6 +189,7 @@ function getLocaleResourceBase(){
 				'builder': commonLogic.appcommonhandle("构建者",null),
 				'product': commonLogic.appcommonhandle("产品",null),
 				'project': commonLogic.appcommonhandle("所属项目",null),
+				'id': commonLogic.appcommonhandle("id",null),
 		},
 			uiactions: {
 				build_linkstories: commonLogic.appcommonhandle("关联需求",null),

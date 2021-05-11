@@ -429,6 +429,7 @@ function getLocaleResourceBase(){
 				'begin': commonLogic.appcommonhandle("开始日期",null),
 				'end': commonLogic.appcommonhandle("结束日期",null),
 				'status': commonLogic.appcommonhandle("当前状态",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 				testtask_linkcase: commonLogic.appcommonhandle("关联用例",null),

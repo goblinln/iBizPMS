@@ -694,6 +694,14 @@
         "name" : "PROJECTNAME",
         "codeName" : "ProjectName"
       }
+    }, {
+      "caption" : "编号",
+      "format" : "%1$s",
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
     } ]
   } ],
   "getAllPSAppDEDataSets" : [ {

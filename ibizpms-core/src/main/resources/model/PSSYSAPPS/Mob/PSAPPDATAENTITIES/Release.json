@@ -328,6 +328,14 @@
         "name" : "PRODUCT",
         "codeName" : "Product"
       }
+    }, {
+      "caption" : "ID",
+      "format" : "%1$s",
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
     } ]
   } ],
   "getAllPSAppDEDataSets" : [ {

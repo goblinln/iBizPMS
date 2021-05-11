@@ -630,19 +630,19 @@
     }
   }, {
     "dataType" : 1,
-    "name" : "srfkey",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 1,
     "name" : "srfdataaccaction",
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
     },
     "dataAccessAction" : true
+  }, {
+    "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
   }, {
     "format" : "YYYY-MM-DD",
     "dataType" : 5,
@@ -657,6 +657,13 @@
     "getPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 25,

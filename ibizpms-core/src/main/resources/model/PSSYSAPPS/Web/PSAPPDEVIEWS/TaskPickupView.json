@@ -1321,6 +1321,14 @@
           }
         }, {
           "dataType" : 1,
+          "name" : "srfdataaccaction",
+          "getPSAppDEField" : {
+            "name" : "ID",
+            "codeName" : "Id"
+          },
+          "dataAccessAction" : true
+        }, {
+          "dataType" : 1,
           "name" : "srfkey",
           "getPSAppDEField" : {
             "name" : "ID",
@@ -1328,12 +1336,11 @@
           }
         }, {
           "dataType" : 1,
-          "name" : "srfdataaccaction",
+          "name" : "id",
           "getPSAppDEField" : {
             "name" : "ID",
             "codeName" : "Id"
-          },
-          "dataAccessAction" : true
+          }
         }, {
           "dataType" : 1,
           "name" : "story",

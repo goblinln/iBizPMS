@@ -1103,6 +1103,13 @@
                 "codeName" : "Product"
               }
             }, {
+              "dataType" : 1,
+              "name" : "id",
+              "getPSAppDEField" : {
+                "name" : "ID",
+                "codeName" : "Id"
+              }
+            }, {
               "dataType" : 25,
               "name" : "modulename",
               "getPSAppDEField" : {
@@ -3635,6 +3642,13 @@
               "getPSAppDEField" : {
                 "name" : "DUPLICATEBUG",
                 "codeName" : "DuplicateBug"
+              }
+            }, {
+              "dataType" : 1,
+              "name" : "id",
+              "getPSAppDEField" : {
+                "name" : "ID",
+                "codeName" : "Id"
               }
             }, {
               "dataType" : 25,
@@ -6321,6 +6335,13 @@
                   "getPSAppDEField" : {
                     "name" : "PRODUCT",
                     "codeName" : "Product"
+                  }
+                }, {
+                  "dataType" : 1,
+                  "name" : "id",
+                  "getPSAppDEField" : {
+                    "name" : "ID",
+                    "codeName" : "Id"
                   }
                 }, {
                   "dataType" : 25,

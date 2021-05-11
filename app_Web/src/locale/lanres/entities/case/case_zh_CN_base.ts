@@ -609,6 +609,7 @@ function getLocaleResourceBase(){
 				'lastrunresult1': commonLogic.appcommonhandle("测试用例结果",null),
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'color': commonLogic.appcommonhandle("标题颜色",null),
+				'id': commonLogic.appcommonhandle("用例编号",null),
 		},
 			uiactions: {
 				case_edits: commonLogic.appcommonhandle("概况",null),
@@ -690,6 +691,7 @@ function getLocaleResourceBase(){
 				'lastrunresult1': commonLogic.appcommonhandle("测试用例结果",null),
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'color': commonLogic.appcommonhandle("标题颜色",null),
+				'id': commonLogic.appcommonhandle("用例编号",null),
 		},
 			uiactions: {
 				case_confirmstorychange: commonLogic.appcommonhandle("确认",null),
@@ -745,6 +747,7 @@ function getLocaleResourceBase(){
 				'lastrunresult1': commonLogic.appcommonhandle("测试用例结果",null),
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'color': commonLogic.appcommonhandle("标题颜色",null),
+				'id': commonLogic.appcommonhandle("用例编号",null),
 		},
 			uiactions: {
 				case_unlinksuitecase: commonLogic.appcommonhandle("移除",null),

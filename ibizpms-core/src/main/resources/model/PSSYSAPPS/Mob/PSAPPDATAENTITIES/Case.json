@@ -665,6 +665,14 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Testcase__color.json"
       }
+    }, {
+      "caption" : "用例编号",
+      "format" : "%1$s",
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
     } ]
   } ],
   "getAllPSAppDEDataSets" : [ {

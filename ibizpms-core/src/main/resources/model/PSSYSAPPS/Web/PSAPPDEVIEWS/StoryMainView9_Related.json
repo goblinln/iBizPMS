@@ -500,20 +500,6 @@
               } ],
               "getPSDEGridDataItems" : [ {
                 "dataType" : 1,
-                "name" : "story",
-                "getPSAppDEField" : {
-                  "name" : "STORY",
-                  "codeName" : "Story"
-                }
-              }, {
-                "dataType" : 1,
-                "name" : "project",
-                "getPSAppDEField" : {
-                  "name" : "PROJECT",
-                  "codeName" : "Project"
-                }
-              }, {
-                "dataType" : 1,
                 "name" : "module",
                 "getPSAppDEField" : {
                   "name" : "MODULE",
@@ -525,6 +511,66 @@
                 "getPSAppDEField" : {
                   "name" : "FROMBUG",
                   "codeName" : "FromBug"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "parent",
+                "getPSAppDEField" : {
+                  "name" : "PARENT",
+                  "codeName" : "Parent"
+                }
+              }, {
+                "dataType" : 25,
+                "name" : "projectname",
+                "getPSAppDEField" : {
+                  "name" : "PROJECTNAME",
+                  "codeName" : "ProjectName"
+                }
+              }, {
+                "dataType" : 25,
+                "name" : "srfmstag"
+              }, {
+                "dataType" : 25,
+                "name" : "srfmajortext",
+                "getPSAppDEField" : {
+                  "name" : "NAME",
+                  "codeName" : "Name"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "srfkey",
+                "getPSAppDEField" : {
+                  "name" : "ID",
+                  "codeName" : "Id"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "srfdataaccaction",
+                "getPSAppDEField" : {
+                  "name" : "ID",
+                  "codeName" : "Id"
+                },
+                "dataAccessAction" : true
+              }, {
+                "dataType" : 1,
+                "name" : "id",
+                "getPSAppDEField" : {
+                  "name" : "ID",
+                  "codeName" : "Id"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "project",
+                "getPSAppDEField" : {
+                  "name" : "PROJECT",
+                  "codeName" : "Project"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "story",
+                "getPSAppDEField" : {
+                  "name" : "STORY",
+                  "codeName" : "Story"
                 }
               }, {
                 "dataType" : 1,
@@ -542,49 +588,10 @@
                 }
               }, {
                 "dataType" : 1,
-                "name" : "parent",
-                "getPSAppDEField" : {
-                  "name" : "PARENT",
-                  "codeName" : "Parent"
-                }
-              }, {
-                "dataType" : 25,
-                "name" : "projectname",
-                "getPSAppDEField" : {
-                  "name" : "PROJECTNAME",
-                  "codeName" : "ProjectName"
-                }
-              }, {
-                "dataType" : 1,
                 "name" : "tasksn",
                 "getPSAppDEField" : {
                   "name" : "TASKSN",
                   "codeName" : "Tasksn"
-                }
-              }, {
-                "dataType" : 25,
-                "name" : "srfmstag"
-              }, {
-                "dataType" : 25,
-                "name" : "srfmajortext",
-                "getPSAppDEField" : {
-                  "name" : "NAME",
-                  "codeName" : "Name"
-                }
-              }, {
-                "dataType" : 1,
-                "name" : "srfdataaccaction",
-                "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
-                },
-                "dataAccessAction" : true
-              }, {
-                "dataType" : 1,
-                "name" : "srfkey",
-                "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
                 }
               } ],
               "getPSDEGridEditItems" : [ {
@@ -1212,24 +1219,10 @@
             } ],
             "getPSDEGridDataItems" : [ {
               "dataType" : 1,
-              "name" : "product",
-              "getPSAppDEField" : {
-                "name" : "PRODUCT",
-                "codeName" : "Product"
-              }
-            }, {
-              "dataType" : 1,
               "name" : "module",
               "getPSAppDEField" : {
                 "name" : "MODULE",
                 "codeName" : "Module"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "title",
-              "getPSAppDEField" : {
-                "name" : "TITLE",
-                "codeName" : "Title"
               }
             }, {
               "dataType" : 1,
@@ -1244,20 +1237,6 @@
               "getPSAppDEField" : {
                 "name" : "STORYSN",
                 "codeName" : "Storysn"
-              }
-            }, {
-              "dataType" : 1,
-              "name" : "branch",
-              "getPSAppDEField" : {
-                "name" : "BRANCH",
-                "codeName" : "Branch"
-              }
-            }, {
-              "dataType" : 1,
-              "name" : "duplicatestory",
-              "getPSAppDEField" : {
-                "name" : "DUPLICATESTORY",
-                "codeName" : "DuplicateStory"
               }
             }, {
               "dataType" : 1,
@@ -1278,10 +1257,10 @@
               }
             }, {
               "dataType" : 1,
-              "name" : "tobug",
+              "name" : "srfkey",
               "getPSAppDEField" : {
-                "name" : "TOBUG",
-                "codeName" : "ToBug"
+                "name" : "ID",
+                "codeName" : "Id"
               }
             }, {
               "dataType" : 1,
@@ -1293,10 +1272,45 @@
               "dataAccessAction" : true
             }, {
               "dataType" : 1,
-              "name" : "srfkey",
+              "name" : "tobug",
+              "getPSAppDEField" : {
+                "name" : "TOBUG",
+                "codeName" : "ToBug"
+              }
+            }, {
+              "dataType" : 1,
+              "name" : "id",
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
+              }
+            }, {
+              "dataType" : 1,
+              "name" : "product",
+              "getPSAppDEField" : {
+                "name" : "PRODUCT",
+                "codeName" : "Product"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "title",
+              "getPSAppDEField" : {
+                "name" : "TITLE",
+                "codeName" : "Title"
+              }
+            }, {
+              "dataType" : 1,
+              "name" : "duplicatestory",
+              "getPSAppDEField" : {
+                "name" : "DUPLICATESTORY",
+                "codeName" : "DuplicateStory"
+              }
+            }, {
+              "dataType" : 1,
+              "name" : "branch",
+              "getPSAppDEField" : {
+                "name" : "BRANCH",
+                "codeName" : "Branch"
               }
             } ],
             "getPSDEGridEditItems" : [ {
@@ -1709,24 +1723,10 @@
             } ],
             "getPSDEGridDataItems" : [ {
               "dataType" : 1,
-              "name" : "product",
-              "getPSAppDEField" : {
-                "name" : "PRODUCT",
-                "codeName" : "Product"
-              }
-            }, {
-              "dataType" : 1,
               "name" : "module",
               "getPSAppDEField" : {
                 "name" : "MODULE",
                 "codeName" : "Module"
-              }
-            }, {
-              "dataType" : 25,
-              "name" : "title",
-              "getPSAppDEField" : {
-                "name" : "TITLE",
-                "codeName" : "Title"
               }
             }, {
               "dataType" : 1,
@@ -1741,20 +1741,6 @@
               "getPSAppDEField" : {
                 "name" : "STORYSN",
                 "codeName" : "Storysn"
-              }
-            }, {
-              "dataType" : 1,
-              "name" : "branch",
-              "getPSAppDEField" : {
-                "name" : "BRANCH",
-                "codeName" : "Branch"
-              }
-            }, {
-              "dataType" : 1,
-              "name" : "duplicatestory",
-              "getPSAppDEField" : {
-                "name" : "DUPLICATESTORY",
-                "codeName" : "DuplicateStory"
               }
             }, {
               "dataType" : 1,
@@ -1775,10 +1761,10 @@
               }
             }, {
               "dataType" : 1,
-              "name" : "tobug",
+              "name" : "srfkey",
               "getPSAppDEField" : {
-                "name" : "TOBUG",
-                "codeName" : "ToBug"
+                "name" : "ID",
+                "codeName" : "Id"
               }
             }, {
               "dataType" : 1,
@@ -1790,10 +1776,45 @@
               "dataAccessAction" : true
             }, {
               "dataType" : 1,
-              "name" : "srfkey",
+              "name" : "tobug",
+              "getPSAppDEField" : {
+                "name" : "TOBUG",
+                "codeName" : "ToBug"
+              }
+            }, {
+              "dataType" : 1,
+              "name" : "id",
               "getPSAppDEField" : {
                 "name" : "ID",
                 "codeName" : "Id"
+              }
+            }, {
+              "dataType" : 1,
+              "name" : "product",
+              "getPSAppDEField" : {
+                "name" : "PRODUCT",
+                "codeName" : "Product"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "title",
+              "getPSAppDEField" : {
+                "name" : "TITLE",
+                "codeName" : "Title"
+              }
+            }, {
+              "dataType" : 1,
+              "name" : "duplicatestory",
+              "getPSAppDEField" : {
+                "name" : "DUPLICATESTORY",
+                "codeName" : "DuplicateStory"
+              }
+            }, {
+              "dataType" : 1,
+              "name" : "branch",
+              "getPSAppDEField" : {
+                "name" : "BRANCH",
+                "codeName" : "Branch"
               }
             } ],
             "getPSDEGridEditItems" : [ {
@@ -2322,6 +2343,13 @@
                 "getPSAppDEField" : {
                   "name" : "DUPLICATEBUG",
                   "codeName" : "DuplicateBug"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "id",
+                "getPSAppDEField" : {
+                  "name" : "ID",
+                  "codeName" : "Id"
                 }
               }, {
                 "dataType" : 1,
@@ -2971,6 +2999,13 @@
                 }
               }, {
                 "dataType" : 1,
+                "name" : "id",
+                "getPSAppDEField" : {
+                  "name" : "ID",
+                  "codeName" : "Id"
+                }
+              }, {
+                "dataType" : 1,
                 "name" : "product",
                 "getPSAppDEField" : {
                   "name" : "PRODUCT",
@@ -3524,45 +3559,10 @@
               } ],
               "getPSDEGridDataItems" : [ {
                 "dataType" : 1,
-                "name" : "product",
-                "getPSAppDEField" : {
-                  "name" : "PRODUCT",
-                  "codeName" : "Product"
-                }
-              }, {
-                "dataType" : 1,
-                "name" : "story",
-                "getPSAppDEField" : {
-                  "name" : "STORY",
-                  "codeName" : "Story"
-                }
-              }, {
-                "dataType" : 1,
                 "name" : "module",
                 "getPSAppDEField" : {
                   "name" : "MODULE",
                   "codeName" : "Module"
-                }
-              }, {
-                "dataType" : 25,
-                "name" : "title",
-                "getPSAppDEField" : {
-                  "name" : "TITLE",
-                  "codeName" : "Title"
-                }
-              }, {
-                "dataType" : 9,
-                "name" : "pri",
-                "getPSAppDEField" : {
-                  "name" : "PRI",
-                  "codeName" : "Pri"
-                }
-              }, {
-                "dataType" : 1,
-                "name" : "lib",
-                "getPSAppDEField" : {
-                  "name" : "LIB",
-                  "codeName" : "Lib"
                 }
               }, {
                 "dataType" : 1,
@@ -3570,20 +3570,6 @@
                 "getPSAppDEField" : {
                   "name" : "FROMBUG",
                   "codeName" : "FromBug"
-                }
-              }, {
-                "dataType" : 1,
-                "name" : "branch",
-                "getPSAppDEField" : {
-                  "name" : "BRANCH",
-                  "codeName" : "Branch"
-                }
-              }, {
-                "dataType" : 1,
-                "name" : "fromcaseid",
-                "getPSAppDEField" : {
-                  "name" : "FROMCASEID",
-                  "codeName" : "FromCaseId"
                 }
               }, {
                 "dataType" : 25,
@@ -3597,6 +3583,13 @@
                 }
               }, {
                 "dataType" : 1,
+                "name" : "srfkey",
+                "getPSAppDEField" : {
+                  "name" : "ID",
+                  "codeName" : "Id"
+                }
+              }, {
+                "dataType" : 1,
                 "name" : "srfdataaccaction",
                 "getPSAppDEField" : {
                   "name" : "ID",
@@ -3605,10 +3598,59 @@
                 "dataAccessAction" : true
               }, {
                 "dataType" : 1,
-                "name" : "srfkey",
+                "name" : "id",
                 "getPSAppDEField" : {
                   "name" : "ID",
                   "codeName" : "Id"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "product",
+                "getPSAppDEField" : {
+                  "name" : "PRODUCT",
+                  "codeName" : "Product"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "story",
+                "getPSAppDEField" : {
+                  "name" : "STORY",
+                  "codeName" : "Story"
+                }
+              }, {
+                "dataType" : 9,
+                "name" : "pri",
+                "getPSAppDEField" : {
+                  "name" : "PRI",
+                  "codeName" : "Pri"
+                }
+              }, {
+                "dataType" : 25,
+                "name" : "title",
+                "getPSAppDEField" : {
+                  "name" : "TITLE",
+                  "codeName" : "Title"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "lib",
+                "getPSAppDEField" : {
+                  "name" : "LIB",
+                  "codeName" : "Lib"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "fromcaseid",
+                "getPSAppDEField" : {
+                  "name" : "FROMCASEID",
+                  "codeName" : "FromCaseId"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "branch",
+                "getPSAppDEField" : {
+                  "name" : "BRANCH",
+                  "codeName" : "Branch"
                 }
               } ],
               "getPSDEGridEditItems" : [ {

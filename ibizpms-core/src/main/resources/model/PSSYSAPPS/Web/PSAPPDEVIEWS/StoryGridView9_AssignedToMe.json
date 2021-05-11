@@ -368,6 +368,13 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 1,
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 1,
       "name" : "product",
       "getPSAppDEField" : {
         "name" : "PRODUCT",
@@ -389,17 +396,17 @@
       }
     }, {
       "dataType" : 1,
-      "name" : "duplicatestory",
-      "getPSAppDEField" : {
-        "name" : "DUPLICATESTORY",
-        "codeName" : "DuplicateStory"
-      }
-    }, {
-      "dataType" : 1,
       "name" : "branch",
       "getPSAppDEField" : {
         "name" : "BRANCH",
         "codeName" : "Branch"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "duplicatestory",
+      "getPSAppDEField" : {
+        "name" : "DUPLICATESTORY",
+        "codeName" : "DuplicateStory"
       }
     } ],
     "getPSDEGridEditItems" : [ {

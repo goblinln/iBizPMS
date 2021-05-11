@@ -354,38 +354,10 @@
     } ],
     "getPSDEGridDataItems" : [ {
       "dataType" : 1,
-      "name" : "product",
-      "getPSAppDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "project",
-      "getPSAppDEField" : {
-        "name" : "PROJECT",
-        "codeName" : "Project"
-      }
-    }, {
-      "dataType" : 1,
       "name" : "testtasksn",
       "getPSAppDEField" : {
         "name" : "TESTTASKSN",
         "codeName" : "Testtasksn"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "projecttname",
-      "getPSAppDEField" : {
-        "name" : "PROJECTTNAME",
-        "codeName" : "ProjecttName"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "name",
-      "getPSAppDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
       }
     }, {
       "dataType" : 1,
@@ -406,6 +378,13 @@
       }
     }, {
       "dataType" : 1,
+      "name" : "srfkey",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 1,
       "name" : "srfdataaccaction",
       "getPSAppDEField" : {
         "name" : "ID",
@@ -413,11 +392,47 @@
       },
       "dataAccessAction" : true
     }, {
+      "format" : "YYYY-MM-DD",
+      "dataType" : 5,
+      "name" : "begin",
+      "getPSAppDEField" : {
+        "name" : "BEGIN",
+        "codeName" : "Begin"
+      }
+    }, {
       "dataType" : 1,
-      "name" : "srfkey",
+      "name" : "product",
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "id",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "project",
+      "getPSAppDEField" : {
+        "name" : "PROJECT",
+        "codeName" : "Project"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "projecttname",
+      "getPSAppDEField" : {
+        "name" : "PROJECTTNAME",
+        "codeName" : "ProjecttName"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "name",
+      "getPSAppDEField" : {
+        "name" : "NAME",
+        "codeName" : "Name"
       }
     }, {
       "format" : "YYYY-MM-DD",
@@ -426,14 +441,6 @@
       "getPSAppDEField" : {
         "name" : "END",
         "codeName" : "End"
-      }
-    }, {
-      "format" : "YYYY-MM-DD",
-      "dataType" : 5,
-      "name" : "begin",
-      "getPSAppDEField" : {
-        "name" : "BEGIN",
-        "codeName" : "Begin"
       }
     }, {
       "dataType" : 25,

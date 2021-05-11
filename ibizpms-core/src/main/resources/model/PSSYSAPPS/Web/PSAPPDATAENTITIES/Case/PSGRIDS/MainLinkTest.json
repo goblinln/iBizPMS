@@ -283,21 +283,6 @@
     }
   }, {
     "dataType" : 1,
-    "name" : "module",
-    "getPSAppDEField" : {
-      "name" : "MODULE",
-      "codeName" : "Module"
-    }
-  }, {
-    "format" : "YYYY-MM-DD HH:mm:ss",
-    "dataType" : 5,
-    "name" : "lastrundate",
-    "getPSAppDEField" : {
-      "name" : "LASTRUNDATE",
-      "codeName" : "LastRunDate"
-    }
-  }, {
-    "dataType" : 1,
     "name" : "frombug",
     "getPSAppDEField" : {
       "name" : "FROMBUG",
@@ -309,13 +294,6 @@
     "getPSAppDEField" : {
       "name" : "VERSION",
       "codeName" : "Version"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "status",
-    "getPSAppDEField" : {
-      "name" : "STATUS",
-      "codeName" : "Status"
     }
   }, {
     "dataType" : 25,
@@ -343,6 +321,13 @@
     }
   }, {
     "dataType" : 1,
+    "name" : "srfkey",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
+    "dataType" : 1,
     "name" : "srfdataaccaction",
     "getPSAppDEField" : {
       "name" : "ID",
@@ -350,11 +335,11 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 1,
-    "name" : "srfkey",
+    "dataType" : 25,
+    "name" : "openedby",
     "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "OPENEDBY",
+      "codeName" : "OpenedBy"
     }
   }, {
     "dataType" : 9,
@@ -364,18 +349,11 @@
       "codeName" : "Version"
     }
   }, {
-    "dataType" : 25,
-    "name" : "openedby",
-    "getPSAppDEField" : {
-      "name" : "OPENEDBY",
-      "codeName" : "OpenedBy"
-    }
-  }, {
     "dataType" : 1,
-    "name" : "product",
+    "name" : "id",
     "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 1,
@@ -383,13 +361,6 @@
     "getPSAppDEField" : {
       "name" : "STORY",
       "codeName" : "Story"
-    }
-  }, {
-    "dataType" : 9,
-    "name" : "pri",
-    "getPSAppDEField" : {
-      "name" : "PRI",
-      "codeName" : "Pri"
     }
   }, {
     "dataType" : 25,
@@ -400,10 +371,46 @@
     }
   }, {
     "dataType" : 1,
-    "name" : "lib",
+    "name" : "fromcaseid",
     "getPSAppDEField" : {
-      "name" : "LIB",
-      "codeName" : "Lib"
+      "name" : "FROMCASEID",
+      "codeName" : "FromCaseId"
+    }
+  }, {
+    "format" : "YYYY-MM-DD HH:mm:ss",
+    "dataType" : 5,
+    "name" : "lastrundate",
+    "getPSAppDEField" : {
+      "name" : "LASTRUNDATE",
+      "codeName" : "LastRunDate"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "module",
+    "getPSAppDEField" : {
+      "name" : "MODULE",
+      "codeName" : "Module"
+    }
+  }, {
+    "dataType" : 25,
+    "name" : "status",
+    "getPSAppDEField" : {
+      "name" : "STATUS",
+      "codeName" : "Status"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "product",
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    }
+  }, {
+    "dataType" : 9,
+    "name" : "pri",
+    "getPSAppDEField" : {
+      "name" : "PRI",
+      "codeName" : "Pri"
     }
   }, {
     "dataType" : 25,
@@ -413,6 +420,13 @@
       "codeName" : "Lastrunresult1"
     }
   }, {
+    "dataType" : 1,
+    "name" : "lib",
+    "getPSAppDEField" : {
+      "name" : "LIB",
+      "codeName" : "Lib"
+    }
+  }, {
     "dataType" : 25,
     "name" : "color",
     "getPSAppDEField" : {
@@ -420,25 +434,18 @@
       "codeName" : "Color"
     }
   }, {
-    "dataType" : 1,
-    "name" : "branch",
-    "getPSAppDEField" : {
-      "name" : "BRANCH",
-      "codeName" : "Branch"
-    }
-  }, {
-    "dataType" : 1,
-    "name" : "fromcaseid",
-    "getPSAppDEField" : {
-      "name" : "FROMCASEID",
-      "codeName" : "FromCaseId"
-    }
-  }, {
     "dataType" : 25,
     "name" : "lastrunresult",
     "getPSAppDEField" : {
       "name" : "LASTRUNRESULT",
       "codeName" : "LastRunResult"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "branch",
+    "getPSAppDEField" : {
+      "name" : "BRANCH",
+      "codeName" : "Branch"
     }
   }, {
     "dataType" : 25,

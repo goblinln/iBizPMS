@@ -211,6 +211,13 @@
       "codeName" : "Product"
     }
   }, {
+    "dataType" : 1,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
     "dataType" : 9,
     "name" : "order",
     "getPSAppDEField" : {

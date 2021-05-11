@@ -660,6 +660,13 @@
               "enableSort" : false
             } ],
             "getPSDEGridDataItems" : [ {
+              "dataType" : 1,
+              "name" : "id",
+              "getPSAppDEField" : {
+                "name" : "ID",
+                "codeName" : "Id"
+              }
+            }, {
               "dataType" : 21,
               "name" : "work",
               "getPSAppDEField" : {
@@ -1665,6 +1672,13 @@
               "enableSort" : false
             } ],
             "getPSDEGridDataItems" : [ {
+              "dataType" : 1,
+              "name" : "id",
+              "getPSAppDEField" : {
+                "name" : "ID",
+                "codeName" : "Id"
+              }
+            }, {
               "dataType" : 21,
               "name" : "work",
               "getPSAppDEField" : {
@@ -2598,6 +2612,13 @@
               "enableSort" : false
             } ],
             "getPSDEGridDataItems" : [ {
+              "dataType" : 1,
+              "name" : "id",
+              "getPSAppDEField" : {
+                "name" : "ID",
+                "codeName" : "Id"
+              }
+            }, {
               "dataType" : 21,
               "name" : "work",
               "getPSAppDEField" : {

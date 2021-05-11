@@ -692,6 +692,14 @@
                   "codeName" : "Expect"
                 }
               }, {
+                "dataType" : 1,
+                "name" : "srfdataaccaction",
+                "getPSAppDEField" : {
+                  "name" : "ID",
+                  "codeName" : "Id"
+                },
+                "dataAccessAction" : true
+              }, {
                 "dataType" : 25,
                 "name" : "reals",
                 "getPSAppDEField" : {
@@ -705,14 +713,6 @@
                   "name" : "ID",
                   "codeName" : "Id"
                 }
-              }, {
-                "dataType" : 1,
-                "name" : "srfdataaccaction",
-                "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
-                },
-                "dataAccessAction" : true
               }, {
                 "dataType" : 9,
                 "name" : "runid",
@@ -733,6 +733,13 @@
                 "getPSAppDEField" : {
                   "name" : "EXPECT",
                   "codeName" : "Expect"
+                }
+              }, {
+                "dataType" : 1,
+                "name" : "id",
+                "getPSAppDEField" : {
+                  "name" : "ID",
+                  "codeName" : "Id"
                 }
               }, {
                 "dataType" : 1,

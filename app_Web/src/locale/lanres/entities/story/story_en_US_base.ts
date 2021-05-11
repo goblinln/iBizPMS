@@ -891,6 +891,7 @@ function getLocaleResourceBase(){
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'ischild': commonLogic.appcommonhandle("是否可以细分",null),
 				'color': commonLogic.appcommonhandle("标题颜色",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 			story_storytobug: commonLogic.appcommonhandle("提缺陷",null),
@@ -933,6 +934,7 @@ function getLocaleResourceBase(){
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'ischild': commonLogic.appcommonhandle("是否可以细分",null),
 				'color': commonLogic.appcommonhandle("标题颜色",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 			story_unlinkstory: commonLogic.appcommonhandle("移除关联",null),
@@ -984,6 +986,7 @@ function getLocaleResourceBase(){
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'ischild': commonLogic.appcommonhandle("是否可以细分",null),
 				'color': commonLogic.appcommonhandle("标题颜色",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 			story_breakdowntasks: commonLogic.appcommonhandle("分解任务",null),
@@ -1019,6 +1022,7 @@ function getLocaleResourceBase(){
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'ischild': commonLogic.appcommonhandle("是否可以细分",null),
 				'color': commonLogic.appcommonhandle("标题颜色",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 			story_buildunlinkstory: commonLogic.appcommonhandle("解绑需求",null),
@@ -1079,6 +1083,7 @@ function getLocaleResourceBase(){
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'ischild': commonLogic.appcommonhandle("是否可以细分",null),
 				'color': commonLogic.appcommonhandle("标题颜色",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 			story_assignto: commonLogic.appcommonhandle("指派",null),
@@ -1121,6 +1126,7 @@ function getLocaleResourceBase(){
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'ischild': commonLogic.appcommonhandle("是否可以细分",null),
 				'color': commonLogic.appcommonhandle("标题颜色",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 			story_releaseunlinkstory: commonLogic.appcommonhandle("移除关联",null),
@@ -1157,6 +1163,7 @@ function getLocaleResourceBase(){
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'ischild': commonLogic.appcommonhandle("是否可以细分",null),
 				'color': commonLogic.appcommonhandle("标题颜色",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 			story_changestorydetail: commonLogic.appcommonhandle("变更",null),
@@ -1211,6 +1218,7 @@ function getLocaleResourceBase(){
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'ischild': commonLogic.appcommonhandle("是否可以细分",null),
 				'color': commonLogic.appcommonhandle("标题颜色",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 			story_storytobug: commonLogic.appcommonhandle("提缺陷",null),
@@ -1247,6 +1255,7 @@ function getLocaleResourceBase(){
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'ischild': commonLogic.appcommonhandle("是否可以细分",null),
 				'color': commonLogic.appcommonhandle("标题颜色",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 			story_storytobug: commonLogic.appcommonhandle("提缺陷",null),
@@ -1290,6 +1299,7 @@ function getLocaleResourceBase(){
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'ischild': commonLogic.appcommonhandle("是否可以细分",null),
 				'color': commonLogic.appcommonhandle("标题颜色",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 			story_assignto: commonLogic.appcommonhandle("指派",null),

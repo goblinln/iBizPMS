@@ -335,6 +335,13 @@
       "codeName" : "Estimate"
     }
   }, {
+    "dataType" : 25,
+    "name" : "srfmajortext",
+    "getPSAppDEField" : {
+      "name" : "NAME",
+      "codeName" : "Name"
+    }
+  }, {
     "dataType" : 1,
     "name" : "srfkey",
     "getPSAppDEField" : {
@@ -350,11 +357,11 @@
     },
     "dataAccessAction" : true
   }, {
-    "dataType" : 25,
-    "name" : "srfmajortext",
+    "dataType" : 1,
+    "name" : "id",
     "getPSAppDEField" : {
-      "name" : "NAME",
-      "codeName" : "Name"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 25,

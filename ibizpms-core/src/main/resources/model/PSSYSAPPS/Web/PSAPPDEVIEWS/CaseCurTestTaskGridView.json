@@ -1174,11 +1174,11 @@
         "codeName" : "OpenedBy"
       }
     }, {
-      "dataType" : 25,
-      "name" : "assignedto",
+      "dataType" : 1,
+      "name" : "id",
       "getPSAppDEField" : {
-        "name" : "ASSIGNEDTO",
-        "codeName" : "AssignedTo"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,
@@ -1186,6 +1186,13 @@
       "getPSAppDEField" : {
         "name" : "STORY",
         "codeName" : "Story"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "assignedto",
+      "getPSAppDEField" : {
+        "name" : "ASSIGNEDTO",
+        "codeName" : "AssignedTo"
       }
     }, {
       "dataType" : 25,

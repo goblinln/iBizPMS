@@ -1160,6 +1160,13 @@
     },
     "dataAccessAction" : true
   }, {
+    "dataType" : 1,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
     "dataType" : 25,
     "name" : "assignedto",
     "getPSAppDEField" : {

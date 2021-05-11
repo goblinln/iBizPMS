@@ -573,6 +573,14 @@
         "name" : "PROJECTNAME",
         "codeName" : "ProjectName"
       }
+    }, {
+      "caption" : "Bug编号",
+      "format" : "%1$s",
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
     } ]
   } ],
   "getAllPSAppDEDataSets" : [ {

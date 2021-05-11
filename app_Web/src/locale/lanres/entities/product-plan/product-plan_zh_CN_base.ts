@@ -205,6 +205,7 @@ function getLocaleResourceBase(){
 				'storycnt': commonLogic.appcommonhandle("需求数",null),
 				'bugcnt': commonLogic.appcommonhandle("bug数",null),
 				'statuss': commonLogic.appcommonhandle("状态",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 				productplan_addproject: commonLogic.appcommonhandle("添加项目",null),

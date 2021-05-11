@@ -182,6 +182,7 @@ function getLocaleResourceBase(){
 				'status': commonLogic.appcommonhandle("状态",null),
 				'date': commonLogic.appcommonhandle("发布日期",null),
 				'product': commonLogic.appcommonhandle("产品",null),
+				'id': commonLogic.appcommonhandle("ID",null),
 		},
 			uiactions: {
 			release_linkstory: commonLogic.appcommonhandle("关联需求",null),

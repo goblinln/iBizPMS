@@ -68,6 +68,7 @@ function getLocaleResourceBase(){
 				'branchsn': commonLogic.appcommonhandle("编号",null),
 				'name': commonLogic.appcommonhandle("名称",null),
 				'order': commonLogic.appcommonhandle("排序",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 				branch_edit: commonLogic.appcommonhandle("编辑",null),

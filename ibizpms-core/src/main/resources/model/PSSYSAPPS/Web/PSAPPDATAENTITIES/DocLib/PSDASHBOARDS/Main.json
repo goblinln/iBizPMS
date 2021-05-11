@@ -399,6 +399,13 @@
             }
           }, {
             "dataType" : 1,
+            "name" : "id",
+            "getPSAppDEField" : {
+              "name" : "ID",
+              "codeName" : "Id"
+            }
+          }, {
+            "dataType" : 1,
             "name" : "project",
             "getPSAppDEField" : {
               "name" : "PROJECT",
@@ -909,6 +916,13 @@
             }
           }, {
             "dataType" : 1,
+            "name" : "id",
+            "getPSAppDEField" : {
+              "name" : "ID",
+              "codeName" : "Id"
+            }
+          }, {
+            "dataType" : 1,
             "name" : "project",
             "getPSAppDEField" : {
               "name" : "PROJECT",
@@ -1411,6 +1425,13 @@
             "getPSAppDEField" : {
               "name" : "PRODUCT",
               "codeName" : "Product"
+            }
+          }, {
+            "dataType" : 1,
+            "name" : "id",
+            "getPSAppDEField" : {
+              "name" : "ID",
+              "codeName" : "Id"
             }
           }, {
             "dataType" : 1,
@@ -2906,6 +2927,13 @@
             "enableSort" : true
           } ],
           "getPSDEGridDataItems" : [ {
+            "dataType" : 1,
+            "name" : "id",
+            "getPSAppDEField" : {
+              "name" : "ID",
+              "codeName" : "Id"
+            }
+          }, {
             "dataType" : 9,
             "name" : "doclibcnt",
             "getPSAppDEField" : {

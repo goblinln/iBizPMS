@@ -955,6 +955,14 @@
         "modelref" : true,
         "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Story__color.json"
       }
+    }, {
+      "caption" : "编号",
+      "format" : "%1$s",
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
     } ]
   } ],
   "getAllPSAppDEDataSets" : [ {

@@ -357,6 +357,7 @@ function getLocaleResourceBase(){
 				'createddate': commonLogic.appcommonhandle("创建时间",null),
 				'projectname': commonLogic.appcommonhandle("所属项目",null),
 				'tasks': commonLogic.appcommonhandle("测试版本",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 				edit: commonLogic.appcommonhandle("编辑",null),

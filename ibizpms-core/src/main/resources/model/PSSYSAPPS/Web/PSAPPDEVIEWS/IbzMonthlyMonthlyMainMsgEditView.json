@@ -1767,6 +1767,13 @@
                   },
                   "dataAccessAction" : true
                 }, {
+                  "dataType" : 1,
+                  "name" : "id",
+                  "getPSAppDEField" : {
+                    "name" : "ID",
+                    "codeName" : "Id"
+                  }
+                }, {
                   "dataType" : 25,
                   "name" : "assignedto",
                   "getPSAppDEField" : {
@@ -2548,6 +2555,23 @@
                   "width" : 120,
                   "widthUnit" : "PX",
                   "enableSort" : true
+                }, {
+                  "align" : "LEFT",
+                  "cLConvertMode" : "NONE",
+                  "caption" : "编号",
+                  "codeName" : "id",
+                  "columnType" : "DEFGRIDCOLUMN",
+                  "dataItemName" : "id",
+                  "excelCaption" : "编号",
+                  "name" : "id",
+                  "noPrivDisplayMode" : 1,
+                  "getPSAppDEField" : {
+                    "name" : "ID",
+                    "codeName" : "Id"
+                  },
+                  "width" : 100,
+                  "widthUnit" : "PX",
+                  "enableSort" : true
                 } ],
                 "getPSDEGridDataItems" : [ {
                   "dataType" : 25,
@@ -2602,6 +2626,13 @@
                     "codeName" : "Id"
                   },
                   "dataAccessAction" : true
+                }, {
+                  "dataType" : 1,
+                  "name" : "id",
+                  "getPSAppDEField" : {
+                    "name" : "ID",
+                    "codeName" : "Id"
+                  }
                 }, {
                   "dataType" : 25,
                   "name" : "assignedto",

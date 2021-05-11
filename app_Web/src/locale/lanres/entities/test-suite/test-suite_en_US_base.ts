@@ -93,6 +93,7 @@ function getLocaleResourceBase(){
 				'desc': commonLogic.appcommonhandle("描述",null),
 				'addedby': commonLogic.appcommonhandle("由谁创建",null),
 				'addeddate': commonLogic.appcommonhandle("创建时间",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 			testsuite_linkcasedash: commonLogic.appcommonhandle("关联用例",null),

@@ -896,6 +896,7 @@ function getLocaleResourceBase(){
 				'tasktype': commonLogic.appcommonhandle("任务类型",null),
 				'product': commonLogic.appcommonhandle("产品",null),
 				'projectname': commonLogic.appcommonhandle("所属项目",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 			task_assigntask: commonLogic.appcommonhandle("指派",null),
@@ -939,6 +940,7 @@ function getLocaleResourceBase(){
 				'tasktype': commonLogic.appcommonhandle("任务类型",null),
 				'product': commonLogic.appcommonhandle("产品",null),
 				'projectname': commonLogic.appcommonhandle("所属项目",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 			task_childmore: commonLogic.appcommonhandle("更多",null),
@@ -991,6 +993,7 @@ function getLocaleResourceBase(){
 				'tasktype': commonLogic.appcommonhandle("任务类型",null),
 				'product': commonLogic.appcommonhandle("产品",null),
 				'projectname': commonLogic.appcommonhandle("所属项目",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 			task_childmore: commonLogic.appcommonhandle("更多",null),
@@ -1253,6 +1256,7 @@ function getLocaleResourceBase(){
 				'tasktype': commonLogic.appcommonhandle("任务类型",null),
 				'product': commonLogic.appcommonhandle("产品",null),
 				'projectname': commonLogic.appcommonhandle("所属项目",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 			task_childmore: commonLogic.appcommonhandle("更多",null),
@@ -1295,6 +1299,7 @@ function getLocaleResourceBase(){
 				'left': commonLogic.appcommonhandle("剩余",null),
 				'progressrate': commonLogic.appcommonhandle("%",null),
 				'deadline': commonLogic.appcommonhandle("截止日期",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 			},
 			nodata:commonLogic.appcommonhandle("",null),
 			uiactions: {
@@ -1325,6 +1330,7 @@ function getLocaleResourceBase(){
 				'tasktype': commonLogic.appcommonhandle("任务类型",null),
 				'product': commonLogic.appcommonhandle("产品",null),
 				'projectname': commonLogic.appcommonhandle("所属项目",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 			},
@@ -1363,6 +1369,7 @@ function getLocaleResourceBase(){
 				'tasktype': commonLogic.appcommonhandle("任务类型",null),
 				'product': commonLogic.appcommonhandle("产品",null),
 				'projectname': commonLogic.appcommonhandle("所属项目",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 			task_childmore: commonLogic.appcommonhandle("更多",null),

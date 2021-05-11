@@ -953,6 +953,7 @@ function getLocaleResourceBase(){
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'productname': commonLogic.appcommonhandle("产品",null),
 				'projectname': commonLogic.appcommonhandle("项目",null),
+				'id': commonLogic.appcommonhandle("Bug编号",null),
 		},
 			uiactions: {
 				bug_unlinkbug: commonLogic.appcommonhandle("移除关联",null),
@@ -1003,6 +1004,7 @@ function getLocaleResourceBase(){
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'productname': commonLogic.appcommonhandle("产品",null),
 				'projectname': commonLogic.appcommonhandle("项目",null),
+				'id': commonLogic.appcommonhandle("Bug编号",null),
 		},
 			uiactions: {
 				bug_assingtobug: commonLogic.appcommonhandle("指派",null),
@@ -1043,6 +1045,7 @@ function getLocaleResourceBase(){
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'productname': commonLogic.appcommonhandle("产品",null),
 				'projectname': commonLogic.appcommonhandle("项目",null),
+				'id': commonLogic.appcommonhandle("Bug编号",null),
 		},
 			uiactions: {
 				bug_unlinkbug_build: commonLogic.appcommonhandle("解除关联",null),
@@ -1147,6 +1150,7 @@ function getLocaleResourceBase(){
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'productname': commonLogic.appcommonhandle("产品",null),
 				'projectname': commonLogic.appcommonhandle("项目",null),
+				'id': commonLogic.appcommonhandle("Bug编号",null),
 		},
 			uiactions: {
 				bug_releaseunlinkbug: commonLogic.appcommonhandle("移除bug",null),
@@ -1179,6 +1183,7 @@ function getLocaleResourceBase(){
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'productname': commonLogic.appcommonhandle("产品",null),
 				'projectname': commonLogic.appcommonhandle("项目",null),
+				'id': commonLogic.appcommonhandle("Bug编号",null),
 		},
 			uiactions: {
 				bug_releaseunlinkbugbyleftbug: commonLogic.appcommonhandle("移除bug",null),
@@ -1217,6 +1222,7 @@ function getLocaleResourceBase(){
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'productname': commonLogic.appcommonhandle("产品",null),
 				'projectname': commonLogic.appcommonhandle("项目",null),
+				'id': commonLogic.appcommonhandle("Bug编号",null),
 		},
 			uiactions: {
 				bug_assingtobug: commonLogic.appcommonhandle("指派",null),
@@ -1282,6 +1288,7 @@ function getLocaleResourceBase(){
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'productname': commonLogic.appcommonhandle("产品",null),
 				'projectname': commonLogic.appcommonhandle("项目",null),
+				'id': commonLogic.appcommonhandle("Bug编号",null),
 		},
 			uiactions: {
 				bug_confirmbug: commonLogic.appcommonhandle("确认",null),
@@ -1337,6 +1344,7 @@ function getLocaleResourceBase(){
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'productname': commonLogic.appcommonhandle("产品",null),
 				'projectname': commonLogic.appcommonhandle("项目",null),
+				'id': commonLogic.appcommonhandle("Bug编号",null),
 		},
 			uiactions: {
 				bug_confirmbug: commonLogic.appcommonhandle("确认",null),

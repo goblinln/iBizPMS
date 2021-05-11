@@ -1091,6 +1091,13 @@
       }
     }, {
       "dataType" : 1,
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 1,
       "name" : "story",
       "getPSAppDEField" : {
         "name" : "STORY",
@@ -1161,18 +1168,18 @@
         "codeName" : "Pri"
       }
     }, {
-      "dataType" : 25,
-      "name" : "lastrunresult1",
-      "getPSAppDEField" : {
-        "name" : "LASTRUNRESULT1",
-        "codeName" : "Lastrunresult1"
-      }
-    }, {
       "dataType" : 1,
       "name" : "lib",
       "getPSAppDEField" : {
         "name" : "LIB",
         "codeName" : "Lib"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "lastrunresult1",
+      "getPSAppDEField" : {
+        "name" : "LASTRUNRESULT1",
+        "codeName" : "Lastrunresult1"
       }
     }, {
       "dataType" : 25,

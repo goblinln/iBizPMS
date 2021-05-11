@@ -95,6 +95,13 @@
     "enableSort" : true
   } ],
   "getPSDEGridDataItems" : [ {
+    "dataType" : 1,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    }
+  }, {
     "dataType" : 9,
     "name" : "doclibcnt",
     "getPSAppDEField" : {

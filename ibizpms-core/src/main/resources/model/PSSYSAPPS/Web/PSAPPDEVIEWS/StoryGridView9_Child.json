@@ -254,24 +254,10 @@
     } ],
     "getPSDEGridDataItems" : [ {
       "dataType" : 1,
-      "name" : "product",
-      "getPSAppDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
-      }
-    }, {
-      "dataType" : 1,
       "name" : "module",
       "getPSAppDEField" : {
         "name" : "MODULE",
         "codeName" : "Module"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "title",
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
       }
     }, {
       "dataType" : 1,
@@ -286,20 +272,6 @@
       "getPSAppDEField" : {
         "name" : "STORYSN",
         "codeName" : "Storysn"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "branch",
-      "getPSAppDEField" : {
-        "name" : "BRANCH",
-        "codeName" : "Branch"
-      }
-    }, {
-      "dataType" : 1,
-      "name" : "duplicatestory",
-      "getPSAppDEField" : {
-        "name" : "DUPLICATESTORY",
-        "codeName" : "DuplicateStory"
       }
     }, {
       "dataType" : 1,
@@ -320,10 +292,10 @@
       }
     }, {
       "dataType" : 1,
-      "name" : "tobug",
+      "name" : "srfkey",
       "getPSAppDEField" : {
-        "name" : "TOBUG",
-        "codeName" : "ToBug"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,
@@ -335,10 +307,45 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 1,
-      "name" : "srfkey",
+      "name" : "tobug",
+      "getPSAppDEField" : {
+        "name" : "TOBUG",
+        "codeName" : "ToBug"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "id",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "product",
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "title",
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "duplicatestory",
+      "getPSAppDEField" : {
+        "name" : "DUPLICATESTORY",
+        "codeName" : "DuplicateStory"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "branch",
+      "getPSAppDEField" : {
+        "name" : "BRANCH",
+        "codeName" : "Branch"
       }
     } ],
     "getPSDEGridEditItems" : [ {

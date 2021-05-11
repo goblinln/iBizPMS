@@ -240,6 +240,13 @@
       } ],
       "getPSDEGridDataItems" : [ {
         "dataType" : 1,
+        "name" : "id",
+        "getPSAppDEField" : {
+          "name" : "ID",
+          "codeName" : "Id"
+        }
+      }, {
+        "dataType" : 1,
         "name" : "projectsn",
         "getPSAppDEField" : {
           "name" : "PROJECTSN",

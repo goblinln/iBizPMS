@@ -1002,6 +1002,13 @@
       },
       "dataAccessAction" : true
     }, {
+      "dataType" : 1,
+      "name" : "duplicatebug",
+      "getPSAppDEField" : {
+        "name" : "DUPLICATEBUG",
+        "codeName" : "DuplicateBug"
+      }
+    }, {
       "dataType" : 25,
       "name" : "openedby",
       "getPSAppDEField" : {
@@ -1010,10 +1017,10 @@
       }
     }, {
       "dataType" : 1,
-      "name" : "duplicatebug",
+      "name" : "id",
       "getPSAppDEField" : {
-        "name" : "DUPLICATEBUG",
-        "codeName" : "DuplicateBug"
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,
