@@ -181,6 +181,9 @@
 			<if test="true">
                 <![CDATA[ AND ( t1.`PRODUCT` LIKE  CONCAT('%,',#{srf.datacontext.srfparentkey},',%') ) ]]>
             </if>
+			<if test="true">
+                <![CDATA[ AND (t1.Today = #{srf.n_today_eq} or t1.yesterday = #{srf.n_yesterday_eq} or t1.thisweek= #{srf.n_thisweek_eq} or t1.lastweek= #{srf.n_lastweek_eq} or t1.thismonth = #{srf.n_thismonth_eq} or t1.lastmonth= #{srf.n_lastmonth_eq} or (#{srf.n_today_eq} is null and #{srf.n_yesterday_eq} is null) and #{srf.n_thisweek_eq} is null and #{srf.n_lastweek_eq} is null and #{srf.n_thismonth_eq} is null and    #{srf.n_lastmonth_eq} is null) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -195,6 +198,9 @@
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND ( t1.`PROJECT` = #{srf.datacontext.srfparentkey} ) ]]>
+            </if>
+			<if test="true">
+                <![CDATA[ AND (t1.Today = #{srf.n_today_eq} or t1.yesterday = #{srf.n_yesterday_eq} or t1.thisweek= #{srf.n_thisweek_eq} or t1.lastweek= #{srf.n_lastweek_eq} or t1.thismonth = #{srf.n_thismonth_eq} or t1.lastmonth= #{srf.n_lastmonth_eq} or (#{srf.n_today_eq} is null and #{srf.n_yesterday_eq} is null) and #{srf.n_thisweek_eq} is null and #{srf.n_lastweek_eq} is null and #{srf.n_thismonth_eq} is null and    #{srf.n_lastmonth_eq} is null) ]]>
             </if>
 			<include refid="searchMode" />
 		</trim>
