@@ -109,8 +109,8 @@ export default class ProductPlan {
         if(items && items instanceof Array && items.length >0){
             items.forEach((item: any) => {
                 let itemdata:any = {};
-                Object.assign(itemdata,{id:item.productplansn});
-                Object.assign(itemdata,{value:item.productplansn});
+                Object.assign(itemdata,{id:item.id});
+                Object.assign(itemdata,{value:item.id});
                 Object.assign(itemdata,{text:item.title});
                 Object.assign(itemdata,{label:item.title});
                 
