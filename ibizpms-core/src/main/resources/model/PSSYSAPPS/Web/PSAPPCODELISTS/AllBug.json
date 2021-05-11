@@ -19,8 +19,8 @@
     "codeName" : "Title"
   },
   "getValuePSAppDEField" : {
-    "name" : "BUGSN",
-    "codeName" : "Bugsn"
+    "name" : "ID",
+    "codeName" : "Id"
   },
   "enableCache" : true
 }

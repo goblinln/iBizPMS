@@ -14,8 +14,8 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
   },
   "getValuePSAppDEField" : {
-    "name" : "PROJECTSN",
-    "codeName" : "Projectsn"
+    "name" : "ID",
+    "codeName" : "Id"
   },
   "enableCache" : true
 }

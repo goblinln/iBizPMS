@@ -1113,7 +1113,7 @@
 
     <!--数据查询[ReportBugs]-->
     <sql id="ReportBugs" databaseId="mysql">
-		<![CDATA[ SELECT 	t1.`CONFIRMED`, 	t1.`ID`, 	t1.`OPENEDBY`, 	t1.`PRI`, 	t1.`RESOLVEDBY`, 	t1.`RESOLVEDDATE`, 	t1.`STATUS`, 	t1.`TITLE` , 	t1.BUGSN FROM 	`zt_bug` t1 	LEFT JOIN zt_product t11 ON t1.PRODUCT = t11.productsn 	LEFT JOIN zt_project t21 ON t1.PROJECT = t21.PROJECTSN 	LEFT JOIN zt_story t31 ON t1.STORY = t31.STORYSN ]]>
+		<![CDATA[ SELECT 	t1.`CONFIRMED`, 	t1.`ID`, 	t1.`OPENEDBY`, 	t1.`PRI`, 	t1.`RESOLVEDBY`, 	t1.`RESOLVEDDATE`, 	t1.`STATUS`, 	t1.`TITLE` , 	t1.BUGSN FROM 	`zt_bug` t1 	LEFT JOIN zt_product t11 ON t1.PRODUCT = t11.ID 	LEFT JOIN zt_project t21 ON t1.PROJECT = t21.ID 	LEFT JOIN zt_story t31 ON t1.STORY = t31.ID ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.`DELETED` = '0'  	AND FIND_IN_SET ( t1.ID, ( SELECT BUGS FROM ZT_TESTREPORT WHERE ID = $ { srfdatacontext ( 'srfparentkey', '{\"defname\":\"ID\",\"dename\":\"ZT_TESTREPORT \"}' ) } ) ) ]]>

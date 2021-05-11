@@ -14,8 +14,8 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductPlan.json"
   },
   "getValuePSAppDEField" : {
-    "name" : "PRODUCTPLANSN",
-    "codeName" : "Productplansn"
+    "name" : "ID",
+    "codeName" : "Id"
   },
   "enableCache" : true
 }
