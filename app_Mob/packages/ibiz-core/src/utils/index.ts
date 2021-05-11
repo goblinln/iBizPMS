@@ -18,3 +18,4 @@ export { LogUtil } from './log-util/log-util';
 export { HttpResponse } from './http-response/http-response';
 export { HttpStatusMessage } from './http-status-message/http-status-message';
 export { ModelTool } from './util/model-tool';
+export { ImgurlBase64 } from './imgurl-base64/imgurl-base64';

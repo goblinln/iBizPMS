@@ -239,6 +239,9 @@ export class MobFormControlBase extends MainControlBase {
         this.formState = new Subject();
         this.dataChange = new Subject();
         this.ignorefieldvaluechange = false;
+        if (this.isAutoLoad) {
+            this.autoLoad({ srfkey: this.context[this.appDeCodeName.toLowerCase()] });
+        }
         if (this.viewState) {
             this.viewStateEvent = this.viewState.subscribe(({ tag, action, data }: { tag: string, action: string, data: any }) => {
                 if (!Object.is(tag, this.name)) {
@@ -630,6 +633,10 @@ export class MobFormControlBase extends MainControlBase {
         Object.assign(this.oldData, JSON.parse(JSON.stringify(this.data)));
         if (action !== 'autoSave') {
             this.dataChange.next(JSON.stringify(this.data));
+        }
+        // 表单加载完成后，是新建表单就取消订阅全局刷新通知
+        if (action == 'loadDraft' && this.appStateEvent) {
+            this.appStateEvent.unsubscribe();
         }
         this.formLogic({ name: '', newVal: null, oldVal: null });
     }
@@ -1473,13 +1480,7 @@ export class MobFormControlBase extends MainControlBase {
         if (args) {
             Object.assign(arg, args[0]);
         }
-        if (this.data.srfkey && !Object.is(this.data.srfkey, '')) {
-            Object.assign(arg, { srfkey: this.data.srfkey });
-            this.load(arg);
-            return;
-        }
-        if (this.data.srfkeys && !Object.is(this.data.srfkeys, '')) {
-            Object.assign(arg, { srfkey: this.data.srfkeys });
+        if (this.data.id) {
             this.load(arg);
             return;
         }

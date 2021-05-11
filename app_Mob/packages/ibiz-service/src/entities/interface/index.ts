@@ -51,3 +51,4 @@ export * from './iibz-weekly';
 export * from './iibzprojectteam';
 export * from './istory';
 export * from './iproduct-line';
+export * from './idyna-filter';

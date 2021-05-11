@@ -238,7 +238,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "( t1.id IN (\nSELECT t.root from zt_team t\nWHERE\n\tt.account =  #{srf.sessioncontext.srfloginname} \n\tAND t.type = 'product' \n\t \n\t) )",
+        "customCond" : "( t1.productsn IN (\nSELECT t.root from zt_team t\nWHERE\n\tt.account =  #{srf.sessioncontext.srfloginname} \n\tAND t.type = 'product' \n\t \n\t) )",
         "name" : "查询条件"
       } ]
     } ],

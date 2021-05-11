@@ -107,6 +107,7 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('ibzprojectteam', () => import('../uiservice/ibzprojectteam/ibzprojectteam-ui-service'));
         UIServiceRegister.allUIServiceMap.set('story', () => import('../uiservice/story/story-ui-service'));
         UIServiceRegister.allUIServiceMap.set('productline', () => import('../uiservice/product-line/product-line-ui-service'));
+        UIServiceRegister.allUIServiceMap.set('dynafilter', () => import('../uiservice/dyna-filter/dyna-filter-ui-service'));
     }
 
     /**

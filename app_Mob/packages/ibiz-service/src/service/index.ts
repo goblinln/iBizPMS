@@ -52,3 +52,4 @@ export * from './ibz-weekly/ibz-weekly.service';
 export * from './ibzprojectteam/ibzprojectteam.service';
 export * from './story/story.service';
 export * from './product-line/product-line.service';
+export * from './dyna-filter/dyna-filter.service';

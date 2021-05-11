@@ -47,7 +47,7 @@ export class IBZPROJECTTEAMBaseService extends EntityBaseService<IIBZPROJECTTEAM
             const data = await s.getLocal2(context, entity.root);
             if (data) {
                 entity.projectname = data.name;
-                entity.root = data.id;
+                entity.root = data.projectsn;
                 entity.project = data;
             }
         }
@@ -64,7 +64,7 @@ export class IBZPROJECTTEAMBaseService extends EntityBaseService<IIBZPROJECTTEAM
             const data = await s.getLocal2(_context, _context.project);
             if (data) {
                 entity.projectname = data.name;
-                entity.root = data.id;
+                entity.root = data.projectsn;
                 entity.project = data;
             }
         }

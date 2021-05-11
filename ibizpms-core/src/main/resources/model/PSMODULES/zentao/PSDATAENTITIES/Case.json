@@ -484,7 +484,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "( t1.id in (select t.OBJECTID from T_IBZ_FAVORITES t where t.type = 'case' and t.account = #{srf.sessioncontext.srfloginname})  AND  t1.DELETED = '0' )",
+        "customCond" : "(\n\t\t\tt1.CASESN IN (\n\t\t\tSELECT\n\t\t\t\tt.OBJECTID \n\t\t\tFROM\n\t\t\t\tT_IBZ_FAVORITES t \n\t\t\tWHERE\n\t\t\tt.type = 'case' \n\tAND t.account = #{srf.sessioncontext.srfloginname})  AND  t1.DELETED = '0' )",
         "name" : "查询条件"
       } ]
     } ],
@@ -538,7 +538,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "NOT(EXISTS(SELECT * FROM zt_testrun t41 \n WHERE \n t1.ID = t41.`CASE`  AND  ( t41.`task` = ${srfwebcontext('task','{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}')} ) ))",
+        "customCond" : "NOT (\n\t\t\tEXISTS (\n\t\t\tSELECT\n\t\t\t\t* \n\t\t\tFROM\n\t\t\t\tzt_testrun t41 \n\t\t\tWHERE\n\t\t\t\tt1.CASESN = t41.`CASE` \n\t\t\t\tAND ( t41.`task` = $ { srfwebcontext ( 'task', '{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}' ) } ) \n\t\t\t) \n\t)",
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
@@ -546,7 +546,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "t1.product in (select tt.product from zt_testtask t left join zt_projectproduct tt on tt.project = t.project where t.id = ${srfwebcontext('task','{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}')})",
+        "customCond" : "\t\tt1.product IN (\n\t\tSELECT\n\t\t\ttt.product \n\t\tFROM\n\t\t\tzt_testtask t\n\t\t\tLEFT JOIN zt_projectproduct tt ON tt.project = t.project \n\t\tWHERE\n\t\t\tt.TESTTASKSN = $ { srfwebcontext ( 'task', '{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}' ) } \n\t\t)",
         "name" : "查询条件"
       } ]
     } ],
@@ -564,7 +564,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "t61.id = ${srfwebcontext('srfparentkey','{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}')}",
+        "customCond" : "t61.TESTREPORTSN = $ { srfwebcontext ( 'srfparentkey', '{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}' ) }",
         "name" : "查询条件"
       } ]
     } ],

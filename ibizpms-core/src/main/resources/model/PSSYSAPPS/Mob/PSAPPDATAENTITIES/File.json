@@ -711,6 +711,10 @@
       "glyph" : "xf019@FontAwesome",
       "cssClass" : "fa fa-download"
     },
+    "getPSSysPFPlugin" : {
+      "pluginType" : "DEUIACTION",
+      "pluginCode" : "fileibzdownload"
+    },
     "timeout" : 60000,
     "uIActionMode" : "FRONT",
     "uIActionTag" : "ibzdownload",
