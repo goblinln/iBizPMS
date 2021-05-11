@@ -869,7 +869,7 @@ function getLocaleResourceBase(){
 		},
 		main2_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("编号",null),
+				'tasksn': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'name': commonLogic.appcommonhandle("任务名称",null),
 				'deadline': commonLogic.appcommonhandle("截止日期",null),

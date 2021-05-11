@@ -312,17 +312,17 @@
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
       "caption" : "编号",
-      "codeName" : "id",
+      "codeName" : "tasksn",
       "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "id",
+      "dataItemName" : "tasksn",
       "excelCaption" : "编号",
-      "name" : "id",
+      "name" : "tasksn",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
+        "name" : "TASKSN",
+        "codeName" : "Tasksn"
       },
-      "width" : 80,
+      "width" : 100,
       "widthUnit" : "PX",
       "enableSort" : true
     }, {
@@ -802,13 +802,6 @@
       }
     }, {
       "dataType" : 1,
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
-      "dataType" : 1,
       "name" : "story",
       "getPSAppDEField" : {
         "name" : "STORY",
@@ -869,6 +862,13 @@
       "getPSAppDEField" : {
         "name" : "ISFAVORITES",
         "codeName" : "Isfavorites"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "tasksn",
+      "getPSAppDEField" : {
+        "name" : "TASKSN",
+        "codeName" : "Tasksn"
       }
     }, {
       "format" : "YYYY-MM-DD",
