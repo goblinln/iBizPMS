@@ -562,7 +562,7 @@
     "dEFType" : 1,
     "dataType" : "PICKUP",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "需求",
     "name" : "STORY",
     "getPSDER" : {
@@ -570,8 +570,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/StoryStage/PSDERS/DER1N_ZT_STORYSTAGE_ZT_STORY_STORY.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "STORYSN",
+      "codeName" : "Storysn"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
@@ -608,7 +608,7 @@
     "dEFType" : 1,
     "dataType" : "PICKUP",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "平台/分支",
     "name" : "BRANCH",
     "getPSDER" : {
@@ -616,8 +616,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/StoryStage/PSDERS/DER1N_ZT_STORYSTAGE_ZT_BRANCH_BRANCH.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "BRANCHSN",
+      "codeName" : "Branchsn"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",

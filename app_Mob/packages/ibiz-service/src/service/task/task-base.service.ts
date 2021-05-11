@@ -139,7 +139,7 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         if (res.ok) {
             _data = mergeDeepLeft(_data, this.filterEntityData(res.data)) as any;
         }
-        const ibztaskteamsList = await this.getMinorLocal('Ibztaskteam', _context, { root: _data.id });
+        const ibztaskteamsList = await this.getMinorLocal('Ibztaskteam', _context, { root: _data.tasksn });
         if (ibztaskteamsList?.length > 0) {
             _data.ibztaskteams = ibztaskteamsList;
         }
@@ -163,7 +163,7 @@ export class TaskBaseService extends EntityBaseService<ITask> {
             {
                 let items: any[] = [];
                 const s = await ___ibz___.gs.getIbztaskteamService();
-                items = await s.selectLocal(context, { root: oldData.id });
+                items = await s.selectLocal(context, { root: oldData.tasksn });
                 if (items) {
                     for (let i = 0; i < items.length; i++) {
                         const item = items[i];

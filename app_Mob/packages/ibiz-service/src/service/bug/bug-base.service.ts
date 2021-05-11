@@ -57,7 +57,7 @@ export class BugBaseService extends EntityBaseService<IBug> {
             const data = await s.getLocal2(context, entity.story);
             if (data) {
                 entity.storyname = data.title;
-                entity.story = data.id;
+                entity.story = data.storysn;
             }
         }
         if (entity && entity.project && entity.project !== '') {
@@ -89,7 +89,7 @@ export class BugBaseService extends EntityBaseService<IBug> {
             const data = await s.getLocal2(_context, _context.story);
             if (data) {
                 entity.storyname = data.title;
-                entity.story = data.id;
+                entity.story = data.storysn;
             }
         }
         if (_context.project && _context.project !== '') {

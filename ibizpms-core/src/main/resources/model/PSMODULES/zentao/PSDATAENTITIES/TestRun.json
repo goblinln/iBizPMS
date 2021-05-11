@@ -791,7 +791,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "测试单",
     "name" : "TASK",
     "getPSDER" : {
@@ -803,8 +803,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "TESTTASKSN",
+      "codeName" : "Testtasksn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",

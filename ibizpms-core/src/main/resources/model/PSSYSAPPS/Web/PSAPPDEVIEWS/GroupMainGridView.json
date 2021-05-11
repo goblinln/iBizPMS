@@ -439,11 +439,11 @@
     "getPSDEGridColumns" : [ {
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
-      "caption" : "群组编号",
+      "caption" : "编号",
       "codeName" : "groupsn",
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "groupsn",
-      "excelCaption" : "群组编号",
+      "excelCaption" : "编号",
       "name" : "groupsn",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {

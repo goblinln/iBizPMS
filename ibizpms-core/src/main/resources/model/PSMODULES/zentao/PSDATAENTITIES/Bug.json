@@ -4766,8 +4766,8 @@
       "path" : "PSSYSTRANSLATORS/ModulePathValueTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "MODULESN",
+      "codeName" : "ModuleSN"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -4967,8 +4967,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "STORYSN",
+      "codeName" : "Storysn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",

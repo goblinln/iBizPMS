@@ -540,7 +540,7 @@
     "dEFType" : 1,
     "dataType" : "PICKUP",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "需求",
     "name" : "STORY",
     "getPSDER" : {
@@ -552,8 +552,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "STORYSN",
+      "codeName" : "Storysn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -589,7 +589,7 @@
     "dEFType" : 1,
     "dataType" : "PICKUP",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "项目",
     "name" : "PROJECT",
     "getPSDER" : {
@@ -601,8 +601,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PROJECTSN",
+      "codeName" : "Projectsn"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -638,7 +638,7 @@
     "dEFType" : 1,
     "dataType" : "PICKUP",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "所属产品",
     "name" : "PRODUCT",
     "getPSDER" : {
@@ -646,8 +646,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory/PSDERS/DER1N_ZT_PROJECTSTORY_ZT_PRODUCT_PRODUCT.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PRODUCTSN",
+      "codeName" : "Productsn"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
