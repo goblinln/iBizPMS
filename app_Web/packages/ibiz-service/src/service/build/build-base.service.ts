@@ -47,14 +47,14 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
             const data = await s.getLocal2(context, entity.product);
             if (data) {
                 entity.productname = data.name;
-                entity.product = data.productsn;
+                entity.product = data.id;
             }
         }
         if (entity && entity.project && entity.project !== '') {
             const s = await ___ibz___.gs.getProjectService();
             const data = await s.getLocal2(context, entity.project);
             if (data) {
-                entity.project = data.projectsn;
+                entity.project = data.id;
             }
         }
         return entity!;
@@ -70,14 +70,14 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
             const data = await s.getLocal2(_context, _context.product);
             if (data) {
                 entity.productname = data.name;
-                entity.product = data.productsn;
+                entity.product = data.id;
             }
         }
         if (_context.project && _context.project !== '') {
             const s = await ___ibz___.gs.getProjectService();
             const data = await s.getLocal2(_context, _context.project);
             if (data) {
-                entity.project = data.projectsn;
+                entity.project = data.id;
             }
         }
         return new Build(entity);

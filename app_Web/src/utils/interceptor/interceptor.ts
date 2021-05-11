@@ -99,9 +99,11 @@ export class Interceptors {
             }
             if (Environment.SaaSMode) {
                 let activeOrgData = getSessionStorage('activeOrgData');
-                let tempOrgId = getSessionStorage("tempOrgId");
-                config.headers['srforgid'] = tempOrgId ? tempOrgId : activeOrgData?.orgid;
+                config.headers['srforgid'] = activeOrgData?.orgid;
                 config.headers['srfsystemid'] = activeOrgData?.systemid;
+                if(getSessionStorage("srfdynaorgid")){
+                    config.headers['srfdynaorgid'] = getSessionStorage("srfdynaorgid");
+                }
             }
             if (Util.getCookie('ibzuaa-token')) {
                 config.headers['Authorization'] = `Bearer ${Util.getCookie('ibzuaa-token')}`;

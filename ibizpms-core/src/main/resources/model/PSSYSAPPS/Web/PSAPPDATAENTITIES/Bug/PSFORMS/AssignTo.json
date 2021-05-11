@@ -80,13 +80,6 @@
     "hidden" : true,
     "dataType" : 25
   }, {
-    "id" : "assignedto",
-    "dataType" : 25,
-    "getPSAppDEField" : {
-      "name" : "ASSIGNEDTO",
-      "codeName" : "AssignedTo"
-    }
-  }, {
     "id" : "project",
     "hidden" : true,
     "dataType" : 1,
@@ -95,12 +88,11 @@
       "codeName" : "Project"
     }
   }, {
-    "id" : "product",
-    "hidden" : true,
-    "dataType" : 1,
+    "id" : "assignedto",
+    "dataType" : 25,
     "getPSAppDEField" : {
-      "name" : "PRODUCT",
-      "codeName" : "Product"
+      "name" : "ASSIGNEDTO",
+      "codeName" : "AssignedTo"
     }
   }, {
     "id" : "mailto",
@@ -117,19 +109,27 @@
       "codeName" : "Mailtoconact"
     }
   }, {
+    "id" : "comment",
+    "dataType" : 21,
+    "getPSAppDEField" : {
+      "name" : "COMMENT",
+      "codeName" : "Comment"
+    }
+  }, {
+    "id" : "product",
+    "hidden" : true,
+    "dataType" : 1,
+    "getPSAppDEField" : {
+      "name" : "PRODUCT",
+      "codeName" : "Product"
+    }
+  }, {
     "id" : "mailtopk",
     "hidden" : true,
     "dataType" : 25,
     "getPSAppDEField" : {
       "name" : "MAILTOPK",
       "codeName" : "Mailtopk"
-    }
-  }, {
-    "id" : "comment",
-    "dataType" : 21,
-    "getPSAppDEField" : {
-      "name" : "COMMENT",
-      "codeName" : "Comment"
     }
   }, {
     "id" : "id",
@@ -154,87 +154,6 @@
       "detailType" : "GROUPPANEL",
       "name" : "group1",
       "getPSDEFormDetails" : [ {
-        "actionGroupExtractMode" : "ITEM",
-        "caption" : "分组面板",
-        "codeName" : "grouppanel1",
-        "detailStyle" : "DEFAULT",
-        "detailType" : "GROUPPANEL",
-        "name" : "grouppanel1",
-        "getPSDEFormDetails" : [ {
-          "caption" : "指派给",
-          "codeName" : "assignedto",
-          "dataType" : 25,
-          "detailStyle" : "DEFAULT",
-          "detailType" : "FORMITEM",
-          "enableCond" : 3,
-          "ignoreInput" : 0,
-          "labelPos" : "LEFT",
-          "labelWidth" : 100,
-          "name" : "assignedto",
-          "noPrivDisplayMode" : 1,
-          "getPSAppDEField" : {
-            "name" : "ASSIGNEDTO",
-            "codeName" : "AssignedTo"
-          },
-          "getPSEditor" : {
-            "editorParams" : {
-              "SRFNAVCTX.project" : "%project%",
-              "SRFNAVPARAM.product" : "%product%",
-              "SRFNAVPARAM.project" : "%project%",
-              "SRFNAVCTX.product" : "%product%"
-            },
-            "editorType" : "DROPDOWNLIST",
-            "name" : "assignedto",
-            "getPSAppCodeList" : {
-              "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProductTeamNotAssign.json"
-            },
-            "getPSNavigateContexts" : [ {
-              "key" : "PROJECT",
-              "name" : "PROJECT",
-              "value" : "project",
-              "rawValue" : false
-            }, {
-              "key" : "PRODUCT",
-              "name" : "PRODUCT",
-              "value" : "product",
-              "rawValue" : false
-            } ],
-            "getPSNavigateParams" : [ {
-              "key" : "product",
-              "name" : "product",
-              "value" : "product",
-              "rawValue" : false
-            }, {
-              "key" : "project",
-              "name" : "project",
-              "value" : "project",
-              "rawValue" : false
-            } ],
-            "singleSelect" : true
-          },
-          "getPSLayoutPos" : {
-            "colMD" : 24,
-            "layout" : "TABLE_24COL"
-          },
-          "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "needCodeListConfig" : true,
-          "showCaption" : true
-        } ],
-        "getPSLayout" : {
-          "columnCount" : 24,
-          "layout" : "TABLE_24COL"
-        },
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
-        "infoGroupMode" : false,
-        "showCaption" : false
-      }, {
         "caption" : "所属项目",
         "codeName" : "project",
         "dataType" : 1,
@@ -264,24 +183,57 @@
         "inputTipClosable" : false,
         "showCaption" : true
       }, {
-        "caption" : "所属产品",
-        "codeName" : "product",
-        "dataType" : 1,
+        "caption" : "指派给",
+        "codeName" : "assignedto",
+        "dataType" : 25,
         "detailStyle" : "DEFAULT",
         "detailType" : "FORMITEM",
         "enableCond" : 3,
         "ignoreInput" : 0,
         "labelPos" : "LEFT",
         "labelWidth" : 100,
-        "name" : "product",
+        "name" : "assignedto",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
-          "name" : "PRODUCT",
-          "codeName" : "Product"
+          "name" : "ASSIGNEDTO",
+          "codeName" : "AssignedTo"
         },
         "getPSEditor" : {
-          "editorType" : "HIDDEN",
-          "name" : "product"
+          "editorParams" : {
+            "SRFNAVCTX.project" : "%project%",
+            "SRFNAVPARAM.product" : "%product%",
+            "SRFNAVPARAM.project" : "%project%",
+            "SRFNAVCTX.product" : "%product%"
+          },
+          "editorType" : "DROPDOWNLIST",
+          "name" : "assignedto",
+          "getPSAppCodeList" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealNameProductTeamNotAssign.json"
+          },
+          "getPSNavigateContexts" : [ {
+            "key" : "PROJECT",
+            "name" : "PROJECT",
+            "value" : "project",
+            "rawValue" : false
+          }, {
+            "key" : "PRODUCT",
+            "name" : "PRODUCT",
+            "value" : "product",
+            "rawValue" : false
+          } ],
+          "getPSNavigateParams" : [ {
+            "key" : "product",
+            "name" : "product",
+            "value" : "product",
+            "rawValue" : false
+          }, {
+            "key" : "project",
+            "name" : "project",
+            "value" : "project",
+            "rawValue" : false
+          } ],
+          "singleSelect" : true
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -289,8 +241,9 @@
         },
         "allowEmpty" : true,
         "emptyCaption" : false,
-        "hidden" : true,
+        "hidden" : false,
         "inputTipClosable" : false,
+        "needCodeListConfig" : true,
         "showCaption" : true
       }, {
         "caption" : "抄送给",
@@ -319,7 +272,7 @@
         },
         "getPSLayoutPos" : {
           "colLG" : 18,
-          "colMD" : 18,
+          "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
         "allowEmpty" : true,
@@ -389,35 +342,6 @@
         "inputTipClosable" : false,
         "showCaption" : true
       }, {
-        "caption" : "抄送给",
-        "codeName" : "mailtopk",
-        "dataType" : 25,
-        "detailStyle" : "DEFAULT",
-        "detailType" : "FORMITEM",
-        "enableCond" : 3,
-        "ignoreInput" : 0,
-        "labelPos" : "LEFT",
-        "labelWidth" : 100,
-        "name" : "mailtopk",
-        "noPrivDisplayMode" : 1,
-        "getPSAppDEField" : {
-          "name" : "MAILTOPK",
-          "codeName" : "Mailtopk"
-        },
-        "getPSEditor" : {
-          "editorType" : "HIDDEN",
-          "name" : "mailtopk"
-        },
-        "getPSLayoutPos" : {
-          "colMD" : 24,
-          "layout" : "TABLE_24COL"
-        },
-        "allowEmpty" : true,
-        "emptyCaption" : false,
-        "hidden" : true,
-        "inputTipClosable" : false,
-        "showCaption" : true
-      }, {
         "caption" : "备注",
         "codeName" : "comment",
         "dataType" : 21,
@@ -448,6 +372,64 @@
         "allowEmpty" : true,
         "emptyCaption" : false,
         "hidden" : false,
+        "inputTipClosable" : false,
+        "showCaption" : true
+      }, {
+        "caption" : "所属产品",
+        "codeName" : "product",
+        "dataType" : 1,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "name" : "product",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "PRODUCT",
+          "codeName" : "Product"
+        },
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "product"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "emptyCaption" : false,
+        "hidden" : true,
+        "inputTipClosable" : false,
+        "showCaption" : true
+      }, {
+        "caption" : "抄送给",
+        "codeName" : "mailtopk",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "name" : "mailtopk",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "MAILTOPK",
+          "codeName" : "Mailtopk"
+        },
+        "getPSEditor" : {
+          "editorType" : "HIDDEN",
+          "name" : "mailtopk"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "emptyCaption" : false,
+        "hidden" : true,
         "inputTipClosable" : false,
         "showCaption" : true
       }, {

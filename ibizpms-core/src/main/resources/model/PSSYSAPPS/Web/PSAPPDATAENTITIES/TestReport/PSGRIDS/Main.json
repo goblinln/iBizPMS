@@ -13,8 +13,8 @@
   "logicName" : "主表格",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
-    "name" : "ID",
-    "codeName" : "Id"
+    "name" : "TESTREPORTSN",
+    "codeName" : "Testreportsn"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,

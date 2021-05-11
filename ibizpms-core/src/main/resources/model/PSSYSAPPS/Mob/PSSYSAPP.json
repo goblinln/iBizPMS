@@ -313,8 +313,8 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
     },
     "getValuePSAppDEField" : {
-      "name" : "PRODUCTPLANSN",
-      "codeName" : "Productplansn"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "cacheTimeout" : 600,
@@ -337,8 +337,8 @@
       "codeName" : "Name"
     },
     "getValuePSAppDEField" : {
-      "name" : "TASKSN",
-      "codeName" : "Tasksn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "enableCache" : true
   }, {
@@ -361,8 +361,8 @@
       "codeName" : "Name"
     },
     "getValuePSAppDEField" : {
-      "name" : "TASKSN",
-      "codeName" : "Tasksn"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "codeListType" : "STATIC",
@@ -1359,8 +1359,8 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product.json"
     },
     "getValuePSAppDEField" : {
-      "name" : "PRODUCTSN",
-      "codeName" : "Productsn"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "cacheTimeout" : 6000,
@@ -1556,8 +1556,8 @@
       "codeName" : "Name"
     },
     "getValuePSAppDEField" : {
-      "name" : "TASKSN",
-      "codeName" : "Tasksn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "enableCache" : true
   }, {
@@ -1957,8 +1957,8 @@
     },
     "textSeparator" : ",",
     "getValuePSAppDEField" : {
-      "name" : "STORYSN",
-      "codeName" : "Storysn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "valueSeparator" : ",",
     "enableCache" : true
@@ -2064,8 +2064,8 @@
       "codeName" : "Title"
     },
     "getValuePSAppDEField" : {
-      "name" : "PRODUCTPLANSN",
-      "codeName" : "Productplansn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "codeItemValueNumber" : true
   }, {
@@ -2179,8 +2179,8 @@
       "codeName" : "Name"
     },
     "getValuePSAppDEField" : {
-      "name" : "TASKSN",
-      "codeName" : "Tasksn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "enableCache" : true
   }, {
@@ -2382,8 +2382,8 @@
       "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/ProductPlan.json"
     },
     "getValuePSAppDEField" : {
-      "name" : "PRODUCTPLANSN",
-      "codeName" : "Productplansn"
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "codeListType" : "STATIC",

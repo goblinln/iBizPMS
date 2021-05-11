@@ -306,6 +306,13 @@
     },
     "sysUniResCode" : "STORY_CCASE_BUT"
   }, {
+    "name" : "项目经理-计划新建",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROP_CREATE_BUT"
+    },
+    "sysUniResCode" : "PROP_CREATE_BUT"
+  }, {
     "name" : "项目经理-需求分解任务",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -319,6 +326,13 @@
       "id" : "ibiz__STORY_FAVOR_BUT"
     },
     "sysUniResCode" : "STORY_FAVOR_BUT"
+  }, {
+    "name" : "项目经理-计划子计划",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROP_CHILD_BUT"
+    },
+    "sysUniResCode" : "PROP_CHILD_BUT"
   }, {
     "name" : "项目经理-维护分类",
     "getPSSysUniRes" : {
@@ -404,6 +418,13 @@
     },
     "sysUniResCode" : "BUILD_EDIT_BUT"
   }, {
+    "name" : "项目经理-计划关联bug",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROP_LBUG_BUT"
+    },
+    "sysUniResCode" : "PROP_LBUG_BUT"
+  }, {
     "name" : "项目经理-需求编辑",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -453,6 +474,13 @@
     },
     "sysUniResCode" : "DOCLIBMODULE_NFAVOUR_BUT"
   }, {
+    "name" : "项目经理-计划删除",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROP_DELETE_BUT"
+    },
+    "sysUniResCode" : "PROP_DELETE_BUT"
+  }, {
     "name" : "项目经理-项目关闭",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -480,6 +508,13 @@
       "id" : "ibiz__STORY_XQXF_BUT"
     },
     "sysUniResCode" : "STORY_XQXF_BUT"
+  }, {
+    "name" : "项目经理-计划编辑",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROP_EDIT_BUT"
+    },
+    "sysUniResCode" : "PROP_EDIT_BUT"
   }, {
     "name" : "项目经理-项目新建",
     "getPSSysUniRes" : {
@@ -558,6 +593,13 @@
     },
     "sysUniResCode" : "DOCLIB_FAVOUR_BUT"
   }, {
+    "name" : "项目经理-计划关联需求",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROP_LSTORY_BUT"
+    },
+    "sysUniResCode" : "PROP_LSTORY_BUT"
+  }, {
     "name" : "null-顶部_我的地盘",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -588,5 +630,5 @@
   } ],
   "roleTag" : "ProjectManger",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "PROJ_DELETE_BUT", "PROJ_DELAY_BUT", "PROJ_TEST_TESTTASK", "STORY_DELETE_BUT", "STORY_CREATE_BUT", "STORY_CHANGED_BUT", "DOCLIBMODULE_FAVOUR_BUT", "PROJ_EDIT_BUT", "STORY_ASS_BUT", "DOCLIB_NFAVOUR_BUT", "STORY_REVIEW_BUT", "PROJ_MANAGE_BUT", "PROJ_ACTIVATION_BUT", "BUILD_SUBT_BUT", "TOP_PROJECT_MENU", "STORY_CCASE_BUT", "STORY_FJTASK_BUT", "STORY_FAVOR_BUT", "DOCLIBMODULE_MAINTENANCE_BUT", "DOC_FAVOUR_BUT", "DOC_NFAVOUR_BUT", "DOC_DELETE_BUT", "PROJ_START_BUT", "PROJT_TM_BUT", "DOCLIB_EDIT_BUT", "TOP_CASE_MENU", "TOP_MYFAVOURITE_MENU", "TOP_DOC_MENU", "PROJ_SUSPEND_BUT", "BUILD_EDIT_BUT", "STORY_EDIT_BUT", "DOCLIBMODULE_EDIT_BUT", "PROJECT_MANAGER", "BUILD_LINK_BUT", "STORY_NFAVOR_BUT", "TOP_YEARSUM_MENU", "DOCLIBMODULE_NFAVOUR_BUT", "PROJ_CLOSED_BUT", "TOP_PRODUCT_MENU", "TOP_ELECSEARCH_MENU", "STORY_XQXF_BUT", "PROJ_CREATE_BUT", "TOP_SUM_MENU", "DOC_EDIT_BUT", "PRODSTA_PROJCRT_BUT", "PRODUCTLEFT", "STORY_ACTIVE_BUT", "PROJECT_REPORT_BUT", "BUILD_DELETE_BUT", "LEFT_CASE_MENU", "LEFT_PROJECT_MENU", "DOCLIB_FAVOUR_BUT", "TOP_MYPLACE_MENU", "BUILD_CREATE_BUT", "STORY_UNLP_BUT", "STORY_CLOSED_BUT" ]
+  "uniResTags" : [ "PROJ_DELETE_BUT", "PROJ_DELAY_BUT", "PROJ_TEST_TESTTASK", "STORY_DELETE_BUT", "STORY_CREATE_BUT", "STORY_CHANGED_BUT", "DOCLIBMODULE_FAVOUR_BUT", "PROJ_EDIT_BUT", "STORY_ASS_BUT", "DOCLIB_NFAVOUR_BUT", "STORY_REVIEW_BUT", "PROJ_MANAGE_BUT", "PROJ_ACTIVATION_BUT", "BUILD_SUBT_BUT", "TOP_PROJECT_MENU", "STORY_CCASE_BUT", "PROP_CREATE_BUT", "STORY_FJTASK_BUT", "STORY_FAVOR_BUT", "PROP_CHILD_BUT", "DOCLIBMODULE_MAINTENANCE_BUT", "DOC_FAVOUR_BUT", "DOC_NFAVOUR_BUT", "DOC_DELETE_BUT", "PROJ_START_BUT", "PROJT_TM_BUT", "DOCLIB_EDIT_BUT", "TOP_CASE_MENU", "TOP_MYFAVOURITE_MENU", "TOP_DOC_MENU", "PROJ_SUSPEND_BUT", "BUILD_EDIT_BUT", "PROP_LBUG_BUT", "STORY_EDIT_BUT", "DOCLIBMODULE_EDIT_BUT", "PROJECT_MANAGER", "BUILD_LINK_BUT", "STORY_NFAVOR_BUT", "TOP_YEARSUM_MENU", "DOCLIBMODULE_NFAVOUR_BUT", "PROP_DELETE_BUT", "PROJ_CLOSED_BUT", "TOP_PRODUCT_MENU", "TOP_ELECSEARCH_MENU", "STORY_XQXF_BUT", "PROP_EDIT_BUT", "PROJ_CREATE_BUT", "TOP_SUM_MENU", "DOC_EDIT_BUT", "PRODSTA_PROJCRT_BUT", "PRODUCTLEFT", "STORY_ACTIVE_BUT", "PROJECT_REPORT_BUT", "BUILD_DELETE_BUT", "LEFT_CASE_MENU", "LEFT_PROJECT_MENU", "DOCLIB_FAVOUR_BUT", "PROP_LSTORY_BUT", "TOP_MYPLACE_MENU", "BUILD_CREATE_BUT", "STORY_UNLP_BUT", "STORY_CLOSED_BUT" ]
 }

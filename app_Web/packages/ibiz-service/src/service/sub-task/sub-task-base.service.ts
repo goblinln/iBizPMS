@@ -47,7 +47,7 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
             const data = await s.getLocal2(context, entity.parent);
             if (data) {
                 entity.parentname = data.name;
-                entity.parent = data.tasksn;
+                entity.parent = data.id;
             }
         }
         return entity!;
@@ -63,7 +63,7 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
             const data = await s.getLocal2(_context, _context.task);
             if (data) {
                 entity.parentname = data.name;
-                entity.parent = data.tasksn;
+                entity.parent = data.id;
             }
         }
         return new SubTask(entity);

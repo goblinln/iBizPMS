@@ -1586,8 +1586,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDERS/DER1N_ZT_DOCLIB_ZT_PROJECT_PROJECT.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "PROJECTSN",
-      "codeName" : "Projectsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
@@ -1632,8 +1632,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDERS/DER1N_ZT_DOCLIB_ZT_PRODUCT_PRODUCT.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "PRODUCTSN",
-      "codeName" : "Productsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",

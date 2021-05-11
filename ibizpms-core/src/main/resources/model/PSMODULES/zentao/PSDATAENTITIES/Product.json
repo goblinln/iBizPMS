@@ -193,7 +193,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "EXISTS(SELECT * FROM `zt_projectproduct` t21 \n WHERE \n t1.`productsn` = t21.`PRODUCT`  AND  ( t21.`PROJECT` = ${srfdatacontext('srfparentkey','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTPRODUCT\"}')} ) )",
+        "customCond" : "EXISTS(SELECT * FROM `zt_projectproduct` t21 \n WHERE \n t1.`id` = t21.`PRODUCT`  AND  ( t21.`PROJECT` = ${srfdatacontext('srfparentkey','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTPRODUCT\"}')} ) )",
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
@@ -238,7 +238,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "( t1.productsn IN (\nSELECT t.root from zt_team t\nWHERE\n\tt.account =  #{srf.sessioncontext.srfloginname} \n\tAND t.type = 'product' \n\t \n\t) )",
+        "customCond" : "( t1.id IN (\nSELECT t.root from zt_team t\nWHERE\n\tt.account =  #{srf.sessioncontext.srfloginname} \n\tAND t.type = 'product' \n\t \n\t) )",
         "name" : "查询条件"
       } ]
     } ],
@@ -390,7 +390,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "EXISTS(SELECT * FROM `zt_projectproduct` t21 \n WHERE \n t1.`productsn` = t21.`PRODUCT`  AND  ( t21.`PROJECT` = ${srfdatacontext('project','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTPRODUCT\"}')} ) )",
+        "customCond" : "EXISTS(SELECT * FROM `zt_projectproduct` t21 \n WHERE \n t1.`id` = t21.`PRODUCT`  AND  ( t21.`PROJECT` = ${srfdatacontext('project','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTPRODUCT\"}')} ) )",
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
@@ -3127,8 +3127,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDERS/DER1N_ZT_PRODUCT_ZT_MODULE_LINE.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "MODULESN",
-      "codeName" : "ModuleSN"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",

@@ -4011,6 +4011,77 @@
     "id" : "WorkHours1@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "caption" : "子任务",
+    "codeName" : "MoreChild",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskChildMoreGridView.json",
+      "viewType" : "DEGRIDVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "Task_MoreChild",
+    "name" : "子任务",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+    },
+    "getPSNavigateParams" : [ {
+      "key" : "n_parent_eq",
+      "name" : "n_parent_eq",
+      "value" : "srfparentkey",
+      "rawValue" : false
+    } ],
+    "getPSSysImage" : {
+      "glyph" : "xf0c9@FontAwesome",
+      "cssClass" : "fa fa-reorder"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "MoreChild",
+    "uIActionType" : "DEUIACTION",
+    "id" : "MoreChild@Task"
+  }, {
+    "actionTarget" : "SINGLEKEY",
+    "caption" : "开始",
+    "codeName" : "MStartTaskDash",
+    "dataAccessAction" : "SRFUR__TASK_START_BUT",
+    "fullCodeName" : "Task_MStartTaskDash",
+    "name" : "开始任务(操作栏)(多人任务检查)",
+    "getNextPSUIAction" : {
+      "getPSAppDataEntity" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+      },
+      "modelref" : true,
+      "id" : "StartTaskDash@Task"
+    },
+    "getPSAppDEMethod" : {
+      "modelref" : true,
+      "id" : "TaskForward"
+    },
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
+    },
+    "getPSNavigateParams" : [ {
+      "key" : "actioninfo",
+      "name" : "actioninfo",
+      "value" : "当前任务只有%1$s才可以开始。",
+      "rawValue" : true
+    } ],
+    "getPSSysImage" : {
+      "glyph" : "xf01d@FontAwesome",
+      "cssClass" : "fa fa-play-circle-o"
+    },
+    "timeout" : 60000,
+    "uIActionMode" : "BACKEND",
+    "uIActionTag" : "MStartTaskDash",
+    "uIActionType" : "DEUIACTION",
+    "enableConfirm" : true,
+    "showBusyIndicator" : false,
+    "id" : "MStartTaskDash@Task"
+  }, {
+    "actionTarget" : "SINGLEKEY",
     "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "MainEdit",
@@ -4063,46 +4134,6 @@
     "uIActionTag" : "AssignTask",
     "uIActionType" : "DEUIACTION",
     "id" : "AssignTask@Task"
-  }, {
-    "actionTarget" : "SINGLEKEY",
-    "caption" : "开始",
-    "codeName" : "MStartTaskDash",
-    "dataAccessAction" : "SRFUR__TASK_START_BUT",
-    "fullCodeName" : "Task_MStartTaskDash",
-    "name" : "开始任务(操作栏)(多人任务检查)",
-    "getNextPSUIAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-      },
-      "modelref" : true,
-      "id" : "StartTaskDash@Task"
-    },
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "TaskForward"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-    },
-    "getPSNavigateParams" : [ {
-      "key" : "actioninfo",
-      "name" : "actioninfo",
-      "value" : "当前任务只有%1$s才可以开始。",
-      "rawValue" : true
-    } ],
-    "getPSSysImage" : {
-      "glyph" : "xf01d@FontAwesome",
-      "cssClass" : "fa fa-play-circle-o"
-    },
-    "timeout" : 60000,
-    "uIActionMode" : "BACKEND",
-    "uIActionTag" : "MStartTaskDash",
-    "uIActionType" : "DEUIACTION",
-    "enableConfirm" : true,
-    "showBusyIndicator" : false,
-    "id" : "MStartTaskDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
@@ -4634,8 +4665,10 @@
     "id" : "MWorkHours@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "更多",
     "codeName" : "ChildMore",
+    "dataAccessAction" : "SRFUR__TASK_SUBTASKS_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskChildMoreGridView.json",
@@ -4651,7 +4684,7 @@
     "getPSNavigateParams" : [ {
       "key" : "n_parent_eq",
       "name" : "n_parent_eq",
-      "value" : "parent",
+      "value" : "id",
       "rawValue" : false
     } ],
     "timeout" : 60000,

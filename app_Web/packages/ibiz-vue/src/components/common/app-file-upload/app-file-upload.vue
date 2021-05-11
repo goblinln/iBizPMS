@@ -30,7 +30,7 @@
           <div class='preview-file-list-img'>
             <el-image :src="getImgURLOfBase64(file.url)" class='' style=''>
                 <div slot='error' class='image-slot'>
-                    <img src="/assets/img/picture.png" style='width:100%;height:100%;'>
+                    <img src="@/assets/img/picture.png" style='width:100%;height:100%;'>
                 </div>
             </el-image>
             <div class='preview-file-list-actions' @mouseenter="()=>{showActions = true;}" @mouseleave="()=>{showActions = false;}">
@@ -328,9 +328,11 @@ export default class AppFileUpload extends Vue {
     public setHeaders(){
         if (AppServiceBase.getInstance().getAppEnvironment().SaaSMode) {
             let activeOrgData = getSessionStorage('activeOrgData');
-            let tempOrgId = getSessionStorage("tempOrgId");
-            this.headers['srforgid'] = tempOrgId ? tempOrgId : activeOrgData?.orgid;
+            this.headers['srforgid'] = activeOrgData?.orgid;
             this.headers['srfsystemid'] = activeOrgData?.systemid;
+            if(getSessionStorage("srfdynaorgid")){
+                this.headers['srfdynaorgid'] = getSessionStorage("srfdynaorgid");
+            }
         }
         if (Util.getCookie('ibzuaa-token')) {
             this.headers['Authorization'] = `Bearer ${Util.getCookie('ibzuaa-token')}`;

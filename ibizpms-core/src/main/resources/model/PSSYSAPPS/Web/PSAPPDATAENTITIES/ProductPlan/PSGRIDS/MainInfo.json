@@ -13,8 +13,8 @@
   "logicName" : "MainInfo",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
-    "name" : "ID",
-    "codeName" : "Id"
+    "name" : "PRODUCTPLANSN",
+    "codeName" : "Productplansn"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,

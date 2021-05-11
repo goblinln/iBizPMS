@@ -728,7 +728,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "NOT(EXISTS(SELECT * FROM `zt_projectstory` t71 \n WHERE \n t1.`STORYSN` = t71.`STORY`  AND  ( t71.`PROJECT` = ${srfwebcontext('project','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTSTORY\"}')} ) ))",
+        "customCond" : "NOT(EXISTS(SELECT * FROM `zt_projectstory` t71 \n WHERE \n t1.`ID` = t71.`STORY`  AND  ( t71.`PROJECT` = ${srfwebcontext('project','{\"defname\":\"PROJECT\",\"dename\":\"ZT_PROJECTSTORY\"}')} ) ))",
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
@@ -4606,8 +4606,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "BUGSN",
-      "codeName" : "Bugsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -4657,8 +4657,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "STORYSN",
-      "codeName" : "Storysn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -4759,8 +4759,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "PRODUCTSN",
-      "codeName" : "Productsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -4798,7 +4798,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 20,
+    "length" : 8,
     "logicName" : "重复需求ID",
     "name" : "DUPLICATESTORY",
     "getPSDER" : {
@@ -4806,8 +4806,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_STORY_DUPLICATESTORY.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "STORYSN",
-      "codeName" : "Storysn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
@@ -4903,8 +4903,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_BUG_TOBUGID.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "BUGSN",
-      "codeName" : "Bugsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",

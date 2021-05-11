@@ -45,7 +45,7 @@ export class PRODUCTTEAMBaseService extends EntityBaseService<IPRODUCTTEAM> {
             const s = await ___ibz___.gs.getProductService();
             const data = await s.getLocal2(context, entity.root);
             if (data) {
-                entity.root = data.productsn;
+                entity.root = data.id;
             }
         }
         return entity!;
@@ -60,7 +60,7 @@ export class PRODUCTTEAMBaseService extends EntityBaseService<IPRODUCTTEAM> {
             const s = await ___ibz___.gs.getProductService();
             const data = await s.getLocal2(_context, _context.product);
             if (data) {
-                entity.root = data.productsn;
+                entity.root = data.id;
             }
         }
         return new PRODUCTTEAM(entity);

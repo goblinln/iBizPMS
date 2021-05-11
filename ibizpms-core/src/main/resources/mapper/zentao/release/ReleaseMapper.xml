@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`BRANCH`, t1.`BUGS`, t1.`BUILD`, t21.`DATE` AS `BUILDDATE`, t21.`BUILDER`, t21.`NAME` AS `BUILDNAME`, t1.`CREATEBY`, t1.`DATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DESC`, t1.`ID`, t1.`LEFTBUGS`, t1.`MARKER`, t1.`NAME`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`RELEASESN`, t1.`STATUS`, t1.`STORIES`, t1.`SUBSTATUS`, t1.`UPDATEBY` FROM `zt_release` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`productsn`  LEFT JOIN `zt_build` t21 ON t1.`BUILD` = t21.`BUILDSN`   ]]>
+        <![CDATA[ SELECT t1.`BRANCH`, t1.`BUGS`, t1.`BUILD`, t21.`DATE` AS `BUILDDATE`, t21.`BUILDER`, t21.`NAME` AS `BUILDNAME`, t1.`CREATEBY`, t1.`DATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DESC`, t1.`ID`, t1.`LEFTBUGS`, t1.`MARKER`, t1.`NAME`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`RELEASESN`, t1.`STATUS`, t1.`STORIES`, t1.`SUBSTATUS`, t1.`UPDATEBY` FROM `zt_release` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`  LEFT JOIN `zt_build` t21 ON t1.`BUILD` = t21.`ID`   ]]>
     </sql>
 
 	
@@ -131,7 +131,7 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, t1.`BUILD`, t21.`DATE` AS `BUILDDATE`, t21.`BUILDER`, t21.`NAME` AS `BUILDNAME`, t1.`CREATEBY`, t1.`DATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`MARKER`, t1.`NAME`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`RELEASESN`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`UPDATEBY` FROM `zt_release` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`productsn`  LEFT JOIN `zt_build` t21 ON t1.`BUILD` = t21.`BUILDSN`   ]]>
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`BUILD`, t21.`DATE` AS `BUILDDATE`, t21.`BUILDER`, t21.`NAME` AS `BUILDNAME`, t1.`CREATEBY`, t1.`DATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`MARKER`, t1.`NAME`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`RELEASESN`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`UPDATEBY` FROM `zt_release` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`  LEFT JOIN `zt_build` t21 ON t1.`BUILD` = t21.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>
@@ -146,7 +146,7 @@
 
     <!--数据查询[GetList]-->
     <sql id="GetList" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, t1.`BUILD`, t21.`DATE` AS `BUILDDATE`, t21.`BUILDER`, t21.`NAME` AS `BUILDNAME`, t1.`CREATEBY`, t1.`DATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`MARKER`, t1.`NAME`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`RELEASESN`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`UPDATEBY` FROM `zt_release` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`productsn`  LEFT JOIN `zt_build` t21 ON t1.`BUILD` = t21.`BUILDSN`   ]]>
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`BUILD`, t21.`DATE` AS `BUILDDATE`, t21.`BUILDER`, t21.`NAME` AS `BUILDNAME`, t1.`CREATEBY`, t1.`DATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`MARKER`, t1.`NAME`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`RELEASESN`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`UPDATEBY` FROM `zt_release` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`  LEFT JOIN `zt_build` t21 ON t1.`BUILD` = t21.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 AND t1.DELETED = '0'
@@ -164,7 +164,7 @@
 
     <!--数据查询[ReportRelease]-->
     <sql id="ReportRelease" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, t1.`BUILD`, t21.`DATE` AS `BUILDDATE`, t21.`BUILDER`, t21.`NAME` AS `BUILDNAME`, t1.`CREATEBY`, t1.`DATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`MARKER`, t1.`NAME`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`RELEASESN`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`UPDATEBY` FROM `zt_release` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`productsn`  LEFT JOIN `zt_build` t21 ON t1.`BUILD` = t21.`BUILDSN`   ]]>
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`BUILD`, t21.`DATE` AS `BUILDDATE`, t21.`BUILDER`, t21.`NAME` AS `BUILDNAME`, t1.`CREATEBY`, t1.`DATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`MARKER`, t1.`NAME`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`RELEASESN`, t1.`STATUS`, t1.`SUBSTATUS`, t1.`UPDATEBY` FROM `zt_release` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`  LEFT JOIN `zt_build` t21 ON t1.`BUILD` = t21.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>
@@ -182,7 +182,7 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, t1.`BUGS`, t1.`BUILD`, t21.`DATE` AS `BUILDDATE`, t21.`BUILDER`, t21.`NAME` AS `BUILDNAME`, t1.`CREATEBY`, t1.`DATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DESC`, t1.`ID`, t1.`LEFTBUGS`, t1.`MARKER`, t1.`NAME`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`RELEASESN`, t1.`STATUS`, t1.`STORIES`, t1.`SUBSTATUS`, t1.`UPDATEBY` FROM `zt_release` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`productsn`  LEFT JOIN `zt_build` t21 ON t1.`BUILD` = t21.`BUILDSN`   ]]>
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`BUGS`, t1.`BUILD`, t21.`DATE` AS `BUILDDATE`, t21.`BUILDER`, t21.`NAME` AS `BUILDNAME`, t1.`CREATEBY`, t1.`DATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DESC`, t1.`ID`, t1.`LEFTBUGS`, t1.`MARKER`, t1.`NAME`, t1.`ORG`, t1.`ORGNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`RELEASESN`, t1.`STATUS`, t1.`STORIES`, t1.`SUBSTATUS`, t1.`UPDATEBY` FROM `zt_release` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`  LEFT JOIN `zt_build` t21 ON t1.`BUILD` = t21.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>

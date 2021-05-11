@@ -421,7 +421,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "EXISTS(SELECT * FROM `zt_projectproduct` t21 \n WHERE \n t1.`PROJECTSN` = t21.`PROJECT`  AND  ( t21.`PRODUCT` = ${srfdatacontext('n_product_eq','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_PROJECTPRODUCT\"}')} ) )",
+        "customCond" : "EXISTS(SELECT * FROM `zt_projectproduct` t21 \n WHERE \n t1.`ID` = t21.`PROJECT`  AND  ( t21.`PRODUCT` = ${srfdatacontext('n_product_eq','{\"defname\":\"PRODUCT\",\"dename\":\"ZT_PROJECTPRODUCT\"}')} ) )",
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
@@ -476,7 +476,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "( t1.projectsn in (select t3.root from zt_team t3 where t3.account = #{srf.sessioncontext.srfloginname}  \nand t3.type = 'project') )",
+        "customCond" : "( t1.id in (select t3.root from zt_team t3 where t3.account = #{srf.sessioncontext.srfloginname}  \nand t3.type = 'project') )",
         "name" : "查询条件"
       } ]
     } ],
@@ -4448,8 +4448,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "PROJECTSN",
-      "codeName" : "Projectsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",

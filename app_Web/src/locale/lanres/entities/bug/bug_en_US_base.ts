@@ -430,7 +430,6 @@ function getLocaleResourceBase(){
 		},
 		assignto_form: {
 			details: {
-				'grouppanel1': commonLogic.appcommonhandle("分组面板",null), 
 				'druipart1': commonLogic.appcommonhandle("",null), 
 				'grouppanel6': commonLogic.appcommonhandle("历史记录",null), 
 				'group1': commonLogic.appcommonhandle("Bug基本信息",null), 
@@ -443,13 +442,13 @@ function getLocaleResourceBase(){
 				'srfuf': commonLogic.appcommonhandle("",null), 
 				'srfdeid': commonLogic.appcommonhandle("",null), 
 				'srfsourcekey': commonLogic.appcommonhandle("",null), 
-				'assignedto': commonLogic.appcommonhandle("指派给",null), 
 				'project': commonLogic.appcommonhandle("所属项目",null), 
-				'product': commonLogic.appcommonhandle("所属产品",null), 
+				'assignedto': commonLogic.appcommonhandle("指派给",null), 
 				'mailto': commonLogic.appcommonhandle("抄送给",null), 
 				'mailtoconact': commonLogic.appcommonhandle("",null), 
-				'mailtopk': commonLogic.appcommonhandle("抄送给",null), 
 				'comment': commonLogic.appcommonhandle("备注",null), 
+				'product': commonLogic.appcommonhandle("所属产品",null), 
+				'mailtopk': commonLogic.appcommonhandle("抄送给",null), 
 				'id': commonLogic.appcommonhandle("Bug编号",null), 
 			},
 			uiactions: {

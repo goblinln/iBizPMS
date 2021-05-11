@@ -1286,8 +1286,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "BRANCHSN",
-      "codeName" : "Branchsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -1323,7 +1323,6 @@
     "dEFType" : 1,
     "dataType" : "PICKUP",
     "importOrder" : 1000,
-    "length" : 20,
     "logicName" : "上级模块",
     "name" : "PARENT",
     "getPSDER" : {
@@ -1335,8 +1334,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "MODULESN",
-      "codeName" : "ModuleSN"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",

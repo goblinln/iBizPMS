@@ -46,7 +46,7 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
             const data = await s.getLocal2(context, entity.parent);
             if (data) {
                 entity.parentname = data.title;
-                entity.parent = data.productplansn;
+                entity.parent = data.id;
             }
         }
         return entity!;
@@ -62,7 +62,7 @@ export class SubProductPlanBaseService extends EntityBaseService<ISubProductPlan
             const data = await s.getLocal2(_context, _context.productplan);
             if (data) {
                 entity.parentname = data.title;
-                entity.parent = data.productplansn;
+                entity.parent = data.id;
             }
         }
         return new SubProductPlan(entity);

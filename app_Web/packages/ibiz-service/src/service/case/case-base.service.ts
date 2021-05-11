@@ -49,7 +49,7 @@ export class CaseBaseService extends EntityBaseService<ICase> {
             const data = await s.getLocal2(context, entity.product);
             if (data) {
                 entity.productname = data.name;
-                entity.product = data.productsn;
+                entity.product = data.id;
             }
         }
         if (entity && entity.story && entity.story !== '') {
@@ -57,7 +57,7 @@ export class CaseBaseService extends EntityBaseService<ICase> {
             const data = await s.getLocal2(context, entity.story);
             if (data) {
                 entity.storyname = data.title;
-                entity.story = data.storysn;
+                entity.story = data.id;
             }
         }
         return entity!;
@@ -73,7 +73,7 @@ export class CaseBaseService extends EntityBaseService<ICase> {
             const data = await s.getLocal2(_context, _context.product);
             if (data) {
                 entity.productname = data.name;
-                entity.product = data.productsn;
+                entity.product = data.id;
             }
         }
         if (_context.story && _context.story !== '') {
@@ -81,7 +81,7 @@ export class CaseBaseService extends EntityBaseService<ICase> {
             const data = await s.getLocal2(_context, _context.story);
             if (data) {
                 entity.storyname = data.title;
-                entity.story = data.storysn;
+                entity.story = data.id;
             }
         }
         return new Case(entity);
@@ -101,7 +101,7 @@ export class CaseBaseService extends EntityBaseService<ICase> {
         if (res.ok) {
             _data = mergeDeepLeft(_data, this.filterEntityData(res.data)) as any;
         }
-        const ibzcasestepsList = await this.getMinorLocal('IBZCaseStep', _context, { ibizcase: _data.casesn });
+        const ibzcasestepsList = await this.getMinorLocal('IBZCaseStep', _context, { ibizcase: _data.id });
         if (ibzcasestepsList?.length > 0) {
             _data.ibzcasesteps = ibzcasestepsList;
         }
@@ -125,7 +125,7 @@ export class CaseBaseService extends EntityBaseService<ICase> {
             {
                 let items: any[] = [];
                 const s = await ___ibz___.gs.getIBZCaseStepService();
-                items = await s.selectLocal(context, { ibizcase: oldData.casesn });
+                items = await s.selectLocal(context, { ibizcase: oldData.id });
                 if (items) {
                     for (let i = 0; i < items.length; i++) {
                         const item = items[i];

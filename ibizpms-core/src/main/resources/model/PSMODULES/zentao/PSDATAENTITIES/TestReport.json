@@ -1570,7 +1570,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 20,
+    "length" : 8,
     "logicName" : "所属产品",
     "name" : "PRODUCT",
     "getPSDER" : {
@@ -1578,8 +1578,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDERS/DER1N_ZT_TESTREPORT_ZT_PRODUCT_PRODUCT.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "PRODUCTSN",
-      "codeName" : "Productsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
@@ -1616,7 +1616,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 20,
+    "length" : 8,
     "logicName" : "所属项目",
     "name" : "PROJECT",
     "getPSDER" : {
@@ -1624,8 +1624,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDERS/DER1N_ZT_TESTREPORT_ZT_PROJECT_PROJECT.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "PROJECTSN",
-      "codeName" : "Projectsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",

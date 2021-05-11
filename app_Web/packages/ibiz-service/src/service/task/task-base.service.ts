@@ -77,7 +77,7 @@ export class TaskBaseService extends EntityBaseService<ITask> {
             const data = await s.getLocal2(context, entity.project);
             if (data) {
                 entity.projectname = data.name;
-                entity.project = data.projectsn;
+                entity.project = data.id;
             }
         }
         return entity!;
@@ -119,7 +119,7 @@ export class TaskBaseService extends EntityBaseService<ITask> {
             const data = await s.getLocal2(_context, _context.project);
             if (data) {
                 entity.projectname = data.name;
-                entity.project = data.projectsn;
+                entity.project = data.id;
             }
         }
         return new Task(entity);
@@ -139,7 +139,7 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         if (res.ok) {
             _data = mergeDeepLeft(_data, this.filterEntityData(res.data)) as any;
         }
-        const ibztaskteamsList = await this.getMinorLocal('IBZTaskTeam', _context, { root: _data.tasksn });
+        const ibztaskteamsList = await this.getMinorLocal('IBZTaskTeam', _context, { root: _data.id });
         if (ibztaskteamsList?.length > 0) {
             _data.ibztaskteams = ibztaskteamsList;
         }
@@ -163,7 +163,7 @@ export class TaskBaseService extends EntityBaseService<ITask> {
             {
                 let items: any[] = [];
                 const s = await ___ibz___.gs.getIBZTaskTeamService();
-                items = await s.selectLocal(context, { root: oldData.tasksn });
+                items = await s.selectLocal(context, { root: oldData.id });
                 if (items) {
                     for (let i = 0; i < items.length; i++) {
                         const item = items[i];

@@ -109,8 +109,8 @@ export default class MonthlyCompleteTaskChoice {
         if(items && items instanceof Array && items.length >0){
             items.forEach((item: any) => {
                 let itemdata:any = {};
-                Object.assign(itemdata,{id:item.tasksn});
-                Object.assign(itemdata,{value:item.tasksn});
+                Object.assign(itemdata,{id:item.id});
+                Object.assign(itemdata,{value:item.id});
                 Object.assign(itemdata,{text:item.name});
                 Object.assign(itemdata,{label:item.name});
                 

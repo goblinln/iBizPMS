@@ -505,7 +505,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 20,
+    "length" : 8,
     "logicName" : "测试套件",
     "name" : "SUITE",
     "getPSDER" : {
@@ -513,8 +513,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDERS/DER1N_ZT_SUITECASE_ZT_TESTSUITE_SUITE.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "TESTSUITESN",
-      "codeName" : "Testsuitesn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
@@ -551,7 +551,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 20,
+    "length" : 8,
     "logicName" : "用例",
     "name" : "CASE",
     "getPSDER" : {
@@ -559,8 +559,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDERS/DER1N_ZT_SUITECASE_ZT_CASE_CASE.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "CASESN",
-      "codeName" : "Casesn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
@@ -599,7 +599,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 20,
+    "length" : 8,
     "logicName" : "所属产品",
     "name" : "PRODUCT",
     "getPSDER" : {
@@ -607,8 +607,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/SuiteCase/PSDERS/DER1N_ZT_SUITECASE_ZT_PRODUCT_PRODUCT.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "PRODUCTSN",
-      "codeName" : "Productsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",

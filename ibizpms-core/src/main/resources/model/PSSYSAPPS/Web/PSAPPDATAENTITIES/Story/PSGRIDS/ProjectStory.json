@@ -13,8 +13,8 @@
   "logicName" : "主表格（项目关联需求）",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
-    "name" : "ID",
-    "codeName" : "Id"
+    "name" : "STORYSN",
+    "codeName" : "Storysn"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,

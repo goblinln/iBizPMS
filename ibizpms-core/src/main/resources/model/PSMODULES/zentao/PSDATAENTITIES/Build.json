@@ -1659,8 +1659,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "PRODUCTSN",
-      "codeName" : "Productsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -1698,7 +1698,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 20,
+    "length" : 8,
     "logicName" : "平台/分支",
     "name" : "BRANCH",
     "getPSDER" : {
@@ -1710,8 +1710,8 @@
       "path" : "PSSYSTRANSLATORS/BranchValueTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "BRANCHSN",
-      "codeName" : "Branchsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -1761,8 +1761,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "PROJECTSN",
-      "codeName" : "Projectsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",

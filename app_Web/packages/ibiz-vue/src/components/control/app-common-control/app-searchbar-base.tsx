@@ -190,7 +190,7 @@ export class AppSearchBarBase extends SearchBarControlBase {
                         op-on-popper-show={this.openPoper.bind(this)}>
                             <i-button><i class="fa fa-floppy-o" aria-hidden="true"></i></i-button>
                             <div slot="content">
-                                <i-input value={this.saveItemName} placeholder=""></i-input>
+                                <i-input v-model={this.saveItemName} placeholder=""></i-input>
                                 <div class="save-action">
                                     <i-button on-click={this.onCancel.bind(this)}>取消</i-button>
                                     <i-button type="primary" on-click={this.onOk.bind(this)}>保存</i-button>

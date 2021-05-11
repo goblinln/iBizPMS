@@ -376,7 +376,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "EXISTS(SELECT * FROM `zt_suitecase` t51 \n WHERE \n t1.`CASESN` = t51.`CASE`  AND  ( t51.`SUITE` = ${srfdatacontext('srfparentkey','{\"defname\":\"SUITE\",\"dename\":\"ZT_SUITECASE\"}')} ) )",
+        "customCond" : "EXISTS(SELECT * FROM `zt_suitecase` t51 \n WHERE \n t1.`ID` = t51.`CASE`  AND  ( t51.`SUITE` = ${srfdatacontext('srfparentkey','{\"defname\":\"SUITE\",\"dename\":\"ZT_SUITECASE\"}')} ) )",
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
@@ -466,7 +466,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "t61.TESTREPORTSN = ${srfwebcontext('srfparentkey','{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}')}",
+        "customCond" : "t61.ID= ${srfwebcontext('srfparentkey','{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}')}",
         "name" : "查询条件"
       } ]
     } ],
@@ -498,7 +498,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "\t\tNOT (\n\t\t\tEXISTS (\n\t\t\tSELECT\n\t\t\t\t* \n\t\t\tFROM\n\t\t\t\tzt_suitecase t41 \n\t\t\tWHERE\n\t\t\t\tt1.CASESN = t41.`CASE` \n\t\t\t\tAND ( t41.`suite` = $ { srfwebcontext ( 'suite', '{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}' ) } ) \n\t\t\t) \n\t)",
+        "customCond" : "\t\tNOT (\n\t\t\tEXISTS (\n\t\t\tSELECT\n\t\t\t\t* \n\t\t\tFROM\n\t\t\t\tzt_suitecase t41 \n\t\t\tWHERE\n\t\t\t\tt1.ID = t41.`CASE` \n\t\t\t\tAND ( t41.`suite` = $ { srfwebcontext ( 'suite', '{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}' ) } ) \n\t\t\t) \n\t)",
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
@@ -516,7 +516,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "NOT(EXISTS(SELECT * FROM zt_testrun t41 \n WHERE \n t1.CASESN = t41.`CASE`  AND  ( t41.`task` = ${srfwebcontext('task','{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}')} ) ))",
+        "customCond" : "NOT(EXISTS(SELECT * FROM zt_testrun t41 \n WHERE \n t1.ID = t41.`CASE`  AND  ( t41.`task` = ${srfwebcontext('task','{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}')} ) ))",
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
@@ -524,7 +524,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "t1.product in (select tt.product from zt_testtask t left join zt_projectproduct tt on tt.project = t.project where t.TESTTASKSN = ${srfwebcontext('task','{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}')})",
+        "customCond" : "t1.product in (select tt.product from zt_testtask t left join zt_projectproduct tt on tt.project = t.project where t.ID= ${srfwebcontext('task','{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}')})",
         "name" : "查询条件"
       } ]
     } ],
@@ -538,7 +538,7 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
-        "customCond" : "NOT (\n\t\t\tEXISTS (\n\t\t\tSELECT\n\t\t\t\t* \n\t\t\tFROM\n\t\t\t\tzt_testrun t41 \n\t\t\tWHERE\n\t\t\t\tt1.CASESN = t41.`CASE` \n\t\t\t\tAND ( t41.`task` = $ { srfwebcontext ( 'task', '{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}' ) } ) \n\t\t\t) \n\t)",
+        "customCond" : "NOT (\n\t\t\tEXISTS (\n\t\t\tSELECT\n\t\t\t\t* \n\t\t\tFROM\n\t\t\t\tzt_testrun t41 \n\t\t\tWHERE\n\t\t\t\tt1.ID = t41.`CASE` \n\t\t\t\tAND ( t41.`task` = $ { srfwebcontext ( 'task', '{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}' ) } ) \n\t\t\t) \n\t)",
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
@@ -546,7 +546,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "\t\tt1.product IN (\n\t\tSELECT\n\t\t\ttt.product \n\t\tFROM\n\t\t\tzt_testtask t\n\t\t\tLEFT JOIN zt_projectproduct tt ON tt.project = t.project \n\t\tWHERE\n\t\t\tt.TESTTASKSN = $ { srfwebcontext ( 'task', '{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}' ) } \n\t\t)",
+        "customCond" : "\t\tt1.product IN (\n\t\tSELECT\n\t\t\ttt.product \n\t\tFROM\n\t\t\tzt_testtask t\n\t\t\tLEFT JOIN zt_projectproduct tt ON tt.project = t.project \n\t\tWHERE\n\t\t\tt.ID = $ { srfwebcontext ( 'task', '{\"defname\":\"TASK\",\"dename\":\"ZT_TESTRUN\"}' ) } \n\t\t)",
         "name" : "查询条件"
       } ]
     } ],
@@ -564,7 +564,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "t61.TESTREPORTSN = $ { srfwebcontext ( 'srfparentkey', '{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}' ) }",
+        "customCond" : "t61.ID = $ { srfwebcontext ( 'srfparentkey', '{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}' ) }",
         "name" : "查询条件"
       } ]
     } ],
@@ -591,7 +591,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "t61.TESTREPORTSN = ${srfwebcontext('srfparentkey','{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}')}",
+        "customCond" : "t61.ID = ${srfwebcontext('srfparentkey','{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}')}",
         "name" : "查询条件"
       } ]
     } ],
@@ -609,7 +609,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "\tt91.TESTREPORTSN = $ { srfwebcontext ( 'srfparentkey', '{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}' ) } \n\tAND ( FIND_IN_SET( t1.CASESN, t91.cases ) ) \n\tAND t71.date > t91.`begin` \n\tAND t71.date < t91.`end`",
+        "customCond" : "\tt91.ID = $ { srfwebcontext ( 'srfparentkey', '{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}' ) } \n\tAND ( FIND_IN_SET( t1.ID, t91.cases ) ) \n\tAND t71.date > t91.`begin` \n\tAND t71.date < t91.`end`",
         "name" : "查询条件"
       } ]
     } ],
@@ -636,7 +636,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "\tt91.testreport = $ { srfwebcontext ( 'srfparentkey', '{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}' ) } \n\tAND ( FIND_IN_SET( t1.CASESN, t91.cases ) ) \n\tAND t71.date > t91.`begin` \n\tAND t71.date < CONCAT( DATE_FORMAT( t91.`end`, '%Y-%m-%d' ), ' 23:59:59' )",
+        "customCond" : "\tt91.testreport = $ { srfwebcontext ( 'srfparentkey', '{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}' ) } \n\tAND ( FIND_IN_SET( t1.ID, t91.cases ) ) \n\tAND t71.date > t91.`begin` \n\tAND t71.date < CONCAT( DATE_FORMAT( t91.`end`, '%Y-%m-%d' ), ' 23:59:59' )",
         "name" : "查询条件"
       } ]
     } ],
@@ -654,7 +654,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "\tt81.TESTREPORTSN = $ { srfwebcontext ( 'srfparentkey', '{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}' ) } \n\tAND ( FIND_IN_SET( t1.CASESN, t81.cases ) ) \n\tAND t71.date > t81.`begin` \n\tAND t71.date < t81.`end`",
+        "customCond" : "\tt81.id = $ { srfwebcontext ( 'srfparentkey', '{\"defname\":\"PATH\",\"dename\":\"ZT_CASE\"}' ) } \n\tAND ( FIND_IN_SET( t1.id, t81.cases ) ) \n\tAND t71.date > t81.`begin` \n\tAND t71.date < t81.`end`",
         "name" : "查询条件"
       } ]
     } ],
@@ -3591,7 +3591,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 20,
+    "length" : 8,
     "logicName" : "来源用例",
     "name" : "FROMCASEID",
     "getPSDER" : {
@@ -3603,8 +3603,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "CASESN",
-      "codeName" : "Casesn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -3642,7 +3642,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 20,
+    "length" : 8,
     "logicName" : "平台/分支",
     "name" : "BRANCH",
     "getPSDER" : {
@@ -3654,8 +3654,8 @@
       "path" : "PSSYSTRANSLATORS/BranchValueTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "BRANCHSN",
-      "codeName" : "Branchsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -3693,7 +3693,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 20,
+    "length" : 8,
     "logicName" : "来源Bug",
     "name" : "FROMBUG",
     "getPSDER" : {
@@ -3701,8 +3701,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_BUG_FROMBUG.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "BUGSN",
-      "codeName" : "Bugsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
@@ -3739,7 +3739,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 20,
+    "length" : 8,
     "logicName" : "相关需求",
     "name" : "STORY",
     "getPSDER" : {
@@ -3751,8 +3751,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "STORYSN",
-      "codeName" : "Storysn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -3790,7 +3790,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 20,
+    "length" : 8,
     "logicName" : "所属产品",
     "name" : "PRODUCT",
     "getPSDER" : {
@@ -3802,8 +3802,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "PRODUCTSN",
-      "codeName" : "Productsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -3841,7 +3841,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 20,
+    "length" : 8,
     "logicName" : "所属库",
     "name" : "LIB",
     "getPSDER" : {
@@ -3853,8 +3853,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "TESTSUITESN",
-      "codeName" : "Testsuitesn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -3892,7 +3892,6 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 20,
     "logicName" : "所属模块",
     "name" : "MODULE",
     "getPSDER" : {
@@ -3904,8 +3903,8 @@
       "path" : "PSSYSTRANSLATORS/ModulePathValueTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "MODULESN",
-      "codeName" : "ModuleSN"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",

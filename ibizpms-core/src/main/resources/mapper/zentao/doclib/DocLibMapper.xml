@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`ACL`, t1.`COLLECTOR`, t1.`CREATEBY`, t1.`DELETED`, t1.`DEPTNAME`, t1.`DOCLIBSN`, 'doc' AS `DOCLIBTYPE`, t1.`GROUPS`, t1.`ID`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`, t1.`MAIN`, t1.`MDEPTID`, (select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.parent = 0 and t.root = t1.id) AS `MODULECNT`, t1.`NAME`, (select t.date from zt_action t where t.objectID = t1.id and t.objectType = 'doclib' and t.action = 'created') AS `OPENEDDATE`, t1.`ORDER`, t1.`ORGID`, t1.`ORGNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TYPE`, t1.`UPDATEBY`, t1.`UPDATEMANNAME`, t1.`USERS` FROM `zt_doclib` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`productsn`  LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`PROJECTSN`   ]]>
+        <![CDATA[ SELECT t1.`ACL`, t1.`COLLECTOR`, t1.`CREATEBY`, t1.`DELETED`, t1.`DEPTNAME`, t1.`DOCLIBSN`, 'doc' AS `DOCLIBTYPE`, t1.`GROUPS`, t1.`ID`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`, t1.`MAIN`, t1.`MDEPTID`, (select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.parent = 0 and t.root = t1.id) AS `MODULECNT`, t1.`NAME`, (select t.date from zt_action t where t.objectID = t1.id and t.objectType = 'doclib' and t.action = 'created') AS `OPENEDDATE`, t1.`ORDER`, t1.`ORGID`, t1.`ORGNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TYPE`, t1.`UPDATEBY`, t1.`UPDATEMANNAME`, t1.`USERS` FROM `zt_doclib` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`  LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`ID`   ]]>
     </sql>
 
 	
@@ -170,7 +170,7 @@
 
     <!--数据查询[ByCustom]-->
     <sql id="ByCustom" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACL`, t1.`CREATEBY`, t1.`DELETED`, t1.`DEPTNAME`, t1.`DOCLIBSN`, 'doc' AS `DOCLIBTYPE`, t1.`GROUPS`, t1.`ID`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`, t1.`MAIN`, t1.`MDEPTID`, (select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.parent = 0 and t.root = t1.id) AS `MODULECNT`, t1.`NAME`, (select t.date from zt_action t where t.objectID = t1.id and t.objectType = 'doclib' and t.action = 'created') AS `OPENEDDATE`, t1.`ORDER`, t1.`ORGID`, t1.`ORGNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TYPE`, t1.`UPDATEBY`, t1.`UPDATEMANNAME` FROM `zt_doclib` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`productsn`  LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`PROJECTSN`   ]]>
+		<![CDATA[ SELECT t1.`ACL`, t1.`CREATEBY`, t1.`DELETED`, t1.`DEPTNAME`, t1.`DOCLIBSN`, 'doc' AS `DOCLIBTYPE`, t1.`GROUPS`, t1.`ID`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`, t1.`MAIN`, t1.`MDEPTID`, (select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.parent = 0 and t.root = t1.id) AS `MODULECNT`, t1.`NAME`, (select t.date from zt_action t where t.objectID = t1.id and t.objectType = 'doclib' and t.action = 'created') AS `OPENEDDATE`, t1.`ORDER`, t1.`ORGID`, t1.`ORGNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TYPE`, t1.`UPDATEBY`, t1.`UPDATEMANNAME` FROM `zt_doclib` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`  LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>
@@ -206,7 +206,7 @@
 
     <!--数据查询[ByProductNotFiles]-->
     <sql id="ByProductNotFiles" databaseId="mysql">
-		<![CDATA[ SELECT 	t1.*  FROM 	( 	SELECT 		( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`, 		t1.`ACL`, 		t1.`DELETED`, 		t1.`GROUPS`, 		t1.`ID`, (select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.parent = 0 and t.root = t1.id) as modulecnt, (select t.date from zt_action t where t.objectID = t1.id and t.objectType = 'doclib' and t.action = 'created') as openedDate, 		t1.`MAIN`, 		t1.`NAME`, 		t1.`ORDER`, 		t1.`PRODUCT`, 		t1.`PROJECT`, 		t1.`TYPE`, 		'doc' AS DOCLIBTYPE, 		( 		SELECT 			count( 1 )  		FROM 			zt_doc t  		WHERE 			t.lib = t1.doclibsn  			AND t.product = t1.product  			AND t.deleted = '0'  		) AS DOCCNT,  t1.doclibsn  	FROM 	`zt_doclib` t1  	) t1 ]]>
+		<![CDATA[ SELECT 	t1.*  FROM 	( 	SELECT 		( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`, 		t1.`ACL`, 		t1.`DELETED`, 		t1.`GROUPS`, 		t1.`ID`, (select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.parent = 0 and t.root = t1.id) as modulecnt, (select t.date from zt_action t where t.objectID = t1.id and t.objectType = 'doclib' and t.action = 'created') as openedDate, 		t1.`MAIN`, 		t1.`NAME`, 		t1.`ORDER`, 		t1.`PRODUCT`, 		t1.`PROJECT`, 		t1.`TYPE`, 		'doc' AS DOCLIBTYPE, 		( 		SELECT 			count( 1 )  		FROM 			zt_doc t  		WHERE 			t.lib = t1.id 			AND t.product = t1.product  			AND t.deleted = '0'  		) AS DOCCNT,  t1.doclibsn  	FROM 	`zt_doclib` t1  	) t1 ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.type = 'product'  AND t1.deleted = '0' ]]>
@@ -260,7 +260,7 @@
 
     <!--数据查询[CurDocLib]-->
     <sql id="CurDocLib" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACL`, t1.`DELETED`, 'doc' AS `DOCLIBTYPE`, t1.`GROUPS`, t1.`ID`, t1.`MAIN`,  CONCAT_WS('',case when t1.type = 'product' then '/[产品]/' when t1.type = 'project' then '/[项目]/' else '/' end,case when t1.type = 'product' then t21.`name` when t1.type = 'project' then t11.`name` else '' end,case when t1.type = 'product' then '/' when t1.type = 'project' then '/' else '' end,t1.`name`)  as `NAME`, t1.`ORDER`, t1.`PRODUCT`, t21.`NAME` AS `PRODUCTNAME`, t1.`PROJECT`, t11.`NAME` AS `PROJECTNAME`, t1.`TYPE`, t1.orgid, t1.MDEPTID,  t1.doclibsn FROM `zt_doclib` t1  LEFT JOIN zt_project t11 ON t1.PROJECT = t11.projectsn LEFT JOIN zt_product t21 ON t1.PRODUCT = t21.PRODUCTSN ]]>
+		<![CDATA[ SELECT t1.`ACL`, t1.`DELETED`, 'doc' AS `DOCLIBTYPE`, t1.`GROUPS`, t1.`ID`, t1.`MAIN`,  CONCAT_WS('',case when t1.type = 'product' then '/[产品]/' when t1.type = 'project' then '/[项目]/' else '/' end,case when t1.type = 'product' then t21.`name` when t1.type = 'project' then t11.`name` else '' end,case when t1.type = 'product' then '/' when t1.type = 'project' then '/' else '' end,t1.`name`)  as `NAME`, t1.`ORDER`, t1.`PRODUCT`, t21.`NAME` AS `PRODUCTNAME`, t1.`PROJECT`, t11.`NAME` AS `PROJECTNAME`, t1.`TYPE`, t1.orgid, t1.MDEPTID,  t1.doclibsn FROM `zt_doclib` t1  LEFT JOIN zt_project t11 ON t1.PROJECT = t11.ID LEFT JOIN zt_product t21 ON t1.PRODUCT = t21.ID ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.orgid = #{srf.sessioncontext.srforgid} ]]>
@@ -275,7 +275,7 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACL`, t1.`CREATEBY`, t1.`DELETED`, t1.`DEPTNAME`, t1.`DOCLIBSN`, 'doc' AS `DOCLIBTYPE`, t1.`GROUPS`, t1.`ID`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`, t1.`MAIN`, t1.`MDEPTID`, (select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.parent = 0 and t.root = t1.id) AS `MODULECNT`, t1.`NAME`, (select t.date from zt_action t where t.objectID = t1.id and t.objectType = 'doclib' and t.action = 'created') AS `OPENEDDATE`, t1.`ORDER`, t1.`ORGID`, t1.`ORGNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TYPE`, t1.`UPDATEBY`, t1.`UPDATEMANNAME` FROM `zt_doclib` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`productsn`  LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`PROJECTSN`   ]]>
+		<![CDATA[ SELECT t1.`ACL`, t1.`CREATEBY`, t1.`DELETED`, t1.`DEPTNAME`, t1.`DOCLIBSN`, 'doc' AS `DOCLIBTYPE`, t1.`GROUPS`, t1.`ID`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`, t1.`MAIN`, t1.`MDEPTID`, (select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.parent = 0 and t.root = t1.id) AS `MODULECNT`, t1.`NAME`, (select t.date from zt_action t where t.objectID = t1.id and t.objectType = 'doclib' and t.action = 'created') AS `OPENEDDATE`, t1.`ORDER`, t1.`ORGID`, t1.`ORGNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TYPE`, t1.`UPDATEBY`, t1.`UPDATEMANNAME` FROM `zt_doclib` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`  LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>
@@ -311,7 +311,7 @@
 
     <!--数据查询[RootModuleMuLu]-->
     <sql id="RootModuleMuLu" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t11.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`MODULESN`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t21.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, 'module'  as `TYPE`, t1.MODULESN FROM `zt_module` t1  LEFT JOIN zt_doclib t11 ON t1.ROOT = t11.DOCLIBSN  LEFT JOIN zt_module t21 ON t1.PARENT = t21.MODULESN ]]>
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t11.`NAME` AS `DOCLIBNAME`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t21.`NAME` AS `MODULENAME`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t1.`PATH`, t1.`ROOT`, t1.`SHORT`, 'module'  as `TYPE`, t1.MODULESN FROM `zt_module` t1  LEFT JOIN zt_doclib t11 ON t1.ROOT = t11.ID LEFT JOIN zt_module t21 ON t1.PARENT = t21.ID ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>
@@ -329,7 +329,7 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ACL`, t1.`COLLECTOR`, t1.`CREATEBY`, t1.`DELETED`, t1.`DEPTNAME`, t1.`DOCLIBSN`, 'doc' AS `DOCLIBTYPE`, t1.`GROUPS`, t1.`ID`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`, t1.`MAIN`, t1.`MDEPTID`, (select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.parent = 0 and t.root = t1.id) AS `MODULECNT`, t1.`NAME`, (select t.date from zt_action t where t.objectID = t1.id and t.objectType = 'doclib' and t.action = 'created') AS `OPENEDDATE`, t1.`ORDER`, t1.`ORGID`, t1.`ORGNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TYPE`, t1.`UPDATEBY`, t1.`UPDATEMANNAME`, t1.`USERS` FROM `zt_doclib` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`productsn`  LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`PROJECTSN`   ]]>
+		<![CDATA[ SELECT t1.`ACL`, t1.`COLLECTOR`, t1.`CREATEBY`, t1.`DELETED`, t1.`DEPTNAME`, t1.`DOCLIBSN`, 'doc' AS `DOCLIBTYPE`, t1.`GROUPS`, t1.`ID`, ( CASE WHEN FIND_IN_SET( #{srf.sessioncontext.srfloginname}, t1.collector ) > 0 THEN 1 ELSE 0 END ) AS `ISFAVOURITES`, t1.`MAIN`, t1.`MDEPTID`, (select count(1) from zt_module t where t.deleted = '0' and t.type = 'doc' and t.parent = 0 and t.root = t1.id) AS `MODULECNT`, t1.`NAME`, (select t.date from zt_action t where t.objectID = t1.id and t.objectType = 'doclib' and t.action = 'created') AS `OPENEDDATE`, t1.`ORDER`, t1.`ORGID`, t1.`ORGNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`TYPE`, t1.`UPDATEBY`, t1.`UPDATEMANNAME`, t1.`USERS` FROM `zt_doclib` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`  LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>

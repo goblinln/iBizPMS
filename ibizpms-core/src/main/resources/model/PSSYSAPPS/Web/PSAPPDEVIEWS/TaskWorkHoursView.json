@@ -1439,23 +1439,6 @@
             "getPSDEGridColumns" : [ {
               "align" : "LEFT",
               "cLConvertMode" : "NONE",
-              "caption" : "编号",
-              "codeName" : "taskestimatesn",
-              "columnType" : "DEFGRIDCOLUMN",
-              "dataItemName" : "taskestimatesn",
-              "excelCaption" : "编号",
-              "name" : "taskestimatesn",
-              "noPrivDisplayMode" : 1,
-              "getPSAppDEField" : {
-                "name" : "TASKESTIMATESN",
-                "codeName" : "TaskEstimatesn"
-              },
-              "width" : 100,
-              "widthUnit" : "PX",
-              "enableSort" : false
-            }, {
-              "align" : "LEFT",
-              "cLConvertMode" : "NONE",
               "caption" : "日期",
               "codeName" : "dates",
               "columnType" : "DEFGRIDCOLUMN",
@@ -1623,19 +1606,19 @@
                 "codeName" : "Consumed"
               }
             }, {
+              "dataType" : 1,
+              "name" : "taskestimatesn",
+              "getPSAppDEField" : {
+                "name" : "TASKESTIMATESN",
+                "codeName" : "TaskEstimatesn"
+              }
+            }, {
               "format" : "YYYY-MM-DD",
               "dataType" : 5,
               "name" : "dates",
               "getPSAppDEField" : {
                 "name" : "DATES",
                 "codeName" : "Dates"
-              }
-            }, {
-              "dataType" : 1,
-              "name" : "taskestimatesn",
-              "getPSAppDEField" : {
-                "name" : "TASKESTIMATESN",
-                "codeName" : "TaskEstimatesn"
               }
             }, {
               "dataType" : 1,
@@ -1675,6 +1658,53 @@
               }
             } ],
             "getPSDEGridEditItems" : [ {
+              "caption" : "编号",
+              "codeName" : "id",
+              "enableCond" : 0,
+              "ignoreInput" : 0,
+              "name" : "id",
+              "getPSAppDEField" : {
+                "name" : "ID",
+                "codeName" : "Id"
+              },
+              "getPSEditor" : {
+                "editorType" : "SPAN",
+                "name" : "id",
+                "editable" : false,
+                "enableLinkView" : false
+              },
+              "allowEmpty" : true
+            }, {
+              "caption" : "编号",
+              "codeName" : "taskestimatesn",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "name" : "taskestimatesn",
+              "getPSAppDEField" : {
+                "name" : "TASKESTIMATESN",
+                "codeName" : "TaskEstimatesn"
+              },
+              "getPSEditor" : {
+                "editorType" : "TEXTBOX",
+                "name" : "taskestimatesn"
+              },
+              "allowEmpty" : true
+            }, {
+              "caption" : "任务",
+              "codeName" : "task",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "name" : "task",
+              "getPSAppDEField" : {
+                "name" : "TASK",
+                "codeName" : "Task"
+              },
+              "getPSEditor" : {
+                "editorType" : "HIDDEN",
+                "name" : "task"
+              },
+              "allowEmpty" : true
+            }, {
               "caption" : "编号",
               "codeName" : "srfkey",
               "enableCond" : 0,
@@ -2453,23 +2483,6 @@
             "getPSDEGridColumns" : [ {
               "align" : "LEFT",
               "cLConvertMode" : "NONE",
-              "caption" : "编号",
-              "codeName" : "taskestimatesn",
-              "columnType" : "DEFGRIDCOLUMN",
-              "dataItemName" : "taskestimatesn",
-              "excelCaption" : "编号",
-              "name" : "taskestimatesn",
-              "noPrivDisplayMode" : 1,
-              "getPSAppDEField" : {
-                "name" : "TASKESTIMATESN",
-                "codeName" : "TaskEstimatesn"
-              },
-              "width" : 100,
-              "widthUnit" : "PX",
-              "enableSort" : true
-            }, {
-              "align" : "LEFT",
-              "cLConvertMode" : "NONE",
               "caption" : "日期",
               "codeName" : "dates",
               "columnType" : "DEFGRIDCOLUMN",
@@ -2563,6 +2576,13 @@
                 "codeName" : "Consumed"
               }
             }, {
+              "dataType" : 1,
+              "name" : "taskestimatesn",
+              "getPSAppDEField" : {
+                "name" : "TASKESTIMATESN",
+                "codeName" : "TaskEstimatesn"
+              }
+            }, {
               "format" : "YYYY-MM-DD",
               "dataType" : 5,
               "name" : "dates",
@@ -2572,17 +2592,17 @@
               }
             }, {
               "dataType" : 1,
-              "name" : "taskestimatesn",
-              "getPSAppDEField" : {
-                "name" : "TASKESTIMATESN",
-                "codeName" : "TaskEstimatesn"
-              }
-            }, {
-              "dataType" : 1,
               "name" : "task",
               "getPSAppDEField" : {
                 "name" : "TASK",
                 "codeName" : "Task"
+              }
+            }, {
+              "dataType" : 25,
+              "name" : "account",
+              "getPSAppDEField" : {
+                "name" : "ACCOUNT",
+                "codeName" : "Account"
               }
             }, {
               "dataType" : 7,
@@ -2682,6 +2702,23 @@
               "valueRuleType" : "DEFVALUERULE"
             } ],
             "getPSDEGridEditItems" : [ {
+              "caption" : "编号",
+              "codeName" : "id",
+              "enableCond" : 0,
+              "ignoreInput" : 0,
+              "name" : "id",
+              "getPSAppDEField" : {
+                "name" : "ID",
+                "codeName" : "Id"
+              },
+              "getPSEditor" : {
+                "editorType" : "SPAN",
+                "name" : "id",
+                "editable" : false,
+                "enableLinkView" : false
+              },
+              "allowEmpty" : true
+            }, {
               "caption" : "备注",
               "codeName" : "work",
               "enableCond" : 3,
@@ -2714,6 +2751,21 @@
               },
               "allowEmpty" : false
             }, {
+              "caption" : "编号",
+              "codeName" : "taskestimatesn",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "name" : "taskestimatesn",
+              "getPSAppDEField" : {
+                "name" : "TASKESTIMATESN",
+                "codeName" : "TaskEstimatesn"
+              },
+              "getPSEditor" : {
+                "editorType" : "TEXTBOX",
+                "name" : "taskestimatesn"
+              },
+              "allowEmpty" : true
+            }, {
               "caption" : "日期",
               "codeName" : "dates",
               "createDVT" : "CURTIME",
@@ -2733,6 +2785,37 @@
                 "name" : "dates"
               },
               "allowEmpty" : false
+            }, {
+              "caption" : "任务",
+              "codeName" : "task",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "name" : "task",
+              "getPSAppDEField" : {
+                "name" : "TASK",
+                "codeName" : "Task"
+              },
+              "getPSEditor" : {
+                "editorType" : "HIDDEN",
+                "name" : "task"
+              },
+              "allowEmpty" : true
+            }, {
+              "caption" : "用户",
+              "codeName" : "account",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "name" : "account",
+              "getPSAppDEField" : {
+                "name" : "ACCOUNT",
+                "codeName" : "Account"
+              },
+              "getPSEditor" : {
+                "editorType" : "TEXTBOX",
+                "maxLength" : 30,
+                "name" : "account"
+              },
+              "allowEmpty" : true
             }, {
               "caption" : "预计剩余",
               "codeName" : "left",

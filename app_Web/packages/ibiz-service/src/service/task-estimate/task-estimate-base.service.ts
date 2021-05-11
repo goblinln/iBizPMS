@@ -46,7 +46,7 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
             const data = await s.getLocal2(context, entity.task);
             if (data) {
                 entity.taskname = data.name;
-                entity.task = data.tasksn;
+                entity.task = data.id;
                 entity.task = data;
             }
         }
@@ -63,7 +63,7 @@ export class TaskEstimateBaseService extends EntityBaseService<ITaskEstimate> {
             const data = await s.getLocal2(_context, _context.task);
             if (data) {
                 entity.taskname = data.name;
-                entity.task = data.tasksn;
+                entity.task = data.id;
                 entity.task = data;
             }
         }

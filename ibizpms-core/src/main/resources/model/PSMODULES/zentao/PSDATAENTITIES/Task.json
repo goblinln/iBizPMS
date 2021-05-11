@@ -723,7 +723,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "(t1.parent <= 0 or (t1.parent > 0 and not EXISTS (select 1 from zt_task t where  t.deleted = '0' and t.TASKSN = t1.parent and (t.assignedTo =#{srf.sessioncontext.srfloginname} or t.openedBy =#{srf.sessioncontext.srfloginname} or t.closedBy = #{srf.sessioncontext.srfloginname} or t.finishedBy = #{srf.sessioncontext.srfloginname} or t.canceledBy =#{srf.sessioncontext.srfloginname} or FIND_IN_SET(#{srf.sessioncontext.srfloginname}, t.finishedList) ))))",
+        "customCond" : "(t1.parent <= 0 or (t1.parent > 0 and not EXISTS (select 1 from zt_task t where  t.deleted = '0' and t.ID = t1.parent and (t.assignedTo =#{srf.sessioncontext.srfloginname} or t.openedBy =#{srf.sessioncontext.srfloginname} or t.closedBy = #{srf.sessioncontext.srfloginname} or t.finishedBy = #{srf.sessioncontext.srfloginname} or t.canceledBy =#{srf.sessioncontext.srfloginname} or FIND_IN_SET(#{srf.sessioncontext.srfloginname}, t.finishedList) ))))",
         "name" : "查询条件"
       } ]
     } ],
@@ -741,7 +741,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "EXISTS(select 1 from zt_taskestimate t where t.task = t1.TASKSN and t.account = #{srf.sessioncontext.srfloginname} and DATE_FORMAT( t.date, '%Y-%m-%d' ) = DATE_FORMAT( CASE WHEN #{srf.datacontext.date} IS NULL THEN now() ELSE #{srf.datacontext.date} END, '%Y-%m-%d' ))",
+        "customCond" : "EXISTS(select 1 from zt_taskestimate t where t.task = t1.ID and t.account = #{srf.sessioncontext.srfloginname} and DATE_FORMAT( t.date, '%Y-%m-%d' ) = DATE_FORMAT( CASE WHEN #{srf.datacontext.date} IS NULL THEN now() ELSE #{srf.datacontext.date} END, '%Y-%m-%d' ))",
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
@@ -5537,7 +5537,7 @@
     "dEFType" : 3,
     "dataType" : "PICKUPDATA",
     "importOrder" : 1000,
-    "length" : 20,
+    "length" : 8,
     "logicName" : "产品",
     "name" : "PRODUCT",
     "getPSDER" : {
@@ -5710,8 +5710,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "PROJECTSN",
-      "codeName" : "Projectsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -5906,8 +5906,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "TASKSN",
-      "codeName" : "Tasksn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
@@ -5945,7 +5945,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 20,
+    "length" : 8,
     "logicName" : "来源Bug",
     "name" : "FROMBUG",
     "getPSDER" : {
@@ -5957,8 +5957,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "BUGSN",
-      "codeName" : "Bugsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",

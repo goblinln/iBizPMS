@@ -166,13 +166,13 @@
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly.json"
         }
       }, {
-        "actionName" : "CreateGetInfo",
+        "actionName" : "GetDraft",
         "actionType" : "DEACTION",
         "dataAccessAction" : "CREATE",
         "name" : "loaddraft",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "CreateGetInfo"
+          "id" : "GetDraft"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -206,7 +206,7 @@
         }
       } ],
       "enableDEFieldPrivilege" : false,
-      "id" : "编辑表单处理器（月报新建）"
+      "id" : "编辑表单处理器"
     },
     "getPSControlParam" : {
       "autoLoad" : true,

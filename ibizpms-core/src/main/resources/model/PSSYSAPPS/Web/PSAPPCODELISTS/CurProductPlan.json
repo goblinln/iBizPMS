@@ -18,8 +18,8 @@
     "codeName" : "Title"
   },
   "getValuePSAppDEField" : {
-    "name" : "PRODUCTPLANSN",
-    "codeName" : "Productplansn"
+    "name" : "ID",
+    "codeName" : "Id"
   },
   "codeItemValueNumber" : true
 }

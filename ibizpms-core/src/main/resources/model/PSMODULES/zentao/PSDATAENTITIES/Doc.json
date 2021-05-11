@@ -2038,8 +2038,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "DOCLIBSN",
-      "codeName" : "Doclibsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
@@ -2084,8 +2084,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_PROJECT_PROJECT.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "PROJECTSN",
-      "codeName" : "Projectsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
@@ -2130,8 +2130,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_PRODUCT_PRODUCT.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "PRODUCTSN",
-      "codeName" : "Productsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
@@ -2180,8 +2180,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "MODULESN",
-      "codeName" : "ModuleSN"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",
