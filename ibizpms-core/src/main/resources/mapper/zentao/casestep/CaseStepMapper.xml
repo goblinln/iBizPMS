@@ -119,7 +119,7 @@
 
     <!--数据查询[CurTest]-->
     <sql id="CurTest" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CASE`, t1.`DESC`, t1.`EXPECT`, t1.`ID`, t1.CASESTEPSN, t1.id AS `CASESTEPID`, t1.`PARENT`, t1.`TYPE`, t1.`VERSION`, t21.stepResults as STEPS FROM `zt_casestep` t1  RIGHT JOIN zt_case t11 ON t1.`CASE` = t11.CASESN  LEFT OUTER JOIN zt_testresult t21 ON t11.CASESN = t21.`CASE`  AND t1.version = t21.version  ]]>
+		<![CDATA[ SELECT t1.`CASE`, t1.`DESC`, t1.`EXPECT`, t1.`ID`, t1.CASESTEPSN, t1.id AS `CASESTEPID`, t1.`PARENT`, t1.`TYPE`, t1.`VERSION`, t21.stepResults as STEPS FROM `zt_casestep` t1  RIGHT JOIN zt_case t11 ON t1.`CASE` = t11.id  LEFT OUTER JOIN zt_testresult t21 ON t11.id = t21.`CASE`  AND t1.version = t21.version  ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND ( t21.`ID` = #{srf.webcontext.srfparentkey} ) ]]>

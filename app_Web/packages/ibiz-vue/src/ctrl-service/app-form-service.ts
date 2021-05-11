@@ -379,7 +379,7 @@ export class AppFormService extends ControlServiceBase {
             if (_appEntityService[action] && _appEntityService[action] instanceof Function) {
                 result = _appEntityService[action](Context, Data);
             } else {
-                return Promise.reject({ status: 500, data: { title: '失败', message: '系统异常' } });
+                return reject({ status: 500, data: { title: '失败', message: `实体服务缺少${action}方法` } });
             }
             result.then((response) => {
                 this.handleResponse(action, response, true);

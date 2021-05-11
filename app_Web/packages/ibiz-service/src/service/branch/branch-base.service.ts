@@ -45,7 +45,7 @@ export class BranchBaseService extends EntityBaseService<IBranch> {
             const s = await ___ibz___.gs.getProductService();
             const data = await s.getLocal2(context, entity.product);
             if (data) {
-                entity.product = data.productsn;
+                entity.product = data.id;
             }
         }
         return entity!;
@@ -60,7 +60,7 @@ export class BranchBaseService extends EntityBaseService<IBranch> {
             const s = await ___ibz___.gs.getProductService();
             const data = await s.getLocal2(_context, _context.product);
             if (data) {
-                entity.product = data.productsn;
+                entity.product = data.id;
             }
         }
         return new Branch(entity);

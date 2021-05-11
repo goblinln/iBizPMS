@@ -47,7 +47,7 @@ export class ProjectProductBaseService extends EntityBaseService<IProjectProduct
             const data = await s.getLocal2(context, entity.product);
             if (data) {
                 entity.productname = data.name;
-                entity.product = data.productsn;
+                entity.product = data.id;
             }
         }
         if (entity && entity.project && entity.project !== '') {
@@ -55,7 +55,7 @@ export class ProjectProductBaseService extends EntityBaseService<IProjectProduct
             const data = await s.getLocal2(context, entity.project);
             if (data) {
                 entity.projectname = data.name;
-                entity.project = data.projectsn;
+                entity.project = data.id;
             }
         }
         return entity!;
@@ -71,7 +71,7 @@ export class ProjectProductBaseService extends EntityBaseService<IProjectProduct
             const data = await s.getLocal2(_context, _context.product);
             if (data) {
                 entity.productname = data.name;
-                entity.product = data.productsn;
+                entity.product = data.id;
             }
         }
         if (_context.project && _context.project !== '') {
@@ -79,7 +79,7 @@ export class ProjectProductBaseService extends EntityBaseService<IProjectProduct
             const data = await s.getLocal2(_context, _context.project);
             if (data) {
                 entity.projectname = data.name;
-                entity.project = data.projectsn;
+                entity.project = data.id;
             }
         }
         return new ProjectProduct(entity);

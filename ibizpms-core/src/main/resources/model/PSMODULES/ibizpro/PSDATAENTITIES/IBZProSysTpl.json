@@ -609,7 +609,6 @@
     "dEFType" : 1,
     "dataType" : "PICKUP",
     "importOrder" : 1000,
-    "length" : 20,
     "logicName" : "id",
     "name" : "FILE",
     "getPSDER" : {
@@ -617,8 +616,8 @@
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSysTpl/PSDERS/DER1N_IBZPRO_SYSTPL_ZT_FILE_FILE.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "FILESN",
-      "codeName" : "Filesn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",

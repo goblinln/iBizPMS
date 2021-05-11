@@ -911,7 +911,7 @@ export class ViewBase extends Vue {
                 this.closeViewWithDefault(view);
             }
         }
-        removeSessionStorage("tempOrgId");
+        removeSessionStorage("srfdynaorgid");
     }
 
     /**

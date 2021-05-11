@@ -46,7 +46,7 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
             const data = await s.getLocal2(context, entity.product);
             if (data) {
                 entity.productname = data.name;
-                entity.product = data.productsn;
+                entity.product = data.id;
             }
         }
         return entity!;
@@ -62,7 +62,7 @@ export class ReleaseBaseService extends EntityBaseService<IRelease> {
             const data = await s.getLocal2(_context, _context.product);
             if (data) {
                 entity.productname = data.name;
-                entity.product = data.productsn;
+                entity.product = data.id;
             }
         }
         return new Release(entity);

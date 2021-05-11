@@ -44,7 +44,7 @@ export class TestResultBaseService extends EntityBaseService<ITestResult> {
             const data = await s.getLocal2(context, entity.ibizcase);
             if (data) {
                 entity.product = data.product;
-                entity.ibizcase = data.casesn;
+                entity.ibizcase = data.id;
                 entity.case = data;
             }
         }
@@ -61,7 +61,7 @@ export class TestResultBaseService extends EntityBaseService<ITestResult> {
             const data = await s.getLocal2(_context, _context.case);
             if (data) {
                 entity.product = data.product;
-                entity.ibizcase = data.casesn;
+                entity.ibizcase = data.id;
                 entity.case = data;
             }
         }

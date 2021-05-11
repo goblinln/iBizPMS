@@ -1761,7 +1761,7 @@
     "dEFType" : 3,
     "dataType" : "PICKUPDATA",
     "importOrder" : 1000,
-    "length" : 20,
+    "length" : 8,
     "logicName" : "项目",
     "name" : "PROJECT",
     "getPSDER" : {
@@ -1808,7 +1808,7 @@
     "dataType" : "PICKUP",
     "defaultValue" : "0",
     "importOrder" : 1000,
-    "length" : 20,
+    "length" : 8,
     "logicName" : "任务",
     "name" : "TASK",
     "getPSDER" : {
@@ -1820,8 +1820,8 @@
       "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "TASKSN",
-      "codeName" : "Tasksn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "translatorMode" : "TRANSLATE2",

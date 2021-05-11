@@ -44,7 +44,7 @@ export class WFDynaEditViewBase extends MainViewBase {
      * @type {IPSDEDRTab}
      * @memberof WFDynaEditViewBase
      */
-     public drtabInstance !: IPSDEDRTab;
+    public drtabInstance !: IPSDEDRTab;
 
     /**
      * 工具栏模型数据
@@ -66,7 +66,7 @@ export class WFDynaEditViewBase extends MainViewBase {
      * @type {IPSDEDRTabPage[] | null}
      * @memberof WFDynaEditViewBase
      */
-     public deDRTabPages: IPSDEDRTabPage[] | null = [];
+    public deDRTabPages: IPSDEDRTabPage[] | null = [];
 
     /**
      * 工作流附加功能类型映射关系对象
@@ -104,7 +104,7 @@ export class WFDynaEditViewBase extends MainViewBase {
      *
      * @memberof WFDynaEditViewBase
      */
-    public initMountedMap(){
+    public initMountedMap() {
         this.mountedMap.set('self', false);
     }
 
@@ -113,10 +113,10 @@ export class WFDynaEditViewBase extends MainViewBase {
      *
      * @memberof WFDynaEditViewBase
      */
-     public setIsMounted(name: string = 'self') {
+    public setIsMounted(name: string = 'self') {
         super.setIsMounted(name);
-        if(this.editFormInstance?.name == name){
-           this.viewState.next({ tag: this.editFormInstance.name, action: 'autoload', data: {srfkey:this.context[this.appDeCodeName.toLowerCase()]} });
+        if (this.editFormInstance?.name == name) {
+            this.viewState.next({ tag: this.editFormInstance.name, action: 'autoload', data: { srfkey: this.context[this.appDeCodeName.toLowerCase()] } });
         }
     }
 
@@ -182,7 +182,7 @@ export class WFDynaEditViewBase extends MainViewBase {
                                     props: {
                                         staticProps: {
                                             viewDefaultUsage: false,
-                                            appDeCodeName:this.appDeCodeName
+                                            appDeCodeName: this.appDeCodeName
                                         },
                                         dynamicProps: {
                                             viewdata: JSON.stringify(Object.assign(tempContext, { viewpath: deDRTabPage?.M?.getPSAppView?.path })),
@@ -196,7 +196,7 @@ export class WFDynaEditViewBase extends MainViewBase {
                 </tabs>
             )
         } else {
-            return this.renderFormContent(); 
+            return this.renderFormContent();
         }
     }
 
@@ -219,31 +219,55 @@ export class WFDynaEditViewBase extends MainViewBase {
     }
 
     /**
-     * 获取工具栏按钮
+     * 获取动态表单模型
      * 
-     * @memberof WFDynaEditViewBase                
+     * @memberof WFDynaEditView3Base                
      */
-    public getWFLinkModel(): Promise<any> {
+    public getFormModel(): Promise<any> {
         return new Promise((resolve: any, reject: any) => {
             let datas: any[] = [];
             if (Object.keys(this.viewparams).length > 0) {
                 Object.assign(datas, { 'processDefinitionKey': this.viewparams.processDefinitionKey });
                 Object.assign(datas, { 'taskDefinitionKey': this.viewparams.taskDefinitionKey });
             }
-            this.appEntityService.GetWFLink(JSON.parse(JSON.stringify(this.context)), datas, true).then((response: any) => {
+            this.appEntityService.getWFStep(JSON.parse(JSON.stringify(this.context)), datas, true).then((response: any) => {
                 if (response && response.status === 200) {
-                    this.linkModel = response.data;
-                    if (response.headers && response.headers['process-form']) {
-                        this.computeActivedForm(response.headers['process-form']);
+                    const data = response.data;
+                    if (data && data['process-form']) {
+                        this.computeActivedForm(data['process-form']);
                     } else {
                         this.computeActivedForm(null);
                     }
-                    resolve(response.data);
                 }
             }).catch((response: any) => {
                 this.$throw(response);
             });
         });
+    }
+
+    /**
+     * 获取工具栏按钮
+     * 
+     * @memberof WFDynaEditView3Base                
+     */
+    public getWFLinkModel(arg: any): Promise<any> {
+        return new Promise((resolve: any, reject: any) => {
+            let datas: any[] = [];
+            if (Object.keys(this.viewparams).length > 0) {
+                Object.assign(datas, { 'processDefinitionKey': this.viewparams.processDefinitionKey });
+                Object.assign(datas, { 'taskDefinitionKey': this.viewparams.taskDefinitionKey });
+            }
+            if (arg && Object.keys(arg).length > 0) {
+                Object.assign(datas, { activedata: arg });
+            }
+            this.appEntityService.GetWFLink(JSON.parse(JSON.stringify(this.context)), datas, true).then((response: any) => {
+                if (response && response.status === 200) {
+                    this.linkModel = response.data;
+                }
+            }).catch((response: any) => {
+                this.$throw(response);
+            });
+        })
     }
 
     /**
@@ -253,11 +277,12 @@ export class WFDynaEditViewBase extends MainViewBase {
      */
     public computeActivedForm(inputForm: any) {
         if (!inputForm) {
-            this.editFormInstance = ModelTool.findPSControlByName('form',this.viewInstance.getPSControls()) as IPSDEForm;
+            this.editFormInstance = ModelTool.findPSControlByName('form', this.viewInstance.getPSControls()) as IPSDEForm;
         } else {
             this.editFormInstance = ModelTool.findPSControlByName(`wfform_${inputForm.toLowerCase()}`, this.viewInstance.getPSControls()) as IPSDEForm;
         }
         this.mountedMap.set(this.editFormInstance.name, false);
+        this.$forceUpdate();
     }
 
     /**
@@ -281,7 +306,7 @@ export class WFDynaEditViewBase extends MainViewBase {
                 if (_this.viewdata) {
                     _this.$emit('view-event', { viewName: this.viewInstance.name, action: 'viewdataschange', data: [{ ..._data }] });
                     _this.$emit('view-event', { viewName: this.viewInstance.name, action: 'close', data: null });
-                }else{
+                } else {
                     this.closeView([{ ..._data }]);
                 }
             });
@@ -296,8 +321,8 @@ export class WFDynaEditViewBase extends MainViewBase {
                     Object.assign(tempContext, { [this.appDeCodeName.toLowerCase()]: datas && datas[0].srfkey });
                     let tempViewParam: any = { actionView: linkItem.sequenceflowview, actionForm: linkItem.sequenceflowform };
                     Object.assign(tempContext, { viewpath: targetViewRef?.getRefPSAppView?.path });
-                    GetModelService(tempContext).then((modelService:AppModelService) =>{
-                        modelService.getPSAppView(targetViewRef?.getRefPSAppView?.path).then((viewResult:IPSAppView) =>{
+                    GetModelService(tempContext).then((modelService: AppModelService) => {
+                        modelService.getPSAppView(targetViewRef?.getRefPSAppView?.path).then((viewResult: IPSAppView) => {
                             const appmodal = _this.$appmodal.openModal({ viewname: 'app-view-shell', title: viewResult.title, height: viewResult.height, width: viewResult.width }, tempContext, tempViewParam);
                             appmodal.subscribe((result: any) => {
                                 if (!result || !Object.is(result.ret, 'OK')) {
@@ -359,8 +384,8 @@ export class WFDynaEditViewBase extends MainViewBase {
         Object.assign(tempContext, { [this.appDeCodeName.toLowerCase()]: datas && datas[0].srfkey });
         let tempViewParam: any = { actionView: linkItem.sequenceflowview, actionForm: linkItem.sequenceflowform };
         Object.assign(tempContext, { viewpath: targetViewRef?.getRefPSAppView?.path });
-        GetModelService(tempContext).then((modelService:AppModelService) =>{
-            modelService.getPSAppView(targetViewRef?.getRefPSAppView?.path).then((viewResult:IPSAppView) =>{
+        GetModelService(tempContext).then((modelService: AppModelService) => {
+            modelService.getPSAppView(targetViewRef?.getRefPSAppView?.path).then((viewResult: IPSAppView) => {
                 const appmodal = this.$appmodal.openModal({ viewname: 'app-view-shell', title: viewResult.title, height: viewResult.height, width: viewResult.width }, tempContext, tempViewParam);
                 appmodal.subscribe((result: any) => {
                     if (!result || !Object.is(result.ret, 'OK')) {
@@ -402,7 +427,7 @@ export class WFDynaEditViewBase extends MainViewBase {
             if (_this.viewdata) {
                 _this.$emit('view-event', { viewName: this.viewInstance.name, action: 'viewdataschange', data: [{ ...data }] });
                 _this.$emit('view-event', { viewName: this.viewInstance.name, action: 'close', data: null });
-            } else{
+            } else {
                 this.closeView([{ ...data }]);
             }
             AppCenterService.notifyMessage({ name: this.appDeCodeName, action: 'appRefresh', data: data });
@@ -418,8 +443,8 @@ export class WFDynaEditViewBase extends MainViewBase {
      * @param data 业务数据
      * @memberof WFDynaEditViewBase                
      */
-     public readTask(data: any) {
-        this.appEntityService.ReadTask(this.context, data).then((response:any) =>{
+    public readTask(data: any) {
+        this.appEntityService.ReadTask(this.context, data).then((response: any) => {
             if (!response || response.status !== 200) {
                 console.warn("将待办任务标记为已读失败");
                 return;

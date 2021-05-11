@@ -339,7 +339,7 @@ export class UIServiceBase {
         const curData: any = result.data;
         // 设置临时组织标识（用于获取多实例）
         if (this.tempOrgIdDEField && curData && curData[this.tempOrgIdDEField]) {
-            setSessionStorage('tempOrgId', curData[this.tempOrgIdDEField]);
+            setSessionStorage('srfdynaorgid', curData[this.tempOrgIdDEField]);
         }
         //判断当前数据模式,默认为true，todo
         const iRealDEModel: boolean = true;

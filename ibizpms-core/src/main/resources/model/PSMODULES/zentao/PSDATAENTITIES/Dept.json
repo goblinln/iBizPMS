@@ -605,7 +605,6 @@
     "dEFType" : 1,
     "dataType" : "PICKUP",
     "importOrder" : 1000,
-    "length" : 20,
     "logicName" : "parent",
     "name" : "PARENT",
     "getPSDER" : {
@@ -613,8 +612,8 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Dept/PSDERS/DER1N__ZT_DEPT__ZT_DEPT__PARENT.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "DEPTSN",
-      "codeName" : "Deptsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
