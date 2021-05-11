@@ -417,8 +417,8 @@ export class DirectoryTree extends AppDefaultTree {
      * @memberof DirectoryTree
      */
     public onAction(item: any, ctrlname: string, tag: string, $event: any) {
-        this.currentselectedNode = JSON.parse(JSON.stringify(item));
-        AppViewLogicService.getInstance().executeViewLogic(`${ctrlname}_${tag}_click`, $event, this, this.currentselectedNode, this.controlInstance.getPSAppViewLogics() || []);
+        this.currentselectedNode = Util.deepCopy(item);
+        AppViewLogicService.getInstance().executeViewLogic(`${ctrlname}_${tag}_click`, $event, this, this.currentselectedNode.curData, this.controlInstance.getPSAppViewLogics() || []);
     }
 
     /**
