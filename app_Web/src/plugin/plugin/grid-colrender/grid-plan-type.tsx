@@ -67,10 +67,10 @@ export class GridPlanType {
                         data={scope.row}
                     >
                         {
-                            scope?.row?.parent === '-1' ? <span><span title="父计划" style="color: #3c4353;background-color: #ddd;border-radius: 9px;padding: 3px 5px;display: inline-block;line-height: 1;vertical-align: middle">父</span>
+                            scope?.row?.parent === '-1' ? <span><span title="父计划" style="color: #3c4353;background-color: #ddd;border-radius: 9px;padding: 3px 5px;display: inline-block;line-height: 1;vertical-align: middle;margin-right: 4px;">父</span>
                                 <span>{scope.row.title}</span>
                             </span> : scope?.row?.parent === '0' ? <span>{scope?.row?.title}</span> : <span>
-                                <span title="子计划" style="color: #3c4353;background-color: #ddd;border-radius: 9px;padding: 3px 5px;display: inline-block;line-height: 1;vertical-align: middle">子</span>
+                                <span title="子计划" style="color: #3c4353;background-color: #ddd;border-radius: 9px;padding: 3px 5px;display: inline-block;line-height: 1;vertical-align: middle;margin-right: 4px;">子</span>
                                 <span> {scope?.row?.title}</span>
                             </span>
 

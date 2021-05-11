@@ -66,10 +66,10 @@ export class TASKTYPEFATHERORCHILD {
                         on-refresh={refresh}
                     >
                         {
-                            scope.row.tasktype === '10' ? <span><span title="多人任务" style="color: #3c4353;background-color: #ddd;border-radius: 9px;padding: 3px 5px;display: inline-block;line-height: 1;vertical-align: middle">多人</span>
-                                <span style={scope.row.color ? { color: scope.row.color } : null}> {scope.row.name}</span></span> : scope.row.tasktype === '20' ? <span><span title="父任务" style="color: #3c4353;background-color: #ddd;border-radius: 9px;padding: 3px 5px;display: inline-block;line-height: 1;vertical-align: middle">父</span>
+                            scope.row.tasktype === '10' ? <span><span title="多人任务" style="color: #3c4353;background-color: #ddd;border-radius: 9px;padding: 3px 5px;display: inline-block;line-height: 1;vertical-align: middle;margin-right: 4px;">多人</span>
+                                <span style={scope.row.color ? { color: scope.row.color } : null}> {scope.row.name}</span></span> : scope.row.tasktype === '20' ? <span><span title="父任务" style="color: #3c4353;background-color: #ddd;border-radius: 9px;padding: 3px 5px;display: inline-block;line-height: 1;vertical-align: middle;margin-right: 4px;">父</span>
                                     <span style={scope.row.color ? { color: scope.row.color } : null}> {scope.row.name}</span></span> : scope.row.tasktype === '30' ? <span><span style={scope.row.color ? { color: scope.row.color } : null}>{scope.row.name}</span></span> :
-                                        <span><span title="子任务" style="color: #3c4353;background-color: #ddd;border-radius: 9px;padding: 3px 5px;display: inline-block;line-height: 1;vertical-align: middle">子</span>
+                                        <span><span title="子任务" style="color: #3c4353;background-color: #ddd;border-radius: 9px;padding: 3px 5px;display: inline-block;line-height: 1;vertical-align: middle;margin-right: 4px;">子</span>
                                             <span style={scope.row.color ? { color: scope.row.color } : null}> {scope.row.name}</span></span>
                         }
                     </app-column-link>

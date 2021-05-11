@@ -105,6 +105,7 @@ export class AppPluginService {
      * @memberof AppPluginService
      */
     private registerUIActionPlugin(){
+        this.UIActionMap.set('fileibzdownload',() => import('./plugin/deuiaction/fileibzdownload'));
     }
     
 }
