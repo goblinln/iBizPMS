@@ -47,11 +47,6 @@ export class AppGridModel {
                 dataType: 'QUERYPARAM'
               },
               {
-                name:'filter',
-                prop:'filter',
-                dataType: 'QUERYPARAM'
-              },
-              {
                 name:'page',
                 prop:'page',
                 dataType: 'QUERYPARAM'
@@ -138,7 +133,6 @@ export class AppGridModel {
         //       modelArray.push(temp);
         //   });
         // }
-        // TODO 搜索表单的关联主实体和界面主键。
 
         // 界面主键标识
         const keyField: string = (ModelTool.getAppEntityKeyField(this.gridInstance?.getPSAppDataEntity() as IPSAppDataEntity) as IPSAppDEField)?.codeName || '';

@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`ASSIGN`, t1.`ASSIGNEDTO`, t1.`ID`, ０ AS `LEFT`, t1.`NAME`, t1.`PROJECT`, t11.`NAME` AS `PROJECTNAME`, ０ AS `TASKCNT`, ０ AS `TOTALLEFT`, ０ AS `TOTALTASKCNT`, ０ AS `WORKLOAD` FROM `ZT_TASK` t1  LEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`ID`   ]]>
+        <![CDATA[ SELECT t1.`ASSIGN`, t1.`ASSIGNEDTO`, t1.`ID`, ０ AS `LEFT`, t1.`NAME`, t1.`PROJECT`, t11.`NAME` AS `PROJECTNAME`, ０ AS `TASKCNT`, ０ AS `TOTALLEFT`, ０ AS `TOTALTASKCNT`, ０ AS `WORKLOAD` FROM `ZT_TASK` t1  LEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`PROJECTSN`   ]]>
     </sql>
 
 	
@@ -80,7 +80,7 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ASSIGN`, t1.`ASSIGNEDTO`, t1.`ID`, ０ AS `LEFT`, t1.`NAME`, t1.`PROJECT`, t11.`NAME` AS `PROJECTNAME`, ０ AS `TASKCNT`, ０ AS `TOTALLEFT`, ０ AS `TOTALTASKCNT`, ０ AS `WORKLOAD` FROM `ZT_TASK` t1  LEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`ID`   ]]>
+		<![CDATA[ SELECT t1.`ASSIGN`, t1.`ASSIGNEDTO`, t1.`ID`, ０ AS `LEFT`, t1.`NAME`, t1.`PROJECT`, t11.`NAME` AS `PROJECTNAME`, ０ AS `TASKCNT`, ０ AS `TOTALLEFT`, ０ AS `TOTALTASKCNT`, ０ AS `WORKLOAD` FROM `ZT_TASK` t1  LEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`PROJECTSN`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>
@@ -104,7 +104,7 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`ASSIGN`, t1.`ASSIGNEDTO`, t1.`ID`, ０ AS `LEFT`, t1.`NAME`, t1.`PROJECT`, t11.`NAME` AS `PROJECTNAME`, ０ AS `TASKCNT`, ０ AS `TOTALLEFT`, ０ AS `TOTALTASKCNT`, ０ AS `WORKLOAD` FROM `ZT_TASK` t1  LEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`ID`   ]]>
+		<![CDATA[ SELECT t1.`ASSIGN`, t1.`ASSIGNEDTO`, t1.`ID`, ０ AS `LEFT`, t1.`NAME`, t1.`PROJECT`, t11.`NAME` AS `PROJECTNAME`, ０ AS `TASKCNT`, ０ AS `TOTALLEFT`, ０ AS `TOTALTASKCNT`, ０ AS `WORKLOAD` FROM `ZT_TASK` t1  LEFT JOIN `zt_project` t11 ON t1.`PROJECT` = t11.`PROJECTSN`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>

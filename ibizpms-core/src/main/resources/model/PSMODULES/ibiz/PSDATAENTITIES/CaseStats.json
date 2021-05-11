@@ -506,7 +506,7 @@
     "dEFType" : 1,
     "dataType" : "PICKUP",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "产品",
     "name" : "PRODUCT",
     "getPSDER" : {
@@ -514,8 +514,8 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/CaseStats/PSDERS/DER1N_IBZ_CASESTATS_ZT_PRODUCT_PRODUCT.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PRODUCTSN",
+      "codeName" : "Productsn"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
@@ -550,6 +550,7 @@
     "dEFType" : 1,
     "dataType" : "PICKUP",
     "importOrder" : 1000,
+    "length" : 20,
     "logicName" : "模块",
     "name" : "MODULE",
     "getPSDER" : {
@@ -557,8 +558,8 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/CaseStats/PSDERS/DER1N_IBZ_CASESTATS_ZT_MODULE_MODULE.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "MODULESN",
+      "codeName" : "ModuleSN"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",

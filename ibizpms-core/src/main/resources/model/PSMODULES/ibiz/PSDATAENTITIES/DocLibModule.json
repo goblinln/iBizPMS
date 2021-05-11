@@ -1324,7 +1324,7 @@
     "dEFType" : 1,
     "dataType" : "PICKUP",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "编号",
     "name" : "ROOT",
     "getPSDER" : {
@@ -1332,8 +1332,8 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDERS/DER1N_IBZ_DOCLIBMODULE_ZT_DOCLIB_ROOT.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "DOCLIBSN",
+      "codeName" : "Doclibsn"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",

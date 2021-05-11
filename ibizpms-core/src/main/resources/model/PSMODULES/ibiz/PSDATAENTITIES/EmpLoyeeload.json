@@ -716,7 +716,7 @@
     "dEFType" : 1,
     "dataType" : "PICKUP",
     "importOrder" : 1000,
-    "length" : 8,
+    "length" : 20,
     "logicName" : "项目编号",
     "name" : "PROJECT",
     "getPSDER" : {
@@ -724,8 +724,8 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDERS/DER1N_IBZ_EMPLOYEELOAD_ZT_PROJECT_PROJECT.json"
     },
     "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "PROJECTSN",
+      "codeName" : "Projectsn"
     },
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
