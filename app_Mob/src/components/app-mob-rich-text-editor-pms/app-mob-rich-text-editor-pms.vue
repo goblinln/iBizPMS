@@ -9,6 +9,7 @@ import { Vue, Component, Prop, Model, Watch,Provide } from 'vue-property-decorat
 import { Environment } from '@/environments/environment';
 import qs from 'qs';
 import { ImagePreview } from 'vant';
+import { ImgurlBase64 } from "ibiz-core";
 @Component({
     components: {
     [ImagePreview.Component.name]: ImagePreview.Component,
@@ -55,12 +56,22 @@ export default class AppRichTextEditorPMS extends Vue {
      * @type {string}
      * @memberof AppRichTextEditor
      */
-    @Watch("value",{immediate:true})
-    onValueChange(){
-      const url:string = this.downloadUrl.indexOf('../') === 0 ? this.downloadUrl.substring(3) : this.downloadUrl;
-      this.showVal = this.value ? this.parseImgUrl(this.value) : "";
+    @Watch("value",{ immediate: true, deep: true })
+    async onValueChange(newval: any, oldval: any){
+      if (newval) {
+        this.showVal = await this.getImgUrlBase64(newval);
+      }
       this.$forceUpdate();
     }
+
+    /**
+     * 上传的图片id与类型集合
+     *
+     * @private
+     * @type {Object}
+     * @memberof AppRichTextEditor
+     */
+    public imgFiles: Array<any> = [];
 
     /**
      * 上传params
@@ -154,34 +165,40 @@ export default class AppRichTextEditorPMS extends Vue {
      * @type {string}
      * @memberof AppRichTextEditor
      */
-    public open(){
+    public async open(){
       if (this.disabled) {
         return false;
       }
       let curVal:any = null;
       if(this.value){
-        curVal =this.parseImgUrl(this.value)
+        curVal = await this.getImgUrlBase64(this.value)
       }
-      this.openPopupModal({ viewname: 'app-rich-text-pms', title: 'app-rich-text-pms'},{},{value:curVal,uploadUrl:this.uploadUrl,export_params:this.export_params});
+      this.openPopupModal({ viewname: 'app-rich-text-pms', title: 'app-rich-text-pms'},{},{value:curVal,uploadUrl:this.uploadUrl,export_params:this.export_params,imgFiles:this.imgFiles});
     }
 
-
     /**
-     * 图片解析
-     *
-     * @type {String}
-     * @memberof APPHistoryList
+     * 获取图片Base64
+     * 
+     * @memberof AppRichTextEditor
      */
-    public parseImgUrl(html:any){
-      let that :any = this;
-       let parsehtml = html.replace(/<img [^>]*src=['"]\{([^\}'"]+)[^>]*>/gi,  (match:any, capture:any) =>{
-          let parseUrl = "";
-          if(match.indexOf('{') && match.indexOf('}')){
-            parseUrl = `${that.downloadUrl}/${capture.split('.')[0]}`;
-          }
-           return `<img src="${parseUrl?parseUrl:capture}"/>`
-        });
-        return parsehtml
+    public async getImgUrlBase64(html: any){
+        let imgs:Array<any>|null = html.match(/<img.*?(?:>|\/>)/gi)!=null? html.match(/<img.*?(?:>|\/>)/gi):[];
+        if(imgs && imgs.length>0){
+             for (let item of imgs) {
+                if(item.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)!=null){
+                    let src:any = item.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)[0];
+                    let match:any = src.substring(5,src.length-1);
+                    let parseUrl = "";
+                    if(match.indexOf('{') === 0 && match.indexOf('}')){
+                      parseUrl = `${this.downloadUrl}/${match.substring(1,match.length-1).split('.')[0]}`;
+                    }
+                    src = await ImgurlBase64.getInstance().getImgURLOfBase64(parseUrl);
+                    const image = item.replace(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig, 'src="'+src+'"');
+                    html = html.replace(item, image);
+                }
+            }
+        }
+        return html;
     }
 
     /**
@@ -193,6 +210,7 @@ export default class AppRichTextEditorPMS extends Vue {
     private async openPopupModal(view: any, context: any, param: any): Promise<any> {
         const result: any = await this.$appmodal.openModal(view, context, param);
         if (result || Object.is(result.ret, 'OK')) {
+            this.imgFiles = result.datas[0].imgFiles;
             this.$emit("change", result.datas[0].backEnd);
             if(result.datas[0].noticeusers){
               this.$emit("noticeusers_change", result.datas[0].noticeusers);

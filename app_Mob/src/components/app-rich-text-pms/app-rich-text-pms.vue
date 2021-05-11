@@ -25,6 +25,7 @@ import {
   Watch,
   Emit,
 } from "vue-property-decorator";
+import { ImgurlBase64 } from "ibiz-core";
 import { Subject } from "rxjs";
 import { Environment } from "@/environments/environment";
 import axios from "axios";
@@ -123,6 +124,11 @@ export default class AppRichTextEditor extends Vue {
    */
   public resloutValue: any = "";
 
+ @Watch("resloutValue")
+ onResloutValueChange(newval:any,oldval:any){
+   this.setImgFiles({value:newval});
+ }
+
   /**
    * 传给后台的数据
    *
@@ -139,6 +145,15 @@ export default class AppRichTextEditor extends Vue {
    * @memberof AppRichTextEditor
    */
   public resFile: any;
+
+  /**
+   * 上传的图片id与类型集合
+   *
+   * @private
+   * @type {Object}
+   * @memberof AppRichTextEditor
+   */
+  public imgFiles: Array<any> = [];
 
   /**
    * 生命周期
@@ -228,6 +243,7 @@ export default class AppRichTextEditor extends Vue {
       let parm: any = JSON.parse(this.dynamicProps._viewparams);
       setTimeout(() => {
         this.resloutValue = parm.value ? parm.value : "";
+        this.setImgFiles(parm);
         const sourceEditorButton: any = document.querySelector(
           ".ql-sourceEditor"
         );
@@ -248,19 +264,15 @@ export default class AppRichTextEditor extends Vue {
    * @memberof AppRichTextEditor
    */
   public onClickOk(): void {
-    if (this.resFile) {
-      let temp = this.resFile.imgsrc;
-      this.backEndValue = this.resFile.imgsrc.replace(
-        this.resFile.url,
-        "{" + this.resFile.id + this.resFile.ext + "}"
-      );
-      this.backEndValue = this.resloutValue.replace(temp,this.backEndValue)
+    if (this.imgFiles) {
+      // 传给后台的数据不是base64
+      this.backEndValue = this.getImgUrl(this.resloutValue);
       this.$emit("close", [
-        { frontEnd: this.resloutValue, backEnd: this.backEndValue, noticeusers:this.account },
+        { frontEnd: this.resloutValue, backEnd: this.backEndValue, noticeusers:this.account, imgFiles:this.imgFiles },
       ]);
     } else {
       this.$emit("close", [
-        { frontEnd: this.resloutValue, backEnd: this.resloutValue, noticeusers:this.account },
+        { frontEnd: this.resloutValue, backEnd: this.resloutValue, noticeusers:this.account, imgFiles:this.imgFiles },
       ]);
     }
   }
@@ -321,7 +333,7 @@ export default class AppRichTextEditor extends Vue {
           this.resFile = response.data;
           // if (process.env.NODE_ENV === "development") {
           this.dataProcess(
-            Object.assign({}, this.resFile, { url: file.content })
+            Object.assign({}, this.resFile, { base64url: file.content })
           );
           // }
         } else {
@@ -344,11 +356,58 @@ export default class AppRichTextEditor extends Vue {
     if(!Object.is(this.export_params.exportParamStr, '')){
       _downloadUrl += `&${this.export_params.exportParamStr}`;
     }
-    file.url = _downloadUrl;
-    this.resFile.url = _downloadUrl;
-    this.resloutValue = this.resloutValue + '<img src="' + file.url + '"alt="'+file.filename+'">';
-    this.resFile.imgsrc = this.resloutValue;
+    this.resFile.base64url = file.base64url;
+    // 存imgFiles在Watch里做了
+    this.resloutValue = this.resloutValue + '<img src="' + file.base64url + '"alt="' + file.id + file.ext  + '">';
     // this.putContent('image',file.url);
+  }
+
+  /**
+   * 更替抛到表单的图片src
+   * 
+   * @memberof AppRichTextEditor
+   */
+  public getImgUrl(html: any){
+      let imgs:Array<any>|null = html.match(/<img.*?(?:>|\/>)/gi)!=null? html.match(/<img.*?(?:>|\/>)/gi):[];
+      if(imgs && imgs.length > 0 && this.imgFiles && this.imgFiles.length > 0){
+          imgs.forEach((img: any, index: number) => {
+              if(img.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)!=null){
+                  const newImg = img.replace(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig, 'src="{' + this.imgFiles[index].id + '.' + this.imgFiles[index].ext + '}"');
+                  html = html.replace(img, newImg);
+              }
+          })
+      }
+      return html;
+  }
+
+  /**
+   * 初始化ImgFiles
+   * 
+   * @memberof AppRichTextEditor
+   */
+  public setImgFiles(parm: any){
+        if (parm.imgFiles) {
+          this.imgFiles = parm.imgFiles;
+        } else {
+          let html:any = parm.value ? parm.value : "" ;
+          let imgs:Array<any>|null = html.match(/<img.*?(?:>|\/>)/gi)!=null? html.match(/<img.*?(?:>|\/>)/gi):[];
+          if(imgs && imgs.length > 0 ){
+              this.imgFiles=[];
+              imgs.forEach((img: any, index: number) => {
+                  if(img.match(/alt=[\'\"]?([^\'\"]*)[\'\"]?/ig)!=null){
+                    let alt:any = img.match(/alt=[\'\"]?([^\'\"]*)[\'\"]?/ig)[0];
+                    let match:any = alt.substring(5,alt.length-1);
+                    let id = '';
+                    let ext = '';
+                    if (match) {
+                      id = match.split('.')[0];
+                      ext = match.split('.')[1];
+                    }
+                    this.imgFiles.push({id:id,ext:ext})
+                  }
+              })
+          }  
+        }
   }
 
   /**
