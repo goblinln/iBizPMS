@@ -463,7 +463,7 @@
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`",
-      "autoIncrement" : true
+      "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -485,7 +485,8 @@
     } ],
     "codeName" : "Id",
     "dEFType" : 1,
-    "dataType" : "ACID",
+    "dataType" : "BIGINT",
+    "defaultValue" : "0",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "编号",
@@ -493,7 +494,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
-    "enableDBAutoValue" : true,
     "enableUICreate" : false,
     "enableUIModify" : false,
     "keyDEField" : true,
@@ -710,11 +710,6 @@
     "length" : 20,
     "logicName" : "产品的分支和平台信息编号",
     "name" : "BRANCHSN",
-    "getPSSysSequence" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProBranchSeq.json"
-    },
-    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
   } ],
@@ -1046,7 +1041,7 @@
   "name" : "ZT_BRANCH",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "Branch",
   "storageMode" : 1,

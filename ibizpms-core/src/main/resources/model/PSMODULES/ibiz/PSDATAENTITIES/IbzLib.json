@@ -227,7 +227,7 @@
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`",
-      "autoIncrement" : true
+      "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -249,7 +249,8 @@
     } ],
     "codeName" : "Id",
     "dEFType" : 1,
-    "dataType" : "ACID",
+    "dataType" : "BIGINT",
+    "defaultValue" : "0",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "编号",
@@ -257,7 +258,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
-    "enableDBAutoValue" : true,
     "enableUICreate" : false,
     "enableUIModify" : false,
     "keyDEField" : true,
@@ -648,7 +648,7 @@
   "name" : "IBZ_LIB",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "IbzLib",
   "storageMode" : 1,

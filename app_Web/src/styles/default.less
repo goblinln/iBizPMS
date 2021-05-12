@@ -18,9 +18,7 @@
 }
 .ivu-card-head p {
   font-size: 14px;
-  //TODO 冲突
   color: var(--ctrl-font-color);
-//   color: var(--app-font-color-light);
   font-weight: 400;
 }
 .app-app-menu .app-menus .ivu-card .ivu-card-body{
@@ -34,9 +32,7 @@
 
 .ivu-card-body .grid>.el-table .el-table__header-wrapper thead>tr th {
   background: var(--app-background-color-bright);
-  //TODO 
   border-right: 1px solid var(--ctrl-font-color-bright);
-//   border-right: 1px solid var(--app-background-color-light);
 }
 .el-table td, .el-table th.is-leaf {
   border-bottom: 1px solid var(--app-background-color-light);
@@ -49,11 +45,8 @@
     width: 10px !important;
 }
 .grid .el-table__body-wrapper .el-table__row td{
-    //TODO
     border-left: 1px solid var(--ctrl-font-color);
     border-top: 1px solid var(--ctrl-font-color);
-    // border-left: 1px solid var(--app-background-color-bright);
-    // border-top: 1px solid var(--app-background-color-bright);
 }
 .el-table--enable-row-hover .el-table__body tr:hover>td {
   background-color: var(--ctrl-select-color) !important;
@@ -67,11 +60,8 @@
 
 .el-table--enable-row-hover .el-table__body tr:hover>td,.grid .el-table__body-wrapper .grid-selected-row {
   .grid-uiaction-divider {
-      //TODO
     color: var(--ctrl-font-color-bright);
     border-left: 1px solid var(--ctrl-font-color-bright);
-    // color: var(--ctrl-select-color);
-    // border-left: 1px solid var(--item-font-color-bright);
     &:hover {
         color: var(--ctrl-font-color-bright);
     }
@@ -83,19 +73,6 @@
     }
   }
 }
-
-// .el-table th .sort-caret.ascending{
-//     border-bottom-color: var(--view-background-color-light);
-// }
-// .el-table th.ascending .sort-caret.ascending {
-//     border-bottom-color: var(--view-font-color-light);
-// }
-// .el-table th .sort-caret.descending{
-//     border-top-color: var(--view-background-color-light);
-// }
-// .el-table th.descending .sort-caret.descending {
-//     border-top-color: var(--view-font-color-light);
-// }
 
 .el-table th .sort-caret.ascending{
     border-bottom-color: var(--ctrl-font-color-light);
@@ -331,9 +308,9 @@
 
 .workflow-tabs-container{
     height: 100%;
-    >.ivu-tabs-bar{
-        margin-bottom: 16px;
-    }
+    // >.ivu-tabs-bar{
+    //     margin-bottom: 0px;
+    // }
     >.ivu-tabs-content{
         height: 100%;
         overflow-y: auto;

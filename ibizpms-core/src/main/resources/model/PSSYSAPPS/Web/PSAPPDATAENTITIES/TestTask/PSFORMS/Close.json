@@ -147,11 +147,9 @@
         },
         "getPSEditor" : {
           "editorHeight" : 32.0,
-          "editorType" : "SPAN",
+          "editorType" : "TEXTBOX",
           "editorWidth" : 40.0,
-          "name" : "id",
-          "editable" : false,
-          "enableLinkView" : false
+          "name" : "id"
         },
         "getPSLayoutPos" : {
           "colLG" : 1,

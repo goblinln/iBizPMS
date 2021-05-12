@@ -564,9 +564,9 @@ export class ViewBase extends Vue {
      * @memberof ViewBase
      */
     public initCapacitorService() {
-        if (!this.isChildView && Object.is(process.env.VUE_APP_CURRENTMODE, 'hybridapp')) {
+        if (!this.isChildView) {
             this.backFunction = this.closeView;
-            AppCapacitorService.getInstance().setView(this);
+            AppCapacitorService.getInstance().viewInit(this,!(this.viewDefaultUsage==='includedView'));
         }
     }
 
@@ -578,6 +578,7 @@ export class ViewBase extends Vue {
     public viewInit() {
         let _this: any = this;
         this.initModel(this.viewInstance)
+        this.initCapacitorService();
         this.viewtag = Util.createUUID();
         this.$store.commit("viewaction/createdView", {
             viewtag: this.viewtag,
@@ -616,7 +617,6 @@ export class ViewBase extends Vue {
         if (_this.formDruipartState) {
             this.formDruipartStatEvent();
         }
-        this.initCapacitorService();
     }
 
     /**
@@ -907,7 +907,7 @@ export class ViewBase extends Vue {
         if (this.viewDefaultUsage === 'includedView') {
             this.$emit('view-event', { viewName: this.viewInstance.codeName, action: 'close', data: null });
         }
-        if (window.history.length == 1 && ThirdPartyService.getInstance().platform && this.viewDefaultUsage === "indexView") {
+        if (this.viewDefaultUsage === "indexView") {
             this.quitFun();
         }
     }

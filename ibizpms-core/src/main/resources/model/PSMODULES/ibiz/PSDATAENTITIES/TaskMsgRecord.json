@@ -739,7 +739,7 @@
   "name" : "TASKMSGRECORD",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 0,
   "serviceCodeName" : "TaskMsgRecord",
   "storageMode" : 1,

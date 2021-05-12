@@ -3804,23 +3804,7 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
-    "getPSNavigateContexts" : [ {
-      "key" : "STORY",
-      "name" : "STORY",
-      "value" : "0",
-      "rawValue" : true
-    }, {
-      "key" : "SRFPARENTKEY",
-      "name" : "SRFPARENTKEY",
-      "value" : "id",
-      "rawValue" : false
-    } ],
     "getPSNavigateParams" : [ {
-      "key" : "srfparentkey",
-      "name" : "srfparentkey",
-      "value" : "id",
-      "rawValue" : false
-    }, {
       "key" : "productplan",
       "name" : "productplan",
       "value" : "productplan",
@@ -4667,13 +4651,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "Review",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Review.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "BatchChangeStage",
       "getPSDEAction" : {
         "modelref" : true,
@@ -5206,13 +5183,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "activate",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Activate.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "BatchChangeStage",
       "getPSDEAction" : {
         "modelref" : true,
@@ -5315,13 +5285,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchUnlinkStory.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Review",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Review.json"
       },
       "allowMode" : true
     }, {
@@ -5650,13 +5613,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Update.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Review",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Review.json"
       },
       "allowMode" : true
     }, {

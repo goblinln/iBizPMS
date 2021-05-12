@@ -2,9 +2,9 @@ import { Store } from 'vuex';
 import Router from 'vue-router';
 import i18n from '@/locale';
 import { Environment } from '@/environments/environment';
-import { Util, Http, getSessionStorage } from 'ibiz-core';
-import { AppLoadingService, nsc } from 'ibiz-vue';
-import { SyncSeriesHook } from 'qx-util';
+import { Http, getSessionStorage } from 'ibiz-core';
+import { AppLoadingService } from 'ibiz-vue';
+import { clearCookie, getCookie, setCookie, SyncSeriesHook } from 'qx-util';
 
 /**
  * 拦截器
@@ -105,8 +105,8 @@ export class Interceptors {
                     config.headers['srfdynaorgid'] = getSessionStorage("srfdynaorgid");
                 }
             }
-            if (Util.getCookie('ibzuaa-token')) {
-                config.headers['Authorization'] = `Bearer ${Util.getCookie('ibzuaa-token')}`;
+            if (getCookie('ibzuaa-token')) {
+                config.headers['Authorization'] = `Bearer ${getCookie('ibzuaa-token')}`;
             } else {
                 // 第三方应用打开免登
                 if (sessionStorage.getItem("srftoken")) {
@@ -197,10 +197,8 @@ export class Interceptors {
      */
     private clearAppData() {
         // 清除user、token
-        let leftTime = new Date();
-        leftTime.setTime(leftTime.getSeconds() - 1);
-        document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
-        document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();
+        clearCookie('ibzuaa-token',true);
+        clearCookie('ibzuaa-user',true);
         // 清除应用级数据
         localStorage.removeItem('localdata')
         this.store.commit('addAppData', {});
@@ -222,8 +220,7 @@ export class Interceptors {
             if (response && response.status === 200) {
                 const data = response.data;
                 if (data) {
-                    localStorage.setItem('token', data);
-                    Util.setCookie('ibzuaa-token', data, 0);
+                    setCookie('ibzuaa-token', data, 7,true);
                 }
             } else {
                 console.log("刷新token出错");

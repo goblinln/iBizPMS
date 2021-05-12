@@ -427,8 +427,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_REPORTLYID",
       "queryCodeExp" : "t1.`IBZ_REPORTLYID`",
-      "standardColumnName" : "`IBZ_REPORTLYID`",
-      "autoIncrement" : true
+      "standardColumnName" : "`IBZ_REPORTLYID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -450,7 +449,7 @@
     } ],
     "codeName" : "IbzReportlyId",
     "dEFType" : 1,
-    "dataType" : "ACID",
+    "dataType" : "BIGINT",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "汇报标识",
@@ -458,7 +457,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
-    "enableDBAutoValue" : true,
     "keyDEField" : true,
     "pasteReset" : true
   }, {
@@ -1127,7 +1125,7 @@
   "name" : "IBZ_REPORTLY",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "IbzReportly",
   "storageMode" : 1,

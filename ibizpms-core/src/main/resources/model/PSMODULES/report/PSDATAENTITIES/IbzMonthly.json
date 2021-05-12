@@ -956,7 +956,6 @@
       "name" : "IBZ_MONTHLYID",
       "queryCodeExp" : "t1.`IBZ_MONTHLYID`",
       "standardColumnName" : "`IBZ_MONTHLYID`",
-      "autoIncrement" : true,
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -979,7 +978,7 @@
     } ],
     "codeName" : "IbzMonthlyId",
     "dEFType" : 1,
-    "dataType" : "ACID",
+    "dataType" : "BIGINT",
     "defaultValue" : "0",
     "importOrder" : 1000,
     "length" : 100,
@@ -988,7 +987,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
-    "enableDBAutoValue" : true,
     "keyDEField" : true,
     "pasteReset" : true
   }, {
@@ -1579,7 +1577,7 @@
   "name" : "IBZ_MONTHLY",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "IbzMonthly",
   "storageMode" : 1,

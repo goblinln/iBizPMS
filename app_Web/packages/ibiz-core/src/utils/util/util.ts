@@ -511,39 +511,6 @@ export class Util {
     }
 
     /**
-     * 设置cookie
-     *
-     * @memberof Util
-     */
-    public static setCookie(name: any, value: any, day: any) {
-        if (day !== 0) {
-            //当设置的时间等于0时，不设置expires属性，cookie在浏览器关闭后删除
-            let curDate = new Date();
-            let curTamp = curDate.getTime();
-            let curWeeHours = new Date(curDate.toLocaleDateString()).getTime() - 1;
-            let passedTamp = curTamp - curWeeHours;
-            let leftTamp = 24 * 60 * 60 * 1000 - passedTamp;
-            let leftTime = new Date();
-            leftTime.setTime(leftTamp + curTamp);
-            document.cookie = name + '=' + escape(value) + ';expires=' + leftTime.toUTCString();
-        } else {
-            document.cookie = name + '=' + escape(value);
-        }
-    }
-
-    /**
-     * 获取cookie
-     *
-     * @memberof Util
-     */
-    public static getCookie(name: any): any {
-        let arr;
-        let reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)');
-        if ((arr = document.cookie.match(reg))) return unescape(arr[2]);
-        else return null;
-    }
-
-    /**
      * 比较两个对象的属性是否都相等
      *
      * @static
@@ -618,70 +585,6 @@ export function getPrimaryKey(): number {
 export function createUUID(): string {
     return 'ibz-design-' + getPrimaryKey();
 }
-
-/**
- * 设置cookie
- *
- * @static
- * @param {*} name 名称
- * @param {*} value 值
- * @param {*} day 过期天数
- * @param {boolean} [isDomain=false] 是否设置在主域下
- * @param {string} [path='/'] 默认归属路径
- * @memberof Util
- */
-export const setCookie = function (name: string, value: string, day = 0, isDomain = false, path = '/'): void {
-    let domain = '';
-    // 设置cookie到主域下
-    if (isDomain) {
-        // 是否为ip正则
-        const regExpr = /^(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)$/;
-        // 为ip时忽略
-        if (!regExpr.test(location.hostname)) {
-            const host = location.hostname;
-            if (host.indexOf('.') !== host.lastIndexOf('.')) {
-                domain = ';domain=' + host.substring(host.indexOf('.'), host.length);
-            }
-        }
-    }
-    // 当设置的时间等于0时，不设置expires属性，cookie在浏览器关闭后删除
-    if (day !== 0) {
-        const expires = day * 24 * 60 * 60 * 1000;
-        const date = new Date(new Date().getTime() + expires);
-        document.cookie = `${name}=${escape(value)};path=${path};expires=${date.toUTCString()}${domain}`;
-    } else {
-        document.cookie = `${name}=${escape(value)};path=${path}${domain}`;
-    }
-};
-
-/**
- * 清除cookie
- *
- * @static
- * @param {string} cookieName
- * @param {boolean} [isDomain] 是否在主域下
- * @memberof Util
- */
-export const clearCookie = function (cookieName: string, isDomain?: boolean): void {
-    setCookie(cookieName, '', -1, isDomain);
-};
-
-/**
- * 获取cookie
- *
- * @static
- * @param {string} name
- * @return {*}  {*}
- * @memberof Util
- */
-export const getCookie = function (name: string): string | null {
-    const reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)');
-    const arr = document.cookie.match(reg);
-    if (arr && arr.length > 1) {
-        return unescape(arr[2]);
-    }
-    return null;
-};
 
 /**
  * 设置sessionStorage数据

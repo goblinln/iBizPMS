@@ -130,3 +130,12 @@ export const getViewMessage = (state: any) => (tag: string) => {
     let id = state.viewMessage[tag];
     return id;
 }
+
+/**
+ * 获取指定键值value
+ * 
+ * @param state 
+ */
+ export const getCustomParamByTag = (state: any) => (tag: string) => {
+    return state.customParam[tag];
+}

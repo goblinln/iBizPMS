@@ -52,6 +52,7 @@
 <script lang="ts">
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
 import { AppServiceBase, getSessionStorage, Util, ImgurlBase64 } from 'ibiz-core';
+import { getCookie } from 'qx-util';
 import { Subject, Unsubscribable } from 'rxjs';
 
 @Component({
@@ -334,8 +335,8 @@ export default class AppFileUpload extends Vue {
                 this.headers['srfdynaorgid'] = getSessionStorage("srfdynaorgid");
             }
         }
-        if (Util.getCookie('ibzuaa-token')) {
-            this.headers['Authorization'] = `Bearer ${Util.getCookie('ibzuaa-token')}`;
+        if (getCookie('ibzuaa-token')) {
+            this.headers['Authorization'] = `Bearer ${getCookie('ibzuaa-token')}`;
         } else {
             // 第三方应用打开免登
             if (sessionStorage.getItem("srftoken")) {

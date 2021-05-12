@@ -1,4 +1,5 @@
 import { Plugins } from '@capacitor/core';
+import { is } from 'ramda';
 import { Util } from '../../utils';
 const { App } = Plugins;
 
@@ -15,13 +16,26 @@ export class AppCapacitorService {
      */
     private static AppCapacitorService: AppCapacitorService;
 
+
     /**
-     * 视图
+     * 视图缓存
      *
+     * @type {any[]}
+     * @memberof AppCapacitorService
+     */
+    public viewCache: any[] = [];
+
+
+    /**
+     * 当前操作视图
+     *
+     * @readonly
      * @type {*}
      * @memberof AppCapacitorService
      */
-    public view: any;
+    get view(): any {
+        return this.view.length - 1 >= 0 ? this.view[this.view.length - 1] : null
+    }
 
     /**
      * Creates an instance of AppCapacitorService.
@@ -44,14 +58,19 @@ export class AppCapacitorService {
         return this.AppCapacitorService;
     }
 
+
     /**
-     * 设置视图
+     * 视图初始化
      *
-     * @param {*} view
+     * @param {*} view 视图
+     * @param {boolean} isDeletePrev 是否保留上一个视图
      * @memberof AppCapacitorService
      */
-    public setView(view: any) {
-        this.view = view;
+    public viewInit(view: any, isDeletePrev: boolean) {
+        if (isDeletePrev) {
+            this.viewCache = [];
+        }
+        this.viewCache.push(view);
     }
 
     /**

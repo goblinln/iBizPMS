@@ -287,7 +287,7 @@
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`",
-      "autoIncrement" : true
+      "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -309,7 +309,8 @@
     } ],
     "codeName" : "Id",
     "dEFType" : 1,
-    "dataType" : "ACID",
+    "dataType" : "BIGINT",
+    "defaultValue" : "0",
     "importOrder" : 1000,
     "length" : 20,
     "logicName" : "编号",
@@ -317,7 +318,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
-    "enableDBAutoValue" : true,
     "enableQuickSearch" : true,
     "keyDEField" : true,
     "majorDEField" : true,
@@ -647,7 +647,7 @@
   "name" : "IBIZPRO_PRODUCTUSERTASK",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "IbzproProductUserTask",
   "storageMode" : 1,

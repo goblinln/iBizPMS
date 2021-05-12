@@ -105,7 +105,6 @@ export default class SpanEditor extends EditorBase {
     public async initSpan(){
         let codeList: IPSAppCodeList | null  = (this.editorInstance as IPSCodeListEditor)?.getPSAppCodeList?.();
         this.customProps.codeList = codeList;
-        this.customProps.data = JSON.stringify(this.contextData);
         this.customProps.context = this.context;
         this.customProps.viewparams = this.viewparams;
         this.initFormatParams();

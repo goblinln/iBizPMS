@@ -479,7 +479,7 @@
       "name" : "IBIZPRO_PRODUCTDAILYID",
       "queryCodeExp" : "t1.`IBIZPRO_PRODUCTDAILYID`",
       "standardColumnName" : "`IBIZPRO_PRODUCTDAILYID`",
-      "autoIncrement" : true
+      "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -502,7 +502,8 @@
     "codeName" : "IbizproProductDailyId",
     "dEFType" : 1,
     "dEMSFieldMode" : "STATE1",
-    "dataType" : "ACID",
+    "dataType" : "BIGINT",
+    "defaultValue" : "0",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "产品日报标识",
@@ -510,7 +511,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
-    "enableDBAutoValue" : true,
     "keyDEField" : true,
     "pasteReset" : true
   }, {
@@ -801,7 +801,7 @@
   "name" : "IBIZPRO_PRODUCTDAILY",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "IbizproProductDaily",
   "storageMode" : 1,

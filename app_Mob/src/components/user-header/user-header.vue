@@ -28,6 +28,7 @@
 import { Vue, Component, Prop, Provide, Emit, Watch, } from "vue-property-decorator";
 import i18n from '@/locale'
 import { CodeListServiceBase, Util} from "ibiz-core";
+import { ImgurlBase64 } from "ibiz-core";
 // import UserRealNameCodelist from "@app-core/code-list/user-real-name"
 @Component({
     components: {},
@@ -76,11 +77,15 @@ export default class UserHeader extends Vue {
      * 获取用户头像
      */
     public getUserImg(value: string) {
-        let icon = JSON.parse(this.getCodeListText('UserRealName', value).icon);
-        if (icon && icon[0] && icon[0].id) {
-            return `${this.imageUrl}/${icon[0].id}`;
+        let icon = this.getCodeListText('UserRealName', value).icon;
+        if (icon) {
+            icon = JSON.parse(icon);
         }
-        return '';
+        if (icon && icon[0] && icon[0].id) {
+            ImgurlBase64.getInstance().getImgURLOfBase64(`${this.imageUrl}/${icon[0].id}`).then((res:any)=>{
+                this.userImg = res;
+            });
+        }
     }
 
     /**
@@ -117,7 +122,8 @@ export default class UserHeader extends Vue {
         this.codeListService.getItems('UserRealName').then((res) => {
             this.UserRealName = res;
             if (context && context.srfloginname) {
-                this.userImg = this.getUserImg(context.srfloginname);
+                // 设置用户头像
+                this.getUserImg(context.srfloginname);
                 this.username = this.getCodeListText('UserRealName', context.srfloginname).label;
             }
         });

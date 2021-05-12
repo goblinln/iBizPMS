@@ -3,6 +3,7 @@ import { Component, Watch } from 'vue-property-decorator';
 import { VueLifeCycleProcessing,AppControlBase } from 'ibiz-vue';
 import { AppMobMDCtrlBase } from 'ibiz-vue';
 import { CodeListService } from "ibiz-service";
+import { ImgurlBase64 } from "ibiz-core";
 import '../plugin-style.less';
 
 /**
@@ -86,14 +87,14 @@ export class MobTaskItemList2 extends AppMobMDCtrlBase {
                 const element = assignedto[index];
                 let name = this.getCodeListText('UserRealName', element).label;
                 if (name) name = name.substring(0, 1);
-                let img = this.getUserImg(element);
-                item.assignedtoArr.push({ name: name, img: img });
+                this.getUserImg(element,element);
+                item.assignedtoArr.push({ name: name, img: item.assignedto_img });
             }
         } else {
             // 单人
             item.assignedto_text = this.getCodeListText('UserRealName', item.assignedto).label;
             item.assignedto_text = item.assignedto_text ? item.assignedto_text.substring(0, 1) : "";
-            item.assignedto_img = this.getUserImg(item.assignedto);
+            this.getUserImg(item.assignedto,item);
         }
         // 任务标记
         if (Object.is(item.multiple, '1')) {
@@ -121,18 +122,18 @@ export class MobTaskItemList2 extends AppMobMDCtrlBase {
 
 
     /**
-     * 获取用户头像
+     * 设置用户头像
      */
-    public getUserImg(value: string) {
-        const _icon = this.getCodeListText('UserRealName', value).icon;
-        if (!this.isJsonStr(_icon)) {
-            return ''
+    public getUserImg(value: string, data: any) {
+        let icon = this.getCodeListText('UserRealName', value).icon;
+        if (icon) {
+            icon = JSON.parse(icon);
         }
-        const icon = JSON.parse(_icon);
         if (icon && icon[0] && icon[0].id) {
-            return `${this.imageUrl}/${icon[0].id}`;
+            ImgurlBase64.getInstance().getImgURLOfBase64(`${this.imageUrl}/${icon[0].id}`).then((res:any)=>{
+                this.$set(data,'assignedto_img',res);
+            });
         }
-        return '';
     }
 
     /**
@@ -183,8 +184,6 @@ export class MobTaskItemList2 extends AppMobMDCtrlBase {
      * @memberof AppDefaultMobMDCtrlBase
      */
     public renderListContent(item: any, index: any) {
-        // let assignedtoArr: any = []
-        // this.parseData(item, assignedtoArr);
         const pri_className = { [item.pri_className]: true, 'pri': true }
         return <ion-item>
             <div class="app-task-list-item">
@@ -203,10 +202,10 @@ export class MobTaskItemList2 extends AppMobMDCtrlBase {
                     <div class="status" style={{ 'color': item.status_color }}>{item.status_text}</div>
                     <div class="assignedto" >
                         {item.multiple != '1' && !item.assignedto_img && item.assignedto_text? <div class="assignedto_item">{item.assignedto_text}</div> : null}
-                        {item.assignedto_img ? <div class="assignedto_item_img"><img v-lazy="item.assignedto_img" alt=""></img></div> : null}
+                        {item.assignedto_img ? <div class="assignedto_item_img"><img src={item.assignedto_img} alt=""></img></div> : null}
                         {
                             item.assignedtoArr && item.assignedtoArr.map((_item: any, index: number) => {
-                                return item.multiple == '1' && index < 2 ? !_item.img  ? <div class="assignedto_item">{_item.name}</div> : <div class="assignedto_item_img"><img v-lazy="_item.img" alt=""></img></div> : null
+                                return item.multiple == '1' && index < 2 ? !_item.img  ? <div class="assignedto_item">{_item.name}</div> : <div class="assignedto_item_img"><img src={_item.img} alt=""></img></div> : null
                             })
                         }
                         { item.assignedtoArr && item.assignedtoArr.length >= 3?<div class="ion" ><ion-icon name="ellipsis-horizontal-outline"></ion-icon></div>:null}

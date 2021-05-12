@@ -98,8 +98,8 @@ public class IbzWeekly extends EntityMP implements Serializable {
     /**
      * 周报标识
      */
-    @DEField(name = "ibz_weeklyid", isKeyField = true)
-    @TableId(value = "`IBZ_WEEKLYID`", type = IdType.AUTO)
+    @DEField(defaultValue = "0", isKeyField = true)
+    @TableId(value = "`IBZ_WEEKLYID`", type = IdType.ASSIGN_ID)
     @JSONField(name = "ibzweeklyid")
     @JsonProperty("ibzweeklyid")
     @ApiModelProperty("周报标识")

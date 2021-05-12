@@ -130,6 +130,10 @@ export class TaskBaseService extends EntityBaseService<ITask> {
             await this.setMinorLocal('IBZTaskTeam', _context, _data.ibztaskteams);
             delete _data.ibztaskteams;
         }
+        if (_data.ibztaskestimates) {
+            await this.setMinorLocal('IBZTaskEstimate', _context, _data.ibztaskestimates);
+            delete _data.ibztaskestimates;
+        }
         this.addLocal(_context, _data);
         return _data;
     }
@@ -142,6 +146,10 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         const ibztaskteamsList = await this.getMinorLocal('IBZTaskTeam', _context, { root: _data.id });
         if (ibztaskteamsList?.length > 0) {
             _data.ibztaskteams = ibztaskteamsList;
+        }
+        const ibztaskestimatesList = await this.getMinorLocal('IBZTaskEstimate', _context, { task: _data.id });
+        if (ibztaskestimatesList?.length > 0) {
+            _data.ibztaskestimates = ibztaskestimatesList;
         }
         return _data;
     }
@@ -171,6 +179,22 @@ export class TaskBaseService extends EntityBaseService<ITask> {
                         if (!res.ok) {
                             throw new Error(
                                 `「Task(${oldData.srfkey})」关联实体「IBZTaskTeam(${item.srfkey})」拷贝失败。`,
+                            );
+                        }
+                    }
+                }
+            }
+            {
+                let items: any[] = [];
+                const s = await ___ibz___.gs.getIBZTaskEstimateService();
+                items = await s.selectLocal(context, { task: oldData.id });
+                if (items) {
+                    for (let i = 0; i < items.length; i++) {
+                        const item = items[i];
+                        const res = await s.DeepCopyTemp({ ...context, task: entity.srfkey }, item);
+                        if (!res.ok) {
+                            throw new Error(
+                                `「Task(${oldData.srfkey})」关联实体「IBZTaskEstimate(${item.srfkey})」拷贝失败。`,
                             );
                         }
                     }

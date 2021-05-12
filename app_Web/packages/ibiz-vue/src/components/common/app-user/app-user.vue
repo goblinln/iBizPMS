@@ -31,7 +31,8 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
 import { Environment } from '@/environments/environment';
-import { removeSessionStorage, Util } from 'ibiz-core';
+import { removeSessionStorage } from 'ibiz-core';
+import { clearCookie, getCookie } from 'qx-util';
 @Component({
 })
 export default class AppUser extends Vue {
@@ -88,8 +89,8 @@ export default class AppUser extends Vue {
                 _user.avatar = this.$store.getters.getAppData().context.srfusericonpath;
             }
         }
-        if(Util.getCookie('ibzuaa-user')){
-            let user:any = JSON.parse(Util.getCookie('ibzuaa-user') as string);
+        if(getCookie('ibzuaa-user')){
+            let user:any = JSON.parse(getCookie('ibzuaa-user') as string);
             if(user && user.personname){
                 _user.name = user.personname;
             }
@@ -130,8 +131,8 @@ export default class AppUser extends Vue {
         // 清除user、token
         let leftTime = new Date();
         leftTime.setTime(leftTime.getSeconds() - 1);
-        document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
-        document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();
+        clearCookie('ibzuaa-token',true);
+        clearCookie('ibzuaa-user',true);
         // 清除应用级数据
         localStorage.removeItem('localdata')
         this.$store.commit('addAppData', {});

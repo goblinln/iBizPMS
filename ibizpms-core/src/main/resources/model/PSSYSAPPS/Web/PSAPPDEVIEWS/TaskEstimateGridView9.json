@@ -430,10 +430,8 @@
         "codeName" : "Id"
       },
       "getPSEditor" : {
-        "editorType" : "SPAN",
-        "name" : "id",
-        "editable" : false,
-        "enableLinkView" : false
+        "editorType" : "TEXTBOX",
+        "name" : "id"
       },
       "allowEmpty" : true
     }, {
@@ -707,6 +705,7 @@
       "codeName" : "Task"
     },
     "rSMode" : 2,
+    "tempDataOrder" : 10,
     "enableCreateDataRS" : false,
     "enableDEAction" : true,
     "enableDEDataSet" : true,
@@ -782,6 +781,7 @@
       "codeName" : "Task"
     },
     "rSMode" : 2,
+    "tempDataOrder" : 10,
     "enableCreateDataRS" : false,
     "enableDEAction" : true,
     "enableDEDataSet" : true,
@@ -857,6 +857,7 @@
       "codeName" : "Task"
     },
     "rSMode" : 2,
+    "tempDataOrder" : 10,
     "enableCreateDataRS" : false,
     "enableDEAction" : true,
     "enableDEDataSet" : true,
@@ -907,6 +908,7 @@
       "codeName" : "Task"
     },
     "rSMode" : 2,
+    "tempDataOrder" : 10,
     "enableCreateDataRS" : false,
     "enableDEAction" : true,
     "enableDEDataSet" : true,
@@ -957,6 +959,7 @@
       "codeName" : "Task"
     },
     "rSMode" : 2,
+    "tempDataOrder" : 10,
     "enableCreateDataRS" : false,
     "enableDEAction" : true,
     "enableDEDataSet" : true,
@@ -1007,6 +1010,7 @@
       "codeName" : "Task"
     },
     "rSMode" : 2,
+    "tempDataOrder" : 10,
     "enableCreateDataRS" : false,
     "enableDEAction" : true,
     "enableDEDataSet" : true,
@@ -1057,6 +1061,7 @@
       "codeName" : "Task"
     },
     "rSMode" : 2,
+    "tempDataOrder" : 10,
     "enableCreateDataRS" : false,
     "enableDEAction" : true,
     "enableDEDataSet" : true,
@@ -1082,6 +1087,7 @@
       "codeName" : "Task"
     },
     "rSMode" : 2,
+    "tempDataOrder" : 10,
     "enableCreateDataRS" : false,
     "enableDEAction" : true,
     "enableDEDataSet" : true,

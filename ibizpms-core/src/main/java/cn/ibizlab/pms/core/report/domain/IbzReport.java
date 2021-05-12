@@ -66,8 +66,8 @@ public class IbzReport extends EntityMP implements Serializable {
     /**
      * 汇报标识
      */
-    @DEField(name = "ibz_dailyid", isKeyField = true)
-    @TableId(value = "`IBZ_DAILYID`", type = IdType.AUTO)
+    @DEField(defaultValue = "0", isKeyField = true)
+    @TableId(value = "`IBZ_DAILYID`", type = IdType.ASSIGN_ID)
     @JSONField(name = "ibzdailyid")
     @JsonProperty("ibzdailyid")
     @ApiModelProperty("汇报标识")

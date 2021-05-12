@@ -81,8 +81,8 @@ public class IbzLibCaseSteps extends EntityMP implements Serializable {
     /**
      * 编号
      */
-    @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.AUTO)
+    @DEField(defaultValue = "0", isKeyField = true)
+    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("编号")

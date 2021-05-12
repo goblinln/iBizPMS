@@ -298,7 +298,7 @@
   "name" : "ZT_IM_MESSAGESTATUS",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "ImMessagestatus",
   "storageMode" : 1,

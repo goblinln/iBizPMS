@@ -815,7 +815,7 @@
   "name" : "SYS_UPDATE_LOG",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "SysUpdateLog",
   "storageMode" : 1,

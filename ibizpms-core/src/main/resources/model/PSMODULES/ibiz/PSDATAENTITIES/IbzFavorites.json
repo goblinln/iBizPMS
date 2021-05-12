@@ -541,7 +541,7 @@
   "name" : "IBZ_FAVORITES",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "IbzFavorites",
   "storageMode" : 1,

@@ -681,7 +681,7 @@
   "name" : "IBZPRO_SYSTPL",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 0,
   "serviceCodeName" : "IBZProSysTpl",
   "storageMode" : 1,

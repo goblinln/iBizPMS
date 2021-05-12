@@ -3,6 +3,7 @@ import { Component, Watch } from 'vue-property-decorator';
 import { VueLifeCycleProcessing,AppControlBase } from 'ibiz-vue';
 import { AppMobMDCtrlBase } from 'ibiz-vue';
 import { CodeListService } from "ibiz-service";
+import { ImgurlBase64 } from "ibiz-core";
 import '../plugin-style.less';
 
 /**
@@ -82,21 +83,24 @@ export class MobBugItemList extends AppMobMDCtrlBase {
         item.tasktype_text = this.getCodeListText('Bug__type', item.type)?.label;
         // 设置指派名称
         item.assignedto_text = this.getCodeListText('UserRealName', item.assignedto)?.label;
-        item.assignedto_img = this.getUserImg(item.assignedto);
+        // 设置用户头像
+        this.getUserImg(item.assignedto,item);
         this.$forceUpdate();
     }
 
     /**
-    * 获取用户头像
-    */
-    public getUserImg(value: string) {
-        if (this.getCodeListText('UserRealName', value).icon) {
-            let icon = JSON.parse(this.getCodeListText('UserRealName', value).icon);
-            if (icon && icon[0] && icon[0].id) {
-                return `${this.imageUrl}/${icon[0].id}`;
-            }
+     * 设置用户头像
+     */
+    public getUserImg(value: string, data: any) {
+        let icon = this.getCodeListText('UserRealName', value).icon;
+        if (icon) {
+            icon = JSON.parse(icon);
         }
-        return '';
+        if (icon && icon[0] && icon[0].id) {
+            ImgurlBase64.getInstance().getImgURLOfBase64(`${this.imageUrl}/${icon[0].id}`).then((res:any)=>{
+                this.$set(data,'assignedto_img',res)
+            });
+        }
     }
 
     /**

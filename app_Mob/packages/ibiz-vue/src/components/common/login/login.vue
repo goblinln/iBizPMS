@@ -50,6 +50,7 @@ import { Vue, Component } from "vue-property-decorator";
 import { Environment } from '@/environments/environment';
 
 import { ThirdPartyService, Util, removeSessionStorage } from "ibiz-core";
+import { setCookie } from "qx-util";
 @Component({
     components: {},
     i18n: {
@@ -193,13 +194,13 @@ export default class Login extends Vue {
                 this.isLoadding = false;
                 const data = response.data;
                 if (data && data.token) {
-                    Util.setCookie('ibzuaa-token', data.token, 7);
+                    setCookie('ibzuaa-token', data.token, 7);
                 }
                 if (data && data.user) {
-                    Util.setCookie('ibzuaa-user', JSON.stringify(data.user), 7);
+                    setCookie('ibzuaa-user', JSON.stringify(data.user), 7);
                 }
                 // 设置cookie,保存账号密码7天
-                Util.setCookie('loginname', this.username, 7);
+                setCookie('loginname', this.username, 7);
                 localStorage.setItem("token", data.token);
                 localStorage.setItem("user", JSON.stringify(data.user));
                 const url: any = this.$route.query.redirect

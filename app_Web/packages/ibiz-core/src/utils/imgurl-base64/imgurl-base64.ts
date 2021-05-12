@@ -37,7 +37,20 @@ export class ImgurlBase64{
                 responseType: 'blob'
             }).then((response: any) => {
                 if (response && response.status === 200 && response.data) {
-                    let blob = new Blob([response.data],{type: 'image/png'});
+                    // 获取文件名
+                    const disposition = response.headers['content-disposition'];
+                    const filename = disposition.split('filename=')[1];
+                    let type = 'image/png';
+                    if (filename && filename.indexOf('.') > 0) {
+                        const start = filename.lastIndexOf('.');
+                        const expandedName = filename.substring(start + 1);
+                        if (expandedName.match(/(bmp|jpg|jpeg|png|tif|gif|pcx|tga|exif|fpx|svg|psd|cdr|pcd|dxf|ufo|eps|ai|raw|WMF|webp)/gi) != null) {
+                            type = 'image/' + expandedName;
+                        } else {
+                            type = 'image/png';
+                        }
+                    }
+                    let blob = new Blob([response.data],{type: type});
                     this.blobToBase64(blob).then((res) => {
                         // 转化后的base64
                         img = `${res}`;

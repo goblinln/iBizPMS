@@ -26,7 +26,7 @@ export default class DatePickerEditor extends EditorBase {
             // 时间选择控件
             case 'DATEPICKEREX':
                 this.customProps.type = 'date';
-                this.customProps.format = 'yyyy-MM-dd';
+                this.customProps.format = 'yyyy-MM-dd HH:mm:ss';
                 break;
             // 时间选择控件_无小时
             case 'DATEPICKEREX_NOTIME':
@@ -40,15 +40,15 @@ export default class DatePickerEditor extends EditorBase {
                 break;
             // 时间选择控件_小时
             case 'DATEPICKEREX_HOUR':
-                this.customProps.format = 'HH';
+                this.customProps.format = 'yyyy-MM-dd HH';
                 break;
             // 时间选择控件_分钟
             case 'DATEPICKEREX_MINUTE':
-                this.customProps.format = 'mm';
+                this.customProps.format = 'yyyy-MM-dd HH:mm';
                 break;
             // 时间选择控件_秒钟
             case 'DATEPICKEREX_SECOND':
-                this.customProps.format = 'ss';
+                this.customProps.format = 'yyyy-MM-dd HH:mm:ss';
                 break;
             // 时间选择控件_无日期
             case 'DATEPICKEREX_NODAY':
@@ -57,6 +57,10 @@ export default class DatePickerEditor extends EditorBase {
             // 时间选择控件_无日期无秒钟
             case 'DATEPICKEREX_NODAY_NOSECOND':
                 this.customProps.format = 'HH:mm';
+                break;
+            // 时间选择控件_无秒钟
+            case 'DATEPICKEREX_NOSECOND':
+                this.customProps.format = 'yyyy-MM-dd HH:mm';
                 break;
         }
     }

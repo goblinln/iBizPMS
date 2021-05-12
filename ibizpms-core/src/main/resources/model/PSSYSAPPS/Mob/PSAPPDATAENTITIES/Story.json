@@ -3940,13 +3940,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "Review",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Review.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "BatchChangeStage",
       "getPSDEAction" : {
         "modelref" : true,
@@ -4479,13 +4472,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "activate",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Activate.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "BatchChangeStage",
       "getPSDEAction" : {
         "modelref" : true,
@@ -4588,13 +4574,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/BatchUnlinkStory.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Review",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Review.json"
       },
       "allowMode" : true
     }, {
@@ -4923,13 +4902,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Update.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "Review",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEACTIONS/Review.json"
       },
       "allowMode" : true
     }, {

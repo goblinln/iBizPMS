@@ -95,7 +95,26 @@ export default {
             }
         },
         formpage:{
-            savesuccess:'保存成功'
+            desc1: "操作失败,未能找到当前表单项",
+            desc2: "无法继续操作",
+            notconfig: {
+                loadaction: "视图表单loadAction参数未配置",
+                loaddraftaction: "视图表单loaddraftAction参数未配置",
+                actionname: "视图表单'+actionName+'参数未配置",
+                removeaction: "视图表单removeAction参数未配置",
+            },
+            saveerror: "保存数据发生错误",
+            savecontent: "数据不一致，可能后台数据已经被修改,是否要重新加载数据？",
+            valuecheckex: "值规则校验异常",
+            savesuccess: "保存成功！",
+            deletesuccess: "删除成功！",  
+            workflow: {
+                starterror: "工作流启动失败",
+                startsuccess: "工作流启动成功",
+                submiterror: "工作流提交失败",
+                submitsuccess: "工作流提交成功",
+            },
+            updateerror: "表单项更新失败",  
         },
         // 非实体视图
         views: {

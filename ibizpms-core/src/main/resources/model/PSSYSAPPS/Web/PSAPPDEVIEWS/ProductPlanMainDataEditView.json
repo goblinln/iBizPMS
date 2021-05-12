@@ -1313,23 +1313,7 @@
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
                       },
-                      "getPSNavigateContexts" : [ {
-                        "key" : "STORY",
-                        "name" : "STORY",
-                        "value" : "0",
-                        "rawValue" : true
-                      }, {
-                        "key" : "SRFPARENTKEY",
-                        "name" : "SRFPARENTKEY",
-                        "value" : "id",
-                        "rawValue" : false
-                      } ],
                       "getPSNavigateParams" : [ {
-                        "key" : "srfparentkey",
-                        "name" : "srfparentkey",
-                        "value" : "id",
-                        "rawValue" : false
-                      }, {
                         "key" : "productplan",
                         "name" : "productplan",
                         "value" : "productplan",

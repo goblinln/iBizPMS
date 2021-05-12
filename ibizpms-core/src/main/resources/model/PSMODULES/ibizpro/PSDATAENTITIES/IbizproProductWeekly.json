@@ -156,7 +156,7 @@
       "name" : "IBIZPRO_PRODUCTWEEKLYID",
       "queryCodeExp" : "t1.`IBIZPRO_PRODUCTWEEKLYID`",
       "standardColumnName" : "`IBIZPRO_PRODUCTWEEKLYID`",
-      "autoIncrement" : true
+      "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -179,7 +179,8 @@
     "codeName" : "Ibizpro_productweeklyid",
     "dEFType" : 1,
     "dEMSFieldMode" : "STATE1",
-    "dataType" : "ACID",
+    "dataType" : "BIGINT",
+    "defaultValue" : "0",
     "importOrder" : 1000,
     "length" : 20,
     "logicName" : "产品周报标识",
@@ -187,7 +188,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
-    "enableDBAutoValue" : true,
     "keyDEField" : true,
     "pasteReset" : true
   }, {
@@ -800,7 +800,7 @@
   "name" : "IBIZPRO_PRODUCTWEEKLY",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "IbizproProductWeekly",
   "storageMode" : 1,

@@ -1,7 +1,7 @@
 
 import { Component, Watch } from 'vue-property-decorator';
 import { VueLifeCycleProcessing,AppControlBase } from 'ibiz-vue';
-import { ViewTool, AppServiceBase, Util } from 'ibiz-core';
+import { ViewTool, AppServiceBase, Util, ImgurlBase64 } from 'ibiz-core';
 import { AppDefaultTree } from 'ibiz-vue/src/components/control/app-default-treeview/app-default-treeview';
 import { AppViewLogicService } from 'ibiz-vue';
 import { UIServiceRegister } from 'ibiz-service';
@@ -58,7 +58,7 @@ export class DirectoryTree extends AppDefaultTree {
      * @type {string}
      * @memberof DirectoryTree
      */
-    public downloadUrl = AppServiceBase.getInstance().getAppEnvironment().BaseUrl + AppServiceBase.getInstance().getAppEnvironment().ExportFile;
+    public downloadUrl = AppServiceBase.getInstance().getAppEnvironment().ExportFile;
 
     /**
      * 目录树部件初始化
@@ -467,6 +467,9 @@ export class DirectoryTree extends AppDefaultTree {
             <div class="documents-library-chart">
                 {
                     this.curPageItems.map((item: any, index: number) => {
+		                  if (item.curData && (Object.is(item.curData.doclibtype,'file') || Object.is(item.curData.docqtype,'doc'))) {
+                            this.getImgurlBase64(item.curData);
+                        }
                         return (
                             <div class="chart-item" on-mouseleave={()=>this.hideToolBar(index)} on-mouseenter={()=>this.showToolBar(item,index)}>
                                 {
@@ -479,7 +482,7 @@ export class DirectoryTree extends AppDefaultTree {
                                     item.curData && (Object.is(item.curData.doclibtype,'file') || Object.is(item.curData.docqtype,'doc')) ?
                                     <div>
                                         {
-                                            !item.curData.pathname ? <icon type="md-document" size="70" color="darkgrey" /> : <img style="width: 70px;height: 70px;" src={this.downloadUrl+'/'+item.curData.id} onerror="/assets/img/noimage.png"/>
+                                            !item.curData.pathname ? <icon type="md-document" size="70" color="darkgrey" /> : <img style="width: 70px;height: 70px;" src={item.curData.imgBase64} onerror="/assets/img/noimage.png"/>
                                         }
                                     </div> : null
                                 }
@@ -652,6 +655,23 @@ export class DirectoryTree extends AppDefaultTree {
                     }
             </div>
         );
+    }
+	
+    /**
+     * 获取当前数据图片
+     * 
+     * @param curData 
+     * @memberof DirectoryTree
+     */
+    public getImgurlBase64(curData: any){
+        const path = this.downloadUrl + '/' + curData.id;
+        ImgurlBase64.getInstance().getImgURLOfBase64(path).then((res: any) => {
+            if (Object.is(res, './')) {
+                this.$set(curData, 'imgBase64', '/assets/img/noimage.png');
+            } else {
+                this.$set(curData, 'imgBase64', res);
+            }
+        })
     }
 
 }

@@ -894,7 +894,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "standardColumnName" : "`ID`",
-      "autoIncrement" : true
+      "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -916,14 +916,14 @@
     } ],
     "codeName" : "Id",
     "dEFType" : 1,
-    "dataType" : "ACID",
+    "dataType" : "BIGINT",
+    "defaultValue" : "0",
     "importOrder" : 1000,
     "length" : 20,
     "logicName" : "标识",
     "name" : "ID",
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
-    "enableDBAutoValue" : true,
     "keyDEField" : true,
     "pasteReset" : true
   }, {
@@ -1755,7 +1755,7 @@
   "name" : "IBZ_BUGSTATS",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "BugStats",
   "storageMode" : 1,

@@ -598,7 +598,7 @@
   "name" : "DYNADASHBOARD",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIClientId" : "80c9b34917721c242d50897a34a5b04e",
   "serviceAPIMode" : 1,
   "serviceCodeName" : "DynaDashboard",

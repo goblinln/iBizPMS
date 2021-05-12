@@ -565,7 +565,7 @@
       "name" : "IBZ_WEEKLYID",
       "queryCodeExp" : "t1.`IBZ_WEEKLYID`",
       "standardColumnName" : "`IBZ_WEEKLYID`",
-      "autoIncrement" : true
+      "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -587,7 +587,8 @@
     } ],
     "codeName" : "IbzWeeklyId",
     "dEFType" : 1,
-    "dataType" : "ACID",
+    "dataType" : "BIGINT",
+    "defaultValue" : "0",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "周报标识",
@@ -595,7 +596,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
-    "enableDBAutoValue" : true,
     "keyDEField" : true,
     "pasteReset" : true
   }, {
@@ -1560,7 +1560,7 @@
   "name" : "IBZ_WEEKLY",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "IbzWeekly",
   "storageMode" : 1,

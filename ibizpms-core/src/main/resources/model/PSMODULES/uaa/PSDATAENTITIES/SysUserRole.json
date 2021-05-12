@@ -721,7 +721,9 @@
     "removeOrder" : 0
   } ],
   "name" : "SYS_USER_ROLE",
-  "saaSMode" : 0,
+  "saaSDCIdColumnName" : "SRFDCID",
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSMode" : 2,
   "serviceAPIClientId" : "ccdd4a88804cf809e0cea3c2d56652c3",
   "serviceAPIMode" : 0,
   "serviceCodeName" : "SysUserRole",

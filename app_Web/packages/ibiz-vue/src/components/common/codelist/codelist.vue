@@ -178,7 +178,7 @@ export default class CodeList extends Vue {
      * @memberof CodeList
      */
     public isIconImage(item: any){
-        return !!(item?.getPSSysImage?.imagePath);
+        return !!(item?.getPSSysImage?.imagePath || item.icon);
     }
 
     /**
@@ -254,8 +254,8 @@ export default class CodeList extends Vue {
      * @returns
      * @memberof CodeList
      */
-    public getIconImagePath(item:any){
-        let path = item.getPSSysImage.imagePath;
+    public getIconImagePath(item: any){
+        let path = item.getPSSysImage?.imagePath || item.icon;
         if(!path){
             return;
             }
@@ -295,7 +295,7 @@ export default class CodeList extends Vue {
     public async getImgURLOfBase64(result: any[]) {
         if (result.length>0) {
             for (let item of result) {
-                if (item.getPSSysImage?.imagePath) {
+                if (item.getPSSysImage?.imagePath || item.icon) {
                     item.imgUrlBase64 = await ImgurlBase64.getInstance().getImgURLOfBase64(this.getIconImagePath(item));
                 }
             }
@@ -314,6 +314,7 @@ export default class CodeList extends Vue {
     .codelist-item{
         max-height: 32px;
         padding: 0px 3px;
+        display: flex;
         > img{
             max-height: 32px;
             width: auto;

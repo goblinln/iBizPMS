@@ -59,7 +59,7 @@ export default class App extends Vue {
                 });
             }
             if (tempViewParam.srffullscreen) {
-                sessionStorage.setItem('srffullscreen', tempViewParam.srffullscreen);
+                this.$store.commit('addCustomParam', { tag: 'srffullscreen', param: tempViewParam.srffullscreen });
             }
             if (tempViewParam.srftoken) {
                 sessionStorage.setItem('srftoken', tempViewParam.srftoken);

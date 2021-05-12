@@ -851,6 +851,19 @@
       },
       "name" : "status"
     }, {
+      "dataType" : 25,
+      "getFrontPSCodeList" : {
+        "modelref" : true,
+        "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/TaskStatusCK.json"
+      },
+      "name" : "status1"
+    }, {
+      "dataType" : 25,
+      "name" : "tasktype"
+    }, {
+      "dataType" : 25,
+      "name" : "isfavorites"
+    }, {
       "dataType" : 9,
       "getFrontPSCodeList" : {
         "modelref" : true,

@@ -849,7 +849,7 @@
   "name" : "IBZPRO_SEQUENCE",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 0,
   "serviceCodeName" : "IBZProSequence",
   "storageMode" : 1,

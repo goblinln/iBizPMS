@@ -806,6 +806,9 @@
       "name" : "status"
     }, {
       "dataType" : 25,
+      "name" : "ischild"
+    }, {
+      "dataType" : 25,
       "name" : "isfavorites"
     }, {
       "dataType" : 25,

@@ -116,14 +116,19 @@ export class MobMDViewBase extends MDViewBase {
         }
         // 多数据
         let ionScroll: any = this.$refs.ionScroll;
+        console.log(ionScroll);
         if (ionScroll) {
             let ele = await ionScroll.getScrollElement();
             if (ele) {
                 let scrollTop = ele.scrollTop;
                 let clientHeight = ele.clientHeight;
                 let scrollHeight = ele.scrollHeight;
+                console.log('scrollTop：',scrollTop,"clientHeight:",clientHeight,"scrollHeight：",scrollHeight);
+                console.log(scrollHeight > clientHeight && scrollTop + clientHeight === scrollHeight);
                 if (scrollHeight > clientHeight && scrollTop + clientHeight === scrollHeight) {
                     let mdctrl: any = this.$refs.mdctrl;
+                    console.log('mdctrl',mdctrl);
+                    
                     if (mdctrl?.ctrl?.loadBottom && Util.isFunction(mdctrl.ctrl.loadBottom)) {
                         mdctrl.ctrl.loadStatus = true;
                         await mdctrl.ctrl.loadBottom();

@@ -74,7 +74,7 @@
   </ion-page>
 </template>
 <script lang="ts">
-import { Vue, Component, Prop, Provide, Emit, Watch, } from "vue-property-decorator";
+import { Vue, Component } from "vue-property-decorator";
 import { settingConfig } from "./config";
 import { Util, ViewTool, ThirdPartyService, removeSessionStorage } from 'ibiz-core';
 import i18n from '@/locale'
@@ -181,7 +181,6 @@ export default class AppSetting extends Vue {
      */
     public async logout() {
         const title: any = this.$t("app.tabpage.sureclosetip.title");
-        const contant: any = this.$t("app.tabpage.sureclosetip.content");
         const result = await this.$Notice.confirm(title, "确认退出当前账号？");
         if (result) {
             if (this.thirdPartyName) {
@@ -268,7 +267,7 @@ export default class AppSetting extends Vue {
      * @memberof AppSetting
      */
     public userCenter() {
-        const { context, param } = this.$store.getters.getAppData();
+        const { context } = this.$store.getters.getAppData();
         let user: any = {};
         if (context && context.srfuserid) {
             user[settingConfig.userEntityName] = context.srfuserid;

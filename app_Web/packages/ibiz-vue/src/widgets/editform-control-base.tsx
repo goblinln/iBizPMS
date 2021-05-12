@@ -1033,7 +1033,10 @@ export class EditFormControlBase extends FormControlBase {
      */
     public checkItem(name: string): Promise<any> {
         return new Promise((resolve, reject) => {
-            var validator = new schema({ [name]: this.rules[name] });
+            if (!this.rules[name]) {
+                resolve(true);
+            }
+            const validator = new schema({ [name]: this.rules[name] });
             validator.validate({ [name]: this.data[name] }).then(() => {
                 resolve(true);
             })

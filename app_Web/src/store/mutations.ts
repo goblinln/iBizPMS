@@ -304,3 +304,27 @@ export const addViewMessage = (state: any, args: { tag: string, id: any }) => {
         state.viewMessage[args.tag] = args.id;
     }
 }
+
+/**
+ * 添加自定义参数
+ * 
+ * @param state 
+ * @param args 
+ */
+export const addCustomParam = (state: any, args: { tag: string, param: any }) => {
+    if(args && args.tag && args.param) {
+        state.customParam[args.tag] = args.param;
+    }
+}
+
+/**
+ * 删除指定键值自定义参数
+ * 
+ * @param state 
+ * @param args 
+ */
+export const removeCustomParam = (state: any, tag: string ) => {
+    if(tag && state.customParam[tag]) {
+        delete state.customParam[tag];
+    }
+}

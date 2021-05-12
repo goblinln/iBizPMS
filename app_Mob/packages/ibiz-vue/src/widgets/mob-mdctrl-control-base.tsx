@@ -393,7 +393,7 @@ export class MobMDCtrlControlBase extends MDControlBase {
         Object.assign(data, parentdata);
         let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : {};
         Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
-        Object.assign(data, tempViewParams);
+        Object.assign(data, { viewparams: tempViewParams });
         this.ctrlBeginLoading();
         let response: any;
         try {

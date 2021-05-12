@@ -57,8 +57,8 @@ public class ProductStats extends EntityMP implements Serializable {
     /**
      * 产品编号
      */
-    @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.AUTO)
+    @DEField(defaultValue = "0", isKeyField = true)
+    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("产品编号")

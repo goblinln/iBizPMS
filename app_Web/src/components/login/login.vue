@@ -86,6 +86,7 @@ import { Environment } from '@/environments/environment';
 import { removeSessionStorage, Util } from 'ibiz-core';
 import { AppThirdService } from 'ibiz-vue';
 import { AuthGuard } from '@/utils';
+import { clearCookie, setCookie } from 'qx-util';
 
 @Component({
     components: {},
@@ -228,13 +229,13 @@ export default class Login extends Vue {
             if (response && response.status === 200) {
                 const data = response.data;
                 if (data && data.token) {
-                    Util.setCookie('ibzuaa-token', data.token, 7);
+                    setCookie('ibzuaa-token', data.token, 7, true);
                 }
                 if (data && data.user) {
-                    Util.setCookie('ibzuaa-user', JSON.stringify(data.user), 7);
+                    setCookie('ibzuaa-user', JSON.stringify(data.user), 7, true);
                 }
                 // 设置cookie,保存账号密码7天
-                Util.setCookie('loginname', loginname, 7);
+                setCookie('loginname', loginname, 7, true);
                 // 跳转首页
                 const url: any = this.$route.query.redirect ? this.$route.query.redirect : '*';
                 this.$router.push({ path: url });
@@ -259,10 +260,8 @@ export default class Login extends Vue {
      */
     private clearAppData() {
         // 清除user、token
-        let leftTime = new Date();
-        leftTime.setTime(leftTime.getSeconds() - 1);
-        document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
-        document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();
+        clearCookie('ibzuaa-token',true);
+        clearCookie('ibzuaa-user',true);
         // 清除应用级数据
         localStorage.removeItem('localdata')
         this.$store.commit('addAppData', {});
@@ -380,7 +379,7 @@ export default class Login extends Vue {
         let result: any = await this.appThirdService.embedDingTalkLogin(Environment);
         if (result?.state && Object.is(result?.state, 'SUCCESS')) {
             if (result.data.token && result.data.user) {
-                Util.setCookie('ibzuaa-token', result.data.token, 7);
+                setCookie('ibzuaa-token', result.data.token, 7,true);
                 if (this.$route.query.redirect) {
                     window.location.href = decodeURIComponent(this.$route.query.redirect as any);
                     location.reload();

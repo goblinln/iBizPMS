@@ -738,4 +738,15 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         return this.deptIdField;
     }
 
+    @Override
+    protected String getFieldDataSetSortExp(IPSDEField iPSDEField) throws Exception {
+        String fieldExp = super.getFieldDataSetSortExp(iPSDEField);
+        if(StringUtils.isBlank(fieldExp))
+            return iPSDEField.getName();
+        if (fieldExp.indexOf(".") > 0){
+            return fieldExp.substring(fieldExp.indexOf(".") + 1);
+        }
+        return fieldExp;
+    }
+    
 }

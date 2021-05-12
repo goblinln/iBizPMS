@@ -577,6 +577,7 @@ export default class AppRichTextEditor extends Vue {
     display: none !important;
 }
 .app-rich-text-editor-100 {
+    width: 100%;
     .tox-fullscreen {
         height: 100% !important;
         transform: translateX(100%);
@@ -586,6 +587,7 @@ export default class AppRichTextEditor extends Vue {
     }
 }
 .app-rich-text-editor-200 {
+    width: 100%;
     .tox-fullscreen {
         height: 100% !important;
         transform: translateX(200%);

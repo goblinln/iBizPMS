@@ -76,8 +76,8 @@ public class IbzAgent extends EntityMP implements Serializable {
     /**
      * 代理标识
      */
-    @DEField(name = "ibz_agentid", isKeyField = true)
-    @TableId(value = "`IBZ_AGENTID`", type = IdType.AUTO)
+    @DEField(defaultValue = "0", isKeyField = true)
+    @TableId(value = "`IBZ_AGENTID`", type = IdType.ASSIGN_ID)
     @JSONField(name = "ibzagentid")
     @JsonProperty("ibzagentid")
     @ApiModelProperty("代理标识")
