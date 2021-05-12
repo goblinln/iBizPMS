@@ -3285,15 +3285,15 @@
                 "align" : "LEFT",
                 "cLConvertMode" : "NONE",
                 "caption" : "编号",
-                "codeName" : "todosn",
+                "codeName" : "id",
                 "columnType" : "DEFGRIDCOLUMN",
-                "dataItemName" : "todosn",
+                "dataItemName" : "id",
                 "excelCaption" : "编号",
-                "name" : "todosn",
+                "name" : "id",
                 "noPrivDisplayMode" : 1,
                 "getPSAppDEField" : {
-                  "name" : "TODOSN",
-                  "codeName" : "Todosn"
+                  "name" : "ID",
+                  "codeName" : "Id"
                 },
                 "width" : 100,
                 "widthUnit" : "PX",
@@ -3390,18 +3390,18 @@
                   "codeName" : "Id"
                 }
               }, {
-                "dataType" : 9,
-                "name" : "pri",
-                "getPSAppDEField" : {
-                  "name" : "PRI",
-                  "codeName" : "Pri"
-                }
-              }, {
                 "dataType" : 1,
                 "name" : "todosn",
                 "getPSAppDEField" : {
                   "name" : "TODOSN",
                   "codeName" : "Todosn"
+                }
+              }, {
+                "dataType" : 9,
+                "name" : "pri",
+                "getPSAppDEField" : {
+                  "name" : "PRI",
+                  "codeName" : "Pri"
                 }
               }, {
                 "dataType" : 25,

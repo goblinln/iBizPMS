@@ -230,6 +230,14 @@
         "codeName" : "Buildsn"
       }
     }, {
+      "caption" : "id",
+      "format" : "%1$s",
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
       "caption" : "产品名称",
       "format" : "%1$s",
       "name" : "productname",
@@ -296,14 +304,6 @@
       "getPSAppDEField" : {
         "name" : "PROJECT",
         "codeName" : "Project"
-      }
-    }, {
-      "caption" : "id",
-      "format" : "%1$s",
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
       }
     } ]
   } ],

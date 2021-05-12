@@ -303,11 +303,11 @@
                 "hidden" : true,
                 "dataType" : 25
               }, {
-                "id" : "casesn",
+                "id" : "id",
                 "dataType" : 1,
                 "getPSAppDEField" : {
-                  "name" : "CASESN",
-                  "codeName" : "Casesn"
+                  "name" : "ID",
+                  "codeName" : "Id"
                 }
               }, {
                 "id" : "title",
@@ -338,14 +338,6 @@
                   "name" : "PRECONDITION",
                   "codeName" : "Precondition"
                 }
-              }, {
-                "id" : "id",
-                "hidden" : true,
-                "dataType" : 1,
-                "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
-                }
               } ],
               "getPSDEFormPages" : [ {
                 "caption" : "基本信息",
@@ -361,27 +353,27 @@
                   "detailType" : "GROUPPANEL",
                   "name" : "group1",
                   "getPSDEFormDetails" : [ {
-                    "codeName" : "casesn",
+                    "codeName" : "id",
                     "dataType" : 1,
                     "detailStyle" : "DEFAULT",
                     "detailType" : "FORMITEM",
-                    "enableCond" : 3,
+                    "enableCond" : 0,
                     "ignoreInput" : 0,
                     "itemHeight" : 32.0,
                     "itemWidth" : 41.0,
                     "labelPos" : "LEFT",
                     "labelWidth" : 1,
-                    "name" : "casesn",
+                    "name" : "id",
                     "noPrivDisplayMode" : 1,
                     "getPSAppDEField" : {
-                      "name" : "CASESN",
-                      "codeName" : "Casesn"
+                      "name" : "ID",
+                      "codeName" : "Id"
                     },
                     "getPSEditor" : {
                       "editorHeight" : 32.0,
                       "editorType" : "SPAN",
                       "editorWidth" : 40.0,
-                      "name" : "casesn",
+                      "name" : "id",
                       "editable" : false,
                       "enableLinkView" : false
                     },

@@ -285,6 +285,14 @@
         "codeName" : "Releasesn"
       }
     }, {
+      "caption" : "ID",
+      "format" : "%1$s",
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
       "caption" : "发布名称",
       "format" : "%1$s",
       "name" : "name",
@@ -327,14 +335,6 @@
       "getPSAppDEField" : {
         "name" : "PRODUCT",
         "codeName" : "Product"
-      }
-    }, {
-      "caption" : "ID",
-      "format" : "%1$s",
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
       }
     } ]
   } ],

@@ -13,8 +13,8 @@
   "logicName" : "主表格",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
-    "name" : "PROJECTSN",
-    "codeName" : "Projectsn"
+    "name" : "ID",
+    "codeName" : "Id"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -23,16 +23,16 @@
   "getPSDEGridColumns" : [ {
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
-    "caption" : "编号",
-    "codeName" : "projectsn",
+    "caption" : "项目编号",
+    "codeName" : "id",
     "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "projectsn",
-    "excelCaption" : "编号",
-    "name" : "projectsn",
+    "dataItemName" : "id",
+    "excelCaption" : "项目编号",
+    "name" : "id",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
-      "name" : "PROJECTSN",
-      "codeName" : "Projectsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "width" : 100,
     "widthUnit" : "PX",

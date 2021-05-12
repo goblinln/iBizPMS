@@ -368,8 +368,8 @@
     "logicName" : "主表格",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
-      "name" : "RELEASESN",
-      "codeName" : "Releasesn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -607,16 +607,16 @@
     "getPSDEGridColumns" : [ {
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
-      "caption" : "编号",
-      "codeName" : "releasesn",
+      "caption" : "ID",
+      "codeName" : "id",
       "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "releasesn",
-      "excelCaption" : "编号",
-      "name" : "releasesn",
+      "dataItemName" : "id",
+      "excelCaption" : "ID",
+      "name" : "id",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
-        "name" : "RELEASESN",
-        "codeName" : "Releasesn"
+        "name" : "ID",
+        "codeName" : "Id"
       },
       "width" : 100,
       "widthUnit" : "PX",
@@ -1077,17 +1077,17 @@
       "dataAccessAction" : true
     }, {
       "dataType" : 1,
-      "name" : "product",
-      "getPSAppDEField" : {
-        "name" : "PRODUCT",
-        "codeName" : "Product"
-      }
-    }, {
-      "dataType" : 1,
       "name" : "id",
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "product",
+      "getPSAppDEField" : {
+        "name" : "PRODUCT",
+        "codeName" : "Product"
       }
     }, {
       "dataType" : 1,
