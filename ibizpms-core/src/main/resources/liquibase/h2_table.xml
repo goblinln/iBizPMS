@@ -435,7 +435,7 @@
 
 
     <!--输出实体[ZT_CASESTEP]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_casestep-24-11">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_casestep-25-11">
         <createTable tableName="zt_casestep">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -540,7 +540,7 @@
 
 
     <!--输出实体[ZT_CONFIG]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_config-4-15">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_config-6-15">
         <createTable tableName="zt_config">
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_CONFIG_ID"/>
@@ -594,7 +594,7 @@
 
 
     <!--输出实体[ZT_DEPT]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_dept-9-17">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_dept-10-17">
         <createTable tableName="zt_dept">
                 <column name="MANAGER" remarks="" type="VARCHAR(30)">
                 </column>
@@ -680,7 +680,7 @@
 
 
     <!--输出实体[ZT_DOCCONTENT]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_doccontent-6-19">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_doccontent-7-19">
         <createTable tableName="zt_doccontent">
                 <column name="FILES" remarks="" type="TEXT(65535)">
                 </column>
@@ -718,7 +718,7 @@
 
 
     <!--输出实体[ZT_DOCLIB]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_doclib-12-20">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_doclib-13-20">
         <createTable tableName="zt_doclib">
                 <column name="TYPE" remarks="" type="VARCHAR(30)">
                 </column>
@@ -1060,7 +1060,7 @@
 
 
     <!--输出实体[ZT_HISTORY]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_history-8-31">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_history-9-31">
         <createTable tableName="zt_history">
                 <column name="ORGNAME" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2313,7 +2313,7 @@
 
 
     <!--输出实体[ZT_NOTIFY]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_notify-4-81">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_notify-5-81">
         <createTable tableName="zt_notify">
                 <column name="CREATEDDATE" remarks="" type="DATETIME">
                 </column>
@@ -2457,7 +2457,7 @@
 
 
     <!--输出实体[ZT_PRODUCTPLAN]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_productplan-55-86">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_productplan-56-86">
         <createTable tableName="zt_productplan">
                 <column name="TITLE" remarks="" type="VARCHAR(90)">
                 </column>
@@ -2987,7 +2987,7 @@
 
 
     <!--输出实体[ZT_TESTREPORT]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_testreport-18-117">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_testreport-19-117">
         <createTable tableName="zt_testreport">
                 <column name="DEPTNAME" remarks="" type="VARCHAR(100)">
                 </column>
@@ -3045,7 +3045,7 @@
 
 
     <!--输出实体[ZT_TESTRESULT]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_testresult-9-118">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_testresult-10-118">
         <createTable tableName="zt_testresult">
                 <column name="CREATEBY" remarks="" type="VARCHAR(100)">
                 </column>
@@ -3134,7 +3134,7 @@
 
 
     <!--输出实体[ZT_TESTTASK]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_testtask-25-121">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_testtask-26-121">
         <createTable tableName="zt_testtask">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -3255,7 +3255,7 @@
 
 
     <!--输出实体[ZT_USERCONTACT]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_usercontact-13-124">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_usercontact-14-124">
         <createTable tableName="zt_usercontact">
                 <column name="ORGNAME" remarks="" type="VARCHAR(100)">
                 </column>
@@ -3297,7 +3297,7 @@
 
 
     <!--输出实体[ZT_USERQUERY]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_userquery-5-126">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_userquery-6-126">
         <createTable tableName="zt_userquery">
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_USERQUERY_ID"/>
@@ -3321,7 +3321,7 @@
 
 
     <!--输出实体[ZT_USERTPL]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_usertpl-9-127">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_usertpl-10-127">
         <createTable tableName="zt_usertpl">
                 <column name="TITLE" remarks="" type="VARCHAR(150)">
                 </column>

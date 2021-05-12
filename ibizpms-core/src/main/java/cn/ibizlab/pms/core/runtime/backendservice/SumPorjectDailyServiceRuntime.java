@@ -70,6 +70,7 @@ public class SumPorjectDailyServiceRuntime extends net.ibizsys.runtime.backend.S
         this.getPSSysBackService().getCodeName();
         authuserdetail.setUserid("SYSTEM");
         authuserdetail.setUsername("SYSTEM");
+        authuserdetail.setPersonid("SYSTEM");
         authuserdetail.setPersonname("SYSTEM");
         authuserdetail.setSuperuser(1);
         authuserdetail.setSrfdcid(strDCId);

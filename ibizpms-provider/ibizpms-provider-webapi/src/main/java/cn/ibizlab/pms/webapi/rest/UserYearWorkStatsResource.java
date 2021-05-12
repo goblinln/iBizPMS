@@ -199,7 +199,7 @@ public class UserYearWorkStatsResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'UPDATE')")
+    @PreAuthorize("@UserYearWorkStatsRuntime.test(#useryearworkstats_id,'READ')")
     @ApiOperation(value = "更新标题", tags = {"用户年度工作内容统计" },  notes = "更新标题")
 	@RequestMapping(method = RequestMethod.PUT, value = "/useryearworkstats/{useryearworkstats_id}/updatetitlebyyear")
     public ResponseEntity<UserYearWorkStatsDTO> updateTitleByYear(@PathVariable("useryearworkstats_id") Long useryearworkstats_id, @RequestBody UserYearWorkStatsDTO useryearworkstatsdto) {
@@ -209,7 +209,7 @@ public class UserYearWorkStatsResource {
         useryearworkstatsdto = useryearworkstatsMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(useryearworkstatsdto);
     }
-    @PreAuthorize("@UserYearWorkStatsRuntime.test('UPDATE')")
+    @PreAuthorize("@UserYearWorkStatsRuntime.test('READ')")
     @ApiOperation(value = "批量处理[更新标题]", tags = {"用户年度工作内容统计" },  notes = "批量处理[更新标题]")
 	@RequestMapping(method = RequestMethod.PUT, value = "/useryearworkstats/updatetitlebyyearbatch")
     public ResponseEntity<Boolean> updateTitleByYearBatch(@RequestBody List<UserYearWorkStatsDTO> useryearworkstatsdtos) {

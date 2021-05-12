@@ -963,6 +963,17 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
     },
+    "getPSNavigateParams" : [ {
+      "key" : "id",
+      "name" : "id",
+      "value" : "0",
+      "rawValue" : true
+    }, {
+      "key" : "testreport",
+      "name" : "testreport",
+      "value" : "0",
+      "rawValue" : true
+    } ],
     "timeout" : 60000,
     "uIActionMode" : "FRONT",
     "uIActionTag" : "CreateProject",

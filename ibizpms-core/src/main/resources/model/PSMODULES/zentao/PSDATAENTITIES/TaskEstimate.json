@@ -1860,11 +1860,6 @@
     "length" : 20,
     "logicName" : "任务预计编号",
     "name" : "TASKESTIMATESN",
-    "getPSSysSequence" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTaskEstimateSeq.json"
-    },
-    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
   } ],

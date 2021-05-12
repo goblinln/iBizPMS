@@ -701,11 +701,6 @@
     "length" : 20,
     "logicName" : "用户模板编号",
     "name" : "USERTPLSN",
-    "getPSSysSequence" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProUserTplSeq.json"
-    },
-    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
   } ],

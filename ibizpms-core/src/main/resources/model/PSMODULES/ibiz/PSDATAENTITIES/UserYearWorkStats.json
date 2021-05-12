@@ -3392,6 +3392,21 @@
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
+  "getAllPSDEUserRoles" : [ {
+    "customCond" : "[ (1, '=', 1) ]",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEUSERROLES/UserYearWorkStats_Read.json",
+    "name" : "当前用户查看",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "UserYearWorkStats_Read_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "UserYearWorkStats_Read",
+    "userDRAction" : "READ"
+  } ],
   "codeName" : "UserYearWorkStats",
   "dEType" : 1,
   "dSLink" : "DEFAULT",

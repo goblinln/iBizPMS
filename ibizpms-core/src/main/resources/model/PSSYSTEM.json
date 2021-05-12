@@ -1614,6 +1614,9 @@
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTaskSeq.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProCRONSeq.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProReleaseSeq.json"
   }, {
     "modelref" : true,

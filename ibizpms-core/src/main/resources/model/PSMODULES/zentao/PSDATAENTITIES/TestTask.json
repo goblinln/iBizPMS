@@ -1711,11 +1711,6 @@
     "length" : 20,
     "logicName" : "测试版本编号",
     "name" : "TESTTASKSN",
-    "getPSSysSequence" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTestTaskSeq.json"
-    },
-    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
   } ],

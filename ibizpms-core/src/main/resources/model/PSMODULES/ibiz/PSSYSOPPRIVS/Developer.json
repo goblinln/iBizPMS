@@ -63,6 +63,16 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule.json"
     }
   }, {
+    "name" : "研发人员-IBZ_USERYEARWORKSTATS[当前用户查看]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDEUSERROLES/UserYearWorkStats_Read.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats.json"
+    }
+  }, {
     "name" : "研发人员-ZT_TASKESTIMATE[任务预计查看]",
     "getPSDEUserRole" : {
       "modelref" : true,

@@ -603,11 +603,6 @@
     "length" : 20,
     "logicName" : "用户联系方式编号",
     "name" : "USERCONTACTSN",
-    "getPSSysSequence" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProUserContactSeq.json"
-    },
-    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
   } ],

@@ -684,11 +684,6 @@
     "length" : 20,
     "logicName" : "通知编号",
     "name" : "NOTIFYSN",
-    "getPSSysSequence" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProNotifySeq.json"
-    },
-    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
   } ],

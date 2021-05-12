@@ -70,6 +70,7 @@ public class SysDataSyncAgentDeamonServiceRuntime extends net.ibizsys.runtime.ba
         this.getPSSysBackService().getCodeName();
         authuserdetail.setUserid("SYSTEM");
         authuserdetail.setUsername("SYSTEM");
+        authuserdetail.setPersonid("SYSTEM");
         authuserdetail.setPersonname("SYSTEM");
         authuserdetail.setSuperuser(1);
         authuserdetail.setSrfdcid(strDCId);

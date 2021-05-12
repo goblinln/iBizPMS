@@ -807,11 +807,6 @@
     "length" : 20,
     "logicName" : "文档内容编号",
     "name" : "DOCCONTENTSN",
-    "getPSSysSequence" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProDocContentSeq.json"
-    },
-    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
   } ],
