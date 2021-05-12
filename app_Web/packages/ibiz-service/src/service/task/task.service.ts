@@ -206,7 +206,7 @@ export class TaskService extends TaskBaseService {
                 delete data.srffrontuf;
             }
             // 不是团队任务
-            if(!data.multiple || data.multiple !== '1'){
+            if(!data.multiple || data.multiple == '0'){
                 data.ibztaskteams = null;
             }
             let res:any = await this.http.post(`/projects/${context.project}/tasks`,data,isloading);
