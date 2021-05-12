@@ -220,7 +220,8 @@ export class AppMobPortletBase extends MobPortletControlBase {
                 staticProps: {
                     portletState: this.viewState,
                     viewDefaultUsage: 'includedView',
-                    viewModelData: portletAppView
+                    viewModelData: portletAppView,
+                    isChildView:true
                 },
                 dynamicProps: {
                     _context: JSON.stringify(this.context),
