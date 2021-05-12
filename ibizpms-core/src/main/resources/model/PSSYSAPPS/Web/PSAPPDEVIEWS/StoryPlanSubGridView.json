@@ -826,10 +826,15 @@
             "getPSNavigateContexts" : [ {
               "key" : "STORY",
               "name" : "STORY",
-              "value" : "0",
-              "rawValue" : true
+              "value" : "id",
+              "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
+              "key" : "story",
+              "name" : "story",
+              "value" : "id",
+              "rawValue" : false
+            }, {
               "key" : "productplan",
               "name" : "productplan",
               "value" : "productplan",

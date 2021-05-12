@@ -43,7 +43,12 @@ export class ImgurlBase64{
                     let type = 'image/png';
                     if (filename && filename.indexOf('.') > 0) {
                         const start = filename.lastIndexOf('.');
-                        type = 'image/'+filename.substring(start + 1);
+                        const expandedName = filename.substring(start + 1);
+                        if (expandedName.match(/(bmp|jpg|jpeg|png|tif|gif|pcx|tga|exif|fpx|svg|psd|cdr|pcd|dxf|ufo|eps|ai|raw|WMF|webp)/gi) != null) {
+                            type = 'image/' + expandedName;
+                        } else {
+                            type = 'image/png';
+                        }
                     }
                     let blob = new Blob([response.data],{type: type});
                     this.blobToBase64(blob).then((res) => {
