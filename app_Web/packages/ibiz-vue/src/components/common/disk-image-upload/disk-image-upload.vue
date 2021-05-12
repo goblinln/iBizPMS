@@ -67,7 +67,8 @@ import {Component, Vue, Prop} from 'vue-property-decorator';
 import {Message, MessageBox} from 'element-ui';
 import Axios from 'axios';
 import {Unsubscribable} from 'rxjs';
-import { AppServiceBase, getSessionStorage, Util } from 'ibiz-core';
+import { AppServiceBase, getSessionStorage } from 'ibiz-core';
+import { getCookie } from 'qx-util';
 
 @Component({})
 export default class DiskImageUplaod extends Vue {
@@ -364,8 +365,8 @@ export default class DiskImageUplaod extends Vue {
                 this.headers['srfdynaorgid'] = getSessionStorage("srfdynaorgid");
             }
         }
-        if (Util.getCookie('ibzuaa-token')) {
-            this.headers['Authorization'] = `Bearer ${Util.getCookie('ibzuaa-token')}`;
+         if (getCookie('ibzuaa-token')) {
+            this.headers['Authorization'] = `Bearer ${getCookie('ibzuaa-token')}`;
         } else {
             // 第三方应用打开免登
             if (sessionStorage.getItem("srftoken")) {

@@ -22,6 +22,8 @@
 </template>
 
 <script lang = 'ts'>
+import { removeSessionStorage } from 'ibiz-core';
+import { clearCookie } from 'qx-util';
 import { Vue, Component, Prop, Model, Watch } from 'vue-property-decorator';
 
 @Component({})
@@ -91,12 +93,7 @@ export default class AppLockIndex extends Vue{
             const get: Promise<any> = this.$http.get('/v7/logout');
             get.then((response:any) =>{
                 if (response && response.status === 200) {
-                    localStorage.removeItem('user');
-                    localStorage.removeItem('token');
-                    let leftTime = new Date();
-                    leftTime.setTime(leftTime.getSeconds() - 1);
-                    document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
-                    document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();
+                    this.clearAppData();
                     this.$router.push({ name: 'login' });
                 }
             }).catch((error: any) =>{
@@ -105,6 +102,29 @@ export default class AppLockIndex extends Vue{
         });  
     }
 
+    /**
+     * 清除应用数据
+     *
+     * @private
+     * @memberof AppLockIndex
+     */
+    private clearAppData() {
+        // 清除user、token
+        let leftTime = new Date();
+        leftTime.setTime(leftTime.getSeconds() - 1);
+        clearCookie('ibzuaa-token',true);
+        clearCookie('ibzuaa-user',true);
+        // 清除应用级数据
+        localStorage.removeItem('localdata')
+        this.$store.commit('addAppData', {});
+        this.$store.dispatch('authresource/commitAuthData', {});
+        // 清除租户相关信息
+        removeSessionStorage("activeOrgData");
+        removeSessionStorage("srfdynaorgid");
+        removeSessionStorage("dcsystem");
+        removeSessionStorage("orgsData");
+    }
+    
     /**
      * 清除锁屏时生成的session
      */

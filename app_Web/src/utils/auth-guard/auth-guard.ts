@@ -5,7 +5,7 @@ import { AppCenterService, ErrorUtil } from 'ibiz-vue';
 import { Environment } from '@/environments/environment';
 import { DynamicInstanceConfig } from '@ibiz/dynamic-model-api';
 import i18n from '@/locale';
-import { SyncSeriesHook } from 'qx-util';
+import { clearCookie, getCookie, SyncSeriesHook } from 'qx-util';
 
 /**
  * AuthGuard net 对象
@@ -160,8 +160,8 @@ export class AuthGuard {
                         AuthGuard.hooks.appAfter.callSync({ data: data });
                         if (data) {
                             // token认证把用户信息放入应用级数据
-                            if (Util.getCookie('ibzuaa-user')) {
-                                let user: any = JSON.parse(Util.getCookie('ibzuaa-user') as string);
+                            if (getCookie('ibzuaa-user')) {
+                                let user: any = JSON.parse(getCookie('ibzuaa-user') as string);
                                 let localAppData: any = {};
                                 if (user.sessionParams) {
                                     localAppData = { context: user.sessionParams };
@@ -269,10 +269,8 @@ export class AuthGuard {
      */
      private clearAppData(store:any) {
         // 清除user、token
-        let leftTime = new Date();
-        leftTime.setTime(leftTime.getSeconds() - 1);
-        document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
-        document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();
+        clearCookie('ibzuaa-token',true);
+        clearCookie('ibzuaa-user',true);
         // 清除应用级数据
         localStorage.removeItem('localdata')
         store.commit('addAppData', {});
