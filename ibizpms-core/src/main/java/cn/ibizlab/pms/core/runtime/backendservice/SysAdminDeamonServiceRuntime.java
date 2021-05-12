@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Order(100)
 @Component("SysAdminDeamonServiceRuntime")
-public class SysAdminDeamonServiceRuntime extends net.ibizsys.runtime.backend.SysUserBackendTaskRuntimeBase {
+public class SysAdminDeamonServiceRuntime extends net.ibizsys.runtime.backend.SysAdminBackendTaskRuntimeBase {
 
     @Autowired
     ISystemRuntime systemRuntime;
