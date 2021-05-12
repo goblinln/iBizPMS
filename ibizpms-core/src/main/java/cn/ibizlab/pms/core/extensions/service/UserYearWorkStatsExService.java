@@ -1,8 +1,11 @@
 package cn.ibizlab.pms.core.extensions.service;
 
 import cn.ibizlab.pms.core.ibiz.service.impl.UserYearWorkStatsServiceImpl;
+import cn.ibizlab.pms.core.ou.service.ISysEmployeeService;
+import cn.ibizlab.pms.util.security.AuthenticationUser;
 import lombok.extern.slf4j.Slf4j;
 import cn.ibizlab.pms.core.ibiz.domain.UserYearWorkStats;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Primary;
@@ -16,9 +19,28 @@ import java.util.*;
 @Service("UserYearWorkStatsExService")
 public class UserYearWorkStatsExService extends UserYearWorkStatsServiceImpl {
 
+    @Autowired
+    ISysEmployeeService iSysEmployeeService;
+
     @Override
     protected Class currentModelClass() {
         return com.baomidou.mybatisplus.core.toolkit.ReflectionKit.getSuperClassGenericType(this.getClass().getSuperclass(), 1);
+    }
+
+    @Override
+    public UserYearWorkStats sysGet(Long key) {
+        UserYearWorkStats userYearWorkStats = new UserYearWorkStats();
+        userYearWorkStats.setId(key);
+        userYearWorkStats.setAccount(AuthenticationUser.getAuthenticationUser().getLoginname());
+        return userYearWorkStats;
+    }
+
+    @Override
+    public UserYearWorkStats get(Long key) {
+        UserYearWorkStats userYearWorkStats = new UserYearWorkStats();
+        userYearWorkStats.setId(key);
+        userYearWorkStats.setAccount(AuthenticationUser.getAuthenticationUser().getLoginname());
+        return userYearWorkStats;
     }
 
     /**
