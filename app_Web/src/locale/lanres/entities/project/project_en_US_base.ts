@@ -321,7 +321,6 @@ function getLocaleResourceBase(){
 		},
 		dashboardinfo_form: {
 			details: {
-				'grouppanel9': commonLogic.appcommonhandle("分组面板",null), 
 				'group1': commonLogic.appcommonhandle("project基本信息",null), 
 				'druipart1': commonLogic.appcommonhandle("",null), 
 				'grouppanel6': commonLogic.appcommonhandle("关联产品",null), 

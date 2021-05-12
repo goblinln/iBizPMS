@@ -251,93 +251,74 @@
         "inputTipClosable" : false,
         "showCaption" : false
       }, {
-        "actionGroupExtractMode" : "ITEM",
-        "caption" : "分组面板",
-        "codeName" : "grouppanel9",
+        "caption" : "项目代号",
+        "codeName" : "code",
+        "dataType" : 25,
         "detailStyle" : "DEFAULT",
-        "detailType" : "GROUPPANEL",
-        "name" : "grouppanel9",
-        "getPSDEFormDetails" : [ {
-          "caption" : "项目代号",
-          "codeName" : "code",
-          "dataType" : 25,
-          "detailStyle" : "DEFAULT",
-          "detailType" : "FORMITEM",
-          "enableCond" : 3,
-          "ignoreInput" : 0,
-          "labelPos" : "NONE",
-          "labelWidth" : 0,
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "NONE",
+        "labelWidth" : 0,
+        "name" : "code",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "CODE",
+          "codeName" : "Code"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
           "name" : "code",
-          "noPrivDisplayMode" : 1,
-          "getPSAppDEField" : {
-            "name" : "CODE",
-            "codeName" : "Code"
-          },
-          "getPSEditor" : {
-            "editorType" : "SPAN",
-            "name" : "code",
-            "editable" : false,
-            "enableLinkView" : false
-          },
-          "getPSLayoutPos" : {
-            "colLG" : 9,
-            "colMD" : 9,
-            "layout" : "TABLE_24COL"
-          },
-          "getPSSysCss" : {
-            "cssName" : "project-code"
-          },
-          "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : false
-        }, {
-          "codeName" : "name",
-          "dataType" : 25,
-          "detailStyle" : "DEFAULT",
-          "detailType" : "FORMITEM",
-          "enableCond" : 3,
-          "ignoreInput" : 0,
-          "labelPos" : "LEFT",
-          "labelWidth" : 10,
-          "name" : "name",
-          "noPrivDisplayMode" : 1,
-          "getPSAppDEField" : {
-            "name" : "NAME",
-            "codeName" : "Name"
-          },
-          "getPSEditor" : {
-            "editorType" : "SPAN",
-            "name" : "name",
-            "editable" : false,
-            "enableLinkView" : false
-          },
-          "getPSLayoutPos" : {
-            "colLG" : 15,
-            "colMD" : 15,
-            "layout" : "TABLE_24COL"
-          },
-          "getPSSysCss" : {
-            "cssName" : "project-name"
-          },
-          "allowEmpty" : true,
-          "emptyCaption" : true,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : true
-        } ],
-        "getPSLayout" : {
-          "columnCount" : 24,
-          "layout" : "TABLE_24COL"
+          "editable" : false,
+          "enableLinkView" : false
         },
         "getPSLayoutPos" : {
-          "colLG" : 22,
+          "colLG" : 7,
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
-        "infoGroupMode" : true,
+        "getPSSysCss" : {
+          "cssName" : "project-code"
+        },
+        "allowEmpty" : true,
+        "emptyCaption" : false,
+        "hidden" : false,
+        "inputTipClosable" : false,
         "showCaption" : false
+      }, {
+        "codeName" : "name",
+        "dataType" : 25,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 10,
+        "name" : "name",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "NAME",
+          "codeName" : "Name"
+        },
+        "getPSEditor" : {
+          "editorType" : "SPAN",
+          "name" : "name",
+          "editable" : false,
+          "enableLinkView" : false
+        },
+        "getPSLayoutPos" : {
+          "colLG" : 15,
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "getPSSysCss" : {
+          "cssName" : "project-name"
+        },
+        "allowEmpty" : true,
+        "emptyCaption" : true,
+        "hidden" : false,
+        "inputTipClosable" : false,
+        "showCaption" : true
       }, {
         "codeName" : "desc",
         "dataType" : 21,
