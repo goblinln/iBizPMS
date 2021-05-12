@@ -996,7 +996,7 @@
             "codeName" : "Estimate"
           },
           "getPSEditor" : {
-            "editorType" : "MOBTEXT",
+            "editorType" : "MOBNUMBER",
             "name" : "estimate",
             "placeHolder" : "工时"
           },
