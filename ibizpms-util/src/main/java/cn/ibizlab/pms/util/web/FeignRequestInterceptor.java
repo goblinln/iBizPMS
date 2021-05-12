@@ -35,6 +35,7 @@ public class FeignRequestInterceptor implements RequestInterceptor {
         requestTemplate.header("srfdeploysystemid", strDeploySystemId);
         AuthenticationUser curUser = AuthenticationUser.getAuthenticationUser();
         if(curUser != null){
+            requestTemplate.header("personid", curUser.getPersonid());
             requestTemplate.header("srfsystemid", curUser.getSrfsystemid());
             requestTemplate.header("srfdcid", curUser.getSrfdcid());
             requestTemplate.header("srfdcsystemid", curUser.getSrfdcsystemid());

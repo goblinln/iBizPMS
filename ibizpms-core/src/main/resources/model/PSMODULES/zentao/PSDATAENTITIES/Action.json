@@ -961,6 +961,11 @@
     "importOrder" : 1000,
     "logicName" : "id",
     "name" : "ID",
+    "getPSSysSequence" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProActionSeq.json"
+    },
+    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
@@ -1646,7 +1651,6 @@
     "length" : 20,
     "logicName" : "系统日志编号",
     "name" : "ACTIONSN",
-    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
   } ],
