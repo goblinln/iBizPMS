@@ -815,6 +815,9 @@ export default class TextFileUpload extends Vue {
                         this.$throw(_this.$t('components.diskImageUpload.loadFailure') + "!");
                         return;
                     }
+                    item.fileid = response.data.fileid;
+                    item.id = response.data.id;
+                    item.authcode = response.data.authcode;
                 }).catch((error: any) => {
                     this.$throw(error);
                 });

@@ -107,33 +107,22 @@ export class AppGridModel {
         //关联主实体的主键
         const minorAppDERSs: Array<IPSAppDERS> = appDataEntity?.getMinorPSAppDERSs() || [];
         if (appDataEntity && appDataEntity.major == false && minorAppDERSs.length > 0) {
-          minorAppDERSs.forEach((minorAppDERSs: any) => {
-            if (minorAppDERSs.getMajorPSAppDataEntity) {
-              const majorAppDataEntity = minorAppDERSs.getMajorPSAppDataEntity;
+          minorAppDERSs.forEach((minorAppDERSs: IPSAppDERS) => {
+            const majorAppDataEntity = minorAppDERSs.getMajorPSAppDataEntity();
+            if (majorAppDataEntity) {
               let obj: any = {
                   name: majorAppDataEntity.codeName?.toLowerCase(),
                   dataType: 'FRONTKEY',
               };
-              if (majorAppDataEntity.getPSDER1N) {
-                  obj.prop = majorAppDataEntity.getPSDER1N.getPSPickupDEField.codeName.toLowerCase();
+              if (majorAppDataEntity.getPSDER1N()) {
+                  obj.prop = (majorAppDataEntity.getPSDER1N() as any)?.getPSPickupDEField?.()?.codeName.toLowerCase();
+              } else {
+                obj.prop = (ModelTool.getAppEntityKeyField(majorAppDataEntity) as IPSAppDEField)?.codeName || '';
               }
               modelArray.push(obj);
             }
           });
         }
-
-        // 搜索表单属性
-        // if(this.gridInstance.getView() && this.gridInstance.getView().getControl('searchform')) {
-        //   const searchForm: IBizSearchFormModel = this.gridInstance.getView()?.getControl('searchform');
-        //   searchForm.formItems?.forEach((formItem:IBizFormItemModel)=>{
-        //       let temp: any = { name: formItem.name, prop: formItem.name };
-        //       if(formItem.appDeField){
-        //           temp.dataType = 'QUERYPARAM';
-        //       }
-        //       modelArray.push(temp);
-        //   });
-        // }
-
         // 界面主键标识
         const keyField: string = (ModelTool.getAppEntityKeyField(this.gridInstance?.getPSAppDataEntity() as IPSAppDataEntity) as IPSAppDEField)?.codeName || '';
         modelArray.push({

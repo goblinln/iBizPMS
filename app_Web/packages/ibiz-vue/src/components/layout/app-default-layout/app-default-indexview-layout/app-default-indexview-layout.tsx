@@ -90,8 +90,13 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
      * @memberof AppDefaultIndexViewLayout
      */
     public collapseMenus() {
-        if (sessionStorage.getItem("srffullscreen")) {
+        if (this.$store.getters['getCustomParamByTag']('srffullscreen')) {
             this.isFullScreen = !this.isFullScreen;
+            if (this.isFullScreen) {
+                this.collapseChange = true;
+            } else {
+                this.collapseChange = false;
+            }
         } else {
             this.collapseChange = !this.collapseChange;
         }
@@ -125,7 +130,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
     public created() {
         document.getElementsByTagName('html')[0].className = this.selectTheme();
         this.navModel = Object.is(this.viewInstance.viewStyle, 'DEFAULT') ? 'tab' : 'route';
-        this.isFullScreen = Boolean(sessionStorage.getItem("srffullscreen"));
+        this.isFullScreen = Boolean(this.$store.getters['getCustomParamByTag']('srffullscreen'));
     }
 
     /**
@@ -163,7 +168,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                     </div>
                 </header>
                 <layout>
-                    <sider class="index_sider" style={{ 'display': this.isFullScreen ? 'none' : 'block' }} width={this.collapseChange ? 64 : 200} hide-trigger value={this.collapseChange}>
+                    <sider class="index_sider" width={this.isFullScreen ? 0 : this.collapseChange ? 64 : 200} hide-trigger value={this.collapseChange}>
                         {this.$slots.default}
                     </sider>
                     <content class={contentClass} >
