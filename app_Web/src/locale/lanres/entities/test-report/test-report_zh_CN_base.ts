@@ -324,7 +324,7 @@ function getLocaleResourceBase(){
 		},
 		projectmain_grid: {
 			columns: {
-				'testreportsn': commonLogic.appcommonhandle("测试报告编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'title': commonLogic.appcommonhandle("标题",null),
 				'createdby': commonLogic.appcommonhandle("创建",null),
 				'createddate': commonLogic.appcommonhandle("创建时间",null),
@@ -341,7 +341,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'testreportsn': commonLogic.appcommonhandle("测试报告编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'title': commonLogic.appcommonhandle("标题",null),
 				'createdby': commonLogic.appcommonhandle("创建",null),
 				'createddate': commonLogic.appcommonhandle("创建时间",null),
@@ -352,12 +352,12 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
 				'testreportsn': commonLogic.appcommonhandle("测试报告编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'title': commonLogic.appcommonhandle("标题",null),
 				'createdby': commonLogic.appcommonhandle("创建",null),
 				'createddate': commonLogic.appcommonhandle("创建时间",null),
 				'projectname': commonLogic.appcommonhandle("所属项目",null),
 				'tasks': commonLogic.appcommonhandle("测试版本",null),
-				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 				edit: commonLogic.appcommonhandle("编辑",null),

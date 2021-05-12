@@ -274,12 +274,11 @@ function getLocaleResourceBase(){
 				'srfuf': commonLogic.appcommonhandle("",null), 
 				'srfdeid': commonLogic.appcommonhandle("",null), 
 				'srfsourcekey': commonLogic.appcommonhandle("",null), 
-				'casesn': commonLogic.appcommonhandle("",null), 
+				'id': commonLogic.appcommonhandle("",null), 
 				'title': commonLogic.appcommonhandle("",null), 
 				'version': commonLogic.appcommonhandle("",null), 
 				'color': commonLogic.appcommonhandle("标题颜色",null), 
 				'precondition': commonLogic.appcommonhandle("前置条件",null), 
-				'id': commonLogic.appcommonhandle("用例编号",null), 
 			},
 			uiactions: {
 			},
@@ -576,7 +575,7 @@ function getLocaleResourceBase(){
 		},
 		testmaingrid_grid: {
 			columns: {
-				'casesn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("用例编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("用例标题",null),
 				'type': commonLogic.appcommonhandle("用例类型",null),
@@ -594,6 +593,7 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
 				'casesn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("用例编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("用例标题",null),
 				'type': commonLogic.appcommonhandle("用例类型",null),
@@ -609,7 +609,6 @@ function getLocaleResourceBase(){
 				'lastrunresult1': commonLogic.appcommonhandle("测试用例结果",null),
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'color': commonLogic.appcommonhandle("标题颜色",null),
-				'id': commonLogic.appcommonhandle("用例编号",null),
 		},
 			uiactions: {
 				case_edits: commonLogic.appcommonhandle("概况",null),
@@ -622,7 +621,7 @@ function getLocaleResourceBase(){
 		},
 		mainlinktest_grid: {
 			columns: {
-				'casesn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("用例编号",null),
 				'version': commonLogic.appcommonhandle("版本",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("用例标题",null),
@@ -639,7 +638,7 @@ function getLocaleResourceBase(){
 		},
 		reportmaingrid_grid: {
 			columns: {
-				'casesn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("用例编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("用例标题",null),
 				'type': commonLogic.appcommonhandle("用例类型",null),
@@ -659,7 +658,7 @@ function getLocaleResourceBase(){
 		},
 		maingrid_grid: {
 			columns: {
-				'casesn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("用例编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("用例标题",null),
 				'type': commonLogic.appcommonhandle("用例类型",null),
@@ -676,6 +675,7 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
 				'casesn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("用例编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("用例标题",null),
 				'type': commonLogic.appcommonhandle("用例类型",null),
@@ -691,7 +691,6 @@ function getLocaleResourceBase(){
 				'lastrunresult1': commonLogic.appcommonhandle("测试用例结果",null),
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'color': commonLogic.appcommonhandle("标题颜色",null),
-				'id': commonLogic.appcommonhandle("用例编号",null),
 		},
 			uiactions: {
 				case_confirmstorychange: commonLogic.appcommonhandle("确认",null),
@@ -718,7 +717,7 @@ function getLocaleResourceBase(){
 		},
 		maingrid_suitsub_grid: {
 			columns: {
-				'casesn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("用例编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("用例标题",null),
 				'type': commonLogic.appcommonhandle("用例类型",null),
@@ -732,6 +731,7 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
 				'casesn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("用例编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("用例标题",null),
 				'type': commonLogic.appcommonhandle("用例类型",null),
@@ -747,7 +747,6 @@ function getLocaleResourceBase(){
 				'lastrunresult1': commonLogic.appcommonhandle("测试用例结果",null),
 				'isfavorites': commonLogic.appcommonhandle("是否收藏",null),
 				'color': commonLogic.appcommonhandle("标题颜色",null),
-				'id': commonLogic.appcommonhandle("用例编号",null),
 		},
 			uiactions: {
 				case_unlinksuitecase: commonLogic.appcommonhandle("移除",null),

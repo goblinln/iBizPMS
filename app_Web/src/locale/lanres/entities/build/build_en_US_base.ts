@@ -169,7 +169,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'buildsn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("id",null),
 				'productname': commonLogic.appcommonhandle("产品名称",null),
 				'name': commonLogic.appcommonhandle("名称编号",null),
 				'scmpath': commonLogic.appcommonhandle("源代码地址",null),
@@ -181,6 +181,7 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
 				'buildsn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("id",null),
 				'productname': commonLogic.appcommonhandle("产品名称",null),
 				'name': commonLogic.appcommonhandle("名称编号",null),
 				'scmpath': commonLogic.appcommonhandle("源代码地址",null),
@@ -189,7 +190,6 @@ function getLocaleResourceBase(){
 				'builder': commonLogic.appcommonhandle("构建者",null),
 				'product': commonLogic.appcommonhandle("产品",null),
 				'project': commonLogic.appcommonhandle("所属项目",null),
-				'id': commonLogic.appcommonhandle("id",null),
 		},
 			uiactions: {
 			build_linkstories: commonLogic.appcommonhandle("关联需求",null),
@@ -201,7 +201,7 @@ function getLocaleResourceBase(){
 		},
 		testrounds_grid: {
 			columns: {
-				'buildsn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("id",null),
 				'productname': commonLogic.appcommonhandle("产品名称",null),
 				'name': commonLogic.appcommonhandle("名称编号",null),
 				'scmpath': commonLogic.appcommonhandle("源代码地址",null),

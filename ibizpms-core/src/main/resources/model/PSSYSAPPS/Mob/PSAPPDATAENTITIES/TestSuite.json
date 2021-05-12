@@ -189,6 +189,14 @@
         "codeName" : "Testsuitesn"
       }
     }, {
+      "caption" : "编号",
+      "format" : "%1$s",
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
       "caption" : "名称",
       "format" : "%1$s",
       "name" : "name",
@@ -223,14 +231,6 @@
       "getPSAppDEField" : {
         "name" : "ADDEDDATE",
         "codeName" : "AddedDate"
-      }
-    }, {
-      "caption" : "编号",
-      "format" : "%1$s",
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
       }
     } ]
   } ],

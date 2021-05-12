@@ -13,8 +13,8 @@
   "logicName" : "主表格",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
-    "name" : "TESTSUITESN",
-    "codeName" : "Testsuitesn"
+    "name" : "ID",
+    "codeName" : "Id"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -90,15 +90,15 @@
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
     "caption" : "编号",
-    "codeName" : "testsuitesn",
+    "codeName" : "id",
     "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "testsuitesn",
+    "dataItemName" : "id",
     "excelCaption" : "编号",
-    "name" : "testsuitesn",
+    "name" : "id",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
-      "name" : "TESTSUITESN",
-      "codeName" : "Testsuitesn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "width" : 100,
     "widthUnit" : "PX",

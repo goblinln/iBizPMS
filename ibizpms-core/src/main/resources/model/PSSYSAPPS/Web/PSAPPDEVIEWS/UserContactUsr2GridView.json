@@ -222,15 +222,15 @@
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
       "caption" : "编号",
-      "codeName" : "usercontactsn",
+      "codeName" : "id",
       "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "usercontactsn",
+      "dataItemName" : "id",
       "excelCaption" : "编号",
-      "name" : "usercontactsn",
+      "name" : "id",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
-        "name" : "USERCONTACTSN",
-        "codeName" : "Usercontactsn"
+        "name" : "ID",
+        "codeName" : "Id"
       },
       "width" : 100,
       "widthUnit" : "PX",

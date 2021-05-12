@@ -58,7 +58,7 @@ function getLocaleResourceBase(){
 		},
 		platformmanagement_grid: {
 			columns: {
-				'branchsn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'name': commonLogic.appcommonhandle("名称",null),
 				'order': commonLogic.appcommonhandle("排序",null),
 				'uagridcolumn1': commonLogic.appcommonhandle("操作",null),
@@ -66,9 +66,9 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
 				'branchsn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'name': commonLogic.appcommonhandle("名称",null),
 				'order': commonLogic.appcommonhandle("排序",null),
-				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 			branch_edit: commonLogic.appcommonhandle("编辑",null),

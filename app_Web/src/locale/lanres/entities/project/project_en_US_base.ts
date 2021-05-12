@@ -471,7 +471,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'projectsn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("项目编号",null),
 				'name': commonLogic.appcommonhandle("项目名称",null),
 				'code': commonLogic.appcommonhandle("项目代号",null),
 				'status': commonLogic.appcommonhandle("项目状态",null),
@@ -505,7 +505,7 @@ function getLocaleResourceBase(){
 		},
 		mainconcat_grid: {
 			columns: {
-				'projectsn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("项目编号",null),
 				'name': commonLogic.appcommonhandle("项目名称",null),
 				'status': commonLogic.appcommonhandle("项目状态",null),
 			},
@@ -515,7 +515,7 @@ function getLocaleResourceBase(){
 		},
 		mainmy_grid: {
 			columns: {
-				'projectsn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("项目编号",null),
 				'code': commonLogic.appcommonhandle("项目代号",null),
 				'name': commonLogic.appcommonhandle("项目名称",null),
 				'begin': commonLogic.appcommonhandle("开始时间",null),
@@ -542,7 +542,7 @@ function getLocaleResourceBase(){
 		},
 		main2_grid: {
 			columns: {
-				'projectsn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("项目编号",null),
 				'name': commonLogic.appcommonhandle("项目名称",null),
 				'code': commonLogic.appcommonhandle("项目代号",null),
 				'status': commonLogic.appcommonhandle("项目状态",null),

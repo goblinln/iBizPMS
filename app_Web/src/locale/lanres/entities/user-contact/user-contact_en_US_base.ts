@@ -56,7 +56,7 @@ function getLocaleResourceBase(){
 		},
 		mainexp_grid: {
 			columns: {
-				'usercontactsn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'listname': commonLogic.appcommonhandle("标题",null),
 			},
 			nodata:commonLogic.appcommonhandle("",null),
@@ -65,7 +65,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'usercontactsn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'listname': commonLogic.appcommonhandle("标题",null),
 				'uagridcolumn1': commonLogic.appcommonhandle("操作",null),
 			},

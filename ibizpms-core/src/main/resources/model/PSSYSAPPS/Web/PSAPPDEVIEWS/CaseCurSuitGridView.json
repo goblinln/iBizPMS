@@ -367,16 +367,16 @@
     "getPSDEGridColumns" : [ {
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
-      "caption" : "编号",
-      "codeName" : "casesn",
+      "caption" : "用例编号",
+      "codeName" : "id",
       "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "casesn",
-      "excelCaption" : "编号",
-      "name" : "casesn",
+      "dataItemName" : "id",
+      "excelCaption" : "用例编号",
+      "name" : "id",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
-        "name" : "CASESN",
-        "codeName" : "Casesn"
+        "name" : "ID",
+        "codeName" : "Id"
       },
       "width" : 100,
       "widthUnit" : "PX",

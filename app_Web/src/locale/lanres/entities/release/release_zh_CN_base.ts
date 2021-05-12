@@ -167,7 +167,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'releasesn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("ID",null),
 				'name': commonLogic.appcommonhandle("发布名称",null),
 				'buildname': commonLogic.appcommonhandle("版本",null),
 				'status': commonLogic.appcommonhandle("状态",null),
@@ -177,12 +177,12 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
 				'releasesn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("ID",null),
 				'name': commonLogic.appcommonhandle("发布名称",null),
 				'buildname': commonLogic.appcommonhandle("版本",null),
 				'status': commonLogic.appcommonhandle("状态",null),
 				'date': commonLogic.appcommonhandle("发布日期",null),
 				'product': commonLogic.appcommonhandle("产品",null),
-				'id': commonLogic.appcommonhandle("ID",null),
 		},
 			uiactions: {
 				release_linkstory: commonLogic.appcommonhandle("关联需求",null),

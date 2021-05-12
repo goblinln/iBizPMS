@@ -86,7 +86,7 @@ function getLocaleResourceBase(){
 		},
 		mainsubplan_grid: {
 			columns: {
-				'productplansn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'title': commonLogic.appcommonhandle("名称",null),
 			},
 			nodata:commonLogic.appcommonhandle("",null),

@@ -186,7 +186,7 @@ function getLocaleResourceBase(){
 		},
 		maininfo_grid: {
 			columns: {
-				'productplansn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'title': commonLogic.appcommonhandle("名称",null),
 				'beginstr': commonLogic.appcommonhandle("开始日期",null),
 				'endstr': commonLogic.appcommonhandle("结束日期",null),
@@ -197,6 +197,7 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
 				'productplansn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'title': commonLogic.appcommonhandle("名称",null),
 				'beginstr': commonLogic.appcommonhandle("开始日期",null),
 				'begin': commonLogic.appcommonhandle("开始日期",null),
@@ -205,7 +206,6 @@ function getLocaleResourceBase(){
 				'storycnt': commonLogic.appcommonhandle("需求数",null),
 				'bugcnt': commonLogic.appcommonhandle("bug数",null),
 				'statuss': commonLogic.appcommonhandle("状态",null),
-				'id': commonLogic.appcommonhandle("编号",null),
 		},
 			uiactions: {
 			productplan_addproject: commonLogic.appcommonhandle("添加项目",null),

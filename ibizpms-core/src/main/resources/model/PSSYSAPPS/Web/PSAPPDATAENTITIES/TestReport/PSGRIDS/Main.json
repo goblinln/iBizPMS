@@ -13,8 +13,8 @@
   "logicName" : "主表格",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
-    "name" : "TESTREPORTSN",
-    "codeName" : "Testreportsn"
+    "name" : "ID",
+    "codeName" : "Id"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -85,16 +85,16 @@
   "getPSDEGridColumns" : [ {
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
-    "caption" : "测试报告编号",
-    "codeName" : "testreportsn",
+    "caption" : "编号",
+    "codeName" : "id",
     "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "testreportsn",
-    "excelCaption" : "测试报告编号",
-    "name" : "testreportsn",
+    "dataItemName" : "id",
+    "excelCaption" : "编号",
+    "name" : "id",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
-      "name" : "TESTREPORTSN",
-      "codeName" : "Testreportsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "width" : 100,
     "widthUnit" : "PX",

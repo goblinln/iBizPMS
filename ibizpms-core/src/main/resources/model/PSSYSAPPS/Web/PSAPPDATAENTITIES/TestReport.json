@@ -278,6 +278,14 @@
         "codeName" : "Testreportsn"
       }
     }, {
+      "caption" : "编号",
+      "format" : "%1$s",
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
       "caption" : "标题",
       "format" : "%1$s",
       "name" : "title",
@@ -324,14 +332,6 @@
       "getPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/TestTask.json"
-      }
-    }, {
-      "caption" : "编号",
-      "format" : "%1$s",
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
       }
     } ]
   } ],

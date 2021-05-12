@@ -510,6 +510,14 @@
         "codeName" : "Casesn"
       }
     }, {
+      "caption" : "用例编号",
+      "format" : "%1$s",
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
       "caption" : "P",
       "format" : "%1$s",
       "name" : "pri",
@@ -664,14 +672,6 @@
       "getPSCodeList" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Testcase__color.json"
-      }
-    }, {
-      "caption" : "用例编号",
-      "format" : "%1$s",
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
       }
     } ]
   } ],
