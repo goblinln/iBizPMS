@@ -3804,18 +3804,7 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
     },
-    "getPSNavigateContexts" : [ {
-      "key" : "STORY",
-      "name" : "STORY",
-      "value" : "id",
-      "rawValue" : false
-    } ],
     "getPSNavigateParams" : [ {
-      "key" : "story",
-      "name" : "story",
-      "value" : "id",
-      "rawValue" : false
-    }, {
       "key" : "productplan",
       "name" : "productplan",
       "value" : "productplan",
