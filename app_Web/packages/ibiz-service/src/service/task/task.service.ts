@@ -396,12 +396,16 @@ export class TaskService extends TaskBaseService {
         if (_context.project && _context.task) {
             _data = await this.obtainMinor(_context, _data);
             if (_data.ibztaskestimates && _data.ibztaskestimates.length > 0) {
-                _data.ibztaskestimates.forEach((item: any) => {
+                const minorZTaskEstimateService: any = await ___ibz___.gs[`getIBZTaskEstimateService`]();
+                for (const item of _data.ibztaskestimates) {
                     if (item.id) {
+                        if (minorZTaskEstimateService) {
+                            await minorZTaskEstimateService.removeLocal(_context, item.id);
+                        }
                         item.id = null;
                         if(item.hasOwnProperty('id') && item.id) delete item.id;
                     }
-                })
+                }
             }
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/recordestimate`, _data);
         }
@@ -492,12 +496,16 @@ export class TaskService extends TaskBaseService {
         if (_context.project && _context.task) {
             _data = await this.obtainMinor(_context, _data);
             if (_data.ibztaskestimates && _data.ibztaskestimates.length > 0) {
-                _data.ibztaskestimates.forEach((item: any) => {
+                const minorZTaskEstimateService: any = await ___ibz___.gs[`getIBZTaskEstimateService`]();
+                for (const item of _data.ibztaskestimates) {
                     if (item.id) {
+                        if (minorZTaskEstimateService) {
+                            await minorZTaskEstimateService.removeLocal(_context, item.id);
+                        }
                         item.id = null;
                         if(item.hasOwnProperty('id') && item.id) delete item.id;
                     }
-                })
+                }
             }
             return this.http.post(`/projects/${_context.project}/tasks/${_context.task}/taskforward`, _data);
         }
