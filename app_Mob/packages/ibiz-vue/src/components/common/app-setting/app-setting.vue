@@ -76,7 +76,7 @@
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
 import { settingConfig } from "./config";
-import { Util, ViewTool, ThirdPartyService, removeSessionStorage } from 'ibiz-core';
+import { Util, ViewTool, ThirdPartyService, removeSessionStorage, AppCapacitorService } from 'ibiz-core';
 import i18n from '@/locale'
 import { Environment } from "@/environments/environment";
 @Component({
@@ -183,6 +183,7 @@ export default class AppSetting extends Vue {
         const title: any = this.$t("app.tabpage.sureclosetip.title");
         const result = await this.$Notice.confirm(title, "确认退出当前账号？");
         if (result) {
+            AppCapacitorService.getInstance().exitApp();
             if (this.thirdPartyName) {
                 ThirdPartyService.getInstance().close();
                 return;
