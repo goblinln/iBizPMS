@@ -262,7 +262,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_DAILYID",
       "standardColumnName" : "`IBZ_DAILYID`",
-      "autoIncrement" : true
+      "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -284,7 +284,8 @@
     } ],
     "codeName" : "IbzDailyId",
     "dEFType" : 1,
-    "dataType" : "ACID",
+    "dataType" : "BIGINT",
+    "defaultValue" : "0",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "汇报标识",
@@ -292,7 +293,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
-    "enableDBAutoValue" : true,
     "keyDEField" : true,
     "pasteReset" : true
   }, {

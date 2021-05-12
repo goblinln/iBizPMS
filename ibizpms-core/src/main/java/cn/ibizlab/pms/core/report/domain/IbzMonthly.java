@@ -174,7 +174,7 @@ public class IbzMonthly extends EntityMP implements Serializable {
      * 月报标识
      */
     @DEField(defaultValue = "0", isKeyField = true)
-    @TableId(value = "`IBZ_MONTHLYID`", type = IdType.AUTO)
+    @TableId(value = "`IBZ_MONTHLYID`", type = IdType.ASSIGN_ID)
     @JSONField(name = "ibzmonthlyid")
     @JsonProperty("ibzmonthlyid")
     @ApiModelProperty("月报标识")

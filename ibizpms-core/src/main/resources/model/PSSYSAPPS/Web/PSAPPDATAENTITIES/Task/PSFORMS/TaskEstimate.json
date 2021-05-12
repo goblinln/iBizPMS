@@ -1548,10 +1548,8 @@
               "codeName" : "Id"
             },
             "getPSEditor" : {
-              "editorType" : "SPAN",
-              "name" : "id",
-              "editable" : false,
-              "enableLinkView" : false
+              "editorType" : "TEXTBOX",
+              "name" : "id"
             },
             "allowEmpty" : true
           }, {
@@ -2592,10 +2590,8 @@
               "codeName" : "Id"
             },
             "getPSEditor" : {
-              "editorType" : "SPAN",
-              "name" : "id",
-              "editable" : false,
-              "enableLinkView" : false
+              "editorType" : "TEXTBOX",
+              "name" : "id"
             },
             "allowEmpty" : true
           }, {

@@ -112,8 +112,8 @@ public class IbizproProductMonthly extends EntityMP implements Serializable {
     /**
      * 产品月报标识
      */
-    @DEField(name = "ibizpro_productmonthlyid", isKeyField = true)
-    @TableId(value = "`IBIZPRO_PRODUCTMONTHLYID`", type = IdType.AUTO)
+    @DEField(defaultValue = "0", isKeyField = true)
+    @TableId(value = "`IBIZPRO_PRODUCTMONTHLYID`", type = IdType.ASSIGN_ID)
     @JSONField(name = "ibizproproductmonthlyid")
     @JsonProperty("ibizproproductmonthlyid")
     @ApiModelProperty("产品月报标识")

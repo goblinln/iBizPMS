@@ -122,8 +122,8 @@ public class IbizproProductDaily extends EntityMP implements Serializable {
     /**
      * 产品日报标识
      */
-    @DEField(name = "ibizpro_productdailyid", isKeyField = true)
-    @TableId(value = "`IBIZPRO_PRODUCTDAILYID`", type = IdType.AUTO)
+    @DEField(defaultValue = "0", isKeyField = true)
+    @TableId(value = "`IBIZPRO_PRODUCTDAILYID`", type = IdType.ASSIGN_ID)
     @JSONField(name = "ibizproproductdailyid")
     @JsonProperty("ibizproproductdailyid")
     @ApiModelProperty("产品日报标识")

@@ -79,9 +79,11 @@
 
     <!--数据集合[MyDaily]-->
 	 <select id="searchMyDaily"  parameterType="cn.ibizlab.pms.core.report.filter.IbzDailySearchContext"  resultMap="IbzDailyResultMap">
+	 	select * from (
          select t1.* from (
                 <include refid="MyDaily" />
          )t1
+		 )t1
      </select>
 
     <!--数据集合[MyNotSubmit]-->

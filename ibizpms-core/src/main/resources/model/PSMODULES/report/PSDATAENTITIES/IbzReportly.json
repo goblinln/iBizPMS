@@ -428,7 +428,7 @@
       "name" : "IBZ_REPORTLYID",
       "queryCodeExp" : "t1.`IBZ_REPORTLYID`",
       "standardColumnName" : "`IBZ_REPORTLYID`",
-      "autoIncrement" : true
+      "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -450,7 +450,8 @@
     } ],
     "codeName" : "IbzReportlyId",
     "dEFType" : 1,
-    "dataType" : "ACID",
+    "dataType" : "BIGINT",
+    "defaultValue" : "0",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "汇报标识",
@@ -458,7 +459,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
-    "enableDBAutoValue" : true,
     "keyDEField" : true,
     "pasteReset" : true
   }, {

@@ -119,7 +119,7 @@
 
 
     <!--输出实体[ZT_BUG]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_bug-136-5">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_bug-137-5">
         <createTable tableName="zt_bug">
                 <column name="SEVERITY" remarks="" type="INT">
                 </column>
@@ -1571,7 +1571,7 @@
 
 
     <!--输出实体[IBZ_DAILY]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibz_daily-1-49">
+    <changeSet author="a_A_23e8aa361" id="tab-ibz_daily-2-49">
         <createTable tableName="T_IBZ_DAILY">
                 <column name="UPDATEDATE" remarks="" type="DATETIME">
                 </column>

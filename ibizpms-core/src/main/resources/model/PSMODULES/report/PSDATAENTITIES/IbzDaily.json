@@ -236,6 +236,11 @@
   }, {
     "codeName" : "MyDaily",
     "logicName" : "我收到的日报",
+    "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "CREATEDATE",
+      "codeName" : "CreateDate"
+    },
     "name" : "MyDaily",
     "getPSDEDataQueries" : [ {
       "modelref" : true,
@@ -1139,7 +1144,7 @@
       "name" : "IBZ_DAILYID",
       "queryCodeExp" : "t1.`IBZ_DAILYID`",
       "standardColumnName" : "`IBZ_DAILYID`",
-      "autoIncrement" : true
+      "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1161,7 +1166,8 @@
     } ],
     "codeName" : "IbzDailyId",
     "dEFType" : 1,
-    "dataType" : "ACID",
+    "dataType" : "BIGINT",
+    "defaultValue" : "0",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "日报标识",
@@ -1169,7 +1175,6 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
-    "enableDBAutoValue" : true,
     "keyDEField" : true,
     "pasteReset" : true
   }, {

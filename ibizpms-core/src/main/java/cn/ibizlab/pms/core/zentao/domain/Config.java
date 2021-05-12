@@ -49,8 +49,8 @@ public class Config extends EntityMP implements Serializable {
     /**
      * id
      */
-    @DEField(isKeyField = true)
-    @TableId(value = "`ID`", type = IdType.AUTO)
+    @DEField(defaultValue = "0", isKeyField = true)
+    @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")
     @ApiModelProperty("id")
