@@ -1127,7 +1127,7 @@
   "name" : "IBZ_REPORTLY",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "IbzReportly",
   "storageMode" : 1,

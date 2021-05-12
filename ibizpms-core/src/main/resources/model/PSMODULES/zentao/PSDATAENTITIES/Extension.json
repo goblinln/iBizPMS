@@ -821,7 +821,7 @@
   "name" : "ZT_EXTENSION",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "Extension",
   "storageMode" : 1,

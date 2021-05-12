@@ -800,7 +800,7 @@
   "name" : "IBIZPRO_PRODUCTWEEKLY",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "IbizproProductWeekly",
   "storageMode" : 1,

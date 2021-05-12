@@ -511,7 +511,7 @@
   "name" : "IBZ_REPORT_ROLE_CONFIG",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "IbzReportRoleConfig",
   "storageMode" : 1,

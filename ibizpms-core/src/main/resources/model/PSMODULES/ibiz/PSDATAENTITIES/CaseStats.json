@@ -651,7 +651,7 @@
   "name" : "IBZ_CASESTATS",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "CaseStats",
   "storageMode" : 1,

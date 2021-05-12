@@ -1359,7 +1359,7 @@
   "name" : "ZT_CASESTEP",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "CaseStep",
   "storageMode" : 1,

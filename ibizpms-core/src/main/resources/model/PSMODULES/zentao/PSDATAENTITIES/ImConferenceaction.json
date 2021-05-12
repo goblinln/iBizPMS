@@ -339,7 +339,7 @@
   "name" : "ZT_IM_CONFERENCEACTION",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "ImConferenceaction",
   "storageMode" : 1,

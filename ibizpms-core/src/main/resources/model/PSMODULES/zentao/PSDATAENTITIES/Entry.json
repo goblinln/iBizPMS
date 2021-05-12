@@ -789,7 +789,7 @@
   "name" : "ZT_ENTRY",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "Entry",
   "storageMode" : 1,

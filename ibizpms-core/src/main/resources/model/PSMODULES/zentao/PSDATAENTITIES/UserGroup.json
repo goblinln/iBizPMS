@@ -260,7 +260,7 @@
   "name" : "ZT_USERGROUP",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "UserGroup",
   "storageMode" : 1,

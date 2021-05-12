@@ -5291,7 +5291,7 @@
   "name" : "ZT_PRODUCT",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "Product",
   "storageMode" : 1,

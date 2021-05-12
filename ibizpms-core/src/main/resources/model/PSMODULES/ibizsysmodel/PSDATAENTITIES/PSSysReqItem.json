@@ -1611,7 +1611,9 @@
     "removeOrder" : 0
   } ],
   "name" : "PSSYSREQITEM",
-  "saaSMode" : 0,
+  "saaSDCIdColumnName" : "SRFDCID",
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSMode" : 2,
   "serviceAPIClientId" : "45ab5098498d2294128bca01585b9993",
   "serviceAPIMode" : 0,
   "serviceCodeName" : "PSSysReqItem",

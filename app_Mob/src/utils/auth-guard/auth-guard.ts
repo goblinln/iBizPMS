@@ -1,7 +1,7 @@
 import { Environment } from '@/environments/environment';
 import i18n from '@/locale';
 import { DynamicInstanceConfig, GlobalHelp } from '@ibiz/dynamic-model-api';
-import { AppServiceBase, Http,setSessionStorage,getSessionStorage, AppModelService, Util } from 'ibiz-core';
+import { AppServiceBase, Http, setSessionStorage, getSessionStorage, AppModelService, Util } from 'ibiz-core';
 import { AppCenterService } from 'ibiz-vue';
 import qs from 'qs';
 
@@ -57,7 +57,7 @@ export class AuthGuard {
         return new Promise((resolve: any, reject: any) => {
             const appStore = AppServiceBase.getInstance().getAppStore();
             let appData: any = appStore?.getters.getAppData();
-            if(appData){
+            if (appData) {
                 return resolve(true);
             }
             if (Environment && Environment.SaaSMode) {
@@ -83,10 +83,9 @@ export class AuthGuard {
      * @memberof AuthGuard
      */
     public getOrgsByDcsystem(router: any): Promise<boolean> {
-        const srfdcsystem = Environment.srfDcSystem;
         return new Promise((resolve: any) => {
             let tempViewParam = this.hanldeViewParam(window.location.href);
-            if (!srfdcsystem) {
+            if (!tempViewParam.srfdcsystem) {
                 if (!tempViewParam.redirect) {
                     if (getSessionStorage('dcsystem')) {
                         tempViewParam = getSessionStorage('dcsystem');
@@ -95,9 +94,9 @@ export class AuthGuard {
                     tempViewParam = this.hanldeViewParam(tempViewParam.redirect);
                 }
             }
-            if (srfdcsystem) {
+            if (tempViewParam.srfdcsystem) {
                 setSessionStorage('dcsystem', tempViewParam);
-                let requestUrl: string = `/uaa/getbydcsystem/${srfdcsystem}`;
+                let requestUrl: string = `/uaa/getbydcsystem/${tempViewParam.srfdcsystem}`;
                 const get: Promise<any> = Http.getInstance().get(requestUrl);
                 get.then((response: any) => {
                     if (response && response.status === 200) {
@@ -110,11 +109,13 @@ export class AuthGuard {
                     } else {
                         resolve(false);
                     }
-                }).catch((error) => {
+                }).catch(() => {
                     resolve(false);
+                    this.doNoLogin(router, "登录失败，请联系管理员");
                 });
             } else {
                 resolve(false);
+                this.doNoLogin(router, "登录失败，请联系管理员");
             }
         });
     }
@@ -215,5 +216,40 @@ export class AuthGuard {
             });
         }
         return tempViewParam;
+    }
+    
+    /**
+     * 处理未登录异常情况
+     *
+     * @memberof AuthGuard
+     */
+    public doNoLogin(router: any, message: string) {
+        this.clearAppData(router.app.$store);
+        if (Environment.loginUrl) {
+            window.location.href = `${Environment.loginUrl}?redirect=${window.location.href}`;
+        } else {
+            if (Object.is(router.currentRoute.name, 'login')) {
+                return;
+            }
+            router.push({ name: 'login', query: { redirect: router.currentRoute.fullPath } });
+        }
+    }
+
+    /**
+     * 清除应用数据
+     *
+     * @private
+     * @memberof AuthGuard
+     */
+    private clearAppData(store: any) {
+        // 清除user、token
+        let leftTime = new Date();
+        leftTime.setTime(leftTime.getSeconds() - 1);
+        document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
+        document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();
+        // 清除应用级数据
+        localStorage.removeItem('localdata')
+        store.commit('addAppData', {});
+        store.dispatch('authresource/commitAuthData', {});
     }
 }

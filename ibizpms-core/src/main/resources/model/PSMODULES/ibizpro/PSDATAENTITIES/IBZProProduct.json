@@ -366,7 +366,7 @@
   "name" : "IBZPRO_PRODUCT",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "IBZProProduct",
   "storageMode" : 1,

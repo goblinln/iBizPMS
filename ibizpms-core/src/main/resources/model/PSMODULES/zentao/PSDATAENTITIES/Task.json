@@ -26767,7 +26767,7 @@
   "name" : "ZT_TASK",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "Task",
   "storageMode" : 1,

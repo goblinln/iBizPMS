@@ -2003,7 +2003,7 @@
   "name" : "ZT_TASKESTIMATE",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "TaskEstimate",
   "storageMode" : 1,

@@ -1462,7 +1462,7 @@
   "name" : "ZT_TESTRESULT",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "TestResult",
   "storageMode" : 1,

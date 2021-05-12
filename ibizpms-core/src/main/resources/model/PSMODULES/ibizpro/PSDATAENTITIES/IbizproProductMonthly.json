@@ -772,7 +772,7 @@
   "name" : "IBIZPRO_PRODUCTMONTHLY",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "IbizproProductMonthly",
   "storageMode" : 1,

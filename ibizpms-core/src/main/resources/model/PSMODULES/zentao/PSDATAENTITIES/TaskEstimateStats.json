@@ -734,7 +734,7 @@
   "name" : "TASKESTIMATESTATS",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "TaskEstimateStats",
   "storageMode" : 1,

@@ -732,7 +732,7 @@
   "name" : "ZT_IM_CHAT",
   "saaSDCIdColumnName" : "SRFDCID",
   "saaSDataIdColumnName" : "SRFID",
-  "saaSMode" : 4,
+  "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "ImChat",
   "storageMode" : 1,

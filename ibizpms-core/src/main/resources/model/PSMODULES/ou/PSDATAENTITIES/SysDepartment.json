@@ -1176,7 +1176,9 @@
     "nestedRS" : true
   } ],
   "name" : "SYS_DEPT",
-  "saaSMode" : 0,
+  "saaSDCIdColumnName" : "SRFDCID",
+  "saaSDataIdColumnName" : "SRFID",
+  "saaSMode" : 2,
   "serviceAPIClientId" : "9dab79080bf86d9ac588a8ab99d5d28c",
   "serviceAPIMode" : 0,
   "serviceCodeName" : "SysDepartment",
