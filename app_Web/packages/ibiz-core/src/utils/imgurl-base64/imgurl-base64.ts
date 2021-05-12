@@ -37,7 +37,15 @@ export class ImgurlBase64{
                 responseType: 'blob'
             }).then((response: any) => {
                 if (response && response.status === 200 && response.data) {
-                    let blob = new Blob([response.data],{type: 'image/png'});
+                    // 获取文件名
+                    const disposition = response.headers['content-disposition'];
+                    const filename = disposition.split('filename=')[1];
+                    let type = 'image/png';
+                    if (filename && filename.indexOf('.') > 0) {
+                        const start = filename.lastIndexOf('.');
+                        type = 'image/'+filename.substring(start + 1);
+                    }
+                    let blob = new Blob([response.data],{type: type});
                     this.blobToBase64(blob).then((res) => {
                         // 转化后的base64
                         img = `${res}`;
