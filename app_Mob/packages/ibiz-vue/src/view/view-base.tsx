@@ -566,7 +566,7 @@ export class ViewBase extends Vue {
     public initCapacitorService() {
         if (!this.isChildView) {
             this.backFunction = this.closeView;
-            AppCapacitorService.getInstance().viewInit(this);
+            AppCapacitorService.getInstance().viewInit(this,!(this.viewDefaultUsage==='includedView'));
         }
     }
 
@@ -907,7 +907,7 @@ export class ViewBase extends Vue {
         if (this.viewDefaultUsage === 'includedView') {
             this.$emit('view-event', { viewName: this.viewInstance.codeName, action: 'close', data: null });
         }
-        if (window.history.length == 1 && ThirdPartyService.getInstance().platform && this.viewDefaultUsage === "indexView") {
+        if (this.viewDefaultUsage === "indexView") {
             this.quitFun();
         }
     }
