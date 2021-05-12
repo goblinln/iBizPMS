@@ -343,6 +343,7 @@
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
+            "colLG" : 2,
             "colMD" : 24,
             "layout" : "TABLE_24COL",
             "width" : 42
