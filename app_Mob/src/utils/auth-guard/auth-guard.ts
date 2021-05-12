@@ -58,9 +58,12 @@ export class AuthGuard {
         return new Promise((resolve: any, reject: any) => {
             const appStore = AppServiceBase.getInstance().getAppStore();
             let appData: any = appStore?.getters.getAppData();
+            alert("开始请求2")
             if (appData) {
+                alert("开始请求3")
                 return resolve(true);
             }
+            alert("开始请求4")
             if (Environment && Environment.SaaSMode) {
                 this.getOrgsByDcsystem(router).then((result: boolean) => {
                     if (!result) {
@@ -80,7 +83,7 @@ export class AuthGuard {
 
     /**
      * 通过租户获取组织数据
-     *
+     * 
      * @memberof AuthGuard
      */
     public getOrgsByDcsystem(router: any): Promise<boolean> {
