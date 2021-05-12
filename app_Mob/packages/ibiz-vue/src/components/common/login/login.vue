@@ -222,6 +222,7 @@ export default class Login extends Vue {
     private clearAppData() {
         // 清除user、token
         let leftTime = new Date();
+        this.$store.commit('addAppData', null);
         leftTime.setTime(leftTime.getSeconds() - 1);
         document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
         document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();

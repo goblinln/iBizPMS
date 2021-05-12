@@ -183,7 +183,6 @@ export default class AppSetting extends Vue {
         const title: any = this.$t("app.tabpage.sureclosetip.title");
         const result = await this.$Notice.confirm(title, "确认退出当前账号？");
         if (result) {
-            AppCapacitorService.getInstance().exitApp();
             if (this.thirdPartyName) {
                 ThirdPartyService.getInstance().close();
                 return;
@@ -194,6 +193,7 @@ export default class AppSetting extends Vue {
                     this.$store.commit('addAppData', null);
                     this.doLogin();
                 }
+            AppCapacitorService.getInstance().exitApp();
             })
                 .catch((error: any) => {
                     console.error(error);
