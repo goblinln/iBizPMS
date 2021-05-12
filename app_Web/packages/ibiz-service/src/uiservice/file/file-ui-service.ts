@@ -175,7 +175,7 @@ export default class FileUIService extends FileUIServiceBase {
     protected excuteAction(uIActionTag: string, args: any[], context: any = {}, params: any = {}, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
         if (Object.is(uIActionTag, "BatchDownload")) {
             this.BatchDownload(args, context, params, $event, xData, actionContext, srfParentDeName);
-        } else if (Object.is(uIActionTag, "ibzdownload")) {
+        } else if (Object.is(uIActionTag, "ibzdownload") || Object.is(uIActionTag, "Look")) {
             this.ibzdownload(args, context, params, $event, xData, actionContext, srfParentDeName);
         } else if (Object.is(uIActionTag, "AllDownload")) {
             this.AllDownload(args, context, params, $event, xData, actionContext, srfParentDeName);
