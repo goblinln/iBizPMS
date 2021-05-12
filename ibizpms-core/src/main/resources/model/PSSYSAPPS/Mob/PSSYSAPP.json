@@ -15879,6 +15879,7 @@
             "getPSEditor" : {
               "editorStyle" : "defaluturl",
               "editorType" : "MOBPICTURE",
+              "maxFileCount" : 1,
               "maxFileSize" : -1,
               "minFileCount" : 0,
               "name" : "usericon",

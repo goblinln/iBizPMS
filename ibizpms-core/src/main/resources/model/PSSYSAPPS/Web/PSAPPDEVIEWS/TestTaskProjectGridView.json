@@ -273,19 +273,19 @@
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestTask.json"
         },
         "getPSNavigateContexts" : [ {
+          "key" : "TESTREPORT",
+          "name" : "TESTREPORT",
+          "value" : "0",
+          "rawValue" : true
+        }, {
           "key" : "TASKS",
           "name" : "TASKS",
           "value" : "id",
           "rawValue" : false
-        }, {
-          "key" : "ID",
-          "name" : "ID",
-          "value" : "0",
-          "rawValue" : true
         } ],
         "getPSNavigateParams" : [ {
-          "key" : "id",
-          "name" : "id",
+          "key" : "testreport",
+          "name" : "testreport",
           "value" : "0",
           "rawValue" : true
         }, {

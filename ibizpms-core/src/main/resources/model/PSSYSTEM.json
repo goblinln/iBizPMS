@@ -1532,6 +1532,9 @@
   }, {
     "modelref" : true,
     "path" : "PSSYSBACKSERVICES/WFCallbackDeamon.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSBACKSERVICES/SysAdminDeamon.json"
   } ],
   "getAllPSSysDataSyncAgents" : [ {
     "agentType" : "ACTIVEMQ",
