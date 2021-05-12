@@ -563,11 +563,6 @@
     "length" : 20,
     "logicName" : "待办编号",
     "name" : "TODOSN",
-    "getPSSysSequence" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTodoSeq.json"
-    },
-    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "enableQuickSearch" : true

@@ -1374,11 +1374,6 @@
     "length" : 20,
     "logicName" : "模块编号",
     "name" : "MODULESN",
-    "getPSSysSequence" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProModuleSeq.json"
-    },
-    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
   } ],

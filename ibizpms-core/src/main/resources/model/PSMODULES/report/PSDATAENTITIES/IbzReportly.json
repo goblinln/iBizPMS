@@ -427,8 +427,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_REPORTLYID",
       "queryCodeExp" : "t1.`IBZ_REPORTLYID`",
-      "standardColumnName" : "`IBZ_REPORTLYID`",
-      "valueAutoGen" : true
+      "standardColumnName" : "`IBZ_REPORTLYID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -451,7 +450,6 @@
     "codeName" : "IbzReportlyId",
     "dEFType" : 1,
     "dataType" : "BIGINT",
-    "defaultValue" : "0",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "汇报标识",

@@ -710,11 +710,6 @@
     "length" : 20,
     "logicName" : "产品的分支和平台信息编号",
     "name" : "BRANCHSN",
-    "getPSSysSequence" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProBranchSeq.json"
-    },
-    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
   } ],

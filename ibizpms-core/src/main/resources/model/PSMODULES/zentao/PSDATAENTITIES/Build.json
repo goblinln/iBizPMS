@@ -1801,11 +1801,6 @@
     "length" : 20,
     "logicName" : "版本编号",
     "name" : "BUILDSN",
-    "getPSSysSequence" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProBuildSeq.json"
-    },
-    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
   } ],

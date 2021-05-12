@@ -980,11 +980,6 @@
     "length" : 20,
     "logicName" : "群组编号",
     "name" : "TEAMSN",
-    "getPSSysSequence" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTeamSeq.json"
-    },
-    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
   } ],

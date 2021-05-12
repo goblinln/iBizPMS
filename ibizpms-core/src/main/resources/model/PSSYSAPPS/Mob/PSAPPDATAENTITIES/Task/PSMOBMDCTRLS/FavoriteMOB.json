@@ -304,6 +304,9 @@
   } ],
   "getPSDEListDataItems" : [ {
     "dataType" : 25,
+    "name" : "tasktype"
+  }, {
+    "dataType" : 25,
     "getFrontPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealName.json"
@@ -313,12 +316,22 @@
     "dataType" : 7,
     "name" : "left"
   }, {
+    "dataType" : 25,
+    "getFrontPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/TaskStatusCK.json"
+    },
+    "name" : "status1"
+  }, {
     "dataType" : 9,
     "getFrontPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/Task__pri.json"
     },
     "name" : "pri"
+  }, {
+    "dataType" : 25,
+    "name" : "isfavorites"
   }, {
     "dataType" : 25,
     "name" : "name"

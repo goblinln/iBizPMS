@@ -350,6 +350,9 @@
     "name" : "title"
   }, {
     "dataType" : 25,
+    "name" : "ischild"
+  }, {
+    "dataType" : 25,
     "getFrontPSCodeList" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/UserRealNameProductTeam.json"

@@ -1804,11 +1804,6 @@
     "length" : 20,
     "logicName" : "发布编号",
     "name" : "RELEASESN",
-    "getPSSysSequence" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProReleaseSeq.json"
-    },
-    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
   } ],

@@ -1663,11 +1663,6 @@
     "length" : 20,
     "logicName" : "测试报告编号",
     "name" : "TESTREPORTSN",
-    "getPSSysSequence" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTestReportSeq.json"
-    },
-    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
   } ],

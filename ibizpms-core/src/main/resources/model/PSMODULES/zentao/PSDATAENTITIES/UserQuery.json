@@ -456,11 +456,6 @@
     "length" : 20,
     "logicName" : "用户查询编号",
     "name" : "USERQUERYSN",
-    "getPSSysSequence" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProUserQuerySeq.json"
-    },
-    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
   } ],

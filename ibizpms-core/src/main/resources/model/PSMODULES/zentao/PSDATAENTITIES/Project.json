@@ -4488,11 +4488,6 @@
     "length" : 20,
     "logicName" : "项目编号",
     "name" : "PROJECTSN",
-    "getPSSysSequence" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProProjectSeq.json"
-    },
-    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "enableQuickSearch" : true
