@@ -1750,6 +1750,11 @@
     "importOrder" : 1000,
     "logicName" : "ID",
     "name" : "ID",
+    "getPSSysSequence" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProUserSeq.json"
+    },
+    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,

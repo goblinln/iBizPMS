@@ -337,15 +337,15 @@
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
       "caption" : "编号",
-      "codeName" : "filesn",
+      "codeName" : "id",
       "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "filesn",
+      "dataItemName" : "id",
       "excelCaption" : "编号",
-      "name" : "filesn",
+      "name" : "id",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
-        "name" : "FILESN",
-        "codeName" : "Filesn"
+        "name" : "ID",
+        "codeName" : "Id"
       },
       "width" : 100,
       "widthUnit" : "PX",
@@ -565,18 +565,18 @@
       "enableSort" : false
     } ],
     "getPSDEGridDataItems" : [ {
-      "dataType" : 1,
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
       "dataType" : 25,
       "name" : "strsize",
       "getPSAppDEField" : {
         "name" : "STRSIZE",
         "codeName" : "Strsize"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
       }
     }, {
       "dataType" : 1,

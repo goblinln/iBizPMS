@@ -126,15 +126,15 @@
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
     "caption" : "编号",
-    "codeName" : "docsn",
+    "codeName" : "id",
     "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "docsn",
+    "dataItemName" : "id",
     "excelCaption" : "编号",
-    "name" : "docsn",
+    "name" : "id",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
-      "name" : "DOCSN",
-      "codeName" : "Docsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "width" : 100,
     "widthUnit" : "PX",

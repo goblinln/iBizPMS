@@ -400,10 +400,11 @@ export class MobMDCtrlControlBase extends MDControlBase {
             response = await this.service.search(this.fetchAction, this.context, data, isloadding);
         } catch (error) {
             this.endLoading();
+            this.$Notice.error(error?.data?.message || 'Internal Server Error!');
         }
         this.bottomLoadding = false;
         if (!response || response.status !== 200) {
-            // this.$notify({ type: 'danger', message: response.error.message });
+            this.$Notice.error(response?.error?.message || 'Internal Server Error!');
             this.endLoading();
             return response;
         }

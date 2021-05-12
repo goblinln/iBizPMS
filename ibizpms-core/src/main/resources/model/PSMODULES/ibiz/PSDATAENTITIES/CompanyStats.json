@@ -582,6 +582,11 @@
     "length" : 20,
     "logicName" : "标识",
     "name" : "ID",
+    "getPSSysSequence" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProActionSeq.json"
+    },
+    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "keyDEField" : true,
