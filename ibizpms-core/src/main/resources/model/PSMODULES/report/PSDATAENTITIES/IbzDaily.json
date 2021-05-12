@@ -1172,6 +1172,11 @@
     "length" : 100,
     "logicName" : "日报标识",
     "name" : "IBZ_DAILYID",
+    "getPSSysSequence" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProDAILYIDSeq.json"
+    },
+    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,

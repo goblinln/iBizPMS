@@ -185,6 +185,11 @@
     "length" : 20,
     "logicName" : "产品周报标识",
     "name" : "IBIZPRO_PRODUCTWEEKLYID",
+    "getPSSysSequence" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProPRODUCTWEEKLYSeq.json"
+    },
+    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
