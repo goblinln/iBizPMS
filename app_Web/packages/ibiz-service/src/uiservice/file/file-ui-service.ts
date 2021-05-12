@@ -256,7 +256,7 @@ export default class FileUIService extends FileUIServiceBase {
         let parentObj:any = {srfparentdename:srfParentDeName?srfParentDeName:null,srfparentkey:srfParentDeName?context[srfParentDeName.toLowerCase()]:null};
         Object.assign(data,parentObj);
         Object.assign(context,parentObj);
-        let url = "../ibizutilpms/ztfilesbatchdownload/" + context.file ;
+        let url = "/ibizutilpms/ztfilesbatchdownload/" + context.file ;
         this.DownloadFile(url);
     }
     
@@ -291,7 +291,7 @@ export default class FileUIService extends FileUIServiceBase {
         let parentObj:any = {srfparentdename:srfParentDeName?srfParentDeName:null,srfparentkey:srfParentDeName?context[srfParentDeName.toLowerCase()]:null};
         Object.assign(data,parentObj);
         Object.assign(context,parentObj);
-        let url = "../ibizutilpms/ztallfilesdownload/"+context.srfparentkey ;
+        let url = "/ibizutilpms/ztallfilesdownload/"+context.srfparentkey ;
         this.DownloadFile(url);
     }
 }
