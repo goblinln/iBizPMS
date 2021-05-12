@@ -76,8 +76,9 @@
 <script lang="ts">
 import { Vue, Component, Prop, Provide, Emit, Watch, } from "vue-property-decorator";
 import { settingConfig } from "./config";
-import { Util, ViewTool, ThirdPartyService } from 'ibiz-core';
+import { Util, ViewTool, ThirdPartyService, removeSessionStorage } from 'ibiz-core';
 import i18n from '@/locale'
+import { Environment } from "@/environments/environment";
 @Component({
     components: {},
 })
@@ -207,15 +208,36 @@ export default class AppSetting extends Vue {
      */
     public doLogin(data?: any): void {
         // 清除user、token
-        if (Util.getCookie('ibzuaa-token')) {
-            localStorage.removeItem("user");
+        this.clearAppData()
+        if (Environment.loginUrl) {
+            window.location.href = `${Environment.loginUrl}?redirect=${window.location.href}`;
+        } else {
+            this.$router.push({ name: 'login' });
         }
-        if (localStorage.getItem("token")) {
-            localStorage.removeItem("token");
-        }
-        this.$router.push({ name: "login" });
     }
 
+     /**
+     * 清除数据
+     *
+     * @memberof register
+     */
+    private clearAppData() {
+        // 清除user、token
+        let leftTime = new Date();
+        leftTime.setTime(leftTime.getSeconds() - 1);
+        document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
+        document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();
+        // 清除应用级数据
+        localStorage.removeItem('localdata')
+        this.$store.commit('addAppData', {});
+        this.$store.dispatch('authresource/commitAuthData', {});
+        // 清除租户相关信息
+        removeSessionStorage("activeOrgData");
+        removeSessionStorage("tempOrgId");
+        removeSessionStorage("dcsystem");
+        removeSessionStorage("orgsData");
+    }
+    
     /**
      * 清除缓存
      *
