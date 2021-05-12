@@ -50,8 +50,11 @@ export class AppCapacitorService {
      * @param {*} view
      * @memberof AppCapacitorService
      */
-    public setView(view: any) {
+    public viewInit(view: any) {
+        console.log('视图初始化');
         this.view = view;
+        console.log(view.backFunction);
+        
     }
 
     /**
@@ -60,7 +63,9 @@ export class AppCapacitorService {
      * @memberof AppCapacitorService
      */
     private doBackEvent() {
+        alert("绑定返回")
         App.addListener('backButton', (_state: any) => {
+            console.log('触发返回');
             if (this.view && Util.isFunction(this.view.backFunction)) {
                 this.view.backFunction();
             }

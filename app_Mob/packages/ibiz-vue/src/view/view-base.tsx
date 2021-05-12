@@ -564,9 +564,10 @@ export class ViewBase extends Vue {
      * @memberof ViewBase
      */
     public initCapacitorService() {
-        if (!this.isChildView && Object.is(process.env.VUE_APP_CURRENTMODE, 'hybridapp')) {
+        console.log('调用initCapacitorService');
+        if (!this.isChildView) {
             this.backFunction = this.closeView;
-            AppCapacitorService.getInstance().setView(this);
+            AppCapacitorService.getInstance().viewInit(this);
         }
     }
 
@@ -578,6 +579,7 @@ export class ViewBase extends Vue {
     public viewInit() {
         let _this: any = this;
         this.initModel(this.viewInstance)
+        this.initCapacitorService();
         this.viewtag = Util.createUUID();
         this.$store.commit("viewaction/createdView", {
             viewtag: this.viewtag,
@@ -616,7 +618,6 @@ export class ViewBase extends Vue {
         if (_this.formDruipartState) {
             this.formDruipartStatEvent();
         }
-        this.initCapacitorService();
     }
 
     /**
