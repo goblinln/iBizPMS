@@ -82,6 +82,7 @@ export class AppCapacitorService {
         App.addListener('backButton', (_state: any) => {
             if (this.view && Util.isFunction(this.view.backFunction)) {
                 this.view.backFunction();
+                this.viewCache.pop();
             }
         });
     }
