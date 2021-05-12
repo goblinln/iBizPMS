@@ -306,15 +306,15 @@
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
       "caption" : "编号",
-      "codeName" : "usertplsn",
+      "codeName" : "id",
       "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "usertplsn",
+      "dataItemName" : "id",
       "excelCaption" : "编号",
-      "name" : "usertplsn",
+      "name" : "id",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
-        "name" : "USERTPLSN",
-        "codeName" : "Usertplsn"
+        "name" : "ID",
+        "codeName" : "Id"
       },
       "width" : 100,
       "widthUnit" : "PX",
@@ -431,18 +431,18 @@
         "codeName" : "Id"
       }
     }, {
-      "dataType" : 25,
-      "name" : "title",
-      "getPSAppDEField" : {
-        "name" : "TITLE",
-        "codeName" : "Title"
-      }
-    }, {
       "dataType" : 1,
       "name" : "usertplsn",
       "getPSAppDEField" : {
         "name" : "USERTPLSN",
         "codeName" : "Usertplsn"
+      }
+    }, {
+      "dataType" : 25,
+      "name" : "title",
+      "getPSAppDEField" : {
+        "name" : "TITLE",
+        "codeName" : "Title"
       }
     }, {
       "dataType" : 25,
