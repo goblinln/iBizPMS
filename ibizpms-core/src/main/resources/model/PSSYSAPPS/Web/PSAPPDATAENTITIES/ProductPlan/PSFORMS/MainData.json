@@ -3853,29 +3853,29 @@
               "id" : "SEARCHBAR"
             },
             "getPSSearchBarFilters" : [ {
-              "caption" : "Bug编号(=)",
+              "caption" : "BUG编号(=)",
               "dataType" : 1,
               "itemType" : "FILTER",
               "labelPos" : "NONE",
               "labelWidth" : 0,
-              "name" : "ideq",
+              "name" : "bugsneq",
               "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
+                "name" : "BUGSN",
+                "codeName" : "Bugsn"
               },
               "getPSDEFSearchMode" : {
-                "codeName" : "N_ID_EQ",
-                "name" : "N_ID_EQ",
+                "codeName" : "N_BUGSN_EQ",
+                "name" : "N_BUGSN_EQ",
                 "getPSDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
+                  "name" : "BUGSN",
+                  "codeName" : "Bugsn"
                 },
                 "valueOP" : "EQ",
                 "default" : false
               },
               "getPSEditor" : {
                 "editorType" : "NUMBER",
-                "name" : "ideq"
+                "name" : "bugsneq"
               },
               "allowEmpty" : true,
               "emptyCaption" : false,

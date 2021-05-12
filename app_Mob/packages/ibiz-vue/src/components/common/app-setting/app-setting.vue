@@ -207,7 +207,7 @@ export default class AppSetting extends Vue {
      */
     public doLogin(data?: any): void {
         // 清除user、token
-        if (localStorage.getItem("user")) {
+        if (Util.getCookie('ibzuaa-token')) {
             localStorage.removeItem("user");
         }
         if (localStorage.getItem("token")) {

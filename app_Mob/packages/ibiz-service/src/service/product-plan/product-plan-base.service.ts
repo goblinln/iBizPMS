@@ -22,7 +22,7 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
     protected APPDENAMEPLURAL = 'ProductPlans';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
-    protected quickSearchFields = ['title',];
+    protected quickSearchFields = ['title','productplansn',];
     protected selectContextParam = {
         product: 'product',
     };
@@ -45,7 +45,7 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
             const s = await ___ibz___.gs.getProductService();
             const data = await s.getLocal2(context, entity.product);
             if (data) {
-                entity.product = data.productsn;
+                entity.product = data.id;
             }
         }
         return entity!;
@@ -60,7 +60,7 @@ export class ProductPlanBaseService extends EntityBaseService<IProductPlan> {
             const s = await ___ibz___.gs.getProductService();
             const data = await s.getLocal2(_context, _context.product);
             if (data) {
-                entity.product = data.productsn;
+                entity.product = data.id;
             }
         }
         return new ProductPlan(entity);

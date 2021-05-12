@@ -45,7 +45,7 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
             const s = await ___ibz___.gs.getTaskService();
             const data = await s.getLocal2(context, entity.root);
             if (data) {
-                entity.root = data.tasksn;
+                entity.root = data.id;
             }
         }
         return entity!;
@@ -60,7 +60,7 @@ export class TaskTeamBaseService extends EntityBaseService<ITaskTeam> {
             const s = await ___ibz___.gs.getTaskService();
             const data = await s.getLocal2(_context, _context.task);
             if (data) {
-                entity.root = data.tasksn;
+                entity.root = data.id;
             }
         }
         return new TaskTeam(entity);

@@ -109,6 +109,10 @@ public class BugSearchContext extends QueryWrapperContext<Bug> {
 	public void setN_status_noteq(String n_status_noteq) {
         this.n_status_noteq = n_status_noteq;
     }
+	private Long n_bugsn_eq;//[BUG编号]
+	public void setN_bugsn_eq(Long n_bugsn_eq) {
+        this.n_bugsn_eq = n_bugsn_eq;
+    }
 	private String n_buildproject_eq;//[版本项目]
 	public void setN_buildproject_eq(String n_buildproject_eq) {
         this.n_buildproject_eq = n_buildproject_eq;

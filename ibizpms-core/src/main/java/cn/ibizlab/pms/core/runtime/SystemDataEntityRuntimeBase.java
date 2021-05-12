@@ -116,6 +116,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                 authority.setDeptdr(psDEUserRole.getSecDR());
                 authority.setEnabledeptbc(psDEUserRole.isEnableSecBC() ? 1 : 0);
                 authority.setDeptbc(psDEUserRole.getSecBC());
+                authority.setBscope(psDEUserRole.getCustomCond());
                 //如果有自定义查询 以结果集有限 ，替换自定义条件
                 IPSDEDataSet psdeDataSet = psDEUserRole.getPSDEDataSet();
                 if (psdeDataSet != null) {

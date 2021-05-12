@@ -46,7 +46,7 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
             const data = await s.getLocal2(context, entity.root);
             if (data) {
                 entity.projectname = data.name;
-                entity.root = data.projectsn;
+                entity.root = data.id;
                 entity.project = data;
             }
         }
@@ -63,7 +63,7 @@ export class ProjectTeamBaseService extends EntityBaseService<IProjectTeam> {
             const data = await s.getLocal2(_context, _context.project);
             if (data) {
                 entity.projectname = data.name;
-                entity.root = data.projectsn;
+                entity.root = data.id;
                 entity.project = data;
             }
         }

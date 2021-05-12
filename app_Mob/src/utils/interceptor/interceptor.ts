@@ -3,7 +3,7 @@ import axios from 'axios';
 import Router from 'vue-router';
 import i18n from '@/locale';
 import ignoreProxyMap from './ignore-proxy';
-import { Http, getSessionStorage } from 'ibiz-core';
+import { Http, getSessionStorage, Util } from 'ibiz-core';
 import { Environment } from '@/environments/environment';
 /**
  * 拦截器
@@ -84,9 +84,8 @@ export class Interceptors {
             if (appdata && appdata.context) {
                 config.headers['srforgsectorid'] = appdata.context.srforgsectorid;
             }
-            if (window.localStorage.getItem('token')) {
-                const token = window.localStorage.getItem('token');
-                config.headers.Authorization = `Bearer ${token}`;
+            if (Util.getCookie('ibzuaa-token')) {
+                config.headers['Authorization'] = `Bearer ${Util.getCookie('ibzuaa-token')}`;
             }
             if (Environment.SaaSMode) {
                 let activeOrgData = getSessionStorage('activeOrgData');
@@ -138,6 +137,7 @@ export class Interceptors {
      * @memberof Interceptors
      */
     private doNoLogin(data: any = {}): void {
+        this.clearAppData()
         if (data.loginurl && !Object.is(data.loginurl, '') && data.originurl && !Object.is(data.originurl, '')) {
             let _url = encodeURIComponent(encodeURIComponent(window.location.href));
             let loginurl: string = data.loginurl;
@@ -157,6 +157,24 @@ export class Interceptors {
             }
             this.router.push({ name: 'login', query: { redirect: this.router.currentRoute.fullPath } });
         }
+    }
+
+    /**
+     * 清除应用数据
+     *
+     * @private
+     * @memberof Interceptors
+     */
+    private clearAppData() {
+        // 清除user、token
+        let leftTime = new Date();
+        leftTime.setTime(leftTime.getSeconds() - 1);
+        document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
+        document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();
+        // 清除应用级数据
+        localStorage.removeItem('localdata')
+        this.store.commit('addAppData', {});
+        this.store.dispatch('authresource/commitAuthData', {});
     }
 
     /**

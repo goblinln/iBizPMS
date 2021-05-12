@@ -49,7 +49,7 @@ import { Vue, Component } from "vue-property-decorator";
 
 import { Environment } from '@/environments/environment';
 
-import { ThirdPartyService } from "ibiz-core";
+import { ThirdPartyService, Util, removeSessionStorage } from "ibiz-core";
 @Component({
     components: {},
     i18n: {
@@ -172,6 +172,7 @@ export default class Login extends Vue {
         if(user){
             localStorage.removeItem("user");
         }
+        this.clearAppData();
         if(tag === 'login'){
             if (Object.is(this.username, '')) {
                 this.$Notice.error(`${this.$t('usernametipinfo')}`);
@@ -191,6 +192,14 @@ export default class Login extends Vue {
             if (response && response.status === 200) {
                 this.isLoadding = false;
                 const data = response.data;
+                if (data && data.token) {
+                    Util.setCookie('ibzuaa-token', data.token, 7);
+                }
+                if (data && data.user) {
+                    Util.setCookie('ibzuaa-user', JSON.stringify(data.user), 7);
+                }
+                // 设置cookie,保存账号密码7天
+                Util.setCookie('loginname', this.username, 7);
                 localStorage.setItem("token", data.token);
                 localStorage.setItem("user", JSON.stringify(data.user));
                 const url: any = this.$route.query.redirect
@@ -202,6 +211,28 @@ export default class Login extends Vue {
             this.isLoadding = false;
             this.$Notice.error(error?error.data.message:`${this.$t('badlogin')}`);
         });
+    }
+
+     /**
+     * 清除数据
+     *
+     * @memberof register
+     */
+    private clearAppData() {
+        // 清除user、token
+        let leftTime = new Date();
+        leftTime.setTime(leftTime.getSeconds() - 1);
+        document.cookie = "ibzuaa-token=;expires=" + leftTime.toUTCString();
+        document.cookie = "ibzuaa-user=;expires=" + leftTime.toUTCString();
+        // 清除应用级数据
+        localStorage.removeItem('localdata')
+        this.$store.commit('addAppData', {});
+        this.$store.dispatch('authresource/commitAuthData', {});
+        // 清除租户相关信息
+        removeSessionStorage("activeOrgData");
+        removeSessionStorage("tempOrgId");
+        removeSessionStorage("dcsystem");
+        removeSessionStorage("orgsData");
     }
 
      /**

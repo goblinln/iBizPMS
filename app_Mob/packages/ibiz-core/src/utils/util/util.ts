@@ -644,9 +644,9 @@ export class Util {
      * @memberof Util
      */
     public static exitApp() {
-        if(ThirdPartyService.getInstance().platform){
+        if (ThirdPartyService.getInstance().platform) {
             ThirdPartyService.getInstance().thirdPartyEvent('close');
-        }else{
+        } else {
             AppCapacitorService.getInstance().exitApp();
         }
     }
@@ -757,3 +757,15 @@ export const getCookie = function (name: string): string | null {
     }
     return null;
 };
+/**
+ * 删除sessionStorage数据
+ *
+ */
+export const removeSessionStorage: Function = (key: string) => {
+    if (!key) {
+        return;
+    }
+    if (sessionStorage.getItem(key)) {
+        sessionStorage.removeItem(key);
+    }
+}
