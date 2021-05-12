@@ -18951,13 +18951,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "ConfirmStoryChange",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "Start",
       "getPSDEAction" : {
         "modelref" : true,
@@ -19258,13 +19251,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/UpdateRelatedPlanStatus.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "ConfirmStoryChange",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json"
       },
       "allowMode" : true
     }, {
@@ -19658,13 +19644,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "ConfirmStoryChange",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "taskForward",
       "getPSDEAction" : {
         "modelref" : true,
@@ -19986,13 +19965,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Remove.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "ConfirmStoryChange",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json"
       },
       "allowMode" : true
     }, {
@@ -20474,13 +20446,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "ConfirmStoryChange",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "EditEstimate",
       "getPSDEAction" : {
         "modelref" : true,
@@ -20861,13 +20826,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "ConfirmStoryChange",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "CreateCycleTasks",
       "getPSDEAction" : {
         "modelref" : true,
@@ -21178,13 +21136,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/LinkPlan.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "ConfirmStoryChange",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json"
       },
       "allowMode" : true
     }, {
@@ -21509,13 +21460,6 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordEstimate.json"
-      },
-      "allowMode" : true
-    }, {
-      "name" : "ConfirmStoryChange",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/ConfirmStoryChange.json"
       },
       "allowMode" : true
     }, {

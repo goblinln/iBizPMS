@@ -424,6 +424,11 @@
     "length" : 8,
     "logicName" : "ID",
     "name" : "ID",
+    "getPSSysSequence" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProReleaseSeq.json"
+    },
+    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,

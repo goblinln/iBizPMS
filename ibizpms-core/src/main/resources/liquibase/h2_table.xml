@@ -562,7 +562,7 @@
 
 
     <!--输出实体[ZT_CRON]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_cron-1-16">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_cron-2-16">
         <createTable tableName="zt_cron">
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_CRON_ID"/>
@@ -906,7 +906,7 @@
 
 
     <!--输出实体[ZT_ENTRY]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_entry-1-26">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_entry-2-26">
         <createTable tableName="zt_entry">
                 <column name="DELETED" remarks="" type="VARCHAR(1)">
                 </column>
@@ -942,7 +942,7 @@
 
 
     <!--输出实体[ZT_EXTENSION]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_extension-1-27">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_extension-2-27">
         <createTable tableName="zt_extension">
                 <column name="DIRS" remarks="" type="TEXT(16777215)">
                 </column>
@@ -2016,7 +2016,7 @@
 
 
     <!--输出实体[ZT_IM_CHATUSER]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_im_chatuser-1-69">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_im_chatuser-2-69">
         <createTable tableName="zt_im_chatuser">
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_IM_CHATUSER_ID"/>
@@ -2616,7 +2616,7 @@
 
 
     <!--输出实体[ZT_RELEASE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_release-24-97">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_release-25-97">
         <createTable tableName="zt_release">
                 <column name="STORIES" remarks="" type="TEXT(65535)">
                 </column>

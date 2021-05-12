@@ -1578,6 +1578,9 @@
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProCompanySeq.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProIMCHATUSERSeq.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProModuleSeq.json"
   }, {
     "modelref" : true,
@@ -1623,6 +1626,9 @@
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProProjectSeq.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProEXTENSIONSeq.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProDocLibSeq.json"
   }, {
     "modelref" : true,
@@ -1645,6 +1651,9 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProUserSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProEntrySeq.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProDocSeq.json"
