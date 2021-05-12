@@ -3458,6 +3458,7 @@
     "dEFType" : 1,
     "dataType" : "BIGINT",
     "defaultValue" : "0",
+    "dupCheckMode" : "ALL",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "Bug编号",
