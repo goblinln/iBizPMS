@@ -931,6 +931,8 @@ export class ViewBase extends Vue {
             let exitTimer: any = sessionStorage.getItem("exitTimer");
             // 如果时间差小于两秒 直接关闭
             if (new Date().getTime() - exitTimer < 2000) {
+                console.log("开始退出");
+                
                 Util.exitApp();
             }
         }

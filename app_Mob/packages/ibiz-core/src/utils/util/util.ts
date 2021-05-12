@@ -611,10 +611,11 @@ export class Util {
      * @memberof Util
      */
     public static exitApp() {
-        if (ThirdPartyService.getInstance().platform) {
-            ThirdPartyService.getInstance().thirdPartyEvent('close');
-        } else {
+        if (!ThirdPartyService.getInstance().platform) {
+            console.log("执行退出");
             AppCapacitorService.getInstance().exitApp();
+        } else {
+            ThirdPartyService.getInstance().thirdPartyEvent('close');
         }
     }
 }
