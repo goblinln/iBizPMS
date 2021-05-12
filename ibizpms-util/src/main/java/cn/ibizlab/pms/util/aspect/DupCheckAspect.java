@@ -32,6 +32,15 @@ public class DupCheckAspect {
     private final ExpressionParser parser = new SpelExpressionParser();
 
      /**
+     * 实体[Action]
+     *
+     * @param point
+     */
+    @AfterReturning(value = "(execution(* cn.ibizlab.pms.core.*.service.*Action*.create*(..))||execution(* cn.ibizlab.pms.core.*.service.*Action*.update*(..))||execution(* cn.ibizlab.pms.core.*.service.*Action*.save*(..))  ) && !execution(* cn.ibizlab.pms.core.es.service.*.create*(..)) && !execution(* cn.ibizlab.pms.core.es.service.*.update*(..)) && !execution(* cn.ibizlab.pms.core.es.service.*.save*(..)) ")
+    public void checkAction(JoinPoint point) {
+        check(point, "searchDefault");
+    }
+     /**
      * 实体[Bug]
      *
      * @param point

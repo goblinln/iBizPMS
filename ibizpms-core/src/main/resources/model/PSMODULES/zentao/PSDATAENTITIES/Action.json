@@ -957,6 +957,7 @@
     "dEFType" : 1,
     "dataType" : "BIGINT",
     "defaultValue" : "0",
+    "dupCheckMode" : "ALL",
     "importOrder" : 1000,
     "logicName" : "id",
     "name" : "ID",
@@ -1645,10 +1646,6 @@
     "length" : 20,
     "logicName" : "系统日志编号",
     "name" : "ACTIONSN",
-    "getPSSysSequence" : {
-      "modelref" : true,
-      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProActionSeq.json"
-    },
     "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"

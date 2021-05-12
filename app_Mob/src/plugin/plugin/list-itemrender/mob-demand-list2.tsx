@@ -3,6 +3,7 @@ import { Component, Watch } from 'vue-property-decorator';
 import { VueLifeCycleProcessing,AppControlBase } from 'ibiz-vue';
 import { AppMobMDCtrlBase } from 'ibiz-vue';
 import { CodeListService } from 'ibiz-service';
+import { ImgurlBase64 } from "ibiz-core";
 import '../plugin-style.less';
 
 /**
@@ -16,6 +17,7 @@ import '../plugin-style.less';
 @Component({})
 @VueLifeCycleProcessing()
 export class MobDemandList2 extends AppMobMDCtrlBase {
+
 
     /**
      * 图片地址
@@ -54,17 +56,18 @@ export class MobDemandList2 extends AppMobMDCtrlBase {
     public codeListService: CodeListService = new CodeListService();
 
     /**
-     * 获取用户头像
+     * 设置用户头像
      */
-    public getUserImg(value: string) {
+    public getUserImg(value: string, data: any) {
         let icon = this.getCodeListText('UserRealName', value).icon;
         if (icon) {
             icon = JSON.parse(icon);
         }
         if (icon && icon[0] && icon[0].id) {
-            return `${this.imageUrl}/${icon[0].id}`;
+            ImgurlBase64.getInstance().getImgURLOfBase64(`${this.imageUrl}/${icon[0].id}`).then((res:any)=>{
+                this.$set(data,'assignedto_img',res)
+            });
         }
-        return '';
     }
 
     /**
@@ -108,7 +111,8 @@ export class MobDemandList2 extends AppMobMDCtrlBase {
         if (item.assignedto_text) {
             item.assignedto_text = item.assignedto_text.substring(0, 1);
         }
-        item.assignedto_img = this.getUserImg(item.assignedto);
+        // 设置用户头像
+        this.getUserImg(item.assignedto,item);
         const pri_className = {[item.pri_className]:true,'pri':true}
         return <ion-item>
             <div class="app-story-list-item">
@@ -158,6 +162,7 @@ export class MobDemandList2 extends AppMobMDCtrlBase {
         await super.ctrlModelInit(args);
         await this.initCodeList();
     }
+
 
 }
 

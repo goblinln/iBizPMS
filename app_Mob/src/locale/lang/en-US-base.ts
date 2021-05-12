@@ -95,7 +95,27 @@ export default {
             }
         },
         formpage:{
-            savesuccess:'save success'
+            error: "Error",
+            desc1: "Operation failed, failed to find current form item",
+            desc2: "Can't continue",
+            notconfig: {
+                loadaction: "View form loadAction parameter is not configured",
+                loaddraftaction: "View form loaddraftAction parameter is not configured",
+                actionname: "View form actionName parameter is not configured",
+                removeaction: "View form removeAction parameter is not configured",
+            },
+            saveerror: "Error saving data",
+            savecontent: "The data is inconsistent. The background data may have been modified. Do you want to reload the data?",
+            valuecheckex: "Value rule check exception",
+            savesuccess: "Saved successfully!",
+            deletesuccess: "Successfully deleted!",  
+            workflow: {
+                starterror: "Workflow started successfully",
+                startsuccess: "Workflow failed to start",
+                submiterror: "Workflow submission failed",
+                submitsuccess: "Workflow submitted successfully",
+            },
+            updateerror: "Form item update failed", 
         },
         // 非实体视图
         views: {
