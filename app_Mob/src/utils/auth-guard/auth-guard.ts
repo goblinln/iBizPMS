@@ -1,7 +1,7 @@
 import { Environment } from '@/environments/environment';
 import i18n from '@/locale';
 import { DynamicInstanceConfig, GlobalHelp } from '@ibiz/dynamic-model-api';
-import { AppServiceBase, Http,setSessionStorage,getSessionStorage, AppModelService } from 'ibiz-core';
+import { AppServiceBase, Http,setSessionStorage,getSessionStorage, AppModelService, Util } from 'ibiz-core';
 import { AppCenterService } from 'ibiz-vue';
 import qs from 'qs';
 
@@ -136,8 +136,8 @@ export class AuthGuard {
                     let { data }: { data: any } = response;
                     if (data) {
                         // token认证把用户信息放入应用级数据
-                        if (localStorage.getItem('user')) {
-                            let user: any = JSON.parse(localStorage.getItem('user') as string);
+                        if (Util.getCookie('ibzuaa-user')) {
+                            let user: any = JSON.parse(Util.getCookie('ibzuaa-user') as string);
                             let localAppData: any = {};
                             if (user.sessionParams) {
                                 localAppData = { context: user.sessionParams };
