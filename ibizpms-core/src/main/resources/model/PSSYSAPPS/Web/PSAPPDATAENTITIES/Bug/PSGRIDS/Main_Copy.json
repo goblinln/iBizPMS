@@ -185,16 +185,16 @@
   "getPSDEGridColumns" : [ {
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
-    "caption" : "编号",
-    "codeName" : "bugsn",
+    "caption" : "Bug编号",
+    "codeName" : "id",
     "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "bugsn",
-    "excelCaption" : "编号",
-    "name" : "bugsn",
+    "dataItemName" : "id",
+    "excelCaption" : "Bug编号",
+    "name" : "id",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
-      "name" : "BUGSN",
-      "codeName" : "Bugsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "width" : 100,
     "widthUnit" : "PX",

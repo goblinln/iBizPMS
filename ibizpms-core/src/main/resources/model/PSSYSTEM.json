@@ -1554,6 +1554,9 @@
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProTestRunSeq.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProSeq.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProDeptSeq.json"
   }, {
     "modelref" : true,
@@ -1608,6 +1611,9 @@
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProProductSeq.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProIM_MESSAGESeq.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProBranchSeq.json"
   }, {
     "modelref" : true,
@@ -1653,6 +1659,9 @@
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProGroupSeq.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProLOGINSeq.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProCaseSeq.json"
   }, {
     "modelref" : true,
@@ -1666,6 +1675,9 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProConfigSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProRELATIONSeq.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProUserQuerySeq.json"

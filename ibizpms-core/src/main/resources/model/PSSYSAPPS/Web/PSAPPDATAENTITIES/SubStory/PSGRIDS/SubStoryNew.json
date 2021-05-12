@@ -402,6 +402,21 @@
     }
   } ],
   "getPSDEGridEditItems" : [ {
+    "caption" : "编号",
+    "codeName" : "id",
+    "enableCond" : 0,
+    "ignoreInput" : 0,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "getPSEditor" : {
+      "editorType" : "TEXTBOX",
+      "name" : "id"
+    },
+    "allowEmpty" : true
+  }, {
     "caption" : "所属产品",
     "codeName" : "product",
     "createDV" : "product",

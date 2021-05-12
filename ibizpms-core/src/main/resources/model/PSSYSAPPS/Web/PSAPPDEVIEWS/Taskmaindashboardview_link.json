@@ -354,11 +354,11 @@
                   "codeName" : "Story"
                 }
               }, {
-                "id" : "tasksn",
+                "id" : "id",
                 "dataType" : 1,
                 "getPSAppDEField" : {
-                  "name" : "TASKSN",
-                  "codeName" : "Tasksn"
+                  "name" : "ID",
+                  "codeName" : "Id"
                 }
               }, {
                 "id" : "name",
@@ -381,14 +381,6 @@
                 "getPSAppDEField" : {
                   "name" : "DESC",
                   "codeName" : "Desc"
-                }
-              }, {
-                "id" : "id",
-                "hidden" : true,
-                "dataType" : 1,
-                "getPSAppDEField" : {
-                  "name" : "ID",
-                  "codeName" : "Id"
                 }
               } ],
               "getPSDEFormPages" : [ {
@@ -463,24 +455,24 @@
                     "inputTipClosable" : false,
                     "showCaption" : true
                   }, {
-                    "codeName" : "tasksn",
+                    "codeName" : "id",
                     "contentWidth" : 70.0,
                     "dataType" : 1,
                     "detailStyle" : "DEFAULT",
                     "detailType" : "FORMITEM",
-                    "enableCond" : 3,
+                    "enableCond" : 0,
                     "ignoreInput" : 0,
                     "labelPos" : "LEFT",
                     "labelWidth" : 2,
-                    "name" : "tasksn",
+                    "name" : "id",
                     "noPrivDisplayMode" : 1,
                     "getPSAppDEField" : {
-                      "name" : "TASKSN",
-                      "codeName" : "Tasksn"
+                      "name" : "ID",
+                      "codeName" : "Id"
                     },
                     "getPSEditor" : {
                       "editorType" : "SPAN",
-                      "name" : "tasksn",
+                      "name" : "id",
                       "editable" : false,
                       "enableLinkView" : false
                     },
@@ -2573,15 +2565,15 @@
                             "align" : "LEFT",
                             "cLConvertMode" : "NONE",
                             "caption" : "编号",
-                            "codeName" : "tasksn",
+                            "codeName" : "id",
                             "columnType" : "DEFGRIDCOLUMN",
-                            "dataItemName" : "tasksn",
+                            "dataItemName" : "id",
                             "excelCaption" : "编号",
-                            "name" : "tasksn",
+                            "name" : "id",
                             "noPrivDisplayMode" : 1,
                             "getPSAppDEField" : {
-                              "name" : "TASKSN",
-                              "codeName" : "Tasksn"
+                              "name" : "ID",
+                              "codeName" : "Id"
                             },
                             "width" : 100,
                             "widthUnit" : "PX",
@@ -8874,16 +8866,16 @@
                       "getPSDEGridColumns" : [ {
                         "align" : "LEFT",
                         "cLConvertMode" : "NONE",
-                        "caption" : "编号",
-                        "codeName" : "bugsn",
+                        "caption" : "Bug编号",
+                        "codeName" : "id",
                         "columnType" : "DEFGRIDCOLUMN",
-                        "dataItemName" : "bugsn",
-                        "excelCaption" : "编号",
-                        "name" : "bugsn",
+                        "dataItemName" : "id",
+                        "excelCaption" : "Bug编号",
+                        "name" : "id",
                         "noPrivDisplayMode" : 1,
                         "getPSAppDEField" : {
-                          "name" : "BUGSN",
-                          "codeName" : "Bugsn"
+                          "name" : "ID",
+                          "codeName" : "Id"
                         },
                         "width" : 100,
                         "widthUnit" : "PX",

@@ -214,15 +214,15 @@
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
       "caption" : "编号",
-      "codeName" : "productplansn",
+      "codeName" : "id",
       "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "productplansn",
+      "dataItemName" : "id",
       "excelCaption" : "编号",
-      "name" : "productplansn",
+      "name" : "id",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
-        "name" : "PRODUCTPLANSN",
-        "codeName" : "Productplansn"
+        "name" : "ID",
+        "codeName" : "Id"
       },
       "width" : 100,
       "widthUnit" : "PX",

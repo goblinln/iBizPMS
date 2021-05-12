@@ -446,6 +446,14 @@
         "codeName" : "Bugsn"
       }
     }, {
+      "caption" : "Bug编号",
+      "format" : "%1$s",
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
       "caption" : "P",
       "format" : "%1$s",
       "name" : "pri",
@@ -572,14 +580,6 @@
       "getPSAppDEField" : {
         "name" : "PROJECTNAME",
         "codeName" : "ProjectName"
-      }
-    }, {
-      "caption" : "Bug编号",
-      "format" : "%1$s",
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
       }
     } ]
   } ],

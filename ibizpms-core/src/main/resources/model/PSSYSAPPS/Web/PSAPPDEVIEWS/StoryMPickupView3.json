@@ -191,15 +191,15 @@
           "align" : "LEFT",
           "cLConvertMode" : "NONE",
           "caption" : "编号",
-          "codeName" : "storysn",
+          "codeName" : "id",
           "columnType" : "DEFGRIDCOLUMN",
-          "dataItemName" : "storysn",
+          "dataItemName" : "id",
           "excelCaption" : "编号",
-          "name" : "storysn",
+          "name" : "id",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
-            "name" : "STORYSN",
-            "codeName" : "Storysn"
+            "name" : "ID",
+            "codeName" : "Id"
           },
           "width" : 100,
           "widthUnit" : "PX",
@@ -479,17 +479,17 @@
           }
         }, {
           "dataType" : 1,
-          "name" : "product",
-          "getPSAppDEField" : {
-            "name" : "PRODUCT",
-            "codeName" : "Product"
-          }
-        }, {
-          "dataType" : 1,
           "name" : "id",
           "getPSAppDEField" : {
             "name" : "ID",
             "codeName" : "Id"
+          }
+        }, {
+          "dataType" : 1,
+          "name" : "product",
+          "getPSAppDEField" : {
+            "name" : "PRODUCT",
+            "codeName" : "Product"
           }
         }, {
           "dataType" : 25,

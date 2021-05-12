@@ -262,11 +262,11 @@
               "hidden" : true,
               "dataType" : 25
             }, {
-              "id" : "bugsn",
+              "id" : "id",
               "dataType" : 1,
               "getPSAppDEField" : {
-                "name" : "BUGSN",
-                "codeName" : "Bugsn"
+                "name" : "ID",
+                "codeName" : "Id"
               }
             }, {
               "id" : "title",
@@ -290,14 +290,6 @@
                 "name" : "COLOR",
                 "codeName" : "Color"
               }
-            }, {
-              "id" : "id",
-              "hidden" : true,
-              "dataType" : 1,
-              "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
-              }
             } ],
             "getPSDEFormPages" : [ {
               "caption" : "基本信息",
@@ -313,26 +305,26 @@
                 "detailType" : "GROUPPANEL",
                 "name" : "group1",
                 "getPSDEFormDetails" : [ {
-                  "codeName" : "bugsn",
+                  "codeName" : "id",
                   "contentHeight" : 32.0,
                   "contentWidth" : 70.0,
                   "dataType" : 1,
                   "detailStyle" : "DEFAULT",
                   "detailType" : "FORMITEM",
-                  "enableCond" : 3,
+                  "enableCond" : 0,
                   "height" : 32.0,
                   "ignoreInput" : 0,
                   "labelPos" : "LEFT",
                   "labelWidth" : 2,
-                  "name" : "bugsn",
+                  "name" : "id",
                   "noPrivDisplayMode" : 1,
                   "getPSAppDEField" : {
-                    "name" : "BUGSN",
-                    "codeName" : "Bugsn"
+                    "name" : "ID",
+                    "codeName" : "Id"
                   },
                   "getPSEditor" : {
                     "editorType" : "SPAN",
-                    "name" : "bugsn",
+                    "name" : "id",
                     "editable" : false,
                     "enableLinkView" : false
                   },

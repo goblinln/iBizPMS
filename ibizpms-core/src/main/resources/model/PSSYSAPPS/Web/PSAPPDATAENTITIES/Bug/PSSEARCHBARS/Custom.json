@@ -8,29 +8,29 @@
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
   },
   "getPSSearchBarFilters" : [ {
-    "caption" : "BUG编号(=)",
+    "caption" : "Bug编号(=)",
     "dataType" : 1,
     "itemType" : "FILTER",
     "labelPos" : "NONE",
     "labelWidth" : 0,
-    "name" : "bugsneq",
+    "name" : "ideq",
     "getPSAppDEField" : {
-      "name" : "BUGSN",
-      "codeName" : "Bugsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "getPSDEFSearchMode" : {
-      "codeName" : "N_BUGSN_EQ",
-      "name" : "N_BUGSN_EQ",
+      "codeName" : "N_ID_EQ",
+      "name" : "N_ID_EQ",
       "getPSDEField" : {
-        "name" : "BUGSN",
-        "codeName" : "Bugsn"
+        "name" : "ID",
+        "codeName" : "Id"
       },
       "valueOP" : "EQ",
       "default" : false
     },
     "getPSEditor" : {
       "editorType" : "NUMBER",
-      "name" : "bugsneq"
+      "name" : "ideq"
     },
     "allowEmpty" : true,
     "emptyCaption" : false,
