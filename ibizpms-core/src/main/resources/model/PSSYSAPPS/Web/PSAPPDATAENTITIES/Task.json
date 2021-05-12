@@ -771,6 +771,14 @@
         "codeName" : "Tasksn"
       }
     }, {
+      "caption" : "编号",
+      "format" : "%1$s",
+      "name" : "id",
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
       "caption" : "P",
       "format" : "%1$s",
       "name" : "pri",
@@ -901,14 +909,6 @@
       "getPSAppDEField" : {
         "name" : "PROJECTNAME",
         "codeName" : "ProjectName"
-      }
-    }, {
-      "caption" : "编号",
-      "format" : "%1$s",
-      "name" : "id",
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
       }
     } ]
   } ],
@@ -4663,35 +4663,6 @@
     "enableConfirm" : true,
     "showBusyIndicator" : false,
     "id" : "MWorkHours@Task"
-  }, {
-    "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
-    "caption" : "更多",
-    "codeName" : "ChildMore",
-    "dataAccessAction" : "SRFUR__TASK_SUBTASKS_BUT",
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskChildMoreGridView.json",
-      "viewType" : "DEGRIDVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "fullCodeName" : "Task_ChildMore",
-    "name" : "子任务-更多",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-    },
-    "getPSNavigateParams" : [ {
-      "key" : "n_parent_eq",
-      "name" : "n_parent_eq",
-      "value" : "id",
-      "rawValue" : false
-    } ],
-    "timeout" : 60000,
-    "uIActionMode" : "FRONT",
-    "uIActionTag" : "ChildMore",
-    "uIActionType" : "DEUIACTION",
-    "id" : "ChildMore@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
     "caption" : "提缺陷",

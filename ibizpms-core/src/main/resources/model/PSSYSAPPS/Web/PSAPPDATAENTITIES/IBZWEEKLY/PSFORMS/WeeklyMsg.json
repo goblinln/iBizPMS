@@ -1539,15 +1539,15 @@
               "align" : "LEFT",
               "cLConvertMode" : "NONE",
               "caption" : "编号",
-              "codeName" : "tasksn",
+              "codeName" : "id",
               "columnType" : "DEFGRIDCOLUMN",
-              "dataItemName" : "tasksn",
+              "dataItemName" : "id",
               "excelCaption" : "编号",
-              "name" : "tasksn",
+              "name" : "id",
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
-                "name" : "TASKSN",
-                "codeName" : "Tasksn"
+                "name" : "ID",
+                "codeName" : "Id"
               },
               "width" : 100,
               "widthUnit" : "PX",
@@ -2411,15 +2411,15 @@
               "align" : "LEFT",
               "cLConvertMode" : "NONE",
               "caption" : "编号",
-              "codeName" : "tasksn",
+              "codeName" : "id",
               "columnType" : "DEFGRIDCOLUMN",
-              "dataItemName" : "tasksn",
+              "dataItemName" : "id",
               "excelCaption" : "编号",
-              "name" : "tasksn",
+              "name" : "id",
               "noPrivDisplayMode" : 1,
               "getPSAppDEField" : {
-                "name" : "TASKSN",
-                "codeName" : "Tasksn"
+                "name" : "ID",
+                "codeName" : "Id"
               },
               "width" : 100,
               "widthUnit" : "PX",
@@ -2516,23 +2516,6 @@
               },
               "valueFormat" : "YYYY-MM-DD",
               "width" : 120,
-              "widthUnit" : "PX",
-              "enableSort" : true
-            }, {
-              "align" : "LEFT",
-              "cLConvertMode" : "NONE",
-              "caption" : "编号",
-              "codeName" : "id",
-              "columnType" : "DEFGRIDCOLUMN",
-              "dataItemName" : "id",
-              "excelCaption" : "编号",
-              "name" : "id",
-              "noPrivDisplayMode" : 1,
-              "getPSAppDEField" : {
-                "name" : "ID",
-                "codeName" : "Id"
-              },
-              "width" : 100,
               "widthUnit" : "PX",
               "enableSort" : true
             } ],

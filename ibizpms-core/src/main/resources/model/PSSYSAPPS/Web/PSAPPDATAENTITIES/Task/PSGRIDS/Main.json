@@ -13,25 +13,14 @@
   "logicName" : "主表格",
   "minorSortDir" : "DESC",
   "getMinorSortPSAppDEField" : {
-    "name" : "TASKSN",
-    "codeName" : "Tasksn"
+    "name" : "ID",
+    "codeName" : "Id"
   },
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
   },
   "getPSAppViewLogics" : [ {
-    "eventArg" : "deuiaction1",
-    "eventNames" : "CLICK",
-    "logicTrigger" : "CTRLEVENT",
-    "logicType" : "APPVIEWUIACTION",
-    "name" : "grid_quicktoolbar_deuiaction1_click",
-    "getPSAppViewUIAction" : {
-      "modelref" : true,
-      "id" : "grid_quicktoolbar_deuiaction1"
-    },
-    "getPSViewCtrlName" : "grid_quicktoolbar"
-  }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "APPVIEWUIACTION",
     "name" : "grid_uagridcolumn1_uaeba961_click",
@@ -137,18 +126,6 @@
     }
   } ],
   "getPSAppViewUIActions" : [ {
-    "name" : "grid_quicktoolbar_deuiaction1",
-    "getPSUIAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-      },
-      "modelref" : true,
-      "id" : "ChildMore@Task"
-    },
-    "uIActionTarget" : "SINGLEKEY",
-    "xDataControlName" : "grid"
-  }, {
     "name" : "子任务",
     "getPSUIAction" : {
       "getPSAppDataEntity" : {
@@ -301,65 +278,6 @@
     "uIActionTarget" : "SINGLEKEY",
     "xDataControlName" : "grid"
   } ],
-  "getPSControls" : [ {
-    "codeName" : "MainGridViewgrid_quicktoolbar",
-    "controlType" : "TOOLBAR",
-    "hookEventNames" : [ "CLICK" ],
-    "logicName" : "任务查询-子任务更多",
-    "name" : "grid_quicktoolbar",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-    },
-    "getPSControlParam" : {
-      "id" : "grid_quicktoolbar"
-    },
-    "getPSDEToolbarItems" : [ {
-      "caption" : "更多",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction1",
-      "noPrivDisplayMode" : 1,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "grid_quicktoolbar_deuiaction1"
-      },
-      "getPSUIAction" : {
-        "actionTarget" : "SINGLEKEY",
-        "noPrivDisplayMode" : 1,
-        "caption" : "更多",
-        "codeName" : "ChildMore",
-        "dataAccessAction" : "SRFUR__TASK_SUBTASKS_BUT",
-        "getFrontPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskChildMoreGridView.json",
-          "viewType" : "DEGRIDVIEW"
-        },
-        "frontProcessType" : "WIZARD",
-        "fullCodeName" : "Task_ChildMore",
-        "name" : "子任务-更多",
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
-        },
-        "getPSNavigateParams" : [ {
-          "key" : "n_parent_eq",
-          "name" : "n_parent_eq",
-          "value" : "id",
-          "rawValue" : false
-        } ],
-        "timeout" : 60000,
-        "uIActionMode" : "FRONT",
-        "uIActionTag" : "ChildMore",
-        "uIActionType" : "DEUIACTION",
-        "id" : "ChildMore@Task"
-      },
-      "tooltip" : "更多",
-      "showCaption" : true,
-      "showIcon" : true
-    } ],
-    "modelid" : "2b12b40f8455776ab5ef4c54ef85d4c6"
-  } ],
   "getPSDEDataExport" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task/PSAPPDEDATAEXPS/DataExport.json"
@@ -368,15 +286,15 @@
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
     "caption" : "编号",
-    "codeName" : "tasksn",
+    "codeName" : "id",
     "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "tasksn",
+    "dataItemName" : "id",
     "excelCaption" : "编号",
-    "name" : "tasksn",
+    "name" : "id",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
-      "name" : "TASKSN",
-      "codeName" : "Tasksn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "width" : 100,
     "widthUnit" : "PX",
@@ -1383,10 +1301,6 @@
     },
     "allowEmpty" : true
   } ],
-  "getPSSysPFPlugin" : {
-    "pluginType" : "GRID_RENDER",
-    "pluginCode" : "TreeGrid"
-  },
   "pagingSize" : 20,
   "getRemovePSControlAction" : {
     "actionName" : "Remove",

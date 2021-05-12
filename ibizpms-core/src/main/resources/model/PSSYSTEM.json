@@ -1566,6 +1566,9 @@
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProNotifySeq.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProREPOSeq.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProBuildSeq.json"
   }, {
     "modelref" : true,
@@ -1618,6 +1621,9 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProCRONSeq.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProLANGSeq.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProReleaseSeq.json"
