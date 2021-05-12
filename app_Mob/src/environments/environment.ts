@@ -68,6 +68,9 @@ export const Environment = {
     bDynamic: false,
     // 租户id
     srfDcSystem:'',
+    // 登录地址
+    loginUrl: '',
+
 };
 // 挂载外部配置文件
 if ((window as any).Environment) {
