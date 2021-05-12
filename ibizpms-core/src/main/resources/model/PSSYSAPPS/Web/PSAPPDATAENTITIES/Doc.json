@@ -1386,6 +1386,70 @@
     "logicName" : "文档_未收藏",
     "mSTag" : "doc__0",
     "name" : "文档_未收藏",
+    "getPSDEMainStateActions" : [ {
+      "name" : "Create",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Collect",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Collect.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "GetDraft",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/GetDraft.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "GetDocStatus",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/GetDocStatus.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "ByVersionUpdateContext",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/ByVersionUpdateContext.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "OnlyCollectDoc",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/OnlyCollectDoc.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "MODULE",
       "getPSDEOPPriv" : {
@@ -1427,6 +1491,70 @@
     "logicName" : "文档_已收藏",
     "mSTag" : "doc__1",
     "name" : "文档_已收藏",
+    "getPSDEMainStateActions" : [ {
+      "name" : "OnlyUnCollectDoc",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/OnlyUnCollectDoc.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "GetDocStatus",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/GetDocStatus.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "UnCollect",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/UnCollect.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Create",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "GetDraft",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/GetDraft.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "ByVersionUpdateContext",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/ByVersionUpdateContext.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "MODULE",
       "getPSDEOPPriv" : {

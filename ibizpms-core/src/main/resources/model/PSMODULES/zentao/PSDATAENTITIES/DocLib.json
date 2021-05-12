@@ -1749,6 +1749,49 @@
     "logicName" : "文档库_未收藏",
     "mSTag" : "doc__0",
     "name" : "文档库_未收藏",
+    "getPSDEMainStateActions" : [ {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Collect",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Collect.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "GetDraft",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/GetDraft.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Remove",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Remove.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Create",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__DOCLIB_NFAVOUR_BUT",
       "getPSDEOPPriv" : {
@@ -1784,6 +1827,35 @@
     "logicName" : "文档库_已收藏",
     "mSTag" : "doc__1",
     "name" : "文档库_已收藏",
+    "getPSDEMainStateActions" : [ {
+      "name" : "UnCollect",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/UnCollect.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Get",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Get.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Create",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Create.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "Update",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/DocLib/PSDEACTIONS/Update.json"
+      },
+      "allowMode" : true
+    } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__DOCLIB_FAVOUR_BUT",
       "getPSDEOPPriv" : {

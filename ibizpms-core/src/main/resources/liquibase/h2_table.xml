@@ -119,7 +119,7 @@
 
 
     <!--输出实体[ZT_BUG]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_bug-132-5">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_bug-133-5">
         <createTable tableName="zt_bug">
                 <column name="SEVERITY" remarks="" type="INT">
                 </column>
@@ -250,7 +250,7 @@
 
 
     <!--输出实体[ZT_BUILD]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_build-27-7">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_build-29-7">
         <createTable tableName="zt_build">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>

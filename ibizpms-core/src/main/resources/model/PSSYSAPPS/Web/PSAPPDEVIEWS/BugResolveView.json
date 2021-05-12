@@ -372,41 +372,59 @@
           "detailType" : "GROUPPANEL",
           "name" : "grouppanel1",
           "getPSDEFormDetails" : [ {
-            "caption" : "解决方案",
-            "codeName" : "resolution",
-            "dataType" : 25,
+            "actionGroupExtractMode" : "ITEM",
+            "caption" : "分组面板",
+            "codeName" : "grouppanel5",
             "detailStyle" : "DEFAULT",
-            "detailType" : "FORMITEM",
-            "enableCond" : 3,
-            "ignoreInput" : 0,
-            "labelPos" : "LEFT",
-            "labelWidth" : 100,
-            "name" : "resolution",
-            "noPrivDisplayMode" : 1,
-            "getPSAppDEField" : {
-              "name" : "RESOLUTION",
-              "codeName" : "Resolution"
-            },
-            "getPSEditor" : {
-              "editorType" : "DROPDOWNLIST",
+            "detailType" : "GROUPPANEL",
+            "name" : "grouppanel5",
+            "getPSDEFormDetails" : [ {
+              "caption" : "解决方案",
+              "codeName" : "resolution",
+              "dataType" : 25,
+              "detailStyle" : "DEFAULT",
+              "detailType" : "FORMITEM",
+              "enableCond" : 3,
+              "ignoreInput" : 0,
+              "labelPos" : "LEFT",
+              "labelWidth" : 100,
               "name" : "resolution",
-              "getPSAppCodeList" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__resolution.json"
+              "noPrivDisplayMode" : 1,
+              "getPSAppDEField" : {
+                "name" : "RESOLUTION",
+                "codeName" : "Resolution"
               },
-              "singleSelect" : true
-            },
-            "getPSLayoutPos" : {
-              "colLG" : 12,
-              "colMD" : 12,
+              "getPSEditor" : {
+                "editorType" : "DROPDOWNLIST",
+                "name" : "resolution",
+                "getPSAppCodeList" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__resolution.json"
+                },
+                "singleSelect" : true
+              },
+              "getPSLayoutPos" : {
+                "colLG" : 12,
+                "colMD" : 12,
+                "layout" : "TABLE_24COL"
+              },
+              "allowEmpty" : false,
+              "emptyCaption" : false,
+              "hidden" : false,
+              "inputTipClosable" : false,
+              "needCodeListConfig" : true,
+              "showCaption" : true
+            } ],
+            "getPSLayout" : {
+              "columnCount" : 24,
               "layout" : "TABLE_24COL"
             },
-            "allowEmpty" : false,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
-            "needCodeListConfig" : true,
-            "showCaption" : true
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "infoGroupMode" : false,
+            "showCaption" : false
           }, {
             "actionGroupExtractMode" : "ITEM",
             "caption" : "分组面板",
@@ -855,78 +873,96 @@
           "inputTipClosable" : false,
           "showCaption" : true
         }, {
-          "caption" : "附件",
-          "codeName" : "files",
-          "dataType" : 25,
+          "actionGroupExtractMode" : "ITEM",
+          "caption" : "分组面板",
+          "codeName" : "grouppanel3",
           "detailStyle" : "DEFAULT",
-          "detailType" : "FORMITEM",
-          "enableCond" : 3,
-          "ignoreInput" : 0,
-          "labelPos" : "LEFT",
-          "labelWidth" : 100,
-          "name" : "files",
-          "noPrivDisplayMode" : 1,
-          "getPSAppDEField" : {
-            "name" : "FILES",
-            "codeName" : "Files"
-          },
-          "getPSEditor" : {
-            "editorParams" : {
-              "uploadparams" : "{objecttype:\"bug\",objectid: 0}",
-              "FILEEXTS" : "",
-              "exportparams" : "{objecttype:\"bug\",objectid: 0}",
-              "MAXFILESIZE" : "",
-              "MINFILECNT" : "",
-              "MAXFILECNT" : ""
+          "detailType" : "GROUPPANEL",
+          "name" : "grouppanel3",
+          "getPSDEFormDetails" : [ {
+            "caption" : "附件",
+            "codeName" : "files",
+            "dataType" : 25,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 100,
+            "name" : "files",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "FILES",
+              "codeName" : "Files"
             },
-            "editorType" : "FILEUPLOADER",
-            "maxFileCount" : -1,
-            "maxFileSize" : -1,
-            "minFileCount" : 0,
-            "name" : "files"
+            "getPSEditor" : {
+              "editorParams" : {
+                "uploadparams" : "{objecttype:\"bug\",objectid: 0}",
+                "FILEEXTS" : "",
+                "exportparams" : "{objecttype:\"bug\",objectid: 0}",
+                "MAXFILESIZE" : "",
+                "MINFILECNT" : "",
+                "MAXFILECNT" : ""
+              },
+              "editorType" : "FILEUPLOADER",
+              "maxFileCount" : -1,
+              "maxFileSize" : -1,
+              "minFileCount" : 0,
+              "name" : "files"
+            },
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "allowEmpty" : true,
+            "emptyCaption" : false,
+            "hidden" : false,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          }, {
+            "caption" : "备注",
+            "codeName" : "comment",
+            "dataType" : 21,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 100,
+            "name" : "comment",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "COMMENT",
+              "codeName" : "Comment"
+            },
+            "getPSEditor" : {
+              "editorParams" : {
+                "uploadparams" : "{objecttype:\"bug\",version:\"editor\"}",
+                "exportparams" : "{objecttype:\"bug\",version:\"editor\"}"
+              },
+              "editorType" : "HTMLEDITOR",
+              "name" : "comment"
+            },
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "allowEmpty" : true,
+            "emptyCaption" : false,
+            "hidden" : false,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          } ],
+          "getPSLayout" : {
+            "columnCount" : 24,
+            "layout" : "TABLE_24COL"
           },
           "getPSLayoutPos" : {
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : true
-        }, {
-          "caption" : "备注",
-          "codeName" : "comment",
-          "dataType" : 21,
-          "detailStyle" : "DEFAULT",
-          "detailType" : "FORMITEM",
-          "enableCond" : 3,
-          "ignoreInput" : 0,
-          "labelPos" : "LEFT",
-          "labelWidth" : 100,
-          "name" : "comment",
-          "noPrivDisplayMode" : 1,
-          "getPSAppDEField" : {
-            "name" : "COMMENT",
-            "codeName" : "Comment"
-          },
-          "getPSEditor" : {
-            "editorParams" : {
-              "uploadparams" : "{objecttype:\"bug\",version:\"editor\"}",
-              "exportparams" : "{objecttype:\"bug\",version:\"editor\"}"
-            },
-            "editorType" : "HTMLEDITOR",
-            "name" : "comment"
-          },
-          "getPSLayoutPos" : {
-            "colMD" : 24,
-            "layout" : "TABLE_24COL"
-          },
-          "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : true
+          "infoGroupMode" : false,
+          "showCaption" : false
         }, {
           "actionGroupExtractMode" : "ITEM",
           "caption" : "历史记录",
