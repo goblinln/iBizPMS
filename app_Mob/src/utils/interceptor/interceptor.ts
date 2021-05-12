@@ -3,8 +3,9 @@ import axios from 'axios';
 import Router from 'vue-router';
 import i18n from '@/locale';
 import ignoreProxyMap from './ignore-proxy';
-import { Http, getSessionStorage, Util } from 'ibiz-core';
+import { Http, getSessionStorage } from 'ibiz-core';
 import { Environment } from '@/environments/environment';
+import { getCookie } from 'qx-util';
 /**
  * 拦截器
  *
@@ -84,8 +85,8 @@ export class Interceptors {
             if (appdata && appdata.context) {
                 config.headers['srforgsectorid'] = appdata.context.srforgsectorid;
             }
-            if (Util.getCookie('ibzuaa-token')) {
-                config.headers['Authorization'] = `Bearer ${Util.getCookie('ibzuaa-token')}`;
+            if (getCookie('ibzuaa-token')) {
+                config.headers['Authorization'] = `Bearer ${getCookie('ibzuaa-token')}`;
             }
             if (Environment.SaaSMode) {
                 let activeOrgData = getSessionStorage('activeOrgData');
@@ -95,12 +96,6 @@ export class Interceptors {
             }
             config.headers['Accept-Language'] = i18n.locale;
             // 混合 app 代理处理
-            // if (Object.is(process.env.VUE_APP_CURRENTMODE, 'hybridapp') && !config.url.startsWith('https://') && !config.url.startsWith('http://')) {
-            //     if (!ignoreProxyMap.has(config.url) && !config.url.endsWith('.json')) {
-            //         config.url = process.env.VUE_APP_PROXY + config.url;
-            //         alert(config.url);
-            //     }
-            // }
             return config;
         }, (error: any) => {
             return Promise.reject(error);
