@@ -193,7 +193,6 @@ export default class AppSetting extends Vue {
                     this.$store.commit('addAppData', null);
                     this.doLogin();
                 }
-            AppCapacitorService.getInstance().exitApp();
             })
                 .catch((error: any) => {
                     console.error(error);
