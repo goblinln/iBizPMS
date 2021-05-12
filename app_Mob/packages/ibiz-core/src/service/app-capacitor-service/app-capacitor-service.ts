@@ -34,7 +34,7 @@ export class AppCapacitorService {
      * @memberof AppCapacitorService
      */
     get view(): any {
-        return this.view.length - 1 >= 0 ? this.view[this.view.length - 1] : null
+        return this.viewCache.length - 1 >= 0 ? this.viewCache[this.viewCache.length - 1] : null
     }
 
     /**
