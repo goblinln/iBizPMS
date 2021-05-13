@@ -406,7 +406,7 @@ export class AppMobFormService extends ControlServiceBase {
      * @param data 数据
      * @memberof AppMobFormService
      */
-    public handleRequestData(action: string, context: any, data: any = {}, isMerge: boolean = false) {
+     public handleRequestData(action: string, context: any, data: any = {}, isMerge: boolean = false) {
         let mode: any = this.getMode();
         if (!mode && mode.getDataItems instanceof Function) {
             return data;
@@ -422,7 +422,7 @@ export class AppMobFormService extends ControlServiceBase {
                     requestData[item.prop] = context[item.name];
                 }
             } else {
-                if (item && item.prop) {
+                if (item && item.prop  && item.name && (data[item.name] || data[item.name] === 0)) {
                     requestData[item.prop] = data[item.name];
                 } else {
                     if (item.dataType && Object.is(item.dataType, "FORMPART")) {

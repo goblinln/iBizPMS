@@ -1495,15 +1495,15 @@
             "getPSEditor" : {
               "contextJOString" : "{\"ZT_PRODUCT\":\"%product%\"}",
               "editorParams" : {
-                "SRFNAVPARAM.n_project_eq" : "%project%",
                 "SRFNAVPARAM.n_module_eq" : "%module%",
                 "valFormat" : "{0: '/'}",
+                "SRFNAVPARAM.project" : "%project%",
                 "AC" : "TRUE",
+                "SRFNAVPARAM.product" : "%product%",
+                "SRFNAVCTX.project" : "%project%",
                 "TRIGGER" : "TRUE",
-                "SRFNAVCTX.n_product_eq" : "%product%",
+                "SRFNAVCTX.product" : "%product%",
                 "PICKUPVIEW" : "FALSE",
-                "SRFNAVPARAM.n_product_eq" : "%product%",
-                "SRFNAVCTX.n_project_eq" : "%project%",
                 "SRFNAVCTX.n_module_eq" : "%module%"
               },
               "editorType" : "PICKEREX_TRIGGER",
@@ -1543,25 +1543,30 @@
                 "value" : "module",
                 "rawValue" : false
               }, {
-                "key" : "N_PROJECT_EQ",
-                "name" : "N_PROJECT_EQ",
+                "key" : "PROJECT",
+                "name" : "PROJECT",
                 "value" : "project",
                 "rawValue" : false
               }, {
-                "key" : "N_PRODUCT_EQ",
-                "name" : "N_PRODUCT_EQ",
+                "key" : "PRODUCT",
+                "name" : "PRODUCT",
                 "value" : "product",
                 "rawValue" : false
               } ],
               "getPSNavigateParams" : [ {
-                "key" : "n_product_eq",
-                "name" : "n_product_eq",
+                "key" : "product",
+                "name" : "product",
                 "value" : "product",
                 "rawValue" : false
               }, {
-                "key" : "n_project_eq",
-                "name" : "n_project_eq",
+                "key" : "project",
+                "name" : "project",
                 "value" : "project",
+                "rawValue" : false
+              }, {
+                "key" : "n_product_eq",
+                "name" : "n_product_eq",
+                "value" : "product",
                 "rawValue" : false
               }, {
                 "key" : "n_module_eq",

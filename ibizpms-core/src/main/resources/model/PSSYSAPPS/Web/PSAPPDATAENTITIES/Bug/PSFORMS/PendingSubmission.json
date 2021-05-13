@@ -1100,9 +1100,16 @@
           "getPSEditor" : {
             "contextJOString" : "{\"ZT_PRODUCT\":\"%product%\"}",
             "editorParams" : {
+              "SRFNAVPARAM.n_module_eq" : "%module%",
+              "valFormat" : "{0: '/'}",
+              "SRFNAVPARAM.project" : "%project%",
               "AC" : "TRUE",
+              "SRFNAVPARAM.product" : "%product%",
+              "SRFNAVCTX.project" : "%project%",
               "TRIGGER" : "TRUE",
-              "PICKUPVIEW" : "FALSE"
+              "SRFNAVCTX.product" : "%product%",
+              "PICKUPVIEW" : "FALSE",
+              "SRFNAVCTX.n_module_eq" : "%module%"
             },
             "editorType" : "PICKEREX_TRIGGER",
             "handlerType" : "PickupText",
@@ -1135,11 +1142,41 @@
               "name" : "ZT_PRODUCT",
               "value" : "product",
               "rawValue" : false
+            }, {
+              "key" : "N_MODULE_EQ",
+              "name" : "N_MODULE_EQ",
+              "value" : "module",
+              "rawValue" : false
+            }, {
+              "key" : "PROJECT",
+              "name" : "PROJECT",
+              "value" : "project",
+              "rawValue" : false
+            }, {
+              "key" : "PRODUCT",
+              "name" : "PRODUCT",
+              "value" : "product",
+              "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
+              "key" : "product",
+              "name" : "product",
+              "value" : "product",
+              "rawValue" : false
+            }, {
+              "key" : "project",
+              "name" : "project",
+              "value" : "project",
+              "rawValue" : false
+            }, {
               "key" : "n_product_eq",
               "name" : "n_product_eq",
               "value" : "product",
+              "rawValue" : false
+            }, {
+              "key" : "n_module_eq",
+              "name" : "n_module_eq",
+              "value" : "module",
               "rawValue" : false
             } ],
             "paramJOString" : "{\"n_product_eq\":\"%product%\"}",
@@ -1188,6 +1225,7 @@
               "SRFNAVPARAM.size" : "1000",
               "AC" : "TRUE",
               "SRFNAVPARAM.project" : "%project%",
+              "valFormat" : "{0: '/'}",
               "TRIGGER" : "TRUE",
               "SRFNAVCTX.size" : "1000",
               "PICKUPVIEW" : "FALSE"
