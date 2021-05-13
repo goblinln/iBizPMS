@@ -95,7 +95,6 @@
     "dataType" : 25
   }, {
     "id" : "id",
-    "hidden" : true,
     "dataType" : 1,
     "getPSAppDEField" : {
       "name" : "ID",
@@ -181,7 +180,7 @@
       "detailType" : "GROUPPANEL",
       "name" : "group1",
       "getPSDEFormDetails" : [ {
-        "caption" : "ID",
+        "caption" : "编号",
         "codeName" : "id",
         "dataType" : 1,
         "detailStyle" : "DEFAULT",
@@ -197,8 +196,10 @@
           "codeName" : "Id"
         },
         "getPSEditor" : {
-          "editorType" : "HIDDEN",
-          "name" : "id"
+          "editorType" : "SPAN",
+          "name" : "id",
+          "editable" : false,
+          "enableLinkView" : false
         },
         "getPSLayoutPos" : {
           "colMD" : 24,
@@ -206,7 +207,7 @@
         },
         "allowEmpty" : true,
         "emptyCaption" : false,
-        "hidden" : true,
+        "hidden" : false,
         "inputTipClosable" : false,
         "showCaption" : true
       }, {

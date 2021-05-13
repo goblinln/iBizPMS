@@ -103,7 +103,7 @@ function getLocaleResourceBase(){
 				'srfuf': commonLogic.appcommonhandle("",null), 
 				'srfdeid': commonLogic.appcommonhandle("",null), 
 				'srfsourcekey': commonLogic.appcommonhandle("",null), 
-				'id': commonLogic.appcommonhandle("ID",null), 
+				'id': commonLogic.appcommonhandle("编号",null), 
 				'product': commonLogic.appcommonhandle("产品",null), 
 				'productname': commonLogic.appcommonhandle("产品名称",null), 
 				'name': commonLogic.appcommonhandle("发布名称",null), 
