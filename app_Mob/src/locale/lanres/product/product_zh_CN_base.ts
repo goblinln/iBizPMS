@@ -111,7 +111,9 @@ export default {
 			code: commonLogic.appcommonhandle("产品代号",null), 
 			line: commonLogic.appcommonhandle("产品线",null), 
 			linename: commonLogic.appcommonhandle("产品线",null), 
+			po: commonLogic.appcommonhandle("产品负责人",null), 
 			popk: commonLogic.appcommonhandle("产品负责人",null), 
+			qd: commonLogic.appcommonhandle("测试负责人",null), 
 			qdpk: commonLogic.appcommonhandle("测试负责人",null), 
 			rd: commonLogic.appcommonhandle("发布负责人",null), 
 			rdpk: commonLogic.appcommonhandle("发布负责人",null), 
@@ -119,8 +121,6 @@ export default {
 			desc: commonLogic.appcommonhandle("产品描述	",null), 
 			acl: commonLogic.appcommonhandle("访问控制",null), 
 			id: commonLogic.appcommonhandle("编号",null), 
-			po: commonLogic.appcommonhandle("产品负责人",null), 
-			qd: commonLogic.appcommonhandle("测试负责人",null), 
 		},
 		uiactions: {
 		},

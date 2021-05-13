@@ -221,11 +221,27 @@
         "codeName" : "LineName"
       }
     }, {
+      "id" : "po",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "PO",
+        "codeName" : "PO"
+      }
+    }, {
       "id" : "popk",
       "dataType" : 25,
       "getPSAppDEField" : {
         "name" : "POPK",
         "codeName" : "Popk"
+      }
+    }, {
+      "id" : "qd",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "QD",
+        "codeName" : "QD"
       }
     }, {
       "id" : "qdpk",
@@ -277,22 +293,6 @@
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
-      }
-    }, {
-      "id" : "po",
-      "hidden" : true,
-      "dataType" : 25,
-      "getPSAppDEField" : {
-        "name" : "PO",
-        "codeName" : "PO"
-      }
-    }, {
-      "id" : "qd",
-      "hidden" : true,
-      "dataType" : 25,
-      "getPSAppDEField" : {
-        "name" : "QD",
-        "codeName" : "QD"
       }
     } ],
     "getPSDEFormPages" : [ {
@@ -482,6 +482,35 @@
             "showCaption" : false
           }, {
             "caption" : "产品负责人",
+            "codeName" : "po",
+            "dataType" : 25,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 130,
+            "name" : "po",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "PO",
+              "codeName" : "PO"
+            },
+            "getPSEditor" : {
+              "editorType" : "HIDDEN",
+              "name" : "po"
+            },
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "allowEmpty" : true,
+            "emptyCaption" : false,
+            "hidden" : true,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          }, {
+            "caption" : "产品负责人",
             "codeName" : "popk",
             "dataType" : 25,
             "detailStyle" : "DEFAULT",
@@ -538,6 +567,35 @@
             "allowEmpty" : true,
             "emptyCaption" : false,
             "hidden" : false,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          }, {
+            "caption" : "测试负责人",
+            "codeName" : "qd",
+            "dataType" : 25,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 130,
+            "name" : "qd",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "QD",
+              "codeName" : "QD"
+            },
+            "getPSEditor" : {
+              "editorType" : "HIDDEN",
+              "name" : "qd"
+            },
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "allowEmpty" : true,
+            "emptyCaption" : false,
+            "hidden" : true,
             "inputTipClosable" : false,
             "showCaption" : true
           }, {
