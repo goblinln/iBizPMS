@@ -103,6 +103,7 @@ function getLocaleResourceBase(){
 				'srfuf': commonLogic.appcommonhandle("",null), 
 				'srfdeid': commonLogic.appcommonhandle("",null), 
 				'srfsourcekey': commonLogic.appcommonhandle("",null), 
+				'id': commonLogic.appcommonhandle("ID",null), 
 				'product': commonLogic.appcommonhandle("产品",null), 
 				'productname': commonLogic.appcommonhandle("产品名称",null), 
 				'name': commonLogic.appcommonhandle("发布名称",null), 
@@ -111,7 +112,6 @@ function getLocaleResourceBase(){
 				'marker': commonLogic.appcommonhandle("里程碑",null), 
 				'desc': commonLogic.appcommonhandle("描述",null), 
 				'files': commonLogic.appcommonhandle("附件",null), 
-				'id': commonLogic.appcommonhandle("ID",null), 
 				'build': commonLogic.appcommonhandle("版本",null), 
 			},
 			uiactions: {

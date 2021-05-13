@@ -284,6 +284,14 @@
       "hidden" : true,
       "dataType" : 25
     }, {
+      "id" : "id",
+      "hidden" : true,
+      "dataType" : 1,
+      "getPSAppDEField" : {
+        "name" : "ID",
+        "codeName" : "Id"
+      }
+    }, {
       "id" : "product",
       "hidden" : true,
       "dataType" : 1,
@@ -341,14 +349,6 @@
         "codeName" : "Files"
       }
     }, {
-      "id" : "id",
-      "hidden" : true,
-      "dataType" : 1,
-      "getPSAppDEField" : {
-        "name" : "ID",
-        "codeName" : "Id"
-      }
-    }, {
       "id" : "build",
       "hidden" : true,
       "dataType" : 1,
@@ -371,6 +371,35 @@
         "detailType" : "GROUPPANEL",
         "name" : "group1",
         "getPSDEFormDetails" : [ {
+          "caption" : "ID",
+          "codeName" : "id",
+          "dataType" : 1,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 0,
+          "ignoreInput" : 0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 100,
+          "name" : "id",
+          "noPrivDisplayMode" : 1,
+          "getPSAppDEField" : {
+            "name" : "ID",
+            "codeName" : "Id"
+          },
+          "getPSEditor" : {
+            "editorType" : "HIDDEN",
+            "name" : "id"
+          },
+          "getPSLayoutPos" : {
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : true,
+          "emptyCaption" : false,
+          "hidden" : true,
+          "inputTipClosable" : false,
+          "showCaption" : true
+        }, {
           "caption" : "产品",
           "codeName" : "product",
           "dataType" : 1,
