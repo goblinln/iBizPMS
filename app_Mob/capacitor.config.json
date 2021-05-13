@@ -9,5 +9,8 @@
       "launchShowDuration": 0
     }
   },
+  "server": {
+    "url": "http://ebsxmob.ibizee.cn/?srfdcsystem=a86194de7a9ee743afd472b7b461fef2"
+  },
   "cordova": {}
 }
