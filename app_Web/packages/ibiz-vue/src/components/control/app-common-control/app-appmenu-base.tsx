@@ -1,4 +1,4 @@
-import { Util } from 'ibiz-core';
+import { Util, LogUtil  } from 'ibiz-core';
 import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { AppMenuControlBase } from '../../../widgets';
 
@@ -192,7 +192,7 @@ export class AppmenuBase extends AppMenuControlBase {
                 this.$forceUpdate();
             }
         } else {
-            console.warn('未指定应用功能');
+            LogUtil.warn('未指定应用功能');
         }
     }
 

@@ -6,6 +6,7 @@ import {
     IPSAppViewUIAction,
     IPSControl,
 } from '@ibiz/dynamic-model-api';
+import { LogUtil } from 'ibiz-core';
 import { UIServiceRegister } from 'ibiz-service';
 import { AppGlobalService } from './app-global-action-service';
 
@@ -99,7 +100,7 @@ export class AppViewLogicService {
      */
     public async prepareActionParams(viewLogic: IPSAppViewLogic, $event: any, actionContext: any, params: any = {}) {
         if (!viewLogic) {
-            console.warn('无事件参数未支持');
+            LogUtil.warn('无事件参数未支持');
             return;
         }
         if (!Object.is(viewLogic.logicType, 'APPVIEWUIACTION') || !viewLogic.getPSAppViewUIAction) {
@@ -107,7 +108,7 @@ export class AppViewLogicService {
         }
         const targetViewAction: IPSAppViewUIAction | null = viewLogic.getPSAppViewUIAction();
         if (!targetViewAction) {
-            console.warn('视图界面行为不存在');
+            LogUtil.warn('视图界面行为不存在');
             return;
         }
         await (targetViewAction as IPSAppViewUIAction).fill();

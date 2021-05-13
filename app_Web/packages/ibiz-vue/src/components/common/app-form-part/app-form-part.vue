@@ -6,6 +6,7 @@
 <script lang = 'ts'>
 import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
 import { Subject, Subscription } from "rxjs";
+import { LogUtil } from 'ibiz-core';
 @Component({
 })
 export default class AppFormPart extends Vue {
@@ -217,10 +218,10 @@ export default class AppFormPart extends Vue {
                 let result:any = res.data;
                 resolve(result);
             }else{
-                console.warn("加载动态表单模型数据异常");
+                LogUtil.warn("加载动态表单模型数据异常");
             }
         }).catch((error:any) =>{
-            console.warn("加载动态表单模型数据异常");
+            LogUtil.warn("加载动态表单模型数据异常");
         })
     })
   }

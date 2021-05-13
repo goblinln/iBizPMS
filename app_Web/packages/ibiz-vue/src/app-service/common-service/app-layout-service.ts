@@ -77,6 +77,7 @@ import { AppStyle2WFActionViewLayout } from '../../components/layout/app-style2-
 import { AppStyle2WizardViewLayout } from '../../components/layout/app-style2-layout/app-style2-wizardview-layout/app-style2-wizardview-layout';
 import { AppStyle2DeRedirectViewLayout } from "../../components/layout/app-style2-layout/app-style2-deredirectview-layout/app-style2-deredirectview-layout";
 import { AppStyle2WfStepTraceViewLayout } from "../../components/layout/app-style2-layout/app-style2-wfsteptraceview-layout/app-style2-wfsteptraceview-layout";
+import { LogUtil } from "ibiz-core";
 
 /**
  * 应用组件服务
@@ -202,7 +203,7 @@ export class AppLayoutService {
      * @memberof AppLayoutService
      */
     public static getLayoutComponent(key: string) {
-        console.warn(key);
+      LogUtil.warn(key);
         return this.layoutMap.get(key);
     }
 

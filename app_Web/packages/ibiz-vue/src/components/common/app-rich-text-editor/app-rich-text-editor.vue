@@ -8,7 +8,7 @@ import { Vue, Component, Prop, Model, Watch } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
 import { Environment } from '@/environments/environment';
 import axios from 'axios';
-import { ImgurlBase64 } from 'ibiz-core';
+import { ImgurlBase64, LogUtil } from 'ibiz-core';
 import tinymce from 'tinymce/tinymce';
 // import 'tinymce/themes/modern';
 import 'tinymce/themes/silver';
@@ -476,7 +476,7 @@ export default class AppRichTextEditor extends Vue {
                         }
                     },
                     (error: any) => {
-                        console.log(error);
+                        LogUtil.log(error);
                         failure('HTTP Error: ' + error.status);
                     }
                 );

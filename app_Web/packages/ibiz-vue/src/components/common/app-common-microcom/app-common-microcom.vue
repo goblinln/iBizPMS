@@ -19,7 +19,7 @@
 
 <script lang="ts">
 import { Vue, Component, Prop, Watch } from "vue-property-decorator";
-import { Util, Http } from 'ibiz-core';
+import { Util, Http, LogUtil  } from 'ibiz-core';
 
 @Component({})
 export default class AppCommonMicrocom extends Vue {
@@ -223,7 +223,7 @@ export default class AppCommonMicrocom extends Vue {
                     const filterIndex = key.slice(6);
                     if (filterIndex) {
                         if (isNaN(parseInt(filterIndex)) || filterArr.length < parseInt(filterIndex) - 1) {
-                            console.warn('filter参数配置错误, 请检查')
+                            LogUtil.warn('filter参数配置错误, 请检查')
                         } else {
                             value = this.handleFilterValue(filterArr[parseInt(filterIndex) - 1]);
                         }

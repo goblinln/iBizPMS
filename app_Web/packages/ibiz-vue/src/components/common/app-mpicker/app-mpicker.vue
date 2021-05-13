@@ -13,6 +13,7 @@
 <script lang = 'ts'>
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
+import { LogUtil } from 'ibiz-core';
 
 @Component({
 })
@@ -218,7 +219,7 @@ export default class AppMpicker extends Vue {
                   this.items = [...response];
               }
           }).catch((error: any) => {
-              console.log(error);
+              LogUtil.log(error);
           });
         }
     }

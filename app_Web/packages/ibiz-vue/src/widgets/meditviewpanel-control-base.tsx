@@ -1,5 +1,5 @@
 import { Subject } from 'rxjs';
-import { ViewState, ViewTool, Util, ModelTool } from 'ibiz-core';
+import { ViewState, ViewTool, Util, ModelTool, LogUtil } from 'ibiz-core';
 import { MDControlBase } from './md-control-base';
 import { AppMEditViewPanelService } from '../ctrl-service';
 import { IPSAppDEField, IPSAppView, IPSDEMultiEditViewPanel, IPSAppDEView } from '@ibiz/dynamic-model-api';
@@ -288,6 +288,6 @@ export class MEditViewPanelControlBase extends MDControlBase {
      * @memberof MEditViewPanelControlBase
      */
     public viewload($event:any){
-        console.log('视图加载完成');
+        LogUtil.log('视图加载完成');
     }
 }

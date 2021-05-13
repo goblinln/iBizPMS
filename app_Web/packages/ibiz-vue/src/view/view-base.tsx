@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { Subject, Subscription } from 'rxjs';
 import { IPSAppCounterRef, IPSAppView, IPSAppDEView, IPSControl } from '@ibiz/dynamic-model-api';
-import { Util, ViewTool, AppServiceBase, ViewContext, ViewState, ModelTool, GetModelService, AppModelService, removeSessionStorage } from 'ibiz-core';
+import { Util, ViewTool, AppServiceBase, ViewContext, ViewState, ModelTool, GetModelService, AppModelService, removeSessionStorage, LogUtil } from 'ibiz-core';
 import { CounterServiceRegister } from 'ibiz-service';
 import { AppNavHistory, ViewLoadingService } from '../app-service';
 import { DynamicInstanceConfig } from '@ibiz/dynamic-model-api/dist/types/core';
@@ -490,7 +490,7 @@ export class ViewBase extends Vue {
                 await this.initAppUIService();
             }
         } catch (error) {
-            console.warn(error);
+            LogUtil.warn(error);
         }
     }
     /**
@@ -890,7 +890,7 @@ export class ViewBase extends Vue {
                 refs[modelData.xDataControlName]?.ctrl?.refresh();
             }
         } catch (error) {
-            console.log(refs, modelData)
+            LogUtil.log(refs, modelData)
         }
     }
 

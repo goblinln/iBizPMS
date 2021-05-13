@@ -28,7 +28,7 @@
 <script lang = 'ts'>
 import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 import { Subject, Unsubscribable } from "rxjs";
-import { Util, ViewTool } from 'ibiz-core';
+import { LogUtil, Util, ViewTool } from 'ibiz-core';
 @Component({})
 export default class AppFormDRUIPart extends Vue {
     /**
@@ -518,7 +518,7 @@ export default class AppFormDRUIPart extends Vue {
      * @memberof AppFormDRUIPart
      */
     public mditemsload() {
-        console.log(this.$t("components.appFormDRUIPart.viewLoadComp") as string);
+        LogUtil.log(this.$t("components.appFormDRUIPart.viewLoadComp") as string);
     }
 
     /**
@@ -529,7 +529,7 @@ export default class AppFormDRUIPart extends Vue {
      */
     public drdatasaved($event: any) {
         this.$emit("drdatasaved", $event);
-        console.log(
+        LogUtil.log(
             this.viewname + (this.$t("components.appFormDRUIPart.save") as string)
         );
     }
@@ -541,7 +541,7 @@ export default class AppFormDRUIPart extends Vue {
      * @memberof AppFormDRUIPart
      */
     public drdatachange() {
-        console.log(
+        LogUtil.log(
             "DEMEDITVIEW9 " + (this.$t("components.appFormDRUIPart.change") as string)
         );
     }
@@ -553,7 +553,7 @@ export default class AppFormDRUIPart extends Vue {
      * @memberof AppFormDRUIPart
      */
     public viewdataschange() {
-        console.log(this.$t("components.appFormDRUIPart.change1") as string);
+        LogUtil.log(this.$t("components.appFormDRUIPart.change1") as string);
     }
 
     /**
@@ -563,7 +563,7 @@ export default class AppFormDRUIPart extends Vue {
      * @memberof AppFormDRUIPart
      */
     public viewload() {
-        console.log(this.$t("components.appFormDRUIPart.loadComp") as string);
+        LogUtil.log(this.$t("components.appFormDRUIPart.loadComp") as string);
     }
 
     /**

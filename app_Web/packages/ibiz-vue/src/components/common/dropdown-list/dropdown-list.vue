@@ -18,7 +18,7 @@
 <script lang="ts">
 import { Vue, Component, Watch, Prop, Model } from 'vue-property-decorator';
 import { CodeListService } from "ibiz-service";
-import { Util } from 'ibiz-core';
+import { Util, LogUtil } from 'ibiz-core';
 import { Subject, Subscription } from 'rxjs';
 
 @Component({
@@ -77,7 +77,7 @@ export default class DropDownList extends Vue {
                 this.loadData();
             }
         } catch (error) {
-            console.log('下拉列表，值转换失败');
+            LogUtil.log('下拉列表，值转换失败');
         }
     }
 
@@ -328,7 +328,7 @@ export default class DropDownList extends Vue {
             this.codeListService.getDataItems({ tag: this.tag, type: this.codelistType,data: this.codeList,context:context,viewparam:viewparam }).then((codelistItems: Array<any>) => {
                 this.formatCodeList(codelistItems);
             }).catch((error: any) => {
-                console.log(`----${this.tag}----代码表不存在`);
+                LogUtil.log(`----${this.tag}----代码表不存在`);
             })
         }
     }
@@ -397,11 +397,11 @@ export default class DropDownList extends Vue {
                 this.items.push(item);
             });
             if(matching){
-                console.warn(`代码表 ${ this.tag } 值类型和属性类型不匹配，已自动强制转换，请修正代码表值类型和属性类型匹配`);
+                LogUtil.warn(`代码表 ${ this.tag } 值类型和属性类型不匹配，已自动强制转换，请修正代码表值类型和属性类型匹配`);
             }
             
         }catch(error){
-            console.warn('代码表值类型和属性类型不匹配，自动强制转换异常，请修正代码表值类型和属性类型匹配');
+            LogUtil.warn('代码表值类型和属性类型不匹配，自动强制转换异常，请修正代码表值类型和属性类型匹配');
         }
         this.handleLevelCodeList(Util.deepCopy(this.items));
     }

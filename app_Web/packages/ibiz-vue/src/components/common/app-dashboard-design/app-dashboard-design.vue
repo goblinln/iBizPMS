@@ -90,7 +90,7 @@ import '@interactjs/modifiers'
 import '@interactjs/dev-tools'
 import interact from "@interactjs/interact";
 import AppDashboardDesignService from './app-dashboard-design-service';
-import { Http, ViewState, Util } from 'ibiz-core';
+import { Http, ViewState, Util, LogUtil  } from 'ibiz-core';
 import { Subject, Subscription } from 'rxjs';
 
 @Component({
@@ -239,7 +239,7 @@ export default class AppDashboardDesign extends Vue {
      */
     public created() {
         this.loadList().then(()=>{
-            console.log(this.customModel);
+            LogUtil.log(this.customModel);
             this.layoutModel = this.customModel;
             this.notifyState();
         })
@@ -319,7 +319,7 @@ export default class AppDashboardDesign extends Vue {
 		post.then((response: any) => {
 			this.$emit("save", response);
 		}).catch((response: any) => {
-			console.log(response);
+			LogUtil.log(response);
 		});
 	}
 

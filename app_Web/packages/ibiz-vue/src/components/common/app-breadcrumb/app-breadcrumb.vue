@@ -37,6 +37,7 @@ import { Environment } from "@/environments/environment";
 import { appConfig } from '@/config/appConfig';
 import { NavDataService } from 'ibiz-vue';
 import {Subscription } from 'rxjs';
+import { LogUtil } from 'ibiz-core';
 
 @Component({
 })
@@ -161,7 +162,7 @@ export default class Breadcrumb extends Vue {
       }else{
         // 非首页
         this.$router.push(item.path).catch(err => {
-          console.warn(err);
+          LogUtil.warn(err);
         });
       }
       this.navDataService.removeNavData(item.id);
@@ -176,7 +177,7 @@ export default class Breadcrumb extends Vue {
         }
       }else{
         this.$router.push(item).catch(err => {
-          console.warn(err);
+          LogUtil.warn(err);
         });
       }
     }

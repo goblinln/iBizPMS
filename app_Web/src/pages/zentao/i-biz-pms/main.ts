@@ -17,7 +17,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import 'view-design/dist/styles/iview.css';
 import 'ibiz-vue-lib/lib/ibiz-vue-lib.css';
 import '@/styles/default.less';
-import { AppComponentService,AppLayoutService, ErrorUtil } from 'ibiz-vue';
+import { AppComponentService,AppLayoutService, AppNoticeService, ErrorUtil } from 'ibiz-vue';
 
 import VueAMap from 'vue-amap';
 Vue.use(VueAMap);
@@ -47,6 +47,15 @@ Vue.config.errorHandler = function (err: any, vm: any, info: any) {
 }
 Vue.prototype.$throw = (err:any, param?: any)=> {
   ErrorUtil.errorHandler(err, param);
+}
+Vue.prototype.$success = (message: string)=> {
+  AppNoticeService.getInstance().success(message);
+}
+Vue.prototype.$warning = (message: string)=> {
+  AppNoticeService.getInstance().warning(message);
+}
+Vue.prototype.$info = (message: string)=> {
+  AppNoticeService.getInstance().info(message);
 }
 
 Vue.config.productionTip = false;

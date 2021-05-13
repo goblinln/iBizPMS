@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import { Subject } from 'rxjs';
-import { AppServiceBase } from 'ibiz-core';
+import { AppServiceBase, LogUtil } from 'ibiz-core';
 import AppModalCompponent from "./app-modal.vue";
 import './app-modal.less';
 
@@ -133,7 +133,7 @@ export class AppModal {
             const subject = this.createVueExample(view, viewdata, data, uuid);
             return subject;
         } catch (error) {
-            console.log(error);
+            LogUtil.log(error);
             return new Subject<any>();
         }
     }

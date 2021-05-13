@@ -1,4 +1,4 @@
-import { ViewTool, Util, ModelTool } from 'ibiz-core';
+import { ViewTool, Util, ModelTool, LogUtil } from 'ibiz-core';
 import {
     IPSDEDataView,
     IPSDEDataViewItem,
@@ -669,7 +669,7 @@ export class DataViewControlBase extends MDControlBase {
                         this.$throw(response);
                         return;
                     } else {
-                        this.$Notice.success({ title: '', desc: this.$t('app.commonWords.deleteSuccess') as string });
+                        this.$success(this.$t('app.commonWords.deleteSuccess') as string);
                     }
                     //删除items中已删除的项
                     _datas.forEach((data: any) => {
@@ -777,7 +777,7 @@ export class DataViewControlBase extends MDControlBase {
         this.$emit('ctrl-event', { controlname: this.controlInstance.name, action: 'save', data: successItems });
         this.refresh();
         if (errorItems.length === 0) {
-            this.$Notice.success({ title: '', desc: this.$t('app.commonWords.saveSuccess') as string });
+            this.$success(this.$t('app.commonWords.saveSuccess') as string);
         } else {
             errorItems.forEach((item: any, index: number) => {
                 this.$throw(item.majorentityname + (this.$t('app.commonWords.saveFailed') as string) + '！');
@@ -833,7 +833,7 @@ export class DataViewControlBase extends MDControlBase {
             groups = Util.deepCopy(groupCodelist);
         }
         if (groups.length == 0) {
-            console.warn('分组数据无效');
+            LogUtil.warn('分组数据无效');
         }
         const map: Map<string, any> = new Map();
         data.forEach(item => {
@@ -899,7 +899,7 @@ export class DataViewControlBase extends MDControlBase {
         });
         groups = [...new Set(groups)];
         if (groups.length == 0) {
-            console.warn('分组数据无效');
+            LogUtil.warn('分组数据无效');
         }
         const groupTree: Array<any> = [];
         groups.forEach((group: any, i: number) => {

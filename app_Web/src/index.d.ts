@@ -16,6 +16,9 @@ declare module "vue/types/vue" {
     interface Vue {
         $http:any,
         $throw:any,
+        $success: Function,
+        $warning: Function,
+        $info: Function,
         $util:any,
         $verify:any,
         $viewTool:any,

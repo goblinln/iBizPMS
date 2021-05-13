@@ -63,7 +63,7 @@
 <script lang="ts">
 import draggable from "vuedraggable";
 import { Vue,Component,Provide,Watch,Prop,Model } from "vue-property-decorator";
-import { EntityBaseService } from "ibiz-core";
+import { EntityBaseService, LogUtil  } from "ibiz-core";
 
 // tslint:disable-next-line:max-classes-per-file
 @Component({
@@ -221,7 +221,7 @@ export default class ContextMenuDrag extends Vue {
       const put: Promise<any> = this.entityService.updateChooseApp(null,params);
       window.location.href = item.addr;
      }else{
-       this.$message.info((this.$t('components.contextMenuDrag.noFind') as string));
+       this.$info((this.$t('components.contextMenuDrag.noFind') as string));
      }
    }
 
@@ -299,7 +299,7 @@ export default class ContextMenuDrag extends Vue {
           that.listFilter();
         }
       }).catch((error:any) =>{
-        console.warn("加载数据错误");
+        LogUtil.warn("加载数据错误");
       });
   }
 }

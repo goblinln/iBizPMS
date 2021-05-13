@@ -1,5 +1,6 @@
 import { IPSAppDataEntity, IPSAppDEField, IPSControl } from '@ibiz/dynamic-model-api';
 import { ModelTool } from '../../utils/util/model-tool';
+import { LogUtil } from 'ibiz-core';
 import { AppServiceBase } from "../app-service/app-base.service";
 import { CodeListServiceBase } from "../code-list-service/codelist-base.service";
 /**
@@ -325,7 +326,7 @@ export class ControlServiceBase {
                     resolve(res);
                 }).catch((error: any) => {
                     resolve([]);
-                    console.log(`----${codeListObject.tag}----代码表不存在`);
+                    LogUtil.log(`----${codeListObject.tag}----代码表不存在`);
                 })
             }
         })

@@ -299,7 +299,7 @@ export class WizardPanelControlBase extends MainControlBase {
             this.ctrlEndLoading();
             if (response && response.status === 200) {
                 const data = response.data;
-                this.$Notice.success({ title: this.$t('app.commonWords.success') as string, desc: this.$t('app.commonWords.startsuccess') as string });
+                this.$success(this.$t('app.commonWords.startsuccess') as string);
                 this.ctrlEvent({
                     controlname: this.controlInstance.name,
                     action: 'finish',

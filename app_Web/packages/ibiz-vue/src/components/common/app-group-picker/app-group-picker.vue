@@ -18,7 +18,7 @@
 <script lang="ts">
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
-import { Http } from 'ibiz-core';
+import { Http, LogUtil } from 'ibiz-core';
 @Component({})
 export default class AppGroupPicker extends Vue {
 
@@ -179,7 +179,7 @@ export default class AppGroupPicker extends Vue {
                 this.treeItems = response.data;
             }
         }).catch((error: any) => {
-            console.log(error)
+            LogUtil.log(error)
         })
     }
 
@@ -202,7 +202,7 @@ export default class AppGroupPicker extends Vue {
                 this.cardItems = response.data;
             }
         }).catch((error: any) => {
-            console.log(error)
+            LogUtil.log(error)
         })
     }
 

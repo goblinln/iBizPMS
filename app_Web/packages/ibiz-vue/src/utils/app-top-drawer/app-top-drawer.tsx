@@ -1,7 +1,7 @@
 import { Vue, Component, Watch } from 'vue-property-decorator';
 import { CreateElement } from 'vue/types/umd';
 import { Subject, Observable } from 'rxjs';
-import { Util, on } from 'ibiz-core';
+import { Util, on, LogUtil } from 'ibiz-core';
 import './app-top-drawer.less';
 
 /**
@@ -315,7 +315,7 @@ export class AppTopDrawer extends Vue {
                     </div>
                 );
             } catch (err) {
-                console.warn('上飘窗打开视图参数转换异常', err);
+                LogUtil.warn('上飘窗打开视图参数转换异常', err);
             }
         });
     }

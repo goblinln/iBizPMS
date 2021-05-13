@@ -17,7 +17,7 @@
 import { Vue, Component, Prop, Model, Emit,Watch } from "vue-property-decorator";
 import { Subject } from "rxjs";
 import AppDashboardDesign from '../app-dashboard-design/app-dashboard-design.vue';
-import { Util, ViewState } from 'ibiz-core';
+import { LogUtil, Util, ViewState } from 'ibiz-core';
 
 @Component({
     components: {
@@ -77,7 +77,7 @@ export default class AppPortalDesign extends Vue {
                 this.prepareViewparam();
             }
             if(newVal?.customModel && newVal.customModel != oldVal?.customModel){
-                console.log(this.customModel);
+                LogUtil.log(this.customModel);
                 this.customModel = newVal.customModel;
             }
         }

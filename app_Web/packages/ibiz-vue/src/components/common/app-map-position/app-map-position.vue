@@ -49,6 +49,7 @@
 import { Vue, Component, Prop, Watch, Model } from 'vue-property-decorator';
 import { Subject, Subscription } from 'rxjs';
 import { AMapManager } from 'vue-amap';
+import { LogUtil } from 'ibiz-core';
 
 @Component({})
 export default class AppMapPosition extends Vue  {
@@ -352,7 +353,7 @@ export default class AppMapPosition extends Vue  {
      */
     public async handleMarker(lng: any, lat: any, that: any, flag: boolean = true) {
         const address = await this.getAddress(lng, lat).catch((error) => {
-            console.warn(error);
+            LogUtil.warn(error);
         });
         if(!address) {
             return;

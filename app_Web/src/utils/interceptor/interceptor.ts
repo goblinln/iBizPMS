@@ -2,7 +2,7 @@ import { Store } from 'vuex';
 import Router from 'vue-router';
 import i18n from '@/locale';
 import { Environment } from '@/environments/environment';
-import { Http, getSessionStorage } from 'ibiz-core';
+import { Http, getSessionStorage,LogUtil  } from 'ibiz-core';
 import { AppLoadingService } from 'ibiz-vue';
 import { clearCookie, getCookie, setCookie, SyncSeriesHook } from 'qx-util';
 
@@ -223,10 +223,10 @@ export class Interceptors {
                     setCookie('ibzuaa-token', data, 7,true);
                 }
             } else {
-                console.log("刷新token出错");
+                LogUtil.log("刷新token出错");
             }
         }).catch((error: any) => {
-            console.log("刷新token出错");
+            LogUtil.log("刷新token出错");
         });
     }
 

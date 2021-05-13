@@ -23,6 +23,7 @@
 import { Vue, Component, Watch, Prop, Model } from "vue-property-decorator";
 import {CodeListService} from "ibiz-service";
 import { ElSelect } from "element-ui/types/select";
+import { LogUtil } from 'ibiz-core';
 
 @Component({})
 export default class AppTransfer extends Vue {
@@ -187,7 +188,7 @@ export default class AppTransfer extends Vue {
                 this.dataLeft = codelistItems;
                 this.initData()
             }).catch((error: any) => {
-                console.log(`----${this.tag}----代码表不存在`);
+                LogUtil.log(`----${this.tag}----代码表不存在`);
             })
         }
     }

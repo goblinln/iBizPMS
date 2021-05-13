@@ -7,6 +7,7 @@
 <script lang="ts">
 import { Vue, Component, Watch, Prop, Model } from 'vue-property-decorator';
 import { CodeListService } from "ibiz-service";
+import { LogUtil } from 'ibiz-core';
 @Component({
 })
 export default class AppDepartmentSelect extends Vue {
@@ -272,7 +273,7 @@ export default class AppDepartmentSelect extends Vue {
         }
         callback(tempObject);
       }).catch((error:any) =>{
-        console.log(error);
+        LogUtil.log(error);
       })
     }
   }

@@ -1,5 +1,5 @@
 import { IPSAppDEWFDynaEditView, IPSAppView, IPSDEDRTab, IPSDEDRTabPage, IPSDEForm } from '@ibiz/dynamic-model-api';
-import { WFDynaEditViewEngine, Util, ModelTool, GetModelService, AppModelService } from 'ibiz-core';
+import { WFDynaEditViewEngine, Util, ModelTool, GetModelService, AppModelService, LogUtil } from 'ibiz-core';
 import { AppCenterService } from '../app-service';
 import { MainViewBase } from './mainview-base';
 
@@ -371,7 +371,7 @@ export class WFDynaEditViewBase extends MainViewBase {
             return item.name === `WFUTILACTION@${featureTag}`;
         })
         if (!targetViewRef) {
-            console.warn("未找到流程功能操作视图");
+            LogUtil.warn("未找到流程功能操作视图");
             return;
         }
         // 准备参数
@@ -431,7 +431,7 @@ export class WFDynaEditViewBase extends MainViewBase {
                 this.closeView([{ ...data }]);
             }
             AppCenterService.notifyMessage({ name: this.appDeCodeName, action: 'appRefresh', data: data });
-            this.$Notice.success({ title: '成功', desc: data?.message ? data.message : '提交数据成功' });
+            this.$success(data?.message ? data.message : '提交数据成功');
         }).catch((error: any) => {
             this.$throw(error);
         })
@@ -446,12 +446,12 @@ export class WFDynaEditViewBase extends MainViewBase {
     public readTask(data: any) {
         this.appEntityService.ReadTask(this.context, data).then((response: any) => {
             if (!response || response.status !== 200) {
-                console.warn("将待办任务标记为已读失败");
+                LogUtil.warn("将待办任务标记为已读失败");
                 return;
             }
             AppCenterService.notifyMessage({ name: this.appDeCodeName, action: 'appRefresh', data: data });
         }).catch((error: any) => {
-            console.warn("将待办任务标记为已读失败");
+            LogUtil.warn("将待办任务标记为已读失败");
         })
     }
 }

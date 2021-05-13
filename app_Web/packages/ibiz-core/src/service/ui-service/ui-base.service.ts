@@ -1,5 +1,5 @@
 import { IPSAppDataEntity, IPSDEMainState, IPSDEMainStateOPPriv, IPSDEOPPriv } from '@ibiz/dynamic-model-api';
-import { setSessionStorage } from '../..';
+import { LogUtil, setSessionStorage } from 'ibiz-core';
 import { AppServiceBase } from '../app-service/app-base.service';
 import { AuthServiceBase } from '../auth-service/auth-base.service';
 import { GetModelService } from '../model-service/model-service';
@@ -203,7 +203,7 @@ export class UIServiceBase {
             const action = this.actionMap.get(uIActionTag);
             action.execute(args, context, params, $event, xData, actionContext, srfParentDeName, this);
         } else {
-            console.warn(`当前实例${uIActionTag}界面行为未实现`);
+          LogUtil.warn(`当前实例${uIActionTag}界面行为未实现`);
         }
     }
 
@@ -458,7 +458,7 @@ export class UIServiceBase {
 
         this.mainStateFields.forEach((singleMainField: any) => {
             if (!(singleMainField in curData)) {
-                console.warn(
+              LogUtil.warn(
                     `当前数据对象不包含属性「${singleMainField}」，根据「${singleMainField}」属性进行的主状态计算默认为空值`,
                 );
             }

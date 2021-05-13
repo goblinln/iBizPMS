@@ -9,6 +9,7 @@ import {
     ChartPieSeries,
     ChartBarSeries,
     ChartRadarSeries,
+    LogUtil,
 } from 'ibiz-core';
 import {
     IPSChartCoordinateSystemCartesian2D,
@@ -1426,7 +1427,7 @@ export class ChartControlBase extends MDControlBase {
                         resolve(res);
                     })
                     .catch((error: any) => {
-                        console.log(`----${codeListObject.codeName}----代码表不存在`);
+                        LogUtil.log(`----${codeListObject.codeName}----代码表不存在`);
                     });
             } else if (codeListObject.codeName && Object.is(codeListObject.codeListType, 'DYNAMIC')) {
                 this.codeListService
@@ -1435,7 +1436,7 @@ export class ChartControlBase extends MDControlBase {
                         resolve(res);
                     })
                     .catch((error: any) => {
-                        console.log(`----${codeListObject.codeName}----代码表不存在`);
+                        LogUtil.log(`----${codeListObject.codeName}----代码表不存在`);
                     });
             }
         });

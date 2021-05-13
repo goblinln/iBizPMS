@@ -56,9 +56,9 @@ export class AppFrontAction {
     ) {
         const actionTarget: string | null = this.actionModel.actionTarget;
         if (Object.is(actionTarget, 'SINGLEDATA')) {
-            actionContext.$Notice.error({ title: '错误', desc: '不支持单项数据' });
+            actionContext.$throw('不支持单项数据');
         } else if (Object.is(actionTarget, 'MULTIDATA')) {
-            actionContext.$Notice.error({ title: '错误', desc: '不支持多项数据' });
+            actionContext.$throw('不支持多项数据');
         } else {
             // 处理数据
             let data: any = {};
@@ -171,7 +171,7 @@ export class AppFrontAction {
             Object.is(this.actionModel.frontProcessType, 'WIZARD')
         ) {
             if (!this.actionModel.getFrontPSAppView()) {
-                actionContext.$Notice.warning({ title: '警告', desc: `${this.actionModel.caption}无打开视图` });
+                actionContext.$warning(`${this.actionModel.caption}无打开视图`);
                 return;
             }
             await frontPSAppView?.fill(true);
@@ -363,11 +363,11 @@ export class AppFrontAction {
                     return result.datas;
                 });
             } else {
-                actionContext.$Notice.warning({ title: '警告', desc: `${frontPSAppView.title}不支持该模式打开` });
+                actionContext.$warning(`${frontPSAppView.title}不支持该模式打开`);
             }
             // 用户自定义
         } else {
-            actionContext.$Notice.warning({ title: '警告', desc: `${this.actionModel.caption}自定义未实现` });
+            actionContext.$warning(`${this.actionModel.caption}自定义未实现`);
         }
     }
 }

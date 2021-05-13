@@ -467,7 +467,7 @@ export class KanbanControlBase extends MDControlBase {
                         this.$throw((this.$t('app.commonWords.delDataFail') as string) + ',' + response.info);
                         return;
                     } else {
-                        this.$Notice.success({ title: '', desc: (this.$t('app.commonWords.deleteSuccess') as string) });
+                        this.$success((this.$t('app.commonWords.deleteSuccess') as string));
                     }
                     //删除items中已删除的项
                     _datas.forEach((data: any) => {

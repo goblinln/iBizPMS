@@ -1,5 +1,5 @@
 import { IPSAppDataEntity } from '@ibiz/dynamic-model-api';
-import { ViewTool, Util } from 'ibiz-core';
+import { ViewTool, Util, LogUtil } from 'ibiz-core';
 
 /**
  * 应用功能服务
@@ -85,7 +85,7 @@ export class AppFuncService {
                     this.custom(appFunc, context, viewParam);
                     return;
                 default:
-                    console.warn('无该应用功能');
+                  LogUtil.warn('无该应用功能');
             }
         }
     }
@@ -102,7 +102,7 @@ export class AppFuncService {
             return;
         }
         if (appView.redirectView) {
-            this.v.$Notice.warning({ title: '警告', desc: '重定向视图暂不支持应用功能打开' });
+            this.v.$warning('重定向视图暂不支持应用功能打开');
         } else {
             if (appView.openViewParam) {
                 Object.assign(viewparam, appView.openViewParam);
@@ -200,7 +200,7 @@ export class AppFuncService {
      * @memberof AppFuncService
      */
     public openPopup(viewparam: any, deResParameters: any[], parameters: any[]) {
-        console.log('-----POPUP-----非模式弹出，暂时不实现');
+        LogUtil.log('-----POPUP-----非模式弹出，暂时不实现');
     }
 
     /**
@@ -217,7 +217,7 @@ export class AppFuncService {
         };
         const appmodal = this.v.$appmodal.openModal(view, Util.deepCopy(context), viewparam);
         appmodal.subscribe((result: any) => {
-            console.log(result);
+            LogUtil.log(result);
         });
     }
 
@@ -249,7 +249,7 @@ export class AppFuncService {
         };
         const appPopover = this.v.$apppopover.openPop({}, view, Util.deepCopy(context), viewparam);
         appPopover.subscribe((result: any) => {
-            console.log(result);
+            LogUtil.log(result);
         });
     }
 
@@ -270,7 +270,7 @@ export class AppFuncService {
             viewModelData: appView,
         });
         appdrawer.subscribe((result: any) => {
-            console.log(result);
+            LogUtil.log(result);
         });
     }
 
@@ -280,7 +280,7 @@ export class AppFuncService {
      * @memberof AppFuncService
      */
     public openUser(context: any, viewparam: any, deResParameters: any[], parameters: any[]) {
-        console.log('用户自定义，暂时不实现');
+        LogUtil.log('用户自定义，暂时不实现');
     }
 
     /**
@@ -299,7 +299,7 @@ export class AppFuncService {
      * @memberof AppFuncService
      */
     public openPdAppFunc(appFunc: any, context: any, viewparam: any) {
-        this.v.$Notice.console.warn({ title: '错误', desc: '预置应用功能暂不支持' });
+        this.v.$warning('预置应用功能暂不支持');
     }
 
     /**
@@ -308,7 +308,7 @@ export class AppFuncService {
      * @memberof AppFuncService
      */
     public executeJavaScript(appFunc: any, context: any, viewparam: any) {
-        this.v.$Notice.console.warn({ title: '错误', desc: '执行JS暂不支持' });
+        this.v.$warning('执行JS暂不支持');
     }
 
     /**
@@ -317,6 +317,6 @@ export class AppFuncService {
      * @memberof AppFuncService
      */
     public custom(appFunc: any, context: any, viewparam: any) {
-        this.v.$Notice.console.warn({ title: '错误', desc: '自定义暂不支持' });
+        this.v.$warning('自定义暂不支持');
     }
 }

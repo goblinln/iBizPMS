@@ -1,5 +1,6 @@
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import { UIStateService } from '../../../../app-service';
+import { LogUtil } from 'ibiz-core';
 import './app-content-bottom-exp.less';
 
 /**
@@ -123,7 +124,7 @@ export class AppContentBottomExp extends Vue {
             const item: any = this.menus[parseInt(name)];
             this.itemClick(item, parseInt(name));
         } catch (error) {
-            console.warn(error);
+            LogUtil.warn(error);
         }
     }
 

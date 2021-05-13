@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import { Subject } from 'rxjs';
 import AppDesignCompponent from "./app-design.vue";
+import { LogUtil } from 'ibiz-core';
 
 export class AppDesign {
 
@@ -80,7 +81,7 @@ export class AppDesign {
             const subject = this.createVueExample(params);
             return subject;
         } catch (error) {
-            console.log(error);
+            LogUtil.log(error);
             return new Subject<any>();
         }
     }

@@ -12,7 +12,7 @@
 <script lang="ts">
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
-import { Http } from 'ibiz-core';
+import { Http, LogUtil } from 'ibiz-core';
 import { CodeListService } from "ibiz-service";
 
 @Component({})
@@ -230,7 +230,7 @@ export default class AppDepartmentPersonnel extends Vue {
             }
             this.$store.commit("addDepartmentPersonnel",this.items);
         }).catch((error: any) => {
-                console.log(error)
+                LogUtil.log(error)
         })
     }
 
@@ -307,7 +307,7 @@ export default class AppDepartmentPersonnel extends Vue {
             }
             callback(tempObject);
         }).catch((error:any) =>{
-            console.log(error);
+            LogUtil.log(error);
         })
         }
     }

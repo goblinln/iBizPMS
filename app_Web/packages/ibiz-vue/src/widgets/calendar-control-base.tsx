@@ -5,7 +5,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import interactionPlugin from '@fullcalendar/interaction';
-import { Util, ViewTool, ModelTool } from 'ibiz-core';
+import { Util, ViewTool, ModelTool, LogUtil } from 'ibiz-core';
 import { MDControlBase } from './md-control-base';
 import { GlobalService } from 'ibiz-service';
 import { AppCalendarService } from '../ctrl-service';
@@ -795,7 +795,7 @@ export class CalendarControlBase extends MDControlBase{
                 ViewTool.calcTreeActionItemAuthState(targetData.data,this.copyActionModel,this.appUIService);
                 return this.copyActionModel;
             }else{
-                console.warn("获取数据异常");
+                LogUtil.warn("获取数据异常");
                 return this.copyActionModel;
             }
         }

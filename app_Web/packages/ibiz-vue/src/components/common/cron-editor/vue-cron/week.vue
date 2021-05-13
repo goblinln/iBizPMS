@@ -46,6 +46,7 @@
 
 <script lang='ts'>
 import { Vue, Watch, Component } from 'vue-property-decorator';
+import { LogUtil } from 'ibiz-core';
 
 @Component({})
 export default class Week extends Vue {
@@ -143,7 +144,7 @@ export default class Week extends Vue {
           break
         case '4': // 指定
           result.push(this.appoint.join(','))
-          console.log(this.appoint);
+          LogUtil.log(this.appoint);
           break
         case '6': // 最后
           result.push(`${this.last === 0 ? '' : this.last}L`)

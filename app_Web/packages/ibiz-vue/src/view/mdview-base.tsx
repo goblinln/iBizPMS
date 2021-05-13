@@ -1,5 +1,5 @@
 import { IPSDESearchForm, IPSSearchBar, IPSAppDEMultiDataView, IPSAppCodeList, IPSCodeItem, IPSAppDEField } from '@ibiz/dynamic-model-api';
-import { CodeListServiceBase, ModelTool, Util } from 'ibiz-core'
+import { CodeListServiceBase, LogUtil, ModelTool, Util } from 'ibiz-core'
 import { MainViewBase } from "./mainview-base";
 
 /**
@@ -125,7 +125,7 @@ export class MDViewBase extends MainViewBase {
             let res: any = await this.codeListService.getDataItems({ tag: this.quickGroupCodeList.codeName, type: this.quickGroupCodeList.codeListType, data: this.quickGroupCodeList });
             this.quickGroupModel = this.handleDynamicData(JSON.parse(JSON.stringify(res)));
         } catch (error: any) {
-            console.log(`----${this.quickGroupCodeList.codeName}----代码表不存在`);
+            LogUtil.log(`----${this.quickGroupCodeList.codeName}----代码表不存在`);
         }
     }
 

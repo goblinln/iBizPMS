@@ -1,5 +1,5 @@
 import { IPSAppDEField, IPSApplication, IPSAppUtil, IPSDEFSearchMode, IPSSearchBar, IPSSearchBarFilter } from '@ibiz/dynamic-model-api';
-import { GetModelService } from 'ibiz-core';
+import { GetModelService, LogUtil } from 'ibiz-core';
 import moment from 'moment';
 import { AppSearchBarService } from '../ctrl-service/app-searchbar-service';
 import { MDControlBase } from './md-control-base';
@@ -339,7 +339,7 @@ export class SearchBarControlBase extends MDControlBase {
 		post.then((response: any) => {
             this.ctrlEvent({ controlname: this.controlInstance.name, action: "save", data: response.data });
 		}).catch((response: any) => {
-			console.log(response);
+			LogUtil.log(response);
 		});
     }
 
@@ -376,7 +376,7 @@ export class SearchBarControlBase extends MDControlBase {
 			}
 		}).catch((response: any) => {
             this.ctrlEndLoading();
-			console.log(response);
+			LogUtil.log(response);
 		});
     }
 

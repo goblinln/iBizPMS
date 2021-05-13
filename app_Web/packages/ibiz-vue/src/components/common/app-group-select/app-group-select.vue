@@ -22,6 +22,7 @@
 import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
 import {CodeListService} from "ibiz-service";
+import { LogUtil } from 'ibiz-core';
 
 @Component({})
 export default class AppGroupSelect extends Vue {
@@ -319,7 +320,7 @@ export default class AppGroupSelect extends Vue {
             }
             callback(tempObject);
         }).catch((error:any) =>{
-            console.log(error);
+            LogUtil.log(error);
         })
         }
     }

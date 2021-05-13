@@ -1,4 +1,5 @@
 import { AppServiceBase } from "../app-service/app-base.service";
+import { LogUtil } from 'ibiz-core';
 
 /**
  * 功能服务基类
@@ -87,7 +88,7 @@ export class UtilServiceBase {
      * @memberof UtilServiceBase
      */
     public initBasicParam(){
-        console.log("UtilService初始化参数未实现");
+        LogUtil.log("UtilService初始化参数未实现");
     }
 
     /**

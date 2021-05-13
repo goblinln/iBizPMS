@@ -1,9 +1,9 @@
 import { Watch } from 'vue-property-decorator';
-import { Util, CodeListServiceBase } from 'ibiz-core';
-import { IPSDEGantt, IPSDETreeColumn, IPSDETreeNode, IPSDETreeNodeDataItem } from '@ibiz/dynamic-model-api';
+import { Util, CodeListServiceBase, ViewTool } from 'ibiz-core';
+import { IPSAppDataEntity, IPSAppDERedirectView, IPSAppDEView, IPSAppUILogicRefView, IPSAppUIOpenDataLogic, IPSAppView, IPSAppViewLogic, IPSAppViewRef, IPSDEGantt, IPSDETreeColumn, IPSDETreeNode, IPSDETreeNodeDataItem, IPSNavigateContext, IPSNavigateParam } from '@ibiz/dynamic-model-api';
 import { MDControlBase } from './md-control-base';
 import { AppGanttService } from '../ctrl-service';
-import { AppViewLogicService } from '../app-service';
+import { Subject } from 'rxjs';
 
 export class GanttControlBase extends MDControlBase {
     
@@ -357,7 +357,7 @@ export class GanttControlBase extends MDControlBase {
      */
     public taskClick({event, data}: {event: any, data: any}) {
         let logicTag: string = data.id.split(';')[0]?.toLowerCase() + '_opendata';
-        AppViewLogicService.getInstance().executeViewLogic(logicTag, event, this, data, this.controlInstance.getPSAppViewLogics() || []);
+        this.ganttOpendata([data], logicTag);
     }
 
     /**
@@ -368,5 +368,281 @@ export class GanttControlBase extends MDControlBase {
      */
     public refresh(args?: any) {
         this.load();
+    }
+
+    /**
+     * 打开编辑数据视图
+     *
+     * @param {any[]} args 数据参数
+     * @param {*} [fullargs] 全量参数
+     * @param {*} [params]  额外参数
+     * @param {*} [$event] 事件源数据
+     * @param {*} [xData] 数据部件
+     * @memberof MainViewBase
+     */
+     public async ganttOpendata(args: any[], logicTag: string, fullargs?: any, params?: any, $event?: any, xData?: any) {
+        const openAppViewLogic: IPSAppViewLogic | undefined = this.controlInstance.getPSAppViewLogics()?.find((item: any) => {
+            return item.name == logicTag;
+        })
+        if (!openAppViewLogic || !openAppViewLogic.getPSAppUILogic()) {
+            return;
+        }
+        let viewOpenAppUIlogic:
+            | IPSAppUIOpenDataLogic
+            | undefined
+            | null = openAppViewLogic.getPSAppUILogic() as IPSAppUIOpenDataLogic;
+        if (viewOpenAppUIlogic && viewOpenAppUIlogic?.getParentPSModelObject()?.M.viewType) {
+            // todo
+        }
+        if (viewOpenAppUIlogic?.getOpenDataPSAppView()) {
+            const openViewRef: IPSAppUILogicRefView = viewOpenAppUIlogic.getOpenDataPSAppView() as IPSAppUILogicRefView;
+            const data: any = {};
+            let tempContext = JSON.parse(JSON.stringify(this.context));
+            // 准备参数
+            if (args.length > 0) {
+                Object.assign(tempContext, args[0]);
+            }
+            if (
+                openViewRef?.getPSNavigateContexts() &&
+                (openViewRef?.getPSNavigateContexts() as IPSNavigateContext[])?.length > 0
+            ) {
+                const localContext = Util.formatNavParam(openViewRef.getPSNavigateContexts());
+                let _context: any = Util.computedNavData(fullargs[0], this.context, this.viewparams, localContext);
+                Object.assign(tempContext, _context);
+            }
+            if (
+                openViewRef?.getPSNavigateParams() &&
+                (openViewRef.getPSNavigateParams() as IPSNavigateParam[])?.length > 0
+            ) {
+                const localViewParam = Util.formatNavParam(openViewRef.getPSNavigateParams());
+                let _param: any = Util.computedNavData(fullargs[0], this.context, this.viewparams, localViewParam);
+                Object.assign(data, _param);
+            }
+            if (
+                fullargs &&
+                fullargs.length > 0 &&
+                fullargs[0]['srfprocessdefinitionkey'] &&
+                fullargs[0]['srftaskdefinitionkey']
+            ) {
+                Object.assign(data, { processDefinitionKey: fullargs[0]['srfprocessdefinitionkey'] });
+                Object.assign(data, { taskDefinitionKey: fullargs[0]['srftaskdefinitionkey'] });
+                // 将待办任务标记为已读准备参数
+                const that: any = this;
+                if (that.quickGroupData && that.quickGroupData.hasOwnProperty('srfwf') && fullargs[0]['srftaskid']) {
+                    Object.assign(data, { srfwf: that.quickGroupData['srfwf'] });
+                    Object.assign(data, { srftaskid: fullargs[0]['srftaskid'] });
+                }
+            }
+            let deResParameters: any[] = [];
+            let parameters: any[] = [];
+            const openView: IPSAppView | null = openViewRef.getRefPSAppView();
+            if (!openView) return;
+            await openView.fill();
+            if (openView.getPSAppDataEntity()) {
+                // 处理视图关系参数 （只是路由打开模式才计算）
+                if (!openView.openMode || openView.openMode == 'INDEXVIEWTAB' || openView.openMode == 'POPUPAPP') {
+                    deResParameters = Util.formatAppDERSPath(
+                        tempContext,
+                        (openView as IPSAppDEView).getPSAppDERSPaths(),
+                    );
+                }
+            }
+            if (!openView?.openMode || openView.openMode == 'INDEXVIEWTAB') {
+                if (openView.getPSAppDataEntity()) {
+                    parameters = [
+                        {
+                            pathName: Util.srfpluralize(
+                                (openView.getPSAppDataEntity() as IPSAppDataEntity)?.codeName,
+                            ).toLowerCase(),
+                            parameterName: (openView.getPSAppDataEntity() as IPSAppDataEntity)?.codeName.toLowerCase(),
+                        },
+                        {
+                            pathName: 'views',
+                            parameterName: ((openView as IPSAppDEView).getPSDEViewCodeName() as string).toLowerCase(),
+                        },
+                    ];
+                } else {
+                    parameters = [{ pathName: 'views', parameterName: openView.name?.toLowerCase() }];
+                }
+            } else {
+                if (openView?.getPSAppDataEntity()) {
+                    parameters = [
+                        {
+                            pathName: Util.srfpluralize(
+                                (openView.getPSAppDataEntity() as IPSAppDataEntity)?.codeName,
+                            )?.toLowerCase(),
+                            parameterName: (openView.getPSAppDataEntity() as IPSAppDataEntity)?.codeName?.toLowerCase(),
+                        },
+                    ];
+                }
+                if (openView && openView.modelPath) {
+                    Object.assign(tempContext, { viewpath: openView.modelPath });
+                }
+            }
+            // 关闭视图回调
+            let callback: Function = (result: any, xData: any) => {
+                if (!result || !Object.is(result.ret, 'OK')) {
+                    return;
+                }
+                if (!xData || !(xData.refresh instanceof Function)) {
+                    return;
+                }
+                xData.refresh(result.datas);
+            };
+            // 重定向视图
+            if (openView?.redirectView) {
+                let targetRedirectView: IPSAppDERedirectView = openView as IPSAppDERedirectView;
+                await targetRedirectView.fill();
+                if (
+                    targetRedirectView.getRedirectPSAppViewRefs() &&
+                    targetRedirectView.getRedirectPSAppViewRefs()?.length === 0
+                ) {
+                    return;
+                }
+                this.appUIService
+                    .getRDAppView(
+                        args[0][this.appDeCodeName.toLowerCase()],
+                        params,
+                    )
+                    .then(async (result: any) => {
+                        if (!result) {
+                            return;
+                        }
+                        let targetOpenViewRef:
+                            | IPSAppViewRef
+                            | undefined = targetRedirectView.getRedirectPSAppViewRefs()?.find((item: IPSAppViewRef) => {
+                            return item.name === result.split(':')[0];
+                        });
+                        if (!targetOpenViewRef) {
+                            return;
+                        }
+                        if (
+                            targetOpenViewRef.getPSNavigateContexts() &&
+                            (targetOpenViewRef.getPSNavigateContexts() as IPSNavigateContext[]).length > 0
+                        ) {
+                            let localContextRef: any = Util.formatNavParam(
+                                targetOpenViewRef.getPSNavigateContexts(),
+                                true,
+                            );
+                            let _context: any = Util.computedNavData(fullargs[0], tempContext, data, localContextRef);
+                            Object.assign(tempContext, _context);
+                        }
+                        let targetOpenView: IPSAppView | null = targetOpenViewRef.getRefPSAppView();
+                        if (!targetOpenView) {
+                            return;
+                        }
+                        await targetOpenView.fill();
+                        const view: any = {
+                            viewname: Util.srfFilePath2(targetOpenView.codeName),
+                            height: targetOpenView.height,
+                            width: targetOpenView.width,
+                            title: targetOpenView.title,
+                        };
+                        if (!targetOpenView.openMode || targetOpenView.openMode == 'INDEXVIEWTAB') {
+                            if (targetOpenView.getPSAppDataEntity()) {
+                                parameters = [
+                                    {
+                                        pathName: Util.srfpluralize(
+                                            (targetOpenView.getPSAppDataEntity() as IPSAppDataEntity)?.codeName,
+                                        ).toLowerCase(),
+                                        parameterName: (targetOpenView.getPSAppDataEntity() as IPSAppDataEntity)?.codeName.toLowerCase(),
+                                    },
+                                    {
+                                        pathName: 'views',
+                                        parameterName: ((targetOpenView as IPSAppDEView).getPSDEViewCodeName() as string).toLowerCase(),
+                                    },
+                                ];
+                            } else {
+                                parameters = [
+                                    {
+                                        pathName: targetOpenView.codeName.toLowerCase(),
+                                        parameterName: targetOpenView.codeName.toLowerCase(),
+                                    },
+                                ];
+                            }
+                        } else {
+                            if (targetOpenView.getPSAppDataEntity()) {
+                                parameters = [
+                                    {
+                                        pathName: Util.srfpluralize(
+                                            (targetOpenView.getPSAppDataEntity() as IPSAppDataEntity)?.codeName,
+                                        ).toLowerCase(),
+                                        parameterName: (targetOpenView.getPSAppDataEntity() as IPSAppDataEntity)?.codeName.toLowerCase(),
+                                    },
+                                ];
+                            }
+                            if (targetRedirectView && targetRedirectView.modelPath) {
+                                Object.assign(tempContext, { viewpath: targetRedirectView.modelPath });
+                            }
+                        }
+                        this.openTargtView(targetOpenView, view, tempContext, data, xData, $event, deResParameters, parameters, args, callback);
+                    });
+            } else {
+                if (fullargs && fullargs.copymode) {
+                    Object.assign(data, { copymode: true });
+                }
+                let view: any = {
+                    viewname: 'app-view-shell',
+                    height: openView.height,
+                    width: openView.width,
+                    title: openView.title,
+                };
+                this.openTargtView(openView, view, tempContext, data, xData, $event, deResParameters, parameters, args, callback);
+            }
+        } else {
+            this.$warning({ title: '错误', desc: '未指定关系视图' });
+        }
+    }
+
+    /**
+     * 打开目标视图
+     *
+     * @memberof MainViewBase
+     */
+     public openTargtView(openView: any, view: any, tempContext: any, data: any, xData: any, $event: any, deResParameters: any, parameters: any, args: any, callback: Function) {
+        const _this: any = this;
+        if (!openView?.openMode || openView.openMode == 'INDEXVIEWTAB') {
+            if (tempContext.srfdynainstid) {
+                Object.assign(data, { srfdynainstid: tempContext.srfdynainstid });
+            }
+            const routePath = ViewTool.buildUpRoutePath(_this.$route, tempContext, deResParameters, parameters, args, data);
+            _this.$router.push(routePath);
+        } else if (openView.openMode == 'POPUPAPP') {
+            const routePath = ViewTool.buildUpRoutePath(_this.$route, tempContext, deResParameters, parameters, args, data);
+            window.open('./#' + routePath, '_blank');
+        } else if (openView.openMode == 'POPUPMODAL') {
+            // 打开模态
+            let container: Subject<any> = _this.$appmodal.openModal(view, tempContext, data);
+            container.subscribe((result: any) => {
+                callback(result, xData);
+            });
+        } else if (openView.openMode.indexOf('DRAWER') !== -1) {
+            // 打开抽屉
+            if (Object.is(openView.openMode, 'DRAWER_TOP')) {
+                Object.assign(view, { isfullscreen: true });
+                let container: Subject<any> = _this.$appdrawer.openTopDrawer(
+                    view,
+                    Util.getViewProps(tempContext, data),
+                );
+                container.subscribe((result: any) => {
+                    callback(result, xData);
+                });
+            } else {
+                Object.assign(view, { placement: openView.openMode });
+                let container: Subject<any> = _this.$appdrawer.openDrawer(view, Util.getViewProps(tempContext, data));
+                container.subscribe((result: any) => {
+                    callback(result, xData);
+                });
+            }
+        } else if (openView.openMode == 'POPOVER') {
+            // 打开气泡卡片
+            Object.assign(view, { placement: openView.openMode });
+            let container: Subject<any> = _this.$apppopover.openPop($event, view, tempContext, data);
+            container.subscribe((result: any) => {
+                callback(result, xData);
+            });
+        } else {
+            this.$warning({ title: '错误', desc: openView.title + '不支持该模式打开' });
+        }
     }
 }

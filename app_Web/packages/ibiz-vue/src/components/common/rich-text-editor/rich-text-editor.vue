@@ -59,7 +59,7 @@ import { Vue, Component, Prop, Model, Watch } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
 import { Environment } from '@/environments/environment';
 import axios from 'axios';
-import { ImgurlBase64 } from 'ibiz-core';
+import { ImgurlBase64, LogUtil } from 'ibiz-core';
 import tinymce from "tinymce/tinymce";
 // import 'tinymce/themes/modern';
 import 'tinymce/themes/silver';
@@ -684,7 +684,7 @@ export default class RichTextEditor extends Vue {
                         })
                     }
                 }, (error: any) => {
-                    console.log(error);
+                    LogUtil.log(error);
                     failure('HTTP Error: ' + error.status);
                 });
             },
@@ -782,7 +782,7 @@ export default class RichTextEditor extends Vue {
         let noticeusers:string = "";
         atSymbol.forEach((item:any)=>{
             if(Object.is(item.className,'at-text')){
-                console.log(item);
+                LogUtil.log(item);
                 noticeusers += item.getAttribute('noticeusers')+',';
             }
         })
@@ -1010,9 +1010,7 @@ export default class RichTextEditor extends Vue {
         templParams.content = templateContent;
         const response: any = await this.userTplService.Create({}, templParams);
         if(response && response.status === 200){
-            this.$Notice.success({
-                title: '保存模板成功!!!',
-            });
+            this.$success('保存模板成功!!!');
         }else{
             this.$throw('保存模板失败!!!');
         }
@@ -1049,9 +1047,7 @@ export default class RichTextEditor extends Vue {
         context.usertpl = event.id;
         const response: any = await this.userTplService.Remove(context,{});
         if(response && response.status === 200){
-            this.$Notice.success({
-                title: '删除模板成功!!!',
-            });
+            this.$success('删除模板成功!!!');
         }else{
             this.$throw('删除模板失败!!!');
         }

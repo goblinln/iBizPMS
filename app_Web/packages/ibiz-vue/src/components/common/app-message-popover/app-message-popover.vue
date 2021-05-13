@@ -85,7 +85,7 @@
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
-import { AppServiceBase } from 'ibiz-core';
+import { AppServiceBase, LogUtil } from 'ibiz-core';
 import moment from 'moment';
 
 @Component({})
@@ -153,7 +153,7 @@ export default class AppMessagePopover extends Vue {
                 this.getMyMsgs();
             }
         }).catch((error: any) => {
-            console.warn("加载数据错误");
+            LogUtil.warn("加载数据错误");
         })
     }
 
@@ -173,7 +173,7 @@ export default class AppMessagePopover extends Vue {
      * 点击标签事件
      */
     public handleTag(data: any) {
-        if (!data)  return this.$message.error("未获取到标签内容");
+        if (!data)  return this.$throw("未获取到标签内容");
         // 拼接要打开的窗口地址
         const baseUrl:any = this.environment.BaseUrl;
         const openUrl:any = baseUrl + `/wfcore/mytasks/${data.processDefinitionKey}/web/${data.processInstanceBusinessKey}/usertasks/${data.taskDefinitionKey}`;

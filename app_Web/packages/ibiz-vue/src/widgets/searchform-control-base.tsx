@@ -1,7 +1,7 @@
 import { IPSApplication, IPSAppUtil, IPSControlHandler } from '@ibiz/dynamic-model-api';
 import { EditFormControlBase } from './editform-control-base';
 import moment from 'moment';
-import { GetModelService } from 'ibiz-core';
+import { GetModelService, LogUtil } from 'ibiz-core';
 /**
  * 搜索表单部件基类
  *
@@ -126,7 +126,7 @@ export class SearchFormControlBase extends EditFormControlBase {
 			}
 		}).catch((response: any) => {
             this.ctrlEndLoading();
-			console.log(response);
+			LogUtil.log(response);
 		});
     }
 
@@ -310,7 +310,7 @@ export class SearchFormControlBase extends EditFormControlBase {
 		post.then((response: any) => {
             this.ctrlEvent({ controlname: this.controlInstance.name, action: "save", data: response.data });
 		}).catch((response: any) => {
-			console.log(response);
+			LogUtil.log(response);
 		});
     }
 

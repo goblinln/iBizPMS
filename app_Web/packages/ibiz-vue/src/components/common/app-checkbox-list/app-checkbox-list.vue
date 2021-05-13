@@ -9,6 +9,7 @@
 <script lang="ts">
 import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator';
 import { CodeListService } from "ibiz-service";
+import { LogUtil } from 'ibiz-core';
 
 @Component({
 })
@@ -251,7 +252,7 @@ export default class AppCheckBox extends Vue {
             this.codeListService.getDataItems({ tag: this.tag, type: this.codelistType,data: this.codeList,context:context,viewparam:viewparam }).then((codelistItems: Array<any>) => {
                 this.items = codelistItems;
             }).catch((error: any) => {
-                console.log(`----${this.tag}----代码表不存在`);
+                LogUtil.log(`----${this.tag}----代码表不存在`);
             })
         }
     }

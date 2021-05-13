@@ -1,4 +1,5 @@
 import { IPSAppCodeList, IPSCodeItem } from '@ibiz/dynamic-model-api';
+import { LogUtil } from 'ibiz-core';
 import { AppServiceBase } from '../app-service/app-base.service';
 import { EntityBaseService } from '../entity-service/entity-base.service';
 import { AppModelService, GetModelService } from '../model-service/model-service';
@@ -93,7 +94,7 @@ export class CodeListServiceBase {
                 dataItems = await this.getItems(params.tag, params.context, params.viewparam, false);
             }
         } catch (error) {
-            console.warn("代码表加载异常" + error);
+          LogUtil.warn("代码表加载异常" + error);
         }
         if (!dataItems) dataItems = [];
         return dataItems;
@@ -278,7 +279,7 @@ export class CodeListServiceBase {
                     }
                 }
             }).catch((error: any) => {
-                console.warn("获取代码表异常");
+              LogUtil.warn("获取代码表异常");
                 return Promise.reject([]);
             })
         })

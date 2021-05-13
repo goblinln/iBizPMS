@@ -1,5 +1,5 @@
 import { Subject } from 'rxjs';
-import { ViewTool, FormItemModel, Util, Verify, ModelTool, AppServiceBase } from 'ibiz-core';
+import { ViewTool, FormItemModel, Util, Verify, ModelTool, AppServiceBase, LogUtil } from 'ibiz-core';
 import { MDControlBase } from './md-control-base';
 import { AppGridService } from '../ctrl-service/app-grid-service';
 import { AppViewLogicService } from 'ibiz-vue';
@@ -900,7 +900,7 @@ export class GridControlBase extends MDControlBase {
                         this.$throw((this.$t('app.gridpage.delDataFail') as string) + ',' + response.info);
                         return;
                     } else {
-                        this.$Notice.success({ title: '', desc: (this.$t('app.gridpage.delSuccess') as string) });
+                        this.$success((this.$t('app.gridpage.delSuccess') as string));
                     }
                     //删除items中已删除的项
                     _datas.forEach((data: any) => {
@@ -971,7 +971,7 @@ export class GridControlBase extends MDControlBase {
     public importExcel(data: any = {}): void {
         let _this: any = this;
         if (Object.keys(this.importDataModel).length == 0) {
-            this.$Notice.warning({ 'title': (this.$t("app.utilview.warning") as string), 'desc': (this.$t("app.utilview.info") as string) });
+            this.$warning((this.$t("app.utilview.info") as string));
             return;
         }
         const view: any = {
@@ -1307,7 +1307,7 @@ export class GridControlBase extends MDControlBase {
             return;
         }
         if (allGroup.length == 0) {
-            console.warn("分组数据无效");
+            LogUtil.warn("分组数据无效");
             this.items.forEach((item: any, index: number) => {
                 Object.assign(item, {
                     groupById: index + 1,
@@ -1363,7 +1363,7 @@ export class GridControlBase extends MDControlBase {
         let groupTree: Array<any> = [];
         allGroup = [...new Set(allGroup)];
         if (allGroup.length == 0) {
-            console.warn("分组数据无效");
+            LogUtil.warn("分组数据无效");
         }
         // 组装数据
         allGroup.forEach((group: any, groupIndex: number) => {
@@ -1907,7 +1907,7 @@ export class GridControlBase extends MDControlBase {
         this.refresh();
         if (errorItems.length === 0 && successItems.length > 0) {
             if(args?.showResultInfo || (args && !args.hasOwnProperty('showResultInfo'))){
-                this.$Notice.success({ title: '', desc: (this.$t('app.commonWords.saveSuccess') as string) });
+                this.$success((this.$t('app.commonWords.saveSuccess') as string));
             }
         } else {
             errorItems.forEach((item: any, index: number) => {
@@ -2233,7 +2233,7 @@ export class GridControlBase extends MDControlBase {
                     this.$throw((this.$t('app.formpage.workflow.submiterror') as string) + ', ' + response.data.message);
                     return;
                 }
-                this.$Notice.info({ title: '', desc: (this.$t('app.formpage.workflow.submitsuccess') as string) });
+                this.$info((this.$t('app.formpage.workflow.submitsuccess') as string));
                 resolve(response);
             }).catch((response: any) => {
                 this.ctrlEndLoading();

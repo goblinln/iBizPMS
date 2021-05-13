@@ -1,3 +1,5 @@
+import { LogUtil } from 'ibiz-core';
+
 /**
  * 获取部门成员
  * 
@@ -25,7 +27,7 @@ export const getCodeListItems = (state: any) => (srfkey: string) => {
     let items: any[] = [];
     const codelist = state.codelists.find((_codelist: any) => Object.is(_codelist.srfkey, srfkey));
     if (!codelist) {
-        console.log(`----${srfkey}----代码表不存在`);
+        LogUtil.log(`----${srfkey}----代码表不存在`);
     } else {
         items = [...codelist.items];
     }
@@ -58,7 +60,7 @@ export const getAppData = (state: any) => () => {
         try{
             Object.assign(copyContext,JSON.parse(localStorage.getItem('localdata') as string));
         }catch(error){
-            console.warn(error);
+            LogUtil.warn(error);
         }
     }
     result.context = copyContext;

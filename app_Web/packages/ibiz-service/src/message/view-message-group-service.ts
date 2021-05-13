@@ -1,4 +1,4 @@
-import { Http } from 'ibiz-core';
+import { Http, LogUtil } from 'ibiz-core';
 
 /**
  * 视图消息组
@@ -79,7 +79,7 @@ export class ViewMessageGroupService {
                     resolve(response.data);
                 }
             }).catch((error: any) => {
-                console.log(error);
+                LogUtil.log(error);
             });
         })
     }

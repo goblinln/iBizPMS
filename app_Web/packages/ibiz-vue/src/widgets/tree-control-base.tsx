@@ -1,5 +1,5 @@
 import { Provide } from 'vue-property-decorator';
-import { Util, ViewTool } from 'ibiz-core';
+import { LogUtil, Util, ViewTool } from 'ibiz-core';
 import { AppTreeService } from '../ctrl-service';
 import { MDControlBase } from './md-control-base';
 import { GlobalService, UIServiceRegister } from 'ibiz-service';
@@ -682,7 +682,7 @@ export class TreeControlBase extends MDControlBase {
                 ViewTool.calcTreeActionItemAuthState(targetData.data, this.copyActionModel, nodeUIService);
                 return this.copyActionModel;
             } else {
-                console.warn('获取数据异常');
+                LogUtil.warn('获取数据异常');
                 return this.copyActionModel;
             }
         }

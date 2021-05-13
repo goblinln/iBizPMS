@@ -25,7 +25,7 @@
 <script lang="ts">
 import { Vue, Component, Prop, Model } from 'vue-property-decorator';
 import { CodeListService } from "ibiz-service";
-import { Util } from 'ibiz-core';
+import { LogUtil, Util } from 'ibiz-core';
 
 @Component({
 })
@@ -265,7 +265,7 @@ export default class DropDownListMpicker extends Vue {
                 this.items = codelist;
                 this.handleLevelCodeList(Util.deepCopy(this.items));
             }).catch((error: any) => {
-                console.log(`----${this.tag}----${(this.$t('app.commonWords.codeNotExist') as string)}`);
+                LogUtil.log(`----${this.tag}----${(this.$t('app.commonWords.codeNotExist') as string)}`);
             })
         }
     }

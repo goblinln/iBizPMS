@@ -52,6 +52,7 @@ import { CodeListService } from "ibiz-service";
 import { GlobalService } from 'ibiz-service';
 import { Vue, Component, Prop, Provide, Emit, Watch } from 'vue-property-decorator';
 import { Environment } from '@/environments/environment';
+import { LogUtil } from 'ibiz-core';
 
 @Component({
 })
@@ -484,13 +485,13 @@ export default class AppDataUploadView extends Vue {
                 if (codelist) {
                     resolve([...JSON.parse(JSON.stringify(codelist.items))]);
                 } else {
-                    console.log(`----${codeListObject.tag}----${(this.$t('app.commonWords.codeNotExist') as string)}`);
+                    LogUtil.log(`----${codeListObject.tag}----${(this.$t('app.commonWords.codeNotExist') as string)}`);
                 }
             }else if(codeListObject.tag && Object.is(codeListObject.type,"DYNAMIC")){
                 this.codeListService.getItems(codeListObject.tag).then((res:any) => {
                     resolve(res);
                 }).catch((error:any) => {
-                    console.log(`----${codeListObject.tag}----${(this.$t('app.commonWords.codeNotExist') as string)}`);
+                    LogUtil.log(`----${codeListObject.tag}----${(this.$t('app.commonWords.codeNotExist') as string)}`);
                 });
             }
         })

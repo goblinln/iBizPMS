@@ -136,6 +136,32 @@ export default class UploadEditor extends EditorBase {
     }
 
     /**
+     * 绘制浏览器文本组件
+     * 
+     * @memberof UploadEditor
+     */
+     public renderPreviewHfh(){
+      let filekey = ModelTool.getAppEntityKeyField(this.containerCtrl?.getPSAppDataEntity())?.codeName?.toLowerCase() || '';
+        return this.$createElement(this.editorComponentName,{
+            props: {
+                formItemName: this.editorInstance.name,
+                value: this.value,
+                disabled: this.disabled,
+                context: this.context,
+                viewparams: this.viewparams,
+                formData: JSON.stringify(this.contextData),
+                folder:this.containerCtrl?.getPSAppDataEntity()?.codeName?.toLowerCase() || '',
+                ownertype:this.editorInstance.name,
+                ownerid:this.contextData[filekey],
+                entityId:filekey,
+                ...this.customProps,
+            },
+            on: { formitemvaluechange: this.editorChange },
+            style: this.customStyle
+        })
+    }
+
+    /**
      * 绘制高拍仪组件
      * 
      * @memberof UploadEditor
@@ -183,6 +209,8 @@ export default class UploadEditor extends EditorBase {
                 return this.renderCameraUpload();
             case 'FILEUPLOADER_USEWORKTEMP':
                 return this.renderDiskUpload();
+            case 'FILEUPLOADER_PREVIEWHFH':
+                return this.renderPreviewHfh();
         }
     }
 }

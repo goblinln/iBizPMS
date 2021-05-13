@@ -1,4 +1,4 @@
-import { ControlServiceBase, ModelTool } from 'ibiz-core';
+import { ControlServiceBase, ModelTool, LogUtil  } from 'ibiz-core';
 import { IPSDEGantt, IPSDETreeNode, IPSDETreeNodeDataItem, IPSDETreeNodeRS, IPSNavigateContext, IPSNavigateParam, IPSDETreeNodeRSParam, IPSDETreeDataSetNode, IPSDETreeStaticNode, IPSDETreeCodeListNode } from '@ibiz/dynamic-model-api';
 import { GlobalService } from 'ibiz-service';
 import { AppGanttModel } from '../ctrl-model/app-gantt-model';
@@ -642,7 +642,7 @@ export class AppGanttService extends ControlServiceBase {
                     }
                 })
             } catch (error) {
-                console.log(error);
+                LogUtil.log(error);
             }
         })
     }

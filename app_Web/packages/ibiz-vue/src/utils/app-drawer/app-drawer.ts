@@ -2,7 +2,7 @@ import Vue from 'vue';
 import { Subject } from 'rxjs';
 import AppDrawerCompponent from "./app-drawer.vue";
 import { appTopDrawerContainer } from '../app-top-drawer/app-top-drawer-container';
-import { AppServiceBase } from 'ibiz-core';
+import { AppServiceBase, LogUtil } from 'ibiz-core';
 
 export class AppDrawer {
 
@@ -131,7 +131,7 @@ export class AppDrawer {
             const subject = this.createVueExample(view, dynamicProps, staticProps, uuid);
             return subject;
         } catch (error) {
-            console.log(error);
+            LogUtil.log(error);
             return new Subject<any>();
         }
     }

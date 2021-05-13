@@ -1,5 +1,5 @@
 import { IPSAppPortlet, IPSDEDashboard } from "@ibiz/dynamic-model-api";
-import { AppServiceBase, ModelTool, Util } from "ibiz-core";
+import { AppServiceBase, LogUtil, ModelTool, Util } from "ibiz-core";
 import { UtilServiceRegister } from "ibiz-service";
 import { MainControlBase } from "./main-control-base";
 
@@ -260,7 +260,7 @@ export class DashboardControlBase extends MainControlBase {
                 }
             }
         } catch (error) {
-            console.warn("加载面板模型异常:"+error);
+            LogUtil.warn("加载面板模型异常:"+error);
             this.initStaticMountedMap();
             this.dashboardType = "default";
         }

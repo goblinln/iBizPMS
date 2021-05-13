@@ -232,7 +232,7 @@ export class ListControlBase extends MDControlBase {
         this.refresh();
         if (errorItems.length === 0) {
             if(args?.showResultInfo || (args && !args.hasOwnProperty('showResultInfo'))){
-                this.$Notice.success({ title: '', desc: (this.$t('app.commonWords.saveSuccess') as string) });
+                this.$success((this.$t('app.commonWords.saveSuccess') as string));
             }
         } else {
             errorItems.forEach((item: any, index: number) => {
@@ -498,7 +498,7 @@ export class ListControlBase extends MDControlBase {
                         this.$throw('删除数据失败,' + response.info);
                         return;
                     } else {
-                        this.$Notice.success({ title: '', desc: '删除成功!' });
+                        this.$success('删除成功!');
                     }
                     //删除items中已删除的项
                     items.forEach((data: any) => {

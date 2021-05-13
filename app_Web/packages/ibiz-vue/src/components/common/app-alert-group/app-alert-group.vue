@@ -17,6 +17,7 @@
 <script lang="ts">
 import {Vue, Component, Prop} from 'vue-property-decorator';
 import {ViewMessageGroupService} from 'ibiz-service';
+import { LogUtil } from 'ibiz-core';
 @Component({})
 export default class AppAlertGroup extends Vue {
 
@@ -106,7 +107,7 @@ export default class AppAlertGroup extends Vue {
                 })  
             } 
         }).catch((error:any) => {
-            console.log(error);
+            LogUtil.log(error);
         });
     }
 }

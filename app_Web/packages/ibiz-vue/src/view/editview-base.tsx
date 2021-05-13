@@ -1,5 +1,5 @@
 import { Subject, Subscription } from 'rxjs';
-import { DataPanelEngine, EditViewEngine, ModelTool, ViewState } from 'ibiz-core';
+import { DataPanelEngine, EditViewEngine, LogUtil, ModelTool, ViewState } from 'ibiz-core';
 import { MainViewBase } from './mainview-base';
 import { IPSAppDEEditView, IPSDEForm } from '@ibiz/dynamic-model-api';
 import { AppCenterService } from 'ibiz-vue';
@@ -186,12 +186,12 @@ export class EditViewBase extends MainViewBase {
      public readTask(data: any) {
         this.appEntityService.ReadTask(this.context, data).then((response:any) =>{
             if (!response || response.status !== 200) {
-                console.warn("将抄送任务标记为已读失败");
+                LogUtil.warn("将抄送任务标记为已读失败");
                 return;
             }
             AppCenterService.notifyMessage({ name: this.appDeCodeName, action: 'appRefresh', data: data });
         }).catch((error: any) => {
-            console.warn("将抄送任务标记为已读失败");
+            LogUtil.warn("将抄送任务标记为已读失败");
         })
     }
     

@@ -17,6 +17,7 @@ import SwitchEditor from './switch-editor/switch-editor';
 import IpAddressEditor from './ipaddress-editor/ipaddress-editor';
 import { IPSEditor } from '@ibiz/dynamic-model-api';
 import CodeEditor from './code-editor/code-editor'
+import { LogUtil } from 'ibiz-core';
 
 
 /**
@@ -193,7 +194,8 @@ export class AppDefaultEditor extends Vue {
             'PICTURE_INFO',
             'FILEUPLOADER_INFO',
             'FILEUPLOADER_CAMERA',
-            'FILEUPLOADER_USEWORKTEMP'
+            'FILEUPLOADER_USEWORKTEMP',
+            'FILEUPLOADER_PREVIEWHFH'
         ] ],
         ['checkbox-editor', [
             'RADIOBUTTONLIST', 
@@ -300,7 +302,7 @@ export class AppDefaultEditor extends Vue {
             if( !editorName  || editor.getPSSysPFPlugin()?.pluginCode){
                 editorComponentName = AppComponentService.getEditorComponents(editor.editorType,editor.editorStyle); 
                 if(!editorComponentName){
-                    console.warn("目标编辑器查找不到");
+                    LogUtil.warn("目标编辑器查找不到");
                     return;
                 }
             } else {

@@ -1,6 +1,6 @@
 import { Subject } from 'rxjs';
 import { GlobalService, UIServiceRegister } from 'ibiz-service';
-import { ModelTool, Util, ViewTool } from 'ibiz-core';
+import { LogUtil, ModelTool, Util, ViewTool } from 'ibiz-core';
 import { ViewBase } from './view-base';
 import {
     IPSAppDataEntity,
@@ -402,7 +402,7 @@ export class MainViewBase extends ViewBase {
                 callback(result, xData);
             });
         } else {
-            this.$Notice.warning({ title: '错误', desc: openView.title + '不支持该模式打开' });
+            this.$warning(openView.title + '不支持该模式打开');
         }
     }
 
@@ -646,7 +646,7 @@ export class MainViewBase extends ViewBase {
                 );
             }
         } else {
-            this.$Notice.warning({ title: '错误', desc: '未指定关系视图' });
+            this.$warning('未指定关系视图');
         }
     }
 
@@ -749,7 +749,7 @@ export class MainViewBase extends ViewBase {
                     !minorPSAppDERSs ||
                     minorPSAppDERSs.length !== 2
                 ) {
-                    this.$Notice.warning({ title: '错误', desc: '批量添加需添加N:N关系' });
+                    this.$warning('批量添加需添加N:N关系');
                     return;
                 }
                 let openViewModel: IPSAppUILogicRefView | undefined = batchAddPSAppViews.find(
@@ -816,7 +816,7 @@ export class MainViewBase extends ViewBase {
                         });
                 });
             } else if (viewNewAppUIlogic.batchAddOnly) {
-                console.warn('只支持批添加未实现');
+                LogUtil.warn('只支持批添加未实现');
             } else if (viewNewAppUIlogic.getNewDataPSAppView()) {
                 const _this: any = this;
                 const newviewRef: IPSAppUILogicRefView | null = viewNewAppUIlogic.getNewDataPSAppView();
@@ -978,13 +978,13 @@ export class MainViewBase extends ViewBase {
                         callback(result, xData);
                     });
                 } else {
-                    this.$Notice.warning({ title: '错误', desc: `${dataview.title}不支持该模式打开` });
+                    this.$warning(`${dataview.title}不支持该模式打开`);
                 }
             }else{
-                this.$Notice.warning({ title: '错误', desc: '未指定关系视图' });
+                this.$warning('未指定关系视图');
             }
         } else {
-            this.$Notice.warning({ title: '错误', desc: '未指定关系视图' });
+            this.$warning('未指定关系视图');
         }
     }
 }

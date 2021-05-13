@@ -19,6 +19,7 @@
 <script lang = 'ts'>
 import { Vue, Component, Prop } from 'vue-property-decorator';
 import { VuePivottableUi } from 'ibiz-vue-pivottable';
+import { LogUtil } from 'ibiz-core';
 import 'ibiz-vue-pivottable/dist/vue-pivottable.css';
 
 @Component({
@@ -193,7 +194,7 @@ export default class AppVuePivotTable extends Vue {
      * @memberof AppVuePivotTable
      */
     public onChange(evt: any) {
-        console.log(evt);
+        LogUtil.log(evt);
     }
 }
 </script>

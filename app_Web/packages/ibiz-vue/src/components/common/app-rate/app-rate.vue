@@ -7,6 +7,7 @@
 <script lang="ts">
 import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator';
 import {CodeListService} from "ibiz-service";
+import { LogUtil } from 'ibiz-core';
 
 @Component({})
 export default class AppRate extends Vue {
@@ -138,7 +139,7 @@ export default class AppRate extends Vue {
                 const maxItem = Math.max.apply(Math,items.map((item: any) => { return item.value; }));
                 this.maxItem = maxItem>5 ? 5 : maxItem;
             }).catch((error: any) => {
-                console.log(`----${this.tag}----$t('components.appCheckBox.notExist')`);
+                LogUtil.log(`----${this.tag}----$t('components.appCheckBox.notExist')`);
             });
           }
       }
@@ -211,7 +212,7 @@ export default class AppRate extends Vue {
                 const maxItem = Math.max.apply(Math,items.map((item: any) => { return item.value; }));
                 this.maxItem = maxItem>5 ? 5 : maxItem;
             }).catch((error: any) => {
-                console.log(`----${this.tag}----代码表不存在`);
+                LogUtil.log(`----${this.tag}----代码表不存在`);
             })
         }
     }

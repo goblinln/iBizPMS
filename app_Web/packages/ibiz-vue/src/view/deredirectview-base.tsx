@@ -1,6 +1,6 @@
 
 import { DynamicInstanceConfig, IPSAppDataEntity, IPSAppDERedirectView, IPSAppDEView, IPSAppView, IPSAppViewRef } from "@ibiz/dynamic-model-api";
-import { GetModelService, Util, ViewTool } from "ibiz-core";
+import { GetModelService, LogUtil, Util, ViewTool } from "ibiz-core";
 import { MainViewBase } from "./mainview-base";
 
 /**
@@ -106,7 +106,7 @@ export class DeRedirectViewBase extends MainViewBase {
     const routePath = ViewTool.buildUpRoutePath(this.$route, tempContext, deResParameters, parameters, args, data);
     this.closeRedirectView(args);
     this.$router.replace({ path: routePath }).catch((error:any) =>{
-      console.log("重定向跳转......");
+      LogUtil.log("重定向跳转......");
     })
   }
 

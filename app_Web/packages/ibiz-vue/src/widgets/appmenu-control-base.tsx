@@ -1,5 +1,5 @@
 import { IPSAppMenu } from '@ibiz/dynamic-model-api';
-import { AuthServiceBase, Util } from 'ibiz-core';
+import { AuthServiceBase, LogUtil, Util } from 'ibiz-core';
 import { ControlBase } from "./control-base";
 import { AppFuncService } from '../app-service';
 import { AppMenuService } from "../ctrl-service";
@@ -401,7 +401,7 @@ export class AppMenuControlBase extends ControlBase {
                 AppFuncService.getInstance().executeApplication(appFunc,tempContext);
             }
         } else {
-            console.warn('未指定应用功能');
+            LogUtil.warn('未指定应用功能');
         }
     }
 

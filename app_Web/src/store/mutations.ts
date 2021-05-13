@@ -1,4 +1,5 @@
 import { Environment } from '@/environments/environment';
+import { LogUtil } from 'ibiz-core';
 
 /**
  * 添加部门成员
@@ -62,7 +63,7 @@ export const updateAppData = (state: any, appdata: string) => {
 export const updateCodeList = (state: any, { srfkey, items }: { srfkey: string, items: any[] }) => {
     const index = state.codelists.findIndex((_codelist: any) => Object.is(_codelist.srfkey, srfkey));
     if (index === -1) {
-        console.log(`${srfkey} ---- 代码表不存在`);
+        LogUtil.log(`${srfkey} ---- 代码表不存在`);
         return;
     }
     state.codelists[index].items = [...items];

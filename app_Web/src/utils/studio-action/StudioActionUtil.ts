@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { on,Http } from 'ibiz-core';
+import { on,Http, LogUtil  } from 'ibiz-core';
 import { Environment } from '@/environments/environment';
 
 /**
@@ -116,10 +116,10 @@ export class StudioActionUtil {
                     type: 'OpenView',
                     params
                 }, '*');
-                Vue.prototype.$message.warning('请在已打开的配置平台查看!');
+                Vue.prototype.$warning('请在已打开的配置平台查看!');
             } else {
                 if(Environment.debugOpenMode === 'sln'){
-                    console.log("打开sln未支持");
+                    LogUtil.log("打开sln未支持");
                     // this.studioWin = window.open(`${Environment.StudioUrl}?ov=${encodeURIComponent(JSON.stringify(params))}#/common_slnindex/srfkeys=${Environment.SlnId}/sysdesign_psdevslnsysmodeltreeexpview/srfkey=${Environment.SysId}`, '_blank');
                 }else{
                     this.studioWin = window.open(`${Environment.StudioUrl}?ov=${encodeURIComponent(JSON.stringify(params))}#/common_mosindex/srfkeys=${Environment.SysId}`, '_blank');
@@ -155,7 +155,7 @@ export class StudioActionUtil {
         if (response && response.status === 200 && response.data) {
             this.config = response.data
         } else {
-            console.warn('Studio操作控制器，视图参数信息加载失败!');
+            LogUtil.warn('Studio操作控制器，视图参数信息加载失败!');
         }
     }
 

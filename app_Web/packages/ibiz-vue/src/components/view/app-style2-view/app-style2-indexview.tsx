@@ -1,4 +1,4 @@
-import { AuthServiceBase, Util } from 'ibiz-core';
+import { AuthServiceBase, LogUtil, Util } from 'ibiz-core';
 import { Component } from 'vue-property-decorator';
 import { AppFuncService, AppLayoutService, FooterItemsService } from '../../../app-service';
 import { AppMenuService } from '../../../ctrl-service/app-menu-service';
@@ -252,7 +252,7 @@ export class AppStyle2IndexView extends AppIndexViewBase {
                 AppFuncService.getInstance().executeApplication(appFunc,tempContext);
             }
         } else {
-            console.warn('未指定应用功能');
+            LogUtil.warn('未指定应用功能');
         }
     }
 

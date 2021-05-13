@@ -29,6 +29,7 @@
 
 <script lang="ts">
 import { Vue, Component, Prop, Emit } from 'vue-property-decorator';
+import { LogUtil } from 'ibiz-core';
 
 @Component({})
 export default class UploadFile extends Vue {
@@ -116,7 +117,7 @@ export default class UploadFile extends Vue {
      */
     @Emit()
     public beforeupload(file:any) {
-        console.log('beforeupload---------'+file);
+        LogUtil.log('beforeupload---------'+file);
     }
 
     /**
@@ -124,7 +125,7 @@ export default class UploadFile extends Vue {
      */
     @Emit()
     public success(response: any, file: any, fileList: any) {
-        console.log('success---------' + file);
+        LogUtil.log('success---------' + file);
     }
 
     /**
@@ -132,7 +133,7 @@ export default class UploadFile extends Vue {
      */
     @Emit()
     public progress(event: any, file: any, fileList: any) {
-        console.log('progress---------' + file);
+        LogUtil.log('progress---------' + file);
     }
 
     /**
@@ -140,7 +141,7 @@ export default class UploadFile extends Vue {
      */
     @Emit()
     public error(error: any, file: any, fileList: any) {
-        console.log('error---------' + file);
+        LogUtil.log('error---------' + file);
     }
 
     /**
@@ -148,7 +149,7 @@ export default class UploadFile extends Vue {
      */
     @Emit()
     public remove(file: any, fileList: any) {
-        console.log('remove---------' + file);
+        LogUtil.log('remove---------' + file);
     }
 
     /**
@@ -156,7 +157,7 @@ export default class UploadFile extends Vue {
      */
     @Emit()
     public formaterror(file: any, fileList: any) {
-        console.log('formaterror---------' + file);
+        LogUtil.log('formaterror---------' + file);
     }
 
     /**
@@ -164,7 +165,7 @@ export default class UploadFile extends Vue {
      */
     @Emit()
     public exceededsize(file: any, fileList: any) {
-        console.log('exceededsize---------' + file);
+        LogUtil.log('exceededsize---------' + file);
     }
 
 }

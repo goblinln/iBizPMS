@@ -94,7 +94,7 @@ export default class AppFileUploadCamera extends Vue {
     }
 
     public handleError(error: any):any {
-        this.$Notice.info({title:'提示',desc:error.name + ": " + error.message});
+        this.$info(error.name + ": " + error.message);
     }
 
     public gotStream(stream: any):any {
@@ -227,7 +227,7 @@ export default class AppFileUploadCamera extends Vue {
      * 解析条形码
      */
     public parseBarcode(){
-        this.$Notice.info({title:'提示',desc:'开发中'});
+        this.$info('开发中');
     }
     public rederImgContainer(){
         return(

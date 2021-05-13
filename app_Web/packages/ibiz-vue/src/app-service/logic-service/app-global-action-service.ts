@@ -136,7 +136,7 @@ export class AppGlobalService {
                 this.LastRecord(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
                 break;
             default:
-                actionContext.$Notice.warning({ title: '警告', desc: `${tag}未支持` });
+                actionContext.$warning(`${tag}未支持`);
         }
     }
 
@@ -402,7 +402,7 @@ export class AppGlobalService {
         //         actionContext.engine.load();
         //     }  
         // }else{
-        //     actionContext.$Notice.warning({ title: '警告', desc: '请确认操作路径是否正确' });
+        //     actionContext.$warning('请确认操作路径是否正确');
         // }
     }
 

@@ -499,7 +499,7 @@ export class EditFormControlBase extends FormControlBase {
                     this.formState.next({ type: 'save', data: data });
                 });
                 if (this.controlInstance.formFuncMode?.toLowerCase() != 'wizardform' && showResultInfo) {
-                    this.$Notice.success({ title: '', desc: (data.srfmajortext ? data.srfmajortext : '') + '&nbsp;' + (this.$t('app.formpage.savesuccess') as string) });
+                    this.$success((data.srfmajortext ? data.srfmajortext : '') + (this.$t('app.formpage.savesuccess') as string));
                 }
                 resolve(response);
             }).catch((response: any) => {
@@ -574,7 +574,7 @@ export class EditFormControlBase extends FormControlBase {
                     });
                     this.formState.next({ type: 'remove', data: data });
                     this.data.ismodify = false;
-                    this.$Notice.success({ title: '', desc: (data.srfmajortext ? data.srfmajortext : '') + '&nbsp;' + (this.$t('app.formpage.deletesuccess') as string) });
+                    this.$success((data.srfmajortext ? data.srfmajortext : '') + (this.$t('app.formpage.deletesuccess') as string));
                     AppCenterService.notifyMessage({ name: this.controlInstance.getPSAppDataEntity()?.codeName || '', action: 'appRefresh', data: data });
                     resolve(response);
                 }
@@ -652,7 +652,7 @@ export class EditFormControlBase extends FormControlBase {
                         this.$throw((this.$t('app.formpage.workflow.starterror') as string) + ', ' + response.data.message);
                         return;
                     }
-                    this.$Notice.info({ title: '', desc: (this.$t('app.formpage.workflow.startsuccess') as string) });
+                    this.$info((this.$t('app.formpage.workflow.startsuccess') as string));
                     resolve(response);
                 }).catch((response: any) => {
                     this.ctrlEndLoading();
@@ -741,7 +741,7 @@ export class EditFormControlBase extends FormControlBase {
                     }
                     this.onFormLoad(arg, 'submit');
                     AppCenterService.notifyMessage({ name: this.controlInstance.getPSAppDataEntity()?.codeName || '', action: 'appRefresh', data: data });
-                    this.$Notice.info({ title: '', desc: (this.$t('app.formpage.workflow.submitsuccess') as string) });
+                    this.$info((this.$t('app.formpage.workflow.submitsuccess') as string));
                     resolve(response);
                 }).catch((response: any) => {
                     this.ctrlEndLoading();

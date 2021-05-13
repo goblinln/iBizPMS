@@ -58,7 +58,7 @@
 <script lang = 'ts'>
 import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator';
 import { Subject } from 'rxjs';
-import { Util } from 'ibiz-core';
+import { Util, LogUtil  } from 'ibiz-core';
 
 @Component({
 })
@@ -634,7 +634,7 @@ export default class AppPicker extends Vue {
      * @memberof AppPicker
      */
     private openRedirectView($event: any, view: any, data: any): void {
-        console.warn("重定向视图暂未支持");
+        LogUtil.warn("重定向视图暂未支持");
     }
 
     /**

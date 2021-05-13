@@ -173,15 +173,10 @@ export class AppBackEndAction {
                                     }
                                     if (this.actionModel.showBusyIndicator) {
                                         if (this.actionModel.successMsg) {
-                                            actionContext.$Notice.success({
-                                                title: '成功',
-                                                desc: this.actionModel.successMsg,
-                                            });
+                                            actionContext.$success(this.actionModel.successMsg);
+
                                         } else {
-                                            actionContext.$Notice.success({
-                                                title: '成功',
-                                                desc: `${this.actionModel.caption}成功！`,
-                                            });
+                                            actionContext.$success(`${this.actionModel.caption}成功！`);
                                         }
                                     }
                                     if (

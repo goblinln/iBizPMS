@@ -1,5 +1,5 @@
 import { IPSAppCodeList, IPSAppCounterRef, IPSAppDataEntity, IPSAppDEField, IPSAppDEMultiDataView, IPSAppView, IPSCodeItem, IPSControl, IPSControlNavigatable, IPSDECalendar, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDETree, IPSDEUIAction, IPSExpBar, IPSSysImage } from '@ibiz/dynamic-model-api';
-import { CodeListServiceBase, ModelTool, Util, ViewTool } from 'ibiz-core';
+import { CodeListServiceBase, LogUtil, ModelTool, Util, ViewTool } from 'ibiz-core';
 import { AppViewLogicService } from '../app-service';
 import { MainControlBase } from './main-control-base';
 
@@ -321,7 +321,7 @@ export class ExpBarControlBase extends MainControlBase {
             let res: any = await codeListService.getDataItems({ tag: quickGroupCodeList.codeName, type: quickGroupCodeList.codeListType, codeList: quickGroupCodeList });
             this.quickGroupModel = [...this.handleDynamicData(JSON.parse(JSON.stringify(res)))];
         } catch (error: any) {
-            console.log(`----${quickGroupCodeList.codeName}----代码表不存在`);
+            LogUtil.log(`----${quickGroupCodeList.codeName}----代码表不存在`);
         }
     }
 

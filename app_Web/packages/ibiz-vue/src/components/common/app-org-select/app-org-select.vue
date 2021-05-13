@@ -5,7 +5,7 @@
 </template>
 <script lang = 'ts'>
 import { Vue, Component, Prop, Watch } from "vue-property-decorator";
-import { Http } from 'ibiz-core';
+import { Http, LogUtil  } from 'ibiz-core';
 import {CodeListService} from "ibiz-service";
 import { observable } from 'rxjs';
 @Component({})
@@ -312,7 +312,7 @@ export default class AppOrgSelect extends Vue {
         }
         callback(tempObject);
       }).catch((error:any) =>{
-        console.log(error);
+        LogUtil.log(error);
       })
     }
   }
