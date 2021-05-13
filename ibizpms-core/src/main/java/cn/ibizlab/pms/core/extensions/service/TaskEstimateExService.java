@@ -125,7 +125,7 @@ public class TaskEstimateExService extends TaskEstimateServiceImpl {
         iTaskService.sysUpdate(data);
 
 
-        if (task.getParent() > 0) {  //编辑的任务是子任务
+        if (task.getParent() != null && task.getParent() > 0) {  //编辑的任务是子任务
 
             task.set("parentId", task.getParent());
             task.set("changed", false);
@@ -200,7 +200,7 @@ public class TaskEstimateExService extends TaskEstimateServiceImpl {
         data.setId(taskEstimate.getTask());
         iTaskService.sysUpdate(data);
 
-        if (task.getParent() > 0) {
+        if (task.getParent() != null && task.getParent() > 0) {
             task.set("parentId", task.getParent());
             task.set("changed", false);
             iTaskService.updateParentStatus(task);

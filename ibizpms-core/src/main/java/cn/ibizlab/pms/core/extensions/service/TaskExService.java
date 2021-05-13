@@ -505,11 +505,11 @@ public class TaskExService extends TaskServiceImpl {
         super.update(et);
         FileHelper.updateObjectID(et.getId(), StaticDict.File__object_type.TASK.getValue(), files, "", iFileService);
         boolean changeParent = false;
-        if (!et.getParent().equals(old.getParent())) {
+        if (et.getParent()  != null && !et.getParent().equals(old.getParent())) {
             changeParent = true;
         }
 
-        if (old.getParent() > 0) {
+        if (old.getParent() != null && old.getParent() > 0) {
             Task oldParent = this.get(old.getParent());
             et.set("parentId", et.getParent());
             et.set("changed", !changeParent);
@@ -536,7 +536,7 @@ public class TaskExService extends TaskServiceImpl {
             }
         }
 
-        if (et.getParent() > 0) {
+        if (et.getParent()  != null && et.getParent() > 0) {
             Task parentTask = this.getById(et.getParent());
             Task task2 = new Task();
             task2.setId(et.getParent());
@@ -666,7 +666,7 @@ public class TaskExService extends TaskServiceImpl {
         }
         Task oldParentTask = this.get(parentId);
 
-        if (oldParentTask.getParent() != -1) {
+        if (oldParentTask.getParent() != null && oldParentTask.getParent() != -1) {
             Task pTask = new Task();
             pTask.setId(parentId);
             pTask.setParent(-1L);
@@ -953,13 +953,13 @@ public class TaskExService extends TaskServiceImpl {
     @Transactional
     public boolean remove(Long key) {
         Task old = this.get(key);
-        if (old.getParent() < 0) {
+        if (old.getParent() != null && old.getParent() < 0) {
             throw new RuntimeException("不能删除父任务");
         }
         if (!super.remove(key)) {
             return false;
         }
-        if (old.getParent() > 0) {
+        if (old.getParent() != null && old.getParent() > 0) {
             old.set("parentId", old.getParent());
             old.set("changed", false);
             updateParentStatus(old);
@@ -1020,13 +1020,13 @@ public class TaskExService extends TaskServiceImpl {
         String noticeusers = et.getNoticeusers();
         super.update(newTask);
 
-        if (old.getParent() > 0) {
+        if (old.getParent() != null && old.getParent() > 0) {
             newTask.set("parentId", old.getParent());
             newTask.set("changed", true);
             updateParentStatus(newTask);
         }
 
-        if (old.getParent() == -1L) {
+        if (old.getParent() != null && old.getParent() == -1L) {
             Task task1 = new Task();
             getActivateUpdateTask(et, task1);
             this.update(task1, (Wrapper<Task>) task1.getUpdateWrapper(true).eq("parent", old.getId()));
@@ -1109,7 +1109,7 @@ public class TaskExService extends TaskServiceImpl {
         }
 
 
-        if (old.getParent() > 0) {
+        if (old.getParent() != null && old.getParent() > 0) {
             newTask.set("parentId", old.getParent());
             newTask.set("changed", true);
             updateParentStatus(newTask);
@@ -1164,13 +1164,13 @@ public class TaskExService extends TaskServiceImpl {
         String noticeusers = et.getNoticeusers();
         super.update(newTask);
 
-        if (old.getParent() > 0) {
+        if (old.getParent()  != null && old.getParent() > 0) {
             newTask.set("parentId", old.getParent());
             newTask.set("changed", true);
             updateParentStatus(newTask);
         }
 
-        if (old.getParent() == -1L) {
+        if (old.getParent()  != null && old.getParent() == -1L) {
             Task childNewTask = new Task();
             setCancelNewTask(old, childNewTask);
             this.update(childNewTask, (Wrapper<Task>) childNewTask.getUpdateWrapper(true).eq("parent", old.getId()));
@@ -1234,7 +1234,7 @@ public class TaskExService extends TaskServiceImpl {
 
         String noticeusers = et.getNoticeusers();
         super.update(newTask);
-        if (old.getParent() > 0) {
+        if (old.getParent()  != null && old.getParent() > 0) {
             newTask.set("parentId", old.getParent());
             newTask.set("changed", true);
             updateParentStatus(newTask);
@@ -1337,7 +1337,7 @@ public class TaskExService extends TaskServiceImpl {
             lastInsertTask.set("changed", true);
             updateParentStatus(lastInsertTask);
             computeBeginAndEnd(this.get(old.getId()));
-            if (old.getParent() != -1L) {
+            if (old.getParent()  != null && old.getParent() != -1L) {
                 Task update = new Task();
                 update.setParent(-1L);
                 update.setId(parent);
@@ -1380,11 +1380,11 @@ public class TaskExService extends TaskServiceImpl {
     public Task delete(Task et) {
         boolean bOk = false;
         Task old = this.get(et.getId());
-        if (old.getParent() < 0) {
+        if (old.getParent() != null && old.getParent() < 0) {
             throw new RuntimeException("不能删除父任务");
         }
         bOk = delete(et.getId());
-        if (old.getParent() > 0) {
+        if (old.getParent()  != null && old.getParent() > 0) {
             old.set("changed", false);
             updateParentStatus(old);
             ActionHelper.createHis(old.getId(), StaticDict.Action__object_type.TASK.getValue(), null, StaticDict.Action__type.DELETECHILDRENTASK.getValue(), et.getComment(), "", "", iActionService);
@@ -1549,7 +1549,7 @@ public class TaskExService extends TaskServiceImpl {
         super.update(newTask);
         FileHelper.updateObjectID(newTask.getId(), StaticDict.File__object_type.TASK.getValue(), files, "", iFileService);
 
-        if (old.getParent() > 0) {
+        if (old.getParent() != null && old.getParent() > 0) {
             newTask.set("parentId", old.getParent());
             newTask.set("changed", true);
             updateParentStatus(newTask);
@@ -1756,7 +1756,7 @@ public class TaskExService extends TaskServiceImpl {
         String noticeusers = et.getNoticeusers();
         super.update(newTask);
 
-        if (old.getParent() > 0) {
+        if (old.getParent()  != null && old.getParent() > 0) {
             newTask.set("parentId", newTask.getParent());
             newTask.set("changed", true);
             updateParentStatus(newTask);
@@ -1908,7 +1908,7 @@ public class TaskExService extends TaskServiceImpl {
         if (actionid != null && changes.size() > 0) {
             ActionHelper.logHistory(actionid, changes, iHistoryService);
         }
-        if (old.getParent() > 0) {
+        if (old.getParent()  != null && old.getParent() > 0) {
             task.set("parentId", task.getParent());
             task.set("changed", true);
             updateParentStatus(task);
@@ -1950,7 +1950,7 @@ public class TaskExService extends TaskServiceImpl {
                 iActionService.updateById(old);
             }
         }
-        if (et.getParent() > 0) {
+        if (et.getParent()  != null && et.getParent() > 0) {
             et.set("changed", true);
             updateParentStatus(et);
         }
@@ -1975,7 +1975,7 @@ public class TaskExService extends TaskServiceImpl {
             newTask.setFinisheddate(null);
             super.sysUpdate(newTask);
         }
-        if (et.getParent() > 0) {
+        if (et.getParent()  != null && et.getParent() > 0) {
             et.set("changed", true);
             updateParentStatus(et);
         }
@@ -2008,7 +2008,7 @@ public class TaskExService extends TaskServiceImpl {
                 iActionService.updateById(old);
             }
         }
-        if (et.getParent() > 0) {
+        if (et.getParent()  != null && et.getParent() > 0) {
             et.set("changed", true);
             updateParentStatus(et);
         }
@@ -2172,7 +2172,7 @@ public class TaskExService extends TaskServiceImpl {
         super.update(newTask);
         //保存开始任务时上传的附件
         FileHelper.updateObjectID(newTask.getId(), StaticDict.File__object_type.TASK.getValue(), files, "", iFileService);
-        if (old.getParent() > 0) {
+        if (old.getParent() != null && old.getParent() > 0) {
             old.set("parentId", old.getParent());
             old.set("changed", true);
             updateParentStatus(old);
@@ -2216,7 +2216,7 @@ public class TaskExService extends TaskServiceImpl {
         Page<Task> page = super.searchCurProjectTaskQuery(context);
         for (Task task : page.getContent()) {
             // 子任务
-            if (task.getParent() < 0) {
+            if (task.getParent() != null && task.getParent() < 0) {
                 TaskSearchContext context1 = new TaskSearchContext();
                 context1.setSelectCond(context.getSelectCond().clone());
                 context1.setN_parent_eq(task.getId());
