@@ -1,6 +1,6 @@
 <template>
     <div class="editor-input">
-        <ion-input class="app-mob-input" debounce="300" :type="type" :disabled="disabled" :value="value" :placeholder="placeholder" @ionChange="change" @ionBlur="()=>{this.$emit('blur')}"></ion-input>
+        <ion-input class="app-mob-input" debounce="300" :type="type" :min="min" :disabled="disabled" :value="value" :placeholder="placeholder" @ionChange="change" @ionBlur="()=>{this.$emit('blur')}" ref="ioninput"></ion-input>
         <div class="app-mob-unit" v-if="unit">{{unit}}</div>
     </div>
 </template>
@@ -55,12 +55,27 @@ export default class AppInput extends Vue {
     @Prop() public unit?: string;
 
     /**
+     * 最小值
+     *
+     * @type {string}
+     * @memberof AppInput
+     */
+    @Prop() public min?: string;
+
+    /**
      * change事件
      *
      * @memberof AppInput
      */
     public change(value: any) {
         if(this.type == "number"){
+            if (this.min && value.detail.value < this.min) {
+                this.$emit("change",0);
+                // 手动ion数值框清0
+                let ioninput:any = this.$refs.ioninput;
+                ioninput.value = 0;
+                return
+            }
             this.$emit("change",parseInt(value.detail.value));
         }else{
             this.$emit("change", value.detail.value);

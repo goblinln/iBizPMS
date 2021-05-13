@@ -20,7 +20,12 @@ export default class TextboxEditor extends EditorBase {
      * @memberof TextboxEditor
      */
     public async initEditor() {
-        switch (this.editorInstance?.editorType) {
+        const { editorType: type, editorStyle: style } = this.editorInstance;
+        const editorTypeStyle: string = `${type}${style && style != 'DEFAULT' ? '_' + style : ''}`;
+        if(editorTypeStyle == 'MOBNUMBER_POSITIVENUMBER'){
+            this.customProps.min = "0";
+        }
+        switch (type) {
             case 'TEXTBOX':
                 this.customProps.type = 'text';
                 break;
@@ -129,6 +134,7 @@ export default class TextboxEditor extends EditorBase {
             case "MOBTEXT":
             case "MOBPASSWORD":
             case "MOBNUMBER":
+            case "MOBNUMBER_POSITIVENUMBER":
                 return this.renderTextbox();
             case "MOBTEXTAREA":
                 return this.renderTextboxArea();
