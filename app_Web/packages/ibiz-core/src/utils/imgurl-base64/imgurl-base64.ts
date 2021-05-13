@@ -47,7 +47,7 @@ export class ImgurlBase64{
                         if (expandedName.match(/(bmp|jpg|jpeg|png|tif|gif|pcx|tga|exif|fpx|svg|psd|cdr|pcd|dxf|ufo|eps|ai|raw|WMF|webp)/gi) != null) {
                             type = 'image/' + expandedName;
                         } else {
-                            type = 'image/png';
+                            resolve(img);
                         }
                     }
                     let blob = new Blob([response.data],{type: type});

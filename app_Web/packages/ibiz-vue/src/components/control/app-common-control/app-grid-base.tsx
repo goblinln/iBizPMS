@@ -285,7 +285,7 @@ export class AppGridBase extends GridControlBase {
         const { row, column, $index } = scope;
         if (UIActionGroupDetails.length > 0) {
             return (
-                <div style='text-align: center;display: flex;'>
+                <div style='text-align: center;display: flex;justify-content: center;'>
                     {UIActionGroupDetails.map((uiactionDetail: IPSUIActionGroupDetail, index: number) => {
                         const uiaction: IPSDEUIAction = uiactionDetail.getPSUIAction() as IPSDEUIAction;
                         const actionModel = row[uiaction.uIActionTag];
