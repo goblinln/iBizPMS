@@ -235,8 +235,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_AGENTID",
       "queryCodeExp" : "t1.`IBZ_AGENTID`",
-      "standardColumnName" : "`IBZ_AGENTID`",
-      "valueAutoGen" : true
+      "standardColumnName" : "`IBZ_AGENTID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -259,7 +258,6 @@
     "codeName" : "IbzAgentId",
     "dEFType" : 1,
     "dataType" : "BIGINT",
-    "defaultValue" : "0",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "代理标识",

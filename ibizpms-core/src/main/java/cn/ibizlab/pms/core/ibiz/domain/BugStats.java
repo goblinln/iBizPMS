@@ -188,7 +188,7 @@ public class BugStats extends EntityMP implements Serializable {
     /**
      * 标识
      */
-    @DEField(defaultValue = "0", isKeyField = true)
+    @DEField(isKeyField = true)
     @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")

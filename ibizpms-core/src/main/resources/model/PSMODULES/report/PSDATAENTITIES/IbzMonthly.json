@@ -955,8 +955,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_MONTHLYID",
       "queryCodeExp" : "t1.`IBZ_MONTHLYID`",
-      "standardColumnName" : "`IBZ_MONTHLYID`",
-      "valueAutoGen" : true
+      "standardColumnName" : "`IBZ_MONTHLYID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -979,7 +978,6 @@
     "codeName" : "IbzMonthlyId",
     "dEFType" : 1,
     "dataType" : "BIGINT",
-    "defaultValue" : "0",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "月报标识",

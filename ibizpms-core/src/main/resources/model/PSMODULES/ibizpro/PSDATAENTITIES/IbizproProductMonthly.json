@@ -404,8 +404,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBIZPRO_PRODUCTMONTHLYID",
       "queryCodeExp" : "t1.`IBIZPRO_PRODUCTMONTHLYID`",
-      "standardColumnName" : "`IBIZPRO_PRODUCTMONTHLYID`",
-      "valueAutoGen" : true
+      "standardColumnName" : "`IBIZPRO_PRODUCTMONTHLYID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -429,7 +428,6 @@
     "dEFType" : 1,
     "dEMSFieldMode" : "STATE1",
     "dataType" : "BIGINT",
-    "defaultValue" : "0",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "产品月报标识",

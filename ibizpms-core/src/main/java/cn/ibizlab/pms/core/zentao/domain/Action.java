@@ -156,7 +156,7 @@ public class Action extends EntityMP implements Serializable {
     /**
      * id
      */
-    @DEField(defaultValue = "0", isKeyField = true, dupCheck = DupCheck.ALL)
+    @DEField(isKeyField = true, dupCheck = DupCheck.ALL)
     @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")

@@ -155,8 +155,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBIZPRO_PRODUCTWEEKLYID",
       "queryCodeExp" : "t1.`IBIZPRO_PRODUCTWEEKLYID`",
-      "standardColumnName" : "`IBIZPRO_PRODUCTWEEKLYID`",
-      "valueAutoGen" : true
+      "standardColumnName" : "`IBIZPRO_PRODUCTWEEKLYID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -180,7 +179,6 @@
     "dEFType" : 1,
     "dEMSFieldMode" : "STATE1",
     "dataType" : "BIGINT",
-    "defaultValue" : "0",
     "importOrder" : 1000,
     "length" : 20,
     "logicName" : "产品周报标识",

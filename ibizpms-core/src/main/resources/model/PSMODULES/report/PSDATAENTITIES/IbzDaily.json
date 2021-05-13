@@ -1143,8 +1143,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_DAILYID",
       "queryCodeExp" : "t1.`IBZ_DAILYID`",
-      "standardColumnName" : "`IBZ_DAILYID`",
-      "valueAutoGen" : true
+      "standardColumnName" : "`IBZ_DAILYID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1167,7 +1166,6 @@
     "codeName" : "IbzDailyId",
     "dEFType" : 1,
     "dataType" : "BIGINT",
-    "defaultValue" : "0",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "日报标识",

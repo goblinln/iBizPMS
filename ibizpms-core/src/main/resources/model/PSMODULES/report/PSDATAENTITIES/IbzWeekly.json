@@ -564,8 +564,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBZ_WEEKLYID",
       "queryCodeExp" : "t1.`IBZ_WEEKLYID`",
-      "standardColumnName" : "`IBZ_WEEKLYID`",
-      "valueAutoGen" : true
+      "standardColumnName" : "`IBZ_WEEKLYID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -588,7 +587,6 @@
     "codeName" : "IbzWeeklyId",
     "dEFType" : 1,
     "dataType" : "BIGINT",
-    "defaultValue" : "0",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "周报标识",

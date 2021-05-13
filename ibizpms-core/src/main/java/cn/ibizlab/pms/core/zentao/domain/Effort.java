@@ -125,7 +125,7 @@ public class Effort extends EntityMP implements Serializable {
     /**
      * id
      */
-    @DEField(defaultValue = "0", isKeyField = true)
+    @DEField(isKeyField = true)
     @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")

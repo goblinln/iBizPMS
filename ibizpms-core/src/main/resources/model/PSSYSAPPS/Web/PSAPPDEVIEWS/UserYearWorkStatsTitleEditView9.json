@@ -22,36 +22,16 @@
     } ]
   } ],
   "getPSAppViewNavContexts" : [ {
-    "key" : "SRFKEY",
-    "name" : "SRFKEY",
-    "value" : "srfpersonid",
-    "rawValue" : false
-  }, {
-    "key" : "ID",
-    "name" : "ID",
-    "value" : "srfpersonid",
-    "rawValue" : false
-  }, {
     "key" : "USERYEARWORKSTATS",
     "name" : "USERYEARWORKSTATS",
-    "value" : "srfpersonid",
-    "rawValue" : false
+    "value" : "0",
+    "rawValue" : true
   } ],
   "getPSAppViewNavParams" : [ {
-    "key" : "id",
-    "name" : "id",
-    "value" : "srfpersonid",
-    "rawValue" : false
-  }, {
     "key" : "useryearworkstats",
     "name" : "useryearworkstats",
-    "value" : "srfpersonid",
-    "rawValue" : false
-  }, {
-    "key" : "srfkey",
-    "name" : "srfkey",
-    "value" : "srfpersonid",
-    "rawValue" : false
+    "value" : "0",
+    "rawValue" : true
   } ],
   "getPSControls" : [ {
     "codeName" : "TitleForm",

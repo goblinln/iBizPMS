@@ -3,7 +3,7 @@
   "caption" : "产品团队",
   "codeName" : "PRODUCTTEAMProductTeamListView",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/PRODUCTTEAMProductTeamListView.json",
-  "mDCtrlActiveMode" : 2,
+  "mDCtrlActiveMode" : 0,
   "name" : "PRODUCTTEAMProductTeamListView",
   "getPSAppDataEntity" : {
     "modelref" : true,
@@ -16,12 +16,6 @@
     "getPSUIEngineParams" : [ {
       "name" : "LIST",
       "paramType" : "CTRL"
-    }, {
-      "name" : "OPENDATA",
-      "paramType" : "LOGIC"
-    }, {
-      "name" : "NEWDATA",
-      "paramType" : "LOGIC"
     } ]
   } ],
   "getPSAppViewLogics" : [ {
@@ -68,79 +62,12 @@
       "id" : "toolbar_deuiaction4"
     },
     "getPSViewCtrlName" : "toolbar"
-  }, {
-    "logicTrigger" : "CUSTOM",
-    "logicType" : "SYSUILOGIC",
-    "name" : "newdata",
-    "getPSAppUILogic" : {
-      "actionAfterWizard" : "DEFAULT",
-      "logicType" : "PREDEFINED",
-      "name" : "新建数据",
-      "getNewDataPSAppView" : {
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/PRODUCTTEAMEditView.json",
-          "viewType" : "DEEDITVIEW"
-        }
-      },
-      "getPSAppUILogicRefViews" : [ {
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/PRODUCTTEAMEditView.json",
-          "viewType" : "DEEDITVIEW"
-        }
-      } ],
-      "viewLogicType" : "APP_NEWDATA",
-      "batchAddOnly" : false,
-      "enableBatchAdd" : false,
-      "enableWizardAdd" : false
-    }
-  }, {
-    "logicTrigger" : "CUSTOM",
-    "logicType" : "SYSUILOGIC",
-    "name" : "opendata",
-    "getPSAppUILogic" : {
-      "logicType" : "PREDEFINED",
-      "name" : "打开数据",
-      "getOpenDataPSAppView" : {
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/PRODUCTTEAMEditView.json",
-          "viewType" : "DEEDITVIEW"
-        }
-      },
-      "getPSAppUILogicRefViews" : [ {
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/PRODUCTTEAMEditView.json",
-          "viewType" : "DEEDITVIEW"
-        }
-      } ],
-      "viewLogicType" : "APP_OPENDATA"
-    }
   } ],
   "getPSAppViewNavParams" : [ {
     "key" : "n_root_eq",
     "name" : "n_root_eq",
     "value" : "product",
     "rawValue" : false
-  } ],
-  "getPSAppViewRefs" : [ {
-    "name" : "NEWDATA",
-    "realTitle" : "产品团队编辑视图",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/PRODUCTTEAMEditView.json",
-      "viewType" : "DEEDITVIEW"
-    }
-  }, {
-    "name" : "EDITDATA",
-    "realTitle" : "产品团队编辑视图",
-    "getRefPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/PRODUCTTEAMEditView.json",
-      "viewType" : "DEEDITVIEW"
-    }
   } ],
   "getPSAppViewUIActions" : [ {
     "name" : "toolbar_deuiaction3_managermember",

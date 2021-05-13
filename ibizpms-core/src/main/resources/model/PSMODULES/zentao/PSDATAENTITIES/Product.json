@@ -1229,8 +1229,7 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "queryCodeExp" : "t1.`id`",
-      "standardColumnName" : "`id`",
-      "valueAutoGen" : true
+      "standardColumnName" : "`id`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1253,7 +1252,6 @@
     "codeName" : "Id",
     "dEFType" : 1,
     "dataType" : "BIGINT",
-    "defaultValue" : "0",
     "importOrder" : 1000,
     "length" : 8,
     "logicName" : "编号",

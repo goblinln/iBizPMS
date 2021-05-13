@@ -57,7 +57,7 @@ public class DocContent extends EntityMP implements Serializable {
     /**
      * 编号
      */
-    @DEField(defaultValue = "0", isKeyField = true)
+    @DEField(isKeyField = true)
     @TableId(value = "`ID`", type = IdType.ASSIGN_ID)
     @JSONField(name = "id")
     @JsonProperty("id")

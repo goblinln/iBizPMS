@@ -478,8 +478,7 @@
       "dBType" : "MYSQL5",
       "name" : "IBIZPRO_PRODUCTDAILYID",
       "queryCodeExp" : "t1.`IBIZPRO_PRODUCTDAILYID`",
-      "standardColumnName" : "`IBIZPRO_PRODUCTDAILYID`",
-      "valueAutoGen" : true
+      "standardColumnName" : "`IBIZPRO_PRODUCTDAILYID`"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -503,7 +502,6 @@
     "dEFType" : 1,
     "dEMSFieldMode" : "STATE1",
     "dataType" : "BIGINT",
-    "defaultValue" : "0",
     "importOrder" : 1000,
     "length" : 100,
     "logicName" : "产品日报标识",
