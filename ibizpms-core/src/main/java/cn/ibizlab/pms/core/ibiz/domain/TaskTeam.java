@@ -163,7 +163,7 @@ public class TaskTeam extends EntityMP implements Serializable {
     /**
      * 团队类型
      */
-    @DEField(defaultValue = "project")
+    @DEField(defaultValue = "task")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")

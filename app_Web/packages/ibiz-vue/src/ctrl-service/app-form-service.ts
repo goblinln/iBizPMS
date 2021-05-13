@@ -1,6 +1,6 @@
 import { IPSDEEditForm, IPSDEFormItem } from '@ibiz/dynamic-model-api';
 import { ControlServiceBase, Util, ModelTool } from 'ibiz-core';
-import { GlobalService, UtilServiceRegister } from 'ibiz-service';
+import { GlobalService, notNilEmpty, UtilServiceRegister } from 'ibiz-service';
 import { AppFormModel } from 'ibiz-vue';
 
 
@@ -466,9 +466,9 @@ export class AppFormService extends ControlServiceBase {
         let item: any = {};
         let dataItems: any[] = model.getDataItems();
         dataItems.forEach(dataitem => {
-            let val = data.hasOwnProperty(dataitem.prop) ? data[dataitem.prop] : null;
+            let val = notNilEmpty(data[dataitem.prop]) ? data[dataitem.prop] : null;
             if (val === null) {
-                val = data.hasOwnProperty(dataitem.name) ? data[dataitem.name] : null;
+                val = notNilEmpty(data[dataitem.name]) ? data[dataitem.name] : null;
             }
             if ((isCreate === undefined || isCreate === null) && Object.is(dataitem.dataType, 'GUID') && Object.is(dataitem.name, 'srfkey') && (val && !Object.is(val, ''))) {
                 isCreate = true;
@@ -482,7 +482,6 @@ export class AppFormService extends ControlServiceBase {
             }
         });
         item.srfuf = data.srfuf ? data.srfuf : (isCreate ? "0" : "1");
-        item = Object.assign(data, item);
         return item;
     }
 

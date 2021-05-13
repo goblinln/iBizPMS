@@ -883,7 +883,7 @@
     "codeName" : "Type",
     "dEFType" : 1,
     "dataType" : "SSCODELIST",
-    "defaultValue" : "project",
+    "defaultValue" : "task",
     "importOrder" : 1000,
     "length" : 7,
     "logicName" : "团队类型",

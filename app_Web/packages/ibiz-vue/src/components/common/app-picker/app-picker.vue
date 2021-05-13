@@ -717,7 +717,7 @@ export default class AppPicker extends Vue {
             Object.assign(arg.context,_context);
         }
         if (this.localParam && Object.keys(this.localParam).length >0) {
-            let _param = this.$util.computedNavData(this.data,arg.param,arg.param,this.localParam);
+            let _param = this.$util.computedNavData(this.data,arg.context,arg.param,this.localParam);
             Object.assign(arg.param,_param);
         }
         return true;

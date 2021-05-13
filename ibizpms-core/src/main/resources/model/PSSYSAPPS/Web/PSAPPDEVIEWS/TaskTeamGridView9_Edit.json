@@ -618,6 +618,7 @@
     }, {
       "caption" : "团队类型",
       "codeName" : "type",
+      "createDV" : "task",
       "enableCond" : 3,
       "ignoreInput" : 0,
       "name" : "type",
@@ -626,9 +627,6 @@
         "codeName" : "Type"
       },
       "getPSEditor" : {
-        "editorParams" : {
-          "task" : ""
-        },
         "editorType" : "DROPDOWNLIST",
         "name" : "type",
         "getPSAppCodeList" : {
@@ -637,6 +635,7 @@
         },
         "singleSelect" : true
       },
+      "updateDV" : "task",
       "allowEmpty" : true,
       "needCodeListConfig" : true
     }, {
