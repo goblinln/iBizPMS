@@ -1861,7 +1861,7 @@ public class TaskExService extends TaskServiceImpl {
             Team team = new Team();
             team.setConsumed(myconsumed + consumed);
             team.setLeft(teamLeft);
-            iTeamService.update(team, new QueryWrapper<Team>().eq("root", old.getId()).eq("typr", StaticDict.Team__type.TASK.getValue()).eq("account", AuthenticationUser.getAuthenticationUser().getUsername()));
+            iTeamService.update(team, new QueryWrapper<Team>().eq("root", old.getId()).eq("type", StaticDict.Team__type.TASK.getValue()).eq("account", AuthenticationUser.getAuthenticationUser().getUsername()));
         } else {
             if (!isNew) {
                 teamLeft = list.get(0).getLeft();
