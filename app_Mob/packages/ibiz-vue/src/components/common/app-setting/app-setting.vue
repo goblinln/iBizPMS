@@ -183,10 +183,10 @@ export default class AppSetting extends Vue {
         const title: any = this.$t("app.tabpage.sureclosetip.title");
         const result = await this.$Notice.confirm(title, "确认退出当前账号？");
         if (result) {
-            if (this.thirdPartyName) {
-                ThirdPartyService.getInstance().close();
-                return;
-            }
+            // if (this.thirdPartyName) {
+            //     ThirdPartyService.getInstance().close();
+            //     return;
+            // }
             const get: Promise<any> = this.$http.get("v7/logout");
             get.then((response: any) => {
                 if (response && response.status === 200) {
