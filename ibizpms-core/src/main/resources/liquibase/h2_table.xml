@@ -1372,7 +1372,7 @@
 
 
     <!--输出实体[IBIZPRO_PRODUCTMONTHLY]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibizpro_productmonthly-9-42">
+    <changeSet author="a_A_23e8aa361" id="tab-ibizpro_productmonthly-10-42">
         <createTable tableName="T_IBIZPRO_PRODUCTMONTHLY">
                 <column name="TASKS" remarks="" type="VARCHAR(2000)">
                 </column>
@@ -2076,7 +2076,7 @@
 
 
     <!--输出实体[ZT_IM_CONFERENCE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_im_conference-2-71">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_im_conference-3-71">
         <createTable tableName="zt_im_conference">
                 <column name="STATUS" remarks="" type="VARCHAR(6)">
                 </column>
