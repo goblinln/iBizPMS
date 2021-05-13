@@ -121,7 +121,7 @@ export class CodeListServiceBase {
             }
         }
         if (codelist && codelist.getPSCodeItems()) {
-            let items: Array<any> = this.formatStaticItems(codelist.getPSCodeItems(), codelist.codeItemValueNumber);
+            let items: Array<any> = this.formatStaticItems(codelist.getPSCodeItems(), undefined, codelist.codeItemValueNumber);
             return items;
         }
     }
