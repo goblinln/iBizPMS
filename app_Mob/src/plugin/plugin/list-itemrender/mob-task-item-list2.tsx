@@ -87,8 +87,9 @@ export class MobTaskItemList2 extends AppMobMDCtrlBase {
                 const element = assignedto[index];
                 let name = this.getCodeListText('UserRealName', element).label;
                 if (name) name = name.substring(0, 1);
-                this.getUserImg(element,element);
-                item.assignedtoArr.push({ name: name, img: item.assignedto_img });
+                let obj:any = {};
+                this.getUserImg(element,obj);
+                item.assignedtoArr.push({ name: name, img: obj.assignedto_img });
             }
         } else {
             // 单人

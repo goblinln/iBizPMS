@@ -1043,6 +1043,7 @@
             "codeName" : "Estimate"
           },
           "getPSEditor" : {
+            "editorStyle" : "POSITIVENUMBER",
             "editorType" : "MOBNUMBER",
             "name" : "estimate",
             "placeHolder" : "工时"
