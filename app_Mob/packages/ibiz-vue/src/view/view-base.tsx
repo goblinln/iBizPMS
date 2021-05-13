@@ -566,7 +566,7 @@ export class ViewBase extends Vue {
     public initCapacitorService() {
         if (!this.isChildView) {
             this.backFunction = this.closeView;
-            AppCapacitorService.getInstance().viewInit(this,!(this.viewDefaultUsage==='includedView'));
+            AppCapacitorService.getInstance().viewInit(this, !(this.viewDefaultUsage === 'includedView'));
         }
     }
 
@@ -900,15 +900,18 @@ export class ViewBase extends Vue {
      */
     public closeView(args?: any[]) {
         let _view: any = this;
-        if (this.viewDefaultUsage === "routerView") {
-            _view.$store.commit("deletePage", _view.$route.fullPath);
-            _view.$router.go(-1);
-        }
-        if (this.viewDefaultUsage === 'includedView') {
-            this.$emit('view-event', { viewName: this.viewInstance.codeName, action: 'close', data: null });
-        }
-        if (this.viewDefaultUsage === "indexView") {
-            this.quitFun();
+        console.log("视图方式", this.viewDefaultUsage);
+        switch (this.viewDefaultUsage) {
+            case 'routerView':
+                _view.$store.commit("deletePage", _view.$route.fullPath);
+                _view.$router.go(-1);
+                break;
+            case 'includedView':
+                this.$emit('view-event', { viewName: this.viewInstance.codeName, action: 'close', data: null });
+                break;
+            case 'includedView':
+                this.quitFun();
+                break;
         }
     }
 
@@ -919,6 +922,9 @@ export class ViewBase extends Vue {
      * @memberof ViewBase
      */
     public quitFun() {
+        console.log("首页返回");
+        let exitTimer: any = sessionStorage.getItem("exitTimer");
+        console.log("时间：", exitTimer, '时间差', new Date().getTime() - exitTimer < 2000);
         if (!sessionStorage.getItem("exitTimer")) {  // 首次返回时
             // 缓存首次返回的时间
             window.sessionStorage.setItem("exitTimer", new Date().getTime().toString());
@@ -930,9 +936,9 @@ export class ViewBase extends Vue {
             // 获取首次返回时间
             let exitTimer: any = sessionStorage.getItem("exitTimer");
             // 如果时间差小于两秒 直接关闭
+            console.log(exitTimer, '时间差', new Date().getTime() - exitTimer < 2000);
             if (new Date().getTime() - exitTimer < 2000) {
                 console.log("开始退出");
-                
                 Util.exitApp();
             }
         }
