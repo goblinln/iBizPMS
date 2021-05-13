@@ -133,7 +133,7 @@ public class TaskEstimateExService extends TaskEstimateServiceImpl {
         }
 
         //     * Set stage of a story.
-        if (task.getStory() != 0){
+        if (task.getStory() != null && task.getStory() != 0){
             long storyID = task.getStory();
             Story story = storyService.getById(storyID);
             storyService.setStage(story);
@@ -206,7 +206,7 @@ public class TaskEstimateExService extends TaskEstimateServiceImpl {
             iTaskService.updateParentStatus(task);
         }
 
-        if (task.getStory() != 0) {
+        if (task.getStory() != null && task.getStory() != 0) {
             Story et = storyService.getById(task.getStory());
             storyService.setStage(et);
         }
