@@ -208,11 +208,12 @@ export default class AppSetting extends Vue {
     public doLogin(data?: any): void {
         // 清除user、token
         this.clearAppData()
-        if (Environment.loginUrl) {
-            window.location.href = `${Environment.loginUrl}?redirect=${window.location.href}`;
-        } else {
-            this.$router.push({ name: 'login' });
-        }
+        window.location.href ='http://ibizpmsh5.ibizlab.cn'
+        // if (Environment.loginUrl) {
+        //     window.location.href = `${Environment.loginUrl}?redirect=${window.location.href}`;
+        // } else {
+        //     this.$router.push({ name: 'login' });
+        // }
     }
 
      /**
