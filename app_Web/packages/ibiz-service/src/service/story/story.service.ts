@@ -34,5 +34,20 @@ export class StoryService extends StoryBaseService {
         }
         return ___ibz___.sc.get('StoryService');
     }
+
+    /**
+     * ImportPlanStories接口方法
+     *
+     * @param {*} [context={}]
+     * @param {*} [data={}]
+     * @param {boolean} [isloading]
+     * @returns {Promise<any>}
+     * @memberof StoryServiceBase
+     */
+    public async ImportPlanStories(context: any = {}, data: any = {}, isloading?: boolean): Promise<any> {
+        context.story = 0;
+        data.id = 0;
+        return this.http.post(`/stories/${context.story}/importplanstories`,data);
+    }
 }
 export default StoryService;
