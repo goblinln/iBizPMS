@@ -235,6 +235,14 @@
         "codeName" : "Qdpk"
       }
     }, {
+      "id" : "rd",
+      "hidden" : true,
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "RD",
+        "codeName" : "RD"
+      }
+    }, {
       "id" : "rdpk",
       "dataType" : 25,
       "getPSAppDEField" : {
@@ -277,14 +285,6 @@
       "getPSAppDEField" : {
         "name" : "PO",
         "codeName" : "PO"
-      }
-    }, {
-      "id" : "rd",
-      "hidden" : true,
-      "dataType" : 25,
-      "getPSAppDEField" : {
-        "name" : "RD",
-        "codeName" : "RD"
       }
     }, {
       "id" : "qd",
@@ -598,6 +598,35 @@
             "allowEmpty" : true,
             "emptyCaption" : false,
             "hidden" : false,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          }, {
+            "caption" : "发布负责人",
+            "codeName" : "rd",
+            "dataType" : 25,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 130,
+            "name" : "rd",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "RD",
+              "codeName" : "RD"
+            },
+            "getPSEditor" : {
+              "editorType" : "HIDDEN",
+              "name" : "rd"
+            },
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "allowEmpty" : true,
+            "emptyCaption" : false,
+            "hidden" : true,
             "inputTipClosable" : false,
             "showCaption" : true
           }, {
