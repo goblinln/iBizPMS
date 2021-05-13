@@ -146,6 +146,11 @@
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ID_EQ",
+      "name" : "N_ID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -332,6 +337,11 @@
       "name" : "SYSTEM",
       "queryCodeExp" : "t1.`SYSTEM`",
       "standardColumnName" : "`SYSTEM`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_SYSTEM_EQ",
+      "name" : "N_SYSTEM_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

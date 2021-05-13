@@ -948,12 +948,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_TITLE_LIKE",
         "name" : "N_TITLE_LIKE",
-        "getPSDEField" : {
-          "name" : "TITLE",
-          "codeName" : "Title"
-        },
-        "valueOP" : "LIKE",
-        "default" : false
+        "valueOP" : "LIKE"
       },
       "getPSEditor" : {
         "editorType" : "TEXTBOX",
@@ -979,12 +974,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_OBJECTTYPE_EQ",
         "name" : "N_OBJECTTYPE_EQ",
-        "getPSDEField" : {
-          "name" : "OBJECTTYPE",
-          "codeName" : "ObjectType"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1015,12 +1005,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PRODUCTNAME_EQ",
         "name" : "N_PRODUCTNAME_EQ",
-        "getPSDEField" : {
-          "name" : "PRODUCTNAME",
-          "codeName" : "ProductName"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorParams" : {
@@ -1068,12 +1053,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PRODUCTNAME_LIKE",
         "name" : "N_PRODUCTNAME_LIKE",
-        "getPSDEField" : {
-          "name" : "PRODUCTNAME",
-          "codeName" : "ProductName"
-        },
-        "valueOP" : "LIKE",
-        "default" : false
+        "valueOP" : "LIKE"
       },
       "getPSEditor" : {
         "editorParams" : {
@@ -1121,12 +1101,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PROJECTNAME_EQ",
         "name" : "N_PROJECTNAME_EQ",
-        "getPSDEField" : {
-          "name" : "PROJECTNAME",
-          "codeName" : "ProjectName"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorParams" : {
@@ -1174,12 +1149,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PROJECTNAME_LIKE",
         "name" : "N_PROJECTNAME_LIKE",
-        "getPSDEField" : {
-          "name" : "PROJECTNAME",
-          "codeName" : "ProjectName"
-        },
-        "valueOP" : "LIKE",
-        "default" : false
+        "valueOP" : "LIKE"
       },
       "getPSEditor" : {
         "editorParams" : {

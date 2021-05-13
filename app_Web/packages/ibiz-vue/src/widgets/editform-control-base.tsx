@@ -206,7 +206,7 @@ export class EditFormControlBase extends FormControlBase {
         this.updateAction = this.controlInstance.getUpdatePSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "Update";
         this.removeAction = this.controlInstance.getRemovePSControlAction?.()?.actionName;
         this.loadAction = this.controlInstance.getGetPSControlAction?.()?.actionName;
-        this.createAction = this.controlInstance.getCreatePSControlAction?.()?.actionName;
+        this.createAction = this.controlInstance.getCreatePSControlAction?.()?.getPSAppDEMethod?.()?.codeName || "Create";
         this.WFSubmitAction = (this.controlInstance as any).getWFSubmitPSControlAction?.()?.actionName;
         this.WFStartAction = (this.controlInstance as any).getWFStartPSControlAction?.()?.actionName;
         // 初始化data
@@ -652,7 +652,7 @@ export class EditFormControlBase extends FormControlBase {
                         this.$throw((this.$t('app.formpage.workflow.starterror') as string) + ', ' + response.data.message);
                         return;
                     }
-                    this.$info((this.$t('app.formpage.workflow.startsuccess') as string));
+                    this.$success((this.$t('app.formpage.workflow.startsuccess') as string));
                     resolve(response);
                 }).catch((response: any) => {
                     this.ctrlEndLoading();
@@ -741,7 +741,7 @@ export class EditFormControlBase extends FormControlBase {
                     }
                     this.onFormLoad(arg, 'submit');
                     AppCenterService.notifyMessage({ name: this.controlInstance.getPSAppDataEntity()?.codeName || '', action: 'appRefresh', data: data });
-                    this.$info((this.$t('app.formpage.workflow.submitsuccess') as string));
+                    this.$success((this.$t('app.formpage.workflow.submitsuccess') as string));
                     resolve(response);
                 }).catch((response: any) => {
                     this.ctrlEndLoading();

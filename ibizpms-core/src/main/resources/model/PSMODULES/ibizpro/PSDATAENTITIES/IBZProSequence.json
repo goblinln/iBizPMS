@@ -312,6 +312,11 @@
       "queryCodeExp" : "t1.`IBZPRO_SEQUENCEID`",
       "standardColumnName" : "`IBZPRO_SEQUENCEID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZPRO_SEQUENCEID_EQ",
+      "name" : "N_IBZPRO_SEQUENCEID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -554,6 +559,11 @@
       "queryCodeExp" : "t1.`CURSEQ`",
       "standardColumnName" : "`CURSEQ`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_CURSEQ_EQ",
+      "name" : "N_CURSEQ_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -588,6 +598,15 @@
       "name" : "IBZPRO_SEQUENCENAME",
       "queryCodeExp" : "t1.`IBZPRO_SEQUENCENAME`",
       "standardColumnName" : "`IBZPRO_SEQUENCENAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZPRO_SEQUENCENAME_EQ",
+      "name" : "N_IBZPRO_SEQUENCENAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_IBZPRO_SEQUENCENAME_LIKE",
+      "name" : "N_IBZPRO_SEQUENCENAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -685,6 +704,11 @@
       "name" : "CATEGORY",
       "queryCodeExp" : "t1.`CATEGORY`",
       "standardColumnName" : "`CATEGORY`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_CATEGORY_EQ",
+      "name" : "N_CATEGORY_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

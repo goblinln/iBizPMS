@@ -437,6 +437,11 @@
       "standardColumnName" : "`TYPE`",
       "valueAutoGen" : true
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TYPE_EQ",
+      "name" : "N_TYPE_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -526,6 +531,11 @@
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
       "standardColumnName" : "`NAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_NAME_LIKE",
+      "name" : "N_NAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -785,6 +795,11 @@
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ID_EQ",
+      "name" : "N_ID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -931,6 +946,15 @@
       "queryCodeExp" : "t11.`NAME`",
       "standardColumnName" : "`ROOTNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ROOTNAME_EQ",
+      "name" : "N_ROOTNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_ROOTNAME_LIKE",
+      "name" : "N_ROOTNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -987,6 +1011,15 @@
       "name" : "PARENTNAME",
       "queryCodeExp" : "t21.`NAME`",
       "standardColumnName" : "`PARENTNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PARENTNAME_EQ",
+      "name" : "N_PARENTNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_PARENTNAME_LIKE",
+      "name" : "N_PARENTNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1045,6 +1078,11 @@
       "queryCodeExp" : "t1.`ROOT`",
       "standardColumnName" : "`ROOT`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ROOT_EQ",
+      "name" : "N_ROOT_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1088,6 +1126,11 @@
       "name" : "PARENT",
       "queryCodeExp" : "t1.`PARENT`",
       "standardColumnName" : "`PARENT`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PARENT_EQ",
+      "name" : "N_PARENT_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

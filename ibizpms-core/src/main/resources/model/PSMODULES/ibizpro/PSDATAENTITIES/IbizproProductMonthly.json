@@ -406,6 +406,11 @@
       "queryCodeExp" : "t1.`IBIZPRO_PRODUCTMONTHLYID`",
       "standardColumnName" : "`IBIZPRO_PRODUCTMONTHLYID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBIZPRO_PRODUCTMONTHLYID_EQ",
+      "name" : "N_IBIZPRO_PRODUCTMONTHLYID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -449,6 +454,11 @@
       "name" : "IBIZPRO_PRODUCTMONTHLYNAME",
       "queryCodeExp" : "t1.`IBIZPRO_PRODUCTMONTHLYNAME`",
       "standardColumnName" : "`IBIZPRO_PRODUCTMONTHLYNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBIZPRO_PRODUCTMONTHLYNAME_LIKE",
+      "name" : "N_IBIZPRO_PRODUCTMONTHLYNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -553,6 +563,11 @@
       "queryCodeExp" : "t11.`po`",
       "standardColumnName" : "`PO`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PO_EQ",
+      "name" : "N_PO_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -614,6 +629,15 @@
       "queryCodeExp" : "t11.`name`",
       "standardColumnName" : "`PRODUCTNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PRODUCTNAME_EQ",
+      "name" : "N_PRODUCTNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_PRODUCTNAME_LIKE",
+      "name" : "N_PRODUCTNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -670,6 +694,11 @@
       "name" : "PRODUCT",
       "queryCodeExp" : "t1.`PRODUCT`",
       "standardColumnName" : "`PRODUCT`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PRODUCT_EQ",
+      "name" : "N_PRODUCT_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

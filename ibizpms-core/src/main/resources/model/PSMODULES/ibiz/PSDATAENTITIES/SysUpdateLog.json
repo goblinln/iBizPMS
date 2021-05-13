@@ -307,6 +307,11 @@
       "queryCodeExp" : "t1.`SYS_UPDATE_LOGID`",
       "standardColumnName" : "`SYS_UPDATE_LOGID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_SYS_UPDATE_LOGID_EQ",
+      "name" : "N_SYS_UPDATE_LOGID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -357,6 +362,11 @@
       "queryCodeExp" : "t1.`UPDATEBRANCH`",
       "standardColumnName" : "`UPDATEBRANCH`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_UPDATEBRANCH_EQ",
+      "name" : "N_UPDATEBRANCH_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -505,6 +515,11 @@
       "queryCodeExp" : "t1.`SYS_UPDATE_LOGNAME`",
       "standardColumnName" : "`SYS_UPDATE_LOGNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_SYS_UPDATE_LOGNAME_LIKE",
+      "name" : "N_SYS_UPDATE_LOGNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -554,6 +569,11 @@
       "queryCodeExp" : "t1.`LATESTUPDATE`",
       "standardColumnName" : "`LATESTUPDATE`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_LATESTUPDATE_EQ",
+      "name" : "N_LATESTUPDATE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

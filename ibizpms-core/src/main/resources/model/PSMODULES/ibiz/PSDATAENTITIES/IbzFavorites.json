@@ -99,6 +99,11 @@
       "queryCodeExp" : "t1.`TYPE`",
       "standardColumnName" : "`TYPE`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TYPE_EQ",
+      "name" : "N_TYPE_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -199,6 +204,11 @@
       "name" : "IBZ_FAVORITESID",
       "queryCodeExp" : "t1.`IBZ_FAVORITESID`",
       "standardColumnName" : "`IBZ_FAVORITESID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZ_FAVORITESID_EQ",
+      "name" : "N_IBZ_FAVORITESID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -342,6 +352,11 @@
       "queryCodeExp" : "t1.`OBJECTID`",
       "standardColumnName" : "`OBJECTID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_OBJECTID_EQ",
+      "name" : "N_OBJECTID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -375,6 +390,11 @@
       "name" : "ACCOUNT",
       "queryCodeExp" : "t1.`ACCOUNT`",
       "standardColumnName" : "`ACCOUNT`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ACCOUNT_EQ",
+      "name" : "N_ACCOUNT_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -426,6 +446,11 @@
       "name" : "IBZ_FAVORITESNAME",
       "queryCodeExp" : "t1.`IBZ_FAVORITESNAME`",
       "standardColumnName" : "`IBZ_FAVORITESNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZ_FAVORITESNAME_LIKE",
+      "name" : "N_IBZ_FAVORITESNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

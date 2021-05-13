@@ -183,6 +183,11 @@
       "standardColumnName" : "`TEAMSTATUS`",
       "valueAutoGen" : true
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TEAMSTATUS_EQ",
+      "name" : "N_TEAMSTATUS_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -230,6 +235,15 @@
       "name" : "ACCOUNT",
       "queryCodeExp" : "t1.`ACCOUNT`",
       "standardColumnName" : "`ACCOUNT`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ACCOUNT_EQ",
+      "name" : "N_ACCOUNT_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_ACCOUNT_LIKE",
+      "name" : "N_ACCOUNT_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -284,6 +298,11 @@
       "queryCodeExp" : "t1.`JOIN`",
       "standardColumnName" : "`JOIN`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_JOIN_GTANDEQ",
+      "name" : "N_JOIN_GTANDEQ",
+      "valueOP" : "GTANDEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -391,6 +410,11 @@
       "name" : "END",
       "queryCodeExp" : "t1.`END`",
       "standardColumnName" : "`END`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_END_LTANDEQ",
+      "name" : "N_END_LTANDEQ",
+      "valueOP" : "LTANDEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -577,6 +601,11 @@
       "standardColumnName" : "`TYPE`",
       "valueAutoGen" : true
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TYPE_EQ",
+      "name" : "N_TYPE_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -702,6 +731,11 @@
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ID_EQ",
+      "name" : "N_ID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -746,6 +780,11 @@
       "name" : "LEADINGCADRE",
       "queryCodeExp" : "t1.`LEADINGCADRE`",
       "standardColumnName" : "`LEADINGCADRE`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_LEADINGCADRE_EQ",
+      "name" : "N_LEADINGCADRE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -798,6 +837,11 @@
       "queryCodeExp" : "t1.`LIMITED`",
       "standardColumnName" : "`LIMITED`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_LIMITED_EQ",
+      "name" : "N_LIMITED_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -934,6 +978,15 @@
       "name" : "ROOT",
       "queryCodeExp" : "t1.`ROOT`",
       "standardColumnName" : "`ROOT`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ROOT_EQ",
+      "name" : "N_ROOT_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_ROOT_IN",
+      "name" : "N_ROOT_IN",
+      "valueOP" : "IN"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

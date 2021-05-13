@@ -228,6 +228,11 @@
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ID_EQ",
+      "name" : "N_ID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -310,6 +315,11 @@
       "name" : "ADDEDBY",
       "queryCodeExp" : "t1.`ADDEDBY`",
       "standardColumnName" : "`ADDEDBY`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ADDEDBY_EQ",
+      "name" : "N_ADDEDBY_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -416,6 +426,11 @@
       "queryCodeExp" : "t1.`NAME`",
       "standardColumnName" : "`NAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_NAME_LIKE",
+      "name" : "N_NAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -466,6 +481,11 @@
       "queryCodeExp" : "t1.`TYPE`",
       "standardColumnName" : "`TYPE`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TYPE_EQ",
+      "name" : "N_TYPE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -518,6 +538,11 @@
       "name" : "LASTEDITEDBY",
       "queryCodeExp" : "t1.`LASTEDITEDBY`",
       "standardColumnName" : "`LASTEDITEDBY`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_LASTEDITEDBY_EQ",
+      "name" : "N_LASTEDITEDBY_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

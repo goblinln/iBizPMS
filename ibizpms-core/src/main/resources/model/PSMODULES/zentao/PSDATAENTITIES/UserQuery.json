@@ -99,6 +99,11 @@
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ID_EQ",
+      "name" : "N_ID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -142,6 +147,11 @@
       "name" : "SHORTCUT",
       "queryCodeExp" : "t1.`SHORTCUT`",
       "standardColumnName" : "`SHORTCUT`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_SHORTCUT_EQ",
+      "name" : "N_SHORTCUT_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -241,6 +251,11 @@
       "name" : "TITLE",
       "queryCodeExp" : "t1.`TITLE`",
       "standardColumnName" : "`TITLE`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TITLE_LIKE",
+      "name" : "N_TITLE_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

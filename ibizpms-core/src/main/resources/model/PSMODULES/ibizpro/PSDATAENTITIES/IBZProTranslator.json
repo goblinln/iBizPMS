@@ -108,6 +108,11 @@
       "queryCodeExp" : "t1.`IBZPRO_TRANSLATORNAME`",
       "standardColumnName" : "`IBZPRO_TRANSLATORNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZPRO_TRANSLATORNAME_LIKE",
+      "name" : "N_IBZPRO_TRANSLATORNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -242,6 +247,11 @@
       "name" : "IBZPRO_TRANSLATORID",
       "queryCodeExp" : "t1.`IBZPRO_TRANSLATORID`",
       "standardColumnName" : "`IBZPRO_TRANSLATORID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZPRO_TRANSLATORID_EQ",
+      "name" : "N_IBZPRO_TRANSLATORID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

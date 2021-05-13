@@ -100,6 +100,11 @@
       "queryCodeExp" : "t1.`SYS_UPDATE_FEATURESNAME`",
       "standardColumnName" : "`SYS_UPDATE_FEATURESNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_SYS_UPDATE_FEATURESNAME_LIKE",
+      "name" : "N_SYS_UPDATE_FEATURESNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -295,6 +300,11 @@
       "queryCodeExp" : "t1.`TYPE`",
       "standardColumnName" : "`TYPE`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TYPE_EQ",
+      "name" : "N_TYPE_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -431,6 +441,11 @@
       "queryCodeExp" : "t1.`SYS_UPDATE_FEATURESID`",
       "standardColumnName" : "`SYS_UPDATE_FEATURESID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_SYS_UPDATE_FEATURESID_EQ",
+      "name" : "N_SYS_UPDATE_FEATURESID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -563,6 +578,15 @@
       "queryCodeExp" : "t11.`SYS_UPDATE_LOGNAME`",
       "standardColumnName" : "`SYS_UPDATE_LOGNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_SYS_UPDATE_LOGNAME_EQ",
+      "name" : "N_SYS_UPDATE_LOGNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_SYS_UPDATE_LOGNAME_LIKE",
+      "name" : "N_SYS_UPDATE_LOGNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -619,6 +643,11 @@
       "name" : "SYS_UPDATE_LOGID",
       "queryCodeExp" : "t1.`SYS_UPDATE_LOGID`",
       "standardColumnName" : "`SYS_UPDATE_LOGID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_SYS_UPDATE_LOGID_EQ",
+      "name" : "N_SYS_UPDATE_LOGID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

@@ -326,6 +326,11 @@
       "queryCodeExp" : "t1.`ACL`",
       "standardColumnName" : "`ACL`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ACL_EQ",
+      "name" : "N_ACL_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -376,6 +381,11 @@
       "name" : "CREATEMANNAME",
       "queryCodeExp" : "t1.`CREATEMANNAME`",
       "standardColumnName" : "`CREATEMANNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_CREATEMANNAME_EQ",
+      "name" : "N_CREATEMANNAME_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -460,6 +470,11 @@
       "name" : "IBZ_PLANTEMPLETID",
       "queryCodeExp" : "t1.`IBZ_PLANTEMPLETID`",
       "standardColumnName" : "`IBZ_PLANTEMPLETID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZ_PLANTEMPLETID_EQ",
+      "name" : "N_IBZ_PLANTEMPLETID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -611,6 +626,11 @@
       "name" : "IBZ_PLANTEMPLETNAME",
       "queryCodeExp" : "t1.`IBZ_PLANTEMPLETNAME`",
       "standardColumnName" : "`IBZ_PLANTEMPLETNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZ_PLANTEMPLETNAME_LIKE",
+      "name" : "N_IBZ_PLANTEMPLETNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

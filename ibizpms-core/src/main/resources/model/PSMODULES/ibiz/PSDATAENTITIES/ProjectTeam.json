@@ -362,6 +362,11 @@
       "standardColumnName" : "`LIMITED`",
       "valueAutoGen" : true
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_LIMITED_EQ",
+      "name" : "N_LIMITED_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -573,6 +578,11 @@
       "standardColumnName" : "`TYPE`",
       "valueAutoGen" : true
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TYPE_EQ",
+      "name" : "N_TYPE_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -662,6 +672,11 @@
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ID_EQ",
+      "name" : "N_ID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -742,6 +757,15 @@
       "name" : "ACCOUNT",
       "queryCodeExp" : "t1.`ACCOUNT`",
       "standardColumnName" : "`ACCOUNT`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ACCOUNT_EQ",
+      "name" : "N_ACCOUNT_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_ACCOUNT_LIKE",
+      "name" : "N_ACCOUNT_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1058,6 +1082,15 @@
       "queryCodeExp" : "t11.`NAME`",
       "standardColumnName" : "`PROJECTNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PROJECTNAME_EQ",
+      "name" : "N_PROJECTNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_PROJECTNAME_LIKE",
+      "name" : "N_PROJECTNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1114,6 +1147,11 @@
       "name" : "ROOT",
       "queryCodeExp" : "t1.`ROOT`",
       "standardColumnName" : "`ROOT`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ROOT_EQ",
+      "name" : "N_ROOT_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

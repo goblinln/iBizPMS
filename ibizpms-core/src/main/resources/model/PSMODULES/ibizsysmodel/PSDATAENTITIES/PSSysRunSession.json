@@ -146,6 +146,11 @@
       "queryCodeExp" : "t1.`PSSYSRUNSESSIONNAME`",
       "standardColumnName" : "`PSSYSRUNSESSIONNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PSSYSRUNSESSIONNAME_LIKE",
+      "name" : "N_PSSYSRUNSESSIONNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -271,6 +276,11 @@
       "queryCodeExp" : "t1.`PSSYSRUNSESSIONID`",
       "standardColumnName" : "`PSSYSRUNSESSIONID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PSSYSRUNSESSIONID_EQ",
+      "name" : "N_PSSYSRUNSESSIONID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -367,6 +377,11 @@
       "name" : "PACKMODE",
       "queryCodeExp" : "t1.`PACKMODE`",
       "standardColumnName" : "`PACKMODE`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PACKMODE_EQ",
+      "name" : "N_PACKMODE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -624,6 +639,11 @@
       "queryCodeExp" : "t1.`RUNMODE`",
       "standardColumnName" : "`RUNMODE`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_RUNMODE_EQ",
+      "name" : "N_RUNMODE_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -756,6 +776,11 @@
       "queryCodeExp" : "t1.`RUNSTATE`",
       "standardColumnName" : "`RUNSTATE`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_RUNSTATE_EQ",
+      "name" : "N_RUNSTATE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1087,6 +1112,11 @@
       "queryCodeExp" : "t1.`REBUILDMODE`",
       "standardColumnName" : "`REBUILDMODE`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_REBUILDMODE_EQ",
+      "name" : "N_REBUILDMODE_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1401,6 +1431,15 @@
       "queryCodeExp" : "t1.`PSSYSAPPNAME2`",
       "standardColumnName" : "`PSSYSAPPNAME2`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PSSYSAPPNAME2_EQ",
+      "name" : "N_PSSYSAPPNAME2_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_PSSYSAPPNAME2_LIKE",
+      "name" : "N_PSSYSAPPNAME2_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1456,6 +1495,15 @@
       "name" : "PSSYSSERVICEAPINAME",
       "queryCodeExp" : "t1.`PSSYSSERVICEAPINAME`",
       "standardColumnName" : "`PSSYSSERVICEAPINAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PSSYSSERVICEAPINAME_EQ",
+      "name" : "N_PSSYSSERVICEAPINAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_PSSYSSERVICEAPINAME_LIKE",
+      "name" : "N_PSSYSSERVICEAPINAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1513,6 +1561,15 @@
       "queryCodeExp" : "t1.`PSSYSAPPNAME`",
       "standardColumnName" : "`PSSYSAPPNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PSSYSAPPNAME_EQ",
+      "name" : "N_PSSYSAPPNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_PSSYSAPPNAME_LIKE",
+      "name" : "N_PSSYSAPPNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1568,6 +1625,11 @@
       "name" : "PSSYSAPPID2",
       "queryCodeExp" : "t1.`PSSYSAPPID2`",
       "standardColumnName" : "`PSSYSAPPID2`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PSSYSAPPID2_EQ",
+      "name" : "N_PSSYSAPPID2_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1625,6 +1687,11 @@
       "queryCodeExp" : "t1.`PSSYSSERVICEAPIID`",
       "standardColumnName" : "`PSSYSSERVICEAPIID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PSSYSSERVICEAPIID_EQ",
+      "name" : "N_PSSYSSERVICEAPIID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1680,6 +1747,11 @@
       "name" : "PSSYSAPPID",
       "queryCodeExp" : "t1.`PSSYSAPPID`",
       "standardColumnName" : "`PSSYSAPPID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PSSYSAPPID_EQ",
+      "name" : "N_PSSYSAPPID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

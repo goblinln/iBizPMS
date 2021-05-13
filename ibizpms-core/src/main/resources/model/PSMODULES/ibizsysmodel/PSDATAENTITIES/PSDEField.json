@@ -184,6 +184,11 @@
       "queryCodeExp" : "t1.`VIEWCOLLEVEL`",
       "standardColumnName" : "`VIEWCOLLEVEL`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_VIEWCOLLEVEL_EQ",
+      "name" : "N_VIEWCOLLEVEL_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -264,6 +269,11 @@
       "name" : "DUPCHECKMODE",
       "queryCodeExp" : "t1.`DUPCHECKMODE`",
       "standardColumnName" : "`DUPCHECKMODE`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DUPCHECKMODE_EQ",
+      "name" : "N_DUPCHECKMODE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -359,6 +369,11 @@
       "queryCodeExp" : "t1.`UPDATEOVMODE`",
       "standardColumnName" : "`UPDATEOVMODE`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_UPDATEOVMODE_EQ",
+      "name" : "N_UPDATEOVMODE_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -439,6 +454,11 @@
       "name" : "DBVALUEMODE",
       "queryCodeExp" : "t1.`DBVALUEMODE`",
       "standardColumnName" : "`DBVALUEMODE`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DBVALUEMODE_EQ",
+      "name" : "N_DBVALUEMODE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -571,6 +591,11 @@
       "name" : "STATEFIELD",
       "queryCodeExp" : "t1.`STATEFIELD`",
       "standardColumnName" : "`STATEFIELD`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_STATEFIELD_EQ",
+      "name" : "N_STATEFIELD_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -966,6 +991,11 @@
       "queryCodeExp" : "t1.`DVT`",
       "standardColumnName" : "`DVT`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DVT_EQ",
+      "name" : "N_DVT_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1097,6 +1127,11 @@
       "name" : "EXTENDMODE",
       "queryCodeExp" : "t1.`EXTENDMODE`",
       "standardColumnName" : "`EXTENDMODE`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_EXTENDMODE_EQ",
+      "name" : "N_EXTENDMODE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1370,6 +1405,11 @@
       "name" : "BIZTAG",
       "queryCodeExp" : "t1.`BIZTAG`",
       "standardColumnName" : "`BIZTAG`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_BIZTAG_EQ",
+      "name" : "N_BIZTAG_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1689,6 +1729,11 @@
       "queryCodeExp" : "t1.`PSDEFIELDID`",
       "standardColumnName" : "`PSDEFIELDID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PSDEFIELDID_EQ",
+      "name" : "N_PSDEFIELDID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1772,6 +1817,11 @@
       "name" : "UNIONKEYVALUE",
       "queryCodeExp" : "t1.`UNIONKEYVALUE`",
       "standardColumnName" : "`UNIONKEYVALUE`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_UNIONKEYVALUE_EQ",
+      "name" : "N_UNIONKEYVALUE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1873,6 +1923,11 @@
       "name" : "PSDEFIELDNAME",
       "queryCodeExp" : "t1.`PSDEFIELDNAME`",
       "standardColumnName" : "`PSDEFIELDNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PSDEFIELDNAME_LIKE",
+      "name" : "N_PSDEFIELDNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2000,6 +2055,11 @@
       "name" : "USERCAT",
       "queryCodeExp" : "t1.`USERCAT`",
       "standardColumnName" : "`USERCAT`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_USERCAT_EQ",
+      "name" : "N_USERCAT_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2129,6 +2189,11 @@
       "queryCodeExp" : "t1.`DEFTYPE`",
       "standardColumnName" : "`DEFTYPE`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DEFTYPE_EQ",
+      "name" : "N_DEFTYPE_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2211,6 +2276,11 @@
       "name" : "NULLVALORDER",
       "queryCodeExp" : "t1.`NULLVALORDER`",
       "standardColumnName" : "`NULLVALORDER`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_NULLVALORDER_EQ",
+      "name" : "N_NULLVALORDER_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2396,6 +2466,11 @@
       "standardColumnName" : "`PKEY`",
       "valueAutoGen" : true
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PKEY_EQ",
+      "name" : "N_PKEY_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2464,6 +2539,11 @@
       "name" : "PREDEFINETYPE",
       "queryCodeExp" : "t1.`PREDEFINETYPE`",
       "standardColumnName" : "`PREDEFINETYPE`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PREDEFINETYPE_EQ",
+      "name" : "N_PREDEFINETYPE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2664,6 +2744,11 @@
       "queryCodeExp" : "t1.`LOCKFLAG`",
       "standardColumnName" : "`LOCKFLAG`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_LOCKFLAG_EQ",
+      "name" : "N_LOCKFLAG_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -2697,6 +2782,11 @@
       "name" : "STRINGCASE",
       "queryCodeExp" : "t1.`STRINGCASE`",
       "standardColumnName" : "`STRINGCASE`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_STRINGCASE_EQ",
+      "name" : "N_STRINGCASE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -3049,6 +3139,11 @@
       "queryCodeExp" : "t1.`DYNAMODELFLAG`",
       "standardColumnName" : "`DYNAMODELFLAG`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DYNAMODELFLAG_EQ",
+      "name" : "N_DYNAMODELFLAG_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3164,6 +3259,11 @@
       "queryCodeExp" : "t1.`DBVALUEMODE2`",
       "standardColumnName" : "`DBVALUEMODE2`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DBVALUEMODE2_EQ",
+      "name" : "N_DBVALUEMODE2_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3259,6 +3359,15 @@
       "queryCodeExp" : "t1.`VALUEPSDEFNAME`",
       "standardColumnName" : "`VALUEPSDEFNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_VALUEPSDEFNAME_EQ",
+      "name" : "N_VALUEPSDEFNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_VALUEPSDEFNAME_LIKE",
+      "name" : "N_VALUEPSDEFNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3314,6 +3423,15 @@
       "name" : "DUPCHKPSDEFNAME",
       "queryCodeExp" : "t1.`DUPCHKPSDEFNAME`",
       "standardColumnName" : "`DUPCHKPSDEFNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DUPCHKPSDEFNAME_EQ",
+      "name" : "N_DUPCHKPSDEFNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_DUPCHKPSDEFNAME_LIKE",
+      "name" : "N_DUPCHKPSDEFNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -3371,6 +3489,15 @@
       "queryCodeExp" : "t1.`NO2DUPCHKPSDEFNAME`",
       "standardColumnName" : "`NO2DUPCHKPSDEFNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_NO2DUPCHKPSDEFNAME_EQ",
+      "name" : "N_NO2DUPCHKPSDEFNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_NO2DUPCHKPSDEFNAME_LIKE",
+      "name" : "N_NO2DUPCHKPSDEFNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3426,6 +3553,15 @@
       "name" : "DERPSDEFNAME",
       "queryCodeExp" : "t1.`DERPSDEFNAME`",
       "standardColumnName" : "`DERPSDEFNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DERPSDEFNAME_EQ",
+      "name" : "N_DERPSDEFNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_DERPSDEFNAME_LIKE",
+      "name" : "N_DERPSDEFNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -3483,6 +3619,15 @@
       "queryCodeExp" : "t1.`NO3DUPCHKPSDEFNAME`",
       "standardColumnName" : "`NO3DUPCHKPSDEFNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_NO3DUPCHKPSDEFNAME_EQ",
+      "name" : "N_NO3DUPCHKPSDEFNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_NO3DUPCHKPSDEFNAME_LIKE",
+      "name" : "N_NO3DUPCHKPSDEFNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3538,6 +3683,15 @@
       "name" : "PSDENAME",
       "queryCodeExp" : "t1.`PSDENAME`",
       "standardColumnName" : "`PSDENAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PSDENAME_EQ",
+      "name" : "N_PSDENAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_PSDENAME_LIKE",
+      "name" : "N_PSDENAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -3654,6 +3808,11 @@
       "queryCodeExp" : "t1.`PSDEID`",
       "standardColumnName" : "`PSDEID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PSDEID_EQ",
+      "name" : "N_PSDEID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3712,6 +3871,11 @@
       "queryCodeExp" : "t1.`NO2DUPCHKPSDEFID`",
       "standardColumnName" : "`NO2DUPCHKPSDEFID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_NO2DUPCHKPSDEFID_EQ",
+      "name" : "N_NO2DUPCHKPSDEFID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3767,6 +3931,11 @@
       "name" : "DUPCHKPSDEFID",
       "queryCodeExp" : "t1.`DUPCHKPSDEFID`",
       "standardColumnName" : "`DUPCHKPSDEFID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DUPCHKPSDEFID_EQ",
+      "name" : "N_DUPCHKPSDEFID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -3824,6 +3993,11 @@
       "queryCodeExp" : "t1.`VALUEPSDEFID`",
       "standardColumnName" : "`VALUEPSDEFID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_VALUEPSDEFID_EQ",
+      "name" : "N_VALUEPSDEFID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3880,6 +4054,11 @@
       "queryCodeExp" : "t1.`DERPSDEFID`",
       "standardColumnName" : "`DERPSDEFID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DERPSDEFID_EQ",
+      "name" : "N_DERPSDEFID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3935,6 +4114,11 @@
       "name" : "NO3DUPCHKPSDEFID",
       "queryCodeExp" : "t1.`NO3DUPCHKPSDEFID`",
       "standardColumnName" : "`NO3DUPCHKPSDEFID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_NO3DUPCHKPSDEFID_EQ",
+      "name" : "N_NO3DUPCHKPSDEFID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

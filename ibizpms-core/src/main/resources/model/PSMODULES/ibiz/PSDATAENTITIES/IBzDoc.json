@@ -108,6 +108,11 @@
       "queryCodeExp" : "t1.`IBZ_DOCID`",
       "standardColumnName" : "`IBZ_DOCID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZ_DOCID_EQ",
+      "name" : "N_IBZ_DOCID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -430,6 +435,11 @@
       "name" : "IBZ_DOCNAME",
       "queryCodeExp" : "t1.`IBZ_DOCNAME`",
       "standardColumnName" : "`IBZ_DOCNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZ_DOCNAME_LIKE",
+      "name" : "N_IBZ_DOCNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

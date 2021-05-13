@@ -280,6 +280,11 @@
       "queryCodeExp" : "t1.`LOCKFLAG`",
       "standardColumnName" : "`LOCKFLAG`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_LOCKFLAG_EQ",
+      "name" : "N_LOCKFLAG_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -407,6 +412,11 @@
       "name" : "PSMODULENAME",
       "queryCodeExp" : "t1.`PSMODULENAME`",
       "standardColumnName" : "`PSMODULENAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PSMODULENAME_LIKE",
+      "name" : "N_PSMODULENAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -635,6 +645,11 @@
       "name" : "USERCAT",
       "queryCodeExp" : "t1.`USERCAT`",
       "standardColumnName" : "`USERCAT`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_USERCAT_EQ",
+      "name" : "N_USERCAT_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -919,6 +934,11 @@
       "queryCodeExp" : "t1.`PSMODULEID`",
       "standardColumnName" : "`PSMODULEID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PSMODULEID_EQ",
+      "name" : "N_PSMODULEID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1053,6 +1073,11 @@
       "name" : "SERVICEAPIFLAG",
       "queryCodeExp" : "t1.`SERVICEAPIFLAG`",
       "standardColumnName" : "`SERVICEAPIFLAG`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_SERVICEAPIFLAG_EQ",
+      "name" : "N_SERVICEAPIFLAG_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1411,6 +1436,11 @@
       "name" : "SYSREFTYPE",
       "queryCodeExp" : "t1.`SYSREFTYPE`",
       "standardColumnName" : "`SYSREFTYPE`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_SYSREFTYPE_EQ",
+      "name" : "N_SYSREFTYPE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

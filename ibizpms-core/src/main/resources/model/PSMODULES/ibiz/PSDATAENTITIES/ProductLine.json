@@ -99,6 +99,11 @@
       "queryCodeExp" : "t1.`IBZ_PRODUCTLINENAME`",
       "standardColumnName" : "`IBZ_PRODUCTLINENAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZ_PRODUCTLINENAME_LIKE",
+      "name" : "N_IBZ_PRODUCTLINENAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -147,6 +152,11 @@
       "name" : "IBZ_PRODUCTLINEID",
       "queryCodeExp" : "t1.`IBZ_PRODUCTLINEID`",
       "standardColumnName" : "`IBZ_PRODUCTLINEID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZ_PRODUCTLINEID_EQ",
+      "name" : "N_IBZ_PRODUCTLINEID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

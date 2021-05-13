@@ -105,7 +105,7 @@ export class CodeListTranslator {
         // 获取代码表值项数组
         let codeListItems: any[] = [];
         if(codeList.codeListType == 'STATIC'){
-            codeListItems = codeList.getPSCodeItems();
+            codeListItems = await this.codeListService.getStaticItems(codeList.codeName, codeList);
         }else{
             codeListItems = await this.codeListService.getDataItems(this.getCodeListObj(codeList,context,viewparams,isLoading));
         }

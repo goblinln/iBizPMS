@@ -272,6 +272,11 @@
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ID_EQ",
+      "name" : "N_ID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -317,6 +322,11 @@
       "name" : "ACCOUNT",
       "queryCodeExp" : "t1.`ACCOUNT`",
       "standardColumnName" : "`ACCOUNT`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ACCOUNT_EQ",
+      "name" : "N_ACCOUNT_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -489,6 +499,11 @@
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_CONFIG_TYPE_EQ",
+      "name" : "N_CONFIG_TYPE_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -660,6 +675,15 @@
       "queryCodeExp" : "t1.`TYPE`",
       "standardColumnName" : "`TYPE`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TYPE_EQ",
+      "name" : "N_TYPE_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_TYPE_NOTEQ",
+      "name" : "N_TYPE_NOTEQ",
+      "valueOP" : "NOTEQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -711,6 +735,11 @@
       "queryCodeExp" : "t1.`END`",
       "standardColumnName" : "`END`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_END_EQ",
+      "name" : "N_END_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1037,6 +1066,11 @@
       "queryCodeExp" : "t1.`BEGIN`",
       "standardColumnName" : "`BEGIN`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_BEGIN_EQ",
+      "name" : "N_BEGIN_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1380,6 +1414,11 @@
       "standardColumnName" : "`CYCLE`",
       "valueAutoGen" : true
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_CYCLE_EQ",
+      "name" : "N_CYCLE_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1558,6 +1597,15 @@
       "standardColumnName" : "`STATUS`",
       "valueAutoGen" : true
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_STATUS_EQ",
+      "name" : "N_STATUS_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_STATUS_NOTEQ",
+      "name" : "N_STATUS_NOTEQ",
+      "valueOP" : "NOTEQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1639,6 +1687,11 @@
       "name" : "NAME",
       "queryCodeExp" : "t1.`NAME`",
       "standardColumnName" : "`NAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_NAME_LIKE",
+      "name" : "N_NAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1826,6 +1879,23 @@
       "queryCodeExp" : "t1.`DATE`",
       "standardColumnName" : "`DATE`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DATE_EQ",
+      "name" : "N_DATE_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_DATE_GTANDEQ",
+      "name" : "N_DATE_GTANDEQ",
+      "valueOP" : "GTANDEQ"
+    }, {
+      "codeName" : "N_DATE_LTANDEQ",
+      "name" : "N_DATE_LTANDEQ",
+      "valueOP" : "LTANDEQ"
+    }, {
+      "codeName" : "N_DATE_NOTEQ",
+      "name" : "N_DATE_NOTEQ",
+      "valueOP" : "NOTEQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1902,6 +1972,11 @@
       "queryCodeExp" : "t1.`PRIVATE`",
       "standardColumnName" : "`PRIVATE`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PRIVATE_EQ",
+      "name" : "N_PRIVATE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

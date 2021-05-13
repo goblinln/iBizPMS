@@ -915,12 +915,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_NAME_LIKE",
         "name" : "N_NAME_LIKE",
-        "getPSDEField" : {
-          "name" : "NAME",
-          "codeName" : "Name"
-        },
-        "valueOP" : "LIKE",
-        "default" : false
+        "valueOP" : "LIKE"
       },
       "getPSEditor" : {
         "editorType" : "TEXTBOX",
@@ -945,12 +940,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PRODUCT_EQ",
         "name" : "N_PRODUCT_EQ",
-        "getPSDEField" : {
-          "name" : "PRODUCT",
-          "codeName" : "Product"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -981,12 +971,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_TYPE_EQ",
         "name" : "N_TYPE_EQ",
-        "getPSDEField" : {
-          "name" : "TYPE",
-          "codeName" : "Type"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",

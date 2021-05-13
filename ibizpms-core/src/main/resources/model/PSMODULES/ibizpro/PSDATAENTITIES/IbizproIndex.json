@@ -141,6 +141,11 @@
       "queryCodeExp" : "t1.`INDEXID`",
       "standardColumnName" : "`INDEXID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_INDEXID_EQ",
+      "name" : "N_INDEXID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -269,6 +274,11 @@
       "name" : "INDEXNAME",
       "queryCodeExp" : "t1.`INDEXNAME`",
       "standardColumnName" : "`INDEXNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_INDEXNAME_LIKE",
+      "name" : "N_INDEXNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -544,6 +554,11 @@
       "name" : "INDEX_TYPE",
       "queryCodeExp" : "t1.`INDEX_TYPE`",
       "standardColumnName" : "`INDEX_TYPE`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_INDEX_TYPE_EQ",
+      "name" : "N_INDEX_TYPE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

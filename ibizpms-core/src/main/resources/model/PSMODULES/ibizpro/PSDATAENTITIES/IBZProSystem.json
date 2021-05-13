@@ -99,6 +99,11 @@
       "queryCodeExp" : "t1.`IBZPRO_SYSTEMID`",
       "standardColumnName" : "`IBZPRO_SYSTEMID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZPRO_SYSTEMID_EQ",
+      "name" : "N_IBZPRO_SYSTEMID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -148,6 +153,11 @@
       "name" : "IBZPRO_SYSTEMNAME",
       "queryCodeExp" : "t1.`IBZPRO_SYSTEMNAME`",
       "standardColumnName" : "`IBZPRO_SYSTEMNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZPRO_SYSTEMNAME_LIKE",
+      "name" : "N_IBZPRO_SYSTEMNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

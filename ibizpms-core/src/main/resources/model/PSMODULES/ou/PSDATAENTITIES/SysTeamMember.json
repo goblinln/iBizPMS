@@ -99,6 +99,11 @@
       "queryCodeExp" : "t1.`TEAMMEMBERID`",
       "standardColumnName" : "`TEAMMEMBERID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TEAMMEMBERID_EQ",
+      "name" : "N_TEAMMEMBERID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -147,6 +152,15 @@
       "name" : "TEAMNAME",
       "queryCodeExp" : "t11.`TEAMNAME`",
       "standardColumnName" : "`TEAMNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TEAMNAME_EQ",
+      "name" : "N_TEAMNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_TEAMNAME_LIKE",
+      "name" : "N_TEAMNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -205,6 +219,15 @@
       "name" : "POSTNAME",
       "queryCodeExp" : "t21.`POSTNAME`",
       "standardColumnName" : "`POSTNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_POSTNAME_EQ",
+      "name" : "N_POSTNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_POSTNAME_LIKE",
+      "name" : "N_POSTNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -367,6 +390,15 @@
       "queryCodeExp" : "t31.`PERSONNAME`",
       "standardColumnName" : "`PERSONNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PERSONNAME_EQ",
+      "name" : "N_PERSONNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_PERSONNAME_LIKE",
+      "name" : "N_PERSONNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -481,6 +513,11 @@
       "queryCodeExp" : "t1.`POSTID`",
       "standardColumnName" : "`POSTID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_POSTID_EQ",
+      "name" : "N_POSTID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -536,6 +573,11 @@
       "name" : "TEAMID",
       "queryCodeExp" : "t1.`TEAMID`",
       "standardColumnName" : "`TEAMID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TEAMID_EQ",
+      "name" : "N_TEAMID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -594,6 +636,11 @@
       "name" : "USERID",
       "queryCodeExp" : "t1.`USERID`",
       "standardColumnName" : "`USERID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_USERID_EQ",
+      "name" : "N_USERID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

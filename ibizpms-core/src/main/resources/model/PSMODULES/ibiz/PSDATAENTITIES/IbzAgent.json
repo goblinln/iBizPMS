@@ -154,6 +154,11 @@
       "queryCodeExp" : "t1.`CREATEMANNAME`",
       "standardColumnName" : "`CREATEMANNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_CREATEMANNAME_EQ",
+      "name" : "N_CREATEMANNAME_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -236,6 +241,11 @@
       "name" : "IBZ_AGENTID",
       "queryCodeExp" : "t1.`IBZ_AGENTID`",
       "standardColumnName" : "`IBZ_AGENTID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZ_AGENTID_EQ",
+      "name" : "N_IBZ_AGENTID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -490,6 +500,11 @@
       "name" : "IBZ_AGENTNAME",
       "queryCodeExp" : "t1.`IBZ_AGENTNAME`",
       "standardColumnName" : "`IBZ_AGENTNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZ_AGENTNAME_LIKE",
+      "name" : "N_IBZ_AGENTNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

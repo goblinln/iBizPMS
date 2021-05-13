@@ -336,6 +336,11 @@
       "queryCodeExp" : "t1.`USERID`",
       "standardColumnName" : "`USERID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_USERID_EQ",
+      "name" : "N_USERID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -385,6 +390,23 @@
       "queryCodeExp" : "t1.`USERNAME`",
       "standardColumnName" : "`USERNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_USERNAME_EQ",
+      "name" : "N_USERNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_USERNAME_IN",
+      "name" : "N_USERNAME_IN",
+      "valueOP" : "IN"
+    }, {
+      "codeName" : "N_USERNAME_LIKE",
+      "name" : "N_USERNAME_LIKE",
+      "valueOP" : "LIKE"
+    }, {
+      "codeName" : "N_USERNAME_NOTIN",
+      "name" : "N_USERNAME_NOTIN",
+      "valueOP" : "NOTIN"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -431,6 +453,11 @@
       "name" : "PERSONNAME",
       "queryCodeExp" : "t1.`PERSONNAME`",
       "standardColumnName" : "`PERSONNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PERSONNAME_LIKE",
+      "name" : "N_PERSONNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -675,6 +702,11 @@
       "queryCodeExp" : "t1.`MDEPTID`",
       "standardColumnName" : "`MDEPTID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_MDEPTID_EQ",
+      "name" : "N_MDEPTID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -787,6 +819,15 @@
       "queryCodeExp" : "t1.`MDEPTNAME`",
       "standardColumnName" : "`MDEPTNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_MDEPTNAME_EQ",
+      "name" : "N_MDEPTNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_MDEPTNAME_LIKE",
+      "name" : "N_MDEPTNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -889,6 +930,11 @@
       "name" : "ORGID",
       "queryCodeExp" : "t1.`ORGID`",
       "standardColumnName" : "`ORGID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ORGID_EQ",
+      "name" : "N_ORGID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1003,6 +1049,15 @@
       "queryCodeExp" : "t1.`ORGNAME`",
       "standardColumnName" : "`ORGNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ORGNAME_EQ",
+      "name" : "N_ORGNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_ORGNAME_LIKE",
+      "name" : "N_ORGNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1106,6 +1161,11 @@
       "name" : "SEX",
       "queryCodeExp" : "t1.`SEX`",
       "standardColumnName" : "`SEX`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_SEX_EQ",
+      "name" : "N_SEX_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

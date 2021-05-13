@@ -446,6 +446,11 @@
       "queryCodeExp" : "t1.`NAME`",
       "standardColumnName" : "`NAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_NAME_LIKE",
+      "name" : "N_NAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -489,6 +494,11 @@
     "enableQuickSearch" : true,
     "majorDEField" : true
   }, {
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_BACKGROUNDID_EQ",
+      "name" : "N_BACKGROUNDID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -682,6 +692,11 @@
     "phisicalDEField" : false,
     "uIAssistDEField" : true
   }, {
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_RELEASETYPE_EQ",
+      "name" : "N_RELEASETYPE_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -777,6 +792,11 @@
     "formulaDEField" : true,
     "phisicalDEField" : false
   }, {
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_REBUILD_EQ",
+      "name" : "N_REBUILD_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -915,6 +935,11 @@
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ID_EQ",
+      "name" : "N_ID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1052,6 +1077,11 @@
     "stringLength" : 100,
     "valueFormat" : "%1$s"
   }, {
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_SQLID_EQ",
+      "name" : "N_SQLID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1440,6 +1470,11 @@
     "valueFormat" : "%1$s",
     "queryColumn" : false
   }, {
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_FRONTAPPLICATION_EQ",
+      "name" : "N_FRONTAPPLICATION_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1535,6 +1570,11 @@
       "queryCodeExp" : "t1.`DATE`",
       "standardColumnName" : "`DATE`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DATE_LTANDEQ",
+      "name" : "N_DATE_LTANDEQ",
+      "valueOP" : "LTANDEQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1568,6 +1608,15 @@
       "name" : "PRODUCTNAME",
       "queryCodeExp" : "t11.`name`",
       "standardColumnName" : "`PRODUCTNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PRODUCTNAME_EQ",
+      "name" : "N_PRODUCTNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_PRODUCTNAME_LIKE",
+      "name" : "N_PRODUCTNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1627,6 +1676,11 @@
       "standardColumnName" : "`PRODUCT`",
       "valueAutoGen" : true
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PRODUCT_EQ",
+      "name" : "N_PRODUCT_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1678,6 +1732,11 @@
       "standardColumnName" : "`BRANCH`",
       "valueAutoGen" : true
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_BRANCH_EQ",
+      "name" : "N_BRANCH_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1728,6 +1787,11 @@
       "queryCodeExp" : "t1.`PROJECT`",
       "standardColumnName" : "`PROJECT`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PROJECT_EQ",
+      "name" : "N_PROJECT_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

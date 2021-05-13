@@ -616,6 +616,15 @@
       "queryCodeExp" : "t1.`ACCOUNT`",
       "standardColumnName" : "`ACCOUNT`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ACCOUNT_IN",
+      "name" : "N_ACCOUNT_IN",
+      "valueOP" : "IN"
+    }, {
+      "codeName" : "N_ACCOUNT_NOTIN",
+      "name" : "N_ACCOUNT_NOTIN",
+      "valueOP" : "NOTIN"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -782,6 +791,11 @@
       "queryCodeExp" : "t1.`REALNAME`",
       "standardColumnName" : "`REALNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_REALNAME_LIKE",
+      "name" : "N_REALNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -879,6 +893,11 @@
       "standardColumnName" : "`DEPT`",
       "valueAutoGen" : true
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DEPT_EQ",
+      "name" : "N_DEPT_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -960,6 +979,11 @@
       "name" : "ROLE",
       "queryCodeExp" : "t1.`ROLE`",
       "standardColumnName" : "`ROLE`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ROLE_EQ",
+      "name" : "N_ROLE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1099,6 +1123,11 @@
       "name" : "CLIENTSTATUS",
       "queryCodeExp" : "t1.`CLIENTSTATUS`",
       "standardColumnName" : "`CLIENTSTATUS`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_CLIENTSTATUS_EQ",
+      "name" : "N_CLIENTSTATUS_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1280,6 +1309,11 @@
       "name" : "GENDER",
       "queryCodeExp" : "t1.`GENDER`",
       "standardColumnName" : "`GENDER`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_GENDER_EQ",
+      "name" : "N_GENDER_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1723,6 +1757,11 @@
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ID_EQ",
+      "name" : "N_ID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

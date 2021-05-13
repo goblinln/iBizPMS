@@ -151,6 +151,11 @@
     "enableFront" : true
   } ],
   "getAllPSDEFields" : [ {
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_SENDPROXYID_EQ",
+      "name" : "N_SENDPROXYID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -200,6 +205,11 @@
       "queryCodeExp" : "t1.`IBIZPRO_MESSAGENAME`",
       "standardColumnName" : "`IBIZPRO_MESSAGENAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBIZPRO_MESSAGENAME_LIKE",
+      "name" : "N_IBIZPRO_MESSAGENAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -248,6 +258,11 @@
       "name" : "ISLINK",
       "queryCodeExp" : "t1.`ISLINK`",
       "standardColumnName" : "`ISLINK`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ISLINK_EQ",
+      "name" : "N_ISLINK_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -497,6 +512,11 @@
       "queryCodeExp" : "t1.`IBIZPRO_MESSAGEID`",
       "standardColumnName" : "`IBIZPRO_MESSAGEID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBIZPRO_MESSAGEID_EQ",
+      "name" : "N_IBIZPRO_MESSAGEID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -579,6 +599,11 @@
       "name" : "ISSYNC",
       "queryCodeExp" : "t1.`ISSYNC`",
       "standardColumnName" : "`ISSYNC`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ISSYNC_EQ",
+      "name" : "N_ISSYNC_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -871,6 +896,11 @@
       "queryCodeExp" : "t1.`ISRETRY`",
       "standardColumnName" : "`ISRETRY`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ISRETRY_EQ",
+      "name" : "N_ISRETRY_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -908,6 +938,11 @@
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
       "standardColumnName" : "`TYPE`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TYPE_EQ",
+      "name" : "N_TYPE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

@@ -461,12 +461,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_ID_EQ",
         "name" : "N_ID_EQ",
-        "getPSDEField" : {
-          "name" : "ID",
-          "codeName" : "Id"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "NUMBER",
@@ -492,12 +487,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_NAME_LIKE",
         "name" : "N_NAME_LIKE",
-        "getPSDEField" : {
-          "name" : "NAME",
-          "codeName" : "Name"
-        },
-        "valueOP" : "LIKE",
-        "default" : false
+        "valueOP" : "LIKE"
       },
       "getPSEditor" : {
         "editorType" : "TEXTBOX",
@@ -523,12 +513,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_TYPE_EQ",
         "name" : "N_TYPE_EQ",
-        "getPSDEField" : {
-          "name" : "TYPE",
-          "codeName" : "Type"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -561,12 +546,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_ACL_EQ",
         "name" : "N_ACL_EQ",
-        "getPSDEField" : {
-          "name" : "ACL",
-          "codeName" : "Acl"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -598,12 +578,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_STATUS_EQ",
         "name" : "N_STATUS_EQ",
-        "getPSDEField" : {
-          "name" : "STATUS",
-          "codeName" : "Status"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -635,12 +610,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_STATUS_ISNOTNULL",
         "name" : "N_STATUS_ISNOTNULL",
-        "getPSDEField" : {
-          "name" : "STATUS",
-          "codeName" : "Status"
-        },
-        "valueOP" : "ISNOTNULL",
-        "default" : false
+        "valueOP" : "ISNOTNULL"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -671,12 +641,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_LINENAME_EQ",
         "name" : "N_LINENAME_EQ",
-        "getPSDEField" : {
-          "name" : "LINENAME",
-          "codeName" : "LineName"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorParams" : {
@@ -724,12 +689,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_LINENAME_LIKE",
         "name" : "N_LINENAME_LIKE",
-        "getPSDEField" : {
-          "name" : "LINENAME",
-          "codeName" : "LineName"
-        },
-        "valueOP" : "LIKE",
-        "default" : false
+        "valueOP" : "LIKE"
       },
       "getPSEditor" : {
         "editorParams" : {

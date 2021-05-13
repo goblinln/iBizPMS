@@ -201,6 +201,11 @@
       "queryCodeExp" : "t1.`IBZPRO_SYSTPLID`",
       "standardColumnName" : "`IBZPRO_SYSTPLID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZPRO_SYSTPLID_EQ",
+      "name" : "N_IBZPRO_SYSTPLID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -289,6 +294,11 @@
       "queryCodeExp" : "t1.`PUBLIC`",
       "standardColumnName" : "`PUBLIC`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PUBLIC_EQ",
+      "name" : "N_PUBLIC_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -434,6 +444,11 @@
       "queryCodeExp" : "t1.`IBZPRO_SYSTPLNAME`",
       "standardColumnName" : "`IBZPRO_SYSTPLNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZPRO_SYSTPLNAME_LIKE",
+      "name" : "N_IBZPRO_SYSTPLNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -483,6 +498,11 @@
       "queryCodeExp" : "t1.`TPLTYPE`",
       "standardColumnName" : "`TPLTYPE`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TPLTYPE_EQ",
+      "name" : "N_TPLTYPE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -536,6 +556,11 @@
       "queryCodeExp" : "t1.`IBIZ_SOURCEOBJECT`",
       "standardColumnName" : "`IBIZ_SOURCEOBJECT`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBIZ_SOURCEOBJECT_EQ",
+      "name" : "N_IBIZ_SOURCEOBJECT_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -586,6 +611,11 @@
       "name" : "FILE",
       "queryCodeExp" : "t1.`FILE`",
       "standardColumnName" : "`FILE`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_FILE_EQ",
+      "name" : "N_FILE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

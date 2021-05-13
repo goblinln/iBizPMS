@@ -109,6 +109,11 @@
       "queryCodeExp" : "t1.`DEPTID`",
       "standardColumnName" : "`DEPTID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DEPTID_EQ",
+      "name" : "N_DEPTID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -215,6 +220,11 @@
       "queryCodeExp" : "t1.`DEPTNAME`",
       "standardColumnName" : "`DEPTNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DEPTNAME_LIKE",
+      "name" : "N_DEPTNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -268,6 +278,11 @@
       "name" : "ORGID",
       "queryCodeExp" : "t1.`ORGID`",
       "standardColumnName" : "`ORGID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ORGID_EQ",
+      "name" : "N_ORGID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -325,6 +340,11 @@
       "name" : "PDEPTID",
       "queryCodeExp" : "t1.`PDEPTID`",
       "standardColumnName" : "`PDEPTID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PDEPTID_EQ",
+      "name" : "N_PDEPTID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -701,6 +721,15 @@
       "queryCodeExp" : "t11.`ORGNAME`",
       "standardColumnName" : "`ORGNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ORGNAME_EQ",
+      "name" : "N_ORGNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_ORGNAME_LIKE",
+      "name" : "N_ORGNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -758,6 +787,15 @@
       "name" : "PDEPTNAME",
       "queryCodeExp" : "t21.`DEPTNAME`",
       "standardColumnName" : "`PDEPTNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PDEPTNAME_EQ",
+      "name" : "N_PDEPTNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_PDEPTNAME_LIKE",
+      "name" : "N_PDEPTNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

@@ -372,6 +372,11 @@
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ID_EQ",
+      "name" : "N_ID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -469,6 +474,15 @@
       "queryCodeExp" : "t11.`name`",
       "standardColumnName" : "`PRODUCTNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PRODUCTNAME_EQ",
+      "name" : "N_PRODUCTNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_PRODUCTNAME_LIKE",
+      "name" : "N_PRODUCTNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -528,6 +542,15 @@
       "queryCodeExp" : "t21.`NAME`",
       "standardColumnName" : "`PROJECTNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PROJECTNAME_EQ",
+      "name" : "N_PROJECTNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_PROJECTNAME_LIKE",
+      "name" : "N_PROJECTNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -584,6 +607,15 @@
       "name" : "PLANNAME",
       "queryCodeExp" : "t31.`TITLE`",
       "standardColumnName" : "`PLANNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PLANNAME_EQ",
+      "name" : "N_PLANNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_PLANNAME_LIKE",
+      "name" : "N_PLANNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -642,6 +674,11 @@
       "queryCodeExp" : "t1.`PRODUCT`",
       "standardColumnName" : "`PRODUCT`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PRODUCT_EQ",
+      "name" : "N_PRODUCT_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -688,6 +725,11 @@
       "queryCodeExp" : "t1.`PLAN`",
       "standardColumnName" : "`PLAN`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PLAN_EQ",
+      "name" : "N_PLAN_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -732,6 +774,11 @@
       "queryCodeExp" : "t1.`BRANCH`",
       "standardColumnName" : "`BRANCH`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_BRANCH_EQ",
+      "name" : "N_BRANCH_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -775,6 +822,11 @@
       "name" : "PROJECT",
       "queryCodeExp" : "t1.`PROJECT`",
       "standardColumnName" : "`PROJECT`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PROJECT_EQ",
+      "name" : "N_PROJECT_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

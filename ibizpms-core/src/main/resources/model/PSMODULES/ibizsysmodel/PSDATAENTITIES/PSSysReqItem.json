@@ -146,6 +146,11 @@
       "queryCodeExp" : "t1.`ITEMTYPE`",
       "standardColumnName" : "`ITEMTYPE`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ITEMTYPE_EQ",
+      "name" : "N_ITEMTYPE_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -538,6 +543,11 @@
       "queryCodeExp" : "t1.`PSSYSREQITEMID`",
       "standardColumnName" : "`PSSYSREQITEMID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PSSYSREQITEMID_EQ",
+      "name" : "N_PSSYSREQITEMID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -910,6 +920,11 @@
       "queryCodeExp" : "t1.`USERCAT`",
       "standardColumnName" : "`USERCAT`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_USERCAT_EQ",
+      "name" : "N_USERCAT_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1105,6 +1120,11 @@
       "queryCodeExp" : "t1.`PSSYSREQITEMNAME`",
       "standardColumnName" : "`PSSYSREQITEMNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PSSYSREQITEMNAME_LIKE",
+      "name" : "N_PSSYSREQITEMNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1248,6 +1268,15 @@
       "queryCodeExp" : "t11.`PSSYSREQMODULENAME`",
       "standardColumnName" : "`PSSYSREQMODULENAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PSSYSREQMODULENAME_EQ",
+      "name" : "N_PSSYSREQMODULENAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_PSSYSREQMODULENAME_LIKE",
+      "name" : "N_PSSYSREQMODULENAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1304,6 +1333,15 @@
       "name" : "PPSSYSREQITEMNAME",
       "queryCodeExp" : "t21.`PSSYSREQITEMNAME`",
       "standardColumnName" : "`PPSSYSREQITEMNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PPSSYSREQITEMNAME_EQ",
+      "name" : "N_PPSSYSREQITEMNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_PPSSYSREQITEMNAME_LIKE",
+      "name" : "N_PPSSYSREQITEMNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1362,6 +1400,11 @@
       "queryCodeExp" : "t1.`PSSYSREQMODULEID`",
       "standardColumnName" : "`PSSYSREQMODULEID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PSSYSREQMODULEID_EQ",
+      "name" : "N_PSSYSREQMODULEID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1417,6 +1460,11 @@
       "name" : "PPSSYSREQITEMID",
       "queryCodeExp" : "t1.`PPSSYSREQITEMID`",
       "standardColumnName" : "`PPSSYSREQITEMID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PPSSYSREQITEMID_EQ",
+      "name" : "N_PPSSYSREQITEMID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

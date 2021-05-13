@@ -164,6 +164,11 @@
       "queryCodeExp" : "t1.`RESSTATE`",
       "standardColumnName" : "`RESSTATE`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_RESSTATE_EQ",
+      "name" : "N_RESSTATE_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -197,6 +202,11 @@
       "name" : "NULLVALORDER",
       "queryCodeExp" : "t1.`NULLVALORDER`",
       "standardColumnName" : "`NULLVALORDER`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_NULLVALORDER_EQ",
+      "name" : "N_NULLVALORDER_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -513,6 +523,11 @@
       "queryCodeExp" : "t1.`PSSYSTEMDBCFGNAME`",
       "standardColumnName" : "`PSSYSTEMDBCFGNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PSSYSTEMDBCFGNAME_LIKE",
+      "name" : "N_PSSYSTEMDBCFGNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -821,6 +836,11 @@
       "name" : "PSSYSTEMDBCFGID",
       "queryCodeExp" : "t1.`PSSYSTEMDBCFGID`",
       "standardColumnName" : "`PSSYSTEMDBCFGID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PSSYSTEMDBCFGID_EQ",
+      "name" : "N_PSSYSTEMDBCFGID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1176,6 +1196,11 @@
       "queryCodeExp" : "t1.`OBJNAMECASE`",
       "standardColumnName" : "`OBJNAMECASE`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_OBJNAMECASE_EQ",
+      "name" : "N_OBJNAMECASE_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1439,6 +1464,11 @@
       "name" : "USERCAT",
       "queryCodeExp" : "t1.`USERCAT`",
       "standardColumnName" : "`USERCAT`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_USERCAT_EQ",
+      "name" : "N_USERCAT_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

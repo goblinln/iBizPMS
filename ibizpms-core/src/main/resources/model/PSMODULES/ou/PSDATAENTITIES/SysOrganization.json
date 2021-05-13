@@ -110,6 +110,11 @@
       "standardColumnName" : "`ORGID`",
       "valueAutoGen" : true
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ORGID_EQ",
+      "name" : "N_ORGID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -219,6 +224,11 @@
       "queryCodeExp" : "t1.`ORGNAME`",
       "standardColumnName" : "`ORGNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ORGNAME_LIKE",
+      "name" : "N_ORGNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -269,6 +279,11 @@
       "name" : "PORGID",
       "queryCodeExp" : "t1.`PORGID`",
       "standardColumnName" : "`PORGID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PORGID_EQ",
+      "name" : "N_PORGID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -448,6 +463,15 @@
       "name" : "PORGNAME",
       "queryCodeExp" : "t11.`ORGNAME`",
       "standardColumnName" : "`PORGNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PORGNAME_EQ",
+      "name" : "N_PORGNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_PORGNAME_LIKE",
+      "name" : "N_PORGNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

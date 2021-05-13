@@ -1210,12 +1210,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_NAME_LIKE",
         "name" : "N_NAME_LIKE",
-        "getPSDEField" : {
-          "name" : "NAME",
-          "codeName" : "Name"
-        },
-        "valueOP" : "LIKE",
-        "default" : false
+        "valueOP" : "LIKE"
       },
       "getPSEditor" : {
         "editorType" : "TEXTBOX",
@@ -1241,12 +1236,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_BACKGROUNDID_EQ",
         "name" : "N_BACKGROUNDID_EQ",
-        "getPSDEField" : {
-          "name" : "BACKGROUNDID",
-          "codeName" : "Backgroundid"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1277,12 +1267,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_BRANCH_EQ",
         "name" : "N_BRANCH_EQ",
-        "getPSDEField" : {
-          "name" : "BRANCH",
-          "codeName" : "Branch"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1311,15 +1296,9 @@
         "codeName" : "Date"
       },
       "getPSDEFSearchMode" : {
-        "caption" : "截止日期",
         "codeName" : "N_DATE_LTANDEQ",
         "name" : "N_DATE_LTANDEQ",
-        "getPSDEField" : {
-          "name" : "DATE",
-          "codeName" : "Date"
-        },
-        "valueOP" : "LTANDEQ",
-        "default" : false
+        "valueOP" : "LTANDEQ"
       },
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
@@ -1349,12 +1328,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_FRONTAPPLICATION_EQ",
         "name" : "N_FRONTAPPLICATION_EQ",
-        "getPSDEField" : {
-          "name" : "FRONTAPPLICATION",
-          "codeName" : "Frontapplication"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1385,12 +1359,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PRODUCTNAME_EQ",
         "name" : "N_PRODUCTNAME_EQ",
-        "getPSDEField" : {
-          "name" : "PRODUCTNAME",
-          "codeName" : "ProductName"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorParams" : {
@@ -1438,12 +1407,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PRODUCTNAME_LIKE",
         "name" : "N_PRODUCTNAME_LIKE",
-        "getPSDEField" : {
-          "name" : "PRODUCTNAME",
-          "codeName" : "ProductName"
-        },
-        "valueOP" : "LIKE",
-        "default" : false
+        "valueOP" : "LIKE"
       },
       "getPSEditor" : {
         "editorParams" : {
@@ -1491,12 +1455,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PROJECT_EQ",
         "name" : "N_PROJECT_EQ",
-        "getPSDEField" : {
-          "name" : "PROJECT",
-          "codeName" : "Project"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1527,12 +1486,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_REBUILD_EQ",
         "name" : "N_REBUILD_EQ",
-        "getPSDEField" : {
-          "name" : "REBUILD",
-          "codeName" : "Rebuild"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1564,12 +1518,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_RELEASETYPE_EQ",
         "name" : "N_RELEASETYPE_EQ",
-        "getPSDEField" : {
-          "name" : "RELEASETYPE",
-          "codeName" : "Releasetype"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1601,12 +1550,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_SQLID_EQ",
         "name" : "N_SQLID_EQ",
-        "getPSDEField" : {
-          "name" : "SQLID",
-          "codeName" : "Sqlid"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",

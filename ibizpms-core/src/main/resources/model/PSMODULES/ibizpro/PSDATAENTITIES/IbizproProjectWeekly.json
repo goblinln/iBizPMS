@@ -393,6 +393,11 @@
       "queryCodeExp" : "t1.`IBZPRO_PROJECTWEEKLYNAME`",
       "standardColumnName" : "`IBZPRO_PROJECTWEEKLYNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZPRO_PROJECTWEEKLYNAME_LIKE",
+      "name" : "N_IBZPRO_PROJECTWEEKLYNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -489,6 +494,11 @@
       "queryCodeExp" : "t1.`IBZPRO_PROJECTWEEKLYID`",
       "standardColumnName" : "`IBZPRO_PROJECTWEEKLYID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZPRO_PROJECTWEEKLYID_EQ",
+      "name" : "N_IBZPRO_PROJECTWEEKLYID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -539,6 +549,11 @@
       "name" : "PM",
       "queryCodeExp" : "t1.`PM`",
       "standardColumnName" : "`PM`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PM_EQ",
+      "name" : "N_PM_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -848,6 +863,11 @@
       "name" : "PROJECT",
       "queryCodeExp" : "t1.`PROJECT`",
       "standardColumnName" : "`PROJECT`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PROJECT_EQ",
+      "name" : "N_PROJECT_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

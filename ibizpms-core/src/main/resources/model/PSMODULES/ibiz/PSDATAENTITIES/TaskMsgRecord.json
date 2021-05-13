@@ -537,6 +537,11 @@
       "queryCodeExp" : "t1.`TASKMSGRECORDNAME`",
       "standardColumnName" : "`TASKMSGRECORDNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TASKMSGRECORDNAME_LIKE",
+      "name" : "N_TASKMSGRECORDNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -623,6 +628,11 @@
       "name" : "TASKMSGRECORDID",
       "queryCodeExp" : "t1.`TASKMSGRECORDID`",
       "standardColumnName" : "`TASKMSGRECORDID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TASKMSGRECORDID_EQ",
+      "name" : "N_TASKMSGRECORDID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

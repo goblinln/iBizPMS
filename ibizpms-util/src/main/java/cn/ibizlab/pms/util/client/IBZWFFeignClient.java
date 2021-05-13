@@ -1,5 +1,6 @@
 package cn.ibizlab.pms.util.client;
 
+import cn.ibizlab.pms.util.domain.WFTask;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 import com.alibaba.fastjson.JSONObject;
@@ -37,4 +38,10 @@ public interface IBZWFFeignClient
 	@RequestMapping(method = RequestMethod.GET, value = "/{system}/{entity}/{businessKey}/dataaccessmode")
 	Integer getDataAccessMode(@PathVariable("system") String system, @PathVariable("entity") String entity, @PathVariable("businessKey") Serializable businessKey);
 
+
+	@RequestMapping(method = RequestMethod.POST, value = "/wfundotasks/save")
+	WFTask WFRegister(@RequestBody WFTask task);
+
+	@RequestMapping(method = RequestMethod.DELETE, value = "/wfundotasks/{wfundotask_id}")
+	Boolean WFUnregister(@PathVariable("wfundotask_id") Serializable businessKey);
 }

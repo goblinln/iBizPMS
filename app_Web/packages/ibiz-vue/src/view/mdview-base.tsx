@@ -308,7 +308,12 @@ export class MDViewBase extends MainViewBase {
         if (!this.viewInstance?.enableQuickSearch) {
             return;
         }
-        return !this.isExpandSearchForm ? <i-input slot="quickSearch" className='pull-left' style='max-width: 400px;margin-top:6px;padding-left: 24px' search enter-button on-on-search={($event: any) => this.onSearch($event)} v-model={this.query} placeholder={this.placeholder} /> : null;
+        return !this.isExpandSearchForm ? 
+            <template slot="quickSearch">
+                <i-input class='app-quick-search width-filter' style='max-width: 400px;margin-top:4px;padding-left: 24px' search on-on-search={($event: any) => this.onSearch($event)} v-model={this.query} placeholder={this.placeholder} />
+                <i-button class="filter" icon="ios-funnel" />
+            </template>
+            : null;
     }
 
     /**

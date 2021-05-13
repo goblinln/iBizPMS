@@ -22,12 +22,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_NAME_LIKE",
       "name" : "N_NAME_LIKE",
-      "getPSDEField" : {
-        "name" : "NAME",
-        "codeName" : "Name"
-      },
-      "valueOP" : "LIKE",
-      "default" : false
+      "valueOP" : "LIKE"
     },
     "getPSEditor" : {
       "editorType" : "TEXTBOX",
@@ -52,12 +47,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_TYPE_EQ",
       "name" : "N_TYPE_EQ",
-      "getPSDEField" : {
-        "name" : "TYPE",
-        "codeName" : "Type"
-      },
-      "valueOP" : "EQ",
-      "default" : false
+      "valueOP" : "EQ"
     },
     "getPSEditor" : {
       "editorType" : "DROPDOWNLIST",
@@ -87,12 +77,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_TYPE_NOTEQ",
       "name" : "N_TYPE_NOTEQ",
-      "getPSDEField" : {
-        "name" : "TYPE",
-        "codeName" : "Type"
-      },
-      "valueOP" : "NOTEQ",
-      "default" : false
+      "valueOP" : "NOTEQ"
     },
     "getPSEditor" : {
       "editorType" : "DROPDOWNLIST",
@@ -123,12 +108,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_STATUS_EQ",
       "name" : "N_STATUS_EQ",
-      "getPSDEField" : {
-        "name" : "STATUS",
-        "codeName" : "Status"
-      },
-      "valueOP" : "EQ",
-      "default" : false
+      "valueOP" : "EQ"
     },
     "getPSEditor" : {
       "editorType" : "DROPDOWNLIST",
@@ -160,12 +140,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_STATUS_NOTEQ",
       "name" : "N_STATUS_NOTEQ",
-      "getPSDEField" : {
-        "name" : "STATUS",
-        "codeName" : "Status"
-      },
-      "valueOP" : "NOTEQ",
-      "default" : false
+      "valueOP" : "NOTEQ"
     },
     "getPSEditor" : {
       "editorType" : "DROPDOWNLIST",
@@ -196,12 +171,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_ACCOUNT_EQ",
       "name" : "N_ACCOUNT_EQ",
-      "getPSDEField" : {
-        "name" : "ACCOUNT",
-        "codeName" : "Account"
-      },
-      "valueOP" : "EQ",
-      "default" : false
+      "valueOP" : "EQ"
     },
     "getPSEditor" : {
       "editorType" : "DROPDOWNLIST",
@@ -232,12 +202,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_BEGIN_EQ",
       "name" : "N_BEGIN_EQ",
-      "getPSDEField" : {
-        "name" : "BEGIN",
-        "codeName" : "Begin"
-      },
-      "valueOP" : "EQ",
-      "default" : false
+      "valueOP" : "EQ"
     },
     "getPSEditor" : {
       "editorType" : "DROPDOWNLIST",
@@ -269,12 +234,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_CONFIG_TYPE_EQ",
       "name" : "N_CONFIG_TYPE_EQ",
-      "getPSDEField" : {
-        "name" : "CONFIG_TYPE",
-        "codeName" : "Config_type"
-      },
-      "valueOP" : "EQ",
-      "default" : false
+      "valueOP" : "EQ"
     },
     "getPSEditor" : {
       "editorType" : "DROPDOWNLIST",
@@ -305,12 +265,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_CYCLE_EQ",
       "name" : "N_CYCLE_EQ",
-      "getPSDEField" : {
-        "name" : "CYCLE",
-        "codeName" : "Cycle"
-      },
-      "valueOP" : "EQ",
-      "default" : false
+      "valueOP" : "EQ"
     },
     "getPSEditor" : {
       "editorType" : "NUMBER",
@@ -335,12 +290,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_DATE_EQ",
       "name" : "N_DATE_EQ",
-      "getPSDEField" : {
-        "name" : "DATE",
-        "codeName" : "Date"
-      },
-      "valueOP" : "EQ",
-      "default" : false
+      "valueOP" : "EQ"
     },
     "getPSEditor" : {
       "dateTimeFormat" : "YYYY-MM-DD",
@@ -370,12 +320,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_DATE_GTANDEQ",
       "name" : "N_DATE_GTANDEQ",
-      "getPSDEField" : {
-        "name" : "DATE",
-        "codeName" : "Date"
-      },
-      "valueOP" : "GTANDEQ",
-      "default" : false
+      "valueOP" : "GTANDEQ"
     },
     "getPSEditor" : {
       "dateTimeFormat" : "YYYY-MM-DD",
@@ -405,12 +350,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_DATE_LTANDEQ",
       "name" : "N_DATE_LTANDEQ",
-      "getPSDEField" : {
-        "name" : "DATE",
-        "codeName" : "Date"
-      },
-      "valueOP" : "LTANDEQ",
-      "default" : false
+      "valueOP" : "LTANDEQ"
     },
     "getPSEditor" : {
       "dateTimeFormat" : "YYYY-MM-DD",
@@ -440,12 +380,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_DATE_NOTEQ",
       "name" : "N_DATE_NOTEQ",
-      "getPSDEField" : {
-        "name" : "DATE",
-        "codeName" : "Date"
-      },
-      "valueOP" : "NOTEQ",
-      "default" : false
+      "valueOP" : "NOTEQ"
     },
     "getPSEditor" : {
       "dateTimeFormat" : "YYYY-MM-DD",
@@ -475,12 +410,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_END_EQ",
       "name" : "N_END_EQ",
-      "getPSDEField" : {
-        "name" : "END",
-        "codeName" : "End"
-      },
-      "valueOP" : "EQ",
-      "default" : false
+      "valueOP" : "EQ"
     },
     "getPSEditor" : {
       "editorType" : "DROPDOWNLIST",
@@ -512,12 +442,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_PRIVATE_EQ",
       "name" : "N_PRIVATE_EQ",
-      "getPSDEField" : {
-        "name" : "PRIVATE",
-        "codeName" : "IBizPrivate"
-      },
-      "valueOP" : "EQ",
-      "default" : false
+      "valueOP" : "EQ"
     },
     "getPSEditor" : {
       "editorType" : "CHECKBOXLIST",

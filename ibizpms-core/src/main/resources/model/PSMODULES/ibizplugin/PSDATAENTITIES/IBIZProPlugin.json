@@ -135,6 +135,11 @@
       "queryCodeExp" : "t1.`TYPE`",
       "standardColumnName" : "`TYPE`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TYPE_EQ",
+      "name" : "N_TYPE_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -478,6 +483,11 @@
       "queryCodeExp" : "t1.`IBIZPRO_PLUGINNAME`",
       "standardColumnName" : "`IBIZPRO_PLUGINNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBIZPRO_PLUGINNAME_LIKE",
+      "name" : "N_IBIZPRO_PLUGINNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -526,6 +536,11 @@
       "name" : "IBIZPRO_PLUGINID",
       "queryCodeExp" : "t1.`IBIZPRO_PLUGINID`",
       "standardColumnName" : "`IBIZPRO_PLUGINID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBIZPRO_PLUGINID_EQ",
+      "name" : "N_IBIZPRO_PLUGINID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

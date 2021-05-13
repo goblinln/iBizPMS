@@ -674,6 +674,11 @@
       "name" : "PO",
       "standardColumnName" : "`PO`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PO_EQ",
+      "name" : "N_PO_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -863,6 +868,11 @@
       "dBType" : "MYSQL5",
       "name" : "ID",
       "standardColumnName" : "`ID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ID_EQ",
+      "name" : "N_ID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1261,6 +1271,11 @@
       "dBType" : "MYSQL5",
       "name" : "PLAN",
       "standardColumnName" : "`PLAN`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PLAN_EQ",
+      "name" : "N_PLAN_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

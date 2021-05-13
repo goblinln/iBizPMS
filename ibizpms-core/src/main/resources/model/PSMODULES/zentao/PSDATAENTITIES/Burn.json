@@ -178,6 +178,15 @@
       "queryCodeExp" : "DATE_FORMAT( t1.`DATE`, '%w' )",
       "standardColumnName" : "`ISWEEKEND`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ISWEEKEND_EQ",
+      "name" : "N_ISWEEKEND_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_ISWEEKEND_IN",
+      "name" : "N_ISWEEKEND_IN",
+      "valueOP" : "IN"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -542,6 +551,11 @@
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ID_EQ",
+      "name" : "N_ID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -659,6 +673,11 @@
       "queryCodeExp" : "t1.`PROJECT`",
       "standardColumnName" : "`PROJECT`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PROJECT_EQ",
+      "name" : "N_PROJECT_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -702,6 +721,11 @@
       "name" : "TASK",
       "queryCodeExp" : "t1.`TASK`",
       "standardColumnName" : "`TASK`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TASK_EQ",
+      "name" : "N_TASK_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

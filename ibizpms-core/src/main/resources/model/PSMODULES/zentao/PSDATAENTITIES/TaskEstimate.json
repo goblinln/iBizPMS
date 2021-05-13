@@ -493,6 +493,11 @@
     "stringLength" : 100,
     "valueFormat" : "%1$s"
   }, {
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_YEAR_EQ",
+      "name" : "N_YEAR_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -882,6 +887,15 @@
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ID_LIKE",
+      "name" : "N_ID_LIKE",
+      "valueOP" : "LIKE"
+    }, {
+      "codeName" : "N_ID_EQ",
+      "name" : "N_ID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1302,6 +1316,11 @@
     "stringLength" : 100,
     "valueFormat" : "%1$s"
   }, {
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_MONTH_EQ",
+      "name" : "N_MONTH_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1509,6 +1528,15 @@
       "name" : "TASKNAME",
       "queryCodeExp" : "t11.`NAME`",
       "standardColumnName" : "`TASKNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TASKNAME_EQ",
+      "name" : "N_TASKNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_TASKNAME_LIKE",
+      "name" : "N_TASKNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1742,6 +1770,11 @@
       "queryCodeExp" : "t11.`PROJECT`",
       "standardColumnName" : "`PROJECT`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PROJECT_EQ",
+      "name" : "N_PROJECT_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1787,6 +1820,11 @@
       "queryCodeExp" : "t1.`TASK`",
       "standardColumnName" : "`TASK`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TASK_EQ",
+      "name" : "N_TASK_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

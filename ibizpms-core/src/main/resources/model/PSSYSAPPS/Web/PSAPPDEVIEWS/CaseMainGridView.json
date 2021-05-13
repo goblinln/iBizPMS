@@ -1533,12 +1533,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_TITLE_LIKE",
         "name" : "N_TITLE_LIKE",
-        "getPSDEField" : {
-          "name" : "TITLE",
-          "codeName" : "Title"
-        },
-        "valueOP" : "LIKE",
-        "default" : false
+        "valueOP" : "LIKE"
       },
       "getPSEditor" : {
         "editorType" : "TEXTBOX",
@@ -1564,12 +1559,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_TYPE_EQ",
         "name" : "N_TYPE_EQ",
-        "getPSDEField" : {
-          "name" : "TYPE",
-          "codeName" : "Type"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1601,12 +1591,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PRI_EQ",
         "name" : "N_PRI_EQ",
-        "getPSDEField" : {
-          "name" : "PRI",
-          "codeName" : "Pri"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1638,12 +1623,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_STATUS_EQ",
         "name" : "N_STATUS_EQ",
-        "getPSDEField" : {
-          "name" : "STATUS",
-          "codeName" : "Status"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1675,12 +1655,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_ASSIGNEDTO_EQ",
         "name" : "N_ASSIGNEDTO_EQ",
-        "getPSDEField" : {
-          "name" : "ASSIGNEDTO",
-          "codeName" : "AssignedTo"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1711,12 +1686,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_BRANCH_EQ",
         "name" : "N_BRANCH_EQ",
-        "getPSDEField" : {
-          "name" : "BRANCH",
-          "codeName" : "Branch"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1747,12 +1717,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_COLOR_EQ",
         "name" : "N_COLOR_EQ",
-        "getPSDEField" : {
-          "name" : "COLOR",
-          "codeName" : "Color"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1784,12 +1749,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_FRAME_EQ",
         "name" : "N_FRAME_EQ",
-        "getPSDEField" : {
-          "name" : "FRAME",
-          "codeName" : "Frame"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1821,12 +1781,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_FREQUENCY_EQ",
         "name" : "N_FREQUENCY_EQ",
-        "getPSDEField" : {
-          "name" : "FREQUENCY",
-          "codeName" : "Frequency"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1857,12 +1812,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_FROMBUG_EQ",
         "name" : "N_FROMBUG_EQ",
-        "getPSDEField" : {
-          "name" : "FROMBUG",
-          "codeName" : "FromBug"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1892,12 +1842,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_FROMCASEID_EQ",
         "name" : "N_FROMCASEID_EQ",
-        "getPSDEField" : {
-          "name" : "FROMCASEID",
-          "codeName" : "FromCaseId"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1927,12 +1872,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_LASTRUNNER_EQ",
         "name" : "N_LASTRUNNER_EQ",
-        "getPSDEField" : {
-          "name" : "LASTRUNNER",
-          "codeName" : "LastRunner"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1963,12 +1903,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_LASTRUNRESULT_EQ",
         "name" : "N_LASTRUNRESULT_EQ",
-        "getPSDEField" : {
-          "name" : "LASTRUNRESULT",
-          "codeName" : "LastRunResult"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1999,12 +1934,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_LIBNAME_EQ",
         "name" : "N_LIBNAME_EQ",
-        "getPSDEField" : {
-          "name" : "LIBNAME",
-          "codeName" : "Libname"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorParams" : {
@@ -2052,12 +1982,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_LIBNAME_LIKE",
         "name" : "N_LIBNAME_LIKE",
-        "getPSDEField" : {
-          "name" : "LIBNAME",
-          "codeName" : "Libname"
-        },
-        "valueOP" : "LIKE",
-        "default" : false
+        "valueOP" : "LIKE"
       },
       "getPSEditor" : {
         "editorParams" : {
@@ -2105,12 +2030,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_MODULENAME_EQ",
         "name" : "N_MODULENAME_EQ",
-        "getPSDEField" : {
-          "name" : "MODULENAME",
-          "codeName" : "Modulename"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorParams" : {
@@ -2158,12 +2078,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_MODULENAME_LIKE",
         "name" : "N_MODULENAME_LIKE",
-        "getPSDEField" : {
-          "name" : "MODULENAME",
-          "codeName" : "Modulename"
-        },
-        "valueOP" : "LIKE",
-        "default" : false
+        "valueOP" : "LIKE"
       },
       "getPSEditor" : {
         "editorParams" : {
@@ -2211,12 +2126,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_OPENEDBY_EQ",
         "name" : "N_OPENEDBY_EQ",
-        "getPSDEField" : {
-          "name" : "OPENEDBY",
-          "codeName" : "OpenedBy"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -2246,12 +2156,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PRODUCTNAME_EQ",
         "name" : "N_PRODUCTNAME_EQ",
-        "getPSDEField" : {
-          "name" : "PRODUCTNAME",
-          "codeName" : "ProductName"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorParams" : {
@@ -2299,12 +2204,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PRODUCTNAME_LIKE",
         "name" : "N_PRODUCTNAME_LIKE",
-        "getPSDEField" : {
-          "name" : "PRODUCTNAME",
-          "codeName" : "ProductName"
-        },
-        "valueOP" : "LIKE",
-        "default" : false
+        "valueOP" : "LIKE"
       },
       "getPSEditor" : {
         "editorParams" : {
@@ -2352,12 +2252,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_STORYNAME_EQ",
         "name" : "N_STORYNAME_EQ",
-        "getPSDEField" : {
-          "name" : "STORYNAME",
-          "codeName" : "Storyname"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorParams" : {
@@ -2405,12 +2300,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_STORYNAME_LIKE",
         "name" : "N_STORYNAME_LIKE",
-        "getPSDEField" : {
-          "name" : "STORYNAME",
-          "codeName" : "Storyname"
-        },
-        "valueOP" : "LIKE",
-        "default" : false
+        "valueOP" : "LIKE"
       },
       "getPSEditor" : {
         "editorParams" : {

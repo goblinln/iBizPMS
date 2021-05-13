@@ -2233,7 +2233,7 @@ export class GridControlBase extends MDControlBase {
                     this.$throw((this.$t('app.formpage.workflow.submiterror') as string) + ', ' + response.data.message);
                     return;
                 }
-                this.$info((this.$t('app.formpage.workflow.submitsuccess') as string));
+                this.$success((this.$t('app.formpage.workflow.submitsuccess') as string));
                 resolve(response);
             }).catch((response: any) => {
                 this.ctrlEndLoading();

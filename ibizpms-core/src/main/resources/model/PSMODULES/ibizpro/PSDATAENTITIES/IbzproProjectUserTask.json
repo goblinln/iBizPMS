@@ -214,6 +214,11 @@
     "valueFormat" : "%1$s",
     "queryColumn" : false
   }, {
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TASKTYPE_EQ",
+      "name" : "N_TASKTYPE_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -428,6 +433,15 @@
       "name" : "ID",
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ID_LIKE",
+      "name" : "N_ID_LIKE",
+      "valueOP" : "LIKE"
+    }, {
+      "codeName" : "N_ID_EQ",
+      "name" : "N_ID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

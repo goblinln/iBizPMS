@@ -365,6 +365,11 @@
       "standardColumnName" : "`REPORTSTATUS`",
       "valueAutoGen" : true
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_REPORTSTATUS_EQ",
+      "name" : "N_REPORTSTATUS_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -552,6 +557,11 @@
       "queryCodeExp" : "t1.`ISSUBMIT`",
       "standardColumnName" : "`ISSUBMIT`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ISSUBMIT_EQ",
+      "name" : "N_ISSUBMIT_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -957,6 +967,11 @@
       "queryCodeExp" : "t1.`IBZ_MONTHLYID`",
       "standardColumnName" : "`IBZ_MONTHLYID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZ_MONTHLYID_EQ",
+      "name" : "N_IBZ_MONTHLYID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -999,6 +1014,11 @@
       "name" : "ACCOUNT",
       "queryCodeExp" : "t1.`ACCOUNT`",
       "standardColumnName" : "`ACCOUNT`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ACCOUNT_EQ",
+      "name" : "N_ACCOUNT_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1201,6 +1221,11 @@
       "queryCodeExp" : "t1.`REPORTTO`",
       "standardColumnName" : "`REPORTTO`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_REPORTTO_EQ",
+      "name" : "N_REPORTTO_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1251,6 +1276,11 @@
       "name" : "IBZ_MONTHLYNAME",
       "queryCodeExp" : "t1.`IBZ_MONTHLYNAME`",
       "standardColumnName" : "`IBZ_MONTHLYNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZ_MONTHLYNAME_LIKE",
+      "name" : "N_IBZ_MONTHLYNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

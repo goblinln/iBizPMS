@@ -108,6 +108,11 @@
       "queryCodeExp" : "t1.`DYNAFILTERID`",
       "standardColumnName" : "`DYNAFILTERID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DYNAFILTERID_EQ",
+      "name" : "N_DYNAFILTERID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -157,6 +162,11 @@
       "name" : "DYNAFILTERNAME",
       "queryCodeExp" : "t1.`DYNAFILTERNAME`",
       "standardColumnName" : "`DYNAFILTERNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DYNAFILTERNAME_LIKE",
+      "name" : "N_DYNAFILTERNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

@@ -263,6 +263,11 @@
       "name" : "IBZ_DAILYID",
       "standardColumnName" : "`IBZ_DAILYID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZ_DAILYID_EQ",
+      "name" : "N_IBZ_DAILYID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -558,6 +563,11 @@
       "name" : "ACCOUNT",
       "standardColumnName" : "`ACCOUNT`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ACCOUNT_EQ",
+      "name" : "N_ACCOUNT_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -602,6 +612,11 @@
     "stringLength" : 60,
     "valueFormat" : "%1$s"
   }, {
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TYPE_EQ",
+      "name" : "N_TYPE_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -761,6 +776,11 @@
       "name" : "IBZ_DAILYNAME",
       "standardColumnName" : "`IBZ_DAILYNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZ_DAILYNAME_LIKE",
+      "name" : "N_IBZ_DAILYNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -808,6 +828,11 @@
       "dBType" : "MYSQL5",
       "name" : "REPORTTO",
       "standardColumnName" : "`REPORTTO`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_REPORTTO_EQ",
+      "name" : "N_REPORTTO_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1040,6 +1065,11 @@
       "standardColumnName" : "`REPORTSTATUS`",
       "valueAutoGen" : true
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_REPORTSTATUS_EQ",
+      "name" : "N_REPORTSTATUS_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1124,6 +1154,11 @@
       "name" : "ISSUBMIT",
       "standardColumnName" : "`ISSUBMIT`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ISSUBMIT_EQ",
+      "name" : "N_ISSUBMIT_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

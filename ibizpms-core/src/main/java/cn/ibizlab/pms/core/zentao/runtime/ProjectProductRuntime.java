@@ -20,6 +20,7 @@ import net.ibizsys.runtime.IDynaInstRuntime;
 import cn.ibizlab.pms.util.domain.EntityBase;
 import cn.ibizlab.pms.util.errors.BadRequestAlertException;
 import cn.ibizlab.pms.util.helper.DELogicExecutor;
+import cn.ibizlab.pms.util.domain.WFTask;
 import net.ibizsys.runtime.dataentity.DataEntityRuntimeException;
 import net.ibizsys.runtime.util.IEntityBase;
 import net.ibizsys.runtime.util.ISearchContextBase;
@@ -34,6 +35,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.ObjectUtils;
+import org.springframework.util.DigestUtils;
 import java.io.Serializable;
 import java.util.List;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
@@ -302,4 +304,11 @@ public class ProjectProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
         return point.proceed();
     }
 
+    @Override
+    protected void onWFRegister(Object arg0, IPSDEAction iPSDEAction, IPSDEWF iPSDEWF, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
+    }
+
+    @Override
+    protected void onWFUnregister(Object arg0, IPSDEAction iPSDEAction, IPSDEWF iPSDEWF, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
+    }
 }

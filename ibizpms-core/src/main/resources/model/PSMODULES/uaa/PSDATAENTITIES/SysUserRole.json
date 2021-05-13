@@ -99,6 +99,11 @@
       "queryCodeExp" : "t1.`SYS_USER_ROLEID`",
       "standardColumnName" : "`SYS_USER_ROLEID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_SYS_USER_ROLEID_EQ",
+      "name" : "N_SYS_USER_ROLEID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -152,6 +157,11 @@
       "name" : "SYS_ROLEID",
       "queryCodeExp" : "t1.`SYS_ROLEID`",
       "standardColumnName" : "`SYS_ROLEID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_SYS_ROLEID_EQ",
+      "name" : "N_SYS_ROLEID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -210,6 +220,23 @@
       "queryCodeExp" : "t11.`SYS_ROLENAME`",
       "standardColumnName" : "`SYS_ROLENAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_SYS_ROLENAME_EQ",
+      "name" : "N_SYS_ROLENAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_SYS_ROLENAME_IN",
+      "name" : "N_SYS_ROLENAME_IN",
+      "valueOP" : "IN"
+    }, {
+      "codeName" : "N_SYS_ROLENAME_LIKE",
+      "name" : "N_SYS_ROLENAME_LIKE",
+      "valueOP" : "LIKE"
+    }, {
+      "codeName" : "N_SYS_ROLENAME_NOTIN",
+      "name" : "N_SYS_ROLENAME_NOTIN",
+      "valueOP" : "NOTIN"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -266,6 +293,19 @@
       "name" : "SYS_USERID",
       "queryCodeExp" : "t1.`SYS_USERID`",
       "standardColumnName" : "`SYS_USERID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_SYS_USERID_EQ",
+      "name" : "N_SYS_USERID_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_SYS_USERID_IN",
+      "name" : "N_SYS_USERID_IN",
+      "valueOP" : "IN"
+    }, {
+      "codeName" : "N_SYS_USERID_LIKE",
+      "name" : "N_SYS_USERID_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -325,6 +365,23 @@
       "name" : "SYS_USERNAME",
       "queryCodeExp" : "t21.`PERSONNAME`",
       "standardColumnName" : "`SYS_USERNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_SYS_USERNAME_EQ",
+      "name" : "N_SYS_USERNAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_SYS_USERNAME_IN",
+      "name" : "N_SYS_USERNAME_IN",
+      "valueOP" : "IN"
+    }, {
+      "codeName" : "N_SYS_USERNAME_LIKE",
+      "name" : "N_SYS_USERNAME_LIKE",
+      "valueOP" : "LIKE"
+    }, {
+      "codeName" : "N_SYS_USERNAME_NOTIN",
+      "name" : "N_SYS_USERNAME_NOTIN",
+      "valueOP" : "NOTIN"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

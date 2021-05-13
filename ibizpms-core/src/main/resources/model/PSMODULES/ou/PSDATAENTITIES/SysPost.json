@@ -100,6 +100,11 @@
       "standardColumnName" : "`POSTID`",
       "valueAutoGen" : true
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_POSTID_EQ",
+      "name" : "N_POSTID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -198,6 +203,11 @@
       "name" : "POSTNAME",
       "queryCodeExp" : "t1.`POSTNAME`",
       "standardColumnName" : "`POSTNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_POSTNAME_LIKE",
+      "name" : "N_POSTNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

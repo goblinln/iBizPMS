@@ -297,6 +297,11 @@
       "queryCodeExp" : "t1.`OBJECTID`",
       "standardColumnName" : "`OBJECTID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_OBJECTID_EQ",
+      "name" : "N_OBJECTID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -569,6 +574,11 @@
       "queryCodeExp" : "t1.`OBJECTTYPE`",
       "standardColumnName" : "`OBJECTTYPE`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_OBJECTTYPE_EQ",
+      "name" : "N_OBJECTTYPE_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -672,6 +682,11 @@
       "name" : "TITLE",
       "queryCodeExp" : "t1.`TITLE`",
       "standardColumnName" : "`TITLE`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TITLE_LIKE",
+      "name" : "N_TITLE_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1028,6 +1043,11 @@
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ID_EQ",
+      "name" : "N_ID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1071,6 +1091,15 @@
       "name" : "EXTRA",
       "queryCodeExp" : "t1.`EXTRA`",
       "standardColumnName" : "`EXTRA`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_EXTRA_EQ",
+      "name" : "N_EXTRA_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_EXTRA_NOTEQ",
+      "name" : "N_EXTRA_NOTEQ",
+      "valueOP" : "NOTEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

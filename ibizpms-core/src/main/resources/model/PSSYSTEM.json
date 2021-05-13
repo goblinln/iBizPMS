@@ -1536,6 +1536,16 @@
     "modelref" : true,
     "path" : "PSSYSBACKSERVICES/SysAdminDeamon.json"
   } ],
+  "getAllPSSysDBValueFuncs" : [ {
+    "modelref" : true,
+    "path" : "PSSYSDBVFS/DATEDIFFNOW2.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSDBVFS/DATEDIFFNOW.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSSYSDBVFS/STRLEN.json"
+  } ],
   "getAllPSSysDataSyncAgents" : [ {
     "agentType" : "ACTIVEMQ",
     "codeName" : "UniData",

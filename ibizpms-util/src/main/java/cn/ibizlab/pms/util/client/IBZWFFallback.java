@@ -1,9 +1,11 @@
 package cn.ibizlab.pms.util.client;
 
+import cn.ibizlab.pms.util.domain.WFTask;
 import org.springframework.stereotype.Component;
 import com.alibaba.fastjson.JSONObject;
 import java.util.*;
 import java.io.Serializable;
+
 
 @Component
 public class IBZWFFallback implements IBZWFFeignClient {
@@ -43,4 +45,13 @@ public class IBZWFFallback implements IBZWFFeignClient {
         return null;
     }
 
+    @Override
+    public WFTask WFRegister(WFTask task) {
+        return null;
+    }
+
+    @Override
+    public Boolean WFUnregister(Serializable businessKey) {
+        return null;
+    }
 }

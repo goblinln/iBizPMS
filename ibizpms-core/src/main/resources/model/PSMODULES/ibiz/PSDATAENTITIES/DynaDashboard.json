@@ -146,6 +146,11 @@
       "queryCodeExp" : "t1.`DYNADASHBOARDID`",
       "standardColumnName" : "`DYNADASHBOARDID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DYNADASHBOARDID_EQ",
+      "name" : "N_DYNADASHBOARDID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -195,6 +200,11 @@
       "name" : "DYNADASHBOARDNAME",
       "queryCodeExp" : "t1.`DYNADASHBOARDNAME`",
       "standardColumnName" : "`DYNADASHBOARDNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DYNADASHBOARDNAME_LIKE",
+      "name" : "N_DYNADASHBOARDNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

@@ -99,6 +99,11 @@
       "queryCodeExp" : "t1.`TEAMID`",
       "standardColumnName" : "`TEAMID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TEAMID_EQ",
+      "name" : "N_TEAMID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -147,6 +152,11 @@
       "name" : "TEAMNAME",
       "queryCodeExp" : "t1.`TEAMNAME`",
       "standardColumnName" : "`TEAMNAME`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TEAMNAME_LIKE",
+      "name" : "N_TEAMNAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

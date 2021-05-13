@@ -1,15 +1,20 @@
 .view-container.degridview {
     > .view-card {
         > .ivu-card-head{
+            padding: 0;
             > .header-container{
+              .ivu-input,.ivu-btn{
+                font-size: 12px; 
+              }
                 > .caption-container {
                     flex: auto;
                     display: flex;
                     align-items: center;
                     justify-content: flex-start;
                     .caption-info {
-                        line-height: 50px;
-                        font-size: 18px;
+                        line-height: 48px;
+                        font-size: 14px;
+                        font-weight: 600;
                         color: var(--view-font-color-bright);
                         flex-shrink: 0;
                     }
@@ -27,7 +32,7 @@
                 }
                 >.bar-container  {
                     flex: auto;
-                    margin-bottom: 6px;
+                    margin-bottom: 4px;
                     display: flex;
                     align-items: center;
                     justify-content: flex-end;
@@ -43,6 +48,9 @@
                 }
             }
         }
+        > .ivu-card-body{
+          height: calc(100% - 49px)
+        }
     }
     > .view-card.view-no-toolbar, >.view-card.view-no-caption {
         > .ivu-card-body {
@@ -55,4 +63,60 @@
             height: 100% !important;
         }
     }
+
+    // 表格样式调整
+    .grid .el-table::after{
+      width: 0;
+    }
+    .grid .el-table{
+      border-left: none;
+      font-size: 12px;
+      color: #666666;
+      .el-table__header-wrapper{
+        th{
+          color: #666666;
+          font-weight: 400;
+          background: #F6F6F6;
+          border-right: none;
+        }
+      }
+      .grid-selected-row >td{
+        background: #EFF6FF !important;
+      }
+      .el-table__body tr:hover > td{
+        background: #EFF6FF !important;
+      }
+      .el-table__body tr.el-table__row--striped td{
+        background: transparent;
+      }
+    }
+    .grid .grid-pagination{
+      font-size: 12px;
+      color: #666666;
+      padding-top: 6px;
+      padding-right: 35px;
+      .ivu-icon{
+        font-size: 14px;
+      }
+      .ivu-btn, .ivu-select-selected-value,input{
+        font-size: 12px;
+      }
+      .page-button{
+        display: none;
+      }
+      .page-column{
+        left: 45px;
+      }
+      .ivu-btn{
+        padding: 0 12pxs;
+        height: 28px;
+      }
+      .page-button button,.ivu-page-item-jump-next, .ivu-page-item-jump-prev, .ivu-page-next, .ivu-page-prev, .ivu-page-item{
+        height: 28px;
+        width: 28px;
+        min-width: 28px;
+        line-height: 28px;
+      }
+    }
+
 }

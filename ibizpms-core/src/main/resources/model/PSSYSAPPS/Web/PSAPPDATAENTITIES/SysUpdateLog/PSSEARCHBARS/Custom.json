@@ -21,12 +21,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_LATESTUPDATE_EQ",
       "name" : "N_LATESTUPDATE_EQ",
-      "getPSDEField" : {
-        "name" : "LATESTUPDATE",
-        "codeName" : "Latestupdate"
-      },
-      "valueOP" : "EQ",
-      "default" : false
+      "valueOP" : "EQ"
     },
     "getPSEditor" : {
       "editorType" : "DROPDOWNLIST",
@@ -57,12 +52,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_SYS_UPDATE_LOGNAME_LIKE",
       "name" : "N_SYS_UPDATE_LOGNAME_LIKE",
-      "getPSDEField" : {
-        "name" : "SYS_UPDATE_LOGNAME",
-        "codeName" : "SysUpdateLogName"
-      },
-      "valueOP" : "LIKE",
-      "default" : false
+      "valueOP" : "LIKE"
     },
     "getPSEditor" : {
       "editorType" : "TEXTBOX",
@@ -88,12 +78,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_UPDATEBRANCH_EQ",
       "name" : "N_UPDATEBRANCH_EQ",
-      "getPSDEField" : {
-        "name" : "UPDATEBRANCH",
-        "codeName" : "Updatebranch"
-      },
-      "valueOP" : "EQ",
-      "default" : false
+      "valueOP" : "EQ"
     },
     "getPSEditor" : {
       "editorType" : "DROPDOWNLIST",

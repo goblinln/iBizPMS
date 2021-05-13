@@ -295,6 +295,11 @@
       "queryCodeExp" : "t1.`IBZ_PRODUCTLIFENAME`",
       "standardColumnName" : "`IBZ_PRODUCTLIFENAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZ_PRODUCTLIFENAME_LIKE",
+      "name" : "N_IBZ_PRODUCTLIFENAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -463,6 +468,11 @@
       "name" : "YEAR",
       "queryCodeExp" : "t1.`YEAR`",
       "standardColumnName" : "`YEAR`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_YEAR_EQ",
+      "name" : "N_YEAR_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -683,6 +693,11 @@
       "name" : "IBZ_PRODUCTLIFEID",
       "queryCodeExp" : "t1.`IBZ_PRODUCTLIFEID`",
       "standardColumnName" : "`IBZ_PRODUCTLIFEID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZ_PRODUCTLIFEID_EQ",
+      "name" : "N_IBZ_PRODUCTLIFEID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

@@ -160,6 +160,11 @@
       "queryCodeExp" : "t1.`IBZPRO_CONFIGNAME`",
       "standardColumnName" : "`IBZPRO_CONFIGNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZPRO_CONFIGNAME_LIKE",
+      "name" : "N_IBZPRO_CONFIGNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -332,6 +337,11 @@
       "queryCodeExp" : "t1.`IBZPRO_CONFIGID`",
       "standardColumnName" : "`IBZPRO_CONFIGID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZPRO_CONFIGID_EQ",
+      "name" : "N_IBZPRO_CONFIGID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -433,6 +443,11 @@
       "queryCodeExp" : "t1.`TYPE`",
       "standardColumnName" : "`TYPE`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TYPE_EQ",
+      "name" : "N_TYPE_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -484,6 +499,11 @@
       "queryCodeExp" : "t1.`MANAGEMENTSTATUS`",
       "standardColumnName" : "`MANAGEMENTSTATUS`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_MANAGEMENTSTATUS_EQ",
+      "name" : "N_MANAGEMENTSTATUS_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -534,6 +554,11 @@
       "name" : "VAILD",
       "queryCodeExp" : "t1.`VAILD`",
       "standardColumnName" : "`VAILD`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_VAILD_EQ",
+      "name" : "N_VAILD_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

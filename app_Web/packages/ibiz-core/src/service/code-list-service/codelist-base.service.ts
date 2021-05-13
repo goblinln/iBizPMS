@@ -121,7 +121,7 @@ export class CodeListServiceBase {
             }
         }
         if (codelist && codelist.getPSCodeItems()) {
-            let items: Array<any> = this.formatStaticItems(codelist.getPSCodeItems());
+            let items: Array<any> = this.formatStaticItems(codelist.getPSCodeItems(), codelist.codeItemValueNumber);
             return items;
         }
     }
@@ -131,16 +131,17 @@ export class CodeListServiceBase {
      *
      * @param {*} items 代码表集合
      * @param {string} pValue 父代码项值
-     * @returns {Promise<any[]>}
+     * @param {boolean} [codeItemValueNumber=false] 是否是数值项
+     * @return {*} 
      * @memberof CodeListServiceBase
      */
-    public formatStaticItems(items: any, pValue?: string) {
+    public formatStaticItems(items: any, pValue?: string, codeItemValueNumber: boolean = false) {
         let targetArray: Array<any> = [];
         items.forEach((element: IPSCodeItem) => {
             const codelistItem = {
                 label: element.text,
                 text: element.text,
-                value: element.value,
+                value: codeItemValueNumber ? Number(element.value) : element.value,
                 id: element.value,
                 color: element.color,
                 codename: element.codeName
@@ -163,7 +164,7 @@ export class CodeListServiceBase {
             }
             targetArray.push(codelistItem);
             if ((element.getPSCodeItems() || []).length > 0) {
-                const children = this.formatStaticItems(element.getPSCodeItems(), element.value);
+                const children = this.formatStaticItems(element.getPSCodeItems(), element.value, codeItemValueNumber);
                 targetArray.push(...children);
             }
         });

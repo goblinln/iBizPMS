@@ -22,12 +22,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_TYPE_EQ",
       "name" : "N_TYPE_EQ",
-      "getPSDEField" : {
-        "name" : "TYPE",
-        "codeName" : "Type"
-      },
-      "valueOP" : "EQ",
-      "default" : false
+      "valueOP" : "EQ"
     },
     "getPSEditor" : {
       "editorType" : "DROPDOWNLIST",
@@ -58,12 +53,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_ACCOUNT_EQ",
       "name" : "N_ACCOUNT_EQ",
-      "getPSDEField" : {
-        "name" : "ACCOUNT",
-        "codeName" : "Account"
-      },
-      "valueOP" : "EQ",
-      "default" : false
+      "valueOP" : "EQ"
     },
     "getPSEditor" : {
       "editorType" : "DROPDOWNLIST",
@@ -93,12 +83,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_ACCOUNT_LIKE",
       "name" : "N_ACCOUNT_LIKE",
-      "getPSDEField" : {
-        "name" : "ACCOUNT",
-        "codeName" : "Account"
-      },
-      "valueOP" : "LIKE",
-      "default" : false
+      "valueOP" : "LIKE"
     },
     "getPSEditor" : {
       "editorType" : "DROPDOWNLIST",
@@ -129,12 +114,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_LIMITED_EQ",
       "name" : "N_LIMITED_EQ",
-      "getPSDEField" : {
-        "name" : "LIMITED",
-        "codeName" : "Limited"
-      },
-      "valueOP" : "EQ",
-      "default" : false
+      "valueOP" : "EQ"
     },
     "getPSEditor" : {
       "editorType" : "DROPDOWNLIST",
@@ -165,12 +145,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_ROOT_EQ",
       "name" : "N_ROOT_EQ",
-      "getPSDEField" : {
-        "name" : "ROOT",
-        "codeName" : "Root"
-      },
-      "valueOP" : "EQ",
-      "default" : false
+      "valueOP" : "EQ"
     },
     "getPSEditor" : {
       "editorType" : "DROPDOWNLIST",

@@ -99,6 +99,11 @@
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ID_EQ",
+      "name" : "N_ID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -181,6 +186,11 @@
       "queryCodeExp" : "t1.`FREEZE`",
       "standardColumnName" : "`FREEZE`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_FREEZE_EQ",
+      "name" : "N_FREEZE_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -232,6 +242,11 @@
       "queryCodeExp" : "t1.`STAR`",
       "standardColumnName" : "`STAR`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_STAR_EQ",
+      "name" : "N_STAR_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -282,6 +297,11 @@
       "name" : "HIDE",
       "queryCodeExp" : "t1.`HIDE`",
       "standardColumnName" : "`HIDE`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_HIDE_EQ",
+      "name" : "N_HIDE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -405,6 +425,11 @@
       "name" : "MUTE",
       "queryCodeExp" : "t1.`MUTE`",
       "standardColumnName" : "`MUTE`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_MUTE_EQ",
+      "name" : "N_MUTE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

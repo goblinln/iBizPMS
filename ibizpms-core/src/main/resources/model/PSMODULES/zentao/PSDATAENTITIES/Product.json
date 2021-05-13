@@ -734,6 +734,11 @@
       "queryCodeExp" : "'0'",
       "standardColumnName" : "`istop`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ISTOP_EQ",
+      "name" : "N_ISTOP_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -867,6 +872,11 @@
       "queryCodeExp" : "t1.`productclass`",
       "standardColumnName" : "`productclass`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PRODUCTCLASS_EQ",
+      "name" : "N_PRODUCTCLASS_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -951,6 +961,11 @@
       "standardColumnName" : "`acl`",
       "valueAutoGen" : true
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ACL_EQ",
+      "name" : "N_ACL_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1002,6 +1017,15 @@
       "name" : "NAME",
       "queryCodeExp" : "t1.`name`",
       "standardColumnName" : "`name`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_NAME_EQ",
+      "name" : "N_NAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_NAME_LIKE",
+      "name" : "N_NAME_LIKE",
+      "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "ProductNameRule",
@@ -1230,6 +1254,15 @@
       "name" : "ID",
       "queryCodeExp" : "t1.`id`",
       "standardColumnName" : "`id`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ID_EQ",
+      "name" : "N_ID_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_ID_IN",
+      "name" : "N_ID_IN",
+      "valueOP" : "IN"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1726,6 +1759,11 @@
       "queryCodeExp" : "t1.`supproreport`",
       "standardColumnName" : "`supproreport`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_SUPPROREPORT_EQ",
+      "name" : "N_SUPPROREPORT_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1813,6 +1851,11 @@
       "queryCodeExp" : "t1.`type`",
       "standardColumnName" : "`type`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TYPE_EQ",
+      "name" : "N_TYPE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -2066,6 +2109,15 @@
       "queryCodeExp" : "t1.`status`",
       "standardColumnName" : "`status`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_STATUS_EQ",
+      "name" : "N_STATUS_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_STATUS_ISNOTNULL",
+      "name" : "N_STATUS_ISNOTNULL",
+      "valueOP" : "ISNOTNULL"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -3041,6 +3093,15 @@
       "queryCodeExp" : "t11.`NAME`",
       "standardColumnName" : "`linename`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_LINENAME_EQ",
+      "name" : "N_LINENAME_EQ",
+      "valueOP" : "EQ"
+    }, {
+      "codeName" : "N_LINENAME_LIKE",
+      "name" : "N_LINENAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -3098,6 +3159,11 @@
       "queryCodeExp" : "t1.`line`",
       "standardColumnName" : "`line`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_LINE_EQ",
+      "name" : "N_LINE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

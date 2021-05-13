@@ -326,6 +326,11 @@
       "name" : "THISMONTH",
       "standardColumnName" : "`THISMONTH`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_THISMONTH_EQ",
+      "name" : "N_THISMONTH_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -420,6 +425,11 @@
       "dBType" : "MYSQL5",
       "name" : "YESTERDAY",
       "standardColumnName" : "`YESTERDAY`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_YESTERDAY_EQ",
+      "name" : "N_YESTERDAY_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -560,6 +570,11 @@
       "name" : "LASTMONTH",
       "standardColumnName" : "`LASTMONTH`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_LASTMONTH_EQ",
+      "name" : "N_LASTMONTH_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -691,6 +706,11 @@
       "name" : "THISWEEK",
       "standardColumnName" : "`THISWEEK`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_THISWEEK_EQ",
+      "name" : "N_THISWEEK_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -738,6 +758,11 @@
       "dBType" : "MYSQL5",
       "name" : "TODAY",
       "standardColumnName" : "`TODAY`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TODAY_EQ",
+      "name" : "N_TODAY_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -835,6 +860,11 @@
       "name" : "OBJECTTYPE",
       "queryCodeExp" : "t1.`OBJECTTYPE`",
       "standardColumnName" : "`OBJECTTYPE`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_OBJECTTYPE_EQ",
+      "name" : "N_OBJECTTYPE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -934,6 +964,11 @@
       "queryCodeExp" : "t1.`ID`",
       "standardColumnName" : "`ID`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ID_EQ",
+      "name" : "N_ID_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1021,6 +1056,11 @@
       "queryCodeExp" : "t1.`COMMENT`",
       "standardColumnName" : "`COMMENT`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_COMMENT_LIKE",
+      "name" : "N_COMMENT_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1069,6 +1109,11 @@
       "queryCodeExp" : "t1.`READ`",
       "standardColumnName" : "`READ`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_READ_EQ",
+      "name" : "N_READ_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1121,6 +1166,11 @@
       "name" : "ACTION",
       "queryCodeExp" : "t1.`ACTION`",
       "standardColumnName" : "`ACTION`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ACTION_EQ",
+      "name" : "N_ACTION_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1340,6 +1390,11 @@
       "queryCodeExp" : "(case when t1.objectType in ('bug','story','release') and t1.action in ('changestatus','resolved','closed', 'reviewed') and t1.extra <> '' then CONCAT_WS('_',t1.objectType,t1.action,t1.extra) else '' end)",
       "standardColumnName" : "`ACTIONMANNER`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ACTIONMANNER_EQ",
+      "name" : "N_ACTIONMANNER_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1439,6 +1494,11 @@
       "name" : "LASTWEEK",
       "standardColumnName" : "`LASTWEEK`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_LASTWEEK_EQ",
+      "name" : "N_LASTWEEK_EQ",
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -1488,6 +1548,11 @@
       "queryCodeExp" : "t1.`OBJECTID`",
       "standardColumnName" : "`OBJECTID`",
       "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_OBJECTID_EQ",
+      "name" : "N_OBJECTID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -1580,6 +1645,11 @@
       "name" : "PROJECT",
       "queryCodeExp" : "t1.`PROJECT`",
       "standardColumnName" : "`PROJECT`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_PROJECT_EQ",
+      "name" : "N_PROJECT_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

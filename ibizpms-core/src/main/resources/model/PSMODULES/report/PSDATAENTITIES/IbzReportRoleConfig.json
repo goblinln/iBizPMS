@@ -99,6 +99,11 @@
       "queryCodeExp" : "t1.`IBZ_REPORT_ROLE_CONFIGNAME`",
       "standardColumnName" : "`IBZ_REPORT_ROLE_CONFIGNAME`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZ_REPORT_ROLE_CONFIGNAME_LIKE",
+      "name" : "N_IBZ_REPORT_ROLE_CONFIGNAME_LIKE",
+      "valueOP" : "LIKE"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",
@@ -147,6 +152,11 @@
       "name" : "IBZ_REPORT_ROLE_CONFIGID",
       "queryCodeExp" : "t1.`IBZ_REPORT_ROLE_CONFIGID`",
       "standardColumnName" : "`IBZ_REPORT_ROLE_CONFIGID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_IBZ_REPORT_ROLE_CONFIGID_EQ",
+      "name" : "N_IBZ_REPORT_ROLE_CONFIGID_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
@@ -248,6 +258,11 @@
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
       "standardColumnName" : "`TYPE`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_TYPE_EQ",
+      "name" : "N_TYPE_EQ",
+      "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",

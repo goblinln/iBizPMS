@@ -1314,12 +1314,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_TITLE_LIKE",
         "name" : "N_TITLE_LIKE",
-        "getPSDEField" : {
-          "name" : "TITLE",
-          "codeName" : "Title"
-        },
-        "valueOP" : "LIKE",
-        "default" : false
+        "valueOP" : "LIKE"
       },
       "getPSEditor" : {
         "editorType" : "TEXTBOX",
@@ -1344,12 +1339,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PRODUCT_EQ",
         "name" : "N_PRODUCT_EQ",
-        "getPSDEField" : {
-          "name" : "PRODUCT",
-          "codeName" : "Product"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1378,15 +1368,9 @@
         "codeName" : "Begin"
       },
       "getPSDEFSearchMode" : {
-        "caption" : "开始日期",
         "codeName" : "N_BEGIN_GTANDEQ",
         "name" : "N_BEGIN_GTANDEQ",
-        "getPSDEField" : {
-          "name" : "BEGIN",
-          "codeName" : "Begin"
-        },
-        "valueOP" : "GTANDEQ",
-        "default" : false
+        "valueOP" : "GTANDEQ"
       },
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
@@ -1415,12 +1399,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_BRANCH_EQ",
         "name" : "N_BRANCH_EQ",
-        "getPSDEField" : {
-          "name" : "BRANCH",
-          "codeName" : "Branch"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1451,12 +1430,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_DELTA_EQ",
         "name" : "N_DELTA_EQ",
-        "getPSDEField" : {
-          "name" : "DELTA",
-          "codeName" : "Delta"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1486,15 +1460,9 @@
         "codeName" : "End"
       },
       "getPSDEFSearchMode" : {
-        "caption" : "结束日期",
         "codeName" : "N_END_LTANDEQ",
         "name" : "N_END_LTANDEQ",
-        "getPSDEField" : {
-          "name" : "END",
-          "codeName" : "End"
-        },
-        "valueOP" : "LTANDEQ",
-        "default" : false
+        "valueOP" : "LTANDEQ"
       },
       "getPSEditor" : {
         "dateTimeFormat" : "YYYY-MM-DD",
@@ -1524,12 +1492,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_FUTURE_EQ",
         "name" : "N_FUTURE_EQ",
-        "getPSDEField" : {
-          "name" : "FUTURE",
-          "codeName" : "Future"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "SPAN",
@@ -1561,12 +1524,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_ISEXPIRED_EQ",
         "name" : "N_ISEXPIRED_EQ",
-        "getPSDEField" : {
-          "name" : "ISEXPIRED",
-          "codeName" : "Isexpired"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorType" : "DROPDOWNLIST",
@@ -1596,12 +1554,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PARENTNAME_EQ",
         "name" : "N_PARENTNAME_EQ",
-        "getPSDEField" : {
-          "name" : "PARENTNAME",
-          "codeName" : "ParentName"
-        },
-        "valueOP" : "EQ",
-        "default" : false
+        "valueOP" : "EQ"
       },
       "getPSEditor" : {
         "editorParams" : {
@@ -1649,12 +1602,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PARENTNAME_LIKE",
         "name" : "N_PARENTNAME_LIKE",
-        "getPSDEField" : {
-          "name" : "PARENTNAME",
-          "codeName" : "ParentName"
-        },
-        "valueOP" : "LIKE",
-        "default" : false
+        "valueOP" : "LIKE"
       },
       "getPSEditor" : {
         "editorParams" : {
