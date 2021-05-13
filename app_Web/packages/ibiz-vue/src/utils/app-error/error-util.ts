@@ -1,4 +1,5 @@
 import { SyncSeriesHook } from "qx-util";
+import { LogUtil } from "ibiz-core";
 import { AppError, ErrorCode } from "./app-error";
 import { AppNoticeService } from "../../app-service";
 
@@ -27,7 +28,8 @@ export class ErrorUtil {
      */
     public static errorHandler(error: any, param?: any) {
         this.hooks.before.callSync({ ignore: false, error, param });
-        const appError: AppError = this.parse(error);
+        const appError: AppError | null = this.parse(error);
+        if(!appError) return; 
         this.hooks.after.callSync({ error: appError, param });
         AppNoticeService.getInstance().error(appError.message, param);
     }
@@ -37,22 +39,13 @@ export class ErrorUtil {
      *
      * @memberof ErrorUtil
      */
-    public static parse(error: any, args?: any): AppError {
+    public static parse(error: any, args?: any): AppError | null {
         if (typeof (error) === "string") {
             return this.createError(ErrorCode.CUSTOM, error);
         } else {
-            if (error instanceof EvalError) {
-                return this.createError(ErrorCode.EVAL);
-            } else if (error instanceof RangeError) {
-                return this.createError(ErrorCode.RANGE);
-            } else if (error instanceof ReferenceError) {
-                return this.createError(ErrorCode.REFERENCE);
-            } else if (error instanceof SyntaxError) {
-                return this.createError(ErrorCode.SYNTAX);
-            } else if (error instanceof TypeError) {
-                return this.createError(ErrorCode.TYPE);
-            } else if (error instanceof URIError) {
-                return this.createError(ErrorCode.URI);
+            if (error instanceof EvalError || error instanceof RangeError || error instanceof ReferenceError || error instanceof SyntaxError || error instanceof TypeError || error instanceof URIError) {
+                LogUtil.error(error);
+                return null;
             } else {
                 if (!error || !error.status || !error.data) {
                     return this.createError(ErrorCode.APP);

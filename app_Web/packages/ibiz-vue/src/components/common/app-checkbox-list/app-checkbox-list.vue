@@ -172,7 +172,13 @@ export default class AppCheckBox extends Vue {
                 return selectsArray;
             } else if (Object.is(this.currentmode, 'str')) {
                 if (this.value !== '') {
-                    return this.value.split(this.valueSeparator);
+                    let selects = this.value.split(this.valueSeparator);
+                    if(this.codeList.codeItemValueNumber){
+                        for(let i = 0, len =selects.length; i < len ;i++ ){
+                            selects[i] = Number(selects[i]);
+                        }
+                    }
+                    return selects;
                 }
             }
         } else {
