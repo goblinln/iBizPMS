@@ -4025,6 +4025,12 @@
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Task.json"
     },
+    "getPSNavigateContexts" : [ {
+      "key" : "N_PARENT_EQ",
+      "name" : "N_PARENT_EQ",
+      "value" : "srfparentkey",
+      "rawValue" : false
+    } ],
     "getPSNavigateParams" : [ {
       "key" : "n_parent_eq",
       "name" : "n_parent_eq",
