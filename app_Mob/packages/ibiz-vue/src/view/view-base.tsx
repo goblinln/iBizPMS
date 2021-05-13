@@ -909,7 +909,7 @@ export class ViewBase extends Vue {
             case 'includedView':
                 this.$emit('view-event', { viewName: this.viewInstance.codeName, action: 'close', data: null });
                 break;
-            case 'includedView':
+            case 'indexView':
                 this.quitFun();
                 break;
         }

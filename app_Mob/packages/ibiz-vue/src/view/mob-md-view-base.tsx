@@ -102,12 +102,23 @@ export class MobMDViewBase extends MDViewBase {
         </ion-content>
     }
 
+
+    /**
+     * 拦截滚动
+     *
+     * @memberof MobMDViewBase
+     */
+    public captorScroll = false;
+
     /**
      * onScroll滚动事件
      *
      * @memberof ViewBase
      */
     public async onScroll(e: any) {
+        if(this.captorScroll){
+            return;
+        }
         this.isScrollStop = false;
         if (e.detail.scrollTop > 600) {
             this.isShouleBackTop = true;
@@ -116,23 +127,20 @@ export class MobMDViewBase extends MDViewBase {
         }
         // 多数据
         let ionScroll: any = this.$refs.ionScroll;
-        console.log(ionScroll);
         if (ionScroll) {
             let ele = await ionScroll.getScrollElement();
             if (ele) {
                 let scrollTop = ele.scrollTop;
                 let clientHeight = ele.clientHeight;
                 let scrollHeight = ele.scrollHeight;
-                console.log('scrollTop：',scrollTop,"clientHeight:",clientHeight,"scrollHeight：",scrollHeight);
-                console.log(scrollHeight > clientHeight && scrollTop + clientHeight === scrollHeight);
-                if (scrollHeight > clientHeight && scrollTop + clientHeight === scrollHeight) {
+                if (scrollHeight > clientHeight && scrollHeight - scrollTop - clientHeight < 1) {
+                    this.captorScroll = true;
                     let mdctrl: any = this.$refs.mdctrl;
-                    console.log('mdctrl',mdctrl);
-                    
                     if (mdctrl?.ctrl?.loadBottom && Util.isFunction(mdctrl.ctrl.loadBottom)) {
                         mdctrl.ctrl.loadStatus = true;
                         await mdctrl.ctrl.loadBottom();
                         mdctrl.ctrl.loadStatus = false;
+                        this.captorScroll  = false;
                     }
                 }
             }
