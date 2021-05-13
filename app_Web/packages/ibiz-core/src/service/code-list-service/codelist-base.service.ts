@@ -124,6 +124,7 @@ export class CodeListServiceBase {
             let items: Array<any> = this.formatStaticItems(codelist.getPSCodeItems(), undefined, codelist.codeItemValueNumber);
             return items;
         }
+        return []
     }
 
     /**

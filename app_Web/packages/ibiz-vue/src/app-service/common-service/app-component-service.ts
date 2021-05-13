@@ -217,6 +217,7 @@ export class AppComponentService {
         this.controlMap.set("GRID_RENDER_PivotTable", 'app-grid-render-pivot-table');
         this.controlMap.set("GRID_RENDER_saveBatch", 'app-grid-render-save-batch');
         this.controlMap.set("PivotTable", 'app-pivot-table');
+        this.controlMap.set("GRID_RENDER_PivotTable", 'app-pivot-table');
     }
 
     /**
