@@ -35,12 +35,25 @@ export default class AppRadioGroup extends Vue {
     @Model('change') item?: any;
 
     /**
+     * 属性类型
+     *
+     * @type {'string' | 'number'}
+     * @memberof AppRadioGroup
+     */
+    @Prop({ default: 'string' })
+    public valueType!: 'string' | 'number';
+
+    /**
      * 获取值
      *
      * @memberof AppRadioGroup
      */
     get value() {
-        return this.item;
+        if (this.valueType && (this.valueType === 'number')) {
+            return `${this.item}`;
+        } else {
+            return this.item;
+        }
     }
 
     /**
@@ -49,7 +62,15 @@ export default class AppRadioGroup extends Vue {
      * @memberof AppRadioGroup
      */
     set value(val: any) {
-        this.$emit('change', val);
+        if (this.valueType && (this.valueType === 'number')) {
+            if (val.indexOf('.') === -1) {
+                this.$emit('change', parseInt(val));
+            } else {
+                this.$emit('change', parseFloat(val));
+            }
+        } else {
+            this.$emit('change', val);
+        }
     }
 
     /**

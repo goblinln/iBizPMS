@@ -1,5 +1,6 @@
-import { IPSAppCodeList, IPSCodeListEditor } from '@ibiz/dynamic-model-api';
-import { Vue, Component, Prop, Inject } from 'vue-property-decorator';
+import { IPSAppDEField, IPSCodeListEditor } from '@ibiz/dynamic-model-api';
+import { ModelTool } from 'ibiz-core';
+import { Vue, Component } from 'vue-property-decorator';
 import { VueLifeCycleProcessing } from '../../../decorators';
 import { EditorBase } from '../editor-base/editor-base';
 
@@ -21,6 +22,8 @@ export default class CheckboxEditor extends EditorBase {
      */
     public async initEditor() {    
         await super.initEditor();
+        let appDEField: IPSAppDEField = this.parentItem?.getPSAppDEField?.();
+        this.customProps.valueType = ModelTool.isNumberField(appDEField) ? 'number' : 'string';
         switch (this.editorInstance?.editorType) {
             // 单选框列表
             case 'RADIOBUTTONLIST':
