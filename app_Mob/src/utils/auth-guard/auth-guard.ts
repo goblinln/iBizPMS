@@ -58,9 +58,11 @@ export class AuthGuard {
         return new Promise((resolve: any, reject: any) => {
             const appStore = AppServiceBase.getInstance().getAppStore();
             let appData: any = appStore?.getters.getAppData();
-            // if (appData) {
-            //     return resolve(true);
-            // }
+            getSessionStorage('activeOrgData')
+            let activeOrgData = getSessionStorage('activeOrgData');
+            if (appData && activeOrgData?.systemid) {
+                return resolve(true);
+            }
             if (Environment && Environment.SaaSMode) {
                 this.getOrgsByDcsystem(router).then((result: boolean) => {
                     if (!result) {
