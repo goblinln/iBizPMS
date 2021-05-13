@@ -688,7 +688,7 @@
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProModuleSeq.json"
     },
-    "sequenceMode" : "GETDRAFT",
+    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,

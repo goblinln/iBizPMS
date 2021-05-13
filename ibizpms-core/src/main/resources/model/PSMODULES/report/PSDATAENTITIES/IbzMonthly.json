@@ -982,6 +982,11 @@
     "length" : 100,
     "logicName" : "月报标识",
     "name" : "IBZ_MONTHLYID",
+    "getPSSysSequence" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSSYSSEQUENCES/IBZProMONTHLYSeq.json"
+    },
+    "sequenceMode" : "CREATE",
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
