@@ -343,6 +343,7 @@ export class AppComponentService {
         this.editorMap.set("PICKER_DEPATMENTMULTIPLE", "app-department-select");
         this.editorMap.set("FILEUPLOADER_CAMERA", "app-file-upload-camera");
         this.editorMap.set("FILEUPLOADER_USEWORKTEMP", "text-file-upload");
+        this.editorMap.set("FILEUPLOADER_PREVIEWHFH", "app-preview-hfh");
         this.editorMap.set("PICKER_COMMONMICROCOM", "app-common-microcom");
        // 注册编辑器
         this.editorMap.set("HTMLEDITOR_Extend", "app-htmleditor-extend");

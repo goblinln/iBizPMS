@@ -1,7 +1,8 @@
 import { IPSDEEditForm, IPSDEFormItem } from '@ibiz/dynamic-model-api';
 import { ControlServiceBase, Util, ModelTool } from 'ibiz-core';
-import { GlobalService, notNilEmpty, UtilServiceRegister } from 'ibiz-service';
+import { GlobalService, UtilServiceRegister } from 'ibiz-service';
 import { AppFormModel } from 'ibiz-vue';
+import { notNilEmpty } from 'qx-util';
 
 
 /**

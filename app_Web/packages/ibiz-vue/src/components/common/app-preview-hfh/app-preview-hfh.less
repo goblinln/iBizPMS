@@ -1,0 +1,33 @@
+.word-down>a {
+    padding-right: 5px;
+}
+
+.word-spin-icon-load{
+    animation: ani-demo-spin 1s linear infinite;
+}
+
+// wps_np插件弹框
+.wpsDiaLog{
+    // el-dialog头部
+    .el-dialog__header{
+        height:40px;
+    }
+    // el-dialog面板
+    .el-dialog__wrapper {
+        height: 90vh;
+        overflow: visible;
+    }
+
+    // el-dialog
+    .el-dialog {
+        height: 100%;
+    }
+
+    // el-dailog内容
+    .el-dialog__body {
+        height: inherit;
+    }
+}
+#wps_npIframe{
+    height: calc(100% - 40px);
+}
