@@ -557,7 +557,7 @@ export class MobFormControlBase extends MainControlBase {
             response = await this.service.get(this.loadAction, { ...this.context }, arg, this.showBusyIndicator);
         } catch (error) {
             this.endLoading();
-            this.$Notice.error(error?.data?.message || 'Internal Server Error!');
+            this.$Notice.error(error.data.message ? error.data.message : (this.$t('app.commonWords.sysException') as string));
         }
         if (response && response.status === 200) {
             this.endLoading();
@@ -574,7 +574,7 @@ export class MobFormControlBase extends MainControlBase {
         } else if (response && response.status !== 401) {
             this.endLoading();
             const { error: _data } = response;
-            this.$Notice.error(_data.message);
+            this.$Notice.error(_data.message || this.$t('app.commonWords.sysException') as string);
         }
         return response;
     }
@@ -1207,7 +1207,7 @@ export class MobFormControlBase extends MainControlBase {
             this.endLoading();
             if (!response.status || response.status !== 200) {
                 if (response.data) {
-                    this.$Notice.error( response.data.message );
+                    this.$Notice.error( response.data.message || this.$t('app.commonWords.sysException') as string );
                 }
                 return;
             }
@@ -1303,7 +1303,7 @@ export class MobFormControlBase extends MainControlBase {
             post.then((response: any) => {
                 if (!response.status || response.status !== 200) {
                     if (response.data) {
-                        this.$Notice.error(response.data.message);
+                        this.$Notice.error(response.data.message || this.$t('app.commonWords.sysException') as string);
                     }
                     return;
                 }
@@ -1343,15 +1343,15 @@ export class MobFormControlBase extends MainControlBase {
                                 )
                             }
                         } else {
-                            this.$Notice.error(response.data.message);
+                            this.$Notice.error(response.data.message || this.$t('app.commonWords.sysException') as string);
                         }
                     } else {
-                        this.$Notice.error(response.data.message);
+                        this.$Notice.error(response.data.message || this.$t('app.commonWords.sysException') as string);
                         reject(response);
                     }
                     return;
                 } else {
-                    this.$Notice.error('系统异常');
+                    this.$Notice.error(this.$t('app.commonWords.sysException') as string);
                     reject(response);
                 }
                 reject(response);
@@ -1391,7 +1391,7 @@ export class MobFormControlBase extends MainControlBase {
             this.$Notice.success((data.srfmajortext ? data.srfmajortext : '') + '&nbsp;' + this.$t('app.message.deleteSccess'));
         } else if (response && response.status !== 401) {
             const { error: _data } = response;
-            this.$Notice.error(_data.message);
+            this.$Notice.error(_data.message || (this.$t('app.commonWords.sysException') as string));
         }
         return response;
     }

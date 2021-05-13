@@ -400,11 +400,11 @@ export class MobMDCtrlControlBase extends MDControlBase {
             response = await this.service.search(this.fetchAction, this.context, data, isloadding);
         } catch (error) {
             this.endLoading();
-            this.$Notice.error(error?.data?.message || 'Internal Server Error!');
+            this.$Notice.error(error?.data?.message || this.$t('app.commonWords.sysException') as string);
         }
         this.bottomLoadding = false;
         if (!response || response.status !== 200) {
-            this.$Notice.error(response?.error?.message || 'Internal Server Error!');
+            this.$Notice.error(response?.error?.message || this.$t('app.commonWords.sysException') as string);
             this.endLoading();
             return response;
         }

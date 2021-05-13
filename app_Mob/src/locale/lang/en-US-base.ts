@@ -58,6 +58,29 @@ import commonLogic from '@/locale/logic/common/common-logic';
 
 export default {
     app: {
+        commonWords:{
+            error: "Error",
+            success: "Success",
+            ok: "OK",
+            cancel: "Cancel",
+            save: "Save",
+            codeNotExist: 'Code list does not exist',
+            reqException: "Request exception",
+            sysException: "System abnormality",
+            warning: "Warning",
+            wrong: "Error",
+            rulesException: "Abnormal value check rule",
+            saveSuccess: "Saved successfully",
+            saveFailed: "Save failed",
+            deleteSuccess: "Successfully deleted!",
+            deleteError: "Failed to delete",
+            delDataFail: "Failed to delete data",
+            noData: "No data",
+            startsuccess:"Start successful",
+            loadmore:"Load more",
+            nomore:"No more",
+            other:"other"
+        },       
         local:{
             new: "New",
             add: "Add",

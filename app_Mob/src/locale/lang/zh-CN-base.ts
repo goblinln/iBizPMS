@@ -58,6 +58,29 @@ import commonLogic from '@/locale/logic/common/common-logic';
 
 export default {
     app: {
+        commonWords:{
+            error: "失败",
+            success: "成功",
+            ok: "确认",
+            cancel: "取消",
+            save: "保存",
+            codeNotExist: "代码表不存在",
+            reqException: "请求异常",
+            sysException: "系统异常",
+            warning: "警告",
+            wrong: "错误",
+            rulesException: "值规则校验异常",
+            saveSuccess: "保存成功",
+            saveFailed: "保存失败",
+            deleteSuccess: "删除成功",
+            deleteError: "删除失败",
+            delDataFail: "删除数据失败",
+            noData: "暂无数据",
+            startsuccess:"启动成功",
+            loadmore:"加载更多",
+            nomore:"没有更多了",
+            other:"其他"
+        },       
         local:{
             new: "新建",
             add: "增加",
