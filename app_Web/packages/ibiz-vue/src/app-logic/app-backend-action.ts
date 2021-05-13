@@ -88,13 +88,14 @@ export class AppBackEndAction {
                 this.actionModel.getPSAppDataEntity &&
                 (Object.is(actionTarget, 'SINGLEKEY') || Object.is(actionTarget, 'MULTIKEY'))
             ) {
+                // todo 后台调用获取主键及主信息属性的name
                 const entityName = this.actionModel.getPSAppDataEntity()?.codeName.toLowerCase();
                 const key = (ModelTool.getAppEntityKeyField(
                     this.actionModel.getPSAppDataEntity(),
-                ) as IPSAppDEField)?.codeName.toLowerCase();
+                ) as IPSAppDEField)?.name.toLowerCase();
                 const majorKey = (ModelTool.getAppEntityMajorField(
                     this.actionModel.getPSAppDataEntity(),
-                ) as IPSAppDEField)?.codeName.toLowerCase();
+                ) as IPSAppDEField)?.name.toLowerCase();
                 Object.assign(context, { [entityName!]: `%${key}%` });
                 Object.assign(params, { [key!]: `%${key}%` });
                 Object.assign(params, { [majorKey]: `%${majorKey}%` });

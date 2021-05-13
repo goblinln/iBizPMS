@@ -27,7 +27,7 @@ public interface IBZTPSFeignClient
 	@RequestMapping(method = RequestMethod.GET, value = "/msgsend/send/{msgid}")
 	Boolean sendById(@PathVariable("msgid") String msgid);
 
-	@RequestMapping(method = RequestMethod.POST, value = "/msgsend/getbyid")
+	@RequestMapping(method = RequestMethod.POST, value = "/msgsend/getbyids")
 	MsgSendQueue[] getByIds(@RequestBody String[] msgids);
     
 }

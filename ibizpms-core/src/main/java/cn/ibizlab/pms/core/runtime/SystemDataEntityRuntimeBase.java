@@ -326,7 +326,8 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     @Override
     public void setSearchPaging(ISearchContextBase iSearchContextBase, int nPageIndex, int nPageSize, Sort sort) {
         QueryWrapperContext context = (QueryWrapperContext) iSearchContextBase;
-        context.setPage(nPageIndex);
+        context.setPageable(null);
+        context.setPage(nPageIndex > 0 ? nPageIndex - 1 : 0);
         context.setSize(nPageSize);
         context.setPageSort(sort);
     }
@@ -748,5 +749,5 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         }
         return fieldExp;
     }
-    
+
 }
