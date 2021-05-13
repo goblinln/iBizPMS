@@ -42,6 +42,11 @@
     "getPSViewCtrlName" : "righttoolbar"
   } ],
   "getPSAppViewNavContexts" : [ {
+    "key" : "PRODUCT",
+    "name" : "PRODUCT",
+    "value" : "product",
+    "rawValue" : false
+  }, {
     "key" : "OBJECTTYPE",
     "name" : "OBJECTTYPE",
     "value" : "productplan",
