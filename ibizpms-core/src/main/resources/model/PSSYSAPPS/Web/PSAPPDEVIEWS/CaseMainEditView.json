@@ -997,21 +997,6 @@
                   },
                   "allowEmpty" : true
                 }, {
-                  "caption" : "用例",
-                  "codeName" : "case",
-                  "enableCond" : 3,
-                  "ignoreInput" : 0,
-                  "name" : "case",
-                  "getPSAppDEField" : {
-                    "name" : "CASE",
-                    "codeName" : "IBizCase"
-                  },
-                  "getPSEditor" : {
-                    "editorType" : "HIDDEN",
-                    "name" : "case"
-                  },
-                  "allowEmpty" : true
-                }, {
                   "caption" : "类型",
                   "codeName" : "type",
                   "enableCond" : 3,

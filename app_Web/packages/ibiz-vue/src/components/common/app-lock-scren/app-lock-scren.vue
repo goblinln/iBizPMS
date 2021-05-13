@@ -97,9 +97,6 @@ export default class AppLockScren extends Vue{
     .title {
         margin-left: 8px;
     }
-    .ivu-icon{
-      color: var(--app-font-color-light);
-    }
 }
 .el-dialog.lockscren-body{
   height: auto;

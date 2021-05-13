@@ -100,7 +100,7 @@ export class AppGridBase extends GridControlBase {
             'cell-class-name': ({ row, column, rowIndex, columnIndex }: any) =>
                 this.getCellClassName({ row, column, rowIndex, columnIndex }),
             'max-height': this.items?.length > 0 ? 'calc(100% - 50px)' : '100%',
-            stripe: true,
+            stripe: (this.controlInstance?.getParentPSModelObject?.() as IPSAppDEGridView)?.viewStyle == 'STYLE2' ? true : false,
         };
         const aggMode = this.controlInstance?.aggMode;
         //  支持排序
@@ -182,7 +182,7 @@ export class AppGridBase extends GridControlBase {
             },
             [
                 !this.isSingleSelect ? (
-                    <el-table-column align='center' type='selection' width='50'></el-table-column>
+                    <el-table-column align='center' class-name="selection-column" type='selection' width='50'></el-table-column>
                 ) : null,
                 this.isEnableGroup ? (
                     <el-table-column

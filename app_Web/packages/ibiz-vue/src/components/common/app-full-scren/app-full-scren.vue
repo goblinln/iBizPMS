@@ -89,9 +89,6 @@ export default class AppFullScren extends Vue{
     flex-direction: row;
     justify-content: space-between;
     cursor:pointer;
-    .ivu-icon{
-      color: var(--app-font-color);
-    }
 }
 .ivu-icon-ios-expand{
     font-weight: bolder;
