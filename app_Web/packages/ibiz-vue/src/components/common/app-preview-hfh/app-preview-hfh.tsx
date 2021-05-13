@@ -1,5 +1,4 @@
 import {Component, Model, Prop, Vue, Watch} from 'vue-property-decorator';
-import { MessageBox } from 'element-ui';
 import './app-preview-hfh.less';
 import { LogUtil } from 'ibiz-core';
 
@@ -208,7 +207,7 @@ export default class AppPreviewWord extends Vue {
               return;
           }
           // 返回的是一个jsonArray
-          if (response.data) {
+          if (response.data && response.data.length > 0) {
               const files = JSON.parse(JSON.stringify(response.data));
               if (_this.uploadFileList.length == 0) {
                 _this.uploadFileList.push.apply(_this.uploadFileList, files);
@@ -227,6 +226,10 @@ export default class AppPreviewWord extends Vue {
      * @memberof AppPreviewWord
      */
    public downloadFile(param: any) {
+     if (this.uploadFileList.length == 0) {
+      this.openFile("",param);
+      return;
+     }
      let item = this.uploadFileList[0];
       const fileId = typeof item.id == "string" ? item.id : JSON.stringify(item.id);
       const filename = typeof item.name == "string" ? item.name : JSON.stringify(item.filename);
@@ -284,6 +287,8 @@ export default class AppPreviewWord extends Vue {
         }
         // 从文件列表中删除
         this.uploadFileList.splice(0, 1);
+        this.fileName = "";
+        this.$forceUpdate();
       }).catch((error: any) => {
           // 提示删除失败
           this.$throw(error);
@@ -317,13 +322,34 @@ export default class AppPreviewWord extends Vue {
             let _this: any = this;
             // 调用iframe子页面中的函数saveToRemote
             let fileContent = iframe.contentWindow.saveToRemote();
-            let item = this.uploadFileList[0]
+            const uploadUrl = this.getAction();
+            if (this.uploadFileList.length == 0) {
+                let file = new File([fileContent],"模板文件.wps",{type: "application/kswps"});
+                // formData传参
+                let formData = new FormData();
+                formData.append('file', file);
+              this.$http.post(uploadUrl, formData, {timeout: 2000}).then((response: any) => {
+                if (!response || response.status != 200) {
+                    this.$throw(_this.$t('components.diskImageUpload.loadFailure') + "!");
+                }
+                // 返回的是一个jsonobject
+                if (response.data) {
+                    Object.assign(response.data,{file})
+                    this.uploadFileList.push(response.data);
+                    this.fileName = "模板文件.wps";
+                    this.showDialog = false;
+                }
+              }).catch((error: any) => {
+                  this.$throw(error);
+              })
+            return;
+          }
+            let item = this.uploadFileList[0];
             let file = new File([fileContent],item.name,{type: "application/kswps"});
             // formData传参
             let formData = new FormData();
             formData.append('file', file);
             // 拼接url
-            const uploadUrl = this.getAction();
             const deleteUrl = '/net-disk/files/' + item.id;
               // 发送delete请求
               this.$http.delete(deleteUrl).then((response: any) => {
@@ -343,9 +369,9 @@ export default class AppPreviewWord extends Vue {
                         Object.assign(response.data,{file})
                         this.uploadFileList.push(response.data);
                     }
-                }).catch((error: any) => {
-                    this.$throw(error);
-                })
+                  }).catch((error: any) => {
+                      this.$throw(error);
+                  });
               }).catch((error: any) => {
                   // 提示删除失败
                   this.$throw(error);
