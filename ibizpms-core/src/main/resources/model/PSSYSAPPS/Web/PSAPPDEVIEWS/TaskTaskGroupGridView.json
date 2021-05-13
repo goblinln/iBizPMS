@@ -890,7 +890,7 @@
             "id" : "MoreChild@Task"
           },
           "addSeparator" : false,
-          "showCaption" : true,
+          "showCaption" : false,
           "showIcon" : true
         }, {
           "detailType" : "DEUIACTION",
