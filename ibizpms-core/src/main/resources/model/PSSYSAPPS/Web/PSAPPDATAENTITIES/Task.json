@@ -4889,10 +4889,12 @@
       "glyph" : "xf01d@FontAwesome",
       "cssClass" : "fa fa-play-circle-o"
     },
+    "refreshMode" : 1,
     "timeout" : 60000,
     "uIActionMode" : "FRONT",
     "uIActionTag" : "StartTaskDash",
     "uIActionType" : "DEUIACTION",
+    "reloadData" : true,
     "id" : "StartTaskDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",

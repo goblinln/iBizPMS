@@ -38,12 +38,12 @@ public class CreateProductMonthlyServiceServiceRuntime extends net.ibizsys.runti
 
     @Override
     protected Object execute(String strDynaInstId, String strParam, ProceedingJoinPoint joinPoint) throws Throwable {
-        String[] arr = strDynaInstId.split("\\|");
+        String[] args = strDynaInstId.split("\\|");
         String strRealDynaInstId = null;
-        if (arr.length == 2) {
-            strRealDynaInstId = arr[1];
+        if (args.length == 4) {
+            strRealDynaInstId = args[3];
         }
-        createUserContext(arr[0]);
+        createUserContext(args);
         return super.execute(strRealDynaInstId, strParam, joinPoint);
     }
 
@@ -62,10 +62,10 @@ public class CreateProductMonthlyServiceServiceRuntime extends net.ibizsys.runti
     }
 
     /**
-     * @param strDCId
+     * @param args
      * @throws Exception
      */
-    private void createUserContext(String strDCId) throws Exception {
+    private void createUserContext(String[] args) throws Exception {
         AuthenticationUser authuserdetail = new AuthenticationUser();
         this.getPSSysBackService().getCodeName();
         authuserdetail.setUserid("SYSTEM");
@@ -73,7 +73,9 @@ public class CreateProductMonthlyServiceServiceRuntime extends net.ibizsys.runti
         authuserdetail.setPersonid("SYSTEM");
         authuserdetail.setPersonname("SYSTEM");
         authuserdetail.setSuperuser(1);
-        authuserdetail.setSrfdcid(strDCId);
+        authuserdetail.setSrfdcid(args[0]);
+        authuserdetail.setSrfsystemid(args[1]);
+        authuserdetail.setSrfdcsystemid(args[2]);
         UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(authuserdetail, null, authuserdetail.getAuthorities());
         SecurityContextHolder.getContext().setAuthentication(authentication);
     }
