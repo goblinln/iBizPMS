@@ -224,6 +224,10 @@ export class TaskBaseService extends EntityBaseService<ITask> {
         return this.condCache.get('childDefault');
     }
 
+    protected getChildDefaultMoreCond() {
+        return this.condCache.get('childDefaultMore');
+    }
+
     protected getChildTaskCond() {
         return this.condCache.get('childTask');
     }
@@ -2235,6 +2239,38 @@ export class TaskBaseService extends EntityBaseService<ITask> {
             return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchchilddefault`, _data);
         }
         return this.http.post(`/tasks/fetchchilddefault`, _data);
+    }
+    /**
+     * FetchChildDefaultMore
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof TaskService
+     */
+    async FetchChildDefaultMore(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.project && _context.projectmodule && true) {
+            return this.http.post(`/projects/${_context.project}/projectmodules/${_context.projectmodule}/tasks/fetchchilddefaultmore`, _data);
+        }
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/tasks/fetchchilddefaultmore`, _data);
+        }
+        if (_context.product && _context.productplan && true) {
+            return this.http.post(`/products/${_context.product}/productplans/${_context.productplan}/tasks/fetchchilddefaultmore`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/tasks/fetchchilddefaultmore`, _data);
+        }
+        if (_context.story && true) {
+            return this.http.post(`/stories/${_context.story}/tasks/fetchchilddefaultmore`, _data);
+        }
+        if (_context.productplan && true) {
+            return this.http.post(`/productplans/${_context.productplan}/tasks/fetchchilddefaultmore`, _data);
+        }
+        if (_context.projectmodule && true) {
+            return this.http.post(`/projectmodules/${_context.projectmodule}/tasks/fetchchilddefaultmore`, _data);
+        }
+        return this.http.post(`/tasks/fetchchilddefaultmore`, _data);
     }
     /**
      * FetchChildTask

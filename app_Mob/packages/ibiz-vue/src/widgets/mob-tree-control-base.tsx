@@ -837,6 +837,8 @@ export class MobTreeControlBase extends MDControlBase {
     public onCtrlEvent(controlname: string, action: string, data: any) {
         if (action == 'contextMenuItemClick') {
             AppViewLogicService.getInstance().executeViewLogic(`${controlname}_${data}_click`, undefined, this, undefined, this.controlInstance.getPSAppViewLogics());
+            // 关闭上下文菜单
+            this.context_menu_click();
         } else {
             this.ctrlEvent({ controlname, action, data });
         }

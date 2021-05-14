@@ -106,7 +106,6 @@ export default {
 			story: commonLogic.appcommonhandle("待办名称",null), 
 			private: commonLogic.appcommonhandle("私人事务",null), 
 			desc: commonLogic.appcommonhandle("描述",null), 
-			status: commonLogic.appcommonhandle("人员",null), 
 			id: commonLogic.appcommonhandle("编号",null), 
 		},
 		uiactions: {
