@@ -27,10 +27,12 @@ import cn.ibizlab.pms.core.ibizpro.domain.IBZProProduct;
 @Data
 public class IBZProProductSearchContext extends QueryWrapperContext<IBZProProduct> {
 
+                
 	private String n_name_like;//[产品名称]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;
     }
+                
 	private Long n_id_eq;//[编号]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;

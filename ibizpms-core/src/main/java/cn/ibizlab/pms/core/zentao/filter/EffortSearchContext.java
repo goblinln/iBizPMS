@@ -27,22 +27,27 @@ import cn.ibizlab.pms.core.zentao.domain.Effort;
 @Data
 public class EffortSearchContext extends QueryWrapperContext<Effort> {
 
+                
 	private String n_status_eq;//[status]
 	public void setN_status_eq(String n_status_eq) {
         this.n_status_eq = n_status_eq;
     }
+                
 	private String n_name_like;//[name]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;
     }
+                
 	private String n_todo_eq;//[todo]
 	public void setN_todo_eq(String n_todo_eq) {
         this.n_todo_eq = n_todo_eq;
     }
+                
 	private String n_type_eq;//[type]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;
     }
+                
 	private Long n_id_eq;//[id]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;

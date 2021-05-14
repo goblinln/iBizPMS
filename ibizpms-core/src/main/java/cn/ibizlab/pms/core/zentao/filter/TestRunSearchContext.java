@@ -27,14 +27,17 @@ import cn.ibizlab.pms.core.zentao.domain.TestRun;
 @Data
 public class TestRunSearchContext extends QueryWrapperContext<TestRun> {
 
+                
 	private Long n_id_eq;//[编号]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;
     }
+                
 	private Long n_case_eq;//[测试用例]
 	public void setN_case_eq(Long n_case_eq) {
         this.n_case_eq = n_case_eq;
     }
+                
 	private Long n_task_eq;//[测试单]
 	public void setN_task_eq(Long n_task_eq) {
         this.n_task_eq = n_task_eq;

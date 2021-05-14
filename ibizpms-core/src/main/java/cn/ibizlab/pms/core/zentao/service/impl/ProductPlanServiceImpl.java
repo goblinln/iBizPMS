@@ -95,10 +95,13 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
     @Override
     @Transactional
     public void createBatch(List<ProductPlan> list) {
-        if(!productplanRuntime.isRtmodel()){
+        if(productplanRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         this.saveBatch(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -117,10 +120,13 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
     @Override
     @Transactional
     public void updateBatch(List<ProductPlan> list) {
-        if(!productplanRuntime.isRtmodel()){
+        if(productplanRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -145,7 +151,12 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
+        if(productplanRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

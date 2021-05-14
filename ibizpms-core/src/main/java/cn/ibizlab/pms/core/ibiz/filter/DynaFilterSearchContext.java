@@ -27,10 +27,12 @@ import cn.ibizlab.pms.core.ibiz.domain.DynaFilter;
 @Data
 public class DynaFilterSearchContext extends QueryWrapperContext<DynaFilter> {
 
+                
 	private String n_dynafilterid_eq;//[动态搜索栏标识]
 	public void setN_dynafilterid_eq(String n_dynafilterid_eq) {
         this.n_dynafilterid_eq = n_dynafilterid_eq;
     }
+                
 	private String n_dynafiltername_like;//[动态搜索栏名称]
 	public void setN_dynafiltername_like(String n_dynafiltername_like) {
         this.n_dynafiltername_like = n_dynafiltername_like;

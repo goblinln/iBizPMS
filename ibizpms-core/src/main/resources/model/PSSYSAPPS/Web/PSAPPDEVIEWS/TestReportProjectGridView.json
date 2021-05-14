@@ -948,6 +948,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_TITLE_LIKE",
         "name" : "N_TITLE_LIKE",
+        "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
       "getPSEditor" : {
@@ -974,6 +975,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_OBJECTTYPE_EQ",
         "name" : "N_OBJECTTYPE_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -1005,6 +1007,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PRODUCTNAME_EQ",
         "name" : "N_PRODUCTNAME_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -1053,6 +1056,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PRODUCTNAME_LIKE",
         "name" : "N_PRODUCTNAME_LIKE",
+        "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
       "getPSEditor" : {
@@ -1101,6 +1105,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PROJECTNAME_EQ",
         "name" : "N_PROJECTNAME_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -1149,6 +1154,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PROJECTNAME_LIKE",
         "name" : "N_PROJECTNAME_LIKE",
+        "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
       "getPSEditor" : {

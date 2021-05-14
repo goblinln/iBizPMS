@@ -974,6 +974,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_TITLE_LIKE",
         "name" : "N_TITLE_LIKE",
+        "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
       "getPSEditor" : {
@@ -1000,6 +1001,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_TYPE_EQ",
         "name" : "N_TYPE_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -1032,6 +1034,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_ACL_EQ",
         "name" : "N_ACL_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -1063,6 +1066,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_ADDEDBY_EQ",
         "name" : "N_ADDEDBY_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -1093,6 +1097,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_COLLECTOR_LIKE",
         "name" : "N_COLLECTOR_LIKE",
+        "stdDataType" : 21,
         "valueOP" : "LIKE"
       },
       "getPSEditor" : {
@@ -1123,6 +1128,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_LIBNAME_EQ",
         "name" : "N_LIBNAME_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -1171,6 +1177,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_LIBNAME_LIKE",
         "name" : "N_LIBNAME_LIKE",
+        "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
       "getPSEditor" : {
@@ -1219,6 +1226,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_MODULENAME_EQ",
         "name" : "N_MODULENAME_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -1267,6 +1275,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_MODULENAME_LIKE",
         "name" : "N_MODULENAME_LIKE",
+        "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
       "getPSEditor" : {
@@ -1315,6 +1324,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PRODUCTNAME_EQ",
         "name" : "N_PRODUCTNAME_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -1363,6 +1373,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PRODUCTNAME_LIKE",
         "name" : "N_PRODUCTNAME_LIKE",
+        "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
       "getPSEditor" : {
@@ -1411,6 +1422,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PROJECTNAME_EQ",
         "name" : "N_PROJECTNAME_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -1459,6 +1471,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PROJECTNAME_LIKE",
         "name" : "N_PROJECTNAME_LIKE",
+        "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
       "getPSEditor" : {

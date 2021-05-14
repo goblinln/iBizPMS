@@ -102,6 +102,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -548,6 +549,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_STORY_EQ",
       "name" : "N_STORY_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -599,6 +601,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_BRANCH_EQ",
       "name" : "N_BRANCH_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

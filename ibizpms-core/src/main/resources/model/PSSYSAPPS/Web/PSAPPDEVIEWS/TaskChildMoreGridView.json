@@ -212,6 +212,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_ID_NOTEQ",
         "name" : "N_ID_NOTEQ",
+        "stdDataType" : 1,
         "valueOP" : "NOTEQ"
       },
       "getPSEditor" : {
@@ -237,6 +238,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_NAME_LIKE",
         "name" : "N_NAME_LIKE",
+        "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
       "getPSEditor" : {
@@ -263,6 +265,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_ASSIGNEDDATE_GTANDEQ",
         "name" : "N_ASSIGNEDDATE_GTANDEQ",
+        "stdDataType" : 5,
         "valueOP" : "GTANDEQ"
       },
       "getPSEditor" : {
@@ -292,6 +295,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_ASSIGNEDTO_EQ",
         "name" : "N_ASSIGNEDTO_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -322,6 +326,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_ASSIGNEDTO_IN",
         "name" : "N_ASSIGNEDTO_IN",
+        "stdDataType" : 25,
         "valueOP" : "IN"
       },
       "getPSEditor" : {
@@ -353,6 +358,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_CANCELEDBY_EQ",
         "name" : "N_CANCELEDBY_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -385,6 +391,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_CLOSEDBY_EQ",
         "name" : "N_CLOSEDBY_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -417,6 +424,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_CLOSEDDATE_LTANDEQ",
         "name" : "N_CLOSEDDATE_LTANDEQ",
+        "stdDataType" : 5,
         "valueOP" : "LTANDEQ"
       },
       "getPSEditor" : {
@@ -447,6 +455,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_CLOSEDREASON_EQ",
         "name" : "N_CLOSEDREASON_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -479,6 +488,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_COLOR_EQ",
         "name" : "N_COLOR_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -511,6 +521,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_ESTSTARTED_GTANDEQ",
         "name" : "N_ESTSTARTED_GTANDEQ",
+        "stdDataType" : 5,
         "valueOP" : "GTANDEQ"
       },
       "getPSEditor" : {
@@ -541,6 +552,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_ESTSTARTED_LTANDEQ",
         "name" : "N_ESTSTARTED_LTANDEQ",
+        "stdDataType" : 5,
         "valueOP" : "LTANDEQ"
       },
       "getPSEditor" : {
@@ -571,6 +583,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_FINISHEDBY_EQ",
         "name" : "N_FINISHEDBY_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -603,6 +616,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_FINISHEDDATE_LTANDEQ",
         "name" : "N_FINISHEDDATE_LTANDEQ",
+        "stdDataType" : 5,
         "valueOP" : "LTANDEQ"
       },
       "getPSEditor" : {
@@ -632,6 +646,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_FROMBUG_EQ",
         "name" : "N_FROMBUG_EQ",
+        "stdDataType" : 1,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -663,6 +678,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_LASTEDITEDBY_EQ",
         "name" : "N_LASTEDITEDBY_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -694,6 +710,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_MODULENAME_EQ",
         "name" : "N_MODULENAME_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -742,6 +759,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_MODULENAME_LIKE",
         "name" : "N_MODULENAME_LIKE",
+        "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
       "getPSEditor" : {
@@ -791,6 +809,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_OPENEDBY_EQ",
         "name" : "N_OPENEDBY_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -822,6 +841,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PARENTNAME_EQ",
         "name" : "N_PARENTNAME_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -870,6 +890,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PARENTNAME_LIKE",
         "name" : "N_PARENTNAME_LIKE",
+        "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
       "getPSEditor" : {
@@ -918,6 +939,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PATH_LIKE",
         "name" : "N_PATH_LIKE",
+        "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
       "getPSEditor" : {
@@ -943,6 +965,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PRI_EQ",
         "name" : "N_PRI_EQ",
+        "stdDataType" : 9,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -975,6 +998,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PRI_IN",
         "name" : "N_PRI_IN",
+        "stdDataType" : 9,
         "valueOP" : "IN"
       },
       "getPSEditor" : {
@@ -1006,6 +1030,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PRODUCT_EQ",
         "name" : "N_PRODUCT_EQ",
+        "stdDataType" : 1,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -1030,6 +1055,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PROJECTNAME_EQ",
         "name" : "N_PROJECTNAME_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -1078,6 +1104,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PROJECTNAME_LIKE",
         "name" : "N_PROJECTNAME_LIKE",
+        "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
       "getPSEditor" : {
@@ -1126,6 +1153,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_STATUS1_EQ",
         "name" : "N_STATUS1_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -1156,6 +1184,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_STORYNAME_EQ",
         "name" : "N_STORYNAME_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -1204,6 +1233,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_STORYNAME_LIKE",
         "name" : "N_STORYNAME_LIKE",
+        "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
       "getPSEditor" : {
@@ -1252,6 +1282,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_TASKTYPE_EQ",
         "name" : "N_TASKTYPE_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -1283,6 +1314,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_TYPE_EQ",
         "name" : "N_TYPE_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -2176,7 +2208,7 @@
             "codeName" : "MoreChild",
             "getFrontPSAppView" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskChildMoreGridView.json",
+              "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskChildTaskMoreGridView.json",
               "viewType" : "DEGRIDVIEW"
             },
             "frontProcessType" : "WIZARD",

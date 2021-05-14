@@ -149,6 +149,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_APIMODE_EQ",
       "name" : "N_APIMODE_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -226,6 +227,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PREDEFINEDTYPE_EQ",
       "name" : "N_PREDEFINEDTYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -278,6 +280,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSSERVICEAPIID_EQ",
       "name" : "N_PSSYSSERVICEAPIID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -613,6 +616,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_LOCKFLAG_EQ",
       "name" : "N_LOCKFLAG_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -653,6 +657,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_DEFSELECTREQMETHOD_EQ",
       "name" : "N_DEFSELECTREQMETHOD_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -848,6 +853,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_USERCAT_EQ",
       "name" : "N_USERCAT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -900,6 +906,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_AUTHMODE_EQ",
       "name" : "N_AUTHMODE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -999,6 +1006,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_APITYPE_EQ",
       "name" : "N_APITYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1335,6 +1343,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_DEFDEDATASETREQMETHOD_EQ",
       "name" : "N_DEFDEDATASETREQMETHOD_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1435,6 +1444,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_SERVICETYPE_EQ",
       "name" : "N_SERVICETYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1487,6 +1497,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSSERVICEAPINAME_LIKE",
       "name" : "N_PSSYSSERVICEAPINAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1770,6 +1781,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_DEFDEACTIONREQMETHOD_EQ",
       "name" : "N_DEFDEACTIONREQMETHOD_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2146,10 +2158,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSMODULENAME_EQ",
       "name" : "N_PSMODULENAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PSMODULENAME_LIKE",
       "name" : "N_PSMODULENAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2212,6 +2226,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSMODULEID_EQ",
       "name" : "N_PSMODULEID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

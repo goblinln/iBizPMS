@@ -24,6 +24,7 @@ public interface TaskMapper extends BaseMapper<Task> {
     List<Task> selectBugTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectByModule(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectChildDefault(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    List<Task> selectChildDefaultMore(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectChildTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectChildTaskTree(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     List<Task> selectCurFinishTask(@Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
@@ -66,6 +67,7 @@ public interface TaskMapper extends BaseMapper<Task> {
     Page<Task> searchBugTask(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchByModule(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchChildDefault(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
+    Page<Task> searchChildDefaultMore(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchChildTask(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchChildTaskTree(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);
     Page<Task> searchCurFinishTask(IPage page, @Param("srf") TaskSearchContext context, @Param("ew") Wrapper<Task> wrapper);

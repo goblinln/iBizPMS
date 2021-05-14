@@ -75,7 +75,12 @@ public class UserQueryServiceImpl extends ServiceImpl<UserQueryMapper, UserQuery
     @Override
     @Transactional
     public void createBatch(List<UserQuery> list) {
+        if(userqueryRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
         this.saveBatch(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -91,7 +96,12 @@ public class UserQueryServiceImpl extends ServiceImpl<UserQueryMapper, UserQuery
     @Override
     @Transactional
     public void updateBatch(List<UserQuery> list) {
+        if(userqueryRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -116,7 +126,12 @@ public class UserQueryServiceImpl extends ServiceImpl<UserQueryMapper, UserQuery
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
+        if(userqueryRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

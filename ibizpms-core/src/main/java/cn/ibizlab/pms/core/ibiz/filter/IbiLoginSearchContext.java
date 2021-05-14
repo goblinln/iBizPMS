@@ -27,10 +27,12 @@ import cn.ibizlab.pms.core.ibiz.domain.IbiLogin;
 @Data
 public class IbiLoginSearchContext extends QueryWrapperContext<IbiLogin> {
 
+                
 	private String n_realname_like;//[真实姓名]
 	public void setN_realname_like(String n_realname_like) {
         this.n_realname_like = n_realname_like;
     }
+                
 	private Long n_id_eq;//[ID]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;

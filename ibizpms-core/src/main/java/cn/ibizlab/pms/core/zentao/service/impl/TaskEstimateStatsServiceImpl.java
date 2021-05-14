@@ -75,7 +75,12 @@ public class TaskEstimateStatsServiceImpl extends ServiceImpl<TaskEstimateStatsM
     @Override
     @Transactional
     public void createBatch(List<TaskEstimateStats> list) {
+        if(taskestimatestatsRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
         this.saveBatch(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -91,7 +96,12 @@ public class TaskEstimateStatsServiceImpl extends ServiceImpl<TaskEstimateStatsM
     @Override
     @Transactional
     public void updateBatch(List<TaskEstimateStats> list) {
+        if(taskestimatestatsRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -116,7 +126,12 @@ public class TaskEstimateStatsServiceImpl extends ServiceImpl<TaskEstimateStatsM
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
+        if(taskestimatestatsRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

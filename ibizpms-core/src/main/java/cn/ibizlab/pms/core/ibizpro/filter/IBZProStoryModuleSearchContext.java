@@ -27,38 +27,47 @@ import cn.ibizlab.pms.core.ibizpro.domain.IBZProStoryModule;
 @Data
 public class IBZProStoryModuleSearchContext extends QueryWrapperContext<IBZProStoryModule> {
 
+                
 	private String n_ibiz_storytype_eq;//[需求模块类型]
 	public void setN_ibiz_storytype_eq(String n_ibiz_storytype_eq) {
         this.n_ibiz_storytype_eq = n_ibiz_storytype_eq;
     }
+                
 	private Long n_id_eq;//[id]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;
     }
+                
 	private String n_type_eq;//[类型]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;
     }
+                
 	private String n_name_like;//[名称]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;
     }
+                
 	private String n_ibiz_id_eq;//[IBIZ标识]
 	public void setN_ibiz_id_eq(String n_ibiz_id_eq) {
         this.n_ibiz_id_eq = n_ibiz_id_eq;
     }
+                
 	private String n_productname_eq;//[产品]
 	public void setN_productname_eq(String n_productname_eq) {
         this.n_productname_eq = n_productname_eq;
     }
+                
 	private String n_productname_like;//[产品]
 	public void setN_productname_like(String n_productname_like) {
         this.n_productname_like = n_productname_like;
     }
+                
 	private Long n_root_eq;//[编号]
 	public void setN_root_eq(Long n_root_eq) {
         this.n_root_eq = n_root_eq;
     }
+                
 	private Long n_parent_eq;//[id]
 	public void setN_parent_eq(Long n_parent_eq) {
         this.n_parent_eq = n_parent_eq;

@@ -300,6 +300,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_OBJECTID_EQ",
       "name" : "N_OBJECTID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -577,6 +578,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_OBJECTTYPE_EQ",
       "name" : "N_OBJECTTYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -686,6 +688,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TITLE_LIKE",
       "name" : "N_TITLE_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1046,6 +1049,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1095,10 +1099,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_EXTRA_EQ",
       "name" : "N_EXTRA_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_EXTRA_NOTEQ",
       "name" : "N_EXTRA_NOTEQ",
+      "stdDataType" : 25,
       "valueOP" : "NOTEQ"
     } ],
     "getAllPSDEFValueRules" : [ {

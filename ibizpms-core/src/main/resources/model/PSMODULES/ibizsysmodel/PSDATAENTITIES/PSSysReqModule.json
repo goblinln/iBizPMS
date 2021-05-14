@@ -149,6 +149,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSREQMODULENAME_LIKE",
       "name" : "N_PSSYSREQMODULENAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -429,6 +430,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_USERCAT_EQ",
       "name" : "N_USERCAT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -846,6 +848,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSREQMODULEID_EQ",
       "name" : "N_PSSYSREQMODULEID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1142,10 +1145,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSMODULENAME_EQ",
       "name" : "N_PSMODULENAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PSMODULENAME_LIKE",
       "name" : "N_PSMODULENAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1208,10 +1213,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PPSSYSREQMODULENAME_EQ",
       "name" : "N_PPSSYSREQMODULENAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PPSSYSREQMODULENAME_LIKE",
       "name" : "N_PPSSYSREQMODULENAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1274,6 +1281,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PPSSYSREQMODULEID_EQ",
       "name" : "N_PPSSYSREQMODULEID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1335,6 +1343,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSMODULEID_EQ",
       "name" : "N_PSMODULEID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

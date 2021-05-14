@@ -103,6 +103,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_SYS_UPDATE_FEATURESNAME_LIKE",
       "name" : "N_SYS_UPDATE_FEATURESNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -303,6 +304,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TYPE_EQ",
       "name" : "N_TYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -444,6 +446,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_SYS_UPDATE_FEATURESID_EQ",
       "name" : "N_SYS_UPDATE_FEATURESID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -581,10 +584,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_SYS_UPDATE_LOGNAME_EQ",
       "name" : "N_SYS_UPDATE_LOGNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_SYS_UPDATE_LOGNAME_LIKE",
       "name" : "N_SYS_UPDATE_LOGNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -647,6 +652,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_SYS_UPDATE_LOGID_EQ",
       "name" : "N_SYS_UPDATE_LOGID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

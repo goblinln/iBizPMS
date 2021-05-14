@@ -79,7 +79,12 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
     @Override
     @Transactional
     public void createBatch(List<IbzWeekly> list) {
+        if(ibzweeklyRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
         this.saveBatch(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -95,7 +100,12 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
     @Override
     @Transactional
     public void updateBatch(List<IbzWeekly> list) {
+        if(ibzweeklyRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -120,7 +130,12 @@ public class IbzWeeklyServiceImpl extends ServiceImpl<IbzWeeklyMapper, IbzWeekly
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
+        if(ibzweeklyRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

@@ -27,22 +27,27 @@ import cn.ibizlab.pms.core.ibizpro.domain.IBZProSequence;
 @Data
 public class IBZProSequenceSearchContext extends QueryWrapperContext<IBZProSequence> {
 
+                
 	private String n_ibzpro_sequenceid_eq;//[业务序列表标识]
 	public void setN_ibzpro_sequenceid_eq(String n_ibzpro_sequenceid_eq) {
         this.n_ibzpro_sequenceid_eq = n_ibzpro_sequenceid_eq;
     }
+                
 	private Long n_curseq_eq;//[当前序列号]
 	public void setN_curseq_eq(Long n_curseq_eq) {
         this.n_curseq_eq = n_curseq_eq;
     }
+                
 	private String n_ibzpro_sequencename_eq;//[业务序列表名称]
 	public void setN_ibzpro_sequencename_eq(String n_ibzpro_sequencename_eq) {
         this.n_ibzpro_sequencename_eq = n_ibzpro_sequencename_eq;
     }
+                
 	private String n_ibzpro_sequencename_like;//[业务序列表名称]
 	public void setN_ibzpro_sequencename_like(String n_ibzpro_sequencename_like) {
         this.n_ibzpro_sequencename_like = n_ibzpro_sequencename_like;
     }
+                
 	private String n_category_eq;//[业务类别]
 	public void setN_category_eq(String n_category_eq) {
         this.n_category_eq = n_category_eq;

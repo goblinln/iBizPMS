@@ -27,26 +27,32 @@ import cn.ibizlab.pms.core.ibizpro.domain.IbizproProjectMonthly;
 @Data
 public class IbizproProjectMonthlySearchContext extends QueryWrapperContext<IbizproProjectMonthly> {
 
+                
 	private String n_ibizpro_projectmonthlyname_like;//[项目月报名称]
 	public void setN_ibizpro_projectmonthlyname_like(String n_ibizpro_projectmonthlyname_like) {
         this.n_ibizpro_projectmonthlyname_like = n_ibizpro_projectmonthlyname_like;
     }
+                
 	private String n_ibizpro_projectmonthlyid_eq;//[项目月报标识]
 	public void setN_ibizpro_projectmonthlyid_eq(String n_ibizpro_projectmonthlyid_eq) {
         this.n_ibizpro_projectmonthlyid_eq = n_ibizpro_projectmonthlyid_eq;
     }
+                
 	private String n_pm_eq;//[项目负责人]
 	public void setN_pm_eq(String n_pm_eq) {
         this.n_pm_eq = n_pm_eq;
     }
+                
 	private String n_projectname_eq;//[项目名称]
 	public void setN_projectname_eq(String n_projectname_eq) {
         this.n_projectname_eq = n_projectname_eq;
     }
+                
 	private String n_projectname_like;//[项目名称]
 	public void setN_projectname_like(String n_projectname_like) {
         this.n_projectname_like = n_projectname_like;
     }
+                
 	private Long n_project_eq;//[项目编号]
 	public void setN_project_eq(Long n_project_eq) {
         this.n_project_eq = n_project_eq;

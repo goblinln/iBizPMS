@@ -84,7 +84,12 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Override
     @Transactional
     public void createBatch(List<SuiteCase> list) {
+        if(suitecaseRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
         this.saveBatch(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -100,7 +105,12 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Override
     @Transactional
     public void updateBatch(List<SuiteCase> list) {
+        if(suitecaseRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -125,7 +135,12 @@ public class SuiteCaseServiceImpl extends ServiceImpl<SuiteCaseMapper, SuiteCase
     @Override
     @Transactional
     public void removeBatch(Collection<String> idList) {
+        if(suitecaseRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

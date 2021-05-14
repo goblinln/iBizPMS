@@ -653,6 +653,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PRI_EQ",
       "name" : "N_PRI_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -991,6 +992,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1042,10 +1044,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_STATUS_EQ",
       "name" : "N_STATUS_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_STATUS_NOTEQ",
       "name" : "N_STATUS_NOTEQ",
+      "stdDataType" : 25,
       "valueOP" : "NOTEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1147,6 +1151,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_OWNER_EQ",
       "name" : "N_OWNER_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1353,6 +1358,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_NAME_LIKE",
       "name" : "N_NAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1408,10 +1414,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_BUILDNAME_EQ",
       "name" : "N_BUILDNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_BUILDNAME_LIKE",
       "name" : "N_BUILDNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1474,10 +1482,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PRODUCTNAME_EQ",
       "name" : "N_PRODUCTNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PRODUCTNAME_LIKE",
       "name" : "N_PRODUCTNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1540,10 +1550,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PROJECTTNAME_EQ",
       "name" : "N_PROJECTTNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PROJECTTNAME_LIKE",
       "name" : "N_PROJECTTNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1607,6 +1619,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PRODUCT_EQ",
       "name" : "N_PRODUCT_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1658,6 +1671,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_BUILD_EQ",
       "name" : "N_BUILD_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1708,6 +1722,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PROJECT_EQ",
       "name" : "N_PROJECT_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

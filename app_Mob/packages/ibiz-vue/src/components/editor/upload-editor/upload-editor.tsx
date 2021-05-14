@@ -29,8 +29,12 @@ export default class UploadEditor extends EditorBase {
     public async initEditor() {
         const { editorType: type, editorStyle: style, editorParams } = this.editorInstance;
         const editorTypeStyle: string = `${type}${style && style != 'DEFAULT' ? '_'+style : ''}`;
-        this.customProps.uploadparams = this.editorInstance.editorParams?.['uploadparams'];
-        this.customProps.exportparams = this.editorInstance.editorParams?.['exportparams'];
+        if(editorParams){
+            let uploadparams = eval("(" + editorParams.uploadparams + ")");
+            let exportparams = eval("(" + editorParams.exportparams + ")");
+            this.customProps.uploadParam = uploadparams || {};
+            this.customProps.exportParam = exportparams || {};  
+        }
         Object.assign(this.customProps,{'over-flow':'auto'});
         switch (editorTypeStyle) {
             // 文件上传(单选)

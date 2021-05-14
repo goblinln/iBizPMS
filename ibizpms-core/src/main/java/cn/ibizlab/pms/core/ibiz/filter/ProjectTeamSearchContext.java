@@ -27,34 +27,42 @@ import cn.ibizlab.pms.core.ibiz.domain.ProjectTeam;
 @Data
 public class ProjectTeamSearchContext extends QueryWrapperContext<ProjectTeam> {
 
+                
 	private String n_limited_eq;//[受限用户]
 	public void setN_limited_eq(String n_limited_eq) {
         this.n_limited_eq = n_limited_eq;
     }
+                
 	private String n_type_eq;//[团队类型]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;
     }
+                
 	private Long n_id_eq;//[编号]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;
     }
+                
 	private String n_account_eq;//[用户]
 	public void setN_account_eq(String n_account_eq) {
         this.n_account_eq = n_account_eq;
     }
+                
 	private String n_account_like;//[用户]
 	public void setN_account_like(String n_account_like) {
         this.n_account_like = n_account_like;
     }
+                
 	private String n_projectname_eq;//[所属项目]
 	public void setN_projectname_eq(String n_projectname_eq) {
         this.n_projectname_eq = n_projectname_eq;
     }
+                
 	private String n_projectname_like;//[所属项目]
 	public void setN_projectname_like(String n_projectname_like) {
         this.n_projectname_like = n_projectname_like;
     }
+                
 	private Long n_root_eq;//[项目编号]
 	public void setN_root_eq(Long n_root_eq) {
         this.n_root_eq = n_root_eq;

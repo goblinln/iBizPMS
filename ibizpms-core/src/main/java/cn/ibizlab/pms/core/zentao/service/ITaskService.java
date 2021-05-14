@@ -114,6 +114,7 @@ public interface ITaskService extends IService<Task> {
     List<Task> selectBugTask(TaskSearchContext context);
     List<Task> selectByModule(TaskSearchContext context);
     List<Task> selectChildDefault(TaskSearchContext context);
+    List<Task> selectChildDefaultMore(TaskSearchContext context);
     List<Task> selectChildTask(TaskSearchContext context);
     List<Task> selectChildTaskTree(TaskSearchContext context);
     List<Task> selectCurFinishTask(TaskSearchContext context);
@@ -156,6 +157,7 @@ public interface ITaskService extends IService<Task> {
     Page<Task> searchBugTask(TaskSearchContext context);
     Page<Task> searchByModule(TaskSearchContext context);
     Page<Task> searchChildDefault(TaskSearchContext context);
+    Page<Task> searchChildDefaultMore(TaskSearchContext context);
     Page<Task> searchChildTask(TaskSearchContext context);
     Page<Task> searchChildTaskTree(TaskSearchContext context);
     Page<Task> searchCurFinishTask(TaskSearchContext context);

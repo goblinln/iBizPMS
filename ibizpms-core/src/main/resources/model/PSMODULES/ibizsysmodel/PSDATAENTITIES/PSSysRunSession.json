@@ -149,6 +149,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSRUNSESSIONNAME_LIKE",
       "name" : "N_PSSYSRUNSESSIONNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -279,6 +280,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSRUNSESSIONID_EQ",
       "name" : "N_PSSYSRUNSESSIONID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -381,6 +383,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PACKMODE_EQ",
       "name" : "N_PACKMODE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -642,6 +645,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_RUNMODE_EQ",
       "name" : "N_RUNMODE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -780,6 +784,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_RUNSTATE_EQ",
       "name" : "N_RUNSTATE_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1115,6 +1120,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_REBUILDMODE_EQ",
       "name" : "N_REBUILDMODE_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1434,10 +1440,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSAPPNAME2_EQ",
       "name" : "N_PSSYSAPPNAME2_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PSSYSAPPNAME2_LIKE",
       "name" : "N_PSSYSAPPNAME2_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1499,10 +1507,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSSERVICEAPINAME_EQ",
       "name" : "N_PSSYSSERVICEAPINAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PSSYSSERVICEAPINAME_LIKE",
       "name" : "N_PSSYSSERVICEAPINAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1564,10 +1574,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSAPPNAME_EQ",
       "name" : "N_PSSYSAPPNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PSSYSAPPNAME_LIKE",
       "name" : "N_PSSYSAPPNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1629,6 +1641,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSAPPID2_EQ",
       "name" : "N_PSSYSAPPID2_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1690,6 +1703,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSSERVICEAPIID_EQ",
       "name" : "N_PSSYSSERVICEAPIID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1751,6 +1765,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSAPPID_EQ",
       "name" : "N_PSSYSAPPID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

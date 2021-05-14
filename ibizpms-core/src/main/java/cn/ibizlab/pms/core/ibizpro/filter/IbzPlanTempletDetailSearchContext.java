@@ -27,18 +27,22 @@ import cn.ibizlab.pms.core.ibizpro.domain.IbzPlanTempletDetail;
 @Data
 public class IbzPlanTempletDetailSearchContext extends QueryWrapperContext<IbzPlanTempletDetail> {
 
+                
 	private String n_type_eq;//[类型]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;
     }
+                
 	private String n_ibz_plantempletdetailid_eq;//[计划模板详情标识]
 	public void setN_ibz_plantempletdetailid_eq(String n_ibz_plantempletdetailid_eq) {
         this.n_ibz_plantempletdetailid_eq = n_ibz_plantempletdetailid_eq;
     }
+                
 	private String n_ibz_plantempletdetailname_like;//[计划模板详情名称]
 	public void setN_ibz_plantempletdetailname_like(String n_ibz_plantempletdetailname_like) {
         this.n_ibz_plantempletdetailname_like = n_ibz_plantempletdetailname_like;
     }
+                
 	private String n_plantempletid_eq;//[产品计划模板标识]
 	public void setN_plantempletid_eq(String n_plantempletid_eq) {
         this.n_plantempletid_eq = n_plantempletid_eq;

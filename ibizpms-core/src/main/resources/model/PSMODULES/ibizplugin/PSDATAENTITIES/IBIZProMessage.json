@@ -154,6 +154,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_SENDPROXYID_EQ",
       "name" : "N_SENDPROXYID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -208,6 +209,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBIZPRO_MESSAGENAME_LIKE",
       "name" : "N_IBIZPRO_MESSAGENAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -262,6 +264,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ISLINK_EQ",
       "name" : "N_ISLINK_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -515,6 +518,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBIZPRO_MESSAGEID_EQ",
       "name" : "N_IBIZPRO_MESSAGEID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -603,6 +607,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ISSYNC_EQ",
       "name" : "N_ISSYNC_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -899,6 +904,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ISRETRY_EQ",
       "name" : "N_ISRETRY_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -942,6 +948,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TYPE_EQ",
       "name" : "N_TYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

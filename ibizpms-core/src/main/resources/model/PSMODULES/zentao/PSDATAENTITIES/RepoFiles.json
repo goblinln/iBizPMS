@@ -314,6 +314,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -364,6 +365,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PARENT_EQ",
       "name" : "N_PARENT_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

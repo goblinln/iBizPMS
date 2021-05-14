@@ -86,12 +86,15 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Override
     @Transactional
     public void createBatch(List<IBZProStoryModule> list) {
-        if(!ibzprostorymoduleRuntime.isRtmodel()){
+        if(ibzprostorymoduleRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         for (IBZProStoryModule et : list) {
             getProxyService().save(et);
         }
+        }
+        
     }
 
     @Override
@@ -110,12 +113,15 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Override
     @Transactional
     public void updateBatch(List<IBZProStoryModule> list) {
-        if(!ibzprostorymoduleRuntime.isRtmodel()){
+        if(ibzprostorymoduleRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         for (IBZProStoryModule et : list) {
             getProxyService().update(et);
         }
+        }
+        
     }
 
     @Override
@@ -140,7 +146,12 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
+        if(ibzprostorymoduleRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

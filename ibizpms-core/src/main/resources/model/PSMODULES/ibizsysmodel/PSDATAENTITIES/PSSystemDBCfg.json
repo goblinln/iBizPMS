@@ -167,6 +167,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_RESSTATE_EQ",
       "name" : "N_RESSTATE_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -206,6 +207,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_NULLVALORDER_EQ",
       "name" : "N_NULLVALORDER_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -526,6 +528,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSTEMDBCFGNAME_LIKE",
       "name" : "N_PSSYSTEMDBCFGNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -840,6 +843,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSTEMDBCFGID_EQ",
       "name" : "N_PSSYSTEMDBCFGID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1199,6 +1203,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_OBJNAMECASE_EQ",
       "name" : "N_OBJNAMECASE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1468,6 +1473,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_USERCAT_EQ",
       "name" : "N_USERCAT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

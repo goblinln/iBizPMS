@@ -540,6 +540,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_BRANCH_EQ",
       "name" : "N_BRANCH_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -634,6 +635,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -733,6 +735,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_NAME_LIKE",
       "name" : "N_NAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -873,10 +876,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PARENTNAME_EQ",
       "name" : "N_PARENTNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PARENTNAME_LIKE",
       "name" : "N_PARENTNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -939,10 +944,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ROOTNAME_EQ",
       "name" : "N_ROOTNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_ROOTNAME_LIKE",
       "name" : "N_ROOTNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1006,6 +1013,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ROOT_EQ",
       "name" : "N_ROOT_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1057,6 +1065,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PARENT_EQ",
       "name" : "N_PARENT_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

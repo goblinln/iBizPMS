@@ -993,6 +993,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchChildDefaultMore",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ChildDefaultMore"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchChildDefaultMore"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchChildTask",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -2795,6 +2811,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchChildDefaultMore",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ChildDefaultMore"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchChildDefaultMore"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchChildTask",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -3555,6 +3587,16 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchTempChildDefaultMore",
+    "methodType" : "FETCHTEMP",
+    "name" : "ChildDefaultMore",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ChildDefaultMore"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTempChildTask",
     "methodType" : "FETCHTEMP",
     "name" : "ChildTask",
@@ -4015,7 +4057,7 @@
     "codeName" : "MoreChild",
     "getFrontPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskChildMoreGridView.json",
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskChildTaskMoreGridView.json",
       "viewType" : "DEGRIDVIEW"
     },
     "frontProcessType" : "WIZARD",

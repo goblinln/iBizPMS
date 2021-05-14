@@ -283,6 +283,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_BUGWILLNOTFIX_LTANDEQ",
       "name" : "N_BUGWILLNOTFIX_LTANDEQ",
+      "stdDataType" : 9,
       "valueOP" : "LTANDEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -323,6 +324,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_RESOLVEDBY_EQ",
       "name" : "N_RESOLVEDBY_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -418,6 +420,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_DEPT_EQ",
       "name" : "N_DEPT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -631,6 +634,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ASSIGNEDTO_EQ",
       "name" : "N_ASSIGNEDTO_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -715,6 +719,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_BEGIN_GTANDEQ",
       "name" : "N_BEGIN_GTANDEQ",
+      "stdDataType" : 5,
       "valueOP" : "GTANDEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -749,10 +754,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_BUGRESOLVEDDATE_GTANDEQ",
       "name" : "N_BUGRESOLVEDDATE_GTANDEQ",
+      "stdDataType" : 5,
       "valueOP" : "GTANDEQ"
     }, {
       "codeName" : "N_BUGRESOLVEDDATE_LTANDEQ",
       "name" : "N_BUGRESOLVEDDATE_LTANDEQ",
+      "stdDataType" : 5,
       "valueOP" : "LTANDEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -787,6 +794,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_END_LTANDEQ",
       "name" : "N_END_LTANDEQ",
+      "stdDataType" : 5,
       "valueOP" : "LTANDEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -937,6 +945,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1159,6 +1168,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TITLE_LIKE",
       "name" : "N_TITLE_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1386,6 +1396,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_OPENEDBY_EQ",
       "name" : "N_OPENEDBY_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1648,6 +1659,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PRODUCT_EQ",
       "name" : "N_PRODUCT_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1696,6 +1708,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PROJECT_EQ",
       "name" : "N_PROJECT_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

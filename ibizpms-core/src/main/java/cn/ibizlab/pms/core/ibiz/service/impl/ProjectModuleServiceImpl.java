@@ -86,12 +86,15 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
     @Override
     @Transactional
     public void createBatch(List<ProjectModule> list) {
-        if(!projectmoduleRuntime.isRtmodel()){
+        if(projectmoduleRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         for (ProjectModule et : list) {
             getProxyService().save(et);
         }
+        }
+        
     }
 
     @Override
@@ -110,12 +113,15 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
     @Override
     @Transactional
     public void updateBatch(List<ProjectModule> list) {
-        if(!projectmoduleRuntime.isRtmodel()){
+        if(projectmoduleRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         for (ProjectModule et : list) {
             getProxyService().update(et);
         }
+        }
+        
     }
 
     @Override
@@ -140,7 +146,12 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
+        if(projectmoduleRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

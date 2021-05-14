@@ -305,6 +305,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -495,6 +496,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_NAME_LIKE",
       "name" : "N_NAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -550,6 +552,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_GUEST_EQ",
       "name" : "N_GUEST_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

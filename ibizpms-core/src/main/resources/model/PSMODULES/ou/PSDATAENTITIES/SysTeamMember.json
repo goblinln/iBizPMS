@@ -102,6 +102,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TEAMMEMBERID_EQ",
       "name" : "N_TEAMMEMBERID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -156,10 +157,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TEAMNAME_EQ",
       "name" : "N_TEAMNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_TEAMNAME_LIKE",
       "name" : "N_TEAMNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -223,10 +226,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_POSTNAME_EQ",
       "name" : "N_POSTNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_POSTNAME_LIKE",
       "name" : "N_POSTNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -393,10 +398,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PERSONNAME_EQ",
       "name" : "N_PERSONNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PERSONNAME_LIKE",
       "name" : "N_PERSONNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -516,6 +523,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_POSTID_EQ",
       "name" : "N_POSTID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -577,6 +585,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TEAMID_EQ",
       "name" : "N_TEAMID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -640,6 +649,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_USERID_EQ",
       "name" : "N_USERID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

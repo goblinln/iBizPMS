@@ -218,6 +218,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TITLE_LIKE",
       "name" : "N_TITLE_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -523,6 +524,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -626,10 +628,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_VERSION_EQ",
       "name" : "N_VERSION_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_VERSION_NOTEQ",
       "name" : "N_VERSION_NOTEQ",
+      "stdDataType" : 9,
       "valueOP" : "NOTEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -670,6 +674,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_STORY_EQ",
       "name" : "N_STORY_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

@@ -84,9 +84,14 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
     @Override
     @Transactional
     public void createBatch(List<Action> list) {
+        if(actionRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
         for (Action et : list) {
             getProxyService().save(et);
         }
+        }
+        
     }
 
     @Override
@@ -105,7 +110,12 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
     @Override
     @Transactional
     public void updateBatch(List<Action> list) {
+        if(actionRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -131,7 +141,12 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
+        if(actionRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

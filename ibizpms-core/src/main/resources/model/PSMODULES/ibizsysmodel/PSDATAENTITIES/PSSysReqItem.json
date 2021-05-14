@@ -149,6 +149,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ITEMTYPE_EQ",
       "name" : "N_ITEMTYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -546,6 +547,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSREQITEMID_EQ",
       "name" : "N_PSSYSREQITEMID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -923,6 +925,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_USERCAT_EQ",
       "name" : "N_USERCAT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1123,6 +1126,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSREQITEMNAME_LIKE",
       "name" : "N_PSSYSREQITEMNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1271,10 +1275,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSREQMODULENAME_EQ",
       "name" : "N_PSSYSREQMODULENAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PSSYSREQMODULENAME_LIKE",
       "name" : "N_PSSYSREQMODULENAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1337,10 +1343,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PPSSYSREQITEMNAME_EQ",
       "name" : "N_PPSSYSREQITEMNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PPSSYSREQITEMNAME_LIKE",
       "name" : "N_PPSSYSREQITEMNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1403,6 +1411,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSREQMODULEID_EQ",
       "name" : "N_PSSYSREQMODULEID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1464,6 +1473,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PPSSYSREQITEMID_EQ",
       "name" : "N_PPSSYSREQITEMID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

@@ -102,6 +102,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TEAMID_EQ",
       "name" : "N_TEAMID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -156,6 +157,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TEAMNAME_LIKE",
       "name" : "N_TEAMNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {

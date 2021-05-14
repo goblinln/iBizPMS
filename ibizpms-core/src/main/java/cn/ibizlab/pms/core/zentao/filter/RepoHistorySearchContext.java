@@ -27,6 +27,7 @@ import cn.ibizlab.pms.core.zentao.domain.RepoHistory;
 @Data
 public class RepoHistorySearchContext extends QueryWrapperContext<RepoHistory> {
 
+                
 	private Long n_id_eq;//[id]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;

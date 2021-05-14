@@ -762,6 +762,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_MONTH_EQ",
       "name" : "N_MONTH_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -815,6 +816,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_DATE_EQ",
       "name" : "N_DATE_EQ",
+      "stdDataType" : 5,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2147,6 +2149,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2856,6 +2859,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_YEAR_EQ",
       "name" : "N_YEAR_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2963,6 +2967,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PROJECT_IN",
       "name" : "N_PROJECT_IN",
+      "stdDataType" : 1,
       "valueOP" : "IN"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3087,6 +3092,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ACCOUNT_EQ",
       "name" : "N_ACCOUNT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

@@ -163,6 +163,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZPRO_CONFIGNAME_LIKE",
       "name" : "N_IBZPRO_CONFIGNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -340,6 +341,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZPRO_CONFIGID_EQ",
       "name" : "N_IBZPRO_CONFIGID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -446,6 +448,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TYPE_EQ",
       "name" : "N_TYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -502,6 +505,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_MANAGEMENTSTATUS_EQ",
       "name" : "N_MANAGEMENTSTATUS_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -558,6 +562,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_VAILD_EQ",
       "name" : "N_VAILD_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

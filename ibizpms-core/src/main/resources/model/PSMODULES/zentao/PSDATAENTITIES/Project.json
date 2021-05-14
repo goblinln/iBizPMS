@@ -1218,6 +1218,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ACL_EQ",
       "name" : "N_ACL_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1621,6 +1622,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ISTOP_EQ",
       "name" : "N_ISTOP_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1770,6 +1772,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PM_EQ",
       "name" : "N_PM_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1820,6 +1823,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_DEPT_EQ",
       "name" : "N_DEPT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1878,14 +1882,17 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_ID_IN",
       "name" : "N_ID_IN",
+      "stdDataType" : 1,
       "valueOP" : "IN"
     }, {
       "codeName" : "N_ID_NOTEQ",
       "name" : "N_ID_NOTEQ",
+      "stdDataType" : 1,
       "valueOP" : "NOTEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1937,10 +1944,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_NAME_EQ",
       "name" : "N_NAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_NAME_LIKE",
       "name" : "N_NAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2162,6 +2171,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_RD_EQ",
       "name" : "N_RD_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2212,6 +2222,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_MANAGEMEMBERS_EQ",
       "name" : "N_MANAGEMEMBERS_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2560,6 +2571,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PRI_EQ",
       "name" : "N_PRI_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2983,6 +2995,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PERIOD_EQ",
       "name" : "N_PERIOD_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3315,6 +3328,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_STATGE_EQ",
       "name" : "N_STATGE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3467,6 +3481,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_SUPPROREPORT_EQ",
       "name" : "N_SUPPROREPORT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3574,6 +3589,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ISCAT_EQ",
       "name" : "N_ISCAT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3775,6 +3791,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TYPE_EQ",
       "name" : "N_TYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3854,6 +3871,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ACCOUNT_EQ",
       "name" : "N_ACCOUNT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3913,6 +3931,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PO_EQ",
       "name" : "N_PO_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -4037,10 +4056,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_STATUS_EQ",
       "name" : "N_STATUS_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_STATUS_NOTEQ",
       "name" : "N_STATUS_NOTEQ",
+      "stdDataType" : 25,
       "valueOP" : "NOTEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -4410,6 +4431,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_QD_EQ",
       "name" : "N_QD_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -4467,10 +4489,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PARENTNAME_EQ",
       "name" : "N_PARENTNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PARENTNAME_LIKE",
       "name" : "N_PARENTNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -4534,6 +4558,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PARENT_EQ",
       "name" : "N_PARENT_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -6660,6 +6685,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/UnlinkStory.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "importPlanStories",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/ImportPlanStories.json"
       },
       "allowMode" : true
     }, {

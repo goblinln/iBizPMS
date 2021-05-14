@@ -574,6 +574,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -728,6 +729,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_CASE_EQ",
       "name" : "N_CASE_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -784,6 +786,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TASK_EQ",
       "name" : "N_TASK_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

@@ -275,6 +275,10 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("更多",null),
 				title: commonLogic.appcommonhandle("任务分页导航视图（更多）",null),
 			},
+			'childtaskmoregridview': {
+				caption: commonLogic.appcommonhandle("子任务",null),
+				title: commonLogic.appcommonhandle("任务表格视图（子任务-更多）",null),
+			},
 			'kanbanview': {
 				caption: commonLogic.appcommonhandle("任务",null),
 				title: commonLogic.appcommonhandle("任务看板视图",null),
@@ -1447,7 +1451,7 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("保存并关闭",null),
 			},
 		},
-		childmoregridviewtoolbar_toolbar: {
+		childtaskmoregridviewtoolbar_toolbar: {
 			'deuiaction1': {
 				caption: commonLogic.appcommonhandle("新建",null),
 				tip: commonLogic.appcommonhandle("新建",null),
@@ -1715,6 +1719,40 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("导出",null),
 			},
 			'deuiaction4': {
+				caption: commonLogic.appcommonhandle("过滤",null),
+				tip: commonLogic.appcommonhandle("过滤",null),
+			},
+		},
+		childmoregridviewtoolbar_toolbar: {
+			'deuiaction1': {
+				caption: commonLogic.appcommonhandle("新建",null),
+				tip: commonLogic.appcommonhandle("新建",null),
+			},
+			'deuiaction4': {
+				caption: commonLogic.appcommonhandle("删除",null),
+				tip: commonLogic.appcommonhandle("删除",null),
+			},
+			'seperator1': {
+				caption: commonLogic.appcommonhandle("",null),
+				tip: commonLogic.appcommonhandle("",null),
+			},
+			'deuiaction2': {
+				caption: commonLogic.appcommonhandle("刷新",null),
+				tip: commonLogic.appcommonhandle("刷新",null),
+			},
+			'seperator3': {
+				caption: commonLogic.appcommonhandle("",null),
+				tip: commonLogic.appcommonhandle("",null),
+			},
+			'deuiaction5': {
+				caption: commonLogic.appcommonhandle("导出",null),
+				tip: commonLogic.appcommonhandle("导出",null),
+			},
+			'seperator4': {
+				caption: commonLogic.appcommonhandle("",null),
+				tip: commonLogic.appcommonhandle("",null),
+			},
+			'deuiaction7': {
 				caption: commonLogic.appcommonhandle("过滤",null),
 				tip: commonLogic.appcommonhandle("过滤",null),
 			},

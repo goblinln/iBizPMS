@@ -27,38 +27,47 @@ import cn.ibizlab.pms.core.zentao.domain.TestReport;
 @Data
 public class TestReportSearchContext extends QueryWrapperContext<TestReport> {
 
+                
 	private String n_title_like;//[标题]
 	public void setN_title_like(String n_title_like) {
         this.n_title_like = n_title_like;
     }
+                
 	private String n_objecttype_eq;//[对象类型]
 	public void setN_objecttype_eq(String n_objecttype_eq) {
         this.n_objecttype_eq = n_objecttype_eq;
     }
+                
 	private Long n_id_eq;//[编号]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;
     }
+                
 	private String n_projectname_eq;//[所属项目]
 	public void setN_projectname_eq(String n_projectname_eq) {
         this.n_projectname_eq = n_projectname_eq;
     }
+                
 	private String n_projectname_like;//[所属项目]
 	public void setN_projectname_like(String n_projectname_like) {
         this.n_projectname_like = n_projectname_like;
     }
+                
 	private String n_productname_eq;//[所属产品]
 	public void setN_productname_eq(String n_productname_eq) {
         this.n_productname_eq = n_productname_eq;
     }
+                
 	private String n_productname_like;//[所属产品]
 	public void setN_productname_like(String n_productname_like) {
         this.n_productname_like = n_productname_like;
     }
+                
 	private Long n_product_eq;//[所属产品]
 	public void setN_product_eq(Long n_product_eq) {
         this.n_product_eq = n_product_eq;
     }
+                
 	private Long n_project_eq;//[所属项目]
 	public void setN_project_eq(Long n_project_eq) {
         this.n_project_eq = n_project_eq;

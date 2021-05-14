@@ -138,6 +138,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TYPE_EQ",
       "name" : "N_TYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -486,6 +487,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBIZPRO_PLUGINNAME_LIKE",
       "name" : "N_IBIZPRO_PLUGINNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -540,6 +542,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBIZPRO_PLUGINID_EQ",
       "name" : "N_IBIZPRO_PLUGINID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

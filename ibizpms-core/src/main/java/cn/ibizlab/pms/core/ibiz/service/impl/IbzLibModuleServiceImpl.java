@@ -86,12 +86,15 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Override
     @Transactional
     public void createBatch(List<IbzLibModule> list) {
-        if(!ibzlibmoduleRuntime.isRtmodel()){
+        if(ibzlibmoduleRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         for (IbzLibModule et : list) {
             getProxyService().save(et);
         }
+        }
+        
     }
 
     @Override
@@ -110,12 +113,15 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Override
     @Transactional
     public void updateBatch(List<IbzLibModule> list) {
-        if(!ibzlibmoduleRuntime.isRtmodel()){
+        if(ibzlibmoduleRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         for (IbzLibModule et : list) {
             getProxyService().update(et);
         }
+        }
+        
     }
 
     @Override
@@ -140,7 +146,12 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
+        if(ibzlibmoduleRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

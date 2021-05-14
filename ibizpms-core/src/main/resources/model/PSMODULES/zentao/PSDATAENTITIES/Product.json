@@ -737,6 +737,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ISTOP_EQ",
       "name" : "N_ISTOP_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -875,6 +876,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PRODUCTCLASS_EQ",
       "name" : "N_PRODUCTCLASS_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -964,6 +966,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ACL_EQ",
       "name" : "N_ACL_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1021,10 +1024,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_NAME_EQ",
       "name" : "N_NAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_NAME_LIKE",
       "name" : "N_NAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1258,10 +1263,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_ID_IN",
       "name" : "N_ID_IN",
+      "stdDataType" : 1,
       "valueOP" : "IN"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1762,6 +1769,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_SUPPROREPORT_EQ",
       "name" : "N_SUPPROREPORT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1855,6 +1863,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TYPE_EQ",
       "name" : "N_TYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2113,10 +2122,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_STATUS_EQ",
       "name" : "N_STATUS_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_STATUS_ISNOTNULL",
       "name" : "N_STATUS_ISNOTNULL",
+      "stdDataType" : 25,
       "valueOP" : "ISNOTNULL"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3096,10 +3107,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_LINENAME_EQ",
       "name" : "N_LINENAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_LINENAME_LIKE",
       "name" : "N_LINENAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3163,6 +3176,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_LINE_EQ",
       "name" : "N_LINE_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

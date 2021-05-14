@@ -93,10 +93,13 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
     @Override
     @Transactional
     public void createBatch(List<TestTask> list) {
-        if(!testtaskRuntime.isRtmodel()){
+        if(testtaskRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         this.saveBatch(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -115,10 +118,13 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
     @Override
     @Transactional
     public void updateBatch(List<TestTask> list) {
-        if(!testtaskRuntime.isRtmodel()){
+        if(testtaskRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -143,7 +149,12 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
+        if(testtaskRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

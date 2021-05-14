@@ -774,6 +774,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1080,10 +1081,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PRODUCT_EQ",
       "name" : "N_PRODUCT_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PRODUCT_LIKE",
       "name" : "N_PRODUCT_LIKE",
+      "stdDataType" : 1,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1135,6 +1138,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_JOB_EQ",
       "name" : "N_JOB_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1185,6 +1189,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_CASE_EQ",
       "name" : "N_CASE_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1236,6 +1241,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_RUN_EQ",
       "name" : "N_RUN_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1287,6 +1293,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_COMPILE_EQ",
       "name" : "N_COMPILE_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

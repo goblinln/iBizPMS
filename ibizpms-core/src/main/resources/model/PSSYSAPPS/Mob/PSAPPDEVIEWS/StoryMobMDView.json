@@ -968,7 +968,6 @@
           "getPSSysImage" : {
             "cssClass" : "remove"
           },
-          "refreshMode" : 1,
           "successMsg" : "已删除",
           "timeout" : 60000,
           "uIActionMode" : "BACKEND",
@@ -977,7 +976,6 @@
           "closeEditView" : true,
           "closePopupView" : true,
           "enableConfirm" : true,
-          "reloadData" : true,
           "id" : "deleteMob@Story"
         },
         "addSeparator" : false,

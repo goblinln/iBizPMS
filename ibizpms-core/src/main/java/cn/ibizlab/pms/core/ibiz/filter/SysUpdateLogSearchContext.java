@@ -27,18 +27,22 @@ import cn.ibizlab.pms.core.ibiz.domain.SysUpdateLog;
 @Data
 public class SysUpdateLogSearchContext extends QueryWrapperContext<SysUpdateLog> {
 
+                
 	private String n_sys_update_logid_eq;//[系统更新日志标识]
 	public void setN_sys_update_logid_eq(String n_sys_update_logid_eq) {
         this.n_sys_update_logid_eq = n_sys_update_logid_eq;
     }
+                
 	private String n_updatebranch_eq;//[更新平台]
 	public void setN_updatebranch_eq(String n_updatebranch_eq) {
         this.n_updatebranch_eq = n_updatebranch_eq;
     }
+                
 	private String n_sys_update_logname_like;//[更新名称]
 	public void setN_sys_update_logname_like(String n_sys_update_logname_like) {
         this.n_sys_update_logname_like = n_sys_update_logname_like;
     }
+                
 	private Integer n_latestupdate_eq;//[最新更新]
 	public void setN_latestupdate_eq(Integer n_latestupdate_eq) {
         this.n_latestupdate_eq = n_latestupdate_eq;

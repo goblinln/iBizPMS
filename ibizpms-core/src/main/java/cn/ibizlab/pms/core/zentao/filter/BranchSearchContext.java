@@ -27,14 +27,17 @@ import cn.ibizlab.pms.core.zentao.domain.Branch;
 @Data
 public class BranchSearchContext extends QueryWrapperContext<Branch> {
 
+                
 	private String n_name_like;//[名称]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;
     }
+                
 	private Long n_id_eq;//[编号]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;
     }
+                
 	private Long n_product_eq;//[所属产品]
 	public void setN_product_eq(Long n_product_eq) {
         this.n_product_eq = n_product_eq;

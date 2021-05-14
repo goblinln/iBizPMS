@@ -290,13 +290,6 @@
         "codeName" : "Desc"
       }
     }, {
-      "id" : "status",
-      "dataType" : 25,
-      "getPSAppDEField" : {
-        "name" : "STATUS",
-        "codeName" : "Status"
-      }
-    }, {
       "id" : "id",
       "hidden" : true,
       "dataType" : 1,
@@ -358,7 +351,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
-          "allowEmpty" : true,
+          "allowEmpty" : false,
           "emptyCaption" : false,
           "hidden" : false,
           "inputTipClosable" : false,
@@ -768,51 +761,6 @@
               "pluginType" : "EDITOR_CUSTOMSTYLE",
               "pluginCode" : "PMSRICHTEXT"
             }
-          },
-          "getPSLayoutPos" : {
-            "colMD" : 24,
-            "layout" : "TABLE_24COL"
-          },
-          "allowEmpty" : true,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : true
-        }, {
-          "caption" : "人员",
-          "codeName" : "status",
-          "dataType" : 25,
-          "detailStyle" : "DEFAULT",
-          "detailType" : "FORMITEM",
-          "enableCond" : 3,
-          "ignoreInput" : 0,
-          "labelPos" : "LEFT",
-          "labelWidth" : 130,
-          "name" : "status",
-          "noPrivDisplayMode" : 1,
-          "getPSAppDEField" : {
-            "name" : "STATUS",
-            "codeName" : "Status"
-          },
-          "getPSEditor" : {
-            "editorParams" : {
-              "multiple" : "false",
-              "url" : "/sysorganizations/{deptId}/sysemployees/picker",
-              "filter" : "srforgid",
-              "AC" : "TRUE",
-              "PICKUPVIEW" : "TRUE"
-            },
-            "editorStyle" : "MOBDEPTPERSONSELECT",
-            "editorType" : "MOBPICKER",
-            "handlerType" : "PickupText",
-            "name" : "status",
-            "dropDownView" : false,
-            "enableAC" : true,
-            "enableLinkView" : false,
-            "enablePickupView" : true,
-            "forceSelection" : true,
-            "showTrigger" : true,
-            "singleSelect" : true
           },
           "getPSLayoutPos" : {
             "colMD" : 24,

@@ -22,6 +22,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_NAME_LIKE",
       "name" : "N_NAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     },
     "getPSEditor" : {
@@ -47,6 +48,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_TYPE_EQ",
       "name" : "N_TYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     },
     "getPSEditor" : {
@@ -77,6 +79,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_TYPE_NOTEQ",
       "name" : "N_TYPE_NOTEQ",
+      "stdDataType" : 25,
       "valueOP" : "NOTEQ"
     },
     "getPSEditor" : {
@@ -108,6 +111,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_STATUS_EQ",
       "name" : "N_STATUS_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     },
     "getPSEditor" : {
@@ -140,6 +144,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_STATUS_NOTEQ",
       "name" : "N_STATUS_NOTEQ",
+      "stdDataType" : 25,
       "valueOP" : "NOTEQ"
     },
     "getPSEditor" : {
@@ -171,6 +176,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_ACCOUNT_EQ",
       "name" : "N_ACCOUNT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     },
     "getPSEditor" : {
@@ -202,6 +208,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_BEGIN_EQ",
       "name" : "N_BEGIN_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     },
     "getPSEditor" : {
@@ -234,6 +241,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_CONFIG_TYPE_EQ",
       "name" : "N_CONFIG_TYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     },
     "getPSEditor" : {
@@ -265,6 +273,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_CYCLE_EQ",
       "name" : "N_CYCLE_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     },
     "getPSEditor" : {
@@ -290,6 +299,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_DATE_EQ",
       "name" : "N_DATE_EQ",
+      "stdDataType" : 5,
       "valueOP" : "EQ"
     },
     "getPSEditor" : {
@@ -320,6 +330,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_DATE_GTANDEQ",
       "name" : "N_DATE_GTANDEQ",
+      "stdDataType" : 5,
       "valueOP" : "GTANDEQ"
     },
     "getPSEditor" : {
@@ -350,6 +361,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_DATE_LTANDEQ",
       "name" : "N_DATE_LTANDEQ",
+      "stdDataType" : 5,
       "valueOP" : "LTANDEQ"
     },
     "getPSEditor" : {
@@ -380,6 +392,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_DATE_NOTEQ",
       "name" : "N_DATE_NOTEQ",
+      "stdDataType" : 5,
       "valueOP" : "NOTEQ"
     },
     "getPSEditor" : {
@@ -410,6 +423,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_END_EQ",
       "name" : "N_END_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     },
     "getPSEditor" : {
@@ -442,6 +456,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_PRIVATE_EQ",
       "name" : "N_PRIVATE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     },
     "getPSEditor" : {

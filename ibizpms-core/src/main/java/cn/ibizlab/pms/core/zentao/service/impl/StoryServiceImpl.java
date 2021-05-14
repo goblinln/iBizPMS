@@ -113,10 +113,13 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     @Override
     @Transactional
     public void createBatch(List<Story> list) {
-        if(!storyRuntime.isRtmodel()){
+        if(storyRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         this.saveBatch(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -141,10 +144,13 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     @Override
     @Transactional
     public void updateBatch(List<Story> list) {
-        if(!storyRuntime.isRtmodel()){
+        if(storyRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -171,7 +177,12 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
+        if(storyRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

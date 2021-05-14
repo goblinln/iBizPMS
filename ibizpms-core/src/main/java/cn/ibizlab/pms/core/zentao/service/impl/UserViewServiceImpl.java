@@ -75,7 +75,12 @@ public class UserViewServiceImpl extends ServiceImpl<UserViewMapper, UserView> i
     @Override
     @Transactional
     public void createBatch(List<UserView> list) {
+        if(userviewRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
         this.saveBatch(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -91,7 +96,12 @@ public class UserViewServiceImpl extends ServiceImpl<UserViewMapper, UserView> i
     @Override
     @Transactional
     public void updateBatch(List<UserView> list) {
+        if(userviewRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -116,7 +126,12 @@ public class UserViewServiceImpl extends ServiceImpl<UserViewMapper, UserView> i
     @Override
     @Transactional
     public void removeBatch(Collection<String> idList) {
+        if(userviewRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

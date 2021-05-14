@@ -27,6 +27,7 @@ import cn.ibizlab.pms.core.zentao.domain.UserGroup;
 @Data
 public class UserGroupSearchContext extends QueryWrapperContext<UserGroup> {
 
+                
 	private String n_id_eq;//[主键]
 	public void setN_id_eq(String n_id_eq) {
         this.n_id_eq = n_id_eq;

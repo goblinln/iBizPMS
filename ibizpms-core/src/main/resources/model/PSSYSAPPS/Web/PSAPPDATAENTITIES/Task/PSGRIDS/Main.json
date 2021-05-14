@@ -523,7 +523,7 @@
           "codeName" : "MoreChild",
           "getFrontPSAppView" : {
             "modelref" : true,
-            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskChildMoreGridView.json",
+            "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskChildTaskMoreGridView.json",
             "viewType" : "DEGRIDVIEW"
           },
           "frontProcessType" : "WIZARD",

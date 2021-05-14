@@ -78,7 +78,12 @@ public class DocContentServiceImpl extends ServiceImpl<DocContentMapper, DocCont
     @Override
     @Transactional
     public void createBatch(List<DocContent> list) {
+        if(doccontentRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
         this.saveBatch(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -94,7 +99,12 @@ public class DocContentServiceImpl extends ServiceImpl<DocContentMapper, DocCont
     @Override
     @Transactional
     public void updateBatch(List<DocContent> list) {
+        if(doccontentRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -119,7 +129,12 @@ public class DocContentServiceImpl extends ServiceImpl<DocContentMapper, DocCont
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
+        if(doccontentRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

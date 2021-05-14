@@ -214,6 +214,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TYPE_EQ",
       "name" : "N_TYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -401,6 +402,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZ_PLANTEMPLETDETAILID_EQ",
       "name" : "N_IBZ_PLANTEMPLETDETAILID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -456,6 +458,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZ_PLANTEMPLETDETAILNAME_LIKE",
       "name" : "N_IBZ_PLANTEMPLETDETAILNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -742,6 +745,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PLANTEMPLETID_EQ",
       "name" : "N_PLANTEMPLETID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

@@ -116,6 +116,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBIZPRO_PROJECTMONTHLYNAME_LIKE",
       "name" : "N_IBIZPRO_PROJECTMONTHLYNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -425,6 +426,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBIZPRO_PROJECTMONTHLYID_EQ",
       "name" : "N_IBIZPRO_PROJECTMONTHLYID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -573,6 +575,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PM_EQ",
       "name" : "N_PM_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -639,10 +642,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PROJECTNAME_EQ",
       "name" : "N_PROJECTNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PROJECTNAME_LIKE",
       "name" : "N_PROJECTNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -705,6 +710,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PROJECT_EQ",
       "name" : "N_PROJECT_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

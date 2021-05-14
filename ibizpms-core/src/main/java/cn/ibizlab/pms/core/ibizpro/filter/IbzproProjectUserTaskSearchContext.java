@@ -27,14 +27,17 @@ import cn.ibizlab.pms.core.ibizpro.domain.IbzproProjectUserTask;
 @Data
 public class IbzproProjectUserTaskSearchContext extends QueryWrapperContext<IbzproProjectUserTask> {
 
+                
 	private String n_tasktype_eq;//[任务类型]
 	public void setN_tasktype_eq(String n_tasktype_eq) {
         this.n_tasktype_eq = n_tasktype_eq;
     }
+                
 	private Long n_id_like;//[编号]
 	public void setN_id_like(Long n_id_like) {
         this.n_id_like = n_id_like;
     }
+                
 	private Long n_id_eq;//[编号]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;

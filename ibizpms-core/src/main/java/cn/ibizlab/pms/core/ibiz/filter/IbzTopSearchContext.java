@@ -27,18 +27,22 @@ import cn.ibizlab.pms.core.ibiz.domain.IbzTop;
 @Data
 public class IbzTopSearchContext extends QueryWrapperContext<IbzTop> {
 
+                
 	private String n_ibz_topid_eq;//[标识]
 	public void setN_ibz_topid_eq(String n_ibz_topid_eq) {
         this.n_ibz_topid_eq = n_ibz_topid_eq;
     }
+                
 	private String n_ibz_topname_like;//[置顶名称]
 	public void setN_ibz_topname_like(String n_ibz_topname_like) {
         this.n_ibz_topname_like = n_ibz_topname_like;
     }
+                
 	private String n_account_eq;//[置顶用户]
 	public void setN_account_eq(String n_account_eq) {
         this.n_account_eq = n_account_eq;
     }
+                
 	private String n_type_eq;//[类型]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;

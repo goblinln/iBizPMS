@@ -27,6 +27,7 @@ import cn.ibizlab.pms.core.zentao.domain.UserView;
 @Data
 public class UserViewSearchContext extends QueryWrapperContext<UserView> {
 
+                
 	private String n_id_eq;//[主键]
 	public void setN_id_eq(String n_id_eq) {
         this.n_id_eq = n_id_eq;

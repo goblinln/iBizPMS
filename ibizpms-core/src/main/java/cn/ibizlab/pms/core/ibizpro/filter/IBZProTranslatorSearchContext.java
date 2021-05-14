@@ -27,10 +27,12 @@ import cn.ibizlab.pms.core.ibizpro.domain.IBZProTranslator;
 @Data
 public class IBZProTranslatorSearchContext extends QueryWrapperContext<IBZProTranslator> {
 
+                
 	private String n_ibzpro_translatorname_like;//[业务值转换名称]
 	public void setN_ibzpro_translatorname_like(String n_ibzpro_translatorname_like) {
         this.n_ibzpro_translatorname_like = n_ibzpro_translatorname_like;
     }
+                
 	private String n_ibzpro_translatorid_eq;//[业务值转换标识]
 	public void setN_ibzpro_translatorid_eq(String n_ibzpro_translatorid_eq) {
         this.n_ibzpro_translatorid_eq = n_ibzpro_translatorid_eq;

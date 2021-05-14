@@ -449,6 +449,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_REMOVEFLAG_EQ",
       "name" : "N_REMOVEFLAG_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -853,6 +854,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSSFPUBNAME_LIKE",
       "name" : "N_PSSYSSFPUBNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1375,6 +1377,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSSFPUBID_EQ",
       "name" : "N_PSSYSSFPUBID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1477,6 +1480,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_CONTENTTYPE_EQ",
       "name" : "N_CONTENTTYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1530,6 +1534,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_USERCAT_EQ",
       "name" : "N_USERCAT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1714,10 +1719,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PPSSYSSFPUBNAME_EQ",
       "name" : "N_PPSSYSSFPUBNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PPSSYSSFPUBNAME_LIKE",
       "name" : "N_PPSSYSSFPUBNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1781,6 +1788,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PPSSYSSFPUBID_EQ",
       "name" : "N_PPSSYSSFPUBID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

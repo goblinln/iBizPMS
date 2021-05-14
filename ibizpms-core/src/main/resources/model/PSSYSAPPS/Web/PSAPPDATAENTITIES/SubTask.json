@@ -767,6 +767,15 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchChildDefaultMore",
+    "methodType" : "FETCH",
+    "name" : "ChildDefaultMore",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ChildDefaultMore"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchChildTaskTree",
     "methodType" : "FETCH",
     "name" : "ChildTaskTree",
@@ -2296,6 +2305,25 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "ChildDefault"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchChildDefaultMore",
+    "methodType" : "FETCH",
+    "name" : "ChildDefaultMore",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ChildDefaultMore"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempChildDefaultMore",
+    "methodType" : "FETCHTEMP",
+    "name" : "ChildDefaultMore",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ChildDefaultMore"
     },
     "tempDataMode" : 2,
     "builtinMethod" : false

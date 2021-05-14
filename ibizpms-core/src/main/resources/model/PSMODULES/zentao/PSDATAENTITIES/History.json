@@ -208,6 +208,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_FIELD_LEFTLIKE",
       "name" : "N_FIELD_LEFTLIKE",
+      "stdDataType" : 25,
       "valueOP" : "LEFTLIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -609,6 +610,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -659,6 +661,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ACTION_EQ",
       "name" : "N_ACTION_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

@@ -22,6 +22,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_TITLE_LIKE",
       "name" : "N_TITLE_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     },
     "getPSEditor" : {
@@ -47,6 +48,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_PRODUCT_EQ",
       "name" : "N_PRODUCT_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     },
     "getPSEditor" : {
@@ -78,6 +80,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_BEGIN_GTANDEQ",
       "name" : "N_BEGIN_GTANDEQ",
+      "stdDataType" : 5,
       "valueOP" : "GTANDEQ"
     },
     "getPSEditor" : {
@@ -107,6 +110,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_BRANCH_EQ",
       "name" : "N_BRANCH_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     },
     "getPSEditor" : {
@@ -138,6 +142,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_DELTA_EQ",
       "name" : "N_DELTA_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     },
     "getPSEditor" : {
@@ -170,6 +175,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_END_LTANDEQ",
       "name" : "N_END_LTANDEQ",
+      "stdDataType" : 5,
       "valueOP" : "LTANDEQ"
     },
     "getPSEditor" : {
@@ -200,6 +206,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_FUTURE_EQ",
       "name" : "N_FUTURE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     },
     "getPSEditor" : {
@@ -232,6 +239,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_ISEXPIRED_EQ",
       "name" : "N_ISEXPIRED_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     },
     "getPSEditor" : {
@@ -262,6 +270,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_PARENTNAME_EQ",
       "name" : "N_PARENTNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     },
     "getPSEditor" : {
@@ -310,6 +319,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_PARENTNAME_LIKE",
       "name" : "N_PARENTNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     },
     "getPSEditor" : {

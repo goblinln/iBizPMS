@@ -113,6 +113,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ORGID_EQ",
       "name" : "N_ORGID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -227,6 +228,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ORGNAME_LIKE",
       "name" : "N_ORGNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -283,6 +285,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PORGID_EQ",
       "name" : "N_PORGID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -467,10 +470,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PORGNAME_EQ",
       "name" : "N_PORGNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PORGNAME_LIKE",
       "name" : "N_PORGNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {

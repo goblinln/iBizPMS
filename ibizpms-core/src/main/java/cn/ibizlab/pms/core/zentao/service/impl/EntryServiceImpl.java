@@ -78,7 +78,12 @@ public class EntryServiceImpl extends ServiceImpl<EntryMapper, Entry> implements
     @Override
     @Transactional
     public void createBatch(List<Entry> list) {
+        if(entryRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
         this.saveBatch(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -94,7 +99,12 @@ public class EntryServiceImpl extends ServiceImpl<EntryMapper, Entry> implements
     @Override
     @Transactional
     public void updateBatch(List<Entry> list) {
+        if(entryRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -119,7 +129,12 @@ public class EntryServiceImpl extends ServiceImpl<EntryMapper, Entry> implements
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
+        if(entryRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

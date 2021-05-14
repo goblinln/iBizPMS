@@ -27,38 +27,47 @@ import cn.ibizlab.pms.core.ibiz.domain.ProjectModule;
 @Data
 public class ProjectModuleSearchContext extends QueryWrapperContext<ProjectModule> {
 
+                
 	private String n_type_eq;//[类型（task）]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;
     }
+                
 	private String n_name_like;//[名称]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;
     }
+                
 	private Long n_id_eq;//[id]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;
     }
+                
 	private String n_rootname_eq;//[所属项目]
 	public void setN_rootname_eq(String n_rootname_eq) {
         this.n_rootname_eq = n_rootname_eq;
     }
+                
 	private String n_rootname_like;//[所属项目]
 	public void setN_rootname_like(String n_rootname_like) {
         this.n_rootname_like = n_rootname_like;
     }
+                
 	private String n_parentname_eq;//[上级模块]
 	public void setN_parentname_eq(String n_parentname_eq) {
         this.n_parentname_eq = n_parentname_eq;
     }
+                
 	private String n_parentname_like;//[上级模块]
 	public void setN_parentname_like(String n_parentname_like) {
         this.n_parentname_like = n_parentname_like;
     }
+                
 	private Long n_root_eq;//[项目]
 	public void setN_root_eq(Long n_root_eq) {
         this.n_root_eq = n_root_eq;
     }
+                
 	private Long n_parent_eq;//[id]
 	public void setN_parent_eq(Long n_parent_eq) {
         this.n_parent_eq = n_parent_eq;

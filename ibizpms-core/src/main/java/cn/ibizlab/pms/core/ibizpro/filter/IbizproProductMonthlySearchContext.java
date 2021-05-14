@@ -27,26 +27,32 @@ import cn.ibizlab.pms.core.ibizpro.domain.IbizproProductMonthly;
 @Data
 public class IbizproProductMonthlySearchContext extends QueryWrapperContext<IbizproProductMonthly> {
 
+                
 	private Long n_ibizpro_productmonthlyid_eq;//[产品月报标识]
 	public void setN_ibizpro_productmonthlyid_eq(Long n_ibizpro_productmonthlyid_eq) {
         this.n_ibizpro_productmonthlyid_eq = n_ibizpro_productmonthlyid_eq;
     }
+                
 	private String n_ibizpro_productmonthlyname_like;//[产品月报名称]
 	public void setN_ibizpro_productmonthlyname_like(String n_ibizpro_productmonthlyname_like) {
         this.n_ibizpro_productmonthlyname_like = n_ibizpro_productmonthlyname_like;
     }
+                
 	private String n_po_eq;//[产品负责人]
 	public void setN_po_eq(String n_po_eq) {
         this.n_po_eq = n_po_eq;
     }
+                
 	private String n_productname_eq;//[产品名称]
 	public void setN_productname_eq(String n_productname_eq) {
         this.n_productname_eq = n_productname_eq;
     }
+                
 	private String n_productname_like;//[产品名称]
 	public void setN_productname_like(String n_productname_like) {
         this.n_productname_like = n_productname_like;
     }
+                
 	private Long n_product_eq;//[产品编号]
 	public void setN_product_eq(Long n_product_eq) {
         this.n_product_eq = n_product_eq;

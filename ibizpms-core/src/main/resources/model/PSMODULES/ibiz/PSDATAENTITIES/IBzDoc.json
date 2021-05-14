@@ -111,6 +111,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZ_DOCID_EQ",
       "name" : "N_IBZ_DOCID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -439,6 +440,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZ_DOCNAME_LIKE",
       "name" : "N_IBZ_DOCNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {

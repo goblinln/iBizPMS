@@ -124,6 +124,7 @@ export class TaskUIServiceBase extends UIServiceBase {
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
+        this.allViewFuncMap.set(':','');
     }
 
 }

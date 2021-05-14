@@ -315,6 +315,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZPRO_SEQUENCEID_EQ",
       "name" : "N_IBZPRO_SEQUENCEID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -562,6 +563,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_CURSEQ_EQ",
       "name" : "N_CURSEQ_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -602,10 +604,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZPRO_SEQUENCENAME_EQ",
       "name" : "N_IBZPRO_SEQUENCENAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_IBZPRO_SEQUENCENAME_LIKE",
       "name" : "N_IBZPRO_SEQUENCENAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -708,6 +712,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_CATEGORY_EQ",
       "name" : "N_CATEGORY_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

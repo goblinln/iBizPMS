@@ -109,6 +109,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_USERID_EQ",
       "name" : "N_USERID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -210,6 +211,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PERSONNAME_LIKE",
       "name" : "N_PERSONNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {

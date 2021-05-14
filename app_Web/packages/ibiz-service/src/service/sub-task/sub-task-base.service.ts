@@ -106,6 +106,10 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
         return this.condCache.get('childDefault');
     }
 
+    protected getChildDefaultMoreCond() {
+        return this.condCache.get('childDefaultMore');
+    }
+
     protected getChildTaskCond() {
         return this.condCache.get('childTask');
     }
