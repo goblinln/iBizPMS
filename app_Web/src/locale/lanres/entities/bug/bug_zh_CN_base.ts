@@ -913,7 +913,7 @@ function getLocaleResourceBase(){
 		},
 		storyaffectbug_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
 				'status': commonLogic.appcommonhandle("状态",null),
 				'openedby': commonLogic.appcommonhandle("由谁创建",null),
@@ -927,7 +927,7 @@ function getLocaleResourceBase(){
 		},
 		main_plansub_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
 				'status': commonLogic.appcommonhandle("Bug状态",null),
@@ -940,7 +940,7 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
 				'bugsn': commonLogic.appcommonhandle("编号",null),
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'confirmed': commonLogic.appcommonhandle("确认",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
@@ -961,7 +961,7 @@ function getLocaleResourceBase(){
 		},
 		pickupgird_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
 				'openedby': commonLogic.appcommonhandle("创建",null),
@@ -974,7 +974,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'confirmed': commonLogic.appcommonhandle("确认",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
@@ -991,7 +991,7 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
 				'bugsn': commonLogic.appcommonhandle("编号",null),
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'confirmed': commonLogic.appcommonhandle("确认",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
@@ -1019,7 +1019,7 @@ function getLocaleResourceBase(){
 		},
 		main_buildsub2_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
 				'status': commonLogic.appcommonhandle("状态",null),
@@ -1032,7 +1032,7 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
 				'bugsn': commonLogic.appcommonhandle("编号",null),
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'confirmed': commonLogic.appcommonhandle("确认",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
@@ -1053,7 +1053,7 @@ function getLocaleResourceBase(){
 		},
 		main_buildsub3_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
 				'status': commonLogic.appcommonhandle("Bug状态",null),
@@ -1070,7 +1070,7 @@ function getLocaleResourceBase(){
 		},
 		main_buildsub_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'confirmed': commonLogic.appcommonhandle("是否确认",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
@@ -1093,7 +1093,7 @@ function getLocaleResourceBase(){
 		},
 		main_reportsub_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
 				'openedby': commonLogic.appcommonhandle("创建",null),
@@ -1107,7 +1107,7 @@ function getLocaleResourceBase(){
 		},
 		taskrelated_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
 			},
 			nodata:commonLogic.appcommonhandle("",null),
@@ -1116,7 +1116,7 @@ function getLocaleResourceBase(){
 		},
 		storyrelated_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
 			},
 			nodata:commonLogic.appcommonhandle("",null),
@@ -1125,7 +1125,7 @@ function getLocaleResourceBase(){
 		},
 		main_releasesubr_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
 				'status': commonLogic.appcommonhandle("Bug状态",null),
@@ -1137,7 +1137,7 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
 				'bugsn': commonLogic.appcommonhandle("编号",null),
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'confirmed': commonLogic.appcommonhandle("确认",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
@@ -1158,7 +1158,7 @@ function getLocaleResourceBase(){
 		},
 		main_releasesub_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
 				'status': commonLogic.appcommonhandle("Bug状态",null),
@@ -1170,7 +1170,7 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
 				'bugsn': commonLogic.appcommonhandle("编号",null),
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'confirmed': commonLogic.appcommonhandle("确认",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
@@ -1191,7 +1191,7 @@ function getLocaleResourceBase(){
 		},
 		main_copy_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'severity': commonLogic.appcommonhandle("级别",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'confirmed': commonLogic.appcommonhandle("确认",null),
@@ -1209,7 +1209,7 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
 				'bugsn': commonLogic.appcommonhandle("编号",null),
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'confirmed': commonLogic.appcommonhandle("确认",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
@@ -1237,7 +1237,7 @@ function getLocaleResourceBase(){
 		},
 		main_dataexport_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'confirmed': commonLogic.appcommonhandle("确认",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
@@ -1258,7 +1258,7 @@ function getLocaleResourceBase(){
 		},
 		favoritemain_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'confirmed': commonLogic.appcommonhandle("确认",null),
 				'productname': commonLogic.appcommonhandle("产品",null),
@@ -1275,7 +1275,7 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
 				'bugsn': commonLogic.appcommonhandle("编号",null),
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'confirmed': commonLogic.appcommonhandle("确认",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
@@ -1302,7 +1302,7 @@ function getLocaleResourceBase(){
 		},
 		main2_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
 				'status': commonLogic.appcommonhandle("状态",null),
@@ -1313,7 +1313,7 @@ function getLocaleResourceBase(){
 		},
 		mygroupmain_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'severity': commonLogic.appcommonhandle("级别",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'confirmed': commonLogic.appcommonhandle("确认",null),
@@ -1331,7 +1331,7 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
 				'bugsn': commonLogic.appcommonhandle("编号",null),
-				'id': commonLogic.appcommonhandle("Bug编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'pri': commonLogic.appcommonhandle("P",null),
 				'confirmed': commonLogic.appcommonhandle("确认",null),
 				'title': commonLogic.appcommonhandle("Bug标题",null),
