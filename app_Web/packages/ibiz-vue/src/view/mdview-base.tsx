@@ -1,5 +1,6 @@
 import { IPSDESearchForm, IPSSearchBar, IPSAppDEMultiDataView, IPSAppCodeList, IPSCodeItem, IPSAppDEField } from '@ibiz/dynamic-model-api';
 import { CodeListServiceBase, LogUtil, ModelTool, Util } from 'ibiz-core'
+import { AppGlobalService } from '../app-service/logic-service/app-global-action-service';
 import { MainViewBase } from "./mainview-base";
 
 /**
@@ -304,15 +305,17 @@ export class MDViewBase extends MainViewBase {
      * 
      * @memberof MDViewBase
      */
-    public renderQuickSearch() {
+     public renderQuickSearch() {
         if (!this.viewInstance?.enableQuickSearch && this.isExpandSearchForm) {
             return;
         }
-        let isShowFiter = this.viewInstance?.viewStyle != 'STYLE2';
-        if(isShowFiter){
+        if(this.viewInstance?.viewStyle != 'STYLE2'){
+            let enableFilter = this.viewInstance?.enableFilter == true;
             return  <template slot="quickSearch">
-                <i-input class='app-quick-search width-filter' style='max-width: 400px;margin-top:4px;padding-left: 24px' search on-on-search={($event: any) => this.onSearch($event)} v-model={this.query} placeholder={this.placeholder} />
-                <i-button class="filter" icon="ios-funnel" />
+                <i-input class={{'app-quick-search': true, 'width-filter': enableFilter}} style='max-width: 400px;margin-top:4px;padding-left: 24px' search on-on-search={($event: any) => this.onSearch($event)} v-model={this.query} placeholder={this.placeholder} />
+                {enableFilter && <i-button class="filter" icon="ios-funnel" on-click={(e:any)=>{
+                    (AppGlobalService.getInstance() as any).executeGlobalAction('ToggleFilter',undefined, undefined, undefined, e, undefined, this, undefined, );
+                }} />}
             </template>
         }else{
             return <i-input slot="quickSearch" className='app-quick-search' style='max-width: 400px;margin-top:6px;padding-left: 24px' search enter-button on-on-search={($event: any) => this.onSearch($event)} v-model={this.query} placeholder={this.placeholder} />

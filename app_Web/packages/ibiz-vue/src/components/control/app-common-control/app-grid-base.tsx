@@ -396,6 +396,15 @@ export class AppGridBase extends GridControlBase {
      * @memberof AppGridBase
      */
     public renderPagingBar(h: any) {
+        let pageText = <span>共&nbsp;{this.totalRecord}&nbsp;条</span>
+        if(( this.controlInstance?.getParentPSModelObject?.() as any)?.viewStyle == 'STYLE2'){
+            pageText = <span>
+                &nbsp; 显示&nbsp;
+                {this.items.length > 0 ? 1 : (this.curPage - 1) * this.limit + 1}&nbsp;-&nbsp;
+                {this.totalRecord > this.curPage * this.limit ? this.curPage * this.limit : this.totalRecord}&nbsp;
+                条，共&nbsp;{this.totalRecord}&nbsp;条
+            </span>
+        }
         return this.items?.length > 0 ? (
             <row class='grid-pagination'>
                 <page
@@ -433,10 +442,7 @@ export class AppGridBase extends GridControlBase {
                     <span class='page-button'>
                         <i-button icon='md-refresh' title='刷新' on-click={() => this.pageRefresh()}></i-button>
                     </span>
-                    &nbsp; 显示&nbsp;
-                    {this.items.length > 0 ? 1 : (this.curPage - 1) * this.limit + 1}&nbsp;-&nbsp;
-                    {this.totalRecord > this.curPage * this.limit ? this.curPage * this.limit : this.totalRecord}&nbsp;
-                    条，共&nbsp;{this.totalRecord}&nbsp;条
+                    {pageText}
                 </page>
             </row>
         ) : null;
