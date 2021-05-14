@@ -2,6 +2,8 @@
 import { Component, Watch } from 'vue-property-decorator';
 import { VueLifeCycleProcessing,AppControlBase } from 'ibiz-vue';
 import { AppListBase } from 'ibiz-vue/src/components/control/app-common-control/app-list-base';
+import { Environment } from '@/environments/environment';
+import axios from 'axios';
 
 import '../plugin-style.less';
 
@@ -17,31 +19,14 @@ import '../plugin-style.less';
 @VueLifeCycleProcessing()
 export class ListDownload extends AppListBase {
 
-/**
-     * 绘制
-     * 
-     * @memberof ListDownload
-     */
-    public render(): any{
-        if(!this.controlIsLoaded){
-            return null;
-        }
-        let listClass: any = 'app-list';
-        if(this.items.length <= 0){
-            listClass = 'app-list app-list-empty';
-        }
-        return <div class={listClass}>
-            {this.items.map((item: any)=>{
-                let itemClass: any = 'app-list-item list-download';
-                if(item.isselected){
-                    itemClass = 'app-list-item isSelect';
-                }
-                return <div class={itemClass} on-click={()=>{this.handleClick(item)}} on-dblclick={()=>{this.handleDblClick(item)}}>
-                    <a href={'../ibizutilpms/ztdownload/' + item.srfkey} target="_blank">{item.srfmajortext}</a>&nbsp;<icon type="md-close" on-click={()=>{this.remove([item])}} />
-                </div>
-            })}
-        </div>
-    }
+!!!!模版产生代码错误:!!!!模版产生代码错误:----
+Tip: If the failing expression is known to be legally refer to something that's sometimes null or missing, either specify a default value like myOptionalVar!myDefault, or use <#if myOptionalVar??>when-present<#else>when-missing</#if>. (These only cover the last step of the expression; to cover the whole expression, use parenthesis: (myOptionalVar.foo)!myDefault, (myOptionalVar.foo)??
+----
+
+----
+FTL stack trace ("~" means nesting-related):
+	- Failed at: ${Environment.ExportFile}  [in template "TEMPLCODE_zh_CN" at line 60, column 22]
+----
 
 }
 
