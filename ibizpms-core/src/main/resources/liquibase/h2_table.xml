@@ -1118,15 +1118,13 @@
 
 
     <!--输出实体[IBZPRO_SEQUENCE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibzpro_sequence-1-33">
+    <changeSet author="a_A_23e8aa361" id="tab-ibzpro_sequence-3-33">
         <createTable tableName="T_IBZPRO_SEQUENCE">
                 <column name="CREATEDATE" remarks="" type="DATETIME">
                 </column>
                 <column name="ISENABLE" remarks="" type="INT">
                 </column>
                 <column name="UPDATEDATE" remarks="" type="DATETIME">
-                </column>
-                <column name="DEPTID" remarks="" type="VARCHAR(60)">
                 </column>
                 <column name="INCREMENT" remarks="" type="INT">
                 </column>
@@ -1144,8 +1142,6 @@
                 <column name="CURSEQ" remarks="" type="BIGINT">
                 </column>
                 <column name="IBZPRO_SEQUENCENAME" remarks="" type="VARCHAR(200)">
-                </column>
-                <column name="ORGID" remarks="" type="VARCHAR(60)">
                 </column>
                 <column name="CATEGORY" remarks="" type="VARCHAR(60)">
                 </column>
@@ -2827,7 +2823,7 @@
 
 
     <!--输出实体[ZT_STORYSTAGE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_storystage-9-105">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_storystage-10-105">
         <createTable tableName="zt_storystage">
                 <column name="ID" remarks="" type="VARCHAR(60)">
                     <constraints primaryKey="true" primaryKeyName="PK_ZT_STORYSTAGE_ID"/>

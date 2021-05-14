@@ -76,6 +76,7 @@ public class StoryStage extends EntityMP implements Serializable {
     /**
      * 设置阶段者
      */
+    @DEField(defaultValueType = DEFieldDefaultValueType.OPERATORNAME)
     @TableField(value = "`STAGEDBY`")
     @JSONField(name = "stagedby")
     @JsonProperty("stagedby")

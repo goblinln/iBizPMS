@@ -11994,21 +11994,6 @@
     "major_field":0
     },
     {
-    "fieldname":"DEPTID" ,
-    "codename":"DeptId",
-    "field_logic_name":"组织部门标识",
-    "entity_name":"IBZPRO_SEQUENCE",
-    "field_type":"TEXT",
-    "nullable":1,
-    "physical_field":1,
-    "data_type":"VARCHAR",
-    "data_length":60,
-    "predefined":"ORGSECTORID",
-    "key_field":0,
-    "show_order":1000,
-    "major_field":0
-    },
-    {
     "fieldname":"INCREMENT" ,
     "codename":"Increment",
     "field_logic_name":"自增数值",
@@ -12122,21 +12107,6 @@
     "key_field":0,
     "show_order":1000,
     "major_field":1
-    },
-    {
-    "fieldname":"ORGID" ,
-    "codename":"OrgId",
-    "field_logic_name":"组织机构标识",
-    "entity_name":"IBZPRO_SEQUENCE",
-    "field_type":"TEXT",
-    "nullable":1,
-    "physical_field":1,
-    "data_type":"VARCHAR",
-    "data_length":60,
-    "predefined":"ORGID",
-    "key_field":0,
-    "show_order":1000,
-    "major_field":0
     },
     {
     "fieldname":"CATEGORY" ,

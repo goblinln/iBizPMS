@@ -222,54 +222,6 @@
     "systemReserver" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "DEPTID",
-      "dBType" : "MYSQL5",
-      "name" : "DEPTID",
-      "queryCodeExp" : "t1.`DEPTID`",
-      "standardColumnName" : "`DEPTID`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "DEPTID",
-          "maxValue" : 60,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[60]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[60]"
-      },
-      "getPSDEField" : {
-        "name" : "DEPTID",
-        "codeName" : "DeptId"
-      },
-      "ruleInfo" : "内容长度必须小于等于[60]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "DeptId",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "length" : 60,
-    "logicName" : "组织部门标识",
-    "name" : "DEPTID",
-    "predefinedType" : "ORGSECTORID",
-    "stdDataType" : 25,
-    "stringLength" : 60,
-    "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
       "columnName" : "INCREMENT",
       "dBType" : "MYSQL5",
       "name" : "INCREMENT",
@@ -653,54 +605,6 @@
     "valueFormat" : "%1$s",
     "enableQuickSearch" : true,
     "majorDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "ORGID",
-      "dBType" : "MYSQL5",
-      "name" : "ORGID",
-      "queryCodeExp" : "t1.`ORGID`",
-      "standardColumnName" : "`ORGID`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condType" : "STRINGLENGTH",
-          "dEFName" : "ORGID",
-          "maxValue" : 60,
-          "name" : "默认字符串长度",
-          "ruleInfo" : "内容长度必须小于等于[60]",
-          "includeMaxValue" : true,
-          "includeMinValue" : false,
-          "keyCond" : true
-        } ],
-        "ruleInfo" : "内容长度必须小于等于[60]"
-      },
-      "getPSDEField" : {
-        "name" : "ORGID",
-        "codeName" : "OrgId"
-      },
-      "ruleInfo" : "内容长度必须小于等于[60]",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "OrgId",
-    "dEFType" : 1,
-    "dataType" : "TEXT",
-    "importOrder" : 1000,
-    "length" : 60,
-    "logicName" : "组织机构标识",
-    "name" : "ORGID",
-    "predefinedType" : "ORGID",
-    "stdDataType" : 25,
-    "stringLength" : 60,
-    "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "CATEGORY",

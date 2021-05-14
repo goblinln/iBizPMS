@@ -287,6 +287,7 @@
     "codeName" : "StagedBy",
     "dEFType" : 1,
     "dataType" : "TEXT",
+    "defaultValueType" : "OPERATORNAME",
     "importOrder" : 1000,
     "length" : 30,
     "logicName" : "设置阶段者",

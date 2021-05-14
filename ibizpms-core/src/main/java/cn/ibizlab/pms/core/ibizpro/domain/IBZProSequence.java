@@ -75,15 +75,6 @@ public class IBZProSequence extends EntityMP implements Serializable {
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
     /**
-     * 组织部门标识
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGSECTORID)
-    @TableField(value = "`DEPTID`")
-    @JSONField(name = "deptid")
-    @JsonProperty("deptid")
-    @ApiModelProperty("组织部门标识")
-    private String deptid;
-    /**
      * 自增数值
      */
     @DEField(defaultValue = "1")
@@ -153,15 +144,6 @@ public class IBZProSequence extends EntityMP implements Serializable {
     @JsonProperty("ibzprosequencename")
     @ApiModelProperty("业务序列表名称")
     private String ibzprosequencename;
-    /**
-     * 组织机构标识
-     */
-    @DEField(preType = DEPredefinedFieldType.ORGID)
-    @TableField(value = "`ORGID`")
-    @JSONField(name = "orgid")
-    @JsonProperty("orgid")
-    @ApiModelProperty("组织机构标识")
-    private String orgid;
     /**
      * 业务类别
      */

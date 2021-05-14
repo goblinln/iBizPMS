@@ -414,7 +414,7 @@ export class AppFormService extends ControlServiceBase {
                     requestData[item.prop] = context[item.name];
                 }
             } else {
-                if (item && item.prop  && item.name && (data[item.name] || data[item.name] === 0)) {
+                if (item && item.prop  && item.name && (data[item.name] || data[item.name] === 0 || data[item.name] === null)) {
                     requestData[item.prop] = data[item.name];
                 } else {
                     if (item.dataType && Object.is(item.dataType, "FORMPART")) {

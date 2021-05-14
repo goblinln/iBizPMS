@@ -28,7 +28,7 @@
       <ul class="">
         <li v-for="(file,index) in files" :key="index" class="preview-file-list-item">
           <div class='preview-file-list-img'>
-            <el-image :src="getImgURLOfBase64(file.url)" class='' style=''>
+            <el-image :src="getImgURLOfBase64(file)" class='' style=''>
                 <div slot='error' class='image-slot'>
                     <img src="@/assets/img/picture.png" style='width:100%;height:100%;'>
                 </div>
@@ -54,6 +54,7 @@ import { Component, Vue, Prop, Watch } from 'vue-property-decorator';
 import { AppServiceBase, getSessionStorage, Util, ImgurlBase64 } from 'ibiz-core';
 import { getCookie } from 'qx-util';
 import { Subject, Unsubscribable } from 'rxjs';
+import axios from 'axios';
 
 @Component({
 })
@@ -185,7 +186,7 @@ export default class AppFileUpload extends Vue {
      *
      * @memberof AppFileUpload
      */
-    public downloadUrl = AppServiceBase.getInstance().getAppEnvironment().BaseUrl + AppServiceBase.getInstance().getAppEnvironment().ExportFile;
+    public downloadUrl = AppServiceBase.getInstance().getAppEnvironment().ExportFile;
 
     /**
      * 文件列表
@@ -474,7 +475,8 @@ export default class AppFileUpload extends Vue {
      * @memberof AppFileUpload
      */
     public onDownload(file: any) {
-        window.open(file.url);
+        const url = `${this.downloadUrl}/${file.id}`;
+        this.DownloadFile(url);
     }
 
     /**
@@ -513,8 +515,112 @@ export default class AppFileUpload extends Vue {
      * 
      * @memberof AppFileUpload
      */
-    public async getImgURLOfBase64(url: string) {
-        return await ImgurlBase64.getInstance().getImgURLOfBase64(url);
+    public getImgURLOfBase64(file: any) {
+        const url = `${this.downloadUrl}/${file.id}`;
+        ImgurlBase64.getInstance().getImgURLOfBase64(url).then((res: any) => {
+            this.$set(file,'ImgBase64',res);
+        });
+        return file.ImgBase64;
+    }
+
+    /**
+     * 计算文件mime类型
+     *
+     * @param filetype 文件后缀
+     * @memberof DiskFileUpload
+     */
+    public calcFilemime(filetype: string): string {
+        let mime = "image/png";
+        switch(filetype) {
+            case ".wps":
+            mime = "application/kswps";
+            break;
+            case ".doc":
+            mime = "application/msword";
+            break;
+            case ".docx":
+            mime = "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+            break;
+            case ".txt":
+            mime = "text/plain";
+            break;
+            case ".zip":
+            mime = "application/zip";
+            break;
+            case ".png":
+            mime = "imgage/png";
+            break;
+            case ".gif":
+            mime = "image/gif";
+            break;
+            case ".jpeg":
+            mime = "image/jpeg";
+            break;
+            case ".jpg":
+            mime = "image/jpeg";
+            break;
+            case ".rtf":
+            mime = "application/rtf";
+            break;
+            case ".avi": 
+            mime = "video/x-msvideo";
+            break;
+            case ".gz": 
+            mime = "application/x-gzip";
+            break;
+            case ".tar": 
+            mime = "application/x-tar";
+            break;
+        }
+        return mime; 
+    }
+
+    /**
+     * 下载文件
+     *
+     * @param item 下载文件
+     * @memberof DiskFileUpload
+     */
+    public DownloadFile(url: string) {
+        // 发送get请求
+        axios({
+            method: 'get',
+            url: url,
+            responseType: 'blob'
+        }).then((response: any) => {
+            if (!response || response.status != 200) {
+                console.error("图片下载失败！");
+                return;
+            }
+            // 请求成功，后台返回的是一个文件流
+            if (response.data) {
+                // 获取文件名
+                const disposition = response.headers['content-disposition'];
+                const filename = disposition.split('filename=')[1];
+                const ext = '.' + filename.split('.').pop();
+                let filetype = this.calcFilemime(ext);
+                // 用blob对象获取文件流
+                let blob = new Blob([response.data], {type: filetype});
+                // 通过文件流创建下载链接
+                var href = URL.createObjectURL(blob);
+                // 创建一个a元素并设置相关属性
+                let a = document.createElement('a');
+                a.href = href;
+                a.download = filename;
+                // 添加a元素到当前网页
+                document.body.appendChild(a);
+                // 触发a元素的点击事件，实现下载
+                a.click();
+                // 从当前网页移除a元素
+                document.body.removeChild(a);
+                // 释放blob对象
+                URL.revokeObjectURL(href);
+            } else {
+                console.error("图片下载失败！");
+            }
+        }).catch((error: any) => {
+            console.error(error);
+        });
     }
 }
 </script>
