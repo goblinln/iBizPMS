@@ -1,4 +1,6 @@
 import { Vue, Component, Prop, Inject } from 'vue-property-decorator';
+import { IPSDEFormItem } from '@ibiz/dynamic-model-api';
+import moment from 'moment';
 import { VueLifeCycleProcessing } from '../../../decorators';
 import { EditorBase } from '../editor-base/editor-base';
 
@@ -12,6 +14,15 @@ import { EditorBase } from '../editor-base/editor-base';
 @Component({})
 @VueLifeCycleProcessing()
 export default class DatePickerEditor extends EditorBase {
+
+    /**
+     * 日期属性格式化
+     * 
+     * @type {*}
+     * @memberof DatePickerEditor
+     */
+    public valueFormat: any;
+
     /**
      * 编辑器初始化
      *
@@ -72,7 +83,28 @@ export default class DatePickerEditor extends EditorBase {
      * @memberof DatePickerEditor
      */
     public handleChange(value1: any, value2?: any) {
+        if (this.valueFormat && this.valueFormat != this.customProps.format) {
+            value1 = this.formatDate(value1, this.valueFormat);
+        }
         this.editorChange({ name: this.editorInstance.name, value: value1 });
+    }
+
+    /**
+     * 日期格式化
+     *
+     * @param date  时间
+     * @param format    格式
+     * @memberof DatePickerEditor
+     */
+    public formatDate(date: any, format: any) {
+        if (!format) {
+            return date;
+        }
+        try {
+            return moment(date).format(format);   
+        } catch (error) {
+            return date;
+        }
     }
 
     /**

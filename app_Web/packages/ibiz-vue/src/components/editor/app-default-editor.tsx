@@ -194,8 +194,7 @@ export class AppDefaultEditor extends Vue {
             'PICTURE_INFO',
             'FILEUPLOADER_INFO',
             'FILEUPLOADER_CAMERA',
-            'FILEUPLOADER_USEWORKTEMP',
-            'FILEUPLOADER_PREVIEWHFH'
+            'FILEUPLOADER_USEWORKTEMP'
         ] ],
         ['checkbox-editor', [
             'RADIOBUTTONLIST', 

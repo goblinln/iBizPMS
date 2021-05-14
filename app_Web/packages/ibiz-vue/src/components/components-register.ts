@@ -110,7 +110,6 @@ import HtmlContainer from './common/html-container/html-container.vue';
 import AppFileUploadCamera from './common/app-file-upload-camera/app-file-upload-camera';
 import AppFormGroupDataPanel from './common/app-form-group-data-panel/app-form-group-data-panel';
 import TextFileUpload from './common/text-file-upload/text-file-upload.vue';
-import AppPreviewWord from './common/app-preview-hfh/app-preview-hfh';
 import AppCommonMicrocom from './common/app-common-microcom/app-common-microcom.vue';
 import AppCalendarTimeline from './common/app-calendar-timeline/app-calendar-timeline.vue';
 import AppCustomTheme from './common/app-custom-theme/app-custom-theme.vue';
@@ -349,7 +348,6 @@ export const ComponentsRegister = {
         v.component('app-file-upload-camera', AppFileUploadCamera);
         v.component('app-form-group-data-panel', AppFormGroupDataPanel);
         v.component('text-file-upload', TextFileUpload);
-        v.component('app-preview-hfh', AppPreviewWord);
         v.component('app-custom-theme', AppCustomTheme);
         // 视图组件
         v.component('app-view-shell', AppViewShell);
