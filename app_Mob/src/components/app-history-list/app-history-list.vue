@@ -39,6 +39,7 @@
 import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
 import { CodeListServiceBase } from "ibiz-core";
 import { Environment } from '@/environments/environment';
+import { ImgurlBase64 } from "ibiz-core";
 
 @Component({
     components: {},
@@ -107,12 +108,14 @@ export default class APPHistoryList extends Vue {
      * @returns {void}
      * @memberof APPHistoryList
      */
-    public handler() {
+    public async handler() {
           for (let index = 0; index < this.items.length; index++) {
             const item = this.items[index];
             item.actorText = this.getUserReName(item.actor);
             if (item.actions)item.method = this.getActionName(item.actions);
-            if(item.comment)item.comment = this.parseImgUrl(item.comment);
+            if(item.comment){
+              item.comment = await this.getImgUrlBase64(item.comment);
+            }
             if (item?.item && item.item.length > 0) {
               for (let index = 0; index < item.item.length; index++) {
                   const _item = item.item[index];
@@ -146,6 +149,32 @@ export default class APPHistoryList extends Vue {
         });
         return parsehtml
     }
+
+    /**
+     * 获取图片Base64
+     * 
+     * @memberof APPHistoryList
+     */
+    public async getImgUrlBase64(html: any){
+        let imgs:Array<any>|null = html.match(/<img.*?(?:>|\/>)/gi)!=null? html.match(/<img.*?(?:>|\/>)/gi):[];
+        if(imgs && imgs.length>0){
+             for (let item of imgs) {
+                if(item.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)!=null){
+                    let src:any = item.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)[0];
+                    let match:any = src.substring(5,src.length-1);
+                    let parseUrl = "";
+                    if(match.indexOf('{') === 0 && match.indexOf('}')){
+                      parseUrl = `${this.downloadUrl}/${match.substring(1,match.length-1).split('.')[0]}`;
+                      src = await ImgurlBase64.getInstance().getImgURLOfBase64(parseUrl);
+                      const image = item.replace(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig, 'src="'+src+'"');
+                      html = html.replace(item, image);
+                    }
+                }
+            }
+        }
+        return html;
+    }
+
 
     /**
      * 按钮文本
