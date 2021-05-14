@@ -113,12 +113,15 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     @Transactional
     public void createBatch(List<Bug> list) {
-        if(!bugRuntime.isRtmodel()){
+        if(bugRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         for (Bug et : list) {
             getProxyService().save(et);
         }
+        }
+        
     }
 
     @Override
@@ -137,10 +140,13 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     @Transactional
     public void updateBatch(List<Bug> list) {
-        if(!bugRuntime.isRtmodel()){
+        if(bugRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -165,9 +171,14 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
+        if(bugRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         for (Long id : idList) {
             getProxyService().removeById(id);
         }
+        }
+        
     }
 
     @Override

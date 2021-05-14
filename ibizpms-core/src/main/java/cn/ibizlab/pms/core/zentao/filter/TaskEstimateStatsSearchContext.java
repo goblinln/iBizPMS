@@ -27,6 +27,7 @@ import cn.ibizlab.pms.core.zentao.domain.TaskEstimateStats;
 @Data
 public class TaskEstimateStatsSearchContext extends QueryWrapperContext<TaskEstimateStats> {
 
+                
 	private Long n_id_eq;//[编号]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;

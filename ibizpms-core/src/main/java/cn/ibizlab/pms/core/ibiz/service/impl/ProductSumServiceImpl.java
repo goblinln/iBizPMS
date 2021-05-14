@@ -75,7 +75,12 @@ public class ProductSumServiceImpl extends ServiceImpl<ProductSumMapper, Product
     @Override
     @Transactional
     public void createBatch(List<ProductSum> list) {
+        if(productsumRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
         this.saveBatch(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -91,7 +96,12 @@ public class ProductSumServiceImpl extends ServiceImpl<ProductSumMapper, Product
     @Override
     @Transactional
     public void updateBatch(List<ProductSum> list) {
+        if(productsumRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -116,7 +126,12 @@ public class ProductSumServiceImpl extends ServiceImpl<ProductSumMapper, Product
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
+        if(productsumRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

@@ -27,30 +27,37 @@ import cn.ibizlab.pms.core.zentao.domain.TestResult;
 @Data
 public class TestResultSearchContext extends QueryWrapperContext<TestResult> {
 
+                
 	private Long n_id_eq;//[编号]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;
     }
+                
 	private Long n_product_eq;//[所属产品]
 	public void setN_product_eq(Long n_product_eq) {
         this.n_product_eq = n_product_eq;
     }
+                
 	private Long n_product_like;//[所属产品]
 	public void setN_product_like(Long n_product_like) {
         this.n_product_like = n_product_like;
     }
+                
 	private Long n_job_eq;//[构建任务]
 	public void setN_job_eq(Long n_job_eq) {
         this.n_job_eq = n_job_eq;
     }
+                
 	private Long n_case_eq;//[用例]
 	public void setN_case_eq(Long n_case_eq) {
         this.n_case_eq = n_case_eq;
     }
+                
 	private Long n_run_eq;//[测试执行]
 	public void setN_run_eq(Long n_run_eq) {
         this.n_run_eq = n_run_eq;
     }
+                
 	private Long n_compile_eq;//[代码编译]
 	public void setN_compile_eq(Long n_compile_eq) {
         this.n_compile_eq = n_compile_eq;

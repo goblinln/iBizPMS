@@ -27,10 +27,12 @@ import cn.ibizlab.pms.core.zentao.domain.Group;
 @Data
 public class GroupSearchContext extends QueryWrapperContext<Group> {
 
+                
 	private Long n_id_eq;//[ID]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;
     }
+                
 	private String n_name_like;//[分组名称]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;

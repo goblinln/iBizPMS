@@ -81,10 +81,13 @@ public class IbizproProjectMonthlyServiceImpl extends ServiceImpl<IbizproProject
     @Override
     @Transactional
     public void createBatch(List<IbizproProjectMonthly> list) {
-        if(!ibizproprojectmonthlyRuntime.isRtmodel()){
+        if(ibizproprojectmonthlyRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         this.saveBatch(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -103,10 +106,13 @@ public class IbizproProjectMonthlyServiceImpl extends ServiceImpl<IbizproProject
     @Override
     @Transactional
     public void updateBatch(List<IbizproProjectMonthly> list) {
-        if(!ibizproprojectmonthlyRuntime.isRtmodel()){
+        if(ibizproprojectmonthlyRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -131,7 +137,12 @@ public class IbizproProjectMonthlyServiceImpl extends ServiceImpl<IbizproProject
     @Override
     @Transactional
     public void removeBatch(Collection<String> idList) {
+        if(ibizproprojectmonthlyRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

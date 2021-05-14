@@ -27,10 +27,12 @@ import cn.ibizlab.pms.core.zentao.domain.ImClient;
 @Data
 public class ImClientSearchContext extends QueryWrapperContext<ImClient> {
 
+                
 	private String n_status_eq;//[status]
 	public void setN_status_eq(String n_status_eq) {
         this.n_status_eq = n_status_eq;
     }
+                
 	private Long n_id_eq;//[id]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;

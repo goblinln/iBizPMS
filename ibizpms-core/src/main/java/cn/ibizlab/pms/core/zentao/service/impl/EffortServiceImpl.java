@@ -75,7 +75,12 @@ public class EffortServiceImpl extends ServiceImpl<EffortMapper, Effort> impleme
     @Override
     @Transactional
     public void createBatch(List<Effort> list) {
+        if(effortRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
         this.saveBatch(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -91,7 +96,12 @@ public class EffortServiceImpl extends ServiceImpl<EffortMapper, Effort> impleme
     @Override
     @Transactional
     public void updateBatch(List<Effort> list) {
+        if(effortRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -116,7 +126,12 @@ public class EffortServiceImpl extends ServiceImpl<EffortMapper, Effort> impleme
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
+        if(effortRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

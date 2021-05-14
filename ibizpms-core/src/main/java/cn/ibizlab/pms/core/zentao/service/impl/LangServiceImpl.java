@@ -75,7 +75,12 @@ public class LangServiceImpl extends ServiceImpl<LangMapper, Lang> implements IL
     @Override
     @Transactional
     public void createBatch(List<Lang> list) {
+        if(langRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
         this.saveBatch(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -91,7 +96,12 @@ public class LangServiceImpl extends ServiceImpl<LangMapper, Lang> implements IL
     @Override
     @Transactional
     public void updateBatch(List<Lang> list) {
+        if(langRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -116,7 +126,12 @@ public class LangServiceImpl extends ServiceImpl<LangMapper, Lang> implements IL
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
+        if(langRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

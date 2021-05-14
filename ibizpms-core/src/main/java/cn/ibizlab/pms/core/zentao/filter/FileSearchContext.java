@@ -27,26 +27,32 @@ import cn.ibizlab.pms.core.zentao.domain.File;
 @Data
 public class FileSearchContext extends QueryWrapperContext<File> {
 
+                
 	private Long n_objectid_eq;//[对象ID]
 	public void setN_objectid_eq(Long n_objectid_eq) {
         this.n_objectid_eq = n_objectid_eq;
     }
+                
 	private String n_objecttype_eq;//[对象类型]
 	public void setN_objecttype_eq(String n_objecttype_eq) {
         this.n_objecttype_eq = n_objecttype_eq;
     }
+                
 	private String n_title_like;//[标题]
 	public void setN_title_like(String n_title_like) {
         this.n_title_like = n_title_like;
     }
+                
 	private Long n_id_eq;//[id]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;
     }
+                
 	private String n_extra_eq;//[备注]
 	public void setN_extra_eq(String n_extra_eq) {
         this.n_extra_eq = n_extra_eq;
     }
+                
 	private String n_extra_noteq;//[备注]
 	public void setN_extra_noteq(String n_extra_noteq) {
         this.n_extra_noteq = n_extra_noteq;

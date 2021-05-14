@@ -27,10 +27,12 @@ import cn.ibizlab.pms.core.zentao.domain.Lang;
 @Data
 public class LangSearchContext extends QueryWrapperContext<Lang> {
 
+                
 	private Long n_id_eq;//[id]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;
     }
+                
 	private String n_system_eq;//[system]
 	public void setN_system_eq(String n_system_eq) {
         this.n_system_eq = n_system_eq;

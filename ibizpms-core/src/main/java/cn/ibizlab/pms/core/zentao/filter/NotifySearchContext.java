@@ -27,6 +27,7 @@ import cn.ibizlab.pms.core.zentao.domain.Notify;
 @Data
 public class NotifySearchContext extends QueryWrapperContext<Notify> {
 
+                
 	private Long n_id_eq;//[id]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;

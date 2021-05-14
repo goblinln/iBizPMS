@@ -27,50 +27,61 @@ import cn.ibizlab.pms.core.ibiz.domain.PRODUCTTEAM;
 @Data
 public class PRODUCTTEAMSearchContext extends QueryWrapperContext<PRODUCTTEAM> {
 
+                
 	private String n_teamstatus_eq;//[成员状态]
 	public void setN_teamstatus_eq(String n_teamstatus_eq) {
         this.n_teamstatus_eq = n_teamstatus_eq;
     }
+                
 	private String n_account_eq;//[用户]
 	public void setN_account_eq(String n_account_eq) {
         this.n_account_eq = n_account_eq;
     }
+                
 	private String n_account_like;//[用户]
 	public void setN_account_like(String n_account_like) {
         this.n_account_like = n_account_like;
     }
+                
     @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
     @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_join_gtandeq;//[加盟日]
 	public void setN_join_gtandeq(Timestamp n_join_gtandeq) {
         this.n_join_gtandeq = n_join_gtandeq;
     }
+                
     @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
     @JSONField(format="yyyy-MM-dd")
 	private Timestamp n_end_ltandeq;//[结束时间]
 	public void setN_end_ltandeq(Timestamp n_end_ltandeq) {
         this.n_end_ltandeq = n_end_ltandeq;
     }
+                
 	private String n_type_eq;//[团队类型]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;
     }
+                
 	private Long n_id_eq;//[编号]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;
     }
+                
 	private String n_leadingcadre_eq;//[当前负责人]
 	public void setN_leadingcadre_eq(String n_leadingcadre_eq) {
         this.n_leadingcadre_eq = n_leadingcadre_eq;
     }
+                
 	private String n_limited_eq;//[受限用户]
 	public void setN_limited_eq(String n_limited_eq) {
         this.n_limited_eq = n_limited_eq;
     }
+                
 	private Long n_root_eq;//[产品编号]
 	public void setN_root_eq(Long n_root_eq) {
         this.n_root_eq = n_root_eq;
     }
+                
 	private String n_root_in;//[产品编号]
 	public void setN_root_in(String n_root_in) {
         this.n_root_in = n_root_in;

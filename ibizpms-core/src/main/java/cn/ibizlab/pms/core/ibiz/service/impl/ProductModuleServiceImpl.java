@@ -86,12 +86,15 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
     @Override
     @Transactional
     public void createBatch(List<ProductModule> list) {
-        if(!productmoduleRuntime.isRtmodel()){
+        if(productmoduleRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         for (ProductModule et : list) {
             getProxyService().save(et);
         }
+        }
+        
     }
 
     @Override
@@ -110,12 +113,15 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
     @Override
     @Transactional
     public void updateBatch(List<ProductModule> list) {
-        if(!productmoduleRuntime.isRtmodel()){
+        if(productmoduleRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         for (ProductModule et : list) {
             getProxyService().update(et);
         }
+        }
+        
     }
 
     @Override
@@ -140,7 +146,12 @@ public class ProductModuleServiceImpl extends ServiceImpl<ProductModuleMapper, P
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
+        if(productmoduleRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

@@ -78,9 +78,14 @@ public class SysUpdateLogServiceImpl extends ServiceImpl<SysUpdateLogMapper, Sys
     @Override
     @Transactional
     public void createBatch(List<SysUpdateLog> list) {
+        if(sysupdatelogRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
         for (SysUpdateLog et : list) {
             getProxyService().save(et);
         }
+        }
+        
     }
 
     @Override
@@ -96,7 +101,12 @@ public class SysUpdateLogServiceImpl extends ServiceImpl<SysUpdateLogMapper, Sys
     @Override
     @Transactional
     public void updateBatch(List<SysUpdateLog> list) {
+        if(sysupdatelogRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -122,8 +132,13 @@ public class SysUpdateLogServiceImpl extends ServiceImpl<SysUpdateLogMapper, Sys
     @Override
     @Transactional
     public void removeBatch(Collection<String> idList) {
+        if(sysupdatelogRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         sysupdatefeaturesService.removeBySysupdatelogid(idList);
         removeByIds(idList);
+        }
+        
     }
 
     @Override

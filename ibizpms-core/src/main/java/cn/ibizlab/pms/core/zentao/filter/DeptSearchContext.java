@@ -27,22 +27,27 @@ import cn.ibizlab.pms.core.zentao.domain.Dept;
 @Data
 public class DeptSearchContext extends QueryWrapperContext<Dept> {
 
+                
 	private Long n_id_eq;//[id]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;
     }
+                
 	private String n_name_like;//[部门名称]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;
     }
+                
 	private String n_parentname_eq;//[上级部门]
 	public void setN_parentname_eq(String n_parentname_eq) {
         this.n_parentname_eq = n_parentname_eq;
     }
+                
 	private String n_parentname_like;//[上级部门]
 	public void setN_parentname_like(String n_parentname_like) {
         this.n_parentname_like = n_parentname_like;
     }
+                
 	private Long n_parent_eq;//[parent]
 	public void setN_parent_eq(Long n_parent_eq) {
         this.n_parent_eq = n_parent_eq;

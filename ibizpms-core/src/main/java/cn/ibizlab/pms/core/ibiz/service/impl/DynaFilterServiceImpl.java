@@ -75,7 +75,12 @@ public class DynaFilterServiceImpl extends ServiceImpl<DynaFilterMapper, DynaFil
     @Override
     @Transactional
     public void createBatch(List<DynaFilter> list) {
+        if(dynafilterRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
         this.saveBatch(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -91,7 +96,12 @@ public class DynaFilterServiceImpl extends ServiceImpl<DynaFilterMapper, DynaFil
     @Override
     @Transactional
     public void updateBatch(List<DynaFilter> list) {
+        if(dynafilterRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -116,7 +126,12 @@ public class DynaFilterServiceImpl extends ServiceImpl<DynaFilterMapper, DynaFil
     @Override
     @Transactional
     public void removeBatch(Collection<String> idList) {
+        if(dynafilterRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

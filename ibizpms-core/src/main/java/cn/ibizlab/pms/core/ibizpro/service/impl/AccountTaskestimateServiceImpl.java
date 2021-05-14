@@ -75,7 +75,12 @@ public class AccountTaskestimateServiceImpl extends ServiceImpl<AccountTaskestim
     @Override
     @Transactional
     public void createBatch(List<AccountTaskestimate> list) {
+        if(accounttaskestimateRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
         this.saveBatch(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -91,7 +96,12 @@ public class AccountTaskestimateServiceImpl extends ServiceImpl<AccountTaskestim
     @Override
     @Transactional
     public void updateBatch(List<AccountTaskestimate> list) {
+        if(accounttaskestimateRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -116,7 +126,12 @@ public class AccountTaskestimateServiceImpl extends ServiceImpl<AccountTaskestim
     @Override
     @Transactional
     public void removeBatch(Collection<String> idList) {
+        if(accounttaskestimateRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

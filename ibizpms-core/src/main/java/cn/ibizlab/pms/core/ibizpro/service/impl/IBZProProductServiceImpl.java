@@ -81,7 +81,12 @@ public class IBZProProductServiceImpl extends ServiceImpl<IBZProProductMapper, I
     @Override
     @Transactional
     public void createBatch(List<IBZProProduct> list) {
+        if(ibzproproductRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
         this.saveBatch(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -97,7 +102,12 @@ public class IBZProProductServiceImpl extends ServiceImpl<IBZProProductMapper, I
     @Override
     @Transactional
     public void updateBatch(List<IBZProProduct> list) {
+        if(ibzproproductRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -122,7 +132,12 @@ public class IBZProProductServiceImpl extends ServiceImpl<IBZProProductMapper, I
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
+        if(ibzproproductRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

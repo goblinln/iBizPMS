@@ -27,22 +27,27 @@ import cn.ibizlab.pms.core.ibiz.domain.IbzLib;
 @Data
 public class IbzLibSearchContext extends QueryWrapperContext<IbzLib> {
 
+                
 	private Long n_id_eq;//[编号]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;
     }
+                
 	private String n_addedby_eq;//[由谁创建]
 	public void setN_addedby_eq(String n_addedby_eq) {
         this.n_addedby_eq = n_addedby_eq;
     }
+                
 	private String n_name_like;//[名称]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;
     }
+                
 	private String n_type_eq;//[类型]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;
     }
+                
 	private String n_lasteditedby_eq;//[最后编辑人]
 	public void setN_lasteditedby_eq(String n_lasteditedby_eq) {
         this.n_lasteditedby_eq = n_lasteditedby_eq;

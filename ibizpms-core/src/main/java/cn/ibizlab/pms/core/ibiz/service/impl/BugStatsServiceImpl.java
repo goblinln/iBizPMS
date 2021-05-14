@@ -84,10 +84,13 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
     @Override
     @Transactional
     public void createBatch(List<BugStats> list) {
-        if(!bugstatsRuntime.isRtmodel()){
+        if(bugstatsRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         this.saveBatch(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -106,10 +109,13 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
     @Override
     @Transactional
     public void updateBatch(List<BugStats> list) {
-        if(!bugstatsRuntime.isRtmodel()){
+        if(bugstatsRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -134,7 +140,12 @@ public class BugStatsServiceImpl extends ServiceImpl<BugStatsMapper, BugStats> i
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
+        if(bugstatsRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

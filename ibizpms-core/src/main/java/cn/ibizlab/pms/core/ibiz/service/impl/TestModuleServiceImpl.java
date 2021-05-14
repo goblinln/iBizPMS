@@ -83,12 +83,15 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     @Override
     @Transactional
     public void createBatch(List<TestModule> list) {
-        if(!testmoduleRuntime.isRtmodel()){
+        if(testmoduleRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         for (TestModule et : list) {
             getProxyService().save(et);
         }
+        }
+        
     }
 
     @Override
@@ -107,12 +110,15 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     @Override
     @Transactional
     public void updateBatch(List<TestModule> list) {
-        if(!testmoduleRuntime.isRtmodel()){
+        if(testmoduleRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         for (TestModule et : list) {
             getProxyService().update(et);
         }
+        }
+        
     }
 
     @Override
@@ -137,7 +143,12 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
+        if(testmoduleRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

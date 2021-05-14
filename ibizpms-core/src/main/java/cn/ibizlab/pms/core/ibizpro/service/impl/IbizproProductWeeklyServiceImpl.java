@@ -81,10 +81,13 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
     @Override
     @Transactional
     public void createBatch(List<IbizproProductWeekly> list) {
-        if(!ibizproproductweeklyRuntime.isRtmodel()){
+        if(ibizproproductweeklyRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         this.saveBatch(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -103,10 +106,13 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
     @Override
     @Transactional
     public void updateBatch(List<IbizproProductWeekly> list) {
-        if(!ibizproproductweeklyRuntime.isRtmodel()){
+        if(ibizproproductweeklyRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
             list.forEach(item->fillParentData(item));
-        }
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -131,7 +137,12 @@ public class IbizproProductWeeklyServiceImpl extends ServiceImpl<IbizproProductW
     @Override
     @Transactional
     public void removeBatch(Collection<Long> idList) {
+        if(ibizproproductweeklyRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

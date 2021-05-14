@@ -27,14 +27,17 @@ import cn.ibizlab.pms.core.report.domain.IbzReportRoleConfig;
 @Data
 public class IbzReportRoleConfigSearchContext extends QueryWrapperContext<IbzReportRoleConfig> {
 
+                
 	private String n_ibz_report_role_configname_like;//[汇报角色配置名称]
 	public void setN_ibz_report_role_configname_like(String n_ibz_report_role_configname_like) {
         this.n_ibz_report_role_configname_like = n_ibz_report_role_configname_like;
     }
+                
 	private String n_ibz_report_role_configid_eq;//[汇报角色配置标识]
 	public void setN_ibz_report_role_configid_eq(String n_ibz_report_role_configid_eq) {
         this.n_ibz_report_role_configid_eq = n_ibz_report_role_configid_eq;
     }
+                
 	private String n_type_eq;//[类型]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;

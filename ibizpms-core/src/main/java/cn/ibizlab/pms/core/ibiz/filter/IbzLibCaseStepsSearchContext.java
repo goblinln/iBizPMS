@@ -27,26 +27,32 @@ import cn.ibizlab.pms.core.ibiz.domain.IbzLibCaseSteps;
 @Data
 public class IbzLibCaseStepsSearchContext extends QueryWrapperContext<IbzLibCaseSteps> {
 
+                
 	private String n_expect_like;//[预期]
 	public void setN_expect_like(String n_expect_like) {
         this.n_expect_like = n_expect_like;
     }
+                
 	private Long n_id_eq;//[编号]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;
     }
+                
 	private String n_type_eq;//[类型]
 	public void setN_type_eq(String n_type_eq) {
         this.n_type_eq = n_type_eq;
     }
+                
 	private Integer n_version_eq;//[版本]
 	public void setN_version_eq(Integer n_version_eq) {
         this.n_version_eq = n_version_eq;
     }
+                
 	private Long n_parent_eq;//[编号]
 	public void setN_parent_eq(Long n_parent_eq) {
         this.n_parent_eq = n_parent_eq;
     }
+                
 	private Long n_case_eq;//[用例编号]
 	public void setN_case_eq(Long n_case_eq) {
         this.n_case_eq = n_case_eq;

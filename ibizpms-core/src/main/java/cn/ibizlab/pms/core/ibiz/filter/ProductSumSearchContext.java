@@ -27,14 +27,17 @@ import cn.ibizlab.pms.core.ibiz.domain.ProductSum;
 @Data
 public class ProductSumSearchContext extends QueryWrapperContext<ProductSum> {
 
+                
 	private String n_po_eq;//[产品负责人]
 	public void setN_po_eq(String n_po_eq) {
         this.n_po_eq = n_po_eq;
     }
+                
 	private Long n_id_eq;//[主键标识]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;
     }
+                
 	private Long n_plan_eq;//[计划]
 	public void setN_plan_eq(Long n_plan_eq) {
         this.n_plan_eq = n_plan_eq;

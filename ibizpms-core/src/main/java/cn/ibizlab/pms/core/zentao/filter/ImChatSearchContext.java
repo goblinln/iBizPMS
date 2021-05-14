@@ -27,14 +27,17 @@ import cn.ibizlab.pms.core.zentao.domain.ImChat;
 @Data
 public class ImChatSearchContext extends QueryWrapperContext<ImChat> {
 
+                
 	private String n_public_eq;//[public]
 	public void setN_public_eq(String n_public_eq) {
         this.n_public_eq = n_public_eq;
     }
+                
 	private Long n_id_eq;//[id]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;
     }
+                
 	private String n_name_like;//[name]
 	public void setN_name_like(String n_name_like) {
         this.n_name_like = n_name_like;

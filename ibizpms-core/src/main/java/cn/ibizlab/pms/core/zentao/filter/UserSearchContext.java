@@ -27,34 +27,42 @@ import cn.ibizlab.pms.core.zentao.domain.User;
 @Data
 public class UserSearchContext extends QueryWrapperContext<User> {
 
+                
 	private String n_account_in;//[账户]
 	public void setN_account_in(String n_account_in) {
         this.n_account_in = n_account_in;
     }
+                
 	private String n_account_notin;//[账户]
 	public void setN_account_notin(String n_account_notin) {
         this.n_account_notin = n_account_notin;
     }
+                
 	private String n_realname_like;//[真实姓名]
 	public void setN_realname_like(String n_realname_like) {
         this.n_realname_like = n_realname_like;
     }
+                
 	private Integer n_dept_eq;//[所属部门]
 	public void setN_dept_eq(Integer n_dept_eq) {
         this.n_dept_eq = n_dept_eq;
     }
+                
 	private String n_role_eq;//[职位]
 	public void setN_role_eq(String n_role_eq) {
         this.n_role_eq = n_role_eq;
     }
+                
 	private String n_clientstatus_eq;//[clientStatus]
 	public void setN_clientstatus_eq(String n_clientstatus_eq) {
         this.n_clientstatus_eq = n_clientstatus_eq;
     }
+                
 	private String n_gender_eq;//[性别]
 	public void setN_gender_eq(String n_gender_eq) {
         this.n_gender_eq = n_gender_eq;
     }
+                
 	private Long n_id_eq;//[ID]
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;

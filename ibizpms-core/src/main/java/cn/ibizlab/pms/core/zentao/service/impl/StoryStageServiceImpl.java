@@ -81,7 +81,12 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Override
     @Transactional
     public void createBatch(List<StoryStage> list) {
+        if(storystageRuntime.isRtmodel()){
+            list.forEach(item -> getProxyService().create(item));
+        }else{
         this.saveBatch(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -97,7 +102,12 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Override
     @Transactional
     public void updateBatch(List<StoryStage> list) {
+        if(storystageRuntime.isRtmodel()){
+            list.forEach(item-> getProxyService().update(item));
+        }else{
         updateBatchById(list, batchSize);
+        }
+        
     }
 
     @Override
@@ -122,7 +132,12 @@ public class StoryStageServiceImpl extends ServiceImpl<StoryStageMapper, StorySt
     @Override
     @Transactional
     public void removeBatch(Collection<String> idList) {
+        if(storystageRuntime.isRtmodel()){
+            idList.forEach(id->getProxyService().remove(id));
+        }else{
         removeByIds(idList);
+        }
+        
     }
 
     @Override

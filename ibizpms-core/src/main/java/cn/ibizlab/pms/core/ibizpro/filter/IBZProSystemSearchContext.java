@@ -27,10 +27,12 @@ import cn.ibizlab.pms.core.ibizpro.domain.IBZProSystem;
 @Data
 public class IBZProSystemSearchContext extends QueryWrapperContext<IBZProSystem> {
 
+                
 	private String n_ibzpro_systemid_eq;//[运行生产系统标识]
 	public void setN_ibzpro_systemid_eq(String n_ibzpro_systemid_eq) {
         this.n_ibzpro_systemid_eq = n_ibzpro_systemid_eq;
     }
+                
 	private String n_ibzpro_systemname_like;//[运行生产系统名称]
 	public void setN_ibzpro_systemname_like(String n_ibzpro_systemname_like) {
         this.n_ibzpro_systemname_like = n_ibzpro_systemname_like;

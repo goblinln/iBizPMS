@@ -27,14 +27,17 @@ import cn.ibizlab.pms.core.ibiz.domain.IbzAgent;
 @Data
 public class IbzAgentSearchContext extends QueryWrapperContext<IbzAgent> {
 
+                
 	private String n_createmanname_eq;//[创建人姓名]
 	public void setN_createmanname_eq(String n_createmanname_eq) {
         this.n_createmanname_eq = n_createmanname_eq;
     }
+                
 	private Long n_ibz_agentid_eq;//[代理标识]
 	public void setN_ibz_agentid_eq(Long n_ibz_agentid_eq) {
         this.n_ibz_agentid_eq = n_ibz_agentid_eq;
     }
+                
 	private String n_ibz_agentname_like;//[代理名称]
 	public void setN_ibz_agentname_like(String n_ibz_agentname_like) {
         this.n_ibz_agentname_like = n_ibz_agentname_like;
