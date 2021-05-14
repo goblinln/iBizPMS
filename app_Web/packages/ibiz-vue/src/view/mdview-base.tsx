@@ -306,7 +306,7 @@ export class MDViewBase extends MainViewBase {
      * @memberof MDViewBase
      */
      public renderQuickSearch() {
-        if (!this.viewInstance?.enableQuickSearch && this.isExpandSearchForm) {
+        if (!this.viewInstance?.enableQuickSearch || this.isExpandSearchForm) {
             return;
         }
         if(this.viewInstance?.viewStyle != 'STYLE2'){
