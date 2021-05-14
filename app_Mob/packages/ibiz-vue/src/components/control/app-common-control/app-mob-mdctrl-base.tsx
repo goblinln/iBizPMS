@@ -291,7 +291,8 @@ export class AppMobMDCtrlBase extends MobMDCtrlControlBase {
      * @memberof AppMobMDCtrlBase
      */
     public renderSelectMDCtrl() {
-        return !this.isSingleSelect ?
+        return this.items.length > 0 
+        ? (!this.isSingleSelect ?
             <ion-list class="pickUpList">
                 {this.items.map((item: any) => {
                     return <ion-item class="app-mob-mdctrl-item">
@@ -310,7 +311,8 @@ export class AppMobMDCtrlBase extends MobMDCtrlControlBase {
                         </ion-item>
                     })}
                 </ion-radio-group>
-            </div>
+            </div>)
+        : (!this.isFirstLoad ? <div class="no-data">暂无数据</div>:null)
     }
 
 
