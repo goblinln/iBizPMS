@@ -1322,7 +1322,7 @@
       "columnName" : "TOTALCONSUMED",
       "dBType" : "MYSQL5",
       "name" : "TOTALCONSUMED",
-      "queryCodeExp" : "(SELECT round(SUM(CONSUMED),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1'))",
+      "queryCodeExp" : "(SELECT round(SUM(CONSUMED),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1') and ZT_TASK.SRFDCID = t1.SRFDCID)",
       "standardColumnName" : "`TOTALCONSUMED`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2128,7 +2128,7 @@
       "columnName" : "BUGCNT",
       "dBType" : "MYSQL5",
       "name" : "BUGCNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND DELETED = '0')",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = t1.`ID` AND DELETED = '0' and ZT_BUG.SRFDCID = t1.SRFDCID)",
       "standardColumnName" : "`BUGCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2445,7 +2445,7 @@
       "columnName" : "TOTALWH",
       "dBType" : "MYSQL5",
       "name" : "TOTALWH",
-      "queryCodeExp" : "((SELECT round(SUM( `LEFT` ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) AND `status` in ('doing','wait','pause')) + (SELECT round(SUM( CONSUMED ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' )))",
+      "queryCodeExp" : "((SELECT round(SUM( `LEFT` ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) AND `status` in ('doing','wait','pause') and ZT_TASK.SRFDCID = t1.SRFDCID) + (SELECT round(SUM( CONSUMED ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) and ZT_TASK.SRFDCID = t1.SRFDCID))",
       "standardColumnName" : "`TOTALWH`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2528,7 +2528,7 @@
       "columnName" : "TOTALHOURS",
       "dBType" : "MYSQL5",
       "name" : "TOTALHOURS",
-      "queryCodeExp" : "(select sum(days * hours)  from zt_team tt where type = 'project' and root = t1.id)",
+      "queryCodeExp" : "(select sum(days * hours)  from zt_team tt where type = 'project' and root = t1.id and tt.SRFDCID = t1.SRFDCID)",
       "standardColumnName" : "`TOTALHOURS`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2868,7 +2868,7 @@
       "columnName" : "TOTALLEFT",
       "dBType" : "MYSQL5",
       "name" : "TOTALLEFT",
-      "queryCodeExp" : "(SELECT round(SUM(`LEFT`),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' and `status` in ('doing','wait','pause') AND ( `parent` = '' or `parent` = '0' or `parent` = '-1'))",
+      "queryCodeExp" : "(SELECT round(SUM(`LEFT`),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' and `status` in ('doing','wait','pause') AND ( `parent` = '' or `parent` = '0' or `parent` = '-1') and ZT_TASK.SRFDCID = t1.SRFDCID)",
       "standardColumnName" : "`TOTALLEFT`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3409,7 +3409,7 @@
       "columnName" : "TASKCNT",
       "dBType" : "MYSQL5",
       "name" : "TASKCNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0')",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' and ZT_TASK.SRFDCID = t1.SRFDCID)",
       "standardColumnName" : "`TASKCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -4388,7 +4388,7 @@
       "columnName" : "STORYCNT",
       "dBType" : "MYSQL5",
       "name" : "STORYCNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE PROJECT = t1.`ID` AND DELETED = '0')",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE PROJECT = t1.`ID` AND DELETED = '0' and ZT_PROJECTSTORY.SRFDCID = t1.SRFDCID)",
       "standardColumnName" : "`STORYCNT`"
     } ],
     "getAllPSDEFValueRules" : [ {

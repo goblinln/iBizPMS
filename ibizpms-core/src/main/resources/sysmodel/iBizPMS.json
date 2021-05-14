@@ -31505,7 +31505,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = %1$s AND `CONFIRMED` = 0 AND DELETED = '0')",
+    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = %1$s AND `CONFIRMED` = 0 AND DELETED = '0' and ZT_BUG.SRFDCID = t1.SRFDCID)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31588,7 +31588,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"(SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= %1$s AND DELETED = '0')",
+    "expression":"(SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= %1$s AND DELETED = '0' and ZT_PRODUCTPLAN.SRFDCID = t1.SRFDCID)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31631,7 +31631,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = %1$s AND `STATUS`='closed' AND DELETED = '0')",
+    "expression":"(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = %1$s AND `STATUS`='closed' AND DELETED = '0' and ZT_STORY.SRFDCID = t1.SRFDCID)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31645,7 +31645,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = %1$s AND DELETED = '0')",
+    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = %1$s AND DELETED = '0' and ZT_BUG.SRFDCID = t1.SRFDCID)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31688,7 +31688,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"(SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= %1$s AND DELETED = '0')",
+    "expression":"(SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= %1$s AND DELETED = '0' and ZT_RELEASE.SRFDCID = t1.SRFDCID)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31732,7 +31732,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = %1$s AND `STATUS` <> 'closed' AND DELETED = '0')",
+    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = %1$s AND `STATUS` <> 'closed' AND DELETED = '0' and ZT_BUG.SRFDCID = t1.SRFDCID)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31879,7 +31879,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = %1$s AND `STATUS`='changed' AND DELETED = '0')",
+    "expression":"(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = %1$s AND `STATUS`='changed' AND DELETED = '0' and ZT_STORY.SRFDCID = t1.SRFDCID)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31893,7 +31893,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = %1$s AND `STATUS` = 'active' AND DELETED = '0')",
+    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = %1$s AND `STATUS` = 'active' AND DELETED = '0' and ZT_BUG.SRFDCID = t1.SRFDCID)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31968,7 +31968,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = %1$s AND `STATUS`='draft' AND DELETED = '0')",
+    "expression":"(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = %1$s AND `STATUS`='draft' AND DELETED = '0' and ZT_STORY.SRFDCID = t1.SRFDCID)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31982,7 +31982,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"(select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0')",
+    "expression":"(select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0' and t.SRFDCID = t1.SRFDCID)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -31996,7 +31996,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"(select count(1) from zt_case t where t.product = t1.id and t.deleted = '0')",
+    "expression":"(select count(1) from zt_case t where t.product = t1.id and t.deleted = '0' and t.SRFDCID = t1.SRFDCID)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32010,7 +32010,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"(select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project where t.product = t1.id and t2.deleted = '0')",
+    "expression":"(select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project where t.product = t1.id and t2.deleted = '0' and zt_projectproduct.SRFDCID = t1.SRFDCID)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32109,7 +32109,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"(select count(1) from zt_build t where t.product = t1.id and t.deleted = '0')",
+    "expression":"(select count(1) from zt_build t where t.product = t1.id and t.deleted = '0' and zt_build.SRFDCID = t1.SRFDCID)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32166,7 +32166,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = %1$s AND `STATUS`='active' AND DELETED = '0')",
+    "expression":"(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = %1$s AND `STATUS`='active' AND DELETED = '0' and ZT_STORY.SRFDCID = t1.SRFDCID)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -34908,7 +34908,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"FLOAT",
-    "expression":"(SELECT round(SUM(CONSUMED),0) FROM ZT_TASK WHERE PROJECT = %1$s AND DELETED = '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1'))",
+    "expression":"(SELECT round(SUM(CONSUMED),0) FROM ZT_TASK WHERE PROJECT = %1$s AND DELETED = '0' AND ( `parent` = '' or `parent` = '0' or `parent` = '-1') and ZT_TASK.SRFDCID = t1.SRFDCID)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35173,7 +35173,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = %1$s AND DELETED = '0')",
+    "expression":"(SELECT COUNT(1) FROM ZT_BUG WHERE PROJECT = %1$s AND DELETED = '0' and ZT_BUG.SRFDCID = t1.SRFDCID)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35273,7 +35273,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"((SELECT round(SUM( `LEFT` ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) AND `status` in ('doing','wait','pause')) + (SELECT round(SUM( CONSUMED ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' )))",
+    "expression":"((SELECT round(SUM( `LEFT` ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) AND `status` in ('doing','wait','pause') and ZT_TASK.SRFDCID = t1.SRFDCID) + (SELECT round(SUM( CONSUMED ),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' AND ( `parent` = '' OR `parent` = '0' OR `parent` = '-1' ) and ZT_TASK.SRFDCID = t1.SRFDCID))",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35301,7 +35301,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"DECIMAL",
-    "expression":"(select sum(days * hours)  from zt_team tt where type = 'project' and root = t1.id)",
+    "expression":"(select sum(days * hours)  from zt_team tt where type = 'project' and root = t1.id and tt.SRFDCID = t1.SRFDCID)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35412,7 +35412,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"FLOAT",
-    "expression":"(SELECT round(SUM(`LEFT`),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' and `status` in ('doing','wait','pause') AND ( `parent` = '' or `parent` = '0' or `parent` = '-1'))",
+    "expression":"(SELECT round(SUM(`LEFT`),0) FROM ZT_TASK WHERE PROJECT = t1.`ID` AND DELETED = '0' and `status` in ('doing','wait','pause') AND ( `parent` = '' or `parent` = '0' or `parent` = '-1') and ZT_TASK.SRFDCID = t1.SRFDCID)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35595,7 +35595,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"(SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = %1$s AND DELETED = '0')",
+    "expression":"(SELECT COUNT(1) FROM ZT_TASK WHERE PROJECT = %1$s AND DELETED = '0' and ZT_TASK.SRFDCID = t1.SRFDCID)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -35918,7 +35918,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"INT",
-    "expression":"(SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE PROJECT = %1$s AND DELETED = '0')",
+    "expression":"(SELECT COUNT(1) FROM ZT_STORY LEFT JOIN ZT_PROJECTSTORY ON ZT_STORY.ID = ZT_PROJECTSTORY.STORY WHERE PROJECT = %1$s AND DELETED = '0' and ZT_PROJECTSTORY.SRFDCID = t1.SRFDCID)",
     "key_field":0,
     "show_order":1000,
     "major_field":0
