@@ -224,7 +224,7 @@ export default class DropDownList extends Vue {
             val = tempVal.length >0?tempVal[0].value:null;
         }
         const type: string = this.$util.typeOf(val);
-        val = Object.is(type, 'null') || Object.is(type, 'undefined') ? null : val;
+        val = Object.is(type, 'null') || Object.is(type, 'undefined') || Object.is(val, '') ? null : val;
         this.$emit('change', val);
     }
 
