@@ -550,8 +550,8 @@
         },
         "getPSEditor" : {
           "editorParams" : {
-            "SRFNAVPARAM.n_product_eq" : "%product%",
-            "SRFNAVCTX.n_product_eq" : "%product%"
+            "SRFNAVPARAM.product" : "%product%",
+            "SRFNAVCTX.product" : "%product%"
           },
           "editorType" : "MOBDROPDOWNLIST",
           "name" : "plan",
@@ -560,14 +560,14 @@
             "path" : "PSSYSAPPS/Mob/PSAPPCODELISTS/CurProductPlan.json"
           },
           "getPSNavigateContexts" : [ {
-            "key" : "N_PRODUCT_EQ",
-            "name" : "N_PRODUCT_EQ",
+            "key" : "PRODUCT",
+            "name" : "PRODUCT",
             "value" : "product",
             "rawValue" : false
           } ],
           "getPSNavigateParams" : [ {
-            "key" : "n_product_eq",
-            "name" : "n_product_eq",
+            "key" : "product",
+            "name" : "product",
             "value" : "product",
             "rawValue" : false
           } ],
