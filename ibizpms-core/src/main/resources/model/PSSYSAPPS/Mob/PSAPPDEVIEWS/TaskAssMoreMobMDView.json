@@ -859,6 +859,9 @@
       "name" : "status1"
     }, {
       "dataType" : 25,
+      "name" : "projectname"
+    }, {
+      "dataType" : 25,
       "name" : "tasktype"
     }, {
       "dataType" : 25,
