@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
+import java.util.UUID;
+
 /**
  * 实体[发布] 自定义服务对象
  */
@@ -22,7 +24,8 @@ public class StorySpecExService extends StorySpecServiceImpl {
 
     @Override
     public boolean create(StorySpec et) {
-        et.setId(DigestUtils.md5DigestAsHex(String.format("%1$s__%2$s", et.getStory(), et.getVersion()).getBytes()));
+        et.setId(UUID.randomUUID().toString());
+        // et.setId(DigestUtils.md5DigestAsHex(String.format("%1$s__%2$s", et.getStory(), et.getVersion()).getBytes()));
         return super.create(et);
     }
 

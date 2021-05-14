@@ -8,6 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Primary;
 import org.springframework.util.DigestUtils;
 
+import java.util.UUID;
+
 /**
  * 实体[burn] 自定义服务对象
  */
@@ -34,7 +36,8 @@ public class BurnExService extends BurnServiceImpl {
 
     @Override
     public boolean create(Burn et) {
-        et.setId(DigestUtils.md5DigestAsHex(String.format("%1$s__%2$s", et.getProject(), et.getTask(),et.getDate()).getBytes()));
+        et.setId(UUID.randomUUID().toString());
+        // et.setId(DigestUtils.md5DigestAsHex(String.format("%1$s__%2$s", et.getProject(), et.getTask(),et.getDate()).getBytes()));
         return super.create(et);
     }
 }

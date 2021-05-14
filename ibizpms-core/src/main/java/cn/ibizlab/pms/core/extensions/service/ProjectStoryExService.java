@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;
 
+import java.util.UUID;
+
 @Slf4j
 @Primary
 @Service("ProjectStoryExService")
@@ -19,7 +21,8 @@ public class ProjectStoryExService extends ProjectStoryServiceImpl {
 
     @Override
     public boolean create(ProjectStory et) {
-        et.setId(DigestUtils.md5DigestAsHex(String.format("%1$s__%2$s", et.getProject(), et.getStory()).getBytes()));
+        et.setId(UUID.randomUUID().toString());
+        // et.setId(DigestUtils.md5DigestAsHex(String.format("%1$s__%2$s", et.getProject(), et.getStory()).getBytes()));
         return super.create(et);
     }
 }
