@@ -305,17 +305,19 @@ export class MDViewBase extends MainViewBase {
      * 
      * @memberof MDViewBase
      */
-     public renderQuickSearch() {
-        if (!this.viewInstance?.enableQuickSearch || this.isExpandSearchForm) {
+    public renderQuickSearch() {
+        if (!this.viewInstance?.enableQuickSearch) {
             return;
         }
         if(this.viewInstance?.viewStyle != 'STYLE2'){
             let enableFilter = this.viewInstance?.enableFilter == true;
+            const popoverClass: string = this.searchFormInstance ? 'searchform-popover' : this.searchBarInstance ? 'searchbar-popover' : '';
             return  <template slot="quickSearch">
                 <i-input class={{'app-quick-search': true, 'width-filter': enableFilter}} style='max-width: 400px;margin-top:4px;padding-left: 24px' search on-on-search={($event: any) => this.onSearch($event)} v-model={this.query} placeholder={this.placeholder} />
-                {enableFilter && <i-button class="filter" icon="ios-funnel" on-click={(e:any)=>{
-                    (AppGlobalService.getInstance() as any).executeGlobalAction('ToggleFilter',undefined, undefined, undefined, e, undefined, this, undefined, );
-                }} />}
+                {enableFilter && <el-popover placement="bottom" popper-class={popoverClass} trigger="click">
+                    <i-button slot="reference" class="filter" icon="ios-funnel" />
+                    {popoverClass && popoverClass != '' ? popoverClass == 'searchform-popover' ? this.renderSearchForm() : this.renderSearchBar() : null}
+                </el-popover>}
             </template>
         }else{
             return <i-input slot="quickSearch" className='app-quick-search' style='max-width: 400px;margin-top:6px;padding-left: 24px' search enter-button on-on-search={($event: any) => this.onSearch($event)} v-model={this.query} placeholder={this.placeholder} />
@@ -349,7 +351,11 @@ export class MDViewBase extends MainViewBase {
             return
         }
         let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.searchFormInstance);
-        return this.$createElement(targetCtrlName, { slot: 'searchForm', props: targetCtrlParam, ref: this.searchFormInstance?.name, on: targetCtrlEvent });
+        if (this.viewInstance?.viewStyle != 'STYLE2') {
+            return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: this.searchFormInstance?.name, on: targetCtrlEvent });
+        } else {
+            return this.$createElement(targetCtrlName, { slot: 'searchForm', props: targetCtrlParam, ref: this.searchFormInstance?.name, on: targetCtrlEvent });
+        }
     }
 
     /**
@@ -378,7 +384,11 @@ export class MDViewBase extends MainViewBase {
         Object.assign(targetCtrlParam.dynamicProps, {
             isExpandSearchForm: this.isExpandSearchForm
         });
-        return this.$createElement(targetCtrlName, { slot: 'searchBar', props: targetCtrlParam, ref: this.searchBarInstance?.name, on: targetCtrlEvent });
+        if (this.viewInstance?.viewStyle != 'STYLE2') {
+            return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: this.searchBarInstance?.name, on: targetCtrlEvent });
+        } else {
+            return this.$createElement(targetCtrlName, { slot: 'searchBar', props: targetCtrlParam, ref: this.searchBarInstance?.name, on: targetCtrlEvent });
+        }
     }
 
     /**

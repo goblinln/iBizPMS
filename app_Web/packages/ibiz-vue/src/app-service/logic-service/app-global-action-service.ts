@@ -436,14 +436,7 @@ export class AppGlobalService {
      */
     public ToggleFilter(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
         if (actionContext.hasOwnProperty('isExpandSearchForm')) {
-            // actionContext.isExpandSearchForm = !actionContext.isExpandSearchForm;
-            if ($event) {
-                if (actionContext.searchFormInstance && actionContext.renderSearchForm && actionContext.renderSearchForm instanceof Function) {
-                    actionContext.$apppopover.openPopover($event, actionContext.renderSearchForm.bind(actionContext), 'bottom-end', true, 800, 300, "searchform-popover");
-                } else if (actionContext.searchBarInstance && actionContext.renderSearchBar && actionContext.renderSearchBar instanceof Function) {
-                    actionContext.$apppopover.openPopover($event, actionContext.renderSearchBar.bind(actionContext), 'bottom-end', true, 800, 300, "searchbar-popover");
-                }
-            }
+            actionContext.isExpandSearchForm = !actionContext.isExpandSearchForm;
         }
     }
 

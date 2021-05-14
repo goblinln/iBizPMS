@@ -1,4 +1,4 @@
-import { IPSAppDataEntity, IPSAppDEField, IPSAppDERS, IPSDEGrid, IPSDEGridDataItem, IPSDEGridEditItem, IPSEditor } from '@ibiz/dynamic-model-api';
+import { IPSAppDataEntity, IPSAppDEField, IPSAppDEGridView, IPSAppDERS, IPSDEFormItem, IPSDEGrid, IPSDEGridDataItem, IPSDEGridEditItem, IPSDESearchForm, IPSEditor } from '@ibiz/dynamic-model-api';
 import { DataTypes, ModelTool } from 'ibiz-core';
 
 export class AppGridModel {
@@ -123,6 +123,17 @@ export class AppGridModel {
             }
           });
         }
+        const searchFormInstance: IPSDESearchForm = ModelTool.findPSControlByType("SEARCHFORM", (this.gridInstance.getParentPSModelObject() as IPSAppDEGridView).getPSControls() || []);
+        if(searchFormInstance) {
+          (searchFormInstance.getPSDEFormItems?.() || []).forEach((formItem: IPSDEFormItem)=>{
+              let temp: any = { name: formItem.id, prop: formItem.id };
+              if(formItem.getPSAppDEField?.()){
+                  temp.dataType = 'QUERYPARAM';
+              }
+              modelArray.push(temp);
+          });
+        }
+
         // 界面主键标识
         const keyField: string = (ModelTool.getAppEntityKeyField(this.gridInstance?.getPSAppDataEntity() as IPSAppDataEntity) as IPSAppDEField)?.codeName || '';
         modelArray.push({

@@ -110,7 +110,7 @@ export class ListViewBase extends MDViewBase {
         }
         const refs: any = this.$refs;
         if (refs[this.listInstance?.name]?.ctrl) {
-            refs[this.listInstance?.name].ctrl.load({ arg: this.context, queryParam: $event });
+            refs[this.listInstance?.name].ctrl.load(this.context);
         }
     }
 

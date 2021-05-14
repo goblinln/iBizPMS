@@ -119,7 +119,7 @@ export class GridViewBase extends MDViewBase {
         }
         const refs: any = this.$refs;
         if (refs[this.gridInstance?.name] && refs[this.gridInstance.name].ctrl) {
-            refs[this.gridInstance?.name].ctrl.load({ arg: this.context, queryParam: $event }, true);
+            refs[this.gridInstance?.name].ctrl.load(this.context, true);
         }
     }
 

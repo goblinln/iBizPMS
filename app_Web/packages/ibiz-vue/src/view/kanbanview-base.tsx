@@ -103,7 +103,7 @@ export class KanbanViewBase extends MDViewBase {
     public onSearch($event: any): void {
         const refs: any = this.$refs;
         if (refs[this.kanbanInstance?.name] && refs[this.kanbanInstance.name].ctrl) {
-            refs[this.kanbanInstance.name].ctrl.load({ arg: this.context, queryParam: $event });
+            refs[this.kanbanInstance.name].ctrl.load(this.context);
         }
     }
 }

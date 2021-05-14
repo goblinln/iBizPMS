@@ -721,8 +721,7 @@ export class GridControlBase extends MDControlBase {
         if (pageReset) {
             this.curPage = 1;
         }
-        const arg: any = opt?.arg ? opt.arg : {};
-        const queryParam: any = opt?.queryParam;
+        const arg: any = { ...opt };
         const page: any = {};
         if (this.isEnablePagingBar) {
             Object.assign(page, { page: this.curPage - 1, size: this.limit });
@@ -740,9 +739,6 @@ export class GridControlBase extends MDControlBase {
         Object.assign(arg, parentdata);
         let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : {};
         Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
-        if(queryParam && Object.keys(queryParam).length >0){
-            Object.assign(tempViewParams, queryParam);
-        }
         // 多实例查询数据处理
         let appEnvironment = AppServiceBase.getInstance().getAppEnvironment();
         if (appEnvironment.bDynamic) {

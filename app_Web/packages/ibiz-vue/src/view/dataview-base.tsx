@@ -105,7 +105,7 @@ export class DataViewBase extends MDViewBase {
         }
         const refs: any = this.$refs;
         if (refs[this.dataViewInstance?.name] && refs[this.dataViewInstance?.name].ctrl) {
-            refs[this.dataViewInstance?.name].ctrl.refresh({ queryParam: $event });
+            refs[this.dataViewInstance?.name].ctrl.refresh();
         }
     }
 }
