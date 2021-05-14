@@ -238,6 +238,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ACCOUNT_EQ",
       "name" : "N_ACCOUNT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -437,6 +438,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZ_REPORTLYID_EQ",
       "name" : "N_IBZ_REPORTLYID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -485,6 +487,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZ_REPORTLYNAME_LIKE",
       "name" : "N_IBZ_REPORTLYNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -781,6 +784,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ISSUBMIT_EQ",
       "name" : "N_ISSUBMIT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

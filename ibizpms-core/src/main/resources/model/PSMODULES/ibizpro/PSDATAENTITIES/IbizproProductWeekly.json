@@ -109,6 +109,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PO_EQ",
       "name" : "N_PO_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -165,6 +166,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBIZPRO_PRODUCTWEEKLYID_EQ",
       "name" : "N_IBIZPRO_PRODUCTWEEKLYID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -479,6 +481,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBIZPRO_PRODUCTDAILYNAME_LIKE",
       "name" : "N_IBIZPRO_PRODUCTDAILYNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -661,10 +664,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PRODUCTNAME_EQ",
       "name" : "N_PRODUCTNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PRODUCTNAME_LIKE",
       "name" : "N_PRODUCTNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -727,6 +732,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PRODUCT_EQ",
       "name" : "N_PRODUCT_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

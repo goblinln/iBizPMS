@@ -186,6 +186,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TEAMSTATUS_EQ",
       "name" : "N_TEAMSTATUS_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -239,10 +240,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ACCOUNT_EQ",
       "name" : "N_ACCOUNT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_ACCOUNT_LIKE",
       "name" : "N_ACCOUNT_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -302,6 +305,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_JOIN_GTANDEQ",
       "name" : "N_JOIN_GTANDEQ",
+      "stdDataType" : 5,
       "valueOP" : "GTANDEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -414,6 +418,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_END_LTANDEQ",
       "name" : "N_END_LTANDEQ",
+      "stdDataType" : 5,
       "valueOP" : "LTANDEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -604,6 +609,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TYPE_EQ",
       "name" : "N_TYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -734,6 +740,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -784,6 +791,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_LEADINGCADRE_EQ",
       "name" : "N_LEADINGCADRE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -841,6 +849,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_LIMITED_EQ",
       "name" : "N_LIMITED_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -982,10 +991,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ROOT_EQ",
       "name" : "N_ROOT_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_ROOT_IN",
       "name" : "N_ROOT_IN",
+      "stdDataType" : 1,
       "valueOP" : "IN"
     } ],
     "getAllPSDEFValueRules" : [ {

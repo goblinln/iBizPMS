@@ -137,6 +137,8 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return taskService.searchByModule(searchContext);    
         if (iPSDEDataSet.getName().equals("ChildDefault"))
             return taskService.searchChildDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("ChildDefaultMore"))
+            return taskService.searchChildDefaultMore(searchContext);    
         if (iPSDEDataSet.getName().equals("ChildTask"))
             return taskService.searchChildTask(searchContext);    
         if (iPSDEDataSet.getName().equals("ChildTaskTree"))
@@ -217,6 +219,8 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return taskService.selectByModule(searchContext);
         if (iPSDataQuery.getName().equals("ChildDefault"))
             return taskService.selectChildDefault(searchContext);
+        if (iPSDataQuery.getName().equals("ChildDefaultMore"))
+            return taskService.selectChildDefaultMore(searchContext);
         if (iPSDataQuery.getName().equals("ChildTask"))
             return taskService.selectChildTask(searchContext);
         if (iPSDataQuery.getName().equals("ChildTaskTree"))
@@ -665,6 +669,9 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         }
         else if (action.equals("searchChildDefault")) {
             return aroundDataSet("ChildDefault", point);
+        }
+        else if (action.equals("searchChildDefaultMore")) {
+            return aroundDataSet("ChildDefaultMore", point);
         }
         else if (action.equals("searchChildTask")) {
             return aroundDataSet("ChildTask", point);

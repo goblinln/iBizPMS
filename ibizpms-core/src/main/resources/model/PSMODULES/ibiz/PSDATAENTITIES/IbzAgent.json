@@ -157,6 +157,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_CREATEMANNAME_EQ",
       "name" : "N_CREATEMANNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -245,6 +246,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZ_AGENTID_EQ",
       "name" : "N_IBZ_AGENTID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -504,6 +506,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZ_AGENTNAME_LIKE",
       "name" : "N_IBZ_AGENTNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {

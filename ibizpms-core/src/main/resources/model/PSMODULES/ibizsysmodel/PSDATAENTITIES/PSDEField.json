@@ -187,6 +187,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_VIEWCOLLEVEL_EQ",
       "name" : "N_VIEWCOLLEVEL_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -273,6 +274,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_DUPCHECKMODE_EQ",
       "name" : "N_DUPCHECKMODE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -372,6 +374,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_UPDATEOVMODE_EQ",
       "name" : "N_UPDATEOVMODE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -458,6 +461,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_DBVALUEMODE_EQ",
       "name" : "N_DBVALUEMODE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -595,6 +599,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_STATEFIELD_EQ",
       "name" : "N_STATEFIELD_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -994,6 +999,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_DVT_EQ",
       "name" : "N_DVT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1131,6 +1137,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_EXTENDMODE_EQ",
       "name" : "N_EXTENDMODE_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1409,6 +1416,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_BIZTAG_EQ",
       "name" : "N_BIZTAG_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1732,6 +1740,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSDEFIELDID_EQ",
       "name" : "N_PSDEFIELDID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1821,6 +1830,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_UNIONKEYVALUE_EQ",
       "name" : "N_UNIONKEYVALUE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1927,6 +1937,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSDEFIELDNAME_LIKE",
       "name" : "N_PSDEFIELDNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2059,6 +2070,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_USERCAT_EQ",
       "name" : "N_USERCAT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2192,6 +2204,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_DEFTYPE_EQ",
       "name" : "N_DEFTYPE_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2280,6 +2293,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_NULLVALORDER_EQ",
       "name" : "N_NULLVALORDER_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2469,6 +2483,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PKEY_EQ",
       "name" : "N_PKEY_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2543,6 +2558,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PREDEFINETYPE_EQ",
       "name" : "N_PREDEFINETYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2747,6 +2763,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_LOCKFLAG_EQ",
       "name" : "N_LOCKFLAG_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2786,6 +2803,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_STRINGCASE_EQ",
       "name" : "N_STRINGCASE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3142,6 +3160,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_DYNAMODELFLAG_EQ",
       "name" : "N_DYNAMODELFLAG_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3262,6 +3281,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_DBVALUEMODE2_EQ",
       "name" : "N_DBVALUEMODE2_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3362,10 +3382,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_VALUEPSDEFNAME_EQ",
       "name" : "N_VALUEPSDEFNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_VALUEPSDEFNAME_LIKE",
       "name" : "N_VALUEPSDEFNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3427,10 +3449,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_DUPCHKPSDEFNAME_EQ",
       "name" : "N_DUPCHKPSDEFNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_DUPCHKPSDEFNAME_LIKE",
       "name" : "N_DUPCHKPSDEFNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3492,10 +3516,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_NO2DUPCHKPSDEFNAME_EQ",
       "name" : "N_NO2DUPCHKPSDEFNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_NO2DUPCHKPSDEFNAME_LIKE",
       "name" : "N_NO2DUPCHKPSDEFNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3557,10 +3583,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_DERPSDEFNAME_EQ",
       "name" : "N_DERPSDEFNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_DERPSDEFNAME_LIKE",
       "name" : "N_DERPSDEFNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3622,10 +3650,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_NO3DUPCHKPSDEFNAME_EQ",
       "name" : "N_NO3DUPCHKPSDEFNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_NO3DUPCHKPSDEFNAME_LIKE",
       "name" : "N_NO3DUPCHKPSDEFNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3687,10 +3717,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSDENAME_EQ",
       "name" : "N_PSDENAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PSDENAME_LIKE",
       "name" : "N_PSDENAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3811,6 +3843,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSDEID_EQ",
       "name" : "N_PSDEID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3874,6 +3907,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_NO2DUPCHKPSDEFID_EQ",
       "name" : "N_NO2DUPCHKPSDEFID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3935,6 +3969,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_DUPCHKPSDEFID_EQ",
       "name" : "N_DUPCHKPSDEFID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3996,6 +4031,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_VALUEPSDEFID_EQ",
       "name" : "N_VALUEPSDEFID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -4057,6 +4093,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_DERPSDEFID_EQ",
       "name" : "N_DERPSDEFID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -4118,6 +4155,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_NO3DUPCHKPSDEFID_EQ",
       "name" : "N_NO3DUPCHKPSDEFID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

@@ -128,6 +128,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_NAME_LIKE",
       "name" : "N_NAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -211,6 +212,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_DEPT_EQ",
       "name" : "N_DEPT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -269,6 +271,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -309,6 +312,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_WORKDAY_EQ",
       "name" : "N_WORKDAY_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -473,6 +477,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ASSIGN_EQ",
       "name" : "N_ASSIGN_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -518,6 +523,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_BEGIN_LTANDEQ",
       "name" : "N_BEGIN_LTANDEQ",
+      "stdDataType" : 5,
       "valueOP" : "LTANDEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -637,6 +643,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_END_GTANDEQ",
       "name" : "N_END_GTANDEQ",
+      "stdDataType" : 5,
       "valueOP" : "GTANDEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -678,10 +685,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PROJECTNAME_EQ",
       "name" : "N_PROJECTNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PROJECTNAME_LIKE",
       "name" : "N_PROJECTNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -744,6 +753,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PROJECT_EQ",
       "name" : "N_PROJECT_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

@@ -886,6 +886,9 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     public List<Task> selectChildDefault(TaskSearchContext context){
         return baseMapper.selectChildDefault(context, context.getSelectCond());
     }
+    public List<Task> selectChildDefaultMore(TaskSearchContext context){
+        return baseMapper.selectChildDefaultMore(context, context.getSelectCond());
+    }
     public List<Task> selectChildTask(TaskSearchContext context){
         return baseMapper.selectChildTask(context, context.getSelectCond());
     }
@@ -1038,6 +1041,15 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     @Override
     public Page<Task> searchChildDefault(TaskSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Task> pages=baseMapper.searchChildDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Task>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 子任务（更多）
+     */
+    @Override
+    public Page<Task> searchChildDefaultMore(TaskSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Task> pages=baseMapper.searchChildDefaultMore(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Task>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

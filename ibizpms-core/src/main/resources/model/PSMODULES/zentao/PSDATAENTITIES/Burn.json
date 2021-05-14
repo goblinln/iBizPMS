@@ -181,10 +181,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ISWEEKEND_EQ",
       "name" : "N_ISWEEKEND_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_ISWEEKEND_IN",
       "name" : "N_ISWEEKEND_IN",
+      "stdDataType" : 25,
       "valueOP" : "IN"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -554,6 +556,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -676,6 +679,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PROJECT_EQ",
       "name" : "N_PROJECT_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -725,6 +729,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TASK_EQ",
       "name" : "N_TASK_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

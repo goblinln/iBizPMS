@@ -111,6 +111,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZPRO_TRANSLATORNAME_LIKE",
       "name" : "N_IBZPRO_TRANSLATORNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -251,6 +252,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZPRO_TRANSLATORID_EQ",
       "name" : "N_IBZPRO_TRANSLATORID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

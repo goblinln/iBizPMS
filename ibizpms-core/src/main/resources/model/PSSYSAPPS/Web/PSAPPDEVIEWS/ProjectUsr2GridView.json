@@ -496,6 +496,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_ID_EQ",
         "name" : "N_ID_EQ",
+        "stdDataType" : 1,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -520,6 +521,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_ID_NOTEQ",
         "name" : "N_ID_NOTEQ",
+        "stdDataType" : 1,
         "valueOP" : "NOTEQ"
       },
       "getPSEditor" : {
@@ -545,6 +547,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_NAME_LIKE",
         "name" : "N_NAME_LIKE",
+        "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
       "getPSEditor" : {
@@ -571,6 +574,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_TYPE_EQ",
         "name" : "N_TYPE_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -603,6 +607,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_STATUS_EQ",
         "name" : "N_STATUS_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -635,6 +640,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_STATUS_NOTEQ",
         "name" : "N_STATUS_NOTEQ",
+        "stdDataType" : 25,
         "valueOP" : "NOTEQ"
       },
       "getPSEditor" : {
@@ -667,6 +673,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_ACCOUNT_EQ",
         "name" : "N_ACCOUNT_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -699,6 +706,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_ACL_EQ",
         "name" : "N_ACL_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -731,6 +739,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_DEPT_EQ",
         "name" : "N_DEPT_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -763,6 +772,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_ISCAT_EQ",
         "name" : "N_ISCAT_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -795,6 +805,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_MANAGEMEMBERS_EQ",
         "name" : "N_MANAGEMEMBERS_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -826,6 +837,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PARENTNAME_EQ",
         "name" : "N_PARENTNAME_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -874,6 +886,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PARENTNAME_LIKE",
         "name" : "N_PARENTNAME_LIKE",
+        "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
       "getPSEditor" : {
@@ -923,6 +936,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PERIOD_EQ",
         "name" : "N_PERIOD_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -955,6 +969,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PM_EQ",
         "name" : "N_PM_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -987,6 +1002,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PO_EQ",
         "name" : "N_PO_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -1019,6 +1035,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PRI_EQ",
         "name" : "N_PRI_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -1051,6 +1068,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_QD_EQ",
         "name" : "N_QD_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -1083,6 +1101,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_RD_EQ",
         "name" : "N_RD_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -1115,6 +1134,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_STATGE_EQ",
         "name" : "N_STATGE_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {

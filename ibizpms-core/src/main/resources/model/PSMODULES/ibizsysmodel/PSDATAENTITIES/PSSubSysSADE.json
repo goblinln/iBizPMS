@@ -103,6 +103,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_SYNCMODELMODE_EQ",
       "name" : "N_SYNCMODELMODE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -257,6 +258,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSUBSYSSADEID_EQ",
       "name" : "N_PSSUBSYSSADEID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -461,6 +463,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_MAJORFLAG_EQ",
       "name" : "N_MAJORFLAG_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -642,6 +645,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_USERCAT_EQ",
       "name" : "N_USERCAT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -735,6 +739,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSUBSYSSADENAME_LIKE",
       "name" : "N_PSSUBSYSSADENAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1054,10 +1059,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSUBSYSSERVICEAPINAME_EQ",
       "name" : "N_PSSUBSYSSERVICEAPINAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PSSUBSYSSERVICEAPINAME_LIKE",
       "name" : "N_PSSUBSYSSERVICEAPINAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1122,6 +1129,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSUBSYSSERVICEAPIID_EQ",
       "name" : "N_PSSUBSYSSERVICEAPIID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

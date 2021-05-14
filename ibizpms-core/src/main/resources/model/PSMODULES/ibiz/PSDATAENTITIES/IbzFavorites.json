@@ -102,6 +102,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TYPE_EQ",
       "name" : "N_TYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -208,6 +209,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZ_FAVORITESID_EQ",
       "name" : "N_IBZ_FAVORITESID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -355,6 +357,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_OBJECTID_EQ",
       "name" : "N_OBJECTID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -394,6 +397,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ACCOUNT_EQ",
       "name" : "N_ACCOUNT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -450,6 +454,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZ_FAVORITESNAME_LIKE",
       "name" : "N_IBZ_FAVORITESNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {

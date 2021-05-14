@@ -222,10 +222,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_DATE_GTANDEQ",
       "name" : "N_DATE_GTANDEQ",
+      "stdDataType" : 5,
       "valueOP" : "GTANDEQ"
     }, {
       "codeName" : "N_DATE_LTANDEQ",
       "name" : "N_DATE_LTANDEQ",
+      "stdDataType" : 5,
       "valueOP" : "LTANDEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -481,6 +483,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_COMMENT_LIKE",
       "name" : "N_COMMENT_LIKE",
+      "stdDataType" : 21,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -572,6 +575,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

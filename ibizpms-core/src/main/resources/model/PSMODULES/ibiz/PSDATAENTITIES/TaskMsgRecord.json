@@ -540,6 +540,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TASKMSGRECORDNAME_LIKE",
       "name" : "N_TASKMSGRECORDNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -632,6 +633,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TASKMSGRECORDID_EQ",
       "name" : "N_TASKMSGRECORDID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

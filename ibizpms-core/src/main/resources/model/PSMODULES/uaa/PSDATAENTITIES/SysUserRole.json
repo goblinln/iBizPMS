@@ -102,6 +102,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_SYS_USER_ROLEID_EQ",
       "name" : "N_SYS_USER_ROLEID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -161,6 +162,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_SYS_ROLEID_EQ",
       "name" : "N_SYS_ROLEID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -223,18 +225,22 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_SYS_ROLENAME_EQ",
       "name" : "N_SYS_ROLENAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_SYS_ROLENAME_IN",
       "name" : "N_SYS_ROLENAME_IN",
+      "stdDataType" : 25,
       "valueOP" : "IN"
     }, {
       "codeName" : "N_SYS_ROLENAME_LIKE",
       "name" : "N_SYS_ROLENAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     }, {
       "codeName" : "N_SYS_ROLENAME_NOTIN",
       "name" : "N_SYS_ROLENAME_NOTIN",
+      "stdDataType" : 25,
       "valueOP" : "NOTIN"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -297,14 +303,17 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_SYS_USERID_EQ",
       "name" : "N_SYS_USERID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_SYS_USERID_IN",
       "name" : "N_SYS_USERID_IN",
+      "stdDataType" : 25,
       "valueOP" : "IN"
     }, {
       "codeName" : "N_SYS_USERID_LIKE",
       "name" : "N_SYS_USERID_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -369,18 +378,22 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_SYS_USERNAME_EQ",
       "name" : "N_SYS_USERNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_SYS_USERNAME_IN",
       "name" : "N_SYS_USERNAME_IN",
+      "stdDataType" : 25,
       "valueOP" : "IN"
     }, {
       "codeName" : "N_SYS_USERNAME_LIKE",
       "name" : "N_SYS_USERNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     }, {
       "codeName" : "N_SYS_USERNAME_NOTIN",
       "name" : "N_SYS_USERNAME_NOTIN",
+      "stdDataType" : 25,
       "valueOP" : "NOTIN"
     } ],
     "getAllPSDEFValueRules" : [ {

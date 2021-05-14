@@ -396,6 +396,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZPRO_PROJECTWEEKLYNAME_LIKE",
       "name" : "N_IBZPRO_PROJECTWEEKLYNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -497,6 +498,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZPRO_PROJECTWEEKLYID_EQ",
       "name" : "N_IBZPRO_PROJECTWEEKLYID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -553,6 +555,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PM_EQ",
       "name" : "N_PM_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -867,6 +870,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PROJECT_EQ",
       "name" : "N_PROJECT_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

@@ -797,6 +797,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_TYPE_EQ",
         "name" : "N_TYPE_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -828,6 +829,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_ACCOUNT_EQ",
         "name" : "N_ACCOUNT_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -858,6 +860,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_ACCOUNT_LIKE",
         "name" : "N_ACCOUNT_LIKE",
+        "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
       "getPSEditor" : {
@@ -889,6 +892,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_LIMITED_EQ",
         "name" : "N_LIMITED_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -920,6 +924,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_ROOT_EQ",
         "name" : "N_ROOT_EQ",
+        "stdDataType" : 1,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {

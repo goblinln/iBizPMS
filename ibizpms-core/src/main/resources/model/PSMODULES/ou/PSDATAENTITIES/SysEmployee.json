@@ -339,6 +339,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_USERID_EQ",
       "name" : "N_USERID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -393,18 +394,22 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_USERNAME_EQ",
       "name" : "N_USERNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_USERNAME_IN",
       "name" : "N_USERNAME_IN",
+      "stdDataType" : 25,
       "valueOP" : "IN"
     }, {
       "codeName" : "N_USERNAME_LIKE",
       "name" : "N_USERNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     }, {
       "codeName" : "N_USERNAME_NOTIN",
       "name" : "N_USERNAME_NOTIN",
+      "stdDataType" : 25,
       "valueOP" : "NOTIN"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -457,6 +462,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PERSONNAME_LIKE",
       "name" : "N_PERSONNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -705,6 +711,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_MDEPTID_EQ",
       "name" : "N_MDEPTID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -822,10 +829,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_MDEPTNAME_EQ",
       "name" : "N_MDEPTNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_MDEPTNAME_LIKE",
       "name" : "N_MDEPTNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -934,6 +943,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ORGID_EQ",
       "name" : "N_ORGID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1052,10 +1062,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ORGNAME_EQ",
       "name" : "N_ORGNAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_ORGNAME_LIKE",
       "name" : "N_ORGNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1165,6 +1177,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_SEX_EQ",
       "name" : "N_SEX_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

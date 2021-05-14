@@ -743,6 +743,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_NAME_LIKE",
         "name" : "N_NAME_LIKE",
+        "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
       "getPSEditor" : {
@@ -769,6 +770,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_TYPE_EQ",
         "name" : "N_TYPE_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -801,6 +803,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_ADDEDBY_EQ",
         "name" : "N_ADDEDBY_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {
@@ -833,6 +836,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_LASTEDITEDBY_EQ",
         "name" : "N_LASTEDITEDBY_EQ",
+        "stdDataType" : 25,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {

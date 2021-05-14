@@ -576,6 +576,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_REALNAME_LIKE",
       "name" : "N_REALNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -630,6 +631,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_CLIENTSTATUS_EQ",
       "name" : "N_CLIENTSTATUS_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -949,6 +951,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ACCOUNT_EQ",
       "name" : "N_ACCOUNT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1838,6 +1841,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_GENDER_EQ",
       "name" : "N_GENDER_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2277,6 +2281,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

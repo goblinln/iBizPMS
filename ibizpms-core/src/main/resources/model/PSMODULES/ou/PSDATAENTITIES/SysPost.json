@@ -103,6 +103,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_POSTID_EQ",
       "name" : "N_POSTID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -207,6 +208,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_POSTNAME_LIKE",
       "name" : "N_POSTNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {

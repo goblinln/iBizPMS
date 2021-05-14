@@ -310,6 +310,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_SYS_UPDATE_LOGID_EQ",
       "name" : "N_SYS_UPDATE_LOGID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -366,6 +367,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_UPDATEBRANCH_EQ",
       "name" : "N_UPDATEBRANCH_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -518,6 +520,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_SYS_UPDATE_LOGNAME_LIKE",
       "name" : "N_SYS_UPDATE_LOGNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -573,6 +576,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_LATESTUPDATE_EQ",
       "name" : "N_LATESTUPDATE_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

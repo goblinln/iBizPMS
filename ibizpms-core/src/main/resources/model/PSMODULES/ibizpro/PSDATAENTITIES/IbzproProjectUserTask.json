@@ -217,6 +217,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TASKTYPE_EQ",
       "name" : "N_TASKTYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -437,10 +438,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_LIKE",
       "name" : "N_ID_LIKE",
+      "stdDataType" : 1,
       "valueOP" : "LIKE"
     }, {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

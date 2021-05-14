@@ -102,6 +102,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -189,6 +190,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_FREEZE_EQ",
       "name" : "N_FREEZE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -245,6 +247,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_STAR_EQ",
       "name" : "N_STAR_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -301,6 +304,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_HIDE_EQ",
       "name" : "N_HIDE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -429,6 +433,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_MUTE_EQ",
       "name" : "N_MUTE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

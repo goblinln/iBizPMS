@@ -368,6 +368,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_REPORTSTATUS_EQ",
       "name" : "N_REPORTSTATUS_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -561,6 +562,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ISSUBMIT_EQ",
       "name" : "N_ISSUBMIT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -970,6 +972,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZ_MONTHLYID_EQ",
       "name" : "N_IBZ_MONTHLYID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1018,6 +1021,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ACCOUNT_EQ",
       "name" : "N_ACCOUNT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1224,6 +1228,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_REPORTTO_EQ",
       "name" : "N_REPORTTO_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1280,6 +1285,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZ_MONTHLYNAME_LIKE",
       "name" : "N_IBZ_MONTHLYNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {

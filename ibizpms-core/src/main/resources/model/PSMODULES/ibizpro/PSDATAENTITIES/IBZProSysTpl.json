@@ -204,6 +204,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZPRO_SYSTPLID_EQ",
       "name" : "N_IBZPRO_SYSTPLID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -298,6 +299,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PUBLIC_EQ",
       "name" : "N_PUBLIC_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -447,6 +449,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZPRO_SYSTPLNAME_LIKE",
       "name" : "N_IBZPRO_SYSTPLNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -502,6 +505,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TPLTYPE_EQ",
       "name" : "N_TPLTYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -559,6 +563,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBIZ_SOURCEOBJECT_EQ",
       "name" : "N_IBIZ_SOURCEOBJECT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -615,6 +620,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_FILE_EQ",
       "name" : "N_FILE_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

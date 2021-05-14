@@ -102,6 +102,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSUBSYSSERVICEAPINAME_LIKE",
       "name" : "N_PSSUBSYSSERVICEAPINAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -295,6 +296,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSUBSYSSERVICEAPIID_EQ",
       "name" : "N_PSSUBSYSSERVICEAPIID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -489,10 +491,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSSERVICEAPINAME_EQ",
       "name" : "N_PSSYSSERVICEAPINAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PSSYSSERVICEAPINAME_LIKE",
       "name" : "N_PSSYSSERVICEAPINAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -555,10 +559,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSMODULENAME_EQ",
       "name" : "N_PSMODULENAME_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_PSMODULENAME_LIKE",
       "name" : "N_PSMODULENAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -621,6 +627,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSMODULEID_EQ",
       "name" : "N_PSMODULEID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -682,6 +689,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSSYSSERVICEAPIID_EQ",
       "name" : "N_PSSYSSERVICEAPIID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

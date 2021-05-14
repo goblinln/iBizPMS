@@ -22,6 +22,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_NAME_LIKE",
       "name" : "N_NAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     },
     "getPSEditor" : {
@@ -48,6 +49,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_STATUS_EQ",
       "name" : "N_STATUS_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     },
     "getPSEditor" : {
@@ -80,6 +82,7 @@
     "getPSDEFSearchMode" : {
       "codeName" : "N_TYPE_EQ",
       "name" : "N_TYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     },
     "getPSEditor" : {

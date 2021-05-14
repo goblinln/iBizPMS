@@ -229,6 +229,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZ_TOPID_EQ",
       "name" : "N_IBZ_TOPID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -318,6 +319,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_IBZ_TOPNAME_LIKE",
       "name" : "N_IBZ_TOPNAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -464,6 +466,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ACCOUNT_EQ",
       "name" : "N_ACCOUNT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -520,6 +523,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TYPE_EQ",
       "name" : "N_TYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

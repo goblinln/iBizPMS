@@ -782,6 +782,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_NAME_LIKE",
         "name" : "N_NAME_LIKE",
+        "stdDataType" : 25,
         "valueOP" : "LIKE"
       },
       "getPSEditor" : {
@@ -807,6 +808,7 @@
       "getPSDEFSearchMode" : {
         "codeName" : "N_PRODUCT_EQ",
         "name" : "N_PRODUCT_EQ",
+        "stdDataType" : 1,
         "valueOP" : "EQ"
       },
       "getPSEditor" : {

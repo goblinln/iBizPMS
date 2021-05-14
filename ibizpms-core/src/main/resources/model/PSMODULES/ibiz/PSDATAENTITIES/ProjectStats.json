@@ -497,6 +497,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_END_LTANDEQ",
       "name" : "N_END_LTANDEQ",
+      "stdDataType" : 5,
       "valueOP" : "LTANDEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -628,6 +629,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_BEGIN_GTANDEQ",
       "name" : "N_BEGIN_GTANDEQ",
+      "stdDataType" : 5,
       "valueOP" : "GTANDEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -667,10 +669,12 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_STATUS_EQ",
       "name" : "N_STATUS_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     }, {
       "codeName" : "N_STATUS_NOTEQ",
       "name" : "N_STATUS_NOTEQ",
+      "stdDataType" : 25,
       "valueOP" : "NOTEQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1500,6 +1504,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_NAME_LIKE",
       "name" : "N_NAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1999,6 +2004,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_ID_EQ",
       "name" : "N_ID_EQ",
+      "stdDataType" : 1,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {

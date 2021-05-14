@@ -283,6 +283,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_LOCKFLAG_EQ",
       "name" : "N_LOCKFLAG_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -416,6 +417,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSMODULENAME_LIKE",
       "name" : "N_PSMODULENAME_LIKE",
+      "stdDataType" : 25,
       "valueOP" : "LIKE"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -649,6 +651,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_USERCAT_EQ",
       "name" : "N_USERCAT_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -937,6 +940,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_PSMODULEID_EQ",
       "name" : "N_PSMODULEID_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1077,6 +1081,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_SERVICEAPIFLAG_EQ",
       "name" : "N_SERVICEAPIFLAG_EQ",
+      "stdDataType" : 9,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1440,6 +1445,7 @@
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_SYSREFTYPE_EQ",
       "name" : "N_SYSREFTYPE_EQ",
+      "stdDataType" : 25,
       "valueOP" : "EQ"
     } ],
     "getAllPSDEFValueRules" : [ {
