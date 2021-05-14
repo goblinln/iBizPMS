@@ -86,6 +86,7 @@ export class AppCalendarViewBase extends CalendarViewBase {
             this.renderQuickGroup(),
             this.renderQuickSearch(),
             this.renderBodyMessage(),
+            this.viewInstance?.viewStyle == "STYLE2" ? [this.renderSearchForm(), this.renderSearchBar()] : null,
             this.renderMainContent(),
             this.renderBottomMessage()
         ]);

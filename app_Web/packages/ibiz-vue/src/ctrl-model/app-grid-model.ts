@@ -47,6 +47,11 @@ export class AppGridModel {
                 dataType: 'QUERYPARAM'
               },
               {
+                name:'filter',
+                prop:'filter',
+                dataType: 'QUERYPARAM'
+              },
+              {
                 name:'page',
                 prop:'page',
                 dataType: 'QUERYPARAM'

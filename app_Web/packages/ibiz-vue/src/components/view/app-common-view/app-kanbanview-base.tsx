@@ -85,6 +85,7 @@ export class AppKanbanViewBase extends KanbanViewBase {
             this.renderToolBar(),
             this.renderQuickGroup(),
             this.renderQuickSearch(),
+            this.viewInstance?.viewStyle == "STYLE2" ? [this.renderSearchForm(), this.renderSearchBar()] : null,
             this.renderMainContent(),
             this.renderBodyMessage()
         ]);

@@ -525,7 +525,8 @@ export class AppSearchFormBase extends SearchFormControlBase {
      * @memberof AppSearchFormBase
      */
     public render(): any {
-        if (!this.controlIsLoaded) {
+        const isShow = this.controlInstance.formStyle != 'SEARCHBAR' ? this.isExpandSearchForm : true;
+        if (!(this.controlIsLoaded && isShow)) {
             return
         }
         const { controlClassNames } = this.renderOptions;

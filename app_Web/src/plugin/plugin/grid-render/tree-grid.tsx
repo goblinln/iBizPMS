@@ -233,8 +233,7 @@ export class TreeGrid extends AppDefaultGrid {
         if (pageReset) {
             this.curPage = 1;
         }
-        const arg: any = opt?.arg ? opt.arg : {};
-        const queryParam: any = opt?.queryParam;
+        const arg: any = { ...opt };
         const page: any = {};
         if (this.isEnablePagingBar) {
             Object.assign(page, { page: this.curPage - 1, size: this.limit });
@@ -250,9 +249,6 @@ export class TreeGrid extends AppDefaultGrid {
         Object.assign(arg, parentdata);
         let tempViewParams: any = parentdata.viewparams ? parentdata.viewparams : {};
         Object.assign(tempViewParams, JSON.parse(JSON.stringify(this.viewparams)));
-        if(queryParam && Object.keys(queryParam).length >0){
-            Object.assign(tempViewParams, queryParam);
-        }
 		Object.assign(arg, { viewparams: tempViewParams });
 		this.ctrlBeginLoading();
         const post: Promise<any> = this.service.search(this.fetchAction, JSON.parse(JSON.stringify(this.context)), arg, this.showBusyIndicator);

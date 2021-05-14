@@ -208,7 +208,7 @@ export class AppSearchBarBase extends SearchBarControlBase {
      * @memberof AppSearchBarBase
      */
     public render() {
-        if(!this.controlIsLoaded) {
+        if(!this.controlIsLoaded || !this.isExpandSearchForm) {
             return null;
         }
         const { controlClassNames } = this.renderOptions;

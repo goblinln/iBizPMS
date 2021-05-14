@@ -86,6 +86,7 @@ export class AppDataViewBase extends DataViewBase {
             this.renderQuickGroup(),
             this.renderQuickSearch(),
             this.renderQuickSearchForm(),
+            this.viewInstance?.viewStyle == "STYLE2" ? [this.renderSearchForm(), this.renderSearchBar()] : null,
             this.renderBodyMessage(),
             this.renderMainContent(),
             this.renderBottomMessage()
