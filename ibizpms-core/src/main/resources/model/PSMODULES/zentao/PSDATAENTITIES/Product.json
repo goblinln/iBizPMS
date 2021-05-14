@@ -2565,7 +2565,7 @@
       "columnName" : "relatedprojects",
       "dBType" : "MYSQL5",
       "name" : "RELATEDPROJECTS",
-      "queryCodeExp" : "(select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project where t.product = t1.id and t2.deleted = '0' and zt_projectproduct.SRFDCID = t1.SRFDCID)",
+      "queryCodeExp" : "(select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project and t.SRFDCID = t2.SRFDCID where t.product = t1.id and t2.deleted = '0' and t.SRFDCID = t1.SRFDCID)",
       "standardColumnName" : "`relatedprojects`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2903,7 +2903,7 @@
       "columnName" : "buildcnt",
       "dBType" : "MYSQL5",
       "name" : "BUILDCNT",
-      "queryCodeExp" : "(select count(1) from zt_build t where t.product = t1.id and t.deleted = '0' and zt_build.SRFDCID = t1.SRFDCID)",
+      "queryCodeExp" : "(select count(1) from zt_build t where t.product = t1.id and t.deleted = '0' and t.SRFDCID = t1.SRFDCID)",
       "standardColumnName" : "`buildcnt`"
     } ],
     "getAllPSDEFValueRules" : [ {
