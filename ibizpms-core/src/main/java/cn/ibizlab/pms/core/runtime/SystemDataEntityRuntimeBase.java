@@ -19,6 +19,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
+import net.ibizsys.model.dataentity.defield.IPSDEFSearchMode;
 import net.ibizsys.model.dataentity.der.IPSDER1N;
 import net.ibizsys.model.dataentity.der.IPSDERBase;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQuery;
@@ -321,6 +322,48 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     public void setSearchCustomCondition(ISearchContextBase iSearchContextBase, String strCustomCondition) {
         QueryWrapperContext context = (QueryWrapperContext) iSearchContextBase;
         context.getSelectCond().and(ScopeUtils.parse(this, strCustomCondition));
+    }
+
+    @Override
+    public void setSearchCondition(ISearchContextBase iSearchContextBase, IPSDEField iPSDEField, IPSDEFSearchMode iPSDEFSearchMode, Object objValue) {
+        try {
+            String strSearchField = iPSDEFSearchMode.getName().toLowerCase();
+            Field searchField = iSearchContextBase.getClass().getDeclaredField(strSearchField);
+            searchField.setAccessible(true);
+            if (iPSDEFSearchMode.getValueOP().equals(Conditions.ISNULL) || iPSDEFSearchMode.getValueOP().equals(Conditions.ISNULL)) {
+                searchField.set(iSearchContextBase, "true");
+            } else {
+                searchField.set(iSearchContextBase, objValue);
+            }
+        } catch (NoSuchFieldException e) {
+            log.warn(String.format("不存在搜索项[%s]。", iPSDEFSearchMode.getName()));
+        } catch (IllegalAccessException e) {
+            log.warn(String.format("设置搜索项[%s]值[%s]发生错误：%s", iPSDEFSearchMode.getName(), objValue, e.getMessage()));
+        }
+    }
+
+    @Override
+    public Object getSearchCondition(ISearchContextBase iSearchContextBase, IPSDEField iPSDEField, IPSDEFSearchMode iPSDEFSearchMode) {
+        try {
+            String strSearchField = iPSDEFSearchMode.getName().toLowerCase();
+            Field searchField = iSearchContextBase.getClass().getDeclaredField(strSearchField);
+            searchField.setAccessible(true);
+            if (iPSDEFSearchMode.getValueOP().equals(Conditions.ISNULL) || iPSDEFSearchMode.getValueOP().equals(Conditions.ISNULL)) {
+                searchField.set(iSearchContextBase, "true");
+            } else {
+                return searchField.get(iSearchContextBase);
+            }
+        }  catch (NoSuchFieldException e) {
+            log.warn(String.format("不存在搜索项[%s]。", iPSDEFSearchMode.getName()));
+        } catch (IllegalAccessException e) {
+            log.warn(String.format("获取搜索项[%s]值发生错误：%s", iPSDEFSearchMode.getName(), e.getMessage()));
+        }
+        return null;
+    }
+
+    @Override
+    public Object getSearchCondition(ISearchContextBase iSearchContextBase, IPSDEField iPSDEField, String strCondition) {
+        return null;
     }
 
     @Override

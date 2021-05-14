@@ -377,8 +377,8 @@
     "logicName" : "主表格_拷贝",
     "minorSortDir" : "DESC",
     "getMinorSortPSAppDEField" : {
-      "name" : "BUGSN",
-      "codeName" : "Bugsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
@@ -636,11 +636,11 @@
     "getPSDEGridColumns" : [ {
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
-      "caption" : "Bug编号",
+      "caption" : "编号",
       "codeName" : "id",
       "columnType" : "DEFGRIDCOLUMN",
       "dataItemName" : "id",
-      "excelCaption" : "Bug编号",
+      "excelCaption" : "编号",
       "name" : "id",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {

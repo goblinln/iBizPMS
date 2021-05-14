@@ -8772,6 +8772,11 @@
                       "groupMode" : "NONE",
                       "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
                       "logicName" : "主表格（任务相关嵌入）",
+                      "minorSortDir" : "DESC",
+                      "getMinorSortPSAppDEField" : {
+                        "name" : "ID",
+                        "codeName" : "Id"
+                      },
                       "getPSAppDataEntity" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Bug.json"
@@ -8866,11 +8871,11 @@
                       "getPSDEGridColumns" : [ {
                         "align" : "LEFT",
                         "cLConvertMode" : "NONE",
-                        "caption" : "Bug编号",
+                        "caption" : "编号",
                         "codeName" : "id",
                         "columnType" : "DEFGRIDCOLUMN",
                         "dataItemName" : "id",
-                        "excelCaption" : "Bug编号",
+                        "excelCaption" : "编号",
                         "name" : "id",
                         "noPrivDisplayMode" : 1,
                         "getPSAppDEField" : {

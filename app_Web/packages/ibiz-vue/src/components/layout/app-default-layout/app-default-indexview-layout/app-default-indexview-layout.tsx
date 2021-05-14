@@ -262,6 +262,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
         let viewClass = {
             'view-container': ((!Object.is((this.viewInstance as IPSAppIndexView).mainMenuAlign, "LEFT") && !Object.is((this.viewInstance as IPSAppIndexView).mainMenuAlign, "TOP"))) ? true : false,
             'inner_indexview': Object.is((this.viewInstance as IPSAppIndexView).mainMenuAlign, "CENTER") ? true : false,
+            'view-default': true,
             [this.viewInstance.viewType.toLowerCase()]: true,
             [Util.srfFilePath2(this.viewInstance.codeName)]: true
         };

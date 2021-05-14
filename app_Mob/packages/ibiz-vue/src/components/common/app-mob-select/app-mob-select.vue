@@ -53,6 +53,13 @@ export default class AppSelect extends Vue {
     }
 
     /**
+     * 参数缓存字符串
+     *
+     * @memberof AppSelect
+     */
+    public cachParamStr:string = "";
+
+    /**
      * change事件
      *
      * @memberof AppSelect
@@ -174,9 +181,11 @@ export default class AppSelect extends Vue {
      * @param {*} val
      * @memberof AppSelect
      */
-    @Watch('value')
+    @Watch('data',{deep:true})
     onDataChange(newVal: any, oldVal: any) {
-        if (newVal) {
+        let param = {};
+        this.handleOtherParam(param);
+        if (newVal && !Object.is(JSON.stringify(param),this.cachParamStr)) {
             this.load();
             this.$store.commit('setSelectStatus',true);
         }
@@ -189,10 +198,8 @@ export default class AppSelect extends Vue {
         if (Object.is(this.codeListType, "STATIC")) {
             this.options = this.$store.getters.getCodeListItems(this.tag);
         } else {
-            if (this.curValue) {
-                this.load();
-                this.$store.commit('setSelectStatus',true);
-            }
+            this.load();
+            this.$store.commit('setSelectStatus',true);
         }
     }
 
@@ -224,6 +231,7 @@ export default class AppSelect extends Vue {
         if(!bcancel){
             return
         }
+        this.cachParamStr = JSON.stringify(param);
         let response: any = await this.codeListService.getItems(this.tag,  param.context, param.param);
         if (response) {
             this.options = response

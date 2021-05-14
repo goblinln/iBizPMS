@@ -58,7 +58,7 @@ export default class AppRichTextEditorPMS extends Vue {
      */
     @Watch("value",{ immediate: true, deep: true })
     async onValueChange(newval: any, oldval: any){
-      if (newval) {
+      if (newval || newval == '') {
         this.showVal = await this.getImgUrlBase64(newval);
       }
       this.$forceUpdate();

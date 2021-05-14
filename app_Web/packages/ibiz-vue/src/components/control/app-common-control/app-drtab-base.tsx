@@ -120,7 +120,7 @@ export class AppDrtabBase extends DrtabControlBase {
         return (
             <div class={{ ...controlClassNames, 'drtab': true }} >
                 <tabs animated={false} class="app-dr-tab" name={codeName} on-on-click={this.tabPanelClick.bind(this)}>
-                    <tab-pane index={0} name='mainform' tab={codeName} label='主表单'>
+                <tab-pane index={0} name='mainform' tab={codeName} label={this.controlInstance.M.editItemCaption?this.controlInstance.M.editItemCaption:'主表单'}>
                         <div class='main-data'>
                             {this.$parent.$slots.mainform}
                         </div>

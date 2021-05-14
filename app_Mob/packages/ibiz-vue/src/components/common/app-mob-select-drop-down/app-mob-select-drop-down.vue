@@ -92,6 +92,23 @@ export default class AppSelectDropDown extends Vue {
     @Prop() public data!: any;
 
     /**
+     * 监听表单数据
+     *
+     * @param {*} newVal
+     * @param {*} val
+     * @memberof AppSelect
+     */
+    @Watch('data',{deep:true})
+    onDataChange(newVal: any, oldVal: any) {
+        let param = {};
+        this.handlePublicParams(param);
+        if (newVal && !Object.is(JSON.stringify(param),this.cachParamStr)) {
+            this.onSearch();
+            this.$store.commit('setSelectStatus',true);
+        }
+    }
+
+    /**
      * 属性项名称
      *
      * @type {string}
@@ -171,6 +188,14 @@ export default class AppSelectDropDown extends Vue {
      * @memberof AppSelect
      */
     @Prop() protected navigateContext?: any;
+
+    /**
+     * 缓存
+     *
+     * @type {string}
+     * @memberof AppSelect
+     */
+    public cachParamStr:string = "";
 
     /**
      * 下拉数组
@@ -303,6 +328,7 @@ export default class AppSelectDropDown extends Vue {
         if (!bcancel) {
             return;
         }
+        this.cachParamStr = JSON.stringify(data);
         // 处理搜索参数
         let _context = data.context;
         let _param = data.param;
