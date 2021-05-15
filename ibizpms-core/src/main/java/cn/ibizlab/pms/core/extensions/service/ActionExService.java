@@ -157,7 +157,13 @@ public class ActionExService extends ActionServiceImpl {
         if(!super.create(et)) {
             return et;
         }
-        iHistoryService.saveByAction(et.getId(), changes);
+        // iHistoryService.saveByAction(et.getId(), changes);
+        if(changes != null && changes.size() > 0) {
+            for (History history : changes) {
+                history.setAction(et.getId());
+                iHistoryService.create(history);
+            }
+        }
 
         return et;
     }
