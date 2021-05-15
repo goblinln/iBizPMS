@@ -948,6 +948,23 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.id = #{srf.datacontext.frombug} )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "StoryFormBug",
+    "logicName" : "需求来源Bug",
+    "name" : "StoryFormBug"
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
         "customCond" : "t1.deleted='0' \n",
         "name" : "查询条件"
       }, {
@@ -1292,6 +1309,16 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "ReportBugs"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "StoryFormBug",
+    "logicName" : "需求来源Bug",
+    "name" : "StoryFormBug",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "StoryFormBug"
     } ],
     "enableBackend" : true,
     "enableFront" : true

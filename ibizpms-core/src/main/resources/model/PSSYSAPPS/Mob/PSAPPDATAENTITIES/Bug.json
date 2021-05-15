@@ -1079,6 +1079,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchStoryFormBug",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "StoryFormBug"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchStoryFormBug"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchTaskRelatedBug",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -2510,6 +2526,22 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchReportBugs"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchStoryFormBug",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "StoryFormBug"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NONE"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchStoryFormBug"
     },
     "builtinMethod" : false
   }, {

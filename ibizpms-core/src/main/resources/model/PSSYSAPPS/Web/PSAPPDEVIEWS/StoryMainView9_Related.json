@@ -2160,7 +2160,7 @@
                   "name" : "fetch",
                   "getPSAppDEMethod" : {
                     "modelref" : true,
-                    "id" : "FetchDefault"
+                    "id" : "FetchStoryFormBug"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
