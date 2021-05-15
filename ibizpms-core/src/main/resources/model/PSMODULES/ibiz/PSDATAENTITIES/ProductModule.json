@@ -186,7 +186,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "( t1.`TYPE` = 'story'  AND  ( t1.`PARENT` IS NULL  OR  t1.`PARENT` = 0 ) )",
+        "customCond" : "( t1.`TYPE` = 'story'  AND  ( t1.`PARENT` IS NULL  OR  t1.`PARENT` = 0 )  AND  t1.`BRANCH` <> 0 )",
         "name" : "查询条件"
       } ]
     } ],

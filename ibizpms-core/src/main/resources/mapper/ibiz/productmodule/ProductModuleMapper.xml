@@ -235,7 +235,7 @@
                 <![CDATA[ AND t1.DELETED = '0' ]]>
             </if>
 			<if test="true">
-                <![CDATA[ AND ( t1.`TYPE` = 'story'  AND  ( t1.`PARENT` IS NULL  OR  t1.`PARENT` = 0 ) ) ]]>
+                <![CDATA[ AND ( t1.`TYPE` = 'story'  AND  ( t1.`PARENT` IS NULL  OR  t1.`PARENT` = 0 )  AND  t1.`BRANCH` <> 0 ) ]]>
             </if>
 			<include refid="searchMode" />
 		</trim>
