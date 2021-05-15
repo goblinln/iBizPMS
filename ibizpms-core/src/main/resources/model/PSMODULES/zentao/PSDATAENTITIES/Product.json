@@ -2216,7 +2216,7 @@
       "columnName" : "activebugcnt",
       "dBType" : "MYSQL5",
       "name" : "ACTIVEBUGCNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND `STATUS` = 'active' AND DELETED = '0' and ZT_BUG.SRFDCID = t1.SRFDCID)",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND `STATUS` = 'active' AND DELETED = '0' )",
       "standardColumnName" : "`activebugcnt`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2529,7 +2529,7 @@
       "columnName" : "casecnt",
       "dBType" : "MYSQL5",
       "name" : "CASECNT",
-      "queryCodeExp" : "(select count(1) from zt_case t where t.product = t1.id and t.deleted = '0' and t.SRFDCID = t1.SRFDCID)",
+      "queryCodeExp" : "(select count(1) from zt_case t where t.product = t1.id and t.deleted = '0' )",
       "standardColumnName" : "`casecnt`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2565,7 +2565,7 @@
       "columnName" : "relatedprojects",
       "dBType" : "MYSQL5",
       "name" : "RELATEDPROJECTS",
-      "queryCodeExp" : "(select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project and t.SRFDCID = t2.SRFDCID where t.product = t1.id and t2.deleted = '0' and t.SRFDCID = t1.SRFDCID)",
+      "queryCodeExp" : "(select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project  where t.product = t1.id and t2.deleted = '0' )",
       "standardColumnName" : "`relatedprojects`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2903,7 +2903,7 @@
       "columnName" : "buildcnt",
       "dBType" : "MYSQL5",
       "name" : "BUILDCNT",
-      "queryCodeExp" : "(select count(1) from zt_build t where t.product = t1.id and t.deleted = '0' and t.SRFDCID = t1.SRFDCID)",
+      "queryCodeExp" : "(select count(1) from zt_build t where t.product = t1.id and t.deleted = '0' )",
       "standardColumnName" : "`buildcnt`"
     } ],
     "getAllPSDEFValueRules" : [ {
