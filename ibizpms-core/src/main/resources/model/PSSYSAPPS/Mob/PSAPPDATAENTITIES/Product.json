@@ -821,7 +821,6 @@
   "getAllPSAppDELogics" : [ {
     "codeName" : "CancelProductTop",
     "defaultParamName" : "Default",
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product/PSAPPDELOGICS/CancelProductTop.json",
     "logicName" : "取消置顶",
     "logicSubType" : "NONE",
     "name" : "取消置顶",
@@ -880,7 +879,6 @@
   }, {
     "codeName" : "ProductTop",
     "defaultParamName" : "Default",
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Product/PSAPPDELOGICS/ProductTop.json",
     "logicName" : "置顶",
     "logicSubType" : "NONE",
     "name" : "置顶",

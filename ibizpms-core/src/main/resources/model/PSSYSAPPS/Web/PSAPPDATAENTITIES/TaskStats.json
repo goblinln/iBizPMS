@@ -137,7 +137,6 @@
   } ],
   "getAllPSAppDEDataExports" : [ {
     "codeName" : "TaskFinishGird",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskStats/PSAPPDEDATAEXPS/TaskFinishGird.json",
     "maxRowCount" : 1000,
     "name" : "数据导出-任务完成汇总表",
     "getPSDEDataExportItems" : [ {

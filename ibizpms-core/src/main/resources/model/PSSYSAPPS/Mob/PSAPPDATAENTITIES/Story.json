@@ -785,7 +785,7 @@
     "name" : "GetUserConcat",
     "getPSAppDELogic" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story/PSAPPDELOGICS/GetCurUserConcat.json"
+      "id" : "GetCurUserConcat"
     },
     "getPSDEAction" : {
       "modelref" : true,
@@ -812,7 +812,6 @@
   } ],
   "getAllPSAppDEDataExports" : [ {
     "codeName" : "DataExport",
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story/PSAPPDEDATAEXPS/DataExport.json",
     "maxRowCount" : 1000,
     "name" : "数据导出",
     "getPSDEDataExportItems" : [ {
@@ -1872,7 +1871,6 @@
   "getAllPSAppDELogics" : [ {
     "codeName" : "GetCurUserConcat",
     "defaultParamName" : "Default",
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story/PSAPPDELOGICS/GetCurUserConcat.json",
     "logicName" : "获取联系人",
     "logicSubType" : "NONE",
     "name" : "获取联系人",
@@ -3128,7 +3126,7 @@
     "name" : "GetUserConcat",
     "getPSAppDELogic" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Story/PSAPPDELOGICS/GetCurUserConcat.json"
+      "id" : "GetCurUserConcat"
     },
     "getPSDEAction" : {
       "modelref" : true,

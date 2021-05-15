@@ -153,7 +153,6 @@
   } ],
   "getAllPSAppDEDataExports" : [ {
     "codeName" : "ProductInputExport",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats/PSAPPDEDATAEXPS/ProductInputExport.json",
     "maxRowCount" : 1000,
     "name" : "产品投入数据导出",
     "getPSDEDataExportItems" : [ {
@@ -183,7 +182,6 @@
     } ]
   }, {
     "codeName" : "ProductQuantityExport",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductStats/PSAPPDEDATAEXPS/ProductQuantityExport.json",
     "maxRowCount" : 1000,
     "name" : "产品质量数据导出",
     "getPSDEDataExportItems" : [ {

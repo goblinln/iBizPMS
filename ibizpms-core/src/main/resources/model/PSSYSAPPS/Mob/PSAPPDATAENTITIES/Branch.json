@@ -149,7 +149,6 @@
   } ],
   "getAllPSAppDEDataExports" : [ {
     "codeName" : "DataExport",
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Branch/PSAPPDEDATAEXPS/DataExport.json",
     "maxRowCount" : 1000,
     "name" : "数据导出",
     "getPSDEDataExportItems" : [ {

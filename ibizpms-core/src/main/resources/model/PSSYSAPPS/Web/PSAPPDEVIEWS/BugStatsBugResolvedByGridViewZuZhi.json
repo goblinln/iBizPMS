@@ -282,7 +282,7 @@
     },
     "getPSDEDataExport" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats/PSAPPDEDATAEXPS/BugResolvedExport.json"
+      "id" : "BugResolvedExport"
     },
     "getPSDEGridColumns" : [ {
       "align" : "LEFT",

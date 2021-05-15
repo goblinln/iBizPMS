@@ -242,6 +242,85 @@ export class AppGridBase extends GridControlBase {
      * @memberof AppGridBase
      */
     public renderUAColumn(column: IPSDEGridUAColumn) {
+        if(this.viewStyle == 'STYLE2'){
+            return this.renderStyle2UAColumn(column)
+        }
+        const { name, caption, align, width, widthUnit } = column;
+        //参数
+        let renderParams: any = {
+            'column-key': name,
+            label: caption,
+            align: 'center',
+        };
+        renderParams['width'] = 68;
+        renderParams['fixed'] = 'right';
+        //绘制
+        return this.$createElement('el-table-column', {
+            props: renderParams,
+            scopedSlots: {
+                default: (scope: any) => {
+                    return <i class='el-icon-more ua-column-icon' on-click={(e: any)=>{
+                        this.$apppopover.openPopover(e, ()=>this.renderActionButtons(column, scope), 'top-end', true, 145, 45, "ua-column-popover");
+                    }}></i>;
+                },
+            },
+        });
+    }
+
+    /**
+     * 绘制操作列按钮组
+     *
+     * @param {any} _column 表格列实例
+     * @param {row, column, $index} scope 插槽返回数据
+     * @memberof AppGridBase
+     */
+    public renderActionButtons(_column: IPSDEGridUAColumn, scope: any){
+        const UIActionGroupDetails: Array<IPSUIActionGroupDetail> =
+        _column.getPSDEUIActionGroup()?.getPSUIActionGroupDetails() || [];
+        const { row, column, $index } = scope;
+        if (UIActionGroupDetails.length > 0) {
+            return (
+                <div style='text-align: center;display: flex;justify-content: center;'>
+                    {UIActionGroupDetails.map((uiactionDetail: IPSUIActionGroupDetail, index: number) => {
+                        const uiaction: IPSDEUIAction = uiactionDetail.getPSUIAction() as IPSDEUIAction;
+                        const actionModel = row[uiaction.uIActionTag];
+                        let columnClass = {};
+                        if (index === 0) {
+                            Object.assign(columnClass, { 'grid-first-uiaction': true });
+                        } else {
+                            Object.assign(columnClass, { 'grid-uiaction-divider': true });
+                        }
+                        if (actionModel?.disabled) {
+                            Object.assign(columnClass, { 'app-grid-column-disabled': true });
+                        } else {
+                            Object.assign(columnClass, { 'app-grid-column-normal': true });
+                        }
+                        if (Util.isEmpty(actionModel) || actionModel.visabled) {
+                            return <i-button
+                                disabled={!Util.isEmpty(actionModel) && actionModel.disabled}
+                                class={columnClass}
+                                on-click={($event: any) => {
+                                    this.handleActionClick(row, $event, _column, uiactionDetail);
+                                }}
+                            >
+                                {uiactionDetail.showIcon ? <menu-icon item={uiaction} /> : null}
+                                {uiactionDetail.showCaption ? <span class='caption'>{uiaction.caption}</span> : ''}
+                            </i-button>
+                        }
+                    })}
+                </div>
+            );
+        }
+    }
+
+
+    /**
+     * 绘制STYLE2的操作列
+     *
+     * @param {any} column 表格列实例
+     * @memberof AppGridBase
+     */
+     public renderStyle2UAColumn(column: IPSDEGridUAColumn) {
         const { name, caption, align, width, widthUnit } = column;
         //参数
         let renderParams: any = {
@@ -255,9 +334,7 @@ export class AppGridBase extends GridControlBase {
             renderParams['min-width'] = width;
         }
         //视图样式2操作列需要悬浮  加fixed: right
-        if ((this.controlInstance?.getParentPSModelObject?.() as IPSAppDEGridView)?.viewStyle == 'STYLE2') {
-            renderParams['fixed'] = 'right';
-        }
+        renderParams['fixed'] = 'right';
         //绘制
         return this.$createElement('el-table-column', {
             props: renderParams,
@@ -270,7 +347,7 @@ export class AppGridBase extends GridControlBase {
                 },
             },
         });
-    }
+     }
 
     /**
      * 绘制操作列内容
@@ -396,14 +473,37 @@ export class AppGridBase extends GridControlBase {
      * @memberof AppGridBase
      */
     public renderPagingBar(h: any) {
+        // 表格列筛选
+        let columnPopTip;
+        // 分页显示文字
         let pageText = <span>共&nbsp;{this.totalRecord}&nbsp;条</span>
-        if(( this.controlInstance?.getParentPSModelObject?.() as any)?.viewStyle == 'STYLE2'){
+        if( this.viewStyle == 'STYLE2'){
             pageText = <span>
                 &nbsp; 显示&nbsp;
                 {this.items.length > 0 ? 1 : (this.curPage - 1) * this.limit + 1}&nbsp;-&nbsp;
                 {this.totalRecord > this.curPage * this.limit ? this.curPage * this.limit : this.totalRecord}&nbsp;
                 条，共&nbsp;{this.totalRecord}&nbsp;条
             </span>
+            columnPopTip = <poptip transfer placement='top-start' class='page-column'>
+                <i-button icon='md-menu'>选择列</i-button>
+                <div slot='content'>
+                    {this.allColumns.map((col: any) => {
+                        return (
+                            <div>
+                                <el-checkbox
+                                    key={col.name}
+                                    v-model={col.show}
+                                    on-change={this.onColChange.bind(this)}
+                                >
+                                    {col.label}
+                                </el-checkbox>
+                            </div>
+                        );
+                    })}
+                </div>
+            </poptip>
+        }else{
+            pageText = <span>共&nbsp;{this.totalRecord}&nbsp;条</span>
         }
         return this.items?.length > 0 ? (
             <row class='grid-pagination'>
@@ -420,24 +520,7 @@ export class AppGridBase extends GridControlBase {
                     show-elevator
                     show-total
                 >
-                    <poptip transfer placement='top-start' class='page-column'>
-                        <i-button icon='md-menu'>选择列</i-button>
-                        <div slot='content'>
-                            {this.allColumns.map((col: any) => {
-                                return (
-                                    <div>
-                                        <el-checkbox
-                                            key={col.name}
-                                            v-model={col.show}
-                                            on-change={this.onColChange.bind(this)}
-                                        >
-                                            {col.label}
-                                        </el-checkbox>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </poptip>
+                    {columnPopTip}
                     {this.renderBatchToolbar()}
                     <span class='page-button'>
                         <i-button icon='md-refresh' title='刷新' on-click={() => this.pageRefresh()}></i-button>
@@ -446,6 +529,35 @@ export class AppGridBase extends GridControlBase {
                 </page>
             </row>
         ) : null;
+    }
+
+    /**
+     * 绘制表格列过滤
+     *
+     * @memberof AppGridBase
+     */
+    public renderColumnFilter(){
+        if(this.viewStyle =='DEFAULT'){
+            return <poptip transfer placement='bottom-end' class='page-column' popper-class="view-default">
+                <icon type="md-options" />
+                <div slot='content'>
+                    {this.allColumns.map((col: any) => {
+                        return (
+                            <div class='page-column-item'>
+                                <el-checkbox
+                                    key={col.name}
+                                    v-model={col.show}
+                                    on-change={this.onColChange.bind(this)}
+                                >
+                                    {col.label}
+                                </el-checkbox>
+                                <icon type="md-menu" />
+                            </div>
+                        );
+                    })}
+                </div>
+            </poptip>
+        }
     }
 
     /**
@@ -519,6 +631,7 @@ export class AppGridBase extends GridControlBase {
                 <i-form style='height:100%;display:flex;flex-direction: column;justify-content: space-between'>
                     {this.items?.length > 0 ? this.renderGridContent(h) : <div class="app-grid-empty-content">{this.renderEmptyDataTip()}</div>}
                     {this.controlInstance?.enablePagingBar ? this.renderPagingBar(h) : ''}
+                    {this.renderColumnFilter()}
                 </i-form>
             </div>
         );

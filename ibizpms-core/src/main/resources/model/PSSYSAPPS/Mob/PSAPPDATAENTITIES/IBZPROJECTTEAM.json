@@ -265,7 +265,6 @@
   } ],
   "getAllPSAppDEDataExports" : [ {
     "codeName" : "DataExport",
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/IBZPROJECTTEAM/PSAPPDEDATAEXPS/DataExport.json",
     "maxRowCount" : 1000,
     "name" : "数据导出",
     "getPSDEDataExportItems" : [ {

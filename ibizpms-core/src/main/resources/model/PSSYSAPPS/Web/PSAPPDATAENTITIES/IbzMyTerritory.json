@@ -573,7 +573,6 @@
   "getAllPSAppDELogics" : [ {
     "codeName" : "MyTerritoryCount",
     "defaultParamName" : "Default",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMyTerritory/PSAPPDELOGICS/MyTerritoryCount.json",
     "logicName" : "我的地盘移动端计数器",
     "logicSubType" : "NONE",
     "name" : "我的地盘移动端计数器",

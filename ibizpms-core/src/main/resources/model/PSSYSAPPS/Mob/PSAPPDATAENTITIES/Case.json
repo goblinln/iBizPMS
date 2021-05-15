@@ -498,7 +498,6 @@
   } ],
   "getAllPSAppDEDataExports" : [ {
     "codeName" : "DataExport",
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Case/PSAPPDEDATAEXPS/DataExport.json",
     "maxRowCount" : 1000,
     "name" : "数据导出",
     "getPSDEDataExportItems" : [ {
@@ -1400,7 +1399,6 @@
   "getAllPSAppDELogics" : [ {
     "codeName" : "GetCaseStepByIdVersion",
     "defaultParamName" : "Default",
-    "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Case/PSAPPDELOGICS/GetCaseStepByIdVersion.json",
     "logicName" : "根据用例标识和版本获取用例步骤",
     "logicSubType" : "NONE",
     "name" : "根据用例标识和版本获取用例步骤",

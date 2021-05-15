@@ -137,7 +137,6 @@
   } ],
   "getAllPSAppDEDataExports" : [ {
     "codeName" : "BugResolvedExport",
-    "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/BugStats/PSAPPDEDATAEXPS/BugResolvedExport.json",
     "maxRowCount" : 1000,
     "name" : "Bug解决数据导出",
     "getPSDEDataExportItems" : [ {

@@ -383,13 +383,26 @@ export class MDControlBase extends MainControlBase {
     }
 
     /**
+     * 获取视图样式
+     *
+     * @readonly
+     * @memberof GridControlBase
+     */
+    get viewStyle(){
+        return (this.controlInstance?.getParentPSModelObject?.() as any)?.viewStyle || 'DEFAULT'
+    }
+
+    /**
      * 绘制批处理工具栏
      *
      * @return {*} 
      * @memberof MDControlBase
      */
     public renderBatchToolbar(): any{
-        return <span v-show={this.selections.length > 0} class="batch-toolbar">
+        for (let index = 0; index < this.batchToolbarModels.length; index++) {
+            this.batchToolbarModels[index].disabled = this.selections.length <= 0;
+        }
+        return <span v-show={this.selections.length > 0 || this.viewStyle == 'DEFAULT'} class="batch-toolbar">
             <view-toolbar
                 toolbarModels={this.batchToolbarModels}
                 on-item-click={(data: any, $event: any) => {

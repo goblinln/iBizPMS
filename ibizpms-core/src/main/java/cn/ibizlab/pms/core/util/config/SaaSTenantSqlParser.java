@@ -48,7 +48,7 @@ public class SaaSTenantSqlParser extends TenantSqlParser {
     }
 
     /**
-     * where 条件中包含select  添加租户id
+     * where 条件中包含function中select  添加租户id
      */
     protected void processWhere(Expression where) {
         if (where == null)
@@ -69,7 +69,7 @@ public class SaaSTenantSqlParser extends TenantSqlParser {
     }
 
     /**
-     * select 中包含 select  添加租户id
+     * select 中包含 select、function  添加租户id
      */
     protected void processSelectItem(PlainSelect plainSelect) {
         List<SelectItem> selectItems = plainSelect.getSelectItems();
@@ -80,8 +80,8 @@ public class SaaSTenantSqlParser extends TenantSqlParser {
                 }
             } else if (selectItem instanceof Function) {
                 for (Expression e : ((Function) selectItem).getParameters().getExpressions()) {
-                    if (e instanceof Select) {
-                        this.processSelectBody(((Select) e).getSelectBody());
+                    if (e instanceof SubSelect) {
+                        this.processSelectBody(((SubSelect) e).getSelectBody());
                     }
                 }
             }

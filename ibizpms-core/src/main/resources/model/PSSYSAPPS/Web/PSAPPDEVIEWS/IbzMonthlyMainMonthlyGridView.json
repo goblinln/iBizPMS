@@ -396,7 +396,7 @@
     },
     "getPSDEDataExport" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzMonthly/PSAPPDEDATAEXPS/DataExport.json"
+      "id" : "DataExport"
     },
     "getPSDEGridColumns" : [ {
       "align" : "LEFT",
