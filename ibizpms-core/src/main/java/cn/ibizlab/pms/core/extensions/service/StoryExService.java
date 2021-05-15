@@ -869,6 +869,7 @@ public class StoryExService extends StoryServiceImpl {
             oldStorySpec.setVerify(et.getVerify());
             oldStorySpec.setSpec(et.getSpec());
             oldStorySpec.setVersion(et.getVersion());
+            oldStorySpec.setId(null);
             iStorySpecService.create(oldStorySpec);
             if ((et.getNeednotreview() == null || "".equals(et.getNeednotreview())) && StaticDict.Story__status.ACTIVE.getValue().equals(et.getStatus())) {
                 et.setStatus(StaticDict.Story__status.CHANGED.getValue());
