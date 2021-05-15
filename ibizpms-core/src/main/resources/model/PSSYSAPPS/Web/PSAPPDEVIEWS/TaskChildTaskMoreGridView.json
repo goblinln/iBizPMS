@@ -130,6 +130,28 @@
       "viewLogicType" : "APP_OPENDATA"
     }
   } ],
+  "getPSAppViewNavContexts" : [ {
+    "key" : "PARENT",
+    "name" : "PARENT",
+    "value" : "srfparentkey",
+    "rawValue" : false
+  }, {
+    "key" : "N_PARENT_EQ",
+    "name" : "N_PARENT_EQ",
+    "value" : "srfparentkey",
+    "rawValue" : false
+  } ],
+  "getPSAppViewNavParams" : [ {
+    "key" : "n_parent_eq",
+    "name" : "n_parent_eq",
+    "value" : "srfparentkey",
+    "rawValue" : false
+  }, {
+    "key" : "parent",
+    "name" : "parent",
+    "value" : "srfparentkey",
+    "rawValue" : false
+  } ],
   "getPSAppViewRefs" : [ {
     "name" : "NEWDATA",
     "realOpenMode" : "DRAWER_RIGHT",
