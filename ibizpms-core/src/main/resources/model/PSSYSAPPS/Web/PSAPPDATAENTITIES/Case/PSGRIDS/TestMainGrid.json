@@ -149,11 +149,11 @@
   "getPSDEGridColumns" : [ {
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
-    "caption" : "用例编号",
+    "caption" : "编号",
     "codeName" : "id",
     "columnType" : "DEFGRIDCOLUMN",
     "dataItemName" : "id",
-    "excelCaption" : "用例编号",
+    "excelCaption" : "编号",
     "name" : "id",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {

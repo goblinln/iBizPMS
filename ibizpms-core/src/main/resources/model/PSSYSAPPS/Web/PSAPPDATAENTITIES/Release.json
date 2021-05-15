@@ -320,7 +320,7 @@
         "codeName" : "Releasesn"
       }
     }, {
-      "caption" : "ID",
+      "caption" : "编号",
       "format" : "%1$s",
       "name" : "id",
       "getPSAppDEField" : {

@@ -132,7 +132,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'usersn': commonLogic.appcommonhandle("编号",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'realname': commonLogic.appcommonhandle("真实姓名",null),
 				'account': commonLogic.appcommonhandle("账户",null),
 				'role': commonLogic.appcommonhandle("职位",null),

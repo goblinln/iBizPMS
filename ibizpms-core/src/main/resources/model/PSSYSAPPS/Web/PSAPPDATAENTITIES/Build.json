@@ -229,7 +229,7 @@
         "codeName" : "Buildsn"
       }
     }, {
-      "caption" : "id",
+      "caption" : "编号",
       "format" : "%1$s",
       "name" : "id",
       "getPSAppDEField" : {

@@ -509,7 +509,7 @@
         "codeName" : "Casesn"
       }
     }, {
-      "caption" : "用例编号",
+      "caption" : "编号",
       "format" : "%1$s",
       "name" : "id",
       "getPSAppDEField" : {
