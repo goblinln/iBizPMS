@@ -4148,6 +4148,38 @@
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
+      "codeName" : "DaysRule",
+      "name" : "可用工作日要大于0",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condOp" : "AND",
+          "condType" : "GROUP",
+          "name" : "[条件组]AND",
+          "getPSDEFVRConditions" : [ {
+            "condOp" : "GT",
+            "condType" : "SIMPLE",
+            "dEFName" : "DAYS",
+            "name" : "[常规条件] 大于(>) (0)",
+            "paramValue" : "0",
+            "ruleInfo" : "可用工作日大于0"
+          } ],
+          "ruleInfo" : "可用工作日大于0"
+        } ],
+        "ruleInfo" : "可用工作日大于0"
+      },
+      "getPSDEField" : {
+        "name" : "DAYS",
+        "codeName" : "Days"
+      },
+      "ruleInfo" : "可用工作日大于0",
+      "checkDefault" : false,
+      "defaultMode" : false,
+      "enableBackend" : true,
+      "enableFront" : true
+    }, {
       "codeName" : "Default",
       "name" : "默认规则",
       "getPSDEFVRGroupCondition" : {
