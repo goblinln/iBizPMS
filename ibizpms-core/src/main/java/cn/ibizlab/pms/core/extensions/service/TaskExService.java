@@ -107,6 +107,7 @@ public class TaskExService extends TaskServiceImpl {
             if (!taskRuntime.isRtmodel()) {
                 et.setTaskteams(taskteamService.selectByRoot(key));
             }
+            et.setTaskestimates(null);
         }
         return et;
     }
@@ -122,6 +123,8 @@ public class TaskExService extends TaskServiceImpl {
         if (list.size() > 0) {
             task.setIsfavorites(list.get(0).getString("ISFAVOURITES"));
         }
+        task.setTaskestimates(null);
+        task.setTaskteams(null);
         return task;
     }
 
@@ -1318,7 +1321,7 @@ public class TaskExService extends TaskServiceImpl {
                 task.setAssigneddate(ZTDateUtil.now());
             }
             task.setTaskspecies(StaticDict.TaskSpecies.TEMP.getValue());//创建子任务时子任务的状态为临时任务
-            super.create(task);
+            getProxyService().create(task);
 
             childTasks += task.getId() + ",";
             ActionHelper.createHis(task.getId(), StaticDict.Action__object_type.TASK.getValue(), null, StaticDict.Action__type.OPENED.getValue(), "", "", null, iActionService);
