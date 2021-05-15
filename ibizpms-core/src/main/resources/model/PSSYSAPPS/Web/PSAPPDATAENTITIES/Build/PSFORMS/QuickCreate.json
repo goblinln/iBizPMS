@@ -94,6 +94,7 @@
   }, {
     "id" : "date",
     "dataType" : 5,
+    "createDVT" : "CURTIME",
     "getPSAppDEField" : {
       "name" : "DATE",
       "codeName" : "Date"
@@ -332,6 +333,7 @@
         }, {
           "caption" : "打包日期",
           "codeName" : "date",
+          "createDVT" : "CURTIME",
           "dataType" : 5,
           "detailStyle" : "DEFAULT",
           "detailType" : "FORMITEM",

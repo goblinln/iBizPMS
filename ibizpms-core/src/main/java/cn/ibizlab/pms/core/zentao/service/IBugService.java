@@ -115,6 +115,7 @@ public interface IBugService extends IService<Bug> {
     List<Bug> selectReportBugs(BugSearchContext context);
     List<Bug> selectSelectBugByBuild(BugSearchContext context);
     List<Bug> selectSelectBugsByProject(BugSearchContext context);
+    List<Bug> selectStoryFormBug(BugSearchContext context);
     List<Bug> selectTaskBug(BugSearchContext context);
     List<Bug> selectView(BugSearchContext context);
 
@@ -149,6 +150,7 @@ public interface IBugService extends IService<Bug> {
     Page<Bug> searchReleaseLinkableLeftBug(BugSearchContext context);
     Page<Bug> searchReleaseLinkableResolvedBug(BugSearchContext context);
     Page<Bug> searchReportBugs(BugSearchContext context);
+    Page<Bug> searchStoryFormBug(BugSearchContext context);
     Page<Bug> searchTaskRelatedBug(BugSearchContext context);
     List<Bug> selectByBranch(Long id);
     void removeByBranch(Long id);

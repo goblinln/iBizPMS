@@ -189,6 +189,8 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
             return bugService.searchReleaseLinkableResolvedBug(searchContext);    
         if (iPSDEDataSet.getName().equals("ReportBugs"))
             return bugService.searchReportBugs(searchContext);    
+        if (iPSDEDataSet.getName().equals("StoryFormBug"))
+            return bugService.searchStoryFormBug(searchContext);    
         if (iPSDEDataSet.getName().equals("TaskBug"))
             return bugService.searchTaskRelatedBug(searchContext);    
         return null;
@@ -259,6 +261,8 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
             return bugService.selectSelectBugByBuild(searchContext);
         if (iPSDataQuery.getName().equals("SelectBugsByProject"))
             return bugService.selectSelectBugsByProject(searchContext);
+        if (iPSDataQuery.getName().equals("StoryFormBug"))
+            return bugService.selectStoryFormBug(searchContext);
         if (iPSDataQuery.getName().equals("TaskBug"))
             return bugService.selectTaskBug(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
@@ -645,6 +649,9 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
         }
         else if (action.equals("searchReportBugs")) {
             return aroundDataSet("ReportBugs", point);
+        }
+        else if (action.equals("searchStoryFormBug")) {
+            return aroundDataSet("StoryFormBug", point);
         }
         else if (action.equals("searchTaskRelatedBug")) {
             return aroundDataSet("TaskBug", point);

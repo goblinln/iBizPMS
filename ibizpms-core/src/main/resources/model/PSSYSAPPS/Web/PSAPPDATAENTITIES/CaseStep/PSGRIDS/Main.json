@@ -24,15 +24,15 @@
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
     "caption" : "编号",
-    "codeName" : "casestepsn",
+    "codeName" : "id",
     "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "casestepsn",
+    "dataItemName" : "id",
     "excelCaption" : "编号",
-    "name" : "casestepsn",
+    "name" : "id",
     "noPrivDisplayMode" : 1,
     "getPSAppDEField" : {
-      "name" : "CASESTEPSN",
-      "codeName" : "Casestepsn"
+      "name" : "ID",
+      "codeName" : "Id"
     },
     "width" : 100,
     "widthUnit" : "PX",
@@ -98,18 +98,18 @@
     "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
-    "dataType" : 1,
-    "name" : "id",
-    "getPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    }
-  }, {
     "dataType" : 21,
     "name" : "expect",
     "getPSAppDEField" : {
       "name" : "EXPECT",
       "codeName" : "Expect"
+    }
+  }, {
+    "dataType" : 1,
+    "name" : "id",
+    "getPSAppDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
     }
   }, {
     "dataType" : 21,

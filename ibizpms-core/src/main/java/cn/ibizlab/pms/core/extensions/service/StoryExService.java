@@ -89,6 +89,8 @@ public class StoryExService extends StoryServiceImpl {
             if (list.size() > 0) {
                 story.setIsfavorites(list.get(0).getString("ISFAVOURITES"));
             }
+            story.setStorystages(null);
+            story.setStoryspecs(null);
             return story;
         }
 
@@ -461,7 +463,7 @@ public class StoryExService extends StoryServiceImpl {
         String storyIds = "";
 
         for (Story story : storyList) {
-            if (!this.create(story)) {
+            if (!getProxyService().create(story)) {
                 continue;
             }
             if (!"".equals(storyIds)) {
@@ -867,6 +869,7 @@ public class StoryExService extends StoryServiceImpl {
             oldStorySpec.setVerify(et.getVerify());
             oldStorySpec.setSpec(et.getSpec());
             oldStorySpec.setVersion(et.getVersion());
+            oldStorySpec.setId(null);
             iStorySpecService.create(oldStorySpec);
             if ((et.getNeednotreview() == null || "".equals(et.getNeednotreview())) && StaticDict.Story__status.ACTIVE.getValue().equals(et.getStatus())) {
                 et.setStatus(StaticDict.Story__status.CHANGED.getValue());
@@ -948,6 +951,8 @@ public class StoryExService extends StoryServiceImpl {
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
         }
         else {
+            et.setStoryspecs(null);
+            et.setStorystages(null);
             this.getStorySpec(et);
         }
         return et;

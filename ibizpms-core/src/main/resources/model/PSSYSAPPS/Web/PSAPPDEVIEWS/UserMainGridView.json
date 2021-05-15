@@ -521,15 +521,15 @@
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
       "caption" : "编号",
-      "codeName" : "usersn",
+      "codeName" : "id",
       "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "usersn",
+      "dataItemName" : "id",
       "excelCaption" : "编号",
-      "name" : "usersn",
+      "name" : "id",
       "noPrivDisplayMode" : 1,
       "getPSAppDEField" : {
-        "name" : "USERSN",
-        "codeName" : "Usersn"
+        "name" : "ID",
+        "codeName" : "Id"
       },
       "width" : 100,
       "widthUnit" : "PX",
@@ -899,18 +899,18 @@
         "codeName" : "Visits"
       }
     }, {
-      "dataType" : 1,
-      "name" : "usersn",
-      "getPSAppDEField" : {
-        "name" : "USERSN",
-        "codeName" : "Usersn"
-      }
-    }, {
       "dataType" : 25,
       "name" : "qq",
       "getPSAppDEField" : {
         "name" : "QQ",
         "codeName" : "Qq"
+      }
+    }, {
+      "dataType" : 1,
+      "name" : "usersn",
+      "getPSAppDEField" : {
+        "name" : "USERSN",
+        "codeName" : "Usersn"
       }
     } ],
     "getPSDEGridEditItems" : [ {

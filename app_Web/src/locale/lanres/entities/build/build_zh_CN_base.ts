@@ -169,7 +169,7 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("id",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'productname': commonLogic.appcommonhandle("产品名称",null),
 				'name': commonLogic.appcommonhandle("名称编号",null),
 				'scmpath': commonLogic.appcommonhandle("源代码地址",null),
@@ -181,7 +181,7 @@ function getLocaleResourceBase(){
 			nodata:commonLogic.appcommonhandle("",null),
 		exportColumns: {
 				'buildsn': commonLogic.appcommonhandle("编号",null),
-				'id': commonLogic.appcommonhandle("id",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'productname': commonLogic.appcommonhandle("产品名称",null),
 				'name': commonLogic.appcommonhandle("名称编号",null),
 				'scmpath': commonLogic.appcommonhandle("源代码地址",null),
@@ -201,7 +201,7 @@ function getLocaleResourceBase(){
 		},
 		testrounds_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("id",null),
+				'id': commonLogic.appcommonhandle("编号",null),
 				'productname': commonLogic.appcommonhandle("产品名称",null),
 				'name': commonLogic.appcommonhandle("名称编号",null),
 				'scmpath': commonLogic.appcommonhandle("源代码地址",null),

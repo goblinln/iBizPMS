@@ -435,6 +435,7 @@ public class CaseExService extends CaseServiceImpl {
         if (result.size()>0){
             aCase.setIsfavorites(result.get(0).getString("ISFAVORITES"));
         }
+        aCase.setCasesteps(null);
 
         return aCase;
     }
