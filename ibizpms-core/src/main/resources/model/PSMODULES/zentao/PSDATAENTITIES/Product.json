@@ -923,7 +923,7 @@
       "columnName" : "unconfirmbugcnt",
       "dBType" : "MYSQL5",
       "name" : "UNCONFIRMBUGCNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND `CONFIRMED` = 0 AND DELETED = '0' and ZT_BUG.SRFDCID = t1.SRFDCID)",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND `CONFIRMED` = 0 AND DELETED = '0' )",
       "standardColumnName" : "`unconfirmbugcnt`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1221,7 +1221,7 @@
       "columnName" : "productplancnt",
       "dBType" : "MYSQL5",
       "name" : "PRODUCTPLANCNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`id` AND DELETED = '0' and ZT_PRODUCTPLAN.SRFDCID = t1.SRFDCID)",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`id` AND DELETED = '0' )",
       "standardColumnName" : "`productplancnt`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1365,7 +1365,7 @@
       "columnName" : "closedstorycnt",
       "dBType" : "MYSQL5",
       "name" : "CLOSEDSTORYCNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='closed' AND DELETED = '0' and ZT_STORY.SRFDCID = t1.SRFDCID)",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='closed' AND DELETED = '0' )",
       "standardColumnName" : "`closedstorycnt`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1401,7 +1401,7 @@
       "columnName" : "relatedbugcnt",
       "dBType" : "MYSQL5",
       "name" : "RELATEDBUGCNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND DELETED = '0' and ZT_BUG.SRFDCID = t1.SRFDCID)",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND DELETED = '0' )",
       "standardColumnName" : "`relatedbugcnt`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1535,7 +1535,7 @@
       "columnName" : "releasecnt",
       "dBType" : "MYSQL5",
       "name" : "RELEASECNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`id` AND DELETED = '0' and ZT_RELEASE.SRFDCID = t1.SRFDCID)",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`id` AND DELETED = '0' )",
       "standardColumnName" : "`releasecnt`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -1673,7 +1673,7 @@
       "columnName" : "notclosedbugcnt",
       "dBType" : "MYSQL5",
       "name" : "NOTCLOSEDBUGCNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND `STATUS` <> 'closed' AND DELETED = '0' and ZT_BUG.SRFDCID = t1.SRFDCID)",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND `STATUS` <> 'closed' AND DELETED = '0' )",
       "standardColumnName" : "`notclosedbugcnt`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2180,7 +2180,7 @@
       "columnName" : "changedstorycnt",
       "dBType" : "MYSQL5",
       "name" : "CHANGEDSTORYCNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='changed' AND DELETED = '0' and ZT_STORY.SRFDCID = t1.SRFDCID)",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='changed' AND DELETED = '0' )",
       "standardColumnName" : "`changedstorycnt`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2457,7 +2457,7 @@
       "columnName" : "draftstorycnt",
       "dBType" : "MYSQL5",
       "name" : "DRAFTSTORYCNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='draft' AND DELETED = '0' and ZT_STORY.SRFDCID = t1.SRFDCID)",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='draft' AND DELETED = '0')",
       "standardColumnName" : "`draftstorycnt`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -2493,7 +2493,7 @@
       "columnName" : "doccnt",
       "dBType" : "MYSQL5",
       "name" : "DOCCNT",
-      "queryCodeExp" : "(select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0' and t.SRFDCID = t1.SRFDCID)",
+      "queryCodeExp" : "(select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0')",
       "standardColumnName" : "`doccnt`"
     } ],
     "getAllPSDEFValueRules" : [ {
@@ -3065,7 +3065,7 @@
       "columnName" : "activestorycnt",
       "dBType" : "MYSQL5",
       "name" : "ACTIVESTORYCNT",
-      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='active' AND DELETED = '0' and ZT_STORY.SRFDCID = t1.SRFDCID)",
+      "queryCodeExp" : "(SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='active' AND DELETED = '0' )",
       "standardColumnName" : "`activestorycnt`"
     } ],
     "getAllPSDEFValueRules" : [ {
