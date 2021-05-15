@@ -107,11 +107,14 @@ public class SaaSTenantSqlParser extends TenantSqlParser {
             processWhere(((Between) where).getBetweenExpressionEnd());
         }
         else if (where instanceof Function) {
-            for (Expression e : ((Function) where).getParameters().getExpressions()) {
-                if (e instanceof SubSelect) {
-                    this.processSelectBody(((SubSelect) e).getSelectBody());
+            if (null != ((Function) where).getParameters()){
+                for (Expression e : ((Function) where).getParameters().getExpressions()) {
+                    if (e instanceof SubSelect) {
+                        this.processSelectBody(((SubSelect) e).getSelectBody());
+                    }
                 }
             }
+
         }else if (where instanceof SubSelect) {
             this.processSelectBody(((SubSelect) where).getSelectBody());
         }
