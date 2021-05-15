@@ -220,9 +220,9 @@ public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBas
         if (ObjectUtils.isEmpty(objPickupValue)) {
             //无值，执行置空
         } else {
-            if (NumberUtils.toLong(String.valueOf(objPickupValue), 0L) == 0L) {
+           /* if (NumberUtils.toLong(String.valueOf(objPickupValue), 0L) == 0L) {
                 this.resetFieldValue(arg0, iPSDER1N.getPSPickupDEField());
-            }
+            }*/
         }
     }
 
