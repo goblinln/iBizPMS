@@ -845,6 +845,9 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     public List<Bug> selectSelectBugsByProject(BugSearchContext context){
         return baseMapper.selectSelectBugsByProject(context, context.getSelectCond());
     }
+    public List<Bug> selectStoryFormBug(BugSearchContext context){
+        return baseMapper.selectStoryFormBug(context, context.getSelectCond());
+    }
     public List<Bug> selectTaskBug(BugSearchContext context){
         return baseMapper.selectTaskBug(context, context.getSelectCond());
     }
@@ -1129,6 +1132,15 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     public Page<Bug> searchReportBugs(BugSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchReportBugs(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 需求来源Bug
+     */
+    @Override
+    public Page<Bug> searchStoryFormBug(BugSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchStoryFormBug(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

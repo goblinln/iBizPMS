@@ -238,7 +238,7 @@
       } ]
     } ],
     "getPSDEFormItemVRs" : [ {
-      "checkMode" : 1,
+      "checkMode" : 3,
       "name" : "表单项值规则",
       "getPSDEFValueRule" : {
         "codeName" : "EndRule",
@@ -275,6 +275,44 @@
         "enableFront" : true
       },
       "getPSDEFormItemName" : "end",
+      "valueRuleType" : "DEFVALUERULE"
+    }, {
+      "checkMode" : 3,
+      "name" : "表单项值规则",
+      "getPSDEFValueRule" : {
+        "codeName" : "DaysRule",
+        "name" : "可用工作日要大于0",
+        "getPSDEFVRGroupCondition" : {
+          "condOp" : "AND",
+          "condType" : "GROUP",
+          "name" : "默认组",
+          "getPSDEFVRConditions" : [ {
+            "condOp" : "AND",
+            "condType" : "GROUP",
+            "name" : "[条件组]AND",
+            "getPSDEFVRConditions" : [ {
+              "condOp" : "GT",
+              "condType" : "SIMPLE",
+              "dEFName" : "DAYS",
+              "name" : "[常规条件] 大于(>) (0)",
+              "paramValue" : "0",
+              "ruleInfo" : "可用工作日大于0"
+            } ],
+            "ruleInfo" : "可用工作日大于0"
+          } ],
+          "ruleInfo" : "可用工作日大于0"
+        },
+        "getPSDEField" : {
+          "name" : "DAYS",
+          "codeName" : "Days"
+        },
+        "ruleInfo" : "可用工作日大于0",
+        "checkDefault" : false,
+        "defaultMode" : false,
+        "enableBackend" : true,
+        "enableFront" : true
+      },
+      "getPSDEFormItemName" : "days",
       "valueRuleType" : "DEFVALUERULE"
     } ],
     "getPSDEFormItems" : [ {

@@ -46,13 +46,6 @@ export class ListControlBase extends MDControlBase {
     public items: Array<any> = [];
 
     /**
-     * todo 临时处理
-     *
-     * @memberof ListControlBase
-     */
-    public viewStyle?: string;
-
-    /**
      * 初始化
      *
      * @memberof ListControlBase
@@ -584,7 +577,6 @@ export class ListControlBase extends MDControlBase {
      */
     public onStaticPropsChange(newVal: any, oldVal: any) {
         this.isSelectFirstDefault = newVal.isSelectFirstDefault;
-        this.viewStyle = newVal.viewStyle
         super.onStaticPropsChange(newVal, oldVal);
     }
 

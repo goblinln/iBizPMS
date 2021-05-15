@@ -50,6 +50,7 @@ public interface BugMapper extends BaseMapper<Bug> {
     List<Bug> selectReportBugs(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     List<Bug> selectSelectBugByBuild(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     List<Bug> selectSelectBugsByProject(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectStoryFormBug(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     List<Bug> selectTaskBug(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     List<Bug> selectView(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
 
@@ -84,6 +85,7 @@ public interface BugMapper extends BaseMapper<Bug> {
     Page<Bug> searchReleaseLinkableLeftBug(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     Page<Bug> searchReleaseLinkableResolvedBug(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     Page<Bug> searchReportBugs(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    Page<Bug> searchStoryFormBug(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     Page<Bug> searchTaskRelatedBug(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     @Override
     Bug selectById(Serializable id);

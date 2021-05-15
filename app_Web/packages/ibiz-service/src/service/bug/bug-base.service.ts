@@ -404,6 +404,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
         return this.condCache.get('selectBugsByProject');
     }
 
+    protected getStoryFormBugCond() {
+        if (!this.condCache.has('storyFormBug')) {
+            const strCond: any[] = ['AND'];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('storyFormBug', cond);
+            }
+        }
+        return this.condCache.get('storyFormBug');
+    }
+
     protected getTaskBugCond() {
         return this.condCache.get('taskBug');
     }
@@ -1942,6 +1954,29 @@ export class BugBaseService extends EntityBaseService<IBug> {
             return this.http.post(`/products/${_context.product}/bugs/fetchreportbugs`, _data);
         }
         return this.http.post(`/bugs/fetchreportbugs`, _data);
+    }
+    /**
+     * FetchStoryFormBug
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof BugService
+     */
+    async FetchStoryFormBug(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/bugs/fetchstoryformbug`, _data);
+        }
+        if (_context.project && true) {
+            return this.http.post(`/projects/${_context.project}/bugs/fetchstoryformbug`, _data);
+        }
+        if (_context.story && true) {
+            return this.http.post(`/stories/${_context.story}/bugs/fetchstoryformbug`, _data);
+        }
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/bugs/fetchstoryformbug`, _data);
+        }
+        return this.http.post(`/bugs/fetchstoryformbug`, _data);
     }
     /**
      * FetchTaskRelatedBug
