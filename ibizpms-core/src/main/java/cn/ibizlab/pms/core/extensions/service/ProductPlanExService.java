@@ -237,28 +237,31 @@ public class ProductPlanExService extends ProductPlanServiceImpl {
     @Transactional(rollbackFor = Exception.class)
     @Override
     public boolean remove(Long key) {
+        ProductPlan plan = this.get(key);
         boolean bOk = super.remove(key);
+        if( plan.getParent() > 0) {
+            changeParentField(plan.getParent(),plan.getProduct());
+        }
 
-        changeParentField(key);
 
 
         return bOk;
     }
 
     @Transactional
-    public void changeParentField(Long key) {
-        ProductPlan plan = this.get(key);
-        if(plan == null && plan.getParent() <= 0) {
-            return;
-        }
+    public void changeParentField(Long parent,Long product) {
+//        ProductPlan plan = this.get(key);
+//        if(plan == null && plan.getParent() <= 0) {
+//            return;
+//        }
         ProductPlanSearchContext planSearchContext = new ProductPlanSearchContext();
-        planSearchContext.setN_parent_eq(plan.getParent());
-        planSearchContext.setN_product_eq(plan.getProduct());
-        long parent = productPlanService.searchDefault(planSearchContext).getContent().size() > 0 ? -1L : 0L;
-        ProductPlan parentPlan = this.get(plan.getParent());
+        planSearchContext.setN_parent_eq(parent);
+        planSearchContext.setN_product_eq(product);
+        long parentValue = productPlanService.searchDefault(planSearchContext).getContent().size() > 0 ? -1L : 0L;
+        ProductPlan parentPlan = this.get(parent);
         if(parentPlan != null) {
             if("0".equals(parentPlan.getDeleted())) {
-                parentPlan.setParent(parent);
+                parentPlan.setParent(parentValue);
                 super.update(parentPlan);
             }else {
                 parentPlan.setParent(0L);
