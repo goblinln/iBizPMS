@@ -3,6 +3,7 @@ package cn.ibizlab.pms.core.extensions.service;
 import cn.ibizlab.pms.core.util.ibizzentao.common.ChangeUtil;
 import cn.ibizlab.pms.core.util.ibizzentao.common.ZTDateUtil;
 import cn.ibizlab.pms.core.zentao.domain.*;
+import cn.ibizlab.pms.core.zentao.filter.StorySearchContext;
 import cn.ibizlab.pms.core.zentao.filter.StorySpecSearchContext;
 import cn.ibizlab.pms.core.zentao.service.*;
 import cn.ibizlab.pms.core.zentao.service.impl.StoryServiceImpl;
@@ -16,6 +17,8 @@ import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Primary;
@@ -71,6 +74,8 @@ public class StoryExService extends StoryServiceImpl {
 
     @Autowired
     IBuildService iBuildService;
+
+    String[] ignores = {"lasteditedby", "lastediteddate", "versionc", "assignedtopk", "mailtopk"};
 
     @Override
     public Story sysGet(Long key) {
@@ -200,7 +205,7 @@ public class StoryExService extends StoryServiceImpl {
         }
 
         Product product = et.getZtproduct();
-        boolean hasBranch = (!StaticDict.Product__status.NORMAL.getValue().equals(product.getType()) && (et.getBranch() == null));
+        boolean hasBranch = (!StaticDict.Product__status.NORMAL.getValue().equals(product.getType()) && (et.getBranch() == null || et.getBranch()==0));
 
         String releaseSql = String.format("select DISTINCT branch,'released' as stage from zt_release where deleted = '0' and CONCAT(',', stories, ',') like %1$s ", "CONCAT('%,'," + et.getId() + ",',%')");
         List<JSONObject> releaseList = iStoryStageService.select(releaseSql, null);
@@ -697,7 +702,7 @@ public class StoryExService extends StoryServiceImpl {
         et.setAssigneddate(ZTDateUtil.now());
         String noticeusers = et.getNoticeusers();
         this.sysUpdate(et);
-        List<History> changes = ChangeUtil.diff(old, et, new String[]{"lasteditedby", "assigneddate", "lastediteddate", "spec", "verify"});
+        List<History> changes = ChangeUtil.diff(old, et, new String[]{"lasteditedby", "assigneddate", "lastediteddate","assignedtopk","mailtopk", "spec", "verify"});
         if (changes.size() > 0) {
             if (jugAssignToIsChanged(old,et)){
                 ActionHelper.sendMarkDone(et.getId(),et.getTitle(),old.getAssignedto(), "需求", StaticDict.Action__object_type.STORY.getValue(), "stories", StaticDict.Action__type.CHANGED.getText(), iActionService);
@@ -886,7 +891,7 @@ public class StoryExService extends StoryServiceImpl {
         et.setTitle(oldStorySpec.getTitle());
         et.setSpec(oldStorySpec.getSpec());
         et.setVerify(oldStorySpec.getVerify());
-        List<History> changes = ChangeUtil.diff(old, et, new String[]{"lasteditedby", "lastediteddate", "versionc"}, null, new String[]{"title", "spec", "verify"});
+        List<History> changes = ChangeUtil.diff(old, et, ignores, null, new String[]{"title", "spec", "verify"});
 
         if (StringUtils.isNotBlank(comment) || changes.size() > 0) {
             String strAction = changes.size() > 0 ? StaticDict.Action__type.CHANGED.getValue() : StaticDict.Action__type.COMMENTED.getValue();
@@ -1238,6 +1243,26 @@ public class StoryExService extends StoryServiceImpl {
         ActionHelper.createHis(et.getId(), StaticDict.Action__object_type.STORY.getValue(), null,  StaticDict.Action__type.UNLINKEDFROMPLAN.getValue(), "", et.getPlan(), null, iActionService);
 
         return et;
+    }
+
+    /**
+     * 查询集合 数据查询
+     */
+    @Override
+    public Page<Story> searchParentDefault(StorySearchContext context) {
+        context.setN_parent_gtandeq(0L);
+        Page<Story> page = super.searchParentDefault(context);
+        for (Story story : page.getContent()) {
+            if (story.getParent() < 0) {
+                StorySearchContext context1 = new StorySearchContext();
+                context1.setSelectCond(context.getSelectCond().clone());
+                context1.setN_parent_eq(story.getId());
+                context1.setN_parent_gtandeq(null);
+                List<Story> storyList = this.searchStoryChild(context1).getContent();
+                story.set("item",storyList);
+            }
+        }
+        return page;
     }
 }
 

@@ -79,6 +79,9 @@ public class ChangeUtil {
         for (Change change : dif.getChanges()) {
             if (change instanceof ValueChange) {
                 ValueChange vchange = (ValueChange) change;
+                if(!vchange.getAffectedObject().get().getClass().getName().equals(old.getClass().getName()) ) {
+                    continue;
+                }
                 History history = new History();
                 history.setField(vchange.getPropertyName());
                 history.setOld(vchange.getLeft() == null ? "" : vchange.getLeft().toString());

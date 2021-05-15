@@ -2217,7 +2217,7 @@ public class TaskExService extends TaskServiceImpl {
     public Page<Task> searchCurProjectTaskQuery(TaskSearchContext context) {
         context.setN_parent_ltandeq(0L);
         Page<Task> page = super.searchCurProjectTaskQuery(context);
-        for (Task task : page.getContent()) {
+        /*for (Task task : page.getContent()) {
             // 子任务
             if (task.getParent() != null && task.getParent() < 0) {
                 TaskSearchContext context1 = new TaskSearchContext();
@@ -2225,10 +2225,10 @@ public class TaskExService extends TaskServiceImpl {
                 context1.setN_parent_eq(task.getId());
                 context1.setN_parent_ltandeq(null);
 
-                List<Task> taskList = this.searchChildDefault(context1).getContent();
-                task.set("items", taskList);
+//                List<Task> taskList = this.searchChildDefault(context1).getContent();
+//                task.set("items", taskList);
             }
-        }
+        }*/
         return page;
     }
 
