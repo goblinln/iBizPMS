@@ -8,7 +8,7 @@
     "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
   },
   "masterOrder" : -1,
-  "masterRS" : 12,
+  "masterRS" : 4,
   "minorCodeName" : "Historys",
   "getMinorPSDataEntity" : {
     "modelref" : true,
@@ -22,6 +22,5 @@
   },
   "pickupDEFName" : "ACTION",
   "removeActionType" : -1,
-  "removeOrder" : 0,
-  "nestedRS" : true
+  "removeOrder" : 0
 }

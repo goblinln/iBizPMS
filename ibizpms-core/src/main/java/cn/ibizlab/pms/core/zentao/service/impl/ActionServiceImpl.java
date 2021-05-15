@@ -74,9 +74,6 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
         }
-        if(!actionRuntime.isRtmodel()){
-            historyService.saveByAction(et.getId(), et.getHistorys());
-        }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
     }
@@ -99,9 +96,6 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
     public boolean update(Action et) {
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
-        }
-        if(!actionRuntime.isRtmodel()){
-            historyService.saveByAction(et.getId(), et.getHistorys());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -132,7 +126,6 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
     @Transactional
     public boolean remove(Long key) {
         if(!actionRuntime.isRtmodel()){
-            historyService.removeByAction(key) ;
         }
         boolean result = removeById(key);
         return result ;
@@ -158,7 +151,6 @@ public class ActionServiceImpl extends ServiceImpl<ActionMapper, Action> impleme
         }
         else {
             if(!actionRuntime.isRtmodel()){
-                et.setHistorys(historyService.selectByAction(key));
             }
         }
         return et;
