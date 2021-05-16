@@ -3,6 +3,22 @@ package cn.ibizlab.pms.core.util.config;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.extension.plugins.tenant.TenantSqlParser;
 import net.sf.jsqlparser.expression.*;
+import net.sf.jsqlparser.expression.operators.arithmetic.Addition;
+import net.sf.jsqlparser.expression.operators.arithmetic.Division;
+import net.sf.jsqlparser.expression.operators.arithmetic.Multiplication;
+import net.sf.jsqlparser.expression.operators.arithmetic.Subtraction;
+import net.sf.jsqlparser.expression.operators.conditional.AndExpression;
+import net.sf.jsqlparser.expression.operators.conditional.OrExpression;
+import net.sf.jsqlparser.expression.operators.relational.*;
+import net.sf.jsqlparser.schema.Column;
+import net.sf.jsqlparser.schema.Table;
+import net.sf.jsqlparser.statement.select.*;
+
+import java.util.List;
+
+import com.baomidou.mybatisplus.core.toolkit.StringPool;
+import com.baomidou.mybatisplus.extension.plugins.tenant.TenantSqlParser;
+import net.sf.jsqlparser.expression.*;
 import net.sf.jsqlparser.expression.operators.conditional.AndExpression;
 import net.sf.jsqlparser.expression.operators.conditional.OrExpression;
 import net.sf.jsqlparser.expression.operators.relational.*;
@@ -20,7 +36,9 @@ public class SaaSTenantSqlParser extends TenantSqlParser {
      * @param plainSelect ignore
      * @param addColumn   是否添加租户列,insert into select语句中需要
      */
+    @Override
     protected void processPlainSelect(PlainSelect plainSelect, boolean addColumn) {
+        //处理selectItem表达式
         processSelectItem(plainSelect);
         FromItem fromItem = plainSelect.getFromItem();
         if (fromItem instanceof Table) {
@@ -28,10 +46,11 @@ public class SaaSTenantSqlParser extends TenantSqlParser {
             if (!this.getTenantHandler().doTableFilter(fromTable.getName())) {
                 plainSelect.setWhere(builderExpression(plainSelect.getWhere(), fromTable));
                 if (addColumn) {
-                    if (fromItem.getAlias() != null)
+                    if (fromItem.getAlias() != null) {
                         plainSelect.getSelectItems().add(new SelectExpressionItem(new Column(fromItem.getAlias().getName() + StringPool.DOT + this.getTenantHandler().getTenantIdColumn())));
-                    else
+                    }else {
                         plainSelect.getSelectItems().add(new SelectExpressionItem(new Column(this.getTenantHandler().getTenantIdColumn())));
+                    }
                 }
             }
         } else {
@@ -44,79 +63,88 @@ public class SaaSTenantSqlParser extends TenantSqlParser {
                 processFromItem(j.getRightItem());
             });
         }
-        processWhere(plainSelect.getWhere());
+        //处理where表达式
+        processExcepression(plainSelect.getWhere());
     }
 
     /**
-     * where 条件中包含function中select  添加租户id
+     * exception 表达式处理
      */
-    protected void processWhere(Expression where) {
-        if (where == null)
+    protected void processExcepression(Expression exception) {
+        if (exception == null) {
             return;
-        if (where instanceof AndExpression) {
-            processWhere(((AndExpression) where).getLeftExpression());
-            processWhere(((AndExpression) where).getRightExpression());
-        } else if (where instanceof OrExpression) {
-            processWhere(((OrExpression) where).getLeftExpression());
-            processWhere(((OrExpression) where).getRightExpression());
-        }else if(where instanceof Parenthesis) {
-            processWhere(((Parenthesis)where).getExpression());
-        }else if(where instanceof NotExpression) {
-            processWhere(((NotExpression)where).getExpression());
-        }else if (where instanceof InExpression) {
-            processWhere(((InExpression) where).getLeftExpression());
-           if(((InExpression) where).getRightItemsList() instanceof SubSelect) {
-               this.processSelectBody(((SubSelect) ((InExpression) where).getRightItemsList()).getSelectBody());
-           }
-        }else if (where instanceof EqualsTo){
-            processWhere(((EqualsTo) where).getLeftExpression());
-            processWhere(((EqualsTo) where).getRightExpression());
-        }else if (where instanceof CaseExpression) {
-            for(WhenClause w : ((CaseExpression) where).getWhenClauses()) {
-                processWhere(w.getWhenExpression());
-                processWhere(w.getThenExpression());
-            }
-            processWhere(((CaseExpression) where).getElseExpression());
-        }else if (where instanceof ExistsExpression) {
-            processWhere(((ExistsExpression) where).getRightExpression());
-        }else if(where instanceof GreaterThan) {
-            processWhere(((GreaterThan) where).getLeftExpression());
-            processWhere(((GreaterThan) where).getRightExpression());
-        }else if(where instanceof GreaterThanEquals) {
-            processWhere(((GreaterThanEquals) where).getLeftExpression());
-            processWhere(((GreaterThanEquals) where).getRightExpression());
-        }else if(where instanceof MinorThan) {
-            processWhere(((MinorThan) where).getLeftExpression());
-            processWhere(((MinorThan) where).getRightExpression());
-        }else if(where instanceof MinorThanEquals) {
-            processWhere(((MinorThanEquals) where).getLeftExpression());
-            processWhere(((MinorThanEquals) where).getRightExpression());
-        }else if (where instanceof NotEqualsTo){
-            processWhere(((NotEqualsTo) where).getLeftExpression());
-            processWhere(((NotEqualsTo) where).getRightExpression());
-        }else if (where instanceof IsBooleanExpression) {
-            processWhere(((IsBooleanExpression) where).getLeftExpression());
-        }else if(where instanceof IsNullExpression) {
-            processWhere(((IsNullExpression) where).getLeftExpression());
-        }else if (where instanceof LikeExpression) {
-            processWhere(((LikeExpression) where).getLeftExpression());
-            processWhere(((LikeExpression) where).getRightExpression());
-        }else if(where instanceof Between) {
-            processWhere(((Between) where).getLeftExpression());
-            processWhere(((Between) where).getBetweenExpressionStart());
-            processWhere(((Between) where).getBetweenExpressionEnd());
-        }
-        else if (where instanceof Function) {
-            if (null != ((Function) where).getParameters()){
-                for (Expression e : ((Function) where).getParameters().getExpressions()) {
-                    if (e instanceof SubSelect) {
-                        this.processSelectBody(((SubSelect) e).getSelectBody());
-                    }
+        }else if (exception instanceof AndExpression) {
+            processExcepression(((AndExpression) exception).getLeftExpression());
+            processExcepression(((AndExpression) exception).getRightExpression());
+        } else if (exception instanceof OrExpression) {
+            processExcepression(((OrExpression) exception).getLeftExpression());
+            processExcepression(((OrExpression) exception).getRightExpression());
+        } else if (exception instanceof Parenthesis) {
+            processExcepression(((Parenthesis) exception).getExpression());
+        } else if (exception instanceof NotExpression) {
+            processExcepression(((NotExpression) exception).getExpression());
+        } else if (exception instanceof InExpression) {
+            processExcepression(((InExpression) exception).getLeftExpression());
+            processExcepression((Expression)((InExpression) exception).getRightItemsList());
+        } else if (exception instanceof EqualsTo) {
+            processExcepression(((EqualsTo) exception).getLeftExpression());
+            processExcepression(((EqualsTo) exception).getRightExpression());
+        }  else if (exception instanceof ExistsExpression) {
+            processExcepression(((ExistsExpression) exception).getRightExpression());
+        } else if (exception instanceof GreaterThan) {
+            processExcepression(((GreaterThan) exception).getLeftExpression());
+            processExcepression(((GreaterThan) exception).getRightExpression());
+        } else if (exception instanceof GreaterThanEquals) {
+            processExcepression(((GreaterThanEquals) exception).getLeftExpression());
+            processExcepression(((GreaterThanEquals) exception).getRightExpression());
+        } else if (exception instanceof MinorThan) {
+            processExcepression(((MinorThan) exception).getLeftExpression());
+            processExcepression(((MinorThan) exception).getRightExpression());
+        } else if (exception instanceof MinorThanEquals) {
+            processExcepression(((MinorThanEquals) exception).getLeftExpression());
+            processExcepression(((MinorThanEquals) exception).getRightExpression());
+        } else if (exception instanceof NotEqualsTo) {
+            processExcepression(((NotEqualsTo) exception).getLeftExpression());
+            processExcepression(((NotEqualsTo) exception).getRightExpression());
+        } else if (exception instanceof IsBooleanExpression) {
+            processExcepression(((IsBooleanExpression) exception).getLeftExpression());
+        } else if (exception instanceof IsNullExpression) {
+            processExcepression(((IsNullExpression) exception).getLeftExpression());
+        } else if (exception instanceof LikeExpression) {
+            processExcepression(((LikeExpression) exception).getLeftExpression());
+            processExcepression(((LikeExpression) exception).getRightExpression());
+        } else if (exception instanceof Between) {
+            processExcepression(((Between) exception).getLeftExpression());
+            processExcepression(((Between) exception).getBetweenExpressionStart());
+            processExcepression(((Between) exception).getBetweenExpressionEnd());
+        } else if (exception instanceof Function) {
+            if(null != ((Function) exception).getParameters()) {
+                for (Expression e : ((Function) exception).getParameters().getExpressions()) {
+                    processExcepression(e);
                 }
             }
-
-        }else if (where instanceof SubSelect) {
-            this.processSelectBody(((SubSelect) where).getSelectBody());
+        } else if (exception instanceof CaseExpression) {
+            CaseExpression caseExpression = (CaseExpression) exception;
+            processExcepression(caseExpression.getElseExpression());
+            processExcepression(caseExpression.getSwitchExpression());
+            for (WhenClause whenClause : caseExpression.getWhenClauses()) {
+                processExcepression(whenClause.getWhenExpression());
+                processExcepression(whenClause.getThenExpression());
+            }
+        }else if(exception instanceof Subtraction){
+            processExcepression(((Subtraction) exception).getLeftExpression());
+            processExcepression(((Subtraction) exception).getRightExpression());
+        }else if(exception instanceof Multiplication){
+            processExcepression(((Multiplication) exception).getLeftExpression());
+            processExcepression(((Multiplication) exception).getRightExpression());
+        }else if(exception instanceof Addition){
+            processExcepression(((Addition) exception).getLeftExpression());
+            processExcepression(((Addition) exception).getRightExpression());
+        }else if(exception instanceof Division){
+            processExcepression(((Division) exception).getLeftExpression());
+            processExcepression(((Division) exception).getRightExpression());
+        } else if (exception instanceof SubSelect) {
+            this.processSelectBody(((SubSelect) exception).getSelectBody());
         }
     }
 
@@ -127,18 +155,9 @@ public class SaaSTenantSqlParser extends TenantSqlParser {
         List<SelectItem> selectItems = plainSelect.getSelectItems();
         for (SelectItem selectItem : selectItems) {
             if (selectItem instanceof SelectExpressionItem) {
-//                if(((SelectExpressionItem) selectItem).getExpression() instanceof SubSelect){
-//                    this.processSelectBody(((SubSelect) ((SelectExpressionItem) selectItem).getExpression()).getSelectBody());
-//                }
-                processWhere(((SelectExpressionItem) selectItem).getExpression());
-            } else if (selectItem instanceof Function) {
-                for (Expression e : ((Function) selectItem).getParameters().getExpressions()) {
-                    if (e instanceof SubSelect) {
-                        this.processSelectBody(((SubSelect) e).getSelectBody());
-                    }
-                }
+                Expression selectExcepression = ((SelectExpressionItem) selectItem).getExpression();
+                processExcepression(selectExcepression);
             }
         }
     }
-
 }
