@@ -10,6 +10,13 @@ export class ImgurlBase64{
     private static imgurlBase64: ImgurlBase64;
 
     /**
+     * 图片缓存Map
+     * 
+     * @memberof ImgurlBase64
+     */
+    protected static imgMap: Map<string, any> = new Map();
+
+    /**
      * 获取 ImgurlBase64 单例对象
      *
      * @memberof ImgurlBase64
@@ -31,6 +38,12 @@ export class ImgurlBase64{
     public async getImgURLOfBase64(url: string) {
         return new Promise((resolve, reject) => {
             let img = './';
+            // 缓存中有从缓存中拿
+            if (ImgurlBase64.imgMap.get(url)) {
+                let img = ImgurlBase64.imgMap.get(url);
+                resolve(img);
+                return;
+            }
             axios({
                 method: 'get',
                 url: url,
@@ -54,6 +67,8 @@ export class ImgurlBase64{
                     this.blobToBase64(blob).then((res) => {
                         // 转化后的base64
                         img = `${res}`;
+                        // 缓存图片
+                        ImgurlBase64.imgMap.set(url, img);
                         resolve(img);
                     })
                 } else {

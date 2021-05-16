@@ -115,7 +115,7 @@ export class ProductModuleBaseService extends EntityBaseService<IProductModule> 
 
     protected getRootCond() {
         if (!this.condCache.has('root')) {
-            const strCond: any[] = ['AND', ['EQ', 'TYPE','story'], ['OR', ['ISNULL', 'PARENT',''], ['EQ', 'PARENT','0']]];
+            const strCond: any[] = ['AND', ['EQ', 'TYPE','story'], ['OR', ['ISNULL', 'PARENT',''], ['EQ', 'PARENT','0']], ['NOTEQ', 'BRANCH','0']];
             if (!isNil(strCond) && !isEmpty(strCond)) {
                 const cond = new PSDEDQCondEngine();
                 cond.parse(strCond);
