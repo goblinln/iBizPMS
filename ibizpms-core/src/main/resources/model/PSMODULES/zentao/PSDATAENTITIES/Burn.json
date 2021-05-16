@@ -435,6 +435,12 @@
       "queryCodeExp" : "t1.`DATE`",
       "standardColumnName" : "`DATE`"
     } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_DATE_EQ",
+      "name" : "N_DATE_EQ",
+      "stdDataType" : 5,
+      "valueOP" : "EQ"
+    } ],
     "getAllPSDEFValueRules" : [ {
       "codeName" : "Default",
       "name" : "默认规则",

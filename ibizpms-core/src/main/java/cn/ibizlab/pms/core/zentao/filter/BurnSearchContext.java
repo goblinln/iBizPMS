@@ -38,6 +38,13 @@ public class BurnSearchContext extends QueryWrapperContext<Burn> {
         this.n_isweekend_in = n_isweekend_in;
     }
                 
+    @JsonFormat(pattern="yyyy-MM-dd", timezone="GMT+8")
+    @JSONField(format="yyyy-MM-dd")
+	private Timestamp n_date_eq;//[日期]
+	public void setN_date_eq(Timestamp n_date_eq) {
+        this.n_date_eq = n_date_eq;
+    }
+                
 	private String n_id_eq;//[主键]
 	public void setN_id_eq(String n_id_eq) {
         this.n_id_eq = n_id_eq;

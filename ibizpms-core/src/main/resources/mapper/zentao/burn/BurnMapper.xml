@@ -20,6 +20,9 @@
                 #{item}
             </foreach>
         </if>
+		<if test="srf.n_date_eq != null ">
+			<![CDATA[ AND  t1.`DATE` = #{srf.n_date_eq,jdbcType=TIMESTAMP} ]]>
+        </if>
 		<if test="srf.n_id_eq != null ">
 			<![CDATA[ AND  t1.`ID` = #{srf.n_id_eq,jdbcType=VARCHAR} ]]>
         </if>
