@@ -412,7 +412,7 @@ export class MainViewBase extends ViewBase {
                 this.openTargtView(openView, view, tempContext, data, xData, $event, deResParameters, parameters, args, callback);
             }
         } else {
-            this.$Notice.warning('未指定关系视图');
+            // this.$Notice.warning('未指定关系视图');
         }
     }
 
@@ -650,7 +650,7 @@ export class MainViewBase extends ViewBase {
                 }
             }
         } else {
-            this.$Notice.warning('未指定关系视图');
+            // this.$Notice.warning('未指定关系视图');
         }
     }
 }
