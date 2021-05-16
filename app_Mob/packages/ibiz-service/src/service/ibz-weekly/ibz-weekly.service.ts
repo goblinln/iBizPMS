@@ -1,3 +1,4 @@
+import { HttpResponse } from 'ibiz-core';
 import { IbzWeeklyBaseService } from './ibz-weekly-base.service';
 
 /**
@@ -33,6 +34,20 @@ export class IbzWeeklyService extends IbzWeeklyBaseService {
             new IbzWeeklyService();
         }
         return ___ibz___.sc.get('IbzWeeklyService');
+    }
+    /**
+     * CreateGetLastWeekPlanAndWork
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzWeeklyService
+     */
+    async CreateGetLastWeekPlanAndWork(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data.ibzweekly = 0;
+        _data.ibzweeklyid = 0;
+        _context.ibzweekly = 0;
+        return this.http.post(`/ibzweeklies/${_context.ibzweekly}/creategetlastweekplanandwork`, _data);
     }
 }
 export default IbzWeeklyService;

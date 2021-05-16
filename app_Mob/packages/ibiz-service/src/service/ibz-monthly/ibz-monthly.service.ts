@@ -1,3 +1,4 @@
+import { HttpResponse } from 'ibiz-core';
 import { IbzMonthlyBaseService } from './ibz-monthly-base.service';
 
 /**
@@ -33,6 +34,21 @@ export class IbzMonthlyService extends IbzMonthlyBaseService {
             new IbzMonthlyService();
         }
         return ___ibz___.sc.get('IbzMonthlyService');
+    }
+
+    /**
+     * CreateGetInfo
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzMonthlyService
+     */
+    async CreateGetInfo(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        _data.ibzmonthly = 0;
+        _data.ibzmonthlyid = 0;
+        _context.ibzmonthly = 0;
+        return this.http.post(`/ibzmonthlies/${_context.ibzmonthly}/creategetinfo`, _data);
     }
 }
 export default IbzMonthlyService;
