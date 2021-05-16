@@ -23,7 +23,7 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
     protected APPDENAMEPLURAL = 'SubTasks';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
-    protected quickSearchFields = ['name','tasksn',];
+    protected quickSearchFields = ['id','name',];
     protected selectContextParam = {
         task: 'parent',
     };

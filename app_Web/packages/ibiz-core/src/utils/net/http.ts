@@ -130,6 +130,29 @@ export class Http {
     }
 
     /**
+     * 获取模型
+     *
+     * @param {string} url
+     * @param {*} [headers={}]
+     * @returns {Promise<any>}
+     * @memberof Http
+     */
+     public getModel(url: string,  headers:any ={}): Promise<any> {
+        return new Promise((resolve: any, reject: any) => {
+            axios
+                .get(url,{
+                    headers:headers
+                })
+                .then((response: any) => {
+                    this.doResponseResult(response, resolve);
+                })
+                .catch((response: any) => {
+                    this.doResponseResult(response, reject);
+                });
+        });
+    }
+
+    /**
      * 删除
      *
      * @param {string} url

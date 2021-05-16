@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { Subject, Subscription } from 'rxjs';
 import { IPSAppCounterRef, IPSAppView, IPSAppDEView, IPSControl } from '@ibiz/dynamic-model-api';
-import { Util, ViewTool, AppServiceBase, ViewContext, ViewState, ModelTool, GetModelService, AppModelService, removeSessionStorage, LogUtil } from 'ibiz-core';
+import { Util, ViewTool, AppServiceBase, ViewContext, ViewState, ModelTool, GetModelService, AppModelService, removeSessionStorage, LogUtil, SandboxInstance } from 'ibiz-core';
 import { CounterServiceRegister } from 'ibiz-service';
 import { AppNavHistory, ViewLoadingService } from '../app-service';
 import { DynamicInstanceConfig } from '@ibiz/dynamic-model-api/dist/types/core';
@@ -468,8 +468,29 @@ export class ViewBase extends Vue {
             if (_this.viewparams.srfinsttag && _this.viewparams.srfinsttag2) {
                 Object.assign(tempContext,{ instTag: _this.viewparams.srfinsttag, instTag2: _this.viewparams.srfinsttag2 });
             }
+            // 补充沙箱实例参数（路由）
+            if (_this.viewparams && _this.viewparams.hasOwnProperty('srfsandboxtag')) {
+                Object.assign(tempContext, { 'srfsandboxtag': _this.viewparams.srfsandboxtag });
+            }
         }
-        this.modelService = await GetModelService(tempContext);
+        try {
+            this.modelService = await GetModelService(tempContext);
+        } catch (error) {
+            await this.initSandBoxInst(tempContext);
+            this.modelService = await GetModelService(tempContext);
+        }
+    }
+
+    /**
+     * 初始化沙箱实例
+     *
+     * @memberof ViewBase
+     */
+     public async initSandBoxInst(args: any) {
+        if (args && args.srfsandboxtag) {
+            const tempSandboxInst: SandboxInstance = new SandboxInstance(args);
+            await tempSandboxInst.initSandBox();
+        }
     }
 
     /**
@@ -756,6 +777,10 @@ export class ViewBase extends Vue {
         }
         if (_this.viewparams && _this.viewparams.srfdynainstid) {
             Object.assign(_this.context, { srfdynainstid: this.viewparams.srfdynainstid });
+        }
+         // 补充沙箱实例参数（路由）
+         if (_this.viewparams && _this.viewparams.hasOwnProperty('srfsandboxtag')) {
+            Object.assign(_this.context, { 'srfsandboxtag': _this.viewparams.srfsandboxtag });
         }
         _this.handleCustomViewData();
         _this.handleOtherViewData();

@@ -1623,6 +1623,7 @@
     "logicName" : "编号",
     "name" : "ID",
     "stdDataType" : 1,
+    "enableQuickSearch" : true,
     "keyField" : true
   }, {
     "codeName" : "FinishedBy",
@@ -2082,8 +2083,7 @@
     "codeName" : "Tasksn",
     "logicName" : "任务编号",
     "name" : "TASKSN",
-    "stdDataType" : 1,
-    "enableQuickSearch" : true
+    "stdDataType" : 1
   }, {
     "codeName" : "CreateMan",
     "logicName" : "建立人",
@@ -24246,11 +24246,11 @@
     "cssClass" : "fa fa-tasks"
   },
   "getQuickSearchPSAppDEFields" : [ {
+    "name" : "ID",
+    "codeName" : "Id"
+  }, {
     "name" : "NAME",
     "codeName" : "Name"
-  }, {
-    "name" : "TASKSN",
-    "codeName" : "Tasksn"
   } ],
   "storageMode" : 0,
   "defaultMode" : true,

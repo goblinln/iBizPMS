@@ -58,7 +58,7 @@ export class AppFormModel {
             }
         });
         // 表单项
-        formItems.forEach(( item: IPSDEFormItem)=>{
+        formItems?.forEach(( item: IPSDEFormItem)=>{
             let temp: any = { name: item.id};
             if(item?.getPSAppDEField()){
                 temp.prop = item.getPSAppDEField()?.codeName?.toLowerCase();

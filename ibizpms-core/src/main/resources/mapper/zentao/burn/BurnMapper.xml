@@ -84,9 +84,11 @@
 
     <!--数据集合[ESTIMATEANDLEFT]-->
 	 <select id="searchESTIMATEANDLEFT"  parameterType="cn.ibizlab.pms.core.zentao.filter.BurnSearchContext"  resultMap="BurnResultMap">
+	 	select * from (
          select t1.* from (
                 <include refid="ESTIMATEANDLEFT" />
          )t1
+		 )t1
      </select>
 
     <!--数据查询[Default]-->
