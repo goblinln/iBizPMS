@@ -8,7 +8,7 @@
         <component
             :is="viewname"
             class="viewcontainer2"
-            :staticProps="{ ...this.staticProps, viewDefaultUsage:false, noViewCaption: true }"
+            :staticProps="{ ...this.staticProps, viewDefaultUsage:false}"
             :dynamicProps="{ ...this.dynamicProps }"
             @viewdataschange="dataChange($event)"
             @viewdatasactivated="viewDatasActivated($event)"

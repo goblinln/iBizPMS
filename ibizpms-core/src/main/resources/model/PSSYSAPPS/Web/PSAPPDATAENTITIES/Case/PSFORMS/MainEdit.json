@@ -1977,11 +1977,11 @@
             "editorParams" : {
               "SRFNAVCTX.n_module_eq" : "%module%",
               "SRFNAVPARAM.n_module_eq" : "%module%",
-              "SRFNAVPARAM.n_product_eq" : "%product%",
+              "SRFNAVPARAM.product" : "%product%",
               "AC" : "TRUE",
               "valFormat" : "{0: '/'}",
               "TRIGGER" : "TRUE",
-              "SRFNAVCTX.n_product_eq" : "%product%",
+              "SRFNAVCTX.product" : "%product%",
               "PICKUPVIEW" : "FALSE"
             },
             "editorType" : "PICKEREX_TRIGGER",
@@ -2000,19 +2000,19 @@
               "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
             },
             "getPSNavigateContexts" : [ {
-              "key" : "N_PRODUCT_EQ",
-              "name" : "N_PRODUCT_EQ",
-              "value" : "product",
-              "rawValue" : false
-            }, {
               "key" : "N_MODULE_EQ",
               "name" : "N_MODULE_EQ",
               "value" : "module",
               "rawValue" : false
+            }, {
+              "key" : "PRODUCT",
+              "name" : "PRODUCT",
+              "value" : "product",
+              "rawValue" : false
             } ],
             "getPSNavigateParams" : [ {
-              "key" : "n_product_eq",
-              "name" : "n_product_eq",
+              "key" : "product",
+              "name" : "product",
               "value" : "product",
               "rawValue" : false
             }, {

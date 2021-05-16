@@ -1945,17 +1945,12 @@
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
-  "getQuickGroupPSCodeList" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Bug__quickpacket.json"
-  },
   "title" : "Bug看板视图",
   "viewStyle" : "STYLE2",
   "viewType" : "DEKANBANVIEW",
   "xDataControlName" : "kanban",
   "enableDP" : true,
   "enableFilter" : false,
-  "enableQuickGroup" : true,
   "showCaptionBar" : false,
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,

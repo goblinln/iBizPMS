@@ -1335,7 +1335,7 @@ export class EditFormControlBase extends FormControlBase {
                         if (Util.isEmpty(this.data[valueName])) {
                             return true
                         }
-                        const { isPast, infoMessage } = Verify.verifyDeRules(valueName, this.data, deRule.getPSDEFVRGroupCondition);
+                        const { isPast, infoMessage } = Verify.verifyDeRules(valueName, this.data, deRule.getPSDEFVRGroupCondition());
                         if (!isPast) {
                             callback(new Error(infoMessage || deRule.ruleInfo));
                         }

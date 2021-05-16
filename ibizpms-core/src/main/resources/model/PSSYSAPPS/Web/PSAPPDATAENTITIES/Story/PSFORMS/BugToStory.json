@@ -752,6 +752,20 @@
           "name" : "ASSIGNEDTO",
           "codeName" : "AssignedTo"
         },
+        "getPSDEFDGroupLogics" : [ {
+          "groupOP" : "AND",
+          "logicCat" : "ITEMENABLE",
+          "logicType" : "GROUP",
+          "name" : "表单成员[assignedto][表单项启用]逻辑",
+          "getPSDEFDLogics" : [ {
+            "condOP" : "ISNULL",
+            "dEFDName" : "neednotreview",
+            "logicType" : "SINGLE",
+            "name" : "neednotreview 值为空(Nil)"
+          } ],
+          "relatedDetailNames" : [ "neednotreview" ],
+          "notMode" : false
+        } ],
         "getPSEditor" : {
           "editorType" : "DROPDOWNLIST",
           "name" : "assignedto",
