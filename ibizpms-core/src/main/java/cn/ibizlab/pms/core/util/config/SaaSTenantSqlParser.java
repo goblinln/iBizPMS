@@ -85,7 +85,9 @@ public class SaaSTenantSqlParser extends TenantSqlParser {
             processExcepression(((NotExpression) exception).getExpression());
         } else if (exception instanceof InExpression) {
             processExcepression(((InExpression) exception).getLeftExpression());
-            processExcepression((Expression)((InExpression) exception).getRightItemsList());
+            if(((InExpression) exception).getRightItemsList() instanceof SubSelect) {
+                this.processSelectBody(((SubSelect) ((InExpression) exception).getRightItemsList()).getSelectBody());
+            }
         } else if (exception instanceof EqualsTo) {
             processExcepression(((EqualsTo) exception).getLeftExpression());
             processExcepression(((EqualsTo) exception).getRightExpression());
