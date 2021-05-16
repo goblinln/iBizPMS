@@ -951,6 +951,12 @@ public class StoryExService extends StoryServiceImpl {
 
     @Override
     public Story get(Long key) {
+        if(key == null || key == 0L) {
+            Story story = new Story();
+            story.setId(key);
+            story.setOrgid(AuthenticationUser.getAuthenticationUser().getOrgid());
+            return story;
+        }
         Story et = getById(key);
         if (et == null) {
             throw new BadRequestAlertException("数据不存在", this.getClass().getSimpleName(), String.valueOf(key));
