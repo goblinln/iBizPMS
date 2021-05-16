@@ -30231,6 +30231,13 @@
           },
           "allowMode" : true
         }, {
+          "name" : "Update",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Update.json"
+          },
+          "allowMode" : true
+        }, {
           "name" : "CancelProjectTop",
           "getPSDEAction" : {
             "modelref" : true,
@@ -30479,6 +30486,13 @@
           },
           "allowMode" : true
         }, {
+          "name" : "Update",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Update.json"
+          },
+          "allowMode" : true
+        }, {
           "name" : "importPlanStories",
           "getPSDEAction" : {
             "modelref" : true,
@@ -30705,6 +30719,13 @@
           "getPSDEAction" : {
             "modelref" : true,
             "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Create.json"
+          },
+          "allowMode" : true
+        }, {
+          "name" : "Update",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Update.json"
           },
           "allowMode" : true
         }, {
