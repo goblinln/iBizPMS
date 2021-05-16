@@ -153,22 +153,6 @@
       "showBusyIndicator" : true,
       "id" : "FORM"
     },
-    "getPSDEFormItemVRs" : [ {
-      "checkMode" : 3,
-      "name" : "表单项值规则",
-      "getPSDEFormItemName" : "left",
-      "getPSSysValueRule" : {
-        "codeName" : "Auto2",
-        "dynaModelFilePath" : "PSSYSVALUERULES/Auto2.json",
-        "name" : "正整数",
-        "regExCode" : "[0-9]*[1-9][0-9]*",
-        "ruleInfo" : "内容必须为正整数",
-        "ruleType" : "REG",
-        "enableBackend" : true,
-        "enableFront" : true
-      },
-      "valueRuleType" : "SYSVALUERULE"
-    } ],
     "getPSDEFormItems" : [ {
       "id" : "srfupdatedate",
       "hidden" : true,
