@@ -2768,6 +2768,7 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
+    "enableQuickSearch" : true,
     "enableUICreate" : false,
     "enableUIModify" : false,
     "keyDEField" : true,
@@ -5210,8 +5211,7 @@
     "logicName" : "需求编号",
     "name" : "STORYSN",
     "stdDataType" : 1,
-    "valueFormat" : "%1$s",
-    "enableQuickSearch" : true
+    "valueFormat" : "%1$s"
   } ],
   "getAllPSDELogics" : [ {
     "codeName" : "ComputeIsLeaf",

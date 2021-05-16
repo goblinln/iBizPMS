@@ -101,9 +101,6 @@ export class Interceptors {
                 let activeOrgData = getSessionStorage('activeOrgData');
                 config.headers['srforgid'] = activeOrgData?.orgid;
                 config.headers['srfsystemid'] = activeOrgData?.systemid;
-                if(getSessionStorage("srfdynaorgid")){
-                    config.headers['srfdynaorgid'] = getSessionStorage("srfdynaorgid");
-                }
             }
             if (getCookie('ibzuaa-token')) {
                 config.headers['Authorization'] = `Bearer ${getCookie('ibzuaa-token')}`;

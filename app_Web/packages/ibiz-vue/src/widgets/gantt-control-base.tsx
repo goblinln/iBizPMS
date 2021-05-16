@@ -511,7 +511,7 @@ export class GanttControlBase extends MDControlBase {
                         let targetOpenViewRef:
                             | IPSAppViewRef
                             | undefined = targetRedirectView.getRedirectPSAppViewRefs()?.find((item: IPSAppViewRef) => {
-                            return item.name === result.split(':')[0];
+                            return item.name === result.param.split(':')[0];
                         });
                         if (!targetOpenViewRef) {
                             return;
@@ -526,6 +526,10 @@ export class GanttControlBase extends MDControlBase {
                             );
                             let _context: any = Util.computedNavData(fullargs[0], tempContext, data, localContextRef);
                             Object.assign(tempContext, _context);
+                        }
+                        if (result && result.hasOwnProperty('srfsandboxtag')) {
+                            Object.assign(tempContext, { 'srfsandboxtag': result['srfsandboxtag'] });
+                            Object.assign(data, { 'srfsandboxtag': result['srfsandboxtag'] });
                         }
                         let targetOpenView: IPSAppView | null = targetOpenViewRef.getRefPSAppView();
                         if (!targetOpenView) {

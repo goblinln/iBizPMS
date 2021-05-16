@@ -226,7 +226,7 @@ export default class AppColumnLink extends Vue {
             return;
         }
         let targetOpenViewRef: | IPSAppViewRef | undefined = targetRedirectView.getRedirectPSAppViewRefs()?.find((item: IPSAppViewRef) => {
-            return item.name === result.split(':')[0];
+            return item.name === result.param.split(':')[0];
         });
         if (!targetOpenViewRef) {
             return;
@@ -236,6 +236,10 @@ export default class AppColumnLink extends Vue {
             let localContextRef: any = Util.formatNavParam( targetOpenViewRef.getPSNavigateContexts(), true );
             let _context: any = Util.computedNavData(this.data, context, params, localContextRef);
             Object.assign(context, _context);
+        }
+        if (result && result.hasOwnProperty('srfsandboxtag')) {
+            Object.assign(context, { 'srfsandboxtag': result['srfsandboxtag'] });
+            Object.assign(params, { 'srfsandboxtag': result['srfsandboxtag'] });
         }
         let targetOpenView: IPSAppView | null = targetOpenViewRef.getRefPSAppView();
         if (!targetOpenView) {

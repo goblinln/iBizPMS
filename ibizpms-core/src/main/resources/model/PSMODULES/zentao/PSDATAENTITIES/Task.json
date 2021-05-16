@@ -2297,6 +2297,7 @@
     "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "allowEmpty" : false,
+    "enableQuickSearch" : true,
     "enableUICreate" : false,
     "enableUIModify" : false,
     "keyDEField" : true,
@@ -6320,8 +6321,7 @@
     "logicName" : "任务编号",
     "name" : "TASKSN",
     "stdDataType" : 1,
-    "valueFormat" : "%1$s",
-    "enableQuickSearch" : true
+    "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
       "columnName" : "CREATEMAN",

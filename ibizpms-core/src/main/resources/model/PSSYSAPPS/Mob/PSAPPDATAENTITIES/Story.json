@@ -1587,6 +1587,7 @@
     "logicName" : "编号",
     "name" : "ID",
     "stdDataType" : 1,
+    "enableQuickSearch" : true,
     "keyField" : true
   }, {
     "codeName" : "IBIZ_SOURCEOBJECT",
@@ -1865,8 +1866,7 @@
     "codeName" : "Storysn",
     "logicName" : "需求编号",
     "name" : "STORYSN",
-    "stdDataType" : 1,
-    "enableQuickSearch" : true
+    "stdDataType" : 1
   } ],
   "getAllPSAppDELogics" : [ {
     "codeName" : "GetCurUserConcat",
@@ -10920,8 +10920,8 @@
     "name" : "TITLE",
     "codeName" : "Title"
   }, {
-    "name" : "STORYSN",
-    "codeName" : "Storysn"
+    "name" : "ID",
+    "codeName" : "Id"
   } ],
   "storageMode" : 0,
   "defaultMode" : true,

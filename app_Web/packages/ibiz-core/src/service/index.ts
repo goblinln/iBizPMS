@@ -9,3 +9,5 @@ export { UtilServiceBase } from './util-service/util-base.service';
 export { ServiceRegisterBase } from './service-register/service-register';
 export { AppModelService } from './model-service/model-service';
 export { GetModelService } from './model-service/model-service';
+export { SandboxService } from './model-service/sandbox/sandbox-service';
+export { SandboxInstance } from './model-service/sandbox/sandbox-instance';

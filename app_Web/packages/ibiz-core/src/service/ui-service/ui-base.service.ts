@@ -203,7 +203,7 @@ export class UIServiceBase {
             const action = this.actionMap.get(uIActionTag);
             action.execute(args, context, params, $event, xData, actionContext, srfParentDeName, this);
         } else {
-          LogUtil.warn(`当前实例${uIActionTag}界面行为未实现`);
+            LogUtil.warn(`当前实例${uIActionTag}界面行为未实现`);
         }
     }
 
@@ -235,21 +235,21 @@ export class UIServiceBase {
      *
      * @memberof  UIServiceBase
      */
-    protected initBasicData() {}
+    protected initBasicData() { }
 
     /**
      * 初始化界面行为数据
      *
      * @memberof  UIServiceBase
      */
-    protected async initActionMap(): Promise<void> {}
+    protected async initActionMap(): Promise<void> { }
 
     /**
      * 初始化视图功能数据Map
      *
      * @memberof  UIServiceBase
      */
-    protected initViewFuncMap() {}
+    protected initViewFuncMap() { }
 
     /**
      * 初始化主状态集合
@@ -335,11 +335,12 @@ export class UIServiceBase {
      */
     protected async getRDAppView(srfkey: string, enableWorkflowParam: any) {
         // 进行数据查询
+        let returnData: any = {};
         let result: any = await this.dataService.Get({ [this.entityModel.codeName.toLowerCase()]: srfkey });
         const curData: any = result.data;
         // 设置临时组织标识（用于获取多实例）
         if (this.tempOrgIdDEField && curData && curData[this.tempOrgIdDEField]) {
-            setSessionStorage('srfdynaorgid', curData[this.tempOrgIdDEField]);
+            Object.assign(returnData, { 'srfsandboxtag': curData[this.tempOrgIdDEField] });
         }
         //判断当前数据模式,默认为true，todo
         const iRealDEModel: boolean = true;
@@ -359,13 +360,16 @@ export class UIServiceBase {
         //若不是当前数据模式，处理strPDTViewParam，todo
 
         if (bDataInWF) {
-            return strPDTViewParam;
+            Object.assign(returnData, { 'param': strPDTViewParam });
+            return returnData;
         }
         if (this.multiFormDEField || this.indexTypeDEField) {
-            return strPDTViewParam;
+            Object.assign(returnData, { 'param': strPDTViewParam });
+            return returnData;
         } else {
             //返回视图功能数据
-            return `${this.allViewFuncMap.get(strPDTViewParam) ? this.allViewFuncMap.get(strPDTViewParam) : ''}`;
+            Object.assign(returnData, { 'param': `${this.allViewFuncMap.get(strPDTViewParam) ? this.allViewFuncMap.get(strPDTViewParam) : ''}` });
+            return returnData;
         }
     }
 
@@ -374,7 +378,7 @@ export class UIServiceBase {
      *
      * @memberof  UIServiceBase
      */
-    protected getRealDEType(entity: any) {}
+    protected getRealDEType(entity: any) { }
 
     /**
      * 获取实体单数据实体视图预定义参数
@@ -458,7 +462,7 @@ export class UIServiceBase {
 
         this.mainStateFields.forEach((singleMainField: any) => {
             if (!(singleMainField in curData)) {
-              LogUtil.warn(
+                LogUtil.warn(
                     `当前数据对象不包含属性「${singleMainField}」，根据「${singleMainField}」属性进行的主状态计算默认为空值`,
                 );
             }

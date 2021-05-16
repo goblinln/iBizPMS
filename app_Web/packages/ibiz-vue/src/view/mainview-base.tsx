@@ -53,7 +53,7 @@ export class MainViewBase extends ViewBase {
      * @param {*} [opts={}] 引擎参数
      * @memberof MainViewBase
      */
-    public engineInit(opts: any = {}): void {}
+    public engineInit(opts: any = {}): void { }
 
     /**
      * 视图初始化
@@ -172,7 +172,7 @@ export class MainViewBase extends ViewBase {
             itemType: item.itemType,
             dataaccaction: ((item as any)?.getPSUIAction?.() as IPSDEUIAction).dataAccessAction,
             noprivdisplaymode: ((item as any)?.getPSUIAction?.() as IPSDEUIAction).noPrivDisplayMode,
-            uiaction:(item as any)?.getPSUIAction?.(),
+            uiaction: (item as any)?.getPSUIAction?.(),
             showIcon: item.showIcon,
             class: css ? css.cssName : '',
             getPSSysImage: img ? { cssClass: img.cssClass, imagePath: img.imagePath } : '',
@@ -241,7 +241,7 @@ export class MainViewBase extends ViewBase {
      */
     public renderViewHeader() {
         return [
-            (this.viewInstance?.showCaptionBar && !this.noViewCaption ) ? <span class='caption-info'>{this.viewInstance?.title}</span> : null,
+            (this.viewInstance?.showCaptionBar && !this.noViewCaption) ? <span class='caption-info'>{this.viewInstance?.title}</span> : null,
         ];
     }
 
@@ -545,8 +545,8 @@ export class MainViewBase extends ViewBase {
                         let targetOpenViewRef:
                             | IPSAppViewRef
                             | undefined = targetRedirectView.getRedirectPSAppViewRefs()?.find((item: IPSAppViewRef) => {
-                            return item.name === result.split(':')[0];
-                        });
+                                return item.name === result.param.split(':')[0];
+                            });
                         if (!targetOpenViewRef) {
                             return;
                         }
@@ -560,6 +560,10 @@ export class MainViewBase extends ViewBase {
                             );
                             let _context: any = Util.computedNavData(fullargs[0], tempContext, data, localContextRef);
                             Object.assign(tempContext, _context);
+                        }
+                        if (result && result.hasOwnProperty('srfsandboxtag')) {
+                            Object.assign(tempContext, { 'srfsandboxtag': result['srfsandboxtag'] });
+                            Object.assign(data, { 'srfsandboxtag': result['srfsandboxtag'] });
                         }
                         let targetOpenView: IPSAppView | null = targetOpenViewRef.getRefPSAppView();
                         if (!targetOpenView) {
@@ -697,8 +701,8 @@ export class MainViewBase extends ViewBase {
                                     | IPSAppUILogicRefView
                                     | undefined
                                     | null = newDataAppViews.find((item: IPSAppUILogicRefView) => {
-                                    return item.refMode === result.datas[0].srfkey;
-                                });
+                                        return item.refMode === result.datas[0].srfkey;
+                                    });
                                 if (!targetNewDataAppViewRef) return;
                                 Object.assign(
                                     tempContext,
@@ -980,7 +984,7 @@ export class MainViewBase extends ViewBase {
                 } else {
                     this.$warning(`${dataview.title}不支持该模式打开`);
                 }
-            }else{
+            } else {
                 this.$warning('未指定关系视图');
             }
         } else {

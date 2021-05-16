@@ -109,6 +109,11 @@
   }, {
     "codeName" : "ESTIMATEANDLEFT",
     "logicName" : "燃尽图预计（含周末）",
+    "majorSortDir" : "DESC",
+    "getMajorSortPSDEField" : {
+      "name" : "DATE",
+      "codeName" : "Date"
+    },
     "name" : "ESTIMATEANDLEFT",
     "getPSDEDataQueries" : [ {
       "modelref" : true,
