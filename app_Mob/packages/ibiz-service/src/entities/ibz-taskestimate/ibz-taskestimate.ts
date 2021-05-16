@@ -19,5 +19,8 @@ export class IbzTaskestimate extends IbzTaskestimateBase {
     clone(): IbzTaskestimate {
         return new IbzTaskestimate(this);
     }
+    get srfmajortext() {
+        return '';
+    }
 }
 export default IbzTaskestimate;
