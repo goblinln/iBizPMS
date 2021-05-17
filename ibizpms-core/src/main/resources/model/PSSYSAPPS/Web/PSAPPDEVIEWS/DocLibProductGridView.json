@@ -492,7 +492,7 @@
             }, {
               "key" : "SRFROOT",
               "name" : "SRFROOT",
-              "value" : "id",
+              "value" : "doclib",
               "rawValue" : false
             }, {
               "key" : "PRODUCT",
