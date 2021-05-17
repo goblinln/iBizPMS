@@ -3,7 +3,7 @@ import { ViewTool, FormItemModel, Util, Verify, ModelTool, AppServiceBase, LogUt
 import { MDControlBase } from './md-control-base';
 import { AppGridService } from '../ctrl-service/app-grid-service';
 import { AppViewLogicService } from 'ibiz-vue';
-import { IPSAppCodeList, IPSAppDataEntity, IPSAppDEField, IPSCodeList, IPSDEDataExport, IPSDEDataExportItem, IPSDEGrid, IPSDEGridColumn, IPSDEGridDataItem, IPSDEGridEditItem, IPSDEGridFieldColumn, IPSDEGridUAColumn, IPSDEUIAction, IPSDEUIActionGroup, IPSDEUIActionGroupDetail, IPSUIAction, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
+import { IPSDEDataImport, IPSDEDataImportItem, IPSAppCodeList, IPSAppDataEntity, IPSAppDEField, IPSCodeList, IPSDEDataExport, IPSDEDataExportItem, IPSDEGrid, IPSDEGridColumn, IPSDEGridDataItem, IPSDEGridEditItem, IPSDEGridFieldColumn, IPSDEGridUAColumn, IPSDEUIAction, IPSDEUIActionGroup, IPSDEUIActionGroupDetail, IPSUIAction, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
 import { DynamicInstanceConfig } from '@ibiz/dynamic-model-api/dist/types/core';
 
 /**
@@ -565,6 +565,7 @@ export class GridControlBase extends MDControlBase {
         this.initColumnKeyName();
         this.initAllExportColumns();
         this.initRules();
+        this.initImportDataModel();
     }
 
     /**
@@ -1203,6 +1204,53 @@ export class GridControlBase extends MDControlBase {
                     })
                 })
             }
+        }
+    }
+
+    /**
+     * 初始化导入模型
+     * 
+     * 
+     * @memberof GridControlBase
+     */
+     public initImportDataModel() {
+        this.importDataModel = {};
+        const importData: IPSDEDataImport = this.controlInstance.getPSDEDataImport() as IPSDEDataImport;
+        if (importData) {
+            const appDataEntity: IPSAppDataEntity = this.controlInstance.getPSAppDataEntity() as IPSAppDataEntity;
+            const importDataModel: any = {
+                importId: importData.codeName,
+                serviceName: appDataEntity.codeName,
+                appDeLogicName: appDataEntity.logicName,
+                importData:{}
+            }
+            const items: Array<IPSDEDataImportItem> = importData.getPSDEDataImportItems() || [];
+            if (items.length > 0) {
+                items.forEach((item: any) => {
+                    const importItem: any ={
+                        headername: item.caption,
+                        isuniqueitem: item.uniqueItem,
+                    }
+                    const codelist: IPSAppCodeList = item.getPSCodeList() as IPSAppCodeList;
+                    if (codelist) {
+                        Object.assign(importItem.codelist,{
+                            type: codelist.codeListType,
+                            tag: codelist.codeName,
+                            isnumber: codelist.codeItemValueNumber,
+                        })
+                    }
+                    const appDeField: IPSAppDEField = item.getPSAppDEField() as IPSAppDEField;
+                    if (appDeField) {
+                        Object.assign(importItem,{
+                            name: appDeField.name,
+                        })
+                    }
+                    Object.assign(importDataModel.importData,{
+                        [item.name]: importItem,
+                    })
+                })
+            }
+            this.importDataModel = importDataModel;
         }
     }
 
