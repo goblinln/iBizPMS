@@ -3152,6 +3152,7 @@
               "value" : "project",
               "rawValue" : false
             } ],
+            "paramItem" : "multiple",
             "parentDataJO" : {
               "srfparentdefname" : "ROOT",
               "srfparentdename" : "ZT_TASK",
