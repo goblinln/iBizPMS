@@ -112,8 +112,6 @@
   }, {
     "id" : "prodoctname",
     "dataType" : 25,
-    "createDVT" : "CONTEXT",
-    "createDV" : "productname",
     "getPSAppDEField" : {
       "name" : "PRODOCTNAME",
       "codeName" : "ProductName"
@@ -382,8 +380,6 @@
       }, {
         "caption" : "所属产品",
         "codeName" : "prodoctname",
-        "createDV" : "productname",
-        "createDVT" : "CONTEXT",
         "dataType" : 25,
         "detailStyle" : "DEFAULT",
         "detailType" : "FORMITEM",

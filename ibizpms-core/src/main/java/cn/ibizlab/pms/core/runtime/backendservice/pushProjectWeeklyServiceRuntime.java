@@ -22,7 +22,7 @@ public class pushProjectWeeklyServiceRuntime extends net.ibizsys.runtime.backend
 
     @Override
     public String getId() {
-        return "PSMODULES/ibizpro/PSSYSBACKSERVICES/pushProjectWeekly.json";
+        return "PSMODULES/report/PSSYSBACKSERVICES/pushProjectWeekly.json";
     }
 
     @Override
