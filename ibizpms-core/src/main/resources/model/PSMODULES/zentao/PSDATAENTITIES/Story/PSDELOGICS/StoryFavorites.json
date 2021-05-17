@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/StoryFavorites.json",
   "logicName" : "需求收藏",
-  "logicSubType" : "NONE",
   "name" : "需求收藏",
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",

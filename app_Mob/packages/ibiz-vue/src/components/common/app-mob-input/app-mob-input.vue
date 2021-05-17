@@ -76,7 +76,7 @@ export default class AppInput extends Vue {
                 ioninput.value = 0;
                 return
             }
-            this.$emit("change",parseFloat(value.detail.value));
+            this.$emit("change",value.detail.value ? parseFloat(value.detail.value) : "");
         }else{
             this.$emit("change", value.detail.value);
         }

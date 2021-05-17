@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/GetProducts.json",
   "logicName" : "获取产品",
-  "logicSubType" : "NONE",
   "name" : "获取产品",
   "getPSDELogicNodes" : [ {
     "codeName" : "Rawsqlcall1",

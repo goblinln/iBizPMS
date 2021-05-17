@@ -25239,7 +25239,6 @@
         "codeName" : "CancelProductTop",
         "defaultParamName" : "Default",
         "logicName" : "取消置顶",
-        "logicSubType" : "NONE",
         "name" : "取消置顶",
         "getPSDELogicNodes" : [ {
           "codeName" : "Begin",
@@ -25297,7 +25296,6 @@
         "codeName" : "ProductTop",
         "defaultParamName" : "Default",
         "logicName" : "置顶",
-        "logicSubType" : "NONE",
         "name" : "置顶",
         "getPSDELogicNodes" : [ {
           "codeName" : "Rawsqlcall1",
@@ -27918,7 +27916,6 @@
         "codeName" : "ProjectTaskQCnt",
         "defaultParamName" : "Default",
         "logicName" : "项目任务快速分组计数器",
-        "logicSubType" : "NONE",
         "name" : "项目任务快速分组计数器",
         "getPSDELogicNodes" : [ {
           "codeName" : "Begin",

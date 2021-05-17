@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ibiz.domain.DynaDashboard;
 import cn.ibizlab.pms.core.ibiz.filter.DynaDashboardSearchContext;
 import org.springframework.stereotype.Component;
@@ -18,5 +19,6 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class DynaDashboardFallback implements DynaDashboardFeignClient {
+
 
 }

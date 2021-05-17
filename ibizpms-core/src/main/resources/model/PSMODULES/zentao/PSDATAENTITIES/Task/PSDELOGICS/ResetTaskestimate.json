@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/ResetTaskestimate.json",
   "logicName" : "重置工时统计值",
-  "logicSubType" : "NONE",
   "name" : "重置工时统计值",
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",

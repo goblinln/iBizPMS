@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/UpdateStoryVersion.json",
   "logicName" : "更新需求版本",
-  "logicSubType" : "NONE",
   "name" : "更新需求版本",
   "getPSDELogicNodes" : [ {
     "codeName" : "Prepareparam1",

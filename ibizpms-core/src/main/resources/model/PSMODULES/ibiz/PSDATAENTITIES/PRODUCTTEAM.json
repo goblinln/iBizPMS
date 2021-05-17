@@ -1041,7 +1041,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDELOGICS/GetProjectDays.json",
     "logicName" : "获取项目的可用工日",
-    "logicSubType" : "NONE",
     "name" : "获取项目的可用工日",
     "getPSDELogicNodes" : [ {
       "codeName" : "Deaction1",
@@ -1168,7 +1167,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDELOGICS/GetUserRole.json",
     "logicName" : "获取成员角色",
-    "logicSubType" : "NONE",
     "name" : "获取成员角色",
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall1",

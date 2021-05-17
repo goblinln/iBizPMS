@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectStats/PSDELOGICS/ProjectQualitySum.json",
   "logicName" : "项目质量表聚合逻辑",
-  "logicSubType" : "NONE",
   "name" : "项目质量表聚合逻辑",
   "getPSDELogicNodes" : [ {
     "codeName" : "Rawsqlcall1",

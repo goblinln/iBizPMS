@@ -24,7 +24,7 @@ export class TaskBaseService extends EntityBaseService<ITask> {
     protected APPDENAMEPLURAL = 'Tasks';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'name';
-    protected quickSearchFields = ['name','tasksn',];
+    protected quickSearchFields = ['id','name',];
     protected selectContextParam = {
         projectmodule: 'module',
         productplan: 'plan',

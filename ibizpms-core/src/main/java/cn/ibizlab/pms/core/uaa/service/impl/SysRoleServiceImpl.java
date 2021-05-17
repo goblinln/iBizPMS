@@ -35,7 +35,7 @@ import cn.ibizlab.pms.util.helper.DEFieldCacheMap;
 
 import cn.ibizlab.pms.core.uaa.client.SysRoleFeignClient;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
+import com.alibaba.fastjson.JSONObject;
 /**
  * 实体[系统角色] 服务对象接口实现
  */

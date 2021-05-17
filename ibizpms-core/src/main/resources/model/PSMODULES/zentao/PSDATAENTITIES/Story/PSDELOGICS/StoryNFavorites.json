@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/StoryNFavorites.json",
   "logicName" : "需求取消收藏",
-  "logicSubType" : "NONE",
   "name" : "需求取消收藏",
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",

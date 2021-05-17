@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDELOGICS/GetTODOTitle.json",
   "logicName" : "获取待办名称",
-  "logicSubType" : "NONE",
   "name" : "获取待办名称",
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",

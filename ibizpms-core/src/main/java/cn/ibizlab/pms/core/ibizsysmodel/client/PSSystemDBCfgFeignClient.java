@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ibizsysmodel.domain.PSSystemDBCfg;
 import cn.ibizlab.pms.core.ibizsysmodel.filter.PSSystemDBCfgSearchContext;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -73,6 +74,7 @@ public interface PSSystemDBCfgFeignClient {
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssystemdbcfgs/searchdefault")
     Page<PSSystemDBCfg> searchDefault(@RequestBody PSSystemDBCfgSearchContext context);
+
 
 
 }

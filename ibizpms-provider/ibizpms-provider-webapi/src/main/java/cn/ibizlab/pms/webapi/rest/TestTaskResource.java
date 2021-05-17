@@ -851,7 +851,6 @@ public class TestTaskResource {
 	}
     @Autowired
     cn.ibizlab.pms.core.zentao.mapping.TestTaskDataImport dataimportImpMapping;
-
     @RequestMapping(method = RequestMethod.POST, value = "/testtasks/import")
     public ResponseEntity<JSONObject> importData(@RequestParam(value = "config") String config , @RequestBody List<TestTask> dtos){
         JSONObject rs=new JSONObject();

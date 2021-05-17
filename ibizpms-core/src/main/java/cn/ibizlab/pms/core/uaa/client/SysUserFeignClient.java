@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.uaa.domain.SysUser;
 import cn.ibizlab.pms.core.uaa.filter.SysUserSearchContext;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -72,6 +73,7 @@ public interface SysUserFeignClient {
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysusers/searchdefault")
     Page<SysUser> searchDefault(@RequestBody SysUserSearchContext context);
+
 
 
 }

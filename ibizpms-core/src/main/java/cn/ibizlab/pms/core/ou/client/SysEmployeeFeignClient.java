@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ou.domain.SysEmployee;
 import cn.ibizlab.pms.core.ou.filter.SysEmployeeSearchContext;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -128,6 +129,7 @@ public interface SysEmployeeFeignClient {
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysemployees/searchtaskteam")
     Page<SysEmployee> searchTaskTeam(@RequestBody SysEmployeeSearchContext context);
+
 
 
 }

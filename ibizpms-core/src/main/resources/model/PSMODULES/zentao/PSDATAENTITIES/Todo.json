@@ -2140,7 +2140,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDELOGICS/GetTODOTitle.json",
     "logicName" : "获取待办名称",
-    "logicSubType" : "NONE",
     "name" : "获取待办名称",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
@@ -2224,7 +2223,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDELOGICS/ResetBeginEnd.json",
     "logicName" : "重置开始日期和结束日期",
-    "logicSubType" : "NONE",
     "name" : "重置开始日期和结束日期",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",

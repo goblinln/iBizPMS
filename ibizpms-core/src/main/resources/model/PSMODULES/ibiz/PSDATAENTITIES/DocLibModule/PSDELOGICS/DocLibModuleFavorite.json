@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/DocLibModuleFavorite.json",
   "logicName" : "文档库收藏",
-  "logicSubType" : "NONE",
   "name" : "文档库收藏",
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",

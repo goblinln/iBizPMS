@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/sendNotice.json",
   "logicName" : "发送通知",
-  "logicSubType" : "NONE",
   "name" : "发送通知",
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",

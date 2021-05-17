@@ -4129,7 +4129,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/CaseNFavorite.json",
     "logicName" : "用例取消收藏",
-    "logicSubType" : "NONE",
     "name" : "用例取消收藏",
     "getPSDELogicNodes" : [ {
       "codeName" : "CaseNFavrite",
@@ -4195,7 +4194,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/GetCaseStepByIdVersion.json",
     "logicName" : "根据用例标识和版本获取用例步骤",
-    "logicSubType" : "NONE",
     "name" : "根据用例标识和版本获取用例步骤",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
@@ -4262,7 +4260,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/caseFavorite.json",
     "logicName" : "用例收藏",
-    "logicSubType" : "NONE",
     "name" : "用例收藏",
     "getPSDELogicNodes" : [ {
       "codeName" : "Create",
@@ -4377,7 +4374,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/runCases.json",
     "logicName" : "runCases",
-    "logicSubType" : "NONE",
     "name" : "runCases",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
@@ -4503,7 +4499,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/testRunCases.json",
     "logicName" : "testRunCases",
-    "logicSubType" : "NONE",
     "name" : "testRunCases",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
@@ -4680,7 +4675,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/unlinkCases.json",
     "logicName" : "unlinkCases",
-    "logicSubType" : "NONE",
     "name" : "unlinkCases",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
@@ -4815,7 +4809,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/unlinkSuiteCases.json",
     "logicName" : "unlinkSuiteCases",
-    "logicSubType" : "NONE",
     "name" : "unlinkSuiteCases",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",

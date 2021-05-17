@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/BugFavorites.json",
   "logicName" : "Bug收藏",
-  "logicSubType" : "NONE",
   "name" : "Bug收藏",
   "getPSDELogicNodes" : [ {
     "codeName" : "Prepareparam1",

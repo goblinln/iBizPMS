@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/GetCurUserConcat.json",
   "logicName" : "获取联系人",
-  "logicSubType" : "NONE",
   "name" : "获取联系人",
   "getPSDELogicNodes" : [ {
     "codeName" : "Prepareparam1",

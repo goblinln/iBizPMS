@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/FixPath.json",
   "logicName" : "重建模块路径",
-  "logicSubType" : "NONE",
   "name" : "重建模块路径",
   "getPSDELogicNodes" : [ {
     "codeName" : "Prepareparam1",

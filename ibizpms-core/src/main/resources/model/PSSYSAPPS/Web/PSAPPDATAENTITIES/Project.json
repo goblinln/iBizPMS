@@ -1427,7 +1427,6 @@
     "codeName" : "ProjectTaskQCnt",
     "defaultParamName" : "Default",
     "logicName" : "项目任务快速分组计数器",
-    "logicSubType" : "NONE",
     "name" : "项目任务快速分组计数器",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",

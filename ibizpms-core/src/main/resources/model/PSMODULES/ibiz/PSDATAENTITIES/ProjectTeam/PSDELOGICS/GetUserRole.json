@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDELOGICS/GetUserRole.json",
   "logicName" : "获取成员角色",
-  "logicSubType" : "NONE",
   "name" : "获取成员角色",
   "getPSDELogicNodes" : [ {
     "codeName" : "Rawsqlcall1",

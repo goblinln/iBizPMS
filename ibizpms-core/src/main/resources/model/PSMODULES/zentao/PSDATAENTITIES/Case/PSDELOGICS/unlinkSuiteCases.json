@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/unlinkSuiteCases.json",
   "logicName" : "unlinkSuiteCases",
-  "logicSubType" : "NONE",
   "name" : "unlinkSuiteCases",
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",

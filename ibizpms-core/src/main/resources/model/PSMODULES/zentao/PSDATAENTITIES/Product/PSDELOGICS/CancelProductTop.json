@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDELOGICS/CancelProductTop.json",
   "logicName" : "取消置顶",
-  "logicSubType" : "NONE",
   "name" : "取消置顶",
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",

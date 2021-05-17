@@ -1372,8 +1372,7 @@
     "codeName" : "Bugsn",
     "logicName" : "BUG编号",
     "name" : "BUGSN",
-    "stdDataType" : 1,
-    "enableQuickSearch" : true
+    "stdDataType" : 1
   }, {
     "codeName" : "Org",
     "logicName" : "归属组织",
@@ -1391,6 +1390,7 @@
     "logicName" : "Bug编号",
     "name" : "ID",
     "stdDataType" : 1,
+    "enableQuickSearch" : true,
     "keyField" : true
   }, {
     "codeName" : "Delay",
@@ -1581,7 +1581,6 @@
     "codeName" : "GetCurUserConcat",
     "defaultParamName" : "Default",
     "logicName" : "获取联系人",
-    "logicSubType" : "NONE",
     "name" : "获取联系人",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
@@ -6397,8 +6396,8 @@
     "cssClass" : "fa fa-bug"
   },
   "getQuickSearchPSAppDEFields" : [ {
-    "name" : "BUGSN",
-    "codeName" : "Bugsn"
+    "name" : "ID",
+    "codeName" : "Id"
   }, {
     "name" : "TITLE",
     "codeName" : "Title"

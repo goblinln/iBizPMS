@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ou.domain.SysOrganization;
 import cn.ibizlab.pms.core.ou.filter.SysOrganizationSearchContext;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -68,6 +69,7 @@ public interface SysOrganizationFeignClient {
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysorganizations/searchdefault")
     Page<SysOrganization> searchDefault(@RequestBody SysOrganizationSearchContext context);
+
 
 
 }

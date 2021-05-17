@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDELOGICS/GetInfoTestTaskR.json",
   "logicName" : "根据测试单获取相应信息（项目报告）（单测试）",
-  "logicSubType" : "NONE",
   "name" : "根据测试单获取相应信息（项目报告）（单测试）",
   "getPSDELogicNodes" : [ {
     "codeName" : "Prepareparam1",

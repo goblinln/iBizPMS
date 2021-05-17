@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/BugNFavorites.json",
   "logicName" : "Bug取消收藏",
-  "logicSubType" : "NONE",
   "name" : "Bug取消收藏",
   "getPSDELogicNodes" : [ {
     "codeName" : "Rawsqlcall1",

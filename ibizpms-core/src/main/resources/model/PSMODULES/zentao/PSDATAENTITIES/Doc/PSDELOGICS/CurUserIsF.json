@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDELOGICS/CurUserIsF.json",
   "logicName" : "当前是否收藏文档",
-  "logicSubType" : "NONE",
   "name" : "当前是否收藏文档",
   "getPSDELogicNodes" : [ {
     "codeName" : "Rawsqlcall1",

@@ -1726,7 +1726,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDELOGICS/GetInfoTestTask.json",
     "logicName" : "根据测试单获取相应信息",
-    "logicSubType" : "NONE",
     "name" : "根据测试单获取相应信息",
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall13",
@@ -2598,7 +2597,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDELOGICS/GetInfoTestTaskOvByTime.json",
     "logicName" : "根据报告起始时间更新概况信息",
-    "logicSubType" : "NONE",
     "name" : "根据报告起始时间更新概况信息",
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall3",
@@ -3406,7 +3404,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDELOGICS/GetInfoTestTaskOvProject.json",
     "logicName" : "根据测试报告概况信息（项目报告）",
-    "logicSubType" : "NONE",
     "name" : "根据测试报告概况信息（项目报告）",
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall2",
@@ -4335,7 +4332,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDELOGICS/GetInfoTestTaskProject.json",
     "logicName" : "根据测试单获取相应信息（项目报告）",
-    "logicSubType" : "NONE",
     "name" : "根据测试单获取相应信息（项目报告）",
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall1",
@@ -4702,7 +4698,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDELOGICS/GetInfoTestTaskR.json",
     "logicName" : "根据测试单获取相应信息（项目报告）（单测试）",
-    "logicSubType" : "NONE",
     "name" : "根据测试单获取相应信息（项目报告）（单测试）",
     "getPSDELogicNodes" : [ {
       "codeName" : "Prepareparam1",
@@ -5038,7 +5033,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDELOGICS/GetInfoTestTaskS.json",
     "logicName" : "根据测试单获取相应信息（项目报告）（多测试）",
-    "logicSubType" : "NONE",
     "name" : "根据测试单获取相应信息（项目报告）（多测试）",
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall4",
@@ -5405,7 +5399,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDELOGICS/GetTestReportBasicInfo.json",
     "logicName" : "根据测试报告获取基本信息",
-    "logicSubType" : "NONE",
     "name" : "根据测试报告获取基本信息",
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall13",
@@ -6215,7 +6208,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDELOGICS/GetTestReportProject.json",
     "logicName" : "根据测试报告获取基本信息（项目报告）",
-    "logicSubType" : "NONE",
     "name" : "根据测试报告获取基本信息（项目报告）",
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall5",

@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetQAInformation.json",
   "logicName" : "获取测试人员相关数据",
-  "logicSubType" : "NONE",
   "name" : "获取测试人员相关数据",
   "getPSDELogicNodes" : [ {
     "codeName" : "Rawsqlcall4",

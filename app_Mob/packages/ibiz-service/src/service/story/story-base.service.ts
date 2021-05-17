@@ -23,7 +23,7 @@ export class StoryBaseService extends EntityBaseService<IStory> {
     protected APPDENAMEPLURAL = 'Stories';
     protected APPDEKEY = 'id';
     protected APPDETEXT = 'title';
-    protected quickSearchFields = ['title','storysn',];
+    protected quickSearchFields = ['title','id',];
     protected selectContextParam = {
         product: 'product',
     };
