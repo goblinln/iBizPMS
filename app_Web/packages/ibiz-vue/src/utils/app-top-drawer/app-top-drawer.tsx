@@ -1,7 +1,6 @@
 import { Vue, Component, Watch } from 'vue-property-decorator';
 import { CreateElement } from 'vue/types/umd';
-import { Subject, Observable } from 'rxjs';
-import { Util, on, LogUtil } from 'ibiz-core';
+import { on, LogUtil } from 'ibiz-core';
 import './app-top-drawer.less';
 
 /**
@@ -131,23 +130,6 @@ export class AppTopDrawer extends Vue {
                 this.closeModalData = [];
             }
             ref.$listeners.close();
-            // todo viewDataChange确认提示
-            // if (view.viewdatachange) {
-            //     const title: any = this.$t('app.tabpage.sureclosetip.title');
-            //     const contant: any = this.$t('app.tabpage.sureclosetip.content');
-            //     this.$Modal.confirm({
-            //         title: title,
-            //         content: contant,
-            //         onOk: () => {
-            //                 viewtag: ref.viewtag,
-            //                 viewdatachange: false,
-            //             });
-            //             ref.$listeners.close();
-            //         },
-            //     });
-            // } else {
-            // ref.$listeners.close();
-            // }
         }
     }
 
@@ -339,11 +321,12 @@ export class AppTopDrawer extends Vue {
     public render(h: CreateElement): any {
         const classes = { 'dialogContainer': !this.isShow };
         return (
-            <div class={classes} style={{ 'z-index': this.zIndex, 'display': this.isShowDialogContainer ? 'block' : 'none' }}>
+            <div style={{ 'z-index': this.zIndex}}>
+                <div class={classes} style={{ 'z-index': this.zIndex, 'display': this.isShowDialogContainer ? 'block' : 'none' }}></div>
                 <div
                     class='studio-drawer'
                     key="studio-drawer"
-                    style={{ 'z-index': this.zIndex, 'margin-top': this.isShow ? '0px' : '-100vh' }}
+                    style={{'z-index': this.zIndex, 'margin-top': this.isShow ? '0px' : '-100vh' }}
                 >
                     {this.renderHeader()}
                     <div
