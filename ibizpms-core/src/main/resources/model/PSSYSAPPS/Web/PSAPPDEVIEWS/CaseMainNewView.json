@@ -1230,6 +1230,10 @@
                     "name" : "DESC",
                     "codeName" : "Desc"
                   },
+                  "getPSSysPFPlugin" : {
+                    "pluginType" : "EDITOR_CUSTOMSTYLE",
+                    "pluginCode" : "casedesc"
+                  },
                   "width" : 300,
                   "widthUnit" : "PX",
                   "enableRowEdit" : true,
