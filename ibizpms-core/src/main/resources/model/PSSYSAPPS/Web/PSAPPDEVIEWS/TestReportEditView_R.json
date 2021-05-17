@@ -85,7 +85,6 @@
         "getPSSysImage" : {
           "cssClass" : "sx-tb-saveandclose"
         },
-        "refreshMode" : 1,
         "timeout" : 60000,
         "getTooltipPSLanguageRes" : {
           "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
@@ -93,8 +92,7 @@
         },
         "uIActionMode" : "SYS",
         "uIActionTag" : "SaveAndExit",
-        "uIActionType" : "DEUIACTION",
-        "reloadData" : true
+        "uIActionType" : "DEUIACTION"
       },
       "tooltip" : "保存并关闭",
       "getTooltipPSLanguageRes" : {

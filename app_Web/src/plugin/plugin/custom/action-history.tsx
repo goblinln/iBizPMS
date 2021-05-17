@@ -218,6 +218,7 @@ export class ActionHistory extends AppListBase {
             }
             this.listItemCodelist(item);
         })
+	  		this.$forceUpdate();
     }
 
     /**
