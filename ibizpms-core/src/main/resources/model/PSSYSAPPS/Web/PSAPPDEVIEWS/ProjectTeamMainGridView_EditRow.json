@@ -101,7 +101,7 @@
     "name" : "toolbar_deuiaction3",
     "getPSUIAction" : {
       "modelref" : true,
-      "id" : "SaveRow"
+      "id" : "SaveAndExit"
     },
     "xDataControlName" : "grid"
   } ],
@@ -151,7 +151,11 @@
       "showCaption" : true,
       "showIcon" : true
     }, {
-      "caption" : "保存行",
+      "getCapPSLanguageRes" : {
+        "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+        "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
+      },
+      "caption" : "保存并关闭",
       "groupExtractMode" : "ITEM",
       "itemType" : "DEUIACTION",
       "name" : "deuiaction3",
@@ -161,25 +165,35 @@
         "id" : "toolbar_deuiaction3"
       },
       "getPSSysImage" : {
-        "glyph" : "xf0c7@FontAwesome",
-        "cssClass" : "fa fa-save"
+        "cssClass" : "sx-tb-saveandclose"
       },
       "getPSUIAction" : {
-        "caption" : "保存行",
-        "codeName" : "SaveRow",
+        "getCapPSLanguageRes" : {
+          "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
+          "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
+        },
+        "caption" : "保存并关闭",
+        "codeName" : "SaveAndExit",
         "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
-        "fullCodeName" : "SaveRow",
-        "name" : "表格界面_保存行",
+        "fullCodeName" : "SaveAndExit",
+        "name" : "编辑界面_保存并退出操作",
         "getPSSysImage" : {
-          "glyph" : "xf0c7@FontAwesome",
-          "cssClass" : "fa fa-save"
+          "cssClass" : "sx-tb-saveandclose"
         },
         "timeout" : 60000,
+        "getTooltipPSLanguageRes" : {
+          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+          "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
+        },
         "uIActionMode" : "SYS",
-        "uIActionTag" : "SaveRow",
+        "uIActionTag" : "SaveAndExit",
         "uIActionType" : "DEUIACTION"
       },
-      "tooltip" : "保存行",
+      "tooltip" : "保存并关闭",
+      "getTooltipPSLanguageRes" : {
+        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
+        "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
+      },
       "showCaption" : true,
       "showIcon" : true
     } ],

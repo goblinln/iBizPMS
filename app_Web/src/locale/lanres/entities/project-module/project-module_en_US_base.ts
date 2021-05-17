@@ -76,8 +76,8 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("新建行",null),
 			},
 			'deuiaction3': {
-				caption: commonLogic.appcommonhandle("保存行",null),
-				tip: commonLogic.appcommonhandle("保存行",null),
+				caption: commonLogic.appcommonhandle("Save And Close",null),
+				tip: commonLogic.appcommonhandle("Save And Close Window",null),
 			},
 		},
 		treeexpviewtreeexpbar_toolbar_toolbar: {
