@@ -638,6 +638,9 @@
             "colMD" : 8,
             "layout" : "TABLE_24COL"
           },
+          "getPSSysCss" : {
+            "cssName" : "form-item-35"
+          },
           "allowEmpty" : false,
           "emptyCaption" : false,
           "hidden" : false,
@@ -738,8 +741,8 @@
             "singleSelect" : true
           },
           "getPSLayoutPos" : {
-            "colLG" : 10,
-            "colMD" : 10,
+            "colLG" : 9,
+            "colMD" : 9,
             "layout" : "TABLE_24COL"
           },
           "allowEmpty" : false,
