@@ -1,6 +1,7 @@
 package cn.ibizlab.pms.util.client;
 
 import cn.ibizlab.pms.util.domain.SysLog;
+import com.alibaba.fastjson.JSONObject;
 import net.ibizsys.runtime.util.domain.MsgSendQueue;
 import org.apache.rocketmq.common.message.Message;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -31,7 +32,7 @@ public interface IBZTPSFeignClient {
     MsgSendQueue[] getByIds(@RequestBody String[] msgids);
 
     @RequestMapping(method = RequestMethod.POST, value = "/job/{id}/execute")
-    String execute(@PathVariable("id") String id, @RequestBody String params);
+    JSONObject execute(@PathVariable("id") String id, @RequestBody String params);
 
     @RequestMapping(method = RequestMethod.GET, value = "/job/{id}/start")
     Boolean start(@PathVariable("id") String id);

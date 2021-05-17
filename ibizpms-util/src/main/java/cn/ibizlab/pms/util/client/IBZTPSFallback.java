@@ -1,6 +1,7 @@
 package cn.ibizlab.pms.util.client;
 
 import cn.ibizlab.pms.util.domain.SysLog;
+import com.alibaba.fastjson.JSONObject;
 import net.ibizsys.runtime.util.domain.MsgSendQueue;
 import org.apache.rocketmq.common.message.Message;
 import org.springframework.stereotype.Component;
@@ -39,7 +40,7 @@ public class IBZTPSFallback implements IBZTPSFeignClient {
     }
 
     @Override
-    public String execute(String id, String params) {
+    public JSONObject execute(String id, String params) {
         return null;
     }
 
