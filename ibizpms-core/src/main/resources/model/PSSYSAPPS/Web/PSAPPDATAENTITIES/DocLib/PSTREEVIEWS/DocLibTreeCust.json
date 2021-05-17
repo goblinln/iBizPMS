@@ -875,7 +875,7 @@
         }, {
           "key" : "SRFROOT",
           "name" : "SRFROOT",
-          "value" : "doclib",
+          "value" : "id",
           "rawValue" : false
         }, {
           "key" : "PRODUCT",
@@ -896,7 +896,7 @@
         }, {
           "key" : "srfroot",
           "name" : "srfroot",
-          "value" : "doclib",
+          "value" : "id",
           "rawValue" : false
         } ],
         "getPSSysImage" : {
@@ -2061,7 +2061,7 @@
           }, {
             "key" : "SRFROOT",
             "name" : "SRFROOT",
-            "value" : "doclib",
+            "value" : "id",
             "rawValue" : false
           }, {
             "key" : "PRODUCT",
@@ -2082,7 +2082,7 @@
           }, {
             "key" : "srfroot",
             "name" : "srfroot",
-            "value" : "doclib",
+            "value" : "id",
             "rawValue" : false
           } ],
           "getPSSysImage" : {
