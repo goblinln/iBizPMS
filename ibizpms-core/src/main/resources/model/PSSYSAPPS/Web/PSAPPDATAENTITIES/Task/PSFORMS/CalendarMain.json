@@ -874,10 +874,12 @@
                 "glyph" : "xf0a4@FontAwesome",
                 "cssClass" : "fa fa-hand-o-right"
               },
+              "refreshMode" : 1,
               "timeout" : 60000,
               "uIActionMode" : "FRONT",
               "uIActionTag" : "AssignTaskDash",
               "uIActionType" : "DEUIACTION",
+              "reloadData" : true,
               "id" : "AssignTaskDash@Task"
             },
             "tooltip" : "指派",
@@ -931,11 +933,13 @@
                 "glyph" : "xf064@FontAwesome",
                 "cssClass" : "fa fa-mail-forward"
               },
+              "refreshMode" : 1,
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "checkForwardDash",
               "uIActionType" : "DEUIACTION",
               "enableConfirm" : true,
+              "reloadData" : true,
               "showBusyIndicator" : false,
               "id" : "checkForwardDash@Task"
             },
@@ -1097,10 +1101,12 @@
                 "glyph" : "xf0d0@FontAwesome",
                 "cssClass" : "fa fa-magic"
               },
+              "refreshMode" : 1,
               "timeout" : 60000,
               "uIActionMode" : "FRONT",
               "uIActionTag" : "ActivationDash",
               "uIActionType" : "DEUIACTION",
+              "reloadData" : true,
               "id" : "ActivationDash@Task"
             },
             "tooltip" : "激活",
@@ -1154,11 +1160,13 @@
                 "glyph" : "xf10c@FontAwesome",
                 "cssClass" : "fa fa-circle-o"
               },
+              "refreshMode" : 1,
               "timeout" : 60000,
               "uIActionMode" : "BACKEND",
               "uIActionTag" : "MPauseTask",
               "uIActionType" : "DEUIACTION",
               "enableConfirm" : true,
+              "reloadData" : true,
               "showBusyIndicator" : false,
               "id" : "MPauseTask@Task"
             },
@@ -1201,10 +1209,12 @@
                 "glyph" : "xf05e@FontAwesome",
                 "cssClass" : "fa fa-ban"
               },
+              "refreshMode" : 1,
               "timeout" : 60000,
               "uIActionMode" : "FRONT",
               "uIActionTag" : "CancelTaskDash",
               "uIActionType" : "DEUIACTION",
+              "reloadData" : true,
               "id" : "CancelTaskDash@Task"
             },
             "tooltip" : "取消",
@@ -1250,10 +1260,12 @@
                 "glyph" : "xf011@FontAwesome",
                 "cssClass" : "fa fa-power-off"
               },
+              "refreshMode" : 1,
               "timeout" : 60000,
               "uIActionMode" : "FRONT",
               "uIActionTag" : "CloseTaskDash",
               "uIActionType" : "DEUIACTION",
+              "reloadData" : true,
               "id" : "CloseTaskDash@Task"
             },
             "tooltip" : "关闭",
@@ -1311,10 +1323,12 @@
               "getPSSysImage" : {
                 "cssClass" : "iconfont studio-icon-subnets"
               },
+              "refreshMode" : 1,
               "timeout" : 60000,
               "uIActionMode" : "FRONT",
               "uIActionTag" : "NewSubTaskDash",
               "uIActionType" : "DEUIACTION",
+              "reloadData" : true,
               "id" : "NewSubTaskDash@Task"
             },
             "tooltip" : "子任务",
@@ -1356,10 +1370,12 @@
                 "glyph" : "xf044@FontAwesome",
                 "cssClass" : "fa fa-edit"
               },
+              "refreshMode" : 1,
               "timeout" : 60000,
               "uIActionMode" : "FRONT",
               "uIActionTag" : "MainEditDash",
               "uIActionType" : "DEUIACTION",
+              "reloadData" : true,
               "id" : "MainEditDash@Task"
             },
             "tooltip" : "编辑",
