@@ -1111,7 +1111,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDELOGICS/FixPath.json",
     "logicName" : "重建模块路径",
-    "logicSubType" : "NONE",
     "name" : "重建模块路径",
     "getPSDELogicNodes" : [ {
       "codeName" : "Deaction1",
@@ -1332,7 +1331,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDELOGICS/RemoveModule.json",
     "logicName" : "删除模块",
-    "logicSubType" : "NONE",
     "name" : "删除模块",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",

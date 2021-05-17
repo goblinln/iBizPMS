@@ -79,7 +79,7 @@ export default class AppDashboardDesignService {
                     appDe = portlet.getPSAppDataEntity()
                 }
                 // 门户部件分类集合
-                let portletCat = portletCats?.find((item: any) => item.codeName == portlet.getPSAppPortletCat?.()?.id)
+                let portletCat = portletCats?.find((item: any) => item.codeName == portlet.getPSAppPortletCat?.()?.codeName)
                 let temp: any = {
                     type: 'app',
                     portletCodeName: portlet.codeName,

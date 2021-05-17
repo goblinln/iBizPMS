@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/sendTodoTask.json",
   "logicName" : "发送待办任务",
-  "logicSubType" : "NONE",
   "name" : "发送待办任务",
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",

@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/TaskFavorites.json",
   "logicName" : "任务收藏",
-  "logicSubType" : "NONE",
   "name" : "任务收藏",
   "getPSDELogicNodes" : [ {
     "codeName" : "Deaction1",

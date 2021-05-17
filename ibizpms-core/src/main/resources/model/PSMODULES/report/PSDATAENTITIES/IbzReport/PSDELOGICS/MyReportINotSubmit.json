@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/report/PSDATAENTITIES/IbzReport/PSDELOGICS/MyReportINotSubmit.json",
   "logicName" : "我未提交的（计数器）",
-  "logicSubType" : "NONE",
   "name" : "我未提交的（计数器）",
   "getPSDELogicNodes" : [ {
     "codeName" : "Rawsqlcall4",

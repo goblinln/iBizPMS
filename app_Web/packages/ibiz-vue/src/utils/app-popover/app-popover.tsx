@@ -4,7 +4,7 @@ import { createPopper, Instance } from '@popperjs/core/lib/popper-lite.js';
 import preventOverflow from '@popperjs/core/lib/modifiers/preventOverflow.js';
 import flip from '@popperjs/core/lib/modifiers/flip.js';
 import { Placement } from '@popperjs/core/lib/enums';
-import { AppServiceBase, on } from 'ibiz-core';
+import { AppServiceBase, on, Util } from 'ibiz-core';
 import './app-popover.less';
 
 /**
@@ -142,7 +142,14 @@ export class AppPopover {
             render(h: CreateElement) {
                 const content: any = this.content;
                 container.style.zIndex = (self.zIndex - 1).toString();
-                return <div v-show="self.showPopper" style={{ width: this.width + 'px', height: this.height + 'px', 'z-index': self.zIndex }} class={`app-popover app-popper${customClass ? ' ' + customClass : ''}`} on-click={this.click}>{(self.showPopper && content) ? content(h) : null}</div>;
+                let customStyle: any = {'z-index': self.zIndex};
+                if(Util.isNumber(this.width)){
+                    customStyle.width = this.width + 'px';
+                }
+                if(Util.isNumber(this.height)){
+                    customStyle.height = this.height + 'px';
+                }
+                return <div v-show="self.showPopper" style={customStyle} class={`app-popover app-popper${customClass ? ' ' + customClass : ''}`} on-click={this.click}>{(self.showPopper && content) ? content(h) : null}</div>;
             }
         });
     }
@@ -219,6 +226,46 @@ export class AppPopover {
             placement: position,
             strategy: 'absolute',
             modifiers: [preventOverflow, flip]
+        });
+        this.vueExample.$forceUpdate();
+    }
+    
+    /**
+     * 打开悬浮窗(自定义modefiers)
+     *
+     * @param {*} event
+     * @param {(h: CreateElement) => any} [content]
+     * @param {Placement} [position='left-end']
+     * @param {boolean} [isAutoClose=true]
+     * @param {number} [width]
+     * @param {number} [height]
+     * @param {*} [customClass]
+     * @param {any[]} [modifiers=[]]
+     * @memberof AppPopover
+     */
+     public openPopover2(event: any, content?: (h: CreateElement) => any, position: Placement = 'left-end', isAutoClose: boolean = true, width?: number, height?: number, customClass?: any, modifiers: any[] = []): void {
+        // 阻止事件冒泡
+        event.stopPropagation();
+        const element: Element = event.toElement || event.srcElement;
+        if (!this.vueExample) {
+            this.initVueExample(customClass);
+        }
+        this.popperDestroy();
+        const zIndex = this.vueExample.$store.getters.getZIndex();
+        if (zIndex) {
+            this.zIndex = zIndex + 100;
+            this.vueExample.$store.commit('updateZIndex', this.zIndex);
+        }
+        // 是否可自动关闭
+        this.isAutoClose = isAutoClose;
+        // 更新vue实例内容
+        this.showPopper = true;
+        Object.assign(this.vueExample.$data, { content, width: width, height: height, zIndex: this.zIndex });
+        const el: any = this.vueExample.$el;
+        this.popperExample = createPopper(element, el, {
+            placement: position,
+            strategy: 'absolute',
+            modifiers: [...modifiers]
         });
         this.vueExample.$forceUpdate();
     }

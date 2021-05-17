@@ -20,6 +20,7 @@ services:
       - SPRING_DATASOURCE_DRIVER-CLASS-NAME=com.mysql.jdbc.Driver
       - SPRING_DATASOURCE_DEFAULTSCHEMA=a_A_23e8aa361
       - IBIZ_AUTH_LADP=true
+      - JOBS_ENABLED=true
       - ZUUL_ROUTES_DYNAMODEL_PATH=/dynamodel/**
       - ZUUL_ROUTES_IBZEMP_SERVICEID=ibizpms-webapi
       - ZUUL_ROUTES_DYNAMODEL_URL=http://172.16.170.145

@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/runCases.json",
   "logicName" : "runCases",
-  "logicSubType" : "NONE",
   "name" : "runCases",
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",

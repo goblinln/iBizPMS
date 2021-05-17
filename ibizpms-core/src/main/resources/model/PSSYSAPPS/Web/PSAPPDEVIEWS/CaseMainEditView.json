@@ -990,9 +990,14 @@
                     "codeName" : "Desc"
                   },
                   "getPSEditor" : {
+                    "editorStyle" : "casedesc",
                     "editorType" : "TEXTBOX",
                     "maxLength" : 65535,
                     "name" : "desc",
+                    "getPSSysPFPlugin" : {
+                      "pluginType" : "EDITOR_CUSTOMSTYLE",
+                      "pluginCode" : "casedesc"
+                    },
                     "placeHolder" : "分组名称"
                   },
                   "allowEmpty" : true

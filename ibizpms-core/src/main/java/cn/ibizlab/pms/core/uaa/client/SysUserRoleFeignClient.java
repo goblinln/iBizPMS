@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.uaa.domain.SysUserRole;
 import cn.ibizlab.pms.core.uaa.filter.SysUserRoleSearchContext;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -68,6 +69,7 @@ public interface SysUserRoleFeignClient {
 
     @RequestMapping(method = RequestMethod.POST, value = "/sysuserroles/searchdefault")
     Page<SysUserRole> searchDefault(@RequestBody SysUserRoleSearchContext context);
+
 
 
 }

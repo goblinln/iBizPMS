@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/GetStorySpecs.json",
   "logicName" : "GetStorySpecs",
-  "logicSubType" : "NONE",
   "name" : "GetStorySpecs",
   "getPSDELogicNodes" : [ {
     "codeName" : "Rawsqlcall1",

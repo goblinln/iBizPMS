@@ -48,6 +48,8 @@ spec:
           value: "a_A_23e8aa361"
         - name: IBIZ_AUTH_LADP
           value: "true"      
+        - name: JOBS_ENABLED
+          value: "true"      
         - name: ZUUL_ROUTES_DYNAMODEL_PATH
           value: "/dynamodel/**"      
         - name: ZUUL_ROUTES_IBZEMP_SERVICEID

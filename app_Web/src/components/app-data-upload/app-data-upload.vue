@@ -48,8 +48,7 @@
 
 <script lang="ts">
 import XLSX from 'xlsx';
-import { CodeListService } from "ibiz-service";
-import { GlobalService } from 'ibiz-service';
+import { GlobalService, CodeListService } from 'ibiz-service';
 import { Vue, Component, Prop, Provide, Emit, Watch } from 'vue-property-decorator';
 import { Environment } from '@/environments/environment';
 import { LogUtil } from 'ibiz-core';
@@ -58,21 +57,13 @@ import { LogUtil } from 'ibiz-core';
 })
 export default class AppDataUploadView extends Vue {
 
-     /**
-     * 传入视图上下文
-     *
-     * @type {string}
-     * @memberof AppDataUploadView
-     */
-    @Prop() protected viewdata!: string;
-
     /**
      * 传入视图参数
      *
      * @type {string}
      * @memberof AppDataUploadView
      */
-    @Prop() protected viewparam!: string;
+    @Prop() protected dynamicProps!: string;
 
     /**
      * 代码表服务对象
@@ -98,6 +89,14 @@ export default class AppDataUploadView extends Vue {
      * @memberof AppDataUploadView
      */
     protected viewparams:any = {};
+
+    /**
+     * 视图上下文
+     *
+     * @type {*}
+     * @memberof AppDataUploadView
+     */
+    protected viewdata:any = {};
 
     /**
      * 导入数据模型
@@ -218,10 +217,11 @@ export default class AppDataUploadView extends Vue {
      * @param {*} oldVal
      * @memberof AppDataUploadView
      */
-    @Watch('viewparam',{immediate: true, deep: true})
+    @Watch('dynamicProps',{immediate: true, deep: true})
     onParamData(newVal: any, oldVal: any) {
         if(newVal){
-            Object.assign(this.viewparams, JSON.parse(this.viewparam));
+            this.viewparams = eval('('+newVal.viewparam+')');
+            this.viewdata = eval('('+newVal.viewdata+')');
             this.initBasic();
         } 
     }
@@ -506,18 +506,18 @@ export default class AppDataUploadView extends Vue {
         data.forEach((item:any) =>{
             let curObject:any = {};
             Object.keys(item).forEach((ele:any) => {
-                if(this.allFieldMap.get(ele).codelist){
+                if(this.allFieldMap.get(ele)?.codelist){
                     let codelistTag:string = this.allFieldMap.get(ele).codelist.tag;
-                     let codelistIsNumber:boolean = this.allFieldMap.get(ele).codelist.isnumber;
+                    let codelistIsNumber:boolean = this.allFieldMap.get(ele).codelist.isnumber;
                     let curCodeList:any = this.transCodeList(codelistTag,codelistIsNumber,true);
                    Object.defineProperty(curObject, this.allFieldMap.get(ele).name, {
                         value: curCodeList.get(item[ele]),
                         writable : true,
                         enumerable : true,
                         configurable : true
-                    }); 
+                    });
                 }else{
-                    Object.defineProperty(curObject, this.allFieldMap.get(ele).name, {
+                    Object.defineProperty(curObject, this.allFieldMap.get(ele)?.name, {
                         value: item[ele],
                         writable : true,
                         enumerable : true,

@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/UpdateInfo.json",
   "logicName" : "更新相关信息",
-  "logicSubType" : "NONE",
   "name" : "更新相关信息",
   "getPSDELogicNodes" : [ {
     "codeName" : "Deaction3",

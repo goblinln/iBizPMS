@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDELOGICS/GetBedinANDEnd.json",
   "logicName" : "获取开始日期和结束日期",
-  "logicSubType" : "NONE",
   "name" : "获取开始日期和结束日期",
   "getPSDELogicNodes" : [ {
     "codeName" : "Prepareparam1",

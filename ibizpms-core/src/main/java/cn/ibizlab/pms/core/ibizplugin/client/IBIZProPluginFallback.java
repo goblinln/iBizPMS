@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ibizplugin.domain.IBIZProPlugin;
 import cn.ibizlab.pms.core.ibizplugin.filter.IBIZProPluginSearchContext;
 import org.springframework.stereotype.Component;
@@ -75,6 +76,7 @@ public class IBIZProPluginFallback implements IBIZProPluginFeignClient {
     public Page<IBIZProPlugin> searchDefault(IBIZProPluginSearchContext context) {
         return null;
     }
+
 
 
 }

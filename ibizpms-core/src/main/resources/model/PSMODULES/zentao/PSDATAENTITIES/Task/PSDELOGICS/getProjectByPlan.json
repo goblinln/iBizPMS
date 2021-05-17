@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/getProjectByPlan.json",
   "logicName" : "根据计划或需求获取相关项目",
-  "logicSubType" : "NONE",
   "name" : "根据计划或需求获取相关项目",
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",

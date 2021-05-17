@@ -1741,7 +1741,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDELOGICS/Comment.json",
     "logicName" : "Comment",
-    "logicSubType" : "NONE",
     "name" : "Comment",
     "getPSDELogicNodes" : [ {
       "codeName" : "Prepareparam1",

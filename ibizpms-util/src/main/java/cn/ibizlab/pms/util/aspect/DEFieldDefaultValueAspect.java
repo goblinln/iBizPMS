@@ -42,7 +42,7 @@ public class DEFieldDefaultValueAspect
      * @param point
      * @throws Exception
      */
-    @Before(value = "execution(* cn.ibizlab.pms.core.*.service.*.create(..))")
+    @Before(value = "execution(* cn.ibizlab.pms.core.*.service.*.create(..)) || execution(* cn.ibizlab.pms.core.util.ibizzentao.helper.*.create(..))")
     public void BeforeCreate(JoinPoint point) throws Exception {
         fillDEFieldDefaultValue(point);
     }
@@ -56,7 +56,7 @@ public class DEFieldDefaultValueAspect
      * @param point
      * @throws Exception
      */
-    @Before(value = "execution(* cn.ibizlab.pms.core.*.service.*.update(..))")
+    @Before(value = "execution(* cn.ibizlab.pms.core.*.service.*.update(..)) || execution(* cn.ibizlab.pms.core.util.ibizzentao.helper.*.edit(..))")
     public void BeforeUpdate(JoinPoint point) throws Exception {
         fillDEFieldDefaultValue(point);
     }
@@ -148,7 +148,7 @@ public class DEFieldDefaultValueAspect
             DEPredefinedFieldType predefinedFieldType = fieldAnnotation.preType();
 
             //填充系统默认值
-            if(actionName.toLowerCase().startsWith("create") && (deFieldType!= DEFieldDefaultValueType.NONE  ||  (!StringUtils.isEmpty(deFieldDefaultValue)))) {
+            if((actionName.toLowerCase().startsWith("create") || actionName.toLowerCase().startsWith("update")) && (deFieldType!= DEFieldDefaultValueType.NONE  ||  (!StringUtils.isEmpty(deFieldDefaultValue)))) {
                 fillFieldDefaultValue(fieldname,  deFieldType,  deFieldDefaultValue,  et , curUser) ;
             }
             //填充系统预置属性
@@ -206,10 +206,10 @@ public class DEFieldDefaultValueAspect
                         et.set(fieldname, curUser.getUserid());
                         break;
                     case OPERATORNAME:
-                        et.set(fieldname, curUser.getLoginname());
+                        et.set(fieldname, curUser.getPersonname());
                         break;
                     case CURTIME:
-                        et.set(fieldname, new Timestamp(System.currentTimeMillis()));
+                        et.set(fieldname, new Timestamp(new Date().getTime()));
                         break;
                     case APPDATA:
                         //暂未实现

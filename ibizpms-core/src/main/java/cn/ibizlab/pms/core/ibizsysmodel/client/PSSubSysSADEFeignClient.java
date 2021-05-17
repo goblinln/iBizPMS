@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ibizsysmodel.domain.PSSubSysSADE;
 import cn.ibizlab.pms.core.ibizsysmodel.filter.PSSubSysSADESearchContext;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -68,6 +69,7 @@ public interface PSSubSysSADEFeignClient {
 
     @RequestMapping(method = RequestMethod.POST, value = "/pssubsyssades/searchdefault")
     Page<PSSubSysSADE> searchDefault(@RequestBody PSSubSysSADESearchContext context);
+
 
 
 }

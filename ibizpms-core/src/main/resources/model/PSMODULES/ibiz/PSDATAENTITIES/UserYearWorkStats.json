@@ -2385,7 +2385,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetDevInfomation.json",
     "logicName" : "获取研发人员相关数据",
-    "logicSubType" : "NONE",
     "name" : "获取研发人员相关数据",
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall3",
@@ -2572,7 +2571,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetInfo.json",
     "logicName" : "获取相关信息",
-    "logicSubType" : "NONE",
     "name" : "获取相关信息",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
@@ -2764,7 +2762,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetPOInfomation.json",
     "logicName" : "获取产品经理相关数据",
-    "logicSubType" : "NONE",
     "name" : "获取产品经理相关数据",
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall2",
@@ -3014,7 +3011,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetQAInformation.json",
     "logicName" : "获取测试人员相关数据",
-    "logicSubType" : "NONE",
     "name" : "获取测试人员相关数据",
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall4",
@@ -3201,7 +3197,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/UpdateInfo.json",
     "logicName" : "更新相关信息",
-    "logicSubType" : "NONE",
     "name" : "更新相关信息",
     "getPSDELogicNodes" : [ {
       "codeName" : "Deaction3",

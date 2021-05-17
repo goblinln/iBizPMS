@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/SysUpdateLog/PSDELOGICS/UpdateLasted.json",
   "logicName" : "更新最新更新标识",
-  "logicSubType" : "NONE",
   "name" : "更新最新更新标识",
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",

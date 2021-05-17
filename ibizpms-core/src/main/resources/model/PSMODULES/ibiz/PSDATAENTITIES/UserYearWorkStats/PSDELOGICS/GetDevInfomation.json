@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetDevInfomation.json",
   "logicName" : "获取研发人员相关数据",
-  "logicSubType" : "NONE",
   "name" : "获取研发人员相关数据",
   "getPSDELogicNodes" : [ {
     "codeName" : "Rawsqlcall3",

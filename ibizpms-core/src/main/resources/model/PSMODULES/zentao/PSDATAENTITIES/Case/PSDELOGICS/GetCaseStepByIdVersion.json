@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDELOGICS/GetCaseStepByIdVersion.json",
   "logicName" : "根据用例标识和版本获取用例步骤",
-  "logicSubType" : "NONE",
   "name" : "根据用例标识和版本获取用例步骤",
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",

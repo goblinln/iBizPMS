@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/buildUnlinkStorys.json",
   "logicName" : "buildUnlinkStorys",
-  "logicSubType" : "NONE",
   "name" : "buildUnlinkStorys",
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",

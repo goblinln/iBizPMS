@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ibiz.domain.DynaDashboard;
 import cn.ibizlab.pms.core.ibiz.filter.DynaDashboardSearchContext;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -18,5 +19,6 @@ import org.springframework.cloud.openfeign.FeignClient;
  */
 @FeignClient(value = "${ibiz.ref.service.r7rt-dyna:r7rt-dyna}", contextId = "DynaDashboard", fallback = DynaDashboardFallback.class)
 public interface DynaDashboardFeignClient {
+
 
 }

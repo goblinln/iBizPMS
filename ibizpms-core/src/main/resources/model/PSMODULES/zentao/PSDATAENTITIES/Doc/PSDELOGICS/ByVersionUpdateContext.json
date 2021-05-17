@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDELOGICS/ByVersionUpdateContext.json",
   "logicName" : "根据版本更新正文信息",
-  "logicSubType" : "NONE",
   "name" : "根据版本更新正文信息",
   "getPSDELogicNodes" : [ {
     "codeName" : "Rawsqlcall1",

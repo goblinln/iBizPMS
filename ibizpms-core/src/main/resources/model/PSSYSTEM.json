@@ -1474,7 +1474,7 @@
   } ],
   "getAllPSSysBackServices" : [ {
     "modelref" : true,
-    "path" : "PSMODULES/ibizpro/PSSYSBACKSERVICES/pushProjectWeekly.json"
+    "path" : "PSMODULES/report/PSSYSBACKSERVICES/pushProjectWeekly.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSSYSBACKSERVICES/BurnService.json"

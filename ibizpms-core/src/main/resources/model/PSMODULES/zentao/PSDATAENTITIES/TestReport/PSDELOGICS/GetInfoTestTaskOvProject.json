@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/TestReport/PSDELOGICS/GetInfoTestTaskOvProject.json",
   "logicName" : "根据测试报告概况信息（项目报告）",
-  "logicSubType" : "NONE",
   "name" : "根据测试报告概况信息（项目报告）",
   "getPSDELogicNodes" : [ {
     "codeName" : "Rawsqlcall2",

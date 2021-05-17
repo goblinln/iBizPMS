@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/ProjectTaskQCnt.json",
   "logicName" : "项目任务快速分组计数器",
-  "logicSubType" : "NONE",
   "name" : "项目任务快速分组计数器",
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",

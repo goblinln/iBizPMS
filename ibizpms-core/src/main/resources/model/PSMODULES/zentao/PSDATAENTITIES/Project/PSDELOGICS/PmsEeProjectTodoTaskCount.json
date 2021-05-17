@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/PmsEeProjectTodoTaskCount.json",
   "logicName" : "项目立项待办任务快速分组计数器",
-  "logicSubType" : "NONE",
   "name" : "项目立项待办任务快速分组计数器",
   "getPSDELogicNodes" : [ {
     "codeName" : "Rawsqlcall1",

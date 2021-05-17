@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/UserYearWorkStats/PSDELOGICS/GetInfo.json",
   "logicName" : "获取相关信息",
-  "logicSubType" : "NONE",
   "name" : "获取相关信息",
   "getPSDELogicNodes" : [ {
     "codeName" : "Begin",

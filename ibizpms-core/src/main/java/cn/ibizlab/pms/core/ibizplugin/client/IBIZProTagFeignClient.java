@@ -9,6 +9,7 @@ import java.util.Collection;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import com.alibaba.fastjson.JSONObject;
 import cn.ibizlab.pms.core.ibizplugin.domain.IBIZProTag;
 import cn.ibizlab.pms.core.ibizplugin.filter.IBIZProTagSearchContext;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -68,6 +69,7 @@ public interface IBIZProTagFeignClient {
 
     @RequestMapping(method = RequestMethod.POST, value = "/ibizprotags/searchdefault")
     Page<IBIZProTag> searchDefault(@RequestBody IBIZProTagSearchContext context);
+
 
 
 }

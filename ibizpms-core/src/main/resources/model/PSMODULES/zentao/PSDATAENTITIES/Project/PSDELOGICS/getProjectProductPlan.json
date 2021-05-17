@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/getProjectProductPlan.json",
   "logicName" : "获取项目产品计划",
-  "logicSubType" : "NONE",
   "name" : "获取项目产品计划",
   "getPSDELogicNodes" : [ {
     "codeName" : "Rawsqlcall1",

@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDELOGICS/GetModuleBranch.json",
   "logicName" : "获取模块的平台",
-  "logicSubType" : "NONE",
   "name" : "获取模块的平台",
   "getPSDELogicNodes" : [ {
     "codeName" : "Deaction1",

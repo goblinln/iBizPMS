@@ -1405,7 +1405,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/CurUserIsF.json",
     "logicName" : "当前是否收藏文档库分类",
-    "logicSubType" : "NONE",
     "name" : "当前是否收藏文档库分类",
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall2",
@@ -1489,7 +1488,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/DocLibModuleFavorite.json",
     "logicName" : "文档库收藏",
-    "logicSubType" : "NONE",
     "name" : "文档库收藏",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
@@ -1608,7 +1606,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/DoclibModuleNFavorite.json",
     "logicName" : "文档库取消收藏",
-    "logicSubType" : "NONE",
     "name" : "文档库取消收藏",
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall1",
@@ -1676,7 +1673,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/FixPath.json",
     "logicName" : "重建模块路径",
-    "logicSubType" : "NONE",
     "name" : "重建模块路径",
     "getPSDELogicNodes" : [ {
       "codeName" : "Prepareparam1",

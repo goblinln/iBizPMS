@@ -574,7 +574,6 @@
     "codeName" : "MyTerritoryCount",
     "defaultParamName" : "Default",
     "logicName" : "我的地盘移动端计数器",
-    "logicSubType" : "NONE",
     "name" : "我的地盘移动端计数器",
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall1",

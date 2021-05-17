@@ -1658,7 +1658,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats/PSDELOGICS/GetCurUserBugCnt.json",
     "logicName" : "获取当前用户的Bug数",
-    "logicSubType" : "NONE",
     "name" : "获取当前用户的Bug数",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",

@@ -6500,7 +6500,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/GetUserConcat.json",
     "logicName" : "获取联系人",
-    "logicSubType" : "NONE",
     "name" : "获取联系人",
     "getPSDELogicNodes" : [ {
       "codeName" : "Prepareparam1",
@@ -6559,7 +6558,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/ResetTaskestimate.json",
     "logicName" : "重置工时统计值",
-    "logicSubType" : "NONE",
     "name" : "重置工时统计值",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
@@ -6614,7 +6612,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/TaskCancleFavorites.json",
     "logicName" : "任务取消收藏",
-    "logicSubType" : "NONE",
     "name" : "任务取消收藏",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
@@ -6673,7 +6670,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/TaskFavorites.json",
     "logicName" : "任务收藏",
-    "logicSubType" : "NONE",
     "name" : "任务收藏",
     "getPSDELogicNodes" : [ {
       "codeName" : "Deaction1",
@@ -6788,7 +6784,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/UpdateStoryVersion.json",
     "logicName" : "更新需求版本",
-    "logicSubType" : "NONE",
     "name" : "更新需求版本",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
@@ -6931,7 +6926,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/getProjectByPlan.json",
     "logicName" : "根据计划或需求获取相关项目",
-    "logicSubType" : "NONE",
     "name" : "根据计划或需求获取相关项目",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
@@ -7092,7 +7086,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/getUsernames.json",
     "logicName" : "获取团队成员",
-    "logicSubType" : "NONE",
     "name" : "获取团队成员",
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall2",
@@ -7214,7 +7207,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDELOGICS/getUsernamesDraft.json",
     "logicName" : "获取团队成员（草稿）",
-    "logicSubType" : "NONE",
     "name" : "获取团队成员（草稿）",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",

@@ -5240,7 +5240,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/GetCurUserConcat.json",
     "logicName" : "获取联系人",
-    "logicSubType" : "NONE",
     "name" : "获取联系人",
     "getPSDELogicNodes" : [ {
       "codeName" : "Prepareparam1",
@@ -5299,7 +5298,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/GetStorySpecs.json",
     "logicName" : "GetStorySpecs",
-    "logicSubType" : "NONE",
     "name" : "GetStorySpecs",
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall1",
@@ -5462,7 +5460,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/StoryFavorites.json",
     "logicName" : "需求收藏",
-    "logicSubType" : "NONE",
     "name" : "需求收藏",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
@@ -5577,7 +5574,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/StoryNFavorites.json",
     "logicName" : "需求取消收藏",
-    "logicSubType" : "NONE",
     "name" : "需求取消收藏",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
@@ -5636,7 +5632,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/buildUnlinkStorys.json",
     "logicName" : "buildUnlinkStorys",
-    "logicSubType" : "NONE",
     "name" : "buildUnlinkStorys",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
@@ -5738,7 +5733,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/projectUnlinkStorys.json",
     "logicName" : "projectUnlinkStorys",
-    "logicSubType" : "NONE",
     "name" : "projectUnlinkStorys",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
@@ -5840,7 +5834,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/sendNotice.json",
     "logicName" : "发送通知",
-    "logicSubType" : "NONE",
     "name" : "发送通知",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
@@ -5867,7 +5860,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDELOGICS/sendTodoTask.json",
     "logicName" : "发送待办任务",
-    "logicSubType" : "NONE",
     "name" : "发送待办任务",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",

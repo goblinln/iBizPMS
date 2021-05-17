@@ -4677,7 +4677,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/CancelProjectTop.json",
     "logicName" : "取消置顶",
-    "logicSubType" : "NONE",
     "name" : "取消置顶",
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall1",
@@ -4736,7 +4735,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/MobProjectCount.json",
     "logicName" : "移动端项目计数器",
-    "logicSubType" : "NONE",
     "name" : "移动端项目计数器",
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall3",
@@ -4918,7 +4916,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/PmsEeProjectAllTaskCount.json",
     "logicName" : "项目立项全部任务快速分组计数器",
-    "logicSubType" : "NONE",
     "name" : "项目立项全部任务快速分组计数器",
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall3",
@@ -5173,7 +5170,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/PmsEeProjectTodoTaskCount.json",
     "logicName" : "项目立项待办任务快速分组计数器",
-    "logicSubType" : "NONE",
     "name" : "项目立项待办任务快速分组计数器",
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall1",
@@ -5328,7 +5324,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/ProjectTaskQCnt.json",
     "logicName" : "项目任务快速分组计数器",
-    "logicSubType" : "NONE",
     "name" : "项目任务快速分组计数器",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
@@ -5706,7 +5701,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/ProjectTop.json",
     "logicName" : "置顶",
-    "logicSubType" : "NONE",
     "name" : "置顶",
     "getPSDELogicNodes" : [ {
       "codeName" : "Prepareparam1",
@@ -5848,7 +5842,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/getCurUserSetTop.json",
     "logicName" : "获取当前用户是否设置置顶",
-    "logicSubType" : "NONE",
     "name" : "获取当前用户是否设置置顶",
     "getPSDELogicNodes" : [ {
       "codeName" : "Begin",
@@ -5911,7 +5904,6 @@
     "defaultParamName" : "Default",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDELOGICS/getProjectProductPlan.json",
     "logicName" : "获取项目产品计划",
-    "logicSubType" : "NONE",
     "name" : "获取项目产品计划",
     "getPSDELogicNodes" : [ {
       "codeName" : "Rawsqlcall1",

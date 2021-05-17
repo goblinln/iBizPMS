@@ -20,6 +20,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.springframework.util.ObjectUtils;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -30,9 +31,19 @@ public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBas
     private static final org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(SystemDataEntityRuntime.class);
 
     @Override
+    public boolean test(Serializable key, String action) {
+        if(key instanceof Long) {
+            if((Long) key == 0L || (Long) key == -1L) {
+                return true;
+            }
+        }
+        return super.test(key, action);
+    }
+
+    @Override
     protected void translateEntityNestedDER1NAfterProceed(Object objKey, IEntityBase arg0, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
 
-        /*ActionSession actionSession = ActionSessionManager.getCurrentSessionMust();
+        ActionSession actionSession = ActionSessionManager.getCurrentSessionMust();
 
         IDataEntityRuntime minorDataEntityRuntime = this.getSystemRuntime().getDataEntityRuntime(iPSDER1N.getMinorPSDataEntity().getDynaModelFilePath());
         if(minorDataEntityRuntime.getStorageMode() == DEStorageModes.NONE) {
@@ -111,7 +122,7 @@ public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBas
             }
         }
 
-        if(minorEntities != null) {
+        /*if(minorEntities != null) {
             for(IEntityBase iEntityBase : minorEntities) {
                 Object keyValue = minorDataEntityRuntime.getFieldValue(iEntityBase, minorDataEntityRuntime.getKeyPSDEField());
                 IEntityBase lastEntityBase = null;
@@ -135,12 +146,12 @@ public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBas
                     minorDataEntityRuntime.executeAction(DEActions.UPDATE, null, new Object[] {iEntityBase});
                 }
             }
-        }
+        }*/
 
         //移除数据
-        for(java.util.Map.Entry<Object,IEntityBase> entry : lastMinorEntityMap.entrySet()) {
+       /* for(java.util.Map.Entry<Object,IEntityBase> entry : lastMinorEntityMap.entrySet()) {
             minorDataEntityRuntime.executeAction(DEActions.REMOVE, null, new Object[] {entry.getKey()});
-        }
+        }*/
 
         //重写查询
         lastMinorEntityList = minorDataEntityRuntime.select(iSearchContextBase);
@@ -150,7 +161,7 @@ public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBas
         }
         else {
             this.setNestedDERValue(arg0, iPSDER1N, null);
-        }*/
+        }
     }
 
     /**
@@ -161,18 +172,21 @@ public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBas
      * @param iPSDEAction
      * @param iPSDER1N
      * @param iPSDataEntity
-     * @param joinPoint
+     * @param iDynaInstRuntime
+     * @param actionData
      * @throws Throwable
      */
     @Override
-    protected void fillEntityFullInfo(IEntityBase entityBase, String strActionName, IPSDEAction iPSDEAction, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, Object joinPoint) throws Throwable {
+    protected void fillEntityFullInfo(IEntityBase entityBase, String strActionName, IPSDEAction iPSDEAction, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
         Object objPickupValue = this.getFieldValue(entityBase, iPSDER1N.getPSPickupDEField());
         if (ObjectUtils.isEmpty(objPickupValue) || NumberUtils.toLong(String.valueOf(objPickupValue), 0L) == 0L){
             this.setFieldValue(entityBase, iPSDER1N.getPSPickupDEField(), 0);
             return;
         }
-        super.fillEntityFullInfo(entityBase, strActionName, iPSDEAction, iPSDER1N, iPSDataEntity, joinPoint);
+        super.fillEntityFullInfo(entityBase, strActionName, iPSDEAction, iPSDER1N, iPSDataEntity, iDynaInstRuntime, actionData);
     }
+
+
 
     @Override
     protected void translateEntityAfterProceed(Object arg0, Object objRet, String strActionName, IPSDEAction iPSDEAction, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object joinPoint) throws Throwable {
@@ -229,15 +243,15 @@ public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBas
     @Override
     protected String getFieldDataSetSortExp(IPSDEField iPSDEField) throws Exception {
         String fieldExp = super.getFieldDataSetSortExp(iPSDEField);
-        if(StringUtils.isBlank(fieldExp))
+        if(StringUtils.isBlank(fieldExp)) {
             return iPSDEField.getName();
+        }
         if (fieldExp.indexOf(".") > 0){
             return fieldExp.substring(fieldExp.indexOf(".") + 1);
         }
         return fieldExp;
     }
 
-    @Override
     protected void fillEntityDefaultValues(IEntityBase arg0, String strActionName, IPSDEAction iPSDEAction, IPSDataEntity iPSDataEntity, Object actionData) throws Throwable {
         List<IPSDEField> psDEFields = iPSDataEntity.getAllPSDEFields();
         if (psDEFields != null) {

@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDELOGICS/GetProjectDays.json",
   "logicName" : "获取项目的可用工日",
-  "logicSubType" : "NONE",
   "name" : "获取项目的可用工日",
   "getPSDELogicNodes" : [ {
     "codeName" : "Deaction1",

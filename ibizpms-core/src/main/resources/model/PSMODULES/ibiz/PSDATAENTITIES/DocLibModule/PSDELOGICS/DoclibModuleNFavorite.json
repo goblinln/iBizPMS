@@ -3,7 +3,6 @@
   "defaultParamName" : "Default",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/DocLibModule/PSDELOGICS/DoclibModuleNFavorite.json",
   "logicName" : "文档库取消收藏",
-  "logicSubType" : "NONE",
   "name" : "文档库取消收藏",
   "getPSDELogicNodes" : [ {
     "codeName" : "Rawsqlcall1",

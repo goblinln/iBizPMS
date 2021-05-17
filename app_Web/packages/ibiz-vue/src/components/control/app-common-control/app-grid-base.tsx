@@ -259,8 +259,10 @@ export class AppGridBase extends GridControlBase {
             props: renderParams,
             scopedSlots: {
                 default: (scope: any) => {
+                    let offset = require('@popperjs/core/lib/modifiers/offset').default;
                     return <i class='el-icon-more ua-column-icon' on-click={(e: any)=>{
-                        this.$apppopover.openPopover(e, ()=>this.renderActionButtons(column, scope), 'top-end', true, 145, 45, "ua-column-popover");
+                        let _offset = Object.assign({options:{offset : [2, -41]}}, offset);
+                        (this.$apppopover as any).openPopover2(e, ()=>this.renderActionButtons(column, scope), 'left', true, undefined, 48, "view-default ua-column-popover",[_offset]);
                     }}></i>;
                 },
             },
@@ -280,7 +282,7 @@ export class AppGridBase extends GridControlBase {
         const { row, column, $index } = scope;
         if (UIActionGroupDetails.length > 0) {
             return (
-                <div style='text-align: center;display: flex;justify-content: center;'>
+                <div style='text-align: center;display: flex;justify-content: center;' class='toolbar-container'>
                     {UIActionGroupDetails.map((uiactionDetail: IPSUIActionGroupDetail, index: number) => {
                         const uiaction: IPSDEUIAction = uiactionDetail.getPSUIAction() as IPSDEUIAction;
                         const actionModel = row[uiaction.uIActionTag];
@@ -631,7 +633,7 @@ export class AppGridBase extends GridControlBase {
                 <i-form style='height:100%;display:flex;flex-direction: column;justify-content: space-between'>
                     {this.items?.length > 0 ? this.renderGridContent(h) : <div class="app-grid-empty-content">{this.renderEmptyDataTip()}</div>}
                     {this.controlInstance?.enablePagingBar ? this.renderPagingBar(h) : ''}
-                    {this.renderColumnFilter()}
+                    {this.items?.length > 0 ? this.renderColumnFilter() : null}
                 </i-form>
             </div>
         );
