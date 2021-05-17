@@ -3241,10 +3241,12 @@
       "glyph" : "xf044@FontAwesome",
       "cssClass" : "fa fa-edit"
     },
+    "refreshMode" : 1,
     "timeout" : 60000,
     "uIActionMode" : "FRONT",
     "uIActionTag" : "ProjectEdit",
     "uIActionType" : "DEUIACTION",
+    "reloadData" : true,
     "id" : "ProjectEdit@Project"
   }, {
     "actionTarget" : "SINGLEKEY",
