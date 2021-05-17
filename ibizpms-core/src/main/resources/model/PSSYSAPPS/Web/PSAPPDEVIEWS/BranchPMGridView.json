@@ -373,10 +373,10 @@
     "groupMode" : "NONE",
     "hookEventNames" : [ "SELECTIONCHANGE", "BEFORELOAD", "ROWDBLCLICK", "REMOVE", "LOAD" ],
     "logicName" : "平台管理",
-    "minorSortDir" : "DESC",
+    "minorSortDir" : "ASC",
     "getMinorSortPSAppDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
+      "name" : "ORDER",
+      "codeName" : "Order"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,
