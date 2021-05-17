@@ -20,6 +20,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.springframework.util.ObjectUtils;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -28,6 +29,16 @@ import java.util.Map;
 public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBase {
 
     private static final org.apache.commons.logging.Log log = org.apache.commons.logging.LogFactory.getLog(SystemDataEntityRuntime.class);
+
+    @Override
+    public boolean test(Serializable key, String action) {
+        if(key instanceof Long) {
+            if((Long) key == 0L || (Long) key == -1L) {
+                return true;
+            }
+        }
+        return super.test(key, action);
+    }
 
     @Override
     protected void translateEntityNestedDER1NAfterProceed(Object objKey, IEntityBase arg0, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
