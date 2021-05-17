@@ -596,7 +596,8 @@
               "xDataControlName" : "list",
               "enableDP" : true,
               "enableFilter" : false,
-              "showCaptionBar" : false
+              "showCaptionBar" : false,
+              "modelid" : "d940bfd96f6087050755b99a3b6bab0a"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -685,5 +686,6 @@
   "xDataControlName" : "form",
   "enableDP" : true,
   "showCaptionBar" : false,
-  "showDataInfoBar" : false
+  "showDataInfoBar" : false,
+  "modelid" : "6524537caa86877c2028a06c2665617e"
 }

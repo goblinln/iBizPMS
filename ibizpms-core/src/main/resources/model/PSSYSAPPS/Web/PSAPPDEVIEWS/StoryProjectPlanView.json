@@ -453,6 +453,7 @@
   "enableDP" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
+  "modelid" : "48cbb418a5d2a5597a66cd72581bd32c",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

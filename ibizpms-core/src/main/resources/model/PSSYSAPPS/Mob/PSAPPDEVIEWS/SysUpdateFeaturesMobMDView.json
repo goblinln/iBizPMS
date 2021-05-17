@@ -285,6 +285,7 @@
   "enablePullDownRefresh" : false,
   "enableQuickSearch" : true,
   "showCaptionBar" : true,
+  "modelid" : "a336b9a10f03401732771c606a8872f6",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "sysUpdateLog",

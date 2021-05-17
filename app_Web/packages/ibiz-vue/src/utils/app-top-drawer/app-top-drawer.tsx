@@ -58,6 +58,14 @@ export class AppTopDrawer extends Vue {
      */
     protected isShow: boolean = false;
 
+
+    /**
+     * 是否显示蒙层
+     *
+     * @memberof AppTopDrawer
+     */
+    public isShowDialogContainer: boolean = false;
+
     /**
      * 监控模态展示状态变更
      *
@@ -119,7 +127,7 @@ export class AppTopDrawer extends Vue {
     protected refCloseView(view: any, i: number): any {
         const ref: any = this.$refs[view.viewname + i];
         if (ref) {
-            if(view.dynamicProps){
+            if (view.dynamicProps) {
                 this.closeModalData = [];
             }
             ref.$listeners.close();
@@ -138,7 +146,7 @@ export class AppTopDrawer extends Vue {
             //         },
             //     });
             // } else {
-                // ref.$listeners.close();
+            // ref.$listeners.close();
             // }
         }
     }
@@ -151,6 +159,7 @@ export class AppTopDrawer extends Vue {
      * @memberof AppTopDrawer
      */
     public openModal(param: any = {}): Promise<any> {
+        this.isShowDialogContainer = true;
         return new Promise((resolve: (res: any) => void) => {
             if (!this.isShow) {
                 const zIndex: number = this.$store.getters.getZIndex();
@@ -160,7 +169,7 @@ export class AppTopDrawer extends Vue {
                 }
                 setTimeout(() => (this.isShow = true), 50);
             }
-            this.viewList.push(Object.assign( param, { resolve }));
+            this.viewList.push(Object.assign(param, { resolve }));
             this.showViewList.push(this.viewList[this.viewList.length - 1]);
             this.activeIndex = this.viewList.length - 1;
         });
@@ -172,6 +181,7 @@ export class AppTopDrawer extends Vue {
      * @memberof AppTopDrawer
      */
     public closeView(item: any): void {
+        this.isShowDialogContainer = false;
         if (this.closeModalData && this.closeModalData.length > 0 && this.closeModalData[0] !== undefined) {
             item.resolve({ ret: 'OK', datas: this.closeModalData });
         } else {
@@ -225,13 +235,13 @@ export class AppTopDrawer extends Vue {
                     </div>
                     {this.showViewList.map((item, i) => {
                         const ref: any = this.$refs[item.viewname + i];
-                        if (!ref || !ref.$children || ref.$children.length<= 0) {
+                        if (!ref || !ref.$children || ref.$children.length <= 0) {
                             setTimeout(() => {
                                 this.$forceUpdate();
                             }, 300);
                             return;
                         }
-                        const title = ref.$children[0]?.model?.dataInfo?ref.$children[0]?.model?.dataInfo:item.title;
+                        const title = ref.$children[0]?.model?.dataInfo ? ref.$children[0]?.model?.dataInfo : item.title;
                         return (
                             <span key={i}>
                                 {i !== 0 ? <span class="studio-drawer-breadcrumb-item-separator">&gt;</span> : null}
@@ -281,10 +291,10 @@ export class AppTopDrawer extends Vue {
         return this.showViewList.map((view: any, i: number) => {
             try {
                 const props: any = {
-                    staticProps: {...view.staticProps, viewDefaultUsage:false, noViewCaption: true},
+                    staticProps: { ...view.staticProps, viewDefaultUsage: false, noViewCaption: true },
                     dynamicProps: { ...view.dynamicProps }
                 };
-                const style: any = { 'z-index': i + 1 , 'height' : '100%' };
+                const style: any = { 'z-index': i + 1, 'height': '100%' };
                 return (
                     <div class={{ 'studio-drawer-item': true, active: this.activeIndex === i }}>
                         {h(view.viewname, {
@@ -327,20 +337,22 @@ export class AppTopDrawer extends Vue {
      * @memberof AppTopDrawer
      */
     public render(h: CreateElement): any {
+        const classes = { 'dialogContainer': !this.isShow };
         return (
-            <div
-                class="studio-drawer"
-                key="studio-drawer"
-                style={{ 'z-index': this.zIndex, 'margin-top': this.isShow ? '0px' : '-100vh' }}
-            >
-                {this.renderHeader()}
+            <div class={classes} style={{ 'z-index': this.zIndex, 'display': this.isShowDialogContainer ? 'block' : 'none' }}>
                 <div
-                    class="studio-drawer-content"
-                    style={`transform: translateX(${
-                        this.activeIndex > 0 ? this.activeIndex * -100 : 0
-                    }%) translateZ(0px);`}
+                    class='studio-drawer'
+                    key="studio-drawer"
+                    style={{ 'z-index': this.zIndex, 'margin-top': this.isShow ? '0px' : '-100vh' }}
                 >
-                    {this.renderViews(h)}
+                    {this.renderHeader()}
+                    <div
+                        class="studio-drawer-content"
+                        style={`transform: translateX(${this.activeIndex > 0 ? this.activeIndex * -100 : 0
+                            }%) translateZ(0px);`}
+                    >
+                        {this.renderViews(h)}
+                    </div>
                 </div>
             </div>
         );

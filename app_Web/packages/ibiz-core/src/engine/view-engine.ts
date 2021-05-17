@@ -207,8 +207,9 @@ export class ViewEngine {
             const _item = _this.view.toolbarModels[key];
             if(_item && _item['dataaccaction']){
                 let dataActionResult:any;
-                if (_item.uiaction && (Object.is(_item.uiaction.actionTarget, "NONE") || Object.is(_item.uiaction.actionTarget, ""))){
-                    if(Object.is(_item.uiaction.actionTarget, "") && Object.is(_item.uiaction.tag, "Save") && _this.view.appUIService.isEnableDEMainState){
+                // 不需要数据的界面行为
+                if (_item.uiaction && (Object.is(_item.uiaction.actionTarget, "NONE") || !_item.uiaction.actionTarget)){
+                    if(!_item.uiaction.actionTarget && Object.is(_item.uiaction.tag, "Save") && _this.view.appUIService.isEnableDEMainState){
                         if(data && Object.keys(data).length >0){
                             dataActionResult= _this.view.appUIService.getAllOPPrivs(data)[_item['dataaccaction']];       
                         }
@@ -218,6 +219,8 @@ export class ViewEngine {
                 }else{
                     if(data && Object.keys(data).length >0 && _this.view.appUIService.isEnableDEMainState){
                         dataActionResult= _this.view.appUIService.getAllOPPrivs(data)[_item['dataaccaction']];       
+                    }else{
+                        dataActionResult = _this.view.appUIService.getResourceOPPrivs(_item['dataaccaction']);
                     }
                 }
                 // 无权限:0;有权限:1

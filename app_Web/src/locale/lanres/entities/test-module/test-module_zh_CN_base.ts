@@ -124,29 +124,17 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("新建行",null),
 				tip: commonLogic.appcommonhandle("新建行",null),
 			},
-			'deuiaction3': {
-				caption: commonLogic.appcommonhandle("保存行",null),
-				tip: commonLogic.appcommonhandle("保存行",null),
-			},
 		},
 		gridviewbranchtoolbar_toolbar: {
 			'deuiaction2': {
 				caption: commonLogic.appcommonhandle("新建行",null),
 				tip: commonLogic.appcommonhandle("新建行",null),
 			},
-			'deuiaction3': {
-				caption: commonLogic.appcommonhandle("保存行",null),
-				tip: commonLogic.appcommonhandle("保存行",null),
-			},
 		},
 		gridviewtoolbar_toolbar: {
 			'deuiaction2': {
 				caption: commonLogic.appcommonhandle("新建行",null),
 				tip: commonLogic.appcommonhandle("新建行",null),
-			},
-			'deuiaction3': {
-				caption: commonLogic.appcommonhandle("保存行",null),
-				tip: commonLogic.appcommonhandle("保存行",null),
 			},
 		},
 		editviewtoolbar_toolbar: {

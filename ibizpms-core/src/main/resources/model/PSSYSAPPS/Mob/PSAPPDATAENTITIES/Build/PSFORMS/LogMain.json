@@ -489,6 +489,7 @@
           "enablePullDownRefresh" : false,
           "enableQuickSearch" : true,
           "showCaptionBar" : true,
+          "modelid" : "963b139c17c5832ed2cd93ce0ff90a2a",
           "getPSAppDERSPaths" : [ [ {
             "actionRSMode" : 1,
             "codeName" : "Stories",
@@ -1009,6 +1010,7 @@
           "enablePullDownRefresh" : false,
           "enableQuickSearch" : true,
           "showCaptionBar" : true,
+          "modelid" : "fd416097dcc82ca31da5a2f203b5c264",
           "getPSAppDERSPaths" : [ [ {
             "actionRSMode" : 1,
             "codeName" : "Stories",

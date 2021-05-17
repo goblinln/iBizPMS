@@ -404,5 +404,6 @@
   "enableImport" : true,
   "enableRowEdit" : false,
   "rowEditDefault" : false,
-  "showCaptionBar" : false
+  "showCaptionBar" : false,
+  "modelid" : "bc70c3a504112ece6f376e5bf942ff06"
 }

@@ -492,7 +492,7 @@
             }, {
               "key" : "SRFROOT",
               "name" : "SRFROOT",
-              "value" : "doclib",
+              "value" : "id",
               "rawValue" : false
             }, {
               "key" : "PRODUCT",
@@ -513,7 +513,7 @@
             }, {
               "key" : "srfroot",
               "name" : "srfroot",
-              "value" : "doclib",
+              "value" : "id",
               "rawValue" : false
             } ],
             "getPSSysImage" : {
@@ -1083,6 +1083,7 @@
       "hidden" : false,
       "showCaption" : false
     } ],
+    "quickGroupCount" : -1,
     "quickSearchMode" : 1,
     "quickSearchWidth" : 0,
     "enableFilter" : true,
@@ -1118,5 +1119,6 @@
   "enableRowEdit" : false,
   "enableSearch" : true,
   "rowEditDefault" : false,
-  "showCaptionBar" : true
+  "showCaptionBar" : true,
+  "modelid" : "8d564d1a66bb96ca561524aa9a0087de"
 }

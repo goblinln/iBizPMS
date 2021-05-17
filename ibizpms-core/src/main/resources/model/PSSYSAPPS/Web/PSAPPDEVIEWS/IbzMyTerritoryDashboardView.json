@@ -855,7 +855,8 @@
               "xDataControlName" : "list",
               "enableDP" : true,
               "enableFilter" : false,
-              "showCaptionBar" : false
+              "showCaptionBar" : false,
+              "modelid" : "ecc0369834ef12678e1c34ca782aad23"
             },
             "portletType" : "VIEW",
             "title" : "剩余工作",
@@ -1245,7 +1246,8 @@
                 "enableFilter" : false,
                 "enableQuickSearch" : true,
                 "showCaptionBar" : false,
-                "showDataInfoBar" : true
+                "showDataInfoBar" : true,
+                "modelid" : "a84a543c155b01389bc12eb1c27624b5"
               },
               "portletType" : "VIEW",
               "title" : "产品统计",
@@ -1527,7 +1529,8 @@
                 "enableFilter" : false,
                 "enableQuickSearch" : true,
                 "showCaptionBar" : false,
-                "showDataInfoBar" : true
+                "showDataInfoBar" : true,
+                "modelid" : "d1de7b1c3f0c14ee93de65e6b1045786"
               },
               "portletType" : "VIEW",
               "title" : "项目统计",
@@ -1893,7 +1896,8 @@
                 "enableFilter" : false,
                 "enableQuickSearch" : true,
                 "showCaptionBar" : false,
-                "showDataInfoBar" : true
+                "showDataInfoBar" : true,
+                "modelid" : "6b595fd11428565335f1d1bbd66911bb"
               },
               "portletType" : "VIEW",
               "title" : "测试统计",
@@ -2531,7 +2535,8 @@
                         "enableQuickSearch" : true,
                         "enableRowEdit" : false,
                         "rowEditDefault" : false,
-                        "showCaptionBar" : false
+                        "showCaptionBar" : false,
+                        "modelid" : "a302ac33e3faf1f7a735721d5a96f738"
                       }
                     }, {
                       "caption" : "周报",
@@ -2639,7 +2644,8 @@
                   "expandSearchForm" : false,
                   "loadDefault" : true,
                   "showCaptionBar" : true,
-                  "showDataInfoBar" : true
+                  "showDataInfoBar" : true,
+                  "modelid" : "faea7e2d2427080c2bd6683de726ad8d"
                 },
                 "portletType" : "VIEW",
                 "title" : "我收到的汇报",
@@ -2997,7 +3003,8 @@
               "xDataControlName" : "list",
               "enableDP" : true,
               "enableFilter" : false,
-              "showCaptionBar" : false
+              "showCaptionBar" : false,
+              "modelid" : "b4e9c97f4ba0a08e4f916933fc97b522"
             },
             "portletType" : "VIEW",
             "timer" : 60000,
@@ -3569,7 +3576,8 @@
               "enableImport" : true,
               "enableRowEdit" : false,
               "rowEditDefault" : false,
-              "showCaptionBar" : false
+              "showCaptionBar" : false,
+              "modelid" : "bc2507cdd677c5e56d209fbab236dfc2"
             },
             "portletType" : "VIEW",
             "title" : "我的待办",
@@ -4254,6 +4262,7 @@
               "enableRowEdit" : false,
               "rowEditDefault" : false,
               "showCaptionBar" : false,
+              "modelid" : "e38188ce3545b9a17d4f2e0df5b755e3",
               "getPSAppDERSPaths" : [ [ {
                 "actionRSMode" : 1,
                 "codeName" : "Stories",
@@ -4950,6 +4959,7 @@
               "enableRowEdit" : false,
               "rowEditDefault" : false,
               "showCaptionBar" : false,
+              "modelid" : "680d5889e78ea2e379d1601c7ed66711",
               "getPSAppDERSPaths" : [ [ {
                 "actionRSMode" : 1,
                 "codeName" : "Stories",
@@ -5587,6 +5597,7 @@
               "enableRowEdit" : false,
               "rowEditDefault" : false,
               "showCaptionBar" : false,
+              "modelid" : "f20fe6d7aa45a13c1e7343fbe4c0caaf",
               "getPSAppDERSPaths" : [ [ {
                 "actionRSMode" : 1,
                 "codeName" : "ProjectModules",
@@ -6269,7 +6280,8 @@
               "enableImport" : true,
               "enableRowEdit" : false,
               "rowEditDefault" : false,
-              "showCaptionBar" : false
+              "showCaptionBar" : false,
+              "modelid" : "ad6ccd8aea1ed8f9c39d5e684300ff7e"
             },
             "portletType" : "VIEW",
             "title" : "最近更新",
@@ -6313,5 +6325,6 @@
   "expandSearchForm" : true,
   "loadDefault" : true,
   "showCaptionBar" : false,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "b33906a0a4a273e8e0da622206d8905d"
 }

@@ -1192,6 +1192,7 @@
         "enableQuickSearch" : true,
         "enableSearch" : true,
         "showCaptionBar" : false,
+        "modelid" : "a10053a02fe9826f543a6a01abb96cc7",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -1325,5 +1326,6 @@
   "expandSearchForm" : false,
   "loadDefault" : true,
   "showCaptionBar" : true,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "b68e2a38a9d5453e87e0f3bf672b7068"
 }

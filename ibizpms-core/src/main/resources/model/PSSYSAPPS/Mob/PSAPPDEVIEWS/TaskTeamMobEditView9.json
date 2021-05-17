@@ -433,6 +433,7 @@
   "enablePullDownRefresh" : false,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
+  "modelid" : "004e7d24fd2ead93b3b3836c70a05a23",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

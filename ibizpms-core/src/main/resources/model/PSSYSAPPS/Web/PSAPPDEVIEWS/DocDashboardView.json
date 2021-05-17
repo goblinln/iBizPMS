@@ -723,7 +723,8 @@
                         "xDataControlName" : "list",
                         "enableDP" : true,
                         "enableFilter" : false,
-                        "showCaptionBar" : false
+                        "showCaptionBar" : false,
+                        "modelid" : "d940bfd96f6087050755b99a3b6bab0a"
                       },
                       "getPSLayoutPos" : {
                         "colMD" : 24,
@@ -812,7 +813,8 @@
             "xDataControlName" : "form",
             "enableDP" : true,
             "showCaptionBar" : false,
-            "showDataInfoBar" : false
+            "showDataInfoBar" : false,
+            "modelid" : "6524537caa86877c2028a06c2665617e"
           },
           "portletType" : "VIEW",
           "title" : "正文",
@@ -1334,7 +1336,8 @@
             "xDataControlName" : "form",
             "enableDP" : true,
             "showCaptionBar" : false,
-            "showDataInfoBar" : false
+            "showDataInfoBar" : false,
+            "modelid" : "9c8008d7bfae29c3af0c64991337b7f8"
           },
           "portletType" : "VIEW",
           "title" : "文本摘要",
@@ -1651,7 +1654,8 @@
             "xDataControlName" : "form",
             "enableDP" : true,
             "showCaptionBar" : false,
-            "showDataInfoBar" : false
+            "showDataInfoBar" : false,
+            "modelid" : "82c6ad02ac6082c71d742df0460a93e2"
           },
           "portletType" : "VIEW",
           "title" : "关键字",
@@ -2318,7 +2322,8 @@
             "xDataControlName" : "form",
             "enableDP" : true,
             "showCaptionBar" : false,
-            "showDataInfoBar" : false
+            "showDataInfoBar" : false,
+            "modelid" : "00d6c7c0b8629ec81c0016d542d0f097"
           },
           "portletType" : "VIEW",
           "title" : "基本信息",
@@ -2905,7 +2910,8 @@
             "xDataControlName" : "list",
             "enableDP" : true,
             "enableFilter" : false,
-            "showCaptionBar" : false
+            "showCaptionBar" : false,
+            "modelid" : "6cc53210af0a1b521a3fbf7263c94a7b"
           },
           "portletType" : "VIEW",
           "title" : "历史记录",
@@ -2947,5 +2953,6 @@
   "expandSearchForm" : true,
   "loadDefault" : true,
   "showCaptionBar" : true,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "86e1fc6d46d804998a58ab21982c2874"
 }

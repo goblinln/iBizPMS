@@ -479,6 +479,7 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
+  "modelid" : "25ad13bec39a81629f26d442db44d424",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

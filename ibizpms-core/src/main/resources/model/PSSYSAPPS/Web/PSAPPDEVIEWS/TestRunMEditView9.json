@@ -244,6 +244,7 @@
   "enableFilter" : false,
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
+  "modelid" : "26a578a923c27361d49dc78fce10a6a8",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestTasks",

@@ -556,6 +556,7 @@
   "enablePullDownRefresh" : true,
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
+  "modelid" : "1a16912af4d68075be9437c5684d4f48",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

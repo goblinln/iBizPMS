@@ -1860,6 +1860,7 @@
                 "hidden" : false,
                 "showCaption" : false
               } ],
+              "quickGroupCount" : -1,
               "quickSearchMode" : 1,
               "quickSearchWidth" : 0,
               "enableFilter" : true,
@@ -1900,6 +1901,7 @@
             "enableSearch" : true,
             "rowEditDefault" : false,
             "showCaptionBar" : false,
+            "modelid" : "138b5a87f88e5bacc7b1629267d44086",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "Stories",
@@ -2688,6 +2690,7 @@
             "enableDP" : true,
             "showCaptionBar" : false,
             "showDataInfoBar" : false,
+            "modelid" : "e89b0906815ccabb03d421a31e94bc4a",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "TestSuites",
@@ -3300,7 +3303,8 @@
             "xDataControlName" : "list",
             "enableDP" : true,
             "enableFilter" : false,
-            "showCaptionBar" : false
+            "showCaptionBar" : false,
+            "modelid" : "6cc53210af0a1b521a3fbf7263c94a7b"
           },
           "portletType" : "VIEW",
           "title" : "历史记录",
@@ -3346,6 +3350,7 @@
   "loadDefault" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "modelid" : "1992dba2ce6fc9c7457c3a075575f337",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestSuites",

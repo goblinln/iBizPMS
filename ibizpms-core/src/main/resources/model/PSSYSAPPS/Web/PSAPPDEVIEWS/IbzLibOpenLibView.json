@@ -902,7 +902,8 @@
                     "xDataControlName" : "list",
                     "enableDP" : true,
                     "enableFilter" : false,
-                    "showCaptionBar" : false
+                    "showCaptionBar" : false,
+                    "modelid" : "63a73a2e80dc47c05dd3ead4f03ae3c3"
                   },
                   "getPSLayoutPos" : {
                     "colMD" : 24,
@@ -963,7 +964,8 @@
             "xDataControlName" : "form",
             "enableDP" : true,
             "showCaptionBar" : false,
-            "showDataInfoBar" : false
+            "showDataInfoBar" : false,
+            "modelid" : "88905fc742e5cee96069f28b5a76f22b"
           },
           "portletType" : "VIEW",
           "title" : "主信息",
@@ -1220,5 +1222,6 @@
   "expandSearchForm" : true,
   "loadDefault" : true,
   "showCaptionBar" : false,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "90b86f20a267e8dc7352eff044a34691"
 }

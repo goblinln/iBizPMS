@@ -270,5 +270,6 @@
   "enableFilter" : false,
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "754505eb2d18f5f8cfa4e41911ce79ef"
 }

@@ -436,6 +436,7 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
+  "modelid" : "b191a1a53f2f77ad0df1027d376e83ee",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "IbzLibModules",

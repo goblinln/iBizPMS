@@ -2298,6 +2298,7 @@
                 "needCodeListConfig" : true,
                 "showCaption" : false
               } ],
+              "quickGroupCount" : -1,
               "quickSearchMode" : 1,
               "quickSearchWidth" : 0,
               "enableFilter" : true,
@@ -2338,6 +2339,7 @@
             "enableSearch" : true,
             "rowEditDefault" : false,
             "showCaptionBar" : false,
+            "modelid" : "c7344b0a55eadb587f401c2ea5a4d01f",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "Stories",
@@ -4801,6 +4803,7 @@
                 "needCodeListConfig" : true,
                 "showCaption" : false
               } ],
+              "quickGroupCount" : -1,
               "quickSearchMode" : 1,
               "quickSearchWidth" : 0,
               "enableFilter" : true,
@@ -4841,6 +4844,7 @@
             "enableSearch" : true,
             "rowEditDefault" : false,
             "showCaptionBar" : false,
+            "modelid" : "6f90a9ed63f9dcec5758480a76e2680c",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "Stories",
@@ -5043,6 +5047,7 @@
   "enableDP" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
+  "modelid" : "5918176ed83c3a3809e0b822a2823d7d",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestReports",

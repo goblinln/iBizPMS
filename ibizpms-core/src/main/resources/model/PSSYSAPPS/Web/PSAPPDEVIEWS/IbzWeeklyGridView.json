@@ -1334,5 +1334,6 @@
   "enableRowEdit" : false,
   "enableSearch" : true,
   "rowEditDefault" : false,
-  "showCaptionBar" : true
+  "showCaptionBar" : true,
+  "modelid" : "ab7631914540ecd6c90ee344bfe70ba2"
 }

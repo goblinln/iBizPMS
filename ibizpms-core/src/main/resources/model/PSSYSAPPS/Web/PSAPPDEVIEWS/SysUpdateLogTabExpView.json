@@ -709,7 +709,8 @@
         "xDataControlName" : "form",
         "enableDP" : true,
         "showCaptionBar" : true,
-        "showDataInfoBar" : true
+        "showDataInfoBar" : true,
+        "modelid" : "f05b112ce6c2ef73ca7d15ad98a0f689"
       }
     }, {
       "caption" : "更新功能",
@@ -762,5 +763,6 @@
   "expandSearchForm" : false,
   "loadDefault" : true,
   "showCaptionBar" : true,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "c02fd7282430ea240e80829edd7f7898"
 }

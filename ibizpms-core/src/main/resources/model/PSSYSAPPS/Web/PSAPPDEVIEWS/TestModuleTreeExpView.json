@@ -1777,6 +1777,7 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
+  "modelid" : "3414a6ef8747f3c0ce2a6ef571dde48e",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestModules",

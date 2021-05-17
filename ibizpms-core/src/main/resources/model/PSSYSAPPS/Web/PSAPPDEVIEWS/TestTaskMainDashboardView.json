@@ -437,6 +437,7 @@
             "enableDP" : true,
             "showCaptionBar" : false,
             "showDataInfoBar" : false,
+            "modelid" : "8d24f12656d8f0d0f21cde986d90249d",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "TestTasks",
@@ -1074,7 +1075,8 @@
             "xDataControlName" : "list",
             "enableDP" : true,
             "enableFilter" : false,
-            "showCaptionBar" : false
+            "showCaptionBar" : false,
+            "modelid" : "6cc53210af0a1b521a3fbf7263c94a7b"
           },
           "portletType" : "VIEW",
           "title" : "历史记录",
@@ -2076,6 +2078,7 @@
             "enableDP" : true,
             "showCaptionBar" : false,
             "showDataInfoBar" : false,
+            "modelid" : "70c1b45e198da89f71004066e0b148ac",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "TestTasks",
@@ -2172,6 +2175,7 @@
   "loadDefault" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
+  "modelid" : "55a8c0becc39a06b6b107d1bb4dbdcb9",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestTasks",

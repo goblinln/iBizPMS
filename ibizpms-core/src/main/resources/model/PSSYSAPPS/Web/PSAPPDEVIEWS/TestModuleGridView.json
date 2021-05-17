@@ -69,7 +69,7 @@
     "name" : "toolbar_deuiaction3",
     "getPSUIAction" : {
       "modelref" : true,
-      "id" : "SaveRow"
+      "id" : "SaveAndExit"
     },
     "xDataControlName" : "grid"
   } ],
@@ -116,38 +116,6 @@
         "uIActionType" : "DEUIACTION"
       },
       "tooltip" : "新建行",
-      "showCaption" : true,
-      "showIcon" : true
-    }, {
-      "caption" : "保存行",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction3",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction3"
-      },
-      "getPSSysImage" : {
-        "glyph" : "xf0c7@FontAwesome",
-        "cssClass" : "fa fa-save"
-      },
-      "getPSUIAction" : {
-        "caption" : "保存行",
-        "codeName" : "SaveRow",
-        "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
-        "fullCodeName" : "SaveRow",
-        "name" : "表格界面_保存行",
-        "getPSSysImage" : {
-          "glyph" : "xf0c7@FontAwesome",
-          "cssClass" : "fa fa-save"
-        },
-        "timeout" : 60000,
-        "uIActionMode" : "SYS",
-        "uIActionTag" : "SaveRow",
-        "uIActionType" : "DEUIACTION"
-      },
-      "tooltip" : "保存行",
       "showCaption" : true,
       "showIcon" : true
     } ],
@@ -715,6 +683,7 @@
   "enableRowEdit" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : false,
+  "modelid" : "2cd7bc56e84d0466d176da964a839727",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestModules",

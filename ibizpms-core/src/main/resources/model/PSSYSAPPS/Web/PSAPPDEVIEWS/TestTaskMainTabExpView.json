@@ -2269,6 +2269,7 @@
             "hidden" : false,
             "showCaption" : false
           } ],
+          "quickGroupCount" : -1,
           "quickSearchMode" : 1,
           "quickSearchWidth" : 0,
           "enableFilter" : true,
@@ -2314,6 +2315,7 @@
         "enableSearch" : true,
         "rowEditDefault" : false,
         "showCaptionBar" : false,
+        "modelid" : "178ae3b2e5f30d153fa8a30edace0383",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -2472,6 +2474,7 @@
   "loadDefault" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "modelid" : "4e229fd1de7c3b68c2a18a3d16916d61",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestTasks",

@@ -857,5 +857,6 @@
   "enableSearch" : true,
   "expandSearchForm" : true,
   "rowEditDefault" : false,
-  "showCaptionBar" : true
+  "showCaptionBar" : true,
+  "modelid" : "0628ebe722ec3a5dd70928a0df4b1b20"
 }

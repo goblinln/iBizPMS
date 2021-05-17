@@ -1565,8 +1565,8 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("新建行",null),
 			},
 			'deuiaction3': {
-				caption: commonLogic.appcommonhandle("保存行",null),
-				tip: commonLogic.appcommonhandle("保存行",null),
+				caption: commonLogic.appcommonhandle("保存并关闭",null),
+				tip: commonLogic.appcommonhandle("保存并关闭",null),
 			},
 		},
 		pritaskgroupgridviewtoolbar_toolbar: {

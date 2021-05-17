@@ -846,6 +846,7 @@
     "hidden" : false,
     "showCaption" : false
   } ],
+  "quickGroupCount" : -1,
   "quickSearchMode" : 1,
   "quickSearchWidth" : 0,
   "enableFilter" : true,

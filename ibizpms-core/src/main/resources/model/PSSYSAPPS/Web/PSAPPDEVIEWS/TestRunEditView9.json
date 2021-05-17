@@ -819,6 +819,7 @@
             "enableRowEdit" : false,
             "rowEditDefault" : false,
             "showCaptionBar" : false,
+            "modelid" : "368216ad8a9f6f4eeeefbff6b64e2140",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "Stories",
@@ -1124,6 +1125,7 @@
   "enableDP" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : false,
+  "modelid" : "a7aa0594a12412726e223a2d12f26045",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestTasks",

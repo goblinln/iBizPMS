@@ -1138,7 +1138,8 @@
         "enableRowEdit" : false,
         "enableSearch" : true,
         "rowEditDefault" : false,
-        "showCaptionBar" : true
+        "showCaptionBar" : true,
+        "modelid" : "031f322348f44c7fd48538bd1b66cd28"
       }
     }, {
       "caption" : "插件管理",
@@ -1193,5 +1194,6 @@
   "expandSearchForm" : false,
   "loadDefault" : true,
   "showCaptionBar" : true,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "9322aeb3d46b7e14022de0e611088cae"
 }

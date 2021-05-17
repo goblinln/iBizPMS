@@ -496,6 +496,7 @@
   "pickupMode" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : false,
+  "modelid" : "1e7347f3fffc87077dd7f0156125b918",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

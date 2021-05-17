@@ -35,12 +35,22 @@
     "getPSViewCtrlName" : "toolbar"
   } ],
   "getPSAppViewNavContexts" : [ {
+    "key" : "ID",
+    "name" : "ID",
+    "value" : "0",
+    "rawValue" : true
+  }, {
     "key" : "PROJECT",
     "name" : "PROJECT",
     "value" : "project",
     "rawValue" : false
   } ],
   "getPSAppViewNavParams" : [ {
+    "key" : "id",
+    "name" : "id",
+    "value" : "0",
+    "rawValue" : true
+  }, {
     "key" : "project",
     "name" : "project",
     "value" : "project",
@@ -1215,6 +1225,7 @@
   "enableDP" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "modelid" : "d7d565614eb5ab6d7763a92110c481dd",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestReports",

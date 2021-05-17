@@ -650,7 +650,8 @@
                       "xDataControlName" : "list",
                       "enableDP" : true,
                       "enableFilter" : false,
-                      "showCaptionBar" : false
+                      "showCaptionBar" : false,
+                      "modelid" : "d940bfd96f6087050755b99a3b6bab0a"
                     },
                     "getPSLayoutPos" : {
                       "colMD" : 24,
@@ -767,6 +768,7 @@
           "enableDP" : true,
           "showCaptionBar" : false,
           "showDataInfoBar" : true,
+          "modelid" : "64c5e35f0b058ff8108bbbbd22efc684",
           "getPSAppDERSPaths" : [ [ {
             "actionRSMode" : 1,
             "codeName" : "Stories",
@@ -1479,7 +1481,8 @@
           "xDataControlName" : "list",
           "enableDP" : true,
           "enableFilter" : false,
-          "showCaptionBar" : false
+          "showCaptionBar" : false,
+          "modelid" : "6cc53210af0a1b521a3fbf7263c94a7b"
         },
         "portletType" : "VIEW",
         "title" : "历史记录",
@@ -3885,6 +3888,7 @@
           "enableDP" : true,
           "showCaptionBar" : false,
           "showDataInfoBar" : false,
+          "modelid" : "b95339c9dec370542f978bcd17224d48",
           "getPSAppDERSPaths" : [ [ {
             "actionRSMode" : 1,
             "codeName" : "Stories",
@@ -5200,6 +5204,7 @@
           "enableDP" : true,
           "showCaptionBar" : false,
           "showDataInfoBar" : false,
+          "modelid" : "114241c3104f51fe267e9708ba41fe29",
           "getPSAppDERSPaths" : [ [ {
             "actionRSMode" : 1,
             "codeName" : "Stories",

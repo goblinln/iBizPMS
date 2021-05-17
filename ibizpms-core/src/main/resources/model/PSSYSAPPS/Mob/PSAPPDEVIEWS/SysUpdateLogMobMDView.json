@@ -282,5 +282,6 @@
   "enableDP" : true,
   "enableFilter" : false,
   "enablePullDownRefresh" : false,
-  "showCaptionBar" : true
+  "showCaptionBar" : true,
+  "modelid" : "fe3da0b3244df9edc5967b895d385b1e"
 }

@@ -1575,6 +1575,7 @@
       "pickupMode" : true,
       "rowEditDefault" : false,
       "showCaptionBar" : true,
+      "modelid" : "a567636558c349902507ef69b9c510e5",
       "getPSAppDERSPaths" : [ [ {
         "actionRSMode" : 1,
         "codeName" : "ProjectModules",
@@ -1860,6 +1861,7 @@
   "viewType" : "DEPICKUPVIEW",
   "enableDP" : true,
   "showCaptionBar" : false,
+  "modelid" : "601588ff1c189387e79d24286c2a242e",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

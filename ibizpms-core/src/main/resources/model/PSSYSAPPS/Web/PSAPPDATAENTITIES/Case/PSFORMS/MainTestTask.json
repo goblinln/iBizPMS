@@ -832,6 +832,7 @@
           "enableRowEdit" : true,
           "rowEditDefault" : true,
           "showCaptionBar" : true,
+          "modelid" : "5547049c1d6358d5b318c5034e1fef13",
           "getPSAppDERSPaths" : [ [ {
             "actionRSMode" : 1,
             "codeName" : "Stories",
@@ -1629,6 +1630,7 @@
               "enableFilter" : false,
               "enableQuickSearch" : true,
               "showCaptionBar" : false,
+              "modelid" : "a2162c6851a15e4ca36932de99bce8ad",
               "getPSAppDERSPaths" : [ [ {
                 "actionRSMode" : 1,
                 "codeName" : "Stories",

@@ -747,7 +747,8 @@
           "xDataControlName" : "form",
           "enableDP" : true,
           "showCaptionBar" : false,
-          "showDataInfoBar" : true
+          "showDataInfoBar" : true,
+          "modelid" : "4eec8bab9a7a03f86c72ec576cc7a70a"
         },
         "portletType" : "VIEW",
         "title" : "基本资料",
@@ -1371,7 +1372,8 @@
           "xDataControlName" : "list",
           "enableDP" : true,
           "enableFilter" : false,
-          "showCaptionBar" : false
+          "showCaptionBar" : false,
+          "modelid" : "12b93621cdf2d44e4bf3d664c17adb44"
         },
         "portletType" : "VIEW",
         "title" : "个人贡献",

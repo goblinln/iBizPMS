@@ -950,7 +950,8 @@
                     "enableDP" : true,
                     "enableFilter" : false,
                     "enablePullDownRefresh" : true,
-                    "showCaptionBar" : false
+                    "showCaptionBar" : false,
+                    "modelid" : "22961cd5ac6f56eb438a9c9547e474e1"
                   },
                   "getPSLayoutPos" : {
                     "colMD" : 24,
@@ -1377,7 +1378,8 @@
                     "enableFilter" : false,
                     "enablePullDownRefresh" : false,
                     "enableQuickSearch" : true,
-                    "showCaptionBar" : false
+                    "showCaptionBar" : false,
+                    "modelid" : "1d9d30b890d34ecfebbb4f33eb5999ad"
                   },
                   "getPSLayoutPos" : {
                     "colMD" : 24,
@@ -1589,7 +1591,8 @@
         "enableDP" : true,
         "enablePullDownRefresh" : false,
         "showCaptionBar" : false,
-        "showDataInfoBar" : true
+        "showDataInfoBar" : true,
+        "modelid" : "2343b3eddb9dd2f488fca61bf071d991"
       }
     }, {
       "caption" : "完成任务",
@@ -1663,5 +1666,6 @@
   "expandSearchForm" : false,
   "loadDefault" : true,
   "showCaptionBar" : true,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "1c48fca50b9435e0fd8e96b9861f34a0"
 }

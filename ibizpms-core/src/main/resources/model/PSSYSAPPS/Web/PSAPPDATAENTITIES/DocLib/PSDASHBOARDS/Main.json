@@ -543,7 +543,8 @@
         "enableImport" : true,
         "enableRowEdit" : false,
         "rowEditDefault" : false,
-        "showCaptionBar" : false
+        "showCaptionBar" : false,
+        "modelid" : "c497466bcf53f80ce1a8a16860bff528"
       },
       "portletType" : "VIEW",
       "title" : "最近更新",
@@ -1060,7 +1061,8 @@
         "enableImport" : true,
         "enableRowEdit" : false,
         "rowEditDefault" : false,
-        "showCaptionBar" : false
+        "showCaptionBar" : false,
+        "modelid" : "797826f1129aa16855df1cb92ffe106d"
       },
       "portletType" : "VIEW",
       "title" : "我的文档",
@@ -1572,7 +1574,8 @@
         "enableImport" : true,
         "enableRowEdit" : false,
         "rowEditDefault" : false,
-        "showCaptionBar" : false
+        "showCaptionBar" : false,
+        "modelid" : "24690692d976c87e9e6948f81497ff23"
       },
       "portletType" : "VIEW",
       "title" : "我的收藏",
@@ -2517,7 +2520,8 @@
         "xDataControlName" : "form",
         "enableDP" : true,
         "showCaptionBar" : false,
-        "showDataInfoBar" : false
+        "showDataInfoBar" : false,
+        "modelid" : "ce20b160838d91ba8213e4665eadfcdf"
       },
       "portletType" : "VIEW",
       "title" : "文档统计",
@@ -3065,7 +3069,8 @@
         "enableImport" : true,
         "enableRowEdit" : false,
         "rowEditDefault" : false,
-        "showCaptionBar" : false
+        "showCaptionBar" : false,
+        "modelid" : "aa9214c2a8a4216cc83f9f24c106f41c"
       },
       "portletType" : "VIEW",
       "title" : "未完成项目",

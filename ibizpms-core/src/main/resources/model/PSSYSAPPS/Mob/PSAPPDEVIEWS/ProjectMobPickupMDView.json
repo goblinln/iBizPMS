@@ -268,5 +268,6 @@
   "enableFilter" : false,
   "enablePullDownRefresh" : false,
   "expandSearchForm" : true,
-  "showCaptionBar" : true
+  "showCaptionBar" : true,
+  "modelid" : "f9cd2bec44b69f73aecbda48ae51ca87"
 }

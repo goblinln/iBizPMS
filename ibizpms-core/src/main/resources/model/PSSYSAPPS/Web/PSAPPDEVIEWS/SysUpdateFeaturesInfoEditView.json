@@ -688,6 +688,7 @@
   "enableDP" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "modelid" : "69f603bbdaf1463452fe56bbd20aefcc",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "sysUpdateLog",

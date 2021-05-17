@@ -1499,5 +1499,6 @@
   "xDataControlName" : "tree",
   "enableDP" : true,
   "enableFilter" : false,
-  "showCaptionBar" : false
+  "showCaptionBar" : false,
+  "modelid" : "9bbb63a4a36369d6d14471da8a742eb9"
 }

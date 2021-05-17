@@ -2897,6 +2897,7 @@
                 "needCodeListConfig" : true,
                 "showCaption" : false
               } ],
+              "quickGroupCount" : -1,
               "quickSearchMode" : 1,
               "quickSearchWidth" : 0,
               "enableFilter" : true,
@@ -2937,6 +2938,7 @@
             "enableSearch" : true,
             "rowEditDefault" : false,
             "showCaptionBar" : false,
+            "modelid" : "dbb115ffc3faea7eac968cbaa01b8f3b",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "Stories",
@@ -5653,6 +5655,7 @@
                 "needCodeListConfig" : true,
                 "showCaption" : false
               } ],
+              "quickGroupCount" : -1,
               "quickSearchMode" : 1,
               "quickSearchWidth" : 0,
               "enableFilter" : true,
@@ -5693,6 +5696,7 @@
             "enableSearch" : true,
             "rowEditDefault" : false,
             "showCaptionBar" : false,
+            "modelid" : "489b7ae9d631f1f2d6f52bbefdb99ced",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "Stories",
@@ -6498,6 +6502,7 @@
                 "enableRowEdit" : false,
                 "rowEditDefault" : false,
                 "showCaptionBar" : true,
+                "modelid" : "71144df81858a48d4b9bdf84990bd663",
                 "getPSAppDERSPaths" : [ [ {
                   "actionRSMode" : 1,
                   "codeName" : "ProductPlans",
@@ -7204,7 +7209,8 @@
                 "xDataControlName" : "list",
                 "enableDP" : true,
                 "enableFilter" : false,
-                "showCaptionBar" : false
+                "showCaptionBar" : false,
+                "modelid" : "6cc53210af0a1b521a3fbf7263c94a7b"
               },
               "getPSLayoutPos" : {
                 "colMD" : 24,
@@ -7328,6 +7334,7 @@
   "enableDP" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "modelid" : "e9ed68625a3175f2645a2b2a793f9732",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProductPlans",

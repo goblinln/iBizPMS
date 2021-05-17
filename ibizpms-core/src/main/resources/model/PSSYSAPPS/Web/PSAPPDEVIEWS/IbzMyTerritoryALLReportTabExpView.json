@@ -1016,7 +1016,8 @@
               "enableRowEdit" : false,
               "enableSearch" : true,
               "rowEditDefault" : false,
-              "showCaptionBar" : true
+              "showCaptionBar" : true,
+              "modelid" : "05c89f2ac0ec5594324c342827f1b7d3"
             }
           }, {
             "caption" : "周报",
@@ -1109,7 +1110,8 @@
         "expandSearchForm" : false,
         "loadDefault" : true,
         "showCaptionBar" : false,
-        "showDataInfoBar" : true
+        "showDataInfoBar" : true,
+        "modelid" : "eafce53cbf0c9a1108bc8a0319c09808"
       }
     }, {
       "caption" : "项目",
@@ -1182,5 +1184,6 @@
   "expandSearchForm" : false,
   "loadDefault" : true,
   "showCaptionBar" : false,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "a5d09b7f598eadecc23c66d3109f84e0"
 }

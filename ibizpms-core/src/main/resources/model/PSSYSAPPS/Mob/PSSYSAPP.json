@@ -5603,7 +5603,8 @@
         "enableFilter" : false,
         "enablePullDownRefresh" : false,
         "enableQuickSearch" : true,
-        "showCaptionBar" : false
+        "showCaptionBar" : false,
+        "modelid" : "4c1bedfd5d48687700719553a99dbda2"
       },
       "portletType" : "VIEW",
       "timer" : 60000,
@@ -6664,6 +6665,7 @@
         "enablePullDownRefresh" : false,
         "enableSearch" : true,
         "showCaptionBar" : false,
+        "modelid" : "3fc322297ac214d63dcc95beafe503c3",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "ProjectModules",
@@ -7682,6 +7684,7 @@
         "enablePullDownRefresh" : false,
         "enableSearch" : true,
         "showCaptionBar" : false,
+        "modelid" : "d55a1b0b16ed24657e74c3fe3c95d3f0",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -8329,7 +8332,8 @@
         "enableFilter" : false,
         "enablePullDownRefresh" : false,
         "enableQuickSearch" : true,
-        "showCaptionBar" : false
+        "showCaptionBar" : false,
+        "modelid" : "415ccde9624b4f80324c63281a7afe04"
       },
       "portletType" : "VIEW",
       "title" : "我的工作",
@@ -9743,6 +9747,7 @@
         "enablePullDownRefresh" : false,
         "enableSearch" : true,
         "showCaptionBar" : false,
+        "modelid" : "5780b0be9d2146f144ec6f0fcd2e7216",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -11263,6 +11268,7 @@
         "enablePullDownRefresh" : false,
         "enableSearch" : true,
         "showCaptionBar" : false,
+        "modelid" : "222046153c11a0c0be0a7bb91fb8669f",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "ProjectModules",
@@ -12503,6 +12509,7 @@
         "enablePullDownRefresh" : false,
         "enableSearch" : true,
         "showCaptionBar" : false,
+        "modelid" : "3a895c526bada08b2951be4be8fe2500",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -16766,7 +16773,8 @@
       "enableDP" : true,
       "enablePullDownRefresh" : false,
       "showCaptionBar" : true,
-      "showDataInfoBar" : true
+      "showDataInfoBar" : true,
+      "modelid" : "0e7dfc85e620169defd80d3f4abbaae9"
     }, {
       "accUserMode" : 2,
       "caption" : "项目",
@@ -17723,7 +17731,8 @@
       "enablePullDownRefresh" : true,
       "enableQuickSearch" : true,
       "enableSearch" : true,
-      "showCaptionBar" : true
+      "showCaptionBar" : true,
+      "modelid" : "1b8475a617a67336720ec64b72c45ad5"
     }, {
       "accUserMode" : 0,
       "caption" : "我的",
@@ -18097,7 +18106,8 @@
       "title" : "应用门户视图2",
       "viewStyle" : "DEFAULT",
       "viewType" : "APPPORTALVIEW",
-      "enableDP" : true
+      "enableDP" : true,
+      "modelid" : "fef4d4f067fe339a72b2ff7265ac3854"
     }, {
       "accUserMode" : 2,
       "caption" : "产品",
@@ -19063,7 +19073,8 @@
       "enablePullDownRefresh" : true,
       "enableQuickSearch" : true,
       "enableSearch" : true,
-      "showCaptionBar" : true
+      "showCaptionBar" : true,
+      "modelid" : "20185e9e81dbfc2382770db7d2a85ea8"
     }, {
       "accUserMode" : 0,
       "appSwitchMode" : 0,
@@ -19309,7 +19320,8 @@
       "blankMode" : false,
       "defaultPage" : true,
       "enableAppSwitch" : false,
-      "enableDP" : true
+      "enableDP" : true,
+      "modelid" : "7f305e69fef591271653071c641ce82c"
     }, {
       "accUserMode" : 2,
       "caption" : "更新日志",
@@ -19594,7 +19606,8 @@
       "enableDP" : true,
       "enableFilter" : false,
       "enablePullDownRefresh" : false,
-      "showCaptionBar" : true
+      "showCaptionBar" : true,
+      "modelid" : "fe3da0b3244df9edc5967b895d385b1e"
     }, {
       "accUserMode" : 2,
       "caption" : "用户",
@@ -19793,7 +19806,8 @@
           "enableFilter" : false,
           "enablePullDownRefresh" : false,
           "expandSearchForm" : true,
-          "showCaptionBar" : true
+          "showCaptionBar" : true,
+          "modelid" : "f57cc769a2f22b7b506604085fb6eb79"
         },
         "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
         "name" : "pickupviewpanel",
@@ -19824,7 +19838,8 @@
       "viewType" : "DEMOBPICKUPVIEW",
       "enableDP" : true,
       "enablePullDownRefresh" : false,
-      "showCaptionBar" : false
+      "showCaptionBar" : false,
+      "modelid" : "ffd8cfab23c7ada71144ea25210ba5e3"
     }, {
       "accUserMode" : 2,
       "caption" : "账号信息",
@@ -20504,7 +20519,8 @@
       "enableDP" : true,
       "enablePullDownRefresh" : false,
       "showCaptionBar" : true,
-      "showDataInfoBar" : true
+      "showDataInfoBar" : true,
+      "modelid" : "c47f239e594f70b036aaa6a7e6ea56e2"
     }, {
       "accUserMode" : 2,
       "caption" : "测试",
@@ -21109,7 +21125,8 @@
       "enablePullDownRefresh" : true,
       "enableQuickSearch" : true,
       "enableSearch" : true,
-      "showCaptionBar" : true
+      "showCaptionBar" : true,
+      "modelid" : "064a8e203568a5929ea303ec7acb2945"
     }, {
       "accUserMode" : 2,
       "caption" : "系统日志",
@@ -21238,7 +21255,8 @@
       "enableDP" : true,
       "enableFilter" : false,
       "enablePullDownRefresh" : false,
-      "showCaptionBar" : true
+      "showCaptionBar" : true,
+      "modelid" : "d51cddc777fcf4f78f512f5b9e0538ea"
     } ],
     "getPSAppDataEntities" : [ {
       "getAllPSAppDEACModes" : [ {

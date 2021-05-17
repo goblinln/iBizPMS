@@ -606,6 +606,7 @@
               "enablePullDownRefresh" : false,
               "enableQuickSearch" : true,
               "showCaptionBar" : false,
+              "modelid" : "c144ce003526b950e9436c246499bb4f",
               "getPSAppDERSPaths" : [ [ {
                 "actionRSMode" : 1,
                 "codeName" : "sysUpdateLog",
@@ -957,6 +958,7 @@
               "enablePullDownRefresh" : false,
               "enableQuickSearch" : true,
               "showCaptionBar" : false,
+              "modelid" : "73c872e59cf5e7b293f3c7061add4a51",
               "getPSAppDERSPaths" : [ [ {
                 "actionRSMode" : 1,
                 "codeName" : "sysUpdateLog",
@@ -1070,5 +1072,6 @@
   "enableDP" : true,
   "enablePullDownRefresh" : false,
   "showCaptionBar" : true,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "ce4c11c574562d637b18c490c6fe859a"
 }

@@ -484,6 +484,7 @@
         "enablePullDownRefresh" : false,
         "enableQuickSearch" : true,
         "showCaptionBar" : true,
+        "modelid" : "dc69896e4d56c06462144f45aa208b8d",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "IBZPROJECTTEAMs",

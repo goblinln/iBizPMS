@@ -483,7 +483,8 @@
             "xDataControlName" : "form",
             "enableDP" : true,
             "showCaptionBar" : false,
-            "showDataInfoBar" : false
+            "showDataInfoBar" : false,
+            "modelid" : "f1b6682890513f1e91a45927d4cd6efa"
           },
           "portletType" : "VIEW",
           "title" : "描述",
@@ -974,7 +975,8 @@
             "xDataControlName" : "list",
             "enableDP" : true,
             "enableFilter" : false,
-            "showCaptionBar" : false
+            "showCaptionBar" : false,
+            "modelid" : "63a73a2e80dc47c05dd3ead4f03ae3c3"
           },
           "portletType" : "VIEW",
           "title" : "历史记录",
@@ -2627,7 +2629,8 @@
             "xDataControlName" : "form",
             "enableDP" : true,
             "showCaptionBar" : false,
-            "showDataInfoBar" : false
+            "showDataInfoBar" : false,
+            "modelid" : "d2bc94e4e8156e65ff17c8a6cd125b5b"
           },
           "portletType" : "VIEW",
           "title" : "基本信息",
@@ -2668,5 +2671,6 @@
   "expandSearchForm" : true,
   "loadDefault" : true,
   "showCaptionBar" : true,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "9683a2348afcd552208200ff81e3ff8a"
 }

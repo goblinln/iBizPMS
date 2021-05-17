@@ -919,7 +919,8 @@
         "enableRowEdit" : false,
         "enableSearch" : true,
         "rowEditDefault" : false,
-        "showCaptionBar" : true
+        "showCaptionBar" : true,
+        "modelid" : "9682c1d45f5c4aa7868b241dc74f0e0b"
       }
     }, {
       "caption" : "项目周报",
@@ -992,5 +993,6 @@
   "expandSearchForm" : false,
   "loadDefault" : true,
   "showCaptionBar" : false,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "5c9989624fec0b4edbf2619f3692cbcc"
 }

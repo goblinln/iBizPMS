@@ -1035,7 +1035,8 @@
             "xDataControlName" : "list",
             "enableDP" : true,
             "enableFilter" : false,
-            "showCaptionBar" : false
+            "showCaptionBar" : false,
+            "modelid" : "d940bfd96f6087050755b99a3b6bab0a"
           },
           "getPSLayoutPos" : {
             "colMD" : 24,

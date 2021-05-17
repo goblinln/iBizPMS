@@ -801,5 +801,6 @@
   "enableRowEdit" : false,
   "enableSearch" : true,
   "rowEditDefault" : false,
-  "showCaptionBar" : true
+  "showCaptionBar" : true,
+  "modelid" : "7ef300c01cce979e53218b74c8243d2a"
 }

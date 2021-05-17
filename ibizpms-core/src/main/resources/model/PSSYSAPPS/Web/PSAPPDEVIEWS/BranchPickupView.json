@@ -363,6 +363,7 @@
       "pickupMode" : true,
       "rowEditDefault" : false,
       "showCaptionBar" : true,
+      "modelid" : "fa64e271c22e6aaa89873d2556edf529",
       "getPSAppDERSPaths" : [ [ {
         "actionRSMode" : 1,
         "codeName" : "Branches",
@@ -423,6 +424,7 @@
   "viewType" : "DEPICKUPVIEW",
   "enableDP" : true,
   "showCaptionBar" : false,
+  "modelid" : "d0851a0acfe0e92a6a5ba34b1552bc66",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Branches",

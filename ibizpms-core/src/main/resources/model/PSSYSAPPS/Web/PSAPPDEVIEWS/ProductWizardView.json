@@ -1960,5 +1960,6 @@
   "viewStyle" : "STYLE2",
   "viewType" : "DEWIZARDVIEW",
   "enableDP" : true,
-  "showCaptionBar" : true
+  "showCaptionBar" : true,
+  "modelid" : "69d993ce839b524a02ed3af4ab24fea4"
 }

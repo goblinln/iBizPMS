@@ -773,6 +773,7 @@
               "enableFilter" : false,
               "enableQuickSearch" : true,
               "showCaptionBar" : false,
+              "modelid" : "e01d5c7f0080afdcf4e9c9ee9924abef",
               "getPSAppDERSPaths" : [ [ {
                 "actionRSMode" : 1,
                 "codeName" : "Stories",

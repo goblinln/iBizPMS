@@ -224,6 +224,7 @@
   "expandSearchForm" : false,
   "loadDefault" : true,
   "showCaptionBar" : false,
+  "modelid" : "32f6d43e76a7aef929dcfc5a7e261537",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

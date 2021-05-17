@@ -881,7 +881,8 @@
               "enableDP" : true,
               "enableFilter" : false,
               "enablePullDownRefresh" : true,
-              "showCaptionBar" : false
+              "showCaptionBar" : false,
+              "modelid" : "22961cd5ac6f56eb438a9c9547e474e1"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -1303,7 +1304,8 @@
               "enableFilter" : false,
               "enablePullDownRefresh" : false,
               "enableQuickSearch" : true,
-              "showCaptionBar" : false
+              "showCaptionBar" : false,
+              "modelid" : "1d9d30b890d34ecfebbb4f33eb5999ad"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -1616,5 +1618,6 @@
   "enableDP" : true,
   "enablePullDownRefresh" : false,
   "showCaptionBar" : false,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "58eb8fcc0406c25e3d737b9f39a670cf"
 }

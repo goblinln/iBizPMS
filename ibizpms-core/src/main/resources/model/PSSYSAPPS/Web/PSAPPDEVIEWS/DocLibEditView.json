@@ -758,5 +758,6 @@
   "xDataControlName" : "form",
   "enableDP" : true,
   "showCaptionBar" : false,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "41693a4d3b2bd3a7195d31ceae6cdcf3"
 }

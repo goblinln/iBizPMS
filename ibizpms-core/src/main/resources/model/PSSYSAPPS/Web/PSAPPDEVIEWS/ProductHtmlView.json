@@ -33,5 +33,6 @@
   "viewType" : "DEHTMLVIEW",
   "enableDP" : true,
   "loadDefault" : true,
-  "showCaptionBar" : false
+  "showCaptionBar" : false,
+  "modelid" : "b6969f6aea9c131d0c2144d88472ba6a"
 }

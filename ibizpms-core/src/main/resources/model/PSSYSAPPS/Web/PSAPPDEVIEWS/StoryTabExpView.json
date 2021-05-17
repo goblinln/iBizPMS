@@ -2788,6 +2788,7 @@
             "needCodeListConfig" : true,
             "showCaption" : false
           } ],
+          "quickGroupCount" : -1,
           "quickSearchMode" : 1,
           "quickSearchWidth" : 0,
           "enableFilter" : true,
@@ -2828,6 +2829,7 @@
         "enableSearch" : true,
         "rowEditDefault" : false,
         "showCaptionBar" : false,
+        "modelid" : "ce036665dd22b3e4a3ca89005d573e65",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -2931,6 +2933,7 @@
   "loadDefault" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
+  "modelid" : "70bca4903c16f4c15bb3b73b570ce8a2",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

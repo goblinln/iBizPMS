@@ -521,7 +521,8 @@
             "xDataControlName" : "list",
             "enableDP" : true,
             "enableFilter" : false,
-            "showCaptionBar" : false
+            "showCaptionBar" : false,
+            "modelid" : "d1b3f6d9d0ca781020cf5e4665461fbf"
           },
           "portletType" : "VIEW",
           "title" : "产品路线图",
@@ -844,7 +845,8 @@
             "xDataControlName" : "list",
             "enableDP" : true,
             "enableFilter" : false,
-            "showCaptionBar" : false
+            "showCaptionBar" : false,
+            "modelid" : "97af408e6a6cb088c824cacd1807f353"
           },
           "portletType" : "VIEW",
           "title" : "最新动态",
@@ -1434,7 +1436,8 @@
             "xDataControlName" : "list",
             "enableDP" : true,
             "enableFilter" : false,
-            "showCaptionBar" : false
+            "showCaptionBar" : false,
+            "modelid" : "6cc53210af0a1b521a3fbf7263c94a7b"
           },
           "portletType" : "VIEW",
           "title" : "历史记录",
@@ -3043,7 +3046,8 @@
             "xDataControlName" : "form",
             "enableDP" : true,
             "showCaptionBar" : true,
-            "showDataInfoBar" : false
+            "showDataInfoBar" : false,
+            "modelid" : "b5d2389c0dd12ae614b319090ecc2361"
           },
           "portletType" : "VIEW",
           "title" : "产品基本信息",
@@ -3084,5 +3088,6 @@
   "expandSearchForm" : true,
   "loadDefault" : true,
   "showCaptionBar" : false,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "bc36be2ee4a78e69c13665a8ad03ab6a"
 }
