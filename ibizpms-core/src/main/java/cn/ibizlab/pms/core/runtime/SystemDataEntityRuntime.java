@@ -32,7 +32,7 @@ public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBas
     @Override
     protected void translateEntityNestedDER1NAfterProceed(Object objKey, IEntityBase arg0, IPSDER1N iPSDER1N, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
 
-        /*ActionSession actionSession = ActionSessionManager.getCurrentSessionMust();
+        ActionSession actionSession = ActionSessionManager.getCurrentSessionMust();
 
         IDataEntityRuntime minorDataEntityRuntime = this.getSystemRuntime().getDataEntityRuntime(iPSDER1N.getMinorPSDataEntity().getDynaModelFilePath());
         if(minorDataEntityRuntime.getStorageMode() == DEStorageModes.NONE) {
@@ -100,47 +100,47 @@ public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBas
         }
 
         //执行关系数据的新建、更新、删除操作
-        Map<Object, IEntityBase> lastMinorEntityMap = new HashMap<Object, IEntityBase>();
-        if(lastMinorEntityList != null) {
-            for(IEntityBase lastEntityBase : lastMinorEntityList) {
-                Object keyValue = minorDataEntityRuntime.getFieldValue(lastEntityBase, minorDataEntityRuntime.getKeyPSDEField());
-                if(ObjectUtils.isEmpty(keyValue)) {
-                    continue;
-                }
-                lastMinorEntityMap.put(keyValue, lastEntityBase);
-            }
-        }
+//        Map<Object, IEntityBase> lastMinorEntityMap = new HashMap<Object, IEntityBase>();
+//        if(lastMinorEntityList != null) {
+//            for(IEntityBase lastEntityBase : lastMinorEntityList) {
+//                Object keyValue = minorDataEntityRuntime.getFieldValue(lastEntityBase, minorDataEntityRuntime.getKeyPSDEField());
+//                if(ObjectUtils.isEmpty(keyValue)) {
+//                    continue;
+//                }
+//                lastMinorEntityMap.put(keyValue, lastEntityBase);
+//            }
+//        }
 
-        if(minorEntities != null) {
-            for(IEntityBase iEntityBase : minorEntities) {
-                Object keyValue = minorDataEntityRuntime.getFieldValue(iEntityBase, minorDataEntityRuntime.getKeyPSDEField());
-                IEntityBase lastEntityBase = null;
-                if(!ObjectUtils.isEmpty(keyValue)) {
-                    lastEntityBase = lastMinorEntityMap.remove(keyValue);
-                }
+//        if(minorEntities != null) {
+//            for(IEntityBase iEntityBase : minorEntities) {
+//                Object keyValue = minorDataEntityRuntime.getFieldValue(iEntityBase, minorDataEntityRuntime.getKeyPSDEField());
+//                IEntityBase lastEntityBase = null;
+//                if(!ObjectUtils.isEmpty(keyValue)) {
+//                    lastEntityBase = lastMinorEntityMap.remove(keyValue);
+//                }
 
-                if(lastEntityBase == null) {
-                    //新建
-                    minorDataEntityRuntime.setFieldValue(iEntityBase, pickupPSDEField, objKey);
-                    minorDataEntityRuntime.executeAction(DEActions.CREATE, null, new Object[] {iEntityBase});
-                }
-                else {
-                    //更新，先判断上一次的外键值是否一致
-                    Object lastPickupValue = minorDataEntityRuntime.getFieldValue(lastEntityBase, pickupPSDEField);
-                    if(this.getSystemRuntime().compareValue(objKey, lastPickupValue, pickupPSDEField.getStdDataType())!=0) {
-                        log.error(String.format("关系数据[%1$s][%2$s]外键值前后不一致",minorDataEntityRuntime.getName(),keyValue));
-                        throw new DataEntityRuntimeException(String.format("关系数据与当前数据的连接值前后不一致"), this);
-                    }
-                    minorDataEntityRuntime.setFieldValue(iEntityBase, pickupPSDEField, objKey);
-                    minorDataEntityRuntime.executeAction(DEActions.UPDATE, null, new Object[] {iEntityBase});
-                }
-            }
-        }
+//                if(lastEntityBase == null) {
+//                    //新建
+//                    minorDataEntityRuntime.setFieldValue(iEntityBase, pickupPSDEField, objKey);
+//                    minorDataEntityRuntime.executeAction(DEActions.CREATE, null, new Object[] {iEntityBase});
+//                }
+//                else {
+//                    //更新，先判断上一次的外键值是否一致
+//                    Object lastPickupValue = minorDataEntityRuntime.getFieldValue(lastEntityBase, pickupPSDEField);
+//                    if(this.getSystemRuntime().compareValue(objKey, lastPickupValue, pickupPSDEField.getStdDataType())!=0) {
+//                        log.error(String.format("关系数据[%1$s][%2$s]外键值前后不一致",minorDataEntityRuntime.getName(),keyValue));
+//                        throw new DataEntityRuntimeException(String.format("关系数据与当前数据的连接值前后不一致"), this);
+//                    }
+//                    minorDataEntityRuntime.setFieldValue(iEntityBase, pickupPSDEField, objKey);
+//                    minorDataEntityRuntime.executeAction(DEActions.UPDATE, null, new Object[] {iEntityBase});
+//                }
+//            }
+//        }
 
         //移除数据
-        for(java.util.Map.Entry<Object,IEntityBase> entry : lastMinorEntityMap.entrySet()) {
-            minorDataEntityRuntime.executeAction(DEActions.REMOVE, null, new Object[] {entry.getKey()});
-        }
+//        for(java.util.Map.Entry<Object,IEntityBase> entry : lastMinorEntityMap.entrySet()) {
+//            minorDataEntityRuntime.executeAction(DEActions.REMOVE, null, new Object[] {entry.getKey()});
+//        }
 
         //重写查询
         lastMinorEntityList = minorDataEntityRuntime.select(iSearchContextBase);
@@ -150,7 +150,7 @@ public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBas
         }
         else {
             this.setNestedDERValue(arg0, iPSDER1N, null);
-        }*/
+        }
     }
 
     /**
