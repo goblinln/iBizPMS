@@ -1093,9 +1093,9 @@ export class EditFormControlBase extends FormControlBase {
                         this.detailsModel[name].visible = true;
                         this.detailsModel[name].disabled = false;
                     }else{
-                        this.detailsModel[name].isPower = this.actionModel[model.uiaction.tag].dataActionResult === 1 ? true : false;
                         this.detailsModel[name].visible = this.actionModel[model.uiaction.tag].visabled;
                         this.detailsModel[name].disabled = this.actionModel[model.uiaction.tag].disabled;
+                        this.detailsModel[name].isPower = this.actionModel[model.uiaction.tag].dataActionResult === 1 ? true : false;
                     }
                 } else if (model?.detailType == 'GROUPPANEL' && model.uiActionGroup?.details?.length > 0) {
                     // 更新分组面板界面行为组的权限状态值
