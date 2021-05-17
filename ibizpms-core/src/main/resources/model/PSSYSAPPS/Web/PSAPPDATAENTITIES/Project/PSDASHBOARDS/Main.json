@@ -2508,10 +2508,12 @@
                   "glyph" : "xf133@FontAwesome",
                   "cssClass" : "fa fa-calendar-o"
                 },
+                "refreshMode" : 1,
                 "timeout" : 60000,
                 "uIActionMode" : "FRONT",
                 "uIActionTag" : "ProjectPutoff",
                 "uIActionType" : "DEUIACTION",
+                "reloadData" : true,
                 "id" : "ProjectPutoff@Project"
               },
               "addSeparator" : false,
@@ -2541,10 +2543,12 @@
                   "glyph" : "xf04c@FontAwesome",
                   "cssClass" : "fa fa-pause"
                 },
+                "refreshMode" : 1,
                 "timeout" : 60000,
                 "uIActionMode" : "FRONT",
                 "uIActionTag" : "ProjectSuspend",
                 "uIActionType" : "DEUIACTION",
+                "reloadData" : true,
                 "id" : "ProjectSuspend@Project"
               },
               "addSeparator" : false,
@@ -2574,10 +2578,12 @@
                   "glyph" : "xf1e6@FontAwesome",
                   "cssClass" : "fa fa-plug"
                 },
+                "refreshMode" : 1,
                 "timeout" : 60000,
                 "uIActionMode" : "FRONT",
                 "uIActionTag" : "ProjectActivate",
                 "uIActionType" : "DEUIACTION",
+                "reloadData" : true,
                 "id" : "ProjectActivate@Project"
               },
               "addSeparator" : false,
@@ -2607,10 +2613,12 @@
                   "glyph" : "xf011@FontAwesome",
                   "cssClass" : "fa fa-power-off"
                 },
+                "refreshMode" : 1,
                 "timeout" : 60000,
                 "uIActionMode" : "FRONT",
                 "uIActionTag" : "ProjectClose",
                 "uIActionType" : "DEUIACTION",
+                "reloadData" : true,
                 "id" : "ProjectClose@Project"
               },
               "addSeparator" : false,
@@ -2640,10 +2648,12 @@
                   "glyph" : "xf044@FontAwesome",
                   "cssClass" : "fa fa-edit"
                 },
+                "refreshMode" : 1,
                 "timeout" : 60000,
                 "uIActionMode" : "FRONT",
                 "uIActionTag" : "ProjectEdit",
                 "uIActionType" : "DEUIACTION",
+                "reloadData" : true,
                 "id" : "ProjectEdit@Project"
               },
               "addSeparator" : true,

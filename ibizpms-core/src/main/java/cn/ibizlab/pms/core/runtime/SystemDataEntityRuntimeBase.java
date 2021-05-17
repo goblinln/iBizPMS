@@ -20,6 +20,7 @@ import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEFSearchMode;
+import net.ibizsys.model.dataentity.defield.IPSLinkDEField;
 import net.ibizsys.model.dataentity.der.IPSDER1N;
 import net.ibizsys.model.dataentity.der.IPSDERBase;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQuery;
@@ -785,9 +786,15 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     @Override
     protected String getFieldDataSetSortExp(IPSDEField iPSDEField) throws Exception {
         String fieldExp = super.getFieldDataSetSortExp(iPSDEField);
-        if(StringUtils.isBlank(fieldExp))
+        if (StringUtils.isBlank(fieldExp))
             return iPSDEField.getName();
-        if (fieldExp.indexOf(".") > 0){
+        if (iPSDEField instanceof IPSLinkDEField && !iPSDEField.isPhisicalDEField()) {
+            IPSLinkDEField iPSLinkDEField = (IPSLinkDEField) iPSDEField;
+            String str = fieldExp.substring(fieldExp.indexOf(".") + 1) ;
+            str = str.replace(iPSLinkDEField.getRelatedPSDEField().getName(),iPSLinkDEField.getName());
+            return str;
+        }
+        if (fieldExp.indexOf(".") > 0) {
             return fieldExp.substring(fieldExp.indexOf(".") + 1);
         }
         return fieldExp;

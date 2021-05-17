@@ -40,7 +40,7 @@ public class IBZTPSFallback implements IBZTPSFeignClient {
     }
 
     @Override
-    public JSONObject execute(String id, String params) {
+    public JSONObject execute(String id, JSONObject params) {
         return null;
     }
 

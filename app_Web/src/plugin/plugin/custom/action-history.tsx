@@ -50,23 +50,6 @@ export class ActionHistory extends AppListBase {
         }
     ];
 
-	/**
-     * 刷新
-     *
-     * @memberof ActionHistory
-     */
-    public ctrlInit() {
-        super.ctrlInit();
-        if (AppCenterService.getMessageCenter()) {
-            const _this = this;
-            _this.appStateEvent = AppCenterService.getMessageCenter().subscribe(({ name, action, data }: { name: string, action: string, data: any }) => {
-                if (Object.is(action, 'appRefresh')) {
-                    _this.refresh(data);
-                }
-            })
-        }
-    }
-
     /**
      * 列表数据加载 根据Action加载对应History
      *
@@ -218,6 +201,7 @@ export class ActionHistory extends AppListBase {
             }
             this.listItemCodelist(item);
         })
+	  		this.$forceUpdate();
     }
 
     /**

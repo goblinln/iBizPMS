@@ -252,10 +252,11 @@ public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBas
         return fieldExp;
     }
 
-    protected void fillEntityDefaultValues(IEntityBase arg0, String strActionName, IPSDEAction iPSDEAction, IPSDataEntity iPSDataEntity, Object actionData) throws Throwable {
+    @Override
+    protected void fillEntityDefaultValues(IEntityBase arg0, String strActionName, IPSDEAction iPSDEAction, IPSDataEntity iPSDataEntity, IDynaInstRuntime iDynaInstRuntime, Object actionData) throws Throwable {
+        super.fillEntityDefaultValues(arg0, strActionName, iPSDEAction, iPSDataEntity, iDynaInstRuntime, actionData);
         List<IPSDEField> psDEFields = iPSDataEntity.getAllPSDEFields();
         if (psDEFields != null) {
-            boolean bCreateMode = "create".equals(strActionName) || iPSDEAction != null && "CREATE".equals(iPSDEAction.getActionMode());
             Iterator var8 = psDEFields.iterator();
 
             while(true) {
@@ -279,12 +280,7 @@ public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBas
 
                     String strSequenceMode = iPSDEField.getSequenceMode();
                     Object objValue;
-                    if (org.springframework.util.StringUtils.hasLength(strSequenceMode) && !"NONE".equals(strSequenceMode) && ("CREATE".equals(strSequenceMode) && bCreateMode || "GETDRAFT".equals(strSequenceMode) && !bCreateMode)) {
-                        IPSSysSequence iPSSysSequence = iPSDEField.getPSSysSequence();
-                        ISysSequenceRuntime iSysSequenceRuntime = this.getCurrentSystemRuntimeBase(false).getSysSequenceRuntime(iPSSysSequence);
-                        objValue = iSysSequenceRuntime.get(arg0, iPSDEField, this);
-                        this.setFieldValue(arg0, iPSDEField, objValue);
-                    } else {
+                    if("GETDRAFT".equals(strSequenceMode)) {
                         String strDefaultValue = iPSDEField.getDefaultValue();
                         String strDefaultValueType = iPSDEField.getDefaultValueType();
                         if (org.springframework.util.StringUtils.hasLength(strDefaultValue) || org.springframework.util.StringUtils.hasLength(strDefaultValueType)) {
@@ -299,6 +295,7 @@ public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBas
                 }
             }
         }
+
     }
 
 }
