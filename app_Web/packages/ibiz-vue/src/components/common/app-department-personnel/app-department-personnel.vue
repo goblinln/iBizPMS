@@ -275,13 +275,15 @@ export default class AppDepartmentPersonnel extends Vue {
             }else{
                 callback(item);
             }
-            if (this.filter && !this.filtervalue && this.data[this.filter]) {
-                this.getDepertmentId();
-            } else if (this.filter && this.filtervalue && !Object.is(newVal[this.filter], this.filtervalue)) {
-                this.items = [];
-                this.selects = [];
-                this.selectsLabel = [];
-                this.$store.commit("addDepartmentPersonnel",this.items);
+            if(this.filter && newVal[this.filter]){
+                if (!this.filtervalue) {
+                    this.getDepertmentId();
+                } else if (this.filtervalue && !Object.is(newVal[this.filter], this.filtervalue)) {
+                    this.items = [];
+                    this.selects = [];
+                    this.selectsLabel = [];
+                    this.$store.commit("addDepartmentPersonnel",this.items);
+                }
             }
         }
     }
@@ -432,12 +434,10 @@ export default class AppDepartmentPersonnel extends Vue {
                 }
             }
         }
-        for(let key in item) {
-            // 抛出当前表单项与值项
-            if (Object.is(key, this.name) || Object.is(key, this.valueitem)) {
-                this.$emit('formitemvaluechange', { name: key, value: item[key] });
-            }
-        }
+        // 抛出当前表单项
+        this.$emit('formitemvaluechange', { name: this.name, value: item.label || item[this.name] });
+        // 抛出值项
+        this.$emit('formitemvaluechange', { name: this.valueitem, value: item.id || item[this.valueitem] });
     }
 }
 

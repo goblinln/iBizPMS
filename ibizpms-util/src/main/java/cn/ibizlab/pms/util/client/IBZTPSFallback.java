@@ -37,5 +37,20 @@ public class IBZTPSFallback implements IBZTPSFeignClient {
     public MsgSendQueue[] getByIds(String[] msgids) {
         return new MsgSendQueue[0];
     }
+
+    @Override
+    public String execute(String id, String params) {
+        return null;
+    }
+
+    @Override
+    public Boolean start(String id) {
+        return null;
+    }
+
+    @Override
+    public Boolean stop(String id) {
+        return null;
+    }
     
 }
