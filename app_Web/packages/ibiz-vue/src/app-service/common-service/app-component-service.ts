@@ -345,6 +345,7 @@ export class AppComponentService {
         this.editorMap.set("FILEUPLOADER_USEWORKTEMP", "text-file-upload");
         this.editorMap.set("PICKER_COMMONMICROCOM", "app-common-microcom");
        // 注册编辑器
+        this.editorMap.set("TEXTBOX_casedesc", "app-textbox-casedesc");
         this.editorMap.set("HTMLEDITOR_Extend", "app-htmleditor-extend");
         this.editorMap.set("USERCONTROL_PROGRESSCIRCLE", "app-usercontrol-progresscircle");
         this.editorMap.set("HTMLEDITOR_INFO", "app-htmleditor-info");

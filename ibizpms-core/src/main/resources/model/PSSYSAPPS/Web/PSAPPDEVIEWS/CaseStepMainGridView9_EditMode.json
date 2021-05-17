@@ -283,10 +283,6 @@
         "name" : "DESC",
         "codeName" : "Desc"
       },
-      "getPSSysPFPlugin" : {
-        "pluginType" : "EDITOR_CUSTOMSTYLE",
-        "pluginCode" : "casedesc"
-      },
       "width" : 300,
       "widthUnit" : "PX",
       "enableRowEdit" : true,
@@ -425,9 +421,14 @@
         "codeName" : "Desc"
       },
       "getPSEditor" : {
+        "editorStyle" : "casedesc",
         "editorType" : "TEXTBOX",
         "maxLength" : 65535,
         "name" : "desc",
+        "getPSSysPFPlugin" : {
+          "pluginType" : "EDITOR_CUSTOMSTYLE",
+          "pluginCode" : "casedesc"
+        },
         "placeHolder" : "分组名称"
       },
       "allowEmpty" : true

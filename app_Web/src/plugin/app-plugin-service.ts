@@ -1,7 +1,6 @@
 import { GridPlanType } from './plugin/grid-colrender/grid-plan-type';
 import { TASKTYPEFATHERORCHILD } from './plugin/grid-colrender/tasktypefatherorchild';
 import { GridUserColorRed } from './plugin/grid-colrender/grid-user-color-red';
-import { Casedesc } from './plugin/editor-customstyle/casedesc';
 import { Gridmilepost } from './plugin/grid-colrender/gridmilepost';
 import { GirdCounmColor } from './plugin/grid-colrender/gird-counm-color';
 import { TASKASSPlugin } from './plugin/grid-colrender/taskassplugin';
@@ -87,7 +86,6 @@ export class AppPluginService {
         this.controlItemMap.set('gridPlanType',new GridPlanType());
         this.controlItemMap.set('TASKTYPEFATHERORCHILD',new TASKTYPEFATHERORCHILD());
         this.controlItemMap.set('gridUserColorRed',new GridUserColorRed());
-        this.controlItemMap.set('casedesc',new Casedesc());
         this.controlItemMap.set('Gridmilepost',new Gridmilepost());
         this.controlItemMap.set('girdCounmColor',new GirdCounmColor());
         this.controlItemMap.set('TASKASSPlugin',new TASKASSPlugin());
