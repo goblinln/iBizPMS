@@ -1333,6 +1333,7 @@
       "needCodeListConfig" : true,
       "showCaption" : false
     } ],
+    "quickGroupCount" : -1,
     "quickSearchMode" : 1,
     "quickSearchWidth" : 0,
     "enableFilter" : true,
@@ -3039,6 +3040,7 @@
   "enableSearch" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : true,
+  "modelid" : "f90755fad872031d4484f3c6791d6973",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

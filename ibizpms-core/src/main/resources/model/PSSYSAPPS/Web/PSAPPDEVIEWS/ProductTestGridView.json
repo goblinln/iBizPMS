@@ -732,6 +732,7 @@
       "hidden" : false,
       "showCaption" : false
     } ],
+    "quickGroupCount" : -1,
     "quickSearchMode" : 1,
     "quickSearchWidth" : 0,
     "enableFilter" : true,
@@ -767,5 +768,6 @@
   "enableRowEdit" : false,
   "enableSearch" : true,
   "rowEditDefault" : false,
-  "showCaptionBar" : true
+  "showCaptionBar" : true,
+  "modelid" : "1d697dd8e47a4781be8f690bcc5f7800"
 }

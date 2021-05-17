@@ -164,5 +164,6 @@
   "enableFilter" : false,
   "expandSearchForm" : true,
   "pickupMode" : true,
-  "showCaptionBar" : true
+  "showCaptionBar" : true,
+  "modelid" : "b73c533bd0b7c0813dc5fa85f2b3549f"
 }

@@ -620,6 +620,7 @@
   "enableDP" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "modelid" : "8bcbd6c2b7e3d93270529da796425a5b",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProductModules",

@@ -340,6 +340,7 @@
   "enableDP" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : false,
+  "modelid" : "e89b0906815ccabb03d421a31e94bc4a",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestSuites",

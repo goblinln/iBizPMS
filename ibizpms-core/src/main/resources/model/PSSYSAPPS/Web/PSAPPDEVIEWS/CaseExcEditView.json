@@ -881,6 +881,7 @@
                 "enableFilter" : false,
                 "enableQuickSearch" : true,
                 "showCaptionBar" : false,
+                "modelid" : "e01d5c7f0080afdcf4e9c9ee9924abef",
                 "getPSAppDERSPaths" : [ [ {
                   "actionRSMode" : 1,
                   "codeName" : "Stories",
@@ -1186,6 +1187,7 @@
   "enableDP" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "modelid" : "41f6cc75f6e3b4419a448eebe69aa6ac",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

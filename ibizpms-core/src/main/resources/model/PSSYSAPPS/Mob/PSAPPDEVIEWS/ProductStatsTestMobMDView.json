@@ -342,5 +342,6 @@
   "enableFilter" : false,
   "enablePullDownRefresh" : false,
   "enableQuickSearch" : true,
-  "showCaptionBar" : true
+  "showCaptionBar" : true,
+  "modelid" : "3599d32f55145be9cd952f7734d7b79f"
 }

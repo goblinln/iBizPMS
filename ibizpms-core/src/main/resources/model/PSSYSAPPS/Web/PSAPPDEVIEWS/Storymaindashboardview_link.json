@@ -973,7 +973,8 @@
                         "xDataControlName" : "list",
                         "enableDP" : true,
                         "enableFilter" : false,
-                        "showCaptionBar" : false
+                        "showCaptionBar" : false,
+                        "modelid" : "d940bfd96f6087050755b99a3b6bab0a"
                       },
                       "getPSLayoutPos" : {
                         "colMD" : 24,
@@ -2197,6 +2198,7 @@
                       "enableRowEdit" : false,
                       "rowEditDefault" : false,
                       "showCaptionBar" : true,
+                      "modelid" : "389d7b00409ffa4bd014d70d4a21c110",
                       "getPSAppDERSPaths" : [ [ {
                         "actionRSMode" : 1,
                         "codeName" : "Stories",
@@ -2318,6 +2320,7 @@
             "enableDP" : true,
             "showCaptionBar" : false,
             "showDataInfoBar" : false,
+            "modelid" : "78b241110616763b80cdedfcf64d16ee",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "Stories",
@@ -2930,7 +2933,8 @@
             "xDataControlName" : "list",
             "enableDP" : true,
             "enableFilter" : false,
-            "showCaptionBar" : false
+            "showCaptionBar" : false,
+            "modelid" : "6cc53210af0a1b521a3fbf7263c94a7b"
           },
           "portletType" : "VIEW",
           "title" : " 操作历史记录",
@@ -5165,6 +5169,7 @@
             "enableDP" : true,
             "showCaptionBar" : false,
             "showDataInfoBar" : false,
+            "modelid" : "94e0ee1a97736ff4d28b88a46cd395b7",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "Stories",
@@ -5890,6 +5895,7 @@
                       "enableRowEdit" : false,
                       "rowEditDefault" : false,
                       "showCaptionBar" : false,
+                      "modelid" : "15770c3ca9c1d80433c99f3a7a69d506",
                       "getPSAppDERSPaths" : [ [ {
                         "actionRSMode" : 1,
                         "codeName" : "ProjectModules",
@@ -6610,6 +6616,7 @@
                     "enableRowEdit" : false,
                     "rowEditDefault" : false,
                     "showCaptionBar" : true,
+                    "modelid" : "78095af71f8ae9c432f8a6f3656f90b9",
                     "getPSAppDERSPaths" : [ [ {
                       "actionRSMode" : 1,
                       "codeName" : "Stories",
@@ -7114,6 +7121,7 @@
                     "enableRowEdit" : false,
                     "rowEditDefault" : false,
                     "showCaptionBar" : true,
+                    "modelid" : "8505c429c9deb51e3e1ef8b911fa83c2",
                     "getPSAppDERSPaths" : [ [ {
                       "actionRSMode" : 1,
                       "codeName" : "Stories",
@@ -7711,6 +7719,7 @@
                       "enableRowEdit" : false,
                       "rowEditDefault" : false,
                       "showCaptionBar" : true,
+                      "modelid" : "58c48ed7c9b66ea86309ed8ef86a7cc6",
                       "getPSAppDERSPaths" : [ [ {
                         "actionRSMode" : 1,
                         "codeName" : "Stories",
@@ -8364,6 +8373,7 @@
                       "enableRowEdit" : false,
                       "rowEditDefault" : false,
                       "showCaptionBar" : true,
+                      "modelid" : "e378b13cfdc97557168ac3f71b35fe6b",
                       "getPSAppDERSPaths" : [ [ {
                         "actionRSMode" : 1,
                         "codeName" : "Stories",
@@ -8949,6 +8959,7 @@
                       "enableRowEdit" : false,
                       "rowEditDefault" : false,
                       "showCaptionBar" : true,
+                      "modelid" : "578d2fd4888ee9b9a2d87ff640e786cd",
                       "getPSAppDERSPaths" : [ [ {
                         "actionRSMode" : 1,
                         "codeName" : "Stories",
@@ -9129,6 +9140,7 @@
             "enableDP" : true,
             "showCaptionBar" : false,
             "showDataInfoBar" : false,
+            "modelid" : "5d2060546043b483498845da6eb440d9",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "Stories",
@@ -9200,6 +9212,7 @@
   "loadDefault" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "modelid" : "021e4a7269fe8ec26b9001c39df0e215",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

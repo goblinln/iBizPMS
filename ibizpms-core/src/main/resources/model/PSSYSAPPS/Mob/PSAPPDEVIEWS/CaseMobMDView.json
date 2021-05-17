@@ -879,6 +879,7 @@
   "enableQuickSearch" : true,
   "enableSearch" : true,
   "showCaptionBar" : false,
+  "modelid" : "172defaac67d7699a926eef99c8f5c22",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

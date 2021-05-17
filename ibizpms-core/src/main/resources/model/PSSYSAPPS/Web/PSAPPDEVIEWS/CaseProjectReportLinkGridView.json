@@ -1643,6 +1643,7 @@
       "hidden" : false,
       "showCaption" : false
     } ],
+    "quickGroupCount" : -1,
     "quickSearchMode" : 1,
     "quickSearchWidth" : 0,
     "enableFilter" : true,
@@ -1683,6 +1684,7 @@
   "enableSearch" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : true,
+  "modelid" : "9702df74499bfcf7b127558ebe7f1779",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

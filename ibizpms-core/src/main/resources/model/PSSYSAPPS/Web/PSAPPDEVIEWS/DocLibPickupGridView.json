@@ -700,5 +700,6 @@
   "expandSearchForm" : true,
   "pickupMode" : true,
   "rowEditDefault" : false,
-  "showCaptionBar" : true
+  "showCaptionBar" : true,
+  "modelid" : "55bd8c58b38da929d22edff6aa724ca0"
 }

@@ -380,5 +380,6 @@
   "enableDP" : true,
   "enableFilter" : false,
   "enableQuickSearch" : true,
-  "showCaptionBar" : false
+  "showCaptionBar" : false,
+  "modelid" : "3cecaa21816a751af38ce2ff1aac25ba"
 }

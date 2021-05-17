@@ -585,7 +585,8 @@
         "enableQuickSearch" : true,
         "enableRowEdit" : false,
         "rowEditDefault" : false,
-        "showCaptionBar" : false
+        "showCaptionBar" : false,
+        "modelid" : "a302ac33e3faf1f7a735721d5a96f738"
       }
     }, {
       "caption" : "周报",
@@ -693,5 +694,6 @@
   "expandSearchForm" : false,
   "loadDefault" : true,
   "showCaptionBar" : true,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "faea7e2d2427080c2bd6683de726ad8d"
 }

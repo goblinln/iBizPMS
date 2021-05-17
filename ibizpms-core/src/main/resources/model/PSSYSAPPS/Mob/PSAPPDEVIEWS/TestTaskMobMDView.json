@@ -995,6 +995,7 @@
   "enableQuickSearch" : true,
   "enableSearch" : true,
   "showCaptionBar" : false,
+  "modelid" : "ccf1a40bb71b531ef6cd11e0be552362",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestTasks",

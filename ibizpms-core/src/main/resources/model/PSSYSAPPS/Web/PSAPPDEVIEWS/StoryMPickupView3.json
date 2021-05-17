@@ -618,6 +618,7 @@
       "pickupMode" : true,
       "rowEditDefault" : false,
       "showCaptionBar" : false,
+      "modelid" : "0a8b0eaddc63fcbc39d3b7295ca320dd",
       "getPSAppDERSPaths" : [ [ {
         "actionRSMode" : 1,
         "codeName" : "Stories",
@@ -678,6 +679,7 @@
   "viewType" : "DEMPICKUPVIEW",
   "enableDP" : true,
   "showCaptionBar" : false,
+  "modelid" : "82bee6f0e3c563cc77e6e915c3c30336",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

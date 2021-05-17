@@ -756,6 +756,7 @@
       "enableSearch" : true,
       "expandSearchForm" : true,
       "showCaptionBar" : true,
+      "modelid" : "7355db114ff72204de4bdcb527f024e1",
       "getPSAppDERSPaths" : [ [ {
         "actionRSMode" : 1,
         "codeName" : "Stories",
@@ -817,6 +818,7 @@
   "enableDP" : true,
   "enablePullDownRefresh" : false,
   "showCaptionBar" : false,
+  "modelid" : "9a9d18d8b2bb150dbbd5cc3b796e3f0b",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

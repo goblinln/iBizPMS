@@ -668,6 +668,7 @@
   "enableDP" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
+  "modelid" : "d337f5c3c125dc2641321f2d93b65476",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestModules",

@@ -727,6 +727,7 @@
   "enableRowEdit" : true,
   "rowEditDefault" : true,
   "showCaptionBar" : false,
+  "modelid" : "65129e5f76f96cbb1d2d1c9e9bb2afed",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestModules",

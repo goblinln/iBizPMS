@@ -402,5 +402,6 @@
   "expandSearchForm" : true,
   "pickupMode" : true,
   "rowEditDefault" : false,
-  "showCaptionBar" : true
+  "showCaptionBar" : true,
+  "modelid" : "a617de20593eca90c4003bf177ebcaa3"
 }

@@ -706,7 +706,8 @@
           "xDataControlName" : "list",
           "enableDP" : true,
           "enableFilter" : false,
-          "showCaptionBar" : false
+          "showCaptionBar" : false,
+          "modelid" : "96ec3f978c1cc22acc532331d5dc2a41"
         },
         "portletType" : "VIEW",
         "title" : "最新动态",
@@ -1716,7 +1717,8 @@
           "xDataControlName" : "form",
           "enableDP" : true,
           "showCaptionBar" : false,
-          "showDataInfoBar" : false
+          "showDataInfoBar" : false,
+          "modelid" : "322b17905b7ba95289eab32f7d4ae4d0"
         },
         "portletType" : "VIEW",
         "title" : "相关成员",
@@ -2306,7 +2308,8 @@
           "xDataControlName" : "list",
           "enableDP" : true,
           "enableFilter" : false,
-          "showCaptionBar" : false
+          "showCaptionBar" : false,
+          "modelid" : "6cc53210af0a1b521a3fbf7263c94a7b"
         },
         "portletType" : "VIEW",
         "title" : "历史记录",
@@ -3731,7 +3734,8 @@
                     "enableImport" : true,
                     "enableRowEdit" : false,
                     "rowEditDefault" : false,
-                    "showCaptionBar" : false
+                    "showCaptionBar" : false,
+                    "modelid" : "581084cd753b743ee95f85d6b2ee472c"
                   },
                   "getPSLayoutPos" : {
                     "colMD" : 24,
@@ -4128,6 +4132,7 @@
                     "enableRowEdit" : false,
                     "rowEditDefault" : false,
                     "showCaptionBar" : false,
+                    "modelid" : "d66b7fe2cd9096259cab78e8feb19163",
                     "getPSAppDERSPaths" : [ [ {
                       "actionRSMode" : 1,
                       "codeName" : "ProductPlans",
@@ -4790,7 +4795,8 @@
           "xDataControlName" : "form",
           "enableDP" : true,
           "showCaptionBar" : false,
-          "showDataInfoBar" : false
+          "showDataInfoBar" : false,
+          "modelid" : "ef1a8c8701140368af895304274c602a"
         },
         "portletType" : "VIEW",
         "title" : "项目信息",

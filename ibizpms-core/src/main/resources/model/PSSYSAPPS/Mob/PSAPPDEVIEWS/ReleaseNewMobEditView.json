@@ -758,6 +758,7 @@
   "enablePullDownRefresh" : false,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "modelid" : "d84a490bd56fd00d6fe26e52c7314255",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Releases",

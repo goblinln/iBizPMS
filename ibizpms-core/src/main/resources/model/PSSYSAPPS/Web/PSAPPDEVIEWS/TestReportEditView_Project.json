@@ -35,6 +35,11 @@
     "getPSViewCtrlName" : "toolbar"
   } ],
   "getPSAppViewNavContexts" : [ {
+    "key" : "TESTREPORT",
+    "name" : "TESTREPORT",
+    "value" : "0",
+    "rawValue" : true
+  }, {
     "key" : "PROJECT",
     "name" : "PROJECT",
     "value" : "project",
@@ -45,6 +50,11 @@
     "name" : "project",
     "value" : "project",
     "rawValue" : false
+  }, {
+    "key" : "testreport",
+    "name" : "testreport",
+    "value" : "0",
+    "rawValue" : true
   } ],
   "getPSAppViewUIActions" : [ {
     "name" : "toolbar_deuiaction1",
@@ -1215,6 +1225,7 @@
   "enableDP" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "modelid" : "faba3852d18767038ace554cb404255d",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestReports",

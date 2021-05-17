@@ -427,7 +427,8 @@
             "enableFilter" : false,
             "enableQuickSearch" : true,
             "showCaptionBar" : false,
-            "showDataInfoBar" : true
+            "showDataInfoBar" : true,
+            "modelid" : "a84a543c155b01389bc12eb1c27624b5"
           },
           "portletType" : "VIEW",
           "title" : "产品统计",
@@ -904,7 +905,8 @@
             "enableImport" : true,
             "enableRowEdit" : false,
             "rowEditDefault" : false,
-            "showCaptionBar" : false
+            "showCaptionBar" : false,
+            "modelid" : "517ea7e243fcbce57c081f824d5eb013"
           },
           "portletType" : "VIEW",
           "title" : "未关闭产品",
@@ -1708,6 +1710,7 @@
             "enableRowEdit" : false,
             "rowEditDefault" : false,
             "showCaptionBar" : false,
+            "modelid" : "680d5889e78ea2e379d1601c7ed66711",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "Stories",
@@ -1761,5 +1764,6 @@
   "title" : "产品主页",
   "viewStyle" : "STYLE2",
   "viewType" : "APPPORTALVIEW",
-  "enableDP" : true
+  "enableDP" : true,
+  "modelid" : "305a8f8ecf4dfa714d2e3cbc2e0eecf5"
 }

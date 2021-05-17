@@ -2322,6 +2322,7 @@
             "needCodeListConfig" : true,
             "showCaption" : false
           } ],
+          "quickGroupCount" : -1,
           "quickSearchMode" : 1,
           "quickSearchWidth" : 0,
           "enableFilter" : true,
@@ -2362,6 +2363,7 @@
         "enableSearch" : true,
         "rowEditDefault" : false,
         "showCaptionBar" : false,
+        "modelid" : "168e0a500b6f95099eb0bb5b30c0a5e0",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -2485,6 +2487,7 @@
   "loadDefault" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "modelid" : "9ffdec79c2fcb400382cc454c396e918",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Releases",

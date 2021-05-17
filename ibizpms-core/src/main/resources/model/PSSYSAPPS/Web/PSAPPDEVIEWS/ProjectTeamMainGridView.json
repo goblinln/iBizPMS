@@ -942,6 +942,7 @@
       "needCodeListConfig" : true,
       "showCaption" : false
     } ],
+    "quickGroupCount" : -1,
     "quickSearchMode" : 1,
     "quickSearchWidth" : 0,
     "enableFilter" : true,
@@ -981,6 +982,7 @@
   "enableSearch" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : false,
+  "modelid" : "0e5106e528e787511c12f54c7382b832",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectTeams",

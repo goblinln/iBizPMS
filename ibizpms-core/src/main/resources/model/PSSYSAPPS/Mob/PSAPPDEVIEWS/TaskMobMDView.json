@@ -1710,6 +1710,7 @@
   "enableQuickSearch" : true,
   "enableSearch" : true,
   "showCaptionBar" : false,
+  "modelid" : "d572dbdcbf9237fe732b4e587b4e2fd7",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

@@ -405,6 +405,7 @@
   "enableDP" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : false,
+  "modelid" : "5a2461765fd92788e6946206d6baec7e",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "IbzCases",

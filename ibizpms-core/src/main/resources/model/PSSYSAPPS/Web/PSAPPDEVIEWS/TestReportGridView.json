@@ -1172,6 +1172,7 @@
       "hidden" : false,
       "showCaption" : false
     } ],
+    "quickGroupCount" : -1,
     "quickSearchMode" : 1,
     "quickSearchWidth" : 0,
     "enableFilter" : true,
@@ -1212,6 +1213,7 @@
   "enableSearch" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : false,
+  "modelid" : "48600bd551aa923b5fceabcb83f65239",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestReports",

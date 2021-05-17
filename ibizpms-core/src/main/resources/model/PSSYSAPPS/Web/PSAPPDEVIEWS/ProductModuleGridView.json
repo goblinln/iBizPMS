@@ -786,6 +786,7 @@
   "enableRowEdit" : true,
   "rowEditDefault" : true,
   "showCaptionBar" : false,
+  "modelid" : "523abe6eb852ca08fe4a3c140ff47b42",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProductModules",

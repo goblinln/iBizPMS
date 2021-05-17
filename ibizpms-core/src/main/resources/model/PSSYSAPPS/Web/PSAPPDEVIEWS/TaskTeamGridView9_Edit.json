@@ -743,6 +743,7 @@
   "enableRowEdit" : true,
   "rowEditDefault" : true,
   "showCaptionBar" : false,
+  "modelid" : "8fd7110e7d2b7d0fc9ea812d59d94f58",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

@@ -616,6 +616,7 @@
   "enableDP" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : false,
+  "modelid" : "70c1b45e198da89f71004066e0b148ac",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestTasks",

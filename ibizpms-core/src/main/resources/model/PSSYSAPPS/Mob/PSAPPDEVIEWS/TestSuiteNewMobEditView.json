@@ -461,6 +461,7 @@
   "enablePullDownRefresh" : false,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "modelid" : "6863f658e99226b6e3dc22702e4790b0",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestSuites",

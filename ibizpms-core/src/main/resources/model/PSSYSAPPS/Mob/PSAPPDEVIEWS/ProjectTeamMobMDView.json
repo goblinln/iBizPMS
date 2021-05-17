@@ -404,6 +404,7 @@
   "enablePullDownRefresh" : false,
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
+  "modelid" : "57bae62b35d8bdb33e99b7a73f406e22",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectTeams",

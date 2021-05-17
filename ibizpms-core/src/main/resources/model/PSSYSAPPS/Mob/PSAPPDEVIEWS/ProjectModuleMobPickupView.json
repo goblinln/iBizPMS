@@ -211,6 +211,7 @@
       "enablePullDownRefresh" : false,
       "expandSearchForm" : true,
       "showCaptionBar" : true,
+      "modelid" : "6fa9d515ed081884e7534e7c363cb8e2",
       "getPSAppDERSPaths" : [ [ {
         "actionRSMode" : 1,
         "codeName" : "ProjectModules",
@@ -268,6 +269,7 @@
   "enableDP" : true,
   "enablePullDownRefresh" : false,
   "showCaptionBar" : false,
+  "modelid" : "c7ef19235a680df1c8a16c66e42f62ca",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

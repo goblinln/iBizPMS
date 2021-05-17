@@ -582,6 +582,7 @@
   "enablePullDownRefresh" : false,
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
+  "modelid" : "941e961988137f0704f7a673ada0106d",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

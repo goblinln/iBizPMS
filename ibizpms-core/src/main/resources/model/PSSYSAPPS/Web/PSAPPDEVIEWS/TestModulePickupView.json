@@ -336,6 +336,7 @@
       "pickupMode" : true,
       "rowEditDefault" : false,
       "showCaptionBar" : true,
+      "modelid" : "71301b58b287ea40f5bf08232b7465ed",
       "getPSAppDERSPaths" : [ [ {
         "actionRSMode" : 1,
         "codeName" : "TestModules",
@@ -392,6 +393,7 @@
   "viewType" : "DEPICKUPVIEW",
   "enableDP" : true,
   "showCaptionBar" : false,
+  "modelid" : "2e9485ffe7ce86f9fca4beb04b163b62",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestModules",

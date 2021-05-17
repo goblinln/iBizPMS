@@ -505,7 +505,8 @@
                   "xDataControlName" : "list",
                   "enableDP" : true,
                   "enableFilter" : false,
-                  "showCaptionBar" : false
+                  "showCaptionBar" : false,
+                  "modelid" : "d940bfd96f6087050755b99a3b6bab0a"
                 },
                 "getPSLayoutPos" : {
                   "colMD" : 24,
@@ -1033,6 +1034,7 @@
                   "enableRowEdit" : false,
                   "rowEditDefault" : false,
                   "showCaptionBar" : true,
+                  "modelid" : "578d2fd4888ee9b9a2d87ff640e786cd",
                   "getPSAppDERSPaths" : [ [ {
                     "actionRSMode" : 1,
                     "codeName" : "Stories",
@@ -1246,6 +1248,7 @@
   "enableDP" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : false,
+  "modelid" : "8c3bd17ea668e9cf5802751378c3a378",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

@@ -808,6 +808,7 @@
   "enableSearch" : true,
   "rowEditDefault" : true,
   "showCaptionBar" : true,
+  "modelid" : "5be102d3e47fd3d8e2a2f43676a48a6f",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "IbzLibModules",

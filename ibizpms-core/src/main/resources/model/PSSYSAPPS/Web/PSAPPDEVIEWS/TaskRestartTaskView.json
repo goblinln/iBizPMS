@@ -948,7 +948,8 @@
               "xDataControlName" : "list",
               "enableDP" : true,
               "enableFilter" : false,
-              "showCaptionBar" : false
+              "showCaptionBar" : false,
+              "modelid" : "63a73a2e80dc47c05dd3ead4f03ae3c3"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -1040,6 +1041,7 @@
   "enableDP" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "modelid" : "c03ec72932f1e7c0badcb0434257d547",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

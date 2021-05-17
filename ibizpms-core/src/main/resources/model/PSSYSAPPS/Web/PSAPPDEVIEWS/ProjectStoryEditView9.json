@@ -719,6 +719,7 @@
             "enableRowEdit" : false,
             "rowEditDefault" : false,
             "showCaptionBar" : false,
+            "modelid" : "fb38be2889b3a1d842fdae62e2228c24",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "ProjectModules",
@@ -1044,5 +1045,6 @@
   "xDataControlName" : "form",
   "enableDP" : true,
   "showCaptionBar" : false,
-  "showDataInfoBar" : false
+  "showDataInfoBar" : false,
+  "modelid" : "ffc4f73a06a11798a643ea10965389ac"
 }

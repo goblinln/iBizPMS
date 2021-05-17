@@ -1598,6 +1598,7 @@
               "enablePullDownRefresh" : false,
               "enableQuickSearch" : true,
               "showCaptionBar" : true,
+              "modelid" : "4bc49227ec9547eb6fa613706771da38",
               "getPSAppDERSPaths" : [ [ {
                 "actionRSMode" : 1,
                 "codeName" : "ProjectModules",
@@ -3460,7 +3461,8 @@
               "enableFilter" : false,
               "enablePullDownRefresh" : false,
               "enableQuickSearch" : true,
-              "showCaptionBar" : false
+              "showCaptionBar" : false,
+              "modelid" : "1d9d30b890d34ecfebbb4f33eb5999ad"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,

@@ -198,6 +198,7 @@
   "enableDP" : true,
   "enableFilter" : false,
   "showCaptionBar" : false,
+  "modelid" : "03c110360a714011ed9c30b8207d3703",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectProducts",

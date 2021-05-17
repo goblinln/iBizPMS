@@ -389,7 +389,15 @@ export class MDControlBase extends MainControlBase {
      * @memberof GridControlBase
      */
     get viewStyle(){
-        return (this.controlInstance?.getParentPSModelObject?.() as any)?.viewStyle || 'DEFAULT'
+        const parentModel: any = this.controlInstance?.getParentPSModelObject?.();
+        if (parentModel && parentModel.viewStyle) {
+            return parentModel.viewStyle;
+        } else {
+            if (parentModel && parentModel.controlType) {
+                return parentModel.getParentPSModelObject?.()?.viewStyle || 'DEFAULT';
+            }
+            return 'DEFAULT';
+        }
     }
 
     /**

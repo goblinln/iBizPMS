@@ -928,7 +928,8 @@
               "enableFilter" : false,
               "enablePullDownRefresh" : false,
               "enableQuickSearch" : true,
-              "showCaptionBar" : false
+              "showCaptionBar" : false,
+              "modelid" : "1d9d30b890d34ecfebbb4f33eb5999ad"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -1123,6 +1124,7 @@
   "enablePullDownRefresh" : false,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
+  "modelid" : "2dcb11edbdc6de15c263a1424d6d97a4",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestTasks",

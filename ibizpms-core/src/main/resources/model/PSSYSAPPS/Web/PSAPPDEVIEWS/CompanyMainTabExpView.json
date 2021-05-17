@@ -570,7 +570,8 @@
         "enableFilter" : false,
         "enableQuickSearch" : true,
         "showCaptionBar" : false,
-        "showDataInfoBar" : true
+        "showDataInfoBar" : true,
+        "modelid" : "589b2861c47f3acccf56c9c2dff633f6"
       }
     }, {
       "caption" : "部门",
@@ -683,5 +684,6 @@
   "expandSearchForm" : false,
   "loadDefault" : true,
   "showCaptionBar" : false,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "ce7d59895df173ceb652f3c63bdef4aa"
 }

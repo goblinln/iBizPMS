@@ -343,7 +343,8 @@
             "enableFilter" : false,
             "enableQuickSearch" : true,
             "showCaptionBar" : false,
-            "showDataInfoBar" : true
+            "showDataInfoBar" : true,
+            "modelid" : "d1de7b1c3f0c14ee93de65e6b1045786"
           },
           "portletType" : "VIEW",
           "title" : "项目统计",
@@ -872,7 +873,8 @@
             "enableImport" : true,
             "enableRowEdit" : false,
             "rowEditDefault" : false,
-            "showCaptionBar" : false
+            "showCaptionBar" : false,
+            "modelid" : "cabba7fe7d745d33b88f1ba31a19c4b3"
           },
           "portletType" : "VIEW",
           "title" : "未关闭的项目",
@@ -1786,6 +1788,7 @@
             "enableRowEdit" : false,
             "rowEditDefault" : false,
             "showCaptionBar" : false,
+            "modelid" : "f20fe6d7aa45a13c1e7343fbe4c0caaf",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "ProjectModules",
@@ -2064,5 +2067,6 @@
   "title" : "项目主页",
   "viewStyle" : "STYLE2",
   "viewType" : "APPPORTALVIEW",
-  "enableDP" : true
+  "enableDP" : true,
+  "modelid" : "288e324a2c3784f988a64c71508e97ba"
 }

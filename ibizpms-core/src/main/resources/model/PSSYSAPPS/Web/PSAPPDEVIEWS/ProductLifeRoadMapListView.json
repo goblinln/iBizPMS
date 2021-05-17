@@ -406,5 +406,6 @@
   "xDataControlName" : "list",
   "enableDP" : true,
   "enableFilter" : false,
-  "showCaptionBar" : false
+  "showCaptionBar" : false,
+  "modelid" : "07327890c326f9c806b9343f0c660fc1"
 }

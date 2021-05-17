@@ -533,6 +533,7 @@
         "enableQuickSearch" : true,
         "showCaptionBar" : false,
         "showDataInfoBar" : true,
+        "modelid" : "25ad13bec39a81629f26d442db44d424",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "ProjectModules",
@@ -841,6 +842,7 @@
   "loadDefault" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
+  "modelid" : "c85d9b5e8fda56f19059573f794d31c6",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

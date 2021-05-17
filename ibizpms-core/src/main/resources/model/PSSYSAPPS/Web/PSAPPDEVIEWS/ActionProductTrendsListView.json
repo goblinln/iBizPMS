@@ -293,5 +293,6 @@
   "enableFilter" : false,
   "enableQuickGroup" : true,
   "expandSearchForm" : true,
-  "showCaptionBar" : false
+  "showCaptionBar" : false,
+  "modelid" : "f7a278d765ff0f85a2c59cbb2485fa30"
 }

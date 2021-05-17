@@ -425,7 +425,8 @@
       "expandSearchForm" : true,
       "pickupMode" : true,
       "rowEditDefault" : false,
-      "showCaptionBar" : true
+      "showCaptionBar" : true,
+      "modelid" : "a617de20593eca90c4003bf177ebcaa3"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "ACTIVATED", "LOAD" ],
     "name" : "pickupviewpanel",
@@ -455,5 +456,6 @@
   "viewStyle" : "STYLE2",
   "viewType" : "DEPICKUPVIEW",
   "enableDP" : true,
-  "showCaptionBar" : false
+  "showCaptionBar" : false,
+  "modelid" : "ba705e3050275c47ecea6130886a1d5b"
 }

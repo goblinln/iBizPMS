@@ -1969,6 +1969,7 @@
   "enableQuickSearch" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
+  "modelid" : "91d3e67caa36efe3f59590d8531a7e0b",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProductModules",

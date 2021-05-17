@@ -1154,7 +1154,8 @@
                                         "xDataControlName" : "list",
                                         "enableDP" : true,
                                         "enableFilter" : false,
-                                        "showCaptionBar" : false
+                                        "showCaptionBar" : false,
+                                        "modelid" : "d940bfd96f6087050755b99a3b6bab0a"
                                       },
                                       "getPSLayoutPos" : {
                                         "colMD" : 24,
@@ -1682,6 +1683,7 @@
                                         "enableRowEdit" : false,
                                         "rowEditDefault" : false,
                                         "showCaptionBar" : true,
+                                        "modelid" : "578d2fd4888ee9b9a2d87ff640e786cd",
                                         "getPSAppDERSPaths" : [ [ {
                                           "actionRSMode" : 1,
                                           "codeName" : "Stories",
@@ -1895,6 +1897,7 @@
                         "enableDP" : true,
                         "showCaptionBar" : false,
                         "showDataInfoBar" : false,
+                        "modelid" : "8c3bd17ea668e9cf5802751378c3a378",
                         "getPSAppDERSPaths" : [ [ {
                           "actionRSMode" : 1,
                           "codeName" : "Stories",
@@ -2196,7 +2199,8 @@
                         "xDataControlName" : "list",
                         "enableDP" : true,
                         "enableFilter" : false,
-                        "showCaptionBar" : false
+                        "showCaptionBar" : false,
+                        "modelid" : "d940bfd96f6087050755b99a3b6bab0a"
                       },
                       "getPSLayoutPos" : {
                         "colMD" : 24,
@@ -3214,6 +3218,7 @@
                         "enableRowEdit" : false,
                         "rowEditDefault" : false,
                         "showCaptionBar" : false,
+                        "modelid" : "2e0d4fb0f3e1ba1ba5bea16a5553cc21",
                         "getPSAppDERSPaths" : [ [ {
                           "actionRSMode" : 1,
                           "codeName" : "ProjectModules",
@@ -3557,6 +3562,7 @@
             "enableDP" : true,
             "showCaptionBar" : false,
             "showDataInfoBar" : false,
+            "modelid" : "ef6cfafd09bb61ddb6fec7840f78e97d",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "ProjectModules",
@@ -4394,7 +4400,8 @@
             "xDataControlName" : "list",
             "enableDP" : true,
             "enableFilter" : false,
-            "showCaptionBar" : false
+            "showCaptionBar" : false,
+            "modelid" : "6cc53210af0a1b521a3fbf7263c94a7b"
           },
           "portletType" : "VIEW",
           "title" : "操作历史记录",
@@ -7297,6 +7304,7 @@
                     "enableRowEdit" : false,
                     "rowEditDefault" : false,
                     "showCaptionBar" : false,
+                    "modelid" : "9d6b43cf5d65cb414cbccc84237178b7",
                     "getPSAppDERSPaths" : [ [ {
                       "actionRSMode" : 1,
                       "codeName" : "ProjectModules",
@@ -7868,6 +7876,7 @@
             "enableDP" : true,
             "showCaptionBar" : false,
             "showDataInfoBar" : false,
+            "modelid" : "321ab2e4e87a29fef8eed086e951a006",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "ProjectModules",
@@ -9148,6 +9157,7 @@
                     "enableRowEdit" : false,
                     "rowEditDefault" : false,
                     "showCaptionBar" : true,
+                    "modelid" : "3da1f37a9dc628fb6755d3d9c03fc112",
                     "getPSAppDERSPaths" : [ [ {
                       "actionRSMode" : 1,
                       "codeName" : "Stories",
@@ -9339,6 +9349,7 @@
             "enableDP" : true,
             "showCaptionBar" : false,
             "showDataInfoBar" : false,
+            "modelid" : "5a54fcd3bab135a3c9530a67710c5af7",
             "getPSAppDERSPaths" : [ [ {
               "actionRSMode" : 1,
               "codeName" : "ProjectModules",
@@ -9636,6 +9647,7 @@
   "loadDefault" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "modelid" : "a6e14baa45e0c99165384f7ef510d605",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

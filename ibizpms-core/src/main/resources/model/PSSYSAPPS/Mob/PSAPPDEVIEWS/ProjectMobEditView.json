@@ -1397,7 +1397,8 @@
               "enableFilter" : false,
               "enablePullDownRefresh" : false,
               "enableQuickSearch" : true,
-              "showCaptionBar" : false
+              "showCaptionBar" : false,
+              "modelid" : "1d9d30b890d34ecfebbb4f33eb5999ad"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -1730,5 +1731,6 @@
   "enableDP" : true,
   "enablePullDownRefresh" : false,
   "showCaptionBar" : true,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "2bee7cb2c1ed4c62e580a3a566f4ac15"
 }

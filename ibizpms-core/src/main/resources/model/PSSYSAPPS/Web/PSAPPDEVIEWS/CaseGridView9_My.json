@@ -478,6 +478,7 @@
   "enableRowEdit" : false,
   "rowEditDefault" : false,
   "showCaptionBar" : false,
+  "modelid" : "dcfb6f3c855cc82a1d94f125b0a14246",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

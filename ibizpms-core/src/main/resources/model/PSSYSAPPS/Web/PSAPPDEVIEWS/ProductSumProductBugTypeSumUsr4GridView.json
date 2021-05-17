@@ -653,5 +653,6 @@
   "enableQuickSearch" : true,
   "enableRowEdit" : false,
   "rowEditDefault" : false,
-  "showCaptionBar" : true
+  "showCaptionBar" : true,
+  "modelid" : "9ca10f6c70b556f095cfca06c1132f5a"
 }

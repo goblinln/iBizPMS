@@ -1234,6 +1234,7 @@
       "needCodeListConfig" : true,
       "showCaption" : false
     } ],
+    "quickGroupCount" : -1,
     "quickSearchMode" : 1,
     "quickSearchWidth" : 0,
     "enableFilter" : true,
@@ -1270,6 +1271,7 @@
   "enableSearch" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : true,
+  "modelid" : "409176d44884e69d4999342ec4c14176",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "IbzCases",

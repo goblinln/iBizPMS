@@ -313,6 +313,7 @@
   "pickupMode" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : true,
+  "modelid" : "71301b58b287ea40f5bf08232b7465ed",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "TestModules",

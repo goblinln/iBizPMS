@@ -451,6 +451,7 @@
   "enablePullDownRefresh" : false,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "modelid" : "ea064acc0eb5ae3dcc58ec2dc6933df1",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

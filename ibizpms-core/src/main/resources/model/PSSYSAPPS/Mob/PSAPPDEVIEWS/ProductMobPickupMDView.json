@@ -474,5 +474,6 @@
   "enablePullDownRefresh" : false,
   "enableSearch" : true,
   "expandSearchForm" : true,
-  "showCaptionBar" : true
+  "showCaptionBar" : true,
+  "modelid" : "daa5f26f738336ecc2a5e3c95685ddbf"
 }

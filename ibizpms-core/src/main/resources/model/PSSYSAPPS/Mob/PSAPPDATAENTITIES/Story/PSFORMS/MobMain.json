@@ -219,6 +219,13 @@
       "codeName" : "ClosedReason"
     }
   }, {
+    "id" : "estimate",
+    "dataType" : 7,
+    "getPSAppDEField" : {
+      "name" : "ESTIMATE",
+      "codeName" : "Estimate"
+    }
+  }, {
     "id" : "spec",
     "dataType" : 21,
     "getPSAppDEField" : {
@@ -937,6 +944,35 @@
         "inputTipClosable" : false,
         "showCaption" : true
       }, {
+        "caption" : "预计工时",
+        "codeName" : "estimate",
+        "dataType" : 7,
+        "detailStyle" : "DEFAULT",
+        "detailType" : "FORMITEM",
+        "enableCond" : 3,
+        "ignoreInput" : 0,
+        "labelPos" : "LEFT",
+        "labelWidth" : 100,
+        "name" : "estimate",
+        "noPrivDisplayMode" : 1,
+        "getPSAppDEField" : {
+          "name" : "ESTIMATE",
+          "codeName" : "Estimate"
+        },
+        "getPSEditor" : {
+          "editorType" : "NUMBER",
+          "name" : "estimate"
+        },
+        "getPSLayoutPos" : {
+          "colMD" : 24,
+          "layout" : "TABLE_24COL"
+        },
+        "allowEmpty" : true,
+        "emptyCaption" : false,
+        "hidden" : false,
+        "inputTipClosable" : false,
+        "showCaption" : true
+      }, {
         "caption" : "需求描述",
         "codeName" : "spec",
         "dataType" : 21,
@@ -1372,7 +1408,8 @@
             "enableDP" : true,
             "enableFilter" : false,
             "enablePullDownRefresh" : true,
-            "showCaptionBar" : false
+            "showCaptionBar" : false,
+            "modelid" : "22961cd5ac6f56eb438a9c9547e474e1"
           },
           "getPSLayoutPos" : {
             "colMD" : 24,
@@ -1800,7 +1837,8 @@
             "enableFilter" : false,
             "enablePullDownRefresh" : false,
             "enableQuickSearch" : true,
-            "showCaptionBar" : false
+            "showCaptionBar" : false,
+            "modelid" : "1d9d30b890d34ecfebbb4f33eb5999ad"
           },
           "getPSLayoutPos" : {
             "colMD" : 24,

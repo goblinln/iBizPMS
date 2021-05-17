@@ -1019,7 +1019,7 @@ export class GridControlBase extends MDControlBase {
         const page: any = {};
         // 设置page，size
         if (Object.is(data.type, 'maxRowCount')) {
-            Object.assign(page, { page: 0, size: data.maxRowCount });
+            Object.assign(page, { page: 0, size: data.maxRowCount ? data.maxRowCount : 1000});
         } else if (Object.is(data.type, 'activatedPage')) {
             if (this.allExportColumns?.length > 0) {
                 Object.assign(page, { page: this.curPage - 1, size: this.limit });

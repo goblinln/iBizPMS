@@ -951,7 +951,8 @@
               "enableFilter" : false,
               "enablePullDownRefresh" : false,
               "enableQuickSearch" : true,
-              "showCaptionBar" : false
+              "showCaptionBar" : false,
+              "modelid" : "1d9d30b890d34ecfebbb4f33eb5999ad"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -1103,6 +1104,7 @@
   "enablePullDownRefresh" : false,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "modelid" : "18b2d96a89ba15058138d25f7720155a",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

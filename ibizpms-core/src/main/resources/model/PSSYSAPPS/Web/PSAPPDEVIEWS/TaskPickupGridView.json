@@ -1552,6 +1552,7 @@
   "pickupMode" : true,
   "rowEditDefault" : false,
   "showCaptionBar" : true,
+  "modelid" : "a567636558c349902507ef69b9c510e5",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProjectModules",

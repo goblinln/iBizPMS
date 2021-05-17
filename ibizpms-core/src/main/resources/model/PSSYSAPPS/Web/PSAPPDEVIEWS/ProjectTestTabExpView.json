@@ -3175,6 +3175,7 @@
             "needCodeListConfig" : true,
             "showCaption" : false
           } ],
+          "quickGroupCount" : -1,
           "quickSearchMode" : 1,
           "quickSearchWidth" : 0,
           "enableFilter" : true,
@@ -3220,6 +3221,7 @@
         "enableSearch" : true,
         "rowEditDefault" : false,
         "showCaptionBar" : false,
+        "modelid" : "9dfcc6cbfe4f53722baff0120924a35c",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -3453,5 +3455,6 @@
   "expandSearchForm" : false,
   "loadDefault" : true,
   "showCaptionBar" : false,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "af8185573a2daae5897a2291bea9a9d3"
 }

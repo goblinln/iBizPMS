@@ -945,5 +945,6 @@
   "enableDP" : true,
   "enablePullDownRefresh" : false,
   "showCaptionBar" : true,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "82cbb4c2947bd695d815a1fe86a0d2c8"
 }

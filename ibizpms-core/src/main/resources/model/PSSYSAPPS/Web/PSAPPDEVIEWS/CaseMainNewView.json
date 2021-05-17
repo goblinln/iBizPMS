@@ -1491,6 +1491,7 @@
               "loadDefault" : false,
               "rowEditDefault" : true,
               "showCaptionBar" : true,
+              "modelid" : "cc95ccdffa772694833ec569e8aaa025",
               "getPSAppDERSPaths" : [ [ {
                 "actionRSMode" : 1,
                 "codeName" : "Stories",
@@ -1894,6 +1895,7 @@
   "enableDP" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "modelid" : "6e8645d9fed039c0d242e50504074fb8",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

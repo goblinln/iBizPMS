@@ -784,7 +784,8 @@
         "enableQuickSearch" : true,
         "enableRowEdit" : false,
         "rowEditDefault" : false,
-        "showCaptionBar" : true
+        "showCaptionBar" : true,
+        "modelid" : "8a56ab62d6ae84149615df43ea132fcb"
       }
     }, {
       "caption" : "产品周报",
@@ -857,5 +858,6 @@
   "expandSearchForm" : false,
   "loadDefault" : true,
   "showCaptionBar" : false,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "56d37c4b5c3583dd1197209e46f06873"
 }

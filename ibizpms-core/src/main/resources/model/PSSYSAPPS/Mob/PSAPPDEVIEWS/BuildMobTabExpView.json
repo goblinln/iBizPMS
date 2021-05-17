@@ -640,6 +640,7 @@
         "enablePullDownRefresh" : true,
         "enableQuickSearch" : true,
         "showCaptionBar" : false,
+        "modelid" : "afd88bd0bb782136533db7ae8cf596d8",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -764,6 +765,7 @@
   "loadDefault" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "modelid" : "6e2a4646b4d37a03f7b86daff50fd677",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Builds",

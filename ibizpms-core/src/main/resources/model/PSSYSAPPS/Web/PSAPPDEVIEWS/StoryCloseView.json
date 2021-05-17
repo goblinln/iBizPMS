@@ -768,7 +768,8 @@
               "xDataControlName" : "list",
               "enableDP" : true,
               "enableFilter" : false,
-              "showCaptionBar" : false
+              "showCaptionBar" : false,
+              "modelid" : "63a73a2e80dc47c05dd3ead4f03ae3c3"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -858,6 +859,7 @@
   "enableDP" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "modelid" : "5d15dd63b8e4c48a6d5e7cca6b5308cc",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

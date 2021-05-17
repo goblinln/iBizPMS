@@ -1095,7 +1095,8 @@
       "enableFilter" : false,
       "enablePullDownRefresh" : false,
       "expandSearchForm" : true,
-      "showCaptionBar" : true
+      "showCaptionBar" : true,
+      "modelid" : "2cf923585c1c9225d28bb40901d16265"
     },
     "hookEventNames" : [ "SELECTIONCHANGE", "LOAD" ],
     "name" : "pickupviewpanel",
@@ -1126,5 +1127,6 @@
   "viewType" : "DEMOBPICKUPVIEW",
   "enableDP" : true,
   "enablePullDownRefresh" : false,
-  "showCaptionBar" : true
+  "showCaptionBar" : true,
+  "modelid" : "21f0361e9c1ef6861286d9c398d556b6"
 }

@@ -952,5 +952,6 @@
   "expandSearchForm" : true,
   "loadDefault" : true,
   "showCaptionBar" : false,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "35452fdae20ad8f9a786c708744662b4"
 }

@@ -1488,7 +1488,8 @@
               "enableDP" : true,
               "enableFilter" : false,
               "enablePullDownRefresh" : true,
-              "showCaptionBar" : false
+              "showCaptionBar" : false,
+              "modelid" : "22961cd5ac6f56eb438a9c9547e474e1"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -1910,7 +1911,8 @@
               "enableFilter" : false,
               "enablePullDownRefresh" : false,
               "enableQuickSearch" : true,
-              "showCaptionBar" : false
+              "showCaptionBar" : false,
+              "modelid" : "1d9d30b890d34ecfebbb4f33eb5999ad"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -2286,6 +2288,7 @@
   "enablePullDownRefresh" : false,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
+  "modelid" : "0ee095b2a12f29a0d15a82a294129afe",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

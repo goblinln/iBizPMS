@@ -637,7 +637,8 @@
         "enableFilter" : false,
         "enableQuickSearch" : true,
         "showCaptionBar" : false,
-        "showDataInfoBar" : true
+        "showDataInfoBar" : true,
+        "modelid" : "f78c94cb0a20d7f459753a4070f8f3e7"
       }
     }, {
       "caption" : "看板",
@@ -815,5 +816,6 @@
   "expandSearchForm" : false,
   "loadDefault" : true,
   "showCaptionBar" : false,
-  "showDataInfoBar" : true
+  "showDataInfoBar" : true,
+  "modelid" : "005b0ba30f9e9e982e087961bd50c681"
 }

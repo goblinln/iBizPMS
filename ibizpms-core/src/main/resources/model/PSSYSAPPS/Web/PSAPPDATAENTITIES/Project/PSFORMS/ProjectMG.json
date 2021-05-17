@@ -1258,6 +1258,7 @@
         "expandSearchForm" : true,
         "rowEditDefault" : true,
         "showCaptionBar" : false,
+        "modelid" : "29447769aa6216b5f7a881c0a5d81d73",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "ProjectTeams",

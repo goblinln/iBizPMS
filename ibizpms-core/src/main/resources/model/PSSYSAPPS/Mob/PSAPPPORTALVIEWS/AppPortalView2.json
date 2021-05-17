@@ -371,5 +371,6 @@
   "title" : "应用门户视图2",
   "viewStyle" : "DEFAULT",
   "viewType" : "APPPORTALVIEW",
-  "enableDP" : true
+  "enableDP" : true,
+  "modelid" : "fef4d4f067fe339a72b2ff7265ac3854"
 }

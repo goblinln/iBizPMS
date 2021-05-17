@@ -785,6 +785,7 @@
         "enablePullDownRefresh" : false,
         "enableSearch" : true,
         "showCaptionBar" : false,
+        "modelid" : "d55a1b0b16ed24657e74c3fe3c95d3f0",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -2215,6 +2216,7 @@
         "enablePullDownRefresh" : false,
         "enableSearch" : true,
         "showCaptionBar" : false,
+        "modelid" : "222046153c11a0c0be0a7bb91fb8669f",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "ProjectModules",
@@ -3889,6 +3891,7 @@
         "enablePullDownRefresh" : false,
         "enableSearch" : true,
         "showCaptionBar" : false,
+        "modelid" : "5780b0be9d2146f144ec6f0fcd2e7216",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -5014,6 +5017,7 @@
         "enablePullDownRefresh" : false,
         "enableSearch" : true,
         "showCaptionBar" : false,
+        "modelid" : "3a895c526bada08b2951be4be8fe2500",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "Stories",
@@ -6109,6 +6113,7 @@
         "enablePullDownRefresh" : false,
         "enableSearch" : true,
         "showCaptionBar" : false,
+        "modelid" : "3fc322297ac214d63dcc95beafe503c3",
         "getPSAppDERSPaths" : [ [ {
           "actionRSMode" : 1,
           "codeName" : "ProjectModules",
@@ -6991,7 +6996,8 @@
         "enableFilter" : false,
         "enablePullDownRefresh" : false,
         "enableQuickSearch" : true,
-        "showCaptionBar" : false
+        "showCaptionBar" : false,
+        "modelid" : "415ccde9624b4f80324c63281a7afe04"
       },
       "portletType" : "VIEW",
       "title" : "我的工作",
@@ -7544,7 +7550,8 @@
         "enableFilter" : false,
         "enablePullDownRefresh" : false,
         "enableQuickSearch" : true,
-        "showCaptionBar" : false
+        "showCaptionBar" : false,
+        "modelid" : "4c1bedfd5d48687700719553a99dbda2"
       },
       "portletType" : "VIEW",
       "timer" : 60000,

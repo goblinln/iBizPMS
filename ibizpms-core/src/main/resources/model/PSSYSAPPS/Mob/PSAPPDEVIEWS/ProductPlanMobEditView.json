@@ -903,7 +903,8 @@
               "enableFilter" : false,
               "enablePullDownRefresh" : false,
               "enableQuickSearch" : true,
-              "showCaptionBar" : false
+              "showCaptionBar" : false,
+              "modelid" : "1d9d30b890d34ecfebbb4f33eb5999ad"
             },
             "getPSLayoutPos" : {
               "colMD" : 24,
@@ -1094,6 +1095,7 @@
   "enablePullDownRefresh" : true,
   "showCaptionBar" : false,
   "showDataInfoBar" : true,
+  "modelid" : "29a19a2c3cc5721911db796d6c6dc151",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "ProductPlans",
