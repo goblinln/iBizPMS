@@ -31,7 +31,7 @@ public interface IBZTPSFeignClient {
     @RequestMapping(method = RequestMethod.POST, value = "/msgsend/getbyids")
     MsgSendQueue[] getByIds(@RequestBody String[] msgids);
 
-    @RequestMapping(method = RequestMethod.POST, value = "/job/{id}/execute")
+    @RequestMapping(method = RequestMethod.GET, value = "/job/{id}/execute")
     JSONObject execute(@PathVariable("id") String id, @RequestBody String params);
 
     @RequestMapping(method = RequestMethod.GET, value = "/job/{id}/start")
