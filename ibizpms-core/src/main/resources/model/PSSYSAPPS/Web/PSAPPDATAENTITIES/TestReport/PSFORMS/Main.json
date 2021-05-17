@@ -448,9 +448,6 @@
           "colMD" : 8,
           "layout" : "TABLE_24COL"
         },
-        "getPSSysCss" : {
-          "cssName" : "form-item-35"
-        },
         "allowEmpty" : false,
         "emptyCaption" : false,
         "hidden" : false,
@@ -464,9 +461,9 @@
         "detailType" : "FORMITEM",
         "enableCond" : 3,
         "ignoreInput" : 0,
-        "itemWidth" : 122.0,
+        "itemWidth" : 135.0,
         "labelPos" : "LEFT",
-        "labelWidth" : 22,
+        "labelWidth" : 35,
         "name" : "end",
         "noPrivDisplayMode" : 1,
         "getPSAppDEField" : {
