@@ -2,7 +2,8 @@ import { ModelTool, Util } from 'ibiz-core';
 import { MDControlBase } from './md-control-base';
 import { AppViewLogicService } from '../app-service';
 import { AppKanbanService } from '../ctrl-service';
-import { IPSCodeList, IPSDEKanban, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDEUIAction } from '@ibiz/dynamic-model-api';
+import { IPSAppDEKanbanView, IPSAppView, IPSAppViewRef, IPSCodeList, IPSDEKanban, IPSDETBUIActionItem, IPSDEToolbar, IPSDEToolbarItem, IPSDEUIAction } from '@ibiz/dynamic-model-api';
+import { Subject } from 'rxjs';
 /**
  * 看板视图部件基类
  * 
@@ -205,7 +206,7 @@ export class KanbanControlBase extends MDControlBase {
             inputData: item,
             actionModel: this.actionModel,
         })
-        Object.assign(targetCtrlParam.staticProps,{
+        Object.assign(targetCtrlParam.staticProps, {
             transformData: this.transformData,
             opendata: this.opendata,
             newdata: this.newdata,
@@ -396,11 +397,70 @@ export class KanbanControlBase extends MDControlBase {
      * @param {*} name
      * @memberof KanbanControlBase
      */
-    public onDragChange(evt: any, name: string) {
+    public async onDragChange(evt: any, name: string) {
         if (evt?.added?.element) {
             let item: any = JSON.parse(JSON.stringify(evt.added.element))
-            item[this.groupField] = name;
-            this.updateData(item)
+            let updateView: IPSAppView | null = await this.getUpdateView(name);
+            if (updateView) {
+                let view: any = {
+                    viewname: 'app-view-shell',
+                    height: updateView.height,
+                    width: updateView.width,
+                    title: updateView.title,
+                };
+                const _context: any = JSON.parse(JSON.stringify(this.context));
+                const _param: any = JSON.parse(JSON.stringify(this.viewparams));
+                Object.assign(_context, { [this.appDeCodeName.toLowerCase()]: item.srfkey });
+                if (updateView && updateView.modelPath) {
+                    Object.assign(_context, { viewpath: updateView.modelPath });
+                }
+                let container: Subject<any>;
+                if (updateView.openMode && !Object.is(updateView.openMode, '') && updateView.openMode.indexOf('DRAWER') !== -1) {
+                    if (Object.is(updateView.openMode, 'DRAWER_TOP')) {
+                        Object.assign(view, { isfullscreen: true });
+                        container = this.$appdrawer.openTopDrawer(
+                            view,
+                            Util.getViewProps(_context, _param),
+                        );
+                    } else {
+                        Object.assign(view, { placement: updateView.openMode });
+                        container = this.$appdrawer.openDrawer(view, Util.getViewProps(_context, _param));
+                    }
+                } else {
+                    container = this.$appmodal.openModal(view, _context, _param);
+                }
+                container.subscribe((result: any) => {
+                    if (!result || !Object.is(result.ret, 'OK')) {
+                        return;
+                    }
+                    this.refresh();
+                });
+            } else {
+                item[this.groupField] = name;
+                this.updateData(item)
+            }
+        }
+    }
+
+    /**
+     * 拖拽更新页面
+     *
+     * @param {string} group
+     * @memberof KanbanControlBase
+     */
+    public async getUpdateView(group: string) {
+        if (!group) return null;
+        let parentModel: IPSAppDEKanbanView = (this.controlInstance as any).parentModel;
+        if (parentModel.getPSAppViewRefs() && (parentModel.getPSAppViewRefs() as IPSAppViewRef[]).length > 0) {
+            let activeAppViewRef: any = parentModel.getPSAppViewRefs()?.find((item: IPSAppViewRef) => {
+                return item.name === `EDITDATA:${group.toUpperCase()}`;
+            })
+            if (!activeAppViewRef || !activeAppViewRef.getRefPSAppView()) return null;
+            const openView: IPSAppView = activeAppViewRef.getRefPSAppView();
+            await openView.fill();
+            return openView;
+        } else {
+            return null;
         }
     }
 
