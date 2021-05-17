@@ -269,6 +269,10 @@ public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBas
 
                         iPSDEField = (IPSDEField)var8.next();
                         if (this.isFillFieldDefaultValueWhenNull()) {
+                            if(this.getFieldValue(arg0, iPSDEField) != null && "#EMPTY".equals(this.getFieldValue(arg0, iPSDEField))) {
+                               this.setFieldValue(arg0, iPSDEField, "");
+                               continue;
+                            }
                             if (this.getFieldValue(arg0, iPSDEField) != null) {
                                 continue;
                             }
@@ -276,21 +280,6 @@ public abstract class SystemDataEntityRuntime extends SystemDataEntityRuntimeBas
                             continue;
                         }
                         break;
-                    }
-
-                    String strSequenceMode = iPSDEField.getSequenceMode();
-                    Object objValue;
-                    if("GETDRAFT".equals(strSequenceMode)) {
-                        String strDefaultValue = iPSDEField.getDefaultValue();
-                        String strDefaultValueType = iPSDEField.getDefaultValueType();
-                        if (org.springframework.util.StringUtils.hasLength(strDefaultValue) || org.springframework.util.StringUtils.hasLength(strDefaultValueType)) {
-                            objValue = this.calcFieldValue(arg0, iPSDEField, strDefaultValueType, strDefaultValue);
-                            if(objValue.equals("#EMPTY")) {
-                                this.setFieldValue(arg0, iPSDEField, "");
-                            }else {
-                                this.setFieldValue(arg0, iPSDEField, objValue);
-                            }
-                        }
                     }
                 }
             }
