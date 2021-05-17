@@ -83,8 +83,6 @@
     "id" : "product",
     "hidden" : true,
     "dataType" : 1,
-    "createDVT" : "CONTEXT",
-    "createDV" : "product",
     "getPSAppDEField" : {
       "name" : "PRODUCT",
       "codeName" : "Product"
@@ -287,8 +285,6 @@
       "getPSDEFormDetails" : [ {
         "caption" : "所属产品",
         "codeName" : "product",
-        "createDV" : "product",
-        "createDVT" : "CONTEXT",
         "dataType" : 1,
         "detailStyle" : "DEFAULT",
         "detailType" : "FORMITEM",
