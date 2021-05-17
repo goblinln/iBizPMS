@@ -20,6 +20,7 @@ import lombok.extern.slf4j.Slf4j;
 import net.ibizsys.model.dataentity.IPSDataEntity;
 import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.model.dataentity.defield.IPSDEFSearchMode;
+import net.ibizsys.model.dataentity.defield.IPSLinkDEField;
 import net.ibizsys.model.dataentity.der.IPSDER1N;
 import net.ibizsys.model.dataentity.der.IPSDERBase;
 import net.ibizsys.model.dataentity.ds.IPSDEDataQuery;
@@ -30,6 +31,7 @@ import net.ibizsys.model.dataentity.priv.IPSDEUserRole;
 import net.ibizsys.model.dataentity.priv.IPSDEUserRoleOPPriv;
 import net.ibizsys.model.dataentity.wf.IPSDEWF;
 import net.ibizsys.runtime.IDynaInstRuntime;
+import net.ibizsys.runtime.ISystemUtilRuntime;
 import net.ibizsys.runtime.dataentity.DataEntityRuntimeException;
 import net.ibizsys.runtime.dataentity.action.CheckKeyStates;
 import net.ibizsys.model.dataentity.defield.IPSDEField;
@@ -406,8 +408,13 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      * @return
      */
     public boolean testUnires(String uniResTag) {
+        boolean check = false;
         this.prepare();
-        return ((SystemRuntime) this.getSystemRuntime()).testUniRes(uniResTag);
+        check = ((SystemRuntime) this.getSystemRuntime()).testUniRes(uniResTag);
+        if (!check) {
+            this.getSystemRuntime().log(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("检查实体[%s]的统一资源[%s]权限失败。", this.getName(), uniResTag), null);
+        }
+        return check;
     }
 
     /**
@@ -417,14 +424,18 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      * @return
      */
     public boolean quickTest(String action) {
+        boolean check = true;
         this.prepare();
         if (this.getUserContext().isSuperuser())
             return true;
         if (testUnires(action))
             return true;
         if (this.getUAAAuthorities(action).size() == 0)
-            return false;
-        return true;
+            check = false;
+        if (!check) {
+            this.getSystemRuntime().log(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("检查实体[%s]操作[%s]权限失败。", this.getName(), action), null);
+        }
+        return check;
     }
 
     /**
@@ -436,28 +447,33 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
      */
     @SneakyThrows
     public boolean test(Serializable key, String action) {
+        boolean check = true;
         int accessMode;
         this.prepare();
         if (this.getUserContext().isSuperuser())
             return true;
         //判断是否在流程中
-        if(this.isEnableWF()){
+        if (this.isEnableWF()) {
             if (DataAccessActions.READ.equals(action)) {
                 accessMode = wfClient.getDataAccessMode(AuthenticationUser.getAuthenticationUser().getSrfsystemid(), this.getPSDataEntity().getCodeName().toLowerCase(), key);
                 if ((accessMode & 1) > 0) {
-                   return true;
+                    return true;
                 }
-            }
-            else if (DataAccessActions.UPDATE.equals(action) && testDataInWF(this.getSimpleEntity(key))) {
+            } else if (DataAccessActions.UPDATE.equals(action) && testDataInWF(this.getSimpleEntity(key))) {
                 accessMode = wfClient.getDataAccessMode(AuthenticationUser.getAuthenticationUser().getSrfsystemid(), this.getPSDataEntity().getCodeName().toLowerCase(), key);
-                return ((accessMode & 2) > 0);
+                check = (accessMode & 2) > 0;
+                if (!check) {
+                    this.getSystemRuntime().log(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("流程检查实体[%s][%s]操作[%s]权限失败。", this.getName(), key, action), null);
+                    return check;
+                }
             }
         }
         if (testUnires(action))
-            return true ;
+            return true;
         //检查能力
-        if (!quickTest(action))
-            return false ;
+        if (!quickTest(action)) {
+            return false;
+        }
 
         //检查数据范围
         QueryWrapperContext context = this.createSearchContext();
@@ -465,12 +481,21 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         addAuthorityConditions(context, action);
         List domains = this.select(context);
         if (domains.size() == 0) {
-            return false;
+            check = false;
+            if (!check) {
+                this.getSystemRuntime().log(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("检查实体[%s]数据:[%s]操作[%s]权限失败。", this.getName(), key, action), null);
+                return check;
+            }
         }
         try {
-            return testDataAccessAction(domains.get(0), action);
+            check = testDataAccessAction(domains.get(0), action);
+            if (!check) {
+                this.getSystemRuntime().log(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("检查实体[%s]数据:[%s]操作[%s]主状态控制失败。", this.getName(), key, action), null);
+                return check;
+            }
+            return check;
         } catch (Exception e) {
-            log.error(String.format("[%s]数据:[%s]权限检查错误：%s", this.getName(), key, e.getMessage()));
+            this.getSystemRuntime().log(ISystemUtilRuntime.LOGLEVEL_ERROR, "权限检查", String.format("检查实体[%s]数据:[%s]操作[%s]权限发生错误：%s", this.getName(), key, action, e.getMessage()), null);
             return false;
         }
     }
@@ -785,11 +810,17 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
     @Override
     protected String getFieldDataSetSortExp(IPSDEField iPSDEField) throws Exception {
         String fieldExp = super.getFieldDataSetSortExp(iPSDEField);
-        if(StringUtils.isBlank(fieldExp))
+        if (StringUtils.isBlank(fieldExp))
             return iPSDEField.getName();
-        if (fieldExp.indexOf(".") > 0){
-            return fieldExp.substring(fieldExp.indexOf(".") + 1);
+        if (fieldExp.indexOf(".") > 0) {
+            fieldExp = fieldExp.substring(fieldExp.indexOf(".") + 1);
         }
+        if (iPSDEField instanceof IPSLinkDEField && !iPSDEField.isPhisicalDEField()) {
+            IPSLinkDEField iPSLinkDEField = (IPSLinkDEField) iPSDEField;
+            fieldExp = fieldExp.replace(iPSLinkDEField.getRelatedPSDEField().getName(),iPSLinkDEField.getName());
+            return fieldExp;
+        }
+        
         return fieldExp;
     }
 

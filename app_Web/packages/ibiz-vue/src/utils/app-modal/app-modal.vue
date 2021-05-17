@@ -137,6 +137,19 @@ export default class AppModalCompponent extends Vue {
     }
 
     /**
+     * 监控模态展示状态变更
+     *
+     * @memberof AppModal
+     */
+    @Watch('isShow')
+    public isShowWatch(newVal: boolean, oldVal: boolean): void {
+        if (newVal !== oldVal && newVal === false) {
+            this.zIndex -= 100;
+            this.$store.commit('updateZIndex', this.zIndex);
+        }
+    }
+
+    /**
      * Vue生命周期created
      *
      * @memberof AppModal

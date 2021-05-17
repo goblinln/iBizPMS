@@ -128,6 +128,9 @@ export class TaskService extends TaskBaseService {
     public async Create(context: any = {},data: any = {}, isloading?: boolean): Promise<any> {
         if(context.project && context.projectmodule && true){
             data = await this.obtainMinor(context, data);
+            if(!data.multiple || data.multiple == '0'){
+                data.ibztaskteams = null;
+            }
             return this.http.post(`/projects/${context.project}/projectmodules/${context.projectmodule}/tasks`,data);
         }
         if(context.product && context.story && true){
