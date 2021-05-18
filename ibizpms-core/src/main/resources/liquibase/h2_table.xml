@@ -435,7 +435,7 @@
 
 
     <!--输出实体[ZT_CASESTEP]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_casestep-35-11">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_casestep-36-11">
         <createTable tableName="zt_casestep">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -3130,7 +3130,7 @@
 
 
     <!--输出实体[ZT_TESTTASK]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_testtask-31-121">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_testtask-33-121">
         <createTable tableName="zt_testtask">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>

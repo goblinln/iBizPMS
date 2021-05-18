@@ -237,40 +237,6 @@
         "name" : "mailto"
       } ]
     } ],
-    "getPSDEFormItemVRs" : [ {
-      "checkMode" : 1,
-      "name" : "表单项值规则",
-      "getPSDEFValueRule" : {
-        "codeName" : "EndRule",
-        "name" : "结束日期必须大于等于开始日期",
-        "getPSDEFVRGroupCondition" : {
-          "condOp" : "AND",
-          "condType" : "GROUP",
-          "name" : "默认组",
-          "getPSDEFVRConditions" : [ {
-            "condOp" : "GTANDEQ",
-            "condType" : "SIMPLE",
-            "dEFName" : "END",
-            "name" : "[常规条件] 大于等于(>=) 数据对象属性(BEGIN)",
-            "paramType" : "ENTITYFIELD",
-            "paramValue" : "BEGIN",
-            "ruleInfo" : "结束日期必须大于等于开始日期!"
-          } ],
-          "ruleInfo" : "结束日期必须大于等于开始日期!"
-        },
-        "getPSDEField" : {
-          "name" : "END",
-          "codeName" : "End"
-        },
-        "ruleInfo" : "结束日期必须大于等于开始日期!",
-        "checkDefault" : false,
-        "defaultMode" : false,
-        "enableBackend" : true,
-        "enableFront" : true
-      },
-      "getPSDEFormItemName" : "end",
-      "valueRuleType" : "DEFVALUERULE"
-    } ],
     "getPSDEFormItems" : [ {
       "id" : "srforikey",
       "hidden" : true,
@@ -337,6 +303,7 @@
       }
     }, {
       "id" : "begin",
+      "hidden" : true,
       "dataType" : 5,
       "getPSAppDEField" : {
         "name" : "BEGIN",
@@ -344,11 +311,15 @@
       }
     }, {
       "id" : "end",
+      "hidden" : true,
       "dataType" : 5,
       "getPSAppDEField" : {
         "name" : "END",
         "codeName" : "End"
       }
+    }, {
+      "id" : "formitemex1",
+      "dataType" : 25
     }, {
       "id" : "project",
       "hidden" : true,
@@ -717,8 +688,8 @@
             "name" : "grouppanel2",
             "getPSDEFormDetails" : [ {
               "caption" : "开始日期",
-              "codeName" : "begin",
-              "dataType" : 5,
+              "codeName" : "formitemex1",
+              "dataType" : 25,
               "detailStyle" : "DEFAULT",
               "detailType" : "FORMITEM",
               "enableCond" : 3,
@@ -726,12 +697,59 @@
               "itemWidth" : 200.0,
               "labelPos" : "LEFT",
               "labelWidth" : 100,
-              "name" : "begin",
+              "name" : "formitemex1",
               "noPrivDisplayMode" : 1,
-              "getPSAppDEField" : {
-                "name" : "BEGIN",
-                "codeName" : "Begin"
-              },
+              "getPSDEFormItems" : [ {
+                "caption" : "开始日期",
+                "codeName" : "begin",
+                "dataType" : 5,
+                "detailStyle" : "DEFAULT",
+                "detailType" : "FORMITEM",
+                "enableCond" : 3,
+                "ignoreInput" : 0,
+                "labelPos" : "LEFT",
+                "labelWidth" : 100,
+                "name" : "begin",
+                "noPrivDisplayMode" : 1,
+                "getPSAppDEField" : {
+                  "name" : "BEGIN",
+                  "codeName" : "Begin"
+                },
+                "getPSEditor" : {
+                  "editorType" : "HIDDEN",
+                  "name" : "begin"
+                },
+                "allowEmpty" : true,
+                "emptyCaption" : false,
+                "hidden" : true,
+                "inputTipClosable" : false,
+                "showCaption" : true
+              }, {
+                "caption" : "结束日期",
+                "codeName" : "end",
+                "dataType" : 5,
+                "detailStyle" : "DEFAULT",
+                "detailType" : "FORMITEM",
+                "enableCond" : 3,
+                "ignoreInput" : 0,
+                "labelPos" : "LEFT",
+                "labelWidth" : 100,
+                "name" : "end",
+                "noPrivDisplayMode" : 1,
+                "getPSAppDEField" : {
+                  "name" : "END",
+                  "codeName" : "End"
+                },
+                "getPSEditor" : {
+                  "editorType" : "HIDDEN",
+                  "name" : "end"
+                },
+                "allowEmpty" : true,
+                "emptyCaption" : false,
+                "hidden" : true,
+                "inputTipClosable" : false,
+                "showCaption" : true
+              } ],
               "getPSEditor" : {
                 "dateTimeFormat" : "YYYY-MM-DD",
                 "editorParams" : {
@@ -739,50 +757,15 @@
                 },
                 "editorType" : "DATEPICKEREX_NOTIME",
                 "editorWidth" : 100.0,
-                "name" : "begin"
+                "name" : "formitemex1"
               },
               "getPSLayoutPos" : {
-                "colLG" : 12,
+                "colLG" : 24,
                 "colMD" : 12,
                 "layout" : "TABLE_24COL"
               },
               "allowEmpty" : false,
-              "emptyCaption" : false,
-              "hidden" : false,
-              "inputTipClosable" : false,
-              "showCaption" : true
-            }, {
-              "caption" : "结束日期",
-              "codeName" : "end",
-              "dataType" : 5,
-              "detailStyle" : "DEFAULT",
-              "detailType" : "FORMITEM",
-              "enableCond" : 3,
-              "ignoreInput" : 0,
-              "itemWidth" : 200.0,
-              "labelPos" : "LEFT",
-              "labelWidth" : 100,
-              "name" : "end",
-              "noPrivDisplayMode" : 1,
-              "getPSAppDEField" : {
-                "name" : "END",
-                "codeName" : "End"
-              },
-              "getPSEditor" : {
-                "dateTimeFormat" : "YYYY-MM-DD",
-                "editorParams" : {
-                  "TIMEFMT" : "YYYY-MM-DD"
-                },
-                "editorType" : "DATEPICKEREX_NOTIME",
-                "editorWidth" : 100.0,
-                "name" : "end"
-              },
-              "getPSLayoutPos" : {
-                "colLG" : 12,
-                "colMD" : 12,
-                "layout" : "TABLE_24COL"
-              },
-              "allowEmpty" : false,
+              "compositeItem" : true,
               "emptyCaption" : false,
               "hidden" : false,
               "inputTipClosable" : false,
