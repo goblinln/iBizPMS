@@ -278,6 +278,15 @@
       }
     }
   }
+  margin-bottom: 10px;
+  &::after {
+    content: '';
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    bottom: 6px;
+    background-color: #e3e3ea;
+  }
 }
     .burnout-diagram-interval {
 	.ivu-select-selection{
@@ -468,7 +477,15 @@
 }
     
     .form-group-divider {
-    border: 1px solid break;
+    margin-bottom: 10px;
+    &::after {
+        content: '';
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        bottom: 6px;
+        background-color: #e3e3ea;
+    }
 }
     
     .portlet-title {
