@@ -81,7 +81,7 @@ export class AppFrontAction {
                 const majorKey = (ModelTool.getAppEntityMajorField(
                     this.actionModel.getPSAppDataEntity(),
                 ) as IPSAppDEField)?.codeName.toLowerCase();
-                if(_args[0][key]){
+                if(_args[0]?.[key]){
                     Object.assign(context, { [entityName!]: `%${key}%` });
                 }else{
                     Object.assign(context, { [entityName!]: `%${entityName}%` });
