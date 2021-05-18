@@ -1078,43 +1078,40 @@
       "standardColumnName" : "`BEGIN`"
     } ],
     "getAllPSDEFValueRules" : [ {
-      "codeName" : "BeginRule",
-      "name" : "项目周期不能为空",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condOp" : "ISNOTNULL",
-          "condType" : "SIMPLE",
-          "dEFName" : "BEGIN",
-          "name" : "[常规条件] 值不为空(NotNil)",
-          "ruleInfo" : "『开始日期』不能为空。"
-        } ],
-        "ruleInfo" : "『开始日期』不能为空。"
-      },
-      "getPSDEField" : {
-        "name" : "BEGIN",
-        "codeName" : "Begin"
-      },
-      "ruleInfo" : "『开始日期』不能为空。",
-      "checkDefault" : false,
-      "defaultMode" : false,
-      "enableBackend" : true,
-      "enableFront" : true
-    }, {
       "codeName" : "Default",
       "name" : "默认规则",
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组"
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "比较属性[END]",
+          "getPSDEFVRConditions" : [ {
+            "condOp" : "ISNULL",
+            "condType" : "SIMPLE",
+            "dEFName" : "END",
+            "name" : "属性[END]为空"
+          }, {
+            "condOp" : "LT",
+            "condType" : "SIMPLE",
+            "dEFName" : "BEGIN",
+            "name" : "小于属性[END]",
+            "paramType" : "ENTITYFIELD",
+            "paramValue" : "END",
+            "ruleInfo" : "值不能大于属性[结束日期]"
+          } ],
+          "ruleInfo" : "值不能大于属性[结束日期]",
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "值不能大于属性[结束日期]"
       },
       "getPSDEField" : {
         "name" : "BEGIN",
         "codeName" : "Begin"
       },
-      "ruleInfo" : "默认规则",
+      "ruleInfo" : "值不能大于属性[结束日期]",
       "checkDefault" : true,
       "defaultMode" : true,
       "enableBackend" : true,
@@ -2627,51 +2624,40 @@
       "standardColumnName" : "`END`"
     } ],
     "getAllPSDEFValueRules" : [ {
-      "codeName" : "EndRule",
-      "name" : "『截止日期』不能为空",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condOp" : "AND",
-          "condType" : "GROUP",
-          "name" : "[条件组]AND",
-          "getPSDEFVRConditions" : [ {
-            "condOp" : "GTANDEQ",
-            "condType" : "SIMPLE",
-            "dEFName" : "END",
-            "name" : "[常规条件] 大于等于(>=) 数据对象属性(BEGIN)",
-            "paramType" : "ENTITYFIELD",
-            "paramValue" : "BEGIN",
-            "ruleInfo" : "截止日期应该大于起始日期"
-          } ],
-          "ruleInfo" : "截止日期应该大于起始日期"
-        } ],
-        "ruleInfo" : "截止日期应该大于起始日期"
-      },
-      "getPSDEField" : {
-        "name" : "END",
-        "codeName" : "End"
-      },
-      "ruleInfo" : "『截止日期』不能为空。",
-      "checkDefault" : false,
-      "defaultMode" : false,
-      "enableBackend" : true,
-      "enableFront" : true
-    }, {
       "codeName" : "Default",
       "name" : "默认规则",
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组"
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "比较属性[BEGIN]",
+          "getPSDEFVRConditions" : [ {
+            "condOp" : "ISNULL",
+            "condType" : "SIMPLE",
+            "dEFName" : "BEGIN",
+            "name" : "属性[BEGIN]为空"
+          }, {
+            "condOp" : "GT",
+            "condType" : "SIMPLE",
+            "dEFName" : "END",
+            "name" : "大于属性[BEGIN]",
+            "paramType" : "ENTITYFIELD",
+            "paramValue" : "BEGIN",
+            "ruleInfo" : "值不能小于属性[开始时间]"
+          } ],
+          "ruleInfo" : "值不能小于属性[开始时间]",
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "值不能小于属性[开始时间]"
       },
       "getPSDEField" : {
         "name" : "END",
         "codeName" : "End"
       },
-      "ruleInfo" : "默认规则",
+      "ruleInfo" : "值不能小于属性[开始时间]",
       "checkDefault" : true,
       "defaultMode" : true,
       "enableBackend" : true,
@@ -4148,38 +4134,6 @@
       "valueAutoGen" : true
     } ],
     "getAllPSDEFValueRules" : [ {
-      "codeName" : "DaysRule",
-      "name" : "可用工作日要大于0",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condOp" : "AND",
-          "condType" : "GROUP",
-          "name" : "[条件组]AND",
-          "getPSDEFVRConditions" : [ {
-            "condOp" : "GT",
-            "condType" : "SIMPLE",
-            "dEFName" : "DAYS",
-            "name" : "[常规条件] 大于(>) (0)",
-            "paramValue" : "0",
-            "ruleInfo" : "可用工作日大于0"
-          } ],
-          "ruleInfo" : "可用工作日大于0"
-        } ],
-        "ruleInfo" : "可用工作日大于0"
-      },
-      "getPSDEField" : {
-        "name" : "DAYS",
-        "codeName" : "Days"
-      },
-      "ruleInfo" : "可用工作日大于0",
-      "checkDefault" : false,
-      "defaultMode" : false,
-      "enableBackend" : true,
-      "enableFront" : true
-    }, {
       "codeName" : "Default",
       "name" : "默认规则",
       "getPSDEFVRGroupCondition" : {
