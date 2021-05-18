@@ -391,7 +391,7 @@
       "name" : "ISLEAF",
       "codeName" : "IsLeaf"
     },
-    "maxSize" : -1,
+    "maxSize" : 50,
     "name" : "根任务",
     "nodeType" : "Tasks",
     "getPSAppDEDataSet" : {
