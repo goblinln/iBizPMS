@@ -46598,7 +46598,7 @@
     "nullable":1,
     "physical_field":0,
     "data_type":"BIGINT",
-    "expression":"CAST(case when t1.`status` = 'wait' then CONCAT_WS('',60,LPAD(t1.id,12,0)) when t1.`status` = 'doing' then  CONCAT_WS('',50,LPAD(t1.id,12,0)) when  t1.`status` = 'done' then  CONCAT_WS('',40,LPAD(t1.id,12,0)) when  t1.`status` = 'closed' then  CONCAT_WS('',30,LPAD(t1.id,12,0)) when  t1.`status` = 'cancel' then  CONCAT_WS('',20,LPAD(t1.id,12,0))  else  CONCAT_WS('',10,LPAD(t1.id,12,0)) end AS SIGNED)",
+    "expression":"case when t1.`status` = 'wait' then CONCAT_WS('',60,LPAD(t1.id,12,0)) when t1.`status` = 'doing' then  CONCAT_WS('',50,LPAD(t1.id,12,0)) when  t1.`status` = 'done' then  CONCAT_WS('',40,LPAD(t1.id,12,0)) when  t1.`status` = 'closed' then  CONCAT_WS('',30,LPAD(t1.id,12,0)) when  t1.`status` = 'cancel' then  CONCAT_WS('',20,LPAD(t1.id,12,0))  else  CONCAT_WS('',10,LPAD(t1.id,12,0)) end",
     "key_field":0,
     "show_order":1000,
     "major_field":0
