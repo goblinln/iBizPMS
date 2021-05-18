@@ -718,7 +718,7 @@
 
 
     <!--输出实体[ZT_DOCLIB]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_doclib-30-20">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_doclib-32-20">
         <createTable tableName="zt_doclib">
                 <column name="TYPE" remarks="" type="VARCHAR(30)">
                 </column>
@@ -980,7 +980,7 @@
 
 
     <!--输出实体[ZT_FILE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_file-25-28">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_file-26-28">
         <createTable tableName="zt_file">
                 <column name="PATHNAME" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2412,7 +2412,7 @@
 
 
     <!--输出实体[IBZ_PRODUCTLIFE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibz_productlife-1-84">
+    <changeSet author="a_A_23e8aa361" id="tab-ibz_productlife-5-84">
         <createTable tableName="T_IBZ_PRODUCTLIFE">
                 <column name="BRANCH" remarks="" type="VARCHAR(8)">
                 </column>
@@ -2612,7 +2612,7 @@
 
 
     <!--输出实体[ZT_RELEASE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_release-51-97">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_release-53-97">
         <createTable tableName="zt_release">
                 <column name="STORIES" remarks="" type="TEXT(65535)">
                 </column>

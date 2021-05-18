@@ -257,11 +257,9 @@ public class FileResource {
                 .body(new PageImpl(fileMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@FileRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"附件" } ,notes = "获取动态(根据类型过滤)")
     @RequestMapping(method= RequestMethod.POST , value="/files/fetchtype")
 	public ResponseEntity<List<FileDTO>> fetchtype(@RequestBody FileSearchContext context) {
-        fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchType(context) ;
         List<FileDTO> list = fileMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -271,11 +269,9 @@ public class FileResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@FileRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询动态(根据类型过滤)", tags = {"附件" } ,notes = "查询动态(根据类型过滤)")
     @RequestMapping(method= RequestMethod.POST , value="/files/searchtype")
 	public ResponseEntity<Page<FileDTO>> searchType(@RequestBody FileSearchContext context) {
-        fileRuntime.addAuthorityConditions(context,"READ");
         Page<File> domains = fileService.searchType(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(fileMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

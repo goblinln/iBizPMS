@@ -693,7 +693,7 @@
   } ],
   "codeName" : "TestModule",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestModule.json",
   "enableUIActions" : 15,
   "logicName" : "测试模块",
