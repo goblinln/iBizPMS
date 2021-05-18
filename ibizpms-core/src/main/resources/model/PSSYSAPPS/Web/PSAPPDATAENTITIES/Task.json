@@ -1879,7 +1879,7 @@
     "codeName" : "Statusorder",
     "logicName" : "排序",
     "name" : "STATUSORDER",
-    "stdDataType" : 9
+    "stdDataType" : 1
   }, {
     "codeName" : "Mailtoconact",
     "logicName" : "联系人",

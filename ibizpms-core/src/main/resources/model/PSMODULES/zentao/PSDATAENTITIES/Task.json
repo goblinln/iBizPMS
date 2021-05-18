@@ -4386,11 +4386,11 @@
     } ],
     "codeName" : "Statusorder",
     "dEFType" : 2,
-    "dataType" : "INT",
+    "dataType" : "BIGINT",
     "importOrder" : 1000,
     "logicName" : "排序",
     "name" : "STATUSORDER",
-    "stdDataType" : 9,
+    "stdDataType" : 1,
     "valueFormat" : "%1$s",
     "formulaDEField" : true,
     "phisicalDEField" : false
