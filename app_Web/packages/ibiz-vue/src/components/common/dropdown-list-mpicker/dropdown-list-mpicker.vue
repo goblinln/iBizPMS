@@ -107,6 +107,15 @@ export default class DropDownListMpicker extends Vue {
     @Prop() public placeholder?: string;
 
     /**
+     * 属性类型
+     *
+     * @type {'string' | 'number'}
+     * @memberof DropDownListMpicker
+     */
+    @Prop({ default: 'string' })
+    public valueType!: 'string' | 'number';
+
+    /**
      * 局部上下文导航参数
      * 
      * @type {any}
@@ -254,6 +263,44 @@ export default class DropDownListMpicker extends Vue {
     }
 
     /**
+     * 代码表类型和属性匹配
+     * 
+     * @param {*} items
+     * @memberof DropDownListMpicker
+     */
+    public formatCodeList(items: Array<any>){
+        let matching: boolean = false;
+        this.items = [];
+        try{
+            items.forEach((item: any)=>{
+                const type = this.$util.typeOf(item.value);
+                if(type != this.valueType){
+                    matching = true;
+                    if(type === 'number'){
+                        item.value = item.value.toString();
+                    }else{
+                        if(type == "null") {
+                            this.valueType == "number" ? item.value = 0 : item.value = '';
+                        }else if(item.value.indexOf('.') == -1){
+                            item.value = parseInt(item.value);
+                        }else{
+                            item.value = parseFloat(item.value);
+                        }
+                    }
+                }
+                this.items.push(item);
+            });
+            if(matching){
+                LogUtil.warn(`代码表 ${ this.tag } 值类型和属性类型不匹配，已自动强制转换，请修正代码表值类型和属性类型匹配`);
+            }
+            
+        }catch(error){
+            LogUtil.warn('代码表值类型和属性类型不匹配，自动强制转换异常，请修正代码表值类型和属性类型匹配');
+        }
+        this.handleLevelCodeList(Util.deepCopy(this.items));
+    }
+
+    /**
      * 处理代码表
      * 
      * @memberof DropDownListMpicker
@@ -261,9 +308,8 @@ export default class DropDownListMpicker extends Vue {
     public handleCodeListItems() {
         let arg = this.handlePublicParams();
         if(this.tag && this.codelistType) {
-            this.codeListService.getDataItems({ tag: this.tag, type: this.codelistType,data: this.codeList,context:arg.context,viewparam:arg.viewparams }).then((codelist: any) => {
-                this.items = codelist;
-                this.handleLevelCodeList(Util.deepCopy(this.items));
+            this.codeListService.getDataItems({ tag: this.tag, type: this.codelistType,data: this.codeList,context:arg.context,viewparam:arg.viewparams }).then((codelistItems: Array<any>) => {
+                this.formatCodeList(codelistItems);   
             }).catch((error: any) => {
                 LogUtil.log(`----${this.tag}----${(this.$t('app.commonWords.codeNotExist') as string)}`);
             })

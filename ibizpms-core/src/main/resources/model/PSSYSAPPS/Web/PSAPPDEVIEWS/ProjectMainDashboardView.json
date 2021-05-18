@@ -3352,6 +3352,9 @@
                     "colMD" : 24,
                     "layout" : "TABLE_24COL"
                   },
+                  "getPSSysCss" : {
+                    "cssName" : "main-basic-info-layout"
+                  },
                   "infoGroupMode" : true,
                   "showCaption" : false
                 }, {
