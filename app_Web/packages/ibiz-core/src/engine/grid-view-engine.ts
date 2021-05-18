@@ -75,11 +75,12 @@ export class GridViewEngine extends MDViewEngine {
             this.doEdit(args);
             return;
         }
-        if (Object.is(eventName, 'selectionchange')) {
+        if (Object.is(eventName, 'rowclick') && this.gridRowAllowActive(1)) {
+            this.doEdit(args);
+            return;
+        }
+        if (Object.is(eventName, 'selectiondata')) {
             this.selectionChange(args);
-            if (this.gridRowAllowActive(1)) {
-                this.doEdit(args);
-            }
             return;
         }
         super.MDCtrlEvent(eventName, args);
