@@ -158,6 +158,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         return this.condCache.get('caseStory');
     }
 
+    protected getChildMoreCond() {
+        return this.condCache.get('childMore');
+    }
+
     protected getDefaultCond() {
         return this.condCache.get('default');
     }

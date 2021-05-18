@@ -3502,9 +3502,9 @@
         },
         "srcValueType" : "SRCDLPARAM"
       }, {
-        "name" : "用户全局对象[#{srf.sessioncontext.srfloginname}]",
+        "name" : "用户全局对象[srfloginname]",
         "paramAction" : "SQLPARAM",
-        "srcFieldName" : "#{srf.sessioncontext.srfloginname}",
+        "srcFieldName" : "srfloginname",
         "srcValueType" : "SESSION"
       } ],
       "parallelOutput" : true

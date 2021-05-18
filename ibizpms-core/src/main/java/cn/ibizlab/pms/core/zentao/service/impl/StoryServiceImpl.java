@@ -982,6 +982,9 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     public List<Story> selectCaseStory(StorySearchContext context){
         return baseMapper.selectCaseStory(context, context.getSelectCond());
     }
+    public List<Story> selectChildMore(StorySearchContext context){
+        return baseMapper.selectChildMore(context, context.getSelectCond());
+    }
     public List<Story> selectDefault(StorySearchContext context){
         return baseMapper.selectDefault(context, context.getSelectCond());
     }

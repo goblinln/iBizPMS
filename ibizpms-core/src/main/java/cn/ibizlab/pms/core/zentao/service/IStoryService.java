@@ -127,6 +127,7 @@ public interface IStoryService extends IService<Story> {
     List<Story> selectBuildStories(StorySearchContext context);
     List<Story> selectByModule(StorySearchContext context);
     List<Story> selectCaseStory(StorySearchContext context);
+    List<Story> selectChildMore(StorySearchContext context);
     List<Story> selectDefault(StorySearchContext context);
     List<Story> selectESBulk(StorySearchContext context);
     List<Story> selectGetProductStories(StorySearchContext context);
