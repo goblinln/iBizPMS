@@ -652,6 +652,9 @@
           "enableCond" : 3,
           "ignoreInput" : 0,
           "itemWidth" : 130.0,
+          "getLabelPSSysCss" : {
+            "cssName" : "hidden-star"
+          },
           "labelPos" : "LEFT",
           "labelWidth" : 30,
           "name" : "end",

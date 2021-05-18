@@ -1348,6 +1348,12 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("Save And Close Window",null),
 			},
 		},
+		reviewviewtoolbar_toolbar: {
+			'deuiaction1': {
+				caption: commonLogic.appcommonhandle("Save And Close",null),
+				tip: commonLogic.appcommonhandle("Save And Close Window",null),
+			},
+		},
 		editviewtoolbar_toolbar: {
 			'deuiaction1': {
 				caption: commonLogic.appcommonhandle("Save And Close",null),
