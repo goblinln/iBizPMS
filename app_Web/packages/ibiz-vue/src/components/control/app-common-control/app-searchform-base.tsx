@@ -570,7 +570,6 @@ export class AppSearchFormBase extends SearchFormControlBase {
                             <poptip
                                 ref="propip"
                                 trigger="hover"
-                                transfer
                                 placement="top-end"
                                 title="存储自定义查询"
                                 popper-class="searchform-poptip"
