@@ -278,7 +278,7 @@ public class StoryExService extends StoryServiceImpl {
 
         Map<Long, String> stages = new HashMap<>();
 
-        if (hasBranch && (et.getPlan() != null || !"".equals(et.getPlan()))) {
+        if (hasBranch && (et.getPlan() != null && !"".equals(et.getPlan()))) {
             String planSql = String.format("select DISTINCT branch from zt_productplan where FIND_IN_SET(id, %1$s) ", et.getPlan());
             List<JSONObject> planList = this.select(planSql, null);
             for (JSONObject jsonObject : planList) {
@@ -1256,16 +1256,14 @@ public class StoryExService extends StoryServiceImpl {
      */
     @Override
     public Page<Story> searchParentDefault(StorySearchContext context) {
-        context.setN_parent_gtandeq(0L);
         Page<Story> page = super.searchParentDefault(context);
         for (Story story : page.getContent()) {
             if (story.getParent() < 0) {
                 StorySearchContext context1 = new StorySearchContext();
                 context1.setSelectCond(context.getSelectCond().clone());
-                context1.setN_parent_eq(story.getId());
-                context1.setN_parent_gtandeq(null);
-                List<Story> storyList = this.searchStoryChild(context1).getContent();
-                story.set("item",storyList);
+                context1.set("parent",story.getId());
+                List<Story> storyList = this.searchChildMore(context1).getContent();
+                story.set("items",storyList);
             }
         }
         return page;
