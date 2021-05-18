@@ -159,6 +159,12 @@
         "id" : "TaskTypes"
       },
       "name" : "默认根节点 - 任务类型",
+      "getPSNavigateParams" : [ {
+        "key" : "size",
+        "name" : "size",
+        "value" : "20",
+        "rawValue" : true
+      } ],
       "getParentPSDETreeNode" : {
         "modelref" : true,
         "id" : "ROOT"
