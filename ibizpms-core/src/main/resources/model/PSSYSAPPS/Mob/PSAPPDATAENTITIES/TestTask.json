@@ -1882,7 +1882,7 @@
   } ],
   "codeName" : "TestTask",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json",
   "enableUIActions" : 15,
   "logicName" : "测试版本",

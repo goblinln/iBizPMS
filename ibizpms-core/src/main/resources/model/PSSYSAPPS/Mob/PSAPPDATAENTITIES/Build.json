@@ -1193,7 +1193,7 @@
   } ],
   "codeName" : "Build",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Build.json",
   "enableUIActions" : 15,
   "logicName" : "版本",

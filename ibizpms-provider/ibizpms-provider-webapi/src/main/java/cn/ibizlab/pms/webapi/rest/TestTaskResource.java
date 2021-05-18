@@ -263,7 +263,6 @@ public class TestTaskResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"测试版本" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testtasks/fetchdefault")
 	public ResponseEntity<List<TestTaskDTO>> fetchdefault(@RequestBody TestTaskSearchContext context) {
-        testtaskRuntime.addAuthorityConditions(context,"READ");
         Page<TestTask> domains = testtaskService.searchDefault(context) ;
         List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -277,7 +276,6 @@ public class TestTaskResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"测试版本" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/testtasks/searchdefault")
 	public ResponseEntity<Page<TestTaskDTO>> searchDefault(@RequestBody TestTaskSearchContext context) {
-        testtaskRuntime.addAuthorityConditions(context,"READ");
         Page<TestTask> domains = testtaskService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -287,7 +285,6 @@ public class TestTaskResource {
 	@ApiOperation(value = "获取我的测试单", tags = {"测试版本" } ,notes = "获取我的测试单")
     @RequestMapping(method= RequestMethod.POST , value="/testtasks/fetchmytesttaskpc")
 	public ResponseEntity<List<TestTaskDTO>> fetchmytesttaskpc(@RequestBody TestTaskSearchContext context) {
-        testtaskRuntime.addAuthorityConditions(context,"READ");
         Page<TestTask> domains = testtaskService.searchMyTestTaskPc(context) ;
         List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -301,7 +298,6 @@ public class TestTaskResource {
 	@ApiOperation(value = "查询我的测试单", tags = {"测试版本" } ,notes = "查询我的测试单")
     @RequestMapping(method= RequestMethod.POST , value="/testtasks/searchmytesttaskpc")
 	public ResponseEntity<Page<TestTaskDTO>> searchMyTestTaskPc(@RequestBody TestTaskSearchContext context) {
-        testtaskRuntime.addAuthorityConditions(context,"READ");
         Page<TestTask> domains = testtaskService.searchMyTestTaskPc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -315,7 +311,7 @@ public class TestTaskResource {
         testtaskdto = testtaskMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(testtaskdto);
     }
-    @PreAuthorize("@TestTaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品建立测试版本", tags = {"测试版本" },  notes = "根据产品建立测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks")
     public ResponseEntity<TestTaskDTO> createByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -326,7 +322,7 @@ public class TestTaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TestTaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品批量建立测试版本", tags = {"测试版本" },  notes = "根据产品批量建立测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/testtasks/batch")
     public ResponseEntity<Boolean> createBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestTaskDTO> testtaskdtos) {
@@ -338,7 +334,7 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'UPDATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品更新测试版本", tags = {"测试版本" },  notes = "根据产品更新测试版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> updateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -350,7 +346,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TestTaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
     @ApiOperation(value = "根据产品批量更新测试版本", tags = {"测试版本" },  notes = "根据产品批量更新测试版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/testtasks/batch")
     public ResponseEntity<Boolean> updateBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<TestTaskDTO> testtaskdtos) {
@@ -362,14 +358,14 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'DELETE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
     @ApiOperation(value = "根据产品删除测试版本", tags = {"测试版本" },  notes = "根据产品删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testtasks/{testtask_id}")
     public ResponseEntity<Boolean> removeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(testtaskService.remove(testtask_id));
     }
 
-    @PreAuthorize("@TestTaskRuntime.quickTest('DELETE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
     @ApiOperation(value = "根据产品批量删除测试版本", tags = {"测试版本" },  notes = "根据产品批量删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/testtasks/batch")
     public ResponseEntity<Boolean> removeBatchByProduct(@RequestBody List<Long> ids) {
@@ -377,7 +373,7 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
     @ApiOperation(value = "根据产品获取测试版本", tags = {"测试版本" },  notes = "根据产品获取测试版本")
 	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> getByProduct(@PathVariable("product_id") Long product_id, @PathVariable("testtask_id") Long testtask_id) {
@@ -532,12 +528,11 @@ public class TestTaskResource {
         boolean result = testtaskService.unlinkCaseBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TestTaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取DEFAULT", tags = {"测试版本" } ,notes = "根据产品获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/fetchdefault")
 	public ResponseEntity<List<TestTaskDTO>> fetchTestTaskDefaultByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestTaskSearchContext context) {
         context.setN_product_eq(product_id);
-        testtaskRuntime.addAuthorityConditions(context,"READ");
         Page<TestTask> domains = testtaskService.searchDefault(context) ;
         List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -547,22 +542,20 @@ public class TestTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TestTaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品查询DEFAULT", tags = {"测试版本" } ,notes = "根据产品查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/searchdefault")
 	public ResponseEntity<Page<TestTaskDTO>> searchTestTaskDefaultByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestTaskSearchContext context) {
         context.setN_product_eq(product_id);
-        testtaskRuntime.addAuthorityConditions(context,"READ");
         Page<TestTask> domains = testtaskService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TestTaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品获取我的测试单", tags = {"测试版本" } ,notes = "根据产品获取我的测试单")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/fetchmytesttaskpc")
 	public ResponseEntity<List<TestTaskDTO>> fetchTestTaskMyTestTaskPcByProduct(@PathVariable("product_id") Long product_id,@RequestBody TestTaskSearchContext context) {
         context.setN_product_eq(product_id);
-        testtaskRuntime.addAuthorityConditions(context,"READ");
         Page<TestTask> domains = testtaskService.searchMyTestTaskPc(context) ;
         List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -572,17 +565,16 @@ public class TestTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TestTaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
 	@ApiOperation(value = "根据产品查询我的测试单", tags = {"测试版本" } ,notes = "根据产品查询我的测试单")
     @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/testtasks/searchmytesttaskpc")
 	public ResponseEntity<Page<TestTaskDTO>> searchTestTaskMyTestTaskPcByProduct(@PathVariable("product_id") Long product_id, @RequestBody TestTaskSearchContext context) {
         context.setN_product_eq(product_id);
-        testtaskRuntime.addAuthorityConditions(context,"READ");
         Page<TestTask> domains = testtaskService.searchMyTestTaskPc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TestTaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目建立测试版本", tags = {"测试版本" },  notes = "根据项目建立测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks")
     public ResponseEntity<TestTaskDTO> createByProject(@PathVariable("project_id") Long project_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -593,7 +585,7 @@ public class TestTaskResource {
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TestTaskRuntime.quickTest('CREATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目批量建立测试版本", tags = {"测试版本" },  notes = "根据项目批量建立测试版本")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/testtasks/batch")
     public ResponseEntity<Boolean> createBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<TestTaskDTO> testtaskdtos) {
@@ -605,7 +597,7 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'UPDATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目更新测试版本", tags = {"测试版本" },  notes = "根据项目更新测试版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> updateByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id, @RequestBody TestTaskDTO testtaskdto) {
@@ -617,7 +609,7 @@ public class TestTaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @PreAuthorize("@TestTaskRuntime.quickTest('UPDATE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
     @ApiOperation(value = "根据项目批量更新测试版本", tags = {"测试版本" },  notes = "根据项目批量更新测试版本")
 	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/testtasks/batch")
     public ResponseEntity<Boolean> updateBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<TestTaskDTO> testtaskdtos) {
@@ -629,14 +621,14 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'DELETE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
     @ApiOperation(value = "根据项目删除测试版本", tags = {"测试版本" },  notes = "根据项目删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testtasks/{testtask_id}")
     public ResponseEntity<Boolean> removeByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id) {
 		return ResponseEntity.status(HttpStatus.OK).body(testtaskService.remove(testtask_id));
     }
 
-    @PreAuthorize("@TestTaskRuntime.quickTest('DELETE')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
     @ApiOperation(value = "根据项目批量删除测试版本", tags = {"测试版本" },  notes = "根据项目批量删除测试版本")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/testtasks/batch")
     public ResponseEntity<Boolean> removeBatchByProject(@RequestBody List<Long> ids) {
@@ -644,7 +636,7 @@ public class TestTaskResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@TestTaskRuntime.test(#testtask_id,'READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
     @ApiOperation(value = "根据项目获取测试版本", tags = {"测试版本" },  notes = "根据项目获取测试版本")
 	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/testtasks/{testtask_id}")
     public ResponseEntity<TestTaskDTO> getByProject(@PathVariable("project_id") Long project_id, @PathVariable("testtask_id") Long testtask_id) {
@@ -799,12 +791,11 @@ public class TestTaskResource {
         boolean result = testtaskService.unlinkCaseBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@TestTaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取DEFAULT", tags = {"测试版本" } ,notes = "根据项目获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/fetchdefault")
 	public ResponseEntity<List<TestTaskDTO>> fetchTestTaskDefaultByProject(@PathVariable("project_id") Long project_id,@RequestBody TestTaskSearchContext context) {
         context.setN_project_eq(project_id);
-        testtaskRuntime.addAuthorityConditions(context,"READ");
         Page<TestTask> domains = testtaskService.searchDefault(context) ;
         List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -814,22 +805,20 @@ public class TestTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TestTaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询DEFAULT", tags = {"测试版本" } ,notes = "根据项目查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/searchdefault")
 	public ResponseEntity<Page<TestTaskDTO>> searchTestTaskDefaultByProject(@PathVariable("project_id") Long project_id, @RequestBody TestTaskSearchContext context) {
         context.setN_project_eq(project_id);
-        testtaskRuntime.addAuthorityConditions(context,"READ");
         Page<TestTask> domains = testtaskService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
-    @PreAuthorize("@TestTaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目获取我的测试单", tags = {"测试版本" } ,notes = "根据项目获取我的测试单")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/fetchmytesttaskpc")
 	public ResponseEntity<List<TestTaskDTO>> fetchTestTaskMyTestTaskPcByProject(@PathVariable("project_id") Long project_id,@RequestBody TestTaskSearchContext context) {
         context.setN_project_eq(project_id);
-        testtaskRuntime.addAuthorityConditions(context,"READ");
         Page<TestTask> domains = testtaskService.searchMyTestTaskPc(context) ;
         List<TestTaskDTO> list = testtaskMapping.toDto(domains.getContent());
 	    return ResponseEntity.status(HttpStatus.OK)
@@ -839,12 +828,11 @@ public class TestTaskResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@TestTaskRuntime.quickTest('READ')")
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
 	@ApiOperation(value = "根据项目查询我的测试单", tags = {"测试版本" } ,notes = "根据项目查询我的测试单")
     @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/testtasks/searchmytesttaskpc")
 	public ResponseEntity<Page<TestTaskDTO>> searchTestTaskMyTestTaskPcByProject(@PathVariable("project_id") Long project_id, @RequestBody TestTaskSearchContext context) {
         context.setN_project_eq(project_id);
-        testtaskRuntime.addAuthorityConditions(context,"READ");
         Page<TestTask> domains = testtaskService.searchMyTestTaskPc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(testtaskMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

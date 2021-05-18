@@ -1662,7 +1662,7 @@
   } ],
   "codeName" : "Doc",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json",
   "enableUIActions" : 15,
   "logicName" : "文档",

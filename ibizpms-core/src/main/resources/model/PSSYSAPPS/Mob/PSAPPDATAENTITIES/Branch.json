@@ -549,7 +549,7 @@
   } ],
   "codeName" : "Branch",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Branch.json",
   "enableUIActions" : 15,
   "logicName" : "产品的分支和平台信息",

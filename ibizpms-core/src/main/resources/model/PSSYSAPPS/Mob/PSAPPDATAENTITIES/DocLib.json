@@ -1189,7 +1189,7 @@
   } ],
   "codeName" : "DocLib",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/DocLib.json",
   "enableUIActions" : 15,
   "logicName" : "文档库",
