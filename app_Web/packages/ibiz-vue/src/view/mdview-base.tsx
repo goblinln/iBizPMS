@@ -310,21 +310,41 @@ export class MDViewBase extends MainViewBase {
             return;
         }
         if(this.viewInstance?.viewStyle != 'STYLE2'){
-            let enableFilter = this.viewInstance?.enableFilter == true;
-            const popoverClass: string = this.searchFormInstance ? 'searchform-popover' : this.searchBarInstance ? 'searchbar-popover' : '';
-            return  <template slot="quickSearch">
-                <i-input class={{'app-quick-search': true, 'width-filter': enableFilter}} style='max-width: 400px;margin-top:4px;padding-left: 24px' search on-on-search={($event: any) => this.onSearch($event)} v-model={this.query} placeholder={this.placeholder} />
-                {enableFilter && <el-popover placement="bottom" popper-class={popoverClass} trigger="click" visible-arrow={false} on-hide={() => this.isExpandSearchForm = !this.isExpandSearchForm}>
-                    <i-button slot="reference" class="filter" icon="ios-funnel" on-click={(e:any)=>{
-                        if (!this.isExpandSearchForm) {
-                            (AppGlobalService.getInstance() as any).executeGlobalAction('ToggleFilter',undefined, undefined, undefined, e, undefined, this, undefined, );
-                        }}} />
-                    {popoverClass && popoverClass != '' ? popoverClass == 'searchform-popover' ? this.renderSearchForm() : this.renderSearchBar() : null}
-                </el-popover>}
-            </template>
+            return this.renderDefaultQuickSearch();
         }else{
-            return <i-input slot="quickSearch" className='app-quick-search' style='max-width: 400px;margin-top:6px;padding-left: 24px' search enter-button on-on-search={($event: any) => this.onSearch($event)} v-model={this.query} placeholder={this.placeholder} />
+            return this.renderStyle2QuickSearch();
         }
+    }
+
+    /**
+     * 渲染快速搜索(DEFAULT)
+     *
+     * @return {*} 
+     * @memberof MDViewBase
+     */
+    public renderDefaultQuickSearch(){
+        let enableFilter = this.viewInstance?.enableFilter == true;
+        const popoverClass: string = this.searchFormInstance ? 'searchform-popover' : this.searchBarInstance ? 'searchbar-popover' : '';
+        return  <template slot="quickSearch">
+            <i-input class={{'app-quick-search': true, 'width-filter': enableFilter}} style='max-width: 400px;margin-top:4px;padding-left: 24px' search on-on-search={($event: any) => this.onSearch($event)} v-model={this.query} placeholder={this.placeholder} />
+            {enableFilter && <el-popover placement="bottom" popper-class={popoverClass} trigger="click" visible-arrow={false} on-hide={() => this.isExpandSearchForm = !this.isExpandSearchForm}>
+                <i-button slot="reference" class="filter" icon="ios-funnel" on-click={(e:any)=>{
+                    if (!this.isExpandSearchForm) {
+                        (AppGlobalService.getInstance() as any).executeGlobalAction('ToggleFilter',undefined, undefined, undefined, e, undefined, this, undefined, );
+                    }}} />
+                {popoverClass && popoverClass != '' ? popoverClass == 'searchform-popover' ? this.renderSearchForm() : this.renderSearchBar() : null}
+            </el-popover>}
+        </template>
+    }
+
+    /**
+     * 渲染快速搜索(STYLE2)
+     *
+     * @return {*} 
+     * @memberof MDViewBase
+     */
+    public renderStyle2QuickSearch(){
+        return <i-input slot="quickSearch" className='app-quick-search' style='max-width: 400px;margin-top:6px;padding-left: 24px' search enter-button on-on-search={($event: any) => this.onSearch($event)} v-model={this.query} placeholder={this.placeholder} />
     }
 
     /**

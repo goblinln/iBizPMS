@@ -415,7 +415,7 @@ export class AppMenuControlBase extends ControlBase {
         let _this: any = this;
         if(_this.$store.getters['authresource/getEnablePermissionValid']){
             this.computedEffectiveMenus(inputMenus);
-            this.computeParentMenus(inputMenus);
+            // this.computeParentMenus(inputMenus);
         }
         this.dataProcess(inputMenus);
         this.menus = inputMenus;
@@ -439,36 +439,36 @@ export class AppMenuControlBase extends ControlBase {
         })
     }
 
-    /**
-     * 计算父项菜单项是否隐藏
-     *
-     * @param {*} inputMenus
-     * @memberof AppMenuControlBase
-     */
-    public computeParentMenus(inputMenus:Array<any>){
-        if(inputMenus && inputMenus.length >0){
-            inputMenus.forEach((item:any) =>{
-                if(item.hidden && item.getPSAppMenuItems && item.getPSAppMenuItems.length >0){
-                    item.getPSAppMenuItems.map((singleItem:any) =>{
-                        if(!singleItem.hidden){
-                            item.hidden = false;
-                        }else{
-                            if(singleItem.getPSAppMenuItems && singleItem.getPSAppMenuItems.length >0){
-                                singleItem.getPSAppMenuItems.map((grandsonItem:any) =>{
-                                    if(!grandsonItem.hidden){
-                                        item.hidden = false;
-                                    }
-                                })
-                            }
-                        }
-                        if(item.getPSAppMenuItems && item.getPSAppMenuItems.length >0){
-                            this.computeParentMenus(item.getPSAppMenuItems);
-                        }
-                    })
-                }
-            })
-        }
-    }
+    // /**
+    //  * 计算父项菜单项是否隐藏
+    //  *
+    //  * @param {*} inputMenus
+    //  * @memberof AppMenuControlBase
+    //  */
+    // public computeParentMenus(inputMenus:Array<any>){
+    //     if(inputMenus && inputMenus.length >0){
+    //         inputMenus.forEach((item:any) =>{
+    //             if(item.hidden && item.getPSAppMenuItems && item.getPSAppMenuItems.length >0){
+    //                 item.getPSAppMenuItems.map((singleItem:any) =>{
+    //                     if(!singleItem.hidden){
+    //                         item.hidden = false;
+    //                     }else{
+    //                         if(singleItem.getPSAppMenuItems && singleItem.getPSAppMenuItems.length >0){
+    //                             singleItem.getPSAppMenuItems.map((grandsonItem:any) =>{
+    //                                 if(!grandsonItem.hidden){
+    //                                     item.hidden = false;
+    //                                 }
+    //                             })
+    //                         }
+    //                     }
+    //                     if(item.getPSAppMenuItems && item.getPSAppMenuItems.length >0){
+    //                         this.computeParentMenus(item.getPSAppMenuItems);
+    //                     }
+    //                 })
+    //             }
+    //         })
+    //     }
+    // }
 
     /**
      * 数据处理

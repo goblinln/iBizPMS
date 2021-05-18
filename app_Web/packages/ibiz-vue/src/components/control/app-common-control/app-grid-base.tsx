@@ -244,7 +244,18 @@ export class AppGridBase extends GridControlBase {
     public renderUAColumn(column: IPSDEGridUAColumn) {
         if(this.viewStyle == 'STYLE2'){
             return this.renderStyle2UAColumn(column)
+        }else{
+            return this.renderDefaultUAColumn(column);
         }
+    }
+
+    /**
+     * 绘制DEFAULT的操作列
+     *
+     * @param {any} column 表格列实例
+     * @memberof AppGridBase
+     */
+    public renderDefaultUAColumn(column: IPSDEGridUAColumn) {
         const { name, caption, align, width, widthUnit } = column;
         //参数
         let renderParams: any = {

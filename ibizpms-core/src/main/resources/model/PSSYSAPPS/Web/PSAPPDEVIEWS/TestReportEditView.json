@@ -651,12 +651,12 @@
           "detailType" : "FORMITEM",
           "enableCond" : 3,
           "ignoreInput" : 0,
-          "itemWidth" : 130.0,
+          "itemWidth" : 122.0,
           "getLabelPSSysCss" : {
             "cssName" : "hidden-star"
           },
           "labelPos" : "LEFT",
-          "labelWidth" : 30,
+          "labelWidth" : 22,
           "name" : "end",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
