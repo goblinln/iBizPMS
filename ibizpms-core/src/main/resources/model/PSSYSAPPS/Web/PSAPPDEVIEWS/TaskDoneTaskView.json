@@ -303,6 +303,7 @@
     }, {
       "id" : "finisheddate",
       "dataType" : 5,
+      "updateDVT" : "CURTIME",
       "getPSAppDEField" : {
         "name" : "FINISHEDDATE",
         "codeName" : "FinishedDate"
@@ -824,6 +825,7 @@
             "colMD" : 24,
             "layout" : "TABLE_24COL"
           },
+          "updateDVT" : "CURTIME",
           "allowEmpty" : true,
           "emptyCaption" : false,
           "hidden" : false,
