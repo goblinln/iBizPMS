@@ -47,46 +47,6 @@
       "name" : "days"
     } ]
   } ],
-  "getPSDEFormItemVRs" : [ {
-    "checkMode" : 1,
-    "name" : "表单项值规则",
-    "getPSDEFValueRule" : {
-      "codeName" : "EndRule",
-      "name" : "『截止日期』不能为空",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组",
-        "getPSDEFVRConditions" : [ {
-          "condOp" : "AND",
-          "condType" : "GROUP",
-          "name" : "[条件组]AND",
-          "getPSDEFVRConditions" : [ {
-            "condOp" : "GTANDEQ",
-            "condType" : "SIMPLE",
-            "dEFName" : "END",
-            "name" : "[常规条件] 大于等于(>=) 数据对象属性(BEGIN)",
-            "paramType" : "ENTITYFIELD",
-            "paramValue" : "BEGIN",
-            "ruleInfo" : "截止日期应该大于起始日期"
-          } ],
-          "ruleInfo" : "截止日期应该大于起始日期"
-        } ],
-        "ruleInfo" : "截止日期应该大于起始日期"
-      },
-      "getPSDEField" : {
-        "name" : "END",
-        "codeName" : "End"
-      },
-      "ruleInfo" : "『截止日期』不能为空。",
-      "checkDefault" : false,
-      "defaultMode" : false,
-      "enableBackend" : true,
-      "enableFront" : true
-    },
-    "getPSDEFormItemName" : "end",
-    "valueRuleType" : "DEFVALUERULE"
-  } ],
   "getPSDEFormItems" : [ {
     "id" : "srforikey",
     "hidden" : true,

@@ -59,8 +59,8 @@
         "logicName" : "主表格",
         "minorSortDir" : "DESC",
         "getMinorSortPSAppDEField" : {
-          "name" : "ID",
-          "codeName" : "Id"
+          "name" : "STATUSORDER",
+          "codeName" : "Statusorder"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,

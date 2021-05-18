@@ -40,17 +40,17 @@ public class IBZTPSFallback implements IBZTPSFeignClient {
     }
 
     @Override
-    public JSONObject execute(String id, JSONObject params) {
+    public JSONObject execute(Long id, JSONObject params) {
         return null;
     }
 
     @Override
-    public Boolean start(String id) {
+    public Boolean start(Long id) {
         return null;
     }
 
     @Override
-    public Boolean stop(String id) {
+    public Boolean stop(Long id) {
         return null;
     }
     
