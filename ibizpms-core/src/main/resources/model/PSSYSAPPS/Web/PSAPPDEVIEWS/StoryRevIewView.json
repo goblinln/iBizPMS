@@ -278,7 +278,7 @@
     }, {
       "id" : "revieweddate",
       "dataType" : 5,
-      "createDVT" : "CURTIME",
+      "updateDVT" : "CURTIME",
       "getPSAppDEField" : {
         "name" : "REVIEWEDDATE",
         "codeName" : "ReviewedDate"
@@ -432,7 +432,6 @@
           "getPSDEFormDetails" : [ {
             "caption" : "评审时间",
             "codeName" : "revieweddate",
-            "createDVT" : "CURTIME",
             "dataType" : 5,
             "detailStyle" : "DEFAULT",
             "detailType" : "FORMITEM",
@@ -460,6 +459,7 @@
               "colMD" : 24,
               "layout" : "TABLE_24COL"
             },
+            "updateDVT" : "CURTIME",
             "allowEmpty" : true,
             "emptyCaption" : false,
             "hidden" : false,
