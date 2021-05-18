@@ -24,5 +24,5 @@ window.Environment = {
     // 统一登录页
     loginUrl: 'http://ebsx.ibizee.cn/#/login',
     // loginUrl: '',
-    protalUrl: 'http://ebsx.ibizee.cn/',
+    portalUrl: 'http://ebsx.ibizee.cn/',
 }
