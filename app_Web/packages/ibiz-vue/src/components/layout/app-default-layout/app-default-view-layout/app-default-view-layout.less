@@ -1,5 +1,6 @@
 .view-default.view-container {
   position: relative;
+  padding: 0 10px;
   > .view-card {
     > .ivu-card-head{
       padding: 0;
@@ -169,4 +170,19 @@
   width: 100%;
   padding: 0px 12px;
   margin: 0px;
+}
+.view-default {
+  .toolbar-container {
+      .ivu-tooltip {
+          // 徽章样式
+          .el-badge {
+              margin-right: 0;
+          }
+      }
+  }
+  .ivu-tooltip:last-child {
+      button {
+          margin-right: 0;
+      }
+  }
 }
