@@ -866,13 +866,35 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组"
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "比较属性[END]",
+          "getPSDEFVRConditions" : [ {
+            "condOp" : "ISNULL",
+            "condType" : "SIMPLE",
+            "dEFName" : "END",
+            "name" : "属性[END]为空"
+          }, {
+            "condOp" : "LT",
+            "condType" : "SIMPLE",
+            "dEFName" : "BEGIN",
+            "name" : "小于属性[END]",
+            "paramType" : "ENTITYFIELD",
+            "paramValue" : "END",
+            "ruleInfo" : "值不能大于属性[结束时间]"
+          } ],
+          "ruleInfo" : "值不能大于属性[结束时间]",
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "值不能大于属性[结束时间]"
       },
       "getPSDEField" : {
         "name" : "BEGIN",
         "codeName" : "Begin"
       },
-      "ruleInfo" : "默认规则",
+      "ruleInfo" : "值不能大于属性[结束时间]",
       "checkDefault" : true,
       "defaultMode" : true,
       "enableBackend" : true,
@@ -1036,13 +1058,35 @@
       "getPSDEFVRGroupCondition" : {
         "condOp" : "AND",
         "condType" : "GROUP",
-        "name" : "默认组"
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condOp" : "OR",
+          "condType" : "GROUP",
+          "name" : "比较属性[BEGIN]",
+          "getPSDEFVRConditions" : [ {
+            "condOp" : "ISNULL",
+            "condType" : "SIMPLE",
+            "dEFName" : "BEGIN",
+            "name" : "属性[BEGIN]为空"
+          }, {
+            "condOp" : "GT",
+            "condType" : "SIMPLE",
+            "dEFName" : "END",
+            "name" : "大于属性[BEGIN]",
+            "paramType" : "ENTITYFIELD",
+            "paramValue" : "BEGIN",
+            "ruleInfo" : "值不能小于属性[开始时间]"
+          } ],
+          "ruleInfo" : "值不能小于属性[开始时间]",
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "值不能小于属性[开始时间]"
       },
       "getPSDEField" : {
         "name" : "END",
         "codeName" : "End"
       },
-      "ruleInfo" : "默认规则",
+      "ruleInfo" : "值不能小于属性[开始时间]",
       "checkDefault" : true,
       "defaultMode" : true,
       "enableBackend" : true,
