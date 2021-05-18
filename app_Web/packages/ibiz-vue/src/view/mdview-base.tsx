@@ -328,7 +328,7 @@ export class MDViewBase extends MainViewBase {
         return  <template slot="quickSearch">
             <i-input class={{'app-quick-search': true, 'width-filter': enableFilter}} style='max-width: 400px;margin-top:4px;padding-left: 24px' search on-on-search={($event: any) => this.onSearch($event)} v-model={this.query} placeholder={this.placeholder} />
             {enableFilter && <el-popover placement="bottom" popper-class={popoverClass} trigger="click" visible-arrow={false} on-hide={() => this.isExpandSearchForm = !this.isExpandSearchForm}>
-                <i-button slot="reference" class="filter" icon="ios-funnel" on-click={(e:any)=>{
+                <i-button slot="reference" class={{'filter': true, 'is-expand': this.isExpandSearchForm}} icon="ios-funnel" on-click={(e:any)=>{
                     if (!this.isExpandSearchForm) {
                         (AppGlobalService.getInstance() as any).executeGlobalAction('ToggleFilter',undefined, undefined, undefined, e, undefined, this, undefined, );
                     }}} />

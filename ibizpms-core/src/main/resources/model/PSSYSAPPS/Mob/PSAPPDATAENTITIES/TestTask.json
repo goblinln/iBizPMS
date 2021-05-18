@@ -39,7 +39,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ZTProduct__CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -55,7 +55,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ZTProduct__UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -87,7 +87,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -103,7 +103,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ZTProduct__CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -232,7 +232,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "builtinMethod" : false
   } ],
@@ -363,7 +363,7 @@
     },
     "getCreatePSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ZTProduct__CREATE"
     },
     "name" : "数据导入",
     "getPSDEDataImportItems" : [ {
@@ -549,7 +549,7 @@
     },
     "getUpdatePSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ZTProduct__UPDATE"
     },
     "default" : false,
     "ignoreError" : false
@@ -563,7 +563,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -579,7 +579,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -833,7 +833,7 @@
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -849,7 +849,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ZTProduct__CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -865,7 +865,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ZTProduct__UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -897,7 +897,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -913,7 +913,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ZTProduct__CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1037,7 +1037,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1053,7 +1053,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1074,7 +1074,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "builtinMethod" : false
   }, {
@@ -1775,11 +1775,65 @@
     "oPPrivAllowMode" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "Project_Create",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDERS/DER1N_ZT_TESTTASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "CREATE",
+    "id" : "ZTProject__CREATE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
+    "logicName" : "Product_Create",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDERS/DER1N_ZT_TESTTASK_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "CREATE",
+    "id" : "ZTProduct__CREATE"
+  }, {
+    "logicName" : "Product_Delete",
+    "mapPSDEOPPrivName" : "DELETE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDERS/DER1N_ZT_TESTTASK_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "DELETE",
+    "id" : "ZTProduct__DELETE"
+  }, {
+    "logicName" : "Project_Delete",
+    "mapPSDEOPPrivName" : "DELETE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDERS/DER1N_ZT_TESTTASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "DELETE",
+    "id" : "ZTProject__DELETE"
+  }, {
     "logicName" : "删除",
     "name" : "DELETE"
+  }, {
+    "logicName" : "Product_Manage",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDERS/DER1N_ZT_TESTTASK_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "MANAGE",
+    "id" : "ZTProduct__MANAGE"
+  }, {
+    "logicName" : "Project_Manage",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDERS/DER1N_ZT_TESTTASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "MANAGE",
+    "id" : "ZTProject__MANAGE"
   }, {
     "logicName" : "管理",
     "name" : "MANAGE"
@@ -1787,12 +1841,48 @@
     "logicName" : "读取",
     "name" : "READ"
   }, {
+    "logicName" : "Product_Read",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDERS/DER1N_ZT_TESTTASK_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "READ",
+    "id" : "ZTProduct__READ"
+  }, {
+    "logicName" : "Project_Read",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDERS/DER1N_ZT_TESTTASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "READ",
+    "id" : "ZTProject__READ"
+  }, {
+    "logicName" : "Project_Update",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDERS/DER1N_ZT_TESTTASK_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "ZTProject__UPDATE"
+  }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  }, {
+    "logicName" : "Product_Update",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask/PSDERS/DER1N_ZT_TESTTASK_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "ZTProduct__UPDATE"
   } ],
   "codeName" : "TestTask",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestTask.json",
   "enableUIActions" : 15,
   "logicName" : "测试版本",

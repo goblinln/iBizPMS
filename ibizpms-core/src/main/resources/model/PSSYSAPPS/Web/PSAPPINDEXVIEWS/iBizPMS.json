@@ -1,6 +1,6 @@
 {
   "accUserMode" : 0,
-  "appSwitchMode" : 0,
+  "appSwitchMode" : 1,
   "caption" : "iBiz软件生产管理",
   "codeName" : "iBizPMS",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPINDEXVIEWS/iBizPMS.json",
@@ -17,7 +17,8 @@
       "itemType" : "MENUITEM",
       "name" : "top_menus",
       "getPSAppMenuItems" : [ {
-        "accUserMode" : 2,
+        "accUserMode" : 4,
+        "accessKey" : "TOP_MYFAVOURITE_MENU",
         "caption" : "我的收藏",
         "itemType" : "MENUITEM",
         "name" : "menuitem12",
@@ -36,7 +37,8 @@
         "tooltip" : "我的收藏",
         "openDefault" : true
       }, {
-        "accUserMode" : 2,
+        "accUserMode" : 4,
+        "accessKey" : "TOP_MYPLACE_MENU",
         "caption" : "我的地盘",
         "itemType" : "MENUITEM",
         "name" : "menuitem9",
@@ -54,8 +56,7 @@
         },
         "tooltip" : "我的地盘"
       }, {
-        "accUserMode" : 4,
-        "accessKey" : "TOP_PRODUCT_MENU",
+        "accUserMode" : 0,
         "caption" : "产品主页",
         "itemType" : "MENUITEM",
         "name" : "menuitem3",
@@ -71,10 +72,10 @@
           "colMD" : 24,
           "layout" : "TABLE_24COL"
         },
-        "tooltip" : "产品主页"
+        "tooltip" : "产品主页",
+        "openDefault" : true
       }, {
-        "accUserMode" : 4,
-        "accessKey" : "TOP_PROJECT_MENU",
+        "accUserMode" : 0,
         "caption" : "项目主页",
         "itemType" : "MENUITEM",
         "name" : "menuitem2",
@@ -92,8 +93,7 @@
         },
         "tooltip" : "项目主页"
       }, {
-        "accUserMode" : 4,
-        "accessKey" : "TOP_CASE_MENU",
+        "accUserMode" : 0,
         "caption" : "测试主页",
         "itemType" : "MENUITEM",
         "name" : "menuitem1",
@@ -612,7 +612,7 @@
   "viewType" : "APPINDEXVIEW",
   "blankMode" : false,
   "defaultPage" : true,
-  "enableAppSwitch" : false,
+  "enableAppSwitch" : true,
   "enableDP" : true,
   "modelid" : "09b9ef8ce803717761b940cf3fd0173f"
 }

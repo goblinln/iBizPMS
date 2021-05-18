@@ -103,7 +103,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "Zt_product__CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -728,7 +728,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "Zt_product__CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1510,8 +1510,62 @@
     "oPPrivAllowMode" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "DocLib_Create",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
+    },
+    "name" : "CREATE",
+    "id" : "Zt_doclib__CREATE"
+  }, {
+    "logicName" : "Project_Create",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "CREATE",
+    "id" : "Zt_project__CREATE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
+  }, {
+    "logicName" : "Product_Create",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "CREATE",
+    "id" : "Zt_product__CREATE"
+  }, {
+    "logicName" : "Product_Delete",
+    "mapPSDEOPPrivName" : "DELETE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "DELETE",
+    "id" : "Zt_product__DELETE"
+  }, {
+    "logicName" : "Project_Delete",
+    "mapPSDEOPPrivName" : "DELETE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "DELETE",
+    "id" : "Zt_project__DELETE"
+  }, {
+    "logicName" : "DocLib_Delete",
+    "mapPSDEOPPrivName" : "DELETE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
+    },
+    "name" : "DELETE",
+    "id" : "Zt_doclib__DELETE"
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
@@ -1519,15 +1573,96 @@
     "logicName" : "管理",
     "name" : "MANAGE"
   }, {
+    "logicName" : "DocLib_Manage",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
+    },
+    "name" : "MANAGE",
+    "id" : "Zt_doclib__MANAGE"
+  }, {
+    "logicName" : "Product_Manage",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "MANAGE",
+    "id" : "Zt_product__MANAGE"
+  }, {
+    "logicName" : "Project_Manage",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "MANAGE",
+    "id" : "Zt_project__MANAGE"
+  }, {
+    "logicName" : "Product_Read",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "READ",
+    "id" : "Zt_product__READ"
+  }, {
+    "logicName" : "Project_Read",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "READ",
+    "id" : "Zt_project__READ"
+  }, {
+    "logicName" : "DocLib_Read",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
+    },
+    "name" : "READ",
+    "id" : "Zt_doclib__READ"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  }, {
+    "logicName" : "Product_Update",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Zt_product__UPDATE"
+  }, {
+    "logicName" : "Project_Update",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Zt_project__UPDATE"
+  }, {
+    "logicName" : "DocLib_Update",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc/PSDERS/DER1N_ZT_DOC_ZT_DOCLIB_LIB.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Zt_doclib__UPDATE"
   } ],
   "codeName" : "Doc",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Doc.json",
   "enableUIActions" : 15,
   "logicName" : "文档",

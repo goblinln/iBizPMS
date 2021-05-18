@@ -127,6 +127,7 @@ public interface IStoryService extends IService<Story> {
     List<Story> selectBuildStories(StorySearchContext context);
     List<Story> selectByModule(StorySearchContext context);
     List<Story> selectCaseStory(StorySearchContext context);
+    List<Story> selectChildMore(StorySearchContext context);
     List<Story> selectDefault(StorySearchContext context);
     List<Story> selectESBulk(StorySearchContext context);
     List<Story> selectGetProductStories(StorySearchContext context);
@@ -155,6 +156,7 @@ public interface IStoryService extends IService<Story> {
     Page<Story> searchBuildStories(StorySearchContext context);
     Page<Story> searchByModule(StorySearchContext context);
     Page<Story> searchCaseStory(StorySearchContext context);
+    Page<Story> searchChildMore(StorySearchContext context);
     Page<Story> searchDefault(StorySearchContext context);
     Page<Story> searchESBulk(StorySearchContext context);
     Page<Story> searchGetProductStories(StorySearchContext context);

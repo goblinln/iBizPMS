@@ -6334,6 +6334,41 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'products/:product?/stories/:story?/views/revieweditview',
+                    meta: {
+                        caption: 'entities.story.views.revieweditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'revieweditview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'stories/:story?/views/revieweditview',
+                    meta: {
+                        caption: 'entities.story.views.revieweditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'stories', parameterName: 'story' },
+                            { pathName: 'views', parameterName: 'revieweditview' },
+                        ],
+                        resource:'story',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'products/:product?/stories/:story?/views/prichartview9',
                     meta: {
                         caption: 'entities.story.views.prichartview9.caption',
@@ -31362,6 +31397,21 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'views', parameterName: 'ibzmonthlymonthlymainmsgeditview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
+                    path: 'views/storyrevieweditview',
+                    meta: {
+                        caption: 'entities.story.views.revieweditview.caption',
+                        info:'',
+                        imgPath: '',
+                        iconCls: 'fa fa-star-o',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'storyrevieweditview' },
                         ],
                         requireAuth: true,
                     },

@@ -22007,7 +22007,7 @@
         },
         "getPSDEOPPriv" : {
           "modelref" : true,
-          "id" : "READ"
+          "id" : "NONE"
         },
         "getPSDEServiceAPIMethod" : {
           "modelref" : true,
@@ -22023,7 +22023,7 @@
         },
         "getPSDEOPPriv" : {
           "modelref" : true,
-          "id" : "READ"
+          "id" : "NONE"
         },
         "getPSDEServiceAPIMethod" : {
           "modelref" : true,
@@ -22055,7 +22055,7 @@
         },
         "getPSDEOPPriv" : {
           "modelref" : true,
-          "id" : "READ"
+          "id" : "NONE"
         },
         "getPSDEServiceAPIMethod" : {
           "modelref" : true,
@@ -22504,7 +22504,7 @@
         },
         "getPSDEOPPriv" : {
           "modelref" : true,
-          "id" : "READ"
+          "id" : "NONE"
         },
         "getPSDEServiceAPIMethod" : {
           "modelref" : true,
@@ -22520,7 +22520,7 @@
         },
         "getPSDEOPPriv" : {
           "modelref" : true,
-          "id" : "READ"
+          "id" : "NONE"
         },
         "getPSDEServiceAPIMethod" : {
           "modelref" : true,
@@ -22552,7 +22552,7 @@
         },
         "getPSDEOPPriv" : {
           "modelref" : true,
-          "id" : "READ"
+          "id" : "NONE"
         },
         "getPSDEServiceAPIMethod" : {
           "modelref" : true,
@@ -22623,17 +22623,62 @@
         "ungroup" : true
       } ],
       "getAllPSDEOPPrivs" : [ {
+        "logicName" : "Project_Create",
+        "mapPSDEOPPrivName" : "CREATE",
+        "getMapPSDER" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DER1N_ZT_ACTION_ZT_PROJECT_PROJECT.json"
+        },
+        "name" : "CREATE",
+        "id" : "Zt_project__CREATE"
+      }, {
         "logicName" : "建立",
         "name" : "CREATE"
+      }, {
+        "logicName" : "Project_Delete",
+        "mapPSDEOPPrivName" : "DELETE",
+        "getMapPSDER" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DER1N_ZT_ACTION_ZT_PROJECT_PROJECT.json"
+        },
+        "name" : "DELETE",
+        "id" : "Zt_project__DELETE"
       }, {
         "logicName" : "删除",
         "name" : "DELETE"
       }, {
+        "logicName" : "Project_Manage",
+        "mapPSDEOPPrivName" : "MANAGE",
+        "getMapPSDER" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DER1N_ZT_ACTION_ZT_PROJECT_PROJECT.json"
+        },
+        "name" : "MANAGE",
+        "id" : "Zt_project__MANAGE"
+      }, {
         "logicName" : "管理",
         "name" : "MANAGE"
       }, {
+        "logicName" : "Project_Read",
+        "mapPSDEOPPrivName" : "READ",
+        "getMapPSDER" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DER1N_ZT_ACTION_ZT_PROJECT_PROJECT.json"
+        },
+        "name" : "READ",
+        "id" : "Zt_project__READ"
+      }, {
         "logicName" : "读取",
         "name" : "READ"
+      }, {
+        "logicName" : "Project_Update",
+        "mapPSDEOPPrivName" : "UPDATE",
+        "getMapPSDER" : {
+          "modelref" : true,
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDERS/DER1N_ZT_ACTION_ZT_PROJECT_PROJECT.json"
+        },
+        "name" : "UPDATE",
+        "id" : "Zt_project__UPDATE"
       }, {
         "logicName" : "更新",
         "name" : "UPDATE"
@@ -26143,6 +26188,13 @@
         "mSTag" : "closed__0",
         "name" : "关闭_未置顶",
         "getPSDEMainStateActions" : [ {
+          "name" : "MobProductTestCounter",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/MobProductTestCounter.json"
+          },
+          "allowMode" : true
+        }, {
           "name" : "Update",
           "getPSDEAction" : {
             "modelref" : true,
@@ -26262,6 +26314,13 @@
             "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Update.json"
           },
           "allowMode" : true
+        }, {
+          "name" : "MobProductTestCounter",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/MobProductTestCounter.json"
+          },
+          "allowMode" : true
         } ],
         "getPSDEMainStateOPPrivs" : [ {
           "name" : "SRFUR__PROD_CLOSED_BUT",
@@ -26352,6 +26411,13 @@
           "getPSDEAction" : {
             "modelref" : true,
             "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/MobProductCounter.json"
+          },
+          "allowMode" : true
+        }, {
+          "name" : "MobProductTestCounter",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/MobProductTestCounter.json"
           },
           "allowMode" : true
         } ],

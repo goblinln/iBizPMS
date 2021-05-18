@@ -16091,17 +16091,62 @@
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
+    "logicName" : "Product_Create",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "CREATE",
+    "id" : "ZTProduct__CREATE"
+  }, {
+    "logicName" : "Product_Delete",
+    "mapPSDEOPPrivName" : "DELETE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "DELETE",
+    "id" : "ZTProduct__DELETE"
+  }, {
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
     "logicName" : "管理",
     "name" : "MANAGE"
   }, {
+    "logicName" : "Product_Manage",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "MANAGE",
+    "id" : "ZTProduct__MANAGE"
+  }, {
+    "logicName" : "Product_Read",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "READ",
+    "id" : "ZTProduct__READ"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  }, {
+    "logicName" : "Product_Update",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDERS/DER1N_ZT_CASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "ZTProduct__UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
     "customCond" : "[ (1, '=', 1) ]",
@@ -16157,7 +16202,7 @@
   "dEType" : 1,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
   "getDefaultPSDEDataSet" : {
@@ -16440,7 +16485,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case.json"

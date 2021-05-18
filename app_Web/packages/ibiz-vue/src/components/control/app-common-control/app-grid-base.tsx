@@ -182,7 +182,7 @@ export class AppGridBase extends GridControlBase {
             },
             [
                 !this.isSingleSelect ? (
-                    <el-table-column align='center' class-name="selection-column" type='selection' width='50'></el-table-column>
+                    <el-table-column align='center' class-name="selection-column" type='selection' width='64'></el-table-column>
                 ) : null,
                 this.isEnableGroup ? (
                     <el-table-column

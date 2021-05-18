@@ -470,14 +470,59 @@
     "id" : "ManualCreateDaily@IbizproProjectDaily"
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "Project_Create",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDERS/DER1N_IBIZPRO_PROJECTDAILY_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "CREATE",
+    "id" : "ZtProject__CREATE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
+  }, {
+    "logicName" : "Project_Delete",
+    "mapPSDEOPPrivName" : "DELETE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDERS/DER1N_IBIZPRO_PROJECTDAILY_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "DELETE",
+    "id" : "ZtProject__DELETE"
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "Project_Manage",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDERS/DER1N_IBIZPRO_PROJECTDAILY_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "MANAGE",
+    "id" : "ZtProject__MANAGE"
+  }, {
+    "logicName" : "Project_Read",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDERS/DER1N_IBIZPRO_PROJECTDAILY_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "READ",
+    "id" : "ZtProject__READ"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "Project_Update",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily/PSDERS/DER1N_IBIZPRO_PROJECTDAILY_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "ZtProject__UPDATE"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"

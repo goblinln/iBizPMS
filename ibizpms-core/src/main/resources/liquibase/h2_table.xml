@@ -17,7 +17,7 @@
 
 
     <!--输出实体[ZT_ACTION]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_action-21-2">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_action-30-2">
         <createTable tableName="zt_action">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -87,7 +87,7 @@
 
 
     <!--输出实体[ZT_BRANCH]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_branch-20-4">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_branch-29-4">
         <createTable tableName="zt_branch">
                 <column name="NAME" remarks="" type="VARCHAR(255)">
                 </column>
@@ -119,7 +119,7 @@
 
 
     <!--输出实体[ZT_BUG]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_bug-197-5">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_bug-212-5">
         <createTable tableName="zt_bug">
                 <column name="SEVERITY" remarks="" type="INT">
                 </column>
@@ -250,7 +250,7 @@
 
 
     <!--输出实体[ZT_BUILD]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_build-39-7">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_build-59-7">
         <createTable tableName="zt_build">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -298,7 +298,7 @@
 
 
     <!--输出实体[ZT_BURN]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_burn-18-8">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_burn-23-8">
         <createTable tableName="zt_burn">
                 <column name="CREATEBY" remarks="" type="VARCHAR(100)">
                 </column>
@@ -332,7 +332,7 @@
 
 
     <!--输出实体[ZT_CASE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_case-107-9">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_case-115-9">
         <createTable tableName="zt_case">
                 <column name="LASTEDITEDDATE" remarks="" type="DATETIME">
                 </column>
@@ -622,7 +622,7 @@
 
 
     <!--输出实体[ZT_DOC]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_doc-33-18">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_doc-52-18">
         <createTable tableName="zt_doc">
                 <column name="GROUPS" remarks="" type="VARCHAR(255)">
                 </column>
@@ -718,7 +718,7 @@
 
 
     <!--输出实体[ZT_DOCLIB]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_doclib-18-20">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_doclib-32-20">
         <createTable tableName="zt_doclib">
                 <column name="TYPE" remarks="" type="VARCHAR(30)">
                 </column>
@@ -766,7 +766,7 @@
 
 
     <!--输出实体[IBZ_DOCLIBMODULE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibz_doclibmodule-6-21">
+    <changeSet author="a_A_23e8aa361" id="tab-ibz_doclibmodule-8-21">
         <createTable tableName="zt_module">
                 <column name="GRADE" remarks="" type="INT">
                 </column>
@@ -888,7 +888,7 @@
 
 
     <!--输出实体[IBZ_EMPLOYEELOAD]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibz_employeeload-7-25">
+    <changeSet author="a_A_23e8aa361" id="tab-ibz_employeeload-12-25">
         <createTable tableName="ZT_TASK">
                 <column name="NAME" remarks="" type="VARCHAR(100)">
                 </column>
@@ -980,7 +980,7 @@
 
 
     <!--输出实体[ZT_FILE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_file-25-28">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_file-26-28">
         <createTable tableName="zt_file">
                 <column name="PATHNAME" remarks="" type="VARCHAR(100)">
                 </column>
@@ -1060,7 +1060,7 @@
 
 
     <!--输出实体[ZT_HISTORY]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_history-13-31">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_history-16-31">
         <createTable tableName="zt_history">
                 <column name="ORGNAME" remarks="" type="VARCHAR(100)">
                 </column>
@@ -1334,7 +1334,7 @@
 
 
     <!--输出实体[IBIZPRO_PRODUCTDAILY]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibizpro_productdaily-4-41">
+    <changeSet author="a_A_23e8aa361" id="tab-ibizpro_productdaily-10-41">
         <createTable tableName="T_IBIZPRO_PRODUCTDAILY">
                 <column name="END" remarks="" type="DATETIME">
                 </column>
@@ -1368,7 +1368,7 @@
 
 
     <!--输出实体[IBIZPRO_PRODUCTMONTHLY]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibizpro_productmonthly-10-42">
+    <changeSet author="a_A_23e8aa361" id="tab-ibizpro_productmonthly-16-42">
         <createTable tableName="T_IBIZPRO_PRODUCTMONTHLY">
                 <column name="TASKS" remarks="" type="VARCHAR(2000)">
                 </column>
@@ -1398,7 +1398,7 @@
 
 
     <!--输出实体[IBIZPRO_PRODUCTWEEKLY]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibizpro_productweekly-9-43">
+    <changeSet author="a_A_23e8aa361" id="tab-ibizpro_productweekly-15-43">
         <createTable tableName="T_IBIZPRO_PRODUCTWEEKLY">
                 <column name="PO" remarks="" type="VARCHAR(100)">
                 </column>
@@ -1432,7 +1432,7 @@
 
 
     <!--输出实体[IBIZPRO_PROJECTDAILY]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibizpro_projectdaily-1-44">
+    <changeSet author="a_A_23e8aa361" id="tab-ibizpro_projectdaily-7-44">
         <createTable tableName="T_IBIZPRO_PROJECTDAILY">
                 <column name="IBIZPRO_PROJECTDAILYNAME" remarks="" type="VARCHAR(200)">
                 </column>
@@ -1466,7 +1466,7 @@
 
 
     <!--输出实体[IBIZPRO_PROJECTMONTHLY]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibizpro_projectmonthly-2-45">
+    <changeSet author="a_A_23e8aa361" id="tab-ibizpro_projectmonthly-8-45">
         <createTable tableName="T_IBIZPRO_PROJECTMONTHLY">
                 <column name="IBIZPRO_PROJECTMONTHLYNAME" remarks="" type="VARCHAR(200)">
                 </column>
@@ -1496,7 +1496,7 @@
 
 
     <!--输出实体[IBZPRO_PROJECTWEEKLY]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibzpro_projectweekly-9-46">
+    <changeSet author="a_A_23e8aa361" id="tab-ibzpro_projectweekly-15-46">
         <createTable tableName="T_IBZPRO_PROJECTWEEKLY">
                 <column name="CREATEDATE" remarks="" type="DATETIME">
                 </column>
@@ -1789,7 +1789,7 @@
 
 
     <!--输出实体[IBZ_PROJECTMEMBER]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibz_projectmember-3-59">
+    <changeSet author="a_A_23e8aa361" id="tab-ibz_projectmember-4-59">
         <createTable tableName="zt_project">
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_IBZ_PROJECTMEMBER_ID"/>
@@ -2345,7 +2345,7 @@
 
 
     <!--输出实体[IBZ_PRODUCTTEAM]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibz_productteam-8-82">
+    <changeSet author="a_A_23e8aa361" id="tab-ibz_productteam-15-82">
         <createTable tableName="zt_team">
                 <column name="TEAMSTATUS" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2412,7 +2412,7 @@
 
 
     <!--输出实体[IBZ_PRODUCTLIFE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibz_productlife-1-84">
+    <changeSet author="a_A_23e8aa361" id="tab-ibz_productlife-5-84">
         <createTable tableName="T_IBZ_PRODUCTLIFE">
                 <column name="BRANCH" remarks="" type="VARCHAR(8)">
                 </column>
@@ -2453,7 +2453,7 @@
 
 
     <!--输出实体[ZT_PRODUCTPLAN]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_productplan-64-86">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_productplan-70-86">
         <createTable tableName="zt_productplan">
                 <column name="TITLE" remarks="" type="VARCHAR(90)">
                 </column>
@@ -2509,7 +2509,7 @@
 
 
     <!--输出实体[ZT_PROJECTPRODUCT]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_projectproduct-10-91">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_projectproduct-15-91">
         <createTable tableName="zt_projectproduct">
                 <column name="CREATEBY" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2542,7 +2542,7 @@
 
 
     <!--输出实体[ZT_PROJECTSTORY]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_projectstory-8-93">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_projectstory-20-93">
         <createTable tableName="zt_projectstory">
                 <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2612,7 +2612,7 @@
 
 
     <!--输出实体[ZT_RELEASE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_release-45-97">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_release-53-97">
         <createTable tableName="zt_release">
                 <column name="STORIES" remarks="" type="TEXT(65535)">
                 </column>
@@ -2853,7 +2853,7 @@
 
 
     <!--输出实体[ZT_SUITECASE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_suitecase-10-106">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_suitecase-13-106">
         <createTable tableName="zt_suitecase">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2983,7 +2983,7 @@
 
 
     <!--输出实体[ZT_TESTREPORT]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_testreport-56-117">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_testreport-70-117">
         <createTable tableName="zt_testreport">
                 <column name="DEPTNAME" remarks="" type="VARCHAR(100)">
                 </column>
@@ -3130,7 +3130,7 @@
 
 
     <!--输出实体[ZT_TESTTASK]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_testtask-36-121">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_testtask-50-121">
         <createTable tableName="zt_testtask">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>

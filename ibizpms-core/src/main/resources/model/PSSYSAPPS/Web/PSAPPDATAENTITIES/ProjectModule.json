@@ -87,7 +87,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -172,7 +172,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -188,7 +188,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -204,7 +204,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -220,7 +220,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -236,7 +236,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -252,7 +252,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -381,7 +381,7 @@
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -445,7 +445,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -529,7 +529,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -545,7 +545,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -561,7 +561,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -577,7 +577,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -593,7 +593,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -609,7 +609,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -726,11 +726,38 @@
     "id" : "OpenQuickCfgView@ProjectModule"
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "Project_Create",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_ZT_PROJECT_ROOT.json"
+    },
+    "name" : "CREATE",
+    "id" : "ZTProject__CREATE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
+    "logicName" : "Project_Delete",
+    "mapPSDEOPPrivName" : "DELETE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_ZT_PROJECT_ROOT.json"
+    },
+    "name" : "DELETE",
+    "id" : "ZTProject__DELETE"
+  }, {
     "logicName" : "删除",
     "name" : "DELETE"
+  }, {
+    "logicName" : "Project_Manage",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_ZT_PROJECT_ROOT.json"
+    },
+    "name" : "MANAGE",
+    "id" : "ZTProject__MANAGE"
   }, {
     "logicName" : "管理",
     "name" : "MANAGE"
@@ -738,12 +765,30 @@
     "logicName" : "读取",
     "name" : "READ"
   }, {
+    "logicName" : "Project_Read",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_ZT_PROJECT_ROOT.json"
+    },
+    "name" : "READ",
+    "id" : "ZTProject__READ"
+  }, {
+    "logicName" : "Project_Update",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectModule/PSDERS/DER1N_IBZ_PROJECTMODULE_ZT_PROJECT_ROOT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "ZTProject__UPDATE"
+  }, {
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
   "codeName" : "ProjectModule",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProjectModule.json",
   "enableUIActions" : 15,
   "logicName" : "任务模块",

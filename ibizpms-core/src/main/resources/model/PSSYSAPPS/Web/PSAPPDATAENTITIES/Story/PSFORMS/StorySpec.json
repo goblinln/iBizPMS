@@ -1475,8 +1475,8 @@
                     "dataAccessAction" : "SRFUR__STORY_REVIEW_BUT",
                     "getFrontPSAppView" : {
                       "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRevIewView.json",
-                      "viewType" : "DEOPTVIEW"
+                      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRevIewEditView.json",
+                      "viewType" : "DEEDITVIEW"
                     },
                     "frontProcessType" : "WIZARD",
                     "fullCodeName" : "Story_ReviewStory",

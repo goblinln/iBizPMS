@@ -1306,14 +1306,8 @@ export class GridControlBase extends MDControlBase {
             return;
         }
         this.selections = [];
-        this.selections.push(JSON.parse(JSON.stringify($event)));
-        const table: any = (this.$refs as any)[this.gridRefName];
-        if (table) {
-            table.clearSelection();
-            table.toggleRowSelection($event);
-        }
+        this.selections.push(Util.deepCopy($event));
         this.ctrlEvent({ controlname: this.name, action: "rowdblclick", data: this.selections });
-        this.ctrlEvent({ controlname: this.name, action: "selectionchange", data: this.selections });
     }
 
     /**
@@ -1511,9 +1505,7 @@ export class GridControlBase extends MDControlBase {
             }
             this.selections = [...JSON.parse(JSON.stringify(selection))];
         }
-        if (this.gridRowActiveMode != 1) {
-            this.ctrlEvent({ controlname: this.name, action: "selectionchange", data: this.selections });
-        }
+        this.ctrlEvent({ controlname: this.name, action: "selectiondata", data: this.selections });
     }
 
     /**
@@ -1638,7 +1630,7 @@ export class GridControlBase extends MDControlBase {
             this.stopRowClick = false;
             return;
         }
-        if (this.isSingleSelect) {
+        if (this.isSingleSelect || this.gridRowActiveMode != 1) {
             this.selections = [];
         }
         // 已选中则删除，没选中则添加
@@ -1654,17 +1646,16 @@ export class GridControlBase extends MDControlBase {
         } else {
             this.selections.splice(selectIndex, 1);
         }
-
         const table: any = (this.$refs as any)[this.gridRefName];
-        if (table) {
-            if (this.isSingleSelect) {
-                table.clearSelection();
-                table.setCurrentRow($event);
-            } else {
-                table.toggleRowSelection($event);
-            }
+        if (table && this.gridRowActiveMode != 1) {
+            table.clearSelection();
+            table.toggleRowSelection($event);
         }
-        this.ctrlEvent({ controlname: this.name, action: "selectionchange", data: this.selections });
+        if (this.gridRowActiveMode == 1) {
+            this.ctrlEvent({ controlname: this.name, action: "rowclick", data: this.selections });
+        } else if (this.gridRowActiveMode == 2) {
+            this.ctrlEvent({ controlname: this.name, action: "selectiondata", data: this.selections });
+        }
     }
 
     /**

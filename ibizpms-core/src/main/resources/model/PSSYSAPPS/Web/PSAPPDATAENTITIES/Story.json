@@ -103,7 +103,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ZTProduct__CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1093,6 +1093,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchChildMore",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ChildMore"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchChildMore"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -1261,7 +1277,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2011,7 +2027,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ZTProduct__CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2803,6 +2819,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchChildMore",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ChildMore"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchChildMore"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -2971,7 +3003,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NONE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -4064,8 +4096,8 @@
     "dataAccessAction" : "SRFUR__STORY_REVIEW_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRevIewView.json",
-      "viewType" : "DEOPTVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRevIewEditView.json",
+      "viewType" : "DEEDITVIEW"
     },
     "frontProcessType" : "WIZARD",
     "fullCodeName" : "Story_ReviewStoryDash",
@@ -4447,8 +4479,8 @@
     "dataAccessAction" : "SRFUR__STORY_REVIEW_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRevIewView.json",
-      "viewType" : "DEOPTVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRevIewEditView.json",
+      "viewType" : "DEEDITVIEW"
     },
     "frontProcessType" : "WIZARD",
     "fullCodeName" : "Story_ReviewStory",
@@ -11575,17 +11607,62 @@
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
+    "logicName" : "Product_Create",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "CREATE",
+    "id" : "ZTProduct__CREATE"
+  }, {
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "Product_Delete",
+    "mapPSDEOPPrivName" : "DELETE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "DELETE",
+    "id" : "ZTProduct__DELETE"
+  }, {
+    "logicName" : "Product_Manage",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "MANAGE",
+    "id" : "ZTProduct__MANAGE"
+  }, {
     "logicName" : "管理",
     "name" : "MANAGE"
+  }, {
+    "logicName" : "Product_Read",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "READ",
+    "id" : "ZTProduct__READ"
   }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  }, {
+    "logicName" : "Product_Update",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "ZTProduct__UPDATE"
   } ],
   "codeName" : "Story",
   "dataAccCtrlArch" : 1,

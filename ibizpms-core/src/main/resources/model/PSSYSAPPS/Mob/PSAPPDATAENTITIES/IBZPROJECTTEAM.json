@@ -40,7 +40,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ProjectTeam__CREATE"
     },
     "builtinMethod" : true
   }, {
@@ -53,7 +53,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ProjectTeam__CREATE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -67,7 +67,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ProjectTeam__CREATE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -81,7 +81,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ProjectTeam__UPDATE"
     },
     "builtinMethod" : true
   }, {
@@ -94,7 +94,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ProjectTeam__UPDATE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -108,7 +108,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ProjectTeam__UPDATE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -122,7 +122,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "ProjectTeam__DELETE"
     },
     "builtinMethod" : true
   }, {
@@ -135,7 +135,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "ProjectTeam__DELETE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -149,7 +149,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "ProjectTeam__DELETE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -204,7 +204,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ProjectTeam__CREATE"
     },
     "builtinMethod" : true
   }, {
@@ -217,7 +217,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ProjectTeam__CREATE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -231,7 +231,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ProjectTeam__CREATE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -488,7 +488,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ProjectTeam__CREATE"
     },
     "builtinMethod" : true
   }, {
@@ -501,7 +501,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ProjectTeam__CREATE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -515,7 +515,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ProjectTeam__CREATE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -529,7 +529,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ProjectTeam__UPDATE"
     },
     "builtinMethod" : true
   }, {
@@ -542,7 +542,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ProjectTeam__UPDATE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -556,7 +556,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ProjectTeam__UPDATE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -570,7 +570,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "ProjectTeam__DELETE"
     },
     "builtinMethod" : true
   }, {
@@ -583,7 +583,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "ProjectTeam__DELETE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -597,7 +597,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "ProjectTeam__DELETE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -652,7 +652,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ProjectTeam__CREATE"
     },
     "builtinMethod" : true
   }, {
@@ -665,7 +665,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ProjectTeam__CREATE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -679,7 +679,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ProjectTeam__CREATE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -826,17 +826,62 @@
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
+    "logicName" : "Project_Create",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDERS/DER1N_IBZ_PROJECTTEAM_ZT_PROJECT_ROOT.json"
+    },
+    "name" : "CREATE",
+    "id" : "ProjectTeam__CREATE"
+  }, {
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "Project_Delete",
+    "mapPSDEOPPrivName" : "DELETE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDERS/DER1N_IBZ_PROJECTTEAM_ZT_PROJECT_ROOT.json"
+    },
+    "name" : "DELETE",
+    "id" : "ProjectTeam__DELETE"
+  }, {
     "logicName" : "管理",
     "name" : "MANAGE"
+  }, {
+    "logicName" : "Project_Manage",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDERS/DER1N_IBZ_PROJECTTEAM_ZT_PROJECT_ROOT.json"
+    },
+    "name" : "MANAGE",
+    "id" : "ProjectTeam__MANAGE"
+  }, {
+    "logicName" : "Project_Read",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDERS/DER1N_IBZ_PROJECTTEAM_ZT_PROJECT_ROOT.json"
+    },
+    "name" : "READ",
+    "id" : "ProjectTeam__READ"
   }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  }, {
+    "logicName" : "Project_Update",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProjectTeam/PSDERS/DER1N_IBZ_PROJECTTEAM_ZT_PROJECT_ROOT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "ProjectTeam__UPDATE"
   } ],
   "codeName" : "IBZPROJECTTEAM",
   "dataAccCtrlArch" : 1,

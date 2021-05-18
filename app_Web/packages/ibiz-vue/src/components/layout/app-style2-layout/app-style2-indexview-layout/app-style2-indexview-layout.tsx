@@ -141,7 +141,7 @@ export class AppStyle2IndexViewLayout extends AppStyle2DefaultLayout {
                         <app-header>
                             <template slot="header_left">
                                 <div class="title">
-                                    {this.viewInstance.enableAppSwitch ? <span class="menuicon" on-click={() => this.contextMenuDragVisiable = !this.contextMenuDragVisiable}><icon type="md-menu" />&nbsp;</span> : null}
+                                    {this.viewInstance.enableAppSwitch ? <span class="menuicon" style="cursor: pointer;" on-click={() => this.contextMenuDragVisiable = !this.contextMenuDragVisiable}><icon type="md-menu" />&nbsp;</span> : null}
                                     {this.viewInstance.caption}
                                 </div>
                             </template>
@@ -154,7 +154,7 @@ export class AppStyle2IndexViewLayout extends AppStyle2DefaultLayout {
                             </template>
                         </app-header>
                         {this.$slots.default}
-                        {this.viewInstance.enableAppSwitch ? <context-menu-drag contextMenuDragVisiable={this.contextMenuDragVisiable}></context-menu-drag> : null}
+                        {this.viewInstance.enableAppSwitch ? <context-menu-drag viewStyle={this.viewInstance.viewStyle} contextMenuDragVisiable={this.contextMenuDragVisiable}></context-menu-drag> : null}
                     </template>
                     <app-content>
                         {leftContent ?

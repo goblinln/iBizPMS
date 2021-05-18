@@ -3095,112 +3095,123 @@
                 "detailType" : "GROUPPANEL",
                 "name" : "group1",
                 "getPSDEFormDetails" : [ {
-                  "caption" : "项目编号",
-                  "codeName" : "id",
-                  "contentWidth" : 42.0,
-                  "dataType" : 1,
+                  "actionGroupExtractMode" : "ITEM",
+                  "caption" : "分组面板",
+                  "codeName" : "grouppanel9",
                   "detailStyle" : "DEFAULT",
-                  "detailType" : "FORMITEM",
-                  "enableCond" : 0,
-                  "ignoreInput" : 0,
-                  "labelPos" : "NONE",
-                  "labelWidth" : 0,
-                  "name" : "id",
-                  "noPrivDisplayMode" : 1,
-                  "getPSAppDEField" : {
-                    "name" : "ID",
-                    "codeName" : "Id"
-                  },
-                  "getPSEditor" : {
-                    "editorType" : "SPAN",
+                  "detailType" : "GROUPPANEL",
+                  "name" : "grouppanel9",
+                  "getPSDEFormDetails" : [ {
+                    "caption" : "项目编号",
+                    "codeName" : "id",
+                    "dataType" : 1,
+                    "detailStyle" : "DEFAULT",
+                    "detailType" : "FORMITEM",
+                    "enableCond" : 0,
+                    "ignoreInput" : 0,
+                    "labelPos" : "NONE",
+                    "labelWidth" : 0,
                     "name" : "id",
-                    "editable" : false,
-                    "enableLinkView" : false
-                  },
-                  "getPSLayoutPos" : {
-                    "colLG" : 2,
-                    "colMD" : 24,
-                    "layout" : "TABLE_24COL",
-                    "width" : 42
-                  },
-                  "getPSSysCss" : {
-                    "cssName" : "project-id"
-                  },
-                  "width" : 42.0,
-                  "allowEmpty" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
-                  "showCaption" : false
-                }, {
-                  "caption" : "项目代号",
-                  "codeName" : "code",
-                  "dataType" : 25,
-                  "detailStyle" : "DEFAULT",
-                  "detailType" : "FORMITEM",
-                  "enableCond" : 3,
-                  "ignoreInput" : 0,
-                  "labelPos" : "NONE",
-                  "labelWidth" : 0,
-                  "name" : "code",
-                  "noPrivDisplayMode" : 1,
-                  "getPSAppDEField" : {
-                    "name" : "CODE",
-                    "codeName" : "Code"
-                  },
-                  "getPSEditor" : {
-                    "editorType" : "SPAN",
+                    "noPrivDisplayMode" : 1,
+                    "getPSAppDEField" : {
+                      "name" : "ID",
+                      "codeName" : "Id"
+                    },
+                    "getPSEditor" : {
+                      "editorType" : "SPAN",
+                      "name" : "id",
+                      "editable" : false,
+                      "enableLinkView" : false
+                    },
+                    "getPSLayoutPos" : {
+                      "grow" : -1,
+                      "layout" : "FLEX"
+                    },
+                    "getPSSysCss" : {
+                      "cssName" : "project-id"
+                    },
+                    "allowEmpty" : true,
+                    "emptyCaption" : false,
+                    "hidden" : false,
+                    "inputTipClosable" : false,
+                    "showCaption" : false
+                  }, {
+                    "caption" : "项目代号",
+                    "codeName" : "code",
+                    "dataType" : 25,
+                    "detailStyle" : "DEFAULT",
+                    "detailType" : "FORMITEM",
+                    "enableCond" : 3,
+                    "ignoreInput" : 0,
+                    "labelPos" : "NONE",
+                    "labelWidth" : 0,
                     "name" : "code",
-                    "editable" : false,
-                    "enableLinkView" : false
-                  },
-                  "getPSLayoutPos" : {
-                    "colLG" : 7,
-                    "colMD" : 24,
-                    "layout" : "TABLE_24COL"
-                  },
-                  "getPSSysCss" : {
-                    "cssName" : "project-code"
-                  },
-                  "allowEmpty" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
-                  "showCaption" : false
-                }, {
-                  "codeName" : "name",
-                  "dataType" : 25,
-                  "detailStyle" : "DEFAULT",
-                  "detailType" : "FORMITEM",
-                  "enableCond" : 3,
-                  "ignoreInput" : 0,
-                  "labelPos" : "LEFT",
-                  "labelWidth" : 10,
-                  "name" : "name",
-                  "noPrivDisplayMode" : 1,
-                  "getPSAppDEField" : {
-                    "name" : "NAME",
-                    "codeName" : "Name"
-                  },
-                  "getPSEditor" : {
-                    "editorType" : "SPAN",
+                    "noPrivDisplayMode" : 1,
+                    "getPSAppDEField" : {
+                      "name" : "CODE",
+                      "codeName" : "Code"
+                    },
+                    "getPSEditor" : {
+                      "editorType" : "SPAN",
+                      "name" : "code",
+                      "editable" : false,
+                      "enableLinkView" : false
+                    },
+                    "getPSLayoutPos" : {
+                      "grow" : -1,
+                      "layout" : "FLEX"
+                    },
+                    "getPSSysCss" : {
+                      "cssName" : "project-code"
+                    },
+                    "allowEmpty" : true,
+                    "emptyCaption" : false,
+                    "hidden" : false,
+                    "inputTipClosable" : false,
+                    "showCaption" : false
+                  }, {
+                    "codeName" : "name",
+                    "dataType" : 25,
+                    "detailStyle" : "DEFAULT",
+                    "detailType" : "FORMITEM",
+                    "enableCond" : 3,
+                    "ignoreInput" : 0,
+                    "labelPos" : "NONE",
+                    "labelWidth" : 0,
                     "name" : "name",
-                    "editable" : false,
-                    "enableLinkView" : false
+                    "noPrivDisplayMode" : 1,
+                    "getPSAppDEField" : {
+                      "name" : "NAME",
+                      "codeName" : "Name"
+                    },
+                    "getPSEditor" : {
+                      "editorType" : "SPAN",
+                      "name" : "name",
+                      "editable" : false,
+                      "enableLinkView" : false
+                    },
+                    "getPSLayoutPos" : {
+                      "grow" : -1,
+                      "layout" : "FLEX"
+                    },
+                    "getPSSysCss" : {
+                      "cssName" : "project-name"
+                    },
+                    "allowEmpty" : true,
+                    "emptyCaption" : true,
+                    "hidden" : false,
+                    "inputTipClosable" : false,
+                    "showCaption" : false
+                  } ],
+                  "getPSLayout" : {
+                    "layout" : "FLEX"
                   },
                   "getPSLayoutPos" : {
-                    "colLG" : 15,
                     "colMD" : 24,
                     "layout" : "TABLE_24COL"
                   },
-                  "getPSSysCss" : {
-                    "cssName" : "project-name"
-                  },
-                  "allowEmpty" : true,
-                  "emptyCaption" : true,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
-                  "showCaption" : true
+                  "infoGroupMode" : true,
+                  "showCaption" : false
                 }, {
                   "codeName" : "desc",
                   "dataType" : 21,
@@ -3209,7 +3220,7 @@
                   "enableCond" : 3,
                   "ignoreInput" : 0,
                   "labelPos" : "LEFT",
-                  "labelWidth" : 10,
+                  "labelWidth" : 1,
                   "name" : "desc",
                   "noPrivDisplayMode" : 1,
                   "getPSAppDEField" : {
@@ -3235,85 +3246,99 @@
                   "inputTipClosable" : false,
                   "showCaption" : true
                 }, {
-                  "caption" : "项目类型",
-                  "codeName" : "type",
-                  "dataType" : 25,
+                  "actionGroupExtractMode" : "ITEM",
+                  "caption" : "分组面板",
+                  "codeName" : "grouppanel10",
                   "detailStyle" : "DEFAULT",
-                  "detailType" : "FORMITEM",
-                  "enableCond" : 3,
-                  "ignoreInput" : 3,
-                  "labelPos" : "NONE",
-                  "labelWidth" : 0,
-                  "name" : "type",
-                  "noPrivDisplayMode" : 1,
-                  "getPSAppDEField" : {
-                    "name" : "TYPE",
-                    "codeName" : "Type"
-                  },
-                  "getPSEditor" : {
-                    "editorType" : "SPAN",
+                  "detailType" : "GROUPPANEL",
+                  "name" : "grouppanel10",
+                  "getPSDEFormDetails" : [ {
+                    "caption" : "项目类型",
+                    "codeName" : "type",
+                    "dataType" : 25,
+                    "detailStyle" : "DEFAULT",
+                    "detailType" : "FORMITEM",
+                    "enableCond" : 3,
+                    "ignoreInput" : 3,
+                    "labelPos" : "NONE",
+                    "labelWidth" : 0,
                     "name" : "type",
-                    "getPSAppCodeList" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project__type.json"
+                    "noPrivDisplayMode" : 1,
+                    "getPSAppDEField" : {
+                      "name" : "TYPE",
+                      "codeName" : "Type"
                     },
-                    "editable" : false,
-                    "enableLinkView" : false
-                  },
-                  "getPSLayoutPos" : {
-                    "colLG" : 4,
-                    "colMD" : 4,
-                    "layout" : "TABLE_24COL"
-                  },
-                  "getPSSysCss" : {
-                    "cssName" : "project-type"
-                  },
-                  "allowEmpty" : true,
-                  "convertToCodeItemText" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
-                  "showCaption" : false
-                }, {
-                  "caption" : "项目状态",
-                  "codeName" : "status",
-                  "dataType" : 25,
-                  "detailStyle" : "DEFAULT",
-                  "detailType" : "FORMITEM",
-                  "enableCond" : 3,
-                  "ignoreInput" : 3,
-                  "labelPos" : "NONE",
-                  "labelWidth" : 0,
-                  "name" : "status",
-                  "noPrivDisplayMode" : 1,
-                  "getPSAppDEField" : {
-                    "name" : "STATUS",
-                    "codeName" : "Status"
-                  },
-                  "getPSEditor" : {
-                    "editorType" : "SPAN",
+                    "getPSEditor" : {
+                      "editorType" : "SPAN",
+                      "name" : "type",
+                      "getPSAppCodeList" : {
+                        "modelref" : true,
+                        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project__type.json"
+                      },
+                      "editable" : false,
+                      "enableLinkView" : false
+                    },
+                    "getPSLayoutPos" : {
+                      "grow" : -1,
+                      "layout" : "FLEX"
+                    },
+                    "getPSSysCss" : {
+                      "cssName" : "project-type"
+                    },
+                    "allowEmpty" : true,
+                    "convertToCodeItemText" : true,
+                    "emptyCaption" : false,
+                    "hidden" : false,
+                    "inputTipClosable" : false,
+                    "showCaption" : false
+                  }, {
+                    "caption" : "项目状态",
+                    "codeName" : "status",
+                    "dataType" : 25,
+                    "detailStyle" : "DEFAULT",
+                    "detailType" : "FORMITEM",
+                    "enableCond" : 3,
+                    "ignoreInput" : 3,
+                    "labelPos" : "NONE",
+                    "labelWidth" : 0,
                     "name" : "status",
-                    "getPSAppCodeList" : {
-                      "modelref" : true,
-                      "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project__status.json"
+                    "noPrivDisplayMode" : 1,
+                    "getPSAppDEField" : {
+                      "name" : "STATUS",
+                      "codeName" : "Status"
                     },
-                    "editable" : false,
-                    "enableLinkView" : false
+                    "getPSEditor" : {
+                      "editorType" : "SPAN",
+                      "name" : "status",
+                      "getPSAppCodeList" : {
+                        "modelref" : true,
+                        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Project__status.json"
+                      },
+                      "editable" : false,
+                      "enableLinkView" : false
+                    },
+                    "getPSLayoutPos" : {
+                      "grow" : -1,
+                      "layout" : "FLEX"
+                    },
+                    "getPSSysCss" : {
+                      "cssName" : "project-status"
+                    },
+                    "allowEmpty" : true,
+                    "convertToCodeItemText" : true,
+                    "emptyCaption" : false,
+                    "hidden" : false,
+                    "inputTipClosable" : false,
+                    "showCaption" : false
+                  } ],
+                  "getPSLayout" : {
+                    "layout" : "FLEX"
                   },
                   "getPSLayoutPos" : {
-                    "colLG" : 4,
-                    "colLGOffset" : 1,
-                    "colMD" : 4,
+                    "colMD" : 24,
                     "layout" : "TABLE_24COL"
                   },
-                  "getPSSysCss" : {
-                    "cssName" : "project-status"
-                  },
-                  "allowEmpty" : true,
-                  "convertToCodeItemText" : true,
-                  "emptyCaption" : false,
-                  "hidden" : false,
-                  "inputTipClosable" : false,
+                  "infoGroupMode" : true,
                   "showCaption" : false
                 } ],
                 "getPSLayout" : {
@@ -3762,6 +3787,9 @@
                   "height" : 220,
                   "layout" : "TABLE_24COL"
                 },
+                "getPSSysCss" : {
+                  "cssName" : "form-group-divider"
+                },
                 "infoGroupMode" : true,
                 "showCaption" : true
               }, {
@@ -4185,6 +4213,9 @@
                   "height" : 220,
                   "layout" : "TABLE_24COL"
                 },
+                "getPSSysCss" : {
+                  "cssName" : "form-group-divider"
+                },
                 "infoGroupMode" : true,
                 "showCaption" : true
               }, {
@@ -4580,6 +4611,9 @@
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
                 },
+                "getPSSysCss" : {
+                  "cssName" : "form-group-divider"
+                },
                 "infoGroupMode" : true,
                 "showCaption" : true
               }, {
@@ -4693,6 +4727,9 @@
                 "getPSLayoutPos" : {
                   "colMD" : 24,
                   "layout" : "TABLE_24COL"
+                },
+                "getPSSysCss" : {
+                  "cssName" : "form-group-divider"
                 },
                 "infoGroupMode" : true,
                 "showCaption" : true

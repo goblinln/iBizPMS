@@ -52,11 +52,9 @@ public class ProductLifeResource {
     @Lazy
     public ProductLifeMapping productlifeMapping;
 
-    @PreAuthorize("@ProductLifeRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取RoadMapYear", tags = {"产品生命周期" } ,notes = "获取RoadMapYear")
     @RequestMapping(method= RequestMethod.GET , value="/productlives/fetchroadmapyear")
 	public ResponseEntity<List<ProductLifeDTO>> fetchroadmapyear(ProductLifeSearchContext context) {
-        productlifeRuntime.addAuthorityConditions(context,"READ");
         Page<ProductLife> domains = productlifeService.searchRoadMapYear(context) ;
         List<ProductLifeDTO> list = productlifeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -66,21 +64,17 @@ public class ProductLifeResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProductLifeRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询RoadMapYear", tags = {"产品生命周期" } ,notes = "查询RoadMapYear")
     @RequestMapping(method= RequestMethod.POST , value="/productlives/searchroadmapyear")
 	public ResponseEntity<Page<ProductLifeDTO>> searchRoadMapYear(@RequestBody ProductLifeSearchContext context) {
-        productlifeRuntime.addAuthorityConditions(context,"READ");
         Page<ProductLife> domains = productlifeService.searchRoadMapYear(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productlifeMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@ProductLifeRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取获取产品路线", tags = {"产品生命周期" } ,notes = "获取获取产品路线")
     @RequestMapping(method= RequestMethod.GET , value="/productlives/fetchgetroadmaps")
 	public ResponseEntity<List<ProductLifeDTO>> fetchgetroadmaps(ProductLifeSearchContext context) {
-        productlifeRuntime.addAuthorityConditions(context,"READ");
         Page<ProductLife> domains = productlifeService.searchGetRoadmapS(context) ;
         List<ProductLifeDTO> list = productlifeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -90,21 +84,17 @@ public class ProductLifeResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProductLifeRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询获取产品路线", tags = {"产品生命周期" } ,notes = "查询获取产品路线")
     @RequestMapping(method= RequestMethod.POST , value="/productlives/searchgetroadmaps")
 	public ResponseEntity<Page<ProductLifeDTO>> searchGetRoadmapS(@RequestBody ProductLifeSearchContext context) {
-        productlifeRuntime.addAuthorityConditions(context,"READ");
         Page<ProductLife> domains = productlifeService.searchGetRoadmapS(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productlifeMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
-    @PreAuthorize("@ProductLifeRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取GetRoadmap", tags = {"产品生命周期" } ,notes = "获取GetRoadmap")
     @RequestMapping(method= RequestMethod.GET , value="/productlives/fetchgetroadmap")
 	public ResponseEntity<List<ProductLifeDTO>> fetchgetroadmap(ProductLifeSearchContext context) {
-        productlifeRuntime.addAuthorityConditions(context,"READ");
         Page<ProductLife> domains = productlifeService.searchGetRoadmap(context) ;
         List<ProductLifeDTO> list = productlifeMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -114,11 +104,9 @@ public class ProductLifeResource {
                 .body(list);
 	}
 
-    @PreAuthorize("@ProductLifeRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询GetRoadmap", tags = {"产品生命周期" } ,notes = "查询GetRoadmap")
     @RequestMapping(method= RequestMethod.POST , value="/productlives/searchgetroadmap")
 	public ResponseEntity<Page<ProductLifeDTO>> searchGetRoadmap(@RequestBody ProductLifeSearchContext context) {
-        productlifeRuntime.addAuthorityConditions(context,"READ");
         Page<ProductLife> domains = productlifeService.searchGetRoadmap(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productlifeMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

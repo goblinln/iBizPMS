@@ -226,7 +226,7 @@ export default class AppCustomTheme extends Vue {
         } else if (localStorage.getItem('theme-class')) {
             return localStorage.getItem('theme-class');
         } else {
-            return this.viewStyle == 'STYLE2' ? 'app-theme-studio-dark' : 'app-theme-default';
+            return this.viewStyle == 'STYLE2' || this.viewStyle == 'STYLE3' ? 'app-theme-studio-dark' : 'app-theme-default';
         }
     }
 

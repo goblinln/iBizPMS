@@ -79,6 +79,19 @@
       .el-table__body tr.el-table__row--striped td{
         background: transparent;
       }
+      .el-table__header-wrapper >.el-table__header, .el-table__body-wrapper >.el-table__body {
+        .selection-column .cell .el-checkbox__inner {
+            width: 16px;
+            height: 16px;
+        }
+        .selection-column .cell .el-checkbox__inner::after {
+          top: 2px;
+          left: 5px;
+        }
+      }
+      .el-table__header-wrapper >.el-table__header .selection-column .cell .el-checkbox__inner::before{
+        top: 6px;
+      }
     }
     .grid {
       // 分页样式
@@ -86,15 +99,18 @@
         font-size: 12px;
         color: #666666;
         padding-top: 6px;
-        padding-right: 35px;
         .ivu-icon{
           font-size: 14px;
+          vertical-align: -0.06em
         }
         .ivu-btn, .ivu-select-selected-value,input{
           font-size: 12px;
         }
-        .page-button{
-          display: none;
+        .page-button {
+          padding-right: 10px;
+          button {
+            border-color: var(--button-font-color-light);
+          }
         }
         .page-column{
           left: 45px;
@@ -117,10 +133,22 @@
         }
         // 批工具栏
         .batch-toolbar {
-          left: 45px;
+          left: 2px;
           button {
+            background-color: var(--button-background-color);
+            color: var(--button-font-color);
+            border-color: var(--button-font-color-light);
+            border-radius: 4px !important;
+            width: 76px;
+            height: 28px;
             &:hover{
+              background-color: var(--button-background-color-bright);
+              border-color: var(--button-font-color-light-bright);
               color: var(--button-font-color-bright);
+            }
+            &:disabled {
+              background-color: var(--button-background-color-light);
+              color: var(--button-font-color-light);
             }
           }
         }

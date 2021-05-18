@@ -71,7 +71,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "RootTest__DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -143,7 +143,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "RootTest__DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -407,7 +407,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "RootTest__DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -479,7 +479,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "RootTest__DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -631,24 +631,69 @@
     "builtinMethod" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "Product_Create",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDERS/DER1N_IBZ_TESTMODULE_ZT_PRODUCT_ROOT.json"
+    },
+    "name" : "CREATE",
+    "id" : "RootTest__CREATE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "Product_Delete",
+    "mapPSDEOPPrivName" : "DELETE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDERS/DER1N_IBZ_TESTMODULE_ZT_PRODUCT_ROOT.json"
+    },
+    "name" : "DELETE",
+    "id" : "RootTest__DELETE"
+  }, {
+    "logicName" : "Product_Manage",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDERS/DER1N_IBZ_TESTMODULE_ZT_PRODUCT_ROOT.json"
+    },
+    "name" : "MANAGE",
+    "id" : "RootTest__MANAGE"
+  }, {
     "logicName" : "管理",
     "name" : "MANAGE"
   }, {
+    "logicName" : "Product_Read",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDERS/DER1N_IBZ_TESTMODULE_ZT_PRODUCT_ROOT.json"
+    },
+    "name" : "READ",
+    "id" : "RootTest__READ"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "Product_Update",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TestModule/PSDERS/DER1N_IBZ_TESTMODULE_ZT_PRODUCT_ROOT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "RootTest__UPDATE"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
   "codeName" : "TestModule",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/TestModule.json",
   "enableUIActions" : 15,
   "logicName" : "测试模块",

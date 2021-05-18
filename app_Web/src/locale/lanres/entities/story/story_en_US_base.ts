@@ -117,6 +117,10 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("需求",null),
 				title: commonLogic.appcommonhandle("需求",null),
 			},
+			'revieweditview': {
+				caption: commonLogic.appcommonhandle("需求评审",null),
+				title: commonLogic.appcommonhandle("需求评审",null),
+			},
 			'prichartview9': {
 				caption: commonLogic.appcommonhandle("累计创建需求-优先级",null),
 				title: commonLogic.appcommonhandle("需求图表视图（累计创建需求-优先级）",null),
@@ -1348,7 +1352,7 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("Save And Close Window",null),
 			},
 		},
-		reviewviewtoolbar_toolbar: {
+		revieweditviewtoolbar_toolbar: {
 			'deuiaction1': {
 				caption: commonLogic.appcommonhandle("Save And Close",null),
 				tip: commonLogic.appcommonhandle("Save And Close Window",null),

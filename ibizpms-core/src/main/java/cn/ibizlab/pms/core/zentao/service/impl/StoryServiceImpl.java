@@ -982,6 +982,9 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     public List<Story> selectCaseStory(StorySearchContext context){
         return baseMapper.selectCaseStory(context, context.getSelectCond());
     }
+    public List<Story> selectChildMore(StorySearchContext context){
+        return baseMapper.selectChildMore(context, context.getSelectCond());
+    }
     public List<Story> selectDefault(StorySearchContext context){
         return baseMapper.selectDefault(context, context.getSelectCond());
     }
@@ -1110,6 +1113,15 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     @Override
     public Page<Story> searchCaseStory(StorySearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Story> pages=baseMapper.searchCaseStory(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Story>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 子需求（更多）
+     */
+    @Override
+    public Page<Story> searchChildMore(StorySearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Story> pages=baseMapper.searchChildMore(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Story>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

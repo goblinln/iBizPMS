@@ -566,6 +566,24 @@
         "condType" : "CUSTOM",
         "customCond" : "t1.DELETED = '0'",
         "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : " t1.parent = #{srf.datacontext.parent}",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "ChildMore",
+    "logicName" : "子需求（更多）",
+    "name" : "ChildMore",
+    "customCode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
       } ]
     } ],
     "codeName" : "Default",
@@ -980,6 +998,16 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "CaseStory"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "ChildMore",
+    "logicName" : "子需求（更多）",
+    "name" : "ChildMore",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ChildMore"
     } ],
     "enableBackend" : true,
     "enableFront" : true
@@ -12864,17 +12892,62 @@
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
+    "logicName" : "Product_Create",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "CREATE",
+    "id" : "ZTProduct__CREATE"
+  }, {
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "Product_Delete",
+    "mapPSDEOPPrivName" : "DELETE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "DELETE",
+    "id" : "ZTProduct__DELETE"
+  }, {
+    "logicName" : "Product_Manage",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "MANAGE",
+    "id" : "ZTProduct__MANAGE"
+  }, {
     "logicName" : "管理",
     "name" : "MANAGE"
+  }, {
+    "logicName" : "Product_Read",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "READ",
+    "id" : "ZTProduct__READ"
   }, {
     "logicName" : "读取",
     "name" : "READ"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  }, {
+    "logicName" : "Product_Update",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "ZTProduct__UPDATE"
   } ],
   "getAllPSDEUserRoles" : [ {
     "customCond" : "[ (1, '=', 1) ]",
@@ -13073,7 +13146,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory.json"
@@ -13169,7 +13242,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"

@@ -7584,7 +7584,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectDaily.json"
@@ -7612,7 +7612,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectMonthly.json"
@@ -7640,7 +7640,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly.json"
@@ -7668,7 +7668,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/BugStats.json"
@@ -7779,7 +7779,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
@@ -7803,7 +7803,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
@@ -7830,7 +7830,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
@@ -7903,7 +7903,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Doc.json"
@@ -7957,7 +7957,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory.json"
@@ -8007,7 +8007,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestReport.json"
@@ -8034,7 +8034,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/TestTask.json"

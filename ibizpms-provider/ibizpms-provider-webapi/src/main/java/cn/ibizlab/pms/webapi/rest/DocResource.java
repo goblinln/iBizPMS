@@ -136,7 +136,6 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @PreAuthorize("@DocRuntime.test('READ')")
     @ApiOperation(value = "批量处理[根据版本更新正文信息]", tags = {"文档" },  notes = "批量处理[根据版本更新正文信息]")
 	@RequestMapping(method = RequestMethod.PUT, value = "/docs/byversionupdatecontextbatch")
     public ResponseEntity<Boolean> byVersionUpdateContextBatch(@RequestBody List<DocDTO> docdtos) {
@@ -161,7 +160,6 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @PreAuthorize("@DocRuntime.test('READ')")
     @ApiOperation(value = "批量处理[收藏]", tags = {"文档" },  notes = "批量处理[收藏]")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/collectbatch")
     public ResponseEntity<Boolean> collectBatch(@RequestBody List<DocDTO> docdtos) {
@@ -197,7 +195,6 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @PreAuthorize("@DocRuntime.test('READ')")
     @ApiOperation(value = "批量处理[仅收藏文档]", tags = {"文档" },  notes = "批量处理[仅收藏文档]")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/onlycollectdocbatch")
     public ResponseEntity<Boolean> onlyCollectDocBatch(@RequestBody List<DocDTO> docdtos) {
@@ -216,7 +213,6 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @PreAuthorize("@DocRuntime.test('READ')")
     @ApiOperation(value = "批量处理[仅取消收藏文档]", tags = {"文档" },  notes = "批量处理[仅取消收藏文档]")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/onlyuncollectdocbatch")
     public ResponseEntity<Boolean> onlyUnCollectDocBatch(@RequestBody List<DocDTO> docdtos) {
@@ -250,7 +246,6 @@ public class DocResource {
         docdto = docMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(docdto);
     }
-    @PreAuthorize("@DocRuntime.test('READ')")
     @ApiOperation(value = "批量处理[取消收藏]", tags = {"文档" },  notes = "批量处理[取消收藏]")
 	@RequestMapping(method = RequestMethod.POST, value = "/docs/uncollectbatch")
     public ResponseEntity<Boolean> unCollectBatch(@RequestBody List<DocDTO> docdtos) {
@@ -263,7 +258,6 @@ public class DocResource {
 	@ApiOperation(value = "获取文档库文档（子库）", tags = {"文档" } ,notes = "获取文档库文档（子库）")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchchilddoclibdoc")
 	public ResponseEntity<List<DocDTO>> fetchchilddoclibdoc(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchChildDocLibDoc(context) ;
         List<DocDTO> list = docMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -277,7 +271,6 @@ public class DocResource {
 	@ApiOperation(value = "查询文档库文档（子库）", tags = {"文档" } ,notes = "查询文档库文档（子库）")
     @RequestMapping(method= RequestMethod.POST , value="/docs/searchchilddoclibdoc")
 	public ResponseEntity<Page<DocDTO>> searchChildDocLibDoc(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchChildDocLibDoc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(docMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -287,7 +280,6 @@ public class DocResource {
 	@ApiOperation(value = "获取DEFAULT", tags = {"文档" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchdefault")
 	public ResponseEntity<List<DocDTO>> fetchdefault(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchDefault(context) ;
         List<DocDTO> list = docMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -301,7 +293,6 @@ public class DocResource {
 	@ApiOperation(value = "查询DEFAULT", tags = {"文档" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/docs/searchdefault")
 	public ResponseEntity<Page<DocDTO>> searchDefault(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(docMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -311,7 +302,6 @@ public class DocResource {
 	@ApiOperation(value = "获取文档库文档", tags = {"文档" } ,notes = "获取文档库文档")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchdoclibanddoc")
 	public ResponseEntity<List<DocDTO>> fetchdoclibanddoc(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchDocLibAndDoc(context) ;
         List<DocDTO> list = docMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -325,7 +315,6 @@ public class DocResource {
 	@ApiOperation(value = "查询文档库文档", tags = {"文档" } ,notes = "查询文档库文档")
     @RequestMapping(method= RequestMethod.POST , value="/docs/searchdoclibanddoc")
 	public ResponseEntity<Page<DocDTO>> searchDocLibAndDoc(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchDocLibAndDoc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(docMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -335,7 +324,6 @@ public class DocResource {
 	@ApiOperation(value = "获取文档库文档", tags = {"文档" } ,notes = "获取文档库文档")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchdoclibdoc")
 	public ResponseEntity<List<DocDTO>> fetchdoclibdoc(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchDocLibDoc(context) ;
         List<DocDTO> list = docMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -349,7 +337,6 @@ public class DocResource {
 	@ApiOperation(value = "查询文档库文档", tags = {"文档" } ,notes = "查询文档库文档")
     @RequestMapping(method= RequestMethod.POST , value="/docs/searchdoclibdoc")
 	public ResponseEntity<Page<DocDTO>> searchDocLibDoc(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchDocLibDoc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(docMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -359,7 +346,6 @@ public class DocResource {
 	@ApiOperation(value = "获取文档库分类文档", tags = {"文档" } ,notes = "获取文档库分类文档")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchdocmoduledoc")
 	public ResponseEntity<List<DocDTO>> fetchdocmoduledoc(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchDocModuleDoc(context) ;
         List<DocDTO> list = docMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -373,7 +359,6 @@ public class DocResource {
 	@ApiOperation(value = "查询文档库分类文档", tags = {"文档" } ,notes = "查询文档库分类文档")
     @RequestMapping(method= RequestMethod.POST , value="/docs/searchdocmoduledoc")
 	public ResponseEntity<Page<DocDTO>> searchDocModuleDoc(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchDocModuleDoc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(docMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -383,7 +368,6 @@ public class DocResource {
 	@ApiOperation(value = "获取文档统计", tags = {"文档" } ,notes = "获取文档统计")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchdocstatus")
 	public ResponseEntity<List<DocDTO>> fetchdocstatus(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchDocStatus(context) ;
         List<DocDTO> list = docMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -397,7 +381,6 @@ public class DocResource {
 	@ApiOperation(value = "查询文档统计", tags = {"文档" } ,notes = "查询文档统计")
     @RequestMapping(method= RequestMethod.POST , value="/docs/searchdocstatus")
 	public ResponseEntity<Page<DocDTO>> searchDocStatus(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchDocStatus(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(docMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -407,7 +390,6 @@ public class DocResource {
 	@ApiOperation(value = "获取文件夹文档（子目录）", tags = {"文档" } ,notes = "获取文件夹文档（子目录）")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchmoduledocchild")
 	public ResponseEntity<List<DocDTO>> fetchmoduledocchild(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchModuleDocChild(context) ;
         List<DocDTO> list = docMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -421,7 +403,6 @@ public class DocResource {
 	@ApiOperation(value = "查询文件夹文档（子目录）", tags = {"文档" } ,notes = "查询文件夹文档（子目录）")
     @RequestMapping(method= RequestMethod.POST , value="/docs/searchmoduledocchild")
 	public ResponseEntity<Page<DocDTO>> searchModuleDocChild(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchModuleDocChild(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(docMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -431,7 +412,6 @@ public class DocResource {
 	@ApiOperation(value = "获取我的收藏", tags = {"文档" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchmyfavourite")
 	public ResponseEntity<List<DocDTO>> fetchmyfavourite(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchMyFavourite(context) ;
         List<DocDTO> list = docMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -445,7 +425,6 @@ public class DocResource {
 	@ApiOperation(value = "查询我的收藏", tags = {"文档" } ,notes = "查询我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/docs/searchmyfavourite")
 	public ResponseEntity<Page<DocDTO>> searchMyFavourite(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchMyFavourite(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(docMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -455,7 +434,6 @@ public class DocResource {
 	@ApiOperation(value = "获取我的收藏", tags = {"文档" } ,notes = "获取我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchmyfavouritesonlydoc")
 	public ResponseEntity<List<DocDTO>> fetchmyfavouritesonlydoc(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchMyFavouritesOnlyDoc(context) ;
         List<DocDTO> list = docMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -469,7 +447,6 @@ public class DocResource {
 	@ApiOperation(value = "查询我的收藏", tags = {"文档" } ,notes = "查询我的收藏")
     @RequestMapping(method= RequestMethod.POST , value="/docs/searchmyfavouritesonlydoc")
 	public ResponseEntity<Page<DocDTO>> searchMyFavouritesOnlyDoc(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchMyFavouritesOnlyDoc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(docMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -479,7 +456,6 @@ public class DocResource {
 	@ApiOperation(value = "获取子目录文档", tags = {"文档" } ,notes = "获取子目录文档")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchnotrootdoc")
 	public ResponseEntity<List<DocDTO>> fetchnotrootdoc(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchNotRootDoc(context) ;
         List<DocDTO> list = docMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -493,7 +469,6 @@ public class DocResource {
 	@ApiOperation(value = "查询子目录文档", tags = {"文档" } ,notes = "查询子目录文档")
     @RequestMapping(method= RequestMethod.POST , value="/docs/searchnotrootdoc")
 	public ResponseEntity<Page<DocDTO>> searchNotRootDoc(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchNotRootDoc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(docMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -503,7 +478,6 @@ public class DocResource {
 	@ApiOperation(value = "获取根目录文档", tags = {"文档" } ,notes = "获取根目录文档")
     @RequestMapping(method= RequestMethod.POST , value="/docs/fetchrootdoc")
 	public ResponseEntity<List<DocDTO>> fetchrootdoc(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchRootDoc(context) ;
         List<DocDTO> list = docMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -517,7 +491,6 @@ public class DocResource {
 	@ApiOperation(value = "查询根目录文档", tags = {"文档" } ,notes = "查询根目录文档")
     @RequestMapping(method= RequestMethod.POST , value="/docs/searchrootdoc")
 	public ResponseEntity<Page<DocDTO>> searchRootDoc(@RequestBody DocSearchContext context) {
-        docRuntime.addAuthorityConditions(context,"READ");
         Page<Doc> domains = docService.searchRootDoc(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(docMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

@@ -1708,6 +1708,13 @@
     "mSTag" : "closed__0",
     "name" : "关闭_未置顶",
     "getPSDEMainStateActions" : [ {
+      "name" : "MobProductTestCounter",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/MobProductTestCounter.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Update",
       "getPSDEAction" : {
         "modelref" : true,
@@ -1827,6 +1834,13 @@
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/Update.json"
       },
       "allowMode" : true
+    }, {
+      "name" : "MobProductTestCounter",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/MobProductTestCounter.json"
+      },
+      "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
       "name" : "SRFUR__PROD_CLOSED_BUT",
@@ -1917,6 +1931,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/MobProductCounter.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "MobProductTestCounter",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEACTIONS/MobProductTestCounter.json"
       },
       "allowMode" : true
     } ],

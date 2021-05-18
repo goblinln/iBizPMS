@@ -200,7 +200,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "TaskTeam__DELETE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -214,7 +214,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "TaskTeam__DELETE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -228,7 +228,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "TaskTeam__READ"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -242,7 +242,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "TaskTeam__READ"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -382,7 +382,7 @@
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "TaskTeam__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -575,7 +575,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "TaskTeam__DELETE"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -589,7 +589,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "TaskTeam__DELETE"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -603,7 +603,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "TaskTeam__READ"
     },
     "tempDataMode" : 2,
     "builtinMethod" : true
@@ -617,7 +617,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "TaskTeam__READ"
     },
     "tempDataMode" : 1,
     "builtinMethod" : true
@@ -696,21 +696,57 @@
     "builtinMethod" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "Task_Create",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam/PSDERS/DER1N_IBZ_TASKTEAM_ZT_TASK_ROOT.json"
+    },
+    "name" : "CREATE",
+    "id" : "TaskTeam__CREATE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "Task_Delete",
+    "mapPSDEOPPrivName" : "DELETE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam/PSDERS/DER1N_IBZ_TASKTEAM_ZT_TASK_ROOT.json"
+    },
+    "name" : "DELETE",
+    "id" : "TaskTeam__DELETE"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "Task_Read",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam/PSDERS/DER1N_IBZ_TASKTEAM_ZT_TASK_ROOT.json"
+    },
+    "name" : "READ",
+    "id" : "TaskTeam__READ"
+  }, {
+    "logicName" : "Task_Update",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam/PSDERS/DER1N_IBZ_TASKTEAM_ZT_TASK_ROOT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "TaskTeam__UPDATE"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
   "codeName" : "TaskTeam",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TaskTeam.json",
   "enableUIActions" : 15,
   "logicName" : "任务团队",

@@ -152,7 +152,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                             <div class="page-logo-left">
                                 {(this.viewInstance as IPSAppIndexView).appIconPath ? <img class="page-logo-image" src={(this.viewInstance as IPSAppIndexView).appIconPath}></img> : null}
                                 <span class="page-logo-title">{AppServiceBase.getInstance().getAppModelDataObject().name}</span>
-                                {(this.viewInstance as IPSAppIndexView).enableAppSwitch ? <context-menu-drag contextMenuDragVisiable={this.contextMenuDragVisiable}></context-menu-drag> : null}
+                                {(this.viewInstance as IPSAppIndexView).enableAppSwitch ? <context-menu-drag viewStyle={this.viewInstance.viewStyle} contextMenuDragVisiable={this.contextMenuDragVisiable}></context-menu-drag> : null}
                             </div>
                             {!this.collapseChange ? <i class="ivu-icon el-icon-s-fold" on-click={() => this.collapseMenus()}></i> : null}
                             {this.collapseChange ? <i class="ivu-icon el-icon-s-unfold" on-click={() => this.collapseMenus()}></i> : null}

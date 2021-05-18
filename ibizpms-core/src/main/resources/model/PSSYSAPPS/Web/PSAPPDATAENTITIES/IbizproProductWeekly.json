@@ -258,7 +258,7 @@
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "Productweekly__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -477,14 +477,59 @@
     "id" : "CreateProductReport@IbizproProductWeekly"
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "Product_Create",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDERS/DER1N_IBIZPRO_PRODUCTWEEKLY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "CREATE",
+    "id" : "Productweekly__CREATE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
+  }, {
+    "logicName" : "Product_Delete",
+    "mapPSDEOPPrivName" : "DELETE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDERS/DER1N_IBIZPRO_PRODUCTWEEKLY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "DELETE",
+    "id" : "Productweekly__DELETE"
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "Product_Manage",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDERS/DER1N_IBIZPRO_PRODUCTWEEKLY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "MANAGE",
+    "id" : "Productweekly__MANAGE"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "Product_Read",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDERS/DER1N_IBIZPRO_PRODUCTWEEKLY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "READ",
+    "id" : "Productweekly__READ"
+  }, {
+    "logicName" : "Product_Update",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProductWeekly/PSDERS/DER1N_IBIZPRO_PRODUCTWEEKLY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Productweekly__UPDATE"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
