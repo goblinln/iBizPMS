@@ -6066,7 +6066,7 @@
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
-                        "grow" : 6,
+                        "grow" : 0,
                         "layout" : "FLEX"
                       },
                       "allowEmpty" : true,
@@ -6098,7 +6098,7 @@
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
-                        "grow" : 18,
+                        "grow" : 0,
                         "layout" : "FLEX"
                       },
                       "allowEmpty" : true,
