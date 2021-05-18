@@ -656,6 +656,10 @@ export class ChartControlBase extends MDControlBase {
     public async transformToBasicChartSetData(data: any, callback: Function) {
         if (!data || !Array.isArray(data) || data.length === 0) {
             this.isNoData = true;
+            if(this.myChart){
+                this.myChart.dispose()
+                this.myChart = undefined;
+            }
             return;
         }
         this.isNoData = false;

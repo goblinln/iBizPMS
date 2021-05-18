@@ -650,9 +650,9 @@
           "detailType" : "FORMITEM",
           "enableCond" : 3,
           "ignoreInput" : 0,
-          "itemWidth" : 135.0,
+          "itemWidth" : 130.0,
           "labelPos" : "LEFT",
-          "labelWidth" : 35,
+          "labelWidth" : 30,
           "name" : "end",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {

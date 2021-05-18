@@ -283,6 +283,11 @@ export class TaskService extends TaskBaseService {
         }
         //删除从实体【ibztaskteam】数据主键
         let ibztaskteamsData:any = data.ibztaskteams;
+        const isMultiple: boolean = data.multiple == 1 ? true : false;
+        if (!isMultiple)  {
+            ibztaskteamsData = null;
+            data.ibztaskteams = null;
+        }
         if (ibztaskteamsData && ibztaskteamsData.length > 0) {
             for (const item of ibztaskteamsData) {
                 if (item.id) {

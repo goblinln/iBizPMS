@@ -34,7 +34,7 @@ export default class AppRedirectView extends Vue {
      */
     public parseViewParam(urlStr: string): any {
         let tempViewParam: any = {};
-        const tempViewparam: any = urlStr.slice(urlStr.indexOf('?') + 1);
+        const tempViewparam: any = urlStr.slice(urlStr.lastIndexOf('?') + 1);
         const viewparamArray: Array<string> = decodeURIComponent(tempViewparam).split(';');
         if (viewparamArray.length > 0) {
             viewparamArray.forEach((item: any) => {

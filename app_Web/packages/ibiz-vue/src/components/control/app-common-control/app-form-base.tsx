@@ -337,7 +337,7 @@ export class AppFormBase extends EditFormControlBase {
                 formState={this.formState}
                 isForbidLoad={ this.data?.srfuf === '0'}
                 userTag={ modelJson.userTag ? modelJson.userTag : ''}
-                paramItem={appDataEntity?.codeName?.toLowerCase()}
+                paramItem={modelJson.paramItem ? modelJson.paramItem : appDataEntity?.codeName?.toLowerCase()}
                 parentdata={parentDataJO || undefined}
                 parameters={Util.formatAppDERSPath(this.context, appDERSPaths)}
                 context={tempContext}
