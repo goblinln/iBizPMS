@@ -561,7 +561,16 @@
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : " t1.parent = #{srf.datacontext.parent}",
+        "name" : "查询条件"
+      } ]
     } ],
     "codeName" : "ChildMore",
     "logicName" : "子需求（更多）",
@@ -989,6 +998,16 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "CaseStory"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "ChildMore",
+    "logicName" : "子需求（更多）",
+    "name" : "ChildMore",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ChildMore"
     } ],
     "enableBackend" : true,
     "enableFront" : true

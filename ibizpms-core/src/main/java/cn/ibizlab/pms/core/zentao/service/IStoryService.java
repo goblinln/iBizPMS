@@ -156,6 +156,7 @@ public interface IStoryService extends IService<Story> {
     Page<Story> searchBuildStories(StorySearchContext context);
     Page<Story> searchByModule(StorySearchContext context);
     Page<Story> searchCaseStory(StorySearchContext context);
+    Page<Story> searchChildMore(StorySearchContext context);
     Page<Story> searchDefault(StorySearchContext context);
     Page<Story> searchESBulk(StorySearchContext context);
     Page<Story> searchGetProductStories(StorySearchContext context);

@@ -56,6 +56,7 @@ public interface StoryMapper extends BaseMapper<Story> {
     Page<Story> searchBuildStories(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchByModule(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchCaseStory(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    Page<Story> searchChildMore(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchDefault(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchESBulk(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchGetProductStories(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);

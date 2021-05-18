@@ -1002,6 +1002,28 @@ public class SubStoryResource {
 	}
 
     @PreAuthorize("@StoryRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取子需求（更多）", tags = {"需求" } ,notes = "获取子需求（更多）")
+    @RequestMapping(method= RequestMethod.POST , value="/substories/fetchchildmore")
+	public ResponseEntity<List<SubStoryDTO>> fetchchildmore(@RequestBody StorySearchContext context) {
+        Page<Story> domains = storyService.searchChildMore(context) ;
+        List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@StoryRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询子需求（更多）", tags = {"需求" } ,notes = "查询子需求（更多）")
+    @RequestMapping(method= RequestMethod.POST , value="/substories/searchchildmore")
+	public ResponseEntity<Page<SubStoryDTO>> searchChildMore(@RequestBody StorySearchContext context) {
+        Page<Story> domains = storyService.searchChildMore(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@StoryRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"需求" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/substories/fetchdefault")
 	public ResponseEntity<List<SubStoryDTO>> fetchdefault(@RequestBody StorySearchContext context) {
@@ -2389,6 +2411,29 @@ public class SubStoryResource {
 	public ResponseEntity<Page<SubStoryDTO>> searchSubStoryCaseStoryByStory(@PathVariable("story_id") Long story_id, @RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchCaseStory(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
+	@ApiOperation(value = "根据需求获取子需求（更多）", tags = {"需求" } ,notes = "根据需求获取子需求（更多）")
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/fetchchildmore")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryChildMoreByStory(@PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
+        context.setN_parent_eq(story_id);
+        Page<Story> domains = storyService.searchChildMore(context) ;
+        List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
+	@ApiOperation(value = "根据需求查询子需求（更多）", tags = {"需求" } ,notes = "根据需求查询子需求（更多）")
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/substories/searchchildmore")
+	public ResponseEntity<Page<SubStoryDTO>> searchSubStoryChildMoreByStory(@PathVariable("story_id") Long story_id, @RequestBody StorySearchContext context) {
+        context.setN_parent_eq(story_id);
+        Page<Story> domains = storyService.searchChildMore(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
@@ -3791,6 +3836,29 @@ public class SubStoryResource {
 	public ResponseEntity<Page<SubStoryDTO>> searchSubStoryCaseStoryByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StorySearchContext context) {
         context.setN_parent_eq(story_id);
         Page<Story> domains = storyService.searchCaseStory(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+	@ApiOperation(value = "根据产品需求获取子需求（更多）", tags = {"需求" } ,notes = "根据产品需求获取子需求（更多）")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/fetchchildmore")
+	public ResponseEntity<List<SubStoryDTO>> fetchSubStoryChildMoreByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id,@RequestBody StorySearchContext context) {
+        context.setN_parent_eq(story_id);
+        Page<Story> domains = storyService.searchChildMore(context) ;
+        List<SubStoryDTO> list = substoryMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+	@ApiOperation(value = "根据产品需求查询子需求（更多）", tags = {"需求" } ,notes = "根据产品需求查询子需求（更多）")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/substories/searchchildmore")
+	public ResponseEntity<Page<SubStoryDTO>> searchSubStoryChildMoreByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody StorySearchContext context) {
+        context.setN_parent_eq(story_id);
+        Page<Story> domains = storyService.searchChildMore(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(substoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}

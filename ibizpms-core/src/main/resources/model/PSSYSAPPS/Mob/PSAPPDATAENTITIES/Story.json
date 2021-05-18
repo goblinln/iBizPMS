@@ -1093,6 +1093,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchChildMore",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ChildMore"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchChildMore"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -2800,6 +2816,22 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchCaseStory"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchChildMore",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "ChildMore"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchChildMore"
     },
     "builtinMethod" : false
   }, {

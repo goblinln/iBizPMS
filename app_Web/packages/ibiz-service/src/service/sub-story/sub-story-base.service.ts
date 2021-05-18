@@ -1345,6 +1345,23 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         return this.http.post(`/substories/fetchcasestory`, _data);
     }
     /**
+     * FetchChildMore
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof SubStoryService
+     */
+    async FetchChildMore(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && _context.story && true) {
+            return this.http.post(`/products/${_context.product}/stories/${_context.story}/substories/fetchchildmore`, _data);
+        }
+        if (_context.story && true) {
+            return this.http.post(`/stories/${_context.story}/substories/fetchchildmore`, _data);
+        }
+        return this.http.post(`/substories/fetchchildmore`, _data);
+    }
+    /**
      * FetchDefault
      *
      * @param {*} [_context={}]

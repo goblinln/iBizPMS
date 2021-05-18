@@ -325,6 +325,13 @@
 		 )t1
      </select>
 
+    <!--数据集合[ChildMore]-->
+	 <select id="searchChildMore"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
+         select t1.* from (
+                <include refid="ChildMore" />
+         )t1
+     </select>
+
     <!--数据集合[Default]-->
 	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.StorySearchContext"  resultMap="StoryResultMap">
          select t1.* from (
@@ -621,8 +628,14 @@
 
     <!--数据查询[ChildMore]-->
     <sql id="ChildMore" databaseId="mysql">
-		<![CDATA[  ]]>
+		<![CDATA[ SELECT 	t1.`ASSIGNEDTO`, 	t1.`COLOR`, 	t1.`ESTIMATE`, 	t1.`ID`, 	t1.`product`, 	( SELECT 	( CASE WHEN COUNT( t.IBZ_FAVORITESID ) > 0 THEN 1 ELSE 0 END ) AS ISFAVORITES  FROM 	T_IBZ_FAVORITES t  WHERE 	t.TYPE = 'story'  	AND t.ACCOUNT = 'admin'  	AND t.OBJECTID = t1.id  	) AS `ISFAVORITES`, 	t1.`MODULE`, 	t11.`NAME` AS `MODULENAME`, 	t1.`OPENEDBY`, 	t1.`PARENT`, 	( CASE WHEN t1.`PLAN` = '0' THEN '' ELSE t1.plan END ) AS `PLAN`, 	t1.`PRI`, 	t1.`STAGE`, 	t1.`STATUS`, 	t1.`TITLE`, 	t1.STORYSN  FROM 	`zt_story` t1 	LEFT JOIN zt_module t11 ON t1.MODULE = t11.ID  	LEFT JOIN zt_story t21 ON t1.PARENT = t21.ID  	LEFT JOIN zt_product t31 ON t1.PRODUCT = t31.ID  	LEFT JOIN zt_branch t41 ON t1.BRANCH = t41.ID ]]>
 		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
+			<if test="true">
+                <![CDATA[ AND  t1.parent = #{srf.datacontext.parent} ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
