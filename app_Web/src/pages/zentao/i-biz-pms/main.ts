@@ -6,7 +6,7 @@ import ElementUi from 'element-ui';
 import ViewUI from 'view-design';
 import ibizLab from 'ibiz-vue-lib';
 import axios from "axios";
-import { Interceptors } from '@/utils';
+import { initNoticeHandler, Interceptors } from '@/utils';
 import  {Print} from '@/utils/print';
 import i18n from '@/locale';
 import { install } from 'ibiz-service';
@@ -17,7 +17,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import 'view-design/dist/styles/iview.css';
 import 'ibiz-vue-lib/lib/ibiz-vue-lib.css';
 import '@/styles/default.less';
-import { AppComponentService,AppLayoutService, AppNoticeService, ErrorUtil } from 'ibiz-vue';
+import { AppComponentService,AppLayoutService, NoticeHandler } from 'ibiz-vue';
 
 import VueAMap from 'vue-amap';
 Vue.use(VueAMap);
@@ -40,22 +40,23 @@ const win: any = window;
 win.axios = axios;
 install({baseUrl:Environment.BaseUrl});
 installPlugin();
+initNoticeHandler();
 
 // 异常处理
 Vue.config.errorHandler = function (err: any, vm: any, info: any) {
-  ErrorUtil.errorHandler(err,info);
+    NoticeHandler.errorHandler(err,info);
 }
-Vue.prototype.$throw = (err:any, param?: any)=> {
-  ErrorUtil.errorHandler(err, param);
+Vue.prototype.$throw = function (err:any, param?: any, fnName?: string){
+    NoticeHandler.errorHandler(err, param, this, fnName);
 }
-Vue.prototype.$success = (message: string)=> {
-  AppNoticeService.getInstance().success(message);
+Vue.prototype.$success = function (err:any, param?: any, fnName?: string){
+    NoticeHandler.successHandler(err, param, this, fnName);
 }
-Vue.prototype.$warning = (message: string)=> {
-  AppNoticeService.getInstance().warning(message);
+Vue.prototype.$warning = function (err:any, param?: any, fnName?: string){
+    NoticeHandler.warningHandler(err, param, this, fnName);
 }
-Vue.prototype.$info = (message: string)=> {
-  AppNoticeService.getInstance().info(message);
+Vue.prototype.$info = function (err:any, param?: any, fnName?: string){
+    NoticeHandler.infoHandler(err, param, this, fnName);
 }
 
 Vue.config.productionTip = false;

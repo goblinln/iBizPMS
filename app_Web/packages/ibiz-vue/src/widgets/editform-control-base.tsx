@@ -499,7 +499,7 @@ export class EditFormControlBase extends FormControlBase {
                     this.formState.next({ type: 'save', data: data });
                 });
                 if (this.controlInstance.formFuncMode?.toLowerCase() != 'wizardform' && showResultInfo) {
-                    this.$success((data.srfmajortext ? data.srfmajortext : '') + (this.$t('app.formpage.savesuccess') as string));
+                    this.$success((data.srfmajortext ? data.srfmajortext : '') + (this.$t('app.formpage.savesuccess') as string), undefined, 'save');
                 }
                 resolve(response);
             }).catch((response: any) => {
