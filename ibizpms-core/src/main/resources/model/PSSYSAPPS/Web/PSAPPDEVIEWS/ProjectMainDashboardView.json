@@ -3815,6 +3815,9 @@
                     "height" : 220,
                     "layout" : "TABLE_24COL"
                   },
+                  "getPSSysCss" : {
+                    "cssName" : "form-group-divider"
+                  },
                   "infoGroupMode" : true,
                   "showCaption" : true
                 }, {
@@ -4238,6 +4241,9 @@
                     "height" : 220,
                     "layout" : "TABLE_24COL"
                   },
+                  "getPSSysCss" : {
+                    "cssName" : "form-group-divider"
+                  },
                   "infoGroupMode" : true,
                   "showCaption" : true
                 }, {
@@ -4633,6 +4639,9 @@
                     "colMD" : 24,
                     "layout" : "TABLE_24COL"
                   },
+                  "getPSSysCss" : {
+                    "cssName" : "form-group-divider"
+                  },
                   "infoGroupMode" : true,
                   "showCaption" : true
                 }, {
@@ -4747,6 +4756,9 @@
                     "colMD" : 24,
                     "layout" : "TABLE_24COL"
                   },
+                  "getPSSysCss" : {
+                    "cssName" : "form-group-divider"
+                  },
                   "infoGroupMode" : true,
                   "showCaption" : true
                 }, {
@@ -4800,6 +4812,9 @@
                   "getPSLayoutPos" : {
                     "colMD" : 24,
                     "layout" : "TABLE_24COL"
+                  },
+                  "getPSSysCss" : {
+                    "cssName" : "form-group-divider"
                   },
                   "infoGroupMode" : true,
                   "showCaption" : true
