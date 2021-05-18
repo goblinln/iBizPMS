@@ -305,6 +305,7 @@
       "id" : "begin",
       "hidden" : true,
       "dataType" : 5,
+      "createDVT" : "CURTIME",
       "getPSAppDEField" : {
         "name" : "BEGIN",
         "codeName" : "Begin"
@@ -313,6 +314,7 @@
       "id" : "end",
       "hidden" : true,
       "dataType" : 5,
+      "createDVT" : "CURTIME",
       "getPSAppDEField" : {
         "name" : "END",
         "codeName" : "End"
@@ -702,6 +704,7 @@
               "getPSDEFormItems" : [ {
                 "caption" : "开始日期",
                 "codeName" : "begin",
+                "createDVT" : "CURTIME",
                 "dataType" : 5,
                 "detailStyle" : "DEFAULT",
                 "detailType" : "FORMITEM",
@@ -727,6 +730,7 @@
               }, {
                 "caption" : "结束日期",
                 "codeName" : "end",
+                "createDVT" : "CURTIME",
                 "dataType" : 5,
                 "detailStyle" : "DEFAULT",
                 "detailType" : "FORMITEM",
