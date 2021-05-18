@@ -143,6 +143,8 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             return storyService.searchByModule(searchContext);    
         if (iPSDEDataSet.getName().equals("CaseStory"))
             return storyService.searchCaseStory(searchContext);    
+        if (iPSDEDataSet.getName().equals("ChildMore"))
+            return storyService.searchChildMore(searchContext);    
         if (iPSDEDataSet.getName().equals("DEFAULT"))
             return storyService.searchDefault(searchContext);    
         if (iPSDEDataSet.getName().equals("ESBulk"))
@@ -203,6 +205,8 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             return storyService.selectByModule(searchContext);
         if (iPSDataQuery.getName().equals("CaseStory"))
             return storyService.selectCaseStory(searchContext);
+        if (iPSDataQuery.getName().equals("ChildMore"))
+            return storyService.selectChildMore(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
             return storyService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("ESBulk"))
@@ -656,6 +660,9 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         }
         else if (action.equals("searchCaseStory")) {
             return aroundDataSet("CaseStory", point);
+        }
+        else if (action.equals("searchChildMore")) {
+            return aroundDataSet("ChildMore", point);
         }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);

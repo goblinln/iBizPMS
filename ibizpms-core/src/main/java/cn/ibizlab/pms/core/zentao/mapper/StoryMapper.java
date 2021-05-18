@@ -27,6 +27,7 @@ public interface StoryMapper extends BaseMapper<Story> {
     List<Story> selectBuildStories(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectByModule(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectCaseStory(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    List<Story> selectChildMore(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectDefault(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectESBulk(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     List<Story> selectGetProductStories(@Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
@@ -55,6 +56,7 @@ public interface StoryMapper extends BaseMapper<Story> {
     Page<Story> searchBuildStories(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchByModule(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchCaseStory(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
+    Page<Story> searchChildMore(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchDefault(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchESBulk(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);
     Page<Story> searchGetProductStories(IPage page, @Param("srf") StorySearchContext context, @Param("ew") Wrapper<Story> wrapper);

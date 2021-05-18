@@ -158,6 +158,10 @@ export class StoryBaseService extends EntityBaseService<IStory> {
         return this.condCache.get('caseStory');
     }
 
+    protected getChildMoreCond() {
+        return this.condCache.get('childMore');
+    }
+
     protected getDefaultCond() {
         return this.condCache.get('default');
     }
@@ -1125,6 +1129,20 @@ export class StoryBaseService extends EntityBaseService<IStory> {
             return this.http.post(`/products/${_context.product}/stories/fetchcasestory`, _data);
         }
         return this.http.post(`/stories/fetchcasestory`, _data);
+    }
+    /**
+     * FetchChildMore
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof StoryService
+     */
+    async FetchChildMore(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        if (_context.product && true) {
+            return this.http.post(`/products/${_context.product}/stories/fetchchildmore`, _data);
+        }
+        return this.http.post(`/stories/fetchchildmore`, _data);
     }
     /**
      * FetchDefault

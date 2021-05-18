@@ -322,7 +322,6 @@
         "getPSDEFormDetails" : [ {
           "caption" : "项目编号",
           "codeName" : "id",
-          "contentWidth" : 42.0,
           "dataType" : 1,
           "detailStyle" : "DEFAULT",
           "detailType" : "FORMITEM",
@@ -345,13 +344,11 @@
           "getPSLayoutPos" : {
             "colLG" : 2,
             "colMD" : 24,
-            "layout" : "TABLE_24COL",
-            "width" : 42
+            "layout" : "TABLE_24COL"
           },
           "getPSSysCss" : {
             "cssName" : "project-id"
           },
-          "width" : 42.0,
           "allowEmpty" : true,
           "emptyCaption" : false,
           "hidden" : false,
@@ -400,7 +397,7 @@
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 10,
+          "labelWidth" : 100,
           "name" : "name",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {
@@ -434,7 +431,7 @@
           "enableCond" : 3,
           "ignoreInput" : 0,
           "labelPos" : "LEFT",
-          "labelWidth" : 10,
+          "labelWidth" : 100,
           "name" : "desc",
           "noPrivDisplayMode" : 1,
           "getPSAppDEField" : {

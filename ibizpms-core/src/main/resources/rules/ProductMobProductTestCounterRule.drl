@@ -26,8 +26,8 @@ ruleflow-group "productmobproducttestcounterrawsqlcall4"
     then
     Map param =new HashMap();
     param.put("param0",productmobproducttestcounterdefault.get("id"));
-    param.put("param1",curuser.getSessionParams().get("#{srf.sessioncontext.srfloginname}"));
-    String strSql="select count(t1.id) as TESTSUITECNT from ZT_TESTSUITE t1 where t1.deleted = '0' and t1.product = #{et.param0}  and ( t1.`TYPE` = 'public' OR ( t1.`TYPE` = 'private' AND t1.`ADDEDBY` = #{et.param1} ) )";
+    param.put("param1",curuser.getSessionParams().get("srfloginname"));
+    String strSql="select count(t1.id) as TESTSUITECNT from ZT_TESTSUITE t1 where t1.deleted = '0' and ( t1.`TYPE` = 'public' OR ( t1.`TYPE` = 'private' AND t1.`ADDEDBY` = #{et.param0} ) ) and t1.product = #{et.param1}";
     java.util.List<JSONObject> entities=iBzSysProductDefaultService.select(strSql,param);//SQL调用
     if(entities.size()>0 && !ObjectUtils.isEmpty(entities.get(0))){
         JSONObject entity=entities.get(0);
