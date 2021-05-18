@@ -47,6 +47,11 @@ export class ImgurlBase64{
     public async getImgURLOfBase64(url: string) {
         return new Promise((resolve, reject) => {
             let img = './';
+            // 富文本CV上传图片与鼠标移出抛值冲突问题,上传成功回调还没执行时就抛值
+            var reg = /^\s*data:([a-z]+\/[a-z0-9-+.]+(;[a-z-]+=[a-z0-9-]+)?)?(;base64)?,([a-z0-9!$&',()*+;=\-._~:@\/?%\s]*?)\s*$/i;
+            if (reg.test(url)) {
+                return resolve(url);
+            }
             // 缓存中有从缓存中拿
             if (ImgurlBase64.imgCached.get(url)) {
                 let img = ImgurlBase64.imgCached.get(url);

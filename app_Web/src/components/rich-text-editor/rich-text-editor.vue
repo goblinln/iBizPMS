@@ -509,11 +509,12 @@ export default class RichTextEditor extends Vue {
         const imgsrc = this.imgsrc;
         if(imgs && imgs.length > 0 && imgsrc && imgsrc.length > 0){
             imgs.forEach((img: any, index: number) => {
-                if(img.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)!=null){
-                    let src:any = img.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)[0];
-                    const _imgsrc = imgsrc.find((_imgsrc: any) => Object.is(_imgsrc.key, src.substring(5,src.length-1)));
+                var reg = /data:image\/.*;base64,.*(?=[\'\"])/;
+                if(img.match(reg) != null){
+                    let base64:any = img.match(reg)[0];
+                    const _imgsrc = imgsrc.find((_imgsrc: any) => Object.is(_imgsrc.key, base64));
                     if (_imgsrc) {
-                        const newImg = img.replace(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig, 'src="{' + _imgsrc.value + '}"');
+                        const newImg = img.replace(reg, '{'+_imgsrc.value+'}');
                         html = html.replace(img, newImg);
                     }
                 }
@@ -781,7 +782,6 @@ export default class RichTextEditor extends Vue {
         let noticeusers:string = "";
         atSymbol.forEach((item:any)=>{
             if(Object.is(item.className,'at-text')){
-                console.log(item);
                 noticeusers += item.getAttribute('noticeusers')+',';
             }
         })
