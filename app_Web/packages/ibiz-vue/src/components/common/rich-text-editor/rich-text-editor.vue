@@ -484,7 +484,7 @@ export default class RichTextEditor extends Vue {
     /**
      * 获取图片Base64
      * 
-     * @memberof HtmlContainer
+     * @memberof AppRichTextEditor
      */
     public async getImgUrlBase64(html: any){
         let imgs:Array<any>|null = html.match(/<img.*?(?:>|\/>)/gi)!=null? html.match(/<img.*?(?:>|\/>)/gi):[];
@@ -504,18 +504,19 @@ export default class RichTextEditor extends Vue {
     /**
      * 更替抛到表单的图片src
      * 
-     * @memberof HtmlContainer
+     * @memberof AppRichTextEditor
      */
     public getImgUrl(html: any){
         let imgs:Array<any>|null = html.match(/<img.*?(?:>|\/>)/gi)!=null? html.match(/<img.*?(?:>|\/>)/gi):[];
         const imgsrc = this.imgsrc;
         if(imgs && imgs.length > 0 && imgsrc && imgsrc.length > 0){
             imgs.forEach((img: any, index: number) => {
-                if(img.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)!=null){
-                    let src:any = img.match(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig)[0];
-                    const _imgsrc = imgsrc.find((_imgsrc: any) => Object.is(_imgsrc.key, src.substring(5,src.length-1)));
+                var reg = /data:image\/.*;base64,.*(?=[\'\"])/;
+                if(img.match(reg) != null){
+                    let base64:any = img.match(reg)[0];
+                    const _imgsrc = imgsrc.find((_imgsrc: any) => Object.is(_imgsrc.key, base64));
                     if (_imgsrc) {
-                        const newImg = img.replace(/src=[\'\"]?([^\'\"]*)[\'\"]?/ig, 'src="{' + _imgsrc.value + '}"');
+                        const newImg = img.replace(reg, '{'+_imgsrc.value+'}');
                         html = html.replace(img, newImg);
                     }
                 }
