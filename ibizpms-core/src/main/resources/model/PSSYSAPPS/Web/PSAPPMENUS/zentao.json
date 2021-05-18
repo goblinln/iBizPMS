@@ -9,8 +9,7 @@
     "itemType" : "MENUITEM",
     "name" : "top_menus",
     "getPSAppMenuItems" : [ {
-      "accUserMode" : 4,
-      "accessKey" : "TOP_MYFAVOURITE_MENU",
+      "accUserMode" : 2,
       "caption" : "我的收藏",
       "itemType" : "MENUITEM",
       "name" : "menuitem12",
@@ -21,8 +20,7 @@
       "tooltip" : "我的收藏",
       "openDefault" : true
     }, {
-      "accUserMode" : 4,
-      "accessKey" : "TOP_MYPLACE_MENU",
+      "accUserMode" : 2,
       "caption" : "我的地盘",
       "itemType" : "MENUITEM",
       "name" : "menuitem9",
@@ -218,8 +216,7 @@
     "itemType" : "MENUITEM",
     "name" : "left_exp",
     "getPSAppMenuItems" : [ {
-      "accUserMode" : 4,
-      "accessKey" : "PRODUCTLEFT",
+      "accUserMode" : 2,
       "caption" : "产品",
       "itemType" : "MENUITEM",
       "name" : "menuitem4",
@@ -237,8 +234,7 @@
         "id" : "菜单项文本[MENUITEM.CAPTION.LEFT_PRODUCT]"
       }
     }, {
-      "accUserMode" : 4,
-      "accessKey" : "LEFT_PROJECT_MENU",
+      "accUserMode" : 2,
       "caption" : "项目",
       "itemType" : "MENUITEM",
       "name" : "menuitem5",
@@ -252,8 +248,7 @@
       },
       "tooltip" : "项目"
     }, {
-      "accUserMode" : 4,
-      "accessKey" : "LEFT_CASE_MENU",
+      "accUserMode" : 2,
       "caption" : "测试",
       "itemType" : "MENUITEM",
       "name" : "menuitem6",

@@ -132,7 +132,7 @@ export class AppStyle2IndexView extends AppIndexViewBase {
         const inputMenus = this.getMenuGroup(name);
         if (inputMenus && inputMenus.getPSAppMenuItems) {
             this.computedEffectiveMenus(inputMenus.getPSAppMenuItems);
-            this.computeParentMenus(inputMenus.getPSAppMenuItems);
+            // this.computeParentMenus(inputMenus.getPSAppMenuItems);
         }
         return inputMenus;
     }
@@ -154,28 +154,28 @@ export class AppStyle2IndexView extends AppIndexViewBase {
         });
     }
 
-    /**
-     * 计算父项菜单项是否隐藏
-     *
-     * @param {*} inputMenus
-     * @memberof AppStyle2IndexViewLayout
-     */
-    public computeParentMenus(inputMenus: Array<any>) {
-        if (inputMenus && inputMenus.length > 0) {
-            inputMenus.forEach((item: any) => {
-                if (item.hidden && item.getPSAppMenuItems && item.getPSAppMenuItems.length > 0) {
-                    item.getPSAppMenuItems.map((singleItem: any) => {
-                        if (!singleItem.hidden) {
-                            item.hidden = false;
-                        }
-                        if (singleItem.getPSAppMenuItems && singleItem.getPSAppMenuItems.length > 0) {
-                            this.computeParentMenus(singleItem.getPSAppMenuItems);
-                        }
-                    });
-                }
-            });
-        }
-    }
+    // /**
+    //  * 计算父项菜单项是否隐藏
+    //  *
+    //  * @param {*} inputMenus
+    //  * @memberof AppStyle2IndexViewLayout
+    //  */
+    // public computeParentMenus(inputMenus: Array<any>) {
+    //     if (inputMenus && inputMenus.length > 0) {
+    //         inputMenus.forEach((item: any) => {
+    //             if (item.hidden && item.getPSAppMenuItems && item.getPSAppMenuItems.length > 0) {
+    //                 item.getPSAppMenuItems.map((singleItem: any) => {
+    //                     if (!singleItem.hidden) {
+    //                         item.hidden = false;
+    //                     }
+    //                     if (singleItem.getPSAppMenuItems && singleItem.getPSAppMenuItems.length > 0) {
+    //                         this.computeParentMenus(singleItem.getPSAppMenuItems);
+    //                     }
+    //                 });
+    //             }
+    //         });
+    //     }
+    // }
 
     /**
      * 注册底部项

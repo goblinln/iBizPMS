@@ -227,6 +227,7 @@ export class AppmenuBase extends AppMenuControlBase {
      * @memberof AppmenuBase
      */
     public renderMenuItem(menu: any, isFirst: boolean) {
+        let hasIcon: boolean = menu.getPSSysImage?.imagePath || menu.getPSSysImage?.cssClass || (!menu.getPSSysImage && isFirst) ? true : false;
         return (
             (Object.is(menu.itemType, 'MENUITEM') && !menu.hidden) ?
                 <el-menu-item
@@ -238,12 +239,12 @@ export class AppmenuBase extends AppMenuControlBase {
                     {(!menu.getPSSysImage && isFirst) ? <i class='fa fa-cogs app-menu-icon'></i> : null}
                     {
                         isFirst && this.collapseChange ?
-                            <span ref="circleText" class={['text', { 'app-menu-circle': this.collapseChange && isFirst }]} title={menu.tooltip}>
+                            <span ref="circleText" class={['text', { 'app-menu-circle': this.collapseChange && isFirst, 'no-icon': !hasIcon }]} title={menu.tooltip}>
                                 {menu.caption.slice(0, 1)}
                             </span> : null
                     }
                     <template slot="title">
-                        <span class={['text', { 'app-menu-circle': this.collapseChange && isFirst }]} title={menu.tooltip}>
+                        <span class={['text', { 'app-menu-circle': this.collapseChange && isFirst, 'no-icon': !hasIcon }]} title={menu.tooltip}>
                             {menu.caption}
                         </span>
                         {
@@ -265,6 +266,7 @@ export class AppmenuBase extends AppMenuControlBase {
      * @memberof AppmenuBase
      */
     public renderSubmenu(menus: any, isFirst: boolean) {
+        let hasIcon: boolean = menus.getPSSysImage?.imagePath || menus.getPSSysImage?.cssClass || (!menus.getPSSysImage && isFirst) ? true : false;
         return (
             !menus.hidden ?
                 <el-submenu
@@ -276,7 +278,7 @@ export class AppmenuBase extends AppMenuControlBase {
                         {menus.getPSSysImage?.imagePath ? <img class='app-menu-icon' src={menus.getPSSysImage.imagePath} /> : null}
                         {menus.getPSSysImage?.cssClass ? <i class={[menus.getPSSysImage.cssClass, 'app-menu-icon']}></i> : null}
                         {(!menus.getPSSysImage && isFirst) ? <i class='fa fa-cogs app-menu-icon'></i> : null}
-                        <span ref="circleText" class={['text', { 'app-menu-circle': this.collapseChange && isFirst }]} title={menus.tooltip}>
+                        <span ref="circleText" class={['text', { 'app-menu-circle': this.collapseChange && isFirst, 'no-icon': !hasIcon }]} title={menus.tooltip}>
                             {this.collapseChange && isFirst ? menus.caption.slice(0, 1) : menus.caption}
                         </span>
                     </template>

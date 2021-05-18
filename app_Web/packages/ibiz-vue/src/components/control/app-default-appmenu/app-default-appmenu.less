@@ -52,7 +52,7 @@
     }
     overflow-y: auto;
     overflow-x: hidden;
-    height: calc(100% - 58px);
+    height: 100%;
     .ivu-divider {
         background-color: var(--leftsidebar-background-color);
         height: 2px;
@@ -77,11 +77,11 @@
         }
         .el-submenu__title .app-menu-icon,
         .el-menu-item .app-menu-icon {
-            width: 20px;
+            width: 14px;
             font-size: 14px;
         }
         .el-submenu__title .text {
-            font-size: 16px;
+            font-size: 14px;
         }
         .el-submenu__title .app-menu-circle,
         .el-menu-item .app-menu-circle {
@@ -111,11 +111,14 @@
         }
 
         .isCollpase .el-submenu__title {
-            padding-left: 12px !important;
+            padding-left: 8px !important;
+            .el-submenu__icon-arrow {
+                display: none;
+            }
         }
 
         .isFirst > .text {
-            font-size: 16px !important;
+            font-size: 14px !important;
         }
         > .el-menu-item,
         > .el-submenu > .el-submenu__title {
@@ -124,7 +127,7 @@
             padding-left: 16px !important;
         }
         .app-menu-icon {
-            margin: 4px;
+            margin: 4px 8px 4px 4px;
             text-align: center;
         }
         > .el-submenu {
@@ -245,12 +248,28 @@
 }
 .app-app-menu .app-menu-item {
     >.el-submenu {
-        .el-menu-item {
-            padding-left: 44px !important;
-            .text {
-                padding-left: 4px;
+        >.el-menu-item, 
+        >.el-menu .el-menu-item,
+        >.el-menu .el-submenu .el-submenu__title {
+            .app-menu-icon {
+                margin-left: 0px;
+            }
+            .no-icon {
+                padding-left: 22px;
             }
         }
+    }
+    .el-submenu {
+        .el-submenu__title .el-icon-arrow-down {
+            right: 8px;
+        }
+    }
+    .el-submenu.is-opened >.el-submenu__title .el-submenu__icon-arrow {
+        transform-origin: 35% 50%;
+        -ms-transform-origin: 35% 50%;
+        -webkit-transform-origin: 35% 50%;
+        -moz-transform-origin: 35% 50%;
+        -o-transform-origin: 35% 50%;
     }
 }
 

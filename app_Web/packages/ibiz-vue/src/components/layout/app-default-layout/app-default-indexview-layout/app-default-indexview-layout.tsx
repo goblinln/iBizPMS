@@ -168,7 +168,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                     </div>
                 </header>
                 <layout>
-                    <sider class="index_sider" width={this.isFullScreen ? 0 : this.collapseChange ? 64 : 200} hide-trigger value={this.collapseChange}>
+                    <sider class="index_sider" width={this.isFullScreen ? 0 : this.collapseChange ? 68 : 200} hide-trigger value={this.collapseChange}>
                         {this.$slots.default}
                     </sider>
                     <content class={contentClass} >

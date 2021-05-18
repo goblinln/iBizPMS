@@ -329,20 +329,6 @@
         "codeName" : "ProductName"
       }
     }, {
-      "id" : "begin",
-      "dataType" : 5,
-      "getPSAppDEField" : {
-        "name" : "BEGIN",
-        "codeName" : "Begin"
-      }
-    }, {
-      "id" : "end",
-      "dataType" : 5,
-      "getPSAppDEField" : {
-        "name" : "END",
-        "codeName" : "End"
-      }
-    }, {
       "id" : "product",
       "hidden" : true,
       "dataType" : 1,
@@ -350,6 +336,27 @@
         "name" : "PRODUCT",
         "codeName" : "Product"
       }
+    }, {
+      "id" : "begin",
+      "hidden" : true,
+      "dataType" : 5,
+      "createDVT" : "CURTIME",
+      "getPSAppDEField" : {
+        "name" : "BEGIN",
+        "codeName" : "Begin"
+      }
+    }, {
+      "id" : "end",
+      "hidden" : true,
+      "dataType" : 5,
+      "createDVT" : "CURTIME",
+      "getPSAppDEField" : {
+        "name" : "END",
+        "codeName" : "End"
+      }
+    }, {
+      "id" : "formitemex1",
+      "dataType" : 25
     }, {
       "id" : "owner",
       "dataType" : 25,
@@ -604,86 +611,6 @@
           "inputTipClosable" : false,
           "showCaption" : true
         }, {
-          "caption" : "起始时间",
-          "codeName" : "begin",
-          "dataType" : 5,
-          "detailStyle" : "DEFAULT",
-          "detailType" : "FORMITEM",
-          "enableCond" : 3,
-          "ignoreInput" : 0,
-          "itemWidth" : 200.0,
-          "labelPos" : "LEFT",
-          "labelWidth" : 100,
-          "name" : "begin",
-          "noPrivDisplayMode" : 1,
-          "getPSAppDEField" : {
-            "name" : "BEGIN",
-            "codeName" : "Begin"
-          },
-          "getPSDEFormItemUpdate" : {
-            "modelref" : true,
-            "id" : "GetInfoTaskOvByTime"
-          },
-          "getPSEditor" : {
-            "dateTimeFormat" : "YYYY-MM-DD",
-            "editorParams" : {
-              "TIMEFMT" : "YYYY-MM-DD"
-            },
-            "editorType" : "DATEPICKEREX_NOTIME",
-            "editorWidth" : 100.0,
-            "name" : "begin"
-          },
-          "getPSLayoutPos" : {
-            "colLG" : 8,
-            "colMD" : 8,
-            "layout" : "TABLE_24COL"
-          },
-          "allowEmpty" : false,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : true
-        }, {
-          "caption" : "~",
-          "codeName" : "end",
-          "dataType" : 5,
-          "detailStyle" : "DEFAULT",
-          "detailType" : "FORMITEM",
-          "enableCond" : 3,
-          "ignoreInput" : 0,
-          "itemWidth" : 130.0,
-          "labelPos" : "LEFT",
-          "labelWidth" : 30,
-          "name" : "end",
-          "noPrivDisplayMode" : 1,
-          "getPSAppDEField" : {
-            "name" : "END",
-            "codeName" : "End"
-          },
-          "getPSDEFormItemUpdate" : {
-            "modelref" : true,
-            "id" : "GetInfoTaskOvByTime"
-          },
-          "getPSEditor" : {
-            "dateTimeFormat" : "YYYY-MM-DD",
-            "editorParams" : {
-              "TIMEFMT" : "YYYY-MM-DD"
-            },
-            "editorType" : "DATEPICKEREX_NOTIME",
-            "editorWidth" : 100.0,
-            "name" : "end"
-          },
-          "getPSLayoutPos" : {
-            "colLG" : 6,
-            "colMD" : 6,
-            "layout" : "TABLE_24COL"
-          },
-          "allowEmpty" : false,
-          "emptyCaption" : false,
-          "hidden" : false,
-          "inputTipClosable" : false,
-          "showCaption" : true
-        }, {
           "caption" : "所属产品",
           "codeName" : "product",
           "dataType" : 1,
@@ -710,6 +637,100 @@
           "allowEmpty" : true,
           "emptyCaption" : false,
           "hidden" : true,
+          "inputTipClosable" : false,
+          "showCaption" : true
+        }, {
+          "caption" : "开始日期",
+          "codeName" : "formitemex1",
+          "dataType" : 25,
+          "detailStyle" : "DEFAULT",
+          "detailType" : "FORMITEM",
+          "enableCond" : 3,
+          "ignoreInput" : 0,
+          "itemWidth" : 200.0,
+          "labelPos" : "LEFT",
+          "labelWidth" : 100,
+          "name" : "formitemex1",
+          "noPrivDisplayMode" : 1,
+          "getPSDEFormItems" : [ {
+            "caption" : "开始时间",
+            "codeName" : "begin",
+            "createDVT" : "CURTIME",
+            "dataType" : 5,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 100,
+            "name" : "begin",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "BEGIN",
+              "codeName" : "Begin"
+            },
+            "getPSDEFormItemUpdate" : {
+              "modelref" : true,
+              "id" : "GetInfoTaskOvByTime"
+            },
+            "getPSEditor" : {
+              "editorType" : "HIDDEN",
+              "name" : "begin"
+            },
+            "allowEmpty" : true,
+            "emptyCaption" : false,
+            "hidden" : true,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          }, {
+            "caption" : "结束时间",
+            "codeName" : "end",
+            "createDVT" : "CURTIME",
+            "dataType" : 5,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 100,
+            "name" : "end",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "END",
+              "codeName" : "End"
+            },
+            "getPSDEFormItemUpdate" : {
+              "modelref" : true,
+              "id" : "GetInfoTaskOvByTime"
+            },
+            "getPSEditor" : {
+              "editorType" : "HIDDEN",
+              "name" : "end"
+            },
+            "allowEmpty" : true,
+            "emptyCaption" : false,
+            "hidden" : true,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          } ],
+          "getPSEditor" : {
+            "dateTimeFormat" : "YYYY-MM-DD",
+            "editorParams" : {
+              "TIMEFMT" : "YYYY-MM-DD"
+            },
+            "editorType" : "DATEPICKEREX_NOTIME",
+            "editorWidth" : 100.0,
+            "name" : "formitemex1"
+          },
+          "getPSLayoutPos" : {
+            "colLG" : 15,
+            "colMD" : 24,
+            "layout" : "TABLE_24COL"
+          },
+          "allowEmpty" : false,
+          "compositeItem" : true,
+          "emptyCaption" : false,
+          "hidden" : false,
           "inputTipClosable" : false,
           "showCaption" : true
         }, {

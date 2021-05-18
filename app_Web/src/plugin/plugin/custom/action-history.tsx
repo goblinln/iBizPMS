@@ -435,7 +435,7 @@ export class ActionHistory extends AppListBase {
             return null;
         }
         if(this.items.length > 0){
-            return <div class="app-list" style="justify-content: start;">
+            return <div class="app-list" style="justify-content: start;height: auto;">
                 {this.renderActionHistory()}
             </div>
         } else {

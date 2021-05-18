@@ -35,7 +35,6 @@ function getLocaleResourceBase(){
 		},
 		main_grid: {
 			columns: {
-				'id': commonLogic.appcommonhandle("编号",null),
 				'desc': commonLogic.appcommonhandle("步骤",null),
 				'type': commonLogic.appcommonhandle("类型",null),
 				'expect': commonLogic.appcommonhandle("预期",null),

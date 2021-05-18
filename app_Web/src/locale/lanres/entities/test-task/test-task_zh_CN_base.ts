@@ -352,6 +352,7 @@ function getLocaleResourceBase(){
 				'pri': commonLogic.appcommonhandle("优先级",null), 
 				'begin': commonLogic.appcommonhandle("开始日期",null), 
 				'end': commonLogic.appcommonhandle("结束日期",null), 
+				'formitemex1': commonLogic.appcommonhandle("开始日期",null), 
 				'project': commonLogic.appcommonhandle("所属项目",null), 
 				'build': commonLogic.appcommonhandle("版本",null), 
 				'status': commonLogic.appcommonhandle("当前状态",null), 
