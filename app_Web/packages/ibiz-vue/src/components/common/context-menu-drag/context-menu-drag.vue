@@ -37,8 +37,7 @@
 <script lang="ts">
 import draggable from 'vuedraggable';
 import { Vue, Component, Provide, Watch, Prop, Model } from 'vue-property-decorator';
-import { EntityBaseService, LogUtil } from 'ibiz-core';
-import { Environment } from '@/environments/environment';
+import { AppServiceBase, EntityBaseService, LogUtil } from 'ibiz-core';
 
 // tslint:disable-next-line:max-classes-per-file
 @Component({
@@ -183,7 +182,8 @@ export default class ContextMenuDrag extends Vue {
       if(!data && data.length === 0){
         this.list = [];
       }
-      let protalData:any = {fullName:'企业门户',addr:Environment.protalUrl};
+      const Environment: any = AppServiceBase.getInstance().getAppEnvironment();
+      let protalData:any = {fullName:'企业门户',addr:Environment.portalUrl};
       this.list.push(protalData);
       this.list.push(...data);
     }
