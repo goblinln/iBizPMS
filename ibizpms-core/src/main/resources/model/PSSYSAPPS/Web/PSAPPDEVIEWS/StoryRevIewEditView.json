@@ -1,17 +1,16 @@
 {
   "accUserMode" : 2,
   "caption" : "需求评审",
-  "codeName" : "StoryRevIewView",
-  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRevIewView.json",
-  "name" : "StoryRevIewView",
-  "openMode" : "DRAWER_RIGHT",
+  "codeName" : "StoryRevIewEditView",
+  "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRevIewEditView.json",
+  "name" : "StoryRevIewEditView",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
   },
   "getPSAppViewEngines" : [ {
     "engineCat" : "VIEW",
-    "engineType" : "OptionView",
+    "engineType" : "EditView",
     "name" : "engine",
     "getPSUIEngineParams" : [ {
       "name" : "FORM",
@@ -22,18 +21,19 @@
       "value" : 0
     } ]
   } ],
-  "getPSAppViewNavContexts" : [ {
-    "key" : "OBJECTTYPE",
-    "name" : "OBJECTTYPE",
-    "value" : "story",
-    "rawValue" : true
-  }, {
-    "key" : "SRFPARENTKEY",
-    "name" : "SRFPARENTKEY",
-    "value" : "story",
-    "rawValue" : false
-  } ],
   "getPSControls" : [ {
+    "codeName" : "RevIewEditViewtoolbar",
+    "controlType" : "TOOLBAR",
+    "name" : "toolbar",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Story.json"
+    },
+    "getPSControlParam" : {
+      "id" : "TOOLBAR"
+    },
+    "modelid" : "313114bc3bad5880fbdcc24403553eaa_toolbar"
+  }, {
     "codeName" : "Review",
     "controlType" : "FORM",
     "getCreatePSControlAction" : {
@@ -136,7 +136,7 @@
         }
       } ],
       "enableDEFieldPrivilege" : false,
-      "id" : "选项表单处理器（需求评审）"
+      "id" : "编辑表单处理器（需求评审）"
     },
     "getPSControlParam" : {
       "autoLoad" : true,
@@ -2947,14 +2947,14 @@
     "name" : "form",
     "modelid" : "c618859e0d3cad750666a93cd3a78261"
   } ],
-  "getPSDEViewCodeName" : "RevIewView",
+  "getPSDEViewCodeName" : "RevIewEditView",
   "getPSSysImage" : {
     "glyph" : "xf006@FontAwesome",
     "cssClass" : "fa fa-star-o"
   },
   "getPSViewLayoutPanel" : {
     "codeName" : "Layoutpanel",
-    "controlStyle" : "APPDEOPTVIEW_STYLE2",
+    "controlStyle" : "APPDEEDITVIEW_STYLE2",
     "controlType" : "VIEWLAYOUTPANEL",
     "name" : "layoutpanel",
     "getPSAppDataEntity" : {
@@ -2967,12 +2967,12 @@
   },
   "title" : "需求评审",
   "viewStyle" : "STYLE2",
-  "viewType" : "DEOPTVIEW",
+  "viewType" : "DEEDITVIEW",
   "xDataControlName" : "form",
   "enableDP" : true,
   "showCaptionBar" : true,
   "showDataInfoBar" : true,
-  "modelid" : "721471752350ebaf6b7c6019341a9960",
+  "modelid" : "313114bc3bad5880fbdcc24403553eaa",
   "getPSAppDERSPaths" : [ [ {
     "actionRSMode" : 1,
     "codeName" : "Stories",

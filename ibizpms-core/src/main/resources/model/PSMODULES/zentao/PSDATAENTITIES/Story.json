@@ -13101,7 +13101,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectStory.json"
@@ -13197,7 +13197,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
