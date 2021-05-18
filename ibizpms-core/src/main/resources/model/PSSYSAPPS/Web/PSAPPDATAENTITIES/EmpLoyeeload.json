@@ -71,7 +71,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "Ztproject__DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -321,7 +321,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "Ztproject__DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -466,14 +466,59 @@
     "builtinMethod" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "Project_Create",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDERS/DER1N_IBZ_EMPLOYEELOAD_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "CREATE",
+    "id" : "Ztproject__CREATE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "Project_Delete",
+    "mapPSDEOPPrivName" : "DELETE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDERS/DER1N_IBZ_EMPLOYEELOAD_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "DELETE",
+    "id" : "Ztproject__DELETE"
+  }, {
+    "logicName" : "Project_Manage",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDERS/DER1N_IBZ_EMPLOYEELOAD_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "MANAGE",
+    "id" : "Ztproject__MANAGE"
+  }, {
+    "logicName" : "Project_Read",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDERS/DER1N_IBZ_EMPLOYEELOAD_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "READ",
+    "id" : "Ztproject__READ"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "Project_Update",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload/PSDERS/DER1N_IBZ_EMPLOYEELOAD_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Ztproject__UPDATE"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"

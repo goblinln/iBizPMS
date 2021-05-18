@@ -1353,6 +1353,10 @@ function getLocaleResourceBase(){
 			},
 		},
 		revieweditviewtoolbar_toolbar: {
+			'deuiaction1': {
+				caption: commonLogic.appcommonhandle("保存并关闭",null),
+				tip: commonLogic.appcommonhandle("保存并关闭",null),
+			},
 		},
 		editviewtoolbar_toolbar: {
 			'deuiaction1': {

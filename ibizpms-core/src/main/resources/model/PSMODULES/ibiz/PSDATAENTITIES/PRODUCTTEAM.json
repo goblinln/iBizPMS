@@ -1224,14 +1224,59 @@
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
+    "logicName" : "Product_Create",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDERS/DER1N_IBZ_PRODUCTTEAM_ZT_PRODUCT_ROOT.json"
+    },
+    "name" : "CREATE",
+    "id" : "Productteam__CREATE"
+  }, {
     "logicName" : "删除",
     "name" : "DELETE"
+  }, {
+    "logicName" : "Product_Delete",
+    "mapPSDEOPPrivName" : "DELETE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDERS/DER1N_IBZ_PRODUCTTEAM_ZT_PRODUCT_ROOT.json"
+    },
+    "name" : "DELETE",
+    "id" : "Productteam__DELETE"
+  }, {
+    "logicName" : "Product_Manage",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDERS/DER1N_IBZ_PRODUCTTEAM_ZT_PRODUCT_ROOT.json"
+    },
+    "name" : "MANAGE",
+    "id" : "Productteam__MANAGE"
   }, {
     "logicName" : "管理",
     "name" : "MANAGE"
   }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "Product_Read",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDERS/DER1N_IBZ_PRODUCTTEAM_ZT_PRODUCT_ROOT.json"
+    },
+    "name" : "READ",
+    "id" : "Productteam__READ"
+  }, {
+    "logicName" : "Product_Update",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/PRODUCTTEAM/PSDERS/DER1N_IBZ_PRODUCTTEAM_ZT_PRODUCT_ROOT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "Productteam__UPDATE"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
