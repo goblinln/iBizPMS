@@ -582,10 +582,8 @@
           "name" : "u2f95d53",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "修改",
             "codeName" : "Edit",
-            "dataAccessAction" : "SRFUR__DAILY_SUBMIT_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailymainEditView.json",
@@ -628,11 +626,9 @@
           "name" : "u6ece727",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "提交",
             "codeName" : "submitCz",
             "confirmMsg" : "确认要马上提交吗？",
-            "dataAccessAction" : "SRFUR__DAILY_SUBMIT_BUT",
             "fullCodeName" : "IbzDaily_submitCz",
             "name" : "submit（操作列）",
             "getPSAppDEMethod" : {

@@ -831,7 +831,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "创建项目",
     "codeName" : "OpenProjectCreateView",
-    "dataAccessAction" : "SRFUR__PRODSTA_PROJCRT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
@@ -882,7 +881,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "查看全部",
     "codeName" : "OpenProductStoryView",
-    "dataAccessAction" : "SRFUR__PRODSTA_STOREOP_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",

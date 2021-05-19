@@ -680,7 +680,6 @@
             "caption" : "删除",
             "codeName" : "Delete",
             "confirmMsg" : "您确定删除该文档吗？",
-            "dataAccessAction" : "SRFUR__DOC_DELETE_BUT",
             "fullCodeName" : "Doc_Delete",
             "name" : "删除",
             "getPSAppDEMethod" : {

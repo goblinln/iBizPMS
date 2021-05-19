@@ -531,7 +531,6 @@
             "caption" : "删除",
             "codeName" : "delete",
             "confirmMsg" : "您确定删除该附件吗？",
-            "dataAccessAction" : "SRFUR__FILE_DELETE_BUT",
             "fullCodeName" : "File_delete",
             "name" : "删除",
             "getPSAppDEMethod" : {

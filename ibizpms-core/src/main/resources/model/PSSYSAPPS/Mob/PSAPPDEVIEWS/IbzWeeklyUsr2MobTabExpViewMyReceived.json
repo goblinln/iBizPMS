@@ -1639,7 +1639,6 @@
               "caption" : "提交",
               "codeName" : "MobSubmit",
               "confirmMsg" : "你确定现在提交吗？",
-              "dataAccessAction" : "SRFUR__WEEKLY_SUBMIT_BUT",
               "fullCodeName" : "IbzWeekly_MobSubmit",
               "name" : "移动端提交",
               "getPSAppDEMethod" : {

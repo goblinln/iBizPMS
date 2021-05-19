@@ -2617,7 +2617,6 @@
     "caption" : "移除关联",
     "codeName" : "UnlinkBugMob",
     "confirmMsg" : "是否移除关联Bug",
-    "dataAccessAction" : "SRFUR__BUG_UNLINK_BUT",
     "fullCodeName" : "Bug_UnlinkBugMob",
     "name" : "取消计划关联Bug（移动端）",
     "getPSAppDEMethod" : {
@@ -2823,7 +2822,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
     "codeName" : "MobMainEdit",
-    "dataAccessAction" : "SRFUR__BUG_EDIT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugEditNewMobEditView.json",
@@ -2847,10 +2845,8 @@
     "id" : "MobMainEdit@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "移除bug",
     "codeName" : "releaseUnlinkBug",
-    "dataAccessAction" : "SRFUR__BUG_UNLINK_BUT",
     "fullCodeName" : "Bug_releaseUnlinkBug",
     "name" : "移除解决bug（发布）",
     "getPSAppDEMethod" : {
@@ -2951,7 +2947,6 @@
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "MobCreate",
-    "dataAccessAction" : "SRFUR__BUG_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugNewMobEditView.json",
@@ -2976,10 +2971,8 @@
     "id" : "MobCreate@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "移除bug",
     "codeName" : "releaseUnlinkBugByLeftBug",
-    "dataAccessAction" : "SRFUR__BUG_UNLINK_BUT",
     "fullCodeName" : "Bug_releaseUnlinkBugByLeftBug",
     "name" : "移除遗留bug（发布）",
     "getPSAppDEMethod" : {
@@ -3069,7 +3062,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "激活",
     "codeName" : "ActivationMob",
-    "dataAccessAction" : "SRFUR__BUG_ACTIVATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugACMobOptionView.json",
@@ -3097,7 +3089,6 @@
     "caption" : "解除关联",
     "codeName" : "unlinkBug_buildMob",
     "confirmMsg" : "您确认移除该Bug吗？",
-    "dataAccessAction" : "SRFUR__BUG_UNLINK_BUT",
     "fullCodeName" : "Bug_unlinkBug_buildMob",
     "name" : "解除关联（版本-bug）（移动端）",
     "getPSAppDEMethod" : {
@@ -3218,7 +3209,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "确认",
     "codeName" : "ConfirmBugMob",
-    "dataAccessAction" : "SRFUR__BUG_CONFIRM_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugCMobOptionView.json",

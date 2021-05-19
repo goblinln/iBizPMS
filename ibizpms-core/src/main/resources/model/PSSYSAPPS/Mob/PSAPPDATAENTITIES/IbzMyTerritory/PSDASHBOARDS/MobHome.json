@@ -1944,7 +1944,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "开始",
                 "codeName" : "StartTaskMob",
-                "dataAccessAction" : "SRFUR__TASK_START_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskSTARTMobOptionView.json",
@@ -2015,7 +2014,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "完成",
                 "codeName" : "DoneTaskMob",
-                "dataAccessAction" : "SRFUR__TASK_COMPLETE_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskComMobOptionView.json",
@@ -2055,7 +2053,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "暂停",
                 "codeName" : "PauseTaskMob",
-                "dataAccessAction" : "SRFUR__TASK_PAUSE_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskStopMobOptionView.json",
@@ -2099,7 +2096,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "取消",
                 "codeName" : "CancelTaskMob",
-                "dataAccessAction" : "SRFUR__TASK_CANCEL_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskCancelMobOptionView.json",
@@ -3669,7 +3665,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "确认",
                 "codeName" : "ConfirmBugMob",
-                "dataAccessAction" : "SRFUR__BUG_CONFIRM_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugCMobOptionView.json",
@@ -3704,7 +3699,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "激活",
                 "codeName" : "ActivationMob",
-                "dataAccessAction" : "SRFUR__BUG_ACTIVATE_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugACMobOptionView.json",
@@ -3772,7 +3766,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "编辑",
                 "codeName" : "MobMainEdit",
-                "dataAccessAction" : "SRFUR__BUG_EDIT_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugEditNewMobEditView.json",
@@ -4826,7 +4819,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "变更",
                 "codeName" : "ChangeStoryDetailMob",
-                "dataAccessAction" : "SRFUR__STORY_CHANGED_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryChangeMobOptionView.json",
@@ -4858,7 +4850,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "指派",
                 "codeName" : "AssignToMob",
-                "dataAccessAction" : "SRFUR__STORY_ASS_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryAsMobOptionView.json",
@@ -4926,7 +4917,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "关闭",
                 "codeName" : "CloseStoryMob",
-                "dataAccessAction" : "SRFUR__STORY_CLOSED_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryCMobOptionView.json",

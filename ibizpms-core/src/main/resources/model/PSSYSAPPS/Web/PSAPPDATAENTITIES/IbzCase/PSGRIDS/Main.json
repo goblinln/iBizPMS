@@ -224,11 +224,9 @@
         "name" : "u40d0b9c",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "删除",
           "codeName" : "Delete",
           "confirmMsg" : "您确认要删除该测试用例吗？",
-          "dataAccessAction" : "SRFUR__ADMIN",
           "fullCodeName" : "IbzCase_Delete",
           "name" : "删除",
           "getPSAppDEMethod" : {

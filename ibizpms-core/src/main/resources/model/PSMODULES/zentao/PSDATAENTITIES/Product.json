@@ -3883,16 +3883,10 @@
         "name" : "TOP"
       }
     }, {
-      "name" : "SRFUR__PROD_CLOSED_BUT",
+      "name" : "MANAGE",
       "getPSDEOPPriv" : {
-        "logicName" : "产品关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROD_CLOSED_BUT"
-        },
-        "mapSysUniResCode" : "PROD_CLOSED_BUT",
-        "name" : "SRFUR__PROD_CLOSED_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "管理",
+        "name" : "MANAGE"
       }
     } ],
     "state2Value" : "0",
@@ -3962,16 +3956,10 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__PROD_CLOSED_BUT",
+      "name" : "MANAGE",
       "getPSDEOPPriv" : {
-        "logicName" : "产品关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROD_CLOSED_BUT"
-        },
-        "mapSysUniResCode" : "PROD_CLOSED_BUT",
-        "name" : "SRFUR__PROD_CLOSED_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "管理",
+        "name" : "MANAGE"
       }
     }, {
       "name" : "NOTOP",
@@ -4253,12 +4241,9 @@
     "userDRAction" : "READ",
     "enableOrgDR" : true
   }, {
+    "customCond" : "['&',('CREATEDBY','=',#{srf.sessioncontext.srfloginname}),('ACL','=',')private')]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Maintain_CreateBy.json",
     "name" : "产品维护（当前创建者）",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProductManagerQuery"
-    },
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "READ",
       "name" : "Product_Maintain_CreateBy_READ",
@@ -4329,9 +4314,12 @@
     "roleTag" : "Product_Maintain_DEV",
     "userDRAction" : "READ"
   }, {
-    "customCond" : "[('ACL','=','open')]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Maintain_Open.json",
     "name" : "产品维护（公开）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "CREATE",
       "name" : "Product_Maintain_Open_CREATE",
@@ -4362,14 +4350,12 @@
       }
     } ],
     "roleTag" : "Product_Maintain_Open",
+    "userCat" : "CAT1",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "['&',('PO','=',#{srf.sessioncontext.srfloginname}),('ACL','=',')private')]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Maintain_PO.json",
     "name" : "产品维护（产品负责人）",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "POQuery"
-    },
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "UPDATE",
       "name" : "Product_Maintain_PO_UPDATE",
@@ -4402,12 +4388,9 @@
     "roleTag" : "Product_Maintain_PO",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "['&',('QD','=',#{srf.sessioncontext.srfloginname}),('ACL','=',')private')]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Maintain_QD.json",
     "name" : "产品维护（测试负责人）",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "QDQuery"
-    },
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "UPDATE",
       "name" : "Product_Maintain_QD_UPDATE",
@@ -4440,12 +4423,9 @@
     "roleTag" : "Product_Maintain_QD",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "['&',('RD','=',#{srf.sessioncontext.srfloginname}),('ACL','=',')private')]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Maintain_RD.json",
     "name" : "产品维护（发布负责人）",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "RDQuery"
-    },
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "UPDATE",
       "name" : "Product_Maintain_RD_UPDATE",
@@ -4507,12 +4487,9 @@
     "userDRAction" : "READ",
     "enableOrgDR" : true
   }, {
+    "customCond" : "['&',('CREATEDBY','=',#{srf.sessioncontext.srfloginname}),('ACL','=',')private')]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Manage_CreateBy.json",
     "name" : "产品管理（当前创建者）",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "ProductManagerQuery"
-    },
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "MANAGE",
       "name" : "Product_Manage_CreateBy_MANAGE",
@@ -4522,12 +4499,14 @@
       }
     } ],
     "roleTag" : "Product_Manage_CreateBy",
-    "userDRAction" : "READ",
-    "defaultMode" : true
+    "userDRAction" : "READ"
   }, {
-    "customCond" : "[('ACL','=','open')]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Manage_Open.json",
     "name" : "产品管理（公开）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "MANAGE",
       "name" : "Product_Manage_Open_MANAGE",
@@ -4537,6 +4516,49 @@
       }
     } ],
     "roleTag" : "Product_Manage_Open",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ"
+  }, {
+    "customCond" : "['&',('PO','=',#{srf.sessioncontext.srfloginname}),('ACL','=',')private')]",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Manage_PO.json",
+    "name" : "产品管理（产品负责人）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "MANAGE",
+      "name" : "Product_Manage_PO_MANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "MANAGE"
+      }
+    } ],
+    "roleTag" : "Product_Manage_PO",
+    "userDRAction" : "READ"
+  }, {
+    "customCond" : "['&',('QD','=',#{srf.sessioncontext.srfloginname}),('ACL','=',')private')]",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Manage_QD.json",
+    "name" : "产品管理（测试负责人）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "MANAGE",
+      "name" : "Product_Manage_QD_MANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "MANAGE"
+      }
+    } ],
+    "roleTag" : "Product_Manage_QD",
+    "userDRAction" : "READ"
+  }, {
+    "customCond" : "['&',('RD','=',#{srf.sessioncontext.srfloginname}),('ACL','=',')private')]",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Manage_RD.json",
+    "name" : "产品管理（发布负责人）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "MANAGE",
+      "name" : "Product_Manage_RD_MANAGE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "MANAGE"
+      }
+    } ],
+    "roleTag" : "Product_Manage_RD",
     "userDRAction" : "READ"
   }, {
     "customCond" : "[ (1, '=', 1) ]",

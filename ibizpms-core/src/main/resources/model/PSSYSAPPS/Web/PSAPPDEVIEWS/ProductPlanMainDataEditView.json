@@ -222,7 +222,6 @@
         "caption" : "删除",
         "codeName" : "DeleteCz",
         "confirmMsg" : "您确认删除该计划吗？",
-        "dataAccessAction" : "SRFUR__PROP_DELETE_BUT",
         "fullCodeName" : "ProductPlan_DeleteCz",
         "name" : "删除（操作栏）",
         "getPSAppDEMethod" : {
@@ -1293,11 +1292,9 @@
                     "name" : "ufbd4e10",
                     "getPSUIAction" : {
                       "actionTarget" : "SINGLEKEY",
-                      "noPrivDisplayMode" : 1,
                       "caption" : "移除关联",
                       "codeName" : "UnlinkStory",
                       "confirmMsg" : "是否移除需求关联",
-                      "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
                       "fullCodeName" : "Story_UnlinkStory",
                       "name" : "取消计划关联",
                       "getPSAppDEMethod" : {
@@ -3231,7 +3228,6 @@
                   "actionTarget" : "NONE",
                   "caption" : "关联Bug",
                   "codeName" : "PlanRelationBug",
-                  "dataAccessAction" : "SRFUR__BUILD_LINK_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMPickupView.json",

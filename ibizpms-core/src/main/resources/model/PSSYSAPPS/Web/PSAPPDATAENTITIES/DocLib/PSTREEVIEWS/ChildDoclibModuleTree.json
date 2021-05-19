@@ -260,7 +260,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "编辑",
         "codeName" : "edit",
-        "dataAccessAction" : "SRFUR__DOCLIBMODULE_EDIT_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleEditViewMain.json",
@@ -304,7 +303,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "维护分类",
         "codeName" : "WeiHuFenLei",
-        "dataAccessAction" : "SRFUR__DOCLIBMODULE_MAINTENANCE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleChildWeiHuiTreeExpView.json",
@@ -434,7 +432,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "取消收藏",
         "codeName" : "NFavorite",
-        "dataAccessAction" : "SRFUR__DOCLIBMODULE_NFAVOUR_BUT",
         "fullCodeName" : "DocLibModule_NFavorite",
         "name" : "取消收藏",
         "getPSAppDEMethod" : {
@@ -538,7 +535,6 @@
         "caption" : "删除",
         "codeName" : "Delete",
         "confirmMsg" : "您确定删除该文档吗？",
-        "dataAccessAction" : "SRFUR__DOC_DELETE_BUT",
         "fullCodeName" : "Doc_Delete",
         "name" : "删除",
         "getPSAppDEMethod" : {
@@ -876,7 +872,6 @@
           "caption" : "删除",
           "codeName" : "Delete",
           "confirmMsg" : "您确定删除该文档吗？",
-          "dataAccessAction" : "SRFUR__DOC_DELETE_BUT",
           "fullCodeName" : "Doc_Delete",
           "name" : "删除",
           "getPSAppDEMethod" : {
@@ -1133,7 +1128,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "edit",
-          "dataAccessAction" : "SRFUR__DOCLIBMODULE_EDIT_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleEditViewMain.json",
@@ -1177,7 +1171,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "维护分类",
           "codeName" : "WeiHuFenLei",
-          "dataAccessAction" : "SRFUR__DOCLIBMODULE_MAINTENANCE_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleChildWeiHuiTreeExpView.json",
@@ -1307,7 +1300,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "取消收藏",
           "codeName" : "NFavorite",
-          "dataAccessAction" : "SRFUR__DOCLIBMODULE_NFAVOUR_BUT",
           "fullCodeName" : "DocLibModule_NFavorite",
           "name" : "取消收藏",
           "getPSAppDEMethod" : {

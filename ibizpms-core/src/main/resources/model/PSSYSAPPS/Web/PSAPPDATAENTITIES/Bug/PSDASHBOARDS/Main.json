@@ -1917,7 +1917,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "确认",
                 "codeName" : "ConfirmBugDash",
-                "dataAccessAction" : "SRFUR__BUG_CONFIRM_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugConfirmView.json",
@@ -1983,7 +1982,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "提需求",
                 "codeName" : "toStory",
-                "dataAccessAction" : "SRFUR__BUG_TOSTORY_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorytoStoryEditView.json",
@@ -2020,7 +2018,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "建用例",
                 "codeName" : "BuildUseCase",
-                "dataAccessAction" : "SRFUR__BUG_CREATECASE_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainNewView.json",

@@ -327,7 +327,6 @@
         "actionTarget" : "NONE",
         "caption" : "新建",
         "codeName" : "Create",
-        "dataAccessAction" : "SRFUR__BUG_CREATE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",

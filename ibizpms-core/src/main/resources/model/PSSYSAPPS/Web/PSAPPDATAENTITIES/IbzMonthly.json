@@ -913,10 +913,8 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "修改",
     "codeName" : "Edit",
-    "dataAccessAction" : "SRFUR__MONTHLY_EDIT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzMonthlyEditMonthlyEditView.json",
@@ -1037,10 +1035,8 @@
     "id" : "HaveRead@IbzMonthly"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "提交",
     "codeName" : "Submit",
-    "dataAccessAction" : "SRFUR__MONTHLY_SUBMIT_BUT",
     "fullCodeName" : "IbzMonthly_Submit",
     "name" : "提交",
     "getPSAppDEMethod" : {

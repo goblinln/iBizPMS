@@ -967,7 +967,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "变更",
           "codeName" : "ChangeStoryDetailMob",
-          "dataAccessAction" : "SRFUR__STORY_CHANGED_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryChangeMobOptionView.json",
@@ -999,7 +998,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "指派",
           "codeName" : "AssignToMob",
-          "dataAccessAction" : "SRFUR__STORY_ASS_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryAsMobOptionView.json",
@@ -1067,7 +1065,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "关闭",
           "codeName" : "CloseStoryMob",
-          "dataAccessAction" : "SRFUR__STORY_CLOSED_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryCMobOptionView.json",

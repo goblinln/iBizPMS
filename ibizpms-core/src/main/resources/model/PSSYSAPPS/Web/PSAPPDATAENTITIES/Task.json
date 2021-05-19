@@ -3992,10 +3992,8 @@
     "id" : "More@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "关闭",
     "codeName" : "CloseTask",
-    "dataAccessAction" : "SRFUR__TASK_CLOSE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCloseTaskView.json",
@@ -4023,10 +4021,8 @@
     "id" : "CloseTask@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "工时",
     "codeName" : "WorkHours1",
-    "dataAccessAction" : "SRFUR__TASK_CONSUM_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskWorkHoursView.json",
@@ -4089,7 +4085,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "开始",
     "codeName" : "MStartTaskDash",
-    "dataAccessAction" : "SRFUR__TASK_START_BUT",
     "fullCodeName" : "Task_MStartTaskDash",
     "name" : "开始任务(操作栏)(多人任务检查)",
     "getNextPSUIAction" : {
@@ -4206,7 +4201,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "继续",
     "codeName" : "ReStartTeamTask",
-    "dataAccessAction" : "SRFUR__TASK_PROCEED_BUT",
     "fullCodeName" : "Task_ReStartTeamTask",
     "name" : "继续任务(操作栏)(多人任务检查)",
     "getNextPSUIAction" : {
@@ -4244,7 +4238,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "关闭",
     "codeName" : "CloseTaskDash",
-    "dataAccessAction" : "SRFUR__TASK_CLOSE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCloseTaskView.json",
@@ -4317,10 +4310,8 @@
     "id" : "NewSubTaskDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "确认",
     "codeName" : "confirmStoryChange",
-    "dataAccessAction" : "SRFUR__TASK_XQCHANGE_BUT",
     "fullCodeName" : "Task_confirmStoryChange",
     "name" : "需求变更确认",
     "getPSAppDEMethod" : {
@@ -4347,7 +4338,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "转交",
     "codeName" : "ForwardDash",
-    "dataAccessAction" : "SRFUR__TASK_FORWARD_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskForwardView.json",
@@ -4371,10 +4361,8 @@
     "id" : "ForwardDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "转交",
     "codeName" : "CheckForward",
-    "dataAccessAction" : "SRFUR__TASK_FORWARD_BUT",
     "fullCodeName" : "Task_CheckForward",
     "name" : "转交任务(多人任务检查)",
     "getNextPSUIAction" : {
@@ -4412,10 +4400,8 @@
     "id" : "CheckForward@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "激活",
     "codeName" : "Activation",
-    "dataAccessAction" : "SRFUR__TASK_ACTIVATION_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskActivationTaskView.json",
@@ -4441,7 +4427,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "完成",
     "codeName" : "DoneTaskDash",
-    "dataAccessAction" : "SRFUR__TASK_COMPLETE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskDoneTaskView.json",
@@ -4512,7 +4497,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "暂停",
     "codeName" : "MPauseTask",
-    "dataAccessAction" : "SRFUR__TASK_PAUSE_BUT",
     "fullCodeName" : "Task_MPauseTask",
     "name" : "暂停任务(操作栏)(多人任务检查)",
     "getNextPSUIAction" : {
@@ -4554,7 +4538,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "取消",
     "codeName" : "CancelTaskDash",
-    "dataAccessAction" : "SRFUR__TASK_CANCEL_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCancelTaskView.json",
@@ -4610,7 +4593,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "收藏",
     "codeName" : "TaskFavorites",
-    "dataAccessAction" : "SRFUR__TASK_NFAVOR_BUT",
     "fullCodeName" : "Task_TaskFavorites",
     "name" : "收藏",
     "getPSAppDEMethod" : {
@@ -4715,7 +4697,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "提缺陷",
     "codeName" : "TaskToBug",
-    "dataAccessAction" : "SRFUR__BUG_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugTaskToBugEditView.json",
@@ -4863,7 +4844,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "转交",
     "codeName" : "Forward",
-    "dataAccessAction" : "SRFUR__TASK_FORWARD_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskForwardView.json",
@@ -4914,7 +4894,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "开始",
     "codeName" : "StartTaskDash",
-    "dataAccessAction" : "SRFUR__TASK_START_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskOpenTaskView.json",
@@ -4988,7 +4967,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "取消收藏",
     "codeName" : "TaskNFavorites",
-    "dataAccessAction" : "SRFUR__TASK_FAVOR_BUT",
     "fullCodeName" : "Task_TaskNFavorites",
     "name" : "取消收藏",
     "getPSAppDEMethod" : {
@@ -5013,10 +4991,8 @@
     "id" : "TaskNFavorites@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "完成",
     "codeName" : "DoneTask",
-    "dataAccessAction" : "SRFUR__TASK_COMPLETE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskDoneTaskView.json",
@@ -5048,7 +5024,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "继续",
     "codeName" : "ReStartTask",
-    "dataAccessAction" : "SRFUR__TASK_PROCEED_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskRestartTaskView.json",
@@ -5188,7 +5163,6 @@
     "caption" : "删除",
     "codeName" : "delete",
     "confirmMsg" : "确认要删除，删除操作将不可恢复？",
-    "dataAccessAction" : "SRFUR__TASK_DELETE_BUT",
     "fullCodeName" : "Task_delete",
     "name" : "删除",
     "getPSAppDEMethod" : {
@@ -5212,10 +5186,8 @@
     "id" : "delete@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "开始",
     "codeName" : "StartTask",
-    "dataAccessAction" : "SRFUR__TASK_START_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskOpenTaskView.json",
@@ -5247,7 +5219,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "暂停",
     "codeName" : "PauseTaskDash",
-    "dataAccessAction" : "SRFUR__TASK_PAUSE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskPauseTaskView.json",
@@ -5318,7 +5289,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "完成",
     "codeName" : "MDoneTask",
-    "dataAccessAction" : "SRFUR__TASK_COMPLETE_BUT",
     "frontProcessType" : "WIZARD",
     "fullCodeName" : "Task_MDoneTask",
     "name" : "完成任务(操作栏)(多人任务检查)",

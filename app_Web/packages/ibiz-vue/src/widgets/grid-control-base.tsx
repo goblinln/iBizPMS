@@ -1307,9 +1307,7 @@ export class GridControlBase extends MDControlBase {
         if (!$event || this.actualIsOpenEdit || Object.is(this.gridRowActiveMode, 0)) {
             return;
         }
-        this.selections = [];
-        this.selections.push(Util.deepCopy($event));
-        this.ctrlEvent({ controlname: this.name, action: "rowdblclick", data: this.selections });
+        this.ctrlEvent({ controlname: this.name, action: "rowdblclick", data: Util.deepCopy($event) });
     }
 
     /**
@@ -1632,30 +1630,34 @@ export class GridControlBase extends MDControlBase {
             this.stopRowClick = false;
             return;
         }
-        if (this.isSingleSelect || this.gridRowActiveMode != 0) {
+        if (this.isSingleSelect) {
             this.selections = [];
         }
-        // 已选中则删除，没选中则添加
-        const appDeCodeName = this.controlInstance.getPSAppDataEntity()?.codeName || '';
-        let selectIndex = -1;
-        if (appDeCodeName) {
-            selectIndex = this.selections.findIndex((item: any) => {
-                return Object.is(item[appDeCodeName.toLowerCase()], $event[appDeCodeName.toLowerCase()]);
-            });
-        }
-        if (Object.is(selectIndex, -1)) {
-            this.selections.push(JSON.parse(JSON.stringify($event)));
-        } else {
-            this.selections.splice(selectIndex, 1);
-        }
-        const table: any = (this.$refs as any)[this.gridRefName];
-        if (table && this.gridRowActiveMode != 1) {
-            table.clearSelection();
-            table.toggleRowSelection($event);
-        }
         if (this.gridRowActiveMode == 1) {
-            this.ctrlEvent({ controlname: this.name, action: "rowclick", data: this.selections });
+            this.ctrlEvent({ controlname: this.name, action: "rowclick", data: Util.deepCopy($event) });
         } else if (this.gridRowActiveMode == 2) {
+            // 已选中则删除，没选中则添加
+            const appDeCodeName = this.controlInstance.getPSAppDataEntity()?.codeName || '';
+            let selectIndex = -1;
+            if (appDeCodeName) {
+                selectIndex = this.selections.findIndex((item: any) => {
+                    return Object.is(item[appDeCodeName.toLowerCase()], $event[appDeCodeName.toLowerCase()]);
+                });
+            }
+            if (Object.is(selectIndex, -1)) {
+                this.selections.push(Util.deepCopy($event));
+            } else {
+                this.selections.splice(selectIndex, 1);
+            }
+            const table: any = (this.$refs as any)[this.gridRefName];
+            if (table) {
+                if (this.isSingleSelect) {
+                    table.clearSelection();
+                    table.setCurrentRow($event);
+                } else {
+                    table.toggleRowSelection($event);
+                }
+            }
             this.ctrlEvent({ controlname: this.name, action: "selectiondata", data: this.selections });
         }
     }

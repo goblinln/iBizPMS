@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 .app-loading-x {
-    background: radial-gradient(#7EA6D9, #3B88E8);
+    background: radial-gradient(#55A0FE, #1767CB);
     height: 100vh;
     width: 100vw;
     overflow: hidden;
@@ -10,52 +10,55 @@
     left: 0;
     z-index: 10000;
 }
+
 .app-loading-x-container {
-    width: 300px;
-    height: 300px;
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-}
-.app-loading-x-container > img {
-    position: absolute;
-    top: 0;
-    left: 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    transform: translateY(-50%);
 }
 
-.app-loading-x-container .circle1 {
-    animation: circle-outside 5s infinite linear;
+.app-loading-x-container label {
+    display: inline-block;
+    font-size: 20px;
+    opacity: 0;
 }
 
-.app-loading-x-container .circle2 {
-    animation: circle-mid 5s infinite linear;
+.app-loading-x-container label:nth-child(6) {
+    animation: loading 3s infinite ease-in-out
 }
-.app-loading-x-container .circle3,
-.app-loading-x-container .circle4 { 
-    animation: circle-inside 5s infinite linear; 
+
+.app-loading-x-container label:nth-child(5) {
+    animation: loading 3s .1s infinite ease-in-out
 }
-@keyframes circle-outside {
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(1080deg);
-    }
+.app-loading-x-container label:nth-child(4) {
+    animation: loading 3s .2s infinite ease-in-out
 }
-@keyframes circle-mid {
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(-1080deg);
-    }
+.app-loading-x-container label:nth-child(3) {
+    animation: loading 3s .3s infinite ease-in-out
 }
-@keyframes circle-inside {
-    0%{
-        transform: rotate(0deg);
+.app-loading-x-container label:nth-child(2) {
+    animation: loading 3s .4s infinite ease-in-out
+}
+.app-loading-x-container label:nth-child(1) {
+    animation: loading 3s .5s infinite ease-in-out
+}
+@keyframes loading{
+    0% {
+        transform:translateX(-300px);
+        opacity:0
     }
-    100%{
-        transform: rotate(2190deg);
+    33% {
+        transform:translateX(0);
+        opacity:1
+    }
+    66% {
+        transform:translateX(0);
+        opacity:1
+    }
+    100% {
+        transform:translateX(300px);opacity:0
     }
 }

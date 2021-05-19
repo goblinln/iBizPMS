@@ -280,7 +280,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "编辑",
         "codeName" : "MobMainEdit",
-        "dataAccessAction" : "SRFUR__PROP_EDIT_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductPlanEditMobEditView.json",

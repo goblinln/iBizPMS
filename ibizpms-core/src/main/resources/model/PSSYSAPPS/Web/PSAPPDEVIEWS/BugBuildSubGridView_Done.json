@@ -200,7 +200,6 @@
         "actionTarget" : "NONE",
         "caption" : "关联bug",
         "codeName" : "openBugGridView",
-        "dataAccessAction" : "SRFUR__BUILD_LINK_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugUsr2GridView.json",

@@ -1422,7 +1422,6 @@
                   "caption" : "删除",
                   "codeName" : "DeleteCz",
                   "confirmMsg" : "您确认要删除该测试用例吗？",
-                  "dataAccessAction" : "SRFUR__ADMIN",
                   "fullCodeName" : "IbzCase_DeleteCz",
                   "name" : "删除（操作栏）",
                   "getPSAppDEMethod" : {

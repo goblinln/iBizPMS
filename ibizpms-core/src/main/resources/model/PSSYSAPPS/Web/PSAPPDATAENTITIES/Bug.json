@@ -2635,7 +2635,6 @@
     "actionTarget" : "NONE",
     "caption" : "关联bug",
     "codeName" : "releaseLinkLeftBug",
-    "dataAccessAction" : "SRFUR__BUILD_LINK_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMPickupView5.json",
@@ -2725,7 +2724,6 @@
     "actionTarget" : "NONE",
     "caption" : "关联bug",
     "codeName" : "openBugGridView",
-    "dataAccessAction" : "SRFUR__BUILD_LINK_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugUsr2GridView.json",
@@ -2853,7 +2851,6 @@
     "actionTarget" : "MULTIKEY",
     "caption" : "关联bug",
     "codeName" : "buildlinkbugs",
-    "dataAccessAction" : "SRFUR__BUG_UNLINK_BUT",
     "fullCodeName" : "Bug_buildlinkbugs",
     "name" : "版本批量关联已解决的bug",
     "getNextPSUIAction" : {
@@ -3008,7 +3005,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "提需求",
     "codeName" : "toStory",
-    "dataAccessAction" : "SRFUR__BUG_TOSTORY_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorytoStoryEditView.json",
@@ -3062,10 +3058,8 @@
     "id" : "BugNFavorites@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "关闭",
     "codeName" : "CloseBug",
-    "dataAccessAction" : "SRFUR__BUG_CLOSE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCloseView.json",
@@ -3089,10 +3083,8 @@
     "id" : "CloseBug@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "移除bug",
     "codeName" : "releaseUnlinkBug",
-    "dataAccessAction" : "SRFUR__BUG_UNLINK_BUT",
     "fullCodeName" : "Bug_releaseUnlinkBug",
     "name" : "移除解决bug（发布）",
     "getPSAppDEMethod" : {
@@ -3131,7 +3123,6 @@
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "Create",
-    "dataAccessAction" : "SRFUR__BUG_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
@@ -3221,10 +3212,8 @@
     "id" : "AssingToBug@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "移除bug",
     "codeName" : "releaseUnlinkBugByLeftBug",
-    "dataAccessAction" : "SRFUR__BUG_UNLINK_BUT",
     "fullCodeName" : "Bug_releaseUnlinkBugByLeftBug",
     "name" : "移除遗留bug（发布）",
     "getPSAppDEMethod" : {
@@ -3332,7 +3321,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "建用例",
     "codeName" : "BuildUseCase",
-    "dataAccessAction" : "SRFUR__BUG_CREATECASE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainNewView.json",
@@ -3356,7 +3344,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "确认",
     "codeName" : "ConfirmBugDash",
-    "dataAccessAction" : "SRFUR__BUG_CONFIRM_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugConfirmView.json",
@@ -3537,10 +3524,8 @@
     "id" : "BugFavorites@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "MainEdit",
-    "dataAccessAction" : "SRFUR__BUG_EDIT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainEditView.json",
@@ -3592,7 +3577,6 @@
     "actionTarget" : "NONE",
     "caption" : "关联Bug",
     "codeName" : "PlanRelationBug",
-    "dataAccessAction" : "SRFUR__BUILD_LINK_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMPickupView.json",

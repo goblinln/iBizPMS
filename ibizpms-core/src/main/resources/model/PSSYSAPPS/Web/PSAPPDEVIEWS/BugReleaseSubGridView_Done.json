@@ -566,10 +566,8 @@
           "name" : "u876f801",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "移除bug",
             "codeName" : "releaseUnlinkBug",
-            "dataAccessAction" : "SRFUR__BUG_UNLINK_BUT",
             "fullCodeName" : "Bug_releaseUnlinkBug",
             "name" : "移除解决bug（发布）",
             "getPSAppDEMethod" : {

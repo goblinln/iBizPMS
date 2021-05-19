@@ -1291,7 +1291,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "关闭",
                 "codeName" : "CloseDash",
-                "dataAccessAction" : "SRFUR__TESTT_CLOSED_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskCloseOptionView.json",
@@ -1326,7 +1325,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "阻塞",
                 "codeName" : "BlockDash",
-                "dataAccessAction" : "SRFUR__TESTT_BLOCK_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskBlockOptionView.json",

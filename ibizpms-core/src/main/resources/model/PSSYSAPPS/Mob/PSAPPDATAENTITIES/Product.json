@@ -1643,7 +1643,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "取消置顶",
     "codeName" : "CancelProductTop",
-    "dataAccessAction" : "TOP",
     "fullCodeName" : "Product_CancelProductTop",
     "name" : "取消置顶",
     "getPSAppDEMethod" : {
@@ -1760,16 +1759,10 @@
         "name" : "TOP"
       }
     }, {
-      "name" : "SRFUR__PROD_CLOSED_BUT",
+      "name" : "MANAGE",
       "getPSDEOPPriv" : {
-        "logicName" : "产品关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROD_CLOSED_BUT"
-        },
-        "mapSysUniResCode" : "PROD_CLOSED_BUT",
-        "name" : "SRFUR__PROD_CLOSED_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "管理",
+        "name" : "MANAGE"
       }
     } ],
     "state2Value" : "0",
@@ -1839,16 +1832,10 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__PROD_CLOSED_BUT",
+      "name" : "MANAGE",
       "getPSDEOPPriv" : {
-        "logicName" : "产品关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROD_CLOSED_BUT"
-        },
-        "mapSysUniResCode" : "PROD_CLOSED_BUT",
-        "name" : "SRFUR__PROD_CLOSED_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "管理",
+        "name" : "MANAGE"
       }
     }, {
       "name" : "NOTOP",

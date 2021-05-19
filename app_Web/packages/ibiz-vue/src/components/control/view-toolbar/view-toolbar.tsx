@@ -308,7 +308,9 @@ export class ViewToolbar extends Vue {
         if(item.actionLevel){
             tempClass += `srfactionlevel${item.actionLevel}`
         }
-        tempClass += ` ${item.class}`
+        if(item.class){
+            tempClass += ` ${item.class}`
+        }
         return tempClass;
     }
 }

@@ -2520,7 +2520,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "延期",
                   "codeName" : "ProjectPutoff",
-                  "dataAccessAction" : "SRFUR__PROJ_DELAY_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView_Putoff.json",
@@ -2555,7 +2554,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "挂起",
                   "codeName" : "ProjectSuspend",
-                  "dataAccessAction" : "SRFUR__PROJ_SUSPEND_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView_Suspend.json",
@@ -2590,7 +2588,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "激活",
                   "codeName" : "ProjectActivate",
-                  "dataAccessAction" : "SRFUR__PROJ_ACTIVATION_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView_Activate.json",
@@ -2625,7 +2622,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "关闭",
                   "codeName" : "ProjectClose",
-                  "dataAccessAction" : "SRFUR__PROJ_CLOSED_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView_Close.json",

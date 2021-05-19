@@ -1,7 +1,7 @@
 import { ProductLineBaseService } from './product-line-base.service';
 
 /**
- * 产品线服务
+ * 产品线（废弃）服务
  *
  * @export
  * @class ProductLineService

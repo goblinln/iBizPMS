@@ -328,6 +328,7 @@ export class MDControlBase extends MainControlBase {
                 itemType: item.itemType,
                 visabled: true,
                 noprivdisplaymode: uiAction?.noPrivDisplayMode,
+                actionLevel:(_item as any).actionLevel,
                 dataaccaction: '',
                 uiaction: {
                     tag: uiAction?.uIActionTag ? uiAction.uIActionTag : uiAction?.id ? uiAction.id : '',

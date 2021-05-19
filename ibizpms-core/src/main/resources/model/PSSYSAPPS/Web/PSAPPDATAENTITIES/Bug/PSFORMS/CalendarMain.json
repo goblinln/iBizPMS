@@ -583,7 +583,6 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "确认",
             "codeName" : "ConfirmBugDash",
-            "dataAccessAction" : "SRFUR__BUG_CONFIRM_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugConfirmView.json",

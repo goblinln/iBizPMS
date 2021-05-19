@@ -768,10 +768,8 @@
           "name" : "u3d954ff",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "关联用例",
             "codeName" : "LinkCase",
-            "dataAccessAction" : "SRFUR__TESTT_LCASE_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseLinkCaseGridView.json",
@@ -818,10 +816,8 @@
           "name" : "u5de62c9",
           "getPSUIAction" : {
             "actionTarget" : "MULTIKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "测试报告",
             "codeName" : "TestReportR",
-            "dataAccessAction" : "SRFUR__REPORT_CREATE_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportEditView_R.json",
@@ -921,10 +917,8 @@
           "name" : "editedit",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "EditEdit",
-            "dataAccessAction" : "SRFUR__TESTT_EDIT_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView_Edit.json",
@@ -955,11 +949,9 @@
           "name" : "u5e6cdb9",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "删除",
             "codeName" : "Delete",
             "confirmMsg" : "您确认要删除该测试单吗？",
-            "dataAccessAction" : "SRFUR__TESTT_DELETE_BUT",
             "fullCodeName" : "TestTask_Delete",
             "name" : "删除",
             "getPSAppDEMethod" : {

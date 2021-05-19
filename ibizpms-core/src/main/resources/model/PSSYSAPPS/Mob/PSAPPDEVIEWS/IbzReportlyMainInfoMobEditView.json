@@ -1383,7 +1383,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "编辑",
         "codeName" : "MobEdit",
-        "dataAccessAction" : "SRFUR__REPORTLY_EDIT_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzReportlyCreateMobEditView.json",

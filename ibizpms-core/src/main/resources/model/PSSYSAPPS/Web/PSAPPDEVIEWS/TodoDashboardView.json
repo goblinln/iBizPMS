@@ -1244,7 +1244,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "编辑",
                   "codeName" : "edit1Cz",
-                  "dataAccessAction" : "UPDATE",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoEditView.json",

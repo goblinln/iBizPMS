@@ -312,7 +312,6 @@
               "actionTarget" : "NONE",
               "caption" : "新建",
               "codeName" : "Create",
-              "dataAccessAction" : "SRFUR__BUG_CREATE_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
@@ -1038,10 +1037,8 @@
                 "name" : "u3cd3d7f",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "noPrivDisplayMode" : 1,
                   "caption" : "关闭",
                   "codeName" : "CloseBug",
-                  "dataAccessAction" : "SRFUR__BUG_CLOSE_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCloseView.json",
@@ -1072,10 +1069,8 @@
                 "name" : "u0e29832",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "noPrivDisplayMode" : 1,
                   "caption" : "编辑",
                   "codeName" : "MainEdit",
-                  "dataAccessAction" : "SRFUR__BUG_EDIT_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainEditView.json",

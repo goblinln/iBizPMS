@@ -1,6 +1,6 @@
 {
   "accUserMode" : 2,
-  "caption" : "产品线",
+  "caption" : "产品线（废弃）",
   "codeName" : "ProductLineMobPickupMDView",
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductLineMobPickupMDView.json",
   "name" : "ProductLineMobPickupMDView",

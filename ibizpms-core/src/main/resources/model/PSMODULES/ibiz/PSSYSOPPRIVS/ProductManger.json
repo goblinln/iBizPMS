@@ -2,6 +2,43 @@
   "codeName" : "ProductManger",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProductManger.json",
   "name" : "产品经理",
+  "getPSSysUserRoleDatas" : [ {
+    "name" : "产品经理-ZT_PRODUCT[产品维护（公开）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Maintain_Open.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
+    "name" : "产品经理-ZT_PRODUCT[产品管理（公开）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Manage_Open.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  } ],
+  "getPSSysUserRoleReses" : [ {
+    "name" : "产品经理-产品左侧资源",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PRODUCTLEFT"
+    },
+    "sysUniResCode" : "PRODUCTLEFT"
+  }, {
+    "name" : "产品经理-产品新建",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PROD_CREATE_BUT"
+    },
+    "sysUniResCode" : "PROD_CREATE_BUT"
+  } ],
   "roleTag" : "ProductManger",
-  "roleType" : "CUSTOM"
+  "roleType" : "CUSTOM",
+  "uniResTags" : [ "PRODUCTLEFT", "PROD_CREATE_BUT" ]
 }

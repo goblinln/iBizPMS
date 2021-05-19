@@ -1437,7 +1437,6 @@
     "caption" : "删除",
     "codeName" : "DeleteCz",
     "confirmMsg" : "您确认删除该计划吗？",
-    "dataAccessAction" : "SRFUR__PROP_DELETE_BUT",
     "fullCodeName" : "ProductPlan_DeleteCz",
     "name" : "删除（操作栏）",
     "getPSAppDEMethod" : {
@@ -1543,7 +1542,6 @@
     "actionTarget" : "NONE",
     "caption" : "导入模板",
     "codeName" : "AddPlanTemplet",
-    "dataAccessAction" : "SRFUR__PROP_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanOptionView.json",
@@ -1606,10 +1604,8 @@
     "id" : "Create@ProductPlan"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "关联需求",
     "codeName" : "RelationStory",
-    "dataAccessAction" : "SRFUR__PROP_LSTORY_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView.json",
@@ -1716,10 +1712,8 @@
     "id" : "AddProject@ProductPlan"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "关联Bug",
     "codeName" : "RelationBug",
-    "dataAccessAction" : "SRFUR__PROP_LBUG_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMPickupView.json",

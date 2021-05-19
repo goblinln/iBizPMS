@@ -1,7 +1,10 @@
 {
-  "customCond" : "[('ACL','=','open')]",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Maintain_Open.json",
   "name" : "产品维护（公开）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "OpenQuery"
+  },
   "getPSDEUserRoleOPPrivs" : [ {
     "dataAccessAction" : "CREATE",
     "name" : "Product_Maintain_Open_CREATE",
@@ -32,5 +35,6 @@
     }
   } ],
   "roleTag" : "Product_Maintain_Open",
+  "userCat" : "CAT1",
   "userDRAction" : "READ"
 }

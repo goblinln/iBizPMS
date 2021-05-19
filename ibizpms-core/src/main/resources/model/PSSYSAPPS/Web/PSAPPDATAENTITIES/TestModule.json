@@ -632,10 +632,8 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "OpenQuickCfgView",
-    "dataAccessAction" : "SRFUR__TESTMOD_OQCVIEW_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModuleQuickCfgView.json",

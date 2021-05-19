@@ -3380,10 +3380,8 @@
     "id" : "SubStory@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "提缺陷",
     "codeName" : "StoryToBug",
-    "dataAccessAction" : "SRFUR__BUG_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStoryTOBugEditView.json",
@@ -3516,7 +3514,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "激活",
     "codeName" : "ActiviteDash",
-    "dataAccessAction" : "SRFUR__STORY_ACTIVE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryActiviteView.json",
@@ -3586,7 +3583,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "收藏",
     "codeName" : "StoryFavorites",
-    "dataAccessAction" : "SRFUR__STORY_NFAVOR_BUT",
     "fullCodeName" : "Story_StoryFavorites",
     "name" : "收藏",
     "getPSAppDEMethod" : {
@@ -3804,11 +3800,9 @@
     "id" : "More@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "移除关联",
     "codeName" : "UnlinkStory",
     "confirmMsg" : "是否移除需求关联",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "fullCodeName" : "Story_UnlinkStory",
     "name" : "取消计划关联",
     "getPSAppDEMethod" : {
@@ -3920,7 +3914,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
     "codeName" : "OpenBaseInfoC",
-    "dataAccessAction" : "SRFUR__STORY_EDIT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView9_EditMode.json",
@@ -3948,7 +3941,6 @@
     "actionTarget" : "NONE",
     "caption" : "关联需求",
     "codeName" : "releaseLinkStories",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryUsr2MPickupView.json",
@@ -4100,7 +4092,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "细分",
     "codeName" : "SubStoryCz",
-    "dataAccessAction" : "SRFUR__STORY_XQXF_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorySubGridView.json",
@@ -4147,10 +4138,8 @@
     "id" : "SubStoryCz@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "建用例",
     "codeName" : "OpenCaseCreateView",
-    "dataAccessAction" : "SRFUR__STORY_CCASE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainNewView.json",
@@ -4282,7 +4271,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "移除关联",
     "codeName" : "releaseUnlinkStory",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "fullCodeName" : "Story_releaseUnlinkStory",
     "name" : "移除关联（发布—需求）",
     "getPSAppDEMethod" : {
@@ -4321,7 +4309,6 @@
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "ProjectCreateView",
-    "dataAccessAction" : "SRFUR__STORY_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectEditView.json",
@@ -4369,11 +4356,9 @@
     "id" : "ProjectCreateView@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "解绑需求",
     "codeName" : "buildUnlinkStory",
     "confirmMsg" : "您确认移除该需求吗？",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "fullCodeName" : "Story_buildUnlinkStory",
     "name" : "解除绑定（版本——需求）",
     "getPSAppDEMethod" : {
@@ -4410,11 +4395,9 @@
     "id" : "buildUnlinkStory@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "移除",
     "codeName" : "ProjectUnlinkStory",
     "confirmMsg" : "您确定从该项目中移除该需求吗？",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "fullCodeName" : "Story_ProjectUnlinkStory",
     "name" : "移除项目关联",
     "getPSAppDEMethod" : {
@@ -4579,7 +4562,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "取消收藏",
     "codeName" : "StoryNFavorites",
-    "dataAccessAction" : "SRFUR__STORY_FAVOR_BUT",
     "fullCodeName" : "Story_StoryNFavorites",
     "name" : "取消收藏",
     "getPSAppDEMethod" : {

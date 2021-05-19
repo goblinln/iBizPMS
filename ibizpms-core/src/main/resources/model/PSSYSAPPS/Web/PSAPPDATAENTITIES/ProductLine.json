@@ -191,6 +191,11 @@
     "name" : "CREATEMAN",
     "stdDataType" : 25,
     "stringLength" : 60
+  }, {
+    "codeName" : "Order",
+    "logicName" : "排序",
+    "name" : "ORDER",
+    "stdDataType" : 9
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

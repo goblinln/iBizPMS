@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZ_PRODUCTLINEID`, t1.`IBZ_PRODUCTLINENAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `zt_module` t1   ]]>
+        <![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZ_PRODUCTLINEID`, t1.`IBZ_PRODUCTLINENAME`, t1.`ORDER`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `zt_module` t1   ]]>
     </sql>
 
 	
@@ -51,7 +51,7 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZ_PRODUCTLINEID`, t1.`IBZ_PRODUCTLINENAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `zt_module` t1   ]]>
+		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZ_PRODUCTLINEID`, t1.`IBZ_PRODUCTLINENAME`, t1.`ORDER`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `zt_module` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>
@@ -63,7 +63,7 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZ_PRODUCTLINEID`, t1.`IBZ_PRODUCTLINENAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `zt_module` t1   ]]>
+		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZ_PRODUCTLINEID`, t1.`IBZ_PRODUCTLINENAME`, t1.`ORDER`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `zt_module` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>

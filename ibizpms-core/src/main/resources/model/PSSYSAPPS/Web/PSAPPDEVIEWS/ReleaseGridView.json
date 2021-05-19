@@ -200,7 +200,6 @@
         "actionTarget" : "NONE",
         "caption" : "创建发布",
         "codeName" : "quickCreate",
-        "dataAccessAction" : "SRFUR__PRODSTA_RELCRT_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ReleaseQuickCreateView.json",
@@ -726,10 +725,8 @@
           "name" : "ub25eed2",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "关联需求",
             "codeName" : "linkstory",
-            "dataAccessAction" : "SRFUR__RELEASE_COMMON",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryUsr2MPickupView.json",
@@ -794,10 +791,8 @@
           "name" : "u3abf82d",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "关联bug",
             "codeName" : "linkbug",
-            "dataAccessAction" : "SRFUR__RELEASE_COMMON",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMPickupView4.json",
@@ -888,10 +883,8 @@
           "name" : "u5669a69",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "激活",
             "codeName" : "active",
-            "dataAccessAction" : "SRFUR__RELEASE_ACTIVE",
             "fullCodeName" : "Release_active",
             "name" : "激活",
             "getPSAppDEMethod" : {

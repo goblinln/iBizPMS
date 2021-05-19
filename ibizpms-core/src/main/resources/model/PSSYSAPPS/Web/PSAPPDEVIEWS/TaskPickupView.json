@@ -694,7 +694,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "提缺陷",
                 "codeName" : "TaskToBug",
-                "dataAccessAction" : "SRFUR__BUG_CREATE_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugTaskToBugEditView.json",
@@ -847,10 +846,8 @@
               "name" : "ucdca98c",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "noPrivDisplayMode" : 1,
                 "caption" : "确认",
                 "codeName" : "confirmStoryChange",
-                "dataAccessAction" : "SRFUR__TASK_XQCHANGE_BUT",
                 "fullCodeName" : "Task_confirmStoryChange",
                 "name" : "需求变更确认",
                 "getPSAppDEMethod" : {
@@ -928,10 +925,8 @@
               "name" : "ubd2fb06",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "noPrivDisplayMode" : 1,
                 "caption" : "关闭",
                 "codeName" : "CloseTask",
-                "dataAccessAction" : "SRFUR__TASK_CLOSE_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCloseTaskView.json",
@@ -1129,7 +1124,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "收藏",
                 "codeName" : "TaskFavorites",
-                "dataAccessAction" : "SRFUR__TASK_NFAVOR_BUT",
                 "fullCodeName" : "Task_TaskFavorites",
                 "name" : "收藏",
                 "getPSAppDEMethod" : {
@@ -1163,7 +1157,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "取消收藏",
                 "codeName" : "TaskNFavorites",
-                "dataAccessAction" : "SRFUR__TASK_FAVOR_BUT",
                 "fullCodeName" : "Task_TaskNFavorites",
                 "name" : "取消收藏",
                 "getPSAppDEMethod" : {

@@ -272,7 +272,6 @@
         "actionTarget" : "NONE",
         "caption" : "导入模板",
         "codeName" : "AddPlanTemplet",
-        "dataAccessAction" : "SRFUR__PROP_CREATE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanOptionView.json",
@@ -903,10 +902,8 @@
           "name" : "u54b2dce",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "关联需求",
             "codeName" : "RelationStory",
-            "dataAccessAction" : "SRFUR__PROP_LSTORY_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView.json",
@@ -941,10 +938,8 @@
           "name" : "u02b47f0",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "关联Bug",
             "codeName" : "RelationBug",
-            "dataAccessAction" : "SRFUR__PROP_LBUG_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMPickupView.json",

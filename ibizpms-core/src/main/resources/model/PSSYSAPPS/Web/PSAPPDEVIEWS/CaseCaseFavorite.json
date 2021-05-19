@@ -814,10 +814,8 @@
           "name" : "u89ab0d2",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "确认",
             "codeName" : "confirmstorychange",
-            "dataAccessAction" : "SRFUR__CASE_CONFIRM_BUT",
             "fullCodeName" : "Case_confirmstorychange",
             "name" : "确认",
             "getPSAppDEMethod" : {
@@ -881,10 +879,8 @@
           "name" : "u18be210",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "执行",
             "codeName" : "Execute",
-            "dataAccessAction" : "SRFUR__CASE_CASERUN_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseOptionView.json",
@@ -915,10 +911,8 @@
           "name" : "u8063cdc",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "MainEdit",
-            "dataAccessAction" : "SRFUR__CASE_EDIT_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainEditView.json",
@@ -1035,7 +1029,6 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "收藏",
             "codeName" : "caseFavorite",
-            "dataAccessAction" : "SRFUR__CASE_NFAVOR_BUT",
             "fullCodeName" : "Case_caseFavorite",
             "name" : "收藏",
             "getPSAppDEMethod" : {
@@ -1091,7 +1084,6 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "取消收藏",
             "codeName" : "CaseNFavorite",
-            "dataAccessAction" : "SRFUR__CASE_FAVOR_BUT",
             "fullCodeName" : "Case_CaseNFavorite",
             "name" : "取消收藏",
             "getPSAppDEMethod" : {

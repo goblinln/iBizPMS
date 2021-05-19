@@ -1,7 +1,7 @@
 import { ProductLineUIServiceBase } from './product-line-ui-service-base';
 
 /**
- * 产品线UI服务对象
+ * 产品线（废弃）UI服务对象
  *
  * @export
  * @class ProductLineUIService

@@ -1068,7 +1068,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
     "codeName" : "edit1Cz",
-    "dataAccessAction" : "UPDATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoEditView.json",
@@ -1098,7 +1097,6 @@
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "TodoCreate",
-    "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoTodoCreateView.json",
@@ -1124,10 +1122,8 @@
     "id" : "TodoCreate@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "指派",
     "codeName" : "assignTo",
-    "dataAccessAction" : "ASSIGNTO",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoAssignToView.json",
@@ -1199,11 +1195,9 @@
     "id" : "finishCz@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "删除",
     "codeName" : "delete",
     "confirmMsg" : "您确定要删除这条待办吗？",
-    "dataAccessAction" : "DELETE",
     "fullCodeName" : "Todo_delete",
     "name" : "todo删除",
     "getPSAppDEMethod" : {

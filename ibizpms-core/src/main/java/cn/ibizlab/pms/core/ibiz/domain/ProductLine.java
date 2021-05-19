@@ -34,14 +34,14 @@ import cn.ibizlab.pms.util.domain.EntityMP;
 import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 
 /**
- * 实体[产品线]
+ * 实体[产品线（废弃）]
  */
 @Getter
 @Setter
 @NoArgsConstructor
 @JsonIgnoreProperties(value = "handler")
 @TableName(value = "zt_module", resultMap = "ProductLineResultMap")
-@ApiModel("产品线")
+@ApiModel("产品线（废弃）")
 public class ProductLine extends EntityMP implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -102,6 +102,15 @@ public class ProductLine extends EntityMP implements Serializable {
     @JsonProperty("createman")
     @ApiModelProperty("建立人")
     private String createman;
+    /**
+     * 排序
+     */
+    @DEField(defaultValue = "0")
+    @TableField(value = "`ORDER`")
+    @JSONField(name = "order")
+    @JsonProperty("order")
+    @ApiModelProperty("排序")
+    private Integer order;
 
 
 
@@ -111,6 +120,14 @@ public class ProductLine extends EntityMP implements Serializable {
     public void setProductlinename(String productlinename) {
         this.productlinename = productlinename;
         this.modify("ibz_productlinename", productlinename);
+    }
+
+    /**
+     * 设置 [排序]
+     */
+    public void setOrder(Integer order) {
+        this.order = order;
+        this.modify("order", order);
     }
 
 

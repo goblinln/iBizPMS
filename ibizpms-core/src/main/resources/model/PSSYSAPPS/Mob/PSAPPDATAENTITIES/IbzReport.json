@@ -602,7 +602,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "查收",
     "codeName" : "MyReMonthy",
-    "dataAccessAction" : "MONTHLY",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzMonthlyMyReceivedMobTabExpView.json",
@@ -711,7 +710,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "详情",
     "codeName" : "LookReportly",
-    "dataAccessAction" : "REPORTLY",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzReportlyMainInfoMobEditView.json",

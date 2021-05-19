@@ -488,10 +488,8 @@
         "name" : "ue54667e",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "转Bug",
           "codeName" : "NewBugByTestCaseResult",
-          "dataAccessAction" : "SRFUR__CASE_TOBUG_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseToBugTestEditView.json",
@@ -584,10 +582,8 @@
         "name" : "u8afa84b",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "执行",
           "codeName" : "CaseExecute",
-          "dataAccessAction" : "SRFUR__CASE_CASERUN_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseTestOptionView.json",

@@ -333,7 +333,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "开始",
         "codeName" : "MobStart",
-        "dataAccessAction" : "SRFUR__TESTT_START_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TestTaskMobOptionViewStart.json",
@@ -367,7 +366,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "阻塞",
         "codeName" : "MobBlock",
-        "dataAccessAction" : "SRFUR__TESTT_BLOCK_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TestTaskMobOptionViewBlock.json",
@@ -435,7 +433,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "关闭",
         "codeName" : "MobClose",
-        "dataAccessAction" : "SRFUR__TESTT_CLOSED_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TestTaskMobOptionViewClose.json",

@@ -1179,7 +1179,6 @@
     "actionTarget" : "NONE",
     "caption" : "添加项目",
     "codeName" : "AddProject",
-    "dataAccessAction" : "SRFUR__PROJ_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",

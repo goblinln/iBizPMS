@@ -950,10 +950,8 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "编辑版本",
     "codeName" : "editBuild",
-    "dataAccessAction" : "SRFUR__BUILD_EDIT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BuildEditFormEditView.json",

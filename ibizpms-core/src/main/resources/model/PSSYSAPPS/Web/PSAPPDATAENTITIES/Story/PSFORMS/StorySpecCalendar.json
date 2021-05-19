@@ -791,7 +791,6 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "激活",
               "codeName" : "ActiviteDash",
-              "dataAccessAction" : "SRFUR__STORY_ACTIVE_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryActiviteView.json",
@@ -928,7 +927,6 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "细分",
               "codeName" : "SubStoryCz",
-              "dataAccessAction" : "SRFUR__STORY_XQXF_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorySubGridView.json",
@@ -996,7 +994,6 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "编辑",
               "codeName" : "OpenBaseInfoC",
-              "dataAccessAction" : "SRFUR__STORY_EDIT_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView9_EditMode.json",

@@ -1126,7 +1126,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "确认",
           "codeName" : "ConfirmBugMob",
-          "dataAccessAction" : "SRFUR__BUG_CONFIRM_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugCMobOptionView.json",
@@ -1229,7 +1228,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "激活",
           "codeName" : "ActivationMob",
-          "dataAccessAction" : "SRFUR__BUG_ACTIVATE_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugACMobOptionView.json",
@@ -1378,7 +1376,6 @@
         "actionTarget" : "NONE",
         "caption" : "新建",
         "codeName" : "MobCreate",
-        "dataAccessAction" : "SRFUR__BUG_CREATE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugNewMobEditView.json",
