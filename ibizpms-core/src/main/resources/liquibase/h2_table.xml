@@ -332,7 +332,7 @@
 
 
     <!--输出实体[ZT_CASE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_case-115-9">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_case-121-9">
         <createTable tableName="zt_case">
                 <column name="LASTEDITEDDATE" remarks="" type="DATETIME">
                 </column>
@@ -1789,12 +1789,16 @@
 
 
     <!--输出实体[IBZ_PROJECTMEMBER]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibz_projectmember-4-59">
+    <changeSet author="a_A_23e8aa361" id="tab-ibz_projectmember-107-59">
         <createTable tableName="zt_project">
                 <column name="ID" remarks="" type="BIGINT">
                     <constraints primaryKey="true" primaryKeyName="PK_IBZ_PROJECTMEMBER_ID"/>
                 </column>
                 <column name="NAME" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="OPENEDBY" remarks="" type="VARCHAR(30)">
+                </column>
+                <column name="ACL" remarks="" type="VARCHAR(7)">
                 </column>
         </createTable>
     </changeSet>
@@ -3130,7 +3134,7 @@
 
 
     <!--输出实体[ZT_TESTTASK]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_testtask-50-121">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_testtask-51-121">
         <createTable tableName="zt_testtask">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>

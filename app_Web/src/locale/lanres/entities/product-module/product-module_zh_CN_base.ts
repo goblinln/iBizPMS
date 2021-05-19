@@ -98,6 +98,10 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("新建行",null),
 				tip: commonLogic.appcommonhandle("新建行",null),
 			},
+			'deuiaction3': {
+				caption: commonLogic.appcommonhandle("保存行",null),
+				tip: commonLogic.appcommonhandle("保存行",null),
+			},
 		},
 		gridviewtoolbar_toolbar: {
 			'deuiaction1_syncfromibiz': {
@@ -107,6 +111,10 @@ function getLocaleResourceBase(){
 			'deuiaction2': {
 				caption: commonLogic.appcommonhandle("新建行",null),
 				tip: commonLogic.appcommonhandle("新建行",null),
+			},
+			'deuiaction3': {
+				caption: commonLogic.appcommonhandle("保存行",null),
+				tip: commonLogic.appcommonhandle("保存行",null),
 			},
 		},
 		treeexpviewtreeexpbar_toolbar_toolbar: {

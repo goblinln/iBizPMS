@@ -73,6 +73,97 @@
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.id in (select t3.root from zt_team t3 where t3.account = #{srf.sessioncontext.srfloginname}  \nand t3.type = 'project') )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "DeveloperQuery",
+    "logicName" : "研发人员（启用权限）",
+    "name" : "DeveloperQuery"
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"IBZ_PROJECTMEMBER\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "OpenByQuery",
+    "logicName" : "当前创建者（启用权限）",
+    "name" : "OpenByQuery"
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ACL` = 'open' )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "OpenQuery",
+    "logicName" : "公开（启动权限）",
+    "name" : "OpenQuery"
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.PM =  ${srfsessioncontext('srfloginname','{\"defname\":\"PM\",\"dename\":\"IBZ_PROJECTMEMBER\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "PMQuery",
+    "logicName" : "项目负责人（启用权限）",
+    "name" : "PMQuery"
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.PO =  ${srfsessioncontext('srfloginname','{\"defname\":\"PO\",\"dename\":\"IBZ_PROJECTMEMBER\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "POQuery",
+    "logicName" : "产品负责人（启用权限）",
+    "name" : "POQuery"
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.QD =  ${srfsessioncontext('srfloginname','{\"defname\":\"QD\",\"dename\":\"IBZ_PROJECTMEMBER\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "QDQuery",
+    "logicName" : "测试负责人（启用权限)",
+    "name" : "QDQuery"
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.RD =  ${srfsessioncontext('srfloginname','{\"defname\":\"RD\",\"dename\":\"IBZ_PROJECTMEMBER\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "RDQuery",
+    "logicName" : "发布负责人（启用权限）",
+    "name" : "RDQuery"
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
       "name" : "MySQL5"
     } ],
     "codeName" : "View",
@@ -88,6 +179,76 @@
       "id" : "Default"
     } ],
     "defaultMode" : true,
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "DeveloperQuery",
+    "logicName" : "研发人员（启用权限）",
+    "name" : "DeveloperQuery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "DeveloperQuery"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "OpenByQuery",
+    "logicName" : "当前创建者（启用权限）",
+    "name" : "OpenByQuery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "OpenByQuery"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "OpenQuery",
+    "logicName" : "公开（启动权限）",
+    "name" : "OpenQuery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "PMQuery",
+    "logicName" : "项目负责人（启用权限）",
+    "name" : "PMQuery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "PMQuery"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "POQuery",
+    "logicName" : "产品负责人（启用权限）",
+    "name" : "POQuery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "POQuery"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "QDQuery",
+    "logicName" : "测试负责人（启用权限)",
+    "name" : "QDQuery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "QDQuery"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "RDQuery",
+    "logicName" : "发布负责人（启用权限）",
+    "name" : "RDQuery",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "RDQuery"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -771,6 +932,110 @@
     "valueFormat" : "%1$s",
     "enableQuickSearch" : true,
     "majorDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "OPENEDBY",
+      "dBType" : "MYSQL5",
+      "name" : "OPENEDBY",
+      "queryCodeExp" : "t1.`OPENEDBY`",
+      "standardColumnName" : "`OPENEDBY`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "OPENEDBY",
+          "maxValue" : 30,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[30]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[30]"
+      },
+      "getPSDEField" : {
+        "name" : "OPENEDBY",
+        "codeName" : "OpenedBy"
+      },
+      "ruleInfo" : "内容长度必须小于等于[30]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "OpenedBy",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "importOrder" : 1000,
+    "length" : 30,
+    "logicName" : "由谁创建",
+    "name" : "OPENEDBY",
+    "predefinedType" : "CREATEMANNAME",
+    "stdDataType" : 25,
+    "stringLength" : 30,
+    "valueFormat" : "%1$s",
+    "systemReserver" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "ACL",
+      "dBType" : "MYSQL5",
+      "name" : "ACL",
+      "queryCodeExp" : "t1.`ACL`",
+      "standardColumnName" : "`ACL`",
+      "valueAutoGen" : true
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_ACL_EQ",
+      "name" : "N_ACL_EQ",
+      "stdDataType" : 25,
+      "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "ACL",
+          "maxValue" : 7,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[7]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[7]"
+      },
+      "getPSDEField" : {
+        "name" : "ACL",
+        "codeName" : "Acl"
+      },
+      "ruleInfo" : "内容长度必须小于等于[7]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Acl",
+    "dEFType" : 1,
+    "dataType" : "SSCODELIST",
+    "defaultValue" : "open",
+    "importOrder" : 1000,
+    "length" : 7,
+    "logicName" : "访问控制",
+    "name" : "ACL",
+    "stdDataType" : 25,
+    "stringLength" : 7,
+    "valueFormat" : "%1$s"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -799,6 +1064,142 @@
     } ],
     "roleTag" : "ProjectMember_Read",
     "userDRAction" : "READ"
+  }, {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Manage_OpenBy.json",
+    "name" : "项目管理（当前创建者）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenByQuery"
+    },
+    "roleTag" : "Project_Manage_OpenBy",
+    "userDRAction" : "READ",
+    "defaultMode" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Read_DEV.json",
+    "name" : "项目查看（成员）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "DeveloperQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "Project_Read_DEV_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "Project_Read_DEV",
+    "userDRAction" : "READ",
+    "defaultMode" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Read_Open.json",
+    "name" : "项目查看（公开项目）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "Project_Read_Open_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "Project_Read_Open",
+    "userDRAction" : "READ",
+    "defaultMode" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Read_OpenBy.json",
+    "name" : "项目查看（当前创建者）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "OpenByQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "Project_Read_OpenBy_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "Project_Read_OpenBy",
+    "userDRAction" : "READ",
+    "defaultMode" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Read_PM.json",
+    "name" : "项目查看（项目负责人）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "PMQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "Project_Read_PM_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "Project_Read_PM",
+    "userDRAction" : "READ",
+    "defaultMode" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Read_PO.json",
+    "name" : "项目查看（产品负责人）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "POQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "Project_Read_PO_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "Project_Read_PO",
+    "userDRAction" : "READ",
+    "defaultMode" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Read_QD.json",
+    "name" : "项目查看（测试负责人）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "QDQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "Project_Read_QD_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "Project_Read_QD",
+    "userDRAction" : "READ",
+    "defaultMode" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Read_RD.json",
+    "name" : "项目查看（发布负责人）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "RDQuery"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "Project_Read_RD_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    } ],
+    "roleTag" : "Project_Read_RD",
+    "userDRAction" : "READ",
+    "defaultMode" : true
   } ],
   "codeName" : "IbzProjectMember",
   "dEType" : 1,

@@ -1,7 +1,7 @@
 import qs from 'qs';
 import { GlobalHelp } from '@ibiz/dynamic-model-api';
 import { AppServiceBase, Http, getSessionStorage, setSessionStorage, AppModelService, Util } from 'ibiz-core';
-import { AppCenterService, ErrorUtil } from 'ibiz-vue';
+import { AppCenterService, NoticeHandler } from 'ibiz-vue';
 import { Environment } from '@/environments/environment';
 import { DynamicInstanceConfig } from '@ibiz/dynamic-model-api';
 import i18n from '@/locale';
@@ -254,7 +254,7 @@ export class AuthGuard {
             window.location.href = `${Environment.loginUrl}?redirect=${window.location.href}`;
         } else {
             if (Object.is(router.currentRoute.name, 'login')) {
-                ErrorUtil.errorHandler(message);
+                NoticeHandler.errorHandler(message);
                 return;
             }
             router.push({ name: 'login', query: { redirect: router.currentRoute.fullPath } });

@@ -87,7 +87,7 @@
     "name" : "toolbar_deuiaction3",
     "getPSUIAction" : {
       "modelref" : true,
-      "id" : "SaveAndExit"
+      "id" : "SaveRow"
     },
     "xDataControlName" : "grid"
   } ],
@@ -137,11 +137,7 @@
       "showCaption" : true,
       "showIcon" : true
     }, {
-      "getCapPSLanguageRes" : {
-        "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
-        "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
-      },
-      "caption" : "保存并关闭",
+      "caption" : "保存行",
       "groupExtractMode" : "ITEM",
       "itemType" : "DEUIACTION",
       "name" : "deuiaction3",
@@ -151,35 +147,25 @@
         "id" : "toolbar_deuiaction3"
       },
       "getPSSysImage" : {
-        "cssClass" : "sx-tb-saveandclose"
+        "glyph" : "xf0c7@FontAwesome",
+        "cssClass" : "fa fa-save"
       },
       "getPSUIAction" : {
-        "getCapPSLanguageRes" : {
-          "lanResTag" : "TBB.TEXT.EDITVIEW.SAVEANDCLOSE",
-          "id" : "工具栏按钮文本[EDITVIEW.SAVEANDCLOSE]"
-        },
-        "caption" : "保存并关闭",
-        "codeName" : "SaveAndExit",
+        "caption" : "保存行",
+        "codeName" : "SaveRow",
         "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
-        "fullCodeName" : "SaveAndExit",
-        "name" : "编辑界面_保存并退出操作",
+        "fullCodeName" : "SaveRow",
+        "name" : "表格界面_保存行",
         "getPSSysImage" : {
-          "cssClass" : "sx-tb-saveandclose"
+          "glyph" : "xf0c7@FontAwesome",
+          "cssClass" : "fa fa-save"
         },
         "timeout" : 60000,
-        "getTooltipPSLanguageRes" : {
-          "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
-          "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
-        },
         "uIActionMode" : "SYS",
-        "uIActionTag" : "SaveAndExit",
+        "uIActionTag" : "SaveRow",
         "uIActionType" : "DEUIACTION"
       },
-      "tooltip" : "保存并关闭",
-      "getTooltipPSLanguageRes" : {
-        "lanResTag" : "TBB.TOOLTIP.EDITVIEW.SAVEANDCLOSE",
-        "id" : "工具栏按钮提示[EDITVIEW.SAVEANDCLOSE]"
-      },
+      "tooltip" : "保存行",
       "showCaption" : true,
       "showIcon" : true
     } ],

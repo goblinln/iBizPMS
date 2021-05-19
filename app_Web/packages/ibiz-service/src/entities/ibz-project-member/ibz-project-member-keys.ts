@@ -12,4 +12,6 @@ export default [
     'fifthmember',
     'sixthmember',
     'name',
+    'openedby',
+    'acl',
 ];

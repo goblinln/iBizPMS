@@ -483,6 +483,9 @@
       "columnCount" : 24,
       "layout" : "TABLE_24COL"
     },
+    "getPSSysCss" : {
+      "cssName" : "form-padding-top-10"
+    },
     "getRemovePSControlAction" : {
       "modelref" : true,
       "id" : "remove"

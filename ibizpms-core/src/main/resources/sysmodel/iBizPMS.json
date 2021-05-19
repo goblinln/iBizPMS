@@ -18944,6 +18944,35 @@
     "key_field":0,
     "show_order":1000,
     "major_field":1
+    },
+    {
+    "fieldname":"OPENEDBY" ,
+    "codename":"OpenedBy",
+    "field_logic_name":"由谁创建",
+    "entity_name":"IBZ_PROJECTMEMBER",
+    "field_type":"TEXT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":30,
+    "predefined":"CREATEMANNAME",
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"ACL" ,
+    "codename":"Acl",
+    "field_logic_name":"访问控制",
+    "entity_name":"IBZ_PROJECTMEMBER",
+    "field_type":"SSCODELIST",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"VARCHAR",
+    "data_length":7,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[

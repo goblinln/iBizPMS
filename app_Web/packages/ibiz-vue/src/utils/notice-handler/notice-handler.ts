@@ -35,14 +35,17 @@ export class NoticeHandler {
      * @return {*} 
      * @memberof NoticeHandler
      */
-    public static errorHandler(error: any, param?: any, caller?: any, fnName: string = '') {
+    public static errorHandler(error: any, {param, caller, fnName = ''} :{param?: any, caller?: any, fnName?: string} = {}) {
+        // 错误处理前钩子
         let beforeArgs = { error, param, caller, fnName };
         this.hooks.beforeError.callSync(beforeArgs);
 
+        // 处理错误对象
         if(error?.ignore) return;
         const appError: AppError | null = this.parse(beforeArgs.error);
         if(!appError) return; 
 
+        // 错误处理后钩子
         let afterArgs = { error: appError, param };
         this.hooks.afterError.callSync(afterArgs);
         AppNoticeService.getInstance().error(afterArgs.error.message, param);
@@ -89,7 +92,8 @@ export class NoticeHandler {
      * @param {string} [fnName=''] 调用方法名称
      * @memberof NoticeHandler
      */
-    public static successHandler(message: any, param?: any, caller?: any, fnName: string = '') {
+    public static successHandler(message: any, {param, caller, fnName = ''} :{param?: any, caller?: any, fnName?: string} = {}) {
+        // 成功处理前钩子
         let beforeArgs = { message, param, caller, fnName };
         this.hooks.beforeSuccess.callSync(beforeArgs);
         AppNoticeService.getInstance().success(beforeArgs.message);
@@ -105,7 +109,8 @@ export class NoticeHandler {
      * @param {string} [fnName=''] 调用方法名称
      * @memberof NoticeHandler
      */
-    public static warningHandler(message: any, param?: any, caller?: any, fnName: string = '') {
+    public static warningHandler(message: any, {param, caller, fnName = ''} :{param?: any, caller?: any, fnName?: string} = {}) {
+        // 警告处理前钩子
         let beforeArgs = { message, param, caller, fnName };
         this.hooks.beforeWarning.callSync(beforeArgs);
         AppNoticeService.getInstance().warning(beforeArgs.message);
@@ -121,7 +126,8 @@ export class NoticeHandler {
      * @param {string} [fnName=''] 调用方法名称
      * @memberof NoticeHandler
      */
-    public static infoHandler(message: any, param?: any, caller?: any, fnName: string = '') {
+    public static infoHandler(message: any, {param, caller, fnName = ''} :{param?: any, caller?: any, fnName?: string} = {}) {
+        // 信息处理前钩子
         let beforeArgs = { message, param, caller, fnName };
         this.hooks.beforeInfo.callSync(beforeArgs);
         AppNoticeService.getInstance().info(beforeArgs.message);

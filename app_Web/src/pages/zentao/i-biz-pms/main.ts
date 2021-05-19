@@ -46,18 +46,18 @@ initNoticeHandler();
 Vue.config.errorHandler = function (err: any, vm: any, info: any) {
     NoticeHandler.errorHandler(err,info);
 }
-Vue.prototype.$throw = function (err:any, param?: any, fnName?: string){
-    NoticeHandler.errorHandler(err, param, this, fnName);
-}
-Vue.prototype.$success = function (err:any, param?: any, fnName?: string){
-    NoticeHandler.successHandler(err, param, this, fnName);
-}
-Vue.prototype.$warning = function (err:any, param?: any, fnName?: string){
-    NoticeHandler.warningHandler(err, param, this, fnName);
-}
-Vue.prototype.$info = function (err:any, param?: any, fnName?: string){
-    NoticeHandler.infoHandler(err, param, this, fnName);
-}
+Vue.prototype.$throw = function(err: any, fnName?: string, param?: any) {
+    NoticeHandler.errorHandler(err, { param, caller: this, fnName });
+};
+Vue.prototype.$success = function(message: any, fnName?: string, param?: any) {
+    NoticeHandler.successHandler(message, { param, caller: this, fnName });
+};
+Vue.prototype.$warning = function(message: any, fnName?: string, param?: any) {
+    NoticeHandler.warningHandler(message, { param, caller: this, fnName });
+};
+Vue.prototype.$info = function(message: any, fnName?: string, param?: any) {
+    NoticeHandler.infoHandler(message, { param, caller: this, fnName });
+};
 
 Vue.config.productionTip = false;
 Vue.use(Print);

@@ -339,6 +339,16 @@ export class AppStyle2IndexView extends AppIndexViewBase {
     }
 
     /**
+     * 渲染视图主题内容(隐藏主体表单)
+     * 
+     * @memberof IndexViewBase
+     */
+     public renderMainContent() {
+        let { targetCtrlName, targetCtrlParam, targetCtrlEvent }: { targetCtrlName: string, targetCtrlParam: any, targetCtrlEvent: any } = this.computeTargetCtrlData(this.menuInstance);
+        return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: this.menuInstance?.name, on: targetCtrlEvent, style: { display: 'none'} });
+    }
+
+    /**
      * 应用首页视图渲染
      * 
      * @memberof AppStyle2IndexView

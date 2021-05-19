@@ -225,6 +225,8 @@ import { AppDefaultCalendarExpBar } from './control/app-default-calendar-exp-bar
 import { AppDefaultPickUpViewPanel } from './control/app-default-pick-up-view-panel/app-default-pick-up-view-panel';
 import { AppDefaultTreeExpBar } from './control/app-default-tree-exp-bar/app-default-tree-exp-bar';
 import { AppTimeLineCalendar } from './control/app-timeline-calendar/app-timeline-calendar';
+import { AppDefaultCaptionBar } from './control/app-default-captionbar/app-default-captionbar';
+import { AppDefaultDataInfoBar } from './control/app-default-datainfobar/app-default-datainfobar';
 import { AppPivotTable } from './control/app-pivot-table/app-pivot-table';
 import { StudioView } from './common/studio-view/studio-view';
 import { StudioViewStyle2 } from './common/studio-view-style2/studio-view-style2';
@@ -464,6 +466,8 @@ export const ComponentsRegister = {
         v.component('app-default-wizard-panel', AppDefaultWizardPanel);
         v.component('app-default-drtab', AppDefaultDrtab);
         v.component('app-default-state-wizard-panel', AppDefaultStateWizardPanel);
+        v.component('app-default-captionbar', AppDefaultCaptionBar);
+        v.component('app-default-datainfobar', AppDefaultDataInfoBar);
         v.component('app-pivot-table', AppPivotTable);
         // 注册指令
         v.directive('notification-signal', NotificationSignal);

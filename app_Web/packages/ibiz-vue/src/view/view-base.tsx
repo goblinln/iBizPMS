@@ -347,7 +347,7 @@ export class ViewBase extends Vue {
     public initMountedMap() {
         let controls = this.viewInstance?.getPSControls?.();
         controls?.forEach((item: any) => {
-            if (item.controlType == "TOOLBAR" || item.controlType == "SEARCHBAR") {
+            if (item.controlType == "TOOLBAR" || item.controlType == "SEARCHBAR" || item.controlType == "CAPTIONBAR" || item.controlType == "DATAINFOBAR") {
                 this.mountedMap.set(item.name, true);
             } else {
                 this.mountedMap.set(item.name, false);
@@ -1083,13 +1083,6 @@ export class ViewBase extends Vue {
     }
 
     /**
-     * 渲染视图头部
-     * 
-     * @memberof ViewBase
-     */
-    public renderViewHeader() { }
-
-    /**
      * 渲染视图主体内容区
      * 
      * @memberof ViewBase
@@ -1142,6 +1135,44 @@ export class ViewBase extends Vue {
             }
         }
         return { targetCtrlName: targetCtrlName, targetCtrlParam: targetCtrlParam, targetCtrlEvent: targetCtrlEvent };
+    }
+
+    /**
+     *  绘制标题栏
+     *
+     * @memberof ViewBase
+     */
+     public renderCaptionBar() {
+        const captionBar: any = ModelTool.findPSControlByName('captionbar', this.viewInstance.getPSControls());
+        return (
+            <div slot="captionBar" class="app-captionbar-container">
+                <app-default-captionbar
+                    viewModelData={this.viewInstance}
+                    modelData={captionBar}
+                    context={this.context}
+                    viewparam={this.viewparam}
+                ></app-default-captionbar>
+            </div>
+        );
+    }
+
+    /**
+     *  绘制信息栏
+     *
+     * @memberof ViewBase
+     */
+    public renderDataInfoBar() {
+        const datainfoBar: any = ModelTool.findPSControlByName('datainfobar', this.viewInstance.getPSControls());
+        return (
+            <div slot="datainfoBar" class="app-datainfobar-container">
+                <app-default-datainfobar
+                    modelData={datainfoBar}
+                    viewInfo={this.model}
+                    context={this.context}
+                    viewparam={this.viewparam}
+                ></app-default-datainfobar>
+            </div>
+        );
     }
 
     /**

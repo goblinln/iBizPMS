@@ -20,9 +20,23 @@ import com.alibaba.fastjson.JSONObject;
 public interface IbzProjectMemberMapper extends BaseMapper<IbzProjectMember> {
 
     List<IbzProjectMember> selectDefault(@Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
+    List<IbzProjectMember> selectDeveloperQuery(@Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
+    List<IbzProjectMember> selectOpenByQuery(@Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
+    List<IbzProjectMember> selectOpenQuery(@Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
+    List<IbzProjectMember> selectPMQuery(@Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
+    List<IbzProjectMember> selectPOQuery(@Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
+    List<IbzProjectMember> selectQDQuery(@Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
+    List<IbzProjectMember> selectRDQuery(@Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
     List<IbzProjectMember> selectView(@Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
 
     Page<IbzProjectMember> searchDefault(IPage page, @Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
+    Page<IbzProjectMember> searchDeveloperQuery(IPage page, @Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
+    Page<IbzProjectMember> searchOpenByQuery(IPage page, @Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
+    Page<IbzProjectMember> searchOpenQuery(IPage page, @Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
+    Page<IbzProjectMember> searchPMQuery(IPage page, @Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
+    Page<IbzProjectMember> searchPOQuery(IPage page, @Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
+    Page<IbzProjectMember> searchQDQuery(IPage page, @Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
+    Page<IbzProjectMember> searchRDQuery(IPage page, @Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
     @Override
     IbzProjectMember selectById(Serializable id);
     @Override

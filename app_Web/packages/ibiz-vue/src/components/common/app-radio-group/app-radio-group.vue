@@ -27,13 +27,6 @@ export default class AppRadioGroup extends Vue {
     public codeListService: CodeListService = new CodeListService({ $store: this.$store });
 
     /**
-     * 是否有子集
-     * @type {boolean}
-     * @memberof AppRadioGroup
-     */
-    public hasChildren:boolean = false;
-
-    /**
      * 双向绑定值
      *
      * @type {*}
@@ -277,52 +270,8 @@ export default class AppRadioGroup extends Vue {
         }catch(error){
             LogUtil.warn('代码表值类型和属性类型不匹配，自动强制转换异常，请修正代码表值类型和属性类型匹配');
         }
-        this.handleLevelCodeList(Util.deepCopy(this.items));
     }
 
-    /**
-     * 处理层级代码表
-     * 
-     * @param {*} items
-     * @memberof AppRadioGroup
-     */
-    public handleLevelCodeList(items: Array<any>){
-        if(items && items.length >0){
-            this.hasChildren = items.some((item:any) =>{
-                return item.pvalue;
-            })
-            if(this.hasChildren){
-                let list:Array<any> = [];
-                items.forEach((codeItem:any) =>{
-                    if(!codeItem.pvalue){
-                        let valueField:string = codeItem.value;
-                        this.setChildCodeItems(valueField,items,codeItem);
-                        list.push(codeItem);
-                    }
-                })
-                this.items = list;
-            }
-        }
-    }
-
-    /**
-     * 计算子类代码表
-     * 
-     * @param {*} items
-     * @memberof AppRadioGroup
-     */
-    public setChildCodeItems(pValue:string,result:Array<any>,codeItem:any){
-        result.forEach((item:any) =>{
-            if(item.pvalue == pValue){
-                let valueField:string = item.value;
-                this.setChildCodeItems(valueField,result,item);
-                if(!codeItem.children){
-                    codeItem.children = [];
-                }
-                codeItem.children.push(item);
-            }
-        })
-    }
 
 
 }

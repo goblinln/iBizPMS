@@ -1,0 +1,11 @@
+{
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Manage_OpenBy.json",
+  "name" : "项目管理（当前创建者）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "OpenByQuery"
+  },
+  "roleTag" : "Project_Manage_OpenBy",
+  "userDRAction" : "READ",
+  "defaultMode" : true
+}

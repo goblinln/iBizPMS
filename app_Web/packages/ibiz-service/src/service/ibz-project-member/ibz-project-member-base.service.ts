@@ -2,6 +2,8 @@ import { CodeListService } from '../app/codelist-service';
 import { EntityBaseService, IContext, HttpResponse } from 'ibiz-core';
 import { IIbzProjectMember, IbzProjectMember } from '../../entities';
 import keys from '../../entities/ibz-project-member/ibz-project-member-keys';
+import { isNil, isEmpty } from 'ramda';
+import { PSDEDQCondEngine } from 'ibiz-core';
 
 /**
  * 项目相关成员服务对象基类
@@ -64,6 +66,98 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
             entity = result.data;
         }
         return new HttpResponse(entity);
+    }
+
+    protected getDefaultCond() {
+        return this.condCache.get('default');
+    }
+
+    protected getDeveloperQueryCond() {
+        if (!this.condCache.has('developerQuery')) {
+            const strCond: any[] = ['AND'];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('developerQuery', cond);
+            }
+        }
+        return this.condCache.get('developerQuery');
+    }
+
+    protected getOpenByQueryCond() {
+        if (!this.condCache.has('openByQuery')) {
+            const strCond: any[] = ['AND', ['EQ', 'OPENEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('openByQuery', cond);
+            }
+        }
+        return this.condCache.get('openByQuery');
+    }
+
+    protected getOpenQueryCond() {
+        if (!this.condCache.has('openQuery')) {
+            const strCond: any[] = ['AND', ['EQ', 'ACL','open']];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('openQuery', cond);
+            }
+        }
+        return this.condCache.get('openQuery');
+    }
+
+    protected getPMQueryCond() {
+        if (!this.condCache.has('pMQuery')) {
+            const strCond: any[] = ['AND', ['EQ', 'PM',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('pMQuery', cond);
+            }
+        }
+        return this.condCache.get('pMQuery');
+    }
+
+    protected getPOQueryCond() {
+        if (!this.condCache.has('pOQuery')) {
+            const strCond: any[] = ['AND', ['EQ', 'PO',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('pOQuery', cond);
+            }
+        }
+        return this.condCache.get('pOQuery');
+    }
+
+    protected getQDQueryCond() {
+        if (!this.condCache.has('qDQuery')) {
+            const strCond: any[] = ['AND', ['EQ', 'QD',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('qDQuery', cond);
+            }
+        }
+        return this.condCache.get('qDQuery');
+    }
+
+    protected getRDQueryCond() {
+        if (!this.condCache.has('rDQuery')) {
+            const strCond: any[] = ['AND', ['EQ', 'RD',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('rDQuery', cond);
+            }
+        }
+        return this.condCache.get('rDQuery');
+    }
+
+    protected getViewCond() {
+        return this.condCache.get('view');
     }
     /**
      * Select
@@ -153,5 +247,82 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
      */
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibzprojectmembers/fetchdefault`, _data);
+    }
+    /**
+     * FetchDeveloperQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzProjectMemberService
+     */
+    async FetchDeveloperQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzprojectmembers/fetchdeveloperquery`, _data);
+    }
+    /**
+     * FetchOpenByQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzProjectMemberService
+     */
+    async FetchOpenByQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzprojectmembers/fetchopenbyquery`, _data);
+    }
+    /**
+     * FetchOpenQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzProjectMemberService
+     */
+    async FetchOpenQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzprojectmembers/fetchopenquery`, _data);
+    }
+    /**
+     * FetchPMQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzProjectMemberService
+     */
+    async FetchPMQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzprojectmembers/fetchpmquery`, _data);
+    }
+    /**
+     * FetchPOQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzProjectMemberService
+     */
+    async FetchPOQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzprojectmembers/fetchpoquery`, _data);
+    }
+    /**
+     * FetchQDQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzProjectMemberService
+     */
+    async FetchQDQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzprojectmembers/fetchqdquery`, _data);
+    }
+    /**
+     * FetchRDQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzProjectMemberService
+     */
+    async FetchRDQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzprojectmembers/fetchrdquery`, _data);
     }
 }

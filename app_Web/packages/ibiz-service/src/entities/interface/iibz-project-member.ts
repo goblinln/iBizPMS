@@ -60,4 +60,12 @@ export interface IIbzProjectMember extends IEntityBase {
      * 项目名称
      */
     name?: any;
+    /**
+     * 由谁创建
+     */
+    openedby?: any;
+    /**
+     * 访问控制
+     */
+    acl?: any;
 }
