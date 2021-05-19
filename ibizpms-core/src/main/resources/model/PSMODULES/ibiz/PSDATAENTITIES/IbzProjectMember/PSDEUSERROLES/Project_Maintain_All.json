@@ -8,6 +8,27 @@
       "modelref" : true,
       "id" : "CREATE"
     }
+  }, {
+    "dataAccessAction" : "UPDATE",
+    "name" : "Project_Maintain_All_UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : "Project_Maintain_All_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "dataAccessAction" : "READ",
+    "name" : "Project_Maintain_All_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
   } ],
   "roleTag" : "Project_Maintain_All",
   "userDRAction" : "READ"
