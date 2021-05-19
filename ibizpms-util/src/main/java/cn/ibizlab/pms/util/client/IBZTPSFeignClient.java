@@ -3,6 +3,7 @@ package cn.ibizlab.pms.util.client;
 import cn.ibizlab.pms.util.domain.SysAudit;
 import cn.ibizlab.pms.util.domain.SysEvent;
 import cn.ibizlab.pms.util.domain.SysLog;
+import cn.ibizlab.pms.util.domain.SysPO;
 import com.alibaba.fastjson.JSONObject;
 import net.ibizsys.runtime.util.domain.MsgSendQueue;
 import org.apache.rocketmq.common.message.Message;
@@ -48,4 +49,7 @@ public interface IBZTPSFeignClient {
     @RequestMapping(method = RequestMethod.POST, value = "/sysevent")
     Boolean event(@RequestBody SysEvent event);
     
+    @RequestMapping(method = RequestMethod.POST, value = "/syspo")
+    Boolean po(@RequestBody SysPO event);
+	
 }

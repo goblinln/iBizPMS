@@ -5,8 +5,9 @@ import lombok.Data;
 @Data
 public class SysEvent {
 
-    private String name;
+    private int loglevel;
     private String cat;
     private String info;
+    private String objdata;
 
 }
