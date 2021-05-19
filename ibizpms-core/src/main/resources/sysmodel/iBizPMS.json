@@ -32598,7 +32598,7 @@
     "entity_name":"IBZ_PRODUCTLINE",
     "logic_name":"产品线",
     "code_name":"ProductLine",
-    "table_name":"T_IBZ_PRODUCTLINE",
+    "table_name":"zt_module",
     "system_id":"iBizPMS",
     "system_name":"iBiz软件生产管理",
     "module_id":"ibiz",

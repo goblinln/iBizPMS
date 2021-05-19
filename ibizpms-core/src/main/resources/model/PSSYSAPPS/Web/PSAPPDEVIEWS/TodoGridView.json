@@ -845,11 +845,9 @@
           "name" : "u028b830",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "激活",
             "codeName" : "activate",
             "confirmMsg" : "您确定要激活这条待办吗？",
-            "dataAccessAction" : "ACTIVATE",
             "fullCodeName" : "Todo_activate",
             "name" : "todo激活",
             "getPSAppDEMethod" : {

@@ -205,7 +205,6 @@
         "actionTarget" : "NONE",
         "caption" : "新建",
         "codeName" : "Create",
-        "dataAccessAction" : "SRFUR__ADMIN",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzLibEditView.json",

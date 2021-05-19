@@ -747,7 +747,6 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "评审",
               "codeName" : "ReviewStoryDash",
-              "dataAccessAction" : "SRFUR__STORY_REVIEW_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRevIewEditView.json",

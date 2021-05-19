@@ -1669,10 +1669,8 @@
                               "name" : "u18f3a7b",
                               "getPSUIAction" : {
                                 "actionTarget" : "SINGLEKEY",
-                                "noPrivDisplayMode" : 1,
                                 "caption" : "变更",
                                 "codeName" : "ChangeStoryDetail",
-                                "dataAccessAction" : "SRFUR__STORY_CHANGED_BUT",
                                 "getFrontPSAppView" : {
                                   "modelref" : true,
                                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView_StoryChange.json",
@@ -3288,7 +3286,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "评审",
                   "codeName" : "ReviewStoryDash",
-                  "dataAccessAction" : "SRFUR__STORY_REVIEW_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRevIewEditView.json",

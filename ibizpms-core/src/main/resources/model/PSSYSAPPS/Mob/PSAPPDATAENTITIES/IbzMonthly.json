@@ -915,7 +915,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "提交",
     "codeName" : "MobSubmit",
-    "dataAccessAction" : "SRFUR__MONTHLY_SUBMIT_BUT",
     "fullCodeName" : "IbzMonthly_MobSubmit",
     "name" : "提交（移动端）",
     "getPSAppDEMethod" : {
@@ -942,7 +941,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "修改",
     "codeName" : "MobEdit",
-    "dataAccessAction" : "SRFUR__MONTHLY_EDIT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzMonthlyEditMobEditView.json",

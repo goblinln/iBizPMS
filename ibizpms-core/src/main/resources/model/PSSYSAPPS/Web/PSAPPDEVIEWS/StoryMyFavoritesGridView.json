@@ -815,10 +815,8 @@
           "name" : "u42aa5b1",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "变更",
             "codeName" : "ChangeStoryDetail",
-            "dataAccessAction" : "SRFUR__STORY_CHANGED_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView_StoryChange.json",

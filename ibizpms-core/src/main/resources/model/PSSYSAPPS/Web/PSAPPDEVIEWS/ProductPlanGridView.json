@@ -818,10 +818,8 @@
           "name" : "ua470664",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "添加项目",
             "codeName" : "AddProject",
-            "dataAccessAction" : "SRFUR__PROJ_CREATE_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectPlanAddEditView.json",

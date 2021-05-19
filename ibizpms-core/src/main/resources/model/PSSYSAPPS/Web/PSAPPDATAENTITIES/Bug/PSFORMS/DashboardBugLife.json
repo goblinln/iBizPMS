@@ -456,9 +456,8 @@
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
-            "colLG" : 6,
-            "colMD" : 24,
-            "layout" : "TABLE_24COL"
+            "grow" : -1,
+            "layout" : "FLEX"
           },
           "allowEmpty" : true,
           "convertToCodeItemText" : true,
@@ -503,9 +502,8 @@
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
-            "colLG" : 8,
-            "colMD" : 24,
-            "layout" : "TABLE_24COL"
+            "grow" : -1,
+            "layout" : "FLEX"
           },
           "allowEmpty" : true,
           "emptyCaption" : false,
@@ -534,9 +532,8 @@
             "enableLinkView" : false
           },
           "getPSLayoutPos" : {
-            "colLG" : 7,
-            "colMD" : 7,
-            "layout" : "TABLE_24COL"
+            "grow" : -1,
+            "layout" : "FLEX"
           },
           "getPSSysCss" : {
             "cssName" : "textcenterred"
@@ -548,8 +545,7 @@
           "showCaption" : true
         } ],
         "getPSLayout" : {
-          "columnCount" : 24,
-          "layout" : "TABLE_24COL"
+          "layout" : "FLEX"
         },
         "getPSLayoutPos" : {
           "colMD" : 24,

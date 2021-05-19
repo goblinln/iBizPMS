@@ -986,10 +986,8 @@
                 "name" : "ucdd2824",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "noPrivDisplayMode" : 1,
                   "caption" : "分解任务",
                   "codeName" : "Breakdowntasks",
-                  "dataAccessAction" : "SRFUR__STORY_FJTASK_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStoryNewEditView.json",

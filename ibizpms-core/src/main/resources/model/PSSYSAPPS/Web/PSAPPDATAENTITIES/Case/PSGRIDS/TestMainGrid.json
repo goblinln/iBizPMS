@@ -634,10 +634,8 @@
         "name" : "u5da14f5",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "移除",
           "codeName" : "unlinkCase",
-          "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
           "fullCodeName" : "Case_unlinkCase",
           "name" : "移除",
           "getPSAppDEMethod" : {

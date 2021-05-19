@@ -1258,7 +1258,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "收藏",
                 "codeName" : "TaskFavoritesMob",
-                "dataAccessAction" : "SRFUR__TASK_NFAVOR_BUT",
                 "fullCodeName" : "Task_TaskFavoritesMob",
                 "name" : "收藏（移动端）",
                 "getPSAppDEMethod" : {

@@ -889,10 +889,8 @@
     "id" : "Delete@TestReport"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "Edits",
-    "dataAccessAction" : "SRFUR__REPORT_EDIT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportMainEditEditView.json",

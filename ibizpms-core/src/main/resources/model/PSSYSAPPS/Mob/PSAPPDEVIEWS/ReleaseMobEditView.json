@@ -1427,7 +1427,6 @@
         "caption" : "删除",
         "codeName" : "MobRemove",
         "confirmMsg" : "删除后数据可能无法恢复，是否删除？",
-        "dataAccessAction" : "SRFUR__RELEASE_COMMON",
         "fullCodeName" : "Release_MobRemove",
         "name" : "删除（移动端）",
         "getPSAppDEMethod" : {

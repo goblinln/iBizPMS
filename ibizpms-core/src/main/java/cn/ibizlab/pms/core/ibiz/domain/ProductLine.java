@@ -28,76 +28,104 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.baomidou.mybatisplus.annotation.*;
+import cn.ibizlab.pms.util.domain.EntityMP;
+import com.baomidou.mybatisplus.core.toolkit.IdWorker;
+
 /**
- * [产品线] 对象
+ * 实体[产品线]
  */
-@Builder
 @Getter
 @Setter
 @NoArgsConstructor
-@AllArgsConstructor
+@JsonIgnoreProperties(value = "handler")
+@TableName(value = "zt_module", resultMap = "ProductLineResultMap")
 @ApiModel("产品线")
-public class ProductLine extends EntityBase implements Serializable {
+public class ProductLine extends EntityMP implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     /**
      * 产品线名称
      */
     @DEField(name = "ibz_productlinename")
-    @JSONField(name = "productLineName")
-    @JsonProperty("productLineName")
+    @TableField(value = "`IBZ_PRODUCTLINENAME`")
+    @JSONField(name = "productlinename")
+    @JsonProperty("productlinename")
     @ApiModelProperty("产品线名称")
     private String productlinename;
-
     /**
      * 产品线标识
      */
     @DEField(name = "ibz_productlineid", isKeyField = true)
-    @JSONField(name = "productLineId")
-    @JsonProperty("productLineId")
+    @TableId(value = "`IBZ_PRODUCTLINEID`", type = IdType.ASSIGN_UUID)
+    @JSONField(name = "productlineid")
+    @JsonProperty("productlineid")
     @ApiModelProperty("产品线标识")
     private String productlineid;
-
     /**
      * 更新人
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEMAN)
-    @JSONField(name = "updateMan")
-    @JsonProperty("updateMan")
+    @TableField(value = "`UPDATEMAN`")
+    @JSONField(name = "updateman")
+    @JsonProperty("updateman")
     @ApiModelProperty("更新人")
     private String updateman;
-
     /**
      * 更新时间
      */
     @DEField(preType = DEPredefinedFieldType.UPDATEDATE)
+    @TableField(value = "`UPDATEDATE`")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
-    @JSONField(name = "updateDate", format = "yyyy-MM-dd HH:mm:ss")
-    @JsonProperty("updateDate")
+    @JSONField(name = "updatedate", format = "yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("updatedate")
     @ApiModelProperty("更新时间")
     private Timestamp updatedate;
-
     /**
      * 建立时间
      */
     @DEField(preType = DEPredefinedFieldType.CREATEDATE)
+    @TableField(value = "`CREATEDATE`", fill = FieldFill.INSERT)
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", locale = "zh", timezone = "GMT+8")
-    @JSONField(name = "createDate", format = "yyyy-MM-dd HH:mm:ss")
-    @JsonProperty("createDate")
+    @JSONField(name = "createdate", format = "yyyy-MM-dd HH:mm:ss")
+    @JsonProperty("createdate")
     @ApiModelProperty("建立时间")
     private Timestamp createdate;
-
     /**
      * 建立人
      */
     @DEField(preType = DEPredefinedFieldType.CREATEMAN)
-    @JSONField(name = "createMan")
-    @JsonProperty("createMan")
+    @TableField(value = "`CREATEMAN`", fill = FieldFill.INSERT)
+    @JSONField(name = "createman")
+    @JsonProperty("createman")
     @ApiModelProperty("建立人")
     private String createman;
 
 
 
+    /**
+     * 设置 [产品线名称]
+     */
+    public void setProductlinename(String productlinename) {
+        this.productlinename = productlinename;
+        this.modify("ibz_productlinename", productlinename);
+    }
 
+
+    /**
+     * 复制当前对象数据到目标对象(粘贴重置)
+     * @param targetEntity 目标数据对象
+     * @param bIncEmpty  是否包括空值
+     * @param <T>
+     * @return
+     */
+    @Override
+    public <T> T copyTo(T targetEntity, boolean bIncEmpty) {
+        this.reset("ibz_productlineid");
+        return super.copyTo(targetEntity, bIncEmpty);
+    }
 }
 
 

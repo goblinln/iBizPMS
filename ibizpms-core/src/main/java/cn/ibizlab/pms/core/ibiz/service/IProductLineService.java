@@ -18,11 +18,12 @@ import org.springframework.cache.annotation.CacheEvict;
 import cn.ibizlab.pms.core.ibiz.domain.ProductLine;
 import cn.ibizlab.pms.core.ibiz.filter.ProductLineSearchContext;
 
+import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
  * 实体[ProductLine] 服务对象接口
  */
-public interface IProductLineService {
+public interface IProductLineService extends IService<ProductLine> {
 
     boolean create(ProductLine et);
     void createBatch(List<ProductLine> list);
@@ -37,11 +38,29 @@ public interface IProductLineService {
     boolean checkKey(ProductLine et);
     boolean save(ProductLine et);
     void saveBatch(List<ProductLine> list);
+    List<ProductLine> select(ProductLineSearchContext context);
+    List<ProductLine> selectDefault(ProductLineSearchContext context);
+    List<ProductLine> selectView(ProductLineSearchContext context);
 
     Page<ProductLine> searchDefault(ProductLineSearchContext context);
     ProductLine dynamicCall(String key, String action, ProductLine et);
+    /**
+     *自定义查询SQL
+     * @param sql  select * from table where id =#{et.param}
+     * @param param 参数列表  param.put("param","1");
+     * @return select * from table where id = '1'
+     */
+    List<JSONObject> select(String sql, Map param);
+    /**
+     *自定义SQL
+     * @param sql  update table  set name ='test' where id =#{et.param}
+     * @param param 参数列表  param.put("param","1");
+     * @return     update table  set name ='test' where id = '1'
+     */
+    boolean execute(String sql, Map param);
 
+    List<ProductLine> getProductlineByIds(List<String> ids);
+    List<ProductLine> getProductlineByEntities(List<ProductLine> entities);
 }
-
 
 

@@ -1287,7 +1287,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "完成",
                 "codeName" : "finishCz",
-                "dataAccessAction" : "FINISH",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoFinishView.json",

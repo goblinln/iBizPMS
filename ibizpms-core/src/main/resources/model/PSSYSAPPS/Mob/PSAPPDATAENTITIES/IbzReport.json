@@ -685,7 +685,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "查收",
     "codeName" : "MyReDaily",
-    "dataAccessAction" : "DAILY",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzDailyMyDailyMobTabExpView.json",
@@ -775,7 +774,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "详情",
     "codeName" : "LookWeekly",
-    "dataAccessAction" : "WEEKLY",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzWeeklyUsr2MobTabExpViewMyTiJiao.json",

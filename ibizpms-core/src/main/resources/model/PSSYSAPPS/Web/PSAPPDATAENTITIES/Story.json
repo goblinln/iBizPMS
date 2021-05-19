@@ -3493,10 +3493,8 @@
     "id" : "StoryToBug@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "变更",
     "codeName" : "ChangeStoryDetail",
-    "dataAccessAction" : "SRFUR__STORY_CHANGED_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView_StoryChange.json",
@@ -3548,7 +3546,6 @@
     "actionTarget" : "NONE",
     "caption" : "关联需求",
     "codeName" : "PlanRelationStory",
-    "dataAccessAction" : "SRFUR__PROP_LSTORY_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView.json",
@@ -4091,7 +4088,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "评审",
     "codeName" : "ReviewStoryDash",
-    "dataAccessAction" : "SRFUR__STORY_REVIEW_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRevIewEditView.json",
@@ -4213,10 +4209,8 @@
     "id" : "OpenCaseCreateView@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "分解任务",
     "codeName" : "Breakdowntasks",
-    "dataAccessAction" : "SRFUR__STORY_FJTASK_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStoryNewEditView.json",

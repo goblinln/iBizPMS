@@ -34,6 +34,7 @@ import cn.ibizlab.pms.core.ibiz.domain.ProductLine;
 import cn.ibizlab.pms.core.ibiz.service.IProductLineService;
 import cn.ibizlab.pms.core.ibiz.filter.ProductLineSearchContext;
 import cn.ibizlab.pms.util.annotation.VersionCheck;
+import cn.ibizlab.pms.core.ibiz.runtime.ProductLineRuntime;
 
 @Slf4j
 @Api(tags = {"产品线" })
@@ -44,21 +45,27 @@ public class ProductLineResource {
     @Autowired
     public IProductLineService productlineService;
 
+    @Autowired
+    public ProductLineRuntime productlineRuntime;
 
     @Autowired
     @Lazy
     public ProductLineMapping productlineMapping;
 
+    @PreAuthorize("@ProductLineRuntime.quickTest('CREATE')")
     @ApiOperation(value = "新建产品线", tags = {"产品线" },  notes = "新建产品线")
 	@RequestMapping(method = RequestMethod.POST, value = "/productlines")
     @Transactional
     public ResponseEntity<ProductLineDTO> create(@Validated @RequestBody ProductLineDTO productlinedto) {
         ProductLine domain = productlineMapping.toDomain(productlinedto);
 		productlineService.create(domain);
+        if(!productlineRuntime.test(domain.getProductlineid(),"CREATE"))
+            throw new RuntimeException("无权限操作");
         ProductLineDTO dto = productlineMapping.toDto(domain);
 		return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductLineRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量新建产品线", tags = {"产品线" },  notes = "批量新建产品线")
 	@RequestMapping(method = RequestMethod.POST, value = "/productlines/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<ProductLineDTO> productlinedtos) {
@@ -67,6 +74,7 @@ public class ProductLineResource {
     }
 
     @VersionCheck(entity = "productline" , versionfield = "updatedate")
+    @PreAuthorize("@ProductLineRuntime.test(#productline_id,'UPDATE')")
     @ApiOperation(value = "更新产品线", tags = {"产品线" },  notes = "更新产品线")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productlines/{productline_id}")
     @Transactional
@@ -74,10 +82,13 @@ public class ProductLineResource {
 		ProductLine domain  = productlineMapping.toDomain(productlinedto);
         domain.setProductlineid(productline_id);
 		productlineService.update(domain );
+        if(!productlineRuntime.test(productline_id,"UPDATE"))
+            throw new RuntimeException("无权限操作");
 		ProductLineDTO dto = productlineMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
+    @PreAuthorize("@ProductLineRuntime.quickTest('UPDATE')")
     @ApiOperation(value = "批量更新产品线", tags = {"产品线" },  notes = "批量更新产品线")
 	@RequestMapping(method = RequestMethod.PUT, value = "/productlines/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<ProductLineDTO> productlinedtos) {
@@ -85,12 +96,14 @@ public class ProductLineResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@ProductLineRuntime.test(#productline_id,'DELETE')")
     @ApiOperation(value = "删除产品线", tags = {"产品线" },  notes = "删除产品线")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/productlines/{productline_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("productline_id") String productline_id) {
          return ResponseEntity.status(HttpStatus.OK).body(productlineService.remove(productline_id));
     }
 
+    @PreAuthorize("@ProductLineRuntime.test(#ids,'DELETE')")
     @ApiOperation(value = "批量删除产品线", tags = {"产品线" },  notes = "批量删除产品线")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/productlines/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<String> ids) {
@@ -98,6 +111,7 @@ public class ProductLineResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@ProductLineRuntime.test(#productline_id,'READ')")
     @ApiOperation(value = "获取产品线", tags = {"产品线" },  notes = "获取产品线")
 	@RequestMapping(method = RequestMethod.GET, value = "/productlines/{productline_id}")
     public ResponseEntity<ProductLineDTO> get(@PathVariable("productline_id") String productline_id) {
@@ -134,9 +148,11 @@ public class ProductLineResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@ProductLineRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"产品线" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productlines/fetchdefault")
 	public ResponseEntity<List<ProductLineDTO>> fetchdefault(@RequestBody ProductLineSearchContext context) {
+        productlineRuntime.addAuthorityConditions(context,"READ");
         Page<ProductLine> domains = productlineService.searchDefault(context) ;
         List<ProductLineDTO> list = productlineMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -146,9 +162,11 @@ public class ProductLineResource {
                 .body(list);
 	}
 
+    @PreAuthorize("@ProductLineRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"产品线" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productlines/searchdefault")
 	public ResponseEntity<Page<ProductLineDTO>> searchDefault(@RequestBody ProductLineSearchContext context) {
+        productlineRuntime.addAuthorityConditions(context,"READ");
         Page<ProductLine> domains = productlineService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(productlineMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

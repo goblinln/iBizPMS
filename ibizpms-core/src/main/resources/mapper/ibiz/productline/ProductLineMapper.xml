@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper	namespace="cn.ibizlab.pms.core.ibiz.mapper.ProductLineMapper">
+	
+	<!-- 无视图模式 -->
+	<sql id="select" databaseId="mysql">
+        <![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZ_PRODUCTLINEID`, t1.`IBZ_PRODUCTLINENAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `zt_module` t1   ]]>
+    </sql>
+
+	
+	<!-- 搜索条件 -->
+	<sql id="searchMode" databaseId="mysql">
+		<if test="srf.n_ibz_productlinename_like != null ">
+            <bind name="bind_n_ibz_productlinename_like" value="'%' + srf.n_ibz_productlinename_like + '%'" />
+            <![CDATA[ AND  t1.`IBZ_PRODUCTLINENAME` like #{bind_n_ibz_productlinename_like,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="srf.n_ibz_productlineid_eq != null ">
+			<![CDATA[ AND  t1.`IBZ_PRODUCTLINEID` = #{srf.n_ibz_productlineid_eq,jdbcType=VARCHAR} ]]>
+        </if>
+		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
+		AND ${ew.sqlSegment}
+		</if>
+	</sql>
+
+
+    <!--该方法用于重写mybatis中selectById方法，以实现查询逻辑属性-->
+	<select id="selectById"  resultMap="ProductLineResultMap" databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND T1.IBZ_PRODUCTLINEID = #{id} ]]>
+		</trim>
+    </select>
+
+
+    <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
+    <resultMap id="ProductLineResultMap" type="cn.ibizlab.pms.core.ibiz.domain.ProductLine" autoMapping="true">
+		<id property="productlineid" column="ibz_productlineid" /><!--主键字段映射-->
+		<result property="productlinename" column="ibz_productlinename" />
+            
+		
+    </resultMap>
+
+
+    <!--数据集合[Default]-->
+	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLineSearchContext"  resultMap="ProductLineResultMap">
+         select t1.* from (
+                <include refid="Default" />
+         )t1
+     </select>
+
+    <!--数据查询[Default]-->
+    <sql id="Default" databaseId="mysql">
+		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZ_PRODUCTLINEID`, t1.`IBZ_PRODUCTLINENAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `zt_module` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLineSearchContext" resultMap="ProductLineResultMap">
+		<include refid="Default" />
+	</select>
+
+    <!--数据查询[View]-->
+    <sql id="View" databaseId="mysql">
+		<![CDATA[ SELECT t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`IBZ_PRODUCTLINEID`, t1.`IBZ_PRODUCTLINENAME`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `zt_module` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectView"  parameterType="cn.ibizlab.pms.core.ibiz.filter.ProductLineSearchContext" resultMap="ProductLineResultMap">
+		<include refid="View" />
+	</select>
+
+</mapper>
+

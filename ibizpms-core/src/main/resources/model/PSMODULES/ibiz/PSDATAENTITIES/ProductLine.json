@@ -424,9 +424,9 @@
   "saaSMode" : 2,
   "serviceAPIMode" : 1,
   "serviceCodeName" : "ProductLine",
-  "storageMode" : 0,
+  "storageMode" : 1,
   "systemTag" : "iBizPMS",
-  "tableName" : "T_IBZ_PRODUCTLINE",
+  "tableName" : "zt_module",
   "virtualMode" : 0,
   "enableAPIStorage" : false,
   "enableCreate" : true,
@@ -438,7 +438,7 @@
   "enableMultiStorage" : false,
   "enableNoSQLStorage" : false,
   "enableRemove" : true,
-  "enableSQLStorage" : false,
+  "enableSQLStorage" : true,
   "logicValid" : false,
   "subSysAsCloud" : false
 }

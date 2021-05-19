@@ -1093,10 +1093,8 @@
           "name" : "ub990a3a",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "转Bug",
             "codeName" : "NewBugByCaseResult",
-            "dataAccessAction" : "SRFUR__CASE_TOBUG_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseToBugEditView.json",

@@ -1171,10 +1171,8 @@
           "name" : "ubf934a0",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "完成",
             "codeName" : "done",
-            "dataAccessAction" : "SRFUR__TASK_COMPLETE_BUT",
             "fullCodeName" : "Task_done",
             "name" : "完成任务(多人任务检查)",
             "getNextPSUIAction" : {

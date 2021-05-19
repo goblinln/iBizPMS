@@ -1295,7 +1295,6 @@
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "ProjectCreate",
-    "dataAccessAction" : "SRFUR__TESTT_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskProjectNewEditView.json",

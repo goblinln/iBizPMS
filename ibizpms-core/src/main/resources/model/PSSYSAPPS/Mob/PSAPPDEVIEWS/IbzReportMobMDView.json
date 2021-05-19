@@ -488,7 +488,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "详情",
           "codeName" : "LookWeekly",
-          "dataAccessAction" : "WEEKLY",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzWeeklyUsr2MobTabExpViewMyTiJiao.json",

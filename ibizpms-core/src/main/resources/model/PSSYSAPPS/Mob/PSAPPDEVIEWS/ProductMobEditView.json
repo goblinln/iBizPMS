@@ -1396,7 +1396,6 @@
           "caption" : "删除",
           "codeName" : "deleteMob",
           "confirmMsg" : "确认要删除，删除操作将不可恢复？",
-          "dataAccessAction" : "SRFUR__PROD_DELETE_BUT",
           "fullCodeName" : "Product_deleteMob",
           "name" : "删除（移动端）",
           "getPSAppDEMethod" : {

@@ -197,7 +197,6 @@
         "actionTarget" : "NONE",
         "caption" : "关联用例",
         "codeName" : "LinkCaseC",
-        "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseLinkCaseGridView.json",
@@ -1058,10 +1057,8 @@
           "name" : "u5da14f5",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "移除",
             "codeName" : "unlinkCase",
-            "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
             "fullCodeName" : "Case_unlinkCase",
             "name" : "移除",
             "getPSAppDEMethod" : {

@@ -835,7 +835,6 @@
     "actionTarget" : "NONE",
     "caption" : "同步账号",
     "codeName" : "SyncAccount",
-    "dataAccessAction" : "SRFUR__ADMIN",
     "fullCodeName" : "User_SyncAccount",
     "name" : "同步账号",
     "getPSAppDEMethod" : {

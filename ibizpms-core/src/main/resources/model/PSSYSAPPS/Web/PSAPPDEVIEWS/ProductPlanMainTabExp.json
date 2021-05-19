@@ -363,7 +363,6 @@
               "actionTarget" : "NONE",
               "caption" : "关联需求",
               "codeName" : "PlanRelationStory",
-              "dataAccessAction" : "SRFUR__PROP_LSTORY_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView.json",
