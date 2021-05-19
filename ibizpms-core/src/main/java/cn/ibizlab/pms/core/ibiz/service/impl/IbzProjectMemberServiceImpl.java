@@ -256,6 +256,24 @@ public class IbzProjectMemberServiceImpl extends ServiceImpl<IbzProjectMemberMap
         return new PageImpl<IbzProjectMember>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
+    /**
+     * 查询集合 研发人员（启用权限）
+     */
+    @Override
+    public Page<IbzProjectMember> searchDeveloperQuery(IbzProjectMemberSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzProjectMember> pages=baseMapper.searchDeveloperQuery(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<IbzProjectMember>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 当前创建者（启用权限）
+     */
+    @Override
+    public Page<IbzProjectMember> searchOpenByQuery(IbzProjectMemberSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzProjectMember> pages=baseMapper.searchOpenByQuery(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<IbzProjectMember>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
 
 
 

@@ -45,6 +45,8 @@ public interface IIbzProjectMemberService extends IService<IbzProjectMember> {
     List<IbzProjectMember> selectView(IbzProjectMemberSearchContext context);
 
     Page<IbzProjectMember> searchDefault(IbzProjectMemberSearchContext context);
+    Page<IbzProjectMember> searchDeveloperQuery(IbzProjectMemberSearchContext context);
+    Page<IbzProjectMember> searchOpenByQuery(IbzProjectMemberSearchContext context);
     IbzProjectMember dynamicCall(Long key, String action, IbzProjectMember et);
     /**
      *自定义查询SQL

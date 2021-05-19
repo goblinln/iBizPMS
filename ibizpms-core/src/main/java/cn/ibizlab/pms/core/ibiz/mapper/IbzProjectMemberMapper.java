@@ -25,6 +25,8 @@ public interface IbzProjectMemberMapper extends BaseMapper<IbzProjectMember> {
     List<IbzProjectMember> selectView(@Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
 
     Page<IbzProjectMember> searchDefault(IPage page, @Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
+    Page<IbzProjectMember> searchDeveloperQuery(IPage page, @Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
+    Page<IbzProjectMember> searchOpenByQuery(IPage page, @Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
     @Override
     IbzProjectMember selectById(Serializable id);
     @Override

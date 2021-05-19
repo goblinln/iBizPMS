@@ -1,5 +1,6 @@
 const path = require('path');
 const os = require('os');
+const Timestamp = new Date().getTime();
 
 function resolve(dir) {
     return path.join(__dirname, dir)
@@ -53,6 +54,14 @@ module.exports = {
             .set('@codelist', resolve('src/codelist'))
     },
     configureWebpack: config => {
+        // 打包文件名添加时间戳
+        Object.assign(config, {
+            output: {
+                ...config.output,
+               filename: `js/[name].${Timestamp}.js`,
+               chunkFilename: `js/[name].${Timestamp}.js`
+            },
+        });
         let ForkTsCheckerPlugin; 
         if(config.plugins.length > 0){
             ForkTsCheckerPlugin = config.plugins.find(element =>{

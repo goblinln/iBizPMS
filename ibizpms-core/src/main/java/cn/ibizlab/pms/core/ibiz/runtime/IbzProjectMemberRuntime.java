@@ -129,6 +129,10 @@ public class IbzProjectMemberRuntime extends cn.ibizlab.pms.core.runtime.SystemD
         IbzProjectMemberSearchContext searchContext = (IbzProjectMemberSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
             return ibzprojectmemberService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("DeveloperQuery"))
+            return ibzprojectmemberService.searchDeveloperQuery(searchContext);    
+        if (iPSDEDataSet.getName().equals("OpenByQuery"))
+            return ibzprojectmemberService.searchOpenByQuery(searchContext);    
         return null;
     }
 
@@ -297,6 +301,12 @@ public class IbzProjectMemberRuntime extends cn.ibizlab.pms.core.runtime.SystemD
         }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);
+        }
+        else if (action.equals("searchDeveloperQuery")) {
+            return aroundDataSet("DeveloperQuery", point);
+        }
+        else if (action.equals("searchOpenByQuery")) {
+            return aroundDataSet("OpenByQuery", point);
         }
         return point.proceed();
     }

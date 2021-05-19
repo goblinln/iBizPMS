@@ -16,6 +16,13 @@
       "id" : "READ"
     }
   }, {
+    "dataAccessAction" : "UPDATE",
+    "name" : "Project_Maintain_RD_UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
     "dataAccessAction" : "DELETE",
     "name" : "Project_Maintain_RD_DELETE",
     "getPSDEOPPriv" : {

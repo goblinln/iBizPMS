@@ -35,7 +35,7 @@ export class NoticeHandler {
      * @return {*} 
      * @memberof NoticeHandler
      */
-    public static errorHandler(error: any, {param, caller, fnName = ''}:{param?: any, caller?: any, fnName?: string}) {
+    public static errorHandler(error: any, {param, caller, fnName = ''} :{param?: any, caller?: any, fnName?: string} = {}) {
         // 错误处理前钩子
         let beforeArgs = { error, param, caller, fnName };
         this.hooks.beforeError.callSync(beforeArgs);
@@ -92,7 +92,7 @@ export class NoticeHandler {
      * @param {string} [fnName=''] 调用方法名称
      * @memberof NoticeHandler
      */
-    public static successHandler(message: any, {param, caller, fnName = ''}:{param?: any, caller?: any, fnName?: string}) {
+    public static successHandler(message: any, {param, caller, fnName = ''} :{param?: any, caller?: any, fnName?: string} = {}) {
         // 成功处理前钩子
         let beforeArgs = { message, param, caller, fnName };
         this.hooks.beforeSuccess.callSync(beforeArgs);
@@ -109,7 +109,7 @@ export class NoticeHandler {
      * @param {string} [fnName=''] 调用方法名称
      * @memberof NoticeHandler
      */
-    public static warningHandler(message: any, {param, caller, fnName = ''}:{param?: any, caller?: any, fnName?: string}) {
+    public static warningHandler(message: any, {param, caller, fnName = ''} :{param?: any, caller?: any, fnName?: string} = {}) {
         // 警告处理前钩子
         let beforeArgs = { message, param, caller, fnName };
         this.hooks.beforeWarning.callSync(beforeArgs);
@@ -126,7 +126,7 @@ export class NoticeHandler {
      * @param {string} [fnName=''] 调用方法名称
      * @memberof NoticeHandler
      */
-    public static infoHandler(message: any, {param, caller, fnName = ''}:{param?: any, caller?: any, fnName?: string}) {
+    public static infoHandler(message: any, {param, caller, fnName = ''} :{param?: any, caller?: any, fnName?: string} = {}) {
         // 信息处理前钩子
         let beforeArgs = { message, param, caller, fnName };
         this.hooks.beforeInfo.callSync(beforeArgs);

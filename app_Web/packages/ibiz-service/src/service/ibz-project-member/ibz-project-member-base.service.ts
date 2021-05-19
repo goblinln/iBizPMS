@@ -188,4 +188,26 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
     async FetchDefault(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibzprojectmembers/fetchdefault`, _data);
     }
+    /**
+     * FetchDeveloperQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzProjectMemberService
+     */
+    async FetchDeveloperQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzprojectmembers/fetchdeveloperquery`, _data);
+    }
+    /**
+     * FetchOpenByQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzProjectMemberService
+     */
+    async FetchOpenByQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzprojectmembers/fetchopenbyquery`, _data);
+    }
 }
