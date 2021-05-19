@@ -59,17 +59,29 @@
       "logicType" : "PREDEFINED",
       "name" : "打开数据",
       "getOpenDataPSAppView" : {
+        "getPSNavigateContexts" : [ {
+          "key" : "PRODUCTSTATS",
+          "name" : "PRODUCTSTATS",
+          "value" : "srfparentkey",
+          "rawValue" : false
+        } ],
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainDashboardView.json",
-          "viewType" : "DEPORTALVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
+          "viewType" : "DETABEXPVIEW"
         }
       },
       "getPSAppUILogicRefViews" : [ {
+        "getPSNavigateContexts" : [ {
+          "key" : "PRODUCTSTATS",
+          "name" : "PRODUCTSTATS",
+          "value" : "srfparentkey",
+          "rawValue" : false
+        } ],
         "getRefPSAppView" : {
           "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainDashboardView.json",
-          "viewType" : "DEPORTALVIEW"
+          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
+          "viewType" : "DETABEXPVIEW"
         }
       } ],
       "viewLogicType" : "APP_OPENDATA"
@@ -85,11 +97,17 @@
     }
   }, {
     "name" : "EDITDATA",
-    "realTitle" : "产品数据看板视图",
+    "getPSNavigateContexts" : [ {
+      "key" : "PRODUCTSTATS",
+      "name" : "PRODUCTSTATS",
+      "value" : "srfparentkey",
+      "rawValue" : false
+    } ],
+    "realTitle" : "产品",
     "getRefPSAppView" : {
       "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainDashboardView.json",
-      "viewType" : "DEPORTALVIEW"
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
+      "viewType" : "DETABEXPVIEW"
     }
   } ],
   "getPSControls" : [ {

@@ -4877,7 +4877,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "指派",
                   "codeName" : "AssignTaskDash",
-                  "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskAssignTaskView.json",
