@@ -4329,12 +4329,9 @@
     "roleTag" : "Product_Maintain_DEV",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[('ACL','=','open')]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Maintain_Open.json",
     "name" : "产品维护（公开）",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "OpenQuery"
-    },
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "CREATE",
       "name" : "Product_Maintain_Open_CREATE",
@@ -4528,12 +4525,9 @@
     "userDRAction" : "READ",
     "defaultMode" : true
   }, {
+    "customCond" : "[('ACL','=','open')]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Manage_Open.json",
     "name" : "产品管理（公开）",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "OpenQuery"
-    },
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "MANAGE",
       "name" : "Product_Manage_Open_MANAGE",
@@ -4543,8 +4537,7 @@
       }
     } ],
     "roleTag" : "Product_Manage_Open",
-    "userDRAction" : "READ",
-    "defaultMode" : true
+    "userDRAction" : "READ"
   }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_All.json",

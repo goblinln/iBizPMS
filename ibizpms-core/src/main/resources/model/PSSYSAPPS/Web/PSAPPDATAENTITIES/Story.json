@@ -3332,10 +3332,8 @@
     "id" : "CloseStoryDash@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "需求细分",
     "codeName" : "SubStory",
-    "dataAccessAction" : "SRFUR__STORY_XQXF_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorySubGridView.json",
@@ -3613,10 +3611,8 @@
     "id" : "StoryFavorites@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "OpenBaseInfoEditView",
-    "dataAccessAction" : "SRFUR__STORY_EDIT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView9_EditMode.json",
@@ -3736,7 +3732,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "变更",
     "codeName" : "ChangeStoryDetailDash",
-    "dataAccessAction" : "SRFUR__STORY_CHANGED_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView_StoryChange.json",
@@ -3760,10 +3755,8 @@
     "id" : "ChangeStoryDetailDash@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "指派",
     "codeName" : "AssignTo",
-    "dataAccessAction" : "SRFUR__STORY_ASS_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryAssignToView.json",
@@ -4486,7 +4479,6 @@
     "actionTarget" : "NONE",
     "caption" : "新建需求",
     "codeName" : "Create",
-    "dataAccessAction" : "SRFUR__STORY_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
@@ -4514,7 +4506,6 @@
     "actionTarget" : "NONE",
     "caption" : "按照计划关联",
     "codeName" : "ProjecPlanLink",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectPlanView.json",

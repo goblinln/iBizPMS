@@ -135,7 +135,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "编辑",
         "codeName" : "EditCustomDocLib",
-        "dataAccessAction" : "SRFUR__DOCLIB_EDIT_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2EditView.json",
@@ -578,7 +577,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "EditCustomDocLib",
-          "dataAccessAction" : "SRFUR__DOCLIB_EDIT_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2EditView.json",

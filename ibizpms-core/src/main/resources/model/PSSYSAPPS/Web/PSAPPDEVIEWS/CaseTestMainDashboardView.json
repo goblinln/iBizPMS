@@ -2596,10 +2596,8 @@
                 "name" : "uaee554d",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "noPrivDisplayMode" : 1,
                   "caption" : "结果",
                   "codeName" : "CASEOpenTestRunResultView",
-                  "dataAccessAction" : "SRFUR__CASE_CASERESULT_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseTestTaskExcEditView.json",

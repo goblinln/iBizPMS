@@ -1222,10 +1222,8 @@
           "name" : "u7002282",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "子任务",
             "codeName" : "NewSubTask",
-            "dataAccessAction" : "SRFUR__TASK_SUBTASKS_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskSubTaskNewView.json",

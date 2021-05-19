@@ -921,7 +921,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "编辑",
                 "codeName" : "Edit",
-                "dataAccessAction" : "SRFUR__DOC_EDIT_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",

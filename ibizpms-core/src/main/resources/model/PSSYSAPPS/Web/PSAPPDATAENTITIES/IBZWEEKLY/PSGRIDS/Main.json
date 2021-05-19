@@ -208,11 +208,9 @@
         "name" : "ufd17a6f",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "提交",
           "codeName" : "submitZZZ",
           "confirmMsg" : "确认现在提交吗？",
-          "dataAccessAction" : "SRFUR__WEEKLY_SUBMIT_BUT",
           "fullCodeName" : "IbzWeekly_submitZZZ",
           "name" : "提交(操作列)",
           "getPSAppDEMethod" : {

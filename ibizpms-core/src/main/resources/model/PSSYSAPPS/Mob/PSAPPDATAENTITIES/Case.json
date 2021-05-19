@@ -2580,7 +2580,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "移除",
     "codeName" : "mobUnlinkCase",
-    "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
     "fullCodeName" : "Case_mobUnlinkCase",
     "name" : "移除（移动端）",
     "getPSAppDEMethod" : {
@@ -2658,7 +2657,6 @@
     "actionTarget" : "NONE",
     "caption" : "关联用例",
     "codeName" : "MobTaskLinkCase",
-    "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/CaseUsr2MobMPickupView.json",

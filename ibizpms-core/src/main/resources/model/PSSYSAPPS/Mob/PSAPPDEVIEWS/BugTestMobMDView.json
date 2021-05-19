@@ -1161,7 +1161,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "指派",
           "codeName" : "AssingToBugMob",
-          "dataAccessAction" : "SRFUR__BUG_ASSIGNTO_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugAssMobOptionView.json",
@@ -1196,7 +1195,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "解决",
           "codeName" : "ResolveBugMob",
-          "dataAccessAction" : "SRFUR__BUG_RESOLVE_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugRMobOptionView.json",

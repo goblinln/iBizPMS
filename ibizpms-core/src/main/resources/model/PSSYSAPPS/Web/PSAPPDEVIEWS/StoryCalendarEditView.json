@@ -1002,7 +1002,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "变更",
                 "codeName" : "ChangeStoryDetailDash",
-                "dataAccessAction" : "SRFUR__STORY_CHANGED_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView_StoryChange.json",

@@ -700,7 +700,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
     "codeName" : "OpenQuickCfgView",
-    "dataAccessAction" : "SRFUR__UNIVERSALEDIT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectModuleQuickCfgView.json",

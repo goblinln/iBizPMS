@@ -786,10 +786,8 @@
     "id" : "Create@IbzReportly"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "Edit",
-    "dataAccessAction" : "SRFUR__REPORTLY_EDIT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportlyCreateEditView.json",

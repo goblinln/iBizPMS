@@ -191,7 +191,6 @@
         "actionTarget" : "NONE",
         "caption" : "新建需求",
         "codeName" : "Create",
-        "dataAccessAction" : "SRFUR__STORY_CREATE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
@@ -756,10 +755,8 @@
       },
       "getPSDEUIAction" : {
         "actionTarget" : "SINGLEKEY",
-        "noPrivDisplayMode" : 1,
         "caption" : "指派",
         "codeName" : "AssignTo",
-        "dataAccessAction" : "SRFUR__STORY_ASS_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryAssignToView.json",
@@ -1149,10 +1146,8 @@
           "name" : "u60233af",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "需求细分",
             "codeName" : "SubStory",
-            "dataAccessAction" : "SRFUR__STORY_XQXF_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorySubGridView.json",

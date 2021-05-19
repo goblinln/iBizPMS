@@ -2736,10 +2736,8 @@
                                 "name" : "uaf9f3f9",
                                 "getPSUIAction" : {
                                   "actionTarget" : "SINGLEKEY",
-                                  "noPrivDisplayMode" : 1,
                                   "caption" : "指派",
                                   "codeName" : "AssignTask",
-                                  "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
                                   "getFrontPSAppView" : {
                                     "modelref" : true,
                                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskAssignTaskView.json",
@@ -4840,7 +4838,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "子任务",
                   "codeName" : "NewSubTaskDash",
-                  "dataAccessAction" : "SRFUR__TASK_SUBTASKS_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskSubTaskNewView.json",
@@ -4926,7 +4923,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "转交",
                   "codeName" : "checkForwardDash",
-                  "dataAccessAction" : "SRFUR__TASK_FORWARD_BUT",
                   "fullCodeName" : "Task_checkForwardDash",
                   "name" : "转交任务(操作栏)(多人任务检查)",
                   "getNextPSUIAction" : {
@@ -5022,7 +5018,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "工时",
                   "codeName" : "MWorkHours",
-                  "dataAccessAction" : "SRFUR__TASK_CONSUM_BUT",
                   "fullCodeName" : "Task_MWorkHours",
                   "name" : "工时（多人任务检查）",
                   "getNextPSUIAction" : {

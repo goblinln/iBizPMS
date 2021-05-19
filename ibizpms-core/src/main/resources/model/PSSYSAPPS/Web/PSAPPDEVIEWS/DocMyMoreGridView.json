@@ -581,7 +581,6 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "编辑",
             "codeName" : "Edit",
-            "dataAccessAction" : "SRFUR__DOC_EDIT_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",
@@ -688,7 +687,6 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "取消收藏",
             "codeName" : "UnCollect",
-            "dataAccessAction" : "SRFUR__DOC_NFAVOUR_BUT",
             "fullCodeName" : "Doc_UnCollect",
             "name" : "取消收藏",
             "getPSAppDEMethod" : {

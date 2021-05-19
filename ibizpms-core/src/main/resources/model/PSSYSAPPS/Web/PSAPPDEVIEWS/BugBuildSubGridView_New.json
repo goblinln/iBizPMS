@@ -735,10 +735,8 @@
           "name" : "u2ab948e",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "解决",
             "codeName" : "ResolveBug",
-            "dataAccessAction" : "SRFUR__BUG_RESOLVE_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugResolveView.json",

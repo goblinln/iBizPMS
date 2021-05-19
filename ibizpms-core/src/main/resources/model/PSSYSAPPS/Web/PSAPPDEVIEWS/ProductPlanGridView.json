@@ -227,7 +227,6 @@
         "actionTarget" : "NONE",
         "caption" : "创建计划",
         "codeName" : "Create",
-        "dataAccessAction" : "SRFUR__PROP_CREATE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanEditView.json",
@@ -1013,10 +1012,8 @@
           "name" : "ud7f4fc7",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "子计划",
             "codeName" : "NewSubPlan",
-            "dataAccessAction" : "SRFUR__PROP_CHILD_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanSubPlanCreateView.json",

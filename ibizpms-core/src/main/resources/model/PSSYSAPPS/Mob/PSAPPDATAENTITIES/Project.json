@@ -3124,7 +3124,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "关闭",
     "codeName" : "ProjectCloseMob",
-    "dataAccessAction" : "SRFUR__PROJ_CLOSED_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProjectCloseMobEditView.json",
@@ -3151,7 +3150,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "激活",
     "codeName" : "ProjectActivateMob",
-    "dataAccessAction" : "SRFUR__PROJ_ACTIVATION_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProjectActiviteMobEditView.json",

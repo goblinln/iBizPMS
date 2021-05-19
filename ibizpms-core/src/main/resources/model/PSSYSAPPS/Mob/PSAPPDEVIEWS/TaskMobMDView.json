@@ -1180,7 +1180,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "取消收藏",
           "codeName" : "TaskNFavoritesMob",
-          "dataAccessAction" : "SRFUR__TASK_FAVOR_BUT",
           "fullCodeName" : "Task_TaskNFavoritesMob",
           "name" : "取消收藏（移动端）",
           "getPSAppDEMethod" : {
@@ -1259,7 +1258,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "指派",
           "codeName" : "AssignTaskMob",
-          "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMobOptionView.json",
@@ -1293,7 +1291,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "完成",
           "codeName" : "finishTask1",
-          "dataAccessAction" : "SRFUR__TASK_COMPLETE_BUT",
           "frontProcessType" : "WIZARD",
           "fullCodeName" : "Task_finishTask1",
           "name" : "完成任务(移动端)(多人任务检查)",
@@ -1340,7 +1337,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "暂停",
           "codeName" : "PauseMobTeamTask",
-          "dataAccessAction" : "SRFUR__TASK_PAUSE_BUT",
           "fullCodeName" : "Task_PauseMobTeamTask",
           "name" : "暂停任务(移动端)(多人任务检查)",
           "getNextPSUIAction" : {
@@ -1420,7 +1416,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "关闭",
           "codeName" : "CloseTaskMob",
-          "dataAccessAction" : "SRFUR__TASK_CLOSE_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskCloseMobOptionView.json",

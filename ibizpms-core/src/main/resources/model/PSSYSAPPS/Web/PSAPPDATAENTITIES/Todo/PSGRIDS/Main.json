@@ -359,11 +359,9 @@
         "name" : "u73f3925",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "完成",
           "codeName" : "finish",
           "confirmMsg" : "您确定这条待办已经完成了吗？",
-          "dataAccessAction" : "FINISH",
           "fullCodeName" : "Todo_finish",
           "name" : "todo完成",
           "getPSAppDEMethod" : {

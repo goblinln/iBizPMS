@@ -390,7 +390,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "收藏",
         "codeName" : "Favorite",
-        "dataAccessAction" : "SRFUR__DOCLIBMODULE_FAVOUR_BUT",
         "fullCodeName" : "DocLibModule_Favorite",
         "name" : "收藏",
         "getPSAppDEMethod" : {
@@ -495,7 +494,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "编辑",
         "codeName" : "Edit",
-        "dataAccessAction" : "SRFUR__DOC_EDIT_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",
@@ -629,7 +627,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "取消收藏",
         "codeName" : "OnlyUnCollectDoc",
-        "dataAccessAction" : "SRFUR__DOC_NFAVOUR_BUT",
         "fullCodeName" : "Doc_OnlyUnCollectDoc",
         "name" : "仅取消收藏文档",
         "getPSAppDEMethod" : {
@@ -835,7 +832,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "Edit",
-          "dataAccessAction" : "SRFUR__DOC_EDIT_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",
@@ -969,7 +965,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "取消收藏",
           "codeName" : "OnlyUnCollectDoc",
-          "dataAccessAction" : "SRFUR__DOC_NFAVOUR_BUT",
           "fullCodeName" : "Doc_OnlyUnCollectDoc",
           "name" : "仅取消收藏文档",
           "getPSAppDEMethod" : {
@@ -1268,7 +1263,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "收藏",
           "codeName" : "Favorite",
-          "dataAccessAction" : "SRFUR__DOCLIBMODULE_FAVOUR_BUT",
           "fullCodeName" : "DocLibModule_Favorite",
           "name" : "收藏",
           "getPSAppDEMethod" : {

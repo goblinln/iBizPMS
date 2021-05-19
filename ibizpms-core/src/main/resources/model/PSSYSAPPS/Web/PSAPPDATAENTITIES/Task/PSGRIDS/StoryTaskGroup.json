@@ -369,10 +369,8 @@
     },
     "getPSDEUIAction" : {
       "actionTarget" : "SINGLEKEY",
-      "noPrivDisplayMode" : 1,
       "caption" : "指派",
       "codeName" : "AssignTask",
-      "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
       "getFrontPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskAssignTaskView.json",
@@ -902,10 +900,8 @@
         "name" : "u7002282",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "子任务",
           "codeName" : "NewSubTask",
-          "dataAccessAction" : "SRFUR__TASK_SUBTASKS_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskSubTaskNewView.json",

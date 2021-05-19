@@ -922,10 +922,8 @@
                 "name" : "uf5bb958",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "noPrivDisplayMode" : 1,
                   "caption" : "确认用例变动",
                   "codeName" : "confirmChange",
-                  "dataAccessAction" : "SRFUR__CASE_CASECOF_BUT",
                   "fullCodeName" : "Case_confirmChange",
                   "name" : "确认用例变动",
                   "getPSAppDEMethod" : {
@@ -1021,10 +1019,8 @@
                 "name" : "u33ef635",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "noPrivDisplayMode" : 1,
                   "caption" : "结果",
                   "codeName" : "CASEOpenTestRunResultView",
-                  "dataAccessAction" : "SRFUR__CASE_CASERESULT_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseTestTaskExcEditView.json",

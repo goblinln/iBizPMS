@@ -1032,10 +1032,8 @@
     "id" : "remove@Release"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "停止维护",
     "codeName" : "terminal",
-    "dataAccessAction" : "SRFUR__RELEASE_TERMINATE",
     "fullCodeName" : "Release_terminal",
     "name" : "停止维护",
     "getPSAppDEMethod" : {
@@ -1059,10 +1057,8 @@
     "id" : "terminal@Release"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "quickEdit",
-    "dataAccessAction" : "SRFUR__RELEASE_COMMON",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ReleaseEditView.json",

@@ -830,7 +830,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
     "codeName" : "EditcaseCz",
-    "dataAccessAction" : "SRFUR__ADMIN",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzCaseEditEditView.json",

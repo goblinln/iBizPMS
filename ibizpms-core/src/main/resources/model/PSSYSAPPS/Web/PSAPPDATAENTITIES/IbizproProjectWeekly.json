@@ -461,7 +461,6 @@
     "actionTarget" : "NONE",
     "caption" : "生成项目周报",
     "codeName" : "createProjectWeekly",
-    "dataAccessAction" : "SRFUR__PROJECT_MANAGER",
     "frontProcessType" : "WIZARD",
     "fullCodeName" : "IbizproProjectWeekly_createProjectWeekly",
     "name" : "生成项目周报",

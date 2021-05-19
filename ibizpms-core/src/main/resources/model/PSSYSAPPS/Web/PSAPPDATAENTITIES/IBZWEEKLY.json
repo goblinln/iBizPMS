@@ -918,11 +918,9 @@
     "id" : "edit@IbzWeekly"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "提交",
     "codeName" : "submitZZZ",
     "confirmMsg" : "确认现在提交吗？",
-    "dataAccessAction" : "SRFUR__WEEKLY_SUBMIT_BUT",
     "fullCodeName" : "IbzWeekly_submitZZZ",
     "name" : "提交(操作列)",
     "getPSAppDEMethod" : {
@@ -949,7 +947,6 @@
     "actionTarget" : "NONE",
     "caption" : "生成周报",
     "codeName" : "createEveryWeekReport",
-    "dataAccessAction" : "SRFUR__ADMIN",
     "fullCodeName" : "IbzWeekly_createEveryWeekReport",
     "name" : "生成周报",
     "getPSAppDEMethod" : {

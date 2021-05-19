@@ -1109,7 +1109,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "创建计划",
                   "codeName" : "OpenProductPlanCreateView",
-                  "dataAccessAction" : "SRFUR__PRODSTA_PLANCRT_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanEditView.json",
@@ -1677,7 +1676,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "创建发布",
                   "codeName" : "OpenReleasedCreateView",
-                  "dataAccessAction" : "SRFUR__PRODSTA_RELCRT_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ReleaseQuickCreateView.json",

@@ -447,7 +447,6 @@
               "actionTarget" : "NONE",
               "caption" : "按照计划关联",
               "codeName" : "ProjecPlanLink",
-              "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectPlanView.json",

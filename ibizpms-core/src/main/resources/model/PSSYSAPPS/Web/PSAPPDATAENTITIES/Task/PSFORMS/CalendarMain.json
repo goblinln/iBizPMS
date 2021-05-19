@@ -904,7 +904,6 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "转交",
               "codeName" : "checkForwardDash",
-              "dataAccessAction" : "SRFUR__TASK_FORWARD_BUT",
               "fullCodeName" : "Task_checkForwardDash",
               "name" : "转交任务(操作栏)(多人任务检查)",
               "getNextPSUIAction" : {
@@ -1289,7 +1288,6 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "子任务",
               "codeName" : "NewSubTaskDash",
-              "dataAccessAction" : "SRFUR__TASK_SUBTASKS_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskSubTaskNewView.json",

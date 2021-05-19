@@ -1697,10 +1697,8 @@
                     "name" : "u60233af",
                     "getPSUIAction" : {
                       "actionTarget" : "SINGLEKEY",
-                      "noPrivDisplayMode" : 1,
                       "caption" : "需求细分",
                       "codeName" : "SubStory",
-                      "dataAccessAction" : "SRFUR__STORY_XQXF_BUT",
                       "getFrontPSAppView" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorySubGridView.json",

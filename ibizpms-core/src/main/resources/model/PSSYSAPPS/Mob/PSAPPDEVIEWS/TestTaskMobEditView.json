@@ -1067,7 +1067,6 @@
         "caption" : "删除",
         "codeName" : "MobDelete",
         "confirmMsg" : "您确认要删除该测试单吗？",
-        "dataAccessAction" : "SRFUR__TESTT_DELETE_BUT",
         "fullCodeName" : "TestTask_MobDelete",
         "name" : "删除（移动端）",
         "getPSAppDEMethod" : {

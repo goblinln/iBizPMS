@@ -199,7 +199,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "详情",
         "codeName" : "LookDaily",
-        "dataAccessAction" : "DAILY",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzDailyDailyMobTabExpView.json",

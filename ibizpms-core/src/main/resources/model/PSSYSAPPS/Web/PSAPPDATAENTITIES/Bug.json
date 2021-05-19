@@ -3160,7 +3160,6 @@
     "caption" : "解除关联",
     "codeName" : "unlinkBug_build",
     "confirmMsg" : "您确认移除该Bug吗？",
-    "dataAccessAction" : "SRFUR__BUG_UNLINK_BUT",
     "fullCodeName" : "Bug_unlinkBug_build",
     "name" : "解除关联（版本-bug）",
     "getPSAppDEMethod" : {
@@ -3308,7 +3307,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
     "codeName" : "MainEditDash",
-    "dataAccessAction" : "SRFUR__BUG_EDIT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainEditView.json",
@@ -3488,10 +3486,8 @@
     "id" : "Activation@Bug"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "解决",
     "codeName" : "ResolveBug",
-    "dataAccessAction" : "SRFUR__BUG_RESOLVE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugResolveView.json",
@@ -3571,7 +3567,6 @@
     "caption" : "删除",
     "codeName" : "delete",
     "confirmMsg" : "确认要删除，删除操作将不可恢复？",
-    "dataAccessAction" : "SRFUR__BUG_DELETE_BUT",
     "fullCodeName" : "Bug_delete",
     "name" : "删除",
     "getPSAppDEMethod" : {

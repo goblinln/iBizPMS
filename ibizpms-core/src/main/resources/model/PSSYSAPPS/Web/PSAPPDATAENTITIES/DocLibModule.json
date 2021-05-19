@@ -938,7 +938,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "收藏",
     "codeName" : "Favorite",
-    "dataAccessAction" : "SRFUR__DOCLIBMODULE_FAVOUR_BUT",
     "fullCodeName" : "DocLibModule_Favorite",
     "name" : "收藏",
     "getPSAppDEMethod" : {

@@ -1,10 +1,7 @@
 {
+  "customCond" : "[('ACL','=','open')]",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Manage_Open.json",
   "name" : "产品管理（公开）",
-  "getPSDEDataSet" : {
-    "modelref" : true,
-    "id" : "OpenQuery"
-  },
   "getPSDEUserRoleOPPrivs" : [ {
     "dataAccessAction" : "MANAGE",
     "name" : "Product_Manage_Open_MANAGE",
@@ -14,6 +11,5 @@
     }
   } ],
   "roleTag" : "Product_Manage_Open",
-  "userDRAction" : "READ",
-  "defaultMode" : true
+  "userDRAction" : "READ"
 }

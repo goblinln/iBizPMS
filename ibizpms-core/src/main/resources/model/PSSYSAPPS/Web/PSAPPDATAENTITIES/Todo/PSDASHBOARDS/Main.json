@@ -1211,7 +1211,6 @@
                 "caption" : "删除",
                 "codeName" : "deleteCz",
                 "confirmMsg" : "您确定要删除这条待办吗？",
-                "dataAccessAction" : "DELETE",
                 "fullCodeName" : "Todo_deleteCz",
                 "name" : "todo删除（操作栏）",
                 "getNextPSUIAction" : {
@@ -1252,7 +1251,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "指派",
                 "codeName" : "assignToCz",
-                "dataAccessAction" : "ASSIGNTO",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoAssignToView.json",
@@ -1383,7 +1381,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "转Bug",
                 "codeName" : "toBug",
-                "dataAccessAction" : "TOBUG",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugTodoEditView.json",

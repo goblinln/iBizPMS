@@ -621,7 +621,6 @@
             "caption" : "解除关联",
             "codeName" : "unlinkBug_build",
             "confirmMsg" : "您确认移除该Bug吗？",
-            "dataAccessAction" : "SRFUR__BUG_UNLINK_BUT",
             "fullCodeName" : "Bug_unlinkBug_build",
             "name" : "解除关联（版本-bug）",
             "getPSAppDEMethod" : {

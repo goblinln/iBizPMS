@@ -2639,7 +2639,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "转Bug",
                   "codeName" : "NewBugByCaseResultCz",
-                  "dataAccessAction" : "SRFUR__CASE_TOBUG_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseToBugEditView.json",

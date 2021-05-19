@@ -914,10 +914,8 @@
           "name" : "u05cc54b",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "OpenBaseInfoEditView",
-            "dataAccessAction" : "SRFUR__STORY_EDIT_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView9_EditMode.json",
@@ -1006,10 +1004,8 @@
           "name" : "u99b8788",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "需求细分",
             "codeName" : "SubStory",
-            "dataAccessAction" : "SRFUR__STORY_XQXF_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorySubGridView.json",

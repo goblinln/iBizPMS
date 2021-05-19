@@ -233,10 +233,8 @@
         "name" : "u58bc4ed",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "编辑",
           "codeName" : "ProjectEdits",
-          "dataAccessAction" : "SRFUR__REPORT_EDIT_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportProjectMainEditEditView.json",

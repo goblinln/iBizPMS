@@ -1117,7 +1117,6 @@
     "actionTarget" : "MULTIKEY",
     "caption" : "测试报告",
     "codeName" : "TestReport",
-    "dataAccessAction" : "SRFUR__REPORT_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportEditView_TestTasks.json",
@@ -1320,7 +1319,6 @@
     "actionTarget" : "NONE",
     "caption" : "报告列表",
     "codeName" : "Reports",
-    "dataAccessAction" : "SRFUR__PROJECT_REPORT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportProjectGridView.json",
@@ -1387,7 +1385,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "开始",
     "codeName" : "StartDash",
-    "dataAccessAction" : "SRFUR__TESTT_START_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskStartOptionView.json",

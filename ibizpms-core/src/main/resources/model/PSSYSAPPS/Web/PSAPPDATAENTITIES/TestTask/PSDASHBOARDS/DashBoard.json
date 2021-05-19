@@ -1257,7 +1257,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "开始",
                 "codeName" : "StartDash",
-                "dataAccessAction" : "SRFUR__TESTT_START_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskStartOptionView.json",

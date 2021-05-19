@@ -821,7 +821,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "激活",
           "codeName" : "MobActivite",
-          "dataAccessAction" : "SRFUR__TESTT_ACTIVITE_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TestTaskMobOptionViewActivite.json",

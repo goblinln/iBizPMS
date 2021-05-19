@@ -327,7 +327,6 @@
                     "actionTarget" : "NONE",
                     "caption" : "生成日报",
                     "codeName" : "CreateUserDaily",
-                    "dataAccessAction" : "SRFUR__ADMIN",
                     "fullCodeName" : "IbzDaily_CreateUserDaily",
                     "name" : "生成日报",
                     "getPSAppDEMethod" : {

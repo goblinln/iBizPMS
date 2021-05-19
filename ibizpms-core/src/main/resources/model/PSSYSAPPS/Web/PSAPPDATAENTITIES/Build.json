@@ -977,10 +977,8 @@
     "id" : "editBuild@Build"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "关联需求",
     "codeName" : "linkStories",
-    "dataAccessAction" : "SRFUR__BUILD_LINK_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView2.json",
@@ -1140,10 +1138,8 @@
     "id" : "Create@Build"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "提交测试",
     "codeName" : "submitToTesting",
-    "dataAccessAction" : "SRFUR__BUILD_SUBT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView_commitTest.json",
