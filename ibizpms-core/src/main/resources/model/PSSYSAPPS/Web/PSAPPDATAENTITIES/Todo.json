@@ -1380,7 +1380,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "激活",
     "codeName" : "activateCz",
-    "dataAccessAction" : "ACTIVATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoActiviteView.json",

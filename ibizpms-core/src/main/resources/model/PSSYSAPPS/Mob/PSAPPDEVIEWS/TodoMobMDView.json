@@ -582,7 +582,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "指派",
           "codeName" : "assignToMob",
-          "dataAccessAction" : "ASSIGNTO",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TodoMobOptionView.json",

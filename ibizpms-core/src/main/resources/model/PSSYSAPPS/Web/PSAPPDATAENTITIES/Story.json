@@ -4022,7 +4022,6 @@
     "actionTarget" : "NONE",
     "caption" : "新建需求",
     "codeName" : "CreatePlan",
-    "dataAccessAction" : "SRFUR__STORY_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryPlanEditView.json",

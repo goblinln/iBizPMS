@@ -3351,7 +3351,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "继续",
         "codeName" : "RestartMobTeamTask",
-        "dataAccessAction" : "SRFUR__TASK_PROCEED_BUT",
         "fullCodeName" : "Task_RestartMobTeamTask",
         "name" : "继续任务(移动端)(多人任务检查)",
         "getNextPSUIAction" : {

@@ -1229,10 +1229,8 @@
           "name" : "u8316814",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "开始",
             "codeName" : "MStartTaskDash1",
-            "dataAccessAction" : "SRFUR__TASK_START_BUT",
             "fullCodeName" : "Task_MStartTaskDash1",
             "name" : "开始任务(多人任务检查)",
             "getNextPSUIAction" : {
