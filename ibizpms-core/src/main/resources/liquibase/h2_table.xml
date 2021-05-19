@@ -1796,6 +1796,10 @@
                 </column>
                 <column name="NAME" remarks="" type="VARCHAR(100)">
                 </column>
+                <column name="OPENEDBY" remarks="" type="VARCHAR(30)">
+                </column>
+                <column name="ACL" remarks="" type="VARCHAR(7)">
+                </column>
         </createTable>
     </changeSet>
 

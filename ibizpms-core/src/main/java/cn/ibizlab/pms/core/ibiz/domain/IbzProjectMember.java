@@ -151,6 +151,24 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     @JsonProperty("name")
     @ApiModelProperty("项目名称")
     private String name;
+    /**
+     * 由谁创建
+     */
+    @DEField(preType = DEPredefinedFieldType.CREATEMANNAME)
+    @TableField(value = "`OPENEDBY`")
+    @JSONField(name = "openedby")
+    @JsonProperty("openedby")
+    @ApiModelProperty("由谁创建")
+    private String openedby;
+    /**
+     * 访问控制
+     */
+    @DEField(defaultValue = "open")
+    @TableField(value = "`ACL`")
+    @JSONField(name = "acl")
+    @JsonProperty("acl")
+    @ApiModelProperty("访问控制")
+    private String acl;
 
 
 
@@ -160,6 +178,14 @@ public class IbzProjectMember extends EntityMP implements Serializable {
     public void setName(String name) {
         this.name = name;
         this.modify("name", name);
+    }
+
+    /**
+     * 设置 [访问控制]
+     */
+    public void setAcl(String acl) {
+        this.acl = acl;
+        this.modify("acl", acl);
     }
 
 

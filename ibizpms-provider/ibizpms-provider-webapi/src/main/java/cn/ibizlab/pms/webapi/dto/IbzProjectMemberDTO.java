@@ -162,6 +162,26 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     @ApiModelProperty("项目名称")
     private String name;
 
+    /**
+     * 属性 [OPENEDBY]
+     *
+     */
+    @JSONField(name = "openedby")
+    @JsonProperty("openedby")
+    @Size(min = 0, max = 30, message = "内容长度必须小于等于[30]")
+    @ApiModelProperty("由谁创建")
+    private String openedby;
+
+    /**
+     * 属性 [ACL]
+     *
+     */
+    @JSONField(name = "acl")
+    @JsonProperty("acl")
+    @Size(min = 0, max = 7, message = "内容长度必须小于等于[7]")
+    @ApiModelProperty("访问控制")
+    private String acl;
+
 
     /**
      * 设置 [NAME]
@@ -169,6 +189,14 @@ public class IbzProjectMemberDTO extends DTOBase implements Serializable {
     public void setName(String  name){
         this.name = name ;
         this.modify("name",name);
+    }
+
+    /**
+     * 设置 [ACL]
+     */
+    public void setAcl(String  acl){
+        this.acl = acl ;
+        this.modify("acl",acl);
     }
 
 

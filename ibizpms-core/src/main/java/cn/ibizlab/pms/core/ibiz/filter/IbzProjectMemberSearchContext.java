@@ -32,6 +32,11 @@ public class IbzProjectMemberSearchContext extends QueryWrapperContext<IbzProjec
 	public void setN_id_eq(Long n_id_eq) {
         this.n_id_eq = n_id_eq;
     }
+                
+	private String n_acl_eq;//[访问控制]
+	public void setN_acl_eq(String n_acl_eq) {
+        this.n_acl_eq = n_acl_eq;
+    }
 
     /**
 	 * 启用快速搜索

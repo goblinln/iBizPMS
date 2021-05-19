@@ -960,8 +960,10 @@
           "codeName" : "Estimate"
         },
         "getPSEditor" : {
-          "editorType" : "NUMBER",
-          "name" : "estimate"
+          "editorType" : "SPAN",
+          "name" : "estimate",
+          "editable" : false,
+          "enableLinkView" : false
         },
         "getPSLayoutPos" : {
           "colMD" : 24,

@@ -16,6 +16,8 @@ function getLocaleResourceBase(){
 		'fifthmember': commonLogic.appcommonhandle("团队成员（五）",null),
 		'sixthmember': commonLogic.appcommonhandle("团队成员（六）",null),
 		'name': commonLogic.appcommonhandle("项目名称",null),
+		'openedby': commonLogic.appcommonhandle("由谁创建",null),
+		'acl': commonLogic.appcommonhandle("访问控制",null),
 	},
 		views: {
 			'editview9': {

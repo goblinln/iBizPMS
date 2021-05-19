@@ -232,6 +232,18 @@
     "stringLength" : 100,
     "enableQuickSearch" : true,
     "majorField" : true
+  }, {
+    "codeName" : "OpenedBy",
+    "logicName" : "由谁创建",
+    "name" : "OPENEDBY",
+    "stdDataType" : 25,
+    "stringLength" : 30
+  }, {
+    "codeName" : "Acl",
+    "logicName" : "访问控制",
+    "name" : "ACL",
+    "stdDataType" : 25,
+    "stringLength" : 7
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",
