@@ -226,6 +226,7 @@ export default class DataPickerEditor extends EditorBase {
                 context: this.context,
                 viewparams: this.viewparams,
                 service: this.service,
+                pickUpData: this.editorInstance.editorParams?.['pickupdata'] ? this.editorInstance.editorParams?.['pickupdata'] : null,
                 valueitem: this.parentItem?.valueItemName || '',
                 ...this.customProps,
             },
