@@ -22,7 +22,7 @@ window.Environment = {
     // 文件上传
     UploadFile: '/ibizutilpms/ztupload',
     // 统一登录页
-    //loginUrl: 'http://ebsx.ibizee.cn/#/login',
-    loginUrl: '',
+    loginUrl: 'http://ebsx.ibizee.cn/#/login',
+    //loginUrl: '',
     portalUrl: 'http://ebsx.ibizee.cn/',
 }
