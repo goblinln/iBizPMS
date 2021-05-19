@@ -206,7 +206,10 @@ export class GanttControlBase extends MDControlBase {
      */
     @Watch('$i18n.locale')
     public onLocaleChange(newval: any, val: any) {
-        this.locale = newval;
+        if(newval != val){
+            this.locale = newval;
+            this.updateOptions();
+        }
     }
 
     /**
@@ -220,6 +223,7 @@ export class GanttControlBase extends MDControlBase {
         //TODO  国际化暂未支持
         let that: any = this;
         that.locale = that.$i18n.locale;
+        this.updateOptions();
         this.viewStateEvent = this.viewState.subscribe(({ tag, action, data }: any) => {
             if (!Object.is(tag, this.name)) {
                 return;
@@ -262,16 +266,17 @@ export class GanttControlBase extends MDControlBase {
     }
 
     /**
-     * 获取部件参数
+     * 更新部件参数
      *
      * @returns {any}
      * @memberof GanttControlBase
      */
-    public getOptions() {
+    public updateOptions() {
         if(Object.is(this.locale, 'zh-CN')) {
-            return { locale: this.localeZH, ...this.options };
+            this.options.locale = this.localeZH
+        }else{
+            this.options.locale = undefined;
         }
-        return this.options;
     }
 
     /**
