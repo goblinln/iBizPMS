@@ -1424,7 +1424,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "关闭",
                   "codeName" : "closeCz",
-                  "dataAccessAction" : "CLOSE",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoCloseView.json",
@@ -1522,7 +1521,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "转任务",
                   "codeName" : "toTask",
-                  "dataAccessAction" : "TOTASK",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTodoEditView.json",

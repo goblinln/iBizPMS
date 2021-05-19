@@ -3322,7 +3322,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "指派",
                   "codeName" : "AssignToDash",
-                  "dataAccessAction" : "SRFUR__STORY_ASS_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryAssignToView.json",

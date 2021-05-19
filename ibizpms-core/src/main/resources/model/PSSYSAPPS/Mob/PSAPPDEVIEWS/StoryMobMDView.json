@@ -1036,7 +1036,6 @@
         "actionTarget" : "NONE",
         "caption" : "新建需求",
         "codeName" : "MobCreate",
-        "dataAccessAction" : "SRFUR__STORY_CREATE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryNewMobEditView.json",

@@ -779,7 +779,6 @@
     "actionTarget" : "NONE",
     "caption" : "添加产品",
     "codeName" : "AddProduct",
-    "dataAccessAction" : "SRFUR__PRODSTA_ADDPROD_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",

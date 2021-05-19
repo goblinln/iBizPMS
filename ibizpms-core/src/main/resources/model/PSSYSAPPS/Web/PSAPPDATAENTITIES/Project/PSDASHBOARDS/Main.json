@@ -2634,7 +2634,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "编辑",
                 "codeName" : "ProjectEdit",
-                "dataAccessAction" : "SRFUR__PROJ_EDIT_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainView_Edit.json",

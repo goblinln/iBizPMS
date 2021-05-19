@@ -520,10 +520,8 @@
         "name" : "u399f905",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "删除",
           "codeName" : "Delete",
-          "dataAccessAction" : "SRFUR__BUILD_DELETE_BUT",
           "fullCodeName" : "Build_Delete",
           "name" : "删除",
           "getPSAppDEMethod" : {

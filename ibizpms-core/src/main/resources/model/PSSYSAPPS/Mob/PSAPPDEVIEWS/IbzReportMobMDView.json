@@ -529,7 +529,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "详情",
           "codeName" : "LookMonthy",
-          "dataAccessAction" : "MONTHLY",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzMonthlyMainInfoMobTabExpView.json",

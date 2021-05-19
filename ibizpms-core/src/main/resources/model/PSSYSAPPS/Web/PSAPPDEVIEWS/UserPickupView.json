@@ -407,10 +407,8 @@
               "name" : "ufcdaecf",
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
-                "noPrivDisplayMode" : 1,
                 "caption" : "编辑",
                 "codeName" : "Edit",
-                "dataAccessAction" : "SRFUR__ADMIN",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserEditView.json",
