@@ -1343,7 +1343,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "编辑",
                 "codeName" : "EditcaseCz",
-                "dataAccessAction" : "SRFUR__ADMIN",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzCaseEditEditView.json",
@@ -1377,7 +1376,6 @@
                 "caption" : "删除",
                 "codeName" : "DeleteCz",
                 "confirmMsg" : "您确认要删除该测试用例吗？",
-                "dataAccessAction" : "SRFUR__ADMIN",
                 "fullCodeName" : "IbzCase_DeleteCz",
                 "name" : "删除（操作栏）",
                 "getPSAppDEMethod" : {
@@ -2876,7 +2874,6 @@
                 "actionTarget" : "NONE",
                 "caption" : "添加备注",
                 "codeName" : "AddComment",
-                "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionOptionView.json",

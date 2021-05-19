@@ -276,10 +276,8 @@
         "name" : "uef3aae0",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "移除",
           "codeName" : "unlinkSuiteCase",
-          "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
           "fullCodeName" : "Case_unlinkSuiteCase",
           "name" : "移除套件用例",
           "getPSAppDEMethod" : {
@@ -323,10 +321,8 @@
         "name" : "udb1307b",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "结果",
           "codeName" : "OpenTestRunResultView",
-          "dataAccessAction" : "SRFUR__CASE_RESULT_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseExcEditView.json",
@@ -357,10 +353,8 @@
         "name" : "uceeae1e",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "执行",
           "codeName" : "Execute",
-          "dataAccessAction" : "SRFUR__CASE_CASERUN_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseOptionView.json",

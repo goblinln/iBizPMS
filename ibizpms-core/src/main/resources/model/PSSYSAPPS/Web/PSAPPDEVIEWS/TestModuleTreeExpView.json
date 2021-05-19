@@ -506,7 +506,7 @@
           "groupExtractMode" : "ITEM",
           "itemType" : "DEUIACTION",
           "name" : "deuiaction1",
-          "noPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 2,
           "getPSAppViewUIAction" : {
             "modelref" : true,
             "id" : "rootmodule_cm_deuiaction1"
@@ -517,10 +517,8 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "OpenQuickCfgView",
-            "dataAccessAction" : "SRFUR__TESTMOD_OQCVIEW_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModuleQuickCfgView.json",
@@ -599,7 +597,7 @@
           "groupExtractMode" : "ITEM",
           "itemType" : "DEUIACTION",
           "name" : "deuiaction1",
-          "noPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 2,
           "getPSAppViewUIAction" : {
             "modelref" : true,
             "id" : "module_cm_deuiaction1"
@@ -610,10 +608,8 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "OpenQuickCfgView",
-            "dataAccessAction" : "SRFUR__TESTMOD_OQCVIEW_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModuleQuickCfgView.json",
@@ -692,7 +688,7 @@
           "groupExtractMode" : "ITEM",
           "itemType" : "DEUIACTION",
           "name" : "deuiaction1",
-          "noPrivDisplayMode" : 1,
+          "noPrivDisplayMode" : 2,
           "getPSAppViewUIAction" : {
             "modelref" : true,
             "id" : "root_nobranch_cm_deuiaction1"
@@ -703,10 +699,8 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "OpenQuickCfgView",
-            "dataAccessAction" : "SRFUR__TESTMOD_OQCVIEW_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModuleQuickCfgView.json",
@@ -1053,7 +1047,7 @@
             "groupExtractMode" : "ITEM",
             "itemType" : "DEUIACTION",
             "name" : "deuiaction1",
-            "noPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 2,
             "getPSAppViewUIAction" : {
               "modelref" : true,
               "id" : "module_cm_deuiaction1"
@@ -1064,10 +1058,8 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "noPrivDisplayMode" : 1,
               "caption" : "编辑",
               "codeName" : "OpenQuickCfgView",
-              "dataAccessAction" : "SRFUR__TESTMOD_OQCVIEW_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModuleQuickCfgView.json",
@@ -1309,7 +1301,7 @@
             "groupExtractMode" : "ITEM",
             "itemType" : "DEUIACTION",
             "name" : "deuiaction1",
-            "noPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 2,
             "getPSAppViewUIAction" : {
               "modelref" : true,
               "id" : "rootmodule_cm_deuiaction1"
@@ -1320,10 +1312,8 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "noPrivDisplayMode" : 1,
               "caption" : "编辑",
               "codeName" : "OpenQuickCfgView",
-              "dataAccessAction" : "SRFUR__TESTMOD_OQCVIEW_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModuleQuickCfgView.json",
@@ -1452,7 +1442,7 @@
             "groupExtractMode" : "ITEM",
             "itemType" : "DEUIACTION",
             "name" : "deuiaction1",
-            "noPrivDisplayMode" : 1,
+            "noPrivDisplayMode" : 2,
             "getPSAppViewUIAction" : {
               "modelref" : true,
               "id" : "root_nobranch_cm_deuiaction1"
@@ -1463,10 +1453,8 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "noPrivDisplayMode" : 1,
               "caption" : "编辑",
               "codeName" : "OpenQuickCfgView",
-              "dataAccessAction" : "SRFUR__TESTMOD_OQCVIEW_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestModuleQuickCfgView.json",

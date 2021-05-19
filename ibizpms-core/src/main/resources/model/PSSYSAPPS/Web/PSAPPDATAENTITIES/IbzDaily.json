@@ -947,7 +947,6 @@
     "actionTarget" : "NONE",
     "caption" : "生成日报",
     "codeName" : "CreateUserDaily",
-    "dataAccessAction" : "SRFUR__ADMIN",
     "fullCodeName" : "IbzDaily_CreateUserDaily",
     "name" : "生成日报",
     "getPSAppDEMethod" : {
@@ -982,7 +981,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "提交",
     "codeName" : "submit",
-    "dataAccessAction" : "SRFUR__DAILY_SUBMIT_BUT",
     "fullCodeName" : "IbzDaily_submit",
     "name" : "submit",
     "getPSAppDEMethod" : {
@@ -1050,10 +1048,8 @@
     "id" : "submit@IbzDaily"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "修改",
     "codeName" : "Edit",
-    "dataAccessAction" : "SRFUR__DAILY_SUBMIT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailymainEditView.json",
@@ -1133,7 +1129,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "修改",
     "codeName" : "EditCz",
-    "dataAccessAction" : "SRFUR__DAILY_SUBMIT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailymainEditView.json",
@@ -1194,11 +1189,9 @@
     "id" : "create@IbzDaily"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "提交",
     "codeName" : "submitCz",
     "confirmMsg" : "确认要马上提交吗？",
-    "dataAccessAction" : "SRFUR__DAILY_SUBMIT_BUT",
     "fullCodeName" : "IbzDaily_submitCz",
     "name" : "submit（操作列）",
     "getPSAppDEMethod" : {

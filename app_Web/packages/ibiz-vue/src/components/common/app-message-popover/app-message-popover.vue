@@ -173,7 +173,7 @@ export default class AppMessagePopover extends Vue {
      * 点击标签事件
      */
     public handleTag(data: any) {
-        if (!data)  return this.$throw("未获取到标签内容");
+        if (!data)  return this.$throw("未获取到标签内容",'handleTag');
         // 拼接要打开的窗口地址
         const baseUrl:any = this.environment.BaseUrl;
         const openUrl:any = baseUrl + `/wfcore/mytasks/${data.processDefinitionKey}/web/${data.processInstanceBusinessKey}/usertasks/${data.taskDefinitionKey}`;

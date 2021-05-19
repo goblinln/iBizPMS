@@ -206,7 +206,10 @@ export class GanttControlBase extends MDControlBase {
      */
     @Watch('$i18n.locale')
     public onLocaleChange(newval: any, val: any) {
-        this.locale = newval;
+        if(newval != val){
+            this.locale = newval;
+            this.updateOptions();
+        }
     }
 
     /**
@@ -220,6 +223,7 @@ export class GanttControlBase extends MDControlBase {
         //TODO  国际化暂未支持
         let that: any = this;
         that.locale = that.$i18n.locale;
+        this.updateOptions();
         this.viewStateEvent = this.viewState.subscribe(({ tag, action, data }: any) => {
             if (!Object.is(tag, this.name)) {
                 return;
@@ -262,16 +266,17 @@ export class GanttControlBase extends MDControlBase {
     }
 
     /**
-     * 获取部件参数
+     * 更新部件参数
      *
      * @returns {any}
      * @memberof GanttControlBase
      */
-    public getOptions() {
+    public updateOptions() {
         if(Object.is(this.locale, 'zh-CN')) {
-            return { locale: this.localeZH, ...this.options };
+            this.options.locale = this.localeZH
+        }else{
+            this.options.locale = undefined;
         }
-        return this.options;
     }
 
     /**
@@ -302,7 +307,7 @@ export class GanttControlBase extends MDControlBase {
         this.service.getNodes(tempContext,params).then((response: any) => {
             this.ctrlEndLoading();
             if (!response || response.status !== 200) {
-                this.$throw(response);
+                this.$throw(response,'load');
                 return;
             }
             this.tasks = [...this.tasks, ...response.data];
@@ -314,7 +319,7 @@ export class GanttControlBase extends MDControlBase {
             this.$emit("load", this.tasks);
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response);
+            this.$throw(response,'load');
         });
     }
 
@@ -594,7 +599,7 @@ export class GanttControlBase extends MDControlBase {
                 this.openTargtView(openView, view, tempContext, data, xData, $event, deResParameters, parameters, args, callback);
             }
         } else {
-            this.$warning({ title: '错误', desc: '未指定关系视图' });
+            this.$warning('错误,未指定关系视图!','ganttOpendata');
         }
     }
 
@@ -618,6 +623,9 @@ export class GanttControlBase extends MDControlBase {
             // 打开模态
             let container: Subject<any> = _this.$appmodal.openModal(view, tempContext, data);
             container.subscribe((result: any) => {
+                if (!result || !Object.is(result.ret, 'OK')) {
+                    return;
+                }
                 callback(result, xData);
             });
         } else if (openView.openMode.indexOf('DRAWER') !== -1) {
@@ -646,7 +654,7 @@ export class GanttControlBase extends MDControlBase {
                 callback(result, xData);
             });
         } else {
-            this.$warning({ title: '错误', desc: openView.title + '不支持该模式打开' });
+            this.$warning('错误,'+`${openView.title}`+'不支持该模式打开','openTargtView');
         }
     }
 }

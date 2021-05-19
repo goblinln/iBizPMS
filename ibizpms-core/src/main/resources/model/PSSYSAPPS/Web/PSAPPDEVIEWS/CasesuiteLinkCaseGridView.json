@@ -181,7 +181,6 @@
         "actionTarget" : "MULTIKEY",
         "caption" : "保存",
         "codeName" : "suitelinkCase",
-        "dataAccessAction" : "SRFUR__TESTSU_LINKCASE_BUT",
         "fullCodeName" : "Case_suitelinkCase",
         "name" : "套件关联用例",
         "getPSAppDEMethod" : {

@@ -1224,7 +1224,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "确认",
                 "codeName" : "confirmStoryChangeCz",
-                "dataAccessAction" : "SRFUR__TASK_XQCHANGE_BUT",
                 "fullCodeName" : "Task_confirmStoryChangeCz",
                 "name" : "需求变更确认（操作栏）",
                 "getPSAppDEMethod" : {
@@ -1258,7 +1257,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "收藏",
                 "codeName" : "TaskFavoritesMob",
-                "dataAccessAction" : "SRFUR__TASK_NFAVOR_BUT",
                 "fullCodeName" : "Task_TaskFavoritesMob",
                 "name" : "收藏（移动端）",
                 "getPSAppDEMethod" : {
@@ -1291,7 +1289,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "取消收藏",
                 "codeName" : "TaskNFavoritesMob",
-                "dataAccessAction" : "SRFUR__TASK_FAVOR_BUT",
                 "fullCodeName" : "Task_TaskNFavoritesMob",
                 "name" : "取消收藏（移动端）",
                 "getPSAppDEMethod" : {
@@ -1324,7 +1321,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "开始",
                 "codeName" : "StartMobTeamTask",
-                "dataAccessAction" : "SRFUR__TASK_START_BUT",
                 "fullCodeName" : "Task_StartMobTeamTask",
                 "name" : "开始任务(移动端)(多人任务检查)",
                 "getNextPSUIAction" : {
@@ -1370,7 +1366,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "指派",
                 "codeName" : "AssignTaskMob",
-                "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMobOptionView.json",
@@ -1404,7 +1399,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "完成",
                 "codeName" : "finishTask1",
-                "dataAccessAction" : "SRFUR__TASK_COMPLETE_BUT",
                 "frontProcessType" : "WIZARD",
                 "fullCodeName" : "Task_finishTask1",
                 "name" : "完成任务(移动端)(多人任务检查)",
@@ -1451,7 +1445,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "暂停",
                 "codeName" : "PauseMobTeamTask",
-                "dataAccessAction" : "SRFUR__TASK_PAUSE_BUT",
                 "fullCodeName" : "Task_PauseMobTeamTask",
                 "name" : "暂停任务(移动端)(多人任务检查)",
                 "getNextPSUIAction" : {
@@ -1497,7 +1490,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "取消",
                 "codeName" : "CancelTaskMob",
-                "dataAccessAction" : "SRFUR__TASK_CANCEL_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskCancelMobOptionView.json",
@@ -1531,7 +1523,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "关闭",
                 "codeName" : "CloseTaskMob",
-                "dataAccessAction" : "SRFUR__TASK_CLOSE_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskCloseMobOptionView.json",
@@ -1569,7 +1560,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "激活",
                 "codeName" : "ActiveMobTask",
-                "dataAccessAction" : "SRFUR__TASK_ACTIVATION_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskActiveMobTask.json",
@@ -1602,7 +1592,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "工时",
                 "codeName" : "ConsumedMobTaskTeam",
-                "dataAccessAction" : "SRFUR__TASK_CONSUM_BUT",
                 "fullCodeName" : "Task_ConsumedMobTaskTeam",
                 "name" : "工时(移动端)(多人任务检查)",
                 "getNextPSUIAction" : {
@@ -1661,7 +1650,6 @@
                 "caption" : "删除",
                 "codeName" : "deleteMob",
                 "confirmMsg" : "确认要删除，删除操作将不可恢复？",
-                "dataAccessAction" : "SRFUR__TASK_DELETE_BUT",
                 "fullCodeName" : "Task_deleteMob",
                 "name" : "删除（移动端）",
                 "getPSAppDEMethod" : {
@@ -1743,7 +1731,6 @@
               "actionTarget" : "NONE",
               "caption" : "新建",
               "codeName" : "CreateMob",
-              "dataAccessAction" : "SRFUR__TASK_CREATE_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskNewMobEditView.json",

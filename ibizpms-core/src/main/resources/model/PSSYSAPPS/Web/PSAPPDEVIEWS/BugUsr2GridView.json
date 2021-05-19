@@ -184,7 +184,6 @@
         "actionTarget" : "MULTIKEY",
         "caption" : "关联bug",
         "codeName" : "buildlinkbugs",
-        "dataAccessAction" : "SRFUR__BUG_UNLINK_BUT",
         "fullCodeName" : "Bug_buildlinkbugs",
         "name" : "版本批量关联已解决的bug",
         "getNextPSUIAction" : {

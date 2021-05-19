@@ -47,7 +47,7 @@ export class Casedesc extends EditorBase {
         return this.$createElement('input-box', {
             props: {
                 name: this.editorInstance.name,
-                value: this.value,
+                itemValue: this.value,
                 data: this.contextData,
                 ...this.customProps,
             },

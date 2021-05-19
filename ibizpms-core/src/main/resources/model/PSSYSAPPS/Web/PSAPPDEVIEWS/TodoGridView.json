@@ -204,7 +204,6 @@
         "actionTarget" : "NONE",
         "caption" : "新建",
         "codeName" : "TodoCreate",
-        "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoTodoCreateView.json",
@@ -773,10 +772,8 @@
           "name" : "ucbe5848",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "指派",
             "codeName" : "assignTo",
-            "dataAccessAction" : "ASSIGNTO",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoAssignToView.json",
@@ -809,11 +806,9 @@
           "name" : "u73f3925",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "完成",
             "codeName" : "finish",
             "confirmMsg" : "您确定这条待办已经完成了吗？",
-            "dataAccessAction" : "FINISH",
             "fullCodeName" : "Todo_finish",
             "name" : "todo完成",
             "getPSAppDEMethod" : {
@@ -845,11 +840,9 @@
           "name" : "u028b830",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "激活",
             "codeName" : "activate",
             "confirmMsg" : "您确定要激活这条待办吗？",
-            "dataAccessAction" : "ACTIVATE",
             "fullCodeName" : "Todo_activate",
             "name" : "todo激活",
             "getPSAppDEMethod" : {
@@ -881,11 +874,9 @@
           "name" : "u24b965b",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "关闭",
             "codeName" : "close",
             "confirmMsg" : "您确定要关闭这条待办吗？",
-            "dataAccessAction" : "CLOSE",
             "fullCodeName" : "Todo_close",
             "name" : "todo关闭",
             "getPSAppDEMethod" : {
@@ -917,10 +908,8 @@
           "name" : "uc8e81f7",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "edit1",
-            "dataAccessAction" : "UPDATE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoEditView.json",
@@ -955,11 +944,9 @@
           "name" : "u51ddac6",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "删除",
             "codeName" : "delete",
             "confirmMsg" : "您确定要删除这条待办吗？",
-            "dataAccessAction" : "DELETE",
             "fullCodeName" : "Todo_delete",
             "name" : "todo删除",
             "getPSAppDEMethod" : {

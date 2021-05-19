@@ -19,7 +19,15 @@ import '../plugin-style.less';
 @VueLifeCycleProcessing()
 export class LEFTNAVLIST extends AppDefaultList {
 
-/**
+   
+    /**
+     * 选中项
+     *
+     * @memberof LEFTNAVLIST
+     */
+    public selectItem = '';   
+
+    /**
      * 项单机
      *
      * @protected
@@ -29,6 +37,7 @@ export class LEFTNAVLIST extends AppDefaultList {
      */
     protected click(e: MouseEvent, item: Product): void {
         e.stopPropagation();
+			this.selectItem = item.id;
         this.handleDblClick(item);
     }
 
@@ -118,7 +127,7 @@ export class LEFTNAVLIST extends AppDefaultList {
         let statusItem: IPSDEListDataItem | undefined =  this.controlInstance.getPSDEListDataItems()?.find((item:any)=>{
             return item.name == 'status'
         });
-        return <listItem class={{ 'is-top': p.istop }}>
+        return <listItem class={{ 'is-top': p.istop ,'is-select':p.id===this.selectItem}}>
             <div class="content-wrapper" on-click={(e: any) => this.click(e, p)}>
                 <div class="title">
                     <tag type="border">{p.id}</tag>

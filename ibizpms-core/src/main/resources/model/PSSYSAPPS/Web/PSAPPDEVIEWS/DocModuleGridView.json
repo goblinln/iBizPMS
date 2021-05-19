@@ -636,7 +636,6 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "编辑",
             "codeName" : "Edit",
-            "dataAccessAction" : "SRFUR__DOC_EDIT_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocEditView.json",
@@ -670,7 +669,6 @@
             "caption" : "删除",
             "codeName" : "Delete",
             "confirmMsg" : "您确定删除该文档吗？",
-            "dataAccessAction" : "SRFUR__DOC_DELETE_BUT",
             "fullCodeName" : "Doc_Delete",
             "name" : "删除",
             "getPSAppDEMethod" : {
@@ -704,7 +702,6 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "收藏",
             "codeName" : "Collect",
-            "dataAccessAction" : "SRFUR__DOC_FAVOUR_BUT",
             "fullCodeName" : "Doc_Collect",
             "name" : "收藏",
             "getPSAppDEMethod" : {
@@ -744,7 +741,6 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "取消收藏",
             "codeName" : "UnCollect",
-            "dataAccessAction" : "SRFUR__DOC_NFAVOUR_BUT",
             "fullCodeName" : "Doc_UnCollect",
             "name" : "取消收藏",
             "getPSAppDEMethod" : {

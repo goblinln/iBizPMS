@@ -701,7 +701,6 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "确认",
               "codeName" : "ConfirmBugDash",
-              "dataAccessAction" : "SRFUR__BUG_CONFIRM_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugConfirmView.json",
@@ -747,7 +746,6 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "指派",
               "codeName" : "AssingToBugCz",
-              "dataAccessAction" : "SRFUR__BUG_ASSIGNTO_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugAssingToView.json",
@@ -792,7 +790,6 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "解决",
               "codeName" : "ResolveBugDash",
-              "dataAccessAction" : "SRFUR__BUG_RESOLVE_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugResolveView.json",
@@ -837,7 +834,6 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "关闭",
               "codeName" : "CloseBugDash",
-              "dataAccessAction" : "SRFUR__BUG_CLOSE_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCloseView.json",
@@ -882,7 +878,6 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "激活",
               "codeName" : "Activation",
-              "dataAccessAction" : "SRFUR__BUG_ACTIVATE_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugActivationView.json",
@@ -927,7 +922,6 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "编辑",
               "codeName" : "MainEditDash",
-              "dataAccessAction" : "SRFUR__BUG_EDIT_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainEditView.json",
@@ -1343,7 +1337,6 @@
                     "actionTarget" : "NONE",
                     "caption" : "添加备注",
                     "codeName" : "AddComment",
-                    "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
                     "getFrontPSAppView" : {
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionOptionView.json",

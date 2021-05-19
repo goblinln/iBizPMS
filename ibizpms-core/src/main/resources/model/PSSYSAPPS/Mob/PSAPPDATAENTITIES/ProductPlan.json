@@ -1436,7 +1436,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
     "codeName" : "MobMainEdit",
-    "dataAccessAction" : "SRFUR__PROP_EDIT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductPlanEditMobEditView.json",
@@ -1462,7 +1461,6 @@
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "MobCreate",
-    "dataAccessAction" : "SRFUR__PROP_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductPlanNewMobEditView.json",
@@ -1490,7 +1488,6 @@
     "caption" : "删除",
     "codeName" : "MobDelete",
     "confirmMsg" : "您确认删除该计划吗？",
-    "dataAccessAction" : "SRFUR__PROP_DELETE_BUT",
     "fullCodeName" : "ProductPlan_MobDelete",
     "name" : "删除（移动端）",
     "getPSAppDEMethod" : {

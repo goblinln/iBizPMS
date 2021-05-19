@@ -120,7 +120,7 @@ export class StepTable extends AppDefaultGrid {
                 contextData={data}
                 viewparams={this.viewparams}
                 on-change={(value: any) => {
-                    this.onGridItemValueChange(row, { name: editor.name, value: value !== null && typeof value === 'object' ? value.value : value }, $index);
+                    this.onGridItemValueChange(row, value, $index);
                 }}
             />
         )

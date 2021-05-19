@@ -3219,10 +3219,8 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "批量分解",
     "codeName" : "BatchBreakdowntasks",
-    "dataAccessAction" : "SRFUR__STORY_FJTASK_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStorySubTaskNewView.json",
@@ -3334,10 +3332,8 @@
     "id" : "CloseStoryDash@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "需求细分",
     "codeName" : "SubStory",
-    "dataAccessAction" : "SRFUR__STORY_XQXF_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorySubGridView.json",
@@ -3384,10 +3380,8 @@
     "id" : "SubStory@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "提缺陷",
     "codeName" : "StoryToBug",
-    "dataAccessAction" : "SRFUR__BUG_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStoryTOBugEditView.json",
@@ -3493,10 +3487,8 @@
     "id" : "StoryToBug@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "变更",
     "codeName" : "ChangeStoryDetail",
-    "dataAccessAction" : "SRFUR__STORY_CHANGED_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView_StoryChange.json",
@@ -3522,7 +3514,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "激活",
     "codeName" : "ActiviteDash",
-    "dataAccessAction" : "SRFUR__STORY_ACTIVE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryActiviteView.json",
@@ -3548,7 +3539,6 @@
     "actionTarget" : "NONE",
     "caption" : "关联需求",
     "codeName" : "PlanRelationStory",
-    "dataAccessAction" : "SRFUR__PROP_LSTORY_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView.json",
@@ -3593,7 +3583,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "收藏",
     "codeName" : "StoryFavorites",
-    "dataAccessAction" : "SRFUR__STORY_NFAVOR_BUT",
     "fullCodeName" : "Story_StoryFavorites",
     "name" : "收藏",
     "getPSAppDEMethod" : {
@@ -3618,10 +3607,8 @@
     "id" : "StoryFavorites@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "OpenBaseInfoEditView",
-    "dataAccessAction" : "SRFUR__STORY_EDIT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView9_EditMode.json",
@@ -3649,7 +3636,6 @@
     "actionTarget" : "NONE",
     "caption" : "关联需求",
     "codeName" : "buildLinkStories",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView3.json",
@@ -3714,7 +3700,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "指派",
     "codeName" : "AssignToDash",
-    "dataAccessAction" : "SRFUR__STORY_ASS_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryAssignToView.json",
@@ -3743,7 +3728,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "变更",
     "codeName" : "ChangeStoryDetailDash",
-    "dataAccessAction" : "SRFUR__STORY_CHANGED_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView_StoryChange.json",
@@ -3767,10 +3751,8 @@
     "id" : "ChangeStoryDetailDash@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "指派",
     "codeName" : "AssignTo",
-    "dataAccessAction" : "SRFUR__STORY_ASS_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryAssignToView.json",
@@ -3818,11 +3800,9 @@
     "id" : "More@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "移除关联",
     "codeName" : "UnlinkStory",
     "confirmMsg" : "是否移除需求关联",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "fullCodeName" : "Story_UnlinkStory",
     "name" : "取消计划关联",
     "getPSAppDEMethod" : {
@@ -3856,7 +3836,6 @@
     "actionTarget" : "NONE",
     "caption" : "关联需求",
     "codeName" : "projectLinkStories",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectMPickupView3.json",
@@ -3935,7 +3914,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
     "codeName" : "OpenBaseInfoC",
-    "dataAccessAction" : "SRFUR__STORY_EDIT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView9_EditMode.json",
@@ -3963,7 +3941,6 @@
     "actionTarget" : "NONE",
     "caption" : "关联需求",
     "codeName" : "releaseLinkStories",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryUsr2MPickupView.json",
@@ -4023,7 +4000,6 @@
     "actionTarget" : "NONE",
     "caption" : "新建需求",
     "codeName" : "CreatePlan",
-    "dataAccessAction" : "SRFUR__STORY_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryPlanEditView.json",
@@ -4061,10 +4037,8 @@
     "id" : "CreatePlan@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "关闭",
     "codeName" : "CloseStory",
-    "dataAccessAction" : "SRFUR__STORY_CLOSED_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryCloseView.json",
@@ -4093,7 +4067,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "评审",
     "codeName" : "ReviewStoryDash",
-    "dataAccessAction" : "SRFUR__STORY_REVIEW_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRevIewEditView.json",
@@ -4119,7 +4092,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "细分",
     "codeName" : "SubStoryCz",
-    "dataAccessAction" : "SRFUR__STORY_XQXF_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorySubGridView.json",
@@ -4166,10 +4138,8 @@
     "id" : "SubStoryCz@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "建用例",
     "codeName" : "OpenCaseCreateView",
-    "dataAccessAction" : "SRFUR__STORY_CCASE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainNewView.json",
@@ -4215,10 +4185,8 @@
     "id" : "OpenCaseCreateView@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "分解任务",
     "codeName" : "Breakdowntasks",
-    "dataAccessAction" : "SRFUR__STORY_FJTASK_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStoryNewEditView.json",
@@ -4303,7 +4271,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "移除关联",
     "codeName" : "releaseUnlinkStory",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "fullCodeName" : "Story_releaseUnlinkStory",
     "name" : "移除关联（发布—需求）",
     "getPSAppDEMethod" : {
@@ -4342,7 +4309,6 @@
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "ProjectCreateView",
-    "dataAccessAction" : "SRFUR__STORY_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectEditView.json",
@@ -4390,11 +4356,9 @@
     "id" : "ProjectCreateView@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "解绑需求",
     "codeName" : "buildUnlinkStory",
     "confirmMsg" : "您确认移除该需求吗？",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "fullCodeName" : "Story_buildUnlinkStory",
     "name" : "解除绑定（版本——需求）",
     "getPSAppDEMethod" : {
@@ -4431,11 +4395,9 @@
     "id" : "buildUnlinkStory@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "移除",
     "codeName" : "ProjectUnlinkStory",
     "confirmMsg" : "您确定从该项目中移除该需求吗？",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "fullCodeName" : "Story_ProjectUnlinkStory",
     "name" : "移除项目关联",
     "getPSAppDEMethod" : {
@@ -4473,10 +4435,8 @@
     "id" : "ProjectUnlinkStory@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "评审",
     "codeName" : "ReviewStory",
-    "dataAccessAction" : "SRFUR__STORY_REVIEW_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRevIewEditView.json",
@@ -4502,7 +4462,6 @@
     "actionTarget" : "NONE",
     "caption" : "新建需求",
     "codeName" : "Create",
-    "dataAccessAction" : "SRFUR__STORY_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
@@ -4530,7 +4489,6 @@
     "actionTarget" : "NONE",
     "caption" : "按照计划关联",
     "codeName" : "ProjecPlanLink",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectPlanView.json",
@@ -4567,7 +4525,6 @@
     "caption" : "删除",
     "codeName" : "delete",
     "confirmMsg" : "确认要删除，删除操作将不可恢复？",
-    "dataAccessAction" : "SRFUR__STORY_DELETE_BUT",
     "fullCodeName" : "Story_delete",
     "name" : "删除",
     "getNextPSUIAction" : {
@@ -4605,7 +4562,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "取消收藏",
     "codeName" : "StoryNFavorites",
-    "dataAccessAction" : "SRFUR__STORY_FAVOR_BUT",
     "fullCodeName" : "Story_StoryNFavorites",
     "name" : "取消收藏",
     "getPSAppDEMethod" : {

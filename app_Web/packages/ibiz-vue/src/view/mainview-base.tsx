@@ -150,6 +150,7 @@ export class MainViewBase extends ViewBase {
                     visabled: true,
                     itemType: item.itemType,
                     dataaccaction: '',
+                    actionLevel:(item as any).actionLevel
                 };
                 items.forEach((_item: any) => {
                     models.push(this.initToolBarItems(_item));
@@ -176,6 +177,7 @@ export class MainViewBase extends ViewBase {
             showIcon: item.showIcon,
             class: css ? css.cssName : '',
             getPSSysImage: img ? { cssClass: img.cssClass, imagePath: img.imagePath } : '',
+            actionLevel:(item as any).actionLevel
         };
         return tempModel;
     }
@@ -363,6 +365,9 @@ export class MainViewBase extends ViewBase {
             // 打开模态
             let container: Subject<any> = _this.$appmodal.openModal(view, tempContext, data);
             container.subscribe((result: any) => {
+                if (!result || !Object.is(result.ret, 'OK')) {
+                    return;
+                }
                 callback(result, xData);
             });
         } else if (openView.openMode.indexOf('DRAWER') !== -1) {
@@ -391,7 +396,7 @@ export class MainViewBase extends ViewBase {
                 callback(result, xData);
             });
         } else {
-            this.$warning(openView.title + '不支持该模式打开');
+            this.$warning(openView.title + '不支持该模式打开','openTargtView');
         }
     }
 
@@ -639,7 +644,7 @@ export class MainViewBase extends ViewBase {
                 );
             }
         } else {
-            this.$warning('未指定关系视图');
+            this.$warning('未指定关系视图','opendata');
         }
     }
 
@@ -742,7 +747,7 @@ export class MainViewBase extends ViewBase {
                     !minorPSAppDERSs ||
                     minorPSAppDERSs.length !== 2
                 ) {
-                    this.$warning('批量添加需添加N:N关系');
+                    this.$warning('批量添加需添加N:N关系','newdata');
                     return;
                 }
                 let openViewModel: IPSAppUILogicRefView | undefined = batchAddPSAppViews.find(
@@ -799,7 +804,7 @@ export class MainViewBase extends ViewBase {
                         .createBatch(JSON.parse(JSON.stringify(this.context)), requestParam, true)
                         .then((response: any) => {
                             if (!response || response.status !== 200) {
-                                this.$throw('批处理操作失败');
+                                this.$throw('批处理操作失败','newdata');
                                 return;
                             }
                             if (!xData || !(xData.refresh instanceof Function)) {
@@ -940,6 +945,9 @@ export class MainViewBase extends ViewBase {
                     // 打开模态
                     let container: Subject<any> = _this.$appmodal.openModal(view, tempContext, data);
                     container.subscribe((result: any) => {
+                        if (!result || !Object.is(result.ret, 'OK')) {
+                            return;
+                        }
                         callback(result, xData);
                     });
                 } else if (dataview.openMode.indexOf('DRAWER') !== -1) {
@@ -971,13 +979,13 @@ export class MainViewBase extends ViewBase {
                         callback(result, xData);
                     });
                 } else {
-                    this.$warning(`${dataview.title}不支持该模式打开`);
+                    this.$warning(`${dataview.title}不支持该模式打开`,'newdata');
                 }
             } else {
-                this.$warning('未指定关系视图');
+                this.$warning('未指定关系视图','newdata');
             }
         } else {
-            this.$warning('未指定关系视图');
+            this.$warning('未指定关系视图','newdata');
         }
     }
 }

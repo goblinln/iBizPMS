@@ -531,14 +531,14 @@ export class CalendarControlBase extends MDControlBase{
         const post: Promise<any> = this.service.search(this.loadAction, JSON.parse(JSON.stringify(this.context?this.context:'')), arg, this.showBusyIndicator);
         post.then((response: any) => {
             if (!response || response.status !== 200) {
-                this.$throw(response);
+                this.$throw(response,'searchEvents');
                 return;
             }
             // 默认选中第一项
             this.events = response.data;
             handleEvents();
         }, (response: any) => {
-            this.$throw(response);
+            this.$throw(response,'searchEvents');
         });
     }
 
@@ -693,12 +693,12 @@ export class CalendarControlBase extends MDControlBase{
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response || response.status !== 200) {
-                this.$throw(response);
+                this.$throw(response,'onEventDrop');
                 return;
             }
         }, (response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response);
+            this.$throw(response,'onEventDrop');
         });
     }
 

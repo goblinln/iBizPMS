@@ -317,7 +317,6 @@
               "actionTarget" : "NONE",
               "caption" : "新建",
               "codeName" : "ProjectCreateView",
-              "dataAccessAction" : "SRFUR__STORY_CREATE_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectEditView.json",
@@ -385,7 +384,6 @@
               "actionTarget" : "NONE",
               "caption" : "关联需求",
               "codeName" : "projectLinkStories",
-              "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectMPickupView3.json",
@@ -448,7 +446,6 @@
               "actionTarget" : "NONE",
               "caption" : "按照计划关联",
               "codeName" : "ProjecPlanLink",
-              "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectPlanView.json",
@@ -986,10 +983,8 @@
                 "name" : "ucdd2824",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "noPrivDisplayMode" : 1,
                   "caption" : "分解任务",
                   "codeName" : "Breakdowntasks",
-                  "dataAccessAction" : "SRFUR__STORY_FJTASK_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStoryNewEditView.json",
@@ -1079,10 +1074,8 @@
                 "name" : "u2fdcaeb",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "noPrivDisplayMode" : 1,
                   "caption" : "批量分解",
                   "codeName" : "BatchBreakdowntasks",
-                  "dataAccessAction" : "SRFUR__STORY_FJTASK_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStorySubTaskNewView.json",
@@ -1172,11 +1165,9 @@
                 "name" : "u247f69c",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "noPrivDisplayMode" : 1,
                   "caption" : "移除",
                   "codeName" : "ProjectUnlinkStory",
                   "confirmMsg" : "您确定从该项目中移除该需求吗？",
-                  "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
                   "fullCodeName" : "Story_ProjectUnlinkStory",
                   "name" : "移除项目关联",
                   "getPSAppDEMethod" : {

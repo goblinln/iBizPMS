@@ -2,17 +2,6 @@
   "codeName" : "ProductSupervisor",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ProductSupervisor.json",
   "name" : "产品主管",
-  "getPSSysUserRoleDatas" : [ {
-    "name" : "产品主管-ZT_BUILD[版本维护]",
-    "getPSDEUserRole" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build/PSDEUSERROLES/Build_Maintain.json"
-    },
-    "getPSDataEntity" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
-    }
-  } ],
   "roleTag" : "ProductSupervisor",
   "roleType" : "CUSTOM"
 }

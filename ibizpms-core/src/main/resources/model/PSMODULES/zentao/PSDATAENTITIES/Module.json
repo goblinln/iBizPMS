@@ -149,7 +149,7 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "( t1.`TYPE` = 'line'  AND  t1.`ORGID` =  ${srfsessioncontext('SRFORGID','{\"defname\":\"ORGID\",\"dename\":\"ZT_MODULE\"}')} )",
+        "customCond" : "( t1.`TYPE` = 'line' )",
         "name" : "查询条件"
       } ]
     } ],

@@ -947,7 +947,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
     "codeName" : "MobEdit",
-    "dataAccessAction" : "SRFUR__DAILY_SUBMIT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzDailyDailyMobEditView.json",
@@ -985,7 +984,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "提交",
     "codeName" : "submitMob",
-    "dataAccessAction" : "SRFUR__DAILY_SUBMIT_BUT",
     "fullCodeName" : "IbzDaily_submitMob",
     "name" : "submit（移动端）",
     "getPSAppDEMethod" : {

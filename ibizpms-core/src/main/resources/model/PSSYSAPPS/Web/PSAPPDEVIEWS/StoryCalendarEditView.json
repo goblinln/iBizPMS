@@ -818,7 +818,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "指派",
                 "codeName" : "AssignToDash",
-                "dataAccessAction" : "SRFUR__STORY_ASS_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryAssignToView.json",
@@ -866,7 +865,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "评审",
                 "codeName" : "ReviewStoryDash",
-                "dataAccessAction" : "SRFUR__STORY_REVIEW_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRevIewEditView.json",
@@ -911,7 +909,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "激活",
                 "codeName" : "ActiviteDash",
-                "dataAccessAction" : "SRFUR__STORY_ACTIVE_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryActiviteView.json",
@@ -1004,7 +1001,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "变更",
                 "codeName" : "ChangeStoryDetailDash",
-                "dataAccessAction" : "SRFUR__STORY_CHANGED_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView_StoryChange.json",
@@ -1049,7 +1045,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "细分",
                 "codeName" : "SubStoryCz",
-                "dataAccessAction" : "SRFUR__STORY_XQXF_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorySubGridView.json",
@@ -1117,7 +1112,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "编辑",
                 "codeName" : "OpenBaseInfoC",
-                "dataAccessAction" : "SRFUR__STORY_EDIT_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMainView9_EditMode.json",
@@ -1661,7 +1655,6 @@
                     "actionTarget" : "NONE",
                     "caption" : "添加备注",
                     "codeName" : "AddComment",
-                    "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
                     "getFrontPSAppView" : {
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionOptionView.json",

@@ -83,7 +83,7 @@ export class AppGridBase extends GridControlBase {
      * @memberof AppGridBase
      */
     @Emit('ctrl-event')
-    public ctrlEvent({ controlname, action, data }: { controlname: string; action: string; data: any }): void {}
+    public ctrlEvent({ controlname, action, data }: { controlname: string; action: string; data: any }): void { }
 
     /**
      * 计算表格参数
@@ -111,8 +111,8 @@ export class AppGridBase extends GridControlBase {
                     order: Object.is(this.minorSortDir, 'ASC')
                         ? 'ascending'
                         : Object.is(this.minorSortDir, 'DESC')
-                        ? 'descending'
-                        : '',
+                            ? 'descending'
+                            : '',
                 },
             });
         }
@@ -242,9 +242,9 @@ export class AppGridBase extends GridControlBase {
      * @memberof AppGridBase
      */
     public renderUAColumn(column: IPSDEGridUAColumn) {
-        if(this.viewStyle == 'STYLE2'){
+        if (this.viewStyle == 'STYLE2') {
             return this.renderStyle2UAColumn(column)
-        }else{
+        } else {
             return this.renderDefaultUAColumn(column);
         }
     }
@@ -271,9 +271,9 @@ export class AppGridBase extends GridControlBase {
             scopedSlots: {
                 default: (scope: any) => {
                     let offset = require('@popperjs/core/lib/modifiers/offset').default;
-                    return <i class='el-icon-more ua-column-icon' on-click={(e: any)=>{
-                        let _offset = Object.assign({options:{offset : [2, -41]}}, offset);
-                        (this.$apppopover as any).openPopover2(e, ()=>this.renderActionButtons(column, scope), 'left', true, undefined, 48, "view-default ua-column-popover",[_offset]);
+                    return <i class='el-icon-more ua-column-icon' on-click={(e: any) => {
+                        let _offset = Object.assign({ options: { offset: [2, -41] } }, offset);
+                        (this.$apppopover as any).openPopover2(e, () => this.renderActionButtons(column, scope), 'left', true, undefined, 48, "view-default ua-column-popover", [_offset]);
                     }}></i>;
                 },
             },
@@ -287,9 +287,9 @@ export class AppGridBase extends GridControlBase {
      * @param {row, column, $index} scope 插槽返回数据
      * @memberof AppGridBase
      */
-    public renderActionButtons(_column: IPSDEGridUAColumn, scope: any){
+    public renderActionButtons(_column: IPSDEGridUAColumn, scope: any) {
         const UIActionGroupDetails: Array<IPSUIActionGroupDetail> =
-        _column.getPSDEUIActionGroup()?.getPSUIActionGroupDetails() || [];
+            _column.getPSDEUIActionGroup()?.getPSUIActionGroupDetails() || [];
         const { row, column, $index } = scope;
         if (UIActionGroupDetails.length > 0) {
             return (
@@ -298,6 +298,9 @@ export class AppGridBase extends GridControlBase {
                         const uiaction: IPSDEUIAction = uiactionDetail.getPSUIAction() as IPSDEUIAction;
                         const actionModel = row[uiaction.uIActionTag];
                         let columnClass = {};
+                        if (uiactionDetail.actionLevel) {
+                            Object.assign(columnClass, { [`srfactionlevel${uiactionDetail.actionLevel}`]: true });
+                        }
                         if (index === 0) {
                             Object.assign(columnClass, { 'grid-first-uiaction': true });
                         } else {
@@ -313,6 +316,7 @@ export class AppGridBase extends GridControlBase {
                                 disabled={!Util.isEmpty(actionModel) && actionModel.disabled}
                                 class={columnClass}
                                 on-click={($event: any) => {
+                                    (this.$apppopover as any).popperDestroy();
                                     this.handleActionClick(row, $event, _column, uiactionDetail);
                                 }}
                             >
@@ -333,7 +337,7 @@ export class AppGridBase extends GridControlBase {
      * @param {any} column 表格列实例
      * @memberof AppGridBase
      */
-     public renderStyle2UAColumn(column: IPSDEGridUAColumn) {
+    public renderStyle2UAColumn(column: IPSDEGridUAColumn) {
         const { name, caption, align, width, widthUnit } = column;
         //参数
         let renderParams: any = {
@@ -360,7 +364,7 @@ export class AppGridBase extends GridControlBase {
                 },
             },
         });
-     }
+    }
 
     /**
      * 绘制操作列内容
@@ -380,6 +384,9 @@ export class AppGridBase extends GridControlBase {
                         const uiaction: IPSDEUIAction = uiactionDetail.getPSUIAction() as IPSDEUIAction;
                         const actionModel = row[uiaction.uIActionTag];
                         let columnClass = {};
+                        if (uiactionDetail.actionLevel) {
+                            Object.assign(columnClass, { [`srfactionlevel${uiactionDetail.actionLevel}`]: true });
+                        }
                         if (index === 0) {
                             Object.assign(columnClass, { 'grid-first-uiaction': true });
                         } else {
@@ -447,7 +454,7 @@ export class AppGridBase extends GridControlBase {
      * @memberof AppGridBase
      */
     public renderGridColumn(h: any, column: IPSDEGridColumn) {
-        const { name, codeName, enableRowEdit, width, caption, widthUnit, align } = column;
+        const { name, codeName, enableRowEdit, width, caption, widthUnit, align, enableSort } = column;
         const editItem: IPSDEGridEditItem = ModelTool.getGridItemByCodeName(
             codeName,
             this.controlInstance,
@@ -457,7 +464,7 @@ export class AppGridBase extends GridControlBase {
             label: caption,
             prop: name,
             align: align ? align.toLowerCase() : 'center',
-            sortable: 'custom',
+            sortable: !this.controlInstance.noSort && enableSort ? 'custom' : false,
         };
         if (widthUnit && widthUnit != 'STAR') {
             renderParams['width'] = width;
@@ -490,7 +497,7 @@ export class AppGridBase extends GridControlBase {
         let columnPopTip;
         // 分页显示文字
         let pageText = <span>共&nbsp;{this.totalRecord}&nbsp;条</span>
-        if( this.viewStyle == 'STYLE2'){
+        if (this.viewStyle == 'STYLE2') {
             pageText = <span>
                 &nbsp; 显示&nbsp;
                 {this.items.length > 0 ? 1 : (this.curPage - 1) * this.limit + 1}&nbsp;-&nbsp;
@@ -515,7 +522,7 @@ export class AppGridBase extends GridControlBase {
                     })}
                 </div>
             </poptip>
-        }else{
+        } else {
             pageText = <span>共&nbsp;{this.totalRecord}&nbsp;条</span>
         }
         return this.items?.length > 0 ? (
@@ -549,8 +556,8 @@ export class AppGridBase extends GridControlBase {
      *
      * @memberof AppGridBase
      */
-    public renderColumnFilter(){
-        if(this.viewStyle =='DEFAULT'){
+    public renderColumnFilter() {
+        if (this.viewStyle == 'DEFAULT') {
             return <poptip transfer placement='bottom-end' class='page-column' popper-class="view-default">
                 <icon type="md-options" />
                 <div slot='content'>
@@ -594,6 +601,7 @@ export class AppGridBase extends GridControlBase {
             <app-form-item error={this.gridItemsModel[$index][column.property].error}>
                 <app-default-editor
                     editorInstance={editor}
+                    parentItem={editItem}
                     value={row[editor?.name]}
                     disabled={this.getColumnDisabled(row, editor?.name)}
                     context={this.context}

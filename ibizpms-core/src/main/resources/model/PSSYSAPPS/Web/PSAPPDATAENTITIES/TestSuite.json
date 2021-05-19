@@ -590,7 +590,6 @@
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "Create",
-    "dataAccessAction" : "SRFUR__TESTSU_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestSuiteEditView.json",
@@ -618,7 +617,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
     "codeName" : "EditsuiteDash",
-    "dataAccessAction" : "SRFUR__TESTSU_EDITSUITE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestSuiteEditView.json",
@@ -649,7 +647,6 @@
     "caption" : "删除",
     "codeName" : "DeleteDash",
     "confirmMsg" : "您确认要删除该套件吗？",
-    "dataAccessAction" : "SRFUR__TESTSU_DELETE_BUT",
     "fullCodeName" : "TestSuite_DeleteDash",
     "name" : "删除（操作栏）",
     "getPSAppDEMethod" : {
@@ -679,7 +676,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "关联用例",
     "codeName" : "linkCaseDash",
-    "dataAccessAction" : "SRFUR__TESTSU_LINKCASE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CasesuiteLinkCaseGridView.json",

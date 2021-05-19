@@ -415,7 +415,7 @@ export class FormControlBase extends MainControlBase {
      */
     public load(opt: any = {}): void {
         if (!this.loadAction) {
-            this.$throw( `${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.loadaction') as string));
+            this.$throw( `${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.loadaction') as string),'load');
             return;
         }
         const arg: any = { ...opt };
@@ -425,7 +425,7 @@ export class FormControlBase extends MainControlBase {
         get.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                this.$throw(response);
+                this.$throw(response,'load');
                 return;
             }
             const data = response.data;
@@ -452,7 +452,7 @@ export class FormControlBase extends MainControlBase {
      */
     public loadDraft(opt: any = {}, mode?: string): void {
         if (!this.loaddraftAction) {
-            this.$throw((this.$t('app.searchForm.notConfig.loaddraftAction') as string));
+            this.$throw((this.$t('app.searchForm.notConfig.loaddraftAction') as string),'loadDraft');
             return;
         }
         const arg: any = { ...opt };
@@ -462,7 +462,7 @@ export class FormControlBase extends MainControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                this.$throw(response);
+                this.$throw(response,'loadDraft');
                 return;
             }
             const data = response.data;
@@ -493,7 +493,7 @@ export class FormControlBase extends MainControlBase {
             });
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response);
+            this.$throw(response,'loadDraft');
         });
     }
 

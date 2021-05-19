@@ -199,7 +199,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "详情",
         "codeName" : "LookDaily",
-        "dataAccessAction" : "DAILY",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzDailyDailyMobTabExpView.json",
@@ -234,7 +233,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "详情",
         "codeName" : "LookWeekly",
-        "dataAccessAction" : "WEEKLY",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzWeeklyUsr2MobTabExpViewMyTiJiao.json",
@@ -275,7 +273,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "详情",
         "codeName" : "LookMonthy",
-        "dataAccessAction" : "MONTHLY",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzMonthlyMainInfoMobTabExpView.json",
@@ -316,7 +313,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "详情",
         "codeName" : "LookReportly",
-        "dataAccessAction" : "REPORTLY",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzReportlyMainInfoMobEditView.json",

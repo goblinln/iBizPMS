@@ -2,7 +2,10 @@ package cn.ibizlab.pms.core.runtime;
 
 import cn.ibizlab.pms.util.client.IBZUAAFeignClient;
 import cn.ibizlab.pms.util.client.IBZTPSFeignClient;
+import cn.ibizlab.pms.util.domain.SysAudit;
+import cn.ibizlab.pms.util.domain.SysEvent;
 import cn.ibizlab.pms.util.domain.SysLog;
+import cn.ibizlab.pms.util.domain.SysPO;
 import cn.ibizlab.pms.util.helper.QueryContextHelper;
 import lombok.extern.slf4j.Slf4j;
 import cn.ibizlab.pms.util.security.*;
@@ -269,8 +272,8 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
 
     @Override
     public void log(int nLogLevel, String strCat, String strInfo, Object objData) {
-        IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
         try{
+            IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
             SysLog sysLog = new SysLog();
             sysLog.setLoglevel(nLogLevel);
             sysLog.setCat(strCat);
@@ -280,6 +283,58 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
             tps.syslog(sysLog);
         }catch (Exception e){
             log.error(String.format("登记系统日志发生错误：%s",e.getMessage()));
+        }
+    }
+
+    @Override
+    public void logAudit(int nLogLevel, String strCat, String strInfo, String strPersonId, String strAddress, Object objData) {
+        try{
+            IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
+            SysAudit sysAudit = new SysAudit();
+            sysAudit.setLoglevel(nLogLevel);
+            sysAudit.setCat(strCat);
+            sysAudit.setInfo(strInfo);
+            sysAudit.setAddress(strAddress);
+            if(objData != null)
+                sysAudit.setObjdata(MAPPER.writeValueAsString(objData));
+            tps.audit(sysAudit);
+        }catch (Exception e){
+            log.error(String.format("登记系统审计发生错误：%s",e.getMessage()));
+        }
+    }
+
+    @Override
+    public void logEvent(int nLogLevel, String strCat, String strInfo, Object objData) {
+        try{
+            IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
+            SysEvent sysEvent = new SysEvent();
+            sysEvent.setLoglevel(nLogLevel);
+            sysEvent.setCat(strCat);
+            sysEvent.setInfo(strInfo);
+            if(objData != null)
+                sysEvent.setObjdata(MAPPER.writeValueAsString(objData));
+            tps.event(sysEvent);
+        }catch (Exception e){
+            log.error(String.format("登记系统事件发生错误：%s",e.getMessage()));
+        }
+    }
+
+    @Override
+    public void logPO(int nLogLevel, String strCat, String strInfo, String strDEName, String strAction, long nTime, Object objData) {
+        try{
+            IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
+            SysPO sysPO = new SysPO();
+            sysPO.setLoglevel(nLogLevel);
+            sysPO.setCat(strCat);
+            sysPO.setInfo(strInfo);
+            sysPO.setDe(strDEName);
+            sysPO.setAction(strAction);
+            sysPO.setTime(nTime);
+            if(objData != null)
+                sysPO.setObjdata(MAPPER.writeValueAsString(objData));
+            tps.po(sysPO);
+        }catch (Exception e){
+            log.error(String.format("登记系统优化日志发生错误：%s",e.getMessage()));
         }
     }
 

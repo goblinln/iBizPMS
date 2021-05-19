@@ -21,6 +21,11 @@
       background: #ffffff !important;
       border-radius: 10px !important;
   }
+  //火狐浏览器滚动条样式
+  .el-table__body-wrapper {
+    scrollbar-color: var(--app-background-color-scrollbar) #ffffff; /* 滑块颜色  滚动条背景颜色 */
+    scrollbar-width: thin; /* 滚动条宽度有三种：thin、auto、none */
+  }
   /*表格文字过长省略*/
   .el-table th > .cell,
   .el-table td.edit-cell > .cell {

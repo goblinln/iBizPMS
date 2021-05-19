@@ -200,7 +200,6 @@
         "actionTarget" : "NONE",
         "caption" : "创建发布",
         "codeName" : "quickCreate",
-        "dataAccessAction" : "SRFUR__PRODSTA_RELCRT_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ReleaseQuickCreateView.json",
@@ -726,10 +725,8 @@
           "name" : "ub25eed2",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "关联需求",
             "codeName" : "linkstory",
-            "dataAccessAction" : "SRFUR__RELEASE_COMMON",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryUsr2MPickupView.json",
@@ -794,10 +791,8 @@
           "name" : "u3abf82d",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "关联bug",
             "codeName" : "linkbug",
-            "dataAccessAction" : "SRFUR__RELEASE_COMMON",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMPickupView4.json",
@@ -856,10 +851,8 @@
           "name" : "u3ffc596",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "停止维护",
             "codeName" : "terminal",
-            "dataAccessAction" : "SRFUR__RELEASE_TERMINATE",
             "fullCodeName" : "Release_terminal",
             "name" : "停止维护",
             "getPSAppDEMethod" : {
@@ -890,10 +883,8 @@
           "name" : "u5669a69",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "激活",
             "codeName" : "active",
-            "dataAccessAction" : "SRFUR__RELEASE_ACTIVE",
             "fullCodeName" : "Release_active",
             "name" : "激活",
             "getPSAppDEMethod" : {
@@ -925,10 +916,8 @@
           "name" : "u1f38f89",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "quickEdit",
-            "dataAccessAction" : "SRFUR__RELEASE_COMMON",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ReleaseEditView.json",
@@ -991,11 +980,9 @@
           "name" : "udc5c646",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "删除",
             "codeName" : "remove",
             "confirmMsg" : "删除后数据可能无法恢复，是否删除？",
-            "dataAccessAction" : "SRFUR__RELEASE_COMMON",
             "fullCodeName" : "Release_remove",
             "name" : "删除",
             "getPSAppDEMethod" : {

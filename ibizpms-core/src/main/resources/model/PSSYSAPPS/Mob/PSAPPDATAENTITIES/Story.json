@@ -3221,7 +3221,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "变更",
     "codeName" : "ChangeStoryDetailMob",
-    "dataAccessAction" : "SRFUR__STORY_CHANGED_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryChangeMobOptionView.json",
@@ -3356,7 +3355,6 @@
     "actionTarget" : "NONE",
     "caption" : "按照计划关联",
     "codeName" : "MobAccordingToPlanLinkStory",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryMobOptionView.json",
@@ -3396,7 +3394,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "指派",
     "codeName" : "AssignToMob",
-    "dataAccessAction" : "SRFUR__STORY_ASS_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryAsMobOptionView.json",
@@ -3425,7 +3422,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "评审",
     "codeName" : "ReviewStoryMob",
-    "dataAccessAction" : "SRFUR__STORY_REVIEW_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryRMobOptionView.json",
@@ -3451,7 +3447,6 @@
     "actionTarget" : "NONE",
     "caption" : "关联需求",
     "codeName" : "projectLinkStoriesMob",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryUsr3MobMPickupView.json",
@@ -3501,7 +3496,6 @@
     "caption" : "删除",
     "codeName" : "deleteMob",
     "confirmMsg" : "确认要删除，删除操作将不可恢复？",
-    "dataAccessAction" : "SRFUR__STORY_DELETE_BUT",
     "fullCodeName" : "Story_deleteMob",
     "name" : "删除（移动端）",
     "getPSAppDEMethod" : {
@@ -3529,7 +3523,6 @@
     "caption" : "移除关联",
     "codeName" : "UnlinkStoryMob",
     "confirmMsg" : "是否移除需求关联",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "fullCodeName" : "Story_UnlinkStoryMob",
     "name" : "取消计划关联（移动端）",
     "getPSAppDEMethod" : {
@@ -3568,7 +3561,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "关闭",
     "codeName" : "CloseStoryMob",
-    "dataAccessAction" : "SRFUR__STORY_CLOSED_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryCMobOptionView.json",
@@ -3597,7 +3589,6 @@
     "caption" : "移除",
     "codeName" : "ProjectUnlinkStoryMob",
     "confirmMsg" : "您确定从该项目中移除该需求吗？",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "fullCodeName" : "Story_ProjectUnlinkStoryMob",
     "name" : "移除项目关联（移动端）",
     "getPSAppDEMethod" : {
@@ -3688,7 +3679,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
     "codeName" : "OpenBaseInfoEditViewMob",
-    "dataAccessAction" : "SRFUR__STORY_EDIT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryEditMobEditView.json",
@@ -3716,7 +3706,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "取消收藏",
     "codeName" : "StoryNFavoritesMob",
-    "dataAccessAction" : "SRFUR__STORY_FAVOR_BUT",
     "fullCodeName" : "Story_StoryNFavoritesMob",
     "name" : "取消收藏（移动端）",
     "getPSAppDEMethod" : {
@@ -3742,7 +3731,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "移除关联",
     "codeName" : "releaseUnlinkStory",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "fullCodeName" : "Story_releaseUnlinkStory",
     "name" : "移除关联（发布—需求）",
     "getPSAppDEMethod" : {
@@ -3779,11 +3767,9 @@
     "id" : "releaseUnlinkStory@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "解绑需求",
     "codeName" : "buildUnlinkStory",
     "confirmMsg" : "您确认移除该需求吗？",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "fullCodeName" : "Story_buildUnlinkStory",
     "name" : "解除绑定（版本——需求）",
     "getPSAppDEMethod" : {
@@ -3843,7 +3829,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "收藏",
     "codeName" : "StoryFavoritesMob",
-    "dataAccessAction" : "SRFUR__STORY_NFAVOR_BUT",
     "fullCodeName" : "Story_StoryFavoritesMob",
     "name" : "收藏（移动端）",
     "getPSAppDEMethod" : {
@@ -3890,7 +3875,6 @@
     "actionTarget" : "NONE",
     "caption" : "新建需求",
     "codeName" : "MobCreate",
-    "dataAccessAction" : "SRFUR__STORY_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryNewMobEditView.json",

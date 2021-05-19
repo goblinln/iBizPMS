@@ -87,7 +87,7 @@ export class AppGanttBase extends GanttControlBase {
                     <gantt-elastic 
                         class="gantt"
                         tasks={this.tasks}
-                        options={this.getOptions()}
+                        options={this.options}
                         dynamic-style={this.dynamicStyle}
                         on-taskList-item-dblclick={($event: any) => this.taskClick($event)}
                         on-task-item-expand={(task: any) => this.taskItemExpand(task)}>

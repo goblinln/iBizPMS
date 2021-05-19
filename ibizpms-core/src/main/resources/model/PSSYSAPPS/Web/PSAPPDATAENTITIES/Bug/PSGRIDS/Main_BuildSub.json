@@ -321,10 +321,8 @@
         "name" : "uf192c0e",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "确认",
           "codeName" : "ConfirmBug",
-          "dataAccessAction" : "SRFUR__BUG_CONFIRM_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugConfirmView.json",
@@ -356,10 +354,8 @@
         "name" : "u2ab948e",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "解决",
           "codeName" : "ResolveBug",
-          "dataAccessAction" : "SRFUR__BUG_RESOLVE_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugResolveView.json",
@@ -390,10 +386,8 @@
         "name" : "u0d5407b",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "关闭",
           "codeName" : "CloseBug",
-          "dataAccessAction" : "SRFUR__BUG_CLOSE_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCloseView.json",
@@ -454,10 +448,8 @@
         "name" : "u28714d1",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "编辑",
           "codeName" : "MainEdit",
-          "dataAccessAction" : "SRFUR__BUG_EDIT_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainEditView.json",

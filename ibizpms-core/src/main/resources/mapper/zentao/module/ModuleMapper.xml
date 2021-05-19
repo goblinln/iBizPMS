@@ -230,7 +230,7 @@
                 <![CDATA[ AND t1.DELETED = '0' ]]>
             </if>
 			<if test="true">
-                <![CDATA[ AND ( t1.`TYPE` = 'line'  AND  t1.`ORGID` =  #{srf.sessioncontext.srforgid} ) ]]>
+                <![CDATA[ AND ( t1.`TYPE` = 'line' ) ]]>
             </if>
 			<include refid="searchMode" />
 		</trim>

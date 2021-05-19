@@ -551,7 +551,8 @@ export class AppSearchFormBase extends SearchFormControlBase {
                     <i-col span="24" class="search-action-footer">
                         {this.historyItems?.length>0 ? 
                         <el-select
-                            size="small" 
+                            size="small"
+                            popper-class="search-action-select"
                             value={this.selectItem}
                             on-change={this.onFilterChange.bind(this)}>
                                 {this.historyItems.map((item: any)=> {
@@ -560,7 +561,12 @@ export class AppSearchFormBase extends SearchFormControlBase {
                                             key={item.value}
                                             label={item.name}
                                             value={item.value}
-                                            ></el-option>
+                                            >
+                                                <div on-click={() => { if (this.selectItem == item.value) { this.data = JSON.parse(JSON.stringify(item.data)); } }}>
+                                                    <span>{item.name}</span>
+                                                    <i class="el-icon-close" on-click={this.removeHistoryItem.bind(this, item)}/>
+                                                </div>
+                                            </el-option>
                                     )
                                 })}
                             </el-select> : null}

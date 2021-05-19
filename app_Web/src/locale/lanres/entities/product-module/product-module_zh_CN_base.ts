@@ -104,10 +104,6 @@ function getLocaleResourceBase(){
 			},
 		},
 		gridviewtoolbar_toolbar: {
-			'deuiaction1_syncfromibiz': {
-				caption: commonLogic.appcommonhandle("同步",null),
-				tip: commonLogic.appcommonhandle("同步",null),
-			},
 			'deuiaction2': {
 				caption: commonLogic.appcommonhandle("新建行",null),
 				tip: commonLogic.appcommonhandle("新建行",null),

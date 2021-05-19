@@ -1,10 +1,7 @@
 {
+  "customCond" : "['&',('RD','=',#{srf.sessioncontext.srfloginname}),('ACL','=',')private')]",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Maintain_RD.json",
   "name" : "产品维护（发布负责人）",
-  "getPSDEDataSet" : {
-    "modelref" : true,
-    "id" : "RDQuery"
-  },
   "getPSDEUserRoleOPPrivs" : [ {
     "dataAccessAction" : "UPDATE",
     "name" : "Product_Maintain_RD_UPDATE",

@@ -237,10 +237,8 @@
         "name" : "uacd5424",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "编辑",
           "codeName" : "Edits",
-          "dataAccessAction" : "SRFUR__REPORT_EDIT_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportMainEditEditView.json",
@@ -273,11 +271,9 @@
         "name" : "uc890d3d",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "删除",
           "codeName" : "Delete",
           "confirmMsg" : "是否删除该报告？",
-          "dataAccessAction" : "SRFUR__REPORT_DELETE_BUT",
           "fullCodeName" : "TestReport_Delete",
           "name" : "删除",
           "getPSAppDEMethod" : {

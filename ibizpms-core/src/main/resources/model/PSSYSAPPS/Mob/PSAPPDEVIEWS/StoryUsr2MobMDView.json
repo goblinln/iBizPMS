@@ -460,7 +460,6 @@
         "actionTarget" : "NONE",
         "caption" : "新建需求",
         "codeName" : "MobCreate",
-        "dataAccessAction" : "SRFUR__STORY_CREATE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryNewMobEditView.json",
@@ -511,7 +510,6 @@
         "actionTarget" : "NONE",
         "caption" : "关联需求",
         "codeName" : "projectLinkStoriesMob",
-        "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryUsr3MobMPickupView.json",
@@ -578,7 +576,6 @@
         "actionTarget" : "NONE",
         "caption" : "按照计划关联",
         "codeName" : "MobAccordingToPlanLinkStory",
-        "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryMobOptionView.json",

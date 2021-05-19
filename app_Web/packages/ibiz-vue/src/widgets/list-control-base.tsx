@@ -193,7 +193,7 @@ export class ListControlBase extends MDControlBase {
             try {
                 if (Object.is(item.rowDataState, 'create')) {
                     if (!this.createAction) {
-                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notConfig.createAction') as string));
+                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notConfig.createAction') as string),'save');
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
                         this.ctrlBeginLoading();
@@ -203,7 +203,7 @@ export class ListControlBase extends MDControlBase {
                     }
                 } else if (Object.is(item.rowDataState, 'update')) {
                     if (!this.updateAction) {
-                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notConfig.updateAction') as string));
+                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notConfig.updateAction') as string),'save');
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
                         if (this.appDeCodeName && item[this.appDeCodeName]) {
@@ -225,12 +225,12 @@ export class ListControlBase extends MDControlBase {
         this.refresh();
         if (errorItems.length === 0) {
             if(args?.showResultInfo || (args && !args.hasOwnProperty('showResultInfo'))){
-                this.$success((this.$t('app.commonWords.saveSuccess') as string));
+                this.$success((this.$t('app.commonWords.saveSuccess') as string),'save');
             }
         } else {
             errorItems.forEach((item: any, index: number) => {
-                this.$throw(item.majorentityname + (this.$t('app.commonWords.saveFailed') as string) + '!');
-                this.$throw(errorMessage[index]);
+                this.$throw(item.majorentityname + (this.$t('app.commonWords.saveFailed') as string) + '!','save');
+                this.$throw(errorMessage[index],'save');
             });
         }
         return successItems;
@@ -275,7 +275,7 @@ export class ListControlBase extends MDControlBase {
      */
     public load(opt: any = {}): void {
         if (!this.fetchAction) {
-            this.$throw('视图列表fetchAction参数未配置');
+            this.$throw('视图列表fetchAction参数未配置','load');
             return;
         }
         const arg: any = { ...opt };
@@ -314,7 +314,7 @@ export class ListControlBase extends MDControlBase {
             (response: any) => {
                 _this.ctrlEndLoading();
                 if (!response || response.status !== 200) {
-                    this.$throw(response);
+                    this.$throw(response,'load');
                     return;
                 }
                 const data: any = response.data;
@@ -354,7 +354,7 @@ export class ListControlBase extends MDControlBase {
             },
             (response: any) => {
                 this.ctrlEndLoading();
-                this.$throw(response);
+                this.$throw(response,'load');
             }
         )
     }
@@ -446,7 +446,7 @@ export class ListControlBase extends MDControlBase {
      */
     public async remove(items: any[]): Promise<any> {
         if (!this.removeAction) {
-            this.$throw(`${this.name}列表removeAction参数未配置`);
+            this.$throw(`${this.name}列表removeAction参数未配置`,'remove');
             return;
         }
         if (items.length === 0) {
@@ -488,10 +488,10 @@ export class ListControlBase extends MDControlBase {
                 post.then((response: any) => {
                     this.ctrlEndLoading();
                     if (!response || response.status !== 200) {
-                        this.$throw('删除数据失败,' + response.info);
+                        this.$throw('删除数据失败,' + response.info,'remove');
                         return;
                     } else {
-                        this.$success('删除成功!');
+                        this.$success('删除成功!','remove');
                     }
                     //删除items中已删除的项
                     items.forEach((data: any) => {
@@ -511,7 +511,7 @@ export class ListControlBase extends MDControlBase {
                     resolve(response);
                 }).catch((response: any) => {
                     this.ctrlEndLoading();
-                    this.$throw(response);
+                    this.$throw(response,'remove');
                     reject(response);
                 });
             });

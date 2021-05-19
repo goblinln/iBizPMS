@@ -218,7 +218,6 @@
         "actionTarget" : "NONE",
         "caption" : "关联Bug",
         "codeName" : "PlanRelationBug",
-        "dataAccessAction" : "SRFUR__BUILD_LINK_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMPickupView.json",

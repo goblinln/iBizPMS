@@ -805,7 +805,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "指派",
           "codeName" : "AssingToBugMob",
-          "dataAccessAction" : "SRFUR__BUG_ASSIGNTO_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugAssMobOptionView.json",
@@ -840,7 +839,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "确认",
           "codeName" : "ConfirmBugMob",
-          "dataAccessAction" : "SRFUR__BUG_CONFIRM_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugCMobOptionView.json",
@@ -875,7 +873,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "激活",
           "codeName" : "ActivationMob",
-          "dataAccessAction" : "SRFUR__BUG_ACTIVATE_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugACMobOptionView.json",
@@ -909,7 +906,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "解决",
           "codeName" : "ResolveBugMob",
-          "dataAccessAction" : "SRFUR__BUG_RESOLVE_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugRMobOptionView.json",
@@ -944,7 +940,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "MobMainEdit",
-          "dataAccessAction" : "SRFUR__BUG_EDIT_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugEditNewMobEditView.json",
@@ -977,7 +972,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "关闭",
           "codeName" : "CloseBugMob",
-          "dataAccessAction" : "SRFUR__BUG_CLOSE_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugCloseMobOptionView.json",

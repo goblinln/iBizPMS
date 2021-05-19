@@ -136,7 +136,7 @@ export class AppGlobalService {
                 this.LastRecord(args, contextJO, params, $event, xData, actionContext, srfParentDeName);
                 break;
             default:
-                actionContext.$warning(`${tag}未支持`);
+                actionContext.$warning(`${tag}未支持`,'executeGlobalAction');
         }
     }
 
@@ -153,7 +153,7 @@ export class AppGlobalService {
      * @memberof AppGlobalService
      */
     public HELP(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
-        actionContext.$throw('帮助未支持');
+        actionContext.$throw('帮助未支持','HELP');
     }
 
     /**
@@ -280,7 +280,7 @@ export class AppGlobalService {
             }
             actionContext.opendata([{ ...data }], params, $event, xData);
         } else {
-            actionContext.$throw('opendata 视图处理逻辑不存在，请添加!');
+            actionContext.$throw('opendata 视图处理逻辑不存在，请添加!','Edit');
         }
     }
 
@@ -307,7 +307,7 @@ export class AppGlobalService {
             }
             actionContext.opendata([{ ...data }], params, $event, xData);
         } else {
-            actionContext.$throw('opendata 视图处理逻辑不存在，请添加!');
+            actionContext.$throw('opendata 视图处理逻辑不存在，请添加!','View');
         }
     }
 
@@ -402,7 +402,7 @@ export class AppGlobalService {
         //         actionContext.engine.load();
         //     }  
         // }else{
-        //     actionContext.$warning('请确认操作路径是否正确');
+        //     actionContext.$warning('请确认操作路径是否正确','FirstRecord');
         // }
     }
 
@@ -788,7 +788,7 @@ export class AppGlobalService {
             const data: any = {};
             actionContext.newdata([{ ...data }], [{ ...data }], params, $event, xData);
         } else {
-            actionContext.$throw('newdata 视图处理逻辑不存在，请添加!');
+            actionContext.$throw('newdata 视图处理逻辑不存在，请添加!','New');
         }
     }
 
@@ -811,7 +811,7 @@ export class AppGlobalService {
         } else if (xData.newRow && xData.newRow instanceof Function) {
             xData.newRow([{ ...data }], params, $event, xData);
         } else {
-            actionContext.$throw('newRow 视图处理逻辑不存在，请添加!');
+            actionContext.$throw('newRow 视图处理逻辑不存在，请添加!','NewRow');
         }
     }
 

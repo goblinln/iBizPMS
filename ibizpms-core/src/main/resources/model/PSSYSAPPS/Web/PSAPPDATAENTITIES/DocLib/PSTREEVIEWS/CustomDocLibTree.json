@@ -135,7 +135,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "编辑",
         "codeName" : "EditCustomDocLib",
-        "dataAccessAction" : "SRFUR__DOCLIB_EDIT_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2EditView.json",
@@ -210,7 +209,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "维护分类",
         "codeName" : "WeiHuFenLei",
-        "dataAccessAction" : "SRFUR__DOCLIBMODULE_MAINTENANCE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleTreeExpView.json",
@@ -578,7 +576,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "EditCustomDocLib",
-          "dataAccessAction" : "SRFUR__DOCLIB_EDIT_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUsr2EditView.json",
@@ -653,7 +650,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "维护分类",
           "codeName" : "WeiHuFenLei",
-          "dataAccessAction" : "SRFUR__DOCLIBMODULE_MAINTENANCE_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibModuleTreeExpView.json",

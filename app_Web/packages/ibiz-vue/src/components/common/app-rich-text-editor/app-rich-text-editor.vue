@@ -267,12 +267,8 @@ export default class AppRichTextEditor extends Vue {
         this.init();
         const ele: any = this.isDrawer(this.$el);
         if (ele) {
-            const strs = ele.style.transform.split(' ');
-            strs.forEach((str: string) => {
-                let num: any = str.indexOf("translateX") >= 0?str.match(/\d+/g):null;
-                if (num && num.length > 0) {
-                  this.editorClass = this.editorClass + '-' + num[0];
-                }
+            ele.style.transform.replace(/translateX\(-?(\d+)%?(px)?\)\s/i,(match: string, p1: string) => {
+              this.editorClass = this.editorClass + '-' + parseInt(p1);
             });
         }
     }
@@ -579,17 +575,7 @@ export default class AppRichTextEditor extends Vue {
 .tox-statusbar__text-container {
     display: none !important;
 }
-.app-rich-text-editor-0 {
-    width: 100%;
-    .tox-fullscreen {
-        height: 100% !important;
-        transform: translateX(100%);
-    }
-    .tox-blocker {
-        transform: translateX(100%);
-    }
-}
-.app-rich-text-editor-100 {
+.app-rich-text-editor,.app-rich-text-editor-0,.app-rich-text-editor-100 {
     width: 100%;
     .tox-fullscreen {
         height: 100% !important;

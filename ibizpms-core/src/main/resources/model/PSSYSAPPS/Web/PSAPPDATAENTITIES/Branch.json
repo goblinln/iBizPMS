@@ -488,10 +488,8 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "删除",
     "codeName" : "Delete",
-    "dataAccessAction" : "SRFUR__UNIVERSALDELETE",
     "fullCodeName" : "Branch_Delete",
     "name" : "删除",
     "getPSAppDEMethod" : {
@@ -518,7 +516,6 @@
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "Create",
-    "dataAccessAction" : "SRFUR__UNIVERSALDELETE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BranchPMEditView.json",
@@ -544,10 +541,8 @@
     "id" : "Create@Branch"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "Edit",
-    "dataAccessAction" : "SRFUR__UNIVERSALDELETE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BranchPMEditView.json",

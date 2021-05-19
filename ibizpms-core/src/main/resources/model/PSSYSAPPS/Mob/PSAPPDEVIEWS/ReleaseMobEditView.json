@@ -1295,7 +1295,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "激活",
         "codeName" : "MobActive",
-        "dataAccessAction" : "SRFUR__RELEASE_ACTIVE",
         "fullCodeName" : "Release_MobActive",
         "name" : "激活（移动端）",
         "getPSAppDEMethod" : {
@@ -1338,7 +1337,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "停止维护",
         "codeName" : "MobTerminal",
-        "dataAccessAction" : "SRFUR__RELEASE_TERMINATE",
         "fullCodeName" : "Release_MobTerminal",
         "name" : "停止维护（移动端）",
         "getPSAppDEMethod" : {
@@ -1427,7 +1425,6 @@
         "caption" : "删除",
         "codeName" : "MobRemove",
         "confirmMsg" : "删除后数据可能无法恢复，是否删除？",
-        "dataAccessAction" : "SRFUR__RELEASE_COMMON",
         "fullCodeName" : "Release_MobRemove",
         "name" : "删除（移动端）",
         "getPSAppDEMethod" : {

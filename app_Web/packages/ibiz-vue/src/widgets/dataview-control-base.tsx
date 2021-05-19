@@ -414,7 +414,7 @@ export class DataViewControlBase extends MDControlBase {
      */
     public load(opt: any = {}, isReset: boolean = false) {
         if (!this.fetchAction) {
-            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notConfig.fetchAction') as string));
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notConfig.fetchAction') as string),'load');
             return;
         }
         const arg: any = {};
@@ -446,7 +446,7 @@ export class DataViewControlBase extends MDControlBase {
                 (response: any) => {
                     this.ctrlEndLoading();
                     if (!response || response.status !== 200) {
-                        this.$throw(response);
+                        this.$throw(response,'load');
                         return;
                     }
                     const data: any = response.data;
@@ -495,7 +495,7 @@ export class DataViewControlBase extends MDControlBase {
                 },
                 (response: any) => {
                     this.ctrlEndLoading();
-                    this.$throw(response);
+                    this.$throw(response,'load');
                 },
             );
         }
@@ -599,7 +599,7 @@ export class DataViewControlBase extends MDControlBase {
      */
     public async remove(datas: any[]): Promise<any> {
         if (!this.removeAction) {
-            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.removeAction') as string));
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.removeAction') as string),'remove');
             return;
         }
         let _datas: any[] = [];
@@ -666,10 +666,10 @@ export class DataViewControlBase extends MDControlBase {
                 post.then((response: any) => {
                     this.ctrlEndLoading();
                     if (!response || response.status !== 200) {
-                        this.$throw(response);
+                        this.$throw(response,'remove');
                         return;
                     } else {
-                        this.$success(this.$t('app.commonWords.deleteSuccess') as string);
+                        this.$success(this.$t('app.commonWords.deleteSuccess') as string,'remove');
                     }
                     //删除items中已删除的项
                     _datas.forEach((data: any) => {
@@ -688,7 +688,7 @@ export class DataViewControlBase extends MDControlBase {
                     resolve(response);
                 }).catch((response: any) => {
                     this.ctrlEndLoading();
-                    this.$throw(response);
+                    this.$throw(response,'remove');
                     reject(response);
                 });
             });
@@ -730,7 +730,7 @@ export class DataViewControlBase extends MDControlBase {
             try {
                 if (Object.is(item.rowDataState, 'create')) {
                     if (!this.createAction) {
-                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notConfig.createAction') as string));
+                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notConfig.createAction') as string),'save');
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
                         this.ctrlBeginLoading();
@@ -745,7 +745,7 @@ export class DataViewControlBase extends MDControlBase {
                     }
                 } else if (Object.is(item.rowDataState, 'update')) {
                     if (!this.updateAction) {
-                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notConfig.updateAction') as string));
+                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.list.notConfig.updateAction') as string),'save');
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
                         //<#if de??>            if(this.controlInstance.getPSAppDataEntity){}
@@ -777,10 +777,10 @@ export class DataViewControlBase extends MDControlBase {
         this.$emit('ctrl-event', { controlname: this.controlInstance.name, action: 'save', data: successItems });
         this.refresh();
         if (errorItems.length === 0) {
-            this.$success(this.$t('app.commonWords.saveSuccess') as string);
+            this.$success(this.$t('app.commonWords.saveSuccess') as string,'save');
         } else {
             errorItems.forEach((item: any, index: number) => {
-                this.$throw(item.majorentityname + (this.$t('app.commonWords.saveFailed') as string) + '！');
+                this.$throw(item.majorentityname + (this.$t('app.commonWords.saveFailed') as string) + '!','save');
             });
         }
         return successItems;

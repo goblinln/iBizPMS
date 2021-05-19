@@ -153,7 +153,7 @@ export class SearchFormControlBase extends EditFormControlBase {
      */
     public loadDraft(opt: any = {},mode?:string): void {
         if(!this.loaddraftAction){
-            this.$throw('视图' + (this.$t('app.searchForm.notConfig.loaddraftAction') as string));
+            this.$throw('视图' + (this.$t('app.searchForm.notConfig.loaddraftAction') as string),'loadDraft');
             return;
         }
         const arg: any = { ...opt } ;
@@ -163,7 +163,7 @@ export class SearchFormControlBase extends EditFormControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                this.$throw(response);
+                this.$throw(response,'loadDraft');
                 return;
             }
 
@@ -195,7 +195,7 @@ export class SearchFormControlBase extends EditFormControlBase {
             });
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response);
+            this.$throw(response,'loadDraft');
         });
     }
 
@@ -282,6 +282,41 @@ export class SearchFormControlBase extends EditFormControlBase {
         let propip: any = this.$refs.propip;
         propip.handleMouseleave();
         // this.onSave();
+    }
+
+    /**
+     * 删除记录
+     *
+     * @return {*}
+     * @memberof SearchFormControlBase
+     */
+    public removeHistoryItem(item: any) {
+        if (!(item && item.name && item.value)) {
+            return;
+        }
+        const index = this.historyItems.findIndex((_item: any) => {
+            return _item.name == item.name && _item.value == _item.value;
+        });
+        if (index !== -1) {
+            this.historyItems.splice(index, 1);
+            if (this.selectItem == item.value) {
+                this.selectItem = this.historyItems.length > 0 ? this.historyItems[0].value : null;
+            }
+            let param: any = {};
+            Object.assign(param, {
+                model: JSON.parse(JSON.stringify(this.historyItems)),
+                appdeName: this.appDeCodeName,
+                modelid: this.modelId,
+                utilServiceName: this.utilServiceName,
+                ...this.viewparams
+            });
+            let post = this.service.saveModel(this.utilServiceName, this.context, param);
+            post.then((response: any) => {
+                this.ctrlEvent({ controlname: this.controlInstance.name, action: "save", data: response.data });
+            }).catch((response: any) => {
+                LogUtil.log(response);
+            });
+        }
     }
 
     /**

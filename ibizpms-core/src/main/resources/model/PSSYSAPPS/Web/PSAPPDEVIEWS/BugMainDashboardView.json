@@ -1286,7 +1286,6 @@
                   "actionTarget" : "NONE",
                   "caption" : "添加备注",
                   "codeName" : "AddComment",
-                  "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionOptionView.json",
@@ -1841,7 +1840,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "编辑",
                   "codeName" : "MainEditDash",
-                  "dataAccessAction" : "SRFUR__BUG_EDIT_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainEditView.json",
@@ -1874,7 +1872,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "关闭",
                   "codeName" : "CloseBugDash",
-                  "dataAccessAction" : "SRFUR__BUG_CLOSE_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCloseView.json",
@@ -1907,7 +1904,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "解决",
                   "codeName" : "ResolveBugDash",
-                  "dataAccessAction" : "SRFUR__BUG_RESOLVE_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugResolveView.json",
@@ -1940,7 +1936,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "指派",
                   "codeName" : "AssingToBugCz",
-                  "dataAccessAction" : "SRFUR__BUG_ASSIGNTO_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugAssingToView.json",
@@ -1973,7 +1968,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "确认",
                   "codeName" : "ConfirmBugDash",
-                  "dataAccessAction" : "SRFUR__BUG_CONFIRM_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugConfirmView.json",
@@ -2007,7 +2001,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "激活",
                   "codeName" : "Activation",
-                  "dataAccessAction" : "SRFUR__BUG_ACTIVATE_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugActivationView.json",
@@ -2040,7 +2033,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "提需求",
                   "codeName" : "toStory",
-                  "dataAccessAction" : "SRFUR__BUG_TOSTORY_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorytoStoryEditView.json",
@@ -2077,7 +2069,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "建用例",
                   "codeName" : "BuildUseCase",
-                  "dataAccessAction" : "SRFUR__BUG_CREATECASE_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainNewView.json",
@@ -2109,7 +2100,6 @@
                   "caption" : "删除",
                   "codeName" : "delete",
                   "confirmMsg" : "确认要删除，删除操作将不可恢复？",
-                  "dataAccessAction" : "SRFUR__BUG_DELETE_BUT",
                   "fullCodeName" : "Bug_delete",
                   "name" : "删除",
                   "getPSAppDEMethod" : {
@@ -3183,9 +3173,8 @@
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
-                        "colLG" : 6,
-                        "colMD" : 24,
-                        "layout" : "TABLE_24COL"
+                        "grow" : -1,
+                        "layout" : "FLEX"
                       },
                       "allowEmpty" : true,
                       "convertToCodeItemText" : true,
@@ -3230,9 +3219,8 @@
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
-                        "colLG" : 17,
-                        "colMD" : 24,
-                        "layout" : "TABLE_24COL"
+                        "grow" : -1,
+                        "layout" : "FLEX"
                       },
                       "allowEmpty" : true,
                       "emptyCaption" : false,
@@ -3241,8 +3229,7 @@
                       "showCaption" : true
                     } ],
                     "getPSLayout" : {
-                      "columnCount" : 24,
-                      "layout" : "TABLE_24COL"
+                      "layout" : "FLEX"
                     },
                     "getPSLayoutPos" : {
                       "colMD" : 24,
@@ -4471,9 +4458,8 @@
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
-                        "colLG" : 6,
-                        "colMD" : 24,
-                        "layout" : "TABLE_24COL"
+                        "grow" : -1,
+                        "layout" : "FLEX"
                       },
                       "allowEmpty" : true,
                       "convertToCodeItemText" : true,
@@ -4518,9 +4504,8 @@
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
-                        "colLG" : 17,
-                        "colMD" : 24,
-                        "layout" : "TABLE_24COL"
+                        "grow" : -1,
+                        "layout" : "FLEX"
                       },
                       "allowEmpty" : true,
                       "emptyCaption" : false,
@@ -4529,8 +4514,7 @@
                       "showCaption" : true
                     } ],
                     "getPSLayout" : {
-                      "columnCount" : 24,
-                      "layout" : "TABLE_24COL"
+                      "layout" : "FLEX"
                     },
                     "getPSLayoutPos" : {
                       "colMD" : 24,
@@ -4681,9 +4665,8 @@
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
-                        "colLG" : 6,
-                        "colMD" : 24,
-                        "layout" : "TABLE_24COL"
+                        "grow" : -1,
+                        "layout" : "FLEX"
                       },
                       "allowEmpty" : true,
                       "convertToCodeItemText" : true,
@@ -4728,9 +4711,8 @@
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
-                        "colLG" : 8,
-                        "colMD" : 24,
-                        "layout" : "TABLE_24COL"
+                        "grow" : -1,
+                        "layout" : "FLEX"
                       },
                       "allowEmpty" : true,
                       "emptyCaption" : false,
@@ -4759,9 +4741,8 @@
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
-                        "colLG" : 7,
-                        "colMD" : 7,
-                        "layout" : "TABLE_24COL"
+                        "grow" : -1,
+                        "layout" : "FLEX"
                       },
                       "getPSSysCss" : {
                         "cssName" : "textcenterred"
@@ -4773,8 +4754,7 @@
                       "showCaption" : true
                     } ],
                     "getPSLayout" : {
-                      "columnCount" : 24,
-                      "layout" : "TABLE_24COL"
+                      "layout" : "FLEX"
                     },
                     "getPSLayoutPos" : {
                       "colMD" : 24,
@@ -4888,9 +4868,8 @@
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
-                        "colLG" : 6,
-                        "colMD" : 24,
-                        "layout" : "TABLE_24COL"
+                        "grow" : -1,
+                        "layout" : "FLEX"
                       },
                       "allowEmpty" : true,
                       "convertToCodeItemText" : true,
@@ -4935,9 +4914,8 @@
                         "enableLinkView" : false
                       },
                       "getPSLayoutPos" : {
-                        "colLG" : 17,
-                        "colMD" : 24,
-                        "layout" : "TABLE_24COL"
+                        "grow" : -1,
+                        "layout" : "FLEX"
                       },
                       "allowEmpty" : true,
                       "emptyCaption" : false,
@@ -4946,8 +4924,7 @@
                       "showCaption" : true
                     } ],
                     "getPSLayout" : {
-                      "columnCount" : 24,
-                      "layout" : "TABLE_24COL"
+                      "layout" : "FLEX"
                     },
                     "getPSLayoutPos" : {
                       "colMD" : 24,
@@ -4956,88 +4933,103 @@
                     "infoGroupMode" : true,
                     "showCaption" : false
                   }, {
-                    "caption" : "最后修改者",
-                    "codeName" : "lasteditedby",
-                    "dataType" : 25,
+                    "actionGroupExtractMode" : "ITEM",
+                    "caption" : "分组面板",
+                    "codeName" : "grouppanel5",
                     "detailStyle" : "DEFAULT",
-                    "detailType" : "FORMITEM",
-                    "enableCond" : 0,
-                    "ignoreInput" : 3,
-                    "labelPos" : "LEFT",
-                    "labelWidth" : 100,
-                    "name" : "lasteditedby",
-                    "noPrivDisplayMode" : 1,
-                    "getPSAppDEField" : {
-                      "name" : "LASTEDITEDBY",
-                      "codeName" : "LastEditedBy"
-                    },
-                    "getPSEditor" : {
-                      "editorType" : "SPAN",
+                    "detailType" : "GROUPPANEL",
+                    "name" : "grouppanel5",
+                    "getPSDEFormDetails" : [ {
+                      "caption" : "最后修改者",
+                      "codeName" : "lasteditedby",
+                      "dataType" : 25,
+                      "detailStyle" : "DEFAULT",
+                      "detailType" : "FORMITEM",
+                      "enableCond" : 0,
+                      "ignoreInput" : 3,
+                      "labelPos" : "LEFT",
+                      "labelWidth" : 100,
                       "name" : "lasteditedby",
-                      "getPSAppCodeList" : {
-                        "modelref" : true,
-                        "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+                      "noPrivDisplayMode" : 1,
+                      "getPSAppDEField" : {
+                        "name" : "LASTEDITEDBY",
+                        "codeName" : "LastEditedBy"
                       },
-                      "editable" : false,
-                      "enableLinkView" : false
-                    },
-                    "getPSLayoutPos" : {
-                      "colLG" : 6,
-                      "colMD" : 24,
-                      "layout" : "TABLE_24COL"
-                    },
-                    "allowEmpty" : true,
-                    "convertToCodeItemText" : true,
-                    "emptyCaption" : false,
-                    "hidden" : false,
-                    "inputTipClosable" : false,
-                    "showCaption" : true
-                  }, {
-                    "caption" : "于",
-                    "codeName" : "lastediteddate",
-                    "dataType" : 5,
-                    "detailStyle" : "DEFAULT",
-                    "detailType" : "FORMITEM",
-                    "enableCond" : 0,
-                    "ignoreInput" : 3,
-                    "labelPos" : "LEFT",
-                    "labelWidth" : 30,
-                    "name" : "lastediteddate",
-                    "noPrivDisplayMode" : 1,
-                    "getPSAppDEField" : {
-                      "name" : "LASTEDITEDDATE",
-                      "codeName" : "LastEditedDate"
-                    },
-                    "getPSDEFDGroupLogics" : [ {
-                      "groupOP" : "AND",
-                      "logicCat" : "PANELVISIBLE",
-                      "logicType" : "GROUP",
-                      "name" : "表单成员[lastediteddate][面板显示]逻辑",
-                      "getPSDEFDLogics" : [ {
-                        "condOP" : "ISNOTNULL",
-                        "dEFDName" : "lastediteddate",
-                        "logicType" : "SINGLE",
-                        "name" : "lastediteddate 值不为空(NotNil)"
-                      } ],
-                      "relatedDetailNames" : [ "lastediteddate" ],
-                      "notMode" : false
-                    } ],
-                    "getPSEditor" : {
-                      "editorType" : "SPAN",
+                      "getPSEditor" : {
+                        "editorType" : "SPAN",
+                        "name" : "lasteditedby",
+                        "getPSAppCodeList" : {
+                          "modelref" : true,
+                          "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/UserRealName.json"
+                        },
+                        "editable" : false,
+                        "enableLinkView" : false
+                      },
+                      "getPSLayoutPos" : {
+                        "grow" : -1,
+                        "layout" : "FLEX"
+                      },
+                      "allowEmpty" : true,
+                      "convertToCodeItemText" : true,
+                      "emptyCaption" : false,
+                      "hidden" : false,
+                      "inputTipClosable" : false,
+                      "showCaption" : true
+                    }, {
+                      "caption" : "于",
+                      "codeName" : "lastediteddate",
+                      "dataType" : 5,
+                      "detailStyle" : "DEFAULT",
+                      "detailType" : "FORMITEM",
+                      "enableCond" : 0,
+                      "ignoreInput" : 3,
+                      "labelPos" : "LEFT",
+                      "labelWidth" : 30,
                       "name" : "lastediteddate",
-                      "editable" : false,
-                      "enableLinkView" : false
+                      "noPrivDisplayMode" : 1,
+                      "getPSAppDEField" : {
+                        "name" : "LASTEDITEDDATE",
+                        "codeName" : "LastEditedDate"
+                      },
+                      "getPSDEFDGroupLogics" : [ {
+                        "groupOP" : "AND",
+                        "logicCat" : "PANELVISIBLE",
+                        "logicType" : "GROUP",
+                        "name" : "表单成员[lastediteddate][面板显示]逻辑",
+                        "getPSDEFDLogics" : [ {
+                          "condOP" : "ISNOTNULL",
+                          "dEFDName" : "lastediteddate",
+                          "logicType" : "SINGLE",
+                          "name" : "lastediteddate 值不为空(NotNil)"
+                        } ],
+                        "relatedDetailNames" : [ "lastediteddate" ],
+                        "notMode" : false
+                      } ],
+                      "getPSEditor" : {
+                        "editorType" : "SPAN",
+                        "name" : "lastediteddate",
+                        "editable" : false,
+                        "enableLinkView" : false
+                      },
+                      "getPSLayoutPos" : {
+                        "grow" : -1,
+                        "layout" : "FLEX"
+                      },
+                      "allowEmpty" : true,
+                      "emptyCaption" : false,
+                      "hidden" : false,
+                      "inputTipClosable" : false,
+                      "showCaption" : true
+                    } ],
+                    "getPSLayout" : {
+                      "layout" : "FLEX"
                     },
                     "getPSLayoutPos" : {
-                      "colLG" : 17,
                       "colMD" : 24,
                       "layout" : "TABLE_24COL"
                     },
-                    "allowEmpty" : true,
-                    "emptyCaption" : false,
-                    "hidden" : false,
-                    "inputTipClosable" : false,
-                    "showCaption" : true
+                    "infoGroupMode" : true,
+                    "showCaption" : false
                   } ],
                   "getPSLayout" : {
                     "columnCount" : 24,

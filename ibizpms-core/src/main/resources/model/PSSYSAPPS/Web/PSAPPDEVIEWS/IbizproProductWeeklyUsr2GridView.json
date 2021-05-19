@@ -208,7 +208,6 @@
         "actionTarget" : "NONE",
         "caption" : "生成周报",
         "codeName" : "CreateProductReport",
-        "dataAccessAction" : "SRFUR__PRODUCT_MANAGER",
         "fullCodeName" : "IbizproProductWeekly_CreateProductReport",
         "name" : "生成周报",
         "getPSAppDEMethod" : {

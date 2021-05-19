@@ -1243,7 +1243,6 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "转Bug",
               "codeName" : "ToBug",
-              "dataAccessAction" : "SRFUR__CUTINTBEHAVIOR",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCaseToBugEditView.json",

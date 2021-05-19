@@ -164,10 +164,8 @@
         "name" : "u31efdd1",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "修改",
           "codeName" : "edit",
-          "dataAccessAction" : "SRFUR__WEEKLY_SUBMIT_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyEditViewEdit.json",
@@ -210,11 +208,9 @@
         "name" : "ufd17a6f",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "提交",
           "codeName" : "submitZZZ",
           "confirmMsg" : "确认现在提交吗？",
-          "dataAccessAction" : "SRFUR__WEEKLY_SUBMIT_BUT",
           "fullCodeName" : "IbzWeekly_submitZZZ",
           "name" : "提交(操作列)",
           "getPSAppDEMethod" : {

@@ -374,7 +374,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "激活",
         "codeName" : "MobActive",
-        "dataAccessAction" : "SRFUR__RELEASE_ACTIVE",
         "fullCodeName" : "Release_MobActive",
         "name" : "激活（移动端）",
         "getPSAppDEMethod" : {
@@ -407,7 +406,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "停止维护",
         "codeName" : "MobTerminal",
-        "dataAccessAction" : "SRFUR__RELEASE_TERMINATE",
         "fullCodeName" : "Release_MobTerminal",
         "name" : "停止维护（移动端）",
         "getPSAppDEMethod" : {

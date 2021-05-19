@@ -243,7 +243,6 @@
         "actionTarget" : "NONE",
         "caption" : "新建需求",
         "codeName" : "CreatePlan",
-        "dataAccessAction" : "SRFUR__STORY_CREATE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryPlanEditView.json",
@@ -301,7 +300,6 @@
         "actionTarget" : "NONE",
         "caption" : "关联需求",
         "codeName" : "PlanRelationStory",
-        "dataAccessAction" : "SRFUR__PROP_LSTORY_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView.json",
@@ -808,11 +806,9 @@
           "name" : "ufbd4e10",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "移除关联",
             "codeName" : "UnlinkStory",
             "confirmMsg" : "是否移除需求关联",
-            "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
             "fullCodeName" : "Story_UnlinkStory",
             "name" : "取消计划关联",
             "getPSAppDEMethod" : {

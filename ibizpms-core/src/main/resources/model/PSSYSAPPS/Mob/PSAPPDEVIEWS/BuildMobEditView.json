@@ -1286,7 +1286,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "编辑版本",
         "codeName" : "MobEditBuild",
-        "dataAccessAction" : "SRFUR__BUILD_EDIT_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BuildEditMobEditView.json",
@@ -1329,7 +1328,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "删除",
         "codeName" : "MobDelete",
-        "dataAccessAction" : "SRFUR__BUILD_DELETE_BUT",
         "fullCodeName" : "Build_MobDelete",
         "name" : "删除（移动端）",
         "getPSAppDEMethod" : {

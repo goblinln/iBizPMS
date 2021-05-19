@@ -984,7 +984,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "转Bug",
     "codeName" : "toBug",
-    "dataAccessAction" : "TOBUG",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugTodoEditView.json",
@@ -1040,11 +1039,9 @@
     "id" : "toBug@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "激活",
     "codeName" : "activate",
     "confirmMsg" : "您确定要激活这条待办吗？",
-    "dataAccessAction" : "ACTIVATE",
     "fullCodeName" : "Todo_activate",
     "name" : "todo激活",
     "getPSAppDEMethod" : {
@@ -1071,7 +1068,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "编辑",
     "codeName" : "edit1Cz",
-    "dataAccessAction" : "UPDATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoEditView.json",
@@ -1101,7 +1097,6 @@
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "TodoCreate",
-    "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoTodoCreateView.json",
@@ -1127,10 +1122,8 @@
     "id" : "TodoCreate@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "指派",
     "codeName" : "assignTo",
-    "dataAccessAction" : "ASSIGNTO",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoAssignToView.json",
@@ -1179,7 +1172,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "完成",
     "codeName" : "finishCz",
-    "dataAccessAction" : "FINISH",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoFinishView.json",
@@ -1203,11 +1195,9 @@
     "id" : "finishCz@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "删除",
     "codeName" : "delete",
     "confirmMsg" : "您确定要删除这条待办吗？",
-    "dataAccessAction" : "DELETE",
     "fullCodeName" : "Todo_delete",
     "name" : "todo删除",
     "getPSAppDEMethod" : {
@@ -1232,11 +1222,9 @@
     "id" : "delete@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "关闭",
     "codeName" : "close",
     "confirmMsg" : "您确定要关闭这条待办吗？",
-    "dataAccessAction" : "CLOSE",
     "fullCodeName" : "Todo_close",
     "name" : "todo关闭",
     "getPSAppDEMethod" : {
@@ -1263,7 +1251,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "转任务",
     "codeName" : "toTask",
-    "dataAccessAction" : "TOTASK",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTodoEditView.json",
@@ -1321,7 +1308,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "关闭",
     "codeName" : "closeCz",
-    "dataAccessAction" : "CLOSE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoCloseView.json",
@@ -1348,7 +1334,6 @@
     "caption" : "删除",
     "codeName" : "deleteCz",
     "confirmMsg" : "您确定要删除这条待办吗？",
-    "dataAccessAction" : "DELETE",
     "fullCodeName" : "Todo_deleteCz",
     "name" : "todo删除（操作栏）",
     "getNextPSUIAction" : {
@@ -1382,7 +1367,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "激活",
     "codeName" : "activateCz",
-    "dataAccessAction" : "ACTIVATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoActiviteView.json",
@@ -1408,7 +1392,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "指派",
     "codeName" : "assignToCz",
-    "dataAccessAction" : "ASSIGNTO",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoAssignToView.json",
@@ -1434,10 +1417,8 @@
     "id" : "assignToCz@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "edit1",
-    "dataAccessAction" : "UPDATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoEditView.json",
@@ -1465,11 +1446,9 @@
     "id" : "edit1@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "完成",
     "codeName" : "finish",
     "confirmMsg" : "您确定这条待办已经完成了吗？",
-    "dataAccessAction" : "FINISH",
     "fullCodeName" : "Todo_finish",
     "name" : "todo完成",
     "getPSAppDEMethod" : {

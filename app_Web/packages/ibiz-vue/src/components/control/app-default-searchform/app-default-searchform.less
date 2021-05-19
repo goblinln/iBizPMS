@@ -60,3 +60,19 @@
   right: 32px;
   border-radius: unset;
 }
+.search-action-select {
+  .el-select-dropdown__item {
+    .el-icon-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      display: none;
+    }
+    &:hover {
+      .el-icon-close {
+        display: block;
+      }
+    }
+  }
+}

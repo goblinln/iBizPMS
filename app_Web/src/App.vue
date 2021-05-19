@@ -26,12 +26,6 @@ export default class App extends Vue {
      */
     public created() {
         this.initThridParam();
-        setTimeout(() => {
-            const el = document.getElementById('app-loading-x');
-            if (el) {
-                el.style.display = 'none';
-            }
-        }, 300);
     }
 
     /**

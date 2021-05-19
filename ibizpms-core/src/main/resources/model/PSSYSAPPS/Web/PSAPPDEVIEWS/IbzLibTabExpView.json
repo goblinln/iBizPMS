@@ -1180,7 +1180,6 @@
                       "actionTarget" : "SINGLEKEY",
                       "caption" : "编辑",
                       "codeName" : "EditlibCz",
-                      "dataAccessAction" : "SRFUR__ADMIN",
                       "getFrontPSAppView" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzLibEditView.json",
@@ -1213,7 +1212,6 @@
                       "actionTarget" : "SINGLEKEY",
                       "caption" : "删除",
                       "codeName" : "DeleteCz",
-                      "dataAccessAction" : "SRFUR__ADMIN",
                       "fullCodeName" : "IbzLib_DeleteCz",
                       "name" : "删除（操作栏）",
                       "getPSAppDEMethod" : {

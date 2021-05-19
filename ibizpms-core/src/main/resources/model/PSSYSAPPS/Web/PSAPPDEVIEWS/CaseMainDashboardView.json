@@ -2119,7 +2119,6 @@
                   "actionTarget" : "NONE",
                   "caption" : "添加备注",
                   "codeName" : "AddComment",
-                  "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionOptionView.json",
@@ -2574,7 +2573,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "执行",
                   "codeName" : "ExecuteCz",
-                  "dataAccessAction" : "SRFUR__CASE_CASERUN_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseOptionView.json",
@@ -2607,7 +2605,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "结果",
                   "codeName" : "OpenTestRunResultViewCz",
-                  "dataAccessAction" : "SRFUR__CASE_RESULT_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseExcEditView.json",
@@ -2640,7 +2637,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "转Bug",
                   "codeName" : "NewBugByCaseResultCz",
-                  "dataAccessAction" : "SRFUR__CASE_TOBUG_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseToBugEditView.json",
@@ -2677,7 +2673,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "编辑",
                   "codeName" : "MainEditCz",
-                  "dataAccessAction" : "SRFUR__CASE_EDIT_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainEditView.json",
@@ -2711,7 +2706,6 @@
                   "caption" : "删除",
                   "codeName" : "deleteCz",
                   "confirmMsg" : "确认要删除，删除操作将不可恢复？",
-                  "dataAccessAction" : "SRFUR__CASE_DELETE_BUT",
                   "fullCodeName" : "Case_deleteCz",
                   "name" : "删除（操作栏）",
                   "getPSAppDEMethod" : {

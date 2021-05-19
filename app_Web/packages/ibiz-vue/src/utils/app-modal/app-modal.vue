@@ -283,10 +283,8 @@ export default class AppModalCompponent extends Vue {
         if ($event) {
             return;
         }
-        if (this.subject) {
-            if (this.tempResult && Object.is(this.tempResult.ret, 'OK')) {
-                this.subject.next(this.tempResult);
-            }
+        if (this.subject && this.tempResult) {
+            this.subject.next(this.tempResult);
         }
         setTimeout(() => {
             document.body.removeChild(this.$el);

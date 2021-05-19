@@ -1819,7 +1819,6 @@
                             "actionTarget" : "SINGLEKEY",
                             "caption" : "团队管理",
                             "codeName" : "TeamManagement",
-                            "dataAccessAction" : "SRFUR__PROJT_TM_BUT",
                             "getFrontPSAppView" : {
                               "modelref" : true,
                               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectTeamMainGridView_EditRow.json",
@@ -2250,7 +2249,6 @@
                         "actionTarget" : "NONE",
                         "caption" : "添加备注",
                         "codeName" : "AddComment",
-                        "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
                         "getFrontPSAppView" : {
                           "modelref" : true,
                           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionOptionView.json",
@@ -2682,7 +2680,6 @@
                         "actionTarget" : "SINGLEKEY",
                         "caption" : "延期",
                         "codeName" : "ProjectPutoff",
-                        "dataAccessAction" : "SRFUR__PROJ_DELAY_BUT",
                         "getFrontPSAppView" : {
                           "modelref" : true,
                           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView_Putoff.json",
@@ -2717,7 +2714,6 @@
                         "actionTarget" : "SINGLEKEY",
                         "caption" : "挂起",
                         "codeName" : "ProjectSuspend",
-                        "dataAccessAction" : "SRFUR__PROJ_SUSPEND_BUT",
                         "getFrontPSAppView" : {
                           "modelref" : true,
                           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView_Suspend.json",
@@ -2752,7 +2748,6 @@
                         "actionTarget" : "SINGLEKEY",
                         "caption" : "激活",
                         "codeName" : "ProjectActivate",
-                        "dataAccessAction" : "SRFUR__PROJ_ACTIVATION_BUT",
                         "getFrontPSAppView" : {
                           "modelref" : true,
                           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView_Activate.json",
@@ -2787,7 +2782,6 @@
                         "actionTarget" : "SINGLEKEY",
                         "caption" : "关闭",
                         "codeName" : "ProjectClose",
-                        "dataAccessAction" : "SRFUR__PROJ_CLOSED_BUT",
                         "getFrontPSAppView" : {
                           "modelref" : true,
                           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView_Close.json",
@@ -2822,7 +2816,6 @@
                         "actionTarget" : "SINGLEKEY",
                         "caption" : "编辑",
                         "codeName" : "ProjectEdit",
-                        "dataAccessAction" : "SRFUR__PROJ_EDIT_BUT",
                         "getFrontPSAppView" : {
                           "modelref" : true,
                           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectMainView_Edit.json",
@@ -2858,7 +2851,6 @@
                         "caption" : "删除",
                         "codeName" : "delete",
                         "confirmMsg" : "确认要删除，删除操作将不可恢复？",
-                        "dataAccessAction" : "SRFUR__PROJ_DELETE_BUT",
                         "fullCodeName" : "Project_delete",
                         "name" : "删除",
                         "getNextPSUIAction" : {

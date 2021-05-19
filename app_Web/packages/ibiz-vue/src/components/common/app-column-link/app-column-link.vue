@@ -96,7 +96,7 @@ export default class AppColumnLink extends Vue {
     public openLinkView($event: any): void {
         $event.stopPropagation();
         if (!this.data || !this.valueitem || !this.data[this.valueitem]) {
-            this.$throw((this.$t('components.appColumnLink.valueItemException') as string));
+            this.$throw((this.$t('components.appColumnLink.valueItemException') as string),'openLinkView');
             return;
         }
         // 公共参数处理
@@ -325,7 +325,7 @@ export default class AppColumnLink extends Vue {
      */
     public handlePublicParams(arg: any): boolean {
         if (!this.data) {
-            this.$throw((this.$t('components.appColumnLink.rowDataException') as string));
+            this.$throw((this.$t('components.appColumnLink.rowDataException') as string),'handlePublicParams');
             return false;
         }
         // 合并表单参数

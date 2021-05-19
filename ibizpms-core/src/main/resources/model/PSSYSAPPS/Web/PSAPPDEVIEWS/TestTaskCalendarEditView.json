@@ -575,7 +575,6 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "开始",
               "codeName" : "StartDash",
-              "dataAccessAction" : "SRFUR__TESTT_START_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskStartOptionView.json",
@@ -622,7 +621,6 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "关闭",
               "codeName" : "CloseDash",
-              "dataAccessAction" : "SRFUR__TESTT_CLOSED_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskCloseOptionView.json",
@@ -669,7 +667,6 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "阻塞",
               "codeName" : "BlockDash",
-              "dataAccessAction" : "SRFUR__TESTT_BLOCK_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskBlockOptionView.json",
@@ -714,10 +711,8 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "noPrivDisplayMode" : 1,
               "caption" : "编辑",
               "codeName" : "EditEdit",
-              "dataAccessAction" : "SRFUR__TESTT_EDIT_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView_Edit.json",
@@ -762,7 +757,6 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "查看",
               "codeName" : "Look",
-              "dataAccessAction" : "SRFUR__TESTT_OPEN_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMainTabExpView.json",
@@ -1178,7 +1172,6 @@
                     "actionTarget" : "NONE",
                     "caption" : "添加备注",
                     "codeName" : "AddComment",
-                    "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
                     "getFrontPSAppView" : {
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionOptionView.json",

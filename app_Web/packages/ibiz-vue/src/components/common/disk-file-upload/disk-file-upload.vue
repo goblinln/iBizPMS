@@ -402,7 +402,7 @@ export default class DiskFileUpload extends Vue {
                 ownerid: this.getOwnerid(),
         }).then((response: any) => {
             if (!response || response.status != 200) {
-                this.$throw(_this.$t('components.diskFileUpload.getFileFailure') + '!');
+                this.$throw(_this.$t('components.diskFileUpload.getFileFailure') + '!','getFiles');
                 return;
             }
             // 返回的是一个jsonArray
@@ -413,7 +413,7 @@ export default class DiskFileUpload extends Vue {
                 }
             }
         }).catch((error: any) => {
-            this.$throw(error);
+            this.$throw(error,'getFiles');
         });
     }
 
@@ -435,7 +435,7 @@ export default class DiskFileUpload extends Vue {
         // 发送post请求
         this.$http.post(uploadUrl, formData, {timeout: 2000}).then((response: any) => {
             if (!response || response.status != 200) {
-                this.$throw(_this.$t('components.diskFileUpload.loadFailure') + '!');
+                this.$throw(_this.$t('components.diskFileUpload.loadFailure') + '!','customUploadFile');
             }
             // 返回的是一个jsonobject
             if (response.data) {
@@ -452,7 +452,7 @@ export default class DiskFileUpload extends Vue {
                 }
             }
         }).catch((error: any) => {
-            this.$throw(error);
+            this.$throw(error,'customUploadFile');
         })
     }
 
@@ -474,7 +474,7 @@ export default class DiskFileUpload extends Vue {
             responseType: 'arraybuffer',
         }).then((response: any) => {
             if (!response || response.status != 200) {
-                this.$throw(_this.$t('components.diskFileUpload.downloadFile') + '!');
+                this.$throw(_this.$t('components.diskFileUpload.downloadFile') + '!','onDownload');
                 return;
             }
             // 请求成功，后台返回的是一个文件流
@@ -503,10 +503,10 @@ export default class DiskFileUpload extends Vue {
                 // 释放blob对象
                 URL.revokeObjectURL(href);
             } else {
-                this.$throw(_this.$t('components.diskFileUpload.downloadFile') + '!');
+                this.$throw(_this.$t('components.diskFileUpload.downloadFile') + '!','onDownload');
             }
         }).catch((error: any) => {
-            this.$throw(error);
+            this.$throw(error,'onDownload');
         });
     }
 
@@ -532,7 +532,7 @@ export default class DiskFileUpload extends Vue {
                 this.iframeUrl = response.data;
             }
         }).catch((error: any) => {
-            this.$throw(error);
+            this.$throw(error,'onPreview');
         });
     }
 
@@ -555,7 +555,7 @@ export default class DiskFileUpload extends Vue {
                 window.open(response.data);
             }
         }).catch((error: any) => {
-           this.$throw(error);
+           this.$throw(error,'onEdit');
         });
     }
 
@@ -581,7 +581,7 @@ export default class DiskFileUpload extends Vue {
                 this.iframeUrl = response.data;
             }
         }).catch((error: any) => {
-            this.$throw(error);
+            this.$throw(error,'onOcr');
         });
     }
 
@@ -605,7 +605,7 @@ export default class DiskFileUpload extends Vue {
                 // 发送delete请求
                 this.$http.delete(deleteUrl).then((response: any) => {
                     if (!response || response.status != 200) {
-                        this.$throw(_this.$t('components.diskFileUpload.deleteFileFailure') + '!');
+                        this.$throw(_this.$t('components.diskFileUpload.deleteFileFailure') + '!','onRemove');
                     }
                     // 从文件列表中删除
                     this.uploadFileList.splice(index, 1);
@@ -616,7 +616,7 @@ export default class DiskFileUpload extends Vue {
                     }
                 }).catch((error: any) => {
                     // 提示删除失败
-                   this.$throw(error);
+                   this.$throw(error,'onRemove');
                 });
             });
         }
@@ -645,11 +645,11 @@ export default class DiskFileUpload extends Vue {
             timeout: 2000
         }).then((response: any) => {
             if (!response || response.status != 200) {
-                this.$throw(_this.$t('components.diskFileUpload.updateFailure') + '!');
+                this.$throw(_this.$t('components.diskFileUpload.updateFailure') + '!','updateFileBatch');
                 return;
             }
         }).catch((error: any) => {
-            this.$throw(error);
+            this.$throw(error,'updateFileBatch');
         });
     }
 }

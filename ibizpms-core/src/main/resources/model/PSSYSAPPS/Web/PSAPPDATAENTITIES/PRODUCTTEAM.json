@@ -550,11 +550,9 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "移除成员",
     "codeName" : "RemoveMember",
     "confirmMsg" : "您确定从该项目中移除该用户吗？",
-    "dataAccessAction" : "SRFUR__PROJT_TM_BUT",
     "fullCodeName" : "PRODUCTTEAM_RemoveMember",
     "name" : "移除成员(产品)",
     "getPSAppDEMethod" : {
@@ -583,7 +581,6 @@
     "caption" : "团队管理",
     "codeName" : "ManagerMember",
     "confirmMsg" : "您确定从该项目中移除该用户吗？",
-    "dataAccessAction" : "SRFUR__PROJT_TM_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/PRODUCTTEAMUsr2GridView.json",

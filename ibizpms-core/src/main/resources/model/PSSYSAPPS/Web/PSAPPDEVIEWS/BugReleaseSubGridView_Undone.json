@@ -168,7 +168,6 @@
         "actionTarget" : "NONE",
         "caption" : "关联bug",
         "codeName" : "releaseLinkLeftBug",
-        "dataAccessAction" : "SRFUR__BUILD_LINK_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMPickupView5.json",
@@ -575,10 +574,8 @@
           "name" : "uf22fc2b",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "移除bug",
             "codeName" : "releaseUnlinkBugByLeftBug",
-            "dataAccessAction" : "SRFUR__BUG_UNLINK_BUT",
             "fullCodeName" : "Bug_releaseUnlinkBugByLeftBug",
             "name" : "移除遗留bug（发布）",
             "getPSAppDEMethod" : {

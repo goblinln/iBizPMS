@@ -1117,7 +1117,6 @@
     "actionTarget" : "MULTIKEY",
     "caption" : "测试报告",
     "codeName" : "TestReport",
-    "dataAccessAction" : "SRFUR__REPORT_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportEditView_TestTasks.json",
@@ -1160,10 +1159,8 @@
     "id" : "TestReport@TestTask"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "关联用例",
     "codeName" : "LinkCase",
-    "dataAccessAction" : "SRFUR__TESTT_LCASE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseLinkCaseGridView.json",
@@ -1203,10 +1200,8 @@
     "id" : "LinkCase@TestTask"
   }, {
     "actionTarget" : "MULTIKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "测试报告",
     "codeName" : "TestReportR",
-    "dataAccessAction" : "SRFUR__REPORT_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportEditView_R.json",
@@ -1262,10 +1257,8 @@
     "id" : "TestReportR@TestTask"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "概况",
     "codeName" : "OpenInfoView",
-    "dataAccessAction" : "SRFUR__TESTT_OPEN_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMainDashboardView.json",
@@ -1295,7 +1288,6 @@
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "ProjectCreate",
-    "dataAccessAction" : "SRFUR__TESTT_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskProjectNewEditView.json",
@@ -1323,7 +1315,6 @@
     "actionTarget" : "NONE",
     "caption" : "报告列表",
     "codeName" : "Reports",
-    "dataAccessAction" : "SRFUR__PROJECT_REPORT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportProjectGridView.json",
@@ -1361,10 +1352,8 @@
     "id" : "Reports@TestTask"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "EditEdit",
-    "dataAccessAction" : "SRFUR__TESTT_EDIT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView_Edit.json",
@@ -1390,7 +1379,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "开始",
     "codeName" : "StartDash",
-    "dataAccessAction" : "SRFUR__TESTT_START_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskStartOptionView.json",
@@ -1418,7 +1406,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "关闭",
     "codeName" : "CloseDash",
-    "dataAccessAction" : "SRFUR__TESTT_CLOSED_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskCloseOptionView.json",
@@ -1446,7 +1433,6 @@
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "Create",
-    "dataAccessAction" : "SRFUR__TESTT_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView.json",
@@ -1474,7 +1460,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "激活",
     "codeName" : "ActiviteDash",
-    "dataAccessAction" : "SRFUR__TESTT_ACTIVITE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskActiviteOptionView.json",
@@ -1500,11 +1485,9 @@
     "id" : "ActiviteDash@TestTask"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "删除",
     "codeName" : "Delete",
     "confirmMsg" : "您确认要删除该测试单吗？",
-    "dataAccessAction" : "SRFUR__TESTT_DELETE_BUT",
     "fullCodeName" : "TestTask_Delete",
     "name" : "删除",
     "getPSAppDEMethod" : {
@@ -1532,7 +1515,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "查看",
     "codeName" : "Look",
-    "dataAccessAction" : "SRFUR__TESTT_OPEN_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMainTabExpView.json",
@@ -1562,7 +1544,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "阻塞",
     "codeName" : "BlockDash",
-    "dataAccessAction" : "SRFUR__TESTT_BLOCK_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskBlockOptionView.json",

@@ -293,10 +293,8 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "指派",
             "codeName" : "AssignTask",
-            "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskAssignTaskView.json",
@@ -363,7 +361,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "转交",
           "codeName" : "Forward",
-          "dataAccessAction" : "SRFUR__TASK_FORWARD_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskForwardView.json",

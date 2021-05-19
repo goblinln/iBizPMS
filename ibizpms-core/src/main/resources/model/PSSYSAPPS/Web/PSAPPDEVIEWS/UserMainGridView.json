@@ -226,7 +226,6 @@
         "actionTarget" : "NONE",
         "caption" : "新建",
         "codeName" : "Create",
-        "dataAccessAction" : "SRFUR__ADMIN",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserEditView.json",
@@ -268,7 +267,6 @@
         "actionTarget" : "NONE",
         "caption" : "同步账号",
         "codeName" : "SyncAccount",
-        "dataAccessAction" : "SRFUR__ADMIN",
         "fullCodeName" : "User_SyncAccount",
         "name" : "同步账号",
         "getPSAppDEMethod" : {
@@ -734,10 +732,8 @@
           "name" : "ufcdaecf",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "Edit",
-            "dataAccessAction" : "SRFUR__ADMIN",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/UserEditView.json",
@@ -770,10 +766,8 @@
           "name" : "ue48fa68",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "删除",
             "codeName" : "Delete",
-            "dataAccessAction" : "SRFUR__ADMIN",
             "fullCodeName" : "User_Delete",
             "name" : "删除",
             "getPSAppDEMethod" : {

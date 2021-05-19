@@ -170,7 +170,6 @@
         "caption" : "移除",
         "codeName" : "ProjectUnlinkStoryMob",
         "confirmMsg" : "您确定从该项目中移除该需求吗？",
-        "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
         "fullCodeName" : "Story_ProjectUnlinkStoryMob",
         "name" : "移除项目关联（移动端）",
         "getPSAppDEMethod" : {

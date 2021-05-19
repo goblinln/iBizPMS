@@ -493,7 +493,6 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "查看全部",
               "codeName" : "OpenProductStoryView",
-              "dataAccessAction" : "SRFUR__PRODSTA_STOREOP_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductMainTabExpView.json",
@@ -564,7 +563,6 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "提需求",
               "codeName" : "OpenStoryCreateView",
-              "dataAccessAction" : "SRFUR__PRODSTA_STORYCRT_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
@@ -991,7 +989,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "创建计划",
                 "codeName" : "OpenProductPlanCreateView",
-                "dataAccessAction" : "SRFUR__PRODSTA_PLANCRT_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanEditView.json",
@@ -1264,7 +1261,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "创建项目",
                 "codeName" : "OpenProjectCreateView",
-                "dataAccessAction" : "SRFUR__PRODSTA_PROJCRT_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
@@ -1559,7 +1555,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "创建发布",
                 "codeName" : "OpenReleasedCreateView",
-                "dataAccessAction" : "SRFUR__PRODSTA_RELCRT_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ReleaseQuickCreateView.json",

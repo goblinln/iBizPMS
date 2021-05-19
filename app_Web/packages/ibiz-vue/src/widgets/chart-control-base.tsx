@@ -540,7 +540,7 @@ export class ChartControlBase extends MDControlBase {
                 },
                 (error: any) => {
                     this.ctrlEndLoading();
-                    this.$throw(error);
+                    this.$throw(error,'load');
                 },
             );
     }

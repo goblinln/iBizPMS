@@ -582,7 +582,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "指派",
           "codeName" : "assignToMob",
-          "dataAccessAction" : "ASSIGNTO",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TodoMobOptionView.json",
@@ -616,7 +615,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "激活",
           "codeName" : "activateMob",
-          "dataAccessAction" : "ACTIVATE",
           "fullCodeName" : "Todo_activateMob",
           "name" : "todo激活（移动端）",
           "getPSAppDEMethod" : {
@@ -649,7 +647,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "完成",
           "codeName" : "finishMob",
-          "dataAccessAction" : "FINISH",
           "fullCodeName" : "Todo_finishMob",
           "name" : "todo完成（移动端）",
           "getPSAppDEMethod" : {
@@ -682,7 +679,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "删除",
           "codeName" : "deleteMob",
-          "dataAccessAction" : "DELETE",
           "fullCodeName" : "Todo_deleteMob",
           "name" : "todo删除（移动端）",
           "getPSAppDEMethod" : {
@@ -715,7 +711,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "关闭",
           "codeName" : "closeMob",
-          "dataAccessAction" : "CLOSE",
           "fullCodeName" : "Todo_closeMob",
           "name" : "todo关闭（移动端）",
           "getPSAppDEMethod" : {
@@ -748,7 +743,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "editMob",
-          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TodoNewMobEditView.json",
@@ -831,7 +825,6 @@
         "actionTarget" : "NONE",
         "caption" : "新建",
         "codeName" : "TodoCreateMob",
-        "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TodoNewMobEditView.json",

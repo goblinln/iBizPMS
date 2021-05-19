@@ -303,7 +303,7 @@ export class EditFormControlBase extends FormControlBase {
     public loadDraft(opt: any = {}): void {
         let callBack: any;
         if (!this.loaddraftAction) {
-            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.loaddraftaction') as string));
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.loaddraftaction') as string),'loadDraft');
             return;
         }
         this.createDefault();
@@ -318,7 +318,7 @@ export class EditFormControlBase extends FormControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                this.$throw(response);
+                this.$throw(response,'loadDraft');
                 return;
             }
 
@@ -353,7 +353,7 @@ export class EditFormControlBase extends FormControlBase {
             });
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response);
+            this.$throw(response,'loadDraft');
         });
     }
 
@@ -374,7 +374,7 @@ export class EditFormControlBase extends FormControlBase {
         const action: any = Object.is(data.srfuf, '1') ? this.updateAction : this.createAction;
         if (!action) {
             let actionName: any = Object.is(data.srfuf, '1') ? "updateAction" : "createAction";
-            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.actionname') as string));
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.actionname') as string),'autoSave');
             return;
         }
         Object.assign(arg, { viewparams: this.viewparams });
@@ -383,7 +383,7 @@ export class EditFormControlBase extends FormControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                this.$throw(response);
+                this.$throw(response,'autoSave');
                 return;
             }
             const data = response.data;
@@ -414,21 +414,21 @@ export class EditFormControlBase extends FormControlBase {
                         let errorProp: string = response.data.message.match(/\[[a-zA-Z]*\]/)[0];
                         let name: string = this.service.getNameByProp(errorProp.substr(1, errorProp.length - 2));
                         if (name) {
-                            this.$throw(this.detailsModel[name].caption + " : " + arg[name] + (this.$t('app.commonWords.isExist') as string) + '!');
+                            this.$throw(this.detailsModel[name].caption + " : " + arg[name] + (this.$t('app.commonWords.isExist') as string) + '!','autoSave');
                         } else {
-                            this.$throw(response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string));
+                            this.$throw(response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string),'autoSave');
                         }
                     } else if (Object.is(response.data.errorKey, 'DuplicateKeyException')) {
-                        this.$throw(this.detailsModel[this.majorKeyItemName].caption + " : " + arg[this.majorKeyItemName] + (this.$t('app.commonWords.isExist') as string) + '!');
+                        this.$throw(this.detailsModel[this.majorKeyItemName].caption + " : " + arg[this.majorKeyItemName] + (this.$t('app.commonWords.isExist') as string) + '!','autoSave');
                     } else {
-                        this.$throw(response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string));
+                        this.$throw(response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string),'autoSave');
                     }
                 } else {
-                    this.$throw(response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string));
+                    this.$throw(response.data.message ? response.data.message : (this.$t('app.commonWords.sysException') as string),'autoSave');
                 }
                 return;
             } else {
-                this.$throw((this.$t('app.commonWords.sysException') as string));
+                this.$throw((this.$t('app.commonWords.sysException') as string),'autoSave');
             }
         });
     }
@@ -450,9 +450,9 @@ export class EditFormControlBase extends FormControlBase {
                     this.errorMessages.forEach((message: any) => {
                         descMessage += message.error + '<br/>';
                     })
-                    this.$throw(descMessage, { dangerouslyUseHTMLString: true });
+                    this.$throw(descMessage,'save',{ dangerouslyUseHTMLString: true });
                 } else {
-                    this.$throw((this.$t('app.formpage.valuecheckex') as string));
+                    this.$throw((this.$t('app.formpage.valuecheckex') as string),'save');
                 }
                 return;
             }
@@ -474,7 +474,7 @@ export class EditFormControlBase extends FormControlBase {
             const action: any = Object.is(data.srfuf, '1') ? this.updateAction : this.createAction;
             if (!action) {
                 let actionName: any = Object.is(data.srfuf, '1') ? "updateAction" : "createAction";
-                this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.actionname') as string));
+                this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.actionname') as string),'save');
                 return;
             }
             Object.assign(arg, { viewparams: this.viewparams });
@@ -483,7 +483,7 @@ export class EditFormControlBase extends FormControlBase {
             post.then((response: any) => {
                 this.ctrlEndLoading();
                 if (!response.status || response.status !== 200) {
-                    this.$throw(response);
+                    this.$throw(response,'save');
                     return;
                 }
                 this.viewparams.copymode = false;
@@ -525,20 +525,20 @@ export class EditFormControlBase extends FormControlBase {
                             let errorProp: string = response.data.message.match(/\[[a-zA-Z]*\]/)[0];
                             let name: string = this.service.getNameByProp(errorProp.substr(1, errorProp.length - 2));
                             if (name) {
-                                this.$throw(this.detailsModel[name].caption + " : " + arg[name] + (this.$t('app.commonWords.isExist') as string) + '!');
+                                this.$throw(this.detailsModel[name].caption + " : " + arg[name] + (this.$t('app.commonWords.isExist') as string) + '!','save');
                             } else {
-                                this.$throw(response.data.message + appendErrors);
+                                this.$throw(response.data.message + appendErrors,'save');
                             }
                         } else {
-                            this.$throw(response.data.message + appendErrors);
+                            this.$throw(response.data.message + appendErrors,'save');
                         }
                     } else {
-                        this.$throw(response.data.message + appendErrors);
+                        this.$throw(response.data.message + appendErrors,'save');
                         reject(response);
                     }
                     return;
                 } else {
-                    this.$throw((this.$t('app.commonWords.sysException') as string));
+                    this.$throw((this.$t('app.commonWords.sysException') as string),'save');
                     reject(response);
                 }
                 reject(response);
@@ -556,7 +556,7 @@ export class EditFormControlBase extends FormControlBase {
     public async remove(opt: Array<any> = [], showResultInfo?: boolean): Promise<any> {
         return new Promise((resolve: any, reject: any) => {
             if (!this.removeAction) {
-                this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.removeaction') as string));
+                this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.formpage.notconfig.removeaction') as string),'remove');
                 return;
             }
             const arg: any = opt[0];
@@ -574,13 +574,13 @@ export class EditFormControlBase extends FormControlBase {
                     });
                     this.formState.next({ type: 'remove', data: data });
                     this.data.ismodify = false;
-                    this.$success((data.srfmajortext ? data.srfmajortext : '') + (this.$t('app.formpage.deletesuccess') as string));
+                    this.$success((data.srfmajortext ? data.srfmajortext : '') + (this.$t('app.formpage.deletesuccess') as string),'remove');
                     AppCenterService.notifyMessage({ name: this.controlInstance.getPSAppDataEntity()?.codeName || '', action: 'appRefresh', data: data });
                     resolve(response);
                 }
             }).catch((error: any) => {
                 this.ctrlEndLoading();
-                this.$throw(error);
+                this.$throw(error,'remove');
                 reject(error);
             });
         });
@@ -649,19 +649,19 @@ export class EditFormControlBase extends FormControlBase {
                 result.then((response: any) => {
                     this.ctrlEndLoading();
                     if (!response || response.status !== 200) {
-                        this.$throw((this.$t('app.formpage.workflow.starterror') as string) + ', ' + response.data.message);
+                        this.$throw((this.$t('app.formpage.workflow.starterror') as string) + ', ' + response.data.message,'wfstart');
                         return;
                     }
-                    this.$success((this.$t('app.formpage.workflow.startsuccess') as string));
+                    this.$success((this.$t('app.formpage.workflow.startsuccess') as string),'wfstart');
                     resolve(response);
                 }).catch((response: any) => {
                     this.ctrlEndLoading();
-                    this.$throw(response);
+                    this.$throw(response,'wfstart');
                     reject(response);
                 });
             }).catch((response: any) => {
                 this.ctrlEndLoading();
-                this.$throw(response);
+                this.$throw(response,'wfstart');
                 reject(response);
             })
         });
@@ -736,21 +736,21 @@ export class EditFormControlBase extends FormControlBase {
                 result.then((response: any) => {
                     this.ctrlEndLoading();
                     if (!response || response.status !== 200) {
-                        this.$throw((this.$t('app.formpage.workflow.submiterror') as string) + ', ' + response.data.message);
+                        this.$throw((this.$t('app.formpage.workflow.submiterror') as string) + ', ' + response.data.message,'wfsubmit');
                         return;
                     }
                     this.onFormLoad(arg, 'submit');
                     AppCenterService.notifyMessage({ name: this.controlInstance.getPSAppDataEntity()?.codeName || '', action: 'appRefresh', data: data });
-                    this.$success((this.$t('app.formpage.workflow.submitsuccess') as string));
+                    this.$success((this.$t('app.formpage.workflow.submitsuccess') as string),'wfsubmit');
                     resolve(response);
                 }).catch((response: any) => {
                     this.ctrlEndLoading();
-                    this.$throw(response);
+                    this.$throw(response,'wfsubmit');
                     reject(response);
                 });
             }).catch((response: any) => {
                 this.ctrlEndLoading();
-                this.$throw(response);
+                this.$throw(response,'wfsubmit');
                 reject(response);
             })
         })
@@ -798,7 +798,7 @@ export class EditFormControlBase extends FormControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                this.$throw(response);
+                this.$throw(response,'panelAction');
                 return;
             }
             const data = response.data;
@@ -813,7 +813,7 @@ export class EditFormControlBase extends FormControlBase {
             });
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response);
+            this.$throw(response,'panelAction');
         });
     }
 
@@ -837,7 +837,7 @@ export class EditFormControlBase extends FormControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response || response.status !== 200) {
-                this.$throw((this.$t('app.formpage.updateerror') as string));
+                this.$throw((this.$t('app.formpage.updateerror') as string),'updateFormItems');
                 return;
             }
             const data = response.data;
@@ -857,7 +857,7 @@ export class EditFormControlBase extends FormControlBase {
             });
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response);
+            this.$throw(response,'updateFormItems');
         });
     }
 
@@ -1317,7 +1317,7 @@ export class EditFormControlBase extends FormControlBase {
                             try {
                                 eval(sysRule.scriptCode);
                             } catch (error) {
-                                this.$throw(error);
+                                this.$throw(error,'initRules');
                             }
                             return true;
                         },

@@ -231,7 +231,6 @@
         "actionTarget" : "NONE",
         "caption" : "新建",
         "codeName" : "CreateProject",
-        "dataAccessAction" : "SRFUR__REPORT_CREATE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportEditView_Project.json",
@@ -715,10 +714,8 @@
           "name" : "u58bc4ed",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "ProjectEdits",
-            "dataAccessAction" : "SRFUR__REPORT_EDIT_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportProjectMainEditEditView.json",
@@ -751,11 +748,9 @@
           "name" : "u0499c7d",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "删除",
             "codeName" : "Delete",
             "confirmMsg" : "是否删除该报告？",
-            "dataAccessAction" : "SRFUR__REPORT_DELETE_BUT",
             "fullCodeName" : "TestReport_Delete",
             "name" : "删除",
             "getPSAppDEMethod" : {

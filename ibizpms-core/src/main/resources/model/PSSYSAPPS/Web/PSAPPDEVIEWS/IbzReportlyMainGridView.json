@@ -484,10 +484,8 @@
           "name" : "ud27b04a",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "Edit",
-            "dataAccessAction" : "SRFUR__REPORTLY_EDIT_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportlyCreateEditView.json",
@@ -520,10 +518,8 @@
           "name" : "u32d11cb",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "提交",
             "codeName" : "Submit",
-            "dataAccessAction" : "SRFUR__REPORTLY_SUBMIT_BUT",
             "fullCodeName" : "IbzReportly_Submit",
             "name" : "提交",
             "getPSAppDEMethod" : {

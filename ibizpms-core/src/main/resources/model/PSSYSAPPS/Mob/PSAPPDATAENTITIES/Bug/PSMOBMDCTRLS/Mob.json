@@ -606,7 +606,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "确认",
         "codeName" : "ConfirmBugMob",
-        "dataAccessAction" : "SRFUR__BUG_CONFIRM_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugCMobOptionView.json",
@@ -641,7 +640,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "指派",
         "codeName" : "AssingToBugMob",
-        "dataAccessAction" : "SRFUR__BUG_ASSIGNTO_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugAssMobOptionView.json",
@@ -676,7 +674,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "解决",
         "codeName" : "ResolveBugMob",
-        "dataAccessAction" : "SRFUR__BUG_RESOLVE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugRMobOptionView.json",
@@ -711,7 +708,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "激活",
         "codeName" : "ActivationMob",
-        "dataAccessAction" : "SRFUR__BUG_ACTIVATE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugACMobOptionView.json",
@@ -745,7 +741,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "关闭",
         "codeName" : "CloseBugMob",
-        "dataAccessAction" : "SRFUR__BUG_CLOSE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugCloseMobOptionView.json",
@@ -780,7 +775,6 @@
         "caption" : "删除",
         "codeName" : "deleteMob",
         "confirmMsg" : "确认要删除，删除操作将不可恢复？",
-        "dataAccessAction" : "SRFUR__BUG_DELETE_BUT",
         "fullCodeName" : "Bug_deleteMob",
         "name" : "删除（移动端）",
         "getPSAppDEMethod" : {

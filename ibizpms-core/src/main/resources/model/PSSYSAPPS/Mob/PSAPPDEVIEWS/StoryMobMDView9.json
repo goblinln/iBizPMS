@@ -803,7 +803,6 @@
           "caption" : "移除关联",
           "codeName" : "UnlinkStoryMob",
           "confirmMsg" : "是否移除需求关联",
-          "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
           "fullCodeName" : "Story_UnlinkStoryMob",
           "name" : "取消计划关联（移动端）",
           "getPSAppDEMethod" : {

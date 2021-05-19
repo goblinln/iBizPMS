@@ -235,7 +235,6 @@
         "actionTarget" : "NONE",
         "caption" : "创建版本",
         "codeName" : "Create",
-        "dataAccessAction" : "SRFUR__BUILD_CREATE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BuildEditView.json",
@@ -763,10 +762,8 @@
           "name" : "ud66a79a",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "关联需求",
             "codeName" : "linkStories",
-            "dataAccessAction" : "SRFUR__BUILD_LINK_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView2.json",
@@ -833,10 +830,8 @@
           "name" : "u515beb6",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "提交测试",
             "codeName" : "submitToTesting",
-            "dataAccessAction" : "SRFUR__BUILD_SUBT_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView_commitTest.json",
@@ -967,10 +962,8 @@
           "name" : "u1402a26",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "编辑版本",
             "codeName" : "editBuild",
-            "dataAccessAction" : "SRFUR__BUILD_EDIT_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BuildEditFormEditView.json",
@@ -1001,10 +994,8 @@
           "name" : "u399f905",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "删除",
             "codeName" : "Delete",
-            "dataAccessAction" : "SRFUR__BUILD_DELETE_BUT",
             "fullCodeName" : "Build_Delete",
             "name" : "删除",
             "getPSAppDEMethod" : {

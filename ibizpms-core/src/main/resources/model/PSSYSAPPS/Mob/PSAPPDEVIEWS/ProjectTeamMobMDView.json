@@ -310,7 +310,6 @@
           "caption" : "移除成员",
           "codeName" : "RemoveMemberMob",
           "confirmMsg" : "您确定从该项目中移除该用户吗？",
-          "dataAccessAction" : "SRFUR__PROJT_TM_BUT",
           "fullCodeName" : "ProjectTeam_RemoveMemberMob",
           "name" : "移除成员（移动端）",
           "getPSAppDEMethod" : {

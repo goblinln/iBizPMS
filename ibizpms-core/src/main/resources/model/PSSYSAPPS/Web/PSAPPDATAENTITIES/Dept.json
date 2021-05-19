@@ -425,10 +425,8 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "Edit",
-    "dataAccessAction" : "SRFUR__ADMIN",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DeptEditView.json",
@@ -454,10 +452,8 @@
     "id" : "Edit@Dept"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "删除",
     "codeName" : "Delete",
-    "dataAccessAction" : "SRFUR__ADMIN",
     "fullCodeName" : "Dept_Delete",
     "name" : "删除",
     "getPSAppDEMethod" : {
@@ -484,7 +480,6 @@
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "Create",
-    "dataAccessAction" : "SRFUR__ADMIN",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DeptEditView.json",

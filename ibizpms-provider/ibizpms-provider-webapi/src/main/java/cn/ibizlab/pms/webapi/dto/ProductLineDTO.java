@@ -27,7 +27,7 @@ import io.swagger.annotations.ApiModelProperty;
  * 服务DTO对象[ProductLineDTO]
  */
 @Data
-@ApiModel("产品线")
+@ApiModel("产品线（废弃）")
 public class ProductLineDTO extends DTOBase implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -92,6 +92,15 @@ public class ProductLineDTO extends DTOBase implements Serializable {
     @ApiModelProperty("建立人")
     private String createman;
 
+    /**
+     * 属性 [ORDER]
+     *
+     */
+    @JSONField(name = "order")
+    @JsonProperty("order")
+    @ApiModelProperty("排序")
+    private Integer order;
+
 
     /**
      * 设置 [IBZ_PRODUCTLINENAME]
@@ -99,6 +108,14 @@ public class ProductLineDTO extends DTOBase implements Serializable {
     public void setProductlinename(String  productlinename){
         this.productlinename = productlinename ;
         this.modify("ibz_productlinename",productlinename);
+    }
+
+    /**
+     * 设置 [ORDER]
+     */
+    public void setOrder(Integer  order){
+        this.order = order ;
+        this.modify("order",order);
     }
 
 

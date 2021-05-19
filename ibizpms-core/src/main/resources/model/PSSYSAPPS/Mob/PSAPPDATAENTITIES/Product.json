@@ -1535,7 +1535,6 @@
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "MobCreate",
-    "dataAccessAction" : "SRFUR__PROD_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductNewMobEditView.json",
@@ -1563,7 +1562,6 @@
     "caption" : "删除",
     "codeName" : "deleteMob",
     "confirmMsg" : "确认要删除，删除操作将不可恢复？",
-    "dataAccessAction" : "SRFUR__PROD_DELETE_BUT",
     "fullCodeName" : "Product_deleteMob",
     "name" : "删除（移动端）",
     "getPSAppDEMethod" : {
@@ -1592,7 +1590,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "置顶",
     "codeName" : "ProductTop",
-    "dataAccessAction" : "NOTOP",
     "fullCodeName" : "Product_ProductTop",
     "name" : "置顶",
     "getPSAppDEMethod" : {
@@ -1620,7 +1617,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "关闭",
     "codeName" : "CloseProductMob",
-    "dataAccessAction" : "SRFUR__PROD_CLOSED_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductCloseMobEditView.json",
@@ -1647,7 +1643,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "取消置顶",
     "codeName" : "CancelProductTop",
-    "dataAccessAction" : "TOP",
     "fullCodeName" : "Product_CancelProductTop",
     "name" : "取消置顶",
     "getPSAppDEMethod" : {
@@ -1764,16 +1759,10 @@
         "name" : "TOP"
       }
     }, {
-      "name" : "SRFUR__PROD_CLOSED_BUT",
+      "name" : "MANAGE",
       "getPSDEOPPriv" : {
-        "logicName" : "产品关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROD_CLOSED_BUT"
-        },
-        "mapSysUniResCode" : "PROD_CLOSED_BUT",
-        "name" : "SRFUR__PROD_CLOSED_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "管理",
+        "name" : "MANAGE"
       }
     } ],
     "state2Value" : "0",
@@ -1843,16 +1832,10 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__PROD_CLOSED_BUT",
+      "name" : "MANAGE",
       "getPSDEOPPriv" : {
-        "logicName" : "产品关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROD_CLOSED_BUT"
-        },
-        "mapSysUniResCode" : "PROD_CLOSED_BUT",
-        "name" : "SRFUR__PROD_CLOSED_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "管理",
+        "name" : "MANAGE"
       }
     }, {
       "name" : "NOTOP",

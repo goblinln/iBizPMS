@@ -950,10 +950,8 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "编辑版本",
     "codeName" : "editBuild",
-    "dataAccessAction" : "SRFUR__BUILD_EDIT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BuildEditFormEditView.json",
@@ -977,10 +975,8 @@
     "id" : "editBuild@Build"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "关联需求",
     "codeName" : "linkStories",
-    "dataAccessAction" : "SRFUR__BUILD_LINK_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView2.json",
@@ -1087,10 +1083,8 @@
     "id" : "viewBugs@Build"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "删除",
     "codeName" : "Delete",
-    "dataAccessAction" : "SRFUR__BUILD_DELETE_BUT",
     "fullCodeName" : "Build_Delete",
     "name" : "删除",
     "getPSAppDEMethod" : {
@@ -1117,7 +1111,6 @@
     "actionTarget" : "NONE",
     "caption" : "创建版本",
     "codeName" : "Create",
-    "dataAccessAction" : "SRFUR__BUILD_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BuildEditView.json",
@@ -1143,10 +1136,8 @@
     "id" : "Create@Build"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "提交测试",
     "codeName" : "submitToTesting",
-    "dataAccessAction" : "SRFUR__BUILD_SUBT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView_commitTest.json",

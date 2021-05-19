@@ -152,7 +152,7 @@ export default class ContextMenuDrag extends Vue {
         if (item.addr) {
             window.location.href = item.addr;
         } else {
-            this.$info(this.$t('components.contextMenuDrag.noFind') as string);
+            this.$info(this.$t('components.contextMenuDrag.noFind') as string,'skipTo');
         }
     }
 

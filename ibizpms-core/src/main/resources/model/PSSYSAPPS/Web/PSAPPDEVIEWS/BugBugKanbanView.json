@@ -327,7 +327,6 @@
         "actionTarget" : "NONE",
         "caption" : "新建",
         "codeName" : "Create",
-        "dataAccessAction" : "SRFUR__BUG_CREATE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView.json",
@@ -1087,10 +1086,8 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
-              "noPrivDisplayMode" : 1,
               "caption" : "指派",
               "codeName" : "AssingToBug",
-              "dataAccessAction" : "SRFUR__BUG_ASSIGNTO_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugAssingToView.json",

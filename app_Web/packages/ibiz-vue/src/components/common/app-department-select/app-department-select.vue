@@ -146,7 +146,7 @@ export default class AppDepartmentSelect extends Vue {
           this.Nodesdata = response.data;
           this.$store.commit('addDepData', { srfkey: _url, depData: response.data });
       }).catch((response: any) => {
-          this.$throw(response);
+          this.$throw(response,'searchNodesData');
       });
     }
 

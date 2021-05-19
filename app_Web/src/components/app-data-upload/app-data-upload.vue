@@ -481,17 +481,16 @@ export default class AppDataUploadView extends Vue {
     public getCodeList(codeListObject:any):Promise<any>{
         return new Promise((resolve:any,reject:any) =>{
             if(codeListObject.tag && Object.is(codeListObject.type,"STATIC")){
-                const codelist = this.$store.getters.getCodeList(codeListObject.tag);
-                if (codelist) {
-                    resolve([...JSON.parse(JSON.stringify(codelist.items))]);
-                } else {
-                    LogUtil.log(`----${codeListObject.tag}----${(this.$t('app.commonWords.codeNotExist') as string)}`);
-                }
-            }else if(codeListObject.tag && Object.is(codeListObject.type,"DYNAMIC")){
-                this.codeListService.getItems(codeListObject.tag).then((res:any) => {
+                this.codeListService.getStaticItems(codeListObject.tag).then((res: any) => {
                     resolve(res);
-                }).catch((error:any) => {
-                    LogUtil.log(`----${codeListObject.tag}----${(this.$t('app.commonWords.codeNotExist') as string)}`);
+                }).catch((error: any) => {
+                    LogUtil.log(`----${codeListObject.codeName}----代码表不存在`);
+                });
+            }else if(codeListObject.tag && Object.is(codeListObject.type,"DYNAMIC")){
+                this.codeListService.getItems(codeListObject.tag).then((res: any) => {
+                    resolve(res);
+                }).catch((error: any) => {
+                    LogUtil.log(`----${codeListObject.codeName}----代码表不存在`);
                 });
             }
         })

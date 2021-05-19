@@ -656,7 +656,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "查收",
           "codeName" : "MyReDaily",
-          "dataAccessAction" : "DAILY",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzDailyMyDailyMobTabExpView.json",
@@ -725,7 +724,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "查收",
           "codeName" : "MyReMonthy",
-          "dataAccessAction" : "MONTHLY",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzMonthlyMyReceivedMobTabExpView.json",
@@ -760,7 +758,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "查收",
           "codeName" : "MyReReportly",
-          "dataAccessAction" : "REPORTLY",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzReportlyMobEditView.json",

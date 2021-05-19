@@ -71,9 +71,9 @@ export class AppBackEndAction {
             }
         }
         if (Object.is(actionTarget, 'SINGLEDATA')) {
-            actionContext.$throw('不支持单项数据');
+            actionContext.$throw('不支持单项数据','AppBackEndAction');
         } else if (Object.is(actionTarget, 'MULTIDATA')) {
-            actionContext.$throw('不支持多项数据');
+            actionContext.$throw('不支持多项数据','AppBackEndAction');
         } else {
             let data: any = {};
             let parentContext: any = {};
@@ -173,15 +173,15 @@ export class AppBackEndAction {
                             )
                                 .then((response: any) => {
                                     if (!response || response.status !== 200) {
-                                        actionContext.$throw(response);
+                                        actionContext.$throw(response,'AppBackEndAction');
                                         return;
                                     }
                                     if (this.actionModel.showBusyIndicator) {
                                         if (this.actionModel.successMsg) {
-                                            actionContext.$success(this.actionModel.successMsg);
+                                            actionContext.$success(this.actionModel.successMsg,'AppBackEndAction');
 
                                         } else {
-                                            actionContext.$success(`${this.actionModel.caption}成功！`);
+                                            actionContext.$success(`${this.actionModel.caption}成功!`,'AppBackEndAction');
                                         }
                                     }
                                     if (
@@ -239,7 +239,7 @@ export class AppBackEndAction {
                                 })
                                 .catch((response: any) => {
                                     if (response && response.data && response.data.message) {
-                                        actionContext.$throw(response);
+                                        actionContext.$throw(response,'AppBackEndAction');
                                     }
                                 });
                         });

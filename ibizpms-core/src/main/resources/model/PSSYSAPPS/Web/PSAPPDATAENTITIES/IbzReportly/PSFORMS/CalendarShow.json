@@ -355,10 +355,8 @@
         },
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 6,
           "caption" : "编辑",
           "codeName" : "CalendarShowEdit",
-          "dataAccessAction" : "SRFUR__REPORTLY_EDIT_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzReportlyCreateEditView.json",
@@ -403,10 +401,8 @@
         },
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 6,
           "caption" : "提交",
           "codeName" : "CalendarShowSubmit",
-          "dataAccessAction" : "SRFUR__REPORTLY_SUBMIT_BUT",
           "fullCodeName" : "IbzReportly_CalendarShowSubmit",
           "name" : "提交（日历显示）",
           "getPSAppDEMethod" : {
@@ -1079,7 +1075,6 @@
                 "actionTarget" : "NONE",
                 "caption" : "添加备注",
                 "codeName" : "AddComment",
-                "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionOptionView.json",

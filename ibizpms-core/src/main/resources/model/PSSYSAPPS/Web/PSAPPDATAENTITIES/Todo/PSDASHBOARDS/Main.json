@@ -1173,7 +1173,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "编辑",
                 "codeName" : "edit1Cz",
-                "dataAccessAction" : "UPDATE",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoEditView.json",
@@ -1211,7 +1210,6 @@
                 "caption" : "删除",
                 "codeName" : "deleteCz",
                 "confirmMsg" : "您确定要删除这条待办吗？",
-                "dataAccessAction" : "DELETE",
                 "fullCodeName" : "Todo_deleteCz",
                 "name" : "todo删除（操作栏）",
                 "getNextPSUIAction" : {
@@ -1252,7 +1250,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "指派",
                 "codeName" : "assignToCz",
-                "dataAccessAction" : "ASSIGNTO",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoAssignToView.json",
@@ -1287,7 +1284,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "完成",
                 "codeName" : "finishCz",
-                "dataAccessAction" : "FINISH",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoFinishView.json",
@@ -1320,7 +1316,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "激活",
                 "codeName" : "activateCz",
-                "dataAccessAction" : "ACTIVATE",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoActiviteView.json",
@@ -1353,7 +1348,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "关闭",
                 "codeName" : "closeCz",
-                "dataAccessAction" : "CLOSE",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TodoCloseView.json",
@@ -1386,7 +1380,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "转Bug",
                 "codeName" : "toBug",
-                "dataAccessAction" : "TOBUG",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugTodoEditView.json",
@@ -1451,7 +1444,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "转任务",
                 "codeName" : "toTask",
-                "dataAccessAction" : "TOTASK",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskTodoEditView.json",

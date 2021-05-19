@@ -9,6 +9,7 @@ function getLocaleResourceBase(){
 		'updatedate': commonLogic.appcommonhandle("更新时间",null),
 		'createdate': commonLogic.appcommonhandle("建立时间",null),
 		'createman': commonLogic.appcommonhandle("建立人",null),
+		'order': commonLogic.appcommonhandle("排序",null),
 	},
 	};
 	return data;

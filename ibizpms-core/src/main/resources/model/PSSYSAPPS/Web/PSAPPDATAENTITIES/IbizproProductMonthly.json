@@ -469,7 +469,6 @@
     "caption" : "生成月报",
     "codeName" : "ManualCreateMonthly",
     "confirmMsg" : "是否要手动生成月报",
-    "dataAccessAction" : "SRFUR__PRODUCT_MANAGER",
     "fullCodeName" : "IbizproProductMonthly_ManualCreateMonthly",
     "name" : "生成产品月报",
     "getPSAppDEMethod" : {

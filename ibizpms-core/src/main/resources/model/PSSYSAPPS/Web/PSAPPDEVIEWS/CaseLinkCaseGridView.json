@@ -181,7 +181,6 @@
         "actionTarget" : "MULTIKEY",
         "caption" : "保存",
         "codeName" : "linkCase",
-        "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
         "fullCodeName" : "Case_linkCase",
         "name" : "关联用例",
         "getPSAppDEMethod" : {

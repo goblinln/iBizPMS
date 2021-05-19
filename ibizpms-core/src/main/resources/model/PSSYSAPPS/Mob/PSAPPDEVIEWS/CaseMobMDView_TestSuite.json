@@ -771,7 +771,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "移除",
           "codeName" : "mobUnlinkSuiteCase",
-          "dataAccessAction" : "SRFUR__CASE_UNLINK_BUT",
           "fullCodeName" : "Case_mobUnlinkSuiteCase",
           "name" : "移除套件用例（移动端）",
           "getPSAppDEMethod" : {

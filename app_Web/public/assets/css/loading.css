@@ -1,276 +1,64 @@
 @charset "utf-8";
 
 .app-loading-x {
-    background: #161b29;
+    background: radial-gradient(#55A0FE, #1767CB);
     height: 100vh;
     width: 100vw;
     overflow: hidden;
     position: absolute;
     top: 0;
     left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     z-index: 10000;
 }
 
-.loading-container-x {
-    width: 250px;
-    height: 250px;
-}
-
-.common {
-    height: 5vw;
-    max-height: 100%;
-    overflow: auto;
-    width: 2vw;
-    margin: auto;
-    max-width: 100%;
+.app-loading-x-container {
     position: absolute;
-    border-radius: 0vw 10vw 0vw 10vw;
-    box-shadow: inset 0vw 0vw 0vw 0.1vw #e645d0, 0vw 0vw 1.5vw 0vw #e645d0;
+    top: 50%;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    transform: translateY(-50%);
 }
 
-.one {
-    transform: rotate(45deg);
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 7.5vw;
+.app-loading-x-container label {
+    display: inline-block;
+    font-size: 20px;
+    opacity: 0;
 }
 
-.two {
-    transform: rotate(90deg);
-    left: 5.5vw;
-    right: 0;
-    top: 0;
-    bottom: 5.5vw;
+.app-loading-x-container label:nth-child(6) {
+    animation: loading 3s infinite ease-in-out
 }
 
-.three {
-    transform: rotate(135deg);
-    left: 7.5vw;
-    right: 0;
-    top: 0;
-    bottom: 0;
+.app-loading-x-container label:nth-child(5) {
+    animation: loading 3s .1s infinite ease-in-out
 }
-
-.four {
-    transform: rotate(180deg);
-    left: 5.5vw;
-    right: 0;
-    top: 5.5vw;
-    bottom: 0;
+.app-loading-x-container label:nth-child(4) {
+    animation: loading 3s .2s infinite ease-in-out
 }
-
-.five {
-    transform: rotate(225deg);
-    left: 0;
-    right: 0;
-    top: 7.5vw;
-    bottom: 0;
+.app-loading-x-container label:nth-child(3) {
+    animation: loading 3s .3s infinite ease-in-out
 }
-
-.six {
-    transform: rotate(270deg);
-    left: 0;
-    right: 5.5vw;
-    top: 5.5vw;
-    bottom: 0;
+.app-loading-x-container label:nth-child(2) {
+    animation: loading 3s .4s infinite ease-in-out
 }
-
-.seven {
-    transform: rotate(315deg);
-    left: 0;
-    right: 7.5vw;
-    top: 0;
-    bottom: 0;
+.app-loading-x-container label:nth-child(1) {
+    animation: loading 3s .5s infinite ease-in-out
 }
-
-.eight {
-    transform: rotate(360deg);
-    left: 0;
-    right: 5.5vw;
-    top: 0;
-    bottom: 5.5vw;
-}
-
-.one {
-    animation: one 1s ease infinite;
-    -moz-animation: one 1s ease infinite;
-    /* Firefox */
-    -webkit-animation: one 1s ease infinite;
-    /* Safari and Chrome */
-    -o-animation: one 1s ease infinite;
-    /* Opera */
-}
-
-@keyframes one {
-    0%,
+@keyframes loading{
+    0% {
+        transform:translateX(-300px);
+        opacity:0
+    }
+    33% {
+        transform:translateX(0);
+        opacity:1
+    }
+    66% {
+        transform:translateX(0);
+        opacity:1
+    }
     100% {
-    }
-
-    50% {
-        box-shadow: inset 0vw 0vw 0vw 0.1vw #17e1e6, 0vw 0vw 1.5vw 0vw #17e1e6;
-    }
-}
-
-.two {
-    animation: two 1s 0.125s ease infinite;
-    -moz-animation: two 1s 0.125s ease infinite;
-    /* Firefox */
-    -webkit-animation: two 1s 0.125s ease infinite;
-    /* Safari and Chrome */
-    -o-animation: two 1s 0.125s ease infinite;
-    /* Opera */
-}
-
-@keyframes two {
-    0%,
-    100% {
-    }
-
-    50% {
-        box-shadow: inset 0vw 0vw 0vw 0.1vw #17e1e6, 0vw 0vw 1.5vw 0vw #17e1e6;
-    }
-}
-
-.three {
-    animation: three 1s 0.25s ease infinite;
-    -moz-animation: three 1s 0.25s ease infinite;
-    /* Firefox */
-    -webkit-animation: three 1s 0.25s ease infinite;
-    /* Safari and Chrome */
-    -o-animation: three 1s 0.25s ease infinite;
-    /* Opera */
-}
-
-@keyframes three {
-    0%,
-    100% {
-    }
-
-    50% {
-        box-shadow: inset 0vw 0vw 0vw 0.1vw #17e1e6, 0vw 0vw 1.5vw 0vw #17e1e6;
-    }
-}
-
-.four {
-    animation: four 1s 0.375s ease infinite;
-    -moz-animation: four 1s 0.375s ease infinite;
-    /* Firefox */
-    -webkit-animation: four 1s 0.375s ease infinite;
-    /* Safari and Chrome */
-    -o-animation: four 1s 0.375s ease infinite;
-    /* Opera */
-}
-
-@keyframes four {
-    0%,
-    100% {
-    }
-
-    50% {
-        box-shadow: inset 0vw 0vw 0vw 0.1vw #17e1e6, 0vw 0vw 1.5vw 0vw #17e1e6;
-    }
-}
-
-.five {
-    animation: five 1s 0.5s ease infinite;
-    -moz-animation: five 1s 0.5s ease infinite;
-    /* Firefox */
-    -webkit-animation: five 1s 0.5s ease infinite;
-    /* Safari and Chrome */
-    -o-animation: five 1s 0.5s ease infinite;
-    /* Opera */
-}
-
-@keyframes five {
-    0%,
-    100% {
-    }
-
-    50% {
-        box-shadow: inset 0vw 0vw 0vw 0.1vw #17e1e6, 0vw 0vw 1.5vw 0vw #17e1e6;
-    }
-}
-
-.six {
-    animation: six 1s 0.625s ease infinite;
-    -moz-animation: six 1s 0.625s ease infinite;
-    /* Firefox */
-    -webkit-animation: six 1s 0.625s ease infinite;
-    /* Safari and Chrome */
-    -o-animation: six 1s 0.625s ease infinite;
-    /* Opera */
-}
-
-@keyframes six {
-    0%,
-    100% {
-    }
-
-    50% {
-        box-shadow: inset 0vw 0vw 0vw 0.1vw #17e1e6, 0vw 0vw 1.5vw 0vw #17e1e6;
-    }
-}
-
-.seven {
-    animation: seven 1s 0.75s ease infinite;
-    -moz-animation: seven 1s 0.75s ease infinite;
-    /* Firefox */
-    -webkit-animation: seven 1s 0.75s ease infinite;
-    /* Safari and Chrome */
-    -o-animation: seven 1s 0.75s ease infinite;
-    /* Opera */
-}
-
-@keyframes seven {
-    0%,
-    100% {
-    }
-
-    50% {
-        box-shadow: inset 0vw 0vw 0vw 0.1vw #17e1e6, 0vw 0vw 1.5vw 0vw #17e1e6;
-    }
-}
-
-.eight {
-    animation: eight 1s 0.875s ease infinite;
-    -moz-animation: eight 1s 0.875s ease infinite;
-    /* Firefox */
-    -webkit-animation: eight 1s 0.875s ease infinite;
-    /* Safari and Chrome */
-    -o-animation: eight 1s 0.875s ease infinite;
-    /* Opera */
-}
-
-@keyframes eight {
-    0%,
-    100% {
-    }
-
-    50% {
-        box-shadow: inset 0vw 0vw 0vw 0.1vw #17e1e6, 0vw 0vw 1.5vw 0vw #17e1e6;
-    }
-}
-
-.loading-container-x {
-    animation: loading-container-x 3s linear infinite;
-    -moz-animation: loading-container-x 3s linear infinite;
-    /* Firefox */
-    -webkit-animation: loading-container-x 3s linear infinite;
-    /* Safari and Chrome */
-    -o-animation: loading-container-x 3s linear infinite;
-    /* Opera */
-}
-
-@keyframes container {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(-360deg);
+        transform:translateX(300px);opacity:0
     }
 }

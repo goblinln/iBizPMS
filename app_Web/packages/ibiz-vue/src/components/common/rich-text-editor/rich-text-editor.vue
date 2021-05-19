@@ -424,12 +424,8 @@ export default class RichTextEditor extends Vue {
         this.readyUserItems();
         const ele: any = this.isDrawer(this.$el);
         if (ele) {
-            const strs = ele.style.transform.split(' ');
-            strs.forEach((str: string) => {
-                let num: any = str.indexOf("translateX") >= 0?str.match(/\d+/g):null;
-                if (num && num.length > 0) {
-                  this.editorClass = this.editorClass + '-' + num[0];
-                }
+            ele.style.transform.replace(/translateX\(-?(\d+)%?(px)?\)\s/i,(match: string, p1: string) => {
+              this.editorClass = this.editorClass + '-' + parseInt(p1);
             });
         }
     }
@@ -1002,20 +998,20 @@ export default class RichTextEditor extends Vue {
         const templateContent = this.editor.getContent();
         templParams.ibizpublic = this.single == true? '1' : '0';
         if(!templateContent || Object.is(templateContent,'')){
-            this.$throw('请填充模板内容!!!');
+            this.$throw('请填充模板内容!!!','saveTemplate');
             return;
         }
         if(!templateTitle || Object.is(templateTitle,'')){
-            this.$throw('请输入模板标题!!!');
+            this.$throw('请输入模板标题!!!','saveTemplate');
             return;
         }
         templParams.title = templateTitle;
         templParams.content = templateContent;
         const response: any = await this.userTplService.Create({}, templParams);
         if(response && response.status === 200){
-            this.$success('保存模板成功!!!');
+            this.$success('保存模板成功!!!','saveTemplate');
         }else{
-            this.$throw('保存模板失败!!!');
+            this.$throw('保存模板失败!!!','saveTemplate');
         }
         this.appTemplateData();
         let propip: any = this.$refs.propip;
@@ -1050,9 +1046,9 @@ export default class RichTextEditor extends Vue {
         context.usertpl = event.id;
         const response: any = await this.userTplService.Remove(context,{});
         if(response && response.status === 200){
-            this.$success('删除模板成功!!!');
+            this.$success('删除模板成功!!!','removeAppTemplate');
         }else{
-            this.$throw('删除模板失败!!!');
+            this.$throw('删除模板失败!!!','removeAppTemplate');
         }
         this.appTemplateData();
     }

@@ -183,7 +183,6 @@
     }
   }, {
     "id" : "srfarray",
-    "hidden" : true,
     "dataType" : 25,
     "getPSAppDEField" : {
       "name" : "SRFARRAY",
@@ -191,7 +190,6 @@
     }
   }, {
     "id" : "products",
-    "hidden" : true,
     "dataType" : 25,
     "getPSAppDEField" : {
       "name" : "PRODUCTS",
@@ -199,7 +197,6 @@
     }
   }, {
     "id" : "branchs",
-    "hidden" : true,
     "dataType" : 25,
     "getPSAppDEField" : {
       "name" : "BRANCHS",
@@ -207,7 +204,6 @@
     }
   }, {
     "id" : "plans",
-    "hidden" : true,
     "dataType" : 25,
     "getPSAppDEField" : {
       "name" : "PLANS",
@@ -830,13 +826,15 @@
                 "codeName" : "SrfArray"
               },
               "getPSEditor" : {
-                "editorType" : "HIDDEN",
-                "name" : "srfarray"
+                "editorType" : "DROPDOWNLIST",
+                "name" : "srfarray",
+                "singleSelect" : true
               },
               "allowEmpty" : true,
               "emptyCaption" : false,
-              "hidden" : true,
+              "hidden" : false,
               "inputTipClosable" : false,
+              "needCodeListConfig" : true,
               "showCaption" : true
             }, {
               "caption" : "关联产品",
@@ -855,14 +853,20 @@
                 "codeName" : "Products"
               },
               "getPSEditor" : {
-                "editorType" : "HIDDEN",
-                "name" : "products"
+                "editorType" : "DROPDOWNLIST",
+                "name" : "products",
+                "getPSAppCodeList" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/Product.json"
+                },
+                "singleSelect" : true
               },
               "userTag" : "unique",
               "allowEmpty" : true,
               "emptyCaption" : false,
-              "hidden" : true,
+              "hidden" : false,
               "inputTipClosable" : false,
+              "needCodeListConfig" : true,
               "showCaption" : true
             }, {
               "caption" : "关联产品平台集合",
@@ -881,16 +885,22 @@
                 "codeName" : "Branchs"
               },
               "getPSEditor" : {
-                "editorType" : "HIDDEN",
-                "name" : "branchs"
+                "editorType" : "DROPDOWNLIST",
+                "name" : "branchs",
+                "getPSAppCodeList" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProductBranch.json"
+                },
+                "singleSelect" : true
               },
               "resetItemName" : "products",
               "resetItemNames" : [ "products" ],
               "userTag" : "hidden",
               "allowEmpty" : true,
               "emptyCaption" : false,
-              "hidden" : true,
+              "hidden" : false,
               "inputTipClosable" : false,
+              "needCodeListConfig" : true,
               "showCaption" : true
             }, {
               "caption" : "关联计划",
@@ -909,15 +919,21 @@
                 "codeName" : "Plans"
               },
               "getPSEditor" : {
-                "editorType" : "HIDDEN",
-                "name" : "plans"
+                "editorType" : "DROPDOWNLIST",
+                "name" : "plans",
+                "getPSAppCodeList" : {
+                  "modelref" : true,
+                  "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ProductPlan.json"
+                },
+                "singleSelect" : true
               },
               "resetItemName" : "products",
               "resetItemNames" : [ "products" ],
               "allowEmpty" : true,
               "emptyCaption" : false,
-              "hidden" : true,
+              "hidden" : false,
               "inputTipClosable" : false,
+              "needCodeListConfig" : true,
               "showCaption" : true
             } ],
             "getPSEditor" : {
