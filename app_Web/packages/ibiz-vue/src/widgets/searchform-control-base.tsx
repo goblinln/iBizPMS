@@ -285,6 +285,41 @@ export class SearchFormControlBase extends EditFormControlBase {
     }
 
     /**
+     * 删除记录
+     *
+     * @return {*}
+     * @memberof SearchFormControlBase
+     */
+    public removeHistoryItem(item: any) {
+        if (!(item && item.name && item.value)) {
+            return;
+        }
+        const index = this.historyItems.findIndex((_item: any) => {
+            return _item.name == item.name && _item.value == _item.value;
+        });
+        if (index !== -1) {
+            this.historyItems.splice(index, 1);
+            if (this.selectItem == item.value) {
+                this.selectItem = this.historyItems.length > 0 ? this.historyItems[0].value : null;
+            }
+            let param: any = {};
+            Object.assign(param, {
+                model: JSON.parse(JSON.stringify(this.historyItems)),
+                appdeName: this.appDeCodeName,
+                modelid: this.modelId,
+                utilServiceName: this.utilServiceName,
+                ...this.viewparams
+            });
+            let post = this.service.saveModel(this.utilServiceName, this.context, param);
+            post.then((response: any) => {
+                this.ctrlEvent({ controlname: this.controlInstance.name, action: "save", data: response.data });
+            }).catch((response: any) => {
+                LogUtil.log(response);
+            });
+        }
+    }
+
+    /**
      * 保存
      *
      * @return {*}
