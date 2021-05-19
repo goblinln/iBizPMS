@@ -1233,10 +1233,12 @@ export class GridControlBase extends MDControlBase {
                     }
                     const codelist: IPSAppCodeList = item.getPSCodeList() as IPSAppCodeList;
                     if (codelist) {
-                        Object.assign(importItem.codelist,{
-                            type: codelist.codeListType,
-                            tag: codelist.codeName,
-                            isnumber: codelist.codeItemValueNumber,
+                        Object.assign(importItem, {
+                            codelist: {
+                                type: codelist.codeListType,
+                                tag: codelist.codeName,
+                                isnumber: codelist.codeItemValueNumber,
+                            }
                         })
                     }
                     const appDeField: IPSAppDEField = item.getPSAppDEField() as IPSAppDEField;

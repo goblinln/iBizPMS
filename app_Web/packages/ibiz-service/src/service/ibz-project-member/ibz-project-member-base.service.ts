@@ -2,6 +2,8 @@ import { CodeListService } from '../app/codelist-service';
 import { EntityBaseService, IContext, HttpResponse } from 'ibiz-core';
 import { IIbzProjectMember, IbzProjectMember } from '../../entities';
 import keys from '../../entities/ibz-project-member/ibz-project-member-keys';
+import { isNil, isEmpty } from 'ramda';
+import { PSDEDQCondEngine } from 'ibiz-core';
 
 /**
  * 项目相关成员服务对象基类
@@ -64,6 +66,38 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
             entity = result.data;
         }
         return new HttpResponse(entity);
+    }
+
+    protected getDefaultCond() {
+        return this.condCache.get('default');
+    }
+
+    protected getDeveloperQueryCond() {
+        if (!this.condCache.has('developerQuery')) {
+            const strCond: any[] = ['AND'];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('developerQuery', cond);
+            }
+        }
+        return this.condCache.get('developerQuery');
+    }
+
+    protected getOpenByQueryCond() {
+        if (!this.condCache.has('openByQuery')) {
+            const strCond: any[] = ['AND', ['EQ', 'OPENEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('openByQuery', cond);
+            }
+        }
+        return this.condCache.get('openByQuery');
+    }
+
+    protected getViewCond() {
+        return this.condCache.get('view');
     }
     /**
      * Select

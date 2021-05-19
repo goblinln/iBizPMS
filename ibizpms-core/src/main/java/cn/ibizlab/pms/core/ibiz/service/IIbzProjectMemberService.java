@@ -40,6 +40,7 @@ public interface IIbzProjectMemberService extends IService<IbzProjectMember> {
     void saveBatch(List<IbzProjectMember> list);
     List<IbzProjectMember> select(IbzProjectMemberSearchContext context);
     List<IbzProjectMember> selectDefault(IbzProjectMemberSearchContext context);
+    List<IbzProjectMember> selectDeveloperQuery(IbzProjectMemberSearchContext context);
     List<IbzProjectMember> selectOpenByQuery(IbzProjectMemberSearchContext context);
     List<IbzProjectMember> selectView(IbzProjectMemberSearchContext context);
 

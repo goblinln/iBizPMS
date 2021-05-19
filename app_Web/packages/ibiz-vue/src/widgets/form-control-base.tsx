@@ -440,7 +440,7 @@ export class FormControlBase extends MainControlBase {
             });
         }).catch((error: any) => {
             this.ctrlEndLoading();
-            this.$throw(error,undefined,'load');
+            this.$throw(error,'load');
         });
     }
 

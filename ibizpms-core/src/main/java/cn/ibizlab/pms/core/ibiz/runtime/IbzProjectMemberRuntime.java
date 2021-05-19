@@ -137,6 +137,8 @@ public class IbzProjectMemberRuntime extends cn.ibizlab.pms.core.runtime.SystemD
         IbzProjectMemberSearchContext searchContext = (IbzProjectMemberSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
             return ibzprojectmemberService.selectDefault(searchContext);
+        if (iPSDataQuery.getName().equals("DeveloperQuery"))
+            return ibzprojectmemberService.selectDeveloperQuery(searchContext);
         if (iPSDataQuery.getName().equals("OpenByQuery"))
             return ibzprojectmemberService.selectOpenByQuery(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))

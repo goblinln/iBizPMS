@@ -20,6 +20,7 @@ import com.alibaba.fastjson.JSONObject;
 public interface IbzProjectMemberMapper extends BaseMapper<IbzProjectMember> {
 
     List<IbzProjectMember> selectDefault(@Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
+    List<IbzProjectMember> selectDeveloperQuery(@Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
     List<IbzProjectMember> selectOpenByQuery(@Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
     List<IbzProjectMember> selectView(@Param("srf") IbzProjectMemberSearchContext context, @Param("ew") Wrapper<IbzProjectMember> wrapper);
 
