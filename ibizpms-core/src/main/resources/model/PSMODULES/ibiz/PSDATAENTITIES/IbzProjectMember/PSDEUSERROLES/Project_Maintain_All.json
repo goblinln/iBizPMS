@@ -1,6 +1,14 @@
 {
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Maintain_All.json",
   "name" : "项目维护（全部数据）",
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "CREATE",
+    "name" : "Project_Maintain_All_CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  } ],
   "roleTag" : "Project_Maintain_All",
   "userDRAction" : "READ"
 }

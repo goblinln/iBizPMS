@@ -632,6 +632,7 @@
       },
       "getPSEditor" : {
         "editorParams" : {
+          "pickupdata" : "module",
           "SRFNAVCTX.n_root_eq" : "%product%",
           "AC" : "TRUE",
           "SRFNAVPARAM.n_root_eq" : "%product%",
