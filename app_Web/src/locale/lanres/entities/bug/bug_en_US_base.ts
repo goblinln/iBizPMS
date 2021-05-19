@@ -794,6 +794,7 @@ function getLocaleResourceBase(){
 				'grouppanel2': commonLogic.appcommonhandle("分组面板",null), 
 				'grouppanel3': commonLogic.appcommonhandle("分组面板",null), 
 				'grouppanel4': commonLogic.appcommonhandle("分组面板",null), 
+				'grouppanel5': commonLogic.appcommonhandle("分组面板",null), 
 				'buggroup1': commonLogic.appcommonhandle("Bug基本信息",null), 
 				'formpage1': commonLogic.appcommonhandle("Bug的一生",null), 
 				'grouppanel1': commonLogic.appcommonhandle("分组面板",null), 

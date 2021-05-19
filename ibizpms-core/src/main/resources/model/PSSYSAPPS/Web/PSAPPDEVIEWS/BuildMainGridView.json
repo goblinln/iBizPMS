@@ -235,7 +235,6 @@
         "actionTarget" : "NONE",
         "caption" : "创建版本",
         "codeName" : "Create",
-        "dataAccessAction" : "SRFUR__BUILD_CREATE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BuildEditView.json",

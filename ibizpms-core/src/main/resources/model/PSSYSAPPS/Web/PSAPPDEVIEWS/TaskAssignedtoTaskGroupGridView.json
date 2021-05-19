@@ -1215,10 +1215,8 @@
           "name" : "ud0d0133",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "MainEdit",
-            "dataAccessAction" : "SRFUR__TASK_EDIT_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainEditView.json",

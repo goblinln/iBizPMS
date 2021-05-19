@@ -701,7 +701,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "收藏",
                   "codeName" : "StoryFavoritesMob",
-                  "dataAccessAction" : "SRFUR__STORY_NFAVOR_BUT",
                   "fullCodeName" : "Story_StoryFavoritesMob",
                   "name" : "收藏（移动端）",
                   "getPSAppDEMethod" : {
@@ -4796,7 +4795,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "收藏",
                   "codeName" : "StoryFavoritesMob",
-                  "dataAccessAction" : "SRFUR__STORY_NFAVOR_BUT",
                   "fullCodeName" : "Story_StoryFavoritesMob",
                   "name" : "收藏（移动端）",
                   "getPSAppDEMethod" : {

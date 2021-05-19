@@ -3330,7 +3330,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "编辑",
         "codeName" : "mobEdit1",
-        "dataAccessAction" : "SRFUR__WEEKLY_SUBMIT_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzWeeklyMobEditViewMian.json",

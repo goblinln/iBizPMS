@@ -321,10 +321,8 @@
         "name" : "uf192c0e",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "确认",
           "codeName" : "ConfirmBug",
-          "dataAccessAction" : "SRFUR__BUG_CONFIRM_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugConfirmView.json",

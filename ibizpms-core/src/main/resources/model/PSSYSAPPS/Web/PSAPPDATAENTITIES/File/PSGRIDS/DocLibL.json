@@ -247,7 +247,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "下载",
           "codeName" : "ibzdownload",
-          "dataAccessAction" : "SRFUR__FILE_DOWNLOAD_BUT",
           "frontProcessType" : "OTHER",
           "fullCodeName" : "File_ibzdownload",
           "name" : "下载",

@@ -759,7 +759,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "查收",
           "codeName" : "MyReReportly",
-          "dataAccessAction" : "REPORTLY",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/IbzReportlyMobEditView.json",

@@ -461,10 +461,8 @@
         "name" : "ud7566dc",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "评审",
           "codeName" : "ReviewStory",
-          "dataAccessAction" : "SRFUR__STORY_REVIEW_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRevIewEditView.json",
@@ -495,10 +493,8 @@
         "name" : "u3724273",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "关闭",
           "codeName" : "CloseStory",
-          "dataAccessAction" : "SRFUR__STORY_CLOSED_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryCloseView.json",

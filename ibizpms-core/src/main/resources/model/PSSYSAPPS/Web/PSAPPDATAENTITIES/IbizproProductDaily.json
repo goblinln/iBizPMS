@@ -490,7 +490,6 @@
     "caption" : "生成日报",
     "codeName" : "ManualCreateDaily",
     "confirmMsg" : "是否手动生成昨日日报",
-    "dataAccessAction" : "SRFUR__PRODUCT_MANAGER",
     "fullCodeName" : "IbizproProductDaily_ManualCreateDaily",
     "name" : "生成产品日报",
     "getPSAppDEMethod" : {

@@ -549,11 +549,9 @@
         "name" : "udc5c646",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "删除",
           "codeName" : "remove",
           "confirmMsg" : "删除后数据可能无法恢复，是否删除？",
-          "dataAccessAction" : "SRFUR__RELEASE_COMMON",
           "fullCodeName" : "Release_remove",
           "name" : "删除",
           "getPSAppDEMethod" : {

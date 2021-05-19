@@ -2956,10 +2956,8 @@
                                 "name" : "u5f5e79b",
                                 "getPSUIAction" : {
                                   "actionTarget" : "SINGLEKEY",
-                                  "noPrivDisplayMode" : 1,
                                   "caption" : "编辑",
                                   "codeName" : "MainEdit",
-                                  "dataAccessAction" : "SRFUR__TASK_EDIT_BUT",
                                   "getFrontPSAppView" : {
                                     "modelref" : true,
                                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskMainEditView.json",
@@ -4809,7 +4807,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "确认",
                   "codeName" : "confirmStoryChangeCz",
-                  "dataAccessAction" : "SRFUR__TASK_XQCHANGE_BUT",
                   "fullCodeName" : "Task_confirmStoryChangeCz",
                   "name" : "需求变更确认（操作栏）",
                   "getPSAppDEMethod" : {
@@ -5166,7 +5163,6 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "激活",
                   "codeName" : "ActivationDash",
-                  "dataAccessAction" : "SRFUR__TASK_ACTIVATION_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskActivationTaskView.json",

@@ -919,7 +919,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "提需求",
     "codeName" : "OpenStoryCreateView",
-    "dataAccessAction" : "SRFUR__PRODSTA_STORYCRT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",

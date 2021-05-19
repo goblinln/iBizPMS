@@ -883,10 +883,8 @@
     "id" : "Create@User"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "删除",
     "codeName" : "Delete",
-    "dataAccessAction" : "SRFUR__ADMIN",
     "fullCodeName" : "User_Delete",
     "name" : "删除",
     "getPSAppDEMethod" : {

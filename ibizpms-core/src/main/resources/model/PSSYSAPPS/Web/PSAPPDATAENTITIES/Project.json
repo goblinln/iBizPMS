@@ -4310,6 +4310,13 @@
       },
       "allowMode" : true
     }, {
+      "name" : "BatchUnlinkStory",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/BatchUnlinkStory.json"
+      },
+      "allowMode" : true
+    }, {
       "name" : "Update",
       "getPSDEAction" : {
         "modelref" : true,
@@ -4363,6 +4370,13 @@
       "getPSDEAction" : {
         "modelref" : true,
         "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Close.json"
+      },
+      "allowMode" : true
+    }, {
+      "name" : "importPlanStories",
+      "getPSDEAction" : {
+        "modelref" : true,
+        "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/ImportPlanStories.json"
       },
       "allowMode" : true
     }, {

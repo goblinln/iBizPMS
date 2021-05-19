@@ -1223,7 +1223,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "激活",
                 "codeName" : "ActiviteDash",
-                "dataAccessAction" : "SRFUR__TESTT_ACTIVITE_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskActiviteOptionView.json",

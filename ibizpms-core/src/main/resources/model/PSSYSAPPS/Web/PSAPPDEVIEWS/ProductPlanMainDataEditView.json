@@ -135,7 +135,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "子计划",
         "codeName" : "NewSubPlanCz",
-        "dataAccessAction" : "SRFUR__PROP_CHILD_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanSubPlanCreateView.json",
@@ -166,7 +165,7 @@
       "groupExtractMode" : "ITEM",
       "itemType" : "DEUIACTION",
       "name" : "deuiaction1_mainedit",
-      "noPrivDisplayMode" : 1,
+      "noPrivDisplayMode" : 2,
       "getPSAppViewUIAction" : {
         "modelref" : true,
         "id" : "toolbar_deuiaction1_mainedit"
@@ -177,10 +176,8 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "SINGLEKEY",
-        "noPrivDisplayMode" : 1,
         "caption" : "编辑",
         "codeName" : "MainEdit",
-        "dataAccessAction" : "SRFUR__PROP_EDIT_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanEditView.json",

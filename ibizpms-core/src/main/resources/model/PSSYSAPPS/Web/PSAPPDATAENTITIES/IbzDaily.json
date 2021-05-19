@@ -1132,7 +1132,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "修改",
     "codeName" : "EditCz",
-    "dataAccessAction" : "SRFUR__DAILY_SUBMIT_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzDailymainEditView.json",

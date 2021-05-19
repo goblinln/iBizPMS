@@ -269,11 +269,9 @@
         "name" : "u0499c7d",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "删除",
           "codeName" : "Delete",
           "confirmMsg" : "是否删除该报告？",
-          "dataAccessAction" : "SRFUR__REPORT_DELETE_BUT",
           "fullCodeName" : "TestReport_Delete",
           "name" : "删除",
           "getPSAppDEMethod" : {

@@ -1033,10 +1033,8 @@
           "name" : "u31efdd1",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "修改",
             "codeName" : "edit",
-            "dataAccessAction" : "SRFUR__WEEKLY_SUBMIT_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzWeeklyEditViewEdit.json",

@@ -1229,11 +1229,9 @@
     "id" : "delete@Todo"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "关闭",
     "codeName" : "close",
     "confirmMsg" : "您确定要关闭这条待办吗？",
-    "dataAccessAction" : "CLOSE",
     "fullCodeName" : "Todo_close",
     "name" : "todo关闭",
     "getPSAppDEMethod" : {

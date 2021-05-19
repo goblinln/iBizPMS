@@ -536,7 +536,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "收藏",
         "codeName" : "Collect",
-        "dataAccessAction" : "SRFUR__DOC_FAVOUR_BUT",
         "fullCodeName" : "Doc_Collect",
         "name" : "收藏",
         "getPSAppDEMethod" : {
@@ -756,7 +755,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "收藏",
         "codeName" : "Collect",
-        "dataAccessAction" : "SRFUR__DOC_FAVOUR_BUT",
         "fullCodeName" : "Doc_Collect",
         "name" : "收藏",
         "getPSAppDEMethod" : {
@@ -873,7 +871,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "下载",
         "codeName" : "ibzdownload",
-        "dataAccessAction" : "SRFUR__FILE_DOWNLOAD_BUT",
         "frontProcessType" : "OTHER",
         "fullCodeName" : "File_ibzdownload",
         "name" : "下载",
@@ -1435,7 +1432,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "收藏",
           "codeName" : "Collect",
-          "dataAccessAction" : "SRFUR__DOC_FAVOUR_BUT",
           "fullCodeName" : "Doc_Collect",
           "name" : "收藏",
           "getPSAppDEMethod" : {
@@ -1738,7 +1734,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "下载",
           "codeName" : "ibzdownload",
-          "dataAccessAction" : "SRFUR__FILE_DOWNLOAD_BUT",
           "frontProcessType" : "OTHER",
           "fullCodeName" : "File_ibzdownload",
           "name" : "下载",
@@ -2027,7 +2022,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "收藏",
           "codeName" : "Collect",
-          "dataAccessAction" : "SRFUR__DOC_FAVOUR_BUT",
           "fullCodeName" : "Doc_Collect",
           "name" : "收藏",
           "getPSAppDEMethod" : {

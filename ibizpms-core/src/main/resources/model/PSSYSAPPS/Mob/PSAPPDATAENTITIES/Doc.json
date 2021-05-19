@@ -1104,7 +1104,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "收藏",
     "codeName" : "Collect",
-    "dataAccessAction" : "SRFUR__DOC_FAVOUR_BUT",
     "fullCodeName" : "Doc_Collect",
     "name" : "收藏",
     "getPSAppDEMethod" : {

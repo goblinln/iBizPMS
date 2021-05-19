@@ -649,7 +649,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "收藏",
         "codeName" : "OnlyCollectDoc",
-        "dataAccessAction" : "SRFUR__DOC_FAVOUR_BUT",
         "fullCodeName" : "Doc_OnlyCollectDoc",
         "name" : "仅收藏文档",
         "getPSAppDEMethod" : {
@@ -1595,7 +1594,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "收藏",
         "codeName" : "OnlyCollectDoc",
-        "dataAccessAction" : "SRFUR__DOC_FAVOUR_BUT",
         "fullCodeName" : "Doc_OnlyCollectDoc",
         "name" : "仅收藏文档",
         "getPSAppDEMethod" : {
@@ -2651,7 +2649,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "收藏",
           "codeName" : "OnlyCollectDoc",
-          "dataAccessAction" : "SRFUR__DOC_FAVOUR_BUT",
           "fullCodeName" : "Doc_OnlyCollectDoc",
           "name" : "仅收藏文档",
           "getPSAppDEMethod" : {
@@ -3207,7 +3204,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "收藏",
           "codeName" : "OnlyCollectDoc",
-          "dataAccessAction" : "SRFUR__DOC_FAVOUR_BUT",
           "fullCodeName" : "Doc_OnlyCollectDoc",
           "name" : "仅收藏文档",
           "getPSAppDEMethod" : {

@@ -177,7 +177,6 @@
         "actionTarget" : "NONE",
         "caption" : "提Bug",
         "codeName" : "createBugByBuild",
-        "dataAccessAction" : "SRFUR__BUG_CREATE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugEditView_4791.json",
@@ -692,10 +691,8 @@
           "name" : "uf192c0e",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "确认",
             "codeName" : "ConfirmBug",
-            "dataAccessAction" : "SRFUR__BUG_CONFIRM_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugConfirmView.json",

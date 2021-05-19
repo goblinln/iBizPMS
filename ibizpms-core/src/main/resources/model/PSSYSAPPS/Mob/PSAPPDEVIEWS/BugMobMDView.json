@@ -1276,7 +1276,6 @@
           "caption" : "删除",
           "codeName" : "deleteMob",
           "confirmMsg" : "确认要删除，删除操作将不可恢复？",
-          "dataAccessAction" : "SRFUR__BUG_DELETE_BUT",
           "fullCodeName" : "Bug_deleteMob",
           "name" : "删除（移动端）",
           "getPSAppDEMethod" : {

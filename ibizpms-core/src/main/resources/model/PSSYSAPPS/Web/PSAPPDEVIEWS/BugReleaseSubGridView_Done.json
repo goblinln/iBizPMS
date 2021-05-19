@@ -164,7 +164,6 @@
         "actionTarget" : "NONE",
         "caption" : "关联bug",
         "codeName" : "releaseLinkResolvedBug",
-        "dataAccessAction" : "SRFUR__BUILD_LINK_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMPickupView4.json",

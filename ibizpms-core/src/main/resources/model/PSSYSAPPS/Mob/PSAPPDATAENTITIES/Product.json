@@ -1535,7 +1535,6 @@
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "MobCreate",
-    "dataAccessAction" : "SRFUR__PROD_CREATE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductNewMobEditView.json",
@@ -1591,7 +1590,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "置顶",
     "codeName" : "ProductTop",
-    "dataAccessAction" : "NOTOP",
     "fullCodeName" : "Product_ProductTop",
     "name" : "置顶",
     "getPSAppDEMethod" : {

@@ -370,10 +370,8 @@
     },
     "getPSDEUIAction" : {
       "actionTarget" : "SINGLEKEY",
-      "noPrivDisplayMode" : 1,
       "caption" : "指派",
       "codeName" : "AssingToBug",
-      "dataAccessAction" : "SRFUR__BUG_ASSIGNTO_BUT",
       "getFrontPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugAssingToView.json",
@@ -438,10 +436,8 @@
         "name" : "uaa2ed02",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "确认",
           "codeName" : "ConfirmBug",
-          "dataAccessAction" : "SRFUR__BUG_CONFIRM_BUT",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugConfirmView.json",
@@ -607,7 +603,6 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "收藏",
           "codeName" : "BugFavorites",
-          "dataAccessAction" : "SRFUR__BUG_NFAVOR_BUT",
           "fullCodeName" : "Bug_BugFavorites",
           "name" : "收藏",
           "getPSAppDEMethod" : {

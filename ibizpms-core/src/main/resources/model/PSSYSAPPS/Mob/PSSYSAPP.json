@@ -7571,7 +7571,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "收藏",
                 "codeName" : "StoryFavoritesMob",
-                "dataAccessAction" : "SRFUR__STORY_NFAVOR_BUT",
                 "fullCodeName" : "Story_StoryFavoritesMob",
                 "name" : "收藏（移动端）",
                 "getPSAppDEMethod" : {
@@ -12259,7 +12258,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "收藏",
                 "codeName" : "StoryFavoritesMob",
-                "dataAccessAction" : "SRFUR__STORY_NFAVOR_BUT",
                 "fullCodeName" : "Story_StoryFavoritesMob",
                 "name" : "收藏（移动端）",
                 "getPSAppDEMethod" : {
@@ -18827,7 +18825,6 @@
               "actionTarget" : "SINGLEKEY",
               "caption" : "置顶",
               "codeName" : "ProductTop",
-              "dataAccessAction" : "NOTOP",
               "fullCodeName" : "Product_ProductTop",
               "name" : "置顶",
               "getPSAppDEMethod" : {
@@ -19015,7 +19012,6 @@
             "actionTarget" : "NONE",
             "caption" : "新建",
             "codeName" : "MobCreate",
-            "dataAccessAction" : "SRFUR__PROD_CREATE_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductNewMobEditView.json",
@@ -26011,7 +26007,6 @@
         "actionTarget" : "NONE",
         "caption" : "新建",
         "codeName" : "MobCreate",
-        "dataAccessAction" : "SRFUR__PROD_CREATE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductNewMobEditView.json",
@@ -26067,7 +26062,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "置顶",
         "codeName" : "ProductTop",
-        "dataAccessAction" : "NOTOP",
         "fullCodeName" : "Product_ProductTop",
         "name" : "置顶",
         "getPSAppDEMethod" : {
@@ -30798,6 +30792,13 @@
           },
           "allowMode" : true
         }, {
+          "name" : "BatchUnlinkStory",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/BatchUnlinkStory.json"
+          },
+          "allowMode" : true
+        }, {
           "name" : "Update",
           "getPSDEAction" : {
             "modelref" : true,
@@ -30851,6 +30852,13 @@
           "getPSDEAction" : {
             "modelref" : true,
             "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/Close.json"
+          },
+          "allowMode" : true
+        }, {
+          "name" : "importPlanStories",
+          "getPSDEAction" : {
+            "modelref" : true,
+            "path" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEACTIONS/ImportPlanStories.json"
           },
           "allowMode" : true
         }, {

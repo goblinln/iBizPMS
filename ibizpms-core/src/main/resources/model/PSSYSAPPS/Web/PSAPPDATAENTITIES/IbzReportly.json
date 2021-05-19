@@ -733,10 +733,8 @@
     "id" : "CalendarShowEdit@IbzReportly"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "提交",
     "codeName" : "Submit",
-    "dataAccessAction" : "SRFUR__REPORTLY_SUBMIT_BUT",
     "fullCodeName" : "IbzReportly_Submit",
     "name" : "提交",
     "getPSAppDEMethod" : {

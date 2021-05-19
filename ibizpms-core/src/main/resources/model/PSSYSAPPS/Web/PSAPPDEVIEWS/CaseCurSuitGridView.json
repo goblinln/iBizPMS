@@ -601,10 +601,8 @@
           "name" : "udb1307b",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "结果",
             "codeName" : "OpenTestRunResultView",
-            "dataAccessAction" : "SRFUR__CASE_RESULT_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseExcEditView.json",

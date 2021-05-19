@@ -1819,7 +1819,6 @@
                             "actionTarget" : "SINGLEKEY",
                             "caption" : "团队管理",
                             "codeName" : "TeamManagement",
-                            "dataAccessAction" : "SRFUR__PROJT_TM_BUT",
                             "getFrontPSAppView" : {
                               "modelref" : true,
                               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectTeamMainGridView_EditRow.json",

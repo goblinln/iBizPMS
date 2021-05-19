@@ -1202,7 +1202,6 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "激活",
                 "codeName" : "ActivationDash",
-                "dataAccessAction" : "SRFUR__TASK_ACTIVATION_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskActivationTaskView.json",

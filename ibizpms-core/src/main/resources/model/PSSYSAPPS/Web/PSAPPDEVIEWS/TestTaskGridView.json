@@ -884,10 +884,8 @@
           "name" : "ub317314",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "概况",
             "codeName" : "OpenInfoView",
-            "dataAccessAction" : "SRFUR__TESTT_OPEN_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskMainDashboardView.json",

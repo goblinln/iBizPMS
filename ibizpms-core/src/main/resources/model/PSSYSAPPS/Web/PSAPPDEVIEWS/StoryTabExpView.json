@@ -385,7 +385,6 @@
               "actionTarget" : "NONE",
               "caption" : "关联需求",
               "codeName" : "projectLinkStories",
-              "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectMPickupView3.json",
@@ -1077,10 +1076,8 @@
                 "name" : "u2fdcaeb",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
-                  "noPrivDisplayMode" : 1,
                   "caption" : "批量分解",
                   "codeName" : "BatchBreakdowntasks",
-                  "dataAccessAction" : "SRFUR__STORY_FJTASK_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStorySubTaskNewView.json",

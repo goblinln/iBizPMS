@@ -281,7 +281,6 @@
         "actionTarget" : "NONE",
         "caption" : "关联需求",
         "codeName" : "projectLinkStories",
-        "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectMPickupView3.json",

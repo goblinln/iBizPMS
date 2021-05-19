@@ -673,7 +673,6 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "解决",
             "codeName" : "ResolveBugDash",
-            "dataAccessAction" : "SRFUR__BUG_RESOLVE_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugResolveView.json",
@@ -718,7 +717,6 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "关闭",
             "codeName" : "CloseBugDash",
-            "dataAccessAction" : "SRFUR__BUG_CLOSE_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCloseView.json",

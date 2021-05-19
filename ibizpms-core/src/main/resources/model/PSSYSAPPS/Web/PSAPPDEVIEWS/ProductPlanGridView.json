@@ -981,10 +981,8 @@
           "name" : "u7d4e6c8",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "MainEdit",
-            "dataAccessAction" : "SRFUR__PROP_EDIT_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanEditView.json",
@@ -1079,11 +1077,9 @@
           "name" : "ub056033",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
-            "noPrivDisplayMode" : 1,
             "caption" : "删除",
             "codeName" : "Delete",
             "confirmMsg" : "您确认删除该计划吗？",
-            "dataAccessAction" : "SRFUR__PROP_DELETE_BUT",
             "fullCodeName" : "ProductPlan_Delete",
             "name" : "删除",
             "getPSAppDEMethod" : {

@@ -374,7 +374,6 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "激活",
         "codeName" : "MobActive",
-        "dataAccessAction" : "SRFUR__RELEASE_ACTIVE",
         "fullCodeName" : "Release_MobActive",
         "name" : "激活（移动端）",
         "getPSAppDEMethod" : {

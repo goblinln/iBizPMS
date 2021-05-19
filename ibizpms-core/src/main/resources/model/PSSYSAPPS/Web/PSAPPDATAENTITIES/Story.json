@@ -3219,10 +3219,8 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "批量分解",
     "codeName" : "BatchBreakdowntasks",
-    "dataAccessAction" : "SRFUR__STORY_FJTASK_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskStorySubTaskNewView.json",
@@ -3646,7 +3644,6 @@
     "actionTarget" : "NONE",
     "caption" : "关联需求",
     "codeName" : "buildLinkStories",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView3.json",
@@ -3852,7 +3849,6 @@
     "actionTarget" : "NONE",
     "caption" : "关联需求",
     "codeName" : "projectLinkStories",
-    "dataAccessAction" : "SRFUR__STORY_UNLP_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectMPickupView3.json",
@@ -4056,10 +4052,8 @@
     "id" : "CreatePlan@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "关闭",
     "codeName" : "CloseStory",
-    "dataAccessAction" : "SRFUR__STORY_CLOSED_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryCloseView.json",
@@ -4465,10 +4459,8 @@
     "id" : "ProjectUnlinkStory@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
-    "noPrivDisplayMode" : 1,
     "caption" : "评审",
     "codeName" : "ReviewStory",
-    "dataAccessAction" : "SRFUR__STORY_REVIEW_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRevIewEditView.json",
@@ -4559,7 +4551,6 @@
     "caption" : "删除",
     "codeName" : "delete",
     "confirmMsg" : "确认要删除，删除操作将不可恢复？",
-    "dataAccessAction" : "SRFUR__STORY_DELETE_BUT",
     "fullCodeName" : "Story_delete",
     "name" : "删除",
     "getNextPSUIAction" : {

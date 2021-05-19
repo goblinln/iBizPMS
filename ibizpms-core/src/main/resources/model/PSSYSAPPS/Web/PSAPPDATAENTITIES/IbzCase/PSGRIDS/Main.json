@@ -196,10 +196,8 @@
         "name" : "ueacb23d",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
-          "noPrivDisplayMode" : 1,
           "caption" : "编辑",
           "codeName" : "Editcase",
-          "dataAccessAction" : "SRFUR__ADMIN",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IbzCaseEditEditView.json",
