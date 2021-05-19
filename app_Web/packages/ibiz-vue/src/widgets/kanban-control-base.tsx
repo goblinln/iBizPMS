@@ -323,7 +323,7 @@ export class KanbanControlBase extends MDControlBase {
      */
     public async load(opt: any = {}, isReset: boolean = false) {
         if (!this.fetchAction) {
-            this.$throw('实体看板视图没有配置fetchAction');
+            this.$throw('实体看板视图没有配置fetchAction','load');
             return;
         }
         const arg: any = { ...opt };
@@ -348,7 +348,7 @@ export class KanbanControlBase extends MDControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response || response.status !== 200) {
-                this.$throw(response);
+                this.$throw(response,'load');
                 return;
             }
             const data: any = response.data;
@@ -375,7 +375,7 @@ export class KanbanControlBase extends MDControlBase {
             }
         }, (response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response);
+            this.$throw(response,'load');
         });
     }
 
@@ -473,7 +473,7 @@ export class KanbanControlBase extends MDControlBase {
      */
     public async remove(datas: any[]): Promise<any> {
         if (!this.removeAction) {
-            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.kanban.notConfig.removeAction') as string));
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.kanban.notConfig.removeAction') as string),'remove');
             return;
         }
         let _datas: any[] = [];
@@ -524,10 +524,10 @@ export class KanbanControlBase extends MDControlBase {
                 post.then((response: any) => {
                     this.ctrlEndLoading();
                     if (!response || response.status !== 200) {
-                        this.$throw((this.$t('app.commonWords.delDataFail') as string) + ',' + response.info);
+                        this.$throw((this.$t('app.commonWords.delDataFail') as string) + ',' + response.info,'remove');
                         return;
                     } else {
-                        this.$success((this.$t('app.commonWords.deleteSuccess') as string));
+                        this.$success((this.$t('app.commonWords.deleteSuccess') as string),'remove');
                     }
                     //删除items中已删除的项
                     _datas.forEach((data: any) => {
@@ -543,7 +543,7 @@ export class KanbanControlBase extends MDControlBase {
                     resolve(response);
                 }).catch((response: any) => {
                     this.ctrlEndLoading();
-                    this.$throw(response);
+                    this.$throw(response,'remove');
                     reject(response);
                 });
             });
@@ -579,7 +579,7 @@ export class KanbanControlBase extends MDControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                this.$throw(response);
+                this.$throw(response,'updateData');
                 this.setGroups();
                 return;
             }
@@ -589,7 +589,7 @@ export class KanbanControlBase extends MDControlBase {
             this.$emit("ctrl-event", { controlname: "kanban", action: "update", data: this.items });
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response);
+            this.$throw(response,'updateData');
         });
     }
 

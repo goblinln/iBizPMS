@@ -54,7 +54,7 @@ export default class AppRedirectView extends Vue {
         let tempViewParam:any = Util.deepCopy(viewparam);
         const {srfdename,srfindexname}:{srfdename:string,srfindexname:string} = viewparam;
         if(!viewparam || !srfdename || !srfindexname){
-            this.$throw('跳转参数不足，无法完成跳转操作！');
+            this.$throw('跳转参数不足，无法完成跳转操作!','executeRedirectLogic');
             return;
         }
         // 避免数据污染

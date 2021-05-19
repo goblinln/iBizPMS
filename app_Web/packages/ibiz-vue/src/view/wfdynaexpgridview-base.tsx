@@ -278,7 +278,7 @@ export class WfDynaExpGridViewBase extends MainViewBase {
                     resolve(response.data);
                 }
             }).catch((response: any) => {
-                this.$throw(response);
+                this.$throw(response,'getWFStepModel');
             });
         })
     }
@@ -300,7 +300,7 @@ export class WfDynaExpGridViewBase extends MainViewBase {
                 }
             }
         }).catch((response: any) => {
-            this.$throw(response);
+            this.$throw(response,'getWFLinkModel');
         });
     }
 

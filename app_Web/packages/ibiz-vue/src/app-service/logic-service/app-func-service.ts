@@ -102,7 +102,7 @@ export class AppFuncService {
             return;
         }
         if (appView.redirectView) {
-            this.v.$warning('重定向视图暂不支持应用功能打开');
+            this.v.$warning('重定向视图暂不支持应用功能打开','openAppView');
         } else {
             if (appView.openViewParam) {
                 Object.assign(viewparam, appView.openViewParam);
@@ -299,7 +299,7 @@ export class AppFuncService {
      * @memberof AppFuncService
      */
     public openPdAppFunc(appFunc: any, context: any, viewparam: any) {
-        this.v.$warning('预置应用功能暂不支持');
+        this.v.$warning('预置应用功能暂不支持','openPdAppFunc');
     }
 
     /**
@@ -308,7 +308,7 @@ export class AppFuncService {
      * @memberof AppFuncService
      */
     public executeJavaScript(appFunc: any, context: any, viewparam: any) {
-        this.v.$warning('执行JS暂不支持');
+        this.v.$warning('执行JS暂不支持','executeJavaScript');
     }
 
     /**
@@ -317,6 +317,6 @@ export class AppFuncService {
      * @memberof AppFuncService
      */
     public custom(appFunc: any, context: any, viewparam: any) {
-        this.v.$warning('自定义暂不支持');
+        this.v.$warning('自定义暂不支持','custom');
     }
 }

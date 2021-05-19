@@ -121,7 +121,7 @@ export class TreeControlBase extends MDControlBase {
             .then((response: any) => {
                 this.ctrlEndLoading();
                 if (!response || response.status !== 200) {
-                    this.$throw(response.info);
+                    this.$throw(response.info,'load');
                     resolve([]);
                     return;
                 }
@@ -140,7 +140,7 @@ export class TreeControlBase extends MDControlBase {
             .catch((response: any) => {
                 this.ctrlEndLoading();
                 resolve([]);
-                this.$throw(response);
+                this.$throw(response,'load');
             });
     }
 
@@ -373,7 +373,7 @@ export class TreeControlBase extends MDControlBase {
         get.then((response: any) => {
             this.ctrlEndLoading();
             if (!response || response.status !== 200) {
-                this.$throw(response.info);
+                this.$throw(response.info,'refresh_node');
                 return;
             }
             const _items = [...response.data];
@@ -387,7 +387,7 @@ export class TreeControlBase extends MDControlBase {
             this.setDefaultSelection(_items);
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response);
+            this.$throw(response,'refresh_node');
         });
     }
 

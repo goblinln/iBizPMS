@@ -70,7 +70,7 @@ export class AppPivotTable extends AppGridBase {
      */
     public load(opt: any = {}, pageReset: boolean = false): void {
         if(!this.fetchAction){
-            this.$throw((this.$t('app.gridpage.notConfig.fetchAction') as string));
+            this.$throw((this.$t('app.gridpage.notConfig.fetchAction') as string),'load');
             return;
         }
         if(pageReset){
@@ -98,7 +98,7 @@ export class AppPivotTable extends AppGridBase {
         post.then(async (response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                this.$throw(response);
+                this.$throw(response,'load');
                 return;
             }
             const data: any = response.data;
@@ -156,7 +156,7 @@ export class AppPivotTable extends AppGridBase {
             }          
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response);
+            this.$throw(response,'load');
         });
     }
 

@@ -313,6 +313,7 @@ export class AppGridBase extends GridControlBase {
                                 disabled={!Util.isEmpty(actionModel) && actionModel.disabled}
                                 class={columnClass}
                                 on-click={($event: any) => {
+                                    (this.$apppopover as any).popperDestroy();
                                     this.handleActionClick(row, $event, _column, uiactionDetail);
                                 }}
                             >
@@ -594,6 +595,7 @@ export class AppGridBase extends GridControlBase {
             <app-form-item error={this.gridItemsModel[$index][column.property].error}>
                 <app-default-editor
                     editorInstance={editor}
+                    parentItem={editItem}
                     value={row[editor?.name]}
                     disabled={this.getColumnDisabled(row, editor?.name)}
                     context={this.context}

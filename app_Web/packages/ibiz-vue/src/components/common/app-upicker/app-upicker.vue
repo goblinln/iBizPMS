@@ -322,7 +322,7 @@ export default class AppUpicker extends Vue {
 				}
 			})
 			.catch((response: any) => {
-				this.$throw(response);
+				this.$throw(response,'fectchItemList');
 			});
 	}
 
@@ -352,7 +352,7 @@ export default class AppUpicker extends Vue {
      */
     public handlePublicParams(arg: any): boolean {
         if (!this.data) {
-            this.$throw((this.$t('components.appPicker.formdataException') as any));
+            this.$throw((this.$t('components.appPicker.formdataException') as any),'handlePublicParams');
             return false;
         }
         // 合并表单参数

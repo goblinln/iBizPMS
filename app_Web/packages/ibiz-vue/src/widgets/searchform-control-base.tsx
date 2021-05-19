@@ -153,7 +153,7 @@ export class SearchFormControlBase extends EditFormControlBase {
      */
     public loadDraft(opt: any = {},mode?:string): void {
         if(!this.loaddraftAction){
-            this.$throw('视图' + (this.$t('app.searchForm.notConfig.loaddraftAction') as string));
+            this.$throw('视图' + (this.$t('app.searchForm.notConfig.loaddraftAction') as string),'loadDraft');
             return;
         }
         const arg: any = { ...opt } ;
@@ -163,7 +163,7 @@ export class SearchFormControlBase extends EditFormControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                this.$throw(response);
+                this.$throw(response,'loadDraft');
                 return;
             }
 
@@ -195,7 +195,7 @@ export class SearchFormControlBase extends EditFormControlBase {
             });
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response);
+            this.$throw(response,'loadDraft');
         });
     }
 

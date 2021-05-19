@@ -120,7 +120,7 @@ export class StudioActionUtil {
                     type: 'OpenView',
                     params
                 }, '*');
-                Vue.prototype.$warning('请在已打开的配置平台查看!');
+                Vue.prototype.$warning('请在已打开的配置平台查看!','openStudioConfigView');
             } else {
                 if(this.Environment?.debugOpenMode === 'sln'){
                     LogUtil.log("打开sln未支持");

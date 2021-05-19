@@ -68,7 +68,7 @@ export default class AppLockIndex extends Vue{
     public handleLogin(){
         if(this.lockpasswd != this.passwd){
             this.passwd = '';
-            this.$throw((this.$t('components.lockScren.message1') as string));
+            this.$throw((this.$t('components.lockScren.message1') as string),'handleLogin');
             return;
         }
         this.clearSession();

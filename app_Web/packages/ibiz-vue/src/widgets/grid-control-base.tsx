@@ -293,7 +293,7 @@ export class GridControlBase extends MDControlBase {
                                 try {
                                     eval(sysRule.scriptCode);
                                 } catch (error) {
-                                  this.$throw(error);
+                                  this.$throw(error,'initRules');
                                 }
                                 return true;
                             },
@@ -716,7 +716,7 @@ export class GridControlBase extends MDControlBase {
      */
     public load(opt: any = {}, pageReset: boolean = false): void {
         if (!this.fetchAction) {
-            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.fetchAction') as string));
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.fetchAction') as string),'load');
             return;
         }
         if (pageReset) {
@@ -763,7 +763,7 @@ export class GridControlBase extends MDControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                this.$throw(response);
+                this.$throw(response,'load');
                 return;
             }
             const data: any = response.data;
@@ -827,7 +827,7 @@ export class GridControlBase extends MDControlBase {
             }
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response);
+            this.$throw(response,'load');
         });
     }
 
@@ -841,7 +841,7 @@ export class GridControlBase extends MDControlBase {
      */
     public async remove(datas: any[]): Promise<any> {
         if (!this.removeAction) {
-            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.removeAction') as string));
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.removeAction') as string),'remove');
             return;
         }
         let _datas: any[] = [];
@@ -894,10 +894,10 @@ export class GridControlBase extends MDControlBase {
                 post.then((response: any) => {
                     this.ctrlEndLoading();
                     if (!response || response.status !== 200) {
-                        this.$throw((this.$t('app.gridpage.delDataFail') as string) + ',' + response.info);
+                        this.$throw((this.$t('app.gridpage.delDataFail') as string) + ',' + response.info,'remove');
                         return;
                     } else {
-                        this.$success((this.$t('app.gridpage.delSuccess') as string));
+                        this.$success((this.$t('app.gridpage.delSuccess') as string),'remove');
                     }
                     //删除items中已删除的项
                     _datas.forEach((data: any) => {
@@ -915,7 +915,7 @@ export class GridControlBase extends MDControlBase {
                     resolve(response);
                 }).catch((response: any) => {
                     this.ctrlEndLoading();
-                    this.$throw(response);
+                    this.$throw(response,'remove');
                     reject(response);
                 });
             });
@@ -942,13 +942,13 @@ export class GridControlBase extends MDControlBase {
      */
     public addBatch(arg: any = {}): void {
         if (!this.fetchAction) {
-            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.fetchAction') as string));
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.fetchAction') as string),'addBatch');
             return;
         }
         if (!arg) {
             arg = {};
         }
-        this.$throw((this.$t('app.gridpage.notBatch') as string));
+        this.$throw((this.$t('app.gridpage.notBatch') as string),'addBatch');
     }
 
     /**
@@ -968,7 +968,7 @@ export class GridControlBase extends MDControlBase {
     public importExcel(data: any = {}): void {
         let _this: any = this;
         if (Object.keys(this.importDataModel).length == 0) {
-            this.$warning((this.$t("app.utilview.info") as string));
+            this.$warning((this.$t("app.utilview.info") as string),'importExcel');
             return;
         }
         const view: any = {
@@ -1027,7 +1027,7 @@ export class GridControlBase extends MDControlBase {
                 try {
                     doExport(JSON.parse(JSON.stringify(this.items)));
                 } catch (error) {
-                    this.$throw(error);
+                    this.$throw(error,'exportExcel');
                 }
                 return;
             }
@@ -1071,17 +1071,17 @@ export class GridControlBase extends MDControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response || response.status !== 200) {
-                this.$throw((this.$t('app.gridpage.exportFail') as string) + ',' + response.info);
+                this.$throw((this.$t('app.gridpage.exportFail') as string) + ',' + response.info,'exportExcel');
                 return;
             }
             try {
                 doExport(JSON.parse(JSON.stringify(response.data)));
             } catch (error) {
-                this.$throw(error);
+                this.$throw(error,'exportExcel');
             }
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response);
+            this.$throw(response,'exportExcel');
         });
     }
 
@@ -1808,7 +1808,7 @@ export class GridControlBase extends MDControlBase {
         this.service.getAggData(this.aggAction, JSON.parse(JSON.stringify(this.context)), this.showBusyIndicator).then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                this.$throw(response);
+                this.$throw(response,'getAggData');
                 return;
             }
             this.remoteData = response.data;
@@ -1817,7 +1817,7 @@ export class GridControlBase extends MDControlBase {
             this.ctrlEndLoading();
             this.remoteData = {};
             this.isDisplay = true;
-            this.$throw(response);
+            this.$throw(response,'getAggData');
         })
     }
 
@@ -1898,9 +1898,9 @@ export class GridControlBase extends MDControlBase {
         }
         if (!await this.validateAll()) {
             if (this.errorMessages && this.errorMessages.length > 0) {
-                this.$throw(this.errorMessages[0]);
+                this.$throw(this.errorMessages[0],'save');
             } else {
-                this.$throw((this.$t('app.commonWords.rulesException') as string));
+                this.$throw((this.$t('app.commonWords.rulesException') as string),'save');
             }
             return [];
         }
@@ -1912,7 +1912,7 @@ export class GridControlBase extends MDControlBase {
             try {
                 if (Object.is(item.rowDataState, 'create')) {
                     if (!this.createAction) {
-                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.createAction') as string));
+                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.createAction') as string),'save');
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
                         this.ctrlBeginLoading();
@@ -1922,7 +1922,7 @@ export class GridControlBase extends MDControlBase {
                     }
                 } else if (Object.is(item.rowDataState, 'update')) {
                     if (!this.updateAction) {
-                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.updateAction') as string));
+                        this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.updateAction') as string),'save');
                     } else {
                         Object.assign(item, { viewparams: this.viewparams });
                         if (item[appDeCodeName?.toLowerCase()]) {
@@ -1944,7 +1944,7 @@ export class GridControlBase extends MDControlBase {
         this.refresh();
         if (errorItems.length === 0 && successItems.length > 0) {
             if(args?.showResultInfo || (args && !args.hasOwnProperty('showResultInfo'))){
-                this.$success((this.$t('app.commonWords.saveSuccess') as string));
+                this.$success((this.$t('app.commonWords.saveSuccess') as string),'save');
             }
         } else {
             errorItems.forEach((item: any, index: number) => {
@@ -1956,27 +1956,27 @@ export class GridControlBase extends MDControlBase {
                             let desc: any = this.allColumns.find((column: any) => {
                                 return Object.is(column.name, name);
                             });
-                            this.$throw((desc ? desc.label : '') + " : " + item[name] + (this.$t('app.commonWords.isExist') as string) + '!');
+                            this.$throw((desc ? desc.label : '') + " : " + item[name] + (this.$t('app.commonWords.isExist') as string) + '!','save');
                         } else {
-                            this.$throw(errorMessage[index].data.message ? errorMessage[index].data.message : (this.$t('app.commonWords.sysException') as string));
+                            this.$throw(errorMessage[index].data.message ? errorMessage[index].data.message : (this.$t('app.commonWords.sysException') as string),'save');
                         }
                     } else if (Object.is(errorMessage[index].data.errorKey, 'DuplicateKeyException')) {
                         if (Util.isEmpty(this.columnKeyName)) {
-                            this.$throw(errorMessage[index].data.message ? errorMessage[index].data.message : (this.$t('app.commonWords.sysException') as string));
+                            this.$throw(errorMessage[index].data.message ? errorMessage[index].data.message : (this.$t('app.commonWords.sysException') as string),'save');
                         } else {
                             let name: string = this.service.getNameByProp(this.columnKeyName);
                             if (name) {
                                 let desc: any = this.allColumns.find((column: any) => {
                                     return Object.is(column.name, name);
                                 });
-                                this.$throw((desc ? desc.label : '') + " : " + item[name] + (this.$t('app.commonWords.isExist') as string) + '!');
+                                this.$throw((desc ? desc.label : '') + " : " + item[name] + (this.$t('app.commonWords.isExist') as string) + '!','save');
                             }
                         }
                     } else {
-                        this.$throw(errorMessage[index].data.message ? errorMessage[index].data.message : (this.$t('app.commonWords.sysException') as string));
+                        this.$throw(errorMessage[index].data.message ? errorMessage[index].data.message : (this.$t('app.commonWords.sysException') as string),'save');
                     }
                 } else {
-                    this.$throw((item[this.majorInfoColName] ? item[this.majorInfoColName] : "") + (this.$t('app.commonWords.saveFailed') as string) + '!');
+                    this.$throw((item[this.majorInfoColName] ? item[this.majorInfoColName] : "") + (this.$t('app.commonWords.saveFailed') as string) + '!','save');
                 }
             });
         }
@@ -1992,7 +1992,7 @@ export class GridControlBase extends MDControlBase {
      */
     public newRow(args: any[], params?: any, $event?: any, xData?: any): void {
         if (!this.loaddraftAction) {
-            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.loaddraftAction') as string));
+            this.$throw(`${this.controlInstance.codeName}` + (this.$t('app.gridpage.notConfig.loaddraftAction') as string),'newRow');
             return;
         }
         let _this = this;
@@ -2002,7 +2002,7 @@ export class GridControlBase extends MDControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                this.$throw(response);
+                this.$throw(response,'newRow');
                 return;
             }
             const data = response.data;
@@ -2018,7 +2018,7 @@ export class GridControlBase extends MDControlBase {
             _this.gridItemsModel.push(_this.getGridRowModel());
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response);
+            this.$throw(response,'newRow');
         });
     }
 
@@ -2112,7 +2112,7 @@ export class GridControlBase extends MDControlBase {
         post.then((response: any) => {
             this.ctrlEndLoading();
             if (!response || response.status !== 200) {
-                this.$throw((this.$t('app.gridpage.formitemFailed') as string));
+                this.$throw((this.$t('app.gridpage.formitemFailed') as string),'updateGridEditItem');
                 return;
             }
             const _data: any = response.data;
@@ -2127,7 +2127,7 @@ export class GridControlBase extends MDControlBase {
             });
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response);
+            this.$throw(response,'updateGridEditItem');
         });
     }
 
@@ -2267,14 +2267,14 @@ export class GridControlBase extends MDControlBase {
             result.then((response: any) => {
                 this.ctrlEndLoading();
                 if (!response || response.status !== 200) {
-                    this.$throw((this.$t('app.formpage.workflow.submiterror') as string) + ', ' + response.data.message);
+                    this.$throw((this.$t('app.formpage.workflow.submiterror') as string) + ', ' + response.data.message,'submitbatch');
                     return;
                 }
-                this.$success((this.$t('app.formpage.workflow.submitsuccess') as string));
+                this.$success((this.$t('app.formpage.workflow.submitsuccess') as string),'submitbatch');
                 resolve(response);
             }).catch((response: any) => {
                 this.ctrlEndLoading();
-                this.$throw(response);
+                this.$throw(response,'submitbatch');
                 reject(response);
             });
         })

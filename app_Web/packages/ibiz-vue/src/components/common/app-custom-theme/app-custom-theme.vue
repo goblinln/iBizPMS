@@ -359,7 +359,7 @@ export default class AppCustomTheme extends Vue {
                 { model: { cssValue: JSON.stringify(this.themeOptions), fontFamily: this.selectFont } }).then((res: any) => {
                 if (res) {
                     const _this: any = this;
-                    _this.$success('保存自定义主题成功');
+                    _this.$success('保存自定义主题成功','saveThemeOptions');
                     this.previewTheme();
                 }
             });

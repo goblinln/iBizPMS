@@ -472,7 +472,7 @@ export default class TextFileUpload extends Vue {
                 ownerid: this.getOwnerid(),
         }).then((response: any) => {
             if (!response || response.status != 200) {
-                this.$throw(_this.$t('components.diskImageUpload.getFileFailure') + "!");
+                this.$throw(_this.$t('components.diskImageUpload.getFileFailure') + "!",'getFiles');
                 return;
             }
             // 返回的是一个jsonArray
@@ -486,7 +486,7 @@ export default class TextFileUpload extends Vue {
                 }
             }
         }).catch((error: any) => {
-            this.$throw(error);
+            this.$throw(error,'getFiles');
         });
     }
 
@@ -518,7 +518,7 @@ export default class TextFileUpload extends Vue {
               ownerid: param[fileParam.id]
           }).then((response: any) => {
               if (!response || response.status != 200) {
-                  this.$throw(_this.$t('components.diskImageUpload.getFileFailure') + "!");
+                  this.$throw(_this.$t('components.diskImageUpload.getFileFailure') + "!",'customUploadFile');
                   return;
               }
               // 返回的是一个jsonArray
@@ -529,7 +529,7 @@ export default class TextFileUpload extends Vue {
                   filemime = this.calcFilemime(response.data[0]?.ext);
               }
           }).catch((error: any) => {
-              this.$throw(error);
+              this.$throw(error,'customUploadFile');
           });
         }
         //获取文件内容
@@ -543,17 +543,17 @@ export default class TextFileUpload extends Vue {
               responseType: 'arraybuffer',
           }).then((response: any) => {
               if (!response || response.status != 200) {
-                  this.$throw(_this.$t('components.diskImageUpload.downloadFile') + "!");
+                  this.$throw(_this.$t('components.diskImageUpload.downloadFile') + "!",'customUploadFile');
                   return;
               }
               // 请求成功，后台返回的是一个文件流
               if (response.data) {
                   fileText = response.data;
               } else {
-                  this.$throw(_this.$t('components.diskImageUpload.downloadFile1') + "!");
+                  this.$throw(_this.$t('components.diskImageUpload.downloadFile1') + "!",'customUploadFile');
               }
           }).catch((error: any) => {
-              this.$throw(error);
+              this.$throw(error,'customUploadFile');
           });
         }
         //配置优先级最高
@@ -572,7 +572,7 @@ export default class TextFileUpload extends Vue {
         // 发送post请求
         this.$http.post(uploadUrl, formData, {timeout: 2000}).then((response: any) => {
             if (!response || response.status != 200) {
-                this.$throw(_this.$t('components.diskImageUpload.loadFailure') + "!");
+                this.$throw(_this.$t('components.diskImageUpload.loadFailure') + "!",'customUploadFile');
             }
             // 返回的是一个jsonobject
             if (response.data) {
@@ -590,7 +590,7 @@ export default class TextFileUpload extends Vue {
                 }
             }
         }).catch((error: any) => {
-            this.$throw(error);
+            this.$throw(error,'customUploadFile');
         })
     }
 
@@ -637,7 +637,7 @@ export default class TextFileUpload extends Vue {
             responseType: 'arraybuffer',
         }).then((response: any) => {
             if (!response || response.status != 200) {
-                this.$throw(_this.$t('components.diskImageUpload.downloadFile1') + "!");
+                this.$throw(_this.$t('components.diskImageUpload.downloadFile1') + "!",'onDownload');
                 return;
             }
             // 请求成功，后台返回的是一个文件流
@@ -666,10 +666,10 @@ export default class TextFileUpload extends Vue {
                 // 释放blob对象
                 URL.revokeObjectURL(href);
             } else {
-                this.$throw(_this.$t('components.diskImageUpload.downloadFile1') + "!");
+                this.$throw(_this.$t('components.diskImageUpload.downloadFile1') + "!",'onDownload');
             }
         }).catch((error: any) => {
-            this.$throw(error);
+            this.$throw(error,'onDownload');
         });
     }
 
@@ -692,7 +692,7 @@ export default class TextFileUpload extends Vue {
                 window.open(response.data);
             }
         }).catch((error: any) => {
-            this.$throw(error);
+            this.$throw(error,'onPreview');
         });
     }
 
@@ -715,7 +715,7 @@ export default class TextFileUpload extends Vue {
                 window.open(response.data);
             }
         }).catch((error: any) => {
-            this.$throw(error);
+            this.$throw(error,'onEdit');
         });
     }
 
@@ -741,7 +741,7 @@ export default class TextFileUpload extends Vue {
                 this.iframeUrl = response.data;
             }
         }).catch((error: any) => {
-            this.$throw(error);
+            this.$throw(error,'onOcr');
         });
     }
 
@@ -765,7 +765,7 @@ export default class TextFileUpload extends Vue {
                 // 发送delete请求
                 this.$http.delete(deleteUrl).then((response: any) => {
                     if (!response || response.status != 200) {
-                        this.$throw(_this.$t('components.diskImageUpload.deleteFileFailure') + "!");
+                        this.$throw(_this.$t('components.diskImageUpload.deleteFileFailure') + "!",'onRemove');
                         return
                     }
                     // 从文件列表中删除
@@ -777,7 +777,7 @@ export default class TextFileUpload extends Vue {
                     }
                 }).catch((error: any) => {
                     // 提示删除失败
-                    this.$throw(error);
+                    this.$throw(error,'onRemove');
                 });
             });
         }
@@ -804,25 +804,25 @@ export default class TextFileUpload extends Vue {
                 // 发送delete请求
                 this.$http.delete(deleteUrl).then((response: any) => {
                     if (!response || response.status != 200) {
-                        this.$throw(_this.$t('components.diskImageUpload.deleteFileFailure') + "!");
+                        this.$throw(_this.$t('components.diskImageUpload.deleteFileFailure') + "!",'updateFileBatch');
                     }
                 }).catch((error: any) => {
                     // 提示删除失败
-                    this.$throw(error);
+                    this.$throw(error,'updateFileBatch');
                 });
                 let formData = new FormData();
                 formData.append('file', item.file);
                 // 发送post请求
                 this.$http.post(updateUrl, formData, {timeout: 2000}).then((response: any) => {
                     if (!response || response.status != 200) {
-                        this.$throw(_this.$t('components.diskImageUpload.loadFailure') + "!");
+                        this.$throw(_this.$t('components.diskImageUpload.loadFailure') + "!",'updateFileBatch');
                         return;
                     }
                     item.fileid = response.data.fileid;
                     item.id = response.data.id;
                     item.authcode = response.data.authcode;
                 }).catch((error: any) => {
-                    this.$throw(error);
+                    this.$throw(error,'updateFileBatch');
                 });
               }
             });

@@ -318,7 +318,7 @@ export default class AppStudioAction extends Vue {
                         `${appEnvironment.configDynaPath}?tooltype=${data?.controlType}&dynainst=${dynamicInstanceId}&id=${data.M?.modelid}`,
                     );
                 } else {
-                    this.$info('线下模式不支持跳转动态设计工具');
+                    this.$info('线下模式不支持跳转动态设计工具','gotoCtrlModel');
                 }
             }
         });
@@ -355,7 +355,7 @@ export default class AppStudioAction extends Vue {
             if (value) {
                 try {
                     document.execCommand('copy');
-                    this.$success(`复制成功，内容为 ${value}`);
+                    this.$success(`复制成功，内容为 ${value}`,'onDBClick');
                 } catch (error) {}
             }
         }

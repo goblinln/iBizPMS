@@ -445,7 +445,7 @@ export default class AppImageUpload extends Vue {
      * @memberof AppImageUpload
      */
     public onError(error: any, file: any, fileList: any) {
-        this.$throw(error);
+        this.$throw(error,'onError');
     }
 
     /**

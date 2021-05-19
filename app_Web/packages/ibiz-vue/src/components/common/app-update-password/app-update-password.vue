@@ -71,7 +71,7 @@ export default class AppUpdatePassword extends Vue {
      */
     public oldPwdVaild(){
         if(!this.oldPwd){
-            this.$throw((this.$t('components.appUpdatePassword.oldPwdErr') as string));
+            this.$throw((this.$t('components.appUpdatePassword.oldPwdErr') as string),'oldPwdVaild');
         }
     }
 
@@ -83,7 +83,7 @@ export default class AppUpdatePassword extends Vue {
      */
     public newPwdVaild(){
         if(!this.newPwd){
-            this.$throw((this.$t('components.appUpdatePassword.newPwdErr') as string));
+            this.$throw((this.$t('components.appUpdatePassword.newPwdErr') as string),'newPwdVaild');
         }
     }
 
@@ -96,7 +96,7 @@ export default class AppUpdatePassword extends Vue {
     public confirmVaild() {
         if (this.newPwd && this.confirmPwd) {
             if (this.confirmPwd !== this.newPwd) {
-                this.$throw((this.$t('components.appUpdatePassword.confirmPwdErr') as string));
+                this.$throw((this.$t('components.appUpdatePassword.confirmPwdErr') as string),'confirmVaild');
             }else{
                 this.disUpdate=false;
             }
@@ -125,8 +125,8 @@ export default class AppUpdatePassword extends Vue {
                 this.$emit("close");
             }
         }).catch((error: any) =>{
-            this.$throw((this.$t('app.codeNotExist.sysException') as string));
-            this.$throw(error);
+            this.$throw((this.$t('app.codeNotExist.sysException') as string),'updatePwd');
+            this.$throw(error,'updatePwd');
         })
     }
 }

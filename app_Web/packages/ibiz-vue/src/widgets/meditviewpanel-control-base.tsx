@@ -191,7 +191,7 @@ export class MEditViewPanelControlBase extends MDControlBase {
      */
     public load(data: any): void {
         if(!this.fetchAction){
-            this.$throw('多表单编辑视图fetchAction行为不存在');
+            this.$throw('多表单编辑视图fetchAction行为不存在','load');
             return;
         }
         let arg: any = {};
@@ -204,7 +204,7 @@ export class MEditViewPanelControlBase extends MDControlBase {
             promice.then((response: any) => {
                 this.ctrlEndLoading();
                 if (!response.status || response.status !== 200) {
-                    this.$throw(response);
+                    this.$throw(response,'load');
                     return;
                 }
                 if (response?.data?.length > 0) {
@@ -214,7 +214,7 @@ export class MEditViewPanelControlBase extends MDControlBase {
                 this.ctrlEvent({ controlname: this.controlInstance.name, action: "load", data: this.items });
             }).catch((response: any) => {
                 this.ctrlEndLoading();
-                this.$throw(response);
+                this.$throw(response,'load');
             });
         }
     }
@@ -229,7 +229,7 @@ export class MEditViewPanelControlBase extends MDControlBase {
             return;
         }
         if(!this.loaddraftAction){
-            this.$throw('多表单编辑视图loaddraftAction行为不存在');
+            this.$throw('多表单编辑视图loaddraftAction行为不存在','handleAdd');
             return;
         }
         const promice: Promise<any> = this.service.loadDraft(this.loaddraftAction,JSON.parse(JSON.stringify(this.context)),{viewparams:this.viewparams}, this.showBusyIndicator);
@@ -237,14 +237,14 @@ export class MEditViewPanelControlBase extends MDControlBase {
         promice.then((response: any) => {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
-                this.$throw(response);
+                this.$throw(response,'handleAdd');
                 return;
             }
             const data: any = response.data;
             this.doItems([data]);
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response);
+            this.$throw(response,'handleAdd');
         });
     }
 

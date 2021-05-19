@@ -306,10 +306,18 @@ export default class AppPicker extends Vue {
             if (this.valFormat) {
                 const format =  eval("("+ this.valFormat +")");
                 if (format.hasOwnProperty(key)) {
-                    return format[key];
+                    if (!Util.isEmpty(this.curvalue)) {
+                        return format[key];
+                    } else {
+                        return '';
+                    }
                 }
             }
-            return key;
+            if (!Util.isEmpty(this.curvalue)) {
+                return key;
+            } else {
+                return '';
+            }
         }
         return this.curvalue;
     }
@@ -421,15 +429,15 @@ export default class AppPicker extends Vue {
         // let miss: string = (this.$t('components.appPicker.miss') as any);
         // let requestException: string = (this.$t('components.appPicker.requestException') as any);
         if(!this.service){
-            // this.$throw(miss+'service');
+            // this.$throw(miss+'service','onSearch');
         } else if(!this.acParams.serviceName) {
-            // this.$throw(miss+'serviceName');
+            // this.$throw(miss+'serviceName','onSearch');
         } else if(!this.acParams.interfaceName) {
-            // this.$throw(miss+'interfaceName');
+            // this.$throw(miss+'interfaceName','onSearch');
         } else {
           this.service.getItems(this.acParams.serviceName,this.acParams.interfaceName, _context, _param).then((response: any) => {
               if (!response) {
-                  // this.$throw(requestException);
+                  // this.$throw(requestException,'onSearch');
               } else {
                   this.items = [...response];
               }
@@ -644,7 +652,7 @@ export default class AppPicker extends Vue {
      */
     public openLinkView($event: any): void {
         if (!this.data || !this.valueitem || !this.data[this.valueitem]) {
-            this.$throw((this.$t('components.appPicker.valueitemException') as any));
+            this.$throw((this.$t('components.appPicker.valueitemException') as any),'openLinkView');
             return;
         }
         // 公共参数处理
@@ -705,7 +713,7 @@ export default class AppPicker extends Vue {
      */
     public handlePublicParams(arg: any): boolean {
         if (!this.data) {
-            this.$throw((this.$t('components.appPicker.formdataException') as any));
+            this.$throw((this.$t('components.appPicker.formdataException') as any),'handlePublicParams');
             return false;
         }
         // 合并表单参数

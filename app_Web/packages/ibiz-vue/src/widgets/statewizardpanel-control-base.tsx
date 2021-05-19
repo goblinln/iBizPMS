@@ -282,7 +282,7 @@ export class StateWizardPanelControlBase extends MainControlBase {
             }
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response);
+            this.$throw(response,'doInit');
         })
     }
 
@@ -312,7 +312,7 @@ export class StateWizardPanelControlBase extends MainControlBase {
             this.ctrlEndLoading();
             if (response && response.status === 200) {
                 const data = response.data;
-                this.$success(this.$t('app.commonWords.startsuccess') as string);
+                this.$success(this.$t('app.commonWords.startsuccess') as string,'doFinish');
                 this.ctrlEvent({
                     controlname: this.controlInstance.name,
                     action: 'finish',
@@ -321,7 +321,7 @@ export class StateWizardPanelControlBase extends MainControlBase {
             }
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response);
+            this.$throw(response,'doFinish');
         });
     }
 
@@ -482,7 +482,7 @@ export class StateWizardPanelControlBase extends MainControlBase {
                     this.curState = 'NEXT';
                     this.wizardState.next({ tag: name, action: 'save', data: this.formParam });
                 } else {
-                    this.$throw((this.$t('app.commonWords.rulesException') as string));
+                    this.$throw((this.$t('app.commonWords.rulesException') as string),'onClickNext');
                 }
             }
         }
@@ -502,7 +502,7 @@ export class StateWizardPanelControlBase extends MainControlBase {
                     this.curState = 'FINISH';
                     this.wizardState.next({ tag: name, action: 'save', data: this.formParam });
                 } else {
-                    this.$throw((this.$t('app.commonWords.rulesException') as string));
+                    this.$throw((this.$t('app.commonWords.rulesException') as string),'onClickFinish');
                 }
             }
         }

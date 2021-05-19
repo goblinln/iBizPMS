@@ -302,7 +302,7 @@ export class GanttControlBase extends MDControlBase {
         this.service.getNodes(tempContext,params).then((response: any) => {
             this.ctrlEndLoading();
             if (!response || response.status !== 200) {
-                this.$throw(response);
+                this.$throw(response,'load');
                 return;
             }
             this.tasks = [...this.tasks, ...response.data];
@@ -314,7 +314,7 @@ export class GanttControlBase extends MDControlBase {
             this.$emit("load", this.tasks);
         }).catch((response: any) => {
             this.ctrlEndLoading();
-            this.$throw(response);
+            this.$throw(response,'load');
         });
     }
 
@@ -594,7 +594,7 @@ export class GanttControlBase extends MDControlBase {
                 this.openTargtView(openView, view, tempContext, data, xData, $event, deResParameters, parameters, args, callback);
             }
         } else {
-            this.$warning({ title: '错误', desc: '未指定关系视图' });
+            this.$warning('错误,未指定关系视图!','ganttOpendata');
         }
     }
 
@@ -646,7 +646,7 @@ export class GanttControlBase extends MDControlBase {
                 callback(result, xData);
             });
         } else {
-            this.$warning({ title: '错误', desc: openView.title + '不支持该模式打开' });
+            this.$warning('错误,'+`${openView.title}`+'不支持该模式打开','openTargtView');
         }
     }
 }

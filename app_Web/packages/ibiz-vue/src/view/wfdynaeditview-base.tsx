@@ -240,7 +240,7 @@ export class WFDynaEditViewBase extends MainViewBase {
                     }
                 }
             }).catch((response: any) => {
-                this.$throw(response);
+                this.$throw(response,'getFormModel');
             });
         });
     }
@@ -265,7 +265,7 @@ export class WFDynaEditViewBase extends MainViewBase {
                     this.linkModel = response.data;
                 }
             }).catch((response: any) => {
-                this.$throw(response);
+                this.$throw(response,'getWFLinkModel');
             });
         })
     }
@@ -420,7 +420,7 @@ export class WFDynaEditViewBase extends MainViewBase {
         this.appEntityService[action](Util.deepCopy(this.context), tempSubmitData).then((response: any) => {
             const { data: data } = response;
             if (!response || response.status !== 200) {
-                this.$throw(response);
+                this.$throw(response,'submitWFAddiFeature');
                 return;
             }
             let _this: any = this;
@@ -431,9 +431,9 @@ export class WFDynaEditViewBase extends MainViewBase {
                 this.closeView([{ ...data }]);
             }
             AppCenterService.notifyMessage({ name: this.appDeCodeName, action: 'appRefresh', data: data });
-            this.$success(data?.message ? data.message : '提交数据成功');
+            this.$success(data?.message ? data.message : '提交数据成功','submitWFAddiFeature');
         }).catch((error: any) => {
-            this.$throw(error);
+            this.$throw(error,'submitWFAddiFeature');
         })
     }
 
