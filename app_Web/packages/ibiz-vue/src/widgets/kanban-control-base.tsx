@@ -431,6 +431,7 @@ export class KanbanControlBase extends MDControlBase {
                 }
                 container.subscribe((result: any) => {
                     if (!result || !Object.is(result.ret, 'OK')) {
+                        this.setGroups();
                         return;
                     }
                     this.refresh();
