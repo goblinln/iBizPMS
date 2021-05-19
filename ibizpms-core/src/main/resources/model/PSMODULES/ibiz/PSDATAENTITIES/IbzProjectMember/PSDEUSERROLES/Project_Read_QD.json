@@ -1,6 +1,10 @@
 {
   "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember/PSDEUSERROLES/Project_Read_QD.json",
   "name" : "项目查看（测试负责人）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "QDQuery"
+  },
   "getPSDEUserRoleOPPrivs" : [ {
     "dataAccessAction" : "READ",
     "name" : "Project_Read_QD_READ",
@@ -10,5 +14,6 @@
     }
   } ],
   "roleTag" : "Project_Read_QD",
-  "userDRAction" : "READ"
+  "userDRAction" : "READ",
+  "defaultMode" : true
 }
