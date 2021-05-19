@@ -42,11 +42,21 @@ public interface IIbzProjectMemberService extends IService<IbzProjectMember> {
     List<IbzProjectMember> selectDefault(IbzProjectMemberSearchContext context);
     List<IbzProjectMember> selectDeveloperQuery(IbzProjectMemberSearchContext context);
     List<IbzProjectMember> selectOpenByQuery(IbzProjectMemberSearchContext context);
+    List<IbzProjectMember> selectOpenQuery(IbzProjectMemberSearchContext context);
+    List<IbzProjectMember> selectPMQuery(IbzProjectMemberSearchContext context);
+    List<IbzProjectMember> selectPOQuery(IbzProjectMemberSearchContext context);
+    List<IbzProjectMember> selectQDQuery(IbzProjectMemberSearchContext context);
+    List<IbzProjectMember> selectRDQuery(IbzProjectMemberSearchContext context);
     List<IbzProjectMember> selectView(IbzProjectMemberSearchContext context);
 
     Page<IbzProjectMember> searchDefault(IbzProjectMemberSearchContext context);
     Page<IbzProjectMember> searchDeveloperQuery(IbzProjectMemberSearchContext context);
     Page<IbzProjectMember> searchOpenByQuery(IbzProjectMemberSearchContext context);
+    Page<IbzProjectMember> searchOpenQuery(IbzProjectMemberSearchContext context);
+    Page<IbzProjectMember> searchPMQuery(IbzProjectMemberSearchContext context);
+    Page<IbzProjectMember> searchPOQuery(IbzProjectMemberSearchContext context);
+    Page<IbzProjectMember> searchQDQuery(IbzProjectMemberSearchContext context);
+    Page<IbzProjectMember> searchRDQuery(IbzProjectMemberSearchContext context);
     IbzProjectMember dynamicCall(Long key, String action, IbzProjectMember et);
     /**
      *自定义查询SQL

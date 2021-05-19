@@ -133,6 +133,16 @@ public class IbzProjectMemberRuntime extends cn.ibizlab.pms.core.runtime.SystemD
             return ibzprojectmemberService.searchDeveloperQuery(searchContext);    
         if (iPSDEDataSet.getName().equals("OpenByQuery"))
             return ibzprojectmemberService.searchOpenByQuery(searchContext);    
+        if (iPSDEDataSet.getName().equals("OpenQuery"))
+            return ibzprojectmemberService.searchOpenQuery(searchContext);    
+        if (iPSDEDataSet.getName().equals("PMQuery"))
+            return ibzprojectmemberService.searchPMQuery(searchContext);    
+        if (iPSDEDataSet.getName().equals("POQuery"))
+            return ibzprojectmemberService.searchPOQuery(searchContext);    
+        if (iPSDEDataSet.getName().equals("QDQuery"))
+            return ibzprojectmemberService.searchQDQuery(searchContext);    
+        if (iPSDEDataSet.getName().equals("RDQuery"))
+            return ibzprojectmemberService.searchRDQuery(searchContext);    
         return null;
     }
 
@@ -145,6 +155,16 @@ public class IbzProjectMemberRuntime extends cn.ibizlab.pms.core.runtime.SystemD
             return ibzprojectmemberService.selectDeveloperQuery(searchContext);
         if (iPSDataQuery.getName().equals("OpenByQuery"))
             return ibzprojectmemberService.selectOpenByQuery(searchContext);
+        if (iPSDataQuery.getName().equals("OpenQuery"))
+            return ibzprojectmemberService.selectOpenQuery(searchContext);
+        if (iPSDataQuery.getName().equals("PMQuery"))
+            return ibzprojectmemberService.selectPMQuery(searchContext);
+        if (iPSDataQuery.getName().equals("POQuery"))
+            return ibzprojectmemberService.selectPOQuery(searchContext);
+        if (iPSDataQuery.getName().equals("QDQuery"))
+            return ibzprojectmemberService.selectQDQuery(searchContext);
+        if (iPSDataQuery.getName().equals("RDQuery"))
+            return ibzprojectmemberService.selectRDQuery(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
             return ibzprojectmemberService.selectView(searchContext);
         return null;
@@ -307,6 +327,21 @@ public class IbzProjectMemberRuntime extends cn.ibizlab.pms.core.runtime.SystemD
         }
         else if (action.equals("searchOpenByQuery")) {
             return aroundDataSet("OpenByQuery", point);
+        }
+        else if (action.equals("searchOpenQuery")) {
+            return aroundDataSet("OpenQuery", point);
+        }
+        else if (action.equals("searchPMQuery")) {
+            return aroundDataSet("PMQuery", point);
+        }
+        else if (action.equals("searchPOQuery")) {
+            return aroundDataSet("POQuery", point);
+        }
+        else if (action.equals("searchQDQuery")) {
+            return aroundDataSet("QDQuery", point);
+        }
+        else if (action.equals("searchRDQuery")) {
+            return aroundDataSet("RDQuery", point);
         }
         return point.proceed();
     }

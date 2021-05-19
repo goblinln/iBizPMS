@@ -96,6 +96,66 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
         return this.condCache.get('openByQuery');
     }
 
+    protected getOpenQueryCond() {
+        if (!this.condCache.has('openQuery')) {
+            const strCond: any[] = ['AND', ['EQ', 'ACL','open']];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('openQuery', cond);
+            }
+        }
+        return this.condCache.get('openQuery');
+    }
+
+    protected getPMQueryCond() {
+        if (!this.condCache.has('pMQuery')) {
+            const strCond: any[] = ['AND', ['EQ', 'PM',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('pMQuery', cond);
+            }
+        }
+        return this.condCache.get('pMQuery');
+    }
+
+    protected getPOQueryCond() {
+        if (!this.condCache.has('pOQuery')) {
+            const strCond: any[] = ['AND', ['EQ', 'PO',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('pOQuery', cond);
+            }
+        }
+        return this.condCache.get('pOQuery');
+    }
+
+    protected getQDQueryCond() {
+        if (!this.condCache.has('qDQuery')) {
+            const strCond: any[] = ['AND', ['EQ', 'QD',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('qDQuery', cond);
+            }
+        }
+        return this.condCache.get('qDQuery');
+    }
+
+    protected getRDQueryCond() {
+        if (!this.condCache.has('rDQuery')) {
+            const strCond: any[] = ['AND', ['EQ', 'RD',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('rDQuery', cond);
+            }
+        }
+        return this.condCache.get('rDQuery');
+    }
+
     protected getViewCond() {
         return this.condCache.get('view');
     }
@@ -209,5 +269,60 @@ export class IbzProjectMemberBaseService extends EntityBaseService<IIbzProjectMe
      */
     async FetchOpenByQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/ibzprojectmembers/fetchopenbyquery`, _data);
+    }
+    /**
+     * FetchOpenQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzProjectMemberService
+     */
+    async FetchOpenQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzprojectmembers/fetchopenquery`, _data);
+    }
+    /**
+     * FetchPMQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzProjectMemberService
+     */
+    async FetchPMQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzprojectmembers/fetchpmquery`, _data);
+    }
+    /**
+     * FetchPOQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzProjectMemberService
+     */
+    async FetchPOQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzprojectmembers/fetchpoquery`, _data);
+    }
+    /**
+     * FetchQDQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzProjectMemberService
+     */
+    async FetchQDQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzprojectmembers/fetchqdquery`, _data);
+    }
+    /**
+     * FetchRDQuery
+     *
+     * @param {*} [_context={}]
+     * @param {*} [_data = {}]
+     * @returns {Promise<HttpResponse>}
+     * @memberof IbzProjectMemberService
+     */
+    async FetchRDQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
+        return this.http.post(`/ibzprojectmembers/fetchrdquery`, _data);
     }
 }

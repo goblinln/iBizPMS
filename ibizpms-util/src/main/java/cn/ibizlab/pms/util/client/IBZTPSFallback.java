@@ -1,5 +1,7 @@
 package cn.ibizlab.pms.util.client;
 
+import cn.ibizlab.pms.util.domain.SysAudit;
+import cn.ibizlab.pms.util.domain.SysEvent;
 import cn.ibizlab.pms.util.domain.SysLog;
 import com.alibaba.fastjson.JSONObject;
 import net.ibizsys.runtime.util.domain.MsgSendQueue;
@@ -51,6 +53,16 @@ public class IBZTPSFallback implements IBZTPSFeignClient {
 
     @Override
     public Boolean stop(Long id) {
+        return null;
+    }
+
+    @Override
+    public Boolean audit(SysAudit audit) {
+        return null;
+    }
+
+    @Override
+    public Boolean event(SysEvent event) {
         return null;
     }
     

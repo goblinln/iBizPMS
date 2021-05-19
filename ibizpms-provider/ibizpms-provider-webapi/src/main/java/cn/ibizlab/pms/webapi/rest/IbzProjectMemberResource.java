@@ -218,6 +218,126 @@ public class IbzProjectMemberResource {
                 .body(new PageImpl(ibzprojectmemberMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取公开（启动权限）", tags = {"项目相关成员" } ,notes = "获取公开（启动权限）")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzprojectmembers/fetchopenquery")
+	public ResponseEntity<List<IbzProjectMemberDTO>> fetchopenquery(@RequestBody IbzProjectMemberSearchContext context) {
+        ibzprojectmemberRuntime.addAuthorityConditions(context,"READ");
+        Page<IbzProjectMember> domains = ibzprojectmemberService.searchOpenQuery(context) ;
+        List<IbzProjectMemberDTO> list = ibzprojectmemberMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询公开（启动权限）", tags = {"项目相关成员" } ,notes = "查询公开（启动权限）")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzprojectmembers/searchopenquery")
+	public ResponseEntity<Page<IbzProjectMemberDTO>> searchOpenQuery(@RequestBody IbzProjectMemberSearchContext context) {
+        ibzprojectmemberRuntime.addAuthorityConditions(context,"READ");
+        Page<IbzProjectMember> domains = ibzprojectmemberService.searchOpenQuery(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzprojectmemberMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取项目负责人（启用权限）", tags = {"项目相关成员" } ,notes = "获取项目负责人（启用权限）")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzprojectmembers/fetchpmquery")
+	public ResponseEntity<List<IbzProjectMemberDTO>> fetchpmquery(@RequestBody IbzProjectMemberSearchContext context) {
+        ibzprojectmemberRuntime.addAuthorityConditions(context,"READ");
+        Page<IbzProjectMember> domains = ibzprojectmemberService.searchPMQuery(context) ;
+        List<IbzProjectMemberDTO> list = ibzprojectmemberMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询项目负责人（启用权限）", tags = {"项目相关成员" } ,notes = "查询项目负责人（启用权限）")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzprojectmembers/searchpmquery")
+	public ResponseEntity<Page<IbzProjectMemberDTO>> searchPMQuery(@RequestBody IbzProjectMemberSearchContext context) {
+        ibzprojectmemberRuntime.addAuthorityConditions(context,"READ");
+        Page<IbzProjectMember> domains = ibzprojectmemberService.searchPMQuery(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzprojectmemberMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取产品负责人（启用权限）", tags = {"项目相关成员" } ,notes = "获取产品负责人（启用权限）")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzprojectmembers/fetchpoquery")
+	public ResponseEntity<List<IbzProjectMemberDTO>> fetchpoquery(@RequestBody IbzProjectMemberSearchContext context) {
+        ibzprojectmemberRuntime.addAuthorityConditions(context,"READ");
+        Page<IbzProjectMember> domains = ibzprojectmemberService.searchPOQuery(context) ;
+        List<IbzProjectMemberDTO> list = ibzprojectmemberMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询产品负责人（启用权限）", tags = {"项目相关成员" } ,notes = "查询产品负责人（启用权限）")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzprojectmembers/searchpoquery")
+	public ResponseEntity<Page<IbzProjectMemberDTO>> searchPOQuery(@RequestBody IbzProjectMemberSearchContext context) {
+        ibzprojectmemberRuntime.addAuthorityConditions(context,"READ");
+        Page<IbzProjectMember> domains = ibzprojectmemberService.searchPOQuery(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzprojectmemberMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取测试负责人（启用权限)", tags = {"项目相关成员" } ,notes = "获取测试负责人（启用权限)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzprojectmembers/fetchqdquery")
+	public ResponseEntity<List<IbzProjectMemberDTO>> fetchqdquery(@RequestBody IbzProjectMemberSearchContext context) {
+        ibzprojectmemberRuntime.addAuthorityConditions(context,"READ");
+        Page<IbzProjectMember> domains = ibzprojectmemberService.searchQDQuery(context) ;
+        List<IbzProjectMemberDTO> list = ibzprojectmemberMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询测试负责人（启用权限)", tags = {"项目相关成员" } ,notes = "查询测试负责人（启用权限)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzprojectmembers/searchqdquery")
+	public ResponseEntity<Page<IbzProjectMemberDTO>> searchQDQuery(@RequestBody IbzProjectMemberSearchContext context) {
+        ibzprojectmemberRuntime.addAuthorityConditions(context,"READ");
+        Page<IbzProjectMember> domains = ibzprojectmemberService.searchQDQuery(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzprojectmemberMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取发布负责人（启用权限）", tags = {"项目相关成员" } ,notes = "获取发布负责人（启用权限）")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzprojectmembers/fetchrdquery")
+	public ResponseEntity<List<IbzProjectMemberDTO>> fetchrdquery(@RequestBody IbzProjectMemberSearchContext context) {
+        ibzprojectmemberRuntime.addAuthorityConditions(context,"READ");
+        Page<IbzProjectMember> domains = ibzprojectmemberService.searchRDQuery(context) ;
+        List<IbzProjectMemberDTO> list = ibzprojectmemberMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IbzProjectMemberRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询发布负责人（启用权限）", tags = {"项目相关成员" } ,notes = "查询发布负责人（启用权限）")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzprojectmembers/searchrdquery")
+	public ResponseEntity<Page<IbzProjectMemberDTO>> searchRDQuery(@RequestBody IbzProjectMemberSearchContext context) {
+        ibzprojectmemberRuntime.addAuthorityConditions(context,"READ");
+        Page<IbzProjectMember> domains = ibzprojectmemberService.searchRDQuery(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzprojectmemberMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzprojectmembers/{ibzprojectmember_id}/{action}")

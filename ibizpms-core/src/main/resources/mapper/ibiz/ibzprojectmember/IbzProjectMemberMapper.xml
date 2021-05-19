@@ -61,6 +61,41 @@
          )t1
      </select>
 
+    <!--数据集合[OpenQuery]-->
+	 <select id="searchOpenQuery"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzProjectMemberSearchContext"  resultMap="IbzProjectMemberResultMap">
+         select t1.* from (
+                <include refid="OpenQuery" />
+         )t1
+     </select>
+
+    <!--数据集合[PMQuery]-->
+	 <select id="searchPMQuery"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzProjectMemberSearchContext"  resultMap="IbzProjectMemberResultMap">
+         select t1.* from (
+                <include refid="PMQuery" />
+         )t1
+     </select>
+
+    <!--数据集合[POQuery]-->
+	 <select id="searchPOQuery"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzProjectMemberSearchContext"  resultMap="IbzProjectMemberResultMap">
+         select t1.* from (
+                <include refid="POQuery" />
+         )t1
+     </select>
+
+    <!--数据集合[QDQuery]-->
+	 <select id="searchQDQuery"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzProjectMemberSearchContext"  resultMap="IbzProjectMemberResultMap">
+         select t1.* from (
+                <include refid="QDQuery" />
+         )t1
+     </select>
+
+    <!--数据集合[RDQuery]-->
+	 <select id="searchRDQuery"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzProjectMemberSearchContext"  resultMap="IbzProjectMemberResultMap">
+         select t1.* from (
+                <include refid="RDQuery" />
+         )t1
+     </select>
+
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
 		<![CDATA[ SELECT t1.`ACL`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 4,1) AS `FIFTHMEMBER`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 3,1) AS `FOURTHMEMBER`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 0,1) AS `FRISTMEMBER`, t1.`ID`, t1.`NAME`, t1.`OPENEDBY`, t1.PM AS `PM`, t1.PO AS `PO`, t1.QD AS `QD`, t1.RD AS `RD`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 1,1) AS `SECONDMEMBER`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 5,1) AS `SIXTHMEMBER`, (select GROUP_CONCAT(t.account order by t.`order` asc) from zt_team t where t.type = 'project' and t.root = t1.id GROUP BY t.root) AS `TEAMEMBERS`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 2,1) AS `THIRDMEMBER` FROM `zt_project` t1   ]]>
@@ -101,6 +136,81 @@
 	
 	<select id="selectOpenByQuery"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzProjectMemberSearchContext" resultMap="IbzProjectMemberResultMap">
 		<include refid="OpenByQuery" />
+	</select>
+
+    <!--数据查询[OpenQuery]-->
+    <sql id="OpenQuery" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACL`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 4,1) AS `FIFTHMEMBER`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 3,1) AS `FOURTHMEMBER`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 0,1) AS `FRISTMEMBER`, t1.`ID`, t1.`NAME`, t1.`OPENEDBY`, t1.PM AS `PM`, t1.PO AS `PO`, t1.QD AS `QD`, t1.RD AS `RD`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 1,1) AS `SECONDMEMBER`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 5,1) AS `SIXTHMEMBER`, (select GROUP_CONCAT(t.account order by t.`order` asc) from zt_team t where t.type = 'project' and t.root = t1.id GROUP BY t.root) AS `TEAMEMBERS`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 2,1) AS `THIRDMEMBER` FROM `zt_project` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND ( t1.`ACL` = 'open' ) ]]>
+            </if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectOpenQuery"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzProjectMemberSearchContext" resultMap="IbzProjectMemberResultMap">
+		<include refid="OpenQuery" />
+	</select>
+
+    <!--数据查询[PMQuery]-->
+    <sql id="PMQuery" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACL`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 4,1) AS `FIFTHMEMBER`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 3,1) AS `FOURTHMEMBER`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 0,1) AS `FRISTMEMBER`, t1.`ID`, t1.`NAME`, t1.`OPENEDBY`, t1.PM AS `PM`, t1.PO AS `PO`, t1.QD AS `QD`, t1.RD AS `RD`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 1,1) AS `SECONDMEMBER`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 5,1) AS `SIXTHMEMBER`, (select GROUP_CONCAT(t.account order by t.`order` asc) from zt_team t where t.type = 'project' and t.root = t1.id GROUP BY t.root) AS `TEAMEMBERS`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 2,1) AS `THIRDMEMBER` FROM `zt_project` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND ( t1.PM =  #{srf.sessioncontext.srfloginname} ) ]]>
+            </if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectPMQuery"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzProjectMemberSearchContext" resultMap="IbzProjectMemberResultMap">
+		<include refid="PMQuery" />
+	</select>
+
+    <!--数据查询[POQuery]-->
+    <sql id="POQuery" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACL`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 4,1) AS `FIFTHMEMBER`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 3,1) AS `FOURTHMEMBER`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 0,1) AS `FRISTMEMBER`, t1.`ID`, t1.`NAME`, t1.`OPENEDBY`, t1.PM AS `PM`, t1.PO AS `PO`, t1.QD AS `QD`, t1.RD AS `RD`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 1,1) AS `SECONDMEMBER`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 5,1) AS `SIXTHMEMBER`, (select GROUP_CONCAT(t.account order by t.`order` asc) from zt_team t where t.type = 'project' and t.root = t1.id GROUP BY t.root) AS `TEAMEMBERS`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 2,1) AS `THIRDMEMBER` FROM `zt_project` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND ( t1.PO =  #{srf.sessioncontext.srfloginname} ) ]]>
+            </if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectPOQuery"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzProjectMemberSearchContext" resultMap="IbzProjectMemberResultMap">
+		<include refid="POQuery" />
+	</select>
+
+    <!--数据查询[QDQuery]-->
+    <sql id="QDQuery" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACL`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 4,1) AS `FIFTHMEMBER`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 3,1) AS `FOURTHMEMBER`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 0,1) AS `FRISTMEMBER`, t1.`ID`, t1.`NAME`, t1.`OPENEDBY`, t1.PM AS `PM`, t1.PO AS `PO`, t1.QD AS `QD`, t1.RD AS `RD`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 1,1) AS `SECONDMEMBER`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 5,1) AS `SIXTHMEMBER`, (select GROUP_CONCAT(t.account order by t.`order` asc) from zt_team t where t.type = 'project' and t.root = t1.id GROUP BY t.root) AS `TEAMEMBERS`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 2,1) AS `THIRDMEMBER` FROM `zt_project` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND ( t1.QD =  #{srf.sessioncontext.srfloginname} ) ]]>
+            </if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectQDQuery"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzProjectMemberSearchContext" resultMap="IbzProjectMemberResultMap">
+		<include refid="QDQuery" />
+	</select>
+
+    <!--数据查询[RDQuery]-->
+    <sql id="RDQuery" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACL`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 4,1) AS `FIFTHMEMBER`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 3,1) AS `FOURTHMEMBER`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 0,1) AS `FRISTMEMBER`, t1.`ID`, t1.`NAME`, t1.`OPENEDBY`, t1.PM AS `PM`, t1.PO AS `PO`, t1.QD AS `QD`, t1.RD AS `RD`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 1,1) AS `SECONDMEMBER`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 5,1) AS `SIXTHMEMBER`, (select GROUP_CONCAT(t.account order by t.`order` asc) from zt_team t where t.type = 'project' and t.root = t1.id GROUP BY t.root) AS `TEAMEMBERS`, (select t.account from zt_team t where t.type = 'project' and t.root = t1.id order by t.id asc LIMIT 2,1) AS `THIRDMEMBER` FROM `zt_project` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND ( t1.RD =  #{srf.sessioncontext.srfloginname} ) ]]>
+            </if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectRDQuery"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzProjectMemberSearchContext" resultMap="IbzProjectMemberResultMap">
+		<include refid="RDQuery" />
 	</select>
 
     <!--数据查询[View]-->
