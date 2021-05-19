@@ -235,17 +235,6 @@ export class MainViewBase extends ViewBase {
     }
 
     /**
-     * 渲染视图头部
-     *
-     * @memberof MainViewBase
-     */
-    public renderViewHeader() {
-        return [
-            (this.viewInstance?.showCaptionBar && !this.noViewCaption) ? <span class='caption-info'>{this.viewInstance?.title}</span> : null,
-        ];
-    }
-
-    /**
      * 渲染视图工具栏
      *
      * @memberof MainViewBase
