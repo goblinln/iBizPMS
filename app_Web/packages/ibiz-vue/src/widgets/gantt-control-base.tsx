@@ -618,6 +618,9 @@ export class GanttControlBase extends MDControlBase {
             // 打开模态
             let container: Subject<any> = _this.$appmodal.openModal(view, tempContext, data);
             container.subscribe((result: any) => {
+                if (!result || !Object.is(result.ret, 'OK')) {
+                    return;
+                }
                 callback(result, xData);
             });
         } else if (openView.openMode.indexOf('DRAWER') !== -1) {

@@ -662,40 +662,6 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "NONE",
-    "caption" : "同步",
-    "codeName" : "SyncFromIBIZ",
-    "fullCodeName" : "ProductModule_SyncFromIBIZ",
-    "name" : "同步",
-    "getPSAppDEMethod" : {
-      "modelref" : true,
-      "id" : "SyncFromIBIZ"
-    },
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-    },
-    "getPSNavigateContexts" : [ {
-      "key" : "PRODUCTMODULE",
-      "name" : "PRODUCTMODULE",
-      "value" : "0",
-      "rawValue" : true
-    } ],
-    "getPSNavigateParams" : [ {
-      "key" : "productmodule",
-      "name" : "productmodule",
-      "value" : "0",
-      "rawValue" : true
-    } ],
-    "refreshMode" : 1,
-    "timeout" : 60000,
-    "uIActionMode" : "BACKEND",
-    "uIActionTag" : "SyncFromIBIZ",
-    "uIActionType" : "DEUIACTION",
-    "enableConfirm" : true,
-    "reloadData" : true,
-    "id" : "SyncFromIBIZ@ProductModule"
-  }, {
-    "actionTarget" : "NONE",
     "caption" : "修复",
     "codeName" : "Fix",
     "confirmMsg" : "执行修复模块路径",

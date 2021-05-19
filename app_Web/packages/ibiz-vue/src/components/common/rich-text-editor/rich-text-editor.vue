@@ -424,12 +424,8 @@ export default class RichTextEditor extends Vue {
         this.readyUserItems();
         const ele: any = this.isDrawer(this.$el);
         if (ele) {
-            const strs = ele.style.transform.split(' ');
-            strs.forEach((str: string) => {
-                let num: any = str.indexOf("translateX") >= 0?str.match(/\d+/g):null;
-                if (num && num.length > 0) {
-                  this.editorClass = this.editorClass + '-' + num[0];
-                }
+            ele.style.transform.replace(/translateX\(-?(\d+)%?(px)?\)\s/i,(match: string, p1: string) => {
+              this.editorClass = this.editorClass + '-' + parseInt(p1);
             });
         }
     }

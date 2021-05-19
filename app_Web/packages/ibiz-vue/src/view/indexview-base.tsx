@@ -84,6 +84,21 @@ export class IndexViewBase extends ViewBase {
         this.viewState.next({ tag: this.menuInstance?.name, action: 'load', data: {} });
         ViewTool.setIndexParameters([{ pathName: this.viewInstance?.codeName, parameterName: this.viewInstance?.codeName }]);
         ViewTool.setIndexViewParam(this.context);
+        this.appLoadingDestroyed();
+    }
+
+    /**
+     *  应用loading销毁
+     *
+     * @memberof IndexViewBase
+     */
+    public appLoadingDestroyed() {
+        setTimeout(() => {
+            const el = document.getElementById('app-loading-x');
+            if (el) {
+                el.style.display = 'none';
+            }
+        }, 300);
     }
 
     /**

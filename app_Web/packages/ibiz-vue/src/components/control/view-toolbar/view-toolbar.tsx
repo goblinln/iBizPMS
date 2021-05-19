@@ -158,7 +158,7 @@ export class ViewToolbar extends Vue {
                         <el-badge value={targetCounterService.counterData[item.uiaction.counterId]}>
                             <i-button
                                 disabled={item.disabled}
-                                class={item.class}
+                                class={this.getToolBarItemClass(item)}
                                 on-click={(e: any) => this.itemClick({ tag: item.name }, e)}
                                 loading={this.isViewLoading}
                             >
@@ -169,7 +169,7 @@ export class ViewToolbar extends Vue {
                     ) : (
                         <i-button
                             disabled={item.disabled}
-                            class={item.class}
+                            class={this.getToolBarItemClass(item)}
                             on-click={(e: any) => this.itemClick({ tag: item.name }, e)}
                             loading={this.isViewLoading}
                         >
@@ -236,7 +236,7 @@ export class ViewToolbar extends Vue {
                                 v-show={item.visabled}
                                 disabled={item.disabled}
                                 title={item.tooltip}
-                                class={item.class}
+                                class={this.getToolBarItemClass(item)}
                                 ghost
                                 loading={this.isViewLoading}
                             >
@@ -269,7 +269,7 @@ export class ViewToolbar extends Vue {
                 return (
                     <dropdown v-show={item.visabled} trigger='click'>
                         <tooltip transfer={true} max-width='600'>
-                            <i-button class={item.class} loading={this.isViewLoading}>
+                            <i-button class={this.getToolBarItemClass(item)} loading={this.isViewLoading}>
                                 {item.icon ? <menu-icon item={item} /> : null}
                                 {item.caption ? <span class='caption'>{item.caption}</span> : null}
                                 <icon type='ios-arrow-down'></icon>
@@ -295,5 +295,20 @@ export class ViewToolbar extends Vue {
         }
         let content: any = this.mode == "STYLE2" ? this.renderStyle2() : this.renderDefault();
         return <div class={{ 'toolbar-container': true, 'style2': this.mode == "STYLE2" ? true : false }}>{content}</div>;
+    }
+
+    /**
+     * 绘制工具栏项样式
+     *
+     * @returns {*}
+     * @memberof ViewToolbar
+     */
+    public getToolBarItemClass(item:any){
+        let tempClass:string = '';
+        if(item.actionLevel){
+            tempClass += `srfactionlevel${item.actionLevel}`
+        }
+        tempClass += ` ${item.class}`
+        return tempClass;
     }
 }

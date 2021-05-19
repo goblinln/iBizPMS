@@ -95,37 +95,37 @@ export const themeConfig = {
         className: '',
         disable: false,
         items: [{
-            label: '背景色',
-            cssName: '--button-background-color',
-            default: '',
-            disable: false,
-            showAlpha: true
-        }, {
-            label: '背景色（淡色）',
+            label: '不常用操作背景色',
             cssName: '--button-background-color-light',
             default: '',
             disable: false,
             showAlpha: true
         }, {
-            label: '背景色（亮色）',
+            label: '一般操作背景色',
+            cssName: '--button-background-color',
+            default: '',
+            disable: false,
+            showAlpha: true
+        }, {
+            label: '关键操作背景色',
             cssName: '--button-background-color-bright',
             default: '',
             disable: false,
             showAlpha: true
         }, {
-            label: '字体颜色',
-            cssName: '--button-font-color',
-            default: '',
-            disable: false,
-            showAlpha: true
-        }, {
-            label: '字体颜色（淡色）',
+            label: '不常用操作字体颜色',
             cssName: '--button-font-color-light',
             default: '',
             disable: false,
             showAlpha: true
         }, {
-            label: '字体颜色（亮色）',
+            label: '一般操作字体颜色',
+            cssName: '--button-font-color',
+            default: '',
+            disable: false,
+            showAlpha: true
+        }, {
+            label: '关键操作字体颜色',
             cssName: '--button-font-color-bright',
             default: '',
             disable: false,
@@ -172,7 +172,7 @@ export const themeConfig = {
             default: '',
             disable: false,
             showAlpha: true
-        }, ]
+        },]
     }, {
         label: '部件',
         value: 'ctrl',
@@ -250,6 +250,6 @@ export const themeConfig = {
             default: '',
             disable: false,
             showAlpha: true
-        }, ]
+        },]
     }]
 }

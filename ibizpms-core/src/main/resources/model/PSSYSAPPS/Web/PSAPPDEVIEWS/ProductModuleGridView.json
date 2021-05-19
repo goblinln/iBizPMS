@@ -20,17 +20,6 @@
     } ]
   } ],
   "getPSAppViewLogics" : [ {
-    "eventArg" : "deuiaction1_syncfromibiz",
-    "eventNames" : "CLICK",
-    "logicTrigger" : "CTRLEVENT",
-    "logicType" : "APPVIEWUIACTION",
-    "name" : "toolbar_deuiaction1_syncfromibiz_click",
-    "getPSAppViewUIAction" : {
-      "modelref" : true,
-      "id" : "toolbar_deuiaction1_syncfromibiz"
-    },
-    "getPSViewCtrlName" : "toolbar"
-  }, {
     "eventArg" : "deuiaction2",
     "eventNames" : "CLICK",
     "logicTrigger" : "CTRLEVENT",
@@ -70,18 +59,6 @@
     "rawValue" : false
   } ],
   "getPSAppViewUIActions" : [ {
-    "name" : "toolbar_deuiaction1_syncfromibiz",
-    "getPSUIAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-      },
-      "modelref" : true,
-      "id" : "SyncFromIBIZ@ProductModule"
-    },
-    "uIActionTarget" : "NONE",
-    "xDataControlName" : "grid"
-  }, {
     "name" : "toolbar_deuiaction2",
     "getPSUIAction" : {
       "modelref" : true,
@@ -110,54 +87,6 @@
       "id" : "TOOLBAR"
     },
     "getPSDEToolbarItems" : [ {
-      "caption" : "同步",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction1_syncfromibiz",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction1_syncfromibiz"
-      },
-      "getPSUIAction" : {
-        "actionTarget" : "NONE",
-        "caption" : "同步",
-        "codeName" : "SyncFromIBIZ",
-        "fullCodeName" : "ProductModule_SyncFromIBIZ",
-        "name" : "同步",
-        "getPSAppDEMethod" : {
-          "modelref" : true,
-          "id" : "SyncFromIBIZ"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/ProductModule.json"
-        },
-        "getPSNavigateContexts" : [ {
-          "key" : "PRODUCTMODULE",
-          "name" : "PRODUCTMODULE",
-          "value" : "0",
-          "rawValue" : true
-        } ],
-        "getPSNavigateParams" : [ {
-          "key" : "productmodule",
-          "name" : "productmodule",
-          "value" : "0",
-          "rawValue" : true
-        } ],
-        "refreshMode" : 1,
-        "timeout" : 60000,
-        "uIActionMode" : "BACKEND",
-        "uIActionTag" : "SyncFromIBIZ",
-        "uIActionType" : "DEUIACTION",
-        "enableConfirm" : true,
-        "reloadData" : true,
-        "id" : "SyncFromIBIZ@ProductModule"
-      },
-      "tooltip" : "同步",
-      "showCaption" : true,
-      "showIcon" : true
-    }, {
       "caption" : "新建行",
       "groupExtractMode" : "ITEM",
       "itemType" : "DEUIACTION",

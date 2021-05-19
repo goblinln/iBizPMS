@@ -150,6 +150,7 @@ export class MainViewBase extends ViewBase {
                     visabled: true,
                     itemType: item.itemType,
                     dataaccaction: '',
+                    actionLevel:(item as any).actionLevel
                 };
                 items.forEach((_item: any) => {
                     models.push(this.initToolBarItems(_item));
@@ -176,6 +177,7 @@ export class MainViewBase extends ViewBase {
             showIcon: item.showIcon,
             class: css ? css.cssName : '',
             getPSSysImage: img ? { cssClass: img.cssClass, imagePath: img.imagePath } : '',
+            actionLevel:(item as any).actionLevel
         };
         return tempModel;
     }
@@ -363,6 +365,9 @@ export class MainViewBase extends ViewBase {
             // 打开模态
             let container: Subject<any> = _this.$appmodal.openModal(view, tempContext, data);
             container.subscribe((result: any) => {
+                if (!result || !Object.is(result.ret, 'OK')) {
+                    return;
+                }
                 callback(result, xData);
             });
         } else if (openView.openMode.indexOf('DRAWER') !== -1) {
@@ -940,6 +945,9 @@ export class MainViewBase extends ViewBase {
                     // 打开模态
                     let container: Subject<any> = _this.$appmodal.openModal(view, tempContext, data);
                     container.subscribe((result: any) => {
+                        if (!result || !Object.is(result.ret, 'OK')) {
+                            return;
+                        }
                         callback(result, xData);
                     });
                 } else if (dataview.openMode.indexOf('DRAWER') !== -1) {
