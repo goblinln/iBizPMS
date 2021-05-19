@@ -1630,7 +1630,7 @@ export class GridControlBase extends MDControlBase {
             this.stopRowClick = false;
             return;
         }
-        if (this.isSingleSelect || this.gridRowActiveMode != 1) {
+        if (this.isSingleSelect || this.gridRowActiveMode != 0) {
             this.selections = [];
         }
         // 已选中则删除，没选中则添加

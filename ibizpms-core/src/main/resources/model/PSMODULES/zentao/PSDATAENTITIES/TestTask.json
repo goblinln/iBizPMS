@@ -1937,6 +1937,15 @@
           "id" : "Default"
         },
         "srcValueType" : "SRCDLPARAM"
+      }, {
+        "name" : "Default[BUILD]",
+        "paramAction" : "SQLPARAM",
+        "srcFieldName" : "BUILD",
+        "getSrcPSDELogicParam" : {
+          "modelref" : true,
+          "id" : "Default"
+        },
+        "srcValueType" : "SRCDLPARAM"
       } ],
       "parallelOutput" : true
     }, {

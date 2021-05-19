@@ -20,7 +20,8 @@ package cn.ibizlab.pms.zentao.logic.testtasklogic.getproductbuild;
     Map param =new HashMap();
         param.put("param0",testtaskgetproductbuilddefault.get("project"));
         param.put("param1",testtaskgetproductbuilddefault.get("product"));
-    String strSql="select t.id as build,case when (select t1.`name` from zt_release t1 where t1.build = t.id and t1.deleted = '0' ORDER BY t1.date desc LIMIT 0,1) is null then t.`name` else (select t1.`name` from zt_release t1 where t1.build = t.id and t1.deleted = '0' ORDER BY t1.date desc LIMIT 0,1) end as buildname from zt_build t where t.project = #{et.param0} and t.product = #{et.param1} and t.deleted = '0' LIMIT 0,1";
+        param.put("param2",testtaskgetproductbuilddefault.get("build"));
+    String strSql="select t.id as build,case when (select t1.`name` from zt_release t1 where t1.build = t.id and t1.deleted = '0' ORDER BY t1.date desc LIMIT 0,1) is null then t.`name` else (select t1.`name` from zt_release t1 where t1.build = t.id and t1.deleted = '0' ORDER BY t1.date desc LIMIT 0,1) end as buildname from zt_build t where t.project = #{et.param0} and t.product = #{et.param1} and t.id =#{et.param2} and t.deleted = '0' LIMIT 0,1";
                         java.util.List<JSONObject> entities=iBzSysTesttaskDefaultService.select(strSql,param);//SQL调用
                             if(entities.size()>0){
                             JSONObject entity=entities.get(0);
