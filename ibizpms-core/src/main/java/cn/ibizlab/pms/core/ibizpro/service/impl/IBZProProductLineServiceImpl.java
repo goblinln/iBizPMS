@@ -52,6 +52,9 @@ public class IBZProProductLineServiceImpl extends ServiceImpl<IBZProProductLineM
     @Lazy
     cn.ibizlab.pms.core.ibizpro.runtime.IBZProProductLineRuntime ibzproproductlineRuntime;
 
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.zentao.service.IProductService productService;
 
     protected int batchSize = 500;
 
@@ -118,6 +121,8 @@ public class IBZProProductLineServiceImpl extends ServiceImpl<IBZProProductLineM
     @Transactional
     public boolean remove(Long key) {
         if(!ibzproproductlineRuntime.isRtmodel()){
+        if(!ObjectUtils.isEmpty(productService.selectByLine(key)))
+            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[Product]数据，无法删除!","","");
         }
         boolean result = removeById(key);
         return result ;
@@ -129,6 +134,8 @@ public class IBZProProductLineServiceImpl extends ServiceImpl<IBZProProductLineM
         if(ibzproproductlineRuntime.isRtmodel()){
             idList.forEach(id->getProxyService().remove(id));
         }else{
+        if(!ObjectUtils.isEmpty(productService.selectByLine(idList)))
+            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[Product]数据，无法删除!","","");
         removeByIds(idList);
         }
         

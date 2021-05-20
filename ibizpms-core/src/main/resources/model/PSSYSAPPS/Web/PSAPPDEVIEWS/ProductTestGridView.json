@@ -297,23 +297,6 @@
       "width" : 150,
       "widthUnit" : "PX",
       "enableSort" : true
-    }, {
-      "align" : "LEFT",
-      "cLConvertMode" : "NONE",
-      "caption" : "产品线",
-      "codeName" : "linename",
-      "columnType" : "DEFGRIDCOLUMN",
-      "dataItemName" : "linename",
-      "excelCaption" : "产品线",
-      "name" : "linename",
-      "noPrivDisplayMode" : 1,
-      "getPSAppDEField" : {
-        "name" : "LINENAME",
-        "codeName" : "LineName"
-      },
-      "width" : 150,
-      "widthUnit" : "PX",
-      "enableSort" : true
     } ],
     "getPSDEGridDataItems" : [ {
       "dataType" : 1,
@@ -321,13 +304,6 @@
       "getPSAppDEField" : {
         "name" : "ID",
         "codeName" : "Id"
-      }
-    }, {
-      "dataType" : 25,
-      "name" : "linename",
-      "getPSAppDEField" : {
-        "name" : "LINENAME",
-        "codeName" : "LineName"
       }
     }, {
       "dataType" : 25,
@@ -632,104 +608,6 @@
       "emptyCaption" : false,
       "hidden" : false,
       "needCodeListConfig" : true,
-      "showCaption" : false
-    }, {
-      "caption" : "产品线(=)",
-      "dataType" : 25,
-      "itemType" : "FILTER",
-      "labelPos" : "NONE",
-      "labelWidth" : 0,
-      "name" : "linenameeq",
-      "getPSAppDEField" : {
-        "name" : "LINENAME",
-        "codeName" : "LineName"
-      },
-      "getPSDEFSearchMode" : {
-        "codeName" : "N_LINENAME_EQ",
-        "name" : "N_LINENAME_EQ",
-        "stdDataType" : 25,
-        "valueOP" : "EQ"
-      },
-      "getPSEditor" : {
-        "editorParams" : {
-          "AC" : "TRUE",
-          "TRIGGER" : "TRUE",
-          "PICKUPVIEW" : "FALSE"
-        },
-        "editorType" : "PICKEREX_TRIGGER",
-        "name" : "linenameeq",
-        "getPSAppDEACMode" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchLine"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
-        },
-        "dropDownView" : false,
-        "enableAC" : true,
-        "enableLinkView" : false,
-        "enablePickupView" : false,
-        "forceSelection" : true,
-        "showTrigger" : true,
-        "singleSelect" : true
-      },
-      "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
-      "showCaption" : false
-    }, {
-      "caption" : "产品线(%)",
-      "dataType" : 25,
-      "itemType" : "FILTER",
-      "labelPos" : "NONE",
-      "labelWidth" : 0,
-      "name" : "linenamelike",
-      "getPSAppDEField" : {
-        "name" : "LINENAME",
-        "codeName" : "LineName"
-      },
-      "getPSDEFSearchMode" : {
-        "codeName" : "N_LINENAME_LIKE",
-        "name" : "N_LINENAME_LIKE",
-        "stdDataType" : 25,
-        "valueOP" : "LIKE"
-      },
-      "getPSEditor" : {
-        "editorParams" : {
-          "AC" : "TRUE",
-          "TRIGGER" : "TRUE",
-          "PICKUPVIEW" : "FALSE"
-        },
-        "editorType" : "PICKEREX_TRIGGER",
-        "name" : "linenamelike",
-        "getPSAppDEACMode" : {
-          "modelref" : true,
-          "id" : "Default"
-        },
-        "getPSAppDEDataSet" : {
-          "modelref" : true,
-          "id" : "FetchLine"
-        },
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
-        },
-        "dropDownView" : false,
-        "enableAC" : true,
-        "enableLinkView" : false,
-        "enablePickupView" : false,
-        "forceSelection" : true,
-        "showTrigger" : true,
-        "singleSelect" : true
-      },
-      "allowEmpty" : true,
-      "emptyCaption" : false,
-      "hidden" : false,
       "showCaption" : false
     } ],
     "quickGroupCount" : -1,

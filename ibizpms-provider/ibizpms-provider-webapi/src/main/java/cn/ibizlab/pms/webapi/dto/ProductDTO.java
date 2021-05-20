@@ -544,26 +544,6 @@ public class ProductDTO extends DTOBase implements Serializable {
     private Integer activestorycnt;
 
     /**
-     * 属性 [LINENAME]
-     *
-     */
-    @JSONField(name = "linename")
-    @JsonProperty("linename")
-    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
-    @ApiModelProperty("产品线")
-    private String linename;
-
-    /**
-     * 属性 [LINE]
-     *
-     */
-    @JSONField(name = "line")
-    @JsonProperty("line")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("产品线")
-    private Long line;
-
-    /**
      * 属性 [PRODUCTSN]
      *
      */
@@ -572,6 +552,26 @@ public class ProductDTO extends DTOBase implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @ApiModelProperty("产品编号")
     private Long productsn;
+
+    /**
+     * 属性 [LINE]
+     *
+     */
+    @JSONField(name = "line")
+    @JsonProperty("line")
+    @JsonSerialize(using = ToStringSerializer.class)
+    @ApiModelProperty("id")
+    private Long line;
+
+    /**
+     * 属性 [LINENAME]
+     *
+     */
+    @JSONField(name = "linename")
+    @JsonProperty("linename")
+    @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
+    @ApiModelProperty("产品线名称")
+    private String linename;
 
 
     /**
@@ -703,19 +703,19 @@ public class ProductDTO extends DTOBase implements Serializable {
     }
 
     /**
-     * 设置 [LINE]
-     */
-    public void setLine(Long  line){
-        this.line = line ;
-        this.modify("line",line);
-    }
-
-    /**
      * 设置 [PRODUCTSN]
      */
     public void setProductsn(Long  productsn){
         this.productsn = productsn ;
         this.modify("productsn",productsn);
+    }
+
+    /**
+     * 设置 [LINE]
+     */
+    public void setLine(Long  line){
+        this.line = line ;
+        this.modify("line",line);
     }
 
 

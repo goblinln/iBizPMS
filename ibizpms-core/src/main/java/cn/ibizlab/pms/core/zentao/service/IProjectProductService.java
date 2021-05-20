@@ -46,10 +46,13 @@ public interface IProjectProductService extends IService<ProjectProduct> {
     Page<ProjectProduct> searchDefault(ProjectProductSearchContext context);
     Page<ProjectProduct> searchRelationPlan(ProjectProductSearchContext context);
     List<ProjectProduct> selectByBranch(Long id);
+    List<ProjectProduct> selectByBranch(Collection<Long> ids);
     void removeByBranch(Long id);
     List<ProjectProduct> selectByPlan(Long id);
+    List<ProjectProduct> selectByPlan(Collection<Long> ids);
     void removeByPlan(Long id);
     List<ProjectProduct> selectByProduct(Long id);
+    List<ProjectProduct> selectByProduct(Collection<Long> ids);
     void removeByProduct(Long id);
     List<ProjectProduct> selectByProject(Long id);
     void removeByProject(Long id);

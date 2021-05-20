@@ -175,7 +175,7 @@
         "codeName" : "ParentName"
       },
       "pickupDEFName" : "PARENT",
-      "removeActionType" : -1,
+      "removeActionType" : 1,
       "removeOrder" : 0
     },
     "getParentPSDETreeNode" : {

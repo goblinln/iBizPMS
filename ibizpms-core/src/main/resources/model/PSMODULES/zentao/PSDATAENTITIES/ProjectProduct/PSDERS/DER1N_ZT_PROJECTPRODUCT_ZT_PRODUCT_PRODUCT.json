@@ -23,6 +23,7 @@
     "codeName" : "ProductName"
   },
   "pickupDEFName" : "PRODUCT",
-  "removeActionType" : -1,
-  "removeOrder" : 0
+  "removeActionType" : 3,
+  "removeOrder" : 0,
+  "removeRejectMsg" : "该产品已经关联项目，不能删除！"
 }

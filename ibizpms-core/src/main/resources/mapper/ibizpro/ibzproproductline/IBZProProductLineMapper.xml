@@ -56,6 +56,9 @@
     <sql id="Default" databaseId="mysql">
 		<![CDATA[ SELECT t1.`CREATEBY`, t1.`ID`, t1.`MDEPTID`, t1.`MDEPTNAME`, t1.`NAME`, t1.`ORDER`, t1.`ORGID`, t1.`ORGNAME`, t1.`SHORT`, t1.`TYPE`, t1.`UPDATEBY` FROM `zt_module` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND ( t1.`TYPE` = 'line' ) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>
@@ -68,6 +71,9 @@
     <sql id="Simple" databaseId="mysql">
 		<![CDATA[ SELECT t1.`CREATEBY`, t1.`ID`, t1.`MDEPTID`, t1.`MDEPTNAME`, t1.`NAME`, t1.`ORGID`, t1.`ORGNAME`, t1.`UPDATEBY` FROM `zt_module` t1   ]]>
 		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND ( t1.`TYPE` = 'line' ) ]]>
+            </if>
 			<include refid="searchMode" />
 		</trim>
     </sql>

@@ -594,6 +594,11 @@ public class CaseServiceImpl extends ServiceImpl<CaseMapper, Case> implements IC
         return baseMapper.selectByStory(id);
     }
     @Override
+    public List<Case> selectByStory(Collection<Long> ids) {
+        return this.list(new QueryWrapper<Case>().in("id",ids));
+    }
+
+    @Override
     public void removeByStory(Long id) {
         this.remove(new QueryWrapper<Case>().eq("story",id));
     }

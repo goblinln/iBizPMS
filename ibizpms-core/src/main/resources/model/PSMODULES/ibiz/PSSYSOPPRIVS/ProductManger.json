@@ -62,6 +62,16 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     }
+  }, {
+    "name" : "产品经理-IBZPRO_PRODUCTLINE[当前组织（读）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEUSERROLES/CURORG_R.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine.json"
+    }
   } ],
   "getPSSysUserRoleReses" : [ {
     "name" : "产品经理-产品左侧资源",

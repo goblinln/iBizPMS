@@ -103,23 +103,6 @@
     "width" : 150,
     "widthUnit" : "PX",
     "enableSort" : true
-  }, {
-    "align" : "LEFT",
-    "cLConvertMode" : "NONE",
-    "caption" : "产品线",
-    "codeName" : "linename",
-    "columnType" : "DEFGRIDCOLUMN",
-    "dataItemName" : "linename",
-    "excelCaption" : "产品线",
-    "name" : "linename",
-    "noPrivDisplayMode" : 1,
-    "getPSAppDEField" : {
-      "name" : "LINENAME",
-      "codeName" : "LineName"
-    },
-    "width" : 100,
-    "widthUnit" : "STAR",
-    "enableSort" : true
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 1,
@@ -127,13 +110,6 @@
     "getPSAppDEField" : {
       "name" : "ID",
       "codeName" : "Id"
-    }
-  }, {
-    "dataType" : 25,
-    "name" : "linename",
-    "getPSAppDEField" : {
-      "name" : "LINENAME",
-      "codeName" : "LineName"
     }
   }, {
     "dataType" : 25,

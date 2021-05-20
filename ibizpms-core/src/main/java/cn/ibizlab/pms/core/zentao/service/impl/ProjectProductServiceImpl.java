@@ -266,6 +266,11 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
         return baseMapper.selectByBranch(id);
     }
     @Override
+    public List<ProjectProduct> selectByBranch(Collection<Long> ids) {
+        return this.list(new QueryWrapper<ProjectProduct>().in("id",ids));
+    }
+
+    @Override
     public void removeByBranch(Long id) {
         this.remove(new QueryWrapper<ProjectProduct>().eq("branch",id));
     }
@@ -275,6 +280,11 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
         return baseMapper.selectByPlan(id);
     }
     @Override
+    public List<ProjectProduct> selectByPlan(Collection<Long> ids) {
+        return this.list(new QueryWrapper<ProjectProduct>().in("id",ids));
+    }
+
+    @Override
     public void removeByPlan(Long id) {
         this.remove(new QueryWrapper<ProjectProduct>().eq("plan",id));
     }
@@ -283,6 +293,11 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
     public List<ProjectProduct> selectByProduct(Long id) {
         return baseMapper.selectByProduct(id);
     }
+    @Override
+    public List<ProjectProduct> selectByProduct(Collection<Long> ids) {
+        return this.list(new QueryWrapper<ProjectProduct>().in("id",ids));
+    }
+
     @Override
     public void removeByProduct(Long id) {
         this.remove(new QueryWrapper<ProjectProduct>().eq("product",id));

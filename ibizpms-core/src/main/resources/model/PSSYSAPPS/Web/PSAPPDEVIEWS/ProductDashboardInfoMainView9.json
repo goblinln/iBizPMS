@@ -761,7 +761,7 @@
         "detailType" : "GROUPPANEL",
         "name" : "grouppanel3",
         "getPSDEFormDetails" : [ {
-          "caption" : "产品线",
+          "caption" : "产品线名称",
           "codeName" : "linename",
           "dataType" : 25,
           "detailStyle" : "DEFAULT",

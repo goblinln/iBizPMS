@@ -64,7 +64,12 @@
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`TYPE` = 'line' )",
+        "name" : "查询条件"
+      } ]
     } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
@@ -73,7 +78,12 @@
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`TYPE` = 'line' )",
+        "name" : "查询条件"
+      } ]
     } ],
     "codeName" : "Simple",
     "dEFGroupType" : "BASEFIELDS",
@@ -391,7 +401,8 @@
       "dBType" : "MYSQL5",
       "name" : "TYPE",
       "queryCodeExp" : "t1.`TYPE`",
-      "standardColumnName" : "`TYPE`"
+      "standardColumnName" : "`TYPE`",
+      "valueAutoGen" : true
     } ],
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_TYPE_EQ",
@@ -431,6 +442,7 @@
     "codeName" : "Type",
     "dEFType" : 1,
     "dataType" : "SSCODELIST",
+    "defaultValue" : "line",
     "importOrder" : 1000,
     "length" : 30,
     "logicName" : "类型",
@@ -768,6 +780,36 @@
   "enableViewLevel" : 0,
   "extendMode" : 0,
   "logicName" : "产品线",
+  "getMajorPSDERs" : [ {
+    "codeName" : "ProductLine",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDERS/DER1N_ZT_PRODUCT_IBZPRO_PRODUCTLINE_LINE.json",
+    "logicName" : "产品线",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 0,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    },
+    "name" : "DER1N_ZT_PRODUCT_IBZPRO_PRODUCTLINE_LINE",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "LINE",
+      "codeName" : "Line"
+    },
+    "getPSPickupTextDEField" : {
+      "name" : "LINENAME",
+      "codeName" : "LineName"
+    },
+    "pickupDEFName" : "LINE",
+    "removeActionType" : 3,
+    "removeOrder" : 0,
+    "removeRejectMsg" : "该产品线不能删除，已经关联产品！"
+  } ],
   "name" : "IBZPRO_PRODUCTLINE",
   "saaSMode" : 0,
   "serviceAPIMode" : 0,

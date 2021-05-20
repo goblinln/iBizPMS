@@ -3020,6 +3020,92 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
+      "columnName" : "productsn",
+      "dBType" : "MYSQL5",
+      "name" : "PRODUCTSN",
+      "queryCodeExp" : "t1.`productsn`",
+      "standardColumnName" : "`productsn`"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "PRODUCTSN",
+        "codeName" : "Productsn"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Productsn",
+    "dEFType" : 1,
+    "dataType" : "BIGINT",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "产品编号",
+    "name" : "PRODUCTSN",
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s",
+    "enableQuickSearch" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "line",
+      "dBType" : "MYSQL5",
+      "name" : "LINE",
+      "queryCodeExp" : "t1.`line`",
+      "standardColumnName" : "`line`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_LINE_EQ",
+      "name" : "N_LINE_EQ",
+      "stdDataType" : 1,
+      "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "LINE",
+        "codeName" : "Line"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Line",
+    "dEFType" : 1,
+    "dataType" : "PICKUP",
+    "importOrder" : 1000,
+    "length" : 20,
+    "logicName" : "id",
+    "name" : "LINE",
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDERS/DER1N_ZT_PRODUCT_IBZPRO_PRODUCTLINE_LINE.json"
+    },
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s",
+    "linkDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
       "columnName" : "linename",
       "dBType" : "MYSQL5",
       "name" : "LINENAME",
@@ -3071,11 +3157,11 @@
     "dataType" : "PICKUPTEXT",
     "importOrder" : 1000,
     "length" : 60,
-    "logicName" : "产品线",
+    "logicName" : "产品线名称",
     "name" : "LINENAME",
     "getPSDER" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDERS/DER1N_ZT_PRODUCT_ZT_MODULE_LINE.json"
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDERS/DER1N_ZT_PRODUCT_IBZPRO_PRODUCTLINE_LINE.json"
     },
     "getRelatedPSDEField" : {
       "name" : "NAME",
@@ -3086,94 +3172,6 @@
     "valueFormat" : "%1$s",
     "linkDEField" : true,
     "phisicalDEField" : false
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "line",
-      "dBType" : "MYSQL5",
-      "name" : "LINE",
-      "queryCodeExp" : "t1.`line`",
-      "standardColumnName" : "`line`",
-      "valueAutoGen" : true
-    } ],
-    "getAllPSDEFSearchModes" : [ {
-      "codeName" : "N_LINE_EQ",
-      "name" : "N_LINE_EQ",
-      "stdDataType" : 1,
-      "valueOP" : "EQ"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "LINE",
-        "codeName" : "Line"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Line",
-    "dEFType" : 1,
-    "dataType" : "PICKUP",
-    "defaultValue" : "0",
-    "importOrder" : 1000,
-    "length" : 8,
-    "logicName" : "产品线",
-    "name" : "LINE",
-    "getPSDER" : {
-      "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDERS/DER1N_ZT_PRODUCT_ZT_MODULE_LINE.json"
-    },
-    "getRelatedPSDEField" : {
-      "name" : "ID",
-      "codeName" : "Id"
-    },
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s",
-    "linkDEField" : true
-  }, {
-    "getAllPSDEFDTColumns" : [ {
-      "columnName" : "productsn",
-      "dBType" : "MYSQL5",
-      "name" : "PRODUCTSN",
-      "queryCodeExp" : "t1.`productsn`",
-      "standardColumnName" : "`productsn`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "PRODUCTSN",
-        "codeName" : "Productsn"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Productsn",
-    "dEFType" : 1,
-    "dataType" : "BIGINT",
-    "importOrder" : 1000,
-    "length" : 20,
-    "logicName" : "产品编号",
-    "name" : "PRODUCTSN",
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s",
-    "enableQuickSearch" : true
   } ],
   "getAllPSDELogics" : [ {
     "codeName" : "CancelProductTop",
@@ -4076,6 +4074,9 @@
     "oPPrivAllowMode" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "添加产品线",
+    "name" : "ADDLINE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
@@ -4892,8 +4893,9 @@
       "codeName" : "ProductName"
     },
     "pickupDEFName" : "PRODUCT",
-    "removeActionType" : -1,
-    "removeOrder" : 0
+    "removeActionType" : 3,
+    "removeOrder" : 0,
+    "removeRejectMsg" : "该产品已经关联项目，不能删除！"
   }, {
     "codeName" : "ZTProduct",
     "dERType" : "DER1N",
@@ -5073,13 +5075,13 @@
     "removeOrder" : 0
   } ],
   "getMinorPSDERs" : [ {
-    "codeName" : "ModuleLine",
+    "codeName" : "ProductLine",
     "dERType" : "DER1N",
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDERS/DER1N_ZT_PRODUCT_ZT_MODULE_LINE.json",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDERS/DER1N_ZT_PRODUCT_IBZPRO_PRODUCTLINE_LINE.json",
     "logicName" : "产品线",
     "getMajorPSDataEntity" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSDATAENTITIES/Module.json"
+      "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine.json"
     },
     "masterOrder" : -1,
     "masterRS" : 0,
@@ -5087,7 +5089,7 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     },
-    "name" : "DER1N_ZT_PRODUCT_ZT_MODULE_LINE",
+    "name" : "DER1N_ZT_PRODUCT_IBZPRO_PRODUCTLINE_LINE",
     "orderValue" : 100,
     "getPSPickupDEField" : {
       "name" : "LINE",
@@ -5098,8 +5100,9 @@
       "codeName" : "LineName"
     },
     "pickupDEFName" : "LINE",
-    "removeActionType" : -1,
-    "removeOrder" : 0
+    "removeActionType" : 3,
+    "removeOrder" : 0,
+    "removeRejectMsg" : "该产品线不能删除，已经关联产品！"
   }, {
     "codeName" : "Product",
     "dERType" : "DERINDEX",

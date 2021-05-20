@@ -107,6 +107,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "置顶",
         "codeName" : "ProjectTop",
+        "dataAccessAction" : "NOTOP",
         "fullCodeName" : "Project_ProjectTop",
         "name" : "置顶",
         "getPSAppDEMethod" : {

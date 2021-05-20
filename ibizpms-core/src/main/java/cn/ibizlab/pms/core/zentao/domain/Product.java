@@ -497,23 +497,6 @@ public class Product extends EntityMP implements Serializable {
     @ApiModelProperty("激活需求数")
     private Integer activestorycnt;
     /**
-     * 产品线
-     */
-    @TableField(exist = false)
-    @JSONField(name = "linename")
-    @JsonProperty("linename")
-    @ApiModelProperty("产品线")
-    private String linename;
-    /**
-     * 产品线
-     */
-    @DEField(defaultValue = "0")
-    @TableField(value = "`line`")
-    @JSONField(name = "line")
-    @JsonProperty("line")
-    @ApiModelProperty("产品线")
-    private Long line;
-    /**
      * 产品编号
      */
     @TableField(value = "`productsn`")
@@ -521,6 +504,22 @@ public class Product extends EntityMP implements Serializable {
     @JsonProperty("productsn")
     @ApiModelProperty("产品编号")
     private Long productsn;
+    /**
+     * id
+     */
+    @TableField(value = "`line`")
+    @JSONField(name = "line")
+    @JsonProperty("line")
+    @ApiModelProperty("id")
+    private Long line;
+    /**
+     * 产品线名称
+     */
+    @TableField(exist = false)
+    @JSONField(name = "linename")
+    @JsonProperty("linename")
+    @ApiModelProperty("产品线名称")
+    private String linename;
 
     /**
      * 产品线
@@ -528,7 +527,7 @@ public class Product extends EntityMP implements Serializable {
     @JsonIgnore
     @JSONField(serialize = false)
     @TableField(exist = false)
-    private cn.ibizlab.pms.core.zentao.domain.Module moduleline;
+    private cn.ibizlab.pms.core.ibizpro.domain.IBZProProductLine productline;
 
 
     /**
@@ -669,19 +668,19 @@ public class Product extends EntityMP implements Serializable {
     }
 
     /**
-     * 设置 [产品线]
-     */
-    public void setLine(Long line) {
-        this.line = line;
-        this.modify("line", line);
-    }
-
-    /**
      * 设置 [产品编号]
      */
     public void setProductsn(Long productsn) {
         this.productsn = productsn;
         this.modify("productsn", productsn);
+    }
+
+    /**
+     * 设置 [id]
+     */
+    public void setLine(Long line) {
+        this.line = line;
+        this.modify("line", line);
     }
 
 

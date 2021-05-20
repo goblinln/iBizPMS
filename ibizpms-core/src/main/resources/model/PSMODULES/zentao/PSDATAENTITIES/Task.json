@@ -27183,7 +27183,7 @@
       "codeName" : "ParentName"
     },
     "pickupDEFName" : "PARENT",
-    "removeActionType" : -1,
+    "removeActionType" : 1,
     "removeOrder" : 0
   } ],
   "getMinorPSDERs" : [ {
@@ -27316,8 +27316,9 @@
       "codeName" : "Storyname"
     },
     "pickupDEFName" : "STORY",
-    "removeActionType" : -1,
-    "removeOrder" : 0
+    "removeActionType" : 3,
+    "removeOrder" : 0,
+    "removeRejectMsg" : "该需求已经关联任务，不能删除！"
   }, {
     "codeName" : "ZTParent",
     "dERType" : "DER1N",
@@ -27344,7 +27345,7 @@
       "codeName" : "ParentName"
     },
     "pickupDEFName" : "PARENT",
-    "removeActionType" : -1,
+    "removeActionType" : 1,
     "removeOrder" : 0
   }, {
     "codeName" : "Task",

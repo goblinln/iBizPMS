@@ -711,6 +711,11 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
         return baseMapper.selectByStory(id);
     }
     @Override
+    public List<Bug> selectByStory(Collection<Long> ids) {
+        return this.list(new QueryWrapper<Bug>().in("id",ids));
+    }
+
+    @Override
     public void removeByStory(Long id) {
         this.remove(new QueryWrapper<Bug>().eq("story",id));
     }

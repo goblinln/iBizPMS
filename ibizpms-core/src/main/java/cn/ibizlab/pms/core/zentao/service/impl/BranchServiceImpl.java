@@ -148,6 +148,8 @@ public class BranchServiceImpl extends ServiceImpl<BranchMapper, Branch> impleme
     @Transactional
     public boolean remove(Long key) {
         if(!branchRuntime.isRtmodel()){
+        if(!ObjectUtils.isEmpty(projectproductService.selectByBranch(key)))
+            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[ProjectProduct]数据，无法删除!","","");
         }
         boolean result = removeById(key);
         return result ;
@@ -159,6 +161,8 @@ public class BranchServiceImpl extends ServiceImpl<BranchMapper, Branch> impleme
         if(branchRuntime.isRtmodel()){
             idList.forEach(id->getProxyService().remove(id));
         }else{
+        if(!ObjectUtils.isEmpty(projectproductService.selectByBranch(idList)))
+            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[ProjectProduct]数据，无法删除!","","");
         removeByIds(idList);
         }
         

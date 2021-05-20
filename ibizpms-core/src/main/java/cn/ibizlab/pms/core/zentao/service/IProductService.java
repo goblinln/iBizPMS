@@ -81,6 +81,7 @@ public interface IProductService extends IService<Product> {
     Page<Product> searchProductTeam(ProductSearchContext context);
     Page<Product> searchStoryCurProject(ProductSearchContext context);
     List<Product> selectByLine(Long id);
+    List<Product> selectByLine(Collection<Long> ids);
     void removeByLine(Long id);
     Product dynamicCall(Long key, String action, Product et);
     /**

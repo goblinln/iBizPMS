@@ -171,6 +171,7 @@ public interface IBugService extends IService<Bug> {
     List<Bug> selectByRepo(Long id);
     void removeByRepo(Long id);
     List<Bug> selectByStory(Long id);
+    List<Bug> selectByStory(Collection<Long> ids);
     void removeByStory(Long id);
     List<Bug> selectByTostory(Long id);
     void removeByTostory(Long id);

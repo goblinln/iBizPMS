@@ -143,6 +143,8 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
     @Transactional
     public boolean remove(Long key) {
         if(!productplanRuntime.isRtmodel()){
+        if(!ObjectUtils.isEmpty(projectproductService.selectByPlan(key)))
+            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[ProjectProduct]数据，无法删除!","","");
         }
         boolean result = removeById(key);
         return result ;
@@ -154,6 +156,8 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         if(productplanRuntime.isRtmodel()){
             idList.forEach(id->getProxyService().remove(id));
         }else{
+        if(!ObjectUtils.isEmpty(projectproductService.selectByPlan(idList)))
+            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[ProjectProduct]数据，无法删除!","","");
         removeByIds(idList);
         }
         

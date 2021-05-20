@@ -130,6 +130,7 @@ public interface ICaseService extends IService<Case> {
     List<Case> selectByProduct(Long id);
     void removeByProduct(Long id);
     List<Case> selectByStory(Long id);
+    List<Case> selectByStory(Collection<Long> ids);
     void removeByStory(Long id);
     List<Case> selectByLib(Long id);
     void removeByLib(Long id);

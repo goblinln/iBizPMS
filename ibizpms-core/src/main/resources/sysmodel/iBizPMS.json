@@ -12205,6 +12205,12 @@
     }
     ],
     "subEntitys":[
+    {"name":"DER1N_ZT_PRODUCT_IBZPRO_PRODUCTLINE_LINE",
+     "relation_type":"DER1N",
+     "code_name":"ProductLine",
+     "entity_name":"ZT_PRODUCT",
+     "ref_entity_name":"IBZPRO_PRODUCTLINE"
+    }
     ],
     "parentEntitys":[
     ]
@@ -23479,12 +23485,6 @@
      "entity_name":"ZT_DOC",
      "ref_entity_name":"ZT_MODULE"
     },
-    {"name":"DER1N_ZT_PRODUCT_ZT_MODULE_LINE",
-     "relation_type":"DER1N",
-     "code_name":"ModuleLine",
-     "entity_name":"ZT_PRODUCT",
-     "ref_entity_name":"ZT_MODULE"
-    },
     {"name":"DER1N__ZT_MODULE__ZT_MODULE__PARENT",
      "relation_type":"DER1N",
      "code_name":"IBizParent",
@@ -32626,42 +32626,6 @@
     "major_field":0
     },
     {
-    "fieldname":"LINENAME" ,
-    "codename":"LineName",
-    "field_logic_name":"产品线",
-    "entity_name":"ZT_PRODUCT",
-    "ref_de":"ZT_MODULE",
-    "ref_field_name":"NAME",
-    "relation_name":"DER1N_ZT_PRODUCT_ZT_MODULE_LINE",
-    "relation_codename":"ModuleLine",
-    "field_type":"PICKUPTEXT",
-    "nullable":1,
-    "physical_field":0,
-    "data_type":"VARCHAR",
-    "data_length":60,
-    "key_field":0,
-    "show_order":1000,
-    "major_field":0
-    },
-    {
-    "fieldname":"LINE" ,
-    "codename":"Line",
-    "field_logic_name":"产品线",
-    "entity_name":"ZT_PRODUCT",
-    "ref_de":"ZT_MODULE",
-    "ref_field_name":"ID",
-    "relation_name":"DER1N_ZT_PRODUCT_ZT_MODULE_LINE",
-    "relation_codename":"ModuleLine",
-    "field_type":"PICKUP",
-    "nullable":1,
-    "physical_field":1,
-    "data_type":"BIGINT",
-    "data_length":8,
-    "key_field":0,
-    "show_order":1000,
-    "major_field":0
-    },
-    {
     "fieldname":"PRODUCTSN" ,
     "codename":"Productsn",
     "field_logic_name":"产品编号",
@@ -32671,6 +32635,42 @@
     "physical_field":1,
     "data_type":"BIGINT",
     "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"LINE" ,
+    "codename":"Line",
+    "field_logic_name":"id",
+    "entity_name":"ZT_PRODUCT",
+    "ref_de":"IBZPRO_PRODUCTLINE",
+    "ref_field_name":"ID",
+    "relation_name":"DER1N_ZT_PRODUCT_IBZPRO_PRODUCTLINE_LINE",
+    "relation_codename":"ProductLine",
+    "field_type":"PICKUP",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"LINENAME" ,
+    "codename":"LineName",
+    "field_logic_name":"产品线名称",
+    "entity_name":"ZT_PRODUCT",
+    "ref_de":"IBZPRO_PRODUCTLINE",
+    "ref_field_name":"NAME",
+    "relation_name":"DER1N_ZT_PRODUCT_IBZPRO_PRODUCTLINE_LINE",
+    "relation_codename":"ProductLine",
+    "field_type":"PICKUPTEXT",
+    "nullable":1,
+    "physical_field":0,
+    "data_type":"VARCHAR",
+    "data_length":60,
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -32817,11 +32817,11 @@
     }
     ],
     "parentEntitys":[
-    {"name":"DER1N_ZT_PRODUCT_ZT_MODULE_LINE",
+    {"name":"DER1N_ZT_PRODUCT_IBZPRO_PRODUCTLINE_LINE",
      "relation_type":"DER1N",
-     "code_name":"ModuleLine",
+     "code_name":"ProductLine",
      "entity_name":"ZT_PRODUCT",
-     "ref_entity_name":"ZT_MODULE"
+     "ref_entity_name":"IBZPRO_PRODUCTLINE"
     },
     {"name":"DERINDEX_ZT_PRODUCT_IBIZPRO_INDEX",
      "relation_type":"DERINDEX",

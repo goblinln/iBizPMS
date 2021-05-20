@@ -189,6 +189,7 @@
         "actionTarget" : "NONE",
         "caption" : "管理",
         "codeName" : "Manager",
+        "dataAccessAction" : "MANAGE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectGridView.json",
@@ -232,6 +233,7 @@
         "actionTarget" : "NONE",
         "caption" : "新建",
         "codeName" : "Create",
+        "dataAccessAction" : "CREATE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectEditView.json",
@@ -475,6 +477,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "置顶",
           "codeName" : "ProjectTop",
+          "dataAccessAction" : "NOTOP",
           "fullCodeName" : "Project_ProjectTop",
           "name" : "置顶",
           "getPSAppDEMethod" : {

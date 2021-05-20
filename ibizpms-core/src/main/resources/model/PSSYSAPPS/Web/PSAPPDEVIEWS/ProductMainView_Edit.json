@@ -286,19 +286,19 @@
         "codeName" : "Name"
       }
     }, {
-      "id" : "code",
-      "dataType" : 25,
-      "getPSAppDEField" : {
-        "name" : "CODE",
-        "codeName" : "Code"
-      }
-    }, {
       "id" : "line",
       "hidden" : true,
       "dataType" : 1,
       "getPSAppDEField" : {
         "name" : "LINE",
         "codeName" : "Line"
+      }
+    }, {
+      "id" : "code",
+      "dataType" : 25,
+      "getPSAppDEField" : {
+        "name" : "CODE",
+        "codeName" : "Code"
       }
     }, {
       "id" : "linename",
@@ -424,6 +424,35 @@
             "inputTipClosable" : false,
             "showCaption" : true
           }, {
+            "caption" : "id",
+            "codeName" : "line",
+            "dataType" : 1,
+            "detailStyle" : "DEFAULT",
+            "detailType" : "FORMITEM",
+            "enableCond" : 3,
+            "ignoreInput" : 0,
+            "labelPos" : "LEFT",
+            "labelWidth" : 130,
+            "name" : "line",
+            "noPrivDisplayMode" : 1,
+            "getPSAppDEField" : {
+              "name" : "LINE",
+              "codeName" : "Line"
+            },
+            "getPSEditor" : {
+              "editorType" : "HIDDEN",
+              "name" : "line"
+            },
+            "getPSLayoutPos" : {
+              "colMD" : 24,
+              "layout" : "TABLE_24COL"
+            },
+            "allowEmpty" : true,
+            "emptyCaption" : false,
+            "hidden" : true,
+            "inputTipClosable" : false,
+            "showCaption" : true
+          }, {
             "caption" : "产品代号",
             "codeName" : "code",
             "dataType" : 25,
@@ -455,35 +484,6 @@
             "inputTipClosable" : false,
             "showCaption" : true
           }, {
-            "caption" : "产品线",
-            "codeName" : "line",
-            "dataType" : 1,
-            "detailStyle" : "DEFAULT",
-            "detailType" : "FORMITEM",
-            "enableCond" : 3,
-            "ignoreInput" : 0,
-            "labelPos" : "LEFT",
-            "labelWidth" : 130,
-            "name" : "line",
-            "noPrivDisplayMode" : 1,
-            "getPSAppDEField" : {
-              "name" : "LINE",
-              "codeName" : "Line"
-            },
-            "getPSEditor" : {
-              "editorType" : "HIDDEN",
-              "name" : "line"
-            },
-            "getPSLayoutPos" : {
-              "colMD" : 24,
-              "layout" : "TABLE_24COL"
-            },
-            "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : true,
-            "inputTipClosable" : false,
-            "showCaption" : true
-          }, {
             "actionGroupExtractMode" : "ITEM",
             "caption" : "分组面板",
             "codeName" : "grouppanel2",
@@ -491,7 +491,7 @@
             "detailType" : "GROUPPANEL",
             "name" : "grouppanel2",
             "getPSDEFormDetails" : [ {
-              "caption" : "产品线",
+              "caption" : "产品线名称",
               "codeName" : "linename",
               "dataType" : 25,
               "detailStyle" : "DEFAULT",
@@ -516,18 +516,6 @@
                 "editorType" : "PICKEREX_TRIGGER",
                 "handlerType" : "PickupText",
                 "name" : "linename",
-                "getPSAppDEACMode" : {
-                  "modelref" : true,
-                  "id" : "Default"
-                },
-                "getPSAppDEDataSet" : {
-                  "modelref" : true,
-                  "id" : "FetchLine"
-                },
-                "getPSAppDataEntity" : {
-                  "modelref" : true,
-                  "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Module.json"
-                },
                 "valueItemName" : "line",
                 "dropDownView" : false,
                 "enableAC" : true,

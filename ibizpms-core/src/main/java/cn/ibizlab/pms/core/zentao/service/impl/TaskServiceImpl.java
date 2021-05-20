@@ -166,6 +166,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         if(!taskRuntime.isRtmodel()){
             taskteamService.removeByRoot(key) ;
             taskestimateService.removeByTask(key) ;
+        taskService.removeByParent(key);
         }
         boolean result = removeById(key);
         return result ;
@@ -177,6 +178,7 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         if(taskRuntime.isRtmodel()){
             idList.forEach(id->getProxyService().remove(id));
         }else{
+        taskService.removeByParent(idList);
         removeByIds(idList);
         }
         
@@ -857,6 +859,11 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         return baseMapper.selectByStory(id);
     }
     @Override
+    public List<Task> selectByStory(Collection<Long> ids) {
+        return this.list(new QueryWrapper<Task>().in("id",ids));
+    }
+
+    @Override
     public void removeByStory(Long id) {
         this.remove(new QueryWrapper<Task>().eq("story",id));
     }
@@ -865,6 +872,11 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
     public List<Task> selectByParent(Long id) {
         return baseMapper.selectByParent(id);
     }
+    @Override
+    public void removeByParent(Collection<Long> ids) {
+        this.remove(new QueryWrapper<Task>().in("parent",ids));
+    }
+
     @Override
     public void removeByParent(Long id) {
         this.remove(new QueryWrapper<Task>().eq("parent",id));

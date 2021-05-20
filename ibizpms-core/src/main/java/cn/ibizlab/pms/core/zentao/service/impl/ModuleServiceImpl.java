@@ -64,9 +64,6 @@ public class ModuleServiceImpl extends ServiceImpl<ModuleMapper, Module> impleme
     @Autowired
     @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IDocService docService;
-    @Autowired
-    @Lazy
-    protected cn.ibizlab.pms.core.zentao.service.IProductService productService;
 
     protected cn.ibizlab.pms.core.zentao.service.IModuleService moduleService = this;
     @Autowired

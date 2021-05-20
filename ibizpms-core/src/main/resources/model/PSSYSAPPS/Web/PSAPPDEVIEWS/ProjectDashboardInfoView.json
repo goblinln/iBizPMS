@@ -851,13 +851,6 @@
                 }
               }, {
                 "dataType" : 25,
-                "name" : "linename",
-                "getPSAppDEField" : {
-                  "name" : "LINENAME",
-                  "codeName" : "LineName"
-                }
-              }, {
-                "dataType" : 25,
                 "name" : "status",
                 "getPSAppDEField" : {
                   "name" : "STATUS",

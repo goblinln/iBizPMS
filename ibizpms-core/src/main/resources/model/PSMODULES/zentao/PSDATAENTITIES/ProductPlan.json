@@ -3493,8 +3493,9 @@
       "codeName" : "Planname"
     },
     "pickupDEFName" : "PLAN",
-    "removeActionType" : -1,
-    "removeOrder" : 0
+    "removeActionType" : 3,
+    "removeOrder" : 0,
+    "removeRejectMsg" : "该产品计划已经关联项目，不能删除！"
   }, {
     "codeName" : "Productplan",
     "dERType" : "DER1N",

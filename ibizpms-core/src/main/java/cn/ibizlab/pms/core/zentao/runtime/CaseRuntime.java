@@ -387,6 +387,8 @@ public class CaseRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public boolean containsForeignKey(IPSDEField iPSDEField, Object objKey, IPSDERBase iPSDERBase) {
+        if (objKey != null && "DER1N_ZT_CASE_ZT_STORY_STORY".equals(iPSDERBase.getName()) && !ObjectUtils.isEmpty(caseService.selectByStory((Long)objKey)))
+            return true;
         return false;
     }
 

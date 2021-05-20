@@ -48,15 +48,15 @@
 		<if test="srf.n_status_isnotnull != null ">
 			<![CDATA[ AND  t1.`status` IS NOT NULL ]]>
         </if>
+		<if test="srf.n_line_eq != null ">
+			<![CDATA[ AND  t1.`line` = #{srf.n_line_eq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="srf.n_linename_eq != null ">
 			<![CDATA[ AND  t11.`NAME` = #{srf.n_linename_eq,jdbcType=VARCHAR} ]]>
         </if>
 		<if test="srf.n_linename_like != null ">
             <bind name="bind_n_linename_like" value="'%' + srf.n_linename_like + '%'" />
             <![CDATA[ AND  t11.`NAME` like #{bind_n_linename_like,jdbcType=VARCHAR} ]]>
-        </if>
-		<if test="srf.n_line_eq != null ">
-			<![CDATA[ AND  t1.`line` = #{srf.n_line_eq,jdbcType=BIGINT} ]]>
         </if>
 		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
 		AND ${ew.sqlSegment}
@@ -84,10 +84,10 @@
             
 		
 		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
-		<association property="moduleline" javaType="cn.ibizlab.pms.core.zentao.domain.Module" column="line" select="cn.ibizlab.pms.core.zentao.mapper.ModuleMapper.selectById" fetchType="lazy"></association>
+		<association property="productline" javaType="cn.ibizlab.pms.core.ibizpro.domain.IBZProProductLine" column="line" select="cn.ibizlab.pms.core.ibizpro.mapper.IBZProProductLineMapper.selectById" fetchType="lazy"></association>
     </resultMap>
 
-	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_PRODUCT_ZT_MODULE_LINE] -->
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_ZT_PRODUCT_IBZPRO_PRODUCTLINE_LINE] -->
 	 <select id="selectByLine" resultMap="ProductResultMap"  databaseId="mysql">
 		select * from (
         <include refid="select" />

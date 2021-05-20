@@ -123,7 +123,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     protected cn.ibizlab.pms.core.zentao.service.ITestTaskService testtaskService;
     @Autowired
     @Lazy
-    protected cn.ibizlab.pms.core.zentao.service.IModuleService moduleService;
+    protected cn.ibizlab.pms.core.ibizpro.service.IIBZProProductLineService ibzproproductlineService;
 
     protected int batchSize = 500;
 
@@ -205,6 +205,8 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     public boolean remove(Long key) {
         if(!productRuntime.isRtmodel()){
             productteamService.removeByRoot(key) ;
+        if(!ObjectUtils.isEmpty(projectproductService.selectByProduct(key)))
+            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[ProjectProduct]数据，无法删除!","","");
         }
         boolean result = removeById(key);
         return result ;
@@ -216,6 +218,8 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         if(productRuntime.isRtmodel()){
             idList.forEach(id->getProxyService().remove(id));
         }else{
+        if(!ObjectUtils.isEmpty(projectproductService.selectByProduct(idList)))
+            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[ProjectProduct]数据，无法删除!","","");
         removeByIds(idList);
         }
         
@@ -409,6 +413,11 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         return baseMapper.selectByLine(id);
     }
     @Override
+    public List<Product> selectByLine(Collection<Long> ids) {
+        return this.list(new QueryWrapper<Product>().in("id",ids));
+    }
+
+    @Override
     public void removeByLine(Long id) {
         this.remove(new QueryWrapper<Product>().eq("line",id));
     }
@@ -597,15 +606,15 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
      * @param et
      */
     private void fillParentData(Product et){
-        //实体关系[DER1N_ZT_PRODUCT_ZT_MODULE_LINE]
+        //实体关系[DER1N_ZT_PRODUCT_IBZPRO_PRODUCTLINE_LINE]
         if(!ObjectUtils.isEmpty(et.getLine())){
-            cn.ibizlab.pms.core.zentao.domain.Module moduleline=et.getModuleline();
-            if(ObjectUtils.isEmpty(moduleline)){
-                cn.ibizlab.pms.core.zentao.domain.Module majorEntity=moduleService.get(et.getLine());
-                et.setModuleline(majorEntity);
-                moduleline=majorEntity;
+            cn.ibizlab.pms.core.ibizpro.domain.IBZProProductLine productline=et.getProductline();
+            if(ObjectUtils.isEmpty(productline)){
+                cn.ibizlab.pms.core.ibizpro.domain.IBZProProductLine majorEntity=ibzproproductlineService.get(et.getLine());
+                et.setProductline(majorEntity);
+                productline=majorEntity;
             }
-            et.setLinename(moduleline.getName());
+            et.setLinename(productline.getName());
         }
     }
 

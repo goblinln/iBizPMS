@@ -103,6 +103,7 @@ public class IBZProProductLine extends EntityMP implements Serializable {
     /**
      * 类型
      */
+    @DEField(defaultValue = "line")
     @TableField(value = "`TYPE`")
     @JSONField(name = "type")
     @JsonProperty("type")

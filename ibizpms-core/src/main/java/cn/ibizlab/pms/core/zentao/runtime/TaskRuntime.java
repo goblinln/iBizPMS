@@ -511,6 +511,8 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public boolean containsForeignKey(IPSDEField iPSDEField, Object objKey, IPSDERBase iPSDERBase) {
+        if (objKey != null && "DER1N_ZT_TASK_ZT_STORY_STORY".equals(iPSDERBase.getName()) && !ObjectUtils.isEmpty(taskService.selectByStory((Long)objKey)))
+            return true;
         return false;
     }
 
@@ -520,6 +522,8 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
 
     @Override
     public void removeByForeignKey(IPSDEField iPSDEField, Object objKey, IPSDERBase iPSDERBase) {
+        if (objKey != null && "DER1N__ZT_TASK__ZT_TASK__PARENT".equals(iPSDERBase.getName()))
+            taskService.removeByParent((Long) objKey);;
     }
 
     @Around("execution(* cn.ibizlab.pms.core.zentao.service.impl.TaskServiceImpl.*(..))")

@@ -19,6 +19,7 @@
     "codeName" : "Branch"
   },
   "pickupDEFName" : "BRANCH",
-  "removeActionType" : -1,
-  "removeOrder" : 0
+  "removeActionType" : 3,
+  "removeOrder" : 0,
+  "removeRejectMsg" : "该分支已经关项目，不能删除！"
 }

@@ -16528,8 +16528,9 @@
       "codeName" : "Storyname"
     },
     "pickupDEFName" : "STORY",
-    "removeActionType" : -1,
-    "removeOrder" : 0
+    "removeActionType" : 3,
+    "removeOrder" : 0,
+    "removeRejectMsg" : "该需求已经关联测试用例，不能删除！"
   }, {
     "codeName" : "ZTTestsuite",
     "dERType" : "DER1N",

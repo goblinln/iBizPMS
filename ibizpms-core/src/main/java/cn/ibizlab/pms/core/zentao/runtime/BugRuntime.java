@@ -449,6 +449,8 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
 
     @Override
     public boolean containsForeignKey(IPSDEField iPSDEField, Object objKey, IPSDERBase iPSDERBase) {
+        if (objKey != null && "DER1N_ZT_BUG_ZT_STORY_STORY".equals(iPSDERBase.getName()) && !ObjectUtils.isEmpty(bugService.selectByStory((Long)objKey)))
+            return true;
         return false;
     }
 

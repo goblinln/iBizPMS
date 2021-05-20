@@ -114,13 +114,6 @@
             "name" : "TYPE",
             "codeName" : "Type"
           }
-        }, {
-          "id" : "n_linename_like",
-          "dataType" : 25,
-          "getPSAppDEField" : {
-            "name" : "LINENAME",
-            "codeName" : "LineName"
-          }
         } ],
         "getPSDEFormPages" : [ {
           "caption" : "常规条件",
@@ -227,36 +220,6 @@
             "hidden" : false,
             "inputTipClosable" : false,
             "needCodeListConfig" : true,
-            "showCaption" : true
-          }, {
-            "caption" : "产品线",
-            "codeName" : "n_linename_like",
-            "dataType" : 25,
-            "detailStyle" : "DEFAULT",
-            "detailType" : "FORMITEM",
-            "enableCond" : 3,
-            "ignoreInput" : 0,
-            "labelPos" : "LEFT",
-            "labelWidth" : 130,
-            "name" : "n_linename_like",
-            "noPrivDisplayMode" : 1,
-            "getPSAppDEField" : {
-              "name" : "LINENAME",
-              "codeName" : "LineName"
-            },
-            "getPSEditor" : {
-              "editorType" : "MOBTEXT",
-              "editorWidth" : 100.0,
-              "name" : "n_linename_like"
-            },
-            "getPSLayoutPos" : {
-              "colMD" : 24,
-              "layout" : "TABLE_24COL"
-            },
-            "allowEmpty" : true,
-            "emptyCaption" : false,
-            "hidden" : false,
-            "inputTipClosable" : false,
             "showCaption" : true
           } ],
           "getPSLayout" : {

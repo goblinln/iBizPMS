@@ -321,6 +321,8 @@ public class ProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
 
     @Override
     public boolean containsForeignKey(IPSDEField iPSDEField, Object objKey, IPSDERBase iPSDERBase) {
+        if (objKey != null && "DER1N_ZT_PRODUCT_IBZPRO_PRODUCTLINE_LINE".equals(iPSDERBase.getName()) && !ObjectUtils.isEmpty(productService.selectByLine((Long)objKey)))
+            return true;
         return false;
     }
 

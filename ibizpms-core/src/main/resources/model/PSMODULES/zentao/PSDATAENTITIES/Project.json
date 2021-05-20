@@ -5880,46 +5880,28 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
+      "name" : "SUSPEND",
+      "getPSDEOPPriv" : {
+        "logicName" : "挂起",
+        "name" : "SUSPEND"
+      }
+    }, {
       "name" : "TOP",
       "getPSDEOPPriv" : {
         "logicName" : "置顶",
         "name" : "TOP"
       }
     }, {
-      "name" : "SRFUR__PROJ_START_BUT",
+      "name" : "CLOSE",
       "getPSDEOPPriv" : {
-        "logicName" : "项目开始",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_START_BUT"
-        },
-        "mapSysUniResCode" : "PROJ_START_BUT",
-        "name" : "SRFUR__PROJ_START_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "关闭",
+        "name" : "CLOSE"
       }
     }, {
-      "name" : "SRFUR__PROJ_SUSPEND_BUT",
+      "name" : "START",
       "getPSDEOPPriv" : {
-        "logicName" : "项目挂起",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_SUSPEND_BUT"
-        },
-        "mapSysUniResCode" : "PROJ_SUSPEND_BUT",
-        "name" : "SRFUR__PROJ_SUSPEND_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__PROJ_CLOSED_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "项目关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_CLOSED_BUT"
-        },
-        "mapSysUniResCode" : "PROJ_CLOSED_BUT",
-        "name" : "SRFUR__PROJ_CLOSED_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "开始",
+        "name" : "START"
       }
     }, {
       "name" : "SRFUR__PROJ_DELAY_BUT",
@@ -6048,6 +6030,12 @@
         "mapSysUniRes" : true
       }
     }, {
+      "name" : "CLOSE",
+      "getPSDEOPPriv" : {
+        "logicName" : "关闭",
+        "name" : "CLOSE"
+      }
+    }, {
       "name" : "SRFUR__PROJ_START_BUT",
       "getPSDEOPPriv" : {
         "logicName" : "项目开始",
@@ -6058,6 +6046,18 @@
         "mapSysUniResCode" : "PROJ_START_BUT",
         "name" : "SRFUR__PROJ_START_BUT",
         "mapSysUniRes" : true
+      }
+    }, {
+      "name" : "SUSPEND",
+      "getPSDEOPPriv" : {
+        "logicName" : "挂起",
+        "name" : "SUSPEND"
+      }
+    }, {
+      "name" : "START",
+      "getPSDEOPPriv" : {
+        "logicName" : "开始",
+        "name" : "START"
       }
     }, {
       "name" : "SRFUR__PROJ_CLOSED_BUT",
@@ -6198,28 +6198,16 @@
         "name" : "TOP"
       }
     }, {
-      "name" : "SRFUR__PROJ_START_BUT",
+      "name" : "ACTIVATE",
       "getPSDEOPPriv" : {
-        "logicName" : "项目开始",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_START_BUT"
-        },
-        "mapSysUniResCode" : "PROJ_START_BUT",
-        "name" : "SRFUR__PROJ_START_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "激活",
+        "name" : "ACTIVATE"
       }
     }, {
-      "name" : "SRFUR__PROJ_ACTIVATION_BUT",
+      "name" : "START",
       "getPSDEOPPriv" : {
-        "logicName" : "项目激活",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_ACTIVATION_BUT"
-        },
-        "mapSysUniResCode" : "PROJ_ACTIVATION_BUT",
-        "name" : "SRFUR__PROJ_ACTIVATION_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "开始",
+        "name" : "START"
       }
     } ],
     "state2Value" : "0",
@@ -6331,16 +6319,10 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__PROJ_ACTIVATION_BUT",
+      "name" : "START",
       "getPSDEOPPriv" : {
-        "logicName" : "项目激活",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_ACTIVATION_BUT"
-        },
-        "mapSysUniResCode" : "PROJ_ACTIVATION_BUT",
-        "name" : "SRFUR__PROJ_ACTIVATION_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "开始",
+        "name" : "START"
       }
     }, {
       "name" : "NOTOP",
@@ -6349,16 +6331,10 @@
         "name" : "NOTOP"
       }
     }, {
-      "name" : "SRFUR__PROJ_START_BUT",
+      "name" : "ACTIVATE",
       "getPSDEOPPriv" : {
-        "logicName" : "项目开始",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_START_BUT"
-        },
-        "mapSysUniResCode" : "PROJ_START_BUT",
-        "name" : "SRFUR__PROJ_START_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "激活",
+        "name" : "ACTIVATE"
       }
     } ],
     "state2Value" : "1",
@@ -6463,34 +6439,22 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__PROJ_SUSPEND_BUT",
+      "name" : "SUSPEND",
       "getPSDEOPPriv" : {
-        "logicName" : "项目挂起",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_SUSPEND_BUT"
-        },
-        "mapSysUniResCode" : "PROJ_SUSPEND_BUT",
-        "name" : "SRFUR__PROJ_SUSPEND_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__PROJ_START_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "项目开始",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_START_BUT"
-        },
-        "mapSysUniResCode" : "PROJ_START_BUT",
-        "name" : "SRFUR__PROJ_START_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "挂起",
+        "name" : "SUSPEND"
       }
     }, {
       "name" : "TOP",
       "getPSDEOPPriv" : {
         "logicName" : "置顶",
         "name" : "TOP"
+      }
+    }, {
+      "name" : "START",
+      "getPSDEOPPriv" : {
+        "logicName" : "开始",
+        "name" : "START"
       }
     }, {
       "name" : "SRFUR__PROJ_DELAY_BUT",
@@ -6648,6 +6612,18 @@
         "name" : "SRFUR__PROJ_DELAY_BUT",
         "mapSysUniRes" : true
       }
+    }, {
+      "name" : "SUSPEND",
+      "getPSDEOPPriv" : {
+        "logicName" : "挂起",
+        "name" : "SUSPEND"
+      }
+    }, {
+      "name" : "START",
+      "getPSDEOPPriv" : {
+        "logicName" : "开始",
+        "name" : "START"
+      }
     } ],
     "state2Value" : "1",
     "stateValue" : "suspended",
@@ -6764,16 +6740,10 @@
         "name" : "TOP"
       }
     }, {
-      "name" : "SRFUR__PROJ_ACTIVATION_BUT",
+      "name" : "ACTIVATE",
       "getPSDEOPPriv" : {
-        "logicName" : "项目激活",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROJ_ACTIVATION_BUT"
-        },
-        "mapSysUniResCode" : "PROJ_ACTIVATION_BUT",
-        "name" : "SRFUR__PROJ_ACTIVATION_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "激活",
+        "name" : "ACTIVATE"
       }
     } ],
     "state2Value" : "0",
@@ -6912,6 +6882,12 @@
         "name" : "NOTOP"
       }
     }, {
+      "name" : "ACTIVATE",
+      "getPSDEOPPriv" : {
+        "logicName" : "激活",
+        "name" : "ACTIVATE"
+      }
+    }, {
       "name" : "SRFUR__PROJ_ACTIVATION_BUT",
       "getPSDEOPPriv" : {
         "logicName" : "项目激活",
@@ -6936,6 +6912,12 @@
     "oPPrivAllowMode" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "激活",
+    "name" : "ACTIVATE"
+  }, {
+    "logicName" : "关闭",
+    "name" : "CLOSE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
@@ -6945,8 +6927,17 @@
     "logicName" : "管理",
     "name" : "MANAGE"
   }, {
+    "logicName" : "延期",
+    "name" : "PUTOFF"
+  }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "开始",
+    "name" : "START"
+  }, {
+    "logicName" : "挂起",
+    "name" : "SUSPEND"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
@@ -7157,6 +7148,42 @@
       "modelref" : true,
       "id" : "OpenQuery"
     },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "SUSPEND",
+      "name" : "Project_Manage_Open_suspend",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SUSPEND"
+      }
+    }, {
+      "dataAccessAction" : "ACTIVATE",
+      "name" : "Project_Manage_Open_Activate",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ACTIVATE"
+      }
+    }, {
+      "dataAccessAction" : "PUTOFF",
+      "name" : "Project_Manage_Open_Putoff",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "PUTOFF"
+      }
+    }, {
+      "dataAccessAction" : "START",
+      "name" : "Project_Manage_Open_Start",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "START"
+      }
+    }, {
+      "dataAccessAction" : "CLOSE",
+      "name" : "Project_Manage_Open_Close",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CLOSE"
+      }
+    } ],
     "roleTag" : "Project_Manage_Open",
     "userCat" : "CAT1",
     "userDRAction" : "READ",

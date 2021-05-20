@@ -990,8 +990,9 @@
       "codeName" : "Branch"
     },
     "pickupDEFName" : "BRANCH",
-    "removeActionType" : -1,
-    "removeOrder" : 0
+    "removeActionType" : 3,
+    "removeOrder" : 0,
+    "removeRejectMsg" : "该分支已经关项目，不能删除！"
   }, {
     "codeName" : "ZTProductPlan",
     "dERType" : "DER1N",
@@ -1017,8 +1018,9 @@
       "codeName" : "Planname"
     },
     "pickupDEFName" : "PLAN",
-    "removeActionType" : -1,
-    "removeOrder" : 0
+    "removeActionType" : 3,
+    "removeOrder" : 0,
+    "removeRejectMsg" : "该产品计划已经关联项目，不能删除！"
   }, {
     "codeName" : "ZTProduct",
     "dERType" : "DER1N",
@@ -1044,8 +1046,9 @@
       "codeName" : "ProductName"
     },
     "pickupDEFName" : "PRODUCT",
-    "removeActionType" : -1,
-    "removeOrder" : 0
+    "removeActionType" : 3,
+    "removeOrder" : 0,
+    "removeRejectMsg" : "该产品已经关联项目，不能删除！"
   }, {
     "codeName" : "ZTProject",
     "dERType" : "DER1N",

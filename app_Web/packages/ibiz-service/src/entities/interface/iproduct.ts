@@ -229,15 +229,15 @@ export interface IProduct extends IEntityBase {
      */
     activestorycnt?: any;
     /**
-     * 产品线
-     */
-    linename?: any;
-    /**
-     * 产品线
-     */
-    line?: any;
-    /**
      * 产品编号
      */
     productsn?: any;
+    /**
+     * id
+     */
+    line?: any;
+    /**
+     * 产品线名称
+     */
+    linename?: any;
 }

@@ -256,6 +256,12 @@ public class ProjectProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
 
     @Override
     public boolean containsForeignKey(IPSDEField iPSDEField, Object objKey, IPSDERBase iPSDERBase) {
+        if (objKey != null && "DER1N_ZT_PROJECTPRODUCT_ZT_BRANCH_BRANCH".equals(iPSDERBase.getName()) && !ObjectUtils.isEmpty(projectproductService.selectByBranch((Long)objKey)))
+            return true;
+        if (objKey != null && "DER1N_ZT_PROJECTPRODUCT_ZT_PRODUCTPLAN_PLAN".equals(iPSDERBase.getName()) && !ObjectUtils.isEmpty(projectproductService.selectByPlan((Long)objKey)))
+            return true;
+        if (objKey != null && "DER1N_ZT_PROJECTPRODUCT_ZT_PRODUCT_PRODUCT".equals(iPSDERBase.getName()) && !ObjectUtils.isEmpty(projectproductService.selectByProduct((Long)objKey)))
+            return true;
         return false;
     }
 
