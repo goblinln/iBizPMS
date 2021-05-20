@@ -7059,6 +7059,35 @@
       "modelref" : true,
       "id" : "OpenQuery"
     },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "Project_Maintain_OpenBy_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "READ"
+      }
+    }, {
+      "dataAccessAction" : "CREATE",
+      "name" : "Project_Maintain_OpenBy_CREATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CREATE"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "Project_Maintain_OpenBy_DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "Project_Maintain_OpenBy_UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    } ],
     "roleTag" : "Project_Maintain_Open",
     "userCat" : "CAT1",
     "userDRAction" : "READ",
@@ -7138,6 +7167,42 @@
       "modelref" : true,
       "id" : "DeveloperQuery"
     },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "PUTOFF",
+      "name" : "Project_Manage_Open_Putoff",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "PUTOFF"
+      }
+    }, {
+      "dataAccessAction" : "CLOSE",
+      "name" : "Project_Manage_Open_Close",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CLOSE"
+      }
+    }, {
+      "dataAccessAction" : "SUSPEND",
+      "name" : "Project_Manage_Open_suspend",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SUSPEND"
+      }
+    }, {
+      "dataAccessAction" : "START",
+      "name" : "Project_Manage_Open_Start",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "START"
+      }
+    }, {
+      "dataAccessAction" : "ACTIVATE",
+      "name" : "Project_Manage_Open_Activate",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ACTIVATE"
+      }
+    } ],
     "roleTag" : "Project_Manage_DEV",
     "userCat" : "CAT1",
     "userDRAction" : "READ"
@@ -7196,11 +7261,46 @@
       "id" : "OpenByQuery"
     },
     "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "SUSPEND",
+      "name" : "Project_Manage_Open_suspend",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "SUSPEND"
+      }
+    }, {
+      "dataAccessAction" : "START",
+      "name" : "Project_Manage_Open_Start",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "START"
+      }
+    }, {
+      "dataAccessAction" : "CLOSE",
+      "name" : "Project_Manage_Open_Close",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CLOSE"
+      }
+    }, {
+      "dataAccessAction" : "PUTOFF",
+      "name" : "Project_Manage_Open_Putoff",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "PUTOFF"
+      }
+    }, {
       "dataAccessAction" : "MANAGE",
       "name" : "Project_Manage_OpenBy_MANAGE",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "MANAGE"
+      }
+    }, {
+      "dataAccessAction" : "ACTIVATE",
+      "name" : "Project_Manage_Open_Activate",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ACTIVATE"
       }
     } ],
     "roleTag" : "Project_Manage_OpenBy",
