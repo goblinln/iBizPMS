@@ -74,6 +74,26 @@ export class MainControlBase extends ControlBase {
     }
 
     /**
+     * 处理部件UI响应
+     *
+     * @memberof MainControlBase
+     */
+    public handControlResponse(action: string, response: any) {
+        if(!action || !response){
+            return;
+        }
+        switch (action) {
+            case 'load':
+                if(response && response.status == 403){
+                    this.enableControlUIAuth = false;
+                }
+                break;
+            default:
+                break;
+        }
+    }
+
+    /**
      * 应用状态事件
      *
      * @public

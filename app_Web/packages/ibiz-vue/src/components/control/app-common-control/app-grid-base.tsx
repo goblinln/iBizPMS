@@ -384,9 +384,6 @@ export class AppGridBase extends GridControlBase {
                         const uiaction: IPSDEUIAction = uiactionDetail.getPSUIAction() as IPSDEUIAction;
                         const actionModel = row[uiaction.uIActionTag];
                         let columnClass = {};
-                        if (uiactionDetail.actionLevel) {
-                            Object.assign(columnClass, { [`srfactionlevel${uiactionDetail.actionLevel}`]: true });
-                        }
                         if (index === 0) {
                             Object.assign(columnClass, { 'grid-first-uiaction': true });
                         } else {

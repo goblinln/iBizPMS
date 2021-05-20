@@ -22,6 +22,15 @@ export class ControlBase extends Vue implements ControlInterface {
      * @memberof ControlBase
      */
     protected Environment: any = AppServiceBase.getInstance().getAppEnvironment();
+
+    /**
+     * 部件UI是否存在权限
+     *
+     * @type {boolean}
+     * @memberof ControlBase
+     */
+    public enableControlUIAuth: boolean = true;
+
     /**
      * 视图标识
      *
@@ -365,7 +374,7 @@ export class ControlBase extends Vue implements ControlInterface {
     /**
     * 初始化模型服务
     *
-    * @memberof ViewBase
+    * @memberof ControlBase
     */
     public async initModelService() {
         this.modelService = await GetModelService(this.context);
@@ -374,7 +383,7 @@ export class ControlBase extends Vue implements ControlInterface {
     /**
      * 部件模型数据加载
      *
-     * @memberof ViewBase
+     * @memberof ControlBase
      */
     public async ctrlModelLoad() {
         // 部件子部件数据加载
@@ -386,9 +395,16 @@ export class ControlBase extends Vue implements ControlInterface {
     }
 
     /**
+     * 处理部件UI响应
+     *
+     * @memberof ControlBase
+     */
+    public handControlResponse(action: string, response: any) { }
+
+    /**
      * 部件模型数据初始化实例
      *
-     * @memberof AppDefaultForm
+     * @memberof ControlBase
      */
     public async ctrlModelInit(args?: any) {
         await this.initModelService();

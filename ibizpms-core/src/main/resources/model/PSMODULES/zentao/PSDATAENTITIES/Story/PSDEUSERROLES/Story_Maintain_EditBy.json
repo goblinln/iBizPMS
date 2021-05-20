@@ -1,0 +1,22 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_EditBy.json",
+  "name" : "需求维护（当前更新者）（默认角色）",
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "READ",
+    "name" : "Story_Maintain_EditBy_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__READ"
+    }
+  }, {
+    "dataAccessAction" : "UPDATE",
+    "name" : "Story_Maintain_EditBy_UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  } ],
+  "roleTag" : "Story_Maintain_EditBy",
+  "userDRAction" : "READ",
+  "defaultMode" : true
+}

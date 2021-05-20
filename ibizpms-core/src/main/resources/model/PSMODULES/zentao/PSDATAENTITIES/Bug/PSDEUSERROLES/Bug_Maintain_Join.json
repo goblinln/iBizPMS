@@ -1,0 +1,22 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Maintain_Join.json",
+  "name" : "BUG维护（参与者）（默认角色）",
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "READ",
+    "name" : "Bug_Maintain_Join_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProject__READ"
+    }
+  }, {
+    "dataAccessAction" : "UPDATE",
+    "name" : "Bug_Maintain_Join_UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  } ],
+  "roleTag" : "Bug_Maintain_Join",
+  "userDRAction" : "READ",
+  "defaultMode" : true
+}

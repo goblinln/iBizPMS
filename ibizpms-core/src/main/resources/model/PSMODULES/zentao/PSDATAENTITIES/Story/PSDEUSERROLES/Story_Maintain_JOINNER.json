@@ -1,0 +1,22 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_JOINNER.json",
+  "name" : "需求维护（当前参与者）（默认角色）",
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "UPDATE",
+    "name" : "Story_Maintain_JOINNER_UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "READ",
+    "name" : "Story_Maintain_JOINNER_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__READ"
+    }
+  } ],
+  "roleTag" : "Story_Maintain_JOINNER",
+  "userDRAction" : "READ",
+  "defaultMode" : true
+}

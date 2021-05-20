@@ -1,0 +1,22 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain_Update.json",
+  "name" : "任务维护（更新者）（默认角色）",
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "READ",
+    "name" : "Task_Maintain_Update_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ProjectModule__READ"
+    }
+  }, {
+    "dataAccessAction" : "UPDATE",
+    "name" : "Task_Maintain_Update_UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  } ],
+  "roleTag" : "Task_Maintain_Update",
+  "userDRAction" : "READ",
+  "defaultMode" : true
+}

@@ -12835,6 +12835,83 @@
     "roleTag" : "Story_Maintain",
     "userDRAction" : "READ"
   }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_EditBy.json",
+    "name" : "需求维护（当前更新者）（默认角色）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "Story_Maintain_EditBy_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__READ"
+      }
+    }, {
+      "dataAccessAction" : "UPDATE",
+      "name" : "Story_Maintain_EditBy_UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    } ],
+    "roleTag" : "Story_Maintain_EditBy",
+    "userDRAction" : "READ",
+    "defaultMode" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_JOINNER.json",
+    "name" : "需求维护（当前参与者）（默认角色）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "UPDATE",
+      "name" : "Story_Maintain_JOINNER_UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "READ",
+      "name" : "Story_Maintain_JOINNER_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__READ"
+      }
+    } ],
+    "roleTag" : "Story_Maintain_JOINNER",
+    "userDRAction" : "READ",
+    "defaultMode" : true
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_OpenBy.json",
+    "name" : "需求维护（当前创建者）（默认角色）",
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "UPDATE",
+      "name" : " Story_Maintain_OpenBy_UPDATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "CREATE",
+      "name" : "Story_Maintain_OpenBy_CREATE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CREATE"
+      }
+    }, {
+      "dataAccessAction" : "READ",
+      "name" : " Story_Maintain_OpenBy_READ",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ZTProduct__READ"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : " Story_Maintain_OpenBy_DELETE",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    } ],
+    "roleTag" : "Story_Maintain_OpenBy",
+    "userDRAction" : "READ",
+    "defaultMode" : true
+  }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Manage.json",
     "name" : "需求管理",

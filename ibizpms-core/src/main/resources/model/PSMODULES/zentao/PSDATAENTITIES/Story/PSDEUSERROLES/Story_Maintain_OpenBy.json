@@ -1,0 +1,36 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_OpenBy.json",
+  "name" : "需求维护（当前创建者）（默认角色）",
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "UPDATE",
+    "name" : " Story_Maintain_OpenBy_UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  }, {
+    "dataAccessAction" : "CREATE",
+    "name" : "Story_Maintain_OpenBy_CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "dataAccessAction" : "READ",
+    "name" : " Story_Maintain_OpenBy_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__READ"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : " Story_Maintain_OpenBy_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  } ],
+  "roleTag" : "Story_Maintain_OpenBy",
+  "userDRAction" : "READ",
+  "defaultMode" : true
+}
