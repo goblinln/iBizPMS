@@ -135,20 +135,20 @@
             },
             "getPSControlHandler" : {
               "getPSHandlerActions" : [ {
-                "actionName" : "UpdateTempMajor",
+                "actionName" : "Update",
                 "actionType" : "DEACTION",
                 "dataAccessAction" : "UPDATE",
                 "name" : "update",
                 "getPSAppDEMethod" : {
                   "modelref" : true,
-                  "id" : "UpdateTempMajor"
+                  "id" : "Update"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
                 }
               }, {
-                "actionName" : "GETDRAFTTEMPMAJORFROM",
+                "actionName" : "GETDRAFTFROM",
                 "actionType" : "DEACTION",
                 "dataAccessAction" : "CREATE",
                 "name" : "loaddraftfrom",
@@ -157,52 +157,52 @@
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
                 }
               }, {
-                "actionName" : "RemoveTempMajor",
+                "actionName" : "Remove",
                 "actionType" : "DEACTION",
                 "dataAccessAction" : "DELETE",
                 "name" : "remove",
                 "getPSAppDEMethod" : {
                   "modelref" : true,
-                  "id" : "RemoveTempMajor"
+                  "id" : "Remove"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
                 }
               }, {
-                "actionName" : "GetDraftTempMajor",
+                "actionName" : "GetDraft",
                 "actionType" : "DEACTION",
                 "dataAccessAction" : "CREATE",
                 "name" : "loaddraft",
                 "getPSAppDEMethod" : {
                   "modelref" : true,
-                  "id" : "GetDraftTempMajor"
+                  "id" : "GetDraft"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
                 }
               }, {
-                "actionName" : "GetTempMajor",
+                "actionName" : "Get",
                 "actionType" : "DEACTION",
                 "dataAccessAction" : "READ",
                 "name" : "load",
                 "getPSAppDEMethod" : {
                   "modelref" : true,
-                  "id" : "GetTempMajor"
+                  "id" : "Get"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IbzCase.json"
                 }
               }, {
-                "actionName" : "CreateTempMajor",
+                "actionName" : "Create",
                 "actionType" : "DEACTION",
                 "dataAccessAction" : "CREATE",
                 "name" : "create",
                 "getPSAppDEMethod" : {
                   "modelref" : true,
-                  "id" : "CreateTempMajor"
+                  "id" : "Create"
                 },
                 "getPSAppDataEntity" : {
                   "modelref" : true,
@@ -1162,7 +1162,6 @@
             "layoutPanel" : true,
             "useDefaultLayout" : true
           },
-          "tempMode" : 1,
           "title" : "用例库用例编辑视图（主信息）",
           "viewStyle" : "STYLE2",
           "viewType" : "DEEDITVIEW9",
