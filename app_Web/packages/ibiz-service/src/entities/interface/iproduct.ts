@@ -237,7 +237,7 @@ export interface IProduct extends IEntityBase {
      */
     line?: any;
     /**
-     * 产品线名称
+     * 产品线
      */
     linename?: any;
 }

@@ -185,7 +185,7 @@
     "stringLength" : 100
   }, {
     "codeName" : "Name",
-    "logicName" : "模块名称",
+    "logicName" : "产品线名称",
     "name" : "NAME",
     "stdDataType" : 25,
     "stringLength" : 60,

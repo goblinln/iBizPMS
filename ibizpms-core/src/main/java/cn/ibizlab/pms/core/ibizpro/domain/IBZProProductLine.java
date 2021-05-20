@@ -137,12 +137,12 @@ public class IBZProProductLine extends EntityMP implements Serializable {
     @ApiModelProperty("归属组织名")
     private String orgname;
     /**
-     * 模块名称
+     * 产品线名称
      */
     @TableField(value = "`NAME`")
     @JSONField(name = "name")
     @JsonProperty("name")
-    @ApiModelProperty("模块名称")
+    @ApiModelProperty("产品线名称")
     private String name;
 
 
@@ -172,7 +172,7 @@ public class IBZProProductLine extends EntityMP implements Serializable {
     }
 
     /**
-     * 设置 [模块名称]
+     * 设置 [产品线名称]
      */
     public void setName(String name) {
         this.name = name;

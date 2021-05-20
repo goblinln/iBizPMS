@@ -570,7 +570,7 @@ public class ProductDTO extends DTOBase implements Serializable {
     @JSONField(name = "linename")
     @JsonProperty("linename")
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
-    @ApiModelProperty("产品线名称")
+    @ApiModelProperty("产品线")
     private String linename;
 
 

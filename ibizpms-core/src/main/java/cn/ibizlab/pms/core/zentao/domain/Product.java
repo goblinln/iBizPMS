@@ -513,12 +513,12 @@ public class Product extends EntityMP implements Serializable {
     @ApiModelProperty("id")
     private Long line;
     /**
-     * 产品线名称
+     * 产品线
      */
     @TableField(exist = false)
     @JSONField(name = "linename")
     @JsonProperty("linename")
-    @ApiModelProperty("产品线名称")
+    @ApiModelProperty("产品线")
     private String linename;
 
     /**

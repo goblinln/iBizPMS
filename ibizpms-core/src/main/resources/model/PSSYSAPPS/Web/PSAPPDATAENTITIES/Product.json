@@ -751,7 +751,7 @@
     "stdDataType" : 1
   }, {
     "codeName" : "LineName",
-    "logicName" : "产品线名称",
+    "logicName" : "产品线",
     "name" : "LINENAME",
     "stdDataType" : 25,
     "stringLength" : 60

@@ -137,9 +137,9 @@ public class IBZProProductLineDTO extends DTOBase implements Serializable {
      */
     @JSONField(name = "name")
     @JsonProperty("name")
-    @NotBlank(message = "[模块名称]不允许为空!")
+    @NotBlank(message = "[产品线名称]不允许为空!")
     @Size(min = 0, max = 60, message = "内容长度必须小于等于[60]")
-    @ApiModelProperty("模块名称")
+    @ApiModelProperty("产品线名称")
     private String name;
 
 

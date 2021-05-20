@@ -88,12 +88,12 @@ public class ProductSearchContext extends QueryWrapperContext<Product> {
         this.n_line_eq = n_line_eq;
     }
                 
-	private String n_linename_eq;//[产品线名称]
+	private String n_linename_eq;//[产品线]
 	public void setN_linename_eq(String n_linename_eq) {
         this.n_linename_eq = n_linename_eq;
     }
                 
-	private String n_linename_like;//[产品线名称]
+	private String n_linename_like;//[产品线]
 	public void setN_linename_like(String n_linename_like) {
         this.n_linename_like = n_linename_like;
     }

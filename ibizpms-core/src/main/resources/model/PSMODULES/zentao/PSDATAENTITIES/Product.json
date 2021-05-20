@@ -3157,7 +3157,7 @@
     "dataType" : "PICKUPTEXT",
     "importOrder" : 1000,
     "length" : 60,
-    "logicName" : "产品线名称",
+    "logicName" : "产品线",
     "name" : "LINENAME",
     "getPSDER" : {
       "modelref" : true,

@@ -12192,7 +12192,7 @@
     {
     "fieldname":"NAME" ,
     "codename":"Name",
-    "field_logic_name":"模块名称",
+    "field_logic_name":"产品线名称",
     "entity_name":"IBZPRO_PRODUCTLINE",
     "field_type":"TEXT",
     "nullable":0,
@@ -32660,7 +32660,7 @@
     {
     "fieldname":"LINENAME" ,
     "codename":"LineName",
-    "field_logic_name":"产品线名称",
+    "field_logic_name":"产品线",
     "entity_name":"ZT_PRODUCT",
     "ref_de":"IBZPRO_PRODUCTLINE",
     "ref_field_name":"NAME",

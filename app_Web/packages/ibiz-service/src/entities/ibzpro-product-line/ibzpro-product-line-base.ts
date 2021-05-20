@@ -76,7 +76,7 @@ export abstract class IBZProProductLineBase extends EntityBase implements IIBZPr
      */
     orgname?: any;
     /**
-     * 模块名称
+     * 产品线名称
      */
     name?: any;
 

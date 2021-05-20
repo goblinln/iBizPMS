@@ -303,7 +303,7 @@
           "detailType" : "GROUPPANEL",
           "name" : "grouppanel2",
           "getPSDEFormDetails" : [ {
-            "caption" : "产品线名称",
+            "caption" : "产品线",
             "codeName" : "linename",
             "dataType" : 25,
             "detailStyle" : "DEFAULT",

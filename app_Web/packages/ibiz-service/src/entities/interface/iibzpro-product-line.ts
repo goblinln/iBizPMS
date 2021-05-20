@@ -51,7 +51,7 @@ export interface IIBZProProductLine extends IEntityBase {
      */
     orgname?: any;
     /**
-     * 模块名称
+     * 产品线名称
      */
     name?: any;
 }
