@@ -422,7 +422,6 @@
               "getPSUIAction" : {
                 "caption" : "新建行",
                 "codeName" : "NewRow",
-                "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
                 "fullCodeName" : "NewRow",
                 "name" : "表格界面_新建行",
                 "getPSSysImage" : {
@@ -767,7 +766,6 @@
                   "getPSUIAction" : {
                     "caption" : "新建行",
                     "codeName" : "NewRow",
-                    "dataAccessAction" : "SRFUR__UNIVERSALCREATE",
                     "fullCodeName" : "NewRow",
                     "name" : "表格界面_新建行",
                     "getPSSysImage" : {
@@ -793,7 +791,6 @@
                     },
                     "caption" : "删除",
                     "codeName" : "Remove",
-                    "dataAccessAction" : "SRFUR__UNIVERSALDELETE",
                     "fullCodeName" : "Remove",
                     "name" : "表格界面_删除操作",
                     "getPSSysImage" : {

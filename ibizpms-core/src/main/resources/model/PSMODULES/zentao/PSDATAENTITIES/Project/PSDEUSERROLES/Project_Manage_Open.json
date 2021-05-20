@@ -43,6 +43,5 @@
   } ],
   "roleTag" : "Project_Manage_Open",
   "userCat" : "CAT1",
-  "userDRAction" : "READ",
-  "defaultMode" : true
+  "userDRAction" : "READ"
 }

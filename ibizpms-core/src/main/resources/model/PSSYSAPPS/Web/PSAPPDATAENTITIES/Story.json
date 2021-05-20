@@ -4495,6 +4495,7 @@
     "actionTarget" : "NONE",
     "caption" : "新建需求",
     "codeName" : "Create",
+    "dataAccessAction" : "CREATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView.json",
