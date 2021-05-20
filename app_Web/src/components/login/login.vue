@@ -177,6 +177,20 @@ export default class Login extends Vue {
     }
 
     /**
+     * 生命周期 -- mounted
+     *
+     * @memberof Login
+     */
+    public mounted() {
+        setTimeout(() => {
+            const el = document.getElementById('app-loading-x');
+            if (el) {
+                el.style.display = 'none';
+            }
+        }, 300);
+    }
+
+    /**
      * 监听语言变化
      *
      * @memberof Login
