@@ -60,7 +60,7 @@
     },
     "width" : 200,
     "widthUnit" : "PX",
-    "enableSort" : true
+    "enableSort" : false
   }, {
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
@@ -77,7 +77,7 @@
     },
     "width" : 90,
     "widthUnit" : "PX",
-    "enableSort" : true
+    "enableSort" : false
   }, {
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
@@ -94,7 +94,7 @@
     },
     "width" : 90,
     "widthUnit" : "PX",
-    "enableSort" : true
+    "enableSort" : false
   }, {
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
@@ -111,7 +111,7 @@
     },
     "width" : 100,
     "widthUnit" : "PX",
-    "enableSort" : true
+    "enableSort" : false
   }, {
     "align" : "LEFT",
     "cLConvertMode" : "NONE",
@@ -128,7 +128,7 @@
     },
     "width" : 115,
     "widthUnit" : "PX",
-    "enableSort" : true
+    "enableSort" : false
   } ],
   "getPSDEGridDataItems" : [ {
     "dataType" : 1,

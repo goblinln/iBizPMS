@@ -1584,6 +1584,7 @@
     "caption" : "删除",
     "codeName" : "delete",
     "confirmMsg" : "确认要删除，删除操作将不可恢复？",
+    "dataAccessAction" : "DELETE",
     "fullCodeName" : "Product_delete",
     "name" : "删除",
     "getNextPSUIAction" : {
@@ -1636,6 +1637,7 @@
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "Create",
+    "dataAccessAction" : "CREATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
@@ -1663,6 +1665,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "置顶",
     "codeName" : "ProductTop",
+    "dataAccessAction" : "NOTOP",
     "fullCodeName" : "Product_ProductTop",
     "name" : "置顶",
     "getPSAppDEMethod" : {
@@ -1740,6 +1743,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "关闭",
     "codeName" : "CloseProduct",
+    "dataAccessAction" : "MANAGE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView_Close.json",
@@ -1766,6 +1770,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "取消置顶",
     "codeName" : "CancelProductTop",
+    "dataAccessAction" : "TOP",
     "fullCodeName" : "Product_CancelProductTop",
     "name" : "取消置顶",
     "getPSAppDEMethod" : {

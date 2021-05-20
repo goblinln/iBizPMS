@@ -698,8 +698,10 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
+              "noPrivDisplayMode" : 1,
               "caption" : "指派",
               "codeName" : "AssignToDash",
+              "dataAccessAction" : "ASSIGNTO",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryAssignToView.json",
@@ -789,8 +791,10 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
+              "noPrivDisplayMode" : 1,
               "caption" : "激活",
               "codeName" : "ActiviteDash",
+              "dataAccessAction" : "ACTIVATE",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryActiviteView.json",
@@ -833,9 +837,10 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
+              "noPrivDisplayMode" : 1,
               "caption" : "关闭",
               "codeName" : "CloseStoryDash",
-              "dataAccessAction" : "SRFUR__STORY_CLOSED_BUT",
+              "dataAccessAction" : "CLOSE",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryCloseView.json",
@@ -881,8 +886,10 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
+              "noPrivDisplayMode" : 1,
               "caption" : "变更",
               "codeName" : "ChangeStoryDetailDash",
+              "dataAccessAction" : "CHANGE",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView_StoryChange.json",
@@ -925,8 +932,10 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
+              "noPrivDisplayMode" : 1,
               "caption" : "细分",
               "codeName" : "SubStoryCz",
+              "dataAccessAction" : "ISCHILD",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorySubGridView.json",

@@ -119,7 +119,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "ACTIVATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -151,7 +151,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "ASSIGNTO"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -375,7 +375,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "CHANGE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -403,7 +403,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "CLOSE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -643,7 +643,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "REVIEW"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -715,7 +715,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "FAVORITES"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -731,7 +731,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NFAVORITES"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2043,7 +2043,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "ACTIVATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2075,7 +2075,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "ASSIGNTO"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2299,7 +2299,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "CHANGE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2327,7 +2327,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "CLOSE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2567,7 +2567,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "REVIEW"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2639,7 +2639,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "FAVORITES"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2655,7 +2655,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "NFAVORITES"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -3303,9 +3303,10 @@
     "id" : "BatchBreakdowntasks@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "关闭",
     "codeName" : "CloseStoryDash",
-    "dataAccessAction" : "SRFUR__STORY_CLOSED_BUT",
+    "dataAccessAction" : "CLOSE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryCloseView.json",
@@ -3334,6 +3335,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "需求细分",
     "codeName" : "SubStory",
+    "dataAccessAction" : "ISCHILD",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorySubGridView.json",
@@ -3489,6 +3491,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "变更",
     "codeName" : "ChangeStoryDetail",
+    "dataAccessAction" : "CHANGE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView_StoryChange.json",
@@ -3512,8 +3515,10 @@
     "id" : "ChangeStoryDetail@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "激活",
     "codeName" : "ActiviteDash",
+    "dataAccessAction" : "ACTIVATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryActiviteView.json",
@@ -3583,6 +3588,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "收藏",
     "codeName" : "StoryFavorites",
+    "dataAccessAction" : "FAVORITES",
     "fullCodeName" : "Story_StoryFavorites",
     "name" : "收藏",
     "getPSAppDEMethod" : {
@@ -3698,8 +3704,10 @@
     "id" : "buildLinkStories@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "指派",
     "codeName" : "AssignToDash",
+    "dataAccessAction" : "ASSIGNTO",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryAssignToView.json",
@@ -3726,8 +3734,10 @@
     "id" : "AssignToDash@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "变更",
     "codeName" : "ChangeStoryDetailDash",
+    "dataAccessAction" : "CHANGE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView_StoryChange.json",
@@ -3753,6 +3763,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "指派",
     "codeName" : "AssignTo",
+    "dataAccessAction" : "ASSIGNTO",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryAssignToView.json",
@@ -4039,6 +4050,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "关闭",
     "codeName" : "CloseStory",
+    "dataAccessAction" : "CLOSE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryCloseView.json",
@@ -4090,8 +4102,10 @@
     "id" : "ReviewStoryDash@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "细分",
     "codeName" : "SubStoryCz",
+    "dataAccessAction" : "ISCHILD",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorySubGridView.json",
@@ -4437,6 +4451,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "评审",
     "codeName" : "ReviewStory",
+    "dataAccessAction" : "REVIEW",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRevIewEditView.json",
@@ -4525,6 +4540,7 @@
     "caption" : "删除",
     "codeName" : "delete",
     "confirmMsg" : "确认要删除，删除操作将不可恢复？",
+    "dataAccessAction" : "DELETE",
     "fullCodeName" : "Story_delete",
     "name" : "删除",
     "getNextPSUIAction" : {
@@ -4562,6 +4578,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "取消收藏",
     "codeName" : "StoryNFavorites",
+    "dataAccessAction" : "NFAVORITES",
     "fullCodeName" : "Story_StoryNFavorites",
     "name" : "取消收藏",
     "getPSAppDEMethod" : {
@@ -5033,100 +5050,46 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__STORY_FAVOR_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求已收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_FAVOR_BUT"
-        },
-        "mapSysUniResCode" : "STORY_FAVOR_BUT",
-        "name" : "SRFUR__STORY_FAVOR_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__STORY_ASS_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求指派给",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_ASS_BUT"
-        },
-        "mapSysUniResCode" : "STORY_ASS_BUT",
-        "name" : "SRFUR__STORY_ASS_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__STORY_REVIEW_BUT",
+      "name" : "REVIEW",
       "getPSDEOPPriv" : {
         "logicName" : "需求评审",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_REVIEW_BUT"
-        },
-        "mapSysUniResCode" : "STORY_REVIEW_BUT",
-        "name" : "SRFUR__STORY_REVIEW_BUT",
-        "mapSysUniRes" : true
+        "name" : "REVIEW"
       }
     }, {
-      "name" : "SRFUR__STORY_ACTIVE_BUT",
+      "name" : "DELETE",
       "getPSDEOPPriv" : {
-        "logicName" : "需求激活",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_ACTIVE_BUT"
-        },
-        "mapSysUniResCode" : "STORY_ACTIVE_BUT",
-        "name" : "SRFUR__STORY_ACTIVE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "删除",
+        "name" : "DELETE"
       }
     }, {
-      "name" : "SRFUR__STORY_CCASE_BUT",
+      "name" : "NFAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "需求建用例",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_CCASE_BUT"
-        },
-        "mapSysUniResCode" : "STORY_CCASE_BUT",
-        "name" : "SRFUR__STORY_CCASE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "取消收藏",
+        "name" : "NFAVORITES"
       }
     }, {
-      "name" : "SRFUR__STORY_DELETE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求删除",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_DELETE_BUT"
-        },
-        "mapSysUniResCode" : "STORY_DELETE_BUT",
-        "name" : "SRFUR__STORY_DELETE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__STORY_CHANGED_BUT",
+      "name" : "CHANGE",
       "getPSDEOPPriv" : {
         "logicName" : "需求变更",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_CHANGED_BUT"
-        },
-        "mapSysUniResCode" : "STORY_CHANGED_BUT",
-        "name" : "SRFUR__STORY_CHANGED_BUT",
-        "mapSysUniRes" : true
+        "name" : "CHANGE"
       }
     }, {
-      "name" : "SRFUR__STORY_CLOSED_BUT",
+      "name" : "CLOSE",
       "getPSDEOPPriv" : {
         "logicName" : "需求关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_CLOSED_BUT"
-        },
-        "mapSysUniResCode" : "STORY_CLOSED_BUT",
-        "name" : "SRFUR__STORY_CLOSED_BUT",
-        "mapSysUniRes" : true
+        "name" : "CLOSE"
+      }
+    }, {
+      "name" : "ACTIVATE",
+      "getPSDEOPPriv" : {
+        "logicName" : "需求激活",
+        "name" : "ACTIVATE"
+      }
+    }, {
+      "name" : "ASSIGNTO",
+      "getPSDEOPPriv" : {
+        "logicName" : "需求指派",
+        "name" : "ASSIGNTO"
       }
     } ],
     "state2Value" : "0",
@@ -7427,40 +7390,22 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__STORY_XQXF_BUT",
+      "name" : "FAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "需求细分",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_XQXF_BUT"
-        },
-        "mapSysUniResCode" : "STORY_XQXF_BUT",
-        "name" : "SRFUR__STORY_XQXF_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "需求收藏",
+        "name" : "FAVORITES"
       }
     }, {
-      "name" : "SRFUR__STORY_ACTIVE_BUT",
+      "name" : "ACTIVATE",
       "getPSDEOPPriv" : {
         "logicName" : "需求激活",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_ACTIVE_BUT"
-        },
-        "mapSysUniResCode" : "STORY_ACTIVE_BUT",
-        "name" : "SRFUR__STORY_ACTIVE_BUT",
-        "mapSysUniRes" : true
+        "name" : "ACTIVATE"
       }
     }, {
-      "name" : "SRFUR__STORY_NFAVOR_BUT",
+      "name" : "ISCHILD",
       "getPSDEOPPriv" : {
-        "logicName" : "需求待收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_NFAVOR_BUT"
-        },
-        "mapSysUniResCode" : "STORY_NFAVOR_BUT",
-        "name" : "SRFUR__STORY_NFAVOR_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "需求细分",
+        "name" : "ISCHILD"
       }
     } ],
     "state2Value" : "1",
@@ -9855,88 +9800,46 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__STORY_REVIEW_BUT",
+      "name" : "REVIEW",
       "getPSDEOPPriv" : {
         "logicName" : "需求评审",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_REVIEW_BUT"
-        },
-        "mapSysUniResCode" : "STORY_REVIEW_BUT",
-        "name" : "SRFUR__STORY_REVIEW_BUT",
-        "mapSysUniRes" : true
+        "name" : "REVIEW"
       }
     }, {
-      "name" : "SRFUR__STORY_CLOSED_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_CLOSED_BUT"
-        },
-        "mapSysUniResCode" : "STORY_CLOSED_BUT",
-        "name" : "SRFUR__STORY_CLOSED_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__STORY_ASS_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求指派给",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_ASS_BUT"
-        },
-        "mapSysUniResCode" : "STORY_ASS_BUT",
-        "name" : "SRFUR__STORY_ASS_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__STORY_NFAVOR_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求待收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_NFAVOR_BUT"
-        },
-        "mapSysUniResCode" : "STORY_NFAVOR_BUT",
-        "name" : "SRFUR__STORY_NFAVOR_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__STORY_ACTIVE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求激活",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_ACTIVE_BUT"
-        },
-        "mapSysUniResCode" : "STORY_ACTIVE_BUT",
-        "name" : "SRFUR__STORY_ACTIVE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__STORY_CHANGED_BUT",
+      "name" : "CHANGE",
       "getPSDEOPPriv" : {
         "logicName" : "需求变更",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_CHANGED_BUT"
-        },
-        "mapSysUniResCode" : "STORY_CHANGED_BUT",
-        "name" : "SRFUR__STORY_CHANGED_BUT",
-        "mapSysUniRes" : true
+        "name" : "CHANGE"
       }
     }, {
-      "name" : "SRFUR__STORY_XQXF_BUT",
+      "name" : "FAVORITES",
+      "getPSDEOPPriv" : {
+        "logicName" : "需求收藏",
+        "name" : "FAVORITES"
+      }
+    }, {
+      "name" : "ACTIVATE",
+      "getPSDEOPPriv" : {
+        "logicName" : "需求激活",
+        "name" : "ACTIVATE"
+      }
+    }, {
+      "name" : "CLOSE",
+      "getPSDEOPPriv" : {
+        "logicName" : "需求关闭",
+        "name" : "CLOSE"
+      }
+    }, {
+      "name" : "ISCHILD",
       "getPSDEOPPriv" : {
         "logicName" : "需求细分",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_XQXF_BUT"
-        },
-        "mapSysUniResCode" : "STORY_XQXF_BUT",
-        "name" : "SRFUR__STORY_XQXF_BUT",
-        "mapSysUniRes" : true
+        "name" : "ISCHILD"
+      }
+    }, {
+      "name" : "ASSIGNTO",
+      "getPSDEOPPriv" : {
+        "logicName" : "需求指派",
+        "name" : "ASSIGNTO"
       }
     } ],
     "state2Value" : "1",
@@ -11300,112 +11203,52 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__STORY_DELETE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求删除",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_DELETE_BUT"
-        },
-        "mapSysUniResCode" : "STORY_DELETE_BUT",
-        "name" : "SRFUR__STORY_DELETE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__STORY_CHANGED_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求变更",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_CHANGED_BUT"
-        },
-        "mapSysUniResCode" : "STORY_CHANGED_BUT",
-        "name" : "SRFUR__STORY_CHANGED_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__STORY_CCASE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求建用例",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_CCASE_BUT"
-        },
-        "mapSysUniResCode" : "STORY_CCASE_BUT",
-        "name" : "SRFUR__STORY_CCASE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__STORY_XQXF_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求细分",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_XQXF_BUT"
-        },
-        "mapSysUniResCode" : "STORY_XQXF_BUT",
-        "name" : "SRFUR__STORY_XQXF_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__STORY_ACTIVE_BUT",
+      "name" : "ACTIVATE",
       "getPSDEOPPriv" : {
         "logicName" : "需求激活",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_ACTIVE_BUT"
-        },
-        "mapSysUniResCode" : "STORY_ACTIVE_BUT",
-        "name" : "SRFUR__STORY_ACTIVE_BUT",
-        "mapSysUniRes" : true
+        "name" : "ACTIVATE"
       }
     }, {
-      "name" : "SRFUR__STORY_REVIEW_BUT",
+      "name" : "ASSIGNTO",
       "getPSDEOPPriv" : {
-        "logicName" : "需求评审",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_REVIEW_BUT"
-        },
-        "mapSysUniResCode" : "STORY_REVIEW_BUT",
-        "name" : "SRFUR__STORY_REVIEW_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "需求指派",
+        "name" : "ASSIGNTO"
       }
     }, {
-      "name" : "SRFUR__STORY_NFAVOR_BUT",
+      "name" : "ISCHILD",
       "getPSDEOPPriv" : {
-        "logicName" : "需求待收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_NFAVOR_BUT"
-        },
-        "mapSysUniResCode" : "STORY_NFAVOR_BUT",
-        "name" : "SRFUR__STORY_NFAVOR_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "需求细分",
+        "name" : "ISCHILD"
       }
     }, {
-      "name" : "SRFUR__STORY_CLOSED_BUT",
+      "name" : "CLOSE",
       "getPSDEOPPriv" : {
         "logicName" : "需求关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_CLOSED_BUT"
-        },
-        "mapSysUniResCode" : "STORY_CLOSED_BUT",
-        "name" : "SRFUR__STORY_CLOSED_BUT",
-        "mapSysUniRes" : true
+        "name" : "CLOSE"
       }
     }, {
-      "name" : "SRFUR__STORY_ASS_BUT",
+      "name" : "CHANGE",
       "getPSDEOPPriv" : {
-        "logicName" : "需求指派给",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_ASS_BUT"
-        },
-        "mapSysUniResCode" : "STORY_ASS_BUT",
-        "name" : "SRFUR__STORY_ASS_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "需求变更",
+        "name" : "CHANGE"
+      }
+    }, {
+      "name" : "REVIEW",
+      "getPSDEOPPriv" : {
+        "logicName" : "需求评审",
+        "name" : "REVIEW"
+      }
+    }, {
+      "name" : "DELETE",
+      "getPSDEOPPriv" : {
+        "logicName" : "删除",
+        "name" : "DELETE"
+      }
+    }, {
+      "name" : "FAVORITES",
+      "getPSDEOPPriv" : {
+        "logicName" : "需求收藏",
+        "name" : "FAVORITES"
       }
     } ],
     "state2Value" : "1",
@@ -11560,6 +11403,18 @@
     "oPPrivAllowMode" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "需求激活",
+    "name" : "ACTIVATE"
+  }, {
+    "logicName" : "需求指派",
+    "name" : "ASSIGNTO"
+  }, {
+    "logicName" : "需求变更",
+    "name" : "CHANGE"
+  }, {
+    "logicName" : "需求关闭",
+    "name" : "CLOSE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
@@ -11584,6 +11439,12 @@
     "name" : "DELETE",
     "id" : "ZTProduct__DELETE"
   }, {
+    "logicName" : "需求收藏",
+    "name" : "FAVORITES"
+  }, {
+    "logicName" : "需求细分",
+    "name" : "ISCHILD"
+  }, {
     "logicName" : "Product_Manage",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
@@ -11596,6 +11457,9 @@
     "logicName" : "管理",
     "name" : "MANAGE"
   }, {
+    "logicName" : "取消收藏",
+    "name" : "NFAVORITES"
+  }, {
     "logicName" : "Product_Read",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
@@ -11607,6 +11471,9 @@
   }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "需求评审",
+    "name" : "REVIEW"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"

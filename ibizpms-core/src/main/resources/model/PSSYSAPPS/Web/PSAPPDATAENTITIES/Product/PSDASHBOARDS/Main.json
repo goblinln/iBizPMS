@@ -1527,6 +1527,7 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "关闭",
                 "codeName" : "CloseProduct",
+                "dataAccessAction" : "MANAGE",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView_Close.json",
@@ -1595,6 +1596,7 @@
                 "caption" : "删除",
                 "codeName" : "delete",
                 "confirmMsg" : "确认要删除，删除操作将不可恢复？",
+                "dataAccessAction" : "DELETE",
                 "fullCodeName" : "Product_delete",
                 "name" : "删除",
                 "getNextPSUIAction" : {

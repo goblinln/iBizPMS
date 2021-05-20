@@ -394,6 +394,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "变更",
           "codeName" : "ChangeStoryDetail",
+          "dataAccessAction" : "CHANGE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryEditView_StoryChange.json",
@@ -426,6 +427,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "评审",
           "codeName" : "ReviewStory",
+          "dataAccessAction" : "REVIEW",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRevIewEditView.json",
@@ -458,6 +460,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "关闭",
           "codeName" : "CloseStory",
+          "dataAccessAction" : "CLOSE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryCloseView.json",
@@ -547,6 +550,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "需求细分",
           "codeName" : "SubStory",
+          "dataAccessAction" : "ISCHILD",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StorySubGridView.json",
@@ -632,6 +636,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "收藏",
           "codeName" : "StoryFavorites",
+          "dataAccessAction" : "FAVORITES",
           "fullCodeName" : "Story_StoryFavorites",
           "name" : "收藏",
           "getPSAppDEMethod" : {
@@ -665,6 +670,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "取消收藏",
           "codeName" : "StoryNFavorites",
+          "dataAccessAction" : "NFAVORITES",
           "fullCodeName" : "Story_StoryNFavorites",
           "name" : "取消收藏",
           "getPSAppDEMethod" : {

@@ -1590,6 +1590,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "置顶",
     "codeName" : "ProductTop",
+    "dataAccessAction" : "NOTOP",
     "fullCodeName" : "Product_ProductTop",
     "name" : "置顶",
     "getPSAppDEMethod" : {
@@ -1643,6 +1644,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "取消置顶",
     "codeName" : "CancelProductTop",
+    "dataAccessAction" : "TOP",
     "fullCodeName" : "Product_CancelProductTop",
     "name" : "取消置顶",
     "getPSAppDEMethod" : {

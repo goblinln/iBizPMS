@@ -232,6 +232,7 @@
         "actionTarget" : "NONE",
         "caption" : "新建",
         "codeName" : "Create",
+        "dataAccessAction" : "CREATE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductEditView.json",
@@ -475,6 +476,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "置顶",
           "codeName" : "ProductTop",
+          "dataAccessAction" : "NOTOP",
           "fullCodeName" : "Product_ProductTop",
           "name" : "置顶",
           "getPSAppDEMethod" : {
@@ -520,6 +522,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "取消置顶",
           "codeName" : "CancelProductTop",
+          "dataAccessAction" : "TOP",
           "fullCodeName" : "Product_CancelProductTop",
           "name" : "取消置顶",
           "getPSAppDEMethod" : {
