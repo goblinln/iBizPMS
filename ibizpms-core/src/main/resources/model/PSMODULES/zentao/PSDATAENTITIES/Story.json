@@ -676,6 +676,24 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
+        "customCond" : "( t1.`ASSIGNEDTO` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ASSIGNEDTO\",\"dename\":\"ZT_STORY\"}')}  AND  t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"ZT_STORY\"}')}  AND  t1.`REVIEWEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"REVIEWEDBY\",\"dename\":\"ZT_STORY\"}')}  AND  t1.`CLOSEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"CLOSEDBY\",\"dename\":\"ZT_STORY\"}')}  AND  t1.`LASTEDITEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"LASTEDITEDBY\",\"dename\":\"ZT_STORY\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "MyReStory",
+    "logicName" : "我相关的需求（权限）",
+    "name" : "MyReStory",
+    "privQuery" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
         "customCond" : "t1.plan <> ${srfwebcontext('plan','{\"defname\":\"id\",\"dename\":\"ZT_PRODUCTPLAN\"}')}",
         "name" : "查询条件"
       }, {
@@ -1069,6 +1087,16 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "MyFavorites"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "MyReStory",
+    "logicName" : "我相关的需求（权限）",
+    "name" : "MyReStory",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyReStory"
     } ],
     "enableBackend" : true,
     "enableFront" : true
@@ -12229,103 +12257,34 @@
     "roleTag" : "Story_Maintain",
     "userDRAction" : "READ"
   }, {
-    "customCond" : "['|',('OPENEDBY','=',#{srf.sessioncontext.srfloginname}),('ASSIGNEDTO','=',\n#{srf.sessioncontext.srfloginname})]",
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_EditBy.json",
-    "name" : "需求维护（当前更新者）（默认角色）",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_OpenBy.json",
+    "name" : "需求维护（当前创建者）（默认角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyReStory"
+    },
     "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "FAVORITES",
+      "name" : "Story_Maintain_OpenBy_Favorites",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "FAVORITES"
+      }
+    }, {
       "dataAccessAction" : "ACTIVATE",
-      "name" : "Story_Maintain_EditBy_Activate",
+      "name" : "Story_Maintain_OpenBy_Activate",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "ACTIVATE"
       }
     }, {
-      "dataAccessAction" : "READ",
-      "name" : "Story_Maintain_EditBy_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ZTProduct__READ"
-      }
-    }, {
       "dataAccessAction" : "CHANGE",
-      "name" : "Story_Maintain_EditBy_Change",
+      "name" : "Story_Maintain_OpenBy_Change",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "CHANGE"
       }
     }, {
-      "dataAccessAction" : "UPDATE",
-      "name" : "Story_Maintain_EditBy_UPDATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "UPDATE"
-      }
-    }, {
-      "dataAccessAction" : "NFAVORITES",
-      "name" : "Story_Maintain_EditBy_NFavorites",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "NFAVORITES"
-      }
-    }, {
-      "dataAccessAction" : "REVIEW",
-      "name" : "Story_Maintain_EditBy_Review",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "REVIEW"
-      }
-    }, {
-      "dataAccessAction" : "ASSIGNTO",
-      "name" : "Story_Maintain_EditBy_Assignto",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ASSIGNTO"
-      }
-    }, {
-      "dataAccessAction" : "CLOSE",
-      "name" : "Story_Maintain_EditBy_Close",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "CLOSE"
-      }
-    }, {
-      "dataAccessAction" : "FAVORITES",
-      "name" : "Story_Maintain_EditBy_Favorites",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "FAVORITES"
-      }
-    } ],
-    "roleTag" : "Story_Maintain_EditBy",
-    "userDRAction" : "READ",
-    "defaultMode" : true
-  }, {
-    "customCond" : "[('ASSIGNEDTO','=',#{srf.sessioncontext.srfloginname})]",
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_JOINNER.json",
-    "name" : "需求维护（当前参与者）（默认角色）",
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "UPDATE",
-      "name" : "Story_Maintain_JOINNER_UPDATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "UPDATE"
-      }
-    }, {
-      "dataAccessAction" : "READ",
-      "name" : "Story_Maintain_JOINNER_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ZTProduct__READ"
-      }
-    } ],
-    "roleTag" : "Story_Maintain_JOINNER",
-    "userDRAction" : "READ",
-    "defaultMode" : true
-  }, {
-    "customCond" : "[('OPENEDBY','=',#{srf.sessioncontext.srfloginname})]",
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_OpenBy.json",
-    "name" : "需求维护（当前创建者）（默认角色）",
-    "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "UPDATE",
       "name" : " Story_Maintain_OpenBy_UPDATE",
       "getPSDEOPPriv" : {
@@ -12338,6 +12297,41 @@
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "ZTProduct__READ"
+      }
+    }, {
+      "dataAccessAction" : "REVIEW",
+      "name" : "Story_Maintain_OpenBy_Review",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "REVIEW"
+      }
+    }, {
+      "dataAccessAction" : "ASSIGNTO",
+      "name" : "Story_Maintain_OpenBy_Assignto",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ASSIGNTO"
+      }
+    }, {
+      "dataAccessAction" : "ISCHILD",
+      "name" : "Story_Maintain_OpenBy_Ischild",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ISCHILD"
+      }
+    }, {
+      "dataAccessAction" : "NFAVORITES",
+      "name" : "Story_Maintain_OpenBy_NFavorites",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "NFAVORITES"
+      }
+    }, {
+      "dataAccessAction" : "CLOSE",
+      "name" : "Story_Maintain_OpenBy_Close",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "CLOSE"
       }
     }, {
       "dataAccessAction" : "DELETE",

@@ -157,6 +157,8 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             return storyService.searchMyCurOpenedStory(searchContext);    
         if (iPSDEDataSet.getName().equals("MyFavorites"))
             return storyService.searchMyFavorites(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyReStory"))
+            return storyService.searchMyReStory(searchContext);    
         if (iPSDEDataSet.getName().equals("NotCurPlanLinkStory"))
             return storyService.searchNotCurPlanLinkStory(searchContext);    
         if (iPSDEDataSet.getName().equals("ParentDefault"))
@@ -219,6 +221,8 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             return storyService.selectMyCurOpenedStory(searchContext);
         if (iPSDataQuery.getName().equals("MyFavorites"))
             return storyService.selectMyFavorites(searchContext);
+        if (iPSDataQuery.getName().equals("MyReStory"))
+            return storyService.selectMyReStory(searchContext);
         if (iPSDataQuery.getName().equals("NotCurPlanLinkStory"))
             return storyService.selectNotCurPlanLinkStory(searchContext);
         if (iPSDataQuery.getName().equals("ParentDefault"))
@@ -681,6 +685,9 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         }
         else if (action.equals("searchMyFavorites")) {
             return aroundDataSet("MyFavorites", point);
+        }
+        else if (action.equals("searchMyReStory")) {
+            return aroundDataSet("MyReStory", point);
         }
         else if (action.equals("searchNotCurPlanLinkStory")) {
             return aroundDataSet("NotCurPlanLinkStory", point);

@@ -889,6 +889,24 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"ZT_TASK\"}')}  OR  t1.`LASTEDITEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"LASTEDITEDBY\",\"dename\":\"ZT_TASK\"}')}  OR  t1.`CLOSEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"CLOSEDBY\",\"dename\":\"ZT_TASK\"}')}  OR  t1.`FINISHEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"FINISHEDBY\",\"dename\":\"ZT_TASK\"}')}  OR  t1.`CANCELEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"CANCELEDBY\",\"dename\":\"ZT_TASK\"}')} ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "MyReTask",
+    "logicName" : "我相关的任务（权限）",
+    "name" : "MyReTask",
+    "privQuery" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
         "customCond" : "( t1.`STATUS` IN ('doing','wait')  AND  t1.`ASSIGNEDTO` =  #{srf.sessioncontext.srfloginname} )",
         "name" : "查询条件"
       } ]
@@ -1474,6 +1492,17 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "MyPlansTaskMobMonthly"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true,
+    "enableTempData" : true
+  }, {
+    "codeName" : "MyReTask",
+    "logicName" : "我相关的任务（权限）",
+    "name" : "MyReTask",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyReTask"
     } ],
     "enableBackend" : true,
     "enableFront" : true,

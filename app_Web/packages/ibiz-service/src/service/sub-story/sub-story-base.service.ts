@@ -202,6 +202,18 @@ export class SubStoryBaseService extends EntityBaseService<ISubStory> {
         return this.condCache.get('myFavorites');
     }
 
+    protected getMyReStoryCond() {
+        if (!this.condCache.has('myReStory')) {
+            const strCond: any[] = ['AND', ['OR', ['EQ', 'LASTEDITEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'CLOSEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'REVIEWEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'OPENEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'ASSIGNEDTO',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('myReStory', cond);
+            }
+        }
+        return this.condCache.get('myReStory');
+    }
+
     protected getNotCurPlanLinkStoryCond() {
         return this.condCache.get('notCurPlanLinkStory');
     }

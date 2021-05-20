@@ -171,6 +171,8 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return taskService.searchMyFavorites(searchContext);    
         if (iPSDEDataSet.getName().equals("MyPlansTaskMobMonthly"))
             return taskService.searchMyPlansTaskMobMonthly(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyReTask"))
+            return taskService.searchMyReTask(searchContext);    
         if (iPSDEDataSet.getName().equals("MyTomorrowPlanTask"))
             return taskService.searchMyTomorrowPlanTask(searchContext);    
         if (iPSDEDataSet.getName().equals("MyTomorrowPlanTaskMobDaily"))
@@ -253,6 +255,8 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return taskService.selectMyFavorites(searchContext);
         if (iPSDataQuery.getName().equals("MyPlansTaskMobMonthly"))
             return taskService.selectMyPlansTaskMobMonthly(searchContext);
+        if (iPSDataQuery.getName().equals("MyReTask"))
+            return taskService.selectMyReTask(searchContext);
         if (iPSDataQuery.getName().equals("MyTomorrowPlanTask"))
             return taskService.selectMyTomorrowPlanTask(searchContext);
         if (iPSDataQuery.getName().equals("MyTomorrowPlanTaskMobDaily"))
@@ -722,6 +726,9 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         }
         else if (action.equals("searchMyPlansTaskMobMonthly")) {
             return aroundDataSet("MyPlansTaskMobMonthly", point);
+        }
+        else if (action.equals("searchMyReTask")) {
+            return aroundDataSet("MyReTask", point);
         }
         else if (action.equals("searchMyTomorrowPlanTask")) {
             return aroundDataSet("MyTomorrowPlanTask", point);

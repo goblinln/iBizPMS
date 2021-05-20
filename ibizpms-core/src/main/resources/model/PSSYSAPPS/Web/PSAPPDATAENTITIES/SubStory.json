@@ -1412,6 +1412,15 @@
       "id" : "FetchView"
     },
     "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyReStory",
+    "methodType" : "FETCH",
+    "name" : "MyReStory",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyReStory"
+    },
+    "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "AssignedTo",
@@ -3179,6 +3188,15 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CREATE"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyReStory",
+    "methodType" : "FETCH",
+    "name" : "MyReStory",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyReStory"
     },
     "builtinMethod" : false
   }, {

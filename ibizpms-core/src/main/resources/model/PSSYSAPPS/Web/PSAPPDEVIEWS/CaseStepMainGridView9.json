@@ -224,13 +224,13 @@
     },
     "getPSControlHandler" : {
       "getPSHandlerActions" : [ {
-        "actionName" : "UpdateTemp",
+        "actionName" : "Update",
         "actionType" : "DEACTION",
         "dataAccessAction" : "UPDATE",
         "name" : "update",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "UpdateTemp"
+          "id" : "Update"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -241,59 +241,59 @@
         "name" : "fetch",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "FetchTempDefault"
+          "id" : "FetchDefault"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
         }
       }, {
-        "actionName" : "RemoveTemp",
+        "actionName" : "Remove",
         "actionType" : "DEACTION",
         "dataAccessAction" : "DELETE",
         "name" : "remove",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "RemoveTemp"
+          "id" : "Remove"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
         }
       }, {
-        "actionName" : "GetTemp",
+        "actionName" : "Get",
         "actionType" : "DEACTION",
         "dataAccessAction" : "READ",
         "name" : "load",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "GetTemp"
+          "id" : "Get"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
         }
       }, {
-        "actionName" : "GetDraftTemp",
+        "actionName" : "GetDraft",
         "actionType" : "DEACTION",
         "dataAccessAction" : "CREATE",
         "name" : "loaddraft",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "GetDraftTemp"
+          "id" : "GetDraft"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/CaseStep.json"
         }
       }, {
-        "actionName" : "CreateTemp",
+        "actionName" : "Create",
         "actionType" : "DEACTION",
         "dataAccessAction" : "CREATE",
         "name" : "create",
         "getPSAppDEMethod" : {
           "modelref" : true,
-          "id" : "CreateTemp"
+          "id" : "Create"
         },
         "getPSAppDataEntity" : {
           "modelref" : true,
@@ -516,13 +516,13 @@
     },
     "pagingSize" : 500,
     "getRemovePSControlAction" : {
-      "actionName" : "RemoveTemp",
+      "actionName" : "Remove",
       "actionType" : "DEACTION",
       "dataAccessAction" : "DELETE",
       "name" : "remove",
       "getPSAppDEMethod" : {
         "modelref" : true,
-        "id" : "RemoveTemp"
+        "id" : "Remove"
       },
       "getPSAppDataEntity" : {
         "modelref" : true,
@@ -558,7 +558,6 @@
     "layoutPanel" : true,
     "useDefaultLayout" : true
   },
-  "tempMode" : 2,
   "title" : "用例步骤",
   "viewStyle" : "STYLE2",
   "viewType" : "DEGRIDVIEW9",

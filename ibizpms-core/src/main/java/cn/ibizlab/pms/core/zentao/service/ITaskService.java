@@ -131,6 +131,7 @@ public interface ITaskService extends IService<Task> {
     List<Task> selectMyCompleteTaskZS(TaskSearchContext context);
     List<Task> selectMyFavorites(TaskSearchContext context);
     List<Task> selectMyPlansTaskMobMonthly(TaskSearchContext context);
+    List<Task> selectMyReTask(TaskSearchContext context);
     List<Task> selectMyTomorrowPlanTask(TaskSearchContext context);
     List<Task> selectMyTomorrowPlanTaskMobDaily(TaskSearchContext context);
     List<Task> selectNextWeekCompleteTaskMobZS(TaskSearchContext context);
@@ -174,6 +175,7 @@ public interface ITaskService extends IService<Task> {
     Page<Task> searchMyCompleteTaskZS(TaskSearchContext context);
     Page<Task> searchMyFavorites(TaskSearchContext context);
     Page<Task> searchMyPlansTaskMobMonthly(TaskSearchContext context);
+    Page<Task> searchMyReTask(TaskSearchContext context);
     Page<Task> searchMyTomorrowPlanTask(TaskSearchContext context);
     Page<Task> searchMyTomorrowPlanTaskMobDaily(TaskSearchContext context);
     Page<Task> searchNextWeekCompleteTaskMobZS(TaskSearchContext context);

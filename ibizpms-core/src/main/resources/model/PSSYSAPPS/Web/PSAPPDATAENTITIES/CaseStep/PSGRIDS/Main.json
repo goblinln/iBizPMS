@@ -227,13 +227,13 @@
   },
   "pagingSize" : 500,
   "getRemovePSControlAction" : {
-    "actionName" : "RemoveTemp",
+    "actionName" : "Remove",
     "actionType" : "DEACTION",
     "dataAccessAction" : "DELETE",
     "name" : "remove",
     "getPSAppDEMethod" : {
       "modelref" : true,
-      "id" : "RemoveTemp"
+      "id" : "Remove"
     },
     "getPSAppDataEntity" : {
       "modelref" : true,

@@ -1,8 +1,32 @@
 {
-  "customCond" : "[('OPENEDBY','=',#{srf.sessioncontext.srfloginname})]",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_OpenBy.json",
   "name" : "需求维护（当前创建者）（默认角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "MyReStory"
+  },
   "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "FAVORITES",
+    "name" : "Story_Maintain_OpenBy_Favorites",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "FAVORITES"
+    }
+  }, {
+    "dataAccessAction" : "ACTIVATE",
+    "name" : "Story_Maintain_OpenBy_Activate",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ACTIVATE"
+    }
+  }, {
+    "dataAccessAction" : "CHANGE",
+    "name" : "Story_Maintain_OpenBy_Change",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CHANGE"
+    }
+  }, {
     "dataAccessAction" : "UPDATE",
     "name" : " Story_Maintain_OpenBy_UPDATE",
     "getPSDEOPPriv" : {
@@ -15,6 +39,41 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "ZTProduct__READ"
+    }
+  }, {
+    "dataAccessAction" : "REVIEW",
+    "name" : "Story_Maintain_OpenBy_Review",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "REVIEW"
+    }
+  }, {
+    "dataAccessAction" : "ASSIGNTO",
+    "name" : "Story_Maintain_OpenBy_Assignto",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ASSIGNTO"
+    }
+  }, {
+    "dataAccessAction" : "ISCHILD",
+    "name" : "Story_Maintain_OpenBy_Ischild",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ISCHILD"
+    }
+  }, {
+    "dataAccessAction" : "NFAVORITES",
+    "name" : "Story_Maintain_OpenBy_NFavorites",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NFAVORITES"
+    }
+  }, {
+    "dataAccessAction" : "CLOSE",
+    "name" : "Story_Maintain_OpenBy_Close",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CLOSE"
     }
   }, {
     "dataAccessAction" : "DELETE",

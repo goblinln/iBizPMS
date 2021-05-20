@@ -174,6 +174,18 @@ export class SubTaskBaseService extends EntityBaseService<ISubTask> {
         return this.condCache.get('myPlansTaskMobMonthly');
     }
 
+    protected getMyReTaskCond() {
+        if (!this.condCache.has('myReTask')) {
+            const strCond: any[] = ['AND', ['OR', ['EQ', 'OPENEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'LASTEDITEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'CLOSEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'FINISHEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'CANCELEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('myReTask', cond);
+            }
+        }
+        return this.condCache.get('myReTask');
+    }
+
     protected getMyTomorrowPlanTaskCond() {
         return this.condCache.get('myTomorrowPlanTask');
     }

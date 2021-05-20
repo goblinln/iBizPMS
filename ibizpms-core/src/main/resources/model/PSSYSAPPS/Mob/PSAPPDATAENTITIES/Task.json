@@ -1264,6 +1264,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchMyReTask",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyReTask"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchMyReTask"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchMyTomorrowPlanTask",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -3080,6 +3096,22 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchMyReTask",
+    "methodType" : "FETCH",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyReTask"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchMyReTask"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchMyTomorrowPlanTask",
     "methodType" : "FETCH",
     "getPSDEDataSet" : {
@@ -3750,6 +3782,16 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyPlansTaskMobMonthly"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempMyReTask",
+    "methodType" : "FETCHTEMP",
+    "name" : "MyReTask",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyReTask"
     },
     "tempDataMode" : 2,
     "builtinMethod" : false
