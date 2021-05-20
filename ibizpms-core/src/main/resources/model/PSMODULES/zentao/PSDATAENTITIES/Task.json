@@ -26881,6 +26881,7 @@
     "roleTag" : "Task_Maintain",
     "userDRAction" : "READ"
   }, {
+    "customCond" : "[('ASSIGNEDTO','=',#{srf.sessioncontext.srfloginname})]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain_Join.json",
     "name" : "任务维护（参与者）（默认角色）",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -26902,6 +26903,7 @@
     "userDRAction" : "READ",
     "defaultMode" : true
   }, {
+    "customCond" : "[('OPENEDBY','=',#{srf.sessioncontext.srfloginname})]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain_OpenBy.json",
     "name" : "任务维护（当前创建者)（默认角色）",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -26937,6 +26939,7 @@
     "userDRAction" : "READ",
     "defaultMode" : true
   }, {
+    "customCond" : "['|',('OPENEDBY','=',#{srf.sessioncontext.srfloginname}),('ASSIGNEDTO','=',\n#{srf.sessioncontext.srfloginname})]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain_Update.json",
     "name" : "任务维护（更新者）（默认角色）",
     "getPSDEUserRoleOPPrivs" : [ {

@@ -17,7 +17,7 @@
 
 
     <!--输出实体[ZT_ACTION]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_action-33-2">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_action-36-2">
         <createTable tableName="zt_action">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -119,7 +119,7 @@
 
 
     <!--输出实体[ZT_BUG]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_bug-268-5">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_bug-277-5">
         <createTable tableName="zt_bug">
                 <column name="SEVERITY" remarks="" type="INT">
                 </column>
@@ -1060,7 +1060,7 @@
 
 
     <!--输出实体[ZT_HISTORY]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_history-16-31">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_history-17-31">
         <createTable tableName="zt_history">
                 <column name="ORGNAME" remarks="" type="VARCHAR(100)">
                 </column>

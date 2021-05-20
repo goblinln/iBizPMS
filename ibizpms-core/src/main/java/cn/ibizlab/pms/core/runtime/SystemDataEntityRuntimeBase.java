@@ -154,7 +154,7 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                     List<Map<String, String>> deActions = new ArrayList<>();
                     for (IPSDEUserRoleOPPriv psDEUserRoleOPPriv : psDEUserRoleOPPrivs) {
                         Map<String, String> deAction = new HashMap<>();
-                        deAction.put(psDEUserRoleOPPriv.getName(), org.apache.commons.lang3.StringUtils.isBlank(psDEUserRoleOPPriv.getCustomCond()) ? "" : psDEUserRoleOPPriv.getCustomCond());
+                        deAction.put(psDEUserRoleOPPriv.getDataAccessAction(), org.apache.commons.lang3.StringUtils.isBlank(psDEUserRoleOPPriv.getCustomCond()) ? "" : psDEUserRoleOPPriv.getCustomCond());
                         deActions.add(deAction);
                     }
                     authority.setDeAction(deActions);
@@ -748,7 +748,10 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         List<UAADEAuthority> uaaDEAuthority = new ArrayList<>();
         AuthenticationUser curUser = AuthenticationUser.getAuthenticationUser();
         //实体默认能力
-        uaaDEAuthority.addAll(defaultAuthorities);
+        uaaDEAuthority.addAll(defaultAuthorities.stream().filter(
+                uaadeAuthority -> uaadeAuthority.getEntity().equals(this.getName())
+                        && (DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
+                .collect(Collectors.toList()));
         //系统用户能力
         uaaDEAuthority.addAll(((SystemRuntime) this.getSystemRuntime()).getUserUAADEAuthority().stream().filter(
                 uaadeAuthority -> uaadeAuthority.getEntity().equals(this.getName())

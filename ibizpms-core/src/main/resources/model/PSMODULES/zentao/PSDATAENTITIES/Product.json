@@ -534,7 +534,7 @@
     "enableFront" : true
   }, {
     "codeName" : "OpenQuery",
-    "logicName" : "公开查询",
+    "logicName" : "公开查询（启用权限）",
     "name" : "OpenQuery",
     "getPSDEDataQueries" : [ {
       "modelref" : true,

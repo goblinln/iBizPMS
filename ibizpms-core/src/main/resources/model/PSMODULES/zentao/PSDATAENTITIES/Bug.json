@@ -8934,7 +8934,7 @@
     "roleTag" : "Bug_Maintain",
     "userDRAction" : "READ"
   }, {
-    "customCond" : "['&',('ASSIGNEDTO','=',#{srf.sessioncontext.srfloginname})]",
+    "customCond" : "[('ASSIGNEDTO','=',#{srf.sessioncontext.srfloginname})]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Maintain_Join.json",
     "name" : "BUG维护（参与者）（默认角色）",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -8956,7 +8956,7 @@
     "userDRAction" : "READ",
     "defaultMode" : true
   }, {
-    "customCond" : "['&',('OPENEDBY','=',#{srf.sessioncontext.srfloginname})]",
+    "customCond" : "[('OPENEDBY','=',#{srf.sessioncontext.srfloginname})]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Maintain_OpenBy.json",
     "name" : "BUG维护（当前创建者）（默认角色）",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -8992,6 +8992,7 @@
     "userDRAction" : "READ",
     "defaultMode" : true
   }, {
+    "customCond" : "['|',('OPENEDBY','=',#{srf.sessioncontext.srfloginname}),('ASSIGNEDTO','=',\n#{srf.sessioncontext.srfloginname})]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Maintain_Update.json",
     "name" : "BUG维护（更新者）（默认角色）",
     "getPSDEUserRoleOPPrivs" : [ {

@@ -589,17 +589,6 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         return this.http.post(`/projects/fetchdefault`, _data);
     }
     /**
-     * FetchDeveloperQuery
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async FetchDeveloperQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projects/fetchdeveloperquery`, _data);
-    }
-    /**
      * FetchESBulk
      *
      * @param {*} [_context={}]
@@ -644,50 +633,6 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         return this.http.post(`/projects/fetchmyproject`, _data);
     }
     /**
-     * FetchOpenByQuery
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async FetchOpenByQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projects/fetchopenbyquery`, _data);
-    }
-    /**
-     * FetchOpenQuery
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async FetchOpenQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projects/fetchopenquery`, _data);
-    }
-    /**
-     * FetchPMQuery
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async FetchPMQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projects/fetchpmquery`, _data);
-    }
-    /**
-     * FetchPOQuery
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async FetchPOQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projects/fetchpoquery`, _data);
-    }
-    /**
      * FetchProjectTeam
      *
      * @param {*} [_context={}]
@@ -697,28 +642,6 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
      */
     async FetchProjectTeam(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
         return this.http.post(`/projects/fetchprojectteam`, _data);
-    }
-    /**
-     * FetchQDQuery
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async FetchQDQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projects/fetchqdquery`, _data);
-    }
-    /**
-     * FetchRDQuery
-     *
-     * @param {*} [_context={}]
-     * @param {*} [_data = {}]
-     * @returns {Promise<HttpResponse>}
-     * @memberof ProjectService
-     */
-    async FetchRDQuery(_context: any = {}, _data: any = {}): Promise<HttpResponse> {
-        return this.http.post(`/projects/fetchrdquery`, _data);
     }
     /**
      * FetchStoryProject

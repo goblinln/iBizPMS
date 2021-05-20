@@ -555,7 +555,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     }
 
     /**
-     * 查询集合 公开查询
+     * 查询集合 公开查询（启用权限）
      */
     @Override
     public Page<Product> searchOpenQuery(ProductSearchContext context) {

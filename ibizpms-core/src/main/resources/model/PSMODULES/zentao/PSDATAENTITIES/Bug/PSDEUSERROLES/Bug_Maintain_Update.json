@@ -1,4 +1,5 @@
 {
+  "customCond" : "['|',('OPENEDBY','=',#{srf.sessioncontext.srfloginname}),('ASSIGNEDTO','=',\n#{srf.sessioncontext.srfloginname})]",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Maintain_Update.json",
   "name" : "BUG维护（更新者）（默认角色）",
   "getPSDEUserRoleOPPrivs" : [ {

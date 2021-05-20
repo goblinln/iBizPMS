@@ -644,30 +644,6 @@ public class ProjectResource {
 	}
 
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取研发人员（启用权限）", tags = {"项目" } ,notes = "获取研发人员（启用权限）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchdeveloperquery")
-	public ResponseEntity<List<ProjectDTO>> fetchdeveloperquery(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchDeveloperQuery(context) ;
-        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询研发人员（启用权限）", tags = {"项目" } ,notes = "查询研发人员（启用权限）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/searchdeveloperquery")
-	public ResponseEntity<Page<ProjectDTO>> searchDeveloperQuery(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchDeveloperQuery(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取ES批量的导入", tags = {"项目" } ,notes = "获取ES批量的导入")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchesbulk")
 	public ResponseEntity<List<ProjectDTO>> fetchesbulk(@RequestBody ProjectSearchContext context) {
@@ -764,102 +740,6 @@ public class ProjectResource {
 	}
 
     @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取当前创建者（启用权限）", tags = {"项目" } ,notes = "获取当前创建者（启用权限）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchopenbyquery")
-	public ResponseEntity<List<ProjectDTO>> fetchopenbyquery(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchOpenByQuery(context) ;
-        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询当前创建者（启用权限）", tags = {"项目" } ,notes = "查询当前创建者（启用权限）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/searchopenbyquery")
-	public ResponseEntity<Page<ProjectDTO>> searchOpenByQuery(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchOpenByQuery(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取公开（启用权限）", tags = {"项目" } ,notes = "获取公开（启用权限）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchopenquery")
-	public ResponseEntity<List<ProjectDTO>> fetchopenquery(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchOpenQuery(context) ;
-        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询公开（启用权限）", tags = {"项目" } ,notes = "查询公开（启用权限）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/searchopenquery")
-	public ResponseEntity<Page<ProjectDTO>> searchOpenQuery(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchOpenQuery(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取项目负责人（启用权限）", tags = {"项目" } ,notes = "获取项目负责人（启用权限）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchpmquery")
-	public ResponseEntity<List<ProjectDTO>> fetchpmquery(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchPMQuery(context) ;
-        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询项目负责人（启用权限）", tags = {"项目" } ,notes = "查询项目负责人（启用权限）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/searchpmquery")
-	public ResponseEntity<Page<ProjectDTO>> searchPMQuery(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchPMQuery(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取产品负责人（启用权限）", tags = {"项目" } ,notes = "获取产品负责人（启用权限）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchpoquery")
-	public ResponseEntity<List<ProjectDTO>> fetchpoquery(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchPOQuery(context) ;
-        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询产品负责人（启用权限）", tags = {"项目" } ,notes = "查询产品负责人（启用权限）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/searchpoquery")
-	public ResponseEntity<Page<ProjectDTO>> searchPOQuery(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchPOQuery(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目团队", tags = {"项目" } ,notes = "获取项目团队")
     @RequestMapping(method= RequestMethod.POST , value="/projects/fetchprojectteam")
 	public ResponseEntity<List<ProjectDTO>> fetchprojectteam(@RequestBody ProjectSearchContext context) {
@@ -879,54 +759,6 @@ public class ProjectResource {
 	public ResponseEntity<Page<ProjectDTO>> searchProjectTeam(@RequestBody ProjectSearchContext context) {
         projectRuntime.addAuthorityConditions(context,"READ");
         Page<Project> domains = projectService.searchProjectTeam(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取测试负责人（启用权限）", tags = {"项目" } ,notes = "获取测试负责人（启用权限）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchqdquery")
-	public ResponseEntity<List<ProjectDTO>> fetchqdquery(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchQDQuery(context) ;
-        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询测试负责人（启用权限）", tags = {"项目" } ,notes = "查询测试负责人（启用权限）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/searchqdquery")
-	public ResponseEntity<Page<ProjectDTO>> searchQDQuery(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchQDQuery(context) ;
-	    return ResponseEntity.status(HttpStatus.OK)
-                .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
-	}
-
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取发布负责人（启用权限）", tags = {"项目" } ,notes = "获取发布负责人（启用权限）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/fetchrdquery")
-	public ResponseEntity<List<ProjectDTO>> fetchrdquery(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchRDQuery(context) ;
-        List<ProjectDTO> list = projectMapping.toDto(domains.getContent());
-        return ResponseEntity.status(HttpStatus.OK)
-                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
-                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
-                .header("x-total", String.valueOf(domains.getTotalElements()))
-                .body(list);
-	}
-
-    @PreAuthorize("@ProjectRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询发布负责人（启用权限）", tags = {"项目" } ,notes = "查询发布负责人（启用权限）")
-    @RequestMapping(method= RequestMethod.POST , value="/projects/searchrdquery")
-	public ResponseEntity<Page<ProjectDTO>> searchRDQuery(@RequestBody ProjectSearchContext context) {
-        projectRuntime.addAuthorityConditions(context,"READ");
-        Page<Project> domains = projectService.searchRDQuery(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(projectMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}

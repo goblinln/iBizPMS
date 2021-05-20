@@ -2343,7 +2343,7 @@
           },
           "portletType" : "VIEW",
           "title" : "需求描述",
-          "showTitleBar" : true,
+          "showTitleBar" : false,
           "modelid" : "5c2dc72e2f85a610902fd39ae9345284"
         }, {
           "codeName" : "ActionHistory",
