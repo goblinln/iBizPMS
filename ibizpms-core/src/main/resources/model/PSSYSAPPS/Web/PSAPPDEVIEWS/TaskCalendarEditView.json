@@ -1348,8 +1348,10 @@
               },
               "getPSUIAction" : {
                 "actionTarget" : "SINGLEKEY",
+                "noPrivDisplayMode" : 1,
                 "caption" : "关闭",
                 "codeName" : "CloseTaskDash",
+                "dataAccessAction" : "CLOSE",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCloseTaskView.json",

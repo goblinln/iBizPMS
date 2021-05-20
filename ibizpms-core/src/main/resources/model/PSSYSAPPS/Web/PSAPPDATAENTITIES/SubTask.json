@@ -314,6 +314,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Close.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CLOSE"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -438,6 +442,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/OtherUpdate.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -892,6 +900,15 @@
     },
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchMyCreateOrPartake",
+    "methodType" : "FETCH",
+    "name" : "MyCreateOrPartake",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateOrPartake"
+    },
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchMyFavorites",
     "methodType" : "FETCH",
     "name" : "MyFavorites",
@@ -907,15 +924,6 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyPlansTaskMobMonthly"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyReTask",
-    "methodType" : "FETCH",
-    "name" : "MyReTask",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyReTask"
     },
     "builtinMethod" : false
   }, {
@@ -1985,6 +1993,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Close.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CLOSE"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -2109,6 +2121,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/OtherUpdate.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -2591,6 +2607,25 @@
     "tempDataMode" : 2,
     "builtinMethod" : false
   }, {
+    "codeName" : "FetchMyCreateOrPartake",
+    "methodType" : "FETCH",
+    "name" : "MyCreateOrPartake",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateOrPartake"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchTempMyCreateOrPartake",
+    "methodType" : "FETCHTEMP",
+    "name" : "MyCreateOrPartake",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateOrPartake"
+    },
+    "tempDataMode" : 2,
+    "builtinMethod" : false
+  }, {
     "codeName" : "FetchMyFavorites",
     "methodType" : "FETCH",
     "name" : "MyFavorites",
@@ -2625,25 +2660,6 @@
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "MyPlansTaskMobMonthly"
-    },
-    "tempDataMode" : 2,
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchMyReTask",
-    "methodType" : "FETCH",
-    "name" : "MyReTask",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyReTask"
-    },
-    "builtinMethod" : false
-  }, {
-    "codeName" : "FetchTempMyReTask",
-    "methodType" : "FETCHTEMP",
-    "name" : "MyReTask",
-    "getPSDEDataSet" : {
-      "modelref" : true,
-      "id" : "MyReTask"
     },
     "tempDataMode" : 2,
     "builtinMethod" : false
@@ -22426,6 +22442,9 @@
     "oPPrivAllowMode" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "关闭",
+    "name" : "CLOSE"
+  }, {
     "logicName" : "建立",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {

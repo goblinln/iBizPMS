@@ -641,6 +641,24 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`LASTEDITEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"LASTEDITEDBY\",\"dename\":\"ZT_STORY\"}')}  OR  t1.`CLOSEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"CLOSEDBY\",\"dename\":\"ZT_STORY\"}')}  OR  t1.`REVIEWEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"REVIEWEDBY\",\"dename\":\"ZT_STORY\"}')}  OR  t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"ZT_STORY\"}')}  OR  t1.`ASSIGNEDTO` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ASSIGNEDTO\",\"dename\":\"ZT_STORY\"}')} ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "MyCreateOrPartake",
+    "logicName" : "我创建或参与（权限）",
+    "name" : "MyCreateOrPartake",
+    "privQuery" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
         "customCond" : "( DATE_FORMAT( t1.openedDate, '%Y' ) = DATE_FORMAT(now(), '%Y' )  AND  t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"ZT_STORY\"}')} )",
         "name" : "查询条件"
       } ]
@@ -666,24 +684,6 @@
     "logicName" : "我的收藏",
     "name" : "MyFavorites",
     "customCode" : true
-  }, {
-    "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.DELETED = '0'",
-        "name" : "查询条件"
-      }, {
-        "condType" : "CUSTOM",
-        "customCond" : "( t1.`ASSIGNEDTO` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ASSIGNEDTO\",\"dename\":\"ZT_STORY\"}')}  AND  t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"ZT_STORY\"}')}  AND  t1.`REVIEWEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"REVIEWEDBY\",\"dename\":\"ZT_STORY\"}')}  AND  t1.`CLOSEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"CLOSEDBY\",\"dename\":\"ZT_STORY\"}')}  AND  t1.`LASTEDITEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"LASTEDITEDBY\",\"dename\":\"ZT_STORY\"}')} )",
-        "name" : "查询条件"
-      } ]
-    } ],
-    "codeName" : "MyReStory",
-    "logicName" : "我相关的需求（权限）",
-    "name" : "MyReStory",
-    "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -1071,6 +1071,16 @@
     "enableBackend" : true,
     "enableFront" : true
   }, {
+    "codeName" : "MyCreateOrPartake",
+    "logicName" : "我创建或参与（权限）",
+    "name" : "MyCreateOrPartake",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyCreateOrPartake"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
     "codeName" : "MyCurOpenedStory",
     "logicName" : "所创建需求数和对应的优先级及状态",
     "name" : "MyCurOpenedStory",
@@ -1087,16 +1097,6 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "MyFavorites"
-    } ],
-    "enableBackend" : true,
-    "enableFront" : true
-  }, {
-    "codeName" : "MyReStory",
-    "logicName" : "我相关的需求（权限）",
-    "name" : "MyReStory",
-    "getPSDEDataQueries" : [ {
-      "modelref" : true,
-      "id" : "MyReStory"
     } ],
     "enableBackend" : true,
     "enableFront" : true
@@ -12258,10 +12258,10 @@
     "userDRAction" : "READ"
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_OpenBy.json",
-    "name" : "需求维护（当前创建者）（默认角色）",
+    "name" : "需求维护（我创建或参与）（默认角色）",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "MyReStory"
+      "id" : "MyCreateOrPartake"
     },
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "FAVORITES",

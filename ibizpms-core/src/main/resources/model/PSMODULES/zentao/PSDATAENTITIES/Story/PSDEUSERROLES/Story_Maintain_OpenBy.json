@@ -1,9 +1,9 @@
 {
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_OpenBy.json",
-  "name" : "需求维护（当前创建者）（默认角色）",
+  "name" : "需求维护（我创建或参与）（默认角色）",
   "getPSDEDataSet" : {
     "modelref" : true,
-    "id" : "MyReStory"
+    "id" : "MyCreateOrPartake"
   },
   "getPSDEUserRoleOPPrivs" : [ {
     "dataAccessAction" : "FAVORITES",

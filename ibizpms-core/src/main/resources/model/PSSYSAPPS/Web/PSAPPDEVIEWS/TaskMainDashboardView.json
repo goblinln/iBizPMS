@@ -2910,6 +2910,7 @@
                                   "actionTarget" : "SINGLEKEY",
                                   "caption" : "关闭",
                                   "codeName" : "CloseTask",
+                                  "dataAccessAction" : "CLOSE",
                                   "getFrontPSAppView" : {
                                     "modelref" : true,
                                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCloseTaskView.json",
@@ -5257,8 +5258,10 @@
                 "name" : "uc56391f",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
+                  "noPrivDisplayMode" : 1,
                   "caption" : "关闭",
                   "codeName" : "CloseTaskDash",
+                  "dataAccessAction" : "CLOSE",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCloseTaskView.json",

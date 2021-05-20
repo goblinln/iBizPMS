@@ -40,6 +40,7 @@ public interface BugMapper extends BaseMapper<Bug> {
     List<Bug> selectDefault(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     List<Bug> selectESBulk(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     List<Bug> selectMyAgentBug(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    List<Bug> selectMyCreateOrPartake(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     List<Bug> selectMyCurOpenedBug(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     List<Bug> selectMyFavorites(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     List<Bug> selectNotCurPlanLinkBug(@Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
@@ -76,6 +77,7 @@ public interface BugMapper extends BaseMapper<Bug> {
     Page<Bug> searchDefault(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     Page<Bug> searchESBulk(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     Page<Bug> searchMyAgentBug(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
+    Page<Bug> searchMyCreateOrPartake(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     Page<Bug> searchMyCurOpenedBug(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     Page<Bug> searchMyFavorites(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);
     Page<Bug> searchNotCurPlanLinkBug(IPage page, @Param("srf") BugSearchContext context, @Param("ew") Wrapper<Bug> wrapper);

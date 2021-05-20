@@ -132,9 +132,9 @@ public interface IStoryService extends IService<Story> {
     List<Story> selectESBulk(StorySearchContext context);
     List<Story> selectGetProductStories(StorySearchContext context);
     List<Story> selectMyAgentStory(StorySearchContext context);
+    List<Story> selectMyCreateOrPartake(StorySearchContext context);
     List<Story> selectMyCurOpenedStory(StorySearchContext context);
     List<Story> selectMyFavorites(StorySearchContext context);
-    List<Story> selectMyReStory(StorySearchContext context);
     List<Story> selectNotCurPlanLinkStory(StorySearchContext context);
     List<Story> selectParentDefault(StorySearchContext context);
     List<Story> selectParentDefaultQ(StorySearchContext context);
@@ -162,9 +162,9 @@ public interface IStoryService extends IService<Story> {
     Page<Story> searchESBulk(StorySearchContext context);
     Page<Story> searchGetProductStories(StorySearchContext context);
     Page<Story> searchMyAgentStory(StorySearchContext context);
+    Page<Story> searchMyCreateOrPartake(StorySearchContext context);
     Page<Story> searchMyCurOpenedStory(StorySearchContext context);
     Page<Story> searchMyFavorites(StorySearchContext context);
-    Page<Story> searchMyReStory(StorySearchContext context);
     Page<Story> searchNotCurPlanLinkStory(StorySearchContext context);
     Page<Story> searchParentDefault(StorySearchContext context);
     Page<Story> searchParentDefaultQ(StorySearchContext context);

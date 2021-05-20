@@ -171,6 +171,8 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
             return bugService.searchESBulk(searchContext);    
         if (iPSDEDataSet.getName().equals("MyAgentBug"))
             return bugService.searchMyAgentBug(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyCreateOrPartake"))
+            return bugService.searchMyCreateOrPartake(searchContext);    
         if (iPSDEDataSet.getName().equals("MyCurOpenedBug"))
             return bugService.searchMyCurOpenedBug(searchContext);    
         if (iPSDEDataSet.getName().equals("MyFavorites"))
@@ -241,6 +243,8 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
             return bugService.selectESBulk(searchContext);
         if (iPSDataQuery.getName().equals("MyAgentBug"))
             return bugService.selectMyAgentBug(searchContext);
+        if (iPSDataQuery.getName().equals("MyCreateOrPartake"))
+            return bugService.selectMyCreateOrPartake(searchContext);
         if (iPSDataQuery.getName().equals("MyCurOpenedBug"))
             return bugService.selectMyCurOpenedBug(searchContext);
         if (iPSDataQuery.getName().equals("MyFavorites"))
@@ -622,6 +626,9 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
         }
         else if (action.equals("searchMyAgentBug")) {
             return aroundDataSet("MyAgentBug", point);
+        }
+        else if (action.equals("searchMyCreateOrPartake")) {
+            return aroundDataSet("MyCreateOrPartake", point);
         }
         else if (action.equals("searchMyCurOpenedBug")) {
             return aroundDataSet("MyCurOpenedBug", point);

@@ -815,6 +815,9 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     public List<Bug> selectMyAgentBug(BugSearchContext context){
         return baseMapper.selectMyAgentBug(context, context.getSelectCond());
     }
+    public List<Bug> selectMyCreateOrPartake(BugSearchContext context){
+        return baseMapper.selectMyCreateOrPartake(context, context.getSelectCond());
+    }
     public List<Bug> selectMyCurOpenedBug(BugSearchContext context){
         return baseMapper.selectMyCurOpenedBug(context, context.getSelectCond());
     }
@@ -1051,6 +1054,15 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     @Override
     public Page<Bug> searchMyAgentBug(BugSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchMyAgentBug(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我创建或参与（权限）
+     */
+    @Override
+    public Page<Bug> searchMyCreateOrPartake(BugSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Bug> pages=baseMapper.searchMyCreateOrPartake(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Bug>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

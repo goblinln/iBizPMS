@@ -1458,9 +1458,11 @@
   } ],
   "getAllPSAppDEUIActions" : [ {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "删除",
     "codeName" : "DeleteCz",
     "confirmMsg" : "您确认删除该计划吗？",
+    "dataAccessAction" : "DELETE",
     "fullCodeName" : "ProductPlan_DeleteCz",
     "name" : "删除（操作栏）",
     "getPSAppDEMethod" : {
@@ -1486,8 +1488,10 @@
     "id" : "DeleteCz@ProductPlan"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "编辑",
     "codeName" : "MainEdit",
+    "dataAccessAction" : "UPDATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanEditView.json",
@@ -1511,8 +1515,10 @@
     "id" : "MainEdit@ProductPlan"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "子计划",
     "codeName" : "NewSubPlanCz",
+    "dataAccessAction" : "CHILDPLAN",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanSubPlanCreateView.json",
@@ -1539,6 +1545,7 @@
     "caption" : "删除",
     "codeName" : "Delete",
     "confirmMsg" : "您确认删除该计划吗？",
+    "dataAccessAction" : "DELETE",
     "fullCodeName" : "ProductPlan_Delete",
     "name" : "删除",
     "getPSAppDEMethod" : {
@@ -1603,6 +1610,7 @@
     "actionTarget" : "NONE",
     "caption" : "创建计划",
     "codeName" : "Create",
+    "dataAccessAction" : "CREATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanEditView.json",
@@ -1628,8 +1636,10 @@
     "id" : "Create@ProductPlan"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "关联需求",
     "codeName" : "RelationStory",
+    "dataAccessAction" : "LINKSTORY",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView.json",
@@ -1657,8 +1667,10 @@
     "id" : "RelationStory@ProductPlan"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "添加项目",
     "codeName" : "AddProject",
+    "dataAccessAction" : "ADDPROJ",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectPlanAddEditView.json",
@@ -1736,8 +1748,10 @@
     "id" : "AddProject@ProductPlan"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "关联Bug",
     "codeName" : "RelationBug",
+    "dataAccessAction" : "LINKBUG",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMPickupView.json",
@@ -1768,6 +1782,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "子计划",
     "codeName" : "NewSubPlan",
+    "dataAccessAction" : "CHILDPLAN",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanSubPlanCreateView.json",
@@ -2340,8 +2355,26 @@
     "logicName" : "添加项目",
     "name" : "ADDPROJ"
   }, {
+    "logicName" : "添加项目-产品",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DER1N_ZT_PRODUCTPLAN_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "ADDPROJ",
+    "id" : "ZTProduct__ADDPROJ"
+  }, {
     "logicName" : "子计划",
     "name" : "CHILDPLAN"
+  }, {
+    "logicName" : "子计划-产品",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DER1N_ZT_PRODUCTPLAN_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "CHILDPLAN",
+    "id" : "ZTProduct__CHILDPLAN"
   }, {
     "logicName" : "Product_Create",
     "mapPSDEOPPrivName" : "CREATE",
@@ -2367,8 +2400,26 @@
     "name" : "DELETE",
     "id" : "ZTProduct__DELETE"
   }, {
+    "logicName" : "关联Bug-产品",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DER1N_ZT_PRODUCTPLAN_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "LINKBUG",
+    "id" : "ZTProduct__LINKBUG"
+  }, {
     "logicName" : "关联Bug",
     "name" : "LINKBUG"
+  }, {
+    "logicName" : "关联需求-产品",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDERS/DER1N_ZT_PRODUCTPLAN_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "LINKSTORY",
+    "id" : "ZTProduct__LINKSTORY"
   }, {
     "logicName" : "关联需求",
     "name" : "LINKSTORY"

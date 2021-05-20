@@ -1110,6 +1110,15 @@
       "id" : "FetchTaskRelatedBug"
     },
     "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyCreateOrPartake",
+    "methodType" : "FETCH",
+    "name" : "MyCreateOrPartake",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateOrPartake"
+    },
+    "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "Severity",
@@ -2574,6 +2583,15 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "READ"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyCreateOrPartake",
+    "methodType" : "FETCH",
+    "name" : "MyCreateOrPartake",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateOrPartake"
     },
     "builtinMethod" : false
   }, {

@@ -289,8 +289,10 @@
         "name" : "ua470664",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "添加项目",
           "codeName" : "AddProject",
+          "dataAccessAction" : "ADDPROJ",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectPlanAddEditView.json",
@@ -375,8 +377,10 @@
         "name" : "u54b2dce",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "关联需求",
           "codeName" : "RelationStory",
+          "dataAccessAction" : "LINKSTORY",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView.json",
@@ -411,8 +415,10 @@
         "name" : "u02b47f0",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "关联Bug",
           "codeName" : "RelationBug",
+          "dataAccessAction" : "LINKBUG",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMPickupView.json",
@@ -448,8 +454,10 @@
         "name" : "u7d4e6c8",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "编辑",
           "codeName" : "MainEdit",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanEditView.json",
@@ -482,6 +490,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "子计划",
           "codeName" : "NewSubPlan",
+          "dataAccessAction" : "CHILDPLAN",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanSubPlanCreateView.json",
@@ -545,6 +554,7 @@
           "caption" : "删除",
           "codeName" : "Delete",
           "confirmMsg" : "您确认删除该计划吗？",
+          "dataAccessAction" : "DELETE",
           "fullCodeName" : "ProductPlan_Delete",
           "name" : "删除",
           "getPSAppDEMethod" : {

@@ -1,7 +1,10 @@
 {
-  "customCond" : "[('OPENEDBY','=',#{srf.sessioncontext.srfloginname})]",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/Bug_Maintain_OpenBy.json",
-  "name" : "BUG维护（当前创建者）（默认角色）",
+  "name" : "BUG维护（我创建或参与）（默认角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "MyCreateOrPartake"
+  },
   "getPSDEUserRoleOPPrivs" : [ {
     "dataAccessAction" : "UPDATE",
     "name" : "Bug_Maintain_OpenBy_UPDATE",

@@ -167,12 +167,12 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return taskService.searchMyCompleteTaskMonthlyZS(searchContext);    
         if (iPSDEDataSet.getName().equals("MyCompleteTaskZS"))
             return taskService.searchMyCompleteTaskZS(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyCreateOrPartake"))
+            return taskService.searchMyCreateOrPartake(searchContext);    
         if (iPSDEDataSet.getName().equals("MyFavorites"))
             return taskService.searchMyFavorites(searchContext);    
         if (iPSDEDataSet.getName().equals("MyPlansTaskMobMonthly"))
             return taskService.searchMyPlansTaskMobMonthly(searchContext);    
-        if (iPSDEDataSet.getName().equals("MyReTask"))
-            return taskService.searchMyReTask(searchContext);    
         if (iPSDEDataSet.getName().equals("MyTomorrowPlanTask"))
             return taskService.searchMyTomorrowPlanTask(searchContext);    
         if (iPSDEDataSet.getName().equals("MyTomorrowPlanTaskMobDaily"))
@@ -251,12 +251,12 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return taskService.selectMyCompleteTaskMonthlyZS(searchContext);
         if (iPSDataQuery.getName().equals("MyCompleteTaskZS"))
             return taskService.selectMyCompleteTaskZS(searchContext);
+        if (iPSDataQuery.getName().equals("MyCreateOrPartake"))
+            return taskService.selectMyCreateOrPartake(searchContext);
         if (iPSDataQuery.getName().equals("MyFavorites"))
             return taskService.selectMyFavorites(searchContext);
         if (iPSDataQuery.getName().equals("MyPlansTaskMobMonthly"))
             return taskService.selectMyPlansTaskMobMonthly(searchContext);
-        if (iPSDataQuery.getName().equals("MyReTask"))
-            return taskService.selectMyReTask(searchContext);
         if (iPSDataQuery.getName().equals("MyTomorrowPlanTask"))
             return taskService.selectMyTomorrowPlanTask(searchContext);
         if (iPSDataQuery.getName().equals("MyTomorrowPlanTaskMobDaily"))
@@ -721,14 +721,14 @@ public class TaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         else if (action.equals("searchMyCompleteTaskZS")) {
             return aroundDataSet("MyCompleteTaskZS", point);
         }
+        else if (action.equals("searchMyCreateOrPartake")) {
+            return aroundDataSet("MyCreateOrPartake", point);
+        }
         else if (action.equals("searchMyFavorites")) {
             return aroundDataSet("MyFavorites", point);
         }
         else if (action.equals("searchMyPlansTaskMobMonthly")) {
             return aroundDataSet("MyPlansTaskMobMonthly", point);
-        }
-        else if (action.equals("searchMyReTask")) {
-            return aroundDataSet("MyReTask", point);
         }
         else if (action.equals("searchMyTomorrowPlanTask")) {
             return aroundDataSet("MyTomorrowPlanTask", point);

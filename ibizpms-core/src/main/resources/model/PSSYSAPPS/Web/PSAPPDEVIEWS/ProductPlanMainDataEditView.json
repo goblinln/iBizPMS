@@ -122,7 +122,7 @@
       "groupExtractMode" : "ITEM",
       "itemType" : "DEUIACTION",
       "name" : "deuiaction1_newsubplancz",
-      "noPrivDisplayMode" : 2,
+      "noPrivDisplayMode" : 1,
       "getPSAppViewUIAction" : {
         "modelref" : true,
         "id" : "toolbar_deuiaction1_newsubplancz"
@@ -133,8 +133,10 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "SINGLEKEY",
+        "noPrivDisplayMode" : 1,
         "caption" : "子计划",
         "codeName" : "NewSubPlanCz",
+        "dataAccessAction" : "CHILDPLAN",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanSubPlanCreateView.json",
@@ -165,7 +167,7 @@
       "groupExtractMode" : "ITEM",
       "itemType" : "DEUIACTION",
       "name" : "deuiaction1_mainedit",
-      "noPrivDisplayMode" : 2,
+      "noPrivDisplayMode" : 1,
       "getPSAppViewUIAction" : {
         "modelref" : true,
         "id" : "toolbar_deuiaction1_mainedit"
@@ -176,8 +178,10 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "SINGLEKEY",
+        "noPrivDisplayMode" : 1,
         "caption" : "编辑",
         "codeName" : "MainEdit",
+        "dataAccessAction" : "UPDATE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProductPlanEditView.json",
@@ -208,7 +212,7 @@
       "groupExtractMode" : "ITEM",
       "itemType" : "DEUIACTION",
       "name" : "deuiaction1_deletecz",
-      "noPrivDisplayMode" : 2,
+      "noPrivDisplayMode" : 1,
       "getPSAppViewUIAction" : {
         "modelref" : true,
         "id" : "toolbar_deuiaction1_deletecz"
@@ -219,9 +223,11 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "SINGLEKEY",
+        "noPrivDisplayMode" : 1,
         "caption" : "删除",
         "codeName" : "DeleteCz",
         "confirmMsg" : "您确认删除该计划吗？",
+        "dataAccessAction" : "DELETE",
         "fullCodeName" : "ProductPlan_DeleteCz",
         "name" : "删除（操作栏）",
         "getPSAppDEMethod" : {

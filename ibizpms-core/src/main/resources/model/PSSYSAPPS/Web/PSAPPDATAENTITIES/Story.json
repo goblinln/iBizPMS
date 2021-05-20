@@ -1413,12 +1413,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchMyReStory",
+    "codeName" : "FetchMyCreateOrPartake",
     "methodType" : "FETCH",
-    "name" : "MyReStory",
+    "name" : "MyCreateOrPartake",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "MyReStory"
+      "id" : "MyCreateOrPartake"
     },
     "builtinMethod" : false
   } ],
@@ -3191,12 +3191,12 @@
     },
     "builtinMethod" : false
   }, {
-    "codeName" : "FetchMyReStory",
+    "codeName" : "FetchMyCreateOrPartake",
     "methodType" : "FETCH",
-    "name" : "MyReStory",
+    "name" : "MyCreateOrPartake",
     "getPSDEDataSet" : {
       "modelref" : true,
-      "id" : "MyReStory"
+      "id" : "MyCreateOrPartake"
     },
     "builtinMethod" : false
   }, {

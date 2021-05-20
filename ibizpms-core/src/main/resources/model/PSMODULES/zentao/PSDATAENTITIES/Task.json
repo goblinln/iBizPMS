@@ -853,6 +853,24 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
+        "customCond" : "( ( t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"ZT_TASK\"}')}  OR  t1.`LASTEDITEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"LASTEDITEDBY\",\"dename\":\"ZT_TASK\"}')}  OR  t1.`CLOSEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"CLOSEDBY\",\"dename\":\"ZT_TASK\"}')}  OR  t1.`FINISHEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"FINISHEDBY\",\"dename\":\"ZT_TASK\"}')}  OR  t1.`CANCELEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"CANCELEDBY\",\"dename\":\"ZT_TASK\"}')} ) )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "MyCreateOrPartake",
+    "logicName" : "我创建或参与（权限）",
+    "name" : "MyCreateOrPartake",
+    "privQuery" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
         "customCond" : "t1.id in (select t.OBJECTID from T_IBZ_FAVORITES t where t.type = 'task' and t.account = #{srf.sessioncontext.srfloginname})",
         "name" : "查询条件"
       } ]
@@ -879,24 +897,6 @@
     "logicName" : "我计划参与的任务（移动端月报）",
     "name" : "MyPlansTaskMobMonthly",
     "customCode" : true
-  }, {
-    "getAllPSDEDataQueryCodes" : [ {
-      "dBType" : "MYSQL5",
-      "name" : "MySQL5",
-      "getPSDEDataQueryCodeConds" : [ {
-        "condType" : "CUSTOM",
-        "customCond" : "t1.DELETED = '0'",
-        "name" : "查询条件"
-      }, {
-        "condType" : "CUSTOM",
-        "customCond" : "( ( t1.`OPENEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"OPENEDBY\",\"dename\":\"ZT_TASK\"}')}  OR  t1.`LASTEDITEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"LASTEDITEDBY\",\"dename\":\"ZT_TASK\"}')}  OR  t1.`CLOSEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"CLOSEDBY\",\"dename\":\"ZT_TASK\"}')}  OR  t1.`FINISHEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"FINISHEDBY\",\"dename\":\"ZT_TASK\"}')}  OR  t1.`CANCELEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"CANCELEDBY\",\"dename\":\"ZT_TASK\"}')} ) )",
-        "name" : "查询条件"
-      } ]
-    } ],
-    "codeName" : "MyReTask",
-    "logicName" : "我相关的任务（权限）",
-    "name" : "MyReTask",
-    "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -1475,6 +1475,17 @@
     "enableFront" : true,
     "enableTempData" : true
   }, {
+    "codeName" : "MyCreateOrPartake",
+    "logicName" : "我创建或参与（权限）",
+    "name" : "MyCreateOrPartake",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MyCreateOrPartake"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true,
+    "enableTempData" : true
+  }, {
     "codeName" : "MyFavorites",
     "logicName" : "我的收藏",
     "name" : "MyFavorites",
@@ -1492,17 +1503,6 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "MyPlansTaskMobMonthly"
-    } ],
-    "enableBackend" : true,
-    "enableFront" : true,
-    "enableTempData" : true
-  }, {
-    "codeName" : "MyReTask",
-    "logicName" : "我相关的任务（权限）",
-    "name" : "MyReTask",
-    "getPSDEDataQueries" : [ {
-      "modelref" : true,
-      "id" : "MyReTask"
     } ],
     "enableBackend" : true,
     "enableFront" : true,
@@ -26675,6 +26675,9 @@
     "oPPrivAllowMode" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "关闭",
+    "name" : "CLOSE"
+  }, {
     "logicName" : "建立",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
@@ -26910,67 +26913,12 @@
     "roleTag" : "Task_Maintain",
     "userDRAction" : "READ"
   }, {
-    "customCond" : "[('ASSIGNEDTO','=',#{srf.sessioncontext.srfloginname})]",
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain_Join.json",
-    "name" : "任务维护（参与者）（默认角色）",
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "Task_Maintain_Join_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ProjectModule__READ"
-      }
-    }, {
-      "dataAccessAction" : "UPDATE",
-      "name" : "Task_Maintain_Join_UPDATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ZTProject__UPDATE"
-      }
-    } ],
-    "roleTag" : "Task_Maintain_Join",
-    "userDRAction" : "READ",
-    "defaultMode" : true
-  }, {
-    "customCond" : "[('OPENEDBY','=',#{srf.sessioncontext.srfloginname})]",
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain_OpenBy.json",
-    "name" : "任务维护（当前创建者)（默认角色）",
-    "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "Task_Maintain_OpenBy_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "ZTStory__READ"
-      }
-    }, {
-      "dataAccessAction" : "DELETE",
-      "name" : "Task_Maintain_OpenBy_DELETE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "DELETE"
-      }
-    }, {
-      "dataAccessAction" : "UPDATE",
-      "name" : "Task_Maintain_OpenBy_UPDATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "UPDATE"
-      }
-    }, {
-      "dataAccessAction" : "CREATE",
-      "name" : "Task_Maintain_OpenBy_CREATE",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "CREATE"
-      }
-    } ],
-    "roleTag" : "Task_Maintain_OpenBy",
-    "userDRAction" : "READ",
-    "defaultMode" : true
-  }, {
-    "customCond" : "['|',('OPENEDBY','=',#{srf.sessioncontext.srfloginname}),('ASSIGNEDTO','=',\n#{srf.sessioncontext.srfloginname})]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/Task_Maintain_Update.json",
-    "name" : "任务维护（更新者）（默认角色）",
+    "name" : "任务维护（我创建或参与）（默认角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateOrPartake"
+    },
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "READ",
       "name" : "Task_Maintain_Update_READ",

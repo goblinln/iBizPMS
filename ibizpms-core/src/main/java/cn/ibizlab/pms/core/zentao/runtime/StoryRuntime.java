@@ -153,12 +153,12 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             return storyService.searchGetProductStories(searchContext);    
         if (iPSDEDataSet.getName().equals("MyAgentStory"))
             return storyService.searchMyAgentStory(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyCreateOrPartake"))
+            return storyService.searchMyCreateOrPartake(searchContext);    
         if (iPSDEDataSet.getName().equals("MyCurOpenedStory"))
             return storyService.searchMyCurOpenedStory(searchContext);    
         if (iPSDEDataSet.getName().equals("MyFavorites"))
             return storyService.searchMyFavorites(searchContext);    
-        if (iPSDEDataSet.getName().equals("MyReStory"))
-            return storyService.searchMyReStory(searchContext);    
         if (iPSDEDataSet.getName().equals("NotCurPlanLinkStory"))
             return storyService.searchNotCurPlanLinkStory(searchContext);    
         if (iPSDEDataSet.getName().equals("ParentDefault"))
@@ -217,12 +217,12 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             return storyService.selectGetProductStories(searchContext);
         if (iPSDataQuery.getName().equals("MyAgentStory"))
             return storyService.selectMyAgentStory(searchContext);
+        if (iPSDataQuery.getName().equals("MyCreateOrPartake"))
+            return storyService.selectMyCreateOrPartake(searchContext);
         if (iPSDataQuery.getName().equals("MyCurOpenedStory"))
             return storyService.selectMyCurOpenedStory(searchContext);
         if (iPSDataQuery.getName().equals("MyFavorites"))
             return storyService.selectMyFavorites(searchContext);
-        if (iPSDataQuery.getName().equals("MyReStory"))
-            return storyService.selectMyReStory(searchContext);
         if (iPSDataQuery.getName().equals("NotCurPlanLinkStory"))
             return storyService.selectNotCurPlanLinkStory(searchContext);
         if (iPSDataQuery.getName().equals("ParentDefault"))
@@ -680,14 +680,14 @@ public class StoryRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
         else if (action.equals("searchMyAgentStory")) {
             return aroundDataSet("MyAgentStory", point);
         }
+        else if (action.equals("searchMyCreateOrPartake")) {
+            return aroundDataSet("MyCreateOrPartake", point);
+        }
         else if (action.equals("searchMyCurOpenedStory")) {
             return aroundDataSet("MyCurOpenedStory", point);
         }
         else if (action.equals("searchMyFavorites")) {
             return aroundDataSet("MyFavorites", point);
-        }
-        else if (action.equals("searchMyReStory")) {
-            return aroundDataSet("MyReStory", point);
         }
         else if (action.equals("searchNotCurPlanLinkStory")) {
             return aroundDataSet("NotCurPlanLinkStory", point);

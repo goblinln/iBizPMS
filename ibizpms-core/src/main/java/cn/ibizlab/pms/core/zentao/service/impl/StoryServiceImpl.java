@@ -997,14 +997,14 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     public List<Story> selectMyAgentStory(StorySearchContext context){
         return baseMapper.selectMyAgentStory(context, context.getSelectCond());
     }
+    public List<Story> selectMyCreateOrPartake(StorySearchContext context){
+        return baseMapper.selectMyCreateOrPartake(context, context.getSelectCond());
+    }
     public List<Story> selectMyCurOpenedStory(StorySearchContext context){
         return baseMapper.selectMyCurOpenedStory(context, context.getSelectCond());
     }
     public List<Story> selectMyFavorites(StorySearchContext context){
         return baseMapper.selectMyFavorites(context, context.getSelectCond());
-    }
-    public List<Story> selectMyReStory(StorySearchContext context){
-        return baseMapper.selectMyReStory(context, context.getSelectCond());
     }
     public List<Story> selectNotCurPlanLinkStory(StorySearchContext context){
         return baseMapper.selectNotCurPlanLinkStory(context, context.getSelectCond());
@@ -1165,6 +1165,15 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     }
 
     /**
+     * 查询集合 我创建或参与（权限）
+     */
+    @Override
+    public Page<Story> searchMyCreateOrPartake(StorySearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Story> pages=baseMapper.searchMyCreateOrPartake(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Story>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
      * 查询集合 所创建需求数和对应的优先级及状态
      */
     @Override
@@ -1179,15 +1188,6 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     @Override
     public Page<Story> searchMyFavorites(StorySearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Story> pages=baseMapper.searchMyFavorites(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Story>(pages.getRecords(), context.getPageable(), pages.getTotal());
-    }
-
-    /**
-     * 查询集合 我相关的需求（权限）
-     */
-    @Override
-    public Page<Story> searchMyReStory(StorySearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Story> pages=baseMapper.searchMyReStory(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Story>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 
