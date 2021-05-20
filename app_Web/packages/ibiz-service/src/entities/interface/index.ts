@@ -102,6 +102,7 @@ export * from './irelease';
 export * from './icase-stats';
 export * from './idyna-dashboard';
 export * from './isys-employee';
+export * from './iibzpro-product-line';
 export * from './iproject-product';
 export * from './iaccount-taskestimate';
 export * from './istory-spec';

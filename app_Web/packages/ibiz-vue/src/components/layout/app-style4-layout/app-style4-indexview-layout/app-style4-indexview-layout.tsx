@@ -11,7 +11,6 @@ export class AppStyle4IndexViewLayout extends AppDefaultIndexViewLayout{
      */
      public created() {
         document.getElementsByTagName('html')[0].className = this.selectTheme();
-        this.navModel = 'route';
         this.isFullScreen = Boolean(this.$store.getters['getCustomParamByTag']('srffullscreen'));
     }
 }

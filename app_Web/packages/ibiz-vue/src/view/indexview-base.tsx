@@ -61,7 +61,6 @@ export class IndexViewBase extends ViewBase {
         this.viewInstance = (this.staticProps?.modeldata) as IPSAppIndexView;
         await super.viewModelInit();
         this.menuInstance = (this.viewInstance.findPSControl(ModelTool.findPSControlByType("APPMENU", this.viewInstance.getPSControls()))) as IPSAppMenu;
-        this.navModel = Object.is(this.viewInstance?.viewStyle, 'DEFAULT') ? 'tab' : 'route';
     }
 
     /**
@@ -131,8 +130,7 @@ export class IndexViewBase extends ViewBase {
     public computeTargetCtrlData(controlInstance: any) {
         const { targetCtrlName, targetCtrlParam, targetCtrlEvent } = super.computeTargetCtrlData(controlInstance);
         Object.assign(targetCtrlParam.dynamicProps, {
-            collapseChange: this.collapseChange,
-            navModel: this.navModel,
+            collapseChange: this.collapseChange
         })
         Object.assign(targetCtrlParam.staticProps, {
             mode: this.viewInstance?.mainMenuAlign,

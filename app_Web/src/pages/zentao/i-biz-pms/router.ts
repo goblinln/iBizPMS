@@ -29130,6 +29130,21 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'ibzproproductlines/:ibzproproductline?/views/gridview',
+                    meta: {
+                        caption: 'entities.ibzproproductline.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzproproductlines', parameterName: 'ibzproproductline' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'ibzproproductline',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'projects/:project?/projectproducts/:projectproduct?/views/planlistview9',
                     meta: {
                         caption: 'entities.projectproduct.views.planlistview9.caption',
@@ -32569,6 +32584,19 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'views', parameterName: 'storymainview9_editmode' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
+                    path: 'views/ibzproproductlinegridview',
+                    meta: {
+                        caption: 'entities.ibzproproductline.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'ibzproproductlinegridview' },
                         ],
                         requireAuth: true,
                     },

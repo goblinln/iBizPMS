@@ -97,7 +97,8 @@ export class AppListBase extends ListControlBase {
         return this.batchToolbarInstance
             ? <div style="overflow:auto;height: 100%;">
                 <div class={listClassName} style='height:100%;'>
-                    {this.items.length > 0 ? <div style="height:100%;">{this.renderHaveItems()}</div> : this.renderEmptyDataTip()}
+                    {this.items.length > 0 ? <div style="height:100%;">{this.renderHaveItems()}</div> 
+                    : this.isControlLoaded ? this.renderEmptyDataTip() : this.renderLoadDataTip()}
                     {this.viewStyle == "DEFAULT" ? <el-backtop target=".content-container .app-list"></el-backtop> : null}
                 </div>
                 {this.batchToolbarInstance && (this.selections.length > 0 ?
@@ -107,7 +108,8 @@ export class AppListBase extends ListControlBase {
                 )}
             </div>
             : <div class={listClassName} style='height:100%;'>
-                {this.items.length > 0 ? <div style="height:100%;">{this.renderHaveItems()}</div> : this.renderEmptyDataTip()}
+                {this.items.length > 0 ? <div style="height:100%;">{this.renderHaveItems()}</div> 
+                : this.isControlLoaded ? this.renderEmptyDataTip() : this.renderLoadDataTip()}
                 {this.viewStyle == "DEFAULT" ? <el-backtop target=".content-container .app-list"></el-backtop> : null}
             </div>
     }

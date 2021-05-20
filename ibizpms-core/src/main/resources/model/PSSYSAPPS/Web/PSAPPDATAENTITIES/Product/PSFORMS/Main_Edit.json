@@ -328,6 +328,18 @@
               "editorType" : "PICKEREX_TRIGGER",
               "handlerType" : "PickupText",
               "name" : "linename",
+              "getPSAppDEACMode" : {
+                "modelref" : true,
+                "id" : "Default"
+              },
+              "getPSAppDEDataSet" : {
+                "modelref" : true,
+                "id" : "FetchDefault"
+              },
+              "getPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductLine.json"
+              },
               "valueItemName" : "line",
               "dropDownView" : false,
               "enableAC" : true,
@@ -396,7 +408,7 @@
               "codeName" : "SeLine",
               "getFrontPSAppView" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ModuleLineGridView.json",
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProProductLineGridView.json",
                 "viewType" : "DEGRIDVIEW"
               },
               "frontProcessType" : "WIZARD",

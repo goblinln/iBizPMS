@@ -769,6 +769,7 @@ export class GridControlBase extends MDControlBase {
             const data: any = response.data;
             this.totalRecord = response.total;
             this.items = JSON.parse(JSON.stringify(data));
+            this.isControlLoaded = true;
             // 清空selections,gridItemsModel
             this.selections = [];
             this.gridItemsModel = [];

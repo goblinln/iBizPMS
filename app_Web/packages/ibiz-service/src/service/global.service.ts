@@ -953,6 +953,15 @@ export class GlobalService {
         return (await import('./sys-employee/sys-employee.service')).default.getInstance();
     }
     /**
+     * 产品线服务
+     *
+     * @return {IBZProProductLine}
+     * @memberof GlobalService
+     */
+    async getIBZProProductLineService() {
+        return (await import('./ibzpro-product-line/ibzpro-product-line.service')).default.getInstance();
+    }
+    /**
      * 项目产品服务
      *
      * @return {ProjectProduct}

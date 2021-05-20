@@ -102,6 +102,7 @@ import release_en_US from '@locale/lanres/entities/release/release_en_US';
 import casestats_en_US from '@locale/lanres/entities/case-stats/case-stats_en_US';
 import dynadashboard_en_US from '@locale/lanres/entities/dyna-dashboard/dyna-dashboard_en_US';
 import sysemployee_en_US from '@locale/lanres/entities/sys-employee/sys-employee_en_US';
+import ibzproproductline_en_US from '@locale/lanres/entities/ibzpro-product-line/ibzpro-product-line_en_US';
 import projectproduct_en_US from '@locale/lanres/entities/project-product/project-product_en_US';
 import accounttaskestimate_en_US from '@locale/lanres/entities/account-taskestimate/account-taskestimate_en_US';
 import storyspec_en_US from '@locale/lanres/entities/story-spec/story-spec_en_US';
@@ -480,6 +481,7 @@ function getAppLocale(){
             'casestats': casestats_en_US(),
             'dynadashboard': dynadashboard_en_US(),
             'sysemployee': sysemployee_en_US(),
+            'ibzproproductline': ibzproproductline_en_US(),
             'projectproduct': projectproduct_en_US(),
             'accounttaskestimate': accounttaskestimate_en_US(),
             'storyspec': storyspec_en_US(),

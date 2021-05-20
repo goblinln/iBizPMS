@@ -394,16 +394,6 @@ export class AppGlobalService {
      */
     public FirstRecord(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
         // todo 导航
-        // let navDataService:any = new NavDataService(actionContext.$store);
-        // let allNavData:any = Object.is(actionContext.navModel,"route")?navDataService.getPreNavDataById('${srffilepath2(view.getCodeName())}'):navDataService.getPreNavDataByTag(actionContext.viewtag);
-        // if(allNavData && allNavData.data && allNavData.data.length >0){
-        //     if(actionContext.parseViewParam && actionContext.engine){
-        //         actionContext.parseViewParam(allNavData.data[0].srfkey);
-        //         actionContext.engine.load();
-        //     }  
-        // }else{
-        //     actionContext.$warning('请确认操作路径是否正确','FirstRecord');
-        // }
     }
 
     /**

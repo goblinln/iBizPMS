@@ -133,30 +133,6 @@ export class ViewContainerBase extends Vue {
     }
 
     /**
-     * 加载预览动态模型数据
-     *
-     * @type {Array<*>}
-     * @memberof ViewContainerBase
-     */
-    public async loadPreViewDynamicModelData() {
-        window.addEventListener('message', async (e: MessageEvent) => {
-            const appEnvironment: any = AppServiceBase.getInstance().getAppEnvironment();
-            if (!appEnvironment || (e.origin !== appEnvironment.previewDynaPath) || (e.data.modelrestag !== this.dynaModelFilePath)) {
-                return;
-            }
-            let previewUrl: string = e.data.modelrestag2 + e.data.modelrestag;
-            let modelData: any = (await axios.get(previewUrl) as any)?.['data'];
-            this.initViewContext({ modeldata: modelData });
-            this.viewContainerName = AppComponentService.getViewComponents(
-                modelData?.viewType,
-                modelData?.viewStyle,
-                modelData?.getPSSysPFPlugin?.pluginCode,
-            );
-            this.$forceUpdate();
-        });
-    }
-
-    /**
      * 初始化沙箱实例
      *
      * @memberof ViewContainerBase

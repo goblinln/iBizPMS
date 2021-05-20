@@ -650,7 +650,9 @@ export class AppGridBase extends GridControlBase {
         return (
             <div class={{ ...controlClassNames, grid: true }} style='height:100%'>
                 <i-form style='height:100%;display:flex;flex-direction: column;justify-content: space-between'>
-                    {this.items?.length > 0 ? this.renderGridContent(h) : <div class="app-grid-empty-content">{this.renderEmptyDataTip()}</div>}
+                    {this.items?.length > 0 ? this.renderGridContent(h) : <div class="app-grid-empty-content">
+                      {this.isControlLoaded ? this.renderEmptyDataTip() : this.renderLoadDataTip()}
+                    </div>}
                     {this.controlInstance?.enablePagingBar ? this.renderPagingBar(h) : ''}
                     {this.items?.length > 0 ? this.renderColumnFilter() : null}
                 </i-form>

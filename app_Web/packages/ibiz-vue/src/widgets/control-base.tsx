@@ -162,6 +162,14 @@ export class ControlBase extends Vue implements ControlInterface {
     public modelService !: AppModelService;
 
     /**
+     * 部件是否加载完成(判断是否加载中)
+     *
+     * @readonly
+     * @memberof ControlBase
+     */
+    public isControlLoaded: boolean = false;
+
+    /**
      * 部件事件抛出方法
      *
      * @param {{ controlname: string; action: string; data: any }} { controlname, action, data }

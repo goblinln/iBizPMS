@@ -88,14 +88,6 @@ export class ViewBase extends Vue {
     public modelData: any;
 
     /**
-     * 导航模式（tab分页、路由）
-     *
-     * @type {*}
-     * @memberof ViewBase
-     */
-    public navModel: any;
-
-    /**
      * 实体服务对象
      *
      * @type {*}

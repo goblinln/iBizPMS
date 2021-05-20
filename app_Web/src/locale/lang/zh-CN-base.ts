@@ -102,6 +102,7 @@ import release_zh_CN from '@locale/lanres/entities/release/release_zh_CN';
 import casestats_zh_CN from '@locale/lanres/entities/case-stats/case-stats_zh_CN';
 import dynadashboard_zh_CN from '@locale/lanres/entities/dyna-dashboard/dyna-dashboard_zh_CN';
 import sysemployee_zh_CN from '@locale/lanres/entities/sys-employee/sys-employee_zh_CN';
+import ibzproproductline_zh_CN from '@locale/lanres/entities/ibzpro-product-line/ibzpro-product-line_zh_CN';
 import projectproduct_zh_CN from '@locale/lanres/entities/project-product/project-product_zh_CN';
 import accounttaskestimate_zh_CN from '@locale/lanres/entities/account-taskestimate/account-taskestimate_zh_CN';
 import storyspec_zh_CN from '@locale/lanres/entities/story-spec/story-spec_zh_CN';
@@ -479,6 +480,7 @@ function getAppLocale(){
             'casestats': casestats_zh_CN(),
             'dynadashboard': dynadashboard_zh_CN(),
             'sysemployee': sysemployee_zh_CN(),
+            'ibzproproductline': ibzproproductline_zh_CN(),
             'projectproduct': projectproduct_zh_CN(),
             'accounttaskestimate': accounttaskestimate_zh_CN(),
             'storyspec': storyspec_zh_CN(),

@@ -634,6 +634,9 @@ export class EditFormControlBase extends FormControlBase {
                     if (copyViewParams.w) {
                         delete copyViewParams.w;
                     }
+                    if(this.appDeKeyFieldName && copyViewParams[this.appDeKeyFieldName.toLocaleLowerCase()]){
+                        delete copyViewParams[this.appDeKeyFieldName.toLocaleLowerCase()]
+                    }
                     Object.assign(responseData, copyViewParams);
                 }
                 if (tempWFData && Object.keys(tempWFData).length > 0) {

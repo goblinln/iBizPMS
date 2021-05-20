@@ -131,14 +131,6 @@ export class AppMenuControlBase extends ControlBase {
     public counterdata: any;
 
     /**
-     * 导航模式(route:面包屑模式、tab:分页导航模式)
-     *
-     * @type {string}
-     * @memberof AppMenuControlBase
-     */
-    public navModel: any;
-
-    /**
      * 菜单模型
      *
      * @public
@@ -184,7 +176,6 @@ export class AppMenuControlBase extends ControlBase {
     public onDynamicPropsChange(newVal: any, oldVal: any) {
         super.onDynamicPropsChange(newVal,oldVal);
         this.collapseChange = newVal.collapseChange;
-        this.navModel = newVal.navModel;
         this.$forceUpdate();
     }
 

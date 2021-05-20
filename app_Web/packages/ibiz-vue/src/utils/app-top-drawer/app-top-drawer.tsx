@@ -75,6 +75,11 @@ export class AppTopDrawer extends Vue {
         if (newVal !== oldVal && newVal === false) {
             this.zIndex -= 1;
             this.$store.commit('updateZIndex', this.zIndex);
+        }else{
+             // 滑动动画时间结束后关闭蒙层
+            setTimeout(() => {
+                this.isShowDialogContainer = false;
+            }, 550);
         }
     }
 
@@ -141,7 +146,9 @@ export class AppTopDrawer extends Vue {
      * @memberof AppTopDrawer
      */
     public openModal(param: any = {}): Promise<any> {
-        this.isShowDialogContainer = true;
+        if(this.viewList.length === 0){
+            this.isShowDialogContainer = true;
+        }
         return new Promise((resolve: (res: any) => void) => {
             if (!this.isShow) {
                 const zIndex: number = this.$store.getters.getZIndex();
@@ -319,10 +326,9 @@ export class AppTopDrawer extends Vue {
      * @memberof AppTopDrawer
      */
     public render(h: CreateElement): any {
-        const classes = { 'dialogContainer': !this.isShow };
         return (
-            <div style={{ 'z-index': this.zIndex}}>
-                <div class={classes} style={{ 'z-index': this.zIndex, 'display': this.isShowDialogContainer ? 'block' : 'none' }}></div>
+            <div style={{ 'z-index': this.zIndex+1}}>
+                <div class='dialogContainer' style={{ 'z-index': this.zIndex+1, 'display': this.isShowDialogContainer ? 'block' : 'none' }}></div>
                 <div
                     class='studio-drawer'
                     key="studio-drawer"

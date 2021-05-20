@@ -103,6 +103,7 @@ export * from './release/release.service';
 export * from './case-stats/case-stats.service';
 export * from './dyna-dashboard/dyna-dashboard.service';
 export * from './sys-employee/sys-employee.service';
+export * from './ibzpro-product-line/ibzpro-product-line.service';
 export * from './project-product/project-product.service';
 export * from './account-taskestimate/account-taskestimate.service';
 export * from './story-spec/story-spec.service';

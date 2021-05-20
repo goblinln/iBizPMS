@@ -88,14 +88,14 @@ export default class AppModelSetting extends Vue {
      * @memberof AppModelSetting
      */
     public created() {
-        window.addEventListener('message', async (e: MessageEvent) => {
-            const appEnvironment: any = AppServiceBase.getInstance().getAppEnvironment();
-            if (e.origin !== appEnvironment.previewDynaPath) {
-                return;
-            }
-            this.isShowDrawer = !this.isShowDrawer;
-            this.subject.next({ tag: 'message', action: 'close', data: e?.data });
-        });
+        // window.addEventListener('message', async (e: MessageEvent) => {
+        //     const appEnvironment: any = AppServiceBase.getInstance().getAppEnvironment();
+        //     if (e.origin !== appEnvironment.previewDynaPath) {
+        //         return;
+        //     }
+        //     this.isShowDrawer = !this.isShowDrawer;
+        //     this.subject.next({ tag: 'message', action: 'close', data: e?.data });
+        // });
     }
 
     /**

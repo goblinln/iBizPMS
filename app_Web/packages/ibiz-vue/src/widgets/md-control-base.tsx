@@ -352,6 +352,19 @@ export class MDControlBase extends MainControlBase {
         }
     }
 
+   /**
+     * 绘制加载数据提示信息
+     *
+     * @return {*} 
+     * @memberof MDControlBase
+     */
+    public renderLoadDataTip(){
+        return <div class="empty-data-tip">
+            <img class="tip-img" src="./assets/img/load-data.svg" />
+            <span class="tip-text">正在加载数据</span>
+        </div>
+    }
+
     /**
      * 绘制无数据提示信息
      *

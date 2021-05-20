@@ -126,6 +126,7 @@ export class AuthServiceRegister extends ServiceRegisterBase {
         this.allService.set('authservice-casestats', () => import('../authservice/case-stats/case-stats-auth-service'));
         this.allService.set('authservice-dynadashboard', () => import('../authservice/dyna-dashboard/dyna-dashboard-auth-service'));
         this.allService.set('authservice-sysemployee', () => import('../authservice/sys-employee/sys-employee-auth-service'));
+        this.allService.set('authservice-ibzproproductline', () => import('../authservice/ibzpro-product-line/ibzpro-product-line-auth-service'));
         this.allService.set('authservice-projectproduct', () => import('../authservice/project-product/project-product-auth-service'));
         this.allService.set('authservice-accounttaskestimate', () => import('../authservice/account-taskestimate/account-taskestimate-auth-service'));
         this.allService.set('authservice-storyspec', () => import('../authservice/story-spec/story-spec-auth-service'));

@@ -281,7 +281,7 @@
               "codeName" : "SeLine",
               "getFrontPSAppView" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ModuleLineGridView.json",
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProProductLineGridView.json",
                 "viewType" : "DEGRIDVIEW"
               },
               "frontProcessType" : "WIZARD",

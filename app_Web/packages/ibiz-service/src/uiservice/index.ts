@@ -102,6 +102,7 @@ export * from './release/release-ui-service';
 export * from './case-stats/case-stats-ui-service';
 export * from './dyna-dashboard/dyna-dashboard-ui-service';
 export * from './sys-employee/sys-employee-ui-service';
+export * from './ibzpro-product-line/ibzpro-product-line-ui-service';
 export * from './project-product/project-product-ui-service';
 export * from './account-taskestimate/account-taskestimate-ui-service';
 export * from './story-spec/story-spec-ui-service';

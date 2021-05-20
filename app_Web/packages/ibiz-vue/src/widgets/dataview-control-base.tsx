@@ -465,6 +465,7 @@ export class DataViewControlBase extends MDControlBase {
                             this.items.push(...datas);
                         }
                     }
+                    this.isControlLoaded = true;
                     this.isAddBehind = false;
                     this.items.forEach((item: any) => {
                         Object.assign(item, this.getActionState(item));
@@ -1057,7 +1058,20 @@ export class DataViewControlBase extends MDControlBase {
     }
 
     /**
-     * 快速操作工具栏
+     * 绘制加载数据提示信息
+     *
+     * @memberof DataViewControlBase
+     */
+    public renderLoadDataTip() {
+        return (
+            <div v-show={this.items.length == 0} class='app-data-empty' style={{height: this.hasSortBar ? "calc(100% - 42px)" : "100%"}}>
+                {super.renderLoadDataTip()}
+            </div>
+        );
+    }
+
+    /**
+     * 绘制无数据提示信息
      *
      * @memberof DataViewControlBase
      */

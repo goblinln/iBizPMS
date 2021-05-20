@@ -483,6 +483,10 @@ zuul:
       path: /sysemployees/**
       serviceId: ${ibiz.ref.service.ibzou-api:ibzou-api}
       stripPrefix: false
+    ibzpro_productline:
+      path: /ibzproproductlines/**
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      stripPrefix: false
     zt_projectproduct:
       path: /projectproducts/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}

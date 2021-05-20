@@ -15,13 +15,6 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
     public appLoadingService = AppLoadingService.getInstance();
 
     /**
-     * 导航模式
-     * 
-     * AppDefaultIndexViewLayout
-     */
-    public navModel: any;
-
-    /**
      * 是否满屏
      *
      * @type {boolean}
@@ -129,7 +122,6 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
      */
     public created() {
         document.getElementsByTagName('html')[0].className = this.selectTheme();
-        this.navModel = Object.is(this.viewInstance.viewStyle, 'DEFAULT') ? 'tab' : 'route';
         this.isFullScreen = Boolean(this.$store.getters['getCustomParamByTag']('srffullscreen'));
     }
 
@@ -141,8 +133,8 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
     public renderContentLeft() {
         let contentClass = {
             'index_content': true,
-            'index_tab_content': Object.is(this.navModel, 'tab'),
-            'index_route_content': Object.is(this.navModel, 'route')
+            'index_tab_content': Object.is(this.viewInstance.viewStyle, 'DEFAULT'),
+            'index_route_content': !Object.is(this.viewInstance.viewStyle, 'DEFAULT')
         }
         return (
             <layout style={{ 'font-family': this.selectFont, 'height': '100vh' }}>
@@ -173,7 +165,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                         {this.$slots.default}
                     </sider>
                     <content class={contentClass} >
-                        {Object.is(this.navModel, 'tab') ? <tab-page-exp></tab-page-exp> : null}
+                        {Object.is(this.viewInstance.viewStyle, 'DEFAULT') ? <tab-page-exp></tab-page-exp> : null}
                         <app-keep-alive routerList={this.routerList}>
                             <router-view key={this.routerViewKey}></router-view>
                         </app-keep-alive>

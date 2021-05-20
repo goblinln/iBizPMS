@@ -477,9 +477,6 @@ export default class TextFileUpload extends Vue {
             }
             // 返回的是一个jsonArray
             if (response.data.length > 0) {
-                if (this.textstate === "init") {
-                    this.textstate = "save";
-                }
                 const files = JSON.parse(JSON.stringify(response.data));
                 if (this.uploadFileList.length == 0) {
                     this.uploadFileList.push.apply(this.uploadFileList, files);

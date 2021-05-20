@@ -41,22 +41,12 @@ export class AppViewShell extends ViewContainerBase {
     @Prop() public dynamicProps!: any;
 
     /**
-     * 视图默认使用
-     *
-     * @type {string}
-     * @memberof AppViewShell
-     */
-    @Inject({ from: 'navModel', default: 'tab' })
-    public navModel!: string;
-
-    /**
      * Vue声明周期
      *
      * @memberof AppViewShell
      */
     public created() {
         this.ViewContainerInit();
-        this.loadPreViewDynamicModelData();
     }
 
     /**

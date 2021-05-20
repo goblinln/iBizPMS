@@ -330,6 +330,7 @@ export class ListControlBase extends MDControlBase {
                     _this.items.push(...datas);
                     _this.items = _this.arrayNonRepeatfy(_this.items);
                 }
+                _this.isControlLoaded = true;
                 _this.isAddBehind = false;
                 _this.items.forEach((item: any) => {
                     Object.assign(item, _this.getActionState(item));

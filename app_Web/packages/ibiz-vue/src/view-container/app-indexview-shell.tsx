@@ -41,15 +41,6 @@ export class AppIndexViewShell extends ViewContainerBase {
     @Prop() public dynamicProps!: any;
 
     /**
-     * 视图默认使用
-     *
-     * @type {string}
-     * @memberof AppIndexViewShell
-     */
-    @Inject({ from: 'navModel', default: 'tab' })
-    public navModel!: string;
-
-    /**
      * Vue声明周期
      *
      * @memberof AppIndexViewShell
@@ -64,7 +55,6 @@ export class AppIndexViewShell extends ViewContainerBase {
             }
         }
         this.loadDynamicModelData();
-        this.loadPreViewDynamicModelData();
     }
 
     /**
