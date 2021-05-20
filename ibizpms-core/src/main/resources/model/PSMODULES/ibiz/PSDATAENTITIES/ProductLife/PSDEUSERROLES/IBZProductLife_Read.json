@@ -11,5 +11,6 @@
     }
   } ],
   "roleTag" : "IBZProductLife_Read",
-  "userDRAction" : "READ"
+  "userDRAction" : "READ",
+  "defaultMode" : true
 }

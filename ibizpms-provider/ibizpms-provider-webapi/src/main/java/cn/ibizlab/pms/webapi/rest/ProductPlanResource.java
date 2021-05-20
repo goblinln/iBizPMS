@@ -445,6 +445,7 @@ public class ProductPlanResource {
                 .body(new PageImpl(productplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取CurProductPlan", tags = {"产品计划" } ,notes = "获取CurProductPlan")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchcurproductplan")
 	public ResponseEntity<List<ProductPlanDTO>> fetchcurproductplan(@RequestBody ProductPlanSearchContext context) {
@@ -457,6 +458,7 @@ public class ProductPlanResource {
                 .body(list);
 	}
 
+    @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询CurProductPlan", tags = {"产品计划" } ,notes = "查询CurProductPlan")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/searchcurproductplan")
 	public ResponseEntity<Page<ProductPlanDTO>> searchCurProductPlan(@RequestBody ProductPlanSearchContext context) {
@@ -465,6 +467,7 @@ public class ProductPlanResource {
                 .body(new PageImpl(productplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取数据集", tags = {"产品计划" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchcurproductplanstory")
 	public ResponseEntity<List<ProductPlanDTO>> fetchcurproductplanstory(@RequestBody ProductPlanSearchContext context) {
@@ -477,6 +480,7 @@ public class ProductPlanResource {
                 .body(list);
 	}
 
+    @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询数据集", tags = {"产品计划" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/searchcurproductplanstory")
 	public ResponseEntity<Page<ProductPlanDTO>> searchCurProductPlanStory(@RequestBody ProductPlanSearchContext context) {
@@ -485,6 +489,7 @@ public class ProductPlanResource {
                 .body(new PageImpl(productplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取DEFAULT", tags = {"产品计划" } ,notes = "获取DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchdefault")
 	public ResponseEntity<List<ProductPlanDTO>> fetchdefault(@RequestBody ProductPlanSearchContext context) {
@@ -497,6 +502,7 @@ public class ProductPlanResource {
                 .body(list);
 	}
 
+    @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询DEFAULT", tags = {"产品计划" } ,notes = "查询DEFAULT")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/searchdefault")
 	public ResponseEntity<Page<ProductPlanDTO>> searchDefault(@RequestBody ProductPlanSearchContext context) {
@@ -615,6 +621,7 @@ public class ProductPlanResource {
                 .body(new PageImpl(productplanMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目计划列表", tags = {"产品计划" } ,notes = "获取项目计划列表")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/fetchprojectplan")
 	public ResponseEntity<List<ProductPlanDTO>> fetchprojectplan(@RequestBody ProductPlanSearchContext context) {
@@ -627,6 +634,7 @@ public class ProductPlanResource {
                 .body(list);
 	}
 
+    @PreAuthorize("@ProductPlanRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询项目计划列表", tags = {"产品计划" } ,notes = "查询项目计划列表")
     @RequestMapping(method= RequestMethod.POST , value="/productplans/searchprojectplan")
 	public ResponseEntity<Page<ProductPlanDTO>> searchProjectPlan(@RequestBody ProductPlanSearchContext context) {

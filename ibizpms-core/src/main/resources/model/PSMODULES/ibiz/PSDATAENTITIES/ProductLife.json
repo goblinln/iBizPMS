@@ -805,7 +805,8 @@
       }
     } ],
     "roleTag" : "IBZProductLife_Read",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "defaultMode" : true
   } ],
   "codeName" : "ProductLife",
   "dEType" : 1,

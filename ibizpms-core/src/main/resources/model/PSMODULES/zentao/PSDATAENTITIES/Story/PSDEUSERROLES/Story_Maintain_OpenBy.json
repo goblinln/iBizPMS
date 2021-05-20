@@ -10,13 +10,6 @@
       "id" : "UPDATE"
     }
   }, {
-    "dataAccessAction" : "CREATE",
-    "name" : "Story_Maintain_OpenBy_CREATE",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "CREATE"
-    }
-  }, {
     "dataAccessAction" : "READ",
     "name" : " Story_Maintain_OpenBy_READ",
     "getPSDEOPPriv" : {

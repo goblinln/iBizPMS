@@ -3,7 +3,7 @@
   "caption" : "项目",
   "codeName" : "ProjectCurProductGridView",
   "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ProjectCurProductGridView.json",
-  "gridRowActiveMode" : 2,
+  "gridRowActiveMode" : 0,
   "name" : "ProjectCurProductGridView",
   "getPSAppDataEntity" : {
     "modelref" : true,
