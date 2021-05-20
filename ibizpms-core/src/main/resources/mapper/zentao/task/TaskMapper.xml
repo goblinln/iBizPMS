@@ -922,7 +922,7 @@
                 <![CDATA[ AND t1.DELETED = '0' ]]>
             </if>
 			<if test="true">
-                <![CDATA[ AND ( ( t1.`OPENEDBY` =  #{srf.sessioncontext.srfloginname}  OR  t1.`LASTEDITEDBY` =  #{srf.sessioncontext.srfloginname}  OR  t1.`CLOSEDBY` =  #{srf.sessioncontext.srfloginname}  OR  t1.`FINISHEDBY` =  #{srf.sessioncontext.srfloginname}  OR  t1.`CANCELEDBY` =  #{srf.sessioncontext.srfloginname} ) ) ]]>
+                <![CDATA[ AND ( ( t1.`OPENEDBY` =  #{srf.sessioncontext.srfloginname}  OR  t1.`LASTEDITEDBY` =  #{srf.sessioncontext.srfloginname}  OR  t1.`CLOSEDBY` =  #{srf.sessioncontext.srfloginname}  OR  t1.`FINISHEDBY` =  #{srf.sessioncontext.srfloginname}  OR  t1.`CANCELEDBY` =  #{srf.sessioncontext.srfloginname}  OR  t1.`ASSIGNEDTO` =  #{srf.sessioncontext.srfloginname} ) ) ]]>
             </if>
 			<include refid="searchMode" />
 		</trim>
