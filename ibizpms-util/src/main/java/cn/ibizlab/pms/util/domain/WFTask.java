@@ -25,6 +25,7 @@ public class WFTask extends EntityMP implements Serializable {
     @JSONField(name = "dcsystemid")
     @JsonProperty("dcsystemid")
     private String dcsystemid;
+
     /**
      * 实体标识
      */
@@ -38,12 +39,20 @@ public class WFTask extends EntityMP implements Serializable {
     @JSONField(name = "businesskey")
     @JsonProperty("businesskey")
     private String businesskey;
+
     /**
      * 业务数据主信息属性
      */
     @JSONField(name = "majortext")
     @JsonProperty("majortext")
     private String majortext;
+
+    /**
+     * 用户标识
+     */
+    @JSONField(name = "userid")
+    @JsonProperty("userid")
+    private String userid;
 
 }
 

@@ -207,7 +207,7 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
         if (psDEUserRoleOPPrivs != null) {
             for (IPSDEUserRoleOPPriv psDEUserRoleOPPriv : psDEUserRoleOPPrivs) {
                 Map<String, String> deAction = new HashMap<>();
-                deAction.put(psDEUserRoleOPPriv.getName(), org.apache.commons.lang3.StringUtils.isBlank(psDEUserRoleOPPriv.getCustomCond()) ? "" : psDEUserRoleOPPriv.getCustomCond());
+                deAction.put(psDEUserRoleOPPriv.getDataAccessAction(), org.apache.commons.lang3.StringUtils.isBlank(psDEUserRoleOPPriv.getCustomCond()) ? "" : psDEUserRoleOPPriv.getCustomCond());
                 deActions.add(deAction);
             }
         }
@@ -292,12 +292,12 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
      * @return
      */
     public List<UAADEAuthority> getRoleUAADEAuthority() {
-        List roleUAADEAuthority = new ArrayList<>();
+        List<UAADEAuthority> roleUAADEAuthority = new ArrayList<>();
         AuthenticationUser curUser = AuthenticationUser.getAuthenticationUser();
         curUser.getAuthorities().stream()
                 .filter(f -> f instanceof UAARoleAuthority).forEach(r -> {
             if (userRoleUAADEAuthorityMap.containsKey(((UAARoleAuthority) r).getRoleTag()))
-                roleUAADEAuthority.add(userRoleUAADEAuthorityMap.get(((UAARoleAuthority) r).getRoleTag()));
+                roleUAADEAuthority.addAll(userRoleUAADEAuthorityMap.get(((UAARoleAuthority) r).getRoleTag()));
         });
         return roleUAADEAuthority;
     }

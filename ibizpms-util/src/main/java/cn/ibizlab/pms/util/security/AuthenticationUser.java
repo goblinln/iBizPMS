@@ -362,6 +362,8 @@ public class AuthenticationUser implements UserDetails, net.ibizsys.runtime.secu
                             authorities.add(JSONObject.parseObject(json.toString(), UAAMenuAuthority.class));
                         } else if (json.getString("type").equals("UNIRES")) {
                             authorities.add(JSONObject.parseObject(json.toString(), UAAUniResAuthority.class));
+                        } else if (json.getString("type").equals("ROLE")) {
+                            authorities.add(JSONObject.parseObject(json.toString(), UAARoleAuthority.class));
                         }
                     }
                 }
