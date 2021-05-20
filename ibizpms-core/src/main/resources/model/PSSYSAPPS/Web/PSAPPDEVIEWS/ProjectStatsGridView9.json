@@ -280,7 +280,7 @@
       },
       "width" : 80,
       "widthUnit" : "PX",
-      "enableSort" : true
+      "enableSort" : false
     }, {
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
@@ -297,7 +297,7 @@
       },
       "width" : 80,
       "widthUnit" : "PX",
-      "enableSort" : true
+      "enableSort" : false
     }, {
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
@@ -314,7 +314,7 @@
       },
       "width" : 80,
       "widthUnit" : "PX",
-      "enableSort" : true
+      "enableSort" : false
     }, {
       "align" : "LEFT",
       "cLConvertMode" : "NONE",
