@@ -5,6 +5,35 @@
     "modelref" : true,
     "id" : "OpenQuery"
   },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "READ",
+    "name" : "Project_Maintain_OpenBy_READ",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    }
+  }, {
+    "dataAccessAction" : "CREATE",
+    "name" : "Project_Maintain_OpenBy_CREATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    }
+  }, {
+    "dataAccessAction" : "DELETE",
+    "name" : "Project_Maintain_OpenBy_DELETE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "DELETE"
+    }
+  }, {
+    "dataAccessAction" : "UPDATE",
+    "name" : "Project_Maintain_OpenBy_UPDATE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UPDATE"
+    }
+  } ],
   "roleTag" : "Project_Maintain_Open",
   "userCat" : "CAT1",
   "userDRAction" : "READ",

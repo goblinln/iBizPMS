@@ -86,7 +86,7 @@ export class AppFormPickupDataViewBase extends FormPickupDataViewBase {
             this.renderQuickGroup(),
             this.renderQuickSearch(),
             this.renderMainContent(),
-            this.viewInstance?.viewStyle == "STYLE2" ? this.renderSearchForm() : null,
+            !(this.viewInstance?.viewStyle == "DEFAULT" && this.viewInstance?.enableQuickSearch) ? this.renderSearchForm() : null,
             this.renderBottomMessage()
         ]);
     }

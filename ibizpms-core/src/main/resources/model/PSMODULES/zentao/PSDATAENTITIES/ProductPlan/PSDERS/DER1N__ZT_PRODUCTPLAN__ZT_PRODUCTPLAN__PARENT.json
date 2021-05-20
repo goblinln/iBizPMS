@@ -23,6 +23,6 @@
     "codeName" : "ParentName"
   },
   "pickupDEFName" : "PARENT",
-  "removeActionType" : -1,
+  "removeActionType" : 3,
   "removeOrder" : 0
 }

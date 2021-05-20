@@ -21,6 +21,7 @@ public interface FileMapper extends BaseMapper<File> {
 
     List<File> selectDefault(@Param("srf") FileSearchContext context, @Param("ew") Wrapper<File> wrapper);
     List<File> selectDocLibFile(@Param("srf") FileSearchContext context, @Param("ew") Wrapper<File> wrapper);
+    List<File> selectMySubmitFile(@Param("srf") FileSearchContext context, @Param("ew") Wrapper<File> wrapper);
     List<File> selectProductDocLibFile(@Param("srf") FileSearchContext context, @Param("ew") Wrapper<File> wrapper);
     List<File> selectType(@Param("srf") FileSearchContext context, @Param("ew") Wrapper<File> wrapper);
     List<File> selectTypeNotBySrfparentkey(@Param("srf") FileSearchContext context, @Param("ew") Wrapper<File> wrapper);
@@ -28,6 +29,7 @@ public interface FileMapper extends BaseMapper<File> {
 
     Page<File> searchDefault(IPage page, @Param("srf") FileSearchContext context, @Param("ew") Wrapper<File> wrapper);
     Page<File> searchDocLibFile(IPage page, @Param("srf") FileSearchContext context, @Param("ew") Wrapper<File> wrapper);
+    Page<File> searchMySubmitFile(IPage page, @Param("srf") FileSearchContext context, @Param("ew") Wrapper<File> wrapper);
     Page<File> searchProductDocLibFile(IPage page, @Param("srf") FileSearchContext context, @Param("ew") Wrapper<File> wrapper);
     Page<File> searchType(IPage page, @Param("srf") FileSearchContext context, @Param("ew") Wrapper<File> wrapper);
     Page<File> searchTypeNotBySrfparentkey(IPage page, @Param("srf") FileSearchContext context, @Param("ew") Wrapper<File> wrapper);

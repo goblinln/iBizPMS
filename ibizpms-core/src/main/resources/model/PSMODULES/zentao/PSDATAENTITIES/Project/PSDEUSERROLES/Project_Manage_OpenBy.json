@@ -6,11 +6,46 @@
     "id" : "OpenByQuery"
   },
   "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "SUSPEND",
+    "name" : "Project_Manage_Open_suspend",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SUSPEND"
+    }
+  }, {
+    "dataAccessAction" : "START",
+    "name" : "Project_Manage_Open_Start",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "START"
+    }
+  }, {
+    "dataAccessAction" : "CLOSE",
+    "name" : "Project_Manage_Open_Close",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CLOSE"
+    }
+  }, {
+    "dataAccessAction" : "PUTOFF",
+    "name" : "Project_Manage_Open_Putoff",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "PUTOFF"
+    }
+  }, {
     "dataAccessAction" : "MANAGE",
     "name" : "Project_Manage_OpenBy_MANAGE",
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "MANAGE"
+    }
+  }, {
+    "dataAccessAction" : "ACTIVATE",
+    "name" : "Project_Manage_Open_Activate",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ACTIVATE"
     }
   } ],
   "roleTag" : "Project_Manage_OpenBy",

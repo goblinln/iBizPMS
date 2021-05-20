@@ -16,4 +16,10 @@ export default [
     'parentname',
     'root',
     'parent',
+    'mdeptid',
+    'mdeptname',
+    'orgid',
+    'createby',
+    'orgname',
+    'updateby',
 ];

@@ -242,7 +242,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "NONE"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -263,6 +263,15 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchTypeNotBySrfparentkey"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMySubmitFile",
+    "methodType" : "FETCH",
+    "name" : "MySubmitFile",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MySubmitFile"
     },
     "builtinMethod" : false
   } ],
@@ -590,7 +599,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "NONE"
+      "id" : "READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -629,6 +638,15 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEACTIONS/Preview.json"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMySubmitFile",
+    "methodType" : "FETCH",
+    "name" : "MySubmitFile",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MySubmitFile"
     },
     "builtinMethod" : false
   }, {

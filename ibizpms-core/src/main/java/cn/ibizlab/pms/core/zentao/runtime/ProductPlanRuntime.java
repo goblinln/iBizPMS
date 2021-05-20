@@ -347,6 +347,8 @@ public class ProductPlanRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEn
 
     @Override
     public boolean containsForeignKey(IPSDEField iPSDEField, Object objKey, IPSDERBase iPSDERBase) {
+        if (objKey != null && "DER1N__ZT_PRODUCTPLAN__ZT_PRODUCTPLAN__PARENT".equals(iPSDERBase.getName()) && !ObjectUtils.isEmpty(productplanService.selectByParent((Long)objKey)))
+            return true;
         return false;
     }
 

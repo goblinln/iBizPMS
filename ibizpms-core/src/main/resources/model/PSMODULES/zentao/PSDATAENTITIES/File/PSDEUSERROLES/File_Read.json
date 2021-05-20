@@ -1,7 +1,7 @@
 {
   "customCond" : "[ (1, '=', 1) ]",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEUSERROLES/File_Read.json",
-  "name" : "文件查看",
+  "name" : "文件查看（默认角色）",
   "getPSDEUserRoleOPPrivs" : [ {
     "dataAccessAction" : "READ",
     "name" : "File_Read_READ",
@@ -11,5 +11,6 @@
     }
   } ],
   "roleTag" : "File_Read",
-  "userDRAction" : "READ"
+  "userDRAction" : "READ",
+  "defaultMode" : true
 }

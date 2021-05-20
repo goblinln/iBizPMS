@@ -70,6 +70,13 @@
          )t1
      </select>
 
+    <!--数据集合[MySubmitFile]-->
+	 <select id="searchMySubmitFile"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext"  resultMap="FileResultMap">
+         select t1.* from (
+                <include refid="MySubmitFile" />
+         )t1
+     </select>
+
     <!--数据集合[ProductDocLibFile]-->
 	 <select id="searchProductDocLibFile"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext"  resultMap="FileResultMap">
          select t1.* from (
@@ -122,6 +129,24 @@
 	
 	<select id="selectDocLibFile"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext" resultMap="FileResultMap">
 		<include refid="DocLibFile" />
+	</select>
+
+    <!--数据查询[MySubmitFile]-->
+    <sql id="MySubmitFile" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ADDEDBY`, t1.`ADDEDDATE`, t1.`DELETED`, t1.`DEPT`, t1.`DEPTNAME`, t1.`DOWNLOADS`, t1.`EXTENSION`, t1.`EXTRA`, t1.`FILESN`, t1.`ID`, t1.`OBJECTID`, t1.`OBJECTTYPE`, t1.`ORG`, t1.`ORGNAME`, t1.`PATHNAME`, t1.`SIZE`, CONCAT_WS('',case when (t1.size/1024) > 1024 then ROUND(t1.size/(1024 * 1024), 1) when (t1.size/1024) > 1 then ROUND(t1.size/1024, 1) else ROUND(t1.size, 1) end, case when (t1.size/1024) > 1024 then 'MB' when (t1.size/1024) > 1 then 'KB' else 'B' end) AS `STRSIZE`, t1.`TITLE`, t1.`UPDATEBY` FROM `zt_file` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND t1.DELETED = '0' ]]>
+            </if>
+			<if test="true">
+                <![CDATA[ AND ( t1.`ADDEDBY` =  #{srf.sessioncontext.srfloginname} ) ]]>
+            </if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectMySubmitFile"  parameterType="cn.ibizlab.pms.core.zentao.filter.FileSearchContext" resultMap="FileResultMap">
+		<include refid="MySubmitFile" />
 	</select>
 
     <!--数据查询[ProductDocLibFile]-->

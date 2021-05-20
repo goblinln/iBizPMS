@@ -45,6 +45,7 @@ public interface IFileService extends IService<File> {
     List<File> select(FileSearchContext context);
     List<File> selectDefault(FileSearchContext context);
     List<File> selectDocLibFile(FileSearchContext context);
+    List<File> selectMySubmitFile(FileSearchContext context);
     List<File> selectProductDocLibFile(FileSearchContext context);
     List<File> selectType(FileSearchContext context);
     List<File> selectTypeNotBySrfparentkey(FileSearchContext context);
@@ -52,6 +53,7 @@ public interface IFileService extends IService<File> {
 
     Page<File> searchDefault(FileSearchContext context);
     Page<File> searchDocLibFile(FileSearchContext context);
+    Page<File> searchMySubmitFile(FileSearchContext context);
     Page<File> searchProductDocLibFile(FileSearchContext context);
     Page<File> searchType(FileSearchContext context);
     Page<File> searchTypeNotBySrfparentkey(FileSearchContext context);

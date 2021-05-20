@@ -20,5 +20,11 @@ export default {
     doclibname: "所属文档库",
     parent: "id",
     root: "编号",
+    mdeptid: "部门标识",
+    orgid: "组织机构标识",
+    mdeptname: "归属部门名",
+    createby: "由谁创建",
+    updateby: "由谁更新",
+    orgname: "归属组织名",
   },
 };

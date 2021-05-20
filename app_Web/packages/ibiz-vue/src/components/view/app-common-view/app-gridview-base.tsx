@@ -86,7 +86,7 @@ export class AppGridViewBase extends GridViewBase {
             this.renderQuickGroup(),
             this.renderQuickSearch(),
             this.renderQuickSearchForm(),
-            this.viewInstance?.viewStyle == "STYLE2" ? [this.renderSearchForm(), this.renderSearchBar()] : null,
+            !(this.viewInstance?.viewStyle == "DEFAULT" && this.viewInstance?.enableQuickSearch) ? [this.renderSearchForm(), this.renderSearchBar()] : null,
             this.renderBodyMessage(),
             this.renderMainContent(),
             this.renderBottomMessage()

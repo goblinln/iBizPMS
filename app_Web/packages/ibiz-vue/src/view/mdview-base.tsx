@@ -309,7 +309,7 @@ export class MDViewBase extends MainViewBase {
         if (!this.viewInstance?.enableQuickSearch) {
             return;
         }
-        if(this.viewInstance?.viewStyle != 'STYLE2'){
+        if(this.viewInstance?.viewStyle == "DEFAULT"){
             return this.renderDefaultQuickSearch();
         }else{
             return this.renderStyle2QuickSearch();
@@ -374,7 +374,7 @@ export class MDViewBase extends MainViewBase {
             return
         }
         let { targetCtrlName, targetCtrlParam, targetCtrlEvent } = this.computeTargetCtrlData(this.searchFormInstance);
-        if (this.viewInstance?.viewStyle != 'STYLE2') {
+        if (this.viewInstance?.viewStyle == "DEFAULT" && this.viewInstance?.enableQuickSearch) {
             return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: this.searchFormInstance?.name, on: targetCtrlEvent });
         } else {
             return this.$createElement(targetCtrlName, { slot: 'searchForm', props: targetCtrlParam, ref: this.searchFormInstance?.name, on: targetCtrlEvent });
@@ -407,7 +407,7 @@ export class MDViewBase extends MainViewBase {
         Object.assign(targetCtrlParam.dynamicProps, {
             isExpandSearchForm: this.isExpandSearchForm
         });
-        if (this.viewInstance?.viewStyle != 'STYLE2') {
+        if (this.viewInstance?.viewStyle == "DEFAULT" && this.viewInstance?.enableQuickSearch) {
             return this.$createElement(targetCtrlName, { props: targetCtrlParam, ref: this.searchBarInstance?.name, on: targetCtrlEvent });
         } else {
             return this.$createElement(targetCtrlName, { slot: 'searchBar', props: targetCtrlParam, ref: this.searchBarInstance?.name, on: targetCtrlEvent });

@@ -311,6 +311,7 @@ export class GanttControlBase extends MDControlBase {
                 return;
             }
             this.tasks = [...this.tasks, ...response.data];
+            this.isControlLoaded = true;
             response.data.forEach((item: any) => {
                 if(!item.collapsed) {
                     this.load(item);

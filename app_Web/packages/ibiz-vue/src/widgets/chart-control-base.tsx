@@ -532,6 +532,7 @@ export class ChartControlBase extends MDControlBase {
             .then(
                 (res: any) => {
                     this.ctrlEndLoading();
+                    this.isControlLoaded = true;
                     if (res) {
                         this.transformToBasicChartSetData(res.data, (codelist: any) => {
                             _this.drawCharts();

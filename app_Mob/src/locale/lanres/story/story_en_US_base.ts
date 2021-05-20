@@ -405,6 +405,7 @@ export default {
 			closedby: commonLogic.appcommonhandle("由谁关闭",null), 
 			closeddate: commonLogic.appcommonhandle("关闭日期	",null), 
 			closedreason: commonLogic.appcommonhandle("关闭原因",null), 
+			estimate: commonLogic.appcommonhandle("预计工时",null), 
 			spec: commonLogic.appcommonhandle("需求描述",null), 
 			verify: commonLogic.appcommonhandle("验收标准",null), 
 			mailto: commonLogic.appcommonhandle("抄送给",null), 

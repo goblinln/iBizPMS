@@ -171,6 +171,7 @@ export class TreeGridExControlBase extends MDControlBase {
             } else {
                 this.items = [...response.data];
             }
+            this.isControlLoaded = true;
             this.$nextTick(() => {
                 this.expandDefNode();
             })

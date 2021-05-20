@@ -424,6 +424,7 @@ export class FormControlBase extends MainControlBase {
         const get: Promise<any> = this.service.get(this.loadAction, JSON.parse(JSON.stringify(this.context)), { viewparams: viewparamResult }, this.showBusyIndicator);
         get.then((response: any) => {
             this.ctrlEndLoading();
+            this.isControlLoaded = true;
             if (!response.status || response.status !== 200) {
                 this.$throw(response,'load');
                 return;

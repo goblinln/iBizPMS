@@ -76,6 +76,18 @@ export class FileBaseService extends EntityBaseService<IFile> {
         return this.condCache.get('docLibFile');
     }
 
+    protected getMySubmitFileCond() {
+        if (!this.condCache.has('mySubmitFile')) {
+            const strCond: any[] = ['AND', ['EQ', 'ADDEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('mySubmitFile', cond);
+            }
+        }
+        return this.condCache.get('mySubmitFile');
+    }
+
     protected getProductDocLibFileCond() {
         return this.condCache.get('productDocLibFile');
     }

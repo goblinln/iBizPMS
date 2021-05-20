@@ -129,6 +129,24 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`ADDEDBY` =  ${srfsessioncontext('srfloginname','{\"defname\":\"ADDEDBY\",\"dename\":\"ZT_FILE\"}')} )",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "MySubmitFile",
+    "logicName" : "我提交的文件（权限）",
+    "name" : "MySubmitFile",
+    "privQuery" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
         "customCond" : "t1.deleted = '0'",
         "name" : "查询条件"
       }, {
@@ -208,6 +226,16 @@
     "getPSDEDataQueries" : [ {
       "modelref" : true,
       "id" : "DocLibFile"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "MySubmitFile",
+    "logicName" : "我提交的文件（权限）",
+    "name" : "MySubmitFile",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MySubmitFile"
     } ],
     "enableBackend" : true,
     "enableFront" : true
@@ -1231,9 +1259,34 @@
     "roleTag" : "File_Maintain",
     "userDRAction" : "READ"
   }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEUSERROLES/File_Maintain_MySubmit.json",
+    "name" : "文件维护（我提交的）（默认角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MySubmitFile"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "UPDATE",
+      "name" : "File_Maintain_MySubmit_Update",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "UPDATE"
+      }
+    }, {
+      "dataAccessAction" : "DELETE",
+      "name" : "File_Maintain_MySubmit_Delete",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "DELETE"
+      }
+    } ],
+    "roleTag" : "File_Maintain_MySubmit",
+    "userDRAction" : "READ",
+    "defaultMode" : true
+  }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/File/PSDEUSERROLES/File_Read.json",
-    "name" : "文件查看",
+    "name" : "文件查看（默认角色）",
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "READ",
       "name" : "File_Read_READ",
@@ -1243,7 +1296,8 @@
       }
     } ],
     "roleTag" : "File_Read",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "defaultMode" : true
   } ],
   "codeName" : "File",
   "dEType" : 1,

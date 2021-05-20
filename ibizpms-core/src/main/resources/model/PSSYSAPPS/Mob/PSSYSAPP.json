@@ -2897,6 +2897,10 @@
       "codeName" : "Remind",
       "text" : "提醒",
       "value" : "remind"
+    }, {
+      "codeName" : "Unlinkedfrombranch",
+      "text" : "移除关联平台",
+      "value" : "unlinkedfrombranch"
     } ],
     "enableCache" : true
   }, {
@@ -26295,6 +26299,9 @@
         "logicName" : "删除",
         "name" : "DELETE"
       }, {
+        "logicName" : "组群管理",
+        "name" : "GROUPMANAGE"
+      }, {
         "logicName" : "管理",
         "name" : "MANAGE"
       }, {
@@ -30473,6 +30480,9 @@
       }, {
         "logicName" : "删除",
         "name" : "DELETE"
+      }, {
+        "logicName" : "组群管理",
+        "name" : "GROUPMANAGE"
       }, {
         "logicName" : "管理",
         "name" : "MANAGE"

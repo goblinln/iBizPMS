@@ -3,7 +3,7 @@ import { Emit, Prop, Watch } from 'vue-property-decorator';
 import { Util } from 'ibiz-core';
 import { MobPortletControlBase } from '../../../widgets';
 import { AppViewLogicService } from '../../../app-service';
-import { IPSDBAppViewPortletPart, IPSDBCustomPortletPart, IPSDBHtmlPortletPart, IPSDBRawItemPortletPart, IPSDBSysPortletPart, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
+import { IPSDBAppViewPortletPart, IPSDBCustomPortletPart, IPSDBHtmlPortletPart, IPSDBRawItemPortletPart, IPSUIActionGroupDetail } from '@ibiz/dynamic-model-api';
 
 /**
  * 门户部件部件基类
@@ -218,7 +218,7 @@ export class AppMobPortletBase extends MobPortletControlBase {
         return this.$createElement('app-view-shell', {
             props: {
                 staticProps: {
-                    portletState: this.viewState,
+                    panelState: this.viewState,
                     viewDefaultUsage: 'includedView',
                     viewModelData: portletAppView,
                     isChildView:true

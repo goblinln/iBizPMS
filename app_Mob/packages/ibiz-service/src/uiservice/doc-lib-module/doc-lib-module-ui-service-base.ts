@@ -39,7 +39,7 @@ export class DocLibModuleUIServiceBase extends UIServiceBase {
     protected initBasicData(){
         this.isEnableDEMainState = true;
         this.dynaInstTag = "";
-        this.tempOrgIdDEField =null;
+        this.tempOrgIdDEField ="orgid";
         this.stateValue = 0;
         this.multiFormDEField = null;
         this.indexTypeDEField = null;

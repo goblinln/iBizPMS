@@ -67,6 +67,7 @@ export class AppDefaultMobDePortalView extends MobDashboardViewBase {
      * @memberof AppDefaultMobDePortalView
      */
      public activated() {
+        this.viewState.next({tag:this.dashboardInstance.name,action:'load'})
         this.viewActivated();
     }
 

@@ -2122,7 +2122,8 @@ public class StaticDict {
         DELETECHILDRENSTORY("deletechildrenstory","删除子需求"),
         SUBMIT("submit","提交"),
         READ("read","已读了"),
-        REMIND("remind","提醒");
+        REMIND("remind","提醒"),
+        UNLINKEDFROMBRANCH("unlinkedfrombranch","移除关联平台");
 
         private String value;
         private String text;

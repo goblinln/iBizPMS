@@ -1,7 +1,7 @@
 import { IEntityBase } from 'ibiz-core';
 
 /**
- * 产品线
+ * 产品线（废弃）
  *
  * @export
  * @interface IProductLine
@@ -32,4 +32,8 @@ export interface IProductLine extends IEntityBase {
      * 建立人
      */
     createman?: any;
+    /**
+     * 排序
+     */
+    order?: any;
 }

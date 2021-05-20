@@ -131,6 +131,8 @@ public class FileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return fileService.searchDefault(searchContext);    
         if (iPSDEDataSet.getName().equals("DocLibFile"))
             return fileService.searchDocLibFile(searchContext);    
+        if (iPSDEDataSet.getName().equals("MySubmitFile"))
+            return fileService.searchMySubmitFile(searchContext);    
         if (iPSDEDataSet.getName().equals("ProductDocLibFile"))
             return fileService.searchProductDocLibFile(searchContext);    
         if (iPSDEDataSet.getName().equals("Type"))
@@ -147,6 +149,8 @@ public class FileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
             return fileService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("DocLibFile"))
             return fileService.selectDocLibFile(searchContext);
+        if (iPSDataQuery.getName().equals("MySubmitFile"))
+            return fileService.selectMySubmitFile(searchContext);
         if (iPSDataQuery.getName().equals("ProductDocLibFile"))
             return fileService.selectProductDocLibFile(searchContext);
         if (iPSDataQuery.getName().equals("Type"))
@@ -324,6 +328,9 @@ public class FileRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         }
         else if (action.equals("searchDocLibFile")) {
             return aroundDataSet("DocLibFile", point);
+        }
+        else if (action.equals("searchMySubmitFile")) {
+            return aroundDataSet("MySubmitFile", point);
         }
         else if (action.equals("searchProductDocLibFile")) {
             return aroundDataSet("ProductDocLibFile", point);

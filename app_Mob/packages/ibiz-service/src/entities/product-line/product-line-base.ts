@@ -2,7 +2,7 @@ import { EntityBase } from 'ibiz-core';
 import { IProductLine } from '../interface';
 
 /**
- * 产品线基类
+ * 产品线（废弃）基类
  *
  * @export
  * @abstract
@@ -57,6 +57,10 @@ export abstract class ProductLineBase extends EntityBase implements IProductLine
      * 建立人
      */
     createman?: any;
+    /**
+     * 排序
+     */
+    order?: any;
 
     /**
      * 重置实体数据

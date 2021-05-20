@@ -9,6 +9,20 @@
       "modelref" : true,
       "id" : "MANAGE"
     }
+  }, {
+    "dataAccessAction" : "ADDLINE",
+    "name" : "Product_Manage_AddLine",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ADDLINE"
+    }
+  }, {
+    "dataAccessAction" : "GROUPMANAGE",
+    "name" : "Product_Manage_GroupManage",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "GROUPMANAGE"
+    }
   } ],
   "roleTag" : "Product_Manage_CO",
   "userDRAction" : "READ",

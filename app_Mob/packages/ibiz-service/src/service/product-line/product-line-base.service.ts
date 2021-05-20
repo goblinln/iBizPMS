@@ -4,7 +4,7 @@ import { IProductLine, ProductLine } from '../../entities';
 import keys from '../../entities/product-line/product-line-keys';
 
 /**
- * 产品线服务对象基类
+ * 产品线（废弃）服务对象基类
  *
  * @export
  * @class ProductLineBaseService

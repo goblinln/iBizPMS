@@ -2902,16 +2902,10 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__PROP_CHILD_BUT",
+      "name" : "CHILDPLAN",
       "getPSDEOPPriv" : {
-        "logicName" : "计划子计划",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROP_CHILD_BUT"
-        },
-        "mapSysUniResCode" : "PROP_CHILD_BUT",
-        "name" : "SRFUR__PROP_CHILD_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "子计划",
+        "name" : "CHILDPLAN"
       }
     } ],
     "stateValue" : "chlid",
@@ -3135,13 +3129,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "Remove",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/Remove.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "GetOldPlanName",
       "getPSDEAction" : {
         "modelref" : true,
@@ -3276,16 +3263,10 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__PROP_DELETE_BUT",
+      "name" : "DELETE",
       "getPSDEOPPriv" : {
-        "logicName" : "计划删除",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROP_DELETE_BUT"
-        },
-        "mapSysUniResCode" : "PROP_DELETE_BUT",
-        "name" : "SRFUR__PROP_DELETE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "删除",
+        "name" : "DELETE"
       }
     } ],
     "stateValue" : "parent",
@@ -3312,6 +3293,12 @@
     "autoDEFieldMap" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "添加项目",
+    "name" : "ADDPROJ"
+  }, {
+    "logicName" : "子计划",
+    "name" : "CHILDPLAN"
+  }, {
     "logicName" : "Product_Create",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
@@ -3335,6 +3322,12 @@
     },
     "name" : "DELETE",
     "id" : "ZTProduct__DELETE"
+  }, {
+    "logicName" : "关联Bug",
+    "name" : "LINKBUG"
+  }, {
+    "logicName" : "关联需求",
+    "name" : "LINKSTORY"
   }, {
     "logicName" : "管理",
     "name" : "MANAGE"
@@ -3549,7 +3542,7 @@
       "codeName" : "ParentName"
     },
     "pickupDEFName" : "PARENT",
-    "removeActionType" : -1,
+    "removeActionType" : 3,
     "removeOrder" : 0
   } ],
   "getMinorPSDERs" : [ {
@@ -3623,7 +3616,7 @@
       "codeName" : "ParentName"
     },
     "pickupDEFName" : "PARENT",
-    "removeActionType" : -1,
+    "removeActionType" : 3,
     "removeOrder" : 0
   } ],
   "name" : "ZT_PRODUCTPLAN",

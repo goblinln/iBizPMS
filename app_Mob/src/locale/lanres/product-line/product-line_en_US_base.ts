@@ -7,13 +7,14 @@ export default {
     updateDate:  commonLogic.appcommonhandle("更新时间",null),
     createDate:  commonLogic.appcommonhandle("建立时间",null),
     createMan:  commonLogic.appcommonhandle("建立人",null),
+    order:  commonLogic.appcommonhandle("排序",null),
   },
 	views: {
 		mobpickupview: {
-			caption: commonLogic.appcommonhandle("产品线",null),
+			caption: commonLogic.appcommonhandle("产品线（废弃）",null),
 		},
 		mobpickupmdview: {
-			caption: commonLogic.appcommonhandle("产品线",null),
+			caption: commonLogic.appcommonhandle("产品线（废弃）",null),
 		},
 	},
 };

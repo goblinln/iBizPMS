@@ -85,7 +85,7 @@ export class AppPickupGridViewBase extends PickupGridViewBase {
             this.renderToolBar(),
             this.renderQuickGroup(),
             this.renderQuickSearch(),
-            this.viewInstance?.viewStyle == "STYLE2" ? this.renderSearchForm() : null,
+            !(this.viewInstance?.viewStyle == "DEFAULT" && this.viewInstance?.enableQuickSearch) ? this.renderSearchForm() : null,
             this.renderMainContent(),
             this.renderBottomMessage()
         ]);

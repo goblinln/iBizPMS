@@ -1052,7 +1052,7 @@
     "dename":"File",
     "delogicname":"附件",
     "sysmoudle":{"id":"ZENTAO","name":"基础管理模块"},
-    "dedataset":[{"id":"Default" , "name":"DEFAULT"},{"id":"DocLibFile" , "name":"文件库查询"},{"id":"ProductDocLibFile" , "name":"文件库查询"},{"id":"Type" , "name":"动态(根据类型过滤)"},{"id":"TypeNotBySrfparentkey" , "name":"查询附件"}],
+    "dedataset":[{"id":"Default" , "name":"DEFAULT"},{"id":"DocLibFile" , "name":"文件库查询"},{"id":"MySubmitFile" , "name":"我提交的文件（权限）"},{"id":"ProductDocLibFile" , "name":"文件库查询"},{"id":"Type" , "name":"动态(根据类型过滤)"},{"id":"TypeNotBySrfparentkey" , "name":"查询附件"}],
     "deaction":[{"id":"Create" , "name":"Create" , "type":"BUILTIN" },{"id":"Update" , "name":"Update" , "type":"BUILTIN" },{"id":"Remove" , "name":"Remove" , "type":"BUILTIN" },{"id":"Get" , "name":"Get" , "type":"BUILTIN" },{"id":"GetDraft" , "name":"GetDraft" , "type":"BUILTIN" },{"id":"CheckKey" , "name":"CheckKey" , "type":"BUILTIN" },{"id":"Ibzdownload" , "name":"下载" , "type":"USERCUSTOM" },{"id":"Preview" , "name":"预览" , "type":"USERCUSTOM" },{"id":"Save" , "name":"Save" , "type":"BUILTIN" },{"id":"UpdateObjectID" , "name":"更新文件" , "type":"USERCUSTOM" },{"id":"UpdateObjectIDForPmsEe" , "name":"保存附件" , "type":"USERCUSTOM" }],
     "datascope":[{"id":"all","name":"全部数据"}, {"id":"curorg","name":"当前单位"},{"id":"porg","name":"上级单位"},{"id":"sorg","name":"下级单位"} , {"id":"curorgdept","name":"当前部门"},{"id":"porgdept","name":"上级部门"},{"id":"sorgdept","name":"下级部门"} ]
     }

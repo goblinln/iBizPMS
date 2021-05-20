@@ -290,7 +290,8 @@ export class SearchFormControlBase extends EditFormControlBase {
      * @return {*}
      * @memberof SearchFormControlBase
      */
-    public removeHistoryItem(item: any) {
+    public removeHistoryItem(event: any, item: any) {
+        event.stopPropagation();
         if (!(item && item.name && item.value)) {
             return;
         }
@@ -300,7 +301,15 @@ export class SearchFormControlBase extends EditFormControlBase {
         if (index !== -1) {
             this.historyItems.splice(index, 1);
             if (this.selectItem == item.value) {
-                this.selectItem = this.historyItems.length > 0 ? this.historyItems[0].value : null;
+                if (this.historyItems.length > 0) {
+                    this.selectItem = this.historyItems[0].value;
+                    this.data = JSON.parse(JSON.stringify(this.historyItems[0].data));
+                } else {
+                    this.selectItem = null;
+                    Object.keys(this.data).forEach((key: any) => {
+                        this.data[key] = null;
+                    })
+                }
             }
             let param: any = {};
             Object.assign(param, {

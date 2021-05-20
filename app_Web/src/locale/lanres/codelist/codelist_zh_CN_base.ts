@@ -1015,6 +1015,7 @@ function getLocaleResourceBase(){
           "submit": commonLogic.appcommonhandle("提交",null),
           "read": commonLogic.appcommonhandle("已读了",null),
           "remind": commonLogic.appcommonhandle("提醒",null),
+          "unlinkedfrombranch": commonLogic.appcommonhandle("移除关联平台",null),
           "empty": commonLogic.appcommonhandle("",null),
       },
       'User__gender': {

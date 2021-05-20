@@ -33,7 +33,6 @@ export class MobPortalViewBase extends ViewBase {
      * @memberof MobPortalViewBase
      */
     public async viewModelInit() {
-        this.viewInstance = (this.staticProps.modeldata) as IPSAppPortalView
         await super.viewModelInit();
         this.dashboardInstance = ModelTool.findPSControlByName('dashboard',this.viewInstance.getPSControls()) as IPSDEDashboard;     
     }
