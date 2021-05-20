@@ -1942,7 +1942,8 @@
       }
     } ],
     "roleTag" : "Action_MANAGE_ALL",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "defaultMode" : true
   }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_READ_ALL.json",
@@ -1956,7 +1957,8 @@
       }
     } ],
     "roleTag" : "Action_READ_ALL",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "defaultMode" : true
   } ],
   "codeName" : "Action",
   "dEType" : 1,

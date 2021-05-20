@@ -68,4 +68,28 @@ export interface IIBZProStoryModule extends IEntityBase {
      * id
      */
     parent?: any;
+    /**
+     * 部门标识
+     */
+    mdeptid?: any;
+    /**
+     * 归属部门名
+     */
+    mdeptname?: any;
+    /**
+     * 组织机构标识
+     */
+    orgid?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
 }

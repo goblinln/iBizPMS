@@ -142,18 +142,6 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
         return this.condCache.get('openQuery');
     }
 
-    protected getPOQueryCond() {
-        if (!this.condCache.has('pOQuery')) {
-            const strCond: any[] = ['AND', ['EQ', 'PO',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
-            if (!isNil(strCond) && !isEmpty(strCond)) {
-                const cond = new PSDEDQCondEngine();
-                cond.parse(strCond);
-                this.condCache.set('pOQuery', cond);
-            }
-        }
-        return this.condCache.get('pOQuery');
-    }
-
     protected getProductManagerQueryCond() {
         if (!this.condCache.has('productManagerQuery')) {
             const strCond: any[] = ['AND', ['AND', ['EQ', 'ACL','private'], ['OR', ['EQ', 'UPDATEBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'CREATEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'QD',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'RD',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'PO',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]]]];
@@ -172,30 +160,6 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
 
     protected getProductTeamCond() {
         return this.condCache.get('productTeam');
-    }
-
-    protected getQDQueryCond() {
-        if (!this.condCache.has('qDQuery')) {
-            const strCond: any[] = ['AND', ['EQ', 'QD',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
-            if (!isNil(strCond) && !isEmpty(strCond)) {
-                const cond = new PSDEDQCondEngine();
-                cond.parse(strCond);
-                this.condCache.set('qDQuery', cond);
-            }
-        }
-        return this.condCache.get('qDQuery');
-    }
-
-    protected getRDQueryCond() {
-        if (!this.condCache.has('rDQuery')) {
-            const strCond: any[] = ['AND', ['EQ', 'RD',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
-            if (!isNil(strCond) && !isEmpty(strCond)) {
-                const cond = new PSDEDQCondEngine();
-                cond.parse(strCond);
-                this.condCache.set('rDQuery', cond);
-            }
-        }
-        return this.condCache.get('rDQuery');
     }
 
     protected getSimpleCond() {

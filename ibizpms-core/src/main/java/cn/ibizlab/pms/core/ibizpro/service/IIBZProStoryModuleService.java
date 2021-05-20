@@ -65,6 +65,8 @@ public interface IIBZProStoryModuleService extends IService<IBZProStoryModule> {
      */
     boolean execute(String sql, Map param);
 
+    List<IBZProStoryModule> getIbzprostorymoduleByIds(List<Long> ids);
+    List<IBZProStoryModule> getIbzprostorymoduleByEntities(List<IBZProStoryModule> entities);
 }
 
 

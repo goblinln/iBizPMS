@@ -210,6 +210,7 @@ export class AppmenuBase extends AppMenuControlBase {
                 <div class="parent-treeitem">
                     <span class='icon'><i class="el-icon-s-claim" size="14"/></span>
                     <span class='text' title={node.data.caption}>{node.data.caption}</span>
+                    <i class={{ 'el-icon-arrow-right': true, 'expanded': node.expanded }} size="14"/>
                 </div>
             )
         } else {

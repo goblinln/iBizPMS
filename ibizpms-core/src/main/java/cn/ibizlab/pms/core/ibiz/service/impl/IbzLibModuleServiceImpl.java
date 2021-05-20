@@ -355,6 +355,27 @@ public class IbzLibModuleServiceImpl extends ServiceImpl<IbzLibModuleMapper, Ibz
         return true;
     }
 
+    @Override
+    public List<IbzLibModule> getIbzlibmoduleByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<IbzLibModule> getIbzlibmoduleByEntities(List<IbzLibModule> entities) {
+        List ids =new ArrayList();
+        for(IbzLibModule entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public IIbzLibModuleService getProxyService() {

@@ -76,6 +76,15 @@ export class AppPopover {
     private isAutoClose: boolean = true;
 
     /**
+     * 是否在点击空白区域时自动关闭
+     *
+     * @private
+     * @type {boolean}
+     * @memberof AppPopover
+     */
+    private isMoveOutClose: boolean = false;
+
+    /**
      * 当前显示层级
      *
      * @private
@@ -137,6 +146,9 @@ export class AppPopover {
             methods: {
                 click(e: MouseEvent) {
                     e.stopPropagation();
+                },
+                mouseout(e: MouseEvent) {
+                    (this.$apppopover as any).mouseOutDestory()
                 }
             },
             render(h: CreateElement) {
@@ -149,7 +161,7 @@ export class AppPopover {
                 if(Util.isNumber(this.height)){
                     customStyle.height = this.height + 'px';
                 }
-                return <div v-show="self.showPopper" style={customStyle} class={`app-popover app-popper${customClass ? ' ' + customClass : ''}`} on-click={this.click}>{(self.showPopper && content) ? content(h) : null}</div>;
+                return <div v-show="self.showPopper" style={customStyle} class={`app-popover app-popper${customClass ? ' ' + customClass : ''}`} on-click={this.click} on-mouseleave={this.mouseout}>{(self.showPopper && content) ? content(h) : null}</div>;
             }
         });
     }
@@ -243,7 +255,7 @@ export class AppPopover {
      * @param {any[]} [modifiers=[]]
      * @memberof AppPopover
      */
-     public openPopover2(event: any, content?: (h: CreateElement) => any, position: Placement = 'left-end', isAutoClose: boolean = true, width?: number, height?: number, customClass?: any, modifiers: any[] = []): void {
+     public openPopover2(event: any, content?: (h: CreateElement) => any, position: Placement = 'left-end', isAutoClose: boolean = true, isMoveOutClose: boolean = false, width?: number, height?: number, customClass?: any, modifiers: any[] = []): void {
         // 阻止事件冒泡
         event.stopPropagation();
         const element: Element = event.toElement || event.srcElement;
@@ -258,6 +270,7 @@ export class AppPopover {
         }
         // 是否可自动关闭
         this.isAutoClose = isAutoClose;
+        this.isMoveOutClose = isMoveOutClose;
         // 更新vue实例内容
         this.showPopper = true;
         Object.assign(this.vueExample.$data, { content, width: width, height: height, zIndex: this.zIndex });
@@ -285,6 +298,17 @@ export class AppPopover {
             }
             this.showPopper = false;
             this.vueExample.$forceUpdate();
+        }
+    }
+
+    /**
+     * 销毁popper(当鼠标移出时)
+     *
+     * @memberof AppPopover
+     */
+    public mouseOutDestory(): void {
+        if (this.showPopper && this.isMoveOutClose) {
+            this.popperDestroy();
         }
     }
 

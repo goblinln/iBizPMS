@@ -34,11 +34,7 @@ public interface ProjectMapper extends BaseMapper<Project> {
     List<Project> selectMyProject(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     List<Project> selectOpenByQuery(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     List<Project> selectOpenQuery(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
-    List<Project> selectPMQuery(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
-    List<Project> selectPOQuery(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     List<Project> selectProjectTeam(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
-    List<Project> selectQDQuery(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
-    List<Project> selectRDQuery(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     List<Project> selectStoryProject(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     List<Project> selectUnDoneProject(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     List<Project> selectView(@Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
@@ -58,11 +54,7 @@ public interface ProjectMapper extends BaseMapper<Project> {
     Page<Project> searchMyProject(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchOpenByQuery(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchOpenQuery(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
-    Page<Project> searchPMQuery(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
-    Page<Project> searchPOQuery(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchProjectTeam(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
-    Page<Project> searchQDQuery(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
-    Page<Project> searchRDQuery(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchStoryProject(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     Page<Project> searchUnDoneProject(IPage page, @Param("srf") ProjectSearchContext context, @Param("ew") Wrapper<Project> wrapper);
     @Override

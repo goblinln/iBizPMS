@@ -79,6 +79,8 @@ public interface IProjectModuleService extends IService<ProjectModule> {
      */
     boolean execute(String sql, Map param);
 
+    List<ProjectModule> getProjectmoduleByIds(List<Long> ids);
+    List<ProjectModule> getProjectmoduleByEntities(List<ProjectModule> entities);
 }
 
 

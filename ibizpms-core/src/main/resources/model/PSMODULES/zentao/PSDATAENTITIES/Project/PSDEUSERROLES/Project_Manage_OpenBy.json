@@ -1,6 +1,6 @@
 {
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Manage_OpenBy.json",
-  "name" : "项目管理（当前创建者）（默认角色）",
+  "name" : "项目管理（创建者或者更新者）（跟随角色）",
   "getPSDEDataSet" : {
     "modelref" : true,
     "id" : "OpenByQuery"
@@ -14,6 +14,6 @@
     }
   } ],
   "roleTag" : "Project_Manage_OpenBy",
-  "userDRAction" : "READ",
-  "defaultMode" : true
+  "userCat" : "CAT1",
+  "userDRAction" : "READ"
 }

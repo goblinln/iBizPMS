@@ -22,6 +22,12 @@ function getLocaleResourceBase(){
 		'doclibname': commonLogic.appcommonhandle("所属文档库",null),
 		'parent': commonLogic.appcommonhandle("id",null),
 		'root': commonLogic.appcommonhandle("编号",null),
+		'mdeptid': commonLogic.appcommonhandle("部门标识",null),
+		'orgid': commonLogic.appcommonhandle("组织机构标识",null),
+		'mdeptname': commonLogic.appcommonhandle("归属部门名",null),
+		'createby': commonLogic.appcommonhandle("由谁创建",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 		views: {
 			'gridview': {

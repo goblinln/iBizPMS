@@ -333,8 +333,8 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
 
     @Override
     public void log(int nLogLevel, String strCat, String strInfo, Object objData) {
-        IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
         try {
+            IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
             SysLog sysLog = new SysLog();
             sysLog.setLoglevel(nLogLevel);
             sysLog.setCat(strCat);
@@ -349,8 +349,8 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
 
     @Override
     public void logAudit(int nLogLevel, String strCat, String strInfo, String strPersonId, String strAddress, Object objData) {
-        IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
         try {
+            IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
             SysAudit sysAudit = new SysAudit();
             sysAudit.setLoglevel(nLogLevel);
             sysAudit.setCat(strCat);
@@ -366,8 +366,8 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
 
     @Override
     public void logEvent(int nLogLevel, String strCat, String strInfo, Object objData) {
-        IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
         try {
+            IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
             SysEvent sysEvent = new SysEvent();
             sysEvent.setLoglevel(nLogLevel);
             sysEvent.setCat(strCat);
@@ -382,8 +382,8 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
 
     @Override
     public void logPO(int nLogLevel, String strCat, String strInfo, String strDEName, String strAction, long nTime, Object objData) {
-        IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
         try {
+            IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
             SysPO sysPO = new SysPO();
             sysPO.setLoglevel(nLogLevel);
             sysPO.setCat(strCat);

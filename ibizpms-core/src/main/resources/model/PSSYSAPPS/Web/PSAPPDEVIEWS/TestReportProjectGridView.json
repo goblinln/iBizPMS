@@ -25,17 +25,6 @@
     } ]
   } ],
   "getPSAppViewLogics" : [ {
-    "eventArg" : "deuiaction3_createproject",
-    "eventNames" : "CLICK",
-    "logicTrigger" : "CTRLEVENT",
-    "logicType" : "APPVIEWUIACTION",
-    "name" : "toolbar_deuiaction3_createproject_click",
-    "getPSAppViewUIAction" : {
-      "modelref" : true,
-      "id" : "toolbar_deuiaction3_createproject"
-    },
-    "getPSViewCtrlName" : "toolbar"
-  }, {
     "eventArg" : "deuiaction2",
     "eventNames" : "CLICK",
     "logicTrigger" : "CTRLEVENT",
@@ -171,18 +160,6 @@
     }
   } ],
   "getPSAppViewUIActions" : [ {
-    "name" : "toolbar_deuiaction3_createproject",
-    "getPSUIAction" : {
-      "getPSAppDataEntity" : {
-        "modelref" : true,
-        "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
-      },
-      "modelref" : true,
-      "id" : "CreateProject@TestReport"
-    },
-    "uIActionTarget" : "NONE",
-    "xDataControlName" : "grid"
-  }, {
     "name" : "toolbar_deuiaction2",
     "getPSUIAction" : {
       "modelref" : true,
@@ -218,52 +195,6 @@
       "id" : "TOOLBAR"
     },
     "getPSDEToolbarItems" : [ {
-      "caption" : "新建",
-      "groupExtractMode" : "ITEM",
-      "itemType" : "DEUIACTION",
-      "name" : "deuiaction3_createproject",
-      "noPrivDisplayMode" : 2,
-      "getPSAppViewUIAction" : {
-        "modelref" : true,
-        "id" : "toolbar_deuiaction3_createproject"
-      },
-      "getPSUIAction" : {
-        "actionTarget" : "NONE",
-        "caption" : "新建",
-        "codeName" : "CreateProject",
-        "getFrontPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportEditView_Project.json",
-          "viewType" : "DEEDITVIEW"
-        },
-        "frontProcessType" : "WIZARD",
-        "fullCodeName" : "TestReport_CreateProject",
-        "name" : "新建（项目报告）",
-        "getPSAppDataEntity" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
-        },
-        "getPSNavigateParams" : [ {
-          "key" : "id",
-          "name" : "id",
-          "value" : "0",
-          "rawValue" : true
-        }, {
-          "key" : "testreport",
-          "name" : "testreport",
-          "value" : "0",
-          "rawValue" : true
-        } ],
-        "timeout" : 60000,
-        "uIActionMode" : "FRONT",
-        "uIActionTag" : "CreateProject",
-        "uIActionType" : "DEUIACTION",
-        "id" : "CreateProject@TestReport"
-      },
-      "tooltip" : "新建",
-      "showCaption" : true,
-      "showIcon" : true
-    }, {
       "caption" : "刷新",
       "groupExtractMode" : "ITEM",
       "itemType" : "DEUIACTION",

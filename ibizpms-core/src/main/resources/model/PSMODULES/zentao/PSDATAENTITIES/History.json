@@ -761,7 +761,7 @@
   "getAllPSDEUserRoles" : [ {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/History/PSDEUSERROLES/History_Maintain.json",
-    "name" : "操作历史维护",
+    "name" : "操作历史维护（默认角色）",
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "DELETE",
       "name" : "History_Maintain_DELETE",
@@ -796,7 +796,7 @@
   }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/History/PSDEUSERROLES/History_Read.json",
-    "name" : "操作历史查看",
+    "name" : "操作历史查看（默认角色）",
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "READ",
       "name" : "History_Read_READ",
@@ -806,7 +806,8 @@
       }
     } ],
     "roleTag" : "History_Read",
-    "userDRAction" : "READ"
+    "userDRAction" : "READ",
+    "defaultMode" : true
   } ],
   "codeName" : "History",
   "dEType" : 1,

@@ -18,6 +18,12 @@ function getLocaleResourceBase(){
 		'parentname': commonLogic.appcommonhandle("上级模块",null),
 		'root': commonLogic.appcommonhandle("编号",null),
 		'parent': commonLogic.appcommonhandle("id",null),
+		'orgid': commonLogic.appcommonhandle("组织机构标识",null),
+		'mdeptid': commonLogic.appcommonhandle("部门标识",null),
+		'createby': commonLogic.appcommonhandle("由谁创建",null),
+		'mdeptname': commonLogic.appcommonhandle("归属部门名",null),
+		'updateby': commonLogic.appcommonhandle("由谁更新",null),
+		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 	},
 		views: {
 			'gridview': {

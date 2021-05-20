@@ -262,6 +262,7 @@ export class AppGridBase extends GridControlBase {
             'column-key': name,
             label: caption,
             align: 'center',
+            'class-name':'default-ua-column'
         };
         renderParams['width'] = 68;
         renderParams['fixed'] = 'right';
@@ -271,10 +272,12 @@ export class AppGridBase extends GridControlBase {
             scopedSlots: {
                 default: (scope: any) => {
                     let offset = require('@popperjs/core/lib/modifiers/offset').default;
-                    return <i class='el-icon-more ua-column-icon' on-click={(e: any) => {
-                        let _offset = Object.assign({ options: { offset: [2, -41] } }, offset);
-                        (this.$apppopover as any).openPopover2(e, () => this.renderActionButtons(column, scope), 'left', true, undefined, 48, "view-default ua-column-popover", [_offset]);
-                    }}></i>;
+                    return <div class="ua-column-container" on-mouseenter={(e: any) => {
+                        let _offset = Object.assign({ options: { offset: [0, -68] } }, offset);
+                        (this.$apppopover as any).openPopover2(e, () => this.renderActionButtons(column, scope), 'left', true, true, undefined, 48, "view-default ua-column-popover", [_offset]);
+                    }}>
+                        <i class='el-icon-more ua-column-icon' ></i>
+                    </div>
                 },
             },
         });

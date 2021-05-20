@@ -29,12 +29,9 @@ public interface ProductMapper extends BaseMapper<Product> {
     List<Product> selectDeveloperQuery(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     List<Product> selectESBulk(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     List<Product> selectOpenQuery(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
-    List<Product> selectPOQuery(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     List<Product> selectProductManagerQuery(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     List<Product> selectProductPM(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     List<Product> selectProductTeam(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
-    List<Product> selectQDQuery(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
-    List<Product> selectRDQuery(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     List<Product> selectSimple(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     List<Product> selectStoryCurProject(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     List<Product> selectView(@Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
@@ -49,12 +46,9 @@ public interface ProductMapper extends BaseMapper<Product> {
     Page<Product> searchDeveloperQuery(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchESBulk(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchOpenQuery(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
-    Page<Product> searchPOQuery(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchProductManagerQuery(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchProductPM(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchProductTeam(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
-    Page<Product> searchQDQuery(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
-    Page<Product> searchRDQuery(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     Page<Product> searchStoryCurProject(IPage page, @Param("srf") ProductSearchContext context, @Param("ew") Wrapper<Product> wrapper);
     @Override
     Product selectById(Serializable id);

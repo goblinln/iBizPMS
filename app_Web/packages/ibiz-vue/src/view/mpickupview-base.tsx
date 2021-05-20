@@ -75,7 +75,7 @@ export class MPickUpViewBase extends MainViewBase {
           view: this,
           parentContainer: this.$parent,
           p2k: '0',
-          pickupviewPanel: (this.$refs[this.pickUpViewPanelInstance?.name] as any).ctrl,
+          pickupViewPanel: (this.$refs[this.pickUpViewPanelInstance?.name] as any).ctrl,
           keyPSDEField: this.appDeCodeName.toLowerCase(),
           majorPSDEField: this.appDeMajorFieldName.toLowerCase(),
         });

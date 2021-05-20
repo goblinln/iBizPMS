@@ -11,5 +11,6 @@
     }
   } ],
   "roleTag" : "Action_READ_ALL",
-  "userDRAction" : "READ"
+  "userDRAction" : "READ",
+  "defaultMode" : true
 }

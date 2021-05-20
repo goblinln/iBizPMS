@@ -17,7 +17,7 @@
 
 
     <!--输出实体[ZT_ACTION]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_action-36-2">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_action-38-2">
         <createTable tableName="zt_action">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -766,7 +766,7 @@
 
 
     <!--输出实体[IBZ_DOCLIBMODULE]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-ibz_doclibmodule-12-21">
+    <changeSet author="a_A_23e8aa361" id="tab-ibz_doclibmodule-18-21">
         <createTable tableName="zt_module">
                 <column name="GRADE" remarks="" type="INT">
                 </column>
@@ -794,6 +794,18 @@
                 <column name="PARENT" remarks="" type="BIGINT">
                 </column>
                 <column name="ROOT" remarks="" type="BIGINT">
+                </column>
+                <column name="MDEPTID" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="ORGID" remarks="" type="VARCHAR(60)">
+                </column>
+                <column name="MDEPTNAME" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="CREATEBY" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="UPDATEBY" remarks="" type="VARCHAR(100)">
+                </column>
+                <column name="ORGNAME" remarks="" type="VARCHAR(100)">
                 </column>
         </createTable>
     </changeSet>
@@ -1060,7 +1072,7 @@
 
 
     <!--输出实体[ZT_HISTORY]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_history-17-31">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_history-19-31">
         <createTable tableName="zt_history">
                 <column name="ORGNAME" remarks="" type="VARCHAR(100)">
                 </column>
@@ -2991,7 +3003,7 @@
 
 
     <!--输出实体[ZT_TESTREPORT]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_testreport-74-119">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_testreport-75-119">
         <createTable tableName="zt_testreport">
                 <column name="DEPTNAME" remarks="" type="VARCHAR(100)">
                 </column>

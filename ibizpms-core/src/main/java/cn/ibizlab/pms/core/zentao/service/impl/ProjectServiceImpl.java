@@ -638,20 +638,8 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
     public List<Project> selectOpenQuery(ProjectSearchContext context){
         return baseMapper.selectOpenQuery(context, context.getSelectCond());
     }
-    public List<Project> selectPMQuery(ProjectSearchContext context){
-        return baseMapper.selectPMQuery(context, context.getSelectCond());
-    }
-    public List<Project> selectPOQuery(ProjectSearchContext context){
-        return baseMapper.selectPOQuery(context, context.getSelectCond());
-    }
     public List<Project> selectProjectTeam(ProjectSearchContext context){
         return baseMapper.selectProjectTeam(context, context.getSelectCond());
-    }
-    public List<Project> selectQDQuery(ProjectSearchContext context){
-        return baseMapper.selectQDQuery(context, context.getSelectCond());
-    }
-    public List<Project> selectRDQuery(ProjectSearchContext context){
-        return baseMapper.selectRDQuery(context, context.getSelectCond());
     }
     public List<Project> selectStoryProject(ProjectSearchContext context){
         return baseMapper.selectStoryProject(context, context.getSelectCond());
@@ -737,7 +725,7 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
     }
 
     /**
-     * 查询集合 研发人员（启用权限）
+     * 查询集合 参与者（启用权限）
      */
     @Override
     public Page<Project> searchDeveloperQuery(ProjectSearchContext context) {
@@ -782,7 +770,7 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
     }
 
     /**
-     * 查询集合 当前创建者（启用权限）
+     * 查询集合 创建者或更新者（启用权限）
      */
     @Override
     public Page<Project> searchOpenByQuery(ProjectSearchContext context) {
@@ -800,47 +788,11 @@ public class ProjectServiceImpl extends ServiceImpl<ProjectMapper, Project> impl
     }
 
     /**
-     * 查询集合 项目负责人（启用权限）
-     */
-    @Override
-    public Page<Project> searchPMQuery(ProjectSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Project> pages=baseMapper.searchPMQuery(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Project>(pages.getRecords(), context.getPageable(), pages.getTotal());
-    }
-
-    /**
-     * 查询集合 产品负责人（启用权限）
-     */
-    @Override
-    public Page<Project> searchPOQuery(ProjectSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Project> pages=baseMapper.searchPOQuery(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Project>(pages.getRecords(), context.getPageable(), pages.getTotal());
-    }
-
-    /**
      * 查询集合 项目团队
      */
     @Override
     public Page<Project> searchProjectTeam(ProjectSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Project> pages=baseMapper.searchProjectTeam(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Project>(pages.getRecords(), context.getPageable(), pages.getTotal());
-    }
-
-    /**
-     * 查询集合 测试负责人（启用权限）
-     */
-    @Override
-    public Page<Project> searchQDQuery(ProjectSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Project> pages=baseMapper.searchQDQuery(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Project>(pages.getRecords(), context.getPageable(), pages.getTotal());
-    }
-
-    /**
-     * 查询集合 发布负责人（启用权限）
-     */
-    @Override
-    public Page<Project> searchRDQuery(ProjectSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Project> pages=baseMapper.searchRDQuery(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Project>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

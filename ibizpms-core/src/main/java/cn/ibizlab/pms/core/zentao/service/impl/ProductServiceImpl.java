@@ -444,9 +444,6 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     public List<Product> selectOpenQuery(ProductSearchContext context){
         return baseMapper.selectOpenQuery(context, context.getSelectCond());
     }
-    public List<Product> selectPOQuery(ProductSearchContext context){
-        return baseMapper.selectPOQuery(context, context.getSelectCond());
-    }
     public List<Product> selectProductManagerQuery(ProductSearchContext context){
         return baseMapper.selectProductManagerQuery(context, context.getSelectCond());
     }
@@ -455,12 +452,6 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     }
     public List<Product> selectProductTeam(ProductSearchContext context){
         return baseMapper.selectProductTeam(context, context.getSelectCond());
-    }
-    public List<Product> selectQDQuery(ProductSearchContext context){
-        return baseMapper.selectQDQuery(context, context.getSelectCond());
-    }
-    public List<Product> selectRDQuery(ProductSearchContext context){
-        return baseMapper.selectRDQuery(context, context.getSelectCond());
     }
     public List<Product> selectSimple(ProductSearchContext context){
         return baseMapper.selectSimple(context, context.getSelectCond());
@@ -537,7 +528,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     }
 
     /**
-     * 查询集合 研发人员（启用权限）
+     * 查询集合 参与者（启用权限）
      */
     @Override
     public Page<Product> searchDeveloperQuery(ProductSearchContext context) {
@@ -564,16 +555,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     }
 
     /**
-     * 查询集合 产品负责人（启用权限）
-     */
-    @Override
-    public Page<Product> searchPOQuery(ProductSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchPOQuery(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
-    }
-
-    /**
-     * 查询集合 产品经理（启用权限）
+     * 查询集合 创建者或更新者（启用权限）
      */
     @Override
     public Page<Product> searchProductManagerQuery(ProductSearchContext context) {
@@ -596,24 +578,6 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     @Override
     public Page<Product> searchProductTeam(ProductSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchProductTeam(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
-    }
-
-    /**
-     * 查询集合 测试负责人（启用权限）
-     */
-    @Override
-    public Page<Product> searchQDQuery(ProductSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchQDQuery(context.getPages(),context,context.getSelectCond());
-        return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
-    }
-
-    /**
-     * 查询集合 发布负责人（启用权限）
-     */
-    @Override
-    public Page<Product> searchRDQuery(ProductSearchContext context) {
-        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Product> pages=baseMapper.searchRDQuery(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Product>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

@@ -59,12 +59,9 @@ public interface IProductService extends IService<Product> {
     List<Product> selectDeveloperQuery(ProductSearchContext context);
     List<Product> selectESBulk(ProductSearchContext context);
     List<Product> selectOpenQuery(ProductSearchContext context);
-    List<Product> selectPOQuery(ProductSearchContext context);
     List<Product> selectProductManagerQuery(ProductSearchContext context);
     List<Product> selectProductPM(ProductSearchContext context);
     List<Product> selectProductTeam(ProductSearchContext context);
-    List<Product> selectQDQuery(ProductSearchContext context);
-    List<Product> selectRDQuery(ProductSearchContext context);
     List<Product> selectSimple(ProductSearchContext context);
     List<Product> selectStoryCurProject(ProductSearchContext context);
     List<Product> selectView(ProductSearchContext context);
@@ -79,12 +76,9 @@ public interface IProductService extends IService<Product> {
     Page<Product> searchDeveloperQuery(ProductSearchContext context);
     Page<Product> searchESBulk(ProductSearchContext context);
     Page<Product> searchOpenQuery(ProductSearchContext context);
-    Page<Product> searchPOQuery(ProductSearchContext context);
     Page<Product> searchProductManagerQuery(ProductSearchContext context);
     Page<Product> searchProductPM(ProductSearchContext context);
     Page<Product> searchProductTeam(ProductSearchContext context);
-    Page<Product> searchQDQuery(ProductSearchContext context);
-    Page<Product> searchRDQuery(ProductSearchContext context);
     Page<Product> searchStoryCurProject(ProductSearchContext context);
     List<Product> selectByLine(Long id);
     void removeByLine(Long id);

@@ -358,6 +358,27 @@ public class IBZProStoryModuleServiceImpl extends ServiceImpl<IBZProStoryModuleM
         return true;
     }
 
+    @Override
+    public List<IBZProStoryModule> getIbzprostorymoduleByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<IBZProStoryModule> getIbzprostorymoduleByEntities(List<IBZProStoryModule> entities) {
+        List ids =new ArrayList();
+        for(IBZProStoryModule entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public IIBZProStoryModuleService getProxyService() {

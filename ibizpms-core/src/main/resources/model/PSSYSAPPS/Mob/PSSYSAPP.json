@@ -24878,39 +24878,12 @@
         },
         "builtinMethod" : false
       }, {
-        "codeName" : "FetchPOQuery",
-        "methodType" : "FETCH",
-        "name" : "POQuery",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "POQuery"
-        },
-        "builtinMethod" : false
-      }, {
         "codeName" : "FetchProductManagerQuery",
         "methodType" : "FETCH",
         "name" : "ProductManagerQuery",
         "getPSDEDataSet" : {
           "modelref" : true,
           "id" : "ProductManagerQuery"
-        },
-        "builtinMethod" : false
-      }, {
-        "codeName" : "FetchQDQuery",
-        "methodType" : "FETCH",
-        "name" : "QDQuery",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "QDQuery"
-        },
-        "builtinMethod" : false
-      }, {
-        "codeName" : "FetchRDQuery",
-        "methodType" : "FETCH",
-        "name" : "RDQuery",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "RDQuery"
         },
         "builtinMethod" : false
       } ],
@@ -25840,39 +25813,12 @@
         },
         "builtinMethod" : false
       }, {
-        "codeName" : "FetchPOQuery",
-        "methodType" : "FETCH",
-        "name" : "POQuery",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "POQuery"
-        },
-        "builtinMethod" : false
-      }, {
         "codeName" : "FetchProductManagerQuery",
         "methodType" : "FETCH",
         "name" : "ProductManagerQuery",
         "getPSDEDataSet" : {
           "modelref" : true,
           "id" : "ProductManagerQuery"
-        },
-        "builtinMethod" : false
-      }, {
-        "codeName" : "FetchQDQuery",
-        "methodType" : "FETCH",
-        "name" : "QDQuery",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "QDQuery"
-        },
-        "builtinMethod" : false
-      }, {
-        "codeName" : "FetchRDQuery",
-        "methodType" : "FETCH",
-        "name" : "RDQuery",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "RDQuery"
         },
         "builtinMethod" : false
       }, {
@@ -27317,42 +27263,6 @@
         "getPSDEDataSet" : {
           "modelref" : true,
           "id" : "OpenQuery"
-        },
-        "builtinMethod" : false
-      }, {
-        "codeName" : "FetchPMQuery",
-        "methodType" : "FETCH",
-        "name" : "PMQuery",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "PMQuery"
-        },
-        "builtinMethod" : false
-      }, {
-        "codeName" : "FetchPOQuery",
-        "methodType" : "FETCH",
-        "name" : "POQuery",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "POQuery"
-        },
-        "builtinMethod" : false
-      }, {
-        "codeName" : "FetchQDQuery",
-        "methodType" : "FETCH",
-        "name" : "QDQuery",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "QDQuery"
-        },
-        "builtinMethod" : false
-      }, {
-        "codeName" : "FetchRDQuery",
-        "methodType" : "FETCH",
-        "name" : "RDQuery",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "RDQuery"
         },
         "builtinMethod" : false
       } ],
@@ -29202,88 +29112,12 @@
         "tempDataMode" : 2,
         "builtinMethod" : false
       }, {
-        "codeName" : "FetchPMQuery",
-        "methodType" : "FETCH",
-        "name" : "PMQuery",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "PMQuery"
-        },
-        "builtinMethod" : false
-      }, {
-        "codeName" : "FetchTempPMQuery",
-        "methodType" : "FETCHTEMP",
-        "name" : "PMQuery",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "PMQuery"
-        },
-        "tempDataMode" : 2,
-        "builtinMethod" : false
-      }, {
-        "codeName" : "FetchPOQuery",
-        "methodType" : "FETCH",
-        "name" : "POQuery",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "POQuery"
-        },
-        "builtinMethod" : false
-      }, {
-        "codeName" : "FetchTempPOQuery",
-        "methodType" : "FETCHTEMP",
-        "name" : "POQuery",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "POQuery"
-        },
-        "tempDataMode" : 2,
-        "builtinMethod" : false
-      }, {
         "codeName" : "FetchTempProjectTeam",
         "methodType" : "FETCHTEMP",
         "name" : "ProjectTeam",
         "getPSDEDataSet" : {
           "modelref" : true,
           "id" : "ProjectTeam"
-        },
-        "tempDataMode" : 2,
-        "builtinMethod" : false
-      }, {
-        "codeName" : "FetchQDQuery",
-        "methodType" : "FETCH",
-        "name" : "QDQuery",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "QDQuery"
-        },
-        "builtinMethod" : false
-      }, {
-        "codeName" : "FetchTempQDQuery",
-        "methodType" : "FETCHTEMP",
-        "name" : "QDQuery",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "QDQuery"
-        },
-        "tempDataMode" : 2,
-        "builtinMethod" : false
-      }, {
-        "codeName" : "FetchRDQuery",
-        "methodType" : "FETCH",
-        "name" : "RDQuery",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "RDQuery"
-        },
-        "builtinMethod" : false
-      }, {
-        "codeName" : "FetchTempRDQuery",
-        "methodType" : "FETCHTEMP",
-        "name" : "RDQuery",
-        "getPSDEDataSet" : {
-          "modelref" : true,
-          "id" : "RDQuery"
         },
         "tempDataMode" : 2,
         "builtinMethod" : false

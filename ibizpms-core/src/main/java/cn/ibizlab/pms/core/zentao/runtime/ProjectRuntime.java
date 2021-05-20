@@ -157,16 +157,8 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             return projectService.searchOpenByQuery(searchContext);    
         if (iPSDEDataSet.getName().equals("OpenQuery"))
             return projectService.searchOpenQuery(searchContext);    
-        if (iPSDEDataSet.getName().equals("PMQuery"))
-            return projectService.searchPMQuery(searchContext);    
-        if (iPSDEDataSet.getName().equals("POQuery"))
-            return projectService.searchPOQuery(searchContext);    
         if (iPSDEDataSet.getName().equals("ProjectTeam"))
             return projectService.searchProjectTeam(searchContext);    
-        if (iPSDEDataSet.getName().equals("QDQuery"))
-            return projectService.searchQDQuery(searchContext);    
-        if (iPSDEDataSet.getName().equals("RDQuery"))
-            return projectService.searchRDQuery(searchContext);    
         if (iPSDEDataSet.getName().equals("StoryProject"))
             return projectService.searchStoryProject(searchContext);    
         if (iPSDEDataSet.getName().equals("UnDoneProject"))
@@ -207,16 +199,8 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
             return projectService.selectOpenByQuery(searchContext);
         if (iPSDataQuery.getName().equals("OpenQuery"))
             return projectService.selectOpenQuery(searchContext);
-        if (iPSDataQuery.getName().equals("PMQuery"))
-            return projectService.selectPMQuery(searchContext);
-        if (iPSDataQuery.getName().equals("POQuery"))
-            return projectService.selectPOQuery(searchContext);
         if (iPSDataQuery.getName().equals("ProjectTeam"))
             return projectService.selectProjectTeam(searchContext);
-        if (iPSDataQuery.getName().equals("QDQuery"))
-            return projectService.selectQDQuery(searchContext);
-        if (iPSDataQuery.getName().equals("RDQuery"))
-            return projectService.selectRDQuery(searchContext);
         if (iPSDataQuery.getName().equals("StoryProject"))
             return projectService.selectStoryProject(searchContext);
         if (iPSDataQuery.getName().equals("UnDoneProject"))
@@ -528,20 +512,8 @@ public class ProjectRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntity
         else if (action.equals("searchOpenQuery")) {
             return aroundDataSet("OpenQuery", point);
         }
-        else if (action.equals("searchPMQuery")) {
-            return aroundDataSet("PMQuery", point);
-        }
-        else if (action.equals("searchPOQuery")) {
-            return aroundDataSet("POQuery", point);
-        }
         else if (action.equals("searchProjectTeam")) {
             return aroundDataSet("ProjectTeam", point);
-        }
-        else if (action.equals("searchQDQuery")) {
-            return aroundDataSet("QDQuery", point);
-        }
-        else if (action.equals("searchRDQuery")) {
-            return aroundDataSet("RDQuery", point);
         }
         else if (action.equals("searchStoryProject")) {
             return aroundDataSet("StoryProject", point);

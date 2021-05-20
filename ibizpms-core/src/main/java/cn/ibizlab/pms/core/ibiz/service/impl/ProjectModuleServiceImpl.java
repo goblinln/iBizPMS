@@ -455,6 +455,27 @@ public class ProjectModuleServiceImpl extends ServiceImpl<ProjectModuleMapper, P
         return true;
     }
 
+    @Override
+    public List<ProjectModule> getProjectmoduleByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<ProjectModule> getProjectmoduleByEntities(List<ProjectModule> entities) {
+        List ids =new ArrayList();
+        for(ProjectModule entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public IProjectModuleService getProxyService() {

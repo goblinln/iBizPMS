@@ -33,7 +33,7 @@ export class MPickupViewEngine extends ViewEngine {
      * @memberof MPickupViewEngine
      */
     public init(options: any): void {
-        this.pickupViewPanel = options.pickupviewpanel;
+        this.pickupViewPanel = options.pickupViewPanel;
         if (options.view.viewdata && options.view.viewdata.selectedData && Array.isArray(options.view.viewdata.selectedData)) {
             options.view.viewSelections = [...options.view.viewdata.selectedData];
             delete options.view.viewdata.selectedData;

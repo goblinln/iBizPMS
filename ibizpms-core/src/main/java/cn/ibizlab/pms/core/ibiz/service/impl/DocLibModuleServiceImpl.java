@@ -533,6 +533,27 @@ public class DocLibModuleServiceImpl extends ServiceImpl<DocLibModuleMapper, Doc
         return true;
     }
 
+    @Override
+    public List<DocLibModule> getDoclibmoduleByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<DocLibModule> getDoclibmoduleByEntities(List<DocLibModule> entities) {
+        List ids =new ArrayList();
+        for(DocLibModule entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public IDocLibModuleService getProxyService() {

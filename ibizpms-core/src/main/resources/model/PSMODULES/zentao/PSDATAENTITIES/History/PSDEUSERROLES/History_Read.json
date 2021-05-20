@@ -1,7 +1,7 @@
 {
   "customCond" : "[ (1, '=', 1) ]",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/History/PSDEUSERROLES/History_Read.json",
-  "name" : "操作历史查看",
+  "name" : "操作历史查看（默认角色）",
   "getPSDEUserRoleOPPrivs" : [ {
     "dataAccessAction" : "READ",
     "name" : "History_Read_READ",
@@ -11,5 +11,6 @@
     }
   } ],
   "roleTag" : "History_Read",
-  "userDRAction" : "READ"
+  "userDRAction" : "READ",
+  "defaultMode" : true
 }

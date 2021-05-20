@@ -178,13 +178,6 @@
          )t1
      </select>
 
-    <!--数据集合[POQuery]-->
-	 <select id="searchPOQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext"  resultMap="ProductResultMap">
-         select t1.* from (
-                <include refid="POQuery" />
-         )t1
-     </select>
-
     <!--数据集合[ProductManagerQuery]-->
 	 <select id="searchProductManagerQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext"  resultMap="ProductResultMap">
          select t1.* from (
@@ -203,20 +196,6 @@
 	 <select id="searchProductTeam"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext"  resultMap="ProductResultMap">
          select t1.* from (
                 <include refid="ProductTeam" />
-         )t1
-     </select>
-
-    <!--数据集合[QDQuery]-->
-	 <select id="searchQDQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext"  resultMap="ProductResultMap">
-         select t1.* from (
-                <include refid="QDQuery" />
-         )t1
-     </select>
-
-    <!--数据集合[RDQuery]-->
-	 <select id="searchRDQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext"  resultMap="ProductResultMap">
-         select t1.* from (
-                <include refid="RDQuery" />
          )t1
      </select>
 
@@ -380,24 +359,6 @@
 		<include refid="OpenQuery" />
 	</select>
 
-    <!--数据查询[POQuery]-->
-    <sql id="POQuery" databaseId="mysql">
-		<![CDATA[ SELECT t1.`acl`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND `STATUS` = 'active' AND DELETED = '0' ) AS `activebugcnt`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='active' AND DELETED = '0' ) AS `activestorycnt`, (select count(1) from zt_build t where t.product = t1.id and t.deleted = '0' ) AS `buildcnt`, (select count(1) from zt_case t where t.product = t1.id and t.deleted = '0' ) AS `casecnt`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='changed' AND DELETED = '0' ) AS `changedstorycnt`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='closed' AND DELETED = '0' ) AS `closedstorycnt`, t1.`code`, t1.`createdby`, t1.`createddate`, t1.`createdversion`, t1.`createman`, t1.`deleted`, (select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0') AS `doccnt`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='draft' AND DELETED = '0') AS `draftstorycnt`, t1.`ibiz_id`, t1.`id`, '0' AS `istop`, t1.`line`, t11.`NAME` AS `linename`, t1.`mdeptid`, t1.`mdeptname`, t1.`name`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND `STATUS` <> 'closed' AND DELETED = '0' ) AS `notclosedbugcnt`, t1.`order`, t1.`order` AS `order1`, t1.`orgid`, t1.`orgname`, t1.`po`, t1.PO AS `popk`, t1.`productclass`, (SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`id` AND DELETED = '0' ) AS `productplancnt`, t1.`productsn`, t1.`qd`, t1.QD AS `qdpk`, t1.`rd`, t1.RD AS `rdpk`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND DELETED = '0' ) AS `relatedbugcnt`, (select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project  where t.product = t1.id and t2.deleted = '0' ) AS `relatedprojects`, (SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`id` AND DELETED = '0' ) AS `releasecnt`, t1.`status`, t1.`substatus`, t1.`supproreport`, t1.`type`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND `CONFIRMED` = 0 AND DELETED = '0' ) AS `unconfirmbugcnt`, t1.`updateby`, t1.`updatedate`, t1.`updateman` FROM `zt_product` t1  LEFT JOIN `zt_module` t11 ON t1.`line` = t11.`ID`   ]]>
-		<trim prefix="where" prefixOverrides="and">
-			<if test="true">
-                <![CDATA[ AND t1.deleted = '0' ]]>
-            </if>
-			<if test="true">
-                <![CDATA[ AND ( t1.`po` =  #{srf.sessioncontext.srfloginname} ) ]]>
-            </if>
-			<include refid="searchMode" />
-		</trim>
-    </sql>
-	
-	<select id="selectPOQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
-		<include refid="POQuery" />
-	</select>
-
     <!--数据查询[ProductManagerQuery]-->
     <sql id="ProductManagerQuery" databaseId="mysql">
 		<![CDATA[ SELECT t1.`acl`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND `STATUS` = 'active' AND DELETED = '0' ) AS `activebugcnt`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='active' AND DELETED = '0' ) AS `activestorycnt`, (select count(1) from zt_build t where t.product = t1.id and t.deleted = '0' ) AS `buildcnt`, (select count(1) from zt_case t where t.product = t1.id and t.deleted = '0' ) AS `casecnt`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='changed' AND DELETED = '0' ) AS `changedstorycnt`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='closed' AND DELETED = '0' ) AS `closedstorycnt`, t1.`code`, t1.`createdby`, t1.`createddate`, t1.`createdversion`, t1.`createman`, t1.`deleted`, (select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0') AS `doccnt`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='draft' AND DELETED = '0') AS `draftstorycnt`, t1.`ibiz_id`, t1.`id`, '0' AS `istop`, t1.`line`, t11.`NAME` AS `linename`, t1.`mdeptid`, t1.`mdeptname`, t1.`name`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND `STATUS` <> 'closed' AND DELETED = '0' ) AS `notclosedbugcnt`, t1.`order`, t1.`order` AS `order1`, t1.`orgid`, t1.`orgname`, t1.`po`, t1.PO AS `popk`, t1.`productclass`, (SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`id` AND DELETED = '0' ) AS `productplancnt`, t1.`productsn`, t1.`qd`, t1.QD AS `qdpk`, t1.`rd`, t1.RD AS `rdpk`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND DELETED = '0' ) AS `relatedbugcnt`, (select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project  where t.product = t1.id and t2.deleted = '0' ) AS `relatedprojects`, (SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`id` AND DELETED = '0' ) AS `releasecnt`, t1.`status`, t1.`substatus`, t1.`supproreport`, t1.`type`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND `CONFIRMED` = 0 AND DELETED = '0' ) AS `unconfirmbugcnt`, t1.`updateby`, t1.`updatedate`, t1.`updateman` FROM `zt_product` t1  LEFT JOIN `zt_module` t11 ON t1.`line` = t11.`ID`   ]]>
@@ -447,42 +408,6 @@
 	
 	<select id="selectProductTeam"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
 		<include refid="ProductTeam" />
-	</select>
-
-    <!--数据查询[QDQuery]-->
-    <sql id="QDQuery" databaseId="mysql">
-		<![CDATA[ SELECT t1.`acl`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND `STATUS` = 'active' AND DELETED = '0' ) AS `activebugcnt`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='active' AND DELETED = '0' ) AS `activestorycnt`, (select count(1) from zt_build t where t.product = t1.id and t.deleted = '0' ) AS `buildcnt`, (select count(1) from zt_case t where t.product = t1.id and t.deleted = '0' ) AS `casecnt`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='changed' AND DELETED = '0' ) AS `changedstorycnt`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='closed' AND DELETED = '0' ) AS `closedstorycnt`, t1.`code`, t1.`createdby`, t1.`createddate`, t1.`createdversion`, t1.`createman`, t1.`deleted`, (select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0') AS `doccnt`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='draft' AND DELETED = '0') AS `draftstorycnt`, t1.`ibiz_id`, t1.`id`, '0' AS `istop`, t1.`line`, t11.`NAME` AS `linename`, t1.`mdeptid`, t1.`mdeptname`, t1.`name`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND `STATUS` <> 'closed' AND DELETED = '0' ) AS `notclosedbugcnt`, t1.`order`, t1.`order` AS `order1`, t1.`orgid`, t1.`orgname`, t1.`po`, t1.PO AS `popk`, t1.`productclass`, (SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`id` AND DELETED = '0' ) AS `productplancnt`, t1.`productsn`, t1.`qd`, t1.QD AS `qdpk`, t1.`rd`, t1.RD AS `rdpk`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND DELETED = '0' ) AS `relatedbugcnt`, (select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project  where t.product = t1.id and t2.deleted = '0' ) AS `relatedprojects`, (SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`id` AND DELETED = '0' ) AS `releasecnt`, t1.`status`, t1.`substatus`, t1.`supproreport`, t1.`type`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND `CONFIRMED` = 0 AND DELETED = '0' ) AS `unconfirmbugcnt`, t1.`updateby`, t1.`updatedate`, t1.`updateman` FROM `zt_product` t1  LEFT JOIN `zt_module` t11 ON t1.`line` = t11.`ID`   ]]>
-		<trim prefix="where" prefixOverrides="and">
-			<if test="true">
-                <![CDATA[ AND t1.deleted = '0' ]]>
-            </if>
-			<if test="true">
-                <![CDATA[ AND ( t1.`qd` =  #{srf.sessioncontext.srfloginname} ) ]]>
-            </if>
-			<include refid="searchMode" />
-		</trim>
-    </sql>
-	
-	<select id="selectQDQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
-		<include refid="QDQuery" />
-	</select>
-
-    <!--数据查询[RDQuery]-->
-    <sql id="RDQuery" databaseId="mysql">
-		<![CDATA[ SELECT t1.`acl`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND `STATUS` = 'active' AND DELETED = '0' ) AS `activebugcnt`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='active' AND DELETED = '0' ) AS `activestorycnt`, (select count(1) from zt_build t where t.product = t1.id and t.deleted = '0' ) AS `buildcnt`, (select count(1) from zt_case t where t.product = t1.id and t.deleted = '0' ) AS `casecnt`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='changed' AND DELETED = '0' ) AS `changedstorycnt`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='closed' AND DELETED = '0' ) AS `closedstorycnt`, t1.`code`, t1.`createdby`, t1.`createddate`, t1.`createdversion`, t1.`createman`, t1.`deleted`, (select count(1) from zt_doc t where t.product = t1.id and t.deleted = '0') AS `doccnt`, (SELECT COUNT(1) FROM ZT_STORY WHERE PRODUCT = t1.`id` AND `STATUS`='draft' AND DELETED = '0') AS `draftstorycnt`, t1.`ibiz_id`, t1.`id`, '0' AS `istop`, t1.`line`, t11.`NAME` AS `linename`, t1.`mdeptid`, t1.`mdeptname`, t1.`name`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND `STATUS` <> 'closed' AND DELETED = '0' ) AS `notclosedbugcnt`, t1.`order`, t1.`order` AS `order1`, t1.`orgid`, t1.`orgname`, t1.`po`, t1.PO AS `popk`, t1.`productclass`, (SELECT COUNT(1) FROM ZT_PRODUCTPLAN WHERE PRODUCT= t1.`id` AND DELETED = '0' ) AS `productplancnt`, t1.`productsn`, t1.`qd`, t1.QD AS `qdpk`, t1.`rd`, t1.RD AS `rdpk`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND DELETED = '0' ) AS `relatedbugcnt`, (select count(1) from zt_projectproduct t inner join zt_project t2 on t2.id = t.project  where t.product = t1.id and t2.deleted = '0' ) AS `relatedprojects`, (SELECT COUNT(1) FROM ZT_RELEASE WHERE PRODUCT= t1.`id` AND DELETED = '0' ) AS `releasecnt`, t1.`status`, t1.`substatus`, t1.`supproreport`, t1.`type`, (SELECT COUNT(1) FROM ZT_BUG WHERE PRODUCT = t1.`id` AND `CONFIRMED` = 0 AND DELETED = '0' ) AS `unconfirmbugcnt`, t1.`updateby`, t1.`updatedate`, t1.`updateman` FROM `zt_product` t1  LEFT JOIN `zt_module` t11 ON t1.`line` = t11.`ID`   ]]>
-		<trim prefix="where" prefixOverrides="and">
-			<if test="true">
-                <![CDATA[ AND t1.deleted = '0' ]]>
-            </if>
-			<if test="true">
-                <![CDATA[ AND ( t1.`rd` =  #{srf.sessioncontext.srfloginname} ) ]]>
-            </if>
-			<include refid="searchMode" />
-		</trim>
-    </sql>
-	
-	<select id="selectRDQuery"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProductSearchContext" resultMap="ProductResultMap">
-		<include refid="RDQuery" />
 	</select>
 
     <!--数据查询[Simple]-->

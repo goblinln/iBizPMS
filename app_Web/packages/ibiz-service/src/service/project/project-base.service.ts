@@ -139,7 +139,7 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
 
     protected getOpenByQueryCond() {
         if (!this.condCache.has('openByQuery')) {
-            const strCond: any[] = ['AND', ['EQ', 'OPENEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
+            const strCond: any[] = ['AND', ['EQ', 'ACL','private'], ['OR', ['EQ', 'OPENEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'UPDATEBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'PM',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'RD',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'PO',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'QD',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]]];
             if (!isNil(strCond) && !isEmpty(strCond)) {
                 const cond = new PSDEDQCondEngine();
                 cond.parse(strCond);
@@ -161,56 +161,8 @@ export class ProjectBaseService extends EntityBaseService<IProject> {
         return this.condCache.get('openQuery');
     }
 
-    protected getPMQueryCond() {
-        if (!this.condCache.has('pMQuery')) {
-            const strCond: any[] = ['AND', ['EQ', 'PM',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
-            if (!isNil(strCond) && !isEmpty(strCond)) {
-                const cond = new PSDEDQCondEngine();
-                cond.parse(strCond);
-                this.condCache.set('pMQuery', cond);
-            }
-        }
-        return this.condCache.get('pMQuery');
-    }
-
-    protected getPOQueryCond() {
-        if (!this.condCache.has('pOQuery')) {
-            const strCond: any[] = ['AND', ['EQ', 'PO',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
-            if (!isNil(strCond) && !isEmpty(strCond)) {
-                const cond = new PSDEDQCondEngine();
-                cond.parse(strCond);
-                this.condCache.set('pOQuery', cond);
-            }
-        }
-        return this.condCache.get('pOQuery');
-    }
-
     protected getProjectTeamCond() {
         return this.condCache.get('projectTeam');
-    }
-
-    protected getQDQueryCond() {
-        if (!this.condCache.has('qDQuery')) {
-            const strCond: any[] = ['AND', ['EQ', 'QD',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
-            if (!isNil(strCond) && !isEmpty(strCond)) {
-                const cond = new PSDEDQCondEngine();
-                cond.parse(strCond);
-                this.condCache.set('qDQuery', cond);
-            }
-        }
-        return this.condCache.get('qDQuery');
-    }
-
-    protected getRDQueryCond() {
-        if (!this.condCache.has('rDQuery')) {
-            const strCond: any[] = ['AND', ['EQ', 'RD',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];
-            if (!isNil(strCond) && !isEmpty(strCond)) {
-                const cond = new PSDEDQCondEngine();
-                cond.parse(strCond);
-                this.condCache.set('rDQuery', cond);
-            }
-        }
-        return this.condCache.get('rDQuery');
     }
 
     protected getStoryProjectCond() {

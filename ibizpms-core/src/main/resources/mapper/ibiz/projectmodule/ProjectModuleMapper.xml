@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`BRANCH`, t1.`COLLECTOR`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`NAME` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1  LEFT JOIN `zt_project` t11 ON t1.`ROOT` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
+        <![CDATA[ SELECT t1.`BRANCH`, t1.`COLLECTOR`, t1.`CREATEBY`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`MDEPTID`, t1.`MDEPTNAME`, t1.`NAME`, t1.`ORDER`, t1.`ORGID`, t1.`ORGNAME`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`NAME` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE`, t1.`UPDATEBY` FROM `zt_module` t1  LEFT JOIN `zt_project` t11 ON t1.`ROOT` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
     </sql>
 
 	
@@ -168,7 +168,7 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`NAME` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1  LEFT JOIN `zt_project` t11 ON t1.`ROOT` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`CREATEBY`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`MDEPTID`, t1.`MDEPTNAME`, t1.`NAME`, t1.`ORDER`, t1.`ORGID`, t1.`ORGNAME`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`NAME` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE`, t1.`UPDATEBY` FROM `zt_module` t1  LEFT JOIN `zt_project` t11 ON t1.`ROOT` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>
@@ -207,7 +207,7 @@
 
     <!--数据查询[Root]-->
     <sql id="Root" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`NAME` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1  LEFT JOIN `zt_project` t11 ON t1.`ROOT` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`CREATEBY`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`MDEPTID`, t1.`MDEPTNAME`, t1.`NAME`, t1.`ORDER`, t1.`ORGID`, t1.`ORGNAME`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`NAME` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE`, t1.`UPDATEBY` FROM `zt_module` t1  LEFT JOIN `zt_project` t11 ON t1.`ROOT` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>
@@ -225,7 +225,7 @@
 
     <!--数据查询[Root_NoBranch]-->
     <sql id="Root_NoBranch" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`NAME` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1  LEFT JOIN `zt_project` t11 ON t1.`ROOT` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`CREATEBY`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`MDEPTID`, t1.`MDEPTNAME`, t1.`NAME`, t1.`ORDER`, t1.`ORGID`, t1.`ORGNAME`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`NAME` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE`, t1.`UPDATEBY` FROM `zt_module` t1  LEFT JOIN `zt_project` t11 ON t1.`ROOT` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>
@@ -243,7 +243,7 @@
 
     <!--数据查询[Root_Task]-->
     <sql id="Root_Task" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`NAME` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1  LEFT JOIN `zt_project` t11 ON t1.`ROOT` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`CREATEBY`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`MDEPTID`, t1.`MDEPTNAME`, t1.`NAME`, t1.`ORDER`, t1.`ORGID`, t1.`ORGNAME`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`NAME` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE`, t1.`UPDATEBY` FROM `zt_module` t1  LEFT JOIN `zt_project` t11 ON t1.`ROOT` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>
@@ -276,7 +276,7 @@
 
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, t1.`COLLECTOR`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`NAME`, t1.`ORDER`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`NAME` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE` FROM `zt_module` t1  LEFT JOIN `zt_project` t11 ON t1.`ROOT` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`COLLECTOR`, t1.`CREATEBY`, t1.`DELETED`, t1.`GRADE`, t1.`ID`, (CASE WHEN EXISTS (SELECT 1 FROM ZT_MODULE WHERE  PARENT = t1.`ID`) THEN FALSE ELSE TRUE  END ) AS `ISLEAF`, t1.`MDEPTID`, t1.`MDEPTNAME`, t1.`NAME`, t1.`ORDER`, t1.`ORGID`, t1.`ORGNAME`, t1.`OWNER`, t1.`PARENT`, t21.`NAME` AS `PARENTNAME`, t1.`PATH`, t1.`ROOT`, t11.`NAME` AS `ROOTNAME`, t1.`SHORT`, t1.`TYPE`, t1.`UPDATEBY` FROM `zt_module` t1  LEFT JOIN `zt_project` t11 ON t1.`ROOT` = t11.`ID`  LEFT JOIN `zt_module` t21 ON t1.`PARENT` = t21.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND t1.DELETED = '0' ]]>

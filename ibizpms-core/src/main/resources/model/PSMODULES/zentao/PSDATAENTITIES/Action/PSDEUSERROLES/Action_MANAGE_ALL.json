@@ -39,5 +39,6 @@
     }
   } ],
   "roleTag" : "Action_MANAGE_ALL",
-  "userDRAction" : "READ"
+  "userDRAction" : "READ",
+  "defaultMode" : true
 }

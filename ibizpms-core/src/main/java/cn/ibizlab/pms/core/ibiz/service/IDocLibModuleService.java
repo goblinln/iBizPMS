@@ -91,6 +91,8 @@ public interface IDocLibModuleService extends IService<DocLibModule> {
      */
     boolean execute(String sql, Map param);
 
+    List<DocLibModule> getDoclibmoduleByIds(List<Long> ids);
+    List<DocLibModule> getDoclibmoduleByEntities(List<DocLibModule> entities);
 }
 
 

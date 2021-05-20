@@ -1,7 +1,10 @@
 {
-  "customCond" : "['&',('CREATEDBY','=',#{srf.sessioncontext.srfloginname}),('ACL','=',')private')]",
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Manage_CreateBy.json",
-  "name" : "产品管理（当前创建者）",
+  "name" : "产品管理（创建者或更新者）（跟随角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "ProductManagerQuery"
+  },
   "getPSDEUserRoleOPPrivs" : [ {
     "dataAccessAction" : "MANAGE",
     "name" : "Product_Manage_CreateBy_MANAGE",
@@ -11,5 +14,6 @@
     }
   } ],
   "roleTag" : "Product_Manage_CreateBy",
+  "userCat" : "CAT1",
   "userDRAction" : "READ"
 }

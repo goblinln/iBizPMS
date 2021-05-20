@@ -93,6 +93,30 @@ export abstract class IbzLibModuleBase extends EntityBase implements IIbzLibModu
      * id
      */
     parent?: any;
+    /**
+     * 组织机构标识
+     */
+    orgid?: any;
+    /**
+     * 部门标识
+     */
+    mdeptid?: any;
+    /**
+     * 由谁创建
+     */
+    createby?: any;
+    /**
+     * 归属部门名
+     */
+    mdeptname?: any;
+    /**
+     * 由谁更新
+     */
+    updateby?: any;
+    /**
+     * 归属组织名
+     */
+    orgname?: any;
 
     /**
      * 重置实体数据

@@ -440,6 +440,27 @@ public class TestModuleServiceImpl extends ServiceImpl<TestModuleMapper, TestMod
         return true;
     }
 
+    @Override
+    public List<TestModule> getTestmoduleByIds(List<Long> ids) {
+         return this.listByIds(ids);
+    }
+
+    @Override
+    public List<TestModule> getTestmoduleByEntities(List<TestModule> entities) {
+        List ids =new ArrayList();
+        for(TestModule entity : entities){
+            Serializable id=entity.getId();
+            if(!ObjectUtils.isEmpty(id)){
+                ids.add(id);
+            }
+        }
+        if(ids.size()>0) {
+            return this.listByIds(ids);
+        }
+        else {
+            return entities;
+        }
+    }
 
 
     public ITestModuleService getProxyService() {

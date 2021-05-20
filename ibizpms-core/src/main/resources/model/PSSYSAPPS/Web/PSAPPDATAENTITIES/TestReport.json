@@ -939,38 +939,6 @@
     "uIActionType" : "DEUIACTION",
     "reloadData" : true,
     "id" : "ProjectEdits@TestReport"
-  }, {
-    "actionTarget" : "NONE",
-    "caption" : "新建",
-    "codeName" : "CreateProject",
-    "getFrontPSAppView" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestReportEditView_Project.json",
-      "viewType" : "DEEDITVIEW"
-    },
-    "frontProcessType" : "WIZARD",
-    "fullCodeName" : "TestReport_CreateProject",
-    "name" : "新建（项目报告）",
-    "getPSAppDataEntity" : {
-      "modelref" : true,
-      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/TestReport.json"
-    },
-    "getPSNavigateParams" : [ {
-      "key" : "id",
-      "name" : "id",
-      "value" : "0",
-      "rawValue" : true
-    }, {
-      "key" : "testreport",
-      "name" : "testreport",
-      "value" : "0",
-      "rawValue" : true
-    } ],
-    "timeout" : 60000,
-    "uIActionMode" : "FRONT",
-    "uIActionTag" : "CreateProject",
-    "uIActionType" : "DEUIACTION",
-    "id" : "CreateProject@TestReport"
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "Project_Create",

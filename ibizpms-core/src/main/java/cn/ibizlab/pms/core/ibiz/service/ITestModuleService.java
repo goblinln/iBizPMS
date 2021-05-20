@@ -77,6 +77,8 @@ public interface ITestModuleService extends IService<TestModule> {
      */
     boolean execute(String sql, Map param);
 
+    List<TestModule> getTestmoduleByIds(List<Long> ids);
+    List<TestModule> getTestmoduleByEntities(List<TestModule> entities);
 }
 
 

@@ -90,11 +90,7 @@ public interface IProjectService extends IService<Project> {
     List<Project> selectMyProject(ProjectSearchContext context);
     List<Project> selectOpenByQuery(ProjectSearchContext context);
     List<Project> selectOpenQuery(ProjectSearchContext context);
-    List<Project> selectPMQuery(ProjectSearchContext context);
-    List<Project> selectPOQuery(ProjectSearchContext context);
     List<Project> selectProjectTeam(ProjectSearchContext context);
-    List<Project> selectQDQuery(ProjectSearchContext context);
-    List<Project> selectRDQuery(ProjectSearchContext context);
     List<Project> selectStoryProject(ProjectSearchContext context);
     List<Project> selectUnDoneProject(ProjectSearchContext context);
     List<Project> selectView(ProjectSearchContext context);
@@ -114,11 +110,7 @@ public interface IProjectService extends IService<Project> {
     Page<Project> searchMyProject(ProjectSearchContext context);
     Page<Project> searchOpenByQuery(ProjectSearchContext context);
     Page<Project> searchOpenQuery(ProjectSearchContext context);
-    Page<Project> searchPMQuery(ProjectSearchContext context);
-    Page<Project> searchPOQuery(ProjectSearchContext context);
     Page<Project> searchProjectTeam(ProjectSearchContext context);
-    Page<Project> searchQDQuery(ProjectSearchContext context);
-    Page<Project> searchRDQuery(ProjectSearchContext context);
     Page<Project> searchStoryProject(ProjectSearchContext context);
     Page<Project> searchUnDoneProject(ProjectSearchContext context);
     List<Project> selectByParent(Long id);

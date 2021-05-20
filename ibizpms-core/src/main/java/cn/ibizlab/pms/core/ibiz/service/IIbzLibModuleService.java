@@ -65,6 +65,8 @@ public interface IIbzLibModuleService extends IService<IbzLibModule> {
      */
     boolean execute(String sql, Map param);
 
+    List<IbzLibModule> getIbzlibmoduleByIds(List<Long> ids);
+    List<IbzLibModule> getIbzlibmoduleByEntities(List<IbzLibModule> entities);
 }
 
 

@@ -13,4 +13,10 @@ export default [
     'productname',
     'root',
     'parent',
+    'mdeptid',
+    'mdeptname',
+    'orgid',
+    'createby',
+    'orgname',
+    'updateby',
 ];

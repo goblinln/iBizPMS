@@ -384,17 +384,7 @@ function getLocaleResourceBase(){
 				tip: commonLogic.appcommonhandle("Save And Close Window",null),
 			},
 		},
-		editview_projecttoolbar_toolbar: {
-			'deuiaction1': {
-				caption: commonLogic.appcommonhandle("Save And Close",null),
-				tip: commonLogic.appcommonhandle("Save And Close Window",null),
-			},
-		},
 		projectgridviewtoolbar_toolbar: {
-			'deuiaction3_createproject': {
-				caption: commonLogic.appcommonhandle("新建",null),
-				tip: commonLogic.appcommonhandle("新建",null),
-			},
 			'deuiaction2': {
 				caption: commonLogic.appcommonhandle("刷新",null),
 				tip: commonLogic.appcommonhandle("刷新",null),
@@ -436,6 +426,12 @@ function getLocaleResourceBase(){
 			'deuiaction4': {
 				caption: commonLogic.appcommonhandle("Filter",null),
 				tip: commonLogic.appcommonhandle("Filter",null),
+			},
+		},
+		editview_projecttoolbar_toolbar: {
+			'deuiaction1': {
+				caption: commonLogic.appcommonhandle("Save And Close",null),
+				tip: commonLogic.appcommonhandle("Save And Close Window",null),
 			},
 		},
 	};
