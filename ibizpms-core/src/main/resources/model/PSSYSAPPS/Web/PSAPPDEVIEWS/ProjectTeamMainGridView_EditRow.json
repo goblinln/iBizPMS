@@ -167,7 +167,6 @@
       "getPSUIAction" : {
         "caption" : "保存行",
         "codeName" : "SaveRow",
-        "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
         "fullCodeName" : "SaveRow",
         "name" : "表格界面_保存行",
         "getPSSysImage" : {

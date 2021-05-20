@@ -107,7 +107,6 @@
         },
         "caption" : "保存并关闭",
         "codeName" : "SaveAndExit",
-        "dataAccessAction" : "SRFUR__UNIVERSALSAVE",
         "fullCodeName" : "SaveAndExit",
         "name" : "编辑界面_保存并退出操作",
         "getPSSysImage" : {

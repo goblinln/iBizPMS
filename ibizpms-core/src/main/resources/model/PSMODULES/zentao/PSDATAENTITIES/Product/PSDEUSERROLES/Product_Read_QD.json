@@ -1,6 +1,6 @@
 {
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_QD.json",
-  "name" : "产品查看（测试负责人）",
+  "name" : "产品查看（测试负责人）（默认角色）",
   "getPSDEDataSet" : {
     "modelref" : true,
     "id" : "QDQuery"

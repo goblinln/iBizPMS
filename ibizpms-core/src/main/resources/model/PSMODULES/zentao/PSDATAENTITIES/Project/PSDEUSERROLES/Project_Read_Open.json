@@ -1,6 +1,6 @@
 {
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Read_Open.json",
-  "name" : "项目查看（公开项目）",
+  "name" : "项目查看（公开项目）（默认角色）",
   "getPSDEDataSet" : {
     "modelref" : true,
     "id" : "OpenQuery"

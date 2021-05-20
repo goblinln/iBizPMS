@@ -1,6 +1,6 @@
 {
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_DEV.json",
-  "name" : "产品查看（成员）",
+  "name" : "产品查看（成员）（默认角色）",
   "getPSDEDataSet" : {
     "modelref" : true,
     "id" : "DeveloperQuery"
