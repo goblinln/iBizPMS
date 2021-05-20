@@ -225,6 +225,7 @@ public class DocLibResource {
                 .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取产品文档库", tags = {"文档库" } ,notes = "获取产品文档库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchbyproductnotfiles")
 	public ResponseEntity<List<DocLibDTO>> fetchbyproductnotfiles(@RequestBody DocLibSearchContext context) {
@@ -237,6 +238,7 @@ public class DocLibResource {
                 .body(list);
 	}
 
+    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询产品文档库", tags = {"文档库" } ,notes = "查询产品文档库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchbyproductnotfiles")
 	public ResponseEntity<Page<DocLibDTO>> searchByProductNotFiles(@RequestBody DocLibSearchContext context) {
@@ -267,6 +269,7 @@ public class DocLibResource {
                 .body(new PageImpl(doclibMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目文件库", tags = {"文档库" } ,notes = "获取项目文件库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/fetchbyprojectnotfiles")
 	public ResponseEntity<List<DocLibDTO>> fetchbyprojectnotfiles(@RequestBody DocLibSearchContext context) {
@@ -279,6 +282,7 @@ public class DocLibResource {
                 .body(list);
 	}
 
+    @PreAuthorize("@DocLibRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询项目文件库", tags = {"文档库" } ,notes = "查询项目文件库")
     @RequestMapping(method= RequestMethod.POST , value="/doclibs/searchbyprojectnotfiles")
 	public ResponseEntity<Page<DocLibDTO>> searchByProjectNotFiles(@RequestBody DocLibSearchContext context) {
