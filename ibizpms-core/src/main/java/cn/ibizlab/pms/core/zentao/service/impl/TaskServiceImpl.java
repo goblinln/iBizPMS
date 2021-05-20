@@ -859,11 +859,6 @@ public class TaskServiceImpl extends ServiceImpl<TaskMapper, Task> implements IT
         return baseMapper.selectByStory(id);
     }
     @Override
-    public List<Task> selectByStory(Collection<Long> ids) {
-        return this.list(new QueryWrapper<Task>().in("id",ids));
-    }
-
-    @Override
     public void removeByStory(Long id) {
         this.remove(new QueryWrapper<Task>().eq("story",id));
     }

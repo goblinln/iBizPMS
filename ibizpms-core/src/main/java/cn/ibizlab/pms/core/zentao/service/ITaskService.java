@@ -201,7 +201,6 @@ public interface ITaskService extends IService<Task> {
     List<Task> selectByProject(Long id);
     void removeByProject(Long id);
     List<Task> selectByStory(Long id);
-    List<Task> selectByStory(Collection<Long> ids);
     void removeByStory(Long id);
     List<Task> selectByParent(Long id);
     void removeByParent(Collection<Long> ids);

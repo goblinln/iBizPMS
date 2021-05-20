@@ -167,14 +167,8 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
     @Transactional
     public boolean remove(Long key) {
         if(!storyRuntime.isRtmodel()){
-        if(!ObjectUtils.isEmpty(bugService.selectByStory(key)))
-            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[Bug]数据，无法删除!","","");
-        if(!ObjectUtils.isEmpty(caseService.selectByStory(key)))
-            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[Case]数据，无法删除!","","");
             storyspecService.removeByStory(key) ;
             storystageService.removeByStory(key) ;
-        if(!ObjectUtils.isEmpty(taskService.selectByStory(key)))
-            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[Task]数据，无法删除!","","");
         }
         boolean result = removeById(key);
         return result ;
@@ -186,12 +180,6 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
         if(storyRuntime.isRtmodel()){
             idList.forEach(id->getProxyService().remove(id));
         }else{
-        if(!ObjectUtils.isEmpty(bugService.selectByStory(idList)))
-            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[Bug]数据，无法删除!","","");
-        if(!ObjectUtils.isEmpty(caseService.selectByStory(idList)))
-            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[Case]数据，无法删除!","","");
-        if(!ObjectUtils.isEmpty(taskService.selectByStory(idList)))
-            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[Task]数据，无法删除!","","");
         removeByIds(idList);
         }
         

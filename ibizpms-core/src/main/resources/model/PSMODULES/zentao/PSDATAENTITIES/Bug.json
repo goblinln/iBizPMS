@@ -9443,9 +9443,8 @@
       "codeName" : "Storyname"
     },
     "pickupDEFName" : "STORY",
-    "removeActionType" : 3,
+    "removeActionType" : -1,
     "removeOrder" : 0,
-    "removeRejectMsg" : "该需求已经关联Bug，不能删除！",
     "enableExtRestrict" : true,
     "enablePDEREQ" : true
   }, {
