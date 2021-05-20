@@ -33,7 +33,7 @@ export class PickupViewEngine extends ViewEngine {
      * @memberof PickupViewEngine
      */
     public init(options: any): void {
-        this.pickupViewPanel = options.pickupviewpanel;
+        this.pickupViewPanel = options.pickupViewPanel;
         super.init(options);
     }
 

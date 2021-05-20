@@ -156,7 +156,7 @@ export class ProductBaseService extends EntityBaseService<IProduct> {
 
     protected getProductManagerQueryCond() {
         if (!this.condCache.has('productManagerQuery')) {
-            const strCond: any[] = ['AND', ['AND', ['EQ', 'ACL','private'], ['EQ', 'CREATEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]]];
+            const strCond: any[] = ['AND', ['AND', ['EQ', 'ACL','private'], ['OR', ['EQ', 'UPDATEBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'CREATEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'QD',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'RD',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'PO',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]]]];
             if (!isNil(strCond) && !isEmpty(strCond)) {
                 const cond = new PSDEDQCondEngine();
                 cond.parse(strCond);

@@ -406,7 +406,7 @@
                 <![CDATA[ AND t1.deleted = '0' ]]>
             </if>
 			<if test="true">
-                <![CDATA[ AND ( ( t1.`acl` = 'private'  AND  t1.`createdby` =  #{srf.sessioncontext.srfloginname} ) ) ]]>
+                <![CDATA[ AND ( ( t1.`acl` = 'private'  AND  ( t1.`updateby` =  #{srf.sessioncontext.srfloginname}  OR  t1.`createdby` =  #{srf.sessioncontext.srfloginname}  OR  t1.`qd` =  #{srf.sessioncontext.srfloginname}  OR  t1.`rd` =  #{srf.sessioncontext.srfloginname}  OR  t1.`po` =  #{srf.sessioncontext.srfloginname} ) ) ) ]]>
             </if>
 			<include refid="searchMode" />
 		</trim>

@@ -84,7 +84,7 @@ export class AppPickUpViewPanelBase extends PickUpViewPanelControlBase {
      * @memberof AppPickUpViewPanelBase
      */
     public render() {
-        if (!this.controlIsLoaded) {
+        if (!this.controlIsLoaded || !this.inited) {
             return null;
         }
         const targetViewParam = {

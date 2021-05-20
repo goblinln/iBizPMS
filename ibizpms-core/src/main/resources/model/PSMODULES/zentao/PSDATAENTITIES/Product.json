@@ -244,7 +244,8 @@
     } ],
     "codeName" : "DeveloperQuery",
     "logicName" : "研发人员（启用权限）",
-    "name" : "DeveloperQuery"
+    "name" : "DeveloperQuery",
+    "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -270,7 +271,8 @@
     } ],
     "codeName" : "OpenQuery",
     "logicName" : "公开查询（启用权限）",
-    "name" : "OpenQuery"
+    "name" : "OpenQuery",
+    "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -287,7 +289,8 @@
     } ],
     "codeName" : "POQuery",
     "logicName" : "产品负责人（启用权限）",
-    "name" : "POQuery"
+    "name" : "POQuery",
+    "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -298,13 +301,14 @@
         "name" : "查询条件"
       }, {
         "condType" : "CUSTOM",
-        "customCond" : "( ( t1.`acl` = 'private'  AND  t1.`createdby` =  ${srfsessioncontext('srfloginname','{\"defname\":\"CREATEDBY\",\"dename\":\"ZT_PRODUCT\"}')} ) )",
+        "customCond" : "( ( t1.`acl` = 'private'  AND  ( t1.`updateby` =  ${srfsessioncontext('srfloginname','{\"defname\":\"UPDATEBY\",\"dename\":\"ZT_PRODUCT\"}')}  OR  t1.`createdby` =  ${srfsessioncontext('srfloginname','{\"defname\":\"CREATEDBY\",\"dename\":\"ZT_PRODUCT\"}')}  OR  t1.`qd` =  ${srfsessioncontext('srfloginname','{\"defname\":\"QD\",\"dename\":\"ZT_PRODUCT\"}')}  OR  t1.`rd` =  ${srfsessioncontext('srfloginname','{\"defname\":\"RD\",\"dename\":\"ZT_PRODUCT\"}')}  OR  t1.`po` =  ${srfsessioncontext('srfloginname','{\"defname\":\"PO\",\"dename\":\"ZT_PRODUCT\"}')} ) ) )",
         "name" : "查询条件"
       } ]
     } ],
     "codeName" : "ProductManagerQuery",
-    "logicName" : "产品经理（启用权限）",
-    "name" : "ProductManagerQuery"
+    "logicName" : "创建者或更新者（启用权限）",
+    "name" : "ProductManagerQuery",
+    "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -352,7 +356,8 @@
     } ],
     "codeName" : "QDQuery",
     "logicName" : "测试负责人（启用权限）",
-    "name" : "QDQuery"
+    "name" : "QDQuery",
+    "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -369,7 +374,8 @@
     } ],
     "codeName" : "RDQuery",
     "logicName" : "发布负责人（启用权限）",
-    "name" : "RDQuery"
+    "name" : "RDQuery",
+    "privQuery" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",

@@ -42,7 +42,7 @@ export class PickupGridViewBase extends MDViewBase {
      * @type {Engine}
      * @memberof PickupGridViewBase
      */
-    public engine: PickupGridViewEngine = new PickupGridViewEngine;
+    public engine: PickupGridViewEngine = new PickupGridViewEngine();
 
     /**
      * 表格行数据默认激活模式

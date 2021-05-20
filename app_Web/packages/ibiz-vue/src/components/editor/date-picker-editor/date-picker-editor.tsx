@@ -97,8 +97,9 @@ export default class DatePickerEditor extends EditorBase {
      * @memberof DatePickerEditor
      */
     public handleChange(value1: any, value2?: any) {
-        if (this.valueFormat && this.valueFormat != this.customProps.format) {
-            value1 = this.formatDate(value1, this.valueFormat);
+        let tempFormat: string = this.customProps.format.replace("yyyy", "YYYY").replace("dd", "DD");
+        if (this.valueFormat && this.valueFormat != tempFormat) {
+            value1 = this.formatDate(value1, tempFormat, this.valueFormat);
         }
         this.editorChange({ name: this.editorInstance.name, value: value1 });
     }
@@ -110,12 +111,12 @@ export default class DatePickerEditor extends EditorBase {
      * @param format    格式
      * @memberof DatePickerEditor
      */
-    public formatDate(date: any, format: any) {
-        if (!format) {
+    public formatDate(date: any, valueFormat: string, typeFormat: string) {
+        if (!typeFormat) {
             return date;
         }
         try {
-            const tempDate = moment(date, this.customProps.format).format(this.valueFormat);
+            const tempDate = moment(date, valueFormat).format(typeFormat);
             if (tempDate == 'Invalid date') {
                 return date;
             } else {
@@ -136,7 +137,7 @@ export default class DatePickerEditor extends EditorBase {
         if (!this.editorIsLoaded) {
             return null;
         }
-        return this.$createElement(this.editorComponentName,{
+        return this.$createElement(this.editorComponentName, {
             props: {
                 name: this.editorInstance.name,
                 value: this.value,

@@ -205,9 +205,20 @@ export class AppmenuBase extends AppMenuControlBase {
      * @memberof AppmenuBase
      */
     public menuTreeload(h: any, { node, data }: any) {
-        return (
-            <span title={node.data.caption}>{node.data.caption}</span>
-        )
+        if (data.getPSAppMenuItems && data.getPSAppMenuItems.length > 0) {
+            return (
+                <div class="parent-treeitem">
+                    <span class='icon'><i class="el-icon-s-claim" size="14"/></span>
+                    <span class='text' title={node.data.caption}>{node.data.caption}</span>
+                </div>
+            )
+        } else {
+            return (
+                <div class="leaf-treeitem">
+                    <span title={node.data.caption}>{node.data.caption}</span>
+                </div>
+            )
+        }
 
     }
     /**
