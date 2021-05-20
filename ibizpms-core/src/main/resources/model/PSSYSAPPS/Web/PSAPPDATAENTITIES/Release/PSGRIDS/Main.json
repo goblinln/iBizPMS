@@ -410,8 +410,10 @@
         "name" : "u3ffc596",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "停止维护",
           "codeName" : "terminal",
+          "dataAccessAction" : "TERMINATE",
           "fullCodeName" : "Release_terminal",
           "name" : "停止维护",
           "getPSAppDEMethod" : {
@@ -442,8 +444,10 @@
         "name" : "u5669a69",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "激活",
           "codeName" : "active",
+          "dataAccessAction" : "ACTIVATE",
           "fullCodeName" : "Release_active",
           "name" : "激活",
           "getPSAppDEMethod" : {
@@ -539,9 +543,11 @@
         "name" : "udc5c646",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "删除",
           "codeName" : "remove",
           "confirmMsg" : "删除后数据可能无法恢复，是否删除？",
+          "dataAccessAction" : "DELETE",
           "fullCodeName" : "Release_remove",
           "name" : "删除",
           "getPSAppDEMethod" : {

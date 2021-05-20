@@ -3455,7 +3455,7 @@
   "dEType" : 1,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 3,
+  "dataAccCtrlMode" : 2,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
   "getDefaultPSDEDataSet" : {
@@ -3613,7 +3613,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"

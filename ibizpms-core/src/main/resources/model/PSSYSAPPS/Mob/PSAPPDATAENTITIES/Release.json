@@ -39,7 +39,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ZTProduct__CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -55,7 +55,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ZTProduct__UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -71,7 +71,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "ZTProduct__DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -119,7 +119,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProduct__ACTIVATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -283,7 +283,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ZTProduct__TERMINATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -616,7 +616,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "CREATE"
+      "id" : "ZTProduct__CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -632,7 +632,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ZTProduct__UPDATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -648,7 +648,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "DELETE"
+      "id" : "ZTProduct__DELETE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -696,7 +696,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProduct__ACTIVATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -860,7 +860,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "UPDATE"
+      "id" : "ZTProduct__TERMINATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1180,16 +1180,16 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__RELEASE_ACTIVE",
+      "name" : "ACTIVATE",
       "getPSDEOPPriv" : {
-        "logicName" : "发布操作列（激活）",
-        "getMapPSSysUniRes" : {
+        "logicName" : "激活",
+        "mapPSDEOPPrivName" : "MANAGE",
+        "getMapPSDER" : {
           "modelref" : true,
-          "id" : "ibiz__RELEASE_ACTIVE"
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDERS/DER1N_ZT_RELEASE_ZT_PRODUCT_PRODUCT.json"
         },
-        "mapSysUniResCode" : "RELEASE_ACTIVE",
-        "name" : "SRFUR__RELEASE_ACTIVE",
-        "mapSysUniRes" : true
+        "name" : "ACTIVATE",
+        "id" : "ZTProduct__ACTIVATE"
       }
     } ],
     "stateValue" : "normal",
@@ -1293,16 +1293,16 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__RELEASE_TERMINATE",
+      "name" : "TERMINATE",
       "getPSDEOPPriv" : {
-        "logicName" : "发布操作列（停止维护）",
-        "getMapPSSysUniRes" : {
+        "logicName" : "停止",
+        "mapPSDEOPPrivName" : "MANAGE",
+        "getMapPSDER" : {
           "modelref" : true,
-          "id" : "ibiz__RELEASE_TERMINATE"
+          "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDERS/DER1N_ZT_RELEASE_ZT_PRODUCT_PRODUCT.json"
         },
-        "mapSysUniResCode" : "RELEASE_TERMINATE",
-        "name" : "SRFUR__RELEASE_TERMINATE",
-        "mapSysUniRes" : true
+        "name" : "TERMINATE",
+        "id" : "ZTProduct__TERMINATE"
       }
     } ],
     "stateValue" : "terminate",
@@ -1316,6 +1316,15 @@
     "oPPrivAllowMode" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "激活",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDERS/DER1N_ZT_RELEASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "ACTIVATE",
+    "id" : "ZTProduct__ACTIVATE"
+  }, {
     "logicName" : "Product_Create",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
@@ -1363,6 +1372,15 @@
   }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "停止",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Release/PSDERS/DER1N_ZT_RELEASE_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "TERMINATE",
+    "id" : "ZTProduct__TERMINATE"
   }, {
     "logicName" : "Product_Update",
     "mapPSDEOPPrivName" : "UPDATE",

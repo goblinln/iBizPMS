@@ -126,7 +126,7 @@ public class ReleaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(releaseMapping.toDto(releaseService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
+    @PreAuthorize("@ReleaseRuntime.test(#release_id,'ACTIVATE')")
     @ApiOperation(value = "状态变更（激活）", tags = {"发布" },  notes = "状态变更（激活）")
 	@RequestMapping(method = RequestMethod.POST, value = "/releases/{release_id}/activate")
     public ResponseEntity<ReleaseDTO> activate(@PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
@@ -300,7 +300,7 @@ public class ReleaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ReleaseRuntime.test(#release_id,'UPDATE')")
+    @PreAuthorize("@ReleaseRuntime.test(#release_id,'TERMINATE')")
     @ApiOperation(value = "状态变更（停止维护）", tags = {"发布" },  notes = "状态变更（停止维护）")
 	@RequestMapping(method = RequestMethod.POST, value = "/releases/{release_id}/terminate")
     public ResponseEntity<ReleaseDTO> terminate(@PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
@@ -467,7 +467,7 @@ public class ReleaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(releaseMapping.toDto(releaseService.getDraft(domain)));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品发布", tags = {"发布" },  notes = "根据产品发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases/{release_id}/activate")
     public ResponseEntity<ReleaseDTO> activateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
@@ -646,7 +646,7 @@ public class ReleaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品发布", tags = {"发布" },  notes = "根据产品发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases/{release_id}/terminate")
     public ResponseEntity<ReleaseDTO> terminateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
