@@ -45,12 +45,12 @@
             }
         }
         > .ivu-card-body{
-          height: calc(100% - 59px)
+          height: calc(100% - 49px);
         }
     }
     > .view-card.view-no-toolbar, >.view-card.view-no-caption {
         > .ivu-card-body {
-            height: calc(100% - 59px);
+            height: calc(100% - 49px);
         }
     }
     > .view-card.view-no-header {
@@ -105,7 +105,20 @@
           font-size: 14px;
           vertical-align: -0.06em
         }
-        .ivu-btn, .ivu-select-selected-value,input{
+        .ivu-select-selection {
+          height: 28px;
+          .ivu-select-selected-value {
+            font-size: 12px;
+            height: 26px;
+            line-height: 26px;
+          }
+        }
+        .ivu-page-options-elevator {
+          input {
+            height: 28px;
+          }
+        }
+        .ivu-btn, input{
           font-size: 12px;
         }
         .page-button {

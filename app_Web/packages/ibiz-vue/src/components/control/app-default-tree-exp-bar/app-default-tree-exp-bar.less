@@ -11,13 +11,6 @@
               overflow-x: hidden;
               display: flex;
               flex-direction: column;
-              .container-header.no-title {
-                margin-top: 12px;
-                margin-bottom: 6px;
-                .search-container {
-                    margin-left: 8px;
-                }
-              }
               .tree-exp-bar-header {
                   line-height: 50px;
                   border-bottom: 1px solid var(--ctrl-font-color-light);
@@ -71,4 +64,13 @@
           padding-right: 10px;
       }
   }
+}
+
+.view-default {
+    .app-tree-exp-bar.treeexpbar {
+        .left-pane, .ivu-split-trigger-con {
+            padding-top: 2px;
+            padding-bottom: 10px;
+        }
+    }
 }
