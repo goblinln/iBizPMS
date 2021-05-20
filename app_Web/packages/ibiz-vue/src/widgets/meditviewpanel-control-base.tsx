@@ -211,6 +211,7 @@ export class MEditViewPanelControlBase extends MDControlBase {
                     const items = Util.deepCopy(response.data);
                     this.doItems(items);
                 }
+                this.isControlLoaded = true;
                 this.ctrlEvent({ controlname: this.controlInstance.name, action: "load", data: this.items });
             }).catch((response: any) => {
                 this.ctrlEndLoading();

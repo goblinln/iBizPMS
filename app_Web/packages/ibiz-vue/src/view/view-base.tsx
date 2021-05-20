@@ -339,7 +339,7 @@ export class ViewBase extends Vue {
     public initMountedMap() {
         let controls = this.viewInstance?.getPSControls?.();
         controls?.forEach((item: any) => {
-            if (item.controlType == "TOOLBAR" || item.controlType == "SEARCHBAR" || item.controlType == "CAPTIONBAR" || item.controlType == "DATAINFOBAR" || item.controlType == "SEARCHFORM") {
+            if (item.controlType == "TOOLBAR" || item.controlType == "SEARCHBAR" || item.controlType == "CAPTIONBAR" || item.controlType == "DATAINFOBAR") {
                 this.mountedMap.set(item.name, true);
             } else {
                 this.mountedMap.set(item.name, false);

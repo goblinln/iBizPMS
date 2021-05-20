@@ -85,7 +85,7 @@ export class AppChartViewBase extends ChartViewBase {
             this.renderQuickSearch(),
             this.renderQuickGroup(),
             this.renderQuickSearchForm(),
-            this.viewInstance?.viewStyle == "STYLE2" ? [this.renderSearchForm()] : null,
+            !(this.viewInstance?.viewStyle == "DEFAULT" && this.viewInstance?.enableQuickSearch) ? [this.renderSearchForm()] : null,
             this.renderBodyMessage(),
             this.renderMainContent(),
             this.renderBottomMessage(),

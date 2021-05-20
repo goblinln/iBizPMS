@@ -145,6 +145,8 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         if(!productplanRuntime.isRtmodel()){
         if(!ObjectUtils.isEmpty(projectproductService.selectByPlan(key)))
             throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[ProjectProduct]数据，无法删除!","","");
+        if(!ObjectUtils.isEmpty(productplanService.selectByParent(key)))
+            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[ProductPlan]数据，无法删除!","","");
         }
         boolean result = removeById(key);
         return result ;
@@ -158,6 +160,8 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
         }else{
         if(!ObjectUtils.isEmpty(projectproductService.selectByPlan(idList)))
             throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[ProjectProduct]数据，无法删除!","","");
+        if(!ObjectUtils.isEmpty(productplanService.selectByParent(idList)))
+            throw new BadRequestAlertException("删除数据失败，当前数据存在关系实体[ProductPlan]数据，无法删除!","","");
         removeByIds(idList);
         }
         
@@ -547,6 +551,11 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
     public List<ProductPlan> selectByParent(Long id) {
         return baseMapper.selectByParent(id);
     }
+    @Override
+    public List<ProductPlan> selectByParent(Collection<Long> ids) {
+        return this.list(new QueryWrapper<ProductPlan>().in("id",ids));
+    }
+
     @Override
     public void removeByParent(Long id) {
         this.remove(new QueryWrapper<ProductPlan>().eq("parent",id));

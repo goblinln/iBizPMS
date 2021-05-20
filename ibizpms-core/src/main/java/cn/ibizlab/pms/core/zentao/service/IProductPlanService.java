@@ -104,6 +104,7 @@ public interface IProductPlanService extends IService<ProductPlan> {
     List<ProductPlan> selectByProduct(Long id);
     void removeByProduct(Long id);
     List<ProductPlan> selectByParent(Long id);
+    List<ProductPlan> selectByParent(Collection<Long> ids);
     void removeByParent(Long id);
     ProductPlan dynamicCall(Long key, String action, ProductPlan et);
     /**

@@ -394,16 +394,32 @@ export class AppmenuBase extends AppMenuControlBase {
                         children: 'getPSAppMenuItems',
                         label: 'caption'
                     },
-                    ref: 'eltree',
                     'default-expand-all': true,
                     'highlight-current': true,
                     'render-content': this.menuTreeload,
-                    'node-key': 'name'
+                    'node-key': 'name',
+                    'filter-node-method': ((filter: any, data: any) => {
+                        if (!filter) return true;
+                        return data.caption.indexOf(filter) !== -1;
+                    })
                 },
+                ref: 'eltree',
                 on: {
                     'node-click': ((e: any) => this.menuTreeClick(e))
                 }
             })
+        }
+    }
+
+    /**
+     * 搜索菜单节点
+     *
+     * @memberof AppmenuBase
+     */
+    public onSearch(filter: any) {
+        const tree: any = this.$refs.eltree;
+        if (tree && tree.filter && tree.filter instanceof Function) {
+            tree.filter(filter);
         }
     }
 
@@ -416,6 +432,12 @@ export class AppmenuBase extends AppMenuControlBase {
         if(this.split == 0.85){
             return [
                 <div slot="right" style={{ height: '100%', padding: '6px 0' }}>
+                    <i-input
+                        search={true}
+                        class="index-search"
+                        placeholder="搜索内容"
+                        on-on-search={(value: any) => { this.onSearch(value); }}>
+                    </i-input>
                     <div style={{ height: '100%' }}>
                         {this.renderMenuTree()}
                     </div>
@@ -427,6 +449,12 @@ export class AppmenuBase extends AppMenuControlBase {
         }else {
             return [
                 <div slot="left" style={{ height: '100%', padding: '6px 0' }}>
+                    <i-input
+                        search={true}
+                        class="index-search"
+                        placeholder="搜索内容"
+                        on-on-search={(value: any) => { this.onSearch(value); }}>
+                    </i-input>
                     <div style={{ height: '100%' }}>
                         {this.renderMenuTree()}
                     </div>

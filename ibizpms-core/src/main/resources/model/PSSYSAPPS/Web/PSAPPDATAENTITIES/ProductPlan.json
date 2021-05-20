@@ -253,6 +253,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/ImportPlanTemplet.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__CREATE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ImportPlanTemplet"
@@ -265,6 +269,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkBug.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "LINKBUG"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "LinkBug"
@@ -276,6 +284,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkStory.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "LINKSTORY"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1102,6 +1114,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/ImportPlanTemplet.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "ZTProduct__CREATE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ImportPlanTemplet"
@@ -1114,6 +1130,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkBug.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "LINKBUG"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "LinkBug"
@@ -1125,6 +1145,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/LinkStory.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "LINKSTORY"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1935,16 +1959,10 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__PROP_CHILD_BUT",
+      "name" : "CHILDPLAN",
       "getPSDEOPPriv" : {
-        "logicName" : "计划子计划",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROP_CHILD_BUT"
-        },
-        "mapSysUniResCode" : "PROP_CHILD_BUT",
-        "name" : "SRFUR__PROP_CHILD_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "子计划",
+        "name" : "CHILDPLAN"
       }
     } ],
     "stateValue" : "chlid",
@@ -2168,13 +2186,6 @@
       },
       "allowMode" : true
     }, {
-      "name" : "Remove",
-      "getPSDEAction" : {
-        "modelref" : true,
-        "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan/PSDEACTIONS/Remove.json"
-      },
-      "allowMode" : true
-    }, {
       "name" : "GetOldPlanName",
       "getPSDEAction" : {
         "modelref" : true,
@@ -2309,16 +2320,10 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__PROP_DELETE_BUT",
+      "name" : "DELETE",
       "getPSDEOPPriv" : {
-        "logicName" : "计划删除",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROP_DELETE_BUT"
-        },
-        "mapSysUniResCode" : "PROP_DELETE_BUT",
-        "name" : "SRFUR__PROP_DELETE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "删除",
+        "name" : "DELETE"
       }
     } ],
     "stateValue" : "parent",
@@ -2332,6 +2337,12 @@
     "oPPrivAllowMode" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "添加项目",
+    "name" : "ADDPROJ"
+  }, {
+    "logicName" : "子计划",
+    "name" : "CHILDPLAN"
+  }, {
     "logicName" : "Product_Create",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
@@ -2355,6 +2366,12 @@
     },
     "name" : "DELETE",
     "id" : "ZTProduct__DELETE"
+  }, {
+    "logicName" : "关联Bug",
+    "name" : "LINKBUG"
+  }, {
+    "logicName" : "关联需求",
+    "name" : "LINKSTORY"
   }, {
     "logicName" : "管理",
     "name" : "MANAGE"

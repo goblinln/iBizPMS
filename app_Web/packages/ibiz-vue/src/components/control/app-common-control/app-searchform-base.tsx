@@ -564,7 +564,7 @@ export class AppSearchFormBase extends SearchFormControlBase {
                                             >
                                                 <div on-click={() => { if (this.selectItem == item.value) { this.data = JSON.parse(JSON.stringify(item.data)); } }}>
                                                     <span>{item.name}</span>
-                                                    <i class="el-icon-close" on-click={this.removeHistoryItem.bind(this, item)}/>
+                                                    <i class="el-icon-close" on-click={(e: any) => this.removeHistoryItem(e, item)}/>
                                                 </div>
                                             </el-option>
                                     )

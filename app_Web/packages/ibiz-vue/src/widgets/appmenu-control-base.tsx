@@ -233,6 +233,7 @@ export class AppMenuControlBase extends ControlBase {
      */
     public load(){
         this.handleMenusResource(this.service.getAllMenuItems());
+        this.isControlLoaded = true;
     }
 
     /**
