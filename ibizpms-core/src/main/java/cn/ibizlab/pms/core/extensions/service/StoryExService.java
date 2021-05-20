@@ -11,6 +11,7 @@ import cn.ibizlab.pms.util.dict.StaticDict;
 import cn.ibizlab.pms.util.errors.BadRequestAlertException;
 import cn.ibizlab.pms.util.helper.CachedBeanCopier;
 import cn.ibizlab.pms.util.security.AuthenticationUser;
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
@@ -22,6 +23,7 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Primary;
+import springfox.documentation.spring.web.json.Json;
 
 import java.sql.Timestamp;
 import java.util.*;
@@ -74,6 +76,9 @@ public class StoryExService extends StoryServiceImpl {
 
     @Autowired
     IBuildService iBuildService;
+
+    @Autowired
+    ITaskService iTaskService;
 
     String[] ignores = {"lasteditedby", "lastediteddate", "versionc", "assignedtopk", "mailtopk"};
 
@@ -635,6 +640,20 @@ public class StoryExService extends StoryServiceImpl {
             updateParentStatus(old, null, true);
             ActionHelper.createHis(key, StaticDict.Action__object_type.STORY.getValue(), null,  StaticDict.Action__type.DELETECHILDRENSTORY.getValue(), "", "", null, iActionService);
         }
+
+        String sql = "SELECT * FROM `zt_task` where story = #{et.id}";
+        Map<String, Object> param = new HashMap<>();
+        param.put("id", key);
+        List<JSONObject> task = this.select(sql, param);
+        if (task.size() > 0) {
+            for (JSONObject jsonTask : task) {
+                Task et = JSON.toJavaObject(jsonTask, Task.class);
+                et.setStory(0L);
+                iTaskService.update(et);
+                ActionHelper.createHis(et.getId(), StaticDict.Action__object_type.TASK.getValue(), null,  StaticDict.Action__type.DELETECHILDRENTASK.getValue(), "", "", null, iActionService);
+            }
+        }
+
         return true;
     }
 
