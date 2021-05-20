@@ -6,13 +6,6 @@
     "id" : "ProductManagerQuery"
   },
   "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "READ",
-    "name" : "Product_Maintain_CreateBy_READ",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    }
-  }, {
     "dataAccessAction" : "DELETE",
     "name" : "Product_Maintain_CreateBy_DELETE",
     "getPSDEOPPriv" : {

@@ -4174,13 +4174,6 @@
       "id" : "ProductManagerQuery"
     },
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "Product_Maintain_CreateBy_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    }, {
       "dataAccessAction" : "DELETE",
       "name" : "Product_Maintain_CreateBy_DELETE",
       "getPSDEOPPriv" : {
@@ -4220,13 +4213,6 @@
         "id" : "UPDATE"
       }
     }, {
-      "dataAccessAction" : "READ",
-      "name" : "Product_Maintain_DEV_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    }, {
       "dataAccessAction" : "CREATE",
       "name" : "Product_Maintain_DEV_CREATE",
       "getPSDEOPPriv" : {
@@ -4257,13 +4243,6 @@
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "CREATE"
-      }
-    }, {
-      "dataAccessAction" : "READ",
-      "name" : "Product_Maintain_Open_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
       }
     }, {
       "dataAccessAction" : "DELETE",
@@ -4374,6 +4353,7 @@
       }
     } ],
     "roleTag" : "Product_Manage_DEV",
+    "userCat" : "CAT1",
     "userDRAction" : "READ"
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Manage_Open.json",

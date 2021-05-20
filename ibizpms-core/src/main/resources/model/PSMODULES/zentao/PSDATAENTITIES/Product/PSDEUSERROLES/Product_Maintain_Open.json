@@ -13,13 +13,6 @@
       "id" : "CREATE"
     }
   }, {
-    "dataAccessAction" : "READ",
-    "name" : "Product_Maintain_Open_READ",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    }
-  }, {
     "dataAccessAction" : "DELETE",
     "name" : "Product_Maintain_Open_DELETE",
     "getPSDEOPPriv" : {

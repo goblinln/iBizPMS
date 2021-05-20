@@ -7044,13 +7044,6 @@
         "modelref" : true,
         "id" : "DELETE"
       }
-    }, {
-      "dataAccessAction" : "READ",
-      "name" : "Project_Maintain_DEV_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
     } ],
     "roleTag" : "Project_Maintain_DEV",
     "userCat" : "CAT1",
@@ -7063,13 +7056,6 @@
       "id" : "OpenQuery"
     },
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "Project_Maintain_OpenBy_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    }, {
       "dataAccessAction" : "CREATE",
       "name" : "Project_Maintain_OpenBy_CREATE",
       "getPSDEOPPriv" : {
@@ -7102,13 +7088,6 @@
       "id" : "OpenByQuery"
     },
     "getPSDEUserRoleOPPrivs" : [ {
-      "dataAccessAction" : "READ",
-      "name" : "Project_Maintain_OpenBy_READ",
-      "getPSDEOPPriv" : {
-        "modelref" : true,
-        "id" : "READ"
-      }
-    }, {
       "dataAccessAction" : "DELETE",
       "name" : "Project_Maintain_OpenBy_DELETE",
       "getPSDEOPPriv" : {

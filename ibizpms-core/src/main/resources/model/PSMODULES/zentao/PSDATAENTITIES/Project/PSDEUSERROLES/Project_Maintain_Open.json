@@ -6,13 +6,6 @@
     "id" : "OpenQuery"
   },
   "getPSDEUserRoleOPPrivs" : [ {
-    "dataAccessAction" : "READ",
-    "name" : "Project_Maintain_OpenBy_READ",
-    "getPSDEOPPriv" : {
-      "modelref" : true,
-      "id" : "READ"
-    }
-  }, {
     "dataAccessAction" : "CREATE",
     "name" : "Project_Maintain_OpenBy_CREATE",
     "getPSDEOPPriv" : {
