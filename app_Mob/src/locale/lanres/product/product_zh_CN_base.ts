@@ -54,9 +54,9 @@ export default {
     createddate: "创建日期",
     noticeusers: "消息通知用户",
     activestorycnt: "激活需求数",
-    linename: "产品线",
-    line: "产品线",
     productsn: "产品编号",
+    line: "id",
+    linename: "产品线",
   },
 	views: {
 		testmobmdview: {
@@ -109,7 +109,7 @@ export default {
 			srfsourcekey: commonLogic.appcommonhandle("",null), 
 			name: commonLogic.appcommonhandle("产品名称",null), 
 			code: commonLogic.appcommonhandle("产品代号",null), 
-			line: commonLogic.appcommonhandle("产品线",null), 
+			line: commonLogic.appcommonhandle("id",null), 
 			linename: commonLogic.appcommonhandle("产品线",null), 
 			po: commonLogic.appcommonhandle("产品负责人",null), 
 			popk: commonLogic.appcommonhandle("产品负责人",null), 
@@ -186,7 +186,6 @@ export default {
 			n_name_like: commonLogic.appcommonhandle("产品名称",null), 
 			n_status_eq: commonLogic.appcommonhandle("状态",null), 
 			n_type_eq: commonLogic.appcommonhandle("产品类型",null), 
-			n_linename_like: commonLogic.appcommonhandle("产品线",null), 
 		},
 		uiactions: {
 		},

@@ -272,6 +272,9 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
     public List<File> selectDocLibFile(FileSearchContext context){
         return baseMapper.selectDocLibFile(context, context.getSelectCond());
     }
+    public List<File> selectMySubmitFile(FileSearchContext context){
+        return baseMapper.selectMySubmitFile(context, context.getSelectCond());
+    }
     public List<File> selectProductDocLibFile(FileSearchContext context){
         return baseMapper.selectProductDocLibFile(context, context.getSelectCond());
     }
@@ -301,6 +304,15 @@ public class FileServiceImpl extends ServiceImpl<FileMapper, File> implements IF
     @Override
     public Page<File> searchDocLibFile(FileSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<File> pages=baseMapper.searchDocLibFile(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<File>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我提交的文件（权限）
+     */
+    @Override
+    public Page<File> searchMySubmitFile(FileSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<File> pages=baseMapper.searchMySubmitFile(context.getPages(),context,context.getSelectCond());
         return new PageImpl<File>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

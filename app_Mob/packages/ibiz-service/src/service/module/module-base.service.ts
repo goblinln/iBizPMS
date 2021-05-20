@@ -94,7 +94,7 @@ export class ModuleBaseService extends EntityBaseService<IModule> {
 
     protected getLineCond() {
         if (!this.condCache.has('line')) {
-            const strCond: any[] = ['AND', ['EQ', 'TYPE','line'], ['EQ', 'ORGID',{ type: 'SESSIONCONTEXT', value: 'SRFORGID'}]];
+            const strCond: any[] = ['AND', ['EQ', 'TYPE','line']];
             if (!isNil(strCond) && !isEmpty(strCond)) {
                 const cond = new PSDEDQCondEngine();
                 cond.parse(strCond);

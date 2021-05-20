@@ -4083,6 +4083,9 @@
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "组群管理",
+    "name" : "GROUPMANAGE"
+  }, {
     "logicName" : "管理",
     "name" : "MANAGE"
   }, {
@@ -4285,6 +4288,20 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Manage_All.json",
     "name" : "产品管理（全部数据）",
     "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "ADDLINE",
+      "name" : "Product_Manage_AddLine",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ADDLINE"
+      }
+    }, {
+      "dataAccessAction" : "GROUPMANAGE",
+      "name" : "Product_Manage_GroupManage",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "GROUPMANAGE"
+      }
+    }, {
       "dataAccessAction" : "MANAGE",
       "name" : "Product_Manage_All_MANAGE",
       "getPSDEOPPriv" : {
@@ -4304,6 +4321,20 @@
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "MANAGE"
+      }
+    }, {
+      "dataAccessAction" : "ADDLINE",
+      "name" : "Product_Manage_AddLine",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "ADDLINE"
+      }
+    }, {
+      "dataAccessAction" : "GROUPMANAGE",
+      "name" : "Product_Manage_GroupManage",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "GROUPMANAGE"
       }
     } ],
     "roleTag" : "Product_Manage_CO",

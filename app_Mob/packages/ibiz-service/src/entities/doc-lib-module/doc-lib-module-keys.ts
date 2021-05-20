@@ -18,4 +18,10 @@ export default [
     'doclibname',
     'parent',
     'root',
+    'mdeptid',
+    'orgid',
+    'mdeptname',
+    'createby',
+    'updateby',
+    'orgname',
 ];

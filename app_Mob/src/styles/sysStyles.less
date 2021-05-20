@@ -256,6 +256,35 @@
     font-weight: 900;
     text-align: center;
 }
+    .main-basic-info-layout {
+  >.ivu-row {
+    .ivu-col {
+      .app-form-group {
+        >div {
+          align-items: center;
+          justify-content: start;
+          .form-layout-container {
+            margin-right: 12px;
+            &:last-of-type {
+              .app-span {
+                max-width: 500px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  margin-bottom: 10px;
+  &::after {
+    content: '';
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    bottom: 6px;
+    background-color: #e3e3ea;
+  }
+}
     .burnout-diagram-interval {
 	.ivu-select-selection{
 		height: 29px;
@@ -444,7 +473,21 @@
     border-radius: 10px;
 }
     
+    .form-group-divider {
+    margin-bottom: 10px;
+    &::after {
+        content: '';
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        bottom: 6px;
+        background-color: #e3e3ea;
+    }
+}
     
+    .form-padding-top-10 {
+    padding-top: 10px;
+}
     .portlet-title {
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
@@ -466,38 +509,33 @@
   }
 }
     .project-code {
-    width: 220px;
     max-width: 300px;
     .app-span {    
-        margin: 5px;
-        padding: 2px 5px;
         border: 1px solid #e1e5ee;
         text-align: center;
-        border-radius: 3px;
+        border-radius: 4px;
         background: #f2f5fb;
         color: #515a6e;
+        padding: 0 10px;
     }
 }
     .project-name {
-    position: absolute;
-    left: 50px;
     .app-span {
-        margin-top: 5px;
-        margin-left: 5px;
-        font-weight: 400;
+        font-weight: 600;
         font-size: 16px;
     }
 }
     .project-status {
     .codelist {
-        height: 20px;
-        width: 60px;
-        line-height: 16px;
-        text-align:center;
+        padding: 0 10px;
+        line-height: 32px;
         color:#2f54eb;
         border: 1px solid #adc6ff;
         background: #f0f5ff;
-        border-radius: 3px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 	  		.codelist-item {
             margin: 0 auto;
         }
@@ -505,14 +543,15 @@
 }
     .project-type {
     .codelist {
-        height: 20px;
-        width: 80px;
-        line-height: 16px;
-        text-align:center;
+        padding: 0 10px;
+        line-height: 32px;
         color:#13c2c2;
         border: 1px solid #87ebde;
         background: #e6fffb;
-        border-radius: 3px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 	  		.codelist-item {
             margin: 0 auto;
         }
@@ -520,12 +559,11 @@
 }
     .project-id {
     .app-span {
-        margin-top: 5px;
-        padding: 2px 5px;
-        border: 1px solid #e8eaec;
+        border: 1px solid #515a6e;
         color: #515a6e;
         background: #fff!important;
         position: relative;
-        border-radius: 3px;
+        border-radius: 4px;
+        padding: 0 10px;
     }
 }

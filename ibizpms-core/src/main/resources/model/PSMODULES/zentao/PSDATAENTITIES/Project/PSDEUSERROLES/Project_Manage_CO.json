@@ -9,6 +9,13 @@
       "modelref" : true,
       "id" : "MANAGE"
     }
+  }, {
+    "dataAccessAction" : "GROUPMANAGE",
+    "name" : "Project_Manage_CO_GroupManage",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "GROUPMANAGE"
+    }
   } ],
   "roleTag" : "Project_Manage_CO",
   "userDRAction" : "READ",

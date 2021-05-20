@@ -20,5 +20,11 @@ export default {
     doclibname:  commonLogic.appcommonhandle("所属文档库",null),
     parent:  commonLogic.appcommonhandle("id",null),
     root:  commonLogic.appcommonhandle("编号",null),
+    mdeptId:  commonLogic.appcommonhandle("部门标识",null),
+    orgId:  commonLogic.appcommonhandle("组织机构标识",null),
+    mdeptName:  commonLogic.appcommonhandle("归属部门名",null),
+    createBy:  commonLogic.appcommonhandle("由谁创建",null),
+    updateBy:  commonLogic.appcommonhandle("由谁更新",null),
+    orgName:  commonLogic.appcommonhandle("归属组织名",null),
   },
 };

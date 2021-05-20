@@ -5,7 +5,7 @@ import { ProductLineService } from '../../service';
 import ProductLineAuthService from '../../authservice/product-line/product-line-auth-service';
 
 /**
- * 产品线UI服务对象基类
+ * 产品线（废弃）UI服务对象基类
  *
  * @export
  * @class ProductLineUIServiceBase

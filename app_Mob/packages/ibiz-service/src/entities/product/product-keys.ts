@@ -52,7 +52,7 @@ export default [
     'createddate',
     'noticeusers',
     'activestorycnt',
-    'linename',
-    'line',
     'productsn',
+    'line',
+    'linename',
 ];

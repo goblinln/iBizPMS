@@ -6924,6 +6924,9 @@
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "组群管理",
+    "name" : "GROUPMANAGE"
+  }, {
     "logicName" : "管理",
     "name" : "MANAGE"
   }, {
@@ -7136,6 +7139,13 @@
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Project/PSDEUSERROLES/Project_Manage_All.json",
     "name" : "项目管理（全部数据）",
     "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "GROUPMANAGE",
+      "name" : "Project_Manage_All_GroupManage",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "GROUPMANAGE"
+      }
+    }, {
       "dataAccessAction" : "MANAGE",
       "name" : "Project_Manage_All_MANAGE",
       "getPSDEOPPriv" : {
@@ -7155,6 +7165,13 @@
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "MANAGE"
+      }
+    }, {
+      "dataAccessAction" : "GROUPMANAGE",
+      "name" : "Project_Manage_CO_GroupManage",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "GROUPMANAGE"
       }
     } ],
     "roleTag" : "Project_Manage_CO",

@@ -17,5 +17,11 @@ export default {
     rootname: "测试",
     root: "编号",
     parent: "id",
+    mdeptid: "部门标识",
+    mdeptname: "归属部门名",
+    orgid: "组织机构标识",
+    createby: "由谁创建",
+    orgname: "归属组织名",
+    updateby: "由谁更新",
   },
 };
