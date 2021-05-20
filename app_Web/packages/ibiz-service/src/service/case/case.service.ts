@@ -386,16 +386,21 @@ export class CaseService extends CaseBaseService {
             return this.http.put(`/stories/${_context.story}/cases/${_context.case}`, _data);
         }
         if (_context.product && _context.case) {
+            // 从实体服务
+            const minorIBZCaseStepService: any = await ___ibz___.gs[`getIBZCaseStepService`]();
             _data = await this.obtainMinor(_context, _data);
             //删除从实体【ibzcasestep】数据主键
             let ibzcasestepsDatas: any[] = _data.ibzcasesteps;
             if (ibzcasestepsDatas && ibzcasestepsDatas.length > 0) {
-                ibzcasestepsDatas.forEach((item: any) => {
+                for (const item of ibzcasestepsDatas) {
                     if (item.id) {
+                        if (minorIBZCaseStepService) {
+                            await minorIBZCaseStepService.removeLocal(_context, item.id);
+                        }
                         item.id = null;
                         if(item.hasOwnProperty('id') && item.id) delete item.id;
                     }
-                })
+                }
                 _data.ibzcasesteps = ibzcasestepsDatas;
             }
             //删除从实体【casestep】数据主键
