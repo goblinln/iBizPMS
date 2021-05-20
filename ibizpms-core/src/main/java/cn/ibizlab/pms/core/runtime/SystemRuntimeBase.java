@@ -70,6 +70,11 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
     /**
      * 系统默认用户 实体角色能力权限
      */
+    protected Map<String, List<UAADEAuthority>> userRoleUAADEAuthorityMap = new HashMap<>();
+
+    /**
+     * 系统默认用户 实体角色能力权限
+     */
     protected List<UAADEAuthority> userUAADEAuthority = new ArrayList<>();
 
     /**
@@ -99,69 +104,37 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
         if (userRoles != null) {
             for (IPSSysUserRole userRole : userRoles) {
                 if (DataAccessActions.NONE.equals(userRole.getDefaultUser())) {
+                    //添加系统角色默认能力
+                    List<IPSSysUserRoleData> userRoleDatas = userRole.getPSSysUserRoleDatas();
+                    if (userRoleDatas != null) {
+                        for (IPSSysUserRoleData userRoleData : userRoleDatas) {
+                            IPSDEUserRole psDEUserRole = userRoleData.getPSDEUserRole();
+                            if (psDEUserRole == null)
+                                continue;
+                            if ("CAT1".equals(psDEUserRole.getUserCat())) {
+                                UAADEAuthority authority = genUAADEAuthority(userRoleData);
+                                if (authority != null) {
+                                    if(!userRoleUAADEAuthorityMap.containsKey(userRole.getRoleTag())){
+                                        userRoleUAADEAuthorityMap.put(userRole.getRoleTag(), new ArrayList<>());
+                                    }
+                                    userRoleUAADEAuthorityMap.get(userRole.getRoleTag()).add(authority);
+                                }
+                            }
+                        }
+                    }
                     continue;
                 }
                 //分配的实体角色能力
                 List<IPSSysUserRoleData> userRoleDatas = userRole.getPSSysUserRoleDatas();
                 if (userRoleDatas != null) {
                     for (IPSSysUserRoleData userRoleData : userRoleDatas) {
-                        IPSDEUserRole psDEUserRole = userRoleData.getPSDEUserRole();
-                        if (psDEUserRole == null)
-                            continue;
-                        UAADEAuthority authority = new UAADEAuthority();
-                        authority.setName(psDEUserRole.getName());
-                        authority.setEntity(userRoleData.getPSDataEntity().getName());
-                        authority.setEnableorgdr(psDEUserRole.isEnableOrgDR() ? 1 : 0);
-                        authority.setOrgdr(psDEUserRole.getOrgDR());
-                        authority.setEnabledeptdr(psDEUserRole.isEnableSecDR() ? 1 : 0);
-                        authority.setDeptdr(psDEUserRole.getSecDR());
-                        authority.setEnabledeptbc(psDEUserRole.isEnableSecBC() ? 1 : 0);
-                        authority.setDeptbc(psDEUserRole.getSecBC());
-                        authority.setBscope(psDEUserRole.getCustomCond());
-                        //如果有自定义查询 以结果集有限 ，替换自定义条件
-                        IPSDEDataSet psdeDataSet = psDEUserRole.getPSDEDataSet();
-                        if (psdeDataSet != null) {
-                            List<IPSDEDataQuery> psdeDataQueries = psdeDataSet.getPSDEDataQueries();
-                            if (psdeDataQueries != null) {
-                                for (IPSDEDataQuery ipsdeDataQuery : psdeDataQueries) {
-                                    List<IPSDEDataQueryCode> psdeDataQueryCodes = ipsdeDataQuery.getAllPSDEDataQueryCodes();
-                                    if (psdeDataQueryCodes != null) {
-                                        for (IPSDEDataQueryCode psdeDataQueryCode : psdeDataQueryCodes) {
-                                            if (DBTypes.MYSQL5.equals(psdeDataQueryCode.getDBType())) {
-                                                List<IPSDEDataQueryCodeCond> psdeDataQueryCodeConds = psdeDataQueryCode.getPSDEDataQueryCodeConds();
-                                                if (psdeDataQueryCodeConds != null) {
-                                                    String strBScope = "";
-                                                    for (int i = 0; i < psdeDataQueryCodeConds.size(); i++) {
-                                                        IPSDEDataQueryCodeCond psdeDataQueryCodeCond = psdeDataQueryCodeConds.get(i);
-                                                        if (i > 0)
-                                                            strBScope += " AND ";
-                                                        strBScope += QueryContextHelper.contextParamConvert(psdeDataQueryCodeCond.getCustomCond());
-                                                    }
-                                                    authority.setDataset(true);
-                                                    authority.setBscope(strBScope);
-                                                }
-                                                break;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
+                        UAADEAuthority authority = genUAADEAuthority(userRoleData);
+                        if (authority != null) {
+                            if (SysUserRoleDefaultModes.USER.equals(userRole.getDefaultUser()))
+                                userUAADEAuthority.add(authority);
+                            else if (SysUserRoleDefaultModes.ADMIN.equals(userRole.getDefaultUser()))
+                                adminUAADEAuthority.add(authority);
                         }
-                        //实体操作能力
-                        List<Map<String, String>> deActions = new ArrayList<>();
-                        java.util.List<IPSDEUserRoleOPPriv> psDEUserRoleOPPrivs = psDEUserRole.getPSDEUserRoleOPPrivs();
-                        if (psDEUserRoleOPPrivs != null) {
-                            for (IPSDEUserRoleOPPriv psDEUserRoleOPPriv : psDEUserRoleOPPrivs) {
-                                Map<String, String> action = new HashMap<>();
-                                action.put(psDEUserRoleOPPriv.getName(), org.apache.commons.lang3.StringUtils.isBlank(psDEUserRoleOPPriv.getCustomCond()) ? "" : psDEUserRoleOPPriv.getCustomCond());
-                            }
-                        }
-                        authority.setDeAction(deActions);
-
-                        if (SysUserRoleDefaultModes.USER.equals(userRole.getDefaultUser()))
-                            userUAADEAuthority.add(authority);
-                        else if (SysUserRoleDefaultModes.ADMIN.equals(userRole.getDefaultUser()))
-                            adminUAADEAuthority.add(authority);
                     }
                 }
                 //分配的统一资源
@@ -185,6 +158,63 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
         super.onInit();
     }
 
+    protected UAADEAuthority genUAADEAuthority(IPSSysUserRoleData userRoleData) throws Exception {
+        IPSDEUserRole psDEUserRole = userRoleData.getPSDEUserRole();
+        if (psDEUserRole == null)
+            return null;
+        UAADEAuthority authority = new UAADEAuthority();
+        authority.setName(psDEUserRole.getName());
+        authority.setEntity(userRoleData.getPSDataEntity().getName());
+        authority.setEnableorgdr(psDEUserRole.isEnableOrgDR() ? 1 : 0);
+        authority.setOrgdr(psDEUserRole.getOrgDR());
+        authority.setEnabledeptdr(psDEUserRole.isEnableSecDR() ? 1 : 0);
+        authority.setDeptdr(psDEUserRole.getSecDR());
+        authority.setEnabledeptbc(psDEUserRole.isEnableSecBC() ? 1 : 0);
+        authority.setDeptbc(psDEUserRole.getSecBC());
+        authority.setBscope(psDEUserRole.getCustomCond());
+        //如果有自定义查询 以结果集有限 ，替换自定义条件
+        IPSDEDataSet psdeDataSet = psDEUserRole.getPSDEDataSet();
+        if (psdeDataSet != null) {
+            List<IPSDEDataQuery> psdeDataQueries = psdeDataSet.getPSDEDataQueries();
+            if (psdeDataQueries != null) {
+                for (IPSDEDataQuery ipsdeDataQuery : psdeDataQueries) {
+                    List<IPSDEDataQueryCode> psdeDataQueryCodes = ipsdeDataQuery.getAllPSDEDataQueryCodes();
+                    if (psdeDataQueryCodes != null) {
+                        for (IPSDEDataQueryCode psdeDataQueryCode : psdeDataQueryCodes) {
+                            if (DBTypes.MYSQL5.equals(psdeDataQueryCode.getDBType())) {
+                                List<IPSDEDataQueryCodeCond> psdeDataQueryCodeConds = psdeDataQueryCode.getPSDEDataQueryCodeConds();
+                                if (psdeDataQueryCodeConds != null) {
+                                    String strBScope = "";
+                                    for (int i = 0; i < psdeDataQueryCodeConds.size(); i++) {
+                                        IPSDEDataQueryCodeCond psdeDataQueryCodeCond = psdeDataQueryCodeConds.get(i);
+                                        if (i > 0)
+                                            strBScope += " AND ";
+                                        strBScope += QueryContextHelper.contextParamConvert(psdeDataQueryCodeCond.getCustomCond());
+                                    }
+                                    authority.setDataset(true);
+                                    authority.setBscope(strBScope);
+                                }
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        //实体操作能力
+        List<Map<String, String>> deActions = new ArrayList<>();
+        java.util.List<IPSDEUserRoleOPPriv> psDEUserRoleOPPrivs = psDEUserRole.getPSDEUserRoleOPPrivs();
+        if (psDEUserRoleOPPrivs != null) {
+            for (IPSDEUserRoleOPPriv psDEUserRoleOPPriv : psDEUserRoleOPPrivs) {
+                Map<String, String> deAction = new HashMap<>();
+                deAction.put(psDEUserRoleOPPriv.getName(), org.apache.commons.lang3.StringUtils.isBlank(psDEUserRoleOPPriv.getCustomCond()) ? "" : psDEUserRoleOPPriv.getCustomCond());
+                deActions.add(deAction);
+            }
+        }
+        authority.setDeAction(deActions);
+        return authority;
+    }
+
     @Override
     protected IPSDynaInstService createPSSystemService() throws Exception {
         SystemModelService systemModelService = new SystemModelService();
@@ -198,8 +228,8 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
         String strDynaModelId = uaaClient.getDynaModelIdByInstId(strPSDynaInstId);
         SystemModelService systemModelService = new SystemModelService();
         systemModelService.setFromJar(false);
-        String strPath = String.format("%s" + File.separator + "%s" + File.separator + "CFG", publishPath, strDynaModelId) ;
-        if( StringUtils.hasLength(strPath)) {
+        String strPath = String.format("%s" + File.separator + "%s" + File.separator + "CFG", publishPath, strDynaModelId);
+        if (StringUtils.hasLength(strPath)) {
             String strHeader = strPath.toLowerCase();
             if ((strHeader.indexOf("http://") == 0) || (strHeader.indexOf("https://") == 0)) {
                 strPath = strPath.replace("\\", "/");
@@ -218,7 +248,7 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
             strDynaModelId = uaaClient.getDynaModelIdByInstId(strDynaInstId);
         } catch (Exception e) {
             log.error(String.format("刷新实例异常:%s", e.getMessage()));
-            return true ;
+            return true;
         }
 
         return strDynaPath.indexOf(strDynaModelId) != -1;
@@ -238,21 +268,52 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
         return rtmodel;
     }
     
+    /**
+     * 获取普通用户权限
+     *
+     * @return
+     */
     public List<UAADEAuthority> getUserUAADEAuthority() {
         return userUAADEAuthority;
     }
 
+    /**
+     * 获取管理员权限
+     *
+     * @return
+     */
     public List<UAADEAuthority> getAdminUAADEAuthority() {
         return adminUAADEAuthority;
     }
 
+    /**
+     * 获取系统角色固定权限
+     *
+     * @return
+     */
+    public List<UAADEAuthority> getRoleUAADEAuthority() {
+        List roleUAADEAuthority = new ArrayList<>();
+        AuthenticationUser curUser = AuthenticationUser.getAuthenticationUser();
+        curUser.getAuthorities().stream()
+                .filter(f -> f instanceof UAARoleAuthority).forEach(r -> {
+            if (userRoleUAADEAuthorityMap.containsKey(((UAARoleAuthority) r).getRoleTag()))
+                roleUAADEAuthority.add(userRoleUAADEAuthorityMap.get(((UAARoleAuthority) r).getRoleTag()));
+        });
+        return roleUAADEAuthority;
+    }
+
+    /**
+     * 获取统一资源
+     *
+     * @return
+     */
     public List<UAAUniResAuthority> getUAAUniResAuthority() {
         AuthenticationUser curUser = AuthenticationUser.getAuthenticationUser();
         List<UAAUniResAuthority> uaaUniResAuthorities = new ArrayList<>();
         uaaUniResAuthorities.addAll(userUAAUniResAuthority);
         if (curUser.getAdminuser() == 1)
             uaaUniResAuthorities.addAll(adminUAAUniResAuthority);
-        if(curUser.getAuthorities() != null){
+        if (curUser.getAuthorities() != null) {
             String curSystemId = curUser.getSrfsystemid();
             if (StringUtils.isEmpty(curSystemId)) {
                 uaaUniResAuthorities.addAll(curUser.getAuthorities().stream()
@@ -272,57 +333,57 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
 
     @Override
     public void log(int nLogLevel, String strCat, String strInfo, Object objData) {
-        try{
-            IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
+        IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
+        try {
             SysLog sysLog = new SysLog();
             sysLog.setLoglevel(nLogLevel);
             sysLog.setCat(strCat);
             sysLog.setInfo(strInfo);
-            if(objData != null)
+            if (objData != null)
                 sysLog.setObjdata(MAPPER.writeValueAsString(objData));
             tps.syslog(sysLog);
-        }catch (Exception e){
-            log.error(String.format("登记系统日志发生错误：%s",e.getMessage()));
+        } catch (Exception e) {
+            log.error(String.format("登记系统日志发生错误：%s", e.getMessage()));
         }
     }
 
     @Override
     public void logAudit(int nLogLevel, String strCat, String strInfo, String strPersonId, String strAddress, Object objData) {
-        try{
-            IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
+        IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
+        try {
             SysAudit sysAudit = new SysAudit();
             sysAudit.setLoglevel(nLogLevel);
             sysAudit.setCat(strCat);
             sysAudit.setInfo(strInfo);
             sysAudit.setAddress(strAddress);
-            if(objData != null)
+            if (objData != null)
                 sysAudit.setObjdata(MAPPER.writeValueAsString(objData));
             tps.audit(sysAudit);
-        }catch (Exception e){
-            log.error(String.format("登记系统审计发生错误：%s",e.getMessage()));
+        } catch (Exception e) {
+            log.error(String.format("登记系统审计发生错误：%s", e.getMessage()));
         }
     }
 
     @Override
     public void logEvent(int nLogLevel, String strCat, String strInfo, Object objData) {
-        try{
-            IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
+        IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
+        try {
             SysEvent sysEvent = new SysEvent();
             sysEvent.setLoglevel(nLogLevel);
             sysEvent.setCat(strCat);
             sysEvent.setInfo(strInfo);
-            if(objData != null)
+            if (objData != null)
                 sysEvent.setObjdata(MAPPER.writeValueAsString(objData));
             tps.event(sysEvent);
-        }catch (Exception e){
-            log.error(String.format("登记系统事件发生错误：%s",e.getMessage()));
+        } catch (Exception e) {
+            log.error(String.format("登记系统事件发生错误：%s", e.getMessage()));
         }
     }
 
     @Override
     public void logPO(int nLogLevel, String strCat, String strInfo, String strDEName, String strAction, long nTime, Object objData) {
-        try{
-            IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
+        IBZTPSFeignClient tps = SpringContextHolder.getBean(IBZTPSFeignClient.class);
+        try {
             SysPO sysPO = new SysPO();
             sysPO.setLoglevel(nLogLevel);
             sysPO.setCat(strCat);
@@ -330,11 +391,11 @@ public abstract class SystemRuntimeBase extends net.ibizsys.runtime.SystemRuntim
             sysPO.setDe(strDEName);
             sysPO.setAction(strAction);
             sysPO.setTime(nTime);
-            if(objData != null)
+            if (objData != null)
                 sysPO.setObjdata(MAPPER.writeValueAsString(objData));
             tps.po(sysPO);
-        }catch (Exception e){
-            log.error(String.format("登记系统优化日志发生错误：%s",e.getMessage()));
+        } catch (Exception e) {
+            log.error(String.format("登记系统优化日志发生错误：%s", e.getMessage()));
         }
     }
 

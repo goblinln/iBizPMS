@@ -336,9 +336,11 @@ public class ActionResource {
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取ProductTrends", tags = {"系统日志" } ,notes = "获取ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/actions/fetchproducttrends")
 	public ResponseEntity<List<ActionDTO>> fetchproducttrends(@RequestBody ActionSearchContext context) {
+        actionRuntime.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchProductTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -348,17 +350,21 @@ public class ActionResource {
                 .body(list);
 	}
 
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询ProductTrends", tags = {"系统日志" } ,notes = "查询ProductTrends")
     @RequestMapping(method= RequestMethod.POST , value="/actions/searchproducttrends")
 	public ResponseEntity<Page<ActionDTO>> searchProductTrends(@RequestBody ActionSearchContext context) {
+        actionRuntime.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchProductTrends(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "获取项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/actions/fetchprojecttrends")
 	public ResponseEntity<List<ActionDTO>> fetchprojecttrends(@RequestBody ActionSearchContext context) {
+        actionRuntime.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchProjectTrends(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -368,9 +374,11 @@ public class ActionResource {
                 .body(list);
 	}
 
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询项目动态(项目相关所有)", tags = {"系统日志" } ,notes = "查询项目动态(项目相关所有)")
     @RequestMapping(method= RequestMethod.POST , value="/actions/searchprojecttrends")
 	public ResponseEntity<Page<ActionDTO>> searchProjectTrends(@RequestBody ActionSearchContext context) {
+        actionRuntime.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchProjectTrends(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
@@ -400,9 +408,11 @@ public class ActionResource {
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "获取Type", tags = {"系统日志" } ,notes = "获取Type")
     @RequestMapping(method= RequestMethod.POST , value="/actions/fetchtype")
 	public ResponseEntity<List<ActionDTO>> fetchtype(@RequestBody ActionSearchContext context) {
+        actionRuntime.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchType(context) ;
         List<ActionDTO> list = actionMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -412,9 +422,11 @@ public class ActionResource {
                 .body(list);
 	}
 
+    @PreAuthorize("@ActionRuntime.quickTest('READ')")
 	@ApiOperation(value = "查询Type", tags = {"系统日志" } ,notes = "查询Type")
     @RequestMapping(method= RequestMethod.POST , value="/actions/searchtype")
 	public ResponseEntity<Page<ActionDTO>> searchType(@RequestBody ActionSearchContext context) {
+        actionRuntime.addAuthorityConditions(context,"READ");
         Page<Action> domains = actionService.searchType(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(actionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));

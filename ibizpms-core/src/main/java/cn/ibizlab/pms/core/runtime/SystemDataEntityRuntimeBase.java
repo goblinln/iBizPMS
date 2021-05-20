@@ -761,6 +761,11 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                             && (DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
                     .collect(Collectors.toList()));
         }
+        //系统角色分配固定能力
+        uaaDEAuthority.addAll(((SystemRuntime) this.getSystemRuntime()).getRoleUAADEAuthority().stream().filter(
+                uaadeAuthority -> uaadeAuthority.getEntity().equals(this.getName())
+                        && (DataAccessActions.READ.equals(action) || uaadeAuthority.getDeAction().stream().anyMatch(deaction -> deaction.containsKey(action))))
+                .collect(Collectors.toList()));
         //运行时分配能力
         if(curUser.getAuthorities() != null){
             String curSystemId = curUser.getSrfsystemid();

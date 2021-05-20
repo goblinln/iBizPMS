@@ -12856,6 +12856,7 @@
     "userDRAction" : "READ",
     "defaultMode" : true
   }, {
+    "customCond" : "['&',('ASSIGNEDTO','=',#{srf.sessioncontext.srfloginname})]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_JOINNER.json",
     "name" : "需求维护（当前参与者）（默认角色）",
     "getPSDEUserRoleOPPrivs" : [ {
@@ -12877,6 +12878,7 @@
     "userDRAction" : "READ",
     "defaultMode" : true
   }, {
+    "customCond" : "['&',('OPENEDBY','=',#{srf.sessioncontext.srfloginname})]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_OpenBy.json",
     "name" : "需求维护（当前创建者）（默认角色）",
     "getPSDEUserRoleOPPrivs" : [ {
