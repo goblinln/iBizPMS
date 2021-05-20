@@ -2805,6 +2805,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "取消置顶",
     "codeName" : "CancelProjectTop",
+    "dataAccessAction" : "TOP",
     "fullCodeName" : "Project_CancelProjectTop",
     "name" : "取消置顶",
     "getPSAppDEMethod" : {
@@ -2833,6 +2834,7 @@
     "caption" : "删除",
     "codeName" : "delete",
     "confirmMsg" : "确认要删除，删除操作将不可恢复？",
+    "dataAccessAction" : "DELETE",
     "fullCodeName" : "Project_delete",
     "name" : "删除",
     "getNextPSUIAction" : {

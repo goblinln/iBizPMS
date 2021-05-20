@@ -780,6 +780,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "取消置顶",
           "codeName" : "CancelProjectTop",
+          "dataAccessAction" : "TOP",
           "fullCodeName" : "Project_CancelProjectTop",
           "name" : "取消置顶",
           "getPSAppDEMethod" : {
