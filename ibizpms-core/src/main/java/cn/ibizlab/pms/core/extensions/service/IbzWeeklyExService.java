@@ -238,7 +238,27 @@ public class IbzWeeklyExService extends IbzWeeklyServiceImpl {
     @Override
     @Transactional
     public IbzWeekly editGetLastWeekTaskAndComTask(IbzWeekly et) {
-        return super.editGetLastWeekTaskAndComTask(et);
+        Set<String> taskIdSet = new HashSet<>();
+        CachedBeanCopier.copy(get(et.getIbzweeklyid()),et);
+        //String tasksId = "";
+        if (et.getThisweektask() != null){
+            taskIdSet.addAll(Arrays.asList(et.getThisweektask().split(","))); //将周报的已有的完成任务添加到集合，
+        }
+//        List<IbzWeekly> list = this.list(new QueryWrapper<IbzWeekly>().last("where YEARWEEK(date_format(date,'%Y-%m-%d')) = YEARWEEK(now())-1"));
+//        for (IbzWeekly ibzWeekly : list) {
+//            if (et.getAccount().equals(ibzWeekly.getAccount())){  //新建是本人上周有周报
+//                tasksId += ibzWeekly.getNextweektask();
+//            }
+//        }
+        //查询本周我完成的任务
+        List<Task> tasks = iTaskService.list(new QueryWrapper<Task>().eq("deleted","0").eq("finishedBy",et.getAccount()).last("and YEARWEEK(date_format(DATE_SUB( finishedDate,INTERVAL 1 DAY),'%Y-%m-%d')) = YEARWEEK('"+et.getDate()+"') "));
+        for (Task t : tasks) {
+            taskIdSet.add(t.getId().toString());
+        }
+        if (taskIdSet.size() != 0){
+            et.setThisweektask(Joiner.on(",").join(taskIdSet));
+        }
+        return et;
     }
 
     /**
@@ -274,7 +294,27 @@ public class IbzWeeklyExService extends IbzWeeklyServiceImpl {
     @Override
     @Transactional
     public IbzWeekly jugThisWeekCreateWeekly(IbzWeekly et) {
-        return super.jugThisWeekCreateWeekly(et);
+        Object actioninfo = et.get("actioninfo");
+
+        Date today = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM");
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(today);
+        int week = calendar.get(Calendar.WEEK_OF_MONTH); //第几周
+        Calendar c = Calendar.getInstance();
+        int weekday = getMondayAndSunday(c,today);
+
+        c.add(Calendar.DAY_OF_MONTH,weekday == 0 ? 0 : (8-weekday));
+        Date sunday = c.getTime();
+        c.add(Calendar.DAY_OF_MONTH,-6);
+        Date monday = c.getTime();
+        List<IbzWeekly> list = this.list(new QueryWrapper<IbzWeekly>().eq("account",AuthenticationUser.getAuthenticationUser().getUsername()).last("and DATE_SUB(CURDATE(), INTERVAL 7 DAY) <= date"));
+        for (IbzWeekly ibzWeekly : list) {
+            if (ibzWeekly.getDate().getTime() >= monday.getTime() ){
+                throw new RuntimeException(String.format(actioninfo.toString(),AuthenticationUser.getAuthenticationUser().getUsername(),dateFormat.format(today),week));
+            }
+        }
+        return et;
     }
 
     /**

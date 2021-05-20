@@ -2090,6 +2090,7 @@ public class StaticDict {
         UNLINKRELATEDSTORY("unlinkrelatedstory","移除了相关需求"),
         SUBDIVIDESTORY("subdividestory","细分了需求"),
         UNLINKCHILDSTORY("unlinkchildstory","移除了细分需求"),
+        UNLINKEDFROMBRANCH("unlinkedfrombranch","移除平台"),
         STARTED("started","开始了"),
         RESTARTED("restarted","继续了"),
         RECORDESTIMATE("recordestimate","记录了工时"),

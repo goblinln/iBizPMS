@@ -118,7 +118,9 @@ public class IbzMonthlyExService extends IbzMonthlyServiceImpl {
     @Override
     @Transactional
     public IbzMonthly createGetInfo(IbzMonthly et) {
-        return super.createGetInfo(et);
+        et.setDate(ZTDateUtil.now());
+        et.setAccount(AuthenticationUser.getAuthenticationUser().getUsername());
+        return getThisMonthlyCompleteTasks(getLastMonthlyPlans(et));
     }
 
     /**
@@ -194,7 +196,8 @@ public class IbzMonthlyExService extends IbzMonthlyServiceImpl {
     @Override
     @Transactional
     public IbzMonthly editGetCompleteTask(IbzMonthly et) {
-        return super.editGetCompleteTask(et);
+        CachedBeanCopier.copy(get(et.getIbzmonthlyid()), et);
+        return getThisMonthlyCompleteTasks(et);
     }
 
     /**
