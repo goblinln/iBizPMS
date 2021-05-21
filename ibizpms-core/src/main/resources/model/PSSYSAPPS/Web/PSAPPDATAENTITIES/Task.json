@@ -119,7 +119,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "SRFUR__TASK_ACTIVATION_BUT"
+      "id" : "ACTIVATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -135,7 +135,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "SRFUR__TASK_ASSIGN_BUT"
+      "id" : "ASSIGNTO"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -151,7 +151,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "SRFUR__TASK_CANCEL_BUT"
+      "id" : "CANCEL"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -309,6 +309,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Finish.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "FINISH"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Finish"
@@ -415,7 +419,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "SRFUR__TASK_PAUSE_BUT"
+      "id" : "PAUSE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -428,6 +432,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordEstimate.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RECORDESTIMATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -476,6 +484,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Restart.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RESTART"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -527,7 +539,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "SRFUR__TASK_START_BUT"
+      "id" : "START"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2293,7 +2305,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "SRFUR__TASK_ACTIVATION_BUT"
+      "id" : "ACTIVATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2309,7 +2321,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "SRFUR__TASK_ASSIGN_BUT"
+      "id" : "ASSIGNTO"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2325,7 +2337,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "SRFUR__TASK_CANCEL_BUT"
+      "id" : "CANCEL"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2483,6 +2495,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Finish.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "FINISH"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Finish"
@@ -2589,7 +2605,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "SRFUR__TASK_PAUSE_BUT"
+      "id" : "PAUSE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2602,6 +2618,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordEstimate.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RECORDESTIMATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2650,6 +2670,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Restart.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RESTART"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2701,7 +2725,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "SRFUR__TASK_START_BUT"
+      "id" : "START"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -4168,9 +4192,10 @@
     "id" : "MoreChild@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "开始",
     "codeName" : "MStartTaskDash",
-    "dataAccessAction" : "SRFUR__TASK_START_BUT",
+    "dataAccessAction" : "START",
     "fullCodeName" : "Task_MStartTaskDash",
     "name" : "开始任务(操作栏)(多人任务检查)",
     "getNextPSUIAction" : {
@@ -4235,7 +4260,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "指派",
     "codeName" : "AssignTask",
-    "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
+    "dataAccessAction" : "ASSIGNTO",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskAssignTaskView.json",
@@ -4286,8 +4311,10 @@
     "id" : "MainEditDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "继续",
     "codeName" : "ReStartTeamTask",
+    "dataAccessAction" : "RESTART",
     "fullCodeName" : "Task_ReStartTeamTask",
     "name" : "继续任务(操作栏)(多人任务检查)",
     "getNextPSUIAction" : {
@@ -4491,7 +4518,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "激活",
     "codeName" : "Activation",
-    "dataAccessAction" : "SRFUR__TASK_ACTIVATION_BUT",
+    "dataAccessAction" : "ACTIVATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskActivationTaskView.json",
@@ -4515,8 +4542,10 @@
     "id" : "Activation@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "完成",
     "codeName" : "DoneTaskDash",
+    "dataAccessAction" : "FINISH",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskDoneTaskView.json",
@@ -4548,7 +4577,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "开始",
     "codeName" : "MStartTaskDash1",
-    "dataAccessAction" : "SRFUR__TASK_START_BUT",
+    "dataAccessAction" : "START",
     "fullCodeName" : "Task_MStartTaskDash1",
     "name" : "开始任务(多人任务检查)",
     "getNextPSUIAction" : {
@@ -4586,9 +4615,10 @@
     "id" : "MStartTaskDash1@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "暂停",
     "codeName" : "MPauseTask",
-    "dataAccessAction" : "SRFUR__TASK_PAUSE_BUT",
+    "dataAccessAction" : "PAUSE",
     "fullCodeName" : "Task_MPauseTask",
     "name" : "暂停任务(操作栏)(多人任务检查)",
     "getNextPSUIAction" : {
@@ -4630,7 +4660,6 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "取消",
     "codeName" : "CancelTaskDash",
-    "dataAccessAction" : "SRFUR__TASK_CANCEL_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskCancelTaskView.json",
@@ -4656,9 +4685,10 @@
     "id" : "CancelTaskDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "指派",
     "codeName" : "AssignTaskDash",
-    "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
+    "dataAccessAction" : "ASSIGNTO",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskAssignTaskView.json",
@@ -4712,6 +4742,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "完成",
     "codeName" : "done",
+    "dataAccessAction" : "FINISH",
     "fullCodeName" : "Task_done",
     "name" : "完成任务(多人任务检查)",
     "getNextPSUIAction" : {
@@ -4985,9 +5016,10 @@
     "id" : "BatchDownload@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "开始",
     "codeName" : "StartTaskDash",
-    "dataAccessAction" : "SRFUR__TASK_START_BUT",
+    "dataAccessAction" : "START",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskOpenTaskView.json",
@@ -5087,6 +5119,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "完成",
     "codeName" : "DoneTask",
+    "dataAccessAction" : "FINISH",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskDoneTaskView.json",
@@ -5116,8 +5149,10 @@
     "id" : "DoneTask@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "继续",
     "codeName" : "ReStartTask",
+    "dataAccessAction" : "RESTART",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskRestartTaskView.json",
@@ -5227,9 +5262,10 @@
     "id" : "Create@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "激活",
     "codeName" : "ActivationDash",
-    "dataAccessAction" : "SRFUR__TASK_ACTIVATION_BUT",
+    "dataAccessAction" : "ACTIVATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskActivationTaskView.json",
@@ -5283,7 +5319,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "开始",
     "codeName" : "StartTask",
-    "dataAccessAction" : "SRFUR__TASK_START_BUT",
+    "dataAccessAction" : "START",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskOpenTaskView.json",
@@ -5313,9 +5349,10 @@
     "id" : "StartTask@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "暂停",
     "codeName" : "PauseTaskDash",
-    "dataAccessAction" : "SRFUR__TASK_PAUSE_BUT",
+    "dataAccessAction" : "PAUSE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskPauseTaskView.json",
@@ -5384,8 +5421,10 @@
     "id" : "checkForwardDash@Task"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "完成",
     "codeName" : "MDoneTask",
+    "dataAccessAction" : "FINISH",
     "frontProcessType" : "WIZARD",
     "fullCodeName" : "Task_MDoneTask",
     "name" : "完成任务(操作栏)(多人任务检查)",
@@ -17303,28 +17342,16 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__TASK_PAUSE_BUT",
+      "name" : "START",
       "getPSDEOPPriv" : {
-        "logicName" : "任务暂停",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_PAUSE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_PAUSE_BUT",
-        "name" : "SRFUR__TASK_PAUSE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "开始",
+        "name" : "START"
       }
     }, {
-      "name" : "SRFUR__TASK_CLOSE_BUT",
+      "name" : "ACTIVATE",
       "getPSDEOPPriv" : {
-        "logicName" : "任务关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_CLOSE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_CLOSE_BUT",
-        "name" : "SRFUR__TASK_CLOSE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "激活",
+        "name" : "ACTIVATE"
       }
     }, {
       "name" : "SRFUR__TASK_FORWARD_BUT",
@@ -17336,18 +17363,6 @@
         },
         "mapSysUniResCode" : "TASK_FORWARD_BUT",
         "name" : "SRFUR__TASK_FORWARD_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_START_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务开始",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_START_BUT"
-        },
-        "mapSysUniResCode" : "TASK_START_BUT",
-        "name" : "SRFUR__TASK_START_BUT",
         "mapSysUniRes" : true
       }
     }, {
@@ -17375,16 +17390,16 @@
         "mapSysUniRes" : true
       }
     }, {
-      "name" : "SRFUR__TASK_ACTIVATION_BUT",
+      "name" : "PAUSE",
       "getPSDEOPPriv" : {
-        "logicName" : "任务激活",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_ACTIVATION_BUT"
-        },
-        "mapSysUniResCode" : "TASK_ACTIVATION_BUT",
-        "name" : "SRFUR__TASK_ACTIVATION_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "暂停",
+        "name" : "PAUSE"
+      }
+    }, {
+      "name" : "CLOSE",
+      "getPSDEOPPriv" : {
+        "logicName" : "关闭",
+        "name" : "CLOSE"
       }
     } ],
     "state2Value" : "0",
@@ -24829,6 +24844,15 @@
     "oPPrivAllowMode" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "激活",
+    "name" : "ACTIVATE"
+  }, {
+    "logicName" : "指派/转交",
+    "name" : "ASSIGNTO"
+  }, {
+    "logicName" : "取消",
+    "name" : "CANCEL"
+  }, {
     "logicName" : "关闭",
     "name" : "CLOSE"
   }, {
@@ -24874,6 +24898,9 @@
     "name" : "DELETE",
     "id" : "ProjectModule__DELETE"
   }, {
+    "logicName" : "完成",
+    "name" : "FINISH"
+  }, {
     "logicName" : "管理",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
@@ -24891,6 +24918,9 @@
     },
     "name" : "MANAGE",
     "id" : "ProjectModule__MANAGE"
+  }, {
+    "logicName" : "暂停",
+    "name" : "PAUSE"
   }, {
     "logicName" : "Story_Read",
     "mapPSDEOPPrivName" : "READ",
@@ -24921,6 +24951,15 @@
   }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "工时录入",
+    "name" : "RECORDESTIMATE"
+  }, {
+    "logicName" : "继续",
+    "name" : "RESTART"
+  }, {
+    "logicName" : "开始",
+    "name" : "START"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"

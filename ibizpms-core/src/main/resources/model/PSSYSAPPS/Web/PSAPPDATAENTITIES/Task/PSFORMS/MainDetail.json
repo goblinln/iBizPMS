@@ -2502,7 +2502,7 @@
                       "actionTarget" : "SINGLEKEY",
                       "caption" : "指派",
                       "codeName" : "AssignTask",
-                      "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
+                      "dataAccessAction" : "ASSIGNTO",
                       "getFrontPSAppView" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskAssignTaskView.json",
@@ -2535,7 +2535,7 @@
                       "actionTarget" : "SINGLEKEY",
                       "caption" : "开始",
                       "codeName" : "StartTask",
-                      "dataAccessAction" : "SRFUR__TASK_START_BUT",
+                      "dataAccessAction" : "START",
                       "getFrontPSAppView" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskOpenTaskView.json",
@@ -2574,7 +2574,7 @@
                       "actionTarget" : "SINGLEKEY",
                       "caption" : "激活",
                       "codeName" : "Activation",
-                      "dataAccessAction" : "SRFUR__TASK_ACTIVATION_BUT",
+                      "dataAccessAction" : "ACTIVATE",
                       "getFrontPSAppView" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskActivationTaskView.json",
@@ -2639,6 +2639,7 @@
                       "actionTarget" : "SINGLEKEY",
                       "caption" : "完成",
                       "codeName" : "DoneTask",
+                      "dataAccessAction" : "FINISH",
                       "getFrontPSAppView" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskDoneTaskView.json",

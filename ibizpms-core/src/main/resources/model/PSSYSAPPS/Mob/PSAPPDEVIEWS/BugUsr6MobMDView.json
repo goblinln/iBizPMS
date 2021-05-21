@@ -671,6 +671,7 @@
           "caption" : "移除关联",
           "codeName" : "UnlinkBugMob",
           "confirmMsg" : "是否移除关联Bug",
+          "dataAccessAction" : "PLANLINK",
           "fullCodeName" : "Bug_UnlinkBugMob",
           "name" : "取消计划关联Bug（移动端）",
           "getPSAppDEMethod" : {
@@ -760,6 +761,7 @@
         "actionTarget" : "NONE",
         "caption" : "关联bug",
         "codeName" : "MobProductPlanLinkBug",
+        "dataAccessAction" : "PLANLINK",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugUsr2MobMPickupView.json",

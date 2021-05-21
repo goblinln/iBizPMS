@@ -327,7 +327,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "NONE"
+      "id" : "ZTProduct__BUILDLINK"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -343,7 +343,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "ZTProduct__BUILDLINK"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -483,7 +483,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "NONE"
+      "id" : "ZTProduct__PLANLINK"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -515,7 +515,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "NONE"
+      "id" : "ZTProduct__PROJECTLINK"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -531,7 +531,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "ZTProduct__PROJECTLINK"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -595,7 +595,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "NONE"
+      "id" : "ZTProduct__RELEASELINK"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -611,7 +611,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "ZTProduct__RELEASELINK"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -759,7 +759,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "ZTProduct__PLANLINK"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2260,7 +2260,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "NONE"
+      "id" : "ZTProduct__BUILDLINK"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2276,7 +2276,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "ZTProduct__BUILDLINK"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2416,7 +2416,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "NONE"
+      "id" : "ZTProduct__PLANLINK"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2448,7 +2448,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "NONE"
+      "id" : "ZTProduct__PROJECTLINK"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2464,7 +2464,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "ZTProduct__PROJECTLINK"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2528,7 +2528,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "NONE"
+      "id" : "ZTProduct__RELEASELINK"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2544,7 +2544,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "ZTProduct__RELEASELINK"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2692,7 +2692,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "MANAGE"
+      "id" : "ZTProduct__PLANLINK"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -3662,6 +3662,7 @@
     "actionTarget" : "NONE",
     "caption" : "关联需求",
     "codeName" : "buildLinkStories",
+    "dataAccessAction" : "RELEASELINK",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryMPickupView3.json",
@@ -3831,9 +3832,11 @@
     "id" : "More@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "移除关联",
     "codeName" : "UnlinkStory",
     "confirmMsg" : "是否移除需求关联",
+    "dataAccessAction" : "PLANLINK",
     "fullCodeName" : "Story_UnlinkStory",
     "name" : "取消计划关联",
     "getPSAppDEMethod" : {
@@ -3867,6 +3870,7 @@
     "actionTarget" : "NONE",
     "caption" : "关联需求",
     "codeName" : "projectLinkStories",
+    "dataAccessAction" : "PROJECTLINK",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectMPickupView3.json",
@@ -3972,6 +3976,7 @@
     "actionTarget" : "NONE",
     "caption" : "关联需求",
     "codeName" : "releaseLinkStories",
+    "dataAccessAction" : "RELEASELINK",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryUsr2MPickupView.json",
@@ -4305,8 +4310,10 @@
     "id" : "Breakdowntasks@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "移除关联",
     "codeName" : "releaseUnlinkStory",
+    "dataAccessAction" : "RELEASELINK",
     "fullCodeName" : "Story_releaseUnlinkStory",
     "name" : "移除关联（发布—需求）",
     "getPSAppDEMethod" : {
@@ -4392,9 +4399,11 @@
     "id" : "ProjectCreateView@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "解绑需求",
     "codeName" : "buildUnlinkStory",
     "confirmMsg" : "您确认移除该需求吗？",
+    "dataAccessAction" : "BUILDLINK",
     "fullCodeName" : "Story_buildUnlinkStory",
     "name" : "解除绑定（版本——需求）",
     "getPSAppDEMethod" : {
@@ -4431,9 +4440,11 @@
     "id" : "buildUnlinkStory@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "移除",
     "codeName" : "ProjectUnlinkStory",
     "confirmMsg" : "您确定从该项目中移除该需求吗？",
+    "dataAccessAction" : "PROJECTLINK",
     "fullCodeName" : "Story_ProjectUnlinkStory",
     "name" : "移除项目关联",
     "getPSAppDEMethod" : {
@@ -4527,6 +4538,7 @@
     "actionTarget" : "NONE",
     "caption" : "按照计划关联",
     "codeName" : "ProjecPlanLink",
+    "dataAccessAction" : "PLANLINK",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectPlanView.json",
@@ -10790,6 +10802,15 @@
     "logicName" : "需求指派",
     "name" : "ASSIGNTO"
   }, {
+    "logicName" : "版本关联",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "BUILDLINK",
+    "id" : "ZTProduct__BUILDLINK"
+  }, {
     "logicName" : "建用例",
     "name" : "CCASE"
   }, {
@@ -10844,6 +10865,24 @@
     "logicName" : "取消收藏",
     "name" : "NFAVORITES"
   }, {
+    "logicName" : "计划关联",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "PLANLINK",
+    "id" : "ZTProduct__PLANLINK"
+  }, {
+    "logicName" : "项目关联",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "PROJECTLINK",
+    "id" : "ZTProduct__PROJECTLINK"
+  }, {
     "logicName" : "Product_Read",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
@@ -10855,6 +10894,15 @@
   }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "发布关联",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "RELEASELINK",
+    "id" : "ZTProduct__RELEASELINK"
   }, {
     "logicName" : "需求评审",
     "name" : "REVIEW"

@@ -323,6 +323,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "确认",
           "codeName" : "ConfirmBug",
+          "dataAccessAction" : "CONFIRM",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugConfirmView.json",
@@ -356,6 +357,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "解决",
           "codeName" : "ResolveBug",
+          "dataAccessAction" : "RESOLVE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugResolveView.json",
@@ -388,7 +390,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "关闭",
           "codeName" : "CloseBug",
-          "dataAccessAction" : "SRFUR__BUG_CLOSE_BUT",
+          "dataAccessAction" : "CLOSE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCloseView.json",
@@ -451,6 +453,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "编辑",
           "codeName" : "MainEdit",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainEditView.json",

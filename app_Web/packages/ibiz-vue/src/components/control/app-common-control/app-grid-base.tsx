@@ -509,6 +509,7 @@ export class AppGridBase extends GridControlBase {
                 <div slot='content'>
                     {this.allColumns.map((col: any) => {
                         return (
+                            col.columnType != "UAGRIDCOLUMN" ?
                             <div>
                                 <el-checkbox
                                     key={col.name}
@@ -517,7 +518,7 @@ export class AppGridBase extends GridControlBase {
                                 >
                                     {col.label}
                                 </el-checkbox>
-                            </div>
+                            </div> : null
                         );
                     })}
                 </div>
@@ -563,6 +564,7 @@ export class AppGridBase extends GridControlBase {
                 <div slot='content'>
                     {this.allColumns.map((col: any) => {
                         return (
+                            col.columnType != "UAGRIDCOLUMN" ?
                             <div class='page-column-item'>
                                 <el-checkbox
                                     key={col.name}
@@ -572,7 +574,7 @@ export class AppGridBase extends GridControlBase {
                                     {col.label}
                                 </el-checkbox>
                                 <icon type="md-menu" />
-                            </div>
+                            </div> : null
                         );
                     })}
                 </div>

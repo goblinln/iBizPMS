@@ -56,7 +56,8 @@
         },
         "tooltip" : "我的地盘"
       }, {
-        "accUserMode" : 0,
+        "accUserMode" : 4,
+        "accessKey" : "TOP_PRODUCT_MENU",
         "caption" : "产品主页",
         "itemType" : "MENUITEM",
         "name" : "menuitem3",
@@ -75,7 +76,8 @@
         "tooltip" : "产品主页",
         "openDefault" : true
       }, {
-        "accUserMode" : 0,
+        "accUserMode" : 4,
+        "accessKey" : "TOP_PROJECT_MENU",
         "caption" : "项目主页",
         "itemType" : "MENUITEM",
         "name" : "menuitem2",
@@ -93,7 +95,8 @@
         },
         "tooltip" : "项目主页"
       }, {
-        "accUserMode" : 0,
+        "accUserMode" : 4,
+        "accessKey" : "TOP_CASE_MENU",
         "caption" : "测试主页",
         "itemType" : "MENUITEM",
         "name" : "menuitem1",
@@ -384,7 +387,8 @@
       "itemType" : "MENUITEM",
       "name" : "left_exp",
       "getPSAppMenuItems" : [ {
-        "accUserMode" : 2,
+        "accUserMode" : 4,
+        "accessKey" : "PRODUCTLEFT",
         "caption" : "产品",
         "itemType" : "MENUITEM",
         "name" : "menuitem4",
@@ -410,7 +414,8 @@
           "id" : "菜单项文本[MENUITEM.CAPTION.LEFT_PRODUCT]"
         }
       }, {
-        "accUserMode" : 2,
+        "accUserMode" : 4,
+        "accessKey" : "LEFT_PROJECT_MENU",
         "caption" : "项目",
         "itemType" : "MENUITEM",
         "name" : "menuitem5",
@@ -432,7 +437,8 @@
         },
         "tooltip" : "项目"
       }, {
-        "accUserMode" : 2,
+        "accUserMode" : 4,
+        "accessKey" : "LEFT_CASE_MENU",
         "caption" : "测试",
         "itemType" : "MENUITEM",
         "name" : "menuitem6",

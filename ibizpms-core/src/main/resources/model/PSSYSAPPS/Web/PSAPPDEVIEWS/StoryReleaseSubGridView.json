@@ -185,6 +185,7 @@
         "actionTarget" : "NONE",
         "caption" : "关联需求",
         "codeName" : "releaseLinkStories",
+        "dataAccessAction" : "RELEASELINK",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryUsr2MPickupView.json",
@@ -654,8 +655,10 @@
           "name" : "u3e3ef8e",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
+            "noPrivDisplayMode" : 1,
             "caption" : "移除关联",
             "codeName" : "releaseUnlinkStory",
+            "dataAccessAction" : "RELEASELINK",
             "fullCodeName" : "Story_releaseUnlinkStory",
             "name" : "移除关联（发布—需求）",
             "getPSAppDEMethod" : {

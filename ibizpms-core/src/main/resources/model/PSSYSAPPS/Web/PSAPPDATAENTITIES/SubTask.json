@@ -268,7 +268,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "SRFUR__TASK_ACTIVATION_BUT"
+      "id" : "ACTIVATE"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -282,7 +282,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "SRFUR__TASK_ASSIGN_BUT"
+      "id" : "ASSIGNTO"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -305,7 +305,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "SRFUR__TASK_CANCEL_BUT"
+      "id" : "CANCEL"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -387,6 +387,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Finish.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "FINISH"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -471,7 +475,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "SRFUR__TASK_PAUSE_BUT"
+      "id" : "PAUSE"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -482,6 +486,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordEstimate.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RECORDESTIMATE"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -520,6 +528,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Restart.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RESTART"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -550,7 +562,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "SRFUR__TASK_START_BUT"
+      "id" : "START"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -1967,7 +1979,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "SRFUR__TASK_ACTIVATION_BUT"
+      "id" : "ACTIVATE"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -1981,7 +1993,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "SRFUR__TASK_ASSIGN_BUT"
+      "id" : "ASSIGNTO"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -2004,7 +2016,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "SRFUR__TASK_CANCEL_BUT"
+      "id" : "CANCEL"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -2086,6 +2098,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Finish.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "FINISH"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -2170,7 +2186,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "SRFUR__TASK_PAUSE_BUT"
+      "id" : "PAUSE"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -2181,6 +2197,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/RecordEstimate.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RECORDESTIMATE"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -2219,6 +2239,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Restart.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RESTART"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -2249,7 +2273,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "SRFUR__TASK_START_BUT"
+      "id" : "START"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -14956,28 +14980,16 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__TASK_PAUSE_BUT",
+      "name" : "START",
       "getPSDEOPPriv" : {
-        "logicName" : "任务暂停",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_PAUSE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_PAUSE_BUT",
-        "name" : "SRFUR__TASK_PAUSE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "开始",
+        "name" : "START"
       }
     }, {
-      "name" : "SRFUR__TASK_CLOSE_BUT",
+      "name" : "ACTIVATE",
       "getPSDEOPPriv" : {
-        "logicName" : "任务关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_CLOSE_BUT"
-        },
-        "mapSysUniResCode" : "TASK_CLOSE_BUT",
-        "name" : "SRFUR__TASK_CLOSE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "激活",
+        "name" : "ACTIVATE"
       }
     }, {
       "name" : "SRFUR__TASK_FORWARD_BUT",
@@ -14989,18 +15001,6 @@
         },
         "mapSysUniResCode" : "TASK_FORWARD_BUT",
         "name" : "SRFUR__TASK_FORWARD_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__TASK_START_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "任务开始",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_START_BUT"
-        },
-        "mapSysUniResCode" : "TASK_START_BUT",
-        "name" : "SRFUR__TASK_START_BUT",
         "mapSysUniRes" : true
       }
     }, {
@@ -15028,16 +15028,16 @@
         "mapSysUniRes" : true
       }
     }, {
-      "name" : "SRFUR__TASK_ACTIVATION_BUT",
+      "name" : "PAUSE",
       "getPSDEOPPriv" : {
-        "logicName" : "任务激活",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__TASK_ACTIVATION_BUT"
-        },
-        "mapSysUniResCode" : "TASK_ACTIVATION_BUT",
-        "name" : "SRFUR__TASK_ACTIVATION_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "暂停",
+        "name" : "PAUSE"
+      }
+    }, {
+      "name" : "CLOSE",
+      "getPSDEOPPriv" : {
+        "logicName" : "关闭",
+        "name" : "CLOSE"
       }
     } ],
     "state2Value" : "0",
@@ -22482,6 +22482,15 @@
     "oPPrivAllowMode" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "激活",
+    "name" : "ACTIVATE"
+  }, {
+    "logicName" : "指派/转交",
+    "name" : "ASSIGNTO"
+  }, {
+    "logicName" : "取消",
+    "name" : "CANCEL"
+  }, {
     "logicName" : "关闭",
     "name" : "CLOSE"
   }, {
@@ -22527,6 +22536,9 @@
     "name" : "DELETE",
     "id" : "ProjectModule__DELETE"
   }, {
+    "logicName" : "完成",
+    "name" : "FINISH"
+  }, {
     "logicName" : "管理",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
@@ -22544,6 +22556,9 @@
     },
     "name" : "MANAGE",
     "id" : "ProjectModule__MANAGE"
+  }, {
+    "logicName" : "暂停",
+    "name" : "PAUSE"
   }, {
     "logicName" : "Story_Read",
     "mapPSDEOPPrivName" : "READ",
@@ -22574,6 +22589,15 @@
   }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "工时录入",
+    "name" : "RECORDESTIMATE"
+  }, {
+    "logicName" : "继续",
+    "name" : "RESTART"
+  }, {
+    "logicName" : "开始",
+    "name" : "START"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"

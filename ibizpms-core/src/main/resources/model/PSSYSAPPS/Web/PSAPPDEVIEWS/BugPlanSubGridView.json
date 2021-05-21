@@ -218,6 +218,7 @@
         "actionTarget" : "NONE",
         "caption" : "关联Bug",
         "codeName" : "PlanRelationBug",
+        "dataAccessAction" : "PLANLINK",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMPickupView.json",
@@ -689,7 +690,7 @@
             "caption" : "移除关联",
             "codeName" : "UnlinkBug",
             "confirmMsg" : "是否移除关联Bug",
-            "dataAccessAction" : "SRFUR__BUG_UNLINK_BUT",
+            "dataAccessAction" : "PLANLINK",
             "fullCodeName" : "Bug_UnlinkBug",
             "name" : "取消计划关联Bug",
             "getPSAppDEMethod" : {

@@ -244,9 +244,11 @@
         "name" : "ufbd4e10",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "移除关联",
           "codeName" : "UnlinkStory",
           "confirmMsg" : "是否移除需求关联",
+          "dataAccessAction" : "PLANLINK",
           "fullCodeName" : "Story_UnlinkStory",
           "name" : "取消计划关联",
           "getPSAppDEMethod" : {

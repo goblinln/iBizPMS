@@ -823,6 +823,7 @@
         "actionTarget" : "NONE",
         "caption" : "关联bug",
         "codeName" : "MobBuildLink",
+        "dataAccessAction" : "BUILDLINK",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/BugUsr3MobMPickupBuildCreateBugView.json",

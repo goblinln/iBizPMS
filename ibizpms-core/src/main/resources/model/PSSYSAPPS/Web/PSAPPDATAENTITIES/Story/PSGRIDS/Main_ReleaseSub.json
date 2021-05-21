@@ -223,8 +223,10 @@
         "name" : "u3e3ef8e",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "移除关联",
           "codeName" : "releaseUnlinkStory",
+          "dataAccessAction" : "RELEASELINK",
           "fullCodeName" : "Story_releaseUnlinkStory",
           "name" : "移除关联（发布—需求）",
           "getPSAppDEMethod" : {

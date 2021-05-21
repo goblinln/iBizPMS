@@ -322,6 +322,7 @@
         "actionTarget" : "NONE",
         "caption" : "关联需求",
         "codeName" : "projectLinkStories",
+        "dataAccessAction" : "PROJECTLINK",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectMPickupView3.json",
@@ -384,6 +385,7 @@
         "actionTarget" : "NONE",
         "caption" : "按照计划关联",
         "codeName" : "ProjecPlanLink",
+        "dataAccessAction" : "PLANLINK",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryProjectPlanView.json",
@@ -1103,9 +1105,11 @@
           "name" : "u247f69c",
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
+            "noPrivDisplayMode" : 1,
             "caption" : "移除",
             "codeName" : "ProjectUnlinkStory",
             "confirmMsg" : "您确定从该项目中移除该需求吗？",
+            "dataAccessAction" : "PROJECTLINK",
             "fullCodeName" : "Story_ProjectUnlinkStory",
             "name" : "移除项目关联",
             "getPSAppDEMethod" : {

@@ -972,6 +972,7 @@
           "caption" : "移除关联",
           "codeName" : "UnlinkBugMob",
           "confirmMsg" : "是否移除关联Bug",
+          "dataAccessAction" : "PLANLINK",
           "fullCodeName" : "Bug_UnlinkBugMob",
           "name" : "取消计划关联Bug（移动端）",
           "getPSAppDEMethod" : {

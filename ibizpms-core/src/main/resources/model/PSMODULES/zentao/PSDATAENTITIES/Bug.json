@@ -6350,52 +6350,22 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__PROP_LBUG_BUT",
+      "name" : "CLOSE",
       "getPSDEOPPriv" : {
-        "logicName" : "计划关联bug",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROP_LBUG_BUT"
-        },
-        "mapSysUniResCode" : "PROP_LBUG_BUT",
-        "name" : "SRFUR__PROP_LBUG_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "关闭",
+        "name" : "CLOSE"
       }
     }, {
-      "name" : "SRFUR__BUG_FAVOR_BUT",
+      "name" : "ACTIVATE",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug已收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_FAVOR_BUT"
-        },
-        "mapSysUniResCode" : "BUG_FAVOR_BUT",
-        "name" : "SRFUR__BUG_FAVOR_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "激活",
+        "name" : "ACTIVATE"
       }
     }, {
-      "name" : "SRFUR__BUG_CLOSE_BUT",
+      "name" : "NFAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_CLOSE_BUT"
-        },
-        "mapSysUniResCode" : "BUG_CLOSE_BUT",
-        "name" : "SRFUR__BUG_CLOSE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__BUG_ACTIVATE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "Bug激活",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_ACTIVATE_BUT"
-        },
-        "mapSysUniResCode" : "BUG_ACTIVATE_BUT",
-        "name" : "SRFUR__BUG_ACTIVATE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "Bug取消收藏",
+        "name" : "NFAVORITES"
       }
     } ],
     "state2Value" : "0",
@@ -6550,64 +6520,28 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__BUG_ACTIVATE_BUT",
+      "name" : "NFAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug激活",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_ACTIVATE_BUT"
-        },
-        "mapSysUniResCode" : "BUG_ACTIVATE_BUT",
-        "name" : "SRFUR__BUG_ACTIVATE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "Bug取消收藏",
+        "name" : "NFAVORITES"
       }
     }, {
-      "name" : "SRFUR__PROP_LBUG_BUT",
+      "name" : "CLOSE",
       "getPSDEOPPriv" : {
-        "logicName" : "计划关联bug",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROP_LBUG_BUT"
-        },
-        "mapSysUniResCode" : "PROP_LBUG_BUT",
-        "name" : "SRFUR__PROP_LBUG_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "关闭",
+        "name" : "CLOSE"
       }
     }, {
-      "name" : "SRFUR__BUG_CLOSE_BUT",
+      "name" : "ACTIVATE",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_CLOSE_BUT"
-        },
-        "mapSysUniResCode" : "BUG_CLOSE_BUT",
-        "name" : "SRFUR__BUG_CLOSE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "激活",
+        "name" : "ACTIVATE"
       }
     }, {
-      "name" : "SRFUR__BUG_FAVOR_BUT",
+      "name" : "CONFIRM",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug已收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_FAVOR_BUT"
-        },
-        "mapSysUniResCode" : "BUG_FAVOR_BUT",
-        "name" : "SRFUR__BUG_FAVOR_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__BUG_CONFIRM_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "Bug确认",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_CONFIRM_BUT"
-        },
-        "mapSysUniResCode" : "BUG_CONFIRM_BUT",
-        "name" : "SRFUR__BUG_CONFIRM_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "确认",
+        "name" : "CONFIRM"
       }
     } ],
     "state2Value" : "0",
@@ -6790,52 +6724,22 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__BUG_NFAVOR_BUT",
+      "name" : "FAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug待收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_NFAVOR_BUT"
-        },
-        "mapSysUniResCode" : "BUG_NFAVOR_BUT",
-        "name" : "SRFUR__BUG_NFAVOR_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "Bug收藏",
+        "name" : "FAVORITES"
       }
     }, {
-      "name" : "SRFUR__BUG_CLOSE_BUT",
+      "name" : "CLOSE",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_CLOSE_BUT"
-        },
-        "mapSysUniResCode" : "BUG_CLOSE_BUT",
-        "name" : "SRFUR__BUG_CLOSE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "关闭",
+        "name" : "CLOSE"
       }
     }, {
-      "name" : "SRFUR__BUG_ACTIVATE_BUT",
+      "name" : "ACTIVATE",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug激活",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_ACTIVATE_BUT"
-        },
-        "mapSysUniResCode" : "BUG_ACTIVATE_BUT",
-        "name" : "SRFUR__BUG_ACTIVATE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__PROP_LBUG_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "计划关联bug",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROP_LBUG_BUT"
-        },
-        "mapSysUniResCode" : "PROP_LBUG_BUT",
-        "name" : "SRFUR__PROP_LBUG_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "激活",
+        "name" : "ACTIVATE"
       }
     } ],
     "state2Value" : "1",
@@ -7004,64 +6908,28 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__BUG_CLOSE_BUT",
+      "name" : "CONFIRM",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_CLOSE_BUT"
-        },
-        "mapSysUniResCode" : "BUG_CLOSE_BUT",
-        "name" : "SRFUR__BUG_CLOSE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "确认",
+        "name" : "CONFIRM"
       }
     }, {
-      "name" : "SRFUR__BUG_CONFIRM_BUT",
+      "name" : "FAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug确认",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_CONFIRM_BUT"
-        },
-        "mapSysUniResCode" : "BUG_CONFIRM_BUT",
-        "name" : "SRFUR__BUG_CONFIRM_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "Bug收藏",
+        "name" : "FAVORITES"
       }
     }, {
-      "name" : "SRFUR__PROP_LBUG_BUT",
+      "name" : "CLOSE",
       "getPSDEOPPriv" : {
-        "logicName" : "计划关联bug",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROP_LBUG_BUT"
-        },
-        "mapSysUniResCode" : "PROP_LBUG_BUT",
-        "name" : "SRFUR__PROP_LBUG_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "关闭",
+        "name" : "CLOSE"
       }
     }, {
-      "name" : "SRFUR__BUG_NFAVOR_BUT",
+      "name" : "ACTIVATE",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug待收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_NFAVOR_BUT"
-        },
-        "mapSysUniResCode" : "BUG_NFAVOR_BUT",
-        "name" : "SRFUR__BUG_NFAVOR_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__BUG_ACTIVATE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "Bug激活",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_ACTIVATE_BUT"
-        },
-        "mapSysUniResCode" : "BUG_ACTIVATE_BUT",
-        "name" : "SRFUR__BUG_ACTIVATE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "激活",
+        "name" : "ACTIVATE"
       }
     } ],
     "state2Value" : "1",
@@ -7209,88 +7077,34 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__BUG_RESOLVE_BUT",
+      "name" : "CLOSE",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug解决",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_RESOLVE_BUT"
-        },
-        "mapSysUniResCode" : "BUG_RESOLVE_BUT",
-        "name" : "SRFUR__BUG_RESOLVE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "关闭",
+        "name" : "CLOSE"
       }
     }, {
-      "name" : "SRFUR__PROP_LBUG_BUT",
+      "name" : "TOSTORY",
       "getPSDEOPPriv" : {
-        "logicName" : "计划关联bug",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROP_LBUG_BUT"
-        },
-        "mapSysUniResCode" : "PROP_LBUG_BUT",
-        "name" : "SRFUR__PROP_LBUG_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "转需求",
+        "name" : "TOSTORY"
       }
     }, {
-      "name" : "SRFUR__BUG_TOSTORY_BUT",
+      "name" : "ASSIGNTO",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug提需求",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_TOSTORY_BUT"
-        },
-        "mapSysUniResCode" : "BUG_TOSTORY_BUT",
-        "name" : "SRFUR__BUG_TOSTORY_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "指派",
+        "name" : "ASSIGNTO"
       }
     }, {
-      "name" : "SRFUR__BUG_CLOSE_BUT",
+      "name" : "RESOLVE",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_CLOSE_BUT"
-        },
-        "mapSysUniResCode" : "BUG_CLOSE_BUT",
-        "name" : "SRFUR__BUG_CLOSE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "解决",
+        "name" : "RESOLVE"
       }
     }, {
-      "name" : "SRFUR__BUG_FAVOR_BUT",
+      "name" : "CONFIRM",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug已收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_FAVOR_BUT"
-        },
-        "mapSysUniResCode" : "BUG_FAVOR_BUT",
-        "name" : "SRFUR__BUG_FAVOR_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__BUG_ASSIGNTO_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "Bug指派",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_ASSIGNTO_BUT"
-        },
-        "mapSysUniResCode" : "BUG_ASSIGNTO_BUT",
-        "name" : "SRFUR__BUG_ASSIGNTO_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__BUG_CONFIRM_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "Bug确认",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_CONFIRM_BUT"
-        },
-        "mapSysUniResCode" : "BUG_CONFIRM_BUT",
-        "name" : "SRFUR__BUG_CONFIRM_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "确认",
+        "name" : "CONFIRM"
       }
     } ],
     "state2Value" : "0",
@@ -7452,88 +7266,40 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__BUG_ASSIGNTO_BUT",
+      "name" : "TOSTORY",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug指派",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_ASSIGNTO_BUT"
-        },
-        "mapSysUniResCode" : "BUG_ASSIGNTO_BUT",
-        "name" : "SRFUR__BUG_ASSIGNTO_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "转需求",
+        "name" : "TOSTORY"
       }
     }, {
-      "name" : "SRFUR__PROP_LBUG_BUT",
+      "name" : "ASSIGNTO",
       "getPSDEOPPriv" : {
-        "logicName" : "计划关联bug",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROP_LBUG_BUT"
-        },
-        "mapSysUniResCode" : "PROP_LBUG_BUT",
-        "name" : "SRFUR__PROP_LBUG_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "指派",
+        "name" : "ASSIGNTO"
       }
     }, {
-      "name" : "SRFUR__BUG_RESOLVE_BUT",
+      "name" : "CONFIRM",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug解决",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_RESOLVE_BUT"
-        },
-        "mapSysUniResCode" : "BUG_RESOLVE_BUT",
-        "name" : "SRFUR__BUG_RESOLVE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "确认",
+        "name" : "CONFIRM"
       }
     }, {
-      "name" : "SRFUR__BUG_FAVOR_BUT",
+      "name" : "CLOSE",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug已收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_FAVOR_BUT"
-        },
-        "mapSysUniResCode" : "BUG_FAVOR_BUT",
-        "name" : "SRFUR__BUG_FAVOR_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "关闭",
+        "name" : "CLOSE"
       }
     }, {
-      "name" : "SRFUR__BUG_CLOSE_BUT",
+      "name" : "RESOLVE",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_CLOSE_BUT"
-        },
-        "mapSysUniResCode" : "BUG_CLOSE_BUT",
-        "name" : "SRFUR__BUG_CLOSE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "解决",
+        "name" : "RESOLVE"
       }
     }, {
-      "name" : "SRFUR__BUG_CONFIRM_BUT",
+      "name" : "NFAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug确认",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_CONFIRM_BUT"
-        },
-        "mapSysUniResCode" : "BUG_CONFIRM_BUT",
-        "name" : "SRFUR__BUG_CONFIRM_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__BUG_TOSTORY_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "Bug提需求",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_TOSTORY_BUT"
-        },
-        "mapSysUniResCode" : "BUG_TOSTORY_BUT",
-        "name" : "SRFUR__BUG_TOSTORY_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "Bug取消收藏",
+        "name" : "NFAVORITES"
       }
     } ],
     "state2Value" : "0",
@@ -7688,88 +7454,40 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__PROP_LBUG_BUT",
+      "name" : "CONFIRM",
       "getPSDEOPPriv" : {
-        "logicName" : "计划关联bug",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROP_LBUG_BUT"
-        },
-        "mapSysUniResCode" : "PROP_LBUG_BUT",
-        "name" : "SRFUR__PROP_LBUG_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "确认",
+        "name" : "CONFIRM"
       }
     }, {
-      "name" : "SRFUR__BUG_NFAVOR_BUT",
+      "name" : "ASSIGNTO",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug待收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_NFAVOR_BUT"
-        },
-        "mapSysUniResCode" : "BUG_NFAVOR_BUT",
-        "name" : "SRFUR__BUG_NFAVOR_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "指派",
+        "name" : "ASSIGNTO"
       }
     }, {
-      "name" : "SRFUR__BUG_TOSTORY_BUT",
+      "name" : "CLOSE",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug提需求",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_TOSTORY_BUT"
-        },
-        "mapSysUniResCode" : "BUG_TOSTORY_BUT",
-        "name" : "SRFUR__BUG_TOSTORY_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "关闭",
+        "name" : "CLOSE"
       }
     }, {
-      "name" : "SRFUR__BUG_CONFIRM_BUT",
+      "name" : "FAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug确认",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_CONFIRM_BUT"
-        },
-        "mapSysUniResCode" : "BUG_CONFIRM_BUT",
-        "name" : "SRFUR__BUG_CONFIRM_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "Bug收藏",
+        "name" : "FAVORITES"
       }
     }, {
-      "name" : "SRFUR__BUG_CLOSE_BUT",
+      "name" : "RESOLVE",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_CLOSE_BUT"
-        },
-        "mapSysUniResCode" : "BUG_CLOSE_BUT",
-        "name" : "SRFUR__BUG_CLOSE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "解决",
+        "name" : "RESOLVE"
       }
     }, {
-      "name" : "SRFUR__BUG_RESOLVE_BUT",
+      "name" : "TOSTORY",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug解决",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_RESOLVE_BUT"
-        },
-        "mapSysUniResCode" : "BUG_RESOLVE_BUT",
-        "name" : "SRFUR__BUG_RESOLVE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__BUG_ASSIGNTO_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "Bug指派",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_ASSIGNTO_BUT"
-        },
-        "mapSysUniResCode" : "BUG_ASSIGNTO_BUT",
-        "name" : "SRFUR__BUG_ASSIGNTO_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "转需求",
+        "name" : "TOSTORY"
       }
     } ],
     "state2Value" : "1",
@@ -7889,88 +7607,40 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__BUG_CLOSE_BUT",
+      "name" : "CLOSE",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug关闭",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_CLOSE_BUT"
-        },
-        "mapSysUniResCode" : "BUG_CLOSE_BUT",
-        "name" : "SRFUR__BUG_CLOSE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "关闭",
+        "name" : "CLOSE"
       }
     }, {
-      "name" : "SRFUR__BUG_RESOLVE_BUT",
+      "name" : "RESOLVE",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug解决",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_RESOLVE_BUT"
-        },
-        "mapSysUniResCode" : "BUG_RESOLVE_BUT",
-        "name" : "SRFUR__BUG_RESOLVE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "解决",
+        "name" : "RESOLVE"
       }
     }, {
-      "name" : "SRFUR__BUG_ASSIGNTO_BUT",
+      "name" : "CONFIRM",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug指派",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_ASSIGNTO_BUT"
-        },
-        "mapSysUniResCode" : "BUG_ASSIGNTO_BUT",
-        "name" : "SRFUR__BUG_ASSIGNTO_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "确认",
+        "name" : "CONFIRM"
       }
     }, {
-      "name" : "SRFUR__BUG_TOSTORY_BUT",
+      "name" : "TOSTORY",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug提需求",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_TOSTORY_BUT"
-        },
-        "mapSysUniResCode" : "BUG_TOSTORY_BUT",
-        "name" : "SRFUR__BUG_TOSTORY_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "转需求",
+        "name" : "TOSTORY"
       }
     }, {
-      "name" : "SRFUR__BUG_NFAVOR_BUT",
+      "name" : "ASSIGNTO",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug待收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_NFAVOR_BUT"
-        },
-        "mapSysUniResCode" : "BUG_NFAVOR_BUT",
-        "name" : "SRFUR__BUG_NFAVOR_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "指派",
+        "name" : "ASSIGNTO"
       }
     }, {
-      "name" : "SRFUR__BUG_CONFIRM_BUT",
+      "name" : "FAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug确认",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_CONFIRM_BUT"
-        },
-        "mapSysUniResCode" : "BUG_CONFIRM_BUT",
-        "name" : "SRFUR__BUG_CONFIRM_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__PROP_LBUG_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "计划关联bug",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROP_LBUG_BUT"
-        },
-        "mapSysUniResCode" : "PROP_LBUG_BUT",
-        "name" : "SRFUR__PROP_LBUG_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "Bug收藏",
+        "name" : "FAVORITES"
       }
     } ],
     "state2Value" : "1",
@@ -8118,52 +7788,22 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__BUG_FAVOR_BUT",
+      "name" : "RESOLVE",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug已收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_FAVOR_BUT"
-        },
-        "mapSysUniResCode" : "BUG_FAVOR_BUT",
-        "name" : "SRFUR__BUG_FAVOR_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "解决",
+        "name" : "RESOLVE"
       }
     }, {
-      "name" : "SRFUR__BUG_CONFIRM_BUT",
+      "name" : "CONFIRM",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug确认",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_CONFIRM_BUT"
-        },
-        "mapSysUniResCode" : "BUG_CONFIRM_BUT",
-        "name" : "SRFUR__BUG_CONFIRM_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "确认",
+        "name" : "CONFIRM"
       }
     }, {
-      "name" : "SRFUR__PROP_LBUG_BUT",
+      "name" : "NFAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "计划关联bug",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROP_LBUG_BUT"
-        },
-        "mapSysUniResCode" : "PROP_LBUG_BUT",
-        "name" : "SRFUR__PROP_LBUG_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__BUG_RESOLVE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "Bug解决",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_RESOLVE_BUT"
-        },
-        "mapSysUniResCode" : "BUG_RESOLVE_BUT",
-        "name" : "SRFUR__BUG_RESOLVE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "Bug取消收藏",
+        "name" : "NFAVORITES"
       }
     } ],
     "state2Value" : "0",
@@ -8332,52 +7972,22 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__PROP_LBUG_BUT",
+      "name" : "RESOLVE",
       "getPSDEOPPriv" : {
-        "logicName" : "计划关联bug",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROP_LBUG_BUT"
-        },
-        "mapSysUniResCode" : "PROP_LBUG_BUT",
-        "name" : "SRFUR__PROP_LBUG_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "解决",
+        "name" : "RESOLVE"
       }
     }, {
-      "name" : "SRFUR__BUG_FAVOR_BUT",
+      "name" : "NFAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug已收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_FAVOR_BUT"
-        },
-        "mapSysUniResCode" : "BUG_FAVOR_BUT",
-        "name" : "SRFUR__BUG_FAVOR_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "Bug取消收藏",
+        "name" : "NFAVORITES"
       }
     }, {
-      "name" : "SRFUR__BUG_RESOLVE_BUT",
+      "name" : "CONFIRM",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug解决",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_RESOLVE_BUT"
-        },
-        "mapSysUniResCode" : "BUG_RESOLVE_BUT",
-        "name" : "SRFUR__BUG_RESOLVE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__BUG_CONFIRM_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "Bug确认",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_CONFIRM_BUT"
-        },
-        "mapSysUniResCode" : "BUG_CONFIRM_BUT",
-        "name" : "SRFUR__BUG_CONFIRM_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "确认",
+        "name" : "CONFIRM"
       }
     } ],
     "state2Value" : "0",
@@ -8546,52 +8156,22 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__PROP_LBUG_BUT",
+      "name" : "FAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "计划关联bug",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROP_LBUG_BUT"
-        },
-        "mapSysUniResCode" : "PROP_LBUG_BUT",
-        "name" : "SRFUR__PROP_LBUG_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "Bug收藏",
+        "name" : "FAVORITES"
       }
     }, {
-      "name" : "SRFUR__BUG_CONFIRM_BUT",
+      "name" : "RESOLVE",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug确认",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_CONFIRM_BUT"
-        },
-        "mapSysUniResCode" : "BUG_CONFIRM_BUT",
-        "name" : "SRFUR__BUG_CONFIRM_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "解决",
+        "name" : "RESOLVE"
       }
     }, {
-      "name" : "SRFUR__BUG_NFAVOR_BUT",
+      "name" : "CONFIRM",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug待收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_NFAVOR_BUT"
-        },
-        "mapSysUniResCode" : "BUG_NFAVOR_BUT",
-        "name" : "SRFUR__BUG_NFAVOR_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__BUG_RESOLVE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "Bug解决",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_RESOLVE_BUT"
-        },
-        "mapSysUniResCode" : "BUG_RESOLVE_BUT",
-        "name" : "SRFUR__BUG_RESOLVE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "确认",
+        "name" : "CONFIRM"
       }
     } ],
     "state2Value" : "1",
@@ -8760,52 +8340,22 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__BUG_CONFIRM_BUT",
+      "name" : "CONFIRM",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug确认",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_CONFIRM_BUT"
-        },
-        "mapSysUniResCode" : "BUG_CONFIRM_BUT",
-        "name" : "SRFUR__BUG_CONFIRM_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "确认",
+        "name" : "CONFIRM"
       }
     }, {
-      "name" : "SRFUR__BUG_RESOLVE_BUT",
+      "name" : "RESOLVE",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug解决",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_RESOLVE_BUT"
-        },
-        "mapSysUniResCode" : "BUG_RESOLVE_BUT",
-        "name" : "SRFUR__BUG_RESOLVE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "解决",
+        "name" : "RESOLVE"
       }
     }, {
-      "name" : "SRFUR__BUG_NFAVOR_BUT",
+      "name" : "FAVORITES",
       "getPSDEOPPriv" : {
-        "logicName" : "Bug待收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__BUG_NFAVOR_BUT"
-        },
-        "mapSysUniResCode" : "BUG_NFAVOR_BUT",
-        "name" : "SRFUR__BUG_NFAVOR_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__PROP_LBUG_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "计划关联bug",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__PROP_LBUG_BUT"
-        },
-        "mapSysUniResCode" : "PROP_LBUG_BUT",
-        "name" : "SRFUR__PROP_LBUG_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "Bug收藏",
+        "name" : "FAVORITES"
       }
     } ],
     "state2Value" : "1",
@@ -8821,6 +8371,21 @@
     "oPPrivAllowMode" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "激活",
+    "name" : "ACTIVATE"
+  }, {
+    "logicName" : "指派",
+    "name" : "ASSIGNTO"
+  }, {
+    "logicName" : "版本关联",
+    "name" : "BUILDLINK"
+  }, {
+    "logicName" : "关闭",
+    "name" : "CLOSE"
+  }, {
+    "logicName" : "确认",
+    "name" : "CONFIRM"
+  }, {
     "logicName" : "Product_Create",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
@@ -8863,6 +8428,9 @@
     "name" : "DELETE",
     "id" : "ZTProduct__DELETE"
   }, {
+    "logicName" : "Bug收藏",
+    "name" : "FAVORITES"
+  }, {
     "logicName" : "Project_Manage",
     "mapPSDEOPPrivName" : "MANAGE",
     "getMapPSDER" : {
@@ -8884,6 +8452,12 @@
     "name" : "MANAGE",
     "id" : "ZTProduct__MANAGE"
   }, {
+    "logicName" : "Bug取消收藏",
+    "name" : "NFAVORITES"
+  }, {
+    "logicName" : "计划关联",
+    "name" : "PLANLINK"
+  }, {
     "logicName" : "Product_Read",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
@@ -8904,6 +8478,24 @@
   }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "发布关联",
+    "name" : "RELEASELINK"
+  }, {
+    "logicName" : "解决",
+    "name" : "RESOLVE"
+  }, {
+    "logicName" : "转需求",
+    "name" : "TOSTORY"
+  }, {
+    "logicName" : "转需求-产品",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDERS/DER1N_ZT_BUG_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "TOSTORY",
+    "id" : "ZTProduct__TOSTORY"
   }, {
     "logicName" : "Project_Update",
     "mapPSDEOPPrivName" : "UPDATE",

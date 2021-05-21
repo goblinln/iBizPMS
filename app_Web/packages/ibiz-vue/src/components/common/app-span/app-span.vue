@@ -218,7 +218,7 @@ export default class AppSpan extends Vue {
      */
     public dateFormat() {
         if (this.valueFormat) {
-            let date: any = moment(this.data);
+            let date: any = moment(this.value);
             if (!date._isValid) {
                 this.text = this.value;
                 return;

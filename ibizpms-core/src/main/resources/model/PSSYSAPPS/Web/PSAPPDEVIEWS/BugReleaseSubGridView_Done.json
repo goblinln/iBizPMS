@@ -164,6 +164,7 @@
         "actionTarget" : "NONE",
         "caption" : "关联bug",
         "codeName" : "releaseLinkResolvedBug",
+        "dataAccessAction" : "RELEASELINK",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMPickupView4.json",
@@ -568,6 +569,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "移除bug",
             "codeName" : "releaseUnlinkBug",
+            "dataAccessAction" : "RESOLVE",
             "fullCodeName" : "Bug_releaseUnlinkBug",
             "name" : "移除解决bug（发布）",
             "getPSAppDEMethod" : {

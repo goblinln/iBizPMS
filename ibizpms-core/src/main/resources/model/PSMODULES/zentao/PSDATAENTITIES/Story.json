@@ -12107,6 +12107,15 @@
     "logicName" : "需求指派",
     "name" : "ASSIGNTO"
   }, {
+    "logicName" : "版本关联",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "BUILDLINK",
+    "id" : "ZTProduct__BUILDLINK"
+  }, {
     "logicName" : "建用例",
     "name" : "CCASE"
   }, {
@@ -12161,6 +12170,24 @@
     "logicName" : "取消收藏",
     "name" : "NFAVORITES"
   }, {
+    "logicName" : "计划关联",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "PLANLINK",
+    "id" : "ZTProduct__PLANLINK"
+  }, {
+    "logicName" : "项目关联",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "PROJECTLINK",
+    "id" : "ZTProduct__PROJECTLINK"
+  }, {
     "logicName" : "Product_Read",
     "mapPSDEOPPrivName" : "READ",
     "getMapPSDER" : {
@@ -12172,6 +12199,15 @@
   }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "发布关联",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDERS/DER1N_ZT_STORY_ZT_PRODUCT_PRODUCT.json"
+    },
+    "name" : "RELEASELINK",
+    "id" : "ZTProduct__RELEASELINK"
   }, {
     "logicName" : "需求评审",
     "name" : "REVIEW"

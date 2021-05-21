@@ -955,9 +955,11 @@
                   "name" : "ufbd4e10",
                   "getPSUIAction" : {
                     "actionTarget" : "SINGLEKEY",
+                    "noPrivDisplayMode" : 1,
                     "caption" : "移除关联",
                     "codeName" : "UnlinkStory",
                     "confirmMsg" : "是否移除需求关联",
+                    "dataAccessAction" : "PLANLINK",
                     "fullCodeName" : "Story_UnlinkStory",
                     "name" : "取消计划关联",
                     "getPSAppDEMethod" : {
@@ -2891,6 +2893,7 @@
                 "actionTarget" : "NONE",
                 "caption" : "关联Bug",
                 "codeName" : "PlanRelationBug",
+                "dataAccessAction" : "PLANLINK",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMPickupView.json",
@@ -3362,7 +3365,7 @@
                     "caption" : "移除关联",
                     "codeName" : "UnlinkBug",
                     "confirmMsg" : "是否移除关联Bug",
-                    "dataAccessAction" : "SRFUR__BUG_UNLINK_BUT",
+                    "dataAccessAction" : "PLANLINK",
                     "fullCodeName" : "Bug_UnlinkBug",
                     "name" : "取消计划关联Bug",
                     "getPSAppDEMethod" : {

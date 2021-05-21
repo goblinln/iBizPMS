@@ -581,8 +581,10 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
+            "noPrivDisplayMode" : 1,
             "caption" : "确认",
             "codeName" : "ConfirmBugDash",
+            "dataAccessAction" : "CONFIRM",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugConfirmView.json",
@@ -626,9 +628,10 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
+            "noPrivDisplayMode" : 1,
             "caption" : "指派",
             "codeName" : "AssingToBugCz",
-            "dataAccessAction" : "SRFUR__BUG_ASSIGNTO_BUT",
+            "dataAccessAction" : "ASSIGNTO",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugAssingToView.json",
@@ -671,8 +674,10 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
+            "noPrivDisplayMode" : 1,
             "caption" : "解决",
             "codeName" : "ResolveBugDash",
+            "dataAccessAction" : "RESOLVE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugResolveView.json",
@@ -715,9 +720,10 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
+            "noPrivDisplayMode" : 1,
             "caption" : "关闭",
             "codeName" : "CloseBugDash",
-            "dataAccessAction" : "SRFUR__BUG_CLOSE_BUT",
+            "dataAccessAction" : "CLOSE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCloseView.json",
@@ -762,7 +768,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "激活",
             "codeName" : "Activation",
-            "dataAccessAction" : "SRFUR__BUG_ACTIVATE_BUT",
+            "dataAccessAction" : "ACTIVATE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugActivationView.json",
@@ -805,8 +811,10 @@
           },
           "getPSUIAction" : {
             "actionTarget" : "SINGLEKEY",
+            "noPrivDisplayMode" : 1,
             "caption" : "编辑",
             "codeName" : "MainEditDash",
+            "dataAccessAction" : "UPDATE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainEditView.json",

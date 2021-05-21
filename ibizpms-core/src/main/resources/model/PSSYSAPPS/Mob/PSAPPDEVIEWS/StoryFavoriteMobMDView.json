@@ -556,6 +556,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "收藏",
           "codeName" : "StoryFavoritesMob",
+          "dataAccessAction" : "FAVORITES",
           "fullCodeName" : "Story_StoryFavoritesMob",
           "name" : "收藏（移动端）",
           "getPSAppDEMethod" : {
