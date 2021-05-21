@@ -2042,6 +2042,7 @@
                 "actionTarget" : "SINGLEKEY",
                 "caption" : "建用例",
                 "codeName" : "BuildUseCase",
+                "dataAccessAction" : "CREATE",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainNewView.json",

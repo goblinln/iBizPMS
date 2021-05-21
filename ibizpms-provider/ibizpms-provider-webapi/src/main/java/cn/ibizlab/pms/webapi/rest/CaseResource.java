@@ -159,6 +159,7 @@ public class CaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(caseService.checkKey(caseMapping.toDomain(casedto)));
     }
 
+    @PreAuthorize("@CaseRuntime.test(#case_id,'CONFIRMCHANGE')")
     @ApiOperation(value = "确认用例变更", tags = {"测试用例" },  notes = "确认用例变更")
 	@RequestMapping(method = RequestMethod.PUT, value = "/cases/{case_id}/confirmchange")
     public ResponseEntity<CaseDTO> confirmChange(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -264,6 +265,7 @@ public class CaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @PreAuthorize("@CaseRuntime.test(#case_id,'RUNCASE')")
     @ApiOperation(value = "执行测试", tags = {"测试用例" },  notes = "执行测试")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/runcase")
     public ResponseEntity<CaseDTO> runCase(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -306,6 +308,7 @@ public class CaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@CaseRuntime.test(#case_id,'TESRUNCASE')")
     @ApiOperation(value = "执行测试", tags = {"测试用例" },  notes = "执行测试")
 	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/testruncase")
     public ResponseEntity<CaseDTO> testRunCase(@PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -1002,6 +1005,7 @@ public class CaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(caseService.checkKey(caseMapping.toDomain(casedto)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CONFIRMCHANGE')")
     @ApiOperation(value = "根据产品测试用例", tags = {"测试用例" },  notes = "根据产品测试用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/cases/{case_id}/confirmchange")
     public ResponseEntity<CaseDTO> confirmChangeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -1107,6 +1111,7 @@ public class CaseResource {
         boolean result = caseService.mobLinkCaseBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'RUNCASE')")
     @ApiOperation(value = "根据产品测试用例", tags = {"测试用例" },  notes = "根据产品测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/runcase")
     public ResponseEntity<CaseDTO> runCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -1154,6 +1159,7 @@ public class CaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'TESRUNCASE')")
     @ApiOperation(value = "根据产品测试用例", tags = {"测试用例" },  notes = "根据产品测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/testruncase")
     public ResponseEntity<CaseDTO> testRunCaseByProduct(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -1864,6 +1870,7 @@ public class CaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(caseService.checkKey(caseMapping.toDomain(casedto)));
     }
 
+    @PreAuthorize("@StoryRuntime.test(#story_id,'CONFIRMCHANGE')")
     @ApiOperation(value = "根据需求测试用例", tags = {"测试用例" },  notes = "根据需求测试用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/cases/{case_id}/confirmchange")
     public ResponseEntity<CaseDTO> confirmChangeByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -1969,6 +1976,7 @@ public class CaseResource {
         boolean result = caseService.mobLinkCaseBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@StoryRuntime.test(#story_id,'RUNCASE')")
     @ApiOperation(value = "根据需求测试用例", tags = {"测试用例" },  notes = "根据需求测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/cases/{case_id}/runcase")
     public ResponseEntity<CaseDTO> runCaseByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -2016,6 +2024,7 @@ public class CaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@StoryRuntime.test(#story_id,'TESRUNCASE')")
     @ApiOperation(value = "根据需求测试用例", tags = {"测试用例" },  notes = "根据需求测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/cases/{case_id}/testruncase")
     public ResponseEntity<CaseDTO> testRunCaseByStory(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -2726,6 +2735,7 @@ public class CaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(caseService.checkKey(caseMapping.toDomain(casedto)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CONFIRMCHANGE')")
     @ApiOperation(value = "根据产品需求测试用例", tags = {"测试用例" },  notes = "根据产品需求测试用例")
 	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/confirmchange")
     public ResponseEntity<CaseDTO> confirmChangeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -2831,6 +2841,7 @@ public class CaseResource {
         boolean result = caseService.mobLinkCaseBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'RUNCASE')")
     @ApiOperation(value = "根据产品需求测试用例", tags = {"测试用例" },  notes = "根据产品需求测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/runcase")
     public ResponseEntity<CaseDTO> runCaseByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {
@@ -2878,6 +2889,7 @@ public class CaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(true);
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'TESRUNCASE')")
     @ApiOperation(value = "根据产品需求测试用例", tags = {"测试用例" },  notes = "根据产品需求测试用例")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/testruncase")
     public ResponseEntity<CaseDTO> testRunCaseByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @RequestBody CaseDTO casedto) {

@@ -153,6 +153,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/ConfirmChange.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CONFIRMCHANGE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ConfirmChange"
@@ -237,6 +241,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/RunCase.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RUNCASE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "RunCase"
@@ -272,6 +280,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/TestRunCase.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "TESRUNCASE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1605,6 +1617,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/ConfirmChange.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CONFIRMCHANGE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "ConfirmChange"
@@ -1689,6 +1705,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/RunCase.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RUNCASE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "RunCase"
@@ -1724,6 +1744,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/TestRunCase.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "TESRUNCASE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -3244,6 +3268,7 @@
     "actionTarget" : "NONE",
     "caption" : "新建",
     "codeName" : "Create",
+    "dataAccessAction" : "CREATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainNewView.json",
@@ -14640,6 +14665,9 @@
   }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "执行测试",
+    "name" : "RUNCASE"
   }, {
     "logicName" : "需求关联",
     "name" : "STORYLINK"

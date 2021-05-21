@@ -16139,6 +16139,9 @@
     "logicName" : "读取",
     "name" : "READ"
   }, {
+    "logicName" : "执行测试",
+    "name" : "RUNCASE"
+  }, {
     "logicName" : "需求关联",
     "name" : "STORYLINK"
   }, {

@@ -33,7 +33,6 @@
   "getAllPSAppDEActions" : [ {
     "codeName" : "Create",
     "methodType" : "DEACTION",
-    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Create.json"
@@ -42,11 +41,14 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "builtinMethod" : true
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "IBZPROPRODUCTLINE__DEACTION__CREATE"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
-    "name" : "Update",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Update.json"
@@ -55,11 +57,14 @@
       "modelref" : true,
       "id" : "UPDATE"
     },
-    "builtinMethod" : true
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "IBZPROPRODUCTLINE__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "Remove",
     "methodType" : "DEACTION",
-    "name" : "Remove",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Remove.json"
@@ -68,11 +73,14 @@
       "modelref" : true,
       "id" : "DELETE"
     },
-    "builtinMethod" : true
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "IBZPROPRODUCTLINE__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
-    "name" : "Get",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Get.json"
@@ -81,11 +89,14 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "builtinMethod" : true
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "IBZPROPRODUCTLINE__DEACTION__GET"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
-    "name" : "GetDraft",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/GetDraft.json"
@@ -94,33 +105,50 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "builtinMethod" : true
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
-    "name" : "CheckKey",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/CheckKey.json"
     },
-    "builtinMethod" : true
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "Save",
     "methodType" : "DEACTION",
-    "name" : "Save",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Save.json"
     },
-    "builtinMethod" : true
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false
   } ],
   "getAllPSAppDEDataSets" : [ {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
-    "name" : "DEFAULT",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
     },
     "builtinMethod" : false
   } ],
@@ -207,7 +235,6 @@
   }, {
     "codeName" : "Create",
     "methodType" : "DEACTION",
-    "name" : "Create",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Create.json"
@@ -216,11 +243,14 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "builtinMethod" : true
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "IBZPROPRODUCTLINE__DEACTION__CREATE"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "Update",
     "methodType" : "DEACTION",
-    "name" : "Update",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Update.json"
@@ -229,11 +259,14 @@
       "modelref" : true,
       "id" : "UPDATE"
     },
-    "builtinMethod" : true
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "IBZPROPRODUCTLINE__DEACTION__UPDATE"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "Remove",
     "methodType" : "DEACTION",
-    "name" : "Remove",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Remove.json"
@@ -242,11 +275,14 @@
       "modelref" : true,
       "id" : "DELETE"
     },
-    "builtinMethod" : true
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "IBZPROPRODUCTLINE__DEACTION__REMOVE"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "Get",
     "methodType" : "DEACTION",
-    "name" : "Get",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Get.json"
@@ -255,11 +291,14 @@
       "modelref" : true,
       "id" : "READ"
     },
-    "builtinMethod" : true
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "IBZPROPRODUCTLINE__DEACTION__GET"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "GetDraft",
     "methodType" : "DEACTION",
-    "name" : "GetDraft",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/GetDraft.json"
@@ -268,32 +307,49 @@
       "modelref" : true,
       "id" : "CREATE"
     },
-    "builtinMethod" : true
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "GetDraft"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "CheckKey",
     "methodType" : "DEACTION",
-    "name" : "CheckKey",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/CheckKey.json"
     },
-    "builtinMethod" : true
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "CheckKey"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "Save",
     "methodType" : "DEACTION",
-    "name" : "Save",
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine/PSDEACTIONS/Save.json"
     },
-    "builtinMethod" : true
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "Save"
+    },
+    "builtinMethod" : false
   }, {
     "codeName" : "FetchDefault",
     "methodType" : "FETCH",
-    "name" : "DEFAULT",
     "getPSDEDataSet" : {
       "modelref" : true,
       "id" : "Default"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "READ"
+    },
+    "getPSDEServiceAPIMethod" : {
+      "modelref" : true,
+      "id" : "FetchDefault"
     },
     "builtinMethod" : false
   }, {
