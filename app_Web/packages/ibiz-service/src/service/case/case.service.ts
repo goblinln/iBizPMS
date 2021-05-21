@@ -1,4 +1,4 @@
-import { Http, HttpResponse, IContext, IHttpResponse } from 'ibiz-core';
+import { Http, HttpResponse, IContext, IHttpResponse, Util } from 'ibiz-core';
 import { GlobalService } from '../global.service';
 import { CaseBaseService } from './case-base.service';
 
@@ -388,21 +388,26 @@ export class CaseService extends CaseBaseService {
         if (_context.product && _context.case) {
             // 从实体服务
             const minorIBZCaseStepService: any = await ___ibz___.gs[`getIBZCaseStepService`]();
-            _data = await this.obtainMinor(_context, _data);
-            //删除从实体【ibzcasestep】数据主键
-            let ibzcasestepsDatas: any[] = _data.ibzcasesteps;
-            if (ibzcasestepsDatas && ibzcasestepsDatas.length > 0) {
-                for (const item of ibzcasestepsDatas) {
+            // 获取从实体【ibzcasestep】所有本地数据
+            const _contextTemp = Util.deepCopy(_context);
+            if (_contextTemp.case) {
+                delete _contextTemp.case;
+            }
+            const minorData = await minorIBZCaseStepService.getLocals(_contextTemp);
+            // 将从实体数据整合到主数据中(新建数据id置空)并清空从实体临时数据
+            if (minorData?.length > 0) {
+                for (let item of minorData) {
                     if (item.id) {
                         if (minorIBZCaseStepService) {
                             await minorIBZCaseStepService.removeLocal(_context, item.id);
                         }
-                        item.id = null;
-                        if(item.hasOwnProperty('id') && item.id) delete item.id;
+                        if (!item.casestepid) {
+                            item.id = null;
+                        }
                     }
                 }
-                _data.ibzcasesteps = ibzcasestepsDatas;
             }
+            _data.ibzcasesteps = minorData;
             //删除从实体【casestep】数据主键
             let casestepsDatas: any[] = _data.casesteps;
             if (casestepsDatas && casestepsDatas.length > 0) {
