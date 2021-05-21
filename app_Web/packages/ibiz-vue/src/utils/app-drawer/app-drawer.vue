@@ -1,5 +1,6 @@
 <template>
     <drawer
+        class="app-drawer"
         :placement="placement"
         :closable="false"
         v-model="isShow"
@@ -278,6 +279,6 @@ export default class AppDrawerCompponent extends Vue {
 
 }
 </script>
-<style lang="less" scoped>
+<style lang="less">
 @import './app-drawer.less';
 </style>

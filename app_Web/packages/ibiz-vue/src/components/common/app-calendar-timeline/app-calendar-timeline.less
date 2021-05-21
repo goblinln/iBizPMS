@@ -10,20 +10,37 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            >button{
-                margin-left: 0.75em;
-            }
         }
         .center{
             h2{
                 font-size: 1.75em;
             }
         }
-        .right{
-            .button-active-color{
-                background-color: var(--view-button-background-color-active);
-                color: var(--view-button-color-active);
+        .ivu-btn{
+            background: var(--button-background-color);
+            color: var(--button-font-color);
+            border-color: var(--button-font-color-light) !important;
+            height: 28px;
+            width: 62px;
+            &:hover {
+              background: var(--button-background-color-bright);
+              color: var(--button-font-color-bright);
+              border-color: var(--button-background-color-bright);
             }
+            &:disabled, &:disabled:hover {
+              background: var(--button-background-color-light);
+              color: var(--button-font-color-light);
+              border-color: var(--button-font-color-light);
+            }
+            line-height: 0;
+            span {
+              line-height: 0.7;
+            }
+        }
+        .button-active-color{
+            background: var(--button-background-color-bright);
+            color: var(--button-font-color-bright);
+            border-color: var(--button-background-color-bright);
         }
     }
     .container{

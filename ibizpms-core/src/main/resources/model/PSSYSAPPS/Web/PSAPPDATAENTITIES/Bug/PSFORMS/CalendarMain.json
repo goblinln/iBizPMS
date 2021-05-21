@@ -601,11 +601,13 @@
               "glyph" : "xf06e@FontAwesome",
               "cssClass" : "fa fa-eye"
             },
+            "refreshMode" : 1,
             "timeout" : 60000,
             "tooltip" : "Bug状态变更为【已确认】。",
             "uIActionMode" : "FRONT",
             "uIActionTag" : "ConfirmBugDash",
             "uIActionType" : "DEUIACTION",
+            "reloadData" : true,
             "id" : "ConfirmBugDash@Bug"
           },
           "tooltip" : "确认",
@@ -648,10 +650,12 @@
               "glyph" : "xf0a4@FontAwesome",
               "cssClass" : "fa fa-hand-o-right"
             },
+            "refreshMode" : 1,
             "timeout" : 60000,
             "uIActionMode" : "FRONT",
             "uIActionTag" : "AssingToBugCz",
             "uIActionType" : "DEUIACTION",
+            "reloadData" : true,
             "id" : "AssingToBugCz@Bug"
           },
           "tooltip" : "指派",
@@ -694,10 +698,12 @@
               "glyph" : "xf046@FontAwesome",
               "cssClass" : "fa fa-check-square-o"
             },
+            "refreshMode" : 1,
             "timeout" : 60000,
             "uIActionMode" : "FRONT",
             "uIActionTag" : "ResolveBugDash",
             "uIActionType" : "DEUIACTION",
+            "reloadData" : true,
             "id" : "ResolveBugDash@Bug"
           },
           "tooltip" : "解决",
@@ -740,10 +746,12 @@
               "glyph" : "xf00d@FontAwesome",
               "cssClass" : "fa fa-close"
             },
+            "refreshMode" : 1,
             "timeout" : 60000,
             "uIActionMode" : "FRONT",
             "uIActionTag" : "CloseBugDash",
             "uIActionType" : "DEUIACTION",
+            "reloadData" : true,
             "id" : "CloseBugDash@Bug"
           },
           "tooltip" : "关闭",
@@ -785,10 +793,12 @@
               "glyph" : "xf0d0@FontAwesome",
               "cssClass" : "fa fa-magic"
             },
+            "refreshMode" : 1,
             "timeout" : 60000,
             "uIActionMode" : "FRONT",
             "uIActionTag" : "Activation",
             "uIActionType" : "DEUIACTION",
+            "reloadData" : true,
             "id" : "Activation@Bug"
           },
           "tooltip" : "激活",
@@ -831,10 +841,12 @@
               "glyph" : "xf044@FontAwesome",
               "cssClass" : "fa fa-edit"
             },
+            "refreshMode" : 1,
             "timeout" : 60000,
             "uIActionMode" : "FRONT",
             "uIActionTag" : "MainEditDash",
             "uIActionType" : "DEUIACTION",
+            "reloadData" : true,
             "id" : "MainEditDash@Bug"
           },
           "tooltip" : "编辑",

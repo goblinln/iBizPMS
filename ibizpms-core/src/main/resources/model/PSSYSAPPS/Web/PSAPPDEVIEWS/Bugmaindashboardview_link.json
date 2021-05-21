@@ -1847,10 +1847,12 @@
                     "glyph" : "xf044@FontAwesome",
                     "cssClass" : "fa fa-edit"
                   },
+                  "refreshMode" : 1,
                   "timeout" : 60000,
                   "uIActionMode" : "FRONT",
                   "uIActionTag" : "MainEditDash",
                   "uIActionType" : "DEUIACTION",
+                  "reloadData" : true,
                   "id" : "MainEditDash@Bug"
                 },
                 "addSeparator" : false,
@@ -1881,10 +1883,12 @@
                     "glyph" : "xf00d@FontAwesome",
                     "cssClass" : "fa fa-close"
                   },
+                  "refreshMode" : 1,
                   "timeout" : 60000,
                   "uIActionMode" : "FRONT",
                   "uIActionTag" : "CloseBugDash",
                   "uIActionType" : "DEUIACTION",
+                  "reloadData" : true,
                   "id" : "CloseBugDash@Bug"
                 },
                 "addSeparator" : false,
@@ -1915,10 +1919,12 @@
                     "glyph" : "xf046@FontAwesome",
                     "cssClass" : "fa fa-check-square-o"
                   },
+                  "refreshMode" : 1,
                   "timeout" : 60000,
                   "uIActionMode" : "FRONT",
                   "uIActionTag" : "ResolveBugDash",
                   "uIActionType" : "DEUIACTION",
+                  "reloadData" : true,
                   "id" : "ResolveBugDash@Bug"
                 },
                 "addSeparator" : false,
@@ -1949,10 +1955,12 @@
                     "glyph" : "xf0a4@FontAwesome",
                     "cssClass" : "fa fa-hand-o-right"
                   },
+                  "refreshMode" : 1,
                   "timeout" : 60000,
                   "uIActionMode" : "FRONT",
                   "uIActionTag" : "AssingToBugCz",
                   "uIActionType" : "DEUIACTION",
+                  "reloadData" : true,
                   "id" : "AssingToBugCz@Bug"
                 },
                 "addSeparator" : false,
@@ -1983,11 +1991,13 @@
                     "glyph" : "xf06e@FontAwesome",
                     "cssClass" : "fa fa-eye"
                   },
+                  "refreshMode" : 1,
                   "timeout" : 60000,
                   "tooltip" : "Bug状态变更为【已确认】。",
                   "uIActionMode" : "FRONT",
                   "uIActionTag" : "ConfirmBugDash",
                   "uIActionType" : "DEUIACTION",
+                  "reloadData" : true,
                   "id" : "ConfirmBugDash@Bug"
                 },
                 "addSeparator" : false,
@@ -2017,10 +2027,12 @@
                     "glyph" : "xf0d0@FontAwesome",
                     "cssClass" : "fa fa-magic"
                   },
+                  "refreshMode" : 1,
                   "timeout" : 60000,
                   "uIActionMode" : "FRONT",
                   "uIActionTag" : "Activation",
                   "uIActionType" : "DEUIACTION",
+                  "reloadData" : true,
                   "id" : "Activation@Bug"
                 },
                 "addSeparator" : false,
