@@ -74,6 +74,13 @@
     }
   } ],
   "getPSSysUserRoleReses" : [ {
+    "name" : "产品经理-左侧_测试资源",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__LEFT_CASE_MENU"
+    },
+    "sysUniResCode" : "LEFT_CASE_MENU"
+  }, {
     "name" : "产品经理-产品左侧资源",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -87,8 +94,15 @@
       "id" : "ibiz__PROD_CREATE_BUT"
     },
     "sysUniResCode" : "PROD_CREATE_BUT"
+  }, {
+    "name" : "产品经理-左侧_项目管理（一级）",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__LEFT_PROJECT_MENU"
+    },
+    "sysUniResCode" : "LEFT_PROJECT_MENU"
   } ],
   "roleTag" : "ProductManger",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "PRODUCTLEFT", "PROD_CREATE_BUT" ]
+  "uniResTags" : [ "LEFT_CASE_MENU", "PRODUCTLEFT", "PROD_CREATE_BUT", "LEFT_PROJECT_MENU" ]
 }

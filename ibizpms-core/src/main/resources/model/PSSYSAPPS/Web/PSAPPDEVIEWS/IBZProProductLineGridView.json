@@ -6,6 +6,7 @@
   "funcViewMode" : "MDATAVIEW",
   "gridRowActiveMode" : 0,
   "name" : "IBZProProductLineGridView",
+  "openMode" : "DRAWER_TOP",
   "getPSAppDataEntity" : {
     "modelref" : true,
     "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductLine.json"

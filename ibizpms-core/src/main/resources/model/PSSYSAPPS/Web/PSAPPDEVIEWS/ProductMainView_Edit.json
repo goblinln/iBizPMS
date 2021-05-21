@@ -594,6 +594,7 @@
                 "actionTarget" : "NONE",
                 "caption" : "维护产品线",
                 "codeName" : "SeLine",
+                "dataAccessAction" : "SRFUR__PRODUCTLIN_BUT",
                 "getFrontPSAppView" : {
                   "modelref" : true,
                   "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProProductLineGridView.json",

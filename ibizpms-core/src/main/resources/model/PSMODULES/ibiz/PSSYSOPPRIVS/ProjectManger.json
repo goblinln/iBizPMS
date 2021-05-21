@@ -71,6 +71,13 @@
     },
     "sysUniResCode" : "PROJ_CREATE_BUT"
   }, {
+    "name" : "项目经理-左侧_测试资源",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "zentao__LEFT_CASE_MENU"
+    },
+    "sysUniResCode" : "LEFT_CASE_MENU"
+  }, {
     "name" : "项目经理-左侧_项目管理（一级）",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -80,5 +87,5 @@
   } ],
   "roleTag" : "ProjectManger",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "PROJ_CREATE_BUT", "LEFT_PROJECT_MENU" ]
+  "uniResTags" : [ "PROJ_CREATE_BUT", "LEFT_CASE_MENU", "LEFT_PROJECT_MENU" ]
 }

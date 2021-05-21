@@ -2227,6 +2227,10 @@
     "resCode" : "PRODSTA_STORYCRT_BUT",
     "id" : "ibiz__PRODSTA_STORYCRT_BUT"
   }, {
+    "name" : "产品线维护",
+    "resCode" : "PRODUCTLIN_BUT",
+    "id" : "ibiz__PRODUCTLIN_BUT"
+  }, {
     "name" : "Bug待收藏",
     "resCode" : "BUG_NFAVOR_BUT",
     "id" : "ibiz__BUG_NFAVOR_BUT"

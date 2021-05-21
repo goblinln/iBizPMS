@@ -3836,7 +3836,7 @@
                                 },
                                 "allowEmpty" : true
                               } ],
-                              "pagingSize" : 20,
+                              "pagingSize" : 50,
                               "getRemovePSControlAction" : {
                                 "actionName" : "Remove",
                                 "actionType" : "DEACTION",
@@ -3855,7 +3855,7 @@
                               "hasWFDataItems" : false,
                               "enableColFilter" : false,
                               "enableGroup" : false,
-                              "enablePagingBar" : true,
+                              "enablePagingBar" : false,
                               "enableRowEdit" : false,
                               "enableRowEditOrder" : false,
                               "enableRowNew" : false,
@@ -4247,7 +4247,7 @@
                                 },
                                 "allowEmpty" : true
                               } ],
-                              "pagingSize" : 20,
+                              "pagingSize" : 50,
                               "getRemovePSControlAction" : {
                                 "actionName" : "Remove",
                                 "actionType" : "DEACTION",
@@ -4266,7 +4266,7 @@
                               "hasWFDataItems" : false,
                               "enableColFilter" : false,
                               "enableGroup" : false,
-                              "enablePagingBar" : true,
+                              "enablePagingBar" : false,
                               "enableRowEdit" : false,
                               "enableRowEditOrder" : false,
                               "enableRowNew" : false,
