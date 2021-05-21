@@ -33,7 +33,7 @@
             <Split v-model="split" mode="horizontal" ref="calendar-time-line">
                 <div slot="left" :class="['group',defaultView]">
                     <div class="group-header">
-                        <div>分组</div>
+                        <div>{{title}}</div>
                     </div>
                     <div class="group-items">
                         <div v-for="(group, index) in currentGroupSchedule" :key="index" class="group-item" :style="group.style">
@@ -322,6 +322,14 @@ export default class AppClaendarTimeline extends Vue{
     public split: number = 0.2;
 
     /**
+     * 默认分组名称
+     *
+     * @type {string}
+     * @memberof AppClaendarTimeline
+     */    
+    public title: string = '分组';
+
+    /**
      * 模态显示控制变量
      *
      * @type {boolean}
@@ -503,6 +511,8 @@ export default class AppClaendarTimeline extends Vue{
                             this.split = ctrlWidth / containerWidth;
                         }
                     })
+                } else if (Object.is("GROUPTITLE", param)) {
+                    this.title = ctrlParams[param];
                 }
             }    
         }
