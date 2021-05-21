@@ -3,7 +3,7 @@ import { Subject, Subscription } from 'rxjs';
 import { IPSAppCounterRef, IPSAppView, IPSAppDEView, IPSControl } from '@ibiz/dynamic-model-api';
 import { Util, ViewTool, AppServiceBase, ViewContext, ViewState, ModelTool, GetModelService, AppModelService, removeSessionStorage, LogUtil, SandboxInstance } from 'ibiz-core';
 import { CounterServiceRegister } from 'ibiz-service';
-import { AppNavHistory, ViewLoadingService } from '../app-service';
+import { AppNavHistory, NavDataService, ViewLoadingService } from '../app-service';
 import { DynamicInstanceConfig } from '@ibiz/dynamic-model-api/dist/types/core';
 
 /**
@@ -101,7 +101,7 @@ export class ViewBase extends Vue {
      * @type {*}
      * @memberof ViewBase
      */
-    public navDataService: any;
+    public navDataService: NavDataService = NavDataService.getInstance(this.$store);
 
     /**
      * 实体UI服务对象
@@ -395,7 +395,6 @@ export class ViewBase extends Vue {
     public beforeViewModelInit(data: any) {
         this.viewDefaultUsage = data.viewDefaultUsage !== false;
         this.noViewCaption = data.noViewCaption == true;
-        this.navDataService = data.navDataService;
         this.portletState = data.portletState;
         this.viewtag = data.viewtag;
         this.formDruipartState = data.formDruipartState;
@@ -603,12 +602,13 @@ export class ViewBase extends Vue {
                     return;
                 }
                 if (Object.is(action, 'viewrefresh')) {
-                    _this.$nextTick(() => {
-                        _this.parseViewParam(data);
+                    _this.parseViewParam(data);
+                    setTimeout(() => {
                         if (_this.engine) {
                             _this.engine.load();
                         }
-                    });
+                        this.$forceUpdate();
+                    }, 0);
                 }
             });
         }
@@ -643,7 +643,11 @@ export class ViewBase extends Vue {
 
         // 视图加载服务初始化操作
         this.viewLoadingService.srfsessionid = this.context.srfsessionid;
-        this.$store.commit("loadingService/addViewLoadingService", this.viewLoadingService)
+        this.$store.commit("loadingService/addViewLoadingService", this.viewLoadingService);
+        // 视图初始化向导航栈里面加数据
+        this.$nextTick(() => {
+            this.navDataService.addNavData({ title: this.$t(this.model.srfCaption), viewType: this.viewInstance.viewType, path: this.$route.fullPath, viewmode: this.viewDefaultUsage, tag: this.viewInstance.codeName, key: null, data: {} });
+        })
     }
 
     /**
@@ -700,6 +704,8 @@ export class ViewBase extends Vue {
         if (this.formDruipartStateEvent) {
             this.formDruipartStateEvent.unsubscribe();
         }
+        // 视图销毁从导航栈里面删除数据
+        this.navDataService.removeNavData(this.viewInstance.codeName);
     }
 
     /**
@@ -928,7 +934,8 @@ export class ViewBase extends Vue {
                 this.closeViewWithDefault(view);
             }
         }
-        removeSessionStorage("srfdynaorgid");
+        // 视图关闭从导航栈里面删除数据
+        this.navDataService.removeNavDataLast();
     }
 
     /**
@@ -938,13 +945,13 @@ export class ViewBase extends Vue {
      * @memberof ViewBase
      */
     public closeViewWithStyle2(view: any) {
-        const appNavDataService: any = AppServiceBase.getInstance().getAppNavDataService();
-        const item: any = appNavDataService.historyList[appNavDataService.findHistoryIndex(view.$route)];
-        appNavDataService.remove(item);
-        if (appNavDataService.historyList.length > 0) {
-            if (appNavDataService.isRouteSame(item.to, this.$route)) {
-                let go: any = appNavDataService.historyList[
-                    appNavDataService.historyList.length - 1
+        const navHistory: any = AppServiceBase.getInstance().getAppNavDataService();
+        const item: any = navHistory.historyList[navHistory.findHistoryIndex(view.$route)];
+        navHistory.remove(item);
+        if (navHistory.historyList.length > 0) {
+            if (navHistory.isRouteSame(item.to, this.$route)) {
+                let go: any = navHistory.historyList[
+                    navHistory.historyList.length - 1
                 ].to;
                 this.$router.push({ path: go.path, params: go.params, query: go.query });
             }

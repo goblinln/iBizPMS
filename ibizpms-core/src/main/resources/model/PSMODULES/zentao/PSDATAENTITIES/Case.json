@@ -16136,6 +16136,9 @@
     "logicName" : "读取",
     "name" : "READ"
   }, {
+    "logicName" : "需求关联",
+    "name" : "STORYLINK"
+  }, {
     "logicName" : "更新",
     "name" : "UPDATE"
   }, {

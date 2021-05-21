@@ -328,7 +328,7 @@ export class AppFormBase extends EditFormControlBase {
         } else if (!height && appView?.height > 0) {
             druipartHeight = appView.height;
         } else {
-            druipartHeight = Util.isNumber(height) && height > 0 ? `${height}px` : 'auto';
+            druipartHeight = Util.isNumber(height) && height > 0 ? `${height}px` : '100%';
         }
         let druipartStyle = { height: druipartHeight, overflow: 'auto' };
         return (

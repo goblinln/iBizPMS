@@ -5,6 +5,7 @@ import { AppPopover,AppModal,AppDrawer } from 'ibiz-vue';
 import { authServiceRegister, codeListRegister, messageServiceRegister } from 'ibiz-service';
 import TabPageExp from '@components/tab-page-exp/tab-page-exp.vue';
 import AppDataUpload from '@components/app-data-upload/app-data-upload.vue';
+import Breadcrumb from '@components/app-breadcrumb/app-breadcrumb.vue';
 import { ComponentsRegister, FooterItemsService, TopItemsService, UIStateService } from 'ibiz-vue';
 import { PluginRegister } from './plugin/app-plugin-register';
 
@@ -34,5 +35,6 @@ export const AppComponents = {
         v.prototype.$uiState = new UIStateService();
         v.component('tab-page-exp',TabPageExp);
         v.component('app-data-upload', AppDataUpload);
+        v.component('app-breadcrumb', Breadcrumb);
     },
 };

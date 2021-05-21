@@ -243,4 +243,15 @@ export class ViewEngine {
         }
     }   
 
+    /**
+     * 设置数据部件应用数据
+     *
+     * @param {*} [arg={}]
+     * @memberof ViewEngine
+     */
+     public setDataCtrlData(arg: any = {},isSingleMode:boolean = false): void {
+        if (this.view && this.view.navDataService && this.view.viewInstance) {
+            this.view.navDataService.setNavDataByTag(this.view.viewInstance.codeName,isSingleMode, arg);
+        }
+    }
 }

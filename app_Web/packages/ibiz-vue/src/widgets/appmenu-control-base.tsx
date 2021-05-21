@@ -1,7 +1,7 @@
 import { IPSAppMenu } from '@ibiz/dynamic-model-api';
 import { AuthServiceBase, LogUtil, Util } from 'ibiz-core';
 import { ControlBase } from "./control-base";
-import { AppFuncService } from '../app-service';
+import { AppFuncService, NavDataService } from '../app-service';
 import { AppMenuService } from "../ctrl-service";
 
 /**
@@ -113,6 +113,14 @@ export class AppMenuControlBase extends ControlBase {
      * @memberof AppMenuControlBase
      */
     public isBlankMode: boolean = false;
+
+    /**
+     * 应用导航服务
+     *
+     * @type {*}
+     * @memberof AppMenuControlBase
+     */
+    public navDataService: NavDataService = NavDataService.getInstance(this.$store);
 
     /**
      * 默认打开视图
@@ -375,6 +383,10 @@ export class AppMenuControlBase extends ControlBase {
      * @memberof AppMenuControlBase
      */
     public click(item: any){
+        if(Object.is((this.controlInstance as any)?.parentModel?.viewStyle,'STYLE4') && (!this.mode || Object.is(this.mode,'LEFT'))){
+            this.$store.commit('removeAllPage');
+            this.navDataService.removeNavDataFrist();
+        }
         let tempContext:any = Util.deepCopy(this.context);
         if(item.getPSNavigateContexts){
             const localContext = Util.formatNavParam(item.getPSNavigateContexts);

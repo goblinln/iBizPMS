@@ -114,6 +114,7 @@ export class EditViewEngine extends ViewEngine {
         const newdata: boolean = !Object.is(arg.srfuf, '1');
         this.calcToolbarItemState(newdata);
         this.calcToolbarItemAuthState(this.transformData(arg));
+        this.setDataCtrlData(arg,true);
         this.readTask(arg);
     }
 

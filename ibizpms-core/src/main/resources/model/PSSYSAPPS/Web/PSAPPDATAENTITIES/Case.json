@@ -221,6 +221,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/MobLinkCase.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "STORYLINK"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "MobLinkCase"
@@ -1664,6 +1668,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/MobLinkCase.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "STORYLINK"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -14621,6 +14629,9 @@
   }, {
     "logicName" : "读取",
     "name" : "READ"
+  }, {
+    "logicName" : "需求关联",
+    "name" : "STORYLINK"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"

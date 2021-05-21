@@ -149,7 +149,7 @@ export class AppDefaultIndexViewLayout extends AppDefaultViewLayout {
                             </div>
                             {!this.collapseChange ? <i class="ivu-icon el-icon-s-fold" on-click={() => this.collapseMenus()}></i> : null}
                             {this.collapseChange ? <i class="ivu-icon el-icon-s-unfold" on-click={() => this.collapseMenus()}></i> : null}
-                            <app-breadcrumb indexViewTag="app-index-view" />
+                            {Object.is(this.viewInstance.viewStyle, 'STYLE4') ? <app-breadcrumb indexViewTag={this.viewInstance.codeName} /> : null}
                         </div>
                     </div>
                     <div class="header-right" style="display: flex;align-items: center;justify-content: space-between;">

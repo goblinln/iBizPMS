@@ -59,7 +59,6 @@ import AppColumnFormat from './common/app-column-format/app-column-format.vue'
 import AppQuickGroup from './common/app-quick-group/app-quick-group.vue'
 import AppGroupPicker from './common/app-group-picker/app-group-picker.vue'
 import AppWFApproval from './common/app-wf-approval/app-wf-approval.vue'
-import Breadcrumb from './common/app-breadcrumb/app-breadcrumb.vue'
 import AppTransfer from './common/app-transfer/app-transfer.vue'
 import ContextMenuDrag from './common/context-menu-drag/context-menu-drag.vue'
 import AppOrgSelect from './common/app-org-select/app-org-select.vue'
@@ -317,7 +316,6 @@ export const ComponentsRegister = {
         v.component('app-group-select', AppGroupSelect);
         v.component('app-group-picker', AppGroupPicker);
         v.component('app-wf-approval', AppWFApproval);
-        v.component('app-breadcrumb', Breadcrumb);
         v.component('app-transfer', AppTransfer);
         v.component('context-menu-drag', ContextMenuDrag);
         v.component('app-update-password', UpdatePwd);

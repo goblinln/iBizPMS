@@ -400,6 +400,7 @@ export class MDViewEngine extends ViewEngine {
         }
         this.calcToolbarItemState(true);
         this.calcToolbarItemAuthState(null);
+        this.setDataCtrlData(args);
     }
 
     /**
