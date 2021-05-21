@@ -332,6 +332,18 @@ export class BugBaseService extends EntityBaseService<IBug> {
         return this.condCache.get('myAgentBug');
     }
 
+    protected getMyCreateOrPartakeCond() {
+        if (!this.condCache.has('myCreateOrPartake')) {
+            const strCond: any[] = ['AND', ['OR', ['EQ', 'OPENEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'CLOSEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'RESOLVEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'LASTEDITEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('myCreateOrPartake', cond);
+            }
+        }
+        return this.condCache.get('myCreateOrPartake');
+    }
+
     protected getMyCurOpenedBugCond() {
         if (!this.condCache.has('myCurOpenedBug')) {
             const strCond: any[] = ['AND', ['EQ', 'OPENEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]];

@@ -513,6 +513,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Start.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__TASK_START_BUT"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Start"
@@ -2670,6 +2674,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Start.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__TASK_START_BUT"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,

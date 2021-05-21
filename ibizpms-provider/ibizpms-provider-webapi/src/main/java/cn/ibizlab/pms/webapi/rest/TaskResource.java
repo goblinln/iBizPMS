@@ -638,6 +638,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @PreAuthorize("@TaskRuntime.test(#task_id,'SRFUR__TASK_START_BUT')")
     @ApiOperation(value = "开始", tags = {"任务" },  notes = "开始")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/start")
     public ResponseEntity<TaskDTO> start(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -2207,6 +2208,7 @@ public class TaskResource {
         boolean result = taskService.sendMsgPreProcessBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'SRFUR__TASK_START_BUT')")
     @ApiOperation(value = "根据任务模块任务", tags = {"任务" },  notes = "根据任务模块任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/start")
     public ResponseEntity<TaskDTO> startByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -3808,6 +3810,7 @@ public class TaskResource {
         boolean result = taskService.sendMsgPreProcessBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'SRFUR__TASK_START_BUT')")
     @ApiOperation(value = "根据产品计划任务", tags = {"任务" },  notes = "根据产品计划任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/{task_id}/start")
     public ResponseEntity<TaskDTO> startByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -5409,6 +5412,7 @@ public class TaskResource {
         boolean result = taskService.sendMsgPreProcessBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@StoryRuntime.test(#story_id,'SRFUR__TASK_START_BUT')")
     @ApiOperation(value = "根据需求任务", tags = {"任务" },  notes = "根据需求任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/{task_id}/start")
     public ResponseEntity<TaskDTO> startByStory(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -7010,6 +7014,7 @@ public class TaskResource {
         boolean result = taskService.sendMsgPreProcessBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'SRFUR__TASK_START_BUT')")
     @ApiOperation(value = "根据项目任务", tags = {"任务" },  notes = "根据项目任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/start")
     public ResponseEntity<TaskDTO> startByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -8611,6 +8616,7 @@ public class TaskResource {
         boolean result = taskService.sendMsgPreProcessBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'SRFUR__TASK_START_BUT')")
     @ApiOperation(value = "根据产品产品计划任务", tags = {"任务" },  notes = "根据产品产品计划任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/start")
     public ResponseEntity<TaskDTO> startByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -10212,6 +10218,7 @@ public class TaskResource {
         boolean result = taskService.sendMsgPreProcessBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'SRFUR__TASK_START_BUT')")
     @ApiOperation(value = "根据产品需求任务", tags = {"任务" },  notes = "根据产品需求任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/start")
     public ResponseEntity<TaskDTO> startByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -11813,6 +11820,7 @@ public class TaskResource {
         boolean result = taskService.sendMsgPreProcessBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'SRFUR__TASK_START_BUT')")
     @ApiOperation(value = "根据项目任务模块任务", tags = {"任务" },  notes = "根据项目任务模块任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/start")
     public ResponseEntity<TaskDTO> startByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {

@@ -4674,6 +4674,17 @@
                 
                 "disabled": false
             }
+            , {
+                "id": "unlinkedfrombranch",
+                "label": "移除关联平台",
+                "text": "移除关联平台",
+                "default": false,
+                "data": "",
+                "value": "unlinkedfrombranch",
+                "isValueNumber":false,
+                
+                "disabled": false
+            }
         ]
     }, 
     {
