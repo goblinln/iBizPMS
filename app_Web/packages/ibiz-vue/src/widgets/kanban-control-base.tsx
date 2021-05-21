@@ -438,8 +438,7 @@ export class KanbanControlBase extends MDControlBase {
                     this.refresh();
                 });
             } else {
-                item[this.groupField] = name;
-                this.updateData(item)
+                this.updateData(item, name)
             }
         }
     }
@@ -569,7 +568,11 @@ export class KanbanControlBase extends MDControlBase {
      * @param {*}
      * @memberof KanbanControlBase
      */
-    public updateData(opt: any) {
+    public updateData(opt: any, newVal: any) {
+        const oldVal = opt[this.groupField];
+        if (newVal) {
+            opt[this.groupField] = newVal;
+        }
         const arg: any = { ...opt };
         Object.assign(arg, { viewparams: this.viewparams });
         let _context = JSON.parse(JSON.stringify(this.context));
@@ -582,6 +585,7 @@ export class KanbanControlBase extends MDControlBase {
             this.ctrlEndLoading();
             if (!response.status || response.status !== 200) {
                 this.$throw(response,'updateData');
+                opt[this.groupField] = oldVal;
                 this.setGroups();
                 return;
             }
@@ -591,6 +595,8 @@ export class KanbanControlBase extends MDControlBase {
             this.$emit("ctrl-event", { controlname: "kanban", action: "update", data: this.items });
         }).catch((response: any) => {
             this.ctrlEndLoading();
+            opt[this.groupField] = oldVal;
+            this.setGroups();
             this.$throw(response,'updateData');
         });
     }

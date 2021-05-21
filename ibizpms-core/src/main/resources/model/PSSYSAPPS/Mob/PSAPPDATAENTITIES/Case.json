@@ -498,6 +498,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/BugCreateCase.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
+    },
     "builtinMethod" : false
   } ],
   "getAllPSAppDEDataExports" : [ {
@@ -2297,6 +2301,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/BugCreateCase.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CREATE"
     },
     "builtinMethod" : false
   }, {
@@ -13918,6 +13926,9 @@
     "oPPrivAllowMode" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "确认变更",
+    "name" : "CONFIRMCHANGE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
@@ -13968,6 +13979,9 @@
   }, {
     "logicName" : "需求关联",
     "name" : "STORYLINK"
+  }, {
+    "logicName" : "执行测试",
+    "name" : "TESRUNCASE"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"

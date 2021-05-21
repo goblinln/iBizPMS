@@ -16088,6 +16088,9 @@
     "oPPrivAllowMode" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "确认变更",
+    "name" : "CONFIRMCHANGE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
@@ -16138,6 +16141,9 @@
   }, {
     "logicName" : "需求关联",
     "name" : "STORYLINK"
+  }, {
+    "logicName" : "执行测试",
+    "name" : "TESRUNCASE"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"
