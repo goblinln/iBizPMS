@@ -39,7 +39,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__CREATE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -128,6 +128,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/CaseNFavorite.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NFAVORITE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -257,6 +261,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/RunCases.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RUNCASE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "RunCases"
@@ -321,6 +329,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkCase.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UNLIANKCASE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnlinkCase"
@@ -345,6 +357,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkSuiteCase.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UNLINKSUITCASE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnlinkSuiteCase"
@@ -356,6 +372,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkSuiteCases.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UNLINKSUITCASE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1503,7 +1523,7 @@
     },
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "ZTProduct__CREATE"
+      "id" : "CREATE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1592,6 +1612,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/CaseNFavorite.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "NFAVORITE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -1721,6 +1745,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/RunCases.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "RUNCASE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "RunCases"
@@ -1785,6 +1813,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkCase.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UNLIANKCASE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnlinkCase"
@@ -1809,6 +1841,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkSuiteCase.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UNLINKSUITCASE"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "UnlinkSuiteCase"
@@ -1820,6 +1856,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Case/PSDEACTIONS/UnlinkSuiteCases.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "UNLINKSUITCASE"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2591,6 +2631,7 @@
     "actionTarget" : "NONE",
     "caption" : "移动端新建",
     "codeName" : "createMob",
+    "dataAccessAction" : "CREATE",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/CaseCreateCaseMobEditView.json",
@@ -2620,6 +2661,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "移除",
     "codeName" : "mobUnlinkCase",
+    "dataAccessAction" : "UNLIANKCASE",
     "fullCodeName" : "Case_mobUnlinkCase",
     "name" : "移除（移动端）",
     "getPSAppDEMethod" : {
@@ -2659,6 +2701,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "移除",
     "codeName" : "mobUnlinkSuiteCase",
+    "dataAccessAction" : "EDITSUITE",
     "fullCodeName" : "Case_mobUnlinkSuiteCase",
     "name" : "移除套件用例（移动端）",
     "getPSAppDEMethod" : {
@@ -7697,52 +7740,28 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__CASE_FAVOR_BUT",
+      "name" : "FAVORITE",
       "getPSDEOPPriv" : {
-        "logicName" : "用例已收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_FAVOR_BUT"
-        },
-        "mapSysUniResCode" : "CASE_FAVOR_BUT",
-        "name" : "SRFUR__CASE_FAVOR_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "用例收藏",
+        "name" : "FAVORITE"
       }
     }, {
-      "name" : "SRFUR__CASE_CONFIRM_BUT",
+      "name" : "TOBUG",
       "getPSDEOPPriv" : {
-        "logicName" : "测试用例确认",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_CONFIRM_BUT"
-        },
-        "mapSysUniResCode" : "CASE_CONFIRM_BUT",
-        "name" : "SRFUR__CASE_CONFIRM_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "转Bug",
+        "name" : "TOBUG"
       }
     }, {
-      "name" : "SRFUR__CASE_CASECOF_BUT",
+      "name" : "CASECOF",
       "getPSDEOPPriv" : {
         "logicName" : "测试用例（用例确认）",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_CASECOF_BUT"
-        },
-        "mapSysUniResCode" : "CASE_CASECOF_BUT",
-        "name" : "SRFUR__CASE_CASECOF_BUT",
-        "mapSysUniRes" : true
+        "name" : "CASECOF"
       }
     }, {
-      "name" : "SRFUR__CASE_TOBUG_BUT",
+      "name" : "CONFIRM",
       "getPSDEOPPriv" : {
-        "logicName" : "测试用例转BUG",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_TOBUG_BUT"
-        },
-        "mapSysUniResCode" : "CASE_TOBUG_BUT",
-        "name" : "SRFUR__CASE_TOBUG_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "确认",
+        "name" : "CONFIRM"
       }
     } ],
     "state2Value" : "blocked",
@@ -8075,40 +8094,22 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__CASE_CASECOF_BUT",
+      "name" : "CASECOF",
       "getPSDEOPPriv" : {
         "logicName" : "测试用例（用例确认）",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_CASECOF_BUT"
-        },
-        "mapSysUniResCode" : "CASE_CASECOF_BUT",
-        "name" : "SRFUR__CASE_CASECOF_BUT",
-        "mapSysUniRes" : true
+        "name" : "CASECOF"
       }
     }, {
-      "name" : "SRFUR__CASE_NFAVOR_BUT",
+      "name" : "NFAVORITE",
       "getPSDEOPPriv" : {
-        "logicName" : "用例待收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_NFAVOR_BUT"
-        },
-        "mapSysUniResCode" : "CASE_NFAVOR_BUT",
-        "name" : "SRFUR__CASE_NFAVOR_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "取消收藏",
+        "name" : "NFAVORITE"
       }
     }, {
-      "name" : "SRFUR__CASE_CONFIRM_BUT",
+      "name" : "CONFIRM",
       "getPSDEOPPriv" : {
-        "logicName" : "测试用例确认",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_CONFIRM_BUT"
-        },
-        "mapSysUniResCode" : "CASE_CONFIRM_BUT",
-        "name" : "SRFUR__CASE_CONFIRM_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "确认",
+        "name" : "CONFIRM"
       }
     } ],
     "state2Value" : "fail",
@@ -12712,6 +12713,24 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
+      "name" : "TOBUG",
+      "getPSDEOPPriv" : {
+        "logicName" : "转Bug",
+        "name" : "TOBUG"
+      }
+    }, {
+      "name" : "NFAVORITE",
+      "getPSDEOPPriv" : {
+        "logicName" : "取消收藏",
+        "name" : "NFAVORITE"
+      }
+    }, {
+      "name" : "CONFIRM",
+      "getPSDEOPPriv" : {
+        "logicName" : "确认",
+        "name" : "CONFIRM"
+      }
+    }, {
       "name" : "SRFUR__CASE_CONFIRM_BUT",
       "getPSDEOPPriv" : {
         "logicName" : "测试用例确认",
@@ -12722,6 +12741,12 @@
         "mapSysUniResCode" : "CASE_CONFIRM_BUT",
         "name" : "SRFUR__CASE_CONFIRM_BUT",
         "mapSysUniRes" : true
+      }
+    }, {
+      "name" : "CASECOF",
+      "getPSDEOPPriv" : {
+        "logicName" : "测试用例（用例确认）",
+        "name" : "CASECOF"
       }
     }, {
       "name" : "SRFUR__CASE_TOBUG_BUT",
@@ -13587,52 +13612,28 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__CASE_NFAVOR_BUT",
+      "name" : "TOBUG",
       "getPSDEOPPriv" : {
-        "logicName" : "用例待收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_NFAVOR_BUT"
-        },
-        "mapSysUniResCode" : "CASE_NFAVOR_BUT",
-        "name" : "SRFUR__CASE_NFAVOR_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "转Bug",
+        "name" : "TOBUG"
       }
     }, {
-      "name" : "SRFUR__CASE_TOBUG_BUT",
+      "name" : "CONFIRM",
       "getPSDEOPPriv" : {
-        "logicName" : "测试用例转BUG",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_TOBUG_BUT"
-        },
-        "mapSysUniResCode" : "CASE_TOBUG_BUT",
-        "name" : "SRFUR__CASE_TOBUG_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "确认",
+        "name" : "CONFIRM"
       }
     }, {
-      "name" : "SRFUR__CASE_CONFIRM_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "测试用例确认",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_CONFIRM_BUT"
-        },
-        "mapSysUniResCode" : "CASE_CONFIRM_BUT",
-        "name" : "SRFUR__CASE_CONFIRM_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__CASE_CASECOF_BUT",
+      "name" : "CASECOF",
       "getPSDEOPPriv" : {
         "logicName" : "测试用例（用例确认）",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_CASECOF_BUT"
-        },
-        "mapSysUniResCode" : "CASE_CASECOF_BUT",
-        "name" : "SRFUR__CASE_CASECOF_BUT",
-        "mapSysUniRes" : true
+        "name" : "CASECOF"
+      }
+    }, {
+      "name" : "NFAVORITE",
+      "getPSDEOPPriv" : {
+        "logicName" : "取消收藏",
+        "name" : "NFAVORITE"
       }
     } ],
     "state2Value" : "no",
@@ -13950,6 +13951,12 @@
     "oPPrivAllowMode" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "测试用例（用例确认）",
+    "name" : "CASECOF"
+  }, {
+    "logicName" : "确认",
+    "name" : "CONFIRM"
+  }, {
     "logicName" : "确认变更",
     "name" : "CONFIRMCHANGE"
   }, {
@@ -13977,8 +13984,14 @@
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "套件编辑",
+    "name" : "EDITSUITE"
+  }, {
     "logicName" : "用例收藏",
     "name" : "FAVORITE"
+  }, {
+    "logicName" : "关联用例",
+    "name" : "LINKCASE"
   }, {
     "logicName" : "管理",
     "name" : "MANAGE"
@@ -14015,6 +14028,15 @@
   }, {
     "logicName" : "执行测试",
     "name" : "TESRUNCASE"
+  }, {
+    "logicName" : "转Bug",
+    "name" : "TOBUG"
+  }, {
+    "logicName" : "移除用例",
+    "name" : "UNLIANKCASE"
+  }, {
+    "logicName" : "移除用例",
+    "name" : "UNLINKSUITCASE"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"

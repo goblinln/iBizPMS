@@ -813,6 +813,7 @@
         "actionTarget" : "NONE",
         "caption" : "移动端新建",
         "codeName" : "createMob",
+        "dataAccessAction" : "CREATE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/CaseCreateCaseMobEditView.json",

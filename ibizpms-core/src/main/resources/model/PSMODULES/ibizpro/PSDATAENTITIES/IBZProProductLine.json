@@ -67,6 +67,10 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
         "customCond" : "( t1.`TYPE` = 'line' )",
         "name" : "查询条件"
       } ]
@@ -81,6 +85,10 @@
       "name" : "MySQL5",
       "getPSDEDataQueryCodeConds" : [ {
         "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      }, {
+        "condType" : "CUSTOM",
         "customCond" : "( t1.`TYPE` = 'line' )",
         "name" : "查询条件"
       } ]
@@ -92,7 +100,12 @@
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.DELETED = '0'",
+        "name" : "查询条件"
+      } ]
     } ],
     "codeName" : "View",
     "logicName" : "默认（全部数据）",
@@ -659,6 +672,58 @@
     "allowEmpty" : false,
     "enableQuickSearch" : true,
     "majorDEField" : true
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "DELETED",
+      "dBType" : "MYSQL5",
+      "name" : "DELETED",
+      "queryCodeExp" : "t1.`DELETED`",
+      "standardColumnName" : "`DELETED`",
+      "valueAutoGen" : true
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组",
+        "getPSDEFVRConditions" : [ {
+          "condType" : "STRINGLENGTH",
+          "dEFName" : "DELETED",
+          "maxValue" : 1,
+          "name" : "默认字符串长度",
+          "ruleInfo" : "内容长度必须小于等于[1]",
+          "includeMaxValue" : true,
+          "includeMinValue" : false,
+          "keyCond" : true
+        } ],
+        "ruleInfo" : "内容长度必须小于等于[1]"
+      },
+      "getPSDEField" : {
+        "name" : "DELETED",
+        "codeName" : "Deleted"
+      },
+      "ruleInfo" : "内容长度必须小于等于[1]",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "Deleted",
+    "dEFType" : 1,
+    "dataType" : "TEXT",
+    "defaultValue" : "0",
+    "importOrder" : 1000,
+    "length" : 1,
+    "logicName" : "已删除",
+    "name" : "DELETED",
+    "predefinedType" : "LOGICVALID",
+    "stdDataType" : 25,
+    "stringLength" : 1,
+    "valueFormat" : "%1$s",
+    "enableUICreate" : false,
+    "enableUIModify" : false
   } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
@@ -779,6 +844,7 @@
   "enableUIActions" : 15,
   "enableViewLevel" : 0,
   "extendMode" : 0,
+  "invalidLogicValue" : "1",
   "logicName" : "产品线",
   "getMajorPSDERs" : [ {
     "codeName" : "ProductLine",
@@ -817,6 +883,7 @@
   "storageMode" : 1,
   "systemTag" : "iBizPMS",
   "tableName" : "zt_module",
+  "validLogicValue" : "0",
   "virtualMode" : 0,
   "enableAPIStorage" : false,
   "enableCreate" : true,
@@ -829,6 +896,6 @@
   "enableNoSQLStorage" : false,
   "enableRemove" : true,
   "enableSQLStorage" : true,
-  "logicValid" : false,
+  "logicValid" : true,
   "subSysAsCloud" : false
 }

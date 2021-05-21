@@ -144,6 +144,16 @@ public class IBZProProductLine extends EntityMP implements Serializable {
     @JsonProperty("name")
     @ApiModelProperty("产品线名称")
     private String name;
+    /**
+     * 已删除
+     */
+    @DEField(defaultValue = "0", preType = DEPredefinedFieldType.LOGICVALID, logicval = "0", logicdelval = "1")
+    @TableLogic(value = "0", delval = "1")
+    @TableField(value = "`DELETED`")
+    @JSONField(name = "deleted")
+    @JsonProperty("deleted")
+    @ApiModelProperty("已删除")
+    private String deleted;
 
 
 

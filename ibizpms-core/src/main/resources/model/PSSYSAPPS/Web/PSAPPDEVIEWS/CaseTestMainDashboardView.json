@@ -2552,6 +2552,7 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "执行",
                   "codeName" : "CaseExecute",
+                  "dataAccessAction" : "RUNCASE",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseTestOptionView.json",
@@ -2670,9 +2671,11 @@
                 "name" : "ub5e46cc",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
+                  "noPrivDisplayMode" : 1,
                   "caption" : "删除",
                   "codeName" : "deleteCz",
                   "confirmMsg" : "确认要删除，删除操作将不可恢复？",
+                  "dataAccessAction" : "DELETE",
                   "fullCodeName" : "Case_deleteCz",
                   "name" : "删除（操作栏）",
                   "getPSAppDEMethod" : {

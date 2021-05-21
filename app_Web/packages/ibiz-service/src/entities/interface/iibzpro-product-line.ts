@@ -54,4 +54,8 @@ export interface IIBZProProductLine extends IEntityBase {
      * 产品线名称
      */
     name?: any;
+    /**
+     * 已删除
+     */
+    deleted?: any;
 }

@@ -181,6 +181,7 @@
         "actionTarget" : "MULTIKEY",
         "caption" : "保存",
         "codeName" : "linkCase",
+        "dataAccessAction" : "LINKCASE",
         "fullCodeName" : "Case_linkCase",
         "name" : "关联用例",
         "getPSAppDEMethod" : {

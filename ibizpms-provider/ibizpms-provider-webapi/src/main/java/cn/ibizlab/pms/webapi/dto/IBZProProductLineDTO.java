@@ -142,6 +142,16 @@ public class IBZProProductLineDTO extends DTOBase implements Serializable {
     @ApiModelProperty("产品线名称")
     private String name;
 
+    /**
+     * 属性 [DELETED]
+     *
+     */
+    @JSONField(name = "deleted")
+    @JsonProperty("deleted")
+    @Size(min = 0, max = 1, message = "内容长度必须小于等于[1]")
+    @ApiModelProperty("已删除")
+    private String deleted;
+
 
     /**
      * 设置 [ORDER]

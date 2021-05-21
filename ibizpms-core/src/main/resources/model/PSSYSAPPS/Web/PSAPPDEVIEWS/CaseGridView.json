@@ -225,6 +225,7 @@
         "actionTarget" : "NONE",
         "caption" : "批量新建用例",
         "codeName" : "BatchNew",
+        "dataAccessAction" : "CREATE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseBatchNewGridView.json",

@@ -219,6 +219,12 @@
     "stringLength" : 60,
     "enableQuickSearch" : true,
     "majorField" : true
+  }, {
+    "codeName" : "Deleted",
+    "logicName" : "已删除",
+    "name" : "DELETED",
+    "stdDataType" : 25,
+    "stringLength" : 1
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",

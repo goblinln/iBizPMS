@@ -682,6 +682,7 @@
                       "actionTarget" : "SINGLEKEY",
                       "caption" : "移除",
                       "codeName" : "unlinkSuiteCase",
+                      "dataAccessAction" : "EDITSUITE",
                       "fullCodeName" : "Case_unlinkSuiteCase",
                       "name" : "移除套件用例",
                       "getPSAppDEMethod" : {
@@ -759,6 +760,7 @@
                       "actionTarget" : "SINGLEKEY",
                       "caption" : "执行",
                       "codeName" : "Execute",
+                      "dataAccessAction" : "RUNCASE",
                       "getFrontPSAppView" : {
                         "modelref" : true,
                         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseOptionView.json",

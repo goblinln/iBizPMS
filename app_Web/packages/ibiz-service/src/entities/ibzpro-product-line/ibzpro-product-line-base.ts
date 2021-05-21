@@ -79,6 +79,10 @@ export abstract class IBZProProductLineBase extends EntityBase implements IIBZPr
      * 产品线名称
      */
     name?: any;
+    /**
+     * 已删除
+     */
+    deleted?: any;
 
     /**
      * 重置实体数据

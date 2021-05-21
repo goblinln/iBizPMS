@@ -2571,8 +2571,10 @@
                 "name" : "ud0c7313",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
+                  "noPrivDisplayMode" : 1,
                   "caption" : "执行",
                   "codeName" : "ExecuteCz",
+                  "dataAccessAction" : "RUNCASE",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseOptionView.json",
@@ -2635,8 +2637,10 @@
                 "name" : "ua417f98",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
+                  "noPrivDisplayMode" : 1,
                   "caption" : "转Bug",
                   "codeName" : "NewBugByCaseResultCz",
+                  "dataAccessAction" : "TOBUG",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseToBugEditView.json",
@@ -2703,9 +2707,11 @@
                 "name" : "u22ddd67",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
+                  "noPrivDisplayMode" : 1,
                   "caption" : "删除",
                   "codeName" : "deleteCz",
                   "confirmMsg" : "确认要删除，删除操作将不可恢复？",
+                  "dataAccessAction" : "DELETE",
                   "fullCodeName" : "Case_deleteCz",
                   "name" : "删除（操作栏）",
                   "getPSAppDEMethod" : {

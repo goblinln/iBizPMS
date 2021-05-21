@@ -340,6 +340,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "移除",
         "codeName" : "mobUnlinkCase",
+        "dataAccessAction" : "UNLIANKCASE",
         "fullCodeName" : "Case_mobUnlinkCase",
         "name" : "移除（移动端）",
         "getPSAppDEMethod" : {

@@ -924,6 +924,7 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "确认用例变动",
                   "codeName" : "confirmChange",
+                  "dataAccessAction" : "CONFIRMCHANGE",
                   "fullCodeName" : "Case_confirmChange",
                   "name" : "确认用例变动",
                   "getPSAppDEMethod" : {
@@ -969,6 +970,7 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "转Bug",
                   "codeName" : "NewBugByTestCaseResult",
+                  "dataAccessAction" : "TOBUG",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseToBugTestEditView.json",
@@ -1063,6 +1065,7 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "执行",
                   "codeName" : "CaseExecute",
+                  "dataAccessAction" : "RUNCASE",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseTestOptionView.json",
@@ -1107,6 +1110,7 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "移除",
                   "codeName" : "unlinkCase",
+                  "dataAccessAction" : "UNLIANKCASE",
                   "fullCodeName" : "Case_unlinkCase",
                   "name" : "移除",
                   "getPSAppDEMethod" : {

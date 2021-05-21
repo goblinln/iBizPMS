@@ -710,6 +710,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "确认",
             "codeName" : "confirmstorychange",
+            "dataAccessAction" : "CONFIRMCHANGE",
             "fullCodeName" : "Case_confirmstorychange",
             "name" : "确认",
             "getPSAppDEMethod" : {
@@ -775,6 +776,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "执行",
             "codeName" : "Execute",
+            "dataAccessAction" : "RUNCASE",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseOptionView.json",
@@ -843,6 +845,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "转Bug",
             "codeName" : "NewBugByCaseResult",
+            "dataAccessAction" : "TOBUG",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseToBugEditView.json",
@@ -923,6 +926,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "收藏",
             "codeName" : "caseFavorite",
+            "dataAccessAction" : "FAVORITE",
             "fullCodeName" : "Case_caseFavorite",
             "name" : "收藏",
             "getPSAppDEMethod" : {
@@ -978,6 +982,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "取消收藏",
             "codeName" : "CaseNFavorite",
+            "dataAccessAction" : "NFAVORITE",
             "fullCodeName" : "Case_CaseNFavorite",
             "name" : "取消收藏",
             "getPSAppDEMethod" : {

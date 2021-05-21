@@ -14,6 +14,7 @@ function getLocaleResourceBase(){
 		'mdeptname': commonLogic.appcommonhandle("归属部门名",null),
 		'orgname': commonLogic.appcommonhandle("归属组织名",null),
 		'name': commonLogic.appcommonhandle("产品线名称",null),
+		'deleted': commonLogic.appcommonhandle("已删除",null),
 	},
 		views: {
 			'gridview': {
