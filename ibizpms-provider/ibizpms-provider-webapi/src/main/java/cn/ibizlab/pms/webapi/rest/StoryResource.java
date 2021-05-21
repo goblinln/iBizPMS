@@ -706,6 +706,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @PreAuthorize("@StoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "保存需求", tags = {"需求" },  notes = "保存需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/save")
     public ResponseEntity<StoryDTO> save(@RequestBody StoryDTO storydto) {
@@ -714,6 +715,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storyMapping.toDto(domain));
     }
 
+    @PreAuthorize("@StoryRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量保存需求", tags = {"需求" },  notes = "批量保存需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<StoryDTO> storydtos) {
@@ -2112,6 +2114,7 @@ public class StoryResource {
         boolean result = storyService.reviewBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品保存需求", tags = {"需求" },  notes = "根据产品保存需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/save")
     public ResponseEntity<StoryDTO> saveByProduct(@PathVariable("product_id") Long product_id, @RequestBody StoryDTO storydto) {
@@ -2121,6 +2124,7 @@ public class StoryResource {
         return ResponseEntity.status(HttpStatus.OK).body(storyMapping.toDto(domain));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品批量保存需求", tags = {"需求" },  notes = "根据产品批量保存需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/savebatch")
     public ResponseEntity<Boolean> saveBatchByProduct(@PathVariable("product_id") Long product_id, @RequestBody List<StoryDTO> storydtos) {

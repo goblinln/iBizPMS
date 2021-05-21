@@ -595,6 +595,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
     @ApiOperation(value = "保存任务", tags = {"任务" },  notes = "保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/save")
     public ResponseEntity<TaskDTO> save(@RequestBody TaskDTO taskdto) {
@@ -603,6 +604,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(domain));
     }
 
+    @PreAuthorize("@TaskRuntime.quickTest('CREATE')")
     @ApiOperation(value = "批量保存任务", tags = {"任务" },  notes = "批量保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<TaskDTO> taskdtos) {
@@ -2166,6 +2168,7 @@ public class TaskResource {
         boolean result = taskService.restartBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'CREATE')")
     @ApiOperation(value = "根据任务模块保存任务", tags = {"任务" },  notes = "根据任务模块保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/save")
     public ResponseEntity<TaskDTO> saveByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskDTO taskdto) {
@@ -2175,6 +2178,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(domain));
     }
 
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'CREATE')")
     @ApiOperation(value = "根据任务模块批量保存任务", tags = {"任务" },  notes = "根据任务模块批量保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/savebatch")
     public ResponseEntity<Boolean> saveBatchByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody List<TaskDTO> taskdtos) {
@@ -3774,6 +3778,7 @@ public class TaskResource {
         boolean result = taskService.restartBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'CREATE')")
     @ApiOperation(value = "根据产品计划保存任务", tags = {"任务" },  notes = "根据产品计划保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/save")
     public ResponseEntity<TaskDTO> saveByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody TaskDTO taskdto) {
@@ -3783,6 +3788,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(domain));
     }
 
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'CREATE')")
     @ApiOperation(value = "根据产品计划批量保存任务", tags = {"任务" },  notes = "根据产品计划批量保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/savebatch")
     public ResponseEntity<Boolean> saveBatchByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody List<TaskDTO> taskdtos) {
@@ -5382,6 +5388,7 @@ public class TaskResource {
         boolean result = taskService.restartBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
     @ApiOperation(value = "根据需求保存任务", tags = {"任务" },  notes = "根据需求保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/save")
     public ResponseEntity<TaskDTO> saveByStory(@PathVariable("story_id") Long story_id, @RequestBody TaskDTO taskdto) {
@@ -5391,6 +5398,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(domain));
     }
 
+    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
     @ApiOperation(value = "根据需求批量保存任务", tags = {"任务" },  notes = "根据需求批量保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/savebatch")
     public ResponseEntity<Boolean> saveBatchByStory(@PathVariable("story_id") Long story_id, @RequestBody List<TaskDTO> taskdtos) {
@@ -6990,6 +6998,7 @@ public class TaskResource {
         boolean result = taskService.restartBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目保存任务", tags = {"任务" },  notes = "根据项目保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/save")
     public ResponseEntity<TaskDTO> saveByProject(@PathVariable("project_id") Long project_id, @RequestBody TaskDTO taskdto) {
@@ -6999,6 +7008,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(domain));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目批量保存任务", tags = {"任务" },  notes = "根据项目批量保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/savebatch")
     public ResponseEntity<Boolean> saveBatchByProject(@PathVariable("project_id") Long project_id, @RequestBody List<TaskDTO> taskdtos) {
@@ -8598,6 +8608,7 @@ public class TaskResource {
         boolean result = taskService.restartBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品产品计划保存任务", tags = {"任务" },  notes = "根据产品产品计划保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/save")
     public ResponseEntity<TaskDTO> saveByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody TaskDTO taskdto) {
@@ -8607,6 +8618,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(domain));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品产品计划批量保存任务", tags = {"任务" },  notes = "根据产品产品计划批量保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/savebatch")
     public ResponseEntity<Boolean> saveBatchByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody List<TaskDTO> taskdtos) {
@@ -10206,6 +10218,7 @@ public class TaskResource {
         boolean result = taskService.restartBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品需求保存任务", tags = {"任务" },  notes = "根据产品需求保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/save")
     public ResponseEntity<TaskDTO> saveByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody TaskDTO taskdto) {
@@ -10215,6 +10228,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(domain));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
     @ApiOperation(value = "根据产品需求批量保存任务", tags = {"任务" },  notes = "根据产品需求批量保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/savebatch")
     public ResponseEntity<Boolean> saveBatchByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @RequestBody List<TaskDTO> taskdtos) {
@@ -11814,6 +11828,7 @@ public class TaskResource {
         boolean result = taskService.restartBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目任务模块保存任务", tags = {"任务" },  notes = "根据项目任务模块保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/save")
     public ResponseEntity<TaskDTO> saveByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody TaskDTO taskdto) {
@@ -11823,6 +11838,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(domain));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
     @ApiOperation(value = "根据项目任务模块批量保存任务", tags = {"任务" },  notes = "根据项目任务模块批量保存任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/savebatch")
     public ResponseEntity<Boolean> saveBatchByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @RequestBody List<TaskDTO> taskdtos) {
