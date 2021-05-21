@@ -14642,6 +14642,9 @@
     "logicName" : "删除",
     "name" : "DELETE"
   }, {
+    "logicName" : "用例收藏",
+    "name" : "FAVORITE"
+  }, {
     "logicName" : "管理",
     "name" : "MANAGE"
   }, {
@@ -14653,6 +14656,9 @@
     },
     "name" : "MANAGE",
     "id" : "ZTProduct__MANAGE"
+  }, {
+    "logicName" : "取消收藏",
+    "name" : "NFAVORITE"
   }, {
     "logicName" : "Product_Read",
     "mapPSDEOPPrivName" : "READ",

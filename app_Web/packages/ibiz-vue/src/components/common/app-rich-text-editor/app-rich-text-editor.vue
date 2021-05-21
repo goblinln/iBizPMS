@@ -462,6 +462,9 @@ export default class AppRichTextEditor extends Vue {
                                     richtexteditor.imgsrc.push(item);
                                 }
                                 success(response);
+                                let content = richtexteditor.editor.getContent();
+                                content = richtexteditor.getImgUrl(content);
+                                richtexteditor.$emit('change', content);
                             });
                         }
                         if (this.export_params.length > 0) {
