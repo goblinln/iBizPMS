@@ -319,6 +319,9 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
     public List<ProjectProduct> selectRelationPlan(ProjectProductSearchContext context){
         return baseMapper.selectRelationPlan(context, context.getSelectCond());
     }
+    public List<ProjectProduct> selectSimple(ProjectProductSearchContext context){
+        return baseMapper.selectSimple(context, context.getSelectCond());
+    }
     public List<ProjectProduct> selectView(ProjectProductSearchContext context){
         return baseMapper.selectView(context, context.getSelectCond());
     }
@@ -358,6 +361,8 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
                 ztproductplan=majorEntity;
             }
             et.setPlanname(ztproductplan.getTitle());
+            et.setBegin(ztproductplan.getBegin());
+            et.setEnd(ztproductplan.getEnd());
         }
         //实体关系[DER1N_ZT_PROJECTPRODUCT_ZT_PRODUCT_PRODUCT]
         if(!ObjectUtils.isEmpty(et.getProduct())){
@@ -368,6 +373,7 @@ public class ProjectProductServiceImpl extends ServiceImpl<ProjectProductMapper,
                 ztproduct=majorEntity;
             }
             et.setProductname(ztproduct.getName());
+            et.setProductcode(ztproduct.getCode());
         }
         //实体关系[DER1N_ZT_PROJECTPRODUCT_ZT_PROJECT_PROJECT]
         if(!ObjectUtils.isEmpty(et.getProject())){

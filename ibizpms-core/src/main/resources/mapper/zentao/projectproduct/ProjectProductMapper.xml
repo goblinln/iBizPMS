@@ -5,7 +5,7 @@
 	
 	<!-- 无视图模式 -->
 	<sql id="select" databaseId="mysql">
-        <![CDATA[ SELECT t1.`BRANCH`, t1.`CREATEBY`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`ORG`, t1.`ORGNAME`, t1.`PLAN`, t31.`TITLE` AS `PLANNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`UPDATEBY` FROM `zt_projectproduct` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`  LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`ID`  LEFT JOIN `zt_productplan` t31 ON t1.`PLAN` = t31.`ID`   ]]>
+        <![CDATA[ SELECT t31.`BEGIN`, t1.`BRANCH`, t1.`CREATEBY`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPT`, t1.`DEPTNAME`, t31.`END`, t1.`ID`, t1.`ORG`, t1.`ORGNAME`, t1.`PLAN`, t31.`TITLE` AS `PLANNAME`, t1.`PRODUCT`, t11.`code` AS `PRODUCTCODE`, t11.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`UPDATEBY`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `zt_projectproduct` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`  LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`ID`  LEFT JOIN `zt_productplan` t31 ON t1.`PLAN` = t31.`ID`   ]]>
     </sql>
 
 	
@@ -126,7 +126,7 @@
 
     <!--数据查询[Default]-->
     <sql id="Default" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, t1.`CREATEBY`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`ORG`, t1.`ORGNAME`, t1.`PLAN`, t31.`TITLE` AS `PLANNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`UPDATEBY` FROM `zt_projectproduct` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`  LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`ID`  LEFT JOIN `zt_productplan` t31 ON t1.`PLAN` = t31.`ID`   ]]>
+		<![CDATA[ SELECT t31.`BEGIN`, t1.`BRANCH`, t1.`CREATEBY`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPT`, t1.`DEPTNAME`, t31.`END`, t1.`ID`, t1.`ORG`, t1.`ORGNAME`, t1.`PLAN`, t31.`TITLE` AS `PLANNAME`, t1.`PRODUCT`, t11.`code` AS `PRODUCTCODE`, t11.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`UPDATEBY`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `zt_projectproduct` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`  LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`ID`  LEFT JOIN `zt_productplan` t31 ON t1.`PLAN` = t31.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>
@@ -138,10 +138,13 @@
 
     <!--数据查询[RelationPlan]-->
     <sql id="RelationPlan" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, t1.`CREATEBY`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`ORG`, t1.`ORGNAME`, t1.`PLAN`, t31.`TITLE` AS `PLANNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`UPDATEBY` FROM `zt_projectproduct` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`  LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`ID`  LEFT JOIN `zt_productplan` t31 ON t1.`PLAN` = t31.`ID`   ]]>
+		<![CDATA[ SELECT t1.`BRANCH`, t1.`CREATEBY`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`ORG`, t1.`ORGNAME`, t1.`PLAN`, ( 	CONCAT( 	t21.`name`, 	'/', 	t31.title, 	'[', CASE 	 	WHEN t31.`begin` IS NOT NULL THEN 	t31.`begin` ELSE ''  	END, 	'~', CASE 		 		WHEN t31.`end` IS NOT NULL THEN 		t31.`end` ELSE ''  	END, 	']'  	)  	) AS `PLANNAME`, t1.`PRODUCT`, t11.`code` AS `PRODUCTCODE`, t11.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`UPDATEBY` FROM `zt_projectproduct` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`   LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`ID` LEFT JOIN `zt_productplan` t31 ON t1.`PLAN` = t31.`ID` ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<if test="true">
                 <![CDATA[ AND ( t1.`PLAN` <> 0 ) ]]>
+            </if>
+			<if test="true">
+                <![CDATA[ AND t31.deleted = '0' ]]>
             </if>
 			<include refid="searchMode" />
 		</trim>
@@ -151,9 +154,21 @@
 		<include refid="RelationPlan" />
 	</select>
 
+    <!--数据查询[Simple]-->
+    <sql id="Simple" databaseId="mysql">
+		<![CDATA[ SELECT t1.`CREATEBY`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`ORG`, t1.`ORGNAME`, t11.`name` AS `PRODUCTNAME`, t1.`UPDATEBY`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `zt_projectproduct` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectSimple"  parameterType="cn.ibizlab.pms.core.zentao.filter.ProjectProductSearchContext" resultMap="ProjectProductResultMap">
+		<include refid="Simple" />
+	</select>
+
     <!--数据查询[View]-->
     <sql id="View" databaseId="mysql">
-		<![CDATA[ SELECT t1.`BRANCH`, t1.`CREATEBY`, t1.`DEPT`, t1.`DEPTNAME`, t1.`ID`, t1.`ORG`, t1.`ORGNAME`, t1.`PLAN`, t31.`TITLE` AS `PLANNAME`, t1.`PRODUCT`, t11.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`UPDATEBY` FROM `zt_projectproduct` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`  LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`ID`  LEFT JOIN `zt_productplan` t31 ON t1.`PLAN` = t31.`ID`   ]]>
+		<![CDATA[ SELECT t31.`BEGIN`, t1.`BRANCH`, t1.`CREATEBY`, t1.`CREATEDATE`, t1.`CREATEMAN`, t1.`DEPT`, t1.`DEPTNAME`, t31.`END`, t1.`ID`, t1.`ORG`, t1.`ORGNAME`, t1.`PLAN`, t31.`TITLE` AS `PLANNAME`, t1.`PRODUCT`, t11.`code` AS `PRODUCTCODE`, t11.`name` AS `PRODUCTNAME`, t1.`PROJECT`, t21.`NAME` AS `PROJECTNAME`, t1.`UPDATEBY`, t1.`UPDATEDATE`, t1.`UPDATEMAN` FROM `zt_projectproduct` t1  LEFT JOIN `zt_product` t11 ON t1.`PRODUCT` = t11.`id`  LEFT JOIN `zt_project` t21 ON t1.`PROJECT` = t21.`ID`  LEFT JOIN `zt_productplan` t31 ON t1.`PLAN` = t31.`ID`   ]]>
 		<trim prefix="where" prefixOverrides="and">
 			<include refid="searchMode" />
 		</trim>

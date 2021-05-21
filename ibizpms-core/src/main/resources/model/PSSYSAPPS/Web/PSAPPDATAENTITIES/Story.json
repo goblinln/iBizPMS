@@ -10822,6 +10822,9 @@
     "logicName" : "需求指派",
     "name" : "ASSIGNTO"
   }, {
+    "logicName" : "建用例",
+    "name" : "CCASE"
+  }, {
     "logicName" : "需求变更",
     "name" : "CHANGE"
   }, {
@@ -10887,6 +10890,9 @@
   }, {
     "logicName" : "需求评审",
     "name" : "REVIEW"
+  }, {
+    "logicName" : "提缺陷",
+    "name" : "TOBUG"
   }, {
     "logicName" : "更新",
     "name" : "UPDATE"

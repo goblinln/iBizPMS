@@ -21,6 +21,7 @@ public interface ProjectProductMapper extends BaseMapper<ProjectProduct> {
 
     List<ProjectProduct> selectDefault(@Param("srf") ProjectProductSearchContext context, @Param("ew") Wrapper<ProjectProduct> wrapper);
     List<ProjectProduct> selectRelationPlan(@Param("srf") ProjectProductSearchContext context, @Param("ew") Wrapper<ProjectProduct> wrapper);
+    List<ProjectProduct> selectSimple(@Param("srf") ProjectProductSearchContext context, @Param("ew") Wrapper<ProjectProduct> wrapper);
     List<ProjectProduct> selectView(@Param("srf") ProjectProductSearchContext context, @Param("ew") Wrapper<ProjectProduct> wrapper);
 
     Page<ProjectProduct> searchDefault(IPage page, @Param("srf") ProjectProductSearchContext context, @Param("ew") Wrapper<ProjectProduct> wrapper);

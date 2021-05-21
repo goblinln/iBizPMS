@@ -72,6 +72,8 @@ export class ProjectProductUIServiceBase extends UIServiceBase {
     protected initViewFuncMap(){
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
+        this.allViewFuncMap.set(':','');
+        this.allViewFuncMap.set(':','');
     }
 
 }

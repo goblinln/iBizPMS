@@ -17,15 +17,47 @@ function getLocaleResourceBase(){
 		'plan': commonLogic.appcommonhandle("产品计划",null),
 		'branch': commonLogic.appcommonhandle("平台/分支",null),
 		'project': commonLogic.appcommonhandle("项目",null),
+		'productcode': commonLogic.appcommonhandle("产品编号",null),
+		'begin': commonLogic.appcommonhandle("计划开始时间",null),
+		'end': commonLogic.appcommonhandle("计划结束时间",null),
+		'createman': commonLogic.appcommonhandle("建立人",null),
+		'createdate': commonLogic.appcommonhandle("建立时间",null),
+		'updateman': commonLogic.appcommonhandle("更新人",null),
+		'updatedate': commonLogic.appcommonhandle("更新时间",null),
 	},
 		views: {
 			'planlistview9': {
 				caption: commonLogic.appcommonhandle("关联计划",null),
 				title: commonLogic.appcommonhandle("项目产品列表视图",null),
 			},
+			'plangridview9': {
+				caption: commonLogic.appcommonhandle("关联计划",null),
+				title: commonLogic.appcommonhandle("项目产品表格视图（关联计划）",null),
+			},
 			'listview9': {
 				caption: commonLogic.appcommonhandle("关联产品",null),
 				title: commonLogic.appcommonhandle("项目产品列表视图",null),
+			},
+			'productgridview9': {
+				caption: commonLogic.appcommonhandle("关联产品",null),
+				title: commonLogic.appcommonhandle("项目产品表格视图（关联计划）",null),
+			},
+		},
+		main_grid: {
+			columns: {
+				'productname': commonLogic.appcommonhandle("产品名称",null),
+				'productcode': commonLogic.appcommonhandle("产品代号",null),
+			},
+			nodata:commonLogic.appcommonhandle("",null),
+			uiactions: {
+			},
+		},
+		mainplan_grid: {
+			columns: {
+				'planname': commonLogic.appcommonhandle("计划名称",null),
+			},
+			nodata:commonLogic.appcommonhandle("",null),
+			uiactions: {
 			},
 		},
 		plan_list: {

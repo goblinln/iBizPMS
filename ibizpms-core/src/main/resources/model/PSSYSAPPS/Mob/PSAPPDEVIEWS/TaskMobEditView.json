@@ -3394,6 +3394,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "取消",
         "codeName" : "CancelTaskMob",
+        "dataAccessAction" : "SRFUR__TASK_CANCEL_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskCancelMobOptionView.json",
@@ -3437,6 +3438,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "关闭",
         "codeName" : "CloseTaskMob",
+        "dataAccessAction" : "CLOSE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskCloseMobOptionView.json",

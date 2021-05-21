@@ -41,6 +41,7 @@ public interface IProjectProductService extends IService<ProjectProduct> {
     List<ProjectProduct> select(ProjectProductSearchContext context);
     List<ProjectProduct> selectDefault(ProjectProductSearchContext context);
     List<ProjectProduct> selectRelationPlan(ProjectProductSearchContext context);
+    List<ProjectProduct> selectSimple(ProjectProductSearchContext context);
     List<ProjectProduct> selectView(ProjectProductSearchContext context);
 
     Page<ProjectProduct> searchDefault(ProjectProductSearchContext context);

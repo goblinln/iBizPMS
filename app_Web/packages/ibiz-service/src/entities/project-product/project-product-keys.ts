@@ -13,4 +13,11 @@ export default [
     'plan',
     'branch',
     'project',
+    'productcode',
+    'begin',
+    'end',
+    'createman',
+    'createdate',
+    'updateman',
+    'updatedate',
 ];

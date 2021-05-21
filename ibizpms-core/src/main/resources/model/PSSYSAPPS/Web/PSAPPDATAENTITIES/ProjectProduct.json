@@ -251,13 +251,53 @@
     "logicName" : "项目",
     "name" : "PROJECT",
     "stdDataType" : 1
+  }, {
+    "codeName" : "ProductCode",
+    "logicName" : "产品编号",
+    "name" : "PRODUCTCODE",
+    "stdDataType" : 25,
+    "stringLength" : 45
+  }, {
+    "codeName" : "Begin",
+    "logicName" : "计划开始时间",
+    "name" : "BEGIN",
+    "stdDataType" : 5
+  }, {
+    "codeName" : "End",
+    "logicName" : "计划结束时间",
+    "name" : "END",
+    "stdDataType" : 5
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "CreateDate",
+    "logicName" : "建立时间",
+    "name" : "CREATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "UpdateDate",
+    "logicName" : "更新时间",
+    "name" : "UPDATEDATE",
+    "stdDataType" : 5,
+    "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   } ],
   "getAllPSAppDEMethods" : [ {
     "codeName" : "Select",
     "methodType" : "SELECT",
     "getPSDEOPPriv" : {
       "modelref" : true,
-      "id" : "READ"
+      "id" : "ZTProject__READ"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -440,6 +480,15 @@
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
+    "logicName" : "建立",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct/PSDERS/DER1N_ZT_PROJECTPRODUCT_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "CREATE",
+    "id" : "ZTProject__CREATE"
+  }, {
     "logicName" : "Product_Create",
     "mapPSDEOPPrivName" : "CREATE",
     "getMapPSDER" : {
@@ -451,6 +500,15 @@
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
+  }, {
+    "logicName" : "删除",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct/PSDERS/DER1N_ZT_PROJECTPRODUCT_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "DELETE",
+    "id" : "ZTProject__DELETE"
   }, {
     "logicName" : "Product_Delete",
     "mapPSDEOPPrivName" : "DELETE",
@@ -482,8 +540,26 @@
     "logicName" : "读取",
     "name" : "READ"
   }, {
+    "logicName" : "读取",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct/PSDERS/DER1N_ZT_PROJECTPRODUCT_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "READ",
+    "id" : "ZTProject__READ"
+  }, {
     "logicName" : "更新",
     "name" : "UPDATE"
+  }, {
+    "logicName" : "更新",
+    "mapPSDEOPPrivName" : "UPDATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProjectProduct/PSDERS/DER1N_ZT_PROJECTPRODUCT_ZT_PROJECT_PROJECT.json"
+    },
+    "name" : "UPDATE",
+    "id" : "ZTProject__UPDATE"
   }, {
     "logicName" : "Product_Update",
     "mapPSDEOPPrivName" : "UPDATE",

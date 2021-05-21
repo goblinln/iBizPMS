@@ -12143,6 +12143,9 @@
     "logicName" : "需求指派",
     "name" : "ASSIGNTO"
   }, {
+    "logicName" : "建用例",
+    "name" : "CCASE"
+  }, {
     "logicName" : "需求变更",
     "name" : "CHANGE"
   }, {
@@ -12209,6 +12212,9 @@
     "logicName" : "需求评审",
     "name" : "REVIEW"
   }, {
+    "logicName" : "提缺陷",
+    "name" : "TOBUG"
+  }, {
     "logicName" : "更新",
     "name" : "UPDATE"
   }, {
@@ -12257,7 +12263,7 @@
     "roleTag" : "Story_Maintain",
     "userDRAction" : "READ"
   }, {
-    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_OpenBy.json",
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Story/PSDEUSERROLES/Story_Maintain_MyCOrP.json",
     "name" : "需求维护（我创建或参与）（默认角色）",
     "getPSDEDataSet" : {
       "modelref" : true,
@@ -12265,83 +12271,83 @@
     },
     "getPSDEUserRoleOPPrivs" : [ {
       "dataAccessAction" : "FAVORITES",
-      "name" : "Story_Maintain_OpenBy_Favorites",
+      "name" : "Story_Maintain_MyCOrP_Favorites",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "FAVORITES"
       }
     }, {
       "dataAccessAction" : "ACTIVATE",
-      "name" : "Story_Maintain_OpenBy_Activate",
+      "name" : "Story_Maintain_MyCOrP_Activate",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "ACTIVATE"
       }
     }, {
       "dataAccessAction" : "CHANGE",
-      "name" : "Story_Maintain_OpenBy_Change",
+      "name" : "Story_Maintain_MyCOrP_Change",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "CHANGE"
       }
     }, {
       "dataAccessAction" : "UPDATE",
-      "name" : " Story_Maintain_OpenBy_UPDATE",
+      "name" : "Story_Maintain_MyCOrP_UPDATE",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "UPDATE"
       }
     }, {
       "dataAccessAction" : "READ",
-      "name" : " Story_Maintain_OpenBy_READ",
+      "name" : "Story_Maintain_MyCOrP_READ",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "ZTProduct__READ"
       }
     }, {
       "dataAccessAction" : "REVIEW",
-      "name" : "Story_Maintain_OpenBy_Review",
+      "name" : "Story_Maintain_MyCOrP_Review",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "REVIEW"
       }
     }, {
       "dataAccessAction" : "ASSIGNTO",
-      "name" : "Story_Maintain_OpenBy_Assignto",
+      "name" : "Story_Maintain_MyCOrP_Assignto",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "ASSIGNTO"
       }
     }, {
       "dataAccessAction" : "ISCHILD",
-      "name" : "Story_Maintain_OpenBy_Ischild",
+      "name" : "Story_Maintain_MyCOrP_Ischild",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "ISCHILD"
       }
     }, {
       "dataAccessAction" : "NFAVORITES",
-      "name" : "Story_Maintain_OpenBy_NFavorites",
+      "name" : "Story_Maintain_MyCOrP_NFavorites",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "NFAVORITES"
       }
     }, {
       "dataAccessAction" : "CLOSE",
-      "name" : "Story_Maintain_OpenBy_Close",
+      "name" : "Story_Maintain_MyCOrP_Close",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "CLOSE"
       }
     }, {
       "dataAccessAction" : "DELETE",
-      "name" : " Story_Maintain_OpenBy_DELETE",
+      "name" : "Story_Maintain_MyCOrP_DELETE",
       "getPSDEOPPriv" : {
         "modelref" : true,
         "id" : "DELETE"
       }
     } ],
-    "roleTag" : "Story_Maintain_OpenBy",
+    "roleTag" : "Story_Maintain_MyCOrP",
     "userDRAction" : "READ",
     "defaultMode" : true
   }, {

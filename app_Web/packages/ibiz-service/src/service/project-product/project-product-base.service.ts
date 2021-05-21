@@ -48,6 +48,7 @@ export class ProjectProductBaseService extends EntityBaseService<IProjectProduct
             if (data) {
                 entity.productname = data.name;
                 entity.product = data.id;
+                entity.product = data;
             }
         }
         if (entity && entity.project && entity.project !== '') {
@@ -72,6 +73,7 @@ export class ProjectProductBaseService extends EntityBaseService<IProjectProduct
             if (data) {
                 entity.productname = data.name;
                 entity.product = data.id;
+                entity.product = data;
             }
         }
         if (_context.project && _context.project !== '') {
@@ -116,6 +118,10 @@ export class ProjectProductBaseService extends EntityBaseService<IProjectProduct
             }
         }
         return this.condCache.get('relationPlan');
+    }
+
+    protected getSimpleCond() {
+        return this.condCache.get('simple');
     }
 
     protected getViewCond() {

@@ -141,6 +141,8 @@ public class ProjectProductRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
             return projectproductService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("RelationPlan"))
             return projectproductService.selectRelationPlan(searchContext);
+        if (iPSDataQuery.getName().equals("SIMPLE"))
+            return projectproductService.selectSimple(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
             return projectproductService.selectView(searchContext);
         return null;

@@ -29192,6 +29192,53 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'projects/:project?/projectproducts/:projectproduct?/views/plangridview9',
+                    meta: {
+                        caption: 'entities.projectproduct.views.plangridview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'projectproducts', parameterName: 'projectproduct' },
+                            { pathName: 'views', parameterName: 'plangridview9' },
+                        ],
+                        resource:'projectproduct',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projectproducts/:projectproduct?/views/plangridview9',
+                    meta: {
+                        caption: 'entities.projectproduct.views.plangridview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projectproducts', parameterName: 'projectproduct' },
+                            { pathName: 'views', parameterName: 'plangridview9' },
+                        ],
+                        resource:'projectproduct',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projectproducts/:projectproduct?/views/plangridview9',
+                    meta: {
+                        caption: 'entities.projectproduct.views.plangridview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projectproducts', parameterName: 'projectproduct' },
+                            { pathName: 'views', parameterName: 'plangridview9' },
+                        ],
+                        resource:'projectproduct',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'projects/:project?/projectproducts/:projectproduct?/views/listview9',
                     meta: {
                         caption: 'entities.projectproduct.views.listview9.caption',
@@ -29232,6 +29279,53 @@ const router = new Router({
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'projectproducts', parameterName: 'projectproduct' },
                             { pathName: 'views', parameterName: 'listview9' },
+                        ],
+                        resource:'projectproduct',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'projects/:project?/projectproducts/:projectproduct?/views/productgridview9',
+                    meta: {
+                        caption: 'entities.projectproduct.views.productgridview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projects', parameterName: 'project' },
+                            { pathName: 'projectproducts', parameterName: 'projectproduct' },
+                            { pathName: 'views', parameterName: 'productgridview9' },
+                        ],
+                        resource:'projectproduct',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'products/:product?/projectproducts/:projectproduct?/views/productgridview9',
+                    meta: {
+                        caption: 'entities.projectproduct.views.productgridview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'projectproducts', parameterName: 'projectproduct' },
+                            { pathName: 'views', parameterName: 'productgridview9' },
+                        ],
+                        resource:'projectproduct',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'projectproducts/:projectproduct?/views/productgridview9',
+                    meta: {
+                        caption: 'entities.projectproduct.views.productgridview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'projectproducts', parameterName: 'projectproduct' },
+                            { pathName: 'views', parameterName: 'productgridview9' },
                         ],
                         resource:'projectproduct',
                         requireAuth: true,
@@ -32263,6 +32357,19 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'views', parameterName: 'releasemaininfoview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
+                    path: 'views/projectproductplangridview9',
+                    meta: {
+                        caption: 'entities.projectproduct.views.plangridview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'projectproductplangridview9' },
                         ],
                         requireAuth: true,
                     },
@@ -38436,6 +38543,19 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'views', parameterName: 'doccreateeditview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
+                    path: 'views/projectproductproductgridview9',
+                    meta: {
+                        caption: 'entities.projectproduct.views.productgridview9.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'projectproductproductgridview9' },
                         ],
                         requireAuth: true,
                     },

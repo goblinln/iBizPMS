@@ -64,4 +64,32 @@ export interface IProjectProduct extends IEntityBase {
      * 项目
      */
     project?: any;
+    /**
+     * 产品编号
+     */
+    productcode?: any;
+    /**
+     * 计划开始时间
+     */
+    begin?: any;
+    /**
+     * 计划结束时间
+     */
+    end?: any;
+    /**
+     * 建立人
+     */
+    createman?: any;
+    /**
+     * 建立时间
+     */
+    createdate?: any;
+    /**
+     * 更新人
+     */
+    updateman?: any;
+    /**
+     * 更新时间
+     */
+    updatedate?: any;
 }
