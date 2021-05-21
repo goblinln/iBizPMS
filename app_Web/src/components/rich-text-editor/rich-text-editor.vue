@@ -670,6 +670,10 @@ export default class RichTextEditor extends Vue {
                                 richtexteditor.imgsrc.push(item);
                             }
                             success(response);
+                            let content = richtexteditor.editor.getContent();
+                            content = richtexteditor.getImgUrl(content);
+                            richtexteditor.$emit('formitemvaluechange',{name: 'noticeusers',value: richtexteditor.jointSelectPersonId()});
+                            richtexteditor.$emit('change', content);
                         });
                     }
                     if (this.export_params.length > 0) {
