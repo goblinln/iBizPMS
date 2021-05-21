@@ -861,6 +861,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "关闭",
             "codeName" : "CloseBug",
+            "dataAccessAction" : "SRFUR__BUG_CLOSE_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCloseView.json",

@@ -127,6 +127,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugMapping.toDto(bugService.getDraft(domain)));
     }
 
+    @PreAuthorize("@BugRuntime.test(#bug_id,'SRFUR__BUG_ACTIVATE_BUT')")
     @ApiOperation(value = "激活", tags = {"Bug" },  notes = "激活")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/activate")
     public ResponseEntity<BugDTO> activate(@PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -144,6 +145,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @PreAuthorize("@BugRuntime.test(#bug_id,'SRFUR__BUG_ASSIGNTO_BUT')")
     @ApiOperation(value = "指派", tags = {"Bug" },  notes = "指派")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/assignto")
     public ResponseEntity<BugDTO> assignTo(@PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -255,6 +257,7 @@ public class BugResource {
         return  ResponseEntity.status(HttpStatus.OK).body(bugService.checkKey(bugMapping.toDomain(bugdto)));
     }
 
+    @PreAuthorize("@BugRuntime.test(#bug_id,'SRFUR__BUG_CLOSE_BUT')")
     @ApiOperation(value = "关闭", tags = {"Bug" },  notes = "关闭")
 	@RequestMapping(method = RequestMethod.POST, value = "/bugs/{bug_id}/close")
     public ResponseEntity<BugDTO> close(@PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -1324,6 +1327,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugMapping.toDto(bugService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'SRFUR__BUG_ACTIVATE_BUT')")
     @ApiOperation(value = "根据产品Bug", tags = {"Bug" },  notes = "根据产品Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/activate")
     public ResponseEntity<BugDTO> activateByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -1341,6 +1345,7 @@ public class BugResource {
         boolean result = bugService.activateBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'SRFUR__BUG_ASSIGNTO_BUT')")
     @ApiOperation(value = "根据产品Bug", tags = {"Bug" },  notes = "根据产品Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/assignto")
     public ResponseEntity<BugDTO> assignToByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -1452,6 +1457,7 @@ public class BugResource {
         return  ResponseEntity.status(HttpStatus.OK).body(bugService.checkKey(bugMapping.toDomain(bugdto)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'SRFUR__BUG_CLOSE_BUT')")
     @ApiOperation(value = "根据产品Bug", tags = {"Bug" },  notes = "根据产品Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/bugs/{bug_id}/close")
     public ResponseEntity<BugDTO> closeByProduct(@PathVariable("product_id") Long product_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -2551,6 +2557,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugMapping.toDto(bugService.getDraft(domain)));
     }
 
+    @PreAuthorize("@StoryRuntime.test(#story_id,'SRFUR__BUG_ACTIVATE_BUT')")
     @ApiOperation(value = "根据需求Bug", tags = {"Bug" },  notes = "根据需求Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/bugs/{bug_id}/activate")
     public ResponseEntity<BugDTO> activateByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -2568,6 +2575,7 @@ public class BugResource {
         boolean result = bugService.activateBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@StoryRuntime.test(#story_id,'SRFUR__BUG_ASSIGNTO_BUT')")
     @ApiOperation(value = "根据需求Bug", tags = {"Bug" },  notes = "根据需求Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/bugs/{bug_id}/assignto")
     public ResponseEntity<BugDTO> assignToByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -2679,6 +2687,7 @@ public class BugResource {
         return  ResponseEntity.status(HttpStatus.OK).body(bugService.checkKey(bugMapping.toDomain(bugdto)));
     }
 
+    @PreAuthorize("@StoryRuntime.test(#story_id,'SRFUR__BUG_CLOSE_BUT')")
     @ApiOperation(value = "根据需求Bug", tags = {"Bug" },  notes = "根据需求Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/bugs/{bug_id}/close")
     public ResponseEntity<BugDTO> closeByStory(@PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -3778,6 +3787,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugMapping.toDto(bugService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'SRFUR__BUG_ACTIVATE_BUT')")
     @ApiOperation(value = "根据项目Bug", tags = {"Bug" },  notes = "根据项目Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/activate")
     public ResponseEntity<BugDTO> activateByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -3795,6 +3805,7 @@ public class BugResource {
         boolean result = bugService.activateBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'SRFUR__BUG_ASSIGNTO_BUT')")
     @ApiOperation(value = "根据项目Bug", tags = {"Bug" },  notes = "根据项目Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/assignto")
     public ResponseEntity<BugDTO> assignToByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -3906,6 +3917,7 @@ public class BugResource {
         return  ResponseEntity.status(HttpStatus.OK).body(bugService.checkKey(bugMapping.toDomain(bugdto)));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'SRFUR__BUG_CLOSE_BUT')")
     @ApiOperation(value = "根据项目Bug", tags = {"Bug" },  notes = "根据项目Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/bugs/{bug_id}/close")
     public ResponseEntity<BugDTO> closeByProject(@PathVariable("project_id") Long project_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -5005,6 +5017,7 @@ public class BugResource {
         return ResponseEntity.status(HttpStatus.OK).body(bugMapping.toDto(bugService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'SRFUR__BUG_ACTIVATE_BUT')")
     @ApiOperation(value = "根据产品需求Bug", tags = {"Bug" },  notes = "根据产品需求Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/bugs/{bug_id}/activate")
     public ResponseEntity<BugDTO> activateByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -5022,6 +5035,7 @@ public class BugResource {
         boolean result = bugService.activateBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'SRFUR__BUG_ASSIGNTO_BUT')")
     @ApiOperation(value = "根据产品需求Bug", tags = {"Bug" },  notes = "根据产品需求Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/bugs/{bug_id}/assignto")
     public ResponseEntity<BugDTO> assignToByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {
@@ -5133,6 +5147,7 @@ public class BugResource {
         return  ResponseEntity.status(HttpStatus.OK).body(bugService.checkKey(bugMapping.toDomain(bugdto)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'SRFUR__BUG_CLOSE_BUT')")
     @ApiOperation(value = "根据产品需求Bug", tags = {"Bug" },  notes = "根据产品需求Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/bugs/{bug_id}/close")
     public ResponseEntity<BugDTO> closeByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("bug_id") Long bug_id, @RequestBody BugDTO bugdto) {

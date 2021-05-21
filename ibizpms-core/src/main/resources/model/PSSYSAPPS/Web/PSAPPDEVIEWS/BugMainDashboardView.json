@@ -1872,6 +1872,7 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "关闭",
                   "codeName" : "CloseBugDash",
+                  "dataAccessAction" : "SRFUR__BUG_CLOSE_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCloseView.json",
@@ -1936,6 +1937,7 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "指派",
                   "codeName" : "AssingToBugCz",
+                  "dataAccessAction" : "SRFUR__BUG_ASSIGNTO_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugAssingToView.json",
@@ -2001,6 +2003,7 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "激活",
                   "codeName" : "Activation",
+                  "dataAccessAction" : "SRFUR__BUG_ACTIVATE_BUT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugActivationView.json",

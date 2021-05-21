@@ -284,8 +284,10 @@
         "name" : "ub25eed2",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "关联需求",
           "codeName" : "linkstory",
+          "dataAccessAction" : "LINKSTORY",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryUsr2MPickupView.json",
@@ -350,8 +352,10 @@
         "name" : "u3abf82d",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "关联bug",
           "codeName" : "linkbug",
+          "dataAccessAction" : "LINKBUG",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMPickupView4.json",
@@ -479,8 +483,10 @@
         "name" : "u1f38f89",
         "getPSUIAction" : {
           "actionTarget" : "SINGLEKEY",
+          "noPrivDisplayMode" : 1,
           "caption" : "编辑",
           "codeName" : "quickEdit",
+          "dataAccessAction" : "UPDATE",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ReleaseEditView.json",

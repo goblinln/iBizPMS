@@ -833,6 +833,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "指派",
         "codeName" : "AssingToBug",
+        "dataAccessAction" : "SRFUR__BUG_ASSIGNTO_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugAssingToView.json",
@@ -964,6 +965,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "关闭",
             "codeName" : "CloseBug",
+            "dataAccessAction" : "SRFUR__BUG_CLOSE_BUT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugCloseView.json",

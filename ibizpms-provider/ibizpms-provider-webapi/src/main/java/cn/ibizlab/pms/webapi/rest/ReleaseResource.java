@@ -186,7 +186,7 @@ public class ReleaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(releaseService.checkKey(releaseMapping.toDomain(releasedto)));
     }
 
-    @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
+    @PreAuthorize("@ReleaseRuntime.test(#release_id,'LINKBUG')")
     @ApiOperation(value = "关联Bug", tags = {"发布" },  notes = "关联Bug")
 	@RequestMapping(method = RequestMethod.POST, value = "/releases/{release_id}/linkbug")
     public ResponseEntity<ReleaseDTO> linkBug(@PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
@@ -240,7 +240,7 @@ public class ReleaseResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    @PreAuthorize("@ReleaseRuntime.test(#release_id,'READ')")
+    @PreAuthorize("@ReleaseRuntime.test(#release_id,'LINKSTORY')")
     @ApiOperation(value = "关联需求", tags = {"发布" },  notes = "关联需求")
 	@RequestMapping(method = RequestMethod.POST, value = "/releases/{release_id}/linkstory")
     public ResponseEntity<ReleaseDTO> linkStory(@PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
@@ -527,7 +527,7 @@ public class ReleaseResource {
         return  ResponseEntity.status(HttpStatus.OK).body(releaseService.checkKey(releaseMapping.toDomain(releasedto)));
     }
 
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品发布", tags = {"发布" },  notes = "根据产品发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases/{release_id}/linkbug")
     public ResponseEntity<ReleaseDTO> linkBugByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
@@ -581,7 +581,7 @@ public class ReleaseResource {
         boolean result = releaseService.linkBugbyLeftBugBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
-    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @PreAuthorize("@ProductRuntime.test(#product_id,'MANAGE')")
     @ApiOperation(value = "根据产品发布", tags = {"发布" },  notes = "根据产品发布")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/releases/{release_id}/linkstory")
     public ResponseEntity<ReleaseDTO> linkStoryByProduct(@PathVariable("product_id") Long product_id, @PathVariable("release_id") Long release_id, @RequestBody ReleaseDTO releasedto) {
