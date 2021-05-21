@@ -88,7 +88,7 @@
   box-sizing: content-box;
 }
 // 选择跳转日期模态
-.date-select-modal{
+.date-select-model{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,6 +96,9 @@
       top: 0;
       .ivu-modal-body {
         text-align: center;
+      }
+      .ivu-modal-content >.ivu-modal-footer button {
+        border-color: #e3e5e8;
       }
   }
 }
@@ -106,6 +109,39 @@
       top: 0px;
       margin: 0;
       padding: 0;
+    }
+  }
+}
+
+//默认样式日历按钮
+.view-default {
+  .fc-toolbar {
+    .fc-button {
+      background: var(--button-background-color);
+      color: var(--button-font-color);
+      border-color: var(--button-font-color-light);
+      height: 28px;
+      width: 62px;
+      &:hover {
+        background: var(--button-background-color-bright);
+        color: var(--button-font-color-bright);
+        border-color: var(--button-background-color-bright);
+      }
+      &:disabled, &:disabled:hover {
+        background: var(--button-background-color-light);
+        color: var(--button-font-color-light);
+        border-color: var(--button-font-color-light);
+        cursor: no-drop;
+      }
+      line-height: 0;
+      span {
+        line-height: 0.7;
+      }
+    }
+    .fc-button.fc-button-active {
+      background: var(--button-background-color-bright);
+      color: var(--button-font-color-bright);
+      border-color: var(--button-background-color-bright);
     }
   }
 }

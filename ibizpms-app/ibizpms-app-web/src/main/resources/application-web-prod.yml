@@ -495,10 +495,6 @@ zuul:
       path: /accounttaskestimates/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
-    zt_storyspec:
-      path: /storyspecs/**
-      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
-      stripPrefix: false
     zt_branch:
       path: /branches/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}

@@ -1220,7 +1220,7 @@ export class EditFormControlBase extends FormControlBase {
                             this.data[property] = this.context['srfuserid'];
                             break;
                         case 'CURTIME':
-                            this.data[property] = Util.dateFormat(new Date());
+                            this.data[property] = Util.dateFormat(new Date(), detail.getPSAppDEField()?.valueFormat);
                             break;
                         case 'PARAM':
                             this.data[property] = this.service.getRemoteCopyData()?.[property] || null;
@@ -1262,7 +1262,7 @@ export class EditFormControlBase extends FormControlBase {
                             this.data[property] = this.context['srfuserid'];
                             break;
                         case 'CURTIME':
-                            this.data[property] = Util.dateFormat(new Date());
+                            this.data[property] = Util.dateFormat(new Date(), detail.getPSAppDEField()?.valueFormat);
                             break;
                         case 'PARAM':
                             this.data[property] = this.service.getRemoteCopyData()?.[property] || null;

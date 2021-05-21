@@ -5,25 +5,5 @@
   "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPCODELISTS/CurStory.json",
   "emptyText" : "未定义",
   "minorSortDir" : "DESC",
-  "getMinorSortPSAppDEField" : {
-    "name" : "VERSION",
-    "codeName" : "Version"
-  },
-  "name" : "当前需求版本（动态）",
-  "getPSAppDEDataSet" : {
-    "modelref" : true,
-    "id" : "FetchVersion"
-  },
-  "getPSAppDataEntity" : {
-    "modelref" : true,
-    "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/StorySpec.json"
-  },
-  "getTextPSAppDEField" : {
-    "name" : "TITLE",
-    "codeName" : "Title"
-  },
-  "getValuePSAppDEField" : {
-    "name" : "VERSION",
-    "codeName" : "Version"
-  }
+  "name" : "当前需求版本（动态）"
 }

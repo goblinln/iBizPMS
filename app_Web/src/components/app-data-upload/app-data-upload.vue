@@ -1,47 +1,55 @@
 <template>
     <div class="app-data-upload-view" v-loading.fullscreen="isUploading" element-loading-background="rgba(57, 57, 57, 0.2)">
-        <el-row style="margin-top:24px" :gutter="20">
-            <el-col :span="4">
-                <el-button type="primary" @click="handleUpLoad">{{$t('components.appDataUploadView.selectfile')}}</el-button>
-                <input ref="inputUpLoad" type="file" style="display: none" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" @change="importFile"/>
-            </el-col>
-            <el-col :span="4">
-                <el-button type="primary" @click="uploadServer">{{$t('components.appDataUploadView.uploadserver')}}</el-button>
-            </el-col>
-            <el-col :span="16">
-                <div class="import-temp"><span style="cursor: pointer;" @click="downloadTemp">{{$t('components.appDataUploadView.datatemplate')}}</span></div>
-            </el-col>
-        </el-row>
-        <el-divider></el-divider>
-        <el-progress class="progress" v-show="isUploading" :text-inside="true" :stroke-width="14" :percentage="uploadProgress"></el-progress>
-        <el-row style="height:480px;padding: 0px 12px;">
-            <div class="data-info-content" >
-                <template v-if="importDataArray.length >0 && isUploading === false">
-                    <ul>
-                        <li v-for="(item,index) in importDataArray" :key="index" class="font-class">
-                            {{item[importUniqueItem]?$t('components.appDataUploadView.dataid')+item[importUniqueItem]+$t('components.appDataUploadView.read')+'......':$t('components.appDataUploadView.read')+'......'}}
-                        </li>
-                    </ul>
-                </template>
-                <template v-if="hasImported === true && importDataArray.length === 0">
-                    <span class="font-class">{{isUploading === true?$t('components.appDataUploadView.importing')+"......":promptInfo}}</span>
-                </template>
+        <input ref="inputUpLoad" type="file" style="display: none" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" @change="importFile"/>
+        <div class="main-content">
+            <div v-if="importDataArray.length == 0" class="upload-container" @click="handleUpLoad">
+                <img class="icon-import" src="@/assets/img/icon-import.svg" />
+                <span class="select-file-text">{{$t('components.appDataUploadView.selectfile')}}</span>
             </div>
-        </el-row>
-        <el-row>
-            <!-- <el-col :span="4">
-            <div class="import-temp">
-                <div style="cursor: pointer;display: inline-block;" @click="downloadSuccessData">{{importSuccessData.length >0?"下载导入成功数据":""}}</div>
-            </div>
-            </el-col>
-            <el-col :span="4">
-                <div class="import-temp">
-                    <span style="cursor: pointer;display: inline-block;" @click="downloadErrorData">{{importErrorData.length >0?"下载导入失败数据":""}}</span>
+            <div v-else-if="importDataArray.length >0" class="data-info-container" >
+                <el-progress class="progress" :stroke-width="4" :show-text="false" :percentage="uploadProgress"></el-progress>
+                <div v-if="hasImported === false" class="message-container">
+                    <div class="success-list">
+                        <ul v-if="isUploading === false">
+                            <li v-for="(item,index) in importDataArray" :key="index">
+                                {{(item[importUniqueItem] || `第${index+1}行`) +'：'+ $t('components.appDataUploadView.read')}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="error-list">
+                    </div>
                 </div>
-            </el-col> -->
-            <el-col :span="2" :offset="22">
-                <el-button type="primary" @click="handleOK">{{$t('components.appDataUploadView.confirm')}}</el-button>
+                <div v-else class="message-container">
+                    <div class="success-list">
+                        <ul>
+                            <li v-for="(item,index) in successResult" :key="index">
+                                {{item.rowName +'：' + $t('components.appDataUploadView.completed')}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="error-list">
+                        <ul>
+                            <li v-for="(item,index) in errorResult" :key="index">
+                                {{item.rowName +'：'+ item.message}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <el-row class="second-content">
+            <el-col>
+                <div class="import-template-message">{{$t('components.appDataUploadView.dataTemplateMessage')}}</div>
+                <div class="import-template">
+                    <img class="icon-link" src="@/assets/img/icon-link.svg"></img>
+                    <span style="cursor: pointer;" @click="downloadTemp">{{this.viewparams.appDeLogicName + $t('components.appDataUploadView.datatemplate')}}</span>
+                </div>
             </el-col>
+        </el-row>
+        <el-row class="button-container">
+            <el-button type="primary" @click="handleOK">{{$t('components.appDataUploadView.cancel')}}</el-button>
+            <el-button v-if="hasImported === false" :disabled="this.importDataArray.length == 0" type="primary" class="primary-button" @click="uploadServer">{{$t('components.appDataUploadView.uploadserver')}}</el-button>
+            <el-button v-if="hasImported === true" type="primary" class="primary-button"  @click="handleOK">{{$t('components.appDataUploadView.confirm')}}</el-button>
         </el-row>
     </div>
 </template>
@@ -123,7 +131,7 @@ export default class AppDataUploadView extends Vue {
     protected importId:string = "";
 
     /**
-     * 是否已有导入数据
+     * 是否已经进行过上传导入数据
      *
      * @type {boolean}
      * @memberof AppDataUploadView
@@ -139,14 +147,6 @@ export default class AppDataUploadView extends Vue {
     protected importUniqueItem:string ="";
 
     /**
-     * 提示信息
-     *
-     * @type {string}
-     * @memberof AppDataUploadView
-     */
-    protected promptInfo:string ="";
-
-    /**
      * 导入状态
      *
      * @type {boolean}
@@ -157,18 +157,38 @@ export default class AppDataUploadView extends Vue {
     /**
      * 导入成功数据
      *
-     * @type {string}
+     * @type {Array<*>}
      * @memberof AppDataUploadView
      */
     protected importSuccessData:Array<any> = [];
 
     /**
-     * 导入失败数据
+     * 导入结果集合
      *
-     * @type {string}
+     * @type {Array<*>}
      * @memberof AppDataUploadView
      */
-    protected importErrorData:Array<any> = [];
+    protected importResult:Array<any> = [];
+
+    /**
+     * 导入结果成功集合
+     *
+     * @type {Array<*>}
+     * @memberof AppDataUploadView
+     */
+    get successResult(){
+        return this.importResult.filter((item: any)=> item.isSuccess);
+    }
+
+    /**
+     * 导入结果失败集合
+     *
+     * @type {Array<*>}
+     * @memberof AppDataUploadView
+     */
+    get errorResult(){
+        return this.importResult.filter((item: any)=> !item.isSuccess);
+    }
 
     /**
      * 读取完成的数据
@@ -275,7 +295,7 @@ export default class AppDataUploadView extends Vue {
      * @memberof AppDataUploadView
      */
     public downloadTemp(){
-        this.importExcel(this.viewparams.appDeLogicName+this.$t('components.appDataUploadView.datatemp'),[]);
+        this.importExcel(this.viewparams.appDeLogicName+this.$t('components.appDataUploadView.datatemplate'),[]);
     }
 
     /**
@@ -299,15 +319,68 @@ export default class AppDataUploadView extends Vue {
         }
         let tempDataArray:Array<any> = [];
         this.transformData(this.importDataArray,tempDataArray);
+        this.importResult = []
         this.hasImported = true;
         this.isUploading = true;
         this.uploadProgress = 0;
-        this.importDataArray = [];
         this.sliceUploadService(tempDataArray, 0);
     }
 
     /**
+     * 添加失败记录的信息
+     * @param cnt 切片起始索引位置
+     * @param error 后台返回的错误信息
+     *
+     * @memberof AppDataUploadView
+     */
+    public addErrorRsult(cnt: number, error: any){
+        let endIndex: number = (cnt + this.sliceUploadCnt > this.importDataArray.length) ? this.importDataArray.length : cnt + this.sliceUploadCnt;
+        let errMessage: string[] = error.msg.split('<br>');
+        for (let index = cnt; index < endIndex ; index++) {
+            const row = this.importDataArray[index];
+            let rowName = row[this.importUniqueItem] || `第${index+1}行`;
+            let errIndex = error.errorLines.indexOf(index+1);
+            if(errIndex == -1){
+                this.importResult.push({
+                    index: index,
+                    rowName: rowName,
+                    isSuccess: true
+                })
+            }else{
+                let message = errMessage[errIndex].indexOf('：') != -1 ? errMessage[errIndex].slice(errMessage[errIndex].indexOf('：')+1) : errMessage[errIndex];
+                this.importResult.push({
+                    index: index,
+                    rowName: rowName,
+                    isSuccess: false,
+                    message: message
+                })
+            }
+        }
+    }
+
+    /**
+     * 添加成功记录的信息
+     * @param cnt 切片起始索引位置
+     *
+     * @memberof AppDataUploadView
+     */
+    public addSuccessRsult(cnt: number){
+        let endIndex = (cnt + this.sliceUploadCnt > this.importDataArray.length) ? this.importDataArray.length : cnt + this.sliceUploadCnt;
+        for (let index = cnt; index < endIndex ; index++) {
+            const row = this.importDataArray[index];
+            let rowName = row[this.importUniqueItem] || `第${index+1}行`;
+            this.importResult.push({
+                index: index,
+                rowName: rowName,
+                isSuccess: true
+            })
+        }
+    }
+
+    /**
      * 数据切片上传
+     * @param dataArray 导入的所有数据集合
+     * @param cnt 切片起始索引位置
      *
      * @memberof AppDataUploadView
      */
@@ -321,33 +394,33 @@ export default class AppDataUploadView extends Vue {
         if(dataArray) {
             sliceArray = dataArray.slice(cnt, cnt+this.sliceUploadCnt);
         }
+        // 处理错误的通用回调
+        const handleError = (error: any)=>{
+            this.isUploading = false;
+            this.uploadProgress = 100;
+            console.error(error);
+        }
         try{
             this.entityService.getService(this.viewparams.serviceName).then((service:any) =>{
-            service.ImportData(this.viewdata,{name:this.importId,importData:sliceArray}).then((res:any) =>{
-                const result:any = res.data;
-                if(result && result.rst !== 0){
-                    this.promptInfo = (this.$t('components.appDataUploadView.importfailed') as string);
-                    this.isUploading = false;
-                    return;
-                }
-                this.importSuccessData = result.data;
-                this.promptInfo = (this.$t('components.appDataUploadView.completed') as string);
-                this.uploadProgress = Number((cnt / dataArray.length * 100).toFixed(2));
-                this.sliceUploadService(dataArray, cnt + this.sliceUploadCnt);
+                service.ImportData(this.viewdata,{name:this.importId,importData:sliceArray}).then((res:any) =>{
+                    const result:any = res.data;
+                    if(result && result.rst !== 0){
+                        this.addErrorRsult(cnt, result)
+                        handleError(result)
+                        return;
+                    }
+                    this.importSuccessData = result.data;
+                    this.addSuccessRsult(cnt);
+                    this.uploadProgress = Number((cnt / dataArray.length * 100).toFixed(2));
+                    this.sliceUploadService(dataArray, cnt + this.sliceUploadCnt);
+                }).catch((error:any) =>{
+                    handleError(error)
+                })
             }).catch((error:any) =>{
-                this.isUploading = false;
-                this.promptInfo = (this.$t('components.appDataUploadView.importfailed') as string);
-                console.error(error);
-            })
-            }).catch((error:any) =>{
-                this.isUploading = false;
-                this.promptInfo = (this.$t('components.appDataUploadView.importfailed') as string);
-                console.error(error);
+               handleError(error)
             })
         }catch(error){
-            this.isUploading = false;
-            this.promptInfo = (this.$t('components.appDataUploadView.importfailed') as string);
-            console.error(error);
+            handleError(error)
         };
     }
     /**

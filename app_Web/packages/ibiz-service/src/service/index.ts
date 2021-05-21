@@ -106,7 +106,6 @@ export * from './sys-employee/sys-employee.service';
 export * from './ibzpro-product-line/ibzpro-product-line.service';
 export * from './project-product/project-product.service';
 export * from './account-taskestimate/account-taskestimate.service';
-export * from './story-spec/story-spec.service';
 export * from './branch/branch.service';
 export * from './action/action.service';
 export * from './dyna-filter/dyna-filter.service';

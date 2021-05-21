@@ -980,15 +980,6 @@ export class GlobalService {
         return (await import('./account-taskestimate/account-taskestimate.service')).default.getInstance();
     }
     /**
-     * 需求描述服务
-     *
-     * @return {StorySpec}
-     * @memberof GlobalService
-     */
-    async getStorySpecService() {
-        return (await import('./story-spec/story-spec.service')).default.getInstance();
-    }
-    /**
      * 产品的分支和平台信息服务
      *
      * @return {Branch}

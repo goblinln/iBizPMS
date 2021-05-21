@@ -105,7 +105,6 @@ export * from './isys-employee';
 export * from './iibzpro-product-line';
 export * from './iproject-product';
 export * from './iaccount-taskestimate';
-export * from './istory-spec';
 export * from './ibranch';
 export * from './iaction';
 export * from './idyna-filter';

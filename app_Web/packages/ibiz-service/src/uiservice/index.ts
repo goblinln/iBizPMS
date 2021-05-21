@@ -105,7 +105,6 @@ export * from './sys-employee/sys-employee-ui-service';
 export * from './ibzpro-product-line/ibzpro-product-line-ui-service';
 export * from './project-product/project-product-ui-service';
 export * from './account-taskestimate/account-taskestimate-ui-service';
-export * from './story-spec/story-spec-ui-service';
 export * from './branch/branch-ui-service';
 export * from './action/action-ui-service';
 export * from './dyna-filter/dyna-filter-ui-service';

@@ -71,6 +71,13 @@
     },
     "sysUniResCode" : "PROJ_CREATE_BUT"
   }, {
+    "name" : "项目经理-产品左侧资源",
+    "getPSSysUniRes" : {
+      "modelref" : true,
+      "id" : "ibiz__PRODUCTLEFT"
+    },
+    "sysUniResCode" : "PRODUCTLEFT"
+  }, {
     "name" : "项目经理-左侧_测试资源",
     "getPSSysUniRes" : {
       "modelref" : true,
@@ -87,5 +94,5 @@
   } ],
   "roleTag" : "ProjectManger",
   "roleType" : "CUSTOM",
-  "uniResTags" : [ "PROJ_CREATE_BUT", "LEFT_CASE_MENU", "LEFT_PROJECT_MENU" ]
+  "uniResTags" : [ "PROJ_CREATE_BUT", "PRODUCTLEFT", "LEFT_CASE_MENU", "LEFT_PROJECT_MENU" ]
 }

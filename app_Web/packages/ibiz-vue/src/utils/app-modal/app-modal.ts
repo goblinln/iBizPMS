@@ -88,7 +88,7 @@ export class AppModal {
      * @returns {Subject<any>}
      * @memberof AppModal
      */
-    private createVueExample(view: { viewname: string, title: string, width?: number, height?: number, isfullscreen?: boolean }, context: any = {}, viewparams: any = {}, uuid: string): Subject<any> {
+    private createVueExample(view: { viewname: string, title: string, width?: number, height?: number, isfullscreen?: boolean, customClass?: string }, context: any = {}, viewparams: any = {}, uuid: string): Subject<any> {
         const self: any = this;
         if(!self.store || !self.i18n) {
             self.initBasicData();
@@ -100,7 +100,7 @@ export class AppModal {
                 store: this.store,
                 i18n: this.i18n,
                 render(h) {
-                    return h(component, { props });
+                    return h(component, { props, class: view.customClass });
                 }
             }).$mount();
             this.vueExample = vm;
@@ -125,7 +125,7 @@ export class AppModal {
      * @returns {Subject<any>}
      * @memberof AppModal
      */
-    public openModal(view: { viewname: string, title: string, width?: number, height?: number,isfullscreen?:boolean }, context: any = {}, data: any = {}): Subject<any> {
+    public openModal(view: { viewname: string, title: string, width?: number, height?: number,isfullscreen?:boolean, customClass?: string }, context: any = {}, data: any = {}): Subject<any> {
         try {
             let viewdata: any = {};
             Object.assign(viewdata, JSON.parse(JSON.stringify(context)));

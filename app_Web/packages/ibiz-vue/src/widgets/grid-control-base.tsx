@@ -972,11 +972,14 @@ export class GridControlBase extends MDControlBase {
             this.$warning((this.$t("app.utilview.info") as string),'importExcel');
             return;
         }
+        let customClass = 'app-data-upload-modal';
+        customClass += this.viewStyle != 'STYLE2' ? ' view-default' : ' view-style2';
         const view: any = {
             viewname: 'app-data-upload',
             title: this.$t("app.utilview.importview"),
-            width: 900,
-            height: 700
+            width: 544,
+            height: 368,
+            customClass: customClass
         }
         let container: Subject<any> = _this.$appmodal.openModal(view, JSON.parse(JSON.stringify(this.context)), this.importDataModel);
         container.subscribe((result: any) => {
@@ -2165,7 +2168,7 @@ export class GridControlBase extends MDControlBase {
                             row[property] = this.context["srfuserid"];
                             break;
                         case "CURTIME":
-                            row[property] = Util.dateFormat(new Date());
+                            row[property] = Util.dateFormat(new Date(), item.getPSAppDEField()?.valueFormat);
                             break;
                         case "PARAM":
                             if (item.createDV) {
@@ -2210,7 +2213,7 @@ export class GridControlBase extends MDControlBase {
                             row[property] = this.context["srfuserid"];
                             break;
                         case "CURTIME":
-                            row[property] = Util.dateFormat(new Date());
+                            row[property] = Util.dateFormat(new Date(), item.getPSAppDEField()?.valueFormat);
                             break;
                         case "PARAM":
                             if (item.updateDV) {
