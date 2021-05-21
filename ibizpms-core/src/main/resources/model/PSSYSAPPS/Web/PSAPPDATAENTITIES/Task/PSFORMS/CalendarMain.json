@@ -903,8 +903,10 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
+              "noPrivDisplayMode" : 1,
               "caption" : "转交",
               "codeName" : "checkForwardDash",
+              "dataAccessAction" : "FORWARD",
               "fullCodeName" : "Task_checkForwardDash",
               "name" : "转交任务(操作栏)(多人任务检查)",
               "getNextPSUIAction" : {

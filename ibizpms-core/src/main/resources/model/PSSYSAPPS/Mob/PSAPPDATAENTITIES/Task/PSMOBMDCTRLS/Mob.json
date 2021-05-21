@@ -627,8 +627,10 @@
       "name" : "u3d0414f",
       "getPSUIAction" : {
         "actionTarget" : "SINGLEKEY",
+        "noPrivDisplayMode" : 1,
         "caption" : "确认",
         "codeName" : "confirmStoryChangeCz",
+        "dataAccessAction" : "XQCHANGE",
         "fullCodeName" : "Task_confirmStoryChangeCz",
         "name" : "需求变更确认（操作栏）",
         "getPSAppDEMethod" : {

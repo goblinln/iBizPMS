@@ -2967,7 +2967,7 @@
       "groupExtractMode" : "ITEM",
       "itemType" : "DEUIACTION",
       "name" : "deuiaction1_confirmstorychangecz",
-      "noPrivDisplayMode" : 2,
+      "noPrivDisplayMode" : 1,
       "getPSAppViewUIAction" : {
         "modelref" : true,
         "id" : "righttoolbar_deuiaction1_confirmstorychangecz"
@@ -2978,8 +2978,10 @@
       },
       "getPSUIAction" : {
         "actionTarget" : "SINGLEKEY",
+        "noPrivDisplayMode" : 1,
         "caption" : "确认",
         "codeName" : "confirmStoryChangeCz",
+        "dataAccessAction" : "XQCHANGE",
         "fullCodeName" : "Task_confirmStoryChangeCz",
         "name" : "需求变更确认（操作栏）",
         "getPSAppDEMethod" : {

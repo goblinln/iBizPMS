@@ -395,6 +395,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "转交",
             "codeName" : "Forward",
+            "dataAccessAction" : "FORWARD",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskForwardView.json",

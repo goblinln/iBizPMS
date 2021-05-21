@@ -4797,8 +4797,10 @@
                 "name" : "u9639771",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
+                  "noPrivDisplayMode" : 1,
                   "caption" : "确认",
                   "codeName" : "confirmStoryChangeCz",
+                  "dataAccessAction" : "XQCHANGE",
                   "fullCodeName" : "Task_confirmStoryChangeCz",
                   "name" : "需求变更确认（操作栏）",
                   "getPSAppDEMethod" : {
@@ -4916,8 +4918,10 @@
                 "name" : "u1596d9c",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
+                  "noPrivDisplayMode" : 1,
                   "caption" : "转交",
                   "codeName" : "checkForwardDash",
+                  "dataAccessAction" : "FORWARD",
                   "fullCodeName" : "Task_checkForwardDash",
                   "name" : "转交任务(操作栏)(多人任务检查)",
                   "getNextPSUIAction" : {
