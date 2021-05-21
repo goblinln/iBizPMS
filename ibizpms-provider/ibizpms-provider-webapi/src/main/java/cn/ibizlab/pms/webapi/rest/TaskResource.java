@@ -139,6 +139,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
     }
 
+    @PreAuthorize("@TaskRuntime.test(#task_id,'SRFUR__TASK_ACTIVATION_BUT')")
     @ApiOperation(value = "激活", tags = {"任务" },  notes = "激活")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/activate")
     public ResponseEntity<TaskDTO> activate(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -156,6 +157,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @PreAuthorize("@TaskRuntime.test(#task_id,'SRFUR__TASK_ASSIGN_BUT')")
     @ApiOperation(value = "指派/转交", tags = {"任务" },  notes = "指派/转交")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/assignto")
     public ResponseEntity<TaskDTO> assignTo(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -487,6 +489,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    @PreAuthorize("@TaskRuntime.test(#task_id,'SRFUR__TASK_PAUSE_BUT')")
     @ApiOperation(value = "暂停", tags = {"任务" },  notes = "暂停")
 	@RequestMapping(method = RequestMethod.POST, value = "/tasks/{task_id}/pause")
     public ResponseEntity<TaskDTO> pause(@PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1704,6 +1707,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'SRFUR__TASK_ACTIVATION_BUT')")
     @ApiOperation(value = "根据任务模块任务", tags = {"任务" },  notes = "根据任务模块任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/activate")
     public ResponseEntity<TaskDTO> activateByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -1721,6 +1725,7 @@ public class TaskResource {
         boolean result = taskService.activateBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'SRFUR__TASK_ASSIGN_BUT')")
     @ApiOperation(value = "根据任务模块任务", tags = {"任务" },  notes = "根据任务模块任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/assignto")
     public ResponseEntity<TaskDTO> assignToByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -2052,6 +2057,7 @@ public class TaskResource {
         boolean result = taskService.otherUpdateBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProjectModuleRuntime.test(#projectmodule_id,'SRFUR__TASK_PAUSE_BUT')")
     @ApiOperation(value = "根据任务模块任务", tags = {"任务" },  notes = "根据任务模块任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projectmodules/{projectmodule_id}/tasks/{task_id}/pause")
     public ResponseEntity<TaskDTO> pauseByProjectModule(@PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -3306,6 +3312,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'SRFUR__TASK_ACTIVATION_BUT')")
     @ApiOperation(value = "根据产品计划任务", tags = {"任务" },  notes = "根据产品计划任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/{task_id}/activate")
     public ResponseEntity<TaskDTO> activateByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -3323,6 +3330,7 @@ public class TaskResource {
         boolean result = taskService.activateBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'SRFUR__TASK_ASSIGN_BUT')")
     @ApiOperation(value = "根据产品计划任务", tags = {"任务" },  notes = "根据产品计划任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/{task_id}/assignto")
     public ResponseEntity<TaskDTO> assignToByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -3654,6 +3662,7 @@ public class TaskResource {
         boolean result = taskService.otherUpdateBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProductPlanRuntime.test(#productplan_id,'SRFUR__TASK_PAUSE_BUT')")
     @ApiOperation(value = "根据产品计划任务", tags = {"任务" },  notes = "根据产品计划任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/tasks/{task_id}/pause")
     public ResponseEntity<TaskDTO> pauseByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -4908,6 +4917,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
     }
 
+    @PreAuthorize("@StoryRuntime.test(#story_id,'SRFUR__TASK_ACTIVATION_BUT')")
     @ApiOperation(value = "根据需求任务", tags = {"任务" },  notes = "根据需求任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/{task_id}/activate")
     public ResponseEntity<TaskDTO> activateByStory(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -4925,6 +4935,7 @@ public class TaskResource {
         boolean result = taskService.activateBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@StoryRuntime.test(#story_id,'SRFUR__TASK_ASSIGN_BUT')")
     @ApiOperation(value = "根据需求任务", tags = {"任务" },  notes = "根据需求任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/{task_id}/assignto")
     public ResponseEntity<TaskDTO> assignToByStory(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -5256,6 +5267,7 @@ public class TaskResource {
         boolean result = taskService.otherUpdateBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@StoryRuntime.test(#story_id,'SRFUR__TASK_PAUSE_BUT')")
     @ApiOperation(value = "根据需求任务", tags = {"任务" },  notes = "根据需求任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/tasks/{task_id}/pause")
     public ResponseEntity<TaskDTO> pauseByStory(@PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -6510,6 +6522,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'SRFUR__TASK_ACTIVATION_BUT')")
     @ApiOperation(value = "根据项目任务", tags = {"任务" },  notes = "根据项目任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/activate")
     public ResponseEntity<TaskDTO> activateByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -6527,6 +6540,7 @@ public class TaskResource {
         boolean result = taskService.activateBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'SRFUR__TASK_ASSIGN_BUT')")
     @ApiOperation(value = "根据项目任务", tags = {"任务" },  notes = "根据项目任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/assignto")
     public ResponseEntity<TaskDTO> assignToByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -6858,6 +6872,7 @@ public class TaskResource {
         boolean result = taskService.otherUpdateBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'SRFUR__TASK_PAUSE_BUT')")
     @ApiOperation(value = "根据项目任务", tags = {"任务" },  notes = "根据项目任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/tasks/{task_id}/pause")
     public ResponseEntity<TaskDTO> pauseByProject(@PathVariable("project_id") Long project_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -8112,6 +8127,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'SRFUR__TASK_ACTIVATION_BUT')")
     @ApiOperation(value = "根据产品产品计划任务", tags = {"任务" },  notes = "根据产品产品计划任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/activate")
     public ResponseEntity<TaskDTO> activateByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -8129,6 +8145,7 @@ public class TaskResource {
         boolean result = taskService.activateBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'SRFUR__TASK_ASSIGN_BUT')")
     @ApiOperation(value = "根据产品产品计划任务", tags = {"任务" },  notes = "根据产品产品计划任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/assignto")
     public ResponseEntity<TaskDTO> assignToByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -8460,6 +8477,7 @@ public class TaskResource {
         boolean result = taskService.otherUpdateBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'SRFUR__TASK_PAUSE_BUT')")
     @ApiOperation(value = "根据产品产品计划任务", tags = {"任务" },  notes = "根据产品产品计划任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/tasks/{task_id}/pause")
     public ResponseEntity<TaskDTO> pauseByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -9714,6 +9732,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProductRuntime.test(#product_id,'SRFUR__TASK_ACTIVATION_BUT')")
     @ApiOperation(value = "根据产品需求任务", tags = {"任务" },  notes = "根据产品需求任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/activate")
     public ResponseEntity<TaskDTO> activateByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -9731,6 +9750,7 @@ public class TaskResource {
         boolean result = taskService.activateBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'SRFUR__TASK_ASSIGN_BUT')")
     @ApiOperation(value = "根据产品需求任务", tags = {"任务" },  notes = "根据产品需求任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/assignto")
     public ResponseEntity<TaskDTO> assignToByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -10062,6 +10082,7 @@ public class TaskResource {
         boolean result = taskService.otherUpdateBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProductRuntime.test(#product_id,'SRFUR__TASK_PAUSE_BUT')")
     @ApiOperation(value = "根据产品需求任务", tags = {"任务" },  notes = "根据产品需求任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/tasks/{task_id}/pause")
     public ResponseEntity<TaskDTO> pauseByProductStory(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -11316,6 +11337,7 @@ public class TaskResource {
         return ResponseEntity.status(HttpStatus.OK).body(taskMapping.toDto(taskService.getDraft(domain)));
     }
 
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'SRFUR__TASK_ACTIVATION_BUT')")
     @ApiOperation(value = "根据项目任务模块任务", tags = {"任务" },  notes = "根据项目任务模块任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/activate")
     public ResponseEntity<TaskDTO> activateByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -11333,6 +11355,7 @@ public class TaskResource {
         boolean result = taskService.activateBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'SRFUR__TASK_ASSIGN_BUT')")
     @ApiOperation(value = "根据项目任务模块任务", tags = {"任务" },  notes = "根据项目任务模块任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/assignto")
     public ResponseEntity<TaskDTO> assignToByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {
@@ -11664,6 +11687,7 @@ public class TaskResource {
         boolean result = taskService.otherUpdateBatch(domains);
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'SRFUR__TASK_PAUSE_BUT')")
     @ApiOperation(value = "根据项目任务模块任务", tags = {"任务" },  notes = "根据项目任务模块任务")
 	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/projectmodules/{projectmodule_id}/tasks/{task_id}/pause")
     public ResponseEntity<TaskDTO> pauseByProjectProjectModule(@PathVariable("project_id") Long project_id, @PathVariable("projectmodule_id") Long projectmodule_id, @PathVariable("task_id") Long task_id, @RequestBody TaskDTO taskdto) {

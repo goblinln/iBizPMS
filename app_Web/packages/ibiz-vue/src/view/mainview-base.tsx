@@ -862,7 +862,7 @@ export class MainViewBase extends ViewBase {
                     if (!dataview.openMode || dataview.openMode == 'INDEXVIEWTAB' || dataview.openMode == 'POPUPAPP') {
                         deResParameters = Util.formatAppDERSPath(
                             tempContext,
-                            (dataview.getRefPSAppView() as IPSAppDEView)?.getPSAppDERSPaths(),
+                            (dataview as IPSAppDEView)?.getPSAppDERSPaths(),
                         );
                     }
                 }

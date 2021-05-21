@@ -117,6 +117,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__TASK_ACTIVATION_BUT"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Activate"
@@ -128,6 +132,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__TASK_ASSIGN_BUT"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -404,6 +412,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Pause.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__TASK_PAUSE_BUT"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2279,6 +2291,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__TASK_ACTIVATION_BUT"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Activate"
@@ -2290,6 +2306,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__TASK_ASSIGN_BUT"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2566,6 +2586,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Pause.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__TASK_PAUSE_BUT"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -4071,6 +4095,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "暂停",
     "codeName" : "PauseTaskMob",
+    "dataAccessAction" : "SRFUR__TASK_PAUSE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskStopMobOptionView.json",
@@ -4221,6 +4246,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "开始",
     "codeName" : "StartTaskMob",
+    "dataAccessAction" : "SRFUR__TASK_START_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskSTARTMobOptionView.json",
@@ -4476,6 +4502,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "指派",
     "codeName" : "AssignTaskMob",
+    "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMobOptionView.json",
@@ -4610,6 +4637,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "暂停",
     "codeName" : "PauseMobTeamTask",
+    "dataAccessAction" : "SRFUR__TASK_PAUSE_BUT",
     "fullCodeName" : "Task_PauseMobTeamTask",
     "name" : "暂停任务(移动端)(多人任务检查)",
     "getNextPSUIAction" : {
@@ -4648,6 +4676,7 @@
     "actionTarget" : "NONE",
     "caption" : "更多",
     "codeName" : "MyAssMore",
+    "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskAssMoreMobMDView.json",
@@ -4672,6 +4701,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "开始",
     "codeName" : "StartMobTeamTask",
+    "dataAccessAction" : "SRFUR__TASK_START_BUT",
     "fullCodeName" : "Task_StartMobTeamTask",
     "name" : "开始任务(移动端)(多人任务检查)",
     "getNextPSUIAction" : {

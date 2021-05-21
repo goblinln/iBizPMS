@@ -117,6 +117,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__TASK_ACTIVATION_BUT"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Activate"
@@ -128,6 +132,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__TASK_ASSIGN_BUT"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -404,6 +412,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Pause.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__TASK_PAUSE_BUT"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2279,6 +2291,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__TASK_ACTIVATION_BUT"
+    },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "Activate"
@@ -2290,6 +2306,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__TASK_ASSIGN_BUT"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -2566,6 +2586,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Pause.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__TASK_PAUSE_BUT"
     },
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
@@ -4146,6 +4170,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "开始",
     "codeName" : "MStartTaskDash",
+    "dataAccessAction" : "SRFUR__TASK_START_BUT",
     "fullCodeName" : "Task_MStartTaskDash",
     "name" : "开始任务(操作栏)(多人任务检查)",
     "getNextPSUIAction" : {
@@ -4210,6 +4235,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "指派",
     "codeName" : "AssignTask",
+    "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskAssignTaskView.json",
@@ -4465,6 +4491,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "激活",
     "codeName" : "Activation",
+    "dataAccessAction" : "SRFUR__TASK_ACTIVATION_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskActivationTaskView.json",
@@ -4521,6 +4548,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "开始",
     "codeName" : "MStartTaskDash1",
+    "dataAccessAction" : "SRFUR__TASK_START_BUT",
     "fullCodeName" : "Task_MStartTaskDash1",
     "name" : "开始任务(多人任务检查)",
     "getNextPSUIAction" : {
@@ -4560,6 +4588,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "暂停",
     "codeName" : "MPauseTask",
+    "dataAccessAction" : "SRFUR__TASK_PAUSE_BUT",
     "fullCodeName" : "Task_MPauseTask",
     "name" : "暂停任务(操作栏)(多人任务检查)",
     "getNextPSUIAction" : {
@@ -4629,6 +4658,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "指派",
     "codeName" : "AssignTaskDash",
+    "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskAssignTaskView.json",
@@ -4957,6 +4987,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "开始",
     "codeName" : "StartTaskDash",
+    "dataAccessAction" : "SRFUR__TASK_START_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskOpenTaskView.json",
@@ -5198,6 +5229,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "激活",
     "codeName" : "ActivationDash",
+    "dataAccessAction" : "SRFUR__TASK_ACTIVATION_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskActivationTaskView.json",
@@ -5251,6 +5283,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "开始",
     "codeName" : "StartTask",
+    "dataAccessAction" : "SRFUR__TASK_START_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskOpenTaskView.json",
@@ -5282,6 +5315,7 @@
     "actionTarget" : "SINGLEKEY",
     "caption" : "暂停",
     "codeName" : "PauseTaskDash",
+    "dataAccessAction" : "SRFUR__TASK_PAUSE_BUT",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskPauseTaskView.json",

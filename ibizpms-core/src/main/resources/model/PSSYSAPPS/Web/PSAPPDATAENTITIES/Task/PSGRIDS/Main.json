@@ -752,6 +752,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "开始",
           "codeName" : "MStartTaskDash1",
+          "dataAccessAction" : "SRFUR__TASK_START_BUT",
           "fullCodeName" : "Task_MStartTaskDash1",
           "name" : "开始任务(多人任务检查)",
           "getNextPSUIAction" : {

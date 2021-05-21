@@ -1069,13 +1069,13 @@
                 "columnEnableLink" : 2,
                 "controlType" : "GRID",
                 "getCreatePSControlAction" : {
-                  "actionName" : "Create",
+                  "actionName" : "CreateTemp",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "CREATE",
                   "name" : "create",
                   "getPSAppDEMethod" : {
                     "modelref" : true,
-                    "id" : "Create"
+                    "id" : "CreateTemp"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -1088,13 +1088,13 @@
                   "id" : "fetch"
                 },
                 "getGetDraftPSControlAction" : {
-                  "actionName" : "GetDraft",
+                  "actionName" : "GetDraftTemp",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "CREATE",
                   "name" : "loaddraft",
                   "getPSAppDEMethod" : {
                     "modelref" : true,
-                    "id" : "GetDraft"
+                    "id" : "GetDraftTemp"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -1102,13 +1102,13 @@
                   }
                 },
                 "getGetPSControlAction" : {
-                  "actionName" : "Get",
+                  "actionName" : "GetTemp",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "READ",
                   "name" : "load",
                   "getPSAppDEMethod" : {
                     "modelref" : true,
-                    "id" : "Get"
+                    "id" : "GetTemp"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -1129,13 +1129,13 @@
                 },
                 "getPSControlHandler" : {
                   "getPSHandlerActions" : [ {
-                    "actionName" : "Update",
+                    "actionName" : "UpdateTemp",
                     "actionType" : "DEACTION",
                     "dataAccessAction" : "UPDATE",
                     "name" : "update",
                     "getPSAppDEMethod" : {
                       "modelref" : true,
-                      "id" : "Update"
+                      "id" : "UpdateTemp"
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
@@ -1146,59 +1146,59 @@
                     "name" : "fetch",
                     "getPSAppDEMethod" : {
                       "modelref" : true,
-                      "id" : "FetchDefault"
+                      "id" : "FetchTempDefault"
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
                     }
                   }, {
-                    "actionName" : "Remove",
+                    "actionName" : "RemoveTemp",
                     "actionType" : "DEACTION",
                     "dataAccessAction" : "DELETE",
                     "name" : "remove",
                     "getPSAppDEMethod" : {
                       "modelref" : true,
-                      "id" : "Remove"
+                      "id" : "RemoveTemp"
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
                     }
                   }, {
-                    "actionName" : "Get",
+                    "actionName" : "GetTemp",
                     "actionType" : "DEACTION",
                     "dataAccessAction" : "READ",
                     "name" : "load",
                     "getPSAppDEMethod" : {
                       "modelref" : true,
-                      "id" : "Get"
+                      "id" : "GetTemp"
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
                     }
                   }, {
-                    "actionName" : "GetDraft",
+                    "actionName" : "GetDraftTemp",
                     "actionType" : "DEACTION",
                     "dataAccessAction" : "CREATE",
                     "name" : "loaddraft",
                     "getPSAppDEMethod" : {
                       "modelref" : true,
-                      "id" : "GetDraft"
+                      "id" : "GetDraftTemp"
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
                       "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZCaseStep.json"
                     }
                   }, {
-                    "actionName" : "Create",
+                    "actionName" : "CreateTemp",
                     "actionType" : "DEACTION",
                     "dataAccessAction" : "CREATE",
                     "name" : "create",
                     "getPSAppDEMethod" : {
                       "modelref" : true,
-                      "id" : "Create"
+                      "id" : "CreateTemp"
                     },
                     "getPSAppDataEntity" : {
                       "modelref" : true,
@@ -1420,13 +1420,13 @@
                 },
                 "pagingSize" : 500,
                 "getRemovePSControlAction" : {
-                  "actionName" : "Remove",
+                  "actionName" : "RemoveTemp",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "DELETE",
                   "name" : "remove",
                   "getPSAppDEMethod" : {
                     "modelref" : true,
-                    "id" : "Remove"
+                    "id" : "RemoveTemp"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -1435,13 +1435,13 @@
                 },
                 "sortMode" : "REMOTE",
                 "getUpdatePSControlAction" : {
-                  "actionName" : "Update",
+                  "actionName" : "UpdateTemp",
                   "actionType" : "DEACTION",
                   "dataAccessAction" : "UPDATE",
                   "name" : "update",
                   "getPSAppDEMethod" : {
                     "modelref" : true,
-                    "id" : "Update"
+                    "id" : "UpdateTemp"
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
@@ -1476,6 +1476,7 @@
                 "layoutPanel" : true,
                 "useDefaultLayout" : true
               },
+              "tempMode" : 2,
               "title" : "用例步骤",
               "viewStyle" : "STYLE2",
               "viewType" : "DEGRIDVIEW9",

@@ -266,6 +266,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__TASK_ACTIVATION_BUT"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -275,6 +279,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__TASK_ASSIGN_BUT"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -460,6 +468,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Pause.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__TASK_PAUSE_BUT"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -1953,6 +1965,10 @@
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Activate.json"
     },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__TASK_ACTIVATION_BUT"
+    },
     "userCat" : "CAT1",
     "builtinMethod" : false
   }, {
@@ -1962,6 +1978,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/AssignTo.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__TASK_ASSIGN_BUT"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false
@@ -2147,6 +2167,10 @@
     "getPSDEAction" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEACTIONS/Pause.json"
+    },
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "SRFUR__TASK_PAUSE_BUT"
     },
     "userCat" : "CAT1",
     "builtinMethod" : false

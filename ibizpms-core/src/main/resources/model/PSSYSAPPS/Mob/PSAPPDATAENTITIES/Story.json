@@ -5158,6 +5158,12 @@
         "name" : "CHANGE"
       }
     }, {
+      "name" : "CCASE",
+      "getPSDEOPPriv" : {
+        "logicName" : "建用例",
+        "name" : "CCASE"
+      }
+    }, {
       "name" : "ASSIGNTO",
       "getPSDEOPPriv" : {
         "logicName" : "需求指派",
@@ -5174,18 +5180,6 @@
       "getPSDEOPPriv" : {
         "logicName" : "需求评审",
         "name" : "REVIEW"
-      }
-    }, {
-      "name" : "SRFUR__STORY_CCASE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求建用例",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_CCASE_BUT"
-        },
-        "mapSysUniResCode" : "STORY_CCASE_BUT",
-        "name" : "SRFUR__STORY_CCASE_BUT",
-        "mapSysUniRes" : true
       }
     } ],
     "state2Value" : "1",
@@ -5973,18 +5967,6 @@
         "name" : "DELETE"
       }
     }, {
-      "name" : "SRFUR__STORY_CCASE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求建用例",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_CCASE_BUT"
-        },
-        "mapSysUniResCode" : "STORY_CCASE_BUT",
-        "name" : "SRFUR__STORY_CCASE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
       "name" : "ASSIGNTO",
       "getPSDEOPPriv" : {
         "logicName" : "需求指派",
@@ -6013,6 +5995,12 @@
       "getPSDEOPPriv" : {
         "logicName" : "需求激活",
         "name" : "ACTIVATE"
+      }
+    }, {
+      "name" : "CCASE",
+      "getPSDEOPPriv" : {
+        "logicName" : "建用例",
+        "name" : "CCASE"
       }
     }, {
       "name" : "ISCHILD",
@@ -6872,18 +6860,6 @@
         "name" : "NFAVORITES"
       }
     }, {
-      "name" : "SRFUR__STORY_CCASE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求建用例",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_CCASE_BUT"
-        },
-        "mapSysUniResCode" : "STORY_CCASE_BUT",
-        "name" : "SRFUR__STORY_CCASE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
       "name" : "ISCHILD",
       "getPSDEOPPriv" : {
         "logicName" : "需求细分",
@@ -6894,6 +6870,12 @@
       "getPSDEOPPriv" : {
         "logicName" : "需求评审",
         "name" : "REVIEW"
+      }
+    }, {
+      "name" : "CCASE",
+      "getPSDEOPPriv" : {
+        "logicName" : "建用例",
+        "name" : "CCASE"
       }
     }, {
       "name" : "ASSIGNTO",
@@ -7884,6 +7866,12 @@
         "name" : "ASSIGNTO"
       }
     }, {
+      "name" : "CCASE",
+      "getPSDEOPPriv" : {
+        "logicName" : "建用例",
+        "name" : "CCASE"
+      }
+    }, {
       "name" : "CHANGE",
       "getPSDEOPPriv" : {
         "logicName" : "需求变更",
@@ -7912,18 +7900,6 @@
       "getPSDEOPPriv" : {
         "logicName" : "需求评审",
         "name" : "REVIEW"
-      }
-    }, {
-      "name" : "SRFUR__STORY_CCASE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求建用例",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_CCASE_BUT"
-        },
-        "mapSysUniResCode" : "STORY_CCASE_BUT",
-        "name" : "SRFUR__STORY_CCASE_BUT",
-        "mapSysUniRes" : true
       }
     } ],
     "state2Value" : "0",
@@ -8361,16 +8337,10 @@
         "name" : "NFAVORITES"
       }
     }, {
-      "name" : "SRFUR__STORY_CCASE_BUT",
+      "name" : "CCASE",
       "getPSDEOPPriv" : {
-        "logicName" : "需求建用例",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_CCASE_BUT"
-        },
-        "mapSysUniResCode" : "STORY_CCASE_BUT",
-        "name" : "SRFUR__STORY_CCASE_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "建用例",
+        "name" : "CCASE"
       }
     } ],
     "state2Value" : "1",
@@ -9330,18 +9300,6 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__STORY_CCASE_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "需求建用例",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__STORY_CCASE_BUT"
-        },
-        "mapSysUniResCode" : "STORY_CCASE_BUT",
-        "name" : "SRFUR__STORY_CCASE_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
       "name" : "ISCHILD",
       "getPSDEOPPriv" : {
         "logicName" : "需求细分",
@@ -9370,6 +9328,12 @@
       "getPSDEOPPriv" : {
         "logicName" : "删除",
         "name" : "DELETE"
+      }
+    }, {
+      "name" : "CCASE",
+      "getPSDEOPPriv" : {
+        "logicName" : "建用例",
+        "name" : "CCASE"
       }
     }, {
       "name" : "FAVORITES",

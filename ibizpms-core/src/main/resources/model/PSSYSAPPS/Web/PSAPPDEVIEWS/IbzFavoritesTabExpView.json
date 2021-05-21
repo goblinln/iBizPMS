@@ -1021,8 +1021,10 @@
                 "name" : "u80dc357",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
+                  "noPrivDisplayMode" : 1,
                   "caption" : "建用例",
                   "codeName" : "OpenCaseCreateView",
+                  "dataAccessAction" : "CCASE",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainNewView.json",

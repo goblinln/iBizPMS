@@ -1512,8 +1512,10 @@
                             "name" : "u601e72e",
                             "getPSUIAction" : {
                               "actionTarget" : "SINGLEKEY",
+                              "noPrivDisplayMode" : 1,
                               "caption" : "提缺陷",
                               "codeName" : "StoryToBug",
+                              "dataAccessAction" : "TOBUG",
                               "getFrontPSAppView" : {
                                 "modelref" : true,
                                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugStoryTOBugEditView.json",
@@ -1728,8 +1730,10 @@
                             "name" : "ued8f63a",
                             "getPSUIAction" : {
                               "actionTarget" : "SINGLEKEY",
+                              "noPrivDisplayMode" : 1,
                               "caption" : "建用例",
                               "codeName" : "OpenCaseCreateView",
+                              "dataAccessAction" : "CCASE",
                               "getFrontPSAppView" : {
                                 "modelref" : true,
                                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainNewView.json",

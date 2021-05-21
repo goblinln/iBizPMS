@@ -399,6 +399,7 @@
       "actionTarget" : "SINGLEKEY",
       "caption" : "指派",
       "codeName" : "AssignTask",
+      "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
       "getFrontPSAppView" : {
         "modelref" : true,
         "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskAssignTaskView.json",
@@ -765,6 +766,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "开始",
           "codeName" : "MStartTaskDash1",
+          "dataAccessAction" : "SRFUR__TASK_START_BUT",
           "fullCodeName" : "Task_MStartTaskDash1",
           "name" : "开始任务(多人任务检查)",
           "getNextPSUIAction" : {

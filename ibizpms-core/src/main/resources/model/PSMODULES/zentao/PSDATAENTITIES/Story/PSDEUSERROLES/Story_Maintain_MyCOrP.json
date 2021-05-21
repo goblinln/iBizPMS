@@ -6,6 +6,13 @@
     "id" : "MyCreateOrPartake"
   },
   "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "TOBUG",
+    "name" : "Story_Maintain_MyCOrP_TOBUG",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "TOBUG"
+    }
+  }, {
     "dataAccessAction" : "FAVORITES",
     "name" : "Story_Maintain_MyCOrP_Favorites",
     "getPSDEOPPriv" : {
@@ -25,6 +32,13 @@
     "getPSDEOPPriv" : {
       "modelref" : true,
       "id" : "CHANGE"
+    }
+  }, {
+    "dataAccessAction" : "CCASE",
+    "name" : "Story_Maintain_MyCOrP_CCASE",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "CCASE"
     }
   }, {
     "dataAccessAction" : "UPDATE",

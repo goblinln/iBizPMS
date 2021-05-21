@@ -498,6 +498,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "开始",
         "codeName" : "StartTaskMob",
+        "dataAccessAction" : "SRFUR__TASK_START_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskSTARTMobOptionView.json",
@@ -535,6 +536,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "指派",
         "codeName" : "AssignTaskMob",
+        "dataAccessAction" : "SRFUR__TASK_ASSIGN_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMobOptionView.json",
@@ -607,6 +609,7 @@
         "actionTarget" : "SINGLEKEY",
         "caption" : "暂停",
         "codeName" : "PauseTaskMob",
+        "dataAccessAction" : "SRFUR__TASK_PAUSE_BUT",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskStopMobOptionView.json",
