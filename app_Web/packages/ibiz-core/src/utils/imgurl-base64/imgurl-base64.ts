@@ -92,7 +92,11 @@ export class ImgurlBase64{
             if (ImgurlBase64.imgCache.get(url)) {
                 callback(url, ImgurlBase64.imgCache.get(url));
             } else {
-                let result:Promise<any> = axios({method: 'get', url: url, responseType: 'blob'});
+                let _url = url;
+                if (!Object.is('/', _url.substring(0,1))) {
+                    _url = '/'+_url;
+                }
+                let result:Promise<any> = axios({method: 'get', url: _url, responseType: 'blob'});
                 ImgurlBase64.imgCache.set(url, result);
                 callback(url, result);
             }
