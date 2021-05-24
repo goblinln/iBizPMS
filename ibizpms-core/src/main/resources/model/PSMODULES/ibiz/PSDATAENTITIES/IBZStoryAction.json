@@ -1657,7 +1657,7 @@
   } ],
   "name" : "IBZPRO_STORYACTION",
   "saaSMode" : 0,
-  "serviceAPIMode" : 0,
+  "serviceAPIMode" : 1,
   "serviceCodeName" : "IBZStoryAction",
   "storageMode" : 1,
   "systemTag" : "iBizPMS",
