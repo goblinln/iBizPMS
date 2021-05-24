@@ -1471,7 +1471,7 @@
                     }
                   } ],
                   "viewLogicType" : "APP_OPENDATA",
-                  "editMode" : false
+                  "editMode" : true
                 }
               } ],
               "getPSAppViewNavContexts" : [ {
@@ -1970,7 +1970,7 @@
                     }
                   } ],
                   "viewLogicType" : "APP_OPENDATA",
-                  "editMode" : false
+                  "editMode" : true
                 }
               } ],
               "getPSAppViewNavContexts" : [ {
@@ -2419,7 +2419,7 @@
                     }
                   } ],
                   "viewLogicType" : "APP_OPENDATA",
-                  "editMode" : false
+                  "editMode" : true
                 }
               } ],
               "getPSAppViewNavContexts" : [ {

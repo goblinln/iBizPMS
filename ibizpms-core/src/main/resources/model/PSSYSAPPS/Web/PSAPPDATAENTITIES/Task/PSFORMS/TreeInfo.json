@@ -1718,7 +1718,7 @@
                                 "logicType" : "PREDEFINED",
                                 "name" : "打开数据",
                                 "viewLogicType" : "APP_OPENDATA",
-                                "editMode" : false
+                                "editMode" : true
                               }
                             } ],
                             "getPSAppViewNavParams" : [ {
@@ -2076,7 +2076,7 @@
                                   }
                                 } ],
                                 "viewLogicType" : "APP_OPENDATA",
-                                "editMode" : false
+                                "editMode" : true
                               }
                             } ],
                             "getPSAppViewRefs" : [ {
@@ -2803,7 +2803,7 @@
                   }
                 } ],
                 "viewLogicType" : "APP_OPENDATA",
-                "editMode" : false
+                "editMode" : true
               }
             } ],
             "getPSAppViewNavContexts" : [ {

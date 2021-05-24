@@ -434,7 +434,7 @@
                     }
                   } ],
                   "viewLogicType" : "APP_OPENDATA",
-                  "editMode" : false
+                  "editMode" : true
                 }
               } ],
               "getPSAppViewNavContexts" : [ {

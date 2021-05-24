@@ -16,6 +16,7 @@ import net.ibizsys.runtime.util.IEntityBase;
 import com.alibaba.fastjson.JSONObject;
 import org.springframework.util.ObjectUtils;
 import org.springframework.data.domain.Page;
+import com.alibaba.fastjson.JSON;
 
 
 import java.util.HashMap;
@@ -42,8 +43,10 @@ public class WFCallbackDeamonJobHandler implements IJobsHandler {
             IDataEntityRuntime callBackDERuntime = systemRuntime.getDataEntityRuntime(deName);
             IEntity entity = (IEntity) callBackDERuntime.deserializeEntity(data);
             // entity.set(callBackDERuntime.getKeyPSDEField().getCodeName(), entity.get("businessKey"));
+            Map dataMap = (Map) JSON.parse(data);
+            Object actionType = dataMap.get("actionType");
             Map map = new HashMap(16);
-            if ("Default".equals(action) || "ALLDATA".equals(action)) {
+            if (!ObjectUtils.isEmpty(actionType) && !ObjectUtils.isEmpty(action)) {
                 callBackDERuntime.getPSDataEntity().getAllPSDEDataSets().forEach(ipsdeDataSet -> {
                     if (action.equals(ipsdeDataSet.getCodeName())) {
                         Page<? extends IEntityBase> dataSet = callBackDERuntime
