@@ -12501,6 +12501,21 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'todos/:todo?/views/mobredirectview',
+                    meta: {
+                        caption: 'entities.todo.views.mobredirectview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'appindexview', parameterName: 'appindexview' },
+                            { pathName: 'todos', parameterName: 'todo' },
+                            { pathName: 'views', parameterName: 'mobredirectview' },
+                        ],
+                        resource:'todo',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'todos/:todo?/views/moboptionview',
                     meta: {
                         caption: 'entities.todo.views.moboptionview.caption',
