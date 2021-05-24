@@ -542,7 +542,7 @@
     "name" : "BUGOPENEDBY",
     "getPSCodeList" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
     },
     "stdDataType" : 25,
     "stringLength" : 100,

@@ -111,5 +111,6 @@ export * from './iaction';
 export * from './idyna-filter';
 export * from './ihistory';
 export * from './iibzpro-product-history';
+export * from './iibzstory-action';
 export * from './imodule';
 export * from './iproject-taskestimate';

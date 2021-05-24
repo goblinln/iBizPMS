@@ -279,7 +279,7 @@
     "name" : "ACCOUNT",
     "getPSCodeList" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
     },
     "stdDataType" : 25,
     "stringLength" : 60,
@@ -422,7 +422,7 @@
     "name" : "MAILTO",
     "getPSCodeList" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
     },
     "stdDataType" : 25,
     "stringLength" : 100,
@@ -713,7 +713,7 @@
     "name" : "REPORTTO",
     "getPSCodeList" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
     },
     "stdDataType" : 25,
     "stringLength" : 100,

@@ -29364,15 +29364,15 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
-                    path: 'products/:product?/ibzproproductactions/:ibzproproductaction?/views/addcommenthistorylistview',
+                    path: 'products/:product?/ibzproproductactions/:ibzproproductaction?/views/addlistview',
                     meta: {
-                        caption: 'entities.ibzproproductaction.views.addcommenthistorylistview.caption',
+                        caption: 'entities.ibzproproductaction.views.addlistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'products', parameterName: 'product' },
                             { pathName: 'ibzproproductactions', parameterName: 'ibzproproductaction' },
-                            { pathName: 'views', parameterName: 'addcommenthistorylistview' },
+                            { pathName: 'views', parameterName: 'addlistview' },
                         ],
                         resource:'ibzproproductaction',
                         requireAuth: true,
@@ -29380,14 +29380,76 @@ const router = new Router({
                         component: AppViewShell,
                     },
                     {
-                    path: 'ibzproproductactions/:ibzproproductaction?/views/addcommenthistorylistview',
+                    path: 'ibzproproductactions/:ibzproproductaction?/views/addlistview',
                     meta: {
-                        caption: 'entities.ibzproproductaction.views.addcommenthistorylistview.caption',
+                        caption: 'entities.ibzproproductaction.views.addlistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'ibzproproductactions', parameterName: 'ibzproproductaction' },
-                            { pathName: 'views', parameterName: 'addcommenthistorylistview' },
+                            { pathName: 'views', parameterName: 'addlistview' },
+                        ],
+                        resource:'ibzproproductaction',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'products/:product?/ibzproproductactions/:ibzproproductaction?/views/optionview',
+                    meta: {
+                        caption: 'entities.ibzproproductaction.views.optionview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'ibzproproductactions', parameterName: 'ibzproproductaction' },
+                            { pathName: 'views', parameterName: 'optionview' },
+                        ],
+                        resource:'ibzproproductaction',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'ibzproproductactions/:ibzproproductaction?/views/optionview',
+                    meta: {
+                        caption: 'entities.ibzproproductaction.views.optionview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzproproductactions', parameterName: 'ibzproproductaction' },
+                            { pathName: 'views', parameterName: 'optionview' },
+                        ],
+                        resource:'ibzproproductaction',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'products/:product?/ibzproproductactions/:ibzproproductaction?/views/editview',
+                    meta: {
+                        caption: 'entities.ibzproproductaction.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'ibzproproductactions', parameterName: 'ibzproproductaction' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'ibzproproductaction',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'ibzproproductactions/:ibzproproductaction?/views/editview',
+                    meta: {
+                        caption: 'entities.ibzproproductaction.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzproproductactions', parameterName: 'ibzproproductaction' },
+                            { pathName: 'views', parameterName: 'editview' },
                         ],
                         resource:'ibzproproductaction',
                         requireAuth: true,
@@ -29730,6 +29792,36 @@ const router = new Router({
                             { pathName: 'views', parameterName: 'editview' },
                         ],
                         resource:'action',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzstoryactions/:ibzstoryaction?/views/gridview',
+                    meta: {
+                        caption: 'entities.ibzstoryaction.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzstoryactions', parameterName: 'ibzstoryaction' },
+                            { pathName: 'views', parameterName: 'gridview' },
+                        ],
+                        resource:'ibzstoryaction',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'ibzstoryactions/:ibzstoryaction?/views/editview',
+                    meta: {
+                        caption: 'entities.ibzstoryaction.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzstoryactions', parameterName: 'ibzstoryaction' },
+                            { pathName: 'views', parameterName: 'editview' },
+                        ],
+                        resource:'ibzstoryaction',
                         requireAuth: true,
                     },
                     component: AppViewShell
@@ -30548,6 +30640,19 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'views', parameterName: 'casemainmygridview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
+                    path: 'views/ibzstoryactiongridview',
+                    meta: {
+                        caption: 'entities.ibzstoryaction.views.gridview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'ibzstoryactiongridview' },
                         ],
                         requireAuth: true,
                     },
@@ -33281,13 +33386,13 @@ const router = new Router({
                     component: AppViewShell,
                 },
                 {
-                    path: 'views/ibzproproductactionaddcommenthistorylistview',
+                    path: 'views/ibzproproductactionaddlistview',
                     meta: {
-                        caption: 'entities.ibzproproductaction.views.addcommenthistorylistview.caption',
+                        caption: 'entities.ibzproproductaction.views.addlistview.caption',
                         info:'',
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
-                            { pathName: 'views', parameterName: 'ibzproproductactionaddcommenthistorylistview' },
+                            { pathName: 'views', parameterName: 'ibzproproductactionaddlistview' },
                         ],
                         requireAuth: true,
                     },
@@ -34398,6 +34503,19 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'views', parameterName: 'testtaskmyygridview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
+                    path: 'views/ibzstoryactioneditview',
+                    meta: {
+                        caption: 'entities.ibzstoryaction.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'ibzstoryactioneditview' },
                         ],
                         requireAuth: true,
                     },
@@ -35725,6 +35843,19 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'views', parameterName: 'ibzlibgridview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
+                    path: 'views/ibzproproductactionoptionview',
+                    meta: {
+                        caption: 'entities.ibzproproductaction.views.optionview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'ibzproproductactionoptionview' },
                         ],
                         requireAuth: true,
                     },
@@ -38491,6 +38622,19 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'views', parameterName: 'todofinishview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
+                    path: 'views/ibzproproductactioneditview',
+                    meta: {
+                        caption: 'entities.ibzproproductaction.views.editview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'ibzproproductactioneditview' },
                         ],
                         requireAuth: true,
                     },

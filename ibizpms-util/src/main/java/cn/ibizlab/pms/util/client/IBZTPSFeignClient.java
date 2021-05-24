@@ -1,9 +1,6 @@
 package cn.ibizlab.pms.util.client;
 
-import cn.ibizlab.pms.util.domain.SysAudit;
-import cn.ibizlab.pms.util.domain.SysEvent;
-import cn.ibizlab.pms.util.domain.SysLog;
-import cn.ibizlab.pms.util.domain.SysPO;
+import cn.ibizlab.pms.util.domain.*;
 import com.alibaba.fastjson.JSONObject;
 import net.ibizsys.runtime.util.domain.MsgSendQueue;
 import org.apache.rocketmq.common.message.Message;
@@ -51,5 +48,23 @@ public interface IBZTPSFeignClient {
     
     @RequestMapping(method = RequestMethod.POST, value = "/syspo")
     Boolean po(@RequestBody SysPO event);
+
+    @RequestMapping(method = RequestMethod.POST, value = "/todo")
+    DataObj createTask(@RequestBody SysTodo task);
+
+    @RequestMapping(method = RequestMethod.GET, value = "/todo/wftask/{taskId}/complete/{userId}")
+    DataObj completeTask(@PathVariable String taskId ,@PathVariable String userId);
+
+    @RequestMapping(method = RequestMethod.GET, value = "/todo/wftask/{taskId}/cancel")
+    DataObj cancelTask(@PathVariable String taskId);
+
+    @RequestMapping(method = RequestMethod.POST, value = "/todo/wftask/{taskId}/delegate")
+    DataObj delegateTask(@PathVariable String taskId , @RequestBody DataObj dataObj);
+
+    @RequestMapping(method = RequestMethod.GET, value = "/todo/wftask/{taskId}/resolve/{userId}")
+    DataObj resolveTask(@PathVariable String taskId , @PathVariable String userId);
+
+    @RequestMapping(method = RequestMethod.POST, value = "/todo/wftask/{taskId}/reassign")
+    DataObj reassignTask(@PathVariable String taskId, @RequestBody DataObj dataObj);
 	
 }

@@ -58,6 +58,24 @@ public class DupCheckAspect {
     public void checkIbzproproductaction(JoinPoint point) {
         check(point, "searchDefault");
     }
+     /**
+     * 实体[IBZStoryAction]
+     *
+     * @param point
+     */
+    @AfterReturning(value = "(execution(* cn.ibizlab.pms.core.*.service.*IBZStoryAction*.create*(..))||execution(* cn.ibizlab.pms.core.*.service.*IBZStoryAction*.update*(..))||execution(* cn.ibizlab.pms.core.*.service.*IBZStoryAction*.save*(..))  ) && !execution(* cn.ibizlab.pms.core.es.service.*.create*(..)) && !execution(* cn.ibizlab.pms.core.es.service.*.update*(..)) && !execution(* cn.ibizlab.pms.core.es.service.*.save*(..)) ")
+    public void checkIbzstoryaction(JoinPoint point) {
+        check(point, "searchDefault");
+    }
+     /**
+     * 实体[ProductPlanAction]
+     *
+     * @param point
+     */
+    @AfterReturning(value = "(execution(* cn.ibizlab.pms.core.*.service.*ProductPlanAction*.create*(..))||execution(* cn.ibizlab.pms.core.*.service.*ProductPlanAction*.update*(..))||execution(* cn.ibizlab.pms.core.*.service.*ProductPlanAction*.save*(..))  ) && !execution(* cn.ibizlab.pms.core.es.service.*.create*(..)) && !execution(* cn.ibizlab.pms.core.es.service.*.update*(..)) && !execution(* cn.ibizlab.pms.core.es.service.*.save*(..)) ")
+    public void checkProductplanaction(JoinPoint point) {
+        check(point, "searchDefault");
+    }
 
     /**
      * 实体属性重复值检查

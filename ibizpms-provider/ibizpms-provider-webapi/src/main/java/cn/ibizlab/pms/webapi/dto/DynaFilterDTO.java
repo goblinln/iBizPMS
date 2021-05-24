@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Data
 @ApiModel("动态搜索栏")
-@JsonFilter(value = "dtofieldfilter")
+//@JsonFilter(value = "dtofieldfilter")
 public class DynaFilterDTO extends DTOBase implements Serializable {
 
 	private static final long serialVersionUID = 1L;

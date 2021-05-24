@@ -197,6 +197,7 @@ export class AppPopover {
                         subject.next({ ret: 'OK', datas: result });
                         subject.complete();
                         subject.unsubscribe();
+                        this.popperDestroy();
                     }
                 }
             })

@@ -1,9 +1,6 @@
 package cn.ibizlab.pms.util.client;
 
-import cn.ibizlab.pms.util.domain.SysAudit;
-import cn.ibizlab.pms.util.domain.SysEvent;
-import cn.ibizlab.pms.util.domain.SysLog;
-import cn.ibizlab.pms.util.domain.SysPO;
+import cn.ibizlab.pms.util.domain.*;
 import com.alibaba.fastjson.JSONObject;
 import net.ibizsys.runtime.util.domain.MsgSendQueue;
 import org.apache.rocketmq.common.message.Message;
@@ -69,6 +66,36 @@ public class IBZTPSFallback implements IBZTPSFeignClient {
     
     @Override
     public Boolean po(SysPO event) {
+        return null;
+    }
+
+    @Override
+    public DataObj createTask(SysTodo task) {
+        return null;
+    }
+
+    @Override
+    public DataObj completeTask(String taskId, String userId) {
+        return null;
+    }
+
+    @Override
+    public DataObj cancelTask(String taskId) {
+        return null;
+    }
+
+    @Override
+    public DataObj delegateTask(String taskId, DataObj dataObj) {
+        return null;
+    }
+
+    @Override
+    public DataObj resolveTask(String taskId, String userId) {
+        return null;
+    }
+
+    @Override
+    public DataObj reassignTask(String taskId, DataObj dataObj) {
         return null;
     }
 

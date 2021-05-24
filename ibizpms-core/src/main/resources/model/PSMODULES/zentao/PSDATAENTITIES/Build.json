@@ -658,7 +658,7 @@
     "name" : "CREATEBY",
     "getPSCodeList" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
     },
     "predefinedType" : "CREATEMANNAME",
     "stdDataType" : 25,
@@ -1382,7 +1382,7 @@
     "name" : "UPDATEBY",
     "getPSCodeList" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
     },
     "predefinedType" : "UPDATEMANNAME",
     "stdDataType" : 25,

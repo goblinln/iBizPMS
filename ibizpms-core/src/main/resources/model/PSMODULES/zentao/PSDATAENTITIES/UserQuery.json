@@ -193,7 +193,7 @@
     "name" : "SHORTCUT",
     "getPSCodeList" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/Action__read.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/Action__read.json"
     },
     "stdDataType" : 25,
     "stringLength" : 1,

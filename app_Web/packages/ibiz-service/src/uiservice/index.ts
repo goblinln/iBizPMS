@@ -111,5 +111,6 @@ export * from './action/action-ui-service';
 export * from './dyna-filter/dyna-filter-ui-service';
 export * from './history/history-ui-service';
 export * from './ibzpro-product-history/ibzpro-product-history-ui-service';
+export * from './ibzstory-action/ibzstory-action-ui-service';
 export * from './module/module-ui-service';
 export * from './project-taskestimate/project-taskestimate-ui-service';

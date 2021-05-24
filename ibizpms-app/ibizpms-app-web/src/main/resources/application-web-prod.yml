@@ -519,6 +519,10 @@ zuul:
       path: /ibzproproducthistories/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
       stripPrefix: false
+    ibzpro_storyaction:
+      path: /ibzstoryactions/**
+      serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}
+      stripPrefix: false
     zt_module:
       path: /modules/**
       serviceId: ${ibiz.ref.service.ibizpms-webapi:ibizpms-webapi}

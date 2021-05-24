@@ -112,5 +112,6 @@ export * from './action/action.service';
 export * from './dyna-filter/dyna-filter.service';
 export * from './history/history.service';
 export * from './ibzpro-product-history/ibzpro-product-history.service';
+export * from './ibzstory-action/ibzstory-action.service';
 export * from './module/module.service';
 export * from './project-taskestimate/project-taskestimate.service';

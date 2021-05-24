@@ -2152,7 +2152,7 @@
               "enableImport" : true,
               "enableRowEdit" : false,
               "rowEditDefault" : false,
-              "showCaptionBar" : true,
+              "showCaptionBar" : false,
               "modelid" : "389d7b00409ffa4bd014d70d4a21c110",
               "modeltype" : "PSAPPDEVIEW",
               "getPSAppDERSPaths" : [ [ {

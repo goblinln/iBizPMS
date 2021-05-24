@@ -782,7 +782,7 @@
     "name" : "QD",
     "getPSCodeList" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
     },
     "stdDataType" : 25,
     "stringLength" : 30,
@@ -1536,7 +1536,7 @@
     "name" : "RD",
     "getPSCodeList" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
     },
     "stdDataType" : 25,
     "stringLength" : 30,
@@ -1928,7 +1928,7 @@
     "name" : "PO",
     "getPSCodeList" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
     },
     "stdDataType" : 25,
     "stringLength" : 30,
@@ -2215,7 +2215,7 @@
     "name" : "CREATEDBY",
     "getPSCodeList" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
     },
     "predefinedType" : "CREATEMANNAME",
     "stdDataType" : 25,
@@ -2813,7 +2813,7 @@
     "name" : "UPDATEBY",
     "getPSCodeList" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
     },
     "predefinedType" : "UPDATEMANNAME",
     "stdDataType" : 25,

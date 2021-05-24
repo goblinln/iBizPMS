@@ -481,6 +481,7 @@ function getLocaleResourceBase(){
 				'_druipart2': commonLogic.appcommonhandle("",null), 
 				'_grouppanel1': commonLogic.appcommonhandle("附件",null), 
 				'druipart1': commonLogic.appcommonhandle("",null), 
+				'grouppanel2': commonLogic.appcommonhandle("子需求",null), 
 				'grouppanel31': commonLogic.appcommonhandle("需求描述",null), 
 				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
 				'srfupdatedate': commonLogic.appcommonhandle("最后修改日期",null), 

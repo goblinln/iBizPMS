@@ -2155,7 +2155,7 @@
     "name" : "CLOSEDBY",
     "getPSCodeList" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
     },
     "stdDataType" : 25,
     "stringLength" : 200,
@@ -2552,7 +2552,7 @@
     "name" : "OPENEDBY",
     "getPSCodeList" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
     },
     "predefinedType" : "CREATEMANNAME",
     "stdDataType" : 25,
@@ -4231,7 +4231,7 @@
     "name" : "LASTEDITEDBY",
     "getPSCodeList" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
     },
     "predefinedType" : "UPDATEMANNAME",
     "stdDataType" : 25,

@@ -646,7 +646,7 @@ export class ViewBase extends Vue {
         this.$store.commit("loadingService/addViewLoadingService", this.viewLoadingService);
         // 视图初始化向导航栈里面加数据
         this.$nextTick(() => {
-            this.navDataService.addNavData({ title: this.$t(this.model.srfCaption), viewType: this.viewInstance.viewType, path: this.$route.fullPath, viewmode: this.viewDefaultUsage, tag: this.viewInstance.codeName, key: null, data: {} });
+            this.navDataService.addNavData({ title: this.$t(this.model.srfCaption), viewType: this.viewInstance.viewType, path: this.$route?.fullPath, viewmode: this.viewDefaultUsage, tag: this.viewInstance.codeName, key: null, data: {} });
         })
     }
 

@@ -1034,6 +1034,15 @@ export class GlobalService {
         return (await import('./ibzpro-product-history/ibzpro-product-history.service')).default.getInstance();
     }
     /**
+     * 需求日志服务
+     *
+     * @return {IBZStoryAction}
+     * @memberof GlobalService
+     */
+    async getIBZStoryActionService() {
+        return (await import('./ibzstory-action/ibzstory-action.service')).default.getInstance();
+    }
+    /**
      * 模块服务
      *
      * @return {Module}

@@ -111,6 +111,7 @@ import action_zh_CN from '@locale/lanres/entities/action/action_zh_CN';
 import dynafilter_zh_CN from '@locale/lanres/entities/dyna-filter/dyna-filter_zh_CN';
 import history_zh_CN from '@locale/lanres/entities/history/history_zh_CN';
 import ibzproproducthistory_zh_CN from '@locale/lanres/entities/ibzpro-product-history/ibzpro-product-history_zh_CN';
+import ibzstoryaction_zh_CN from '@locale/lanres/entities/ibzstory-action/ibzstory-action_zh_CN';
 import module_zh_CN from '@locale/lanres/entities/module/module_zh_CN';
 import projecttaskestimate_zh_CN from '@locale/lanres/entities/project-taskestimate/project-taskestimate_zh_CN';
 import components_zh_CN from '@locale/lanres/components/components_zh_CN';
@@ -490,6 +491,7 @@ function getAppLocale(){
             'dynafilter': dynafilter_zh_CN(),
             'history': history_zh_CN(),
             'ibzproproducthistory': ibzproproducthistory_zh_CN(),
+            'ibzstoryaction': ibzstoryaction_zh_CN(),
             'module': module_zh_CN(),
             'projecttaskestimate': projecttaskestimate_zh_CN(),
         },

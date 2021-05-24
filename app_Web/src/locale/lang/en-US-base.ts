@@ -111,6 +111,7 @@ import action_en_US from '@locale/lanres/entities/action/action_en_US';
 import dynafilter_en_US from '@locale/lanres/entities/dyna-filter/dyna-filter_en_US';
 import history_en_US from '@locale/lanres/entities/history/history_en_US';
 import ibzproproducthistory_en_US from '@locale/lanres/entities/ibzpro-product-history/ibzpro-product-history_en_US';
+import ibzstoryaction_en_US from '@locale/lanres/entities/ibzstory-action/ibzstory-action_en_US';
 import module_en_US from '@locale/lanres/entities/module/module_en_US';
 import projecttaskestimate_en_US from '@locale/lanres/entities/project-taskestimate/project-taskestimate_en_US';
 import components_en_US from '@locale/lanres/components/components_en_US';
@@ -491,6 +492,7 @@ function getAppLocale(){
             'dynafilter': dynafilter_en_US(),
             'history': history_en_US(),
             'ibzproproducthistory': ibzproproducthistory_en_US(),
+            'ibzstoryaction': ibzstoryaction_en_US(),
             'module': module_en_US(),
             'projecttaskestimate': projecttaskestimate_en_US(),
         },

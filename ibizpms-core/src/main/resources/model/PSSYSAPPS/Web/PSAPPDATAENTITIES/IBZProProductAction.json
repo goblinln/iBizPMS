@@ -780,6 +780,40 @@
     "name" : "FILTERFETCH",
     "builtinMethod" : true
   } ],
+  "getAllPSAppDEUIActions" : [ {
+    "actionTarget" : "NONE",
+    "caption" : "添加备注",
+    "codeName" : "AddComment",
+    "dataAccessAction" : "CREATE",
+    "getFrontPSAppView" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProProductActionOptionView.json",
+      "viewType" : "DEOPTVIEW"
+    },
+    "frontProcessType" : "WIZARD",
+    "fullCodeName" : "IBZProProductAction_AddComment",
+    "name" : "添加备注",
+    "getPSAppDataEntity" : {
+      "modelref" : true,
+      "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductAction.json"
+    },
+    "getPSSysImage" : {
+      "glyph" : "xf1e8@FontAwesome",
+      "cssClass" : "fa fa-twitch"
+    },
+    "refreshMode" : 1,
+    "timeout" : 60000,
+    "uIActionMode" : "FRONT",
+    "uIActionTag" : "AddComment",
+    "uIActionType" : "DEUIACTION",
+    "reloadData" : true,
+    "id" : "AddComment@IBZProProductAction"
+  } ],
+  "getAllPSAppPortletCats" : [ {
+    "codeName" : "Ungroup",
+    "name" : "（未分类）",
+    "ungroup" : true
+  } ],
   "getAllPSDEOPPrivs" : [ {
     "logicName" : "建立",
     "name" : "CREATE"

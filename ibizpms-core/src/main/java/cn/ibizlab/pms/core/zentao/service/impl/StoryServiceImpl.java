@@ -54,6 +54,9 @@ public class StoryServiceImpl extends ServiceImpl<StoryMapper, Story> implements
 
     @Autowired
     @Lazy
+    protected cn.ibizlab.pms.core.ibiz.service.IIBZStoryActionService ibzstoryactionService;
+    @Autowired
+    @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IBugService bugService;
     @Autowired
     @Lazy

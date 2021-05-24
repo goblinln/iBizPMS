@@ -52,6 +52,12 @@ import javax.annotation.PostConstruct;
 public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.dataentity.DataEntityRuntimeBase {
 
     /**
+     * 审计日志
+     */
+    @Value("${ibiz.deauditlog:false}")
+    protected boolean deauditlog;
+
+    /**
 	 * 主键字段
 	 */
     protected String key;
@@ -411,10 +417,12 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         boolean check = false;
         this.prepare();
         check = ((SystemRuntime) this.getSystemRuntime()).testUniRes(uniResTag);
-        if (!check) {
-            this.getSystemRuntime().logAudit(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("检查统一资源[%s]权限失败。", uniResTag), this.getUserContext().getUserid(), this.getUserContext().getRemoteaddress(), null);
-        } else {
-            this.getSystemRuntime().logAudit(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("检查统一资源[%s]权限通过。", uniResTag), this.getUserContext().getUserid(), this.getUserContext().getRemoteaddress(), null);
+        if (deauditlog) {
+            if (!check) {
+                //this.getSystemRuntime().logAudit(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("检查统一资源[%s]权限失败。", uniResTag), this.getUserContext().getUserid(), this.getUserContext().getRemoteaddress(), null);
+            } else {
+                //this.getSystemRuntime().logAudit(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("检查统一资源[%s]权限通过。", uniResTag), this.getUserContext().getUserid(), this.getUserContext().getRemoteaddress(), null);
+            }
         }
         return check;
     }
@@ -434,10 +442,12 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             return true;
         if (this.getUAAAuthorities(action).size() == 0)
             check = false;
-        if (!check) {
-            this.getSystemRuntime().logAudit(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("检查实体[%s]操作[%s]权限失败。", this.getName(), action), this.getUserContext().getUserid(), this.getUserContext().getRemoteaddress(), null);
-        } else {
-            this.getSystemRuntime().logAudit(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("检查实体[%s]操作[%s]权限通过。", this.getName(), action), this.getUserContext().getUserid(), this.getUserContext().getRemoteaddress(), null);
+        if (deauditlog) {
+            if (!check) {
+                this.getSystemRuntime().logAudit(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("检查实体[%s]操作[%s]权限失败。", this.getName(), action), this.getUserContext().getUserid(), this.getUserContext().getRemoteaddress(), null);
+            } else {
+                this.getSystemRuntime().logAudit(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("检查实体[%s]操作[%s]权限通过。", this.getName(), action), this.getUserContext().getUserid(), this.getUserContext().getRemoteaddress(), null);
+            }
         }
         return check;
     }
@@ -466,10 +476,12 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
             } else if (DataAccessActions.UPDATE.equals(action) && testDataInWF(this.getSimpleEntity(key))) {
                 accessMode = wfClient.getDataAccessMode(AuthenticationUser.getAuthenticationUser().getSrfsystemid(), this.getPSDataEntity().getCodeName().toLowerCase(), key);
                 check = (accessMode & 2) > 0;
-                if (!check) {
-                    this.getSystemRuntime().logAudit(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("流程检查实体[%s][%s]操作[%s]权限失败。", this.getName(), key, action), this.getUserContext().getUserid(), this.getUserContext().getRemoteaddress(), null);
-                } else {
-                    this.getSystemRuntime().logAudit(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("流程检查实体[%s][%s]操作[%s]权限通过。", this.getName(), key, action), this.getUserContext().getUserid(), this.getUserContext().getRemoteaddress(), null);
+                if (deauditlog) {
+                    if (!check) {
+                        this.getSystemRuntime().logAudit(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("流程检查实体[%s][%s]操作[%s]权限失败。", this.getName(), key, action), this.getUserContext().getUserid(), this.getUserContext().getRemoteaddress(), null);
+                    } else {
+                        this.getSystemRuntime().logAudit(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("流程检查实体[%s][%s]操作[%s]权限通过。", this.getName(), key, action), this.getUserContext().getUserid(), this.getUserContext().getRemoteaddress(), null);
+                    }
                 }
                 return check;
             }
@@ -488,17 +500,21 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         List domains = this.select(context);
         if (domains.size() == 0) {
             check = false;
-            if (!check) {
-                this.getSystemRuntime().logAudit(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("检查实体[%s]数据:[%s]操作[%s]权限失败。", this.getName(), key, action), this.getUserContext().getUserid(), this.getUserContext().getRemoteaddress(), null);
-            } else {
-                this.getSystemRuntime().logAudit(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("检查实体[%s]数据:[%s]操作[%s]权限通过。", this.getName(), key, action), this.getUserContext().getUserid(), this.getUserContext().getRemoteaddress(), null);
+            if (deauditlog) {
+                if (!check) {
+                    this.getSystemRuntime().logAudit(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("检查实体[%s]数据:[%s]操作[%s]权限失败。", this.getName(), key, action), this.getUserContext().getUserid(), this.getUserContext().getRemoteaddress(), null);
+                } else {
+                    this.getSystemRuntime().logAudit(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("检查实体[%s]数据:[%s]操作[%s]权限通过。", this.getName(), key, action), this.getUserContext().getUserid(), this.getUserContext().getRemoteaddress(), null);
+                }
             }
             return check;
         }
         try {
             check = testDataAccessAction(domains.get(0), action);
-            if (!check) {
-                this.getSystemRuntime().logAudit(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("检查实体[%s]数据:[%s]操作[%s]主状态控制失败。", this.getName(), key, action), this.getUserContext().getUserid(), this.getUserContext().getRemoteaddress(), null);
+            if (deauditlog) {
+                if (!check) {
+                    this.getSystemRuntime().logAudit(ISystemUtilRuntime.LOGLEVEL_WARN, "权限检查", String.format("检查实体[%s]数据:[%s]操作[%s]主状态控制失败。", this.getName(), key, action), this.getUserContext().getUserid(), this.getUserContext().getRemoteaddress(), null);
+                }
             }
             return check;
         } catch (Exception e) {
@@ -775,6 +791,15 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                                         }
                                     })));
         }
+        //系统角色分配固定能力
+        ((SystemRuntime) this.getSystemRuntime()).getRoleUAADEAuthority().stream().forEach(
+                uaadeAuthority -> uaadeAuthority.getDeAction().stream().forEach(
+                        deaction -> deaction.keySet().stream().forEach(
+                                actionkey -> {
+                                    if (!opprivsMap.containsKey(actionkey)) {
+                                        opprivsMap.put(actionkey, 0);
+                                    }
+                                })));
         //运行时分配能力
         if (curUser.getAuthorities() != null) {
             curUser.getAuthorities().stream()
@@ -789,7 +814,6 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
                                             })));
 
         }
-        //
         opprivsMap.entrySet().stream().forEach(stringIntegerEntry -> {
             if (test(key, stringIntegerEntry.getKey())) {
                 stringIntegerEntry.setValue(1);

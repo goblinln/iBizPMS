@@ -69,7 +69,7 @@
     },
     "devDependencies": {
         "@types/codemirror": "^5.60.0",
-        "@ibiz/cli": "0.1.1",
+        "@ibiz/cli": "0.1.2",
         "@types/echarts": "^4.9.7",
         "@types/mockjs": "^1.0.3",
         "@types/qs": "^6.9.6",

@@ -910,7 +910,7 @@
     "name" : "OBJECTTYPE",
     "getPSCodeList" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/Action__object_type.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/Action__object_type.json"
     },
     "stdDataType" : 25,
     "stringLength" : 30,
@@ -1163,7 +1163,7 @@
     "name" : "READ",
     "getPSCodeList" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/Action__read.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/Action__read.json"
     },
     "stdDataType" : 25,
     "stringLength" : 1,
@@ -1220,7 +1220,7 @@
     "name" : "ACTION",
     "getPSCodeList" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/Action__type.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/Action__type.json"
     },
     "stdDataType" : 25,
     "stringLength" : 30,
@@ -1444,7 +1444,7 @@
     "name" : "ACTIONMANNER",
     "getPSCodeList" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/ActionManner.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/ActionManner.json"
     },
     "stdDataType" : 25,
     "stringLength" : 200,
@@ -1645,7 +1645,7 @@
     "name" : "ACTOR",
     "getPSCodeList" : {
       "modelref" : true,
-      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
     },
     "stdDataType" : 25,
     "stringLength" : 100,

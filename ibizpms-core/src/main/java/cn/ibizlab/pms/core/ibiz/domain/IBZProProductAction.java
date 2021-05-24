@@ -282,6 +282,7 @@ public class IBZProProductAction extends EntityMP implements Serializable {
     /**
      * 编号
      */
+    @DEField(defaultValue = "0")
     @TableField(value = "`OBJECTID`")
     @JSONField(name = "objectid")
     @JsonProperty("objectid")

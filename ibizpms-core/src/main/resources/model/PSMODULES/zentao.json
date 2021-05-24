@@ -67,9 +67,6 @@
     "path" : "PSMODULES/zentao/PSCODELISTS/Testsuite__type.json"
   }, {
     "modelref" : true,
-    "path" : "PSMODULES/zentao/PSCODELISTS/Action__read.json"
-  }, {
-    "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/UserRealNameTaskMTeam.json"
   }, {
     "modelref" : true,
@@ -83,12 +80,6 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/StoryQuickpacketMy.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSCODELISTS/ActionManner.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSCODELISTS/Action__object_type.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/Story__color.json"
@@ -140,9 +131,6 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/YesNo3.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSCODELISTS/Action__type.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/StoryStageKane.json"
@@ -404,9 +392,6 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/Product__type.json"
-  }, {
-    "modelref" : true,
-    "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/zentao/PSCODELISTS/Project__status.json"

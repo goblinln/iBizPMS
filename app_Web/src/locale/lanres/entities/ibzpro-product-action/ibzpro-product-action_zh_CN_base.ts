@@ -38,9 +38,57 @@ function getLocaleResourceBase(){
 				caption: commonLogic.appcommonhandle("产品日志",null),
 				title: commonLogic.appcommonhandle("产品日志列表视图",null),
 			},
-			'addcommenthistorylistview': {
+			'addlistview': {
 				caption: commonLogic.appcommonhandle("添加备注",null),
 				title: commonLogic.appcommonhandle("产品日志列表视图（添加备注）",null),
+			},
+			'optionview': {
+				caption: commonLogic.appcommonhandle("添加备注",null),
+				title: commonLogic.appcommonhandle("添加备注",null),
+			},
+			'editview': {
+				caption: commonLogic.appcommonhandle("产品日志",null),
+				title: commonLogic.appcommonhandle("产品日志编辑视图",null),
+			},
+		},
+		addcomment_form: {
+			details: {
+				'grouppanel2': commonLogic.appcommonhandle("分组面板",null), 
+				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'srforikey': commonLogic.appcommonhandle("",null), 
+				'srfkey': commonLogic.appcommonhandle("id",null), 
+				'srfmajortext': commonLogic.appcommonhandle("备注",null), 
+				'srftempmode': commonLogic.appcommonhandle("",null), 
+				'srfuf': commonLogic.appcommonhandle("",null), 
+				'srfdeid': commonLogic.appcommonhandle("",null), 
+				'srfsourcekey': commonLogic.appcommonhandle("",null), 
+				'objecttype': commonLogic.appcommonhandle("对象类型",null), 
+				'objectid': commonLogic.appcommonhandle("编号",null), 
+				'comment': commonLogic.appcommonhandle("备注",null), 
+				'files': commonLogic.appcommonhandle("文件",null), 
+				'noticeusers': commonLogic.appcommonhandle("消息通知用户",null), 
+				'extra': commonLogic.appcommonhandle("附加值",null), 
+				'id': commonLogic.appcommonhandle("id",null), 
+			},
+			uiactions: {
+			},
+		},
+		main_form: {
+			details: {
+				'group1': commonLogic.appcommonhandle("产品日志基本信息",null), 
+				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'group2': commonLogic.appcommonhandle("操作信息",null), 
+				'formpage2': commonLogic.appcommonhandle("其它",null), 
+				'srforikey': commonLogic.appcommonhandle("",null), 
+				'srfkey': commonLogic.appcommonhandle("id",null), 
+				'srfmajortext': commonLogic.appcommonhandle("备注",null), 
+				'srftempmode': commonLogic.appcommonhandle("",null), 
+				'srfuf': commonLogic.appcommonhandle("",null), 
+				'srfdeid': commonLogic.appcommonhandle("",null), 
+				'srfsourcekey': commonLogic.appcommonhandle("",null), 
+				'id': commonLogic.appcommonhandle("id",null), 
+			},
+			uiactions: {
 			},
 		},
 		classifybytype_list: {
@@ -48,19 +96,29 @@ function getLocaleResourceBase(){
 			uiactions: {
 			},
 		},
-		list_list: {
-			nodata:commonLogic.appcommonhandle("",null),
-			uiactions: {
+		addlistviewtoolbar_toolbar: {
+			'deuiaction1': {
+				caption: commonLogic.appcommonhandle("添加备注",null),
+				tip: commonLogic.appcommonhandle("添加备注",null),
 			},
 		},
-		default_searchform: {
-			details: {
-				'formpage1': commonLogic.appcommonhandle("常规条件",null), 
+		editviewtoolbar_toolbar: {
+			'tbitem3': {
+				caption: commonLogic.appcommonhandle("保存",null),
+				tip: commonLogic.appcommonhandle("保存",null),
 			},
-			uiactions: {
+			'tbitem4': {
+				caption: commonLogic.appcommonhandle("保存并新建",null),
+				tip: commonLogic.appcommonhandle("保存并新建",null),
 			},
-		},
-		addcommenthistorylistviewtoolbar_toolbar: {
+			'tbitem5': {
+				caption: commonLogic.appcommonhandle("保存并关闭",null),
+				tip: commonLogic.appcommonhandle("保存并关闭",null),
+			},
+			'tbitem7': {
+				caption: commonLogic.appcommonhandle("删除",null),
+				tip: commonLogic.appcommonhandle("删除",null),
+			},
 		},
 	};
 	return data;

@@ -326,14 +326,14 @@
           "name" : "druipart1",
           "getPSAppView" : {
             "accUserMode" : 2,
-            "caption" : "系统日志",
-            "codeName" : "ActionHistoryListView",
-            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionHistoryListView.json",
+            "caption" : "产品日志",
+            "codeName" : "IBZProProductActionListView",
+            "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProProductActionListView.json",
             "mDCtrlActiveMode" : 2,
-            "name" : "ActionHistoryListView",
+            "name" : "IBZProProductActionListView",
             "getPSAppDataEntity" : {
               "modelref" : true,
-              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+              "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductAction.json"
             },
             "getPSAppViewEngines" : [ {
               "engineCat" : "VIEW",
@@ -361,14 +361,14 @@
                 "getNewDataPSAppView" : {
                   "getRefPSAppView" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProProductActionEditView.json",
                     "viewType" : "DEEDITVIEW"
                   }
                 },
                 "getPSAppUILogicRefViews" : [ {
                   "getRefPSAppView" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProProductActionEditView.json",
                     "viewType" : "DEEDITVIEW"
                   }
                 } ],
@@ -387,14 +387,14 @@
                 "getOpenDataPSAppView" : {
                   "getRefPSAppView" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProProductActionEditView.json",
                     "viewType" : "DEEDITVIEW"
                   }
                 },
                 "getPSAppUILogicRefViews" : [ {
                   "getRefPSAppView" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",
+                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProProductActionEditView.json",
                     "viewType" : "DEEDITVIEW"
                   }
                 } ],
@@ -402,39 +402,20 @@
                 "editMode" : false
               }
             } ],
-            "getPSAppViewNavContexts" : [ {
-              "key" : "OBJECTID",
-              "name" : "OBJECTID",
-              "value" : "srfparentkey",
-              "rawValue" : false
-            } ],
-            "getPSAppViewNavParams" : [ {
-              "key" : "objecttype",
-              "name" : "objecttype",
-              "value" : "OBJECTTYPE",
-              "rawValue" : false
-            }, {
-              "key" : "objectid",
-              "name" : "objectid",
-              "value" : "srfparentkey",
-              "rawValue" : false
-            } ],
             "getPSAppViewRefs" : [ {
               "name" : "NEWDATA",
-              "realOpenMode" : "POPUPMODAL",
-              "realTitle" : "备注",
+              "realTitle" : "产品日志编辑视图",
               "getRefPSAppView" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProProductActionEditView.json",
                 "viewType" : "DEEDITVIEW"
               }
             }, {
               "name" : "EDITDATA",
-              "realOpenMode" : "POPUPMODAL",
-              "realTitle" : "备注",
+              "realTitle" : "产品日志编辑视图",
               "getRefPSAppView" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/ActionEditView.json",
+                "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/IBZProProductActionEditView.json",
                 "viewType" : "DEEDITVIEW"
               }
             } ],
@@ -445,7 +426,7 @@
                 "modelref" : true,
                 "id" : "create"
               },
-              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/History/PSLISTS/DEFAULT.json",
+              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductHistory/PSLISTS/DEFAULT.json",
               "getFetchPSControlAction" : {
                 "modelref" : true,
                 "id" : "fetch"
@@ -463,7 +444,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/History.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductHistory.json"
               },
               "getPSControlHandler" : {
                 "getPSHandlerActions" : [ {
@@ -477,7 +458,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/History.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductHistory.json"
                   }
                 }, {
                   "actionType" : "DEDATASET",
@@ -488,7 +469,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/History.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductHistory.json"
                   }
                 }, {
                   "actionName" : "Remove",
@@ -501,7 +482,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/History.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductHistory.json"
                   }
                 }, {
                   "actionName" : "Get",
@@ -514,7 +495,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/History.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductHistory.json"
                   }
                 }, {
                   "actionName" : "Create",
@@ -527,7 +508,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/History.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductHistory.json"
                   }
                 } ],
                 "userDRAction" : "READ",
@@ -541,22 +522,22 @@
               },
               "getPSDEListDataItems" : [ {
                 "dataType" : 25,
-                "name" : "field"
-              }, {
-                "dataType" : 25,
                 "name" : "ibiznew"
               }, {
                 "dataType" : 1,
-                "name" : "id"
-              }, {
-                "dataType" : 21,
-                "name" : "old"
+                "name" : "action"
               }, {
                 "dataType" : 21,
                 "name" : "diff"
               }, {
+                "dataType" : 25,
+                "name" : "field"
+              }, {
+                "dataType" : 21,
+                "name" : "old"
+              }, {
                 "dataType" : 1,
-                "name" : "action"
+                "name" : "id"
               } ],
               "pagingSize" : 1000,
               "getRemovePSControlAction" : {
@@ -576,7 +557,7 @@
               "noSort" : false,
               "showHeader" : true,
               "name" : "history",
-              "modelid" : "c3a36618c939852256c260861292987f",
+              "modelid" : "d1d167d89c2ae4e435572e5e4d3bf329",
               "modeltype" : "PSDELIST"
             }, {
               "codeName" : "ClassifyByType",
@@ -585,7 +566,7 @@
                 "modelref" : true,
                 "id" : "create"
               },
-              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action/PSLISTS/ClassifyByType.json",
+              "dynaModelFilePath" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductAction/PSLISTS/ClassifyByType.json",
               "getFetchPSControlAction" : {
                 "modelref" : true,
                 "id" : "fetch"
@@ -604,7 +585,7 @@
               },
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductAction.json"
               },
               "getPSControlHandler" : {
                 "getPSHandlerActions" : [ {
@@ -618,7 +599,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductAction.json"
                   }
                 }, {
                   "actionType" : "DEDATASET",
@@ -629,7 +610,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductAction.json"
                   }
                 }, {
                   "actionName" : "Remove",
@@ -642,7 +623,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductAction.json"
                   }
                 }, {
                   "actionName" : "Get",
@@ -655,7 +636,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductAction.json"
                   }
                 }, {
                   "actionName" : "Create",
@@ -668,7 +649,7 @@
                   },
                   "getPSAppDataEntity" : {
                     "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+                    "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductAction.json"
                   }
                 } ],
                 "userDRAction" : "READ",
@@ -681,15 +662,11 @@
                 "id" : "LIST"
               },
               "getPSDEListDataItems" : [ {
-                "dataType" : 25,
-                "name" : "product"
+                "dataType" : 1,
+                "name" : "objectid"
               }, {
-                "dataType" : 5,
-                "format" : "YYYY-MM-DD HH:mm:ss",
-                "name" : "date"
-              }, {
-                "dataType" : 21,
-                "name" : "comment"
+                "dataType" : 1,
+                "name" : "project"
               }, {
                 "dataType" : 25,
                 "name" : "actiontype",
@@ -698,14 +675,15 @@
                   "codeName" : "Action"
                 }
               }, {
-                "dataType" : 1,
-                "name" : "id"
-              }, {
-                "dataType" : 25,
-                "name" : "objecttype"
-              }, {
                 "dataType" : 21,
                 "name" : "extra"
+              }, {
+                "dataType" : 5,
+                "format" : "YYYY-MM-DD HH:mm:ss",
+                "name" : "date"
+              }, {
+                "dataType" : 1,
+                "name" : "id"
               }, {
                 "dataType" : 25,
                 "getFrontPSCodeList" : {
@@ -713,12 +691,6 @@
                   "path" : "PSSYSAPPS/Web/PSAPPCODELISTS/ActionManner.json"
                 },
                 "name" : "actionmanner"
-              }, {
-                "dataType" : 1,
-                "name" : "objectid"
-              }, {
-                "dataType" : 1,
-                "name" : "isactorss"
               }, {
                 "dataType" : 25,
                 "getFrontPSCodeList" : {
@@ -728,7 +700,16 @@
                 "name" : "actor"
               }, {
                 "dataType" : 1,
-                "name" : "project"
+                "name" : "isactorss"
+              }, {
+                "dataType" : 21,
+                "name" : "comment"
+              }, {
+                "dataType" : 25,
+                "name" : "product"
+              }, {
+                "dataType" : 25,
+                "name" : "objecttype"
               }, {
                 "dataType" : 25,
                 "name" : "srfkey",
@@ -766,11 +747,11 @@
               "noSort" : false,
               "showHeader" : true,
               "name" : "list",
-              "modelid" : "3b94c5ec8c0db8db6a5f36fa82c3ed3b",
+              "modelid" : "738fed562e14b70027531084cafb10ef",
               "modeltype" : "PSDELIST"
             } ],
-            "getPSDEViewCodeName" : "HistoryListView",
-            "getPSDEViewId" : "5935ac98547dd7e654dd72f687b9e859",
+            "getPSDEViewCodeName" : "ListView",
+            "getPSDEViewId" : "230728D2-200C-4C2D-85D5-3E6ADB907171",
             "getPSViewLayoutPanel" : {
               "codeName" : "Layoutpanel",
               "controlStyle" : "APPDELISTVIEW_STYLE2",
@@ -778,21 +759,47 @@
               "name" : "layoutpanel",
               "getPSAppDataEntity" : {
                 "modelref" : true,
-                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductAction.json"
               },
               "getPSControlParam" : { },
               "layoutPanel" : true,
               "useDefaultLayout" : true
             },
-            "title" : "历史记录",
+            "title" : "产品日志列表视图",
             "viewStyle" : "STYLE2",
             "viewType" : "DELISTVIEW",
             "xDataControlName" : "list",
             "enableDP" : true,
             "enableFilter" : false,
             "showCaptionBar" : false,
-            "modelid" : "63a73a2e80dc47c05dd3ead4f03ae3c3",
-            "modeltype" : "PSAPPDEVIEW"
+            "modelid" : "23c1b955e97083dd8de0d3755f0e608a",
+            "modeltype" : "PSAPPDEVIEW",
+            "getPSAppDERSPaths" : [ [ {
+              "actionRSMode" : 1,
+              "codeName" : "IBZProProductActions",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Product.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/IBZProProductAction.json"
+              },
+              "name" : "产品-产品日志",
+              "getParentPSAppDEField" : {
+                "name" : "OBJECTID",
+                "codeName" : "ObjectID"
+              },
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            } ] ]
           },
           "getPSLayoutPos" : {
             "colLG" : 23,
@@ -802,8 +809,11 @@
             "layout" : "TABLE_24COL"
           },
           "parentDataJO" : {
+            "srfparentdefname" : "OBJECTID",
             "srfparentdename" : "ZT_PRODUCT",
-            "SRFPARENTTYPE" : "CUSTOM"
+            "SRFPARENTTYPE" : "DER1N",
+            "srfparentmode" : "DER1N_IBZPRO_PRODUCTACTION_ZT_PRODUCT_OBJECTID",
+            "SRFDER1NID" : "DER1N_IBZPRO_PRODUCTACTION_ZT_PRODUCT_OBJECTID"
           },
           "needSave" : false,
           "refreshItemsSetParamOnly" : false,

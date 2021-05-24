@@ -13,6 +13,9 @@
     "path" : "PSMODULES/ibiz/PSCODELISTS/ProjectTeamProduct.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/Action__read.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/PlanCodeList.json"
   }, {
     "modelref" : true,
@@ -29,6 +32,12 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/AllRepo.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/ActionManner.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/Action__object_type.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/AllCase.json"
@@ -50,6 +59,9 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/ProductBranch_Cache.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/Action__type.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/AllTask.json"
@@ -133,6 +145,9 @@
     "path" : "PSMODULES/ibiz/PSCODELISTS/Bug_type_pie.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSCODELISTS/AllStory.json"
   }, {
     "modelref" : true,
@@ -165,6 +180,12 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProductHistory.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProStoryHistory.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBzDoc.json"
@@ -213,6 +234,12 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductModule.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductPlanAction.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductPlanHistory.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductStats.json"

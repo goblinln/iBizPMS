@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Data
 @ApiModel("用例步骤")
-@JsonFilter(value = "dtofieldfilter")
+//@JsonFilter(value = "dtofieldfilter")
 public class CaseStepDTO extends DTOBase implements Serializable {
 
 	private static final long serialVersionUID = 1L;
