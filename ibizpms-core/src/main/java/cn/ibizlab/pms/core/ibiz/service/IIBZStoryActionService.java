@@ -41,6 +41,7 @@ public interface IIBZStoryActionService extends IService<IBZStoryAction> {
     List<IBZStoryAction> select(IBZStoryActionSearchContext context);
     List<IBZStoryAction> selectDefault(IBZStoryActionSearchContext context);
     List<IBZStoryAction> selectSimple(IBZStoryActionSearchContext context);
+    List<IBZStoryAction> selectType(IBZStoryActionSearchContext context);
     List<IBZStoryAction> selectView(IBZStoryActionSearchContext context);
 
     Page<IBZStoryAction> searchDefault(IBZStoryActionSearchContext context);

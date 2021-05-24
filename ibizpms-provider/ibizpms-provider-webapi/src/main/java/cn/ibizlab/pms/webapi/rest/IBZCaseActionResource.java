@@ -37,7 +37,7 @@ import cn.ibizlab.pms.util.annotation.VersionCheck;
 import cn.ibizlab.pms.core.ibiz.runtime.IBZCaseActionRuntime;
 
 @Slf4j
-@Api(tags = {"测试日志" })
+@Api(tags = {"测试用例日志" })
 @RestController("WebApi-ibzcaseaction")
 @RequestMapping("")
 public class IBZCaseActionResource {
@@ -53,7 +53,7 @@ public class IBZCaseActionResource {
     public IBZCaseActionMapping ibzcaseactionMapping;
 
     @PreAuthorize("@IBZCaseActionRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "新建测试日志", tags = {"测试日志" },  notes = "新建测试日志")
+    @ApiOperation(value = "新建测试用例日志", tags = {"测试用例日志" },  notes = "新建测试用例日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcaseactions")
     @Transactional
     public ResponseEntity<IBZCaseActionDTO> create(@Validated @RequestBody IBZCaseActionDTO ibzcaseactiondto) {
@@ -68,7 +68,7 @@ public class IBZCaseActionResource {
     }
 
     @PreAuthorize("@IBZCaseActionRuntime.quickTest('CREATE')")
-    @ApiOperation(value = "批量新建测试日志", tags = {"测试日志" },  notes = "批量新建测试日志")
+    @ApiOperation(value = "批量新建测试用例日志", tags = {"测试用例日志" },  notes = "批量新建测试用例日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcaseactions/batch")
     public ResponseEntity<Boolean> createBatch(@RequestBody List<IBZCaseActionDTO> ibzcaseactiondtos) {
         ibzcaseactionService.createBatch(ibzcaseactionMapping.toDomain(ibzcaseactiondtos));
@@ -76,7 +76,7 @@ public class IBZCaseActionResource {
     }
 
     @PreAuthorize("@IBZCaseActionRuntime.test(#ibzcaseaction_id,'UPDATE')")
-    @ApiOperation(value = "更新测试日志", tags = {"测试日志" },  notes = "更新测试日志")
+    @ApiOperation(value = "更新测试用例日志", tags = {"测试用例日志" },  notes = "更新测试用例日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzcaseactions/{ibzcaseaction_id}")
     @Transactional
     public ResponseEntity<IBZCaseActionDTO> update(@PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseActionDTO ibzcaseactiondto) {
@@ -92,7 +92,7 @@ public class IBZCaseActionResource {
     }
 
     @PreAuthorize("@IBZCaseActionRuntime.quickTest('UPDATE')")
-    @ApiOperation(value = "批量更新测试日志", tags = {"测试日志" },  notes = "批量更新测试日志")
+    @ApiOperation(value = "批量更新测试用例日志", tags = {"测试用例日志" },  notes = "批量更新测试用例日志")
 	@RequestMapping(method = RequestMethod.PUT, value = "/ibzcaseactions/batch")
     public ResponseEntity<Boolean> updateBatch(@RequestBody List<IBZCaseActionDTO> ibzcaseactiondtos) {
         ibzcaseactionService.updateBatch(ibzcaseactionMapping.toDomain(ibzcaseactiondtos));
@@ -100,14 +100,14 @@ public class IBZCaseActionResource {
     }
 
     @PreAuthorize("@IBZCaseActionRuntime.test(#ibzcaseaction_id,'DELETE')")
-    @ApiOperation(value = "删除测试日志", tags = {"测试日志" },  notes = "删除测试日志")
+    @ApiOperation(value = "删除测试用例日志", tags = {"测试用例日志" },  notes = "删除测试用例日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzcaseactions/{ibzcaseaction_id}")
     public ResponseEntity<Boolean> remove(@PathVariable("ibzcaseaction_id") Long ibzcaseaction_id) {
          return ResponseEntity.status(HttpStatus.OK).body(ibzcaseactionService.remove(ibzcaseaction_id));
     }
 
     @PreAuthorize("@IBZCaseActionRuntime.test(#ids,'DELETE')")
-    @ApiOperation(value = "批量删除测试日志", tags = {"测试日志" },  notes = "批量删除测试日志")
+    @ApiOperation(value = "批量删除测试用例日志", tags = {"测试用例日志" },  notes = "批量删除测试用例日志")
 	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzcaseactions/batch")
     public ResponseEntity<Boolean> removeBatch(@RequestBody List<Long> ids) {
         ibzcaseactionService.removeBatch(ids);
@@ -115,7 +115,7 @@ public class IBZCaseActionResource {
     }
 
     @PreAuthorize("@IBZCaseActionRuntime.test(#ibzcaseaction_id,'READ')")
-    @ApiOperation(value = "获取测试日志", tags = {"测试日志" },  notes = "获取测试日志")
+    @ApiOperation(value = "获取测试用例日志", tags = {"测试用例日志" },  notes = "获取测试用例日志")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzcaseactions/{ibzcaseaction_id}")
     public ResponseEntity<IBZCaseActionDTO> get(@PathVariable("ibzcaseaction_id") Long ibzcaseaction_id) {
         IBZCaseAction domain = ibzcaseactionService.get(ibzcaseaction_id);
@@ -125,20 +125,20 @@ public class IBZCaseActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "获取测试日志草稿", tags = {"测试日志" },  notes = "获取测试日志草稿")
+    @ApiOperation(value = "获取测试用例日志草稿", tags = {"测试用例日志" },  notes = "获取测试用例日志草稿")
 	@RequestMapping(method = RequestMethod.GET, value = "/ibzcaseactions/getdraft")
     public ResponseEntity<IBZCaseActionDTO> getDraft(IBZCaseActionDTO dto) {
         IBZCaseAction domain = ibzcaseactionMapping.toDomain(dto);
         return ResponseEntity.status(HttpStatus.OK).body(ibzcaseactionMapping.toDto(ibzcaseactionService.getDraft(domain)));
     }
 
-    @ApiOperation(value = "检查测试日志", tags = {"测试日志" },  notes = "检查测试日志")
+    @ApiOperation(value = "检查测试用例日志", tags = {"测试用例日志" },  notes = "检查测试用例日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcaseactions/checkkey")
     public ResponseEntity<Boolean> checkKey(@RequestBody IBZCaseActionDTO ibzcaseactiondto) {
         return  ResponseEntity.status(HttpStatus.OK).body(ibzcaseactionService.checkKey(ibzcaseactionMapping.toDomain(ibzcaseactiondto)));
     }
 
-    @ApiOperation(value = "保存测试日志", tags = {"测试日志" },  notes = "保存测试日志")
+    @ApiOperation(value = "保存测试用例日志", tags = {"测试用例日志" },  notes = "保存测试用例日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcaseactions/save")
     public ResponseEntity<IBZCaseActionDTO> save(@RequestBody IBZCaseActionDTO ibzcaseactiondto) {
         IBZCaseAction domain = ibzcaseactionMapping.toDomain(ibzcaseactiondto);
@@ -149,7 +149,7 @@ public class IBZCaseActionResource {
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
-    @ApiOperation(value = "批量保存测试日志", tags = {"测试日志" },  notes = "批量保存测试日志")
+    @ApiOperation(value = "批量保存测试用例日志", tags = {"测试用例日志" },  notes = "批量保存测试用例日志")
 	@RequestMapping(method = RequestMethod.POST, value = "/ibzcaseactions/savebatch")
     public ResponseEntity<Boolean> saveBatch(@RequestBody List<IBZCaseActionDTO> ibzcaseactiondtos) {
         ibzcaseactionService.saveBatch(ibzcaseactionMapping.toDomain(ibzcaseactiondtos));
@@ -157,7 +157,7 @@ public class IBZCaseActionResource {
     }
 
     @PreAuthorize("@IBZCaseActionRuntime.quickTest('READ')")
-	@ApiOperation(value = "获取数据集", tags = {"测试日志" } ,notes = "获取数据集")
+	@ApiOperation(value = "获取数据集", tags = {"测试用例日志" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzcaseactions/fetchdefault")
 	public ResponseEntity<List<IBZCaseActionDTO>> fetchdefault(@RequestBody IBZCaseActionSearchContext context) {
         Page<IBZCaseAction> domains = ibzcaseactionService.searchDefault(context) ;
@@ -170,10 +170,32 @@ public class IBZCaseActionResource {
 	}
 
     @PreAuthorize("@IBZCaseActionRuntime.quickTest('READ')")
-	@ApiOperation(value = "查询数据集", tags = {"测试日志" } ,notes = "查询数据集")
+	@ApiOperation(value = "查询数据集", tags = {"测试用例日志" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzcaseactions/searchdefault")
 	public ResponseEntity<Page<IBZCaseActionDTO>> searchDefault(@RequestBody IBZCaseActionSearchContext context) {
         Page<IBZCaseAction> domains = ibzcaseactionService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzcaseactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
+    @PreAuthorize("@IBZCaseActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"测试用例日志" } ,notes = "获取动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzcaseactions/fetchtype")
+	public ResponseEntity<List<IBZCaseActionDTO>> fetchtype(@RequestBody IBZCaseActionSearchContext context) {
+        Page<IBZCaseAction> domains = ibzcaseactionService.searchType(context) ;
+        List<IBZCaseActionDTO> list = ibzcaseactionMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IBZCaseActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询动态(根据类型过滤)", tags = {"测试用例日志" } ,notes = "查询动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzcaseactions/searchtype")
+	public ResponseEntity<Page<IBZCaseActionDTO>> searchType(@RequestBody IBZCaseActionSearchContext context) {
+        Page<IBZCaseAction> domains = ibzcaseactionService.searchType(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzcaseactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}

@@ -52,6 +52,9 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
     @Lazy
     cn.ibizlab.pms.core.zentao.runtime.TodoRuntime todoRuntime;
 
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.ibiz.service.IIBZProToDoActionService ibzprotodoactionService;
 
     protected int batchSize = 500;
 
@@ -341,6 +344,9 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
     public List<Todo> selectDefault(TodoSearchContext context){
         return baseMapper.selectDefault(context, context.getSelectCond());
     }
+    public List<Todo> selectMyCreateTodo(TodoSearchContext context){
+        return baseMapper.selectMyCreateTodo(context, context.getSelectCond());
+    }
     public List<Todo> selectMyTodo(TodoSearchContext context){
         return baseMapper.selectMyTodo(context, context.getSelectCond());
     }
@@ -361,6 +367,15 @@ public class TodoServiceImpl extends ServiceImpl<TodoMapper, Todo> implements IT
     @Override
     public Page<Todo> searchDefault(TodoSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<Todo> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<Todo>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 我创建或参与待办
+     */
+    @Override
+    public Page<Todo> searchMyCreateTodo(TodoSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<Todo> pages=baseMapper.searchMyCreateTodo(context.getPages(),context,context.getSelectCond());
         return new PageImpl<Todo>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

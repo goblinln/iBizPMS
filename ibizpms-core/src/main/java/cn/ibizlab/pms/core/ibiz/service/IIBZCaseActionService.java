@@ -41,9 +41,11 @@ public interface IIBZCaseActionService extends IService<IBZCaseAction> {
     List<IBZCaseAction> select(IBZCaseActionSearchContext context);
     List<IBZCaseAction> selectDefault(IBZCaseActionSearchContext context);
     List<IBZCaseAction> selectSimple(IBZCaseActionSearchContext context);
+    List<IBZCaseAction> selectType(IBZCaseActionSearchContext context);
     List<IBZCaseAction> selectView(IBZCaseActionSearchContext context);
 
     Page<IBZCaseAction> searchDefault(IBZCaseActionSearchContext context);
+    Page<IBZCaseAction> searchType(IBZCaseActionSearchContext context);
     List<IBZCaseAction> selectByObjectid(Long id);
     void removeByObjectid(Long id);
     IBZCaseAction dynamicCall(Long key, String action, IBZCaseAction et);

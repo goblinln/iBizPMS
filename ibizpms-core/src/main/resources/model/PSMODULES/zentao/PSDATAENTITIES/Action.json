@@ -1971,8 +1971,7 @@
       }
     } ],
     "roleTag" : "Action_MANAGE_ALL",
-    "userDRAction" : "READ",
-    "defaultMode" : true
+    "userDRAction" : "READ"
   }, {
     "customCond" : "[ (1, '=', 1) ]",
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_READ_ALL.json",
@@ -1986,14 +1985,31 @@
       }
     } ],
     "roleTag" : "Action_READ_ALL",
-    "userDRAction" : "READ",
-    "defaultMode" : true
+    "userDRAction" : "READ"
+  }, {
+    "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_Read_MyAction.json",
+    "name" : "日志查看（我的日志）（跟随角色）",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyAction"
+    },
+    "getPSDEUserRoleOPPrivs" : [ {
+      "dataAccessAction" : "READ",
+      "name" : "Action_Read_MyAction_Read",
+      "getPSDEOPPriv" : {
+        "modelref" : true,
+        "id" : "Zt_project__READ"
+      }
+    } ],
+    "roleTag" : "Action_Read_MyAction",
+    "userCat" : "CAT1",
+    "userDRAction" : "READ"
   } ],
   "codeName" : "Action",
   "dEType" : 1,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
   "getDefaultPSDEDataSet" : {

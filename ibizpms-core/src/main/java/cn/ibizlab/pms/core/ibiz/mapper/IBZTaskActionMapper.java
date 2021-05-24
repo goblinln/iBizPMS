@@ -21,9 +21,11 @@ public interface IBZTaskActionMapper extends BaseMapper<IBZTaskAction> {
 
     List<IBZTaskAction> selectDefault(@Param("srf") IBZTaskActionSearchContext context, @Param("ew") Wrapper<IBZTaskAction> wrapper);
     List<IBZTaskAction> selectSimple(@Param("srf") IBZTaskActionSearchContext context, @Param("ew") Wrapper<IBZTaskAction> wrapper);
+    List<IBZTaskAction> selectType(@Param("srf") IBZTaskActionSearchContext context, @Param("ew") Wrapper<IBZTaskAction> wrapper);
     List<IBZTaskAction> selectView(@Param("srf") IBZTaskActionSearchContext context, @Param("ew") Wrapper<IBZTaskAction> wrapper);
 
     Page<IBZTaskAction> searchDefault(IPage page, @Param("srf") IBZTaskActionSearchContext context, @Param("ew") Wrapper<IBZTaskAction> wrapper);
+    Page<IBZTaskAction> searchType(IPage page, @Param("srf") IBZTaskActionSearchContext context, @Param("ew") Wrapper<IBZTaskAction> wrapper);
     @Override
     IBZTaskAction selectById(Serializable id);
     @Override

@@ -41,6 +41,7 @@ public interface IIBZDailyActionService extends IService<IBZDailyAction> {
     List<IBZDailyAction> select(IBZDailyActionSearchContext context);
     List<IBZDailyAction> selectDefault(IBZDailyActionSearchContext context);
     List<IBZDailyAction> selectSimple(IBZDailyActionSearchContext context);
+    List<IBZDailyAction> selectType(IBZDailyActionSearchContext context);
     List<IBZDailyAction> selectView(IBZDailyActionSearchContext context);
 
     Page<IBZDailyAction> searchDefault(IBZDailyActionSearchContext context);

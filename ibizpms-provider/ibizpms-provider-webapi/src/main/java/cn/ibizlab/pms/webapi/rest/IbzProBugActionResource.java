@@ -178,6 +178,28 @@ public class IbzProBugActionResource {
                 .body(new PageImpl(ibzprobugactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("@IbzProBugActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"Bug日志" } ,notes = "获取动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzprobugactions/fetchtype")
+	public ResponseEntity<List<IbzProBugActionDTO>> fetchtype(@RequestBody IbzProBugActionSearchContext context) {
+        Page<IbzProBugAction> domains = ibzprobugactionService.searchType(context) ;
+        List<IbzProBugActionDTO> list = ibzprobugactionMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IbzProBugActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询动态(根据类型过滤)", tags = {"Bug日志" } ,notes = "查询动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzprobugactions/searchtype")
+	public ResponseEntity<Page<IbzProBugActionDTO>> searchType(@RequestBody IbzProBugActionSearchContext context) {
+        Page<IbzProBugAction> domains = ibzprobugactionService.searchType(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzprobugactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzprobugactions/{ibzprobugaction_id}/{action}")

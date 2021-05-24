@@ -5600,7 +5600,33 @@
         "enableQuickSearch" : true,
         "showCaptionBar" : false,
         "modelid" : "4c1bedfd5d48687700719553a99dbda2",
-        "modeltype" : "PSAPPDEVIEW"
+        "modeltype" : "PSAPPDEVIEW",
+        "getPSAppDERSPaths" : [ [ {
+          "actionRSMode" : 1,
+          "codeName" : "Actions",
+          "dataRSMode" : 0,
+          "getMajorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+          },
+          "getMinorPSAppDataEntity" : {
+            "modelref" : true,
+            "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+          },
+          "name" : "项目-日志",
+          "getParentPSAppDEField" : {
+            "name" : "PROJECT",
+            "codeName" : "Project"
+          },
+          "rSMode" : 2,
+          "enableCreateDataRS" : false,
+          "enableDEAction" : true,
+          "enableDEDataSet" : true,
+          "enableGetDataRS" : false,
+          "enableSelect" : true,
+          "enableSelectDataRS" : false,
+          "enableUpdateDataRS" : false
+        } ] ]
       },
       "portletType" : "VIEW",
       "timer" : 60000,
@@ -21203,7 +21229,7 @@
       "viewType" : "DEMOBREDIRECTVIEW",
       "enableCustomGetDataAction" : false,
       "enableDP" : true,
-      "enableWorkflow" : true,
+      "enableWorkflow" : false,
       "redirectView" : true,
       "showCaptionBar" : true,
       "modelid" : "25ae8db8702f1b4b13ff1cbd953004db",
@@ -21341,7 +21367,33 @@
       "enablePullDownRefresh" : false,
       "showCaptionBar" : true,
       "modelid" : "d51cddc777fcf4f78f512f5b9e0538ea",
-      "modeltype" : "PSAPPDEVIEW"
+      "modeltype" : "PSAPPDEVIEW",
+      "getPSAppDERSPaths" : [ [ {
+        "actionRSMode" : 1,
+        "codeName" : "Actions",
+        "dataRSMode" : 0,
+        "getMajorPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+        },
+        "getMinorPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+        },
+        "name" : "项目-日志",
+        "getParentPSAppDEField" : {
+          "name" : "PROJECT",
+          "codeName" : "Project"
+        },
+        "rSMode" : 2,
+        "enableCreateDataRS" : false,
+        "enableDEAction" : true,
+        "enableDEDataSet" : true,
+        "enableGetDataRS" : false,
+        "enableSelect" : true,
+        "enableSelectDataRS" : false,
+        "enableUpdateDataRS" : false
+      } ] ]
     } ],
     "getPSAppDataEntities" : [ {
       "getAllPSAppDEACModes" : [ {
@@ -21752,6 +21804,15 @@
         "getPSDEServiceAPIMethod" : {
           "modelref" : true,
           "id" : "FetchMyUpcoming"
+        },
+        "builtinMethod" : false
+      }, {
+        "codeName" : "FetchMyCreateTodo",
+        "methodType" : "FETCH",
+        "name" : "MyCreateTodo",
+        "getPSDEDataSet" : {
+          "modelref" : true,
+          "id" : "MyCreateTodo"
         },
         "builtinMethod" : false
       } ],
@@ -22287,6 +22348,15 @@
         "getPSDEServiceAPIMethod" : {
           "modelref" : true,
           "id" : "FetchMyUpcoming"
+        },
+        "builtinMethod" : false
+      }, {
+        "codeName" : "FetchMyCreateTodo",
+        "methodType" : "FETCH",
+        "name" : "MyCreateTodo",
+        "getPSDEDataSet" : {
+          "modelref" : true,
+          "id" : "MyCreateTodo"
         },
         "builtinMethod" : false
       }, {
@@ -24524,10 +24594,36 @@
       } ],
       "codeName" : "Action",
       "dataAccCtrlArch" : 1,
-      "dataAccCtrlMode" : 1,
+      "dataAccCtrlMode" : 2,
       "dynaModelFilePath" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json",
       "enableUIActions" : 15,
       "logicName" : "系统日志",
+      "getMinorPSAppDERSs" : [ {
+        "actionRSMode" : 1,
+        "codeName" : "Actions",
+        "dataRSMode" : 0,
+        "getMajorPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Project.json"
+        },
+        "getMinorPSAppDataEntity" : {
+          "modelref" : true,
+          "path" : "PSSYSAPPS/Mob/PSAPPDATAENTITIES/Action.json"
+        },
+        "name" : "项目-日志",
+        "getParentPSAppDEField" : {
+          "name" : "PROJECT",
+          "codeName" : "Project"
+        },
+        "rSMode" : 2,
+        "enableCreateDataRS" : false,
+        "enableDEAction" : true,
+        "enableDEDataSet" : true,
+        "enableGetDataRS" : false,
+        "enableSelect" : true,
+        "enableSelectDataRS" : false,
+        "enableUpdateDataRS" : false
+      } ],
       "name" : "ZT_ACTION",
       "getPSDEName" : "ZT_ACTION",
       "getPSDEServiceAPI" : {

@@ -262,6 +262,9 @@ public class IBZTestSuiteActionServiceImpl extends ServiceImpl<IBZTestSuiteActio
     public List<IBZTestSuiteAction> selectSimple(IBZTestSuiteActionSearchContext context){
         return baseMapper.selectSimple(context, context.getSelectCond());
     }
+    public List<IBZTestSuiteAction> selectType(IBZTestSuiteActionSearchContext context){
+        return baseMapper.selectType(context, context.getSelectCond());
+    }
     public List<IBZTestSuiteAction> selectView(IBZTestSuiteActionSearchContext context){
         return baseMapper.selectView(context, context.getSelectCond());
     }

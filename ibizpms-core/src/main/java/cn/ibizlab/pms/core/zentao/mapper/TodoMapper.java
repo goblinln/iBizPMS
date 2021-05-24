@@ -20,12 +20,14 @@ import com.alibaba.fastjson.JSONObject;
 public interface TodoMapper extends BaseMapper<Todo> {
 
     List<Todo> selectDefault(@Param("srf") TodoSearchContext context, @Param("ew") Wrapper<Todo> wrapper);
+    List<Todo> selectMyCreateTodo(@Param("srf") TodoSearchContext context, @Param("ew") Wrapper<Todo> wrapper);
     List<Todo> selectMyTodo(@Param("srf") TodoSearchContext context, @Param("ew") Wrapper<Todo> wrapper);
     List<Todo> selectMyTodoPc(@Param("srf") TodoSearchContext context, @Param("ew") Wrapper<Todo> wrapper);
     List<Todo> selectMyUpcoming(@Param("srf") TodoSearchContext context, @Param("ew") Wrapper<Todo> wrapper);
     List<Todo> selectView(@Param("srf") TodoSearchContext context, @Param("ew") Wrapper<Todo> wrapper);
 
     Page<Todo> searchDefault(IPage page, @Param("srf") TodoSearchContext context, @Param("ew") Wrapper<Todo> wrapper);
+    Page<Todo> searchMyCreateTodo(IPage page, @Param("srf") TodoSearchContext context, @Param("ew") Wrapper<Todo> wrapper);
     Page<Todo> searchMyTodo(IPage page, @Param("srf") TodoSearchContext context, @Param("ew") Wrapper<Todo> wrapper);
     Page<Todo> searchMyTodoPc(IPage page, @Param("srf") TodoSearchContext context, @Param("ew") Wrapper<Todo> wrapper);
     Page<Todo> searchMyUpcoming(IPage page, @Param("srf") TodoSearchContext context, @Param("ew") Wrapper<Todo> wrapper);

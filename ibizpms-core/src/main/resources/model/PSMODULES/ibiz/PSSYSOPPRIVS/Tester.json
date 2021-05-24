@@ -53,6 +53,26 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     }
   }, {
+    "name" : "测试人员-ZT_ACTION[日志查看（我的日志）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_Read_MyAction.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
+    }
+  }, {
+    "name" : "测试人员-ZT_TODO[待办维护（我的待办）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Maintain_MyTodo.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+    }
+  }, {
     "name" : "测试人员-ZT_STORY[需求维护（我创建或参与）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,

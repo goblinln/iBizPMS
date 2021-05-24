@@ -178,6 +178,28 @@ public class IBZProReleaseActionResource {
                 .body(new PageImpl(ibzproreleaseactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("@IBZProReleaseActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"发布日志" } ,notes = "获取动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzproreleaseactions/fetchtype")
+	public ResponseEntity<List<IBZProReleaseActionDTO>> fetchtype(@RequestBody IBZProReleaseActionSearchContext context) {
+        Page<IBZProReleaseAction> domains = ibzproreleaseactionService.searchType(context) ;
+        List<IBZProReleaseActionDTO> list = ibzproreleaseactionMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IBZProReleaseActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询动态(根据类型过滤)", tags = {"发布日志" } ,notes = "查询动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzproreleaseactions/searchtype")
+	public ResponseEntity<Page<IBZProReleaseActionDTO>> searchType(@RequestBody IBZProReleaseActionSearchContext context) {
+        Page<IBZProReleaseAction> domains = ibzproreleaseactionService.searchType(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzproreleaseactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzproreleaseactions/{ibzproreleaseaction_id}/{action}")

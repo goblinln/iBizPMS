@@ -21,6 +21,7 @@ public interface IBZStoryActionMapper extends BaseMapper<IBZStoryAction> {
 
     List<IBZStoryAction> selectDefault(@Param("srf") IBZStoryActionSearchContext context, @Param("ew") Wrapper<IBZStoryAction> wrapper);
     List<IBZStoryAction> selectSimple(@Param("srf") IBZStoryActionSearchContext context, @Param("ew") Wrapper<IBZStoryAction> wrapper);
+    List<IBZStoryAction> selectType(@Param("srf") IBZStoryActionSearchContext context, @Param("ew") Wrapper<IBZStoryAction> wrapper);
     List<IBZStoryAction> selectView(@Param("srf") IBZStoryActionSearchContext context, @Param("ew") Wrapper<IBZStoryAction> wrapper);
 
     Page<IBZStoryAction> searchDefault(IPage page, @Param("srf") IBZStoryActionSearchContext context, @Param("ew") Wrapper<IBZStoryAction> wrapper);

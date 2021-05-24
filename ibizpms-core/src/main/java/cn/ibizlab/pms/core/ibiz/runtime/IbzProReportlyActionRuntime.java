@@ -139,6 +139,8 @@ public class IbzProReportlyActionRuntime extends cn.ibizlab.pms.core.runtime.Sys
             return ibzproreportlyactionService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("SIMPLE"))
             return ibzproreportlyactionService.selectSimple(searchContext);
+        if (iPSDataQuery.getName().equals("Type"))
+            return ibzproreportlyactionService.selectType(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
             return ibzproreportlyactionService.selectView(searchContext);
         return null;

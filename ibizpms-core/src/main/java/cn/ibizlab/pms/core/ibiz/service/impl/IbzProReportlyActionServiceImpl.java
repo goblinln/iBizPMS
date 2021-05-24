@@ -262,6 +262,9 @@ public class IbzProReportlyActionServiceImpl extends ServiceImpl<IbzProReportlyA
     public List<IbzProReportlyAction> selectSimple(IbzProReportlyActionSearchContext context){
         return baseMapper.selectSimple(context, context.getSelectCond());
     }
+    public List<IbzProReportlyAction> selectType(IbzProReportlyActionSearchContext context){
+        return baseMapper.selectType(context, context.getSelectCond());
+    }
     public List<IbzProReportlyAction> selectView(IbzProReportlyActionSearchContext context){
         return baseMapper.selectView(context, context.getSelectCond());
     }

@@ -41,9 +41,11 @@ public interface IIbzProMonthlyActionService extends IService<IbzProMonthlyActio
     List<IbzProMonthlyAction> select(IbzProMonthlyActionSearchContext context);
     List<IbzProMonthlyAction> selectDefault(IbzProMonthlyActionSearchContext context);
     List<IbzProMonthlyAction> selectSimple(IbzProMonthlyActionSearchContext context);
+    List<IbzProMonthlyAction> selectType(IbzProMonthlyActionSearchContext context);
     List<IbzProMonthlyAction> selectView(IbzProMonthlyActionSearchContext context);
 
     Page<IbzProMonthlyAction> searchDefault(IbzProMonthlyActionSearchContext context);
+    Page<IbzProMonthlyAction> searchType(IbzProMonthlyActionSearchContext context);
     List<IbzProMonthlyAction> selectByObjectid(Long ibzmonthlyid);
     void removeByObjectid(Long ibzmonthlyid);
     IbzProMonthlyAction dynamicCall(Long key, String action, IbzProMonthlyAction et);

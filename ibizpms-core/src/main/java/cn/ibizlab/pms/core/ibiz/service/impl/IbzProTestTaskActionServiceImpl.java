@@ -262,6 +262,9 @@ public class IbzProTestTaskActionServiceImpl extends ServiceImpl<IbzProTestTaskA
     public List<IbzProTestTaskAction> selectSimple(IbzProTestTaskActionSearchContext context){
         return baseMapper.selectSimple(context, context.getSelectCond());
     }
+    public List<IbzProTestTaskAction> selectType(IbzProTestTaskActionSearchContext context){
+        return baseMapper.selectType(context, context.getSelectCond());
+    }
     public List<IbzProTestTaskAction> selectView(IbzProTestTaskActionSearchContext context){
         return baseMapper.selectView(context, context.getSelectCond());
     }

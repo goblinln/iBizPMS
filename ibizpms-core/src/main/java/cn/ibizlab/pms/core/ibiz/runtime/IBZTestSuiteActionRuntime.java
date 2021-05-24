@@ -139,6 +139,8 @@ public class IBZTestSuiteActionRuntime extends cn.ibizlab.pms.core.runtime.Syste
             return ibztestsuiteactionService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("SIMPLE"))
             return ibztestsuiteactionService.selectSimple(searchContext);
+        if (iPSDataQuery.getName().equals("Type"))
+            return ibztestsuiteactionService.selectType(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
             return ibztestsuiteactionService.selectView(searchContext);
         return null;

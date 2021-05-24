@@ -21,6 +21,7 @@ public interface IbzProTestTaskActionMapper extends BaseMapper<IbzProTestTaskAct
 
     List<IbzProTestTaskAction> selectDefault(@Param("srf") IbzProTestTaskActionSearchContext context, @Param("ew") Wrapper<IbzProTestTaskAction> wrapper);
     List<IbzProTestTaskAction> selectSimple(@Param("srf") IbzProTestTaskActionSearchContext context, @Param("ew") Wrapper<IbzProTestTaskAction> wrapper);
+    List<IbzProTestTaskAction> selectType(@Param("srf") IbzProTestTaskActionSearchContext context, @Param("ew") Wrapper<IbzProTestTaskAction> wrapper);
     List<IbzProTestTaskAction> selectView(@Param("srf") IbzProTestTaskActionSearchContext context, @Param("ew") Wrapper<IbzProTestTaskAction> wrapper);
 
     Page<IbzProTestTaskAction> searchDefault(IPage page, @Param("srf") IbzProTestTaskActionSearchContext context, @Param("ew") Wrapper<IbzProTestTaskAction> wrapper);

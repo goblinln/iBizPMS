@@ -21,9 +21,11 @@ public interface ProductPlanActionMapper extends BaseMapper<ProductPlanAction> {
 
     List<ProductPlanAction> selectDefault(@Param("srf") ProductPlanActionSearchContext context, @Param("ew") Wrapper<ProductPlanAction> wrapper);
     List<ProductPlanAction> selectSimple(@Param("srf") ProductPlanActionSearchContext context, @Param("ew") Wrapper<ProductPlanAction> wrapper);
+    List<ProductPlanAction> selectType(@Param("srf") ProductPlanActionSearchContext context, @Param("ew") Wrapper<ProductPlanAction> wrapper);
     List<ProductPlanAction> selectView(@Param("srf") ProductPlanActionSearchContext context, @Param("ew") Wrapper<ProductPlanAction> wrapper);
 
     Page<ProductPlanAction> searchDefault(IPage page, @Param("srf") ProductPlanActionSearchContext context, @Param("ew") Wrapper<ProductPlanAction> wrapper);
+    Page<ProductPlanAction> searchType(IPage page, @Param("srf") ProductPlanActionSearchContext context, @Param("ew") Wrapper<ProductPlanAction> wrapper);
     @Override
     ProductPlanAction selectById(Serializable id);
     @Override

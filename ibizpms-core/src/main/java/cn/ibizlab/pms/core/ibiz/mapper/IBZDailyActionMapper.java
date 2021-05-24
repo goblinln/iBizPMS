@@ -21,6 +21,7 @@ public interface IBZDailyActionMapper extends BaseMapper<IBZDailyAction> {
 
     List<IBZDailyAction> selectDefault(@Param("srf") IBZDailyActionSearchContext context, @Param("ew") Wrapper<IBZDailyAction> wrapper);
     List<IBZDailyAction> selectSimple(@Param("srf") IBZDailyActionSearchContext context, @Param("ew") Wrapper<IBZDailyAction> wrapper);
+    List<IBZDailyAction> selectType(@Param("srf") IBZDailyActionSearchContext context, @Param("ew") Wrapper<IBZDailyAction> wrapper);
     List<IBZDailyAction> selectView(@Param("srf") IBZDailyActionSearchContext context, @Param("ew") Wrapper<IBZDailyAction> wrapper);
 
     Page<IBZDailyAction> searchDefault(IPage page, @Param("srf") IBZDailyActionSearchContext context, @Param("ew") Wrapper<IBZDailyAction> wrapper);

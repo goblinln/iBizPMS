@@ -28,7 +28,7 @@ import io.swagger.annotations.ApiModelProperty;
  * 服务DTO对象[IBZCaseActionDTO]
  */
 @Data
-@ApiModel("测试日志")
+@ApiModel("测试用例日志")
 @JsonFilter(value = "dtofieldfilter")
 public class IBZCaseActionDTO extends DTOBase implements Serializable {
 

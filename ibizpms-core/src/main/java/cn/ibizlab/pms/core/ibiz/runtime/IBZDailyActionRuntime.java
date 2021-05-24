@@ -139,6 +139,8 @@ public class IBZDailyActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
             return ibzdailyactionService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("SIMPLE"))
             return ibzdailyactionService.selectSimple(searchContext);
+        if (iPSDataQuery.getName().equals("Type"))
+            return ibzdailyactionService.selectType(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
             return ibzdailyactionService.selectView(searchContext);
         return null;

@@ -41,6 +41,7 @@ public interface IIbzProTestTaskActionService extends IService<IbzProTestTaskAct
     List<IbzProTestTaskAction> select(IbzProTestTaskActionSearchContext context);
     List<IbzProTestTaskAction> selectDefault(IbzProTestTaskActionSearchContext context);
     List<IbzProTestTaskAction> selectSimple(IbzProTestTaskActionSearchContext context);
+    List<IbzProTestTaskAction> selectType(IbzProTestTaskActionSearchContext context);
     List<IbzProTestTaskAction> selectView(IbzProTestTaskActionSearchContext context);
 
     Page<IbzProTestTaskAction> searchDefault(IbzProTestTaskActionSearchContext context);

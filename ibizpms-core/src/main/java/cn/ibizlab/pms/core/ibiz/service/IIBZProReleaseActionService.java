@@ -41,9 +41,11 @@ public interface IIBZProReleaseActionService extends IService<IBZProReleaseActio
     List<IBZProReleaseAction> select(IBZProReleaseActionSearchContext context);
     List<IBZProReleaseAction> selectDefault(IBZProReleaseActionSearchContext context);
     List<IBZProReleaseAction> selectSimple(IBZProReleaseActionSearchContext context);
+    List<IBZProReleaseAction> selectType(IBZProReleaseActionSearchContext context);
     List<IBZProReleaseAction> selectView(IBZProReleaseActionSearchContext context);
 
     Page<IBZProReleaseAction> searchDefault(IBZProReleaseActionSearchContext context);
+    Page<IBZProReleaseAction> searchType(IBZProReleaseActionSearchContext context);
     List<IBZProReleaseAction> selectByObjectid(Long id);
     void removeByObjectid(Long id);
     IBZProReleaseAction dynamicCall(Long key, String action, IBZProReleaseAction et);

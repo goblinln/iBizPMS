@@ -286,6 +286,9 @@ public class IBZStoryActionServiceImpl extends ServiceImpl<IBZStoryActionMapper,
     public List<IBZStoryAction> selectSimple(IBZStoryActionSearchContext context){
         return baseMapper.selectSimple(context, context.getSelectCond());
     }
+    public List<IBZStoryAction> selectType(IBZStoryActionSearchContext context){
+        return baseMapper.selectType(context, context.getSelectCond());
+    }
     public List<IBZStoryAction> selectView(IBZStoryActionSearchContext context){
         return baseMapper.selectView(context, context.getSelectCond());
     }

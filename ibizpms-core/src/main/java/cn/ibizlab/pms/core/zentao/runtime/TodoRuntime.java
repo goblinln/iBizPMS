@@ -129,6 +129,8 @@ public class TodoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         TodoSearchContext searchContext = (TodoSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
             return todoService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("MyCreateTodo"))
+            return todoService.searchMyCreateTodo(searchContext);    
         if (iPSDEDataSet.getName().equals("MyTodo"))
             return todoService.searchMyTodo(searchContext);    
         if (iPSDEDataSet.getName().equals("MyTodoPc"))
@@ -143,6 +145,8 @@ public class TodoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         TodoSearchContext searchContext = (TodoSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
             return todoService.selectDefault(searchContext);
+        if (iPSDataQuery.getName().equals("MyCreateTodo"))
+            return todoService.selectMyCreateTodo(searchContext);
         if (iPSDataQuery.getName().equals("MyTodo"))
             return todoService.selectMyTodo(searchContext);
         if (iPSDataQuery.getName().equals("MyTodoPc"))
@@ -347,6 +351,9 @@ public class TodoRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRun
         }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);
+        }
+        else if (action.equals("searchMyCreateTodo")) {
+            return aroundDataSet("MyCreateTodo", point);
         }
         else if (action.equals("searchMyTodo")) {
             return aroundDataSet("MyTodo", point);

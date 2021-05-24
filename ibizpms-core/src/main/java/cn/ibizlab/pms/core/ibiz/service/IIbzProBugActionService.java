@@ -41,9 +41,11 @@ public interface IIbzProBugActionService extends IService<IbzProBugAction> {
     List<IbzProBugAction> select(IbzProBugActionSearchContext context);
     List<IbzProBugAction> selectDefault(IbzProBugActionSearchContext context);
     List<IbzProBugAction> selectSimple(IbzProBugActionSearchContext context);
+    List<IbzProBugAction> selectType(IbzProBugActionSearchContext context);
     List<IbzProBugAction> selectView(IbzProBugActionSearchContext context);
 
     Page<IbzProBugAction> searchDefault(IbzProBugActionSearchContext context);
+    Page<IbzProBugAction> searchType(IbzProBugActionSearchContext context);
     List<IbzProBugAction> selectByObjectid(Long id);
     void removeByObjectid(Long id);
     IbzProBugAction dynamicCall(Long key, String action, IbzProBugAction et);

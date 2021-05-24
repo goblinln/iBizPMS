@@ -129,6 +129,8 @@ public class ProductPlanActionRuntime extends cn.ibizlab.pms.core.runtime.System
         ProductPlanActionSearchContext searchContext = (ProductPlanActionSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
             return productplanactionService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("Type"))
+            return productplanactionService.searchType(searchContext);    
         return null;
     }
 
@@ -139,6 +141,8 @@ public class ProductPlanActionRuntime extends cn.ibizlab.pms.core.runtime.System
             return productplanactionService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("SIMPLE"))
             return productplanactionService.selectSimple(searchContext);
+        if (iPSDataQuery.getName().equals("Type"))
+            return productplanactionService.selectType(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
             return productplanactionService.selectView(searchContext);
         return null;
@@ -295,6 +299,9 @@ public class ProductPlanActionRuntime extends cn.ibizlab.pms.core.runtime.System
         }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);
+        }
+        else if (action.equals("searchType")) {
+            return aroundDataSet("Type", point);
         }
         return point.proceed();
     }

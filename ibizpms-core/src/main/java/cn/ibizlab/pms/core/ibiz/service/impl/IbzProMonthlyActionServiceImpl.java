@@ -262,6 +262,9 @@ public class IbzProMonthlyActionServiceImpl extends ServiceImpl<IbzProMonthlyAct
     public List<IbzProMonthlyAction> selectSimple(IbzProMonthlyActionSearchContext context){
         return baseMapper.selectSimple(context, context.getSelectCond());
     }
+    public List<IbzProMonthlyAction> selectType(IbzProMonthlyActionSearchContext context){
+        return baseMapper.selectType(context, context.getSelectCond());
+    }
     public List<IbzProMonthlyAction> selectView(IbzProMonthlyActionSearchContext context){
         return baseMapper.selectView(context, context.getSelectCond());
     }
@@ -273,6 +276,15 @@ public class IbzProMonthlyActionServiceImpl extends ServiceImpl<IbzProMonthlyAct
     @Override
     public Page<IbzProMonthlyAction> searchDefault(IbzProMonthlyActionSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzProMonthlyAction> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<IbzProMonthlyAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 动态(根据类型过滤)
+     */
+    @Override
+    public Page<IbzProMonthlyAction> searchType(IbzProMonthlyActionSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzProMonthlyAction> pages=baseMapper.searchType(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbzProMonthlyAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

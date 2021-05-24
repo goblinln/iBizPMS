@@ -21,9 +21,11 @@ public interface IbzProBuildActionMapper extends BaseMapper<IbzProBuildAction> {
 
     List<IbzProBuildAction> selectDefault(@Param("srf") IbzProBuildActionSearchContext context, @Param("ew") Wrapper<IbzProBuildAction> wrapper);
     List<IbzProBuildAction> selectSimple(@Param("srf") IbzProBuildActionSearchContext context, @Param("ew") Wrapper<IbzProBuildAction> wrapper);
+    List<IbzProBuildAction> selectType(@Param("srf") IbzProBuildActionSearchContext context, @Param("ew") Wrapper<IbzProBuildAction> wrapper);
     List<IbzProBuildAction> selectView(@Param("srf") IbzProBuildActionSearchContext context, @Param("ew") Wrapper<IbzProBuildAction> wrapper);
 
     Page<IbzProBuildAction> searchDefault(IPage page, @Param("srf") IbzProBuildActionSearchContext context, @Param("ew") Wrapper<IbzProBuildAction> wrapper);
+    Page<IbzProBuildAction> searchType(IPage page, @Param("srf") IbzProBuildActionSearchContext context, @Param("ew") Wrapper<IbzProBuildAction> wrapper);
     @Override
     IbzProBuildAction selectById(Serializable id);
     @Override

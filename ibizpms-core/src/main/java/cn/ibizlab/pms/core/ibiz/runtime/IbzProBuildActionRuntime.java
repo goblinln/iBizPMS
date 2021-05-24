@@ -129,6 +129,8 @@ public class IbzProBuildActionRuntime extends cn.ibizlab.pms.core.runtime.System
         IbzProBuildActionSearchContext searchContext = (IbzProBuildActionSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
             return ibzprobuildactionService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("Type"))
+            return ibzprobuildactionService.searchType(searchContext);    
         return null;
     }
 
@@ -139,6 +141,8 @@ public class IbzProBuildActionRuntime extends cn.ibizlab.pms.core.runtime.System
             return ibzprobuildactionService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("SIMPLE"))
             return ibzprobuildactionService.selectSimple(searchContext);
+        if (iPSDataQuery.getName().equals("Type"))
+            return ibzprobuildactionService.selectType(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
             return ibzprobuildactionService.selectView(searchContext);
         return null;
@@ -295,6 +299,9 @@ public class IbzProBuildActionRuntime extends cn.ibizlab.pms.core.runtime.System
         }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);
+        }
+        else if (action.equals("searchType")) {
+            return aroundDataSet("Type", point);
         }
         return point.proceed();
     }

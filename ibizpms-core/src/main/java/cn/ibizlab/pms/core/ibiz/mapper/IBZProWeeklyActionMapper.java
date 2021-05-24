@@ -21,6 +21,7 @@ public interface IBZProWeeklyActionMapper extends BaseMapper<IBZProWeeklyAction>
 
     List<IBZProWeeklyAction> selectDefault(@Param("srf") IBZProWeeklyActionSearchContext context, @Param("ew") Wrapper<IBZProWeeklyAction> wrapper);
     List<IBZProWeeklyAction> selectSimple(@Param("srf") IBZProWeeklyActionSearchContext context, @Param("ew") Wrapper<IBZProWeeklyAction> wrapper);
+    List<IBZProWeeklyAction> selectType(@Param("srf") IBZProWeeklyActionSearchContext context, @Param("ew") Wrapper<IBZProWeeklyAction> wrapper);
     List<IBZProWeeklyAction> selectView(@Param("srf") IBZProWeeklyActionSearchContext context, @Param("ew") Wrapper<IBZProWeeklyAction> wrapper);
 
     Page<IBZProWeeklyAction> searchDefault(IPage page, @Param("srf") IBZProWeeklyActionSearchContext context, @Param("ew") Wrapper<IBZProWeeklyAction> wrapper);

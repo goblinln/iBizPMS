@@ -33,6 +33,16 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
     }
   }, {
+    "name" : "项目经理-ZT_TODO[待办维护（我的待办）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo/PSDEUSERROLES/Todo_Maintain_MyTodo.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Todo.json"
+    }
+  }, {
     "name" : "项目经理-ZT_PROJECT[项目查看（创建者或者更新者）（跟随角色）]",
     "getPSDEUserRole" : {
       "modelref" : true,
@@ -71,6 +81,16 @@
     "getPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+    }
+  }, {
+    "name" : "项目经理-ZT_ACTION[日志查看（我的日志）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_Read_MyAction.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Action.json"
     }
   }, {
     "name" : "项目经理-ZT_PROJECT[项目管理（创建者或者更新者）（跟随角色）]",

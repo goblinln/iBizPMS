@@ -262,6 +262,9 @@ public class IbzProBugActionServiceImpl extends ServiceImpl<IbzProBugActionMappe
     public List<IbzProBugAction> selectSimple(IbzProBugActionSearchContext context){
         return baseMapper.selectSimple(context, context.getSelectCond());
     }
+    public List<IbzProBugAction> selectType(IbzProBugActionSearchContext context){
+        return baseMapper.selectType(context, context.getSelectCond());
+    }
     public List<IbzProBugAction> selectView(IbzProBugActionSearchContext context){
         return baseMapper.selectView(context, context.getSelectCond());
     }
@@ -273,6 +276,15 @@ public class IbzProBugActionServiceImpl extends ServiceImpl<IbzProBugActionMappe
     @Override
     public Page<IbzProBugAction> searchDefault(IbzProBugActionSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzProBugAction> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<IbzProBugAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 动态(根据类型过滤)
+     */
+    @Override
+    public Page<IbzProBugAction> searchType(IbzProBugActionSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IbzProBugAction> pages=baseMapper.searchType(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IbzProBugAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

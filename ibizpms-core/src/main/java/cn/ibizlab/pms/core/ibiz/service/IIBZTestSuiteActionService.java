@@ -41,6 +41,7 @@ public interface IIBZTestSuiteActionService extends IService<IBZTestSuiteAction>
     List<IBZTestSuiteAction> select(IBZTestSuiteActionSearchContext context);
     List<IBZTestSuiteAction> selectDefault(IBZTestSuiteActionSearchContext context);
     List<IBZTestSuiteAction> selectSimple(IBZTestSuiteActionSearchContext context);
+    List<IBZTestSuiteAction> selectType(IBZTestSuiteActionSearchContext context);
     List<IBZTestSuiteAction> selectView(IBZTestSuiteActionSearchContext context);
 
     Page<IBZTestSuiteAction> searchDefault(IBZTestSuiteActionSearchContext context);

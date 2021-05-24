@@ -139,6 +139,8 @@ public class IBZStoryActionRuntime extends cn.ibizlab.pms.core.runtime.SystemDat
             return ibzstoryactionService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("SIMPLE"))
             return ibzstoryactionService.selectSimple(searchContext);
+        if (iPSDataQuery.getName().equals("Type"))
+            return ibzstoryactionService.selectType(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
             return ibzstoryactionService.selectView(searchContext);
         return null;

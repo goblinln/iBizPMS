@@ -178,6 +178,28 @@ public class IBZProProjectActionResource {
                 .body(new PageImpl(ibzproprojectactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("@IBZProProjectActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"项目日志" } ,notes = "获取动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectactions/fetchtype")
+	public ResponseEntity<List<IBZProProjectActionDTO>> fetchtype(@RequestBody IBZProProjectActionSearchContext context) {
+        Page<IBZProProjectAction> domains = ibzproprojectactionService.searchType(context) ;
+        List<IBZProProjectActionDTO> list = ibzproprojectactionMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IBZProProjectActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询动态(根据类型过滤)", tags = {"项目日志" } ,notes = "查询动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzproprojectactions/searchtype")
+	public ResponseEntity<Page<IBZProProjectActionDTO>> searchType(@RequestBody IBZProProjectActionSearchContext context) {
+        Page<IBZProProjectAction> domains = ibzproprojectactionService.searchType(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzproprojectactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzproprojectactions/{ibzproprojectaction_id}/{action}")

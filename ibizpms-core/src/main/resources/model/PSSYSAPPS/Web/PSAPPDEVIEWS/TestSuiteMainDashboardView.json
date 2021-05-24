@@ -3315,7 +3315,33 @@
             "enableFilter" : false,
             "showCaptionBar" : false,
             "modelid" : "6cc53210af0a1b521a3fbf7263c94a7b",
-            "modeltype" : "PSAPPDEVIEW"
+            "modeltype" : "PSAPPDEVIEW",
+            "getPSAppDERSPaths" : [ [ {
+              "actionRSMode" : 1,
+              "codeName" : "Actions",
+              "dataRSMode" : 0,
+              "getMajorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Project.json"
+              },
+              "getMinorPSAppDataEntity" : {
+                "modelref" : true,
+                "path" : "PSSYSAPPS/Web/PSAPPDATAENTITIES/Action.json"
+              },
+              "name" : "项目-日志",
+              "getParentPSAppDEField" : {
+                "name" : "PROJECT",
+                "codeName" : "Project"
+              },
+              "rSMode" : 2,
+              "enableCreateDataRS" : false,
+              "enableDEAction" : true,
+              "enableDEDataSet" : true,
+              "enableGetDataRS" : false,
+              "enableSelect" : true,
+              "enableSelectDataRS" : false,
+              "enableUpdateDataRS" : false
+            } ] ]
           },
           "portletType" : "VIEW",
           "title" : "历史记录",

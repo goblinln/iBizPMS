@@ -139,6 +139,8 @@ public class IBZProWeeklyActionRuntime extends cn.ibizlab.pms.core.runtime.Syste
             return ibzproweeklyactionService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("SIMPLE"))
             return ibzproweeklyactionService.selectSimple(searchContext);
+        if (iPSDataQuery.getName().equals("Type"))
+            return ibzproweeklyactionService.selectType(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
             return ibzproweeklyactionService.selectView(searchContext);
         return null;

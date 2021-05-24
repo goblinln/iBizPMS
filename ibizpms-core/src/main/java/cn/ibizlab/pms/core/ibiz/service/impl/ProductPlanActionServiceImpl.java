@@ -262,6 +262,9 @@ public class ProductPlanActionServiceImpl extends ServiceImpl<ProductPlanActionM
     public List<ProductPlanAction> selectSimple(ProductPlanActionSearchContext context){
         return baseMapper.selectSimple(context, context.getSelectCond());
     }
+    public List<ProductPlanAction> selectType(ProductPlanActionSearchContext context){
+        return baseMapper.selectType(context, context.getSelectCond());
+    }
     public List<ProductPlanAction> selectView(ProductPlanActionSearchContext context){
         return baseMapper.selectView(context, context.getSelectCond());
     }
@@ -273,6 +276,15 @@ public class ProductPlanActionServiceImpl extends ServiceImpl<ProductPlanActionM
     @Override
     public Page<ProductPlanAction> searchDefault(ProductPlanActionSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductPlanAction> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<ProductPlanAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 动态(根据类型过滤)
+     */
+    @Override
+    public Page<ProductPlanAction> searchType(ProductPlanActionSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<ProductPlanAction> pages=baseMapper.searchType(context.getPages(),context,context.getSelectCond());
         return new PageImpl<ProductPlanAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

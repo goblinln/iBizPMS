@@ -41,9 +41,11 @@ public interface IIBZTaskActionService extends IService<IBZTaskAction> {
     List<IBZTaskAction> select(IBZTaskActionSearchContext context);
     List<IBZTaskAction> selectDefault(IBZTaskActionSearchContext context);
     List<IBZTaskAction> selectSimple(IBZTaskActionSearchContext context);
+    List<IBZTaskAction> selectType(IBZTaskActionSearchContext context);
     List<IBZTaskAction> selectView(IBZTaskActionSearchContext context);
 
     Page<IBZTaskAction> searchDefault(IBZTaskActionSearchContext context);
+    Page<IBZTaskAction> searchType(IBZTaskActionSearchContext context);
     List<IBZTaskAction> selectByObjectid(Long id);
     void removeByObjectid(Long id);
     IBZTaskAction dynamicCall(Long key, String action, IBZTaskAction et);

@@ -21,9 +21,11 @@ public interface IBZProReleaseActionMapper extends BaseMapper<IBZProReleaseActio
 
     List<IBZProReleaseAction> selectDefault(@Param("srf") IBZProReleaseActionSearchContext context, @Param("ew") Wrapper<IBZProReleaseAction> wrapper);
     List<IBZProReleaseAction> selectSimple(@Param("srf") IBZProReleaseActionSearchContext context, @Param("ew") Wrapper<IBZProReleaseAction> wrapper);
+    List<IBZProReleaseAction> selectType(@Param("srf") IBZProReleaseActionSearchContext context, @Param("ew") Wrapper<IBZProReleaseAction> wrapper);
     List<IBZProReleaseAction> selectView(@Param("srf") IBZProReleaseActionSearchContext context, @Param("ew") Wrapper<IBZProReleaseAction> wrapper);
 
     Page<IBZProReleaseAction> searchDefault(IPage page, @Param("srf") IBZProReleaseActionSearchContext context, @Param("ew") Wrapper<IBZProReleaseAction> wrapper);
+    Page<IBZProReleaseAction> searchType(IPage page, @Param("srf") IBZProReleaseActionSearchContext context, @Param("ew") Wrapper<IBZProReleaseAction> wrapper);
     @Override
     IBZProReleaseAction selectById(Serializable id);
     @Override

@@ -21,9 +21,11 @@ public interface IBZTestReportActionMapper extends BaseMapper<IBZTestReportActio
 
     List<IBZTestReportAction> selectDefault(@Param("srf") IBZTestReportActionSearchContext context, @Param("ew") Wrapper<IBZTestReportAction> wrapper);
     List<IBZTestReportAction> selectSimple(@Param("srf") IBZTestReportActionSearchContext context, @Param("ew") Wrapper<IBZTestReportAction> wrapper);
+    List<IBZTestReportAction> selectType(@Param("srf") IBZTestReportActionSearchContext context, @Param("ew") Wrapper<IBZTestReportAction> wrapper);
     List<IBZTestReportAction> selectView(@Param("srf") IBZTestReportActionSearchContext context, @Param("ew") Wrapper<IBZTestReportAction> wrapper);
 
     Page<IBZTestReportAction> searchDefault(IPage page, @Param("srf") IBZTestReportActionSearchContext context, @Param("ew") Wrapper<IBZTestReportAction> wrapper);
+    Page<IBZTestReportAction> searchType(IPage page, @Param("srf") IBZTestReportActionSearchContext context, @Param("ew") Wrapper<IBZTestReportAction> wrapper);
     @Override
     IBZTestReportAction selectById(Serializable id);
     @Override

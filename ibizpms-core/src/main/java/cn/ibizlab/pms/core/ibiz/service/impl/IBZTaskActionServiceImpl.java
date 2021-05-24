@@ -262,6 +262,9 @@ public class IBZTaskActionServiceImpl extends ServiceImpl<IBZTaskActionMapper, I
     public List<IBZTaskAction> selectSimple(IBZTaskActionSearchContext context){
         return baseMapper.selectSimple(context, context.getSelectCond());
     }
+    public List<IBZTaskAction> selectType(IBZTaskActionSearchContext context){
+        return baseMapper.selectType(context, context.getSelectCond());
+    }
     public List<IBZTaskAction> selectView(IBZTaskActionSearchContext context){
         return baseMapper.selectView(context, context.getSelectCond());
     }
@@ -273,6 +276,15 @@ public class IBZTaskActionServiceImpl extends ServiceImpl<IBZTaskActionMapper, I
     @Override
     public Page<IBZTaskAction> searchDefault(IBZTaskActionSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<IBZTaskAction> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<IBZTaskAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 动态(根据类型过滤)
+     */
+    @Override
+    public Page<IBZTaskAction> searchType(IBZTaskActionSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IBZTaskAction> pages=baseMapper.searchType(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IBZTaskAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

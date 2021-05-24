@@ -21,9 +21,11 @@ public interface IbzProBugActionMapper extends BaseMapper<IbzProBugAction> {
 
     List<IbzProBugAction> selectDefault(@Param("srf") IbzProBugActionSearchContext context, @Param("ew") Wrapper<IbzProBugAction> wrapper);
     List<IbzProBugAction> selectSimple(@Param("srf") IbzProBugActionSearchContext context, @Param("ew") Wrapper<IbzProBugAction> wrapper);
+    List<IbzProBugAction> selectType(@Param("srf") IbzProBugActionSearchContext context, @Param("ew") Wrapper<IbzProBugAction> wrapper);
     List<IbzProBugAction> selectView(@Param("srf") IbzProBugActionSearchContext context, @Param("ew") Wrapper<IbzProBugAction> wrapper);
 
     Page<IbzProBugAction> searchDefault(IPage page, @Param("srf") IbzProBugActionSearchContext context, @Param("ew") Wrapper<IbzProBugAction> wrapper);
+    Page<IbzProBugAction> searchType(IPage page, @Param("srf") IbzProBugActionSearchContext context, @Param("ew") Wrapper<IbzProBugAction> wrapper);
     @Override
     IbzProBugAction selectById(Serializable id);
     @Override

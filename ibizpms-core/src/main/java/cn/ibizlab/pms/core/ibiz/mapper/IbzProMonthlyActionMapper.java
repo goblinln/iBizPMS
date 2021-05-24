@@ -21,9 +21,11 @@ public interface IbzProMonthlyActionMapper extends BaseMapper<IbzProMonthlyActio
 
     List<IbzProMonthlyAction> selectDefault(@Param("srf") IbzProMonthlyActionSearchContext context, @Param("ew") Wrapper<IbzProMonthlyAction> wrapper);
     List<IbzProMonthlyAction> selectSimple(@Param("srf") IbzProMonthlyActionSearchContext context, @Param("ew") Wrapper<IbzProMonthlyAction> wrapper);
+    List<IbzProMonthlyAction> selectType(@Param("srf") IbzProMonthlyActionSearchContext context, @Param("ew") Wrapper<IbzProMonthlyAction> wrapper);
     List<IbzProMonthlyAction> selectView(@Param("srf") IbzProMonthlyActionSearchContext context, @Param("ew") Wrapper<IbzProMonthlyAction> wrapper);
 
     Page<IbzProMonthlyAction> searchDefault(IPage page, @Param("srf") IbzProMonthlyActionSearchContext context, @Param("ew") Wrapper<IbzProMonthlyAction> wrapper);
+    Page<IbzProMonthlyAction> searchType(IPage page, @Param("srf") IbzProMonthlyActionSearchContext context, @Param("ew") Wrapper<IbzProMonthlyAction> wrapper);
     @Override
     IbzProMonthlyAction selectById(Serializable id);
     @Override

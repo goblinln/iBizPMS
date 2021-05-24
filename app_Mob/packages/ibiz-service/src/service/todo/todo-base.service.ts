@@ -2,6 +2,8 @@ import { CodeListService } from '../app/codelist-service';
 import { EntityBaseService, IContext, HttpResponse } from 'ibiz-core';
 import { ITodo, Todo } from '../../entities';
 import keys from '../../entities/todo/todo-keys';
+import { isNil, isEmpty } from 'ramda';
+import { PSDEDQCondEngine } from 'ibiz-core';
 
 /**
  * 待办服务对象基类
@@ -64,6 +66,38 @@ export class TodoBaseService extends EntityBaseService<ITodo> {
             entity = result.data;
         }
         return new HttpResponse(entity);
+    }
+
+    protected getDefaultCond() {
+        return this.condCache.get('default');
+    }
+
+    protected getMyCreateTodoCond() {
+        if (!this.condCache.has('myCreateTodo')) {
+            const strCond: any[] = ['AND', ['OR', ['EQ', 'ASSIGNEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'FINISHEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'UPDATEBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'CLOSEDBY',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}], ['EQ', 'ACCOUNT',{ type: 'SESSIONCONTEXT', value: 'srfloginname'}]]];
+            if (!isNil(strCond) && !isEmpty(strCond)) {
+                const cond = new PSDEDQCondEngine();
+                cond.parse(strCond);
+                this.condCache.set('myCreateTodo', cond);
+            }
+        }
+        return this.condCache.get('myCreateTodo');
+    }
+
+    protected getMyTodoCond() {
+        return this.condCache.get('myTodo');
+    }
+
+    protected getMyTodoPcCond() {
+        return this.condCache.get('myTodoPc');
+    }
+
+    protected getMyUpcomingCond() {
+        return this.condCache.get('myUpcoming');
+    }
+
+    protected getViewCond() {
+        return this.condCache.get('view');
     }
     /**
      * Select

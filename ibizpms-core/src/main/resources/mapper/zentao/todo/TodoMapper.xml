@@ -95,6 +95,13 @@
          )t1
      </select>
 
+    <!--数据集合[MyCreateTodo]-->
+	 <select id="searchMyCreateTodo"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext"  resultMap="TodoResultMap">
+         select t1.* from (
+                <include refid="MyCreateTodo" />
+         )t1
+     </select>
+
     <!--数据集合[MyTodo]-->
 	 <select id="searchMyTodo"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext"  resultMap="TodoResultMap">
          select t1.* from (
@@ -132,6 +139,21 @@
 	
 	<select id="selectDefault"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext" resultMap="TodoResultMap">
 		<include refid="Default" />
+	</select>
+
+    <!--数据查询[MyCreateTodo]-->
+    <sql id="MyCreateTodo" databaseId="mysql">
+		<![CDATA[ SELECT t1.`ACCOUNT`, t1.`ASSIGNEDBY`, t1.`ASSIGNEDDATE`, t1.`ASSIGNEDTO`, t1.ASSIGNEDTO AS `ASSIGNEDTOPK`, t1.`BEGIN`, t1.`CLOSEDBY`, t1.`CLOSEDDATE`, t1.`CONFIG`, t1.`COST`, t1.`CYCLE`, t1.`DATE`, (case when t1.`DATE` = '2030-01-01' then '待定' else t1.`DATE` end) AS `DATE1`, t1.`DEPT`, t1.`DEPTNAME`, t1.`END`, t1.`FINISHEDBY`, t1.`FINISHEDDATE`, t1.`ID`, t1.`IDVALUE`, t1.`NAME`, t1.`ORG`, t1.`ORGNAME`, t1.`PRI`, t1.`PRIVATE`, t1.`STATUS`, t1.`TODOSN`, t1.`TYPE`, t1.`UPDATEBY` FROM `zt_todo` t1   ]]>
+		<trim prefix="where" prefixOverrides="and">
+			<if test="true">
+                <![CDATA[ AND ( ( t1.`ASSIGNEDBY` =  #{srf.sessioncontext.srfloginname}  OR  t1.`FINISHEDBY` =  #{srf.sessioncontext.srfloginname}  OR  t1.`UPDATEBY` =  #{srf.sessioncontext.srfloginname}  OR  t1.`CLOSEDBY` =  #{srf.sessioncontext.srfloginname}  OR  t1.`ACCOUNT` =  #{srf.sessioncontext.srfloginname} ) ) ]]>
+            </if>
+			<include refid="searchMode" />
+		</trim>
+    </sql>
+	
+	<select id="selectMyCreateTodo"  parameterType="cn.ibizlab.pms.core.zentao.filter.TodoSearchContext" resultMap="TodoResultMap">
+		<include refid="MyCreateTodo" />
 	</select>
 
     <!--数据查询[MyTodo]-->

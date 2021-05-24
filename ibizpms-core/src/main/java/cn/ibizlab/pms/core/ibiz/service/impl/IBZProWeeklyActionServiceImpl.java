@@ -262,6 +262,9 @@ public class IBZProWeeklyActionServiceImpl extends ServiceImpl<IBZProWeeklyActio
     public List<IBZProWeeklyAction> selectSimple(IBZProWeeklyActionSearchContext context){
         return baseMapper.selectSimple(context, context.getSelectCond());
     }
+    public List<IBZProWeeklyAction> selectType(IBZProWeeklyActionSearchContext context){
+        return baseMapper.selectType(context, context.getSelectCond());
+    }
     public List<IBZProWeeklyAction> selectView(IBZProWeeklyActionSearchContext context){
         return baseMapper.selectView(context, context.getSelectCond());
     }

@@ -21,9 +21,11 @@ public interface IBZProProjectActionMapper extends BaseMapper<IBZProProjectActio
 
     List<IBZProProjectAction> selectDefault(@Param("srf") IBZProProjectActionSearchContext context, @Param("ew") Wrapper<IBZProProjectAction> wrapper);
     List<IBZProProjectAction> selectSimple(@Param("srf") IBZProProjectActionSearchContext context, @Param("ew") Wrapper<IBZProProjectAction> wrapper);
+    List<IBZProProjectAction> selectType(@Param("srf") IBZProProjectActionSearchContext context, @Param("ew") Wrapper<IBZProProjectAction> wrapper);
     List<IBZProProjectAction> selectView(@Param("srf") IBZProProjectActionSearchContext context, @Param("ew") Wrapper<IBZProProjectAction> wrapper);
 
     Page<IBZProProjectAction> searchDefault(IPage page, @Param("srf") IBZProProjectActionSearchContext context, @Param("ew") Wrapper<IBZProProjectAction> wrapper);
+    Page<IBZProProjectAction> searchType(IPage page, @Param("srf") IBZProProjectActionSearchContext context, @Param("ew") Wrapper<IBZProProjectAction> wrapper);
     @Override
     IBZProProjectAction selectById(Serializable id);
     @Override

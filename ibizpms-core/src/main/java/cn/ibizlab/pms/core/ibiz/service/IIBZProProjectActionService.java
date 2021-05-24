@@ -41,9 +41,11 @@ public interface IIBZProProjectActionService extends IService<IBZProProjectActio
     List<IBZProProjectAction> select(IBZProProjectActionSearchContext context);
     List<IBZProProjectAction> selectDefault(IBZProProjectActionSearchContext context);
     List<IBZProProjectAction> selectSimple(IBZProProjectActionSearchContext context);
+    List<IBZProProjectAction> selectType(IBZProProjectActionSearchContext context);
     List<IBZProProjectAction> selectView(IBZProProjectActionSearchContext context);
 
     Page<IBZProProjectAction> searchDefault(IBZProProjectActionSearchContext context);
+    Page<IBZProProjectAction> searchType(IBZProProjectActionSearchContext context);
     List<IBZProProjectAction> selectByObjectid(Long id);
     void removeByObjectid(Long id);
     IBZProProjectAction dynamicCall(Long key, String action, IBZProProjectAction et);

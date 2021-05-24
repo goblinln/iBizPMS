@@ -409,6 +409,15 @@
       "id" : "FetchMyUpcoming"
     },
     "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyCreateTodo",
+    "methodType" : "FETCH",
+    "name" : "MyCreateTodo",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateTodo"
+    },
+    "builtinMethod" : false
   } ],
   "getAllPSAppDEFields" : [ {
     "codeName" : "Id",
@@ -942,6 +951,15 @@
     "getPSDEServiceAPIMethod" : {
       "modelref" : true,
       "id" : "FetchMyUpcoming"
+    },
+    "builtinMethod" : false
+  }, {
+    "codeName" : "FetchMyCreateTodo",
+    "methodType" : "FETCH",
+    "name" : "MyCreateTodo",
+    "getPSDEDataSet" : {
+      "modelref" : true,
+      "id" : "MyCreateTodo"
     },
     "builtinMethod" : false
   }, {

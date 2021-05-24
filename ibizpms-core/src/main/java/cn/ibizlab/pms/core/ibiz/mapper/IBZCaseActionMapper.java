@@ -21,9 +21,11 @@ public interface IBZCaseActionMapper extends BaseMapper<IBZCaseAction> {
 
     List<IBZCaseAction> selectDefault(@Param("srf") IBZCaseActionSearchContext context, @Param("ew") Wrapper<IBZCaseAction> wrapper);
     List<IBZCaseAction> selectSimple(@Param("srf") IBZCaseActionSearchContext context, @Param("ew") Wrapper<IBZCaseAction> wrapper);
+    List<IBZCaseAction> selectType(@Param("srf") IBZCaseActionSearchContext context, @Param("ew") Wrapper<IBZCaseAction> wrapper);
     List<IBZCaseAction> selectView(@Param("srf") IBZCaseActionSearchContext context, @Param("ew") Wrapper<IBZCaseAction> wrapper);
 
     Page<IBZCaseAction> searchDefault(IPage page, @Param("srf") IBZCaseActionSearchContext context, @Param("ew") Wrapper<IBZCaseAction> wrapper);
+    Page<IBZCaseAction> searchType(IPage page, @Param("srf") IBZCaseActionSearchContext context, @Param("ew") Wrapper<IBZCaseAction> wrapper);
     @Override
     IBZCaseAction selectById(Serializable id);
     @Override

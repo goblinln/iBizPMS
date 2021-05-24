@@ -139,6 +139,8 @@ public class IbzProTestTaskActionRuntime extends cn.ibizlab.pms.core.runtime.Sys
             return ibzprotesttaskactionService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("SIMPLE"))
             return ibzprotesttaskactionService.selectSimple(searchContext);
+        if (iPSDataQuery.getName().equals("Type"))
+            return ibzprotesttaskactionService.selectType(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
             return ibzprotesttaskactionService.selectView(searchContext);
         return null;

@@ -262,6 +262,9 @@ public class IBZDailyActionServiceImpl extends ServiceImpl<IBZDailyActionMapper,
     public List<IBZDailyAction> selectSimple(IBZDailyActionSearchContext context){
         return baseMapper.selectSimple(context, context.getSelectCond());
     }
+    public List<IBZDailyAction> selectType(IBZDailyActionSearchContext context){
+        return baseMapper.selectType(context, context.getSelectCond());
+    }
     public List<IBZDailyAction> selectView(IBZDailyActionSearchContext context){
         return baseMapper.selectView(context, context.getSelectCond());
     }

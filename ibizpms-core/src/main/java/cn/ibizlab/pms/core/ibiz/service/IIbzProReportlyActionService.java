@@ -41,6 +41,7 @@ public interface IIbzProReportlyActionService extends IService<IbzProReportlyAct
     List<IbzProReportlyAction> select(IbzProReportlyActionSearchContext context);
     List<IbzProReportlyAction> selectDefault(IbzProReportlyActionSearchContext context);
     List<IbzProReportlyAction> selectSimple(IbzProReportlyActionSearchContext context);
+    List<IbzProReportlyAction> selectType(IbzProReportlyActionSearchContext context);
     List<IbzProReportlyAction> selectView(IbzProReportlyActionSearchContext context);
 
     Page<IbzProReportlyAction> searchDefault(IbzProReportlyActionSearchContext context);

@@ -82,6 +82,20 @@
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`OBJECTTYPE` = 'testreport'",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "Type",
+    "logicName" : "动态(根据类型过滤)",
+    "name" : "Type",
+    "customCode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
       "name" : "MySQL5"
     } ],
     "codeName" : "View",
@@ -97,6 +111,16 @@
       "id" : "Default"
     } ],
     "defaultMode" : true,
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "Type",
+    "logicName" : "动态(根据类型过滤)",
+    "name" : "Type",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Type"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],

@@ -42,7 +42,7 @@ import com.alibaba.fastjson.JSONObject;
 import org.springframework.util.StringUtils;
 
 /**
- * 实体[测试日志] 服务对象接口实现
+ * 实体[测试用例日志] 服务对象接口实现
  */
 @Slf4j
 @Service("IBZCaseActionServiceImpl")
@@ -262,6 +262,9 @@ public class IBZCaseActionServiceImpl extends ServiceImpl<IBZCaseActionMapper, I
     public List<IBZCaseAction> selectSimple(IBZCaseActionSearchContext context){
         return baseMapper.selectSimple(context, context.getSelectCond());
     }
+    public List<IBZCaseAction> selectType(IBZCaseActionSearchContext context){
+        return baseMapper.selectType(context, context.getSelectCond());
+    }
     public List<IBZCaseAction> selectView(IBZCaseActionSearchContext context){
         return baseMapper.selectView(context, context.getSelectCond());
     }
@@ -273,6 +276,15 @@ public class IBZCaseActionServiceImpl extends ServiceImpl<IBZCaseActionMapper, I
     @Override
     public Page<IBZCaseAction> searchDefault(IBZCaseActionSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<IBZCaseAction> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<IBZCaseAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 动态(根据类型过滤)
+     */
+    @Override
+    public Page<IBZCaseAction> searchType(IBZCaseActionSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IBZCaseAction> pages=baseMapper.searchType(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IBZCaseAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

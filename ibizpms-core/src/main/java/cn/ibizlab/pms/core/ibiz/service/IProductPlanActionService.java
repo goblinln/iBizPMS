@@ -41,9 +41,11 @@ public interface IProductPlanActionService extends IService<ProductPlanAction> {
     List<ProductPlanAction> select(ProductPlanActionSearchContext context);
     List<ProductPlanAction> selectDefault(ProductPlanActionSearchContext context);
     List<ProductPlanAction> selectSimple(ProductPlanActionSearchContext context);
+    List<ProductPlanAction> selectType(ProductPlanActionSearchContext context);
     List<ProductPlanAction> selectView(ProductPlanActionSearchContext context);
 
     Page<ProductPlanAction> searchDefault(ProductPlanActionSearchContext context);
+    Page<ProductPlanAction> searchType(ProductPlanActionSearchContext context);
     List<ProductPlanAction> selectByObjectid(Long id);
     void removeByObjectid(Long id);
     ProductPlanAction dynamicCall(Long key, String action, ProductPlanAction et);

@@ -215,6 +215,9 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProTestTaskHistory.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProToDoAction.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProWeeklyAction.json"
   }, {
     "modelref" : true,

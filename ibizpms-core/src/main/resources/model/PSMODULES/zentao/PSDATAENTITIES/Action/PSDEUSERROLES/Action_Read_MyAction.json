@@ -1,0 +1,19 @@
+{
+  "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Action/PSDEUSERROLES/Action_Read_MyAction.json",
+  "name" : "日志查看（我的日志）（跟随角色）",
+  "getPSDEDataSet" : {
+    "modelref" : true,
+    "id" : "MyAction"
+  },
+  "getPSDEUserRoleOPPrivs" : [ {
+    "dataAccessAction" : "READ",
+    "name" : "Action_Read_MyAction_Read",
+    "getPSDEOPPriv" : {
+      "modelref" : true,
+      "id" : "Zt_project__READ"
+    }
+  } ],
+  "roleTag" : "Action_Read_MyAction",
+  "userCat" : "CAT1",
+  "userDRAction" : "READ"
+}

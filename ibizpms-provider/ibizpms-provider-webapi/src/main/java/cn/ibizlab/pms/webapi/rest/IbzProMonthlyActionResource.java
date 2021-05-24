@@ -178,6 +178,28 @@ public class IbzProMonthlyActionResource {
                 .body(new PageImpl(ibzpromonthlyactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
 
+    @PreAuthorize("@IbzProMonthlyActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "获取动态(根据类型过滤)", tags = {"月报日志" } ,notes = "获取动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzpromonthlyactions/fetchtype")
+	public ResponseEntity<List<IbzProMonthlyActionDTO>> fetchtype(@RequestBody IbzProMonthlyActionSearchContext context) {
+        Page<IbzProMonthlyAction> domains = ibzpromonthlyactionService.searchType(context) ;
+        List<IbzProMonthlyActionDTO> list = ibzpromonthlyactionMapping.toDto(domains.getContent());
+        return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IbzProMonthlyActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "查询动态(根据类型过滤)", tags = {"月报日志" } ,notes = "查询动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzpromonthlyactions/searchtype")
+	public ResponseEntity<Page<IbzProMonthlyActionDTO>> searchType(@RequestBody IbzProMonthlyActionSearchContext context) {
+        Page<IbzProMonthlyAction> domains = ibzpromonthlyactionService.searchType(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzpromonthlyactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+
 
 	@PreAuthorize("hasAnyAuthority('ROLE_SUPERADMIN')")
     @RequestMapping(method = RequestMethod.POST, value = "/ibzpromonthlyactions/{ibzpromonthlyaction_id}/{action}")

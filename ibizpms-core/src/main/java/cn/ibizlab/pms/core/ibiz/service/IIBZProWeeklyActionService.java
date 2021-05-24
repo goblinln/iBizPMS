@@ -41,6 +41,7 @@ public interface IIBZProWeeklyActionService extends IService<IBZProWeeklyAction>
     List<IBZProWeeklyAction> select(IBZProWeeklyActionSearchContext context);
     List<IBZProWeeklyAction> selectDefault(IBZProWeeklyActionSearchContext context);
     List<IBZProWeeklyAction> selectSimple(IBZProWeeklyActionSearchContext context);
+    List<IBZProWeeklyAction> selectType(IBZProWeeklyActionSearchContext context);
     List<IBZProWeeklyAction> selectView(IBZProWeeklyActionSearchContext context);
 
     Page<IBZProWeeklyAction> searchDefault(IBZProWeeklyActionSearchContext context);
