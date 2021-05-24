@@ -203,6 +203,9 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTaskAction.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTaskHistory.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBzDoc.json"
   }, {
     "modelref" : true,
@@ -234,6 +237,9 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBuildAction.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBuildHistory.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProjectMember.json"

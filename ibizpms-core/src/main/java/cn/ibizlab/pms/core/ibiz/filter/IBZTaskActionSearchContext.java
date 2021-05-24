@@ -57,6 +57,11 @@ public class IBZTaskActionSearchContext extends QueryWrapperContext<IBZTaskActio
 	public void setN_actionmanner_eq(String n_actionmanner_eq) {
         this.n_actionmanner_eq = n_actionmanner_eq;
     }
+                
+	private Long n_objectid_eq;//[编号]
+	public void setN_objectid_eq(Long n_objectid_eq) {
+        this.n_objectid_eq = n_objectid_eq;
+    }
 
     /**
 	 * 启用快速搜索

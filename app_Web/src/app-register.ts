@@ -2,7 +2,7 @@ import Vue from 'vue';
 import { ViewTool, UIActionTool, Verify, Util, Http } from 'ibiz-core';
 import { exportExcel } from './utils/export/export';
 import { AppPopover, AppModal, AppDrawer } from 'ibiz-vue';
-import { authServiceRegister, codeListRegister, messageServiceRegister } from 'ibiz-service';
+import { codeListRegister, messageServiceRegister } from 'ibiz-service';
 import TabPageExp from '@components/tab-page-exp/tab-page-exp.vue';
 import AppDataUpload from '@components/app-data-upload/app-data-upload.vue';
 import Breadcrumb from '@components/app-breadcrumb/app-breadcrumb.vue';
@@ -15,8 +15,6 @@ import { Environment } from './environments/environment';
 Vue.use(ComponentsRegister);
 Vue.use(PluginRegister);
 
-// 全局挂载实体权限服务注册中心
-window['authServiceRegister'] = authServiceRegister;
 // 全局挂载代码表服务注册中心
 window['codeListRegister'] = codeListRegister;
 // 全局挂载视图消息服务注册中心

@@ -52,6 +52,9 @@ public class IbzProBuildActionServiceImpl extends ServiceImpl<IbzProBuildActionM
     @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.IbzProBuildActionRuntime ibzprobuildactionRuntime;
 
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.zentao.service.IBuildService buildService;
 
     protected int batchSize = 500;
 
@@ -231,6 +234,15 @@ public class IbzProBuildActionServiceImpl extends ServiceImpl<IbzProBuildActionM
         }
     }
 
+
+	@Override
+    public List<IbzProBuildAction> selectByObjectid(Long id) {
+        return baseMapper.selectByObjectid(id);
+    }
+    @Override
+    public void removeByObjectid(Long id) {
+        this.remove(new QueryWrapper<IbzProBuildAction>().eq("objectid",id));
+    }
 
 
     public List<IbzProBuildAction> selectDefault(IbzProBuildActionSearchContext context){

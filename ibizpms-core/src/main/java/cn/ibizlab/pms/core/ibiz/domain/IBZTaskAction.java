@@ -262,6 +262,22 @@ public class IBZTaskAction extends EntityMP implements Serializable {
     @JsonProperty("actor")
     @ApiModelProperty("操作者")
     private String actor;
+    /**
+     * 编号
+     */
+    @TableField(value = "`OBJECTID`")
+    @JSONField(name = "objectid")
+    @JsonProperty("objectid")
+    @ApiModelProperty("编号")
+    private Long objectid;
+
+    /**
+     * 
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private cn.ibizlab.pms.core.zentao.domain.Task ibzprotask;
 
 
 
@@ -327,6 +343,14 @@ public class IBZTaskAction extends EntityMP implements Serializable {
     public void setActor(String actor) {
         this.actor = actor;
         this.modify("actor", actor);
+    }
+
+    /**
+     * 设置 [编号]
+     */
+    public void setObjectid(Long objectid) {
+        this.objectid = objectid;
+        this.modify("objectid", objectid);
     }
 
 

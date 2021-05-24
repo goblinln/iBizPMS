@@ -1,6 +1,7 @@
 import { IPSAppView, IPSAppViewRef } from "@ibiz/dynamic-model-api";
 import { DynamicInstanceConfig } from "@ibiz/dynamic-model-api/dist/types/core";
 import { GetModelService, Util } from "ibiz-core";
+import { NavDataService } from "../common-service/app-navdata-service";
 
 /**
  * 全局界面行为服务
@@ -393,7 +394,22 @@ export class AppGlobalService {
      * @memberof AppGlobalService
      */
     public FirstRecord(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
-        // todo 导航
+        try {
+            // 获取多数据导航数据
+            let navDataService = NavDataService.getInstance(actionContext.$store);
+            let preNavData: any = navDataService.getPreNavData(actionContext.viewCodeName);
+            if(!(preNavData.data?.length > 0)){
+                throw new Error('当前页面不是从多数据页面打开，无法使用该功能!')
+            }
+
+            // 获取最后一个记录的数据
+            let recordData: any = preNavData.data[0];
+
+            // 用目标数据，刷新当前页面
+            navDataService.serviceState.next({ action: 'viewrefresh', name: actionContext.viewCodeName, data: recordData.srfkey });
+        } catch (error) {
+            actionContext.$throw(error.message);
+        }
     }
 
     /**
@@ -654,7 +670,30 @@ export class AppGlobalService {
      * @memberof AppGlobalService
      */
     public PrevRecord(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
-        // todo 上一个记录
+        try {
+            // 获取多数据导航数据
+            let navDataService = NavDataService.getInstance(actionContext.$store);
+            let preNavData: any = navDataService.getPreNavData(actionContext.viewCodeName);
+            if(!(preNavData.data?.length > 0)){
+                throw new Error('当前页面不是从多数据页面打开，无法使用该功能!')
+            }
+
+            // 定位当前页面在多数据中的位置,并获取前一个记录的数据
+            let currentIndex: number = preNavData.data.findIndex((item:any) => item.srfkey == args?.[0]?.srfkey);
+            if(currentIndex == -1){
+                throw new Error('无法定位当前页面!')
+            }
+            if(currentIndex == 0){
+                throw new Error('已经是第一个记录了!')
+            }
+            let preIndex: number = currentIndex == 0 ? currentIndex : currentIndex - 1;
+            let recordData: any = preNavData.data[preIndex];
+
+            // 用目标数据，刷新当前页面
+            navDataService.serviceState.next({ action: 'viewrefresh', name: actionContext.viewCodeName, data: recordData.srfkey });
+        } catch (error) {
+            actionContext.$throw(error.message);
+        }
     }
 
     /**
@@ -758,7 +797,30 @@ export class AppGlobalService {
      * @memberof AppGlobalService
      */
     public NextRecord(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
-        // 下一个记录
+        try {
+            // 获取多数据导航数据
+            let navDataService = NavDataService.getInstance(actionContext.$store);
+            let preNavData: any = navDataService.getPreNavData(actionContext.viewCodeName);
+            if(!(preNavData.data?.length > 0)){
+                throw new Error('当前页面不是从多数据页面打开，无法使用该功能!')
+            }
+
+            // 定位当前页面在多数据中的位置,并获取前一个记录的数据
+            let currentIndex: number = preNavData.data.findIndex((item:any) => item.srfkey == args?.[0]?.srfkey);
+            if(currentIndex == -1){
+                throw new Error('无法定位当前页面!')
+            }
+            if(currentIndex == preNavData.data.length - 1){
+                throw new Error('已经是最后一个记录了!')
+            }
+            let nextIndex: number = currentIndex == (preNavData.data.length-1) ? currentIndex : currentIndex + 1;
+            let recordData: any = preNavData.data[nextIndex];
+
+            // 用目标数据，刷新当前页面
+            navDataService.serviceState.next({ action: 'viewrefresh', name: actionContext.viewCodeName, data: recordData.srfkey });
+        } catch (error) {
+            actionContext.$throw(error.message);
+        }
     }
 
     /**
@@ -834,7 +896,21 @@ export class AppGlobalService {
      * @memberof AppGlobalService
      */
     public LastRecord(args: any[], contextJO?: any, params?: any, $event?: any, xData?: any, actionContext?: any, srfParentDeName?: string) {
-        // todo 最后一个记录
-    }
+        try {
+            // 获取多数据导航数据
+            let navDataService = NavDataService.getInstance(actionContext.$store);
+            let preNavData: any = navDataService.getPreNavData(actionContext.viewCodeName);
+            if(!(preNavData.data?.length > 0)){
+                throw new Error('当前页面不是从多数据页面打开，无法使用该功能!')
+            }
 
+            // 获取最后一个记录的数据
+            let recordData: any = preNavData.data[preNavData.data.length - 1];
+
+            // 用目标数据，刷新当前页面
+            navDataService.serviceState.next({ action: 'viewrefresh', name: actionContext.viewCodeName, data: recordData.srfkey });
+        } catch (error) {
+            actionContext.$throw(error.message);
+        }
+    }
 }

@@ -188,15 +188,6 @@ public class IbzProBuildAction extends EntityMP implements Serializable {
     @ApiModelProperty("消息通知用户")
     private String noticeusers;
     /**
-     * 对象ID
-     */
-    @DEField(defaultValue = "0")
-    @TableField(value = "`OBJECTID`")
-    @JSONField(name = "objectid")
-    @JsonProperty("objectid")
-    @ApiModelProperty("对象ID")
-    private Long objectid;
-    /**
      * 对象类型
      */
     @TableField(value = "`OBJECTTYPE`")
@@ -271,6 +262,22 @@ public class IbzProBuildAction extends EntityMP implements Serializable {
     @JsonProperty("yesterday")
     @ApiModelProperty("昨天")
     private String yesterday;
+    /**
+     * id
+     */
+    @TableField(value = "`OBJECTID`")
+    @JSONField(name = "objectid")
+    @JsonProperty("objectid")
+    @ApiModelProperty("id")
+    private Long objectid;
+
+    /**
+     * 
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private cn.ibizlab.pms.core.zentao.domain.Build ibzprobuild;
 
 
 
@@ -315,14 +322,6 @@ public class IbzProBuildAction extends EntityMP implements Serializable {
     }
 
     /**
-     * 设置 [对象ID]
-     */
-    public void setObjectid(Long objectid) {
-        this.objectid = objectid;
-        this.modify("objectid", objectid);
-    }
-
-    /**
      * 设置 [对象类型]
      */
     public void setObjecttype(String objecttype) {
@@ -344,6 +343,14 @@ public class IbzProBuildAction extends EntityMP implements Serializable {
     public void setProduct(String product) {
         this.product = product;
         this.modify("product", product);
+    }
+
+    /**
+     * 设置 [id]
+     */
+    public void setObjectid(Long objectid) {
+        this.objectid = objectid;
+        this.modify("objectid", objectid);
     }
 
 

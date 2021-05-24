@@ -52,6 +52,9 @@ public class IBZTaskActionServiceImpl extends ServiceImpl<IBZTaskActionMapper, I
     @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.IBZTaskActionRuntime ibztaskactionRuntime;
 
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.zentao.service.ITaskService taskService;
 
     protected int batchSize = 500;
 
@@ -231,6 +234,15 @@ public class IBZTaskActionServiceImpl extends ServiceImpl<IBZTaskActionMapper, I
         }
     }
 
+
+	@Override
+    public List<IBZTaskAction> selectByObjectid(Long id) {
+        return baseMapper.selectByObjectid(id);
+    }
+    @Override
+    public void removeByObjectid(Long id) {
+        this.remove(new QueryWrapper<IBZTaskAction>().eq("objectid",id));
+    }
 
 
     public List<IBZTaskAction> selectDefault(IBZTaskActionSearchContext context){

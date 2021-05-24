@@ -30,6 +30,9 @@
 		<if test="srf.n_read_eq != null ">
 			<![CDATA[ AND  t1.`READ` = #{srf.n_read_eq,jdbcType=VARCHAR} ]]>
         </if>
+		<if test="srf.n_objectid_eq != null ">
+			<![CDATA[ AND  t1.`OBJECTID` = #{srf.n_objectid_eq,jdbcType=BIGINT} ]]>
+        </if>
 		<if test="ew!=null and ew.sqlSegment!=null and ew.sqlSegment!=''">
 		AND ${ew.sqlSegment}
 		</if>
@@ -48,10 +51,20 @@
     <!--通过mybatis将查询结果注入到entity中,通过配置autoMapping="true"由mybatis自动处理映射关系 -->
     <resultMap id="IbzProBuildActionResultMap" type="cn.ibizlab.pms.core.ibiz.domain.IbzProBuildAction" autoMapping="true">
 		<id property="id" column="id" /><!--主键字段映射-->
+		<result property="objectid" column="objectid" />
             
 		
+		<!--通过mybatis自动注入关系属性[主实体]，fetchType="lazy"为懒加载配置 -->
+		<association property="ibzprobuild" javaType="cn.ibizlab.pms.core.zentao.domain.Build" column="objectid" select="cn.ibizlab.pms.core.zentao.mapper.BuildMapper.selectById" fetchType="lazy"></association>
     </resultMap>
 
+	<!--关系实体暴露select方法供主实体通过外键查询关系实体数据[实体关系名称:DER1N_IBZPRO_BUILDACTION_ZT_BUILD_OBJECTID] -->
+	 <select id="selectByObjectid" resultMap="IbzProBuildActionResultMap"  databaseId="mysql">
+        <include refid="select" />
+		<trim prefix="where" prefixOverrides="and">
+			<![CDATA[ AND t1.`OBJECTID`=#{id} ]]>
+		</trim>
+     </select>
 
     <!--数据集合[Default]-->
 	 <select id="searchDefault"  parameterType="cn.ibizlab.pms.core.ibiz.filter.IbzProBuildActionSearchContext"  resultMap="IbzProBuildActionResultMap">

@@ -66,4 +66,6 @@ public interface IbzProBuildActionMapper extends BaseMapper<IbzProBuildAction> {
     @Delete("${sql}")
     boolean deleteBySQL(@Param("sql") String sql, @Param("et")Map param);
 
+    List<IbzProBuildAction> selectByObjectid(@Param("id") Serializable id);
+
 }

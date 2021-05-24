@@ -24307,6 +24307,29 @@
     "codeName" : "Tasktype"
   } ],
   "getMajorPSDERs" : [ {
+    "codeName" : "IbzProTask",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTaskAction/PSDERS/DER1N_IBZPRO_TASKACTION_ZT_TASK_OBJECTID.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 4,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZTaskAction.json"
+    },
+    "name" : "DER1N_IBZPRO_TASKACTION_ZT_TASK_OBJECTID",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "OBJECTID",
+      "codeName" : "ObjectID"
+    },
+    "pickupDEFName" : "OBJECTID",
+    "removeActionType" : -1,
+    "removeOrder" : 0
+  }, {
     "codeName" : "TaskTeam",
     "dERType" : "DER1N",
     "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/TaskTeam/PSDERS/DER1N_IBZ_TASKTEAM_ZT_TASK_ROOT.json",

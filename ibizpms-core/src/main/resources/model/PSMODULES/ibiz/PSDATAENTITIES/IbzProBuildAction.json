@@ -207,6 +207,10 @@
     "length" : 200,
     "logicName" : "操作方式",
     "name" : "ACTIONMANNER",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSCODELISTS/ActionManner.json"
+    },
     "stdDataType" : 25,
     "stringLength" : 200,
     "valueFormat" : "%1$s",
@@ -291,6 +295,10 @@
     "length" : 100,
     "logicName" : "操作者",
     "name" : "ACTOR",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSCODELISTS/UserRealName.json"
+    },
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
@@ -900,48 +908,6 @@
     "uIAssistDEField" : true
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "OBJECTID",
-      "dBType" : "MYSQL5",
-      "name" : "OBJECTID",
-      "queryCodeExp" : "t1.`OBJECTID`",
-      "standardColumnName" : "`OBJECTID`",
-      "valueAutoGen" : true
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "OBJECTID",
-        "codeName" : "ObjectID"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "ObjectID",
-    "dEFType" : 1,
-    "dataType" : "BIGINT",
-    "defaultValue" : "0",
-    "importOrder" : 1000,
-    "length" : 20,
-    "logicName" : "对象ID",
-    "name" : "OBJECTID",
-    "getPSSysTranslator" : {
-      "modelref" : true,
-      "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
-    },
-    "stdDataType" : 1,
-    "translatorMode" : "TRANSLATE2",
-    "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
       "columnName" : "OBJECTTYPE",
       "dBType" : "MYSQL5",
       "name" : "OBJECTTYPE",
@@ -990,6 +956,10 @@
     "length" : 30,
     "logicName" : "对象类型",
     "name" : "OBJECTTYPE",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSCODELISTS/Action__object_type.json"
+    },
     "stdDataType" : 25,
     "stringLength" : 30,
     "valueFormat" : "%1$s"
@@ -1141,6 +1111,10 @@
     "length" : 1,
     "logicName" : "已读",
     "name" : "READ",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSCODELISTS/Action__read.json"
+    },
     "stdDataType" : 25,
     "stringLength" : 1,
     "valueFormat" : "%1$s"
@@ -1387,13 +1361,82 @@
     "valueFormat" : "%1$s",
     "formulaDEField" : true,
     "phisicalDEField" : false
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "OBJECTID",
+      "dBType" : "MYSQL5",
+      "name" : "OBJECTID",
+      "queryCodeExp" : "t1.`OBJECTID`",
+      "standardColumnName" : "`OBJECTID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_OBJECTID_EQ",
+      "name" : "N_OBJECTID_EQ",
+      "stdDataType" : 1,
+      "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "OBJECTID",
+        "codeName" : "ObjectID"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "ObjectID",
+    "dEFType" : 1,
+    "dataType" : "PICKUP",
+    "importOrder" : 1000,
+    "logicName" : "id",
+    "name" : "OBJECTID",
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBuildAction/PSDERS/DER1N_IBZPRO_BUILDACTION_ZT_BUILD_OBJECTID.json"
+    },
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s",
+    "linkDEField" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "添加备注",
+    "mapPSDEName" : "ZT_BUILD",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBuildAction/PSDERS/DER1N_IBZPRO_BUILDACTION_ZT_BUILD_OBJECTID.json"
+    },
+    "name" : "CREATE",
+    "id" : "IbzProBuild__CREATE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
+  }, {
+    "logicName" : "管理",
+    "mapPSDEName" : "ZT_BUILD",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBuildAction/PSDERS/DER1N_IBZPRO_BUILDACTION_ZT_BUILD_OBJECTID.json"
+    },
+    "name" : "MANAGE",
+    "id" : "IbzProBuild__MANAGE"
   }, {
     "logicName" : "读取",
     "name" : "READ"
@@ -1508,9 +1551,33 @@
   "enableViewLevel" : 0,
   "extendMode" : 0,
   "logicName" : "版本日志",
+  "getMinorPSDERs" : [ {
+    "codeName" : "IbzProBuild",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBuildAction/PSDERS/DER1N_IBZPRO_BUILDACTION_ZT_BUILD_OBJECTID.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Build.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 4,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IbzProBuildAction.json"
+    },
+    "name" : "DER1N_IBZPRO_BUILDACTION_ZT_BUILD_OBJECTID",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "OBJECTID",
+      "codeName" : "ObjectID"
+    },
+    "pickupDEFName" : "OBJECTID",
+    "removeActionType" : -1,
+    "removeOrder" : 0
+  } ],
   "name" : "IBZPRO_BUILDACTION",
   "saaSMode" : 0,
-  "serviceAPIMode" : 0,
+  "serviceAPIMode" : 1,
   "serviceCodeName" : "IbzProBuildAction",
   "storageMode" : 1,
   "systemTag" : "iBizPMS",

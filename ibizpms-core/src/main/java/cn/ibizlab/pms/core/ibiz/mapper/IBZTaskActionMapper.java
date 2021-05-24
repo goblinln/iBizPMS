@@ -66,4 +66,6 @@ public interface IBZTaskActionMapper extends BaseMapper<IBZTaskAction> {
     @Delete("${sql}")
     boolean deleteBySQL(@Param("sql") String sql, @Param("et")Map param);
 
+    List<IBZTaskAction> selectByObjectid(@Param("id") Serializable id);
+
 }
