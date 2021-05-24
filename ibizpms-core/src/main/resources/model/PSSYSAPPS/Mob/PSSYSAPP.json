@@ -14191,6 +14191,12 @@
     "view" : "MobPickupView"
   }, {
     "modelref" : true,
+    "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TodoMobRedirectView.json",
+    "viewType" : "DEMOBREDIRECTVIEW",
+    "resource" : "Todo",
+    "view" : "MobRedirectView"
+  }, {
+    "modelref" : true,
     "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductStatsMobMDView.json",
     "viewType" : "DEMOBMDVIEW",
     "resource" : "ProductStats",

@@ -182,6 +182,9 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZCaseHistory.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZDailyAction.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProBugHostory.json"
   }, {
     "modelref" : true,
@@ -207,6 +210,9 @@
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProTestTaskHistory.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProWeeklyAction.json"
   }, {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction.json"

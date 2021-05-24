@@ -73,6 +73,7 @@ export class TodoUIServiceBase extends UIServiceBase {
         this.allViewFuncMap.set('MOBMDATAVIEW:','MOBMDATAVIEW');
         this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set(':','');
+        this.allViewFuncMap.set(':','');
         this.allViewFuncMap.set('MOBEDITVIEW:','MOBEDITVIEW');
     }
 

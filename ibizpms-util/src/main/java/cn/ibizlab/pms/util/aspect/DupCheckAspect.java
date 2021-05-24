@@ -59,6 +59,15 @@ public class DupCheckAspect {
         check(point, "searchDefault");
     }
      /**
+     * 实体[IBZDailyAction]
+     *
+     * @param point
+     */
+    @AfterReturning(value = "(execution(* cn.ibizlab.pms.core.*.service.*IBZDailyAction*.create*(..))||execution(* cn.ibizlab.pms.core.*.service.*IBZDailyAction*.update*(..))||execution(* cn.ibizlab.pms.core.*.service.*IBZDailyAction*.save*(..))  ) && !execution(* cn.ibizlab.pms.core.es.service.*.create*(..)) && !execution(* cn.ibizlab.pms.core.es.service.*.update*(..)) && !execution(* cn.ibizlab.pms.core.es.service.*.save*(..)) ")
+    public void checkIbzdailyaction(JoinPoint point) {
+        check(point, "searchDefault");
+    }
+     /**
      * 实体[IBZProProductAction]
      *
      * @param point
@@ -83,6 +92,15 @@ public class DupCheckAspect {
      */
     @AfterReturning(value = "(execution(* cn.ibizlab.pms.core.*.service.*IBZProReleaseAction*.create*(..))||execution(* cn.ibizlab.pms.core.*.service.*IBZProReleaseAction*.update*(..))||execution(* cn.ibizlab.pms.core.*.service.*IBZProReleaseAction*.save*(..))  ) && !execution(* cn.ibizlab.pms.core.es.service.*.create*(..)) && !execution(* cn.ibizlab.pms.core.es.service.*.update*(..)) && !execution(* cn.ibizlab.pms.core.es.service.*.save*(..)) ")
     public void checkIbzproreleaseaction(JoinPoint point) {
+        check(point, "searchDefault");
+    }
+     /**
+     * 实体[IBZProWeeklyAction]
+     *
+     * @param point
+     */
+    @AfterReturning(value = "(execution(* cn.ibizlab.pms.core.*.service.*IBZProWeeklyAction*.create*(..))||execution(* cn.ibizlab.pms.core.*.service.*IBZProWeeklyAction*.update*(..))||execution(* cn.ibizlab.pms.core.*.service.*IBZProWeeklyAction*.save*(..))  ) && !execution(* cn.ibizlab.pms.core.es.service.*.create*(..)) && !execution(* cn.ibizlab.pms.core.es.service.*.update*(..)) && !execution(* cn.ibizlab.pms.core.es.service.*.save*(..)) ")
+    public void checkIbzproweeklyaction(JoinPoint point) {
         check(point, "searchDefault");
     }
      /**

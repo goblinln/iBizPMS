@@ -50,6 +50,9 @@ export default {
 		mobmdview: {
 			caption: commonLogic.appcommonhandle("我的待办",null),
 		},
+		mobredirectview: {
+			caption: commonLogic.appcommonhandle("待办",null),
+		},
 		moboptionview: {
 			caption: commonLogic.appcommonhandle("待办",null),
 		},

@@ -648,6 +648,16 @@ export const viewstate: any = {
             ],
         },
         {
+            viewtag: '25ae8db8702f1b4b13ff1cbd953004db',
+            viewmodule: 'zentao',
+            viewname: 'TodoMobRedirectView',
+            viewaction: '',
+            viewdatachange: false,
+            refviews: [
+                'c567e5df647ee85ff4af0b8bfcb79eae',
+            ],
+        },
+        {
             viewtag: '25b59e545253ac103213d04a9a2a72f7',
             viewmodule: 'ibiz',
             viewname: 'ProductStatsMobMDView',
