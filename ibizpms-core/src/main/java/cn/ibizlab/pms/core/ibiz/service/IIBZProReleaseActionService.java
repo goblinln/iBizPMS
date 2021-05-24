@@ -44,6 +44,8 @@ public interface IIBZProReleaseActionService extends IService<IBZProReleaseActio
     List<IBZProReleaseAction> selectView(IBZProReleaseActionSearchContext context);
 
     Page<IBZProReleaseAction> searchDefault(IBZProReleaseActionSearchContext context);
+    List<IBZProReleaseAction> selectByObjectid(Long id);
+    void removeByObjectid(Long id);
     IBZProReleaseAction dynamicCall(Long key, String action, IBZProReleaseAction et);
     /**
      *自定义查询SQL

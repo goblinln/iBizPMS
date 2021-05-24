@@ -235,16 +235,6 @@ public class IBZStoryActionDTO extends DTOBase implements Serializable {
     private Long actionsn;
 
     /**
-     * 属性 [SRFKEY]
-     *
-     */
-    @JSONField(name = "srfkey")
-    @JsonProperty("srfkey")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("前端键值")
-    private Long srfkey;
-
-    /**
      * 属性 [ID]
      *
      */

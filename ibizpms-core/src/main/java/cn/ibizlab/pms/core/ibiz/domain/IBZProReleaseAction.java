@@ -239,14 +239,6 @@ public class IBZProReleaseAction extends EntityMP implements Serializable {
     @ApiModelProperty("本月")
     private String thismonth;
     /**
-     * 前端键值
-     */
-    @TableField(exist = false)
-    @JSONField(name = "srfkey")
-    @JsonProperty("srfkey")
-    @ApiModelProperty("前端键值")
-    private Long srfkey;
-    /**
      * 今天
      */
     @TableField(exist = false)
@@ -270,7 +262,31 @@ public class IBZProReleaseAction extends EntityMP implements Serializable {
     @JsonProperty("yesterday")
     @ApiModelProperty("昨天")
     private String yesterday;
+    /**
+     * ID
+     */
+    @TableField(value = "`OBJECTID`")
+    @JSONField(name = "objectid")
+    @JsonProperty("objectid")
+    @ApiModelProperty("ID")
+    private Long objectid;
 
+    /**
+     * 
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private cn.ibizlab.pms.core.zentao.domain.Release ibzprorelease;
+
+
+    /**
+     * 发布操作历史
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private List<cn.ibizlab.pms.core.ibiz.domain.IBZProReleaseHistory> ibzproreleasehistory;
 
 
     /**
@@ -335,6 +351,14 @@ public class IBZProReleaseAction extends EntityMP implements Serializable {
     public void setProduct(String product) {
         this.product = product;
         this.modify("product", product);
+    }
+
+    /**
+     * 设置 [ID]
+     */
+    public void setObjectid(Long objectid) {
+        this.objectid = objectid;
+        this.modify("objectid", objectid);
     }
 
 

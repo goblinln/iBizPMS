@@ -238,14 +238,6 @@ public class ProductPlanAction extends EntityMP implements Serializable {
     @ApiModelProperty("操作方式")
     private String actionmanner;
     /**
-     * 前端键值
-     */
-    @TableField(exist = false)
-    @JSONField(name = "srfkey")
-    @JsonProperty("srfkey")
-    @ApiModelProperty("前端键值")
-    private Long srfkey;
-    /**
      * 归属组织
      */
     @DEField(preType = DEPredefinedFieldType.ORGID)

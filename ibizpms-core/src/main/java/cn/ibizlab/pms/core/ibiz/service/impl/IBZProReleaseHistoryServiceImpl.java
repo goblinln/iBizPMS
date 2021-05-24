@@ -52,6 +52,9 @@ public class IBZProReleaseHistoryServiceImpl extends ServiceImpl<IBZProReleaseHi
     @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.IBZProReleaseHistoryRuntime ibzproreleasehistoryRuntime;
 
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.ibiz.service.IIBZProReleaseActionService ibzproreleaseactionService;
 
     protected int batchSize = 500;
 
@@ -232,6 +235,47 @@ public class IBZProReleaseHistoryServiceImpl extends ServiceImpl<IBZProReleaseHi
     }
 
 
+	@Override
+    public List<IBZProReleaseHistory> selectByAction(Long id) {
+        return baseMapper.selectByAction(id);
+    }
+    @Override
+    public void removeByAction(Long id) {
+        this.remove(new QueryWrapper<IBZProReleaseHistory>().eq("action",id));
+    }
+
+    public IIBZProReleaseHistoryService getProxyService() {
+        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
+    }
+	@Override
+    public void saveByAction(Long id,List<IBZProReleaseHistory> list) {
+        if(list==null)
+            return;
+        Set<Long> delIds=new HashSet<Long>();
+        List<IBZProReleaseHistory> _update=new ArrayList<IBZProReleaseHistory>();
+        List<IBZProReleaseHistory> _create=new ArrayList<IBZProReleaseHistory>();
+        for(IBZProReleaseHistory before:selectByAction(id)){
+            delIds.add(before.getId());
+        }
+        for(IBZProReleaseHistory sub:list) {
+            sub.setAction(id);
+            if(ObjectUtils.isEmpty(sub.getId()))
+                sub.setId((Long)sub.getDefaultKey(true));
+            if(delIds.contains(sub.getId())) {
+                delIds.remove(sub.getId());
+                _update.add(sub);
+            }
+            else
+                _create.add(sub);
+        }
+        if(_update.size()>0)
+            getProxyService().updateBatch(_update);
+        if(_create.size()>0)
+            getProxyService().createBatch(_create);
+        if(delIds.size()>0)
+            getProxyService().removeBatch(delIds);
+	}
+
 
     public List<IBZProReleaseHistory> selectDefault(IBZProReleaseHistorySearchContext context){
         return baseMapper.selectDefault(context, context.getSelectCond());
@@ -306,9 +350,6 @@ public class IBZProReleaseHistoryServiceImpl extends ServiceImpl<IBZProReleaseHi
     }
 
 
-    public IIBZProReleaseHistoryService getProxyService() {
-        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
-    }
     @Override
     @Transactional
     public IBZProReleaseHistory dynamicCall(Long key, String action, IBZProReleaseHistory et) {

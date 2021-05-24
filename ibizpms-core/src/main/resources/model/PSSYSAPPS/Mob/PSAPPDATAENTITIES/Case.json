@@ -7097,52 +7097,28 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__CASE_FAVOR_BUT",
+      "name" : "CONFIRM",
       "getPSDEOPPriv" : {
-        "logicName" : "用例已收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_FAVOR_BUT"
-        },
-        "mapSysUniResCode" : "CASE_FAVOR_BUT",
-        "name" : "SRFUR__CASE_FAVOR_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "确认",
+        "name" : "CONFIRM"
       }
     }, {
-      "name" : "SRFUR__CASE_TOBUG_BUT",
+      "name" : "FAVORITE",
       "getPSDEOPPriv" : {
-        "logicName" : "测试用例转BUG",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_TOBUG_BUT"
-        },
-        "mapSysUniResCode" : "CASE_TOBUG_BUT",
-        "name" : "SRFUR__CASE_TOBUG_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "用例收藏",
+        "name" : "FAVORITE"
       }
     }, {
-      "name" : "SRFUR__CASE_CONFIRM_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "测试用例确认",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_CONFIRM_BUT"
-        },
-        "mapSysUniResCode" : "CASE_CONFIRM_BUT",
-        "name" : "SRFUR__CASE_CONFIRM_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__CASE_CASECOF_BUT",
+      "name" : "CASECOF",
       "getPSDEOPPriv" : {
         "logicName" : "测试用例（用例确认）",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_CASECOF_BUT"
-        },
-        "mapSysUniResCode" : "CASE_CASECOF_BUT",
-        "name" : "SRFUR__CASE_CASECOF_BUT",
-        "mapSysUniRes" : true
+        "name" : "CASECOF"
+      }
+    }, {
+      "name" : "TOBUG",
+      "getPSDEOPPriv" : {
+        "logicName" : "转Bug",
+        "name" : "TOBUG"
       }
     } ],
     "state2Value" : "n/a",
@@ -7912,52 +7888,28 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__CASE_CONFIRM_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "测试用例确认",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_CONFIRM_BUT"
-        },
-        "mapSysUniResCode" : "CASE_CONFIRM_BUT",
-        "name" : "SRFUR__CASE_CONFIRM_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__CASE_TOBUG_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "测试用例转BUG",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_TOBUG_BUT"
-        },
-        "mapSysUniResCode" : "CASE_TOBUG_BUT",
-        "name" : "SRFUR__CASE_TOBUG_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__CASE_CASECOF_BUT",
+      "name" : "CASECOF",
       "getPSDEOPPriv" : {
         "logicName" : "测试用例（用例确认）",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_CASECOF_BUT"
-        },
-        "mapSysUniResCode" : "CASE_CASECOF_BUT",
-        "name" : "SRFUR__CASE_CASECOF_BUT",
-        "mapSysUniRes" : true
+        "name" : "CASECOF"
       }
     }, {
-      "name" : "SRFUR__CASE_NFAVOR_BUT",
+      "name" : "NFAVORITE",
       "getPSDEOPPriv" : {
-        "logicName" : "用例待收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_NFAVOR_BUT"
-        },
-        "mapSysUniResCode" : "CASE_NFAVOR_BUT",
-        "name" : "SRFUR__CASE_NFAVOR_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "取消收藏",
+        "name" : "NFAVORITE"
+      }
+    }, {
+      "name" : "CONFIRM",
+      "getPSDEOPPriv" : {
+        "logicName" : "确认",
+        "name" : "CONFIRM"
+      }
+    }, {
+      "name" : "TOBUG",
+      "getPSDEOPPriv" : {
+        "logicName" : "转Bug",
+        "name" : "TOBUG"
       }
     } ],
     "state2Value" : "blocked",
@@ -10204,124 +10156,58 @@
       "allowMode" : true
     } ],
     "getPSDEMainStateOPPrivs" : [ {
-      "name" : "SRFUR__CASE_CASECOF_BUT",
+      "name" : "UNLINKCASE",
       "getPSDEOPPriv" : {
-        "logicName" : "测试用例（用例确认）",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_CASECOF_BUT"
-        },
-        "mapSysUniResCode" : "CASE_CASECOF_BUT",
-        "name" : "SRFUR__CASE_CASECOF_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "移除用例",
+        "name" : "UNLINKCASE"
       }
     }, {
-      "name" : "SRFUR__CASE_CASERUN_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "测试用例（用例执行）",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_CASERUN_BUT"
-        },
-        "mapSysUniResCode" : "CASE_CASERUN_BUT",
-        "name" : "SRFUR__CASE_CASERUN_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__CASE_RESULT_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "测试用例结果",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_RESULT_BUT"
-        },
-        "mapSysUniResCode" : "CASE_RESULT_BUT",
-        "name" : "SRFUR__CASE_RESULT_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__CASE_UNLINK_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "测试用例移除",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_UNLINK_BUT"
-        },
-        "mapSysUniResCode" : "CASE_UNLINK_BUT",
-        "name" : "SRFUR__CASE_UNLINK_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__CASE_FAVOR_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "用例已收藏",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_FAVOR_BUT"
-        },
-        "mapSysUniResCode" : "CASE_FAVOR_BUT",
-        "name" : "SRFUR__CASE_FAVOR_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__CASE_CASERESULT_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "测试用例（用例结果）",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_CASERESULT_BUT"
-        },
-        "mapSysUniResCode" : "CASE_CASERESULT_BUT",
-        "name" : "SRFUR__CASE_CASERESULT_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__CASE_CASETOBUG_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "测试用例（用例转BUG）",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_CASETOBUG_BUT"
-        },
-        "mapSysUniResCode" : "CASE_CASETOBUG_BUT",
-        "name" : "SRFUR__CASE_CASETOBUG_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__CASE_TOBUG_BUT",
-      "getPSDEOPPriv" : {
-        "logicName" : "测试用例转BUG",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_TOBUG_BUT"
-        },
-        "mapSysUniResCode" : "CASE_TOBUG_BUT",
-        "name" : "SRFUR__CASE_TOBUG_BUT",
-        "mapSysUniRes" : true
-      }
-    }, {
-      "name" : "SRFUR__CASE_EDIT_BUT",
+      "name" : "CASEEDIT",
       "getPSDEOPPriv" : {
         "logicName" : "测试用例编辑",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_EDIT_BUT"
-        },
-        "mapSysUniResCode" : "CASE_EDIT_BUT",
-        "name" : "SRFUR__CASE_EDIT_BUT",
-        "mapSysUniRes" : true
+        "name" : "CASEEDIT"
       }
     }, {
-      "name" : "SRFUR__CASE_RUN_BUT",
+      "name" : "TOBUG",
       "getPSDEOPPriv" : {
-        "logicName" : "测试用例执行",
-        "getMapPSSysUniRes" : {
-          "modelref" : true,
-          "id" : "ibiz__CASE_RUN_BUT"
-        },
-        "mapSysUniResCode" : "CASE_RUN_BUT",
-        "name" : "SRFUR__CASE_RUN_BUT",
-        "mapSysUniRes" : true
+        "logicName" : "转Bug",
+        "name" : "TOBUG"
+      }
+    }, {
+      "name" : "CASECOF",
+      "getPSDEOPPriv" : {
+        "logicName" : "测试用例（用例确认）",
+        "name" : "CASECOF"
+      }
+    }, {
+      "name" : "TESRUNCASE",
+      "getPSDEOPPriv" : {
+        "logicName" : "执行测试",
+        "name" : "TESRUNCASE"
+      }
+    }, {
+      "name" : "RUNCASE",
+      "getPSDEOPPriv" : {
+        "logicName" : "执行测试",
+        "name" : "RUNCASE"
+      }
+    }, {
+      "name" : "CASERESULT",
+      "getPSDEOPPriv" : {
+        "logicName" : "测试结果",
+        "name" : "CASERESULT"
+      }
+    }, {
+      "name" : "RESULT",
+      "getPSDEOPPriv" : {
+        "logicName" : "测试用例结果",
+        "name" : "RESULT"
+      }
+    }, {
+      "name" : "FAVORITE",
+      "getPSDEOPPriv" : {
+        "logicName" : "用例收藏",
+        "name" : "FAVORITE"
       }
     } ],
     "state2Value" : "pass",

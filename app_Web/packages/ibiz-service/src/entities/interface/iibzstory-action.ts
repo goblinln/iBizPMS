@@ -89,10 +89,6 @@ export interface IIBZStoryAction extends IEntityBase {
      */
     actionsn?: any;
     /**
-     * 前端键值
-     */
-    srfkey?: any;
-    /**
      * id
      */
     id?: any;

@@ -1,0 +1,24 @@
+{
+  "codeName" : "IbzProRelease",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseAction/PSDERS/DER1N_IBZPRO_RELEASEACTION_ZT_RELEASE_OBJECTID.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/zentao/PSDATAENTITIES/Release.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 4,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseAction.json"
+  },
+  "name" : "DER1N_IBZPRO_RELEASEACTION_ZT_RELEASE_OBJECTID",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "OBJECTID",
+    "codeName" : "ObjectID"
+  },
+  "pickupDEFName" : "OBJECTID",
+  "removeActionType" : -1,
+  "removeOrder" : 0
+}

@@ -44,6 +44,9 @@ public interface IIBZProReleaseHistoryService extends IService<IBZProReleaseHist
     List<IBZProReleaseHistory> selectView(IBZProReleaseHistorySearchContext context);
 
     Page<IBZProReleaseHistory> searchDefault(IBZProReleaseHistorySearchContext context);
+    List<IBZProReleaseHistory> selectByAction(Long id);
+    void removeByAction(Long id);
+    void saveByAction(Long id, List<IBZProReleaseHistory> list) ;
     IBZProReleaseHistory dynamicCall(Long key, String action, IBZProReleaseHistory et);
     /**
      *自定义查询SQL

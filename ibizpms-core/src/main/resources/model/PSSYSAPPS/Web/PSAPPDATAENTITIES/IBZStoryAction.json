@@ -272,11 +272,6 @@
     "name" : "ACTIONSN",
     "stdDataType" : 1
   }, {
-    "codeName" : "Srfkey",
-    "logicName" : "前端键值",
-    "name" : "SRFKEY",
-    "stdDataType" : 1
-  }, {
     "codeName" : "Id",
     "logicName" : "id",
     "name" : "ID",

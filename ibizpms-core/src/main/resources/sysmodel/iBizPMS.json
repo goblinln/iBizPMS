@@ -13331,20 +13331,6 @@
     "major_field":0
     },
     {
-    "fieldname":"SRFKEY" ,
-    "codename":"Srfkey",
-    "field_logic_name":"前端键值",
-    "entity_name":"IBZPRO_RELEASEACTION",
-    "field_type":"BIGINT",
-    "nullable":1,
-    "physical_field":0,
-    "data_type":"BIGINT",
-    "expression":"t1.id",
-    "key_field":0,
-    "show_order":1000,
-    "major_field":0
-    },
-    {
     "fieldname":"TODAY" ,
     "codename":"Today",
     "field_logic_name":"今天",
@@ -13388,11 +13374,41 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"OBJECTID" ,
+    "codename":"ObjectID",
+    "field_logic_name":"ID",
+    "entity_name":"IBZPRO_RELEASEACTION",
+    "ref_de":"ZT_RELEASE",
+    "ref_field_name":"ID",
+    "relation_name":"DER1N_IBZPRO_RELEASEACTION_ZT_RELEASE_OBJECTID",
+    "relation_codename":"IbzProRelease",
+    "field_type":"PICKUP",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":8,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
+    {"name":"DER1N_IBZPRO_RELEASEHISTORY_IBZPRO_RELEASEACTION_ACTION",
+     "relation_type":"DER1N",
+     "code_name":"IbzProRelease",
+     "entity_name":"IBZPRO_RELEASEHISTORY",
+     "ref_entity_name":"IBZPRO_RELEASEACTION"
+    }
     ],
     "parentEntitys":[
+    {"name":"DER1N_IBZPRO_RELEASEACTION_ZT_RELEASE_OBJECTID",
+     "relation_type":"DER1N",
+     "code_name":"IbzProRelease",
+     "entity_name":"IBZPRO_RELEASEACTION",
+     "ref_entity_name":"ZT_RELEASE"
+    }
     ]
  }
     ,
@@ -13579,11 +13595,35 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"ACTION" ,
+    "codename":"Action",
+    "field_logic_name":"id",
+    "entity_name":"IBZPRO_RELEASEHISTORY",
+    "ref_de":"IBZPRO_RELEASEACTION",
+    "ref_field_name":"ID",
+    "relation_name":"DER1N_IBZPRO_RELEASEHISTORY_IBZPRO_RELEASEACTION_ACTION",
+    "relation_codename":"IbzProRelease",
+    "field_type":"PICKUP",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
     ],
     "parentEntitys":[
+    {"name":"DER1N_IBZPRO_RELEASEHISTORY_IBZPRO_RELEASEACTION_ACTION",
+     "relation_type":"DER1N",
+     "code_name":"IbzProRelease",
+     "entity_name":"IBZPRO_RELEASEHISTORY",
+     "ref_entity_name":"IBZPRO_RELEASEACTION"
+    }
     ]
  }
     ,
@@ -15712,20 +15752,6 @@
     "physical_field":1,
     "data_type":"BIGINT",
     "data_length":20,
-    "key_field":0,
-    "show_order":1000,
-    "major_field":0
-    },
-    {
-    "fieldname":"SRFKEY" ,
-    "codename":"Srfkey",
-    "field_logic_name":"前端键值",
-    "entity_name":"IBZPRO_STORYACTION",
-    "field_type":"BIGINT",
-    "nullable":1,
-    "physical_field":0,
-    "data_type":"BIGINT",
-    "expression":"t1.id",
     "key_field":0,
     "show_order":1000,
     "major_field":0
@@ -36516,20 +36542,6 @@
     "major_field":0
     },
     {
-    "fieldname":"SRFKEY" ,
-    "codename":"Srfkey",
-    "field_logic_name":"前端键值",
-    "entity_name":"IBZPRO_PRODUCTPLANACTION",
-    "field_type":"BIGINT",
-    "nullable":1,
-    "physical_field":0,
-    "data_type":"BIGINT",
-    "expression":"t1.id",
-    "key_field":0,
-    "show_order":1000,
-    "major_field":0
-    },
-    {
     "fieldname":"ORG" ,
     "codename":"Org",
     "field_logic_name":"归属组织",
@@ -43887,6 +43899,12 @@
     }
     ],
     "subEntitys":[
+    {"name":"DER1N_IBZPRO_RELEASEACTION_ZT_RELEASE_OBJECTID",
+     "relation_type":"DER1N",
+     "code_name":"IbzProRelease",
+     "entity_name":"IBZPRO_RELEASEACTION",
+     "ref_entity_name":"ZT_RELEASE"
+    }
     ],
     "parentEntitys":[
     {"name":"DER1N_ZT_RELEASE_ZT_BRANCH_BRANCH",

@@ -52,6 +52,12 @@ public class IBZProReleaseActionServiceImpl extends ServiceImpl<IBZProReleaseAct
     @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.IBZProReleaseActionRuntime ibzproreleaseactionRuntime;
 
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.ibiz.service.IIBZProReleaseHistoryService ibzproreleasehistoryService;
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.zentao.service.IReleaseService releaseService;
 
     protected int batchSize = 500;
 
@@ -67,6 +73,9 @@ public class IBZProReleaseActionServiceImpl extends ServiceImpl<IBZProReleaseAct
     public boolean create(IBZProReleaseAction et) {
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
+        }
+        if(!ibzproreleaseactionRuntime.isRtmodel()){
+            ibzproreleasehistoryService.saveByAction(et.getId(), et.getIbzproreleasehistory());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -88,6 +97,9 @@ public class IBZProReleaseActionServiceImpl extends ServiceImpl<IBZProReleaseAct
     public boolean update(IBZProReleaseAction et) {
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
+        }
+        if(!ibzproreleaseactionRuntime.isRtmodel()){
+            ibzproreleasehistoryService.saveByAction(et.getId(), et.getIbzproreleasehistory());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -118,6 +130,7 @@ public class IBZProReleaseActionServiceImpl extends ServiceImpl<IBZProReleaseAct
     @Transactional
     public boolean remove(Long key) {
         if(!ibzproreleaseactionRuntime.isRtmodel()){
+            ibzproreleasehistoryService.removeByAction(key) ;
         }
         boolean result = removeById(key);
         return result ;
@@ -143,6 +156,7 @@ public class IBZProReleaseActionServiceImpl extends ServiceImpl<IBZProReleaseAct
         }
         else {
             if(!ibzproreleaseactionRuntime.isRtmodel()){
+                et.setIbzproreleasehistory(ibzproreleasehistoryService.selectByAction(key));
             }
         }
         return et;
@@ -231,6 +245,15 @@ public class IBZProReleaseActionServiceImpl extends ServiceImpl<IBZProReleaseAct
         }
     }
 
+
+	@Override
+    public List<IBZProReleaseAction> selectByObjectid(Long id) {
+        return baseMapper.selectByObjectid(id);
+    }
+    @Override
+    public void removeByObjectid(Long id) {
+        this.remove(new QueryWrapper<IBZProReleaseAction>().eq("objectid",id));
+    }
 
 
     public List<IBZProReleaseAction> selectDefault(IBZProReleaseActionSearchContext context){

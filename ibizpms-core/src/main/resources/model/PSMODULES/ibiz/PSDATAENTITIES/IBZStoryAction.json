@@ -1027,42 +1027,6 @@
     "valueFormat" : "%1$s"
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "SRFKEY",
-      "dBType" : "MYSQL5",
-      "name" : "SRFKEY",
-      "queryCodeExp" : "t1.id",
-      "standardColumnName" : "`SRFKEY`"
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "SRFKEY",
-        "codeName" : "Srfkey"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "Srfkey",
-    "dEFType" : 2,
-    "dataType" : "BIGINT",
-    "importOrder" : 1000,
-    "logicName" : "前端键值",
-    "name" : "SRFKEY",
-    "stdDataType" : 1,
-    "valueFormat" : "%1$s",
-    "formulaDEField" : true,
-    "phisicalDEField" : false
-  }, {
-    "getAllPSDEFDTColumns" : [ {
       "columnName" : "ID",
       "dBType" : "MYSQL5",
       "name" : "ID",

@@ -23,7 +23,6 @@ function getLocaleResourceBase(){
 		'isactorss': commonLogic.appcommonhandle("当前用户",null),
 		'product': commonLogic.appcommonhandle("产品",null),
 		'actionsn': commonLogic.appcommonhandle("系统日志编号",null),
-		'srfkey': commonLogic.appcommonhandle("前端键值",null),
 		'id': commonLogic.appcommonhandle("id",null),
 		'actor': commonLogic.appcommonhandle("操作者",null),
 		'objecttype': commonLogic.appcommonhandle("对象类型",null),

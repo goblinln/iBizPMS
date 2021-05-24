@@ -213,14 +213,6 @@ public class IBZStoryAction extends EntityMP implements Serializable {
     @ApiModelProperty("系统日志编号")
     private Long actionsn;
     /**
-     * 前端键值
-     */
-    @TableField(exist = false)
-    @JSONField(name = "srfkey")
-    @JsonProperty("srfkey")
-    @ApiModelProperty("前端键值")
-    private Long srfkey;
-    /**
      * id
      */
     @DEField(isKeyField = true, dupCheck = DupCheck.ALL)

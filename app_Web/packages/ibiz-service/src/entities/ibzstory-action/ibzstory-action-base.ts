@@ -114,10 +114,6 @@ export abstract class IBZStoryActionBase extends EntityBase implements IIBZStory
      */
     actionsn?: any;
     /**
-     * 前端键值
-     */
-    srfkey?: any;
-    /**
      * id
      */
     id?: any;

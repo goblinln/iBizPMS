@@ -265,16 +265,6 @@ public class ProductPlanActionDTO extends DTOBase implements Serializable {
     private String actionmanner;
 
     /**
-     * 属性 [SRFKEY]
-     *
-     */
-    @JSONField(name = "srfkey")
-    @JsonProperty("srfkey")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("前端键值")
-    private Long srfkey;
-
-    /**
      * 属性 [ORG]
      *
      */
