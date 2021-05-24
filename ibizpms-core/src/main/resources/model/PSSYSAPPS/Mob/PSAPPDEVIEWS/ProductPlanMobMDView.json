@@ -68,54 +68,6 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
-    "name" : "editdata",
-    "getPSAppUILogic" : {
-      "logicType" : "PREDEFINED",
-      "name" : "编辑数据",
-      "getOpenDataPSAppView" : {
-        "getPSNavigateContexts" : [ {
-          "key" : "PRODUCT",
-          "name" : "PRODUCT",
-          "value" : "product",
-          "rawValue" : false
-        } ],
-        "getPSNavigateParams" : [ {
-          "key" : "product",
-          "name" : "product",
-          "value" : "product",
-          "rawValue" : false
-        } ],
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductPlanMobTabExpView.json",
-          "viewType" : "DEMOBTABEXPVIEW"
-        }
-      },
-      "getPSAppUILogicRefViews" : [ {
-        "getPSNavigateContexts" : [ {
-          "key" : "PRODUCT",
-          "name" : "PRODUCT",
-          "value" : "product",
-          "rawValue" : false
-        } ],
-        "getPSNavigateParams" : [ {
-          "key" : "product",
-          "name" : "product",
-          "value" : "product",
-          "rawValue" : false
-        } ],
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/ProductPlanMobTabExpView.json",
-          "viewType" : "DEMOBTABEXPVIEW"
-        }
-      } ],
-      "viewLogicType" : "APP_OPENDATA",
-      "editMode" : true
-    }
-  }, {
-    "logicTrigger" : "CUSTOM",
-    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",

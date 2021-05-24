@@ -105,10 +105,12 @@ import sysemployee_zh_CN from '@locale/lanres/entities/sys-employee/sys-employee
 import ibzproproductline_zh_CN from '@locale/lanres/entities/ibzpro-product-line/ibzpro-product-line_zh_CN';
 import projectproduct_zh_CN from '@locale/lanres/entities/project-product/project-product_zh_CN';
 import accounttaskestimate_zh_CN from '@locale/lanres/entities/account-taskestimate/account-taskestimate_zh_CN';
+import ibzproproductaction_zh_CN from '@locale/lanres/entities/ibzpro-product-action/ibzpro-product-action_zh_CN';
 import branch_zh_CN from '@locale/lanres/entities/branch/branch_zh_CN';
 import action_zh_CN from '@locale/lanres/entities/action/action_zh_CN';
 import dynafilter_zh_CN from '@locale/lanres/entities/dyna-filter/dyna-filter_zh_CN';
 import history_zh_CN from '@locale/lanres/entities/history/history_zh_CN';
+import ibzproproducthistory_zh_CN from '@locale/lanres/entities/ibzpro-product-history/ibzpro-product-history_zh_CN';
 import module_zh_CN from '@locale/lanres/entities/module/module_zh_CN';
 import projecttaskestimate_zh_CN from '@locale/lanres/entities/project-taskestimate/project-taskestimate_zh_CN';
 import components_zh_CN from '@locale/lanres/components/components_zh_CN';
@@ -482,10 +484,12 @@ function getAppLocale(){
             'ibzproproductline': ibzproproductline_zh_CN(),
             'projectproduct': projectproduct_zh_CN(),
             'accounttaskestimate': accounttaskestimate_zh_CN(),
+            'ibzproproductaction': ibzproproductaction_zh_CN(),
             'branch': branch_zh_CN(),
             'action': action_zh_CN(),
             'dynafilter': dynafilter_zh_CN(),
             'history': history_zh_CN(),
+            'ibzproproducthistory': ibzproproducthistory_zh_CN(),
             'module': module_zh_CN(),
             'projecttaskestimate': projecttaskestimate_zh_CN(),
         },

@@ -129,6 +129,12 @@ public class IBZProProductActionRuntime extends cn.ibizlab.pms.core.runtime.Syst
         IBZProProductActionSearchContext searchContext = (IBZProProductActionSearchContext) iSearchContextBase;
         if (iPSDEDataSet.getName().equals("DEFAULT"))
             return ibzproproductactionService.searchDefault(searchContext);    
+        if (iPSDEDataSet.getName().equals("MobType"))
+            return ibzproproductactionService.searchMobType(searchContext);    
+        if (iPSDEDataSet.getName().equals("ProductTrends"))
+            return ibzproproductactionService.searchProductTrends(searchContext);    
+        if (iPSDEDataSet.getName().equals("Type"))
+            return ibzproproductactionService.searchType(searchContext);    
         return null;
     }
 
@@ -137,8 +143,14 @@ public class IBZProProductActionRuntime extends cn.ibizlab.pms.core.runtime.Syst
         IBZProProductActionSearchContext searchContext = (IBZProProductActionSearchContext) iSearchContextBase;
         if (iPSDataQuery.getName().equals("DEFAULT"))
             return ibzproproductactionService.selectDefault(searchContext);
+        if (iPSDataQuery.getName().equals("MobType"))
+            return ibzproproductactionService.selectMobType(searchContext);
+        if (iPSDataQuery.getName().equals("ProductTrends"))
+            return ibzproproductactionService.selectProductTrends(searchContext);
         if (iPSDataQuery.getName().equals("SIMPLE"))
             return ibzproproductactionService.selectSimple(searchContext);
+        if (iPSDataQuery.getName().equals("Type"))
+            return ibzproproductactionService.selectType(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
             return ibzproproductactionService.selectView(searchContext);
         return null;
@@ -337,6 +349,15 @@ public class IBZProProductActionRuntime extends cn.ibizlab.pms.core.runtime.Syst
         }
         else if (action.equals("searchDefault")) {
             return aroundDataSet("DEFAULT", point);
+        }
+        else if (action.equals("searchMobType")) {
+            return aroundDataSet("MobType", point);
+        }
+        else if (action.equals("searchProductTrends")) {
+            return aroundDataSet("ProductTrends", point);
+        }
+        else if (action.equals("searchType")) {
+            return aroundDataSet("Type", point);
         }
         return point.proceed();
     }

@@ -29333,6 +29333,68 @@ const router = new Router({
                     component: AppViewShell
                     },
                     {
+                    path: 'products/:product?/ibzproproductactions/:ibzproproductaction?/views/listview',
+                    meta: {
+                        caption: 'entities.ibzproproductaction.views.listview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'ibzproproductactions', parameterName: 'ibzproproductaction' },
+                            { pathName: 'views', parameterName: 'listview' },
+                        ],
+                        resource:'ibzproproductaction',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'ibzproproductactions/:ibzproproductaction?/views/listview',
+                    meta: {
+                        caption: 'entities.ibzproproductaction.views.listview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzproproductactions', parameterName: 'ibzproproductaction' },
+                            { pathName: 'views', parameterName: 'listview' },
+                        ],
+                        resource:'ibzproproductaction',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
+                    path: 'products/:product?/ibzproproductactions/:ibzproproductaction?/views/addcommenthistorylistview',
+                    meta: {
+                        caption: 'entities.ibzproproductaction.views.addcommenthistorylistview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'products', parameterName: 'product' },
+                            { pathName: 'ibzproproductactions', parameterName: 'ibzproproductaction' },
+                            { pathName: 'views', parameterName: 'addcommenthistorylistview' },
+                        ],
+                        resource:'ibzproproductaction',
+                        requireAuth: true,
+                        },
+                        component: AppViewShell,
+                    },
+                    {
+                    path: 'ibzproproductactions/:ibzproproductaction?/views/addcommenthistorylistview',
+                    meta: {
+                        caption: 'entities.ibzproproductaction.views.addcommenthistorylistview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'ibzproproductactions', parameterName: 'ibzproproductaction' },
+                            { pathName: 'views', parameterName: 'addcommenthistorylistview' },
+                        ],
+                        resource:'ibzproproductaction',
+                        requireAuth: true,
+                    },
+                    component: AppViewShell
+                    },
+                    {
                     path: 'products/:product?/branches/:branch?/views/pmgridview',
                     meta: {
                         caption: 'entities.branch.views.pmgridview.caption',
@@ -30999,6 +31061,19 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'views', parameterName: 'taskzsgridview9weeknextweekplan' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
+                    path: 'views/ibzproproductactionlistview',
+                    meta: {
+                        caption: 'entities.ibzproproductaction.views.listview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'ibzproproductactionlistview' },
                         ],
                         requireAuth: true,
                     },
@@ -33200,6 +33275,19 @@ const router = new Router({
                         parameters: [
                             { pathName: 'ibizpms', parameterName: 'ibizpms' },
                             { pathName: 'views', parameterName: 'ibzlibmodulegridview' },
+                        ],
+                        requireAuth: true,
+                    },
+                    component: AppViewShell,
+                },
+                {
+                    path: 'views/ibzproproductactionaddcommenthistorylistview',
+                    meta: {
+                        caption: 'entities.ibzproproductaction.views.addcommenthistorylistview.caption',
+                        info:'',
+                        parameters: [
+                            { pathName: 'ibizpms', parameterName: 'ibizpms' },
+                            { pathName: 'views', parameterName: 'ibzproproductactionaddcommenthistorylistview' },
                         ],
                         requireAuth: true,
                     },

@@ -129,10 +129,12 @@ export class AuthServiceRegister extends ServiceRegisterBase {
         this.allService.set('authservice-ibzproproductline', () => import('../authservice/ibzpro-product-line/ibzpro-product-line-auth-service'));
         this.allService.set('authservice-projectproduct', () => import('../authservice/project-product/project-product-auth-service'));
         this.allService.set('authservice-accounttaskestimate', () => import('../authservice/account-taskestimate/account-taskestimate-auth-service'));
+        this.allService.set('authservice-ibzproproductaction', () => import('../authservice/ibzpro-product-action/ibzpro-product-action-auth-service'));
         this.allService.set('authservice-branch', () => import('../authservice/branch/branch-auth-service'));
         this.allService.set('authservice-action', () => import('../authservice/action/action-auth-service'));
         this.allService.set('authservice-dynafilter', () => import('../authservice/dyna-filter/dyna-filter-auth-service'));
         this.allService.set('authservice-history', () => import('../authservice/history/history-auth-service'));
+        this.allService.set('authservice-ibzproproducthistory', () => import('../authservice/ibzpro-product-history/ibzpro-product-history-auth-service'));
         this.allService.set('authservice-module', () => import('../authservice/module/module-auth-service'));
         this.allService.set('authservice-projecttaskestimate', () => import('../authservice/project-taskestimate/project-taskestimate-auth-service'));
     }

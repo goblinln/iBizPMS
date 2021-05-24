@@ -7,10 +7,20 @@ import org.springframework.stereotype.Component;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
 import net.ibizsys.runtime.ISystemRuntime;
+import net.ibizsys.model.dataentity.action.IPSDEAction;
 import net.ibizsys.runtime.dataentity.IDataEntityRuntime;
 import net.ibizsys.runtime.util.IEntity;
+import net.ibizsys.runtime.util.IEntityBase;
 import com.alibaba.fastjson.JSONObject;
+import org.springframework.util.ObjectUtils;
+import org.springframework.data.domain.Page;
+
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @Component("WFCallbackDeamonJobHandler")
@@ -30,10 +40,34 @@ public class WFCallbackDeamonJobHandler implements IJobsHandler {
         String data = arg.getString("data");
         try {
             IDataEntityRuntime callBackDERuntime = systemRuntime.getDataEntityRuntime(deName);
-            IEntity entity = (IEntity)callBackDERuntime.deserializeEntity(data);
-            entity.set(callBackDERuntime.getKeyPSDEField().getCodeName(),entity.get("businessKey"));
-            callBackDERuntime.executeAction(action, null, new Object[]{entity});
-        }catch (Exception e){
+            IEntity entity = (IEntity) callBackDERuntime.deserializeEntity(data);
+            entity.set(callBackDERuntime.getKeyPSDEField().getCodeName(), entity.get("businessKey"));
+            Map map = new HashMap(16);
+            if ("Default".equals(action) || "ALLDATA".equals(action)) {
+                callBackDERuntime.getPSDataEntity().getAllPSDEDataSets().forEach(ipsdeDataSet -> {
+                    if (action.equals(ipsdeDataSet.getCodeName())) {
+                        Page<? extends IEntityBase> dataSet = callBackDERuntime
+                                .searchDataSet(ipsdeDataSet, callBackDERuntime.createSearchContext());
+                        if (!ObjectUtils.isEmpty(dataSet)) {
+                            map.put("content", dataSet.getContent());
+                        }
+                    }
+                });
+            }
+            List<IPSDEAction> allPSDEAction = callBackDERuntime.getPSDataEntity().getAllPSDEActions();
+            boolean flag = false;
+            for (IPSDEAction psdeAction : allPSDEAction) {
+                if (action.equals(psdeAction.getCodeName().toLowerCase())) {
+                    callBackDERuntime.executeAction(action, psdeAction, new Object[]{entity});
+                    flag = true;
+                    break;
+                }
+            }
+            if (action != null && !flag) {
+                callBackDERuntime.executeAction(action, null, new Object[]{entity});
+            }
+            return JobsResponse.ok().setMsg(JSONObject.toJSONString(map));
+        } catch (Exception e) {
             throw new RuntimeException(String.format("工作流回调发生错误:%1$s", e.getMessage()));
         } catch (Throwable throwable) {
             throwable.printStackTrace();

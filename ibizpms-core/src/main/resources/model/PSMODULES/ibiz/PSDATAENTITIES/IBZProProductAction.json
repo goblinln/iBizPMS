@@ -131,12 +131,45 @@
   "getAllPSDEDataQueries" : [ {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
-      "name" : "MySQL5"
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "( t1.`OBJECTTYPE` = 'product' )",
+        "name" : "查询条件"
+      } ]
     } ],
     "codeName" : "Default",
     "logicName" : "数据查询",
     "name" : "DEFAULT",
     "defaultMode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.objecttype = 'product'",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "MobType",
+    "logicName" : "动态(根据类型过滤)",
+    "name" : "MobType",
+    "customCode" : true
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "(t1.Today = #{srf.n_today_eq} or t1.yesterday = #{srf.n_yesterday_eq} or t1.thisweek= #{srf.n_thisweek_eq} or t1.lastweek= #{srf.n_lastweek_eq} or t1.thismonth = #{srf.n_thismonth_eq} or t1.lastmonth= #{srf.n_lastmonth_eq} or (#{srf.n_today_eq} is null and #{srf.n_yesterday_eq} is null and #{srf.n_thisweek_eq} is null and #{srf.n_lastweek_eq} is null and #{srf.n_thismonth_eq} is null and  \n #{srf.n_lastmonth_eq} is null ))",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "ProductTrends",
+    "logicName" : "产品动态(产品相关所有)",
+    "name" : "ProductTrends",
+    "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -146,6 +179,20 @@
     "dEFGroupType" : "BASEFIELDS",
     "logicName" : "基础属性查询",
     "name" : "SIMPLE"
+  }, {
+    "getAllPSDEDataQueryCodes" : [ {
+      "dBType" : "MYSQL5",
+      "name" : "MySQL5",
+      "getPSDEDataQueryCodeConds" : [ {
+        "condType" : "CUSTOM",
+        "customCond" : "t1.`OBJECTTYPE` = 'product'",
+        "name" : "查询条件"
+      } ]
+    } ],
+    "codeName" : "Type",
+    "logicName" : "动态(根据类型过滤)",
+    "name" : "Type",
+    "customCode" : true
   }, {
     "getAllPSDEDataQueryCodes" : [ {
       "dBType" : "MYSQL5",
@@ -164,6 +211,36 @@
       "id" : "Default"
     } ],
     "defaultMode" : true,
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "MobType",
+    "logicName" : "动态(根据类型过滤)",
+    "name" : "MobType",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "MobType"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "ProductTrends",
+    "logicName" : "产品动态(产品相关所有)",
+    "name" : "ProductTrends",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "ProductTrends"
+    } ],
+    "enableBackend" : true,
+    "enableFront" : true
+  }, {
+    "codeName" : "Type",
+    "logicName" : "动态(根据类型过滤)",
+    "name" : "Type",
+    "getPSDEDataQueries" : [ {
+      "modelref" : true,
+      "id" : "Type"
+    } ],
     "enableBackend" : true,
     "enableFront" : true
   } ],
@@ -773,7 +850,8 @@
       "dBType" : "MYSQL5",
       "name" : "OBJECTTYPE",
       "queryCodeExp" : "t1.`OBJECTTYPE`",
-      "standardColumnName" : "`OBJECTTYPE`"
+      "standardColumnName" : "`OBJECTTYPE`",
+      "valueAutoGen" : true
     } ],
     "getAllPSDEFSearchModes" : [ {
       "codeName" : "N_OBJECTTYPE_EQ",
@@ -813,6 +891,7 @@
     "codeName" : "ObjectType",
     "dEFType" : 1,
     "dataType" : "SSCODELIST",
+    "defaultValue" : "product",
     "importOrder" : 1000,
     "length" : 30,
     "logicName" : "对象类型",
@@ -1306,6 +1385,10 @@
     "length" : 200,
     "logicName" : "操作方式",
     "name" : "ACTIONMANNER",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/ActionManner.json"
+    },
     "stdDataType" : 25,
     "stringLength" : 200,
     "valueFormat" : "%1$s",
@@ -1452,6 +1535,10 @@
     "length" : 100,
     "logicName" : "操作者",
     "name" : "ACTOR",
+    "getPSCodeList" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSCODELISTS/UserRealName.json"
+    },
     "stdDataType" : 25,
     "stringLength" : 100,
     "valueFormat" : "%1$s",
@@ -1786,6 +1873,33 @@
   "enableViewLevel" : 0,
   "extendMode" : 0,
   "logicName" : "产品日志",
+  "getMajorPSDERs" : [ {
+    "codeName" : "ProductAction",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProductHistory/PSDERS/DER1N_IBZPRO_PRODUCTHISTORY_IBZPRO_PRODUCTACTION_ACTION.json",
+    "logicName" : "产品日志",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProductAction.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 12,
+    "minorCodeName" : "IBZProProductActions",
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProductHistory.json"
+    },
+    "name" : "DER1N_IBZPRO_PRODUCTHISTORY_IBZPRO_PRODUCTACTION_ACTION",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "ACTION",
+      "codeName" : "Action"
+    },
+    "pickupDEFName" : "ACTION",
+    "removeActionType" : -1,
+    "removeOrder" : 0,
+    "nestedRS" : true
+  } ],
   "getMinorPSDERs" : [ {
     "codeName" : "IbzProProduct",
     "dERType" : "DER1N",
@@ -1813,7 +1927,7 @@
   } ],
   "name" : "IBZPRO_PRODUCTACTION",
   "saaSMode" : 0,
-  "serviceAPIMode" : 0,
+  "serviceAPIMode" : 1,
   "serviceCodeName" : "IBZProProductAction",
   "storageMode" : 1,
   "systemTag" : "iBizPMS",

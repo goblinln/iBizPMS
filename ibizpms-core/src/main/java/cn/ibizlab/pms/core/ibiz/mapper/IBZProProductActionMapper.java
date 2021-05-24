@@ -20,10 +20,16 @@ import com.alibaba.fastjson.JSONObject;
 public interface IBZProProductActionMapper extends BaseMapper<IBZProProductAction> {
 
     List<IBZProProductAction> selectDefault(@Param("srf") IBZProProductActionSearchContext context, @Param("ew") Wrapper<IBZProProductAction> wrapper);
+    List<IBZProProductAction> selectMobType(@Param("srf") IBZProProductActionSearchContext context, @Param("ew") Wrapper<IBZProProductAction> wrapper);
+    List<IBZProProductAction> selectProductTrends(@Param("srf") IBZProProductActionSearchContext context, @Param("ew") Wrapper<IBZProProductAction> wrapper);
     List<IBZProProductAction> selectSimple(@Param("srf") IBZProProductActionSearchContext context, @Param("ew") Wrapper<IBZProProductAction> wrapper);
+    List<IBZProProductAction> selectType(@Param("srf") IBZProProductActionSearchContext context, @Param("ew") Wrapper<IBZProProductAction> wrapper);
     List<IBZProProductAction> selectView(@Param("srf") IBZProProductActionSearchContext context, @Param("ew") Wrapper<IBZProProductAction> wrapper);
 
     Page<IBZProProductAction> searchDefault(IPage page, @Param("srf") IBZProProductActionSearchContext context, @Param("ew") Wrapper<IBZProProductAction> wrapper);
+    Page<IBZProProductAction> searchMobType(IPage page, @Param("srf") IBZProProductActionSearchContext context, @Param("ew") Wrapper<IBZProProductAction> wrapper);
+    Page<IBZProProductAction> searchProductTrends(IPage page, @Param("srf") IBZProProductActionSearchContext context, @Param("ew") Wrapper<IBZProProductAction> wrapper);
+    Page<IBZProProductAction> searchType(IPage page, @Param("srf") IBZProProductActionSearchContext context, @Param("ew") Wrapper<IBZProProductAction> wrapper);
     @Override
     IBZProProductAction selectById(Serializable id);
     @Override

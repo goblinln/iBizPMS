@@ -65,42 +65,6 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
-    "name" : "editdata",
-    "getPSAppUILogic" : {
-      "logicType" : "PREDEFINED",
-      "name" : "编辑数据",
-      "getOpenDataPSAppView" : {
-        "getPSNavigateParams" : [ {
-          "key" : "project",
-          "name" : "project",
-          "value" : "project",
-          "rawValue" : false
-        } ],
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUndoneProjectGridView.json",
-          "viewType" : "DEGRIDVIEW"
-        }
-      },
-      "getPSAppUILogicRefViews" : [ {
-        "getPSNavigateParams" : [ {
-          "key" : "project",
-          "name" : "project",
-          "value" : "project",
-          "rawValue" : false
-        } ],
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/DocLibUndoneProjectGridView.json",
-          "viewType" : "DEGRIDVIEW"
-        }
-      } ],
-      "viewLogicType" : "APP_OPENDATA",
-      "editMode" : true
-    }
-  }, {
-    "logicTrigger" : "CUSTOM",
-    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",

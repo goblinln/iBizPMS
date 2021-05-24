@@ -54,54 +54,6 @@
   }, {
     "logicTrigger" : "CUSTOM",
     "logicType" : "SYSUILOGIC",
-    "name" : "editdata",
-    "getPSAppUILogic" : {
-      "logicType" : "PREDEFINED",
-      "name" : "编辑数据",
-      "getOpenDataPSAppView" : {
-        "getPSNavigateContexts" : [ {
-          "key" : "SRFPARENTKEY",
-          "name" : "SRFPARENTKEY",
-          "value" : "project",
-          "rawValue" : false
-        } ],
-        "getPSNavigateParams" : [ {
-          "key" : "srfparentkey",
-          "name" : "srfparentkey",
-          "value" : "project",
-          "rawValue" : false
-        } ],
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeUsr3GridView.json",
-          "viewType" : "DEGRIDVIEW"
-        }
-      },
-      "getPSAppUILogicRefViews" : [ {
-        "getPSNavigateContexts" : [ {
-          "key" : "SRFPARENTKEY",
-          "name" : "SRFPARENTKEY",
-          "value" : "project",
-          "rawValue" : false
-        } ],
-        "getPSNavigateParams" : [ {
-          "key" : "srfparentkey",
-          "name" : "srfparentkey",
-          "value" : "project",
-          "rawValue" : false
-        } ],
-        "getRefPSAppView" : {
-          "modelref" : true,
-          "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/SysEmployeeUsr3GridView.json",
-          "viewType" : "DEGRIDVIEW"
-        }
-      } ],
-      "viewLogicType" : "APP_OPENDATA",
-      "editMode" : true
-    }
-  }, {
-    "logicTrigger" : "CUSTOM",
-    "logicType" : "SYSUILOGIC",
     "name" : "opendata",
     "getPSAppUILogic" : {
       "logicType" : "PREDEFINED",

@@ -156,6 +156,7 @@ public class IBZProProductAction extends EntityMP implements Serializable {
     /**
      * 对象类型
      */
+    @DEField(defaultValue = "product")
     @TableField(value = "`OBJECTTYPE`")
     @JSONField(name = "objecttype")
     @JsonProperty("objecttype")
@@ -295,6 +296,14 @@ public class IBZProProductAction extends EntityMP implements Serializable {
     @TableField(exist = false)
     private cn.ibizlab.pms.core.zentao.domain.Product ibzproproduct;
 
+
+    /**
+     * 产品操作历史
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private List<cn.ibizlab.pms.core.ibiz.domain.IBZProProductHistory> ibzproproductactions;
 
 
     /**

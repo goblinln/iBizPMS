@@ -221,6 +221,7 @@
             "editorParams" : {
               "SRFNAVCTX.srfparentkey" : "%project%",
               "AC" : "TRUE",
+              "valFormat" : "{0: '/'}",
               "TRIGGER" : "TRUE",
               "SRFNAVPARAM.srfparentkey" : "%project%",
               "PICKUPVIEW" : "FALSE"

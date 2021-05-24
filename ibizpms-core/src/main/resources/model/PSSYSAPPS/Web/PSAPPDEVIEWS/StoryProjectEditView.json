@@ -560,6 +560,7 @@
           "getPSEditor" : {
             "editorParams" : {
               "AC" : "TRUE",
+              "valFormat" : "{0: '/'}",
               "TRIGGER" : "TRUE",
               "PICKUPVIEW" : "FALSE"
             },

@@ -336,30 +336,6 @@
             }, {
               "logicTrigger" : "CUSTOM",
               "logicType" : "SYSUILOGIC",
-              "name" : "editdata",
-              "getPSAppUILogic" : {
-                "logicType" : "PREDEFINED",
-                "name" : "编辑数据",
-                "getOpenDataPSAppView" : {
-                  "getRefPSAppView" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMobEditView.json",
-                    "viewType" : "DEMOBEDITVIEW"
-                  }
-                },
-                "getPSAppUILogicRefViews" : [ {
-                  "getRefPSAppView" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMobEditView.json",
-                    "viewType" : "DEMOBEDITVIEW"
-                  }
-                } ],
-                "viewLogicType" : "APP_OPENDATA",
-                "editMode" : true
-              }
-            }, {
-              "logicTrigger" : "CUSTOM",
-              "logicType" : "SYSUILOGIC",
               "name" : "opendata",
               "getPSAppUILogic" : {
                 "logicType" : "PREDEFINED",
@@ -1272,30 +1248,6 @@
                 "batchAddOnly" : false,
                 "enableBatchAdd" : false,
                 "enableWizardAdd" : false
-              }
-            }, {
-              "logicTrigger" : "CUSTOM",
-              "logicType" : "SYSUILOGIC",
-              "name" : "editdata",
-              "getPSAppUILogic" : {
-                "logicType" : "PREDEFINED",
-                "name" : "编辑数据",
-                "getOpenDataPSAppView" : {
-                  "getRefPSAppView" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMobEditView.json",
-                    "viewType" : "DEMOBEDITVIEW"
-                  }
-                },
-                "getPSAppUILogicRefViews" : [ {
-                  "getRefPSAppView" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/TaskMobEditView.json",
-                    "viewType" : "DEMOBEDITVIEW"
-                  }
-                } ],
-                "viewLogicType" : "APP_OPENDATA",
-                "editMode" : true
               }
             }, {
               "logicTrigger" : "CUSTOM",
@@ -2438,16 +2390,6 @@
           }, {
             "logicTrigger" : "CUSTOM",
             "logicType" : "SYSUILOGIC",
-            "name" : "editdata",
-            "getPSAppUILogic" : {
-              "logicType" : "PREDEFINED",
-              "name" : "编辑数据",
-              "viewLogicType" : "APP_OPENDATA",
-              "editMode" : true
-            }
-          }, {
-            "logicTrigger" : "CUSTOM",
-            "logicType" : "SYSUILOGIC",
             "name" : "opendata",
             "getPSAppUILogic" : {
               "logicType" : "PREDEFINED",
@@ -2756,16 +2698,6 @@
               "batchAddOnly" : false,
               "enableBatchAdd" : false,
               "enableWizardAdd" : false
-            }
-          }, {
-            "logicTrigger" : "CUSTOM",
-            "logicType" : "SYSUILOGIC",
-            "name" : "editdata",
-            "getPSAppUILogic" : {
-              "logicType" : "PREDEFINED",
-              "name" : "编辑数据",
-              "viewLogicType" : "APP_OPENDATA",
-              "editMode" : true
             }
           }, {
             "logicTrigger" : "CUSTOM",

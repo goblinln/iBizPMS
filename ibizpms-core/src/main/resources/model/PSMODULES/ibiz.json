@@ -164,6 +164,9 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProductAction.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProductHistory.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBzDoc.json"
   }, {
     "modelref" : true,

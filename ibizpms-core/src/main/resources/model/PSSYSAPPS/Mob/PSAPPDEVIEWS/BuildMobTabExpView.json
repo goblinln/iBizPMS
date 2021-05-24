@@ -157,30 +157,6 @@
         }, {
           "logicTrigger" : "CUSTOM",
           "logicType" : "SYSUILOGIC",
-          "name" : "editdata",
-          "getPSAppUILogic" : {
-            "logicType" : "PREDEFINED",
-            "name" : "编辑数据",
-            "getOpenDataPSAppView" : {
-              "getRefPSAppView" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryMobEditView.json",
-                "viewType" : "DEMOBEDITVIEW"
-              }
-            },
-            "getPSAppUILogicRefViews" : [ {
-              "getRefPSAppView" : {
-                "modelref" : true,
-                "path" : "PSSYSAPPS/Mob/PSAPPDEVIEWS/StoryMobEditView.json",
-                "viewType" : "DEMOBEDITVIEW"
-              }
-            } ],
-            "viewLogicType" : "APP_OPENDATA",
-            "editMode" : true
-          }
-        }, {
-          "logicTrigger" : "CUSTOM",
-          "logicType" : "SYSUILOGIC",
           "name" : "opendata",
           "getPSAppUILogic" : {
             "logicType" : "PREDEFINED",

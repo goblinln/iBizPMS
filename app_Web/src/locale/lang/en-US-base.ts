@@ -105,10 +105,12 @@ import sysemployee_en_US from '@locale/lanres/entities/sys-employee/sys-employee
 import ibzproproductline_en_US from '@locale/lanres/entities/ibzpro-product-line/ibzpro-product-line_en_US';
 import projectproduct_en_US from '@locale/lanres/entities/project-product/project-product_en_US';
 import accounttaskestimate_en_US from '@locale/lanres/entities/account-taskestimate/account-taskestimate_en_US';
+import ibzproproductaction_en_US from '@locale/lanres/entities/ibzpro-product-action/ibzpro-product-action_en_US';
 import branch_en_US from '@locale/lanres/entities/branch/branch_en_US';
 import action_en_US from '@locale/lanres/entities/action/action_en_US';
 import dynafilter_en_US from '@locale/lanres/entities/dyna-filter/dyna-filter_en_US';
 import history_en_US from '@locale/lanres/entities/history/history_en_US';
+import ibzproproducthistory_en_US from '@locale/lanres/entities/ibzpro-product-history/ibzpro-product-history_en_US';
 import module_en_US from '@locale/lanres/entities/module/module_en_US';
 import projecttaskestimate_en_US from '@locale/lanres/entities/project-taskestimate/project-taskestimate_en_US';
 import components_en_US from '@locale/lanres/components/components_en_US';
@@ -483,10 +485,12 @@ function getAppLocale(){
             'ibzproproductline': ibzproproductline_en_US(),
             'projectproduct': projectproduct_en_US(),
             'accounttaskestimate': accounttaskestimate_en_US(),
+            'ibzproproductaction': ibzproproductaction_en_US(),
             'branch': branch_en_US(),
             'action': action_en_US(),
             'dynafilter': dynafilter_en_US(),
             'history': history_en_US(),
+            'ibzproproducthistory': ibzproproducthistory_en_US(),
             'module': module_en_US(),
             'projecttaskestimate': projecttaskestimate_en_US(),
         },

@@ -54,6 +54,9 @@ public class IBZProProductActionServiceImpl extends ServiceImpl<IBZProProductAct
 
     @Autowired
     @Lazy
+    protected cn.ibizlab.pms.core.ibiz.service.IIBZProProductHistoryService ibzproproducthistoryService;
+    @Autowired
+    @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IProductService productService;
 
     protected int batchSize = 500;
@@ -70,6 +73,9 @@ public class IBZProProductActionServiceImpl extends ServiceImpl<IBZProProductAct
     public boolean create(IBZProProductAction et) {
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
+        }
+        if(!ibzproproductactionRuntime.isRtmodel()){
+            ibzproproducthistoryService.saveByAction(et.getId(), et.getIbzproproductactions());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -93,6 +99,9 @@ public class IBZProProductActionServiceImpl extends ServiceImpl<IBZProProductAct
     public boolean update(IBZProProductAction et) {
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
+        }
+        if(!ibzproproductactionRuntime.isRtmodel()){
+            ibzproproducthistoryService.saveByAction(et.getId(), et.getIbzproproductactions());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -123,6 +132,7 @@ public class IBZProProductActionServiceImpl extends ServiceImpl<IBZProProductAct
     @Transactional
     public boolean remove(Long key) {
         if(!ibzproproductactionRuntime.isRtmodel()){
+            ibzproproducthistoryService.removeByAction(key) ;
         }
         boolean result = removeById(key);
         return result ;
@@ -148,6 +158,7 @@ public class IBZProProductActionServiceImpl extends ServiceImpl<IBZProProductAct
         }
         else {
             if(!ibzproproductactionRuntime.isRtmodel()){
+                et.setIbzproproductactions(ibzproproducthistoryService.selectByAction(key));
             }
         }
         return et;
@@ -355,8 +366,17 @@ public class IBZProProductActionServiceImpl extends ServiceImpl<IBZProProductAct
     public List<IBZProProductAction> selectDefault(IBZProProductActionSearchContext context){
         return baseMapper.selectDefault(context, context.getSelectCond());
     }
+    public List<IBZProProductAction> selectMobType(IBZProProductActionSearchContext context){
+        return baseMapper.selectMobType(context, context.getSelectCond());
+    }
+    public List<IBZProProductAction> selectProductTrends(IBZProProductActionSearchContext context){
+        return baseMapper.selectProductTrends(context, context.getSelectCond());
+    }
     public List<IBZProProductAction> selectSimple(IBZProProductActionSearchContext context){
         return baseMapper.selectSimple(context, context.getSelectCond());
+    }
+    public List<IBZProProductAction> selectType(IBZProProductActionSearchContext context){
+        return baseMapper.selectType(context, context.getSelectCond());
     }
     public List<IBZProProductAction> selectView(IBZProProductActionSearchContext context){
         return baseMapper.selectView(context, context.getSelectCond());
@@ -369,6 +389,33 @@ public class IBZProProductActionServiceImpl extends ServiceImpl<IBZProProductAct
     @Override
     public Page<IBZProProductAction> searchDefault(IBZProProductActionSearchContext context) {
         com.baomidou.mybatisplus.extension.plugins.pagination.Page<IBZProProductAction> pages=baseMapper.searchDefault(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<IBZProProductAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 动态(根据类型过滤)
+     */
+    @Override
+    public Page<IBZProProductAction> searchMobType(IBZProProductActionSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IBZProProductAction> pages=baseMapper.searchMobType(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<IBZProProductAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 产品动态(产品相关所有)
+     */
+    @Override
+    public Page<IBZProProductAction> searchProductTrends(IBZProProductActionSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IBZProProductAction> pages=baseMapper.searchProductTrends(context.getPages(),context,context.getSelectCond());
+        return new PageImpl<IBZProProductAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
+    }
+
+    /**
+     * 查询集合 动态(根据类型过滤)
+     */
+    @Override
+    public Page<IBZProProductAction> searchType(IBZProProductActionSearchContext context) {
+        com.baomidou.mybatisplus.extension.plugins.pagination.Page<IBZProProductAction> pages=baseMapper.searchType(context.getPages(),context,context.getSelectCond());
         return new PageImpl<IBZProProductAction>(pages.getRecords(), context.getPageable(), pages.getTotal());
     }
 

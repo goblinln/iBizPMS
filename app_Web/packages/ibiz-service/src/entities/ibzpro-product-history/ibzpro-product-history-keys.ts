@@ -1,0 +1,15 @@
+export default [
+    'id',
+    'orgname',
+    'deptname',
+    'diff',
+    'field',
+    'createby',
+    'ibiznew',
+    'historysn',
+    'org',
+    'old',
+    'dept',
+    'updateby',
+    'action',
+];

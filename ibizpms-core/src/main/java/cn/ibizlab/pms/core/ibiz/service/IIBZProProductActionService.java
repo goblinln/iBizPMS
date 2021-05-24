@@ -54,10 +54,16 @@ public interface IIBZProProductActionService extends IService<IBZProProductActio
     boolean sendToreadBatch(List<IBZProProductAction> etList);
     List<IBZProProductAction> select(IBZProProductActionSearchContext context);
     List<IBZProProductAction> selectDefault(IBZProProductActionSearchContext context);
+    List<IBZProProductAction> selectMobType(IBZProProductActionSearchContext context);
+    List<IBZProProductAction> selectProductTrends(IBZProProductActionSearchContext context);
     List<IBZProProductAction> selectSimple(IBZProProductActionSearchContext context);
+    List<IBZProProductAction> selectType(IBZProProductActionSearchContext context);
     List<IBZProProductAction> selectView(IBZProProductActionSearchContext context);
 
     Page<IBZProProductAction> searchDefault(IBZProProductActionSearchContext context);
+    Page<IBZProProductAction> searchMobType(IBZProProductActionSearchContext context);
+    Page<IBZProProductAction> searchProductTrends(IBZProProductActionSearchContext context);
+    Page<IBZProProductAction> searchType(IBZProProductActionSearchContext context);
     List<IBZProProductAction> selectByObjectid(Long id);
     void removeByObjectid(Long id);
     IBZProProductAction dynamicCall(Long key, String action, IBZProProductAction et);

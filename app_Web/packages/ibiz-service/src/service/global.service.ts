@@ -980,6 +980,15 @@ export class GlobalService {
         return (await import('./account-taskestimate/account-taskestimate.service')).default.getInstance();
     }
     /**
+     * 产品日志服务
+     *
+     * @return {IBZProProductAction}
+     * @memberof GlobalService
+     */
+    async getIBZProProductActionService() {
+        return (await import('./ibzpro-product-action/ibzpro-product-action.service')).default.getInstance();
+    }
+    /**
      * 产品的分支和平台信息服务
      *
      * @return {Branch}
@@ -1014,6 +1023,15 @@ export class GlobalService {
      */
     async getHistoryService() {
         return (await import('./history/history.service')).default.getInstance();
+    }
+    /**
+     * 产品操作历史服务
+     *
+     * @return {IBZProProductHistory}
+     * @memberof GlobalService
+     */
+    async getIBZProProductHistoryService() {
+        return (await import('./ibzpro-product-history/ibzpro-product-history.service')).default.getInstance();
     }
     /**
      * 模块服务

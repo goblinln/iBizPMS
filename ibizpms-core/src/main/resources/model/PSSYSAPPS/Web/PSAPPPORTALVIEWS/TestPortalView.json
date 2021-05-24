@@ -125,16 +125,6 @@
             }, {
               "logicTrigger" : "CUSTOM",
               "logicType" : "SYSUILOGIC",
-              "name" : "editdata",
-              "getPSAppUILogic" : {
-                "logicType" : "PREDEFINED",
-                "name" : "编辑数据",
-                "viewLogicType" : "APP_OPENDATA",
-                "editMode" : true
-              }
-            }, {
-              "logicTrigger" : "CUSTOM",
-              "logicType" : "SYSUILOGIC",
               "name" : "opendata",
               "getPSAppUILogic" : {
                 "logicType" : "PREDEFINED",
@@ -526,30 +516,6 @@
                 "batchAddOnly" : false,
                 "enableBatchAdd" : false,
                 "enableWizardAdd" : false
-              }
-            }, {
-              "logicTrigger" : "CUSTOM",
-              "logicType" : "SYSUILOGIC",
-              "name" : "editdata",
-              "getPSAppUILogic" : {
-                "logicType" : "PREDEFINED",
-                "name" : "编辑数据",
-                "getOpenDataPSAppView" : {
-                  "getRefPSAppView" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView.json",
-                    "viewType" : "DEEDITVIEW"
-                  }
-                },
-                "getPSAppUILogicRefViews" : [ {
-                  "getRefPSAppView" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TestTaskEditView.json",
-                    "viewType" : "DEEDITVIEW"
-                  }
-                } ],
-                "viewLogicType" : "APP_OPENDATA",
-                "editMode" : true
               }
             }, {
               "logicTrigger" : "CUSTOM",
@@ -1244,74 +1210,6 @@
                 "batchAddOnly" : false,
                 "enableBatchAdd" : false,
                 "enableWizardAdd" : false
-              }
-            }, {
-              "logicTrigger" : "CUSTOM",
-              "logicType" : "SYSUILOGIC",
-              "name" : "editdata",
-              "getPSAppUILogic" : {
-                "logicType" : "PREDEFINED",
-                "name" : "编辑数据",
-                "getOpenDataPSAppView" : {
-                  "getPSNavigateContexts" : [ {
-                    "key" : "PTOJECT",
-                    "name" : "PTOJECT",
-                    "value" : "project",
-                    "rawValue" : false
-                  }, {
-                    "key" : "PRODUCT",
-                    "name" : "PRODUCT",
-                    "value" : "product",
-                    "rawValue" : false
-                  } ],
-                  "getPSNavigateParams" : [ {
-                    "key" : "product",
-                    "name" : "product",
-                    "value" : "product",
-                    "rawValue" : false
-                  }, {
-                    "key" : "project",
-                    "name" : "project",
-                    "value" : "project",
-                    "rawValue" : false
-                  } ],
-                  "getRefPSAppView" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
-                    "viewType" : "DEPORTALVIEW"
-                  }
-                },
-                "getPSAppUILogicRefViews" : [ {
-                  "getPSNavigateContexts" : [ {
-                    "key" : "PTOJECT",
-                    "name" : "PTOJECT",
-                    "value" : "project",
-                    "rawValue" : false
-                  }, {
-                    "key" : "PRODUCT",
-                    "name" : "PRODUCT",
-                    "value" : "product",
-                    "rawValue" : false
-                  } ],
-                  "getPSNavigateParams" : [ {
-                    "key" : "product",
-                    "name" : "product",
-                    "value" : "product",
-                    "rawValue" : false
-                  }, {
-                    "key" : "project",
-                    "name" : "project",
-                    "value" : "project",
-                    "rawValue" : false
-                  } ],
-                  "getRefPSAppView" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/BugMainDashboardView.json",
-                    "viewType" : "DEPORTALVIEW"
-                  }
-                } ],
-                "viewLogicType" : "APP_OPENDATA",
-                "editMode" : true
               }
             }, {
               "logicTrigger" : "CUSTOM",
@@ -2073,30 +1971,6 @@
                 "batchAddOnly" : false,
                 "enableBatchAdd" : false,
                 "enableWizardAdd" : false
-              }
-            }, {
-              "logicTrigger" : "CUSTOM",
-              "logicType" : "SYSUILOGIC",
-              "name" : "editdata",
-              "getPSAppUILogic" : {
-                "logicType" : "PREDEFINED",
-                "name" : "编辑数据",
-                "getOpenDataPSAppView" : {
-                  "getRefPSAppView" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
-                    "viewType" : "DEPORTALVIEW"
-                  }
-                },
-                "getPSAppUILogicRefViews" : [ {
-                  "getRefPSAppView" : {
-                    "modelref" : true,
-                    "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainDashboardView.json",
-                    "viewType" : "DEPORTALVIEW"
-                  }
-                } ],
-                "viewLogicType" : "APP_OPENDATA",
-                "editMode" : true
               }
             }, {
               "logicTrigger" : "CUSTOM",
