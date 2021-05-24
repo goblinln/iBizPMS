@@ -2,6 +2,27 @@
   "codeName" : "VicePresident",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/VicePresident.json",
   "name" : "公司领导",
+  "getPSSysUserRoleDatas" : [ {
+    "name" : "公司领导-ZT_PRODUCT[产品查看（参与者）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_DEV.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  }, {
+    "name" : "公司领导-ZT_PRODUCT[产品查看（创建者或更新者）（跟随角色）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_CreateBy.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Product.json"
+    }
+  } ],
   "roleTag" : "VicePresident",
   "roleType" : "CUSTOM",
   "globalRole" : true

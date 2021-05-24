@@ -106,7 +106,7 @@ public class IbizproProductMonthlyResource {
     public ResponseEntity<IbizproProductMonthlyDTO> get(@PathVariable("ibizproproductmonthly_id") Long ibizproproductmonthly_id) {
         IbizproProductMonthly domain = ibizproproductmonthlyService.get(ibizproproductmonthly_id);
         IbizproProductMonthlyDTO dto = ibizproproductmonthlyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproproductmonthlyRuntime.getOPPrivs({ibizproproductmonthly_id});
+        Map<String,Integer> opprivs = ibizproproductmonthlyRuntime.getOPPrivs(ibizproproductmonthly_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

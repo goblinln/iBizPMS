@@ -116,7 +116,7 @@ public class GroupResource {
     public ResponseEntity<GroupDTO> get(@PathVariable("group_id") Long group_id) {
         Group domain = groupService.get(group_id);
         GroupDTO dto = groupMapping.toDto(domain);
-        Map<String,Integer> opprivs = groupRuntime.getOPPrivs({group_id});
+        Map<String,Integer> opprivs = groupRuntime.getOPPrivs(group_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

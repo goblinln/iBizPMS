@@ -116,7 +116,7 @@ public class SuiteCaseResource {
     public ResponseEntity<SuiteCaseDTO> get(@PathVariable("suitecase_id") String suitecase_id) {
         SuiteCase domain = suitecaseService.get(suitecase_id);
         SuiteCaseDTO dto = suitecaseMapping.toDto(domain);
-        Map<String,Integer> opprivs = suitecaseRuntime.getOPPrivs({suitecase_id});
+        Map<String,Integer> opprivs = suitecaseRuntime.getOPPrivs(suitecase_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

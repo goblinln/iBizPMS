@@ -117,7 +117,7 @@ public class DynaDashboardResource {
     public ResponseEntity<DynaDashboardDTO> get(@PathVariable("dynadashboard_id") String dynadashboard_id) {
         DynaDashboard domain = dynadashboardService.get(dynadashboard_id);
         DynaDashboardDTO dto = dynadashboardMapping.toDto(domain);
-        Map<String,Integer> opprivs = dynadashboardRuntime.getOPPrivs({dynadashboard_id});
+        Map<String,Integer> opprivs = dynadashboardRuntime.getOPPrivs(dynadashboard_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

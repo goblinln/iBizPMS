@@ -106,7 +106,7 @@ public class IbzWeeklyResource {
     public ResponseEntity<IbzWeeklyDTO> get(@PathVariable("ibzweekly_id") Long ibzweekly_id) {
         IbzWeekly domain = ibzweeklyService.get(ibzweekly_id);
         IbzWeeklyDTO dto = ibzweeklyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs({ibzweekly_id});
+        Map<String,Integer> opprivs = ibzweeklyRuntime.getOPPrivs(ibzweekly_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

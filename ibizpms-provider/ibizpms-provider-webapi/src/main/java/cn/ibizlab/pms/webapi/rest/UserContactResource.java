@@ -105,7 +105,7 @@ public class UserContactResource {
     public ResponseEntity<UserContactDTO> get(@PathVariable("usercontact_id") Long usercontact_id) {
         UserContact domain = usercontactService.get(usercontact_id);
         UserContactDTO dto = usercontactMapping.toDto(domain);
-        Map<String,Integer> opprivs = usercontactRuntime.getOPPrivs({usercontact_id});
+        Map<String,Integer> opprivs = usercontactRuntime.getOPPrivs(usercontact_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

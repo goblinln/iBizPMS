@@ -116,7 +116,7 @@ public class CaseStepResource {
     public ResponseEntity<CaseStepDTO> get(@PathVariable("casestep_id") Long casestep_id) {
         CaseStep domain = casestepService.get(casestep_id);
         CaseStepDTO dto = casestepMapping.toDto(domain);
-        Map<String,Integer> opprivs = casestepRuntime.getOPPrivs({casestep_id});
+        Map<String,Integer> opprivs = casestepRuntime.getOPPrivs(casestep_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

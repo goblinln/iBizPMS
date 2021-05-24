@@ -103,7 +103,7 @@ public class PSSysAppResource {
     public ResponseEntity<PSSysAppDTO> get(@PathVariable("pssysapp_id") String pssysapp_id) {
         PSSysApp domain = pssysappService.get(pssysapp_id);
         PSSysAppDTO dto = pssysappMapping.toDto(domain);
-        Map<String,Integer> opprivs = pssysappRuntime.getOPPrivs({pssysapp_id});
+        Map<String,Integer> opprivs = pssysappRuntime.getOPPrivs(pssysapp_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

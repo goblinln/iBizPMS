@@ -117,7 +117,7 @@ public class ProductLineResource {
     public ResponseEntity<ProductLineDTO> get(@PathVariable("productline_id") String productline_id) {
         ProductLine domain = productlineService.get(productline_id);
         ProductLineDTO dto = productlineMapping.toDto(domain);
-        Map<String,Integer> opprivs = productlineRuntime.getOPPrivs({productline_id});
+        Map<String,Integer> opprivs = productlineRuntime.getOPPrivs(productline_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

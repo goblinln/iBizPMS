@@ -117,7 +117,7 @@ public class BugResource {
     public ResponseEntity<BugDTO> get(@PathVariable("bug_id") Long bug_id) {
         Bug domain = bugService.get(bug_id);
         BugDTO dto = bugMapping.toDto(domain);
-        Map<String,Integer> opprivs = bugRuntime.getOPPrivs({bug_id});
+        Map<String,Integer> opprivs = bugRuntime.getOPPrivs(bug_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

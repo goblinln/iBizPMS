@@ -116,7 +116,7 @@ public class BranchResource {
     public ResponseEntity<BranchDTO> get(@PathVariable("branch_id") Long branch_id) {
         Branch domain = branchService.get(branch_id);
         BranchDTO dto = branchMapping.toDto(domain);
-        Map<String,Integer> opprivs = branchRuntime.getOPPrivs({branch_id});
+        Map<String,Integer> opprivs = branchRuntime.getOPPrivs(branch_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

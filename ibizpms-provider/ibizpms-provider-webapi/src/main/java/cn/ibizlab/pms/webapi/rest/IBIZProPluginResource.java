@@ -103,7 +103,7 @@ public class IBIZProPluginResource {
     public ResponseEntity<IBIZProPluginDTO> get(@PathVariable("ibizproplugin_id") String ibizproplugin_id) {
         IBIZProPlugin domain = ibizpropluginService.get(ibizproplugin_id);
         IBIZProPluginDTO dto = ibizpropluginMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizpropluginRuntime.getOPPrivs({ibizproplugin_id});
+        Map<String,Integer> opprivs = ibizpropluginRuntime.getOPPrivs(ibizproplugin_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

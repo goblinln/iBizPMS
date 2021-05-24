@@ -116,7 +116,7 @@ public class PRODUCTTEAMResource {
     public ResponseEntity<PRODUCTTEAMDTO> get(@PathVariable("productteam_id") Long productteam_id) {
         PRODUCTTEAM domain = productteamService.get(productteam_id);
         PRODUCTTEAMDTO dto = productteamMapping.toDto(domain);
-        Map<String,Integer> opprivs = productteamRuntime.getOPPrivs({productteam_id});
+        Map<String,Integer> opprivs = productteamRuntime.getOPPrivs(productteam_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

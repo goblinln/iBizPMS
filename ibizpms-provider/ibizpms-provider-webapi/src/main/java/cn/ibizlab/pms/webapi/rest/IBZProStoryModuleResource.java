@@ -116,7 +116,7 @@ public class IBZProStoryModuleResource {
     public ResponseEntity<IBZProStoryModuleDTO> get(@PathVariable("ibzprostorymodule_id") Long ibzprostorymodule_id) {
         IBZProStoryModule domain = ibzprostorymoduleService.get(ibzprostorymodule_id);
         IBZProStoryModuleDTO dto = ibzprostorymoduleMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzprostorymoduleRuntime.getOPPrivs({ibzprostorymodule_id});
+        Map<String,Integer> opprivs = ibzprostorymoduleRuntime.getOPPrivs(ibzprostorymodule_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

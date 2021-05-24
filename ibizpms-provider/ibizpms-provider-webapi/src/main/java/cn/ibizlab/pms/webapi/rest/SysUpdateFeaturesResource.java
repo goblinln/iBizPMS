@@ -117,7 +117,7 @@ public class SysUpdateFeaturesResource {
     public ResponseEntity<SysUpdateFeaturesDTO> get(@PathVariable("sysupdatefeatures_id") String sysupdatefeatures_id) {
         SysUpdateFeatures domain = sysupdatefeaturesService.get(sysupdatefeatures_id);
         SysUpdateFeaturesDTO dto = sysupdatefeaturesMapping.toDto(domain);
-        Map<String,Integer> opprivs = sysupdatefeaturesRuntime.getOPPrivs({sysupdatefeatures_id});
+        Map<String,Integer> opprivs = sysupdatefeaturesRuntime.getOPPrivs(sysupdatefeatures_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

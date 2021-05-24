@@ -116,7 +116,7 @@ public class DeptResource {
     public ResponseEntity<DeptDTO> get(@PathVariable("dept_id") Long dept_id) {
         Dept domain = deptService.get(dept_id);
         DeptDTO dto = deptMapping.toDto(domain);
-        Map<String,Integer> opprivs = deptRuntime.getOPPrivs({dept_id});
+        Map<String,Integer> opprivs = deptRuntime.getOPPrivs(dept_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

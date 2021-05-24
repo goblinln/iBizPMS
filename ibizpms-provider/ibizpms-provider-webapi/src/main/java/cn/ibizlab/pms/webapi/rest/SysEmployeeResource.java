@@ -103,7 +103,7 @@ public class SysEmployeeResource {
     public ResponseEntity<SysEmployeeDTO> get(@PathVariable("sysemployee_id") String sysemployee_id) {
         SysEmployee domain = sysemployeeService.get(sysemployee_id);
         SysEmployeeDTO dto = sysemployeeMapping.toDto(domain);
-        Map<String,Integer> opprivs = sysemployeeRuntime.getOPPrivs({sysemployee_id});
+        Map<String,Integer> opprivs = sysemployeeRuntime.getOPPrivs(sysemployee_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

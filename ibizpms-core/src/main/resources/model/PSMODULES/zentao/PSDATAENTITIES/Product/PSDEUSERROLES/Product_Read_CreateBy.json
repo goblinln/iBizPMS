@@ -1,6 +1,6 @@
 {
   "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_CreateBy.json",
-  "name" : "产品查看（创建者或更新者）（默认角色）",
+  "name" : "产品查看（创建者或更新者）（跟随角色）",
   "getPSDEDataSet" : {
     "modelref" : true,
     "id" : "ProductManagerQuery"
@@ -14,6 +14,5 @@
     }
   } ],
   "roleTag" : "Product_Read_CreateBy",
-  "userDRAction" : "READ",
-  "defaultMode" : true
+  "userDRAction" : "READ"
 }

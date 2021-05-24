@@ -116,7 +116,7 @@ public class UserYearWorkStatsResource {
     public ResponseEntity<UserYearWorkStatsDTO> get(@PathVariable("useryearworkstats_id") Long useryearworkstats_id) {
         UserYearWorkStats domain = useryearworkstatsService.get(useryearworkstats_id);
         UserYearWorkStatsDTO dto = useryearworkstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs({useryearworkstats_id});
+        Map<String,Integer> opprivs = useryearworkstatsRuntime.getOPPrivs(useryearworkstats_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

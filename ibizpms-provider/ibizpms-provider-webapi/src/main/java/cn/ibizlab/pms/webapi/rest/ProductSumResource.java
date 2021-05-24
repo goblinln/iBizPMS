@@ -116,7 +116,7 @@ public class ProductSumResource {
     public ResponseEntity<ProductSumDTO> get(@PathVariable("productsum_id") Long productsum_id) {
         ProductSum domain = productsumService.get(productsum_id);
         ProductSumDTO dto = productsumMapping.toDto(domain);
-        Map<String,Integer> opprivs = productsumRuntime.getOPPrivs({productsum_id});
+        Map<String,Integer> opprivs = productsumRuntime.getOPPrivs(productsum_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

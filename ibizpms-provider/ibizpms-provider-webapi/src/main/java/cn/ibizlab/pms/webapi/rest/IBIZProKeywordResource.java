@@ -102,7 +102,7 @@ public class IBIZProKeywordResource {
     public ResponseEntity<IBIZProKeywordDTO> get(@PathVariable("ibizprokeyword_id") String ibizprokeyword_id) {
         IBIZProKeyword domain = ibizprokeywordService.get(ibizprokeyword_id);
         IBIZProKeywordDTO dto = ibizprokeywordMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizprokeywordRuntime.getOPPrivs({ibizprokeyword_id});
+        Map<String,Integer> opprivs = ibizprokeywordRuntime.getOPPrivs(ibizprokeyword_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

@@ -117,7 +117,7 @@ public class IbzFavoritesResource {
     public ResponseEntity<IbzFavoritesDTO> get(@PathVariable("ibzfavorites_id") String ibzfavorites_id) {
         IbzFavorites domain = ibzfavoritesService.get(ibzfavorites_id);
         IbzFavoritesDTO dto = ibzfavoritesMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzfavoritesRuntime.getOPPrivs({ibzfavorites_id});
+        Map<String,Integer> opprivs = ibzfavoritesRuntime.getOPPrivs(ibzfavorites_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

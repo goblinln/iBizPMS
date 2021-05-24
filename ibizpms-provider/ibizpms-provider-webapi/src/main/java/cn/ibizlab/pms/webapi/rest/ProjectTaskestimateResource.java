@@ -116,7 +116,7 @@ public class ProjectTaskestimateResource {
     public ResponseEntity<ProjectTaskestimateDTO> get(@PathVariable("projecttaskestimate_id") String projecttaskestimate_id) {
         ProjectTaskestimate domain = projecttaskestimateService.get(projecttaskestimate_id);
         ProjectTaskestimateDTO dto = projecttaskestimateMapping.toDto(domain);
-        Map<String,Integer> opprivs = projecttaskestimateRuntime.getOPPrivs({projecttaskestimate_id});
+        Map<String,Integer> opprivs = projecttaskestimateRuntime.getOPPrivs(projecttaskestimate_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

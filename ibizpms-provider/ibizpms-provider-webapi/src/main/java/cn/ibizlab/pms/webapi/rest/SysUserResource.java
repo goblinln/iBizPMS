@@ -102,7 +102,7 @@ public class SysUserResource {
     public ResponseEntity<SysUserDTO> get(@PathVariable("sysuser_id") String sysuser_id) {
         SysUser domain = sysuserService.get(sysuser_id);
         SysUserDTO dto = sysuserMapping.toDto(domain);
-        Map<String,Integer> opprivs = sysuserRuntime.getOPPrivs({sysuser_id});
+        Map<String,Integer> opprivs = sysuserRuntime.getOPPrivs(sysuser_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

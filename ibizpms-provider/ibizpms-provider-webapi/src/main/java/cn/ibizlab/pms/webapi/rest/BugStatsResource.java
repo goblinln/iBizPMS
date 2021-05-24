@@ -116,7 +116,7 @@ public class BugStatsResource {
     public ResponseEntity<BugStatsDTO> get(@PathVariable("bugstats_id") Long bugstats_id) {
         BugStats domain = bugstatsService.get(bugstats_id);
         BugStatsDTO dto = bugstatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = bugstatsRuntime.getOPPrivs({bugstats_id});
+        Map<String,Integer> opprivs = bugstatsRuntime.getOPPrivs(bugstats_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

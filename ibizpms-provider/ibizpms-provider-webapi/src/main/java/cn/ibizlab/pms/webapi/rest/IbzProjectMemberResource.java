@@ -115,7 +115,7 @@ public class IbzProjectMemberResource {
     public ResponseEntity<IbzProjectMemberDTO> get(@PathVariable("ibzprojectmember_id") Long ibzprojectmember_id) {
         IbzProjectMember domain = ibzprojectmemberService.get(ibzprojectmember_id);
         IbzProjectMemberDTO dto = ibzprojectmemberMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibzprojectmemberRuntime.getOPPrivs({ibzprojectmember_id});
+        Map<String,Integer> opprivs = ibzprojectmemberRuntime.getOPPrivs(ibzprojectmember_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

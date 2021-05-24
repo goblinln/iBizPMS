@@ -116,7 +116,7 @@ public class TestModuleResource {
     public ResponseEntity<TestModuleDTO> get(@PathVariable("testmodule_id") Long testmodule_id) {
         TestModule domain = testmoduleService.get(testmodule_id);
         TestModuleDTO dto = testmoduleMapping.toDto(domain);
-        Map<String,Integer> opprivs = testmoduleRuntime.getOPPrivs({testmodule_id});
+        Map<String,Integer> opprivs = testmoduleRuntime.getOPPrivs(testmodule_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

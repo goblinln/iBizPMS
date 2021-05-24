@@ -116,7 +116,7 @@ public class IbizproProjectDailyResource {
     public ResponseEntity<IbizproProjectDailyDTO> get(@PathVariable("ibizproprojectdaily_id") String ibizproprojectdaily_id) {
         IbizproProjectDaily domain = ibizproprojectdailyService.get(ibizproprojectdaily_id);
         IbizproProjectDailyDTO dto = ibizproprojectdailyMapping.toDto(domain);
-        Map<String,Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs({ibizproprojectdaily_id});
+        Map<String,Integer> opprivs = ibizproprojectdailyRuntime.getOPPrivs(ibizproprojectdaily_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

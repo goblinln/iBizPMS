@@ -116,7 +116,7 @@ public class DocResource {
     public ResponseEntity<DocDTO> get(@PathVariable("doc_id") Long doc_id) {
         Doc domain = docService.get(doc_id);
         DocDTO dto = docMapping.toDto(domain);
-        Map<String,Integer> opprivs = docRuntime.getOPPrivs({doc_id});
+        Map<String,Integer> opprivs = docRuntime.getOPPrivs(doc_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

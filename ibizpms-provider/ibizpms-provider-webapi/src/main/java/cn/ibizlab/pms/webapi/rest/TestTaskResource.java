@@ -117,7 +117,7 @@ public class TestTaskResource {
     public ResponseEntity<TestTaskDTO> get(@PathVariable("testtask_id") Long testtask_id) {
         TestTask domain = testtaskService.get(testtask_id);
         TestTaskDTO dto = testtaskMapping.toDto(domain);
-        Map<String,Integer> opprivs = testtaskRuntime.getOPPrivs({testtask_id});
+        Map<String,Integer> opprivs = testtaskRuntime.getOPPrivs(testtask_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

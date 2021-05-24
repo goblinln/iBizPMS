@@ -117,7 +117,7 @@ public class BuildResource {
     public ResponseEntity<BuildDTO> get(@PathVariable("build_id") Long build_id) {
         Build domain = buildService.get(build_id);
         BuildDTO dto = buildMapping.toDto(domain);
-        Map<String,Integer> opprivs = buildRuntime.getOPPrivs({build_id});
+        Map<String,Integer> opprivs = buildRuntime.getOPPrivs(build_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

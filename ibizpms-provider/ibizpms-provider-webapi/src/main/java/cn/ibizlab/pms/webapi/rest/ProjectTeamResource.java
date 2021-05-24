@@ -133,7 +133,7 @@ public class ProjectTeamResource {
     public ResponseEntity<ProjectTeamDTO> get(@PathVariable("projectteam_id") Long projectteam_id) {
         ProjectTeam domain = projectteamService.get(projectteam_id);
         ProjectTeamDTO dto = projectteamMapping.toDto(domain);
-        Map<String,Integer> opprivs = projectteamRuntime.getOPPrivs({projectteam_id});
+        Map<String,Integer> opprivs = projectteamRuntime.getOPPrivs(projectteam_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

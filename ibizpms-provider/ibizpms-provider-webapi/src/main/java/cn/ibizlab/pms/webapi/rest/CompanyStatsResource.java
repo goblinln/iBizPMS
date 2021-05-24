@@ -116,7 +116,7 @@ public class CompanyStatsResource {
     public ResponseEntity<CompanyStatsDTO> get(@PathVariable("companystats_id") Long companystats_id) {
         CompanyStats domain = companystatsService.get(companystats_id);
         CompanyStatsDTO dto = companystatsMapping.toDto(domain);
-        Map<String,Integer> opprivs = companystatsRuntime.getOPPrivs({companystats_id});
+        Map<String,Integer> opprivs = companystatsRuntime.getOPPrivs(companystats_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }

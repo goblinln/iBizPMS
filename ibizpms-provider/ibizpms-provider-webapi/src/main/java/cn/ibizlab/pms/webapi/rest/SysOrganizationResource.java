@@ -103,7 +103,7 @@ public class SysOrganizationResource {
     public ResponseEntity<SysOrganizationDTO> get(@PathVariable("sysorganization_id") String sysorganization_id) {
         SysOrganization domain = sysorganizationService.get(sysorganization_id);
         SysOrganizationDTO dto = sysorganizationMapping.toDto(domain);
-        Map<String,Integer> opprivs = sysorganizationRuntime.getOPPrivs({sysorganization_id});
+        Map<String,Integer> opprivs = sysorganizationRuntime.getOPPrivs(sysorganization_id);
         dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
