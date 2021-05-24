@@ -3524,8 +3524,8 @@
         "srfkey": "CurStory",
         "emptytext": "未定义",
         "codelisttype":"dynamic",
-        "appdataentity":"StorySpec",
-        "appdedataset":"FetchVersion",
+        "appdataentity":"",
+        "appdedataset":"",
         "items": []
     }, 
     {

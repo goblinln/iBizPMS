@@ -288,6 +288,14 @@ public class IBZTestSuiteAction extends EntityMP implements Serializable {
     private cn.ibizlab.pms.core.zentao.domain.TestSuite ibzprotestsuit;
 
 
+    /**
+     * 套件操作历史
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private List<cn.ibizlab.pms.core.ibiz.domain.IBZTestSuitHistory> ibztestsuithistory;
+
 
     /**
      * 设置 [附加值]

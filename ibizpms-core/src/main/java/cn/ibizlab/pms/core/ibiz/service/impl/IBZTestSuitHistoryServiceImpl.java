@@ -52,6 +52,9 @@ public class IBZTestSuitHistoryServiceImpl extends ServiceImpl<IBZTestSuitHistor
     @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.IBZTestSuitHistoryRuntime ibztestsuithistoryRuntime;
 
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.ibiz.service.IIBZTestSuiteActionService ibztestsuiteactionService;
 
     protected int batchSize = 500;
 
@@ -232,6 +235,47 @@ public class IBZTestSuitHistoryServiceImpl extends ServiceImpl<IBZTestSuitHistor
     }
 
 
+	@Override
+    public List<IBZTestSuitHistory> selectByAction(Long id) {
+        return baseMapper.selectByAction(id);
+    }
+    @Override
+    public void removeByAction(Long id) {
+        this.remove(new QueryWrapper<IBZTestSuitHistory>().eq("action",id));
+    }
+
+    public IIBZTestSuitHistoryService getProxyService() {
+        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
+    }
+	@Override
+    public void saveByAction(Long id,List<IBZTestSuitHistory> list) {
+        if(list==null)
+            return;
+        Set<Long> delIds=new HashSet<Long>();
+        List<IBZTestSuitHistory> _update=new ArrayList<IBZTestSuitHistory>();
+        List<IBZTestSuitHistory> _create=new ArrayList<IBZTestSuitHistory>();
+        for(IBZTestSuitHistory before:selectByAction(id)){
+            delIds.add(before.getId());
+        }
+        for(IBZTestSuitHistory sub:list) {
+            sub.setAction(id);
+            if(ObjectUtils.isEmpty(sub.getId()))
+                sub.setId((Long)sub.getDefaultKey(true));
+            if(delIds.contains(sub.getId())) {
+                delIds.remove(sub.getId());
+                _update.add(sub);
+            }
+            else
+                _create.add(sub);
+        }
+        if(_update.size()>0)
+            getProxyService().updateBatch(_update);
+        if(_create.size()>0)
+            getProxyService().createBatch(_create);
+        if(delIds.size()>0)
+            getProxyService().removeBatch(delIds);
+	}
+
 
     public List<IBZTestSuitHistory> selectDefault(IBZTestSuitHistorySearchContext context){
         return baseMapper.selectDefault(context, context.getSelectCond());
@@ -306,9 +350,6 @@ public class IBZTestSuitHistoryServiceImpl extends ServiceImpl<IBZTestSuitHistor
     }
 
 
-    public IIBZTestSuitHistoryService getProxyService() {
-        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
-    }
     @Override
     @Transactional
     public IBZTestSuitHistory dynamicCall(Long key, String action, IBZTestSuitHistory et) {

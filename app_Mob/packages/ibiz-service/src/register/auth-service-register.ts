@@ -44,7 +44,6 @@ export class AuthServiceRegister extends ServiceRegisterBase {
         this.allService.set('authservice-testsuite', () => import('../authservice/test-suite/test-suite-auth-service'));
         this.allService.set('authservice-projectteam', () => import('../authservice/project-team/project-team-auth-service'));
         this.allService.set('authservice-file', () => import('../authservice/file/file-auth-service'));
-        this.allService.set('authservice-storyspec', () => import('../authservice/story-spec/story-spec-auth-service'));
         this.allService.set('authservice-branch', () => import('../authservice/branch/branch-auth-service'));
         this.allService.set('authservice-release', () => import('../authservice/release/release-auth-service'));
         this.allService.set('authservice-case', () => import('../authservice/case/case-auth-service'));

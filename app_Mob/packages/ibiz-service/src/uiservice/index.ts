@@ -20,7 +20,6 @@ export * from './sys-team-member/sys-team-member-ui-service';
 export * from './test-suite/test-suite-ui-service';
 export * from './project-team/project-team-ui-service';
 export * from './file/file-ui-service';
-export * from './story-spec/story-spec-ui-service';
 export * from './branch/branch-ui-service';
 export * from './release/release-ui-service';
 export * from './case/case-ui-service';

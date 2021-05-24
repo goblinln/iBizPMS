@@ -21,7 +21,6 @@ export * from './sys-team-member/sys-team-member.service';
 export * from './test-suite/test-suite.service';
 export * from './project-team/project-team.service';
 export * from './file/file.service';
-export * from './story-spec/story-spec.service';
 export * from './branch/branch.service';
 export * from './release/release.service';
 export * from './case/case.service';

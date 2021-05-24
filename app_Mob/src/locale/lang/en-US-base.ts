@@ -20,7 +20,6 @@ import systeammember_en_US from '@locale/lanres/sys-team-member/sys-team-member_
 import testsuite_en_US from '@locale/lanres/test-suite/test-suite_en_US';
 import projectteam_en_US from '@locale/lanres/project-team/project-team_en_US';
 import file_en_US from '@locale/lanres/file/file_en_US';
-import storyspec_en_US from '@locale/lanres/story-spec/story-spec_en_US';
 import branch_en_US from '@locale/lanres/branch/branch_en_US';
 import release_en_US from '@locale/lanres/release/release_en_US';
 import case_en_US from '@locale/lanres/case/case_en_US';
@@ -359,7 +358,6 @@ export default {
     testsuite: testsuite_en_US,
     projectteam: projectteam_en_US,
     file: file_en_US,
-    storyspec: storyspec_en_US,
     branch: branch_en_US,
     release: release_en_US,
     case: case_en_US,

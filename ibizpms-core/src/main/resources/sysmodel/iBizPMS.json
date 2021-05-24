@@ -18527,11 +18527,35 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"ACTION" ,
+    "codename":"Action",
+    "field_logic_name":"id",
+    "entity_name":"IBZPRO_TESTSUITHISTORY",
+    "ref_de":"IBZPRO_TESTSUITACTION",
+    "ref_field_name":"ID",
+    "relation_name":"DER1N_IBZPRO_TESTSUITHISTORY_IBZPRO_TESTSUITACTION_ACTION",
+    "relation_codename":"TestSuitAction",
+    "field_type":"PICKUP",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
     ],
     "parentEntitys":[
+    {"name":"DER1N_IBZPRO_TESTSUITHISTORY_IBZPRO_TESTSUITACTION_ACTION",
+     "relation_type":"DER1N",
+     "code_name":"TestSuitAction",
+     "entity_name":"IBZPRO_TESTSUITHISTORY",
+     "ref_entity_name":"IBZPRO_TESTSUITACTION"
+    }
     ]
  }
     ,
@@ -18961,6 +18985,12 @@
     }
     ],
     "subEntitys":[
+    {"name":"DER1N_IBZPRO_TESTSUITHISTORY_IBZPRO_TESTSUITACTION_ACTION",
+     "relation_type":"DER1N",
+     "code_name":"TestSuitAction",
+     "entity_name":"IBZPRO_TESTSUITHISTORY",
+     "ref_entity_name":"IBZPRO_TESTSUITACTION"
+    }
     ],
     "parentEntitys":[
     {"name":"DER1N_IBZPRO_TESTSUITACTION_ZT_TESTSUITE_OBJECTID",
@@ -25456,6 +25486,7 @@
     "field_logic_name":"动作",
     "entity_name":"IBZPRO_REPORTLYACTION",
     "field_type":"SSCODELIST",
+    "dict":"Action__type",
     "nullable":1,
     "physical_field":1,
     "data_type":"VARCHAR",
@@ -25470,6 +25501,7 @@
     "field_logic_name":"操作方式",
     "entity_name":"IBZPRO_REPORTLYACTION",
     "field_type":"SSCODELIST",
+    "dict":"ActionManner",
     "nullable":1,
     "physical_field":0,
     "data_type":"VARCHAR",
@@ -25485,6 +25517,7 @@
     "field_logic_name":"操作者",
     "entity_name":"IBZPRO_REPORTLYACTION",
     "field_type":"TEXT",
+    "dict":"ActionManner",
     "nullable":1,
     "physical_field":1,
     "data_type":"VARCHAR",
@@ -25701,6 +25734,7 @@
     "field_logic_name":"对象类型",
     "entity_name":"IBZPRO_REPORTLYACTION",
     "field_type":"SSCODELIST",
+    "dict":"Action__object_type",
     "nullable":1,
     "physical_field":1,
     "data_type":"VARCHAR",
@@ -25774,6 +25808,7 @@
     "field_logic_name":"已读",
     "entity_name":"IBZPRO_REPORTLYACTION",
     "field_type":"SSCODELIST",
+    "dict":"Action__read",
     "nullable":1,
     "physical_field":1,
     "data_type":"VARCHAR",
@@ -25826,11 +25861,49 @@
     "key_field":0,
     "show_order":1000,
     "major_field":0
+    },
+    {
+    "fieldname":"PROJECT" ,
+    "codename":"Project",
+    "field_logic_name":"项目",
+    "entity_name":"IBZPRO_REPORTLYACTION",
+    "field_type":"BIGINT",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":20,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
+    },
+    {
+    "fieldname":"OBJECTID" ,
+    "codename":"ObjectID",
+    "field_logic_name":"汇报标识",
+    "entity_name":"IBZPRO_REPORTLYACTION",
+    "ref_de":"IBZ_REPORTLY",
+    "ref_field_name":"IBZ_REPORTLYID",
+    "relation_name":"DER1N_IBZPRO_REPORTLYACTION_IBZ_REPORTLY_OBJECTID",
+    "relation_codename":"IbzProReportly",
+    "field_type":"PICKUP",
+    "nullable":1,
+    "physical_field":1,
+    "data_type":"BIGINT",
+    "data_length":100,
+    "key_field":0,
+    "show_order":1000,
+    "major_field":0
     }
     ],
     "subEntitys":[
     ],
     "parentEntitys":[
+    {"name":"DER1N_IBZPRO_REPORTLYACTION_IBZ_REPORTLY_OBJECTID",
+     "relation_type":"DER1N",
+     "code_name":"IbzProReportly",
+     "entity_name":"IBZPRO_REPORTLYACTION",
+     "ref_entity_name":"IBZ_REPORTLY"
+    }
     ]
  }
     ,
@@ -27304,6 +27377,12 @@
     }
     ],
     "subEntitys":[
+    {"name":"DER1N_IBZPRO_REPORTLYACTION_IBZ_REPORTLY_OBJECTID",
+     "relation_type":"DER1N",
+     "code_name":"IbzProReportly",
+     "entity_name":"IBZPRO_REPORTLYACTION",
+     "ref_entity_name":"IBZ_REPORTLY"
+    }
     ],
     "parentEntitys":[
     ]

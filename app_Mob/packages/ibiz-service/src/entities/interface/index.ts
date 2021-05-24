@@ -20,7 +20,6 @@ export * from './isys-team-member';
 export * from './itest-suite';
 export * from './iproject-team';
 export * from './ifile';
-export * from './istory-spec';
 export * from './ibranch';
 export * from './irelease';
 export * from './icase';

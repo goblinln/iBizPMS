@@ -18215,6 +18215,17 @@ const router = new Router({
             component: () => import('ibiz-vue/src/components/common/login/login.vue'),
         },
         {
+            path: '/appredirectview',
+            name: 'appredirectview',
+            meta: {  
+                caption: '全局应用重定向视图',
+                viewType: 'REDIRECTVIEW',
+                requireAuth: false,
+                ignoreAddPage: true,
+            },
+            component: () => import('@components/app-redirect-view/app-redirect-view.vue'),
+        },
+        {
             path: '/404',
             component: () => import('ibiz-vue/src/components/common/404/404.vue')
         },

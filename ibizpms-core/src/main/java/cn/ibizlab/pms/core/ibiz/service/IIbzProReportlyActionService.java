@@ -44,6 +44,8 @@ public interface IIbzProReportlyActionService extends IService<IbzProReportlyAct
     List<IbzProReportlyAction> selectView(IbzProReportlyActionSearchContext context);
 
     Page<IbzProReportlyAction> searchDefault(IbzProReportlyActionSearchContext context);
+    List<IbzProReportlyAction> selectByObjectid(Long ibzreportlyid);
+    void removeByObjectid(Long ibzreportlyid);
     IbzProReportlyAction dynamicCall(Long key, String action, IbzProReportlyAction et);
     /**
      *自定义查询SQL

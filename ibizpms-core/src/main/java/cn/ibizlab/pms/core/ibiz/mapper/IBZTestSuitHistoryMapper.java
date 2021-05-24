@@ -66,4 +66,6 @@ public interface IBZTestSuitHistoryMapper extends BaseMapper<IBZTestSuitHistory>
     @Delete("${sql}")
     boolean deleteBySQL(@Param("sql") String sql, @Param("et")Map param);
 
+    List<IBZTestSuitHistory> selectByAction(@Param("id") Serializable id);
+
 }

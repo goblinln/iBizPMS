@@ -30,4 +30,8 @@ export default [
     'branch',
     'project',
     'buildsn',
+    'createman',
+    'createdate',
+    'updateman',
+    'updatedate',
 ];

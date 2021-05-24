@@ -377,6 +377,14 @@ export abstract class BugBase extends EntityBase implements IBug {
      * 测试单
      */
     testtask?: any;
+    /**
+     * 建立人
+     */
+    createman?: any;
+    /**
+     * 更新人
+     */
+    updateman?: any;
 
     /**
      * 重置实体数据

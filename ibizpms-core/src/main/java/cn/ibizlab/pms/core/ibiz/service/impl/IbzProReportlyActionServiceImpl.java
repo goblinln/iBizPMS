@@ -52,6 +52,9 @@ public class IbzProReportlyActionServiceImpl extends ServiceImpl<IbzProReportlyA
     @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.IbzProReportlyActionRuntime ibzproreportlyactionRuntime;
 
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.report.service.IIbzReportlyService ibzreportlyService;
 
     protected int batchSize = 500;
 
@@ -231,6 +234,15 @@ public class IbzProReportlyActionServiceImpl extends ServiceImpl<IbzProReportlyA
         }
     }
 
+
+	@Override
+    public List<IbzProReportlyAction> selectByObjectid(Long ibzreportlyid) {
+        return baseMapper.selectByObjectid(ibzreportlyid);
+    }
+    @Override
+    public void removeByObjectid(Long ibzreportlyid) {
+        this.remove(new QueryWrapper<IbzProReportlyAction>().eq("objectid",ibzreportlyid));
+    }
 
 
     public List<IbzProReportlyAction> selectDefault(IbzProReportlyActionSearchContext context){

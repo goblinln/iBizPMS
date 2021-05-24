@@ -54,6 +54,9 @@ public class IBZTestSuiteActionServiceImpl extends ServiceImpl<IBZTestSuiteActio
 
     @Autowired
     @Lazy
+    protected cn.ibizlab.pms.core.ibiz.service.IIBZTestSuitHistoryService ibztestsuithistoryService;
+    @Autowired
+    @Lazy
     protected cn.ibizlab.pms.core.zentao.service.ITestSuiteService testsuiteService;
 
     protected int batchSize = 500;
@@ -70,6 +73,9 @@ public class IBZTestSuiteActionServiceImpl extends ServiceImpl<IBZTestSuiteActio
     public boolean create(IBZTestSuiteAction et) {
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
+        }
+        if(!ibztestsuiteactionRuntime.isRtmodel()){
+            ibztestsuithistoryService.saveByAction(et.getId(), et.getIbztestsuithistory());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -91,6 +97,9 @@ public class IBZTestSuiteActionServiceImpl extends ServiceImpl<IBZTestSuiteActio
     public boolean update(IBZTestSuiteAction et) {
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
+        }
+        if(!ibztestsuiteactionRuntime.isRtmodel()){
+            ibztestsuithistoryService.saveByAction(et.getId(), et.getIbztestsuithistory());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -121,6 +130,7 @@ public class IBZTestSuiteActionServiceImpl extends ServiceImpl<IBZTestSuiteActio
     @Transactional
     public boolean remove(Long key) {
         if(!ibztestsuiteactionRuntime.isRtmodel()){
+            ibztestsuithistoryService.removeByAction(key) ;
         }
         boolean result = removeById(key);
         return result ;
@@ -146,6 +156,7 @@ public class IBZTestSuiteActionServiceImpl extends ServiceImpl<IBZTestSuiteActio
         }
         else {
             if(!ibztestsuiteactionRuntime.isRtmodel()){
+                et.setIbztestsuithistory(ibztestsuithistoryService.selectByAction(key));
             }
         }
         return et;

@@ -44,6 +44,9 @@ public interface IIBZTestSuitHistoryService extends IService<IBZTestSuitHistory>
     List<IBZTestSuitHistory> selectView(IBZTestSuitHistorySearchContext context);
 
     Page<IBZTestSuitHistory> searchDefault(IBZTestSuitHistorySearchContext context);
+    List<IBZTestSuitHistory> selectByAction(Long id);
+    void removeByAction(Long id);
+    void saveByAction(Long id, List<IBZTestSuitHistory> list) ;
     IBZTestSuitHistory dynamicCall(Long key, String action, IBZTestSuitHistory et);
     /**
      *自定义查询SQL

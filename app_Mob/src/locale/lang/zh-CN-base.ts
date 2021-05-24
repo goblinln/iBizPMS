@@ -20,7 +20,6 @@ import systeammember_zh_CN from '@locale/lanres/sys-team-member/sys-team-member_
 import testsuite_zh_CN from '@locale/lanres/test-suite/test-suite_zh_CN';
 import projectteam_zh_CN from '@locale/lanres/project-team/project-team_zh_CN';
 import file_zh_CN from '@locale/lanres/file/file_zh_CN';
-import storyspec_zh_CN from '@locale/lanres/story-spec/story-spec_zh_CN';
 import branch_zh_CN from '@locale/lanres/branch/branch_zh_CN';
 import release_zh_CN from '@locale/lanres/release/release_zh_CN';
 import case_zh_CN from '@locale/lanres/case/case_zh_CN';
@@ -359,7 +358,6 @@ export default {
     testsuite: testsuite_zh_CN,
     projectteam: projectteam_zh_CN,
     file: file_zh_CN,
-    storyspec: storyspec_zh_CN,
     branch: branch_zh_CN,
     release: release_zh_CN,
     case: case_zh_CN,

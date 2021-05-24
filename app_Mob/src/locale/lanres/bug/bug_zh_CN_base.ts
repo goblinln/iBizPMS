@@ -82,6 +82,8 @@ export default {
     project: "所属项目",
     task: "相关任务",
     testtask: "测试单",
+    createman: "建立人",
+    updateman: "更新人",
   },
 	views: {
 		usr3mobmpickupleftview: {

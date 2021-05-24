@@ -76,7 +76,6 @@ export class UIServiceRegister {
         UIServiceRegister.allUIServiceMap.set('testsuite', () => import('../uiservice/test-suite/test-suite-ui-service'));
         UIServiceRegister.allUIServiceMap.set('projectteam', () => import('../uiservice/project-team/project-team-ui-service'));
         UIServiceRegister.allUIServiceMap.set('file', () => import('../uiservice/file/file-ui-service'));
-        UIServiceRegister.allUIServiceMap.set('storyspec', () => import('../uiservice/story-spec/story-spec-ui-service'));
         UIServiceRegister.allUIServiceMap.set('branch', () => import('../uiservice/branch/branch-ui-service'));
         UIServiceRegister.allUIServiceMap.set('release', () => import('../uiservice/release/release-ui-service'));
         UIServiceRegister.allUIServiceMap.set('case', () => import('../uiservice/case/case-ui-service'));

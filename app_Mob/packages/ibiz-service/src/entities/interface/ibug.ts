@@ -352,4 +352,12 @@ export interface IBug extends IEntityBase {
      * 测试单
      */
     testtask?: any;
+    /**
+     * 建立人
+     */
+    createman?: any;
+    /**
+     * 更新人
+     */
+    updateman?: any;
 }

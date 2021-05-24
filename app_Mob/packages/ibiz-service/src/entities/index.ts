@@ -20,7 +20,6 @@ export * from './sys-team-member/sys-team-member';
 export * from './test-suite/test-suite';
 export * from './project-team/project-team';
 export * from './file/file';
-export * from './story-spec/story-spec';
 export * from './branch/branch';
 export * from './release/release';
 export * from './case/case';
