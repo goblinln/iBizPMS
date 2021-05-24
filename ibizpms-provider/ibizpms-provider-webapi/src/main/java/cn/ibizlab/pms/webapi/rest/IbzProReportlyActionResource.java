@@ -160,7 +160,6 @@ public class IbzProReportlyActionResource {
 	@ApiOperation(value = "获取数据集", tags = {"汇报日志" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproreportlyactions/fetchdefault")
 	public ResponseEntity<List<IbzProReportlyActionDTO>> fetchdefault(@RequestBody IbzProReportlyActionSearchContext context) {
-        ibzproreportlyactionRuntime.addAuthorityConditions(context,"READ");
         Page<IbzProReportlyAction> domains = ibzproreportlyactionService.searchDefault(context) ;
         List<IbzProReportlyActionDTO> list = ibzproreportlyactionMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -174,7 +173,6 @@ public class IbzProReportlyActionResource {
 	@ApiOperation(value = "查询数据集", tags = {"汇报日志" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzproreportlyactions/searchdefault")
 	public ResponseEntity<Page<IbzProReportlyActionDTO>> searchDefault(@RequestBody IbzProReportlyActionSearchContext context) {
-        ibzproreportlyactionRuntime.addAuthorityConditions(context,"READ");
         Page<IbzProReportlyAction> domains = ibzproreportlyactionService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzproreportlyactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
