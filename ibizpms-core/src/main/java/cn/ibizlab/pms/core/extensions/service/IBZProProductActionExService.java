@@ -1,11 +1,7 @@
 package cn.ibizlab.pms.core.extensions.service;
 
 import cn.ibizlab.pms.core.ibiz.service.impl.IBZProProductActionServiceImpl;
-import cn.ibizlab.pms.core.ibizplugin.service.IIBIZProMessageService;
-import cn.ibizlab.pms.core.ou.service.ISysEmployeeService;
 import cn.ibizlab.pms.core.zentao.domain.Action;
-import cn.ibizlab.pms.core.zentao.domain.Case;
-import cn.ibizlab.pms.core.zentao.domain.Story;
 import cn.ibizlab.pms.core.zentao.service.*;
 import cn.ibizlab.pms.util.dict.StaticDict;
 import cn.ibizlab.pms.util.helper.CachedBeanCopier;
@@ -15,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.context.annotation.Primary;
-import java.util.*;
 
 /**
  * 实体[产品日志] 自定义服务对象
@@ -24,30 +19,6 @@ import java.util.*;
 @Primary
 @Service("IBZProProductActionExService")
 public class IBZProProductActionExService extends IBZProProductActionServiceImpl {
-
-    @Autowired
-    IFileService iFileService;
-
-    @Autowired
-    IStoryService iStoryService;
-
-    @Autowired
-    ICaseService iCaseService;
-
-    @Autowired
-    ITaskService iTaskService;
-
-    @Autowired
-    IBugService iBugService;
-
-    @Autowired
-    IHistoryService iHistoryService;
-
-    @Autowired
-    IIBIZProMessageService iibizProMessageService;
-
-    @Autowired
-    ISysEmployeeService iSysEmployeeService;
 
     @Autowired
     IActionService iActionService;
