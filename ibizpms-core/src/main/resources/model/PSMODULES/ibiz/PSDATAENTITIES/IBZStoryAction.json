@@ -1486,11 +1486,31 @@
     "linkDEField" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "添加备注",
+    "mapPSDEName" : "ZT_STORY",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction/PSDERS/DER1N_IBZPRO_STORYACTION_ZT_STORY_OBJECTID.json"
+    },
+    "name" : "CREATE",
+    "id" : "DER1N_IBZPRO_STORYACTION_ZT_STORY_OBJECTID__CREATE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
+  }, {
+    "logicName" : "管理",
+    "mapPSDEName" : "ZT_STORY",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction/PSDERS/DER1N_IBZPRO_STORYACTION_ZT_STORY_OBJECTID.json"
+    },
+    "name" : "MANAGE",
+    "id" : "DER1N_IBZPRO_STORYACTION_ZT_STORY_OBJECTID__MANAGE"
   }, {
     "logicName" : "读取",
     "name" : "READ"
@@ -1591,7 +1611,7 @@
   "dEType" : 1,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
   "getDefaultPSDEDataSet" : {
@@ -1615,7 +1635,7 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProStoryHistory.json"
@@ -1640,7 +1660,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction.json"

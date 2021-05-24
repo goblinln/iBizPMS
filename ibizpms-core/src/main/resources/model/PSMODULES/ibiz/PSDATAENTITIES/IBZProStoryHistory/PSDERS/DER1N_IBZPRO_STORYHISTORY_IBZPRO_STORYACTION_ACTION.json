@@ -8,7 +8,7 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction.json"
   },
   "masterOrder" : -1,
-  "masterRS" : 0,
+  "masterRS" : 4,
   "getMinorPSDataEntity" : {
     "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProStoryHistory.json"

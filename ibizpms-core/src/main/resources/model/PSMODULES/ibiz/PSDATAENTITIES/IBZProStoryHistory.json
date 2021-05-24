@@ -749,6 +749,16 @@
     "logicName" : "读取",
     "name" : "READ"
   }, {
+    "logicName" : "读",
+    "mapPSDEName" : "IBZPRO_STORYACTION",
+    "mapPSDEOPPrivName" : "READ",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProStoryHistory/PSDERS/DER1N_IBZPRO_STORYHISTORY_IBZPRO_STORYACTION_ACTION.json"
+    },
+    "name" : "READ",
+    "id" : "DER1N_IBZPRO_STORYHISTORY_IBZPRO_STORYACTION_ACTION__READ"
+  }, {
     "logicName" : "更新",
     "name" : "UPDATE"
   } ],
@@ -845,7 +855,7 @@
   "dEType" : 1,
   "dSLink" : "DEFAULT",
   "dataAccCtrlArch" : 1,
-  "dataAccCtrlMode" : 1,
+  "dataAccCtrlMode" : 2,
   "dataChangeLogMode" : 0,
   "dataImpExpMode" : 3,
   "getDefaultPSDEDataSet" : {
@@ -869,7 +879,7 @@
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 0,
+    "masterRS" : 4,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProStoryHistory.json"

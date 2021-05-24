@@ -153,7 +153,6 @@ public class IBZStoryActionResource {
 	@ApiOperation(value = "获取数据集", tags = {"需求日志" } ,notes = "获取数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzstoryactions/fetchdefault")
 	public ResponseEntity<List<IBZStoryActionDTO>> fetchdefault(@RequestBody IBZStoryActionSearchContext context) {
-        ibzstoryactionRuntime.addAuthorityConditions(context,"READ");
         Page<IBZStoryAction> domains = ibzstoryactionService.searchDefault(context) ;
         List<IBZStoryActionDTO> list = ibzstoryactionMapping.toDto(domains.getContent());
         return ResponseEntity.status(HttpStatus.OK)
@@ -167,7 +166,6 @@ public class IBZStoryActionResource {
 	@ApiOperation(value = "查询数据集", tags = {"需求日志" } ,notes = "查询数据集")
     @RequestMapping(method= RequestMethod.POST , value="/ibzstoryactions/searchdefault")
 	public ResponseEntity<Page<IBZStoryActionDTO>> searchDefault(@RequestBody IBZStoryActionSearchContext context) {
-        ibzstoryactionRuntime.addAuthorityConditions(context,"READ");
         Page<IBZStoryAction> domains = ibzstoryactionService.searchDefault(context) ;
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzstoryactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
