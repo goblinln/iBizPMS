@@ -1660,7 +1660,7 @@
       "path" : "PSMODULES/zentao/PSDATAENTITIES/Story.json"
     },
     "masterOrder" : -1,
-    "masterRS" : 4,
+    "masterRS" : 12,
     "getMinorPSDataEntity" : {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZStoryAction.json"
@@ -1673,7 +1673,8 @@
     },
     "pickupDEFName" : "OBJECTID",
     "removeActionType" : -1,
-    "removeOrder" : 0
+    "removeOrder" : 0,
+    "nestedRS" : true
   } ],
   "name" : "IBZPRO_STORYACTION",
   "saaSMode" : 0,

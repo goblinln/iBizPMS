@@ -52,6 +52,9 @@ public class ProductPlanHistoryServiceImpl extends ServiceImpl<ProductPlanHistor
     @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.ProductPlanHistoryRuntime productplanhistoryRuntime;
 
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.ibiz.service.IProductPlanActionService productplanactionService;
 
     protected int batchSize = 500;
 
@@ -232,6 +235,47 @@ public class ProductPlanHistoryServiceImpl extends ServiceImpl<ProductPlanHistor
     }
 
 
+	@Override
+    public List<ProductPlanHistory> selectByAction(Long id) {
+        return baseMapper.selectByAction(id);
+    }
+    @Override
+    public void removeByAction(Long id) {
+        this.remove(new QueryWrapper<ProductPlanHistory>().eq("action",id));
+    }
+
+    public IProductPlanHistoryService getProxyService() {
+        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
+    }
+	@Override
+    public void saveByAction(Long id,List<ProductPlanHistory> list) {
+        if(list==null)
+            return;
+        Set<Long> delIds=new HashSet<Long>();
+        List<ProductPlanHistory> _update=new ArrayList<ProductPlanHistory>();
+        List<ProductPlanHistory> _create=new ArrayList<ProductPlanHistory>();
+        for(ProductPlanHistory before:selectByAction(id)){
+            delIds.add(before.getId());
+        }
+        for(ProductPlanHistory sub:list) {
+            sub.setAction(id);
+            if(ObjectUtils.isEmpty(sub.getId()))
+                sub.setId((Long)sub.getDefaultKey(true));
+            if(delIds.contains(sub.getId())) {
+                delIds.remove(sub.getId());
+                _update.add(sub);
+            }
+            else
+                _create.add(sub);
+        }
+        if(_update.size()>0)
+            getProxyService().updateBatch(_update);
+        if(_create.size()>0)
+            getProxyService().createBatch(_create);
+        if(delIds.size()>0)
+            getProxyService().removeBatch(delIds);
+	}
+
 
     public List<ProductPlanHistory> selectDefault(ProductPlanHistorySearchContext context){
         return baseMapper.selectDefault(context, context.getSelectCond());
@@ -306,9 +350,6 @@ public class ProductPlanHistoryServiceImpl extends ServiceImpl<ProductPlanHistor
     }
 
 
-    public IProductPlanHistoryService getProxyService() {
-        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
-    }
     @Override
     @Transactional
     public ProductPlanHistory dynamicCall(Long key, String action, ProductPlanHistory et) {

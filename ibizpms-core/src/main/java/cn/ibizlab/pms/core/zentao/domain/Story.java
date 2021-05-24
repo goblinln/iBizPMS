@@ -791,6 +791,14 @@ public class Story extends EntityMP implements Serializable {
 
 
     /**
+     * 需求日志
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private List<cn.ibizlab.pms.core.ibiz.domain.IBZStoryAction> ibzstoryaction;
+
+    /**
      * 需求描述
      */
     @JsonIgnore

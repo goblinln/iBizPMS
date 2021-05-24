@@ -44,6 +44,9 @@ public interface IProductPlanHistoryService extends IService<ProductPlanHistory>
     List<ProductPlanHistory> selectView(ProductPlanHistorySearchContext context);
 
     Page<ProductPlanHistory> searchDefault(ProductPlanHistorySearchContext context);
+    List<ProductPlanHistory> selectByAction(Long id);
+    void removeByAction(Long id);
+    void saveByAction(Long id, List<ProductPlanHistory> list) ;
     ProductPlanHistory dynamicCall(Long key, String action, ProductPlanHistory et);
     /**
      *自定义查询SQL

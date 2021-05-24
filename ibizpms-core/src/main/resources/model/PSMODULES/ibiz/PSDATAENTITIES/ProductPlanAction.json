@@ -1347,48 +1347,6 @@
     "phisicalDEField" : false
   }, {
     "getAllPSDEFDTColumns" : [ {
-      "columnName" : "OBJECTID",
-      "dBType" : "MYSQL5",
-      "name" : "OBJECTID",
-      "queryCodeExp" : "t1.`OBJECTID`",
-      "standardColumnName" : "`OBJECTID`",
-      "valueAutoGen" : true
-    } ],
-    "getAllPSDEFValueRules" : [ {
-      "codeName" : "Default",
-      "name" : "默认规则",
-      "getPSDEFVRGroupCondition" : {
-        "condOp" : "AND",
-        "condType" : "GROUP",
-        "name" : "默认组"
-      },
-      "getPSDEField" : {
-        "name" : "OBJECTID",
-        "codeName" : "ObjectID"
-      },
-      "ruleInfo" : "默认规则",
-      "checkDefault" : true,
-      "defaultMode" : true,
-      "enableBackend" : true,
-      "enableFront" : true
-    } ],
-    "codeName" : "ObjectID",
-    "dEFType" : 1,
-    "dataType" : "BIGINT",
-    "defaultValue" : "0",
-    "importOrder" : 1000,
-    "length" : 20,
-    "logicName" : "对象ID",
-    "name" : "OBJECTID",
-    "getPSSysTranslator" : {
-      "modelref" : true,
-      "path" : "PSSYSTRANSLATORS/ZeroTranslator.json"
-    },
-    "stdDataType" : 1,
-    "translatorMode" : "TRANSLATE2",
-    "valueFormat" : "%1$s"
-  }, {
-    "getAllPSDEFDTColumns" : [ {
       "columnName" : "ACTOR",
       "dBType" : "MYSQL5",
       "name" : "ACTOR",
@@ -1474,13 +1432,83 @@
     "name" : "PROJECT",
     "stdDataType" : 1,
     "valueFormat" : "%1$s"
+  }, {
+    "getAllPSDEFDTColumns" : [ {
+      "columnName" : "OBJECTID",
+      "dBType" : "MYSQL5",
+      "name" : "OBJECTID",
+      "queryCodeExp" : "t1.`OBJECTID`",
+      "standardColumnName" : "`OBJECTID`"
+    } ],
+    "getAllPSDEFSearchModes" : [ {
+      "codeName" : "N_OBJECTID_EQ",
+      "name" : "N_OBJECTID_EQ",
+      "stdDataType" : 1,
+      "valueOP" : "EQ"
+    } ],
+    "getAllPSDEFValueRules" : [ {
+      "codeName" : "Default",
+      "name" : "默认规则",
+      "getPSDEFVRGroupCondition" : {
+        "condOp" : "AND",
+        "condType" : "GROUP",
+        "name" : "默认组"
+      },
+      "getPSDEField" : {
+        "name" : "OBJECTID",
+        "codeName" : "ObjectID"
+      },
+      "ruleInfo" : "默认规则",
+      "checkDefault" : true,
+      "defaultMode" : true,
+      "enableBackend" : true,
+      "enableFront" : true
+    } ],
+    "codeName" : "ObjectID",
+    "dEFType" : 1,
+    "dataType" : "PICKUP",
+    "importOrder" : 1000,
+    "length" : 8,
+    "logicName" : "编号",
+    "name" : "OBJECTID",
+    "getPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductPlanAction/PSDERS/DER1N_IBZPRO_PRODUCTPLANACTION_ZT_PRODUCTPLAN_OBJECTID.json"
+    },
+    "getRelatedPSDEField" : {
+      "name" : "ID",
+      "codeName" : "Id"
+    },
+    "stdDataType" : 1,
+    "valueFormat" : "%1$s",
+    "linkDEField" : true
   } ],
   "getAllPSDEOPPrivs" : [ {
+    "logicName" : "新建",
+    "mapPSDEName" : "ZT_PRODUCTPLAN",
+    "mapPSDEOPPrivName" : "CREATE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductPlanAction/PSDERS/DER1N_IBZPRO_PRODUCTPLANACTION_ZT_PRODUCTPLAN_OBJECTID.json"
+    },
+    "name" : "CREATE",
+    "id" : "IbzProductPlan__CREATE"
+  }, {
     "logicName" : "建立",
     "name" : "CREATE"
   }, {
     "logicName" : "删除",
     "name" : "DELETE"
+  }, {
+    "logicName" : "管理",
+    "mapPSDEName" : "ZT_PRODUCTPLAN",
+    "mapPSDEOPPrivName" : "MANAGE",
+    "getMapPSDER" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductPlanAction/PSDERS/DER1N_IBZPRO_PRODUCTPLANACTION_ZT_PRODUCTPLAN_OBJECTID.json"
+    },
+    "name" : "MANAGE",
+    "id" : "IbzProductPlan__MANAGE"
   }, {
     "logicName" : "读取",
     "name" : "READ"
@@ -1595,9 +1623,58 @@
   "enableViewLevel" : 0,
   "extendMode" : 0,
   "logicName" : "产品计划日志",
+  "getMajorPSDERs" : [ {
+    "codeName" : "ProductPlanAction",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductPlanHistory/PSDERS/DER1N_IBZPRO_PRODUCTPLANHISTORY_IBZPRO_PRODUCTPLANACTION_ACTION.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductPlanAction.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 12,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductPlanHistory.json"
+    },
+    "name" : "DER1N_IBZPRO_PRODUCTPLANHISTORY_IBZPRO_PRODUCTPLANACTION_ACTION",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "ACTION",
+      "codeName" : "Action"
+    },
+    "pickupDEFName" : "ACTION",
+    "removeActionType" : -1,
+    "removeOrder" : 0,
+    "nestedRS" : true
+  } ],
+  "getMinorPSDERs" : [ {
+    "codeName" : "IbzProductPlan",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/ProductPlanAction/PSDERS/DER1N_IBZPRO_PRODUCTPLANACTION_ZT_PRODUCTPLAN_OBJECTID.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/ProductPlan.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 4,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/ProductPlanAction.json"
+    },
+    "name" : "DER1N_IBZPRO_PRODUCTPLANACTION_ZT_PRODUCTPLAN_OBJECTID",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "OBJECTID",
+      "codeName" : "ObjectID"
+    },
+    "pickupDEFName" : "OBJECTID",
+    "removeActionType" : -1,
+    "removeOrder" : 0
+  } ],
   "name" : "IBZPRO_PRODUCTPLANACTION",
   "saaSMode" : 0,
-  "serviceAPIMode" : 0,
+  "serviceAPIMode" : 1,
   "serviceCodeName" : "ProductPlanAction",
   "storageMode" : 1,
   "systemTag" : "iBizPMS",

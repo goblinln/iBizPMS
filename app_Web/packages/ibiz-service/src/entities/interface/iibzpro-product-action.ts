@@ -99,10 +99,6 @@ export interface IIBZProProductAction extends IEntityBase {
      */
     date?: any;
     /**
-     * 前端键值
-     */
-    srfkey?: any;
-    /**
      * 备注
      */
     lastcomment?: any;

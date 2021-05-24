@@ -263,15 +263,6 @@ public class ProductPlanAction extends EntityMP implements Serializable {
     @ApiModelProperty("上周")
     private String lastweek;
     /**
-     * 对象ID
-     */
-    @DEField(defaultValue = "0")
-    @TableField(value = "`OBJECTID`")
-    @JSONField(name = "objectid")
-    @JsonProperty("objectid")
-    @ApiModelProperty("对象ID")
-    private Long objectid;
-    /**
      * 操作者
      */
     @TableField(value = "`ACTOR`")
@@ -287,7 +278,31 @@ public class ProductPlanAction extends EntityMP implements Serializable {
     @JsonProperty("project")
     @ApiModelProperty("所属项目")
     private Long project;
+    /**
+     * 编号
+     */
+    @TableField(value = "`OBJECTID`")
+    @JSONField(name = "objectid")
+    @JsonProperty("objectid")
+    @ApiModelProperty("编号")
+    private Long objectid;
 
+    /**
+     * 
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private cn.ibizlab.pms.core.zentao.domain.ProductPlan ibzproductplan;
+
+
+    /**
+     * 产品计划历史
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private List<cn.ibizlab.pms.core.ibiz.domain.ProductPlanHistory> productplanhistory;
 
 
     /**
@@ -347,14 +362,6 @@ public class ProductPlanAction extends EntityMP implements Serializable {
     }
 
     /**
-     * 设置 [对象ID]
-     */
-    public void setObjectid(Long objectid) {
-        this.objectid = objectid;
-        this.modify("objectid", objectid);
-    }
-
-    /**
      * 设置 [操作者]
      */
     public void setActor(String actor) {
@@ -368,6 +375,14 @@ public class ProductPlanAction extends EntityMP implements Serializable {
     public void setProject(Long project) {
         this.project = project;
         this.modify("project", project);
+    }
+
+    /**
+     * 设置 [编号]
+     */
+    public void setObjectid(Long objectid) {
+        this.objectid = objectid;
+        this.modify("objectid", objectid);
     }
 
 

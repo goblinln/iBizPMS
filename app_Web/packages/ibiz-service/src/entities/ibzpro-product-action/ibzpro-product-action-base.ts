@@ -124,10 +124,6 @@ export abstract class IBZProProductActionBase extends EntityBase implements IIBZ
      */
     date?: any;
     /**
-     * 前端键值
-     */
-    srfkey?: any;
-    /**
      * 备注
      */
     lastcomment?: any;

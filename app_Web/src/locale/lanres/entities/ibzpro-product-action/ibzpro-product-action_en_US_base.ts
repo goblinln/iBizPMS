@@ -24,7 +24,6 @@ function getLocaleResourceBase(){
 		'action': commonLogic.appcommonhandle("动作",null),
 		'product': commonLogic.appcommonhandle("产品",null),
 		'date': commonLogic.appcommonhandle("日期",null),
-		'srfkey': commonLogic.appcommonhandle("前端键值",null),
 		'lastcomment': commonLogic.appcommonhandle("备注",null),
 		'actionmanner': commonLogic.appcommonhandle("操作方式",null),
 		'lastweek': commonLogic.appcommonhandle("上周",null),

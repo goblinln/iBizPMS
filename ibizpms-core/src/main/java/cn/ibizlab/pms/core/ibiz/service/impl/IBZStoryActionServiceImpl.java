@@ -247,6 +247,38 @@ public class IBZStoryActionServiceImpl extends ServiceImpl<IBZStoryActionMapper,
         this.remove(new QueryWrapper<IBZStoryAction>().eq("objectid",id));
     }
 
+    public IIBZStoryActionService getProxyService() {
+        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
+    }
+	@Override
+    public void saveByObjectid(Long id,List<IBZStoryAction> list) {
+        if(list==null)
+            return;
+        Set<Long> delIds=new HashSet<Long>();
+        List<IBZStoryAction> _update=new ArrayList<IBZStoryAction>();
+        List<IBZStoryAction> _create=new ArrayList<IBZStoryAction>();
+        for(IBZStoryAction before:selectByObjectid(id)){
+            delIds.add(before.getId());
+        }
+        for(IBZStoryAction sub:list) {
+            sub.setObjectid(id);
+            if(ObjectUtils.isEmpty(sub.getId()))
+                sub.setId((Long)sub.getDefaultKey(true));
+            if(delIds.contains(sub.getId())) {
+                delIds.remove(sub.getId());
+                _update.add(sub);
+            }
+            else
+                _create.add(sub);
+        }
+        if(_update.size()>0)
+            getProxyService().updateBatch(_update);
+        if(_create.size()>0)
+            getProxyService().createBatch(_create);
+        if(delIds.size()>0)
+            getProxyService().removeBatch(delIds);
+	}
+
 
     public List<IBZStoryAction> selectDefault(IBZStoryActionSearchContext context){
         return baseMapper.selectDefault(context, context.getSelectCond());
@@ -327,9 +359,6 @@ public class IBZStoryActionServiceImpl extends ServiceImpl<IBZStoryActionMapper,
      */
     public IBZStoryActionSearchContext getSearchContext(){
         return new IBZStoryActionSearchContext();
-    }
-    public IIBZStoryActionService getProxyService() {
-        return cn.ibizlab.pms.util.security.SpringContextHolder.getBean(this.getClass());
     }
     @Override
     @Transactional

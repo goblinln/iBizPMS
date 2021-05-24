@@ -422,11 +422,6 @@
     "stdDataType" : 5,
     "valueFormat" : "YYYY-MM-DD HH:mm:ss"
   }, {
-    "codeName" : "Srfkey",
-    "logicName" : "前端键值",
-    "name" : "SRFKEY",
-    "stdDataType" : 1
-  }, {
     "codeName" : "Lastcomment",
     "logicName" : "备注",
     "name" : "LASTCOMMENT",

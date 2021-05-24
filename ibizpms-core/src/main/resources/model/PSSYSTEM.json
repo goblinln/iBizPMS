@@ -1119,6 +1119,12 @@
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseAction.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseHistory.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProSequence.json"
   }, {
     "modelref" : true,
@@ -2803,6 +2809,12 @@
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProductHistory.json"
+    }, {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseAction.json"
+    }, {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseHistory.json"
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProStoryHistory.json"

@@ -245,16 +245,6 @@ public class IBZProProductActionDTO extends DTOBase implements Serializable {
     private Timestamp date;
 
     /**
-     * 属性 [SRFKEY]
-     *
-     */
-    @JSONField(name = "srfkey")
-    @JsonProperty("srfkey")
-    @JsonSerialize(using = ToStringSerializer.class)
-    @ApiModelProperty("前端键值")
-    private Long srfkey;
-
-    /**
      * 属性 [LASTCOMMENT]
      *
      */

@@ -20,7 +20,6 @@ export default [
     'action',
     'product',
     'date',
-    'srfkey',
     'lastcomment',
     'actionmanner',
     'lastweek',

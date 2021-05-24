@@ -52,6 +52,12 @@ public class ProductPlanActionServiceImpl extends ServiceImpl<ProductPlanActionM
     @Lazy
     cn.ibizlab.pms.core.ibiz.runtime.ProductPlanActionRuntime productplanactionRuntime;
 
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.ibiz.service.IProductPlanHistoryService productplanhistoryService;
+    @Autowired
+    @Lazy
+    protected cn.ibizlab.pms.core.zentao.service.IProductPlanService productplanService;
 
     protected int batchSize = 500;
 
@@ -67,6 +73,9 @@ public class ProductPlanActionServiceImpl extends ServiceImpl<ProductPlanActionM
     public boolean create(ProductPlanAction et) {
         if(!this.retBool(this.baseMapper.insert(et))) {
             return false;
+        }
+        if(!productplanactionRuntime.isRtmodel()){
+            productplanhistoryService.saveByAction(et.getId(), et.getProductplanhistory());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -88,6 +97,9 @@ public class ProductPlanActionServiceImpl extends ServiceImpl<ProductPlanActionM
     public boolean update(ProductPlanAction et) {
         if(!update(et, (Wrapper) et.getUpdateWrapper(true).eq("id", et.getId()))) {
             return false;
+        }
+        if(!productplanactionRuntime.isRtmodel()){
+            productplanhistoryService.saveByAction(et.getId(), et.getProductplanhistory());
         }
         CachedBeanCopier.copy(get(et.getId()), et);
         return true;
@@ -118,6 +130,7 @@ public class ProductPlanActionServiceImpl extends ServiceImpl<ProductPlanActionM
     @Transactional
     public boolean remove(Long key) {
         if(!productplanactionRuntime.isRtmodel()){
+            productplanhistoryService.removeByAction(key) ;
         }
         boolean result = removeById(key);
         return result ;
@@ -143,6 +156,7 @@ public class ProductPlanActionServiceImpl extends ServiceImpl<ProductPlanActionM
         }
         else {
             if(!productplanactionRuntime.isRtmodel()){
+                et.setProductplanhistory(productplanhistoryService.selectByAction(key));
             }
         }
         return et;
@@ -231,6 +245,15 @@ public class ProductPlanActionServiceImpl extends ServiceImpl<ProductPlanActionM
         }
     }
 
+
+	@Override
+    public List<ProductPlanAction> selectByObjectid(Long id) {
+        return baseMapper.selectByObjectid(id);
+    }
+    @Override
+    public void removeByObjectid(Long id) {
+        this.remove(new QueryWrapper<ProductPlanAction>().eq("objectid",id));
+    }
 
 
     public List<ProductPlanAction> selectDefault(ProductPlanActionSearchContext context){

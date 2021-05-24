@@ -54,6 +54,9 @@ public class ProductPlanServiceImpl extends ServiceImpl<ProductPlanMapper, Produ
 
     @Autowired
     @Lazy
+    protected cn.ibizlab.pms.core.ibiz.service.IProductPlanActionService productplanactionService;
+    @Autowired
+    @Lazy
     protected cn.ibizlab.pms.core.zentao.service.IBugService bugService;
     @Autowired
     @Lazy

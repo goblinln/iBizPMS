@@ -223,14 +223,6 @@ public class IBZProProductAction extends EntityMP implements Serializable {
     @ApiModelProperty("日期")
     private Timestamp date;
     /**
-     * 前端键值
-     */
-    @TableField(exist = false)
-    @JSONField(name = "srfkey")
-    @JsonProperty("srfkey")
-    @ApiModelProperty("前端键值")
-    private Long srfkey;
-    /**
      * 备注
      */
     @TableField(exist = false)

@@ -153,6 +153,22 @@ public class ProductPlanHistory extends EntityMP implements Serializable {
     @JsonProperty("updateby")
     @ApiModelProperty("由谁更新")
     private String updateby;
+    /**
+     * id
+     */
+    @TableField(value = "`ACTION`")
+    @JSONField(name = "action")
+    @JsonProperty("action")
+    @ApiModelProperty("id")
+    private Long action;
+
+    /**
+     * 
+     */
+    @JsonIgnore
+    @JSONField(serialize = false)
+    @TableField(exist = false)
+    private cn.ibizlab.pms.core.ibiz.domain.ProductPlanAction productplanaction;
 
 
 
@@ -194,6 +210,14 @@ public class ProductPlanHistory extends EntityMP implements Serializable {
     public void setHistorysn(Long historysn) {
         this.historysn = historysn;
         this.modify("historysn", historysn);
+    }
+
+    /**
+     * 设置 [id]
+     */
+    public void setAction(Long action) {
+        this.action = action;
+        this.modify("action", action);
     }
 
 

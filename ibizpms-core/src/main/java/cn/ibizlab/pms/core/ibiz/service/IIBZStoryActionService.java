@@ -46,6 +46,7 @@ public interface IIBZStoryActionService extends IService<IBZStoryAction> {
     Page<IBZStoryAction> searchDefault(IBZStoryActionSearchContext context);
     List<IBZStoryAction> selectByObjectid(Long id);
     void removeByObjectid(Long id);
+    void saveByObjectid(Long id, List<IBZStoryAction> list) ;
     IBZStoryAction dynamicCall(Long key, String action, IBZStoryAction et);
     /**
      *自定义查询SQL

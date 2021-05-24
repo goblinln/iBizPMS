@@ -66,4 +66,6 @@ public interface ProductPlanActionMapper extends BaseMapper<ProductPlanAction> {
     @Delete("${sql}")
     boolean deleteBySQL(@Param("sql") String sql, @Param("et")Map param);
 
+    List<ProductPlanAction> selectByObjectid(@Param("id") Serializable id);
+
 }

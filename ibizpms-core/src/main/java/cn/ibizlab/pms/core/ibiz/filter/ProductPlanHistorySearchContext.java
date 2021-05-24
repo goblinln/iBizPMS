@@ -37,6 +37,11 @@ public class ProductPlanHistorySearchContext extends QueryWrapperContext<Product
 	public void setN_diff_like(String n_diff_like) {
         this.n_diff_like = n_diff_like;
     }
+                
+	private Long n_action_eq;//[id]
+	public void setN_action_eq(Long n_action_eq) {
+        this.n_action_eq = n_action_eq;
+    }
 
     /**
 	 * 启用快速搜索
