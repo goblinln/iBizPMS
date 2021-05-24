@@ -63,6 +63,36 @@ export default {
 			caption: commonLogic.appcommonhandle("待办",null),
 		},
 	},
+	mobmain_form: {
+		details: {
+			druipart1: commonLogic.appcommonhandle("",null), 
+			grouppanel1: commonLogic.appcommonhandle("历史记录",null), 
+			group1: commonLogic.appcommonhandle("待办事宜表基本信息",null), 
+			formpage1: commonLogic.appcommonhandle("基本信息",null), 
+			srforikey: commonLogic.appcommonhandle("",null), 
+			srfkey: commonLogic.appcommonhandle("编号",null), 
+			srfmajortext: commonLogic.appcommonhandle("待办名称",null), 
+			srftempmode: commonLogic.appcommonhandle("",null), 
+			srfuf: commonLogic.appcommonhandle("",null), 
+			srfdeid: commonLogic.appcommonhandle("",null), 
+			srfsourcekey: commonLogic.appcommonhandle("",null), 
+			name: commonLogic.appcommonhandle("待办名称",null), 
+			pri: commonLogic.appcommonhandle("优先级",null), 
+			date1: commonLogic.appcommonhandle("日期",null), 
+			begin: commonLogic.appcommonhandle("开始",null), 
+			end: commonLogic.appcommonhandle("结束",null), 
+			type: commonLogic.appcommonhandle("类型",null), 
+			status: commonLogic.appcommonhandle("状态",null), 
+			assignedby: commonLogic.appcommonhandle("由谁指派",null), 
+			assigneddate: commonLogic.appcommonhandle("指派日期",null), 
+			assignedto: commonLogic.appcommonhandle("指派给",null), 
+			desc: commonLogic.appcommonhandle("描述",null), 
+			noticeusers: commonLogic.appcommonhandle("测试人员",null), 
+			id: commonLogic.appcommonhandle("编号",null), 
+		},
+		uiactions: {
+		},
+	},
 	assmob_form: {
 		details: {
 			group1: commonLogic.appcommonhandle("指派给",null), 
@@ -114,35 +144,7 @@ export default {
 		uiactions: {
 		},
 	},
-	mobmain_form: {
-		details: {
-			druipart1: commonLogic.appcommonhandle("",null), 
-			grouppanel1: commonLogic.appcommonhandle("历史记录",null), 
-			group1: commonLogic.appcommonhandle("待办事宜表基本信息",null), 
-			formpage1: commonLogic.appcommonhandle("基本信息",null), 
-			srforikey: commonLogic.appcommonhandle("",null), 
-			srfkey: commonLogic.appcommonhandle("编号",null), 
-			srfmajortext: commonLogic.appcommonhandle("待办名称",null), 
-			srftempmode: commonLogic.appcommonhandle("",null), 
-			srfuf: commonLogic.appcommonhandle("",null), 
-			srfdeid: commonLogic.appcommonhandle("",null), 
-			srfsourcekey: commonLogic.appcommonhandle("",null), 
-			name: commonLogic.appcommonhandle("待办名称",null), 
-			pri: commonLogic.appcommonhandle("优先级",null), 
-			date1: commonLogic.appcommonhandle("日期",null), 
-			begin: commonLogic.appcommonhandle("开始",null), 
-			end: commonLogic.appcommonhandle("结束",null), 
-			type: commonLogic.appcommonhandle("类型",null), 
-			status: commonLogic.appcommonhandle("状态",null), 
-			assignedby: commonLogic.appcommonhandle("由谁指派",null), 
-			assigneddate: commonLogic.appcommonhandle("指派日期",null), 
-			assignedto: commonLogic.appcommonhandle("指派给",null), 
-			desc: commonLogic.appcommonhandle("描述",null), 
-			noticeusers: commonLogic.appcommonhandle("测试人员",null), 
-			id: commonLogic.appcommonhandle("编号",null), 
-		},
-		uiactions: {
-		},
+	mobeditviewrighttoolbar_toolbar: {
 	},
 	newmobeditviewrighttoolbar_toolbar: {
 		tbitem1: {
@@ -155,8 +157,6 @@ export default {
 			caption: commonLogic.appcommonhandle("新建",null),
 			tip: '新建',
 		},
-	},
-	mobeditviewrighttoolbar_toolbar: {
 	},
 	moblistviewrighttoolbar_toolbar: {
 	},
