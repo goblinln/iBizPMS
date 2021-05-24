@@ -186,5 +186,133 @@ public class IBZDailyActionResource {
         ibzdailyactiondto = ibzdailyactionMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzdailyactiondto);
     }
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'CREATE')")
+    @ApiOperation(value = "根据日报建立日报日志", tags = {"日报日志" },  notes = "根据日报建立日报日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/{ibzdaily_id}/ibzdailyactions")
+    public ResponseEntity<IBZDailyActionDTO> createByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IBZDailyActionDTO ibzdailyactiondto) {
+        IBZDailyAction domain = ibzdailyactionMapping.toDomain(ibzdailyactiondto);
+        domain.setObjectid(ibzdaily_id);
+		ibzdailyactionService.create(domain);
+        IBZDailyActionDTO dto = ibzdailyactionMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'CREATE')")
+    @ApiOperation(value = "根据日报批量建立日报日志", tags = {"日报日志" },  notes = "根据日报批量建立日报日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/{ibzdaily_id}/ibzdailyactions/batch")
+    public ResponseEntity<Boolean> createBatchByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody List<IBZDailyActionDTO> ibzdailyactiondtos) {
+        List<IBZDailyAction> domainlist=ibzdailyactionMapping.toDomain(ibzdailyactiondtos);
+        for(IBZDailyAction domain:domainlist){
+            domain.setObjectid(ibzdaily_id);
+        }
+        ibzdailyactionService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'UPDATE')")
+    @ApiOperation(value = "根据日报更新日报日志", tags = {"日报日志" },  notes = "根据日报更新日报日志")
+	@RequestMapping(method = RequestMethod.PUT, value = "/ibzdailies/{ibzdaily_id}/ibzdailyactions/{ibzdailyaction_id}")
+    public ResponseEntity<IBZDailyActionDTO> updateByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @PathVariable("ibzdailyaction_id") Long ibzdailyaction_id, @RequestBody IBZDailyActionDTO ibzdailyactiondto) {
+        IBZDailyAction domain = ibzdailyactionMapping.toDomain(ibzdailyactiondto);
+        domain.setObjectid(ibzdaily_id);
+        domain.setId(ibzdailyaction_id);
+		ibzdailyactionService.update(domain);
+        IBZDailyActionDTO dto = ibzdailyactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'UPDATE')")
+    @ApiOperation(value = "根据日报批量更新日报日志", tags = {"日报日志" },  notes = "根据日报批量更新日报日志")
+	@RequestMapping(method = RequestMethod.PUT, value = "/ibzdailies/{ibzdaily_id}/ibzdailyactions/batch")
+    public ResponseEntity<Boolean> updateBatchByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody List<IBZDailyActionDTO> ibzdailyactiondtos) {
+        List<IBZDailyAction> domainlist=ibzdailyactionMapping.toDomain(ibzdailyactiondtos);
+        for(IBZDailyAction domain:domainlist){
+            domain.setObjectid(ibzdaily_id);
+        }
+        ibzdailyactionService.updateBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'DELETE')")
+    @ApiOperation(value = "根据日报删除日报日志", tags = {"日报日志" },  notes = "根据日报删除日报日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzdailies/{ibzdaily_id}/ibzdailyactions/{ibzdailyaction_id}")
+    public ResponseEntity<Boolean> removeByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @PathVariable("ibzdailyaction_id") Long ibzdailyaction_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(ibzdailyactionService.remove(ibzdailyaction_id));
+    }
+
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'DELETE')")
+    @ApiOperation(value = "根据日报批量删除日报日志", tags = {"日报日志" },  notes = "根据日报批量删除日报日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzdailies/{ibzdaily_id}/ibzdailyactions/batch")
+    public ResponseEntity<Boolean> removeBatchByIbzDaily(@RequestBody List<Long> ids) {
+        ibzdailyactionService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'READ')")
+    @ApiOperation(value = "根据日报获取日报日志", tags = {"日报日志" },  notes = "根据日报获取日报日志")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzdailies/{ibzdaily_id}/ibzdailyactions/{ibzdailyaction_id}")
+    public ResponseEntity<IBZDailyActionDTO> getByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @PathVariable("ibzdailyaction_id") Long ibzdailyaction_id) {
+        IBZDailyAction domain = ibzdailyactionService.get(ibzdailyaction_id);
+        IBZDailyActionDTO dto = ibzdailyactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "根据日报获取日报日志草稿", tags = {"日报日志" },  notes = "根据日报获取日报日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/ibzdailies/{ibzdaily_id}/ibzdailyactions/getdraft")
+    public ResponseEntity<IBZDailyActionDTO> getDraftByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, IBZDailyActionDTO dto) {
+        IBZDailyAction domain = ibzdailyactionMapping.toDomain(dto);
+        domain.setObjectid(ibzdaily_id);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzdailyactionMapping.toDto(ibzdailyactionService.getDraft(domain)));
+    }
+
+    @ApiOperation(value = "根据日报检查日报日志", tags = {"日报日志" },  notes = "根据日报检查日报日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/{ibzdaily_id}/ibzdailyactions/checkkey")
+    public ResponseEntity<Boolean> checkKeyByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IBZDailyActionDTO ibzdailyactiondto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzdailyactionService.checkKey(ibzdailyactionMapping.toDomain(ibzdailyactiondto)));
+    }
+
+    @ApiOperation(value = "根据日报保存日报日志", tags = {"日报日志" },  notes = "根据日报保存日报日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/{ibzdaily_id}/ibzdailyactions/save")
+    public ResponseEntity<IBZDailyActionDTO> saveByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IBZDailyActionDTO ibzdailyactiondto) {
+        IBZDailyAction domain = ibzdailyactionMapping.toDomain(ibzdailyactiondto);
+        domain.setObjectid(ibzdaily_id);
+        ibzdailyactionService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzdailyactionMapping.toDto(domain));
+    }
+
+    @ApiOperation(value = "根据日报批量保存日报日志", tags = {"日报日志" },  notes = "根据日报批量保存日报日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzdailies/{ibzdaily_id}/ibzdailyactions/savebatch")
+    public ResponseEntity<Boolean> saveBatchByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody List<IBZDailyActionDTO> ibzdailyactiondtos) {
+        List<IBZDailyAction> domainlist=ibzdailyactionMapping.toDomain(ibzdailyactiondtos);
+        for(IBZDailyAction domain:domainlist){
+             domain.setObjectid(ibzdaily_id);
+        }
+        ibzdailyactionService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'READ')")
+	@ApiOperation(value = "根据日报获取数据集", tags = {"日报日志" } ,notes = "根据日报获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/{ibzdaily_id}/ibzdailyactions/fetchdefault")
+	public ResponseEntity<List<IBZDailyActionDTO>> fetchIBZDailyActionDefaultByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id,@RequestBody IBZDailyActionSearchContext context) {
+        context.setN_objectid_eq(ibzdaily_id);
+        Page<IBZDailyAction> domains = ibzdailyactionService.searchDefault(context) ;
+        List<IBZDailyActionDTO> list = ibzdailyactionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IbzDailyRuntime.test(#ibzdaily_id,'READ')")
+	@ApiOperation(value = "根据日报查询数据集", tags = {"日报日志" } ,notes = "根据日报查询数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzdailies/{ibzdaily_id}/ibzdailyactions/searchdefault")
+	public ResponseEntity<Page<IBZDailyActionDTO>> searchIBZDailyActionDefaultByIbzDaily(@PathVariable("ibzdaily_id") Long ibzdaily_id, @RequestBody IBZDailyActionSearchContext context) {
+        context.setN_objectid_eq(ibzdaily_id);
+        Page<IBZDailyAction> domains = ibzdailyactionService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzdailyactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
 }
 

@@ -1,7 +1,6 @@
 import { IPSAppDEUIAction } from '@ibiz/dynamic-model-api';
 import { UIServiceBase } from 'ibiz-core';
 import { AppLogicFactory } from 'ibiz-vue';
-import { ReleaseService } from '../../service';
 import { AuthServiceRegister } from '../../register';
 import { GlobalService } from '../../service';
 
@@ -39,7 +38,7 @@ export class ReleaseUIServiceBase extends UIServiceBase {
      */
      protected async loaded() {
         await super.loaded();
-        this.authService = AuthServiceRegister.getInstance().getService(this.context,`${this.entityModel?.codeName.toLowerCase()}`);
+        this.authService = await AuthServiceRegister.getInstance().getService(this.context,`${this.entityModel?.codeName.toLowerCase()}`);
         this.dataService = await new GlobalService().getService(`${this.entityModel?.codeName}`);
     }
 

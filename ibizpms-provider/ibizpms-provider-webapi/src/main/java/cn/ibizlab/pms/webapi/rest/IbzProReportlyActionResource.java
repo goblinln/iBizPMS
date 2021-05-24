@@ -186,5 +186,133 @@ public class IbzProReportlyActionResource {
         ibzproreportlyactiondto = ibzproreportlyactionMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzproreportlyactiondto);
     }
+    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'CREATE')")
+    @ApiOperation(value = "根据汇报建立汇报日志", tags = {"汇报日志" },  notes = "根据汇报建立汇报日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportlies/{ibzreportly_id}/ibzproreportlyactions")
+    public ResponseEntity<IbzProReportlyActionDTO> createByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id, @RequestBody IbzProReportlyActionDTO ibzproreportlyactiondto) {
+        IbzProReportlyAction domain = ibzproreportlyactionMapping.toDomain(ibzproreportlyactiondto);
+        domain.setObjectid(ibzreportly_id);
+		ibzproreportlyactionService.create(domain);
+        IbzProReportlyActionDTO dto = ibzproreportlyactionMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'CREATE')")
+    @ApiOperation(value = "根据汇报批量建立汇报日志", tags = {"汇报日志" },  notes = "根据汇报批量建立汇报日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportlies/{ibzreportly_id}/ibzproreportlyactions/batch")
+    public ResponseEntity<Boolean> createBatchByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id, @RequestBody List<IbzProReportlyActionDTO> ibzproreportlyactiondtos) {
+        List<IbzProReportlyAction> domainlist=ibzproreportlyactionMapping.toDomain(ibzproreportlyactiondtos);
+        for(IbzProReportlyAction domain:domainlist){
+            domain.setObjectid(ibzreportly_id);
+        }
+        ibzproreportlyactionService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'UPDATE')")
+    @ApiOperation(value = "根据汇报更新汇报日志", tags = {"汇报日志" },  notes = "根据汇报更新汇报日志")
+	@RequestMapping(method = RequestMethod.PUT, value = "/ibzreportlies/{ibzreportly_id}/ibzproreportlyactions/{ibzproreportlyaction_id}")
+    public ResponseEntity<IbzProReportlyActionDTO> updateByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id, @PathVariable("ibzproreportlyaction_id") Long ibzproreportlyaction_id, @RequestBody IbzProReportlyActionDTO ibzproreportlyactiondto) {
+        IbzProReportlyAction domain = ibzproreportlyactionMapping.toDomain(ibzproreportlyactiondto);
+        domain.setObjectid(ibzreportly_id);
+        domain.setId(ibzproreportlyaction_id);
+		ibzproreportlyactionService.update(domain);
+        IbzProReportlyActionDTO dto = ibzproreportlyactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'UPDATE')")
+    @ApiOperation(value = "根据汇报批量更新汇报日志", tags = {"汇报日志" },  notes = "根据汇报批量更新汇报日志")
+	@RequestMapping(method = RequestMethod.PUT, value = "/ibzreportlies/{ibzreportly_id}/ibzproreportlyactions/batch")
+    public ResponseEntity<Boolean> updateBatchByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id, @RequestBody List<IbzProReportlyActionDTO> ibzproreportlyactiondtos) {
+        List<IbzProReportlyAction> domainlist=ibzproreportlyactionMapping.toDomain(ibzproreportlyactiondtos);
+        for(IbzProReportlyAction domain:domainlist){
+            domain.setObjectid(ibzreportly_id);
+        }
+        ibzproreportlyactionService.updateBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'DELETE')")
+    @ApiOperation(value = "根据汇报删除汇报日志", tags = {"汇报日志" },  notes = "根据汇报删除汇报日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreportlies/{ibzreportly_id}/ibzproreportlyactions/{ibzproreportlyaction_id}")
+    public ResponseEntity<Boolean> removeByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id, @PathVariable("ibzproreportlyaction_id") Long ibzproreportlyaction_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(ibzproreportlyactionService.remove(ibzproreportlyaction_id));
+    }
+
+    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'DELETE')")
+    @ApiOperation(value = "根据汇报批量删除汇报日志", tags = {"汇报日志" },  notes = "根据汇报批量删除汇报日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzreportlies/{ibzreportly_id}/ibzproreportlyactions/batch")
+    public ResponseEntity<Boolean> removeBatchByIbzReportly(@RequestBody List<Long> ids) {
+        ibzproreportlyactionService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'READ')")
+    @ApiOperation(value = "根据汇报获取汇报日志", tags = {"汇报日志" },  notes = "根据汇报获取汇报日志")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzreportlies/{ibzreportly_id}/ibzproreportlyactions/{ibzproreportlyaction_id}")
+    public ResponseEntity<IbzProReportlyActionDTO> getByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id, @PathVariable("ibzproreportlyaction_id") Long ibzproreportlyaction_id) {
+        IbzProReportlyAction domain = ibzproreportlyactionService.get(ibzproreportlyaction_id);
+        IbzProReportlyActionDTO dto = ibzproreportlyactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "根据汇报获取汇报日志草稿", tags = {"汇报日志" },  notes = "根据汇报获取汇报日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/ibzreportlies/{ibzreportly_id}/ibzproreportlyactions/getdraft")
+    public ResponseEntity<IbzProReportlyActionDTO> getDraftByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id, IbzProReportlyActionDTO dto) {
+        IbzProReportlyAction domain = ibzproreportlyactionMapping.toDomain(dto);
+        domain.setObjectid(ibzreportly_id);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzproreportlyactionMapping.toDto(ibzproreportlyactionService.getDraft(domain)));
+    }
+
+    @ApiOperation(value = "根据汇报检查汇报日志", tags = {"汇报日志" },  notes = "根据汇报检查汇报日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportlies/{ibzreportly_id}/ibzproreportlyactions/checkkey")
+    public ResponseEntity<Boolean> checkKeyByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id, @RequestBody IbzProReportlyActionDTO ibzproreportlyactiondto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzproreportlyactionService.checkKey(ibzproreportlyactionMapping.toDomain(ibzproreportlyactiondto)));
+    }
+
+    @ApiOperation(value = "根据汇报保存汇报日志", tags = {"汇报日志" },  notes = "根据汇报保存汇报日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportlies/{ibzreportly_id}/ibzproreportlyactions/save")
+    public ResponseEntity<IbzProReportlyActionDTO> saveByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id, @RequestBody IbzProReportlyActionDTO ibzproreportlyactiondto) {
+        IbzProReportlyAction domain = ibzproreportlyactionMapping.toDomain(ibzproreportlyactiondto);
+        domain.setObjectid(ibzreportly_id);
+        ibzproreportlyactionService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzproreportlyactionMapping.toDto(domain));
+    }
+
+    @ApiOperation(value = "根据汇报批量保存汇报日志", tags = {"汇报日志" },  notes = "根据汇报批量保存汇报日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzreportlies/{ibzreportly_id}/ibzproreportlyactions/savebatch")
+    public ResponseEntity<Boolean> saveBatchByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id, @RequestBody List<IbzProReportlyActionDTO> ibzproreportlyactiondtos) {
+        List<IbzProReportlyAction> domainlist=ibzproreportlyactionMapping.toDomain(ibzproreportlyactiondtos);
+        for(IbzProReportlyAction domain:domainlist){
+             domain.setObjectid(ibzreportly_id);
+        }
+        ibzproreportlyactionService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'READ')")
+	@ApiOperation(value = "根据汇报获取数据集", tags = {"汇报日志" } ,notes = "根据汇报获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/{ibzreportly_id}/ibzproreportlyactions/fetchdefault")
+	public ResponseEntity<List<IbzProReportlyActionDTO>> fetchIbzProReportlyActionDefaultByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id,@RequestBody IbzProReportlyActionSearchContext context) {
+        context.setN_objectid_eq(ibzreportly_id);
+        Page<IbzProReportlyAction> domains = ibzproreportlyactionService.searchDefault(context) ;
+        List<IbzProReportlyActionDTO> list = ibzproreportlyactionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IbzReportlyRuntime.test(#ibzreportly_id,'READ')")
+	@ApiOperation(value = "根据汇报查询数据集", tags = {"汇报日志" } ,notes = "根据汇报查询数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzreportlies/{ibzreportly_id}/ibzproreportlyactions/searchdefault")
+	public ResponseEntity<Page<IbzProReportlyActionDTO>> searchIbzProReportlyActionDefaultByIbzReportly(@PathVariable("ibzreportly_id") Long ibzreportly_id, @RequestBody IbzProReportlyActionSearchContext context) {
+        context.setN_objectid_eq(ibzreportly_id);
+        Page<IbzProReportlyAction> domains = ibzproreportlyactionService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzproreportlyactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
 }
 

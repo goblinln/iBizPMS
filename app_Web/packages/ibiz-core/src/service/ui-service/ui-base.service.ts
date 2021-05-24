@@ -1,5 +1,5 @@
-import { IPSAppDataEntity, IPSDEMainState, IPSDEMainStateOPPriv, IPSDEOPPriv } from '@ibiz/dynamic-model-api';
-import { LogUtil, setSessionStorage } from 'ibiz-core';
+import { IPSAppDataEntity, IPSAppDEField, IPSDEMainState, IPSDEMainStateOPPriv, IPSDEOPPriv } from '@ibiz/dynamic-model-api';
+import { LogUtil, ModelTool } from 'ibiz-core';
 import { AppServiceBase } from '../app-service/app-base.service';
 import { AuthServiceBase } from '../auth-service/auth-base.service';
 import { GetModelService } from '../model-service/model-service';
@@ -320,10 +320,8 @@ export class UIServiceBase {
      * @memberof  UIServiceBase
      */
     protected getResourceOPPrivs(tag: any) {
-        if (!this.authService) {
-            this.authService = new AuthServiceBase(this.getStore());
-        }
-        return this.authService.getResourcePermission(this.authService.sysOPPrivsMap.get(tag)) ? 1 : 0;
+        const authService = new AuthServiceBase(this.getStore());
+        return authService.getResourcePermission(authService.sysOPPrivsMap.get(tag)) ? 1 : 0;
     }
 
     /**
@@ -525,13 +523,15 @@ export class UIServiceBase {
     }
 
     /**
-     * 应用实体codeName
+     * 应用实体主键属性
      *
      * @readonly
      * @memberof UIServiceBase
      */
-    get appDeCodeName() {
-        return this.entityModel?.codeName || '';
+     get appDeKeyFieldName() {
+        return (
+            (ModelTool.getAppEntityKeyField(this.entityModel) as IPSAppDEField)?.codeName || ''
+        );
     }
 
     /**
@@ -541,7 +541,7 @@ export class UIServiceBase {
      * @memberof  UIServiceBase
      */
     protected getAllOPPrivs(data: any) {
-        const curActiveKey: string = `${this.deName}-${data[this.appDeCodeName]}`;
+        const curActiveKey: string = `${this.deName}-${data[this.appDeKeyFieldName?.toLowerCase()]}`;
         return this.authService.getOPPrivs(curActiveKey, this.getDEMainStateOPPrivs(data));
     }
 }

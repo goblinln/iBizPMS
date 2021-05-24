@@ -212,5 +212,315 @@ public class ProductPlanActionResource {
         productplanactiondto = productplanactionMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(productplanactiondto);
     }
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据产品计划建立产品计划日志", tags = {"产品计划日志" },  notes = "根据产品计划建立产品计划日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/productplanactions")
+    public ResponseEntity<ProductPlanActionDTO> createByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanActionDTO productplanactiondto) {
+        ProductPlanAction domain = productplanactionMapping.toDomain(productplanactiondto);
+        domain.setObjectid(productplan_id);
+		productplanactionService.create(domain);
+        ProductPlanActionDTO dto = productplanactionMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据产品计划批量建立产品计划日志", tags = {"产品计划日志" },  notes = "根据产品计划批量建立产品计划日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/productplanactions/batch")
+    public ResponseEntity<Boolean> createBatchByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody List<ProductPlanActionDTO> productplanactiondtos) {
+        List<ProductPlanAction> domainlist=productplanactionMapping.toDomain(productplanactiondtos);
+        for(ProductPlanAction domain:domainlist){
+            domain.setObjectid(productplan_id);
+        }
+        productplanactionService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'UPDATE')")
+    @ApiOperation(value = "根据产品计划更新产品计划日志", tags = {"产品计划日志" },  notes = "根据产品计划更新产品计划日志")
+	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/productplanactions/{productplanaction_id}")
+    public ResponseEntity<ProductPlanActionDTO> updateByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("productplanaction_id") Long productplanaction_id, @RequestBody ProductPlanActionDTO productplanactiondto) {
+        ProductPlanAction domain = productplanactionMapping.toDomain(productplanactiondto);
+        domain.setObjectid(productplan_id);
+        domain.setId(productplanaction_id);
+		productplanactionService.update(domain);
+        ProductPlanActionDTO dto = productplanactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('UPDATE')")
+    @ApiOperation(value = "根据产品计划批量更新产品计划日志", tags = {"产品计划日志" },  notes = "根据产品计划批量更新产品计划日志")
+	@RequestMapping(method = RequestMethod.PUT, value = "/productplans/{productplan_id}/productplanactions/batch")
+    public ResponseEntity<Boolean> updateBatchByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody List<ProductPlanActionDTO> productplanactiondtos) {
+        List<ProductPlanAction> domainlist=productplanactionMapping.toDomain(productplanactiondtos);
+        for(ProductPlanAction domain:domainlist){
+            domain.setObjectid(productplan_id);
+        }
+        productplanactionService.updateBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'DELETE')")
+    @ApiOperation(value = "根据产品计划删除产品计划日志", tags = {"产品计划日志" },  notes = "根据产品计划删除产品计划日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/productplans/{productplan_id}/productplanactions/{productplanaction_id}")
+    public ResponseEntity<Boolean> removeByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("productplanaction_id") Long productplanaction_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(productplanactionService.remove(productplanaction_id));
+    }
+
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据产品计划批量删除产品计划日志", tags = {"产品计划日志" },  notes = "根据产品计划批量删除产品计划日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/productplans/{productplan_id}/productplanactions/batch")
+    public ResponseEntity<Boolean> removeBatchByProductPlan(@RequestBody List<Long> ids) {
+        productplanactionService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'READ')")
+    @ApiOperation(value = "根据产品计划获取产品计划日志", tags = {"产品计划日志" },  notes = "根据产品计划获取产品计划日志")
+	@RequestMapping(method = RequestMethod.GET, value = "/productplans/{productplan_id}/productplanactions/{productplanaction_id}")
+    public ResponseEntity<ProductPlanActionDTO> getByProductPlan(@PathVariable("productplan_id") Long productplan_id, @PathVariable("productplanaction_id") Long productplanaction_id) {
+        ProductPlanAction domain = productplanactionService.get(productplanaction_id);
+        ProductPlanActionDTO dto = productplanactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "根据产品计划获取产品计划日志草稿", tags = {"产品计划日志" },  notes = "根据产品计划获取产品计划日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/productplans/{productplan_id}/productplanactions/getdraft")
+    public ResponseEntity<ProductPlanActionDTO> getDraftByProductPlan(@PathVariable("productplan_id") Long productplan_id, ProductPlanActionDTO dto) {
+        ProductPlanAction domain = productplanactionMapping.toDomain(dto);
+        domain.setObjectid(productplan_id);
+        return ResponseEntity.status(HttpStatus.OK).body(productplanactionMapping.toDto(productplanactionService.getDraft(domain)));
+    }
+
+    @ApiOperation(value = "根据产品计划检查产品计划日志", tags = {"产品计划日志" },  notes = "根据产品计划检查产品计划日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/productplanactions/checkkey")
+    public ResponseEntity<Boolean> checkKeyByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanActionDTO productplanactiondto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(productplanactionService.checkKey(productplanactionMapping.toDomain(productplanactiondto)));
+    }
+
+    @ApiOperation(value = "根据产品计划保存产品计划日志", tags = {"产品计划日志" },  notes = "根据产品计划保存产品计划日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/productplanactions/save")
+    public ResponseEntity<ProductPlanActionDTO> saveByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanActionDTO productplanactiondto) {
+        ProductPlanAction domain = productplanactionMapping.toDomain(productplanactiondto);
+        domain.setObjectid(productplan_id);
+        productplanactionService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productplanactionMapping.toDto(domain));
+    }
+
+    @ApiOperation(value = "根据产品计划批量保存产品计划日志", tags = {"产品计划日志" },  notes = "根据产品计划批量保存产品计划日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/productplans/{productplan_id}/productplanactions/savebatch")
+    public ResponseEntity<Boolean> saveBatchByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody List<ProductPlanActionDTO> productplanactiondtos) {
+        List<ProductPlanAction> domainlist=productplanactionMapping.toDomain(productplanactiondtos);
+        for(ProductPlanAction domain:domainlist){
+             domain.setObjectid(productplan_id);
+        }
+        productplanactionService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据产品计划获取数据集", tags = {"产品计划日志" } ,notes = "根据产品计划获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/productplanactions/fetchdefault")
+	public ResponseEntity<List<ProductPlanActionDTO>> fetchProductPlanActionDefaultByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody ProductPlanActionSearchContext context) {
+        context.setN_objectid_eq(productplan_id);
+        productplanactionRuntime.addAuthorityConditions(context,"READ");
+        Page<ProductPlanAction> domains = productplanactionService.searchDefault(context) ;
+        List<ProductPlanActionDTO> list = productplanactionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据产品计划查询数据集", tags = {"产品计划日志" } ,notes = "根据产品计划查询数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/productplanactions/searchdefault")
+	public ResponseEntity<Page<ProductPlanActionDTO>> searchProductPlanActionDefaultByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanActionSearchContext context) {
+        context.setN_objectid_eq(productplan_id);
+        productplanactionRuntime.addAuthorityConditions(context,"READ");
+        Page<ProductPlanAction> domains = productplanactionService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(productplanactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据产品计划获取动态(根据类型过滤)", tags = {"产品计划日志" } ,notes = "根据产品计划获取动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/productplanactions/fetchtype")
+	public ResponseEntity<List<ProductPlanActionDTO>> fetchProductPlanActionTypeByProductPlan(@PathVariable("productplan_id") Long productplan_id,@RequestBody ProductPlanActionSearchContext context) {
+        context.setN_objectid_eq(productplan_id);
+        productplanactionRuntime.addAuthorityConditions(context,"READ");
+        Page<ProductPlanAction> domains = productplanactionService.searchType(context) ;
+        List<ProductPlanActionDTO> list = productplanactionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据产品计划查询动态(根据类型过滤)", tags = {"产品计划日志" } ,notes = "根据产品计划查询动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/productplans/{productplan_id}/productplanactions/searchtype")
+	public ResponseEntity<Page<ProductPlanActionDTO>> searchProductPlanActionTypeByProductPlan(@PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanActionSearchContext context) {
+        context.setN_objectid_eq(productplan_id);
+        productplanactionRuntime.addAuthorityConditions(context,"READ");
+        Page<ProductPlanAction> domains = productplanactionService.searchType(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(productplanactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据产品产品计划建立产品计划日志", tags = {"产品计划日志" },  notes = "根据产品产品计划建立产品计划日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/productplanactions")
+    public ResponseEntity<ProductPlanActionDTO> createByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanActionDTO productplanactiondto) {
+        ProductPlanAction domain = productplanactionMapping.toDomain(productplanactiondto);
+        domain.setObjectid(productplan_id);
+		productplanactionService.create(domain);
+        ProductPlanActionDTO dto = productplanactionMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('CREATE')")
+    @ApiOperation(value = "根据产品产品计划批量建立产品计划日志", tags = {"产品计划日志" },  notes = "根据产品产品计划批量建立产品计划日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/productplanactions/batch")
+    public ResponseEntity<Boolean> createBatchByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody List<ProductPlanActionDTO> productplanactiondtos) {
+        List<ProductPlanAction> domainlist=productplanactionMapping.toDomain(productplanactiondtos);
+        for(ProductPlanAction domain:domainlist){
+            domain.setObjectid(productplan_id);
+        }
+        productplanactionService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'UPDATE')")
+    @ApiOperation(value = "根据产品产品计划更新产品计划日志", tags = {"产品计划日志" },  notes = "根据产品产品计划更新产品计划日志")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/productplanactions/{productplanaction_id}")
+    public ResponseEntity<ProductPlanActionDTO> updateByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("productplanaction_id") Long productplanaction_id, @RequestBody ProductPlanActionDTO productplanactiondto) {
+        ProductPlanAction domain = productplanactionMapping.toDomain(productplanactiondto);
+        domain.setObjectid(productplan_id);
+        domain.setId(productplanaction_id);
+		productplanactionService.update(domain);
+        ProductPlanActionDTO dto = productplanactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('UPDATE')")
+    @ApiOperation(value = "根据产品产品计划批量更新产品计划日志", tags = {"产品计划日志" },  notes = "根据产品产品计划批量更新产品计划日志")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/productplans/{productplan_id}/productplanactions/batch")
+    public ResponseEntity<Boolean> updateBatchByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody List<ProductPlanActionDTO> productplanactiondtos) {
+        List<ProductPlanAction> domainlist=productplanactionMapping.toDomain(productplanactiondtos);
+        for(ProductPlanAction domain:domainlist){
+            domain.setObjectid(productplan_id);
+        }
+        productplanactionService.updateBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'DELETE')")
+    @ApiOperation(value = "根据产品产品计划删除产品计划日志", tags = {"产品计划日志" },  notes = "根据产品产品计划删除产品计划日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/{productplan_id}/productplanactions/{productplanaction_id}")
+    public ResponseEntity<Boolean> removeByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("productplanaction_id") Long productplanaction_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(productplanactionService.remove(productplanaction_id));
+    }
+
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('DELETE')")
+    @ApiOperation(value = "根据产品产品计划批量删除产品计划日志", tags = {"产品计划日志" },  notes = "根据产品产品计划批量删除产品计划日志")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/productplans/{productplan_id}/productplanactions/batch")
+    public ResponseEntity<Boolean> removeBatchByProductProductPlan(@RequestBody List<Long> ids) {
+        productplanactionService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductPlanActionRuntime.test(#productplanaction_id,'READ')")
+    @ApiOperation(value = "根据产品产品计划获取产品计划日志", tags = {"产品计划日志" },  notes = "根据产品产品计划获取产品计划日志")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}/productplanactions/{productplanaction_id}")
+    public ResponseEntity<ProductPlanActionDTO> getByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @PathVariable("productplanaction_id") Long productplanaction_id) {
+        ProductPlanAction domain = productplanactionService.get(productplanaction_id);
+        ProductPlanActionDTO dto = productplanactionMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "根据产品产品计划获取产品计划日志草稿", tags = {"产品计划日志" },  notes = "根据产品产品计划获取产品计划日志草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/productplans/{productplan_id}/productplanactions/getdraft")
+    public ResponseEntity<ProductPlanActionDTO> getDraftByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, ProductPlanActionDTO dto) {
+        ProductPlanAction domain = productplanactionMapping.toDomain(dto);
+        domain.setObjectid(productplan_id);
+        return ResponseEntity.status(HttpStatus.OK).body(productplanactionMapping.toDto(productplanactionService.getDraft(domain)));
+    }
+
+    @ApiOperation(value = "根据产品产品计划检查产品计划日志", tags = {"产品计划日志" },  notes = "根据产品产品计划检查产品计划日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/productplanactions/checkkey")
+    public ResponseEntity<Boolean> checkKeyByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanActionDTO productplanactiondto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(productplanactionService.checkKey(productplanactionMapping.toDomain(productplanactiondto)));
+    }
+
+    @ApiOperation(value = "根据产品产品计划保存产品计划日志", tags = {"产品计划日志" },  notes = "根据产品产品计划保存产品计划日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/productplanactions/save")
+    public ResponseEntity<ProductPlanActionDTO> saveByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanActionDTO productplanactiondto) {
+        ProductPlanAction domain = productplanactionMapping.toDomain(productplanactiondto);
+        domain.setObjectid(productplan_id);
+        productplanactionService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(productplanactionMapping.toDto(domain));
+    }
+
+    @ApiOperation(value = "根据产品产品计划批量保存产品计划日志", tags = {"产品计划日志" },  notes = "根据产品产品计划批量保存产品计划日志")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/productplans/{productplan_id}/productplanactions/savebatch")
+    public ResponseEntity<Boolean> saveBatchByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody List<ProductPlanActionDTO> productplanactiondtos) {
+        List<ProductPlanAction> domainlist=productplanactionMapping.toDomain(productplanactiondtos);
+        for(ProductPlanAction domain:domainlist){
+             domain.setObjectid(productplan_id);
+        }
+        productplanactionService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据产品产品计划获取数据集", tags = {"产品计划日志" } ,notes = "根据产品产品计划获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/productplanactions/fetchdefault")
+	public ResponseEntity<List<ProductPlanActionDTO>> fetchProductPlanActionDefaultByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody ProductPlanActionSearchContext context) {
+        context.setN_objectid_eq(productplan_id);
+        productplanactionRuntime.addAuthorityConditions(context,"READ");
+        Page<ProductPlanAction> domains = productplanactionService.searchDefault(context) ;
+        List<ProductPlanActionDTO> list = productplanactionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据产品产品计划查询数据集", tags = {"产品计划日志" } ,notes = "根据产品产品计划查询数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/productplanactions/searchdefault")
+	public ResponseEntity<Page<ProductPlanActionDTO>> searchProductPlanActionDefaultByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanActionSearchContext context) {
+        context.setN_objectid_eq(productplan_id);
+        productplanactionRuntime.addAuthorityConditions(context,"READ");
+        Page<ProductPlanAction> domains = productplanactionService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(productplanactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据产品产品计划获取动态(根据类型过滤)", tags = {"产品计划日志" } ,notes = "根据产品产品计划获取动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/productplanactions/fetchtype")
+	public ResponseEntity<List<ProductPlanActionDTO>> fetchProductPlanActionTypeByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id,@RequestBody ProductPlanActionSearchContext context) {
+        context.setN_objectid_eq(productplan_id);
+        productplanactionRuntime.addAuthorityConditions(context,"READ");
+        Page<ProductPlanAction> domains = productplanactionService.searchType(context) ;
+        List<ProductPlanActionDTO> list = productplanactionMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProductPlanActionRuntime.quickTest('READ')")
+	@ApiOperation(value = "根据产品产品计划查询动态(根据类型过滤)", tags = {"产品计划日志" } ,notes = "根据产品产品计划查询动态(根据类型过滤)")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/productplans/{productplan_id}/productplanactions/searchtype")
+	public ResponseEntity<Page<ProductPlanActionDTO>> searchProductPlanActionTypeByProductProductPlan(@PathVariable("product_id") Long product_id, @PathVariable("productplan_id") Long productplan_id, @RequestBody ProductPlanActionSearchContext context) {
+        context.setN_objectid_eq(productplan_id);
+        productplanactionRuntime.addAuthorityConditions(context,"READ");
+        Page<ProductPlanAction> domains = productplanactionService.searchType(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(productplanactionMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
 }
 

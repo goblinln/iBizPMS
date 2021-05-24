@@ -186,5 +186,645 @@ public class IBZCaseHistoryResource {
         ibzcasehistorydto = ibzcasehistoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibzcasehistorydto);
     }
+    @PreAuthorize("@IBZCaseActionRuntime.test(#ibzcaseaction_id,'CREATE')")
+    @ApiOperation(value = "根据测试用例日志建立测试操作历史", tags = {"测试操作历史" },  notes = "根据测试用例日志建立测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories")
+    public ResponseEntity<IBZCaseHistoryDTO> createByIBZCaseAction(@PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {
+        IBZCaseHistory domain = ibzcasehistoryMapping.toDomain(ibzcasehistorydto);
+        domain.setAction(ibzcaseaction_id);
+		ibzcasehistoryService.create(domain);
+        IBZCaseHistoryDTO dto = ibzcasehistoryMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@IBZCaseActionRuntime.test(#ibzcaseaction_id,'CREATE')")
+    @ApiOperation(value = "根据测试用例日志批量建立测试操作历史", tags = {"测试操作历史" },  notes = "根据测试用例日志批量建立测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/batch")
+    public ResponseEntity<Boolean> createBatchByIBZCaseAction(@PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody List<IBZCaseHistoryDTO> ibzcasehistorydtos) {
+        List<IBZCaseHistory> domainlist=ibzcasehistoryMapping.toDomain(ibzcasehistorydtos);
+        for(IBZCaseHistory domain:domainlist){
+            domain.setAction(ibzcaseaction_id);
+        }
+        ibzcasehistoryService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@IBZCaseActionRuntime.test(#ibzcaseaction_id,'UPDATE')")
+    @ApiOperation(value = "根据测试用例日志更新测试操作历史", tags = {"测试操作历史" },  notes = "根据测试用例日志更新测试操作历史")
+	@RequestMapping(method = RequestMethod.PUT, value = "/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/{ibzcasehistory_id}")
+    public ResponseEntity<IBZCaseHistoryDTO> updateByIBZCaseAction(@PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @PathVariable("ibzcasehistory_id") Long ibzcasehistory_id, @RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {
+        IBZCaseHistory domain = ibzcasehistoryMapping.toDomain(ibzcasehistorydto);
+        domain.setAction(ibzcaseaction_id);
+        domain.setId(ibzcasehistory_id);
+		ibzcasehistoryService.update(domain);
+        IBZCaseHistoryDTO dto = ibzcasehistoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@IBZCaseActionRuntime.test(#ibzcaseaction_id,'UPDATE')")
+    @ApiOperation(value = "根据测试用例日志批量更新测试操作历史", tags = {"测试操作历史" },  notes = "根据测试用例日志批量更新测试操作历史")
+	@RequestMapping(method = RequestMethod.PUT, value = "/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/batch")
+    public ResponseEntity<Boolean> updateBatchByIBZCaseAction(@PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody List<IBZCaseHistoryDTO> ibzcasehistorydtos) {
+        List<IBZCaseHistory> domainlist=ibzcasehistoryMapping.toDomain(ibzcasehistorydtos);
+        for(IBZCaseHistory domain:domainlist){
+            domain.setAction(ibzcaseaction_id);
+        }
+        ibzcasehistoryService.updateBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@IBZCaseActionRuntime.test(#ibzcaseaction_id,'DELETE')")
+    @ApiOperation(value = "根据测试用例日志删除测试操作历史", tags = {"测试操作历史" },  notes = "根据测试用例日志删除测试操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/{ibzcasehistory_id}")
+    public ResponseEntity<Boolean> removeByIBZCaseAction(@PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @PathVariable("ibzcasehistory_id") Long ibzcasehistory_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryService.remove(ibzcasehistory_id));
+    }
+
+    @PreAuthorize("@IBZCaseActionRuntime.test(#ibzcaseaction_id,'DELETE')")
+    @ApiOperation(value = "根据测试用例日志批量删除测试操作历史", tags = {"测试操作历史" },  notes = "根据测试用例日志批量删除测试操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/batch")
+    public ResponseEntity<Boolean> removeBatchByIBZCaseAction(@RequestBody List<Long> ids) {
+        ibzcasehistoryService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@IBZCaseActionRuntime.test(#ibzcaseaction_id,'READ')")
+    @ApiOperation(value = "根据测试用例日志获取测试操作历史", tags = {"测试操作历史" },  notes = "根据测试用例日志获取测试操作历史")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/{ibzcasehistory_id}")
+    public ResponseEntity<IBZCaseHistoryDTO> getByIBZCaseAction(@PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @PathVariable("ibzcasehistory_id") Long ibzcasehistory_id) {
+        IBZCaseHistory domain = ibzcasehistoryService.get(ibzcasehistory_id);
+        IBZCaseHistoryDTO dto = ibzcasehistoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "根据测试用例日志获取测试操作历史草稿", tags = {"测试操作历史" },  notes = "根据测试用例日志获取测试操作历史草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/getdraft")
+    public ResponseEntity<IBZCaseHistoryDTO> getDraftByIBZCaseAction(@PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, IBZCaseHistoryDTO dto) {
+        IBZCaseHistory domain = ibzcasehistoryMapping.toDomain(dto);
+        domain.setAction(ibzcaseaction_id);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryMapping.toDto(ibzcasehistoryService.getDraft(domain)));
+    }
+
+    @ApiOperation(value = "根据测试用例日志检查测试操作历史", tags = {"测试操作历史" },  notes = "根据测试用例日志检查测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/checkkey")
+    public ResponseEntity<Boolean> checkKeyByIBZCaseAction(@PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryService.checkKey(ibzcasehistoryMapping.toDomain(ibzcasehistorydto)));
+    }
+
+    @ApiOperation(value = "根据测试用例日志保存测试操作历史", tags = {"测试操作历史" },  notes = "根据测试用例日志保存测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/save")
+    public ResponseEntity<IBZCaseHistoryDTO> saveByIBZCaseAction(@PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {
+        IBZCaseHistory domain = ibzcasehistoryMapping.toDomain(ibzcasehistorydto);
+        domain.setAction(ibzcaseaction_id);
+        ibzcasehistoryService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryMapping.toDto(domain));
+    }
+
+    @ApiOperation(value = "根据测试用例日志批量保存测试操作历史", tags = {"测试操作历史" },  notes = "根据测试用例日志批量保存测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/savebatch")
+    public ResponseEntity<Boolean> saveBatchByIBZCaseAction(@PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody List<IBZCaseHistoryDTO> ibzcasehistorydtos) {
+        List<IBZCaseHistory> domainlist=ibzcasehistoryMapping.toDomain(ibzcasehistorydtos);
+        for(IBZCaseHistory domain:domainlist){
+             domain.setAction(ibzcaseaction_id);
+        }
+        ibzcasehistoryService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@IBZCaseActionRuntime.test(#ibzcaseaction_id,'READ')")
+	@ApiOperation(value = "根据测试用例日志获取数据集", tags = {"测试操作历史" } ,notes = "根据测试用例日志获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/fetchdefault")
+	public ResponseEntity<List<IBZCaseHistoryDTO>> fetchIBZCaseHistoryDefaultByIBZCaseAction(@PathVariable("ibzcaseaction_id") Long ibzcaseaction_id,@RequestBody IBZCaseHistorySearchContext context) {
+        context.setN_action_eq(ibzcaseaction_id);
+        Page<IBZCaseHistory> domains = ibzcasehistoryService.searchDefault(context) ;
+        List<IBZCaseHistoryDTO> list = ibzcasehistoryMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IBZCaseActionRuntime.test(#ibzcaseaction_id,'READ')")
+	@ApiOperation(value = "根据测试用例日志查询数据集", tags = {"测试操作历史" } ,notes = "根据测试用例日志查询数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/searchdefault")
+	public ResponseEntity<Page<IBZCaseHistoryDTO>> searchIBZCaseHistoryDefaultByIBZCaseAction(@PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseHistorySearchContext context) {
+        context.setN_action_eq(ibzcaseaction_id);
+        Page<IBZCaseHistory> domains = ibzcasehistoryService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzcasehistoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@CaseRuntime.test(#case_id,'CREATE')")
+    @ApiOperation(value = "根据测试用例测试用例日志建立测试操作历史", tags = {"测试操作历史" },  notes = "根据测试用例测试用例日志建立测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories")
+    public ResponseEntity<IBZCaseHistoryDTO> createByCaseIBZCaseAction(@PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {
+        IBZCaseHistory domain = ibzcasehistoryMapping.toDomain(ibzcasehistorydto);
+        domain.setAction(ibzcaseaction_id);
+		ibzcasehistoryService.create(domain);
+        IBZCaseHistoryDTO dto = ibzcasehistoryMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@CaseRuntime.test(#case_id,'CREATE')")
+    @ApiOperation(value = "根据测试用例测试用例日志批量建立测试操作历史", tags = {"测试操作历史" },  notes = "根据测试用例测试用例日志批量建立测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/batch")
+    public ResponseEntity<Boolean> createBatchByCaseIBZCaseAction(@PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody List<IBZCaseHistoryDTO> ibzcasehistorydtos) {
+        List<IBZCaseHistory> domainlist=ibzcasehistoryMapping.toDomain(ibzcasehistorydtos);
+        for(IBZCaseHistory domain:domainlist){
+            domain.setAction(ibzcaseaction_id);
+        }
+        ibzcasehistoryService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@CaseRuntime.test(#case_id,'UPDATE')")
+    @ApiOperation(value = "根据测试用例测试用例日志更新测试操作历史", tags = {"测试操作历史" },  notes = "根据测试用例测试用例日志更新测试操作历史")
+	@RequestMapping(method = RequestMethod.PUT, value = "/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/{ibzcasehistory_id}")
+    public ResponseEntity<IBZCaseHistoryDTO> updateByCaseIBZCaseAction(@PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @PathVariable("ibzcasehistory_id") Long ibzcasehistory_id, @RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {
+        IBZCaseHistory domain = ibzcasehistoryMapping.toDomain(ibzcasehistorydto);
+        domain.setAction(ibzcaseaction_id);
+        domain.setId(ibzcasehistory_id);
+		ibzcasehistoryService.update(domain);
+        IBZCaseHistoryDTO dto = ibzcasehistoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@CaseRuntime.test(#case_id,'UPDATE')")
+    @ApiOperation(value = "根据测试用例测试用例日志批量更新测试操作历史", tags = {"测试操作历史" },  notes = "根据测试用例测试用例日志批量更新测试操作历史")
+	@RequestMapping(method = RequestMethod.PUT, value = "/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/batch")
+    public ResponseEntity<Boolean> updateBatchByCaseIBZCaseAction(@PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody List<IBZCaseHistoryDTO> ibzcasehistorydtos) {
+        List<IBZCaseHistory> domainlist=ibzcasehistoryMapping.toDomain(ibzcasehistorydtos);
+        for(IBZCaseHistory domain:domainlist){
+            domain.setAction(ibzcaseaction_id);
+        }
+        ibzcasehistoryService.updateBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@CaseRuntime.test(#case_id,'DELETE')")
+    @ApiOperation(value = "根据测试用例测试用例日志删除测试操作历史", tags = {"测试操作历史" },  notes = "根据测试用例测试用例日志删除测试操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/{ibzcasehistory_id}")
+    public ResponseEntity<Boolean> removeByCaseIBZCaseAction(@PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @PathVariable("ibzcasehistory_id") Long ibzcasehistory_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryService.remove(ibzcasehistory_id));
+    }
+
+    @PreAuthorize("@CaseRuntime.test(#case_id,'DELETE')")
+    @ApiOperation(value = "根据测试用例测试用例日志批量删除测试操作历史", tags = {"测试操作历史" },  notes = "根据测试用例测试用例日志批量删除测试操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/batch")
+    public ResponseEntity<Boolean> removeBatchByCaseIBZCaseAction(@RequestBody List<Long> ids) {
+        ibzcasehistoryService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
+    @ApiOperation(value = "根据测试用例测试用例日志获取测试操作历史", tags = {"测试操作历史" },  notes = "根据测试用例测试用例日志获取测试操作历史")
+	@RequestMapping(method = RequestMethod.GET, value = "/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/{ibzcasehistory_id}")
+    public ResponseEntity<IBZCaseHistoryDTO> getByCaseIBZCaseAction(@PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @PathVariable("ibzcasehistory_id") Long ibzcasehistory_id) {
+        IBZCaseHistory domain = ibzcasehistoryService.get(ibzcasehistory_id);
+        IBZCaseHistoryDTO dto = ibzcasehistoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "根据测试用例测试用例日志获取测试操作历史草稿", tags = {"测试操作历史" },  notes = "根据测试用例测试用例日志获取测试操作历史草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/getdraft")
+    public ResponseEntity<IBZCaseHistoryDTO> getDraftByCaseIBZCaseAction(@PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, IBZCaseHistoryDTO dto) {
+        IBZCaseHistory domain = ibzcasehistoryMapping.toDomain(dto);
+        domain.setAction(ibzcaseaction_id);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryMapping.toDto(ibzcasehistoryService.getDraft(domain)));
+    }
+
+    @ApiOperation(value = "根据测试用例测试用例日志检查测试操作历史", tags = {"测试操作历史" },  notes = "根据测试用例测试用例日志检查测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/checkkey")
+    public ResponseEntity<Boolean> checkKeyByCaseIBZCaseAction(@PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryService.checkKey(ibzcasehistoryMapping.toDomain(ibzcasehistorydto)));
+    }
+
+    @ApiOperation(value = "根据测试用例测试用例日志保存测试操作历史", tags = {"测试操作历史" },  notes = "根据测试用例测试用例日志保存测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/save")
+    public ResponseEntity<IBZCaseHistoryDTO> saveByCaseIBZCaseAction(@PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {
+        IBZCaseHistory domain = ibzcasehistoryMapping.toDomain(ibzcasehistorydto);
+        domain.setAction(ibzcaseaction_id);
+        ibzcasehistoryService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryMapping.toDto(domain));
+    }
+
+    @ApiOperation(value = "根据测试用例测试用例日志批量保存测试操作历史", tags = {"测试操作历史" },  notes = "根据测试用例测试用例日志批量保存测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/savebatch")
+    public ResponseEntity<Boolean> saveBatchByCaseIBZCaseAction(@PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody List<IBZCaseHistoryDTO> ibzcasehistorydtos) {
+        List<IBZCaseHistory> domainlist=ibzcasehistoryMapping.toDomain(ibzcasehistorydtos);
+        for(IBZCaseHistory domain:domainlist){
+             domain.setAction(ibzcaseaction_id);
+        }
+        ibzcasehistoryService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
+	@ApiOperation(value = "根据测试用例测试用例日志获取数据集", tags = {"测试操作历史" } ,notes = "根据测试用例测试用例日志获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/fetchdefault")
+	public ResponseEntity<List<IBZCaseHistoryDTO>> fetchIBZCaseHistoryDefaultByCaseIBZCaseAction(@PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id,@RequestBody IBZCaseHistorySearchContext context) {
+        context.setN_action_eq(ibzcaseaction_id);
+        Page<IBZCaseHistory> domains = ibzcasehistoryService.searchDefault(context) ;
+        List<IBZCaseHistoryDTO> list = ibzcasehistoryMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@CaseRuntime.test(#case_id,'READ')")
+	@ApiOperation(value = "根据测试用例测试用例日志查询数据集", tags = {"测试操作历史" } ,notes = "根据测试用例测试用例日志查询数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/searchdefault")
+	public ResponseEntity<Page<IBZCaseHistoryDTO>> searchIBZCaseHistoryDefaultByCaseIBZCaseAction(@PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseHistorySearchContext context) {
+        context.setN_action_eq(ibzcaseaction_id);
+        Page<IBZCaseHistory> domains = ibzcasehistoryService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzcasehistoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "根据产品测试用例测试用例日志建立测试操作历史", tags = {"测试操作历史" },  notes = "根据产品测试用例测试用例日志建立测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories")
+    public ResponseEntity<IBZCaseHistoryDTO> createByProductCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {
+        IBZCaseHistory domain = ibzcasehistoryMapping.toDomain(ibzcasehistorydto);
+        domain.setAction(ibzcaseaction_id);
+		ibzcasehistoryService.create(domain);
+        IBZCaseHistoryDTO dto = ibzcasehistoryMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "根据产品测试用例测试用例日志批量建立测试操作历史", tags = {"测试操作历史" },  notes = "根据产品测试用例测试用例日志批量建立测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/batch")
+    public ResponseEntity<Boolean> createBatchByProductCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody List<IBZCaseHistoryDTO> ibzcasehistorydtos) {
+        List<IBZCaseHistory> domainlist=ibzcasehistoryMapping.toDomain(ibzcasehistorydtos);
+        for(IBZCaseHistory domain:domainlist){
+            domain.setAction(ibzcaseaction_id);
+        }
+        ibzcasehistoryService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
+    @ApiOperation(value = "根据产品测试用例测试用例日志更新测试操作历史", tags = {"测试操作历史" },  notes = "根据产品测试用例测试用例日志更新测试操作历史")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/{ibzcasehistory_id}")
+    public ResponseEntity<IBZCaseHistoryDTO> updateByProductCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @PathVariable("ibzcasehistory_id") Long ibzcasehistory_id, @RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {
+        IBZCaseHistory domain = ibzcasehistoryMapping.toDomain(ibzcasehistorydto);
+        domain.setAction(ibzcaseaction_id);
+        domain.setId(ibzcasehistory_id);
+		ibzcasehistoryService.update(domain);
+        IBZCaseHistoryDTO dto = ibzcasehistoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
+    @ApiOperation(value = "根据产品测试用例测试用例日志批量更新测试操作历史", tags = {"测试操作历史" },  notes = "根据产品测试用例测试用例日志批量更新测试操作历史")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/batch")
+    public ResponseEntity<Boolean> updateBatchByProductCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody List<IBZCaseHistoryDTO> ibzcasehistorydtos) {
+        List<IBZCaseHistory> domainlist=ibzcasehistoryMapping.toDomain(ibzcasehistorydtos);
+        for(IBZCaseHistory domain:domainlist){
+            domain.setAction(ibzcaseaction_id);
+        }
+        ibzcasehistoryService.updateBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
+    @ApiOperation(value = "根据产品测试用例测试用例日志删除测试操作历史", tags = {"测试操作历史" },  notes = "根据产品测试用例测试用例日志删除测试操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/{ibzcasehistory_id}")
+    public ResponseEntity<Boolean> removeByProductCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @PathVariable("ibzcasehistory_id") Long ibzcasehistory_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryService.remove(ibzcasehistory_id));
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
+    @ApiOperation(value = "根据产品测试用例测试用例日志批量删除测试操作历史", tags = {"测试操作历史" },  notes = "根据产品测试用例测试用例日志批量删除测试操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/batch")
+    public ResponseEntity<Boolean> removeBatchByProductCaseIBZCaseAction(@RequestBody List<Long> ids) {
+        ibzcasehistoryService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @ApiOperation(value = "根据产品测试用例测试用例日志获取测试操作历史", tags = {"测试操作历史" },  notes = "根据产品测试用例测试用例日志获取测试操作历史")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/{ibzcasehistory_id}")
+    public ResponseEntity<IBZCaseHistoryDTO> getByProductCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @PathVariable("ibzcasehistory_id") Long ibzcasehistory_id) {
+        IBZCaseHistory domain = ibzcasehistoryService.get(ibzcasehistory_id);
+        IBZCaseHistoryDTO dto = ibzcasehistoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "根据产品测试用例测试用例日志获取测试操作历史草稿", tags = {"测试操作历史" },  notes = "根据产品测试用例测试用例日志获取测试操作历史草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/getdraft")
+    public ResponseEntity<IBZCaseHistoryDTO> getDraftByProductCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, IBZCaseHistoryDTO dto) {
+        IBZCaseHistory domain = ibzcasehistoryMapping.toDomain(dto);
+        domain.setAction(ibzcaseaction_id);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryMapping.toDto(ibzcasehistoryService.getDraft(domain)));
+    }
+
+    @ApiOperation(value = "根据产品测试用例测试用例日志检查测试操作历史", tags = {"测试操作历史" },  notes = "根据产品测试用例测试用例日志检查测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/checkkey")
+    public ResponseEntity<Boolean> checkKeyByProductCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryService.checkKey(ibzcasehistoryMapping.toDomain(ibzcasehistorydto)));
+    }
+
+    @ApiOperation(value = "根据产品测试用例测试用例日志保存测试操作历史", tags = {"测试操作历史" },  notes = "根据产品测试用例测试用例日志保存测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/save")
+    public ResponseEntity<IBZCaseHistoryDTO> saveByProductCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {
+        IBZCaseHistory domain = ibzcasehistoryMapping.toDomain(ibzcasehistorydto);
+        domain.setAction(ibzcaseaction_id);
+        ibzcasehistoryService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryMapping.toDto(domain));
+    }
+
+    @ApiOperation(value = "根据产品测试用例测试用例日志批量保存测试操作历史", tags = {"测试操作历史" },  notes = "根据产品测试用例测试用例日志批量保存测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/savebatch")
+    public ResponseEntity<Boolean> saveBatchByProductCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody List<IBZCaseHistoryDTO> ibzcasehistorydtos) {
+        List<IBZCaseHistory> domainlist=ibzcasehistoryMapping.toDomain(ibzcasehistorydtos);
+        for(IBZCaseHistory domain:domainlist){
+             domain.setAction(ibzcaseaction_id);
+        }
+        ibzcasehistoryService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+	@ApiOperation(value = "根据产品测试用例测试用例日志获取数据集", tags = {"测试操作历史" } ,notes = "根据产品测试用例测试用例日志获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/fetchdefault")
+	public ResponseEntity<List<IBZCaseHistoryDTO>> fetchIBZCaseHistoryDefaultByProductCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id,@RequestBody IBZCaseHistorySearchContext context) {
+        context.setN_action_eq(ibzcaseaction_id);
+        Page<IBZCaseHistory> domains = ibzcasehistoryService.searchDefault(context) ;
+        List<IBZCaseHistoryDTO> list = ibzcasehistoryMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+	@ApiOperation(value = "根据产品测试用例测试用例日志查询数据集", tags = {"测试操作历史" } ,notes = "根据产品测试用例测试用例日志查询数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/searchdefault")
+	public ResponseEntity<Page<IBZCaseHistoryDTO>> searchIBZCaseHistoryDefaultByProductCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseHistorySearchContext context) {
+        context.setN_action_eq(ibzcaseaction_id);
+        Page<IBZCaseHistory> domains = ibzcasehistoryService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzcasehistoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
+    @ApiOperation(value = "根据需求测试用例测试用例日志建立测试操作历史", tags = {"测试操作历史" },  notes = "根据需求测试用例测试用例日志建立测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories")
+    public ResponseEntity<IBZCaseHistoryDTO> createByStoryCaseIBZCaseAction(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {
+        IBZCaseHistory domain = ibzcasehistoryMapping.toDomain(ibzcasehistorydto);
+        domain.setAction(ibzcaseaction_id);
+		ibzcasehistoryService.create(domain);
+        IBZCaseHistoryDTO dto = ibzcasehistoryMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@StoryRuntime.test(#story_id,'CREATE')")
+    @ApiOperation(value = "根据需求测试用例测试用例日志批量建立测试操作历史", tags = {"测试操作历史" },  notes = "根据需求测试用例测试用例日志批量建立测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/batch")
+    public ResponseEntity<Boolean> createBatchByStoryCaseIBZCaseAction(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody List<IBZCaseHistoryDTO> ibzcasehistorydtos) {
+        List<IBZCaseHistory> domainlist=ibzcasehistoryMapping.toDomain(ibzcasehistorydtos);
+        for(IBZCaseHistory domain:domainlist){
+            domain.setAction(ibzcaseaction_id);
+        }
+        ibzcasehistoryService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@StoryRuntime.test(#story_id,'UPDATE')")
+    @ApiOperation(value = "根据需求测试用例测试用例日志更新测试操作历史", tags = {"测试操作历史" },  notes = "根据需求测试用例测试用例日志更新测试操作历史")
+	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/{ibzcasehistory_id}")
+    public ResponseEntity<IBZCaseHistoryDTO> updateByStoryCaseIBZCaseAction(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @PathVariable("ibzcasehistory_id") Long ibzcasehistory_id, @RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {
+        IBZCaseHistory domain = ibzcasehistoryMapping.toDomain(ibzcasehistorydto);
+        domain.setAction(ibzcaseaction_id);
+        domain.setId(ibzcasehistory_id);
+		ibzcasehistoryService.update(domain);
+        IBZCaseHistoryDTO dto = ibzcasehistoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@StoryRuntime.test(#story_id,'UPDATE')")
+    @ApiOperation(value = "根据需求测试用例测试用例日志批量更新测试操作历史", tags = {"测试操作历史" },  notes = "根据需求测试用例测试用例日志批量更新测试操作历史")
+	@RequestMapping(method = RequestMethod.PUT, value = "/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/batch")
+    public ResponseEntity<Boolean> updateBatchByStoryCaseIBZCaseAction(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody List<IBZCaseHistoryDTO> ibzcasehistorydtos) {
+        List<IBZCaseHistory> domainlist=ibzcasehistoryMapping.toDomain(ibzcasehistorydtos);
+        for(IBZCaseHistory domain:domainlist){
+            domain.setAction(ibzcaseaction_id);
+        }
+        ibzcasehistoryService.updateBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@StoryRuntime.test(#story_id,'DELETE')")
+    @ApiOperation(value = "根据需求测试用例测试用例日志删除测试操作历史", tags = {"测试操作历史" },  notes = "根据需求测试用例测试用例日志删除测试操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/{ibzcasehistory_id}")
+    public ResponseEntity<Boolean> removeByStoryCaseIBZCaseAction(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @PathVariable("ibzcasehistory_id") Long ibzcasehistory_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryService.remove(ibzcasehistory_id));
+    }
+
+    @PreAuthorize("@StoryRuntime.test(#story_id,'DELETE')")
+    @ApiOperation(value = "根据需求测试用例测试用例日志批量删除测试操作历史", tags = {"测试操作历史" },  notes = "根据需求测试用例测试用例日志批量删除测试操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/batch")
+    public ResponseEntity<Boolean> removeBatchByStoryCaseIBZCaseAction(@RequestBody List<Long> ids) {
+        ibzcasehistoryService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
+    @ApiOperation(value = "根据需求测试用例测试用例日志获取测试操作历史", tags = {"测试操作历史" },  notes = "根据需求测试用例测试用例日志获取测试操作历史")
+	@RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/{ibzcasehistory_id}")
+    public ResponseEntity<IBZCaseHistoryDTO> getByStoryCaseIBZCaseAction(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @PathVariable("ibzcasehistory_id") Long ibzcasehistory_id) {
+        IBZCaseHistory domain = ibzcasehistoryService.get(ibzcasehistory_id);
+        IBZCaseHistoryDTO dto = ibzcasehistoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "根据需求测试用例测试用例日志获取测试操作历史草稿", tags = {"测试操作历史" },  notes = "根据需求测试用例测试用例日志获取测试操作历史草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/getdraft")
+    public ResponseEntity<IBZCaseHistoryDTO> getDraftByStoryCaseIBZCaseAction(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, IBZCaseHistoryDTO dto) {
+        IBZCaseHistory domain = ibzcasehistoryMapping.toDomain(dto);
+        domain.setAction(ibzcaseaction_id);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryMapping.toDto(ibzcasehistoryService.getDraft(domain)));
+    }
+
+    @ApiOperation(value = "根据需求测试用例测试用例日志检查测试操作历史", tags = {"测试操作历史" },  notes = "根据需求测试用例测试用例日志检查测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/checkkey")
+    public ResponseEntity<Boolean> checkKeyByStoryCaseIBZCaseAction(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryService.checkKey(ibzcasehistoryMapping.toDomain(ibzcasehistorydto)));
+    }
+
+    @ApiOperation(value = "根据需求测试用例测试用例日志保存测试操作历史", tags = {"测试操作历史" },  notes = "根据需求测试用例测试用例日志保存测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/save")
+    public ResponseEntity<IBZCaseHistoryDTO> saveByStoryCaseIBZCaseAction(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {
+        IBZCaseHistory domain = ibzcasehistoryMapping.toDomain(ibzcasehistorydto);
+        domain.setAction(ibzcaseaction_id);
+        ibzcasehistoryService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryMapping.toDto(domain));
+    }
+
+    @ApiOperation(value = "根据需求测试用例测试用例日志批量保存测试操作历史", tags = {"测试操作历史" },  notes = "根据需求测试用例测试用例日志批量保存测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/savebatch")
+    public ResponseEntity<Boolean> saveBatchByStoryCaseIBZCaseAction(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody List<IBZCaseHistoryDTO> ibzcasehistorydtos) {
+        List<IBZCaseHistory> domainlist=ibzcasehistoryMapping.toDomain(ibzcasehistorydtos);
+        for(IBZCaseHistory domain:domainlist){
+             domain.setAction(ibzcaseaction_id);
+        }
+        ibzcasehistoryService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
+	@ApiOperation(value = "根据需求测试用例测试用例日志获取数据集", tags = {"测试操作历史" } ,notes = "根据需求测试用例测试用例日志获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/fetchdefault")
+	public ResponseEntity<List<IBZCaseHistoryDTO>> fetchIBZCaseHistoryDefaultByStoryCaseIBZCaseAction(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id,@RequestBody IBZCaseHistorySearchContext context) {
+        context.setN_action_eq(ibzcaseaction_id);
+        Page<IBZCaseHistory> domains = ibzcasehistoryService.searchDefault(context) ;
+        List<IBZCaseHistoryDTO> list = ibzcasehistoryMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@StoryRuntime.test(#story_id,'READ')")
+	@ApiOperation(value = "根据需求测试用例测试用例日志查询数据集", tags = {"测试操作历史" } ,notes = "根据需求测试用例测试用例日志查询数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/searchdefault")
+	public ResponseEntity<Page<IBZCaseHistoryDTO>> searchIBZCaseHistoryDefaultByStoryCaseIBZCaseAction(@PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseHistorySearchContext context) {
+        context.setN_action_eq(ibzcaseaction_id);
+        Page<IBZCaseHistory> domains = ibzcasehistoryService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzcasehistoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "根据产品需求测试用例测试用例日志建立测试操作历史", tags = {"测试操作历史" },  notes = "根据产品需求测试用例测试用例日志建立测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories")
+    public ResponseEntity<IBZCaseHistoryDTO> createByProductStoryCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {
+        IBZCaseHistory domain = ibzcasehistoryMapping.toDomain(ibzcasehistorydto);
+        domain.setAction(ibzcaseaction_id);
+		ibzcasehistoryService.create(domain);
+        IBZCaseHistoryDTO dto = ibzcasehistoryMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'CREATE')")
+    @ApiOperation(value = "根据产品需求测试用例测试用例日志批量建立测试操作历史", tags = {"测试操作历史" },  notes = "根据产品需求测试用例测试用例日志批量建立测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/batch")
+    public ResponseEntity<Boolean> createBatchByProductStoryCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody List<IBZCaseHistoryDTO> ibzcasehistorydtos) {
+        List<IBZCaseHistory> domainlist=ibzcasehistoryMapping.toDomain(ibzcasehistorydtos);
+        for(IBZCaseHistory domain:domainlist){
+            domain.setAction(ibzcaseaction_id);
+        }
+        ibzcasehistoryService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
+    @ApiOperation(value = "根据产品需求测试用例测试用例日志更新测试操作历史", tags = {"测试操作历史" },  notes = "根据产品需求测试用例测试用例日志更新测试操作历史")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/{ibzcasehistory_id}")
+    public ResponseEntity<IBZCaseHistoryDTO> updateByProductStoryCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @PathVariable("ibzcasehistory_id") Long ibzcasehistory_id, @RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {
+        IBZCaseHistory domain = ibzcasehistoryMapping.toDomain(ibzcasehistorydto);
+        domain.setAction(ibzcaseaction_id);
+        domain.setId(ibzcasehistory_id);
+		ibzcasehistoryService.update(domain);
+        IBZCaseHistoryDTO dto = ibzcasehistoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'UPDATE')")
+    @ApiOperation(value = "根据产品需求测试用例测试用例日志批量更新测试操作历史", tags = {"测试操作历史" },  notes = "根据产品需求测试用例测试用例日志批量更新测试操作历史")
+	@RequestMapping(method = RequestMethod.PUT, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/batch")
+    public ResponseEntity<Boolean> updateBatchByProductStoryCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody List<IBZCaseHistoryDTO> ibzcasehistorydtos) {
+        List<IBZCaseHistory> domainlist=ibzcasehistoryMapping.toDomain(ibzcasehistorydtos);
+        for(IBZCaseHistory domain:domainlist){
+            domain.setAction(ibzcaseaction_id);
+        }
+        ibzcasehistoryService.updateBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
+    @ApiOperation(value = "根据产品需求测试用例测试用例日志删除测试操作历史", tags = {"测试操作历史" },  notes = "根据产品需求测试用例测试用例日志删除测试操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/{ibzcasehistory_id}")
+    public ResponseEntity<Boolean> removeByProductStoryCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @PathVariable("ibzcasehistory_id") Long ibzcasehistory_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryService.remove(ibzcasehistory_id));
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'DELETE')")
+    @ApiOperation(value = "根据产品需求测试用例测试用例日志批量删除测试操作历史", tags = {"测试操作历史" },  notes = "根据产品需求测试用例测试用例日志批量删除测试操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/batch")
+    public ResponseEntity<Boolean> removeBatchByProductStoryCaseIBZCaseAction(@RequestBody List<Long> ids) {
+        ibzcasehistoryService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+    @ApiOperation(value = "根据产品需求测试用例测试用例日志获取测试操作历史", tags = {"测试操作历史" },  notes = "根据产品需求测试用例测试用例日志获取测试操作历史")
+	@RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/{ibzcasehistory_id}")
+    public ResponseEntity<IBZCaseHistoryDTO> getByProductStoryCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @PathVariable("ibzcasehistory_id") Long ibzcasehistory_id) {
+        IBZCaseHistory domain = ibzcasehistoryService.get(ibzcasehistory_id);
+        IBZCaseHistoryDTO dto = ibzcasehistoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "根据产品需求测试用例测试用例日志获取测试操作历史草稿", tags = {"测试操作历史" },  notes = "根据产品需求测试用例测试用例日志获取测试操作历史草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/getdraft")
+    public ResponseEntity<IBZCaseHistoryDTO> getDraftByProductStoryCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, IBZCaseHistoryDTO dto) {
+        IBZCaseHistory domain = ibzcasehistoryMapping.toDomain(dto);
+        domain.setAction(ibzcaseaction_id);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryMapping.toDto(ibzcasehistoryService.getDraft(domain)));
+    }
+
+    @ApiOperation(value = "根据产品需求测试用例测试用例日志检查测试操作历史", tags = {"测试操作历史" },  notes = "根据产品需求测试用例测试用例日志检查测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/checkkey")
+    public ResponseEntity<Boolean> checkKeyByProductStoryCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryService.checkKey(ibzcasehistoryMapping.toDomain(ibzcasehistorydto)));
+    }
+
+    @ApiOperation(value = "根据产品需求测试用例测试用例日志保存测试操作历史", tags = {"测试操作历史" },  notes = "根据产品需求测试用例测试用例日志保存测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/save")
+    public ResponseEntity<IBZCaseHistoryDTO> saveByProductStoryCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseHistoryDTO ibzcasehistorydto) {
+        IBZCaseHistory domain = ibzcasehistoryMapping.toDomain(ibzcasehistorydto);
+        domain.setAction(ibzcaseaction_id);
+        ibzcasehistoryService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzcasehistoryMapping.toDto(domain));
+    }
+
+    @ApiOperation(value = "根据产品需求测试用例测试用例日志批量保存测试操作历史", tags = {"测试操作历史" },  notes = "根据产品需求测试用例测试用例日志批量保存测试操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/products/{product_id}/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/savebatch")
+    public ResponseEntity<Boolean> saveBatchByProductStoryCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody List<IBZCaseHistoryDTO> ibzcasehistorydtos) {
+        List<IBZCaseHistory> domainlist=ibzcasehistoryMapping.toDomain(ibzcasehistorydtos);
+        for(IBZCaseHistory domain:domainlist){
+             domain.setAction(ibzcaseaction_id);
+        }
+        ibzcasehistoryService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+	@ApiOperation(value = "根据产品需求测试用例测试用例日志获取数据集", tags = {"测试操作历史" } ,notes = "根据产品需求测试用例测试用例日志获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/fetchdefault")
+	public ResponseEntity<List<IBZCaseHistoryDTO>> fetchIBZCaseHistoryDefaultByProductStoryCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id,@RequestBody IBZCaseHistorySearchContext context) {
+        context.setN_action_eq(ibzcaseaction_id);
+        Page<IBZCaseHistory> domains = ibzcasehistoryService.searchDefault(context) ;
+        List<IBZCaseHistoryDTO> list = ibzcasehistoryMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProductRuntime.test(#product_id,'READ')")
+	@ApiOperation(value = "根据产品需求测试用例测试用例日志查询数据集", tags = {"测试操作历史" } ,notes = "根据产品需求测试用例测试用例日志查询数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/products/{product_id}/stories/{story_id}/cases/{case_id}/ibzcaseactions/{ibzcaseaction_id}/ibzcasehistories/searchdefault")
+	public ResponseEntity<Page<IBZCaseHistoryDTO>> searchIBZCaseHistoryDefaultByProductStoryCaseIBZCaseAction(@PathVariable("product_id") Long product_id, @PathVariable("story_id") Long story_id, @PathVariable("case_id") Long case_id, @PathVariable("ibzcaseaction_id") Long ibzcaseaction_id, @RequestBody IBZCaseHistorySearchContext context) {
+        context.setN_action_eq(ibzcaseaction_id);
+        Page<IBZCaseHistory> domains = ibzcasehistoryService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzcasehistoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
 }
 
