@@ -116,6 +116,8 @@ public class ProductModuleResource {
     public ResponseEntity<ProductModuleDTO> get(@PathVariable("productmodule_id") Long productmodule_id) {
         ProductModule domain = productmoduleService.get(productmodule_id);
         ProductModuleDTO dto = productmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = productmoduleRuntime.getOPPrivs({productmodule_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

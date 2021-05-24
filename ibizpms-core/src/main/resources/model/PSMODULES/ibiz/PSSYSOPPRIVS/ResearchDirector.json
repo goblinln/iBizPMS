@@ -2,6 +2,27 @@
   "codeName" : "ResearchDirector",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/ResearchDirector.json",
   "name" : "研发主管",
+  "getPSSysUserRoleDatas" : [ {
+    "name" : "研发主管-ZT_BUG[当前组织（写）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/CURORG_C.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+    }
+  }, {
+    "name" : "研发主管-ZT_TASK[当前组织（创建）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/CURORG_C.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    }
+  } ],
   "roleTag" : "ResearchDirector",
   "roleType" : "CUSTOM",
   "globalRole" : true

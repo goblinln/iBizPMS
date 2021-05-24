@@ -141,6 +141,8 @@ public class TestTaskRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntit
             return testtaskService.selectDefault(searchContext);
         if (iPSDataQuery.getName().equals("MyTestTaskPc"))
             return testtaskService.selectMyTestTaskPc(searchContext);
+        if (iPSDataQuery.getName().equals("SIMPLE"))
+            return testtaskService.selectSimple(searchContext);
         if (iPSDataQuery.getName().equals("VIEW"))
             return testtaskService.selectView(searchContext);
         return null;

@@ -203,6 +203,16 @@ public class BugSearchContext extends QueryWrapperContext<Bug> {
         this.n_taskname_like = n_taskname_like;
     }
                 
+	private String n_casename_eq;//[相关用例]
+	public void setN_casename_eq(String n_casename_eq) {
+        this.n_casename_eq = n_casename_eq;
+    }
+                
+	private String n_casename_like;//[相关用例]
+	public void setN_casename_like(String n_casename_like) {
+        this.n_casename_like = n_casename_like;
+    }
+                
 	private String n_projectname_eq;//[项目]
 	public void setN_projectname_eq(String n_projectname_eq) {
         this.n_projectname_eq = n_projectname_eq;

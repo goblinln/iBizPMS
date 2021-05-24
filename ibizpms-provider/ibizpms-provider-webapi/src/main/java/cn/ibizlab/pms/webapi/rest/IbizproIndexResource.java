@@ -116,6 +116,8 @@ public class IbizproIndexResource {
     public ResponseEntity<IbizproIndexDTO> get(@PathVariable("ibizproindex_id") Long ibizproindex_id) {
         IbizproIndex domain = ibizproindexService.get(ibizproindex_id);
         IbizproIndexDTO dto = ibizproindexMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproindexRuntime.getOPPrivs({ibizproindex_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

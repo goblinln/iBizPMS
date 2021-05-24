@@ -116,6 +116,8 @@ public class TaskStatsResource {
     public ResponseEntity<TaskStatsDTO> get(@PathVariable("taskstats_id") Long taskstats_id) {
         TaskStats domain = taskstatsService.get(taskstats_id);
         TaskStatsDTO dto = taskstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = taskstatsRuntime.getOPPrivs({taskstats_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

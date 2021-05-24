@@ -116,6 +116,8 @@ public class TodoResource {
     public ResponseEntity<TodoDTO> get(@PathVariable("todo_id") Long todo_id) {
         Todo domain = todoService.get(todo_id);
         TodoDTO dto = todoMapping.toDto(domain);
+        Map<String,Integer> opprivs = todoRuntime.getOPPrivs({todo_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

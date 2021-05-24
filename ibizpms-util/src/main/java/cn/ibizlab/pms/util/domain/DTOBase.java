@@ -18,6 +18,7 @@ import java.util.Set;
 @Data
 public class DTOBase implements Serializable {
 
+    private Map<String,Integer> srfopprivs;
 
     @JsonIgnore
     @JSONField(serialize = false)
@@ -114,6 +115,14 @@ public class DTOBase implements Serializable {
         }
         else {
             this.extensionparams.put(field.toLowerCase(),value);
+        }
+    }
+
+    public void reset(String field){
+        if(!StringUtils.isEmpty(field)){
+            String resetField=field.toLowerCase();
+            this.set(resetField,null);
+            getFocusNull().remove(resetField);
         }
     }
 }

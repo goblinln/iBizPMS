@@ -106,6 +106,8 @@ public class IbzReportlyResource {
     public ResponseEntity<IbzReportlyDTO> get(@PathVariable("ibzreportly_id") Long ibzreportly_id) {
         IbzReportly domain = ibzreportlyService.get(ibzreportly_id);
         IbzReportlyDTO dto = ibzreportlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzreportlyRuntime.getOPPrivs({ibzreportly_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

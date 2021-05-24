@@ -117,6 +117,8 @@ public class IbzproConfigResource {
     public ResponseEntity<IbzproConfigDTO> get(@PathVariable("ibzproconfig_id") String ibzproconfig_id) {
         IbzproConfig domain = ibzproconfigService.get(ibzproconfig_id);
         IbzproConfigDTO dto = ibzproconfigMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzproconfigRuntime.getOPPrivs({ibzproconfig_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

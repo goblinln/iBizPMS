@@ -403,6 +403,9 @@ public class TestTaskServiceImpl extends ServiceImpl<TestTaskMapper, TestTask> i
     public List<TestTask> selectMyTestTaskPc(TestTaskSearchContext context){
         return baseMapper.selectMyTestTaskPc(context, context.getSelectCond());
     }
+    public List<TestTask> selectSimple(TestTaskSearchContext context){
+        return baseMapper.selectSimple(context, context.getSelectCond());
+    }
     public List<TestTask> selectView(TestTaskSearchContext context){
         return baseMapper.selectView(context, context.getSelectCond());
     }

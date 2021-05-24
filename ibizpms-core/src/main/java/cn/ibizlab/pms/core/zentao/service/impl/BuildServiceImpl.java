@@ -394,6 +394,9 @@ public class BuildServiceImpl extends ServiceImpl<BuildMapper, Build> implements
     public List<Build> selectDefault(BuildSearchContext context){
         return baseMapper.selectDefault(context, context.getSelectCond());
     }
+    public List<Build> selectSimple(BuildSearchContext context){
+        return baseMapper.selectSimple(context, context.getSelectCond());
+    }
     public List<Build> selectTestBuild(BuildSearchContext context){
         return baseMapper.selectTestBuild(context, context.getSelectCond());
     }

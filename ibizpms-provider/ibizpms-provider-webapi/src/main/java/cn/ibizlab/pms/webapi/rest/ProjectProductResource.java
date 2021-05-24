@@ -117,6 +117,8 @@ public class ProjectProductResource {
     public ResponseEntity<ProjectProductDTO> get(@PathVariable("projectproduct_id") String projectproduct_id) {
         ProjectProduct domain = projectproductService.get(projectproduct_id);
         ProjectProductDTO dto = projectproductMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectproductRuntime.getOPPrivs({projectproduct_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

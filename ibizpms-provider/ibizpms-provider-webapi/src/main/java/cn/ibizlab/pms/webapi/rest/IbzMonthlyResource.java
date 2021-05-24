@@ -106,6 +106,8 @@ public class IbzMonthlyResource {
     public ResponseEntity<IbzMonthlyDTO> get(@PathVariable("ibzmonthly_id") Long ibzmonthly_id) {
         IbzMonthly domain = ibzmonthlyService.get(ibzmonthly_id);
         IbzMonthlyDTO dto = ibzmonthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzmonthlyRuntime.getOPPrivs({ibzmonthly_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

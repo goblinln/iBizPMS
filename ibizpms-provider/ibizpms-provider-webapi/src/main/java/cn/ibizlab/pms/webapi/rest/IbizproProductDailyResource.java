@@ -116,6 +116,8 @@ public class IbizproProductDailyResource {
     public ResponseEntity<IbizproProductDailyDTO> get(@PathVariable("ibizproproductdaily_id") Long ibizproproductdaily_id) {
         IbizproProductDaily domain = ibizproproductdailyService.get(ibizproproductdaily_id);
         IbizproProductDailyDTO dto = ibizproproductdailyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproproductdailyRuntime.getOPPrivs({ibizproproductdaily_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

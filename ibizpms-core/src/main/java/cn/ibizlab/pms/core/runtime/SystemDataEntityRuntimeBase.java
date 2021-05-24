@@ -737,6 +737,67 @@ public abstract class SystemDataEntityRuntimeBase extends net.ibizsys.runtime.da
         return authorityConditions;
     }
 
+    /**
+     * 获取数据全部能力
+     *
+     * @param key
+     * @return
+     */
+    public Map<String, Integer> getOPPrivs(Serializable key) {
+        Map<String, Integer> opprivsMap = new HashMap<>();
+        AuthenticationUser curUser = AuthenticationUser.getAuthenticationUser();
+        //实体默认能力
+        defaultAuthorities.stream().forEach(
+                uaadeAuthority -> uaadeAuthority.getDeAction().stream().forEach(
+                        deaction -> deaction.keySet().stream().forEach(
+                                actionkey -> {
+                                    if (!opprivsMap.containsKey(actionkey)) {
+                                        opprivsMap.put(actionkey, 0);
+                                    }
+                                })));
+        //系统用户能力
+        ((SystemRuntime) this.getSystemRuntime()).getUserUAADEAuthority().stream().forEach(
+                uaadeAuthority -> uaadeAuthority.getDeAction().stream().forEach(
+                        deaction -> deaction.keySet().stream().forEach(
+                                actionkey -> {
+                                    if (!opprivsMap.containsKey(actionkey)) {
+                                        opprivsMap.put(actionkey, 0);
+                                    }
+                                })));
+        //系统管理员能力
+        if (curUser.getAdminuser() == 1) {
+            ((SystemRuntime) this.getSystemRuntime()).getAdminUAADEAuthority().stream().forEach(
+                    uaadeAuthority -> uaadeAuthority.getDeAction().stream().forEach(
+                            deaction -> deaction.keySet().stream().forEach(
+                                    actionkey -> {
+                                        if (!opprivsMap.containsKey(actionkey)) {
+                                            opprivsMap.put(actionkey, 0);
+                                        }
+                                    })));
+        }
+        //运行时分配能力
+        if (curUser.getAuthorities() != null) {
+            curUser.getAuthorities().stream()
+                    .filter(f -> f instanceof UAADEAuthority)
+                    .forEach(
+                            uaadeAuthority -> ((UAADEAuthority) uaadeAuthority).getDeAction().stream().forEach(
+                                    deaction -> deaction.keySet().stream().forEach(
+                                            actionkey -> {
+                                                if (!opprivsMap.containsKey(actionkey)) {
+                                                    opprivsMap.put(actionkey, 0);
+                                                }
+                                            })));
+
+        }
+        //
+        opprivsMap.entrySet().stream().forEach(stringIntegerEntry -> {
+            if (test(key, stringIntegerEntry.getKey())) {
+                stringIntegerEntry.setValue(1);
+            }
+        });
+        return opprivsMap;
+    }
+
     public boolean isRtmodel() {
         return ((SystemRuntime) this.getSystemRuntime()).isRtmodel();
     }

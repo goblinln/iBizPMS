@@ -55,6 +55,7 @@ public interface IBuildService extends IService<Build> {
     List<Build> selectBugProductOrProjectBuild(BuildSearchContext context);
     List<Build> selectCurProduct(BuildSearchContext context);
     List<Build> selectDefault(BuildSearchContext context);
+    List<Build> selectSimple(BuildSearchContext context);
     List<Build> selectTestBuild(BuildSearchContext context);
     List<Build> selectTestRounds(BuildSearchContext context);
     List<Build> selectUpdateLog(BuildSearchContext context);

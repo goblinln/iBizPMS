@@ -155,6 +155,8 @@ public class BuildRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRu
             return buildService.selectCurProduct(searchContext);
         if (iPSDataQuery.getName().equals("DEFAULT"))
             return buildService.selectDefault(searchContext);
+        if (iPSDataQuery.getName().equals("SIMPLE"))
+            return buildService.selectSimple(searchContext);
         if (iPSDataQuery.getName().equals("TestBuild"))
             return buildService.selectTestBuild(searchContext);
         if (iPSDataQuery.getName().equals("TestRounds"))

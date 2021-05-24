@@ -55,6 +55,7 @@ public interface ITestTaskService extends IService<TestTask> {
     List<TestTask> select(TestTaskSearchContext context);
     List<TestTask> selectDefault(TestTaskSearchContext context);
     List<TestTask> selectMyTestTaskPc(TestTaskSearchContext context);
+    List<TestTask> selectSimple(TestTaskSearchContext context);
     List<TestTask> selectView(TestTaskSearchContext context);
 
     Page<TestTask> searchDefault(TestTaskSearchContext context);

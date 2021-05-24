@@ -102,6 +102,8 @@ public class IBIZProTagResource {
     public ResponseEntity<IBIZProTagDTO> get(@PathVariable("ibizprotag_id") String ibizprotag_id) {
         IBIZProTag domain = ibizprotagService.get(ibizprotag_id);
         IBIZProTagDTO dto = ibizprotagMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizprotagRuntime.getOPPrivs({ibizprotag_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

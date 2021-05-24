@@ -23,6 +23,7 @@ public interface BuildMapper extends BaseMapper<Build> {
     List<Build> selectBugProductOrProjectBuild(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
     List<Build> selectCurProduct(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
     List<Build> selectDefault(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
+    List<Build> selectSimple(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
     List<Build> selectTestBuild(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
     List<Build> selectTestRounds(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);
     List<Build> selectUpdateLog(@Param("srf") BuildSearchContext context, @Param("ew") Wrapper<Build> wrapper);

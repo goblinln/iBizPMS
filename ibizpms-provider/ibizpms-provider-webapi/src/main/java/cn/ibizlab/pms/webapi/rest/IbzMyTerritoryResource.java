@@ -116,6 +116,8 @@ public class IbzMyTerritoryResource {
     public ResponseEntity<IbzMyTerritoryDTO> get(@PathVariable("ibzmyterritory_id") Long ibzmyterritory_id) {
         IbzMyTerritory domain = ibzmyterritoryService.get(ibzmyterritory_id);
         IbzMyTerritoryDTO dto = ibzmyterritoryMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzmyterritoryRuntime.getOPPrivs({ibzmyterritory_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

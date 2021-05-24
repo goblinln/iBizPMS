@@ -103,6 +103,8 @@ public class PSSysSFPubResource {
     public ResponseEntity<PSSysSFPubDTO> get(@PathVariable("pssyssfpub_id") String pssyssfpub_id) {
         PSSysSFPub domain = pssyssfpubService.get(pssyssfpub_id);
         PSSysSFPubDTO dto = pssyssfpubMapping.toDto(domain);
+        Map<String,Integer> opprivs = pssyssfpubRuntime.getOPPrivs({pssyssfpub_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

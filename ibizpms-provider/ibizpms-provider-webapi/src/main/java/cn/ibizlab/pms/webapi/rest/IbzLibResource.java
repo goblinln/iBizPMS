@@ -117,6 +117,8 @@ public class IbzLibResource {
     public ResponseEntity<IbzLibDTO> get(@PathVariable("ibzlib_id") Long ibzlib_id) {
         IbzLib domain = ibzlibService.get(ibzlib_id);
         IbzLibDTO dto = ibzlibMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzlibRuntime.getOPPrivs({ibzlib_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

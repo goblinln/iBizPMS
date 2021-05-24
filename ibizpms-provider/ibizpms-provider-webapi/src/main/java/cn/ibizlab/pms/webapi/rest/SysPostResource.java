@@ -102,6 +102,8 @@ public class SysPostResource {
     public ResponseEntity<SysPostDTO> get(@PathVariable("syspost_id") String syspost_id) {
         SysPost domain = syspostService.get(syspost_id);
         SysPostDTO dto = syspostMapping.toDto(domain);
+        Map<String,Integer> opprivs = syspostRuntime.getOPPrivs({syspost_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

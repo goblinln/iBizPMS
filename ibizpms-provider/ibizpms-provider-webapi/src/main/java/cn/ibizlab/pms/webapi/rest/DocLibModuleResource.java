@@ -116,6 +116,8 @@ public class DocLibModuleResource {
     public ResponseEntity<DocLibModuleDTO> get(@PathVariable("doclibmodule_id") Long doclibmodule_id) {
         DocLibModule domain = doclibmoduleService.get(doclibmodule_id);
         DocLibModuleDTO dto = doclibmoduleMapping.toDto(domain);
+        Map<String,Integer> opprivs = doclibmoduleRuntime.getOPPrivs({doclibmodule_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

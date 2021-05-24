@@ -1653,6 +1653,18 @@
     "logicName" : "测试单",
     "name" : "TESTTASK",
     "stdDataType" : 1
+  }, {
+    "codeName" : "CreateMan",
+    "logicName" : "建立人",
+    "name" : "CREATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
+  }, {
+    "codeName" : "UpdateMan",
+    "logicName" : "更新人",
+    "name" : "UPDATEMAN",
+    "stdDataType" : 25,
+    "stringLength" : 60
   } ],
   "getAllPSAppDELogics" : [ {
     "codeName" : "GetCurUserConcat",

@@ -119,7 +119,7 @@
 
 
     <!--输出实体[ZT_BUG]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_bug-398-5">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_bug-403-5">
         <createTable tableName="zt_bug">
                 <column name="SEVERITY" remarks="" type="INT">
                 </column>
@@ -242,6 +242,10 @@
                 </column>
                 <column name="TESTTASK" remarks="" type="BIGINT">
                 </column>
+                <column name="CREATEMAN" remarks="" type="VARCHAR(60)">
+                </column>
+                <column name="UPDATEMAN" remarks="" type="VARCHAR(60)">
+                </column>
         </createTable>
     </changeSet>
 
@@ -250,7 +254,7 @@
 
 
     <!--输出实体[ZT_BUILD]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_build-69-7">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_build-74-7">
         <createTable tableName="zt_build">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -292,6 +296,14 @@
                 <column name="PROJECT" remarks="" type="BIGINT">
                 </column>
                 <column name="BUILDSN" remarks="" type="BIGINT">
+                </column>
+                <column name="CREATEMAN" remarks="" type="VARCHAR(60)">
+                </column>
+                <column name="CREATEDATE" remarks="" type="DATETIME">
+                </column>
+                <column name="UPDATEMAN" remarks="" type="VARCHAR(60)">
+                </column>
+                <column name="UPDATEDATE" remarks="" type="DATETIME">
                 </column>
         </createTable>
     </changeSet>
@@ -3158,7 +3170,7 @@
 
 
     <!--输出实体[ZT_TESTTASK]数据结构 -->
-    <changeSet author="a_A_23e8aa361" id="tab-zt_testtask-76-123">
+    <changeSet author="a_A_23e8aa361" id="tab-zt_testtask-81-123">
         <createTable tableName="zt_testtask">
                 <column name="DEPT" remarks="" type="VARCHAR(100)">
                 </column>
@@ -3206,6 +3218,14 @@
                 <column name="PROJECT" remarks="" type="BIGINT">
                 </column>
                 <column name="TESTTASKSN" remarks="" type="BIGINT">
+                </column>
+                <column name="CREATEMAN" remarks="" type="VARCHAR(60)">
+                </column>
+                <column name="CREATEDATE" remarks="" type="DATETIME">
+                </column>
+                <column name="UPDATEMAN" remarks="" type="VARCHAR(60)">
+                </column>
+                <column name="UPDATEDATE" remarks="" type="DATETIME">
                 </column>
         </createTable>
     </changeSet>

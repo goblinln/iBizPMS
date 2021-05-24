@@ -116,6 +116,8 @@ public class EmpLoyeeloadResource {
     public ResponseEntity<EmpLoyeeloadDTO> get(@PathVariable("employeeload_id") Long employeeload_id) {
         EmpLoyeeload domain = employeeloadService.get(employeeload_id);
         EmpLoyeeloadDTO dto = employeeloadMapping.toDto(domain);
+        Map<String,Integer> opprivs = employeeloadRuntime.getOPPrivs({employeeload_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

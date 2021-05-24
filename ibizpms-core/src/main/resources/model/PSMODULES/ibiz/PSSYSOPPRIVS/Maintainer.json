@@ -2,6 +2,27 @@
   "codeName" : "Maintainer",
   "dynaModelFilePath" : "PSMODULES/ibiz/PSSYSOPPRIVS/Maintainer.json",
   "name" : "运维人员",
+  "getPSSysUserRoleDatas" : [ {
+    "name" : "运维人员-ZT_BUG[当前组织（写）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug/PSDEUSERROLES/CURORG_C.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Bug.json"
+    }
+  }, {
+    "name" : "运维人员-ZT_TASK[当前组织（创建）]",
+    "getPSDEUserRole" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task/PSDEUSERROLES/CURORG_C.json"
+    },
+    "getPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Task.json"
+    }
+  } ],
   "roleTag" : "Maintainer",
   "roleType" : "CUSTOM",
   "globalRole" : true

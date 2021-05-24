@@ -416,6 +416,10 @@ export class BugBaseService extends EntityBaseService<IBug> {
         return this.condCache.get('selectBugsByProject');
     }
 
+    protected getSimpleCond() {
+        return this.condCache.get('simple');
+    }
+
     protected getStoryFormBugCond() {
         if (!this.condCache.has('storyFormBug')) {
             const strCond: any[] = ['AND'];

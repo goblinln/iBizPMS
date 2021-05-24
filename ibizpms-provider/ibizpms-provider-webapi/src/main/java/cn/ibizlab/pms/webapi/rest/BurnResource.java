@@ -116,6 +116,8 @@ public class BurnResource {
     public ResponseEntity<BurnDTO> get(@PathVariable("burn_id") String burn_id) {
         Burn domain = burnService.get(burn_id);
         BurnDTO dto = burnMapping.toDto(domain);
+        Map<String,Integer> opprivs = burnRuntime.getOPPrivs({burn_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

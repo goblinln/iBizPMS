@@ -21,6 +21,7 @@ public interface TestTaskMapper extends BaseMapper<TestTask> {
 
     List<TestTask> selectDefault(@Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
     List<TestTask> selectMyTestTaskPc(@Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
+    List<TestTask> selectSimple(@Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
     List<TestTask> selectView(@Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);
 
     Page<TestTask> searchDefault(IPage page, @Param("srf") TestTaskSearchContext context, @Param("ew") Wrapper<TestTask> wrapper);

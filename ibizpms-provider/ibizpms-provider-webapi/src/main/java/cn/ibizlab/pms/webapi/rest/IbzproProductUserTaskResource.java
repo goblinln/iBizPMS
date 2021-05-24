@@ -116,6 +116,8 @@ public class IbzproProductUserTaskResource {
     public ResponseEntity<IbzproProductUserTaskDTO> get(@PathVariable("ibzproproductusertask_id") Long ibzproproductusertask_id) {
         IbzproProductUserTask domain = ibzproproductusertaskService.get(ibzproproductusertask_id);
         IbzproProductUserTaskDTO dto = ibzproproductusertaskMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzproproductusertaskRuntime.getOPPrivs({ibzproproductusertask_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

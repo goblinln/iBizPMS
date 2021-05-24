@@ -116,6 +116,8 @@ public class HistoryResource {
     public ResponseEntity<HistoryDTO> get(@PathVariable("history_id") Long history_id) {
         History domain = historyService.get(history_id);
         HistoryDTO dto = historyMapping.toDto(domain);
+        Map<String,Integer> opprivs = historyRuntime.getOPPrivs({history_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

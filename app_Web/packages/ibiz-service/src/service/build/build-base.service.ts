@@ -124,6 +124,10 @@ export class BuildBaseService extends EntityBaseService<IBuild> {
         return this.condCache.get('default');
     }
 
+    protected getSimpleCond() {
+        return this.condCache.get('simple');
+    }
+
     protected getTestBuildCond() {
         return this.condCache.get('testBuild');
     }

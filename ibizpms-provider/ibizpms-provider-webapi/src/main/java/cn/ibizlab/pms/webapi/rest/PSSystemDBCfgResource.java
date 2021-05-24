@@ -103,6 +103,8 @@ public class PSSystemDBCfgResource {
     public ResponseEntity<PSSystemDBCfgDTO> get(@PathVariable("pssystemdbcfg_id") String pssystemdbcfg_id) {
         PSSystemDBCfg domain = pssystemdbcfgService.get(pssystemdbcfg_id);
         PSSystemDBCfgDTO dto = pssystemdbcfgMapping.toDto(domain);
+        Map<String,Integer> opprivs = pssystemdbcfgRuntime.getOPPrivs({pssystemdbcfg_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

@@ -106,6 +106,8 @@ public class IbzDailyResource {
     public ResponseEntity<IbzDailyDTO> get(@PathVariable("ibzdaily_id") Long ibzdaily_id) {
         IbzDaily domain = ibzdailyService.get(ibzdaily_id);
         IbzDailyDTO dto = ibzdailyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzdailyRuntime.getOPPrivs({ibzdaily_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

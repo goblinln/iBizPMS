@@ -116,6 +116,8 @@ public class ReleaseResource {
     public ResponseEntity<ReleaseDTO> get(@PathVariable("release_id") Long release_id) {
         Release domain = releaseService.get(release_id);
         ReleaseDTO dto = releaseMapping.toDto(domain);
+        Map<String,Integer> opprivs = releaseRuntime.getOPPrivs({release_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

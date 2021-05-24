@@ -34,6 +34,10 @@ function getLocaleResourceBase(){
 		'branch': commonLogic.appcommonhandle("平台/分支",null),
 		'project': commonLogic.appcommonhandle("所属项目",null),
 		'buildsn': commonLogic.appcommonhandle("版本编号",null),
+		'createman': commonLogic.appcommonhandle("建立人",null),
+		'createdate': commonLogic.appcommonhandle("建立时间",null),
+		'updateman': commonLogic.appcommonhandle("更新人",null),
+		'updatedate': commonLogic.appcommonhandle("更新时间",null),
 	},
 		views: {
 			'maingridview': {
@@ -73,6 +77,7 @@ function getLocaleResourceBase(){
 				'druipart1': commonLogic.appcommonhandle("",null), 
 				'grouppanel1': commonLogic.appcommonhandle("历史记录",null), 
 				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'srfupdatedate': commonLogic.appcommonhandle("更新时间",null), 
 				'srforikey': commonLogic.appcommonhandle("",null), 
 				'srfkey': commonLogic.appcommonhandle("id",null), 
 				'srfmajortext': commonLogic.appcommonhandle("名称编号",null), 
@@ -98,6 +103,7 @@ function getLocaleResourceBase(){
 				'grouppanel2': commonLogic.appcommonhandle("分组面板",null), 
 				'group1': commonLogic.appcommonhandle("基本信息",null), 
 				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'srfupdatedate': commonLogic.appcommonhandle("更新时间",null), 
 				'srforikey': commonLogic.appcommonhandle("",null), 
 				'srfkey': commonLogic.appcommonhandle("id",null), 
 				'srfmajortext': commonLogic.appcommonhandle("名称编号",null), 
@@ -125,6 +131,7 @@ function getLocaleResourceBase(){
 				'grouppanel2': commonLogic.appcommonhandle("分组面板",null), 
 				'group1': commonLogic.appcommonhandle("基本信息",null), 
 				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'srfupdatedate': commonLogic.appcommonhandle("更新时间",null), 
 				'srforikey': commonLogic.appcommonhandle("",null), 
 				'srfkey': commonLogic.appcommonhandle("id",null), 
 				'srfmajortext': commonLogic.appcommonhandle("名称编号",null), 
@@ -150,6 +157,7 @@ function getLocaleResourceBase(){
 		testbuildrelease_form: {
 			details: {
 				'formpage1': commonLogic.appcommonhandle("基本信息",null), 
+				'srfupdatedate': commonLogic.appcommonhandle("更新时间",null), 
 				'srforikey': commonLogic.appcommonhandle("",null), 
 				'srfkey': commonLogic.appcommonhandle("id",null), 
 				'srfmajortext': commonLogic.appcommonhandle("名称编号",null), 

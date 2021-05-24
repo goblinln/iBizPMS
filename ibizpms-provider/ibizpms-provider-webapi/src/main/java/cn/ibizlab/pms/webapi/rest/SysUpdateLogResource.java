@@ -117,6 +117,8 @@ public class SysUpdateLogResource {
     public ResponseEntity<SysUpdateLogDTO> get(@PathVariable("sysupdatelog_id") String sysupdatelog_id) {
         SysUpdateLog domain = sysupdatelogService.get(sysupdatelog_id);
         SysUpdateLogDTO dto = sysupdatelogMapping.toDto(domain);
+        Map<String,Integer> opprivs = sysupdatelogRuntime.getOPPrivs({sysupdatelog_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

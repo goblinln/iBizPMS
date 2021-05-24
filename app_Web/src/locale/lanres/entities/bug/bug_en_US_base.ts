@@ -84,6 +84,8 @@ function getLocaleResourceBase(){
 		'project': commonLogic.appcommonhandle("所属项目",null),
 		'task': commonLogic.appcommonhandle("相关任务",null),
 		'testtask': commonLogic.appcommonhandle("测试单",null),
+		'createman': commonLogic.appcommonhandle("建立人",null),
+		'updateman': commonLogic.appcommonhandle("更新人",null),
 	},
 		views: {
 			'testbugsgridview': {

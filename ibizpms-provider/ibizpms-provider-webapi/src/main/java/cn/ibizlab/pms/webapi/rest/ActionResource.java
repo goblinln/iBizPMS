@@ -116,6 +116,8 @@ public class ActionResource {
     public ResponseEntity<ActionDTO> get(@PathVariable("action_id") Long action_id) {
         Action domain = actionService.get(action_id);
         ActionDTO dto = actionMapping.toDto(domain);
+        Map<String,Integer> opprivs = actionRuntime.getOPPrivs({action_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

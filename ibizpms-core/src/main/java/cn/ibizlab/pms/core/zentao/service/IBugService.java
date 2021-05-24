@@ -116,6 +116,7 @@ public interface IBugService extends IService<Bug> {
     List<Bug> selectReportBugs(BugSearchContext context);
     List<Bug> selectSelectBugByBuild(BugSearchContext context);
     List<Bug> selectSelectBugsByProject(BugSearchContext context);
+    List<Bug> selectSimple(BugSearchContext context);
     List<Bug> selectStoryFormBug(BugSearchContext context);
     List<Bug> selectTaskBug(BugSearchContext context);
     List<Bug> selectView(BugSearchContext context);

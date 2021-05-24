@@ -116,6 +116,8 @@ public class IbizproProjectMonthlyResource {
     public ResponseEntity<IbizproProjectMonthlyDTO> get(@PathVariable("ibizproprojectmonthly_id") String ibizproprojectmonthly_id) {
         IbizproProjectMonthly domain = ibizproprojectmonthlyService.get(ibizproprojectmonthly_id);
         IbizproProjectMonthlyDTO dto = ibizproprojectmonthlyMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizproprojectmonthlyRuntime.getOPPrivs({ibizproprojectmonthly_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

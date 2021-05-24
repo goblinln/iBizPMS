@@ -80,4 +80,6 @@ export default [
     'project',
     'task',
     'testtask',
+    'createman',
+    'updateman',
 ];

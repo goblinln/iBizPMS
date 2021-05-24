@@ -123,6 +123,8 @@ public class IbzPlanTempletResource {
     public ResponseEntity<IbzPlanTempletDTO> get(@PathVariable("ibzplantemplet_id") String ibzplantemplet_id) {
         IbzPlanTemplet domain = ibzplantempletService.get(ibzplantemplet_id);
         IbzPlanTempletDTO dto = ibzplantempletMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzplantempletRuntime.getOPPrivs({ibzplantemplet_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

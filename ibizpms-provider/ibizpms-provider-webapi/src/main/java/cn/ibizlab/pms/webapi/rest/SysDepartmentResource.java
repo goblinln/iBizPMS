@@ -103,6 +103,8 @@ public class SysDepartmentResource {
     public ResponseEntity<SysDepartmentDTO> get(@PathVariable("sysdepartment_id") String sysdepartment_id) {
         SysDepartment domain = sysdepartmentService.get(sysdepartment_id);
         SysDepartmentDTO dto = sysdepartmentMapping.toDto(domain);
+        Map<String,Integer> opprivs = sysdepartmentRuntime.getOPPrivs({sysdepartment_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

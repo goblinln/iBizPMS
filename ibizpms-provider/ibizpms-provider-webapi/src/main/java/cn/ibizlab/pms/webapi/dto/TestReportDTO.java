@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.HashMap;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import com.fasterxml.jackson.annotation.JsonFilter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -28,6 +29,7 @@ import io.swagger.annotations.ApiModelProperty;
  */
 @Data
 @ApiModel("测试报告")
+@JsonFilter(value = "dtofieldfilter")
 public class TestReportDTO extends DTOBase implements Serializable {
 
 	private static final long serialVersionUID = 1L;

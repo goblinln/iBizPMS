@@ -117,6 +117,8 @@ public class StoryResource {
     public ResponseEntity<StoryDTO> get(@PathVariable("story_id") Long story_id) {
         Story domain = storyService.get(story_id);
         StoryDTO dto = storyMapping.toDto(domain);
+        Map<String,Integer> opprivs = storyRuntime.getOPPrivs({story_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

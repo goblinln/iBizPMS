@@ -116,6 +116,8 @@ public class CaseStatsResource {
     public ResponseEntity<CaseStatsDTO> get(@PathVariable("casestats_id") Long casestats_id) {
         CaseStats domain = casestatsService.get(casestats_id);
         CaseStatsDTO dto = casestatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = casestatsRuntime.getOPPrivs({casestats_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

@@ -122,6 +122,8 @@ public class IbzCaseResource {
     public ResponseEntity<IbzCaseDTO> get(@PathVariable("ibzcase_id") Long ibzcase_id) {
         IbzCase domain = ibzcaseService.get(ibzcase_id);
         IbzCaseDTO dto = ibzcaseMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzcaseRuntime.getOPPrivs({ibzcase_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

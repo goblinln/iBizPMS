@@ -116,6 +116,8 @@ public class AccountTaskestimateResource {
     public ResponseEntity<AccountTaskestimateDTO> get(@PathVariable("accounttaskestimate_id") String accounttaskestimate_id) {
         AccountTaskestimate domain = accounttaskestimateService.get(accounttaskestimate_id);
         AccountTaskestimateDTO dto = accounttaskestimateMapping.toDto(domain);
+        Map<String,Integer> opprivs = accounttaskestimateRuntime.getOPPrivs({accounttaskestimate_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

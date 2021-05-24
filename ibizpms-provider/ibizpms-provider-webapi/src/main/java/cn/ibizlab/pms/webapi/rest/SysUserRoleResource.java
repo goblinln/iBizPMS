@@ -103,6 +103,8 @@ public class SysUserRoleResource {
     public ResponseEntity<SysUserRoleDTO> get(@PathVariable("sysuserrole_id") String sysuserrole_id) {
         SysUserRole domain = sysuserroleService.get(sysuserrole_id);
         SysUserRoleDTO dto = sysuserroleMapping.toDto(domain);
+        Map<String,Integer> opprivs = sysuserroleRuntime.getOPPrivs({sysuserrole_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

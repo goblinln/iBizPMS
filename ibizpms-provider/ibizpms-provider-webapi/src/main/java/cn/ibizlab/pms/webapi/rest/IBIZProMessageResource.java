@@ -102,6 +102,8 @@ public class IBIZProMessageResource {
     public ResponseEntity<IBIZProMessageDTO> get(@PathVariable("ibizpromessage_id") String ibizpromessage_id) {
         IBIZProMessage domain = ibizpromessageService.get(ibizpromessage_id);
         IBIZProMessageDTO dto = ibizpromessageMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibizpromessageRuntime.getOPPrivs({ibizpromessage_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

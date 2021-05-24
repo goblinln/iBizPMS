@@ -117,6 +117,8 @@ public class IbzAgentResource {
     public ResponseEntity<IbzAgentDTO> get(@PathVariable("ibzagent_id") Long ibzagent_id) {
         IbzAgent domain = ibzagentService.get(ibzagent_id);
         IbzAgentDTO dto = ibzagentMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzagentRuntime.getOPPrivs({ibzagent_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

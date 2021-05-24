@@ -115,6 +115,8 @@ public class ProjectStatsResource {
     public ResponseEntity<ProjectStatsDTO> get(@PathVariable("projectstats_id") Long projectstats_id) {
         ProjectStats domain = projectstatsService.get(projectstats_id);
         ProjectStatsDTO dto = projectstatsMapping.toDto(domain);
+        Map<String,Integer> opprivs = projectstatsRuntime.getOPPrivs({projectstats_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

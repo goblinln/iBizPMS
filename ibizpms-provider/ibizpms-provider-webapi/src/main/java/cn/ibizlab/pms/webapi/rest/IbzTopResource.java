@@ -117,6 +117,8 @@ public class IbzTopResource {
     public ResponseEntity<IbzTopDTO> get(@PathVariable("ibztop_id") String ibztop_id) {
         IbzTop domain = ibztopService.get(ibztop_id);
         IbzTopDTO dto = ibztopMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibztopRuntime.getOPPrivs({ibztop_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

@@ -116,6 +116,8 @@ public class FileResource {
     public ResponseEntity<FileDTO> get(@PathVariable("file_id") Long file_id) {
         File domain = fileService.get(file_id);
         FileDTO dto = fileMapping.toDto(domain);
+        Map<String,Integer> opprivs = fileRuntime.getOPPrivs({file_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

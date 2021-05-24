@@ -848,6 +848,9 @@ public class BugServiceImpl extends ServiceImpl<BugMapper, Bug> implements IBugS
     public List<Bug> selectSelectBugsByProject(BugSearchContext context){
         return baseMapper.selectSelectBugsByProject(context, context.getSelectCond());
     }
+    public List<Bug> selectSimple(BugSearchContext context){
+        return baseMapper.selectSimple(context, context.getSelectCond());
+    }
     public List<Bug> selectStoryFormBug(BugSearchContext context){
         return baseMapper.selectStoryFormBug(context, context.getSelectCond());
     }

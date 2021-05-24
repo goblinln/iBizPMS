@@ -265,6 +265,8 @@ public class BugRuntime extends cn.ibizlab.pms.core.runtime.SystemDataEntityRunt
             return bugService.selectSelectBugByBuild(searchContext);
         if (iPSDataQuery.getName().equals("SelectBugsByProject"))
             return bugService.selectSelectBugsByProject(searchContext);
+        if (iPSDataQuery.getName().equals("SIMPLE"))
+            return bugService.selectSimple(searchContext);
         if (iPSDataQuery.getName().equals("StoryFormBug"))
             return bugService.selectStoryFormBug(searchContext);
         if (iPSDataQuery.getName().equals("TaskBug"))

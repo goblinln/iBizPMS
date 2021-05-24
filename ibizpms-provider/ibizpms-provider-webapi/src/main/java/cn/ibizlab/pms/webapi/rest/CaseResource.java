@@ -123,6 +123,8 @@ public class CaseResource {
     public ResponseEntity<CaseDTO> get(@PathVariable("case_id") Long case_id) {
         Case domain = caseService.get(case_id);
         CaseDTO dto = caseMapping.toDto(domain);
+        Map<String,Integer> opprivs = caseRuntime.getOPPrivs({case_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 

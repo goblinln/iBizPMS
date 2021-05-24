@@ -117,6 +117,8 @@ public class IbzReportRoleConfigResource {
     public ResponseEntity<IbzReportRoleConfigDTO> get(@PathVariable("ibzreportroleconfig_id") String ibzreportroleconfig_id) {
         IbzReportRoleConfig domain = ibzreportroleconfigService.get(ibzreportroleconfig_id);
         IbzReportRoleConfigDTO dto = ibzreportroleconfigMapping.toDto(domain);
+        Map<String,Integer> opprivs = ibzreportroleconfigRuntime.getOPPrivs({ibzreportroleconfig_id});
+        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
