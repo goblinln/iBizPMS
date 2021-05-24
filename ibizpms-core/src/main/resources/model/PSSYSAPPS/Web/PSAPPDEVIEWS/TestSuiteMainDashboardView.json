@@ -708,7 +708,7 @@
                       "actionTarget" : "SINGLEKEY",
                       "caption" : "移除",
                       "codeName" : "unlinkSuiteCase",
-                      "dataAccessAction" : "EDITSUITE",
+                      "dataAccessAction" : "UNLINKSUITCASE",
                       "fullCodeName" : "Case_unlinkSuiteCase",
                       "name" : "移除套件用例",
                       "getPSAppDEMethod" : {

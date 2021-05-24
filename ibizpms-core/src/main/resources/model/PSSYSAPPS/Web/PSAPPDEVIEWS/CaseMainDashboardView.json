@@ -2740,8 +2740,10 @@
                 "name" : "u8853531",
                 "getPSUIAction" : {
                   "actionTarget" : "SINGLEKEY",
+                  "noPrivDisplayMode" : 1,
                   "caption" : "编辑",
                   "codeName" : "MainEditCz",
+                  "dataAccessAction" : "CASEEDIT",
                   "getFrontPSAppView" : {
                     "modelref" : true,
                     "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainEditView.json",

@@ -1110,6 +1110,9 @@
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProduct.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProductAction.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibizpro/PSDATAENTITIES/IBZProProductLine.json"
   }, {
     "modelref" : true,
@@ -2764,6 +2767,9 @@
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/EmpLoyeeload.json"
+    }, {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProductAction.json"
     }, {
       "modelref" : true,
       "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBzDoc.json"

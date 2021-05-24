@@ -1137,7 +1137,7 @@
                   "actionTarget" : "SINGLEKEY",
                   "caption" : "移除",
                   "codeName" : "unlinkCase",
-                  "dataAccessAction" : "UNLIANKCASE",
+                  "dataAccessAction" : "UNLINKCASE",
                   "fullCodeName" : "Case_unlinkCase",
                   "name" : "移除",
                   "getPSAppDEMethod" : {

@@ -667,6 +667,8 @@ public class DELogicAspect {
         validLogic.put("doclibmoduledoclibmodulenfavoriteexec.bpmn", 1);
         validLogic.put("doclibmoduledoclibmodulefavoriteexec.bpmn", 1);
         validLogic.put("doclibmodulefixexec.bpmn", 1);
+        validLogic.put("ibzproproductactioncreateafter.bpmn", 1);
+        validLogic.put("ibzproproductactioncommentexec.bpmn", 1);
         validLogic.put("ibzprostorymodulecreateafter.bpmn", 1);
         validLogic.put("ibzprostorymoduleupdateafter.bpmn", 1);
         validLogic.put("ibzlibmodulecreateafter.bpmn", 1);

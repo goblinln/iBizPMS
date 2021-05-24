@@ -474,6 +474,7 @@ function getLocaleResourceBase(){
 		},
 		storyspec_form: {
 			details: {
+				'grouppanel1': commonLogic.appcommonhandle("需求描述标题",null), 
 				'grouppanel11': commonLogic.appcommonhandle("需求描述",null), 
 				'grouppanel21': commonLogic.appcommonhandle("验收标准",null), 
 				'group11': commonLogic.appcommonhandle("需求描述信息",null), 

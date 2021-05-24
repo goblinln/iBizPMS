@@ -49,6 +49,15 @@ public class DupCheckAspect {
     public void checkBug(JoinPoint point) {
         check(point, "searchDefault");
     }
+     /**
+     * 实体[IBZProProductAction]
+     *
+     * @param point
+     */
+    @AfterReturning(value = "(execution(* cn.ibizlab.pms.core.*.service.*IBZProProductAction*.create*(..))||execution(* cn.ibizlab.pms.core.*.service.*IBZProProductAction*.update*(..))||execution(* cn.ibizlab.pms.core.*.service.*IBZProProductAction*.save*(..))  ) && !execution(* cn.ibizlab.pms.core.es.service.*.create*(..)) && !execution(* cn.ibizlab.pms.core.es.service.*.update*(..)) && !execution(* cn.ibizlab.pms.core.es.service.*.save*(..)) ")
+    public void checkIbzproproductaction(JoinPoint point) {
+        check(point, "searchDefault");
+    }
 
     /**
      * 实体属性重复值检查

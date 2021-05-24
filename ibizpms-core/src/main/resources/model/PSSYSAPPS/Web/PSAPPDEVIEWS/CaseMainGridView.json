@@ -1079,6 +1079,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "编辑",
             "codeName" : "MainEdit",
+            "dataAccessAction" : "CASEEDIT",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/CaseMainEditView.json",
