@@ -1,0 +1,25 @@
+{
+  "codeName" : "IbzProProjectHistory",
+  "dERType" : "DER1N",
+  "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProjectHistory/PSDERS/DER1N_IBZPRO_PROJECTHISTORY_IBZPRO_PROJECTACTION_ACTION.json",
+  "getMajorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProjectAction.json"
+  },
+  "masterOrder" : -1,
+  "masterRS" : 12,
+  "getMinorPSDataEntity" : {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProjectHistory.json"
+  },
+  "name" : "DER1N_IBZPRO_PROJECTHISTORY_IBZPRO_PROJECTACTION_ACTION",
+  "orderValue" : 100,
+  "getPSPickupDEField" : {
+    "name" : "ACTION",
+    "codeName" : "Action"
+  },
+  "pickupDEFName" : "ACTION",
+  "removeActionType" : -1,
+  "removeOrder" : 0,
+  "nestedRS" : true
+}

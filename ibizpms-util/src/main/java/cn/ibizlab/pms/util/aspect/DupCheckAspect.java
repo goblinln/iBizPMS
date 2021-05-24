@@ -59,6 +59,15 @@ public class DupCheckAspect {
         check(point, "searchDefault");
     }
      /**
+     * 实体[IBZProProjectAction]
+     *
+     * @param point
+     */
+    @AfterReturning(value = "(execution(* cn.ibizlab.pms.core.*.service.*IBZProProjectAction*.create*(..))||execution(* cn.ibizlab.pms.core.*.service.*IBZProProjectAction*.update*(..))||execution(* cn.ibizlab.pms.core.*.service.*IBZProProjectAction*.save*(..))  ) && !execution(* cn.ibizlab.pms.core.es.service.*.create*(..)) && !execution(* cn.ibizlab.pms.core.es.service.*.update*(..)) && !execution(* cn.ibizlab.pms.core.es.service.*.save*(..)) ")
+    public void checkIbzproprojectaction(JoinPoint point) {
+        check(point, "searchDefault");
+    }
+     /**
      * 实体[IBZProReleaseAction]
      *
      * @param point

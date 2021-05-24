@@ -7467,6 +7467,29 @@
     "removeActionType" : -1,
     "removeOrder" : 0
   }, {
+    "codeName" : "IBZProProject",
+    "dERType" : "DER1N",
+    "dynaModelFilePath" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProjectAction/PSDERS/DER1N_IBZPRO_PROJECTACTION_ZT_PROJECT_OBJECTID.json",
+    "getMajorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/zentao/PSDATAENTITIES/Project.json"
+    },
+    "masterOrder" : -1,
+    "masterRS" : 4,
+    "getMinorPSDataEntity" : {
+      "modelref" : true,
+      "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProjectAction.json"
+    },
+    "name" : "DER1N_IBZPRO_PROJECTACTION_ZT_PROJECT_OBJECTID",
+    "orderValue" : 100,
+    "getPSPickupDEField" : {
+      "name" : "OBJECTID",
+      "codeName" : "ObjectID"
+    },
+    "pickupDEFName" : "OBJECTID",
+    "removeActionType" : -1,
+    "removeOrder" : 0
+  }, {
     "codeName" : "ZtProject",
     "dERType" : "DER1N",
     "dynaModelFilePath" : "PSMODULES/ibizpro/PSDATAENTITIES/IbizproProjectWeekly/PSDERS/DER1N_IBZPRO_PROJECTWEEKLY_ZT_PROJECT_PROJECT.json",

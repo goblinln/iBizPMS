@@ -182,6 +182,12 @@
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProductHistory.json"
   }, {
     "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProjectAction.json"
+  }, {
+    "modelref" : true,
+    "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProProjectHistory.json"
+  }, {
+    "modelref" : true,
     "path" : "PSMODULES/ibiz/PSDATAENTITIES/IBZProReleaseAction.json"
   }, {
     "modelref" : true,
