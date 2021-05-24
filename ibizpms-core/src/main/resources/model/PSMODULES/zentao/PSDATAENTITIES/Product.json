@@ -4418,6 +4418,7 @@
       }
     } ],
     "roleTag" : "Product_Read_CreateBy",
+    "userCat" : "CAT1",
     "userDRAction" : "READ"
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_DEV.json",
@@ -4435,6 +4436,7 @@
       }
     } ],
     "roleTag" : "Product_Read_DEV",
+    "userCat" : "CAT1",
     "userDRAction" : "READ"
   }, {
     "dynaModelFilePath" : "PSMODULES/zentao/PSDATAENTITIES/Product/PSDEUSERROLES/Product_Read_Open.json",
@@ -4452,6 +4454,7 @@
       }
     } ],
     "roleTag" : "Product_Read_Open",
+    "userCat" : "CAT1",
     "userDRAction" : "READ"
   } ],
   "codeName" : "Product",

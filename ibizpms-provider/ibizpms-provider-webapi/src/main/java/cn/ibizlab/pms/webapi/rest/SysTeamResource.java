@@ -102,8 +102,6 @@ public class SysTeamResource {
     public ResponseEntity<SysTeamDTO> get(@PathVariable("systeam_id") String systeam_id) {
         SysTeam domain = systeamService.get(systeam_id);
         SysTeamDTO dto = systeamMapping.toDto(domain);
-        Map<String,Integer> opprivs = systeamRuntime.getOPPrivs(systeam_id);
-        dto.setSrfopprivs(opprivs);
         return ResponseEntity.status(HttpStatus.OK).body(dto);
     }
 
