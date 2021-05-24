@@ -186,5 +186,133 @@ public class IBZTestReportHistoryResource {
         ibztestreporthistorydto = ibztestreporthistoryMapping.toDto(domain);
         return ResponseEntity.status(HttpStatus.OK).body(ibztestreporthistorydto);
     }
+    @PreAuthorize("@IBZTestReportActionRuntime.test(#ibztestreportaction_id,'CREATE')")
+    @ApiOperation(value = "根据报告日志建立报告操作历史", tags = {"报告操作历史" },  notes = "根据报告日志建立报告操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibztestreportactions/{ibztestreportaction_id}/ibztestreporthistories")
+    public ResponseEntity<IBZTestReportHistoryDTO> createByIBZTestReportAction(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id, @RequestBody IBZTestReportHistoryDTO ibztestreporthistorydto) {
+        IBZTestReportHistory domain = ibztestreporthistoryMapping.toDomain(ibztestreporthistorydto);
+        domain.setAction(ibztestreportaction_id);
+		ibztestreporthistoryService.create(domain);
+        IBZTestReportHistoryDTO dto = ibztestreporthistoryMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@IBZTestReportActionRuntime.test(#ibztestreportaction_id,'CREATE')")
+    @ApiOperation(value = "根据报告日志批量建立报告操作历史", tags = {"报告操作历史" },  notes = "根据报告日志批量建立报告操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibztestreportactions/{ibztestreportaction_id}/ibztestreporthistories/batch")
+    public ResponseEntity<Boolean> createBatchByIBZTestReportAction(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id, @RequestBody List<IBZTestReportHistoryDTO> ibztestreporthistorydtos) {
+        List<IBZTestReportHistory> domainlist=ibztestreporthistoryMapping.toDomain(ibztestreporthistorydtos);
+        for(IBZTestReportHistory domain:domainlist){
+            domain.setAction(ibztestreportaction_id);
+        }
+        ibztestreporthistoryService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@IBZTestReportActionRuntime.test(#ibztestreportaction_id,'UPDATE')")
+    @ApiOperation(value = "根据报告日志更新报告操作历史", tags = {"报告操作历史" },  notes = "根据报告日志更新报告操作历史")
+	@RequestMapping(method = RequestMethod.PUT, value = "/ibztestreportactions/{ibztestreportaction_id}/ibztestreporthistories/{ibztestreporthistory_id}")
+    public ResponseEntity<IBZTestReportHistoryDTO> updateByIBZTestReportAction(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id, @PathVariable("ibztestreporthistory_id") Long ibztestreporthistory_id, @RequestBody IBZTestReportHistoryDTO ibztestreporthistorydto) {
+        IBZTestReportHistory domain = ibztestreporthistoryMapping.toDomain(ibztestreporthistorydto);
+        domain.setAction(ibztestreportaction_id);
+        domain.setId(ibztestreporthistory_id);
+		ibztestreporthistoryService.update(domain);
+        IBZTestReportHistoryDTO dto = ibztestreporthistoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@IBZTestReportActionRuntime.test(#ibztestreportaction_id,'UPDATE')")
+    @ApiOperation(value = "根据报告日志批量更新报告操作历史", tags = {"报告操作历史" },  notes = "根据报告日志批量更新报告操作历史")
+	@RequestMapping(method = RequestMethod.PUT, value = "/ibztestreportactions/{ibztestreportaction_id}/ibztestreporthistories/batch")
+    public ResponseEntity<Boolean> updateBatchByIBZTestReportAction(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id, @RequestBody List<IBZTestReportHistoryDTO> ibztestreporthistorydtos) {
+        List<IBZTestReportHistory> domainlist=ibztestreporthistoryMapping.toDomain(ibztestreporthistorydtos);
+        for(IBZTestReportHistory domain:domainlist){
+            domain.setAction(ibztestreportaction_id);
+        }
+        ibztestreporthistoryService.updateBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@IBZTestReportActionRuntime.test(#ibztestreportaction_id,'DELETE')")
+    @ApiOperation(value = "根据报告日志删除报告操作历史", tags = {"报告操作历史" },  notes = "根据报告日志删除报告操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztestreportactions/{ibztestreportaction_id}/ibztestreporthistories/{ibztestreporthistory_id}")
+    public ResponseEntity<Boolean> removeByIBZTestReportAction(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id, @PathVariable("ibztestreporthistory_id") Long ibztestreporthistory_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(ibztestreporthistoryService.remove(ibztestreporthistory_id));
+    }
+
+    @PreAuthorize("@IBZTestReportActionRuntime.test(#ibztestreportaction_id,'DELETE')")
+    @ApiOperation(value = "根据报告日志批量删除报告操作历史", tags = {"报告操作历史" },  notes = "根据报告日志批量删除报告操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/ibztestreportactions/{ibztestreportaction_id}/ibztestreporthistories/batch")
+    public ResponseEntity<Boolean> removeBatchByIBZTestReportAction(@RequestBody List<Long> ids) {
+        ibztestreporthistoryService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@IBZTestReportActionRuntime.test(#ibztestreportaction_id,'READ')")
+    @ApiOperation(value = "根据报告日志获取报告操作历史", tags = {"报告操作历史" },  notes = "根据报告日志获取报告操作历史")
+	@RequestMapping(method = RequestMethod.GET, value = "/ibztestreportactions/{ibztestreportaction_id}/ibztestreporthistories/{ibztestreporthistory_id}")
+    public ResponseEntity<IBZTestReportHistoryDTO> getByIBZTestReportAction(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id, @PathVariable("ibztestreporthistory_id") Long ibztestreporthistory_id) {
+        IBZTestReportHistory domain = ibztestreporthistoryService.get(ibztestreporthistory_id);
+        IBZTestReportHistoryDTO dto = ibztestreporthistoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "根据报告日志获取报告操作历史草稿", tags = {"报告操作历史" },  notes = "根据报告日志获取报告操作历史草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/ibztestreportactions/{ibztestreportaction_id}/ibztestreporthistories/getdraft")
+    public ResponseEntity<IBZTestReportHistoryDTO> getDraftByIBZTestReportAction(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id, IBZTestReportHistoryDTO dto) {
+        IBZTestReportHistory domain = ibztestreporthistoryMapping.toDomain(dto);
+        domain.setAction(ibztestreportaction_id);
+        return ResponseEntity.status(HttpStatus.OK).body(ibztestreporthistoryMapping.toDto(ibztestreporthistoryService.getDraft(domain)));
+    }
+
+    @ApiOperation(value = "根据报告日志检查报告操作历史", tags = {"报告操作历史" },  notes = "根据报告日志检查报告操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibztestreportactions/{ibztestreportaction_id}/ibztestreporthistories/checkkey")
+    public ResponseEntity<Boolean> checkKeyByIBZTestReportAction(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id, @RequestBody IBZTestReportHistoryDTO ibztestreporthistorydto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibztestreporthistoryService.checkKey(ibztestreporthistoryMapping.toDomain(ibztestreporthistorydto)));
+    }
+
+    @ApiOperation(value = "根据报告日志保存报告操作历史", tags = {"报告操作历史" },  notes = "根据报告日志保存报告操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibztestreportactions/{ibztestreportaction_id}/ibztestreporthistories/save")
+    public ResponseEntity<IBZTestReportHistoryDTO> saveByIBZTestReportAction(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id, @RequestBody IBZTestReportHistoryDTO ibztestreporthistorydto) {
+        IBZTestReportHistory domain = ibztestreporthistoryMapping.toDomain(ibztestreporthistorydto);
+        domain.setAction(ibztestreportaction_id);
+        ibztestreporthistoryService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibztestreporthistoryMapping.toDto(domain));
+    }
+
+    @ApiOperation(value = "根据报告日志批量保存报告操作历史", tags = {"报告操作历史" },  notes = "根据报告日志批量保存报告操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/ibztestreportactions/{ibztestreportaction_id}/ibztestreporthistories/savebatch")
+    public ResponseEntity<Boolean> saveBatchByIBZTestReportAction(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id, @RequestBody List<IBZTestReportHistoryDTO> ibztestreporthistorydtos) {
+        List<IBZTestReportHistory> domainlist=ibztestreporthistoryMapping.toDomain(ibztestreporthistorydtos);
+        for(IBZTestReportHistory domain:domainlist){
+             domain.setAction(ibztestreportaction_id);
+        }
+        ibztestreporthistoryService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@IBZTestReportActionRuntime.test(#ibztestreportaction_id,'READ')")
+	@ApiOperation(value = "根据报告日志获取数据集", tags = {"报告操作历史" } ,notes = "根据报告日志获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/ibztestreportactions/{ibztestreportaction_id}/ibztestreporthistories/fetchdefault")
+	public ResponseEntity<List<IBZTestReportHistoryDTO>> fetchIBZTestReportHistoryDefaultByIBZTestReportAction(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id,@RequestBody IBZTestReportHistorySearchContext context) {
+        context.setN_action_eq(ibztestreportaction_id);
+        Page<IBZTestReportHistory> domains = ibztestreporthistoryService.searchDefault(context) ;
+        List<IBZTestReportHistoryDTO> list = ibztestreporthistoryMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@IBZTestReportActionRuntime.test(#ibztestreportaction_id,'READ')")
+	@ApiOperation(value = "根据报告日志查询数据集", tags = {"报告操作历史" } ,notes = "根据报告日志查询数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/ibztestreportactions/{ibztestreportaction_id}/ibztestreporthistories/searchdefault")
+	public ResponseEntity<Page<IBZTestReportHistoryDTO>> searchIBZTestReportHistoryDefaultByIBZTestReportAction(@PathVariable("ibztestreportaction_id") Long ibztestreportaction_id, @RequestBody IBZTestReportHistorySearchContext context) {
+        context.setN_action_eq(ibztestreportaction_id);
+        Page<IBZTestReportHistory> domains = ibztestreporthistoryService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibztestreporthistoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
 }
 

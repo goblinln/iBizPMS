@@ -379,6 +379,10 @@
             "height" : 450,
             "layout" : "TABLE_24COL"
           },
+          "getPSSysImage" : {
+            "glyph" : "xf021@FontAwesome",
+            "cssClass" : "fa fa-refresh"
+          },
           "getPortletPSAppView" : {
             "accUserMode" : 2,
             "caption" : "项目统计",
