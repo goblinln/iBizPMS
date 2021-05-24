@@ -54,17 +54,11 @@ public class IBZProProductActionExService extends IBZProProductActionServiceImpl
 
     @Override
     public boolean create(IBZProProductAction et) {
-        et.setComment(et.getComment() == null ? "" : et.getComment());
-        String noticeusers = et.getNoticeusers();
-        String files = et.getFiles();
-        et.setObjecttype(StaticDict.Action__object_type.PRODUCT.getValue());
-        this.createHis(et);
-        // send(noticeusers, et);
-        // 保存文件
-        // 更新file
-        String extra = "0";
-
-        FileHelper.updateObjectID(et.getObjectid(), et.getObjecttype(), files, extra, iFileService);
+        Action action = new Action();
+        CachedBeanCopier.copy(et, action);
+        action.setObjecttype(StaticDict.Action__object_type.PRODUCT.getValue());
+        iActionService.create(action);
+        CachedBeanCopier.copy(action, et);
         return true;
     }
 
