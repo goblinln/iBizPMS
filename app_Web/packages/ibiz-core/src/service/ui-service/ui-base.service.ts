@@ -320,6 +320,10 @@ export class UIServiceBase {
      * @memberof  UIServiceBase
      */
     protected getResourceOPPrivs(tag: any) {
+        const Environment = AppServiceBase.getInstance().getAppEnvironment();
+        if (!Environment.enablePermissionValid) {
+            return 1;
+        }
         const authService = new AuthServiceBase(this.getStore());
         return authService.getResourcePermission(authService.sysOPPrivsMap.get(tag)) ? 1 : 0;
     }
@@ -528,7 +532,7 @@ export class UIServiceBase {
      * @readonly
      * @memberof UIServiceBase
      */
-     get appDeKeyFieldName() {
+    get appDeKeyFieldName() {
         return (
             (ModelTool.getAppEntityKeyField(this.entityModel) as IPSAppDEField)?.codeName || ''
         );
@@ -538,10 +542,16 @@ export class UIServiceBase {
      * 获取数据对象所有的操作标识
      *
      * @param data 当前数据
+     * @param dataaccaction 数据操作标识
      * @memberof  UIServiceBase
      */
-    protected getAllOPPrivs(data: any) {
+    protected getAllOPPrivs(data: any, dataaccaction: string) {
+        const Environment = AppServiceBase.getInstance().getAppEnvironment();
+        if (!Environment.enablePermissionValid) {
+            return 1;
+        }
         const curActiveKey: string = `${this.deName}-${data[this.appDeKeyFieldName?.toLowerCase()]}`;
-        return this.authService.getOPPrivs(curActiveKey, this.getDEMainStateOPPrivs(data));
+        const result = this.authService.getOPPrivs(curActiveKey, this.getDEMainStateOPPrivs(data));
+        return result[dataaccaction];
     }
 }

@@ -907,6 +907,7 @@
           "actionTarget" : "SINGLEKEY",
           "caption" : "子任务",
           "codeName" : "NewSubTask",
+          "dataAccessAction" : "SUBTASKS",
           "getFrontPSAppView" : {
             "modelref" : true,
             "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskSubTaskNewView.json",

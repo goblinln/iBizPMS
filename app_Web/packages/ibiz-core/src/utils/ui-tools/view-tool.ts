@@ -266,10 +266,10 @@ export class ViewTool {
                     dataActionResult = UIService.getResourceOPPrivs(_item['dataAccessAction']);
                 } else {
                     if (data && Object.keys(data).length > 0) {
-                        dataActionResult = UIService.getAllOPPrivs(data)[_item['dataAccessAction']];
+                        dataActionResult = UIService.getAllOPPrivs(data, _item['dataAccessAction']);
                     }
                 }
-            }else{
+            } else {
                 dataActionResult = 1;
             }
             // 无权限:0;有权限:1
@@ -319,7 +319,7 @@ export class ViewTool {
             } else {
                 if (_item && _item['dataaccaction'] && UIService.isEnableDEMainState) {
                     if (data && Object.keys(data).length > 0) {
-                        dataActionResult = UIService.getAllOPPrivs(data)[_item['dataaccaction']];
+                        dataActionResult = UIService.getAllOPPrivs(data, _item['dataaccaction']);
                     }
                 }
             }

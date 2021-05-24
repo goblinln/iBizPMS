@@ -1448,8 +1448,7 @@
             "xDataControlName" : "list",
             "enableDP" : true,
             "enableFilter" : false,
-            "enableQuickSearch" : true,
-            "showCaptionBar" : true,
+            "showCaptionBar" : false,
             "modelid" : "5c1eae17357b0aa44efcbcb0312013aa",
             "modeltype" : "PSAPPDEVIEW",
             "getPSAppDERSPaths" : [ [ {

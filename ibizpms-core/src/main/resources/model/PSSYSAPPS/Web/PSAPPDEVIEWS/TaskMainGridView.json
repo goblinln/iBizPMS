@@ -231,6 +231,7 @@
         "actionTarget" : "NONE",
         "caption" : "新建",
         "codeName" : "Create",
+        "dataAccessAction" : "CREATE",
         "getFrontPSAppView" : {
           "modelref" : true,
           "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskEditView.json",
@@ -1393,6 +1394,7 @@
             "actionTarget" : "SINGLEKEY",
             "caption" : "子任务",
             "codeName" : "NewSubTask",
+            "dataAccessAction" : "SUBTASKS",
             "getFrontPSAppView" : {
               "modelref" : true,
               "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskSubTaskNewView.json",

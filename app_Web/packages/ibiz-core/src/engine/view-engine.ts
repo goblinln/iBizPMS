@@ -211,14 +211,14 @@ export class ViewEngine {
                 if (_item.uiaction && (Object.is(_item.uiaction.actionTarget, "NONE") || !_item.uiaction.actionTarget)){
                     if(!_item.uiaction.actionTarget && Object.is(_item.uiaction.tag, "Save") && _this.view.appUIService.isEnableDEMainState){
                         if(data && Object.keys(data).length >0){
-                            dataActionResult= _this.view.appUIService.getAllOPPrivs(data)[_item['dataaccaction']];       
+                            dataActionResult= _this.view.appUIService.getAllOPPrivs(data,_item['dataaccaction']);       
                         }
                     }else{
                         dataActionResult = _this.view.appUIService.getResourceOPPrivs(_item['dataaccaction']);
                     }
                 }else{
                     if(data && Object.keys(data).length >0 && _this.view.appUIService.isEnableDEMainState){
-                        dataActionResult= _this.view.appUIService.getAllOPPrivs(data)[_item['dataaccaction']];       
+                        dataActionResult= _this.view.appUIService.getAllOPPrivs(data,_item['dataaccaction']);       
                     }else{
                         dataActionResult = _this.view.appUIService.getResourceOPPrivs(_item['dataaccaction']);
                     }

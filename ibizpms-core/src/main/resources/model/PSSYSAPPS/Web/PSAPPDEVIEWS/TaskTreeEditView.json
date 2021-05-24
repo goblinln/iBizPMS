@@ -1366,8 +1366,10 @@
             },
             "getPSUIAction" : {
               "actionTarget" : "SINGLEKEY",
+              "noPrivDisplayMode" : 1,
               "caption" : "子任务",
               "codeName" : "NewSubTaskDash",
+              "dataAccessAction" : "SUBTASKS",
               "getFrontPSAppView" : {
                 "modelref" : true,
                 "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/TaskSubTaskNewView.json",

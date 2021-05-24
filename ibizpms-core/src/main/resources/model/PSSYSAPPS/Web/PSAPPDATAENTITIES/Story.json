@@ -4110,8 +4110,10 @@
     "id" : "CloseStory@Story"
   }, {
     "actionTarget" : "SINGLEKEY",
+    "noPrivDisplayMode" : 1,
     "caption" : "评审",
     "codeName" : "ReviewStoryDash",
+    "dataAccessAction" : "REVIEW",
     "getFrontPSAppView" : {
       "modelref" : true,
       "path" : "PSSYSAPPS/Web/PSAPPDEVIEWS/StoryRevIewEditView.json",

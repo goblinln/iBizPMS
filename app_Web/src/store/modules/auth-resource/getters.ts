@@ -1,3 +1,5 @@
+import { AppServiceBase } from "ibiz-core";
+
 /**
  * 判断指定统一资源是否存在
  * 
@@ -28,7 +30,8 @@ export const getMenuData = (state: any) => (menutag: string) => {
  * @param state 
  */
 export const getEnablePermissionValid = (state: any) => {
-    return state.enablePermissionValid;
+    const Environment = AppServiceBase.getInstance().getAppEnvironment();
+    return state.enablePermissionValid && Environment.enablePermissionValid;
 }
 
 /**
@@ -91,7 +94,7 @@ export const getAuthMenuWithRT = (state: any) => (menu: any) => {
  * 
  * @param state 
  */
- export const getStandDynainstid = (state: any) => {
+export const getStandDynainstid = (state: any) => {
     return state.srfdynainstid;
 }
 
@@ -100,6 +103,6 @@ export const getAuthMenuWithRT = (state: any) => (menu: any) => {
  * 
  * @param state 
  */
-export const getSrfappdeData = (state: any) =>(key:string) => {
+export const getSrfappdeData = (state: any) => (key: string) => {
     return state.srfappdeData[key];
 }
