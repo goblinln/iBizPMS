@@ -3625,7 +3625,7 @@
         <!--输出实体[IBZPRO_SEQUENCE]外键关系 -->
         <!--输出实体[IBZPRO_STORY]外键关系 -->
         <!--输出实体[IBZPRO_STORYHISTORY]外键关系 -->
-    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_storyhistory-23-173">
+    <changeSet author="a_A_23e8aa361" id="fk-ibzpro_storyhistory-26-173">
        <addForeignKeyConstraint baseColumnNames="ACTION" baseTableName="zt_history" constraintName="DER1N_IBZPRO_STORYHISTORY_IBZP" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ID" referencedTableName="zt_action" validate="true"/>
     </changeSet>
         <!--输出实体[IBZPRO_STORYMODULE]外键关系 -->

@@ -896,7 +896,7 @@
   } ],
   "name" : "IBZPRO_STORYHISTORY",
   "saaSMode" : 0,
-  "serviceAPIMode" : 0,
+  "serviceAPIMode" : 1,
   "serviceCodeName" : "IBZProStoryHistory",
   "storageMode" : 1,
   "systemTag" : "iBizPMS",

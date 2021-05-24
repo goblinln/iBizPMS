@@ -314,5 +314,133 @@ public class IBZProProjectHistoryResource {
 	    return ResponseEntity.status(HttpStatus.OK)
                 .body(new PageImpl(ibzproprojecthistoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
 	}
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
+    @ApiOperation(value = "根据项目项目日志建立项目操作历史", tags = {"项目操作历史" },  notes = "根据项目项目日志建立项目操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/ibzproprojectactions/{ibzproprojectaction_id}/ibzproprojecthistories")
+    public ResponseEntity<IBZProProjectHistoryDTO> createByProjectIBZProProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("ibzproprojectaction_id") Long ibzproprojectaction_id, @RequestBody IBZProProjectHistoryDTO ibzproprojecthistorydto) {
+        IBZProProjectHistory domain = ibzproprojecthistoryMapping.toDomain(ibzproprojecthistorydto);
+        domain.setAction(ibzproprojectaction_id);
+		ibzproprojecthistoryService.create(domain);
+        IBZProProjectHistoryDTO dto = ibzproprojecthistoryMapping.toDto(domain);
+		return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'CREATE')")
+    @ApiOperation(value = "根据项目项目日志批量建立项目操作历史", tags = {"项目操作历史" },  notes = "根据项目项目日志批量建立项目操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/ibzproprojectactions/{ibzproprojectaction_id}/ibzproprojecthistories/batch")
+    public ResponseEntity<Boolean> createBatchByProjectIBZProProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("ibzproprojectaction_id") Long ibzproprojectaction_id, @RequestBody List<IBZProProjectHistoryDTO> ibzproprojecthistorydtos) {
+        List<IBZProProjectHistory> domainlist=ibzproprojecthistoryMapping.toDomain(ibzproprojecthistorydtos);
+        for(IBZProProjectHistory domain:domainlist){
+            domain.setAction(ibzproprojectaction_id);
+        }
+        ibzproprojecthistoryService.createBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
+    @ApiOperation(value = "根据项目项目日志更新项目操作历史", tags = {"项目操作历史" },  notes = "根据项目项目日志更新项目操作历史")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/ibzproprojectactions/{ibzproprojectaction_id}/ibzproprojecthistories/{ibzproprojecthistory_id}")
+    public ResponseEntity<IBZProProjectHistoryDTO> updateByProjectIBZProProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("ibzproprojectaction_id") Long ibzproprojectaction_id, @PathVariable("ibzproprojecthistory_id") Long ibzproprojecthistory_id, @RequestBody IBZProProjectHistoryDTO ibzproprojecthistorydto) {
+        IBZProProjectHistory domain = ibzproprojecthistoryMapping.toDomain(ibzproprojecthistorydto);
+        domain.setAction(ibzproprojectaction_id);
+        domain.setId(ibzproprojecthistory_id);
+		ibzproprojecthistoryService.update(domain);
+        IBZProProjectHistoryDTO dto = ibzproprojecthistoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'UPDATE')")
+    @ApiOperation(value = "根据项目项目日志批量更新项目操作历史", tags = {"项目操作历史" },  notes = "根据项目项目日志批量更新项目操作历史")
+	@RequestMapping(method = RequestMethod.PUT, value = "/projects/{project_id}/ibzproprojectactions/{ibzproprojectaction_id}/ibzproprojecthistories/batch")
+    public ResponseEntity<Boolean> updateBatchByProjectIBZProProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("ibzproprojectaction_id") Long ibzproprojectaction_id, @RequestBody List<IBZProProjectHistoryDTO> ibzproprojecthistorydtos) {
+        List<IBZProProjectHistory> domainlist=ibzproprojecthistoryMapping.toDomain(ibzproprojecthistorydtos);
+        for(IBZProProjectHistory domain:domainlist){
+            domain.setAction(ibzproprojectaction_id);
+        }
+        ibzproprojecthistoryService.updateBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
+    @ApiOperation(value = "根据项目项目日志删除项目操作历史", tags = {"项目操作历史" },  notes = "根据项目项目日志删除项目操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/ibzproprojectactions/{ibzproprojectaction_id}/ibzproprojecthistories/{ibzproprojecthistory_id}")
+    public ResponseEntity<Boolean> removeByProjectIBZProProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("ibzproprojectaction_id") Long ibzproprojectaction_id, @PathVariable("ibzproprojecthistory_id") Long ibzproprojecthistory_id) {
+		return ResponseEntity.status(HttpStatus.OK).body(ibzproprojecthistoryService.remove(ibzproprojecthistory_id));
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'DELETE')")
+    @ApiOperation(value = "根据项目项目日志批量删除项目操作历史", tags = {"项目操作历史" },  notes = "根据项目项目日志批量删除项目操作历史")
+	@RequestMapping(method = RequestMethod.DELETE, value = "/projects/{project_id}/ibzproprojectactions/{ibzproprojectaction_id}/ibzproprojecthistories/batch")
+    public ResponseEntity<Boolean> removeBatchByProjectIBZProProjectAction(@RequestBody List<Long> ids) {
+        ibzproprojecthistoryService.removeBatch(ids);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+    @ApiOperation(value = "根据项目项目日志获取项目操作历史", tags = {"项目操作历史" },  notes = "根据项目项目日志获取项目操作历史")
+	@RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/ibzproprojectactions/{ibzproprojectaction_id}/ibzproprojecthistories/{ibzproprojecthistory_id}")
+    public ResponseEntity<IBZProProjectHistoryDTO> getByProjectIBZProProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("ibzproprojectaction_id") Long ibzproprojectaction_id, @PathVariable("ibzproprojecthistory_id") Long ibzproprojecthistory_id) {
+        IBZProProjectHistory domain = ibzproprojecthistoryService.get(ibzproprojecthistory_id);
+        IBZProProjectHistoryDTO dto = ibzproprojecthistoryMapping.toDto(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(dto);
+    }
+
+    @ApiOperation(value = "根据项目项目日志获取项目操作历史草稿", tags = {"项目操作历史" },  notes = "根据项目项目日志获取项目操作历史草稿")
+    @RequestMapping(method = RequestMethod.GET, value = "/projects/{project_id}/ibzproprojectactions/{ibzproprojectaction_id}/ibzproprojecthistories/getdraft")
+    public ResponseEntity<IBZProProjectHistoryDTO> getDraftByProjectIBZProProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("ibzproprojectaction_id") Long ibzproprojectaction_id, IBZProProjectHistoryDTO dto) {
+        IBZProProjectHistory domain = ibzproprojecthistoryMapping.toDomain(dto);
+        domain.setAction(ibzproprojectaction_id);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzproprojecthistoryMapping.toDto(ibzproprojecthistoryService.getDraft(domain)));
+    }
+
+    @ApiOperation(value = "根据项目项目日志检查项目操作历史", tags = {"项目操作历史" },  notes = "根据项目项目日志检查项目操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/ibzproprojectactions/{ibzproprojectaction_id}/ibzproprojecthistories/checkkey")
+    public ResponseEntity<Boolean> checkKeyByProjectIBZProProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("ibzproprojectaction_id") Long ibzproprojectaction_id, @RequestBody IBZProProjectHistoryDTO ibzproprojecthistorydto) {
+        return  ResponseEntity.status(HttpStatus.OK).body(ibzproprojecthistoryService.checkKey(ibzproprojecthistoryMapping.toDomain(ibzproprojecthistorydto)));
+    }
+
+    @ApiOperation(value = "根据项目项目日志保存项目操作历史", tags = {"项目操作历史" },  notes = "根据项目项目日志保存项目操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/ibzproprojectactions/{ibzproprojectaction_id}/ibzproprojecthistories/save")
+    public ResponseEntity<IBZProProjectHistoryDTO> saveByProjectIBZProProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("ibzproprojectaction_id") Long ibzproprojectaction_id, @RequestBody IBZProProjectHistoryDTO ibzproprojecthistorydto) {
+        IBZProProjectHistory domain = ibzproprojecthistoryMapping.toDomain(ibzproprojecthistorydto);
+        domain.setAction(ibzproprojectaction_id);
+        ibzproprojecthistoryService.save(domain);
+        return ResponseEntity.status(HttpStatus.OK).body(ibzproprojecthistoryMapping.toDto(domain));
+    }
+
+    @ApiOperation(value = "根据项目项目日志批量保存项目操作历史", tags = {"项目操作历史" },  notes = "根据项目项目日志批量保存项目操作历史")
+	@RequestMapping(method = RequestMethod.POST, value = "/projects/{project_id}/ibzproprojectactions/{ibzproprojectaction_id}/ibzproprojecthistories/savebatch")
+    public ResponseEntity<Boolean> saveBatchByProjectIBZProProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("ibzproprojectaction_id") Long ibzproprojectaction_id, @RequestBody List<IBZProProjectHistoryDTO> ibzproprojecthistorydtos) {
+        List<IBZProProjectHistory> domainlist=ibzproprojecthistoryMapping.toDomain(ibzproprojecthistorydtos);
+        for(IBZProProjectHistory domain:domainlist){
+             domain.setAction(ibzproprojectaction_id);
+        }
+        ibzproprojecthistoryService.saveBatch(domainlist);
+        return  ResponseEntity.status(HttpStatus.OK).body(true);
+    }
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+	@ApiOperation(value = "根据项目项目日志获取数据集", tags = {"项目操作历史" } ,notes = "根据项目项目日志获取数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/ibzproprojectactions/{ibzproprojectaction_id}/ibzproprojecthistories/fetchdefault")
+	public ResponseEntity<List<IBZProProjectHistoryDTO>> fetchIBZProProjectHistoryDefaultByProjectIBZProProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("ibzproprojectaction_id") Long ibzproprojectaction_id,@RequestBody IBZProProjectHistorySearchContext context) {
+        context.setN_action_eq(ibzproprojectaction_id);
+        Page<IBZProProjectHistory> domains = ibzproprojecthistoryService.searchDefault(context) ;
+        List<IBZProProjectHistoryDTO> list = ibzproprojecthistoryMapping.toDto(domains.getContent());
+	    return ResponseEntity.status(HttpStatus.OK)
+                .header("x-page", String.valueOf(context.getPageable().getPageNumber()))
+                .header("x-per-page", String.valueOf(context.getPageable().getPageSize()))
+                .header("x-total", String.valueOf(domains.getTotalElements()))
+                .body(list);
+	}
+
+    @PreAuthorize("@ProjectRuntime.test(#project_id,'READ')")
+	@ApiOperation(value = "根据项目项目日志查询数据集", tags = {"项目操作历史" } ,notes = "根据项目项目日志查询数据集")
+    @RequestMapping(method= RequestMethod.POST , value="/projects/{project_id}/ibzproprojectactions/{ibzproprojectaction_id}/ibzproprojecthistories/searchdefault")
+	public ResponseEntity<Page<IBZProProjectHistoryDTO>> searchIBZProProjectHistoryDefaultByProjectIBZProProjectAction(@PathVariable("project_id") Long project_id, @PathVariable("ibzproprojectaction_id") Long ibzproprojectaction_id, @RequestBody IBZProProjectHistorySearchContext context) {
+        context.setN_action_eq(ibzproprojectaction_id);
+        Page<IBZProProjectHistory> domains = ibzproprojecthistoryService.searchDefault(context) ;
+	    return ResponseEntity.status(HttpStatus.OK)
+                .body(new PageImpl(ibzproprojecthistoryMapping.toDto(domains.getContent()), context.getPageable(), domains.getTotalElements()));
+	}
 }
 
